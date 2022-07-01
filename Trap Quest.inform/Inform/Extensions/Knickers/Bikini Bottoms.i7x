@@ -6,7 +6,7 @@ To decide which number is the penis-capacity of (C - a bikini bottoms):
 	decide on 6.
 To decide which number is the initial armour of (C - a bikini bottoms):
 	decide on 8.
-To decide which number is the hipModesty of (C - a bikini bottoms):
+To decide which number is the assModesty of (C - a bikini bottoms):
 	if C is crotch-exposing, decide on 1;
 	decide on 4.
 
@@ -122,7 +122,7 @@ To decide which number is the penis-capacity of (C - milkmaid bikini bottoms):
 	decide on 2.
 To decide which number is the crotch-tightness of (C - milkmaid bikini bottoms):
 	decide on 4.
-To decide which number is the hipModesty of (C - milkmaid bikini bottoms):
+To decide which number is the assModesty of (C - milkmaid bikini bottoms):
 	decide on 1.
 
 [pink bikini bottoms]
@@ -150,7 +150,7 @@ To decide which number is the penis-capacity of (H - pink bikini bottoms):
 	decide on 1.
 To decide which number is the initial armour of (C - pink bikini bottoms):
 	decide on 3.
-To decide which number is the hipModesty of (C - pink bikini bottoms):
+To decide which number is the assModesty of (C - pink bikini bottoms):
 	decide on 1.
 
 To decide which object is the potential-upgrade-target of (H - pink bikini bottoms):
@@ -281,7 +281,7 @@ Definition: swimming bottoms is grey themed: decide yes.
 Definition: swimming bottoms is fetish appropriate:
 	if diaper quest is 0, decide yes;
 	decide no.
-To decide which number is the hipModesty of (C - swimming bottoms):
+To decide which number is the assModesty of (C - swimming bottoms):
 	decide on 3.
 To uniquely set up (C - swimming bottoms):
 	now C is speed.

@@ -155,8 +155,8 @@ Is this item the highest layered thigh covering item?
 
 +!]
 Definition: a clothing (called C) is top level thigh cover:
-	if C is not thigh covering or C is not worn, decide no;
-	repeat with O running through worn thigh covering clothing:
+	if C is not thigh covering, decide no;
+	repeat with O running through thigh covering clothing:
 		if the bottom-layer of O > the bottom-layer of C, decide no;
 	decide yes.
 
@@ -204,9 +204,16 @@ Definition: a clothing (called C) is top level ass protection:
 		if the bottom-layer of O > the bottom-layer of C, decide no;
 	decide yes.
 
-[This cares about layers more than protection. A 'fully exposing' cupless bra could still be this.]
-Definition: a clothing (called C) is top level breasts protection:
+[This cares about layers more than protection. A 'fully exposing' cupless bra could still be this. Currently unused.]
+[Definition: a clothing (called C) is top level breasts layer:
 	if C is not worn or C is not breast covering or C is not top-placed, decide no;
+	repeat with O running through breast covering top-placed clothing:
+		if the top-layer of O > the top-layer of C, decide no;
+	decide yes.]
+
+[This cares about protection than layers. A 'fully exposing' cupless bra could not be this.]
+Definition: a clothing (called C) is top level breasts protection:
+	if C is not worn or C is not breast covering or C is fully exposing or C is not top-placed, decide no;
 	repeat with O running through breast covering top-placed clothing:
 		if the top-layer of O > the top-layer of C, decide no;
 	decide yes.

@@ -1,6 +1,6 @@
 Runic Headband by Headgear begins here.
 
-runic headband is a headgear. runic headband is silk. runic headband is purity. Figure of runic headband is the file "Items/Accessories/Head/runicheadband1.png". runic headband is hair growing.
+runic headband is a headgear. runic headband is silk. Figure of runic headband is the file "Items/Accessories/Head/runicheadband1.png". runic headband is hair growing.
 
 Definition: runic headband is roleplay: decide yes.
 Definition: runic headband is fluid immune: decide yes.
@@ -53,13 +53,23 @@ Definition: runic headband is removal-blocking:
 	decide no.
 
 To compute class outfit of (H - runic headband):
+	if the player is ready for common event TG:
+		say DefaultSexChangeFlav;
+		SexChange the player;
+	if player is possessing a penis or the vaginalvirgin of the player is 1, now H is purity;
 	if the number of alive undefeated royal guards is 0: [We need someone to service]
-		let M be a random off-stage royal guard;
+		let M be a random off-stage summon-available royal guard;
 		if M is monster:
 			summon M in the dungeon;
 			set up M;
-	if H is purity, class summon flowing priestess outfit;
-	otherwise class summon cameltoe-priestess-outfit.
+	if H is purity:
+		class summon flowing priestess outfit;
+	otherwise:
+		class summon cameltoe-priestess-outfit;
+		if the quest of H is not priestess-vaginal-service-quest:
+			now the quest of H is priestess-vaginal-service-quest;
+			say "[BigNameDesc of H] rumbles ominously! [QuestFlav of H]".
+
 
 [Gotta allow the player to get those ritual beads, even if the headband appeared via roleplay mechanic]
 Report wearing runic headband:
@@ -73,7 +83,6 @@ Chapter - Quest
 priestess-service-quest is a headgear-clothing-quest.
 
 To uniquely set up (C - runic headband):
-	if the vaginalvirgin of the player is 1, now C is purity;
 	now the quest of C is priestess-service-quest.
 
 To say QuestFlav of (Q - priestess-service-quest):
@@ -235,6 +244,7 @@ An all later time based rule (this is the sinful priestess punishment rule):
 				say "[bold type][BigNameDesc of C] [bold type]reacts to the [semen] that's entered your womb![roman type][line break]";
 				transform C into cleavage-window-priestess-outfit;
 				class summon heart-pussy-skirt;
-				class summon pearl crotchless-panties.
+				if heart-pussy-skirt is worn, try examining heart-pussy-skirt;
+				class summon cum dump's undergarment.
 
 Runic Headband ends here.

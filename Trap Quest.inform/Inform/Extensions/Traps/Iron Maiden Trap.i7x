@@ -39,6 +39,12 @@ The iron maiden immobility rule is listed in the immobility rules.
 
 Definition: iron-maiden is throater: decide yes.
 
+This is the iron maiden prevents hand use rule:
+	if the player is in Iron Maiden:
+		if manual hands attempt is 1, say "[variable custom style]My hands are stuck in place above my head![roman type][line break]";
+		rule fails.
+The iron maiden prevents hand use rule is listed in the hands restriction rules.
+
 A time based rule (this is the iron-maiden-punishment rule):
 	if the player is in Iron Maiden:
 		let M be iron-maiden;

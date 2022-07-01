@@ -139,7 +139,7 @@ To compute (Y - a dildo trap) penetration of (C - an object) into (G - a fuckhol
 			say "Programming error: someone passed non-clothing to compute dildo penetration.";
 		otherwise if C is rippable:
 			say "Your [ShortDesc of C] is now torn at the crotch.";
-			rip C;
+			ZipOrRip C;
 		otherwise:
 			say "Your [ShortDesc of C] is destroyed.";
 			destroy C;

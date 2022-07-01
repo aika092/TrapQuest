@@ -196,7 +196,7 @@ To compute teaching of (L - roulette-lesson):
 					if CD is 0:
 						remove yourself from LST;
 						say "Something slimy and wrong floods your mouth. You immediately know you're drinking the combined spit of your classmates and [NameDesc of M][']s special sauce. It feels so wrong! [if diaper quest is 1]You feel a twinge behind your bladder. [end if][moderateHumiliateReflect]";
-						if diaper quest is 1, increase temporary-incontinence by a random number between 3 and 5;
+						if diaper quest is 1, increase temporary-bladder-incontinence by a random number between 3 and 5;
 						otherwise SexAddictUp 1;
 						repeat with TST running through innocent students in the location of the player:
 							if TST is not listed in LST, FavourDown TST; [innocent students that are watching are disgusted]
@@ -350,7 +350,7 @@ To compute teaching of (L - make-up-lesson):
 		promote P;
 		say "You watch as [his of P] sapphire ID card turns into an emerald one, and [he of P] is now '[student-name of P] the [student-print of P]'. [big he of P] grins widely and then prances out of the room.";
 		compute mandatory room leaving of P;
-		if there is a held make up kit and the make-up of face < 2:
+		if there is a held make up kit and the make-up of face < 1:
 			say "[BigNameDesc of M] turns to you.[line break][speech style of M]'Vat is zis? Vy are you ztill holding zis, razer zan uzing it?!'[roman type][line break][big he of M] holds up your make up kit.[line break][speech style of M]'If you von't put it on your lipz, how about here?!'[roman type][line break]";
 			let T be i-suck tattoo;
 			if i-suck tattoo is not worn:
@@ -383,7 +383,7 @@ To compute teaching of (L - make-up-lesson):
 					say "[BigNameDesc of M] smiles a wide, severe smile, and waves [his of M] hands... but then nothing happens. [big he of M] frowns.[line break][speech style of M]'You are already covered in too many ztupid tattooz! I cannot do zis to you.'[roman type][line break]";
 			otherwise:
 				say "[BigNameDesc of M] frowns at your reluctance.[line break][speech style of M]'Useless bitch.'[roman type][line break][big he of M] flicks you painfully on your forehead.";
-				PainUp 1;
+				PainUp 10;
 				IntDown 1;
 				say "It feels slightly harder to think.";
 		otherwise:

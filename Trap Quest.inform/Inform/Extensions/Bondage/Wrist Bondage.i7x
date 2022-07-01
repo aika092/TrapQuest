@@ -85,11 +85,17 @@ To say ShortDesc of (W - pair of handcuffs):
 To say ShortDesc of (W - pair of wristcuffs):
 	say "a comfortable pair of leather wristcuffs".
 
-This is the wrist bondage prevents hand use rule:
+This is the wrist bondage behind prevents hand use rule:
 	if the player is wrist bound behind:
 		if manual hands attempt is 1, say "[variable custom style]I can't do that with my hands bound behind my back![roman type][line break]";
 		rule fails.
-The wrist bondage prevents hand use rule is listed in the manual dexterity restriction rules.
+The wrist bondage behind prevents hand use rule is listed in the hands restriction rules.
+
+This is the wrist bondage in front prevents manual dexterity rule:
+	if the player is wrist bound:
+		if manual hands attempt is 1, say "[variable custom style]I can't do that with my wrists bound![roman type][line break]";
+		rule fails.
+The wrist bondage in front prevents manual dexterity rule is listed in the manual dexterity restriction rules.
 
 Chapter - Wearability
 

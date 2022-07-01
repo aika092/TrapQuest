@@ -582,7 +582,7 @@ Part - Game Flow Settings
 Table of Game Flow Settings
 title	subtable	description	toggle
 "Previous Menu (Shortcut: Q)"	--	--	quit rule
-"Game Difficulty (base friendliness of NPCs): [if game difficulty is 0]EASIEST[otherwise if game difficulty is 1]EASY[otherwise if game difficulty is 2]NORMAL[otherwise if game difficulty is 3]HARD[otherwise if game difficulty is 4]HARDER[otherwise]GET FUCKED[end if] (+[game difficulty * 10] points to your score at the end of the game)"	--	--	game difficulty rule
+"Game Difficulty (base unfriendliness of NPCs and increased number of game effects that can drain your 3 main stats): [if game difficulty is 0]EASIEST[otherwise if game difficulty is 1]EASY[otherwise if game difficulty is 2]NORMAL[otherwise if game difficulty is 3]HARD[otherwise if game difficulty is 4]HARDER[otherwise]GET FUCKED[end if] (+[game difficulty * 10] points to your epilogue score)"	--	--	game difficulty rule
 "Combat Speed: [if combatSpeed is 1]FAST[otherwise if combatSpeed is 2]SLOWER[otherwise if combatSpeed is 3]VERY SLOW[otherwise]SLOWEST[end if]"	--	--	combat speed toggle rule
 
 

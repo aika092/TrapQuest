@@ -79,7 +79,7 @@ Definition: mirror nipple tweak is acceptable: decide yes.
 To compute resolution of (X - mirror nipple tweak):
 	let C be bottom level lactation cover;
 	say "Your reflection winks at you, and then its hands begin to rise[if C is clothing], sneaking underneath the [ShortDesc of C][end if] until they reach their nipples. [if times-mirrored is 0]You jump with surprise as you realise the mirror isn't lying - you are also doing this yourself! Your expression changes to one of sinister glee, and you realise that you have somehow been possessed by the mirror, and it temporarily has control over your entire body. [end if]You are absolutely powerless to fight back as you watch yourself begin to twist your nipples roughly, until you squeal with pain. Or rather you would if you could, but instead your face just turns into one of lustful glee. [if times-mirrored is 0]It's almost as if the possession can also influence your thoughts, because despite the pain, you're also getting aroused[otherwise]Once again, you find the almost unbearable pain somehow turning you on[end if]!";
-	PainUp 1;
+	PainUp 10;
 	stimulate breasts from a random haunted mirror trap;
 	if times-mirrored is 0, say "You feel the possessing spirit lose control of your body as you finally manage to tear your eyes away from the mirror.".
 

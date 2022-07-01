@@ -175,6 +175,7 @@ To compute labour to (M - a ghost):
 				dislodge N;
 				now N is in the location of the player;
 				anger N;
+	now the slime-puddle of the location of the player is 3;
 	increase the stickiness of the player by 3.
 
 To compute fatherhood to (M - a ghost):
@@ -209,7 +210,6 @@ To compute perception of (M - a ghost):
 		say "The light cast by [NameDesc of M] seems to change, and it begins to follow you around.".
 
 To compute DQ perception of (M - a ghost):
-	now M is interested;
 	if M is unfriendly:
 		say "[BigNameDesc of M] coos excitedly in a haunting voice. [if M is jismbodied ghost]The small powder ghost begins to energetically dance around [him of M] with increasing speed! [end if]From the way it's flexing its fabric and staring at you it's not hard to guess at its intentions...";
 		say GhostTip;
@@ -421,7 +421,7 @@ Definition: a ghost is willing to tongue creampie: decide no.[for now]
 To compute oral creampie of (M - a ghost):
 	say ResistedOralCreampie of M;[the cumshot rests in your mouth for a second before going down on its own.]
 	StomachSemenUp the semen load of M;
-	SemenAddictUp 1.
+	SlowSemenTasteAddictUp 1.
 
 To get facial accepting image for (M - a ghost):
 	cutshow Figure of ghost 1 ectoplasm cutscene for M;
@@ -550,6 +550,7 @@ To compute tripping attack of (M - a ghost):
 	if D >= the dexterity of the player:
 		say MonsterTrippedFlav of M;
 		try kneeling;
+		trigger trip-wisp-trigger;
 	otherwise:
 		say MonsterFailedTripFlav of M.
 
@@ -672,7 +673,7 @@ To compute damage reaction of (M - a ghost):
 	if M is uninterested:
 		if M is jismbodied ghost, say "The light cast by [NameDesc of M] seems to change, the shape of its penis-like body slowly shifting from 'flaccid' to 'very big' and 'very, very erect'.";
 		otherwise say "The light emanating from [NameDesc of M] flickers, and it focuses its attention purely on you!";
-		now M is interested;
+		interest M;
 		anger M;
 	otherwise if the health of M is the maxhealth of M:
 		let U be 0;
@@ -721,6 +722,9 @@ To loot (M - jismbodied ghost):
 		say "Your [ShortDesc of X] seems to weaken[if the strap-length of X > the size of penis], and you feel a wave of relief as it shrinks into a [PenisFlavour of X][end if].".
 
 To compute unique automatic banishment of (M - a ghost):
+	if there is a nonstalking wisp and the player is getting unlucky:
+		deploy a wisp;
+		say GotUnluckyFlav;
 	now creepiness is 0. [Having defeated a ghost shouldn't cause a new one to appear immediately]
 
 Part 4 - Ghostly Tentacle
@@ -756,11 +760,7 @@ To decide which number is the girth of (M - ghostly tentacle):
 	decide on G.
 
 To compute perception of (M - ghostly tentacle):
-	now M is interested;
-	[let A be 0;
-	repeat with N running through monsters in the location of the player:
-		if the favour of N <= the aggro limit of N, now A is 1;]
-	if M is unfriendly [or the bimbo of the player >= 15 or A is 1]:
+	if M is unfriendly:
 		say "[BigNameDesc of M] slowly unfurls to its full, six foot length, revealing an underside full of giant, octopus-like suckers.";
 		anger M;
 		say GhostTip;
@@ -768,7 +768,6 @@ To compute perception of (M - ghostly tentacle):
 		say "The light cast by [NameDesc of M] seems to change, and it begins to follow you around.".
 
 To compute DQ perception of (M - ghostly tentacle):
-	now M is interested;
 	if M is unfriendly:
 		say "[BigNameDesc of M] giggles, the unearthly sound echoing around the walls. You feel a little colder, and [he of M] stares daggers into your eyes as [he of M] descends towards you! Uh-oh.";
 		anger M;
@@ -882,10 +881,11 @@ To compute tripping attack of (M - ghostly tentacle):
 		if debuginfo > 0, say "[input-style][ShortDesc of C] gives ghost an extra tripping bonus of +[the armour of C].[roman type][line break]";
 	if C is trousers, now C is crotch-displaced;
 	if D >= the dexterity of the player:
-		say "[MonsterTrippedFlav of M]";
+		say MonsterTrippedFlav of M;
 		unless C is knickers, try kneeling;
+		trigger trip-wisp-trigger;
 	otherwise:
-		say "[MonsterFailedTripFlav of M]".
+		say MonsterFailedTripFlav of M.
 
 To say MonsterTrippedFlav of (M - ghostly tentacle):
 	let C be a random worn displacable trousers;

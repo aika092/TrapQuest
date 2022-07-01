@@ -475,7 +475,7 @@ To compute whore forcing of (M - senior robobellboy):
 			drag to (the location of D) by M;
 		otherwise:
 			say "[speech style of M]'HELLO SIR. I HAVE BROUGHT THIS ONE IN TIME FOR YOUR BI-HOURLY EMPLOYEE REVIEW.'[roman type][line break][BigNameDesc of M] lets go and starts to leave as [if D is mechanic]the [D] turns around with a cocky grin, unzipping [his of D] pants.[line break][speech style of D]'Guess it's my responsibility to take care of this, huh?'[roman type][line break][otherwise]the [D] turns around stroking [his of D] enormous [manly-penis].[line break][speech style of D]'[one of]EVEN I HAVE RESPONSIBILITIES[or]YOU FAIL! BUT I'M GOING TO FUCK YOU ANYWAY[or]YOU PASS! TIME TO CELEBRATE[at random]! HA HA HA!'[roman type][line break][end if][line break]";
-			now D is interested;
+			interest D;
 			anger D;
 			bore M;
 	otherwise if the location of the player is the target-room of M:

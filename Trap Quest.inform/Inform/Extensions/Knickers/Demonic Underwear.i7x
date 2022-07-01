@@ -206,7 +206,7 @@ This is the worshipper masochism rule:
 	if acolyte-undergarment is worn:
 		say "The gemstones on your [ShortDesc of acolyte-undergarment] glint in response to your orgasm, and a wave of pain wracks your body.";
 		BodyRuin 1;
-		PainUp 1.
+		PainUp 10.
 The worshipper masochism rule is listed last in the orgasm fatigue effects rules.
 
 To decide which number is the dexterity-influence of (C - acolyte-undergarment):

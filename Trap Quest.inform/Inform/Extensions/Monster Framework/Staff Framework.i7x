@@ -81,7 +81,7 @@ Definition: yourself is purposefully rebelling:
 	decide yes.
 
 To compute perception of (M - a staff member):
-	now M is interested;
+	interest M;
 	calm M;
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
 	if detention chair is grabbing the player:
@@ -315,12 +315,22 @@ To consider (T - talk-teacher-toilet) for (M - a monster):
 
 To execute (T - talk-teacher-toilet) for (M - a monster):
 	say "[speech style of M]'[one of]Of course[or]Okay but make it quick, I'm busy[or]Hurry up then, let's go[in random order].'[roman type][line break]";
-	now M is interested;
+	interest M;
 	now the friendly boredom of M is 0.
 
 To decide which number is the seek roll of (M - a teacher):
 	if academy-toilet-key is held and M is friendly, decide on 1; [100% chance to follow you to toilet if necessary]
 	decide on a random number between 0 and 3. [Most monsters have a 75% chance of successfully moving.]
+
+To say MasturbationAfterFlav of (M - a teacher):
+	say "After this [he of M] seems satisfied, and [if refractoryperiod > 0]flexes [his of M] wrist muscles in pride.[otherwise if the player is a bit horny][MasturbationTeaseFlav of M][otherwise]pulls back.[end if][line break][speech style of M]'Right, run along now!'[roman type][line break][if hot-tub is in the location of M]It doesn't seem like [he of M] is going to let you stay here.[end if]".
+
+To compute masturbation aftermath of (M - a teacher):
+	say MasturbationAfterFlav of M;
+	dislodge M;
+	FavourUp M;
+	say MasturbationAftermath of M;
+	calm M.
 
 Part - Lessons
 
@@ -598,7 +608,7 @@ Definition: an generic-assembly (called A) is appropriate:
 To set up (A - an assembly):
 	repeat with ST running through alive students:
 		now ST is in School16;
-		now ST is interested;
+		interest ST;
 		now ST is unconcerned;
 	now the assemblyAnnouncer of A is in School16;
 	now the assemblyAnnouncer of A is interested;
@@ -854,7 +864,7 @@ To check school toilet supervision:
 					let D be the dedication of M;
 					if D > 1: [caught in the act]
 						FavourDown M;
-						now M is interested;
+						interest M;
 						if M is friendly:
 							say "[speech style of M]'You're supposed to have a teacher supervising you to do that!'[roman type][line break]";
 						otherwise:
@@ -869,7 +879,7 @@ To check school toilet supervision:
 									say "[speech style of M]'MISS! MISS! Come quick! [NameBimbo] is using the toilet without a teacher!'[roman type][line break]Before you have time to lock the toilet back up, [X] has come running and caught you red-handed holding the key, with the recently flushed toilet behind you.[line break][speech style of M]'It's detention for you, you naughty minx!'[roman type][line break]";
 									compute detention of X;
 					otherwise: [needs to pee too]
-						now M is interested;
+						interest M;
 						if M is friendly:
 							say "[speech style of M]'You have the key?! [big please], I need to go too!'[roman type][line break]";
 							reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
@@ -902,7 +912,7 @@ To check school toilet supervision:
 	otherwise:
 		if headmistress is alive and headmistress is undefeated and the player is getting unlucky:
 			now headmistress is in the location of the player;
-			now headmistress is interested;
+			interest headmistress;
 			anger headmistress;
 			say "As you move to get up, you spot [NameDesc of headmistress] in the corner of your eye. [big he of headmistress] is advancing on you quickly, looking furious.[line break][speech style of headmistress]'You thought you could just get away with breaking the rules?! I SAID NO TOILETS AT ALL!!! Including ones outside the Academy!'[roman type][line break]";
 
@@ -1059,6 +1069,7 @@ To execute (A - disgrace-assembly):
 				humiliate S / 5;
 				now lastwitnessed entry is time-earnings;
 				say "[one of]This is the most humiliated you've ever felt in your life[or][if the player is shameless]You feel like you've become rather desensitized to this sort of humiliation by this point[otherwise]You're fed up with being humiliated like this[end if][stopping].";
+				if the published entry matches the text "hypnoheaven", compute agent reveal;
 	if the player is shameless:
 		say "You just shrug, and wait for them to get bored and move on with their day, which eventually of course, they all do.";
 	otherwise:

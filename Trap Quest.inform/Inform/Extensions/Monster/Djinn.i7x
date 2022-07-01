@@ -136,7 +136,6 @@ To compute perception of (M - djinn):
 		compute appearance assessment of M.
 
 To compute DQ perception of (M - djinn):
-	now M is interested;
 	if there is soiled-diaper carried by M:
 		say "[speech style of M]'[one of]You there, you disgusting mortal! I'm sure it's you who left this for me to find! How vile[or]Vile mortal, stop leaving your horrendous used garments around for me to find[stopping]!'[roman type][line break]";
 		anger M;
@@ -183,7 +182,7 @@ To compute djinn wishing of (M - a monster):
 		if diaper quest is 1:
 			say "[speech style of M]'...and a stronger desire not to use them!'[roman type][line break]";
 			DelicateUp 1;
-		otherwise if interracial fetish is 1 and the raw bbc addiction of the player < 10 and the calculated bbc addiction of the player < 10:
+		otherwise if interracial fetish is 1 and the raw bbc addiction of the player < 20 and the calculated bbc addiction of the player < 20:
 			say "[speech style of M]'...and a stronger love for my kind!'[roman type][line break]";
 			BBCAddictUp 1;
 		otherwise:
@@ -366,7 +365,7 @@ To compute (M - djinn) protecting against (X - a monster):
 		let T be a random placed jungle room;
 		while T is Dungeon12 or T is the location of the player:
 			now T is a random placed jungle room;
-		say "[BigNameDesc of M] gets between you and the [X].[line break][speech style of M]As mother of my children, you are above fighting these vermin. You will not sully your hands fighting them under any circumstances.[roman type][line break][big he of M] taps you on the forehead, and the scenery around you shifts as you reappear in the [printed name of T]!";
+		say "[BigNameDesc of M] gets between you and the [X].[line break][speech style of M]'As the mother of my children, you are above fighting these vermin. You will not sully your hands fighting them under any circumstances.'[roman type][line break][big he of M] taps you on the forehead, and the scenery around you shifts as you reappear in the [printed name of T]!";
 		teleport to T;
 	otherwise:
 		compute default protecting of M.
@@ -466,7 +465,7 @@ To decide if (M - djinn) is losing wrapper in (F - vagina):
 
 To compute post climax effect of (M - djinn) in (F - vagina):
 	if M is unwrapped and the player is able to get pregnant:
-		say "You immediately feel the [if the bbc addiction of the player > 4]superior virility of [his of M] nubian sperm[otherwise]magical sperm[end if] barrelling down your tubes and straight to your undefended egg[if inhuman pregnancy > 0]s[end if]. A strange tingle shoots through you from deep inside, kind of in your belly, almost, and you feel certain you're now pregnant with [his of M] child[if inhuman pregnancy > 0]ren[end if]![line break]";
+		say "You immediately feel the [if the bbc addiction of the player > 6]superior virility of [his of M] nubian sperm[otherwise]magical sperm[end if] barrelling down your tubes and straight to your undefended egg[if inhuman pregnancy > 0]s[end if]. A strange tingle shoots through you from deep inside, kind of in your belly, almost, and you feel certain you're now pregnant with [his of M] child[if inhuman pregnancy > 0]ren[end if]![line break]";
 		compute sudden pregnancy; [Allows a chance even when sudden pregnancy is disabled]
 		if the pregnancy of the player is 0:
 			now the pregnancy of the player is 1;
@@ -1140,7 +1139,6 @@ To compute friendly drink of (M - djinn):
 
 To compute unfriendly drink of (M - djinn):
 	say "[speech style of M]'I will decide if and when you are allowed to feed!'[roman type][line break]";
-	now M is interested;
-	now the boredom of M is 0.
+	interest M.
 
 Djinn ends here.

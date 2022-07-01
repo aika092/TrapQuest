@@ -75,7 +75,9 @@ Carry out TQeating candy corn:
 	compute CandyCornEat.
 
 To compute CandyCornEat:
-	if diaper quest is 1:
+	if the number of stalking wisps is 0:
+		deploy a wisp;
+	otherwise if diaper quest is 1:
 		say "[second custom style]TASTY... TASTY... TASTY![roman type][line break]The word reverberates in your head over and over again. ";
 		if hypno-trigger-tasty is 0:
 			say "That was weird...";
@@ -379,15 +381,15 @@ Carry out TQeating creme egg:
 	say "[DevourFlav of the noun] As your tongue hits the centre, you ";
 	if (diaper quest is 0 or diaper messing < 3) and the player is getting unlucky:
 		if diaper quest is 1 or (diaper lover > 0 and a random number between 1 and 2 is 1):
-			if the incontinence of the player < the max-incontinence of the player and a random number between 1 and 2 is 1:
+			if the raw-bladder-incontinence of the player < the max-bladder-incontinence of the player and a random number between 1 and 2 is 1:
 				say "taste something bubbling with cursed magic.[line break][variable custom style]What was that?! And why can I suddenly I feel my bladder?![roman type][line break]A cursed effect seems to be making you temporarily incontinent!";
-				increase temporary-incontinence by 3;
+				increase temporary-bladder-incontinence by 3;
 			otherwise if diaper messing >= 4 and a random number between 1 and 2 is 1:
 				say "taste something extremely sour.[line break][variable custom style]Castor oil[one of][or] again[stopping]?![roman type][line break]Almost immediately you feel a growing pressure in your bowels...";
 				increase suppository by 1;
 			otherwise:
 				say "taste something bitter. Moments later, you feel a slight twinge in your bladder as your control over it weakens.";
-				increase incontinence by 1;
+				SilentlyBladderIncontinenceUp 1;
 		otherwise:
 			say "are [if the semen taste addiction of the player > 12]thrilled[otherwise if the semen taste addiction of the player > 8]surprised[otherwise if the semen taste addiction of the player > 4]dismayed[otherwise]disgusted[end if] to find that it is filled with [semen]! You [if the semen taste addiction of the player > 10]happily swallow it[otherwise]reluctantly force it[end if] down.";
 			StomachSemenUp 2;
@@ -578,7 +580,7 @@ Carry out TQeating strawberry lace:
 	say "[DevourFlav of the noun] As you finish eating it, you shiver and ";
 	if (diaper quest is 0 or diaper messing < 3) and the player is getting unlucky:
 		say "suddenly feel a strike on your [buttcheeks]! Whirling your head around, you see a giant strawberry lace hovering in the air behind you, flicking back and forth as it whips your ass fast and hard. You yelp [unless the player is wrist bound in front]and try to block the strokes with your hands but the magic lace somehow[otherwise]as it[end if] manages to find its mark past your hands each time, with surgical precision![line break][GotUnluckyFlav]Ten speedy swats later the lace stops whipping, leaving the welts burning. You [if the delicateness of the player < 7]struggle to avoid bursting into tears[otherwise if the delicateness of the player < 12]gently sob to yourself[otherwise]wail like a pathetic little girl[end if] as the stinging feeling grows worse over the next few seconds. The magic lace flies away into the distance.";
-		PainUp 1;
+		PainUp 10;
 		BodyRuin 3;
 	otherwise:
 		say "find your mind sparkling with brilliance. You feel yourself getting [if strawberry-lace-timer > 0]even [end if][smarter]!";

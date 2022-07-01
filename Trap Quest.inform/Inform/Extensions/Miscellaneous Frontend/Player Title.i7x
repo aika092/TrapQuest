@@ -18,13 +18,14 @@ To say TitleBimbo:
 		if the player is incontinent:
 			if the player is diapered:
 				if a random worn diaper is cursed, say " permanently";
-				if the incontinence of the player < 8 or diaper messing < 4, say " diaper bound";
-				if the incontinence of the player > 7 and diaper messing >= 4, say "poopypantsed";[Better term?]
+				if the rectum-incontinence of the player < 8 or diaper messing < 4, say " diaper bound";
+				otherwise say " poopypantsed";
 			otherwise:
 				say " incontinent";
 		otherwise if the player is diapered:
 			say " diapered";
-			if incontinence > 2, say " [if there is worn bed wetting clothing]bedwetting[otherwise]accident-prone[end if]";
+			if the rectum-incontinence of the player > 2, say " accident-prone";
+			if the bladder-incontinence of the player > 2, say " bedwetting";
 		let B be 8;
 		if extreme proportions fetish is 1, now B is 13;
 		if the largeness of breasts > B:
@@ -176,13 +177,14 @@ To say TitleBaby:
 	if the player is incontinent:
 		if the player is diapered:
 			if a random worn diaper is cursed, say " permanently";
-			if the incontinence of the player < 8 or diaper messing < 4, say " diaper bound";
-			if the incontinence of the player > 7 and diaper messing >= 4, say "poopypantsed";[Better term?]
+			if the rectum-incontinence of the player < 8 or diaper messing < 4, say " diaper bound";
+			otherwise say " poopypantsed";
 		otherwise:
 			say " incontinent";
 	otherwise if the player is diapered:
 		say " diapered";
-		if incontinence > 2, say " [if there is worn bed wetting clothing]bedwetting[otherwise]accident-prone[end if]";
+		if the rectum-incontinence of the player > 2, say " accident-prone";
+		if the bladder-incontinence of the player > 2, say " bedwetting";
 	if the number of worn cursed clothing > 4, say " unlucky";
 	if the player is a sissy, say " sissy";
 	if T is not "adventurer":

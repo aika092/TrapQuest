@@ -9,13 +9,13 @@ Definition: a clothing is layer-exposing:
 	decide no.
 
 Definition: a clothing (called C) is potentially-top-layer-concealing:
-	if C is layer-concealing and C is potentially-partially-top-layer-concealing, decide yes;
+	if C is layer-concealing and C is potentially-partially-top-layer-concealing and C is actually nipple covering, decide yes;
 	decide no.
 Definition: a clothing (called C) is top-layer-concealing:
 	if C is worn and C is potentially-top-layer-concealing, decide yes;
 	decide no.
 Definition: a clothing (called C) is potentially-partially-top-layer-concealing:
-	if C is partially-layer-concealing and C is breast covering and C is actually nipple covering, decide yes;
+	if C is partially-layer-concealing and C is breast covering, decide yes;
 	decide no.
 Definition: a clothing (called C) is partially-top-layer-concealing:
 	if C is worn and C is potentially-partially-top-layer-concealing, decide yes;
@@ -35,7 +35,9 @@ Definition: a clothing (called C) is partially-mid-layer-concealing:
 	decide no.
 
 Definition: a clothing (called C) is potentially-bottom-layer-concealing:
-	if C is layer-concealing and C is potentially-partially-bottom-layer-concealing, decide yes; [crotch-assless clothing doesn't hide what's underneath]
+	if C is layer-concealing and C is potentially-partially-bottom-layer-concealing: [crotch-assless clothing doesn't hide what's underneath]
+		if (C is leg covering or C is skirted) and C is not usually thigh covering, decide no; [skirts and trousers that expose the thighs do not fully conceal the bottom layer area]
+		decide yes;
 	decide no.
 Definition: a clothing (called C) is bottom-layer-concealing:
 	if C is worn and C is potentially-bottom-layer-concealing, decide yes;

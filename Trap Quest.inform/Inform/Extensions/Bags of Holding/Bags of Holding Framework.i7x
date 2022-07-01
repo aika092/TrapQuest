@@ -49,11 +49,14 @@ To decide which number is not-in-bag-things:
 	decide on the number of currently-not-in-bag necessary-in-bag things.
 
 Check taking something:
-	if not-in-bag-things >= 15:
+	if the noun is held by a monster:
+		let M be a random monster holding the noun;
+		say "[BigNameDesc of M] is holding [NameDesc of M]." instead;
+	if the noun is not bag of holding and not-in-bag-things >= 15:
 		if there is a worn bag of holding:
 			if the noun is never-in-bag, say "You are at your limit for carrying [if diaper messing >= 6]messy diapers, [end if]food and drink, and other items that can't go in your bag of holding. You'll have to drop some if you want to pick up more." instead;
 		otherwise:
-			unless the noun is bag of holding, say "You are at your limit for carrying objects[if the noun is not never-in-bag]. If only you still had that bag of holding[end if]." instead.
+			say "You are at your limit for carrying objects[if the noun is not never-in-bag]. If only you still had that bag of holding[end if]." instead.
 
 Check inserting food into bag of holding:
 	say "A warning on [NameDesc of the second noun] says that this would be a horrible idea." instead.
@@ -185,220 +188,587 @@ Carry out BagFeeding it to:
 Understand "feed [something] to [something]" as BagFeeding it to.
 
 A bag-feeding-effect is a kind of object.
+Definition: a bag-feeding-effect is appropriate: decide yes.
 To execute (E - a bag-feeding-effect) on (C - a thing):
 	say "BUG - somebody forgot to code the functionality of [E].".
 
-A bag of holding has a number called tempBimbo.
 bag-feeding-bimbo is a bag-feeding-effect.
-To execute (E - bag-feeding-bimbo) on (C - a thing):
-	if C is clothing:
-		if (diaper quest is 0 and the initial outrage of C > a random number between 8 and 12) or (diaper quest is 1 and the initial cringe of C > a random number between 8 and 12):
-			say "Your bag reacts to the [if diaper quest is 1]silly[otherwise]slutty[end if] nature of the [ShortDesc of C], making you feel a bit light-headed and giddy! Your thoughts will be slightly more [if diaper quest is 1]immature[otherwise]lewd[end if] until your bag consumes its next item.";
-			now the tempBimbo of a random worn bag of holding is 1;
-		otherwise:
-			now the tempBimbo of a random worn bag of holding is 0;
-	otherwise:
-		now the tempBimbo of a random worn bag of holding is 0.
-A sex addiction theme rule:
-	let B be a random worn bag of holding;
-	if B is bag of holding, decrease tempThemeBonus by the tempBimbo of B.
+Definition: bag-feeding-bimbo is appropriate:
+	if the noun is clothing:
+		if diaper quest is 0 and the initial outrage of the noun > a random number between 8 and 12, decide yes;
+		if diaper quest is 1 and the initial cringe of the noun > a random number between 8 and 12, decide yes;
+	decide no.
+To execute (E - bag-feeding-bimbo):
+	say "Your bag reacts to the [if diaper quest is 1]silly[otherwise]slutty[end if] nature of the [ShortDesc of noun], making you feel a bit light-headed and giddy!";
+	SexAddictUp 1.
 
 bag-feeding-condoms is a bag-feeding-effect.
-To execute (E - bag-feeding-condoms) on (C - a thing):
-	if there is a worn condom rolls bag of holding and C is clothing:
-		if the total condoms of C > 0:
-			let P be a random worn condom pinnable clothing;
-			let S be nothing;
-			if P is nothing:
-				now S is string-belt;
-				summon S cursed with silent quest;
-				now P is S;
-			let UC be the used condoms of C;
-			let EC be the empty condoms of C;
-			say "Your condom bag spits out the [if UC > 1][UC] [semen]-filled condoms[otherwise if UC > 0][semen]-filled condom[end if][if UC > 0 and EC > 0] and [end if][if EC > 1][EC] empty condoms[otherwise if EC > 0]empty condom[end if]! [if the total condoms of C > 1]They shoot into the air around you[otherwise]For a moment, it hovers in the air in front of you[end if]. [if S is clothing]Suddenly, a [printed name of S] appears around your waist! [end if] You watch in [horror the semen taste addiction of the player] as ";
-			if the number of worn condom pinnable clothing > 1:
-				while UC + EC > 0:
-					now P is a random worn condom pinnable clothing;
-					if UC > 0:
-						say "[if the total condoms of C > 1 and EC > 0]one full condom[otherwise if the total condoms of C > 1]one condom[otherwise]it[end if] pins itself to your [ShortDesc of P]";
-						increase the used condoms of P by 1;
-						decrease UC by 1;
-						progress quest of condom-eating-quest;
-					otherwise:
-						say "[if the total condoms of C > 1 and the used condoms of C > 0]one empty condom[otherwise if the total condoms of C > 1]one condom[otherwise]it[end if] pins itself to your [ShortDesc of P]";
-						increase the empty condoms of P by 1;
-						decrease EC by 1;
-					say "[if UC + EC > 1], [otherwise if UC + EC is 1] and [otherwise]![end if]";
-			otherwise:
-				say "[if UC + EC > 2]They all fly down and pin themselves[otherwise if UC + EC is 2]They both fly down and pin themselves[otherwise]It flies down and pins itself[end if] to your [MediumDesc of P]!";
-				increase the used condoms of P by UC;
-				increase the condom-count of condom-eating-quest by UC - 1;
+Definition: bag-feeding-condoms is appropriate:
+	if the noun is clothing and the total condoms of the noun > 0, decide yes;
+	decide no.
+To execute (E - bag-feeding-condoms):
+	let P be a random worn condom pinnable clothing;
+	let S be nothing;
+	if P is nothing:
+		now S is string-belt;
+		summon S cursed with silent quest;
+		now P is S;
+	let UC be the used condoms of the noun;
+	let EC be the empty condoms of the noun;
+	say "Your condom bag spits out the [if UC > 1][UC] [semen]-filled condoms[otherwise if UC > 0][semen]-filled condom[end if][if UC > 0 and EC > 0] and [end if][if EC > 1][EC] empty condoms[otherwise if EC > 0]empty condom[end if]! [if the total condoms of the noun > 1]They shoot into the air around you[otherwise]For a moment, it hovers in the air in front of you[end if]. [if S is clothing]Suddenly, a [printed name of S] appears around your waist! [end if] You watch in [horror the semen taste addiction of the player] as ";
+	if the number of worn condom pinnable clothing > 1:
+		while UC + EC > 0:
+			now P is a random worn condom pinnable clothing;
+			if UC > 0:
+				say "[if the total condoms of the noun > 1 and EC > 0]one full condom[otherwise if the total condoms of the noun > 1]one condom[otherwise]it[end if] pins itself to your [ShortDesc of P]";
+				UsedCondomUp P by 1;
+				decrease UC by 1;
 				progress quest of condom-eating-quest;
-				increase the empty condoms of P by EC;
-			if the total condoms of C > 1, say "[variable custom style][if the player is shameless or (the semen taste addiction of the player > 16 and the used condoms of C > 0)]Perfect! I didn't want to lose them![otherwise if the semen taste addiction of the player > 13 and the used condoms of C > 1]Ugh. Well at least I have some emergency drinks, I guess.[otherwise if the semen taste addiction of the player > 13 and the used condoms of C > 0]Ugh. Well at least I have an emergency drink, I guess.[otherwise]Oh come on! Is there no escaping these things?![end if][roman type][line break]";
-			otherwise say "[variable custom style][if the player is shameless or (the semen taste addiction of the player > 16 and the used condoms of C > 0)]Perfect! I didn't want to lose that![otherwise if the player is disgraced or (the semen taste addiction of the player > 12 and the used condoms of C > 0)]Grr... I guess it's here to stay for now.[otherwise]Oh come on! Is there no escaping this stupid condom?![end if][roman type][line break]";
-		if the semen-soak of C > 0:
-			say "Your condom bag absorbs the [semen] from the [C] and transfers it into a condom! The now full condom shoots out of the bag, hovering still in mid-air in front of you for a brief moment. ";
-			compute spontaneous condom of a random worn bag of holding.
+			otherwise:
+				say "[if the total condoms of the noun > 1 and the used condoms of the noun > 0]one empty condom[otherwise if the total condoms of the noun > 1]one condom[otherwise]it[end if] pins itself to your [ShortDesc of P]";
+				increase the empty condoms of P by 1;
+				decrease EC by 1;
+			say "[if UC + EC > 1], [otherwise if UC + EC is 1] and [otherwise]![end if]";
+	otherwise:
+		say "[if UC + EC > 2]They all fly down and pin themselves[otherwise if UC + EC is 2]They both fly down and pin themselves[otherwise]It flies down and pins itself[end if] to your [MediumDesc of P]!";
+		UsedCondomUp P by UC;
+		increase the condom-count of condom-eating-quest by UC - 1;
+		progress quest of condom-eating-quest;
+		increase the empty condoms of P by EC;
+	if the total condoms of the noun > 1, say "[variable custom style][if the player is shameless or (the semen taste addiction of the player > 16 and the used condoms of the noun > 0)]Perfect! I didn't want to lose them![otherwise if the semen taste addiction of the player > 13 and the used condoms of the noun > 1]Ugh. Well at least I have some emergency drinks, I guess.[otherwise if the semen taste addiction of the player > 13 and the used condoms of the noun > 0]Ugh. Well at least I have an emergency drink, I guess.[otherwise]Oh come on! Is there no escaping these things?![end if][roman type][line break]";
+	otherwise say "[variable custom style][if the player is shameless or (the semen taste addiction of the player > 16 and the used condoms of the noun > 0)]Perfect! I didn't want to lose that![otherwise if the player is disgraced or (the semen taste addiction of the player > 12 and the used condoms of the noun > 0)]Grr... I guess it's here to stay for now.[otherwise]Oh come on! Is there no escaping this stupid condom?![end if][roman type][line break]".
 
 bag-feeding-semen is a bag-feeding-effect.
-To execute (E - bag-feeding-semen) on (C - a thing):
-	if diaper quest is 0 and C is semen themed and the number of carried non-empty bottles is 0:
-		say "Your bag reacts to the semen theme of the [ShortDesc of C], making you feel very thirsty!";
-		if the stomach-water of the player > 1, now the stomach-water of the player is 1;
-		now the stomach-semen of the player is 0;
-		now the stomach-urine of the player is 0;
-		now the stomach-milk of the player is 0;
-		now the fill-colour of squirt dildo is creamy;
-		now the doses of squirt dildo is 1;
-		if squirt dildo is held:
-			say "What's more, your [printed name of squirt dildo] fills up to the brim with [semen]!";
-		otherwise:
-			say "What's more, a [printed name of squirt dildo] appears on the ground in front of you! Something tells you that you can guess what's inside...";
-			now squirt dildo is in the location of the player.
+Definition: bag-feeding-semen is appropriate:
+	if diaper quest is 0 and the noun is semen themed, decide yes;
+	decide no.
+To execute (E - bag-feeding-semen):
+	say "Your bag reacts to the semen theme of the [ShortDesc of noun], making you feel very thirsty!";
+	if the stomach-water of the player > 1, now the stomach-water of the player is 1;
+	now the stomach-semen of the player is 0;
+	now the stomach-urine of the player is 0;
+	now the stomach-milk of the player is 0;
+	now the fill-colour of squirt dildo is creamy;
+	now the doses of squirt dildo is 1;
+	if squirt dildo is held:
+		say "What's more, your [printed name of squirt dildo] fills up to the brim with [semen]!";
+	otherwise:
+		say "What's more, a [printed name of squirt dildo] appears on the ground in front of you! Something tells you that you can guess what's inside...";
+		now squirt dildo is in the location of the player;
+	let W be a random nonstalking wisp;
+	if W is wisp:
+		silently set up W;
+		now the wisp-quest of W is drink-wisp-quest;
+		now the wisp-trigger of W is spill-wisp-trigger;
+		now the wisp-punishment of W is bimbo-wisp-punishment;
+		if (a random number between 0 and 1) + (a random number between 0 and 1) < game difficulty, now the wisp-punishment of W is a random appropriate wisp punishment;
+		now W is everywhere;
+		update backdrop positions;
+		now the text-shortcut of W is the substituted form of "[ColourDesc of W]";
+		say "[bold type]A [ColourDesc of W] curse wisp appears, and begins hovering behind you! [roman type]You can sense that you must [bold type][wisp-quest of W][roman type] before you next [bold type][wisp-trigger of W][roman type], or else you will [bold type][wisp-punishment of W][roman type].".
 
 bag-feeding-urine is a bag-feeding-effect.
-To execute (E - bag-feeding-urine) on (C - a thing):
-	if watersports fetish is 1 and C is toilet themed and the number of carried non-empty bottles is 0:
-		say "Your bag reacts to the toilet theme of the [ShortDesc of C], making you feel very thirsty!";
-		if the stomach-water of the player > 1, now the stomach-water of the player is 1;
-		now the stomach-semen of the player is 0;
-		now the stomach-urine of the player is 0;
-		now the stomach-milk of the player is 0;
-		now the fill-colour of champagne-glass is golden;
-		now the doses of champagne-glass is 1;
-		if champagne-glass is held:
-			say "What's more, your [champagne-glass] fills up to the brim with [urine]!";
-		otherwise:
-			say "What's more, a [champagne-glass] appears on the ground in front of you! Something tells you that you can guess what's inside...";
-			now champagne-glass is in the location of the player.
+Definition: bag-feeding-urine is appropriate:
+	if watersports fetish is 1 and the noun is toilet themed and the number of carried non-empty bottles is 0, decide yes;
+	decide no.
+To execute (E - bag-feeding-urine):
+	say "Your bag reacts to the toilet theme of the [ShortDesc of noun], making you feel very thirsty!";
+	if the stomach-water of the player > 1, now the stomach-water of the player is 1;
+	now the stomach-semen of the player is 0;
+	now the stomach-urine of the player is 0;
+	now the stomach-milk of the player is 0;
+	now the fill-colour of champagne-glass is golden;
+	now the doses of champagne-glass is 1;
+	if champagne-glass is held:
+		say "What's more, your [champagne-glass] fills up to the brim with [urine]!";
+	otherwise:
+		say "What's more, a [champagne-glass] appears on the ground in front of you! Something tells you that you can guess what's inside...";
+		now champagne-glass is in the location of the player;
+	let W be a random nonstalking wisp;
+	if W is wisp:
+		silently set up W;
+		now the wisp-quest of W is drink-wisp-quest;
+		now the wisp-trigger of W is spill-wisp-trigger;
+		now the wisp-punishment of W is bimbo-wisp-punishment;
+		if (a random number between 0 and 1) + (a random number between 0 and 1) < game difficulty, now the wisp-punishment of W is a random appropriate wisp punishment;
+		now W is everywhere;
+		update backdrop positions;
+		now the text-shortcut of W is the substituted form of "[ColourDesc of W]";
+		say "[bold type]A [ColourDesc of W] curse wisp appears, and begins hovering behind you! [roman type]You can sense that you must [bold type][wisp-quest of W][roman type] before you next [bold type][wisp-trigger of W][roman type], or else you will [bold type][wisp-punishment of W][roman type].".
 
 bag-feeding-swimming is a bag-feeding-effect.
-To execute (E - bag-feeding-swimming) on (C - a thing):
-	if C is swimming themed:
-		say "Your bag reacts to the swimwear theme of the [ShortDesc of C] by drenching everything you're wearing in water!";
+Definition: bag-feeding-swimming is appropriate:
+	if the noun is swimming themed, decide yes;
+	decide no.
+To execute (E - bag-feeding-swimming):
+	if game difficulty > a random number between 1 and 4:
+		say "Your bag reacts to the swimwear theme of the [ShortDesc of noun] by sapping your strength!";
+		StrengthDown 1;
+	otherwise:
+		say "Your bag reacts to the swimwear theme of the [ShortDesc of noun] by drenching everything you're wearing in water!";
 		repeat with T running through worn fluid vulnerable clothing:
 			drench T.
 
 bag-feeding-toy is a bag-feeding-effect.
-To execute (E - bag-feeding-toy) on (C - a thing):
-	if C is a sex toy:
-		let F be asshole;
-		if the player is possessing a vagina and C is not plug, now F is vagina;
-		say "Your bag reacts to the toy by making your [variable F] tingle with delight!";
-		ruin F times 1.
+Definition: bag-feeding-toy is appropriate:
+	if the noun is sex toy, decide yes;
+	decide no.
+To execute (E - bag-feeding-toy):
+	let F be asshole;
+	if the player is possessing a vagina and the noun is not plug, now F is vagina;
+	say "Your bag reacts to the toy by making your [variable F] tingle with delight!";
+	ruin F times 1.
 
 bag-feeding-skirt is a bag-feeding-effect.
-To execute (E - bag-feeding-skirt) on (C - a thing):
+Definition: bag-feeding-skirt is appropriate:
+	if the noun is a skirt and there is worn skirted crotch-in-place displacable clothing, decide yes;
+	decide no.
+To execute (E - bag-feeding-skirt):
 	let S be a random worn skirted crotch-in-place displacable clothing;
-	if C is a skirt and S is clothing:
-		say "Your bag reacts to the skirt by making your [ShortDesc of S] fly up into the air, exposing everything underneath!";
-		displace S.
+	say "Your bag reacts to the skirt by making your [ShortDesc of S] fly up into the air, exposing everything underneath!";
+	displace S.
 
-bag-feeding-sex-themes is a bag-feeding-effect.
-To execute (E - bag-feeding-sex-themes) on (C - a thing):
-	if diaper quest is 0:
-		let B be a random worn bag of holding;
-		if B is penis themed and C is penis themed:
-			say "Your [MediumDesc of B][']s [manly-penis] theme synergises with the theme of the [MediumDesc of C]! ";
-			if the mystical size of penis > min penis size: [#LXorDD]
-				SpecialPenisDown 1;
-			otherwise:
-				say "You feel a bit more [if the player is a pervert]perverted[otherwise]willing to consider deviant ideas[end if]...";
-				SexAddictUp 1;
-		if B is vagina themed and C is vagina themed and the player is possessing a vagina:
-			say "Your [MediumDesc of B][']s vagina theme synergises with the theme of the [MediumDesc of C]! ";
-			VaginalSexAddictUp 1;
-		if B is anal sex themed and C is anal sex themed:
-			say "Your [MediumDesc of B][']s anal sex theme synergises with the theme of the [MediumDesc of C]! ";
-			AnalSexAddictUp 1;
-		if B is oral sex themed and C is oral sex themed:
-			say "Your [MediumDesc of B][']s oral sex theme synergises with the theme of the [MediumDesc of C]! ";
-			OralSexAddictUp 1;
-		if B is boob themed and C is boob themed and max breast size >= 5:
-			say "Your [MediumDesc of B][']s boob theme synergises with the theme of the [MediumDesc of C]! ";
-			TitfuckAddictUp 1;
-		if B is dog themed and C is dog themed:
-			say "Your [MediumDesc of B][']s [']bitch['] theme synergises with the dog theme of the [MediumDesc of C]!";
-			DelicateUp 1;
-		if B is heart themed and C is heart themed and the player is able to get horny:
-			say "Your [MediumDesc of B][']s heart theme synergises with the theme of the [MediumDesc of C]! You can hear your blood pumping in your ears as you feel yourself getting horny!";
-			Arouse 3000.
+bag-feeding-exercise is a bag-feeding-effect.
+Definition: bag-feeding-exercise is appropriate:
+	if the noun is exercise themed, decide yes;
+	decide no.
+To execute (E - bag-feeding-exercise):
+	say "Your bag reacts to exercise theme of your [ShortDesc of noun] by making you fatter!";
+	FatUp 3.
+
+bag-feeding-magic is a bag-feeding-effect.
+Definition: bag-feeding-magic is appropriate:
+	if the noun is magic themed and the magic-power of the player > 0, decide yes;
+	decide no.
+To execute (E - bag-feeding-magic):
+	say "Your bag reacts to magical nature of your [ShortDesc of noun] by reducing your magic power!";
+	MagicPowerDown 1.
+
+bag-feeding-whore is a bag-feeding-effect.
+Definition: bag-feeding-whore is appropriate:
+	if the noun is whore themed and there is a nonstalking wisp, decide yes;
+	decide no.
+To execute (E - bag-feeding-whore):
+	say "Your bag reacts to prostitution theme of your [ShortDesc of noun]!";
+	let W be a random nonstalking wisp;
+	silently set up W;
+	now the wisp-quest of W is brothel-wisp-quest;
+	now the wisp-trigger of W is a random eligible appropriate wisp trigger;
+	now the wisp-punishment of W is bimbo-wisp-punishment;
+	if (a random number between 0 and 1) + (a random number between 0 and 1) < game difficulty, now the wisp-punishment of W is a random appropriate wisp punishment;
+	now W is everywhere;
+	update backdrop positions;
+	now the text-shortcut of W is the substituted form of "[ColourDesc of W]";
+	say "[bold type]A [ColourDesc of W] curse wisp appears, and begins hovering behind you! [roman type]You can sense that you must [bold type][wisp-quest of W][roman type] before you next [bold type][wisp-trigger of W][roman type], or else you will [bold type][wisp-punishment of W][roman type].".
+
+bag-feeding-food is a bag-feeding-effect.
+Definition: bag-feeding-food is appropriate:
+	if the noun is food themed, decide yes;
+	decide no.
+To execute (E - bag-feeding-food):
+	say "Your bag reacts to food theme of your [ShortDesc of noun] by making you feel extra-hungry!";
+	compute DQ hunger;
+	now the stomach-food of the player is 0.
+
+bag-feeding-drink is a bag-feeding-effect.
+Definition: bag-feeding-drink is appropriate:
+	if the noun is drink themed, decide yes;
+	decide no.
+To execute (E - bag-feeding-drink):
+	say "Your bag reacts to drink theme of your [ShortDesc of noun] by removing all the water you recently drank from your stomach!";
+	now the stomach-water of the player is 0;
+	if the stomach-urine of the player > 0:
+		say "[variable custom style]Luckily for me, I recently drank [urine]...[roman type][line break]";
+	otherwise if the stomach-semen of the player > 0:
+		say "[variable custom style]Luckily for me, I recently swallowed [semen]...[roman type][line break]".
+
+bag-feeding-bow is a bag-feeding-effect.
+Definition: bag-feeding-bow is appropriate:
+	if the noun is bow themed and there is worn transformable suspenders, decide yes;
+	decide no.
+To execute (E - bag-feeding-bow):
+	let S be a random worn transformable suspenders;
+	say "Your bag reacts to the bow theme by attempting to transform your [MediumDesc of S]!";
+	potentially transform S.
+
+bag-feeding-gem is a bag-feeding-effect.
+Definition: bag-feeding-gem is appropriate:
+	if the noun is gem themed and the noun is not plug and asshole is not occupied, decide yes;
+	decide no.
+To execute (E - bag-feeding-gem):
+	let P be a random off-stage gem themed basic plug;
+	if P is a plug:
+		say "Your bag reacts to the sparkly theme by summoning a butt plug inside of you!";
+		summon P cursed with quest.
+
+bag-feeding-star is a bag-feeding-effect.
+Definition: bag-feeding-star is appropriate:
+	if the noun is star themed, decide yes;
+	decide no.
+To execute (E - bag-feeding-star):
+	let S be a random worn transformable clothing;
+	say "Your bag reacts to the star theme by attempting to transform your [MediumDesc of S]!";
+	potentially transform S.
+
+bag-feeding-ballet is a bag-feeding-effect.
+Definition: bag-feeding-ballet is appropriate:
+	if the noun is ballet related and the raw heel skill of the player > 0, decide yes;
+	decide no.
+To execute (E - bag-feeding-ballet):
+	say "Your bag reacts to the ballet item by reducing your skill at walking in heels!";
+	HeelDown 1.
+
+bag-feeding-inflation is a bag-feeding-effect.
+Definition: bag-feeding-inflation is appropriate:
+	if the noun is inflation themed and inflation fetish is 1, decide yes;
+	decide no.
+To execute (E - bag-feeding-inflation):
+	say "Your bag reacts to the inflation themed [ShortDesc of the noun] by slightly inflating your body!";
+	BustInflate 2;
+	AssFill 2 Air;
+	AssInflate 2.
+
+bag-feeding-interracial is a bag-feeding-effect.
+Definition: bag-feeding-interracial is appropriate:
+	if the noun is interracial themed and interracial fetish is 1, decide yes;
+	decide no.
+To execute (E - bag-feeding-interracial):
+	say "Your bag reacts to the [MediumDesc of the noun]!";
+	bbcAddictUp 1.
+
+bag-feeding-royalty is a bag-feeding-effect.
+Definition: bag-feeding-royalty is appropriate:
+	if the noun is royalty themed, decide yes;
+	decide no.
+To execute (E - bag-feeding-royalty):
+	say "Your bag reacts to the royalty theme of [MediumDesc of the noun]!";
+	if game difficulty > a random number between 0 and 3:
+		say "reducing your intelligence!";
+		IntDown 1;
+	otherwise:
+		say "temporarily reducing your intelligence!";
+		increase temp_int_dam by 2.
+
+bag-feeding-party is a bag-feeding-effect.
+Definition: bag-feeding-party is appropriate:
+	if the noun is party themed, decide yes;
+	decide no.
+To execute (E - bag-feeding-party):
+	say "Your bag reacts to the [']party girl['] theme of the [ShortDesc of the noun] by ";
+	if game difficulty > a random number between 0 and 3:
+		say "reducing your intelligence!";
+		IntDown 1;
+	otherwise if alcohol fetish is 1:
+		say "increasing your blood's alcohol content!";
+		increase alcohol level;
+	otherwise:
+		say "temporarily reducing your intelligence!";
+		increase temp_int_dam by 2.
+
+bag-feeding-penis-theme is a bag-feeding-effect.
+Definition: bag-feeding-penis-theme is appropriate:
+	if diaper quest is 0 and the noun is penis themed, decide yes;
+	decide no.
+To execute (E - bag-feeding-penis-theme):
+	say "Your bag reacts to the [manly-penis] theme of the [MediumDesc of noun]! ";
+	if the mystical size of penis > min penis size: [#LXorDD]
+		SpecialPenisDown 1;
+	otherwise:
+		say "You feel a bit more [if the player is a pervert]perverted[otherwise]willing to consider deviant ideas[end if]...";
+		SexAddictUp 1.
+
+bag-feeding-vagina-theme is a bag-feeding-effect.
+Definition: bag-feeding-vagina-theme is appropriate:
+	if diaper quest is 0 and the noun is vagina themed and the player is possessing a vagina, decide yes;
+	decide no.
+To execute (E - bag-feeding-vagina-theme):
+	say "Your bag reacts to the vagina theme of the [MediumDesc of noun]! ";
+	VaginalSexAddictUp 1.
+
+bag-feeding-pregnancy-theme is a bag-feeding-effect.
+Definition: bag-feeding-pregnancy-theme is appropriate:
+	if diaper quest is 0 and the noun is pregnancy themed and pregnancy fetish is 1, decide yes;
+	decide no.
+To execute (E - bag-feeding-pregnancy-theme):
+	say "Your bag reacts to the pregnancy theme of the [MediumDesc of noun]! You can feel that [if the player is possessing a vagina]you are more fertile[otherwise]your body will become feminine at a faster rate[end if] now.";
+	increase the pregnancy rate of the player by 1.
+
+bag-feeding-anal-theme is a bag-feeding-effect.
+Definition: bag-feeding-anal-theme is appropriate:
+	if diaper quest is 0 and the noun is anal sex themed, decide yes;
+	decide no.
+To execute (E - bag-feeding-anal-theme):
+	say "Your bag reacts to the anal sex theme of the [MediumDesc of noun]! ";
+	AnalSexAddictUp 1.
+
+bag-feeding-oral-theme is a bag-feeding-effect.
+Definition: bag-feeding-oral-theme is appropriate:
+	if diaper quest is 0 and the noun is oral sex themed, decide yes;
+	decide no.
+To execute (E - bag-feeding-oral-theme):
+	say "Your bag reacts to the oral sex theme of the [MediumDesc of noun]! ";
+	OralSexAddictUp 1.
+
+bag-feeding-boob-theme is a bag-feeding-effect.
+Definition: bag-feeding-boob-theme is appropriate:
+	if diaper quest is 0 and the noun is boob themed and max breast size >= 5, decide yes;
+	decide no.
+To execute (E - bag-feeding-boob-theme):
+	say "Your bag reacts to the tits theme of the [MediumDesc of noun]! ";
+	TitfuckAddictUp 1.
+
+bag-feeding-cat-theme is a bag-feeding-effect.
+Definition: bag-feeding-cat-theme is appropriate:
+	if the noun is cat themed, decide yes;
+	decide no.
+To execute (E - bag-feeding-cat-theme):
+	say "Your bag reacts to the cat theme of the [MediumDesc of noun], ";
+	if game difficulty > a random number between 0 and 3:
+		say "reducing your dexterity!";
+		DexDown 1;
+	otherwise:
+		say "temporarily reducing your dexterity!";
+		increase temp_dex_dam by 2.
+
+bag-feeding-dog-theme is a bag-feeding-effect.
+Definition: bag-feeding-dog-theme is appropriate:
+	if the noun is dog themed, decide yes;
+	decide no.
+To execute (E - bag-feeding-dog-theme):
+	say "Your bag reacts to the dog theme of the [MediumDesc of noun], ";
+	DelicateUp 1.
+
+bag-feeding-bear-theme is a bag-feeding-effect.
+Definition: bag-feeding-bear-theme is appropriate:
+	if the noun is bear themed, decide yes;
+	decide no.
+To execute (E - bag-feeding-bear-theme):
+	say "Your bag reacts to the bear theme of the [MediumDesc of noun], ";
+	if game difficulty > a random number between 0 and 3:
+		say "reducing your strength!";
+		StrengthDown 1;
+	otherwise:
+		say "temporarily reducing your strength!";
+		increase temp_str_dam by 2.
+
+bag-feeding-cow-theme is a bag-feeding-effect.
+Definition: bag-feeding-cow-theme is appropriate:
+	if the noun is cow themed, decide yes;
+	decide no.
+To execute (E - bag-feeding-cow-theme):
+	say "Your bag reacts to the cow theme of the [MediumDesc of noun], ";
+	if game difficulty > a random number between 0 and 3:
+		say "reducing your strength!";
+		StrengthDown 1;
+	otherwise:
+		say "temporarily reducing your strength!";
+		increase temp_str_dam by 2.
+
+bag-feeding-horse-theme is a bag-feeding-effect.
+Definition: bag-feeding-horse-theme is appropriate:
+	if the noun is horse themed, decide yes;
+	decide no.
+To execute (E - bag-feeding-horse-theme):
+	say "Your bag reacts to the horse theme of the [MediumDesc of noun], ";
+	if game difficulty > a random number between 0 and 3:
+		say "reducing your strength!";
+		StrengthDown 1;
+	otherwise:
+		say "temporarily reducing your strength!";
+		increase temp_str_dam by 2.
+
+bag-feeding-elephant-theme is a bag-feeding-effect.
+Definition: bag-feeding-elephant-theme is appropriate:
+	if the noun is elephant themed, decide yes;
+	decide no.
+To execute (E - bag-feeding-elephant-theme):
+	say "Your bag reacts to the elephant theme of the [MediumDesc of noun], ";
+	if game difficulty > a random number between 0 and 3:
+		say "reducing your strength!";
+		StrengthDown 1;
+	otherwise:
+		say "temporarily reducing your strength!";
+		increase temp_str_dam by 2.
+
+bag-feeding-dinosaur-theme is a bag-feeding-effect.
+Definition: bag-feeding-dinosaur-theme is appropriate:
+	if the noun is dinosaur themed, decide yes;
+	decide no.
+To execute (E - bag-feeding-dinosaur-theme):
+	say "Your bag reacts to the dinosaur theme of the [MediumDesc of noun], ";
+	if game difficulty > a random number between 0 and 3:
+		say "reducing your strength!";
+		StrengthDown 1;
+	otherwise:
+		say "temporarily reducing your strength!";
+		increase temp_str_dam by 2.
+
+bag-feeding-bird-theme is a bag-feeding-effect.
+Definition: bag-feeding-bird-theme is appropriate:
+	if the noun is bird themed, decide yes;
+	decide no.
+To execute (E - bag-feeding-bird-theme):
+	say "Your bag reacts to the bird theme of the [MediumDesc of noun], ";
+	if game difficulty > a random number between 0 and 3:
+		say "reducing your dexterity!";
+		DexDown 1;
+	otherwise:
+		say "temporarily reducing your dexterity!";
+		increase temp_dex_dam by 2.
+
+bag-feeding-leopard-theme is a bag-feeding-effect.
+Definition: bag-feeding-leopard-theme is appropriate:
+	if the noun is leopard themed, decide yes;
+	decide no.
+To execute (E - bag-feeding-leopard-theme):
+	say "Your bag reacts to the leopard theme of the [MediumDesc of noun], ";
+	if game difficulty > a random number between 0 and 3:
+		say "reducing your dexterity!";
+		DexDown 1;
+	otherwise:
+		say "temporarily reducing your dexterity!";
+		increase temp_dex_dam by 2.
+
+bag-feeding-butterfly-theme is a bag-feeding-effect.
+Definition: bag-feeding-butterfly-theme is appropriate:
+	if the noun is butterfly themed, decide yes;
+	decide no.
+To execute (E - bag-feeding-butterfly-theme):
+	say "Your bag reacts to the butterfly theme of the [MediumDesc of noun], ";
+	if game difficulty > a random number between 0 and 3:
+		say "reducing your dexterity!";
+		DexDown 1;
+	otherwise:
+		say "temporarily reducing your dexterity!";
+		increase temp_dex_dam by 2.
+
+bag-feeding-bunny-theme is a bag-feeding-effect.
+Definition: bag-feeding-bunny-theme is appropriate:
+	if the noun is bunny themed, decide yes;
+	decide no.
+To execute (E - bag-feeding-bunny-theme):
+	say "Your bag reacts to the bunny theme of the [MediumDesc of noun], ";
+	if game difficulty > a random number between 0 and 3:
+		say "reducing your dexterity!";
+		DexDown 1;
+	otherwise:
+		say "temporarily reducing your dexterity!";
+		increase temp_dex_dam by 2.
+
+bag-feeding-heart-theme is a bag-feeding-effect.
+Definition: bag-feeding-heart-theme is appropriate:
+	if the noun is heart themed and the player is able to get horny, decide yes;
+	decide no.
+To execute (E - bag-feeding-heart-theme):
+	say "Your bag reacts to the heart theme of the [MediumDesc of noun]! You can hear your blood pumping in your ears as you feel yourself getting horny!";
+	arouse 3000.
 
 bag-feeding-discipline is a bag-feeding-effect.
-To execute (E - bag-feeding-discipline) on (C - a thing):
-	if C is impact play themed and the body soreness of the player is 0:
-		say "Your bag reacts to the impact play theme of the [ShortDesc of C]. An invisible paddle spanks you on the [AssDesc]!";
-		BodyRuin 1;
-		PainUp 1.
+Definition: bag-feeding-discipline is appropriate:
+	if the noun is impact play themed and the body soreness of the player < a random number between 1 and 10, decide yes;
+	decide no.
+To execute (E - bag-feeding-discipline):
+	say "Your bag reacts to the impact play theme of the [ShortDesc of noun]. An invisible paddle spanks you on the [AssDesc]!";
+	BodyRuin 1;
+	PainUp 10.
 
 bag-feeding-negative is a bag-feeding-effect.
-To execute (E - bag-feeding-negative) on (C - a thing):
-	if C is identified clothing and the raw-magic-modifier of C < 0:
-		say "Your bag reacts to the negative magic modifier of the [C]. You feel like some of the good luck you've saved up has faded away...";
-		increase the raw luck of the player by the raw-magic-modifier of C * 3.
+Definition: bag-feeding-negative is appropriate:
+	if the noun is identified clothing and the raw-magic-modifier of the noun < 0, decide yes;
+	decide no.
+To execute (E - bag-feeding-negative):
+	say "Your bag reacts to the negative magic modifier of the [noun]. You feel like some of the good luck you've saved up has faded away...";
+	increase the raw luck of the player by the raw-magic-modifier of the noun * 3.
+
+bag-feeding-cards is a bag-feeding-effect.
+Definition: bag-feeding-cards is appropriate:
+	if the noun is playing card themed, decide yes;
+	decide no.
+To execute (E - bag-feeding-cards):
+	say "Your bag reacts to the playing card theme of the [noun]. You feel like some of the good luck you've saved up has faded away...";
+	decrease the raw luck of the player by 4.
+
+bag-feeding-fire is a bag-feeding-effect.
+Definition: bag-feeding-fire is appropriate:
+	if the noun is fire themed and there is a worn destructible removable clothing, decide yes;
+	decide no.
+To execute (E - bag-feeding-fire):
+	let C be a random worn destructible removable clothing;
+	say "Your bag reacts to the fire theme of the [noun]. Your [C] bursts into flames and disappears!";
+	destroy C.
 
 bag-feeding-pee-time is a bag-feeding-effect.
-To execute (E - bag-feeding-pee-time) on (C - a thing):
-	if the player is bursting and the player is not fake bursting and C is yellow themed:
-		say "Your bag reacts to the yellow colour of the [ShortDesc of C]. You feel a bit more desperate to go to the loo...";
-		BladderUp 2.
+Definition: bag-feeding-pee-time is appropriate:
+	if the player is bursting and the player is not fake bursting and the noun is yellow themed, decide yes;
+	decide no.
+To execute (E - bag-feeding-pee-time):
+	say "Your bag reacts to the yellow colour of the [ShortDesc of noun]. You feel a bit more desperate to go to the loo...";
+	BladderUp 2.
 
 bag-feeding-pink-theme is a bag-feeding-effect.
-To execute (E - bag-feeding-pink-theme) on (C - a thing):
-	if C is pink themed and there is a worn pink themed bag of holding:
-		say "Your pink bag reacts strongly to the pink colour of the [ShortDesc of C]! ";
-		let hairDone be 0;
-		if diaper quest is 0 and frozen hair is 0:
-			if the redness of hair < 3 or the blondeness of hair < 3 or the brightness of hair < 3:
-				say "Your hair turns bright pink!";
-				now the redness of hair is 3;
-				now the brightness of hair is 3;
-				now the blondeness of hair is 3;
-				now hairDone is 1;
-			otherwise if there is a worn tattoo:
-				hair permanent check;
-				now hairDone is 1;
-		if hairDone is 0:
-			let item-list be a list of clothing;
-			repeat with X running through off-stage pink themed plentiful fetish appropriate clothing:
-				if X is actually summonable, add X to item-list; [We've done this a complicated way so that we only perform this expensive check if we are already sure it's an eligible item]
-			if the number of entries in item-list > 0:
-				sort item-list in random order;
-				let X be entry 1 of item-list;
-				say "Suddenly a [ShortDesc of X] shimmers into appearance on your body!";
-				summon X cursed with quest;
-			otherwise:
-				say "You feel more perverted...";
-				SexAddictUp 1.
+Definition: bag-feeding-pink-theme is appropriate:
+	if the noun is pink themed, decide yes;
+	decide no.
+To execute (E - bag-feeding-pink-theme):
+	say "Your bag reacts to the pink colour of the [ShortDesc of noun]. ";
+	let hairDone be 0;
+	if diaper quest is 0 and frozen hair is 0:
+		if the redness of hair < 3 or the blondeness of hair < 3 or the brightness of hair < 3:
+			say "Your hair turns bright pink!";
+			now the redness of hair is 3;
+			now the brightness of hair is 3;
+			now the blondeness of hair is 3;
+			now hairDone is 1;
+		otherwise if there is a worn tattoo:
+			hair permanent check;
+			now hairDone is 1;
+	if hairDone is 0:
+		let item-list be a list of clothing;
+		repeat with X running through off-stage pink themed plentiful fetish appropriate clothing:
+			if X is actually summonable, add X to item-list; [We've done this a complicated way so that we only perform this expensive check if we are already sure it's an eligible item]
+		if the number of entries in item-list > 0:
+			sort item-list in random order;
+			let X be entry 1 of item-list;
+			say "Suddenly a [ShortDesc of X] shimmers into appearance on your body!";
+			summon X cursed with quest;
+		otherwise:
+			say "You feel more perverted...";
+			SexAddictUp 1.
 
-bag-feeding-wet-diaper is a bag-feeding-effect.
-To execute (E - bag-feeding-wet-diaper) on (C - a thing):
-	if (C is wet diaper or (C is wet knickers and diaper quest is 1)) and the player is not incontinent and incontinence < the max-incontinence of the player:
-		say "Your bag reacts to the wetness! You feel a twinge behind your bladder as it weakens...";
-		increase incontinence by 1.
+bag-feeding-diaper is a bag-feeding-effect.
+Definition: bag-feeding-diaper is appropriate:
+	if the noun is diaper and the player is not bladder incontinent and the bladder-incontinence of the player < the max-bladder-incontinence of the player, decide yes;
+	decide no.
+To execute (E - bag-feeding-diaper):
+	say "Your bag reacts to the diaper! You feel a twinge behind your bladder as it weakens...";
+	SilentlyBladderIncontinenceUp 1.
 
 bag-feeding-dry-diaper is a bag-feeding-effect.
-To execute (E - bag-feeding-dry-diaper) on (C - a thing):
-	if C is clean diaper:
+Definition: bag-feeding-dry-diaper is appropriate:
+	if the noun is diaper:
 		let BG be a random worn bag of holding;
 		update upgrade target of BG;
-		if the upgrade-target of BG is diaper bag of holding or the upgrade-target of BG is baby diaper bag of holding:
-			say "Your bag reacts to the diaper!";
-			transform BG.
+		if the upgrade-target of BG is diaper bag of holding or the upgrade-target of BG is baby diaper bag of holding, decide yes;
+	decide no.
+To execute (E - bag-feeding-dry-diaper):
+	let BG be a random worn bag of holding;
+	say "Your bag reacts to the diaper!";
+	transform BG.
 
 bag-feeding-diaper-bag is a bag-feeding-effect.
-To execute (E - bag-feeding-diaper-bag) on (C - a thing):
-	if diaper messing >= 6 and C is diaper and (there is a worn diaper bag of holding or there is a worn baby diaper bag of holding):
-		let SD be a random off-stage soiled-diaper;
-		if SD is soiled-diaper:
-			now SD is in the location of the player;
-			DiaperPrint SD from C;
-			say "Your diaper bag reacts to the [ShortDesc of C]! It rumbles and then spits out a [SD] onto the ground!".
+Definition: bag-feeding-diaper-bag is appropriate:
+	if diaper messing >= 6 and the noun is diaper and (there is a worn diaper bag of holding or there is a worn baby diaper bag of holding), decide yes;
+	decide no.
+To execute (E - bag-feeding-diaper-bag):
+	let SD be a random off-stage soiled-diaper;
+	if SD is soiled-diaper:
+		now SD is in the location of the player;
+		DiaperPrint SD from the noun;
+		say "Your diaper bag reacts to the [ShortDesc of noun]! It rumbles and then spits out a [SD] onto the ground!".
 
 To compute BagFeedingEffect of (C - a thing):
-	repeat with E running through bag-feeding-effects:
-		execute E on C.
+	let E be a random appropriate bag-feeding-effect;
+	unless E is nothing, execute E.
 
 enema-backpack is a clothing. enema-backpack is unique. The printed name of enema-backpack is "[clothing-title-before]enema backpack[clothing-title-after]". The text-shortcut of enema-backpack is "eb". Figure of enema-backpack is the file "Items/Clothes/Upper/Special/enemabackpack1.png". enema-backpack can be enema-released.
 To decide which figure-name is clothing-image of (H - enema-backpack):

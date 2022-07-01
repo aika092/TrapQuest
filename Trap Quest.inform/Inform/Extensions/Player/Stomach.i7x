@@ -135,6 +135,7 @@ To ActualStomachUrineUp (X - a number):
 		increase the stomach-urine of the player by 1;
 		if X is 0:
 			SlowUrineTasteAddictUp 1;
+			trigger drink-urine-wisp-quest;
 			progress quest of piss-drinking-quest;
 			now cold turkey of urine is 0.
 

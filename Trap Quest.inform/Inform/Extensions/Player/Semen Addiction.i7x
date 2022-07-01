@@ -34,6 +34,22 @@ The player has a number called raw semen addiction. The raw semen addiction of t
 
 highest semen addiction is a number that varies.
 
+slowSemenAddiction is a number that varies.
+To SlowSemenAddictUp (X - a number):
+	let slowSemenAddictionLimit be 0;
+	if the semen addiction of the player > 4, increase slowSemenAddictionLimit by 1;
+	if the class of the player is cheerleader, increase slowSemenAddictionLimit by 1;
+	if the semen addiction of the player > 13, increase slowSemenAddictionLimit by 1;
+	if debugmode > 0, say "Semen addiction threshold is [slowSemenAddictionLimit] ticks.";
+	while X > 0:
+		decrease X by 1;
+		increase slowSemenAddiction by 1;
+		if debugmode > 0, say "[slowSemenAddiction - 1] --> [slowSemenAddiction].";
+		if slowSemenAddiction > slowSemenAddictionLimit:
+			if debugmode > 0, say "Semen addiction increased.";
+			now slowSemenAddiction is 0;
+			SemenAddictUp 1.
+
 creampieAddictCountdown is a number that varies.
 An all later time based rule (this is the creampie addict countdown rule):
 	if creampieAddictCountdown > 0, decrease creampieAddictCountdown by 1.

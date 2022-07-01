@@ -8,7 +8,7 @@ Definition: orc is dungeon dwelling:
 
 [Definition: orc is willing to urinate: decide yes.]
 
-[Definition: orc is dark skinned: decide yes.]
+Definition: orc is dark skinned: decide yes.
 
 [Definition: orc is raunchy: decide yes.]
 
@@ -64,7 +64,7 @@ Check taking pack of playing cards when the player is in Dungeon07:
 		if orc is in Dungeon07:
 			if orc is not interested, check perception of orc;
 			if orc is interested, say "[speech style of orc]'Hey! Hands off!'[roman type][line break]It looks like [NameDesc of orc] won't let you take those while [he of orc][']s here." instead;
-		otherwise if (orc is alive or orc is not permanently banished) and the player is not getting lucky:
+		otherwise if orc is alive or orc is not permanently banished:
 			if orc is alive, now orc is in Dungeon07;
 			otherwise set up orc;
 			say "[BigNameDesc of orc] appears in the doorway.";
@@ -86,7 +86,7 @@ To compute labour to (M - orc):
 	if M is regional and M is alive:
 		compute pregnancy clothing displacement;
 		let MD be a random maternity dress;
-		say "[PregFlav][if the father is in the location of the player]The [father][otherwise]The [father] appears almost as if on cue! [big he of M][end if] kneels down on one knee and delivers the beautiful mixed race human baby. [big he of M] takes it into [his of M] arms and begins to cradle it.[line break][first custom style]'A baby girl! [if the father is mating]A wonderful addition to our family[otherwise]My first child. I will remember this moment for ever[end if][if MD is not held]. Here, take this[end if].'[roman type][line break]";
+		say "[PregFlav][if the father is in the location of the player]The [father][otherwise]The [father] appears almost as if on cue! [big he of M][end if] kneels down on one knee and [if mythical creatures fetish is 1]you both watch as a disgusting pig's head begins to emerge from your vagina. This baby is just as much an orc as its father! You groan in despair as the half-pig baby slowly emerges from your womb[otherwise]delivers the beautiful mixed race human baby[end if]. [big he of M] takes it into [his of M] arms and begins to cradle it.[line break][first custom style]'A baby boy! [if the father is mating]A wonderful addition to our growing horde[otherwise]My first child. I will train him in the ways of orc culture, and when he comes of age, perhaps he will be a great enough leader lead an assault on a human settlement and kidnap all their women. We can dream[end if][if MD is not held]. Here, take this[end if].'[roman type][line break]";
 		if MD is not held:
 			blandify and reveal MD;
 			now MD is in the location of the player;
@@ -115,25 +115,6 @@ To say PerceptionFail of (M - orc):
 	now the boredom of M is 30;
 	now M is not interested. [This won't happen if we don't put it here because the orc has a unique boredom function that keeps him interested.]
 
-To say GroundPeeReaction of (M - orc):
-	if the player is in Dungeon07:
-		if diaper quest is 1:
-			if M is friendly:
-				say "[BigNameDesc of M] looks furious.[line break][speech style of M]'What are you doing?! This is my poker room, not your toilet! [if the player is upright]Get on your knees[otherwise]Stay right where you are[end if], you clearly need to be diapered and punished!'[roman type][line break]";
-				anger M;
-			otherwise:
-				say "[BigNameDesc of M] frowns angrily.[line break][speech style of M]'This is why you need to be in diapers!'[roman type][line break][if M is uninterested]Uh-oh...[end if]";
-				now M is interested;
-		otherwise:
-			if M is friendly:
-				say "[BigNameDesc of M] looks furious.[line break][speech style of M]'What are you doing?! This is a poker room, not a toilet! [if the player is upright]Get on your knees[otherwise]Stay right where you are[end if], I'm going to make you wish you never stepped foot in here!'[roman type][line break]";
-				anger M;
-			otherwise:
-				say "[BigNameDesc of M] frowns angrily.[line break][speech style of M]'You are an utter disgrace!'[roman type][line break][if M is uninterested]Uh-oh...[end if]";
-				now M is interested;
-	otherwise:
-		say "[speech style of M]'Hmph. At least it's not in my poker room. I hate it when people pee in my poker room.'[roman type][line break]".
-
 To say BecomesBoredFlav of (M - orc):
 	say "[BigNameDesc of M] seems to lose interest in you for now.".
 
@@ -154,7 +135,7 @@ To compute (M - a monster) stomping (N - orc):
 	say "[speech style of M]'Oh shit, I'm getting out of here!'[roman type][line break]";
 	if M is in the location of the player, say "[BigNameDesc of N] dodges a swipe from [NameDesc of M] and runs for the exit.";
 	otherwise say "You hear an orc's shout from [if N is nearby]nearby![otherwise]somewhere in the dungeon![end if]";
-	destroy N.
+	finally destroy N.
 
 To compute proposal leaving of (M - orc):
 	do nothing.
@@ -173,13 +154,15 @@ To anger (M - orc):
 	follow the orc trolls then leaves rule.
 
 To decide which number is the bimbo tolerance of (M - orc):
-	decide on 20.
+	decide on 21. [never becomes aggressive]
+To decide which number is the bab tolerance of (M - orc):
+	decide on 21. [never becomes aggressive]
 
 To say DisapprovalFlav of (M - orc):
 	say "You can literally see [NameDesc of M][']s [manly-penis] getting [one of]hard[or]harder and harder[stopping].[line break][speech style of M]'[one of]Ooh baby, you are looking fiiiine!'[or]Oh yeah, you're just begging for it, aren't you?'[in random order][roman type][line break]".
 
 To say BecomesAggressive of (M - orc):
-	say "[big he of M] takes an offensive stance![line break][speech style of M]'[one of]I can't take you seriously at all! We should be [if diaper quest is 1]disciplining you[otherwise]fucking[end if], not doing business.'[or]There's no time for shopping now, there's something much more important we must do first...'[in random order][roman type][line break]".
+	say "[big he of M] takes an offensive stance![line break][speech style of M]'I can't take you seriously at all! We should be [if diaper quest is 1]disciplining you[otherwise]fucking[end if], not playing cards.'[roman type][line break]".
 
 Report going:
 	if orc is guarding and orc is on-stage and orc is not in Dungeon07 and orc is not in the location of the player, bore orc.
@@ -255,13 +238,14 @@ To say LandingTaunt of (M - orc):
 	humiliate 50.
 
 To send (M - orc) home:
-	if M is not in Dungeon07:
-		if M is in the location of the player:
-			let D be the best route from the location of M to Dungeon07 through labyrinth rooms;
-			if D is a direction, say "[BigNameDesc of M] leaves to the [D].";
-		now M is in Dungeon07;
-	now M is guarding;
-	if M is interested, bore M.
+	if M is alive:
+		if M is not in Dungeon07:
+			if M is in the location of the player:
+				let D be the best route from the location of M to Dungeon07 through labyrinth rooms;
+				if D is a direction, say "[BigNameDesc of M] leaves to the [D].";
+			now M is in Dungeon07;
+		now M is guarding;
+		if M is interested, bore M.
 
 To compute default waiting of (M - orc):
 	say "[one of][BigNameDesc of M] waits patiently.[or][stopping]".
@@ -423,27 +407,32 @@ To compute SeductionGrind of (M - orc):
 		compute StrongSexProgress of M;
 	otherwise:
 		say "You allow [NameDesc of M] to grip you tightly and thrust [his of M] [DickDesc of M] up and down in between your [AssDesc][if the player is a pervert or the player is feeling submissive], and even push back to provide [him of M] with extra sensation[end if].[line break][speech style of M]'Yes, yes, YES!'[roman type][line break][BigNameDesc of M] cums hard, while [his of M] [LongDickDesc of M] is still pumping in and out of your crack!";
-		let C be the concealer of hips;
-		if C is nothing, now C is the at least partial concealer of hips;
-		if C is nothing, now C is a random top level ass protection clothing;
-		if C is nothing, now C is a random worn skirted clothing;
-		if C is semen-soak-appropriate clothing:
-			UnannouncedSquirt semen on C by (the semen load of M);
-		otherwise if bukkake fetish is 1:
-			UnannouncedSquirt semen on hips by (the semen load of M);
+		if M is wrapped:
+			say "The [semen] fills [his of M] condom to the brim.";
+			compute default condom filling of M;
 		otherwise:
-			UnannouncedSquirt semen on thighs by (the semen load of M);
-		orgasm satisfy M.
+			let C be the concealer of hips;
+			if C is nothing, now C is the at least partial concealer of hips;
+			if C is nothing, now C is a random top level ass protection clothing;
+			if C is nothing, now C is a random worn skirted clothing;
+			if C is semen-soak-appropriate clothing:
+				UnannouncedSquirt semen on C by (the semen load of M);
+			otherwise if bukkake fetish is 1:
+				UnannouncedSquirt semen on hips by (the semen load of M);
+			otherwise:
+				UnannouncedSquirt semen on thighs by (the semen load of M);
+		orgasm satisfy M;
+		progress quest of greet-quest.
 
 To say AssGropeFlav of (M - orc):
 	say "[speech style of M]'[one of]Oh my goodness, with such a glorious sight right in front of me, I can't help but indulge myself!'[or]Oh yes, now THIS is what the doctor ordered!'[or]Outstanding form.'[or]Yes, just like that!'[or]What a heavenly posterior!'[or]Absolutely divine!'[then at random][roman type][line break]".
 To compute ass grope of (M - orc):
 	if the sex-length of M >= 3:
 		say "[BigNameDesc of orc] [one of]spanks[or]slap[or]swats[in random order] you on the [AssDesc]!";
-		PainUp 1;
+		PainUp 10;
 	if the sex-length of M is 2:
 		say "[BigNameDesc of orc] grabs your [AssDesc] with both hands, and kneads it like it's made out of silly putty! [moderateHumiliateReflect]";
-	otherwise: [should be the turn before climax]
+	otherwise if the seductions-performed of hips > 0: [should be the turn before climax]
 		say "[BigNameDesc of orc] grabs you by the hips and pulls you in tighter, really shoving [his of M] [DickDesc of M] into your crack! This is now less of a dance and more full-on frottage!";
 		passively stimulate asshole from M.
 
@@ -579,6 +568,7 @@ To compute poker minigame:
 			say line break;
 			orc hand print orcHand;
 			say line break;
+		trigger poker-wisp-quest;
 		truncate cardsToBurn to 0 entries;
 		let pickingCards be true;
 		reset multiple choice questions;
@@ -712,10 +702,13 @@ To compute poker minigame:
 			let PV be PC / 4;
 			let PS be the remainder after dividing PC by 4;
 			if PV is 0: [7]
-				unless PV is listed in numbersExplained, say "[speech style of orc]'Sevens are to do with luck.'[roman type][paragraph break]";
+				unless PV is listed in numbersExplained, say "[speech style of orc]'Sevens are to do with spirits and the fates.'[roman type][paragraph break]";
 				if PS is 0:
 					say "[speech style of orc]'The [poker card of PC] makes the fates hate you. The next several times you need a lucky break, there will be a lower chance of you getting the outcome you want.'[roman type][line break]";
 					decrease the raw luck of the player by 20;
+				otherwise if PS is 1 and there is a nonstalking wisp:
+					say "[speech style of orc]'The [poker card of PC] summons a spirit to curse you... Unless you meet its demands.'[roman type][line break]";
+					deploy a wisp;
 				otherwise if PS is 3 and there is a worn tattoo and spade leaves tattoo is not worn:
 					say "[speech style of orc]'The [poker card of PC] gives you a special tattoo.'[roman type][line break]";
 					summon spade leaves tattoo;
@@ -889,17 +882,17 @@ To compute poker minigame:
 				if PS is 0 and there is worn actually cursable clothing:
 					say "[speech style of orc]'The [poker card of PC] curses your clothing.'[roman type][line break]";
 					let C be a random worn actually cursable clothing;
-					say "Your [C] glows dark as it becomes cursed!";
+					say "Your [C] glows dark as it [if C is blessed]loses its blessing[otherwise]becomes cursed[end if]!";
 					curse C;
 					compute summoned quest of C;
 				otherwise if PS is 1:
 					say "[speech style of orc]'The [poker card of PC] batters your body.'[roman type][line break]As soon as [he of orc] finishes speaking, an invisible hand swats you on the ass!";
-					PainUp 1;
+					PainUp 10;
 					say "It doesn't stop until you feel sore, and somewhat injured.";
 					BodyRuin 3;
 				otherwise if PS is 2 and there is worn upgradable clothing:
 					say "[speech style of orc]'The [poker card of PC] transforms your clothing.'[roman type][line break]";
-					let C be a random worn actually cursable clothing;
+					let C be a random worn upgradable clothing;
 					potentially transform C;
 				otherwise:
 					say "[speech style of orc]'The [poker card of PC] will make you feel uncontrollably horny.'[roman type][line break]";
@@ -994,7 +987,23 @@ To compute poker minigame:
 					otherwise:
 						say "[BigNameDesc of orc] waits a moment, and then hums with intrigue.[line break][speech style of orc]'It would seem that the [poker card of PC] can't find anything appropriate to make you wear right now.'[roman type][line break]";
 			otherwise if PV is 6: [King]
-				if diaper quest is 0 and (bondage protection is 1 or piercing-fetish is 1):
+				if game difficulty > 3:
+					unless PV is listed in numbersExplained, say "[speech style of orc]'Kings drain your stats.'[roman type][paragraph break]";
+					if PS is 0:
+						say "[speech style of orc]'The [poker card of PC] slightly drains your strength, dexterity and intelligence.'[roman type][line break]";
+						StrengthDown 1;
+						DexDown 1;
+						IntDown 1;
+					otherwise if PS is 1:
+						say "[speech style of orc]'The [poker card of PC] heavily drains your strength.'[roman type][line break]";
+						StrengthDown 3;
+					otherwise if PS is 2:
+						say "[speech style of orc]'The [poker card of PC] heavily drains your dexterity.'[roman type][line break]";
+						DexDown 3;
+					otherwise:
+						say "[speech style of orc]'The [poker card of PC] heavily drains your intelligence.'[roman type][line break]";
+						IntDown 3;
+				otherwise if diaper quest is 0 and (bondage protection is 1 or piercing-fetish is 1):
 					unless PV is listed in numbersExplained, say "[speech style of orc]'Kings give you new piercings.'[roman type][paragraph break]";
 					let P be a random eligible piercing;
 					if P is piercing:
@@ -1035,12 +1044,12 @@ To compute poker minigame:
 				unless PV is listed in numbersExplained, say "[speech style of orc]'Aces have unique, rather troublesome effects, I'm afraid.'[roman type][paragraph break]";
 				if PS is 0:
 					if diaper quest is 0 and pimp is alive and the times-met of pimp > 0 and portal-hotpants is class summonable:
-						say "[speech style of orc]'The [poker card of PC] makes [NameDesc of pimp] think that you owe [him of pimp] lots of money. And... it gives [him of pimp] a unique way to sell your body for sex, without even asking your permission.'[roman type][line break]";
+						say "[speech style of orc]'The [poker card of PC] makes [NameDesc of pimp] [speech style of orc]think that you owe [him of pimp] lots of money. And... it gives [him of pimp] a unique way to sell your body for sex, without even asking your permission.'[roman type][line break]";
 						class summon portal-hotpants;
 						if max breast size >= 5 and portal-bra is actually summonable:
 							summon portal-bra;
 							say "The hotpants are immediately followed by a matching chestplate!";
-						say "[variable custom style]No way... surely this doesn't mean... that my body parts are... mounted on the statuettes in [NameDesc of pimp][']s room?![roman type][line break]";
+						say "[variable custom style]No way... surely this doesn't mean... that my body parts are... mounted on the statuettes in [NameDesc of pimp][speech style of orc][']s room?![roman type][line break]";
 					otherwise:
 						say "[speech style of orc]'The [poker card of PC] summons a new, err, [']friend['] for you.'[roman type][line break]";
 						let M be a random horny-wench;
@@ -1095,7 +1104,7 @@ To compute poker minigame:
 					otherwise:
 						teleport to Dungeon31;
 			add PV to numbersExplained;
-	if orc is in the location of the player, say "[speech style of orc]'Well, that's that, for now. [one of]The poker table will need time to replenish its energy, so come back later for another round[or]I eagerly await our next match[stopping].'[roman type][line break]";
+	if orc is in the location of the player, say "[line break][speech style of orc]'Well, that's that, for now. [one of]The poker table will need time to replenish its energy, so come back later for another round[or]I eagerly await our next match[stopping].'[roman type][line break]";
 	now orc is not playing-poker-badly;
 	now temporaryYesNoBackground is Figure of small image.
 

@@ -42,6 +42,7 @@ To trigger (Y - a pink-smoke-pad):
 	now the location of Y is smoky;
 	update backdrop positions;
 	now Y is not untriggered;
+	now Y is triggered;
 	now Y is revealed.
 
 To compute reset cooldown of (T - a pink-smoke-pad):

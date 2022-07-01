@@ -173,21 +173,23 @@ To penis orgasm shamefully:
 	if the player is upright, try kneeling.
 
 To punish shameful male orgasm:
-	if shrink tg > 1 and the size of penis <= min penis size:
-		say DefaultSexChangeFlav;
-		say "The fact that this is happening as you shudder through yet another shameful orgasm [if the player is not a pervert]merely rubs salt in the wound[otherwise]makes the process feel immensely submissive and pleasurable[end if], as if confirming that you deserve this.";
-		sexchange the player;
-	otherwise if the number of worn chastity cages is 0 or a random number between 1 and 5 > 3:
-		if the mystical size of penis > min penis size and the latex-transformation of the player <= 3:
-			SilentlySpecialPenisDown 1; [#LXorDD]
-			say "The shameful nature of your orgasm makes [one of]your feel less masculine. You look down and see that you now have[or]your [player-penis] shrink into[stopping] a [mystical ShortDesc of penis].";
-		slowSexAddictUp 1 + the number of live things penetrating face;
-	otherwise:
-		say "[one of]You expected to feel a bit light-headed after, but you don't. [or][stopping]Your [random worn chastity cage] pulses softly.";
-	if diaper quest is 1, progress quest of asshole-presenting-quest;
-	if the player is gendered male and the penetrativevirgin of the player is 1 and pink sissy bow is off-stage and the player is not in a predicament room and pink sissy bow is actually summonable and (asshole is actually occupied or there is worn sissifying clothing):
-		summon pink sissy bow cursed;
-		say "Suddenly, a [MediumDesc of pink sissy bow] appears in your hair! Clearly you've been acting too much like a sissy...".
+	if the player is not in a predicament room:
+		if (shrink tg > 1 and the size of penis <= min penis size) or (ritual-beads is worn and the player is ready for event tg):
+			if ritual-beads is worn, say "[BigNameDesc of ritual-beads] react strongly to your orgasm!";
+			say DefaultSexChangeFlav;
+			say "The fact that this is happening as you shudder through yet another shameful orgasm [if the player is not a pervert]merely rubs salt in the wound[otherwise]makes the process feel immensely submissive and pleasurable[end if], as if confirming that you deserve this.";
+			sexchange the player;
+		otherwise if the number of worn chastity cages is 0 or a random number between 1 and 5 > 3:
+			if the mystical size of penis > min penis size and the latex-transformation of the player <= 3:
+				SilentlySpecialPenisDown 1; [#LXorDD]
+				say "The shameful nature of your orgasm makes [one of]you feel less masculine. You look down and see that you now have[or]your [player-penis] shrink into[stopping] a [mystical ShortDesc of penis].";
+			slowSexAddictUp 1 + the number of live things penetrating face;
+		otherwise:
+			say "[one of]You expected to feel a bit light-headed after, but you don't. [or][stopping]Your [random worn chastity cage] pulses softly.";
+		if diaper quest is 1, progress quest of asshole-presenting-quest;
+		if the player is gendered male and the penetrativevirgin of the player is 1 and pink sissy bow is off-stage and pink sissy bow is actually summonable and (asshole is actually occupied or there is worn sissifying clothing):
+			summon pink sissy bow cursed;
+			say "Suddenly, a [MediumDesc of pink sissy bow] appears in your hair! Clearly you've been acting too much like a sissy...".
 
 To say shameful tip:
 	say "[one of][newbie style]Newbie tip: You had a shameful orgasm! These will increase sex addiction[if the player is possessing a penis] and reduce the size of your penis[end if]. In other words, avoid them! You can masturbate to reduce your arousal, which makes it less likely you'll orgasm from something else.[roman type][line break][or][stopping]".
@@ -411,6 +413,10 @@ This is the monster orgasm cutscene rule:
 	if M is monster and image cutscenes > 0, get orgasm image of M in a random fuckhole penetrated by M.
 The monster orgasm cutscene rule is listed last in the orgasm resolution rules.
 
+This is the orgasm wisp rule:
+	trigger orgasm-wisp-trigger.
+The orgasm wisp rule is listed last in the orgasm resolution rules.
+
 This is the drill orgasm cutscene rule:
 	let D be a random drill pole trap penetrating a fuckhole;
 	if D is a thing, cutshow figure of pole cutscene 4 for D.
@@ -448,15 +454,26 @@ This is the BBC orgasm resolution rule:
 	if interracial fetish is 1:
 		repeat with M running through monsters penetrating a body part:
 			if M is dark skinned:
-				if a random number between 2 and 12 > the raw bbc addiction of the player, BBCAddictUp 1;
 				if there is a worn tattoo:
 					let T be a random interracial themed drawable tattoo;
-					if T is tattoo:
+					if T is a tattoo:
+						let O be 100;
+						let LDT be the list of interracial themed drawable tattoos;
+						sort LDT in random order;
+						repeat with DT running through LDT: [find the least outrageous one]
+							let X be the initial outrage of DT;
+							if X < O:
+								now T is DT;
+								now O is X;
 						say "[bold type]A [T] [bold type]shimmers into existence on your skin![roman type][line break]";
 						summon T;
 						try examining T;
+					otherwise:
+						BBCAddictUp 1; [no tats left. Do it raw]
+				otherwise:
+					if a random number between 5 and 25 > the raw bbc addiction of the player, BBCAddictUp 1;
 			otherwise if M is human:
-				if a random number between 1 and 4 < the raw bbc addiction of the player, BBCAddictDown 1.
+				if a random number between -1 and 7 < the raw bbc addiction of the player, BBCAddictDown 1.
 The BBC orgasm resolution rule is listed last in the orgasm resolution rules.
 
 [This is the girls pee when they orgasm rule:
@@ -478,7 +495,7 @@ This is the hentai orgasm resolution rule:
 		let N be bottom level lactation cover;
 		let M be the milk volume of breasts / 5;
 		say "Your nipples start to spontaneously squirt milk into [if N is clothing]your [printed name of N][otherwise]a puddle on the floor[end if].[line break][variable custom style][if the bimbo of the player < 8]Gross![otherwise]Uh-oh![end if][roman type]";
-		say "[one of][line break][variable custom style]Good grief! That was a most peculiar feeling![roman type][line break][or][line break][variable custom style]Wow, that was a strange coincidence! I hope.[roman type][line break][or]Once again, you seem to squirt milk [i]as[/i] you climaxed.[line break][variable custom style]Huh! I thought that only happened in hentai fiction![roman type][line break]I hope that's not going to happen [i]every[/i] time![or]Oh, man... again? You feel your face turn red.[line break][variable custom style] I think my boobs have been turned into helplessly-squirting milk dispensers when I come! Surely, not? Please?[roman type][line break][or]Oh, no![line break][variable custom style]It's true: each time I come, my boobies squirt milky goodness![roman type][line break]Worse, you can't help but privately thrill at the feel of the thin fluid squirting from your so-sensitive and swollen nips![or][line break][variable custom style]Oooh, yesss! Squirt, squirt! So good! [roman type][line break]Uh... you feel your face flush pink in shame at just how much you enjoyed that sensation![or][line break][variable custom style]Here we go again - yum![roman type][line break]So I ejaculate milk from my boobies now? So what? Is it really such a big deal?[roman type] You feel the warm milk running wetly down your swollen boobs.[or][line break][variable custom style]I love my milky boobs.[roman type][line break][stopping][roman type][line break]";
+		say "[one of][line break][variable custom style]Good grief! That was a most peculiar feeling![roman type][line break][or][line break][variable custom style]Wow, that was a strange coincidence! I hope.[roman type][line break][or]Once again, you seem to squirt milk [i]as[/i] you climaxed.[line break][variable custom style]Huh! I thought that only happened in hentai fiction! I hope that's not going to happen [i]every[/i] time![roman type][line break][or]Oh, man... again? You feel your face turn red.[line break][variable custom style] I think my boobs have been turned into helplessly-squirting milk dispensers when I come! Surely, not? Please?[roman type][line break][or]Oh, no![line break][variable custom style]It's true: each time I come, my boobies squirt milky goodness![roman type][line break]Worse, you can't help but privately thrill at the feel of the thin fluid squirting from your so-sensitive and swollen nips![or][line break][variable custom style]Oooh, yesss! Squirt, squirt! So good! [roman type][line break]Uh... you feel your face flush pink in shame at just how much you enjoyed that sensation![or][line break][variable custom style]Here we go again - yum![roman type][line break]So I ejaculate milk from my boobies now? So what? Is it really such a big deal?[roman type] You feel the warm milk running wetly down your swollen boobs.[or][line break][variable custom style]I love my milky boobs.[roman type][line break][stopping][roman type][line break]";
 		[moderateHumiliate;]
 		if N is clothing:
 			AnnouncedExpel milk on N by M;

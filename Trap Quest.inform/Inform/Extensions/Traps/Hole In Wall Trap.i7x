@@ -4,9 +4,6 @@ hole-in-wall is a trap. The printed name of hole-in-wall is "[TQlink of item des
 
 Figure of hole is the file "Env/MultiFloor/hole1.jpg".
 
-To decide which figure-name is the examine-image of (G - hole-in-wall):
-	decide on figure of hole.
-
 To say ExamineDesc of (C - hole-in-wall):
 	say "There is a medium sized hole in one wall a couple feet above the ground. [if the times-stuck of C is 0]You can see a shiny golden ring sparkling in the darkness through the hole. [end if]You would struggle to crawl through but it might be possible.".
 
@@ -18,8 +15,6 @@ The holeinwall prevents standing rule is listed in the ability to stand rules.
 
 Definition: hole-in-wall is father material: decide yes.
 
-To say StickyTriggerFlav of (T - hole-in-wall):
-	say "You find yourself sliding straight for the hole in the opposite wall at an alarming speed!".
 
 To say unique-verb-desc of (T - hole-in-wall):
 	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say " [link][bracket]enter[close bracket][as]enter [text-shortcut of T][end link]".
@@ -82,6 +77,7 @@ HoleEntering is an action applying to one thing.
 Check HoleEntering:
 	if the noun is warp portal, try entering the noun instead;
 	if the noun is not hole-in-wall, say "This verb is for entering holes in walls." instead;
+	if the hole-in-wall-scene of woman-player > 0 and woman-player is in HoleInWall, say "The hole is already occupied!" instead;
 	if the player is at least partially immobile, say "You're currently immobile!" instead;
 	if the player is upright or the player is flying, say "You'd need to be on your knees." instead;
 	allocate 3 seconds;
@@ -93,15 +89,45 @@ Carry Out HoleEntering:
 
 Understand "climb through [something]", "climb into [something]", "crawl into [something]", "climb in [something]", "crawl in [something]", "crawl through [something]" as HoleEntering.
 
+To say StickyTriggerFlav of (T - hole-in-wall):
+	now T is revealed;
+	say "You find yourself sliding straight for the hole in the opposite wall at an alarming speed!";
+	if diaper quest is 1 and hole-in-wall-scene of woman-player is 0 and the woman-bimbo of woman-player is 5 and the player is a june 2022 diaper donator and woman-player is relaxed redeploy appropriate:
+		now woman-player is in HoleInWall;
+		now the woman-status of woman-player is 25;
+		now the hole-in-wall-scene of woman-player is 1;
+		say "[bold type]In the hole in the wall in front of you, someone is stuck. You can't see their head, but their lower half consists of pink frilly socks and an absolutely massive diaper with a childish pattern[if diaper messing > 6]. At their feet, two empty enema syringes make it clear that their belly is full of water[end if].".
+
+To say StickyTriggerFail of (T - hole-in-wall):
+	say ". You manage to avoid falling over!";
+	now T is revealed;
+	if diaper quest is 1 and hole-in-wall-scene of woman-player is 0 and the woman-bimbo of woman-player is 5 and the player is a june 2022 diaper donator and woman-player is relaxed redeploy appropriate:
+		now woman-player is in HoleInWall;
+		now the woman-status of woman-player is 25;
+		now the hole-in-wall-scene of woman-player is 1;
+		say "[bold type]In the hole in the wall in front of you, someone is stuck. [roman type]You can't see their head, but their lower half consists of pink frilly socks and an absolutely massive diaper with a childish pattern[if diaper messing >= 7]. At their feet, two empty enema syringes make it clear that their belly is full of water[end if].".
+
 To trigger (Y - hole-in-wall):
-	let R be a random number between 2 and (50 - (the times-stuck of Y * 20));
-	if the largeness of breasts > 15:
-		say "Fortunately your breasts are just too big to fit through the hole and act as airbags as they cushion your collision with the wall.";
-	otherwise if R > the dexterity of the player:
-		say "Your front half crashes through the hole before you can stop yourself! You try to pull backward, but your [if the largeness of breasts > 3][BreastDesc][otherwise]shoulders[end if] are just too wide, you can't get back out! You try to go forward but your [if the thickness of hips > 4 and the total volume of hips > 4][MediumDesc of hips] are[otherwise]butt is[end if] too big. [HoleTrappedFlav]";
-		compute HoleInWallEntrance;
+	if the hole-in-wall-scene of woman-player >= 1 and woman-player is in HoleInWall:
+		say "And you're heading straight for them! Your face smashes straight into the back of that ultra-thick padding. Fortunately it's dry. For now.";
+		let H be a random worn headgear;
+		if H is headgear and the player is getting unlucky:
+			say "[bold type][BigNameDesc of H] [bold type]has somehow got stuck on some tough stray fibres on the diaper! [roman type]It won't budge! Until you remove [NameDesc of H] or manage to pry it loose, your face is stuck smushed into the seat of the diaper in front of you! [GotUnluckyFlav][line break]To make things worse, the person stuck in the wall starts shaking their butt in panic, repeatedly smushing their padding into your face, and making it impossible for you to carefully detangle [NameDesc of H] from the diaper. [bold type]Until the person gets rescued from being stuck in the wall, you won't able to detangle [NameDesc of H][bold type]![roman type][line break]";
+			now H is stuck;
+		if the player is getting unlucky:
+			say "[if there is worn stuck headgear]Double [end if]Uh-oh - before you can steady yourself and pull yourself away from the diaper, a lot happens! [GotUnluckyFlav]";
+			compute DiaperFacesitStart of Y;
+			now the hole-in-wall-scene of woman-player is 2;
+		say "You can [bold type]pull[roman type] on the person in the wall to try and help them get out, if you like.";
 	otherwise:
-		say "You [if the times-stuck of Y > 0]are ready for it this time and [end if]manage to raise your hands in a way that prevents you from falling through the hole. Phew!".
+		let R be a random number between 2 and (50 - (the times-stuck of Y * 20));
+		if the largeness of breasts > 15:
+			say "Fortunately your breasts are just too big to fit through the hole and act as airbags as they cushion your collision with the wall.";
+		otherwise if R > the dexterity of the player:
+			say "Your front half crashes through the hole before you can stop yourself! You try to pull backward, but your [if the largeness of breasts > 3][BreastDesc][otherwise]shoulders[end if] are just too wide, you can't get back out! You try to go forward but your [if the thickness of hips > 4 and the total volume of hips > 4][MediumDesc of hips] are[otherwise]butt is[end if] too big. [HoleTrappedFlav]";
+			compute HoleInWallEntrance;
+		otherwise:
+			say "You [if the times-stuck of Y > 0]are ready for it this time and [end if]manage to raise your hands in a way that prevents you from falling through the hole. Phew!".
 
 To say HoleTrappedFlav:
 	say "[one of]You're trapped like this[or]You're once again trapped[stopping] until someone comes and helps you out! You could try to escape by using [bold type][TQlink]resist[TQdlink][roman type] but if you make too much noise you'll probably just attract even more attention to yourself! Except for that, all you can do is [bold type][TQlink]wait[TQdlink][roman type] and hope that whoever does walk by next decides to rescue you.".
@@ -120,8 +146,8 @@ Check resisting when the location of the player is HoleInWall:
 	if hole-in-wall is not penetrating a fuckhole:
 		say "You throw yourself back and forth as much as you can. It's not quiet, but it's your best chance of escape.";
 		let D be a random number between 1 and the dexterity of the player;
-		let H be a random number between 1 and 50;
-		if debuginfo > 0, say "[input-style]Escape check: Dexterity roll d[dexterity of the player] ([D]) | ([H].5) d50 Difficulty roll[roman type][line break]";
+		let H be a random number between 1 and 100;
+		if debuginfo > 0, say "[input-style]Escape check: Dexterity roll d[dexterity of the player] ([D]) | ([H].5) d100 Difficulty roll[roman type][line break]";
 		if D > H:
 			allocate 6 seconds;
 			say "All of a sudden, your body seems to manage to find the perfect orientation, and you begin to make progress. Within a few moments, you've escaped![line break][variable custom style]I'm free![roman type][line break]";
@@ -149,9 +175,8 @@ To HoleWait:
 	if hole-in-wall-turns >= 11:
 		let M be a random alive robobellboy;
 		if diaper quest is 0 and (tentacle fetish is 0 or inhuman pregnancy < 2) and composed-explorer is summon-available and composed-explorer is off-stage, now M is composed-explorer;
-		if M is nothing:
-			now M is a random robobellboy;
-			set up M;
+		if M is nothing, now M is a random robobellboy;
+		set up M;
 		now M is in the source-room of the location of the player;
 		dislodge hole-in-wall;
 		calm M;
@@ -289,7 +314,7 @@ To compute punishment of (P - hole-tattoo):
 	now the priority of P is 1;
 	summon princess-tattoo;
 	say "All of a sudden you hear a low electric buzzing![line break][variable custom style]That can't be good. [roman type][line break]Suddenly a sharp pain hits your lower back!";
-	PainUp 1;
+	PainUp 10;
 	say "You [if the delicateness of the player < 9]begrudgingly [end if]hold perfectly still as the stranger gives you a tramp stamp tattoo! When it is complete, you can feel the magic inside the ink come alive. Not only can you feel that it is affecting your body and mind, but even though you can't physically see the tattoo you can see a picture of it clearly in your inner mind.";
 	try examining princess-tattoo.
 
@@ -308,7 +333,7 @@ To compute punishment of (P - hole-piercing):
 	if there is a worn clitoris piercing, now C is clitoris lead;
 	summon C cursed with persistent quest;
 	say "Suddenly, a hot burning sensation!";
-	PainUp 2;
+	PainUp 20;
 	say "You can't help but scream in pain as [if C is clitoris lead]it is heated up and a [ShortDesc of C] is attached to it[otherwise]your clitoris is pierced with a burning hot needle and a [ShortDesc of C] is slotted inside[end if].[line break][variable custom style][if the bimbo of the player < 12]This is not good.[otherwise]Uh-oh, I think I might be in a bit of a pickle here! *giggle*[end if][roman type][line break]";
 	say FullExamineDesc of C.
 
@@ -325,7 +350,7 @@ To compute punishment of (P - hole-plug):
 		if the size of C > 10, now the size of C is 10;]
 		say "Suddenly you feel a hand groping your butt![line break][variable custom style][if the delicateness of the player < 8]What the fuck, get off of me![otherwise]Who's this?[end if][roman type][line break]The hand [if there is worn total protection clothing]quickly pulls your [list of worn total protection clothing] out of the way and then [end if]begins to slowly massage your [asshole] with a thumb.[line break][variable custom style][if the anal sex addiction of the player > 4 or (diaper quest is 1 and the player is a pervert)]Ooh, that feels good...[otherwise]No, get away from there![end if][roman type][line break]The thumb retreats and then something a lot harder and larger is pressed against your entrance. Your sphincter stretches around its bulbous body as it is slowly and smoothly pushed inside. You are now wearing a [ShortDesc of C]!";
 		repeat with D running through worn total protection clothing:
-			if D is zippable:
+			if D is crotch-zipped:
 				ZipDown D;
 			otherwise if D is displacable:
 				displace D;
@@ -346,6 +371,7 @@ To decide which number is the girth of (H - hole-in-wall):
 	decide on gatling-girth of H.
 
 To compute punishment of (P - hole-gatling-fuck):
+	let M be a random ultimate-lesson-actor;
 	now gatling-girth of hole-in-wall is 2;
 	let F be asshole;
 	if diaper quest is 1:
@@ -356,7 +382,7 @@ To compute punishment of (P - hole-gatling-fuck):
 			now C is in the location of the player;
 			dislodge C;
 			now C is a random thing filling F;
-		say "[bold type]You've made too much noise![roman type] A large amount of noise begins to grow from behind you, and soon you can hear the indistinct chatter of a huge group of [men of shopkeeper].";
+		say "[bold type]You've made too much noise![roman type] A large amount of noise begins to grow from behind you, and soon you can hear the indistinct chatter of a huge group of [men of M].";
 		let D be a random worn diaper;
 		say "Then out of nowhere, you feel someone pushing an enema syringe into your [asshole]![variable custom style]Nooo![roman type][line break]";
 		if D is diaper:
@@ -382,13 +408,13 @@ To compute punishment of (P - hole-gatling-fuck):
 		choose a sex method;
 		if targeted-body-part is vagina and the number of pussy covering untearable clothing is 0, now F is vagina;
 		if F is asshole and the player is possessing a vagina and pregnancy fetish is 1 and a random number between 1 and 2 is 1 and the number of pussy covering untearable clothing is 0, now F is vagina; [more chance to be vaginal if you like pregnancy]
-		say "[bold type]You've made too much noise![roman type] A large amount of noise begins to grow from behind you, and soon you can hear the indistinct chatter of a huge group of [men of shopkeeper]. Then out of nowhere, you feel someone gripping you by the hips![line break][variable custom style]Maybe they're going to help pull me out?[roman type][line break]";
+		say "[bold type]You've made too much noise![roman type] A large amount of noise begins to grow from behind you, and soon you can hear the indistinct chatter of a huge group of [men of M]. Then out of nowhere, you feel someone gripping you by the hips![line break][variable custom style]Maybe they're going to help pull me out?[roman type][line break]";
 		let C be a random worn top level protection clothing;
 		if F is asshole, now C is a random worn top level ass protection clothing;
-		say "Your question is answered as the hands begin to [if C is clothing]pull at your clothing[otherwise]find their way towards your [variable F][end if].[line break][variable custom style]No, [he of shopkeeper][']s going to fuck me![roman type][line break]";
+		say "Your question is answered as the hands begin to [if C is clothing]pull at your clothing[otherwise]find their way towards your [variable F][end if].[line break][variable custom style]No, [he of M][']s going to fuck me![roman type][line break]";
 		while C is clothing:
 			if C is displacable:
-				say "The anonymous [man of shopkeeper] [DisplacesFlav of C].";
+				say "The anonymous [man of M] [DisplacesFlav of C].";
 				displace C;
 			otherwise:
 				say "The unseen hands rip away your [C]!";
@@ -403,40 +429,59 @@ To compute punishment of (P - hole-gatling-fuck):
 			dislodge C;
 			now C is a random thing filling F;
 	let men-fucked be 0;
-	now hole-in-wall is penetrating F;
+	if diaper quest is 1, now hole-in-wall is penetrating F;
+	otherwise now M is penetrating F;
 	let D be a random worn diaper;
-	let HIWT be 10;
-	if D is diaper, now HIWT is 13;
+	let HIWT be 13;
+	if D is diaper, now HIWT is 17;
 	while hole-in-wall-turns < HIWT and the player is in HoleInWall and delayed fainting is 0:
 		if men-fucked is 0:
-			say "Soon you feel [if D is diaper]someone thrusting their hips back and forth against your squelchy padding[otherwise]a rock-hard [manly-penis] pushing against your [variable F]. There's absolutely nothing you can do as it squeezes its way in and starts pumping in and out[end if]. The faceless [man of shopkeeper] quickly hits a very fast pace and [if diaper quest is 1]keeps going until [he of shopkeeper] can hear you squealing with humiliation through the wall[otherwise]must really enjoy it because within seconds [he of shopkeeper] is ejaculating[end if][if diaper quest is 0 and D is diaper] inside of you! You feel [semen] shoot into your [ShortDesc of D][otherwise if diaper quest is 0] inside of you! You feel [semen] shoot into your [variable F][end if].";
+			say "Soon you feel [if D is diaper]someone thrusting their hips back and forth against your squelchy padding[otherwise]a rock-hard [manly-penis] pushing against your [variable F]. There's absolutely nothing you can do as it squeezes its way in and starts pumping in and out[end if]. The faceless [man of M] quickly hits a very fast pace and [if diaper quest is 1]keeps going until [he of M] can hear you squealing with humiliation through the wall[otherwise]must really enjoy it because within seconds [he of M] is ejaculating[end if][if diaper quest is 0 and D is diaper] inside of you! You feel [semen] shoot into your [ShortDesc of D][otherwise if diaper quest is 0] inside of you! You feel [semen] shoot into your [variable F][end if].";
 		otherwise if D is diaper:
-			say "[one of]Another [man of shopkeeper] takes [his of shopkeeper] place[or]You feel another crotch bulge press against your [buttcheeks][or]Yet another [man of shopkeeper] joins in[or]The [man of shopkeeper]ly chatter in the [location of hole-in-wall] is still just as loud as ever, and another [manly-penis] pokes at your padding[then at random]! You [if the player is not a pervert][one of]grimace[or]squeal[or]groan[or]scrunch your eyes[or]growl[in random order][otherwise if the player is not a nympho][one of]squirm[or]shudder[or]curl your toes[or]can't help but moan[in random order][otherwise][one of]coo[or]sigh with pleasure[or]moan lewdly[or]squeal with glee[in random order][end if] as [one of]the anonymous [man of shopkeeper][or]the next stranger[or]the nameless assailant[or]your new unnamed partner[or]the mystery [man of shopkeeper][in random order] [one of]starts humping against[or]starts thrusting into[or]moves [his of shopkeeper] hips back-and-forth[or]dry-humps[in random order] your [one of]soggy[or]squelchy[or]soiled[in random order] padding. [if diaper quest is 0][one of]Just like the [man of shopkeeper] before [him of shopkeeper][or]Again[or]Just like before[or]Once again[or]Just like [his of shopkeeper] fellow quick-trigger friends[cycling] it only takes [him of shopkeeper] [one of]about ten thrusts[or]a few moments[or]a matter of seconds[in random order] [one of]until [he of shopkeeper] is filling your diaper with [his of shopkeeper] [semen][or]before [he of shopkeeper] is giving your padding another helping of [semen][or]before [he of shopkeeper] climaxes inside your padding[or]and then suddenly [he of shopkeeper] is finishing inside your diaper[in random order][otherwise][one of]Just like the [man of shopkeeper] before [him of shopkeeper][or]Again[or]Just like before[or]Once again[cycling] [he of shopkeeper] spends a few seconds [one of]having fun before releasing you[or]doing this before moving on[or]teasing you and then backs off to make room for somebody else[cycling][end if].";
+			say "[one of]Another [man of M] takes [his of M] place[or]You feel another crotch bulge press against your [buttcheeks][or]Yet another [man of M] joins in[or]The [man of M]ly chatter in the [location of hole-in-wall] is still just as loud as ever, and another [manly-penis] pokes at your padding[then at random]! You [if the player is not a pervert][one of]grimace[or]squeal[or]groan[or]scrunch your eyes[or]growl[in random order][otherwise if the player is not a nympho][one of]squirm[or]shudder[or]curl your toes[or]can't help but moan[in random order][otherwise][one of]coo[or]sigh with pleasure[or]moan lewdly[or]squeal with glee[in random order][end if] as [one of]the anonymous [man of M][or]the next stranger[or]the nameless assailant[or]your new unnamed partner[or]the mystery [man of M][in random order] [one of]starts humping against[or]starts thrusting into[or]moves [his of M] hips back-and-forth[or]dry-humps[in random order] your [one of]soggy[or]squelchy[or]soiled[in random order] padding. [if diaper quest is 0][one of]Just like the [man of M] before [him of M][or]Again[or]Just like before[or]Once again[or]Just like [his of M] fellow quick-trigger friends[cycling] it only takes [him of M] [one of]about ten thrusts[or]a few moments[or]a matter of seconds[in random order] [one of]until [he of M] is filling your diaper with [his of M] [semen][or]before [he of M] is giving your padding another helping of [semen][or]before [he of M] climaxes inside your padding[or]and then suddenly [he of M] is finishing inside your diaper[in random order][otherwise][one of]Just like the [man of M] before [him of M][or]Again[or]Just like before[or]Once again[cycling] [he of M] spends a few seconds [one of]having fun before releasing you[or]doing this before moving on[or]teasing you and then backs off to make room for somebody else[cycling][end if].";
 			AnnouncedExpel semen on D by 2;
 		otherwise:
-			say "[one of]Another [man of shopkeeper] takes [his of shopkeeper] place[or]You feel another hard [manly-penis] slap against your [buttcheeks][or]Yet another [man of shopkeeper] joins in[or]The [man of shopkeeper]ly chatter in the [location of hole-in-wall] is still just as loud as ever, and another [manly-penis] pokes at your hole[then at random]! You [if the relevant sex addiction of hole-in-wall < 4][one of]grimace[or]squeal[or]groan[or]scrunch your eyes[or]growl[in random order][otherwise if the relevant sex addiction of hole-in-wall < 7][one of]squirm[or]shudder[or]curl your toes[or]can't help but moan[in random order][otherwise][one of]coo[or]sigh with pleasure[or]moan lewdly[or]squeal with glee[in random order][end if] as [one of]the anonymous [man of shopkeeper][or]the next stranger[or]the nameless assailant[or]your new unnamed partner[or]the mystery [man of shopkeeper][in random order] [one of]shoves [his of shopkeeper] [manly-penis] inside[or]pushes [his of shopkeeper] way into[or]mercilessly forces [himself of shopkeeper] into[or]eases [his of shopkeeper] [manly-penis] inside[or]pushes forward, filling[in random order] your [variable F]. [one of]Just like the [man of shopkeeper] before [him of shopkeeper][or]Again[or]Just like before[or]Once again[or]Just like [his of shopkeeper] fellow quick-trigger friends[cycling] it only takes [him of shopkeeper] [one of]about ten thrusts[or]a few moments[or]a matter of seconds[in random order] [if the semen addiction of the player > 14][one of]until [he of shopkeeper] is giving you that creampie you so desperately need[or]before [he of shopkeeper] is giving you yet another amazing creampie[or]before [he of shopkeeper] climaxes inside of you, giving you that amazing warm sticky feeling on the inside[or]and then suddenly [he of shopkeeper] is finishing inside of you, marking you as [his of shopkeeper] on the inside[in random order][otherwise][one of]until [he of shopkeeper] is filling you with [his of shopkeeper] [semen][or]before [he of shopkeeper] is giving you another creampie[or]before [he of shopkeeper] climaxes inside of you[or]and then suddenly [he of shopkeeper] is finishing inside of you[in random order][end if].";
+			say "[one of]Another [man of M] takes [his of M] place[or]You feel another hard [manly-penis] slap against your [buttcheeks][or]Yet another [man of M] joins in[or]The [man of M]ly chatter in the [location of hole-in-wall] is still just as loud as ever, and another [manly-penis] pokes at your hole[then at random]! You [if the relevant sex addiction of hole-in-wall < 4][one of]grimace[or]squeal[or]groan[or]scrunch your eyes[or]growl[in random order][otherwise if the relevant sex addiction of hole-in-wall < 7][one of]squirm[or]shudder[or]curl your toes[or]can't help but moan[in random order][otherwise][one of]coo[or]sigh with pleasure[or]moan lewdly[or]squeal with glee[in random order][end if] as [one of]the anonymous [man of M][or]the next stranger[or]the nameless assailant[or]your new unnamed partner[or]the mystery [man of M][in random order] [one of]shoves [his of M] [manly-penis] inside[or]pushes [his of M] way into[or]mercilessly forces [himself of M] into[or]eases [his of M] [manly-penis] inside[or]pushes forward, filling[in random order] your [variable F]. [one of]Just like the [man of M] before [him of M][or]Again[or]Just like before[or]Once again[or]Just like [his of M] fellow quick-trigger friends[cycling] it only takes [him of M] [one of]about ten thrusts[or]a few moments[or]a matter of seconds[in random order] [if condom fetish is 1][one of]until [he of M] is filling you with [his of M] [semen]... no wait, [he of M] is wearing a condom at least. You haven't been creampied today[or]before [he of M] climaxes inside of you[or]and then suddenly [he of M] is finishing inside of you[or]before [he of M] is filling another condom up inside you[stopping][otherwise if the semen addiction of the player > 14][one of]until [he of M] is giving you that creampie you so desperately need[or]before [he of M] is giving you yet another amazing creampie[or]before [he of M] climaxes inside of you, giving you that amazing warm sticky feeling on the inside[or]and then suddenly [he of M] is finishing inside of you, marking you as [his of M] on the inside[in random order][otherwise][one of]until [he of M] is filling you with [his of M] [semen][or]before [he of M] is giving you another creampie[or]before [he of M] climaxes inside of you[or]and then suddenly [he of M] is finishing inside of you[in random order][end if].";
 		if the number of worn diaper is 0:
-			if F is asshole, AssFill the girth of hole-in-wall;
-			otherwise PussyFill the girth of hole-in-wall;
+			if F is asshole, AnalCount;
+			otherwise FuckCount;
+			if condom fetish is 1:
+				let C be a random worn condom pinnable stockings;
+				if there is a worn belt, now C is a random worn belt;
+				if C is nothing:
+					summon string-belt uncursed;
+					gluify string-belt;
+					say "You feel someone sticking a string belt to your waist with glue!";
+					now C is string-belt;
+				compute M condom pinning on C;
+			otherwise:
+				if F is asshole, AssFill the girth of hole-in-wall;
+				otherwise PussyFill the girth of hole-in-wall;
 		ruin F;
 		increase men-fucked by 1;
 		increase hole-in-wall-turns by 1;
 		compute extra turn;
-	while hole-in-wall-turns < 13 and the player is in HoleInWall and delayed fainting is 0:
+	while hole-in-wall-turns < (HIWT + 3) and the player is in HoleInWall and delayed fainting is 0:
 		if gatling-girth of hole-in-wall < 5:
+			dislodge M;
+			now hole-in-wall is penetrating F;
 			now gatling-girth of hole-in-wall is 5 + (mythical creature fetish * 3);
-			say "[if mythical creature fetish is 1]The ground trembles as something heavy stomps slowly towards you[otherwise][first custom style]'Ho ho ho.'[roman type][line break]A deep booming voice chuckles to [himself of shopkeeper] behind you[end if].[line break][italic type]THUNK[roman type][line break]A semi-erect [manly-penis] that seems as thick and heavy as [if mythical creature fetish is 1]an elephant's trunk[otherwise]your arm[end if] slaps against your [AssDesc].[line break][variable custom style][one of]What the hell is that[if mythical creature fetish is 1]? It's definitely not human![otherwise]?![end if][or]Here we go again...[stopping][roman type][line break]The giant [manly-penis] pushes its tip up against your [variable F] [if the girth of hole-in-wall - the insertableGirthAcceptance of F > 3]stretching your hole impossibly as it forces its way inside[otherwise if the girth of hole-in-wall - the insertableGirthAcceptance of F > 0]stretching your hole wider as it pushes its way inside[otherwise]slipping inside your stretchy hole with a loud slurping sound[end if].";
+			say "[if mythical creature fetish is 1]The ground trembles as something heavy stomps slowly towards you[otherwise][first custom style]'Ho ho ho.'[roman type][line break]A deep booming voice chuckles to [himself of M] behind you[end if].[line break][italic type]THUNK[roman type][line break]A semi-erect [manly-penis] that seems as thick and heavy as [if mythical creature fetish is 1]an elephant's trunk[otherwise]your arm[end if] slaps against your [AssDesc].[line break][variable custom style][one of]What the hell is that[if mythical creature fetish is 1]? It's definitely not human![otherwise]?![end if][or]Here we go again...[stopping][roman type][line break]The giant [manly-penis] pushes its tip up against your [variable F] [if the girth of hole-in-wall - the insertableGirthAcceptance of F > 3]stretching your hole impossibly as it forces its way inside[otherwise if the girth of hole-in-wall - the insertableGirthAcceptance of F > 0]stretching your hole wider as it pushes its way inside[otherwise]slipping inside your stretchy hole with a loud slurping sound[end if].";
 		otherwise:
 			say "You lie still as the giant dong [one of]uses your [variable F] as a handy warm cocksleeve[or]thrusts in and out of your poor stretched [variable F][or]fucks you in the [variable F][in random order].";
 		ruin F;
-		if hole-in-wall-turns is 12:
-			say "Finally it reaches its peak, pulling out before slamming all the way in with one powerful thrust, where it begins pumping shot after shot of hot [semen].";
-			if F is asshole, AssFill the girth of hole-in-wall;
-			otherwise PussyFill the girth of hole-in-wall;
+		if hole-in-wall-turns is HIWT + 2:
+			say "Finally it reaches its peak, pulling out before slamming all the way in with one powerful thrust, where it begins pumping shot after shot of hot [semen].[if condom fetish is 1][variable custom style]Wait... [one of]the condom burst[or]they ran out of condoms[at random]?![roman type][line break][end if]";
+			if F is asshole:
+				AssFill the girth of hole-in-wall + 2;
+				AnalCount;
+			otherwise:
+				PussyFill the girth of hole-in-wall + 2;
+				FuckCount;
 			increase men-fucked by 1;
 		increase hole-in-wall-turns by 1;
 		compute extra turn;
-	say "Finally the loud sound of a crowd of [men of shopkeeper] begins to die away as they bore of you and dissipate.";
+	say "[if diaper quest is 0 and F is vagina]Huge spurts of [semen] begin noisily and powerfully ejecting themselves from your [vagina]. [strongHumiliateReflect][end if]Finally the loud sound of the crowd of [men of M] begins to die away as they bore of you and dissipate.";
 	dislodge hole-in-wall.
 
 Hole In Wall Trap ends here.

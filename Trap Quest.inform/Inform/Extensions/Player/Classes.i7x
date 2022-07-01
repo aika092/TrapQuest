@@ -96,6 +96,9 @@ This is the cowgirl class rule:
 			now player-class is "meow cow";
 		otherwise if cow-horns is worn:
 			now player-class is "breeding cow";
+			if denim-overalls is worn, now player-class is "breeding country cowgirl";
+		otherwise if denim-overalls is worn:
+			now player-class is "country cowgirl";
 		otherwise:
 			now player-class is "cowgirl";
 		rule succeeds.
@@ -231,12 +234,14 @@ This is the cheerleader class rule:
 			now player-class is "plastic cheerleader";
 		otherwise if deepthroat princess crop top is worn:
 			now player-class is "deepthroat princess";
+		otherwise if denim-overalls is worn:
+			now player-class is "country cowgirl";
 		otherwise:
 			now player-class is "cheerleader";
 		rule succeeds.
 The cheerleader class rule is listed in the player class rules.
 Definition: a text (called T) is cheerleader:
-	if T is "cheerleader" or T is "plastic cheerleader" or it matches the text "bully" or T is "fraternity's bicycle" or T is "locker room fucktoy" or T is "deepthroat princess" or T matches the text "plastic cumdump", decide yes;
+	if T is "cheerleader" or T is "plastic cheerleader" or it matches the text "bully" or T is "fraternity's bicycle" or T is "locker room fucktoy" or T is "deepthroat princess" or T matches the text "plastic cumdump" or T matches the text "country", decide yes;
 	decide no.
 
 cheerleaderExplained is initially false.
@@ -673,9 +678,9 @@ A time based rule (this is the compute whispers rule):
 				now whisper-semen-tracker is 0;
 				now whisper-tracking is 0;
 		if whispered < 0 and whisper-type is not 0 and whisper-tracking is 0:
-			say "You hear a strange voice echoing through you![line break][first custom style]'YOU HAVE FAILED US'[roman type][line break]You feel an ominous sensation, but you can't quite place it.";
+			say "You hear a strange voice echoing through you![line break][first custom style]'YOU HAVE FAILED US.'[roman type][line break]You feel an ominous sensation, but you can't quite place it.";
 			SexAddictUp 2;
-			SemenAddictUp 2;
+			SemenAddictUp 1;
 			now whisper-type is 0;
 		if whispered > -1 and whisper-tracking is 1 and whisper-type is not 0:
 			say "You hear a strange voice whispered in your ear![line break][first custom style]'you have [please]d us. be rewarded.'[roman type][line break]";

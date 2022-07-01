@@ -363,7 +363,7 @@ To compute sudden erection chance (X - a number):
 To compute erection decay:
 	if condom of kings is worn and condom of kings is uncursed, do nothing;
 	if ghost-strapon is worn and the size of penis < the strap-length of ghost-strapon, do nothing;
-	say "[line break][bold type]Your [mystical ShortDesc of penis] softens.[roman type][line break]";
+	if the size of penis > 0, say "[line break][bold type]Your [mystical ShortDesc of penis] softens.[roman type][line break]";
 	now penis is not penis-erect.
 
 Section 3 - Presenting

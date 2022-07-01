@@ -784,7 +784,7 @@ To compute teaching of (L - practical-lesson):
 	repeat with W running through worn wrist locking clothing:
 		say "With a click of [his of DL] fingers, your [ShortDesc of W] falls to the ground.";
 		now W is in the location of the player;
-		now W is unlocked;
+		unlock W;
 	let cum-countdown be a random number between 30 and 40;
 	let total-fuck-turns be 0;
 	let stimulation-level be 0;
@@ -864,7 +864,7 @@ To compute teaching of (L - practical-lesson):
 					say "You ride [him of DL] gently and passionately, softly kneading [his of DL] chest with one hand as you do.";
 					ruin vagina;
 				humiliate 25;
-				if pussy-count > 0, say "Your pussy juices mix in with the [if pussy-count is 1]stuff that's already there[otherwise]others[end if], thickening the film of girl-slime around [NameDesc of DL][']s [DickDesc of DL]";
+				if pussy-count > 0, say "Your pussy juices mix in with the [if pussy-count is 1]stuff that's already there[otherwise]others[end if], thickening the film of girl-slime around [NameDesc of DL][']s [DickDesc of DL].";
 				otherwise say "Your [vagina] slowly coats [NameDesc of DL][']s [DickDesc of DL] in its juices.";
 				increase pussy-count by 1;
 				FuckCount;
@@ -925,7 +925,7 @@ To compute teaching of (L - practical-lesson):
 					say "You now have [LipDesc].";
 				otherwise:
 					say "[BigNameDesc of TL] plants an outstretch hand on your [AssDesc] with a loud THWACK!";
-					PainUp 1;
+					PainUp 10;
 		decrease cum-countdown by stimulation-level;
 		TimesSubmittedUp (DL) by 1;[Each time you perform a sex act on him, it counts as one instance of submissive sex]
 		if total-fuck-turns is 0:
@@ -1358,7 +1358,7 @@ To compute teaching of (L - swimming-lesson):
 				if a random number between 1 and 2 is 1:
 					if ST is yourself:
 						say "A swimming condom connects with you and latches onto your [ShortDesc of CPS]![line break][variable custom style][one of]Shit![or]Not another one![or]I've got to get out of here![then at random][roman type][line break]";
-						increase the used condoms of CPS by 1;
+						UsedCondomUp CPS by 1;
 					otherwise:
 						say "A swimming condom connects with [NameDesc of ST] and latches onto [his of ST] outfit!";
 						if entry 1 in LOutOfPool is yourself, HappinessDown ST;
@@ -1366,9 +1366,8 @@ To compute teaching of (L - swimming-lesson):
 			decrease semenAddictionCounter by 1;
 			if semenAddictionCounter <= 0:
 				say "[one of]Your body can't help but react to the [semen] coating it. You shiver as you feel yourself becoming more accustomed to the feeling of being covered in [semen].[if the semen addiction of the player < 10][line break][variable custom style]No! I don't want to get used to this feeling! I've got to get out quickly![roman type][line break][end if][or]Your body continues to grow accustomed to the feeling of [semen].[stopping]";
-				SemenAddictUp 1;
-				now semenAddictionCounter is (a random number between 1 and 2) + (a random number between 0 and 2);
-				if semenAddictionCounter > 3, now semenAddictionCounter is 3;
+				SlowSemenAddictUp 1;
+				now semenAddictionCounter is (a random number between 1 and 2) + (a random number between 0 and 2) + the square root of the semen addiction of the player;
 		if yourself is not listed in LOutOfPool: [List all the details of where everyone is]
 			if the number of entries in LOutOfPool + the number of entries in LInPool < (the number of entries in LST + 1): [Some students haven't yet gone into the pool]
 				say "[line break][bold type]Not yet in the pool:[roman type][line break]";
@@ -1595,18 +1594,18 @@ To compute teaching of (L - chess-lesson):
 				say "[BigNameDesc of M] releases you from your [ShortDesc of C]!";
 				dislodge C;
 				now C is in School01;
-				now C is unlocked;
+				unlock C;
 		repeat with C running through carried things:
 			now C is in School01;
 		say "[speech style of M]'If you want any of those back, you'll need to pick them up from Reception later.'[roman type][line break]";
 		force immediate clothing-focus redraw;
 		repeat with X running through undefeated staff members in the school:
 			now X is in School16;
-			now X is interested;
+			interest X;
 			calm X;
 		repeat with X running through undefeated students in the school:
 			now X is in School16;
-			now X is interested;
+			interest X;
 			calm X;
 		now the player is in School16;
 		let F be asshole;
@@ -2134,7 +2133,7 @@ To compute chess loss taunting of (M - a nasty student):
 		now the tattoo-outrage of marker chest tattoo is 14;
 	otherwise if bottom level lactation cover is rigid clothing:
 		say "[BigNameDesc of M] simply comes up to you and pinches your skin, making you squeal in pain!";
-		PainUp 1;
+		PainUp 10;
 	otherwise:
 		compute piercing taunt of M.
 
@@ -2162,7 +2161,7 @@ To compute piercing taunt of (M - a monster):
 		arouse 100;
 	otherwise:
 		say "[speech style of M]'[one of]Ooh, look what I've found, all alone and with nobody to protect [him of the player].'[or]What did I hear you just say? Pinch my nipples? That's a weird request, but okay.'[or]'Still here, with your fat nipples all stiff?'[or]'Everyone's trying to work out if you lost because you're stupid, or because you *wanted* to be stuck here like this afterwards.'[cycling][roman type][line break][big he of M] ignores your whining pleas for mercy as [he of M] grabs your nipples with pincer grips and twists them painfully.";
-	PainUp 1.
+	PainUp 10.
 
 [Part - Kaylee / Karl
 
@@ -2300,7 +2299,7 @@ To compute action (N - a number) of (M - an ultimate-lesson-actor):
 					say "[one of][BigFuckerDesc of M] pushes forward as far as [he of M] can go, hissing through [his of M] teeth as [his of M] condom fills with warmth.[or][BigFuckerDesc of M][']s [DickDesc of M] throbs powerfully, firing off load after load of warm [semen] into the condom.[in random order]";
 					if lycra-bodysuit is in Toilet01:
 						say "After [he of M] pulls away, you hear [him of M] fumbling with the condom for a few moments.";
-						increase the used condoms of lycra-bodysuit by 1;
+						UsedCondomUp lycra-bodysuit by 1;
 					orgasm M;
 					dislodge M;
 					now M is not wrapped;
@@ -2443,7 +2442,7 @@ To compute tongue demand of (M - an ultimate-lesson-actor):
 		if a random number between 1 and (8 - (piercing-fetish * 6)) is 1 and P is actually summonable:
 			summon P cursed;
 			say "You suddenly scream in pain as [he of M] uses a red hot needle to give you a tongue piercing!!!";
-			PainUp 1;
+			PainUp 10;
 			say "[big he of M] chuckles with a booming voice.[line break][speech style of M]'Surprise, bitch!'[roman type][line break]";
 		otherwise if a random number between 1 and (8 - (tattoo-fetish * 6)) is 1 and cum dumpster lip tattoo is actually summonable and there is a worn tattoo:
 			summon cum dumpster lip tattoo;
@@ -2591,12 +2590,12 @@ To execute (U - ultimate-fetish-slap) for (M - a monster):
 	say "[BigNameDesc of M] barks out an order in an evil voice.[line break][speech style of M]'Your tits are disgusting, slut. I'm going to spank them. Push your chest out and hold it there.'[roman type][line break]Do you push your [BreastDesc] forward?";
 	if the player is consenting:
 		say "As soon as you push your chest forward, [FuckerDesc of M] begins slapping them with an open hand.[paragraph break][italic type]SMACK SMACK SMACK[roman type][paragraph break]";
-		PainUp 2;
+		PainUp 20;
 		if a random number between 1 and 5 > 2 and the player is able to speak:
 			say "That really, really hurt. Now that they're so sensitive, if [he of M] was to do any more, it would hurt even worse.[speech style of M]'Thank me for abusing your tits, and beg me to slap them some more.'[roman type][line break]Do you thank [him of M]?";
 			if the player is bimbo consenting:
 				say "Choking back tears, you manage to say[line break][variable custom style]'T-thank you for slapping my disgusting tits, [literalMistress of M]. T-they need more punishment. W-would you please hurt them some more and make me cry?'[roman type][line break][big he of M] does exactly that. Chuckling to [himself of M], [he of M] begins smacking them twice as hard, twice as fast, and twice as many.[paragraph break][italic type]SMACK SMACK SMACK SMACK SMACK SMACK[roman type][paragraph break]By the time [he of M] is finished, you have been reduced to a puddle of tears.";
-				PainUp 5;
+				PainUp 50;
 			otherwise:
 				say "You remain silent.[line break][variable custom style]I can't take any more![roman type][line break]";
 				compute lesson veto;

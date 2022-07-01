@@ -43,7 +43,7 @@ To compute protection of (M - a monster): [You can define this for your monster 
 	if the player is flying:
 		distract M;
 	otherwise if X is M:
-		say "BUG - [NameDesc of M] tried to protect the player (flagged as in combat) but somehow found itself as the most reasonable target...";
+		unless M is imp, say "BUG - [NameDesc of M] tried to protect the player (flagged as in combat) but somehow found itself as the most reasonable target..."; [known minor issue with imps where they can become unfriendly halfway through their compute function]
 	otherwise if X is seduced: [monsters don't get involved or keep attacking enemies while you're seducing]
 		do nothing;
 	otherwise:
@@ -154,7 +154,7 @@ To compute anal assistance from (S - a monster) with (D - a monster):
 To compute generic assistance from (S - a monster) with (D - a monster):
 	if D is unfriendly and S is unfriendly:
 		say "[one of][BigNameDesc of S] kisses [NameDesc of D] passionately, slapping your [BreastDesc] roughly as [he of S] does for good measure, purposefully hurting you.[or][line break][speech style of D]'You! Slap [him of the player]. HARD.'[roman type][line break][BigNameDesc of S] looks at you and hesitates for only a brief moment, before bringing [his of S] hand powerfully across your cheek. It stings painfully![in random order]";
-		PainUp 1;
+		PainUp 10;
 	otherwise:
 		say "[one of][BigNameDesc of S] kisses [NameDesc of D] passionately, groping [his of D] [ChestDesc of D] for good measure.[or][BigNameDesc of S] allows [NameDesc of D] to grope [him of S], passionately kissing [him of D] as [he of D] does.[in random order]";
 		if the sex-length of D > 0, decrease the sex-length of D by 1.

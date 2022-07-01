@@ -24,47 +24,51 @@ To decide which figure-name is the clothing-image of (R - royal scepter):
 To say ClothingDesc of (W - royal scepter):
 	if W is blacked, say "A white and black wand vibrator with a gem-encrused spade shape set into the top underneath a crown. [if tiara-of-spades is worn]Thanks to its synergy with your [tiara-of-spades], you can sense that whenever you satisfy a [BlackCock], it will gain significant magic power. [otherwise if there is a worn tiara]Perhaps if you had a more appropriate tiara, your wand would unlock some even more powerful abilities. You have a picture in your head, of you pleasuring [NameDesc of shopkeeper] while a poor jealous guard watches... [end if]";
 	otherwise say "A gold and pink wand vibrator, with opaque crystal ball set into the top underneath a golden crown. ";
+	let H be a random worn headgear;
 	if diaper quest is 0:
-		say "You can see the tasks in need of your attention.";
-		repeat with M running through alive undefeated royal guards:
-			if the refractory-period of M < 0 and the boredom of M <= 0:
-				say "[BigNameDesc of M] is bored and horny. This might be a good time to find a way to [if W is blacked]tease [him of M][otherwise]make [him of M] happy[end if]. ";
+		if H is headgear and the quest of H is royal-quest:
+			say "You can see the tasks in need of your attention.";
+			repeat with M running through alive undefeated royal guards:
+				if the refractory-period of M < 0 and the boredom of M <= 0:
+					say "[BigNameDesc of M] is bored and horny. This might be a good time to find a way to [if W is blacked]tease [him of M][otherwise]make [him of M] happy[end if]. ";
+					let D be up;
+					if M is not in the location of the player and playerRegion is Dungeon:
+						let L be the location of M;
+						now D is the best route from the location of the player to L through labyrinth rooms;
+					if D is a direction and D is not up, say "The shortest path to [him of M] from here is [bold type][D][roman type].";
+					otherwise say line break;
+			if the minotaur-checked of royal-quest is false and minotaur is alive:
+				say "You should check that the [if mystical amulet is in Dungeon36]mystical amulet is still being kept safe[otherwise]dangerous beast is still behind bars[end if] in the Cage Room. ";
 				let D be up;
-				if M is not in the location of the player and playerRegion is Dungeon:
-					let L be the location of M;
-					now D is the best route from the location of the player to L through labyrinth rooms;
-				if D is a direction and D is not up, say "The shortest path to [him of M] from here is [bold type][D][roman type].";
+				if playerRegion is Dungeon and the player is not in Dungeon36:
+					now D is the best route from the location of the player to Dungeon36 through labyrinth rooms;
+				if D is a direction and D is not up, say "The shortest path to it from here is [bold type][D][roman type].";
 				otherwise say line break;
-		if the minotaur-checked of royal-quest is false and minotaur is alive:
-			say "You should check that the [if mystical amulet is in Dungeon36]mystical amulet is still being kept safe[otherwise]dangerous beast is still behind bars[end if] in the Cage Room. ";
-			let D be up;
-			if playerRegion is Dungeon:
-				now D is the best route from the location of the player to Dungeon36 through labyrinth rooms;
-			if D is a direction and D is not up, say "The shortest path to it from here is [bold type][D][roman type].";
-			otherwise say line break;
-		if the princessTax of shopkeeper is false and shopkeeper is alive:
-			say "You should make sure that business owners are up-to-date with paying you their dues for operating on your land. ";
-			let D be up;
-			if playerRegion is Dungeon:
-				now D is the best route from the location of the player to Dungeon41 through labyrinth rooms;
-			if D is a direction and D is not up, say "The shortest path to the shop from here is [bold type][D][roman type].";
-			otherwise say line break;
-		if Woods01 is not placed:
-			say "You should check what the state of the world is outside of your castle walls. ";
-			let D be up;
-			if playerRegion is Dungeon:
-				now D is the best route from the location of the player to Stairwell01 through labyrinth rooms;
-			if D is a direction and D is not up, say "The shortest path to the stairwell from here is [bold type][D][roman type].";
-			otherwise say line break;
-		repeat with M running through tentacle-breeders in the Dungeon:
-			let L be the location of M;
-			if L is a placed labyrinth room: [there might be some weird edge cases with dungeon reshuffling]
-				say "There is a dangerous life form in the [L] that is allowing tentacle monsters to enter your castle. You should obtain the magic power necessary to remove it. ";
+			if the princessTax of shopkeeper is false and shopkeeper is alive:
+				say "You should make sure that business owners are up-to-date with paying you their dues for operating on your land. ";
 				let D be up;
-				if playerRegion is Dungeon:
-					now D is the best route from the location of the player to L through labyrinth rooms;
-				if D is a direction and D is not up, say "The shortest path to [him of M] from here is [bold type][D][roman type].";
+				if playerRegion is Dungeon and the player is not in Dungeon41:
+					now D is the best route from the location of the player to Dungeon41 through labyrinth rooms;
+				if D is a direction and D is not up, say "The shortest path to the shop from here is [bold type][D][roman type].";
 				otherwise say line break;
+			if Woods01 is not placed:
+				say "You should check what the state of the world is outside of your castle walls. ";
+				let D be up;
+				if playerRegion is Dungeon and the player is not in Stairwell01:
+					now D is the best route from the location of the player to Stairwell01 through labyrinth rooms;
+				if D is a direction and D is not up, say "The shortest path to the stairwell from here is [bold type][D][roman type].";
+				otherwise say line break;
+			repeat with M running through tentacle-breeders in the Dungeon:
+				let L be the location of M;
+				if L is a placed labyrinth room: [there might be some weird edge cases with dungeon reshuffling]
+					say "There is a dangerous life form in the [L] that is allowing tentacle monsters to enter your castle. You should obtain the magic power necessary to remove it. ";
+					let D be up;
+					if playerRegion is Dungeon and the player is not in L:
+						now D is the best route from the location of the player to L through labyrinth rooms;
+					if D is a direction and D is not up, say "The shortest path to [him of M] from here is [bold type][D][roman type].";
+					otherwise say line break;
+		otherwise:
+			say "Since your headgear's quest doesn't care about royal duties, the royal scepter isn't providing you with any useful information.";
 	otherwise:
 		say "The ball seems to shine brightly when you're in a used diaper - it has the power to help you change yourself!";
 	say "You can sense that the strength of its magic attacks is tied to your self-esteem.[line break][BigNameDesc of W] currently has [if the charge of W >= 16]an incredible amount of[otherwise if the charge of W >= 4]a lot of[otherwise if the charge of W > 0]a small amount of[otherwise]no[end if] stored magical energy, and so your magical attacks with it will be [if the charge of W >= 16]extremely powerful[otherwise if the charge of W >= 4]very[otherwise if the charge of W > 0]slightly more[otherwise]no more[end if] powerful than normal.".
@@ -163,7 +167,6 @@ To compute proposal leaving of (M - a monster):
 
 To compute bride perception of (M - a monster):
 	say "[BigNameDesc of M] notices you.[line break][speech style of M]'[if the refractory-period of bride-consort < 0]Oh it is good to see you again, my beautiful bride! My shaft swells in anticipation of what we're about to do![otherwise]My blushing bride! Well met!'[end if][roman type][line break]";
-	now M is interested;
 	calm M.
 
 To compute betrothal of (M - a monster):[This only triggers when the player is fucked by a monster, for now.]
@@ -176,6 +179,12 @@ To compute betrothal of (M - a monster):[This only triggers when the player is f
 			otherwise now F is -1;
 			if bride-consort is M, now F is 2;
 			if F is -1:[the consort isn't around. Adultery!]
+				let T be a random worn interracial themed wearthing;
+				if bride-consort is human and interracial fetish is 1 and bride-consort is pale skinned and M is dark skinned and T is a wearthing:
+					say "Your [C] pulses, and the image of [NameDesc of bride-consort] shatters as its replaced by [NameDesc of M], or more specifically, [his of M] big, black [DickDesc of M].";
+					compute unique recycling of floral bridal veil;
+					now bride-consort is M;
+					say "[line break][bold type]Your [ShortDesc of C] has acknowledged the superiority of your new, better beloved![roman type][line break]";
 				if bride-consort is permanently banished monster: [How do we handle it if the consort is dead?]
 					if the vaginalvirgin of the player is 1: [Virgins can remarry]
 						say "You feel your connection to [NameDesc of bride-consort] slowly fade away.[line break][variable custom style]I guess this means... I can marry someone else instead?[roman type][line break]";
@@ -273,7 +282,7 @@ To compute wedding night:
 	now bride-consort is interested;
 	say "[if L is not Hotel06][BigNameDesc of bride-consort] appears from the east![line break][end if][speech style of bride-consort]'I have been looking forward to this all day.'[roman type][line break][if there is a worn bouquet]Suddenly, your [random worn bouquet] takes on a life of its own, and throws itself towards the bed. Since you're holding it, you go with it, tumbling down onto the bed on your front. [end if]";
 	repeat with C running through pussy covering clothing:
-		if C is zippable:
+		if C is crotch-zipped:
 			say UnzipFlav of bride-consort at C;
 			ZipDown C;
 		otherwise if C is displacable:
@@ -288,7 +297,9 @@ To compute wedding night:
 		unseal xavier from bride-consort; [don't worry this automatically changes who bride-consort is and who is penetrating]
 	now the consummation of betrothal-quest is true;
 	ruin vagina times 1;
-	unless bride-consort is demon lord: [xavier gives the player a good seeing to]
+	if bride-consort is demon lord: [xavier gives the player a good seeing to]
+		if demon lord is friendly, now demon lord is friendly-fucking;
+	otherwise:
 		say "[speech style of bride-consort]'C-cumming!'[roman type][line break][BigNameDesc of bride-consort] begins unleashing [himself of bride-consort] inside of you.[line break][variable custom style]Already?![roman type][line break]";
 		PussyFill the semen load of bride-consort;
 		focus-consider bride-consort;

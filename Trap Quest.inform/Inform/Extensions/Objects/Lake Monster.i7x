@@ -309,7 +309,7 @@ To compute lakeClimax of (L - a lake monster):
 	repeat with T running through lake monsters in the location of the player:
 		now R is 0;
 	if bukkake fetish is 0 or the latex-transformation of the player > 2, now R is 9999;
-	if (R * 40 < the semen-sniffing of L) or (R * 30 < the semen-sniffing of L and the class of the player is schoolgirl):[if a number between 800 and 1000 is less than L]
+	if (R * 40 < the semen-sniffing of L) or (R * 30 < the semen-sniffing of L and the class of the player is schoolgirl):
 		if the dexterity of the player + (the number of worn swimming themed wearthing * 10) < a random number between 7 and 25 or acolyte-chestpiece is worn:
 			allocate 6 seconds;
 			if R is 0, say "[line break]The tentacle monster sends one of its tentacles to grab your leg! You're caught!";
@@ -352,6 +352,7 @@ To compute swimming in (WB - DungeonScenery03):
 	let swim-turns be 0;[how long has the player been swimming]
 	let swim-location be 0;[where is the player right now?]
 	let M be a random lake monster;
+	allocate 6 seconds;
 	while swimming is 1:
 		let S be swim-location;
 		if swim-turns is 0 and water-peeing is false, say "You [if the player is upright]wade[otherwise]crawl[end if] out into the water and begin to swim.";
@@ -378,7 +379,7 @@ To compute swimming in (WB - DungeonScenery03):
 						say LakeShadowFlav of WB;
 					otherwise if a random number between 1 and 2 is 1:
 						say "You notice something deep beneath the water.";
-		if swimming is 1:[If the player got tentacled, we don't want to do the multiple choice.]
+		if swimming is 1 and swim-turns > 0: [If the player got tentacled, we don't want to do the multiple choice. Also on the first turn there's no choice but to get wet.]
 			reset multiple choice questions;
 			if swim-location is 0, set next numerical response to "get out";
 			set next numerical response to "swim in place";
@@ -394,11 +395,11 @@ To compute swimming in (WB - DungeonScenery03):
 			say "[line break]What should you do next?";
 			compute multiple choice question;
 			let CNR be the chosen numerical response;
-			if the CNR is "get out":
+			if CNR is "get out":
 				now swimming is 0;
 				now M is not lake-stalking;
 				say "You swim to the shore of the [if M is in the location of the player and M is lake-stalking]lake, just barely evading the reach of the monster's tentacles as you pull yourself out.[otherwise]lake and pull yourself out.[end if]";
-			otherwise if the CNR is "rest":
+			otherwise if CNR is "rest":
 				if M is lake-stalking:
 					say "You rest your body against the edge of the cave and begin to catch your breath. It's at that moment that you feel something slimy brush against your leg, and look down just in time to see a thick, octopus-like tentacle curling around your ankle. It yanks you out of the cave with incredible strength, dragging you underwater without giving you a chance to escape. The slimy tentacle keeps its grip on your ankle as it slowly slides around and up your leg.";
 					compute lake tentacle gangbang of M;
@@ -406,7 +407,7 @@ To compute swimming in (WB - DungeonScenery03):
 				otherwise:
 					say "You rest your body against the edge of the cave and catch your breath. It's a little difficult to rest here, but after a few minutes, you feel less fatigued.";
 					FatigueDown 5;
-			otherwise if the CNR is "dive":
+			otherwise if CNR is "dive":
 				say "You dive below the surface.";
 				compute difficult swimming check in WB;
 				if M is lake-stalking and the swim-location of M is S:
@@ -415,7 +416,7 @@ To compute swimming in (WB - DungeonScenery03):
 					now swimming is 0;
 				otherwise:
 					compute treasure diving in WB at swim-location;
-			otherwise if the CNR is "head for shore" or the CNR is "swim out of cave":
+			otherwise if CNR is "head for shore" or CNR is "swim out of cave":
 				if M is in the location of the player:
 					if the swim-location of M < S, say "You swim straight for the monster.";[It's rare, but possible that the monster will be between you and the shore.]
 					otherwise say "You swim away from the monster.";
@@ -436,7 +437,7 @@ To compute swimming in (WB - DungeonScenery03):
 			otherwise:
 				say "You swim in place.";
 				compute easy swimming check in WB;
-			say "[line break]";
+			say line break;
 		if swimming is 1:
 			compute bathing;[Happens every turn]
 			increase swim-turns by 1;
@@ -447,7 +448,7 @@ To compute swimming in (WB - DungeonScenery03):
 			otherwise:
 				compute swimming fatigue check in WB;
 				if delayed fainting is 1, now swimming is 0;
-	allocate 12 + (3 * swim-turns) seconds;[after everything]
+	if seconds > 0, increase seconds by swim-turns * 3;
 	display entire map.
 
 [

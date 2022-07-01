@@ -39,7 +39,11 @@ To check perception of (M - a monster):
 		if M is defeated:
 			compute defeated perception of M;
 		otherwise if M is interested:
-			if M is uniquely unfriendly and M is normally annoyed, resolve sudden appearance change of M;
+			if M is uniquely unfriendly and M is normally annoyed:
+				resolve sudden appearance change of M;
+			otherwise:
+				check disapproval of M;
+				check aggression change of M; [Is this NPC aggressive this turn, when they weren't at the start of the turn?]
 		otherwise:
 			now M is interested;
 			now the last-tripped of M is 0;
@@ -59,6 +63,7 @@ To check perception of (M - a monster):
 					deinterest M;
 				otherwise:
 					compute correct perception of M;
+					[if M is interested and M is unleashed and the difficulty of M > a random number between 5 and 10 and M is unfriendly, FearUp the difficulty of M;] [not sure about this]
 					if latest-top-malfunction is not 0 and M is intelligent and M is friendly, now latest-top-malfunction is earnings; [If an intelligent NPC has noticed the player for whatever reason that probably means they would have seen a nip slip if one existed. So we'll say one didn't exist.]
 					progress quest of whore-exposing-quest for M;
 					if M is intelligent:
@@ -140,7 +145,7 @@ To check aggression change of (M - a monster):
 
 To resolve aggression change of (M - a monster):
 	if M is listed in friendly-guys, remove M from friendly-guys;
-	now M is interested;
+	interest M;
 	say BecomesAggressive of M.
 
 To resolve sudden appearance change of (M - a monster):
@@ -164,7 +169,7 @@ To compute curtsey reaction of (M - a monster):
 	otherwise:
 		say CurtseyReactionFlav of M;
 		if M is unfriendly, say BecomesAggressive of M;
-	if M is unfriendly, now M is interested.
+	if M is unfriendly, interest M.
 
 To say CurtseyReactionFlav of (M - a monster):
 	if there are worn currently visible knickers:
@@ -250,7 +255,7 @@ A monster has a number called previous-babification.
 
 To compute sudden objectification of (M - a monster):
 	if M is intelligent:
-		if M is raunchy, say "Something seems to change in the way [NameDesc of M] is looking at you.[line break][speech style of M]'[if M is penetrating a body part]Yeah [slut], take it!'[otherwise if the player is monster fucked]You're going to just do that without asking me to join in?!'[otherwise]We should fuck.'[end if][roman type][line break]";
+		if M is raunchy, say "Something seems to change in the way [NameDesc of M] is looking at you.[line break][speech style of M]'[if M is penetrating a body part or M is grabbing the player]Yeah [slut], take it!'[otherwise if the player is monster fucked]You're going to just do that without asking me to join in?!'[otherwise]We should fuck.'[end if][roman type][line break]";
 		otherwise say "Something seems to change in the way [NameDesc of M] is looking at you.[line break][speech style of M]'Hmm, I've changed my mind...'[roman type][line break]";
 	otherwise:
 		say "[one of][BigNameDesc of M] suddenly turns hostile[or]Something changes in the way [NameDesc of M] is looking at you, and you get the feeling [he of M]'s become hostile[at random]!".
@@ -294,7 +299,7 @@ To decide which number is the outrage tolerance of (M - a monster):
 
 To compute sudden babification of (M - a monster):
 	if M is intelligent:
-		say "Something seems to change in the way [NameDesc of M] is looking at you.[line break][speech style of M]'Aww, you really do look just like a little baby now... I think it's time for me to treat you like one, don't you?'[roman type][line break]";
+		say "Something seems to change in the way [NameDesc of M] is looking at you.[line break][speech style of M]'[if M is penetrating a body part or M is grabbing the player]Hahaha! If only you could see how much you look like a pathetic little baby right now!'[otherwise]Aww, you really do look just like a little baby now... I think it's time for me to treat you like one, don't you?'[end if][roman type][line break]";
 	otherwise:
 		say "[BigNameDesc of M] suddenly turns hostile!".
 
@@ -351,7 +356,6 @@ Definition: a monster (called M) is outrage disapproving:
 		let L be the latest-appearance of M;
 		now the latest-appearance of M is A;
 		if debuginfo > 1, say "[input-style]Checking [MediumDesc of M] appearance disapproval... (Current appearance: [A]. Most recent appearance witnessed by [ShortDesc of M]: [L]. Threshold for [ShortDesc of M] disapproving of appearance: [outrage tolerance of M].)[roman type][line break]";
-			decide yes;
 		if A > L and A > the outrage tolerance of M and M is not friendly-fucking:
 			if debuginfo > 1, say "[input-style][MediumDesc of M] disapproves of player's slutty appearance![roman type][line break]";
 			decide yes;
@@ -588,7 +592,7 @@ Definition: a person is sluttily dressed:
 		if AL - 4 is too humiliating:
 			say "[one of][mortifiedOutfit on AT][or] and [if AT is asshole]catches a glimpse of[otherwise if AT is body part]can see[otherwise]can easily see[end if] your [MediumDesc of AT], making you [blush 10 * AL][purely at random]";
 		otherwise:
-			say ", which [one of]makes you feel a little uneasy [if AT is worn clothing and AT is not equippable]in[otherwise]with[end if] your [if AT is exposed body part]exposed [otherwise if AT is at least partially exposed body part]partially exposed [end if][MediumDesc of AT][or]causes you to wince with shyness[or]makes your cheeks flush[or]makes you blush shyly[or]makes you [if AT is headgear]think about the impression your [ShortDesc of AT] must be giving[otherwise if AT is exposed body part]think about the impression your exposed [ShortDesc of AT] must be giving[otherwise if AT is at least partially exposed body part]think about the impression your partially exposed [ShortDesc of AT] must be giving[otherwise]look down towards your [ShortDesc of AT] bashfully[end if][in random order]";
+			say ", which [one of]makes you feel a little uneasy [if AT is worn clothing and AT is not equippable and AT is not bag of holding]in[otherwise]with[end if] your [if AT is exposed body part]exposed [otherwise if AT is at least partially exposed body part]partially exposed [end if][MediumDesc of AT][or]causes you to wince with shyness[or]makes your cheeks flush[or]makes you blush shyly[or]makes you [if AT is headgear]think about the impression your [ShortDesc of AT] must be giving[otherwise if AT is exposed body part]think about the impression your exposed [ShortDesc of AT] must be giving[otherwise if AT is at least partially exposed body part]think about the impression your partially exposed [ShortDesc of AT] must be giving[otherwise]look down towards your [ShortDesc of AT] bashfully[end if][in random order]";
 			humiliate 10 * AL;
 		decide yes;
 	decrease shocked-monsters by 1; [if we're deciding no, then we remove the shocked monster count]

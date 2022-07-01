@@ -16,7 +16,12 @@ To only summon (C - a clothing):
 	compute unique summoning of C;
 	if C is ass plugging or (C is vagina plugging and the player is not possessing a vagina), now C is penetrating asshole;
 	if C is vagina plugging and the player is possessing a vagina, now C is penetrating vagina;
-	if C is ballgag, now C is penetrating face.[a ballgag is any gag that occupies the player's face. I.e. most gags]
+	if C is ballgag, now C is penetrating face; [a ballgag is any gag that occupies the player's face. I.e. most gags]
+	if C is total protection and C is not-butt-windowed and there is a worn tail plug:
+		if C is displacable:
+			now C is crotch-displaced;
+		otherwise:
+			say "BUG - undisplacable item [C] was summoned even though player was wearing a tail plug. Please report.".
 
 To compute unique summoning of (C - a thing):
 	do nothing.
@@ -87,8 +92,7 @@ To summon (C - a thing) cursed with silent persistent quest:
 
 To summon (C - a clothing) locked:
 	summon C uncursed;
-	now C is locked;
-	if newbie tips is 1, say "[one of][newbie style]Newbie Tip: Oh dear, this item is locked! You'll need a key rather than a blessing to make it removable. Unfortunately the prison guard [unless there is an alive prison guard]who is about to spawn [end if]in the Dungeon isn't going to give you the key immediately. Instead, [he of prison guard] is going to wait until your 'sentence' is over, which will take a decent amount of time. Of course, if you could defeat [him of prison guard] in combat I'm sure you'd be able to salvage a key from [his of prison guard] corpse.[roman type][line break][or][stopping]".
+	lock C.
 
 Definition: an object is actually wearable: decide no.
 

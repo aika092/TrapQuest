@@ -56,7 +56,9 @@ To process state perception of (C - a diaper):
 		now the perceived-milk-soak of C is the milk-soak of C;
 		now the perceived-water-soak of C is the water-soak of C;
 		now the perceived-semen-soak of C is the semen-soak of C;
-		now the perceived-mess of C is the mess of C.
+		if the perceived-mess of C is not the mess of C:
+			now the perceived-mess of C is the mess of C;
+			if the perceived-mess of C > 0, progress quest of mess-quest.
 
 To process state perception of (D - diaper-stack):
 	repeat with C running through the list of stacked diapers:
@@ -64,7 +66,9 @@ To process state perception of (D - diaper-stack):
 		now the perceived-milk-soak of C is the milk-soak of C;
 		now the perceived-water-soak of C is the water-soak of C;
 		now the perceived-semen-soak of C is the semen-soak of C;
-		now the perceived-mess of C is the mess of C;
+		if the perceived-mess of C is not the mess of C:
+			now the perceived-mess of C is the mess of C;
+			if the perceived-mess of C > 0, progress quest of mess-quest;
 	update diaper stack.
 
 To compute state check of (C - a clothing):
@@ -146,7 +150,7 @@ Definition: a diaper (called D) is perceived unsoiled rather than perceived soil
 Check going down when the player is in Woods16 and there is a worn messed knickers and diaper quest is 0:
 	say "[variable custom style]I'm not going into some small closed space while wearing this smelly thing![roman type][line break]" instead.
 
-Definition: a knickers is soilable: decide no.
+Definition: a clothing is soilable: decide no.
 
 Definition: a diaper is soilable: decide yes.
 
@@ -247,7 +251,7 @@ a diaper has a number called curse-charge.
 
 To compute periodic effect of (D - a diaper):
 	compute unique periodic effect of D;
-	if D is no protection and D is not zippable and D is cursed or D is blessed:
+	if D is no protection and D is not crotch-unzipped and (D is cursed or D is blessed):
 		if the number of embodied things penetrating a fuckhole is 0 and the bladder of the player > 4 and the player is not in danger and (the soak-limit of D / 2 > the total-soak of D):
 			say "[bold type]You feel your [D] somehow repair itself! The rip at the crotch disappears, leaving it looking brand new[if the urine-soak of D > 0] (apart from the [urine])[end if].[roman type][line break]";
 			repair D;
@@ -404,7 +408,7 @@ To MessUp (K - a knickers) by (N - a number):
 
 To StealthMessUp (K - a knickers) by (N - a number):
 	increase the mess of K by N;
-	if K is diaper and the player is diaper aware, now the perceived-mess of K is the mess of K.
+	if K is diaper and the player is rectum diaper aware, now the perceived-mess of K is the mess of K.
 
 To MessDown (K - a knickers) by (N - a number):
 	decrease the mess of K by N;
@@ -642,9 +646,9 @@ To MessUp (K - diaper-stack) by (N - a number):
 
 To StealthMessUp (K - diaper-stack) by (N - a number):
 	increase the mess of entry 1 of the list of stacked diapers by N;
-	if the player is diaper aware, now the perceived-mess of entry 1 of the list of stacked diapers is the mess of entry 1 of the list of stacked diapers;
+	if the player is rectum diaper aware, now the perceived-mess of entry 1 of the list of stacked diapers is the mess of entry 1 of the list of stacked diapers;
 	increase the mess of K by N;
-	if the player is diaper aware, now the perceived-mess of K is N.
+	if the player is rectum diaper aware, now the perceived-mess of K is N.
 
 To MessDown (K - diaper-stack) by (N - a number):
 	let D be entry 1 of the list of stacked diapers;

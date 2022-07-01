@@ -65,7 +65,7 @@ To set up (M - facehugger):
 	now the health of M is the maxhealth of M;
 	facehuggerShortcutAssign M;
 	anger M;
-	now M is interested.
+	interest M.
 
 To decide which number is the difficulty of (M - a facehugger):
 	decide on the raw difficulty of M.
@@ -87,7 +87,7 @@ To compute (M - facehugger) seeking (D - a direction):
 To compute action (N - a number) of (M - a facehugger):
 	if M is in the location of the player and N is not 2:
 		anger M;
-		now M is interested;
+		interest M;
 		let O be a random orifice;
 		if O is undefended and M is not wrangling thighs:
 			say "[BigNameDesc of M] leaps at you, trying to latch onto your [variable O]!";

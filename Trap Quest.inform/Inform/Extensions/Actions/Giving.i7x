@@ -46,11 +46,11 @@ Check giving:
 			say "[BigNameDesc of the second noun] brings the [ShortDesc of noun] to [his of the second noun] mouth and starts drinking! [big he of the second noun] downs the whole drink in one, without stopping for a breath. ";
 			if the noun is monster-origin or a2m fetish < 2:
 				say "After [he of the second noun][']s finished, [he of the second noun] falls down on [his of the second noun] shapely butt and sighs happily.[line break][second custom style]'[if the fill-colour of the noun is murky]Good enough[otherwise]Yep, that's the stuff[end if]. You've earned [if the doses of the noun is 1]one use[otherwise][doses of the noun] uses[end if] of the altar.'[roman type][line break]";
-				increase the altar-uses of the second noun by the doses of the noun;
+				AltarUsesUp the doses of the noun;
 				if diaper quest is 0, cutshow figure of witch cutscene 1 for witch;
 			otherwise:
 				say "After [he of the second noun][']s finished, [he of the second noun] frowns.[line break][second custom style]'[one of]This is pretty bland, you know. I bet you just [if the fill-colour of the noun is golden]pissed directly into this cup[otherwise]used your own bodily fluids[end if], didn't you? This only gets you 1 use of the altar. Sorry but really I want something actually interesting, something that took some kinky act for you to collect. Go find someone else's cum or piss and then I'll properly reward you. Or at the very least, at least use a squirt dildo to stew this in your butthole for a bit first, that might add a little flavour.'[or]Boring and bland again. Only worth 1 use of the altar, I'm afraid.'[stopping][roman type][line break]";
-				increase the altar-uses of the second noun by 1;
+				AltarUsesUp 1;
 			if there is a worn waitress-enabling wearthing or (the class of the player is royal slave and the noun is monster-origin and the fill-colour of the noun is white), compute waitress resolution of the second noun taking the noun;
 			DoseEmpty the noun;
 			do nothing instead;
@@ -76,21 +76,21 @@ Check giving:
 				if the altar-uses of the second noun < 0, now the altar-uses of the second noun is 0;
 				if N > 0, say "[second custom style]'Ooh, that feels [if N > 1]incredible[otherwise]goood[end if]! You've earned [if N is 1]one use[otherwise][N] uses[end if] of the altar[one of]. Hey, don't judge me! I'm not the one who NEEDS to wear nappies[or][stopping].'[roman type][line break]";
 				otherwise say "[second custom style]'Ooh, that feels pretty fucking good! You've not earned any uses of the altar though, since I had to use my magic to remove that curse[one of]. What, you thought I wouldn't notice that you were stuck in it?'[or].'[stopping][roman type][line break]";
-				increase the altar-uses of the second noun by N;
+				AltarUsesUp N;
 			do nothing instead;
 		otherwise if the noun is soiled-diaper:
 			allocate 6 seconds;
 			say "[BigNameDesc of the second noun] smiles widely.[line break][speech style of the second noun]'Ooh, have you been saving this one for me? You're too kind! Sure, I'll give you one use of the altar for this.'[roman type][line break][big he of the second noun] takes the [MediumDesc of the noun] from your hands.";
 			destroy the noun;
 			if the altar-uses of the second noun < 0, now the altar-uses of the second noun is 0;
-			increase the altar-uses of the second noun by 1;
+			AltarUsesUp 1;
 			do nothing instead;
 		otherwise if the noun is bag lunch:
 			if the second noun is unbitchy and the second noun is unconcerned, say "[second custom style]'Don't worry about paying me. You can use my altar for free!'[roman type][line break]" instead;
 			if the noun is not held, say "You should probably pick it up first." instead;
 			if the altar-uses of the second noun < 0, now the altar-uses of the second noun is 0;
 			say "[BigNameDesc of the second noun] brings the [ShortDesc of noun] to [his of the second noun] face and squeezes the contents into [his of the second noun] mouth like it's a tube of toothpaste! [big he of the second noun] downs the whole condom-load in one, without stopping for a breath. After [he of the second noun]'s finished, [he of the second noun] moans with arousal.[line break][second custom style]'That tasted incredible! I'll give you two more uses of the altar. [one of]And I want more where that came from[or]Keep them coming[stopping]!'[roman type][line break]";
-			increase the altar-uses of the second noun by 2;
+			AltarUsesUp 2;
 			allocate 6 seconds;
 			destroy the noun instead;
 			do nothing instead;

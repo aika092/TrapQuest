@@ -1,6 +1,6 @@
 Woods Statue by Objects begins here.
 
-WoodsScenery02 is a thing. WoodsScenery02 is in Woods10. WoodsScenery02 is not portable. Understand "statue", "man", "penis", "statue's", "head", "hand", "foot" as WoodsScenery02. Figure of WoodsScenery02 is the file "Env/Forest/statue2.png". Figure of WoodsScenery02b is the file "Env/Forest/statue7.png".
+WoodsScenery02 is a thing. WoodsScenery02 is in Woods10. WoodsScenery02 is not portable. Understand "statue", "man", "penis", "statue's", "head", "hand", "foot" as WoodsScenery02. Figure of WoodsScenery02 is the file "Env/Forest/statue2.jpg". Figure of WoodsScenery02b is the file "Env/Forest/statue7.png".
 The printed name of WoodsScenery02 is "[TQlink of item described]statue[TQxlink of item described][shortcut-desc][verb-desc of item described]".
 WoodsScenery02 has a number called charge.
 The text-shortcut of WoodsScenery02 is "sta".
@@ -33,13 +33,13 @@ Check touching WoodsScenery02:
 			say "As your hand touches the statue's, a jolt of dark magic mixes with that running through your veins. You can feel that from now on, [bold type]whenever you use magic, you'll become more hungry.[line break][variable custom style]Uh-oh. It's going to be more difficult to use magic from now on...[roman type][line break]";
 		otherwise:
 			say "As your hand touches the statue's, a jolt of electricity shocks your fingers! You recoil in pain. ";
-			PainUp 1;
+			PainUp 10;
 			let C be a random currently uncovered tearable dress;
 			if C is clothing:
 				say "The electricity reaches your [C]! ";
 				if C is metal:
 					say "The metal becomes scorching hot for a moment, hurting you even more!";
-					PainUp 1;
+					PainUp 10;
 				otherwise:
 					say "With a bright white flash, your [C] becomes cinders, burning away until there's nothing left.";
 					destroy C;
@@ -75,7 +75,7 @@ Check touching WoodsScenery02:
 			if M is nothing, now M is a random woods dwelling mannequin; [Very unlikely but better safe than sorry]
 			set up M;
 			now M is in the location of the player;
-			now M is interested;
+			interest M;
 			anger M;
 			say "[if the player is upright]You get down on the ground to touch the statue's foot. [bold type]You are now on your knees. [roman type][end if]As your hand touches the statue's foot, it gets stuck! Some magic force keeps your hand there for a few seconds, during which time a [M] has noticed you and walked up behind you...!";
 			now the stance of the player is 1;

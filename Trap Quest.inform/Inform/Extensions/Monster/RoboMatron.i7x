@@ -60,9 +60,16 @@ To compute perception of (M - robomatron):
 		if D is unsoiled diaper:
 			say "COMPLETELY UNUSED DIAPER DETECTED. INCREASING POWER LEVEL BY 1.";
 			SilentlyDifficultyUp M by 1;
-		if the incontinence of the player < the max-incontinence of the player:
-			say "POTTY UNTRAINING INCOMPLETE. INCREASING POWER LEVEL BY 2.";
-			SilentlyDifficultyUp M by 2;
+		if the bladder-incontinence of the player < the max-bladder-incontinence of the player:
+			if diaper messing >= 3:
+				say "BLADDER UNTRAINING INCOMPLETE. INCREASING POWER LEVEL BY 1.";
+				SilentlyDifficultyUp M by 1;
+			otherwise:
+				say "POTTY UNTRAINING INCOMPLETE. INCREASING POWER LEVEL BY 2.";
+				SilentlyDifficultyUp M by 2;
+		if diaper messing >= 3 and the rectum-incontinence of the player < the max-rectum-incontinence of the player:
+			say "TOTAL POTTY UNTRAINING INCOMPLETE. INCREASING POWER LEVEL BY 1.";
+			SilentlyDifficultyUp M by 1;
 		if the cringe appearance of the player < 14:
 			say "APPEARANCE INSUFFICIENTLY DEGRADING. INCREASING POWER LEVEL BY 2.";
 			SilentlyDifficultyUp M by 2;
@@ -157,7 +164,7 @@ To compute enema floor reaction of (M - robomatron):
 	if voluntarySquatting is 1, humiliate 500;
 	say "[BigNameDesc of M][']s eyes turn red.[line break][speech style of M]BAD [caps boy of the player]. BAD [caps boy of the player].'[if M is grabbing the player]'[otherwise]FORBIDDEN ACTIVITY DETECTED. SELECTING PUNISHMENT ROUTINE.'[end if][roman type][line break]";
 	anger M;
-	now M is interested.
+	interest M.
 
 Section 2 - Damage
 

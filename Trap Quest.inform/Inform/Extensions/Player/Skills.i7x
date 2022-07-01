@@ -254,76 +254,8 @@ This is the fuckskill learn rule:
 	now the fuckskill of the player is 1.
 The fuckskill learn rule is listed in the skill cheating rules.
 
-Part 13 - Quest Listing
 
-The quest listing rules is a rulebook.
 
-Quest Listing is an action applying to nothing.
-
-Carry out Quest Listing:
-	say "[bold type]ACTIVE QUESTS:[roman type][line break]";
-	follow the quest listing rules.
-Understand "recall quests", "quests", "quest" as quest listing.
-
-This is the mechanic quest list rule:
-	if there is a worn steel collar:
-		say "The Steel Collar: You have been asked to collect a magic amulet by a rude mechanic.".
-The mechanic quest list rule is listed in the quest listing rules.
-
-This is the doomed quest list rule:
-	if the doom-warned of witch is 1:
-		say "Doom: A witch has warned you of a terrible doom coming, and asked you to collect a bell, book, and candle.";
-	otherwise if doom counter > 0:
-		say "Doom: You have a sense of impending doom.".
-The doomed quest list rule is listed in the quest listing rules.
-
-This is the gladiator quest list rule:
-	if gladiatorcurse >= 0:
-		if the number of male gladiators > 2:[the enlightened gladiator and wild gladiator don't count]
-			if gladiatorcurse is 1:
-				say "The Cursed Gladiators: The demon lord has put a curse on the gladiators! You can break it by defeating [him of demon lord]!";
-			otherwise if gladiatorcurse is 2:
-				say "The Cursed Gladiators: The witch has put a curse on the gladiators! You can break it by defeating [him of witch]!".
-The gladiator quest list rule is listed in the quest listing rules.
-
-This is the witch quest list rule:
-	if the witch-target of witch is a monster and the witch-target-state of witch is -1 and witch is alive:
-		say "The Bored Witch:A witch has asked you to find and banish [NameDesc of witch-target of witch].".
-The witch quest list rule is listed in the quest listing rules.
-
-This is the sex doll quest list rule:
-	if the curse-quest of witch > 0 and the curse-quest of witch < 3 and witch is alive:
-		if the curse-quest of witch is 1:
-			say "The Latex Cure: A witch has asked you to bring her a fae mushroom to help cure your latex transformation curse!";
-		if the curse-quest of witch is 2:
-			say "The Latex Cure: You have given a fae mushroom to the witch, and now she wants you to bring her a recipe for the latex curse removal. It should be found in a library.".
-The sex doll quest list rule is listed in the quest listing rules.
-
-This is the whisper quest list rule:
-	let W be whisper-type;
-	if W is 1:
-		say "Whispers: The [great ones] command you to present yourself at their altar beyond the mansion.";
-	if W is 2:
-		say "Whispers: The [great ones] command you to place a cursed item on their altar beyond the mansion.";
-	if W is 3:
-		say "Whispers: The [great ones] command you to consume semen.";
-	if W is 4:
-		say "Whispers: The [great ones] command you to fill your ass with semen.".
-The whisper quest list rule is listed in the quest listing rules.
-
-This is the princess quest list rule:
-	if ex-princess is caged and the question-sequence of ex-princess > 2 and ex-princess is not defeated:
-		let P be ex-princess;
-		unless P is carrying vibe-wand:
-			say "The Captive Princess: The princess of bimbacia has asked you to find her a suitable wand. Any wand will work, but the royal scepter would be best!";
-		otherwise:
-			say "The Captive Princess: The princess of bimbacia has asked you to get a skeleton key from the prison guard in the dungeon.".
-The princess quest list rule is listed in the quest listing rules.
-
-This is the mindflayer quest of mind flayer list rule:
-	if alreadyspawned of mind flayer is 1 and mind flayer is not permanently banished:
-		say "Mind Flayer: You have been asked to kill a bugged-out monster.".
-The mindflayer quest of mind flayer list rule is listed in the quest listing rules.
 
 Part 14 - First Aid Skill
 
@@ -365,7 +297,7 @@ To teach buttskill:
 		say "You already know how to masturbate anally!".
 
 This is the buttskill list rule:
-	if the buttskill of the player is 1, say "You know how to masturbate anally".
+	if the buttskill of the player is 1, say "You know how to masturbate anally.".
 The buttskill list rule is listed in the skill listing rules.
 
 This is the buttskill learn rule:

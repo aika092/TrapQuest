@@ -56,7 +56,7 @@ To check raising of (B - a modesty shutter):
 						say "[speech style of pimp]'Well done, [if diaper quest is 1]little one[otherwise]slut[end if]. I'm so glad you've decided to become ";
 					say "one of my [if diaper quest is 1]baby slaves for hire[otherwise]whores[end if]. That means every time you [if diaper quest is 1]let one of these patrons babify you[otherwise]fuck a [brotha of pimp][end if], you owe me a cut. Once you've turned a few tricks, it's best if you come find me rather than make me find you.'[roman type][line break]";
 					increase the times-met of pimp by 1;
-					now pimp is interested;
+					interest pimp;
 				otherwise:
 					FavourDown pimp;
 					if pimp is unfriendly and the player is getting unlucky:

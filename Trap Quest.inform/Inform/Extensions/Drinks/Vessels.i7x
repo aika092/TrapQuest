@@ -118,9 +118,9 @@ To compute cursed drinking (X - baby's bottle):
 	if D is actually summonable and a random number between 1 and 3 - unlucky is 1:
 		say "your [ShortDesc of X] shimmers and a diaper appears around your loins!";
 		summon D cursed with quest;
-	otherwise if diaper lover >= 1 and incontinence < 5 and incontinence < the max-incontinence of the player:
+	otherwise if diaper lover >= 1 and the raw-bladder-incontinence of the player < 5 and the raw-bladder-incontinence of the player < the max-bladder-incontinence of the player:
 		say "you feel a weird twang internally, just behind your [if the player is herm][ShortDesc of penis] and [vagina][otherwise if the player is possessing a penis][ShortDesc of penis][otherwise if the player is possessing a vagina][vagina][otherwise]crotch[end if], where your bladder should be.[if the bimbo of the player < 8][one of][line break][variable custom style]That can't be good...[roman type][line break][or][stopping][end if]";
-		increase incontinence by 1;
+		SilentlyBladderIncontinenceUp 1;
 	otherwise:
 		say "a fuzzy feeling enters your head, and it's harder to concentrate.";
 		if 25 - the delicateness of the player > the raw intelligence of the player, DelicateUp 1;
@@ -187,6 +187,7 @@ To increase alcohol level:
 		compute drunken adventure;
 	otherwise:
 		now alcohol is alcohol-level-tier (A + 1);
+		if A is 3, trigger drunk-wisp-trigger;
 		if newbie tips is 1 and A is 0, say "[one of][newbie style]Newbie tip: You're getting a bit drunk! Each level of drunkenness makes you look more slutty and significantly decreases all your stats. But it also improves your self-respect and hampers dignity loss[if diaper quest is 0] and soreness gain. So it's only a good idea to seek out alcohol if you're planning to act like a total slut anyway[end if]. Oh yeah, and if your drunk level gets too high, your player might go on a bit of a drunken journey of their own...[roman type][line break][or][stopping]".
 
 To decide which number is alcohol-level:
@@ -240,7 +241,7 @@ To compute drunken adventure:
 				now condoms-used is the number of worn condom pinnable clothing;
 				say "As if to answer your question, you realise that there are now ";
 				repeat with C running through worn condom pinnable clothing:
-					increase the used condoms of C by a random number between 2 and 8;
+					UsedCondomUp C by a random number between 2 and 8;
 					say "[used condoms of C] used condoms pinned to your [ShortDesc of C]";
 					if condoms-used is 1:
 						say "!";
@@ -304,6 +305,7 @@ To compute drunken adventure:
 		now champagne-glass is cursed;
 		SetDose champagne-glass to 1;
 		say "You notice that your champagne glass is fill of a clear liquid that smells very strongly of alcohol. The glass seems to glow with a dark aura, suggesting that it might be the glass, rather than the liquid, that is somehow making the drink alcoholic.";
+		notice a wisp;
 		update player region;
 		refresh the map-window.
 

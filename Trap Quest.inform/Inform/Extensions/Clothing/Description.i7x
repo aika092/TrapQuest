@@ -151,8 +151,8 @@ To say InfluenceDesc of (C - a wearthing):
 	if the oral-sex-addiction-influence of C > 0 and diaper quest is 0, say "You can sense that this [item of C] is making your mouth [if the oral-sex-addiction-influence of C > 1]a lot [end if]more [if the oral sex addiction of the player < 5]eager to pleasure people[otherwise]desperate to be used to pleasure people[end if].";
 	if the titfuck-addiction-influence of C < 0 and diaper quest is 0, say "You can sense that this [item of C] is [if the titfuck-addiction-influence of C < -1]significantly [end if][if the titfuck addiction of the player > 4]reducing your breasts['] desire to feel a big hard [manly-penis] thrust between them[otherwise]helping you suppress any weird pleasurable sensations you might get if you pleasured a man with your breasts[end if].";
 	if the titfuck-addiction-influence of C > 0 and diaper quest is 0, say "You can sense that this [item of C] is making you feel [if the titfuck-addiction-influence of C > 1]a lot [end if]more sexual pleasure from [if the titfuck addiction of the player < 5]rubbing a [manly-penis] between your breasts[otherwise]worshipping a [manly-penis] with your tits[end if].";
-	if the bbc-addiction-influence of C < 0 and interracial fetish is 1, say "You can sense that this [item of C] is [if the bbc-addiction-influence of C < -1]significantly [end if][if the BBC addiction of the player > 3]reducing your preference for [BlackCock][otherwise]helping you maintain your sexual preferences when it comes to race[end if].";
-	if the bbc-addiction-influence of C > 0 and interracial fetish is 1, say "You can sense that this [item of C] is making you feel [if the bbc-addiction-influence of C > 1]a lot [end if]more [if the BBC addiction of the player < 6]interested in black [men of shopkeeper][otherwise]addicted to [BlackCock][end if].";
+	if the bbc-addiction-influence of C < 0 and interracial fetish is 1, say "You can sense that this [item of C] is [if the bbc-addiction-influence of C < -1]significantly [end if][if the BBC addiction of the player > 7]reducing your preference for [BlackCock][otherwise]helping you maintain your sexual preferences when it comes to race[end if].";
+	if the bbc-addiction-influence of C > 0 and interracial fetish is 1, say "You can sense that this [item of C] is making you feel [if the bbc-addiction-influence of C > 1]a lot [end if]more [if the BBC addiction of the player < 13]interested in black [men of shopkeeper][otherwise]addicted to [BlackCock][end if].";
 	if the sex-addiction-influence of C < 0, say "You can sense that this [item of C] is [if the sex-addiction-influence of C < -1]significantly [end if][if diaper quest is 1]reducing your cravings for orgasms[otherwise if the sex addiction of the player > 7]reducing your [one of]cravings for orgasms[or]obsession with kinky sex acts[cycling][otherwise]helping you [one of]maintain a sensible, normal libido[or]suppress perverted thoughts[cycling][end if].";
 	if the sex-addiction-influence of C > 0, say "You can sense that this [item of C] is making you [if diaper quest is 1]crave orgasms[otherwise if the sex addiction of the player > 7][one of]crave orgasms and sex[or]daydream about lewd acts[or]get aroused by perverse things[cycling][otherwise][one of]think about sex[or]think perverted thoughts[cycling][end if] [if the sex-addiction-influence of C > 1]a lot [end if]more.";
 	if the semen-addiction-influence of C < 0 and diaper quest is 0, say "You can sense that this [item of C] is [if the semen-addiction-influence of C < -1]really [end if]helping you avoid any [if the semen addiction of the player < 4]weird [end if]temptations to experience [if the player is not possessing a vagina and the bimbo of the player < 10]anal [end if]creampies[if bukkake fetish is 1] and facials[end if].";
@@ -231,6 +231,10 @@ Report examining worn elasticity clothing:
 Report examining worn audible jiggles clothing:
 	say "Some sort of in-built magic effect is making this item emphasize the sounds your [BreastDesc] make as they move, making them loud and somewhat comical. It makes you feel like you're in some kind of bizarre cartoon!".
 
+Report examining crotch covering clothing:
+	if the noun is crotch-ripped, say "It has a large tear at the crotch.";
+	if the noun is crotch-zipped or the noun is crotch-unzipped, say "It has a large [if the noun is crotch-zipped]closed[otherwise]open[end if] zip at the crotch.".
+
 Report examining clothing:
 	if the noun is super-short:
 		say "The skirt is so super short that you[unless the noun is worn][']ll still be completely exposed even when wearing it.[otherwise][']re still completely exposed.[end if] [if the humiliation of the player > HUMILIATION-DISGRACED + 3500 and the outrage of the noun is not too humiliating and diaper quest is 0][line break][second custom style]Which is exactly what I want![roman type][line break]";
@@ -269,11 +273,18 @@ Report examining clothing:
 					otherwise say "the fabric would dig deep inside your [vagina], and you would end up sporting a massive cameltoe!";
 	if the noun is top-ripped, say "The [if the noun is bra]cups have[otherwise]bust has[end if] been permanently ripped open.";
 	if the noun is not layer-concealing, say "The cut of the [ShortDesc of the noun] means that it [if the noun is partially-layer-concealing]only partially conceals[otherwise]completely fails to conceal[end if] items worn underneath it.";
+	if the assModesty of the noun > 0, say HipModestyFlav of the noun;
 	if the stolen-strength of the noun > 0, say "[bold type]It has stolen some of your strength, and you won't get it back until you wear it again.[roman type][line break]";
 	if debugmode > 0, say "[input-style]Liquid soak limit: [soak-limit of the noun][roman type][line break]";
 
 Report examining wet clothing:
 	unless it is diaper and the player is not diaper aware, say "It is currently [cumdesc of the noun][if the noun is sheer-when-wet]which is making it more see-through than it would otherwise be[otherwise if the noun is actually dense]but it's not the type of item to turn see-through when wet[otherwise]but it's just as see-through as normal[end if].".
+
+Report examining locked clothing:
+	say "It is currently locked[if the noun is worn] on you[end if], preventing you from removing it.";
+	repeat with K running through specific-keys covering the noun:
+		let M be a random person carrying K;
+		say "There is a specific key that unlocks this lock[if M is the player], which you are in possession of[otherwise if M is a person], which is currently in the possession of [NameDesc of M][end if].".
 
 Report examining clothing:
 	if the noun is worn:

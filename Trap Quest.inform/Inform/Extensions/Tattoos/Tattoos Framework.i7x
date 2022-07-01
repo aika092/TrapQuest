@@ -273,10 +273,10 @@ Definition: a upper back tattoo is drawable:
 	decide yes.
 
 To decide which object is the concealer of (T - a upper back tattoo):
-	decide on a random top-layer-concealing actually dense breast covering clothing.
+	decide on a random top-layer-concealing actually dense clothing.
 To decide which object is the at least partial concealer of (T - a upper back tattoo):
 	if T is listed in the armUses of arms, decide on arms;
-	decide on a random partially-top-layer-concealing not-see-through breast covering clothing.
+	decide on a random partially-top-layer-concealing not-see-through clothing.
 
 To decide which number is the initial outrage of (T - a upper back tattoo):
 	decide on 2.
@@ -353,10 +353,10 @@ Section 12 - Thigh tattoos
 
 A thigh-tattoo is a kind of body tattoo. Understand "thigh tattoo" as a thigh-tattoo.
 To decide which object is the concealer of (T - a thigh-tattoo):
-	decide on a random worn partially-layer-concealing actually dense thigh covering clothing. [as long as it's flagged as at least partially layer concealing it's probably covering the entire tattoo]
+	decide on a random thigh covering partially-layer-concealing actually dense clothing. [as long as it's flagged as at least partially layer concealing it's probably covering the entire tattoo]
 To decide which object is the at least partial concealer of (T - a thigh-tattoo):
 	if T is listed in the armUses of arms or thighs is listed in the armUses of arms, decide on arms;
-	decide on a random worn partially-layer-concealing not-see-through at least partially thigh covering clothing.
+	decide on a random at least partially thigh covering partially-layer-concealing not-see-through clothing.
 
 Section 13 - Arm tattoos
 

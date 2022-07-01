@@ -571,9 +571,9 @@ To BreastsSensitivityUp (X - a number):
 	if the raw sensitivity of breasts < 30, say "Your breasts feel [if X > 2]much [otherwise if X is 2]significantly [end if]more [if the sensitivity of breasts > 10]over[end if]sensitive.";
 	increase the raw sensitivity of breasts by X.
 
-Book - bbc Addiction
+Book - BBC Addiction
 
-Part 1 - Calculate bbc Addiction
+Part 1 - Calculate BBC Addiction
 
 To decide which number is the bbc addiction of the player:
 	decide on previous-bbc-addiction.
@@ -582,7 +582,7 @@ To decide which number is the calculated bbc addiction of the player:
 	let S be the raw bbc addiction of the player;
 	repeat with C running through worn wearthings:
 		increase S by the bbc-addiction-influence of C;
-	if S > 10, decide on 10;
+	if S > 20, decide on 20;
 	if S < 1, decide on 1;
 	decide on S.
 
@@ -597,7 +597,7 @@ To decide which number is the bbc-addiction-influence of (C - a clothing):
 	decide on S.
 
 Definition: yourself is gagging for black cock:
-	if (the player is very horny and the bbc addiction of the player > 4) or (the player is horny and the bbc addiction of the player > 6) or (the player is a bit horny and the bbc addiction of the player > 8): [It's much faster for the CPU to check this first, rather than do all the stuff to check whether an NPC is unfriendly]
+	if (the player is very horny and the bbc addiction of the player > 8) or (the player is horny and the bbc addiction of the player > 13) or (the player is a bit horny and the bbc addiction of the player > 19): [It's much faster for the CPU to check this first, rather than do all the stuff to check whether an NPC is unfriendly]
 		if there is a dark skinned male dangerous monster in the location of the player, decide yes;
 	decide no.
 
@@ -613,9 +613,9 @@ Definition: yourself is queen of spades:
 	if interracial fetish is 1 and the number of worn interracial themed currently visible wearthings > 1, decide yes;
 	decide no.
 
-Part 2 - Modify bbc Addiction
+Part 2 - Modify BBC Addiction
 
-The player has a number called raw bbc Addiction. The raw bbc Addiction of the player is usually 1. [Min 1 Max 10]
+The player has a number called raw bbc Addiction. The raw bbc Addiction of the player is usually 1. [Min 1 Max 20]
 
 To bbcAddictUp (X - a number):
 	if interracial fetish is 1:
@@ -623,20 +623,20 @@ To bbcAddictUp (X - a number):
 		SilentlybbcAddictUp X;
 		now S is the raw bbc addiction of the player - S;
 		if S > 0:
-			if the calculated bbc addiction of the player > 3, say "You feel [if S > 2]much [otherwise if S is 2]significantly [end if]more [if the calculated bbc addiction of the player > 6]addicted to[otherwise]interested in[end if] [BlackCock].";
+			if the calculated bbc addiction of the player > 3, say "You feel [if S > 2]much [otherwise if S is 2]significantly [end if]more [if the calculated bbc addiction of the player > 10]addicted to[otherwise]interested in[end if] [BlackCock].";
 			otherwise say "You feel your racial preference for white people becoming less strong.".
 
 To SilentlybbcAddictUp (X - a number):
 	while X > 0:
 		decrease X by 1;
-		if the raw bbc Addiction of the player < 10, increase the raw bbc Addiction of the player by 1.
+		if the raw bbc addiction of the player < 20, increase the raw bbc Addiction of the player by 1.
 
 To bbcAddictDown (X - a number):
 	let S be the raw bbc addiction of the player;
 	SilentlybbcAddictDown X;
 	decrease S by the raw bbc addiction of the player;
 	if S > 0:
-		if the calculated bbc addiction of the player > 3, say "You feel [if S > 2]much [otherwise if S is 2]significantly [end if]less [if the calculated bbc addiction of the player > 6]addicted to[otherwise]interested in[end if] [BlackCock].";
+		if the calculated bbc addiction of the player > 3, say "You feel [if S > 2]much [otherwise if S is 2]significantly [end if]less [if the calculated bbc addiction of the player > 10]addicted to[otherwise]interested in[end if] [BlackCock].";
 		otherwise say "You feel your racial preference for white people returning.".
 
 To SilentlybbcAddictDown (X - a number):

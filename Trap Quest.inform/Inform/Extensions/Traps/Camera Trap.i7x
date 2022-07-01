@@ -191,19 +191,26 @@ An all time based rule (this is the player spots poster rule):
 	let P be a random unspotted poster in the location of the player;
 	if P is poster:
 		if playerRegion is Hotel:
-			say "You stop in your tracks and look up, [if the player is gagged]and your mouth would be agape if it wasn't gagged[otherwise]mouth agape[end if] as you see the large object above your head. A giant banner hangs from the ceiling, with a photo of you in it. ";
+			say "You stop in your tracks and look up, [if the player is gagged]and your mouth would be agape if it wasn't gagged[otherwise]mouth agape[end if] as you see the large object above your head. A giant banner hangs from the ceiling[if P is not agent poster], with a photo of you in it[end if]. ";
 		otherwise:
-			say "You yelp in surprise as you enter this room and immediately spot a large poster of a lewd scene on [if playerRegion is Woods]a giant tree[otherwise]a wall[end if]. The image is one of you, taken by a camera trap earlier in the game. ";
+			say "You yelp in surprise as you enter this room and immediately spot a large poster of a lewd scene on [if playerRegion is Woods]a giant tree[otherwise]a wall[end if][if P is not agent poster]. The image is one of you, taken by a camera trap earlier in the game[end if]. ";
 		say "[line break][ShortDesc of P][TitleDesc of P]";
-		say "[if the humiliation of the player < 10000][line break][first custom style][one of]Oh my god! No no no no no! How many people have seen this? I feel so ashamed...[or]Oh no! There's one here too?![or]Oh no! How may of these are there?![or]No no no, not another one! There are pictures of me everywhere![then at random][otherwise if the humiliation of the player < 20000][line break][variable custom style][one of]Oh no! How do I take this down?! How embarrassing![or]Eek! Another one! How awful...[or]Fucking hell, how many pictures of me are there?[then at random][otherwise if the humiliation of the player < 30000][variable custom style][one of]Ooh! What meanie put this up without asking me? I should have at least been asked![or]If I find who put this up they're going to be in big trouble![or]That's so mean! But kind of hot...[or]How do I get myself into these situations! *giggle*[then at random][otherwise if the humiliation of the player < 40000][line break][second custom style]I can't believe how much this is turning me on, to be objectified like that![otherwise][second custom style]I deserved that.[end if][roman type][line break]";
-		if the humiliation of the player < 20000, say "[if playerRegion is Hotel][one of]You jump, trying to reach the banner and pull it down, but it's no use - it's way too high![line break][first custom style]Noooo![roman type][line break][or][stopping][otherwise][one of]You try to rip the poster off the wall, but it's extremely durable and stuck on with some very impressive adhesive - you can't even damage it![line break][first custom style]Oh come on![roman type][line break][or][stopping][end if]";
-		say "[one of]Dare you look closer at your own shameful image?[or][stopping]";
-		humiliate the lewdness of P;
+		if P is agent poster:
+			if P is throat-agent-poster and the agent-scene-spotted of agent < 1:
+				now the agent-scene-spotted of agent is 1;
+			if P is doggy-agent-poster and the agent-scene-spotted of agent < 2:
+				now the agent-scene-spotted of agent is 2;
+				say "[variable custom style]WHAT?! THIS IS FAKE! THIS NEVER HAPPENED!!![roman type][line break]";
+		otherwise:
+			say "[if the humiliation of the player < 10000][line break][first custom style][one of]Oh my god! No no no no no! How many people have seen this? I feel so ashamed...[or]Oh no! There's one here too?![or]Oh no! How may of these are there?![or]No no no, not another one! There are pictures of me everywhere![then at random][otherwise if the humiliation of the player < 20000][line break][variable custom style][one of]Oh no! How do I take this down?! How embarrassing![or]Eek! Another one! How awful...[or]Fucking hell, how many pictures of me are there?[then at random][otherwise if the humiliation of the player < 30000][variable custom style][one of]Ooh! What meanie put this up without asking me? I should have at least been asked![or]If I find who put this up they're going to be in big trouble![or]That's so mean! But kind of hot...[or]How do I get myself into these situations! *giggle*[then at random][otherwise if the humiliation of the player < 40000][line break][second custom style]I can't believe how much this is turning me on, to be objectified like that![otherwise][second custom style]I deserved that.[end if][roman type][line break]";
+			if the humiliation of the player < 20000, say "[if playerRegion is Hotel][one of]You jump, trying to reach the banner and pull it down, but it's no use - it's way too high![line break][first custom style]Noooo![roman type][line break][or][stopping][otherwise][one of]You try to rip the poster off the wall, but it's extremely durable and stuck on with some very impressive adhesive - you can't even damage it![line break][first custom style]Oh come on![roman type][line break][or][stopping][end if]";
+			say "[one of]Dare you look closer at your own shameful image?[or][stopping]";
+			humiliate the lewdness of P;
 		now P is spotted.
 
 An all time based rule (this is the monster spots poster rule):
 	let P be a random spotted poster in the location of the player;
-	if P is poster:
+	if P is poster and P is not agent poster:
 		repeat with M running through reactive monsters:
 			if M is not disapproving P and (M is interested or the boredom of M > 30): [Essentially we don't want to do this check if the monster is just about to 'notice' the player.]
 				say "[BigNameDesc of M] spots the [if P is in the hotel]banner[otherwise]poster[end if] of you in this room!";

@@ -43,6 +43,7 @@ This is the soiled diapers smell gross rule:
 	if messySmellSource is nothing, now messySmellSource is a random messed knickers in the location of the player;
 	if messySmellSource is nothing and diaper messing >= 6, now messySmellSource is a random soiled-diaper in the location of the player;
 	if messySmellSource is nothing and woman-player is in the location of the player and the woman-status of woman-player is 81, now messySmellSource is woman-player;
+	if messySmellSource is nothing and the hole-in-wall-scene of woman-player > 0 and woman-player is in HoleInWall and hole-in-wall is in the location of the player, now messySmellSource is hole-in-wall;
 	if messySmellSource is a thing:
 		if turnsWithSoiledDiaper < 100, increase turnsWithSoiledDiaper by 1;
 		if turnsWithSoiledDiaper is 1 and the player is perturbed and the player is not grossed out, say "The gross smell of [NameDesc of messySmellSource] is gradually filling your nostrils.";
@@ -106,7 +107,10 @@ To compute diaper pail entrance:
 		if SD is off-stage, now SD is in DiaperPail;
 	now the source-room of DiaperPail is the location of the player;
 	now the player is in DiaperPail;
-	now diaperPailStruggleAttempts is 0.
+	now diaperPailStruggleAttempts is 0;
+	let N be the number of soiled-diaper in DiaperPail;
+	say "The horrid sensation of your head being amongst the [if N > 1][N] used diapers[otherwise]messy diaper[end if] overwhelms your senses, [one of]and leaves you feeling smaller than before[or]almost making you cry[or]making you feel [if the player is feeling dominant]less dominant[otherwise]more submissive[end if] than before[in random order].";
+	SilentlyDelicateUp 1.
 
 To compute diaper pail exit:
 	repeat with SD running through soiled-diapers in DiaperPail:
@@ -132,11 +136,7 @@ Check jumping when the player is in DiaperPail:
 	do nothing instead.
 
 An all later time based rule (this is the diaper pail stuck rule):
-	if the player is in DiaperPail:
-		let N be the number of soiled-diaper in DiaperPail;
-		if a random number between 0 and N is not 0:
-			say "The horrid aroma of the [if N > 1][N] used diapers[otherwise]messy diaper[end if] pressed against your face overwhelms your senses, [one of]and leaves you feeling smaller than before[or]almost making you cry[or]making you feel [if the player is feeling dominant]less dominant[otherwise]more submissive[end if] by the second[in random order].";
-			SilentlyDelicateUp 1.
+	if the player is in DiaperPail, compute MessyDiaperFacesit of most-recent-pail.
 
 BabChanging it with is an action applying to two things.
 Check BabChanging it with:
@@ -146,6 +146,7 @@ Check BabChanging it with:
 	if the noun is not messy and (the noun is not woman-player or diaper quest is 0), say "[big he of the noun] isn't [if the noun is defeated]in need of[otherwise]likely to let you do[end if] that." instead;
 	if the noun is undefeated and the noun is not woman-player and the noun is not adult baby slave, say "[big he of the noun] isn't likely to let you do that." instead;
 	if playerRegion is School, say "That would be a waste of time. [big he of the noun] would just mess [himself of the noun] again almost instantly." instead;
+	if the noun is undefeated uninterested monster, say "You'd need to have [his of the noun] attention first." instead;
 	if the player is immobile or the player is in danger, say "You're a bit busy." instead;
 	if the player is not able to use manual dexterity, say "Your limited manual dexterity makes this impractical." instead.
 

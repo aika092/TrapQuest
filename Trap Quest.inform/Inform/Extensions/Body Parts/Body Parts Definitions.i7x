@@ -197,7 +197,7 @@ To check soreness fainting of (F - a fuckhole):
 			if the raw delicateness of the player < 20 and the player is consenting:
 				say "You steel your mind and manage to power through the intense feelings without fainting[if the delicateness of the player < 4][otherwise if the delicateness of the player < 8]. You whimper gently[otherwise if the delicateness of the player < 12]. You sob quietly[otherwise if the delicateness of the player < 16]. You can't help but cry[otherwise if diaper lover >= 1]. You bawl loudly like a baby[otherwise]. You bawl loudly[end if].";
 				if debugmode is 0:
-					PainUp 1;
+					PainUp 10;
 					potentially despair about F sex;
 			otherwise:
 				if the raw delicateness of the player < 20, say "Your mind is too weak and the feelings are too intense, and you fail to stay conscious!";
@@ -210,7 +210,7 @@ To check soreness fainting of (F - a fuckhole):
 		increase sex-hurt-balance by 1;
 		if sex-hurt-balance >= 5: [Requires two ticks of sex pain (or five if they are all in the same turn - otherwise egg laying could go nuts) to trigger the PainUp function]
 			now sex-hurt-balance is 0;
-			PainUp 1;
+			PainUp 10;
 			potentially despair about F sex.
 
 An all later time based rule (this is the sore sex hurts rule):
@@ -463,7 +463,7 @@ This is the body parts get focused rule:
 	if the total volume of face > 0:
 		if debugmode > 1, say "mouth has [MouthfulDesc].";
 		add face to LB, if absent;
-	if there is held pocketwipes:
+	if there is carried pocketwipes:
 		if the make-up of face > 0 and permanent makeup is 0:
 			if debugmode > 1, say "face has make up.";
 			add face to LB, if absent;
@@ -480,7 +480,7 @@ The body parts get focused rule is listed in the focus finding rules.
 
 To construct normal buttons for (T - a body part):
 	if ButtonTableFull is 0:
-		let P be a random held pocketwipes;
+		let P be a random carried pocketwipes;
 		if T is overglazed:
 			choose a blank row in the Table of Buttons;
 			now the ButtonImage entry is Figure of cum eating;

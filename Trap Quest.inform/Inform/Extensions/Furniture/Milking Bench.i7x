@@ -88,6 +88,8 @@ To compute furniture resting on (M - a milking bench):
 			if cow-ears is off-stage and cow-ears is actually summonable and a random number between 1 and 40 - (20 * unlucky) is 1:
 				say "As you are getting milked, a headband with fake cow ears appears on your head. You let out a soft involuntary [variable custom style]'moo'[roman type].";
 				summon cow-ears cursed;
+			otherwise if the class of the player is "cheerleader" and denim-overalls is off-stage and denim-overalls is unclash summonable:
+				unclash class summon denim-overalls;
 			otherwise if the class of the player is royal slave and cow print basque is not worn:
 				class summon cow print basque;
 				if cow print basque is not worn:
@@ -125,13 +127,14 @@ To compute furniture resting on (M - a milking bench):
 		if the lactation rate of breasts < 4:
 			say "[bold type]Your [BreastDesc] suddenly feel significantly more... active.[roman type][line break]";
 			increase the lactation rate of breasts by 2;
-	if there is worn temporarily-displaced clothing and the player is not in danger:
-		say "You replace your [ShortDesc of list of worn temporarily-displaced clothing].";
-		repeat with C running through worn temporarily-displaced clothing:
-			TopReplace C;
-	repeat with C running through temporarily-displaced clothing: [This should happen even if the player is in danger]
+	let C be a random worn temporarily-displaced actually top-replacable clothing;
+	while C is temporarily-displaced clothing:
+		say "You replace your [ShortDesc of C].";
+		TopReplace C;
 		now C is not temporarily-displaced;
-	[now the units collected of M is 0;] [it can save units for next time]
+		now C is a random worn temporarily-displaced actually top-replacable clothing;
+	repeat with CC running through temporarily-displaced clothing: [This should happen even if the clothing couldn't be replaced]
+		now CC is not temporarily-displaced;
 	now player-currently-resting is 0.
 
 To say RestingDesc of (F - a milking bench):

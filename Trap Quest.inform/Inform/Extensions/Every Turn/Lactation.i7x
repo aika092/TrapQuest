@@ -37,8 +37,10 @@ A time based rule (this is the lactation rule):
 						if the largeness of breasts > previous-size:
 							say "Your body has produced [if the milk volume of breasts < 5]enough[otherwise]so much[end if] [milk] that you now have [BreastDesc]!";
 							now flav-said is 1;
-				if a random number between 1 and 10 is 1 and the lactation rate of breasts > 0:
-					say "You feel your [unless there is an ass covering milking basque]breasts['] [end if][milk] production rate [if R is 1]stop.[otherwise][one of]slow down[or]decrease[or]lower[in random order].[end if]";
+				let LRT be 15 - the lactation rate of breasts;
+				if LRT < 1, now LRT is 1;
+				if a random number between 1 and LRT is 1 and the lactation rate of breasts > 0:
+					say "You feel your [unless there is an ass covering milking basque]breasts['] [end if][milk] production [if R is 1]stop.[otherwise]rate [one of]slow down[or]decrease[or]lower[in random order].[end if]";
 					decrease the lactation rate of breasts by 1;
 		if the milk volume of breasts > 0:
 			if the lactation rate of breasts > 3: [Selkie. (Incidentally: I put this comment in front of the "if" on this line, and Inform got confused.)]

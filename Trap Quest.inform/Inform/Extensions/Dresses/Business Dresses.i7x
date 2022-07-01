@@ -61,27 +61,27 @@ To decide which object is the unique-upgrade-target of (C - a pinstripe business
 
 Part 3 - Fetish Business Dress
 
-A fetish business dress is a kind of business dress. There is 1 transformation-rare latex fetish business dress. A fetish business dress is low cut. The text-shortcut of fetish business dress is "fbd". A fetish business dress is usually butt-windowed. The printed name of fetish business dress is usually "[clothing-title-before]fetish business dress[clothing-title-after]".
+fetish business dress is a business dress. fetish business dress is transformation-rare. fetish business dress is latex. fetish business dress is low cut. The text-shortcut of fetish business dress is "fbd". fetish business dress is butt-windowed. The printed name of fetish business dress is "[clothing-title-before]fetish business dress[clothing-title-after]".
 
 Figure of fetish business dress is the file "Items/Clothes/Upper/Business/businessdress3.png".
 
-Definition: a fetish business dress is black themed: decide yes.
+Definition: fetish business dress is black themed: decide yes.
 
-To decide which figure-name is clothing-image of (C - a fetish business dress):
+To decide which figure-name is clothing-image of (C - fetish business dress):
 	decide on figure of fetish business dress.
 
-To say ClothingDesc of (M - a fetish business dress):
+To say ClothingDesc of (M - fetish business dress):
 	say "This beige and black latex dress is styled like smart businesswoman attire but has a plunging gap in the middle that goes all the way down to the bellybutton, and a window at the back of the skirt to expose the wearer's butt.".
 
-To say ShortDesc of (C - a fetish business dress):
+To say ShortDesc of (C - fetish business dress):
 	say "latex business dress".
-To say MediumDesc of (C - a fetish business dress):
+To say MediumDesc of (C - fetish business dress):
 	say "latex butt-windowed business dress".
 
-To decide which number is the initial outrage of (C - a fetish business dress):
+To decide which number is the initial outrage of (C - fetish business dress):
 	decide on 10.
 
-To decide which object is the unique-upgrade-target of (C - a fetish business dress):
+To decide which object is the unique-upgrade-target of (C - fetish business dress):
 	if the number of worn neck covering clothing is 0, decide on a random off-stage minimalist schoolgirl outfit.
 
 Part 4 - Vest Business Dress

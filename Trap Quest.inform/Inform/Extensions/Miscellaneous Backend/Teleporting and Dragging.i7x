@@ -49,6 +49,9 @@ To teleport to (R - a room):
 		now iron-maiden is revealed;
 		now iron-maiden is expired;
 		now iron-maiden-turns is 0;
+	otherwise if hole-in-wall is revealed and hole-in-wall is in R:
+		compute HoleInWallEntrance;
+		say "Everything goes dark. Your waist feels trapped... halfway through a wall! Your front half is inside some small chamber, while your rear half is exposed inside the [R] in the hotel![line break][variable custom style]Oh no![roman type][line break]";
 	otherwise:
 		now the player is in R;
 	zero focus stuff; [Location has changed so we need to empty the location window]
@@ -91,7 +94,7 @@ To check shopstealing of (M - a thing):
 			compute stealing of C;
 		if X > 0:
 			say "[BigNameDesc of shopkeeper] sees [NameDesc of M] [']helping['] you to leave. [big he of shopkeeper] seems to think it's your fault.[line break][speech style of shopkeeper]'[one of]Stop Thief!'[or]Guards! Guards! Arrest this thieving imbecile!'[or]Where do you think you're going with that, bitch?'[or]Oi, you haven't paid for that!'[purely at random][roman type][line break]An alarm bell rings throughout the whole dungeon. [bold type]Looks like you're in trouble with the law![roman type][line break]";
-			now shopkeeper is interested;
+			interest shopkeeper;
 			increase the stolen-aware of shopkeeper by 1;
 			anger shopkeeper.
 

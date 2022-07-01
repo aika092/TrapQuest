@@ -392,9 +392,9 @@ Definition: a monster (called M) is too intimidating:
 			if M is interested, say "[one of]As soon as the thought of harming [NameDesc of M] enters your mind, your [printed name of G] sends a horrible shiver down your spine[or]At the mere thought of harming [NameDesc of M], your spine spasms in painful fear[or]You start to imagine harming [NameDesc of M] but instantly squash the thought as your [printed name of G] sends a painful shudder down your spine[then at random].";
 			otherwise say "[BigNameDesc of M] turns toward you as soon as the thought of harming [him of M] enters your mind, and your [printed name of G] sends a horrible shiver down your spine.";
 			decide yes;
+	if the health of M < the maxhealth of M, decide no;
 	if the player is not feeling submissive or mindbreak protection is 1, decide no;
 	if M is uninterested or M is friendly, decide no;
-	if the health of M < the maxhealth of M, decide no;
 	let R be a random number between 1 and the delicateness of the player;
 	if debuginfo > 0, say "[input-style]automatic surrender check: player submission (delicateness) roll d[delicateness of the player] ([R]) + [ShortDesc of M] scariness ([the difficulty of M / 4]) = [R + (the difficulty of M / 4)] | (15.5) surrender threshold[roman type][line break]";
 	if R + (the difficulty of M / 4) > 15, decide yes;
@@ -465,7 +465,7 @@ To compute failed damage of (M - a monster):
 To compute standard damage of (M - a monster):
 	if the health of M > 0:
 		compute damage reaction of M;
-		now M is interested;
+		interest M;
 		anger M;
 		now the boredom of M is 0;
 		if M is undefeated and M is not caged, compute combatProvoked of M; [All NPCs should become unfriendly here, if able.]
@@ -601,7 +601,8 @@ To damage (A - a number) on (M - a monster):
 		compute slaying bonus of M;
 		finally destroy M;
 		if the player is not in danger and side images > 0 and character-version is 0:
-			now danaume-arms-victory is 1.
+			now danaume-arms-victory is 1;
 			[display character window.]
+	if debugmode > 1, say "At end of attack function, [MediumDesc of M] is in [location of M].".
 
 Attacking Monsters ends here.

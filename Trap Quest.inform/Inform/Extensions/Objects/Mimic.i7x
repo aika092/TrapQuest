@@ -119,7 +119,7 @@ To compute mimic teasing (N - 1):[hissing mimic. Will "poison" the player or ful
 			increase the raw sensitivity of breasts by 2;
 		otherwise:
 			say "It feels like your whole body is on fire, and tears well up in your eyes as you wait for the venom to finally wear off.";
-			PainUp 2;
+			PainUp 20;
 		passively stimulate vagina from memic.
 
 To compute mimic teasing (N - 3):[stylish mimic. Transforms the player's clothes or messes with the player's headgear]
@@ -150,7 +150,7 @@ To compute mimic teasing (N - 4):[friendly mimic; messes with player penis size,
 	say "A shadowy mass rises out of the container, slowly forming itself into a [if futanari fetish is 0]flatchested green [man of a memic] with piercing yellow eyes and a giant green dildo attached to a harness around [his of a memic] waist, [otherwise]frail green [man of a memic] with piercing yellow eyes and a giant green dick which is [end if]so huge it hangs halfway out of the container.[line break][second custom style]'[one of]Finally somebody opens me... I should probably give you a reward, right?[or]Phew, it's been so long since anyone opened me. Guess I should thank you.'[or]Thanks so much, it's been weeks since anybody opened me! I've gotta thank you somehow...'[or]So, I guess you opened me because you were looking for something useful. Let's see if I can help!'[at random][roman type][line break]The [item style]friendly mimic[roman type] makes a wicked grin as [he of a memic] yanks your body forward[run paragraph on]";
 	if the player is possessing a penis:[Penis scrambling]
 		if the player is ready for event TG:
-			say "You feel the mimic's shape-shifting magic being focused on your [ShortDesc of penis]! ";
+			say ". You feel the mimic's shape-shifting magic being focused on your [ShortDesc of penis]! ";
 			say DefaultSexChangeFlav;
 			SexChange the player;
 		otherwise:
@@ -193,7 +193,7 @@ To compute mimic teasing (N - 4):[friendly mimic; messes with player penis size,
 
 To compute mimic teasing (N - 2):[snickering mimic;reverses bust and hip size, then increases delicateness]
 	say "More hands jump out at you, pulling harder and harder until you finally lose your balance and topple in head first as hysterical laughter fills your ears.[line break][second custom style]'[one of]Now I REALLY get to mess with you! Hee he he[or]Just so you know, I'm about to have a LOT of fun[or]Now I can do WHATEVER I want! Ha ha ha[or]Yes, finally! It's been so long since I had anyone to PLAY with[at random]!'[roman type][line break]The [item style]snickering mimic[roman type]'s voice only grows louder as a shadowy mass envelops your whole body, [if the number of worn clothing > 0]slithers under your clothes and clamping over your mouth[otherwise]tickling your bare skin and clamping over your mouth[end if], as the mimic begins reshaping your body as it sees fit. You can feel it twisting your nipples and viciously spanking your ass as it rearranges your features, but you have no way of responding to the pain other than to simply endure it until it abruptly chucks you out on your ass and closes sharply behind you.";
-	PainUp 1;
+	PainUp 10;
 	if inflation fetish is 1:[air volume in boobs --> flesh in hips; air in hips --> flesh in boobs]
 		let B be the air volume of breasts;
 		let H be the air volume of hips;
@@ -231,7 +231,7 @@ Report waiting when the player is in MimicCrib:
 		say "All of a sudden, white objects start to rain from the darkness above you. As the first ones thump against your face and body you realise with [horror the diaper addiction of the player] what they are - used disposable diapers! As more and more start to pile on top of each other on and around you, [if diaper messing >= 3]the disgusting smell of them[otherwise]the stench of piss[end if] soon fills your nostrils[if the diaper addiction of the player < 14], making you gag[end if].";
 		appropriate-cutscene-display figure of mimic cutscene 4;
 		say "And still they continue to fall, threatening to bury you under their combined bulk and weight. You begin to struggle but it's no use - you feel like you're sinking in a quicksand made out of used nappies. Soon they are covering your entire body and you can't even breathe properly; you begin to cough and splutter as you try to suck a little oxygen through the thick rancid padding. [bold type]You feel yourself growing more accustomed to the smell of [urine]. [roman type]Just as you begin to feel light-headed [one of]and resign yourself to the reality of meeting your end,[or]once again[stopping] you are suddenly spat out of the crib back into the mansion, but now thoroughly exhausted and with tears in your eyes.";
-		PainUp 1;
+		PainUp 10;
 		if watersports fetish is 1, SilentlyUrineTasteAddictUp 1;
 		otherwise DiaperAddictUp 1;
 		now the fatigue of the player is the buckle threshold of the player;

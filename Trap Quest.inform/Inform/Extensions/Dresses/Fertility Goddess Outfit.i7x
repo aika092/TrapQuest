@@ -14,6 +14,7 @@ To decide which number is the intelligence-influence of (C - a fertility outfit)
 
 Figure of goddess tunic is the file "Items/Clothes/Upper/Special/FertGod/fertilitygoddess1.png".
 Figure of ivy leaves is the file "Items/Clothes/Upper/Special/FertGod/fertilitygoddess2.png".
+Figure of living tentacles is the file "Items/Clothes/Upper/Special/FertGod/fertilitygoddess3.png".
 Figure of sheer chest garb is the file "Items/Clothes/Upper/Special/FertGod/fertilitygoddess4.png".
 
 Part 1 - Goddess Tunic
@@ -83,14 +84,20 @@ Definition: ivy leaves is green themed: decide yes.
 
 Part 3 - Living Tentacles
 
-living tentacles is a fertility outfit. living tentacles is biological. living tentacles is fully exposing. living tentacles is belly exposing. living tentacles is unskirted. living tentacles is bottom-exclusive.
+living tentacles is a fertility outfit. living tentacles is biological. living tentacles is ridiculously low cut. living tentacles is unskirted. living tentacles is bottom-exclusive.
 
 Living tentacles has a number called charge. The charge of living tentacles is 0. The text-shortcut of living tentacles is "lvtl".
+
+To decide which figure-name is clothing-image of (C - living tentacles):
+	decide on figure of living tentacles.
 
 The printed name of living tentacles is "[clothing-title-before]living tentacles[clothing-title-after]".
 
 To say ClothingDesc of (C - living tentacles):
 	say "A creepy little twitching mass of purple that was once on your neck[if C is worn]. The thing that's grabbing your neck appears to be trying to 'help' by covering your skin up with its tentacles. While you appreciate the gesture, one thing it does not have a strong grasp of is the concept of what you care about covering. Still, it's definitely okay that it is here. You feel very strongly about that. The tentacles are very helpful, even! They sometimes help you attack, and now you're never without a drink...[otherwise].[end if]".
+
+Definition: living tentacles is layer-concealing: decide no.
+Definition: living tentacles is partially-layer-concealing: decide yes.
 
 To compute class set up of (C - living tentacles):
 	now the raw-magic-modifier of C is childValue times 6.

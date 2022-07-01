@@ -54,9 +54,11 @@ To compute furniture resting on (F - modification machine):
 		if the player is top heavy or (the total volume of hips < the largeness of breasts and the player is not bottom heavy):
 			say "Two robotic arms with needles head straight for your butt cheeks! You are completely unable to move as they pierce your flesh and begin pumping what has to be [if the silicone volume of hips > 0]even more [end if]silicone into your rump. You watch in [horror] as both buttocks swell considerably in size.";
 			AssImplantsUp 2 + (2 * extreme proportions fetish);
+			say "You now have surgically enhanced [AssDesc].";
 		otherwise:
 			say "Two robotic arms with needles head straight for your [BreastDesc]! You are completely unable to move as they pierce your flesh and begin pumping what has to be [if the silicone volume of breasts > 0]even more [end if]silicone into your chest. You watch in [horror] as they swell considerably in size.";
 			BustImplantsUp 3 + (3 * extreme proportions fetish);
+			say "You now have surgically enhanced [BreastDesc].";
 	otherwise if diaper quest is 1:
 		compute F babifying;
 	otherwise:
@@ -140,8 +142,8 @@ To compute (M - a modification machine) babifying:
 			assfill belly limit water;
 	otherwise if the player is bursting and the player is not really bursting:
 		say "A robotic arm injects you in the side with a needle. ";
-		while the player is not really bursting and the player is not incontinent and incontinence < the max-incontinence of the player:
-			increase incontinence by 1;
+		while the player is not really bursting and the player is not bladder incontinent and the raw-bladder-incontinence of the player < the max-bladder-incontinence of the player:
+			SilentlyBladderIncontinenceUp 1;
 		say "[if the player is really bursting]You feel your bladder weaken to the point where you're really desperate to pee![line break][variable custom style]Uh-oh, I feel permanently weaker down there...[otherwise]You suddenly don't feel like you need to pee.[line break][variable custom style][one of]I don't need to pee any more? How... suspiciously convenient...[or]Uh-oh, I think it's made me incontinent again...[stopping][end if][roman type][line break]";
 	otherwise:
 		let B be 0;

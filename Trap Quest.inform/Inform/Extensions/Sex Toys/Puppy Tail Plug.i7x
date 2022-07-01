@@ -23,7 +23,7 @@ Definition: puppy tail plug is dog themed: decide yes.
 Definition: puppy tail plug is white themed: decide yes.
 
 This is the puppy tail prevents speech rule:
-	if there is a worn puppy tail plug, rule fails.
+	if puppy tail plug is worn and the player is not in a predicament room, rule fails.
 The puppy tail prevents speech rule is listed in the player speech rules.
 
 Puppy Tail Plug ends here.

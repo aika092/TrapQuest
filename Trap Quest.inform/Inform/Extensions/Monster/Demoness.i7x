@@ -372,7 +372,6 @@ To compute appearance assessment of (M - a demoness):
 		distract M.
 
 To compute DQ perception of (M - a demoness):
-	now M is interested;
 	say "[BigNameDesc of M] notices you. ";
 	if the player is flying:
 		say "The demoness has noticed the player flying, this should be impossible since [he of M] lives in the woods. Report the bug to Aika please!";
@@ -551,7 +550,7 @@ To say ErectionForceFlav of (M - a demoness):
 [Note: the player's orgasm is technically still happening here, so this can potentially happen more than once during the same riding session.]
 To compute erection orgasm of (M - a demoness):
 	say "[line break][speech style of M]'[one of]Ah-ah, We're not done yet~'[or]Don't go getting ahead of yourself now~'[or]Tsk. Tsk. We can't have you cumming THIS early~'[in random order][roman type][line break][BigNameDesc of M]'s tail wraps itself around your shaft and viciously tightens. Your ejaculation is cut off forcefully, completely ruining your orgasm and causing your shaft to throb pointlessly with nothing coming out.";
-	PainUp 1;
+	PainUp 10;
 	arouse 2000;
 	increase the excitement of M by 1;
 	if the sex-length of M < 2, now the sex-length of M is 2.
@@ -890,7 +889,7 @@ To compute (M - a demoness) attacking (C - a clothing):
 		say "[big he of M] burns them completely off!";
 		destroy C;
 	otherwise if R > the defence of C - 3 and C is rippable:
-		rip C;
+		ZipOrRip C;
 		say "[big he of M] has managed to create a hole at the crotch of your [C]!";
 	otherwise:
 		say "[big he of M]'s slowly burning them off!";
@@ -1236,7 +1235,7 @@ To compute angry punishment of (M - a demoness):
 		FavourDown M by 1;
 	otherwise:
 		say "[speech style of M]'Ingrate!'[roman type][line break][BigNameDesc of M] rakes [his of M] nails across your face.";
-		PainUp 1.
+		PainUp 10.
 
 This is the demoness friendly convinced rule:
 	let M be current-monster;
@@ -1446,7 +1445,7 @@ To compute pregnancy creampie of (M - a demoness) in (F - vagina):
 		say "[BigNameDesc of M] grabs the tentacle as it tenses, pushing it in as deep as it can go as [one of]spurt after spurt[or]gush after gush[or]a huge amount of[at random] warmth shoots into your [vagina] and quickly spreads outward into your [ShortDesc of Belly]. You hear an ominous rumble, and with a snap of [his of M] fingers, your belly instantly shrinks down to normal. [big he of M] licks [his of M] lips, eyes glinting red as the softening tentacle slips out of you.[line break][speech style of M]'Now then. I think I'll take my payment.'[roman type][line break]";
 	let R be a random number between 2 and 4;
 	SexAddictUp R;
-	if R < 4, SemenAddictUp R - 4;
+	if R < 4, SlowSemenAddictUp R - 4;
 	say "[big he of M] loses interest.";
 	now the father is the throne;
 	now the pregnancy of the player is 0;
@@ -1891,14 +1890,13 @@ To compute failed dominance punishment of (M - a demoness):
 		now N is not penetrating vagina;
 		now N is not penetrating asshole;
 		say "You're not sure how much time has passed by the time the [NameDesc of M] returns to shoo the tiny red bastards away.[line break][speech style of M]'Sorry I had you wait so long, but I couldn't think of anything. I hope you'll forgive me...'[roman type][line break][GotUnluckyFlav]";
-		Satisfy M;
+		satisfy M;
 	otherwise:
-		say "[speech style of M]'That was nice of you. I really appreciate it.'[roman type][line break][BigNameDesc of M] kneels down in front of you, wearing a conspiratorial grin.[line break][speech style of M]'How about a nice kiss in return?'[roman type][line break][big he of M] maintains [his of M] vice-like grip on your wrists as [he of M] closes [his of M] eyes and puckers [his of M] lips.[line break][if the player is able to speak][speech style of M]'Oh, oops. You can't...'[roman type][line break][otherwise]Do you 'bribe' [him of M] with a kiss?[end if]";
+		say "[speech style of M]'That was nice of you. I really appreciate it.'[roman type][line break][BigNameDesc of M] kneels down in front of you, wearing a conspiratorial grin.[line break][speech style of M]'How about a nice kiss in return?'[roman type][line break][big he of M] maintains [his of M] vice-like grip on your wrists as [he of M] closes [his of M] eyes and puckers [his of M] lips.[line break][if the player is not able to speak][speech style of M]'Oh, oops. You can't...'[roman type][line break][otherwise]Do you 'bribe' [him of M] with a kiss?[end if]";
 		if the player is able to speak and the player is bimbo consenting:
 			say "You [if the sex addiction of the player < 4]hesitantly[otherwise]obediently[end if] lean forward and kiss [him of M]. [big his of M] tongue eagerly pushes its way into your mouth, and you feel a pronounced 'dirty' feeling settling over your mind as [he of M] unceremoniously shoves you away and gets to [his of M] feet.";
 			SexAddictUp 1;
-			SemenAddictUp 1;
-			Satisfy M;
+			satisfy M;
 		otherwise:
 			if the player is getting unlucky:
 				say "[line break][speech style of M]'Well I have to repay you somehow... I know! How does a round of torture sound?'[roman type][line break][GotUnluckyFlav]";
@@ -1906,7 +1904,7 @@ To compute failed dominance punishment of (M - a demoness):
 				now another-turn is 1;
 			otherwise:
 				say "[speech style of M]'Well if that wasn't good enough, I'll just have to repay you with THIS!'[roman type][line break][BigNameDesc of M] slaps you in the face, taking extra care to make sure [his of M] nails rake painfully across your cheeks. You can't help the tears that well up in your eyes as you struggle to handle the pain.";
-				PainUp 1;
+				PainUp 10;
 				Bore M.
 
 To compute unique dominance reward of (M - a demoness):
@@ -2094,7 +2092,7 @@ This is the demoness ghost summoning rule:
 		if the channelling of M is 0, say "[BigNameDesc of M] stretches [his of M] hands out in front of [him of M], forming a triangle with [his of M] fingers as [he of M] concentrates. It's like [he of M]'s draining the heat from the air around you.";
 		otherwise say "[BigNameDesc of M] is still concentrating on... whatever it is [he of M]'s doing!";
 		repeat with G running through on-stage ghosts:
-			now G is interested;
+			interest G;
 		increase creepiness by 10;
 		FatigueUp 10;
 		now the channelling of M is 1.

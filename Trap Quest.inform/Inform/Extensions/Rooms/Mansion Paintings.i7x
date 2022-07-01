@@ -208,9 +208,7 @@ To set map coordinates for (P - toilet-monster) in (R - a room):
 An all time based rule (this is the toilet monster rule):
 	if the player is in a toilet-painting-room and toilet-monster is in the location of the player:
 		say "[first custom style]'[one of]BOO[or]I'M GONNA GOBBLE YOU UP IF YOU GET TOO CLOSE[or]COME CLOSER, LITTLE MORSEL[or]ME AGAIN[stopping]! HAHAHAHAHA.'[roman type][line break][one of][BigNameDesc of toilet-monster][']s scary, booming voice sends shivers down your spine.[or][stopping]";
-		say "[one of]How scary[or]Terrifying[or]Too spooky for you[then at random]! ";
-		let T be "Your fright makes it more difficult to hold on, and";
-		check sudden spit and expulsion with reason T;
+		FearUp 10;
 		DelicateUp 1;
 		increase the times-terrorized of toilet-monster by 1;
 		if the times-terrorized of toilet-monster is 2 and diaper lover > 0, say "[bold type]This horrific encounter is leaving a lasting impression on your psyche. From now on, you won't be able to bring yourself to use a toilet unless there's someone friendly there with you.[roman type][line break]";
@@ -454,6 +452,7 @@ To compute painting entrance of (P - cock-painting):
 	now the player is in CockPainting01.
 
 To compute cock monster activation:
+	let dong-activated be false;
 	repeat with R running through cock-painting-rooms:
 		repeat with D running through dongs in R:
 			if D is not held:
@@ -462,13 +461,18 @@ To compute cock monster activation:
 					now CM is in R;
 					now the cock-monster-origin of CM is D;
 					if the player is in R, say "Before your very eyes, [NameDesc of D] transforms into a winged and very real disembodied [manly-penis]! It takes flight, and heads right for you!";
+					now dong-activated is true;
 					only destroy D;
-	say "The sound of fluttering wings from further down the tunnel makes it clear that you are no longer alone in here!".
+	if dong-activated is true, say "The sound of fluttering wings from further down the tunnel makes it clear that you are no longer alone in here!".
 
 Check taking:
-	if the noun is dong and the player is in a cock-painting-room:
-		allocate 2 seconds;
-		compute cock monster activation instead.
+	if the player is in a cock-painting-room:
+		if areYouSure is 1 and the noun is plentiful accessory and CockPainting03 is not discovered:
+			say "You sense that it might make sense to explore deeper into the tunnel before touching anything. Are you sure you want to pick [NameDesc of the noun] up?";
+			if the player is not consenting, say "You decide against picking it up, for now." instead;
+		if the noun is dong:
+			allocate 2 seconds;
+			compute cock monster activation instead.
 
 Report wearing:
 	if the noun is plentiful accessory and the player is in a cock-painting-room, compute cock monster activation.

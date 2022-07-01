@@ -59,7 +59,7 @@ The player has a number called crawl count.
 *@!]
 The player has a number called pregnancy.
 
-The player has a number called pregnancy rate. The pregnancy rate of the player is 1.
+The player has a number called pregnancy rate.
 
 The player has a number called children.
 
@@ -108,8 +108,6 @@ The player has a number called stickiness. The stickiness of the player is usual
 This is the stickiness immobility rule:
 	if the stickiness of the player > 0, rule fails.
 The stickiness immobility rule is listed in the immobility rules.
-
-Incontinence is a number that varies.
 
 Delayed Stand is a number that varies. Delayed Stand is 0.
 

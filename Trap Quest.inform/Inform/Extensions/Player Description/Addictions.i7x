@@ -221,8 +221,8 @@ We explain how much the player likes interracial sex.
 +!]
 This is the bbc addiction description rule:
 	if interracial fetish is 1:
-		say "[if the bbc addiction of the player <= 2]You actively dislike the idea of having sex with a black person.[line break][variable custom style]It's just a sexual preference, so that means it's not racist, I think?[roman type][line break][otherwise if the bbc addiction of the player <= 4]You appreciate sleeping with a black person just as much as a white person.[line break][variable custom style]I don't see the world in those colours. Any more.[roman type][line break][otherwise if the bbc addiction of the player <= 6]You find yourself daydreaming about having sex with black people specifically.[line break][variable custom style]There's just something so exciting, thinking about how much my racist parents would hate it if they knew.[roman type][line break][otherwise if the bbc addiction of the player <= 8]Your love of [BlackCock] is rather overpowering. You find it very difficult to look at a black [man of shopkeeper] above the waist.[line break][variable custom style]Mmm yeah, I love big black ones the best for sure...[roman type][line break][otherwise]You are completely addicted to worshipping [BlackCock]. You find yourself being bored by white [manly-penis], and usually rather unimpressed by their size. [BlackCock in title case], on the other hand, makes you feel almost instantly subservient to the owner, and you can think of little else than getting yourself off on [his of shopkeeper] glorious meat-stick.[end if]";
-		if debuginfo > 0, say "[input-style](BBC addiction [bbc addiction of the player] / 10)[roman type][line break]".
+		say "[if the bbc addiction of the player <= 3]You actively dislike the idea of having sex with a black person.[line break][variable custom style]It's just a sexual preference, so that means it's not racist, I think?[roman type][line break][otherwise if the bbc addiction of the player <= 7]You appreciate sleeping with a black person just as much as a white person.[line break][variable custom style]I don't see the world in those colours. Any more.[roman type][line break][otherwise if the bbc addiction of the player <= 11]You find yourself daydreaming about having sex with black people specifically.[line break][variable custom style]There's just something so exciting, thinking about how much my racist parents would hate it if they knew.[roman type][line break][otherwise if the bbc addiction of the player <= 14]Your love of [BlackCock] is rather overpowering. You find it very difficult to look at a black [man of shopkeeper] above the waist.[line break][variable custom style]Mmm yeah, I love big black ones the best for sure...[roman type][line break][otherwise]You are completely addicted to worshipping [BlackCock]. You find yourself being bored by white [manly-penis], and usually rather unimpressed by their size. [BlackCock in title case], on the other hand, makes you feel almost instantly subservient to the owner, and you can think of little else than getting yourself off on [his of shopkeeper] glorious meat-stick.[end if]";
+		if debuginfo > 0, say "[input-style](BBC addiction [bbc addiction of the player] / 20)[roman type][line break]".
 The bbc addiction description rule is listed in the addiction listing rules.
 
 [!<TheSemenTasteAddictionDescriptionRule>+
@@ -340,23 +340,52 @@ This is the diaper addiction description rule:
 			say "You are completely addicted to wearing and using [if there is a worn diaper]your diaper[otherwise]diapers[end if], the bigger and puffier the better. The act of soiling one makes you extremely aroused[if the diaper addiction of the player >= 20], and you love staying in a used diaper for as long as you're allowed, because it feels incredible[end if]. You get great comfort and bliss from [CurrentWearingDiaperState] and so you hate not being in one.";
 		if debuginfo > 0, say "[input-style](Diaper addiction [diaper addiction of the player] / 20)[roman type][line break]";
 	if diaper lover > 0:
-		if the player is incontinent:
-			say "You have no control over your [if diaper messing >= 3]bodily functions[otherwise]bladder[end if]; you can't even feel when you're full, and your body just goes as soon as it is ready.";
-		otherwise if the incontinence of the player >= 8:
-			say "You only have the tiniest amount of control over your [if diaper messing >= 3]bodily functions[otherwise]bladder[end if] - usually by the time you realise you need to go, it's way too late to find a [if the diaper addiction of the player > 10]big-[boy of the player][']s potty[otherwise]toilet[end if].";
-		otherwise if the incontinence of the player >= 6:
-			say "You have lost a lot of your ability to hold onto your bladder[if diaper messing >= 3] and bowels[end if], which means you'll often struggle to be able to make it to the [if the diaper addiction of the player > 12]big-[boy of the player][']s potty[otherwise]toilet[end if] in time.";
-		otherwise if the incontinence of the player >= 4:
-			say "You are starting to have real problems with continence, [if the diaper addiction of the player < 8]and so you're rather concerned you might not be able to find a toilet in time into the future[otherwise if the player is diapered]which makes the diaper all the more comforting to have worn[otherwise]which makes you even more tempted to put on a diaper[end if].";
-		otherwise if the incontinence of the player >= 2:
-			say "You have a significantly weak bladder[if diaper messing >= 3] and disobedient bowels[end if]. You feel anxiety that you might soil yourself whenever [if the diaper addiction of the player < 10]you stray too far from a toilet[otherwise]you're not diapered[end if].";
-		otherwise if the incontinence of the player > 0:
+		if the bladder-incontinence of the player >= 10:
+			say "You have no control over your [if the rectum-incontinence of the player >= 10]bodily functions[otherwise]bladder[end if]; you can't even feel when you're full, and your body just goes as soon as it is ready.";
+		otherwise if the bladder-incontinence of the player >= 8:
+			say "You only have the tiniest amount of control over your [if the rectum-incontinence of the player is 8 or the rectum-incontinence of the player is 9]bodily functions[otherwise]bladder[end if] - usually by the time you realise you need to go, it's way too late to find a [if the diaper addiction of the player > 10]big-[boy of the player][']s potty[otherwise]toilet[end if].";
+		otherwise if the bladder-incontinence of the player >= 6:
+			say "You have lost a lot of your ability to hold onto your bladder[if the rectum-incontinence of the player is 6 or the rectum-incontinence of the player is 7] and bowels[end if], which means you'll often struggle to be able to make it to the [if the diaper addiction of the player > 12]big-[boy of the player][']s potty[otherwise]toilet[end if] in time.";
+		otherwise if the bladder-incontinence of the player >= 4:
+			say "You are starting to have real problems with bladder [if the rectum-incontinence of the player is 4 or the rectum-incontinence of the player is 5]and bowel [end if]continence, [if the diaper addiction of the player < 8]and so you're rather concerned you might not be able to find a toilet in time into the future[otherwise if the player is diapered]which makes the diaper all the more comforting to have worn[otherwise]which makes you even more tempted to put on a diaper[end if].";
+		otherwise if the bladder-incontinence of the player >= 2:
+			say "You have a significantly weak bladder[if the rectum-incontinence of the player is 2 or the rectum-incontinence of the player is 3] and disobedient bowels[end if]. You feel anxiety that you might soil yourself whenever [if the diaper addiction of the player < 10]you stray too far from a toilet[otherwise]you're not diapered[end if].";
+		otherwise if the bladder-incontinence of the player > 0:
 			say "You have a slightly weak bladder, which makes your need to go toilet slightly more urgent than for the average adult.";
-		otherwise if the incontinence of the player < 0:
-			say "You are even better at holding onto your bladder[if diaper messing >= 3] and bowels[end if] than you were when you entered the game.";
-		otherwise:
+		otherwise if the bladder-incontinence of the player < 0:
+			say "You are even better at holding onto your bladder than you were when you entered the game.";
+		otherwise if the rectum-incontinence of the player is 0:
 			say "You are fully [if the player is a pervert]potty trained[otherwise]continent[end if].";
-		if debuginfo > 0, say "[input-style](Incontinence [incontinence of the player] / 10[if the max-incontinence of the player < 10] [bracket]capped at [max-incontinence of the player][close bracket][end if])[roman type][line break]".
+		otherwise:
+			say "You are fully in control of your bladder.";
+		if diaper messing >= 3:
+			let bowel-flav-given be false;
+			if the bladder-incontinence of the player >= 2:
+				if the remainder after dividing the bladder-incontinence of the player by 2 is 0:
+					if the rectum-incontinence of the player is the bladder-incontinence of the player or the rectum-incontinence of the player is the bladder-incontinence of the player + 1, now bowel-flav-given is true;
+				otherwise:
+					if the rectum-incontinence of the player is the bladder-incontinence of the player or the rectum-incontinence of the player is the bladder-incontinence of the player - 1, now bowel-flav-given is true;
+			if bowel-flav-given is false:
+				if the rectum-incontinence of the player >= 10:
+					say "You have no control over your bowels; you can't even feel when you're full, and your body just goes as soon as it is ready.";
+				otherwise if the rectum-incontinence of the player >= 8:
+					say "You only have the tiniest amount of control over your rectum - usually by the time you realise you need to go, it's way too late to find a [if the diaper addiction of the player > 10]big-[boy of the player][']s potty[otherwise]toilet[end if].";
+				otherwise if the rectum-incontinence of the player >= 6:
+					say "You have lost a lot of your ability to hold onto your bowels, which means you'll often struggle to be able to make it to the [if the diaper addiction of the player > 12]big-[boy of the player][']s potty[otherwise]toilet[end if] in time.";
+				otherwise if the rectum-incontinence of the player >= 4:
+					say "You are starting to have real problems with bowel continence, [if the diaper addiction of the player < 8]and so you're rather concerned you might not be able to find a toilet in time into the future[otherwise if the player is diapered]which makes the diaper all the more comforting to have worn[otherwise]which makes you even more tempted to put on a diaper[end if].";
+				otherwise if the rectum-incontinence of the player >= 2:
+					say "You have significantly disobedient bowels. You feel anxiety that you might soil yourself whenever [if the diaper addiction of the player < 10]you stray too far from a toilet[otherwise]you're not diapered[end if].";
+				otherwise if the rectum-incontinence of the player > 0:
+					say "You have a slightly weak rectum, which makes your need to go toilet slightly more urgent than for the average adult.";
+				otherwise if the rectum-incontinence of the player < 0:
+					say "You are even better at holding onto your bowels than you were when you entered the game.";
+				otherwise if the bladder-incontinence of the player is not 0:
+					say "You are fully in control of your bowels.";
+		if debuginfo > 0:
+			say "[input-style]Bladder Incontinence [bladder-incontinence of the player] / 10[if the max-bladder-incontinence of the player < 10] [bracket]capped at [the max-bladder-incontinence of the player][close bracket][end if][run paragraph on]";
+			if diaper messing >= 3, say "; Bowel Incontinence [rectum-incontinence of the player] / 10[if the max-rectum-incontinence of the player < 10] [bracket]capped at [max-rectum-incontinence of the player][close bracket][end if][run paragraph on]";
+			say ")[roman type][line break]".
 The diaper addiction description rule is listed in the addiction listing rules.
 
 [!<TheShortSkirtAddictionDescriptionRule>+

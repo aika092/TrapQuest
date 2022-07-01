@@ -340,7 +340,7 @@ To compute aeromancer science of (M - an aeromancer):
 			AssFill 5 air;
 	otherwise if R is 3:
 		say "Air whips around you, hitting you from all sides with stinging strikes!";
-		PainUp 1;
+		PainUp 10;
 		if unlucky is 1:
 			repeat with C running through worn cotton destructible clothing:
 				say "Your [ShortDesc of C] is ripped apart!";
@@ -1210,8 +1210,7 @@ To compute friendly drink of (M - an aeromancer):
 To compute unfriendly drink of (M - an aeromancer):
 	say "[speech style of M]'Shut up, I'm trying to think of another pun!'[roman type][line break]";
 	alwayscutshow figure of aeromancer interact 17 for M;
-	now M is interested;
-	now the boredom of M is 0.
+	interest M.
 
 Part 7 - Variants
 
@@ -1294,7 +1293,7 @@ To compute aeromancer science of (M - confident aeromancer):
 			AssFill 5 air;
 	otherwise if R is 3:
 		say "Tentacles of air spill from the tip and begin to whip around you, hitting you from all sides with stinging strikes!";
-		PainUp 1;
+		PainUp 10;
 		if unlucky is 1:
 			let N be the number of worn clothing;
 			repeat with C running through worn currently uncovered tearable clothing:

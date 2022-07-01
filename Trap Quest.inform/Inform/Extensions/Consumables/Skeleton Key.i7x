@@ -75,10 +75,27 @@ Carry out unlocking:
 		now chosen-key is in the location of the player;
 	otherwise:
 		say "[if the noun is wrist bond]With some careful finger work, you[otherwise]You[end if] slot the key into the lock and twist. The lock clicks open! The key dissolves into dust.";
-		now the noun is unlocked;
+		unlock the noun;
 		check stealing of chosen-key;
-		destroy chosen-key.
+		destroy chosen-key;
+		force clothing-focus redraw.
 Understand "unlock [something]", "unlock [something] with key" as unlocking.
+
+To lock (C - a clothing):
+	now C is locked;
+	if newbie tips is 1, say "[one of][newbie style]Newbie Tip: Oh dear, this item is locked! You'll need a key rather than a blessing to make it removable. Unfortunately the prison guard [unless there is an alive prison guard]who is about to spawn [end if]in the Dungeon isn't going to give you the key immediately. Instead, [he of prison guard] is going to wait until your 'sentence' is over, which will take a decent amount of time. Of course, if you could defeat [him of prison guard] in combat I'm sure you'd be able to salvage a key from [his of prison guard] corpse.[roman type][line break][or][stopping]".
+To lock (C - diaper-stack):
+	let D be entry (the number of entries in the list of stacked diapers) in the list of stacked diapers;
+	if D is clothing, now D is locked;
+	now C is locked.
+
+To unlock (C - a clothing):
+	now C is unlocked.
+To unlock (C - diaper-stack):
+	let D be entry (the number of entries in the list of stacked diapers) in the list of stacked diapers;
+	if D is clothing, unlock D;
+	now C is unlocked.
+
 
 To uniquely destroy (K - an unlock-key):
 	repeat with C running through things covered by K:

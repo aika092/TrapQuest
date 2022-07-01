@@ -37,6 +37,7 @@ Carry out MachineFeeding:
 		humiliate 100;
 	StomachFoodUp 2;
 	if diaper quest is 0, StomachSemenUp 1;
+	trigger bowl-wisp-quest;
 	if the player is broken or the player is not able to use their hands or the player is wrist bound behind:
 		let H be a random off-stage puppy ears;
 		if H is actually summonable:

@@ -95,12 +95,15 @@ To Set Up The Mansion:
 		wait 1000 ms before continuing;
 	now a random master bed is in Mansion16;
 	let MR be the list of placed haunted rooms;
+	if Mansion32 is listed in MR, remove Mansion32 from MR; [no painting in warp portal room]
 	let PT be the list of fetish appropriate paintings;
+	if debugmode > 1:
+		say "placed haunted rooms: [MR]. fetish appropriate paintings: [PT].";
+		wait 1000 ms before continuing;
 	sort MR in random order;
 	repeat with R running through MR:
 		if the number of entries in PT > 0:
-			let L be the room north from R;
-			if L is Solid Rock:
+			unless north is listed in the Nviables of R:
 				let P be entry 1 in PT;
 				now P is in R;
 				remove P from PT;

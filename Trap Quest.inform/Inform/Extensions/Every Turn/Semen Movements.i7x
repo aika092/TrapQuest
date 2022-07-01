@@ -4,6 +4,13 @@ To decide which number is vagina-semen-frequency:
 	if the player is in a predicament room, decide on 9;
 	decide on 129.
 
+To decide which number is the pregnancy resistance of the player: [The higher this number, the lower the chance of the player getting pregnant and the more cum needed in the womb for there to even be a chance.]
+	let PR be 0 - the pregnancy rate of the player;
+	if the class of the player is cheerleader, increase PR by 3;
+	if heart-pussy-skirt is worn or heart-pussy-hobble-skirt is worn, increase PR by 3;
+	if PR > 5, decide on 5; [At 5 womb volume, pregnancy is always guaranteed]
+	decide on PR.
+
 An all time based rule (this is the compute cum movements rule):
 	if the player is not in a predicament room, compute absorption;
 	unless the player is in Dungeon35 or the player is in Woods05:
@@ -40,8 +47,7 @@ An all time based rule (this is the compute cum movements rule):
 			compute pregnancy;
 		if the remainder after dividing time-earnings by vagina-semen-frequency < time-seconds:
 			if the womb volume of vagina > 0 and the player is able to get pregnant:
-				let PR be 0 - the pregnancy rate of the player;
-				if the class of the player is cheerleader, increase PR by 3;
+				let PR be the pregnancy resistance of the player;
 				if there is a worn maternity dress or the class of the player is fertility goddess, decrease R by 3; [TODO probably needs better balancing]
 				let R be a random number from PR to 5;
 				if the number of family things > 0 and slow pregnancy < 3:
@@ -54,6 +60,7 @@ An all time based rule (this is the compute cum movements rule):
 						say ConceptionFlav;
 						now the pregnancy of the player is 1;
 						check goddess eligibility;
+						trigger conception-wisp-trigger;
 			if the player is not in a predicament room and the remainder after dividing time-earnings by (vagina-semen-frequency * 2) < time-seconds and the latex-transformation of the player <= 3: [half the time we are going to cause womb absorption, the other half is pussy trickling]
 				if the pregnancy of the player is 0 and the womb volume of vagina > 0: [Womb semen isn't absorbed during a pregnancy!]
 					let S be a random number between 1 and 3;
@@ -61,7 +68,7 @@ An all time based rule (this is the compute cum movements rule):
 					if S is 1:
 						say "[one of]A burning sense of passion runs through you.[or]Your womb sends a wave of ecstasy over your body.[or]You feel your womb cry out for more [semen].[at random]";
 						WombEmpty 1;
-						SemenAddictUp 3;
+						SlowSemenAddictUp 1;
 					if S is 2:
 						say "Your mind focuses on your womb, which feels pleasant. A wave of calm and clarity washes over you.";
 						WombEmpty 1;
@@ -88,7 +95,7 @@ To check goddess eligibility:
 				repeat with O running through ass covering clothing:
 					if O is displacable:
 						displace O;
-					otherwise if O is zippable:
+					otherwise if O is crotch-zipped:
 						ZipDown O;
 					otherwise if O is removable:
 						WardrobeVanish O;
@@ -150,12 +157,13 @@ To check enema holding with reason (T - a text):
 	let expelling-allowed be false;
 	if the player is able to expel, now expelling-allowed is true;
 	if TS > 0 and the latex-transformation of the player < 5 and currently-squirting is 0:
+		increase TS by rectum + suppository + the number of worn desperation clothing; [mess pressure is added to squirtable fill pressure]
 		let TSR be the square root of TS;
 		if TSR < 2, now TSR is 2;
 		let TSRP be TSR * time-seconds;
 		if T is "", increase the holding strain of belly by TSRP;
 		let rem be the remainder after dividing the holding strain of belly by belly strain balance;
-		if T is not "" or rem < TSRP: [that means we increased over the threshold of a multiple of belly strain balance this turn]
+		if T is not "" or rem < TSRP: [that means we increased over the threshold of a multiple of belly strain balance this turn, or something happened to cause this check e.g. pain]
 			let strain factor be the holding strain of belly divided by belly strain balance; [how many multiples of belly strain balance are we at?]
 			increase strain factor by (the total squirtable fill of belly * 4) divided by belly limit; [if we have a completely full belly, we increase by 4, if we have a less than a quarter, we'll increase by 0.]
 			if the squirt timer of belly > 0 and expelling-allowed is true:
@@ -167,12 +175,12 @@ To check enema holding with reason (T - a text):
 			otherwise if T is "" and strain factor < 4 and (strain factor < 2 or the player is not in an unbossed predicament room): [at less than 4 strain factor, we just give flavour. this is changed to 2 for predicament rooms]
 				if strain factor > 0 and the trophy-mode of expel-trophy is 0 and the number of worn enema-helping clothing is 0:
 					say "[one of]Your belly growls as the [enema] swirls around inside[or][if the player is upright]You stagger slightly[otherwise]Your arms and legs shake slightly[end if] as the [enema] sloshes around inside you[or]Your stomach makes a gurgling sound as your [enema] bubbles away inside[or]Your [enema] puts more and more pressure on your rectum[or]The [enema] eddies and whirls inside your belly[in random order], [one of]making you feel uneasy[or]and you feel quite uncomfortable[or]making you a bit queasy[or]causing your intestines to cramp a bit[in random order].";
-			otherwise:
-				let R be (a random number between 6 and 40) - the incontinence of the player;
+			otherwise: [pain etc. ignores block above and goes straight here]
+				let R be (a random number between 6 and 40) - the rectum-incontinence of the player;
 				if the player is in an unbossed predicament room and the small egg count of belly <= 0, now R is a random number between 2 and 8; [you pop very quickly when running through that neighbourhood with an enema]
 				if expelling-allowed is true and R < strain factor and (T is not "" or the player is able to automatically expel or (there is a worn crotch-in-place milking basque and the total fill of belly >= belly limit - 5)):
 					if T is "":
-						unless the player is incontinent, say "[bold type]You feel a rumble in your [BellyDesc] and a pressure building from within your [asshole]... [if the small egg count of belly > 0 and the player is in a predicament room]You're going to expel the ping pong balls soon, [otherwise if the small egg count of belly > 0 or the medium egg count of belly > 0 or the large egg count of belly > 0]You're going to lay some eggs soon,[otherwise if the urine volume of belly > the total fill of belly / 2]The [urine] inside you is about to come out no matter how hard you try to hold it in,[otherwise if the semen volume of belly > the total fill of belly / 2]The [semen] inside you is about to come out no matter how hard you try to hold it in,[otherwise if the milk volume of belly > the total fill of belly / 2]The [milk] inside you is about to come out no matter how hard you try to hold it in,[otherwise if the water volume of belly is the total fill of belly]The enema inside you is about to come out no matter how hard you try to hold it in,[otherwise]The stuff inside you is about to come out no matter how hard you try to hold it in,[end if] and it doesn't look like there's any way to stop it! [if the player is live fucked]You desperately hope that your fucking ends before it starts![otherwise if the class of the player is royal slave and the player is ass protected and the player is not in danger and the milk volume of belly > 0 and the semen volume of belly <= 0 and the urine volume of belly <= 0]You should get your [random top level ass protection clothing] out of the way if possible so that you can collect the milk that comes out![otherwise]Better [one of]get ready[or]prepare yourself[or]find somewhere safe if possible[in random order]...[end if][roman type][line break]";
+						unless the player is rectum incontinent, say "[bold type]You feel a rumble in your [BellyDesc] and a pressure building from within your [asshole]... [if the small egg count of belly > 0 and the player is in a predicament room]You're going to expel the ping pong balls soon, [otherwise if the small egg count of belly > 0 or the medium egg count of belly > 0 or the large egg count of belly > 0]You're going to lay some eggs soon,[otherwise if the urine volume of belly > the total fill of belly / 2]The [urine] inside you is about to come out no matter how hard you try to hold it in,[otherwise if the semen volume of belly > the total fill of belly / 2]The [semen] inside you is about to come out no matter how hard you try to hold it in,[otherwise if the milk volume of belly > the total fill of belly / 2]The [milk] inside you is about to come out no matter how hard you try to hold it in,[otherwise if the water volume of belly is the total fill of belly]The enema inside you is about to come out no matter how hard you try to hold it in,[otherwise]The stuff inside you is about to come out no matter how hard you try to hold it in,[end if] and it doesn't look like there's any way to stop it! [if the player is live fucked]You desperately hope that your fucking ends before it starts![otherwise if the class of the player is royal slave and the player is ass protected and the player is not in danger and the milk volume of belly > 0 and the semen volume of belly <= 0 and the urine volume of belly <= 0]You should get your [random top level ass protection clothing] out of the way if possible so that you can collect the milk that comes out![otherwise]Better [one of]get ready[or]prepare yourself[or]find somewhere safe if possible[in random order]...[end if][roman type][line break]";
 						now the squirt timer of belly is a random number between 5 and (belly strain balance - 6); [it should always be sooner than the next cramp would have been.]
 					otherwise:
 						say "[T] you lose hold of your sphincter.";
@@ -306,14 +314,14 @@ enema-incontinence is an enema-effect.
 
 Definition: enema-incontinence is viable:
 	if diaper lover is 0 or the player is in a predicament room, decide no;
-	if the player is incontinent or incontinence >= the max-incontinence of the player, decide no;
+	if the player is rectum incontinent or the raw-rectum-incontinence of the player >= the max-rectum-incontinence of the player, decide no;
 	if the incidents of enema-incontinence + 2 < the incidents of enema-cramping, decide yes;
 	decide no.
 
 To execute (E - enema-incontinence):
-	say "You've been holding onto your [enema] for so long that feel your sphincter weaken[if incontinence > 0] even further[end if]. ";
-	increase incontinence by 1;
-	say "[if the player is not incontinent]You'll now find it even more difficult to hold things in and tell when you need the toilet[otherwise]You can somehow tell that you are now completely incontinent[end if].".
+	say "You've been holding onto your [enema] for so long that feel your sphincter weaken[if the raw-rectum-incontinence of the player > 0] even further[end if]. ";
+	SilentlyRectumIncontinenceUp 1;
+	say "[if the player is not rectum incontinent]You'll now find it even more difficult to hold things in and tell when you need the toilet[otherwise]You can somehow tell that you are now completely incontinent[end if].".
 
 To compute absorption:
 	let NC be the number of worn absorption clothing;

@@ -164,7 +164,6 @@ To decide which number is the bab tolerance of (M - ex-princess):
 	decide on 20.
 
 To compute perception of (M - ex-princess):
-	now M is interested;
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]"; [The output for clothing humiliation takes place within the 'sluttily dressed' check.]
 	if M is unleashed:
 		if diaper quest is 1, say "A loud hiss fills the room, as [he of M] audibly fills [his of M] diaper to the brim with highly concentrated [urine]. As the tell-tale yellow stain spreads across the white plastic, an sadistic smile spreads across [his of M] face.";
@@ -519,8 +518,7 @@ To compute friendly drink of (M - ex-princess):
 
 To compute unfriendly drink of (M - ex-princess):
 	say "[speech style of M]'Do I look like I'm [if M is unleashed]going to help you[otherwise]in a situation where I can be helping others[end if]?'[roman type][line break]";
-	now M is interested;
-	now the boredom of M is 0.
+	interest M.
 
 Definition: ex-princess is willing to give snacks:
 	if it is not caged and it is not unleashed and it is not defeated, decide yes;
@@ -574,7 +572,7 @@ To compute resolution of (M - ex-princess) taking (T - skeleton key):
 		if the number of unleashed staff member in the location of M < 2:
 			now N is unleashed;
 			try N going north;
-			if N is unfriendly, now N is interested;
+			if N is unfriendly, interest N;
 			otherwise deinterest N;
 	repeat with N running through alive students:
 		now N is guarding; [This will stop them joining the fight]
@@ -672,7 +670,7 @@ An all later time based rule (this is the school rescue fight rule):
 						let SM be entry 1 in LSM;
 						now SM is unleashed;
 						now SM is in School33;
-						now SM is interested;
+						interest SM;
 						try SM going north;
 				if the number of undefeated staff members in the location of M is 0:
 					if M is in the location of the player:
@@ -681,6 +679,8 @@ An all later time based rule (this is the school rescue fight rule):
 					let LN be the list of monsters in the school;
 					let NLN be 1;
 					repeat with N running through LN:
+						repeat with T running through things held by N:
+							now T is in School01;
 						if N is defeated:
 							dislodge N;
 							if N is headmistress:
@@ -790,7 +790,7 @@ An all later time based rule (this is the asscum annie rule):
 						unless C is worn:
 							summon C cursed;
 							say "Suddenly, a [printed name of C] appears around your waist!";
-						increase the used condoms of C by 1;
+						UsedCondomUp C by 1;
 						say "The condom whizzes onto and attaches itself to your [MediumDesc of C]!";
 						progress quest of condom-eating-quest;
 						say CondomNewbieTip;

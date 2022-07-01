@@ -100,6 +100,7 @@ Carry out CandyObtaining:
 		say "The machine spits out a [C]! You pick it up. ";
 		let F be a random number between 0 and 4;
 		if weight gain fetish is 1, decrease F by the fat-weight of the player / 10;
+		if C is top tier, trigger gold-candy-wisp-quest;
 		if player-hunger > F and the player is not overly full:
 			say "You can't help yourself - you eat it right away!";
 			try TQEating C;

@@ -68,7 +68,7 @@ To compute slaying bonus of (W - whip-of-domination):
 To compute attack of (W - whip-of-domination) at (M - a monster):
 	say "[if the player is feeling dominant and a random number between 4 and 8 < the sex addiction of the player]With a powerful piercing laugh, you skilfully slash[otherwise if the player is feeling dominant]You feel confident inside as you skilfully lash[otherwise if the player is not feeling submissive]You strike[otherwise if the delicateness of the player < 17]You fight against your newly found submissive streak and timidly whip[otherwise]Your fully submissive subconscious fights against your motion as you weakly flick at[end if] the [noun] with your [printed name of W]! [if W is cursed]After striking [NameDesc of M], the whip flicks back with recoil, hitting you as well![end if]";
 	if W is cursed:
-		PainUp 1;
+		PainUp 10;
 		say "[one of][variable custom style]Is this the whip's curse?![or][stopping][roman type][line break]";
 
 To decide which number is the bartering value of (T - whip-of-domination) for (M - a demoness):
@@ -103,7 +103,7 @@ Report taking whip-of-domination:
 	if dominatrix is in the location of the player and dominatrix is undefeated and dominatrix is awake:
 		say "[BigNameDesc of dominatrix] looks furious.[line break][speech style of dominatrix]'MY WHIP! That is not yours to take! You will pay dearly for this!'[roman type][line break]";
 		anger dominatrix;
-		now dominatrix is interested;
+		interest dominatrix;
 		FavourDown dominatrix by 2.
 
 Whip of Domination ends here.

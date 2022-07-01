@@ -52,9 +52,9 @@ To decide which number is the stimulation of (M - a monster) on (F - a body part
 			now S is the girth of M;
 			if interracial fetish is 1:
 				if M is dark skinned:
-					increase S by ((the BBC addiction of the player - 1) / 2) - 1;
+					increase S by ((the BBC addiction of the player - 1) / 4) - 1;
 				otherwise if M is human:
-					if the player is queen of spades, decrease S by the BBC addiction of the player / 2;
+					if the player is queen of spades, decrease S by the BBC addiction of the player / 4;
 					if F is vagina and black hole tattoo is worn, decrease S by 2;
 		if S < 1, decide on 1;
 		decide on S;
@@ -65,8 +65,12 @@ To decide which number is the stimulation of (T - a thing) on (F - a body part):
 	let X be 0;
 	if wanking is 1, increase X by the masturbation-bonus of T;
 	if F is fuckhole:
-		if the girth of T > 1 or T is insertable, decide on X + (the girth of T * 2) / 3;
-		if diaper quest is 1, decide on X + 4; [Vibrations, masturbation etc. give extra arousal in diaper quest.]
+		if the girth of T > 1 or T is insertable:
+			increase X by (the girth of T * 2) / 3;
+		otherwise if diaper quest is 1:
+			increase X by 4; [Vibrations, masturbation etc. give extra arousal in diaper quest.]
+		if wanking is 0 and T is worn clothing, decrease X by X / 2;
+		decide on X;
 	if diaper quest is 1 and F is penis, decide on X + 4;
 	decide on 0.
 

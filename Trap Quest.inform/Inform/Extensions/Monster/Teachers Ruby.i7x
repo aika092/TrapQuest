@@ -59,7 +59,7 @@ To compute teaching of (L - eating-lesson):
 								say "Your impressive gut manages to handle fitting a bit more food inside without hurting too badly.";
 							otherwise:
 								say "Forcing more food into your already full belly makes it cramp painfully.";
-								PainUp 1;
+								PainUp 10;
 						if diaper quest is 0, StomachSemenUp 1;
 						StomachFoodUp 1;
 					otherwise:

@@ -215,7 +215,7 @@ Definition: a mindless acolyte is scarable: decide no.
 To compute perception of (M - a mindless acolyte):
 	if M is unleashed:
 		say "[BigNameDesc of M] notices you![line break][second custom style]'Non-believer...'[roman type][line break]";
-		now M is interested;
+		interest M;
 		anger M;
 	otherwise:
 		say "[BigNameDesc of M] does not react to your presence in any way!";
@@ -514,7 +514,7 @@ To compute standard damage of (M - a mindless acolyte):
 		say DamageReaction (the health of M) of M;
 		if M is unleashed:
 			if M is uninterested, say "[BigNameDesc of M][']s head snaps toward you, and [he of M] assumes an aggressive stance.";
-			now M is interested;
+			interest M;
 			anger M;
 		otherwise:
 			say "The cultist still does not seem to notice your presence.";
@@ -797,7 +797,7 @@ To compute friendly drink of (M - an acolyte):
 To compute unfriendly drink of (M - an acolyte):
 	say "[speech style of M]'The only drink you will receive is your own blood, infidel!'[roman type][line break]";
 	anger M;
-	now M is interested.
+	interest M.
 
 [To compute desperate drinking to (M - an acolyte):
 	if the player-class is not cultist:
@@ -836,7 +836,7 @@ To compute failed dominance punishment of (M - an acolyte):
 	say "Your vision fades, and you suddenly find yourself in a bubblegum pink void that extends on in every direction. The sounds and sensations of sex echo all around you as you struggle to make sense of where you are, and you find yourself face to face with a pair of red, almond-shaped eyes as a [if the times-met of H > 1]familiar[otherwise]unfamiliar[end if] voice fills every fibre of your being.";
 	if the player is getting very unlucky:[all of these outcomes are kind of severe]
 		if the player is able to get pregnant and the player is possessing a vagina and the player is souled:[your "soul" is creampied]
-			say "[speech style of H]'[one of]OK, so like, [Azathot] is about to bust a nut inside your soul.'[or]Um, [Azathot] says your soul is like, hurting for a squirting.'[or][Azathot] is totally going to make your soul ovulate or something. '[at random][line break]You look down (or was it up) to see a [if interracial fetish is 1]big black tentacle[otherwise]huge white tentacle[end if] wrapping around your thigh, rubbing its bulbous, shiny head between your lips before sliding its way into your [if interracial fetish is 1]white [vagina]. [otherwise][vagina]. [end if]Your mind goes blank as you are overtaken by the essence of the Great Ones, and you finally realise your true purpose is-[line break]You suddenly find yourself laying face up [if the location of the player is Woods23]on the altar[otherwise]on the ground[end if], the feeling of [semen] very fresh on your mind.";
+			say "[speech style of H]'[one of]OK, so like, [Azathot] is about to bust a nut inside your soul.'[or]Um, [Azathot] says your soul is like, hurting for a squirting.'[or][Azathot] is totally going to make your soul ovulate or something.'[at random][line break]You look down (or was it up) to see a [if interracial fetish is 1]big black tentacle[otherwise]huge white tentacle[end if] wrapping around your thigh, rubbing its bulbous, shiny head between your lips before sliding its way into your [if interracial fetish is 1]white [vagina]. [otherwise][vagina]. [end if]Your mind goes blank as you are overtaken by the essence of the Great Ones, and you finally realise your true purpose is-[line break]You suddenly find yourself laying face up [if the location of the player is Woods23]on the altar[otherwise]on the ground[end if], the feeling of [semen] very fresh on your mind.";
 			SemenAddictUp 1;
 			let G be ghostly tentacle;
 			now G is penetrating vagina;
@@ -1039,8 +1039,9 @@ To compute unique periodic effect of (M - a clairvoyant acolyte):
 	if the chant-duration of M > 0:
 		if a random number between 1 and 2 is 1:
 			decrease the chant-duration of M by 1;
-			if the chant-duration of M + 1 is 1:
-				say "The light around [NameDesc of M]'s body fades.";
+			if the chant-duration of M is 0 and M is in the location of the player and there is a nonstalking wisp:
+				say "[bold type]The light around [NameDesc of M][bold type][']s body converges on a single spot![roman type] ";
+				deploy a wisp;
 	otherwise:
 		decrease the chant-duration of M by 1.
 
@@ -1069,7 +1070,7 @@ To compute standard damage of (M - clairvoyant acolyte):
 	if the health of M > 0:
 		if M is uninterested or M is guarding:
 			say "The [man of M] laughs bitterly and takes a fighting stance.[line break][speech style of M]'[if the class of the player is cultist]Jealousy is pointless. I will show you...'[otherwise][one of]Do you truly believe you can stand against a prophet of the [great ones]?'[or]Even you can be useful to the [great ones].'[at random][end if][roman type][line break]";
-			now M is interested;
+			interest M;
 			now M is unleashed;
 			anger M;
 			force commence doom;

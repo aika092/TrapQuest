@@ -392,7 +392,7 @@ To reflect on (HS - low-addiction):
 				arouse ARS;
 	otherwise if A exactly matches the text "bbc addiction":
 		let SA be the bbc addiction of the player - 1;
-		let ARS be (SA * 500) - 1000; [depending on addiction, we can gain or lose arousal]
+		let ARS be (SA * 500) - 3000; [depending on addiction, we can gain or lose arousal]
 		if ARS > 1500, now ARS is 1500; [max 1500 arousal gain]
 		if ARS < 0 and the arousal of the player > 0:
 			now ARS is ARS * -1;

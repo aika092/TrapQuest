@@ -220,7 +220,8 @@ To compute correct perception of (M - dominatrix):
 			now the latest-cringe of M is the cringe appearance of the player; [We only want to do that if we're playing DQ otherwise we're wasting CPU cycles]
 			compute DQ perception of M;
 		otherwise:
-			compute perception of M.
+			compute perception of M;
+		trigger dominatrix-wisp-quest.
 
 To compute perception of (M - dominatrix):
 	if the disappointment of M > 1, now the strap-on girth of M is the disappointment of M;
@@ -268,7 +269,6 @@ To compute perception of (M - dominatrix):
 		if the disappointment of M > 1, now the disappointment of M is 0.
 
 To compute dq perception of (M - dominatrix):
-	now M is interested;
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
 	if the woman-status of woman-player is 93 and the dominatrix-contraption-scene of woman-player <= 5 and woman-player is in the location of the player:
 		say "[BigNameDesc of M] grins.[line break][speech style of M]'Enjoying the show?'[roman type][line break]";
@@ -476,13 +476,13 @@ To compute whipping of (M - dominatrix):
 			if the favour of M < 17, FavourUp M;
 			now the body soreness of the player is 10;
 			say "[BigNameDesc of M] pulls no punches, viciously laying into you with [his of M] whip as tears well up in your eyes and continue well past the point of crying, [if the delicateness of the player > 10]which does not take long[otherwise]which takes an unbearably long time[end if]. After this, [he of M] seems satisfied, and lets you down.[line break][speech style of M]'[if M is objectifying the player]I assume from those tears that you have learned your lesson, slave. Don't bother standing up to me again.'[otherwise]This is what happens to disobedient slaves. Disrespect me like that again and I will cut you loose.'[roman type][line break]";
-			PainUp 2;
+			PainUp 20;
 		otherwise if the reaction of the player is 2 or (the reaction of the player is 1 and a random number between the charisma of the player and 4 > the difficulty of M / 3):
 			say "[BigNameDesc of M] whips you only a few times, true to [his of M] word and holding back thanks to your submissive pleading. After this, [he of M] seems satisfied, and lets you down.[line break][speech style of M]'I'm surprised at how quickly you learned your lesson, slave. Disrespect me again and I may not be so gentle.'[roman type][line break]";
 			humiliate 100;
 		otherwise:
 			say "[BigNameDesc of M] whips you several more times, grinding [his of M] strapon cock between your [AssDesc] as [he of M] brings you to the verge of tears. True to [his of M] word [he of M] seems to be holding back, and after [he of M]'s satisfied [he of M] gently lets you down.[line break][speech style of M]'Learn your lesson, slave, or next time I will not be so gentle.'[roman type][line break]";
-			PainUp 1;
+			PainUp 10;
 		bore M;
 		TimesSubmittedUp M by 1;
 	otherwise:
@@ -532,7 +532,7 @@ To compute facial climax of (M - dominatrix):
 	otherwise:[times-submitted isn't incremented here yet.]
 		if the reaction of the player is 0:
 			say "[BigNameDesc of M] slaps you hard on the cheek. You yelp in pain![line break][speech style of M]'Bitch, you need to learn to obey orders. I expect this to go differently next time.'[roman type][line break]";
-			PainUp 1;
+			PainUp 10;
 		otherwise:
 			say "[speech style of M]'What a good slave you are! I might have to promote to you head shoe polisher.'[roman type][line break]";
 			SexAddictUp 1;
@@ -827,7 +827,7 @@ To say ErectionLostFlav of (M - dominatrix):
 	follow the dominatrix tops the player rule;
 	unless the rule succeeded: [may not be valid code. TODO: Rethink if that is the case.]
 		say "[BigFuckerDesc of M] flips you over and roughly spanks your [AssDesc] several times before letting you go.";
-		PainUp 2.
+		PainUp 20.
 
 Definition: dominatrix (called M) is anticipating-climax:
 	decide yes.
@@ -901,7 +901,7 @@ To compute damaging attack of (M - dominatrix):
 To say StrikingSuccessFlav of (M - dominatrix) on (B - a body part):
 	if M is dominatrix-equipped:[After gaining difficulty, her attacks become more painful]
 		say "[BigNameDesc of M] [one of]smacks[or]swats[as decreasingly likely outcomes] you [TargetName of B] with [his of M] riding crop![if M is dominatrix-equipped] It leaves behind a stinging welt, ouch!![end if]";
-		if B is exposed, PainUp 1;
+		if B is exposed, PainUp 10;
 	otherwise:
 		say "[BigNameDesc of M] [one of]smacks[or]swats[as decreasingly likely outcomes] you [TargetName of B] with [his of M] riding crop!".
 
@@ -1148,7 +1148,7 @@ To compute failed dominance punishment of (M - dominatrix):
 		bore M;
 	otherwise:
 		say "[line break][speech style of M]'Alright slave, I get it. I'll play with you.'[roman type][line break]";
-		unless M is interested, now M is interested;
+		unless M is interested, interest M;
 		now another-turn-flavour is the substituted form of "[BigFuckerDesc of M] holds you in place.";
 		now another-turn is 1.
 
@@ -1421,7 +1421,7 @@ A time based rule (this is the dominatrix cage timer rule):
 				if dominatrix is not in the location of the player:
 					now dominatrix is in the location of the player;
 					say "[BigNameDesc of dominatrix] appears from the east!";
-				now dominatrix is interested;
+				interest dominatrix;
 				say "[BigNameDesc of dominatrix] unlocks the door to the cage.[line break][speech style of dominatrix]'Go on, get out of here, before I change my mind.'[roman type][line break]You are free!";
 				satisfy dominatrix;
 

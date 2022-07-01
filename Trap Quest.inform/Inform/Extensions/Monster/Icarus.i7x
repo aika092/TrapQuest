@@ -469,7 +469,7 @@ To decide which number is the tripping max of (M - Icarus): [Giving the Icarus h
 		otherwise decide on 1; [if the player slapped or stood still they are not off-balance so tripping is always minimum likelihood]
 	if the living belt of sturdiness is worn and the living belt of sturdiness is not cursed, decide on 0;
 	let D be the difficulty of M;
-	decrease D by the weight of the player;
+	decrease D by the weight of the player / 5;
 	increase D by the trip hazard of the player;
 	if the slipperiness of the location of the player > a random number between 1 and 5, say "The slipperiness of the floor is making it much more difficult to avoid falling!";
 	if the player is ankle bound, increase D by 3;
@@ -574,8 +574,7 @@ To compute friendly drink of (M - Icarus):
 To compute unfriendly drink of (M - Icarus):
 	say "[speech style of M]'You seem to have misunderstood the current nature of our relationship...'[roman type][line break]";
 	if lady fetish is 0, alwayscutshow figure of Icarus interact 8 for M;
-	now M is interested;
-	now the boredom of M is 0.
+	interest M.
 
 Section 4 - Food Requesting
 
@@ -589,8 +588,7 @@ To say FriendlyFoodAgreeFlav of (M - Icarus):
 To compute unfriendly food of (M - Icarus):
 	say "[speech style of M]'You seem to have misunderstood the current nature of our relationship...'[roman type][line break]";
 	if lady fetish is 0, alwayscutshow figure of Icarus interact 8 for M;
-	now M is interested;
-	now the boredom of M is 0.
+	interest M.
 
 Section 5 - Dismissal
 

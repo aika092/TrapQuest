@@ -78,6 +78,7 @@ predicamentJustDone is initially true. [We only want one 'extra credit' predicam
 predicamentSavedMakeUp is a number that varies.
 
 To set up predicament status:
+	if female-gloryhole is in Holding Pen and diaper quest is 0, now female-gloryhole is in Toilet02; [it can be removed by some predicaments]
 	let LC be a list of things; [the list of clothing that MUST be automatically removed at the start of the predicament AND automatically replaced at the end]
 	repeat with C running through worn clothing:
 		if C is headgear:

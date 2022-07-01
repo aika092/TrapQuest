@@ -202,7 +202,7 @@ Carry out direct-presenting something to:
 			while displacingFinished is 0:
 				let C be a random top level protection clothing;
 				if C is clothing:
-					if C is zippable:
+					if C is crotch-zipped:
 						say "You remove your [ShortDesc of C].";
 						ZipDown C;
 					otherwise if C is displacable:
@@ -244,7 +244,7 @@ Carry out direct-presenting something to:
 			while displacingFinished is 0:
 				let C be a random top level ass protection clothing;
 				if C is clothing:
-					if C is zippable:
+					if C is crotch-zipped:
 						say "You remove your [ShortDesc of C].";
 						ZipDown C;
 					otherwise if C is displacable:
@@ -287,7 +287,7 @@ Carry out direct-presenting something to:
 			if the bbc addiction of the player >= 6, check tiara-of-spades transformation;
 		if the noun is asshole and the second noun is male monster, progress quest of asshole-presenting-quest;
 		check immobility;
-		if the player is not in danger and the player is not immobile:
+		if the player is not in danger and the player is not immobile and the player is able to use their hands:
 			sort Lorder in reverse order;
 			repeat with C running through Lorder:
 				if C is carried and C is actually summonable:
@@ -300,7 +300,7 @@ Carry out direct-presenting something to:
 					if C is crotch-displaced:
 						say "You replace your [ShortDesc of C].";
 						Replace C;
-					if C is top-displaced:
+					if C is actually top-replacable:
 						say "You tug your [ShortDesc of C] back into place.";
 						TopReplace C.
 

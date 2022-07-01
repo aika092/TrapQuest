@@ -82,7 +82,7 @@ To compute insertionRuin of (S - a thing) into (F - a fuckhole):
 		if players-dick-is-detached is 2: [#LXorDD: when it's 2, it's stuck to the bottom of a normal dildo]
 			say "Of course you can't insert the penis decal, so you reverse it and instead use the normal-sized dildo it's stuck to the base of.";
 		otherwise:
-			say "You can't actually insert the penis decal, but you press the thin disc down just below your [variable F], where it sticks nicely, sending little tingles through you in a kind of ghostly echo of penetration." instead;
+			say "You can't actually insert the penis decal, but you press the thin disc down just below your [variable F], where it sticks nicely, sending little tingles through you in a kind of ghostly echo of penetration.";
 	if the girth of S > the openness of F + 2:
 		say "The [MediumDesc of S] [if the girth of S > the openness of F + 4]is so large compared to the openness of your [variable F] that it hurts a bit just to put[otherwise]stretches you as you put[end if] it in.";
 		ruin F;
@@ -92,6 +92,20 @@ To compute insertionRuin of (S - a thing) into (F - a fuckhole):
 		passively stimulate F from S;
 	otherwise:
 		say "Your [variable F] is loose enough to let the [MediumDesc of S] slip in easily.".
+
+To compute removalRuin of (S - a thing) from (F - a fuckhole):
+	if the girth of S > the openness of F + 4:
+		say "The [MediumDesc of S] is so large compared to the openness of your [variable F] that it hurts [if the girth of S > the openness of F + 5]a lot as you[otherwise]just to[end if] remove it.";
+		ruin F times 2;
+		PainUp 10 * (the girth of S - (the openness of F + 3));
+	otherwise if the girth of S > the openness of F + 2:
+		say "The [MediumDesc of S] stretches you as you remove it.";
+		ruin F;
+	otherwise if the girth of S > the openness of F:
+		say "Oof! You definitely felt that as you pulled it out.";
+		passively stimulate F from S;
+	otherwise:
+		say "Your [variable F] is loose enough to let the [MediumDesc of S] slip out easily.".
 
 Unplugging is an action applying to one thing.
 Understand "unplug [something]", "pull [something]" as unplugging.

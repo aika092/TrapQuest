@@ -241,7 +241,7 @@ To compute class outfit of (H - WC hood):
 		repeat with C running through worn clothing:
 			if the used condoms of C > 0:
 				say "The used condoms attached to your [C] are magically transferred to the meat toilet panties!";
-				increase the used condoms of meat-toilet-panties by the used condoms of C;
+				UsedCondomUp meat-toilet-panties by the used condoms of C;
 				now the used condoms of C is 0;
 	class summon WC catsuit;
 	class summon WC thigh high boots;

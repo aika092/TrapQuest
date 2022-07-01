@@ -21,7 +21,7 @@ To decide which object is the concealer of (C - a trousers):
 To decide which number is the initial outrage of (C - a trousers):
 	if C is crotch-exposing, decide on 8;
 	if C is yoga pants, decide on 0;
-	if C is zippable, decide on 2;
+	if C is crotch-zipped or C is crotch-unzipped, decide on 2;
 	decide on 1.
 
 To say ClothingDesc of (U - a trousers):
@@ -31,7 +31,7 @@ To set up influence of (C - a trousers):
 	set up random-based influence of C.
 
 Definition: a trousers is rippable:
-	if it is total protection and it is not ass plugging and it is not vagina plugging and it is not zippable and it is destructible, decide yes;
+	if it is total protection and it is not ass plugging and it is not vagina plugging and it is destructible, decide yes;
 	decide no.
 
 To restock (C - a trousers):

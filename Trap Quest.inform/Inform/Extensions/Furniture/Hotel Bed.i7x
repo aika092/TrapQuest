@@ -37,7 +37,7 @@ To compute rest ending of (F - HotelBedCreamy):
 		let R be a random number between 4 and the bladder of the player;
 		if the player is full and there is worn total protection soilable clothing and asshole is not actually occupied and rectum > 1:
 			compute messing;
-		otherwise if R > 6 - the incontinence of the player and the bladder of the player > 4:
+		otherwise if R > 6 - the bladder-incontinence of the player and the bladder of the player > 4:
 			now delayed urination is 1;
 			now player-currently-resting is 1;
 			try urinating;
@@ -51,7 +51,7 @@ To compute rest ending of (F - HotelBedCreamy):
 		UnannouncedSquirt semen on thighs by 5;
 	otherwise:
 		say "[if F is unencountered]It is only as you start to get up, you wrinkle your nose at a weird smell. Suddenly you realise that underneath the covers, the entire bed was recently soaked in [semen]! The [otherwise]Once again the [end if]strong fumes of the rapidly drying moist baby butter assaults your senses and makes you feel funny.";
-		SemenAddictUp 1.
+		SlowSemenAddictUp 1.
 
 HotelBedCollar is a kind of hotel bed. There are 2 HotelBedCollar.
 

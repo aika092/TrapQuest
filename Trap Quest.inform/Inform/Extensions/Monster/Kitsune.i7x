@@ -100,9 +100,12 @@ To compute unique unsimulated periodic effect of (M - kitsune):
 				if the target-disguise of M is not M:
 					say "[BigNameDesc of M] suddenly performs a 360 degrees twirl!";
 					reveal disguise of M;
-					say "[speech style of M]'Surprise, it was me all along!'[roman type][line break][BigNameDesc of M] giggles and vanishes in a puff of pink smoke!";
+					say "[speech style of M]'Surprise, it was me all along!'[roman type][line break]";
+					FearUp 5;
+					say "[BigNameDesc of M] giggles and vanishes in a puff of pink smoke!";
 				otherwise:
 					say "[BigNameDesc of M] giggles and vanishes in a puff of pink smoke!";
+					FearUp 3;
 				focus-consider M;
 			regionally place M;
 			set up disguise of M;
@@ -157,7 +160,7 @@ Section 1 - Greeting
 
 To compute KitsuneReveal of (M - kitsune):
 	say "[BigNameDesc of M] suddenly shimmers and disappears in a puff of pink smoke![line break][speech style of M]'[if the times-revealed of M is 0]Oh my, you saw through my disguise! I'm so impressed, stranger! Say, you look like an adventurer of wealth and taste. If you come across anything particularly shiny and impressive in your quest, I'd be very interested. I might just have some... interesting items that could be of use to you.'[otherwise]Ah, hello again! My offer still stands, your shiny things for my favour, and valuable rewards!'[end if][roman type][line break]";
-	now M is interested;
+	interest M;
 	reveal disguise of M;
 	increase the times-revealed of M by 1;
 	now the vanish timer of M is 10;
@@ -254,7 +257,7 @@ To compute offer reward of (M - kitsune) for (T - a thing):
 		say "A strange, shimmering kimono appears on the ground!";
 		now the special-gifted of M is 3;
 		compute autotaking illusory kimono;
-	otherwise if the favour of M > 23 and the special-gifted of M is 3:
+	otherwise if the favour of M > 23 and the special-gifted of M is 3 and midnight tanto is off-stage:
 		say "[speech style of M]'Okay, now this is my best little present. Enjoy!'[roman type][line break]";
 		blandify and reveal midnight tanto;
 		now midnight tanto is in the location of M;

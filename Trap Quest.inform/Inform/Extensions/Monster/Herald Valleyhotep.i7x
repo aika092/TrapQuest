@@ -104,7 +104,7 @@ Definition: herald-blessing (called P) is appropriate:
 To compute punishment of (P - herald-blessing):
 	let M be current-monster;
 	say "[speech style of M]'So what will we make of you...'[roman type][line break]Arcs of pink lightning race across your body!";
-	if the player is incontinent:
+	if the player is totally incontinent:
 		if altar-diaper-link is 0:
 			say "[speech style of M]'All mortals will serve as vessels for [Azathot]'s infinite waste.'[roman type][line break]The next thing you know, you are hovering above the elder altar, completely unable to resist as you are slowly lowered onto the stone slab.";
 			if the player is not in Mansion23, teleport to Mansion23;
@@ -116,7 +116,8 @@ To compute punishment of (P - herald-blessing):
 			IntDown 1;
 	otherwise:
 		say "[speech style of M]'In the new world order, all humans will be fully potty untrained, to remind them of their submission. I will start with you.'[roman type][line break]The next thing you know, you can't feel your bladder[if diaper messing >= 3] or bowels[end if].";
-		increase incontinence by 100;
+		increase the raw-bladder-incontinence of the player by 100;
+		if diaper messing >= 3, increase the raw-rectum-incontinence of the player by 100;
 		let K be a random worn knickers;
 		if K is knickers:
 			say "Looking down, you realise that your [ShortDesc of K] is soaked with fresh warm piss";

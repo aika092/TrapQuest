@@ -17,6 +17,10 @@ Check showering:
 	if the player is flying, say "[if auto is 0]You aren't even touching the ground![end if]" instead;
 	if the player is in danger and auto is 0, say "You can't do that in the middle of combat!" instead;
 	if the noun is not water-body and the noun is not water-body-scenery, say "[if auto is 0]How would that work exactly?[end if]" instead;
+	if hot-tub is in the location of the player:
+		let M be a random teacher in the location of the player;
+		if M is teacher:
+			say "You tentatively make a slight move towards the hot tub, but [NameDesc of M] shakes [his of M] head. It seems like you're not allowed in right now. You'll have to wait until you're not being supervised..." instead;
 	if there is a worn perceived unmessed diaper and auto is 0:
 		say "You feel that it isn't too sensible to get into a body of water when wearing a super-absorbent diaper! Are you sure you want to? ";
 		unless the player is in agreement, say "Action cancelled." instead;
@@ -124,7 +128,9 @@ To soak clothing in water body:
 	let quest-only-once be 0;
 	let X be tracked-semen;[above we used X to see if we cleaned the player's body. Now we're using it to see if we cleaned any clothes.]
 	repeat with C running through worn clothing: [now handle clothing]
-		if C is somewhat fluid vulnerable:
+		if C is a growing silicone dress:
+			transform C into bimbo monokini;
+		otherwise if C is somewhat fluid vulnerable:
 			if quest-only-once is 0, now quest-only-once is 1;
 			let R be a random number between 2 and 4;[because clothing has a higher capacity than the player's body, it takes longer to "soak" clean.]
 			if diaper quest is 1, now R is 999; [we don't do this slow cleaning nonsense in DQ]

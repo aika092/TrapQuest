@@ -7,9 +7,14 @@ vampiress has a thing called stake. The stake of vampiress is the throne.
 To decide which number is the hunger threshold of (M - vampiress):
 	decide on 150.
 
+Definition: vampiress is famished:
+	if the hunger-timer of vampiress >= the hunger threshold of vampiress, decide yes;
+	decide no.
+
 [The vampiress only goes for vaginal sex if she's really hungry]
 Definition: vampiress is willing to do vaginal:
-	if the hunger-timer of it >= the hunger threshold of it, decide yes;
+	if vampiress is famished, decide yes;
+	if vampiress is friendly, decide yes;
 	decide no.
 
 Definition: vampiress is willing to do titfucks: decide no.
@@ -34,15 +39,15 @@ To say ShortDesc of (M - vampiress):
 	say "[if lady fetish is 2]vampire[otherwise]vampiress[end if]".
 
 To say MediumDesc of (M - vampiress):
-	say "[if M is willing to do vaginal]famished[otherwise]seductive[end if] [ShortDesc of M]".
+	say "[if M is famished]famished[otherwise]seductive[end if] [ShortDesc of M]".
 
 To decide which figure-name is the monster-image of (M - vampiress):
 	decide on figure of vampiress.
 
 To say MonsterDesc of (M - vampiress):
 	let S be the stake of M;
-	if lady fetish is 2, say "A monstrous, seductive looking [man of M] with flowing golden brown hair and sharp fangs. [big he of M]'s wearing a cape and a linen loincloth. [if S is clothing][big he of M] currently has a [MediumDesc of S] in [his of M] ass, which seems to be interfering with [his of M] vampiric powers[otherwise if M is willing to do vaginal][big he of M] looks starved[otherwise]The look in [his of M] eyes suggests that [he of M]'s outrageously turned on[end if].";
-	otherwise say "A monstrous, seductive looking [man of M] with flowing, golden brown hair and sharp fangs. [big he of M]'s wearing a skirted black and red corset. [if S is clothing][big he of M] currently has a [MediumDesc of S] in [his of M] ass, which seems to be interfering with [his of M] vampiric powers[otherwise if M is willing to do vaginal][big he of M] looks starved[otherwise]The look in [his of M] eyes suggests that [he of M]'s outrageously turned on[end if].".
+	if lady fetish is 2, say "A monstrous, seductive looking [man of M] with flowing golden brown hair and sharp fangs. [big he of M]'s wearing a cape and a linen loincloth. [if S is clothing][big he of M] currently has a [MediumDesc of S] in [his of M] ass, which seems to be interfering with [his of M] vampiric powers[otherwise if M is famished][big he of M] looks starved[otherwise]The look in [his of M] eyes suggests that [he of M]'s outrageously turned on[end if].";
+	otherwise say "A monstrous, seductive looking [man of M] with flowing, golden brown hair and sharp fangs. [big he of M]'s wearing a skirted black and red corset. [if S is clothing][big he of M] currently has a [MediumDesc of S] in [his of M] ass, which seems to be interfering with [his of M] vampiric powers[otherwise if M is famished][big he of M] looks starved[otherwise]The look in [his of M] eyes suggests that [he of M]'s outrageously turned on[end if].".
 
 To say MonsterComment of (M - vampiress):
 	if diaper quest is 1:
@@ -61,7 +66,7 @@ To say MonsterComment of (M - vampiress):
 		otherwise:
 			say "[second custom style]So I have no choice but to drink [semen] from now on? Perfect.";
 	otherwise if the bimbo of the player < 7:
-		if the player is gendered male, say "[first custom style][one of]So if [he of M]'s an ancient vampire, doesn't that make [him of M] a [if M is presenting as male]dilf[otherwise]milf[end if]?[or][big he of M] can suck on me anytime![or][if M is willing to do vaginal]That look in [his of M] eyes is actually pretty scary... maybe I should get out of here.[otherwise][big he of M] seems hungry. Heh, wonder if [he of M] likes sausage?[end if][in random order]";
+		if the player is gendered male, say "[first custom style][one of]So if [he of M]'s an ancient vampire, doesn't that make [him of M] a [if M is presenting as male]dilf[otherwise]milf[end if]?[or][big he of M] can suck on me anytime![or][if M is famished]That look in [his of M] eyes is actually pretty scary... maybe I should get out of here.[otherwise][big he of M] seems hungry. Heh, wonder if [he of M] likes sausage?[end if][in random order]";
 		otherwise say "[first custom style][one of]The way [he of M] looks at me... makes me feel like food...[or][if the stake of M is clothing]I knew [he of M] had a weakness! I just wish it were less lewd...[otherwise]Vampires in literature have so many weaknesses. I wonder if [he of M]'s the same?[end if][or][big he of M]'s clearly insane, but [he of M] doesn't seem violent.[in random order]";
 	otherwise if the bimbo of the player < 12:
 		say "[variable custom style][one of][big he of M] looks at me like I'm food, but... that's kind of flattering, isn't it?[or][big he of M] has really good skin.[or][big he of M] seems horny, but aren't all vampires that way?[in random order]";
@@ -140,7 +145,7 @@ To say GroundPeeReaction of (M - vampiress):
 	otherwise:
 		say "[BigNameDesc of M] frowns angrily.[line break][speech style of M]'You are an utter disgrace!'[roman type][line break][if M is uninterested]Uh-oh...[end if]";
 	anger M;
-	now M is interested.
+	interest M.
 
 To say ClothesPeeReaction of (M - vampiress):
 	say GroundPeeReaction of M.
@@ -151,7 +156,7 @@ To decide which number is the outrage tolerance of (M - vampiress):
 	decide on 10.
 
 Definition: vampiress (called M) is objectifying the player:
-	if M is willing to do vaginal, decide yes;
+	if M is famished, decide yes;
 	if M is not interested or M is not in the location of the player:
 		now the objectification of M is 0;
 		decide no;
@@ -194,7 +199,7 @@ To compute appearance assessment of (M - vampiress):
 		distract M;
 		if there is worn perceived unmessed knickers, compute state check of a random worn messed knickers;
 	otherwise if the class of the player is vampire spawn:
-		if M is willing to do vaginal:
+		if M is famished:
 			say "[speech style of M]'I have to feed. I HAVE TO FEED!'[roman type][line break]";
 			anger M;
 		if semen is desperately craved:
@@ -242,7 +247,7 @@ To compute appearance assessment of (M - vampiress):
 			say "[speech style of M]'[one of]Welcome to my humble abode. You are free to roam for now, but [please] do not take that which is not yours.'[or]Good afternoon, mortal. If I might ask a personal question, do you have a [manly-penis] or a [pussy]? No, don't tell me, I'm sure I have guessed correctly...'[or]Hello again, friend. I must admit, you are not the most outrageously dressed [whore] I've seen today.'[then at random][roman type][line break]".
 
 To compute DQ perception of (M - vampiress):
-	now M is interested;
+	interest M;
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]"; [The output for clothing humiliation takes place within the 'sluttily dressed' check.]
 	if M is uniquely unfriendly:
 		if M is chain-tethering:
@@ -294,7 +299,7 @@ To compute unique periodic effect of (M - vampiress):
 	if diaper quest is 0:
 		increase the hunger-timer of M by 1;
 		let HTM be 35;
-		if the remainder after dividing the hunger-timer of M by HTM is 0 and M is willing to do vaginal and M is not grabbing the player and M is not penetrating a body part: [she can't disappear if she's in the middle of feeding]
+		if the remainder after dividing the hunger-timer of M by HTM is 0 and M is famished and M is not grabbing the player and M is not penetrating a body part: [she can't disappear if she's in the middle of feeding]
 			DifficultyDown M by 1;
 			if the raw difficulty of M is 0:
 				if M is in the location of the player, say "[BigNameDesc of M] doubles over, groaning as if in agony. [big he of M] gives you a single doleful, famished look as [his of M] body dissolves into a cloud of bats and disperses in every direction. You have a feeling [he of M] won't be back soon.";
@@ -304,7 +309,7 @@ To compute unique periodic effect of (M - vampiress):
 			if M is interested and M is friendly, say "[BigNameDesc of M][']s stomach audibly rumbles. [big he of M] touches it, and then subtly glances at you.[line break][variable custom style]What is [he of M] thinking?[roman type][line break]";
 		otherwise if the hunger-timer of M is the hunger threshold of M and M is in the location of the player and M is objectifying the player: [just turned hungry in front of the player]
 			if M is uninterested or M is friendly, say "[BigNameDesc of M][']s stomach audibly rumbles. [big he of M] rubs it gently and grimaces, as if in discomfort. [big he of M] lips [his of M] lips and looks your way.[line break][speech style of M]'I'm so hungry... and you look delicious. Won't you join me for dinner? I won't take no for an answer...'[roman type][line break]Uh-oh.";
-			now M is interested;
+			interest M;
 	increase the collar-ready of M by 1;
 	if M is chain-tethering and (the collar-ready of M > 0 or the number of worn submissive collars is 0), end tethering.
 
@@ -313,7 +318,7 @@ Part 3 - Combat
 To say MercyReaction of (M - vampiress):[possibly change this, doesn't really fit with her personality]
 	say "[speech style of M]'Your pleas only turn me on more, you pathetic creature! [big please], continue singing such sweet melodies so I may find the inspiration to use you harder!'[roman type][line break][big he of M] drags [his of M] fangs your skin, not hard enough to break the skin but the sensation still stings terribly, causing you to whimper.";
 	bodyruin 1;
-	PainUp 1.
+	PainUp 10.
 
 To compute kneeling reaction of (M - vampiress):
 	say "[BigNameDesc of M] approaches you, sticking [his of M] sharp talon-like finger nails in your hair and rubbing sensuously.[line break][speech style of M]'[one of]I'm hungry and you're clearly defeated. I won't hurt you too badly as long as you stay still. Understand?'[or]I'm hungry and you don't want to fuck with me. Don't move a muscle or you'll regret it.'[or]You know, I could have overcome your mind any time that I wanted... I just like to see my prey squirm first.'[in random order][roman type][line break][if the player is not shameless]You shiver with shame.[end if]";
@@ -410,7 +415,7 @@ To say PrepTaunt of (M - vampiress) in (F - a fuckhole):
 		say "[speech style of M]'[one of]Stop fighting, mortal!'[or]If you don't give in, I might never let you go!'[or]Resistance is futile, [NameBimbo].'[or]Stop trying to be such an insolent little shit!'[in random order][roman type][line break]".
 
 To decide if (M - vampiress) is willing to creampie (F - asshole):
-	if M is willing to do vaginal, decide yes;
+	if M is famished, decide yes;
 	if the reaction of the player is not 1, decide no;[she stops for both begging and resisting]
 	decide yes.
 
@@ -523,19 +528,19 @@ To compute happy vaginal sex reward of (M - vampiress):
 	do nothing.
 
 To check forgiveness of (M - vampiress):
-	if ((a random number between the favour of M and the charisma of the player) > 6 or M is willing to do vaginal) and the player is able to get horny and the player is not barbie:[she is only interested in forgiving you if you can cum for her]
+	if ((a random number between the favour of M and the charisma of the player) > 6 or M is famished) and the player is able to get horny and the player is not barbie:[she is only interested in forgiving you if you can cum for her]
 		compute angry forgiveness of M;
 	otherwise:
 		compute vampiric punishment of M.
 
 To compute angry punishment of (M - vampiress):
-	if M is willing to do vaginal, check forgiveness of M;[she's always willing to forgive you if she's hungry]
+	if M is famished, check forgiveness of M;[she's always willing to forgive you if she's hungry]
 	otherwise compute vampiric punishment of M.
 
 [This function essentially replaces the "angry punishment" function for the vampiress, which would otherwise loop infinitely]
 To compute vampiric punishment of (M - vampiress):
 	say "[BigNameDesc of M] places one hand on your temple, eyes glowing as vivid images of [if bukkake fetish is 1]your face getting blasted with [semen][otherwise][manly-penis]s[end if] assault your mind.";
-	SemenAddictUp 1.
+	SlowSemenAddictUp 1.
 
 To compute angry forgiveness of (M - vampiress):
 	say "[BigNameDesc of M] chuckles softy, clenching one hand into a fist and holding your head with the other. [if asshole is actually occupied]Even though [he of M] isn't touching it directly, you can feel [his of M] fingers around your anal ring, gently teasing you as a strong pressure builds in your mind[otherwise]Even though [he of M] isn't touching it directly, you still feel [his of M] fingers slip through your anal ring, gently stroking you from the inside as strong pressure builds up in your mind[end if]. [if the bimbo of the player < 6]Your lips twist into a submissive 'O'[otherwise]You grit your teeth[end if] as a wave of pleasure passes through your body, immediately bringing you to the edge.";
@@ -616,7 +621,7 @@ To compute damaging attack of (M - vampiress):
 	let L be a random worn submissive collar;
 	if L is clothing and (S is the throne or L is lipstick collar) and M is not chain-tethering and the collar-ready of M > 3 and a random number between 1 and 3 is 1:
 		compute grabbing attack of M;[she tries to attach a chain to you, but only if you're wearing a collar.]
-	otherwise if S is clothing or (M is willing to do vaginal and a random number between 1 and 3 is 1):
+	otherwise if S is clothing or (M is famished and a random number between 1 and 3 is 1):
 		compute striking attack of M;
 	otherwise:
 		compute molesting attack of M.
@@ -725,7 +730,7 @@ To compute tripping attack of (M - vampiress):
 		if D > the intelligence of the player:
 			say MonsterTrippedFlav of M;
 			now the stance of the player is 1;
-			if the player is prone, check attack of M;
+			trigger trip-wisp-trigger;
 		otherwise:
 			say MonsterFailedTripFlav of M.
 
@@ -749,12 +754,12 @@ To say MonsterFailedTripFlav of (M - vampiress):
 [The vampiress has to be "invited in"]
 To compute SelectionFrustrated of (M - vampiress):
 	let R be a random number between 1 and 3;
-	if R is 3 and M is not willing to do vaginal, now R is 1;
+	if R is 3 and M is not famished, now R is 1;
 	let P be a random worn insertable thing penetrating asshole;
 	if R is 2, now P is a random worn clothing penetrating face;
 	if R is 3, now P is a random worn insertable thing penetrating vagina;
 	if P is a thing:
-		say "[BigNameDesc of M] frowns. [speech style of M]'[if M is willing to do vaginal]EVERYTHING is blocked!? Of all the[otherwise]Everything good is blocked! How the hell am I supposed to[end if]- Ahem. I mean... Darling, would you mind if I removed your [ShortDesc of P]?'[roman type][line break] Give [him of M] permission?";
+		say "[BigNameDesc of M] frowns. [speech style of M]'[if M is famished]EVERYTHING is blocked!? Of all the[otherwise]Everything good is blocked! How the hell am I supposed to[end if]- Ahem. I mean... Darling, would you mind if I removed your [ShortDesc of P]?'[roman type][line break] Give [him of M] permission?";
 		if the player is bimbo consenting:
 			compute M removing P;
 		otherwise:
@@ -1048,8 +1053,8 @@ To say DominanceFailure of (M - vampiress):
 To compute failed dominance punishment of (M - vampiress):
 	let V be a random off-stage vampiric fangs;
 	let F be player-fucker;
-	if F is fuckhole or the player is getting unlucky or M is willing to do vaginal:[if she's starved or you tried to ride her, she skips straight to the sex]
-		say "[BigNameDesc of M] never breaks eye contact as you sit down in [his of M] lap, pulling you into [his of M] embrace as [he of M] guides [his of M] [LongDickDesc of M] into your [variable F].[line break][speech style of M]'Don't worry, darling, just focus on enjoying yourself. I'll handle everything.'[roman type][line break][if M is not willing to do vaginal and F is not fuckhole][GotUnluckyFlav][end if]";
+	if F is fuckhole or the player is getting unlucky or M is famished:[if she's starved or you tried to ride her, she skips straight to the sex]
+		say "[BigNameDesc of M] never breaks eye contact as you sit down in [his of M] lap, pulling you into [his of M] embrace as [he of M] guides [his of M] [LongDickDesc of M] into your [variable F].[line break][speech style of M]'Don't worry, darling, just focus on enjoying yourself. I'll handle everything.'[roman type][line break][if M is not famished and F is not fuckhole][GotUnluckyFlav][end if]";
 		now M is penetrating F;
 		set up sex length of M in F;
 		now another-turn-flavour is the substituted form of "[BigFuckerDesc of M] fucks you with gentle thrusts.";
@@ -1064,7 +1069,7 @@ To compute failed dominance punishment of (M - vampiress):
 			Calm M;
 		otherwise:
 			say "Pain pierces through your skull as [NameDesc of M] climbs to [his of M] feet.[line break][speech style of M]'Oh well. I prefer the new way anyway.'[roman type][line break]";
-			PainUp 2;
+			PainUp 20;
 		say "[unless F is face][GotUnluckyFlav][end if]";
 		Bore M;
 	otherwise:
@@ -1105,10 +1110,10 @@ To blowjob dominate (M - vampiress):[You 'feed' the vampiress]
 		if R < 0:
 			if face is not actually occupied:
 				if futanari fetish > 0 or lady fetish is 2, StomachSemenUp 1;
-				otherwise SemenAddictUp 1;
+				otherwise SlowSemenAddictUp 1;
 			otherwise:
 				if bukkake fetish is 1 and (futanari fetish > 0 or lady fetish is 2), CumFaceUp 1;
-				otherwise SemenAddictUp 1;
+				otherwise SlowSemenAddictUp 1;
 			orgasm M;
 			now player-fucking is DOMINANT-NEUTRAL;
 			slightDignify;

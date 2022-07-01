@@ -59,7 +59,9 @@ To compute perception of (M - boogeymonster):
 	if M is unleashed:
 		say "[big he of M] does not look friendly. In fact, you can see some malice in [his of M] giant eye.";
 	otherwise:
-		say "[big he of M] snarls angrily at its captivity.".
+		say "With a fearsome roar, several strong tentacles quickly lash out through the gaps in the cage, trying to grab you.";
+		FearUp 15;
+		say "Thankfully, [NameDesc of M]'s tentacles can't reach you. You hate to think what might happen if they could.".
 
 To say BecomesBoredFlav of (M - boogeymonster):
 	say "[BigNameDesc of M] seems to lose interest in you for now.".
@@ -176,13 +178,13 @@ To compute punishment of (P - boogeymonster-nightmare-school):
 	repeat with K running through worn knickers:
 		destroy K;
 	summon D;
-	if rectum > 1, now rectum is 1;
 	now the bladder of the player is 0;
 	fully clean D;
 	UrineSoakUp D by the soak-limit of D;
 	if diaper messing >= 3, MessSet D to 30;
 	SexAddictUp 3;
 	say "And then you do - or rather, the scene disappears. You are lying on your back in the [location of the player], but now wearing a [D]. It feels impossibly heavy, and you feel extremely fatigued. [BigNameDesc of M] is nowhere to be seen.";
+	reset rectum after messing;
 	now the fatigue of the player is the buckle threshold of the player;
 	let N be a random alive unleashed gladiator;
 	if N is nothing, now N is a random alive unleashed royal guard;
@@ -197,7 +199,7 @@ To compute punishment of (P - boogeymonster-nightmare-school):
 		if D is messed, compute diaper mess reaction of N;
 		otherwise say DiaperReaction of N;
 		if N is unfriendly:
-			now N is interested;
+			interest N;
 			say "[big he of N] looks unfriendly...".
 
 Section - Aeroplane Nightmare
@@ -228,13 +230,13 @@ To compute punishment of (N - boogeymonster-nightmare-aeroplane):
 		repeat with B running through worn clothing penetrating face:
 			destroy B;
 		summon yellow-pacifier cursed with silent quest;
-	if rectum > 1, now rectum is 1;
 	now the bladder of the player is 0;
 	fully clean D;
 	UrineSoakUp D by the soak-limit of D;
 	if diaper messing >= 4, MessSet D to 30;
 	let F be a random floofy sissy baby dress;
 	let B be a random bib;
+	reset rectum;
 	if a random number between 8 and 25 < the delicateness of the player:[dice roll to continue]
 		say "[paragraph break]...[paragraph break]You open your eyes. You expect to find yourself back in the [location of the player]... but instead you're still in your baby seat in the aeroplane.[line break][second custom style]Maybe this is real life and the dungeon was a dream? [roman type][line break]Your thoughts are interrupted by an announcement from the hostess.[line break][second custom style]'Attention potty trained passengers, I'm happy to announce we have repaired our toilet in just ten minutes. Feel free to use it at any time. Of course, the one baby who couldn't hold in their [if diaper messing >= 3]poopies for 10 minutes cannot be trusted with it, we wouldn't want it to break again[otherwise]pee-pee for 10 minutes cannot be trusted to make it on time, so we'll be keeping them in diapers for the rest of the journey[end if]!' [roman type]A fresh wave of embarrassment washes over you after hearing this.[line break][variable custom style]I only needed to hold it for 10 minutes, but I went for the diapers right away. Maybe I do need these...[roman type][line break]Speaking of your diaper, you could really use a change, but you need to get the hostess to help you. Looking at the side of your seat, you see a big pink flight attendant call button, and push it without a second thought. You suddenly spit out your pacifier by accident, and this is the last straw - some uncontrollable emotional turbulence inside you makes you begin crying, to the annoyance of the majority of passengers in front of you, and the bemusement of the rest. Of course, you are too caught up in your emotions to notice or care about their reactions. By the time the hostess arrives, less than a minute after you started crying, your face and clothes are covered in tears and snot. It may have been less than a minute, but it felt like an eternity to you.";
 		say "The hostess replaces your pacifier, and you can't believe how quickly it helps you focus and calm down.[line break][second custom style]'Is there anything else you need baby?'[roman type][line break]You shake your head. She already gave you your pacifier,[line break][second custom style]which was the whole reason I was crying, right? [roman type][line break]What else could you need?[line break]You are jolted by a hand groping your crotch - the hostess is giving you a diaper check! Once again, the hostess makes sure everyone in the plane hears her announcement.[line break][second custom style]'Looks like our baby here had a big accident!'[roman type][line break][if diaper messing >= 3]Of course, anyone that didn't hear or see your 'accident' could easily smell it[otherwise]It's doubtful anyone has failed to notice your 'accident'[end if], but hearing her declare it so openly still manages to make you shudder with shame.";
@@ -259,7 +261,8 @@ To compute punishment of (N - boogeymonster-nightmare-aeroplane):
 	now the fatigue of the player is the buckle threshold of the player;
 	regionally place M;
 	distract M;
-	DiaperAddictUp 1.
+	DiaperAddictUp 1;
+	if D is messed, progress quest of mess-quest.
 
 Section - TV Nightmare
 
@@ -293,7 +296,7 @@ To compute punishment of (N - boogeymonster-nightmare-tv):
 	now the fatigue of the player is the buckle threshold of the player;
 	regionally place M;
 	distract M;
-	increase incontinence by 1.
+	BladderIncontinenceUp 1.
 
 Section - Magic Marker Nightmare
 
@@ -462,7 +465,7 @@ To compute punishment of (N - boogeymonster-nightmare-hotbuns):
 	say "The gimmicks that restaurants are using to market their food are getting more and more ridiculous.[paragraph break]You look at the ridiculous cycle-like contraption that Jerry, the owner of Hot Buns, wants you to use to deliver his burgers from here on out. Part of you wants to tell him to shove his dumb job up his ass, but the truth is, in this economy, you need the job. Even more importantly, you need to earn good tips.[paragraph break]So here you find yourself, crouching forward on this confusion perversion of vehicular transport, with your head strapped down low above the front wheel, and your ass held high by the metal contraption holding your pink panties in a constant brutal wedgie. And then, as you begin to pedal...[line break][italic type]THWAP THWAP THWAP[roman type][line break]...The attached rotating spanking device beats your butt cheeks with its long, wide paddles. A devilish contraption, and one that lives up to the new name of Jerry's company - Hot RED Buns. And to make matters worse, the hook continuously yanks your panties up and down, flossing your butt crack with some brutal wedgie action. By the time you arrive at the customer's house, your poor butt is truly aflame.";
 	appropriate-cutscene-display figure of boogeymonster hotbuns cutscene;
 	say "[italic type]Art by Rosie-BRS[line break][second custom style]'Food's here!'[roman type][line break]Your deliver customer jogs out of her house and down to where you've parked by the side of the road, and retrieves the food from the rear. She looks at you and giggles.[line break][second custom style]'Nice buns!'[roman type][line break]You pout, but say the line you're supposed to, as instructed.[line break][variable custom style]'If you tip me $10, it'll treat me five times as hard on the ride back.'[line break][second custom style]'Hahahaha! DEAL!'[roman type][line break]The woman presses her phone to the contactless payment portal on the side of the bike, and there's an audible beep. Immediately, the spanking machine gains a life of its own, and starts spanking you several times faster than before.[line break][variable custom style]'OW OW OW! THANK YOU! OW OW OW!'[roman type][line break]You pedal away as fast as you can, which just makes the wedgie contraption floss your crack raw with even greater speed and intensity. You surge down the streets, people pointing and laughing as you sail past them, your ass torture in plain view for everyone to see. The perfect mobile advertisement for Jerry's Hot Red Buns.[paragraph break]And then... the scene is disappearing, your vision fading to black... but the pain, the searing pain in your [AssDesc] remains.";
-	PainUp 4;
+	PainUp 40;
 	say "And when you open your eyes, back in the Dungeon, [NameDesc of M] is nowhere to be seen.";
 	regionally place M;
 	distract M.

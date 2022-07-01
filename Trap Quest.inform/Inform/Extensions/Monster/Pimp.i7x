@@ -125,12 +125,13 @@ To compute perception of (M - pimp):
 		say "[speech style of M]'Hi there [if diaper quest is 1]baby[boy of M][otherwise]whore[end if]. Here to give me my cut?'[roman type][line break]".
 
 To send (M - pimp) home:
-	if M is not in Hotel44:
-		if M is in the location of the player:
-			let D be the best route from the location of M to Hotel44 through modern rooms;
-			if D is a direction, say "[BigNameDesc of M] leaves to the [D].";
-		now M is in Hotel44;
-	if M is interested and M is not in the location of the player, deinterest M.
+	if M is alive:
+		if M is not in Hotel44:
+			if M is in the location of the player:
+				let D be the best route from the location of M to Hotel44 through modern rooms;
+				if D is a direction, say "[BigNameDesc of M] leaves to the [D].";
+			now M is in Hotel44;
+		if M is interested and M is not in the location of the player, deinterest M.
 
 To compute monstermotion of (M - pimp): [This is default wandering when nothing interesting is happening]
 	if M is unfriendly and portal-hotpants is not worn and portal-bra is not worn:
@@ -218,7 +219,7 @@ This is the pimp uses portals rule:
 				ruin asshole;
 				if the openness of asshole < the girth of brown-plug - 2:
 					say "You crumple in pain as your [asshole] is forced wider than it has ever been forced before.";
-					PainUp 1;
+					PainUp 10;
 				satisfy pimp;
 			otherwise if face is not actually occupied or there is worn removable clothing penetrating face:
 				if face is not actually occupied, say "[speech style of pimp]'You've only got one hole left for me to use, haven't you, slut?'[roman type][line break]";
@@ -253,7 +254,7 @@ To compute damaging attack of (M - pimp):
 		if portal-hotpants is worn and (portal-bra is not worn or a random number between 1 and 2 is 1), say "[BigNameDesc of M] turns to the statue which currently hosts your genitalia, and strikes hard at your [if the player is possessing a penis][player-penis][otherwise]crotch[end if]! The immediate and overwhelming pain sends you to your knees.";
 		otherwise say "[BigNameDesc of M] turns to the statue which currently hosts your breasts, and grips your nipples tightly before twisting them both as hard as [he of M] can! The immediate and overwhelming pain sends you to your knees.";
 		BodyRuin 1;
-		PainUp 2;
+		PainUp 20;
 		try kneeling;
 	otherwise:
 		compute striking attack of M.
@@ -362,7 +363,7 @@ To say DominanceFailure of (M - pimp):
 To compute failed dominance punishment of (M - pimp):
 	if the player is getting unlucky:
 		say "Unfortunately for you, the second strike comes either way, and you yelp in pain as the back of [his of M] hand connects with the other side of your face.[line break][speech style of M]'[one of]If there's anything I hate, its uppity [bitch]es like you.'[or]You've got some NERVE, [bitch]!'[in random order][roman type][line break]";
-		PainUp 2;
+		PainUp 20;
 	otherwise:
 		say "[line break][speech style of M]'[one of]The ONLY time I kneel for whores is when I'm fucking 'em from behind!'[or]I SHOULD slap you again for even trying that shit, but I have a better idea.'[in random order][roman type][line break]";
 		FavourDown M by 1;
@@ -610,8 +611,7 @@ To compute friendly drink of (M - pimp):
 
 To compute unfriendly drink of (M - pimp):
 	say "[speech style of M]'Do you think you DESERVE a free drink? I don't.'[roman type][line break]";
-	now M is interested;
-	now the boredom of M is 0.
+	interest M.
 
 Definition: pimp is willing to give snacks: decide no.
 

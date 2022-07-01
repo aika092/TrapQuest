@@ -295,13 +295,13 @@ To compute publicity stunt of (M - a robomaid):
 			humiliate X * MODERATE-HUMILIATION;
 		otherwise:
 			say "[if X > 1]The patrons grumble[otherwise][BigNameDesc of P] grumbles[end if] in disappointment as you smack [NameDesc of M][']s hand away and squirm in [his of M] grip. [big his of M] lips deliver a sharp jolt of electricity to your skin, leaving a stinging welt on your face as [if X > 1]the patrons leave[otherwise][NameDesc of P] leaves[end if] and [NameDesc of M] abruptly drops you.";
-			PainUp 1;
+			PainUp 10;
 			decrease the employee-record of senior robobellboy by 1;
 	otherwise:[grope]
 		say "[BigNameDesc of M] begins to grope you, turning to put the act on full display for [if X > 1]the patrons[otherwise][NameDesc of P][end if] as [he of M] fondles your [ShortDesc of breasts].[line break][speech style of current-monster]'I AM. SO HORNY.'[roman type][line break]Do you smack [his of M] hand away? ";
 		if the player is reverse bimbo consenting:
 			say "[if X > 1]The patrons grumble[otherwise][BigNameDesc of P] grumbles[end if] in disappointment as you smack [NameDesc of M][']s hand away and squirm in [his of M] grip. [big his of M] lips deliver a sharp jolt of electricity to your skin, leaving a stinging welt on your face as [if X > 1]the patrons leave[otherwise][NameDesc of P] leaves[end if] and [NameDesc of P] abruptly drops you.";
-			PainUp 1;
+			PainUp 10;
 			decrease the employee-record of senior robobellboy by 1;
 		otherwise:
 			say "[if X > 1]The patrons stroke themselves[otherwise][BigNameDesc of P] strokes[end if] even harder as [NameDesc of M] dexterously twists your nipples and palms your [AssDesc]. You feel a wave of [if the player is disgraced]embarrassment[otherwise]excitement[end if] and arousal as [if X > 1]each of them blow their loads on the ground and leave the room[otherwise][NameDesc of P] blows [his of P] on the ground and leaves[end if]. [BigNameDesc of M] sets you down gently, satisfied.";
@@ -323,9 +323,9 @@ This is the robomilkmaid punishment rule:
 		[compute maidFluff of M;]
 		rule succeeds;
 	if the player is hotel employed:
-		let C be a random worn top-placed breast covering stealable clothing;
+		let C be a random stealable top level breasts protection clothing;
 		if C is clothing and C is not trainee bra:
-			if C is actually not-top-displacable:
+			if C is currently not-top-displacable:
 				say "[BigNameDesc of current-monster] tears off your [printed name of C], exposing your [ShortDesc of breasts]!";
 				destroy C;
 			otherwise:
@@ -400,7 +400,7 @@ To compute publicity stunt of (M - a robomilkmaid):
 			say "as [NameDesc of M] yanks your [ShortDesc of D] out of the way.[line break][speech style of M]'SHOW ME THE GOODS, BABY.'[roman type][line break][big he of M] smacks your [if breasts is lewdly exposed][ShortDesc of breasts][otherwise]face[end if], leaving a painful red welt in the shape of a hand as [he of M] rolls off of you.";
 			if D is top-displacable and D is top-placed, now D is top-displaced;
 			otherwise now D is crotch-displaced;
-			PainUp 1;
+			PainUp 10;
 			humiliate R * SLIGHT-HUMILIATION;
 		otherwise:[aphrodisiac]
 			say "as [NameDesc of M][']s [LongDickDesc of M] pushes out from underneath [his of M] apron and [one of]spurts warm, pink liquid across your [ShortDesc of breasts][or]shoots several [']ropes['] of warm, pink fluid onto your [BellyDesc][or]splatters your [ShortDesc of face] with warm, pink liquid[at random].[line break][speech style of M]'OOH. SO HOT. SO HOT.'[roman type][line break]You can feel the fluid absorbing into your skin as [NameDesc of M] rolls off of you. You feel incredibly turned on!";

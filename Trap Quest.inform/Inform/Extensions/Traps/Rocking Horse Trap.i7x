@@ -119,7 +119,7 @@ Understand "rock" as rocking.
 Check submitting when there is a rocking horse grabbing the player:
 	let Y be a random rocking horse grabbing the player;
 	say "The [Y] suddenly heats up to a painful temperature, seemingly trying to encourage you to start rocking![line break][variable custom style]Ouch! Hot hot hot!!![roman type][line break]";
-	PainUp 1 instead;
+	PainUp 10 instead;
 	do nothing instead.
 
 Check dropping a rocking horse:

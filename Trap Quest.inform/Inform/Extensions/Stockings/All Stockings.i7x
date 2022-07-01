@@ -7,7 +7,7 @@ Definition: a stockings is same-type:
 	decide no.
 Definition: a stockings is calf covering: decide yes.
 Definition: a stockings is ankle covering: decide yes.
-Definition: a stockings is at least partially thigh covering: decide yes.
+Definition: a stockings is usually at least partially thigh covering: decide yes.
 
 Report examining stockings:
 	if the number of worn stockings is 0 and newbie tips is 1, say "Stockings and socks make wearing heels more comfortable, and therefore slightly improve your ability to walk in them[unless the noun is socks]. Stockings also improve your knee damage[end if].".
@@ -103,7 +103,7 @@ A socks is a kind of stockings. The printed name of socks is usually "[clothing-
 
 To decide which number is the default-soak-limit of (C - a socks): decide on 6.
 
-Definition: a socks is at least partially thigh covering: decide no.
+Definition: a socks is usually at least partially thigh covering: decide no.
 
 A diaper quest fix rule:
 	repeat with C running through socks:
@@ -292,12 +292,12 @@ To decide which number is the initial cringe of (C - milkmaid stockings):
 Definition: milkmaid stockings is white themed: decide yes.
 Definition: milkmaid stockings is black themed: decide yes.
 Definition: milkmaid stockings is cow themed: decide yes.
-Definition: milkmaid stockings is at least partially thigh covering: decide no.
+Definition: milkmaid stockings is usually at least partially thigh covering: decide no.
 Definition: milkmaid stockings is ankle covering: decide no.
 
 condom socks is a socks. condom socks is unique. condom socks is latex. The text-shortcut of condom socks is "cdso".
 
-Definition: condom socks is at least partially thigh covering: decide no.
+Definition: condom socks is usually at least partially thigh covering: decide no.
 Definition: condom socks is calf covering: decide no.
 
 Definition: condom socks is class-relevant:
@@ -613,7 +613,7 @@ A black-and-yellow striped stockings is a kind of stockings. There is 1 black-an
 
 Definition: a black-and-yellow striped stockings is yellow themed: decide yes.
 Definition: a black-and-yellow striped stockings is black themed: decide yes.
-Definition: a black-and-yellow striped stockings is at least partially thigh covering: decide no.
+Definition: a black-and-yellow striped stockings is usually at least partially thigh covering: decide no.
 Definition: a black-and-yellow striped stockings is ankle covering: decide no.
 
 To decide which figure-name is clothing-image of (C - a black-and-yellow striped stockings):
@@ -808,6 +808,8 @@ To decide which number is the initial outrage of (C - black-lace-stockings):
 
 Definition: black-lace-stockings is upgradable:
 	if it is not monified, decide yes;
+	if black-lace-bra is worn and black-lace-bra is not monified, decide yes;
+	if black-lace-thong is worn and black-lace-thong is not monified, decide yes;
 	decide no.
 Definition: black-lace-stockings is transformation-protected:
 	if it is not upgradable, decide yes;
@@ -820,8 +822,15 @@ Definition: black-lace-stockings is transformation-theme-blockable: decide no. [
 To decide which object is the unique-upgrade-target of (C - black-lace-stockings):
 	decide on C.
 To transform (C - black-lace-stockings):
-	say "Paper bills appear on the stockings, sewn on and completely unremovable, but looking as though they've just been tucked into the tops!";
-	now C is monified.
+	if C is monified:
+		if black-lace-bra is worn and black-lace-bra is not monified, transform black-lace-bra;
+		if black-lace-thong is worn and black-lace-thong is not monified, transform black-lace-thong;
+	otherwise:
+		say "Paper bills appear on the stockings, sewn on and completely unremovable, but looking as though they've just been tucked into the tops!";
+		now C is monified.
+
+Carry out taking black-lace-stockings:
+	if the noun is in Hotel20 and the player is getting unlucky, now the noun is provocation.
 
 queen-of-spades-stockings is a stockings. queen-of-spades-stockings is unique. queen-of-spades-stockings is silk. queen-of-spades-stockings is dense. The printed name of queen-of-spades-stockings is "[clothing-title-before]queen of spades stockings[clothing-title-after]". The text-shortcut of queen-of-spades-stockings is "qssk". Understand "queen", "of spades", "spades", "stockings" as queen-of-spades-stockings.
 

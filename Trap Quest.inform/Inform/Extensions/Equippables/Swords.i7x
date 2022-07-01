@@ -533,7 +533,7 @@ To compute periodic effect of (H - demon broadsword):
 					CumFaceUp 4;
 				otherwise:
 					say "The [printed name of H] bends back and strikes you in the face, disorienting you and [if the player is gendered male]emasculating[otherwise]dehumanising[end if] you with its display of male power. You shiver as the pulsating length hovers above your head, causing your head to swim with its incredibly potent masculine musk.";
-					if a random number between 1 and 3 is 1, PainUp 1;
+					if a random number between 1 and 3 is 1, PainUp 10;
 					otherwise SlowSemenTasteAddictUp 1;
 					Arouse 200 + (the semen taste addiction of the player * 10) + (the arousal of H * 10);
 				decrease the arousal of H by 2;
@@ -573,7 +573,7 @@ To compute demon punishment of (S - demon broadsword):
 	now the arousal of S is 10;
 	now S is dildoed;
 	now S is biological;
-	now S is cursed.
+	now S is cursed. [There's purposefully no quest - it'll return to uncursed when it calms down]
 
 Section 5 - Giant Rattle
 
@@ -584,7 +584,7 @@ Definition: rattle is fetish appropriate:
 	if diaper lover > 0, decide yes;
 	decide no.
 Definition: rattle is destiny-prioritised:
-	if the incontinence of the player > 3, decide yes;
+	if the bladder-incontinence of the player > 3, decide yes;
 	decide no.
 Definition: rattle is destiny-appropriate:
 	if the player is diapered, decide yes;

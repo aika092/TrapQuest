@@ -1,6 +1,6 @@
 Imp by Monster begins here.
 
-An imp is a kind of monster. An imp is male. An imp can be player-brood. An imp is usually not player-brood.[This will be used to flag the imp as one of your children]
+An imp is a kind of monster. An imp is male. An imp can be player-brood. An imp is usually not player-brood. [This will be used to flag the imp as one of your children]
 
 Definition: an imp is willing to urinate:
 	if it is unfriendly, decide yes;
@@ -11,6 +11,10 @@ Definition: an imp is father material: decide yes.
 Definition: an imp is raunchy: decide yes.
 
 Definition: an imp is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
+
+Definition: an imp is actually seducable:
+	if diaper quest is 0 and it is seducable and it is in the location of the player and it is interested and it is unseduced and it is not penetrating a body part and it is unfriendly, decide yes; [imps are not reactive, but can be seduced when unfriendly]
+	decide no.
 
 An imp has a number called imp-rudeness. The imp-rudeness of an imp is usually 0. [determines the chances of imp leaving after being attacked]
 
@@ -122,7 +126,7 @@ To compute reward (N - a number) set up of (M - an imp):
 	now M is in the location of the player.
 
 Definition: an imp (called M) is objectifying the player:
-	if the player is stuck, decide yes;
+	if the player is prone and the player is immobile and the player is in danger, decide yes;
 	if the favour of M < the aggro limit of M, decide yes;
 	decide no.
 
@@ -159,7 +163,7 @@ To decide which number is the seek roll of (M - an imp):
 
 A later time based rule (this is the imps follow the player rule): [after compute monsters]
 	repeat with M running through on-stage imps:
-		if M is not in the location of the player and the location of the player is not bossed:[The imps always follow you, no matter where you go. Unless it's a boss room.]
+		if M is not in the location of the player and the location of the player is not bossed: [The imps always follow you, no matter where you go. Unless it's a boss room.]
 			now M is in the location of the player;
 			say "A portal appears, and [NameDesc of M] hops out!";
 			if M is not interested, check guaranteed perception of M.
@@ -186,11 +190,12 @@ To check consensual submissive sex of (M - an imp):
 				now N is friendly-fucking;
 				if the imp-rudeness of N > 0, decrease the imp-rudeness of N by 1;
 				if N is not penetrating a body part:
-					now N is interested;
+					interest N;
 					let B be a random reasonable target body part;
 					if B is body part:
 						now the chosen-orifice of N is B;
 						say "[BigNameDesc of N] seems to think [he of N][']s been invited to join in!";
+						now current-monster is N;
 						follow the insertion rules of N;
 					otherwise:
 						say "[BigNameDesc of N] begins masturbating in your direction!";
@@ -204,6 +209,7 @@ To check consensual submissive sex of (M - an imp):
 							SemenPuddleUp the semen load of N;
 						orgasm N;
 				if N is not penetrating a body part, now N is not friendly-fucking; [Make sure this flag doesn't linger when it's not supposed to]
+		now current-monster is M;
 	otherwise:
 		if presented-orifice is not nothing:
 			say PresentFriendlyRejectionFlav of current-monster;
@@ -230,11 +236,14 @@ To compute refractoryReset of (M - an imp): [Usually this is only used for intel
 	now the blue-balls of M is 0;
 	now the refractory-period of M is the refractory-time of M.
 
+To decide which number is the refractory-time of (M - an imp):
+	decide on 500. [This can be tweaked for balancing purposes. Goes down by a random per round based on imp-rudeness.]
+
 To compute periodic recovery of (M - an imp):
 	let R be a random number between 1 and the imp-rudeness of M;
 	decrease the refractory-period of M by R;
 	let P be the refractory-period of M;
-	if M is in the location of the player:[really only matters in the school and in the extra credit zone]
+	if M is in the location of the player: [really only matters in the school and in the extra credit zone]
 		if P < 200 and R + P >= 200: [If the current refractory period just dropped below 200, run this code]
 			say "[BigNameDesc of M] glances at you, snickering. Looks like [he of M][']s getting bored...";
 		otherwise if the refractory-period of M < 100 and R + the refractory-period of M >= 100:
@@ -245,11 +254,10 @@ To compute periodic recovery of (M - an imp):
 To say SatisfiedFlav of (M - an imp):
 	if M is in the location of the player and M is not dying:
 		let U be 0;
-		if M is unfriendly, now U is 1;[This check can cause a line break]
+		if M is unfriendly, now U is 1; [This check can cause a line break]
 		decrease the imp-rudeness of M by 2;
 		say "[BigNameDesc of M] [if U is 1]seems satisfied, and stops acting hostile[otherwise]seems very satisfied[end if].";
-		now M is interested;
-		now the boredom of M is 0;[just in case]
+		interest M.
 
 Part 2 - Perception
 
@@ -267,7 +275,7 @@ Part 3 - Combat
 Section 1 - Attack
 
 To compute (M - an imp) protecting against (X - a monster):
-	if the player is stuck or (the player is prone and the player is in danger):
+	if the player is prone and the player is immobile and the player is in danger:
 		if the refractory-period of M < the refractory-time of M - 30: [After they've just used you, they don't do it again immediately.]
 			say "[BigNameDesc of M] grins evilly. Looks like [he of M][']s turned on you!";
 			anger M;
@@ -323,7 +331,7 @@ To compute standard damage of (M - an imp):
 	compute automatic banishment of M.
 
 To say BanishFleeFlav of (M - an imp):
-	say "[BigNameDesc of M] leaps away from you, sticking out [his of M] tongue as a portal opens up behind [him of M]. [big he of M] cackles tauntingly as [he of M] jumps through and portal closes after [him of M].".
+	say "[BigNameDesc of M] leaps away from you, sticking out [his of M] tongue as a portal opens up behind [him of M]. [big he of M] cackles tauntingly as [he of M] jumps through and portal closes after [him of M]. It seems that [he of M][']s got fed up of being your follower, and is gone for good.".
 
 Definition: an imp is auto-banish-loot-dropping: decide no. [Will it automatically drop jewellery when it is banished in this manner?]
 

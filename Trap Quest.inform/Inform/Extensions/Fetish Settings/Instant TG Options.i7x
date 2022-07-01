@@ -23,7 +23,7 @@ To decide which number is event TG:
 
 Table of TG Timing Options
 title	subtable	description	toggle
-"Outside of wearing the vaginal virginity rose headgear, transforming into a [if transGender is 1]biological [end if]woman should be something that can only happen once I reach minimum penis size."	--	--	spontaneous tg hater rule
+"[if diaper quest is 0]Outside of wearing specific vaginal virginity headgear, t[otherwise]T[end if]ransforming into a [if transGender is 1]biological [end if]woman should be something that can only happen once I reach minimum penis size."	--	--	spontaneous tg hater rule
 "Transforming into a [if transGender is 1]biological [end if]woman should usually wait until I reach minimum penis size, unless I get [']caught out['] by something particularly unlucky and/or powerful."	--	--	spontaneous tg liker rule
 "Transforming into a [if transGender is 1]biological [end if]woman should be something that is always at risk of happening to me at any time!"	--	--	spontaneous tg lover rule
 

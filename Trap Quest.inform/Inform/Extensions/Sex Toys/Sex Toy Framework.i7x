@@ -210,7 +210,7 @@ To compute gripping of (I - a thing):
 	[#LXorDD: For the case of wearing the stick-on 0-sized penis decal, it's too fiddly to bother add a whole 'It peels off and flutters to the ground' or 'the stick on decal magically somehow fills your [orifice]' thing, so instead we'll kludge this special case and say the player is just pretending. I also suspect if it isn't counted as being held 'inside' long enough this might loop forever, too. So we pretend everything is proceeding normally.]
 	let pretence be "The";
 	if I is players-detached-dick and the size of I is 0, now pretence is "You pretend that your";
-	if the player is upright and (nun-dress is not worn or nun-dress is not wrist-bound-behind) and (current-predicament is not team-girlfriends-predicament or the player is not in a predicament room):
+	if the player is upright and I is not glued clothing and I is not cursed clothing and (nun-dress is not worn or nun-dress is not wrist-bound-behind) and (current-predicament is not team-girlfriends-predicament or the player is not in a predicament room):
 		if debuginfo > 1 and ((I is penetrating asshole and the player is not ass protected) or (I is penetrating vagina and the player is not pussy protected)), say "[input-style][ShortDesc of I] gripping check: Grip value ([G]) squared * 3 = [G * G * 3]; RNG (0~[G * G * 3]) = [R] | 9.5 Required grip strength (and pretence text is '[pretence]')[roman type][line break]";
 		if I is players-detached-dick and the size of I is 0:
 			do nothing; [so, avoid the falls 'out' check]
@@ -532,28 +532,28 @@ Report kneeling while there is a worn balancing tail plug:
 		try standing.
 
 This is the knickers tail plug clash rule:
-	if wearing-target is total protection:
+	if wearing-target is total protection and wearing-target is not-butt-windowed and wearing-target is not displacable:
 		repeat with O running through worn tail plugs:
 			if summoning is 0 and autowear is false, say "You can't wear that because your [printed name of O] is in the way!";
 			rule fails.
 The knickers tail plug clash rule is listed in the knickers wearability rules.
 
 This is the trousers tail plug clash rule:
-	if wearing-target is total protection:
+	if wearing-target is total protection and wearing-target is not-butt-windowed and wearing-target is not displacable:
 		repeat with O running through worn tail plugs:
 			if summoning is 0 and autowear is false, say "You can't wear that because your [printed name of O] is in the way!";
 			rule fails.
 The trousers tail plug clash rule is listed in the trousers wearability rules.
 
 This is the overdress tail plug clash rule:
-	if wearing-target is total protection:
+	if wearing-target is total protection and wearing-target is not-butt-windowed and wearing-target is undisplacable:
 		repeat with O running through worn tail plugs:
 			if summoning is 0 and autowear is false, say "You can't wear that because your [printed name of O] is in the way!";
 			rule fails.
 The overdress tail plug clash rule is listed in the overdress wearability rules.
 
 This is the skirt tail plug clash rule:
-	if wearing-target is total protection:
+	if wearing-target is total protection and wearing-target is not-butt-windowed and wearing-target is undisplacable:
 		repeat with O running through worn tail plugs:
 			if summoning is 0 and autowear is false, say "You can't wear that because your [printed name of O] is in the way!";
 			rule fails.
@@ -564,17 +564,17 @@ To UniquePinkWardrobeUnclash (C - a tail plug):
 		WardrobeVanish O.
 
 Definition: a tail plug is uniquely class summonable:
-	repeat with O running through worn total protection clothing:
+	repeat with O running through worn total protection not-butt-windowed undisplacable clothing:
 		if O is unremovable or O is class-relevant, decide no;
 	decide yes.
 
 Check replacing:
 	if there is a worn tail plug:
-		unless the noun is crotch-assless or the noun is skirted, say "You can't replace any clothing while you are wearing the [random worn tail plug]!" instead.
+		unless the noun is crotch-assless or the noun is skirted or the noun is butt-windowed, say "You can't replace any clothing while you are wearing the [random worn tail plug]!" instead.
 
 To decide which object is the concealer of (C - a tail plug):
 	if entry 1 in the armUses of arms is C and entry 2 in the armUses of arms is C, decide on arms;
-	let S be a random worn unskirted actually dense potentially asshole covering clothing; [tail plug not concealed by skirts]
+	let S be a random worn unskirted actually dense potentially asshole covering not-butt-windowed clothing; [tail plug not concealed by skirts]
 	decide on S.
 
 To say CurrentlyVisibleFlav of (C - a tail plug):
@@ -584,5 +584,19 @@ To say CurrentlyVisibleFlav of (C - a tail plug):
 To say CurrentlyPartiallyConcealedFlav of (C - a tail plug):
 	let X be the at least partial concealer of C;
 	say "Your [ShortDesc of X] fails to completely hide the fact that you're wearing it[if X is skirted and X is actually dense], because the tail is poking out[end if].".
+
+
+Part - Wearability
+
+sex toy wearability rules is a rulebook. The wearability rules of sex toy is usually sex toy wearability rules.
+
+This is the tail plug clash rule:
+	if wearing-target is tail plug:
+		repeat with O running through worn total protection not-butt-windowed crotch-in-place clothing:
+			if summoning is 0 and autowear is false, say "You can't wear that because your [printed name of O] is in the way!";
+			rule fails.
+The tail plug clash rule is listed in the sex toy wearability rules.
+
+
 
 Sex Toy Framework ends here.

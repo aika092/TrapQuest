@@ -175,7 +175,7 @@ To compute MasturbationReaction of (M - gargoyle):
 	if M is awake:
 		if M is uninterested:
 			say "You hear a deep rumble, and [NameDesc of M][']s eyes slowly open.";
-			now M is interested;
+			interest M;
 		otherwise if M is not airborne:
 			say "[BigNameDesc of M] focuses [his of M] eyes on you, and with two beats of [his of M] giant stony wings, soars into the air.";
 			now M is airborne;
@@ -224,7 +224,7 @@ This is the gargoyle dive bomb rule:
 				summon vampiress in the mansion;
 				say SummoningFlav of vampiress;
 				set up vampiress;
-			now vampiress is interested;
+			interest vampiress;
 			anger vampiress;
 			now neighbour finder is Mansion16;
 			now vampiress is in a random next door room;
@@ -261,7 +261,7 @@ This is the gargoyle lockdown rule:
 		if the location of the player is Mansion16 and vampiress is not in the location of the player:[The master bedroom]
 			say "You hear high pitched shrieking as dozens of bats fly in through some narrow, high windows, converging in a twisting mass of flapping wings and black fur. Just as suddenly as they appeared, the bats disperse, leaving a [printed name of vampiress] standing in the doorway.";[TODO: improve]
 			now vampiress is in the location of the player;
-			if vampiress is uninterested, now vampiress is interested;
+			if vampiress is uninterested, interest vampiress;
 		rule succeeds.
 The gargoyle lockdown rule is listed last in the gargoyle priority attack rules.
 
@@ -310,7 +310,7 @@ To compute shredding attack of (M - a gargoyle):
 		if B is exposed:
 			say "[BigNameDesc of M] scratches you [TargetName of B], leaving painful marks on your skin!";
 			compute M hurting B;
-			PainUp 1;
+			PainUp 10;
 		otherwise:
 			let C be the concealer of B;
 			if C is clothing:

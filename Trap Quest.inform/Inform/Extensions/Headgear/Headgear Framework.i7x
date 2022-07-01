@@ -77,10 +77,10 @@ To compute generic class reward of (Q - a headgear-clothing-quest) on (C - a clo
 		say "You're also rewarded with a bonus [MediumDesc of D], which appears [if D is worn]straight onto your finger[otherwise]right in front of you[end if]!".
 
 Report taking off headgear: [Otherwise the player could remove the headgear, remove the nasty class blocked clothing items, then replace the headgear.]
-	compute AutoRemoveFizzling of the noun.
+	if the player is not in a predicament room, compute AutoRemoveFizzling of the noun.
 
 Report dropping headgear: [Otherwise the player could remove the headgear, remove the nasty class blocked clothing items, then replace the headgear.]
-	compute AutoRemoveFizzling of the noun.
+	if the player is not in a predicament room, compute AutoRemoveFizzling of the noun.
 
 To compute AutoRemoveFizzling of (H - a headgear):
 	if H is in-play:
@@ -177,8 +177,9 @@ To compute post transformation effect of (H - a headgear):
 	unless PC1 matches the text PC2, compute class outfit of H. [In general if the player changes class they get a new outfit where possible. NB this won't replace clothing that is still class-relevant, that will need to be done manually]
 
 Report wearing a headgear:
-	follow the player class rules;
-	compute class outfit of the noun.
+	if the player is not in a predicament room:
+		follow the player class rules;
+		compute class outfit of the noun.
 
 To compute class outfit of (H - a headgear):
 	do nothing. [This will be replaced with the headgear spawning the default class outfit using the "class summon" function on each item of clothing.]
@@ -188,7 +189,7 @@ To compute class set up of (C - a clothing): [Any unique changes to its state wh
 	if C is sex toy:
 		let F be a random fuckhole penetrated by C;
 		if F is fuckhole, assign size (openness of F) to C;
-	if C is bondage, now C is locked.
+	if C is bondage, lock C.
 
 To say ClassSummonFlav of (C - a clothing):
 	say "A [C] appears on your [body area of C]!".
@@ -265,16 +266,24 @@ To PinkWardrobeUnclash (C - a clothing):
 	if C is suspenders:
 		repeat with O running through worn suspenders:
 			WardrobeVanish O;
-	if C is knickers or C is ass plugging or C is vagina plugging or C is bottom-exclusive crotch covering clothing or C is totally-exclusive crotch covering clothing:
+	if C is knickers or C is bottom-exclusive crotch covering clothing or C is totally-exclusive crotch covering clothing:
 		repeat with O running through worn knickers:
 			WardrobeVanish O;
 		repeat with O running through worn bottom-exclusive crotch covering clothing:
 			WardrobeVanish O;
 		repeat with O running through worn totally-exclusive crotch covering clothing:
 			WardrobeVanish O;
+	if C is ass plugging:
 		repeat with O running through worn ass plugging clothing:
 			WardrobeVanish O;
+	if C is vagina plugging:
 		repeat with O running through worn vagina plugging clothing:
+			WardrobeVanish O;
+	if C is total protection:
+		repeat with O running through worn tail plugs:
+			WardrobeVanish O;
+	if C is tail plug:
+		repeat with O running through worn total protection clothing:
 			WardrobeVanish O;
 	if C is trousers:
 		repeat with O running through worn trousers:
@@ -420,19 +429,31 @@ Definition: a clothing (called C) is class summonable:
 	if C is suspenders:
 		repeat with O running through worn suspenders:
 			if O is unremovable or O is currently-class-relevant, decide no;
-	if C is knickers or C is ass plugging or C is vagina plugging or C is bottom-exclusive crotch covering clothing or C is totally-exclusive crotch covering clothing:
+	if C is knickers or C is bottom-exclusive crotch covering clothing or C is totally-exclusive crotch covering clothing:
 		repeat with O running through worn knickers:
 			if O is unremovable or O is currently-class-relevant, decide no;
 		repeat with O running through worn bottom-exclusive crotch covering clothing:
 			if O is unremovable or O is currently-class-relevant, decide no;
 		repeat with O running through worn totally-exclusive crotch covering clothing:
 			if O is unremovable or O is currently-class-relevant, decide no;
-		repeat with O running through worn ass plugging clothing:
+	if C is ass plugging:
+		repeat with O running through things penetrating asshole:
+			if O is worn ass plugging clothing:
+				if O is unremovable or O is currently-class-relevant, decide no;
+			otherwise:
+				decide no;
+	if C is vagina plugging:
+		repeat with O running through things penetrating vagina:
+			if O is worn vagina plugging clothing:
+				if O is unremovable or O is currently-class-relevant, decide no;
+			otherwise if the player is possessing a vagina:
+				decide no;
+	if C is total protection:
+		repeat with O running through worn tail plugs:
 			if O is unremovable or O is currently-class-relevant, decide no;
-		repeat with O running through worn vagina plugging clothing:
+	if C is tail plug:
+		repeat with O running through worn total protection clothing:
 			if O is unremovable or O is currently-class-relevant, decide no;
-		if C is vagina plugging and the player is possessing a vagina and vagina is actually occupied, decide no;
-		if C is ass plugging and asshole is actually occupied, decide no;
 	if C is trousers:
 		repeat with O running through worn trousers:
 			if O is unremovable or O is currently-class-relevant, decide no;
@@ -548,7 +569,7 @@ Carry out wearing headgear:
 	compute HeadgearAutoCursing of the noun.
 
 To compute HeadgearAutoCursing of (H - a headgear):
-	if H is not cursed:
+	if H is not cursed and the player is not in a predicament room:
 		say "As you put it on, it becomes cursed, sealing itself to your [ShortDesc of hair]!";
 		now H is cursed.
 

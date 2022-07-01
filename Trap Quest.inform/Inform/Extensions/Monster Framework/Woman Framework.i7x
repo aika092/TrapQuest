@@ -84,12 +84,6 @@ To uniquely destroy (M - woman-player): [Are there any special rules we need to 
 
 Definition: woman-player is human: decide yes.
 
-To compute perception of (M - woman-player):
-	if M is angered:
-		say "[BigNameDesc of M] notices you! [second custom style]'[one of][if the woman-bimbo of M < 5]You! How could you treat me so poorly?! I'm not going to let you get away with it any more!'[otherwise]Hey sexy. You've taught me some valuable lessons in how to be a good friend. I think it's time for me to return to favour...'[end if][or]You still haven't lost? Let's go again, then!'[or]Hi again, bitch.'[stopping][roman type][line break][big he of M] starts walking towards you.";
-		now M is interested;
-	otherwise:
-		now M is uninterested. [Unless there has been a scene trigger, it's up to the player to interact with her]
 
 Part - Magic Pistol
 
@@ -133,6 +127,7 @@ STATES:
 7: Just freed the player from bondage (or told them no)
 ==Anything below 10 can be interpreted as normal wandering and hijacked for a scene==
 
+25: DQ only for now: After stuck in hole in wall
 26: DQ: After matron play scene.
 27: DQ: After matron fight scene.
 28: DQ: Changing station
@@ -177,15 +172,14 @@ Definition: woman-player is angry deploy appropriate:
 To deploy (M - woman-player) with woman-status (V - a number):
 	now the woman-status of M is V;
 	now the sleep of M is 0;
-	now the boredom of M is 0;
-	now M is uninterested;
+	deinterest M;
 	now M is unleashed;
 	if M is introduced and M is summon-available and (playerRegion is Dungeon or playerRegion is Woods or playerRegion is Hotel): [stops her spawning somewhere stupid like hole in the wall, iron maiden, blindfolded]
 		now the health of M is the maxhealth of M;
 		if V is 2:
 			now M is in the location of the player;
 			say "[bold type]You spot [NameDesc of M] trotting up to you![roman type] [big he of M] seems concerned at your state of affairs.";
-			now M is interested;
+			interest M;
 		otherwise if V is 3:
 			now M is in Dungeon06;
 			if the player is in Dungeon06, say "[bold type]You spot [NameDesc of M] trotting up to you![roman type] [big he of M] grins seemingly oblivious to your presence, and then pulls the foreboding looking lever before you can react.";
@@ -207,7 +201,7 @@ A time based rule (this is the woman spawning rule):
 		while the delayed sluttification of woman-player < 0:
 			ImmediatewomanUnsluttify;
 			increase the delayed sluttification of woman-player by 1;
-	otherwise if woman-player is not caged:
+	otherwise if woman-player is not caged and woman-player is not in HoleInWall:
 		if woman-player is not regional and (woman-player is not in WoodsBoss01 or playerRegion is not woods):
 			vanish woman-player;
 		otherwise if a random number between 1 and 40 is 1 or woman-player is asleep:
@@ -252,6 +246,7 @@ woman-player has a number called stool-scene.
 woman-player has a number called throne-scene.
 woman-player has a number called crafting-scene.
 woman-player has a number called changing-station-tank-scene.
+woman-player has a number called hole-in-wall-scene.
 
 woman-player has a number called patron-scene-done.
 [
@@ -339,7 +334,7 @@ Report going when the location is Dungeon37 and the woman-bimbo of woman-player 
 	let W be woman-player;
 	deploy W with woman-status 6;
 	now W is in the location of the player;
-	now W is interested;
+	interest W;
 	now the crafting-scene of W is 1;
 	say WomanCraftSceneFlav;
 	say "Do you drink it? ";
@@ -384,7 +379,7 @@ This is the woman helps the player remove bondage rule:
 			if the player is consenting:
 				say "Using the key, [he of woman-player] unlocks your bondage. The key then crumbles to dust.";
 				repeat with C running through worn locked clothing:
-					now C is unlocked;
+					unlock C;
 				say "[speech style of woman-player]'I hope I don't need it myself now, haha...'[roman type][line break]";
 				increase the delayed sluttification of woman-player by 1;
 			otherwise:
@@ -394,7 +389,7 @@ This is the woman helps the player remove bondage rule:
 The woman helps the player remove bondage rule is listed last in the woman wandering rules.
 
 This is the woman gets bored and moves on rule:
-	if the woman-status of woman-player < 80 and the friendly boredom of woman-player > 10 and the number of hotel bed in the location of the player is 0 and a random number from 1 to 20 is 1: [woman-status of 80+ means she was spawned to get fucked so she doesn't vanish]
+	if the woman-status of woman-player < 80 and the friendly boredom of woman-player > 10 and the number of hotel bed in the location of the player is 0 and a random number from 1 to 36 is 1: [woman-status of 80+ means she was spawned to get fucked so she doesn't vanish]
 		let M be woman-player;
 		if M is in the Dungeon:
 			let D be the best route from the location of M to Stairwell01 through placed rooms;
@@ -438,7 +433,7 @@ To compute damage reaction of (M - woman-player):
 	if M is awake:
 		if M is uninterested or M is not angered:
 			say "[BigNameDesc of M] looks shocked.[line break][speech style of M]'[one of]Fucking bitch! Come on then![or]What the fuck is your problem? You're going down!'[or]Oh you are going to wish you never messed with me!'[at random][roman type][line break]";
-			now M is interested;
+			interest M;
 			now M is angered;
 		otherwise:
 			say DamageReaction (the health of M) of M;
@@ -448,7 +443,7 @@ To compute damage reaction of (M - woman-player):
 		if the sleep of M < 0, now the sleep of M is 0;
 		if M is awake:
 			say "[big he of M] wakes up, looking very pissed off indeed! Uh-oh...";
-			now M is interested;
+			interest M;
 			now M is angered;
 		otherwise:
 			say "[big he of M] is still unconscious.".
@@ -503,7 +498,7 @@ To compute gagged response of (M - woman-player):
 		say "It doesn't seem like [NameDesc of M] [if M is uninterested]knows that you're speaking to [him of M][otherwise]can understand you[end if].".
 
 To compute correct perception of (M - woman-player):
-	do nothing.
+	compute perception of M.
 
 Definition: woman-player is dismissable:
 	if the woman-status of it < 80, decide yes;

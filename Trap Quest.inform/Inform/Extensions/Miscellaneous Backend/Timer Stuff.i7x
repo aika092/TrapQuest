@@ -436,7 +436,7 @@ To commence animation of (T - a cutscene animation track):
 		now the animX of T is (the width of the map-window - the animW of T) / 2;
 		now the animY of T is (the height of the map-window - the animH of T) / 2;
 		draw a rectangle animationColour of T in the map-window at 0 by 0 with size (mapW + 1) by (mapH + 1);
-		set a graphlink in the map-window identified as hypermapstairs from 0 by 0 to mapW by mapH as "skip", ignoring redundant links;
+		if the player is not YesNoButtonReady, set a graphlink in the map-window identified as hypermapskip from 0 by 0 to mapW by mapH as "skip"; [we don't want to block the YesNoButtons]
 		now T is g-animated.
 
 Check jumping when there is g-animated cutscene animation track:

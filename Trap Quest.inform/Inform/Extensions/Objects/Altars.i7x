@@ -55,7 +55,7 @@ To say ExamineDesc of (C - woods altar):
 The elder altar gains charge when items are placed on the altar, and loses charge when the player uses the special invoking verb learned from the necronomicon.
 
 @!]
-The elder altar is a thing. The elder altar is in Mansion23. The elder altar is not portable. The printed name of elder altar is "[TQlink of item described]dark altar[shortcut-desc][if the charge of item described <= 0] (glowing)[otherwise] (not glowing)[end if][TQxlink of item described][verb-desc of item described]". Understand "dark" as the elder altar. The indefinite article of the elder altar is "an". The elder altar has a number called charge. The text-shortcut of elder altar is "al".
+The elder altar is a thing. The elder altar is in Mansion23. The elder altar is not portable. The printed name of elder altar is "[TQlink of item described]dark altar[shortcut-desc][if the charge of item described <= 0 and doomed >= 0] (glowing)[otherwise] (not glowing)[end if][TQxlink of item described][verb-desc of item described]". Understand "dark" as the elder altar. The indefinite article of the elder altar is "an". The elder altar has a number called charge. The text-shortcut of elder altar is "al".
 Figure of elder altar cock is the file "Env/Mansion/cumcock1.jpg".
 
 To decide which figure-name is the examine-image of (C - elder altar):
@@ -74,24 +74,29 @@ To say ExamineDesc of (C - elder altar):
 The hotel altar allows the player to gain unique demon-themed benefits in exchange for punishments. The more the altar is used, the better the benefit and the worse the punishment. The hotel altar gains charge when used and loses charge when the player kills a monster or when a monster grows bored. It also loses charge when the player has sex with an infernal monster as a worshipper.
 
 @!]
-The hotel altar is a thing. The hotel altar is in Hotel35. The hotel altar is not portable. The printed name of hotel altar is "[TQlink of item described]golden altar[shortcut-desc] [GlowDesc of the item described][TQxlink of item described][verb-desc of item described]". Understand "golden", "gold" as the hotel altar. The hotel altar has a number called charge. The charge of the hotel altar is usually 0. The text-shortcut of hotel altar is "al". The hotel altar has a number called altar-intensity.
+The hotel altar is a thing. The hotel altar is in Hotel35. The hotel altar is not portable. The printed name of hotel altar is "[TQlink of item described]golden altar[shortcut-desc] [GlowDesc of the item described][TQxlink of item described][verb-desc of item described]". Understand "golden", "gold" as the hotel altar. The hotel altar has a number called charge. The charge of hotel altar is 45. The text-shortcut of hotel altar is "al".
+The hotel altar has a number called altar-intensity. The altar-intensity of hotel altar is 3.
 
 To say GlowDesc of (A - hotel altar):
 	let N be the altar-intensity of A;
 	say "([if the charge of A > 0]dormant[otherwise if N < 2]glowing faintly[otherwise if N < 4]glowing strongly[otherwise]shining ominously[end if])";
-
-A diaper quest fix rule:
-	destroy the hotel altar.
 
 Figure of hotel altar is the file "Env/Hotel/statue1.jpg".
 
 To decide which figure-name is the examine-image of (C - hotel altar):
 	decide on figure of hotel altar.
 
+A time based rule (this is the hotel altar charge rule):
+	if Hotel35 is discovered:
+		increase the charge of hotel altar by 1;
+		if the charge of hotel altar > a random number between 50 and 1000:
+			now the charge of hotel altar is 0;
+			increase the altar-intensity of hotel altar by 1.
+
 To say ExamineDesc of (C - hotel altar):
 	let N be the altar-intensity of C;
-	say "A stone slab in front of a golden statue of a muscular [man of shopkeeper] with a huge [manly-penis], with a water feature spewing from its tip which makes it look like he's constantly [if diaper quest is 1]urinating[otherwise]ejaculating[end if]. The statue's eyes are inset with huge red gemstones. [if charge of C > 0]It seems dormant. [otherwise if N < 2]The gemstones are glowing with a faint red light. [otherwise if N < 4]The gemstones are glowing with a strong red light. [otherwise]The gemstones are shining with ominous red light. [end if][if N is 1]You have used the altar 1 time.[otherwise if N > 0]You have used the altar [N] times.[end if]";
-	if newbie tips is 1, say "[one of][newbie style]Newbie tip: Each time you use this altar, the positive effect is improved but so is the negative effect. After multiple uses, then part of the payment will likely be a permanent decrease in intelligence or increase in semen taste addiction or sex addiction.[roman type][line break][or][stopping]".
+	say "A stone slab in front of a golden statue of a muscular [man of shopkeeper][if diaper quest is 0] with a huge [manly-penis][end if], with a water feature spewing from its tip which makes it look like he's constantly [if diaper quest is 1]urinating[otherwise]ejaculating[end if]. The statue's eyes are inset with huge red gemstones. [if charge of C > 0]It seems dormant. [otherwise if N < 2]The gemstones are glowing with a faint red light. [otherwise if N < 4]The gemstones are glowing with a strong red light. [otherwise]The gemstones are shining with ominous red light. [end if][if N is 1]You have used the altar 1 time.[otherwise if N > 0]You have used the altar [N] times.[end if]";
+	if newbie tips is 1, say "[one of][newbie style]Newbie tip: Each time you use this altar, you get a positive effect but also a curse wisp. The longer it has been since the last time you used the altar (the strength of the glowing eyes), the better the positive effect will be.[roman type][line break][or][stopping]".
 
 Check entering the dungeon altar:
 	try praying the player with the dungeon altar instead.
@@ -126,6 +131,7 @@ Check praying something with:
 	[if the second noun is elder altar:
 		if the noun is not clothing and the noun is not the player:
 			say "That won't do anything." instead;]
+	if the player is immobile or the player is in danger, say "Aren't you a bit busy?" instead;
 	allocate 6 seconds;
 	if the noun is the player:
 		if the second noun is dungeon altar:
@@ -173,18 +179,14 @@ Check praying something with:
 		now the charge of the elder altar is 0;
 		say "The horn trembles as it is enveloped by black flames, shooting several long ropes of creamy white fluid across the surface of the altar before being consumed completely. Purple light suffuses the altar as the horn disappears in a puff of white smoke.";
 		destroy the noun instead;
-	otherwise if the second noun is hotel altar:
-		if the noun is a unicorn-horn:
-			say "Smoke rises slowly as the pearly surface of the horn shifts from white to black, and it slowly breaks down into powder.";
-			decrease the altar-intensity of hotel altar by 1;
-			now the charge of hotel altar is 0 instead;
-		otherwise if the charge of hotel altar > 0:
-			say "Nothing happens." instead.
+	otherwise if the second noun is hotel altar and the number of nonstalking wisps is 0:
+		say "Nothing happens. Perhaps you have too many curse wisps already." instead.
 
 To AltarPunish (T - a thing):
-	if a random number between 1 and 2 is 1:
-		SemenAddictUp 1;
-		say "You feel funny inside.";
+	if a random number between 0 and 5 < game difficulty:
+		RandomStatDown 1;
+	otherwise if there is a nonstalking wisp:
+		deploy a wisp;
 	otherwise:
 		say "Nothing seems to happen.".
 
@@ -328,7 +330,7 @@ To AltarPray (P - a person):
 			now permanent makeup is 0;
 			break;
 		if the pregnancy of the player > 0:
-			if (the number of held pregnancy themed things is 0 and the number of worn pregnancy themed clothing is 0) or (the pregnancy of the player is 3 and the class of the player is not broodmother):
+			if (the number of carried pregnancy themed things - the number of carried pregnancy themed clothing is 0 and the number of worn pregnancy themed clothing is 0) or (the pregnancy of the player is 3 and the class of the player is not broodmother):
 				say "You feel an emptiness inside of you. Suddenly, your belly dramatically shrinks!";
 				now the pregnancy of the player is 0;
 				WombEmpty the womb volume of vagina;
@@ -389,13 +391,14 @@ To AltarPray (P - a person):
 				say "A tattoo of an angel appears on your right arm. You feel less slutty!";
 				break;
 	if the pregnancy of the player is 0 and the womb volume of vagina is 0 and runic headband is actually summonable:
-		summon runic headband cursed;
 		say "A shimmering blue light surrounds you as your pure visible energy rushes around your body and then settles into the form of some kind of religious headband. A voice sounds in your head:[line break][second custom style]'Loyal Sister, you have been chosen to follow the holy path of righteousness! Go, with grace, but do not forget your duties.'[roman type][line break]";
+		summon runic headband cursed;
 		if the player is possessing a vagina and the vaginalvirgin of the player is 0:
 			say "[bold type]The pure aura of your headband clashes with your lost vaginal virginity![roman type][line break]";
 			compute virginity-loss of runic headband;
 	otherwise if flower hairclip is worn:
 		AltarUniqueReward of flower hairclip;
+	follow the player class rules;
 	if diaper quest is 0 and (runic headband is worn or the class of the player is priestess):
 		if ritual-beads is not held and ritual-beads is not in the location of the player:
 			only destroy ritual-beads;
@@ -524,7 +527,7 @@ To WitchCheck (M - witch):
 		if witch is unconcerned or witch is uninterested:
 			say "[second custom style]'[one of]Hey, what the fuck do you think you're doing! No using that without my permission!'[or]You again! You do not have my permission to use this altar!'[stopping][roman type][line break]Oops, looks like you've angered the [ShortDesc of witch]!";
 			anger witch;
-			now witch is interested;
+			interest witch;
 			now witch is unleashed;
 		if witch is alive, progress quest of stealing-quest;
 	otherwise if witch is bitchy:
@@ -666,9 +669,10 @@ To ElderConnect:
 		now the quest of D is doom-quest;
 		say QuestFlav of D;
 	now altar-diaper-link is 99999;
-	if incontinence < the max-incontinence of the player:
-		say "It feels like you no longer have 'ownership' over your own bladder[if diaper messing >= 3] and bowels[end if]. You feel your control weaken.";
-		increase incontinence by 1;
+	if the raw-bladder-incontinence of the player < the max-bladder-incontinence of the player:
+		say "It feels like you no longer have 'ownership' over your own bladder. You feel your control weaken.";
+		SilentlyBladderIncontinenceUp 1;
+	RectumIncontinenceUp 1;
 	compute periodic effect of D.
 
 To ElderSacrifice (T - a thing):
@@ -731,7 +735,7 @@ To compute dark reward of (T - ritual-beads):
 	let R be a random number between (N / 2) and N;
 	if N > 6, now R is 6;
 	if R >= 6 and jinx-beads is off-stage:
-		let B be a random worn hand ready equippable;[Would be more destructive, but B could potentially be a handbag]
+		let B be a random worn hand ready equippable; [Would be more destructive, but B could potentially be a handbag]
 		say "[if interracial fetish is 1]A long, black tentacle[otherwise]A long, thin tentacle[end if] reaches out from the darkness above you, [if B is clothing]ripping your [ShortDesc of B] out of your hand as it wriggles[otherwise]wriggling[end if] around your wrist and between your fingers. Your inability to pull away only makes the experience more dehumanising, and it lasts so long that you wonder if you're hallucinating when the tentacle transforms into a set of tiny black beads.";
 		now B is in the location of the player;
 		summon jinx-beads;
@@ -740,13 +744,13 @@ To compute dark reward of (T - ritual-beads):
 		let M be the milk volume of breasts;
 		say "Your mind is assaulted with visions of [if interracial fetish is 1]big, black [end if]tentacles squeezing your [BreastDesc] as milk spontaneously [if M > 10]squirts[otherwise]dribbles[end if] out of your nipples! The experience leaves you feeling incredibly drained, but also strangely purified.";
 		now the milk volume of breasts is 0;
-		SexAddictDown 1;[The idea here is that "impurities" are being wrung out too, but we specifically leave semen addiction, bbc addiction and vaginal sex addiction alone.]
+		SexAddictDown 1; [The idea here is that "impurities" are being wrung out too, but we specifically leave semen addiction, bbc addiction and vaginal sex addiction alone.]
 		SemenTasteAddictDown 1;
 		OralSexAddictDown 1;
 		AnalSexAddictDown 1;
-		obsceneHumiliate;[If this outcome is too good, we can bump this up to 'ultra' level]
+		obsceneHumiliate; [If this outcome is too good, we can bump this up to 'ultra' level]
 		now the fatigue of the player is the buckle threshold of the player;
-	otherwise if R >= 4:[cockslap vision]
+	otherwise if R >= 4: [cockslap vision]
 		say "Your mind is assaulted with a vision of a huge [if interracial fetish is 1]black [end if]tentacle clapping you in the face as the wind is suddenly knocked out of you! The experience somehow leaves your body feeling stronger and more flexible.";
 		StrengthUp 1;
 		DexUp 1;
@@ -848,10 +852,14 @@ To compute light reward of (T - ritual-beads) at (N - a number):
 		now R is 6;
 	otherwise:
 		now R is a random number between (N / 2) and N;
-	if R >= 6 and prayer-beads is off-stage and the number of worn hand ready equippables is 0:
-		say "A set of tiny white beads materialises in your hands.";
-		summon prayer-beads;
-		fully bless prayer-beads;
+	if R >= 6 and prayer-beads is off-stage:
+		check clutch replacement;
+		if there is worn hand ready clothing:
+			say "Nothing happens. Hmm...";
+		otherwise:
+			say "A set of tiny white beads materialises in your hands.";
+			summon prayer-beads;
+			fully bless prayer-beads;
 	otherwise if R >= 5:
 		say "You feel your will being strengthened!";
 		DelicateDown 2;
@@ -875,11 +883,12 @@ To compute light reward of (T - ritual-beads) at (N - a number):
 To DevilPray (P - a person):
 	let N be the altar-intensity of hotel altar + 1;
 	if the class of the player is priestess or N < 1, now N is 1; [a priestess always gets the minimum effect]
-	if N > 6, now N is 6;[the effect maxes out at a certain point]
-	let R be a random number between 1 and 4;
-	repeat with M running through infernal monsters:
-		if the times-submitted of M > 0, now R is 0;
-	if avatar-summoned is false and the player is possessing a vagina and the vaginalvirgin of the player is 1 and the player is soulless and avatar-headpiece is actually summonable:
+	if N > 5, now N is 5; [the effect maxes out at a certain point]
+	let R be a random number between 1 and 3;
+	if diaper quest is 0:
+		repeat with M running through infernal monsters:
+			if the times-submitted of M > 0, now R is 0;
+	if diaper quest is 0 and avatar-summoned is false and the player is possessing a vagina and the vaginalvirgin of the player is 1 and the player is soulless and avatar-headpiece is actually summonable:
 		now R is 0;[free]
 		say "The statue's eyes glow with multicoloured light as a [if lady fetish is 1]husky, feminine[otherwise]deep, masculine[end if] voice echoes in your ear.[line break][first custom style]'A virgin, with a void for a soul... It would be a waste to make you an altar girl! That tight little hole in your chest is begging to be filled!'[roman type][line break]The statue's arms suddenly spring to life, grabbing either side of your head and forcing you to look directly into the its eyes as you feel *something* pressing in on you from *somewhere*. The empty feeling in your chest turns into a slow, painful sensation of stretching, and you let out a groan of pain as something HUGE and warm forces its way into your very core. Brand new horns push their way out of your forehead. Finally, a golden tiara and hood materialises on your head.[line break][first custom style]'Hm, looks like you weren't able to take all of me, but no matter. I am your master now, [NameBimbo], so get to work collecting souls while I work on improving your vessel.'[roman type][line break]";
 		summon avatar-headpiece cursed;
@@ -887,7 +896,7 @@ To DevilPray (P - a person):
 	otherwise if R is 0 and gold-tiara is off-stage and gold-tiara is actually summonable:[having sex with a demon at least once will give the player the worshipper headgear]
 		say "The statue's face seems to grin as a golden tiara materialises on your head.";
 		summon gold-tiara cursed;
-	otherwise if mechanic is alive and (the class of the player is "princess" or the class of the player is "deepthroat princess" or the class of the player is "trained fuck princess" or the class of the player is "virgin warrior princess") and bride-consort is throne and the player is the donator:
+	otherwise if diaper quest is 0 and mechanic is alive and bride-consort is throne and (the class of the player is bride or the class of the player is "princess" or the class of the player is "deepthroat princess" or the class of the player is "trained fuck princess" or the class of the player is "virgin warrior princess"):
 		let H be a random worn headgear;
 		transform H into tiara-veil;
 		now the quest of H is betrothal-quest;
@@ -896,45 +905,52 @@ To DevilPray (P - a person):
 		if C is a thing, WardrobeVanish C; [this would prevent the class summon below]
 		class summon princess bride dress;
 		now R is 0;
-	otherwise if R is 1:[summon a demonic item. The item has a better modifier and less chance of a bad enchantment if the modifier is low]
+	otherwise if diaper quest is 1 and R < 3:
+		say "The statue's face seems to wink as an orange glow surrounds your body. ";
+		let TN be 0;
+		let LN be N;
+		if the raw-rectum-incontinence of the player > 0:
+			let X be LN;
+			if the raw-rectum-incontinence of the player < X, now X is the raw-rectum-incontinence of the player;
+			decrease the raw-rectum-incontinence of the player by X;
+			increase TN by X;
+			decrease LN by X;
+		if LN > 0 and the raw-rectum-incontinence of the player > 0:
+			let X be LN;
+			if the raw-rectum-incontinence of the player < X, now X is the raw-rectum-incontinence of the player;
+			decrease the raw-rectum-incontinence of the player by X;
+			increase TN by X;
+			decrease LN by X;
+		if LN > 0 and the raw diaper addiction of the player > 0:
+			let X be LN;
+			if the raw diaper addiction of the player < X, now X is the raw diaper addiction of the player;
+			DiaperAddictDown X;
+			increase TN by X;
+			decrease LN by X;
+		now N is TN; [total N spent on benefits]
+	otherwise if R is 1 and demon tail plug is off-stage and demon tail plug is unclash summonable:
+		say "The statue's face seems to wink as an orange glow surrounds your body. ";
 		let C be a random off-stage demonic clothing;
-		if C is actually summonable:
-			let X be -3;
-			if N > 1, increase X by a random number between N / 2 and N;
-			if C is dominance:
-				now C is temptation;
-			if C is kicking:
-				now C is stumbling;
-			otherwise:
-				if a random number between 1 and 2 is 1, now C is possession;
-				otherwise now C is hostility;
-			summon C cursed;
-			say "The statue's face seems to wink as an orange glow surrounds your body. s a [MediumDesc of C] appears on your person.";
+		if asshole is not actually occupied and the number of worn total protection clothing is the number of worn rippable total protection clothing:
+			summon demon tail plug uncursed;
+			compute class set up of demon tail plug;
+			say ClassSummonFlav of demon tail plug;
+			if demon tail plug is cursed:
+				if the quest of demon tail plug is no-clothing-quest, compute persistent quest of demon tail plug;
+				unless the quest of demon tail plug is no-clothing-quest, say QuestFlav of demon tail plug;
+			repeat with X running through worn total protection clothing:
+				say "[BigNameDesc of X] is ripped at the crotch as [NameDesc of demon tail plug] sprouts out of your [asshole]!";
+				now X is crotch-ripped;
 		otherwise:
-			if the submission-count of the player > the dominated-count of the player:
-				say "The statue's face seems to wink as an orange glow surrounds your head. You feel [smarter], but also more submissive.";
-				SexAddictUp (N / 3) + 1;
-			otherwise:
-				say "The statue appears to frown as an orange glow surrounds your head. You feel [smarter]!";
-			IntUp (N / 3) + 1;
-	otherwise if R is 2:[strength + bust size; 1 -> 2 -> 3]
-		let C be a random worn blessed breast covering top-placed clothing;
-		if diaper quest is 0 and the player is not top heavy and C is not clothing:
-			say "The statue's genitals seem to twitch as your [ShortDesc of breasts] [if N < 1]grow slightly[otherwise if N < 2]visibly grow[otherwise]grow explosively[end if]. You feel your muscles growing as well, accommodating the extra weight you're carrying around.";
-			BustUp (N / 3) + 1;
+			unclash class summon demon tail plug;
+		now the raw-magic-modifier of demon tail plug is N / 2;
+		if the remainder after dividing N by 2 is 1:
+			now demon tail plug is kicking;
+			now demon tail plug is anal-sex-addiction-influencing;
 		otherwise:
-			say "The statue seems to snarl as your muscles suddenly grow.";
-		StrengthUp (N / 3) + 1;
-	otherwise if R is 3:[dexterity + hip size;1 -> 2 -> 3]
-		let C be a random worn blessed crotch-in-place skirted clothing;
-		unless C is clothing, now C is a random worn blessed pussy protection crotch-in-place clothing;
-		if diaper quest is 0 and the player is not bottom heavy and C is not clothing:
-			say "The statue seems to drool as your [ShortDesc of hips] [if N < 1]grow slightly[otherwise if N < 2]visibly grow[otherwise]grow explosively[end if]. Your feel your dexterity increasing to keep up with the changes in your gait.";
-			HipUp (N / 3) + 1;
-		otherwise:
-			say "The statue seems to scowl as stiffness fades from your joints.";
-		DexUp (N / 3) + 1;
-	otherwise if the number of off-stage imps > 0 and the class of the player is not avatar: [summon imps; 1 -> 2 -> 3 -> 4]
+			now demon tail plug is dominance;
+			now demon tail plug is strength-influencing;
+	otherwise if R is 2 and the number of off-stage imps > 0 and the class of the player is not avatar: [summon imps; 1 -> 2 -> 3 -> 4]
 		let X be ((N * 2) / 3) + 1;
 		if X > the number of off-stage imps, now X is the number of off-stage imps;
 		say "The statue's eyes glint as a portal opens up in front of you, accompanied by mischievous chuckling as [if X is 1]an imp steps[otherwise][X] imps step[end if] out.";
@@ -942,27 +958,20 @@ To DevilPray (P - a person):
 			let I be a random off-stage imp;
 			compute reward N set up of I;
 			decrease X by 1;
-			now I is interested;
-	otherwise: [free of charge, since you didn't get anything good]
-		now R is -1;
-		let D be a random alive monster;
-		let R be 0;[prevents an infinite loop if the player literally sweeps the entire map except for the school.]
-		unless D is monster:
-			say "The statue's eyes glint ominously, but nothing else seems to happen. ";
+			interest I;
+	otherwise:
+		say "A firey circle appears. ";
+		let C be a random off-stage rare fetish appropriate clothing;
+		if C is clothing:
+			blandify and reveal C;
+			now the raw-magic-modifier of C is (N + 1) / 2;
+			now C is in the location of the player;
+			say "In the middle of the circle, a [C] appears.";
+			compute autotaking C;
 		otherwise:
-			while D is in the school and R < 25:
-				now D is a random alive monster;
-				increase R by 1;
-			if D is in the school:
-				say "The statue's eyes glint ominously, but nothing else seems to happen. ";
-			otherwise:
-				say "The statue's eyes emit a brilliant red glow, and a thrill of fear runs up your spine. However, nothing else seems to happen.";
-				SilentlyDifficultyUp D by 1;
-	increase the charge of hotel altar by 300;
-	increase the altar-intensity of hotel altar by 1;
-	progress quest of hotel-altar-quest;
-	if R > 0:
-		compute DevilPayment N.
+			say "And then... it fizzles out. It appears that the statue has nothing to offer you right now.";
+	compute DevilPayment N;
+	progress quest of hotel-altar-quest.
 
 To compute hostileDamage:
 	let H be a random worn hostility clothing;
@@ -972,105 +981,29 @@ To compute hostileDamage:
 			BodyRuin 1;
 		otherwise:
 			say "Your [printed name of H] shocks you with electricity, stinging you with pain, in response to your attack.";
-			PainUp 1.
+			PainUp 10.
 
 To DevilPray (T - a thing):
-	let R be -1;
-	let D be a random alive monster;
-	let R be 0;[prevents an infinite loop if the player literally sweeps the entire map except for the school.]
-	unless D is monster:
-		say "The statue's eyes glint ominously, but nothing else seems to happen. ";
-	otherwise:
-		while D is in the school and R < 25:
-			now D is a random alive monster;
-			increase R by 1;
-		if D is in the school:
-			say "The statue's eyes glint ominously, but nothing else seems to happen. ";
-		otherwise:
-			say "The statue's eyes emit a brilliant red glow, and a thrill of fear runs up your spine. However, nothing else seems to happen.";
-			SilentlyDifficultyUp D by 1;
-	increase the charge of hotel altar by 300;
-	increase the altar-intensity of hotel altar by 1.
+	say "Nothing seems to happen.".
 
 To DevilPray (T - a clothing):
-	if T is cursable and T is not cursed:
-		let N be the altar-intensity of hotel altar + 1;
-		if the class of the player is priestess or N < 1, now N is 1;[a priestess always gets the minimum effect]
-		if N > 6, now N is 6;
+	if T is unidentified or (T is magic-enhanceable and the raw-magic-modifier of T <= 0):
+		let N be the altar-intensity of hotel altar;
+		if the class of the player is priestess or N < 1, now N is 1; [a priestess always gets the minimum effect]
+		if N > 5, now N is 5;
 		say "The statue's eyes glint, and a red glow surrounds your [printed name of T] [run paragraph on]";
-		if T is kicking or T is endurance or T is speed or T is dominance or T is protection or T is blandness:
-			increase the raw-magic-modifier of T by (N / 2) + 1;[1 -> 2 -> 2 -> 3 -> 4]
-			if T is blandness:
-				let R be a random number between 1 and 4;
-				if R is 1, now T is stumbling;
-				if R is 2, now T is temptation;
-				if R is 3, now T is possession;
-				if R is 4, now T is hostility;
-			otherwise:
-				if T is kicking or T is speed, now T is stumbling;
-				if T is endurance, now T is possession;
-				if T is protection, now T is hostility;
-				if T is dominance, now T is temptation;
-		otherwise:[-6 -> -5 -> -4 -> -3]
-			decrease the raw-magic-modifier of T by (N / -2) + 6;
-			if T is stumbling:
-				now T is kicking;
-			otherwise if T is temptation:
-				now T is dominance;
-			otherwise:
-				let R be a random number between 1 and 4;
-				if R is 1, now T is kicking;
-				if R is 2, now T is dominance;
-				if R is 3, now T is endurance;
-				if R is 4, now T is speed;
+		if T is magic-enhanceable and the raw-magic-modifier of T <= 0:
+			increase the raw-magic-modifier of T by N; [1 -> 2 -> 2 -> 3 -> 4]
+			now T is hostility;
+		now T is identified;
 		say "as it is changed into a [printed name of T]!";
-		fully curse T;
-		increase the charge of hotel altar by 300;
-		increase the altar-intensity of hotel altar by 1;
 		compute DevilPayment N;
 	otherwise:
 		say "Nothing seems to happen.".
 
 To compute DevilPayment (N - a number):
-	say "[line break]But the altar isn't finished. You feel a terrible sinking feeling as a pentagram etches itself [run paragraph on]";
-	if the class of the player is priestess, now N is 6;[a priestess always pays the maximum]
-	let R be a random number between 1 and 4;
-	if the class of the player is avatar:
-		if R is 3, now R is 1;
-		now N is 1;
-	if R is 1:
-		say "into the skin of your chest. A[if N < 3] dull[otherwise if N < 5] deep, heavy[otherwise]n incredibly deep, penetrating[end if] ache settles into your joints as the symbol slowly fades.";
-		bodyruin N;
-	otherwise if R is 2 and diaper quest is 0:
-		say "into the skin of your buttocks. A[if N < 3] faint[otherwise if N < 5] deep, throbbing[otherwise]n incredibly deep, terrible[end if] ache settles into your [if the player is possessing a vagina]fuckholes[otherwise][asshole][end if] as the symbol slowly fades.";
-		if the player is possessing a vagina, ruin vagina times N;
-		ruin asshole times N;
-	otherwise if R is 3 and the player is possessing a vagina and diaper quest is 0:
-		say "into the skin of your abdomen. A [if N < 3]barely noticeable[otherwise if N < 5]noticeable[otherwise]heavily noticeable[end if] feeling of fullness settles into your belly as the symbol slowly fades.";
-		let M be a random imp;
-		now M is penetrating vagina;
-		let X be the womb volume of vagina;
-		WombFill N;
-		let Y be the womb volume of vagina - X;
-		let Z be N - Y;[how much cum actually got into the womb]
-		PussyFill N;
-		now M is not penetrating vagina;
-	otherwise:
-		say "into your temples. [if N < 3]A slight [italic type]hot[roman type] feeling settles[otherwise if N < 5]A noticeably [italic type]hot[roman type] feeling settles[otherwise]Arousal washes[end if] over your body as the symbol slowly fades.";
-		Arouse 1000 * N;
-	if N > 2:[if the charge is high enough, then part of the payment will be permanent]
-		decrease N by N / 2;
-		say "A second, smaller pentagram appears on your forehead, followed by [run paragraph on]";
-		let R be a random number between 1 and 3;
-		if R is 1:
-			say "a [if N > 1]pronounced[otherwise]slight[end if] feeling of nausea. You feel dumber.";
-			IntDown N;
-		otherwise if R is 2 and diaper quest is 0:
-			say "a [if N > 1]pronounced[otherwise]slight[end if] tingling feeling in your throat.";
-			SemenTasteAddictUp N;
-		otherwise:
-			say "a [if N > 1]pronounced[otherwise]slight[end if] feeling of dirtiness settling over your thoughts.";
-			SexAddictUp N.
+	if there is a nonstalking wisp, deploy a wisp; [there should always be one]
+	now the altar-intensity of hotel altar is 0.
 
 To DevilPray (T - ritual-beads):
 	if T is worn:
@@ -1084,8 +1017,7 @@ To DevilPray (T - ritual-beads):
 			increase the size of T by 1;
 			now the notches of T is 3;
 			say "[T] with three notches again!";
-		increase the charge of hotel altar by 300;
-		increase the altar-intensity of hotel altar by 1.
+		now the altar-intensity of hotel altar is 0.
 
 To compute infernal reward of (T - ritual-beads):
 	let N be the notches of T;
@@ -1106,7 +1038,7 @@ To compute infernal reward of (T - ritual-beads):
 		say "You feel your throat becoming more flexible.";
 		if S < 2, now S is 2;
 		DexUp S / 2;
-		SemenAddictUp S / 2;
+		SlowSemenAddictUp S / 2;
 	otherwise if R >= 3:
 		say "Your sense of pain sharpens.";
 		if S < 2, now S is 2;

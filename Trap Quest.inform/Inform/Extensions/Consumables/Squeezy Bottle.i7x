@@ -35,7 +35,7 @@ Check drinking squeezy-bottle:
 			increase alcohol level;
 		otherwise:
 			say "Some kind of extremely spicy liquid burns your throat![line break][variable custom style]Eek! [one of]That's hot stuff[or]Not again[stopping]![roman type][line break]";
-			PainUp 1;
+			PainUp 10;
 	otherwise:
 		say "Water squirts from the bottle into your mouth.";
 	StomachUp 1 instead.

@@ -37,7 +37,6 @@ Check pulling pullstring collar:
 		if the times pulled of the noun >= a random number between 4 and 7 and R is not 1, now R is 1;
 		if R is 1:
 			say "'I'm so looking forward to [if diaper quest is 1]wearing nappies for the rest of my life[otherwise]meeting all those big [manly-penis]s out there waiting for me[end if]!'[roman type][line break]You feel funny inside, but also a bit stronger.";
-			SemenAddictUp 1;
 			SexAddictUp 1;
 			StrengthUp 1;
 			DexUp 1;
@@ -52,6 +51,11 @@ Check pulling pullstring collar:
 			otherwise if monster-puller is female monster and monster-puller is not neuter monster:
 				say "'[if the oral sex addiction of the player < 3]I can't wait to find out what her [pussy] juices taste like!'[otherwise if the oral sex addiction of the player < 6]I just can't wait to have her [cunt] on my face!'[otherwise][big please] let me tongue your asshole, Mistress!'[end if][roman type][line break]";
 				OralSexAddictUp 1;
+			otherwise if the semen taste addiction of the player > the semen addiction of the player:
+				if bukkake fetish is 1, say "'[if the semen addiction of the player < 6]Getting coated in jizz might be gross, but it's what sluts like me deserve!'[otherwise if the semen addiction of the player < 11]The next time a stud cums on my face, I'm going to wear it with pride!'[otherwise]Cum in my holes, cum in my hair! I want [his of shopkeeper] cum everywhere!'[end if][roman type][line break]";
+				otherwise say "'[if the semen addiction of the player < 6]That gross sticky feeling after sex helps remind sluts like me what disgusting sluts we are!'[otherwise if the semen addiction of the player < 11]I say NO to condoms! Raw sex is the best!'[otherwise]You want to use a condom? Sure, I'll be your condom! Fill me up to the brim with your spunk, captain! I'll keep it safe! Tee-hee.'[end if][roman type][line break]";
+				say "You feel more [if the semen addiction of the player < 13]comfortable with the idea of getting[otherwise]eager to get[end if] [if bukkake fetish is 1]covered and filled with [semen][otherwise]creampied[end if].";
+				SemenAddictUp 1;
 			otherwise:
 				say "'[if the semen taste addiction of the player < 6]Semen is an acquired taste, but I'm determined to get used to it!'[otherwise if the semen taste addiction of the player < 11]I just can't wait for my next yummy serving of [semen]!'[otherwise]I love sucking [manly-penis], the best way to get [semen] is straight from the tap!'[end if][roman type][line break]";
 				SemenTasteAddictUp 1;
@@ -79,11 +83,10 @@ Check pulling pullstring collar:
 				otherwise:
 					say "[if diaper lover >= 1]You suddenly feel an extreme aversion against wearing any underwear except big puffy diapers. [otherwise]You suddenly feel an extreme aversion against wearing any underwear at all. [end if][if the bimbo of the player < 9]It's a really weird sensation, you simultaneously are horrified by the idea, but know that trying to fight against your new fetish would feel awful.[otherwise][line break][end if]";
 				now no-panties permanent fetish is 1;
-			otherwise if diaper lover >= 1 and the player is not incontinent:
+			otherwise if diaper lover >= 1 and the player is not bladder incontinent:
 				now R is 0;
-				say "'Dumb girls wear diapers because they can't control their pee pee!'[roman type][line break]";
-				increase incontinence by 1;
-				say "[if the player is incontinent]You realise you are now [one of]fully[or]hopelessly[or]utterly[or]totally[or]completely[at random] incontinent.[otherwise if the diaper addiction of the player < 9]You desperately hope that this doesn't mean you're becoming incontinent.[otherwise]You are weirdly excited by the idea that this might mean you're becoming incontinent.[end if]";
+				say "'Dumb girls wear diapers because they can't control their pee pee!'[roman type][line break][if the player is bladder incontinent]You realise you are now [one of]fully[or]hopelessly[or]utterly[or]totally[or]completely[at random] incontinent.[otherwise if the diaper addiction of the player < 9]You desperately hope that this doesn't mean you're becoming incontinent.[otherwise if the diaper addiction of the player > 14]You are weirdly excited by the idea that this might mean you're becoming incontinent.[otherwise]You realise this probably means it's making you more incontinent.[end if]";
+				SilentlyBladderIncontinenceUp 1;
 			otherwise:
 				increase R by 1;
 		if R is 5:

@@ -8,7 +8,8 @@ To consider (T - a talk-object) for (M - a monster):
 To execute (T - a talk-object) for (M - a monster):
 	do nothing.
 
-[ [#LXorDD: This would be the normal way to achieve this, but I want to try with a more direct intervention just in the more conversational function below.]
+[#LXorDD: This would be the normal way to achieve this, but I want to try with a more direct intervention just in the more conversational function below.]
+[
 This is the latex transformation prevents speech rule:
 	if the latex-transformation of the player < 8, rule fails.
 The latex transformation prevents speech rule is listed in the player speech rules.
@@ -16,7 +17,7 @@ The latex transformation prevents speech rule is listed in the player speech rul
 
 To compute multiple choice conversation of (M - a monster):
 	reset multiple choice questions;
-	if the player is not able to speak:
+	if the player is not silently able to manually speak:
 		set numerical response 1 to the substituted form of "[gag sounds]";
 		set numerical response 0 to "cancel";
 		compute multiple choice question;
@@ -119,8 +120,12 @@ To execute (T - talk-greet) for (M - a monster):
 		otherwise:
 			if M is uninterested intelligent raunchy unfriendly monster, progress quest of greet-quest;
 			compute basic greeting to M;
+	compute unique greet effect for M;
 	increase the greeted-count of M by 1;
 	now the greet-window of M is -1.
+
+To compute unique greet effect for (M - a monster):
+	do nothing.
 
 [!<SayDefeatedGreetOfMonster>+
 
@@ -1168,8 +1173,7 @@ To compute unfriendly drink of (M - a monster):
 		say "[speech style of M]'No way! Get your own drink.'[roman type][line break]";
 	otherwise:
 		say "[speech style of M]'I'll give you something to drink all right!'[roman type][line break]";
-		now the boredom of M is 0;
-		now M is interested.
+		interest M.
 
 [To compute desperate drinking to (M - a monster):
 	say "You [if the player is upright]drop to your knees and [end if]beg [NameDesc of M] to give you something to drink.";
@@ -1272,8 +1276,7 @@ To compute unfriendly food of (M - a monster):
 		say UnfriendlyFoodRefuseFlav of M;
 	otherwise:
 		say UnfriendlyFoodLewdFlav of M;
-		now M is interested;
-		now the boredom of M is 0.
+		interest M.
 
 To compute desperate eating to (M - a monster): [Currently unused]
 	say "You [if the player is upright]drop to your knees and [end if]beg [NameDesc of M] to give you something to eat.";
@@ -1281,7 +1284,7 @@ To compute desperate eating to (M - a monster): [Currently unused]
 	if M is unfriendly:
 		compute unfriendly food of M;
 	otherwise:
-		now M is interested;
+		interest M;
 		compute friendly food of M.
 
 To say DefeatedFoodRequest of (M - a monster):

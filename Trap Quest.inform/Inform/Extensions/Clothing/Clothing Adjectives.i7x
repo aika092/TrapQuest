@@ -68,7 +68,7 @@ Definition: a clothing is skirted:
 Understand "glued" as clothing when item described is glued.
 
 Definition: a clothing (called C) is rigid:
-	if C is glass or C is denim or C is metal or C is plastic, decide yes;
+	if C is glass or [C is denim or] C is metal or C is plastic, decide yes;
 	decide no.
 
 Clothing can be unlocked or locked. Clothing is usually unlocked.
@@ -119,6 +119,16 @@ To compute drying of (C - a clothing):
 Clothing has a number called top-layer. The top-layer of clothing is usually 0.
 Clothing has a number called mid-layer. The mid-layer of clothing is usually 0.
 Clothing has a number called bottom-layer. The bottom-layer of clothing is usually 0.
+[!<Clothing>@<crotchLayering:CrotchLayeringEnum>*
+
+Explanation:
+crotch-intact takes the crotch "slot", covers the crotch, isn't ripped, and isn't unzipped.
+crotch-skirted takes the crotch "slot" and covers the crotch with a hobble skirt.
+crotch-zipped and crotch-unzipped take the crotch "slot" and cover the crotch with a closed zipper or expose the crotch with an open zipper, respectively.
+crotch-ripped and crotch-exposing take the crotch "slot" and expose the crotch as a permanent state that either happened unnaturally or is the default for the clothing, respectively.
+no-crotch exposes the crotch but does NOT take up the crotch "slot."
+
+*@!]
 Clothing can be crotch-intact, crotch-skirted, crotch-zipped, crotch-unzipped, crotch-ripped, crotch-exposing, no-crotch (this is the crotch-layering property). Clothing is usually no-crotch.
 
 [How is this item put on and taken off?]
@@ -163,7 +173,7 @@ Can this be somehow made to expose the crotch if it's the top level protection?
 +!]
 Definition: a clothing (called C) is actually avoidable rather than actually unavoidable:
 	if C is glued, decide no;
-	if C is crotch-displaced or (C is not displacable and C is not zippable and C is not usually autoremovable), decide no;
+	if C is crotch-displaced or (C is not displacable and C is not crotch-zipped and C is not usually autoremovable), decide no;
 	decide yes.
 
 [!<ClothingIsRippable>+
@@ -180,7 +190,7 @@ Clothing can be crotch-normal or crotch-assless. Clothing is usually crotch-norm
 Clothing can be not-butt-windowed or butt-windowed. Clothing is usually not-butt-windowed. [A butt window exposes underwear but not the asshole itself.]
 Clothing have a number called armour. Clothing have a number called damage.
 Clothing can be non-combat, slap ready, knee ready, kick ready or zap ready (this is the equippable-type property). Clothing is usually non-combat.
-Clothing can be zippable or unzippable. Clothing is usually unzippable.
+Clothing can be zippable or unzippable. Clothing is usually unzippable. [When repaired or reset, should this item be given a zip?]
 Clothing can be plentiful, rare, transformation-rare, unique (this is the clothing-rarity property). Clothing is usually plentiful. [Plentiful shows up in containers. Rare shows up much less often in special containers and in the junk room. Transformation rare are (mostly) slutty items that mainly appear from transformations. Unique are items with their own spawning mechanics that shouldn't be spawned in other ways.]
 Definition: a clothing is transformation-eligible:
 	if (it is plentiful or it is transformation-rare) and it is fetish appropriate, decide yes;
@@ -191,15 +201,19 @@ Definition: a clothing is non-unique:
 Clothing can be belly exposing or belly covering. Clothing is usually belly exposing. [Does it take up the belly slot?]
 Clothing can be neck exposing or neck covering. Clothing is usually neck exposing. [Does it take up the neck slot?]
 Clothing can be leg exposing or leg covering. Clothing is usually leg exposing.
+Definition: a clothing (called C) is usually at least partially thigh covering:
+	if C is leg covering, decide yes;
+	if C is short or longer, decide yes;
+	decide no.
 Definition: a clothing (called C) is at least partially thigh covering:
-	if C is crotch-in-place:
-		if C is leg covering, decide yes;
-		if C is short or longer, decide yes;
+	if C is worn and C is crotch-in-place and C is usually at least partially thigh covering, decide yes;
+	decide no.
+Definition: a clothing (called C) is usually thigh covering:
+	if C is leg covering, decide yes;
+	if C is knee-length or longer, decide yes;
 	decide no.
 Definition: a clothing (called C) is thigh covering:
-	if C is crotch-in-place:
-		if C is leg covering, decide yes;
-		if C is knee-length or longer, decide yes;
+	if C is worn and C is crotch-in-place and C is usually thigh covering, decide yes;
 	decide no.
 Definition: a clothing (called C) is calf covering:
 	if C is crotch-in-place:
@@ -230,9 +244,11 @@ Definition: a clothing (called C) is usually top-displacable rather than usually
 Definition: a clothing (called C) is actually top-displacable rather than actually not-top-displacable:
 	if C is not worn or C is glued, decide no;
 	if C is top-displaced or C is top-ripped or C is usually not-top-displacable, decide no;
-	repeat with D running through worn top level breasts protection clothing:
-		if the top-layer of D > the top-layer of C, decide no;
 	decide yes.
+Definition: a clothing (called C) is currently top-displacable rather than currently not-top-displacable:
+	if C is actually not-top-displacable, decide no;
+	if C is top level breasts protection, decide yes;
+	decide no.
 Clothing can be normally-nipple-covering, erect-nipple-exposing, normally-partially-nipple-covering or normally-nipple-exposing. Clothing is usually normally-nipple-exposing. [This is separate as some clothing has holes specifically for the nipples.]
 Definition: a clothing (called C) is actually nipple exposing rather than actually nipple covering: [Are the nipples literally exposed to the open air]
 	if C is chestless or C is normally-nipple-exposing or C is top-displaced or C is top-ripped or C is fully exposing or C is uniquely nipple exposing, decide yes;
@@ -254,7 +270,7 @@ Clothing can be ass plugging. Clothing is usually not ass plugging.
 Clothing can be vagina plugging. Clothing is usually not vagina plugging.
 Clothing has a number called plug size. The plug size of clothing is usually 0.
 Clothing can be purity. Clothing is usually not purity. [Means they care about your virginity.]
-A Magic-type is a kind of value. The magic-types are blandness, dressup, milk production, absorption, temptation, suppression, bed wetting, confidence, endurance, dominance, constriction, speed, kicking, protection, posture training, expansion, refreshment, rejuvenation, possession, maturity, respiration, durability, stumbling, provocation, exposure, audible jiggles, desperation, augmentation, elasticity, waddle-walking, and hostility. Clothing has a magic-type. The magic-type of clothing is usually blandness.
+A Magic-type is a kind of value. The magic-types are blandness, dressup, milk production, absorption, temptation, suppression, bed wetting, confidence, endurance, dominance, constriction, speed, kicking, protection, posture training, expansion, refreshment, rejuvenation, possession, maturity, respiration, durability, stumbling, provocation, exposure, audible jiggles, desperation, augmentation, elasticity, waddle-walking, draining, strength stealing and hostility. Clothing has a magic-type. The magic-type of clothing is usually blandness.
 Magic-ID is a kind of value. The magic-IDs are unidentified and identified. Clothing has a Magic-ID. The Magic-ID of clothing is usually unidentified.
 Clothing has a number called raw-magic-modifier. The raw-magic-modifier of clothing is usually 0.
 To decide which number is the penis-capacity of (C - a clothing):[what's the largest size of penis it can cover?]
@@ -312,6 +328,7 @@ Definition: yourself is clothing stuck:
 Clothing has a number called glue timer.
 Clothing can be bsounding. Clothing is usually not bsounding.
 A clothing has a number called augmentation-grow-charge. A clothing has a number called augmentation-charging-time.
+A clothing has a number called draining-charge.
 Clothing can be womanly or manly. Clothing is usually womanly. [Manly clothing is anything that is not specifically something only women should wear. E.g. a T-shirt]
 Clothing can be restart immune. Clothing is usually not restart immune. [This means it won't disappear or change when the map is reset.]
 Clothing can be spikey. A clothing is usually not spikey.

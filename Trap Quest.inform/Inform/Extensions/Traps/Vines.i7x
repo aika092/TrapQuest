@@ -103,7 +103,9 @@ To compute vines standing:
 			let R be a random number from 1 to D;
 			if debuginfo > 0, say "[input-style]Vine evasion check: dexterity d[D] ([R]) | ([if the class of the player is schoolgirl and the player is vine-cursed]4[otherwise]2[end if].5) vine difficulty[roman type][line break]";
 			if R <= 2 or (R <= 4 and the class of the player is schoolgirl and the player is vine-cursed):
-				say "[one of]Vines slither up your legs, locking them in place. Maybe you'll be able to get away if you [bold type]pull[roman type] them.[or]Living vines grab your ankles and feet, locking them in place. There's no way you'll be able to get away if you don't [bold type]pull[roman type] them off.[or]A single vine slowly rises out of the soil, swaying [if the raw sex addiction of the player > 6]hypnotically[otherwise]menacingly[end if], sticky white fluids oozing from its shiny, bulbous tip. Before you can react, several more burst out of the ground and wrap around your ankles.[or]Vines shoot out of the ground and wrap around your ankles![or]A pair of vines shoot out of the soil. You try to move out of the way, but it's too late! They wrap around your ankles and pin them to the ground.[then at random]";
+				say "[one of]Vines slither up your legs, locking them in place![or]Living vines grab your ankles and feet, locking them in place.[or]A single vine slowly rises out of the soil, swaying [if the raw sex addiction of the player > 6]hypnotically[otherwise]menacingly[end if], sticky white fluids oozing from its shiny, bulbous tip. Before you can react, several more burst out of the ground and wrap around your ankles![or]Vines shoot out of the ground and wrap around your ankles![or]A pair of vines shoot out of the soil. You try to move out of the way, but it's too late! They wrap around your ankles and pin them to the ground![then at random]";
+				FearUp 9;
+				say "[one of]Maybe you'll be able to get away if you [bold type]pull[roman type] the vines.[or]There's no way you'll be able to get away if you don't [bold type]pull[roman type] them off.[then at random]";
 				now V is wrangling thighs;
 			otherwise if the living belt of sturdiness is not worn and R is 6:
 				say "[one of]A living vine tries to grab your [if there are worn heels]heels[otherwise]feet[end if]. You manage to avoid it grabbing you but it makes you trip and fall![or]Living vines burst out of the soil, grasping at your legs. You manage to keep them from grabbing you, but you lose your balance and fall.[or]A living vine tries to grab your heels. You successfully kick it away, but you lose your balance and fall.[or]Vines shoot out of the soil beneath you. In your scramble to get out of the way, you trip and fall.[or]A single vine bursts out of the soil, headed straight for your ankle. Your reflexes kick in too late, sending you toppling to the ground.[in random order]";
@@ -134,6 +136,7 @@ To compute vines kneeling:
 					say "[one of]The soil beneath you shifts as living vines burst out and instantly pin your wrists and ankles to the ground. Maybe you'll be able to get away if you [bold type]pull[roman type] them.[or]Several vines rise out of the soil, closing in on you slowly. Watching the movement of their [if diaper quest is 1]undulating bodies is strangely hypnotic, and before[otherwise if the raw sex addiction of the player > 6]oozing, bulbous tips is strangely hypnotic, and before[otherwise]oozing, bulbous tips is unsettling enough to distract you from the feeling of the shifting soil underneath you. Before[end if] you realise it they've pinned your wrists and ankles to the ground.[or]Vines burst out of the soil and grab your wrists with whip-like quickness. They do the same with your ankles.[or]Before you can react, vines have grabbed your wrists and ankles. You try to move, but it's no use. You're pinned.[or]Vines shoot out of the soil and wrap around your wrists and ankles![then at random]";
 					now V is wrangling thighs;
 					now V is wrangling arms;
+					FearUp 12;
 				otherwise:
 					say "[one of]Vines shoot out of the ground and attempt to wrap around your wrists and ankles. You manage to avoid being grappled for now![or]Several vines rise out of the soil, closing in on you slowly. You bat away each one. Looks like you've avoided a grapple for now.[or]Vines shoot out of the soil with whip-like quickness! But thanks to your good reflexes you jump out of the way just in time. You're safe for now.[or]Living vines burst out of the soil, fumbling to grab your wrists. You're much too fast for them to catch you. For now.[in random order]";
 					if the player is possessing a vagina, cutshow figure of vines cutscene 1 for V;
@@ -240,9 +243,9 @@ To compute (V - a vine) penetrating (F - vagina):
 To compute (V - a vine) attacking (K - a clothing):
 	if K is rippable:
 		say "A large vine [one of]comes up from within the ground right under your butt, and starts[or]is[stopping] trying to force its way through your [ShortDesc of K]!";
-		if the armour of K < the damage of K or K is zippable:
-			say "[if K is zippable]The vine finds the zipper and easily forces its way through![otherwise]The vine pushes straight through your [ShortDesc of K], it's now permanently ripped![end if]";
-			rip K;
+		if the armour of K < the damage of K or K is crotch-zipped:
+			say "[if K is crotch-zipped]The vine finds the zipper and easily forces its way through![otherwise]The vine pushes straight through your [ShortDesc of K], it's now permanently ripped![end if]";
+			ZipOrRip K;
 		otherwise:
 			say "The [clothing-material of K] is weakening!";
 			damage K;
@@ -394,12 +397,14 @@ To compute vine diaper torture of (V - a vine):
 			display entire map;
 			say "A portal opens underneath your body and before you can react you are falling through the sky face first! The ground rushes up to reach you but vines catch your feet just in time. You are now back in the woods. The vines pull your feet back through a new portal above you and then after you are halfway up through this new portal your OWN diapered butt appears below you in front of your face! You are bent at the waist and your feet touch the ground. Your butt is placed into the perfect position so that your face is resting against the back of your diaper. You end up face-planting the back of your own [MediumDesc of D]!";
 		otherwise:
-			say "Before you can escape the vines more have grabbed hold of your thighs. More have descended from the trees above and wrapped around your torso, trapping your arms against your body. [if the player is prone]The vines yank and pull you up onto your two feet. [end if][one of]Your eyes widen in [horror the diaper addiction of the player] as a shimmering portal appears in the air in front of you at waist height and through it you can see the top of someone's head and behind it, the ground. It takes several moments before you can comprehend what you are seeing: it's you yourself, but from above! This doesn't make any sense! And then the vines start to force your head through the portal and your own head disappears from your vision and is replaced by a back and a diapered posterior, your OWN diapered butt in fact! As you are bent at the waist and your upper body is moved forward through the portal your butt is placed into the perfect position so that your face ends up vertically descending onto the back of it. You end up face-planting the back of your own[or]You are once again forced halfway through a portal which forces your own face into the back of your own[stopping] [MediumDesc of D]!";
+			say "Before you can escape the vines more have grabbed hold of your thighs. More have descended from the trees above and wrapped around your torso, trapping your arms against your body. [if the player is prone]The vines yank and pull you up onto your two feet. [end if]";
+			FearUp 10;
+			say "[one of]Your eyes widen in [horror the diaper addiction of the player] as a shimmering portal appears in the air in front of you at waist height and through it you can see the top of someone's head and behind it, the ground. It takes several moments before you can comprehend what you are seeing: it's you yourself, but from above! This doesn't make any sense! And then the vines start to force your head through the portal and your own head disappears from your vision and is replaced by a back and a diapered posterior, your OWN diapered butt in fact! As you are bent at the waist and your upper body is moved forward through the portal your butt is placed into the perfect position so that your face ends up vertically descending onto the back of it. You end up face-planting the back of your own[or]You are once again forced halfway through a portal which forces your own face into the back of your own[stopping] [MediumDesc of D]!";
 		compute automatic state check of D;
 		say "It's like the vines want you to experience your own [if D is messed]smelly[otherwise]soggy[end if] shame right up close and personal. You could either [link][bold type]submit[roman type][end link] and rub your own face in the seat of your diaper, or [link][bold type]resist[roman type][end link] and see how the vines act themselves.";
 	otherwise if the reaction of the player is 0: [resisting]
 		say "[one of]Seemingly unamused by your disobedience, the vines begin to spank your thighs from behind![or]The vines punish the backs of your thighs with several stinging swats![stopping]";
-		PainUp 1;
+		PainUp 10;
 		BodyRuin 1;
 	otherwise:
 		compute automatic state check of D;

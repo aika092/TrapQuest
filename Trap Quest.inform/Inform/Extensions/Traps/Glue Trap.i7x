@@ -330,13 +330,13 @@ To compute raw glue escaping (G - an object) with (consequences - a number):
 			[Can't use BodyRuin because that tests for monsters and can drop them down to the ground.
 			This should have worse consequences though if they're latex transformed. Hmm... ###]
 			if D is 0:
-				PainUp 1;
+				PainUp 10;
 			otherwise if D + the body soreness of the player < 10:
 				increase the body soreness of the player by D;
 			otherwise:
 				now the body soreness of the player is 9;
 				say "It [i]really[/i] hurts!";
-				PainUp 2;
+				PainUp 20;
 		now the stickiness of the player is 0;
 		now G is not grabbing the player;
 		allocate 6 seconds;
@@ -511,7 +511,7 @@ To compute the mutation effects of (G - a glue):
 					AssImplantsUp 1;
 				if X is (the flesh volume of breasts + the flesh volume of hips):
 					say "Failing to draw any flesh from your breasts or hips, the burn moves to your muscles... it really hurts!";
-					PainUp 1;
+					PainUp 10;
 					StrengthDown 1;
 			otherwise:
 				now X is a random number between 1 and 4;
@@ -556,9 +556,9 @@ To compute the mutation effects of (G - a glue):
 					if the stomach-water of the player > 0, decrease the stomach-water of the player by 1;
 					SlowUrineTasteAddictUp 1;
 				otherwise if diaper lover > 0:
-					if incontinence < the max-incontinence of the player and a random number between 1 and 2 is 1:
-						say "You shiver, feeling... smaller...? scareder, less sure of yourself. You feel your ability to hold onto your bladder [if diaper messing >= 3]and bowels [end if]weakening.";
-						increase incontinence by 1;
+					if the raw-bladder-incontinence of the player < the max-bladder-incontinence of the player and a random number between 1 and 2 is 1:
+						say "You shiver, feeling... smaller...? scareder, less sure of yourself. ";
+						BladderIncontinenceUp 1;
 					otherwise if the raw diaper addiction of the player < 20:
 						DiaperAddictUp 1;
 				otherwise:
@@ -592,8 +592,8 @@ To compute the mutation effects of (G - a glue):
 						now C is black-catsuit;
 					otherwise if X is 6 and black fetish hobble dress is off-stage:
 						now C is black fetish hobble dress;
-					otherwise if X is 7:
-						now C is a random off-stage fetish business dress;
+					otherwise if X is 7 and fetish business dress is off-stage:
+						now C is fetish business dress;
 					otherwise if X is 8 and black hood is off-stage:
 						now C is black hood;
 					if C is actually summonable, break;
@@ -748,7 +748,7 @@ Check GlueRubbing:
 		if the noun is penis and the number of worn crotch covering clothing is 0:
 			say "You touch just the tip of your finger to your [ShortDesc of penis] and find it bonds almost instantly! You shriek and start trying to pull it free immediately, before it gets any more stuck!";
 			say "It hurts! And the tugging is making your [ShortDesc of penis] stiffen, despite the pain. But you can't walk around here with one hand glued to your dick! You keep pulling, despite the pain, and eventually tug your hand free, your [ShortDesc of penis] now throbbing and burning in pain while tears stream from your eyes.";
-			PainUp 1;
+			PainUp 10;
 			bodyruin 1;
 		otherwise if the noun is vagina or the noun is hips:
 			if the player is wrist bound behind, say "You can't reach that area with your wrists bound behind you." instead;
@@ -806,7 +806,7 @@ To compute glued reaction of (M - a monster):
 		FavourDown M;
 		humiliate 200;
 		if M is objectifying the player:
-			now M is interested;
+			interest M;
 			if M is intelligent:
 				say "[one of]You hear [NameDesc of M] muttering something about 'smart-glue'...[or][line break][first custom style]'I do love the way this smart-glue only sticks to players!'[roman type][line break][first custom style]'Mmm, a lovely little piggy stuck in smart-glue!'[roman type][line break][at random]";
 			otherwise:
@@ -818,7 +818,7 @@ To compute glued reaction of (M - a monster):
 			anger M;
 			now the sex-length of M is 3;[probably something to avoid if at all possible]
 			say "[BigNameDesc of M] seems to realise your predicament! Oh, no...";
-			now M is interested;
+			interest M;
 	otherwise:
 		compute correct kneeling reaction of M.
 
@@ -862,7 +862,7 @@ Carry out tearing off worn clothing:
 	decrease the glue timer of C by 100;
 	if the dexterity of the player < R:
 		say "You struggle to do it delicately enough, and end up hurting yourself!";
-		PainUp 1;
+		PainUp 10;
 	if the glue timer of C < 0:
 		say "Finally! You managed to carefully tear the [ShortDesc of C] free.";
 		now the glue timer of C is 0;

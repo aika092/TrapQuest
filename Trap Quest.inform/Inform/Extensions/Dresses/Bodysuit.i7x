@@ -119,7 +119,7 @@ Definition: plugsuit is fetish appropriate:
 	if diaper quest is 0, decide yes;
 	decide no.
 
-Figure of plugsuit is the file "Items/Clothes/Upper/Latex/plugsuit1.jpg".
+Figure of plugsuit is the file "Items/Clothes/Upper/Latex/plugsuit1.png".
 
 To decide which figure-name is clothing-image of (C - plugsuit):
 	decide on figure of plugsuit.
@@ -588,9 +588,15 @@ To say ClothingDesc of (C - wrestler-jumpsuit):
 To say ShortDesc of (O - wrestler-jumpsuit):
 	say "wrestler suit".
 
+Definition: wrestler-jumpsuit is displacable: decide no.
 Definition: wrestler-jumpsuit is black themed: decide yes.
 Definition: wrestler-jumpsuit is purple themed: decide yes.
 Definition: wrestler-jumpsuit is exercise themed: decide yes.
+
+Report wearing wrestler-jumpsuit:
+	if wrestler-hood is actually summonable and wrestler-hood is off-stage and dominatrix is alive:
+		say "A matching hood appears over your head!";
+		summon wrestler-hood cursed.
 
 Part - Superheroine Outfit
 
@@ -761,6 +767,8 @@ To decide which figure-name is clothing-image of (C - WC catsuit):
 
 Definition: WC catsuit is toilet themed: decide yes.
 Definition: WC catsuit is white themed: decide yes.
+Definition: WC catsuit is calf covering: decide no.
+Definition: WC catsuit is ankle covering: decide no.
 
 [!<TheWCCatsuitPissSlutRule>+
 

@@ -945,12 +945,8 @@ Check taking penis:
 	if M is the player:
 		do nothing instead; [When this function was taking players-detached-dick, I had this line as: continue the action; That would be wrong now as it would lead them to the background penis object which would make no sense.]
 	otherwise:
-		if M is in the location of the player: [They can't take their penis from the monster, but they can annoy it.]
-			now M is interested;
-			if M is intelligent:
-				say "[speech style of M]'Come on then, try to take it - if you can, you weakling.'[roman type][line break]" instead;
-			otherwise:
-				say "[BigNameDesc of M] tenses, gripping your [DetachedPenis] more tightly, watching you." instead;
+		if M is a monster in the location of the player: [They can't take their penis from the monster, but they can annoy it.]
+			say "It seems unlikely that [NameDesc of M] would just let you take it from [him of M]." instead;
 		otherwise:
 			say "You wish you could. Unfortunately, you last saw it just before it was carried off." instead. [This could be tracked separately with a property called maybe last-taker. But it would only be used for musings like this.]
 

@@ -43,7 +43,7 @@ Check touching MansionScenery01:
 				compute autotaking D;
 			otherwise:
 				say "nothing is different. Strange...";
-		otherwise:
+		otherwise if the number of nonstalking wisps is 0 or the player is getting unlucky:
 			let D be tongue-panties;
 			if diaper quest is 1, now D is a random eligible diaper;
 			if K is not knickers:
@@ -63,6 +63,9 @@ Check touching MansionScenery01:
 				decrease the raw-magic-modifier of K by 2;
 				say "[K]...";
 			if K is knickers, compute summoned quest of K;
+			say GotUnluckyFlav;
+		otherwise:
+			deploy a wisp;
 		now the charge of the noun is 450;
 		allocate 2 seconds instead;
 	otherwise if the player's command includes "leg" or the player's command includes "legs":

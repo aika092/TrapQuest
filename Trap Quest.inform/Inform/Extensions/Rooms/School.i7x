@@ -178,7 +178,7 @@ To compute dungeon chain binding of (M - a monster):
 	say DungeonLockFlav of M;
 	now dungeon chains is worn by the player;
 	now dungeon chains is stuck;
-	now dungeon chains is locked;
+	lock dungeon chains;
 	say "You are locked into ankle chains.[if pair of handcuffs is actually summonable][BigNameDesc of M] also puts you in handcuffs![end if]";
 	if pair of handcuffs is actually summonable, summon pair of handcuffs locked;
 	now pair of handcuffs is wrist-bound-in-front;
@@ -236,12 +236,6 @@ To compute pink smoke challenge of (M - a monster):
 	say DungeonSmokeDeclarationFlav of M;
 	compute dungeon wand donation of M.
 
-This is the stuck clothing prevents standing rule:
-	if there is worn stuck clothing:
-		if auto is 0, say "It's difficult to stand up with your [random worn stuck clothing] anchored in place!";
-		rule fails.
-The stuck clothing prevents standing rule is listed in the ability to stand rules.
-
 To say DungeonSmokeDeclarationFlav of (M - a monster):
 	say "[speech style of M]'Release the gas!'[roman type][line break][BigNameDesc of M] calls behind [him of M] and moments later pink smoke fills the bottom of your cell![line break][speech style of M]'I imagine you'll enjoy the feeling of resting down here, but try not to get too addicted, or maybe you'll never want to leave!'[roman type][line break]".
 
@@ -285,7 +279,7 @@ To check dungeon release of (M - a monster):
 		now dungeon chains is in the location of the player;
 		repeat with C running through worn locked clothing:
 			say "[big he of M] unlocks your [ShortDesc of C]!";
-			now C is unlocked;
+			unlock C;
 		only summon armband;
 		say "Your [ShortDesc of armband] reappears on your arm!";
 		repeat with N running through fucked-silly staff members:

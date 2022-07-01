@@ -39,6 +39,7 @@ Carry out BowlFeeding:
 	StomachFoodUp 1;
 	while the stomach-food of the player < 4 or the stomach of the player < 6:
 		StomachFoodUp 1;
+	trigger bowl-wisp-quest;
 	if a random number between 1 and 2 is 1:
 		let H be a random off-stage puppy ears;
 		if H is actually summonable:

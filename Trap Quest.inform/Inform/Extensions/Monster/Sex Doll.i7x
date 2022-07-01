@@ -171,12 +171,12 @@ To compute perception of (M - a sex doll):
 		anger M;
 		now the sex-length of M is 3;
 		say "[BigNameDesc of M] seems to notice you! Uh-oh...";
-		now M is interested;
+		interest M;
 	otherwise if the player is prone:
 		anger M;
 		now the sex-length of M is 1;
 		say "[BigNameDesc of M] seems to notice you! Uh-oh...";
-		now M is interested;
+		interest M;
 	otherwise if a random number between 6 and 15 < highest body part sex addiction and the player is not at least partially immobile and the player is not flying and the player is not dildo stuck:
 		anger M;
 		say "[BigNameDesc of M][']s fake penis wobbles as it walks around. In a moment of weakness, you find yourself dropping to your knees to take it!";
@@ -184,7 +184,7 @@ To compute perception of (M - a sex doll):
 		try kneeling;
 		now the sex-length of M is 2;
 		say "[BigNameDesc of M] seems to notice you! You giggle in nervous delight.";
-		now M is interested;
+		interest M;
 	if M is interested, now the sex-length of M is the difficulty of M.
 
 Part 3 - Combat
@@ -413,7 +413,7 @@ To decide which number is the damage modifier of (M - a sex doll):
 To compute damage reaction of (M - a sex doll):
 	if M is uninterested:
 		say "The doll seems to notice you. Uh-oh...";
-		now M is interested;
+		interest M;
 		anger M;
 		now the sex-length of M is 4;
 	otherwise:

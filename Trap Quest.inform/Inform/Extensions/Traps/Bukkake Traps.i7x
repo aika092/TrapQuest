@@ -115,6 +115,7 @@ To trigger (Y - a bukkake hose):
 		if X < 3, now X is 3;
 		say "A hose hidden inside the container suddenly starts spraying out ice cold water right into your face!";
 		cutshow figure of water bomb cutscene 1 for face;
+		FearUp 8;
 		AnnouncedSquirt water on face by X * 10;
 		force cool down 2000.
 

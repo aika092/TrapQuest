@@ -137,7 +137,7 @@ To ZipUp (C - clothing):
 		now C is crotch-zipped;
 		force clothing-focus redraw. [Forces redraw of clothing inventory window]
 
-To rip (C - a clothing):
+To ZipOrRip (C - a clothing):
 	ZipDown C;
 	if C is rippable and (C is crotch-intact or C is crotch-skirted), now C is crotch-ripped.
 
@@ -283,7 +283,7 @@ To StealthSemenSoakUp (C - a clothing) by (N - a number):
 
 To StealthUrineSoakUp (C - a clothing) by (N - a number):
 	if C is listed in the list of stacked diapers:
-		if the player is diaper aware:
+		if the player is bladder diaper aware:
 			increase the perceived-urine-soak of diaper-stack by N;
 			now previous-clothing-glazed is -1; [force appearance reassessment]
 		let dCapacity be the soak-limit of C - the total-soak of C;
@@ -291,7 +291,7 @@ To StealthUrineSoakUp (C - a clothing) by (N - a number):
 		if dLeftover > 0: [urine leaks downwards]
 			increase the urine-soak of C by dCapacity;
 			increase the urine-soak of diaper-stack by dCapacity;
-			if the player is diaper aware, increase the perceived-urine-soak of C by dCapacity;
+			if the player is bladder diaper aware, increase the perceived-urine-soak of C by dCapacity;
 			let E be 0;
 			repeat with D running through the list of stacked diapers:
 				if D is C:
@@ -304,7 +304,7 @@ To StealthUrineSoakUp (C - a clothing) by (N - a number):
 			increase the urine-soak of diaper-stack by N;
 	otherwise:
 		increase the urine-soak of C by N;
-		if the player is diaper aware:
+		if the player is bladder diaper aware:
 			now previous-clothing-glazed is -1; [force appearance reassessment]
 			if C is diaper, increase the perceived-urine-soak of C by N.
 
@@ -398,6 +398,8 @@ To only destroy (C - clothing):
 	now the bottom-layer of C is 0;
 	now the used condoms of C is 0;
 	now the empty condoms of C is 0;
+	repeat with K running through things inseminating C:
+		now K is not inseminating C;
 	now the stolen-strength of C is 0;
 	now the augmentation-charging-time of C is 40;
 	now the augmentation-grow-charge of C is 0;

@@ -30,6 +30,7 @@ To compute swimming in (S - swimming-pool):
 [During the lesson, the pool has 10 different "locations". That's a lot, so we'll cut it down to 5 for the normal swimming: shallow, medium1, medium2, deep1, deep2(under the diving board)]
 To compute TQ swimmingpool swimming at (swim-location - a number) with (swim-turns - a number):
 	let swimming be 1;
+	allocate 6 seconds;
 	while swimming is 1:
 		if swim-turns is 0 and water-peeing is false:
 			if the location of the player is School22:[Near the diving board]
@@ -48,35 +49,36 @@ To compute TQ swimmingpool swimming at (swim-location - a number) with (swim-tur
 		otherwise:
 			let L be swim-location;
 			say "You are 'treading [semen]' [if L is 0]in the shallow end of the pool, with your feet easily touching the bottom.[otherwise if L is 1]near the shallow end of the pool. Your feet just barely touch the bottom[otherwise if L is 2]midway between the deep end and the shallow end. Your feet are a couple inches from touching the bottom.[otherwise if L is 3]near the deep end of the pool. Your feet are about a metre from the bottom.[otherwise if L is 4]in the deep end of the pool, with several metres between your feet and the bottom.[end if]";
-		reset multiple choice questions;
-		if swim-location is 0, set next numerical response to "get out";
-		set next numerical response to "swim in place";
-		if swim-location > 0, set next numerical response to "swim toward shallow end";
-		if swim-location < 4, set next numerical response to "swim toward deep end";
-		if swim-location > 1, set next numerical response to "dive";
-		say "[line break]What should you do next?";
-		compute multiple choice question;
-		let CNR be the chosen numerical response;
-		if CNR is "get out":
-			say "You climb out of the pool.";
-			now swimming is 0;
-		otherwise if CNR is "swim in place":
-			say "You swim in place.";
-			compute easy swimming check in swimming-pool;
-		otherwise if CNR is "swim toward shallow end":
-			say "You swim toward the shallow end of the pool.";
-			compute normal swimming check in swimming-pool;
-			decrease swim-location by 1;
-		otherwise if CNR is "swim toward deep end":
-			say "You swim toward the deep end of the pool.";
-			compute normal swimming check in swimming-pool;
-			increase swim-location by 1;
-		otherwise:
-			say "You dive below the surface.";
-			compute difficult swimming check in swimming-pool;
-			compute treasure diving in swimming-pool at swim-location;
-			compute cum pool face coating;
-		say "[line break]";
+		if swim-turns > 0:
+			reset multiple choice questions;
+			if swim-location is 0, set next numerical response to "get out";
+			set next numerical response to "swim in place";
+			if swim-location > 0, set next numerical response to "swim toward shallow end";
+			if swim-location < 4, set next numerical response to "swim toward deep end";
+			if swim-location > 1, set next numerical response to "dive";
+			say "[line break]What should you do next?";
+			compute multiple choice question;
+			let CNR be the chosen numerical response;
+			if CNR is "get out":
+				say "You climb out of the pool.";
+				now swimming is 0;
+			otherwise if CNR is "swim in place":
+				say "You swim in place.";
+				compute easy swimming check in swimming-pool;
+			otherwise if CNR is "swim toward shallow end":
+				say "You swim toward the shallow end of the pool.";
+				compute normal swimming check in swimming-pool;
+				decrease swim-location by 1;
+			otherwise if CNR is "swim toward deep end":
+				say "You swim toward the deep end of the pool.";
+				compute normal swimming check in swimming-pool;
+				increase swim-location by 1;
+			otherwise:
+				say "You dive below the surface.";
+				compute difficult swimming check in swimming-pool;
+				compute treasure diving in swimming-pool at swim-location;
+				compute cum pool face coating;
+			say "[line break]";
 		if swimming is 1:
 			if armband is worn:
 				let M be a random staff member in the location of the player;
@@ -92,13 +94,14 @@ To compute TQ swimmingpool swimming at (swim-location - a number) with (swim-tur
 				increase swim-turns by 1;
 				compute swimming fatigue check in swimming-pool;
 				if delayed fainting is 1, now swimming is 0;
-	allocate 12 + (swim-turns * 3) seconds;
+	if seconds > 0, increase seconds by swim-turns * 3;
 	display entire map.
 
 [There's basically nothing interesting happening here, so it's a good template.]
 To compute DQ swimmingpool swimming at (swim-location - a number) with (swim-turns - a number):
 	let swimming be 1;
 	let S be swimming-pool;
+	allocate 6 seconds;
 	while swimming is 1:
 		if swim-turns is 0 and water-peeing is false:
 			if the location of the player is School22:[Near the diving board]
@@ -114,32 +117,33 @@ To compute DQ swimmingpool swimming at (swim-location - a number) with (swim-tur
 				now swim-location is 0;
 		otherwise:
 			say "You are treading water [if swim-location is 0]in the shallow end of the pool, with your feet easily touching the bottom.[otherwise if swim-location is 1]near the shallow end of the pool. Your feet just barely touch the bottom[otherwise if swim-location is 2]midway between the deep end and the shallow end. Your feet are a couple inches from touching the bottom.[otherwise if swim-location is 3]near the deep end of the pool. Your feet are about a metre from the bottom.[otherwise if swim-location is 4]in the deep end of the pool, with several metres between your feet and the bottom.[end if]";
-		reset multiple choice questions;
-		if swim-location is 0, set next numerical response to "get out";
-		set next numerical response to "swim in place";
-		if swim-location > 0, set next numerical response to "swim toward shallow end";
-		if swim-location < 4, set next numerical response to "swim toward deep end";
-		if swim-location > 1, set next numerical response to "dive";
-		say "[line break]What should you do next?";
-		compute multiple choice question;
-		let CNR be the chosen numerical response;
-		if CNR is "get out":
-			say "You climb out of the pool.";
-			now swimming is 0;
-		otherwise if CNR is "swim in place":
-			say "You swim in place.";
-			compute easy swimming check in swimming-pool;
-		otherwise if CNR is "swim toward shallow end":
-			say "You swim toward the shallow end of the pool.";
-			compute normal swimming check in swimming-pool;
-		otherwise if CNR is "swim toward deep end":
-			say "You swim toward the deep end of the pool.";
-			compute normal swimming check in swimming-pool;
-		otherwise:
-			say "You dive below the surface.";
-			compute difficult swimming check in swimming-pool;
-			compute treasure diving in swimming-pool at swim-location;
-		say "[line break]";
+		if swim-turns > 0:
+			reset multiple choice questions;
+			if swim-location is 0, set next numerical response to "get out";
+			set next numerical response to "swim in place";
+			if swim-location > 0, set next numerical response to "swim toward shallow end";
+			if swim-location < 4, set next numerical response to "swim toward deep end";
+			if swim-location > 1, set next numerical response to "dive";
+			say "[line break]What should you do next?";
+			compute multiple choice question;
+			let CNR be the chosen numerical response;
+			if CNR is "get out":
+				say "You climb out of the pool.";
+				now swimming is 0;
+			otherwise if CNR is "swim in place":
+				say "You swim in place.";
+				compute easy swimming check in swimming-pool;
+			otherwise if CNR is "swim toward shallow end":
+				say "You swim toward the shallow end of the pool.";
+				compute normal swimming check in swimming-pool;
+			otherwise if CNR is "swim toward deep end":
+				say "You swim toward the deep end of the pool.";
+				compute normal swimming check in swimming-pool;
+			otherwise:
+				say "You dive below the surface.";
+				compute difficult swimming check in swimming-pool;
+				compute treasure diving in swimming-pool at swim-location;
+			say line break;
 		if swimming is 1:
 			if armband is worn:
 				let M be a random staff member in the location of the player;
@@ -155,7 +159,7 @@ To compute DQ swimmingpool swimming at (swim-location - a number) with (swim-tur
 				increase swim-turns by 1;
 				compute swimming fatigue check in swimming-pool;
 				if delayed fainting is 1, now swimming is 0;
-	allocate 12 + (swim-turns * 3) seconds;
+	if seconds > 0, increase seconds by swim-turns * 3;
 	display entire map.
 
 To compute cum pool coating:
@@ -211,7 +215,7 @@ To compute treasure diving in (WB - swimming-pool) at (L - a number):
 				if string-belt is worn, now S is string-belt;
 				if S is clothing and the player is getting unlucky:[It's a condom "leech"]
 					say "Your fingers find something mushy as your fingers hit the bottom, and you take it with you as you swim back to the surface. [bold type]You picked up a used condom... and it's moving?![roman type] It flies from your hand and seals itself to your [ShortDesc of S]!";
-					increase the used condoms of S by 1;
+					UsedCondomUp S by 1;
 				otherwise:
 					say "Your fingers find something mushy as your fingers hit the bottom, and you take it with you as you swim back to the surface. You picked up a used condom! Yuck! You throw it back.";
 			otherwise if N < 20:[lube]

@@ -27,8 +27,10 @@ Check PeeBottling:[TODO: compatible with parched pedestal]
 	if the noun is a vessel:
 		if the doses of the noun > 0 and the fill-type of the noun is not 21:
 			say "Are you sure you wish to empty your [noun] of its current contents ([PotionType of the noun])? ";
-			if the player is consenting, dump the noun;
-			otherwise say "You change your mind." instead;
+			if the player is consenting:
+				dump the noun;
+			otherwise:
+				say "You change your mind." instead;
 	otherwise if the noun is pedestal:
 		if the player is pee protected or there is a worn pee covering actually unavoidable clothing, say "You can't get your genitals close enough to the carving for that to work." instead;
 	otherwise:

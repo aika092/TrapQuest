@@ -85,10 +85,12 @@ This is the golem merging rule:
 			summon rubber top hat cursed;
 		if the player is not top heavy:
 			say "Your chest feels strange and you look down in horror to see your breasts have expanded. [if the silicone volume of breasts is 0]Apparently you have breast implants now![otherwise]Your breast implants are even bigger![end if]";
-			BustImplantsUp 4;
+			BustImplantsUp 6;
+			say "You now have [BreastDesc].";
 		if the flesh volume of hips + the silicone volume of hips < max ass size:
 			say "Your ass feels strange and you look down in horror to see it's expanded. [if the silicone volume of hips is 0]Apparently you have silicone implants in it now![otherwise]Your butt implants are even bigger than they used to be![end if]";
 			AssImplantsUp 3;
+			say "You now have [AssDesc].";
 	otherwise:
 		If the player is not top heavy:
 			say "Your chest feels suddenly heavier...";
@@ -127,9 +129,8 @@ To compute standard damage of (M - golem):
 	if the health of M > 0:
 		compute damage reaction of M;
 		compute golem attack stickiness;
-		now M is interested;
+		interest M;
 		anger M;
-		now the boredom of M is 0;
 		if M is undefeated and M is not caged, compute combatProvoked of M; [All NPCs should become unfriendly here, if able.]
 	otherwise:
 		compute defeat of M.

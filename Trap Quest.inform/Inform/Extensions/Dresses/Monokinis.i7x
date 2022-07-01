@@ -2,7 +2,7 @@ Monokinis by Dresses begins here.
 
 Part 0 - Swimming Top
 
-swimming top is a swimsuit. swimming top is manly. swimming top is fully covering. The text-shortcut of swimming top is "swt". swimming top is not-top-displacable. swimming top is top-exclusive. swimming top is sheer-when-wet.
+swimming top is a swimsuit. swimming top is manly. swimming top is fully covering. swimming top is no-crotch. The text-shortcut of swimming top is "swt". swimming top is not-top-displacable. swimming top is top-exclusive. swimming top is sheer-when-wet.
 
 Figure of swimming top dry is the file "Items/Clothes/Upper/Swimming/Tops/swimmingtop1.png". Figure of swimming top wet is the file "Items/Clothes/Upper/Swimming/Tops/swimmingtop2.png".
 
@@ -219,5 +219,36 @@ Definition: queen-of-spades monokini is interracial themed: decide yes.
 
 To decide which object is the unique-upgrade-target of (C - queen-of-hearts monokini):
 	decide on queen-of-spades monokini.
+
+Part 8 - Bimbo Monokini
+
+bimbo monokini is a monokini. bimbo monokini is very low cut. bimbo monokini is unique. The text-shortcut of bimbo monokini is "bbmk". Understand "onepiece", "swimsuit" as bimbo monokini.
+
+Figure of bimbo monokini is the file "Items/Clothes/Upper/Swimming/Monokinis/monokini8.png".
+
+Definition: bimbo monokini is pink themed: decide yes.
+Definition: bimbo monokini is bimbo themed: decide yes.
+
+To compute post transformation effect of (C - bimbo monokini):
+	now C is strength-influencing;
+	now the raw-magic-modifier of C is 2.
+
+To decide which figure-name is clothing-image of (C - bimbo monokini):
+	decide on figure of bimbo monokini.
+
+To say ClothingDesc of (C - bimbo monokini):
+	say "This tight fitting onepiece swimsuit is extremely low cut, allowing for extra large amounts of cleavage to be shown, and at the same time very high-waisted, to expose a huge amount of your hips. The words 'Bimbo' are written on the front.".
+
+To say ShortDesc of (C - bimbo monokini):
+	say "pink swimsuit".
+To say MediumDesc of (C - bimbo monokini):
+	say "pink bimbo swimsuit".
+
+To decide which number is the initial outrage of (C - bimbo monokini):
+	decide on 6.
+
+To decide which number is the assModesty of (C - bimbo monokini):
+	decide on 3.
+
 
 Monokinis ends here.

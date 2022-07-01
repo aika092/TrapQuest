@@ -90,7 +90,7 @@ To decide which number is the initial cringe of (C - a sparkly princess pacifier
 	decide on 13.
 
 To decide which number is the bartering value of (T - a pacifier) for (M - a matron):
-	if M is friendly and incontinence <= 2, decide on 4;
+	if M is friendly and the bladder-incontinence of the player <= 2 and the rectum-incontinence of the player <= 2, decide on 4;
 	decide on 0.
 
 To say MonsterOfferAcceptFlav of (M - a matron) to (T - a pacifier):

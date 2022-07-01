@@ -182,7 +182,7 @@ To say TransformReaction of (C - hide warrior chestpiece):
 
 Part 6 - Golden Warrior Priestess Outfit
 
-golden warrior priestess outfit is an immodest warrior chestpiece. golden warrior priestess outfit is metal. golden warrior priestess outfit is super-short. golden warrior priestess outfit is ridiculously low cut. golden warrior priestess outfit is totally-exclusive.
+golden warrior priestess outfit is an immodest warrior chestpiece. golden warrior priestess outfit is metal. golden warrior priestess outfit is unskirted. golden warrior priestess outfit is crotch-intact. golden warrior priestess outfit is ridiculously low cut. golden warrior priestess outfit is totally-exclusive. The armour of golden warrior priestess outfit is 5.
 
 
 Definition: golden warrior priestess outfit is class-relevant:
@@ -201,10 +201,14 @@ To decide which figure-name is clothing-image of (C - golden warrior priestess o
 	decide on figure of golden warrior priestess outfit.
 
 To say ClothingDesc of (C - golden warrior priestess outfit):
-	say "This bizarre metal outfit consists of just a few shiny constricting bars. It covers your nipples but not much else.".
+	say "This bizarre metal outfit consists of just a few shiny constricting bars. It covers your nipples but not much else. At the crotch, a flimsy gauze fabric holds tightly at the crotch, and is just a tiny strip at the back that goes up your butt crack.".
 
+To decide which number is the assModesty of (C - golden warrior priestess outfit):
+	decide on 1.
 To decide which number is the initial outrage of (C - golden warrior priestess outfit):
 	decide on 5.
+To decide which number is the crotch-tightness of (C - golden warrior priestess outfit):
+	decide on 3.
 
 golden warrior priestess outfit can be doomed-bloodline or not doomed-bloodline. golden warrior priestess outfit is not doomed-bloodline.
 

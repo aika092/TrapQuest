@@ -75,7 +75,8 @@ To decide which thing is chosen-maid-outfit:
 
 To compute class outfit of (H - a maid headdress):
 	class summon chosen-maid-outfit;
-	if H is cafe maid headdress, class summon cafe maid stockings.
+	if H is cafe maid headdress, class summon cafe maid stockings;
+	if pink-spraybottle is not held by a person, class summon pink-spraybottle.
 
 Chapter - Quest
 

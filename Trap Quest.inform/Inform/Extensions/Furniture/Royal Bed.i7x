@@ -27,7 +27,7 @@ To compute furniture resting on (F - the royal bed):
 		otherwise say "You shovel your [BreastDesc] onto the bed in front of you, crawl onto the bed yourself, and use them as pillows to have a nice rest. ";
 	now the stance of the player is 1;
 	let nightie-check be 0;
-	if the incontinence of the player > 5, now nightie-check is 1; [The player is over halfway to becoming fully incontinent]
+	if the bladder-incontinence of the player > 5, now nightie-check is 1; [The player is over halfway to becoming fully bladder incontinent]
 	if there is worn bed wetting clothing and nightie-check < 3:
 		now nightie-check is 2; [There are bed wetting items of clothing (takes priority over incontinence)]
 	otherwise if there is a worn nightie:

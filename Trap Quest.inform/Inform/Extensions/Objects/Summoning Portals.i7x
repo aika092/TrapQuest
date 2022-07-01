@@ -489,7 +489,7 @@ Check entering giant-statue:
 		StomachFoodDown 1;
 		StomachDown 1;
 		if V is 1:
-			if diaper quest is 0, SemenAddictUp 1;
+			if diaper quest is 0, SlowSemenAddictUp 1;
 			otherwise DexDown 1;
 	if R is 5:
 		say "A wave of raw, carnal energy hits you like a tidal wave. Your whole body burns with arousal, and your hands start to move before you can stop them...";

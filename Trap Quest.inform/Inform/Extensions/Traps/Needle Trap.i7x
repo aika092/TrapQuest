@@ -9,7 +9,6 @@ Figure of Needle Cutscene 6 is the file "Special/Cutscene/cutscene-dart-hips3.pn
 
 A needle trap is a kind of trap. There are 4 potentially pressure potentially sticky potentially click potentially wire needle traps.
 
-
 This is the spawn initial woods needle traps rule:
 	repeat with N running from 1 to 4:
 		let R be a random trappable placed jungle room;
@@ -54,7 +53,11 @@ To trigger (Y - a needle trap):
 				now target-body-part is penis;
 		if the player is a flatchested trap or the player is prone or diaper quest is 1 or tutorial is 1, now target-body-part is hips;
 		say "A tiny [needle] shoots out of [if playerRegion is Dungeon]the stone wall[otherwise if playerRegion is Woods]a tree[otherwise]a tiny hole in the wall[end if] and towards your [if target-body-part is breasts][BreastDesc][otherwise if target-body-part is belly]side[otherwise if the player is prone]butt cheek[otherwise if target-body-part is hips]hip[otherwise if target-body-part is face][LipDesc][otherwise if target-body-part is vagina][vagina][otherwise][penis][end if]. ";
-		compute Y injecting into target-body-part;
+		if game difficulty > a random number between 0 and 5:
+			say "It contained some kind of ability reducing poison!";
+			RandomStatDown 1;
+		otherwise:
+			compute Y injecting into target-body-part;
 		repeat with M running through reactive monsters:
 			say NeedleTrapReactFlav of M.
 
@@ -117,8 +120,9 @@ To compute (Y - a needle trap) injecting into (X - belly):
 	if needle-blocker is clothing:
 		say "The dart is blocked by your [ShortDesc of needle-blocker]! Phew!";
 	otherwise if diaper lover > 0:
-		say "You feel weirdly numb on the inside. Whatever you were injected with has made you temporarily incontinent![line break][variable custom style]Uh-oh...[roman type][line break]";
-		increase temporary-incontinence by 2;
+		say "You feel weirdly numb on the inside. Whatever you were injected with has made [if diaper messing >= 3]your bowels[otherwise]you[end if] temporarily incontinent![line break][variable custom style]Uh-oh...[roman type][line break]";
+		if diaper messing >= 3, increase temporary-rectum-incontinence by 2;
+		otherwise increase temporary-bladder-incontinence by 2;
 	otherwise:
 		say "Owww, that really hurt! You take it out and notice that it has an empty capsule at the end you're holding. It looks like it injected you with something?";
 		NeedleDelicateUp;
@@ -244,7 +248,7 @@ To compute (Y - a needle trap) injecting into (X - body part):
 
 
 To NeedleDelicateUp:
-	if a random number between the delicateness of the player and 10 < 9, PainUp 1.
+	if a random number between the delicateness of the player and 10 < 9, PainUp 10.
 
 To say NeedleTrapReactFlav of (M - a monster):
 	say TriggeredTrapReactFlav of M.
@@ -273,6 +277,7 @@ To trigger (Y - a rune trap):
 	now the player-motion of the player is 0;
 	now the reset-timer of Y is 650;
 	now Y is not untriggered;
+	now Y is triggered;
 	now Y is revealed;
 	cutshow the triggered-image of Y for Y;
 	say "A magic rune appears on the stone slab! ";
@@ -289,22 +294,22 @@ To compute unique trigger of (Y - a rune trap):
 To say RuneTrapReactFlav of (M - a monster):
 	say TriggeredTrapReactFlav of M.
 
-breasts-rune-trap is a rune trap.
+expansion-rune-trap is a rune trap.
 
-Definition: breasts-rune-trap is fetish appropriate:
-	if max breast size is 1, decide no;
+Definition: expansion-rune-trap is fetish appropriate:
+	if max breast size is 1 and max ass size is 1, decide no;
 	if diaper quest is 0 or lactation fetish is 1, decide yes;
 	decide no.
 
 Figure of breasts rune trap is the file "Env/Dungeon/rune2a.jpg".
 Figure of breasts rune trap triggered is the file "Env/Dungeon/rune2b.jpg".
 
-To decide which figure-name is the examine-image of (T - breasts-rune-trap):
+To decide which figure-name is the examine-image of (T - expansion-rune-trap):
 	decide on Figure of breasts rune trap.
-To decide which figure-name is the triggered-image of (T - breasts-rune-trap):
+To decide which figure-name is the triggered-image of (T - expansion-rune-trap):
 	decide on Figure of breasts rune trap triggered.
 
-To compute unique trigger of (Y - breasts-rune-trap):
+To compute unique trigger of (Y - expansion-rune-trap):
 	if the player is not top heavy:
 		say "The magic surges to your breasts, causing them to swell!";
 		BustUp 3;
@@ -315,7 +320,7 @@ To compute unique trigger of (Y - breasts-rune-trap):
 		otherwise:
 			say "They feel more active: you can tell that your [if the lactation rate of breasts > 0][BreastDesc] will produce milk faster now[otherwise]have started to produce milk over time[end if]!";
 			increase the lactation rate of breasts by 1;
-	otherwise if the player is not bottom heavy:
+	if the player is not bottom heavy:
 		say "The magic rushes through your hips, making them widen!";
 		HipUp 1.
 
@@ -343,13 +348,13 @@ To compute unique trigger of (Y - balloon-rune-trap):
 		let R be a random number between 1 and 3;
 		if R is 1 and the player is not top heavy:
 			say "Your chest balloons outwards as it is filled with a lighter-than-air gas!";
-			BustInflate 10;
+			BustInflate 5;
 		otherwise if R is 2 and the player is not bottom heavy:
 			say "Your ass balloons outwards as it is filled with a lighter-than-air gas!";
-			AssInflate 10;
+			AssInflate 5;
 		otherwise:
 			say "Your belly balloons outwards as it is filled with a lighter-than-air gas!";
-			Assfill 20 air.
+			Assfill 8 air.
 
 To compute trap reaction of (Y - balloon-rune-trap):
 	repeat with M running through reactive monsters:
@@ -373,6 +378,10 @@ To compute unique trigger of (Y - fatigue-rune-trap):
 		say "Your body is completely drained of energy[if the magic-fatigue of the player < the total magic power of the player] and magic[end if]! Uh-oh...";
 		now the fatigue of the player is the buckle threshold of the player;
 		now the magic-fatigue of the player is the total magic power of the player;
+		if game difficulty > 3:
+			say "Oh god... you've also been temporarily drained of strength[if game difficulty > 4] and dexterity[end if]! Who know how long it'll take to recover...";
+			increase temp_str_dam by the flat strength of the player;
+			if game difficulty > 4, increase temp_dex_dam by the flat dexterity of the player;
 	otherwise:
 		say "Your body is drained of lots of energy[if the magic-fatigue of the player < the total magic power of the player] and have lost some magical energy[end if]! Uh-oh...";
 		FatigueUp the buckle threshold of the player / 2;
@@ -417,6 +426,22 @@ To compute unique trigger of (Y - polymorph-rune-trap):
 		potentially transform C;
 	otherwise:
 		say "Nothing seems to happen. Odd...".
+
+wisp-rune-trap is a rune trap.
+
+[Figure of wisp rune trap is the file "Env/Dungeon/rune6a.jpg".
+Figure of wisp rune trap triggered is the file "Env/Dungeon/rune6b.jpg".]
+
+To decide which figure-name is the examine-image of (T - wisp-rune-trap):
+	decide on Figure of polymorph rune trap.
+To decide which figure-name is the triggered-image of (T - wisp-rune-trap):
+	decide on Figure of polymorph rune trap triggered.
+
+To compute unique trigger of (Y - wisp-rune-trap):
+	if there is a nonstalking wisp:
+		deploy a wisp;
+	otherwise:
+		say "Nothing seems to happen. You must have too many curse wisps stalking you already...".
 
 
 Needle Trap ends here.

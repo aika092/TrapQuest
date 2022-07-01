@@ -95,7 +95,9 @@ Part 1 - Underdresses
 
 An underdress is usually knee-length. An underdress is usually average cut. An underdress is usually normally-nipple-covering. An underdress is usually belly covering. The armour of an underdress is usually 4. An underdress is usually top-displacable.
 
-Definition: an underdress is displacable: decide yes.
+Definition: an underdress is displacable:
+	if it is no-crotch, decide no;
+	decide yes.
 
 Chapter - Wearability
 

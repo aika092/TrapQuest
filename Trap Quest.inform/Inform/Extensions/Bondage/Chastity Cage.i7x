@@ -57,6 +57,9 @@ To SexChange (J - chastity-belt):
 		say "Your chastity belt morphs into a tight, snug chastity cage.";
 		transform J into metal-cage.
 
+Check taking off a sex toy:
+	if the size of the noun > 8 and chastity-belt is worn, say "The [noun] is so large that it won't fit through the hole of your [chastity-belt]!" instead.
+
 [Chastity cage]
 
 A chastity cage is a kind of chastity bond. A chastity cage is usually sheer. Understand "cage" as chastity cage. A chastity cage has a number called size. The printed name of a chastity cage is "[clothing-title-before][clothing-material of item described] chastity cage[clothing-title-after]".
@@ -96,7 +99,7 @@ To decide which number is the strength-influence of (C - a chastity cage):
 To decide which number is the initial outrage of (C - a chastity cage):
 	decide on 18.
 
-To decide which number is the usualHipModesty of (C - a chastity cage):
+To decide which number is the usualAssModesty of (C - a chastity cage):
 	decide on 0.
 
 To compute unique summoning of (C - a chastity cage):

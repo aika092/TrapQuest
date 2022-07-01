@@ -439,6 +439,7 @@ To say DisgracePostReaction (N - a number):
 		say "[variable custom style]I saw this already just a few moments ago.[roman type][line break]";
 	otherwise:
 		say DisgracePostReaction strength S;
+	if the lastwitnessed entry is 0 and the published entry matches the text "hypnoheaven", compute agent reveal;
 	now lastwitnessed entry is time-earnings.
 
 To say HumiliatingDisgracePostReaction (N - a number):
@@ -449,6 +450,7 @@ To say HumiliatingDisgracePostReaction (N - a number):
 	otherwise:
 		say DisgracePostReaction strength S;
 		humiliate S / 5;
+	if the lastwitnessed entry is 0 and the published entry matches the text "hypnoheaven", compute agent reveal;
 	now lastwitnessed entry is time-earnings.
 
 To say DisgracePostReaction strength (S - a number):

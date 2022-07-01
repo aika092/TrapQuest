@@ -25,9 +25,6 @@ To set up magic attribute of (C - a crotchless-panties):
 	if R is 2, now C is elasticity.
 
 pearl crotchless-panties is a crotchless-panties. The printed name of pearl crotchless-panties is "[clothing-title-before]pair of stimulating crotchless panties[clothing-title-after]". Understand "stimulating" as pearl crotchless-panties. The text-shortcut of pearl crotchless-panties is "stcp".
-Definition: pearl crotchless-panties is class-relevant:
-	if the class of the player is priestess, decide yes;
-	decide no.
 To compute class set up of (C - pearl crotchless-panties):
 	now C is cursed.
 Definition: pearl crotchless-panties is pink themed: decide yes.
@@ -106,7 +103,11 @@ Report going when the player is possessing a vagina and the player is upright an
 		passively stimulate vagina from C;
 		now the walkCharge of C is 0.
 
-cum dump's undergarment is a crotchless-panties. cum dump's undergarment is unique. The printed name of cum dump's undergarment is usually "[clothing-title-before]unholy cum dump's undergarment[clothing-title-after]". Figure of unholy panties is the file "Items/Clothes/Lower/Underwear/Skimpy/Crotchless/crotchless6.png". Understand "unholy" as cum dump's undergarment. The text-shortcut of cum dump's undergarment is "uu".
+cum dump's undergarment is a crotchless-panties. cum dump's undergarment is unique. The printed name of cum dump's undergarment is "[clothing-title-before]unholy cum dump's undergarment[clothing-title-after]". Figure of unholy panties is the file "Items/Clothes/Lower/Underwear/Skimpy/Crotchless/crotchless6.png". Understand "unholy" as cum dump's undergarment. The text-shortcut of cum dump's undergarment is "uu".
+
+Definition: cum dump's undergarment is class-relevant:
+	if the class of the player is priestess and the class of the player is cumdumpster, decide yes;
+	decide no.
 
 Definition: cum dump's undergarment is transformation-protected: decide yes.
 Definition: cum dump's undergarment is uncovered themed: decide yes.
@@ -120,7 +121,7 @@ To decide which figure-name is clothing-image of (C - cum dump's undergarment):
 	decide on figure of unholy panties.
 
 To say ClothingDesc of (K - cum dump's undergarment):
-	say "This white pair of crotchless panties has a butterfly pattern above the crotch, giving it an innocent look. But you somehow know that it's much more than that, possessing incredible unholy powers.".
+	say "This white pair of crotchless panties has a butterfly pattern above the crotch, giving it an innocent look. But you somehow know that it's much more than that, possessing incredible unholy powers. You can sense that it prevents your [fuckholes] from getting too sore, and heals your wounds whenever you get creampied.".
 
 To decide which number is the initial outrage of (C - cum dump's undergarment):
 	decide on 14.
@@ -160,6 +161,11 @@ To compute recipe specific cursing of (T - cum dump's undergarment):
 		now T is cursed.
 
 To set up influence of (C - cum dump's undergarment):
+	now C is semen-addiction-influencing.
+
+To compute class set up of (C - cum dump's undergarment):
+	now C is cursed;
+	now C is exposure;
 	now C is semen-addiction-influencing.
 
 

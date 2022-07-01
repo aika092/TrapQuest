@@ -61,6 +61,9 @@ To MagicPowerRefresh (X - a number):
 	if the magic-fatigue of the player < 0, now the magic-fatigue of the player is 0;
 	if the magic-fatigue of the player < F, say "[bold type]Your magic power feels [if the magic-fatigue of the player is 0]completely[otherwise if the magic-fatigue of the player < T / 2]mostly[otherwise]slightly[end if] refreshed![roman type][line break]".
 
+To compute magic regeneration:
+	MagicPowerRefresh 1.
+
 [Stuff to do with casting spells goes below.]
 the magic consequences rules is a rulebook.
 
@@ -149,6 +152,7 @@ To compute learning of (S - a magic-spell):
 		now the text-shortcut of S is the phrase entry;
 		say "You have learned how to [MagicSpellEffect of S]! The magic incantation is 'I [incantation of S]'. It requires [magic-cost of S] magic power.[SpelloutrageousnessInfo of S]";
 		blank out the whole row;
+		trigger learn-spell-wisp-quest;
 	otherwise:
 		say "BUG - no fetish appropriate incantations were left to assign to the spell.".
 
@@ -203,7 +207,7 @@ To compute spell outrageousness reaction of (M - a monster) to (S - a magic-spel
 		let O be the latest-appearance of M;
 		if diaper quest is 1, now O is the latest-cringe of M;
 		if the outrageousness of S > O:
-			if M is uninterested, now M is interested;
+			if M is uninterested, interest M;
 			if diaper quest is 0, compute disapproval of M;
 			otherwise compute cringe disapproval of M.
 

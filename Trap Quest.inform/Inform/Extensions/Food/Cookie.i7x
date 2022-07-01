@@ -38,7 +38,7 @@ Carry out TQeating cookie:
 		Arouse the semen taste addiction of the player * 20;
 		StomachFoodUp 2;
 		Humiliate 10;
-		SemenAddictUp 1;
+		StomachSemenUp 1;
 	otherwise if a random number between 3 and the quality of the noun is 3:
 		say "It's surprisingly filling for such a small piece of food, and you feel a lot healthier.";
 		bodyHeal the fat of the noun;

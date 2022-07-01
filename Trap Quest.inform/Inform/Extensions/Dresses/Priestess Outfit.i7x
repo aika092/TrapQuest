@@ -17,11 +17,12 @@ To decide which number is the intelligence-influence of (O - a priestess outfit)
 	increase I by the magic-modifier of O;
 	decide on I.
 
-To uniquely set up (C - a priestess outfit):
-	if a random number between 1 and 5 > 3 and C is not cursed, now C is endurance.
+To compute class set up of (C - a priestess outfit):
+	now C is suppression;
+	now the raw-magic-modifier of C is 1.
 
 To set up influence of (C - a priestess outfit):
-	set up stat-based influence of C.
+	now C is charisma-influencing.
 
 Definition: a priestess outfit is magic themed: decide yes.
 Definition: a priestess outfit is white themed: decide yes.
@@ -149,9 +150,6 @@ cameltoe-priestess-outfit is a priestess outfit. cameltoe-priestess-outfit is er
 
 cameltoe-priestess-outfit is crotch-intact. cameltoe-priestess-outfit is bottom-exclusive. cameltoe-priestess-outfit is unskirted. cameltoe-priestess-outfit is silk. cameltoe-priestess-outfit is low cut. cameltoe-priestess-outfit is top-displacable. cameltoe-priestess-outfit is only arm covering. cameltoe-priestess-outfit is not purity.
 
-To compute class set up of (C - cameltoe-priestess-outfit):
-	now C is suppression;
-	now the raw-magic-modifier of C is 1.
 
 Figure of cameltoe-priestess-outfit is the file "Items/Clothes/Upper/Special/Priestess/priestess7a.png".
 
@@ -192,7 +190,7 @@ To decide which number is the initial outrage of (C - exposing-priestess-outfit)
 
 cleavage-window-priestess-outfit is a priestess outfit. cleavage-window-priestess-outfit is erect-nipple-exposing. cleavage-window-priestess-outfit is only arm covering. The printed name of cleavage-window-priestess-outfit is "[clothing-title-before]cleavage window priestess outfit[clothing-title-after]". The text-shortcut of cleavage-window-priestess-outfit is "cwpo". Understand "cleavage", "window", "priestess", "outfit" as cleavage-window-priestess-outfit.
 
-cleavage-window-priestess-outfit is bottom-exclusive. cleavage-window-priestess-outfit is unskirted. cleavage-window-priestess-outfit is belly exposing. cleavage-window-priestess-outfit is very low cut. cleavage-window-priestess-outfit is not-displacable-always-fuckable. cleavage-window-priestess-outfit is only arm covering.
+cleavage-window-priestess-outfit is bottom-exclusive. cleavage-window-priestess-outfit is unskirted. cleavage-window-priestess-outfit is belly exposing.  cleavage-window-priestess-outfit is not purity. cleavage-window-priestess-outfit is very low cut. cleavage-window-priestess-outfit is not-displacable-always-fuckable. cleavage-window-priestess-outfit is only arm covering.
 
 Figure of cleavage-window-priestess-outfit is the file "Items/Clothes/Upper/Special/Priestess/priestess8.png".
 
@@ -210,7 +208,7 @@ To decide which object is the unique-upgrade-target of (C - cleavage-window-prie
 
 nipple-exposing-priestess-outfit is a priestess outfit. nipple-exposing-priestess-outfit is only arm covering. The printed name of nipple-exposing-priestess-outfit is "[clothing-title-before]nipple exposing priestess outfit[clothing-title-after]". The text-shortcut of nipple-exposing-priestess-outfit is "nepo". Understand "nipple", "exposing", "priestess", "outfit" as nipple-exposing-priestess-outfit.
 
-nipple-exposing-priestess-outfit is bottom-exclusive. nipple-exposing-priestess-outfit is unskirted. nipple-exposing-priestess-outfit is belly exposing. nipple-exposing-priestess-outfit is neck covering. nipple-exposing-priestess-outfit is normally-nipple-exposing. nipple-exposing-priestess-outfit is not-displacable-always-fuckable. nipple-exposing-priestess-outfit is only arm covering.
+nipple-exposing-priestess-outfit is bottom-exclusive. nipple-exposing-priestess-outfit is unskirted. nipple-exposing-priestess-outfit is not purity. nipple-exposing-priestess-outfit is belly exposing. nipple-exposing-priestess-outfit is neck covering. nipple-exposing-priestess-outfit is normally-nipple-exposing. nipple-exposing-priestess-outfit is not-displacable-always-fuckable. nipple-exposing-priestess-outfit is only arm covering.
 
 Figure of nipple-exposing-priestess-outfit is the file "Items/Clothes/Upper/Special/Priestess/priestess9.png".
 
@@ -225,6 +223,8 @@ To decide which number is the initial outrage of (C - nipple-exposing-priestess-
 
 heart-pussy-skirt is a skirt. heart-pussy-skirt is unique. heart-pussy-skirt is short. The printed name of heart-pussy-skirt is "[clothing-title-before]pussy heart hole skirt[clothing-title-after]". The text-shortcut of heart-pussy-skirt is "phhs". Figure of heart-pussy-skirt is the file "Items/Clothes/Lower/Skirts/pussyskirt1.png". Understand "pussy heart", "heart", "heart hole", "hole skirt", "skirt" as heart-pussy-skirt.
 
+Definition: heart-pussy-skirt is displacable: decide no.
+
 To decide which figure-name is clothing-image of (H - heart-pussy-skirt):
 	decide on figure of heart-pussy-skirt.
 
@@ -233,11 +233,11 @@ To say ShortDesc of (C - heart-pussy-skirt):
 To say MediumDesc of (C - heart-pussy-skirt):
 	say "pussy exposing skirt".
 To say ClothingDesc of (C - heart-pussy-skirt):
-	say "This skirt is just a few short pieces of white cloth dangling over the important bits. Also it doesn't even protect the front - where there should be some white cloth to cover your [genitals], there is instead a large hole in the shape of a heart...".
+	say "This skirt is just a few short pieces of white cloth dangling over the important bits. Also it doesn't even protect the front - where there should be some white cloth to cover your [genitals], there is instead a large hole in the shape of a heart[if pregnancy fetish is 1]. [bold type]You can sense that it somehow magically protects your womb from getting pregnant quite so easily[end if][if pregnancy fetish is 1 and the pregnancy resistance of the player > 0][roman type] - you're safe unless a particularly large amount of [semen] makes it into your womb[end if].[roman type][line break]".
 
 To compute class set up of (C - heart-pussy-skirt):
 	now C is suppression;
-	now the raw-magic-modifier of C is 2.
+	now the raw-magic-modifier of C is 3.
 
 Definition: heart-pussy-skirt is white themed: decide yes.
 Definition: heart-pussy-skirt is class-relevant:
@@ -257,6 +257,8 @@ To decide which object is the unique-upgrade-target of (C - heart-pussy-skirt):
 
 heart-pussy-hobble-skirt is a skirt. heart-pussy-hobble-skirt is unique. heart-pussy-hobble-skirt is hobble-skirted. heart-pussy-hobble-skirt is crotch-exposing. The printed name of heart-pussy-hobble-skirt is "[clothing-title-before]pussy heart hole hobble skirt[clothing-title-after]". The text-shortcut of heart-pussy-hobble-skirt is "hhhs". Figure of heart-pussy-hobble-skirt is the file "Items/Clothes/Lower/Skirts/pussyskirt2.png". Understand "pussy heart", "heart", "hobble", "heart hole", "hole skirt", "skirt" as heart-pussy-hobble-skirt.
 
+Definition: heart-pussy-hobble-skirt is displacable: decide no.
+
 To decide which figure-name is clothing-image of (H - heart-pussy-hobble-skirt):
 	decide on figure of heart-pussy-hobble-skirt.
 
@@ -265,7 +267,7 @@ To say ShortDesc of (C - heart-pussy-hobble-skirt):
 To say MediumDesc of (C - heart-pussy-hobble-skirt):
 	say "pussy exposing hobble skirt".
 To say ClothingDesc of (C - heart-pussy-hobble-skirt):
-	say "This skirt is made from two long pieces of white cloth that dangle vertically in front and behind your legs. They are bound to your body at the thighs and ankles to keep them in place and to force you to walk with an awkward hobble. At the front of the front piece of fabric is a large heart-shaped hole which exposes everything.".
+	say "This skirt is made from two long pieces of white cloth that dangle vertically in front and behind your legs. They are bound to your body at the thighs and ankles to keep them in place and to force you to walk with an awkward hobble at all times. At the front of the front piece of fabric is a large heart-shaped hole which exposes everything[if pregnancy fetish is 1]. [bold type]You can sense that it somehow magically protects your womb from getting pregnant quite so easily[end if][if pregnancy fetish is 1 and the pregnancy resistance of the player > 0][roman type] - you're safe unless a particularly large amount of [semen] makes it into your womb[end if].[roman type][line break]".
 
 Definition: heart-pussy-hobble-skirt is white themed: decide yes.
 Definition: heart-pussy-hobble-skirt is class-relevant:

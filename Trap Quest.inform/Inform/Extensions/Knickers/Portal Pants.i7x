@@ -89,7 +89,7 @@ Definition: portal-hotpants is potentially erection concealing: decide yes.
 Definition: portal-hotpants is no-panties-disallowed: decide no.
 Definition: portal-hotpants is disembodied rather than embodied: decide yes. [When penetrating an orifice, can it fit underneath other clothing like a sex toy? Or will clothing get in the way, e.g. a dildo pole?]
 
-To decide which number is the hipModesty of (C - portal-hotpants): decide on 2.
+To decide which number is the assModesty of (C - portal-hotpants): decide on 2.
 
 To say ClothingDesc of (K - portal-hotpants):
 	say "A gold frame secures a piece of concrete to your nether-regions. You can feel that your genitals are... 'elsewhere'[if K is penetrating a fuckhole]. There is currently someone fucking your [variable (random fuckhole penetrated by K)]![end if].".
@@ -173,12 +173,15 @@ Definition: portal-hotpants is pants pee refusal inducing:
 giant-teddy is a knickers. giant-teddy is unique. giant-teddy is polyester. giant-teddy is crotch-assless. giant-teddy is belly covering. giant-teddy is fully covering. The printed name of giant-teddy is "[clothing-title-before]giant teddy[clothing-title-after]". The text-shortcut of giant-teddy is "gt". Understand "giant", "teddy" as giant-teddy.
 
 Definition: giant-teddy is displacable: decide no.
+Definition: giant-teddy is top-layer-blocking: decide no.
+Definition: giant-teddy is mid-layer-blocking: decide no.
+Definition: giant-teddy is bottom-layer-blocking: decide no.
 
 To compute SelfExamineDesc of (K - giant-teddy):
 	say "A giant teddy bear with a hole at the back for your [player-penis] is pressed against the front of your body. ";
 
-Figure of giant teddy is the file "Items/Clothes/Lower/Underwear/Special/teddy1.jpg".
-Figure of giant teddy diapered is the file "Items/Clothes/Lower/Underwear/Special/teddy2.jpg".
+Figure of giant teddy is the file "Items/Clothes/Lower/Underwear/Special/teddy1.png".
+Figure of giant teddy diapered is the file "Items/Clothes/Lower/Underwear/Special/teddy2.png".
 Figure of giant teddy cutscene is the file "Items/Clothes/Lower/Underwear/Special/teddy3.jpg".
 Figure of giant teddy diapered cutscene is the file "Items/Clothes/Lower/Underwear/Special/teddy4.jpg".
 

@@ -44,6 +44,10 @@ Figure of Berri Cutscene 8 is the file "NPCs/MultiFloor/berri/woman-cutscene8.jp
 Figure of Berri Cutscene 9 is the file "NPCs/MultiFloor/berri/woman-cutscene9.jpg".
 Figure of Berri Cutscene 10a is the file "NPCs/MultiFloor/berri/woman-cutscene10a.jpg".
 Figure of Berri Cutscene 10b is the file "NPCs/MultiFloor/berri/woman-cutscene10b.jpg".
+Figure of Berri Cutscene 11a is the file "NPCs/MultiFloor/berri/woman-cutscene11a.jpg".
+Figure of Berri Cutscene 11b is the file "NPCs/MultiFloor/berri/woman-cutscene11b.jpg".
+Figure of Berri Cutscene 11c is the file "NPCs/MultiFloor/berri/woman-cutscene11c.jpg".
+Figure of Berri Cutscene 11d is the file "NPCs/MultiFloor/berri/woman-cutscene11d.jpg".
 
 To decide which figure-name is the monster-image of (M - woman-player):
 	if M is caged and M is in the location of dominatrix-cage, decide on the examine-image of dominatrix-cage;
@@ -171,7 +175,7 @@ To compute periodic recovery of (M - woman-player):
 		if the refractory-period of M < the messRefractoryLimit of M:
 			if M is in the location of the player:
 				if M is messy, say "[speech style of M]'Hnnnng...'[roman type][line break][BigNameDesc of M] takes a squatting position, and then you hear a cacophony of awful sounds as [he of M] fills [his of M] diaper.";
-				otherwise say "[BigNameDesc of M] squeaks and crosses [his of M] legs, but it's no use. [big he of M] is unable to stop.";
+				otherwise say "[BigNameDesc of M] squeaks and crosses [his of M] legs, but it's no use. [big he of M] is unable to stop [himself of M] from releasing [his of M] hold on [his of M] bladder.";
 			resolve diaper use of M;
 	if M is in the location of the player and the woman-diaper-state of M > the woman-latest-diaper-state of M:
 		if M is messy and the woman-diaper-state of M < 3:
@@ -180,16 +184,20 @@ To compute periodic recovery of (M - woman-player):
 			say "[bold type][WomanName] now has a wet diaper.[roman type][line break]";
 		now the woman-latest-diaper-state of M is the woman-diaper-state of M.
 
+Definition: woman-player is willing to have her diaper changed:
+	if the favour of woman-player < 15 and (woman-player is not messy or the woman-diaper-state of woman-player < 2), decide no;
+	decide yes.
+
 Check BabChanging woman-player with:
 	if the woman-diaper-state of the noun is 0, say "[big he of the noun] isn't in need of that." instead.
 
 Carry out BabChanging woman-player with:
 	allocate 6 seconds;
 	say "You try to guide [NameDesc of the noun] onto [his of the noun] back. ";
-	if the favour of the noun < 15 and (the noun is not messy or the woman-diaper-state of the noun < 2):
+	if woman-player is not willing to have her diaper changed:
 		say "[big he of the noun] resists.[line break][speech style of the noun]'H-Hey, not so fast! I don't want you to be my caregiver. I can stay like this for a while longer...'[roman type][line break]";
 	otherwise:
-		say "You get to work cleaning up [his of the noun] [if the noun is messy]messy[otherwise]soggy[end if] nappy and replacing it with [if the second noun is a diaper][NameDesc of the second noun][otherwise]a diaper from your [MediumDesc of the second noun][end if]. You can tell [he of the noun] isn't pleased about having to be changed by you. Eventually [he of the noun][']s all clean and safely padded again.";
+		say "You get to work cleaning up [his of the noun] [if the noun is messy]messy[otherwise]soggy[end if] nappy and replacing it with [if the second noun is a diaper][NameDesc of the second noun][otherwise]a diaper from your [MediumDesc of the second noun][end if]. [if the woman-bimbo of the noun <= 5]You can tell [he of the noun] is really ashamed about[otherwise]You sense that [he of the noun] is completely unperturbed by[end if] [one of]having to be changed by you[or]the fact that you're intimately cleaning [his of the noun] genitals[or]your new dynamic as caregiver and baby[cycling]. Eventually [he of the noun][']s all clean and safely padded again.";
 		FavourDown the noun;
 		reset diaper of the noun;
 		let SD be a random off-stage soiled-diaper;
@@ -246,6 +254,14 @@ To compute (M - boogeymonster) stomping (N - woman-player):
 		regionally place M;
 	otherwise:
 		vanish N.
+
+To compute perception of (M - woman-player):
+	if M is angered:
+		say "[BigNameDesc of M] notices you![line break][speech style of M]'[one of][if the woman-bimbo of M < 5]You! How could you treat me so poorly?! I'm not going to let you get away with it any more!'[otherwise]Hey sexy. You've taught me some valuable lessons in how to be a good friend. I think it's time for me to return to favour...'[end if][or]You still haven't lost? Let's go again, then!'[or]Hi again, bitch.'[stopping][roman type][line break][big he of M] starts walking towards you.";
+	otherwise if the woman-diaper-state of M > 0 and M is willing to have her diaper changed:
+		say "[BigNameDesc of M] notices you![line break][speech style of M]'[if the woman-bimbo of M < 6][one of]Um, hi, do you have a spare diaper on you? I'm all out, and I really need a change. And I'm really worried that if I don't get one soon, I'm going to start getting a bit too used to this, haha[or]Hey again... I'm really sorry to keep bothering you, but you don't happen to have another diaper I could wear, do you[stopping][otherwise if M is messy]Berri did poopies[otherwise]Berri did tinkles[end if]...'[roman type][line break][big he of M] [if the woman-bimbo of M < 6]tries to squeeze [his of M] legs together to hide [his of M] soiled diaper as much as possible, but it's so mega-thick that [his of M] thighs are still wide apart[otherwise]squeezes [his of M] legs into the super-thick padding between [his of M] thighs as much as [he of M] can, clearly enjoying the sensation[end if].";
+	otherwise:
+		deinterest M. [Unless there has been a scene trigger, it's up to the player to interact with her]
 
 Part 4 - Wandering
 
@@ -496,8 +512,8 @@ Report going when there is an uninterested mechanic in the location and the mech
 	if the number of monsters in the location of the player is 1 and woman-player is redeploy appropriate:
 		deploy woman-player with woman-status 91;
 		now woman-player is in the location of the player;
-		now woman-player is interested;
-		now mechanic is interested;
+		interest woman-player;
+		interest mechanic;
 		anger mechanic;
 		say "As you arrive here you see that [NameDesc of woman-player] is here on [his of woman-player] knees, with [NameDesc of mechanic] pinning [him of woman-player] down. [big he of mechanic] is holding a wand vibrator to [NameDesc of woman-player][']s genitals through [his of woman-player] [if the woman-bimbo of woman-player > 2]padding[otherwise]outfit[end if].";
 		follow the mechanic tortures berri rule.
@@ -617,7 +633,7 @@ To compute DominatrixInterruption:
 	if clumsy april fools is 1 or dominatrix is in the location or dominatrix is in the room east from the location or (a random number between 1 and 10) is 1:
 		let M be dominatrix;
 		now M is in the location of the player;
-		now M is interested;
+		interest M;
 		anger M;
 		say "[bold type][if clumsy april fools is 1]You accidentally knock two pulleys into each other, which make a loud metal CLANG! [roman type][aprilFoolsClumsyFlav][bold type]Moments later[otherwise]All of a sudden,[end if] [NameDesc of M][bold type] [if dominatrix is in the location of the player]bursts into a fit of rage[otherwise]arrives from the east[end if]![line break][speech style of M]'WHAT HAVE WE HERE? Did I give you permission to interfere in my affairs?! I saw what you were trying to do. Oh [honey of M], you're going to regret that.'[roman type][line break]";
 		now the stance of the player is 1;
@@ -766,8 +782,8 @@ A time based rule (this is the berri ass hook rule):
 		if player-numerical-response is 1:
 			say "You pull down on the hook with all your might.";
 			let S be a random number between 1 and the strength of the player;
-			if debuginfo > 0, say "[input-style]Hook pull roll: Strength d[strength of the player] ([S]) | (9.5) Difficulty[roman type][line break]";
-			if S > 9:
+			if debuginfo > 0, say "[input-style]Hook pull roll: Strength d[strength of the player] ([S]) | (8.5) Difficulty[roman type][line break]";
+			if S > 8:
 				say "Success! You manage to pull down the hook far enough that [NameDesc of woman-player] can detach [his of woman-player] panties and keep them intact.[line break][speech style of woman-player]'Thank you so much, [NameBimbo]! I don't know what I would have done without you...'[roman type][line break]";
 				FavourUp woman-player by 3;
 				now the woman-status of woman-player is 1;
@@ -929,7 +945,7 @@ Report going when the woman-old-bimbo of woman-player is 5 and the woman-bimbo o
 		if matron is interested, say "[BigNameDesc of matron] turns to you.";
 		otherwise say "[BigNameDesc of matron] notices you[if the player is sluttily dressed]![otherwise].[end if]";
 		say "[speech style of matron]'I'll let you decide.'[roman type][line break]";
-		now matron is interested;
+		interest matron;
 		if the traitor-hypno of hypno-lesson is 0, say "Does Berri get to orgasm? [if the player is not a nympho]On one hand it looks like [he of woman-player] really needs it, but on the other hand it might be best not to keep giving into the carnal desires of this game...[end if]";
 		if the traitor-hypno of hypno-lesson > 0 or the player is not consenting:
 			if the traitor-hypno of hypno-lesson > 0:
@@ -1013,6 +1029,7 @@ Check pulling woman-player when the changing-station-tank-scene of woman-player 
 			say "You finally let go of the rope. And then the knot slips loose! [BigNameDesc of woman-player] clearly hadn't done as good of a job as [he of woman-player] thought. The rope flies up and the lid flips open. ";
 			now the changing-station-tank-scene of woman-player is -1;
 			release changing station diapers on the player;
+			say "Countless dirty diapers rain down over [NameDesc of woman-player][']s head too, half-burying [him of woman-player].[line break][speech style of woman-player]'Noooooo-MMMPH!'[roman type][line break][big he of woman-player] makes gagging noises as [he of woman-player] crawls out of the pile.[line break][speech style of woman-player]'Ah fuck, I'm sorry, [NameBimbo]... This went really badly...'[roman type][line break]";
 			WomanSluttify;
 		otherwise:
 			say "[big he of woman-player] takes a few attempts, but [he of woman-player] eventually manages to secure the knot back onto the hook.[line break][speech style of woman-player]'Thank you so much for helping me, [NameBimbo], I couldn't have done it without you!'[roman type][line break]";
@@ -1033,6 +1050,126 @@ Check pulling woman-player when the changing-station-tank-scene of woman-player 
 			WomanSluttify;
 
 
+Chapter - Hole In Wall
+
+To decide which figure-name is the examine-image of (G - hole-in-wall):
+	if the hole-in-wall-scene of woman-player > 0 and woman-player is in HoleInWall:
+		if the hole-in-wall-scene of woman-player is 2:
+			if diaper messing >= 7, decide on Figure of Berri Cutscene 11c;
+			decide on Figure of Berri Cutscene 11b;
+		if the hole-in-wall-scene of woman-player >= 3:
+			decide on Figure of Berri Cutscene 11d;
+		decide on Figure of Berri Cutscene 11a;
+	decide on figure of hole.
+
+To construct unique icons for (T - hole-in-wall):
+	if the hole-in-wall-scene of woman-player > 1 and woman-player is in HoleInWall:
+		add Figure of WetUrineIcon to the list of icons;
+		if diaper messing >= 7, add Figure of MessButton to the list of icons.
+
+hole-in-wall can be facesat-this-turn. [have we already punished the player for having their face in the diaper this turn?]
+
+Check pulling hole-in-wall when the hole-in-wall-scene of woman-player > 0:
+	if woman-player is in HoleInWall:
+		if the player is not able to manually use their hands, do nothing instead;
+		if the player is upright, say "You would need to be on your knees[if the number of worn stuck clothing is 0] and get up close and personal[end if] to do that." instead;
+		allocate 6 seconds;
+		say "You grip the person above their ankles and pull with all your might. The person frantically shakes their padded butt in panic, causing it to repeatedly smush against your face.";
+		if the hole-in-wall-scene of woman-player > 1:
+			now hole-in-wall is facesat-this-turn;
+			if diaper messing >= 7:
+				compute MessyDiaperFacesit of hole-in-wall;
+			otherwise:
+				compute WetDiaperFacesit of hole-in-wall;
+		let R be (a random number between 1 and 12) + (a random number between 1 and 12);
+		if debuginfo > 0, say "[input-style]Pulling Berri out check: Player strength ([strength of the player].5) | ([R]) = 2d12 difficulty rating[roman type][line break]";
+		if the strength of the player >= R:
+			say "With a powerful tug from your arms, you successfully yank the person loose, and they fall backwards out of the hole!";
+			compute berri hole in wall exit;
+		otherwise:
+			say "The person doesn't budge[if the strength of the player > 1] this time. But you can always try again - surely you'll get them out eventually[otherwise]. You're so impossibly weak that you'll never be able to pull them out[end if]!";
+		do nothing instead;
+
+A later time based rule (this is the berri hole in wall rule):
+	if the hole-in-wall-scene of woman-player > 0 and woman-player is in HoleInWall:
+		if the hole-in-wall-scene of woman-player is 1: [not soiled yet]
+			if a random number between 1 and 2 is 1:
+				if the player is in the location of hole-in-wall:
+					say "The person's wiggling and shaking becomes more and more frantic, and then it becomes clear why. ";
+					if there is a worn stuck headgear:
+						compute DiaperFacesitStart of hole-in-wall;
+					otherwise if diaper messing >= 7:
+						say "With a loud rasping sound, they unleash a torrent of horrible brown enema water into their diaper. The smell immediately begins to fill the room. Now if you want to help them escape, you're going to have to put your face right up near that stinky soiled padding...";
+					otherwise:
+						say "With a loud hissing sound, they unleash a torrent of [urine] into their diaper. Now if you want to help them escape, you're going to have to put your face right up near that soggy soiled padding...";
+				now the hole-in-wall-scene of woman-player is 2;
+			otherwise if the player is in the location of hole-in-wall:
+				say "The person stuck in the wall is [one of]wiggling[or]shaking[cycling] their diapered butt erratically.";
+		otherwise if the player is in the location of hole-in-wall: [already soiled]
+			if there is a worn stuck headgear:
+				if hole-in-wall is not facesat-this-turn:
+					if diaper messing >= 7:
+						compute MessyDiaperFacesit of hole-in-wall;
+					otherwise:
+						compute WetDiaperFacesit of hole-in-wall;
+				if diaper messing >= 7 and a random number between 1 and 2 is 1:
+					say "Another loud low rumble lets you know that more enema expulsion is imminent! ";
+					if the player is not tolerating messy diapers:
+						let TXT be substituted form of "As you scrunch up with [if the diaper addiction of the player < a random number between 8 and 11]horror[otherwise]trepidation[end if],";
+						FearUp (20 - the diaper addiction of the player) with reason TXT;
+					otherwise:
+						say "[if the player is a nympho or the player is enjoying messy diapers]You[otherwise]Despite your better judgement, you[end if] feel yourself getting turned on.";
+					compute MessyDiaperFacesitExpulsion of hole-in-wall;
+					now the hole-in-wall-scene of woman-player is 3;
+			otherwise if diaper messing >= 7 and a random number between 1 and 2 is 1:
+				say "After another loud low rumble, the messy padded butt's sphincter opens again, and another torrent of brown enema water, just as big as the last, floods into the diaper! It expands to a ridiculous size to contain all the nasty goop!";
+				now the hole-in-wall-scene of woman-player is 3;
+			if a random number between 1 and 20 is 1:
+				say "With a stroke of luck, the person seems to find the perfect angle, and is able to begin to wriggle themselves free! A couple of moments later, and they are out!";
+				compute berri hole in wall exit;
+		otherwise: [already soiled and player isn't there]
+			compute berri hole in wall exit;
+		if the hole-in-wall-scene of woman-player is 3, increase turnsWithSoiledDiaper by 2;
+		now hole-in-wall is not facesat-this-turn;
+
+To compute berri hole in wall exit:
+	now woman-player is in the location of hole-in-wall;
+	now the woman-status of woman-player is 25;
+	deinterest woman-player;
+	now the refractory-period of woman-player is 0;
+	repeat with H running through stuck headgear:
+		if H is held or H is in the location of woman-player, now H is not stuck;
+	if woman-player is in the location of the player, say "As the person's face emerges from the hole, you discover who it is. It's [NameDesc of woman-player]! [big he of woman-player] looks very flustered and embarrassed.";
+	now the woman-diaper-state of woman-player is 0;
+	if the hole-in-wall-scene of woman-player is 2:
+		now the woman-diaper-state of woman-player is 1;
+		if diaper messing >= 7:
+			now the woman-latest-diaper-state of woman-player is the woman-diaper-state of woman-player;
+		otherwise if woman-player is in the location of the player: [she was only wet in the hole but actually she's messed. let's explain that here]
+			say "Suddenly, [NameDesc of woman-player][']s sphincter gives way, and [he of woman-player] involuntarily unleashes a huge stinky enema into [his of woman-player] giant diaper. It's very loud and undeniably foul.";
+			say "[variable custom style][if the player is able to speak]'Uh-oh. You really need a change now...'[otherwise]Uh-oh. Somebody really needs a change now...[end if][roman type][line break]";
+			now the woman-latest-diaper-state of woman-player is 0; [this will make sure that the periodic stuff updates her diaper state]
+		if diaper messing >= 4, now the refractory-period of woman-player is the messRefractoryLimit of woman-player + 40; [she's going to go again real soon]
+	otherwise if the hole-in-wall-scene of woman-player >= 3:
+		now the woman-diaper-state of woman-player is 2;
+		now the woman-latest-diaper-state of woman-player is the woman-diaper-state of woman-player;
+	otherwise: [she's bursting]
+		now the refractory-period of woman-player is the messRefractoryLimit of woman-player + 19;
+	now the hole-in-wall-scene of woman-player is -1;
+	if woman-player is in the location of the player:
+		check guaranteed perception of woman-player;
+		interest woman-player;
+		FavourUp woman-player;
+		say "[BigNameDesc of woman-player] notices you![line break][speech style of woman-player]'Oh my gosh, thank you so much for saving me! I can't believe you saw me stuck like this... [if the woman-diaper-state of woman-player > 0]And losing control in my diaper like that... [end if]How embarrassing! I'm so sorry, I'm such a failure! I haven't been able to stay out of diapers at all! At this rate, I think I'm going to be stuck like this. I'm just hoping... If I try my best... I can fight this place's attempts to make me grow to enjoy it...'[roman type][line break]".
+
+To construct unique buttons for (D - hole-in-wall):
+	if the hole-in-wall-scene of woman-player > 0 and woman-player is in HoleInWall and ButtonTableFull is 0:
+		choose a blank row in the Table of Buttons;
+		now the ButtonImage entry is figure of TakeAllButton;
+		now the ButtonCommand entry is "pull [text-shortcut of D]";
+		now the ButtonColour entry is lightModeFullGreen;
+		if the player is upright, now the ButtonColour entry is lightModeFullYellow; [turn yellow - need to be kneeling]
+		if the player is immobile or the player is in danger or the player is flying, now the ButtonColour entry is lightModeFullRed. [turn red - player immobile]
 
 Part 5 - Protection
 
@@ -1043,12 +1180,12 @@ To compute protection of (M - woman-player):
 	if the player is flying:
 		now M is uninterested;
 	otherwise if X is M:
-		if the woman-status of M is 96 and the patron-scene-done of M is 1 and M is in the location of the player:
-			compute patron scene climax of M;
-		otherwise:
-			compute wandering of M;
+		compute unique interaction of M;
 	otherwise:
 		compute M protecting against X;
+
+To compute unique interaction of (M - woman-player):
+	compute wandering of M.
 
 To compute (M - woman-player) protecting against (X - a monster):
 	if the woman-status of M >= 80:
@@ -1077,6 +1214,8 @@ To compute (M - woman-player) protecting against (X - a monster):
 Part 6 - Combat
 
 Section 0 - Punishment
+
+The berri diaper quest rules is a rulebook. The diaper quest rules of woman-player is the berri diaper quest rules.
 
 This is the woman unique punishment rule:
 	let M be woman-player;
@@ -1119,6 +1258,7 @@ This is the woman unique punishment rule:
 			say "[speech style of M]'[if face is not actually occupied and the woman-bimbo of M >= 5]Fine, I guess you'll just have to sit there and watch!'[otherwise if the woman-bimbo of M >= 5]Look how squishy it is!'[otherwise if face is actually occupied]Take a close look, bitch. This is what you're gonna be grinding your face into one of these days soon.'[otherwise]How rebellious. Are you sure you don't want a smell?'[end if][roman type][line break][big he of M] pushes both hands into the seat of [his of M] butt, causing it to make loud plastic rustling sounds, and wet squelching sounds underneath. [big he of M] moans loudly in pleasure as [he of M] keeps pleasuring [himself of M] through [his of M] nappy. [if the player is not a nympho]You find yourself becoming desensitised to such lewd displays - it's pretty normal for this kind of game[otherwise]You find yourself staring deep inside with glee and wonder in your eyes[end if]. [big he of M] brings [himself of M] to a screaming orgasm through [his of M] padding, right in front of your face. [big he of M] laughs and then stands back up.";
 			SexAddictUp 1;
 	satisfy M.
+The woman unique punishment rule is listed in the berri diaper quest rules.
 
 Section 1 - Fighting
 
@@ -1253,7 +1393,7 @@ To compute basic greeting to (M - woman-player):
 		say "[speech style of M]'Thank you so much for saving me from that toilet prison. It was on a timer and if nobody saved me within the next few minutes, it would have locked permanently!'[roman type][line break]";
 	otherwise:
 		say "[speech style of M]'I'm not sure I want to talk right now.'[roman type][line break]";
-	now M is interested;
+	interest M;
 	now the woman-old-bimbo of M is the woman-bimbo of M;
 	now the old-name of M is the current-name of M;
 	now the old-title of M is the current-title of M.

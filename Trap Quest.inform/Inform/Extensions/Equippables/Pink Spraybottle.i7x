@@ -119,7 +119,7 @@ To compute (S - pink-spraybottle) breaking:
 			unless there is a worn cursed maid headdress, now S is cursed;
 			if mechanic is reactive:
 				say "[speech style of mechanic]'That's coming out of your pay-check you clumsy bitch!'[roman type][line break][BigNameDesc of mechanic] looks furious.";
-				now mechanic is interested;
+				interest mechanic;
 				anger mechanic;
 			if the work ethic of S > -100, now the work ethic of S is -100;
 	otherwise:
@@ -163,7 +163,7 @@ To compute spraybottle punishment:
 			FatigueUp 30;
 			bodyruin 1;
 			if number of ass covering clothing < 1:
-				PainUp 1;
+				PainUp 10;
 			otherwise:
 				say "[variable custom style]Ow, that's mean![roman type][line break]";
 		otherwise if a random number between 1 and 3 is 1 and O is transformation chain transformable clothing:

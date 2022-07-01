@@ -69,10 +69,10 @@ To CheckActivation of (C - a video-monitor):
 To beginCall of (C - a video-monitor):
 	let M be the video-caller of C;
 	now the currentlyOn of C is 1;
-	say "[bold type]Suddenly, you hear the sound of your computer making a video call. [roman type]You look up with a start and see that yes indeed, your PC monitor is now wide awake, and with that green calling symbol over a blue background. Moments later, the video call is answered, and [if M is slutty sister]the face of one of the Nintendolls who put you in this game, along with the faces of several unfamiliar people in suits. [otherwise][FriendStatus of M][end if][NewAppearanceReaction of M][NewCircumstanceReaction of M][FriendRespond to M]".
+	say "[bold type]Suddenly, you hear the sound of your computer making a video call. [roman type]You look up with a start and see that yes indeed, your PC monitor is now wide awake, and with that green calling symbol over a blue background. Moments later, the video call is answered, and [if M is slutty sister]the face of one of the Nintendolls who put you in this game, along with the faces of several unfamiliar people in suits.[otherwise][FriendStatus of M][end if][NewAppearanceReaction of M][NewCircumstanceReaction of M][FriendRespond to M]".
 
 To say FriendStatus of (M - a monster):[The status of your friend could potentially change]
-	say "the face of your [RelationDesc of M] [MediumDesc of M] is staring back at you. ";
+	say "the face of your [RelationDesc of M] [MediumDesc of M] is staring back at you.";
 
 [Two important things:
 Favour
@@ -278,7 +278,7 @@ To say HumiliatingSlideDesc (N - a number):
 To beginCall of (C - pc-monitor):
 	let M be the video-caller of C;
 	now the currentlyOn of C is 1;
-	say "[bold type]Suddenly, you hear the sound of your computer making a video call. [roman type]You look up with a start and see that yes indeed, your PC monitor is now wide awake, and with that green calling symbol over a blue background. Moments later, the video call is answered, and [if M is slutty sister]the face of one of the Nintendolls who put you in this game, along with several unfamiliar people in suits appear. [otherwise][FriendStatus of M][end if][NewAppearanceReaction of M][NewCircumstanceReaction of M][FriendRespond to M]".
+	say "[bold type]Suddenly, you hear the sound of your computer making a video call. [roman type]You look up with a start and see that yes indeed, your PC monitor is now wide awake, and with that green calling symbol over a blue background. Moments later, the video call is answered, and [if M is slutty sister]the face of one of the Nintendolls who put you in this game, along with several unfamiliar people in suits appear.[otherwise][FriendStatus of M][end if][NewAppearanceReaction of M][NewCircumstanceReaction of M][FriendRespond to M]".
 
 [There is a pc-monitor in Mansion02. ]
 
@@ -417,8 +417,7 @@ Check entering security interface:
 	dislodge security interface;
 	do nothing instead.
 
-
-Check inserting it into security interface:
+Check inserting it into while the second noun is security interface:
 	if the player is flying, say "You're not even on the ground!" instead;
 	if the noun is the player, say "You wouldn't fit!" instead;
 	if the noun is not held, say "You need to be holding it." instead;
@@ -440,6 +439,7 @@ Check inserting it into security interface:
 		say "You put the [ShortDesc of the noun] in the chute, which closes. A feminine robotic voice speaks:[line break][second custom style]'SCANNING...'[roman type][line break]";
 		if the noun is soiled-diaper:
 			if the diaper-origin of the noun matches the text "mechanic" or the diaper-origin of the noun matches the text "pimp" or the diaper-origin of the noun matches the text "Xavier", now authentication-success is true;
+		if mechanic is inseminating the noun or pimp is inseminating the noun or demon lord is inseminating the noun, now authentication-success is true;
 		only destroy the noun;
 	if authentication-success is true:
 		say "[second custom style]'AUTHORISED DNA DETECTED. WELCOME BACK, SIR.'[roman type][line break]The screen turns green, and the metal door slides open!";
@@ -468,12 +468,24 @@ To construct unique buttons for (T - security interface):
 				now the ButtonCommand entry is "insert [text-shortcut of V] in [text-shortcut of T]";
 				now the ButtonColour entry is lightModeFullGreen;
 				if V is worn, now the ButtonColour entry is lightModeFullYellow;
+		if id-card is held and ButtonTableFull is 0:
+			choose a blank row in the Table of Buttons;
+			now the ButtonImage entry is examine-image of id-card;
+			now the ButtonCommand entry is "insert [text-shortcut of id-card] in [text-shortcut of T]";
+			now the ButtonColour entry is lightModeFullGreen;
 		repeat with S running through held soiled-diapers:
 			if ButtonTableFull is 0:
 				choose a blank row in the Table of Buttons;
 				now the ButtonImage entry is examine-image of S;
 				now the ButtonCommand entry is "insert [text-shortcut of S] in [text-shortcut of T]";
 				now the ButtonColour entry is lightModeFullGreen;
+		repeat with S running through held clothing:
+			if total condoms of S > 0 and ButtonTableFull is 0:
+				choose a blank row in the Table of Buttons;
+				now the ButtonImage entry is examine-image of S;
+				now the ButtonCommand entry is "insert [text-shortcut of S] in [text-shortcut of T]";
+				now the ButtonColour entry is lightModeFullGreen;
+				if S is worn, now the ButtonColour entry is lightModeFullYellow;
 	otherwise if ButtonTableFull is 0:
 		choose a blank row in the Table of Buttons;
 		now the ButtonImage entry is Figure of map stairs down;

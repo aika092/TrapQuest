@@ -113,7 +113,7 @@ To compute MasturbationReaction of (M - an adult baby slave):
 	if M is friendly or M is uninterested:
 		say "[speech style of M]'If you were in the mood to play, why didn't you say so?'[roman type][line break]It seems like [he of M] took your self-pleasure as an invitation, whether you intended it to be or not.";
 		anger M;
-		now M is interested;
+		interest M;
 		now the sex-length of M is 3.
 
 To compute BabyChairReaction of (M - an adult baby slave):
@@ -156,14 +156,12 @@ To say LewdTrapReactFlav of (M - an adult baby slave):
 Part 2 - Perception
 
 To compute perception of (M - an adult baby slave):
-	now M is interested;
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
 	if the class of the player is living sex doll:
 		say "It doesn't look like [he of M]'s interested in you.";
 		bore M;
 	otherwise if M is bratty adult baby slave and the times-met of M is 0:
 		say "[speech style of M]'Hey! I wanna play! Get down on your hands and knees and play with me!'[roman type][line break]It doesn't seem like [he of M]'s willing to take no for an answer.";
-		now M is interested;
 		anger M;
 		now the sex-length of M is 3;
 	otherwise if M is angelic adult baby slave and (there is a worn diaper or the diaper-duration of M > 0) and the player is immobile:
@@ -225,7 +223,7 @@ This is the adult baby slave gets bored rule:
 To say GroundPeeReaction of (M - a bratty adult baby slave):
 	if M is friendly or M is uninterested:
 		say "[speech style of M]'That's naughty! If you can't control your pee, you obviously need diapers! Let's see what [daddytitle of matron] has to say about this!'[roman type][line break]";
-		now M is interested;
+		interest M;
 		now current-monster is M;
 		now the ToMatron of M is 1;
 		if the stance of the player is 0 and the ToMatron of M is 1:
@@ -235,7 +233,7 @@ To say GroundPeeReaction of (M - a bratty adult baby slave):
 
 To say GroundPeeReaction of (M - an angelic adult baby slave):
 	say "[speech style of M]'That's naughty! If you can't control your pee, you obviously need diapers!'[roman type][line break][big he of M] adopts an aggressive stance.";
-	now M is interested;
+	interest M;
 	anger M.
 
 To say ClothesPeeReaction of (M - an adult baby slave):
@@ -255,17 +253,15 @@ This is the adult baby slave obeys guard rule:
 					humiliate 50;
 				otherwise:
 					say "[one of][BigNameDesc of M] barks an order.[line break][speech style of M]'You! Spank [him of the player] at the same time as me.'[roman type][line break][BigNameDesc of current-monster] looks at you and hesitates for only a brief moment, before bringing [his of current-monster] hand powerfully across your [buttcheeks]. It stings painfully![or][BigNameDesc of current-monster] giggles, slapping your [buttcheeks] roughly as [he of current-monster] does, purposefully hurting you.[or][BigNameDesc of current-monster] laughs with glee.[line break][speech style of current-monster]'Yes, yes! [big he of current-monster] started it! Spank [him of the player] harder!'[line break][speech style of M]'Silence!'[roman type][line break][BigNameDesc of M] sounds angry at [him of current-monster], but does as [he of current-monster] says, dealing even more brutal slap to your [buttcheeks].[then at random]";
-					PainUp 1;
+					PainUp 10;
 		otherwise:
 			say "The [random royal guard in the location of the player] yells angrily.[line break][first custom style]'NO CAT-FIGHTING! [one of]GET ON THE GROUND NOW, BABIES[or]Assume the position, and I will administer your punishment[or]DOWN ON THE GROUND, [if the number of adult baby slaves in the location of the player > 1]ALL[otherwise]BOTH[end if] OF YOU[in random order]!'[roman type][line break]";
 			repeat with M running through royal guards in the location of the player:
 				anger M;
-				now M is interested;
-				now the boredom of M is 0;
+				interest M;
 			repeat with M running through awake adult baby slaves in the location of the player:
 				anger M;
-				now M is interested;
-				now the boredom of M is 0;
+				interest M;
 				now the guard-obedience of M is 1;
 				say "[BigNameDesc of M] [one of]obediently[or]instantly[or]silently[or]immediately[in random order] drops to the ground, and lying face down, assumes [one of]a submissive position with [his of M] hands behind [his of M] head, like a prisoner[or]the position[stopping].";
 		rule succeeds;
@@ -593,7 +589,7 @@ To compute damage reaction of (M - an adult baby slave):
 		if the sleep of M is 0:
 			say "[big he of M] wakes up, yelping and rubbing [his of M] eyes groggily before registering that you hit [him of M], leaping at you with rage once [he of M] makes the connection between you and [his of M] new pain.";
 			now the sex-length of M is a random number between 3 and 4;
-			now M is interested;
+			interest M;
 			anger M;
 		otherwise:
 			say "[big he of M][']s still sleeping like a baby.".

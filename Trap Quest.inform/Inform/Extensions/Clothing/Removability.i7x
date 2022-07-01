@@ -143,6 +143,12 @@ Carry out taking off cursed clothing:
 		increase the stolen-strength of the noun by 1;
 		decrease the raw strength of the player by 1.
 
+Carry out taking off strength stealing clothing:
+	if the raw strength of the player > 1:
+		say "As you take off [NameDesc of the noun], it takes some of your strength with it, as if to make sure that you want to put it back on.";
+		increase the stolen-strength of the noun by 1;
+		decrease the raw strength of the player by 1.
+
 This is the locked unremovable rule:
 	if wearing-target is locked clothing:
 		if autoremove is false and summoning is 0, say "It's locked on! You'll need to find someone with a key.";

@@ -50,7 +50,7 @@ To compute unique periodic effect of (H - domino-mask):
 		if V is nothing or the video-caller of V is the throne, progress quest of hero-quest. [not in a call]
 
 
-wrestler-hood is an eye-mask. wrestler-hood is plastic. wrestler-hood is redness-positive. wrestler-hood is hair growing. wrestler-hood is zap ready. Understand "wrestler", "hood" as wrestler-hood. wrestler-hood has a number called charge.
+wrestler-hood is an eye-mask. wrestler-hood is latex. wrestler-hood is redness-positive. Understand "wrestler", "hood" as wrestler-hood. wrestler-hood has a number called charge.
 
 Figure of wrestler-hood is the file "Items/Accessories/Head/wrestlerhood1.png".
 

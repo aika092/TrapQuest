@@ -70,6 +70,8 @@ To decide which figure-name is the monster-image of (M - woman-player):
 	if bukkake fetish is 1, decide on figure of woman 5b;
 	decide on figure of woman 5a.
 
+To decide which figure-name is the examine-image of (G - hole-in-wall):
+	decide on figure of hole.
 [
 Condition for barbara being male
 if (tg fetish is 1 and the woman-bimbo of M < 2 and lady fetish is not 1) or lady fetish is 2:
@@ -199,6 +201,12 @@ To compute (M - demon lord) stomping (N - woman-player):
 		destroy N;
 	otherwise:
 		vanish N.
+
+To compute perception of (M - woman-player):
+	if M is angered:
+		say "[BigNameDesc of M] notices you![line break][speech style of M]'[one of][if the woman-bimbo of M < 5]You! How could you treat me so poorly?! I'm not going to let you get away with it any more!'[otherwise]Hey sexy. You've taught me some valuable lessons in how to be a good friend. I think it's time for me to return to favour...'[end if][or]You still haven't lost? Let's go again, then!'[or]Hi again, bitch.'[stopping][roman type][line break][big he of M] starts walking towards you.";
+	otherwise:
+		deinterest M. [Unless there has been a scene trigger, it's up to the player to interact with her]
 
 Part 3 - Compute woman Spawning
 
@@ -430,8 +438,8 @@ Report going when there is an uninterested mechanic in the location [of the play
 	if the number of monsters in the location of the player is 1 and woman-player is redeploy appropriate:
 		deploy woman-player with woman-status 91;
 		now woman-player is in the location of the player;
-		now woman-player is interested;
-		now mechanic is interested;
+		interest woman-player;
+		interest mechanic;
 		anger mechanic;
 		say "As you arrive here you see that [NameDesc of woman-player] is here on [his of woman-player] knees, with [NameDesc of mechanic][']s [DickDesc of mechanic] firmly lodged in [his of woman-player] throat. [big he of mechanic] is holding [him of woman-player] roughly by the hair and forcing [his of woman-player] head forward and back, using [his of woman-player] mouth as [his of mechanic] personal onahole.";
 		follow the mechanic facefucks barbara rule.
@@ -559,7 +567,7 @@ To compute DominatrixInterruption:
 	if clumsy april fools is 1 or dominatrix is in the location or dominatrix is in the room east from the location or (a random number between 1 and 10) is 1:
 		let M be dominatrix;
 		now M is in the location of the player;
-		now M is interested;
+		interest M;
 		anger M;
 		say "[bold type][if clumsy april fools is 1]You accidentally knock two pulleys into each other, which make a loud metal CLANG! [roman type][aprilFoolsClumsyFlav][bold type]Moments later[otherwise]All of a sudden,[end if] [NameDesc of M][bold type] [if dominatrix is in the location of the player]bursts into a fit of rage[otherwise]arrives from the east[end if]![line break][speech style of M]'WHAT HAVE WE HERE? Did I give you permission to interfere in my affairs?! I saw what you were trying to do. Oh [honey of M], you're going to regret that.'[roman type][line break][big he of M] crosses [his of M] arms at the wrists, making an intricate sign with [his of M] fingers.[line break][speech style of M]'Mutanretla Menimoh.'[roman type][line break]Your head feels funny... And then your body feels funny. You try to move your hands but they are glued to your buttcheeks, holding your [asshole] open wide. Your ankles are dangling high in the air above your face, attached to ropes and pulleys. Your legs feel completely exhausted. [NameDesc of woman-player] is looking down at you with [horror (the woman-bimbo of woman-player * 4)] from a kneeling position next to you. You've somehow swapped positions with [him of woman-player]!";
 		repeat with C running through worn total protection clothing:
@@ -678,7 +686,7 @@ To compute patron scene of (W - woman-player):
 	now the woman-status of W is 96;
 	now the patron-scene-done of W is 1;
 	increase patronbed uses by 1;
-	now W is interested;
+	interest W;
 	say "[first custom style]'Hey everyone, get in here!'[roman type][line break]A hidden door opens from the opposite wall, and you watch [the number of patrons in the location of the player] patrons stride in, each with a bottle of beer in one hand and a party hat on their head. [if the number of N-viable directions is 1]A modesty barrier comes[otherwise]Modesty barriers come[end if] down, preventing either of you from leaving[if W is asleep]. [BigNameDesc of W] wakes up with a start[end if].[line break][first custom style]'We've paid a lot of money to be allowed to have two of you at once, so you'd better follow everything we say.'[roman type][line break]A look of [if the bimbo of the player < 5]horror[otherwise if the bimbo of the player < 10]uncertainty[otherwise]understanding[end if] passes between you and [NameDesc of W]. Whether you fight or fuck them, this is going to be a great challenge. One of the older patrons speaks first.[line break][first custom style]'Okay, let's get this party started[if the player is upright]. On your knees, bitches[end if].'[roman type][line break]";
 	now the sleep of W is 0;
 	now a random modesty shutter is in the location of the player.
@@ -810,6 +818,17 @@ To compute patron scene climax of (W - woman-player):
 		DoseDown fishbowl by the doses of fishbowl;
 		now the patron-scene-done of W is 3;
 	if the patron-scene-done of W >= 2:
+		repeat with M running through patrons in the location of the player:
+			now current-monster is M;
+			repeat with G running through temporarily-removed sex toys carried by M:
+				if the player is possessing a vagina and G is not plug, compute replacement of G in vagina;
+				otherwise compute replacement of G in asshole;
+			repeat with D running through temporarily-removed diapers carried by M:
+				compute replacement of D;
+			repeat with C running through worn clothing:
+				compute replacement of C; [this only does something if it's displaced or unzipped]
+			repeat with C running through temporarily-removed clothing carried by M:
+				compute replacement of C;
 		say "All the patrons cheerfully chat to each other, patting each other on the back and congratulating each other on a good job well done, as they all leave the way they came[unless fishbowl-hat is worn], taking the bowl with them[end if].";
 		now fishbowl is in Holding Pen;
 		repeat with M running through alive patrons:
@@ -994,7 +1013,7 @@ This is the woman gives birth to a tentacle monster rule:
 			distract woman-player;
 			now the sleep of woman-player is 100;
 			increase the delayed sluttification of woman-player by 1;
-			now M is interested;
+			interest M;
 			anger M;
 			rule succeeds.
 The woman gives birth to a tentacle monster rule is listed last in the woman wandering rules.
@@ -1008,12 +1027,15 @@ To compute protection of (M - woman-player):
 	if the player is flying:
 		now M is uninterested;
 	otherwise if X is M:
-		if the woman-status of M is 96 and the patron-scene-done of M is 1 and M is in the location of the player:
-			compute patron scene climax of M;
-		otherwise:
-			compute wandering of M;
+		compute unique interaction of M;
 	otherwise:
 		compute M protecting against X;
+
+To compute unique interaction of (M - woman-player):
+	if the woman-status of M is 96 and the patron-scene-done of M is 1 and M is in the location of the player:
+		compute patron scene climax of M;
+	otherwise:
+		compute wandering of M.
 
 To compute (M - woman-player) protecting against (X - a monster):
 	if the woman-status of M is 96 and X is patron:
@@ -1228,7 +1250,7 @@ To compute basic greeting to (M - woman-player):
 		say "[speech style of M]'Thank you so much for saving me from that toilet prison. It was on a timer and if nobody saved me within the next few minutes, it would have locked permanently!'[roman type][line break]";
 	otherwise:
 		say "[speech style of M]'I'm not sure I want to talk right now.'[roman type][line break]";
-	now M is interested;
+	interest M;
 	now the woman-old-bimbo of M is the woman-bimbo of M;
 	now the old-name of M is the current-name of M;
 	now the old-title of M is the current-title of M.

@@ -62,7 +62,7 @@ Carry out kneeing:
 	now attack-type is 2;
 	reset submitted monsters;
 	increase the fat-burning of the player by 30;
-	if the noun is human intelligent male monster and the noun is not dark skinned and queen-of-spades-stockings is worn and the player is getting very lucky:
+	if the noun is intelligent male monster and the noun is pale skinned and queen-of-spades-stockings is worn and the player is getting very lucky:
 		say "Your [queen-of-spades-stockings] guide your knee to the perfect hit, right into [NameDesc of the noun][']s crotch. Not only does [he of the noun] buckle over with pain, but [he of the noun] also groans as [he of the noun] suffers an embarrassing spontaneous ejaculation, right there in front of you. [GotLuckyFlav]";
 		compute defeat of the noun;
 		compute upright fatigue gain;

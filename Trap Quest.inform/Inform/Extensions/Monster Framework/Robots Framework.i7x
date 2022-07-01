@@ -205,6 +205,12 @@ To compute default cage stuck taunting of (M - a robot):
 	say "[BigNameDesc of M][']s eyes turn yellow.[line break][speech style of M]'ERROR: SUBJECT'S [']TIME OUT['] PROCEDURE CANNOT BE INTERRUPTED. WE HOPE YOU FIND YOUR STAY COMFORTABLE.'[roman type][line break]";
 	satisfy M.
 
+To compute boring spit reaction of (M - a robot):
+	do nothing.
+
+To compute disgusting spit reaction of (M - a robot):
+	say "[BigNameDesc of M][']s eyes turn yellow.[line break][speech style of M]'UNSANITARY LEAKAGE DETECTED. THIS INCIDENT HAS BEEN LOGGED.'[roman type][line break]".
+
 Part - DQ
 
 To say DiaperChangeStart of (M - a robot):
@@ -279,15 +285,7 @@ To compute unique banishment of (M - a robot):
 	now the leftover-type of L is the leftover-type of M; [robots leave a corpse behind that the mechanic can fix.]
 	now L is in the location of the player.
 
-To finally destroy (M - a robot):
-	uniquely destroy M;
-	now the times-met of M is 0;
-	[now the blue-balls of M is 0;]
-	now the times-submitted of M is 0;
-	now the times-dominated of M is 0;
-	now the sex-length of M is 0;
-	now the collar-pulled of M is 0;
-	remove M from play;
-	reset M.
+To unique reset (M - a robot):
+	do nothing. [don't reset blue-balls]
 
 Robots Framework ends here.

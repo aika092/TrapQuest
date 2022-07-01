@@ -103,6 +103,12 @@ This is the sex doll can't wear new clothes rule:
 		rule fails.
 The sex doll can't wear new clothes rule is listed in the global wearability rules.
 
+This is the wrist collar bar prevents clothes manipulation rule:
+	if summoning is 0 and wrist collar bar is worn:
+		if autowear is false, say "Your hands are being held next to your neck by your [wrist collar bar], so how would you do that?";
+		rule fails.
+The wrist collar bar prevents clothes manipulation rule is listed in the global wearability rules.
+
 
 This is the purity for virgins rule:
 	if wearing-target is purity clothing and the vaginalvirgin of the player is 0:

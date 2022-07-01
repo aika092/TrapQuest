@@ -12,7 +12,7 @@ To decide which number is the penis-capacity of (C - a g-string):
 	decide on 0.
 To decide which number is the crotch-tightness of (C - a g-string):
 	decide on 4.
-To decide which number is the hipModesty of (C - a g-string):
+To decide which number is the assModesty of (C - a g-string):
 	decide on 1.
 
 To say TypeTitle of (G - a g-string):

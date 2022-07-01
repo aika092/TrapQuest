@@ -16,6 +16,7 @@ Definition: a real-life patron is wenchy: decide no.
 Definition: a real-life patron is father material: decide no.
 
 To unique reset (M - a real-life patron):
+	now the blue-balls of M is 0;
 	now the text-shortcut of M is the substituted form of "[MediumDesc of M]".
 
 Definition: a real-life patron (called P) is generic-appropriate:
@@ -168,7 +169,7 @@ To say FriendRespond to (M - a real-life patron):
 		let N be a random combative monster;
 		if N is patron and diaper quest is 0:
 			if the player is able to speak:
-				say "[variable custom style]'Well, [he of N]'s trying to pay me for sex- BUT! But, I'm not going to play along! This isn't even real-'-[roman type]Your attempt to explain the insane situation is hindered by a chuckle from [if the number of patrons in the location of the player > 1]one of the half-naked [men of N][otherwise]the half-naked [man of N][end if] behind you.[line break][speech style of M]'Haha, yeah, sure, I'm a figment of your imagination. Tell yourself whatever you have to, Sunshine, but you're not getting paid until my imaginary [DickDesc of M] has jizzed its imaginary load.'[roman type][line break]You turn bright red.";
+				say "[variable custom style]'Well, [he of N]'s trying to pay me for sex- BUT! But, I'm not going to play along! This isn't even real-'-[line break][roman type]Your attempt to explain the insane situation is hindered by a chuckle from [if the number of patrons in the location of the player > 1]one of the half-naked [men of N][otherwise]the half-naked [man of N][end if] behind you.[line break][speech style of M]'Haha, yeah, sure, I'm a figment of your imagination. Tell yourself whatever you have to, Sunshine, but you're not getting paid until my imaginary [DickDesc of M] has jizzed its imaginary load.'[roman type][line break]You turn bright red.";
 				humiliate SLIGHT-HUMILIATION;
 			otherwise:
 				say "[variable custom style]Oh no! Now [he of M] thinks I'm a prostitute![roman type][line break]";

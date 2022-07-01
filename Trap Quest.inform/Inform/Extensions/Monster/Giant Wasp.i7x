@@ -143,7 +143,6 @@ To compute perception of (M - a giant wasp):
 	if the player-class is broodmother:
 		say "[BigNameDesc of M] seems to notice you, and begins buzzing protectively around you!";
 		calm M;
-		now M is interested;
 	otherwise if the medium egg count of belly > 0:
 		say "[BigNameDesc of M] seems to notice you, and starts following you around passively!";
 		calm M;
@@ -557,25 +556,25 @@ To compute perception of (M - domesticated wasp):
 		otherwise:
 			say "[BigNameDesc of M] and [his of M] rider seem to notice you![line break][speech style of fairy-witch]'[big he of the player]'s perfect breeding material! Get [him of the player]!'[roman type][line break] The fairy snaps [his of fairy-witch] reins as the wasp heads straight for you!";
 		anger M;
-		now M is interested;
+		interest M;
 	otherwise if F is 1:
 		if E is 1:
 			say "[BigNameDesc of M] flies up to you, and [his of M] rider looks you up and down.[line break][speech style of fairy-witch]'Hey. You look pretty cool!'[roman type][line break]";
 		otherwise:
 			say "[BigNameDesc of M] flies right up to you, and [his of M] rider pulls back sharply on the reins.[line break][speech style of fairy-witch]'You should hang out with me if you need someone to show you the ropes.'[roman type][line break]";
 			FavourDown M by 1;
-		now M is interested;
+		interest M;
 	otherwise if the class of the player is faerie or the class of the player is priestess:
 		say "[BigNameDesc of M] flies up to you, and [his of M] rider looks you up and down.[line break][speech style of fairy-witch]'I've got my eye on you. Don't try anything funny, loser.'[roman type][line break]";
 		FavourDown M by 2;
-		now M is interested;
+		interest M;
 	otherwise if E is 1:
 		say "[BigNameDesc of M] and [his of M] rider notice you! They lose interest.";
 		calm M;
 		now M is uninterested;
 	otherwise:
 		say "[BigNameDesc of M] seems to notice you, and [his of M] rider giggles as [he of M] flies toward you aggressively.";
-		now M is interested;
+		interest M;
 		anger M.
 
 To compute (M - domesticated wasp) protecting against (X - a monster):

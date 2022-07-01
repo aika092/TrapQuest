@@ -57,10 +57,10 @@ Check going south:
 	now the travel-opposite of the player is north;
 
 Check going up:
-	if there is a golem in the location of the player, say "[bold type][BigNameDesc of golem] stands in front of the stairwell, blocking the way. [roman type]You're going to need to deal with [him of golem] first!" instead.
+	if there is a golem in the location of the player, say "[bold type][BigNameDesc of golem] [bold type]stands in front of the stairwell, blocking the way. [roman type]You're going to need to deal with [him of golem] first!" instead.
 
 Check going down:
-	if there is a golem in the location of the player, say "[bold type][BigNameDesc of golem] stands in front of the stairwell, blocking the way. [roman type]You're going to need to deal with [him of golem] first!" instead.
+	if there is a golem in the location of the player, say "[bold type][BigNameDesc of golem] [bold type]stands in front of the stairwell, blocking the way. [roman type]You're going to need to deal with [him of golem] first!" instead.
 
 Carry out going up (this is the hotel-setup rule):
 	if the player is in Stairwell02:
@@ -302,6 +302,7 @@ To decide which number is the trip hazard of the player:
 	if the player is pigtailed, decrease Q by 6;
 	if Q > 0, increase X by Q;
 	if X < 0, decide on 0;
+	if anchor collar is worn, decide on X / 2;
 	decide on X.
 
 The trip reasons rules is a rulebook.
@@ -453,8 +454,9 @@ Check going:
 			if X > 0 and D is X and there are worn heels, say "You feel very unstable, and are barely managing to keep your balance on your [ShortDesc of random worn heels]!"; [The player barely managed to succeed the roll.]
 			if D < X:
 				follow the trip reasons rules; [Here we explain to the player why they tripped]
-				if there is a worn heels, say "[if the heel skill of the player < 4][line break][first custom style][one of]How humiliating...[or]I haven't really gotten the hang of walking in heels yet...[or]How degrading![in random order][otherwise][line break][second custom style][one of]I'm such a klutz![or]How clumsy of me![or]I'm getting better at it though![or]How humiliating... but in a fun way.[in random order][end if][roman type][line break]";
-				try kneeling;
+				FearUp 4;
+				[if there is a worn heels, say "[if the heel skill of the player < 4][line break][first custom style][one of]How humiliating...[or]I haven't really gotten the hang of walking in heels yet...[or]How degrading![in random order][otherwise][line break][second custom style][one of]I'm such a klutz![or]How clumsy of me![or]I'm getting better at it though![or]How humiliating... but in a fun way.[in random order][end if][roman type][line break]";]
+				if the player is upright, try kneeling;
 				if autostand is 1 and the player is prone, now delayed stand is 1; [We've made the player kneel, and now if autostand is 1 we flag up that the player should try to stand after the next turn.]
 				say "[bold type]You are still in the [location of the player].[roman type]" instead;
 			otherwise:
@@ -611,6 +613,8 @@ To compute slow movement:
 				say "You leave footprints of [semen] as you walk.".
 
 Definition: yourself is moving slowly:
+	if there is worn stuck clothing, decide no;
+	if the player is immobile, decide no; [if the player is stuck after moving something might be happening every turn, so it would rude and weird to punish them with an extra turn of slow movement]
 	let MR be the movement reduction of the player;
 	let MB be the movement bonus of the player;
 	let MT be MR - MB;
@@ -630,7 +634,7 @@ Carry out going while the player is in Dungeon41:
 				deinterest M;
 				if M is asleep and M is in the location of the player, say "[BigNameDesc of M] hears the alarm and wakes up!";
 				now the sleep of M is 0;
-			now shopkeeper is interested;
+			interest shopkeeper;
 			anger shopkeeper;
 			now flav-said is 1.
 
@@ -698,59 +702,74 @@ Definition: yourself is walking past a sticky trap:
 	decide no.
 
 To Test a Sticky Trap:
-	let D be a random number from 1 to the dexterity of the player;
-	let R be a random number between 5 and 10;
-	if the living belt of sturdiness is worn and the living belt of sturdiness is not cursed:
-		if debuginfo > 0, say "[input-style]Trap balance check: Automatic success from living belt of sturdiness[roman type][line break]";
-		now D is 9999;
-	otherwise if debuginfo > 0:
-		say "[input-style]Trap balance check: dexterity d[dexterity of the player] ([D]) [if there are worn sandals]+ sandals bonus (4) = [D + 4] [end if]| ([R].5) d6+4.5 hazard difficulty[roman type][line break]";
-	if there is a worn sandals, increase D by 4;
-	say "The [if playerRegion is Woods]floor in this room is particularly soft and your [feet] get momentarily stuck[otherwise if playerRegion is Mansion]floor in this part of the mansion is very uneven[otherwise]wooden floor in this room has been recently polished[end if][run paragraph on]";
-	if D < R:
-		say "[if playerRegion is Woods], which knocks you off balance![otherwise] which causes you to slip and fall![end if]";
-		try kneeling;
-		let T be a random untriggered sticky trap in the location of the player;
-		if T is trap:
-			say StickyTriggerFlav of T;
-			now focused-thing is T;
-			trigger T;
-		if autostand is 1 and the player is prone, now delayed stand is 1; [We've made the player kneel, and now if autostand is 1 we flag up that the player should try to stand after the next turn.]
+	let CT be a random camera trap in the location of the player;
+	let URC be the number of worn unremovable clothing;
+	decrease URC by the number of worn piercings;
+	if diaper quest is 0 and the player is a june 2022 top donator and the times-met of agent > 0 and agent is not permanently banished and the agent-scene of agent < 2 and the agent-scene of agent is the agent-scene-spotted of agent and URC <= 0:
+		compute next agent scene;
 	otherwise:
-		say ". You manage to avoid falling over!".
+		let D be a random number from 1 to the dexterity of the player;
+		let R be a random number between 5 and 10;
+		if the living belt of sturdiness is worn and the living belt of sturdiness is not cursed:
+			if debuginfo > 0, say "[input-style]Trap balance check: Automatic success from living belt of sturdiness[roman type][line break]";
+			now D is 9999;
+		otherwise if debuginfo > 0:
+			say "[input-style]Trap balance check: dexterity d[dexterity of the player] ([D]) [if there are worn sandals]+ sandals bonus (4) = [D + 4] [end if]| ([R].5) d6+4.5 hazard difficulty[roman type][line break]";
+		if there is a worn sandals, increase D by 4;
+		let T be a random untriggered sticky trap in the location of the player;
+		say "The [if playerRegion is Woods]floor in this room is particularly soft and your [feet] get momentarily stuck[otherwise if playerRegion is Mansion]floor in this part of the mansion is very uneven[otherwise]wooden floor in this room has been recently polished[end if][run paragraph on]";
+		if D < R:
+			say "[if playerRegion is Woods], which knocks you off balance![otherwise] which causes you to slip and fall![end if]";
+			try kneeling;
+			if T is trap:
+				say StickyTriggerFlav of T;
+				now focused-thing is T;
+				trigger T;
+			if autostand is 1 and the player is prone, now delayed stand is 1; [We've made the player kneel, and now if autostand is 1 we flag up that the player should try to stand after the next turn.]
+		otherwise:
+			say StickyTriggerFail of T.
 
 To say StickyTriggerFlav of (T - a trap):
 	say "As your hands hit the ground, you feel a pressure pad depress underneath them! [one of]That can't be good.[or]Oh dear...[or]Not again...[or]Dammit.[stopping]".
+To say StickyTriggerFail of (T - an object):
+	say ". You manage to avoid falling over!".
 
 Definition: yourself is walking into a pressure trap:
 	if the player is zeroG or the player is on tiptoes, decide no;
-	repeat with T running through all untriggered pressure traps in the location of the player:
+	repeat with T running through untriggered pressure traps in the location of the player:
 		if the trap-direction of T is the travel-opposite of the player, decide yes;
 	decide no.
 
 Definition: yourself is walking past a pressure trap:
 	if the player is zeroG or the player is on tiptoes, decide no;
-	repeat with T running through all untriggered pressure traps in the location of the player:
+	repeat with T running through untriggered pressure traps in the location of the player:
 		if the trap-direction of T is the travel-direction of the player, decide yes;
 	decide no.
 
 To Test A Pressure Trap:
-	let B be the largeness of breasts;
 	if there is worn sandals:
 		do nothing;
+	otherwise if there is an untriggered triggered pressure trap in the location of the player and the player is not getting unlucky:
+		say "You recall that one of the stone slabs here triggers a trap, and carefully avoid it.";
 	otherwise if the player is upright:
-		say "[bold type]You feel the stone slab underneath your feet depress as you step on it...[roman type][line break]";
-		trigger a pressure trap;
-	otherwise:
-		[let A be a random number between 1 and the dexterity of the player;
+		say "[bold type]You feel the stone slab underneath your feet depress as you step on it...[if there is an untriggered triggered pressure trap in the location of the player][line break][variable custom style][one of]Oh crap, I forgot about that[or]Whoops[cycling]![end if][roman type][line break]";
+		let A be a random number between 1 and the dexterity of the player;
 		let B be a random number between 1 and the dexterity of the player;
 		let R be A + B;
+		let D be a random number between 11 and 20;
 		if debuginfo > 0, say "[input-style]Pressure plate reaction check: dexterity d[dexterity of the player] ([A]) + dexterity d[dexterity of the player] ([B * 1]) ";
-		if debuginfo > 0, say "= [R] | (13.5) pressure pad difficulty[roman type][line break]";
-		if R > 13:]
+		if debuginfo > 0, say "= [R] | [D].5 = (d10+10.5) pressure pad difficulty[roman type][line break]";
+		if R > 13:
+			say "With lightning reflexes, you manage to take your weight off of that foot before it triggers!";
+			repeat with T running through pressure traps in the location of the player:
+				now T is triggered; [the player knows about it]
+		otherwise:
+			trigger a pressure trap;
+	otherwise:
+		let B be the largeness of breasts;
 		say "[bold type]As you crawl your hand touches a stone slab that starts to depress, but you quickly avoid putting too much of your weight onto the slab, avoiding triggering the trap.[roman type][line break]";
 		if B > 16:
-			say " However, as your [BreastDesc] crosses the pressure pad, their weight manages to trigger the trap! Whoops![line break]";
+			say " However, as your [BreastDesc] cross the pressure pad, their weight manages to trigger the trap! Whoops![line break]";
 			trigger a pressure trap;
 		[otherwise:
 			say "[bold type]As you crawl your hand touches a stone slab that starts to depress.[roman type] You fail to react in time and trigger a trap![line break]";

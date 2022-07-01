@@ -30,10 +30,10 @@ Check jumping:
 	if P is clothing:
 		let A be 0;
 		if the player is ankle bound, now A is 1;
-		say "You jump, [if A is 1]kicking your leg up as you wave[otherwise]waving[end if] your [ShortDesc of P] in the air.[line break][variable custom style][if B < 16]'[one of]Sis Boom Bah and stuff!'[or]'Go team!'[or]Let's go! Let's go!'[at random][roman type][line break][otherwise]'[one of]Sis Boom B-!'[or]'Go t-!'[or]Let's go! Let's-!'[at random][roman type][line break]Your cheer is cut off as your [BreastDesc] flip up and smack you in the face.[end if][if the charge of P is 0]Your [printed name of P] glow as they charge with spirit![end if]";
+		say "You jump, [if A is 1]kicking your leg up as you wave[otherwise]waving[end if] your [ShortDesc of P] in the air.[line break][variable custom style][if B < 16]'[one of]Sis Boom Bah and stuff!'[or]'Go team!'[or]Let's go! Let's go!'[at random][roman type][line break][otherwise]'[one of]Sis Boom B-!'[or]'Go t-!'[or]Let's go! Let's-!'[at random][roman type][line break]Your cheer is cut off as your [BreastDesc] flip up and smack you in the face.[end if][if the charge of P is 0]Your [printed name of P] glow as they charge with spirit! You will have significantly increased strength for a few turns.[end if]";
 		if B < 16, now the charge of P is 4;
 		otherwise now the charge of P is 2;
-		repeat with M running through intelligent monsters in the location of the player:
+		repeat with M running through reactive monsters:
 			let showoff be 0;
 			if B >= 16, now showoff is 1;
 			if A is 0:
@@ -47,7 +47,7 @@ Check jumping:
 					if a random number between 1 and 3 is 1, FavourDown M by 1;
 	otherwise:
 		say "You jump, making your wobbly bits wobble. [if B < 16]You're not quite sure why you had the urge to do that...[otherwise]Your [BreastDesc] smack you in the face! Ouch![end if]";
-	if B >= 16, PainUp 1;
+	if B >= 16, PainUp 10;
 	compute upright fatigue gain.
 Understand "leap", "bounce", "ju", "cheer" as jumping.
 

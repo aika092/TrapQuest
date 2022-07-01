@@ -24,7 +24,7 @@ To compute periodic effect of (C - a serving-bondage):
 			only destroy C;
 		otherwise if C is locked or C is wrist locked:
 			say "[bold type]The lock holding the chains to your [ShortDesc of C] clicks open, and the ropes holding your wrists behind you vanish![roman type] It looks like you can remove the [ShortDesc of C] when you want to.";
-			now C is unlocked;
+			unlock C;
 			now C is wristless.
 To compute school periodic effect of (C - a serving-bondage):
 	compute periodic effect of C.

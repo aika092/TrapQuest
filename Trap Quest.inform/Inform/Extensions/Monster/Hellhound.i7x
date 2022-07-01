@@ -183,7 +183,7 @@ To say SubduedGrabFlav of (M - hellhound) on (C - a clothing):
 To say GroundPeeReaction of (M - hellhound):
 	if diaper quest is 1:
 		say "[speech style of M]'Raaaawr!'[roman type][line break][BigNameDesc of M] doesn't seem impressed!";
-		now M is interested;
+		interest M;
 		anger M.
 
 To say ClothesPeeReaction of (M - hellhound):
@@ -199,7 +199,7 @@ To compute diaper mess reaction of (M - hellhound):
 	if diaper quest is 1:
 		say "You see [NameDesc of M][']s eyes glaze over with arousal.[line break][speech style of M]'Awoo...'[roman type][line break]It looks like [he of M] wants to play...";
 		anger M;
-		now M is interested.
+		interest M.
 
 To say MonsterOfferAcceptFlav of (M - hellhound) to (T - a thing):
 	if M is unfriendly:
@@ -302,7 +302,7 @@ To compute shredding attack of (M - hellhound):
 		BodyRuin 2.
 
 To say StrikingFlav of (M - hellhound) on (B - a body part):
-	if mythical creature fetish is 1, say "[BigNameDesc of M] [one of]charges at you![or]takes a few steps back and charges at you![or]charges at you with [his of M] huge frame[in random order]";
+	if mythical creature fetish is 1, say "[BigNameDesc of M] [one of]charges at you![or]takes a few steps back and charges at you![or]charges at you with [his of M] huge frame.[in random order]";
 	otherwise say "[BigNameDesc of M] tries to headbutt you!".
 
 To say StrikingSuccessFlav of (M - hellhound) on (B - a body part):
@@ -471,7 +471,7 @@ To compute knotting of (M - hellhound) in (F - a fuckhole):
 	otherwise:
 		say "[BigNameDesc of M] turns around and begins to walk off, but some stroke of mercy, or perhaps malice causes [him of M] to pause when [he of M] realises that [his of M] giant inflated [if mythical creature fetish is 0]cock ring[otherwise]knot[end if] has wedged [his of M] [DickDesc of M] firmly inside your [variable F]. Digging [his of M] [if mythical creature fetish is 0]elbows[otherwise]bestial talons[end if] into the [if the location of M is no-roof]ground[otherwise]floorboards[end if], [he of M] [i]wrenches[/i] [himself of M] free with a [if the openness of F < 3]excruciatingly painful[otherwise if the openness of F < 6]vicious[otherwise if the openness of F < 10]moderate[otherwise]healthy[end if] amount of force, releasing you with a loud *POP*.";
 		ruin F times 5;
-		PainUp 2;
+		PainUp 20;
 		UnKnot M in F;
 		dislodge M;
 		bore M;

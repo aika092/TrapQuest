@@ -421,13 +421,13 @@ To say tattoo-desc of (T - black cock only tattoo):
 Definition: black cock only tattoo is penis themed: decide yes.
 Definition: black cock only tattoo is interracial themed: decide yes.
 
-This is the black cock only orgasm rule:
+[This is the black cock only orgasm rule:
 	repeat with M running through monsters penetrating a fuckhole:
 		if M is dark skinned and there is a worn tattoo and black cock only tattoo is drawable:
 			summon black cock only tattoo;
 			say "[bold type]A new tattoo suddenly appears on your back![roman type][line break]";
 			try examining black cock only tattoo.
-The black cock only orgasm rule is listed in the orgasm resolution rules.
+The black cock only orgasm rule is listed in the orgasm resolution rules.]
 
 black hole tattoo is a body tattoo. The tattoo-title of black hole tattoo is "black hole".
 Definition: black hole tattoo is drawable:
@@ -723,7 +723,7 @@ cool mom tattoo is a body tattoo. The tattoo-title of cool mom tattoo is "cool m
 To say tattoo-desc of (T - cool mom tattoo):
 	say "The words 'COOL MOM' are tattooed on your left hip alongside a drawing of a cocktail glass. You can sense that its magical effect is stronger the more drunk you are.".
 Definition: cool mom tattoo is drawable:
-	if cool mom tattoo is worn or pregnancy fetish is 0 or cool mom tattoo is not eligible, decide no;
+	if cool mom tattoo is worn or pregnancy fetish is 0 or alcohol fetish is 0 or cool mom tattoo is not eligible, decide no;
 	decide yes.
 Definition: cool mom tattoo is eligible:
 	if the noun is party themed, decide yes;
@@ -1477,7 +1477,7 @@ Definition: i-suck tattoo is oral sex themed: decide yes.
 
 incontinent-when-speaking tattoo is a thigh-tattoo. The tattoo-title of incontinent-when-speaking tattoo is "Incontinent when speaking".
 To say tattoo-desc of (T - incontinent-when-speaking tattoo):
-	say "The words 'Incontinent when speaking' are written on your inner thigh with black Sharpie. [if the player is incontinent]But the effect no longer does anything, since you're incontinent all the time anyway![otherwise]It makes you lose control of your bodily functions whenever you say anything out loud.[end if]".
+	say "The words 'Incontinent when speaking' are written on your inner thigh with black Sharpie. [if the player is totally incontinent]But the effect no longer does anything, since you're incontinent all the time anyway![otherwise]It makes you lose control of your bodily functions whenever you say anything out loud.[end if]".
 To decide which number is the initial cringe of (T - incontinent-when-speaking tattoo):
 	decide on 4.
 This is the incontinent-when-speaking tattoo inconveniences speech rule:
@@ -1488,15 +1488,15 @@ This is the incontinent-when-speaking tattoo inconveniences speech rule:
 			say "Do you really want to speak out loud? If you do, you might soil yourself. ";
 			if the player is not bimbo consenting, rule fails.
 The incontinent-when-speaking tattoo inconveniences speech rule is listed last in the player speech rules.
-Carry out talking when incontinent-when-speaking tattoo is worn:
-	follow the speech penalties rules.
+Carry out talking:
+	if seconds > 0, follow the speech penalties rules.
 The speech penalties rules is a rulebook.
 A speech penalties rule (this is the spontaneous incontinence rule):
-	if incontinent-when-speaking tattoo is worn and the player is not incontinent:
-		if rectum > 1 and there is worn soilable knickers:
+	if incontinent-when-speaking tattoo is worn:
+		if rectum > 1 and the player is not rectum incontinent and there is worn soilable knickers:
 			say "You immediately lose control of your bowels!";
 			compute messing;
-		if the bladder of the player > 1 and player-urinating is 0:
+		if the bladder of the player > 1 and the player is not bladder incontinent and player-urinating is 0:
 			say "You immediately lose control of your bladder!";
 			now delayed urination is 1;
 			try urinating.
@@ -1602,7 +1602,7 @@ Definition: knock-me-up tattoo is IcarusScienceAppropriate:
 
 Book - L Tattoos
 
-lesbian anilingus tattoo is a right-asscheek tattoo. The tattoo-title of lesbian anilingus tattoo is "lesbian anilingus tattoo".
+lesbian anilingus tattoo is a right-asscheek tattoo. The tattoo-title of lesbian anilingus tattoo is "lesbian anilingus".
 Definition: lesbian anilingus tattoo is drawable:
 	if diaper quest is 1 or there is a worn right-asscheek tattoo or there is a worn both-asscheeks tattoo, decide no;
 	decide yes.
@@ -1742,7 +1742,7 @@ Definition: measurement tattoo is drawable:
 	if the player is not possessing a vagina or there is a worn crotch tattoo or diaper quest is 1, decide no;
 	decide yes.
 Definition: measurement tattoo is eligible:
-	if the noun is lubricant or the noun is piece-of-rubber or the noun is sex toy or the noun is zippable clothing, decide yes;
+	if the noun is lubricant or the noun is piece-of-rubber or the noun is sex toy or the noun is crotch-zipped clothing or the noun is crotch-unzipped clothing or the noun is zippable clothing, decide yes;
 	decide no.
 To say tattoo-desc of (T - measurement tattoo):
 	say "A measurement scale rises from your [vagina], showing how deep things of certain lengths could get inside you. You feel it making your [fuckholes] better at taking larger objects, and also encouraging people to choose to fuck your [vagina].".
@@ -2334,7 +2334,7 @@ Definition: refugees welcome tattoo is eligible:
 	if the noun is interracial themed, decide yes;
 	decide no.
 To say tattoo-desc of (T - refugees welcome tattoo):
-	say "The words 'refugees welcome' are inked on your left breast.[line break][variable custom style][if the bbc addiction of the player < 6]That's a political statement, right? Not a fetish thing. Oh god...[otherwise if the bbc addiction of the player < 9]I love [BlackCock] as much as the next [boy of the player], but that's still a pretty insensitive slogan...[otherwise]The more the merrier![end if][roman type][line break]".
+	say "The words 'refugees welcome' are inked on your left breast.[line break][variable custom style][if the bbc addiction of the player < 9]That's a political statement, right? Not a fetish thing. Oh god...[otherwise if the bbc addiction of the player < 14]I love [BlackCock] as much as the next [boy of the player], but that's still a pretty insensitive slogan...[otherwise]The more the merrier![end if][roman type][line break]".
 To decide which number is the initial outrage of (T - refugees welcome tattoo):
 	decide on 7.
 Definition: refugees welcome tattoo is interracial themed: decide yes.
@@ -3369,7 +3369,7 @@ Definition: zip tattoo is drawable:
 	if diaper quest is 1, decide no;
 	decide yes.
 Definition: zip tattoo is eligible:
-	if the noun is zippable clothing, decide yes;
+	if the noun is crotch-zipped clothing or the noun is crotch-unzipped clothing or the noun is zippable, decide yes;
 	decide no.
 To say tattoo-desc of (T - zip tattoo):
 	say "A tattoo of a zip, mostly opened, surrounds your [vagina]. You feel it magically preventing you from re-zipping unzipped clothing.".

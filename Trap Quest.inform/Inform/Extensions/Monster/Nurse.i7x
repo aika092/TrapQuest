@@ -220,8 +220,7 @@ To compute facial climax of (M - nurse):
 	dislodge med bay bed;
 	orgasm satisfy M;
 	calm M;
-	now M is interested;
-	now the boredom of M is 0; [because otherwise she stops following us and we can enter the med bay bed without her]
+	interest M; [because otherwise she stops following us and we can enter the med bay bed without her]
 	now the health of M is the maxhealth of M.
 
 Chapter - DQ

@@ -24,8 +24,8 @@ To say UniqueClothingDesc of (U - a knickers):
 	say "This item doesn't have a description for some reason, this is probably a bug.".
 
 To say AssModestyDesc of (K - a clothing):
-	let D be the hipExposure of K;
-	if the hipModesty of K < 3:
+	let D be the assExposure of K;
+	if the assModesty of K < 3:
 		say "completely fails to cover your [AssDesc][run paragraph on]";
 	otherwise if D > 7:
 		say "fails to cover the vast majority of your [AssDesc][run paragraph on]";
@@ -63,7 +63,7 @@ Report examining knickers:
 		if the magic-modifier of the noun > 0, say "You can sense that it is [if the magic-modifier of the noun > 1]significantly [end if]helping you hold onto your bladder[if diaper lover >= 3] and bowels[end if].";
 		otherwise say "You can sense that it is [if the magic-modifier of the noun < -1]significantly [end if]reducing your ability to hold onto your bladder[if diaper lover >= 3] and bowels[end if].";
 	if newbie tips is 1:
-		if the noun is diaper, say "[one of][item style]Diapers [if the number of worn diapers is 0]would [end if]help prevent against clothing stain and humiliation penalties from the act of urination. [if the player is urine averse]Also when any worn item of clothing becomes fully soaked, your dexterity will be severely limited, and diapers hold a lot more urine before anything else before they become fully saturated.[otherwise if the player is incontinent]Also you are incontinent, and so wearing diapers is the only way to reliably prevent against losing turns every now and then as you involuntarily wet yourself.[otherwise]You can use diapers as a mobile toilet; not that you really care about the smell of urine any more.[end if][roman type][line break][or][stopping]";
+		if the noun is diaper, say "[one of][item style]Diapers [if the number of worn diapers is 0]would [end if]help prevent against clothing stain and humiliation penalties from the act of urination. [if the player is urine averse]Also when any worn item of clothing becomes fully soaked, your dexterity will be severely limited, and diapers hold a lot more urine before anything else before they become fully saturated.[otherwise if the player is incontinent]Also you are incontinent, and so wearing diapers is the only way to reliably prevent against losing turns every now and then as you involuntarily soil yourself.[otherwise]You can use diapers as a mobile toilet; not that you really care about the smell of urine any more.[end if][roman type][line break][or][stopping]";
 		say "[one of][item style]Underwear [if the noun is diaper]in general [end if][if the noun is no protection or (the player is not possessing a vagina and the noun is pussy protection)](but not this one!) [end if][if the number of worn knickers is 0]would provide[otherwise]provides[end if] a line of defence against things accessing your [fuckholes].[roman type][line break][or][stopping]".
 
 To decide which number is the core outrage of (C - a knickers): [This is plugged into both outrage and cringe]

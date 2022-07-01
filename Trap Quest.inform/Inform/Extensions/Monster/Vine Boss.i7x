@@ -38,7 +38,8 @@ Definition: vine boss is uniquely unfriendly: decide yes.
 Definition: vine boss is scarable: decide no.
 
 To compute perception of (M - vine boss):
-	say "[BigNameDesc of M] notices you, and roars! Time to decide: fight or flight?".
+	say "[BigNameDesc of M] notices you, and roars! That's one big scary boss monster!";
+	FearUp 10.
 
 To say BecomesBoredFlav of (M - vine boss):
 	say "[BigNameDesc of M] seems to lose interest in you for now.".

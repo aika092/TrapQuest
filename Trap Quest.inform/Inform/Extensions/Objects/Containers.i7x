@@ -368,8 +368,7 @@ Carry out taking museum-store thing:
 			summon V in the mansion;
 			say SummoningFlav of V;
 			set up V;
-			now V is interested;
-			now the boredom of V is 0;
+			interest V;
 			anger V;
 		now V is chain-tethering; [this needs to happen AFTER the summon otherwise the chain-tether will be immediately ended as the vampiress is reset during the summon function]
 		say "The barrier shatters as your hands pull back, and you hear a chilling rattling noise as a brilliant pink chain shoots out of your collar and [if V is in the location of the player]flies into [NameDesc of V]'s hand. [big he of V] grins as [he of V] pulls the chain[otherwise]curves down the hall. You hear a sultry voice coming from that direction as the chain pulls[end if] taut.[line break][speech style of V]'It would be a shame if you left without paying, now wouldn't it?'[roman type][paragraph break]";

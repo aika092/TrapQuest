@@ -251,7 +251,6 @@ To compute perception of (M - a mannequin):
 		anger M.
 
 To compute DQ perception of (M - a mannequin):
-	now M is interested;
 	say "[BigNameDesc of M] seems to notice you! Uh-oh...";
 	anger M.
 
@@ -436,7 +435,7 @@ This is the mannequin forces orgasm through diaper rule:
 		bore M;
 		FavourUp M;
 		rule succeeds;
-	otherwise if (there is a worn diaper or diaper quest is 1) and diaper messing >= 3 and the stomach-food of the player > 3 + incontinence and the player is not feeling full and face is not actually occupied and the player is not incontinent and the make-up of face > 0: [Will only occur if there is enough food to ensure that the player will go from NOT feeling full to feeling full.]
+	otherwise if (there is a worn diaper or diaper quest is 1) and diaper messing >= 3 and the stomach-food of the player > 3 + the rectum-incontinence of the player and the player is not feeling full and face is not actually occupied and the player is not incontinent and the make-up of face > 0: [Will only occur if there is enough food to ensure that the player will go from NOT feeling full to feeling full.]
 		let M be current-monster;
 		say "You see [NameDesc of M] moving something towards your face and expect [his of M] to apply a new layer of make up. But instead, [he of M] pushes a small white pill into your mouth and down your throat! You are forced to swallow it before you can react! You suddenly hear your stomach churning loudly, as it speeds up your respiratory processes dramatically, quickly digesting all the food in your stomach!";
 		increase rectum by the stomach-food of the player;

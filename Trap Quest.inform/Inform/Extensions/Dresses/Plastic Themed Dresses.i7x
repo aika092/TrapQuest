@@ -253,5 +253,7 @@ Definition: rubber-royal-dress is pink themed: decide yes.
 Definition: rubber-royal-dress is bow themed: decide yes.
 Definition: rubber-royal-dress is party themed: decide yes.
 
+To compute class set up of (C - rubber-royal-dress):
+	if silver-tiara is worn, transform silver-tiara into trashy-tiara.
 
 Plastic Themed Dresses ends here.

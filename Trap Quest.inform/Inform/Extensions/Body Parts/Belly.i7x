@@ -446,7 +446,7 @@ To Assfill (X - a number):
 				now the intensity of slimegirl is 0;
 			now the timetaken of slimegirl is 0;
 			now X is 0;
-		if a random number between 0 and 5 < X, SemenAddictUp 1;
+		SlowSemenAddictUp 1;
 		while X > 0:
 			increase the semen volume of belly by 1;
 			decrease X by 1;
@@ -764,10 +764,10 @@ To AssSquirt:
 					otherwise:
 						say "You [if voluntarySquatting is 1]close your eyes[otherwise]freeze still on the spot[end if] as you expel ";
 					say "a [if liquid-total > 6]huge [cascade][otherwise]few squirts[end if] of ";
-					if urine-count is 0 and semen-count is 0 and milk-count is 0, say "[if diaper messing >= 3 and rectum > 1][one of]murky[or]lumpy[in random order] brown water[otherwise if diaper messing >= 3]enema water[otherwise]clear water[end if] ";
+					if urine-count is 0 and semen-count is 0 and milk-count is 0, say "[if diaper messing >= 3 and rectum > 1 and there is worn total protection soilable clothing][one of]murky[or]lumpy[in random order] brown water[otherwise if diaper messing >= 3]enema water[otherwise]clear water[end if] ";
 					otherwise say "[if urine-count > 0 and semen-count > 0 and milk-count > 0]what must be a disgraceful mix of [urine], [milk] and [semen][otherwise if urine-count > 0 and semen-count > 0]what seems like a mix of [urine] and [semen][otherwise if urine-count > 0 and milk-count > 0]what seems like a mix of [urine] and [milk][otherwise if milk-count > 0 and semen-count > 0]what seems like a mix of [milk] and [semen][otherwise if urine-count > 0][urine][otherwise if semen-count > 0][semen][otherwise if milk-count > 0][milk][otherwise]BUG - can't find any liquid. Report this bug please[end if], directly from your [asshole] ";
 					say "[if the player is ass protected]into [NameDesc of random worn bottom level ass protection clothing][otherwise if collecting is a thing and collecting is not yourself]into [NameDesc of collecting][otherwise]onto your [ShortDesc of thighs][end if].";
-					if there is a worn total protection diaper and the player is full and diaper messing >= 3:
+					if diaper messing >= 3 and rectum > 1 and there is worn total protection soilable clothing:
 						say "It is accompanied by [if rectum < 8]a large amount of squishy brown mush[otherwise if rectum < 10]a huge log of mess[otherwise]an ungodly amount of squishy, smelly goop[end if] as your bowels are completely excavated.";
 				if collecting is pedestal:
 					let L be water;
@@ -913,10 +913,10 @@ To AssSquirt:
 			otherwise:
 				increase element-count by 1;
 		otherwise if element-count is 4:
-			let D be a random worn total protection diaper;
-			if D is diaper and diaper messing >= 3 and rectum > 1:
+			let D be a random worn total protection soilable clothing;
+			if D is clothing and diaper messing >= 3 and rectum > 1:
 				MessUp D by rectum - 1;
-				now rectum is 1;
+				reset rectum after messing;
 			increase element-count by 1;
 		otherwise:
 			[Prevents an infinite loop in case of a glitch]
@@ -1088,7 +1088,7 @@ To Egg Rip (C - a clothing):
 		say "The force with which the egg shoots out makes it go straight through your [printed name of C], which allow it to pass right through![roman type][line break]";
 	otherwise if C is rippable:
 		say "The force with which the egg shoots out makes it go straight through your [printed name of C]. [bold type]Your outfit is now ripped![roman type][line break]";
-		rip C;
+		now C is crotch-ripped;
 	otherwise:
 		say "The force with which the egg shoots out makes it go straight through your [printed name of C], ruining them. [bold type]Your clothing has been destroyed![roman type][line break]";
 		destroy C.
@@ -1181,7 +1181,6 @@ To compute enema reactions:
 			now M is reacted-already.
 
 To compute enema floor reaction of (M - a person):
-	humiliate 200;
 	if voluntarySquatting is 1, humiliate 500;
 	if M is monster:
 		FavourDown M with consequences;

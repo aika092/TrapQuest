@@ -2,6 +2,9 @@ Special Court Heels by Shoes begins here.
 
 A girly bow court heels is a kind of court heels. A girly bow court heels is transformation-rare. A girly bow court heels is leather.
 
+To uniquely set up (C - girly bow court heels): [no need to do something dumb with text shortcuts]
+	set up heel length of C.
+
 Definition: a girly bow court heels is bow themed: decide yes.
 Definition: a girly bow court heels is red themed: decide no.
 To decide which number is the unique outrage of (C - a girly bow court heels):
@@ -41,7 +44,7 @@ To say ClothingDesc of (C - a black girly bow court heels):
 
 white-and-red girly bow court heels is a girly bow court heels.
 
-The printed name of white-and-red girly bow court heels is "[clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch white and red girly bow court heels[clothing-title-after]". The text-shortcut of white-and-red girly bow court heels is "bgbc". Understand "white", "and black", "black" as white-and-red girly bow court heels.
+The printed name of white-and-red girly bow court heels is "[clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch white and red girly bow court heels[clothing-title-after]". The text-shortcut of white-and-red girly bow court heels is "wrbc". Understand "white", "and black", "black" as white-and-red girly bow court heels.
 
 Definition: white-and-red girly bow court heels is white themed: decide yes.
 Definition: white-and-red girly bow court heels is class-relevant:

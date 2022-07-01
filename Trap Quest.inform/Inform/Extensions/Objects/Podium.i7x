@@ -40,7 +40,19 @@ Check entering podium:
 				if slutty bridal dress is unclash summonable, unclash class summon slutty bridal dress; [it's supposed to be bottom exclusive so this is more ideal]
 				otherwise transform sexy bridal dress into slutty bridal dress;
 			otherwise if C is princess bride dress:
-				if demon tail plug is unclash summonable, unclash class summon demon tail plug;
+				if demon tail plug is unclash summonable:
+					if asshole is not actually occupied and the number of worn total protection clothing is the number of worn rippable total protection clothing:
+						summon demon tail plug uncursed;
+						compute class set up of demon tail plug;
+						say ClassSummonFlav of demon tail plug;
+						if demon tail plug is cursed:
+							if the quest of demon tail plug is no-clothing-quest, compute persistent quest of demon tail plug;
+							unless the quest of demon tail plug is no-clothing-quest, say QuestFlav of demon tail plug;
+						repeat with X running through worn total protection clothing:
+							say "[BigNameDesc of X] is ripped at the crotch as [NameDesc of demon tail plug] sprouts out of your [asshole]!";
+							now X is crotch-ripped;
+					otherwise:
+						unclash class summon demon tail plug;
 			otherwise if C is nothing:
 				class summon burning love crop top;
 				if sheer-open-front-skirt is worn and sheer-open-front-skirt is not cursed:
@@ -80,7 +92,7 @@ Check entering podium:
 			if debuginfo > 0 and (B is not bracelet or there is an on-stage solid gold bracelet), say "[input-style]Stage roll: bracelet scene not possible ([if B is bracelet]solid gold bracelet is already in game universe[otherwise]no bracelets left off-stage[end if]); guard scene selected automatically.[roman type][line break]";
 			let M be a random alive undefeated royal guard;
 			anger M;
-			now M is interested;
+			interest M;
 			now the boredom of M is 0;
 			now the last-interaction of M is 2;
 			now the sleep of M is 0;
@@ -140,7 +152,7 @@ Check entering podium:
 		otherwise:
 			if debuginfo > 0 and (B is not bracelet or there is an on-stage solid gold bracelet), say "[input-style]Stage roll: bracelet scene not possible ([if B is bracelet]solid gold bracelet is already in game universe[otherwise]no bracelets left off-stage[end if]); slave stuff selected automatically.[roman type][line break]";
 			say "[paragraph break]THWACK, THWACK! You imagine being struck on the back by a harsh whip. Ow, that really hurts! What the hell? It's like you can feel the pain for real! You open your eyes, tears welling up in them, leaving you feeling a lot more submissive.";
-			PainUp 2;
+			PainUp 20;
 	now the charge of the podium is 500 instead;
 
 Check drinking podium:

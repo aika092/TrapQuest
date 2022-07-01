@@ -135,7 +135,6 @@ To AnnouncedSquirt (L - a liquid-object) On (C - an object) by (N - a number):
 	now liquid-announced is true;
 	now inside-out is false;
 	SilentSquirt L on C by N;
-	if L is semen and a random number between 0 and 6 < N, SemenAddictUp 1;
 	reset soak flavour.
 
 [This version of the SQUIRT function is for when the liquid is hitting this place FIRST but we've NOT already told the player what's hit them and where.]
@@ -143,7 +142,6 @@ To UnannouncedSquirt (L - a liquid-object) On (C - an object) by (N - a number):
 	now liquid-announced is false;
 	now inside-out is false;
 	SilentSquirt L on C by N;
-	if L is semen and a random number between 0 and 6 < N, SemenAddictUp 1;
 	reset soak flavour.
 
 [This version of the SQUIRT function is for when the liquid is hitting this place FIRST but we've already told the player what's hit them and where.]
@@ -202,7 +200,7 @@ To UniqueSquirt (L - a liquid-object) On (C - Face) by (N - a number):
 	if L is semen:
 		increase times-bukkaked by 1;
 		if lipstick collar is worn and N > 0, increase N by 1; [lipstick collar increases semen volume on face by 1 each time]
-		if N > a random number between 0 and 3, SemenAddictUp 1; [semen addiction might go up]
+		if N > a random number between 0 and 5, SlowSemenAddictUp 1; [semen addiction might go up]
 		if the semen addiction of the player > 14:
 			say "You shiver with arousal as your face gets a fresh gooey load.";
 			stimulate face from semen times N;
@@ -412,8 +410,8 @@ To UniqueSquirt (L - a liquid-object) On (C - Hips) by (N - a number):
 	if debugmode > 1, say "[if inside-out is false]Squirting[otherwise]Expelling[end if] [N] units of [L] on hips.";
 	if inside-out is false: [liquid is coming from the outside inwards]
 		let CC be a random worn top level crotch cover clothing;
-		let CCM be the hipModesty of CC; [ratio of ass covered...]
-		let CCE be the hipExposure of CC + CCM; [...to ass exposed]
+		let CCM be the assModesty of CC; [ratio of ass covered...]
+		let CCE be the assExposure of CC + CCM; [...to ass exposed]
 		let M be N; [assume all covered]
 		if CCM is 0: [nothing covered]
 			now M is 0;

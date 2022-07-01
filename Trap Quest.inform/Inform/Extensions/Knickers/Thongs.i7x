@@ -4,7 +4,7 @@ A thong is a kind of undies. The text-shortcut of thong is "thng". Understand "t
 
 To decide which number is the penis-capacity of (K - a thong):
 	decide on 4.
-To decide which number is the hipModesty of (C - a thong):
+To decide which number is the assModesty of (C - a thong):
 	decide on 1.
 
 The printed name of thong is "[clothing-title-before][selfexamineuniquetitle of item described][clothing-title-after]".
@@ -191,6 +191,8 @@ To decide which number is the unique outrage of (C - black-lace-thong):
 	decide on 1.
 Definition: black-lace-thong is upgradable:
 	if it is not monified, decide yes;
+	if black-lace-stockings is worn and black-lace-stockings is not monified, decide yes;
+	if black-lace-bra is worn and black-lace-bra is not monified, decide yes;
 	decide no.
 Definition: black-lace-thong is transformation-protected:
 	if it is not upgradable, decide yes;
@@ -203,8 +205,14 @@ Definition: black-lace-thong is transformation-theme-blockable: decide no. [It d
 To decide which object is the unique-upgrade-target of (C - black-lace-thong):
 	decide on C.
 To transform (C - black-lace-thong):
-	say "Paper bills appear on the thong, sewn on and completely unremovable, but looking as though they've just been tucked into the front!";
-	now C is monified.
+	if C is monified:
+		if black-lace-stockings is worn and black-lace-stockings is not monified, transform black-lace-stockings;
+		if black-lace-bra is worn and black-lace-bra is not monified, transform black-lace-bra;
+	otherwise:
+		say "Paper bills appear on the thong, sewn on and completely unremovable, but looking as though they've just been tucked into the front!";
+		now C is monified.
+Carry out taking black-lace-thong:
+	if the noun is in Hotel20 and the player is getting unlucky, now the noun is provocation.
 
 heart-strap-thong is a thong. heart-strap-thong is transformation-rare. heart-strap-thong is leather. The text-shortcut of heart-strap-thong is "hsth". Understand "heart", "strap" as heart-strap-thong.
 To say selfexamineuniquetitle of (G - heart-strap-thong):
@@ -284,7 +292,7 @@ pink-lace-thong is a thong. The text-shortcut of pink-lace-thong is "plt". Under
 To say selfexamineuniquetitle of (G - pink-lace-thong):
 	say "pink lace thong".
 To say UniqueClothingDesc of (G - pink-lace-thong):
-	say "A small lace thong that lets everyone know the wearer is a pretty girl and isn't afraid to show it.".
+	say "A small lace thong that lets everyone know the wearer is a pretty girl and isn't afraid to show it. It says 'PRETTY PRITTIER PRITTIEST' on the front.".
 Definition: pink-lace-thong is pink themed: decide yes.
 
 light-pink-lace-thong is a thong. The text-shortcut of light-pink-lace-thong is "llt". Understand "light", "pink", "lace" as light-pink-lace-thong.

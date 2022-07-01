@@ -128,6 +128,7 @@ To compute swimming in (WB - WoodsScenery01):
 	let S be the swimming challenge of the player;
 	let M be slimegirl;
 	if the waterfall-timer of WB > 0, now the waterfall-timer of WB is 0;[The player can make a deal with the slimegirl to temporarily slow the current. This wears off as soon as the player gets out.]
+	allocate 6 seconds;
 	while swimming is 1:
 		let L be swim-location;
 		if swim-turns is 0:
@@ -140,95 +141,96 @@ To compute swimming in (WB - WoodsScenery01):
 				now swim-location is 0;
 		otherwise:
 			say "You are swimming [if L is 0]in a thinner part of the river. The current here is very strong, but the edges are close by and if you can reach the waterfall, you could probably find something to hold onto.[otherwise if L is 1]swimming in a wider part of the river. The current here is very strong, and the edges are far away, and would require an effort to swim to.[otherwise if L is 2]in a very wide part of the river. The current here is constantly dragging you toward a whirlpool at the end of the river, which makes it more difficult to reach the river's edges from where you are.[otherwise if L is 3]near a whirlpool at the end of the river. The current here seems to lead underwater, and you have to resist it strongly to keep from being pulled under. The edges are far away, and would probably require a lot of effort to swim to.[otherwise]directly underneath the waterfall. There are small metal rails sticking out of the water here, helping you resist the current.[end if]";
-		reset multiple choice questions;
-		set next numerical response to "swim toward edge";
-		if L > -1:
-			set next numerical response to "swim toward waterfall";
-		otherwise:
-			set next numerical response to "hold on";
-		set next numerical response to "ride the current";
-		if L > -1, set next numerical response to "dive";
-		if L is -1 and the waterfall-timer of WB is -1 or M is worn by the player, set next numerical response to "slow the current";[With a little help from the slimegirl]
-		compute multiple choice question;
-		say "[line break]What should you do next?";
-		let CNR be the chosen numerical response;
-		if the CNR is "get out":
-			say "You climb out of the river.";
-			now swimming is 0;
-		otherwise if the CNR is "swim toward waterfall":
-			say "You take a deep breath and begin swimming against the current.";
-			compute normal swimming check in WB;
-			let DC be 40;
-			if the waterfall-timer of WB > 0, increase DC by 30;[higher = easier]
-			let R be a random number between S * 2 and S / 2 ;
-			if R < DC:
-				if L is 1:
-					say "You reach the waterfall after a long struggle, and quickly find a place to hold onto the rocks.";
-					if M is not worn by the player:
-						compute slimegirl meeting in WB;
-						if the waterfall-timer of WB is -1:[ready to slow down]
-							now swim-location is -1;
-						otherwise if the waterfall-timer of WB is -2:[player jumped]
-							now swim-location is 0;
-				otherwise:
-					say "You make good progress toward the waterfall, but there's still a ways to go.";
-					decrease swim-location by 1;
-			otherwise if R < DC + 10:
-				say "You try to swim toward the waterfall, but the current is just too strong. You don't make any progress.";
+		if swim-turns > 0:
+			reset multiple choice questions;
+			set next numerical response to "swim toward edge";
+			if L > -1:
+				set next numerical response to "swim toward waterfall";
 			otherwise:
-				say "You try to swim toward the waterfall, but the current is just too strong, and it drags you even further down the river.";
-				increase swim-location by 1;
-		otherwise if the CNR is "swim toward edge":
-			say "You take a deep breath and begin swimming against the current.";[The player will potentially rest here, so we defer the fatigue until the end.]
-			let DC be 50;
-			if the waterfall-timer of WB > 0, increase DC by 30;
-			decrease DC by L * 10;[The edges are harder to reach the further down the river you go]
-			let R be a random number between S * 2 and S / 2 ;
-			if R < DC:
-				say "You make it to the edge and grab on as you catch your breath. Do you want to get out?";
-				if the player is consenting:
-					say "You climb out of the river.";
-					now swimming is 0;
-				otherwise:
-					say "You rest for a while longer before letting go.";
-					FatigueDown 5;
-			otherwise if R < DC + 10:
-				say "You try to swim to the edge, but the current is just too strong.";
+				set next numerical response to "hold on";
+			set next numerical response to "ride the current";
+			if L > -1, set next numerical response to "dive";
+			if L is -1 and the waterfall-timer of WB is -1 or M is worn by the player, set next numerical response to "slow the current";[With a little help from the slimegirl]
+			compute multiple choice question;
+			say "[line break]What should you do next?";
+			let CNR be the chosen numerical response;
+			if the CNR is "get out":
+				say "You climb out of the river.";
+				now swimming is 0;
+			otherwise if the CNR is "swim toward waterfall":
+				say "You take a deep breath and begin swimming against the current.";
 				compute normal swimming check in WB;
-			otherwise:
-				say "You try swim to the edge, but the current is just too strong, and it pushes you further down the river.";
-				compute normal swimming check in WB;
-				increase swim-location by 1;
-		otherwise if the CNR is "ride the current":
-			say "You allow the current to carry you down the river.";
-			compute easy swimming check in WB;
-			increase swim-location by 1;[always succeeds]
-		otherwise if the CNR is "dive":
-			say "You dive below the surface.";
-			compute difficult swimming check in WB;
-			compute treasure diving in WB at L;
-			let DC be 30;
-			if the waterfall-timer of WB > 0, now DC is 50;
-			let R be a random number between S * 2 and S / 2 ;
-			if R < DC:
-				say "[line break]While you're underwater, you manage to resist the strong current pushing you back.";
-			otherwise if R < DC + 15:[It's very hard not to get pushed at least a little]
-				say "[line break]While you're underwater, the current drags you further down the river.";
-				increase swim-location by 1;
-			otherwise:
-				say "[line break]While you're underwater, the current pushes you much further down the river.";
-				increase swim-location by 2;
-		otherwise if the CNR is "hold on":
-			compute bathing;
-			say "You hold onto the rocks as the force of the waterfall crashes down above you. You feel a little less fatigued.";
-			FatigueDown 5;
-		otherwise if the CNR is "slow the current":
-			if M is worn by the player:
-				say "The slime[boy of M] sticks a translucent appendage out of your butt and reaches into the waterfall. You hear a *click*, and a metal grate extends out above you, robbing the current of more than half its force.";
-			otherwise:
-				say "The slime[boy of M] sticks a translucent arm through the waterfall, and you hear a *click*. A metal grate extends out above you, robbing the current of more than half of its force.";
-			now the waterfall-timer of WB is 50;
-		say "[line break]";
+				let DC be 40;
+				if the waterfall-timer of WB > 0, increase DC by 30;[higher = easier]
+				let R be a random number between S * 2 and S / 2 ;
+				if R < DC:
+					if L is 1:
+						say "You reach the waterfall after a long struggle, and quickly find a place to hold onto the rocks.";
+						if M is not worn by the player:
+							compute slimegirl meeting in WB;
+							if the waterfall-timer of WB is -1:[ready to slow down]
+								now swim-location is -1;
+							otherwise if the waterfall-timer of WB is -2:[player jumped]
+								now swim-location is 0;
+					otherwise:
+						say "You make good progress toward the waterfall, but there's still a ways to go.";
+						decrease swim-location by 1;
+				otherwise if R < DC + 10:
+					say "You try to swim toward the waterfall, but the current is just too strong. You don't make any progress.";
+				otherwise:
+					say "You try to swim toward the waterfall, but the current is just too strong, and it drags you even further down the river.";
+					increase swim-location by 1;
+			otherwise if the CNR is "swim toward edge":
+				say "You take a deep breath and begin swimming against the current.";[The player will potentially rest here, so we defer the fatigue until the end.]
+				let DC be 50;
+				if the waterfall-timer of WB > 0, increase DC by 30;
+				decrease DC by L * 10;[The edges are harder to reach the further down the river you go]
+				let R be a random number between S * 2 and S / 2 ;
+				if R < DC:
+					say "You make it to the edge and grab on as you catch your breath. Do you want to get out?";
+					if the player is consenting:
+						say "You climb out of the river.";
+						now swimming is 0;
+					otherwise:
+						say "You rest for a while longer before letting go.";
+						FatigueDown 5;
+				otherwise if R < DC + 10:
+					say "You try to swim to the edge, but the current is just too strong.";
+					compute normal swimming check in WB;
+				otherwise:
+					say "You try swim to the edge, but the current is just too strong, and it pushes you further down the river.";
+					compute normal swimming check in WB;
+					increase swim-location by 1;
+			otherwise if the CNR is "ride the current":
+				say "You allow the current to carry you down the river.";
+				compute easy swimming check in WB;
+				increase swim-location by 1;[always succeeds]
+			otherwise if the CNR is "dive":
+				say "You dive below the surface.";
+				compute difficult swimming check in WB;
+				compute treasure diving in WB at L;
+				let DC be 30;
+				if the waterfall-timer of WB > 0, now DC is 50;
+				let R be a random number between S * 2 and S / 2 ;
+				if R < DC:
+					say "[line break]While you're underwater, you manage to resist the strong current pushing you back.";
+				otherwise if R < DC + 15:[It's very hard not to get pushed at least a little]
+					say "[line break]While you're underwater, the current drags you further down the river.";
+					increase swim-location by 1;
+				otherwise:
+					say "[line break]While you're underwater, the current pushes you much further down the river.";
+					increase swim-location by 2;
+			otherwise if the CNR is "hold on":
+				compute bathing;
+				say "You hold onto the rocks as the force of the waterfall crashes down above you. You feel a little less fatigued.";
+				FatigueDown 5;
+			otherwise if the CNR is "slow the current":
+				if M is worn by the player:
+					say "The slime[boy of M] sticks a translucent appendage out of your butt and reaches into the waterfall. You hear a *click*, and a metal grate extends out above you, robbing the current of more than half its force.";
+				otherwise:
+					say "The slime[boy of M] sticks a translucent arm through the waterfall, and you hear a *click*. A metal grate extends out above you, robbing the current of more than half of its force.";
+				now the waterfall-timer of WB is 50;
+			say line break;
 		if swimming is 1:
 			compute bathing;[Happens every turn]
 			increase swim-turns by 1;
@@ -244,7 +246,7 @@ To compute swimming in (WB - WoodsScenery01):
 				if the waterfall-timer of WB < 0:
 					say "The current speeds back up.";
 					now the waterfall-timer of WB is 0;
-	allocate 12 + (swim-turns * 3) seconds;
+	if seconds > 0, increase seconds by swim-turns * 3;
 	display entire map.
 
 [if the slimegirl is around (or inside you), she reacts to you swimming in the river/waterfall.]

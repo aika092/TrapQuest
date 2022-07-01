@@ -65,6 +65,23 @@ To compute periodic augmentation effect of (C - a clothing):
 			[This should only happen if someone marks other clothing as augmentation and forgets to add the effects here.]
 			say "[one of](Oops: this shouldn't happen. Please report illegal augmentation clothing item [C].)[or][stopping]".
 
+To compute periodic draining effect of (C - a clothing):
+	increase the draining-charge of C by 1;
+	if the draining-charge of C + (game difficulty * 10) > 75:
+		now the draining-charge of C is 0;
+		if C is strength-influencing:
+			say "[bold type][BigNameDesc of C] drains away more of your strength![roman type][line break]";
+			StrengthDown 1;
+		otherwise if C is dexterity-influencing:
+			say "[bold type][BigNameDesc of C] drains away more of your dexterity![roman type][line break]";
+			DexDown 1;
+		otherwise if C is intelligence-influencing:
+			say "[bold type][BigNameDesc of C] drains away more of your intelligence![roman type][line break]";
+			IntDown 1;
+		otherwise:
+			say "[bold type][BigNameDesc of C] drains away more of your stats![roman type][line break]";
+			RandomStatDown 1.
+
 domination-time is a number that varies. domination-time is 30.
 
 [!<timeTracking:Integer>*
@@ -133,6 +150,8 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 		compute orifice soreness decay;
 	if the remainder after dividing local-earnings by 676 < local-seconds:
 		compute makeup decay;
+	if the remainder after dividing local-earnings by 421 < local-seconds:
+		compute magic regeneration;
 	let inflation-decay-rate be 29;
 	if the player is flying, now inflation-decay-rate is 9;
 	if the remainder after dividing local-earnings by inflation-decay-rate < local-seconds:
@@ -238,15 +257,15 @@ To compute inflation decay:
 	if the player is flying and a random number between 1 and 2 is 1, say "[one of]You can't believe you're stuck in the air! How humiliating.[or]Being stuck in mid-air gives you plenty of time to reflect on how messed up your situation really is.[or][line break][variable custom style]I'm a floating blimp. How disgraceful![roman type][line break][or][line break][variable custom style]How long is it going to take for me to deflate?[roman type][line break][or][line break][variable custom style]What sort of [if the bimbo of the player < 12]fucked up [end if]person thinks of putting something like this into a game?!?![roman type][line break][or][line break][variable custom style]This is a strangely calming experience...[roman type][line break][or][line break][variable custom style]I think I'm slowly getting heavier again![roman type][line break][in random order]";
 
 To compute stat healing:
-	if temp_str_dam > 0 and a random number between 1 and 10 > temp_str_dam:
+	if temp_str_dam > 0:
 		decrease temp_str_dam by 1;
-		say "[bold type]You feel as though your strength has recovered slightly![roman type]";
-	if temp_dex_dam > 0 and a random number between 1 and 10 > temp_dex_dam:
+		say "[bold type]You feel as though your strength has recovered slightly![roman type][line break]";
+	if temp_dex_dam > 0:
 		decrease temp_dex_dam by 1;
-		say "[bold type]You feel as though your movements are more fluid again![roman type]";
-	if temp_int_dam > 0 and a random number between 1 and 10 > temp_int_dam:
+		say "[bold type]You feel as though your movements are more fluid again![roman type][line break]";
+	if temp_int_dam > 0:
 		decrease temp_int_dam by 1;
-		say "[bold type]You feel as though your mind is slightly clearer![roman type]";
+		say "[bold type]You feel as though your mind is slightly clearer![roman type][line break]";
 
 A time based rule (this is the compute jiggles rule):
 	if a random number between 2 and (300 / (1 + unlucky)) <= the square root of the largeness of breasts:
@@ -390,7 +409,7 @@ A time based rule (this is the dressup rule):
 	if the cleavageCover of arms is 0:[if the player is holding their chest, their boobs can't pop out.]
 		let Cd be 0;
 		repeat with C running through worn ridiculously low cut or higher clothing:[TODO: if needed, add support for cup size]
-			if C is actually top-displacable:
+			if C is currently top-displacable:
 				now Cd is the largeness of breasts - the cleavageCover of C;
 				if Cd > 0 and a random number between 1 and (100 - (Cd * 5)) < 2 + unlucky:
 					now displaceDone is 1;
@@ -441,7 +460,7 @@ To compute default reset cooldown of (T - a trap):
 To compute default reset of (T - a trap):
 	now T is untriggered;
 	now T is not expired;
-	now T is not triggered;
+	if T is not pressure, now T is not triggered; [we use this to keep trap of whether pressure traps have been discovered, and then make them easier to avoid]
 	now T is unrevealed;
 	dislodge T;
 	if T is click:

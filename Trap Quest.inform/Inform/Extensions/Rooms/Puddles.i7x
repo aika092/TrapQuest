@@ -32,6 +32,8 @@ To decide which number is the slipperiness of (R - a room):
 	if X > 8, decide on 8;
 	decide on X.
 
+To PuddleUp (L - murkwater) by (X - a number):
+	MurkwaterPuddleUp X.
 To PuddleUp (L - semen) by (X - a number):
 	SemenPuddleUp X.
 To PuddleUp (L - urine) by (X - a number):
@@ -41,6 +43,8 @@ To PuddleUp (L - milk) by (X - a number):
 To PuddleUp (L - water) by (X - a number):
 	do nothing.
 
+To PuddleUp (L - murkwater) by (X - a number) in (R - a room):
+	MurkwaterPuddleUp X in R.
 To PuddleUp (L - semen) by (X - a number) in (R - a room):
 	SemenPuddleUp X in R.
 To PuddleUp (L - urine) by (X - a number) in (R - a room):
@@ -57,7 +61,7 @@ To SemenPuddleUp (X - a number) in (R - an object):
 	do nothing.
 
 To SemenPuddleUp (X - a number) in (R - a room):
-	if R is a room, increase the semen-puddle of R by X.
+	increase the semen-puddle of R by X.
 
 To SemenPuddleUp (X - a number) in (R - HoleInWall):
 	increase the semen-puddle of the location of hole-in-wall by X.
@@ -72,7 +76,7 @@ To UrinePuddleUp (X - a number) in (R - an object):
 	do nothing.
 
 To UrinePuddleUp (X - a number) in (R - a room):
-	if R is a room and watersports mechanics is 1, increase the urine-puddle of R by X.
+	if watersports mechanics is 1, increase the urine-puddle of R by X.
 
 To UrinePuddleUp (X - a number) in (R - HoleInWall):
 	increase the urine-puddle of the location of hole-in-wall by X.
@@ -87,13 +91,33 @@ To MilkPuddleUp (X - a number) in (R - an object):
 	do nothing.
 
 To MilkPuddleUp (X - a number) in (R - a room):
-	if R is a room and (lactation fetish is 1 or diaper quest is 1), increase the milk-puddle of R by X.
+	if lactation fetish is 1 or diaper quest is 1, increase the milk-puddle of R by X.
 
 To MilkPuddleUp (X - a number) in (R - HoleInWall):
 	increase the milk-puddle of the location of hole-in-wall by X.
 
 To MilkPuddleUp (X - a number) in (R - DiaperPail):
 	increase the milk-puddle of the location of most-recent-pail by X.
+
+To MurkwaterPuddleUp (X - a number):
+	if X > 0, MurkwaterPuddleUp X in the location of the player.
+
+To MurkwaterPuddleUp (X - a number) in (R - an object):
+	do nothing.
+
+To MurkwaterPuddleUp (X - a number) in (R - a room):
+	let S be 0;
+	let U be 0;
+	let M be 0;
+	if lactation fetish is 1 or diaper quest is 1, now M is 1;
+	if watersports fetish is 1 or diaper lover > 0, now U is 1;
+	if diaper quest is 0, now S is 1;
+	let SUM be S + U + M;
+	now X is (X + SUM - 1) / SUM;
+	if S is 1, SemenPuddleUp X in R;
+	if U is 1, UrinePuddleUp X in R;
+	if M is 1, MilkPuddleUp X in R.
+
 
 A time based rule (this is the puddles disappearing rule):
 	repeat with H running through placed haunted rooms:

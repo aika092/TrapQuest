@@ -57,10 +57,10 @@ To progress quest of (Q - domination-quest):
 				say "Your [ShortDesc of C] flexes, squeezing your temples. If [if player-fucking is DOMINANT-NEUTRAL]that's the best you can do[otherwise]you don't start acting dominant[end if], [if C is cursed]you'll never get rid of this curse![otherwise]you get the feeling it's going to get really pissed off![end if]";
 			otherwise if domination-quest-tries < 5:
 				say "Your [ShortDesc of C] flexes, painfully squeezing your temples. It clearly thinks you [if player-fucking is DOMINANT-NEUTRAL]can do better than that[otherwise]aren't acting dominant at all[end if]. If you don't get your act together [if C is cursed]and remove this curse soon, there might be trouble in store for you![otherwise]soon, there might be trouble in store for you![end if]";
-				PainUp 1;
+				PainUp 10;
 			otherwise:
 				say "Your [ShortDesc of C] flexes, painfully squeezing your temples. It gradually increases the force, and you can hear the fabric ripping under the strain. Finally, the pain reaches its peak, and the [ShortDesc of C] drops from your your forehead in shredded pieces.";
-				PainUp 4;
+				PainUp 40;
 				now domination-quest-tries is 0;
 				only destroy C.
 

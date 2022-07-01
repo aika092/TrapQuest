@@ -214,12 +214,12 @@ To compute gloryhole genital modification:
 				say GotUnluckyFlav;
 			otherwise:
 				say "Somebody slaps your [ShortDesc of penis] painfully!";
-				PainUp 1;
+				PainUp 10;
 				PenisDown 1;
 			say "You reflexively pull back.";
 		otherwise if the player is possessing a vagina:
 			say "Somebody flicks your clitoris painfully! You pull it back out, but the [if the sex addiction of the player < 10]shocking [end if]experience has made you more submissive.";
-			PainUp 2;
+			PainUp 20;
 	compute gloryhole dislodging.
 
 To say SexResistFlav of (G - gloryhole):
@@ -618,7 +618,7 @@ Check entering school-fuckhole:
 			if M is not in the location of the player:
 				now M is in the location of the player;
 				say "Suddenly, [NameDesc of M] walks into the room! [GotUnluckyFlav]";
-			now M is interested;
+			interest M;
 			anger M;
 			make M expectant;
 			say "[BigNameDesc of M] puts [his of M] hands on [his of M] hips.[line break][speech style of M]'I SAW THAT! How dare you break the headmistress's rules[if the recently-used of school-fuckhole > 1] by using the fuckhole more than once per visit[end if]. GET ON YOUR KNEES AT ONCE!'[roman type][line break]";

@@ -134,14 +134,14 @@ To compute horse effect of (T - a painted horse):
 		if the player is possessing a vagina:
 			if the soreness of vagina < 10 or the delicateness of the player > 15, ruin vagina;
 		if the soreness of asshole < 10 or the delicateness of the player > 15, ruin asshole;
-		otherwise PainUp 1;
+		otherwise PainUp 10;
 		arouse 400; [Extra arousal hardcoded in here]
 	otherwise if W > 2 and delayed fainting is 0:
 		compute horse pain.
 
 To compute horse pain:
 	say "You can't help but cry as the pressure on your [player-crotch] continues to cause you huge amounts of pain!";
-	PainUp 1.
+	PainUp 10.
 
 [To compute horse fainting:
 	if the soreness of asshole is 10 and the player is not possessing a vagina and a random number between 1 and 4 is 1 and the delicateness of the player > 15:
@@ -153,7 +153,7 @@ To compute horse pain:
 		say "The pressure on your [asshole] is making it steadily more sore!";
 	otherwise:
 		say "You can't help but cry as the pressure on your [asshole][if the soreness of vagina is 10] and [vagina][end if] continues to cause you huge amounts of pain!";
-		PainUp 1;
+		PainUp 10;
 	if the player is possessing a vagina:
 		if the soreness of vagina is 10 and the soreness of asshole is 10 and a random number between 1 and 2 is 1 and the delicateness of the player > 15:
 			say "You can't take the pressure on your crotch any more! You pass out.";

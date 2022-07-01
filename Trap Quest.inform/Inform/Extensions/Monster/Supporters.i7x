@@ -261,7 +261,7 @@ To say ClothesPeeReaction of (M - supporter-aika):
 		if M is unfriendly, say "[big he of M] thinks for a moment before taking an aggressive stance.[line break][speech style of M]'It's not often that such a shameless pervert crosses my path in here. I don't want to miss this chance to play with you. Let's do this!'[roman type][line break]";
 	otherwise:
 		say "[BigNameDesc of M] laughs.[line break][speech style of M]'[if M is interested]You are an utter disgrace!'[otherwise]Is that your way of getting my attention? Well it worked!'[end if][roman type][line break][if M is uninterested]Uh-oh...[end if]";
-		now M is interested.
+		interest M.
 
 To say PissDrinkThreat of (M - supporter-aika):
 	say "[speech style of M]'[one of]That's it, swallow my virtual piss, you skank! It tastes just like the real thing, doesn't it?'[or]Come on now, you'd better drink what I give you! I promise I coded it to be completely harmless, if perhaps a little addictive...'[in random order][roman type][line break]".
@@ -447,12 +447,12 @@ To compute MasturbationReaction of (M - supporter-critchett):
 				say "[BigNameDesc of M] purrs with delight as you pleasure yourself.[speech style of M][line break]'That's it, darling, give in! Bathe me with your juice! Soak my diaper! Mmmmm...'[roman type][line break]";
 			otherwise:
 				say "[BigNameDesc of M] kisses you fiercely as you tend to your own sexual need, then breaks off and backhands you fiercely![line break][speech style of M]'You're a dirty whore! Filthy, and shameful. You should be diapered in front of everyone. So they can see your shame. O-... our shame. Together. They can humiliate us, use us up, then flush us away...'[roman type][line break]";
-				PainUp 1;
+				PainUp 10;
 				say "[bold type]Your masturbation session has been interrupted![roman type][line break]";
 				follow the masturbation ended rule;
 		otherwise:
 			say "[BigNameDesc of M] watches you with unrestrained lust, [his of M] continual masturbation motions currently mimicking your own.[line break][speech style of M]'[if M is friendly]If you're going to cum, [please] do it over me. Or into my diaper. It's super good at soaking cum!'[otherwise]You big tease! There's no way you're going to waste perfectly good sexjuice when you could be using it to put me in my place as your diaper!'[end if][roman type][line break][big he of M] pulls open the front of [his of M] diaper and points into it for emphasis, approaching you as if to engulf you!";
-			now M is interested;
+			interest M;
 			anger M.
 
 To say EnemaFloorReactionFlav of (M - supporter-critchett): [When the player squirts an anal creampie / enema onto the ground in front of the NPC]
@@ -530,7 +530,7 @@ To say ClothesPeeReaction of (M - supporter-critchett):
 		if M is unfriendly, say "[big he of M] sizes you up before coming to a decision.[line break][speech style of M]'It's too late for you to be a big girl anymore. I'm going to have to show you what a diaper is for, missy!'[roman type][line break]";
 	otherwise:
 		say "[BigNameDesc of M] giggles.[line break][speech style of M]'[if M is interested]Too late, you wet yourself! Beg me to diaper you!'[otherwise]Well, look at you, such a mess! You're going in a diaper now! Will you go in mine? Or do you want one of your own?'[end if][roman type][line break][if M is uninterested]Uh-oh...[end if]";
-		now M is interested.
+		interest M.
 
 To say GroundPeeReaction of (M - supporter-critchett):
 	say "[ClothesPeeReaction of M]".
@@ -545,7 +545,7 @@ To say DiaperReaction of (M - supporter-critchett):
 			say "[speech style of M]'You look like a natural at this! I can't wait to have some diaper play with you!'[roman type][line break][BigNameDesc of M] rubs [his of M] enormously swollen diaper, promising you something that makes you gulp with trepidation.";
 			FavourDown M;
 			say "[speech style of M]'[if M is unfriendly]Ahhhn... I'm too horny and you're too hot and in need of a diaper. Lie down on the floor and raise those feet up in the air[otherwise]Oh, goddess, if you keep doing that, I'll... ohhh, I'll make it so worth your while. Do that again[end if]!'[roman type][line break]";
-			if M is unfriendly, now M is interested;
+			if M is unfriendly, interest M;
 		if the player is modest, say "[one of]You are so ashamed you wish your diaper would just open up and swallow you whole! [or][stopping]You turn bright red and refuse to look at [NameDesc of M] in the eye, dying of shame.";
 		otherwise say "You turn bright red in embarrassment.";
 	otherwise:
@@ -742,12 +742,12 @@ To compute MasturbationReaction of (M - supporter-teagan):
 				say "[BigNameDesc of M] grins, and starts thrusting even faster.";
 			otherwise:
 				say "[BigNameDesc of M] [if M is penetrating a fuckhole]spanks[otherwise]slaps[end if] you angrily.[line break][speech style of M]'Did I give you permission to do that? This is supposed to be a punishment!'[roman type][line break]";
-				PainUp 1;
+				PainUp 10;
 				say "[bold type]Your masturbation session has been interrupted![roman type][line break]";
 				follow the masturbation ended rule;
 		otherwise:
 			say "[BigNameDesc of M] stares, wide-eyed.[line break][speech style of M]'[if M is friendly]Just can't help yourself, huh?'[otherwise]Okay okay, I know you're excited for more!'[end if][roman type][line break][big he of M] cups [his of M] overfilled titties in anticipation.";
-			now M is interested;
+			interest M;
 			anger M.
 
 To say EnemaFloorReactionFlav of (M - supporter-teagan): [When the player squirts an anal creampie / enema onto the ground in front of the NPC]
@@ -967,12 +967,12 @@ To compute MasturbationReaction of (M - supporter-jim):
 				say "[BigNameDesc of M] grins, and starts thrusting even faster.";
 			otherwise:
 				say "[BigNameDesc of M] [if M is penetrating a fuckhole]spanks[otherwise]slaps[end if] you angrily.[line break][first custom style]'What's wrong with a kiss, [boy of the player]? Hmm? Why not start it off with a nice kiss? ...You don't have to go leaping straight for the [if the player is possessing a vagina]clitoris[otherwise if the player is possessing a penis]penis[otherwise]groin[end if] like a bull at a gate. Suck the nipple. Stroking the thighs. Biting the neck. Nibbling the earlobe, uhh, kneading the buttocks, and so on and so forth. We have all these possibilities before we stampede towards the [if the player is possessing a vagina]clitoris[otherwise if the player is possessing a penis]penis[otherwise]groin[end if], [NameBimbo].'[roman type][line break]";
-				PainUp 1;
+				PainUp 10;
 				say "[bold type]Your masturbation session has been interrupted![roman type][line break]";
 				follow the masturbation ended rule;
 		otherwise:
 			say "[BigNameDesc of M] turns to an imaginary sex education class.[line break][speech style of M]'The purpose of foreplay is to cause the vagina to lubricate, so that the penis can penetrate more easily. And, of course, to cause the man's penis to erect and har... den!'[roman type][line break][big he of M] prepares to fuck you.[line break][speech style of M]'Uhh, we'll take the foreplay as read, if you don't mind, dear.'[roman type][line break]";
-			now M is interested;
+			interest M;
 			anger M.
 
 To say EnemaFloorReactionFlav of (M - supporter-jim): [When the player squirts an anal creampie / enema onto the ground in front of the NPC]
@@ -1060,7 +1060,7 @@ To say ClothesPeeReaction of (M - supporter-jim):
 		if M is unfriendly, say BecomesAggressive of M;
 	otherwise if M is uninterested:
 		say "[big he of M] gestures towards you.[line break][speech style of M]'This slut has just pissed [his of the player] pants, in order to get my attention once again.'[roman type][line break]Uh-oh...";
-		now M is interested.
+		interest M.
 
 To say GroundPeeReaction of (M - supporter-jim):
 	say "[BigNameDesc of M] turns to an imaginary camera.[line break][speech style of M]'We would like to apologise for the way in which [men of the player] are represented in this programme. It was never our intention to imply that [men of the player] are crabby, ulcerous, little perverse vermin with furry legs and an excessive addiction to [if alcohol fetish is 1]alcohol[otherwise]degradation[end if] and certain explicit sexual practises which some people might find offensive. We are sorry if this impression has come across.'[roman type][line break]";
@@ -1069,7 +1069,7 @@ To say GroundPeeReaction of (M - supporter-jim):
 		if M is unfriendly, say BecomesAggressive of M;
 	otherwise if M is uninterested:
 		say "Uh-oh...";
-		now M is interested.
+		interest M.
 
 To say UrinationFlav of (M - supporter-jim):
 	say "[BigNameDesc of M] points [his of M] genitals towards your face. A golden stream of [urine] shoots out, headed straight for you!".
@@ -1087,7 +1087,7 @@ To say DiaperReaction of (M - supporter-jim):
 			say "[speech style of M]'[if there is a worn messed knickers]I told you to lay off the beans, you whore!'[otherwise]Wow, just like a big baby.'[end if][roman type][line break][BigNameDesc of M] can't suppress [his of M] smile.";
 			FavourDown M;
 			say "[speech style of M]'[if M is unfriendly and there is a worn messed knickers]You are hereby charged where you did wilfully take part in a strange fetish. That is a piss, poop, or voluminous excretion of a sexual nature, with intent to cause grievous mental confusion to the Great Bimbacian public[otherwise if M is unfriendly]You are hereby charged where you did wilfully take part in a strange fetish. That is a piss, whizz, or urination of an sexual nature, with intent to cause grievous mental confusion to the Great Bimbacian public[otherwise]One of these days I'm going to decide to take you into my own [']care['], if you're not careful[end if].'[roman type][line break]";
-			if M is unfriendly, now M is interested;
+			if M is unfriendly, interest M;
 		if the player is modest, say "[one of]You are so ashamed you wish the ground would just open up and swallow you. [or][stopping]You turn bright red and refuse to look at [NameDesc of M] in the eye.";
 		otherwise say "You turn bright red.";
 	otherwise:
@@ -1241,7 +1241,7 @@ To compute MasturbationReaction of (M - supporter-misako):
 			say "[BigNameDesc of M] grins, and starts thrusting even faster.";
 		otherwise:
 			say "[BigNameDesc of M] stares.[line break][speech style of M]'[if M is friendly]That's... that's so mean! Ugh! That's it, I'm going to use YOU to get me off, if it's the last thing I do!'[otherwise]Haha, I didn't know you wanted me that much!'[end if][roman type][line break][big he of M] flexes [his of M] wrists in anticipation.";
-			now M is interested;
+			interest M;
 			anger M.
 
 [Oral]
@@ -1524,7 +1524,7 @@ To say ClothesPeeReaction of (M - supporter-serena):
 		if M is unfriendly, say "[big he of M] thinks for a moment before taking an aggressive stance.[line break][speech style of M]'I guess you doing that in front of me means you're up for anything, right? In that case, let's do it!'[roman type][line break]";
 	otherwise:
 		say "[BigNameDesc of M] laughs.[line break][speech style of M]'[if M is interested]You are an utter disgrace!'[otherwise]Is that your way of getting my attention? Well it worked!'[end if][roman type][line break][if M is uninterested]Uh-oh...[end if]";
-		now M is interested.
+		interest M.
 
 To say GroundPeeReaction of (M - supporter-serena):
 	say "[ClothesPeeReaction of M]".
@@ -1718,12 +1718,12 @@ To compute MasturbationReaction of (M - supporter-elluria):
 				say "[BigNameDesc of M] grins, and starts thrusting even faster.";
 			otherwise:
 				say "[BigNameDesc of M] pinches you with two sharp claws.[line break][speech style of M]'Did I give you permission to do that, little one?'[roman type][line break]";
-				PainUp 1;
+				PainUp 10;
 				say "[bold type]Your masturbation session has been interrupted![roman type][line break]";
 				follow the masturbation ended rule;
 		otherwise:
 			say "[BigNameDesc of M] stares, wide-eyed.[line break][speech style of M]'[if M is friendly]I can't believe you'd just do that in front of me. Do you know what we do to shameless whores where I'm from? Let me show you...'[otherwise]Haha, I do have that effect on some people!'[end if][roman type][line break][big he of M] flexes [his of M] wings in anticipation.";
-			now M is interested;
+			interest M;
 			anger M.
 
 To say EnemaFloorReactionFlav of (M - supporter-elluria): [When the player squirts an anal creampie / enema onto the ground in front of the NPC]
@@ -1784,7 +1784,7 @@ To say ClothesPeeReaction of (M - supporter-elluria):
 		if M is unfriendly, say "[big he of M] thinks for a moment before taking an aggressive stance.[line break][speech style of M]'I guess you doing that in front of me means you're up for anything, right? In that case, let's do it!'[roman type][line break]";
 	otherwise:
 		say "[BigNameDesc of M] laughs.[line break][speech style of M]'[if M is interested]You are an utter disgrace!'[otherwise]Is that your way of getting my attention? Well it worked!'[end if][roman type][line break][if M is uninterested]Uh-oh...[end if]";
-		now M is interested.
+		interest M.
 
 To say GroundPeeReaction of (M - supporter-elluria):
 	say ClothesPeeReaction of M.

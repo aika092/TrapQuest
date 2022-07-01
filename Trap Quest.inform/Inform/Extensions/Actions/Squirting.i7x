@@ -51,9 +51,8 @@ Carry out squirting:
 		otherwise:
 			say "You give yourself a small enema of the [PotionType of the noun], and you feel your insides quickly absorbing the liquid into your bloodstream. ";
 			if the fill-type of the noun >= lowest-cursed:
-				say "[if the fill-type of the noun is not remembered]The liquid must have been cursed, as you[otherwise]You[end if] feel a rush of dizziness which even as it passes leaves a lingering effect. It feels slightly more difficult to concentrate.";
-				SexAddictUp 1;
-				SemenAddictUp 1;
+				say "[if the fill-type of the noun is not remembered]The liquid must have been cursed, as you[otherwise]You[end if] feel a rush of dizziness which even as it passes leaves a lingering effect. You feel slightly more accustomed to the feeling of being creampied.";
+				SlowSemenAddictUp 1;
 				if the fill-type of the noun is not remembered, say "You now feel confident that this colour represents a cursed drink!";
 			otherwise if the fill-type of the noun is 1:
 				say "The dignity improving effects of the potion are seemingly negated by the humiliating method of consumption!";

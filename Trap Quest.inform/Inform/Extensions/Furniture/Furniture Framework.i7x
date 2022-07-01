@@ -336,11 +336,12 @@ To compute furniture resting on (G - an automated changing station):
 					now player-fucking is DOMINANT-NONE;
 				otherwise:
 					say "You feel a prick in your side as one of the arms injects you with a needle. What was that?! You feel all... numb... inside. Like you can't feel your bladder?! It seems like [bold type]the changing station has just rendered you temporarily incontinent.[roman type][line break]";
-					increase temporary-incontinence by 2;
+					increase temporary-bladder-incontinence by 2;
 				say "[GotUnluckyFlav][line break]At least the arms seem to be finished with their fun for now. The claws reach down for a clean diaper ";
 			say "and before you know it you are wearing a dry [MediumDesc of D]! The wristcuffs release you and the door opens.";
 			force clothing-focus redraw;
-			if K is diaper, DiaperAddictUp 1.
+			if K is diaper, DiaperAddictUp 1;
+			trigger change-wisp-trigger.
 
 Check pulling hotel changing station:
 	if the changing-station-tank-scene of woman-player > 0, try pulling woman-player instead;

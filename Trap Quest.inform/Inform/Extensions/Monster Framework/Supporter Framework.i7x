@@ -172,8 +172,7 @@ To IdentifiablePosterReaction of (M - a supporter):
 	FavourDown M;
 	if M is unfriendly:
 		say BecomesAggressive of M;
-		now M is interested;
-		now the boredom of M is 0;
+		interest M;
 	humiliate the lewdness of a random poster in the location of the player * 2.
 
 To UnidentifiablePosterReaction of (M - a supporter) with (P - a poster):
@@ -550,12 +549,12 @@ To compute MasturbationReaction of (M - a supporter):
 				say "[BigNameDesc of M] grins, and starts thrusting even faster.";
 			otherwise:
 				say "[BigNameDesc of M] [if M is penetrating a fuckhole]spanks[otherwise]slaps[end if] you angrily.[line break][speech style of M]'Did I give you permission to do that? This is supposed to be a punishment!'[roman type][line break]";
-				PainUp 1;
+				PainUp 10;
 				say "[bold type]Your masturbation session has been interrupted![roman type][line break]";
 				follow the masturbation ended rule;
 		otherwise:
 			say "[BigNameDesc of M] stares, wide-eyed.[line break][speech style of M]'[if M is friendly]Wow, I guess that means you want to fuck, huh?'[otherwise]Haha, I didn't know you wanted me that much!'[end if][roman type][line break][big he of M] flexes [his of M] neck muscles in anticipation.";
-			now M is interested;
+			interest M;
 			anger M.
 
 To say EnemaFloorReactionFlav of (M - a supporter): [When the player squirts an anal creampie / enema onto the ground in front of the NPC]
@@ -691,7 +690,7 @@ To say ClothesPeeReaction of (M - a supporter):
 		if M is unfriendly, say "[big he of M] thinks for a moment before taking an aggressive stance.[line break][speech style of M]'I guess you doing that in front of me means that you're up for anything, right? In that case, let's do it!'[roman type][line break]";
 	otherwise:
 		say "[BigNameDesc of M] laughs.[line break][speech style of M]'[if M is interested]You are an utter disgrace!'[otherwise]Is that your way of getting my attention? Well it worked!'[end if][roman type][line break][if M is uninterested]Uh-oh...[end if]";
-		now M is interested.
+	if M is unfriendly, interest M.
 
 To say GroundPeeReaction of (M - a supporter):
 	say "[ClothesPeeReaction of M]".
@@ -712,7 +711,7 @@ To say DiaperReaction of (M - a supporter):
 			say "[speech style of M]'Wow, just like a big baby.'[roman type][line break][BigNameDesc of M] can't suppress [his of M] smile.";
 			FavourDown M;
 			say "[speech style of M]'[if M is unfriendly]That's it, I've made up my mind. I'm going to make you my little baby bitch[otherwise]One of these days I'm going to decide to take you into my own [']care['], if you're not careful[end if].'[roman type][line break]";
-			if M is unfriendly, now M is interested;
+			if M is unfriendly, interest M;
 		if the player is modest, say "[one of]You are so ashamed you wish the ground would just open up and swallow you. [or][stopping]You turn bright red and refuse to look at [NameDesc of M] in the eye.";
 		otherwise say "You turn bright red.";
 	otherwise:

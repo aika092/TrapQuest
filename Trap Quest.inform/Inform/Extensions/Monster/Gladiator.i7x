@@ -184,7 +184,7 @@ To say MonsterComment of (M - a gladiator):
 			if M is male, say "[variable custom style][one of]If [he of M] comes after me...I might as well use my boobs, right?[or][big he of M]'s so into big breasts...maybe that can help me deal with [him of M]?[at random][roman type][line break]";
 			otherwise say "[variable custom style][one of]Maybe having big boobs isn't as bad as I thought...[or][big he of M] looks so confident, even though [his of M] chest is so large. Is that the secret?[or]We both have big boobs, but [he of M]'s confident. Maybe I should be more like [him of M]...[stopping][roman type][line break]";
 		otherwise:
-			if lady fetish < 2, say "[second custom style][one of][big he of M]'s got big boobies, just like me![or]Looks like I'm not the only one with rockin['] tits![or][big his of M] knockers are almost as great as mine.[stopping]";
+			if lady fetish < 2, say "[second custom style][one of][big he of M]'s got big boobies, just like me![or]Looks like I'm not the only one with rockin['] tits![or][big his of M] knockers are almost as great as mine.[stopping][roman type][line break]";
 			otherwise say "[second custom style][one of][big he of M]'s carrying a sword. That's another word for penis! Hee hee![or]I bet [he of M]'d love a good titwank.[or]Mmm, I can't wait to wrap my tits around [his of M] cock![stopping][roman type][line break]";
 	otherwise:
 		if lady fetish < 2, say "[variable custom style]It's weird that [he of M]'s practically naked, right? But why do I find myself drawn to [his of M] [ChestDesc of M]...?[roman type][line break]".
@@ -623,7 +623,6 @@ To compute DQ appearance assessment of (M - a gladiator):
 		say "[speech style of M]'[big please]d to meet you[if the times-met of M > 0] again[end if]. ".
 
 To compute DQ perception of (M - a gladiator):
-	now M is interested;
 	say "[BigNameDesc of M] notices you!";
 	if (there is a worn diaper or the diaper-duration of M > 0) and the player is immobile:
 		say "[big he of M] seems to decide to leave you alone for now.";
@@ -848,7 +847,7 @@ This is the gladiator fed up rule:
 				rule succeeds;
 		otherwise if M pierce success is 0: [If it is 0 it means nipple chain can't be applied. If it is 2, then the player was pierced successfully this turn.]
 			say "[BigNameDesc of M] [if M is swordless]seizes you by the neck, lifting you partway off the ground as [he of M] chokes you with no remorse. [big he of M] drops you just before you start to pass out[otherwise] presses the sharp part of [his of M] sword into your side, making sure that it hurts. [big he of M] pulls away just before the pressure reaches the point where it would have pierced your tender skin[end if].";
-			PainUp 2;
+			PainUp 20;
 			say "[speech style of M]'[if M is enlightened gladiator]Good. Useful.[otherwise]Maybe next time you should think twice before pissing off a bitch with a sword[end if].'[roman type][line break]";
 			satisfy M;
 			rule succeeds.
@@ -1028,7 +1027,7 @@ To decide which number is (M - a gladiator) pierce success: [0 means failure, 2 
 			destroy O;
 		if N is actually summonable:
 			say "[BigNameDesc of M] closes [his of M] eyes and whistles a quick tune. [if there is a worn cow piercing]You can't believe your eyes as a gold chain appears to connect your nipple rings![otherwise]You can't believe your eyes as two piercings sear into existence through your nipples. You cry in pain as the feeling hits you, and it takes you a moment to notice that [NameDesc of M] has attached a chain between your two now extremely sensitive pierced nipples.[end if][line break]After admiring [his of M] handiwork, [NameDesc of M] seems happy and loses interest.";
-			PainUp 1;
+			PainUp 10;
 			repeat with P running through worn cow piercings:
 				destroy P;
 			summon N cursed with persistent quest;
@@ -1234,7 +1233,7 @@ To say GroundPeeReaction of (M - a gladiator):
 	say "[speech style of M]'[if M is unfriendly]Just as I expected[otherwise]And to think that I had respect for you[end if]. [if diaper quest is 1][one of]You need to be kept in diapers.'[or]You're a big baby who can't get to the toilet in time.'[or]You need help.'[in random order][otherwise][one of]You still have a lot to learn about how to act in a distinguished manner.'[or]You still exhibit many uncouth behaviours that you need beating out of you!'[or]Nobody would ever be able to mistake you for a noble!'[in random order][end if][roman type][line break]";
 	if diaper quest is 1:
 		now M is diaper-committed;
-		now M is interested;
+		interest M;
 		if M is friendly:
 			anger M;
 			say BecomesAggressive of M;
@@ -1308,7 +1307,7 @@ Definition: a gladiator-forced-pee (called P) is appropriate:
 To compute punishment of (P - gladiator-forced-pee):
 	let M be current-monster;
 	say "[speech style of M]'[if diaper quest is 1]Are you sure you don't need diapers? You might need to pee at any moment...'[otherwise]A grown woman should not be wearing a child's underwear. You should be able to control your own bodily functions.'[end if][roman type][line break]Rolling you over slightly, [he of M] pushes a knee into your side, where your bladder is, crushing it painfully.";
-	PainUp 1;
+	PainUp 10;
 	if the bladder of the player < 6:
 		say "[if the bimbo of the player < 8]Luckily you[otherwise]You[end if] don't need to go, and so [he of M] doesn't manage to force you to wet yourself.[line break][speech style of M]'Hmph, I guess you got lucky this time.'[roman type][line break]";
 		satisfy M;
@@ -2042,7 +2041,7 @@ Section 3 - Drink Requesting
 [since the gladiator does the same thing regardless, one function can simply link to another]
 
 To compute friendly drink of (M - a gladiator):
-	now M is interested;
+	interest M;
 	if diaper quest is 1:
 		say "[big he of M] smiles mischievously.[line break][speech style of M]'You can, but you'll have to drink it straight from the tap.'[roman type][line break][big he of M] holds one of [his of M] dark nipples towards your face. Do you let [him of M] breastfeed you? ";
 		if the player is bimbo consenting:

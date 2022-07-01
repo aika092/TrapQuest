@@ -37,10 +37,8 @@ Chapter - Class Outfit
 To compute class outfit of (H - silver-tiara):
 	if the throatskill of the player is 1:
 		class summon deepthroat princess crop top;
-	otherwise if diaper quest is 0:
-		class summon lolita royal dress;
 	otherwise:
-		class summon ballgown royal dress;
+		class summon lolita royal dress;
 	class summon royal scepter.
 
 To compute virginity-loss of (C - a tiara):
@@ -77,12 +75,14 @@ To compute generic first time class reward of (Q - unlock-quest) on (C - a cloth
 	otherwise:
 		compute generic second time class reward of Q on C.
 
-To compute unique periodic effect of (H - silver-tiara):
-	if the quest of H is royal-quest and the player is in Dungeon36 and the minotaur-checked of royal-quest is false:
-		say "You look at the cage, and see that [if minotaur is not caged or minotaur is not in Dungeon36][NameDesc of minotaur] is no longer in its cage! Oh no![otherwise if mystical amulet is in Dungeon36]the amulet is still here, safe and sound.[otherwise]the amulet has gone missing! This is bad news![end if]";
-		now the minotaur-checked of royal-quest is true;
-		progress quest of royal-quest;
-	if the quest of H is unlock-quest and H is cursed and the number of worn locked clothing is 0, progress quest of unlock-quest.
+A time based rule (this is the royal quest rule):
+	let H be a random worn headgear;
+	if H is headgear:
+		if the quest of H is royal-quest and the player is in Dungeon36 and the minotaur-checked of royal-quest is false:
+			say "You look at the cage, and see that [if minotaur is not caged or minotaur is not in Dungeon36][NameDesc of minotaur] is no longer in its cage! Oh no![otherwise if mystical amulet is in Dungeon36]the amulet is still here, safe and sound.[otherwise]the amulet has gone missing! This is bad news![end if]";
+			now the minotaur-checked of royal-quest is true;
+			progress quest of royal-quest;
+		if the quest of H is unlock-quest and H is cursed and the number of worn locked clothing is 0, progress quest of unlock-quest.
 
 To say QuestFlav of (Q - royal-quest):
 	say "You sense it wants you to fulfill some royal duties. A royal scepter could probably help with this.".
@@ -110,6 +110,31 @@ To say QuestTitle of (Q - unlock-quest):
 
 
 
+
+trashy-tiara is a tiara.
+
+The printed name of trashy-tiara is "[clothing-title-before]trashy tiara[clothing-title-after]". The text-shortcut of trashy-tiara is "tti". Understand "trashy" as trashy-tiara.
+
+Figure of trashy tiara is the file "Items/Accessories/Head/royaltiara5.png".
+
+To decide which figure-name is the clothing-image of (C - trashy-tiara):
+	decide on figure of trashy tiara.
+
+To say ClothingDesc of (H - trashy-tiara):
+	say "This silver [MediumDesc of H] is made of cheap plastic. It's a trashy fancy dress item, with very visibly fake diamonds and giant rubies shaped like hearts.".
+
+To say MediumDesc of (H - trashy-tiara):
+	say "trashy plastic tiara".
+
+Definition: trashy-tiara is gem themed: decide yes.
+Definition: trashy-tiara is grey themed: decide yes.
+Definition: trashy-tiara is heart themed: decide yes.
+
+Chapter - Class Outfit
+
+To compute class outfit of (H - trashy-tiara):
+	class summon rubber-royal-dress;
+	class summon royal scepter.
 
 
 tiara-veil is a tiara.
@@ -141,12 +166,16 @@ To compute class outfit of (H - tiara-veil):
 	if the ceremony of betrothal-quest is true, class summon floral bouquet.
 
 To compute unique periodic effect of (H - tiara-veil):
-	if mechanic is alive, now bride-consort is mechanic;
+	if mechanic is alive or Hotel01 is unplaced, now bride-consort is mechanic;
 	otherwise now bride-consort is demon lord.
 
 To uniquely set up (C - tiara-veil):
 	now the quest of C is betrothal-quest.
 
+To decide which number is the vaginal-sex-addiction-influence of (C - tiara-veil):
+	if the consummation of betrothal-quest is true, decide on 0;
+	if the ceremony of betrothal-quest is false, decide on -1;
+	decide on 5.
 
 
 tiara-of-spades is a tiara.

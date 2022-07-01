@@ -92,7 +92,7 @@ Definition: a robochef (called M) is outrage disapproving:
 
 To compute disapproval of (M - a robochef):
 	say "[BigNameDesc of M][']s eyes turn red.[line break][speech style of M]'[if diaper quest is 1]FETISHIST DETECTED. THANK YOU FOR AGREEING TO ASSUME ROLE OF [']COOKING ASSISTANT[']. FORCEFEEDING PROGRAM INITIATED[otherwise]VALID BREWING ORIFICE HAS BEEN EXPOSED. THANK YOU FOR AGREEING TO ASSUME ROLE OF [']COOKING ASSISTANT[']. SOUP BREWING PROGRAM INITIATED[end if].'[roman type][line break]";
-	now M is interested;
+	interest M;
 	anger M.
 
 To compute perception of (M - a robochef):

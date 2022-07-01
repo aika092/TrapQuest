@@ -24,7 +24,8 @@ To compute default cursed drinking (X - a bottle):
 		if S is the raw sex addiction of the player, say "You feel a naughty thought trying to worm its way into your mind, but you force it away.";
 	if R is 2:
 		if diaper lover > 0 and the player is not incontinent:
-			increase temporary-incontinence by 2;
+			increase temporary-bladder-incontinence by 2;
+			if diaper messing >= 3, increase temporary-rectum-incontinence by 1;
 			say "You suddenly can't feel your insides... including whether or not you need to go to the toilet. The cursed drink has made you temporarily incontinent!";
 		otherwise:
 			HairUp 1;
@@ -127,6 +128,12 @@ thickDrinkTick is a number that varies.
 To compute drinking effect (N - 2):
 	say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0]Mmm, a thick drink with a dry taste. [otherwise]More thick sanity potion. Excellent! [end if]";
 	if a random number between 1 and 8 < the sex addiction of the player, SexAddictDown 1;
+	if the noun is blessed or the player is getting lucky:
+		SemenAddictDown 1;
+		SemenTasteAddictDown 1;
+		UrineTasteAddictDown 1;
+		MilkTasteAddictDown 1;
+		if the noun is not blessed, say GotLuckyFlav;
 	if thickDrinkTick is 0:
 		now thickDrinkTick is 1;
 		AnalSexAddictDown 1;
@@ -149,15 +156,16 @@ To compute drinking effect (N - 4):
 	if diaper quest is 1, say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0]Mmm, a nice smooth drink. [otherwise]Another stabilising drink. Lovely! [end if]";
 	otherwise say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0]Mmm, a nice smooth drink. [otherwise]Another weight loss drink. Lovely! [end if]";
 	if diaper quest is 1:
-		if incontinence < 10 and incontinence > a random number between 0 and 4:
-			say "You feel slightly more in control of your bodily functions.";
+		if the raw-bladder-incontinence of the player < the max-bladder-incontinence of the player and the raw-bladder-incontinence of the player > a random number between 0 and 4:
+			say "You feel slightly more in control of your bladder.";
 		otherwise:
-			say "You feel some pressure lifted from your [if diaper lover > 2]bowels and [end if]bladder.";
+			say "You feel some pressure lifted from your [if diaper lover >= 3]bowels and [end if]bladder.";
 			decrease the bladder of the player by 2;
 			if the bladder of the player < 0, now the bladder of the player is 0;
 			if rectum > 1:
-				decrease rectum by 1;
+				decrease rectum by 2;
 				if rectum < 1, now rectum is 1;
+			if suppository > 0, decrease suppository by 1;
 	otherwise if the fat-weight of the player > min ass size and weight gain fetish is 1:
 		FatDown 1;
 		say "You feel lighter!";

@@ -424,10 +424,10 @@ To compute teaching of (L - enema-tag-lesson):
 									add yourself to LSE;
 								otherwise if M1 > 3:
 									say "You grit your teeth and hold [one of]your butthole tight[or]the enema[or]the [LQ] in[purely at random]. The painful cramps [one of]bring tears to your eyes[or]get worse and worse[stopping]!";
-									if incontinence > 0 and the player is getting lucky:
-										say "[one of]But you're proud of how well you're[or]You're amazed that you're still[stopping] managing to hold it all in[one of]. Your sphincter control must not be as bad as you thought![or].[stopping]";
-										decrease incontinence by 1;
-									PainUp 1;
+									if the raw-rectum-incontinence of the player > 0 and the player is getting lucky:
+										say "[one of]But you're proud of how well you're[or]You're amazed that you're still[stopping] managing to hold it all in[one of]. Your sphincter control must not be as bad as you thought! [or]. [stopping][GotLuckyFlav]";
+										decrease the raw-rectum-incontinence of the player by 1;
+									PainUp 10;
 								otherwise if M1 is 3:
 									say "[bold type]Your belly begins to cramp. Holding the enema in for any longer will hurt.[line break][newbie style](To expel it, you must stand still for a turn.)[roman type][line break]";
 								increase M1 by 1;
@@ -542,7 +542,7 @@ To compute toilet predicament punishment:
 		say "[variable custom style][one of]Oh god... is that really going to happen every time I try to use a toilet from now on?![or]I think maybe I need to stick to diapers[if the diaper addiction of the player < 15]. This is just too gross[end if]...[stopping][roman type][line break]";
 	otherwise:
 		say "Suddenly, the magic curse you got from [NameDesc of lesson-teacher of pledge-lesson] activates! You feel like your bladder is much weaker than before. Uh-oh...";
-		increase incontinence by 2.
+		SilentlyBladderIncontinenceUp 2.
 
 pledge-lesson-magic is a pledge-lesson-object.
 Definition: pledge-lesson-magic is eligible:

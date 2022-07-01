@@ -12,6 +12,26 @@ To decide which number is (N - a number) scaled:
 	if N <= 20, decide on 5 + (((N - 5) * 2) / 3);
 	decide on 15 + ((N - 20) / 2).
 
+To RandomStatDown (N - a number):
+	let S be 0;
+	let D be 0;
+	let I be 0;
+	while N > 0:
+		decrease N by 1;
+		let R be a random number between 1 and 3;
+		if R is 1, increase S by 1;
+		if R is 2, increase D by 1;
+		if R is 3, increase I by 1;
+	if S > 0:
+		say "You feel [if S > 1]much [end if] weaker.";
+		StrengthDown S;
+	if D > 0:
+		say "You feel [if D > 1]much [end if] less agile.";
+		DexDown D;
+	if I > 0:
+		say "You feel [if I > 1]much [end if] less intelligent.";
+		IntDown I.
+
 Book - Strength
 
 Part 1 - Calculate Strength
@@ -319,6 +339,9 @@ The player has a number called raw luck.
 gotLucky is initially true. [The last time we checked luck, did the player get lucky? Sometimes it'll be easier to check a global variable.]
 gotUnlucky is initially true. [The last time we checked bad luck, did the player get unlucky? Sometimes it'll be easier to check a global variable.]
 
+luckFix is a number that varies. [-1: always fail luck; 0: normal luck; 1: always good luck]
+unluckFix is a number that varies. [-1: always avoid bad luck; 0: normal bad luck; 1: always get bad luck]
+
 To decide which number is the luck-influence of (C - a wearthing):
 	if C is luck-influencing clothing, decide on the magic-modifier of C;
 	decide on 0.
@@ -338,30 +361,44 @@ To decide which number is the luck of the player:
 permanent-luck-modifier is a number that varies.
 
 Definition: yourself is getting lucky:
-	let GL be 75 - the luck of the player;
-	let R be a random number between 1 and 100;
-	if debuginfo > 0, say "[input-style]Luck Roll: d100([R]) | ([GL].5) lucky threshold[roman type][line break]";
-	if R > GL:
-		if R > 75 - the raw luck of the player, decrease the raw luck of the player by 3; [raw luck only changes if the player's modifiers to luck didn't make any difference]
+	if luckFix is 1:
 		now gotLucky is true;
 		decide yes;
-	otherwise:
-		if R <= 75 - the raw luck of the player, increase the raw luck of the player by 1; [raw luck only changes if the player's modifiers to luck didn't make any difference]
+	otherwise if luckFix is -1:
 		now gotLucky is false;
-		decide no.
+		decide no;
+	otherwise:
+		let GL be 75 - the luck of the player;
+		let R be a random number between 1 and 100;
+		if debuginfo > 0, say "[input-style]Luck Roll: d100([R]) | ([GL].5) lucky threshold[roman type][line break]";
+		if R > GL:
+			if R > 75 - the raw luck of the player, decrease the raw luck of the player by 3; [raw luck only changes if the player's modifiers to luck didn't make any difference]
+			now gotLucky is true;
+			decide yes;
+		otherwise:
+			if R <= 75 - the raw luck of the player, increase the raw luck of the player by 1; [raw luck only changes if the player's modifiers to luck didn't make any difference]
+			now gotLucky is false;
+			decide no.
 
 Definition: yourself is getting unlucky:
-	let GL be 75 + the luck of the player;
-	let R be a random number between 1 and 100;
-	if debuginfo > 0, say "[input-style]Bad Luck Roll: d100([R]) | ([GL].5) bad luck threshold[roman type][line break]";
-	if R > GL:
-		if R > 75 + the raw luck of the player, increase the raw luck of the player by 3; [raw luck only changes if the player's modifiers to luck didn't make any difference]
+	if unluckFix is 1:
 		now gotUnlucky is true;
 		decide yes;
-	otherwise:
-		if R <= 75 + the raw luck of the player, decrease the raw luck of the player by 1; [raw luck only changes if the player's modifiers to luck didn't make any difference]
+	otherwise if unluckFix is -1:
 		now gotUnlucky is false;
-		decide no.
+		decide no;
+	otherwise:
+		let GL be 75 + the luck of the player;
+		let R be a random number between 1 and 100;
+		if debuginfo > 0, say "[input-style]Bad Luck Roll: d100([R]) | ([GL].5) bad luck threshold[roman type][line break]";
+		if R > GL:
+			if R > 75 + the raw luck of the player, increase the raw luck of the player by 3; [raw luck only changes if the player's modifiers to luck didn't make any difference]
+			now gotUnlucky is true;
+			decide yes;
+		otherwise:
+			if R <= 75 + the raw luck of the player, decrease the raw luck of the player by 1; [raw luck only changes if the player's modifiers to luck didn't make any difference]
+			now gotUnlucky is false;
+			decide no.
 
 Definition: yourself is getting very lucky:
 	if the player is getting lucky:

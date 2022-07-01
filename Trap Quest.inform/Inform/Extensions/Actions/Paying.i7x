@@ -47,6 +47,7 @@ Carry out paying:
 		now Z is unowned;
 		if shopkeeper is in Dungeon41 and shopkeeper is friendly, say FriendlyPaymentReceivedFlav of Z;
 		otherwise say UnfriendlyPaymentReceivedFlav of Z;
+		trigger purchase-wisp-quest;
 		force inventory-focus redraw. [Forces redraw of inventory window]
 Understand "pay", "buy", "sell", "exchange", "purchase", "transact", "pay shopkeeper" as paying.
 

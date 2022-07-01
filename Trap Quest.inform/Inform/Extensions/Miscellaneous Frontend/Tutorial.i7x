@@ -64,7 +64,7 @@ Check talking when the player is in Tutorial04:
 Check standing when tutorial is 1:
 	if the player is prone and the number of interested monsters is 0, say "Please only make changes to your stance (kneel, or stand) when asked to!" instead.
 Check kneeling when tutorial is 1:
-	if the player is upright, say "Please only make changes to your stance (kneel, or stand) when asked to!" instead.
+	if the player is upright and the player is not in danger, say "Please only make changes to your stance (kneel, or stand) when asked to!" instead.
 
 Tutorial05 is an introductory room. "This room has some kind of stone altar in the middle of it. [newbie style]Nice, we're now alone now, so the player will be willing to relieve themselves. So the first thing you should do is that, with 'expel'[if diaper quest is 1]! Don't worry, it's just clean water, nothing more gross.[otherwise]![end if][roman type][line break]". Tutorial05 is south of Tutorial04. The printed name of Tutorial05 is "Altar room". The shape of Tutorial05 is L10/0-0-1-0-0-0. The grid position of Tutorial05 is <10,14,11>.
 

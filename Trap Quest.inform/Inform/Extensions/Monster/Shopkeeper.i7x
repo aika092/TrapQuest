@@ -134,6 +134,7 @@ To say MonsterOfferAcceptFlav of (M - shopkeeper) to (T - a thing):
 			if N >= the price of C:
 				decrease N by the price of C;
 				now C is unowned;
+				trigger purchase-wisp-quest;
 			if total stolen value is 0, calm M;
 	otherwise:
 		say "[BigNameDesc of M] seems very touched.[line break][speech style of M]'I was not expecting a gift! How very decent of you.'[roman type][line break]".
@@ -158,14 +159,14 @@ To say GroundPeeReaction of (M - shopkeeper):
 				anger M;
 			otherwise:
 				say "[BigNameDesc of M] frowns angrily.[line break][speech style of M]'This is why you need to be in diapers!'[roman type][line break][if M is uninterested]Uh-oh...[end if]";
-				now M is interested;
+				interest M;
 		otherwise:
 			if M is friendly:
 				say "[BigNameDesc of M] looks furious.[line break][speech style of M]'What are you doing?! This is a shop, not a toilet! [if the player is upright]Get on your knees[otherwise]Stay right where you are[end if], I'm going to make you wish you never stepped foot in here!'[roman type][line break]";
 				anger M;
 			otherwise:
 				say "[BigNameDesc of M] frowns angrily.[line break][speech style of M]'You are an utter disgrace!'[roman type][line break][if M is uninterested]Uh-oh...[end if]";
-				now M is interested;
+				interest M;
 	otherwise:
 		say "[speech style of M]'Hmph. At least it's not in my shop. I hate it when people pee in my shop.'[roman type][line break]".
 
@@ -297,7 +298,6 @@ To compute perception of (M - shopkeeper):
 	let PSRB be a random carried probably-serve-ready bottle;
 	repeat with BBB running through carried probably-serve-ready bottles:
 		if the waitress bartering value of BBB for M > 0, now PSRB is BBB; [Let's make sure we choose one the shopkeeper actually likes if able. E.g. no semen.]
-	now M is interested;
 	if the class of the player is living sex doll:
 		if the refractory-period of M > 0: [He could fuck you each turn, otherwise.]
 			if the player is possessing a vagina, compute M using sex doll 1;
@@ -374,7 +374,7 @@ To compute appearance assessment of (M - shopkeeper):
 		otherwise compute tq nip slip reaction of M;
 	otherwise:
 		say "[speech style of M]'Welcome to the [if M is in the Dungeon]Dungeon [end if]clothes shop! If you have any jewellery to pay with, feel free to look around. Don't you dare leave the shop without [bold type]pay[speech style of M]ing for something, though.'[roman type][line break]";
-	if M is friendly:
+	if interracial fetish is 1 and M is friendly:
 		compute deliveryRequest of M.
 
 To compute deliveryRequest of (M - shopkeeper):
@@ -384,8 +384,9 @@ To compute deliveryRequest of (M - shopkeeper):
 			say "[line break][speech style of M]'Hey, don't forget to give the wench that collar!'[roman type][line break]";
 		if BBCTrainingQuest of M is 0 and BBC collar is off-stage:
 			let C be BBC collar;
-			say "[line break][speech style of M]'Hey, could you do me a favour and hand this [ShortDesc of C] to the [ShortDesc of N]? There's payment in it for you if you can ensure it gets to [him of N] safely.'[roman type][line break]";
+			blandify and reveal C;
 			now C is in the location of the player;
+			say "[line break][speech style of M]'Hey, could you do me a favour and hand this [ShortDesc of C] to the [ShortDesc of N]? There's payment in it for you if you can ensure it gets to [him of N] safely.'[roman type][line break][BigNameDesc of M] drops a [C] in front of you.";
 			compute autotaking C;
 			now BBCTrainingQuest of M is 1;
 		if BBCTrainingQuest of M is 2 and there is an off-stage ring:
@@ -608,13 +609,22 @@ To say sexSubmitNearingClimax of (M - shopkeeper) in (F - a fuckhole):[shopkeepe
 	say M submission sex 0.
 
 To send (M - shopkeeper) home:
-	if M is not in Dungeon41:
-		if M is in the location of the player:
-			let D be the best route from the location of M to Dungeon41 through labyrinth rooms;
-			if D is a direction, say "[BigNameDesc of M] leaves to the [D].";
-		now M is in Dungeon41;
-	now M is guarding;
-	if M is interested, bore M.
+	if M is alive:
+		if M is not in Dungeon41:
+			if M is in the location of the player:
+				let D be the best route from the location of M to Dungeon41 through labyrinth rooms;
+				if D is a direction, say "[BigNameDesc of M] leaves to the [D].";
+			now M is in Dungeon41;
+		now M is guarding;
+		if M is interested, bore M.
+
+To orgasm satisfy (M - shopkeeper) for (N - a number) seconds:
+	orgasm M;
+	if Dungeon41 is guarded: [doesn't lose interest]
+		FavourUp M;
+		progress quest of nice-quest;
+	otherwise:
+		satisfy M for N seconds.
 
 To decide if (M - shopkeeper) is losing wrapper in (F - a fuckhole):
 	if the class of the player is cheerleader:
@@ -658,12 +668,12 @@ To say CreampieFlav of (M - shopkeeper) in (F - asshole):
 To compute post climax effect of (M - shopkeeper) in (F - a fuckhole):
 	if M is friendly, say "[line break][speech style of M]'That was awesome! Feel free to return to the shop if you start feeling horny, I'm down to fuck you anytime!'[roman type][line break]";
 	otherwise say "[line break][unless M is objectifying the player][speech style of M]'Feel free to return to the shop, but don't you dare leave without paying again.'[roman type][line break][end if][BigNameDesc of M] pulls out and leaves you alone to recover.";
-	let T be a random off-stage interracial themed drawable tattoo;
+	[let T be a random off-stage interracial themed drawable tattoo;
 	if there is a worn tattoo and T is tattoo:
 		summon T;
 		say "A new tattoo appears on you in permanent black ink:";
 		try examining T;
-		say "[variable custom style]Holy shit. [if the outrage of T is too humiliating]I have to keep this covered up. There's no way I can let anyone see such a nasty tattoo.[end if][roman type][line break]".
+		say "[variable custom style]Holy shit. [if the outrage of T is too humiliating]I have to keep this covered up. There's no way I can let anyone see such a nasty tattoo.[end if][roman type][line break]".]
 
 To decide if (M - shopkeeper) is willing to creampie (F - a fuckhole):
 	if F is asshole and the player is a butt slut, decide yes;
@@ -807,6 +817,7 @@ To compute happy reward of (M - shopkeeper):
 				now C is unowned;
 				say "[speech style of M]'That was incredible! Go on, take the [ShortDesc of C], it's yours. And [please] do come again!'[roman type][line break]";
 				check black lace transformation;
+				trigger purchase-wisp-quest;
 			otherwise:
 				say "[speech style of M]'That was good, but the [ShortDesc of C] is worth too much I'm afraid. But feel free to try and earn more credit points again in the future!'[roman type][line break]";
 		otherwise if the blue-balls of M <= 0:
@@ -841,7 +852,7 @@ To compute diaper donating of (M - shopkeeper):
 			now D is worn by the player;
 		otherwise:
 			say "Shopkeeper can't find a diaper to interact with. Please report the bug along with as complete details as possible on what happened in the last few turns.";
-	PainUp 1;
+	PainUp 10;
 	say "It hurts so much that ";
 	if the player is bursting:
 		say "you begin to wet yourself.";
@@ -1383,7 +1394,7 @@ To compute failed dominance punishment of (M - shopkeeper):
 		now another-turn is 1;]
 	otherwise:
 		say "[big he of M] gives your ass a firm spank before allowing you to stand up. [speech style of M]'Keep your hands to yourself, you naughty minx.'[roman type][line break]";
-		PainUp 1;
+		PainUp 10;
 		Satisfy M.
 
 To say DragFlav of (M - shopkeeper) to (R - Dungeon03):[The stone cell]
@@ -1400,8 +1411,7 @@ To say DragArrival of (M - shopkeeper) to (R - Dungeon03):[TODO: possibly update
 			repeat with Y running through alive royal guards:
 				compute Y punishing a criminal;
 				anger Y;
-				now Y is interested;
-				now the boredom of Y is 0;
+				interest Y;
 		otherwise:
 			say "[speech style of M]'Officer[if N > 1]s[end if], I know you're busy, but do you want to help me fuck this naught minx who tried stealing from my shop?[roman type][line break][if N > 1]The guards exchange glances with each other and one by one they start to grin[otherwise]The guard raises an eyebrow and then slowly starts to grin[end if].";
 	otherwise:

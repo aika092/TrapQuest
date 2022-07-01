@@ -17,7 +17,8 @@ Carry out TQeating stuffed mushroom:
 	if diaper quest is 1:
 		if the quality of the noun is -2:
 			say "You can't deny how filling it was, but it's even harder to deny the weird after-taste that comes with every single bite. There's definitely some extra ingredient in this, and knowing the nature of this game it's probably not going to [italic type]help[roman type] your ability to use a toilet like an adult...";
-			increase incontinence by 1;
+			if diaper messing >= 3, RectumIncontinenceUp 1;
+			otherwise BladderIncontinenceUp 1;
 		otherwise:
 			say "You feel way healthier after such a filling meal, albeit pretty lethargic.";
 			DexDown 1;

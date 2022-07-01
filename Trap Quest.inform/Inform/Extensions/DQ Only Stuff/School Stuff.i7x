@@ -435,7 +435,7 @@ To compute teaching of (L - chess-lesson):
 				say "[BigNameDesc of M] releases you from your [ShortDesc of C]!";
 				dislodge C;
 				now C is in School01;
-				now C is unlocked;
+				unlock C;
 		repeat with C running through carried things:
 			now C is in School01;
 		say "[speech style of M]'If you want any of those back, you'll need to pick them up from Reception later.'[roman type][line break]You are made to wear a new giant plain white disposable diaper, bigger than any diaper you've ever seen before.";
@@ -451,11 +451,11 @@ To compute teaching of (L - chess-lesson):
 		say "[speech style of M]'This diaper is made of a special material that will expand almost endlessly as you keep filling it up. Trust me, that's going to be important later.'[roman type][line break]And then you are all marched to the assembly hall, where it feels like every single other person in the school seems to already be waiting!";
 		repeat with X running through undefeated staff members in the school:
 			now X is in School16;
-			now X is interested;
+			interest X;
 			calm X;
 		repeat with X running through undefeated students in the school:
 			now X is in School16;
-			now X is interested;
+			interest X;
 			calm X;
 		now the arousal of the player is 0;
 		update arousal;
@@ -725,8 +725,8 @@ To compute student chess soiling:
 	now the student-rectum of chess-lesson is 0;
 
 To compute chess soiling:
-	let I be 9 - (incontinence + suppository);
-	if debuginfo > 0 and rectum > 1, say "[input-style]Mess self-control check: 9 - incontinence ([incontinence]) - laxative effects ([suppository]) = [I + 0][if I < 4]; minimum 4[end if] | ([rectum].5) rectum volume[roman type][line break]";
+	let I be 9 - (the raw-rectum-incontinence of the player + suppository);
+	if debuginfo > 0 and rectum > 1, say "[input-style]Mess self-control check: 9 - incontinence ([the raw-rectum-incontinence of the player]) - laxative effects ([suppository]) = [I + 0][if I < 4]; minimum 4[end if] | ([rectum].5) rectum volume[roman type][line break]";
 	if I < 4, now I is 4;
 	if rectum >= I:
 		say "All of a sudden, you feel your rectal muscles spasming and you have absolutely no control as it begins to empty itself of its contents! ";
@@ -747,7 +747,7 @@ To compute chess messing:
 		say "An ungodly avalanche of poop floods out of your [asshole], feeling almost unending as it fills your [ShortDesc of D].";
 	if worn cum-when-messing tattoo is worn or (the diaper addiction of the player > 13 and the player is very horny) or (the diaper addiction of the player > 18 and the player is a bit horny), anally orgasm shamefully;
 	MessUp D by rectum - 1;
-	reset rectum;
+	reset rectum after messing;
 	if the diaper addiction of the player > 14 and the player is not unable to orgasm so soon:
 		say "You can't help but be [one of]turned on[or]aroused[at random] by the feeling!";
 		arouse 40 * the diaper addiction of the player;
@@ -1033,7 +1033,7 @@ To compute chess loss taunting of (M - a nasty student):
 		summon marker chest tattoo;
 	otherwise:
 		say "[speech style of M]'[one of]Ooh, looks what I've found, all alone and with nobody to protect [him of the player].'[or]What did I hear you just say? Pinch my nipples? That's a weird request, but okay.'[cycling][roman type][line break][big he of M] ignores your whining pleas for mercy as [he of M] grabs your nipples with pincer grips and twists them painfully.";
-		PainUp 1.
+		PainUp 10.
 
 Part - Enema Race
 
@@ -1128,10 +1128,10 @@ To compute teaching of (L - enema-race-lesson):
 						FavourDown S2 by 3;
 				otherwise if M1 >= 3:
 					say "You grit your teeth and hold it in. The cramps get worse and worse!";
-					if incontinence > 0:
+					if the raw-rectum-incontinence of the player > 0:
 						say "[one of]But you're proud of how well you're[or]You're amazed that you're still[stopping] managing to hold it all in[one of]. Your sphincter control must not be as bad as you thought![or].[stopping]";
-						decrease incontinence by 1;
-					PainUp 1;
+						decrease the raw-rectum-incontinence of the player by 1;
+					PainUp 10;
 					increase M1 by 1;
 				otherwise:
 					say "You keep holding it in for now.";
@@ -1416,7 +1416,7 @@ To compute teaching of (L - dodgeball-lesson):
 			unless the player is consenting, now playerMessNow is 1;
 		let messLikelihood be 0;
 		if dodgeChoice > 0, now messLikelihood is -3;
-		if rectum is 100 or (playerMessNow is 0 and rectum is 50 and a random number between -10 and the incontinence of the player > messLikelihood), now playerMessNow is 2;
+		if rectum is 100 or (playerMessNow is 0 and rectum is 50 and a random number between -10 and the rectum-incontinence of the player > messLikelihood), now playerMessNow is 2;
 		if playerMessNow > 0:
 			if rectum is 100:
 				say "There's just no way for you to hold onto such an impossibly giant amount of poop. Your sphincter opens and goop shoots forth like from a breached dam, flooding to every far corner of your padding. There's nothing you can do to stop the flow as the entire contents of your impossibly bloated belly forces its way out of your butthole and into your poor diaper over the course of several humiliating seconds. You are left trapped in a horrible stinking prison of your own making.";
@@ -1440,7 +1440,7 @@ To compute teaching of (L - dodgeball-lesson):
 				otherwise:
 					say "You ";
 				say "very slowly waddle from the court, squelching loudly[if the player is not disgraced] and blushing furiously[end if] as you do.";
-			now rectum is 1;
+			reset rectum after messing;
 			now the incidents of enema-stat-loss is 0;
 			force immediate clothing-focus redraw;
 			display stuff; [update graphics window]

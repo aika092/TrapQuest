@@ -164,7 +164,7 @@ To compute labour to (M - a royal guard):
 		Delay Labour.
 
 To say ClothesPeeReaction of (M - a royal guard):
-	now M is interested;
+	interest M;
 	if diaper quest is 1:
 		if M is friendly:
 			say "[BigNameDesc of M] frowns.[line break][speech style of M]'What are you doing?! It looks to me like you need diapers, little girl. I am very unimpressed.'[roman type][line break]";
@@ -230,7 +230,7 @@ To compute MasturbationReaction of (M - a royal guard):
 				say "[BigNameDesc of M] grins, and starts thrusting even faster.";
 			otherwise:
 				say "[BigNameDesc of M] [if M is penetrating a fuckhole]spanks[otherwise]slaps[end if] you angrily.[line break][speech style of M]'Did I give you permission to do that? This is supposed to be a punishment!'[roman type][line break]";
-				PainUp 1;
+				PainUp 10;
 				say "[bold type]Your masturbation session has been interrupted![roman type][line break]";
 				follow the masturbation ended rule;
 		otherwise:
@@ -449,7 +449,6 @@ To say NipSlipSeenFlav of (M - a royal guard):
 	say "[speech style of M]'[if the class of the player is princess]Ma'am, I believe you have had, ahem, a wardrobe malfunction[otherwise]Wench, your clothes are not even on properly. You are a disgrace[end if].'[roman type][line break]".
 
 To compute perception of (M - a royal guard):
-	now M is interested;
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]"; [The output for clothing humiliation takes place within the 'sluttily dressed' check.]
 	let PSRB be a random carried probably-serve-ready bottle;
 	if tutorial is 1:
@@ -571,7 +570,6 @@ To compute DQ appearance assessment of (M - a royal guard):
 		say "[speech style of M]'Greetings, traveller. I hope your visit to these regions has been engaging? ".
 
 To compute DQ perception of (M - a royal guard):
-	now M is interested;
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]"; [The output for clothing humiliation takes place within the 'sluttily dressed' check.]
 	if tutorial is 1:
 		say "[TutorialGreet of M]";
@@ -1011,7 +1009,7 @@ This is the royal guard incarcerating a criminal rule:
 				repeat with G running through alive royal guards:
 					unless G is M or the boredom of G >= 300 or G is defeated or G is asleep:
 						now G is in Dungeon03;
-						now G is interested;
+						interest G;
 						anger G;
 						make G expectant;
 				let N be the number of royal guards in Dungeon03;
@@ -1070,7 +1068,7 @@ To compute happy reward of (M - a royal guard):
 				let L be a random worn locked clothing;
 				if L is clothing:
 					say "[speech style of M]'I guess I probably won't get in too much trouble for letting you out a little early...'[roman type][line break][big he of M] takes [his of M] key and unlocks your [ShortDesc of L] for you.[speech style of M]'Just don't tell anyone I did that.'[roman type][line break]";
-					now L is unlocked;
+					unlock L;
 				otherwise:
 					say "[speech style of M]'I guess you can have this, as long as nobody finds out.'[roman type][line break]";
 					now skeleton key is in the location of the player;
@@ -1403,8 +1401,7 @@ To IdentifiablePosterReaction of (M - a royal guard):
 	if M is friendly or M is uninterested:
 		say "[speech style of M]'I shall administer your punishment.'[roman type][line break][BigNameDesc of M] takes an aggressive stance.";
 		anger M;
-		now M is interested;
-		now the boredom of M is 0;
+		interest M;
 	humiliate the lewdness of a random poster in the location of the player * 2.
 
 To UnidentifiablePosterReaction of (M - a royal guard) with (P - a poster):
@@ -1496,7 +1493,7 @@ To compute bondage releasing of (M - a royal guard):
 	if the player is consenting:
 		repeat with B running through worn locked clothing:
 			say "[BigNameDesc of M] uses [his of M] key to unlock your [printed name of B]!";
-			now B is unlocked;
+			unlock B;
 		now the sentence of M is 10;
 	otherwise:
 		say "[speech style of M]'You wish to continue repenting for now? How noble! Come see me when you desire release.'[roman type][line break]".
@@ -1679,7 +1676,7 @@ To compute unfriendly drink of (M - a royal guard):
 	otherwise:
 		say "[if the thirst of the player is 5 and the player is upright]You are so thirsty that you drop to your knees and beg[otherwise if the thirst of the player is 5]You are so thirsty that you beg [him of M] find any way to quench your thirst[otherwise if the player is upright]You drop to your knees and beg[end if]. ";
 		now the stance of the player is 1;
-		now M is interested;
+		interest M;
 		compute M entering mouth;
 		humiliate 225;
 	say line break.

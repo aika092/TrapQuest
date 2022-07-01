@@ -315,7 +315,7 @@ To compute fleeing of (M - a student):
 		otherwise if A is a random N-viable direction and P is not the location of the player and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
 			try M going A;
 		repeat with N running through staff members in the location of M: [Students alert teachers if they have been hurt.]
-			now N is interested;
+			interest M;
 			unless M is in the location of the player:
 				distract M;
 				calm M;
@@ -575,8 +575,7 @@ This is the student obeys teacher rule:
 			if S is friendly, say "[BigNameDesc of S] yells angrily.[line break][speech style of S]'NO FIGHTING! BOTH OF YOU DOWN ON THE GROUND, NOW!'[roman type][line break]";
 			repeat with M running through staff members in the location of the player:
 				anger M;
-				now M is interested;
-				now the boredom of M is 0;
+				interest M;
 			repeat with M running through awake unfriendly interested students in the location of the player:
 				now the teacher-obedience of M is 1;
 				say "[BigNameDesc of M] [one of]obediently[or]instantly[or]silently[or]immediately[in random order] drops to the ground, and lying face down, assumes [one of]a submissive position with [his of N] hands behind [his of N] head, like a prisoner[or]the position[stopping].";
@@ -622,7 +621,7 @@ To compute group bullying of (M - a student):
 	let LST be the list of alive unfriendly students;
 	repeat with ST running through LST:
 		now ST is in the location of the player;
-		now ST is interested;
+		interest ST;
 	remove M from LST;
 	now current-monster is M;
 	say "[BigNameDesc of M] whistles loudly. You look around to see that ";
@@ -721,7 +720,7 @@ To compute punishment of (P - student-bully-wedgie):
 	now the wedgie-target of A is K;
 	now the stance of the player is 0;
 	compute crowd jeering of current-monster;
-	PainUp 1;
+	PainUp 10;
 	compute crowd satisfaction of current-monster;
 	satisfy current-monster;
 	say "It looks like you'll need to [bold type]jump[roman type] and try and rip your underwear, or [bold type]wait[roman type] for someone to rescue you.";
@@ -777,7 +776,7 @@ To compute swirlie of (M - a monster):
 			compute addictive tasting of urine;
 		otherwise:
 			say "[BigNameDesc of ST] takes the opportunity to kick you right in the [genitals]. Tears appear in your eyes and are immediately washed away by the toilet water.";
-			PainUp 2;
+			PainUp 20;
 		satisfy ST;
 		compute room leaving of ST;
 	let swirlieResisting be 0;
@@ -1063,7 +1062,7 @@ To execute (A - prank-wedgie):
 		say "[speech style of current-monster]'Whoopsie, haha, I don't know my own strength!'[roman type][line break]";
 	otherwise:
 		say "It damages the [clothing-material of K], and it really hurts!";
-		PainUp 1;
+		PainUp 10;
 		damage K.
 
 prank-kancho is a prank-action.
@@ -1081,10 +1080,10 @@ To execute (P - prank-kancho):
 		if A is not currently at least partially visible, say "[speech style of current-monster]'Whoa, you've got a [ShortDesc of A] in your ass? Slut alert, haha!'[roman type][line break]";
 	otherwise if C is a clothing:
 		say "[big his of current-monster] fingertips jam into your sphincter through the [clothing-material of C] of your [ShortDesc of C], triggering a sharp but short-lived pain in your backside.";
-		PainUp 1;
+		PainUp 10;
 	otherwise:
 		say "With no barrier between [his of current-monster] fingers and your [asshole], they shoot right up inside you, with serious strength and speed. The sensation is both painful and intense!";
-		PainUp 1;
+		PainUp 10;
 		now current-monster is penetrating asshole;
 		ruin asshole;
 		dislodge current-monster;
@@ -1112,7 +1111,74 @@ To execute (A - prank-condom):
 	let C be a random worn condom pinnable currently uncovered clothing;
 	let N be the current-rank of current-monster - 1;
 	say "[speech style of current-monster]'Gotcha!'[roman type][line break][BigNameDesc of current-monster] has taken advantage of a moment you weren't looking to sneak up to you and pin [if N is 1]a used condom[otherwise][N] used condoms[end if] to your [ShortDesc of C][one of]! Due to the rules of this weird universe, it now can't be removed without biting it, which will cause you to get a mouthful of the [semen] inside...[or].[stopping]";
-	increase the used condoms of C by N.
+	UsedCondomUp C by N.
+
+prank-spank is a prank-action.
+To execute (A - prank-spank):
+	say "[speech style of current-monster]'Look lively, [boy of the player]friend!!!'[roman type][line break][BigNameDesc of current-monster] smacks your ass from behind, as hard as [he of current-monster] can. ";
+	compute strength 3 spanking;
+	if spank tattoo is drawable and there is a worn tattoo and the delicateness of the player > 8 and a random number between 1 and 6 is 1:
+		summon spank tattoo;
+		say "Your skin stings with pain as a 'Spank Me' tattoo is suddenly burned onto your butt!".
+
+prank-grope is a prank-action.
+Definition: prank-grope is eligible:
+	if the largeness of breasts > 2, decide yes;
+	decide no.
+To execute (A - prank-grope):
+	say "[speech style of current-monster]'Surprise, sexy!'[roman type][line break][BigNameDesc of current-monster] moves [his of current-monster] hands towards your chest before you can stop [him of current-monster]. ";
+	compute breasts grope of current-monster;
+	say BreastsGropeFlav of current-monster;
+	stimulate breasts from current-monster;
+	progress quest of titfuck-desirability-quest.
+
+prank-skirt is a prank-action.
+Definition: prank-skirt is eligible:
+	if the player is upright and there is a worn displacable crotch-in-place skirt, decide yes;
+	decide no.
+To execute (A - prank-skirt):
+	let S be a random worn displacable crotch-in-place skirt;
+	say "[speech style of current-monster]'FLIP SURPRISE!!!'[roman type][line break][BigNameDesc of current-monster] has taken advantage of a moment you weren't looking to sneak behind you and flip up your [ShortDesc of S]. ";
+	displace S;
+	repeat with M running through students in the location of the player:
+		if M is not current-monster:
+			if M is uninterested or M is friendly:
+				check guaranteed perception of M;
+	say "[BigNameDesc of current-monster]'Oh my god, look, everybody's looking at you!'[roman type][line break][big he of current-monster] points behind you[if the number of students in the location of the player is 1], but when you look that way, there's nobody there[end if]. [big he of current-monster] was just distracting you!";
+	if prank-wedgie is eligible:
+		execute prank-wedgie;
+	otherwise:
+		execute prank-spank.
+
+prank-pants is a prank-action.
+Definition: prank-pants is eligible:
+	if the player is upright and there is a worn displacable crotch-in-place trousers, decide yes;
+	decide no.
+To execute (A - prank-pants):
+	let S be a random worn displacable crotch-in-place trousers;
+	say "[speech style of current-monster]'SURPRISE, NERD!!!'[roman type][line break][BigNameDesc of current-monster] has taken advantage of a moment you weren't looking to sneak behind you and yank down your [ShortDesc of S]. ";
+	displace S;
+	repeat with M running through students in the location of the player:
+		if M is not current-monster:
+			if M is uninterested or M is friendly:
+				check guaranteed perception of M;
+	say "[BigNameDesc of current-monster]'Oh my god, look, everybody's looking at you!'[roman type][line break][big he of current-monster] points behind you[if the number of students in the location of the player is 1], but when you look that way, there's nobody there[end if]. [big he of current-monster] was just distracting you!";
+	update appearance level;
+	if prank-photo is eligible:
+		execute prank-photo;
+	otherwise if prank-wedgie is eligible:
+		execute prank-wedgie;
+	otherwise:
+		execute prank-spank.
+
+prank-nails is a prank-action.
+Definition: prank-nails is eligible:
+	if artificial enhancements fetish is 1 and the current-rank of current-monster > 2 and fake-nails is off-stage, decide yes;
+	decide no.
+To execute (A - prank-nails):
+	say "[speech style of current-monster]'Gotcha!'[roman type][line break][BigNameDesc of current-monster] has taken advantage of a moment you weren't looking to sneak up to you grab both of your hands! When [he of current-monster] lets go of your fists, they now have a brand new set of apparently unremovable fake nails![line break][variable custom style]Oh my gosh! These are so unwieldy, and they make me look like a total whore![roman type][line break]";
+	summon fake-nails uncursed.
+
 
 Part - Damage
 
@@ -1122,7 +1188,7 @@ To compute damage reaction of (M - a student):
 		now the scared of M is 100;
 		anger M;
 		repeat with N running through staff members in the location of M:
-			now N is interested;
+			interest N;
 			compute N protecting against M;
 	otherwise:
 		say "[big he of M] screams [if M is uninterested]in fury[otherwise]even louder[end if]!";
@@ -1131,7 +1197,7 @@ To compute damage reaction of (M - a student):
 Definition: a student is automatically banishable: decide yes. [Will this NPC automatically resolve their disappearance rather than giving the player options on what to do?]
 To say BanishFleeFlav of (M - a student):
 	say "[speech style of M]'This school sucks! I'm never coming back!'[roman type][line break][BigNameDesc of M] sprints for the exit!".
-To compute banishment of (M - a student):
+To compute unique banishment of (M - a student):
 	let N be a random staff member in the location of the player;
 	if N is monster and armband is held:
 		say "[BigNameDesc of N] growls with anger.[line break][speech style of N]'You've lost us [one of]a[or]another[stopping] student, [bitch]!'[roman type][line break][NameDesc of N] mutters some words under [his of N] breath. Suddenly your [armband] fizzles into thin air!";
@@ -1283,7 +1349,7 @@ To compute quiz partner messing:
 	let D be a random worn diaper;
 	if rectum >= 30 and asshole is not actually occupied:
 		MessUp D by 30;
-		now rectum is 1;
+		reset rectum after messing;
 	UrineSoakUp D by the bladder of the player;
 	now the bladder of the player is 0;
 	HappinessDown ST by 5.

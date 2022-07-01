@@ -65,7 +65,7 @@ To decide which number is the bartering value of (T - black candle) for (M - vam
 To say MonsterOfferAcceptFlav of (M - vampiress) to (T - black candle):
 	say "[speech style of M]'Ah yes, this looks beautiful. I'll put it right next to my coff... I mean, my bed.'[roman type][line break]".
 
-cock candle is a collectible. cock candle is in Dungeon37. The printed name of cock candle is "[TQlink of item described]cock candle[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of cock candle is "ckc".
+cock candle is a collectible. cock candle is in Dungeon37. cock candle can be wisped. cock candle is wisped. The printed name of cock candle is "[TQlink of item described]cock candle[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of cock candle is "ckc".
 
 Figure of cock candle is the file "Items/Collectibles/candle2.png".
 
@@ -79,7 +79,13 @@ To say ExamineDesc of (C - cock candle):
 	say "A candle made of pure cream wax, shaped like a penis. It has a flame at the top that seems to magically stay aflame no matter what you do, and the wick never grows shorter as it burns.".
 
 Report taking cock candle:
-	if tough-shit is 1, force commence doom.
+	if tough-shit is 1, force commence doom;
+	if the player is getting lucky:
+		say "You feel a cursed spirit attempt to escape, but remain trapped within the candle. For now.";
+	otherwise:
+		now cock candle is not wisped;
+		say "As you disturb the candle, you feel a cursed spirit escape through the flame!";
+		deploy a wisp.
 
 To say ShortDesc of (C - cock candle):
 	say "cock candle".

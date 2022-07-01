@@ -20,8 +20,7 @@ the clothing "C."
 
 +!]
 To set up (C - a clothing):
-	if C is zippable, now C is crotch-zipped;
-	repair C;
+	repair C; [this also correctly sets up zippable crotches]
 	set up armour of C;
 	set up influence of C;
 	set up magic state of C;

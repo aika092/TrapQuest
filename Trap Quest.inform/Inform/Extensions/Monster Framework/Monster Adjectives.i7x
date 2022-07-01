@@ -140,6 +140,9 @@ A monster has a number called loot dropped.
 A monster has a number called leftover-type. The leftover-type of a monster is usually 100.
 
 Definition: a monster is dark skinned: decide no.
+Definition: a monster is pale skinned:
+	if it is human and it is not dark skinned and it is not infernal, decide yes;
+	decide no.
 Definition: a monster is musky: decide no.
 
 A monster can be doing nothing special, spanking the player, changing the player, feeding the player, whipping the player, masturbating the player, enema-filling the player (this is the punishment-attack-state property).

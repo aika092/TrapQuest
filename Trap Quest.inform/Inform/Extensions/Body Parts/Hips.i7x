@@ -11,36 +11,44 @@ REQUIRES COMMENTING
 @!]
 hips is a flesh. hips is everywhere. Understand "ass", "butt", "bottom", "rear", "bum", "behind", "rear end", "buttocks", "cheeks" as hips. The text-shortcut of hips is "hips".
 
-To decide which number is the usualHipModesty of (C - a clothing):
+To decide which number is the usualAssModesty of (C - a clothing):
 	if C is skirt-covering-crotch, decide on 100;
 	if C is crotch covering:
 		if the armour of C > 0, decide on the armour of C;
 		decide on 6; [This is really just a best estimate; but most crotchless outfits e.g. catsuits still cover some butt cheeks. Can obviously be manually overridden.]
 	decide on 0.
 
-To decide which number is the hipModesty of (C - an object):
-	if C is worn not-butt-windowed clothing, decide on the usualHipModesty of C;
+To decide which number is the assModesty of (C - an object):
+	if C is not-butt-windowed clothing, decide on the usualAssModesty of C;
 	decide on 0.
 
-To decide which number is the hipModesty of (C - arms):
+To decide which number is the assModesty of (C - arms):
 	decide on 3.
 
-To decide which number is the hipModesty of (C - a knickers):
+To decide which number is the assModesty of (C - a knickers):
 	if C is butt-windowed or C is actually sheer, decide on 0;
 	decide on the armour of C.
 
-To decide which number is the hipModesty of (C - a trousers):
+To decide which number is the assModesty of (C - a trousers):
 	if C is butt-windowed or C is crotch-displaced or C is actually sheer, decide on 0;
 	decide on 99.
 
-To decide which number is the hipExposure of (C - an object):
-	decide on (7 + (the total volume of hips / 2)) - the hipModesty of C.
+To decide which number is the assExposure of (C - an object):
+	decide on (7 + (the total volume of hips / 2)) - the assModesty of C.
 
-To decide which object is the concealer of (H - hips):
+To decide which number is the usualHipModesty of (C - a clothing):
+	if C is usually thigh covering, decide on the usualAssModesty of C;
+	decide on 0.
+
+To decide which number is the hipModesty of (C - an object):
+	if C is clothing, decide on the usualHipModesty of C;
+	decide on 0.
+
+To decide which object is the concealer of (H - hips): [this really cares about concealing BUTT CHEEKS, not hips]
 	let O be 0;
 	let P be nothing;
 	repeat with C running through worn clothing:
-		if the hipExposure of C <= 0 and the bottom-layer of C >= O:
+		if the assExposure of C <= 0 and the bottom-layer of C >= O:
 			now O is bottom-layer of C;
 			now P is C;
 	decide on P.
@@ -49,15 +57,15 @@ To decide which object is the at least partial concealer of (H - hips):
 	let O be 0;
 	let P be nothing;
 	repeat with C running through worn clothing:
-		if the hipModesty of C > O:
-			now O is the hipModesty of C;
+		if the assModesty of C > O:
+			now O is the assModesty of C;
 			now P is C;
-	if arms is listed in the armUses of arms and the hipModesty of arms > O, decide on arms;
+	if arms is listed in the armUses of arms and the assModesty of arms > O, decide on arms;
 	decide on P.
 
 To decide which number is the unique outrage of (H - hips):
 	let C be the at least partial concealer of H;
-	let O be the hipExposure of C / 2;
+	let O be the assExposure of C / 2;
 	if the strut of the player > 0 and the player is upright, increase O by 5;
 	increase O by the thickness of hips / 4;
 	if O > 20, decide on 20;
@@ -239,9 +247,13 @@ To say TotalDesc of hips:
 	if the strut of the player > 0 and the player is upright, say "You are strutting, which causes your hips to sway provocatively.";
 	let C be the at least partial concealer of hips;
 	if C is clothing:
-		say "Your [ShortDesc of C] [AssModestyDesc of C]. The shape of your hips is still visible through the fabric.";
+		say "Your [ShortDesc of C] [AssModestyDesc of C]. [HipModestyFlav of C]";
 	otherwise:
 		say "Your buttcheeks are currently completely visible.".
+
+To say HipModestyFlav of (C - a clothing): [This is purely flavour - if hip modesty makes an outfit more outrageous, this should be coded directly into the outrage influence.]
+	if the hipModesty of C is 0, say "The provocative cut of the skirt [if C is worn]exposes your thighs and hips[otherwise]would leave your thighs and hips exposed[end if].";
+	otherwise say "The shape of your hips [if C is worn]is still[otherwise]will still be[end if] visible through the fabric.".
 
 To say AssDesc:
 	let A be the total volume of hips;

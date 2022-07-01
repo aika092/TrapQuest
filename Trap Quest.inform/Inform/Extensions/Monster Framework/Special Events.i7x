@@ -44,7 +44,7 @@ To FacePiss from (M - an object):
 			compute urine hitting face;
 			if M is nothing: [currently only wrestler urinal scene]
 				say "[first custom style]'[one of]Ungrateful brat[or]You can't even be a urinal properly[or]Useless whore[or]Disrespectful bitch[or]Oh my, you disobedient wench[or]Gross, you let some get on my shoes you [cunt][in random order]!'[roman type][line break]The anonymous man [one of]slaps you in the face[or]kicks you in the belly[or]painfully twists your nipples[at random] as punishment.";
-				PainUp 1;
+				PainUp 10;
 			otherwise if M is intelligent monster:
 				consider angry punishment of M;
 			if vm is video-monitor and the video-caller of vm is not the throne and vm is not recording-disgrace:
@@ -192,8 +192,7 @@ To DrinkPiss from (M - an object):
 		progress quest of human-toilet-quest;
 	otherwise if WC hood is off-stage and the raw urine taste addiction of the player > 2 and WC hood is actually summonable:
 		summon WC hood cursed;
-		say "[bold type]Suddenly your mouth is forced wide open as a [ShortDesc of WC hood] [bold type]appears around your head. You can't close it![roman type][line break]";
-	progress quest of piss-drinking-quest.
+		say "[bold type]Suddenly your mouth is forced wide open as a [ShortDesc of WC hood] [bold type]appears around your head. You can't close it![roman type][line break]".
 
 [!<ComputeUniquePissDrinkEffectOfObject>+
 
@@ -393,11 +392,14 @@ This function is called whenever a monster is not willing to bukkake the player,
 To compute default oral creampie of (M - a monster):
 	get oral creampie image for M;
 	FaceFill semen by (the semen load of M);
-	say SwallowDemand of M;
-	if M is coercing a swallow:
-		compute auto swallow of M;
+	if M is friendly-fucking:
+		compute swallow choice of M;
 	otherwise:
-		compute swallow choice of M.
+		say SwallowDemand of M;
+		if M is coercing a swallow:
+			compute auto swallow of M;
+		otherwise:
+			compute swallow choice of M.
 
 [!<ComputeOralCreampieOfMonster>+
 
@@ -482,9 +484,9 @@ This function is called whenever a monster ejaculates in the player's mouth, and
 To compute swallow choice of (M - a monster):
 	say "What do you do with the [MouthfulDesc]?";
 	reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
-	set numerical response 1 to "swallow it[if newbie tips is 1] (guaranteed addiction increase)[end if]";
-	set numerical response 2 to "hold it for now[if newbie tips is 1] (chance of addiction increase each turn you hold it; likely to slightly upset the [ShortDesc of M])[end if]";
-	set numerical response 3 to "spit it out immediately[if newbie tips is 1] (a bit humiliating if people get to see what's been in your mouth; likely to significantly upset the [ShortDesc of M])[end if]";
+	set numerical response 1 to "swallow it (guaranteed addiction increase[if M is friendly-fucking]; likely to please the [ShortDesc of M][end if])";
+	set numerical response 2 to "hold it for now (chance of addiction increase each turn you hold it[if M is not friendly-fucking]; likely to slightly upset the [ShortDesc of M][end if])";
+	set numerical response 3 to "spit it out immediately (a bit humiliating if people get to see what's been in your mouth[if M is not friendly-fucking]; likely to significantly upset the [ShortDesc of M][end if])";
 	compute multiple choice question;
 	if player-numerical-response is 1:
 		compute voluntary swallow of M;
@@ -494,12 +496,14 @@ To compute swallow choice of (M - a monster):
 		compute oral creampie hold reaction of M.
 
 To compute oral creampie hold reaction of (M - a monster):
-	say "[speech style of M]'I said swallow it, not hold it!'[roman type][line break]";
-	if M is friendly:
-		FavourDown M by 1;
-	otherwise:
-		say "[BigNameDesc of M] strikes you across the face.";
-		PainUp 1.
+	if M is not friendly-fucking:
+		say "[speech style of M]'I said swallow it, not hold it!'[roman type][line break]";
+		if a random number between 1 and the favour of M > 5:
+			say "[speech style of M]'Ugh, whatever.'[roman type][line break]";
+			FavourDown M by 1;
+		otherwise:
+			say "[BigNameDesc of M] strikes you across the face.";
+			PainUp 10.
 
 [!<ComputeSpitChoiceOfMonster>+
 
@@ -539,6 +543,7 @@ To compute semen catching from (M - a monster) in (V - a bottle):
 	SetDose V to (the total volume of face + 1) / 2;
 	now V is monster-origin;
 	MouthEmpty.
+
 
 [!<ComputeAutoSwallowOfMonster>+
 
@@ -850,14 +855,15 @@ This function is called when the player potentially makes a monster angry in som
 
 +!]
 To consider angry punishment of (M - a monster):
-	let N be a random number between 1 and 20;
+	let N be a random number between 1 and 15;
 	if N >= the favour of M:
 		compute angry punishment of M;
 	otherwise:
 		say AngryForgiveness of M.
 
 To say AngryForgiveness of (M - a monster):
-	if M is intelligent, say "[one of][speech style of M]'Disappointing.'[roman type][line break][or][speech style of M]'How rude.'[roman type][line break][or][speech style of M]'Hmph.'[roman type][line break][or][BigNameDesc of M] wrinkles [his of M] nose but doesn't say anything.[or][BigNameDesc of M] tuts with disappointment.[or][BigNameDesc of M] doesn't seem impressed.[in random order]".
+	if M is intelligent, say "[one of][speech style of M]'Disappointing.'[roman type][line break][or][speech style of M]'How rude.'[roman type][line break][or][speech style of M]'Hmph.'[roman type][line break][or][BigNameDesc of M] wrinkles [his of M] nose but doesn't say anything.[or][BigNameDesc of M] tuts with disappointment.[or][BigNameDesc of M] doesn't seem impressed.[in random order]";
+	FavourDown M by 1.
 
 [!<ComputeAngryPunishmentOfMonster>+
 
@@ -968,7 +974,7 @@ To decide which number is the situational charisma modifier of (M - a monster):
 	decide on 0.
 
 To say GiftRewardFlav of (X - a thing) from (M - a monster):
-	say "[speech style of M]'[if M is buddy][one of]I think you deserve this[or]This is for you[or]My way of saying thank you[in random order][otherwise][one of]Keep the change, you filthy animal[or]I guess you've earned this[or]This is for you[in random order][end if].'[roman type][line break]".
+	if M is awake, say "[speech style of M]'[if M is buddy][one of]I think you deserve this[or]This is for you[or]My way of saying thank you[in random order][otherwise][one of]Keep the change, you filthy animal[or]I guess you've earned this[or]This is for you[in random order][end if].'[roman type][line break]".
 
 
 [!<SayAngryPunishmentInsultOfMonster>+
@@ -1245,8 +1251,7 @@ To compute labour to (M - a monster):[Should never appear]
 
 To compute fatherhood to (M - a monster): [no reason to check for successful pregnancy here, since we already know pregnancy was not delayed at this point.]
 	if M is not alive:
-		say DefaultBirthScene;
-		if debugmode is 1, say "The father was [M], but [he of M] was dead.";
+		if debugmode > 0, say "The father was [M], but [he of M] was off-stage.";
 	otherwise:
 		now M is mating;
 		if M is intelligent or M is uninterested or M is friendly:
@@ -1263,7 +1268,7 @@ Handles the player automatically submitting to a monster due to interracial feti
 @param <Monster>:<M> The monster the player is submitting to
 +!]
 To compute racial submission to (M - a monster):
-	if M is dark skinned and M is male and a random number between 8 and 11 < the bbc addiction of the player + (the square root of the delicateness of the player):
+	if M is dark skinned and M is male and a random number between 14 and 22 < the bbc addiction of the player + (the square root of the delicateness of the player):
 		now auto is 1;
 		let B be a random actually presentable body part;
 		if B is not face and face is actually presentable and M is male and semen is craved and M is willing to do oral, now B is face;
@@ -1388,7 +1393,7 @@ To compute strength (pain-factor - a number) spanking:
 			decrease pain-factor by (the DQBulk of D + 2) / 2;
 		if a random number between 0 and 2 < pain-factor:
 			say "The spanks [if the number of ass covering clothing is 0]collide painfully with your bare ass cheeks[otherwise]still [one of]hurt[or]make you squeal[or]cause you to whimper[at random], even through your clothing[end if]. ";
-			PainUp 1;
+			PainUp 10;
 		otherwise:
 			if there is ass covering clothing, say "Thanks to your [if diaper-stack is worn or the DQBulk of the player > 3]extra-thick padding[otherwise if D is diaper]layer of padding[otherwise][random top level ass protection clothing][end if], you manage to tolerate the [one of]pain[or]punishment[cycling].";
 			otherwise say "You suffer through the pain silently.";
@@ -1421,7 +1426,7 @@ To check sudden spit and expulsion with reason (T - a text):
 To check sudden expulsion with reason (T - a text):
 	check enema holding with reason T; [handles both full enema loss and little squirts]
 	if player-just-enema-leaked is false:
-		if T matches the text "orgasm", now hasMessedNow is false;
+		if T matches the text "orgasm", now hasMessedNow is false; [orgasms don't cause messing]
 		otherwise check real messing with reason T;
 		if hasMessedNow is false:
 			if T matches the text "orgasm":

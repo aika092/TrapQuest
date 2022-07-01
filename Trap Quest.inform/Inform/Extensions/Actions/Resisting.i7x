@@ -10,7 +10,7 @@ Definition: a monster (called M) is fucking daddy's hole:
 Definition: a monster (called M) is wrong race fucking:
 	if M is not penetrating a body part, decide no;
 	if the player is in DiamondLessonBlindfolded, decide no; [Otherwise the lesson is impossible]
-	if once-you-go-black tattoo is worn and M is human and M is not dark skinned, decide yes;
+	if once-you-go-black tattoo is worn and M is pale skinned, decide yes;
 	decide no.
 
 To say maintain your dignity:
@@ -330,7 +330,7 @@ To compute punishment of (P - slap-punishment):
 
 To compute sex resist slap of (M - a monster):
 	say SexResistSlapFlav of M;
-	PainUp 1.
+	PainUp 10.
 
 To say SexResistSlapFlav of (M - a monster):
 	say "[BigNameDesc of M] [if M is intelligent][one of]cackles[or]laughs deeply[or]chuckles[or]snorts[at random] at your [one of]fruitless display[or]vain efforts[or]pointless attempts[or]futile resistance[at random][otherwise]looks at you blankly[end if] before [if M is male and M is penetrating face]slapping you harshly on the cheek[otherwise if M is male and M is penetrating breasts]painfully slapping your [BreastDesc][otherwise]roughly spanking your [buttcheeks][end if] [one of]to get you to behave[or]in order to keep you under control[or]as punishment[or]to discourage further disobedience[at random].".

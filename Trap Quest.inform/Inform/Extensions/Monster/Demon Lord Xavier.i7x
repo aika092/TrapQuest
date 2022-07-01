@@ -120,6 +120,7 @@ To unseal xavier from (M - a monster):
 	if M is in the location of the player:
 		say "You feel a burst of heat as the figure of [NameDesc of M] morphs and shifts, clothes bursting at the seams and falling apart as [he of M] doubles in size. [big his of M] skin turns red, and [he of M] grows wings and horns.[line break][first custom style]'I AM DEMON LORD XAVIER! MY POWERS ONCE SEALED AWAY BY THE PRINCESS, I AM WHOLE ONCE AGAIN, DESTINED TO RULE THESE LANDS!'[roman type][line break]";
 		cutshow figure of xavier cutscene 1 for demon lord;
+		FearUp 15;
 		if O is body part:
 			say "[big his of M] [DickDesc of M] grows most of all, utterly filling your [variable O] with its huge girth as [he of M] fucks you with renewed enthusiasm.";
 			now demon lord is penetrating O;
@@ -143,7 +144,7 @@ demon lord has a number called heirs-count.
 To compute labour to (M - demon lord):
 	if M is regional and M is alive:
 		compute pregnancy clothing displacement;
-		say "[PregFlav][if the father is in the location of the player][father][otherwise][father] appears almost as if on cue! [big he of M][end if] [if asshole is actually occupied or the player is ass protected]wraps [his of M] demonic tail around your neck and chokes you as you give birth to [his of M] [one of]heir[or]prince[stopping], loosening [his of M] grip to let you get a gasp of air whenever you are about to faint[otherwise]thrusts [his of M] [DickDesc of M] violently into your [asshole] as [his of M] own spawn is slowly pushing its way out of your womb[end if].[line break][variable custom style]Holy... fucking... shit...[roman type][line break][the father] senses your anguish, and feeds from it. [first custom style]'HAHAHA YES, YES, THE ULTIMATE SUBMISSION OF YOUR BODY, I CRAVE IT. ";
+		say "[PregFlav][if the father is in the location of the player][father][otherwise][father] appears almost as if on cue! [big he of M][end if] [if asshole is actually occupied or the player is ass protected]wraps [his of M] demonic tail around your neck and chokes you as you give birth to [his of M] [one of]heir[or]prince[stopping], loosening [his of M] grip to let you get a gasp of air whenever you are about to faint[otherwise]thrusts [his of M] [DickDesc of M] violently into your [asshole] as [his of M] own spawn is slowly pushing its way out of your womb[end if].[line break][variable custom style]Holy... fucking... shit...[roman type][line break][the father] senses your anguish, and feeds from it.[line break][first custom style]'HAHAHA YES, YES, THE ULTIMATE SUBMISSION OF YOUR BODY, I CRAVE IT. ";
 		if watersports fetish is 1 or diaper lover >= 1:
 			say "SOIL YOURSELF AS YOU GIVE BIRTH TO [one of]THE FUTURE RULER[or]A FUTURE PRINCE[stopping] OF THIS WORLD!'[roman type][line break]You realise [he of M] is completely right, you are wetting yourself.";
 			now the bladder of the player is 0;
@@ -203,7 +204,6 @@ To compute monstermotion of (M - demon lord):
 Part 1 - Perception
 
 To compute perception of (M - demon lord):
-	now M is interested;
 	anger M;
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
 	if the pregnancy of the player > 0 and the pregnancy of the player < 3 and the father is M:
@@ -230,7 +230,6 @@ To compute perception of (M - demon lord):
 			try kneeling.
 
 To compute DQ perception of (M - demon lord):
-	now M is interested;
 	anger M;
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
 	if ex-princess is unconcerned and ex-princess is alive and the number of monsters in the location of the player is 1 and ((diaper quest is 0 and the player is a june 2021 top donator) or (diaper quest is 1 and the player is a june 2021 diaper donator)):
@@ -239,6 +238,27 @@ To compute DQ perception of (M - demon lord):
 		say "[first custom style]'PRINCESS! YOU DARE SHOW YOUR FACE HERE? YOU WILL SUBMIT TO ME!'[roman type][line break]";
 	otherwise:
 		say "[first custom style]'YOU! GET ON YOUR KNEES AND PRESENT YOURSELF BEFORE YOUR [one of]NEW [or][stopping]MASTER.'[roman type][line break]".
+
+To compute bride perception of (M - demon lord):
+	if the pregnancy of the player > 0 and the pregnancy of the player < 3 and the father is M:
+		say "[first custom style]'I WILL SUMMON YOU WHEN MY CHILD IS READY FOR BIRTHING.'[roman type][line break][big he of M] seems to lose interest.";
+		bore M;
+	otherwise if the refractory-period of bride-consort >= 0:
+		say "[first custom style]'BEGONE, MY CUMDUMP BRIDE, I NEED NOT OF YOUR HOLES AT THIS MOMENT.'[roman type][line break][big he of M] seems to lose interest.";
+		bore M;
+	otherwise:
+		say "[BigNameDesc of M] notices you.[line break][speech style of M]'HAHAHA, THERE YOU ARE, MY CUMDUMP BRIDE[one of]! YOU MAY NOT REALISE THIS, BUT I CONTROLLED YOUR IMPULSES AND MADE YOU SEEK ME OUT WITHOUT EVEN KNOWING IT[or][stopping]! NOW PRESENT YOURSELF TO ME!'[roman type][line break]";
+		now auto is 1;
+		if vagina is actually presentable:
+			say "Without a second thought, you crawl towards [NameDesc of M].";
+			calm M;
+			try direct-presenting vagina to M;
+		otherwise:
+			say "You feel a compulsion to drop to your knees and present your [vagina] to [NameDesc of M], but for some reason, your body can't work out how to do it right now.";
+		if M is not penetrating a body part:
+			say "[BigNameDesc of M] growls.[line break][first custom style]'FINE! I'LL DO IT MYSELF.'[roman type][line break]";
+			anger M;
+		now auto is 0.
 
 Part 2 - Stomp
 
@@ -510,7 +530,7 @@ To compute angry punishment of (M - demon lord):
 			say "large intestine swelling rapidly, as it is filled by something! You have a pretty good idea what...";
 			increase rectum by 20;
 			bore M;
-			if the player is incontinent and asshole is not actually occupied:
+			if the player is rectum incontinent and asshole is not actually occupied:
 				say "A moment later, your sphincter loosens and it begins. ";
 				compute messing;
 		otherwise:
@@ -526,7 +546,7 @@ To compute angry punishment of (M - demon lord):
 			summon T;
 		otherwise:
 			say "[speech style of M]'INSOLENT MORTAL! YOU WOULD DARE DEFY AN ORDER FROM ME?! YOU WILL REGRET THIS DECISION, I ASSURE YOU.'[roman type][line break][BigNameDesc of M] smacks you with [his of M] tail, sending you flying into the nearby wall with a sickening crunch! The pain is worse than anything you've ever felt before.";
-			PainUp 4.
+			PainUp 40.
 
 Section 2 - DQ
 
@@ -652,7 +672,7 @@ To compute punishment of (P - xavier-nightmare-gag):
 	say "You feel a weird pang in your throat, like the gag is performing some kind of magical redesign of your gullet. You squirm nervously.[line break][second custom style]'Yay, I think it's working! My brother is a genius.'[roman type][line break]That does little to settle your stomach, but it doesn't matter what you think. The muscular girl-demon leads you to a place where a thin stone slab sits on the ground, like there's something missing that is supposed to be on top of it. You realise that's probably supposed to be you. Your new owner confirms your suspicions.[line break][second custom style]'Go on then, get up there, slave!'[roman type][line break]After a moment of hesitation you stand in place, and turn to face her. Nothing happens.[line break][second custom style]'Hold your arms out to the side, obviously!'[roman type][line break]That was hardly obvious, but now that you've been given the instruction, you quickly do as you are told. And as your arms reach horizontal, the ground begins to shake. Two stone pillars begin to emerge from the ground either side of you, underneath your hands. You expect your hands to be knocked out of the way but instead the pillars phase straight through them. Your immediate reaction is to pull your hands back but they're now completely stuck, sealed inside the concrete! As you struggle to move your arms, a thin plank of stone emerges from each pillar at neck height, connecting around your neck and welding themselves together perfectly. You now can't move your arms or your neck!";
 	say "[second custom style]'Oopsie! Looks like you're stuck!'[roman type][line break]Your captor teases you as she turns to adjust something behind her. As she walks away from it you can see what it is - some kind of water jet! And now she appears to be turning a valve...![line break][second custom style]'Ready, aim fire!'[roman type][line break]A powerful blast of water shoots in an arc from the jet, right into your open mouth. You have no choice but to begin drinking, to avoid choking![line break][second custom style]'Congratulations, you are now a water feature! I'll come and change you whenever I remember.'[roman type][line break]And just like that, you are left alone.";
 	appropriate-cutscene-display figure of cutscene-xavier-nightmare-gag-clean;
-	say "As you drink, something weird happens. You feel the liquid travelling down your throat, and then it just hits your bladder instantly. [if the player is incontinent]Due to your incontinence you are powerless to prevent yourself from peeing immediately[otherwise]It's not long at all until you are bursting and so you are soon forced to wet your diaper[end if]. Thankfully your diaper is so giant that there's still a lot of dry padding left. For now. You reflect on what just happened - it seems like your stomach is now directly connected to your bladder, in some kind of magic fashion. Everything you drink - and there's a lot - is going straight into your bladder. And since you're being forced to drink such a lot, it's all coming out pretty immediately too. You're essentially stuck in a permanent state of both drinking and peeing, which means that your diaper is gradually getting heavier and heavier. No matter how big it is, it's got to get full at some point, right?![line break]But no matter how much you pee, it doesn't seem to leak. And you keep on peeing. The demon plane's sun moves across the sky and you have nothing to do but drink and wee, drink and wee.[line break][italic type]Glug glug glug[line break]Hsssssss[roman type][line break]Eventually it gets to the point where you can't really remember what it feels like to not be peeing. It just feels normal to be permanently urinating. It's like it's your natural state. And still time moves forward. Day turns to night, and night to day. It must be nearly 24 hours since you were imprisoned here. With nothing to stimulate your attention, time slowly begins to lose meaning. All you know is drinking and wetting. Your diaper feels so heavy that it's like it's made of lead. Another day passes, and then another night. Xavier's daughter is nowhere to be seen. Will nobody come to release you? Why do you not feel hungry, or tired? Are those just weird quirks of this infernal dimension, or is it some magic effect that has been specifically applied to you? Does it matter? But you have nothing better to occupy your mind than questions like this.";
+	say "As you drink, something weird happens. You feel the liquid travelling down your throat, and then it just hits your bladder instantly. [if the player is bladder incontinent]Due to your incontinence you are powerless to prevent yourself from peeing immediately[otherwise]It's not long at all until you are bursting and so you are soon forced to wet your diaper[end if]. Thankfully your diaper is so giant that there's still a lot of dry padding left. For now. You reflect on what just happened - it seems like your stomach is now directly connected to your bladder, in some kind of magic fashion. Everything you drink - and there's a lot - is going straight into your bladder. And since you're being forced to drink such a lot, it's all coming out pretty immediately too. You're essentially stuck in a permanent state of both drinking and peeing, which means that your diaper is gradually getting heavier and heavier. No matter how big it is, it's got to get full at some point, right?![line break]But no matter how much you pee, it doesn't seem to leak. And you keep on peeing. The demon plane's sun moves across the sky and you have nothing to do but drink and wee, drink and wee.[line break][italic type]Glug glug glug[line break]Hsssssss[roman type][line break]Eventually it gets to the point where you can't really remember what it feels like to not be peeing. It just feels normal to be permanently urinating. It's like it's your natural state. And still time moves forward. Day turns to night, and night to day. It must be nearly 24 hours since you were imprisoned here. With nothing to stimulate your attention, time slowly begins to lose meaning. All you know is drinking and wetting. Your diaper feels so heavy that it's like it's made of lead. Another day passes, and then another night. Xavier's daughter is nowhere to be seen. Will nobody come to release you? Why do you not feel hungry, or tired? Are those just weird quirks of this infernal dimension, or is it some magic effect that has been specifically applied to you? Does it matter? But you have nothing better to occupy your mind than questions like this.";
 	appropriate-cutscene-display figure of cutscene-xavier-nightmare-gag-wet;
 	say "On the third day, Xavier's daughter does finally return. You are so happy just to see another face that you gurgle with glee.[line break][second custom style]'Hey there little miss soggy bottom, how are you settling in? From what I understand, the first thousand years are going to be the worst. After that you get used to it.'[roman type][line break]That makes your eyes widen with horror.[variable custom style][muffled sounds][line break][second custom style]'Yeah I thought you might say something like that. Well, too bad, you're mine now.'[roman type][line break]Just at that moment, the demon girl's form seems to begin to shimmer. No wait, the whole world is shimmering! Every second it's fading more and more.[line break][second custom style]'Yeah, only kidding, [daddytitle of M] says you have to go back now. So I just came to say goodbye and to thank you for being such a good water feature. But I hope you come and play again soon!'[roman type][line break]You manage to sound one final gurgle of relief before she completely disappears from view.";
 	say "You find yourself on the ground back in front of [NameDesc of M]. You feel just as exhausted as you did in the moment of your defeat.";
@@ -862,7 +882,7 @@ To execute (F - final-battle-pit):
 		if diaper quest is 1:
 			DiaperAddictUp 1;
 		otherwise:
-			SemenAddictUp 2;
+			SemenAddictUp 1;
 		now current-final-battle-object is final-battle-magic-clash; [this object has concluded]
 		now another-turn is 1;
 		now another-turn-flavour is "And then suddenly, you're falling again, and after half a second you land with a thud back in the [location of the player].[roman type] Perhaps after [NameDesc of demon lord] stopped focusing on keeping the pit in existence, the pocket dimension began to deteriorate until you were spat back out into the [']real world[']?";
@@ -892,7 +912,7 @@ To execute (F - final-battle-food):
 	if player-numerical-response is 1:
 		say "You step in front of the red bolt, taking the hit for [NameDesc of ex-princess]. The electric shock wracks your body with pain!";
 		BodyRuin 1;
-		PainUp 1;
+		PainUp 10;
 		now another-turn is 1;
 		now another-turn-flavour is "It takes you a few moments to recover from the shock.";
 	otherwise:
@@ -933,7 +953,7 @@ To execute (F - final-battle-plug):
 	if player-numerical-response is 1:
 		say "You step in front of the red bolt, taking the hit for [NameDesc of ex-princess]. The electric shock wracks your body with pain!";
 		BodyRuin 1;
-		PainUp 1;
+		PainUp 10;
 		now another-turn is 1;
 		now another-turn-flavour is "It takes you a few moments to recover from the shock.";
 	otherwise:
@@ -1291,7 +1311,7 @@ To say AssRideDesc of (M - demon lord):
 Definition: demon lord is piss-fuckable:[Too rare for me to want to deal with.]
 	decide no.
 
-To decide which number is the dominationtype of (M - a monster) using (F - a body part):
+To decide which number is the dominationtype of (M - demon lord) using (F - a body part):
 	if F is a fuckhole, decide on FUCK-RIDE;
 	decide on FUCK-BLOWJOB.
 
@@ -1443,7 +1463,7 @@ To say RepeatResponse of (M - demon lord):
 To say NonEnthusiasmResponse of (M - demon lord):
 	if the class of the player is princess:
 		say "[first custom style]'[one of]HAHAHA! THIS IS MY REVENGE, PRINCESS!'[or]LOUDER! ALL OF BIMBACIA MUST KNOW OF YOUR SERVITUDE!'[or]YOUR PUNISHMENT IS ONLY BEGINNING, DEAR PRINCESS!'[or]YOU HAVE ONLY YOURSELF TO BLAME, PRINCESS!'[at random][roman type][line break][BigNameDesc of M] slaps you harshly across the ass.";
-		PainUp 1;
+		PainUp 10;
 	otherwise:
 		say "[first custom style]'[one of]HAHA, YES, MORTAL! SQUIRM!'[or]HAHAHA! LOUDER! LOUDER!'[or]LOUDER, MORTAL! LOUDER!'[at random][roman type][line break]";
 	if the sex-length of M > 2 and a random number between 1 and 2 is 1, decrease the sex-length of M by 1.
@@ -1476,7 +1496,7 @@ To compute annoyed punishment of (M - demon lord):
 		summon B locked;
 	otherwise:
 		say "[speech style of M]'ENOUGH!'[roman type][line break]Lightning explodes from the tip of [NameDesc of M][']s finger, wracking your body with horrible pain.";
-	PainUp 3.
+	PainUp 30.
 
 To say InvitationAccepted of (M - demon lord) with (N - a monster):
 	say "[speech style of M]'[one of]OF COURSE!'[or]THAT'S WHY YOU ARE HERE.'[at random][roman type][line break]".

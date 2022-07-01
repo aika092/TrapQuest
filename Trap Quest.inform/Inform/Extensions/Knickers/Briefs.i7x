@@ -38,7 +38,7 @@ To decide which figure-name is clothing-image of (C - purple briefs):
 To decide which figure-name is clothing-image of (C - red briefs):
 	decide on figure of briefs 4.
 
-To decide which figure-name is clothing-image of (C - black briefs):
+To decide which figure-name is clothing-image of (C - black room briefs):
 	decide on figure of briefs 5.
 
 To decide which figure-name is clothing-image of (C - blue-briefs):
@@ -85,6 +85,9 @@ To decide which figure-name is clothing-image of (C - sheer-briefs):
 
 To decide which figure-name is clothing-image of (C - pink briefs):
 	decide on figure of briefs 20.
+
+To decide which figure-name is clothing-image of (C - black briefs):
+	decide on figure of briefs 21.
 
 To decide which figure-name is clothing-image of (C - pink-bbc briefs):
 	decide on figure of briefs special 2.
@@ -175,17 +178,24 @@ Definition: red briefs is red themed: decide yes.
 
 black briefs is a briefs. The text-shortcut of black briefs is "blb".
 To say selfexamineuniquetitle of (G - black briefs):
-	say "pair of black 'LET'S GET A ROOM' briefs".
+	say "pair of black briefs".
 To say UniqueClothingDesc of (G - black briefs):
+	say "A stretchy pair of black briefs".
+Definition: black briefs is black themed: decide yes.
+
+black room briefs is a briefs. The text-shortcut of black room briefs is "bgrb".
+To say selfexamineuniquetitle of (G - black room briefs):
+	say "pair of black 'LET'S GET A ROOM' briefs".
+To say UniqueClothingDesc of (G - black room briefs):
 	say "This pair of black briefs says 'LET'S GET A ROOM' in shiny silver capital letters on the back, to let people who can see it know that [if G is worn]you are[otherwise]the wearer is[end if] up for anything.".
-Understand "let's", "lets", "get", "a room", "room" as black briefs.
-To decide which number is the sex-addiction-influence of (G - black briefs):
+Understand "let's", "lets", "get", "a room", "room" as black room briefs.
+To decide which number is the sex-addiction-influence of (G - black room briefs):
 	if G is blessed, decide on 1;
 	decide on 2.
-To decide which number is the unique outrage of (C - black briefs):
+To decide which number is the unique outrage of (C - black room briefs):
 	decide on 2.
-Definition: black briefs is black themed: decide yes.
-Definition: black briefs is gem themed: decide yes.
+Definition: black room briefs is black themed: decide yes.
+Definition: black room briefs is gem themed: decide yes.
 
 blue-briefs is a briefs. The text-shortcut of blue-briefs is "bbr". Understand "blue", "briefs" as blue-briefs.
 To say selfexamineuniquetitle of (G - blue-briefs):
@@ -321,6 +331,7 @@ Figure of briefs 17 is the file "Items/Clothes/Lower/Underwear/Briefs/briefs17.p
 Figure of briefs 18 is the file "Items/Clothes/Lower/Underwear/Briefs/briefs18.png".
 Figure of briefs 19 is the file "Items/Clothes/Lower/Underwear/Briefs/briefs19.png".
 Figure of briefs 20 is the file "Items/Clothes/Lower/Underwear/Briefs/briefs20.png".
+Figure of briefs 21 is the file "Items/Clothes/Lower/Underwear/Briefs/briefs21.png".
 Figure of briefs special 2 is the file "Items/Clothes/Lower/Underwear/Briefs/briefsspecial2.png".
 
 [Below are from Lucas]

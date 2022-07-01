@@ -80,7 +80,7 @@ To trigger (Y - an ass hook):
 				destroy O;
 				repeat with M running through reactive monsters:
 					compute curtsey reaction of M;
-				PainUp 2;
+				PainUp 20;
 			otherwise:
 				say "pulling it up and revealing what's underneath!";
 				displace O;
@@ -185,7 +185,7 @@ To HookPull:
 						repeat with M running through reactive monsters:
 							say AssHookFuckTrapReactFlav of M;
 					otherwise:
-						PainUp 1;
+						PainUp 10;
 			otherwise:
 				say "You can't get a grip on the hook to pull it down at all. Keep pulling!";
 		[otherwise if sex fainting is 1:
@@ -193,7 +193,7 @@ To HookPull:
 		otherwise:
 			if H is grabbing the player:
 				say "Your low dexterity causes you to have to repeatedly pull down on the hook, flossing your crack raw.";
-				PainUp 2;
+				PainUp 20;
 				say "After you finally manage to release your [ShortDesc of K], the hook shoots up into the hole in the ceiling that the rope was connected to.";
 				BodyRuin 3;
 			otherwise:
@@ -244,18 +244,18 @@ To Jump From The Hook:
 			destroy H;
 			repeat with M running through unfriendly students in the location of the player:
 				FavourDown M;
-				now M is interested.
+				interest M.
 
 An all time based rule (this is the ass hook wedgie pain rule):
 	let H be a random ass hook grabbing the player;
 	if H is ass hook:
 		say "The pressure of the wedgie on your ass crack is causing you significant pain!";
-		PainUp 1;
+		PainUp 10;
 		if playerRegion is school and the number of students in the location of the player is 0:
 			let M be a random alive amicable student;
 			if M is nothing, now M is a random alive staff member;
 			now M is in the location of the player;
-			now M is interested;
+			interest M;
 			say "[BigNameDesc of M] [bold type]enters the room, and immediately spots you. [big he of M] helps release your underwear and get you down from the hook.[roman type][line break][speech style of M]'[if M is student][big please] don't tell them I helped you down[otherwise]I hope you know that whoever did this to you is not your friend[end if].'[roman type][line break]";
 			now H is unrevealed;
 			dislodge H;

@@ -64,7 +64,7 @@ Report going when condom-pack is carried:
 		otherwise:
 			say "Suddenly, a [printed name of S] appears around your waist, with three used condoms already pinned to it!";
 			summon S cursed with quest;
-		increase the used condoms of S by 3;
+		UsedCondomUp S by 3;
 		update appearance level;
 		if thirsty work condom hat is off-stage and thirsty work condom hat is actually summonable:
 			summon thirsty work condom hat cursed;
@@ -161,11 +161,12 @@ Definition: a monster (called M) is convinced to wear a condom:
 	let C be the charisma of the player + (the trophy-mode of condom-trophy * 3);
 	let CR be the condom resistance of M;
 	if the class of the player is fertility goddess, increase CR by 1;
+	if the class of the player is cumdumpster, decrease CR by 7;
 	let BB be the blue-balls-limit of M - the blue-balls of M;
 	let ORG be the virility of M - the sex-length of M;
 	if M is seduced:
 		if M is not intelligent, decide yes;
-		increase CR by BB; [The more patient they are, the less happy they will be to put a condom on already]
+		increase CR by BB / 2; [The more patient they are, the less happy they will be to put a condom on already]
 		decrease CR by ORG; [The closer they are to orgasm, the more willing they are to put on a condom]
 	let R be a random number between 0 and C;
 	if debuginfo > 0, say "[input-style]Condom convince check: condom charisma roll d[C + 1] ([R + 1]) | ([CR].5) [ShortDesc of M] condom resistance[if M is seduced] = ([condom resistance of M]) base condom resistance + ([BB]) patience - ([ORG]) arousal[end if][roman type][line break]";
@@ -198,9 +199,14 @@ To compute default condom filling of (M - a monster):
 		now S is string-belt;
 		summon S cursed with silent quest;
 		now C is S;
-	say "[if S is clothing]Suddenly, a [printed name of S] appears on you! [end if][CondomPinFlav of M on C][CondomPinReactionFlav of M on C]";
+	if S is clothing, say "Suddenly, a [printed name of S] appears on you! [QuestFlav of S]";
+	compute M condom pinning on C.
+
+To compute (M - a monster) condom pinning on (C - a clothing):
+	say "[CondomPinFlav of M on C][CondomPinReactionFlav of M on C]";
 	say CondomNewbieTip;
-	increase the used condoms of C by 1;
+	UsedCondomUp C by 1;
+	now M is inseminating C;
 	say "[one of]They seem to magically fuse, and you now have a used condom hanging from your [C]! [or]The condom fuses to your [C] just like before. [or]The condom fuses to your [C]. [stopping]";
 	force clothing-focus redraw;
 	update appearance level;
@@ -348,6 +354,8 @@ To compute condom biting of (C - a clothing):
 	decrease the used condoms of C by 1;
 	increase the empty condoms of C by 1;
 	FaceFill semen by 1;
+	repeat with T running through things inseminating C:
+		now T is inseminating face;
 	suggest swallowing with semen consequences; [You can't avoid the taste addiction increase by not swallowing]
 	get oral creampie image for the player;
 	progress quest of condom-eating-quest;
@@ -363,10 +371,17 @@ To compute spontaneous condom of (C - a clothing):
 		summon S cursed with silent quest;
 		now P is S;
 	say "[if S is clothing]Suddenly, a [printed name of S] appears around your waist! [end if]You watch in [horror the semen taste addiction of the player] as the condom flies onto your [MediumDesc of P] and fuses itself to the [clothing-material of P]. [if the used condoms of P is 0]Your [ShortDesc of P] now has a used condom pinned to it![end if][line break][CondomPinReactionFlav of yourself on P]";
-	increase the used condoms of P by 1;
+	UsedCondomUp P by 1;
 	update appearance level;
 	progress quest of condom-eating-quest;
 	say CondomNewbieTip;
 	force clothing-focus redraw. [Forces redraw of clothing window]
+
+To UsedCondomUp (C - a clothing):
+	UsedCondomUp C by 1.
+
+To UsedCondomUp (C - a clothing) by (N - a number):
+	increase the used condoms of C by N;
+	if N > 0, trigger condom-wisp-trigger.
 
 Condom Pack ends here.

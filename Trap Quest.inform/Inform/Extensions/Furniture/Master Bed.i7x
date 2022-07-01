@@ -43,7 +43,7 @@ To compute furniture resting on (F - a master bed):
 			say "You climb onto the bed and begin to pull back the covers, but a sudden flash of warmth from your collar makes you stop what you're doing, turn around, and immediately lay spread-eagled over the comforter.[line break][variable custom style]'Wait, what?'[roman type][line break]Glowing pink chains billow out from underneath the bed, instantly latching onto your wrists and ankles, securing them to the bedposts.[line break][second custom style]'My mistress will be here to take me shortly.'[roman type][line break]";
 		otherwise:
 			say "You climb onto the bed and begin to pull back the covers, but a sudden rush of warmth makes you stop what you're doing, turn around, and immediately lay spread-eagled over the comforter. Just as the feeling ends, glowing pink chains billow out from underneath the bed, latching onto your limbs and securing them to the bedposts before you regain full control of your body. A strange thought comes to the front of your mind, but for some reason you know it belongs to someone else[line break][second custom style]'My mistress will be here to take me shortly.'[roman type][line break]";
-		now V is interested;
+		interest V;
 		anger V;
 		now the stance of the player is 1;
 		compute chain rest of F;
@@ -52,7 +52,7 @@ To compute furniture resting on (F - a master bed):
 			now V is a random off-stage vampiress;
 			set up V;
 			say "You climb onto the bed and slip under the covers. The normally soft mattress is as hard as rock, and the sheets seem to bristle excitedly at your presence. Waves of heat blossom from the silky throw-pillows, and suddenly, shrieking bats burst out from underneath the bed, filling the air with deafening shrieks as they converge on the space in front of the doorway. Their bodies become harder and harder to tell apart from one another as their cries slowly lower in pitch, and patches of chalky white flesh begin to peek out between the vigorously flapping wings. The covers suddenly fly off the bed, leaving you totally exposed as a [printed name of V] steps out of the swirling mass of bats, grinning at you as the rest of the flock disperses through a small open window near the ceiling.[line break][speech style of V]'I can practically taste your anticipation, darling. Offer yourself to your new mistress and prepare to be satisfied!'[roman type][line break]";
-			now V is interested;
+			interest V;
 			anger V;
 			now the stance of the player is 1;
 		otherwise if the player is very horny and lipstick collar is actually summonable:

@@ -103,7 +103,7 @@ To decide which figure-name is the sex-profile of (M - a monster):
 To decide which figure-name is the anal-sex-monster-image of (M - a monster):
 	decide on figure of Missing NPC.
 To decide which figure-name is the vaginal-sex-monster-image of (M - a monster):
-	if the latex-transformation of the player > 6 and M is male and M is human and M is not dark skinned, decide on figure of latex curse 6;
+	if the latex-transformation of the player > 6 and M is male and M is pale skinned, decide on figure of latex curse 6;
 	decide on figure of Missing NPC.
 To decide which figure-name is the oral-sex-monster-image of (M - a monster):
 	decide on figure of Missing NPC.

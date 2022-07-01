@@ -122,7 +122,6 @@ Definition: a slutty sister (called M) is objectifying the player:
 	decide no.
 
 To compute perception of (M - a slutty sister):
-	now M is interested;
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
 	if the latex-transformation of the player > 6:
 		if M is bulging-slutty-sister:

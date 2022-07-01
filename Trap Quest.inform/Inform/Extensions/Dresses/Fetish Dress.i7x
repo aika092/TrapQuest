@@ -247,7 +247,7 @@ To decide which figure-name is clothing-image of (C - assless fetish hobble dres
 	decide on figure of latex dress 8.
 
 To say ClothingDesc of (O - assless fetish hobble dress):
-	say "This tight latex dress has a hobble style skirt which forces the wearer to walk with short steps. The dress is essentially see-through and it also has a huge hole cut at at the butt, to allow for easy anal access.".
+	say "This tight latex dress has a hobble style skirt which forces the wearer to walk with short steps. The dress is essentially see-through and it also has a huge hole cut at at the butt, with a tight strap that runs underneath the crotch to keep everything held in place.".
 
 To decide which number is the initial outrage of (C - assless fetish hobble dress):
 	decide on 15.

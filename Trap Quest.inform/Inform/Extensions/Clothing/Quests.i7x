@@ -224,12 +224,12 @@ To progress quest of (Q - a clothing-quest):
 		unless the player is in a predicament room:
 			if debugmode > 0, say "Checking for[QuestTitle of Q].";
 			repeat with C running through worn clothing:
-				if the quest of C is Q:
-					if C is diaper-stack:
-						repeat with D running through the list of stacked diapers:
+				if C is diaper-stack:
+					repeat with D running through the list of stacked diapers:
+						if the quest of D is Q:
 							if D is cursed or the quest of D is persistent, compute quest completion of Q on D;
-					otherwise:
-						if C is cursed or the quest of C is persistent, compute quest completion of Q on C. [disappearing quests only trigger once]
+				otherwise if the quest of C is Q:
+					if C is cursed or the quest of C is persistent, compute quest completion of Q on C. [disappearing quests only trigger once]
 
 [Persistent quests have an added effect each time they are completed]
 To say QuestPersistFlav of (Q - a clothing-quest) on (C - a clothing):
@@ -265,7 +265,7 @@ Definition: chest-exposing-quest is school-disabled: decide yes.
 
 To decide what number is the quest-weighting of (Q - chest-exposing-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
-	if C is actually not-top-displacable breast covering clothing, decide on 0;
+	if C is usually not-top-displacable breast covering clothing, decide on 0;
 	if C is gag, decide on 0;
 	if C is temptation, decide on 10;
 	decide on 2.
@@ -323,6 +323,7 @@ Definition: piss-drinking-quest is appropriate:
 
 To decide what number is the quest-weighting of (Q - piss-drinking-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
+	if C is a pair of earrings, decide on 999;
 	if the urine-taste-addiction-influence of C < 0, decide on 0;
 	if the urine taste addiction of the player < 4, decide on 0;
 	if C is ballgag, decide on 0;
@@ -347,7 +348,7 @@ To decide what number is the quest-weighting of (Q - anal-orgasm-quest) for (C -
 	if the anal-sex-addiction-influence of C < 0, decide on 0;
 	if C is penetrating asshole, decide on 0;
 	if C is ass covering:
-		if C is not displacable and C is not zippable, decide on 0;
+		if C is not displacable and C is not crotch-zipped, decide on 0;
 	decide on 3.
 
 To say QuestFlav of (Q - anal-orgasm-quest):
@@ -369,7 +370,7 @@ To decide what number is the quest-weighting of (Q - anal-virginity-quest) for (
 	if the anal-sex-addiction-influence of C < 0, decide on 0;
 	if C is pussy protection, decide on 20;
 	if C is ass covering:
-		if C is not displacable and C is not zippable, decide on 0;
+		if C is not displacable and C is not crotch-zipped, decide on 0;
 	if C is sissifying, decide on 4;
 	decide on 0.
 
@@ -392,7 +393,7 @@ To decide what number is the quest-weighting of (Q - vaginal-virginity-quest) fo
 	if the vaginal-sex-addiction-influence of C < 0, decide on 0;
 	if C is crotch-exposing, decide on 20;
 	if C is pussy covering:
-		if C is not displacable and C is not zippable, decide on 0;
+		if C is not displacable and C is not crotch-zipped, decide on 0;
 	if C is penetrating vagina, decide on 0;
 	if C is purity, decide on 10;
 	decide on 0.
@@ -417,7 +418,7 @@ To decide what number is the quest-weighting of (Q - egg-laying-quest) for (C - 
 	if the number of on-stage eggs is 0, decide on 0;
 	if C is pussy protection, decide on 13;
 	if C is ass covering:
-		if C is not displacable and C is not zippable, decide on 0;
+		if C is not displacable and C is not crotch-zipped, decide on 0;
 	decide on 3.
 
 To say QuestFlav of (Q - egg-laying-quest):
@@ -439,9 +440,9 @@ To decide what number is the quest-weighting of (Q - interracial-sex-quest) for 
 	if the sex-addiction-influence of C < 0, decide on 0;
 	if C is penetrating asshole, decide on 0;
 	if C is interracial themed, decide on 20;
-	if the bbc addiction of the player < 2, decide on 0;
+	if the bbc addiction of the player < 4, decide on 0;
 	if C is ass covering:
-		if C is not displacable and C is not zippable, decide on 0;
+		if C is not displacable and C is not crotch-zipped, decide on 0;
 	decide on 3.
 
 To say QuestFlav of (Q - interracial-sex-quest):
@@ -541,7 +542,7 @@ To decide what number is the quest-weighting of (Q - vaginal-creampie-quest) for
 	if C is crotch-exposing, decide on 20;
 	if C is penetrating vagina, decide on 0;
 	if C is pussy covering:
-		if C is not displacable and C is not zippable, decide on 0;
+		if C is not displacable and C is not crotch-zipped, decide on 0;
 	if C is pregnancy themed, decide on 14;
 	decide on 2.
 
@@ -590,9 +591,9 @@ To progress quest of (Q - candy-eating-quest):
 				if D is cursed or the quest of D is persistent:
 					if the quest of D is Q:
 						if the candy-count of Q > 3:
-							compute quest completion of Q on C;
+							compute quest completion of Q on D;
 						otherwise:
-							say QuestProgressFlav of Q on C;
+							say QuestProgressFlav of Q on D;
 		otherwise:
 			if C is cursed or the quest of C is persistent:
 				if the quest of C is Q:
@@ -700,9 +701,9 @@ To progress quest of (Q - kicking-quest) from (M - a monster):
 					if D is cursed or the quest of D is persistent:
 						if the quest of D is Q:
 							if the latest-kick of Q is monster:
-								compute quest completion of Q on C;
+								compute quest completion of Q on D;
 							otherwise:
-								say QuestProgressFlav of Q on C;
+								say QuestProgressFlav of Q on D;
 			otherwise:
 				if C is cursed or the quest of C is persistent:
 					if the quest of C is Q:
@@ -754,7 +755,7 @@ Definition: careful-peeing-quest is appropriate:
 To decide what number is the quest-weighting of (Q - careful-peeing-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
 	if C is diaper and toilet allowance is 1, decide on 0; [player can't use toilets while wearing diapers]
-	if C is pee covering and C is not displacable and C is not zippable, decide on 0;
+	if C is pee covering and C is not displacable and C is not crotch-zipped, decide on 0;
 	if C is bed wetting, decide on 20;
 	decide on 1.
 
@@ -788,7 +789,7 @@ To say QuestTitle of (Q - swimming-quest):
 To compute persistent reward of (Q - swimming-quest) on (C - a clothing):
 	if diaper quest is 0:
 		say "[if the raw dexterity of the player < 20]improving your dexterity but also [end if]flooding your head with dreams of getting [if bukkake fetish is 1][semen] all over your body and clothes and getting [end if]creampied!";
-		SemenAddictUp 1;
+		SlowSemenAddictUp 1;
 	otherwise:
 		say "[if the raw dexterity of the player < 20]improving your dexterity but also [end if]flooding your head with arousal!";
 		arouse 3000;
@@ -941,12 +942,12 @@ Definition: bursting-quest is appropriate:
 To decide what number is the quest-weighting of (Q - bursting-quest) for (C - a clothing):
 	if bursting-quest is not appropriate, decide on 0;
 	if C is diaper:
-		if strongCurses is 1, decide on 5;
-		decide on 50; [90% of diapers should spawn with this]
+		if strongCurses is 1, decide on 2;
+		decide on 50; [95% of diapers should spawn with this or similar]
 	decide on 1.
 
 To say QuestFlav of (Q - bursting-quest):
-	say "You sense that it wants you to [if the player is incontinent]just... wait for it to happen automatically[otherwise]practise self-control by holding onto your pee for a while even after it becomes risky[end if].".
+	say "You sense that it wants you to [if the player is bladder incontinent]just... wait for it to happen automatically[otherwise]practise self-control by holding onto your pee for a while even after it becomes risky[end if].".
 
 To say QuestTitle of (Q - bursting-quest):
 	say " (bladder holding quest)".
@@ -957,6 +958,67 @@ To say QuestPersistFlav of (Q - bursting-quest) on (C - a clothing):
 To compute persistent reward of (Q - bursting-quest) on (C - a clothing):
 	say "filling your bladder even further!";
 	increase the bladder of the player by 1.
+
+Part - Mess Quest
+
+mess-quest is a clothing-quest. mess-quest is persistent.
+
+Definition: mess-quest is appropriate:
+	if diaper messing >= 4, decide yes;
+	decide no.
+
+To decide what number is the quest-weighting of (Q - mess-quest) for (C - a clothing):
+	if mess-quest is not appropriate, decide on 0;
+	if C is diaper:
+		if strongCurses is 1, decide on 2;
+		decide on 50; [95% of diapers should spawn with this or similar]
+	if C is knickers, decide on 3;
+	decide on 0.
+
+To say QuestFlav of (Q - mess-quest):
+	say "You sense that it wants you to mess yourself.".
+
+To say QuestTitle of (Q - mess-quest):
+	say " (mess self quest)".
+
+To say QuestPersistFlav of (Q - mess-quest) on (C - a clothing):
+	say "[if C is cursed]The magic sealing your [MediumDesc of C] is lifted! It rewards your bowel movement[otherwise if C is bland]You sense a blessing being laid upon your [MediumDesc of C]! It rewards your continued bowel movements[otherwise]Your [MediumDesc of C] rewards your continued bowel movements[end if] by ".
+
+To compute persistent reward of (Q - mess-quest) on (C - a clothing):
+	now fullness-time is 0;
+	now rectum is 4;
+	say "[']refilling your chambers['][if the player is feeling full], making you start to feel the need mess again[end if]!".
+
+Part - Oversatiated Quest
+
+oversatiated-quest is a clothing-quest. oversatiated-quest is persistent.
+
+Definition: oversatiated-quest is appropriate:
+	if the stomach of the player >= stomach-max - 1, decide no;
+	decide yes.
+
+To decide what number is the quest-weighting of (Q - oversatiated-quest) for (C - a clothing):
+	if oversatiated-quest is not appropriate, decide on 0;
+	if diaper messing >= 3:
+		if C is diaper:
+			if strongCurses is 1, decide on 2;
+			decide on 50; [95% of diapers should spawn with this or similar]
+	decide on 1 + weight gain fetish.
+
+To say QuestFlav of (Q - oversatiated-quest):
+	say "You sense that it wants you to consume food and drink until you are oversatiated.".
+
+To say QuestTitle of (Q - oversatiated-quest):
+	say " (oversatiated quest)".
+
+To say QuestPersistFlav of (Q - oversatiated-quest) on (C - a clothing):
+	say "[if C is cursed]The magic sealing your [MediumDesc of C] is lifted![otherwise if C is bland]You sense a blessing being laid upon your [MediumDesc of C][otherwise]Your [MediumDesc of C] shivers in delight at your continued stomach stuffing[end if]!".
+
+To compute persistent reward of (Q - oversatiated-quest) on (C - a clothing):
+	now the quest of C is no-clothing-quest.
+
+An all time based rule (this is the oversatiated quest rule):
+	if the player is overly full and the player is not in a predicament room, progress quest of oversatiated-quest.
 
 Part - Show and Tell Quest
 
@@ -1265,7 +1327,7 @@ To say QuestFlav of (Q - cursed-orgasm-quest):
 To say QuestTitle of (Q - cursed-orgasm-quest):
 	say " (cursed orgasm quest)".
 
-Part - Cursed Orgasm Quest
+Part - Birth Quest
 
 birth-quest is a clothing-quest.
 
@@ -1283,5 +1345,427 @@ To say QuestFlav of (Q - birth-quest):
 
 To say QuestTitle of (Q - birth-quest):
 	say " (birth quest)".
+
+
+
+
+
+
+Volume - Quest Wisps
+
+A wisp quest is a kind of thing.
+
+Definition: a wisp quest is appropriate: decide yes.
+Definition: a wisp quest is eligible: decide yes.
+
+To trigger (WQ - a wisp quest):
+	repeat with W running through stalking wisps:
+		if the wisp-quest of W is WQ:
+			say bold type;
+			destroy W;
+			say "[roman type][line break]".
+
+gold-candy-wisp-quest is a wisp quest. The printed name of gold-candy-wisp-quest is "find a golden candy".
+Definition: gold-candy-wisp-quest is appropriate:
+	if Hotel01 is placed and Mansion01 is placed, decide yes;
+	decide no.
+
+drink-urine-wisp-quest is a wisp quest. The printed name of drink-urine-wisp-quest is "swallow [urine]".
+Definition: drink-urine-wisp-quest is appropriate:
+	if watersports fetish is 1, decide yes;
+	decide no.
+
+brothel-wisp-quest is a wisp quest. The printed name of brothel-wisp-quest is "work as a prostitute".
+Definition: brothel-wisp-quest is appropriate:
+	if Hotel01 is placed, decide yes;
+	decide no.
+
+purchase-wisp-quest is a wisp quest. The printed name of purchase-wisp-quest is "purchase an item from [NameDesc of shopkeeper]".
+Definition: purchase-wisp-quest is appropriate:
+	if Dungeon41 is guarded, decide yes;
+	decide no.
+
+altar-wisp-quest is a wisp quest. The printed name of altar-wisp-quest is "earn some uses of the Woods altar".
+Definition: altar-wisp-quest is appropriate:
+	if Woods01 is placed and witch is alive, decide yes;
+	decide no.
+Definition: altar-wisp-quest is eligible:
+	if the altar-uses of witch is 0 and witch is not unbitchy and witch is friendly, decide yes;
+	decide no.
+
+dominatrix-wisp-quest is a wisp quest. The printed name of dominatrix-wisp-quest is "go see [NameDesc of dominatrix]".
+Definition: dominatrix-wisp-quest is appropriate:
+	if dominatrix is alive, decide yes;
+	decide no.
+To compute unique greet effect for (M - dominatrix):
+	trigger dominatrix-wisp-quest.
+To uniquely destroy (M - dominatrix):
+	trigger dominatrix-wisp-quest.
+
+poker-wisp-quest is a wisp quest. The printed name of poker-wisp-quest is "play a game of poker".
+Definition: poker-wisp-quest is appropriate:
+	if orc is alive, decide yes;
+	decide no.
+
+unglue-wisp-quest is a wisp quest. The printed name of unglue-wisp-quest is "escape from your glued clothing".
+Definition: unglue-wisp-quest is appropriate:
+	if there is worn glued clothing, decide yes;
+	decide no.
+
+class-wisp-quest is a wisp quest. The printed name of class-wisp-quest is "complete your class quest".
+Definition: class-wisp-quest is appropriate:
+	if there is worn cursed headgear, decide yes;
+	decide no.
+
+learn-spell-wisp-quest is a wisp quest. The printed name of learn-spell-wisp-quest is "learn a new spell".
+Definition: learn-spell-wisp-quest is eligible:
+	if there is a castable magic-spell and there is an uncastable fetish appropriate magic-spell, decide yes;
+	decide no.
+
+bowl-wisp-quest is a wisp quest. The printed name of bowl-wisp-quest is "eat food from a bowl".
+Definition: bowl-wisp-quest is appropriate:
+	if Hotel01 is placed or School01 is discovered, decide yes;
+	decide no.
+
+banish-wisp-quest is a wisp quest. The printed name of banish-wisp-quest is "choose to banish a defeated enemy".
+
+drink-wisp-quest is a wisp quest. The printed name of drink-wisp-quest is "empty all your drinks".
+Definition: drink-wisp-quest is appropriate: decide no.
+
+
+A wisp trigger is a kind of thing.
+
+Definition: a wisp trigger is appropriate: decide yes.
+Definition: a wisp trigger is eligible: decide yes.
+
+trip-wisp-trigger is a wisp trigger. The printed name of trip-wisp-trigger is "get tripped up in combat".
+
+orgasm-wisp-trigger is a wisp trigger. The printed name of orgasm-wisp-trigger is "have an orgasm".
+
+conception-wisp-trigger is a wisp trigger. The printed name of conception-wisp-trigger is "conceive a child".
+Definition: conception-wisp-trigger is appropriate:
+	if pregnancy fetish is 0, decide no;
+	decide yes.
+Definition: conception-wisp-trigger is eligible:
+	if the pregnancy of the player is 0, decide yes;
+	decide no.
+
+hunger-wisp-trigger is a wisp trigger. The printed name of hunger-wisp-trigger is "get too hungry".
+Definition: hunger-wisp-trigger is eligible:
+	if the player is hungry or the player is nearly hungry, decide no;
+	decide yes.
+
+pee-wisp-trigger is a wisp trigger. The printed name of pee-wisp-trigger is "use a toilet, use a urinal or leak through underwear".
+Definition: pee-wisp-trigger is eligible:
+	if diaper lover is 0, decide no;
+	decide yes.
+
+change-wisp-trigger is a wisp trigger. The printed name of change-wisp-trigger is "get your diaper changed".
+Definition: change-wisp-trigger is eligible:
+	if there is a worn diaper, decide yes;
+	decide no.
+
+condom-wisp-trigger is a wisp trigger. The printed name of condom-wisp-trigger is "get a[if total pinned condoms > 0]nother[end if] used condom pinned to your clothing".
+Definition: condom-wisp-trigger is appropriate:
+	if condom fetish is 1, decide yes;
+	decide no.
+
+drunk-wisp-trigger is a wisp trigger. The printed name of drunk-wisp-trigger is "get rather drunk".
+Definition: drunk-wisp-trigger is appropriate:
+	if alcohol fetish is 1, decide yes;
+	decide no.
+
+spill-wisp-trigger is a wisp trigger. The printed name of spill-wisp-trigger is "spill a drink".
+
+dp-wisp-trigger is a wisp trigger. The printed name of dp-wisp-trigger is "have two holes penetrated or used at the same time".
+Definition: dp-wisp-trigger is eligible:
+	if the number of actually occupied fuckholes > 1, decide no;
+	decide yes.
+
+cum-panties-wisp-trigger is a wisp trigger. The printed name of cum-panties-wisp-trigger is "get cum in your undies".
+Definition: cum-panties-wisp-trigger is appropriate:
+	if diaper quest is 1 and the player is female, decide no;
+	decide yes.
+Definition: cum-panties-wisp-trigger is eligible:
+	let K be a random worn knickers;
+	if K is knickers and the semen-soak of K is 0, decide yes;
+	decide no.
+
+lose-panties-wisp-trigger is a wisp trigger. The printed name of lose-panties-wisp-trigger is "lose or remove your undies".
+Definition: lose-panties-wisp-trigger is appropriate:
+	if diaper quest is 1, decide no;
+	decide yes.
+Definition: lose-panties-wisp-trigger is eligible:
+	if there are worn knickers, decide yes;
+	decide no.
+
+lose-makeup-wisp-trigger is a wisp trigger. The printed name of lose-makeup-wisp-trigger is "have all your make up fade or wiped away".
+Definition: lose-makeup-wisp-trigger is eligible:
+	if the make-up of face > 1 and face is temporarily made up, decide yes;
+	decide no.
+
+lose-mouthful-wisp-trigger is a wisp trigger. The printed name of lose-mouthful-wisp-trigger is "lose your [MouthfulDesc]".
+Definition: lose-mouthful-wisp-trigger is eligible:
+	if the total volume of face > 1, decide yes;
+	decide no.
+
+hold-breath-wisp-trigger is a wisp trigger. The printed name of hold-breath-wisp-trigger is "hold your breath".
+Definition: hold-breath-wisp-trigger is eligible:
+	if the player is able to breathe, decide yes;
+	decide no.
+
+
+speak-wisp-trigger is a wisp trigger. The printed name of speak-wisp-trigger is "speak".
+This is the speak-wisp-trigger inconveniences speech rule:
+	repeat with W running through stalking wisps:
+		if the wisp-trigger of W is speak-wisp-trigger:
+			if autospeech is true, rule fails; [Player will never speak automatically]
+			if triggeredspeech is true and automanualspeech is false: [If we didn't check for automanual speech, the consenting check would trigger a focus window refresh which can come with additional speech checks which could cause an infinite loop.]
+				now triggeredspeech is false;
+				say "Do you really want to speak out loud? If you do, [NameDesc of W] will trigger. ";
+				if the player is not bimbo consenting, rule fails.
+The speak-wisp-trigger inconveniences speech rule is listed last in the player speech rules.
+A speech penalties rule (this is the speech wisp trigger rule):
+	trigger speak-wisp-trigger.
+
+To trigger (WT - a wisp trigger):
+	repeat with W running through stalking wisps:
+		if the wisp-trigger of W is WT, compute punishment of W.
+
+An all time based rule (this is the time-based wisp triggers rule):
+	unless the player is in a predicament room:
+		if the number of worn cursed headgear is 0, trigger class-wisp-quest;
+		if the number of worn glued clothing is 0, trigger unglue-wisp-quest;
+		if the number of actually occupied fuckholes > 1, trigger dp-wisp-trigger;
+		if the player is hungry, trigger hunger-wisp-trigger;
+		if the number of held non-empty vessels is 0, trigger drink-wisp-quest.
+
+An all later time based rule (this is the later time-based wisp triggers rule):
+	unless the player is in a predicament room:
+		if the player is not able to breathe, trigger hold-breath-wisp-trigger.
+
+
+
+A wisp punishment is a kind of thing.
+
+Definition: a wisp punishment is appropriate: decide yes.
+Definition: a wisp punishment is eligible: decide yes.
+
+To decide which number is the wisp-colour of (W - an object):
+	decide on TQMagenta.
+
+To compute punishment of (W - a wisp punishment):
+	say "BUG - This wisp punishment ([W]) has no execution function.".
+
+bimbo-wisp-punishment is a wisp punishment. The printed name of bimbo-wisp-punishment is "become more [if diaper quest is 1]babified[otherwise]sluttified[end if]".
+To compute punishment of (W - bimbo-wisp-punishment): [TODO: expand]
+	say "You feel significantly more deviant.";
+	RandomAddictUp 2.
+
+A wisp stat punishment is a kind of wisp punishment.
+Definition: a wisp stat punishment is appropriate: decide yes.
+
+strength-wisp-punishment is a wisp stat punishment. The printed name of strength-wisp-punishment is "lose some strength".
+To decide which number is the wisp-colour of (W - strength-wisp-punishment):
+	decide on TQDarkishRed.
+Definition: strength-wisp-punishment is appropriate:
+	if the raw strength of the player > 1, decide yes;
+	decide no.
+To compute punishment of (W - strength-wisp-punishment):
+	say "You feel your muscles slightly weaken.";
+	StrengthDown 1.
+
+dexterity-wisp-punishment is a wisp stat punishment. The printed name of dexterity-wisp-punishment is "lose some dexterity".
+To decide which number is the wisp-colour of (W - dexterity-wisp-punishment):
+	decide on 255. [blue]
+Definition: dexterity-wisp-punishment is appropriate:
+	if the raw dexterity of the player > 1, decide yes;
+	decide no.
+To compute punishment of (W - dexterity-wisp-punishment):
+	say "You feel less agile.";
+	DexDown 1.
+
+intelligence-wisp-punishment is a wisp stat punishment. The printed name of intelligence-wisp-punishment is "lose some intellgence".
+To decide which number is the wisp-colour of (W - intelligence-wisp-punishment):
+	decide on TQDarkishGreen.
+Definition: intelligence-wisp-punishment is appropriate:
+	if the raw intelligence of the player > 1, decide yes;
+	decide no.
+To compute punishment of (W - intelligence-wisp-punishment):
+	say "You feel knowledge slip from your mind.";
+	IntDown 1.
+
+
+
+A wisp is a kind of backdrop. A wisp has an object called the wisp-quest. A wisp has an object called the wisp-trigger. A wisp has an object called a wisp-punishment. The printed name of a wisp is "[ColourDesc of item described] wisp". Understand "wisp" as wisp.
+
+wisp-1 is a wisp. wisp-2 is a wisp. wisp-3 is a wisp. wisp-4 is a wisp.
+
+Definition: a wisp is immune to change: decide yes.
+
+Definition: a wisp is stalking rather than nonstalking:
+	if the wisp-quest of it is nothing, decide no;
+	decide yes.
+
+Figure of Wisp is the file "Env/MultiFloor/wisp1.png".
+To decide which figure-name is the examine-image of (W - a wisp):
+	decide on Figure of Wisp.
+To update background colour of (W - a wisp):
+	let WP be the wisp-punishment of W;
+	if debugmode > 1, say "WP of [W] is [WP].";
+	if WP is a wisp stat punishment, now the backgroundColour of W is the wisp-colour of WP;
+	otherwise now the backgroundColour of W is TQMagenta.
+
+To say ColourDesc of (W - a wisp):
+	if the backgroundColour of W is 255:
+		say "blue";
+	otherwise if the backgroundColour of W is TQDarkishGreen:
+		say "green";
+	otherwise if the backgroundColour of W is TQDarkishRed:
+		say "red";
+	otherwise:
+		say "pink".
+
+To say ExamineDesc of (W - a wisp):
+	say "A [ColourDesc of W] curse wisp is following you. You must [wisp-quest of W] before you next [wisp-trigger of W], or else you will [wisp-punishment of W].".
+
+To silently set up (W - a wisp):
+	now the wisp-quest of W is a random appropriate eligible wisp quest;
+	now the wisp-trigger of W is a random appropriate eligible wisp trigger;
+	now the wisp-punishment of W is bimbo-wisp-punishment;
+	if (a random number between 0 and 2) + (a random number between 0 and 2) < game difficulty, now the wisp-punishment of W is a random appropriate wisp punishment;
+	now W is everywhere;
+	update backdrop positions;
+	update background colour of W;
+	now the text-shortcut of W is the substituted form of "[ColourDesc of W]".
+
+To set up (W - a wisp):
+	silently set up W;
+	say "[bold type]A [ColourDesc of W] curse wisp appears, and begins following you! [roman type]You can sense that you must [bold type][wisp-quest of W][roman type] before you next [bold type][wisp-trigger of W][roman type], or else you will [bold type][wisp-punishment of W][roman type].".
+
+To compute punishment of (W - a wisp):
+	say "[bold type][BigNameDesc of W][bold type] shudders as its curse activates! [roman type]";
+	compute punishment of the wisp-punishment of W;
+	destroy W.
+
+To destroy (W - a wisp):
+	say "The [W] [one of]fades from existence[or]fades away[or]slowly disappears[at random].";
+	now W is nowhere;
+	update backdrop positions;
+	now the wisp-quest of W is nothing.
+
+To deploy a wisp:
+	let W be a random nonstalking wisp;
+	if W is a wisp:
+		set up W.
+
+To notice a wisp:
+	let W be a random nonstalking wisp;
+	if W is a wisp:
+		silently set up W;
+		say "[bold type]You notice that you now have a [ColourDesc of W] curse wisp following you! [roman type]You can sense that you must [bold type][wisp-quest of W][roman type] before you next [bold type][wisp-trigger of W][roman type], or else you will [bold type][wisp-punishment of W][roman type].".
+
+
+QuestRecalling is an action applying to nothing.
+
+total-quests-listed is a number that varies.
+The quest listing rules is a rulebook.
+
+Carry out QuestRecalling:
+	now total-quests-listed is 0;
+	follow the quest listing rules;
+	repeat with C running through worn clothing:
+		let Q be the quest of C;
+		if Q is not no-clothing-quest and (Q is persistent or C is cursed):
+			say "You are [if C is equippable]holding[otherwise]wearing[end if] a[if C is bland]n[end if] [if C is cursed]cursed[otherwise if C is blessed]blessed[otherwise]uncursed[end if] [MediumDesc of C]. [QuestFlav of Q]";
+			increase total-quests-listed by 1;
+	if there is a stalking wisp, say line break;
+	repeat with W running through wisps:
+		if debugmode > 1, say "Colour ID: [backgroundColour of W].";
+		if W is stalking:
+			increase total-quests-listed by 1;
+			say ExamineDesc of W;
+	if total-quests-listed is 0, say "You have no active quests.".
+Understand "recall quests", "quests", "quest", "curses", "curse quests", "uncurse quests" as QuestRecalling.
+
+This is the predicament quest list rule:
+	if the player is in a predicament room:
+		say PredicamentDescription of current-predicament;
+		increase total-quests-listed by 1.
+The predicament quest list rule is listed in the quest listing rules.
+
+This is the mechanic quest list rule:
+	if there is a worn steel collar:
+		say "You have been asked to collect a magic amulet by a rude mechanic. It should be found alongside a minotaur in the Dungeon region. You need to bring it back to him.";
+		increase total-quests-listed by 1.
+The mechanic quest list rule is listed in the quest listing rules.
+
+This is the doomed quest list rule:
+	if doom counter > 0 and doomed < 5:
+		if the doom-warned of witch is 1, say "[bold type]The witch has given you the Doom Quest: You need to find a BELL, a BOOK and a CANDLE and bring them, along with the DOOM NOTES, to the hidden altar in the mansion to stop the evil ritual. [roman type]Banishing cultists from the hidden altar can help slow down the ritual, and you'll need to banish them all before you can complete the seal anyway.";
+		otherwise say "[bold type]Something weird and spooky is going on in the Mansion. [roman type]It might be best to consult with a knowledgable witch.";
+		increase total-quests-listed by 1.
+The doomed quest list rule is listed in the quest listing rules.
+
+This is the gladiator quest list rule:
+	if gladiatorcurse >= 0:
+		if the number of male gladiators > 2:[the enlightened gladiator and wild gladiator don't count]
+			if gladiatorcurse is 1:
+				say "The demon lord has put a curse on the gladiators! You can break it by defeating [him of demon lord]!";
+				increase total-quests-listed by 1;
+			otherwise if gladiatorcurse is 2:
+				say "The witch has put a curse on the gladiators! You can break it by defeating [him of witch]!";
+				increase total-quests-listed by 1.
+The gladiator quest list rule is listed in the quest listing rules.
+
+This is the witch quest list rule:
+	if the witch-target of witch is a monster and the witch-target-state of witch is -1 and witch is alive:
+		say "A witch has asked you to find and banish [NameDesc of witch-target of witch].";
+		increase total-quests-listed by 1.
+The witch quest list rule is listed in the quest listing rules.
+
+This is the sex doll quest list rule:
+	if the curse-quest of witch > 0 and the curse-quest of witch < 3 and witch is alive:
+		if the curse-quest of witch is 1:
+			say "The Latex Cure: A witch has asked you to bring her a fae mushroom to help cure your latex transformation curse!";
+			increase total-quests-listed by 1;
+		if the curse-quest of witch is 2:
+			say "The Latex Cure: You have given a fae mushroom to the witch, and now she wants you to bring her a recipe for the latex curse removal. It should be found in a library.";
+			increase total-quests-listed by 1.
+The sex doll quest list rule is listed in the quest listing rules.
+
+This is the whisper quest list rule:
+	let W be whisper-type;
+	if W is 1:
+		say "The [great ones] command you to present yourself at their altar beyond the mansion.";
+		increase total-quests-listed by 1;
+	if W is 2:
+		say "The [great ones] command you to place a cursed item on their altar beyond the mansion.";
+		increase total-quests-listed by 1;
+	if W is 3:
+		say "The [great ones] command you to consume semen.";
+		increase total-quests-listed by 1;
+	if W is 4:
+		say "The [great ones] command you to fill your ass with semen.";
+		increase total-quests-listed by 1.
+The whisper quest list rule is listed in the quest listing rules.
+
+This is the princess quest list rule:
+	if ex-princess is caged and the question-sequence of ex-princess > 2:
+		unless there is a vibe-wand carried by ex-princess:
+			say " The princess of bimbacia has asked you to find her a suitable wand. Any wand will work, but the royal scepter would be best!";
+			increase total-quests-listed by 1;
+		otherwise:
+			say "The princess of Bimbacia has asked you to get a skeleton key from the prison guard in the dungeon.";
+			increase total-quests-listed by 1.
+The princess quest list rule is listed in the quest listing rules.
+
+This is the mindflayer quest of mind flayer list rule:
+	if alreadyspawned of mind flayer is 1 and mind flayer is not permanently banished:
+		say "You have been asked to kill a bugged-out monster.";
+		increase total-quests-listed by 1.
+The mindflayer quest of mind flayer list rule is listed in the quest listing rules.
+
+
 
 Quests ends here.

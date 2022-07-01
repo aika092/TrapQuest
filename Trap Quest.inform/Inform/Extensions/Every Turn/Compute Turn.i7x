@@ -20,7 +20,6 @@ The compulsory action rules is a rulebook. [Things that MUST happen like continu
 
 [!<EveryTurn>+
 
-REQUIRES COMMENTING
 Oh, so this is how time works! So "seconds" represents how many seconds of the current round has elapsed. And if seconds is 0, the round hasn't really started, so monsters and background activities don't progress.
 ### But the "run the engine" function seems bizarre to Selkie, looking equivalent to just writing:
 ### The another-turn flag can be set to 1 for various reasons, which causes the "engine" to run again without giving the player a chance to act. The player can only have a turn if another-turn is STILL 0 at the end of the turn
@@ -43,7 +42,7 @@ Every turn:
 		if bubble-needs-overwriting is 1:
 			display entire map;
 			now bubble-needs-overwriting is 0;
-		render map buttons;
+		[render map buttons;]
 	now focused-thing is nothing;
 	if seconds > 0, allocate 0 seconds; [Reset the tracker of how many seconds should pass the next time we accept user input]
 	if global timer interval > 50:
@@ -87,13 +86,13 @@ To run the engine:
 		now another-turn-action is the no-stored-action rule;
 		let AC be a stored action;
 		if another-turn-stored-action is not waiting:
-			if another-turn-previous-stored-action is another-turn-stored-action:
+			if another-turn-previous-stored-action is another-turn-stored-action: [this should defend against infinite loops where the player keeps trying over and over to do something they can't]
 				now AC is waiting;
 				if the number of entries in LR is 0 and A is the no-stored-action rule: [we actually don't have any good reason to skip the turn any more]
 					now AT is 0;
 					now ATflav is "";
 			otherwise:
-				now AC is another-turn-stored-action; [this should defend against infinite loops where the player keeps trying over and over to do something they can't]
+				now AC is another-turn-stored-action;
 			now another-turn-previous-stored-action is another-turn-stored-action;
 			now another-turn-stored-action is waiting;
 		truncate another-turn-rules to 0 entries; [This is the only safe moment to truncate the entries - just after we have loaded the rules and before we execute them.]
@@ -310,11 +309,16 @@ To compute automatic actions:
 		if there is a revealed hypno trap in the location of the player or there is a revealed haunted mirror trap in the location of the player or there is a revealed sprinkle trap in the location of the player or the location of the player is smoky: [The player might prefer to move first]
 			now delayed stand is 0;
 		otherwise:
-			allocate 0 seconds;
-			[say "[bold type]You try to stand up.[roman type][line break]";]
-			try standing;
-			now delayed stand is 0;
-			now another-turn is 1;
+			let SA be auto;
+			now auto is 1;
+			follow the ability to stand rules;
+			unless the rule failed:
+				allocate 0 seconds;
+				[say "[bold type]You try to stand up.[roman type][line break]";]
+				try standing;
+				now delayed stand is 0;
+				now another-turn is 1;
+			now auto is SA;
 	if another-turn is 0 and the player is refusing to swallow and face is not actually occupied:
 		now another-turn-flavour is "You're too disgusted by the [if the milk volume of face > 0 and the milk taste addiction of the player is 1]thought that it's human breast milk in your mouth[otherwise]taste of what's in your mouth[end if]!";
 		now another-turn is 1;
@@ -572,7 +576,7 @@ An all later time based rule (this is the breathe or suffocate rule):
 				if bulging-slutty-sister is penetrating face, now the fainting reason of the player is 22;
 			otherwise:
 				say "Your lungs burn as your lack of oxygen [one of]becomes painful[or]continues to hurt you[stopping].";
-				PainUp 1;
+				PainUp 10;
 		otherwise:
 			say "[if the suffocation of the player is 0 and player-breathing is false][bold type]You are currently holding your breath. [roman type]Until you choose to breathe again, your strength and ability to think straight will gradually leave you.[otherwise if the suffocation of the player is 0][bold type]You are currently unable to breathe. [roman type]Until you find a way to breathe again, your strength and ability to think straight will gradually leave you, and you will eventually pass out.[otherwise if the suffocation of the player < the suffocation limit of the player - 5]You[one of]r body is slowly being starved of oxygen, since you[or][cycling] are still holding your breath.[otherwise if the suffocation of the player < the suffocation limit of the player - 4][one of]As you continue to be starved of oxygen, you[or]You[cycling] feel the burning in your throat and the cloudiness in your head rising.[otherwise if the suffocation of the player is the suffocation limit of the player - 3][bold type]Your vision starts to go blurry.[roman type][line break][otherwise if the suffocation of the player is the suffocation limit of the player - 2 and the player is able to faint from suffocation][bold type]Your lungs are on fire and your eyes roll into the back of your head as you start to lose consciousness.[roman type][line break][otherwise if the suffocation of the player is the suffocation limit of the player - 2][bold type]Your lungs are on fire and your eyes roll into the back of your head.[roman type][line break][otherwise if the player is able to faint from suffocation][bold type]Your vision goes white as you reach the brink. Your consciousness is slipping away.[roman type][line break][otherwise]Your vision is going white and your lungs are empty of oxygen. [bold type]From now on, every turn you can't breathe will cause you serious pain.[roman type][line break][end if]";
 			increase the suffocation of the player by 1;
@@ -605,7 +609,10 @@ To compute pink smoke:
 		if the player is possessing a penis and a random number between 1 and 3 is 1, now R is 7; [penis shrink]
 		otherwise now R is 1; [arousal]
 	if the player is in School34 and a random number between 1 and 8 > 1, now R is 1; [arousal]
-	if (the player is a flatchested trap or (diaper quest is 1 and the player is somehow possessing a penis)) and R > 6:
+	if game difficulty > 2 and R >= 10:
+		say "You lightly cough as your position on your knees forces you to breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room.";
+		RandomStatDown 1;
+	otherwise if (the player is a flatchested trap or (diaper quest is 1 and the player is somehow possessing a penis)) and R > 6:
 		say "You lightly cough as your position on your knees forces you to breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room.";
 		SpecialPenisDown 1;
 	otherwise if R > 6 and diaper quest is 0:
@@ -704,7 +711,7 @@ This is the broken automatic submission rule:
 				say "Without a second thought, you crawl towards [NameDesc of M].";
 			otherwise:
 				say "Without a second thought, you crawl towards [NameDesc of M], gently stroking your head on [his of M] [if M is airborne]body[otherwise]leg[end if].";
-				now M is interested;
+				interest M;
 			try direct-presenting B to M;
 			if M is reactive and M is not penetrating a body part and M is friendly: [Proposition failed. NPC needs to leave to protect against infinite loops.]
 				bore M;
@@ -756,7 +763,7 @@ This is the present-for-oral hypno rule:
 		let M be a random interested monster in the location of the player;
 		if M is nothing:
 			now M is a random monster in the location of the player;
-			if M is monster, now M is interested;
+			if M is monster, interest M;
 		if the player is prone:
 			if face is actually occupied:
 				say "[if the bimbo of the player > 14]Unfortunately[otherwise]Fortunately[end if], your mouth is already occupied.";
@@ -800,7 +807,7 @@ This is the autospread hypno rule:
 			if C is displacable:
 				say "You pull down your [ShortDesc of C]!";
 				displace C;
-			otherwise if C is zippable:
+			otherwise if C is crotch-zipped:
 				say "You unzip your [ShortDesc of C]!";
 				ZipDown C;
 			otherwise:
@@ -810,7 +817,7 @@ This is the autospread hypno rule:
 			if C is displacable:
 				say "You pull your [ShortDesc of C] to the side!";
 				displace C;
-			otherwise if C is zippable:
+			otherwise if C is crotch-zipped:
 				say "You unzip your [ShortDesc of C]!";
 				ZipDown C;
 			otherwise:

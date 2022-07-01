@@ -22,14 +22,6 @@ To trigger (Y - a paddle trap):
 	now Y is expired;
 	say "As you are busy with the tank, a wooden paddle swings down from the ceiling! ";
 	cutshow figure of paddle cutscene for Y;
-	let A be a random number between 6 and 14;
-	let K be a random worn top level protection clothing;
-	let N be 0;
-	repeat with C running through ass covering clothing:
-		if the armour of C > N:
-			now N is the armour of C;
-			now K is C;
-			if K is ass plugging or K is vagina plugging, now N is 9999; [This overrides other checks]
 	compute strength 3 spanking;
 	if spank tattoo is drawable and there is a worn tattoo and the delicateness of the player > 8 and a random number between 1 and 6 is 1:
 		summon spank tattoo;

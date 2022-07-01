@@ -217,7 +217,7 @@ Report plugging something with endurance clothing:
 	say "A strong feeling of energy flows through you[if the second noun is unidentified]. This must be a magic [ShortDesc of the second noun][end if]!".
 
 Report wearing bed wetting clothing:
-	say "Your bladder tingles slightly[if incontinence < 10], and you somehow can tell you have less control over not wetting yourself![end if]".
+	say "Your bladder tingles slightly[if the bladder-incontinence of the player < the max-bladder-incontinence of the player], and you somehow can tell you have less control over not wetting yourself![end if]".
 
 Report wearing stumbling clothing:
 	say "You suddenly wobble, and [if there are worn heels]can barely keep your balance. [otherwise]are glad that you're not wearing heels right now! [end if]This [ShortDesc of the noun] is making it harder for you to stay balanced!".
@@ -265,5 +265,8 @@ Report plugging something with expansion clothing:
 
 Report wearing possession clothing:
 	say "A chill goes down your spine as you finish putting it on, and somehow you know you're not alone in these clothes!".
+
+Report wearing draining clothing:
+	say "You instantly feel negatively-charged magic seeping into your skin. [bold type]The longer you wear this, the more your stats will be drained!!![roman type][line break]".
 
 Wearing ends here.

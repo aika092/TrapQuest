@@ -1,6 +1,6 @@
 Bridal Veils by Headgear begins here.
 
-A bridal veil is a kind of headgear. A bridal veil is usually silk. A bridal veil is blondeness-positive. A bridal veil is usually hair growing. A bridal veil is usually anal-sex-addiction-influencing. A bridal veil is womanly.
+A bridal veil is a kind of headgear. A bridal veil is usually silk. A bridal veil is usually sheer. A bridal veil is blondeness-positive. A bridal veil is usually hair growing. A bridal veil is usually anal-sex-addiction-influencing. A bridal veil is womanly.
 
 Definition: a bridal veil is white themed: decide yes.
 Definition: a bridal veil is roleplay:

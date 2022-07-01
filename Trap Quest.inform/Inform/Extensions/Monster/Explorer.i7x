@@ -108,19 +108,33 @@ To say WhorePerceptionFlav of (M - an explorer):
 	say "[speech style of M]'Hi, fancy seeing you here.'[roman type][line break]".
 
 To compute eek reaction of (M - an explorer):
-	now M is interested;
+	interest M;
 	now M is unconcerned;
 	say "[speech style of M]'EEEEK!'[roman type][line break][BigNameDesc of M] turns tail and tries to run away from you!";
 	now the scared of M is 100;
 	now the boredom of M is 0;
 	permanently anger M.
 
-[An easy way for them to get booted from the woods]
+[An easy way for them to get booted from their starting regions]
 Definition: an explorer (called M) is distracted:
 	let V be a random vines in the location of M;
 	if V is vines and V is aggressive and V is not penetrating a body part and V is not wrangling the player:
 		say "[BigNameDesc of M] shrieks as a vine wraps itself around [his of M] ankle! [big he of M] quickly tries to wrestle it off, but before [he of M] gets a chance, several more living vines have joined in, holding [him of M] tight. You watch with [if diaper quest is 1][horror the diaper addiction of the player] as [he of M] is lifted into the air, passed through a portal, and then made to faceplant [his of M] own diapered rear, as the vines begin stroking [his of M] pussy and bringing [him of M] to a shameful climax.[line break][speech style of M]'Please no, no more! Please, I just want to get out of here!'[roman type][line break]Almost as if they heard [NameDesc of M][']s pleas, another portal opens up underneath the poor diapered adventurer, this one leading to a hotel room. [big he of M] is unceremoniously dropped through the portal, onto the waiting hotel bed below. The portal then closes behind [him of M][otherwise][horror the sex addiction of the player] as not just one, but several wriggling vines find their way into both [his of M] poor pussy and [his of M] tight little asshole. Several awkward wailing and gargling sounds later, you watch as [NameDesc of M]'s belly bloats larger and larger under the pressure from the huge amounts of tentacle semen being poured inside [him of M].[line break][speech style of M]'F-fuck this! I'd r-rather be that rude pimp's whore, than stay out here where it's so dangerous...'[roman type][line break]Finally released from the clutches of the vines, [NameDesc of M] begins to drag [his of M] cum-leaking body towards the west[end if].";
-		compute banishment of M.
+		compute banishment of M;
+		decide yes;
+	otherwise if M is in Mansion01:
+		say "You see [NameDesc of M] exiting the Mansion, going out into the Woods.";
+		compute banishment of M;
+		decide yes;
+	otherwise if M is in Stairwell01:
+		say "You see [NameDesc of M] climbing the staircase, going out into the open air.";
+		compute banishment of M;
+		decide yes;
+	otherwise if M is in Stairwell02:
+		say "You see [NameDesc of M] climbing the stairs and entering the rear entrance of the Hotel.";
+		compute banishment of M;
+		decide yes;
+	decide no.
 
 
 Section 3 - Damage
@@ -130,9 +144,8 @@ To compute standard damage of (M - an explorer):
 		compute damage reaction of M;
 		compute eek reaction of M;
 		if the explorer-bimbo of M >= 2 and there is a hotel bed in the location of M and pimp is alive and pimp is undefeated and (pimp is uninterested or pimp is guarding or pimp is friendly):
-			now pimp is interested;
+			interest pimp;
 			now pimp is unleashed;
-			now the boredom of pimp is 0;
 			say "[BigNameDesc of pimp] [if pimp is in the location of M]whirls round in fury[otherwise]quickly arrives in the room[end if]![line break][speech style of pimp]'HEY! If you cross my bitch, you cross me. You'll pay dearly for this!'[roman type][line break]";
 			now pimp is in the location of M;
 			anger pimp;

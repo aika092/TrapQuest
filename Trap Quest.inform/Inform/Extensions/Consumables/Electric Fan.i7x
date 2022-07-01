@@ -64,7 +64,7 @@ Carry out fanning:
 	if E > 0:
 		if R is bossed: [Trying to use this in a boss room to remove a boss? Bad munchkin!]
 			say "A huge blast of air billows around you, stinging you all over!";
-			PainUp 2;
+			PainUp 20;
 			say "The air is so strong that your clothing is ripped to shreds!";
 			repeat with C running through worn removable clothing:
 				unless C is diaper, destroy C;
@@ -101,7 +101,7 @@ Carry out fanning:
 					try urinating;
 				otherwise:
 					say "The stinging strikes of the wind seem to start to focus on certain specific spots on your body - your [AssDesc], your [ShortDesc of thighs] and your [genitals]! A weird mixture of pleasure and pain whirls around your body and mind, overwhelming you!";
-					PainUp 1;
+					PainUp 10;
 					stimulate vagina from the noun times 2;
 			now the fatigue of the player is the buckle threshold of the player;
 			say "The ordeal leaves you exhausted, barely able to move.";

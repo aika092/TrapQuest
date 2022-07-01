@@ -50,8 +50,8 @@ To compute defeat reward of (M - a monster):
 
 To compute (M - a monster) slinking away:
 	say SlinkAwayFlav of M;
-	bore M;
-	regionally place M.
+	regionally place M;
+	bore M.
 To say SlinkAwayFlav of (M - a monster):
 	say "[BigNameDesc of M] slinks away as soon as [he of M] has the strength.".
 
@@ -78,6 +78,7 @@ To say BanishDesc of (M - a monster):
 To compute forced banishment of (M - a monster):
 	if M is intelligent and the player is able to speak, say BanishDemandFlav of M;
 	say BanishForceFlav of M;
+	trigger banish-wisp-quest;
 	compute banished loot of M;
 	compute banishment of M.
 To say BanishDemandFlav of (M - a monster):
@@ -547,7 +548,7 @@ AFTER EVERYTHING is said and done, we reset player-fucking to 0.
 
 +!]
 To compute dominating (M - a monster):
-	now M is interested;
+	interest M;
 	now player-fuckchoice is the dominationtype of M using player-fucker;
 	if player-fucker is penis and demon codpiece is worn, say CodTightenFlav of demon codpiece;
 	now player-fucking is DOMINANT-NONE;[we set this to 1 after we're finished determining success]
@@ -985,7 +986,7 @@ To diapersit dominate (M - a monster):
 		otherwise if N > 1:
 			say "You are able to release a [if N < 3]small amount[otherwise if N < 6]decent amount[otherwise]huge avalanche[end if] of stinky mess into the seat of [NameDesc of D], right on top of [NameDesc of M][']s nose and mouth.";
 			MessUp D by N;
-			now rectum is 1;
+			reset rectum after messing;
 			now N is the bladder of the player;
 			if N > 0:
 				say "Messing makes you wet your diaper at the same time.";
@@ -1060,7 +1061,7 @@ To compute failed dominance punishment of (M - a monster):
 		Bore M.
 
 To compute failed dq dominance punishment of (M - a monster):
-	now M is interested;
+	interest M;
 	if the player is upright:
 		now the stance of the player is 1;
 		say "[bold type]You are now on your knees.[roman type][line break]";

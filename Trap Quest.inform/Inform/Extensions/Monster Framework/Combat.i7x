@@ -329,6 +329,8 @@ To compute default facial climax for (M - a monster):
 			increase subs by 1;
 		if M is wrapped:
 			compute wrapped climax of M in face;
+		otherwise if M is friendly-fucking and M is willing to tongue creampie and a random number between 1 and the favour of M > 3: [friendly NPCs will usually cum on the player's tongue]
+			compute merciful oral creampie of M;
 		otherwise if bukkake fetish is 1 and M is willing to bukkake:[cumshot outside]
 			if subs > 0:
 				compute assisted facial of M with subs;
@@ -353,8 +355,8 @@ To compute default facial climax for (M - a monster):
 		otherwise orgasm dislodge M.
 
 Definition: a monster is willing to tongue creampie:
-	if the favour of it > a random number between 0 and (the aggro limit of it + 5), decide yes;
-	decide no. [Cums on the player's tongue instead of down their throat]
+	if the favour of it > a random number between 0 and (the aggro limit of it + 5), decide yes; [Cums on the player's tongue instead of down their throat]
+	decide no.
 
 To compute assisted facial of (M - a monster) with (subs - a number):
 	if the reaction of the player is 0:
@@ -889,7 +891,7 @@ Definition: a body part (called B) is a reasonable target:
 			decide no;
 	otherwise if B is breasts:
 		let C be a random worn top level titfuck protection clothing;
-		if C is clothing and C is not actually top-displacable and C is not tearable:
+		if C is clothing and C is actually not-top-displacable and C is not tearable:
 			if debugmode > 1, say "[C] cannot be removed!";
 			decide no;
 	otherwise if B is face:
@@ -1036,7 +1038,7 @@ To compute (M - a monster) attacking (C - a clothing): [This should change for a
 		if debuginfo > 0, say ClothingAttackDebug of M on C with R;
 		if the chosen-orifice of M is breasts and C is actually top-displacable:
 			compute M topdisplacing C;
-		otherwise if R > the defence of C - 3 and C is displacable and a random number between -1 and unlucky <= 0: [NPCs rarely displace clothing when unlucky is enabled]
+		otherwise if the chosen-orifice of M is not breasts and R > the defence of C - 3 and C is displacable and a random number between -1 and unlucky <= 0: [NPCs rarely displace clothing when unlucky is enabled]
 			compute M displacing C;
 		otherwise if R > the defence of C - 2 and C is rippable and a random number between -2 and unlucky <= 0: [NPCs less commonly rip clothing when unlucky is enabled]
 			compute M ripping C;
@@ -1141,22 +1143,26 @@ Definition: a monster is prematurable:
 	decide no.
 
 This is the whiteboy premature orgasm insertion rule:
-	if current-monster is not dark skinned and current-monster is prematurable and (the trophy-mode of bbc-trophy is 1 or the player is queen of spades):
+	if current-monster is pale skinned and current-monster is prematurable and (the trophy-mode of bbc-trophy is 1 or the player is queen of spades):
 		let QS be the number of worn interracial themed currently visible wearthings + the trophy-mode of bbc-trophy;
 		let QST be QS * (the trophy-mode of bbc-trophy + 1);
 		let DR be a random number between 1 and the difficulty of current-monster;
 		if debuginfo > 0, say "[input-style]Premature ejaculation avoidance check: [MediumDesc of current-monster] difficulty roll d[difficulty of current-monster] ([DR]) | ([QST].5) number of worn interracial items[if the trophy-mode of bbc-trophy is 1] (doubled from [QS] by BBC trophy effect)[end if][if the difficulty of current-monster is DR] - AUTOMATIC SUCCESS: highest possible roll[end if][roman type][line break]";
 		if DR < the difficulty of current-monster and DR <= QST:
 			say PrematureEjaculationFlav of current-monster;
-			SemenPuddleUp (the semen load of current-monster) in (the location of current-monster);
+			if current-monster is not wrapped, SemenPuddleUp (the semen load of current-monster) in (the location of current-monster);
 			say PrematureEjaculationReactionFlav of current-monster;
-			orgasm bore current-monster;
-			say "Visibly embarrassed, [NameDesc of current-monster] begins to slink away.";
+			if current-monster is patron:
+				say "[speech style of current-monster]'I can't believe I still have to pay for this.'[roman type][line break]";
+				compute payment of current-monster;
+			otherwise:
+				orgasm bore current-monster;
+				say "Visibly embarrassed, [NameDesc of current-monster] begins to slink away[if current-monster is wrapped], the cum-filled condom still wrapped around [his of current-monster] [sissy-penis][end if].";
 			rule succeeds.
 The whiteboy premature orgasm insertion rule is listed first in the default monster insertion rules.
 
 To say PrematureEjaculationFlav of (M - a monster):
-	say "[BigNameDesc of M] [one of]moves [his of M] [manly-penis] into position[or]strokes [his of M] shaft a couple of times to prepare [himself of M][or]takes [his of M] [manly-penis] in one hand, preparing [himself of M][in random order]. Then, suddenly, [he of M] is ejaculating! [big his of M] [load of M] drips to the ground.".
+	say "[BigNameDesc of M] [one of]moves [his of M] [manly-penis] into position[or]strokes [his of M] shaft a couple of times to prepare [himself of M][or]takes [his of M] [manly-penis] in one hand, preparing [himself of M][in random order]. Then, suddenly, [he of M] is ejaculating! [big his of M] [load of M] [if M is wrapped]dribbles into the condom[otherwise]drips to the ground[end if].".
 To say PrematureEjaculationReactionFlav of (M - a monster):
 	say "[speech style of M]'[one of]Wha? This never usually happens, I swear!'[or]Did I just... No way...'[or]I... Uh... You should consider this a warning.'[or]I... err... I've decided to be merciful to you this time and let you go.'[in random order][roman type][line break]".
 
@@ -1633,7 +1639,9 @@ To compute tripping attack of (M - a monster):
 	if (D >= the dexterity of the player and the blind-status of M is not 1) or tutorial is 1:
 		say MonsterTrippedFlav of M;
 		try kneeling;
-		if the player is prone and tutorial is 0, check attack of M;
+		if the player is prone and tutorial is 0:
+			trigger trip-wisp-trigger;
+			check attack of M;
 	otherwise:
 		say MonsterFailedTripFlav of M.
 
@@ -1845,7 +1853,7 @@ To compute (P - a clothing) protecting (B - a body part) from (M - a monster):[d
 		if M is ghost and a random number between the magic-modifier of P and 8 < 4:[for ghosts, the possession enchantment is a negative]
 			compute M hurting B;
 			say "The [P] constricts in response to [NameDesc of M]'s attack, intensifying the pain!";
-			PainUp 1;
+			PainUp 10;
 		otherwise if a random number between the magic-modifier of P and 10 > 6:[not as good as protection]
 			say "The [P] causes the attack to phase through you completely!";
 		otherwise:
@@ -1877,7 +1885,7 @@ To compute (P - a clothing) protecting (B - belly) from (M - a monster):
 	otherwise if P is possession and M is ghost and a random number between the magic-modifier of P and 8 < 4:
 		compute M hurting B;
 		say "The [P] constricts in response to [NameDesc of M]'s attack, intensifying the pain!";
-		PainUp 1;
+		PainUp 10;
 	otherwise if P is possession and M is not ghost and a random number between the magic-modifier of P and 10 > 6:
 		say "The [P] causes the attack to phase through you completely!";
 	otherwise:

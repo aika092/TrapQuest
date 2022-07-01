@@ -276,9 +276,8 @@ To compute delay of (M - mechanic):
 To compute robot anger of (M - mechanic):
 	if M is friendly or M is uninterested:
 		say "[BigNameDesc of M] looks at you angrily.[line break][speech style of M]'Hey, [one of]don't damage my inventions!'[or]I've told you before, don't attack my robots!'[stopping][roman type][line break]";
-		now M is interested;
-		anger M;
-		now the boredom of M is 0.
+		interest M;
+		anger M.
 
 To say DiaperReaction of (M - mechanic):
 	if there is a currently visible diaper or the player is shameless:
@@ -845,8 +844,7 @@ To compute friendly drink of (M - mechanic):
 
 To compute unfriendly drink of (M - mechanic):
 	say "[speech style of M]'Do you think you DESERVE a drink? I don't.'[roman type][line break]";
-	now M is interested;
-	now the boredom of M is 0.
+	interest M.
 
 Definition: mechanic is willing to give snacks: decide yes.
 

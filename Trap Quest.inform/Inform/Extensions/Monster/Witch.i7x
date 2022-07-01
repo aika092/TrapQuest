@@ -53,6 +53,11 @@ Definition: witch is dismissable: decide yes.
 
 Definition: witch is wenchy: decide yes.
 
+To AltarUsesUp (N - a number):
+	if N > 0:
+		increase the altar-uses of witch by N;
+		if the altar-uses of witch > 0, trigger altar-wisp-quest.
+
 Part 1 - Misc Flavour
 
 To say GroundPeeReaction of (M - witch):
@@ -211,23 +216,23 @@ To compute witchsummoning (M - a monster):
 
 To compute witchsummoning (M - a mannequin):
 	say "[BigNameDesc of current-monster] puts [his of M] fingers in [his of M] mouth and whistles.";
-	now M is interested;
+	interest M;
 	anger M.
 
 To compute witchsummoning (M - a demoness):
 	say "[BigNameDesc of current-monster] chants in an infernal language you don't understand.";
-	now M is interested;
+	interest M;
 	anger M.
 
 To compute witchsummoning (M - a fairy):
 	unless the boredom of M > 0:
 		say "[BigNameDesc of current-monster] raises [his of M] hands to [his of M] cup mouth and whispers softly into them.";
-		now M is interested;
+		interest M;
 		anger M.
 
 To compute witchsummoning (M - a giant wasp):
 	say "[BigNameDesc of current-monster] whispers some arcane words[one of]. It almost sounds like [he of M] is hissing[or][stopping].";
-	now M is interested;
+	interest M;
 	anger M.
 
 This is the witch latex punishment rule:
@@ -259,6 +264,12 @@ This is the witch monster fucked taunting rule:
 	bore M;
 	rule succeeds.
 The monster fucked taunting rule of witch is usually the witch monster fucked taunting rule.
+
+This is the witch summons a wisp rule:
+	if the player is upright and there is a nonstalking wisp and a random number between 1 and 3 is 1:
+		say "[BigNameDesc of current-monster] points over your shoulder and whispers in an arcane language.[one of][line break][speech style of current-monster]'Something for later.'[roman type][line break][or][stopping]";
+		deploy a wisp.
+The witch summons a wisp rule is listed last in the witch attack rules.
 
 This is the witch summons cursed clothing rule:
 	if the player is upright and a random number between 1 and 2 is 1:
@@ -346,7 +357,7 @@ This is the witch summons mannequins rule:
 	if the number of mannequins in the Woods is 0:
 		let N be a random off-stage mannequin;[the witch can summon ANY mannequin]
 		summon N in the woods;
-		now N is interested;
+		interest N;
 		anger N;
 		rule succeeds.
 The witch summons mannequins rule is listed last in the witch attack rules.
@@ -488,7 +499,7 @@ To penetration dominate (M - witch):
 			passively stimulate penis from M;
 			if the player is possessing a penis, now penis is penis-erect;
 			calm M;
-			increase the altar-uses of M by 1;
+			AltarUsesUp 1;
 		otherwise:
 			say "[line break][speech style of M]'Every time...'[roman type][line break][big he of M] grits [his of M] teeth, eyes watering as you mercilessly pound [his of M] ass. Luckily for [him of M], you are near finishing anyway because [his of M] ass is TIGHT! You lose control no less than a second later, emitting a throaty moan as your [sexual-player-penis] fills [him of M] with your [load].[line break][speech style of M]'You'll pay for this. My BUTT isn't your playground.'[roman type][line break][big he of M] makes a few intricate hand gestures as you pull out, and immediately vanishes.";
 			orgasm;
@@ -587,7 +598,7 @@ To say RepeatResponse of (M - witch):
 		say "[speech style of M]'[one of]You heard me before. Pay up or piss off.'[or]You heard what I said before. If you can't pay, piss off.'[or]I'll say it again. If you want to use the altar, you better fucking pay me first.'[at random][roman type][line break]".
 
 To compute taunt acceptance effect of (M - witch):
-	increase the altar-uses of M by 1;
+	AltarUsesUp 1;
 	calm M.
 
 To say TauntAccepted of (M - witch):

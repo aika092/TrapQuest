@@ -22,6 +22,7 @@ To compute swimming in (H - hot-tub):
 	let swimming be 1;
 	let swim-turns be 0;
 	let watcher-ready be 0;
+	allocate 6 seconds;
 	while swimming is 1:
 		if swim-turns is 0 and water-peeing is false:
 			say "You slip into the tub and allow yourself to sink in all the way up to your shoulders.";
@@ -30,7 +31,7 @@ To compute swimming in (H - hot-tub):
 			let M be a random alive male teacher;
 			if diaper quest is 1, now M is a random alive teacher;
 			if M is monster and armband is worn and the refractory-period of M < 0:
-				now M is interested;
+				interest M;
 				if M is in the location of the player:
 					say "[BigNameDesc of M] walks over to you![line break][speech style of M]'Don't mind if I join you!'[roman type][line break][big he of M] is soon seated next to you in the tub, [his of M] wandering hands and fingers soon probing and groping you.";
 				otherwise:
@@ -39,19 +40,17 @@ To compute swimming in (H - hot-tub):
 					say "[BigNameDesc of M] turns up at the door![line break][speech style of M]'I thought I might find you here. Don't mind if I join you!'[roman type][line break][big he of M] is soon seated next to you in the tub, [his of M] wandering hands and fingers soon probing and groping you.";
 		if diaper quest is 1 or there is a worn diaper:
 			let N be a random interested teacher in the location of the player;
-			if N is monster and the player is getting unlucky:
+			if N is monster and the player is horny:
 				if there is a worn diaper, say "[line break][speech style of N]'Wearing a diaper in the tub? What a kinky [boy of the player] you are. Do you like the feeling of all that soggy squishy padding against your no-no?'[roman type][line break][BigNameDesc of N] starts to move [his of N] hand towards your crotch. It looks like you're going to have to decide whether or not to let [him of N] play with you...[line break]Do you let [his of N] masturbate you through your soaked padding? ";
 				otherwise say "[line break][speech style of N]'Not wearing a diaper? What a shame. But on the other hand, if there's no padding in the way... What's to stop me from doing this?'[roman type][line break][BigNameDesc of N] starts to move [his of N] hand towards your crotch. It looks like you're going to have to decide whether or not to let [him of N] play with you...[line break]Do you let [his of N] masturbate you? ";
 				if the player is bimbo consenting:
 					compute masturbation of N;
 				otherwise:
 					consider angry punishment of N;
-					say "[BigNameDesc of N] turns away, having lost interest in you for now.";
-					bore N;
 				now swimming is 0;
 		otherwise:
 			let N be a random interested male teacher in the location of the player;
-			if N is monster and the player is getting unlucky:
+			if N is monster and the player is horny:
 				say "[line break][speech style of N]'While we're both here, let's see how your blowjob skills are coming along, eh?'[roman type][line break]It looks like you're going to have to decide whether or not to accept the rather blunt proposal...[line break]Do you suck [his of N] [DickDesc of N]? ";
 				if the player is bimbo consenting:
 					now presented-orifice is face;
@@ -63,10 +62,8 @@ To compute swimming in (H - hot-tub):
 				otherwise:
 					say "[speech style of N]'Then get the fuck out of my hot tub!'[roman type][line break][BigNameDesc of N] snaps.";
 					consider angry punishment of N;
-					say "[BigNameDesc of N] turns away, having lost interest in you for now.";
-					bore N;
 				now swimming is 0;
-		say "[line break]";
+		say line break;
 		if swimming is 1:
 			let N be a random interested male teacher in the location of the player;
 			if N is nothing, let N be a random interested teacher in the location of the player;
@@ -80,7 +77,7 @@ To compute swimming in (H - hot-tub):
 				now swimming is 0;
 			otherwise:
 				say "You keep relaxing in the tub.";
-	allocate 12 + (3 * swim-turns) seconds;[after everything]
+	if seconds > 0, increase seconds by swim-turns * 3;
 	display entire map.
 
 Hot Tub ends here.

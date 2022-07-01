@@ -283,7 +283,7 @@ Report going when the player is in Predicament20:
 			only destroy C;
 	repeat with C running through predicament-fixed wearthings:
 		unless C is in School15, now C is predicament-normal;
-		if C is worn clothing and C is not cursed and C is not locked and C is not armband and C is not sex toy and C is removable:
+		if C is worn clothing and C is not cursed and C is not locked and C is not glued and C is not armband and C is not sex toy and C is removable:
 			say "[BigNameDesc of C] falls to the ground.";
 			dislodge C;
 			now C is in the location of the player;
@@ -348,6 +348,7 @@ Report going when the player is in Predicament20:
 						now C is identified;
 					if C is ass plugging clothing:
 						now C is penetrating asshole;
+						if the notch-taken of C <= 0, now the notch-taken of C is 1;
 					otherwise if C is vagina plugging clothing:
 						if the player is possessing a vagina, now C is penetrating vagina;
 					otherwise if C is insertable:
@@ -409,7 +410,11 @@ To compute movement of (M - a bystander):
 		let R be the park pull resistance of M;
 		if water-fountain is penetrating asshole and M is in the location of water-fountain and M is not fountain-unquenched, now R is 1; [They'll always move away after drinking]
 		if (M is not in the location of water-fountain or M is not fountain-unquenched) and (M is strolling or R <= 1):
-			if A is up or A is not a direction or R > 1:
+			if M is in Predicament01 and the player is not in Predicament01 and a random number between 1 and 2 is 1:
+				now A is north;
+			otherwise if M is in Predicament02 and a random number between 1 and 2 is 1:
+				now A is east;
+			otherwise if A is up or A is not a direction or R > 1:
 				now R is 3; [We use this to flag that the NPC is no longer choosing to walk towards the central park]
 				let LA be the list of N-viable directions; [This is how we randomise an APPROPRIATE direction for M to walk in]
 				if M is in Park02:
@@ -460,7 +465,7 @@ To check perception of (M - a bystander):
 			let C be the concealment of the location of the player;
 			let P be the stealth of the player;
 			if debuginfo > 0, say "[input-style]Bystander perception check: awareness roll (d[awareness of M]) = [R] | [C + P].5 = ([C].5) [location of the player] concealment rating + ([P]) player [if the player is upright]standing[otherwise]kneeling[end if] stealth rating[roman type][line break]";
-			if C + P >= R and smoothie gag is not worn and (current-predicament is not team-scissor-lift-predicament or the number of students in the location of M is 0):
+			if C + P >= R and smoothie gag is not worn and current-predicament is not always-perceiving:
 				say "[BigNameDesc of M] fails to notice you.";
 			otherwise:
 				now M is interested;
@@ -468,6 +473,8 @@ To check perception of (M - a bystander):
 		otherwise if the worst-appearance of M < the appearance of the player or (diaper quest is 1 and the worst-appearance of M < the cringe appearance of the player):
 			compute worsened perception of M;
 	if the predicament-pull-room of M is Predicament03 and M is not in Predicament03, now M is uninterested. [People who didn't take a smoothie can reconsider if they step away then step back.]
+
+Definition: a predicament is always-perceiving: decide no. [Some predicaments have certain situations where the bystanders cannot fail to notice you.]
 
 To compute perception of (M - a bystander):
 	say "[BigNameDesc of M] notices you! ";
@@ -1015,11 +1022,12 @@ This is the bystanders move rule:
 	if the player is in an unbossed predicament room or the player is in Predicament02 or the player is in Toilet01 or the player is in Toilet02 or (current-predicament is vibe-photo-predicament and the player is in Predicament01):
 		update appearance level; [We really want to make sure we've got this accurate]
 		repeat with M running through alive bystanders:
-			if debugmode > 1, say "Computing [NameDesc of M] ([location of M]).";
-			if M is not moved, compute movement of M;
-			now M is not moved;
-			check perception of M;
-		[display entire map.]
+			unless current-predicament is toilets-dildos-predicament and M is in Park02 and the player is in Toilet02:
+				if debugmode > 1, say "Computing [NameDesc of M] ([location of M]).";
+				if M is not moved, compute movement of M;
+				now M is not moved;
+				check perception of M;
+			[display entire map.]
 
 The bystanders move rule is listed first in the all time based rules. [list it first so the move happens before all other time based stuff]
 
@@ -1077,6 +1085,7 @@ An all time based rule (this is the cars come past rule):
 			say "[bold type]Suddenly, a car [one of]comes driving[or]zooms[or]drives[or]sails[at random] past! [roman type]";
 			if the appearance of the player > 2 or the cringe appearance of the player > 4:
 				say "The driver honks [his of shopkeeper] horn as [he of shopkeeper] spots you!";
+				FearUp 4;
 				let R be a random number between 1 and 2;
 				if R is 1 and face is not listed in the armUses of arms:
 					if the number of blank rows in the Table of Published Disgraces > 0:
@@ -1101,6 +1110,9 @@ An all time based rule (this is the cars come past rule):
 						if A is a direction:
 							let P be the room A from (the location of M);
 							if a random number between 1 and 5 > 3 and the number of barriers in P is 0 and the number of barriers in the location of M is 0, try M going A;
+							if M is in the location of the player, say "[BigNameDesc of M] must have been attracted here by the sound of the car horn!";
+					otherwise:
+						say "[BigNameDesc of M] is started by the car horn, and looks around, now much more alert!";
 					if M is in the location of the player:
 						now M is interested;
 						compute perception of M;
@@ -1159,8 +1171,7 @@ To execute (SSP - simple-sneak-predicament):
 		now the raw-magic-modifier of P is 1;
 		now P is dexterity-influencing;
 		let D be plain-largish-diaper;
-		summon D uncursed;
-		now D is locked;
+		summon D locked;
 		now the raw-magic-modifier of D is 2;
 		now D is diaper-addiction-influencing;
 		[now skeleton key is in a random unbossed park room;]
@@ -1232,9 +1243,7 @@ Definition: vibe-photo-predicament is appropriate:
 To execute (VPP - vibe-photo-predicament):
 	now the stance of the player is 0;
 	if diaper quest is 1:
-		let D be pink-huge-diaper;
-		summon D uncursed;
-		now D is locked;
+		summon pink-huge-diaper locked;
 	otherwise:
 		summon predicament-painted-cutoffs uncursed;
 	now the camera-countdown of VPP is (a random number between 1 and 6) + (a random number between 0 and 5);
@@ -1672,14 +1681,14 @@ To decide which text is the maths-punishment-description of (M - spank-my-butt):
 	decide on "Spank my ass 3 times".
 To maths-execute (M - spank-my-butt):
 	say "You hear [if diaper quest is 0]the [man of shopkeeper] chuckle[otherwise]a robotic arm whirring into action[end if]. And then... THWACK! A strong blow lands on your rear. You let out an involuntary squeal.";
-	PainUp 1;
+	PainUp 10;
 	if diaper quest is 0:
 		say "And then another. THWACK!";
-		PainUp 1;
+		PainUp 10;
 	otherwise:
 		say "And then another. THWACK! The thick padding on your rear helps endure the brutal assault, but it still really hurts.";
 	say "And finally a third. THWACK! This one stings even more than the other two!";
-	PainUp 1;
+	PainUp 10;
 	if diaper quest is 0, say "Satisfied, the [man of shopkeeper] leaves the way [he of shopkeeper] came.".
 
 spank-my-butt-small is a maths-sex-predicament-punishment.
@@ -1690,7 +1699,7 @@ To decide which text is the maths-punishment-description of (M - spank-my-butt-s
 	decide on "Spank my ass 2 times".
 To maths-execute (M - spank-my-butt-small):
 	say "You hear a robotic arm whirring into action. And then... THWACK! A strong blow lands on your rear. You let out an involuntary squeal.";
-	PainUp 1;
+	PainUp 10;
 	say "And then another. THWACK! The thick padding on your rear helps endure the brutal assault, but it still really hurts.".
 
 spank-my-butt-large is a maths-sex-predicament-punishment.
@@ -1701,22 +1710,22 @@ To decide which text is the maths-punishment-description of (M - spank-my-butt-l
 	decide on "Spank my ass 10 times".
 To maths-execute (M - spank-my-butt-large):
 	say "You hear a robotic arm whirring into action. And then... THWACK! A strong blow lands on your rear. You let out an involuntary squeal.";
-	PainUp 1;
+	PainUp 10;
 	say "And then another. THWACK! The thick padding on your rear helps endure the brutal assault, but it still really hurts. And you still have eight more to go...";
-	PainUp 1;
+	PainUp 10;
 	say "THWACK! THWACK! THWACK! THWACK! It's almost too much to bear!";
-	PainUp 1;
+	PainUp 10;
 	if the bladder of the player > (bladder-risky-level / 2):
 		say "The pain of the spanking episode causes you to involuntarily wet yourself.";
 		now delayed urination is 1;
 		try urinating;
 	say "THWACK! THWACK!";
-	PainUp 1;
+	PainUp 10;
 	if rectum > 1 and rectum < the delicateness of the player:
 		say "The pain is so intense you can't help but mess yourself.";
 		compute messing;
 	say "THWACK! THWACK! By the time it's finished, you are reduced to a quivering mess.";
-	PainUp 1.
+	PainUp 10.
 
 make-me-cum is a maths-sex-predicament-punishment.
 Definition: make-me-cum is appropriate: decide yes.
@@ -1749,7 +1758,7 @@ To decide which text is the maths-punishment-description of (M - new-ankle-tatto
 	decide on "Give me a new ankle tattoo".
 To maths-execute (M - new-ankle-tattoo):
 	say "You hear the [if diaper quest is 0][man of shopkeeper] think to [himself of shopkeeper] carefully[otherwise]robotic arm whirr into action[end if] and then you hear a tattoo needle being turned on![line break][variable custom style]Uh-oh...[roman type][line break]The needle brings stinging pain with it as it engages with your ankle.";
-	PainUp 1;
+	PainUp 10;
 	summon spank-me-heart tattoo;
 	now spank-me-heart tattoo is predicament-fixed;
 	say "A few minutes later, you have a brand new tattoo.";
@@ -2031,7 +2040,7 @@ team-quiz-predicament has a number called questionExpelled. [has the player let 
 
 Definition: team-quiz-predicament is appropriate:
 	if the rank of the player < 3, decide no;
-	if diaper quest is 1 and the incontinence of the player >= the max-incontinence of the player, decide no;
+	if diaper quest is 1 and the raw-bladder-incontinence of the player >= the max-bladder-incontinence of the player, decide no;
 	if diaper quest is 0 and (a2m fetish < 2 or the player is barbie), decide no;
 	decide yes.
 To set up bystanders for (P - team-quiz-predicament):
@@ -2093,12 +2102,12 @@ An all time based rule (this is the team quiz predicament time rule):
 					if the player is consenting:
 						say "You hold on with everything you've got.";
 						if diaper quest is 1:
-							increase incontinence by 1;
-							if the incontinence of the player >= the max-incontinence of the player:
+							SilentlyBladderIncontinenceUp 1;
+							if the raw-bladder-incontinence of the player >= the max-bladder-incontinence of the player:
 								say "But it's no use! ";
 								now questionExpelled of L is 1;
 						otherwise:
-							PainUp 1;
+							PainUp 10;
 					otherwise:
 						now questionExpelled of L is 1;
 					now temporaryYesNoBackground is figure of small image;
@@ -2422,6 +2431,10 @@ To set up bystanders for (P - smoothie-predicament):
 To say PredicamentDescription of (P - smoothie-predicament):
 	say "I'm currently in an Extra Credit lesson where I need to [if smoothie gag is worn]serve smoothies as fast as possible so I can escape this van, while trying to minimize how much they force me to drink myself, and then I need to [end if]get back to my home while avoiding as many bystanders from noticing me as possible.".
 
+Definition: smoothie-predicament is always-perceiving:
+	if smoothie gag is stuck, decide yes; [when you are serving smoothies, people can't fail to notice you]
+	decide no.
+
 smoothie van is a thing. smoothie van is not portable. The printed name of smoothie van is "[TQlink of item described]smoothie van[TQxlink of item described]". The text-shortcut of smoothie van is "smvn".
 To say ExamineDesc of (C - smoothie van):
 	say "You are standing inside a mobile van, in front of a serving window, and lots of equipment with which to make smoothies[if there is a bystander in the location of C]. Bystanders can't tell you are locked in place and diapered[end if].".
@@ -2439,10 +2452,9 @@ To execute (L - smoothie-predicament):
 	now smoothie gag is stuck;
 	summon smoothie-apron;
 	now smoothie-apron is predicament-fixed;
-	summon pink-huge-diaper uncursed;
-	now pink-huge-diaper is locked;
+	summon pink-huge-diaper locked;
 	now the player is in Predicament03;
-	if tough-shit is 0 and rectum > 1, now rectum is 1;
+	if tough-shit is 0, reset rectum;
 	now the stomach-food of the player is 1;
 	now the stomach-water of the player is 3;
 	now the bladder of the player is 1;
@@ -2511,7 +2523,7 @@ To compute smoothie perception of (M - a bystander):
 		increase the smoothies-served of smoothie-predicament by 1;
 		if the smoothies-served of smoothie-predicament is 6:
 			say "You hear a loud 'BEEP' as your restraints are released. You can now [bold type]remove the gag[roman type] and then leave the van.";
-			now smoothie gag is unlocked;
+			unlock smoothie gag;
 			say "Remove the gag immediately? ";
 			if the player is consenting, try taking off smoothie gag;
 		if the smoothies-served of smoothie-predicament is 9:
@@ -2566,6 +2578,9 @@ photo-display-predicament is a predicament.
 Definition: photo-display-predicament is appropriate:
 	if diaper quest is 0 and the rank of the player > 2 and the player is not shameless, decide yes;
 	decide no.
+
+To set up bystanders for (P - photo-display-predicament):
+	set up 11 bystanders.
 
 To execute (L - photo-display-predicament):
 	now the stance of the player is 0;
@@ -2632,7 +2647,7 @@ To execute (L - photo-display-predicament):
 			say "You are forced to gulp down the [if SD > 1]double-helping of [end if]thick salty [semen].";
 			if the player is overly full:
 				say "Your belly groans in pain as it is forced to accommodate even more liquid!";
-				PainUp 1;
+				PainUp 10;
 			StomachSemenUp SD;
 		if SB > 0:
 			say "Some of the [semen] blocked from the funnel[if SB > 1]s[end if] by your hand[if SB > 1]s[end if] drips down your arm[if SB > 1]s[end if] and onto your thigh[if SB > 1]s[end if].";
@@ -2796,10 +2811,10 @@ To execute (L - team-face-crotch-predicament):
 				let R be a random number between bladder-risky-level and (bladder-risky-level + 4);
 				if R <= the bladder of the player:
 					say "It hurts! ";
-					PainUp 1;
+					PainUp 10;
 					if the bladder of the player >= bladder-risky-level + 4:
 						say "Your overall control over your bladder feels permanently weakened.";
-						increase incontinence by 1;
+						SilentlyBladderIncontinenceUp 1;
 				FavourUp ST;
 			otherwise:
 				say "You whine and squirm as you release your warm [urine] into your [ShortDesc of K][if playerAbove is 1 and K is diaper], [NameDesc of ST][']s nose still pressed firmly into your crotch through the thick padding. You're sure [he of ST] can feel that warmth spreading throughout your diaper[otherwise if playerAbove is 1], [NameDesc of ST][']s nose still pressed firmly into your crotch through the thin nylon of your bikini briefs. You're sure [he of ST] must be getting a full face-worth of warm piss-soaked cloth. Yuck[end if].";
@@ -3234,7 +3249,7 @@ An all time based rule:
 	if current-predicament is water-fountain-predicament:
 		if water-fountain is penetrating asshole and (the total fill of belly >= 20):
 			say "[bold type]Your overly full belly cramps with pain.[roman type][line break]";
-			PainUp 1;
+			PainUp 10;
 		let M be a random fountain-unquenched bystander in Park13;
 		if M is bystander:
 			if the player is in Park13:
@@ -3441,6 +3456,7 @@ Check attacking female-gloryhole:
 	let M be a random ultimate-lesson-actor in the location of the player;
 	if M is monster:
 		let OT be a random number between 1 and 5;
+		if the total volume of face > 0, now OT is a random number between 0 and 3; [higher chance of finding someone who is willing to accept just a noise]
 		let T be OT;
 		let TX be T + a random number between -1 and 1;
 		say "The [man of M] on the other side of the wall [if TX <= 1]seems intrigued.[line break][speech style of M]'Oh, is somebody hungry?'[otherwise if TX is 2]seems curious.[line break][speech style of M]'Oh, is somebody there?'[otherwise if TX is 3]seems cautious.[line break][speech style of M]'Who's there?'[otherwise if TX is 4]seems hesitant.[line break][speech style of M]'You're not a dude, are you?'[otherwise]seems reluctant.[line break][speech style of M]'This can't be for real...'[end if][roman type][line break]";
@@ -3495,7 +3511,7 @@ Check attacking female-gloryhole:
 						now the deletedtime entry is -1;
 						now the viewsfuzz entry is a random number between -100 and 100;
 				calm M;
-				now M is interested;
+				interest M;
 				now M is penetrating face;
 				now M is friendly-fucking;
 			otherwise:
@@ -3528,8 +3544,7 @@ Definition: nun-walk-predicament is appropriate:
 	if diaper quest is 0 and (armband is emerald or armband is ruby) and (tough-shit is 0 or the number of worn headgear is 0) and the semen taste addiction of the player < 20, decide yes; [at 20 taste addiction the player auto swallows which would make the quest impossible]
 	decide no.
 To execute (NWP - nun-walk-predicament):
-	summon nun-dress uncursed;
-	now nun-dress is locked;
+	summon nun-dress locked;
 	now nun-dress is wrist-bound-behind;
 	now nun-dress is predicament-fixed;
 	summon nun cowl uncursed;
@@ -3579,8 +3594,8 @@ An all later time based rule:
 Report going when the player is in Predicament20:
 	if nun-dress is worn and nun-dress is locked:
 		if the semen volume of face > 0:
-			say "[bold type]There is a bowl with some kind of electronic sensor at the bottom waiting for you on a pedestal in the middle of the room. [roman type]This must be the bowl you're supposed to fill with [semen] in order to escape from [NameDesc of nun-dress]! You let the [semen] run out of your mouth and into the bowl.";
-			MouthEmpty;
+			say "[bold type]There is a bowl with some kind of electronic sensor at the bottom waiting for you on a pedestal in the middle of the room. [roman type]This must be the bowl you're supposed to fill with [semen] in order to escape from [NameDesc of nun-dress]! You let a little bit of [semen] run out of your mouth and into the bowl[if black-leather-flat-boots is worn]. [bold type]You realise that given the curse upon your new [black-leather-flat-boots][bold type], it would be sensible to keep the rest in your mouth for now[end if].[roman type][line break]";
+			[MouthEmpty;]
 			if purple-vibrator is held or purple-vibrator is in the location of the player:
 				say "[BigNameDesc of purple-vibrator] makes a beeping sound and then [NameDesc of nun-dress] clicks open, falling to the ground around you! Phew!";
 				now nun-dress is not locked;
@@ -3843,13 +3858,11 @@ To execute (L - team-girlfriends-predicament):
 		now the size of remote-controlled-vibrator is the openness of vagina;
 	now the toy-charge of remote-controlled-vibrator is 0;
 	if diaper focus > 0:
-		summon plain-medium-diaper uncursed;
-		now plain-medium-diaper is locked;
+		summon plain-medium-diaper locked;
 		now the bladder of the player is bladder-risky-level + 4;
 	summon open-front-skirt locked;
 	let V be a random rubber vest top;
-	summon V uncursed;
-	now V is locked;
+	summon V locked;
 	now V is cotton;
 	now V is normally-nipple-covering;
 	summon ring gag locked;
@@ -3954,6 +3967,10 @@ Figure of team scissor lift predicament full diaper A is the file "Special/Cutsc
 Figure of team scissor lift predicament full diaper B is the file "Special/Cutscene/cutscene-predicament-scissor-lift-diaper2b.jpg".
 Figure of team scissor lift predicament used diapers 1 is the file "Special/Cutscene/cutscene-predicament-scissor-lift-diaper-used1.png".
 Figure of team scissor lift predicament used diapers 2 is the file "Special/Cutscene/cutscene-predicament-scissor-lift-diaper-used2.png".
+
+Definition: team-scissor-lift-predicament is always-perceiving:
+	if there is a student in the location of the player, decide yes; [while on a scissor lift tour, the two of you are always noticeable]
+	decide no.
 
 To execute (TSLP - team-scissor-lift-predicament):
 	now the player is in Predicament01;
@@ -4113,15 +4130,15 @@ To execute (TSLP - team-scissor-lift-predicament):
 					if the total squirtable fill of belly > 0:
 						let hold-strength be a random number between 6 and 35;
 						let TSF be the total squirtable fill of belly / 2;
-						let I be hold-strength - incontinence;
-						if debuginfo > 0, say "[input-style]Enema hold check: d30+5 ([hold-strength]) - incontinence ([incontinence]) = [I + 0][if I < 4]; minimum 4[end if] | ([TSF].5) 50% enema volume[roman type][line break]";
+						let I be hold-strength - rectum-incontinence of the player;
+						if debuginfo > 0, say "[input-style]Enema hold check: d30+5 ([hold-strength]) - bowel incontinence ([rectum-incontinence of the player]) = [I + 0][if I < 4]; minimum 4[end if] | ([TSF].5) 50% enema volume[roman type][line break]";
 						if I < 4, now I is 4;
 						if TSF >= I:
 							now nowExpelling is true;
 							say "You can't hold it any longer - you have to expel the [EL] right now!";
 						otherwise if mins < 50 and diaper lover is 0:
 							say "Holding onto the enema for so long is [one of]starting to hurt[or]hurting you[stopping]!";
-							PainUp 1;
+							PainUp 10;
 				otherwise:
 					decrease T by 3;
 					now delayed urination is 0;
@@ -4144,14 +4161,14 @@ To execute (TSLP - team-scissor-lift-predicament):
 						let B be bladder-bursting-level; [difference between bladder and risky level]
 						if diaper messing >= 3 and nowMessing is false:
 							let hold-strength be (a random number between 11 and 13) + (a random number between -1 and 1);
-							let I be hold-strength - incontinence;
-							if debuginfo > 0 and rectum > 1, say "[input-style]Mess self-control check: d5+9 ([hold-strength]) - incontinence ([incontinence]) = [I + 0][if I < 4]; minimum 4[end if] | ([rectum].5) rectum volume[roman type][line break]";
+							let I be hold-strength - rectum-incontinence of the player;
+							if debuginfo > 0 and rectum > 1, say "[input-style]Mess self-control check: d5+9 ([hold-strength]) - bowel incontinence ([rectum-incontinence of the player]) = [I + 0][if I < 4]; minimum 4[end if] | ([rectum].5) rectum volume[roman type][line break]";
 							if I < 4, now I is 4;
 							if rectum >= I:
 								now nowMessing is true;
 								say "During the hour, you find that you can't hold it any longer - you have to poop right now!";
-								if incontinence < the max-incontinence of the player and the player is getting unlucky:
-									increase incontinence by 1;
+								if the raw-rectum-incontinence of the player < the max-bladder-incontinence of the player and the player is getting unlucky:
+									RectumIncontinenceUp 1;
 									say "Your control over your anal sphincter feels permanently weakened. [GotUnluckyFlav]";
 						if B >= 0 and nowUrinating is false:
 							let R be (a random number between bladder-difficulty and B) + (a random number between bladder-difficulty and B);
@@ -4159,8 +4176,8 @@ To execute (TSLP - team-scissor-lift-predicament):
 							if R > 0 and the bladder of the player > 0:
 								now nowUrinating is true;
 								say "During the hour, you find that you can't hold it any longer - you have to pee right now!";
-								if diaper lover > 0 and incontinence < the max-incontinence of the player and the player is getting unlucky:
-									increase incontinence by 1;
+								if diaper lover > 0 and the raw-bladder-incontinence of the player < the max-bladder-incontinence of the player and the player is getting unlucky:
+									SilentlyBladderIncontinenceUp 1;
 									say "Your control over your bladder feels permanently weakened. [GotUnluckyFlav]";
 				if mins < 0:
 					increase mins by 60;
@@ -4521,7 +4538,7 @@ To execute (TSLP - team-scissor-lift-predicament):
 gloryhole-key-predicament is a predicament. gloryhole-key-predicament has a number called keys-agreed. gloryhole-key-predicament has a number called keys-tried. gloryhole-key-predicament has a number called keys-needed. gloryhole-key-predicament can be ass-to-mouth-agreed. Understand "gholekpd" as gloryhole-key-predicament.
 
 Definition: gloryhole-key-predicament is appropriate:
-	if diaper quest is 0 and the rank of the player is 3 and the player is an august 2021 top donator, decide yes;
+	if diaper quest is 0 and the rank of the player >= 3 and the player is an august 2021 top donator, decide yes;
 	decide no.
 
 To say PredicamentDescription of (P - gloryhole-key-predicament):
@@ -4616,14 +4633,14 @@ An all later time based rule:
 					say "You [if the player is upright]get on your knees and [end if]accept the [manly-penis] into your mouth.[line break][speech style of M]'[T][roman type][line break]";
 					now the stance of the player is 1;
 					calm M;
-					now M is interested;
+					interest M;
 					now M is penetrating face;
 					now M is friendly-fucking;
 				otherwise if entry MNastiness in sexActList matches the text "pussy":
 					say "You [if the player is upright]get on your knees and [end if]turn around to mount the [manly-penis] with your [vagina].[line break][speech style of M]'[T][roman type][line break]";
 					now the stance of the player is 1;
 					calm M;
-					now M is interested;
+					interest M;
 					now M is penetrating vagina;
 					now M is friendly-fucking;
 					set up sex length of M in vagina;
@@ -4632,7 +4649,7 @@ An all later time based rule:
 					say "You [if the player is upright]get on your knees and [end if]turn around to ease the [manly-penis] into your [asshole].[line break][speech style of M]'[T][roman type][line break]";
 					now the stance of the player is 1;
 					calm M;
-					now M is interested;
+					interest M;
 					now M is penetrating asshole;
 					now M is friendly-fucking;
 					set up sex length of M in asshole;
@@ -4641,7 +4658,7 @@ An all later time based rule:
 					say "You [if the player is upright]get on your knees and [end if]wrap your mouth around the tip of [his of M] [manly-penis].[line break][speech style of M]'[T][roman type][line break]";
 					now the stance of the player is 1;
 					calm M;
-					now M is interested;
+					interest M;
 					now M is penetrating face;
 					FaceFill urine by a random number between 7 and 14;
 					compute gloryhole key resolution of M;
@@ -4650,7 +4667,7 @@ An all later time based rule:
 					say "You [if the player is upright]get on your knees and [end if]turn around to ease the [manly-penis] into your [asshole].[line break][speech style of M]'[T][roman type][line break]";
 					now the stance of the player is 1;
 					calm M;
-					now M is interested;
+					interest M;
 					now M is penetrating asshole;
 					now M is friendly-fucking;
 					now gloryhole-key-predicament is ass-to-mouth-agreed;
@@ -4912,7 +4929,7 @@ To check team blowjob race predicament orgasm:
 			HappinessDown team-predicament-partner;
 			say "[BigNameDesc of team-predicament-partner] runs from the room, out onto the street, sobbing to [himself of team-predicament-partner] as [he of team-predicament-partner] goes.";
 			now team-predicament-partner is in School05;
-			now wrist collar bar is unlocked;
+			unlock wrist collar bar;
 			force clothing-focus redraw;
 		otherwise: [student wins]
 			say "Both of your wrist collar bars are unlinked from the reels of chain, freeing you and allowing you to leave the [Predicament01]. But... it's only [student-name of team-predicament-partner][']s wrist collar bar that completely unlocks, freeing [his of team-predicament-partner] hands and allowing [him of team-predicament-partner] to retrieve the clothes and walk home at least slightly decent. You, on the other hand, are now stuck naked and locked into a wrist collar bar... and who knows how long it will be until you can find a key and get out of this thing!!![paragraph break][BigNameDesc of team-predicament-partner] wastes no time in putting on the clothes and getting out of there.";
@@ -4999,6 +5016,9 @@ Definition: ddr-diaper-predicament is appropriate:
 
 Figure of ddr diaper predicament is the file "Special/Cutscene/cutscene-predicament-ddr-diaper1.png".
 
+To set up bystanders for (P - ddr-diaper-predicament):
+	do nothing.
+
 To execute (DDP - ddr-diaper-predicament):
 	configure direction numbers;
 	now the player is in Predicament01;
@@ -5014,12 +5034,27 @@ To execute (DDP - ddr-diaper-predicament):
 	now DP is predicament-fixed;
 	let S be a random waddle outfit;
 	only destroy S;
-	summon S uncursed;
-	now S is locked;
+	summon S locked;
 	now S is stuck; [prevents the player from dropping to their knees due to rectum cramps]
 	now baby's bottle is carried by the player;
 	now the fill-colour of baby's bottle is white;
 	DoseFill baby's bottle;
+	now baby's bottle is bland;
+	now baby's bottle is sure;
+	update appearance level;
+	set up 28 bystanders;
+	let LBS be the list of on-stage bystanders;
+	sort LBS in random order;
+	repeat with Z running from 1 to 3:
+		let M be entry 1 in LBS;
+		now M is in Predicament01;
+		now M is interested;
+		let PA be the appearance of the player;
+		let PC be 0;
+		if diaper quest is 1, now PC is the cringe appearance of the player;
+		if PA < PC, now the worst-appearance of M is PC;
+		otherwise now the worst-appearance of M is PA;
+		remove M from LBS;
 	say "You find yourself standing on a [']Rhythm Action Game['] dance mat, in the middle of a busy arcade. A couple of passersby are starting to notice you and come over to see what's going on, even as you are still taking further stock as your situation.[paragraph break]You're wearing a thick pink waddle outfit, which is locked on, of course, over a very thick diaper. In your left hand, a giant baby's bottle full of [milk] is taped tightly into your fist, preventing you from letting go of it. Your right hand is cuffed to the horizontal support bar behind the arcade machine, with a device that reads 'POINTS REMAINING UNTIL RELEASE: 999999'.[paragraph break]It would appear that the only way for you to escape the situation is to play the dance game until you've earned enough points. And meanwhile... the crowd just gets bigger and bigger.";
 	say "[first custom style]'Why is [he of the player] dressed like a baby?'[line break][second custom style]'Gross! Is [he of the player] literally wearing a diaper?'[roman type][line break][slightHumiliateReflect]";
 	if the map-window is g-present:
@@ -5027,7 +5062,6 @@ To execute (DDP - ddr-diaper-predicament):
 	otherwise if images visible is 1:
 		display figure of ddr diaper predicament;
 	let pointsNeeded be 999999;
-	let crowdSize be 2;
 	if diaper messing >= 4, now rectum is 10;
 	let LR be a list of numbers;
 	add leftNumber to LR;
@@ -5130,24 +5164,45 @@ To execute (DDP - ddr-diaper-predicament):
 				say "You bring the teat to your lips, and drink a few gulps of [milk].";
 				StomachMilkUp 2;
 				now fatigue-rating is fatigue-rating / 2;
-				say "The crowd of people watching you makes disgusted sounds, and you hear some laughter too. You [blush crowdSize * 50].";
-			increase crowdSize by a random number between 1 and 3;
-			say "The crowd builds, and there are now [crowdSize] people watching you. [slightHumiliateReflect]";
+				say "The crowd of people watching you makes disgusted sounds, and you hear some laughter too. You [blush the number of bystanders in Predicament01 * 50].";
+				compute ddr crowd building;
 			if rectum > 5:
 				now another-turn is 0;
 				check real messing;
 				if another-turn is 1:
-					UnflinchingPainUp 1;
-					increase crowdSize by a random number between 1 and 3;
-					say "The crowd builds, and there are now [crowdSize] people watching you. [slightHumiliateReflect]";
+					UnflinchingPainUp 10;
+					compute ddr crowd building;
 					now another-turn is 0;
 			if DP is messed:
-				say "[first custom style]'[one of]Disgusting! [big he of the player] pooped [his of the player] pants[or][big he of the player] smells so bad[or]I can't believe [he of the player] is doing that in a messy diaper[or]What a stinker[stopping]!'[roman type][line break]The crowd yells insults at you, and you [blush crowdSize * 150].";
+				say "[first custom style]'[one of]Disgusting! [big he of the player] pooped [his of the player] pants[or][big he of the player] smells so bad[or]I can't believe [he of the player] is doing that in a messy diaper[or]What a stinker[stopping]!'[roman type][line break]The crowd yells insults at you, and you [blush the number of bystanders in Predicament01 * 150].";
 	say "Your wristcuff unclicks - you are finally released! You are able to pull the tape off of your other hand, allowing you to drop the baby's bottle if you want, and begin to run away from the crowd, towards the exit!";
+	update appearance level;
+	let PA be the appearance of the player;
+	let PC be 0;
+	if diaper quest is 1, now PC is the cringe appearance of the player;
+	repeat with M running through bystanders in Predicament01:
+		if PA < PC, now the worst-appearance of M is PC;
+		otherwise now the worst-appearance of M is PA;
 	now temporaryYesNoBackground is figure of small image;
 	now S is not stuck.
 
-
+To compute ddr crowd building:
+	let ZR be a random number between 1 and 2;
+	let LBS be the list of on-stage bystanders;
+	if the number of entries in LBS >= ZR:
+		sort LBS in random order;
+		update appearance level;
+		let PA be the appearance of the player;
+		let PC be 0;
+		if diaper quest is 1, now PC is the cringe appearance of the player;
+		repeat with Z running from 1 to ZR:
+			let M be entry 1 in LBS;
+			now M is in Predicament01;
+			now M is interested;
+			if PA < PC, now the worst-appearance of M is PC;
+			otherwise now the worst-appearance of M is PA;
+			remove M from LBS;
+		say "The crowd builds, and there are now [the number of bystanders in Predicament01] people watching you. [slightHumiliateReflect]".
 
 
 train-predicament is a predicament.
@@ -5173,6 +5228,7 @@ To execute (TRNP - train-predicament):
 	otherwise:
 		if a2m fetish is 0, summon remote-controlled-vibrator uncursed;
 		if a2m fetish is 1, assfill 7 small eggs;
+		if a2m fetish is 2 and watersports fetish is 1, now the urine volume of belly is 20;
 		blandify and reveal heart-strap-thong;
 		now heart-strap-thong is in Predicament02;
 		gluify heart-strap-thong;
@@ -5271,7 +5327,7 @@ To execute (TRNP - train-predicament):
 						now entry ETP in the train-piss of train-predicament is TP - 1;
 						if diaper quest is 1:
 							say "You lick up a foul tasting blob of mustard from the floor. It's so bitter it feels like it's burning your tongue!";
-							UnflinchingPainUp 1;
+							UnflinchingPainUp 10;
 						otherwise:
 							say "You hoover a small puddle of [urine] up from the floor, acutely aware that a few moments ago, this foul liquid was inside your own butthole. [strongHumiliateReflect]";
 							StomachUrineUp 1;
@@ -5368,6 +5424,7 @@ To execute (TRNP - train-predicament):
 		if train-ping-pong-balls of train-predicament > 0:
 			add 5 to LT, if absent;
 		render train state;
+		now player-numerical-response is 0;
 		if diaper quest is 1 and plain-largish-diaper is wet:
 			if diaper messing >= 3:
 				if the number of entries in LT is 0:
@@ -5998,6 +6055,152 @@ Check dominating a student:
 			DelicateDown 1;
 		now the teaseTimer of the noun is 150;
 		HappinessDown the noun instead.
+
+toilets-dildos-predicament is a predicament. toilets-dildos-predicament has a list of numbers called dildo-boxes. toilets-dildos-predicament has a number called smart-glass-timer. The printed name of toilets-dildos-predicament is "colourful dildo". The text-shortcut of toilets-dildos-predicament is "cfd". Understand "colourful", "coloured", "dildo" as toilets-dildos-predicament.
+
+Definition: toilets-dildos-predicament is appropriate:
+	if diaper quest is 0 and the rank of the player >= 2 and the player is a june 2022 top donator and domino-mask is off-stage and there is an off-stage specific-key, decide yes;
+	decide no.
+
+Definition: toilets-dildos-predicament is always-perceiving:
+	if the location of the player is Park02, decide yes; [when you leave the toilets, the people in the queue can't fail to see you leave]
+	decide no.
+
+Figure of toilets-dildos-predicament is the file "Env/School/toiletdildopredicament1.jpg".
+
+To decide which figure-name is the examine-image of (P - toilets-dildos-predicament):
+	decide on Figure of toilets-dildos-predicament.
+
+To say PredicamentDescription of (P - toilets-dildos-predicament):
+	say "I'm currently in an Extra Credit lesson where I need to suck dildos in the women's toilets to open boxes to aleviate my predicament, with only 60 seconds until the glass goes transparent and reveals me, and then get back to my home while avoiding as many bystanders as possible from noticing me.".
+
+To say ExamineDesc of (P - toilets-dildos-predicament):
+	say "On one wall, six different coloured dildos are mounted on the wall, each with a sign above and a box underneath. The signs say:[line break]DOMINO MASK[line break]SEXY SKIRT[line break]KEY TO BELT[line break]SLUTTY ONE-PIECE[line break]PLUG DEFLATION[line break]SEXY TOP[line break]".
+
+To execute (P - toilets-dildos-predicament):
+	summon chastity-belt uncursed;
+	now chastity-belt is predicament-fixed;
+	now chastity-belt is locked;
+	summon puppy tail plug uncursed;
+	now puppy tail plug is predicament-fixed;
+	now the size of puppy tail plug is a random number between 9 and 10;
+	now female-gloryhole is in Holding Pen;
+	now P is in Toilet02;
+	now the player is in Toilet02;
+	now map-zoom is 1;
+	now the smart-glass-timer of P is 59;
+	repeat with N running from 1 to 6:
+		add 1 to the dildo-boxes of P;
+	set up 29 bystanders;
+	let LBS be the list of female camera-bystanders;
+	sort LBS in random order;
+	truncate LBS to 2 entries;
+	repeat with M running through LBS:
+		now M is in Park02;
+		now M is moved; [stops them moving instantly]
+	say "You find yourself in a spacious public toilets, naked except for a chastity belt and a huge butt plug with an attached bushy tail. [ExamineDesc of P][line break]A robotic voice is speaking to you from some hidden speaker:[paragraph break][first custom style]'WELCOME TO EXTRA CREDIT CLASS. [PredicamentRewardExplanation]YOU ARE FREE TO UNLOCK THE DOOR AND LEAVE AT ANY TIME, BUT YOU MAY BE ABLE TO EARN A LESS HUMILIATING AND UNCOMFORTABLE JOURNEY HOME, AND ALSO EARN RELEASE FROM YOUR BONDAGE, IF YOU DEEPTHROAT ONE OR MORE DILDOS. YOU ARE IN A PARK CLOSE TO YOUR HOME. YOU MUST RETURN HOME TO COMPLETE THE PREDICAMENT. YOU HAVE ONE MINUTE UNTIL THE WALLS BECOME TRANSPARENT.'[PredicamentRewardExplanationReaction][roman type][line break]And then, you hear female voices from outside the bathroom, beyond the locked door.[line break][second custom style]'Ummm... Hello? There's a line out here, you know!'[roman type][line break]Uh-oh, there's already people waiting outside. There's absolutely no way to leave the women's toilets without being seen, and potentially photographed, by who knows how many people. And in 60 seconds, the Smart Glass walls will become transparent, exposing your current state... and acts...[paragraph break]The timer above the dildos starts counting down.";
+
+An all later time based rule:
+	if current-predicament is toilets-dildos-predicament and the player is in Toilet02:
+		if the smart-glass-timer of toilets-dildos-predicament > 0:
+			decrease the smart-glass-timer of toilets-dildos-predicament by time-seconds;
+			if the smart-glass-timer of toilets-dildos-predicament <= 0:
+				say "[bold type]The timer hits 0 seconds! The Smart Glass malfunctions, and turns transparent![roman type][line break]";
+			otherwise if a random number between 1 and 2 is 1:
+				say "You hear a voice from outside.[line break][second custom style]'[one of]Excuse me, I'm waiting!'[or]Is anyone even in there?!'[or]Finish up before I piss myself!'[or]You're taking forever!'[or]What's the hold up?!'[or]Are you okay in there?!'[in random order][roman type][line break]";
+		if the smart-glass-timer of toilets-dildos-predicament > 0:
+			say "The Smart Glass timer now has [bold type][smart-glass-timer of toilets-dildos-predicament] seconds remaining.[roman type][line break]";
+		otherwise:
+			repeat with M running through bystanders in Park02:
+				let A be the appearance of the player;
+				say "[BigNameDesc of M] [if M is interested][one of]watches[or]continues to watch[or]stares at[then at random][otherwise]notices[end if] you[if worst-appearance of M < A]! [big he of M] is visibly [one of]shocked[or]disgusted[or]appalled[then at random][end if].";
+				now the worst-appearance of M is A;
+				now M is interested;
+				say HumiliateReflect (A * 30);
+
+
+To compute coloured dildo sucking:
+	allocate 6 seconds;
+	say "Which dildo do you want to suck?";
+	reset multiple choice questions;
+	repeat with N running from 1 to 6:
+		if entry N in the dildo-boxes of toilets-dildos-predicament is 1:
+			set next numerical response to the substituted form of "[if N is 1]Blue dildo (domino mask)[otherwise if N is 2]Purple dildo (sexy skirt)[otherwise if N is 3]Pink dildo (key to belt)[otherwise if N is 4]Red dildo (slutty one-piece)[otherwise if N is 5]Orange dildo (plug deflation)[otherwise]Yellow dildo (sexy top)[end if]";
+	compute multiple choice question;
+	say "You push the dildo into your mouth, which triggers it to ejaculate a huge load of fresh warm [semen] into your mouth!";
+	let CNR be the substituted form of "[chosen numerical response]"; [if we don't do this, FaceFill can reset multiple choice stuff and break the outcomes below]
+	now toilets-dildos-predicament is penetrating face;
+	FaceFill semen by 3;
+	dislodge toilets-dildos-predicament;
+	say "The box underneath opens, revealing ";
+	if CNR matches the text "Blue":
+		blandify and reveal domino-mask;
+		now domino-mask is in the location of the player;
+		now the quest of domino-mask is no-clothing-quest;
+		now domino-mask is predicament-temporary;
+		say "a [domino-mask]. While wearing this, your identity will be reasonably hidden, reducing the impact on your public reputation if any photos are taken of you!";
+		now entry 1 in the dildo-boxes of toilets-dildos-predicament is 0;
+	otherwise if CNR matches the text "Purple":
+		let C be a random off-stage shorter-rubber-skirt;
+		if C is nothing, now C is a random shorter-rubber-skirt;
+		blandify and reveal C;
+		now C is predicament-temporary;
+		now C is in the location of the player;
+		say "a [C]. It will provide modesty to your crotch while you are upright[if there is a worn tail plug], but not your tail plug[end if].";
+		now entry 2 in the dildo-boxes of toilets-dildos-predicament is 0;
+	otherwise if CNR matches the text "Pink":
+		let K be a random off-stage specific-key;
+		now K is in the location of the player;
+		now K is covering chastity-belt;
+		say "a [K]. You should be able to use it to unlock your chastity belt.";
+		now entry 3 in the dildo-boxes of toilets-dildos-predicament is 0;
+	otherwise if CNR matches the text "Red":
+		blandify and reveal fetish business dress;
+		now fetish business dress is in the location of the player;
+		now fetish business dress is predicament-temporary;
+		say "a [fetish business dress]. It will keep your crotch and chest concealed but not your butt[if there is a worn tail plug] or tail plug[end if].";
+		now entry 4 in the dildo-boxes of toilets-dildos-predicament is 0;
+	otherwise if CNR matches the text "Orange":
+		say "Your [puppy tail plug] immediately deflates inside you, becoming a ";
+		now entry 5 in the dildo-boxes of toilets-dildos-predicament is 0;
+		now the size of puppy tail plug is 1;
+		say "[puppy tail plug]! You should have no trouble removing it now.";
+	otherwise:
+		blandify and reveal rubber tube top;
+		now rubber tube top is in the location of the player;
+		say "a [rubber tube top].";
+		now rubber tube top is predicament-temporary;
+		now entry 6 in the dildo-boxes of toilets-dildos-predicament is 0;
+	if the smart-glass-timer of toilets-dildos-predicament <= 0:
+		repeat with M running through bystanders in Park02:
+			say "[BigNameDesc of M] [big he of M] is visibly [one of]shocked[or]disgusted[or]appalled[then at random].";
+			now M is interested;
+			say strongHumiliateReflect;
+			if M is camera-bystander:
+				let TPT be the substituted form of "you on your knees, sucking on a large wall-mounted coloured dildo in a public toilets with transparent walls";
+				let DRS be the worst-appearance of M + 5;
+				if DRS > 20, now DRS is 20;
+				if DRS < 10, now DRS is 10;
+				compute digital reputation damage TPT strength DRS quality 2;
+				say "FLASH! [big he of M] has snapped a photo of you sucking on the dildo.[line break][variable custom style][one of]Shit[or]Fuck[or]Eek[at random]![roman type][line break]".
+
+Check drinking toilets-dildos-predicament:
+	unless 1 is listed in the dildo-boxes of toilets-dildos-predicament, say "You've already opened every box." instead;
+	if the player is upright, say "You would need to be on your knees to get one of the dildos in your mouth." instead;
+	if face is actually occupied, say "Bug - your mouth is occupied when Aika didn't expect this to be possible. Please report what happened." instead;
+	compute coloured dildo sucking instead;
+	do nothing instead.
+
+To construct normal buttons for (T - toilets-dildos-predicament):
+	if ButtonTableFull is 0:
+		choose a blank row in the Table of Buttons;
+		now the ButtonImage entry is Figure of OralButton;
+		now the ButtonCommand entry is "suck [text-shortcut of T]";
+		now the ButtonColour entry is lightModeFullGreen;
+		if the player is upright, now the ButtonColour entry is lightModeFullYellow. [player needs to kneel]
+
+To say verb-desc of (T - toilets-dildos-predicament):
+	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say "[unique-verb-desc of T][link][bracket]suck[close bracket][as]suck [text-shortcut of T][end link]".
 
 
 Predicament World ends here.

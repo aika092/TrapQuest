@@ -62,8 +62,8 @@ To compute teaching of (L - pain-lesson):
 				let W be wrist collar bar;
 				if W is not worn, now W is portal gag;
 				say "Well [NameBimbo] found that out [if wrist collar bar is worn]last time we all gathered for this lesson[otherwise]recently[end if], didn't [he of the player]? And I'm glad to see that [he of the player] is still wearing [his of the player] bondage as instructed.'[roman type][line break][if W is locked][BigNameDesc of M] produces a key and slots it into the lock, allowing you to remove the [ShortDesc of W] whenever you like.[end if]";
-				now W is unlocked;
-				if portal-pants is worn, now portal-pants is unlocked;
+				unlock W;
+				if portal-pants is worn, unlock portal-pants;
 				say "[speech style of M]'I guess it's only fair that I keep my end of the bargain and promote you, then.'[roman type][line break]";
 			otherwise:
 				say "Well [NameBimbo] here already knows how to show the world that [he of the player][']s a wimp. [big he of the player] is walking around with [his of the player] [if the player is wrist bound]wrists[end if][if the player is wrist bound and the player is ankle bound] and [end if][if the player is ankle bound]ankles[end if] bound! Bravo! I think it's only fair that I promote you for your exemplary dedication to servitude.";
@@ -98,7 +98,7 @@ To compute teaching of (L - pain-lesson):
 				say "You feel real surging pride at having been the first to volunteer.";
 				obsceneDignify;
 			say "[speech style of M]'Well done, all of you! You won't regret making this commitment. And for you all to do it at the same time! How poetic. Well, [NameBimbo], as the first one to volunteer, I guess you're up first.'[roman type][line break]You are strapped down tightly on top of a desk to avoid any dangerous movement during the procedure. [NameDesc of M] pinches your most sensitive, delicate part between [his of M] fingers and holds it in place. You don't have to wait long before the searing hot needle appears in [his of M] hand and before you know it, the piercing is underway. Searing white hot pain shoots through you, and you can't help but wail [if diaper lover > 0]like a baby [end if] as it happens.";
-			PainUp 3;
+			PainUp 30;
 			say "And then it's all over, and you are sent to sit back down as the rest of the students each have their own loud intense episode. By the time they're all finished, your own pain has already dulled to a faint throb. But you still feel much more timid than you did five minutes ago. [BigNameDesc of M] beams at the room which is now full of pale faces, all hardly able to believe what they just consented to undergo.[line break][speech style of M]'Well done, all of you! I hope you'll remember this moment for the rest of time. This was the moment you truly began to accept your destiny and dedicate yourself to the pursuit of perfection. Bravo. Well, I think that's enough for now, don't you? Until next time!'[roman type][line break][BigNameDesc of M] waves cheerfully to you all and begins to leave.";
 			summon normal clit piercing; [not cursed]
 			allocate 80 seconds;
@@ -115,7 +115,7 @@ To compute teaching of (L - pain-lesson):
 			let competition-success be 0;
 			obsceneDignify;
 			say "You [if the player is feeling submissive]hesitantly [end if]stand up and look around, feeling significant pride for having made the brave decision. [BigNameDesc of ST] has also risen to [his of ST] feet. It looks like you'll be competing with each other. [BigNameDesc of M] makes you come to the front and expose your cunts to the class.[line break][speech style of M]'Being a submissive doesn't mean you have to be a wimp.'[roman type][line break][big he of M] gets a length of chain about three feet long and connects one end to your clit piercing, and the other to [NameDesc of ST][']s. Your hands are each cuffed behind your backs and you look at each other nervously.[line break][speech style of M]'Okay girls, now show me how brave you are. Each take a step back.'[roman type][line break]You wince but do as you are told. The chain is brought completely taut which pulls your clits to their limits, stretching them tight and causing more than a little bit of pain. When [he of M] is satisfied that you're in the right positions [he of M] draws a line in chalk in front of each of your toes and then speaks again.[line break][speech style of M]'Hopefully the task is self-evident. The first person to take a step forward loses. May the most dedicated slut win!'[roman type][line break]Then [his of M] smile turns into a wide evil grin.[line break][speech style of M]'Oh and I almost forgot. The loser will have the privilege of keeping that chain forever as their own personal leash.'[roman type][line break]Your heart leaps as a feeling of [horror the bimbo of the player] washes over you. The stakes are higher than you realised.";
-			PainUp 1;
+			PainUp 10;
 			say "Seconds pass and the pain in your clit seems to steadily increase. Either that or your tolerance for the existing pain is gradually floundering. Give up and step forward? ";
 			unless the player is consenting:
 				say "You clench your fists behind your back and strengthen your resolve against the pain. Surely [NameDesc of ST] will cave first!";
@@ -123,7 +123,7 @@ To compute teaching of (L - pain-lesson):
 					say "[ClitPiercingConcede of ST]";
 					now competition-success is 1;
 				otherwise:
-					PainUp 2;
+					PainUp 20;
 					say "Time ticks by as you both hold fast. The room is completely silent other than the occasional grunt of discomfort from you or your opponent. Give up and step forward? ";
 					unless the player is consenting:
 						say "You grind your teeth but don't give in. If [NameDesc of ST] is feeling as much pain as you then surely [he of ST] can't last any longer!";
@@ -131,7 +131,7 @@ To compute teaching of (L - pain-lesson):
 							say "[ClitPiercingConcede of ST]";
 							now competition-success is 1;
 						otherwise:
-							PainUp 4;
+							PainUp 40;
 							say "You both pant and whine but neither of you will give in. The pain is now almost unbearable - your knees are shaking and your entire body begs for you to let it move forward. Give up and step forward? ";
 							unless the player is consenting:
 								say "You've come this far, you can't give in now that you've already suffered so much! You stare daggers at [NameDesc of ST] and don't move a muscle. You feel your mind warping as you let the pain wash through you - you've used so much willpower in this one encounter that you know you're not going to have much left to stay strong in future predicaments.";
@@ -289,7 +289,7 @@ To compute teaching of (L - toy-lesson):
 					ruin asshole;
 					say "No lube, no delicateness, no mercy. You've just had a plug barrel up into your poor pucker at lightning speed. Suffice to say, this hurts. A lot.";
 					ruin asshole;
-					PainUp 1;
+					PainUp 10;
 					say "[BigNameDesc of M] narrows [his of M] eyes, sneering with satisfaction.[line break][speech style of M]'Zero entries in the raffle.'[roman type][line break]";
 					add 0 to LN;
 				otherwise:
@@ -307,7 +307,7 @@ To compute teaching of (L - toy-lesson):
 						if there is a worn tattoo and the number of worn crotch tattoo is 0:
 							if the player is possessing a vagina or the player is ready for event tg:
 								say "[BigNameDesc of M] touches the space above your [genitals] with a finger. [big his of M] finger is burning hot!";
-								PainUp 1;
+								PainUp 10;
 								summon measurement tattoo;
 								say "[speech style of M]'Since you want to try and get such big things inside you, this should help you manage it.'[roman type][line break]When [he of M] removes [his of M] finger, you have a new tattoo!";
 								try examining measurement tattoo;
@@ -573,7 +573,7 @@ To compute teaching of (L - dress-lesson):
 				if a random number between 3 and 12 > the dexterity of the player:
 					say "You think you're going to manage it, but suddenly you feel unsteady and begin to topple. You try to react to this in time by putting some of your weight on your hands, but with your locked knees this goes badly and just sends you further off balance. You stumble and then fall to the ground, landing on your face with your butt high in the air, still exposed to all your classmates behind you. They all burst out laughing and you turn redder than ever!";
 					if the player is upright, try kneeling;
-					PainUp 1;
+					PainUp 10;
 					say "[speech style of M]'Yes yes, very funny. At least [he of the player] tried [his of the player] best!'[roman type][line break][M] pats you on the top of your head.[line break][speech style of M]'Still, this just goes to show all of you how much can go wrong if you haven't practised enough! You want to look refined and [if diaper quest is 1]grown up[otherwise]sexy[end if], not idiotic and clumsy! Anyway I think the pain and humiliation that [NameBimbo] is feeling after that fall is enough of a punishment, don't you? Class dismissed.'[roman type][line break]You groan inwardly as you pull yourself up onto all fours. That did not go as planned...";
 				otherwise:
 					say "With an impressive display of balance you gather it all in your hands and then raise yourself back upright. You place the chalk into [NameDesc of M][']s hand with a proud smile.[line break][speech style of M]'Very good indeed. Most impressive. I don't think we could ask for anything better than that from a [accessory-colour of armband] student.'[roman type][line break]";
@@ -591,5 +591,82 @@ To compute teaching of (L - dress-lesson):
 			say "You watch as [his of P] emerald ID card turns into a ruby one, and [he of P] is now '[student-name of P] the [student-print of P]'. [big he of P] grins widely and then prances out of the room.";
 			compute mandatory room leaving of P;
 			say "[BigNameDesc of M] rolls [his of M] eyes.[line break][speech style of M]'That'll do for now. Class dismissed!'[roman type][line break]".
+
+
+
+drink-lesson is a lesson. The lesson-teacher of drink-lesson is teacher-bianca.
+
+To decide which number is the min-students of (L - drink-lesson):
+	decide on 0.
+
+Definition: drink-lesson (called L) is lesson-appropriate:
+	if face is actually occupied or the total volume of face > 0, decide no;
+	if there is a nonstalking wisp, decide yes;
+	decide no.
+
+To compute teaching of (L - drink-lesson):
+	let M be the lesson-teacher of L;
+	say "[speech style of M]'Today's lesson is on becoming accustomed to unique tastes.'[roman type][line break][BigNameDesc of M] produces a large wooden goblet with intricate runes engraved into a golden rim. Inside the goblet is... ";
+	let LQ be semen;
+	if watersports fetish is 1 and a random number between 1 and 2 is 1:
+		say "Nothing?[line break]...And then [NameDesc of M] lowers the goblet to underneath [his of M] skirt, and you watch transfixed with [horror the urine taste addiction of the player] as you listen to a loud tinkling sound.[line break][variable custom style][big he of M][']s pissing in the cup![roman type][line break]";
+		now LQ is urine;
+	otherwise if diaper quest is 1 or a random number between 1 and 2 is lactation fetish:
+		say "Nothing?[line break]...And then [NameDesc of M] reaches down under the desk and produces a large bottle. A bottle full of thick white milk, and attached to a breast pump. [big he of M] detaches the pump, and empties the creamy breast milk into the goblet.";
+		now LQ is milk;
+	otherwise:
+		say "an absolutely huge load of [semen]! The product of an absolutely huge and full set of balls... or perhaps several normal sized pairs.";
+	say "Acting as if this is totally normal, [NameDesc of M] sits the goblet down on the desk at the front.[paragraph break][speech style of M]'This lesson is very simple. You have some homework. [one of]You'll understand what I mean when you take a sip[or]You should understand what I mean by now[stopping]. The important things to remember are to fill your mouth, and not to swallow. Do that, and you'll graduate this class.'[roman type][line break]";
+	let LST be the list of students in the location of the player;
+	add the player to LST;
+	let LSL be the list of students in the location of the player;
+	sort LST in random order;
+	repeat with ST running through LST:
+		say "[BigNameDesc of M] beckons for [YouDesc of ST] to come up for a drink. ";
+		if ST is a student:
+			now the lessonInt1 of ST is the dedication of ST + a random number between -1 and 1;
+			if the lessonInt1 of ST <= 0:
+				say "[BigNameDesc of ST] shakes [his of ST] head and refuses.[line break][speech style of M]'[one of]Disappointing[or]You won't make progress like that[or]Suit yourself[cycling].'[roman type][line break][BigNameDesc of M] turns away.";
+				remove ST from LSL;
+			otherwise if the lessonInt1 of ST is 1:
+				say "[BigNameDesc of ST] takes a sip, but then makes a disgusted sound and spits it back out.[line break][speech style of ST]'[one of]Bleurgh[or]Fucking disgusting[or]Fuck no[or]I can't do this[in random order]!'[roman type][line break][BigNameDesc of M] turns away.";
+			otherwise:
+				say "[BigNameDesc of ST] takes a long sip, and then holds it in [his of ST] mouth. [big he of ST] [if the lessonInt1 of ST is 2]looks like [he of ST] is struggling to resist spitting it back out[otherwise if the lessonInt1 of ST is 3]uncomfortable, but willing to hold onto it[otherwise]unaffected by having to hold that stuff in [his of ST] mouth[end if]. [BigNameDesc of M] nods with approval.";
+				promote ST;
+		otherwise:
+			say "Do you take a mouthful? ";
+			if the player is bimbo consenting:
+				FaceFill LQ by 4;
+				say "You take a big long sip of the strong-smelling [variable LQ], and now have a [MouthfulDesc]. [BigNameDesc of M] smiles and nodes at you.";
+				now armband is ruby;
+				say "You watch as the ID card inside your armband transforms!";
+				now the armband-title of armband is the substituted form of "[if LQ is urine]Emilia[otherwise if LQ is milk]Bobbi[otherwise]Connie[end if]";
+				now the armband-print of armband is the substituted form of "[if LQ is urine]emiction epicure[otherwise if LQ is milk]breastmilk bon-vivant[otherwise]cum connoisseur[end if]";
+				say ClothingDesc of armband;
+			otherwise:
+				say "You turn your nose up at the horrid stuff.[line break][speech style of M]'I had high hopes for you, but it seems I misjudged you.'[roman type][line break][BigNameDesc of M] shakes [his of M] head at you.";
+	if the number of entries in LSL > 0 or the total volume of face > 0:
+		say "The runes on the goblet suddenly light up!";
+		if the total volume of face > 0:
+			let W be a random nonstalking wisp;
+			silently set up W;
+			now the wisp-quest of W is a random appropriate eligible wisp quest;
+			now the wisp-trigger of W is lose-mouthful-wisp-trigger;
+			now the wisp-punishment of W is bimbo-wisp-punishment;
+			if (a random number between 0 and 1) + (a random number between 0 and 1) < game difficulty, now the wisp-punishment of W is a random appropriate wisp punishment;
+			now W is everywhere;
+			update backdrop positions;
+			now the text-shortcut of W is the substituted form of "[ColourDesc of W]";
+			say "[bold type]A [ColourDesc of W] curse wisp appears, and begins hovering behind you! [roman type]You can sense that you must [bold type][wisp-quest of W][roman type] before you next [bold type][wisp-trigger of W][roman type], or else you will [bold type][wisp-punishment of W][roman type].";
+		repeat with ST running through LSL:
+			if ST is student:
+				say "A curse wisp suddenly appears behind [NameDesc of ST][if the lessonInt1 of ST is 1]! And then it suddenly disappears again. Presumably because [he of ST] has got an empty mouth.[otherwise]![end if]";
+		say "[speech style of M]'Those of you with wisps will understand what your homework is.'[roman type][line break][BigNameDesc of M] says with a cheeky tone.";
+	say "[speech style of M]'That's it for today. Class dismissed.'[roman type][line break]";
+
+
+
+
+
 
 Teachers Emerald ends here.

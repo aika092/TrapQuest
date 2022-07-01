@@ -102,7 +102,6 @@ A time based rule (this is the mindflayer domination rule):
 Part 1 - Perception
 
 To compute perception of (M - mind flayer):
-	now M is interested;
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
 	if the class of the player is living sex doll:
 		say "It doesn't look like [he of M]'s interested in you.";

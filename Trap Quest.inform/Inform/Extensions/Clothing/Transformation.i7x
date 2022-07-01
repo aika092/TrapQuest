@@ -179,6 +179,7 @@ To compute (C - a clothing) inheriting from (D - a clothing):
 	otherwise:
 		now C is bland;
 	if D is locked, now C is locked;
+	otherwise now C is unlocked;
 	now the raw-magic-modifier of C is the raw-magic-modifier of D;
 	now the clothing-influence of C is the clothing-influence of D;
 	now the magic-type of C is the magic-type of D;
@@ -218,8 +219,15 @@ To compute (C - a clothing) inheriting from (D - a clothing):
 			now the perceived-urine-soak of C is (the perceived-urine-soak of D * the soak-limit of C) / the soak-limit of D;
 	now the used condoms of C is the used condoms of D;
 	now the empty condoms of C is the empty condoms of D;
+	repeat with M running through things inseminating D:
+		now M is inseminating C;
+		now M is not inseminating D;
+	repeat with K running through specific-keys covering C:
+		now K is covering C;
+		now K is not covering D;
 	now the quest of C is the quest of D;
 	if C is actually nipple covering or D is actually nipple covering, now latest-top-malfunction is earnings;
+	now the ownership of C is the ownership of D;
 	compute C unique inheriting from D.
 
 To compute (C - a clothing) unique inheriting from (D - a clothing):
@@ -300,7 +308,9 @@ To silently transform (D - a clothing) into (C - a clothing):
 	if the quest of C is not appropriate, compute quest of C.
 
 To compute post transformation effect of (C - a clothing):
-	do nothing.
+	if C is not cursed and C is blandness and the player is getting very unlucky:
+		now C is strength stealing;
+		say "[BigNameDesc of C] has gained a new magical effect...  You can sense that it is now [']strength stealing['], and will take some of your strength away if you remove it normally. [GotUnluckyFlav]".
 
 To transform (C - a clothing):
 	transform C into the upgrade-target of C.
@@ -346,10 +356,31 @@ To decide which number is the disintegrate-resistance of (C - a heels):
 To compute failed transform of (C - a clothing):
 	increase the transform-attempts of C by 1;
 	if the transform-attempts of C > the disintegrate-resistance of C + ((the used condoms of C + the empty condoms of C) * 2) + the transform-resistance of C:
-		say "[bold type]The [C] [bold type]seems to resist being transformed once again, but it struggles to remain corporeal. After a few final shudders, it disappears completely![line break]";
-		if the outrage of C is too humiliating or C is too boring, say "[variable custom style][one of]I didn't like it anyway.[or]Good riddance.[or]I don't mind losing that one.[or]Whatever.[in random order][roman type][line break]";
-		otherwise say "[variable custom style][if C is cursed]Well at least I don't need to worry about the curse.[otherwise]Nooo! [one of]Come[or]Give it[or]I want it[at random] back![end if][roman type][line break]";
-		destroy C;
+		if C is cursed and C is removable:
+			say "[bold type]The [C] [bold type]seems to resist being transformed once again, but its curse prevents it from being destroyed. [roman type]";
+			if C is dressup or C is audible jiggles or C is desperation or C is waddle-walking or C is draining:
+				say line break;
+			otherwise:
+				if a random number between 0 and 4 < game difficulty:
+					now C is draining;
+					say "Instead, it has gained a new magical effect...  You can sense that it is now [']draining['], and slowly sap your stats over time.[line break][variable custom style]Oh no![roman type][line break]";
+				otherwise if diaper quest is 0 and the largeness of breasts > 3:
+					now C is audible jiggles;
+					say "Instead, it has gained a new magical effect...  You can sense that it is now [']audible jiggles['], and is going to make your breasts make loud cartoonish jiggling sounds as you move![line break][variable custom style]Uh-oh![roman type][line break]";
+				otherwise if diaper quest is 0:
+					now C is dressup;
+					say "Instead, it has gained a new magical effect...  You can sense that it is now [']dressup['], and is going to summon more outrageous and slutty clothing on you over time![line break][variable custom style]Oh no![roman type][line break]";
+				otherwise if a random number between 2 and 8 < diaper messing:
+					now C is desperation;
+					say "Instead, it has gained a new magical effect...  You can sense that it is now [']desperation['], and is going to make you need to go number two much more frequently than normal![line break][variable custom style]Uh-oh...[roman type][line break]";
+				otherwise:
+					now C is waddle-walking;
+					say "Instead, it has gained a new magical effect...  You can sense that it is now [']waddle walking['], and is going to make you walk with an exaggerated waddle at all times, no matter [if there is a worn diaper]how full or thick your diaper is[otherwise]whether you're even wearing a diaper[end if]![line break][variable custom style]Uh-oh...[roman type][line break]";
+		otherwise:
+			say "[bold type]The [C] [bold type]seems to resist being transformed once again, but it struggles to remain corporeal. After a few final shudders, it disappears completely![line break]";
+			if the outrage of C is too humiliating or C is too boring, say "[variable custom style][one of]I didn't like it anyway.[or]Good riddance.[or]I don't mind losing that one.[or]Whatever.[in random order][roman type][line break]";
+			otherwise say "[variable custom style][if C is cursed]Well at least I don't need to worry about the curse.[otherwise]Nooo! [one of]Come[or]Give it[or]I want it[at random] back![end if][roman type][line break]";
+			destroy C;
 	otherwise:
 		if C is untransformable, say "It doesn't seem like the [C] can be transformed!";
 		otherwise say "The [C] seems to [if the transform-attempts of C > 1]once again [end if]resist being transformed!".

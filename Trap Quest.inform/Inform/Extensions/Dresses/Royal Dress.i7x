@@ -31,8 +31,7 @@ To decide which number is the intelligence-influence of (O - a royal dress):
 To decide which object is the unique-upgrade-target of (C - a royal dress):
 	if there is a worn diaper and (diaper quest is 0 or the number of worn cursed headgear is 0), decide on baby royal dress; [DQ Tiara Quest is impossible to complete with a super short baby dress]
 	if the throatskill of the player is 1, decide on deepthroat princess crop top;
-	if diaper quest is 1 and C is not lolita royal dress, decide on lolita royal dress;
-	if diaper quest is 0 and C is not ballgown royal dress, decide on ballgown royal dress;
+	if C is lolita royal dress, decide on ballgown royal dress;
 	decide on nothing.
 Definition: a royal dress is royalty themed: decide yes.
 Definition: a royal dress is pink themed: decide yes.
@@ -40,16 +39,30 @@ Definition: a royal dress is potentially erection concealing: decide yes. [non-t
 
 Part 1 - Ballgown Royal Dress
 
-ballgown royal dress is a royal dress. ballgown royal dress is optional-top-displacable. The text-shortcut of ballgown royal dress is "rd1".
+ballgown royal dress is a royal dress. ballgown royal dress is optional-top-displacable. ballgown royal dress is arm exposing. The text-shortcut of ballgown royal dress is "rd1".
 
 To decide which figure-name is clothing-image of (C - ballgown royal dress):
 	decide on figure of royal dress 1.
 
 To say ClothingDesc of (O - ballgown royal dress):
-	say "A pink, puffy silk dress with a deep plunging neckline that leaves a whole lot of [if O is worn]your[otherwise]the wearer's[end if] chest visible. [if the outrage of O is too humiliating][line break][first custom style]It's still more modest than most of the clothing in this game. But there's just something about being dressed as a dainty princess that's so... humiliating.[roman type][line break][end if]The fine cut of the material is evidence that this dress is meant only for the most important of people.".
+	say "A pink, puffy silk dress with a deep plunging neckline that leaves a whole lot of [if O is worn]your[otherwise]the wearer's[end if] chest visible. A large open slit at the front of the dress leaves the front of your crotch entirely visible. The fine cut of the material is evidence that this dress is meant only for the most important of people.".
 
 To decide which number is the initial outrage of (C - ballgown royal dress):
 	decide on 3.
+
+Definition: ballgown royal dress is slitted: decide yes.
+
+Definition: ballgown royal dress is potentially vagina covering:
+	if the player is prone and ballgown royal dress is skirt-covering-crotch, decide yes;
+	decide no.
+
+Definition: ballgown royal dress is potentially at least partially vagina covering:
+	if ballgown royal dress is potentially vagina covering, decide yes;
+	decide no.
+
+Definition: ballgown royal dress is potentially-bottom-layer-concealing:
+	if the player is prone, decide yes;
+	decide no.
 
 Part 2 - Lolita Royal Dress
 

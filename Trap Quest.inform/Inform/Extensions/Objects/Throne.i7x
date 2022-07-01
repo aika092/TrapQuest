@@ -156,10 +156,11 @@ Check entering the throne:
 			now Dungeon11 is toilets;
 			now the noun is transformed instead;
 		otherwise if R is not 4 and R is not 5 and R is not 6 and the noun is transformed and (the bladder of the player > 0 or rectum > 1):
-			say "Suddenly, you feel the magic of throne working on your crotch! You suddenly realise that you desperately need the loo! [if rectum <= 1 and incontinence > 0 and the incontinence of the player > 0]Maybe the throne is counteracting your incontinence? [end if]";
+			say "Suddenly, you feel the magic of throne working on your crotch! You suddenly realise that you desperately need the loo! [if the raw-rectum-incontinence of the player > 0 or the raw-bladder-incontinence of the player > 0]Maybe the throne is counteracting your incontinence? [end if]";
 			say "You let go of the hold on your bladder[if rectum > 1] and sphincter[end if], using the potty for its intended purpose. After a few [if rectum > 1]embarrassing noises coming from your rear end[otherwise]awkward moments listening to yourself tinkle[end if], you're done. The potty makes a weird gurgling sound, and then is suddenly completely empty and clean again!";
-			if rectum > 0, reset rectum;
-			if incontinence > 0, decrease incontinence by 1;
+			reset rectum;
+			if the raw-rectum-incontinence of the player > 0, decrease the raw-rectum-incontinence of the player by 1;
+			if the raw-bladder-incontinence of the player > 0, decrease the raw-bladder-incontinence of the player by 1;
 			now the bladder of the player is 0 instead;
 		otherwise if R is 2:
 			now the throne is untriggered;
@@ -174,8 +175,8 @@ Check entering the throne:
 				if the player is ass protected:
 					let K be a random worn top level ass protection clothing;
 					if K is rippable:
-						say "You gasp as the dildo goes straight through your [if K is zippable]zipper[otherwise][printed name of K][end if]! Your [printed name of K] [if K is zippable]is now open[otherwise]now has a tear in it,[end if] at the crotch.";
-						rip K;
+						say "You gasp as the dildo goes straight through your [if K is crotch-zipped]zipper[otherwise][printed name of K][end if]! Your [printed name of K] [if K is crotch-zipped]is now open[otherwise]now has a tear in it,[end if] at the crotch.";
+						ZipOrRip K;
 					otherwise:
 						say "You gasp as the dildo goes straight through your [printed name of K]! Your [printed name of K] is destroyed.";
 						Destroy K;
@@ -299,8 +300,8 @@ A time based rule (this is the compute throne rule):
 				if the player is ass protected:
 					let K be a random worn top level ass protection clothing;
 					if K is rippable:
-						say "You gasp as the dildo goes straight through your [if K is zippable]zipper[otherwise][printed name of K][end if]! Your [printed name of K] [if K is zippable]is now open[otherwise]now has a tear in it,[end if] at the crotch.";
-						rip K;
+						say "You gasp as the dildo goes straight through your [if K is crotch-zipped]zipper[otherwise][printed name of K][end if]! Your [printed name of K] [if K is crotch-zipped]is now open[otherwise]now has a tear in it,[end if] at the crotch.";
+						ZipOrRip K;
 					otherwise:
 						say "You gasp as the dildo goes straight through your [printed name of K]! Your [printed name of K] is destroyed.";
 						destroy K;
@@ -353,16 +354,16 @@ A time based rule (this is the compute throne rule):
 				say "but your head is feeling very light, and your [asshole] is feeling a bit worse for wear!";
 				ruin asshole;
 				IntDown 1;
-				SemenAddictUp 1;
+				SlowSemenAddictUp 1;
 			otherwise:
 				if the turns of the throne > 4:
 					say "but your head is feeling very light.";
 					IntDown 1;
-					SemenAddictUp 1;
+					SlowSemenAddictUp 1;
 				otherwise:
 					if the turns of the throne > 2:
 						say "and you feel a bit more used to the strong smell of [semen].";
-						SemenAddictUp 1;
+						SlowSemenAddictUp 1;
 					otherwise:
 						say "and you wonder [if the bimbo of the player < 10]in fear [end if]what could have happened if you hadn't managed to escape so quickly!".
 

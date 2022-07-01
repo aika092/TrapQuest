@@ -7,6 +7,11 @@ To say ShortDesc of (C - a bridal dress):
 
 Definition: a bridal dress is white themed: decide yes.
 
+To compute post transformation effect of (C - a bridal dress):
+	if C is blandness:
+		now C is strength stealing;
+		say "[bold type][BigNameDesc of C] [bold type]has gained a new magical effect...  You can sense that it is now [']strength stealing['], and will take some of your strength away if you remove it normally.[roman type][line break]".
+
 long bridal dress is a bridal dress. Understand "short" as long bridal dress when the item described is short. The text-shortcut of long bridal dress is "lbrd".
 
 To compute class set up of (C - long bridal dress):
@@ -37,7 +42,7 @@ To say ClothingDesc of (C - long bridal dress):
 
 To decide which number is the initial outrage of (C - long bridal dress):
 	if C is knee-length, decide on 1;
-	decide on 4.
+	decide on 3.
 
 Definition: long bridal dress is party themed:
 	if it is knee-length, decide no;
@@ -56,6 +61,10 @@ This is the bridal dress pussy slut rule:
 	if long bridal dress is worn, decrease the desirability of vagina by 4.
 The bridal dress pussy slut rule is listed in the pussy slut eligibility rules.
 
+To decide which object is the unique-upgrade-target of (C - long bridal dress):
+	if C is knee-length, decide on sexy bridal dress;
+	otherwise decide on slutty bridal dress.
+
 sexy bridal dress is a bridal dress. sexy bridal dress is finger covering. The text-shortcut of sexy bridal dress is "sbrd".
 
 Figure of sexy bridal dress is the file "Items/Clothes/Upper/Special/Bridal/bridaldress2.png".
@@ -68,6 +77,7 @@ Definition: sexy bridal dress is class-relevant:
 	decide no.
 
 Definition: sexy bridal dress is slitted: decide yes.
+Definition: sexy bridal dress is usually thigh covering: decide no.
 
 Definition: sexy bridal dress is potentially-top-layer-concealing: decide no. [Only partially conceals top layer clothing]
 Definition: sexy bridal dress is potentially-bottom-layer-concealing: decide no. [Only partially conceals bottom layer clothing]
@@ -79,7 +89,7 @@ To say ClothingDesc of (C - sexy bridal dress):
 	say "This silk white [MediumDesc of C] has a long skirt but with extremely high cut slits for the legs, which expose the wearer's hips. Similarly the cut of the top makes it difficult to conceal a bra. Long white gloves cover the wearer's hands.".
 
 To decide which number is the initial outrage of (C - sexy bridal dress):
-	decide on 6.
+	decide on 5.
 
 slutty bridal dress is a bridal dress. slutty bridal dress is unskirted. slutty bridal dress is crotch-intact. slutty bridal dress is bottom-exclusive. The text-shortcut of slutty bridal dress is "stbd".
 
@@ -109,12 +119,12 @@ To say ClothingDesc of (C - slutty bridal dress):
 	say "This silk white [MediumDesc of C] is actually more of a body-con negligee item with a sheer skirt attached. It definitely looks like the only appropriate place to wear it is in the bedroom.".
 
 To decide which number is the initial outrage of (C - slutty bridal dress):
-	decide on 9.
+	decide on 7.
 To decide which number is the crotch-tightness of (C - slutty bridal dress):
 	decide on 4.
 
 
-princess bride dress is a bridal dress. princess bride dress is finger covering. princess bride dress is neck covering. princess bride dress is totally-exclusive. princess bride dress is sheer. The text-shortcut of princess bride dress is "pbrd".
+princess bride dress is a bridal dress. princess bride dress is finger covering. princess bride dress is fully covering. princess bride dress is neck covering. princess bride dress is not-displacable-always-fuckable. princess bride dress is totally-exclusive. princess bride dress is sheer. The text-shortcut of princess bride dress is "pbrd".
 
 Figure of princess bride dress is the file "Items/Clothes/Upper/Special/Bridal/bridaldress4.png".
 
@@ -126,18 +136,23 @@ Definition: princess bride dress is class-relevant:
 	decide no.
 
 To compute class set up of (C - princess bride dress):
-	now the quest of C is podium-quest;
-	now the raw-magic-modifier of C is -4;
 	now C is strength-influencing;
-	now C is posture training;
-	now C is cursed.
+	if the ceremony of betrothal-quest is false:
+		now the quest of C is podium-quest;
+		now the raw-magic-modifier of C is -4;
+		now C is posture training;
+		now C is cursed;
+	otherwise:
+		now the raw-magic-modifier of C is 1;
+		now C is elasticity.
+
 
 To compute quest completion of (Q - podium-quest) on (C - princess bride dress):
 	if the raw-magic-modifier of C < 1:
 		say "Your [C] becomes a ";
-		now the raw-magic-modifier of C is 1;
+		now the raw-magic-modifier of C is 2;
 		now C is elasticity;
-		say "[C]!";
+		say "[C]![line break][variable custom style]Oh wow... I feel STRONG! Ssuddenly it seems like it might not be a bad idea to keep wearing this after all![line break]";
 	say "[bold type]";
 	let disappearTime be 0;
 	let QC be questNothingHappens;

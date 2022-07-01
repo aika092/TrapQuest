@@ -131,7 +131,6 @@ To display interaction of (M - a fairy):
 	alwayscutshow figure of fairy interact 1 for M.
 
 To compute DQ perception of (M - a fairy):
-	now M is interested;
 	say "[BigNameDesc of M] giggles and focuses [his of M] eyes on you. [if M is unfriendly][big he of M] starts flying towards you...[otherwise][big he of M] doesn't seem aggressive right now.[end if]".
 
 To make (M - a fairy) expectant:
@@ -240,6 +239,7 @@ This is the fairy attacks then gets bored rule:
 	if the rule succeeded: [Should always happen with the current code]
 		if M is not grabbing the player:
 			say "[BigNameDesc of M] seems satisfied and loses interest in messing with you.";
+			if the health of M >= the maxhealth of M, calm M;
 			bore M for 120 seconds;
 		rule succeeds.
 The fairy attacks then gets bored rule is listed in the fairy attacks then gets bored rules.
@@ -247,6 +247,15 @@ The fairy attacks then gets bored rule is listed in the fairy attacks then gets 
 This is the fairy doesn't want to have sex rule:
 	if presented-orifice is not nothing, say "[BigNameDesc of current-monster] giggles at your display.[line break][speech style of current-monster]'I don't know what you think I'm going to do to you, honey, but it certainly isn't that! How would that even work?'[roman type][line break]".
 The fairy doesn't want to have sex rule is listed first in the fairy attack rules.
+
+This is the fairy summons a wisp rule:
+	if there is a stalking wisp and there is a nonstalking wisp:
+		let W be a random stalking wisp;
+		say "[BigNameDesc of current-monster] flutters its wings towards [NameDesc of W], coating it in fairy dust! It shudders and then splits in two!";
+		deploy a wisp;
+		satisfy current-monster;
+		rule succeeds.
+The fairy plays diaper quest rule is listed in the fairy attack rules.
 
 This is the fairy plays diaper quest rule:
 	if diaper quest is 1:
@@ -1066,7 +1075,7 @@ To compute FairyGrab of (M - fairy-witch):
 This is the fairy-witch enabler rule:
 	if current-monster is fairy-witch:
 		let N be a random vine;
-		let V be a random dangerous virginity taking monster in the location of the player;
+		let V be a random virginity taking combative monster;
 		if N is in the location of the player, now V is N;
 		if (V is vine or V is monster) and the player is not vine stuck and the player is not monster fucked:
 			let D be the dexterity of the player;

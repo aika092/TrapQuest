@@ -14,6 +14,7 @@ Definition: matron is a tripper:
 Understand "strict" as matron. The text-shortcut of matron is "mat".
 
 Figure of matron is the file "NPCs/Hotel/matron1.jpg".
+Figure of matron portal cutscene is the file "NPCs/Hotel/cutscene-matron-portal1.jpg".
 
 To decide which figure-name is the monster-image of (M - matron):
 	decide on figure of matron.
@@ -65,14 +66,14 @@ To say GroundPeeReaction of (M - matron):
 	if M is friendly or M is uninterested:
 		say "[speech style of M]'Now that just won't do! You're wetting [if the location of M is Hotel22]my nursery's[otherwise]the[end if] floor, you disgusting [if M is presenting as female]girl[otherwise]sissy[end if]! You've lost your adult underwear privileges, child - I'm going to put you in diapers and if I have anything to say about it, you'll be wearing them until the day you die!'[roman type][line break]";
 		anger M;
-		now M is interested;
+		interest M;
 		now M is diaper-committed.
 
 To say ClothesPeeReaction of (M - matron):
 	if M is friendly or M is uninterested:
 		say "[speech style of M]'Now that just won't do, how disgusting! You've lost your adult underwear privileges, child - I'm going to put you in diapers and if I have anything to say about it, you'll be wearing them until the day you die!'[roman type][line break]";
 		anger M;
-		now M is interested;
+		interest M;
 		now M is diaper-committed.
 
 To compute MasturbationReaction of (M - matron):
@@ -86,8 +87,7 @@ To compute MasturbationReaction of (M - matron):
 			say "[speech style of M]'No no no! This is a nursery, young [if the player is gendered male]sissies[otherwise]girls[end if] like you do NOT get to have cummies like grown ups! I can't believe you would be so naughty! If you have to rub yourself, you'll do it through a diaper like a real adult baby.'[roman type][line break]";
 			FavourDown M by 5;
 			anger M;
-			now M is interested;
-			now the boredom of M is 0;
+			interest M;
 			if the player is prone:
 				say "Grabbing your hands away from you, [he of M] picks you up and plops you down on the giant changing table. [big he of M] smoothly and efficiently binds your wrists and ankles tightly with the inbuilt straps.";
 				now M is grabbing the player;
@@ -202,7 +202,7 @@ To compute diaper check of (M - matron):
 	otherwise if there is a worn diaper:
 		let D be a random worn diaper;
 		say "[one of][big he of M] swiftly walks up to you and holds [if diaper messing < 3]a hand to the front[otherwise]hands to the front and back[end if] of your [D], pushing firmly to get a good feel. [or]With concern in [his of M] eyes [he of M] swiftly walks up to you. [big he of M] takes [if diaper messing < 3]a well manicured hand and presses it against the front[otherwise][his of M] well manicured hands and presses them into the front and back[end if] of your [D]. [big he of M] pushes it firmly to get a good feel of how [if diaper messing < 3]wet[otherwise]used[end if] your diaper is. [in random order][one of][if the diaper addiction of the player < 11]You lightly recoil against [his of M] touch, embarrassed that [NameDesc of M] is giving you a diaper check.[otherwise if the diaper addiction of the player > 13]Almost instinctively you push your hips forward so that [NameDesc of M] can get a good feel.[end if][or][if the delicateness of the player < 7]You feel shame at [him of M] touching you in this intimate manner.[otherwise if the delicateness of the player < 12]You hope that what [he of M] has planned for you is beneficial to your survival of this cruel game.[otherwise if the delicateness of the player < 16]You want [him of M] to press more firmly, yielding to [his of M] lovingly maternal decisions.[otherwise if the diaper addiction of the player > 6]You want to press your hips more into [his of M] touch, you crave [his of M] touch against your diapered crotch.[otherwise]You have no intention of resisting, since [he of M] is clearly in charge.[end if][purely at random]";
-		if D is total protection and asshole is not actually occupied and D is not messed and rectum > 1 and rectum + suppository + the incontinence of the player > a random number between 3 and 6:
+		if D is total protection and asshole is not actually occupied and D is not messed and rectum > 1 and rectum + suppository + the rectum-incontinence of the player > a random number between 3 and 6:
 			say "[big his of M] hands against your padded butt make you feel so much more relaxed. You sigh with pleasure and you can feel your sphincter dilating slightly. [BigNameDesc of M] begins to speak.[line break][speech style of M]'[if the urine-soak of D > the soak-limit of D / 9]Oopsie, It seems like my little baby has had a big accident! Thank goodness your cute little bottom was diapered. [otherwise]Hmm, it looks like you don't need a change yet... [end if]Wait, what's this?!'[roman type][line break]As soon as [NameDesc of M] stops speaking you can feel what [he of M] has detected - you've lost control of your bowels and have started to mess yourself!";
 			compute messing;
 		otherwise if the urine-soak of D + the water-soak of D > the soak tolerance of M or D is messed:
@@ -223,7 +223,7 @@ To compute diaper check of (M - matron):
 		say "[speech style of M]'[one of][if M is motherly]Didn't I tell you it's important for you to stay in diapers? [otherwise]It's important for babies like you to stay in diapers. [end if][if the player is prone]Stay on your knees[otherwise]Get on your knees[end if] and I'll fix that for you...'[or]How many times am I going to catch you out of nappies? You're getting put in my naughty book for sure this time.'[or]Come on you naughty girl! Time for your diaper.'[stopping][roman type][line break]";
 		now M is diaper-committed;
 		FavourDown M by 4;
-	otherwise if the player is incontinent:
+	otherwise if the player is bladder incontinent:
 		say "[speech style of M]'Oh dear, are you wetting yourself lots without wearing a diaper? That's no good! Here, let me help you out...'[roman type][line break]";
 		now M is diaper-committed;
 	otherwise if M is objectifying the player:
@@ -489,7 +489,7 @@ To compute forcefeed round (N - 2) of (M - matron):
 	StomachFoodUp 1.
 
 To compute forcefeed round (N - 1) of (M - matron):
-	say "[speech style of M]'Come on you messy baby, time for your sippy cup.'[roman type][line break]Before you can react, a toddler's drinking cup is shoved into your mouth, and you are sipping down a mystery liquid that tastes a lot like fruit juice, but a bit more sour. [if incontinence < 5]Your stomach feels a little off...[otherwise if the diaper addiction of the player > 12]For a moment you almost forget you're not just a big baby.[otherwise]You feel the liquid enter your belly, and your bladder relax.[end if][line break]";
+	say "[speech style of M]'Come on you messy baby, time for your sippy cup.'[roman type][line break]Before you can react, a toddler's drinking cup is shoved into your mouth, and you are sipping down a mystery liquid that tastes a lot like fruit juice, but a bit more sour. [if the rectum-incontinence of the player < the max-rectum-incontinence of the player]Your stomach feels a little off...[otherwise if the diaper addiction of the player > 12]For a moment you almost forget you're not just a big baby.[otherwise]You feel the liquid enter your belly, and your bladder relax.[end if][line break]";
 	let B be a random off-stage bib;
 	if B is bib and the player is an adult baby:
 		summon B cursed;
@@ -498,7 +498,7 @@ To compute forcefeed round (N - 1) of (M - matron):
 	otherwise if the number of worn bibs is 0:
 		say "[BigNameDesc of M] removes your bib, and then wipes away the mess around your mouth with it.";
 	StomachUp 2;
-	increase incontinence by 1.
+	SilentlyRectumIncontinenceUp 1.
 
 To say ForcefeedAftermath of (M - matron):
 	say "[big he of M] lets you down from your chair, done with you. For now.".
@@ -543,6 +543,7 @@ To consider class time for (M - matron):
 		say "[speech style of M]'Now, you're late for class! Hurry along now, poppet!'[roman type][line break]";
 		drag to Hotel40 by M;
 		say "[speech style of M]'Run along now, you little minx! [one of]And say hi to the [ShortDesc of headmistress] for me[or]Play nice with the other babies, now[in random order]!'[roman type][line break][BigNameDesc of M] pushes you through the portal!";
+		cutshow Figure of matron portal cutscene for M;
 		now forced-portal is school portal;
 		teleport via hotel portal.
 

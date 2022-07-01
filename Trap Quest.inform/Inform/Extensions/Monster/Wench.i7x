@@ -56,6 +56,7 @@ Figure of Wench Cutscene 4 is the file "NPCs/Dungeon/Wench/cutscene-wench-skill1
 Figure of Wench Cutscene 6 is the file "NPCs/Dungeon/Wench/cutscene-wench-fuck2.png".
 Figure of Wench Cutscene 7 is the file "NPCs/Dungeon/Wench/cutscene-wench-fuck3.png".
 Figure of Wench Cutscene 8 is the file "NPCs/Dungeon/Wench/cutscene-wench-drink1.png".
+Figure of Wench Cutscene 9 is the file "NPCs/Dungeon/Wench/cutscene-wench-cup1.jpg".
 
 To decide which figure-name is the monster-image of (M - a creampied wench):
 	decide on figure of creampied wench.
@@ -233,6 +234,7 @@ To compute disgusting spit reaction of (M - a wench):
 	say "[BigNameDesc of M] shudders as [he of M] watches you. You're not sure if it's with disgust or arousal. [if the urine volume of face > 0][strongHumiliateReflect][otherwise][moderateHumiliateReflect][end if]";
 	FavourDown M with consequences.
 
+
 Part 2 - Perception
 
 To decide which number is the bimbo tolerance of (M - a wench):
@@ -293,7 +295,7 @@ To compute perception of (M - a wench):
 		otherwise:
 			let R be a random number from -10 to the semen taste addiction of the player;
 			say "[speech style of M]'I can't take it any more... [please] there's so much cum and I'm so horny... I need you to lick it out of me...'[roman type][line break][if R > 9][one of]The sight and smell of all the [semen] entices you for a moment, and in a lapse of judgement you drop to your knees.[or]The familiar sight and smell of the [semen] makes you instinctively drop to your knees.[stopping][otherwise]Uh-oh, it looks like [he of M] means to force you![end if]";
-			now M is interested;
+			interest M;
 			anger M;
 			now the sex-length of M is 2;
 			if R > 9:
@@ -304,7 +306,7 @@ To compute perception of (M - a wench):
 		otherwise:
 			if the previous-objectification of M is 0, say "Something seems to change in the way [NameDesc of M] is looking at you.[line break][speech style of M]'We should fuck.'[roman type][line break]";
 			otherwise say "[speech style of M]'You look like a slut who enjoys it rough. Let's see if I'm right!'[roman type][line break]";
-		now M is interested;
+		interest M;
 		anger M;
 		now the sex-length of M is 2;
 		alwayscutshow figure of wench interact 9 for M;
@@ -320,7 +322,7 @@ To compute perception of (M - a wench):
 			say "[big he of M] seems to take an aggressive stance when [he of M] notices your [printed name of K], but then sees the huge bulge in the front and decides to leave you alone.";
 			bore M;
 		otherwise:
-			now M is interested;
+			interest M;
 			anger M;
 			now the sex-length of M is 2;
 			say "[speech style of M]'... that [TypeTitle of K]... where did you get it? Give it to me!'[roman type][line break]";
@@ -388,7 +390,7 @@ Report dropping clothing in the presence of a wench:
 
 To compute (M - a wench) WenchReceiving (K - a knickers):
 	say "[BigNameDesc of M] takes the [printed name of K] and [if M is unfriendly]seems happy[otherwise]hugs you warmly[end if].";
-	now M is interested;
+	interest M;
 	calm M;
 	FavourUp M by 4;
 	now M is carrying K.
@@ -440,7 +442,7 @@ This is the obedient wench rule:
 			say "[BigNameDesc of M] yells angrily.[line break][first custom style]'NO CAT-FIGHTING! [one of]GET ON THE GROUND NOW, WENCHES[or]Assume the position, and I will administer your punishment[or]DOWN ON THE GROUND, [if the number of wenches in the location of the player > 1]ALL[otherwise]BOTH[end if] OF YOU[in random order]!'[roman type][line break]";
 			repeat with W running through wenches in the location of the player:
 				anger M;
-				now M is interested;
+				interest M;
 				now the boredom of M is 0;
 				now the guard-obedience of W is 1;
 				if the difficulty of M - the starting difficulty of M >= 1 or M is horny-wench and the player is not prone:
@@ -543,6 +545,28 @@ This is the wench steals clothing rule:
 		ClothingSteal M;
 		rule succeeds.
 The wench steals clothing rule is listed in the wench priority attack rules.
+
+This is the wench asscum cup punishment rule:
+	if a2m fetish >= 2 and champagne-glass is held and (champagne-glass is empty or the fill-colour of champagne-glass is not creamy) and doom counter > 0 and there is a nonstalking wisp:
+		let M be current-monster;
+		say "[speech style of M]'Ahhh~ Something is telling me... I should do this...'[roman type][line break][BigNameDesc of M] snatches [NameDesc of champagne-glass].";
+		if champagne-glass is non-empty:
+			say "[big he of M] tips its contents out onto the ground!";
+			dump champagne-glass;
+		say "[BigNameDesc of M] squats over the glass and allows a thick glob of [semen] to ooze out of [his of M] asshole and fill [NameDesc of champagne-glass], before handing it back to you.";
+		cutshow figure of wench cutscene 9 for M;
+		let W be a random nonstalking wisp;
+		silently set up W;
+		now the wisp-quest of W is drink-wisp-quest;
+		now the wisp-trigger of W is spill-wisp-trigger;
+		now the wisp-punishment of W is bimbo-wisp-punishment;
+		if (a random number between 0 and 1) + (a random number between 0 and 1) < game difficulty, now the wisp-punishment of W is a random appropriate wisp punishment;
+		now W is everywhere;
+		update backdrop positions;
+		now the text-shortcut of W is the substituted form of "[ColourDesc of W]";
+		say "[bold type]A [ColourDesc of W] curse wisp appears, and begins hovering behind you! [roman type]You can sense that you must [bold type][wisp-quest of W][roman type] before you next [bold type][wisp-trigger of W][roman type], or else you will [bold type][wisp-punishment of W][roman type].[line break][speech style of M]'That was weird! I don't know what came over me. Now where was I...'[roman type][line break]";
+		rule succeeds.
+The unique punishment rule of a wench is the wench asscum cup punishment rule.
 
 To ClothingSteal (M - a wench):
 	let K be a random desirable knickers;
@@ -650,7 +674,7 @@ To compute (M - a wench) considering (T - a submissive collar):
 		say MonsterOfferRejectFlav of M to T.
 
 To say DragArrival of (M - a wench) to (R - Dungeon41):
-	say "[speech style of M]'Here we are!'[line break][variable custom style][one of][if the bimbo of the player < 8]Oh the shop, are we going to go shopping together?[otherwise]Why are we here I wonder?[end if][or][if the bbc addiction of the player < 4]Oh no, not sure my [asshole] is up for this![otherwise]Looks like I'm going to be sucking on [BlackCock] again![end if][stopping][roman type][line break]".
+	say "[speech style of M]'Here we are!'[line break][variable custom style][one of][if the bimbo of the player < 8]Oh the shop, are we going to go shopping together?[otherwise]Why are we here I wonder?[end if][or][if the bbc addiction of the player < 8]Oh no, not sure my [asshole] is up for this![otherwise]Looks like I'm going to be sucking on [BlackCock] again![end if][stopping][roman type][line break]".
 
 To compute damaging attack of (M - a wench):
 	compute striking attack of M;
@@ -1286,14 +1310,14 @@ To blowjob dominate (M - a wench):
 			say ". You've just noticed [he of M] working at something in [his of M] mouth ";
 			compute detach-players-dick by M using 1;
 	otherwise:
-		say "[if the player is a bit horny]You force [NameDesc of M] to [his of M] knees, pushing your fully erect [SexDesc of penis] against [his of M] face.[otherwise]You force [NameDesc of M] to [his of M] knees, stroking your [SexDesc of penis] to a full, unimpressive erection.[end if][line break][speech style of M]Wow, now I feel even worse... just do it on my chest alright?[roman type] [big he of M] pushes [his of M] breasts together, looking up at you with a deadpan expression as you eagerly pump your [if the player is a bit horny]desperately hard [end if][SexDesc of penis]. You wish [he of M] were more enthusiastic, but it just feels so good, and your time in this game has left you a lot more sensitive than you were before. [run paragraph on]";
+		say "[if the player is a bit horny]You force [NameDesc of M] to [his of M] knees, pushing your fully erect [SexDesc of penis] against [his of M] face.[otherwise]You force [NameDesc of M] to [his of M] knees, stroking your [SexDesc of penis] to a full, unimpressive erection.[end if][line break][speech style of M]'Wow, now I feel even worse... just do it on my chest alright?'[roman type][line break][big he of M] pushes [his of M] breasts together, looking up at you with a deadpan expression as you eagerly pump your [if the player is a bit horny]desperately hard [end if][SexDesc of penis]. You wish [he of M] were more enthusiastic, but it just feels so good, and your time in this game has left you a lot more sensitive than you were before. [run paragraph on]";
 		if M is a-non-detacher or the player is not possessing a penis: [#LXorDD]
 			say "It only takes a few short moments for you to emit a feminine grunt and spurt your [load] all over [his of M] chest.";
 			now player-fucking is DOMINANT-NEUTRAL;
 			say AfterDominationComment 8 of M;
 			orgasm;
 		otherwise:
-			say ". But then [he of M] seems to have a change of heart, smiling and working [his of M] mouth a little as if getting ready. You're grimacing at just how slightly [he of M]'s lips have parted ";
+			say ". But then [he of M] seems to have a change of heart, smiling and working [his of M] mouth a little as if getting ready. You're grimacing at just how slightly [his of M] lips have parted ";
 			compute detach-players-dick by M using 1.
 
 To watersports dominate (M - a wench):
@@ -1597,8 +1621,7 @@ To compute friendly drink of (M - a wench):
 To compute unfriendly drink of (M - a wench):
 	say "[speech style of M]'Oh I'll give you a drink all right!'[roman type][line break][big he of M] takes an aggressive stance!";
 	alwayscutshow figure of wench interact 13 for M;
-	now M is interested;
-	now the boredom of M is 0.
+	interest M.
 
 [To compute desperate drinking to (M - a wench):
 	say "[if M is uninterested]You spot a [MediumDesc of M]! [otherwise]You look at [NameDesc of M] hungrily. [end if]Your thirst combined with your new found love of the taste of [semen] means you can't help but go up to the [boy of M], get on your knees and start licking [his of M] [HoleDesc of M]. You are rewarded by [his of M] sighs of pleasure, and a flood of [semen]! You gulp it down greedily.";
@@ -1698,7 +1721,7 @@ To say MediumDesc of (M - QoS wench):
 	say "QoS wench".
 
 Definition: QoS wench is dungeon dwelling: [can she spawn randomly?]
-	if the bbc addiction of the player > 5, decide yes;
+	if the bbc addiction of the player > 7, decide yes;
 	decide no.
 
 Figure of QoS wench is the file "NPCs/Dungeon/Wench/qos1.png".
@@ -1885,7 +1908,7 @@ The unique punishment rule of a QoS wench is the QoS wench unique punishment rul
 
 This is the QoS wench shares you with BBC rule:
 	let M be current-monster;
-	if shopkeeper is alive and shopkeeper is awake and shopkeeper is undefeated and the refractory-period of shopkeeper <= 0 and the BBC addiction of the player > a random number between 1 and 6:
+	if shopkeeper is alive and shopkeeper is awake and shopkeeper is undefeated and the refractory-period of shopkeeper <= 0 and the BBC addiction of the player > a random number between 1 and 10:
 		let N be shopkeeper;
 		let Q be Dungeon41;
 		if Q is not the location of M:

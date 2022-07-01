@@ -79,6 +79,19 @@ To compute perception of (M - a robobutler):
 		say "[big his of M] eyes turn red and [he of M] spins towards you.[line break][first custom style]'EMPTY STOMACH DETECTED. COMPULSORY FEEDING PROGRAM INITIATED.'[roman type][line break]";
 		anger M;
 		now the planned-punishment of M is 1;
+	otherwise if there is a nonstalking wisp:
+		say "[big his of M] eyes turn purple and [he of M] spins towards you.[line break][first custom style]'LOW TIPPING CUSTOMER DETECTED. DID YOU KNOW YOU CAN EARN VALUABLES BY SERVING OTHER GUESTS? PLEASE REFRAIN FROM SPEAKING UNTIL YOU HAVE COMPLETED YOUR NEW QUEST OBJECTIVE.'[roman type][line break]";
+		now the planned-punishment of M is 0;
+		let W be a random nonstalking wisp;
+		silently set up W;
+		now the wisp-quest of W is brothel-wisp-quest;
+		now the wisp-trigger of W is speak-wisp-trigger;
+		now the wisp-punishment of W is bimbo-wisp-punishment;
+		if (a random number between 0 and 1) + (a random number between 0 and 1) < game difficulty, now the wisp-punishment of W is a random appropriate wisp punishment;
+		now W is everywhere;
+		update backdrop positions;
+		now the text-shortcut of W is the substituted form of "[ColourDesc of W]";
+		say "[bold type]A [ColourDesc of W] curse wisp appears, and begins hovering behind you! [roman type]You can sense that you must [bold type][wisp-quest of W][roman type] before you next [bold type][wisp-trigger of W][roman type], or else you will [bold type][wisp-punishment of W][roman type].";
 	otherwise:
 		say "[big he of M] glides towards you, bowing deeply as [he of M] addresses you in a monotone.[line break][first custom style]'IT IS CUSTOMARY TO TIP THE SERVICE STAFF, MA[']AM.'[roman type][line break]One of [his of M] 'hands' is unsubtly placed upturned towards you.";
 		now the planned-punishment of M is 0;
@@ -144,7 +157,7 @@ To compute stunning attack of (M - a robobutler):
 			say "You feel your fatigue rapidly building up as the poison spreads through your veins!";
 			FatigueUp 20;
 		BodyRuin 1;
-		if B is exposed, PainUp 1;
+		if B is exposed, PainUp 10;
 	otherwise:
 		say "You get out of the way before the dart hits you, and it shatters harmlessly against a wall.".
 
@@ -176,7 +189,7 @@ To compute (M - a robobutler) cuffing:
 		summon B locked;
 	otherwise:
 		repeat with C running through worn bondage:
-			if C is unlocked, now C is locked;
+			lock C;
 			increase the sentence of prison guard by 1;
 		say "[BigNameDesc of M][']s eyes flash blue and red for a moment.[line break][speech style of M]TRIAL COMPLETE.[roman type][line break]".
 
@@ -193,7 +206,7 @@ This is the robobutler punishment rule:
 			if N is mechanic, say "[speech style of M]'Looks like there's a lesson in order, then.'[roman type][line break]";
 			otherwise say "[speech style of M]'I WILL REFORM YOU ON MY COCK!'[roman type][line break]";
 			anger N;
-			now N is interested;
+			interest N;
 		otherwise:
 			compute M cuffing;
 		rule succeeds;

@@ -180,4 +180,60 @@ To say ClothingDesc of (C - black-fetish-cheerleader-outfit):
 
 Definition: black-fetish-cheerleader-outfit is black themed: decide yes.
 
+
+denim-overalls is a cheerleader outfit. Understand "overalls" as denim-overalls. denim-overalls is very low cut. denim-overalls is denim. denim-overalls is unskirted. denim-overalls is crotch-intact. denim-overalls is leg covering. denim-overalls is arm exposing. denim-overalls is normally-partially-nipple-covering.
+
+Figure of denim overalls is the file "Items/Clothes/Upper/Special/Cheerleader/cheerleader9.png".
+
+The printed name of denim-overalls is usually "[clothing-title-before]denim overalls[clothing-title-after]". The text-shortcut of denim-overalls is "dno".
+
+To decide which figure-name is clothing-image of (C - denim-overalls):
+	decide on figure of denim overalls.
+
+To decide which number is the initial outrage of (C - denim-overalls):
+	decide on 2.
+
+To say ClothingDesc of (C - denim-overalls):
+	say "This set of denim overalls has quite the narrow chest section. This means that someone with large breasts would be showing a huge amount of side boob, and it doesn't properly cover the nipples.".
+
+To say ShortDesc of (C - denim-overalls):
+	say "overalls".
+To say MediumDesc of (C - denim-overalls):
+	say "denim overalls".
+
+Definition: denim-overalls is blue themed: decide yes.
+Definition: denim-overalls is potentially-top-layer-concealing: decide no. [only partially]
+Definition: denim-overalls is potentially-mid-layer-concealing: decide no. [only partially]
+
+This is the can't displace bottom half of overalls first rule:
+	if the noun is denim-overalls:
+		if the noun is top-placed:
+			if auto is 0, say "You would need to displace the top half first.";
+			rule fails.
+The can't displace bottom half of overalls first rule is listed first in the displacing rules.
+
+Definition: denim-overalls is top-replacable:
+	if it is crotch-displaced, decide no;
+	if it is usually top-displacable and it is top-displaced and it is worn, decide yes;
+	decide no.
+
+Check topReplacing denim-overalls:
+	if the noun is crotch-displaced, say "You would need to replace the bottom half first." instead.
+
+This is the denim overalls wearability rule:
+	if wearing-target is denim-overalls:
+		if summoning is 0:
+			repeat with S running through worn shoes:
+				if autowear is false, say "You can't your [S] through the tight legs of [NameDesc of denim-overalls]!";
+				rule fails.
+The denim overalls wearability rule is listed in the overdress wearability rules.
+
+This is the denim overalls removability rule:
+	if wearing-target is denim-overalls:
+		if summoning is 0:
+			repeat with S running through worn shoes:
+				if autoremove is false, say "You can't your [S] through the tight legs of [NameDesc of denim-overalls]!";
+				rule fails.
+The denim overalls removability rule is listed in the overdress removability rules.
+
 Cheerleader Outfit ends here.

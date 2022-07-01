@@ -27,6 +27,10 @@ To reset rectum:
 	if rectum > 0, now rectum is 1;
 	now suppository is 0.
 
+To reset rectum after messing:
+	reset rectum;
+	progress quest of mess-quest.
+
 [!<YourselfIsFull>+
 
 Does the player need to go number 2?
@@ -85,13 +89,23 @@ An all later time based rule (this is the fullness causes intelligence loss rule
 		now fullness-time is 0;
 		if F > 0, say "Now that your bowels are empty, your ability to concentrate improves and your intelligence returns.".
 
+To decide which number is messyDiaperSmellToleranceLevel: decide on 15. [The level of diaper addiction where messy diaper stuff becomes less bad. Can be tweaked]
+To decide which number is messyDiaperSmellEnjoymentLevel: decide on 20. [The level of diaper addiction where messy diaper stuff has no effect. Can be tweaked]
+
+Definition: yourself is tolerating messy diapers:
+	if the diaper addiction of the player >= messyDiaperSmellToleranceLevel, decide yes;
+	decide no.
+Definition: yourself is enjoying messy diapers:
+	if the diaper addiction of the player >= messyDiaperSmellEnjoymentLevel, decide yes;
+	decide no.
+
 [!<YourselfIsUpsetAboutMess>+
 
 Checks if a player is messy and really unhappy about it.
 
 +!]
 Definition: yourself is upset about mess:
-	if there is a messy monster penetrating face and the diaper addiction of the player < 20, decide yes;
+	if there is a messy monster penetrating face and the diaper addiction of the player < messyDiaperSmellEnjoymentLevel, decide yes;
 	let D be a random worn perceived messed diaper;
 	if the location of the player is nonstandard:
 		if diaper messing >= 6 and (there is a carried soiled-diaper or there is a soiled-diaper in the location of the player), decide yes;
@@ -147,8 +161,48 @@ To compute soiling:
 				DelicateUp 1;
 		unless current-predicament is team-quiz-predicament and the questionFails of team-quiz-predicament < 2, check real messing.
 
+[How high will the game allow rectum incontinence to go?]
+To decide which number is the max-rectum-incontinence of the player:
+	decide on 10 - (incontinence protection * 2).
+
+The player has a number called raw-rectum-incontinence.
+
+To RectumIncontinenceUp (N - number):
+	if diaper messing >= 3 and the raw-rectum-incontinence of the player < the max-rectum-incontinence of the player:
+		say "You feel your ability to hold onto your bowels weakening.";
+		SilentlyRectumIncontinenceUp N.
+To SilentlyRectumIncontinenceUp (N - number):
+	if diaper messing >= 3 and the raw-rectum-incontinence of the player < the max-rectum-incontinence of the player:
+		increase the raw-rectum-incontinence of the player by N;
+		if the raw-rectum-incontinence of the player > the max-rectum-incontinence of the player, now the raw-rectum-incontinence of the player is the max-rectum-incontinence of the player.
+
+temporary-rectum-incontinence is a number that varies.
+
+To decide which number is the rectum-incontinence of the player:
+	if diaper messing < 3, decide on 0;
+	if temporary-rectum-incontinence > 0, decide on the max-rectum-incontinence of the player;
+	let I be the raw-rectum-incontinence of the player;
+	if diaper lover > 0:
+		repeat with K running through worn knickers:
+			decrease I by the magic-modifier of K;
+	if I > the max-rectum-incontinence of the player, decide on the max-rectum-incontinence of the player;
+	decide on I.
+
+[!<YourselfIsRectumIncontinent>+
+
+This is essentially the highest level of bowel incontinence that matters, because at this level all control is taken away from the player.
+
++!]
+Definition: yourself is rectum incontinent:
+	if the rectum-incontinence of the player >= 8, decide yes;
+	decide no.
+
+Definition: yourself is rectum diaper aware: [Do they always know the state of their diaper after messing?]
+	if the player is not potentially diaper aware or the rectum-incontinence of the player >= 10, decide no;
+	decide yes.
+
 To decide which number is rectum-risky-level:
-	decide on 10 - (incontinence + suppository + the number of worn desperation clothing).
+	decide on 10 - (rectum-incontinence of the player + suppository + the number of worn desperation clothing).
 
 [!<CheckRealMessing>+
 
@@ -175,16 +229,16 @@ To check real messing with reason (T - a text):
 			if there is a worn baby bonnet or the intelligence of the player > a random number between -7 and 7, now messAware is 2;
 			if the player is in a predicament room, now messAware is 2; [won't accidentally mess in predicament zone]
 		if rectum > 1 and there is a worn total protection soilable knickers and asshole is not actually occupied and the number of live things penetrating vagina is 0 and (the number of things grabbing the player is 0 or diaper quest is 1), now canMessNow is 1;
-		if the player is incontinent and the player is full:
+		if the player is rectum incontinent and the player is full:
 			now shouldMessNow is 1;
 			if canMessNow is 1, now willMessNow is 1; [no need for a die roll if the player is incontinent]
 		otherwise:
 			let hold-strength be (a random number between 11 and 13) + (a random number between -1 and 1);
-			let I be hold-strength - (incontinence + suppository + desperationCount);
-			if T is "", increase I by 2; [improved hold strength while nothing crazy is happening]
+			let I be hold-strength - (rectum-incontinence of the player + suppository + desperationCount);
+			if T is not "", now I is I / 2; [reduced hold strength while something crazy is happening]
 			if debuginfo > 0 and canMessNow is 1 and rectum > 1:
-				if T is "", say "[input-style]Mess self-control check: d5+11 ([hold-strength]) - incontinence ([incontinence]) - laxative effects ([suppository + desperationCount]) = [I + 0][if I < 4]; minimum 4[end if] | ([rectum].5) rectum volume[roman type][line break]";
-				otherwise say "[input-style]Sudden mess self-control check: d5+9 ([hold-strength]) - incontinence ([incontinence]) - laxative effects ([suppository + desperationCount]) = [I + 0][if I < 4]; minimum 4[end if] | ([rectum].5) rectum volume[roman type][line break]";
+				if T is "", say "[input-style]Mess self-control check: d5+11 ([hold-strength]) - bowel incontinence ([rectum-incontinence of the player]) - laxative effects ([suppository + desperationCount]) = [I + 0][if I < 4]; minimum 4[end if] | ([rectum].5) rectum volume[roman type][line break]";
+				otherwise say "[input-style]Sudden mess self-control check: d5+11 ([hold-strength]) - bowel incontinence ([rectum-incontinence of the player]) - laxative effects ([suppository + desperationCount]) **ALL DIVIDED BY 2 BECAUSE OF PAIN / FEAR / TICKLING / SQUATTING POSITION / ETC** = [I + 0][if I < 4]; minimum 4[end if] | ([rectum].5) rectum volume[roman type][line break]";
 			if I < 4, now I is 4;
 			if rectum >= I and canMessNow is 1, now willMessNow is 1;
 			if rectum >= I - 6, now shouldMessNow is 1;
@@ -197,24 +251,24 @@ To check real messing with reason (T - a text):
 					now automaticallyHolding is false;
 					if willMessNow is 1:
 						if T is "":
-							if the incontinence of the player + suppository + desperationCount < 5, say "You try to hold it in but you start to cramp, and the pain is too much! ";
+							if the rectum-incontinence of the player + suppository + desperationCount < 5, say "You try to hold it in but you start to cramp, and the pain is too much! ";
 							otherwise say "You try to hold it in but the pressure is too much and your control over your rectal muscles is too weak! ";
-							if the raw delicateness of the player < 20 and incontinence < the max-incontinence of the player:
+							if the raw delicateness of the player < 20 and rectum-incontinence of the player < the max-rectum-incontinence of the player:
 								say "You could push forward with sheer force of will, but it will hurt and might even affect your long term continence. Would you like to dig deep and really hold on? ";
 								let F be temporaryYesNoBackground;
 								if the player is reverse bimbo consenting:
 									now shouldMessNow is 0;
 									now willMessNow is 0;
 									say "You grit your teeth and clench your eyes and manage to hold on through the excruciating cramps.";
-									PainUp 1;
+									UnflinchingPainUp 10;
 									if the player is getting unlucky:
-										increase incontinence by 1;
+										increase the raw-rectum-incontinence of the player by 1;
 										say "Your control over your anal sphincter feels permanently weakened. [GotUnluckyFlav]";
 								now temporaryYesNoBackground is F;
 						if shouldMessNow is 1:
 							if T is not "":
 								say "[bold type][T] you [if the player is a nympho]hear yourself moaning lewdly as that weirdly delicious feeling of the shamefulness of your lack of control washes over you[otherwise if the player is a pervert or the diaper addiction of the player > 7]gasp with genuine surprise as your sphincter loses control[otherwise]shriek with horror as you feel yourself begin to go completely against your will[end if].[roman type][line break]";
-							otherwise if the incontinence of the player + suppository + desperationCount < 5:
+							otherwise if the rectum-incontinence of the player + suppository + desperationCount < 5:
 								say "[if the player is a nympho]You give up and let go, crossing your eyes and sticking your tongue out as you wait for the intense feelings to wash over you[otherwise if the player is a pervert]You just don't have the willpower. You gasp with feigned surprise as you allow your sphincter to lose control[otherwise]You clench your fists and strain with all your might but it's all in vain - the cramps win over and you feel yourself begin to push, even though you don't really want to[end if].";
 							otherwise:
 								say "[if the player is a nympho]You hear yourself moaning lewdly as that weirdly delicious feeling of the shamefulness of your lack of control washes over you[otherwise if the player is a pervert or the diaper addiction of the player > 7]You gasp with genuine surprise as your sphincter loses control[otherwise]You shriek with horror as you feel yourself begin to go completely against your will[end if].";
@@ -235,12 +289,13 @@ To check real messing with reason (T - a text):
 			if hasMessedNow is false:
 				if willMessNow is 1:
 					let D be a random worn diaper;
-					if the player is diaper aware or D is not diaper:
+					if the player is rectum diaper aware or D is not diaper:
 						say "All of a sudden, you feel your rectal muscles spasming and you have absolutely no control as it begins to empty itself of its contents! ";
 						compute messing;
 					otherwise:
 						StealthMessUp D by rectum;
-						now rectum is 1;
+						reset rectum;
+						if the perceived-mess of D is the mess of D, progress quest of mess-quest; [no quest completion if the player isn't aware of the mess]
 				otherwise if messAware > 0 and shouldMessNow is 1:
 					let D be a random eligible diaper;
 					if T is "" and the number of worn soilable knickers is 0 and diaper focus is 1 and D is diaper and asshole is not actually occupied and the location of the player is not toilets and the location of the player is not urinals and the player is not in a predicament room:
@@ -280,15 +335,20 @@ To compute messing:
 		if D is crotch-displaced:
 			say "You instinctively move your [ShortDesc of D] back into place over your [asshole]!";
 			now D is crotch-in-place;
+		if D is crotch-unzipped:
+			say "You instinctively zip your [ShortDesc of D] back up!";
+			ZipUp D;
 		let reactions-suppressed be 0;
 		if the total squirtable fill of belly > 0:
 			now reactions-suppressed is 1;
 			AssSquirt;
+		otherwise if D is nothing:
+			say "BUG - there was nothing to have a bowel movement into!";
 		otherwise:
 			compute messing of D;
 		if diaper quest is 1 and chilli pepper tattoo is worn and the player is getting unlucky:
 			say "[bold type]As it comes out, it burns painfully like a spicy curry![roman type][line break]";
-			PainUp 1;
+			PainUp 10;
 		otherwise:
 			unless the player is upset about mess, arouse 300 + (rectum * 50);
 			if the player is ready to cum from messing, anally orgasm shamefully;
@@ -296,10 +356,10 @@ To compute messing:
 				say "[variable custom style][if the diaper addiction of the player < 7 and voluntarySquatting is 1]I'd better be able to find a way to clean up fucking quickly. This is nasty.[otherwise if (the diaper addiction of the player < 12 and voluntarySquatting is 1) or D is not diaper]I guess I should try and find a way to change now, before I make myself cry...[otherwise if the diaper addiction of the player < 7]How did I let this happen[one of][or] again[stopping]?![otherwise if the diaper addiction of the player < 12][one of]Am I really just as pathetic as an incontinent child now?[or]I guess it's time to accept that this is who I am now. A useless baby who can't even control when [he of the player] goes number two.[stopping][otherwise if the diaper addiction of the player < 15][one of]I can't believe how good that felt...[or]Mmmmph, that feels way too good...[stopping][otherwise]Uh-oh, I did a naughty thing[one of]! But it was so fun[or] again, now I have to find a Mummy or Daddy to change me again[or] again, but it feels so good when I can't help myself[or] again[stopping]![end if][roman type][line break]";
 			otherwise:
 				say "[variable custom style][if the diaper addiction of the player < 10][one of]I feel weirdly... comfortable. It must be this baby outfit I'm wearing affecting my mind![or]I can't believe how comfortable I feel in a messy diaper.[stopping][otherwise if the diaper addiction of the player < 15][one of]I wanna make it go ever bigger![or]I bet I can fit even more in here![at random][otherwise]Feels... soo... good![end if][roman type][line break]";
-		if the player is desperate to pee and wetting-valued <= 0:
+		if the player is bursting and wetting-valued <= 0 and the bladder-incontinence of the player < 5 and the rectum-incontinence of the player < 5: [at higher incontinence of either kind, automatic messing doesn't cause urinating]
 			now diaper-reaction-said is false; [prevents NPCs from reacting to the urination as well as the mess, which would be excessive]
 			now delayed urination is 2;
-			say "The act of messing your diaper also makes you wet yourself.";
+			say "The act of messing your [ShortDesc of D] also makes you wet yourself.";
 			try urinating;
 		if reactions-suppressed is 0: [If it's set to 1 then we already computed enema reactions and we don't want the NPCs to have two separate reactions to the same event.]
 			if there is a reactive monster and the player is able to speak:
@@ -331,6 +391,7 @@ To compute messing of (D - a knickers):
 			say "A monstrous snake of mush brutally pushes its way out of your butthole. Your [ShortDesc of D] crinkles and groans as it stretches and stretches to attempt to contain the impossibly bulky beast, as thick as your forearm and seemingly unending, like a train coming out of a tunnel with no end in sight. The front of your underwear is soon required to contain the log, filling every spare inch of space with soft yet substantial poop. By the time the craptastic boatload of muck has finished its journey into your pants, your [ShortDesc of D] has visibly doubled in size, now a weird balloon of brown around your midriff. You stay absolutely still, whimpering in shame. You can't move a muscle without making a sickening squelch as it rubs against you. ";
 		if the mess of D > 0 and diaper quest is 1, progress quest of priestess-service-quest;
 		MessUp D by rectum - 1;
+		progress quest of mess-quest;
 		if rectum >= 16:
 			say "[one of]Your [ShortDesc of D] has become a padded [if the diaper addiction of the player < 13]prison[otherwise]paradise[end if] [if the diaper addiction of the player < 13]within[otherwise]from[end if] which you are almost completely unwilling to [if the diaper addiction of the player < 13]move[otherwise]leave[end if]. You [if the diaper addiction of the player < 13]have no idea what to do[otherwise]had no idea messing yourself could feel this good[end if]![or]Once again your [ShortDesc of D] has become your messy [if the diaper addiction of the player < 13]prison[otherwise]paradise[end if]![stopping]";
 		otherwise if the mess of D <= 10:
@@ -386,7 +447,7 @@ To compute instant change of (M - a monster):
 
 To compute instant change appearance of (M - a monster):
 	now M is in the location of the player;
-	now M is interested;
+	interest M;
 	if M is friendly, anger M; [This just helps the correct inline hyperlinks turn up]
 	say "Suddenly you notice that [NameDesc of M] is looming over you[if M is robot or M is unintelligent]![otherwise]![line break][speech style of M]'What have we here?'[roman type][line break][end if]";
 	if M is royal guard and the player is not in the dungeon:
@@ -394,7 +455,7 @@ To compute instant change appearance of (M - a monster):
 
 To compute instant change appearance of (M - matron):
 	now M is in the location of the player;
-	now M is interested;
+	interest M;
 	if M is friendly, anger M; [This just helps the correct inline hyperlinks turn up]
 	say "Just as you finish [if the diaper addiction of the player < 9]one of the most humiliating experiences of your life[otherwise if the diaper addiction of the player < 15]your potty pants session[otherwise]you're incredibly fun potty pants session[end if], [NameDesc of M] suddenly arrives, adding to your shame. [big he of M] [if M is changing the player]continues to hold [his of M] hand pressed against your rear, making sure you realise that [he of M] is a full witness to your shame[otherwise]instantly notices your sagging incontinence aid, and before you can move a muscle [he of M] is standing over you, one hand pressed firmly against the warm posterior of your padding[end if].[line break][speech style of M]'[one of]Uh-oh, what do we have here?! How have you managed this, you naughty baby! Only the most pathetic of babies can't control their number twos! [or]Again?! You're so lucky I'm always here when you need me, really now. If you can't control your bottom you're going to have to be in nappies for a long, long time. [stopping][if rectum > 6][one of]And how in the heavens is there so much?! How long has it been since you last went potty?! [or][stopping][end if]Let's get you [if the player is not in Hotel22]back to the nursery and [end if]changed[one of] into something less stinky[or][stopping].'[roman type][line break]";
 	if the player is not in Hotel22:
@@ -412,7 +473,7 @@ To compute diaper mess reaction of (M - a person):
 		unless M is staff member:
 			let previous-friendly be 0;
 			if M is friendly, now previous-friendly is 1;
-			now M is interested;
+			interest M;
 			FavourDown M by 4;
 			if M is unfriendly and previous-friendly is 1, say BecomesAggressive of M;
 	otherwise:
@@ -434,7 +495,7 @@ Player tries to go number 2.
 +!]
 Check messing:
 	if the total squirtable fill of belly > 0, try squatting instead;
-	if the player is not feeling full and the player is incontinent, say "You've become so incontinent that you cannot feel or control this anymore! No matter how much you push, you feel absolutely nothing!" instead;
+	if the player is not feeling full and the player is rectum incontinent, say "You've become so incontinent that you cannot feel or control this anymore! No matter how much you push, you feel absolutely nothing!" instead;
 	if the player is able to use a toilet and the location of the player is toilets:
 		allocate 6 seconds;
 		if rectum > 1 and (the player is feeling full or rectum > 3 or rectum >= rectum-risky-level):

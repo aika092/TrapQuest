@@ -31,7 +31,7 @@ To compute mass collectible reward of (T - a sanity token):
 			let C be the raw anal sex addiction of the player;
 			let D be the raw vaginal sex addiction of the player;
 			let E be the raw oral sex addiction of the player;
-			let F be the raw bbc addiction of the player;
+			let F be the raw bbc addiction of the player / 2;
 			let G be the raw semen addiction of the player / 2;
 			if A > B and A > C and A > D and A > E and A > F and A > G:
 				SexAddictDown 1;

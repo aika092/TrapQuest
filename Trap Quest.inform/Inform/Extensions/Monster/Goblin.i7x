@@ -127,7 +127,7 @@ To compute painting entrance of (P - goblin-painting):
 	repeat with M running through goblins:
 		if M is not CG and M is not WG, now OG is M;
 	say "You point at [NameDesc of CG].[line break][speech style of WG]'Interesting, interesting... Well, before we continue, let us show you what you would have picked if you had chosen me!'[roman type][line break]This time, [NameDesc of WG] is speaking on [his of WG] own. [big he of WG] pulls aside the cloth covering [his of WG] crotch to reveal... an absolutely massive goblin [manly-penis].[line break][variable custom style]Holy shit.[line break][speech style of WG]'That's right, slut. Choose right, you win the pussy, and the ring! But choose wrong, and it's a double serving of goblin dick for you tonight! HAHAHA!'[roman type][line break][BigNameDesc of CG] coughs.[line break][speech style of WG]'We'll give you one last chance to change your mind. Are you sure you want to choose me?'[roman type][line break][BigNameDesc of OG] pipes up.[line break][speech style of OG]'Or do you want to switch to me?'[roman type][line break]";
-	now WG is interested;
+	interest WG;
 	reset multiple choice questions;
 	set numerical response 1 to "Stick with the [MediumDesc of CG].";
 	set numerical response 2 to "Switch to the [MediumDesc of OG].";
@@ -142,13 +142,13 @@ To compute painting entrance of (P - goblin-painting):
 	if TG is male:
 		say "Another huge goblin cock! You've lost! [BigNameDesc of RG] pulls [his of RG] dress to the side too, to reveal [his of RG] cute little pussy, with a diamond ring pierced into [his of RG] clit.[line break][speech style of TG]'AHAHAHAHA! DOUBLE GOBLIN DICK TIME!!!'[roman type][line break][BigNameDesc of WG] and [NameDesc of TG] turn aggressive, and begin to advance on you.";
 		repeat with M running through goblins:
-			now M is interested;
+			interest M;
 			if M is male, permanently anger M;
 			otherwise now M is unconcerned;
 	otherwise:
 		say "A soft, plump goblin pussy! And sparkling in the light, a large diamond ring can be seen, dangling, from [his of RG] pierced clit.[line break][speech style of RG]'Congratulations, hun. It's all yours. All you have to do is touch it.'[roman type][line break]";
 		repeat with M running through goblins:
-			now M is interested;
+			interest M;
 			now M is unconcerned.
 
 Check poking a goblin:

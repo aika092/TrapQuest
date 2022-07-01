@@ -176,7 +176,7 @@ To HookWait:
 		allocate 250 seconds;
 		now the soreness of asshole is 10;
 		say "So here you are, a human, reduced to a decorative ornament, dangling from your [asshole] by a hook, getting more and more tender and sore by the moment, with no way to release yourself. What an outrageous, and pathetic, situation.[paragraph break]By the time the ass hook trap resets, slackening and allowing you to escape, your [asshole] is on fire and there are tears streaming down your face.";
-		PainUp 5;
+		PainUp 50;
 		now shunk-happened is false;
 		compute default reset of X.
 

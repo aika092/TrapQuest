@@ -84,7 +84,8 @@ To compute cultist conversion cutscene of (M - a monster):
 		set up X;
 		summon X in the mansion;
 		now X is in Mansion23;
-	focus-consider N;
+	if diaper quest is 0, cutshow Figure of cultist abduction cutscene for N;
+	otherwise focus-consider N;
 	focus-consider M;
 	destroy M;
 	now M is permanently banished.
@@ -201,6 +202,7 @@ A later time based rule (this is the compute doom rule):
 			repeat with A running through alive unleashed acolytes:
 				DifficultyUp A by 1;
 			progress quest of doom-quest;
+			deploy a wisp;
 		otherwise if doom counter > 300 and doomed is 1:
 			say "[bold type]You feel a strange sense of being watched, and the atmosphere begins to feel oddly humid. It is almost like something horrible is breathing down your neck.[roman type][line break]";
 			now doomed is 2;
@@ -211,6 +213,7 @@ A later time based rule (this is the compute doom rule):
 			repeat with A running through alive unleashed acolytes:
 				DifficultyUp A by 1;
 			progress quest of doom-quest;
+			deploy a wisp;
 		otherwise if doom counter > 450 and doomed is 2:
 			say "[bold type]The air feels positively moist and somehow everything seems more unwholesome, an impressive feat given the content of the game normally.[roman type][line break]";
 			now doomed is 3;
@@ -218,6 +221,7 @@ A later time based rule (this is the compute doom rule):
 			repeat with A running through alive unleashed acolytes:
 				DifficultyUp A by 1;
 			progress quest of doom-quest;
+			deploy a wisp;
 		otherwise if doom counter > 600 and doomed is 3:
 			if the location of the player is not Mansion23:
 				say "[bold type]A horrible noise like a thousand screams of pure bliss echoes through the world itself, and the world itself takes on a soft pink cast for a moment. Something is drawing close to this world![roman type][line break]";
@@ -228,6 +232,7 @@ A later time based rule (this is the compute doom rule):
 			repeat with A running through alive unleashed acolytes:
 				DifficultyUp A by 1;
 			progress quest of doom-quest;
+			deploy a wisp;
 		otherwise if doom counter > 800 and doomed is 4:
 			if the location of the player is Mansion23:
 				if the class of the player is cultist:
@@ -291,6 +296,10 @@ To resolve doom:
 	if goth mannequin is woods dwelling and goth mannequin is off-stage, summon goth mannequin in the woods;
 	if diaper quest is 0, compute chosen birth;
 	now herald is in Mansion23;
+	deploy a wisp;
+	deploy a wisp;
+	deploy a wisp;
+	deploy a wisp;
 	progress quest of ritual-quest;
 	progress quest of doom-quest.
 

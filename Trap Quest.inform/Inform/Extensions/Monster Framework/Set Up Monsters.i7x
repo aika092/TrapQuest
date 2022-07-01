@@ -39,6 +39,7 @@ Every turn we quickly check if there are any NPCs in a weird state in the locati
 +!]
 To compute MonsterSetUpFix:
 	repeat with M running through nonexistent monsters in the location of the player:
+		say "Minor bug: [BigNameDesc of M] (in [location of M]) was spawned but not set up correctly. This has been fixed, but is worth reporting all the same.";
 		Set Up M.
 
 Set Up Monsters ends here.

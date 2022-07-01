@@ -79,7 +79,7 @@ To bowsettify (M - a monster):
 	now the bowsette-origin of bowsette is M;
 	set up bowsette;
 	now bowsette is in the location of M;
-	now bowsette is interested;
+	interest bowsette;
 	if M is male and (the girth of bowsette < the girth of M or M is unfriendly or (M is presenting as male and a random number between 1 and 2 is 1)):
 		say "Standing before you is a brown skinned [man of bowsette] with red hair, wearing a gothic black dress. [big he of bowsette] has a spikey black collar around [his of bowsette] neck and matching spikey bracelets. Sharp white horns sprout up above [his of bowsette] ears and [he of bowsette] has fanged teeth. You can detect the bulge of an average-sized [LongDickDesc of bowsette] underneath [his of bowsette] skirt.[line break][speech style of bowsette]'What the hell?! [if the girth of bowsette < the girth of M]My [manly-penis]! No, no. no! My [manly-penis] is too small[otherwise if M is unfriendly]What evil sorcery is this[otherwise]Boobs?! Long nails?! I'm not a lady[end if]! Change me back NOW! RAAAWR!'[roman type][line break][big he of bowsette] tries to take the crown off of [his of bowsette] head but it won't budge. [big he of bowsette] looks very frustrated and angry.";
 		cutshow figure of angry bowsette transform cutscene for bowsette;
@@ -329,11 +329,11 @@ To compute angry punishment of (M - bowsette):
 				destroy C;
 		otherwise:
 			say "[BigNameDesc of M] rakes at your skin with [his of M] sharp nails. It's extremely painful!";
-			PainUp 2;
+			PainUp 20;
 		cutshow Figure of angry bowsette furious cutscene for M;
 	otherwise:
 		say "For the briefest of moments, [BigNameDesc of M] breathes fire, stinging your skin.";
-		PainUp 1;
+		PainUp 10;
 		say "[speech style of M]'Oops! I didn't mean to do that.'[roman type][line break][BigNameDesc of M] look embarrassed.";
 		cutshow Figure of happy bowsette fire cutscene for M;
 
@@ -405,8 +405,9 @@ To compute punishment of (P - bowsette-dq-punishments):
 	say "[BigNameDesc of bowsette] punches the air, and an invisible cube, hovering in mid-air, suddenly becomes visible where [he of bowsette] punched. There is a question mark icon on each side. Next, a giant purple mushroom appears from the top, and begins to somehow glide along the upper surface as if dragged by an invisible force, and then drops to the ground once it is progressed to the edge of the cube. From here, it begins to travel in a straight line towards you.[line break][speech style of bowsette]'Hold still now...'[roman type][line break][BigNameDesc of bowsette] holds you in place and prevents you from moving as the mushroom approaches you. When it finally touches you, there's a weird digital sound effect, and it just disappears. What has it done to you?!";
 	let R be a random number between 1 and 2;
 	if R is 1:
-		say "You realise that you can no longer feel your bladder[if diaper messing >= 3] or bowels[end if].[line break][variable custom style][if the player is able to speak]'How long is this going to last?!'[line break][speech style of bowsette]'Oh for a good few accidents...'[otherwise]How long is this going to last?![end if][roman type][line break]";
-		increase temporary-incontinence by 3;
+		say "You realise that you can no longer feel your [if diaper messing >= 3]bowels[otherwise]bladder[end if].[line break][variable custom style][if the player is able to speak]'How long is this going to last?!'[line break][speech style of bowsette]'Oh for a good few accidents...'[otherwise]How long is this going to last?![end if][roman type][line break]";
+		if diaper messing >= 3, increase temporary-rectum-incontinence by 3;
+		otherwise increase temporary-bladder-incontinence by 3;
 	otherwise:
 		say "You feel less strong...";
 		StrengthDown 1;

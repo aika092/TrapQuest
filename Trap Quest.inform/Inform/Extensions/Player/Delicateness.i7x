@@ -58,62 +58,72 @@ To UnflinchingPainUp (X - a number):
 	PainUp X;
 	now no-flinching is false.
 
+[A standard pain rating is 10.]
 To PainUp (X - a number): [This function is anticipated to output some kind of flavour text when called]
-	let timesTicked be 0;
+	let pleasureTicks be 0; [how much pain has been redirected to pleasure?]
+	let timesTicked be 0; [how many times did pain-balance go up?]
 	let K be 0;
 	repeat with C running through worn confidence clothing:
 		if C is blessed, increase K by 1;
 		increase K by 1;
 	if X > 0:
-		increase pain-duration by X;
+		increase pain-duration by (X + 9) / 10;
 		if the trophy-mode of pain-trophy > 0:
-			say "[one of]Thanks to the magic of [NameDesc of pain-trophy], the pain feels so good![or]Thanks to the magic of [NameDesc of pain-trophy], the painful sensation feels incredible![or][BigNameDesc of pain-trophy][']s magic turns the sensation of pain into sexual pleasure![then at random]";
-			stimulate vagina;
-			check for arousal change; [might have happened in the middle of a big loop]
-			unless vagina is orgasming, SlowSexAddictUp X; [This can trigger a shameful orgasm. If it does, we don't increase sex addiction any further]
-			now X is 0;
-			if the raw sex addiction of the player >= 20:
-				say "Your brain is now a mushy mess of pleasure-obsessed nymphomania. [bold type]You feel the magical effect of [NameDesc of pain-trophy] [bold type]deactivate itself.[roman type][line break]";
-				now the trophy-mode of pain-trophy is 0;
+			increase pleasureTicks by X / 2;
+			decrease X by pleasureTicks;
+		if spank-heart tattoo is worn or (the raw sex addiction of the player >= 20 and the raw delicateness of the player >= 20):
+			increase pleasureTicks by X / 2;
+			decrease X by pleasureTicks;
 	while X > 0:
 		decrease X by 1;
 		if a random number between 1 and 8 > K: [Sometimes confidence clothing stops delicateness increases]
+			increase pain-balance by 1;
 			increase timesTicked by 1;
-			if the raw delicateness of the player < 20:
-				if X is 0 or the delicateness of the player is 19: [We only want to output 1 thing from this even if delicateness goes up multiple times]
-					say "[variable custom style][if the delicateness of the player < 9][one of]Grr[or]Aaah[or]Ouch[or]Fuck[or]Shit[at random][otherwise if the delicateness of the player < 15][one of]Aaah[or]Ouch[or]Ahh, it hurts too bad[or]Nooo, I don't want to cry[or]Waaah[at random][otherwise][one of]I'm gonna cry[or]Waaah, it hurts[or]Ouchies[or]Waaah[at random][end if]![roman type][line break]";
-					if highest delicateness <= the delicateness of the player and (pain-balance > 0 or timesTicked >= 2): [We only say this bit if delicateness actually goes up]
-						if the delicateness of the player is 1, say "[first custom style]Isn't this supposed to be a FUN game?![roman type][line break]";
-						if the delicateness of the player is 2, say "[first custom style]I won't let them break me![roman type][line break]";
-						if the delicateness of the player is 3, say "[first custom style]I've got to stay strong![roman type][line break]";
-						if the delicateness of the player is 4, say "[first custom style]This is outrageous![roman type][line break]";
-						if the delicateness of the player is 5, say "[first custom style]I'm going to find whoever created this game and kill them![roman type][line break]";
-						if the delicateness of the player is 6, say "[variable custom style]Maybe relaxing and trying to enjoy whatever happens is the best way to survive down here...[roman type][line break]";
-						if the delicateness of the player is 7, say "[variable custom style]Oh my god, if my friends could see me right now, they'd think I was being such a wimp.[roman type][line break]";
-						if the delicateness of the player is 8, say "[variable custom style]They are NOT going to make me cry! Oh god, I'm going to cry aren't I?[roman type][line break]";
-						if the delicateness of the player is 9, say "[variable custom style]I can't stop whimpering... [if there is a worn diaper]Maybe I deserve to wear diapers.[end if][roman type][line break]";
-						if the delicateness of the player is 10, say "[variable custom style]I'm not strong enough to tolerate this much pain[if there is a monster in the location of the player]. If someone's bigger and stronger than me, I should probably just do what they say[end if]...[roman type][line break]";
-						if the delicateness of the player is 11, say "[second custom style]Sometimes when things are tough I'm going to cry. There's nothing wrong with that, right?[roman type][line break]";
-						if the delicateness of the player is 12, say "[second custom style]If I'm obedient, hopefully people will treat me gently?[roman type][line break]";
-						if the delicateness of the player is 13, say "[second custom style][if diaper lover >= 1]So what if I sometimes act like a bit of a baby?[otherwise]I'm not brave, but hey, not everyone is, right?[end if][roman type][line break]";
-						if the delicateness of the player is 14, say "[second custom style]I need someone big and strong to protect me![roman type][line break]";
-						if the delicateness of the player is 15, say "[second custom style][if diaper lover >= 1]I'm just a fragile little baby[boy of the player], why is everyone being so mean to me in this place?[otherwise if the player is a sissy]I'm just a fragile little sissy, why does everyone have to be so mean to me?[otherwise]I feel so small and fragile...[end if][roman type][line break]";
-						if the delicateness of the player is 16, say "[second custom style]Won't anyone take GENTLE care of little me?![roman type][line break]";
-						if the delicateness of the player is 17, say "[second custom style][if diaper lover >= 1]I'm so scared of getting hurt, I almost don't want to fight back at all...[end if][roman type][line break]";
-						if the delicateness of the player is 18, say "[second custom style][if diaper lover >= 1 and there is a matron in the location of the player]Nana knows what's best for me. I'll try to be a good [boy of the player] for [him of a matron].[otherwise if diaper lover >= 1]I want my Nana![otherwise]*sniff* I want my mummy.[end if][roman type][line break]";
-						if the delicateness of the player is 19, say "[second custom style][if the bimbo of the player > 17][NameBimbo] deserves[otherwise]I deserve[end if][if there is a worn diaper] to be punished, I'm a very naughty nappied baby![otherwise if diaper lover >= 1] to be kept in nappies for ever and ever after this, I'm so naughty![otherwise] to be punished, I'm a bad [boy of the player].[end if][roman type][line break]";
-				if pain-balance > 0:
-					increase the raw delicateness of the player by 1;
-					now pain-balance is 0;
-				otherwise:
-					increase pain-balance by 1;
-		if X is 0:
-			if spank-heart tattoo is worn and the player is able to orgasm and (the player is extremely horny or (the player is very horny and the player is getting unlucky)):
-				say "[bold type]Your [spank-heart tattoo][bold type] sends sparks of pleasure down to your crotch![roman type][line break][if the player is not extremely horny][GotUnluckyFlav][end if]";
-				vaginally orgasm shamefully;
-			if no-flinching is false:
-				let T be the substituted form of "As you [one of]recoil[or]flinch[or]tense up[in random order] with pain,";
-				check sudden spit and expulsion with reason T;
+			if pain-balance >= 20:
+				if the raw delicateness of the player < 20, increase the raw delicateness of the player by 1;
+				now pain-balance is 0;
+	if timesTicked > 0:
+		say "[variable custom style][if the delicateness of the player < 9][one of]Grr[or]Aaah[or]Ouch[or]Fuck[or]Shit[at random][otherwise if the delicateness of the player < 15][one of]Aaah[or]Ouch[or]Ahh, it hurts too bad[or]Nooo, I don't want to cry[or]Waaah[at random][otherwise][one of]I'm gonna cry[or]Waaah, it hurts[or]Ouchies[or]Waaah[at random][end if]![roman type][line break]";
+		if highest delicateness <= the delicateness of the player: [We only say this bit if delicateness actually goes up]
+			if the delicateness of the player is 1, say "[first custom style]Isn't this supposed to be a FUN game?![roman type][line break]";
+			if the delicateness of the player is 2, say "[first custom style]I won't let them break me![roman type][line break]";
+			if the delicateness of the player is 3, say "[first custom style]I've got to stay strong![roman type][line break]";
+			if the delicateness of the player is 4, say "[first custom style]This is outrageous![roman type][line break]";
+			if the delicateness of the player is 5, say "[first custom style]I'm going to find whoever created this game and kill them![roman type][line break]";
+			if the delicateness of the player is 6, say "[variable custom style]Maybe relaxing and trying to enjoy whatever happens is the best way to survive down here...[roman type][line break]";
+			if the delicateness of the player is 7, say "[variable custom style]Oh my god, if my friends could see me right now, they'd think I was being such a wimp.[roman type][line break]";
+			if the delicateness of the player is 8, say "[variable custom style]They are NOT going to make me cry! Oh god, I'm going to cry aren't I?[roman type][line break]";
+			if the delicateness of the player is 9, say "[variable custom style]I can't stop whimpering... [if there is a worn diaper]Maybe I deserve to wear diapers.[end if][roman type][line break]";
+			if the delicateness of the player is 10, say "[variable custom style]I'm not strong enough to tolerate this much pain[if there is a monster in the location of the player]. If someone's bigger and stronger than me, I should probably just do what they say[end if]...[roman type][line break]";
+			if the delicateness of the player is 11, say "[second custom style]Sometimes when things are tough I'm going to cry. There's nothing wrong with that, right?[roman type][line break]";
+			if the delicateness of the player is 12, say "[second custom style]If I'm obedient, hopefully people will treat me gently?[roman type][line break]";
+			if the delicateness of the player is 13, say "[second custom style][if diaper lover >= 1]So what if I sometimes act like a bit of a baby?[otherwise]I'm not brave, but hey, not everyone is, right?[end if][roman type][line break]";
+			if the delicateness of the player is 14, say "[second custom style]I need someone big and strong to protect me![roman type][line break]";
+			if the delicateness of the player is 15, say "[second custom style][if diaper lover >= 1]I'm just a fragile little baby[boy of the player], why is everyone being so mean to me in this place?[otherwise if the player is a sissy]I'm just a fragile little sissy, why does everyone have to be so mean to me?[otherwise]I feel so small and fragile...[end if][roman type][line break]";
+			if the delicateness of the player is 16, say "[second custom style]Won't anyone take GENTLE care of little me?![roman type][line break]";
+			if the delicateness of the player is 17, say "[second custom style][if diaper lover >= 1]I'm so scared of getting hurt, I almost don't want to fight back at all...[end if][roman type][line break]";
+			if the delicateness of the player is 18, say "[second custom style][if diaper lover >= 1 and there is a matron in the location of the player]Nana knows what's best for me. I'll try to be a good [boy of the player] for [him of a matron].[otherwise if diaper lover >= 1]I want my Nana![otherwise]*sniff* I want my mummy.[end if][roman type][line break]";
+			if the delicateness of the player is 19, say "[second custom style][if the bimbo of the player > 17][NameBimbo] deserves[otherwise]I deserve[end if][if there is a worn diaper] to be punished, I'm a very naughty nappied baby![otherwise if diaper lover >= 1] to be kept in nappies for ever and ever after this, I'm so naughty![otherwise] to be punished, I'm a bad [boy of the player].[end if][roman type][line break]";
+			if the delicateness of the player is 20, say "[second custom style]I love it! I love how much it hurts! I deserve this![roman type][line break]";
+	if no-flinching is false:
+		let R be a random number between 11 and 20;
+		if debuginfo > 0, say "[input-style]Flinch check: d10+9 ([R]) | [timesTicked + the delicateness of the player].5 = ([delicateness of the player]) delicateness + ([timesTicked].5) pain rating[roman type][line break]";
+		if timesTicked + the delicateness of the player >= R:
+			let T be the substituted form of "As you [one of]recoil[or]flinch[or]tense up[in random order] with pain,";
+			check sudden spit and expulsion with reason T;
+	if pleasureTicks > 0:
+		let T be "[one of]magic of [NameDesc of pain-trophy][or][NameDesc of pain-trophy][']s magic[purely at random]";
+		if spank-heart tattoo is worn:
+			if the trophy-mode of pain-trophy is 1, now T is "[T] and [spank-heart tattoo]";
+			otherwise now T is "[spank-heart tattoo]";
+		if the raw sex addiction of the player >= 20 and the raw delicateness of the player >= 20, now T is "nymphomaniacal and ultra-submissive nature of your mind";
+		say "[one of]Thanks to the [T], the pain feels so good![or]Thanks to the [T], the painful sensation feels incredible![or]The [T] turns the sensation of pain into sexual pleasure![then at random]";
+		stimulate vagina;
+		check for arousal change; [might have happened in the middle of a big loop]
+		unless vagina is orgasming, SlowSexAddictUp (pleasureTicks + 9) / 10; [This can trigger a shameful orgasm. If it does, we don't increase sex addiction any further]
+		if the raw sex addiction of the player >= 20 and the trophy-mode of pain-trophy > 0:
+			say "Your brain is now a mushy mess of pleasure-obsessed nymphomania. [bold type]You feel the magical effect of [NameDesc of pain-trophy] [bold type]deactivate itself.[roman type][line break]";
+			now the trophy-mode of pain-trophy is 0;
 	if highest delicateness < the delicateness of the player, now highest delicateness is the delicateness of the player.
 
 To DelicateUp (X - a number):
@@ -148,5 +158,22 @@ To SilentlyDelicateDown (X - a number):
 	while X > 0:
 		decrease X by 1;
 		if the raw delicateness of the player > 1, decrease the raw delicateness of the player by 1.
+
+[A standard fear rating is 10.]
+To FearUp (X - a number):
+	FearUp X with reason "".
+
+To FearUp (X - a number) with reason (T - a text): [This function is anticipated to output some kind of flavour text when called]
+	if X > 10:
+		say "[variable custom style][if the player is not feeling submissive]FUCK[otherwise][one of]AAAAAH[or]EEEEEK[in random order][end if]![roman type][line break]";
+	otherwise if X > 5:
+		say "[variable custom style][if the player is feeling dominant][one of]Holy shit[or]Spooky[or]Woah[in random order].[otherwise if the player is not feeling submissive][one of]Woah[or]Fuck[or]Shit[or]Holy shit[in random order]![otherwise][one of]Aaaah[or]Eeeek[or]Waaah[in random order]![end if][roman type][line break]";
+	otherwise:
+		say "[variable custom style][one of]Oh[or]Oh my[or]Gosh[or]Jeez, that made me jump[or]I was not expecting that[in random order]![roman type][line break]";
+	let R be a random number between 11 and 20;
+	if debuginfo > 0, say "[input-style]Flinch check: d10+9 ([R]) | [X + the delicateness of the player].5 = ([delicateness of the player]) delicateness + ([X].5) fear rating[roman type][line break]";
+	if X + the delicateness of the player >= R:
+		if T is "", now T is the substituted form of "As you [one of]recoil[or]flinch[or]tense up[in random order] with fear,";
+		check sudden spit and expulsion with reason T.
 
 Delicateness ends here.

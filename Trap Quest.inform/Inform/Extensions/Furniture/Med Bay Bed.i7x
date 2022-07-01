@@ -35,7 +35,26 @@ To compute furniture resting on (F - med bay bed):
 			now the body soreness of the player is 0;
 			now the fatigue of the player is 0;
 			let R be a random number between 1 and 2;
-			if R is 1 and face is not occupied:
+			if the milk volume of breasts >= the flesh volume of breasts / 2 or (the ready-for-milking of milking-quest is 1 and the class of the player is cowgirl):
+				say "[line break][speech style of nurse]'Oh and darling, while you're resting there, let's relieve your udders of some of this pressure, don't you think?'[roman type][line break][big he of nurse] doesn't bother to wait for you to respond! [big he of nurse] latches two suckers to your nipples, and turns a large milking machine on!";
+				let MV be 50 - the milk volume of breasts;
+				if MV < 4, now MV is 4;
+				now MV is the square root of MV;
+				if cow-ears is off-stage and cow-ears is actually summonable and a random number between 1 and MV is 1:
+					say "As you are getting milked, a headband with fake cow ears appears on your head. You let out a soft involuntary [variable custom style]'moo'[roman type].";
+					summon cow-ears cursed;
+				otherwise if the class of the player is royal slave and cow print basque is not worn:
+					class summon cow print basque;
+					if cow print basque is not worn:
+						let D be a random worn dress;
+						if D is nothing, now D is a random worn breast covering clothing;
+						if D is clothing, silently transform D into cow print basque;
+					TopDisplace cow print basque;
+					say "A [ShortDesc of cow print basque] shimmers into place over your body!";
+				now the milk volume of breasts is 0;
+				say "After the machine has drained your nipples of all the milk, [NameDesc of nurse] detaches the suction cups.";
+				progress quest of milking-quest;
+			otherwise if R is 1 and face is not occupied:
 				if diaper quest is 0:
 					if the player is top heavy or a random number between 1 and 2 is 1:
 						say "[line break][speech style of nurse]'Now darling, while you're resting there, why don't you do something for me?'[roman type][line break][big he of nurse] doesn't bother to wait for you to respond! ";

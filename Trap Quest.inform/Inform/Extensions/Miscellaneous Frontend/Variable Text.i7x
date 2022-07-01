@@ -240,7 +240,7 @@ To say vagina:
 		say "[one of]cunt[or]snatch[or]pussy[or]cunt[or]main cum dump[or][if pregnancy fetish is 1]baby maker[otherwise]main fuckhole[end if][or]pussy[or]clunge[as decreasingly likely outcomes]".
 
 To say asshole: [#LXorDD: I don't add the LatexFlav here because it might be a little repetitive, and also because you could only see the sheen by looking in a mirror.]
-	if the player is gendered male:
+	if the player is sexed male:
 		if the raw intelligence of the player < 5 and diaper lover >= 1:
 			say "[one of]bum[or]butt[or]no-no[or]muffin[as decreasingly likely outcomes]";
 		otherwise if the bimbo of the player < 8 or diaper quest is 1:
@@ -270,8 +270,8 @@ To say buttcheeks:
 		say "[one of]bum[or]bum-bum[or]tooshie[as decreasingly likely outcomes]".
 
 To say semen-adjective:
-	if the semen addiction of the player + 3 <= the semen taste addiction of the player and the semen addiction of the player - 3 >= the semen taste addiction of the player, say "[if the semen taste addiction of the player < 3]appalling [otherwise if the semen taste addiction of the player < 5]disgusting [otherwise if the semen taste addiction of the player < 8]unpleasant [otherwise if the semen taste addiction of the player < 10]strange [otherwise if the semen taste addiction of the player < 13]strangely pleasant [otherwise if the semen taste addiction of the player < 17][one of]delicious[or]tasty[at random] [otherwise][one of]heavenly[or]yummy[at random] [end if]"; [if the semen addictions are too far apart this may not make sense]
-	otherwise say "salty ".
+	if the semen addiction of the player + 3 <= the semen taste addiction of the player and the semen addiction of the player - 3 >= the semen taste addiction of the player, say "[if the semen taste addiction of the player < 3]appalling[otherwise if the semen taste addiction of the player < 5]disgusting[otherwise if the semen taste addiction of the player < 8]unpleasant[otherwise if the semen taste addiction of the player < 10]strange[otherwise if the semen taste addiction of the player < 13]strangely pleasant[otherwise if the semen taste addiction of the player < 17][one of]delicious[or]tasty[at random][otherwise][one of]heavenly[or]yummy[at random][end if]"; [if the semen addictions are too far apart this may not make sense]
+	otherwise say "salty".
 
 To say semen:
 	if the class of the player is santa's little helper:
@@ -281,7 +281,7 @@ To say semen:
 	otherwise if the semen addiction of the player < 13:
 		say "[one of]cum[or]spunk[or]jizz[or]jism[or]spooge[or]semen[or]man cream[as decreasingly likely outcomes]";
 	otherwise:
-		say "[if a random number between the semen addiction of the player and 20 > 19][semen-adjective][end if][one of]cum[or][if pregnancy fetish is 1]baby batter[otherwise]man juice[end if][or][if pregnancy fetish is 1]baby gravy[otherwise]man milk[end if][or]dick juice[or]happy batter[or]cock snot[as decreasingly likely outcomes]".
+		say "[if a random number between the semen addiction of the player and 20 > 19][semen-adjective] [end if][one of]cum[or][if pregnancy fetish is 1]baby batter[otherwise]man juice[end if][or][if pregnancy fetish is 1]baby gravy[otherwise]man milk[end if][or]dick juice[or]happy batter[or]cock snot[as decreasingly likely outcomes]".
 
 To say tasted-semen:
 	say "[semen-adjective] [semen]".

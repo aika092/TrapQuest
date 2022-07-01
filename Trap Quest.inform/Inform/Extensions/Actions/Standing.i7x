@@ -2,6 +2,45 @@ Standing by Actions begins here.
 
 The ability to stand rules is a rulebook.
 
+This is the starting rooms prevent standing rule:
+	if the player is in Start:
+		if auto is 0, say "How did you even get this message to show up? Well played. Email aika for a prize. (NB: the prize is penis)";
+		rule fails;
+	if the player is in Capsule:
+		if auto is 0, say "There's not enough space to stand while you're lying down in the capsule.";
+		rule fails.
+The starting rooms prevent standing rule is listed in the ability to stand rules.
+
+This is the flying prevents standing rule:
+	if the player is flying:
+		if auto is 0, say "You're not even touching the ground!";
+		rule fails.
+The flying prevents standing rule is listed in the ability to stand rules.
+
+This is the already standing prevents standing rule:
+	if the player is upright:
+		if auto is 0, say "You are already standing up!";
+		rule fails.
+The already standing prevents standing rule is listed in the ability to stand rules.
+
+This is the body soreness prevents standing rule:
+	if the body soreness of the player is 10:
+		if auto is 0, say "Your legs and body have been ruined by this game, you're not going to be able to stand up until you get some proper rest or healing.";
+		rule fails.
+The body soreness prevents standing rule is listed in the ability to stand rules.
+
+This is the standing capability prevents standing rule:
+	if the standing capability of the player <= 0:
+		if auto is 0, say "Your legs are completely worn out, you'll have to wait a while.";
+		rule fails.
+The standing capability prevents standing rule is listed in the ability to stand rules.
+
+This is the surrender prevents standing rule:
+	if surrendered is 1 and the player is in danger:
+		if auto is 0, say "You recently surrendered, you're too scared to get back up until the [if the number of dangerous monsters in the location of the player is 1]enemy is[otherwise]enemies are[end if] gone.";
+		rule fails.
+The surrender prevents standing rule is listed in the ability to stand rules.
+
 This is the gloryhole prevents standing rule:
 	if gloryhole is penetrating a body part or gloryhole is grabbing the player:
 		if auto is 0, say "The magic of the gloryhole is preventing you!";
@@ -49,21 +88,17 @@ To say StandSubduedFlav of (C - a clothing):
 
 Standing is an action applying to nothing.
 
+Check standing when the throne is triggered:
+	dethrone the player instead.
+
 Check standing:
 	if player-currently-resting is 1, do nothing instead;
-	if the player is in Start, say "How did you even get this message to show up? Well played. Email aika for a prize. (NB: the prize is penis)" instead;
-	if the player is in Capsule, say "There's not enough space to stand while you're lying down in the capsule." instead;
-	if the player is flying, say "You're not even touching the ground!" instead;
 	let B be the weight of the player;
-	if the throne is triggered, dethrone the player instead;
-	if the player is upright, say "You are already standing up!" instead;
-	if the body soreness of the player is 10, say "Your legs and body have been ruined by this game, you're not going to be able to stand up until you get some proper rest or healing." instead;
-	if the standing capability of the player <= 0, say "Your legs are completely worn out, you'll have to wait a while." instead;
-	if the player is subdued:
-		say "[StandSubduedFlav of random worn subduing clothing]";
-		try waiting instead;
 	follow the ability to stand rules;
 	if the rule failed, do nothing instead;
+	if the player is subdued:
+		say StandSubduedFlav of random worn subduing clothing;
+		try waiting instead;
 	if the player is monster stuck:
 		if the player is monster fucked, try resisting instead;
 		say GrabbedStandingBlock of a random monster grabbing the player instead;
@@ -74,7 +109,6 @@ Check standing:
 			do nothing instead;
 		otherwise:
 			say "You are stuck to the ground!" instead;
-	if surrendered is 1 and the player is in danger, say "You recently surrendered, you're too scared to get back up until the [if the number of dangerous monsters in the location of the player is 1]enemy is[otherwise]enemies are[end if] gone." instead;
 	repeat with M running through expectant monsters:
 		now the last-interaction of M is 0; [Naughty player, standing is not submissive!]
 	if the largeness of hair > 7:
@@ -85,7 +119,7 @@ Check standing:
 			if debuginfo > 0, say "[input-style][ShortDesc of M][']s stand on long hair check: [ShortDesc of M][']s block skill d[difficulty of M] ([RM]) | [H].5 = (20.5) hair stand difficulty check - ([largeness of hair]) player hair length [if there are worn scrunchies]+ ([2 * number of worn scrunchies]) ponytail / pigtails bonus[end if][roman type][line break]";
 			if RM > H:
 				allocate 6 seconds;
-				say "[LongHairStandingBlock of M]" instead;
+				say LongHairStandingBlock of M instead;
 	if puppy tail plug is worn and puppy tail plug is cursed:
 		repeat with M running through dangerous flightless human monsters in the location of the player: [This is the monster standing on their plug.]
 			allocate 6 seconds;
@@ -98,7 +132,7 @@ Check standing:
 			if debuginfo > 0, say "[input-style][ShortDesc of M][']s grab short hair check: [ShortDesc of M][']s block skill d[difficulty of M] ([RM]) | [H].5 = (20.5) grab difficulty check - ([largeness of hair]) player hair length [if there are worn scrunchies]- ([2 * number of worn scrunchies]) ponytail / pigtails penalty[end if][roman type][line break]";
 			if RM > H:
 				allocate 6 seconds;
-				say "[StandingBlock of M]" instead;
+				say StandingBlock of M instead;
 	[
 	Summary of standing mechanics:
 	If your fatigue is greater than strength times 15 (modified by body soreness where soreness 1 is 100% and soreness 10 is 10%), you fall over.

@@ -270,6 +270,7 @@ To Dump (X - a bottle):
 			UrinePuddleUp the doses of X;
 		if lactation fetish is 1:
 			MilkPuddleUp the doses of X;
+	if X is non-empty, trigger spill-wisp-trigger;
 	DoseEmpty X.
 
 [!<DestroyBottle>+

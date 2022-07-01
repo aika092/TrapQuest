@@ -1,5 +1,11 @@
 Monster Functions by Monster Framework begins here.
 
+To interest (M - a monster):
+	now M is interested;
+	now the boredom of M is 0;
+	now the latest-appearance of M is the appearance of the player;
+	if diaper quest is 1, now the latest-cringe of M is the cringe appearance of the player.
+
 To deinterest (M - a monster):
 	bore M for 0 seconds.
 
@@ -25,7 +31,7 @@ To compute common boredom of (M - a monster) for (N - a number) seconds:
 	now the last-tripped of M is 0;
 	now M is not trip-warned;
 	now the wrangle-bonus of M is 0;
-	if debugmode > 1, say "Deinteresting [ShortDesc of M]. Latest appearance seen is [latest-appearance of M].";
+	if debugmode > 1, say "Deinteresting [ShortDesc of M] for [N] seconds. Latest appearance seen is [latest-appearance of M].";
 	now the latest-appearance of M is 0;
 	if diaper quest is 1, now the latest-cringe of M is 0;
 	[now the latest-appearance of M is the appearance of the player;
@@ -80,15 +86,17 @@ To finally destroy (M - a monster):
 	if the player is in the location of M, decrease the charge of the elder altar by the difficulty of M * 10;
 	if the player is in the location of M and the charge of hotel altar > 0, decrease the charge of hotel altar by the difficulty of M * 10;
 	now the times-met of M is 0;
-	now the blue-balls of M is 0;
 	now the times-submitted of M is 0;
 	now the times-dominated of M is 0;
 	now the sex-length of M is 0;
 	now the collar-pulled of M is 0;
 	now M is not soul-stolen;
 	now the time-alive of M is 0;
-	if M is bride-consort, progress quest of betrothal-quest;
+	if M is bride-consort:
+		now the ceremony of betrothal-quest is true;
+		progress quest of betrothal-quest;
 	remove M from play;
+	if debugmode > 1, say "[BigNameDesc of M] is now in [location of M].";
 	now the monstersetup of M is 0;
 	reset M.
 
@@ -123,7 +131,7 @@ To reset (M - a monster): [We do this when the player faints to all monsters, ev
 				finally destroy M.
 
 To unique reset (M - a monster):
-	do nothing.
+	now the blue-balls of M is 0.
 
 To loot (M - a monster):
 	let X be nothing;

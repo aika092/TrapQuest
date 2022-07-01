@@ -208,7 +208,7 @@ To compute shooting attack of (M - unicorn):
 		say "The beam hits you [TargetName of B]! You feel a rush of stinging pain and tiredness!";
 		compute M hurting B;
 		FatigueUp 25;
-		PainUp 1;
+		PainUp 10;
 	otherwise:
 		say "It's fast, but somehow you're able to dodge it without being hit.";
 	now M is not unicorn-charged.
@@ -286,7 +286,7 @@ To compute angry punishment of (M - unicorn):
 			decrease the raw-magic-modifier of C by 1;
 	otherwise:
 		say "Your stomach turns over as a harsh burning sensation passes through your whole body, leaving you with a long lasting reminder of all the pain you brought on yourself for your resistance.";
-	PainUp 1.
+	PainUp 10.
 
 To check forgiveness of (M - unicorn):
 	if the class of the player is priestess and a random number between (the blue-balls of M * -1) and (the charisma of the player * 10) >= 10:
@@ -362,7 +362,7 @@ To compute (M - unicorn) pulling out of (F - a fuckhole):
 			destroy C;
 	otherwise:
 		say "Your stomach turns over as a harsh burning sensation passes through your whole body, leaving you with a long lasting reminder of all the pain you brought on yourself for your resistance.";
-	PainUp 1.
+	PainUp 10.
 
 To say CreampieFlav of (M - unicorn) in (F - a fuckhole):
 	if the reaction of the player is 1, say "[one of]Despite your struggling, [NameDesc of M] holds onto you with an iron grip, mumbling incoherently as [he of M] floods your [variable F] with [his of M] [semen].[or]Although you struggle, [NameDesc of M] holds on with an unexpectedly tight grip, moaning incoherently as [he of M] pumps your [variable F] full of [semen].[or][BigNameDesc of M] rapidly speeds up, ignoring your struggling with a surprisingly powerful grip as [he of M] shoots wave after wave of fresh, creamy [semen] into your [variable F].[at random] The heat slowly dissipates as [his of M] orgasm tapers off, and [he of M] slumps over asleep as [his of M] [DickDesc of M] slides out.";

@@ -42,49 +42,86 @@ To BladderDown (X - a number):
 	if the bladder of the player < 0:
 		now the bladder of the player is 0.
 
-[How high will the game allow incontinence to go?]
-To decide which number is the max-incontinence of the player:
+[How high will the game allow bladder incontinence to go?]
+To decide which number is the max-bladder-incontinence of the player:
 	decide on 10 - (incontinence protection * 2).
 
-temporary-incontinence is a number that varies.
+The player has a number called raw-bladder-incontinence.
+
+To BladderIncontinenceUp (N - number):
+	if the raw-bladder-incontinence of the player < the max-bladder-incontinence of the player:
+		say "You feel your ability to hold onto your bladder weakening.";
+		SilentlyBladderIncontinenceUp N.
+To SilentlyBladderIncontinenceUp (N - number):
+	if the raw-bladder-incontinence of the player < the max-bladder-incontinence of the player:
+		increase the raw-bladder-incontinence of the player by N;
+		if the raw-bladder-incontinence of the player > the max-bladder-incontinence of the player, now the raw-bladder-incontinence of the player is the max-bladder-incontinence of the player.
+
+temporary-bladder-incontinence is a number that varies.
 To progress temporary incontinence:
-	if temporary-incontinence > 0:
+	if temporary-bladder-incontinence > 0:
 		let DA be 0;
-		if the player is diaper aware, now DA is 1;
-		decrease temporary-incontinence by 1;
-		if temporary-incontinence is 0 and the incontinence of the player < the max-incontinence of the player:
+		if the player is bladder diaper aware, now DA is 1;
+		decrease temporary-bladder-incontinence by 1;
+		if temporary-bladder-incontinence is 0 and the bladder-incontinence of the player < the max-bladder-incontinence of the player:
 			say "[bold type]You feel that the magic curse that was making you completely incontinent has finally lifted![line break][variable custom style]I can feel my bladder again![roman type][line break]";
-			if DA is 0 and the player is diaper aware: [Player has regained the ability to detect when they urinate into a diaper]
+			if DA is 0 and the player is bladder diaper aware: [Player has regained the ability to detect when they urinate into a diaper]
+				let C be a random worn diaper;
+				if C is diaper, compute awakened state check of C;
+	if temporary-rectum-incontinence > 0:
+		let DA be 0;
+		if the player is rectum diaper aware, now DA is 1;
+		decrease temporary-rectum-incontinence by 1;
+		if temporary-rectum-incontinence is 0 and the rectum-incontinence of the player < the max-rectum-incontinence of the player:
+			say "[bold type]You feel that the magic curse that was making you completely incontinent has finally lifted![line break][variable custom style]I can feel my rectum again![roman type][line break]";
+			if DA is 0 and the player is rectum diaper aware: [Player has regained the ability to detect when they urinate into a diaper]
 				let C be a random worn diaper;
 				if C is diaper, compute awakened state check of C.
+To TemporaryIncontinenceUp (N - a number):
+	if diaper messing >= 3 and a random number between 0 and 1 is 1, increase temporary-rectum-incontinence by N;
+	increase temporary-bladder-incontinence by N.
 
-To decide which number is the incontinence of the player:
-	if temporary-incontinence > 0, decide on the max-incontinence of the player;
-	let I be incontinence;
+To decide which number is the bladder-incontinence of the player:
+	if temporary-bladder-incontinence > 0, decide on the max-bladder-incontinence of the player;
+	let I be the raw-bladder-incontinence of the player;
 	increase I by the number of worn bed wetting clothing;
 	if diaper lover > 0:
 		repeat with K running through worn knickers:
 			decrease I by the magic-modifier of K;
-	if I > the max-incontinence of the player, decide on the max-incontinence of the player;
+	if I > the max-bladder-incontinence of the player, decide on the max-bladder-incontinence of the player;
 	decide on I.
 
-[!<YourselfIsIncontinent>+
+[!<YourselfIsBladderIncontinent>+
 
-This is essentially the highest level of incontinence that matters, because at this level all control is taken away from the player.
+This is essentially the highest level of bladder incontinence that matters, because at this level all control is taken away from the player.
 
 +!]
+Definition: yourself is bladder incontinent:
+	if the bladder-incontinence of the player >= 8, decide yes;
+	decide no.
 Definition: yourself is incontinent:
-	if the incontinence of the player >= 8, decide yes;
+	if the player is rectum incontinent or the player is bladder incontinent, decide yes;
+	decide no.
+Definition: yourself is totally incontinent:
+	if the player is bladder incontinent and (diaper messing < 3 or the player is rectum incontinent), decide yes;
 	decide no.
 
+Definition: yourself is potentially diaper aware: [Do they always know the state of their diaper?]
+	if failed potty training tattoo is worn or the diaper addiction of the player >= 20, decide no;
+	decide yes.
+
+Definition: yourself is bladder diaper aware: [Do they always know the state of their diaper after peeing?]
+	if the player is not potentially diaper aware or the bladder-incontinence of the player >= 10, decide no;
+	decide yes.
+
 Definition: yourself is diaper aware: [Do they always know the state of their diaper?]
-	if failed potty training tattoo is worn or the incontinence of the player >= 10 or the diaper addiction of the player >= 20, decide no;
+	if the player is not potentially diaper aware or the bladder-incontinence of the player >= 10 or the rectum-incontinence of the player >= 10, decide no;
 	decide yes.
 
 [The level of bladder at which the player has a chance to squirt out a bit of pee when surprised / distracted]
 To decide which number is bladder-squirty-level:
 	let N be 7;
-	decrease N by the incontinence of the player;
+	decrease N by the bladder-incontinence of the player;
 	decrease N by the womb volume of vagina / 10; [pregnancy makes you need to go more]
 	increase N by yellow theme bonus;
 	if N < 1, decide on 1;
@@ -93,7 +130,7 @@ To decide which number is bladder-squirty-level:
 [The level of bladder at which the player has a chance to just spontaneously wet themselves]
 To decide which number is bladder-risky-level:
 	let N be 12;
-	decrease N by the incontinence of the player;
+	decrease N by the bladder-incontinence of the player;
 	decrease N by the womb volume of vagina / 10; [pregnancy makes you need to go more]
 	increase N by yellow theme bonus;
 	if N < 4, decide on 4;
@@ -120,7 +157,7 @@ Can the player tell they need to pee?
 
 +!]
 Definition: yourself is bursting:
-	if the player is incontinent or failed potty training tattoo is worn, decide no;
+	if the player is bladder incontinent or failed potty training tattoo is worn, decide no;
 	if the player is fake bursting, decide yes;
 	if the player is desperate to pee and the bladder of the player >= 6, decide yes;
 	decide no.

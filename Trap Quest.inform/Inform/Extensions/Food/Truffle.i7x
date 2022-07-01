@@ -23,17 +23,15 @@ Carry out TQeating truffle:
 				increase suppository by 1;
 			otherwise:
 				say "you feel a weird numbness in your bladder!";
-				increase incontinence by 1;
+				SilentlyBladderIncontinenceUp 1;
 		otherwise:
 			say "The rich chocolate leaves you feeling really satisfied, but it's impossible to let go of the knowledge that someone definitely came in your food.";
 			if the semen taste addiction of the player > 8:
-				say "[second custom style]I wish all food could be like this...[roman type]";
-				SemenAddictUp 2;
+				say "[second custom style]I wish all food could be like this...[roman type][line break]";
 			otherwise if a random number between the intelligence of the player and 5 < 6:
 				say "In fact, it's hard not to associate the taste of the truffle with the taste of [semen].";
 			otherwise:
-				say "[first custom style]I'm so disgusting. I can't believe I really ate that...[roman type]";
-				SemenAddictUp 1;
+				say "[first custom style]I'm so disgusting. I can't believe I really ate that...[roman type][line break]";
 				Humiliate 125;
 			Arouse the semen taste addiction of the player * 20;
 			StomachSemenUp 1;

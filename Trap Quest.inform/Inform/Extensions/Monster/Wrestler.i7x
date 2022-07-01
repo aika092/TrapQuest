@@ -151,6 +151,10 @@ To compute (M - demon lord) stomping (N - a wrestler):
 To say SuddenTransformTrapReactFlav of (M - a wrestler):
 	say "[BigNameDesc of M] looks delighted.[line break][speech style of M]'Oh wow, you look so [beautiful] now!'[roman type][line break]".
 
+To say GroundPeeReaction of (M - a wrestler):
+	say "[speech style of M]'[if diaper lover > 0]Uh-oh! Looks like someone should be diapered, like me! Maybe I should take you to Mommy[otherwise]What a waste! If you piss in a cup, then you can savour the smell for as long as you want, and then when you get thirsty, you can practice being a good little toilet! Hmm, maybe you need help learning to be a better toilet[end if]...'[roman type][line break]";
+	FavourDown M with consequences.
+
 Part 2 - Perception
 
 To decide which number is the outrage tolerance of (M - a wrestler):
@@ -777,7 +781,7 @@ This is the wrestler uses your diaper rule:
 				satisfy M;
 		otherwise:
 			say "[BigNameDesc of M] gives you a strong spanking through your [D]![line break][speech style of M]'[one of]Do you like to get treated like a bad [boy of the player], huh? Take this!'[or]Time for your punishment, loser!'[or]When you're in a big nappy like that, there's only one appropriate way to punish you!'[in random order][italic type][line break]SMACK SMACK THWACK SMACK[roman type][line break]";
-			PainUp 1;
+			PainUp 10;
 			satisfy M;
 		rule succeeds.
 The diaper punishment rule of a wrestler is usually the wrestler uses your diaper rule.
@@ -804,8 +808,7 @@ To say DiaperReaction of (M - a wrestler):
 			FavourDown M;
 			if M is unfriendly:
 				say "[big his of M][']s eyes glaze over.[line break][speech style of M]'Hmm, yeah, let's play a little bit[if the number of monsters in the location of the player is 1]... just you and me[end if]...'[roman type][line break]";
-				now the boredom of M is 0;
-				now M is interested;
+				interest M;
 	otherwise:
 		say "[BigNameDesc of M] is either completely oblivious or doesn't care about what you've just done.".
 
@@ -929,7 +932,7 @@ To compute damage reaction of (M - a wrestler):
 	if M is uninterested:
 		say "The [man of M] looks shocked.[line break][speech style of M]'Ooh, I didn't know you wanted to fight! Why didn't you just say so?'[roman type][line break]";
 		cutshow figure of wrestler cutscene 3 for M;
-		now M is interested;
+		interest M;
 		anger M;
 	otherwise if the health of M < the maxhealth of M / 2 and the excitement of M < 0 and the times-dominated of M > 0:
 		say "[speech style of M]'Haha, is that really all you've got? Looks like it's my turn to be on top!'[roman type][line break][BigNameDesc of M] seems to change [his of M] stance! Looks like this will be harder than you thought!";
@@ -1086,8 +1089,8 @@ To compute failed dominance punishment of (M - a wrestler):
 		if B is clothing:
 			say "[line break][speech style of M]'You're into bondage, right? I bet you'll like this, then!'[roman type][line break][big he of M] pulls out a [ShortDesc of B] and locks it into place. [GotUnluckyFlav]";
 			summon B cursed;
-			now B is locked;
-			Satisfy M;
+			lock B;
+			satisfy M;
 		otherwise:[she just fucks you]
 			say "[speech style of M]'Hehe, this will be fun!'[roman type][line break][GotUnluckyFlav]";
 			now another-turn-flavour is the substituted form of "[BigFuckerDesc of M] holds you in place.";
@@ -1259,8 +1262,7 @@ To compute friendly drink of (M - a wrestler):
 To compute unfriendly drink of (M - a wrestler):
 	say "[speech style of M]'[if watersports fetish is 1 and diaper quest is 0]Oh I'll give you a drink all right!'[otherwise]You should stop talking and start moving if you want any chance of beating me in a fight!'[end if][roman type][line break]";
 	alwayscutshow figure of wrestler cutscene 3 for M;
-	now M is interested;
-	now the boredom of M is 0.
+	interest M.
 
 Section 4 - Food Requesting
 

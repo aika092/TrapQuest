@@ -124,7 +124,7 @@ To uniquely set up (C - a pink scrunchie):
 	now the quest of C is greet-quest.
 
 To say QuestFlav of (Q - greet-quest):
-	say "You sense it wants you to talk to (intelligent) friendly people who *might* want to [if diaper quest is 1]punish[otherwise]fuck[end if] you.".
+	say "You sense it wants you to talk to (intelligent) friendly people who *might* want to [if diaper quest is 1]punish[otherwise]fuck[end if] you[if diaper quest is 0], and/or to make some [men of shopkeeper] climax from seduction routines (before they lose patience and fuck you normally)[end if].".
 
 To say QuestTitle of (Q - greet-quest):
 	say " (attention seeking quest)".

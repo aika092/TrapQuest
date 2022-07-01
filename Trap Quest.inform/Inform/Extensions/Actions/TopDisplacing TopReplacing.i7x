@@ -10,19 +10,14 @@ Check TopDisplacing:
 		if the noun is displacable, try displacing the noun instead;
 		otherwise say "That's not the sort of item of clothing that can be displaced at the chest." instead;
 	if the noun is not worn, say "But you're not even wearing [NameDesc of the noun]..." instead;
-	if breasts is exposed:
-		if the noun is top-displaced:
-			try topreplacing the noun instead;
-		otherwise:
-			say "But your breasts are already on display..." instead;
+	if the noun is top-displaced, try topreplacing the noun instead;
 	if the noun is breast exposing, say "But [NameDesc of the noun] isn't covering your breasts..." instead;[Should cover fully exposing and chestless]
-	if the latex-transformation of the player is 8, say "You don't have the manual dexterity to do that!" instead;
-	if the noun is actually not-top-displacable, say "That's [if the noun is top-ripped]already shredded to bits so there's no point displacing it[otherwise]too stiff to displace[end if]." instead;
 	if the noun is glued, say "It's glued in place!" instead;
+	if the noun is actually not-top-displacable, say "That's [if the noun is top-ripped]already shredded to bits so there's no point displacing it[otherwise]too stiff to displace[end if]." instead;
+	if the player is not able to manually use their hands, do nothing instead;
 	[if the noun is cursed, say "The curse on this item prevents it from budging at all!" instead;]
-	repeat with C running through worn top level covering clothing:
-		if the top-layer of C > the top-layer of the noun, say "You would need to displace or remove your [C] first." instead;
-	if the player is wrist bound behind, say "You can't do that with your hands bound behind you." instead.
+	repeat with C running through top level breasts protection clothing:
+		if the top-layer of C > the top-layer of the noun, say "You would need to displace or remove your [C] first." instead.
 
 Carry out TopDisplacing:
 	say TopDisplaceFlav of the noun;
@@ -50,16 +45,27 @@ Understand "pull down [something]", "pull open [something]", "unbutton [somethin
 
 Part 2 - TopReplacing
 
+Definition: a clothing is usually top-replacable: decide yes.
+Definition: a clothing is top-replacable:
+	if it is usually top-displacable and it is top-displaced and it is worn, decide yes;
+	decide no.
+Definition: a clothing (called C) is actually top-replacable:
+	if C is top-replacable:
+		if the player is not able to use their hands, decide no;
+	repeat with D running through top level breasts protection clothing:
+		if the top-layer of D > the top-layer of C, decide no;
+	if there is a combative monster, decide no.
+
+
 TopReplacing is an action applying to one thing.
 
 Check topReplacing:
 	if the noun is not clothing, say "This verb is used for fixing clothing that has been moved aside." instead;
 	if the noun is not worn, say "But you're not even wearing [the noun]..." instead;
 	if the noun is top-placed, say "That's already in the right place." instead;
-	if the latex-transformation of the player is 8, say "You don't have the manual dexterity to do that." instead;
-	repeat with C running through worn top level covering clothing:
+	if the player is not able to manually use their hands, do nothing instead;
+	repeat with C running through top level breasts protection clothing:
 		if the top-layer of C > the top-layer of the noun, say "You would need to displace or remove your [C] first." instead;
-	if the player is wrist bound behind, say "You can't do this with your wrists bound behind you." instead;
 	repeat with M running through combative monsters:
 		say "[BigNameDesc of M] gets in the way and stops you from fixing the position of your [noun]." instead.
 

@@ -42,7 +42,7 @@ To unique periodic effect of (H - fox ears):
 		if there is a worn locked clothing:
 			let B be a random worn locked clothing;
 			say "You feel your [ShortDesc of H] twitch slightly, and your [printed name of B] briefly lights up as it is magically unlocked!";
-			now B is unlocked;
+			unlock B;
 		otherwise if the make-up of face < 3:
 			FaceUp 1;
 			say "You feel your [ShortDesc of H] twitch slightly, and you feel a wave of warmth on your cheeks as it magically conjures [if the make-up of face is 0]a[otherwise]another[end if] layer of makeup on your face!".
@@ -72,5 +72,17 @@ To compute generic first time class reward of (Q - stealing-quest) on (C - a clo
 		say "summoning a [MediumDesc of D] [if D is worn]straight onto your finger[otherwise]right in front of you[end if]!";
 	otherwise:
 		compute generic second time class reward of Q on C.
+
+[no bonus rings since it's too easy to trigger this like 6 times in 1 turn]
+To compute generic class reward of (Q - stealing-quest) on (C - a clothing):
+	if C is hair growing or the raw largeness of hair <= 1 or frozen hair is 1:
+		say "filling you with renewed energy!";
+		repeat with F running through fuckholes:
+			heal F times 5;
+		now the fatigue of the player is 0;
+	otherwise:
+		say "shrinking the length of your hair!";
+		HairDown 1;
+
 
 Fox Ears ends here.

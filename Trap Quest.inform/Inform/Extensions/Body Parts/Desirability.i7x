@@ -735,7 +735,7 @@ To compute default seduction choice of (M - a monster):
 				say AutomaticCondomFlav of M;
 				now M is wrapped;
 			otherwise if M is intelligent and the remainder after dividing earnings by 2 is 0: [Should happen every other turn]
-				let C be a random actually top-displacable clothing;
+				let C be a random currently top-displacable clothing;
 				if C is clothing:
 					compute M topdisplacing C;
 					force immediate inventory-focus redraw;
@@ -868,7 +868,7 @@ To compute SeductionMasturbateClimax of (M - a monster):
 	if M is male:
 		say "[big his of M] load is spilled onto the floor.";
 		SemenPuddleUp the semen load of M;
-		if M is human and M is not dark skinned and the bbc addiction of the player > 6, say "[variable custom style]Hmph! White [men of shopkeeper].[roman type][line break]";
+		if M is pale skinned and the bbc addiction of the player > 11, say "[variable custom style]Hmph! White [men of shopkeeper].[roman type][line break]";
 	orgasm satisfy M;
 	progress quest of greet-quest.
 
@@ -968,6 +968,7 @@ To compute SeductionSoulOral of (M - a monster):
 
 To compute SeductionOralClimax of (M - a monster):
 	now M is penetrating face;
+	now M is friendly-fucking;
 	follow the default facial climax rule;
 	[orgasm M. handled in the climax function]
 	progress quest of greet-quest.

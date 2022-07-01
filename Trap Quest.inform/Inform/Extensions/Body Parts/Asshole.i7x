@@ -263,10 +263,9 @@ To AssClose (X - a number):
 						otherwise:
 							say ", ripping through your [printed name of random worn total protection clothing]!";
 							repeat with C running through worn total protection clothing:
-								if C is overdress or C is trousers:
-									if C is zippable, ZipDown C;
-									otherwise now C is crotch-ripped;
-								otherwise:[no zippable knickers yet]
+								if C is rippable:
+									now C is crotch-ripped;
+								otherwise:
 									destroy C;
 					otherwise:
 						say ".";

@@ -79,26 +79,24 @@ To decide which number is the initial outrage of (C - a silver tube top):
 To decide which number is the adult-influence of (C - a silver tube top):
 	decide on 1.
 
-Part 3 - Pink Rubber Tube Top
+Part 3 - rubber tube top
 
-A pink rubber tube top is a kind of tube top. A pink rubber tube top is usually latex. A pink rubber tube top is low cut.
+rubber tube top is a tube top. rubber tube top is latex. rubber tube top is low cut.
 
-The printed name of pink rubber tube top is usually "[clothing-title-before]pink latex tube top[clothing-title-after]". The text-shortcut of pink rubber tube top is "prtt". A pink rubber tube top is usually dense.
+The printed name of rubber tube top is "[clothing-title-before]pink latex tube top[clothing-title-after]". The text-shortcut of rubber tube top is "prtt". rubber tube top is dense.
 
-There is 1 pink rubber tube top.
+Figure of rubber tube top is the file "Items/Clothes/Upper/TubeTops/tubetop7.png".
 
-Figure of pink rubber tube top is the file "Items/Clothes/Upper/TubeTops/tubetop7.png".
+To decide which figure-name is clothing-image of (C - rubber tube top):
+	decide on figure of rubber tube top.
 
-To decide which figure-name is clothing-image of (C - a pink rubber tube top):
-	decide on figure of pink rubber tube top.
-
-To say ClothingDesc of (C - a pink rubber tube top):
+To say ClothingDesc of (C - rubber tube top):
 	say "A tiny latex pink rubber boob tube with black edges.".
 
-To say ShortDesc of (C - a pink rubber tube top):
+To say ShortDesc of (C - rubber tube top):
 	say "tiny latex pink boob tube".
 
-Definition: a pink rubber tube top is pink themed: decide yes.
+Definition: rubber tube top is pink themed: decide yes.
 
 Part 4 - Tartan Tube Top
 

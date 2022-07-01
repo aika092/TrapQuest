@@ -153,7 +153,7 @@ To decide which figure-name is clothing-image of (C - chequered skirt):
 	decide on figure of chequered skirt.
 
 To say ClothingDesc of (C - chequered skirt):
-	say "This tight skirt has a busy repeating white and black pattern.".
+	say "This tight skirt has a busy repeating white and black pattern[if C is not diaper covering]. The tight fabric has been pushed up by your thick diaper, partially exposing it[end if].".
 
 To compute SelfExamineDesc of (Y - chequered skirt):
 	say "Strips of white skirt flow from your waist, exposing some thigh.".
@@ -169,6 +169,8 @@ To decide which number is the adult-influence of (C - chequered skirt):
 
 Definition: chequered skirt is black themed: decide yes.
 Definition: chequered skirt is white themed: decide yes.
+
+To decide which number is the diaperCoveringLength of (C - chequered skirt): decide on 7. [DQBulk 8 or higher makes the skirt ride up too high, exposing the diaper]
 
 flowing skirt is a skirt. Figure of flowing skirt is the file "Items/Clothes/Lower/Skirts/skirt1.png". The printed name of flowing skirt is "[clothing-title-before]flowing white skirt[clothing-title-after]". The text-shortcut of flowing skirt is "fws". Understand "white" as flowing skirt.
 

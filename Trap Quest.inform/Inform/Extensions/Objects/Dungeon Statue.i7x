@@ -65,7 +65,7 @@ Check whacking:
 	if diaper quest is 0 or the noun is not DungeonScenery01, say "That wouldn't do anything." instead.
 Carry out whacking:
 	say "You thwack the butt of one of the ladies[one of] with all your might[or][stopping].[line break][variable custom style]Ow!!![roman type][line break]You feel the spank on your own [buttcheeks]!";
-	PainUp 1;
+	PainUp 10;
 	MagicPowerRefresh 6;
 	say "[if the raw diaper addiction of the player > the raw delicateness of the player]That hurt, but you feel like it has brought you to your senses[otherwise]Nothing else seems to happen[end if].";
 	while the raw delicateness of the player < the raw diaper addiction of the player:

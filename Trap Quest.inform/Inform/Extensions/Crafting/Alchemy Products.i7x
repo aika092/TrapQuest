@@ -88,6 +88,7 @@ Figure of bomb is the file "Items/Collectibles/bomb1.png".
 To decide which figure-name is the examine-image of (V - a bomb):
 	decide on the figure of bomb.
 
+
 Section 1 - Smoke Bomb
 
 A smoke bomb is a kind of bomb. The text-shortcut of smoke bomb is "smkb". There are 8 smoke bombs.
@@ -104,6 +105,11 @@ To say ExamineDesc of (B - a smoke bomb):
 To decide which number is the alchemy key of (A - a smoke bomb):
 	decide on 29.
 
+A game universe initialisation rule:
+	let K be 1;
+	repeat with W running through smoke bombs:
+		now the text-shortcut of W is the substituted form of "smk[K]";
+		increase K by 1.
 
 Carry out SmokeBombing a smoke bomb to a direction:
 	allocate 3 seconds;
@@ -223,7 +229,7 @@ Check throwing energy-bomb at a monster:
 	allocate 6 seconds;
 	if energy-bomb is cursed:
 		say "You launch the [energy-bomb] at [NameDesc of the second noun]. It appears on target, but suddenly, almost as if it was cursed to do so, it changes direction in mid-air and heads straight back towards you! You have no time to dodge before it collides with your arm where it explodes with energy. Sparks of red electricity shoot all over your body, causing you great pain! By the time they have died down, you are completely sore all over and your skin even looks a little singed.";
-		PainUp 2;
+		PainUp 20;
 		BodyRuin 10;
 	otherwise:
 		say "You launch the [energy-bomb] at [NameDesc of the second noun], which hits [him of the second noun] right in [his of the second noun] [MonsterFaceDesc of the second noun]! Sparks of red electricity shoot all over [his of the second noun] body!";
@@ -1071,7 +1077,7 @@ Carry Out PowderRubbing escape-powder on a thing:
 	if unlockGo is 1 and the second noun is locked:
 		unless the noun is blessed, now unlockGo is 0;
 		say "With a loud click, the lock opens!";
-		now the second noun is unlocked;
+		unlock the second noun;
 	if unlockGo is 1 and the second noun is glued:
 		unless the noun is blessed, now unlockGo is 0;
 		say "With a quiet hiss, the glue disappears!";

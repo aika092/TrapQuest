@@ -812,6 +812,8 @@ To decide which number is the initial outrage of (C - black-lace-bra):
 
 Definition: black-lace-bra is upgradable:
 	if it is not monified, decide yes;
+	if black-lace-stockings is worn and black-lace-stockings is not monified, decide yes;
+	if black-lace-thong is worn and black-lace-thong is not monified, decide yes;
 	decide no.
 Definition: black-lace-bra is transformation-protected:
 	if it is not upgradable, decide yes;
@@ -824,8 +826,16 @@ Definition: black-lace-bra is transformation-theme-blockable: decide no. [It doe
 To decide which object is the unique-upgrade-target of (C - black-lace-bra):
 	decide on C.
 To transform (C - black-lace-bra):
-	say "Paper bills appear on the bra, sewn on and completely unremovable, but looking as though they've just been tucked into the cups!";
-	now C is monified.
+	if C is monified:
+		if black-lace-stockings is worn and black-lace-stockings is not monified, transform black-lace-stockings;
+		if black-lace-thong is worn and black-lace-thong is not monified, transform black-lace-thong;
+	otherwise:
+		say "Paper bills appear on the bra, sewn on and completely unremovable, but looking as though they've just been tucked into the cups!";
+		now C is monified.
+
+Carry out taking black-lace-bra:
+	if the noun is in Hotel20 and the player is getting unlucky, now the noun is provocation.
+
 
 heart-strap-bra is a bra. heart-strap-bra is transformation-rare. heart-strap-bra is leather. The printed name of heart-strap-bra is "[clothing-title-before]heart strap bra[clothing-title-after]". The text-shortcut of heart-strap-bra is "hsb". Understand "heart", "strap", "bra" as heart-strap-bra. The min size of heart-strap-bra is 1. The max size of heart-strap-bra is 18. The support of heart-strap-bra is 1. heart-strap-bra is very low cut. heart-strap-bra is optional-top-displacable.
 

@@ -132,7 +132,7 @@ To compute specific hypno effect of (Y - a fucktoy hypno trap):
 
 To compute specific hypno effect of (Y - a BBC hypno trap):
 	commence animation of BBCHypnoAnimation;
-	if the raw BBC addiction of the player > the raw sex addiction of the player, SexAddictUp 1; [Remember sex addiction is between 1 and 20, and BBC only between 1 and 10. So this is a fair way to make sure that sex addiction isn't too massively far behind, at least not from a sexy hypno screen.]
+	if the raw BBC addiction of the player > the raw sex addiction of the player * 2, SexAddictUp 1;
 	BBCAddictUp 1.
 
 hypno-trigger-please is a number that varies.
@@ -151,8 +151,10 @@ To compute specific hypno effect of (Y - a diaper-hypno-trap):
 		say "You feel yourself relax.";
 		now delayed urination is 2;
 		try urinating;
-	otherwise if incontinence < the max-incontinence of the player and a random number between 1 and 2 is 1:
-		say "You feel your ability to hold onto your bladder [if diaper messing >= 3]and bowels [end if]weakening.";
+	otherwise if the raw-bladder-incontinence of the player < the max-bladder-incontinence of the player and a random number between 1 and 2 is 1:
+		BladderIncontinenceUp 1;
+	otherwise if diaper messing >= 3 and the raw-rectum-incontinence of the player < the max-rectum-incontinence of the player and a random number between 1 and 2 is 1:
+		RectumIncontinenceUp 1;
 	otherwise if the raw diaper addiction of the player < 20:
 		say "[one of][if there is a worn diaper]Seeing the images on the screen, you feel more comfortable with the idea of wearing and using your diaper. [end if][if there is a worn diaper and the diaper addiction of the player < 10]After all, if you have to go, you have to go, right?[otherwise if there is a worn diaper]After all, they're super comfy and toilets are dumb![otherwise]Part of you suddenly wishes you were wearing a diaper.[end if][if the number of worn diapers is 0 and the diaper addiction of the player < 10]At the very least, they're more convenient.[otherwise if the number of worn diapers is 0]After all, the people on the screen look like they're having so much fun![end if][or][or][cycling]";
 		SilentlyDiaperAddictUp 1.

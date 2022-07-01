@@ -71,7 +71,7 @@ To Start The Machine:
 	if halloween content is 1:
 		set up vampiress;
 		now vampiress is in Mansion01;
-		now vampiress is interested;
+		interest vampiress;
 		calm vampiress;
 		now the pink pill is in pink wardrobe;
 		now candy corn is in Mansion28;

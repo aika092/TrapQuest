@@ -58,7 +58,7 @@ Definition: yourself is able to displace:
 Check displacing:
 	if the noun is not clothing, say "This verb is used for moving clothing that can be moved aside." instead;
 	if the noun is not worn, say "But you're not even wearing [the noun]..." instead;
-	if the noun is not displacable and the noun is usually not-top-displacable, try topDisplacing the noun instead;[if it can't cover the crotch, or it's pulled aside, this allows the top displacing verb to be used instead. Note that there is a bug where sheer knee-length and hobble-skirted skirts cannot be displaced]
+	if the noun is not displacable and the noun is usually top-displacable, try topDisplacing the noun instead;[if it can't cover the crotch, or it's pulled aside, this allows the top displacing verb to be used instead. Note that there is a bug where sheer knee-length and hobble-skirted skirts cannot be displaced]
 	if the noun is crotch-displaced, try replacing the noun instead;
 	if the player is not able to displace, do nothing instead.
 
@@ -100,7 +100,7 @@ Check replacing:
 	if the noun is crotch-in-place and the noun is top-displaced, try topReplacing the noun instead;
 	if the noun is crotch-in-place, say "That's already in the right place." instead;
 	if the player is in HoleInWall or the player is in DiaperPail, say "You can't reach that at the moment!" instead;
-	if the latex-transformation of the player is 8, say "You don't have the manual dexterity to do that." instead;
+	if the player is not able to manually use their hands, do nothing instead;
 	if the noun is ass plugging:
 		let P be a random thing penetrating asshole;
 		if P is a thing and P is not the noun, say "You can't because the [P] is already in your [asshole]." instead;

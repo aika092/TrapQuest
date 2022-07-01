@@ -163,7 +163,14 @@ To say MouthfulDesc:
 		if the urine volume of face > 0, add urine to LL;
 		if the milk volume of face > 0, add milk to LL;
 		let E be the number of entries in LL;
-		say "[if TV > 3]huge [otherwise if TV is 3]large [otherwise if TV is 1]small [end if]mouthful of [variable entry 1 of LL][if E is 2] and [variable entry 2 of LL][otherwise if E is 3], [variable entry 2 of LL] and [variable entry 3 of LL][end if]".
+		say "[if TV > 3]huge [otherwise if TV is 3]large [otherwise if TV is 1]small [end if]mouthful of ";
+		if entry 1 of LL is semen:
+			let LT be the list of things inseminating face;
+			let LTE be the number of entries in LT;
+			if LTE > 0:
+				repeat with T running through LT:
+					say "[FuckerDesc of T][']s[if LTE > 2], [otherwise if LTE is 2] & [otherwise] [end if]";
+		say "[variable entry 1 of LL][if E is 2] and [variable entry 2 of LL][otherwise if E is 3], [variable entry 2 of LL] and [variable entry 3 of LL][end if]".
 
 [!<SayMakeUpDesc>+
 
@@ -214,6 +221,7 @@ To FaceDown (X - a number):
 		decrease X by 1;
 		if face is temporarily made up:
 			decrease the make-up of face by 1;
+			if the make-up of face is 0, trigger lose-makeup-wisp-trigger;
 	update appearance level.
 
 Definition: face is permanently made up:
@@ -300,7 +308,8 @@ To MouthEmpty:
 	now face is player-origin;
 	now the semen volume of face is 0;
 	now the urine volume of face is 0;
-	now the milk volume of face is 0.
+	now the milk volume of face is 0;
+	trigger lose-mouthful-wisp-trigger.
 
 To compute accidental swallowing:
 	let A be auto;
@@ -388,19 +397,18 @@ To check accidental spitting:
 To check accidental spitting with reason (T - a text):
 	let TVF be the total volume of face;
 	if TVF > 0 and face is not actually occupied:
-		if the player is getting lucky:
-			say "You manage to hold in your [MouthfulDesc]. [GotLuckyFlav]";
+		if T is "", say "[bold type]You are likely about to lose control and automatically spit out [if TVF > 1]some of [end if]your [MouthfulDesc]![roman type][line break]";
+		otherwise say "[bold type][T] your lips begin to loosen - you're likely about to lose [if TVF > 1]some of [end if]your [MouthfulDesc]![roman type][line break]";
+		reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+		set numerical response 1 to "just try to hold as much in as possible";
+		set numerical response 2 to "swallow it instead";
+		compute multiple choice question;
+		if player-numerical-response is 2:
+			compute swallowing;
+		otherwise if the player is getting lucky:
+			say "You manage to hold it all in. [GotLuckyFlav]";
 		otherwise:
-			if T is "", say "[bold type]You are about to lose control and automatically spit out [if TVF > 1]some of [end if]your [MouthfulDesc]![roman type][line break]";
-			otherwise say "[bold type][T] your lips begin to loosen - you're about to lose [if TVF > 1]some of [end if]your [MouthfulDesc]![roman type][line break]";
-			reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
-			set numerical response 1 to "just [if TVF is 1]let it out[otherwise]try to hold as much in as possible[end if]";
-			set numerical response 2 to "swallow it instead";
-			compute multiple choice question;
-			if player-numerical-response is 2:
-				compute swallowing;
-			otherwise:
-				compute accidental spitting.
+			compute accidental spitting.
 
 To compute accidental spitting:
 	let A be auto;
@@ -475,7 +483,8 @@ To compute boring spit reaction of (M - a person):
 	say "[BigNameDesc of M] [one of]wrinkles [his of M] nose[or]frowns[or]curls [his of M] lips[in random order].[line break][speech style of M]'[one of]How impolite[or]Really now[or]Eww[or]Do you mind[in random order].'[roman type][line break][slightHumiliateReflect]".
 
 To compute disgusting spit reaction of (M - a person):
-	say "[BigNameDesc of M] [one of]grimaces[or]almost chokes in shock[or]makes an outraged sound[in random order].[line break][speech style of M]'Was that [if the urine volume of face > 0 and the semen volume of face > 0][one of]urine[or]piss[or]cum[purely at random][otherwise if the urine volume of face > 0][one of]urine[or]piss[in random order][otherwise]cum[end if]?! [one of]Disgusting[or]What the fuck[in random order]!'[roman type][line break][if the urine volume of face > 0][strongHumiliateReflect][otherwise][moderateHumiliateReflect][end if]";
+	if the urine volume of face > 0 or the semen volume of face > 0, say "[BigNameDesc of M] [one of]grimaces[or]almost chokes in shock[or]makes an outraged sound[in random order].[line break][speech style of M]'Was that [if the urine volume of face > 0 and the semen volume of face > 0][one of]urine[or]piss[or]cum[purely at random][otherwise if the urine volume of face > 0][one of]urine[or]piss[in random order][otherwise]cum[end if]?! [one of]Disgusting[or]What the fuck[in random order]!'[roman type][line break][if the urine volume of face > 0][strongHumiliateReflect][otherwise][moderateHumiliateReflect][end if]";
+	otherwise say "[BigNameDesc of M] [one of]frowns[or]wrinkles [his of M] nose[or]winces[in random order].[line break][speech style of M]'Eww!'[roman type][line break][slightHumiliateReflect]";
 	if M is monster, FavourDown M with consequences.
 
 To NoseBurst (L - a liquid-object) by (N - a number):

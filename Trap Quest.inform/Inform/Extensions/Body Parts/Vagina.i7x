@@ -353,10 +353,9 @@ To PussyClose (X - a number):
 						otherwise:
 							say ", ripping through your [ShortDesc of random worn not possession pussy covering clothing]!";
 							repeat with C running through pussy covering clothing:
-								if C is overdress or C is trousers:
-									if C is zippable, ZipDown C;
-									otherwise now C is crotch-ripped;
-								otherwise:[no zippable knickers yet]
+								if C is rippable:
+									now C is crotch-ripped;
+								otherwise:
 									destroy C;
 					dislodge I;
 					now I is in the location of the player;
@@ -416,7 +415,7 @@ To PussyFill (X - a number):
 			if the soreness of vagina > 10, now the soreness of vagina is 10;
 	let R be a random number between 0 and 5;
 	if there is a live thing penetrating vagina, decrease R by 1;
-	if R < X, SemenAddictUp 1; [The bigger the creampie, the more chance of creampie addiction]
+	SlowSemenAddictUp 1;
 	if X > 0 and vagina is accepting womb semen: [First drop of semen makes it into womb if possible]
 		WombFill 1;
 		decrease X by 1;
@@ -478,7 +477,8 @@ To check sudden pregnancy:
 	if slow pregnancy > 2:
 		compute sudden pregnancy;
 	otherwise if the pregnancy of the player > 0:
-		check goddess eligibility.
+		check goddess eligibility;
+		trigger conception-wisp-trigger.
 
 forcedFertility is initially false.
 
@@ -499,7 +499,8 @@ To compute sudden pregnancy:
 			now the womb volume of vagina is 30;
 			check for extreme pregnancies;
 			say SuddenPregFlav of the father;
-			check goddess eligibility.
+			check goddess eligibility;
+			trigger conception-wisp-trigger.
 
 To say SuddenPregTitle of (M - a thing):
 	say "[ShortDesc of M]".
@@ -540,7 +541,7 @@ To compute father material of (T - a thing):
 	do nothing.
 
 To compute father material of (F - a body part):
-	repeat with M running through father material things penetrating F:
+	repeat with M running through things penetrating F:
 		now M is inseminating F.
 
 To compute father material of (F - vagina):

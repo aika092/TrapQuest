@@ -249,7 +249,7 @@ The clothing blocks masturbation rule is listed last in the vaginal masturbation
 This is the clothing blocks anal masturbation rule:
 	if auto is 1:
 		repeat with C running through ass covering clothing:
-			if C is not displacable and C is not zippable, rule fails;
+			if C is not displacable and C is not crotch-zipped, rule fails;
 	otherwise	if the number of bottom level ass protection clothing > 0:
 		now failed-masturbation-reason is the substituted form of "You would need to displace your [printed name of a random bottom level ass protection clothing] first.";
 		rule fails.

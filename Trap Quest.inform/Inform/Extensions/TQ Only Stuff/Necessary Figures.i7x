@@ -8,7 +8,7 @@ Figure of YesNoBackground3 is the file "Special/Buttons/yesno3.png".
 Figure of YesNoBackground4 is the file "Special/Buttons/yesno4.png".
 Figure of YesNoBackground5 is the file "Special/Buttons/yesno5.png".
 Figure of YesNoBackground6 is the file "Special/Buttons/yesno6.png".
-Figure of HoleInWallBackground is the file "Map/hole1.png".
+Figure of HoleInWallBackground is the file "Map/hole1.jpg".
 Figure of IronMaidenBackgroundA is the file "Map/maiden3a.jpg".
 Figure of IronMaidenBackgroundB is the file "Map/maiden3b.jpg".
 Figure of IronMaidenBackgroundC is the file "Map/maiden3c.jpg".
@@ -47,6 +47,8 @@ Figure of aeromancer cutscene 7 is the file "Special/Cutscene/cutscene-aeromance
 Figure of bianca defeated is the file "NPCs/School/Teacher/teacher3b.png".
 
 Figure of cage ass expansion trap is the file "Env/Forest/cage4.jpg".
+
+Figure of cultist abduction cutscene is the file "Special/Cutscene/cutscene-cultist-abduct1.jpg".
 
 Figure of demoness cutscene 1 is the file "Special/Cutscene/cutscene-demoness-soul1.png".
 Figure of demoness cutscene 2 is the file "Special/Cutscene/cutscene-demoness-heel1.png".
@@ -478,7 +480,7 @@ To get oral creampie image for (M - a thing):
 		otherwise if the semen taste addiction of the player >= 5:
 			cutshow figure of Oral Creampie Cutscene 2;
 		otherwise:
-			if M is monster and M is presenting as female and M is human and M is not dark skinned and (playerRegion is Dungeon or playerRegion is hotel), cutshow figure of Oral Creampie Cutscene 5; [These regions have the most NPCs without weird skin colours]
+			if M is monster and M is presenting as female and M is pale skinned and (playerRegion is Dungeon or playerRegion is hotel), cutshow figure of Oral Creampie Cutscene 5; [These regions have the most NPCs without weird skin colours]
 			otherwise cutshow figure of Oral Creampie Cutscene 1.]
 
 Figure of female orc is the file "NPCs/Dungeon/Orc/orc2a.png".

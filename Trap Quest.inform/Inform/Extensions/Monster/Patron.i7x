@@ -20,13 +20,17 @@ To FavourDown (M - a patron) by (N - a number):
 		if M is in the location of the player, say "You get the impression that [NameDesc of M] [one of]is unimpressed with you[or]didn't like that[or]will be inclined to pay you less in the future[in random order].".
 
 Figure of white inexperienced patron is the file "NPCs/Hotel/Patron/patron1.png".
+Figure of subby inexperienced patron is the file "NPCs/Hotel/Patron/patron1c.png".
 Figure of black inexperienced patron is the file "NPCs/Hotel/Patron/patron2.png".
 Figure of white experienced patron is the file "NPCs/Hotel/Patron/patron3.png".
+Figure of eldritch experienced patron is the file "NPCs/Hotel/Patron/patron3d.png".
 Figure of black experienced patron is the file "NPCs/Hotel/Patron/patron4.png".
 Figure of white gross patron is the file "NPCs/Hotel/Patron/patron5.png".
 Figure of black gross patron is the file "NPCs/Hotel/Patron/patron6.png".
+Figure of furry patron is the file "NPCs/Hotel/Patron/patron6c.png".
 Figure of white dickhead patron is the file "NPCs/Hotel/Patron/patron7.png".
 Figure of black dickhead patron is the file "NPCs/Hotel/Patron/patron8.png".
+Figure of crimson dickhead patron is the file "NPCs/Hotel/Patron/patron8c.png".
 
 Figure of femme white inexperienced patron is the file "NPCs/Hotel/Patron/patron1b.png".
 Figure of femme black inexperienced patron is the file "NPCs/Hotel/Patron/patron2b.png".
@@ -184,7 +188,7 @@ To say PregGrowth of (M - a patron):
 To compute labour to (M - a patron):
 	if playerRegion is Hotel:
 		compute pregnancy clothing displacement;
-		say "[PregFlav]A human head pushes its way out of your cunt, agonisingly slowly and painfully. Finally the head has passed through, and after a final push at the shoulders, the birthing is complete. You pick your child up off the floor and start to cradle it in your arms. The [father] appears almost as if on cue! [PregFlav of the father]Severing the umbilical cord, [he of M] pulls the baby from your hands, wraps it in a soft blanket and then carries it away.[line break][variable custom style][if the bimbo of the player < 8]That is definitely for the best.[otherwise if the bimbo of the player < 14]I guess I don't really have anywhere to raise a baby in here, anyway.[otherwise]Oh good, that means I can busy myself with finding a new man to breed me again![end if][roman type][line break]";
+		say "[PregFlav]A human head pushes its way out of your cunt, agonisingly slowly and painfully. Finally the head has passed through, and after a final push at the shoulders, the birthing is complete. You pick your child up off the floor and start to cradle it in your arms. The [father] appears almost as if on cue![line break][PregFlav of the father]Severing the umbilical cord, [he of M] pulls the baby from your hands, wraps it in a soft blanket and then carries it away.[line break][variable custom style][if the bimbo of the player < 8]That is definitely for the best.[otherwise if the bimbo of the player < 14]I guess I don't really have anywhere to raise a baby in here, anyway.[otherwise]Oh good, that means I can busy myself with finding a new man to breed me again![end if][roman type][line break]";
 	otherwise:
 		Delay Labour.
 
@@ -254,6 +258,7 @@ A time based rule (this is the patron encountering rule):
 				compute patronMeeting of dominatrix-cage with P;
 			otherwise if diaper quest is 0 and player-currently-resting is 0 and the number of on-stage patrons is 0:
 				let P be a random off-stage generic-appropriate patron;
+				let M be a random off-stage alive thing; [initialise M as nothing non-object]
 				let M be a random monster in the location of the player;
 				if the player is in Hotel38 and watersports fetish is 1 and a2m fetish >= 2 and the human-toilet-scene of woman-player is not 1, now M is toilet;
 				let PSRB be a random carried probably-serve-ready bottle;
@@ -446,7 +451,7 @@ To compute patronEncounter of (M - an inexperienced patron):
 			increase the employee-record of senior robobellboy by 1;
 			SemenPuddleUp (the semen load of M) in (the location of M);
 			orgasm M;
-			if a random number between 2 and 10 > the bbc addiction of the player, BBCAddictUp 1;
+			if M is dark skinned and a random number between 2 and 10 > the bbc addiction of the player, BBCAddictUp 1;
 		otherwise:
 			say "[if the bimbo of the player >= 8][big he of M]'s really cute, but you're not in the mood for that right now, so you let the eye contact hang until [he of M] awkwardly[otherwise]You're not interested in [him of M] at all, so after awkwardly staring at each other for a moment, [he of M][end if] leaves the room.";
 	otherwise:
@@ -471,7 +476,7 @@ To compute patronEncounter of (M - an experienced patron):
 					SemenPuddleUp 1 in (the location of M);
 				orgasm M;
 				increase the employee-record of senior robobellboy by 1;
-				if a random number between 2 and 10 > the bbc addiction of the player, BBCAddictUp 1;
+				if M is dark skinned and a random number between 2 and 10 > the bbc addiction of the player, BBCAddictUp 1;
 			otherwise:
 				say "You shake your head, and [he of M] rolls [his of M] eyes.[line break][speech style of M]'Hmph. Typical. Your manager will hear about his.'[roman type][line break][BigNameDesc of M] leaves the room.";
 				decrease the employee-record of senior robobellboy by 1;
@@ -513,7 +518,7 @@ To compute patronEncounter of (M - a dickhead patron):
 					orgasm M;
 					dislodge M;
 					increase the employee-record of senior robobellboy by 1;
-					if a random number between 2 and 10 > the bbc addiction of the player, BBCAddictUp 1;
+					if M is dark skinned and a random number between 2 and 10 > the bbc addiction of the player, BBCAddictUp 1;
 					suggest swallowing;
 				otherwise:[Doesn't affect your employee record]
 					say "[line break][speech style of M]'Ugh, greedy bitch.'[roman type][line break][big he of M] storms off. You have a feeling [he of M] won't be kind to you if you meet each other again.";
@@ -526,6 +531,12 @@ To compute patronEncounter of (M - a dickhead patron):
 		if debuginfo > 1, say "[input-style]Patron is ejaculating on the floor in [location of M].[roman type][line break]";
 		SemenPuddleUp 1 in (the location of M).
 
+To say EnemaFloorReactionFlav of (M - a patron):
+	say "[BigNameDesc of M] [if M is interested][one of]smirks[or]chuckles[or]cackles[or]pretends to gag in disgust[or]laughs[or]tuts[or]exhales through [his of M] nose[or]guffaws[or]grins[then at random][otherwise]turns to look at you[end if].[line break][speech style of M]'[one of]How lewd[or]Disgusting[or]So gross[or]What a tramp[or]How foul[or]Oh my god[or]There it goes[or]An utter disgrace[or]Eww[or]What a dirty slut[or]You filthy skank[in random order].'[roman type][line break][slightHumiliateReflect]".
+
+To compute enema floor reaction of (M - a patron): [Doesn't lose favour]
+	if voluntarySquatting is 1, humiliate 500.
+
 Part 2 - Perception
 
 Definition: a patron is uniquely unfriendly:
@@ -534,7 +545,7 @@ Definition: a patron is uniquely unfriendly:
 
 To check perception of (M - a patron):
 	if M is uninterested and M is aware and there is a hotel bed in the location of M:
-		now M is interested;
+		interest M;
 		now the last-tripped of M is 0;
 		now the last-interaction of M is 0;
 		if woman-player is in the location of the player:
@@ -598,12 +609,12 @@ To compute perception of (M - a patron):
 			destroy N;
 	otherwise if the number of patrons in the location of the player > 1:
 		compute group assessment of M;
-		now the chosen-orifice of M is nothing;[We will allow the patrons to choose depending on what's available at the time]
+		now the chosen-orifice of M is nothing; [We will allow the patrons to choose depending on what's available at the time]
 	otherwise:
 		compute appearance assessment of M;
 	if the player is upright, make M expectant.
 
-To compute group assessment of (M - a patron):[shouldn't display]
+To compute group assessment of (M - a patron): [currently displayed for special patrons e.g. slutty patron]
 	if the class of the player is princess:
 		say "[speech style of M]'[one of]We're here to make you answer for your crimes against the people!'[or]We're overthrowing you, princess! If you satisfy us, we might even let you stay around as a figurehead!'[or]Let's just say there are going to be some big changes around here, princess.'[or]The people no longer answer to you, princess. You answer to us!'[or]Your guards let us through. You're all of out allies, princess.'[or]You've stolen enough of our tax money, so you better satisfy all of us.'[or]We had a talk with your guards, and all of us decided to overthrow you.'[or]Your guards surrendered. You belong to us, now princess.'[or]The war is over, princess. We win. Now it's time for some spoils.'[in random order][roman type][line break]";
 	otherwise:
@@ -672,7 +683,6 @@ To say CondomRejectFlav of (M - a patron):
 		say "[speech style of M]'It'll feel better if we don't use that.'[roman type][line break][if M is not seduced]Looks like [he of M]'s going in bare...[end if]".
 
 To compute DQ perception of (M - a patron):
-	now M is interested;
 	anger M;
 	say "[BigNameDesc of M] notices you.";
 	if there are worn messed knickers:
@@ -1279,7 +1289,8 @@ To compute payment of (M - a patron):
 				check black lace transformation;
 		say "[BigNameDesc of M] leaves the way [he of M] came.";
 		destroy M;
-		if M is seduced, finally destroy M. [Can't wait until the end of the round to do this, or the seduction code will just continue!]
+		if M is seduced, finally destroy M; [Can't wait until the end of the round to do this, or the seduction code will just continue!]
+	trigger brothel-wisp-quest.
 
 To check black lace transformation:
 	if black-lace-bra is worn and black-lace-bra is upgradable:
@@ -2390,7 +2401,7 @@ Part 7 - Variants
 
 subby patron is an inexperienced patron. The text-shortcut of subby patron is "spn".
 To say PatronDesc of (M - subby patron):
-	say "This particular [if lady fetish is 1]girl[otherwise]guy[end if] looks like [he of M]'s 'accompanied' a couple people himself, and is very eager to flip the script.[line break]".
+	say "This young woman looks like [he of M][']s [']escorted['] a couple people herself, and is very eager to flip the script.[line break]".
 To say MediumDesc of (M - subby patron):
 	say "slutty patron".
 
@@ -2400,14 +2411,23 @@ Definition: subby patron is generic-appropriate:
 	unless the player is the donator and diaper quest is 0, decide no;
 	decide yes.
 
+Definition: subby patron is presenting as male: decide no.
+Definition: subby patron is dark skinned: decide no.
+
+To decide which figure-name is the monster-image of (M - subby patron):
+	decide on figure of subby inexperienced patron.
+
 To say LongDickDesc of (M - subby patron):
 	say "tiny [DickDesc of M]".
 
-eldritch patron is an experienced patron. The text-shortcut of eldritch patron is "dpa".
+eldritch patron is an experienced patron. The text-shortcut of eldritch patron is "edpa".
 To say PatronDesc of (M - eldritch patron):
 	say "This particular [man of M] has inhumanly pale skin and a smart grey suit. [big his of M] eyes are void of pupils, but twinkle with some unknown goal or purpose that you could never hope to understand. You get the sense that [he of M]'s only mildly interested in you.[line break]";
 To say MediumDesc of (M - eldritch patron):
 	say "eldritch patron".
+
+To decide which figure-name is the monster-image of (M - eldritch patron):
+	decide on figure of eldritch experienced patron.
 
 Definition: eldritch patron is dark skinned: decide no.
 Definition: eldritch patron is generic-appropriate:
@@ -2430,7 +2450,11 @@ To compute appearance assessment of (M - eldritch patron):
 	otherwise:
 		say "[speech style of M]'Your submission is inevitable. Present [if the chosen-orifice of M is asshole]your asshole[otherwise if the chosen-orifice of M is vagina]your [cunt][otherwise]yourself[end if] at once.'[roman type][line break]".
 
-furry patron is a gross patron. The text-shortcut of furry patron is "upa".
+furry patron is a gross patron. The text-shortcut of furry patron is "fpa".
+
+To decide which figure-name is the monster-image of (M - furry patron):
+	decide on figure of furry patron.
+
 To say PatronDesc of (M - furry patron):
 	if mythical creatures fetish is 1:
 		say "The [man of M] in particular barely even looks human, coarse black hair covering [his of M] entire frame from head to toe, even [his of M] face. What's more, [his of M] 'more than average' endowment is 14 inches long, hanging heavily between [his of M] legs like some perverted club.[line break]";
@@ -2462,11 +2486,14 @@ To decide if (M - furry patron) is willing to creampie (F - a fuckhole):
 		if the reaction of the player is 2, decide no;
 	decide yes.
 
-crimson patron is a dickhead patron. The text-shortcut of crimson patron is "rpa".
+crimson patron is a dickhead patron. The text-shortcut of crimson patron is "crpa".
 To say PatronDesc of (M - crimson patron):
 	say "This [man of M] in particular has bright red skin, and stares at you with cruel yellow eyes. It looks like [he of M]'s both aroused and disgusted by you.[line break]".
 To say MediumDesc of (M - crimson patron):
 	say "crimson patron".
+
+To decide which figure-name is the monster-image of (M - crimson patron):
+	decide on figure of crimson dickhead patron.
 
 Definition: crimson patron is dark skinned: decide no.[He's red skinned!]
 Definition: crimson patron is infernal: decide yes.

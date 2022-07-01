@@ -68,10 +68,16 @@ To say ExamineDesc of (C - robo vacuum cleaner):
 A later time based rule (this is the robo vacuum cleaner rule):
 	if robo vacuum cleaner is in the location of the player:
 		let fluidRemaining be the total puddle of (the location of robo vacuum cleaner);
-		if the player is an april 2021 top donator and black hood is worn and black hood is not blessed and the player is upright and robo vacuum cleaner is not penetrating a fuckhole:
+		let availableForBagDuty be false;
+		let F be vagina;
+		if the player is possessing a penis or the player is not possessing a vagina, now F is asshole;
+		if the player is an april 2021 top donator and the player is upright and robo vacuum cleaner is not penetrating a fuckhole:
+			if black hood is worn and black hood is not blessed:
+				now availableForBagDuty is true;
+			otherwise if black hood is off-stage and black hood is actually summonable and the number of pussy covering clothing is 0 and F is not actually occupied and the number of worn unremovable shoes is 0 and skirted-maid-corset is unclash summonable:
+				now availableForBagDuty is true;
+		if availableForBagDuty is true:
 			say "[BigNameDesc of robo vacuum cleaner] suddenly zips over to where you're standing!";
-			let F be vagina;
-			if the player is possessing a penis or the player is not possessing a vagina, now F is asshole;
 			repeat with C running through worn removable knickers:
 				WardrobeVanish C;
 			repeat with C running through pussy covering removable clothing:
@@ -83,6 +89,9 @@ A later time based rule (this is the robo vacuum cleaner rule):
 			if there is pussy covering clothing or F is actually occupied or (there is worn unremovable shoes and the number of worn heels is 0) or skirted-maid-corset is not unclash summonable:
 				say "But then it suddenly stops, seeming to realise it is unable to do what it was intending to. That's... probably a good thing.";
 			otherwise:
+				if black hood is not worn:
+					say "A black hood appears over your head![line break][variable custom style]Eek![roman type][line break]";
+					summon black hood cursed;
 				unclash class summon skirted-maid-corset;
 				if the number of worn heels is 0, class summon pink girly bow court heels;
 				now robo vacuum cleaner is penetrating F;

@@ -277,7 +277,7 @@ To compute periodic effect of (I - living belt of sturdiness):
 			while the player is ass protected:
 				let A be a random top level ass protection clothing worn by the player;
 				say "The tentacle easily rips through your [printed name of A]!";
-				if A is rippable, rip A;
+				if A is rippable, now A is crotch-ripped;
 				otherwise destroy A;
 			if asshole is actually occupied:
 				say "The tentacle, unable to enter your occupied [asshole], spanks your butt in frustration![line break][variable custom style][one of]Owwwww[or]Ouch[or]Fuck[or]Owiee[purely at random]![roman type][line break]";
@@ -290,7 +290,7 @@ To compute periodic effect of (I - living belt of sturdiness):
 				while the player is pussy protected:
 					let A be a random top level protection clothing worn by the player;
 					say "The tentacle easily rips through your [printed name of A]!";
-					if A is rippable, rip A;
+					if A is rippable, now A is crotch-ripped;
 					otherwise destroy A;
 				if vagina is actually occupied:
 					say "The tentacle, unable to enter your occupied [vagina], spanks your butt in frustration![line break][variable custom style][one of]Owwwww[or]Ouch[or]Fuck[or]Owiee[purely at random]![roman type][line break]";

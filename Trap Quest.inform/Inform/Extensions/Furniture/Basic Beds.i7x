@@ -107,7 +107,7 @@ To compute unique normal effect of (F - a prison bed):
 	let M be a random unfriendly monster regionally in playerRegion;
 	if M is intelligent and a random number between 1 and 3 is 1:
 		now M is in InsideTheCell;
-		now M is interested;
+		interest M;
 		say "[BigNameDesc of M] enters the cell while you're in the middle of resting, and shuts the door behind [him of M]. The door immediately locks.".
 
 To say RestCompleteFlav of (F - a prison bed):
@@ -177,7 +177,7 @@ To compute unique normal effect of (F - a straw bed):
 	if W is in Woods20 and W is bitchy, increase R by 2;
 	if R > 6:
 		now M is in InsideTheShack;
-		now M is interested;
+		interest M;
 		if W is in the location of the player and W is bitchy, say "[BigNameDesc of M] enters the shack while you're still in the middle of resting, and the door slams shut behind [him of M].";
 		otherwise say "[BigNameDesc of M] enters the shack while you're still in the middle of resting. [big he of M] quickly shuts the door, which glows magenta as it magically locks itself.".
 		[now shack-door is in the location of the player.]
@@ -209,6 +209,6 @@ To compute rest ending of (F - a cot):
 		say "[BigNameDesc of M] grins. Looks like you'll have to handle [him of M] before you can leave this room.";
 		now the sex-length of M is 5;
 		if number of plentiful accessories carried by M < 1, now a random off-stage ring is carried by M;
-		now M is interested.
+		interest M.
 
 Basic Beds ends here.

@@ -9,17 +9,16 @@ Definition: a pom-pom is class-relevant:
 To say ClassSummonFlav of (P - a pom-pom):
 	say "A pair of [MediumDesc of P] appear to cover your hands![line break][variable custom style][if P is purple-pom-pom]I guess I shouldn't be surprised.[otherwise]ARE YOU SERIOUS?![end if][roman type][line break]".
 
-To compute class set up of (C - a pom-pom):
-	now C is cursed.
-
 To say ShortDesc of (C - a pom-pom):
 	say "pom-poms".
+To say MediumDesc of (C - a pom-pom):
+	say "pair of pom-poms".
 
 To decide which number is the strength-influence of (C - a pom-pom):
 	if the charge of C > 0:
-		if C is blessed, decide on 4;
-		if C is cursed, decide on 1;
-		decide on 2;
+		if C is blessed, decide on 5;
+		if C is cursed, decide on 3;
+		decide on 4;
 	decide on 0.
 
 To decide which number is the dexterity-influence of (C - a pom-pom):
@@ -27,7 +26,7 @@ To decide which number is the dexterity-influence of (C - a pom-pom):
 
 This is the pom-poms prevent manual dexterity rule:
 	if there is a worn pom-pom:
-		if manual hands attempt is 1, say "You don't have the dexterity for that while you're wearing your pom-poms!.";
+		if manual hands attempt is 1, say "You don't have the dexterity for that while you're wearing your pom-poms!";
 		rule fails.
 The pom-poms prevent manual dexterity rule is listed in the manual dexterity restriction rules.
 
@@ -60,10 +59,10 @@ To decide which figure-name is the clothing-image of (F - purple-pom-pom):
 	decide on figure of pom poms.
 
 To say ClothingDesc of (C - purple-pom-pom):
-	say "A pair of purple pom-poms. You lose some manual dexterity from wearing them, and your slaps don't do anything. But you feel like you could [bold type]jump[roman type] and [bold type]kick[roman type] for hours!".
+	say "A pair of purple pom-poms. You lose some manual dexterity from wearing them, and your slaps don't do anything. But you feel like you could [bold type]jump[roman type] and [bold type]kick[roman type] for hours! They are making you feel extra-lucky. Furthermore, you can sense that the more slutty you look, the more they will enhance your agility.".
 
 To say MediumDesc of (C - purple-pom-pom):
-	say "purple pom-poms".
+	say "pair of purple pom-poms".
 
 To decide which object is the unique-upgrade-target of (C - purple-pom-pom):
 	if the class of the player is cumdumpster, decide on condom-pom-pom;
@@ -83,6 +82,9 @@ To compute periodic effect of (C - purple-pom-pom):
 
 condom-pom-pom is a pom-pom. The printed name of condom-pom-pom is "[clothing-title-before]used condom pom-poms[clothing-title-after]". Understand "used", "condom" as condom-pom-pom. The text-shortcut of condom-pom-pom is "cpom".
 
+To compute class set up of (C - condom-pom-pom):
+	now C is cursed.
+
 Definition: condom-pom-pom is semen themed: decide yes.
 
 Figure of condom pom poms is the file "Items/Accessories/Equippables/pompoms2.png".
@@ -91,10 +93,10 @@ To decide which figure-name is the clothing-image of (F - condom-pom-pom):
 	decide on figure of condom pom poms.
 
 To say ClothingDesc of (C - condom-pom-pom):
-	say "A pair of pom-poms made entirely out of used condoms. You lose some manual dexterity from wearing them, and your slaps don't do anything. But you feel like you could [bold type]jump[roman type] and [bold type]kick[roman type] for hours!".
+	say "A pair of pom-poms made entirely out of used condoms. You lose some manual dexterity from wearing them, and your slaps don't do anything. But you feel like you could [bold type]jump[roman type] and [bold type]kick[roman type] for hours! They are making you feel extra-lucky. Furthermore, you can sense that the more slutty you look, the more they will enhance your agility.".
 
 To say MediumDesc of (C - condom-pom-pom):
-	say "condom pom-poms".
+	say "pair of condom pom-poms".
 
 To compute periodic effect of (C - condom-pom-pom):
 	now the used condoms of C is 20;

@@ -30,7 +30,8 @@ To compute takeoff:
 			if flav-said is 0, say "Your sudden flight makes you drop all the items you're carrying!";
 			now flav-said is 1;
 			now C is in the location of the player;
-			if C is open topped vessel, dump C;
+			if C is open topped vessel:
+				dump C;
 	if there is a worn magic wand:
 		compute takeoff of a random worn magic wand;
 	if the location of the player is no-roof:

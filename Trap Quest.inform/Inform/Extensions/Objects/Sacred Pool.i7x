@@ -43,7 +43,7 @@ To compute sacred bathing:
 	let B be the number of worn blessed clothing + the number of worn cursed clothing;
 	if the corruption of the sacred-pool > 200:
 		say "Tendrils of liquid lash out as soon as you break the surface, latching hold of you, dragging you the rest of the way in and pulling you underwater. You are thrashed around violently underneath the surface and abruptly thrown back out.";
-		PainUp 1;
+		PainUp 10;
 		repeat with L running through worn actually cursable clothing:
 			curse L;
 		IntDown 1;
@@ -86,6 +86,7 @@ To compute swimming in (S - sacred-pool):
 	let swim-turns be 0;
 	let dive-count be 0;
 	let swim-location be 0;[0 - stairs, 1 - midpoint, 2 - fountain]
+	allocate 6 seconds;
 	while swimming is 1:
 		let L be swim-location;
 		let old-dive be dive-count;
@@ -95,35 +96,36 @@ To compute swimming in (S - sacred-pool):
 			say "[if C < 60]You hear a faint sound, like voices whispering[otherwise if C < 120]You hear a faint sound, somewhere between whispering and panting[otherwise]You hear a faint sound much like moaning[end if] as you slowly move away from the edge.";
 		otherwise:
 			say "You are treading water [if L is 0]close to the edge of the pool, with your toes easily touching[otherwise if L is 1]midway between the pool's edge and the goddess statue. Your feet are a couple inches away from touching[otherwise]in front of the goddess statue. Your feet are several metres away from[end if] the bottom. [if C < 60]The water is crystal clear, and you can easily see your feet if you look down.[otherwise if C < 120]The water is slightly murky, and if you look down you can't see anything below your knees.[otherwise]The water is almost completely opaque, and if you look down, you can't see anything past your chest.[end if]";
-		reset multiple choice questions;
-		if swim-location is 0, set next numerical response to "get out";
-		set next numerical response to "swim in place";
-		if swim-location < 2, set next numerical response to "swim toward statue";
-		if swim-location > 0, set next numerical response to "swim toward shallow end";
-		if swim-location > 0, set next numerical response to "dive";
-		say "[line break]What should you do next?";
-		compute multiple choice question;
-		let CNR be the chosen numerical response;
-		if CNR is "get out":
-			say "You climb out of the pool.";
-			now swimming is 0;
-		otherwise if CNR is "swim in place":
-			say "You swim in place.";
-			compute easy swimming check in S;
-		otherwise if CNR is "swim toward shallow end":
-			say "You swim toward the shallow end of the pool.";
-			compute normal swimming check in S;
-			decrease swim-location by 1;
-		otherwise if CNR is "swim toward statue":
-			say "You swim toward the statue at the edge of the pool.";
-			compute normal swimming check in S;
-			increase swim-location by 1;
-		otherwise:
-			say "You dive below the surface.";
-			compute difficult swimming check in S;
-			compute treasure diving in S at swim-location;
-			increase dive-count by 1;
-			say "[line break]";
+		if swim-turns > 0:
+			reset multiple choice questions;
+			if swim-location is 0, set next numerical response to "get out";
+			set next numerical response to "swim in place";
+			if swim-location < 2, set next numerical response to "swim toward statue";
+			if swim-location > 0, set next numerical response to "swim toward shallow end";
+			if swim-location > 0, set next numerical response to "dive";
+			say "[line break]What should you do next?";
+			compute multiple choice question;
+			let CNR be the chosen numerical response;
+			if CNR is "get out":
+				say "You climb out of the pool.";
+				now swimming is 0;
+			otherwise if CNR is "swim in place":
+				say "You swim in place.";
+				compute easy swimming check in S;
+			otherwise if CNR is "swim toward shallow end":
+				say "You swim toward the shallow end of the pool.";
+				compute normal swimming check in S;
+				decrease swim-location by 1;
+			otherwise if CNR is "swim toward statue":
+				say "You swim toward the statue at the edge of the pool.";
+				compute normal swimming check in S;
+				increase swim-location by 1;
+			otherwise:
+				say "You dive below the surface.";
+				compute difficult swimming check in S;
+				compute treasure diving in S at swim-location;
+				increase dive-count by 1;
+				say line break;
 		if swimming is 1:
 			if old-dive > dive-count and swim-turns > 0:[if the player didn't dive.]
 				if (L < 2 and the player is getting very unlucky) or (L is 2 and the player is getting unlucky):[The voices get stronger, and there's an effect.]
@@ -139,14 +141,14 @@ To compute swimming in (S - sacred-pool):
 						slightHumiliate;
 						IntDown 1;
 				otherwise:[No effect, just voices.]
-					say "The muted sounds of [if C < 60]whispering[otherwise if C < 120]panting[otherwise]moaning[end if] continue all around you";
+					say "The muted sounds of [if C < 60]whispering[otherwise if C < 120]panting[otherwise]moaning[end if] continue all around you.";
 			compute sacred bathing;[Happens every turn]
 			pollute tracked-semen;
 			now tracked-semen is 0;
 			increase swim-turns by 1;
 			compute swimming fatigue check in S;
 			if delayed fainting is 1, now swimming is 0;
-	allocate 12 + (3 * swim-turns) seconds;[after everything]
+	if seconds > 0, increase seconds by swim-turns * 3;
 	display entire map.
 
 To pollute (N - a number):
@@ -226,9 +228,9 @@ To compute treasure diving in (WB - sacred-pool) at (L - a number):
 		if the player is getting unlucky:
 			say "But a moment later, you feel invisible hands begin to move across your body. [if C < 60]They pinch and slap you as you hurry back to the surface.[otherwise if C < 120]They alternate between pinching you and teasing you as you hurry back to the surface.[otherwise]They grope and massage you as you hurry back to the surface.[end if]";
 			if C < 60:
-				PainUp 2;
+				PainUp 20;
 			otherwise if C < 120:
-				PainUp 1;
+				PainUp 10;
 				stimulate a random body part;
 			otherwise:
 				stimulate a random body part times 2;

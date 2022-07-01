@@ -13,7 +13,7 @@ Unzipping is an action applying to one thing.
 Check unzipping:
 	if the noun is not clothing, say "This verb is used for pulling down zips." instead;
 	if the noun is not worn, say "But you're not even wearing [the noun]..." instead;
-	if the noun is not zippable, say "That doesn't have a zip on it..." instead;
+	if the noun is not crotch-zipped, say "That doesn't have a zip on it..." instead;
 	if the noun is not total protection, say "The zip is already down!" instead;
 	if the latex-transformation of the player is 8, say "[if auto is 0]You don't have the manual dexterity to do that![end if]" instead;
 	repeat with C running through clothing worn by the player:
@@ -37,7 +37,7 @@ Rezipping is an action applying to one thing.
 Check rezipping:
 	if the noun is not clothing, say "This verb is used for pulling up zips on clothing." instead;
 	if the noun is not worn, say "But you're not even wearing [the noun]..." instead;
-	if the noun is not zippable, say "That doesn't have any zips..." instead;
+	if the noun is not crotch-zipped and the noun is not crotch-unzipped, say "That doesn't have any zips..." instead;
 	if the noun is not no protection, say "The [noun] is already zipped up!" instead;
 	if the latex-transformation of the player is 8, say "You don't have the manual dexterity to do that." instead;
 	repeat with C running through clothing worn by the player:
