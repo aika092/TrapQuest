@@ -36,6 +36,7 @@ Definition: a monster (called M) is successfully blocking: [Do they succeed in a
 	let D be the difficulty of M * 2;
 	if M is seduced and the sex-length of M < 6, decrease D by (6 - the sex-length of M);
 	let MR be the movement reduction of the player; [When we check the movement reduction of the player for the first time in a round, if it is significant, it outputs text explaining why the player is struggling to move away from the monster.]
+	if exposing-magical-dress is worn, now MR is D * -1;
 	let DM be D + MR;
 	if combatSpeed > 1 and DM > the dexterity of the player, increase D by (DM - the dexterity of the player) * (combatSpeed - 1); [double the likelihood of success by doubling the difference between DM and Dex]
 	let R be MR + a random number from 1 to D;

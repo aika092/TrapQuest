@@ -58,6 +58,7 @@ This is the maid class rule:
 	if there is a worn maid headdress:
 		let MT be "maid";
 		if milkmaid headdress is worn, now MT is "milkmaid";
+		if stripper maid headdress is worn, now MT is "stripper maid";
 		if magical-maid-outfit is worn:
 			now player-class is the substituted form of "magical [MT]";
 		otherwise if cafe-maid-outfit is worn:
@@ -75,7 +76,7 @@ Check dropping waitress vessel:
 	if the class of the player is "cafe maid" or the class of the player matches the text "milkmaid", say "[BigNameDesc of a random worn maid headdress] won't allow you to drop [NameDesc of the noun]!" instead.
 
 Definition: a text (called T) is maid:
-	if T matches the text "maid", decide yes;
+	if T matches the text "maid" or T matches the text "domesticated", decide yes;
 	decide no.
 
 maidExplained is initially false.
@@ -265,7 +266,7 @@ There are multiple different texts that need to be able to return true for the c
 
 +!]
 Definition: a text (called T) is fertility goddess:
-	if T matches the text "fertil" or T matches the text "god" or T matches the text "breeding", decide yes;
+	if T matches the text "fertil" or T matches the text "god" or T matches the text "breeding" or T matches the text "housewife", decide yes;
 	decide no.
 
 [!<TheFertilityGoddessPussySlutRule>+
@@ -586,13 +587,16 @@ vampire spawn is a text that varies. vampire spawn is "vampire spawn".
 
 This is the bride class rule:
 	if a bridal veil is worn:
-		now the player-class is "bride";
-		if bridal garter is worn, now player-class is "cumdumpster bride";
+		let T be "bride";
+		if housewife dress is worn, now T is "housewife";
+		if maid apron is worn, now T is "domesticated housewife";
+		now player-class is "[T]";
+		if bridal garter is worn, now player-class is "cumdumpster [T]";
 		rule succeeds.
 The bride class rule is listed in the player class rules.
 
 Definition: a text (called T) is bride:
-	if T matches the text "bride", decide yes;
+	if T matches the text "bride" or T matches the text "wife", decide yes;
 	decide no.
 
 brideExplained is initially false.
@@ -928,11 +932,29 @@ Definition: a text (called T) is latex clown:
 	decide no.
 
 This is the barbarian class rule:
-	if rugged-headband is worn and heavy-club is worn:
+	if rugged-headband is worn:
 		now the player-class is "barbarian";
 		rule succeeds.
 The barbarian class rule is listed first in the player class rules.
 barbarian is a text that varies. barbarian is "barbarian".
+
+This is the stripper class rule:
+	if stripper-ears is worn:
+		now the player-class is "stripper";
+		rule succeeds.
+The stripper class rule is listed first in the player class rules.
+Definition: a text (called T) is stripper:
+	if T matches the text "stripper", decide yes;
+	decide no..
+
+stripperExplained is initially false.
+a later time based rule (this is the explaining stripper rule):
+	if stripperExplained is false and the class of the player is stripper:
+		now stripperExplained is true;
+		say "[bold type]Now that you have become the 'stripper' class, you can sense that the higher your heels, the more that [men of shopkeeper] will get [']blue balls['] less easily.[roman type][line break]";
+	otherwise if stripperExplained is true and the class of the player is not stripper:
+		now stripperExplained is false;
+		say "[bold type]Now that you are no longer the 'stripper' class, you can sense that people will get [']blue balls['] at the normal rate.[roman type][line break]".
 
 This is the worshipper class rule:
 	if gold-tiara is worn:

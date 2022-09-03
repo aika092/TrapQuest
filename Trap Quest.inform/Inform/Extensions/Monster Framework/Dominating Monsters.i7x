@@ -561,7 +561,7 @@ To compute dominating (M - a monster):
 		now player-fucking is the submissiveness of M;[submissiveness of M will set player-fucking based on the monster]
 	let J be a random worn demon codpiece;
 	if player-fucking is not DOMINANT-NONE and player-fucking is not DOMINANT-FAILURE:
-		now the refractory-period of M is -4;[Allows us to track whether the monster came during the scene]
+		now the refractory-period of M is -4; [Allows us to track whether the monster came during the scene]
 		say DominanceSuccess of M;
 		compute successful dominance of M;
 		if J is clothing and player-fucker is penis:

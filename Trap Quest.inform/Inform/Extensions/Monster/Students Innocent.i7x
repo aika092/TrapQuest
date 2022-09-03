@@ -4,6 +4,10 @@ An innocent student is a kind of student. Understand "nervous" as an innocent st
 
 To say MediumDesc of (M - an innocent student):
 	say "nervous [rank-colour of M] student [student-name of M]".
+To say NameDesc of (M - an innocent student):
+	say "[input-style]nervous [student-name of M][roman type]".
+To say BigNameDesc of (M - an innocent student):
+	say "[input-style]Nervous [student-name of M][roman type]".
 
 To decide which number is the dedication of (M - an innocent student): [We can use this for various calculations to check which students do what]
 	decide on a random number between 0 and 3.

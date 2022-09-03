@@ -1,6 +1,6 @@
 Swimsuit Framework by Dresses begins here.
 
-A swimsuit is a kind of underdress. A swimsuit is usually unskirted. A swimsuit is usually nylon. A swimsuit is usually bottom-exclusive. A swimsuit is usually optional-top-displacable. A swimsuit is usually erect-nipple-exposing. The text-shortcut of swimsuit is "ss". The printed name of a swimsuit is "[clothing-title-before][MediumDesc of item described][clothing-title-after]".
+A swimsuit is a kind of underdress. A swimsuit is usually unskirted. A swimsuit is usually nylon. A swimsuit is usually bottom-exclusive. A swimsuit is usually top-displacable. A swimsuit is usually erect-nipple-exposing. The text-shortcut of swimsuit is "ss". The printed name of a swimsuit is "[clothing-title-before][MediumDesc of item described][clothing-title-after]".
 
 To compute SelfExamineDesc of (C - a swimsuit):
 	say "A [ShortDesc of C] clings tightly to your body. ".
@@ -19,7 +19,7 @@ Definition: a swimsuit is uncovered themed: decide yes.
 
 Chapter - Monokini
 
-A monokini is a kind of swimsuit. A monokini is usually crotch-intact. Understand "onepiece", "swimsuit" as monokini. A monokini is usually top-displacable.
+A monokini is a kind of swimsuit. A monokini is usually crotch-intact. Understand "onepiece", "swimsuit" as monokini.
 
 To decide which number is the initial outrage of (C - a monokini):
 	decide on 3.
@@ -47,19 +47,19 @@ To decide which number is the penis-capacity of (C - a string monokini):[what's 
 To decide which number is the initial armour of (C - a string monokini):
 	decide on 2.
 
-A minimalist monokini is a kind of monokini. A minimalist monokini is usually very low cut.
+A minimalist monokini is a kind of monokini. A minimalist monokini is usually very low cut.  A minimalist monokini is usually optional-top-displacable.
 To decide which number is the initial outrage of (C - a minimalist monokini):
 	decide on 6.
 To decide which number is the penis-capacity of (C - a minimalist monokini):[what's the largest size of penis it can cover?]
 	decide on 4.
 
-A strap monokini is a kind of monokini. Understand "strap" as strap monokini. A strap monokini is usually ridiculously low cut.
+A strap monokini is a kind of monokini. Understand "strap" as strap monokini. A strap monokini is usually ridiculously low cut. A strap monokini is usually optional-top-displacable.
 To decide which number is the initial outrage of (C - a strap monokini):
 	decide on 8.
 To decide which number is the penis-capacity of (C - a strap monokini):[what's the largest size of penis it can cover?]
 	decide on 2.
 
-A slut monokini is a kind of string monokini. A slut monokini is usually neck covering.
+A slut monokini is a kind of string monokini. A slut monokini is usually neck covering. A slut monokini is usually optional-top-displacable.
 To decide which number is the initial outrage of (C - a slut monokini):
 	decide on 12.
 Definition: a slut monokini is end of transformation chain: decide yes.

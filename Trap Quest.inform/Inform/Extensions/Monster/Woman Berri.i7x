@@ -278,7 +278,7 @@ Report going when the vine-hole-scene of woman-player is 0 and the woman-bimbo o
 		deploy woman-player with woman-status 29;
 		now the vine-hole-scene of woman-player is 1;
 		now woman-player is in the location of the player;
-		now woman-player is interested;
+		interest woman-player;
 		cutshow figure of berri cutscene 2 for woman-player;
 		now temporaryYesNoBackground is figure of berri cutscene 2;
 		say "As you arrive here you see that [NameDesc of woman-player] is here, trying to climb out of the pit, with a strong green vine wrapped around one of [his of woman-player] wrists, trying to pull [him of woman-player] back down into the underground cavern. [big his of woman-player] pistol has fallen out of [his of woman-player] hand, lying just inches away out of [his of woman-player] reach. [if the player is upright][bold type]As you are distracted by the gun, you stumble on a rock and fall to your knees.[roman type][paragraph break][BigNameDesc of woman-player] spots you and [his of woman-player] eyes widen with a look of urgency.[line break][speech style of woman-player]'[NameBimbo]! Thank the stars! Quick, my gun!'[roman type][line break]What do you do?";
@@ -358,7 +358,7 @@ Report going when there is an vine in the location and the woman-bimbo of woman-
 	if the TrapNo of V >= 0 and woman-player is relaxed redeploy appropriate:
 		deploy woman-player with woman-status 90;
 		now woman-player is in the location of the player;
-		now woman-player is interested;
+		interest woman-player;
 		repeat with VN running through vines in the location of the player:
 			now the TrapNo of VN is -7500; [prevents it from attacking the player]
 		say "As you arrive here you see that [NameDesc of woman-player] is here, with strong green vines wrapped around [his of woman-player] wrists and ankles, holding them in place. [big his of woman-player] body is being held halfway through a set of portals, which is forcing [his of woman-player] face to be held right against [his of woman-player] diaper bulge.".
@@ -501,7 +501,7 @@ Report going when the player is in Hotel21 and Hotel21 is not discovered:
 			say "But then you hear a loud hissing sound as [NameDesc of woman-player] loudly wets [himself of woman-player] in front of you. [if the woman-bimbo of woman-player is 2][big he of woman-player] must be wearing a diaper under [his of woman-player] outfit, because nothing is leaking out from underneath [his of woman-player] dress. [end if][big he of woman-player] turns bright red and has a mixture of shock and shame on [his of woman-player] face.";
 		say "[speech style of woman-player]'Oh... Oh no...'[roman type][line break]";
 		now woman-player is in the location of the player;
-		now woman-player is interested;
+		interest woman-player;
 		resolve diaper use of woman-player;
 		say "The straps holding [NameDesc of woman-player] in place then unlock themselves, releasing [him of woman-player].[line break][speech style of woman-player]'[big please]... can we just pretend that never happened...'[roman type][line break]".
 
@@ -558,7 +558,7 @@ Report going when the player is in Hotel37 and the dominatrix-contraption-scene 
 	if dominatrix is not in the location of the player and dominatrix is alive and woman-player is relaxed redeploy appropriate:
 		deploy woman-player with woman-status 93;
 		now woman-player is in the location of the player;
-		now woman-player is interested;
+		interest woman-player;
 		say "As you arrive here you see that [NameDesc of woman-player] is here on [his of woman-player] back, tied up in a very unique contraption. [big he of woman-player] is bound to the wall with metal wristcuffs behind [his of woman-player] back. [big he of woman-player] is wearing a tight pink latex bodysuit around a massive diaper. Above [his of woman-player] head is an open-topped tank, slowly filling with a [if watersports fetish is 1]yellow[otherwise]green[end if] liquid. The pipe above the tank which is feeding it with liquid has a sign next to it which reads '[if watersports fetish is 1]HOTEL URINALS DRAINAGE'[otherwise]SUPER-LAX DISPENSER'[end if]. The bottom of the tank drains down via a tube into [NameDesc of woman-player][']s mouth via an airtight tube gag. To make things worse, [his of woman-player] nostrils are also plugged by tubes with hollow corks - these two tubes join together and then go down into [his of woman-player] diaper.";
 		say "The predicament is clear: [NameDesc of woman-player] can only breathe via [his of woman-player] mouth if the tank and connecting tube are empty of liquid, which will only be the case if [he of woman-player] drinks everything that comes out of the drainpipe. Otherwise, [he of woman-player] is forced to breathe through [his of woman-player] nose, meaning [he of woman-player][']ll be getting what oxygen [he of woman-player] can from within [his of woman-player] latex-clad megadiaper.".
 
@@ -655,7 +655,7 @@ Report going when there is a diaper pail in the location and the pail-scene of w
 		deploy woman-player with woman-status 98;
 		now the pail-scene of woman-player is 1;
 		now woman-player is in the location of the player;
-		now woman-player is interested;
+		interest woman-player;
 		say "As you arrive here you see [NameDesc of woman-player][']s legs flailing from the top of a diaper pail, its lid wide open. It looks like [he of woman-player][']s stuck! And judging by the horrid smell coming from within, you can imagine what [he of woman-player] is surrounded by. You could try to rescue [him of woman-player] by [bold type]pull[roman type]ing [him of woman-player].".
 
 Check pulling woman-player when the woman-status of woman-player is 98:
@@ -685,7 +685,7 @@ Report going when there is a diaper pail in the location and the messy-diaper-sc
 		deploy woman-player with woman-status 81;
 		now the messy-diaper-scene of woman-player is 1;
 		now woman-player is in the location of the player;
-		now woman-player is interested;
+		interest woman-player;
 		say "As you arrive here you see [NameDesc of woman-player] arriving from the other direction. It looks like [he of woman-player] spotted you first, and is hiding something behind [his of woman-player] back. And judging by the horrid smell coming from [him of woman-player], you can imagine what it is. [big he of woman-player] seems very embarrassed about it and no longer wants to put [his of woman-player] nasty used diaper into the diaper pail with you watching, clearly hoping [he of woman-player] can do it without having to let you properly see the monstrous messy memento behind [him of woman-player].[line break][speech style of woman-player]'Oh hi, [NameBimbo]! What's up? Me? There's nothing up with me! Nothing at all! I came in here for no reason at all...'[roman type][line break]".
 
 Report going when the woman-status of woman-player is 81 and woman-player is alive:
@@ -753,7 +753,7 @@ Report going when the ass-hook-scene of woman-player is 0 and playerRegion is Du
 		deploy woman-player with woman-status 99;
 		now the ass-hook-scene of woman-player is 1;
 		now woman-player is in the location of the player;
-		now woman-player is interested;
+		interest woman-player;
 		say "As you arrive here you see [NameDesc of woman-player] is stuck in the middle of the room, the back of [his of woman-player] white panties caught by the hook on a rope that you encountered earlier. The hook has pulled [his of woman-player] panties into a hard and painful wedgie! [big he of woman-player] tries to loosen the hook with one hand, but clearly will need to use both of [his of woman-player] hands to have any chance of success. But [his of woman-player] other hand is busy holding onto [his of woman-player] water pistol, and [he of woman-player] doesn't seem willing to drop it.[line break][speech style of woman-player]'Oh, [NameBimbo]! [big please], it hurts so much... can you get me free?'[roman type][line break]".
 
 A time based rule (this is the berri ass hook rule):
@@ -852,7 +852,7 @@ Report going when the changing-station-scene of woman-player is 0 and the player
 		now woman-player is caged;
 		now the changing-station-scene of woman-player is 1;
 		now woman-player is in the location of the player;
-		now woman-player is interested;
+		interest woman-player;
 		let ACS be a random automated changing station in the location of the player;
 		say "As you arrive here you see [NameDesc of woman-player] is stuck in the [ACS], wrists bound in cuffs above [his of woman-player] head. A tight pink tube top all you can see on [his of woman-player] top half and [his of woman-player] bottom half obscured by the door. Robotic arms are busy doing something to [his of woman-player] bottom half.[line break][speech style of woman-player]'Oh, [NameBimbo]! This is bad timing. What's going on here, you ask? Nothing at all. I'm just getting a change.'[roman type][line break]".
 
@@ -891,7 +891,7 @@ Report going when the matron-fight-scene of woman-player is 0 and the player is 
 		deploy woman-player with woman-status 100;
 		now the matron-fight-scene of woman-player is 1;
 		now woman-player is in the location of the player;
-		now woman-player is interested;
+		interest woman-player;
 		now the health of woman-player is 1;
 		now the health of matron is (the maxhealth of matron * 3) / 4;
 		say "As you arrive here you see [NameDesc of woman-player] is on [his of woman-player] knees in front of [NameDesc of matron] looking extremely fatigued, [his of woman-player] water pistol empty. On the other hand, [NameDesc of matron] looks like [he of matron][']s barely worked up a sweat. [BigNameDesc of woman-player] is looking up at [NameDesc of matron] with a face full of trepidation.".
@@ -919,7 +919,7 @@ A later time based rule (this is the berri matron rule):
 					now the woman-bimbo of woman-player is 3;
 					now the woman-status of woman-player is 27;
 					deinterest M;
-					check guaranteed perception of M;
+					if M is in the location of the player, check guaranteed perception of M;
 			otherwise:
 				now ableToRun is true;
 		otherwise:
@@ -939,7 +939,7 @@ Report going when the woman-old-bimbo of woman-player is 5 and the woman-bimbo o
 	if woman-player is relaxed redeploy appropriate:
 		deploy woman-player with woman-status 26;
 		now woman-player is in the location of the player;
-		now woman-player is interested;
+		interest woman-player;
 		cutshow figure of berri cutscene 9 for woman-player;
 		say "As you arrive here you see [NameDesc of woman-player] is on [his of woman-player] knees in front of [NameDesc of matron], locked in place with wrist straps and a thigh spreader bar, with a giant plain disposable diaper taped up around [him of woman-player]. [big he of woman-player] has purple baby mittens on [his of woman-player] hands and purple socks on [his of woman-player] feet, matching [his of woman-player] purple pacifier gag and small purple baby bib that is too small to conceal [his of woman-player] breasts. [BigNameDesc of matron] is teasing [NameDesc of woman-player] with a vibrating wand massager, bringing [him of woman-player] to the edge but pulling it away before [he of woman-player] cums. [BigNameDesc of woman-player] is very red in the face, and is looking up at [NameDesc of matron] with pleading eyes. It's clear that poor Berri has been edged for quite a while.[line break][speech style of matron]'Oh, you think you deserve to cum, do you? I don't know about that.'[roman type][line break][BigNameDesc of matron] teases.";
 		if matron is interested, say "[BigNameDesc of matron] turns to you.";
@@ -974,7 +974,7 @@ Report going when the woman-bimbo of woman-player is 5 and the changing-station-
 	if woman-player is relaxed redeploy appropriate:
 		deploy woman-player with woman-status 102;
 		now woman-player is in the location of the player;
-		now woman-player is interested;
+		interest woman-player;
 		say "As you arrive here you see [NameDesc of woman-player] holding the rope for the automated changing station's container lid. The transparent container is full of used diapers, and if [he of woman-player] gives the rope any slack at all, the lid will open and the diapers will tumble out of the container and onto [his of woman-player] head.[line break][speech style of woman-player]'Oh gosh [NameBimbo], please help me! I need to tie this back to the hook over there, but the lid is so heavy... if I stop pulling down on it with all my strength, it'll open up! And my arms are getting so tired! Please, quickly, help me [bold type]pull[speech style of woman-player] this thing over to the hook and tie the knot!'[roman type][line break]";
 		now the changing-station-tank-scene of woman-player is 1.
 
@@ -1394,9 +1394,7 @@ To compute basic greeting to (M - woman-player):
 	otherwise:
 		say "[speech style of M]'I'm not sure I want to talk right now.'[roman type][line break]";
 	interest M;
-	now the woman-old-bimbo of M is the woman-bimbo of M;
-	now the old-name of M is the current-name of M;
-	now the old-title of M is the current-title of M.
+	update woman name and bimbo.
 
 talk-berri-question is a talk-object.
 

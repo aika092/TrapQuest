@@ -67,4 +67,5 @@ To compute generic first time class reward of (Q - titfuck-desirability-quest) o
 	otherwise:
 		compute generic second time class reward of Q on C.
 
+
 Rubber Top Hat ends here.

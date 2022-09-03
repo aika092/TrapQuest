@@ -37,7 +37,9 @@ To say speech style of (M - unicorn):
 Definition: unicorn is father material: decide yes.
 Definition: unicorn is wenchy: decide yes.
 Definition: unicorn is human: decide yes.
-Definition: unicorn is musky: decide yes.
+Definition: unicorn is musky:
+	if the refractory-period of it <= 0, decide yes;
+	decide no.
 
 Definition: unicorn is woods dwelling: decide yes.
 

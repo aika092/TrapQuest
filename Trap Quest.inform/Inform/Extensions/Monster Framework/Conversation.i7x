@@ -248,7 +248,7 @@ To compute BimboSeduced of (M - a monster):
 		say "Something seems to suddenly switch in [NameDesc of M][']s demeanour and [his of M] stance becomes aggressive.";
 		anger M;
 		now the boredom of M is 0;
-	otherwise if diaper quest is 0 and M is actually seducable:
+	otherwise if M is actually seducable:
 		if royal scepter is worn and royal scepter is blacked and M is a friendly royal guard:
 			compute princess guard tease of M;
 		otherwise:

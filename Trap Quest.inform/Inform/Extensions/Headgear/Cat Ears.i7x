@@ -81,4 +81,84 @@ Report going:
 		if N >= 4:
 			if H is cursed or (H is uncursed and N >= 5), progress quest of follow-me-quest.
 
+
+stripper-ears is a headgear. stripper-ears is pvc. stripper-ears is womanly. Figure of stripper-ears is the file "Items/Accessories/Head/catears2.png". stripper-ears is blondeness-positive. stripper-ears is brightness-positive. stripper-ears is redness-negative. stripper-ears is hair growing. The text-shortcut of stripper-ears is "stes".
+
+Definition: stripper-ears is roleplay: decide no.
+
+The printed name of stripper-ears is "[clothing-title-before]stripper ears[clothing-title-after]".
+
+To decide which figure-name is the clothing-image of (C - stripper-ears):
+	decide on figure of stripper-ears.
+
+To say ClothingDesc of (H - stripper-ears):
+	say "These black gem-studded feline ears look rather sexy and kinky. Perfect for a professional stripper.".
+
+To say ShortDesc of (H - stripper-ears):
+	say "stripper ears".
+
+To compute SelfExamineDesc of (H - stripper-ears):
+	say "You are wearing a pair of sexy black feline ears in your [ShortDesc of hair]. ".
+
+To compute hair growth of (H - stripper-ears):
+	if artificial enhancements fetish is 1:
+		let X be 0;
+		if H is cursed, now X is -25;
+		if H is blessed, now X is 50;
+		if the largeness of hair < max hair length and a random number between 1 and (100 + X + (the fake largeness of hair * 7) - (the outrage of H * 3)) is 1 and the fake largeness of hair > 0 and the fake largeness of hair < 10:
+			say "Your [printed name of H] feels warm. You feel the fake hair extensions in your hair grow in length!";
+			FakeHairUp 1.
+
+To set up influence of (C - stripper-ears):
+	set up sex-based influence of C.
+
+Definition: stripper-ears is black themed: decide yes.
+
+Chapter - Class Outfit
+
+To compute class outfit of (H - stripper-ears):
+	class summon stripper-fishnet-dress;
+	class summon black-lace-bra;
+	class summon black-lace-thong;
+	class summon black-lace-stockings;
+	class summon latex-platform-heels.
+
+Chapter - Quest
+
+dance-quest is a headgear-clothing-quest. dance-quest has a number called early-ends.
+
+To uniquely set up (C - stripper-ears):
+	now the early-ends of dance-quest is 0;
+	now the quest of C is dance-quest.
+
+To say QuestFlav of (Q - dance-quest):
+	say "You sense it wants you to give people some seductive dances, but end the seduction before they climax.".
+
+To say QuestTitle of (Q - dance-quest):
+	say " (teasing seduction quest)".
+
+To progress quest of (Q - dance-quest):
+	repeat with C running through worn clothing:
+		if the quest of C is Q:
+			increase early-ends of Q by 1;
+			if early-ends of Q >= a random number between 2 and 5:
+				now the early-ends of Q is 0;
+				compute quest completion of Q on C;
+			otherwise:
+				say "[BigNameDesc of C] wiggle happily! [one of]If you keep this up, surely you'll be rewarded eventually.[or]Keep it up![stopping]".
+
+To compute generic first time class reward of (Q - dance-quest) on (C - a clothing):
+	let D be a random off-stage ring;
+	if D is ring:
+		now D is ruby;
+		set shortcut of D;
+		if D is actually summonable:
+			summon D;
+		otherwise:
+			now D is in the location of the player;
+		say "summoning a [MediumDesc of D] [if D is worn]straight onto your finger[otherwise]right in front of you[end if]!";
+	otherwise:
+		compute generic second time class reward of Q on C.
+
+
 Cat Ears ends here.

@@ -47,7 +47,9 @@ Definition: minotaur is willing to do oral: decide no.
 
 Definition: minotaur is willing to do titfucks: decide no.
 
-Definition: minotaur is musky: decide yes.
+Definition: minotaur is musky:
+	if the refractory-period of it <= 0, decide yes;
+	decide no.
 
 To say LongDickDesc of (M - a minotaur):
 	if pregnancy fetish is 1 and lactation fetish is 1 and inhuman pregnancy > 0 and mythical creature fetish is 1:
@@ -666,7 +668,7 @@ To compute default caged domination of (M - minotaur):
 To compute unique teleportation to (R - Dungeon36):
 	if minotaur is in Dungeon36 and minotaur is caged:
 		now minotaur is wrangling arms;
-		say "You have appeared right next to the minotaur's cage! What rotten luck! [big he of minotaur] manages to grab your arm!".
+		say "[bold type]You have appeared right next to the minotaur's cage! What rotten luck! [big he of minotaur] manages to grab your arm![roman type][line break]".
 
 Section 2 - Damage
 

@@ -17,7 +17,9 @@ Definition: a thing is necessary-in-bag: decide yes. [Things that are not necess
 
 Definition: a thing is never-in-bag: decide no.
 Definition: a bag of holding is never-in-bag: decide yes.
-Definition: a bottle is never-in-bag: decide yes.
+Definition: a bottle is never-in-bag:
+	if it is empty, decide no;
+	decide yes.
 Definition: squeezy-bottle is never-in-bag: decide yes.
 Definition: a food is never-in-bag: decide yes.
 Definition: an egg is never-in-bag: decide yes.

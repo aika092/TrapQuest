@@ -190,6 +190,50 @@ To say ExamineDesc of (C - a minibar):
 To say ShortDesc of (C - a minibar):
 	say "minibar".
 
+To add treasure to (X - a minibar):
+	if there is an off-stage can:
+		let flav-said be 0;
+		repeat with Z running from 1 to a random number between 1 and 3:
+			let I be a random off-stage can;
+			if I is can:
+				now I is in X;
+				if flav-said is 0:
+					say "You find a [printed name of I] ";
+					now flav-said is 1;
+				otherwise:
+					say "and a [printed name of I] ";
+		say "inside!";
+		repeat with Z running through cans in X:
+			if Z is not known-cursed-potion, compute autotaking Z;
+	otherwise:
+		compute generic treasure to X;
+		now X is emptied;
+		say "[variable custom style]That's weird. Maybe it's out of drinks or something?[roman type][line break]".
+
+MinibarRestocking it with is an action applying to two things.
+
+Check inserting something into minibar:
+	if the noun is plentiful accessory, try MinibarRestocking the second noun with the noun instead;
+	say "[variable custom style]Something tells me that's a stupid idea.[roman type][line break]" instead.
+
+Check MinibarRestocking:
+	if the noun is not minibar, say "How would you go about that?" instead;
+	if the second noun is not a plentiful accessory, say "You probably need something of monetary value." instead;
+	if the noun is closed, say "You put the [noun] into a small slot on the side of the minibar. It emits a short buzzing noise and spits your jewellery back out. Maybe you should open it first?" instead;
+	if the number of things in the noun > 0, say "Why would you do that? It's not empty." instead;
+	if the noun is emptied, say "Weird, the slot is barred shut. Perhaps it's completely out of drinks?" instead;
+	if the player is in danger, say "Aren't you a bit busy?" instead;
+	if the player is immobile, say "You're a bit tied up right now!" instead;
+	if the player is not able to manually use their hands, do nothing instead.
+
+Carry Out MinibarRestocking:
+	allocate 6 seconds;
+	say "You put the [noun] into a small slot on the side of the minibar. The door swings shut, and a faint shuffling sound can be heard as it resets its shelves. After a moment, the shuffling stops, and a small receipt shoots out of the slot.";
+	now the noun is closed;
+	destroy the second noun.
+
+Understand "restock [something] with [something]", "reset [something] with [something]" as MinibarRestocking it with.
+
 [A trunk is a kind of container. A trunk is openable. A trunk is closed. A trunk is not portable. The printed name of a trunk is "trunk". The text-shortcut of trunk is "tk". The description is "An unassuming wooden trunk.".]
 [!<AntiqueTrunk>@
 
@@ -232,25 +276,6 @@ To say ExamineDesc of (C - an ornate trunk):
 
 To say ShortDesc of (C - an ornate trunk):
 	say "trunk".
-
-To add treasure to (X - a minibar):
-	if there is an off-stage can:
-		let flav-said be 0;
-		repeat with Z running from 1 to a random number between 1 and 3:
-			let I be a random off-stage can;
-			if I is can:
-				now I is in X;
-				if flav-said is 0:
-					say "You find a [printed name of I] ";
-					now flav-said is 1;
-				otherwise:
-					say "and a [printed name of I] ";
-		say "inside!";
-		repeat with Z running through cans in X:
-			if Z is not known-cursed-potion, compute autotaking Z;
-	otherwise:
-		compute generic treasure to X;
-		say "[variable custom style]That's weird. Maybe it's out of drinks or something?[roman type][line break]".
 
 [!<Safe>@
 

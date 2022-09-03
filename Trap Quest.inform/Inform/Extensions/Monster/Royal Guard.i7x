@@ -698,6 +698,9 @@ To compute unique periodic effect of (M - a royal guard):
 			SemenPuddleUp 1 in (the location of M);
 			now the refractory-period of M is -4.[He'll only be completely satisfied by sex]
 
+To compute friendly boredom of (M - a royal guard):
+	if the class of the player is not princess, compute default friendly boredom progress of M.
+
 Part 4 - Protection
 
 To compute (M - a royal guard) protecting against (X - a monster):

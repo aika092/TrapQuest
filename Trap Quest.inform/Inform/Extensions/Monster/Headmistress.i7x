@@ -85,18 +85,27 @@ To compute guarding action of (M - headmistress): [Sometimes the headmistress ge
 		otherwise compute room leaving of M.
 
 An all later time based rule (this is the school recruiters rule):
-	if armband is worn and class-time < (lessonFrequency * -5) and (the rank of the player < 6 or playerRegion is school):
-		if headmistress is alive and headmistress is undefeated:
-			if headmistress is not regional, regionally place headmistress;
-		if receptionist is alive and receptionist is undefeated and receptionist is not regional:
-			now receptionist is guarding;
-			deinterest receptionist;
-			if playerRegion is Dungeon:
-				now receptionist is in Dungeon10;
-			otherwise if playerRegion is Hotel:
-				now receptionist is in Hotel40;
-			otherwise:
-				now receptionist is in School01.
+	if armband is worn:
+		if class-time < (lessonFrequency * -5) and the rank of the player < 6: [staff members stalk the player to get them to come back to class]
+			if headmistress is alive and headmistress is undefeated and headmistress is not regional, regionally place headmistress;
+			if receptionist is alive and receptionist is undefeated and receptionist is not regional:
+				now receptionist is guarding;
+				deinterest receptionist;
+				if playerRegion is Dungeon:
+					now receptionist is in Dungeon10;
+				otherwise if playerRegion is Hotel:
+					now receptionist is in Hotel40;
+				otherwise:
+					now receptionist is in School01;
+		otherwise if playerRegion is school: [staff members don't get stuck out in the field while the player is in the academy!]
+			repeat with M running through alive undefeated staff members:
+				if M is not in an academic room:
+					if M is receptionist:
+						now M is in School01;
+					otherwise if M is headmistress:
+						now M is in School08;
+					otherwise:
+						regionally place M.
 
 To regionally place (M - headmistress):
 	deinterest M; [generally when we regionally place some we want them to be able to notice the player immediately the next time they walk past each other]

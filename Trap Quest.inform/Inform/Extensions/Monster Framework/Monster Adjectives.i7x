@@ -127,6 +127,10 @@ A monster has a number called collar-pulled.
 A monster has a rule called the pullstring rule. The pullstring rule of a monster is usually the default pullstring rule.
 A monster has a number called blue-balls. [A value increased by initiating friendly sex then stopping early, or by seducing. Resets to 0 on orgasm.]
 To decide which number is the blue-balls-limit of (M - a monster):
+	let B be the default blue-balls-limit of M;
+	if the class of the player is stripper, increase B by 6;
+	decide on B.
+To decide which number is the default blue-balls-limit of (M - a monster):
 	decide on 10.
 A monster has a number called refractory-period. [This will be greater than 0 if an intelligent NPC has orgasmed recently. It is mainly used for preventing friendly sex hundreds of times in a row without pause.]
 To decide which number is the refractory-time of (M - a monster):

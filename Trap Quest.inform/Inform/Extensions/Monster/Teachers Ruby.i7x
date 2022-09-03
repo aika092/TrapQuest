@@ -62,6 +62,7 @@ To compute teaching of (L - eating-lesson):
 								PainUp 10;
 						if diaper quest is 0, StomachSemenUp 1;
 						StomachFoodUp 1;
+						trigger bowl-wisp-quest;
 					otherwise:
 						say "You refuse to try and force any more of the slimy stuff down!";
 						add yourself to E;

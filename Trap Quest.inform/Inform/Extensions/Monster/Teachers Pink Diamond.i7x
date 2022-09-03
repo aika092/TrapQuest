@@ -366,6 +366,9 @@ To compute teaching of (L - enema-tag-lesson):
 								if the player is consenting:
 									now playerDistance is nextLapDistance;
 									now pitstopping is true;
+								otherwise:
+									say "The [man of shopkeeper] in black doesn't seem impressed by this!!!";
+									add yourself to LSZ;
 							otherwise:
 								if the dedication of ST > the lessonInt1 of ST - nextLapDistance:
 									now the lessonInt1 of ST is nextLapDistance;
@@ -375,6 +378,9 @@ To compute teaching of (L - enema-tag-lesson):
 								say "Replenish your enema[if diaper quest is 1] and change your diaper[end if]?";
 								if the player is consenting:
 									now pitstopping is true;
+								otherwise if yourself is not listed in LSZ:
+									say "The [man of shopkeeper] in black doesn't seem impressed by this!!!";
+									add yourself to LSZ;
 							otherwise:
 								if zentaiDistance > 1 or LSZE is 0 or ST is not listed in LSZ, now pitstopping is true;
 					if pitstopping is true:

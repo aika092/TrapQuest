@@ -192,6 +192,7 @@ To compute pregnancy:
 				let M be the father;
 				compute labour to M;[Dead fathers are handled in fatherhood of M]
 				if successful-pregnancy is 1, compute fatherhood to the father;
+				if the class of the player is bride, compute housewife domestication;
 			otherwise: [The father is inanimate]
 				if inhuman pregnancy < 2 or (inhuman pregnancy >= 3 and the womb volume of vagina is 30): [If the stuff in brackets is true, we checked for an extreme pregnancy and purposefully chose not to give the player one this time.]
 					say DefaultBirthScene;
@@ -273,7 +274,17 @@ To compute god birth:
 	if doom counter > 0, increase doom counter by 150;
 	if the humiliation of the player >= 40000 and cultist veil is off-stage and cultist veil is actually summonable:
 		summon cultist veil;
-		say "Your vision slightly dims as a black silk veil appears over your face. Somehow you feel comforted, as though you no longer need to be an individual any more.";
+		say "Your vision slightly dims as a black silk veil appears over your face. Somehow you feel comforted, as though you no longer need to be an individual any more.".
+
+To compute housewife domestication:
+	if the father is bride-consort and the consummation of betrothal-quest is true:
+		let D be a random worn overdress;
+		if D is clothing and D is removable:
+			transform D into housewife dress;
+		otherwise:
+			class summon housewife dress;
+		if D is worn:
+			say "[variable custom style]I've been domesticated and bred... Just like a good little housewife...[roman type][line break]".
 
 contractionTracker is a number that varies.
 To Delay Labour:

@@ -58,7 +58,7 @@ To check raising of (B - a modesty shutter):
 					increase the times-met of pimp by 1;
 					interest pimp;
 				otherwise:
-					FavourDown pimp;
+					if game difficulty > a random number between 0 and 3, FavourDown pimp;
 					if pimp is unfriendly and the player is getting unlucky:
 						now pimp is in the location of the player;
 						let D be a random N-viable direction;

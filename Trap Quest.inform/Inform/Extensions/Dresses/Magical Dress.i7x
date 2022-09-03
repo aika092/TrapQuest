@@ -66,7 +66,7 @@ To say ShortDesc of (O - exposing-magical-dress):
 	say "exposing magical dress".
 
 To say ClothingDesc of (O - exposing-magical-dress):
-	say "The top of a Japanese sailor uniform, but just the neckline with the bow, literally nothing else. It sits just above your chest, exposing literally everything, and yet somehow magically forbidding you from wearing much else.".
+	say "The top of a Japanese sailor uniform, but just the neckline with the bow, literally nothing else. It sits just above your chest, exposing literally everything, and yet somehow magically forbidding you from wearing much else. You can also sense that the magic of this item makes it much more difficult for enemies to block you from running away from them.".
 
 To compute class set up of (O - exposing-magical-dress):
 	now O is intelligence-influencing;

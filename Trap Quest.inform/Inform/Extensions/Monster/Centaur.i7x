@@ -50,7 +50,9 @@ Definition: a centaur is woods dwelling:
 
 Definition: centaur is controlling: decide no.[She can't exactly reach]
 
-Definition: centaur is musky: decide yes.
+Definition: centaur is musky:
+	if the refractory-period of it <= 0, decide yes;
+	decide no.
 Definition: centaur is a tripper: decide no.
 Definition: centaur is father material: decide yes.
 Definition: centaur is throater: decide yes.

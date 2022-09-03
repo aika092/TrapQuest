@@ -200,28 +200,31 @@ Definition: a clothing is non-unique:
 	decide no.
 Clothing can be belly exposing or belly covering. Clothing is usually belly exposing. [Does it take up the belly slot?]
 Clothing can be neck exposing or neck covering. Clothing is usually neck exposing. [Does it take up the neck slot?]
-Clothing can be leg exposing or leg covering. Clothing is usually leg exposing.
+Clothing can be leg exposing or leg covering. Clothing is usually leg exposing. [Does it take up the leg slot?]
+[Trousers are all defined individually]
 Definition: a clothing (called C) is usually at least partially thigh covering:
-	if C is leg covering, decide yes;
-	if C is short or longer, decide yes;
+	if C is usually thigh covering or C is short or longer, decide yes;
 	decide no.
 Definition: a clothing (called C) is at least partially thigh covering:
 	if C is worn and C is crotch-in-place and C is usually at least partially thigh covering, decide yes;
 	decide no.
 Definition: a clothing (called C) is usually thigh covering:
-	if C is leg covering, decide yes;
-	if C is knee-length or longer, decide yes;
+	if C is usually calf covering or C is knee-length or longer, decide yes;
 	decide no.
 Definition: a clothing (called C) is thigh covering:
 	if C is worn and C is crotch-in-place and C is usually thigh covering, decide yes;
 	decide no.
+Definition: a clothing (called C) is usually calf covering:
+	if C is hobble-skirted or C is usually ankle covering, decide yes;
+	decide no.
 Definition: a clothing (called C) is calf covering:
-	if C is crotch-in-place:
-		if C is leg covering or C is hobble-skirted, decide yes;
+	if C is crotch-in-place and C is usually calf covering, decide yes;
 	decide no.
+Definition: a clothing is usually ankle covering: decide no.
 Definition: a clothing (called C) is ankle covering:
-	if C is leg covering, decide yes;
+	if C is crotch-in-place and C is usually ankle covering, decide yes;
 	decide no.
+
 Clothing can be arm exposing, only arm covering, or finger covering (this is the arm slot property). Clothing is usually arm exposing.
 Definition: a clothing (called C) is arm covering:
 	if C is arm exposing, decide no;

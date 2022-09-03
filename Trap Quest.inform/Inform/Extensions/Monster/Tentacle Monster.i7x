@@ -110,8 +110,6 @@ Understand "resilient" as resilient-tentacle-monster.
 
 A wet-tentacle-monster is a kind of tentacle monster.
 
-[Definition: a wet-tentacle-monster is musky: decide yes.]
-
 slimy-tentacle-monster is a wet-tentacle-monster.
 To say ShortDesc of (M - slimy-tentacle-monster):
 	say "slimy tentacle monster".

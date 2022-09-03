@@ -7,6 +7,10 @@ Definition: an amicable student is unfriendly rather than friendly:
 
 To say MediumDesc of (M - an amicable student):
 	say "friendly [rank-colour of M] student [student-name of M]".
+To say NameDesc of (M - an amicable student):
+	say "[input-style]friendly [student-name of M][roman type]".
+To say BigNameDesc of (M - an amicable student):
+	say "[input-style]Friendly [student-name of M][roman type]".
 
 To decide which number is the unique vindictiveness of (M - an amicable student): [We can use this for various calculations to check which students do what]
 	decide on 0.

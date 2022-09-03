@@ -20,6 +20,14 @@ Check pulling a sword:
 Check taking a sword:
 	if there is a worn hand ready clothing, say "You try to pick up [NameDesc of the noun], but the hilt resists your touch. Maybe you need an open hand?" instead.
 
+Report taking a sword:
+	if the noun is carried:
+		try wearing the noun;
+		if the noun is carried:
+			now the noun is in the location of the player;
+			say "Unable to properly wield it, you are forced to let [NameDesc of the noun] drop back to the ground.".
+
+
 Report taking off a sword:
 	say "As you have no way to safely hold [NameDesc of the noun], you are forced to drop it to the ground.";
 	try dropping the noun.
@@ -501,7 +509,7 @@ To decide which number is the slap damage improvement of (W - demon broadsword):
 Definition: demon broadsword is facefucker: decide yes. [Can it make the player gag]
 
 To compute periodic effect of (H - demon broadsword):
-	if the arousal of H > 0:
+	if the arousal of H > 0 and demon lord is not in the location of the player:
 		let N be 24;
 		if the class of the player is priestess, decrease N by 10;
 		if a random number between 1 and N is 1 and H is not dildoed:

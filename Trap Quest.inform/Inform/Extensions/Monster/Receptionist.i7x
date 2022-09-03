@@ -71,45 +71,42 @@ Part - Perception
 To compute perception of (M - receptionist):
 	calm M;
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
-	if the times-met of M <= 1 and armband is not worn and the number of fucked-silly monsters in the school is 0:
-		if M is in School01:
-			say "[line break][speech style of M]'Well hello there, you're a new face! Welcome to [slut school]! Did your [if diaper quest is 1]Daddy[otherwise]boyfriend[end if] send you along? Excellent, I'll get you enrolled right away. You start at rank 1 but I'm sure a person like you will be climbing the ranks in no time!'[roman type][line break][big he of M] hands you a neon reflective pink armband and gestures for you to strap it on.";
-			now armband is carried by the player;
-			now the armband-print of armband is "new recruit";
-			say ExamineDesc of armband;
-			say "Do you wear the armband? ";
-			if the player is bimbo consenting:
-				try wearing armband;
-			otherwise:
-				say "The receptionist looks disappointed.[line break][speech style of M]'It was not a request. Put it on right now or I'll make you!'[roman type][line break][big he of M] looks ready to fight.";
-				anger M;
-		otherwise:
-			say "[line break][speech style of M]'[one of]Well hello there, I've been looking for you everywhere! You must be the new recruit, right? I was told that you'd be dressed rather... [']interestingly['][run paragraph on][if the appearance of the player > 3], but I see you've really taken that instruction to heart![otherwise].[end if] Excellent, I'll get you enrolled right away. You start at rank 1 but I'm sure a person like you will be climbing the ranks in no time!'[or]You there, you've got to be the new student I'm looking for, right?'[stopping][roman type][line break][big he of M] hands you a neon reflective pink armband and gestures for you to strap it on.[line break][speech style of M]'Quickly now, strap this on and jump through the portal. It'll take you straight to the head office.'[roman type][line break]";
-			now armband is carried by the player;
-			now the armband-print of armband is "new recruit";
-			say ExamineDesc of armband;
-			if newbie tips is 1, say "[newbie style]Newbie tip: This will teleport you to the start of the '[Slut School]' region side-quest. [one of]The School is a separate region that you'll be warped to at regular intervals. It's a safe space pretty much free from combat (unless you start it) but every time you go there, you have to attend a [']class['], and if you've taken too long to arrive you'll instead be sent to [']detention['], both of which can have negative effects. However if you get promoted to the top of the school's ladder, the conclusion will be very rewarding.[paragraph break]But if[or]This is usually your last chance to engage with this side quest. As I said before, if[stopping] this is your first ever game, I'd recommend selecting 'No', because including this side quest will just make the game more complicated and less easy to pick up.[roman type][line break]";
-			say "Do you do what [he of M] says? ";
-			if the player is bimbo consenting:
-				try wearing armband;
-				if armband is worn and headmistress is alive:
-					say "[big he of M] pushes you through the warp portal. Colours rush all around you, and then suddenly you're standing on a marble floor in front of a large oak desk!";
-					let R be the location of headmistress;
-					teleport to R;
-					now shocked-monsters is 0;
-					check guaranteed perception of headmistress;
-					increase the times-met of headmistress by 1;
-					display entire map;
-					now receptionist is not interested;
-					now the boredom of receptionist is 0;
-			otherwise:
-				say "[speech style of M]'Oh sorry, you're not the one I'm looking for? My mistake. I must have the wrong portal. Have a nice day!'[roman type][line break][BigNameDesc of M] returns through the portal, which closes behind [him of M]. You get the feeling that you've missed one of your only chances to follow that particular side-quest.";
-				let W be a random warp portal in the location of the player;
-				now the destination of W is the dungeon;
-				destroy armband;
-				now the times-met of M is -1;
+	if (M is in Dungeon10 or M is in Hotel40) and armband is off-stage and M is friendly:
+		say "[line break][speech style of M]'[one of]Well hello there, I've been looking for you everywhere! You must be the new recruit, right? I was told that you'd be dressed rather... [']interestingly['][run paragraph on][if the appearance of the player > 3], but I see you've really taken that instruction to heart![otherwise].[end if] Excellent, I'll get you enrolled right away. You start at rank 1 but I'm sure a person like you will be climbing the ranks in no time!'[or]You there, you've got to be the new student I'm looking for, right?'[stopping][roman type][line break][big he of M] hands you a neon reflective pink armband and gestures for you to strap it on.[line break][speech style of M]'Quickly now, strap this on and jump through the portal. It'll take you straight to the head office.'[roman type][line break]";
+		now armband is carried by the player;
+		now the armband-print of armband is "new recruit";
+		say ExamineDesc of armband;
+		if newbie tips is 1, say "[newbie style]Newbie tip: This will teleport you to the start of the '[Slut School]' region side-quest. [one of]The School is a separate region that you'll be warped to at regular intervals. It's a safe space pretty much free from combat (unless you start it) but every time you go there, you have to attend a [']class['], and if you've taken too long to arrive you'll instead be sent to [']detention['], both of which can have negative effects. However if you get promoted to the top of the school's ladder, the conclusion will be very rewarding.[paragraph break]But if[or]This is usually your last chance to engage with this side quest. As I said before, if[stopping] this is your first ever game, I'd recommend selecting 'No', because including this side quest will just make the game more complicated and less easy to pick up.[roman type][line break]";
+		say "Do you do what [he of M] says? ";
+		if the player is bimbo consenting:
+			try wearing armband;
+			if armband is worn and headmistress is alive:
+				say "[big he of M] pushes you through the warp portal. Colours rush all around you, and then suddenly you're standing on a marble floor in front of a large oak desk!";
+				let R be the location of headmistress;
+				teleport to R;
+				now shocked-monsters is 0;
+				check guaranteed perception of headmistress;
+				increase the times-met of headmistress by 1;
+				display entire map;
+				now receptionist is not interested;
+				now the boredom of receptionist is 0;
 			now receptionist is in School01;
-			display entire map; [needs to update because the portal is now closed]
+		otherwise:
+			say "[speech style of M]'Oh sorry, you're not the one I'm looking for? My mistake. Have a nice day!'[roman type][line break]";
+			destroy armband;
+			bore M for 999999 seconds;
+		display entire map; [needs to update because the portal is now closed]
+	otherwise if the times-met of M <= 1 and armband is not worn and the number of fucked-silly monsters in the school is 0 and M is in School01:
+		say "[line break][speech style of M]'Well hello there, you're a new face! Welcome to [slut school]! Did your [if diaper quest is 1]Daddy[otherwise]boyfriend[end if] send you along? Excellent, I'll get you enrolled right away. You start at rank 1 but I'm sure a person like you will be climbing the ranks in no time!'[roman type][line break][big he of M] hands you a neon reflective pink armband and gestures for you to strap it on.";
+		now armband is carried by the player;
+		now the armband-print of armband is "new recruit";
+		say ExamineDesc of armband;
+		say "Do you wear the armband? ";
+		if the player is bimbo consenting:
+			try wearing armband;
+		otherwise:
+			say "The receptionist looks disappointed.[line break][speech style of M]'It was not a request. Put it on right now or I'll make you!'[roman type][line break][big he of M] looks ready to fight.";
+			anger M;
 	otherwise if playerRegion is School:
 		if armband is worn:
 			if the class of the player is princess:
@@ -143,6 +140,16 @@ To decide which number is the EnslavedDominationThreshold of (M - receptionist):
 	decide on 6.
 
 Part - Combat
+
+To say CombatProvokedReaction of (M - receptionist):
+	if M is in Dungeon10 or M is in Hotel40:
+		say "[speech style of M]'Eek!'[roman type][line break][BigNameDesc of M] hops backwards into the portal, and to safety!";
+		set up M;
+		now M is in School01;
+		let W be a random warp portal in the location of the player;
+		if W is warp portal and the destination of W is school and armband is not worn, now the destination of W is playerRegion;
+	otherwise:
+		say "[BigNameDesc of M] instantly [if M is awake]reacts[otherwise]wakes up[end if], taking a fighting stance!".
 
 Definition: receptionist (called M) is successfully blocking: [Do they succeed in a roll to stop the player moving]
 	if (M is in School01 or M is not in the School) and the noun is north, decide yes; [The (unfriendly) receptionist always blocks the entrance into the school unless you kill her]

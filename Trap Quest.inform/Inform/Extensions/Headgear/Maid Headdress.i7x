@@ -224,5 +224,64 @@ To compute class outfit of (H - milkmaid headdress):
 	class summon milkmaid stockings;
 	class summon leather-peep-toe-heels.
 
+Part 4 - Stripper Maid Headdress
+
+stripper maid headdress is a maid headdress. Figure of stripper maid headdress is the file "Items/Accessories/Head/maidheaddress4.png". The text-shortcut of stripper maid headdress is "smh". stripper maid headdress is strength-influencing.
+
+The printed name of stripper maid headdress is "[clothing-title-before]stripper maid headdress[clothing-title-after]".
+
+To decide which figure-name is the clothing-image of (C - stripper maid headdress):
+	decide on figure of stripper maid headdress.
+
+To say ClothingDesc of (H - stripper maid headdress):
+	say "This small, extra-frilly hair-band has essentially nothing to it but white ruffled lace.".
+
+To say ShortDesc of (H - stripper maid headdress):
+	say "stripper maid headdress".
+
+To compute SelfExamineDesc of (H - stripper maid headdress):
+	let X be the largeness of hair;
+	say "You are wearing a [ShortDesc of H] on top of your [ShortDesc of hair]. ";
+
+sexy-puddle-cleaning-quest is a headgear-clothing-quest.
+
+To uniquely set up (C - stripper maid headdress):
+	now the quest of C is puddle-cleaning-quest;
+	now the puddles-cleaned of puddle-cleaning-quest is 0.
+
+To say QuestFlav of (Q - sexy-puddle-cleaning-quest):
+	say "You sense that it wants you to clean up messes you find on the floor, while in front of horny [men of shopkeeper].".
+
+To say QuestTitle of (Q - sexy-puddle-cleaning-quest):
+	say " (sexy cleaning quest)".
+
+To uniquely set up (C - stripper maid headdress):
+	now the quest of C is sexy-puddle-cleaning-quest.
+
+To compute class outfit of (H - stripper maid headdress):
+	if player-class is "maid" or player-class is "stripper maid": [no extra cross classes]
+		repeat with D running through worn removable dresses:
+			WardrobeVanish D;
+		let B be a random worn bra;
+		let K be a random worn knickers;
+		let S be a random worn stockings;
+		if B is clothing and B is not maid-bra and B is removable:
+			transform B into maid-bra;
+		otherwise:
+			class summon maid-bra;
+		if K is clothing and K is not maid-thong and K is removable:
+			transform K into maid-thong;
+		otherwise:
+			class summon maid-thong;
+		if S is clothing and S is not white-fishnet-stockings and S is removable:
+			transform S into white-fishnet-stockings;
+		otherwise:
+			class summon white-fishnet-stockings;
+	otherwise:
+		class summon maid-bra;
+		class summon maid-thong;
+		class summon white-fishnet-stockings;
+	class summon latex-platform-heels.
+
 
 Maid Headdress ends here.

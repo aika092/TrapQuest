@@ -126,7 +126,7 @@ To Execute Fainting:
 			now the location of the player is discovered;
 			say "[one of]You wake up, and realise you are lying face down[if the location of the player is OL], still[end if] in the [printed name of the location of the player][if the urine-puddle of the location of the player > 0], surrounded by a puddle of [urine][end if]. Your body feels like it has significantly recovered and there are no monsters or traps anywhere to be seen. The world around you looks different, suggesting that the entire game world may have been reset, but with you still in it! [if pubic hair images visible is 0][otherwise if the extra lives of the player <= 0]You notice that your pubic hair has completely gone, which reminds you that this is your last life. [otherwise if pubic hair images visible > the extra lives of the player]You notice that your pubic hair has gotten shorter and smaller, a cruel way to track how few tries you have left. [end if][line break][variable custom style]How long was I out for?[roman type][line break]A hologram of yourself in the virtual chamber shimmers into existence above you for a few seconds. It looks like you get to see exactly what they have done to you.[or]You wake up, again lying face down, this time in the [printed name of the location of the player]. Once again a hologram of your real self appears in front of you.[stopping]";
 			say "You are [RealDesc]";
-			if the pink pill is not held by the player:
+			if the pink pill is not held by the player and dungeon chains is not worn:
 				say "You [one of][or]once again [stopping]find a pink pill inside your clenched fist.";
 				now the pink pill is held by the player;
 			if Newly-tattooed is 1:

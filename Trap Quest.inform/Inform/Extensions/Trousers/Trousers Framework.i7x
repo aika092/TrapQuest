@@ -1,6 +1,6 @@
 Trousers Framework by Trousers begins here.
 
-Trousers is a kind of clothing. A trousers is usually crotch-intact. A trousers is usually manly. A trousers is usually leg covering.
+Trousers is a kind of clothing. A trousers is usually crotch-intact. A trousers is usually manly. A trousers is leg covering.
 
 Definition: a trousers is same-type:
 	if theme-share-target is trousers, decide yes;
@@ -9,7 +9,11 @@ Definition: a trousers is same-type:
 Definition: a trousers is displacable: decide yes.
 
 To decide which number is the trouserLength of (C - a trousers):
-	decide on 10.
+	if C is ankle covering,	decide on 10;
+	if C is usually calf covering, decide on 9;
+	if C is usually thigh covering, decide on 5;
+	if C is usually at least partially thigh covering, decide on 3;
+	decide on 2.
 To decide which number is the default-soak-limit of (C - a trousers):
 	decide on the trouserLength of C * 2.
 

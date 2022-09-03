@@ -311,7 +311,7 @@ Definition: christmas strap monokini is transformation-protected:
 
 Part 14 - Blue Mostly Sheer Monokini
 
-A blue mostly-sheer monokini is a kind of slut monokini. There is 1 blue mostly-sheer monokini. The text-shortcut of blue mostly-sheer monokini is "msbm". A blue mostly-sheer monokini is neck exposing. Understand "mostly", "sheer" as blue mostly-sheer monokini.
+A blue mostly-sheer monokini is a kind of slut monokini. There is 1 blue mostly-sheer monokini. The text-shortcut of blue mostly-sheer monokini is "msbm". A blue mostly-sheer monokini is neck exposing. A blue mostly-sheer monokini is not-top-displacable. Understand "mostly", "sheer" as blue mostly-sheer monokini.
 
 The printed name of blue mostly-sheer monokini is usually "[clothing-title-before]mostly sheer blue swimsuit[clothing-title-after]".
 
@@ -332,6 +332,63 @@ Definition: a blue mostly-sheer monokini is blue themed: decide yes.
 Definition: a blue mostly-sheer monokini is potentially cameltoe blocking: decide no. [This causes it to not be potentially vagina covering, leaving vagina always partially visible through it]
 Definition: a blue mostly-sheer monokini is potentially penis concealing: decide no.
 
+
+Part 15 - Anal Beads Blue Swimsuit
+
+anal-beads-blue-swimsuit is a minimalist monokini. anal-beads-blue-swimsuit is unique. anal-beads-blue-swimsuit is ass plugging. anal-beads-blue-swimsuit is crotch-assless. The printed name of anal-beads-blue-swimsuit is usually "[clothing-title-before]pair of anal beads blue swimsuit[clothing-title-after]". The text-shortcut of anal-beads-blue-swimsuit is "abbs". Understand "anal", "beads", "blue", "swimsuit" as anal-beads-blue-swimsuit.
+Figure of anal-beads-blue-swimsuit is the file "Items/Clothes/Upper/Swimming/Monokinis/stringmonokini15.jpg".
+
+To decide which figure-name is clothing-image of (C - anal-beads-blue-swimsuit):
+	decide on figure of anal-beads-blue-swimsuit.
+
+Definition: anal-beads-blue-swimsuit is blue themed: decide yes.
+Definition: anal-beads-blue-swimsuit is transformation-protected: decide yes.
+
+This is the anal-beads-blue-swimsuit prevents hand use rule:
+	if anal-beads-blue-swimsuit is top-placed and anal-beads-blue-swimsuit is worn:
+		if manual hands attempt is 1, say "Your hands are stuck holding up your [anal-beads-blue-swimsuit]! You'd need to [bold type]pull down[roman type] the swimsuit first.";
+		rule fails.
+The anal-beads-blue-swimsuit prevents hand use rule is listed in the hands restriction rules.
+
+To decide which number is the wornArmsRequired of (C - anal-beads-blue-swimsuit):
+	if C is top-placed, decide on 2;
+	decide on 0.
+
+To say ClothingDesc of (P - anal-beads-blue-swimsuit):
+	say "This black sheer backless thong has a set of [bold type][DongSize the plug size of P][roman type][line break] anal beads instead of a normal rear thong section. It will only stay in place if it's pushed inside your butt.".
+
+To say selfexamineuniquetitle of (K - anal-beads-blue-swimsuit):
+	say "pair of anal beads plug panties".
+
+To decide which number is the girth of (K - anal-beads-blue-swimsuit):
+	decide on 1.
+
+To decide which number is the initial outrage of (C - anal-beads-blue-swimsuit):
+	if C is crotch-displaced, decide on 16;
+	decide on 6.
+
+Definition: anal-beads-blue-swimsuit is displacable: decide yes.
+Definition: anal-beads-blue-swimsuit is actually top-replacable:
+	repeat with D running through top level breasts protection clothing:
+		if the top-layer of D > the top-layer of anal-beads-blue-swimsuit, decide no;
+	if there is a combative monster, decide no;
+	decide yes.
+
+Definition: anal-beads-blue-swimsuit is potentially at least partially asshole covering:
+	if anal-beads-blue-swimsuit is penetrating asshole, decide yes;
+	decide no.
+
+To say TopDisplaceFlav of (C - anal-beads-blue-swimsuit):
+	say "You remove your fingers from the collar-holes of the [ShortDesc of C], causing the top half to drop down, exposing your [BreastDesc].".
+
+To say TopReplaceFlav of (C - anal-beads-blue-swimsuit):
+	say "You insert your fingers in the collar-holes, and by raising your hands up to behind your neck, pull the [ShortDesc of C] back into its proper position over your [BreastDesc].".
+
+To say DisplaceFlav of (C - anal-beads-blue-swimsuit):
+	say "You reach [if the player is prone]behind you[otherwise]down[end if] and pull your [C] [if C is penetrating asshole]out of your [asshole][otherwise]to the side[end if], freeing [if the bimbo of the player > 6]up access to [end if]your crotch. [bold type]The dangling anal beads means that your appearance is now extremely lewd.[roman type][line break]".
+
+To say ReplaceFlav of (C - anal-beads-blue-swimsuit):
+	say "You reach [if the player is prone]behind you[otherwise]down[end if] and push it back into your [asshole].".
 
 
 Slutty Monokinis ends here.

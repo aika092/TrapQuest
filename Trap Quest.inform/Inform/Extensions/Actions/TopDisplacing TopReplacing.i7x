@@ -14,7 +14,7 @@ Check TopDisplacing:
 	if the noun is breast exposing, say "But [NameDesc of the noun] isn't covering your breasts..." instead;[Should cover fully exposing and chestless]
 	if the noun is glued, say "It's glued in place!" instead;
 	if the noun is actually not-top-displacable, say "That's [if the noun is top-ripped]already shredded to bits so there's no point displacing it[otherwise]too stiff to displace[end if]." instead;
-	if the player is not able to manually use their hands, do nothing instead;
+	if the noun is not anal-beads-blue-swimsuit and the player is not able to manually use their hands, do nothing instead;
 	[if the noun is cursed, say "The curse on this item prevents it from budging at all!" instead;]
 	repeat with C running through top level breasts protection clothing:
 		if the top-layer of C > the top-layer of the noun, say "You would need to displace or remove your [C] first." instead.
@@ -24,7 +24,7 @@ Carry out TopDisplacing:
 	TopDisplace the noun.
 
 To say TopDisplaceFlav of (C - a clothing):
-	if the noun is low cut or higher:
+	if C is low cut or higher:
 		say "You move your [ShortDesc of C] out of the way, freeing up access to your [BreastDesc].";
 	otherwise:
 		say "You move your [ShortDesc of C] just enough to free up access to your [BreastDesc].".
@@ -54,7 +54,8 @@ Definition: a clothing (called C) is actually top-replacable:
 		if the player is not able to use their hands, decide no;
 	repeat with D running through top level breasts protection clothing:
 		if the top-layer of D > the top-layer of C, decide no;
-	if there is a combative monster, decide no.
+	if there is a combative monster, decide no;
+	decide yes.
 
 
 TopReplacing is an action applying to one thing.
@@ -72,8 +73,11 @@ Check topReplacing:
 Carry out topReplacing:
 	allocate arm use;
 	allocate 2 seconds;
-	say "You pull the [ShortDesc of noun] back into its proper position over your [BreastDesc].";
-	TopReplace the noun;
+	say TopReplaceFlav of the noun;
+	TopReplace the noun.
+
+To say TopReplaceFlav of (C - a clothing):
+	say "You pull the [ShortDesc of C] back into its proper position over your [BreastDesc].".
 
 Report topReplacing:
 	force clothing-focus redraw. [This forces the clothing window to redraw]

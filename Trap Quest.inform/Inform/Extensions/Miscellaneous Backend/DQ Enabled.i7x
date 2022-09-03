@@ -177,6 +177,7 @@ To check clutch replacement:
 	do nothing.
 
 A hugger-gag is a kind of ballgag. A hugger-panties is a kind of knickers.
+broomstick is a clothing.
 
 Figure of Jammy Messy Loading Animation Frame 1 is the file "Special/Animations/JammyLoading/frame_000001.jpeg".
 Figure of Jammy Messy Loading Animation Frame 4 is the file "Special/Animations/JammyLoading/frame_000004.jpeg".

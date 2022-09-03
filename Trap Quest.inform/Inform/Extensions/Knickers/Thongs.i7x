@@ -73,6 +73,12 @@ To decide which figure-name is clothing-image of (C - heart-strap-thong):
 To decide which figure-name is clothing-image of (C - spades-strap-thong):
 	decide on figure of thong 17.
 
+To decide which figure-name is clothing-image of (C - black-stripper-thong):
+	decide on figure of thong 18.
+
+To decide which figure-name is clothing-image of (C - maid-thong):
+	decide on figure of thong 19.
+
 white-thong is a thong. white-thong is sheer-when-wet. The text-shortcut of white-thong is "wth".
 To say selfexamineuniquetitle of (G - white-thong):
 	say "white 'OOPS' thong".
@@ -174,6 +180,9 @@ To decide which number is the crotch-tightness of (C - green-thong):
 	decide on 4.
 
 black-lace-thong is a thong. black-lace-thong is unique. black-lace-thong is silk. The text-shortcut of black-lace-thong is "blth". Understand "black", "lace" as black-lace-thong.
+Definition: black-lace-thong is class-relevant:
+	if the class of the player is stripper, decide yes;
+	decide no.
 black-lace-thong can be monified.
 Definition: black-lace-thong is whore themed:
 	if black-lace-thong is monified, decide yes;
@@ -181,14 +190,20 @@ Definition: black-lace-thong is whore themed:
 To say selfexamineuniquetitle of (G - black-lace-thong):
 	say "black lace thong".
 To say UniqueClothingDesc of (G - black-lace-thong):
-	say "A sexy black thong with a waistband that's low at the front and high at the back to excentuate the wearer's hips[if G is monified]. Several paper bills are sewn into the crotch section in a manner that makes it look like they have been tucked in[end if].".
+	say "A sexy black thong with a waistband that's low at the front and high at the back to excentuate the wearer's hips[if G is monified]. Several paper bills are sewn into the crotch section in a manner that makes it look like they have been tucked in[end if]. You can sense that it makes your hip-based seductive acts more stimulating, but only when it is completely visible.".
 Definition: black-lace-thong is black themed: decide yes.
 Definition: black-lace-thong is fetish appropriate:
 	if diaper quest is 0, decide yes;
 	decide no.
+To decide which number is the seduction-dance-influence of (C - black-lace-thong):
+	if C is currently visible, decide on 1;
+	decide on 0.
+To decide which number is the seduction-grind-influence of (C - black-lace-thong):
+	if C is currently visible, decide on 10;
+	decide on 0.
 To decide which number is the unique outrage of (C - black-lace-thong):
-	if C is monified, decide on 5;
-	decide on 1.
+	if C is monified, decide on 3;
+	decide on 0.
 Definition: black-lace-thong is upgradable:
 	if it is not monified, decide yes;
 	if black-lace-stockings is worn and black-lace-stockings is not monified, decide yes;
@@ -211,8 +226,9 @@ To transform (C - black-lace-thong):
 	otherwise:
 		say "Paper bills appear on the thong, sewn on and completely unremovable, but looking as though they've just been tucked into the front!";
 		now C is monified.
-Carry out taking black-lace-thong:
-	if the noun is in Hotel20 and the player is getting unlucky, now the noun is provocation.
+
+[Carry out taking black-lace-thong:
+	if the noun is in Hotel20 and the player is getting unlucky, now the noun is provocation.]
 
 heart-strap-thong is a thong. heart-strap-thong is transformation-rare. heart-strap-thong is leather. The text-shortcut of heart-strap-thong is "hsth". Understand "heart", "strap" as heart-strap-thong.
 To say selfexamineuniquetitle of (G - heart-strap-thong):
@@ -242,6 +258,49 @@ To decide which number is the unique outrage of (K - spades-strap-thong):
 To decide which number is the crotch-tightness of (C - spades-strap-thong):
 	decide on 1. [can't cause cameltoes]
 
+black-stripper-thong is a thong. black-stripper-thong is leather. The text-shortcut of black-stripper-thong is "bsth". Understand "black", "stripper" as black-stripper-thong.
+To say selfexamineuniquetitle of (G - black-stripper-thong):
+	say "black stripper thong".
+To say UniqueClothingDesc of (G - black-stripper-thong):
+	say "This small black leather thong has thin straps to expose as much of the wearer's skin as possible except their genitals and mons pubis. You can sense that it would make seductive moves with your hips more alluring, but only when it is completely visible.".
+Definition: black-stripper-thong is black themed: decide yes.
+To decide which number is the penis-capacity of (K - black-stripper-thong):
+	decide on 2.
+To decide which number is the unique outrage of (K - black-stripper-thong):
+	decide on 1.
+Definition: black-stripper-thong is fetish appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
+To decide which number is the seduction-dance-influence of (C - black-stripper-thong):
+	if C is currently visible, decide on 1;
+	decide on 0.
+To decide which number is the seduction-grind-influence of (C - black-stripper-thong):
+	if C is currently visible, decide on 10;
+	decide on 0.
+
+maid-thong is a thong. maid-thong is unique. The text-shortcut of maid-thong is "mdth". Understand "maid" as maid-thong.
+Definition: maid-thong is class-relevant:
+	if the class of the player is stripper or the class of the player is maid, decide yes;
+	decide no.
+To say selfexamineuniquetitle of (G - maid-thong):
+	say "maid thong".
+To say UniqueClothingDesc of (G - maid-thong):
+	say "This super-tiny black thong has a white bit styled like a maid apron at the front. You can sense that it would make seductive moves with your hips more alluring, but only when it is completely visible.".
+Definition: maid-thong is black-and-white themed: decide yes.
+To decide which number is the penis-capacity of (K - maid-thong):
+	decide on 2.
+To decide which number is the unique outrage of (K - maid-thong):
+	decide on 1.
+Definition: maid-thong is fetish appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
+To decide which number is the seduction-dance-influence of (C - maid-thong):
+	if C is currently visible, decide on 1;
+	decide on 0.
+To decide which number is the seduction-grind-influence of (C - maid-thong):
+	if C is currently visible, decide on 10;
+	decide on 0.
+
 Figure of thong 1 is the file "Items/Clothes/Lower/Underwear/Skimpy/Thongs/thong1.png".
 Figure of thong 2 is the file "Items/Clothes/Lower/Underwear/Skimpy/Thongs/thong2.png".
 Figure of thong 3 is the file "Items/Clothes/Lower/Underwear/Skimpy/Thongs/thong3.png".
@@ -254,6 +313,8 @@ Figure of thong 15 is the file "Items/Clothes/Lower/Underwear/Skimpy/Thongs/thon
 Figure of thong 15 money is the file "Items/Clothes/Lower/Underwear/Skimpy/Thongs/thong15b.png".
 Figure of thong 16 is the file "Items/Clothes/Lower/Underwear/Skimpy/Thongs/thong16.png".
 Figure of thong 17 is the file "Items/Clothes/Lower/Underwear/Skimpy/Thongs/thong17.png".
+Figure of thong 18 is the file "Items/Clothes/Lower/Underwear/Skimpy/Thongs/thong18.png".
+Figure of thong 19 is the file "Items/Clothes/Lower/Underwear/Skimpy/Thongs/thong19.png".
 
 [Below are from Lucas]
 

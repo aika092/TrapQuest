@@ -59,6 +59,7 @@ To compute room leaving of (M - a monster): [This CANNOT be replaced with a func
 	otherwise:
 		now neighbour finder is the location of M;
 		let A be a random N-viable direction;
+		if debugmode > 1, say "[input-style][MediumDesc of M] chooses [A].[roman type][line break]";
 		if A is a direction:
 			let P be the room A from the location of M;
 			if A is a random N-viable direction and P is unbossed and the number of barriers in P is 0 and the number of barriers in the location of M is 0:

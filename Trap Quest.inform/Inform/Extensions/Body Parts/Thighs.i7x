@@ -50,14 +50,21 @@ To say LongDesc of (T - thighs):
 		say "thighs".
 
 To say TotalDesc of (T - thighs):
+	let O be the outrage of T;
 	if weight gain fetish is 1 or the semen coating of thighs > 0, say "Supporting your body you have [LongDesc of T][if the semen coating of thighs is 0]. [end if]";
 	if the semen coating of thighs > 7:
 		say " that are completely caked in [if the semen addiction of the player < 6]nasty, [end if]slimy [semen]. ";
 	otherwise if the semen coating of thighs > 4:
-		say " that squelch together [if the semen addiction of the player < 6]horribly [end if]as you [if the player is upright]walk[otherwise]crawl[end if]. ";
+		say " that [if the semen addiction of the player < 6]horribly [end if]squelch together with sticky [semen] as you [if the player is upright]walk[otherwise]crawl[end if]. ";
 	otherwise if the semen coating of thighs > 0:
 		say " that have [semen] slowly trickling down them as you [if the player is upright]walk[otherwise]crawl[end if]. ";
-	if T is spread, say "They are forced wide apart thanks to your [ShortDesc of random worn thigh-spreading clothing].".
+	if T is spread, say "They are forced wide apart thanks to your [ShortDesc of random worn thigh-spreading clothing].";
+	if T is exposed:
+		say "They are fully exposed[if O >= 14], and look extremely lewd[otherwise if O >= 7], and are making you look like a slut[otherwise if O >= 3], and a little humiliating in their current state[end if].";
+	otherwise if T is at least partially exposed:
+		say "They are only partially exposed[if T is glazed], which is thankfully making the [semen] on them difficult to spot[end if].";
+	otherwise:
+		say "They are concealed at the moment[if O >= 14], which is preventing then from looking extremely lewd[otherwise if O >= 7], which is preventing them from appearing nasty to anyone who looks at you[otherwise if O >= 3], which is preventing then from being a little humiliating in their current state[end if].".
 
 Part 3 - Modify Thighs Stats
 

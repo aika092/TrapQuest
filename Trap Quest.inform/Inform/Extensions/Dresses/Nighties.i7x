@@ -26,6 +26,7 @@ Report wearing a nightie:
 	if busy is 0:
 		say "As you put on the nightie, the room around you starts to shake and quickly disappears, to be replaced by the Royal Chambers!";
 		curse the noun;
+		compute summoned quest of the noun;
 		teleport to Dungeon12.
 
 Report examining a nightie:

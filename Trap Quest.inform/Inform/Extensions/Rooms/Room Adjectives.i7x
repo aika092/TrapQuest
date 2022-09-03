@@ -29,7 +29,7 @@ A room can be gluey. A room is usually not gluey. [A gluey room has glue in it.]
 
 A room can be discovered. A room is usually not discovered. [A discovered room has been visited by the player.]
 
-A room can be seen. A room is usually not seen. [A seen room is every room next to a discovered room.]
+A room can be seen. A room is usually not seen. [A seen room is every room next to a visited room.]
 
 A room can be trappable or untrappable. A room is usually trappable. [An untrappable room doesn't have traps spawn, e.g. the shop.]
 

@@ -169,16 +169,16 @@ Check going when there is a triggered cage trap in the location of the player:
 			now breasts is stuck;
 			say "You try to squeeze through the cage, but your [BreastDesc] get stuck between the bars! You're completely stuck! [bold type]You'll have to wait for the cage to somehow release you.[roman type][line break]";
 		if debuginfo > 0, say "[input-style]Belly squeeze check: cage squeeze attempt d10 ([R]) | ([TH].5) belly size[roman type][line break]";
-		if R <= BL:
+		if the number of stuck body parts is 0 and R <= BL:
 			now the stance of the player is 1;
 			now belly is stuck;
 			say "You try to squeeze through the cage, but your [BellyDesc] gets stuck between the bars! You're completely stuck! [bold type]You'll have to wait for the cage to somehow release you.[roman type][line break]";
 		if debuginfo > 0, say "[input-style]Hips squeeze check: cage squeeze attempt d10 ([R]) | ([TH].5) hips width[roman type][line break]";
-		if R <= TH:
+		if the number of stuck body parts is 0 and R <= TH:
 			now the stance of the player is 1;
 			now hips is stuck;
 			say "You try to squeeze through the cage, but your [HipDesc] get stuck between the bars! You're completely stuck! [bold type]You'll have to wait for the cage to somehow release you.[roman type][line break]";
-		if inflation fetish is 1 and max ass size >= 10 and the player is getting unlucky:
+		if the number of stuck body parts is 0 and inflation fetish is 1 and max ass size >= 10 and the player is getting unlucky:
 			now the stance of the player is 1;
 			now hips is stuck;
 			say "You begin to squeeze through the cage, but after the rest of your body except your [AssDesc] is out, you feel a magical curse get triggered! Your ass cheeks inflate with air until they're a comical size - much too big to fit between the bars! You're completely stuck! [GotUnluckyFlav][bold type]You'll have to wait for the cage to somehow release you.[roman type][line break]";

@@ -18,8 +18,7 @@ To decide which object is the concealer of (A - asshole):
 	if water-fountain is penetrating asshole, decide on water-fountain;
 	let C be a random worn actually dense potentially at least partially asshole covering clothing;
 	if C is clothing, decide on C;
-	if the total volume of hips > 12:
-		if the player is upright or the total volume of hips > 15, decide on hips;
+	if the player is upright or the total volume of hips > 15, decide on hips;
 	decide on nothing.
 
 To decide which object is the at least partial concealer of (A - asshole):
@@ -27,7 +26,7 @@ To decide which object is the at least partial concealer of (A - asshole):
 	if vagina is listed in the armUses of arms, decide on arms;
 	let C be a random worn potentially at least partially asshole covering clothing;
 	if C is clothing, decide on C;
-	if the player is upright, decide on hips;
+	if the player is upright or the total volume of hips > 12, decide on hips;
 	decide on the concealer of asshole.
 
 [Can it be accessed right now with nothing blocking it?]

@@ -604,6 +604,7 @@ A breathing consequences rule (this is the consequences for breathing pink smoke
 
 To compute pink smoke:
 	let R be a random number between 1 and 12;
+	if there is a gladiator in the location of the player and R < 6 and a random number between 1 and 2 is 1, increase R by 6; [gladiators make bust increases more likely]
 	if the player is not able to breathe, now R is 0;
 	if diaper quest is 1:
 		if the player is possessing a penis and a random number between 1 and 3 is 1, now R is 7; [penis shrink]
@@ -612,16 +613,16 @@ To compute pink smoke:
 	if game difficulty > 2 and R >= 10:
 		say "You lightly cough as your position on your knees forces you to breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room.";
 		RandomStatDown 1;
-	otherwise if (the player is a flatchested trap or (diaper quest is 1 and the player is somehow possessing a penis)) and R > 6:
+	otherwise if (the player is a flatchested trap or (diaper quest is 1 and the player is somehow possessing a penis)) and R >= 6:
 		say "You lightly cough as your position on your knees forces you to breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room.";
 		SpecialPenisDown 1;
-	otherwise if R > 6 and diaper quest is 0:
+	otherwise if R >= 6 and diaper quest is 0:
 		say "You lightly cough as your position on your knees forces you to breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room. [unless the player is top heavy][one of][or]It feels a little more difficult to breathe.[or]Your boobs visibly grow.[or]Your chest expands outwards![as decreasingly likely outcomes][end if]";
 		Bustup 1;
-	otherwise if R is 6:
+	otherwise if R is 5:
 		say "You lightly cough as your position on your knees forces you to breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room. [unless the blondeness of hair is 3]Your hair feels tingly.[end if]";
 		HairBlondeUp 1;
-	otherwise if R is 5:
+	otherwise if R is 4:
 		say "You lightly cough as your position on your knees forces you to breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room. [unless the redness of hair is 3]Your hair feels strange.[end if]";
 		HairRedUp 1;
 	otherwise if R is 0:
@@ -629,7 +630,7 @@ To compute pink smoke:
 	otherwise:
 		say "You lightly cough as your position on your knees forces you to breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room. [if the player is a bit horny][line break][otherwise]You feel all tingly inside.[end if]";
 		arouse 1000;
-	if R is not 0, say "(You might want to consider using [bold type]['][link]hold breath[end link]['][roman type])".
+	if R is not 0 and the number of dangerous gladiators in the location of the player is 0, say "(You might want to consider using [bold type]['][link]hold breath[end link]['][roman type])".
 
 To Compute Instinctive Actions:
 	if another-turn is 0, follow the hypno triggers rules;

@@ -11,6 +11,7 @@ Definition: woman-player is normally ally:
 Definition: woman-player is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 
 woman-player has a number called woman-status.
+woman-player has a number called woman-pregnancy. [0: not preg. 1: not showing. 2: normal preg. 3: tentacle preg.]
 
 woman-player has a number called woman-bimbo. the woman-bimbo of woman-player is 2.
 woman-player has a number called woman-old-bimbo. the woman-old-bimbo of woman-player is 2.
@@ -41,6 +42,16 @@ To say womanTitle:
 
 To say womanName:
 	say "[if the woman-old-bimbo of woman-player is the woman-bimbo of woman-player][current-name of woman-player][otherwise][old-name of woman-player][end if]".
+
+To update woman name and bimbo:
+	if the woman-old-bimbo of woman-player is not the woman-bimbo of woman-player:
+		now the woman-old-bimbo of woman-player is the woman-bimbo of woman-player;
+		now the old-name of woman-player is the current-name of woman-player;
+		now the old-title of woman-player is the current-title of woman-player.
+
+To uniquely interest (M - woman-player):
+	if debugmode > 1, say "Setting [NameDesc of M] to interested.";
+	update woman name and bimbo.
 
 To set up (M - woman-player):
 	now the monstersetup of M is 1;
@@ -125,6 +136,7 @@ STATES:
 5: Hotel exploring, has appeared via dildo seat scene
 6: Dungeon crawling, just crafted potion.
 7: Just freed the player from bondage (or told them no)
+
 ==Anything below 10 can be interpreted as normal wandering and hijacked for a scene==
 
 25: DQ only for now: After stuck in hole in wall
@@ -137,6 +149,7 @@ STATES:
 ==Anything 80 or above prevents protection==
 80: TQ: Anal only stool
 81: DQ: Hiding messy diaper
+82: TQ: Pregnant
 
 ==Anything 90 or above prevents movement==
 90: Appeared by being fucked by vines in the woods
@@ -149,33 +162,34 @@ STATES:
 97: Appeared by sitting on the throne
 98: DQ: Diaper pail
 99: DQ: Ass hook
-100: DQ: Matron fight scene
+100: Matron / Senior bellboy fight scene
 101: DQ: Appeared by being in the hotel urinal scene with the wrestler.
 102: DQ: Appeared holding up the lid for the changing station tank.
 ]
 
 Definition: woman-player is summon appropriate: decide no. [Can she be randomly selected to be summoned?]
 Definition: woman-player is redeploy appropriate:
-	if it is not angered and it is summon-available and it is introduced and (it is off-stage or (the woman-status of it < 10 and it is not in the location of the player and it is not nearby and it is not caged)):
+	if it is not angered and it is summon-available and it is introduced and the woman-pregnancy of it < 2 and (it is off-stage or (the woman-status of it < 10 and it is not in the location of the player and it is not nearby and it is not caged)):
 		if the number of interested regional monsters is 0, decide yes;
 	decide no.
 Definition: woman-player is relaxed redeploy appropriate: [Allows for interested NPCs]
-	if it is not angered and it is summon-available and it is introduced and (it is off-stage or (the woman-status of it < 10 and it is not in the location of the player and it is not nearby and it is not caged)), decide yes;
+	if it is not angered and it is summon-available and it is introduced and the woman-pregnancy of it < 2 and (it is off-stage or (the woman-status of it < 10 and it is not in the location of the player and it is not nearby and it is not caged)), decide yes;
 	decide no.
-Definition: woman-player is deploy appropriate:
-	if it is off-stage and it is not angered and it is summon-available and it is introduced, decide yes;
+Definition: woman-player is deploy appropriate: [currently unused]
+	if it is not angered and it is angry deploy appropriate, decide yes;
 	decide no.
 Definition: woman-player is angry deploy appropriate:
-	if it is off-stage and it is summon-available and it is introduced, decide yes;
+	if it is off-stage and it is summon-available and it is introduced and (playerRegion is Dungeon or playerRegion is Woods or playerRegion is Hotel) and the location of the player is not nonstandard, decide yes;
 	decide no.
 
 To deploy (M - woman-player) with woman-status (V - a number):
+	if debugmode > 0, say "[input-style]Deploying [womanName] with woman-status [V].[roman type][line break]";
 	now the woman-status of M is V;
 	now the sleep of M is 0;
 	deinterest M;
 	now M is unleashed;
-	if M is introduced and M is summon-available and (playerRegion is Dungeon or playerRegion is Woods or playerRegion is Hotel): [stops her spawning somewhere stupid like hole in the wall, iron maiden, blindfolded]
-		now the health of M is the maxhealth of M;
+	now the health of M is the maxhealth of M;
+	if M is introduced and M is summon-available:
 		if V is 2:
 			now M is in the location of the player;
 			say "[bold type]You spot [NameDesc of M] trotting up to you![roman type] [big he of M] seems concerned at your state of affairs.";
@@ -183,9 +197,15 @@ To deploy (M - woman-player) with woman-status (V - a number):
 		otherwise if V is 3:
 			now M is in Dungeon06;
 			if the player is in Dungeon06, say "[bold type]You spot [NameDesc of M] trotting up to you![roman type] [big he of M] grins seemingly oblivious to your presence, and then pulls the foreboding looking lever before you can react.";
-			now minotaur is unleashed;
-			if the player is in Dungeon36, say "You hear a mechanism whirring and watch with [if the bimbo of the player < 8]horror[otherwise if the bimbo of the player < 13]terrified excitement[otherwise]delight[end if] as the [minotaur][']s cage suddenly swings open!";
+			let DB be a random alive caged dungeon boss;
+			now DB is unleashed;
+			if the player is in Dungeon36, say "You hear a mechanism whirring and watch with [if the bimbo of the player < 8]horror[otherwise if the bimbo of the player < 13]terrified excitement[otherwise]delight[end if] as [NameDesc of DB][']s cage suddenly swings open!";
 			otherwise say "You hear a mechanism whirring, and what sounds like a metal door swing open.";
+		otherwise if V is 82:
+			now M is in the location of the player;
+			say "[bold type]You spot [NameDesc of M] waddling up to you, naked and with a very pregnant belly![roman type] [big he of M] seems rather tired and at the end of [his of M] tether.";
+			interest M;
+			say "[speech style of M]'Hey [NameBimbo]. I'm sorry I wish you didn't have to see me like this...'[roman type][line break]";
 		otherwise:
 			regionally place M.
 
@@ -198,17 +218,38 @@ A time based rule (this is the woman spawning rule):
 		while the delayed sluttification of woman-player > 0:
 			ImmediatewomanSluttify;
 			decrease the delayed sluttification of woman-player by 1;
+			if pregnancy fetish is 1 and the woman-pregnancy of woman-player is 0 and the player is getting unlucky, now the woman-pregnancy of woman-player is 1;
 		while the delayed sluttification of woman-player < 0:
 			ImmediatewomanUnsluttify;
 			increase the delayed sluttification of woman-player by 1;
+		update woman name and bimbo;
 	otherwise if woman-player is not caged and woman-player is not in HoleInWall:
 		if woman-player is not regional and (woman-player is not in WoodsBoss01 or playerRegion is not woods):
 			vanish woman-player;
 		otherwise if a random number between 1 and 40 is 1 or woman-player is asleep:
 			unless woman-player is in the location of the player or woman-player is nearby or woman-player is stranger or (the woman-status of woman-player >= 80 and the woman-status of woman-player is not 98), vanish woman-player.
 
+[These TQ-only rules need to go here so that they are in the correct order in the rulebook.]
+
+This is the woman spawning pregnant rule:
+	if pregnancy fetish > 0 and the woman-pregnancy of woman-player > 1 and (barbsummoned is true or a random number between 1 and 60 is 1):
+		deploy woman-player with woman-status 82;
+		rule succeeds.
+The woman spawning pregnant rule is listed first in the womanspawning rules.
+
+This is the woman spawning as a stool rule:
+	if diaper quest is 0 and the player is the donator and the stool-scene of woman-player is 0:
+		let R be a random number between 2 and 100; [This will be faster than checking her region so we prioritise it]
+		if barbsummoned is true, now R is 0;
+		if debuginfo > 1 and (playerRegion is Dungeon or playerRegion is Hotel), say "[input-style]Barbara stool scene summon check: RNG(2~100) = [R], needs to be below Barbara sluttiness ([woman-bimbo of woman-player]).[roman type][line break]";
+		if R < the woman-bimbo of woman-player and (playerRegion is Dungeon or playerRegion is Hotel):
+			deploy woman-player with woman-status 80;
+			if debuginfo > 1, say "[input-style]Barbara summoned in [location of woman-player].[roman type][line break]";
+			rule succeeds.
+The woman spawning as a stool rule is listed last in the womanspawning rules.
+
 This is the woman spawning to help the player with bondage rule:
-	if bondage protection > 0 and there is worn locked clothing and portal gag is not worn and wrist collar bar is not worn and a random number between 1 and 60 is 1 and the player is not in danger:
+	if bondage protection > 0 and there is worn locked clothing and portal gag is not worn and wrist collar bar is not worn and (barbsummoned is true or a random number between 1 and 60 is 1) and the player is not in danger:
 		deploy woman-player with woman-status 2;
 		rule succeeds.
 The woman spawning to help the player with bondage rule is listed last in the womanspawning rules.
@@ -221,7 +262,7 @@ This is the woman spawning to release the boss rule:
 The woman spawning to release the boss rule is listed last in the womanspawning rules.
 
 This is the woman spawning in the region of the player rule:
-	if a random number between 1 and 80 is 1:
+	if barbsummoned is true or a random number between 1 and 80 is 1:
 		if playerRegion is Dungeon:
 			deploy woman-player with woman-status 1;
 			rule succeeds;
@@ -465,18 +506,26 @@ To say DamageReactSubmissive of (M - woman-player):
 
 To compute defeat of (M - woman-player):
 	now the health of M is 1;
-	if M is awake:
-		say "[big he of M] drops to the ground, unconscious.";
-		now M is angered;
-		womanSluttify;
-		if the woman-bimbo of M <= 2:
-			now magic pistol is in the location of the player;
-			say "[big his of M] gun falls out of [his of M] hand.";
-			compute autotaking magic pistol;
-		otherwise:
-			loot M;
-		now the sleep of M is 300;
-	if the woman-bimbo of M > 5, compute automatic banishment of M.
+	let penis-fucked be false;
+	if diaper quest is 0 and M is penis-fuckable and the player is penis-fuckable:
+		say DefeatBrink of M;
+		say "You could probably fuck [him of M], if you wanted. Do you want to demand sex from [NameDesc of M]?";
+		if the player is consenting:
+			now penis-fucked is true;
+			compute dominating M;
+	if penis-fucked is false:
+		if M is awake:
+			say "[big he of M] drops to the ground, unconscious.";
+			now M is angered;
+			womanSluttify;
+			if the woman-bimbo of M <= 2:
+				now magic pistol is in the location of the player;
+				say "[big his of M] gun falls out of [his of M] hand.";
+				compute autotaking magic pistol;
+			otherwise:
+				loot M;
+			now the sleep of M is 300;
+		if the woman-bimbo of M > 5, compute automatic banishment of M.
 
 To say BanishFleeFlav of (M - woman-player):
 	say "[BigNameDesc of M][']s body fizzles into blue cubes like something out of TRON, then completely disappears. It seems that [he of M][']s been removed from the game.".

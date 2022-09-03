@@ -109,10 +109,12 @@ To allocate dual arm use:
 	allocate dual arm use to arms.
 To allocate arm use to (T - a thing):
 	if realisticArms is 1:
+		if debugmode is 1, say "Player uses 1 arm interacting with [T].";
 		add T to the temporaryArmUses of arms;
 		update arms.
 To allocate dual arm use to (T - a thing):
 	if realisticArms is 1:
+		if debugmode is 1, say "Player uses 2 arms interacting with [T].";
 		add T to the temporaryArmUses of arms;
 		add T to the temporaryArmUses of arms;
 		update arms.
@@ -204,6 +206,7 @@ This is the update optional arm uses rule:
 					now C is in the location of the player;
 					truncate the armUses of arms to 2 entries;
 		if the player is not shameless: [Arms covering body parts]
+			if debugmode >  1, say "Preparing to automatically allocate arms. Current arm uses are: [armUses of arms].";
 			repeat with XX running from 1 to 2:
 				if the number of entries in armUses of arms < 2:
 					if (XX is 1 and defaultLeftTarget of arms is yourself) or (XX is 2 and defaultRightTarget of arms is yourself):
@@ -263,6 +266,7 @@ To change default arm positions:
 		set numerical response 4 to "covering your face";
 		if enema-backpack is worn, set numerical response 5 to "behind your head";
 		if painted-vibrator-hands is worn, set numerical response 5 to "over the missing hand print to the left of your clit";
+		if broomstick is worn, set numerical response 5 to "holding down one of the buttons on your broomstick";
 		if current-predicament is vibe-photo-predicament and the player is in Predicament01, set numerical response 5 to "making a peace sign to the side, blocking any green from the camera";
 		set numerical response 0 to "by your side";
 		compute multiple choice question;
@@ -277,6 +281,8 @@ To change default arm positions:
 		otherwise if player-numerical-response is 5:
 			if painted-vibrator-hands is worn:
 				now the defaultLeftTarget of arms is painted-vibrator-hands;
+			otherwise if broomstick is worn:
+				now the defaultLeftTarget of arms is broomstick;
 			otherwise if current-predicament is vibe-photo-predicament:
 				now the defaultLeftTarget of arms is vibe-photo-predicament;
 			otherwise:
@@ -291,6 +297,7 @@ To change default arm positions:
 		if player-numerical-response is not 4, set numerical response 4 to "covering your face";
 		if enema-backpack is worn, set numerical response 5 to "behind your head";
 		if painted-vibrator-hands is worn, set numerical response 5 to "over the missing hand print to the right of your clit";
+		if broomstick is worn, set numerical response 5 to "holding down one of the buttons on your broomstick";
 		if current-predicament is vibe-photo-predicament and the player is in Predicament01, set numerical response 5 to "making a peace sign to the side, blocking any green from the camera";
 		set numerical response 0 to "by your side";
 		compute multiple choice question;
@@ -304,9 +311,11 @@ To change default arm positions:
 			now the defaultRightTarget of arms is breasts;
 		otherwise if player-numerical-response is 5:
 			if painted-vibrator-hands is worn:
-				now the defaultrightTarget of arms is painted-vibrator-hands;
+				now the defaultRightTarget of arms is painted-vibrator-hands;
+			otherwise if broomstick is worn:
+				now the defaultRightTarget of arms is broomstick;
 			otherwise if current-predicament is vibe-photo-predicament:
-				now the defaultLeftTarget of arms is vibe-photo-predicament;
+				now the defaultRightTarget of arms is vibe-photo-predicament;
 			otherwise:
 				now the defaultRightTarget of arms is hair;
 		otherwise:

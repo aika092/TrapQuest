@@ -12,7 +12,9 @@ Definition: hellhound is mansion dwelling:
 	if mythical creature fetish is 1 or diaper quest is 1, decide yes;
 	decide no.
 
-Definition: hellhound is musky: decide yes.
+Definition: hellhound is musky:
+	if the refractory-period of it <= 0, decide yes;
+	decide no.
 
 Definition: hellhound is infernal:
 	if mythical creature fetish is 1, decide yes;

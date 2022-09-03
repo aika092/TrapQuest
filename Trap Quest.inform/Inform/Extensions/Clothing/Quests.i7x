@@ -1538,6 +1538,7 @@ An all time based rule (this is the time-based wisp triggers rule):
 		if the number of worn glued clothing is 0, trigger unglue-wisp-quest;
 		if the number of actually occupied fuckholes > 1, trigger dp-wisp-trigger;
 		if the player is hungry, trigger hunger-wisp-trigger;
+		if the number of worn knickers is 0, trigger lose-panties-wisp-trigger;
 		if the number of held non-empty vessels is 0, trigger drink-wisp-quest.
 
 An all later time based rule (this is the later time-based wisp triggers rule):

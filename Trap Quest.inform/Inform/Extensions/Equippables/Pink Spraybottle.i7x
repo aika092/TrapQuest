@@ -57,6 +57,10 @@ Check taking pink-spraybottle when pink-spraybottle is not held:
 				allocate 2 seconds;
 				compute maidification of the noun;
 				do nothing instead;
+			otherwise if H is bridal veil and housewife dress is worn:
+				allocate 2 seconds;
+				compute maidification of the noun;
+				do nothing instead;
 			otherwise:
 				say "You don't feel all that interested in cleaning duty right now[if there is worn headgear], while you're wearing the [ShortDesc of a random worn headgear][otherwise if the number of worn maid headdress is 0], you're not a maid[end if]. You leave the [ShortDesc of noun] where it is." instead.
 
@@ -68,6 +72,8 @@ To compute maidification of (C - a clothing):
 			transform H into frilly bunny ears;
 			let M be a random worn overdress;
 			if bunny-maid-outfit is not held and M is a removable overdress, transform M into bunny-maid-outfit;
+		otherwise if H is bridal veil:
+			class summon maid apron;
 		otherwise if H is not maid headdress:
 			if H is a clothing:
 				transform H into black maid headdress;

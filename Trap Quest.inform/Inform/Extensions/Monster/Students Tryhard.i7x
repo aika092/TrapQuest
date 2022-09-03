@@ -4,6 +4,10 @@ A tryhard student is a kind of student. Understand "dedicated" as a tryhard stud
 
 To say MediumDesc of (M - a tryhard student):
 	say "dedicated [rank-colour of M] student [student-name of M]".
+To say NameDesc of (M - a tryhard student):
+	say "[input-style]dedicated [student-name of M][roman type]".
+To say BigNameDesc of (M - a tryhard student):
+	say "[input-style]Dedicated [student-name of M][roman type]".
 
 To decide which number is the dedication of (M - a tryhard student): [We can use this for various calculations to check which students do what]
 	decide on a random number between 2 and 5.

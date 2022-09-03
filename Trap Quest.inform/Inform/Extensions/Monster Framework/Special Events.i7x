@@ -1298,7 +1298,7 @@ A time based rule (this is the musk horniness rule):
 		let M be a random musky monster in the location of the player;
 		say "Spending time close to [NameDesc of M] causes your body to react to [his of M] [if pregnancy fetish is 1]virile[otherwise]potent[end if] hormones.";
 		increase phero-horny-charge by 2;
-		if phero-horny-charge > 30:
+		if phero-horny-charge > 20 and M is interested and M is friendly:
 			compute phero submission to M;
 		otherwise:
 			say "You get even more aroused!";

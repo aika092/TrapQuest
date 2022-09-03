@@ -1,6 +1,7 @@
 All Trousers by Trousers begins here.
 
 A baby bloomers is a kind of trousers.
+Definition: a baby bloomers is usually thigh covering: decide yes.
 
 Definition: a baby bloomers is fetish appropriate:
 	if diaper quest is 1, decide yes;
@@ -32,6 +33,7 @@ Definition: a pink bloomers is babywear: decide yes. [NPCs can put this on the p
 bitch bottoms is a trousers. bitch bottoms is leg exposing.
 The printed name of bitch bottoms is "[clothing-title-before]bitch bottoms[clothing-title-after]". The text-shortcut of bitch bottoms is "btms".
 Figure of bitch bottoms is the file "Items/Clothes/Lower/Pants/bitchbottoms1.png".
+Definition: bitch bottoms is usually at least partially thigh covering: decide yes.
 To decide which figure-name is clothing-image of (H - bitch bottoms):
 	decide on figure of bitch bottoms.
 To say UniqueClothingDesc of (Y - bitch bottoms):
@@ -49,7 +51,10 @@ To decide which number is the crotch-tightness of (C - bitch bottoms):
 	decide on 2.
 
 
-buttockless pants is a kind of trousers. A buttockless pants is usually butt-windowed. A buttockless pants is manly. The printed name of buttockless pants is usually "[clothing-title-before][clothing-material of item described] buttockless pants[clothing-title-after]". The text-shortcut of buttockless pants is "bp". Figure of yellow buttockless pants is the file "Items/Clothes/Lower/Pants/Buttockless/buttocklesspants1.png". Figure of blue buttockless pants is the file "Items/Clothes/Lower/Pants/Buttockless/buttocklesspants2.png".
+buttockless pants is a kind of trousers. A buttockless pants is usually butt-windowed. A buttockless pants is manly. The printed name of buttockless pants is usually "[clothing-title-before][clothing-material of item described] buttockless pants[clothing-title-after]". The text-shortcut of buttockless pants is "bp".
+Figure of yellow buttockless pants is the file "Items/Clothes/Lower/Pants/Buttockless/buttocklesspants1.png".
+Figure of blue buttockless pants is the file "Items/Clothes/Lower/Pants/Buttockless/buttocklesspants2.png".
+Definition: a buttockless pants is usually calf covering: decide yes.
 
 To say ShortDesc of (Y - a buttockless pants):
 	say "pair of buttockless pants".
@@ -88,7 +93,8 @@ To decide which number is the initial outrage of (B - a yellow buttockless pants
 To decide which object is the unique-upgrade-target of (C - a yellow buttockless pants):
 	if the number of worn knickers is 0, decide on a random off-stage microshorts.
 
-exercise shorts is a kind of trousers. An exercise shorts is manly. An exercise shorts is usually leg exposing. Understand "exercise", "shorts" as exercise shorts.
+exercise shorts is a kind of trousers. An exercise shorts is manly. Understand "exercise", "shorts" as exercise shorts.
+Definition: an exercise shorts is usually at least partially thigh covering: decide yes.
 To say ShortDesc of (Y - an exercise shorts):
 	say "pair of exercise shorts".
 To decide which object is the unique-upgrade-target of (C - an exercise shorts):
@@ -178,6 +184,7 @@ To decide which number is the initial outrage of (C - tight-blue-exercise-shorts
 
 jeans is a kind of trousers. A jeans is usually manly. A jeans is denim. Understand "jeans" as jeans.
 
+Definition: a jeans is usually calf covering: decide yes.
 Definition: a jeans is blue themed: decide yes.
 To say ShortDesc of (Y - a jeans):
 	say "jeans".
@@ -221,6 +228,7 @@ To decide which number is the initial outrage of (C - V-crotch-jeans):
 Definition: V-crotch-jeans is potentially-bottom-layer-concealing: decide no. [Doesn't fully conceal underwear]
 
 rubber trousers is a kind of trousers. There is 1 zippable latex rubber trousers. A rubber trousers is manly. The printed name of rubber trousers is usually "[clothing-title-before][clothing-material of item described] pants[clothing-title-after]". The text-shortcut of rubber trousers is "lp". Figure of rubber trousers is the file "Items/Clothes/Lower/Pants/latexpants1.png". Understand "pants" as rubber trousers.
+Definition: a rubber trousers is usually calf covering: decide yes.
 
 To decide which figure-name is clothing-image of (H - a rubber trousers):
 	decide on figure of rubber trousers.
@@ -240,6 +248,7 @@ Definition: a rubber trousers is fetish appropriate:
 
 leggings is a kind of trousers. a leggings is usually nylon. Understand "leggings" as leggings.
 
+Definition: a leggings is usually calf covering: decide yes.
 Definition: a leggings is unskirted themed: [Is it something that should not be worn at the same time as a skirt?]
 	decide no.
 To decide which number is the initial armour of (C - a leggings):
@@ -264,6 +273,7 @@ To decide which number is the crotch-tightness of (C - light-leggings):
 	decide on 1.
 
 dark-leggings is a leggings. The text-shortcut of dark-leggings is "dnl". The printed name of dark-leggings is "[clothing-title-before]dark nylon leggings[clothing-title-after]". Understand "dark" as dark-leggings. Figure of dark leggings is the file "Items/Clothes/Lower/Pants/leggings2.png".
+Definition: dark-leggings is usually ankle covering: decide yes.
 Definition: dark-leggings is brown themed: decide yes.
 To decide which figure-name is clothing-image of (H - dark-leggings):
 	decide on figure of dark leggings.
@@ -290,6 +300,7 @@ To decide which object is the unique-upgrade-target of (C - a leggings):
 	decide on nothing.
 
 teddy bear pantyhose is a kind of trousers. There is 1 unique teddy bear pantyhose. The printed name of teddy bear pantyhose is usually "[clothing-title-before]teddy bear pantyhose[clothing-title-after]". The text-shortcut of teddy bear pantyhose is "tph". Figure of teddy bear pantyhose is the file "Items/Clothes/Lower/Pants/pantyhose1.png".
+Definition: teddy bear pantyhose is usually ankle covering: decide yes.
 
 To decide which figure-name is clothing-image of (H - a teddy bear pantyhose):
 	decide on figure of teddy bear pantyhose.
@@ -319,6 +330,8 @@ Definition: a teddy bear pantyhose is red themed: decide yes.
 Definition: a teddy bear pantyhose is potentially erection concealing: decide yes. [non-tight loins conceal erections]
 
 yoga pants is a kind of trousers. There is 1 rare yoga pants. The printed name of yoga pants is usually "[clothing-title-before]yoga pants[clothing-title-after]". The text-shortcut of yoga pants is "yp". Figure of yoga pants is the file "Items/Clothes/Lower/Pants/Yoga/yogapants1.png". A yoga pants has a number called yoga-charge.
+
+Definition: a yoga pants is usually calf covering: decide yes.
 
 To decide which number is the crotch-tightness of (C - a yoga pants):
 	decide on 3.

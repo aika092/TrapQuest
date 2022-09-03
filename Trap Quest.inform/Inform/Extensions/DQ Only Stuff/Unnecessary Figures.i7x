@@ -167,6 +167,10 @@ To decide which figure-name is Figure of caged urinal princess piss:
 	decide on figure of small image.
 To decide which figure-name is Figure of dark princess final battle defeat 6:
 	decide on figure of small image.
+To decide which figure-name is Figure of princess final battle sword:
+	decide on figure of small image.
+To decide which figure-name is Figure of princess final battle sword semen:
+	decide on figure of small image.
 
 To decide which figure-name is Figure of Teacher Hannah Cutscene 2:
 	decide on figure of small image.

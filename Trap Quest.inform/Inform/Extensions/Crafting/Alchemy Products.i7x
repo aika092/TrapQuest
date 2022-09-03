@@ -1245,6 +1245,51 @@ This is the salve butt slut rule:
 	if there is an uncursed concealment salve covering asshole, decrease the desirability of asshole by 10.
 The salve butt slut rule is listed in the butt slut eligibility rules.
 
+Part 4 - Salve of Erasure
+
+erasure-salve is a salve. The text-shortcut of erasure-salve is "slve". Understand "erasure" as erasure-salve.
+The backgroundColour of erasure-salve is 12371660. [silver]
+
+To say MediumDesc of (C - erasure-salve):
+	say "salve of erasure".
+
+To say ExamineDesc of (C - erasure-salve):
+	say "A small round metal container that contains a cream greasy lip-balm-like substance. It seems like you are supposed to rub it on an orifice, to magically discourage your sexual partners from considering choosing it when deciding how to have sex with you. ";
+	if C is sure and C is cursed, say "Since it is cursed, using it would probably make it even more difficult for you to influence how people choose to sleep with you. Perhaps you could find some other use for it, for example gifting.";
+	otherwise say "[if C is sure and C is blessed]The blessed magic will make the body part magically hidden, so only the most powerful of beings will even be able to notice it's an option.[otherwise][line break][end if]".
+
+To decide which number is the alchemy key of (A - erasure-salve):
+	decide on 37.
+
+To oil (B - a tattoo) with (S - erasure-salve):
+	if S is cursed:
+		say "[BigNameDesc of B] begins to pulse with cursed energy! Uh-oh...";
+		now the noun is B;
+		let T be nothing;
+		let inspiration-understood be 0;
+		if debugmode is 1, say "List of potential inspired tattoos: [list of drawable eligible tattoos].";
+		if debugmode is 2:
+			repeat with A running through tattoos:
+				say "Looking at [A].";
+				say "It is [unless A is eligible]not [end if]eligible.";
+				say "It is [unless A is drawable]not [end if]drawable.";
+		now T is a random drawable eligible tattoo;
+		if T is tattoo:
+			now inspiration-understood is 1;
+		otherwise:
+			now T is a random drawable tattoo;
+		if T is tattoo:
+			say "You shudder with [horror the humiliation of the player / 2000] as a new tattoo appears on your body:[line break]";
+			summon T;
+			try examining T;
+			now focused-thing is T;
+		otherwise:
+			say "You shudder with trepidation... But then nothing happens. Apparently the cursed magic just had no effect.[line break][variable custom style]Perhaps there's no room on my skin for any more tattoos.[roman type][line break]";
+		now the noun is S; [try and avoid bugs with the noun switching mid-action]
+	otherwise:
+		say "[BigNameDesc of B] begins to fade away! It's working![paragraph break]Within a few seconds, it's completely gone!";
+		destroy B.
+
 SalveRubbing it on is an action applying to two things.
 
 Check SalveRubbing:
@@ -1253,6 +1298,7 @@ Check SalveRubbing:
 	if the noun is glue, try GlueRubbing the second noun on the noun instead;
 	if the second noun is glue, try GlueRubbing the noun on the second noun instead;
 	if the noun is not salve and the noun is not ectoplasm, say "I understood the verb as you wanting to apply a salve, but then the noun was not a salve." instead;
+	if the noun is erasure-salve and the second noun is not tattoo, say "That won't do anything - you should try rubbing it on a mark on your skin you want removed." instead;
 	if the noun is buoyancy-salve or the noun is restriction-salve:
 		if the second noun is not breasts and the second noun is not hips and the second noun is not belly, say "You can only apply a salve to your [bold type]breasts[roman type], your [bold type]belly[roman type] or your [bold type]ass[roman type] at the moment." instead;
 	if the noun is concealment-salve:
@@ -1302,15 +1348,14 @@ Check SalveRubbing:
 
 Carry out SalveRubbing:
 	allocate 6 seconds;
-	let S be the noun;
-	let B be the second noun;
-	if B is body part:
-		say "You gingerly rub [NameDesc of S] [if B is fuckhole]around[otherwise]onto[end if] your [ShortDesc of B] and wait to see what will happen.";
+	let NN be the noun; [the noun might get changed by the oiling function]
+	if the second noun is clothing:
+		say "Your [second noun] seems to tremble unnaturally as you rub the slime into the fabric.";
 	otherwise:
-		say "Your [printed name of B] seems to tremble unnaturally as you rub the slime into the fabric.";
-	oil B with S;
-	check stealing of S;
-	destroy S.
+		say "You gingerly rub [NameDesc of NN] [if the second noun is fuckhole]around[otherwise]onto[end if] your [ShortDesc of the second noun] and wait to see what will happen.";
+	oil the second noun with NN;
+	check stealing of NN;
+	destroy NN.
 
 Understand "rub [something] on [something]", "rub [something] into [something]", "apply [something] on [something]", "apply [something] to [something]", "apply [something] into [something]" as SalveRubbing it on.
 

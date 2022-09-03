@@ -250,6 +250,9 @@ Definition: bbc-fairy tattoo is eligible:
 	if the noun is non-empty bottle and the fill-colour of the noun is creamy, decide yes;
 	decide no.
 Definition: bbc-fairy is interracial themed: decide yes.
+Definition: bbc-fairy is heart themed: decide yes.
+Definition: bbc-fairy is semen themed: decide yes.
+Definition: bbc-fairy is penis themed: decide yes.
 To say tattoo-desc of (T - bbc-fairy tattoo):
 	say "A drawing of a bimbo fairy staring lovingly at a huge black cock dripping huge amounts of [semen], with love-hearts rising from her head, is tattooed onto your upper back.".
 To decide which number is the semen-taste-addiction-influence of (T - bbc-fairy tattoo):
@@ -281,9 +284,12 @@ To decide which figure-name is the examine-image of (T - beauty tattoo):
 	decide on figure of beauty tattoo.
 Definition: beauty tattoo is eligible:
 	if the noun is make up kit or the noun is identified temptation clothing or the noun is scrunchie or the noun is cheerleader outfit or the noun is pom-pom or the noun is party themed or the noun is illusory kimono or the noun is negligee or the noun is pink-hair or the noun is silk-rose or the noun is romance-novel, decide yes;
+	if the noun is wearthing and the seduction-kiss-influence of the noun > 0, decide yes;
 	decide no.
 To say tattoo-desc of (T - beauty tattoo):
-	say "The word 'Beauty' is tattooed on your left breast above your nipple.".
+	say "The word 'Beauty' is tattooed on your left breast above your nipple. You can sense that your seductive kisses are more likely to stimulate the target.".
+To decide which number is the seduction-kiss-influence of (C - beauty tattoo):
+	decide on 2.
 To decide which number is the charisma-influence of (T - beauty tattoo):
 	decide on 1.
 To decide which number is the initial outrage of (T - beauty tattoo):
@@ -1204,9 +1210,12 @@ To decide which figure-name is the examine-image of (T - flower ballerina tattoo
 	decide on figure of flower ballerina tattoo.
 Definition: flower ballerina tattoo is eligible:
 	if the noun is ballet related or the noun is flower themed or the noun is shoes, decide yes;
+	if the noun is wearthing and the seduction-dance-influence of the noun > 0, decide yes;
 	decide no.
 To say tattoo-desc of (T - flower ballerina tattoo):
-	say "A ballerina with a flower instead of a skirt is tattooed on the inside of your left arm.".
+	say "A ballerina with a flower instead of a skirt is tattooed on the inside of your left arm. You can sense that it makes your seductive dancing more arousing.".
+To decide which number is the seduction-dance-influence of (T - flower ballerina tattoo):
+	decide on 1.
 To decide which number is the heel-skill-influence of (T - flower ballerina tattoo):
 	decide on 2.
 To decide which number is the delicateness-influence of (T - flower ballerina tattoo):
@@ -1652,11 +1661,17 @@ ass-lips tattoo is a left-asscheek tattoo. The tattoo-title of ass-lips tattoo i
 Figure of ass-lips tattoo is the file "Items/Tats/tattoo164.jpg".
 Definition: ass-lips tattoo is eligible:
 	if the noun is oral sex themed, decide yes;
+	if the noun is wearthing:
+		if the seduction-kiss-influence of the noun > 0 or the seduction-grind-influence of the noun > 0, decide yes;
 	decide no.
 To decide which figure-name is the examine-image of (T - ass-lips tattoo):
 	decide on figure of ass-lips tattoo.
 To say tattoo-desc of (T - ass-lips tattoo):
-	say "A pair of sexy red lips is inked on your left butt cheek.".
+	say "A pair of sexy red lips is inked on your left butt cheek. You can sense that it makes your seductive kissing and grinding more arousing.".
+To decide which number is the seduction-kiss-influence of (C - ass-lips tattoo):
+	decide on 2.
+To decide which number is the seduction-grind-influence of (C - ass-lips tattoo):
+	decide on 10.
 To decide which number is the oral-sex-addiction-influence of (T - ass-lips tattoo):
 	decide on 1.
 
@@ -2002,10 +2017,13 @@ To decide which figure-name is the examine-image of (T - playdude bunny tattoo):
 	decide on figure of playdude bunny tattoo.
 Definition: playdude bunny tattoo is eligible:
 	if the noun is party themed or the noun is bunny themed or the noun is waitress vessel or the noun is maid-waitress-outfit or the noun is cafe-maid-outfit or the noun is VIP-card, decide yes;
+	if the noun is wearthing and the seduction-grind-influence of the noun > 0, decide yes;
 	decide no.
 To say tattoo-desc of (T - playdude bunny tattoo):
-	say "The playdude bunny logo is inked on one butt cheek.".
+	say "The playdude bunny logo is inked on one butt cheek. You can sense that when you grind on someone's lap, you are more likely to arouse them.".
 Definition: playdude bunny tattoo is party themed: decide yes.
+To decide which number is the seduction-grind-influence of (C - playdude bunny tattoo):
+	decide on 10.
 To decide which number is the charisma-influence of (C - playdude bunny tattoo):
 	decide on 1.
 
@@ -2484,18 +2502,20 @@ To decide which number is the initial outrage of (T - short skirt slut tattoo):
 To compute inking effect of (T - short skirt slut tattoo):
 	increase short skirts permanent fetish by 1.
 
-showtime tattoo is a leg tattoo. The tattoo-title of showtime tattoo is "showtime".
+showtime tattoo is a leg tattoo. The tattoo-title of showtime tattoo is "show time". Understand "show", "time" as showtime tattoo.
 Figure of showtime tattoo is the file "Items/Tats/tattoo25.jpg".
 To decide which figure-name is the examine-image of (T - showtime tattoo):
 	decide on figure of showtime tattoo.
 Definition: showtime tattoo is eligible:
 	if the noun is stockings or the noun is id-poster, decide yes;
+	if the noun is wearthing and the seduction-dance-influence of the noun > 0, decide yes;
 	decide no.
 To say tattoo-desc of (T - showtime tattoo):
-	say "The word 'Show' is inked on the back your left leg and the word 'Time' on the back of your right leg.".
+	say "The word 'Show' is inked on the back your left leg and the word 'Time' on the back of your right leg. You can sense that it makes your seductive dancing more arousing.".
+To decide which number is the seduction-dance-influence of (T - showtime tattoo):
+	decide on 1.
 To decide which number is the heel-skill-influence of (T - showtime tattoo):
 	decide on 1.
-Definition: showtime tattoo is magic themed: decide yes.
 
 sissy black cock whore tattoo is a both-breasts tattoo. The tattoo-title of sissy black cock whore tattoo is "sissy black cock whore".
 Definition: sissy black cock whore tattoo is interracial themed: decide yes.

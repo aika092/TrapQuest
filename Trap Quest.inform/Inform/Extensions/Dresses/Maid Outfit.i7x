@@ -199,6 +199,8 @@ To decide which number is the initial outrage of (C - slutty-maid-outfit):
 
 To decide which number is the initial armour of (C - slutty-maid-outfit):
 	decide on 2.
+To decide which number is the usualAssModesty of (C - slutty-maid-outfit):
+	decide on 3.
 
 Definition: slutty-maid-outfit is black themed: decide yes.
 Definition: slutty-maid-outfit is black-and-white themed: decide yes.
@@ -224,6 +226,8 @@ To decide which number is the crotch-tightness of (C - V-shape-maid-outfit):
 	decide on 4.
 To decide which number is the initial armour of (C - V-shape-maid-outfit):
 	decide on 4.
+To decide which number is the usualAssModesty of (C - V-shape-maid-outfit):
+	decide on 1.
 
 Definition: V-shape-maid-outfit is uniquely nipple exposing:
 	if the largeness of breasts > 6, decide yes;

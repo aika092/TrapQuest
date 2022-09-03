@@ -9,6 +9,7 @@ Definition: a predicament room (called R) is within vision:
 	if R is the location of the player, decide yes;
 	if R is Predicament03 and the player is in Predicament02, decide yes;
 	if current-predicament is vibe-photo-predicament and the predicament-progression of vibe-photo-predicament > 0 and the player is in Predicament01, decide yes;
+	if current-predicament is snitch-predicament and R is Predicament02 and the player is in Predicament01, decide yes;
 	if the player is in Toilet01 or the player is in Toilet02 or the player is in Predicament01 or the player is in Predicament02, decide no;
 	decide yes.
 
@@ -54,7 +55,11 @@ Check going north when the player is in Predicament20:
 		if T is nothing, now T is a random held trophy;
 		if T is trophy and the trophy-mode of T is 0:
 			say "You have a new [T] to consider activating here. Are you sure you want to leave without activating it? ";
-			unless the player is consenting, say "Action cancelled." instead.
+			unless the player is consenting, say "Action cancelled." instead;
+	let TT be the number of things in the location of the player - the number of trophies in the location of the player;
+	if TT > 1: [1 being the player themselves]
+		say "YOU APPEAR TO HAVE LEFT SOME STUFF ON THE FLOOR HERE. It will be gone forever if you don't pick it up now. Are you sure you want to leave? ";
+		unless the player is consenting, say "Action cancelled." instead.
 
 Check going west when the player is in Predicament20:
 	say "The door seems to have locked itself behind you. The only way out is [bold type]north[roman type] through the portal." instead.
@@ -1110,7 +1115,7 @@ An all time based rule (this is the cars come past rule):
 						if A is a direction:
 							let P be the room A from (the location of M);
 							if a random number between 1 and 5 > 3 and the number of barriers in P is 0 and the number of barriers in the location of M is 0, try M going A;
-							if M is in the location of the player, say "[BigNameDesc of M] must have been attracted here by the sound of the car horn!";
+							if M is in the location of the player, say "[bold type][BigNameDesc of M] [bold type]must have been attracted here by the sound of the car horn![roman type][line break]";
 					otherwise:
 						say "[BigNameDesc of M] is started by the car horn, and looks around, now much more alert!";
 					if M is in the location of the player:
@@ -1497,7 +1502,7 @@ Definition: painted-cutoffs-predicament is eligible:
 	decide no.
 Figure of painted cutoffs predicament is the file "Special/Cutscene/cutscene-painted-cutoffs-predicament1.jpg".
 To set up bystanders for (P - painted-cutoffs-predicament):
-	set up 24 bystanders.
+	set up 12 bystanders.
 To say PredicamentDescription of (P - painted-cutoffs-predicament):
 	say "I'm currently in an Extra Credit lesson where I need to get back to my home while deciding whether to look extremely slutty or stimulate my [genitals], and avoiding as many bystanders from noticing me as possible.".
 To execute (P - painted-cutoffs-predicament):
@@ -5741,6 +5746,7 @@ To execute (PP - pong-predicament):
 				compute slightly addictive swallowing of semen by 1;
 			now entry R in player-cups of pong-predicament is true;
 		[player turn]
+		display stuff; [for arousal icon]
 		if false is listed in the player-cups of pong-predicament:
 			now crosshairX of pong-predicament is a random number between 31 and 304;
 			now crosshairY of pong-predicament is a random number between 26 and 271;
@@ -6078,9 +6084,8 @@ To say ExamineDesc of (P - toilets-dildos-predicament):
 	say "On one wall, six different coloured dildos are mounted on the wall, each with a sign above and a box underneath. The signs say:[line break]DOMINO MASK[line break]SEXY SKIRT[line break]KEY TO BELT[line break]SLUTTY ONE-PIECE[line break]PLUG DEFLATION[line break]SEXY TOP[line break]".
 
 To execute (P - toilets-dildos-predicament):
-	summon chastity-belt uncursed;
+	summon chastity-belt locked;
 	now chastity-belt is predicament-fixed;
-	now chastity-belt is locked;
 	summon puppy tail plug uncursed;
 	now puppy tail plug is predicament-fixed;
 	now the size of puppy tail plug is a random number between 9 and 10;
@@ -6201,6 +6206,231 @@ To construct normal buttons for (T - toilets-dildos-predicament):
 
 To say verb-desc of (T - toilets-dildos-predicament):
 	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say "[unique-verb-desc of T][link][bracket]suck[close bracket][as]suck [text-shortcut of T][end link]".
+
+
+
+snitch-predicament is a predicament. snitch-predicament has a number called snitch-time. snitch-predicament has a number called snitch-height. The printed name of snitch-predicament is "[TQlink of item described]gold quadcopter[TQxlink of item described][shortcut-desc][verb-desc of item described]". The text-shortcut of snitch-predicament is "snitch". Understand "golden", "gold", "quadcopter", "drone" as snitch-predicament. snitch-predicament can be broom-creampied. snitch-predicament is portable.
+
+Definition: snitch-predicament is appropriate:
+	if diaper quest is 0 and the rank of the player >= 2 and the player is possessing a vagina and provocative schoolgirl outfit is off-stage and the player is an august 2022 top donator, decide yes;
+	decide no.
+
+Definition: snitch-predicament is always-perceiving:
+	if snitch-predicament is held, decide yes; [when you are holding a large whirring quadcopter, people can't fail to notice you]
+	decide no.
+
+Figure of snitch is the file "Env/School/snitchpredicament1.jpg".
+Figure of snitch predicament cutscene is the file "Special/Cutscene/cutscene-snitch1.jpg".
+
+To decide which figure-name is the examine-image of (P - snitch-predicament):
+	decide on Figure of snitch.
+
+To say PredicamentDescription of (P - snitch-predicament):
+	say "I'm currently in an Extra Credit lesson where I need to find the golden quadcopter, and catch it, in order to unlock my broomstick and front door.".
+
+To say ExamineDesc of (P - snitch-predicament):
+	say "A small gold-coloured quadcopter. ";
+	if P is held, say "The rotors are still spinning - [bold type]if you drop it, it will fly away again.[roman type][line break]";
+	otherwise say HeightDesc of P.
+
+To say HeightDesc of (P - snitch-predicament):
+	let X be 11.0 - the snitch-height of snitch-predicament;
+	let Y be 11.0 - the snitch-time of snitch-predicament;
+	let XY be X / Y;
+	say "It is currently flying [if the snitch-height of snitch-predicament > 8]very high[otherwise if the snitch-height of snitch-predicament > 6]quite high[otherwise if the snitch-height of snitch-predicament > 4]quite low[otherwise if the snitch-height of snitch-predicament > 2]very low[otherwise]incredibly low[end if] and [if the snitch-time of snitch-predicament < 1]fast[otherwise if the snitch-time of snitch-predicament < 3]a little fast[otherwise if the snitch-time of snitch-predicament < 5]rather slowly[otherwise if the snitch-time of snitch-predicament < 7]very slowly[otherwise if the snitch-time of snitch-predicament < 9]extremely slowly[otherwise]is barely moving[end if]. [bold type]You have a [if XY < 0.2]very low[otherwise if XY < 0.3]low[otherwise if XY < 0.5]moderate[otherwise if XY < 0.7]decent[otherwise]high[end if] chance of successfully catching it.[roman type][line break]".
+
+To construct normal buttons for (T - snitch-predicament):
+	if ButtonTableFull is 0:
+		choose a blank row in the Table of Buttons;
+		now the ButtonImage entry is Figure of TakeButton;
+		now the ButtonCommand entry is "take [text-shortcut of T]";
+		now the ButtonColour entry is lightModeFullGreen;
+		if the player is prone, now the ButtonColour entry is lightModeFullYellow. [player needs to kneel]
+
+To say verb-desc of (T - snitch-predicament):
+	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say "[unique-verb-desc of T][if T is held][link][bracket]dr[close bracket][as]drop [text-shortcut of T][end link][otherwise][link][bracket]ta[close bracket][as]take [text-shortcut of T][end link][end if]".
+
+To execute (P - snitch-predicament):
+	summon chastity-belt locked;
+	now chastity-belt is predicament-fixed;
+	summon broomstick locked;
+	[now broomstick is predicament-fixed;]
+	summon purple-vibrator uncursed;
+	now purple-vibrator is not penetrating asshole;
+	now purple-vibrator is penetrating vagina;
+	now purple-vibrator is predicament-fixed;
+	summon black-plug uncursed;
+	now black-plug is predicament-fixed;
+	summon provocative schoolgirl outfit uncursed;
+	let G be a random small ballgag;
+	summon G locked;
+	now G is predicament-fixed;
+	summon scarf uncursed;
+	summon frilly stockings uncursed;
+	let MJ be a random mary janes;
+	summon MJ uncursed;
+	now the raw-magic-modifier of MJ is 1;
+	now MJ is dexterity-influencing;
+	now the snitch-height of snitch-predicament is 10;
+	now P is in Predicament01;
+	now the player is in Predicament01;
+	now the defaultLeftTarget of arms is broomstick;
+	now the defaultRightTarget of arms is broomstick;
+	if the player is not getting unlucky:
+		let AP be a random off-stage fetish appropriate alchemy product;
+		if AP is a thing:
+			now AP is in Predicament19;
+			now AP is bland;
+			now AP is unsure;
+	say "You find yourself in a small abandoned building. You're wearing a skimpy schoolgirl outfit, a ballgag hidden under a scarf, and a chastity belt, attached to a witch's broomstick, which is holding two vibrating sex toys in your [fuckholes].[line break]A robotic voice is speaking to you from some hidden speaker:[paragraph break][first custom style]'WELCOME TO EXTRA CREDIT CLASS. [PredicamentRewardExplanation]THERE ARE TWO BUTTONS ON THE FRONT OF YOUR BROOMSTICK. AFTER LEAVING THIS ROOM, ONE BUTTON MUST BE HELD DOWN AT ALL TIMES, OR ELSE YOU WILL BE CREAMPIED WITH FRESH SEMEN. FURTHERMORE, WHENEVER BOTH BUTTONS AREN'T HELD DOWN, THE ANAL PLUG WILL SHOCK YOU, BUT ALSO THE QUADCOPTER'S VELOCITY WILL SLIGHTLY DECREASE. IF YOU RETURN HOME WITHOUT FIRST CAPTURING THE GOLDEN QUADCOPTER, YOU WILL BE CREAMPIED, AND THE BALLGAG WILL NOT UNLOCK.'[PredicamentRewardExplanationReaction][roman type][line break]And then, you hear a loud whirring, and see a small gold-coloured quadcopter rise up from the ground, and fly out the door.[line break][variable custom style]Holy shit... I've got to catch that thing, and fast, before too many people see me like this... And before these vibrations make me cum![roman type][line break]";
+	follow the update arms rule.
+
+To decide which number is broomstick-buttons-held:
+	let buttons-held be 0;
+	repeat with A running through the armUses of arms:
+		if A is broomstick, increase buttons-held by 1;
+	if buttons-held > 2, decide on 2; [failsafe - should never happen]
+	decide on buttons-held.
+
+An all later time based rule (this is the quadcopter rule):
+	if current-predicament is snitch-predicament and the player is in a predicament room and the player is not in Predicament20:
+		if snitch-predicament is held and snitch-predicament is not listed in the armUses of arms, allocate arm use to snitch-predicament; [every turn the snitch is held, it requires 1 arm]
+		let BBH be broomstick-buttons-held;
+		if BBH < 2:
+			compute broom plug shock;
+			if BBH is 0 and snitch-predicament is not broom-creampied:
+				say "[bold type]You are not holding down any of the broomstick's buttons![roman type][line break]";
+				if debugmode > 0, say "(Arms: [armUses of arms])[line break]";
+				compute broom creampie;
+		if snitch-predicament is not held: [snitch flying]
+			cutshow figure of snitch predicament cutscene;
+			if the snitch-height of snitch-predicament > a random number between 6 and 9, increase the snitch-height of snitch-predicament by a random number between -2 and 2; [drone will gradually lower, at least a bit]
+			otherwise increase the snitch-height of snitch-predicament by a random number between -1 and 1;
+			if the snitch-height of snitch-predicament > 10, now the snitch-height of snitch-predicament is 10;
+			if the snitch-height of snitch-predicament < 2, now the snitch-height of snitch-predicament is 2;
+			let L be the location of snitch-predicament;
+			let R be a random number between 1 and 10;
+			if L is not a park room or a random number between 1 and 4 is 1:
+				let A be the best route from L to Park05; [the centre of the park]
+				try snitch-predicament going A;
+			otherwise if R > snitch-time of snitch-predicament:
+				if the player is in L and the player is getting lucky:
+					say "[BigNameDesc of snitch-predicament] doesn't make it very far this turn. [GotLuckyFlav]";
+				otherwise:
+					now Neighbour Finder is L;
+					let A be a random N-viable direction;
+					if A is a direction, try snitch-predicament going A;
+			otherwise if the player is in L:
+				say "[BigNameDesc of snitch-predicament] doesn't make it very far this turn.";
+			if snitch-predicament is in the location of the player, say HeightDesc of snitch-predicament.
+
+Check taking snitch-predicament:
+	if the noun is held, say "You've already caught that?" instead;
+	if the player is prone, say "You'd need to be standing up to do that." instead;
+	allocate 6 seconds;
+	if broomstick-buttons-held > 0, say "You remove one hand from the broom, releasing one of the two buttons.";
+	let capture-success be false;
+	if the player is getting unlucky:
+		say "The shock makes your arm spasm, and you lose your chance to try and grab [NameDesc of snitch-predicament]! [GotUnluckyFlav]";
+	otherwise:
+		let R be a random number between the snitch-time of snitch-predicament and 10;
+		if debuginfo > 0, say "[input-style]Quadcopter capture roll: RNG([snitch-time of snitch-predicament]~10) = [R] | [snitch-height of snitch-predicament - 1].5 quadcopter capture difficulty[roman type][line break]";
+		if R >= the snitch-height of snitch-predicament:
+			say "SUCCESS! You manage to grip onto the corner of the drone and bring it down. You're now holding it in one hand, meaning you can't hold down one of the broomstick's buttons. Quick, get to your house as fast as you can!";
+			now capture-success is true;
+		otherwise:
+			say "[if R >= the snitch-height of snitch-predicament - 2]You manage to get two fingers on it, but it slips out of your grip. Fuck, so close[otherwise if R >= the snitch-height of snitch-predicament - 4]You manage to touch it, but it flies away before you can actually grab it. Damn, that was close[otherwise]You reach for it, but it flies away before you can touch it[end if]!";
+	if capture-success is false, allocate arm use instead.
+
+To compute broom plug shock:
+	let P be a random thing penetrating asshole;
+	if P is a thing:
+		say "[BigNameDesc of P] releases a powerful electric shock, right into your [asshole]!";
+		PainUp 1;
+		increase the snitch-time of snitch-predicament by 1.
+
+To compute broom creampie:
+	if snitch-predicament is not broom-creampied and purple-vibrator is penetrating vagina:
+		say "[BigNameDesc of purple-vibrator] unleashes a torrent of [semen] into your [vagina]!";
+		PussyFill 12;
+		if the pregnancy of the player is 0 and pregnancy fetish is 1: [Once pregnant you don't get any more potential fathers!]
+			let ULA be a random ultimate-lesson-actor;
+			now ULA is inseminating vagina;
+		now snitch-predicament is broom-creampied.
+
+Report going when the player is in Predicament20:
+	if current-predicament is snitch-predicament:
+		say "As you enter your house, several things happen.";
+		if snitch-predicament is held:
+			let G be a random worn gag;
+			if G is a gag:
+				say "[BigNameDesc of G] unlocks!";
+				unlock G;
+			say "[BigNameDesc of snitch-predicament] disappears!";
+			destroy snitch-predicament;
+		otherwise:
+			compute broom creampie;
+		if chastity-belt is worn:
+			say "[BigNameDesc of chastity-belt] unlocks, and detaches from your body, taking the plugs with it!";
+			unlock chastity-belt;
+			now chastity-belt is in the location of the player;
+			if black-plug is worn:
+				now black-plug is in the location of the player;
+				dislodge black-plug;
+			if purple-vibrator is worn:
+				now purple-vibrator is in the location of the player;
+				dislodge purple-vibrator.
+
+Report going when the player is in Predicament19:
+	if current-predicament is snitch-predicament:
+		let AP be a random unsure alchemy product in Predicament19;
+		if AP is an alchemy product:
+			now AP is sure;
+			say "[bold type]You spot a [MediumDesc of AP] on the ground in front of your door![roman type][line break]If you pick it up before you enter your house, you'll be able to keep it[if snitch-predicament is held and snitch-predicament is not broom-creampied]. Unfortunately, [bold type]to pick it up you would need to release the second broomstick button, or first release the quadcopter, and have to go and catch it all over again...[roman type][line break][otherwise].[end if]".
+
+
+
+anal-beads-swimsuit-predicament is a predicament. anal-beads-swimsuit-predicament has a number called lipstick-heel-time. anal-beads-swimsuit-predicament has a number called snitch-height.
+
+Definition: anal-beads-swimsuit-predicament is appropriate:
+	if diaper quest is 0 and the rank of the player < 3 and the player is an august 2022 top donator, decide yes;
+	decide no.
+
+Figure of anal-beads-swimsuit-predicament is the file "Special/Cutscene/cutscene-anal-beads-swimsuit1.jpg".
+Figure of anal-beads-swimsuit-predicament-crawling is the file "Special/Cutscene/cutscene-anal-beads-swimsuit2.jpg".
+
+To say PredicamentDescription of (P - anal-beads-swimsuit-predicament):
+	say "I'm currently in an Extra Credit lesson where I need to get back to my house. The top of the swimsuit only covers my breasts if I keep my hands behind my neck. Every time I walk on my heels, it pumps up the anal beads of my swimsuit a bit bigger.".
+
+To execute (P - anal-beads-swimsuit-predicament):
+	summon anal-beads-blue-swimsuit uncursed;
+	now the plug size of anal-beads-blue-swimsuit is 1;
+	let H be a random lipstick heels;
+	summon H locked;
+	now the heel-height of H is 1;
+	summon butt-slut tattoo;
+	now butt-slut tattoo is predicament-fixed;
+	now erasure-salve is in Toilet01;
+	now erasure-salve is bland;
+	now erasure-salve is sure;
+	now the player is in Predicament01;
+	say "You find yourself in a small abandoned building. You're wearing a pair of weird heels with stiletto heels styled as sticks of lipstick. You are also wearing a very peculiar slutty blue swimsuit, with no back, anal beads at the back of the crotch section to hold it in place, and thumb holes at the collar which requires you to hold it up with both thumbs, to keep the top section in place.[line break]A robotic voice is speaking to you from some hidden speaker:[paragraph break][first custom style]'WELCOME TO EXTRA CREDIT CLASS. [PredicamentRewardExplanation]EACH TIME YOU STEP ON YOUR HEELS, YOUR ANAL BEADS WILL BE SLIGHTLY INFLATED. WHILE YOU CRAWL, YOUR NEW TATTOO WILL BE VISIBLE.'[roman type][line break]You turn to a mirror behind you, which with a bit of squatting reveals a lewd 'BUTT SLUT' tattoo around your [asshole].[line break][variable custom style]Oh my god![paragraph break][first custom style]'THERE IS A SALVE IN THE MEN'S TOILETS THAT CAN REMOVE THE TATTOO.'[roman type][line break][PredicamentRewardExplanationReaction][roman type][line break]".
+
+Report going:
+	if current-predicament is anal-beads-swimsuit-predicament and the player is upright and the plug size of anal-beads-blue-swimsuit < 10 and the player is in a predicament room and there is worn lipstick heels:
+		increase the lipstick-heel-time of anal-beads-swimsuit-predicament by 1;
+		let P be the lipstick-heel-time of anal-beads-swimsuit-predicament / 3;
+		if P > the plug size of anal-beads-blue-swimsuit:
+			now the plug size of anal-beads-blue-swimsuit is P;
+			if anal-beads-blue-swimsuit is held or anal-beads-blue-swimsuit is in the location of the player, say "[bold type]Your anal beads have now reached a significant new size[if anal-beads-blue-swimsuit is penetrating asshole] inside your [asshole][end if].[line break][if anal-beads-blue-swimsuit is penetrating asshole][variable custom style][one of]I can definitely feel that![or]Aah![or]Oooh, these beads are getting big![or]Fuck, they're big![or]Holy shit, they're really stretching me out![or]Oh my god, I can't believe how full that's making me feel.[or]I can hardly take this... Surely they can't grow any larger?![or]My poor asshole... It can't take any more of this![or]Holy shit, my butthole is going to explode![stopping][roman type][line break][end if]";
+			if P > the openness of asshole + a random number between 0 and 5, gape asshole times 1;
+		otherwise if anal-beads-blue-swimsuit is held or anal-beads-blue-swimsuit is in the location of the player:
+			say "The beads of [NameDesc of anal-beads-blue-swimsuit] [one of]grow[or]inflate[or]swell[purely at random] a [one of]fraction[or]tiny bit[purely at random] [one of]larger[or]bigger[or]wider[purely at random].".
+
+An all later time based rule (this is the anal-beads-swimsuit-predicament cutscenes rule):
+	if current-predicament is anal-beads-swimsuit-predicament and the player is in a park room and anal-beads-blue-swimsuit is worn and anal-beads-blue-swimsuit is top-placed and anal-beads-blue-swimsuit is crotch-in-place:
+		if the player is upright, cutshow figure of anal-beads-swimsuit-predicament;
+		otherwise cutshow figure of anal-beads-swimsuit-predicament-crawling for butt-slut tattoo.
 
 
 Predicament World ends here.

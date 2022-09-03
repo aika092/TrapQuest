@@ -194,4 +194,34 @@ To decide which number is the initial outrage of (C - princess bride dress):
 	decide on 6.
 
 
+housewife dress is a bridal dress. housewife dress is high cut. housewife dress is knee-length. housewife dress is arm exposing. The text-shortcut of housewife dress is "hwd".
+
+Figure of housewife dress is the file "Items/Clothes/Upper/Special/Bridal/bridaldress5.png".
+
+To decide which figure-name is the clothing-image of (C - housewife dress):
+	decide on figure of housewife dress.
+
+Definition: housewife dress is class-relevant:
+	if the class of the player is bride or the class of the player is fertility goddess, decide yes;
+	decide no.
+
+To compute class set up of (C - housewife dress):
+	now C is strength-influencing;
+	now C is absorption.
+
+Definition: housewife dress is slitted: decide yes.
+Definition: housewife dress is bow themed: decide yes.
+
+To say ShortDesc of (C - housewife dress):
+	say "housewife dress".
+To say MediumDesc of (C - housewife dress):
+	say "blue housewife dress".
+
+To say ClothingDesc of (C - housewife dress):
+	say "This long [MediumDesc of C] has a long skirt, high neckline, and giant bow at the back. Anyone who wears this is surely rather well domesticated and subserviant.".
+
+To decide which number is the initial outrage of (C - housewife dress):
+	decide on 1.
+
+
 Bridal Outfits ends here.

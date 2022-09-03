@@ -407,6 +407,15 @@ To compute SeductionGrind of (M - orc):
 		compute StrongSexProgress of M;
 	otherwise:
 		say "You allow [NameDesc of M] to grip you tightly and thrust [his of M] [DickDesc of M] up and down in between your [AssDesc][if the player is a pervert or the player is feeling submissive], and even push back to provide [him of M] with extra sensation[end if].[line break][speech style of M]'Yes, yes, YES!'[roman type][line break][BigNameDesc of M] cums hard, while [his of M] [LongDickDesc of M] is still pumping in and out of your crack!";
+		if stripper-ears is off-stage and stripper-ears is actually summonable:
+			say "Suddenly, two glittery feline ears appear in your hair!";
+			summon stripper-ears cursed;
+			say "[variable custom style]The game is telling me that I'm a professional stripper now?![roman type][line break]";
+		otherwise if there is a worn maid headdress:
+			let H be a random worn headgear;
+			transform H into stripper maid headdress;
+			compute class outfit of stripper maid headdress;
+			say "[variable custom style]The game is telling me that I'm a professional stripper now?![roman type][line break]";
 		if M is wrapped:
 			say "The [semen] fills [his of M] condom to the brim.";
 			compute default condom filling of M;

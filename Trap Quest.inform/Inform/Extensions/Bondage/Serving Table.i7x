@@ -65,4 +65,24 @@ To say ClothingDesc of (C - serving tray):
 	if C is worn, say "A black leather serving tray is connected to [if N is neckwear]your [MediumDesc of N][otherwise]a heavy metal collar[end if] by strong metal chains, allowing it to sit in front of your belly button, ready for others to place things on it, or take things from it. On it is your [if there is a held cocktail-glass]cocktail glass[end if][if there is a held cocktail-glass and there is a held champagne-glass] and [end if][if there is a held champagne-glass]champagne glass[end if][if C is wrist-bound-behind]. Your hands are kept behind you by a piece of strong and seemingly magical rope[end if].";
 	otherwise say "The black leather serving tray that had been chained to your neck.".
 
+broomstick is a clothing. broomstick is plastic. broomstick is unique. The printed name of broomstick is "[clothing-title-before]broomstick[clothing-title-after]". The text-shortcut of broomstick is "bstk".
+
+To decide which figure-name is clothing-image of (C - broomstick):
+	decide on figure of broomstick.
+
+Figure of broomstick is the file "Items/Accessories/Other/broomstick1.jpg".
+
+To say ShortDesc of (C - broomstick):
+	say "broomstick".
+
+To say ClothingDesc of (C - broomstick):
+	say "This plastic witch's broomstick is permanently fixed to the [chastity-belt]. You need to hold both the buttons - whenever one button is released, the butt plug will release an electric shock. If both buttons are released, the vaginal plug ejaculates fresh [semen].".
+
+To construct unique buttons for (T - broomstick):
+	if ButtonTableFull is 0 and the player is in a predicament room:
+		choose a blank row in the Table of Buttons;
+		now the ButtonImage entry is Figure of ArmBlockIcon;
+		now the ButtonCommand entry is "adjust arms";
+		now the ButtonColour entry is lightModeFullGreen.
+
 Serving Table ends here.

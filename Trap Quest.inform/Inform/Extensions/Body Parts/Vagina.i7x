@@ -295,7 +295,7 @@ To say VaginaModesty:
 		otherwise:
 			now C is the at least partial concealer of vagina;
 			let CC be current cameltoe;
-			say "It [if CC is 1]can be slightly made out, thanks to a slight cameltoe through your [NameDesc of C][otherwise if CC is 2]is creating an extremely prominent cameltoe through [NameDesc of C][otherwise if C is clothing]is partially concealed by [NameDesc of C][end if]. ";
+			say "It [if CC is 1 and C is arms]can be slightly made out, thanks to a slight cameltoe, but is partially concealed by [NameDesc of C][otherwise if CC is 2 and C is arms]is creating an extremely prominent cameltoe but is partially concealed by [NameDesc of C][otherwise if CC is 1]can be slightly made out, thanks to a slight cameltoe through your [NameDesc of C][otherwise if CC is 2]is creating an extremely prominent cameltoe through [NameDesc of C][otherwise]is partially concealed by [NameDesc of C][end if]. ";
 	if vagina is actually occupied:
 		let P be a random thing penetrating vagina;
 		if P is monster:
@@ -379,7 +379,7 @@ This is the continued pussy expulsion rule:
 	otherwise now continued-pussy-expulsion is false.
 
 This is the compulsory pussy expulsion rule:
-	if the semen volume of vagina > 6 and (vagina is not actually occupied or the player is in a predicament room):
+	if the semen volume of vagina > 6 and (vagina is not actually occupied or the player is in a predicament room): [cum squirts out the sides in the extra credit zone]
 		now another-turn is 1;
 		add continued pussy expulsion rule to another-turn-rules.
 The compulsory pussy expulsion rule is listed in the compulsory action rules.

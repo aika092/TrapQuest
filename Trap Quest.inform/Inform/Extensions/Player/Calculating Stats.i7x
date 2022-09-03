@@ -23,13 +23,13 @@ To RandomStatDown (N - a number):
 		if R is 2, increase D by 1;
 		if R is 3, increase I by 1;
 	if S > 0:
-		say "You feel [if S > 1]much [end if] weaker.";
+		say "You feel [if S > 1]much [end if]weaker.";
 		StrengthDown S;
 	if D > 0:
-		say "You feel [if D > 1]much [end if] less agile.";
+		say "You feel [if D > 1]much [end if]less agile.";
 		DexDown D;
 	if I > 0:
-		say "You feel [if I > 1]much [end if] less intelligent.";
+		say "You feel [if I > 1]much [end if]less intelligent.";
 		IntDown I.
 
 Book - Strength

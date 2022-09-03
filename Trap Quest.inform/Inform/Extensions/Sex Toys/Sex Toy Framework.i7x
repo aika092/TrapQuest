@@ -210,7 +210,7 @@ To compute gripping of (I - a thing):
 	[#LXorDD: For the case of wearing the stick-on 0-sized penis decal, it's too fiddly to bother add a whole 'It peels off and flutters to the ground' or 'the stick on decal magically somehow fills your [orifice]' thing, so instead we'll kludge this special case and say the player is just pretending. I also suspect if it isn't counted as being held 'inside' long enough this might loop forever, too. So we pretend everything is proceeding normally.]
 	let pretence be "The";
 	if I is players-detached-dick and the size of I is 0, now pretence is "You pretend that your";
-	if the player is upright and I is not glued clothing and I is not cursed clothing and (nun-dress is not worn or nun-dress is not wrist-bound-behind) and (current-predicament is not team-girlfriends-predicament or the player is not in a predicament room):
+	if the player is upright and I is not glued clothing and I is not cursed clothing and chastity-belt is not worn and (nun-dress is not worn or nun-dress is not wrist-bound-behind) and (current-predicament is not team-girlfriends-predicament or the player is not in a predicament room):
 		if debuginfo > 1 and ((I is penetrating asshole and the player is not ass protected) or (I is penetrating vagina and the player is not pussy protected)), say "[input-style][ShortDesc of I] gripping check: Grip value ([G]) squared * 3 = [G * G * 3]; RNG (0~[G * G * 3]) = [R] | 9.5 Required grip strength (and pretence text is '[pretence]')[roman type][line break]";
 		if I is players-detached-dick and the size of I is 0:
 			do nothing; [so, avoid the falls 'out' check]

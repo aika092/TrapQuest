@@ -52,6 +52,9 @@ To decide which figure-name is the monster-image of (M - ex-princess):
 		if current-final-battle-object is final-battle-harness, decide on Figure of princess final battle harness;
 		if current-final-battle-object is final-battle-final-chance, decide on figure of princess final battle final chance;
 		if current-final-battle-object is final-battle-scan and final-battle-scan is not pose-swapped, decide on figure of princess final battle scan;
+		if current-final-battle-object is final-battle-sword:
+			if the uses of final-battle-sword is 1, decide on figure of princess final battle sword;
+			decide on figure of princess final battle sword semen;
 	if (M is in School35 and glittery-wand is carried by M and glittery-wand is cursed) or (M is guarding and current-final-battle-object is final-battle-wand-curse):
 		if diaper lover > 0, decide on figure of original diapered princess combat;
 		decide on figure of original princess combat;

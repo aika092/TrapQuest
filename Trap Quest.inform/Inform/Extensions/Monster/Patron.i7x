@@ -262,7 +262,7 @@ A time based rule (this is the patron encountering rule):
 				let M be a random monster in the location of the player;
 				if the player is in Hotel38 and watersports fetish is 1 and a2m fetish >= 2 and the human-toilet-scene of woman-player is not 1, now M is toilet;
 				let PSRB be a random carried probably-serve-ready bottle;
-				if PSRB is a bottle and the waitress bartering value of PSRB for M > 0:
+				if PSRB is a bottle and the waitress bartering value of PSRB for P > 0:
 					now P is in the location of the player;
 					set up P;
 					compute waitressDemand of P on PSRB;
@@ -1289,6 +1289,7 @@ To compute payment of (M - a patron):
 				check black lace transformation;
 		say "[BigNameDesc of M] leaves the way [he of M] came.";
 		destroy M;
+		FavourDown pimp;
 		if M is seduced, finally destroy M; [Can't wait until the end of the round to do this, or the seduction code will just continue!]
 	trigger brothel-wisp-quest.
 

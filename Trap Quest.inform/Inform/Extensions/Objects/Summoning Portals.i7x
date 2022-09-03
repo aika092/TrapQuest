@@ -398,7 +398,7 @@ Carry out appeasing something with summoning-circle:
 
 Chapter 2 - Giant Statue
 
-giant-statue is a summoning portal. giant-statue is in Woods30. The printed name of giant-statue is "[TQlink of item described]giant statue[TQxlink of item described][shortcut-desc][verb-desc of item described]". Figure of giant pregnant statue is the file "Env/Forest/statue5.png". Figure of giant-statue is the file "Env/Forest/statue6.png". Understand "giant", "statue" as giant-statue.
+giant-statue is a summoning portal. giant-statue is in Woods30. The printed name of giant-statue is "[TQlink of item described]giant statue[TQxlink of item described][shortcut-desc][verb-desc of item described]". Figure of giant pregnant statue is the file "Env/Forest/statue5.jpg". Figure of giant-statue is the file "Env/Forest/statue6.jpg". Understand "giant", "statue" as giant-statue.
 
 To decide which region is the currentRegion of (C - giant-statue):
 	decide on Woods. [turn an expensive and frequent check into a less expensive one.]

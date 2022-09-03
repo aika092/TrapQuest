@@ -4,7 +4,9 @@ deep one is a monster. Understand "deepone" as deep one. deep one is male. The t
 
 deep one has a number called times-encountered.
 
-Definition: deep one is musky: decide yes.
+Definition: deep one is musky:
+	if the refractory-period of it <= 0, decide yes;
+	decide no.
 
 Figure of deep one is the file "NPCs/Mansion/deepone1.png".
 Figure of family friendly deep one is the file "NPCs/Mansion/deepone2.png".

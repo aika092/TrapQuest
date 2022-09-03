@@ -595,7 +595,7 @@ To compute default seduction choice of (M - a monster):
 		if seconds is 6 and the number of seduced reactive monsters is 1:
 			allocate 0 seconds; [This should just cancel the action]
 			now M is unseduced;
-		otherwise if there is a dangerous monster in the location of the player:
+		otherwise if there is a combative monster:
 			now Neighbour Finder is the location of the player;
 			let LD be the list of N-viable directions;
 			let D be entry 1 of LD;
@@ -770,7 +770,14 @@ To compute FirstTurnSeduceDanceAnnounce of (M - a monster):
 		if the health of M < the maxhealth of M and M is unfriendly, say "[variable custom style]'[if the player is a nympho]I was only kidding. You know what I want, don't you, [stud of M]?'[otherwise if the player is a pervert]We could keep fighting, or...?'[otherwise]Maybe there's another way to resolve our disagreement...'[end if][roman type][line break]";
 		otherwise say "[variable custom style]'[if the player is a nympho]You want some of this, [stud of M]? Come and get it!'[otherwise if the player is a pervert]Like anything you see?'[otherwise][one of]I don't normally do this, but[or]Hi there, [stud of M][in random order]...'[end if][roman type][line break]".
 
+To decide which number is the seduction-dance-influence of (C - a wearthing):
+	decide on 0.
+
 To compute SeductionDance of (M - a monster):
+	let DMax be 3;
+	repeat with C running through worn wearthings:
+		decrease DMax by the seduction-dance-influence of C;
+	if DMax < 1, now DMax is 1;
 	increase the seductions-performed of thighs by 1;
 	if a random number between 1 and the flesh volume of hips > a random number between 1 and 10:
 		say "You point your [AssDesc] towards [NameDesc of M] and twerk your butt for all that you're worth! [slightHumiliateReflect]";
@@ -785,7 +792,7 @@ To compute SeductionDance of (M - a monster):
 		say "You seductively shake your [ShortDesc of hips] towards [NameDesc of M]. [trivialHumiliateReflect]";
 		increase the blue-balls of M by a random number between 0 and (the square root of the gropability of hips);
 		increase the gropability of hips by 100;
-	if a random number between 1 and the sex-length of M > a random number between 1 and 3, compute WeakSexProgress of M;
+	if a random number between 1 and the sex-length of M > a random number between 1 and DMax, compute WeakSexProgress of M;
 	otherwise compute WeakSexFalter of M.
 
 To compute FirstTurnSeduceKissAnnounce of (M - a monster):
@@ -793,8 +800,16 @@ To compute FirstTurnSeduceKissAnnounce of (M - a monster):
 		if the health of M < the maxhealth of M and M is unfriendly, say "[variable custom style]'[if the player is a nympho]Oopsie, was my foreplay a bit rough for you? Let me make it up to you, [stud of M]...'[otherwise if the player is a pervert]Aww, I'm sorry. Here, can I kiss it better?'[otherwise]Okay, I regret challenging you. This is what you were hoping for, right?'[end if][roman type][line break]";
 		otherwise say "[variable custom style]'[if the player is a nympho]Hey [stud of M], I've been waiting for you...'[otherwise if the player is a pervert]Come here, [stud of M]...'[otherwise]Hi, I know this is crazy, but I think we might have a connection...'[end if][roman type][line break]".
 
+To decide which number is the seduction-kiss-influence of (C - a wearthing):
+	decide on 0.
+
 To compute SeductionKiss of (M - a monster):
 	increase the seductions-performed of face by 1;
+	let LP be the lips of face;
+	repeat with C running through worn wearthings:
+		increase LP by the seduction-kiss-influence of C;
+	now LP is 4 - LP;
+	if LP < 1, now LP is 1;
 	if a random number between 7 and 20 <= the sex addiction of the player:
 		say "You breathe seductively into [his of M] ear, before running your tongue down [his of M] cheek to [his of M] mouth, where you lock your [LipDesc] with [his of M] lips and enjoy a deep, tongue-focused kiss. [slightHumiliateReflect]";
 		increase the blue-balls of M by a random number between 0 and 2;
@@ -807,7 +822,7 @@ To compute SeductionKiss of (M - a monster):
 		say "You press your mouth against [hers of M], but don't let [him of M] push [his of M] tongue in past your [LipDesc]. [trivialHumiliateReflect]";
 		increase the blue-balls of M by a random number between 1 and 3;
 		increase the gropability of face by 10;
-	if a random number between 1 and the sex-length of M > (4 - the lips of face), compute WeakSexProgress of M;
+	if a random number between 1 and the sex-length of M > LP, compute WeakSexProgress of M;
 	otherwise compute WeakSexFalter of M.
 
 [Succubus class only]
@@ -877,11 +892,16 @@ To compute FirstTurnSeduceGrindAnnounce of (M - a monster):
 		if the health of M < the maxhealth of M and M is unfriendly, say "[variable custom style]'[if the player is a nympho]Haha, OK! How do you want me, [stud of M]?'[otherwise if the player is a pervert]Is this what you wanted, huh?'[otherwise]Maybe there's another way to resolve our disagreement...'[end if][roman type][line break]";
 		otherwise say "[variable custom style]'[if the player is a nympho]How do you want me, [stud of M]?'[otherwise if the player is a pervert]I wonder, can you resist a cute little minx like me?'[otherwise]Um... hi there...'[end if][roman type][line break]".
 
+To decide which number is the seduction-grind-influence of (C - a wearthing):
+	decide on 0.
+
 To compute SeductionGrind of (M - a monster):
 	increase the seductions-performed of hips by 1;
 	let V be the anal sex addiction of the player + (the sex addiction of the player / 2);
 	if the player is not possessing a vagina, increase V by the anal sex addiction of the player;
 	otherwise increase V by the vaginal sex addiction of the player;
+	repeat with C running through worn wearthings:
+		increase V by the seduction-grind-influence of C;
 	let G be the gropability of asshole + the gropability of hips;
 	if the player is not possessing a vagina, increase G by the gropability of asshole;
 	otherwise increase G by the gropability of vagina;
@@ -990,10 +1010,33 @@ To compute FirstTurnSeduceSubmitAnnounce of (M - a monster):
 		otherwise say "[variable custom style][if the player is a nympho]'Get ready, [stud of M], I'm going to take you to heaven...'[otherwise if M is unfriendly]'Okay fine, just give me a moment...'[otherwise if the player is a pervert]'Want to have a piece of this? One time offer, [stud of M].'[otherwise]'Don't get me wrong, I'm not usually this type of [boy of the player], but...'[end if][roman type][line break]".
 
 To compute friendly seduction end of (M - a monster):
+	compute default friendly seduction end of M.
+
+To compute default friendly seduction end of (M - a monster):
 	now M is seduction-refused;
-	if M is intelligent, say "[speech style of M]'Oh come on... you're stopping now?!'[roman type][line break]";
-	say "[BigNameDesc of M] seems upset.";
-	FavourDown M by 1 with consequences.
+	let seduction-end-forgivness be 1;
+	let T be "";
+	if the class of the player is stripper:
+		increase seduction-end-forgivness by 1;
+		now T is "stripper class bonus";
+	if the sex-length of M <= 1:
+		increase seduction-end-forgivness by 1;
+		if T is "", now T is "very close to orgasm";
+		now T is "[T] & very close to orgasm";
+	if the player is getting lucky:
+		increase seduction-end-forgivness by 1;
+		if T is "", now T is "successful luck roll";
+		now T is "[T] & successful luck roll";
+	now seduction-end-forgivness is seduction-end-forgivness * seduction-end-forgivness;
+	let R be a random number between 1 and seduction-end-forgivness;
+	if debuginfo > 0, say "[input-style]Early seduction end forgiveness check: satisfaction ([T] = [seduction-end-forgivness]) -> d[seduction-end-forgivness] = [R] | 3.5 (forgiveness threshold)";
+	if R > 3:
+		if M is intelligent, say "[speech style of M]'Ooh you [one of]saucy[or]cheeky[or]naughty[in random order] [one of]minx[or]bitch[or]vixen[at random]! I can't believe you'd leave me on the edge like that!'[roman type][line break]";
+		say "Despite looking a little flustered at having been left on the edge, [one of][NameDesc of M] seems happy, not upset[or]it would appear that you've left [NameDesc of M] in a good mood[or][NameDesc of M] doesn't seem annoyed with you[in random order].";
+	otherwise:
+		if M is intelligent, say "[speech style of M]'Oh come on... you're stopping now?!'[roman type][line break]";
+		say "[BigNameDesc of M] seems upset[if M is intelligent] and frustrated[end if].";
+		FavourDown M by 1 with consequences.
 
 To compute seduction witness reaction of (M - a monster):
 	if M is not dangerous, say LewdTrapReactFlav of M.

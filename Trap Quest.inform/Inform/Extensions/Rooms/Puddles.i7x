@@ -215,12 +215,19 @@ To construct normal buttons for (T - puddle-object):
 		now the ButtonImage entry is examine-image of pink-spraybottle;
 		now the ButtonCommand entry is "clean puddle with [text-shortcut of pink-spraybottle]";
 		now the ButtonColour entry is lightModeFullGreen;
-		if the player is upright, now the ButtonColour entry is lightModeFullYellow; [turn yellow - player needs to stand]
+		if the player is upright, now the ButtonColour entry is lightModeFullYellow; [turn yellow - player needs to kneel]
 	if (diaper quest is 0 or the semen-puddle of the location of the player + the urine-puddle of the location of the player + the slime-puddle of the location of the player is 0 or (watersports fetish is 1 and the semen-puddle of the location of the player + the slime-puddle of the location of the player is 0)) and ButtonTableFull is 0:
 		choose a blank row in the Table of Buttons;
 		now the ButtonImage entry is Figure of DrinkButton;
 		now the ButtonCommand entry is "clean puddle with mouth";
 		now the ButtonColour entry is lightModeFullGreen;
-		if the player is upright, now the ButtonColour entry is lightModeFullYellow. [turn yellow - player needs to kneel]
+		if the player is upright, now the ButtonColour entry is lightModeFullYellow; [turn yellow - player needs to kneel]
+	repeat with C running through carried fluid vulnerable clothing:
+		if the semen-soak of C + the urine-soak of C + the milk-soak of C < the soak-limit of the noun and ButtonTableFull is 0:
+			choose a blank row in the Table of Buttons;
+			now the ButtonImage entry is examine-image of C;
+			now the ButtonCommand entry is "clean puddle with [text-shortcut of C]";
+			now the ButtonColour entry is lightModeFullGreen;
+			if the player is upright, now the ButtonColour entry is lightModeFullYellow. [turn yellow - player needs to kneel]
 
 Puddles ends here.

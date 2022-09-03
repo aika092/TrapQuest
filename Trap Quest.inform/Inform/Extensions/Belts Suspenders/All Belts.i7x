@@ -438,6 +438,35 @@ To say MediumDesc of (C - bridal garter):
 Definition: bridal garter is condom pinnable: decide yes.
 Definition: bridal garter is nudism-enabling: decide yes.
 
+maid apron is a clothing. [No clashes.] The printed name of maid apron is "[clothing-title-before]maid apron[clothing-title-after]". The text-shortcut of maid apron is "mapn". maid apron is unique.
+
+Definition: maid apron is class-relevant:
+	if the class of the player is bride or the class of the player is maid, decide yes;
+	decide no.
+
+Figure of maid apron is the file "Items/Clothes/Lower/Waist/Belts/apron1.png".
+
+To decide which figure-name is the clothing-image of (C - maid apron):
+	decide on figure of maid apron.
+
+To say ClothingDesc of (C - maid apron):
+	say "This white frilly sheet sits in front of your crotch to catch spills.".
+
+Definition: maid apron is white themed: decide yes.
+Definition: maid apron is potentially vagina covering: decide yes.
+Definition: maid apron is potentially at least partially vagina covering: decide yes.
+
+To say ShortDesc of (C - maid apron):
+	say "apron".
+To say MediumDesc of (C - maid apron):
+	say "small maid apron".
+
+To compute class set up of (C - maid apron):
+	now C is strength-influencing;
+	now C is absorption;
+	now the raw-magic-modifier of C is 2.
+
+
 
 tongue-belt is a belt. tongue-belt is unique. tongue-belt is biological. The printed name of tongue-belt is "[clothing-title-before]tongue belt[clothing-title-after]". The text-shortcut of tongue-belt is "tgbt". Understand "tongue", "belt" as tongue-belt.
 

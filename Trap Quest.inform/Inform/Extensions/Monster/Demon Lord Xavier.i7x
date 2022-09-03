@@ -756,7 +756,7 @@ current-final-battle-object is an object that varies.
 To compute princess attack before (F - a final-battle-object):
 	say "[speech style of ex-princess]'I [if diaper quest is 1][one of]am a pathetic little pisspot[or]deserve to be degraded[or]need thicker padding or I'm gonna leak[or]cum when I wet myself[or]am a naughty little minx in need of a good hard spanking[in random order][otherwise][one of]was born to be bred[or]deserve to drink nothing but cum[or]am a pathetic little fuckpuppet[or]need a good rough fisting[or]want my holes to be wrecked beyond recognition[in random order][end if]!'[roman type][line break]After shouting the incantation, [NameDesc of ex-princess] [one of]blasts [NameDesc of demon lord] with a ray of freezing cold[or]pierces [NameDesc of demon lord] with a beam of holy energy[or]conjures an explosive blast right underneath [NameDesc of demon lord][']s feet[or]summons a tornado around [NameDesc of demon lord], ripping shreds out of [his of demon lord] skin[or]manifests a minuscule singularity, warping spacetime near [NameDesc of demon lord] and rending [his of demon lord] flesh[in random order]! [BigNameDesc of demon lord] roars in pain.";
 	decrease the health of demon lord by the maxhealth of demon lord / 8;
-	if the health of demon lord > 0, say "[speech style of demon lord]'[one of]TASTE MY WRATH[or]FUCK YOU, YOU VILE [if diaper quest is 1]THING[otherwise]WHORE[end if][or]I WILL MAKE YOU REGRET THIS[in random order]!'[roman type][line break]".
+	if the health of demon lord > 0, say "[speech style of demon lord]'[one of]I'LL GET YOU FOR THAT[or]FUCK YOU, YOU VILE [if diaper quest is 1]THING[otherwise]WHORE[end if][or]I WILL MAKE YOU REGRET THIS[in random order]!'[roman type][line break]".
 To commence (F - a final-battle-object):
 	say "ERROR: a final battle object is missing its commencement function!".
 To execute (F - a final-battle-object):
@@ -1092,6 +1092,38 @@ To execute (F - final-battle-scan):
 		now current-final-battle-object is final-battle-magic-clash. [this object has concluded]
 
 
+final-battle-sword is a final-battle-object.
+Definition: final-battle-sword is appropriate:
+	if diaper lover is 0, decide yes;
+	decide no.
+To commence (F - final-battle-sword):
+	say "[speech style of demon lord]'TIME TO GET SERIOUS. WITH MY SWORD OF POWER, NO MORTAL CAN HOPE TO BEST ME. COME FORTH, MY HYPER WEAPON!'[roman type][line break][BigNameDesc of demon lord] raises a hand out in front of him, as if expecting a sword to appear. But instead, a sword hilt begins to emerge from in front of [NameDesc of ex-princess].[line break][speech style of demon lord]'WAIT, NO!'[roman type][line break][big he of demon lord] yells in panic, and out of instinct, seeing [his of ex-princess] opportunity, [NameDesc of ex-princess] grabs at it, and [']unsheaths['] it from the portal from which it is emerging.[paragraph break][BigNameDesc of demon lord][']s expression immediately changes to one of triumphant glee.[line break][speech style of demon lord]'MY MY, PRINCESS, I DIDN'T KNOW YOU WANTED TO HANDLE MY SWORD!'[roman type][line break][BigNameDesc of ex-princess] curses.[line break][speech style of ex-princess]'It was a trap?'[line break][speech style of demon lord]'OF COURSE!'[roman type][line break][big he of demon lord] cackles, as the answer is confirmed anyway by one look at the [']sword[']. which is actually a sword hilt with a portal at the end, out of which has emerged a huge throbbing red [manly-penis]. A matching portal is visible at [NameDesc of demon lord][']s groin, where [his of demon lord] genitals should be.[roman type][line break][BigNameDesc of ex-princess] begins to speak.[line break][speech style of ex-princess]'What foul magic is thi-'[roman type][line break]But before [he of ex-princess] can finish, the red monster-cock has taken on a life of its own, and moving like a tentacle, started to force itsself in between [NameDesc of ex-princess][']s lips.[line break][speech style of demon lord]'YES, YES, IN A MOMENT YOU'LL BE CHOKING ON MY COCK, YOU WORTHLESS WHORE! I'M GOING TO PUMP YOUR STOMACH FULL OF CUM UNTIL YOU BURST!'[roman type][paragraph break]It seems unlikely, but possible, that [NameDesc of ex-princess] will manage to save [himself of ex-princess] from the fate of being pumped painfully full of [NameDesc of demon lord][']s [semen]. [bold type]If you have a free dominant hand, you could try and take the penis-sword from [him of ex-princess], but then you'd probably be left dealing with the giant magic demon [manly-penis] yourself.[roman type][line break]";
+	blandify and reveal demon broadsword;
+	now demon broadsword is in the location of the player;
+	now demon broadsword is dildoed;
+	now demon broadsword is cursed;
+	now the arousal of demon broadsword is 999999.
+To execute (F - final-battle-sword):
+	if demon broadsword is on-stage and demon broadsword is not held:
+		if the uses of F is 2 and the player is getting lucky: [only possible on the second turn (no execute function called on the first turn)]
+			say "With an incredible display of strength, [NameDesc of ex-princess] rips [NameDesc of demon broadsword] from [his of ex-princess] mouth, and slam it into the ground. [GotLuckyFlav][line break][BigNameDesc of demon lord] roars with pain, and a moment later, [his of demon lord] [DickDesc of demon lord] is back where you expect it, at [his of demon lord] crotch. The sword is nowhere to be seen.";
+			destroy demon broadsword;
+			decrease the health of demon lord by the maxhealth of demon lord / 6;
+			now current-final-battle-object is final-battle-magic-clash; [this object has concluded]
+		otherwise:
+			say "[speech style of ex-princess]'GLURK! GLURK! GLURK!'[roman type][line break]There's nothing [NameDesc of ex-princess] can do but continue to choke and gag on [NameDesc of demon lord][']s [DickDesc of demon lord] as it destroys [his of ex-princess] throat.[paragraph break][BigNameDesc of demon lord][']s [manly-penis] [one of]erupts[or]continues to ejaculate[stopping], [one of]pumping[or]forcing[or]spewing[at random] [one of]liters[or]pints[or]gallons[stopping] of [semen] down into the poor princess[']s [one of]bloated[or]rapidly ballooning[stopping] stomach.";
+			say "[speech style of demon lord]'[one of]YES! YES! YES[or]MY ARCH-NEMESIS IS DROWNING IN MY SEED! HAHAHA[or]DRINK IT ALL, WHORE[or]ENJOY THE TASTE OF DEMON SEED[or]YES, TAKE IT ALL DOWN[then at random]!'[roman type][line break][one of][BigNameDesc of demon lord] is enjoying the experience too much to do anything else at the same time.[or][stopping]";
+			if the uses of F is 2, decrease the health of ex-princess by the maxhealth of ex-princess / 6;
+			otherwise decrease the health of ex-princess by the maxhealth of ex-princess / 24;
+	if demon broadsword is off-stage or demon broadsword is held or the uses of F > a random number between 3 and 7: [scene ending]
+		now current-final-battle-object is final-battle-magic-clash; [this object has concluded]
+		if demon broadsword is on-stage and demon broadsword is not held: [player did not take the sword]
+			now current-final-battle-object is final-battle-stunned; [this object has concluded with a stun on the princess]
+			say "Finally, with a resounding roar, [NameDesc of demon lord] thrusts [his of demon lord] hips forward, causing the sword to surge down [NameDesc of ex-princess][']s throat, cutting of [his of ex-princess] air supply. [big he of ex-princess] crumples to the floor, gagging desperately around the extremely thick shaft of demonic cock.[paragraph break]Moments later, [NameDesc of demon lord], apparently now finally finished ejaculating, lets out a satisfied sigh. [BigNameDesc of demon broadsword] disappears, and [his of demon lord] [DickDesc of demon lord] reappears where you'd expect, in front of [his of demon lord] loins.";
+		if the uses of F > 2:
+			say "Now that [his of ex-princess] throat and mouth is finally unblocked, a volcanic eruption of infernal [semen] surges forth out from between [NameDesc of ex-princess][']s lips. By the time [his of ex-princess] stomach has finished purging itself, the entire floor of the room has become a sea of thick spooge.";
+			SemenPuddleUp 50.
+
 
 final-battle-final-chance is a final-battle-object.
 Definition: final-battle-final-chance is appropriate: decide no. [only appears as a special case at the end]
@@ -1148,7 +1180,7 @@ To compute final battle:
 			execute current-final-battle-object;
 		if the health of demon lord <= 0 and the health of demon lord < the health of ex-princess:
 			if the health of ex-princess <= 0, now the health of ex-princess is 1;
-			say "[BigNameDesc of demon lord][']s strength falters, and [he of demon lord] falls down onto one knee.[line break][speech style of ex-princess]'It's curtains for you, Xavier. Lacy, gently wafting curtains...'[line break][speech style of demon lord]'NO! NOT AGAIN! I CAN'T HAVE BEEN DEFEATED AGAIN!'[roman type][line break][BigNameDesc of ex-princess] summons [his of ex-princess] royal scepter back to [his of ex-princess] hand.[line break][speech style of ex-princess]'From when you came, you shall remain, until you are complete again!'[line break][speech style of demon lord]'NOOOOOOO!'[roman type][line break][BigNameDesc of demon lord][']s screams gradually fade away to nothingness as [he of demon lord] disappears from this plane.";
+			say "[BigNameDesc of demon lord][']s strength falters, and [he of demon lord] falls down onto one knee.[line break][speech style of ex-princess]'It's curtains for you, Xavier. Lacy, gently wafting curtains...'[line break][speech style of demon lord]'NO! NOT AGAIN! I CAN'T HAVE BEEN DEFEATED AGAIN!'[roman type][line break][BigNameDesc of ex-princess] summons [his of ex-princess] royal scepter back to [his of ex-princess] hand.[line break][speech style of ex-princess]'I hold my scepter, I hold the key! You are the Devil, but I love the D! I love the D, I love the D, I love the D, I love the D, I love the D, I love the D, I love the D, I love the D...'[roman type][line break][BigNameDesc of ex-princess] begins shooting [NameDesc of demon lord] with magical blast after magical blast.[line break][speech style of ex-princess]'I love the D, I love the D, I love the D, I love the D, I love the D, I love the D, I love the D, I love the D!'[roman type][line break]That last blast severs one of [NameDesc of demon lord][']s horns.[line break][speech style of demon lord]'OW FUCK! MY FUCKING HORN!'[roman type][line break][BigNameDesc of ex-princess] ignores [him of demon lord], and has already begin to cast [his of ex-princess] final banishing spell.[line break][speech style of ex-princess]'From whence you came, you shall remain, until you are complete again!'[line break][speech style of demon lord]'NOOOOOOOOOOOOOOOOOOOOOOOO! FUCK YOU, PRINCESS, AND FUCK YOU, [NameBimbo in upper case]! I'LL GET YOU, NINTENACIOUS DOLLS...'[roman type][line break][BigNameDesc of demon lord][']s screams gradually fade away to nothingness as [he of demon lord] disappears from this plane.";
 			cutshow Figure of princess final battle victory;
 			compute banishment of demon lord;
 			[if there is a barrier in the location of the player, say "The walls of flame surrounding you all suddenly die out.";
@@ -1186,11 +1218,13 @@ To compute final battle loss:
 	now ex-princess is unintelligent;
 	if futanari fetish > 0 and diaper quest is 0, now ex-princess is male;
 	deinterest ex-princess;
+	now the arousal of demon broadsword is 0;
 	now the health of ex-princess is the maxhealth of ex-princess.
 
 To compute final battle victory cleanup:
 	now royal scepter is carried by ex-princess;
 	if ex-princess is in the location of the player, say "[BigNameDesc of ex-princess] turns to you.[line break][speech style of ex-princess]'Thank you for your help, with all my heart. I could not have defeated [him of demon lord] without you. I shall see you back in my Dungeon.'[roman type][line break][BigNameDesc of ex-princess] raises [his of ex-princess] wand.[line break][speech style of ex-princess]'I love it up the bum!'[roman type][line break]And with that incantation, [he of ex-princess] disappears.";
+	now the arousal of demon broadsword is 0;
 	now ex-princess is unconcerned;
 	now ex-princess is in Dungeon11.
 

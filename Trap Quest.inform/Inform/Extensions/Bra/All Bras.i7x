@@ -197,6 +197,41 @@ To decide which object is the unique-upgrade-target of (C - window-bra):
 	decide on nothing.
 
 
+maid-bra is a bra. maid-bra is unique. Figure of maid bra is the file "Items/Clothes/Upper/Bras/maidbra1.png". Understand "maid" as maid-bra.
+
+Definition: maid-bra is class-relevant:
+	if the class of the player is stripper or the class of the player is maid, decide yes;
+	decide no.
+
+The text-shortcut of maid-bra is "mdbr".
+
+The min size of maid-bra is 1. The max size of maid-bra is 18. The support of maid-bra is 1. maid-bra is ridiculously low cut.
+
+Definition: maid-bra is black-and-white themed: decide yes.
+
+To say ShortDesc of (B - maid-bra):
+	say "maid bra".
+
+To say selfexaminetitle of (B - maid-bra):
+	say "suepr skimpy maid bra".
+
+To decide which figure-name is clothing-image of (C - maid-bra):
+	decide on figure of maid bra.
+
+To say ClothingDesc of (C - maid-bra):
+	say "These tiny black and white strips of fabric cover nothing but your nipples. A tiny black bow tie is attached to the upper tiny white piece of string which holds it together. You can sense that it makes your kissing and dancing seductive acts more stimulating, but only when it's completely visible.".
+
+To decide which number is the seduction-dance-influence of (C - maid-bra):
+	if C is currently visible, decide on 1;
+	decide on 0.
+To decide which number is the seduction-kiss-influence of (C - maid-bra):
+	if C is currently visible, decide on 2;
+	decide on 0.
+
+To decide which number is the initial outrage of (C - maid-bra):
+	decide on 7.
+
+
 A maternity bra is a kind of bra. Figure of maternity bra is the file "Items/Clothes/Upper/Bras/maternitybra1.png".
 
 There is 1 maternity bra. The text-shortcut of maternity bra is "mbr".
@@ -786,6 +821,10 @@ To say StealthPortalSexFlav:
 
 black-lace-bra is a bra. black-lace-bra is unique. black-lace-bra is silk. The printed name of black-lace-bra is "[clothing-title-before]black lacy bra[clothing-title-after]". The text-shortcut of black-lace-bra is "blcb". Understand "black", "lacy", "bra" as black-lace-bra. The min size of black-lace-bra is 1. The max size of black-lace-bra is 14. The support of black-lace-bra is 2. black-lace-bra is low cut. black-lace-bra is optional-top-displacable.
 
+Definition: black-lace-bra is class-relevant:
+	if the class of the player is stripper, decide yes;
+	decide no.
+
 black-lace-bra can be monified.
 Definition: black-lace-bra is whore themed:
 	if black-lace-bra is monified, decide yes;
@@ -798,7 +837,14 @@ To decide which figure-name is clothing-image of (C - black-lace-bra):
 	decide on figure of black lace bra.
 
 To say ClothingDesc of (K - black-lace-bra):
-	say "A sexy black bra with narrow cups that spill out a lot of cleavage[if K is monified]. Several paper bills are sewn into the cups in a manner that makes it look like they have been tucked in[end if].".
+	say "A sexy black bra with narrow cups that spill out a lot of cleavage[if K is monified]. Several paper bills are sewn into the cups in a manner that makes it look like they have been tucked in[end if]. You can sense that it makes your kissing and dancing seductive acts more stimulating, but only when it's completely visible.".
+
+To decide which number is the seduction-dance-influence of (C - black-lace-bra):
+	if C is currently visible, decide on 1;
+	decide on 0.
+To decide which number is the seduction-kiss-influence of (C - black-lace-bra):
+	if C is currently visible, decide on 2;
+	decide on 0.
 
 To compute SelfExamineDesc of (K - black-lace-bra):
 	say ClothingDesc of K.
@@ -833,8 +879,8 @@ To transform (C - black-lace-bra):
 		say "Paper bills appear on the bra, sewn on and completely unremovable, but looking as though they've just been tucked into the cups!";
 		now C is monified.
 
-Carry out taking black-lace-bra:
-	if the noun is in Hotel20 and the player is getting unlucky, now the noun is provocation.
+[Carry out taking black-lace-bra:
+	if the noun is in Hotel20 and the player is getting unlucky, now the noun is provocation.]
 
 
 heart-strap-bra is a bra. heart-strap-bra is transformation-rare. heart-strap-bra is leather. The printed name of heart-strap-bra is "[clothing-title-before]heart strap bra[clothing-title-after]". The text-shortcut of heart-strap-bra is "hsb". Understand "heart", "strap", "bra" as heart-strap-bra. The min size of heart-strap-bra is 1. The max size of heart-strap-bra is 18. The support of heart-strap-bra is 1. heart-strap-bra is very low cut. heart-strap-bra is optional-top-displacable.

@@ -101,7 +101,7 @@ Definition: navy-monokini is blue themed: decide yes.
 
 Part 4 - Lolita Monokini
 
-lolita-monokini is a monokini. The text-shortcut of lolita-monokini is "fsm".
+lolita-monokini is a monokini. lolita-monokini is not-top-displacable.  The text-shortcut of lolita-monokini is "fsm".
 
 Understand "frilly", "lolita", "fashion", "lolita-fashion" as lolita-monokini.
 
@@ -133,7 +133,7 @@ Definition: lolita-monokini is sissifying: decide yes.
 
 Part 5 - Turtle Swimsuit
 
-turtle-swimsuit is a monokini. turtle-swimsuit is transformation-rare. The text-shortcut of turtle-swimsuit is "tsm".
+turtle-swimsuit is a monokini. turtle-swimsuit is transformation-rare. turtle-swimsuit is not-top-displacable. The text-shortcut of turtle-swimsuit is "tsm".
 
 Understand "frilly", "turtle", "babygirl" as turtle-swimsuit.
 
@@ -222,7 +222,7 @@ To decide which object is the unique-upgrade-target of (C - queen-of-hearts mono
 
 Part 8 - Bimbo Monokini
 
-bimbo monokini is a monokini. bimbo monokini is very low cut. bimbo monokini is unique. The text-shortcut of bimbo monokini is "bbmk". Understand "onepiece", "swimsuit" as bimbo monokini.
+bimbo monokini is a monokini. bimbo monokini is very low cut. bimbo monokini is unique. bimbo monokini is optional-top-displacable. The text-shortcut of bimbo monokini is "bbmk". Understand "onepiece", "swimsuit" as bimbo monokini.
 
 Figure of bimbo monokini is the file "Items/Clothes/Upper/Swimming/Monokinis/monokini8.png".
 

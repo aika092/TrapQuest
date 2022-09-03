@@ -202,7 +202,15 @@ To compute (C - a clothing) inheriting from (D - a clothing):
 			now C is not penetrating B;
 	[if D is crotch-displaced and C is crotch covering, now C is crotch-displaced;] [not sure about this one]
 	if D is crotch-unzipped and C is crotch-zipped, ZipDown C;
-	if D is crotch-ripped and (C is crotch-intact or C is crotch-zipped or C is crotch-skirted), now C is crotch-ripped;
+	if D is crotch-ripped and (C is crotch-intact or C is crotch-zipped or C is crotch-skirted) and there is an embodied thing penetrating a fuckhole, now C is crotch-ripped;
+	if there is an embodied thing penetrating a fuckhole and (C is crotch-intact or C is crotch-zipped or C is crotch-skirted):
+		if C is displacable, now C is crotch-displaced;
+		otherwise now C is crotch-ripped;
+	if there is an embodied thing penetrating breasts:
+		if C is top-displacable:
+			now C is top-displaced;
+		otherwise if C is not-top-displacable:
+			now C is top-ripped;
 	if D is messed knickers and C is soilable knickers:
 		now the mess of C is the mess of D;
 		if D is diaper and C is diaper, now the perceived-mess of C is the perceived-mess of D;
@@ -376,6 +384,11 @@ To compute failed transform of (C - a clothing):
 				otherwise:
 					now C is waddle-walking;
 					say "Instead, it has gained a new magical effect...  You can sense that it is now [']waddle walking['], and is going to make you walk with an exaggerated waddle at all times, no matter [if there is a worn diaper]how full or thick your diaper is[otherwise]whether you're even wearing a diaper[end if]![line break][variable custom style]Uh-oh...[roman type][line break]";
+		otherwise if the transform-attempts of C is the disintegrate-resistance of C + ((the used condoms of C + the empty condoms of C) * 2) + the transform-resistance of C + 1:
+			say "[bold type]The [C] [bold type]seems to resist being transformed, and the transformation effect rebounds, searching for another target!";
+			let T be a random worn transformation chain transformable clothing;
+			if T is nothing, let T be a random worn transformable clothing;
+			if T is a clothing, potentially transform T;
 		otherwise:
 			say "[bold type]The [C] [bold type]seems to resist being transformed once again, but it struggles to remain corporeal. After a few final shudders, it disappears completely![line break]";
 			if the outrage of C is too humiliating or C is too boring, say "[variable custom style][one of]I didn't like it anyway.[or]Good riddance.[or]I don't mind losing that one.[or]Whatever.[in random order][roman type][line break]";

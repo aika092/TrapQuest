@@ -101,7 +101,7 @@ To anally orgasm shamefully:
 		progress quest of anal-orgasm-quest;
 		if diaper quest is 0 and (the raw anal sex addiction of the player < 4 or there is a live thing penetrating asshole), AnalSexAddictUp 1;
 		if newbie tips is 1, say shameful tip;
-		if the player is upright, try kneeling;
+		if the player is upright, check orgasm kneeling;
 	otherwise:
 		now refractoryperiod is 2.[The player couldn't cum, but we still increase it so the game does not immediately try again.]
 
@@ -152,7 +152,7 @@ To vaginally orgasm shamefully:
 		if diaper quest is 0 and (the raw vaginal sex addiction of the player < 4 or there is a live thing penetrating vagina), VaginalSexAddictUp 1;
 		[strongHumiliate;]
 		if newbie tips is 1, say shameful tip;
-		if the player is upright, try kneeling.
+		if the player is upright, check orgasm kneeling.
 
 To breasts orgasm shamefully:
 	say "[bold type]You feel a wave of pleasure and your [if the player is upright]knees buckle. [otherwise if the player is not possessing a vagina]muscles tense then relax. [otherwise if the openness of vagina < 6]as your [vagina] dribbles a small amount of girlcum. [otherwise]as your [vagina] squirts out girlcum. [end if][one of]You've just had your first orgasm from your breasts! [or]Your orgasm triggered by your sensitive breasts leaves you panting. [stopping][roman type][line break]";
@@ -160,7 +160,7 @@ To breasts orgasm shamefully:
 	if the player is male, punish shameful male orgasm;
 	TitfuckAddictUp 1;
 	if newbie tips is 1, say shameful tip;
-	if the player is upright, try kneeling.
+	if the player is upright, check orgasm kneeling.
 
 [Triggers from femdom/sissydom where the player is on the bottom.]
 To penis orgasm shamefully:
@@ -170,7 +170,7 @@ To penis orgasm shamefully:
 	if there is a live thing penetrating penis, PenisObedienceUp 1;
 	slowSexAddictUp 1 + the number of live things penetrating face;
 	[if newbie tips is 1, say shameful tip;]
-	if the player is upright, try kneeling.
+	if the player is upright, check orgasm kneeling.
 
 To punish shameful male orgasm:
 	if the player is not in a predicament room:
@@ -505,11 +505,11 @@ This is the hentai orgasm resolution rule:
 		decrease the milk volume of breasts by M.
 The hentai orgasm resolution rule is listed last in the orgasm resolution rules.
 
-This is the ass expulsion from orgasm rule:
+[This is the ass expulsion from orgasm rule:
 	if asshole is not actually occupied and the total squirtable fill of belly > 0 and currently-squirting is 0:
 		say "As you cum, you can't help but let go of your anal sphincter!";
 		AssSquirt.
-The ass expulsion from orgasm rule is listed last in the orgasm resolution rules.
+The ass expulsion from orgasm rule is listed last in the orgasm resolution rules.]
 
 This is the drilldo orgasm resolution rule:
 	if there is a dildo trap penetrating a fuckhole:
@@ -517,7 +517,7 @@ This is the drilldo orgasm resolution rule:
 			compute orgasm resolution of R;
 			dislodge R;
 		check immobility;
-		try kneeling.
+		check orgasm kneeling.
 The drilldo orgasm resolution rule is listed last in the orgasm resolution rules.
 
 This is the player is too delicate to not get submissive resolution rule:
@@ -693,5 +693,15 @@ Definition: a fuckhole (called F) is orgasming:
 		trigger shameful orgasm of F;
 		decide yes;
 	decide no.
+
+To check orgasm kneeling:
+	if the player is upright:
+		let T be the tired threshold of the player;
+		let R be a random number between (T + 1) and (T * 2);
+		if debuginfo > 0, say "[input-style]Remain standing while orgasming check: Random remain standing threshold (d[T - 1] + [T]) = [R] | [fatigue of the player].5 fatigue[roman type][line break]
+";
+		if R <= the fatigue of the player, try kneeling;
+		otherwise say "You manage to stay on two feet.".
+
 
 Orgasms ends here.

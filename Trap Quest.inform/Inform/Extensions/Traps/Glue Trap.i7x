@@ -153,12 +153,12 @@ To trigger (Y - a glue trap):
 			say "Your [C] is now stuck to you with glue!";
 			gluify C;
 			force clothing-focus redraw;
+		now Y is revealed;
+		now Y is not untriggered;
 		if tough-shit is 1:
 			now G is in the location of the player;
 			now the times-stuck of G is 0;
-			now Y is not untriggered;
 			now Y is triggered;
-			now Y is revealed;
 			[Sometimes the glue is stronger than normal.]
 			now R is a random number between 12 and 18;
 			if R > the glue-strength of G:

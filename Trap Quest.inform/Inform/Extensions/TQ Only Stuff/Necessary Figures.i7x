@@ -197,6 +197,8 @@ Figure of dark princess 1 is the file "NPCs/MultiFloor/Princess/darkprincess1.jp
 Figure of dark princess 2 is the file "NPCs/MultiFloor/Princess/darkprincess2.jpg".
 Figure of princess final battle plug is the file "NPCs/MultiFloor/Princess/cutscene-princess-final-battle4b.jpg".
 Figure of princess final battle victory is the file "NPCs/MultiFloor/Princess/cutscene-princess-final-battle7b.jpg".
+Figure of princess final battle sword is the file "NPCs/MultiFloor/Princess/cutscene-princess-final-battle9a.jpg".
+Figure of princess final battle sword semen is the file "NPCs/MultiFloor/Princess/cutscene-princess-final-battle9b.jpg".
 
 Figure of dark princess final battle defeat 1 is the file "NPCs/MultiFloor/Princess/cutscene-dark-princess-final-battle2a.png".
 Figure of dark princess final battle defeat 2 is the file "NPCs/MultiFloor/Princess/cutscene-dark-princess-final-battle2b.png".
@@ -562,6 +564,8 @@ Figure of water bomb is the file "Items/Collectibles/bomb2.png".
 Figure of water bomb cutscene 1 is the file "Special/Cutscene/cutscene-water-bomb-explode1.png".
 Figure of water bomb cutscene 2 is the file "Special/Cutscene/cutscene-water-bomb-explode2.png".
 Figure of Wench Cutscene 5 is the file "NPCs/Dungeon/Wench/cutscene-wench-fuck1.png".
+
+Figure of WoodsScenery02 is the file "Env/Forest/statue2.jpg".
 
 Figure of Xmas tentacle cutscene 1 is the file "Special/Cutscene/cutscene-xmas-tentacle1.png".
 

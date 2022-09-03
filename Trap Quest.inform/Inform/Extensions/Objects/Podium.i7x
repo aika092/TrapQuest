@@ -26,7 +26,16 @@ Check entering podium:
 		[if the player is not able to use manual dexterity, say "You don't have the manual dexterity needed to climb up there." instead;]
 		if the player is prone, say "You would need to be standing up." instead;[now we can assume the player can get onto the podium]
 	allocate 6 seconds;
-	if the ceremony of betrothal-quest is false and the class of the player is bride and bride-consort is a summon-available undefeated monster: [the player can become the princess bride before the hotel is set up, but this shouldn't stop her from doing the ceremony]
+	if stripper-fishnet-dress is worn:
+		say "As you stand there, a vision of a crowd of strip club patrons clanking tankards and cheering at you fills your mind. Loud music starts playing, and you gyrate your hips to the beat in front of them. You step out of your [MediumDesc of stripper-fishnet-dress] and throw it into the crowd, which gets you whoops of joy from the [men of shopkeeper] watching you from below.[paragraph break]And then the scene fades, and you are left without a crowd, and without your dress. But you do notice, scattered around you, a few cheap rings.";
+		only destroy stripper-fishnet-dress;
+		repeat with N running from 1 to 3:
+			let J be a random off-stage ring;
+			if J is ring:
+				now J is in the location of the player;
+				now J is sapphire;
+				set shortcut of J;
+	otherwise if the ceremony of betrothal-quest is false and the class of the player is bride and bride-consort is a summon-available undefeated monster: [the player can become the princess bride before the hotel is set up, but this shouldn't stop her from doing the ceremony]
 		if there is a worn bridal dress or sheer-open-front-skirt is worn:
 			say "[BigNameDesc of bride-consort] appears from the doorway, dressed the same as ever but with added pride and jubilation in [his of bride-consort] step. As [he of bride-consort] joins you on-stage, traditional wedding music fills the room. Suddenly, [NameDesc of Icarus] descends from above to stand before you both, ready to officiate the wedding.[line break][speech style of Icarus]'Beloved guests, we are gathered here today to witness this marriage. [NameBimbo] is dedicating [his of the player] life to serving [his of the player] new lord and master. If anyone knows of any reason this marriage cannot proceed, please state so now or forever hold your peace.'[roman type][line break]Unsurprisingly, [if the number of monsters in the location of the player is 0]with absolutely nobody in the audience, [end if]there is no reply.[line break][speech style of Icarus]'Then I pronounce you [man of bride-consort] and wife!'[roman type][line break]";
 			class summon floral bouquet;

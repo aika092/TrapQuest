@@ -52,10 +52,10 @@ To Set Up The Hotel:
 	if diaper quest is 1:
 		destroy laundry robots;
 		now hotel changing station is in Hotel20;
-	if diaper quest is 0:
+	[if diaper quest is 0:
 		if black-lace-bra is off-stage, now black-lace-bra is in Hotel20;
 		if black-lace-thong is off-stage, now black-lace-thong is in Hotel20;
-		if black-lace-stockings is off-stage, now black-lace-stockings is in Hotel20;
+		if black-lace-stockings is off-stage, now black-lace-stockings is in Hotel20;]
 	follow the set up hotel traps rules;
 	if debugmode > 0, say "Finished setting up traps.";
 	repeat with M running through alive monsters in the hotel:
@@ -87,6 +87,9 @@ To Set Up The Hotel:
 			if M is not in a placed modern room, now M is in a random placed unbossed modern room;
 	[change the down exit of School01 to Hotel29;]
 	if armband is off-stage and receptionist is undefeated: [Player can engage with the school side quest the first time they find this room]
+		if receptionist is in Dungeon10:
+			let W be a random warp portal in Dungeon10;
+			if the destination of W is the school, now the destination of W is the dungeon;
 		set up receptionist;
 		now receptionist is in Hotel40;
 		now the destination of hotel portal is the school;

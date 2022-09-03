@@ -783,6 +783,9 @@ To decide which object is the unique-upgrade-target of (C - a stockings):
 
 black-lace-stockings is a stockings. black-lace-stockings is unique. black-lace-stockings is silk. black-lace-stockings is dense. The printed name of black-lace-stockings is "[clothing-title-before]black lace stockings[clothing-title-after]". The text-shortcut of black-lace-stockings is "blsk". Understand "black", "lace", "stockings" as black-lace-stockings.
 black-lace-stockings can be monified.
+Definition: black-lace-stockings is class-relevant:
+	if the class of the player is stripper, decide yes;
+	decide no.
 
 Figure of black lace stockings is the file "Items/Clothes/Lower/Legs/stripperstockings1.png".
 Figure of black lace stockings money is the file "Items/Clothes/Lower/Legs/stripperstockings2.png".
@@ -792,7 +795,7 @@ To decide which figure-name is the clothing-image of (C - black-lace-stockings):
 	decide on figure of black lace stockings.
 
 To say ClothingDesc of (C - black-lace-stockings):
-	say "A pair of sexy black stockings with frills at the thighs[if C is monified]. Several paper bills are sewn into the frilly section in a manner that makes it look like they have been tucked in[end if].".
+	say "A pair of sexy black stockings with frills at the thighs[if C is monified]. Several paper bills are sewn into the frilly section in a manner that makes it look like they have been tucked in[end if]. You can sense that it makes your dance acts more stimulating, but only when it is completely visible.".
 
 To say ShortDesc of (C - black-lace-stockings):
 	say "pair of black lace stockings".
@@ -805,6 +808,9 @@ Definition: black-lace-stockings is black themed: decide yes.
 To decide which number is the initial outrage of (C - black-lace-stockings):
 	if C is monified, decide on 7;
 	decide on 2.
+To decide which number is the seduction-dance-influence of (C - black-lace-stockings):
+	if C is currently visible, decide on 1;
+	decide on 0.
 
 Definition: black-lace-stockings is upgradable:
 	if it is not monified, decide yes;
@@ -829,8 +835,38 @@ To transform (C - black-lace-stockings):
 		say "Paper bills appear on the stockings, sewn on and completely unremovable, but looking as though they've just been tucked into the tops!";
 		now C is monified.
 
-Carry out taking black-lace-stockings:
-	if the noun is in Hotel20 and the player is getting unlucky, now the noun is provocation.
+[Carry out taking black-lace-stockings:
+	if the noun is in Hotel20 and the player is getting unlucky, now the noun is provocation.]
+
+
+
+white-fishnet-stockings is a stockings. white-fishnet-stockings is mesh. white-fishnet-stockings is transformation-rare. white-fishnet-stockings is see-through. The printed name of white-fishnet-stockings is "[clothing-title-before]white fishet stockings[clothing-title-after]". The text-shortcut of white-fishnet-stockings is "wfsk". Understand "white", "fishnet", "stockings" as white-fishnet-stockings.
+Definition: white-fishnet-stockings is class-relevant:
+	if the class of the player is stripper or the class of the player is maid, decide yes;
+	decide no.
+
+Figure of white fishnet stockings is the file "Items/Clothes/Lower/Legs/meshstockings3.png".
+
+To decide which figure-name is the clothing-image of (C - white-fishnet-stockings):
+	decide on figure of white fishnet stockings.
+
+To say ClothingDesc of (C - white-fishnet-stockings):
+	say "A pair of slutty white fishnet stockings. They make you look like a stripper. You can sense that they make your dance acts more stimulating, but only when they are completely visible.".
+
+To say ShortDesc of (C - white-fishnet-stockings):
+	say "pair of fishnet stockings".
+To say MediumtDesc of (C - white-fishnet-stockings):
+	say "pair of white fishnet stockings".
+
+Definition: white-fishnet-stockings is white themed: decide yes.
+
+To decide which number is the initial outrage of (C - white-fishnet-stockings):
+	decide on 4.
+To decide which number is the seduction-dance-influence of (C - white-fishnet-stockings):
+	if C is currently visible, decide on 1;
+	decide on 0.
+
+
 
 queen-of-spades-stockings is a stockings. queen-of-spades-stockings is unique. queen-of-spades-stockings is silk. queen-of-spades-stockings is dense. The printed name of queen-of-spades-stockings is "[clothing-title-before]queen of spades stockings[clothing-title-after]". The text-shortcut of queen-of-spades-stockings is "qssk". Understand "queen", "of spades", "spades", "stockings" as queen-of-spades-stockings.
 

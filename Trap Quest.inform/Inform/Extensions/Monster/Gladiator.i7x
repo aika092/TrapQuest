@@ -1475,7 +1475,12 @@ To say DamageReactSubmissive of (M - a gladiator):
 
 To say BanishForceFlav of (M - a gladiator):
 	let E be a random worn slap ready equippable;
-	say "You [if the player is able to use their hands]roughly grab [NameDesc of M] by the breasts[otherwise]stand over the defeated [MediumDesc of M], staring down menacingly[end if].[line break][if the player is able to speak][variable custom style]'I have proven my strength. Now leave this place, and never return, while you still have the chance.'[roman type][line break][end if][BigNameDesc of M] snarls, but looks more angry at [himself of M] than at you.[line break][speech style of M]'I have humiliated myself, and my people. I can never return to these lands.'[roman type][line break]".
+	say "You [if the player is able to use their hands]roughly grab [NameDesc of M] by the breasts[otherwise]stand over the defeated [MediumDesc of M], staring down menacingly[end if].[line break][if the player is able to speak][variable custom style]'I have proven my strength. Now leave this place, and never return, while you still have the chance.'[roman type][line break][end if][BigNameDesc of M] snarls, but looks more angry at [himself of M] than at you.[line break][speech style of M]'I have humiliated myself, and my people. I can never return to these lands.'[roman type][line break]";
+	if M is in Dungeon06:
+		let DB be a random alive caged dungeon boss;
+		if DB is a thing:
+			now DB is unleashed;
+			say "[BigNameDesc of M] eyes the lever in this room.[line break][speech style of M]'Beware your own hubris, [worm of M]. You may have defeated me, but do you really think you are the strongest power in this place?'[roman type][line break]With that, [he of M] shoves the lever. You hear a mechanism whirring, and what sounds like a metal door swing open.[line break][variable custom style]Uh-oh.[roman type][line break]";
 
 To compute loot dropping of (D - metal-disc) by (M - a gladiator):
 	say "[BigNameDesc of M] plucks a [D] from [his of M] belt and tosses it towards you. It rolls towards you and comes to a halt at your feet.[line break][speech style of M]'There. A trophy for your victory. I wonder what I will take for my trophy the next time we fight...'[roman type][line break]".

@@ -295,6 +295,8 @@ Figure of HipsObject3 is the file "CharWins/FocusWin/Hips/hips3.jpg".
 To decide which figure-name is the examine-image of (T - hips):
 	decide on figure of HipsObject3.
 
+Figure of WoodsScenery02 is the file "Env/Forest/statue7.jpg".
+
 IntroDAnimation is a loading animation track. The pause-frame of IntroDAnimation is 12.
 
 Figure of DiaperIntroBanner is the file "Special/Animations/JammyLoading3/IntroBanner.png".

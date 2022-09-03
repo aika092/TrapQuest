@@ -16,8 +16,7 @@ To say MonsterDesc of (M - an explorer):
 To say UniqueMonsterDesc of (M - an explorer):
 	say "For one thing, [he of M] is next to naked.".
 
-Definition: an explorer is willing to fluff:
-	decide yes.
+Definition: an explorer is willing to fluff: decide yes.
 
 gymnast-explorer is an explorer. The explorer-type of gymnast-explorer is "gymnast". The text-shortcut of gymnast-explorer is "gyma".
 

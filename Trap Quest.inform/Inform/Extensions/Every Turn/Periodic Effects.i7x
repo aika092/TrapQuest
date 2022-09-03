@@ -445,7 +445,7 @@ To compute time decay of (T - a trap):
 	do nothing.
 
 To compute reset cooldown of (T - a trap):
-	compute default reset cooldown of T.
+	unless T is click and there is a minibar in the location of T, compute default reset cooldown of T.
 
 To compute default reset cooldown of (T - a trap):
 	if the reset-timer of T <= time-seconds:

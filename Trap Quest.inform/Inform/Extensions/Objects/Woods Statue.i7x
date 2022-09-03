@@ -1,16 +1,15 @@
 Woods Statue by Objects begins here.
 
-WoodsScenery02 is a thing. WoodsScenery02 is in Woods10. WoodsScenery02 is not portable. Understand "statue", "man", "penis", "statue's", "head", "hand", "foot" as WoodsScenery02. Figure of WoodsScenery02 is the file "Env/Forest/statue2.jpg". Figure of WoodsScenery02b is the file "Env/Forest/statue7.png".
+WoodsScenery02 is a thing. WoodsScenery02 is in Woods10. WoodsScenery02 is not portable. Understand "statue", "man", "penis", "statue's", "head", "hand", "foot" as WoodsScenery02.
 The printed name of WoodsScenery02 is "[TQlink of item described]statue[TQxlink of item described][shortcut-desc][verb-desc of item described]".
 WoodsScenery02 has a number called charge.
 The text-shortcut of WoodsScenery02 is "sta".
 
 To decide which figure-name is the examine-image of (C - WoodsScenery02):
-	if diaper quest is 1, decide on figure of WoodsScenery02b;
 	decide on figure of WoodsScenery02.
 
 To say ExamineDesc of (C - WoodsScenery02):
-	if diaper quest is 1, say "This statue of a squatting girl is actually a fountain. The water trickles from her pussy, making it look like she's peeing.";
+	if diaper quest is 1, say "This statue of a squatting chick is actually a fountain. The water trickles from her pussy, making it look like she's peeing.";
 	otherwise say "A statue of an upright naked man with arms spread wide, having sex with a naked woman, who is supporting herself by holding onto a scarf around his shoulders, and her [vagina] impaled on his [manly-penis]. [if the bimbo of the player > 13][line break][second custom style]That looks fun[roman type][line break]. [end if]";
 	say "You could try to [bold type]touch the statue's hand[roman type], [bold type]touch the statue's foot[roman type], or [bold type]touch the statue's head[roman type].".
 
@@ -66,10 +65,23 @@ Check touching WoodsScenery02:
 		now the charge of the noun is 450;
 		allocate 2 seconds instead;
 	otherwise if the player's command includes "foot":
+		let LM be a list of monsters;
+		repeat with M running through father material regional monsters:
+			now M is inseminating vagina;
+			if M is family, add M to LM;
+			now M is not inseminating vagina;
 		if timeBombTime > 0 or the player is deserving of more dexterity:
 			say "[if the player is upright]You get down on the ground to touch the statue's foot. [bold type]You are now on your knees. [roman type][end if]As your hand touches the statue's foot, magic energy ripples through your fingers. You feel faster!";
 			now the stance of the player is 1;
 			DexUp 1;
+		otherwise if the player is possessing a vagina and pregnancy fetish is 0 and the pregnancy of the player is 0 and the number of entries in LM > 0 and the player is getting unlucky:
+			sort LM in random order;
+			let M be entry 1 in LM;
+			now the father is M;
+			now the pregnancy of the player is 1;
+			if the womb volume of vagina < 10, now the womb volume of vagina is 1;
+			check sudden pregnancy;
+			if the womb volume of vagina < 30, say "You feel the tiniest kick coming from inside your belly... [if the bimbo of the player < 8][line break][first custom style]Did this statue just make me pregnant?![otherwise][line break][second custom style]This statue just knocked me up![end if]";
 		otherwise:
 			let M be a random off-stage woods dwelling mannequin;
 			if M is nothing, now M is a random woods dwelling mannequin; [Very unlikely but better safe than sorry]

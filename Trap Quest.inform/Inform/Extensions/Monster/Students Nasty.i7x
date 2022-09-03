@@ -7,6 +7,10 @@ To decide which number is the aggro limit of (M - a nasty student): [The number 
 
 To say MediumDesc of (M - a nasty student):
 	say "mean [rank-colour of M] student [student-name of M]".
+To say NameDesc of (M - a nasty student):
+	say "[input-style]nasty [student-name of M][roman type]".
+To say BigNameDesc of (M - a nasty student):
+	say "[input-style]Nasty [student-name of M][roman type]".
 
 To decide which number is the unique vindictiveness of (M - a nasty student): [We can use this for various calculations to check which students do what]
 	decide on a random number between 2 and 4.

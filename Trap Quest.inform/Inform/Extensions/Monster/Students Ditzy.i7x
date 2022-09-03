@@ -7,6 +7,10 @@ Definition: a ditzy student is unfriendly rather than friendly:
 
 To say MediumDesc of (M - a ditzy student):
 	say "ditzy [rank-colour of M] student [student-name of M]".
+To say NameDesc of (M - a ditzy student):
+	say "[input-style]ditzy [student-name of M][roman type]".
+To say BigNameDesc of (M - a ditzy student):
+	say "[input-style]Ditzy [student-name of M][roman type]".
 
 To decide which number is the dedication of (M - a ditzy student): [We can use this for various calculations to check which students do what]
 	decide on a random number between 0 and 5.

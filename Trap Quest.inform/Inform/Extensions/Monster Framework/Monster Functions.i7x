@@ -4,7 +4,11 @@ To interest (M - a monster):
 	now M is interested;
 	now the boredom of M is 0;
 	now the latest-appearance of M is the appearance of the player;
-	if diaper quest is 1, now the latest-cringe of M is the cringe appearance of the player.
+	if diaper quest is 1, now the latest-cringe of M is the cringe appearance of the player;
+	uniquely interest M.
+
+To uniquely interest (M - a monster):
+	do nothing.
 
 To deinterest (M - a monster):
 	bore M for 0 seconds.
