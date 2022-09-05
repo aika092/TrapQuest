@@ -150,7 +150,6 @@ This is the lube not appropriate in diaper quest rule:
 The lube not appropriate in diaper quest rule is listed in the diaper quest fix rules.
 
 To uniquely destroy (C - a lubricant):
-	check stealing of C;
 	now C is not covering asshole;
 	now C is not covering vagina;
 	now C is not covering face;

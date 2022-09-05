@@ -1509,6 +1509,7 @@ To set up store:
 			repair D;
 			now D is in Dungeon41;
 			now D is store;
+			if the player is in Dungeon41, say "[BigNameDesc of shopkeeper] adds a [D] to the display.";
 		increase diaper-stored by 1;
 	if pregnancy fetish is 1 and the number of maternity dress in Dungeon41 is 0:
 		let D be a random off-stage maternity dress;
@@ -1517,6 +1518,7 @@ To set up store:
 			clean D;
 			now D is in Dungeon41;
 			now D is store;
+			if the player is in Dungeon41, say "[BigNameDesc of shopkeeper] adds a [D] to the display.";
 	let ST be 8 - shop-things;
 	if ST > 0:
 		let LST1 be the list of shop-eligible things;
@@ -1531,18 +1533,22 @@ To set up store:
 		repeat with C running through LST2:
 			now C is in Dungeon41;
 			now C is store;
+			if the player is in Dungeon41, say "[BigNameDesc of shopkeeper] adds a [C] to the display.";
 			increase shop-things by 1;
 	if the number of store trousers in Dungeon41 is 0: [We want at least one pair of trousers]
 		let T be a random off-stage shop-eligible trousers;
 		unless T is nothing:
 			now T is in Dungeon41;
 			now T is store;
+			if the player is in Dungeon41, say "[BigNameDesc of shopkeeper] adds a [T] to the display.";
 	if designer handbag of holding is off-stage:
 		now designer handbag of holding is in Dungeon41;
 		now designer handbag of holding is store;
+		if the player is in Dungeon41, say "[BigNameDesc of shopkeeper] adds a [designer handbag of holding] to the display.";
 	if catbell is off-stage and doom counter > 0 and doomed < 5:
 		now catbell is in Dungeon41;
 		now catbell is store;
+		if the player is in Dungeon41, say "[BigNameDesc of shopkeeper] adds a [catbell] to the display.";
 	repeat with C running through store things:
 		set up shop state of C.
 
@@ -1574,16 +1580,19 @@ To set up unique shop state of (C - a sex toy):
 		increase the raw-magic-modifier of C by a random number between 0 and 1.
 
 A time based rule (this is the shop cycling rule):[TODO: if the player is in the room, describe the shopkeeper restocking everything]
-	if the remainder after dividing time-earnings by 995 < time-seconds:
+	if the remainder after dividing time-earnings by 995 < time-seconds and Dungeon41 is guarded:
 		compute shopcycling.
 
 To compute shopcycling:
 	if lagdebug is true:
 		say "Recycling shop.";
 		wait 200 ms before continuing;
+	if the player is in Dungeon41, say "[speech style of shopkeeper]'Time for a restock.'[roman type][line break]";
 	repeat with N running from 1 to 4:
 		let C be a random store thing in Dungeon41;
-		if C is a thing, destroy C;
+		if C is a thing:
+			if the player is in Dungeon41, say "[BigNameDesc of shopkeeper] removes [NameDesc of C] from the display stand.";
+			only destroy C;
 	set up store;
 	if lagdebug is true:
 		say "Finished recycling shop.";

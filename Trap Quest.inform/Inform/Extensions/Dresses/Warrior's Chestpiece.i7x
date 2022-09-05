@@ -182,16 +182,17 @@ To say TransformReaction of (C - hide warrior chestpiece):
 
 Part 6 - Golden Warrior Priestess Outfit
 
-golden warrior priestess outfit is an immodest warrior chestpiece. golden warrior priestess outfit is metal. golden warrior priestess outfit is unskirted. golden warrior priestess outfit is crotch-intact. golden warrior priestess outfit is ridiculously low cut. golden warrior priestess outfit is totally-exclusive. The armour of golden warrior priestess outfit is 5.
-
+golden warrior priestess outfit is an immodest warrior chestpiece. golden warrior priestess outfit is metal. golden warrior priestess outfit is unskirted. golden warrior priestess outfit is crotch-intact. golden warrior priestess outfit is ridiculously low cut. golden warrior priestess outfit is totally-exclusive.
 
 Definition: golden warrior priestess outfit is class-relevant:
 	if the class of the player is virgin warrior or the class of the player is priestess, decide yes;
 	decide no.
 
-Definition: golden warrior priestess outfit is yellow themed: [Is it significantly yellow?]
-	decide yes.
+Definition: golden warrior priestess outfit is displacable: decide yes.
+Definition: golden warrior priestess outfit is yellow themed: decide yes.
 Definition: golden warrior priestess outfit is layer-concealing: decide no.
+
+To decide which number is the initial armour of golden warrior priestess outfit: decide on 5.
 
 Figure of golden warrior priestess outfit is the file "Items/Clothes/Upper/Special/Warrior/priestess5.png".
 

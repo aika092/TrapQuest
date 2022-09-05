@@ -89,7 +89,7 @@ To set up predicament status:
 	repeat with C running through held things:
 		if C is clothing and (C is worn or C is not diaper): [held used diapers don't get refreshed]
 			fully clean C;
-		if C is worn:
+		if C is worn wearthing: [other worn things, e.g. salves, can stay]
 			if C is clothing and C is removable and C is not combat visor and C is not armband and C is not listed in LC: [this removable worn stuff goes to the final room, and the player will be offered to automatically rewear it all]
 				if C is diaper-stack:
 					let N be 1;

@@ -97,6 +97,7 @@ To run the engine:
 			now another-turn-stored-action is waiting;
 		truncate another-turn-rules to 0 entries; [This is the only safe moment to truncate the entries - just after we have loaded the rules and before we execute them.]
 		if AT is 1:
+			force allocate 6 seconds;
 			if ATflav is not "", say "[bold type][ATflav][roman type][line break]";
 			if the number of entries in LR > 0:
 				repeat with R running through LR:

@@ -31,7 +31,7 @@ Definition: a pink bloomers is babywear: decide yes. [NPCs can put this on the p
 
 
 bitch bottoms is a trousers. bitch bottoms is leg exposing.
-The printed name of bitch bottoms is "[clothing-title-before]bitch bottoms[clothing-title-after]". The text-shortcut of bitch bottoms is "btms".
+The printed name of bitch bottoms is "[clothing-title-before]bitch bottoms[clothing-title-after]". The text-shortcut of bitch bottoms is "bbtm".
 Figure of bitch bottoms is the file "Items/Clothes/Lower/Pants/bitchbottoms1.png".
 Definition: bitch bottoms is usually at least partially thigh covering: decide yes.
 To decide which figure-name is clothing-image of (H - bitch bottoms):

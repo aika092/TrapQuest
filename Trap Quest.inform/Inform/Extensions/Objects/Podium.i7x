@@ -156,8 +156,9 @@ Check entering podium:
 				say "You've barely blinked when you find yourself wearing a [slave-dress]! Your wrists are now stuck in cuffs connected to your collar via metal chains. Uh-oh.";
 		otherwise if P is actually summonable and diaper quest is 0:
 			if debuginfo > 0 and (B is not bracelet or there is an on-stage solid gold bracelet), say "[input-style]Stage roll: bracelet scene not possible ([if B is bracelet]solid gold bracelet is already in game universe[otherwise]no bracelets left off-stage[end if]); slave stuff selected automatically.[roman type][line break]";
+			summon P cursed;
 			say "You open your eyes and are shocked to find you now have a [MediumDesc of P]. It's like you've been marked as somebody's property!";
-			summon P cursed with quest;
+			compute summoned quest of P;
 		otherwise:
 			if debuginfo > 0 and (B is not bracelet or there is an on-stage solid gold bracelet), say "[input-style]Stage roll: bracelet scene not possible ([if B is bracelet]solid gold bracelet is already in game universe[otherwise]no bracelets left off-stage[end if]); slave stuff selected automatically.[roman type][line break]";
 			say "[paragraph break]THWACK, THWACK! You imagine being struck on the back by a harsh whip. Ow, that really hurts! What the hell? It's like you can feel the pain for real! You open your eyes, tears welling up in them, leaving you feeling a lot more submissive.";

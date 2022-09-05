@@ -110,6 +110,8 @@ To compute periodic effect of (O - a nightgown):
 	if the player is prone and the fatigue of the player > 4:
 		FatigueDown 4.
 
+Definition: nightgown is slitted: decide yes.
+
 Part 3 - Pink Nightie
 
 A pink nightie is a kind of nightie. A pink nightie is usually dense. A pink nightie is usually super-short. A pink nightie is usually belly exposing. There is 1 pink nightie. The text-shortcut of pink nightie is "pni".

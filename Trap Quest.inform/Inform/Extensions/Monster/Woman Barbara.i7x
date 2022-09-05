@@ -427,7 +427,7 @@ Report going when the vine-hole-scene of woman-player is 0 and the woman-bimbo o
 			now the vine-scene of woman-player is 5;
 			now the sleep of woman-player is 9999;
 			increase the delayed sluttification of woman-player by 1;
-			if pregnancy fetish is 1 and inhuman pregnancy > 1 and lady fetish < 2:
+			if pregnancy fetish is 1 and inhuman pregnancy > 1 and lady fetish < 2 and the woman-pregnancy of woman-player is 0:
 				now the woman-pregnancy of woman-player is 3; [tentacle pregnant]
 				increase the delayed sluttification of woman-player by 1;
 			otherwise:
@@ -1270,6 +1270,8 @@ To compute pregnancy swap of (M - woman-player):
 		otherwise now the father is a random ultimate-lesson-actor;
 		now the woman-pregnancy of woman-player is 0;
 		check for extreme pregnancies;
+		check goddess eligibility;
+		trigger conception-wisp-trigger;
 		say "[BigNameDesc of woman-player] quickly takes [his of woman-player] leave.[line break][speech style of woman-player]'I hope, some day, you'll be able to forgive me!'[roman type][line break]";
 		compute mandatory room leaving of woman-player;
 		vanish woman-player.

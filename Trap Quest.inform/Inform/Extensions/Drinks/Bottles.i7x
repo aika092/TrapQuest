@@ -34,6 +34,7 @@ To DoseUp (B - a bottle):
 	DoseUp B by 1.
 
 To DoseUp (B - a bottle) by (N - a number):
+	if the doses of B < 0, now the doses of B is 0;
 	if the doses of B < the max-doses of B:
 		increase the doses of B by N;
 		if the doses of B > the max-doses of B, now the doses of B is the max-doses of B;

@@ -414,7 +414,7 @@ Definition: a tartan microskirt is class-relevant:
 Definition: a tartan microskirt is tartan themed: decide yes.
 brown tartan microskirt is a tartan microskirt. The printed name of brown tartan microskirt is "[clothing-title-before]brown tartan microskirt[clothing-title-after]". The text-shortcut of brown tartan microskirt is "btms". Figure of brown tartan microskirt is the file "Items/Clothes/Lower/Skirts/Micro/microskirt2.png".
 Definition: brown tartan microskirt is brown themed: decide yes.
-orange tartan microskirt is a tartan microskirt. The printed name of orange tartan microskirt is "[clothing-title-before]orange tartan microskirt[clothing-title-after]". The text-shortcut of orange tartan microskirt is "btms". Figure of orange tartan microskirt is the file "Items/Clothes/Lower/Skirts/Micro/microskirt7.png".
+orange tartan microskirt is a tartan microskirt. The printed name of orange tartan microskirt is "[clothing-title-before]orange tartan microskirt[clothing-title-after]". The text-shortcut of orange tartan microskirt is "otms". Figure of orange tartan microskirt is the file "Items/Clothes/Lower/Skirts/Micro/microskirt7.png".
 Definition: orange tartan microskirt is orange themed: decide yes.
 A pink microskirt is a kind of microskirt. There is 1 pink microskirt. Printed name of pink microskirt is "[clothing-title-before]pink microskirt[clothing-title-after]". The text-shortcut of pink microskirt is "pms". Figure of pink microskirt is the file "Items/Clothes/Lower/Skirts/Micro/microskirt3.png".
 Definition: a pink microskirt is tartan themed: decide yes.

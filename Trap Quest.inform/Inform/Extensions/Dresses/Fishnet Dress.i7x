@@ -39,9 +39,9 @@ To decide which number is the leniency-addition of (C - crotchless-fishnet-dress
 To decide which object is the unique-upgrade-target of (C - crotchless-fishnet-dress):
 	decide on a random off-stage fishnet top.
 
-stripper-fishnet-dress is a fishnet dress. stripper-fishnet-dress is unique. Understand "stripper" as stripper-fishnet-dress.
+stripper-fishnet-dress is a fishnet dress. stripper-fishnet-dress is unique. stripper-fishnet-dress is unskirted. Understand "stripper" as stripper-fishnet-dress.
 
-The printed name of stripper-fishnet-dress is "[clothing-title-before]stripper fishnet dress[clothing-title-after]". The text-shortcut of stripper-fishnet-dress is "sfnd". stripper-fishnet-dress is super-short.
+The printed name of stripper-fishnet-dress is "[clothing-title-before]stripper fishnet dress[clothing-title-after]". The text-shortcut of stripper-fishnet-dress is "sfnd".
 
 Definition: stripper-fishnet-dress is class-relevant:
 	if the class of the player is stripper, decide yes;

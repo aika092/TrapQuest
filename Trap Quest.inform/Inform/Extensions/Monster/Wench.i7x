@@ -553,6 +553,8 @@ This is the wench asscum cup punishment rule:
 		if champagne-glass is non-empty:
 			say "[big he of M] tips its contents out onto the ground!";
 			dump champagne-glass;
+		now the fill-colour of champagne-glass is creamy;
+		DoseUp champagne-glass;
 		say "[BigNameDesc of M] squats over the glass and allows a thick glob of [semen] to ooze out of [his of M] asshole and fill [NameDesc of champagne-glass], before handing it back to you.";
 		cutshow figure of wench cutscene 9 for M;
 		let W be a random nonstalking wisp;
@@ -1736,6 +1738,9 @@ To decide which figure-name is the monster-image of (M - QoS wench):
 	otherwise:
 		if playerRegion is hotel, decide on Figure of QoS wench condoms;
 		otherwise decide on Figure of QoS wench.
+
+To decide which figure-name is the oral-sex-monster-image of (M - QoS wench):
+	decide on figure of Missing NPC.
 
 To alwayscutshow (F - a figure-name) for (M - QoS wench):
 	do nothing. [no special cutscene images]

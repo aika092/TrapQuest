@@ -951,7 +951,7 @@ stripperExplained is initially false.
 a later time based rule (this is the explaining stripper rule):
 	if stripperExplained is false and the class of the player is stripper:
 		now stripperExplained is true;
-		say "[bold type]Now that you have become the 'stripper' class, you can sense that the higher your heels, the more that [men of shopkeeper] will get [']blue balls['] less easily.[roman type][line break]";
+		say "[bold type]Now that you have become the 'stripper' class, you can sense that the higher your heels, [men of shopkeeper] will get [']blue balls['] less rapidly.[roman type][line break]";
 	otherwise if stripperExplained is true and the class of the player is not stripper:
 		now stripperExplained is false;
 		say "[bold type]Now that you are no longer the 'stripper' class, you can sense that people will get [']blue balls['] at the normal rate.[roman type][line break]".

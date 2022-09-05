@@ -22,16 +22,18 @@ An all later time based rule (this is the harsh inventory rule):
 			let N be 0;
 			if there is a worn bag of holding:
 				repeat with T running through currently-not-in-bag things:
-					if N > 0:
-						say "Apart from your bag, you can only carry one item at a time while you have no [unless the class of the player is living sex doll]use of your [end if]hands, so you are forced to drop [NameDesc of T].";
-						now T is in the location of the player;
-					increase N by 1;
+					unless T is vessel and there is a worn serving-bondage:
+						if N > 0:
+							say "Apart from your bag, you can only carry one item at a time while you have no [unless the class of the player is living sex doll]use of your [end if]hands, so you are forced to drop [NameDesc of T].";
+							now T is in the location of the player;
+						increase N by 1;
 			otherwise:
 				repeat with T running through carried things:
-					if N > 0:
-						say "You can only carry one item at a time with no hands, so you are forced to drop [NameDesc of T].";
-						now T is in the location of the player;
-					increase N by 1.
+					unless T is vessel and there is a worn serving-bondage:
+						if N > 0:
+							say "You can only carry one item at a time with no hands, so you are forced to drop [NameDesc of T].";
+							now T is in the location of the player;
+						increase N by 1.
 
 Before doing something to an in-bag thing when there is a worn bag of holding and the current action is not examining the noun and the current action is not offering the noun to a thing and the current action is not giving the noun to a thing and the current action is not BagFeeding the noun to a thing and the player is not able to manually use their hands:
 	do nothing instead.

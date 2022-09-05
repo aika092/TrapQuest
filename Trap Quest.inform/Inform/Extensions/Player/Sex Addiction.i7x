@@ -774,7 +774,7 @@ To SlowMilkTasteAddictUp (X - a number):
 To MilkTasteAddictUp (X - a number):
 	if the raw milk taste addiction of the player < 20 and X > 0:
 		if the milk taste addiction of the player < 4:
-			say "You are reminded of how much you love the taste of milk.";
+			say "[if the first-swallow of milk is earnings]Despite this, you[otherwise]You[end if] are reminded of how much you love the taste of milk.";
 		otherwise:
 			say "You feel [if X > 1]much [end if]more [if the milk taste addiction of the player < 7]interested in drinking[otherwise if the milk taste addiction of the player < 13]keen to drink[otherwise]addicted to drinking[end if] breast milk.";
 		SilentlyMilkTasteAddictUp X.

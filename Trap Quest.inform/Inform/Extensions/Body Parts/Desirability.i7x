@@ -500,7 +500,7 @@ Check seducing:
 	if the noun is not actually seducable, say "It looks like [he of the noun] isn't in the right state to consider such an invitation." instead;
 	if royal scepter is worn and royal scepter is blacked and the noun is an interested friendly royal guard, compute princess guard tease of the noun instead.
 Carry out seducing:
-	allocate 6 seconds;
+	allocate 5 seconds;
 	now the noun is seduced;
 	set up sex length of the noun in asshole;
 	let BB be the aggro limit of the noun - the favour of the noun;
@@ -545,9 +545,9 @@ To compute default seduction choice of (M - a monster):
 	say "What do you want to do to [NameDesc of M]?";
 	now current-monster is M;
 	reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
-	if seconds is 6 and the number of seduced reactive monsters is 1: [Seconds should be 6 in the first turn, then 0 after that]
+	if seconds is 5 and the number of seduced reactive monsters is 1: [Seconds should be 5 in the first turn, then 6 after that]
 		set numerical response 0 to "cancel";
-	otherwise if there is a dangerous monster in the location of the player:
+	otherwise if there is a combative monster:
 		set numerical response 0 to "try to escape";
 	otherwise:
 		set numerical response 0 to "stop seducing [him of M]";
@@ -592,7 +592,7 @@ To compute default seduction choice of (M - a monster):
 	compute multiple choice question;
 	let MCQ be the chosen numerical response;
 	if player-numerical-response is 0:
-		if seconds is 6 and the number of seduced reactive monsters is 1:
+		if seconds is 5 and the number of seduced reactive monsters is 1:
 			allocate 0 seconds; [This should just cancel the action]
 			now M is unseduced;
 		otherwise if there is a combative monster:
@@ -1010,7 +1010,8 @@ To compute FirstTurnSeduceSubmitAnnounce of (M - a monster):
 		otherwise say "[variable custom style][if the player is a nympho]'Get ready, [stud of M], I'm going to take you to heaven...'[otherwise if M is unfriendly]'Okay fine, just give me a moment...'[otherwise if the player is a pervert]'Want to have a piece of this? One time offer, [stud of M].'[otherwise]'Don't get me wrong, I'm not usually this type of [boy of the player], but...'[end if][roman type][line break]".
 
 To compute friendly seduction end of (M - a monster):
-	compute default friendly seduction end of M.
+	compute default friendly seduction end of M;
+	progress quest of dance-quest.
 
 To compute default friendly seduction end of (M - a monster):
 	now M is seduction-refused;

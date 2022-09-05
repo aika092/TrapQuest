@@ -36,7 +36,7 @@ Definition: a growing silicone dress is disintegration-protected: decide yes.
 Definition: a growing silicone dress is loop-safe-upgradable:
 	if it is upgradable, decide yes;
 	decide no.
-Definition: a silicone dress is transformation-theme-blockable: decide no. [It doesn't care about the theme it shares with other items.]
+Definition: a growing silicone dress is transformation-theme-blockable: decide no. [It doesn't care about the theme it shares with other items.]
 To decide which number is the transformability of (C - a growing silicone dress):
 	decide on 12.
 To decide which object is the unique-upgrade-target of (C - a growing silicone dress):

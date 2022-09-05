@@ -36,4 +36,25 @@ To decide which number is the stimulation of (D - ben wa balls) on (B - a body p
 To uniquely set up (C - ben wa balls):
 	if a random number between 1 and 3 is 1, now C is endurance.
 
+
+Definition: ben wa balls is upgradable:
+	if the size of it < 10, decide yes;
+	decide no.
+Definition: ben wa balls is transformation-protected:
+	if it is not upgradable, decide yes;
+	decide no.
+Definition: ben wa balls is disintegration-protected: decide yes.
+Definition: ben wa balls is loop-safe-upgradable:
+	if it is upgradable, decide yes;
+	decide no.
+Definition: ben wa balls is transformation-theme-blockable: decide no. [It doesn't care about the theme it shares with other items.]
+To decide which number is the transformability of (C - ben wa balls):
+	decide on 13.
+To decide which object is the unique-upgrade-target of (C - ben wa balls):
+	decide on C.
+
+To transform (C - ben wa balls):
+	say "Your [C] grows wider inside you!";
+	increase the size of C by 1.
+
 Ben Wa Balls ends here.

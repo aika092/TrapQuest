@@ -196,7 +196,7 @@ To compute sword destiny of (S - sword-of-purity):
 			unclash class summon sheer-chest-garb;
 		compute class outfit of flower hairclip;
 	follow the player class rules; [update class]
-	if the class of the player is virgin warrior and the class of the player is not princess and the class of the player is not faerie:
+	if the class of the player is virgin warrior and the class of the player is not princess and the class of the player is not faerie and the class of the player is not priestess:
 		let K be a random worn knickers;
 		if K is not unremovable knickers:
 			if K is a thing, WardrobeVanish K;

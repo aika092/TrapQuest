@@ -10,7 +10,7 @@ To decide which figure-name is the examine-image of (K - a knife):
 To say ExamineDesc of (C - a knife):
 	say "A large sharp kitchen knife chained to the worktop. You can't take it away with you but you might be able to use it to destroy some items of clothing you don't like wearing.".
 
-Definition: A knife is immune to change: decide yes.
+Definition: a knife is immune to change: decide yes.
 
 Check going when there is a knife in the location of the player:
 	force clothing-focus redraw. [This forces the clothing window to redraw]
@@ -93,7 +93,9 @@ Carry out knifing:
 				now V is wrangling arms;
 				now the stance of the player is 1;
 	otherwise:
-		if the second noun is equippable and the second noun is not blessed:
+		if the second noun is equippable and the second noun is not midnight tanto and the noun is cursed:
+			say "Your [ShortDesc of the second noun] refuses to cut through the [clothing-material of the noun]. Maybe you need to cut it with something more specialised to cut through a curse...";
+		otherwise if the second noun is equippable and the second noun is not blessed:
 			say "Your [ShortDesc of the second noun] refuses to cut through the [clothing-material of the noun]. Maybe [if the second noun is midnight tanto]if it was blessed[otherwise]you need to cut it with something more specialised[end if]...";
 		otherwise if (the noun is bondage and the noun is not ballgag and the noun is not blessed) or (the noun is unremovable and the noun is not blessed piercing):
 			say "The [clothing-material of the noun] material is too tough, the blade can't cut through it![if the noun is not unremovable or the noun is piercing][line break][variable custom style]Perhaps if it was blessed?[roman type][line break][end if]";

@@ -26,7 +26,6 @@ To uniquely destroy (T - an anal beads):
 To compute (C - an anal beads) unique inheriting from (D - a clothing):
 	now the notch-taken of C is the notches of C.
 
-Definition: an anal beads is transformation-protected: decide yes.
 Definition: an anal beads is black themed: decide yes.
 
 To decide which object is the at least partial concealer of (S - an anal beads):
@@ -224,6 +223,27 @@ To finish possession of (T - an anal beads) in (O - an orifice):
 	now T is worn by the player.
 
 [Haunted beads: locked at ass openness + 1. Beads only come out if pulled by npc or if repeatedly blessed.]
+
+Definition: anal beads is upgradable:
+	if the size of it < 10, decide yes;
+	decide no.
+Definition: anal beads is transformation-protected:
+	if it is not upgradable, decide yes;
+	decide no.
+Definition: anal beads is disintegration-protected: decide yes.
+Definition: anal beads is loop-safe-upgradable:
+	if it is upgradable, decide yes;
+	decide no.
+Definition: anal beads is transformation-theme-blockable: decide no. [It doesn't care about the theme it shares with other items.]
+To decide which number is the transformability of (C - anal beads):
+	decide on 13.
+To decide which object is the unique-upgrade-target of (C - anal beads):
+	decide on C.
+
+To transform (C - anal beads):
+	say "Your [C] grows wider inside you!";
+	increase the size of C by 1.
+
 
 ritual-beads is an anal beads. ritual-beads is unique. ritual-beads is purity. The printed name of ritual-beads is usually "[clothing-title-before][PlugSize size of item described] ritual beads[clothing-title-after]". The text-shortcut of ritual-beads is "rtb". The notches of ritual-beads is 3. Understand "ritual", "ritual beads" as ritual-beads.
 

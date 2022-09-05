@@ -105,6 +105,7 @@ To Execute Fainting:
 					say "Checkpoint 6.";
 				if debugmode is 1, say "[line break][bold type]RECOVERING ROOMS[roman type][line break]";
 				Recover Rooms;
+				progress quest of new-region-quest;
 				if crashdebug is 1:
 					say "Checkpoint 7.";
 			if debugmode is 1, say "[line break][bold type]RECOVERING PLAYER[roman type][line break]";

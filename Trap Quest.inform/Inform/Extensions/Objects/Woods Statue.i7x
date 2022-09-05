@@ -74,14 +74,16 @@ Check touching WoodsScenery02:
 			say "[if the player is upright]You get down on the ground to touch the statue's foot. [bold type]You are now on your knees. [roman type][end if]As your hand touches the statue's foot, magic energy ripples through your fingers. You feel faster!";
 			now the stance of the player is 1;
 			DexUp 1;
-		otherwise if the player is possessing a vagina and pregnancy fetish is 0 and the pregnancy of the player is 0 and the number of entries in LM > 0 and the player is getting unlucky:
+		otherwise if the player is possessing a vagina and pregnancy fetish is 1 and the pregnancy of the player is 0 and the number of entries in LM > 0 and the player is getting unlucky:
 			sort LM in random order;
 			let M be entry 1 in LM;
 			now the father is M;
 			now the pregnancy of the player is 1;
 			if the womb volume of vagina < 10, now the womb volume of vagina is 1;
 			check sudden pregnancy;
-			if the womb volume of vagina < 30, say "You feel the tiniest kick coming from inside your belly... [if the bimbo of the player < 8][line break][first custom style]Did this statue just make me pregnant?![otherwise][line break][second custom style]This statue just knocked me up![end if]";
+			if the womb volume of vagina < 30, say "You feel the tiniest kick coming from inside your belly... [if the bimbo of the player < 8][line break][first custom style]Did this statue just make me pregnant?![otherwise][line break][second custom style]This statue just knocked me up![end if][roman type][line break]";
+			check goddess eligibility;
+			trigger conception-wisp-trigger;
 		otherwise:
 			let M be a random off-stage woods dwelling mannequin;
 			if M is nothing, now M is a random woods dwelling mannequin; [Very unlikely but better safe than sorry]

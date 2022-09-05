@@ -531,6 +531,7 @@ To compute poker minigame:
 			let orcStrength be the poker hand strength of orcHand;
 			if orcStrength >= 900000:
 				say "[BigNameDesc of orc] visibly considers dropping [his of orc] entire hand into the discard pile, but can't bring [himself of orc] to do it.[line break][speech style of orc]'My apologies, I wanted to help you, I did, but I simply can't bring myself to discard such a wonderful hand!'[roman type][line break][big he of orc] holds onto the entire hand.";
+				now orc is not playing-poker-badly;
 			otherwise:
 				say "[speech style of orc]'Oops!'[roman type][line break][BigNameDesc of orc] drops [his of orc] entire hand into the discard pile.[line break][speech style of orc]'My hand slipped!'[roman type][line break][big he of orc] winks at you.";
 				truncate orcHand to 0 entries;
@@ -706,7 +707,7 @@ To compute poker minigame:
 		wait for a key before continuing;
 		say "[line break][speech style of orc]'[one of]My condolences[or]Commiserations[in random order], [if the player is presenting as female]my lady[otherwise]young sir[end if]. [if orc is playing-poker-badly]I hope you understand, this was a complete accident. I discarded my entire hand, as you saw! [end if]Unfortunately, there is no stopping what happens next.'[roman type][paragraph break]";
 		let numbersExplained be a list of numbers;
-		repeat with PC running through playerHand:
+		repeat with PC running through orcHand:
 			say "[line break][one of][BigNameDesc of orc] points at [poker card of PC], which is softly glowing. Its punishment effect is about to happen. [BigNameDesc of orc] explains what this particular card will do.[or][stopping]";
 			let PV be PC / 4;
 			let PS be the remainder after dividing PC by 4;
@@ -1116,8 +1117,6 @@ To compute poker minigame:
 	if orc is in the location of the player, say "[line break][speech style of orc]'Well, that's that, for now. [one of]The poker table will need time to replenish its energy, so come back later for another round[or]I eagerly await our next match[stopping].'[roman type][line break]";
 	now orc is not playing-poker-badly;
 	now temporaryYesNoBackground is Figure of small image.
-
-
 
 
 To player hand print (PH - a list of numbers):

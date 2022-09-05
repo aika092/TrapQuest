@@ -54,6 +54,10 @@ Chapter - Quest
 
 virginity-retention-quest is a headgear-clothing-quest. virginity-retention-quest has a number called virginity-count.
 
+Definition: flower hairclip is removal-blocking:
+	if wearing-target is golden warrior priestess outfit, decide yes;
+	decide no.
+
 To uniquely set up (C - flower hairclip):
 	now the quest of C is virginity-retention-quest.
 

@@ -783,6 +783,7 @@ To compute periodic effect of (C - portal-bra):
 		now the charge of C is 100;
 		say "[bold type]Suddenly, you feel your breasts being grabbed by two rough hands, and squeezed around a hard [manly-penis]![line break][variable custom style][one of]Oh god, I'm being titfucked right now?![or]That pimp is selling my breasts for sex again![then at random][roman type][line break]";
 		now C is penetrating breasts;
+		progress quest of titfuck-desirability-quest;
 	compute school periodic effect of C.
 
 To SilentSquirt (L - a liquid-object) On (C - portal-bra) by (N - a number):
@@ -807,6 +808,7 @@ To compute school periodic effect of (C - portal-bra):
 			say CleavageClimaxFlav of M;
 			BreastsSensitivityUp 1;
 			orgasm dislodge M;
+			progress quest of titfuck-quest;
 			if the semen coating of breasts is 0, say "You feel someone wiping your breasts clean.";
 			now the charge of C is 0;
 			if pimp is not normally ally, FavourUp pimp;

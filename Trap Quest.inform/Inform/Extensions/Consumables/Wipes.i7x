@@ -128,6 +128,7 @@ Check an actor putting something on (this is the replacement can't put onto what
 	if the noun is magic-zipper and the second noun is clothing:
 		if the second noun is not clothing, say "How would that work? This only works on clothing." instead;
 		if the second noun is not crotch-intact, say "This can only be used on something with a crotch." instead;
+		if the second noun is ass plugging or the second noun is vagina plugging, say "This can't be used on something with in-built plugs." instead;
 		allocate 5 seconds;
 		say "The zipper gets stuck to the crotch, and becomes part of the fabric! [BigNameDesc of the second noun] now has a zip!";
 		now the second noun is crotch-zipped;

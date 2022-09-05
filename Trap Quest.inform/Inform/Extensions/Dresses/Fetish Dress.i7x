@@ -270,7 +270,7 @@ To decide which figure-name is clothing-image of (C - assless-fetish-dress):
 	decide on figure of latex dress 9.
 
 To say ClothingDesc of (O - assless-fetish-dress):
-	say "This red tight latex dress has a butt window in the skirt.".
+	say "This tight red latex dress has a butt window in the skirt.".
 
 To decide which number is the initial outrage of (C - assless-fetish-dress):
 	decide on 10.
