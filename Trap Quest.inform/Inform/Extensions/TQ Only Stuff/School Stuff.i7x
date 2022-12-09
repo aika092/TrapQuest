@@ -33,7 +33,7 @@ To compute teaching of (L - kissing-lesson):
 		compute group kissing lesson of M;
 	otherwise:
 		compute french kissing lesson of M;
-		if the player is a december 2021 top donator, now the lesson-variant of L is 1;
+		if the player is the donator, now the lesson-variant of L is 1;
 	now bigGameLoop is 0;
 	conclude consenting;
 	set up rank one students. [lots of students can get promoted in this lesson and it would be good to introduce some new sapphire ones afterwards to make sure we aren't running out]
@@ -1122,6 +1122,7 @@ To compute teaching of (L - swimming-lesson):
 	let semenAddictionCounter be 0; [Used to make semen addiction go up periodically]
 	let poolCrazyEvent be 0; [When the first player gets out of the pool, this flags that a crazy event takes place.]
 	let CPS be a random worn condom pinnable swimsuit; [Used as the target for the swimming condoms event]
+	if CPS is nothing, now CPS is a random worn condom pinnable clothing;
 	let raceOver be 0;
 	while raceOver is 0:
 		let LDivers be a list of people; [Who is trying to use the diving board this turn?]
@@ -1137,6 +1138,7 @@ To compute teaching of (L - swimming-lesson):
 				now playerDistance is 1;
 				add the player to LInPool;
 				compute cum pool coating;
+				trigger swim-wisp-quest;
 			otherwise if player-numerical-response is 2:
 				add the player to LDivers;
 			otherwise:
@@ -1268,6 +1270,7 @@ To compute teaching of (L - swimming-lesson):
 						add yourself to LCumBlinded;
 						compute cum pool coating;
 						compute cum pool face coating;
+				trigger swim-wisp-quest;
 			otherwise:
 				let NStudentDivers be the number of entries in LActualDivers;
 				repeat with PX running through LActualDivers:
@@ -2238,14 +2241,18 @@ To compute teaching of (L - ultimate-lesson):
 	now the stance of the player is 1;
 	repeat with U running through ultimate-fetish-objects:
 		now the happened of U is 0;
-	let N be 0;
 	now the source-room of DiamondLessonBlindfolded is School32;
 	repeat with U running through ultimate-lesson-actors:
+		set up U;
 		now U is in DiamondLessonBlindfolded;
-		increase N by 1;
-		now the text-shortcut of U is the substituted form of "man[N]";
 	now the player is in DiamondLessonBlindfolded;
 	refresh windows.
+
+A game universe initialisation rule:
+	let N be 0;
+	repeat with U running through ultimate-lesson-actors:
+		increase N by 1;
+		now the text-shortcut of U is the substituted form of "man[N]".
 
 This is the other ultimate students get focused rule:
 	if the player is in DiamondLessonBlindfolded:
@@ -2433,7 +2440,7 @@ To say CondomPinFlav of (M - an ultimate-lesson-actor) on (C - a clothing):
 	if M is awake, say "[BigNameDesc of M] ties the used condom to your [ShortDesc of C].";
 	otherwise say "Completely of its own accord, the used condom suddenly zips from [NameDesc of M] and flies through the air until it hits your [ShortDesc of C].".
 To compute labour to (M - an ultimate-lesson-actor):
-	if M is alive, say DefaultBirthScene. [Dead fathers are automatically handled in fatherhood of M, so if we allowed this while the monster was off-stage the pregnancy flavour would be output twice.]
+	say DefaultBirthScene.
 
 To compute tongue demand of (M - an ultimate-lesson-actor):
 	say "[BigNameDesc of M] in front of you gives you an order.[line break][speech style of M]'Hold out your tongue.'[roman type][line break]Do you obey?";

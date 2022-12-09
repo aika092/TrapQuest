@@ -8,7 +8,7 @@ Include Unnecessary Figures by TQ Only Stuff.
 Include Necessary Figures by TQ Only Stuff.
 
 temporaryYesNoBackground is a figure-name that varies.
-A game universe initialisation rule:
+A game universe initialisation rule (this is the temporaryYesNoBackground initialisation rule):
 	now temporaryYesNoBackground is figure of small image.
 
 To decide which figure-name is YesNoBackground:

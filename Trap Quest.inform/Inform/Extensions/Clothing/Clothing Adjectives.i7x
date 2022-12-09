@@ -1,14 +1,5 @@
 Clothing Adjectives by Clothing begins here.
 
-[!<WearThing>@
-
-REQUIRES COMMENTING
-
-@inherits <Thing>
-
-@!]
-A wearthing is a kind of thing.
-
 A wearthing can be predicament-normal, predicament-temporary or predicament-fixed (this is the predicament-persistence property). A wearthing is usually predicament-normal. [AFTER initial predicament execution, anything not predicament-fixed gets set to predicament-temporary. Anything predicament-temporary is removed at the end of a predicament. NB this means that if a wearthing is summoned DURING initial predicament execution, it must be manually set to predicament-fixed.]
 
 [!<Clothing>@

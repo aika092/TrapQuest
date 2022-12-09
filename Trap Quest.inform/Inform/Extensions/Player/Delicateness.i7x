@@ -126,6 +126,21 @@ To PainUp (X - a number): [This function is anticipated to output some kind of f
 			now the trophy-mode of pain-trophy is 0;
 	if highest delicateness < the delicateness of the player, now highest delicateness is the delicateness of the player.
 
+slowDelicateness is a number that varies.
+To SlowDelicateUp (X - a number):
+	let slowDelicatenessLimit be 0[ - diaper quest];
+	if the player is not feeling dominant, increase slowDelicatenessLimit by 1;
+	if the player is feeling submissive, increase slowDelicatenessLimit by (the delicateness of the player - 13) / 2; [submissives are used to submitting so much that it takes a long time for their submissiveness to get even worse]
+	if debugmode > 0, say "Delicateness threshold is [slowDelicatenessLimit] ticks.";
+	while X > 0:
+		decrease X by 1;
+		increase slowDelicateness by 1;
+		if debugmode > 0, say "[slowDelicateness - 1] --> [slowDelicateness].";
+		if slowDelicateness > slowDelicatenessLimit:
+			if debugmode > 0, say "Delicateness increased.";
+			now slowDelicateness is 0;
+			DelicateUp 1.
+
 To DelicateUp (X - a number):
 	let K be 0;
 	repeat with C running through worn confidence clothing:

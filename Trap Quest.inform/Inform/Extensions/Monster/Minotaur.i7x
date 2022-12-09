@@ -613,14 +613,19 @@ This is the minotaur replaces the monster rule:
 
 To compute (M - minotaur) attacking (C - a clothing):
 	if C is displacable:
-		say "[BigNameDesc of M] pulls the crotch of your [printed name of C] to the side!";
+		say "[BigNameDesc of M] pulls the crotch of your [ShortDesc of C] to the side!";
 		displace C;
+	otherwise if C is unremovable:
+		say "[BigNameDesc of M] roars in frustration at being unable to remove [NameDesc of C]! Clearly concluding that [he of M] can't get what [he of M] wants, [he of M] discards your body by flinging you against the nearest wall, bruising you and causing significant pain.";
+		bore M;
+		BodyRuin 10;
+		PainUp 40;
 	otherwise:
-		say "[BigNameDesc of M] rips off your [printed name of C]!";
+		say "[BigNameDesc of M] rips off your [C]!";
 		destroy C.
 
 To compute (M - minotaur) removing (X - a thing):
-	say "[BigNameDesc of M] forcefully and roughly pulls the [printed name of X] out of your [asshole] and drops it on the ground!";
+	say "[BigNameDesc of M] forcefully and roughly pulls [NameDesc of X] out of your [asshole] and drops it on the ground!";
 	now X is in the location of the player;
 	if X is anal beads, ruin asshole times the notch-taken of X / 2;
 	dislodge X.

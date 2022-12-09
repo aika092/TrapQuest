@@ -20,7 +20,7 @@ To compute SelfExamineDesc of (H - vampiric fangs):
 	say "Your canine teeth are far longer than usual and as sharp as daggers.".
 
 Report wearing vampiric fangs:
-	if there is a worn wood-dong:
+	if wood-dong is worn:
 		say "You feel your wooden dildo pulse as you finish putting in your fangs, as if staving off some kind of magic.";
 	otherwise:
 		say "You feel a shooting pain as you finish putting it in, and when you try to investigate, you very nearly prick your hand on a pair of very real, very sharp fangs!".
@@ -28,7 +28,7 @@ Report wearing vampiric fangs:
 Definition: vampiric fangs is cult garb: decide yes.
 
 Definition: vampiric fangs is removable:
-	if there is a worn wood-dong, decide yes;
+	if wood-dong is worn, decide yes;
 	decide no.
 
 Definition: vampiric fangs is destructible: decide no.
@@ -47,7 +47,7 @@ To compute unique recycling of (C - vampiric fangs):
 	now the ritual-only-once of ritual-quest is 0.
 
 To compute class outfit of (H - vampiric fangs):
-	if the number of worn wood-dong is 0, class summon vampiric claws;
+	if wood-dong is not worn, class summon vampiric claws;
 	class summon vampiric cape.
 
 Chapter - Quest

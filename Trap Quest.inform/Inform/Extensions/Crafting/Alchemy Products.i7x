@@ -61,6 +61,9 @@ Carry out quaffing:
 
 A bomb is a kind of alchemy product. Understand "bomb" as a bomb.
 
+To decide what number is the original price of (C - a bomb):
+	decide on 7.
+
 To say ShortDesc of (B - a bomb):
 	say "bomb".
 
@@ -598,10 +601,10 @@ To decide which number is the alchemy key of (A - invigoration-elixir):
 Carry out quaffing invigoration-elixir:
 	say "You pull out the small stopper and drink the creamy liquid. It tastes like [semen]. You feel your [fuckholes] pulse gently.";
 	compute slightly addictive tasting of semen;
-	let R be a random number between 30 and 45;
-	if the noun is blessed, increase R by 30;
-	if the noun is cursed, decrease R by 29;
-	increase invigoration-timer of invigoration-elixir by R * 6.
+	let R be a random number between 300 and 450;
+	if the noun is blessed, increase R by 300;
+	if the noun is cursed, decrease R by 290;
+	increase invigoration-timer of invigoration-elixir by R.
 
 An all time based rule (this is the invigoration elixir decay rule):
 	if invigoration-timer of invigoration-elixir > 0:
@@ -1088,8 +1091,10 @@ Carry Out PowderRubbing escape-powder on a thing:
 		now the second noun is carried by the player.
 
 A salve is a kind of alchemy product. Understand "salve", "salve of" as a salve.
-A true salve is a kind of alchemy product. Understand "salve", "salve of" as a true salve.
-A true salve is wearable. A true salve is sure.
+
+A wearthing is a kind of thing.
+A true salve is a kind of wearthing. Understand "salve", "salve of" as a true salve.
+A true salve has a magic-curse. A true salve has a curse-ID. A true salve is sure.
 Definition: a true salve is product: decide no.
 
 Definition: a salve is fetish appropriate:
@@ -1254,9 +1259,9 @@ To say MediumDesc of (C - erasure-salve):
 	say "salve of erasure".
 
 To say ExamineDesc of (C - erasure-salve):
-	say "A small round metal container that contains a cream greasy lip-balm-like substance. It seems like you are supposed to rub it on an orifice, to magically discourage your sexual partners from considering choosing it when deciding how to have sex with you. ";
-	if C is sure and C is cursed, say "Since it is cursed, using it would probably make it even more difficult for you to influence how people choose to sleep with you. Perhaps you could find some other use for it, for example gifting.";
-	otherwise say "[if C is sure and C is blessed]The blessed magic will make the body part magically hidden, so only the most powerful of beings will even be able to notice it's an option.[otherwise][line break][end if]".
+	say "A small round metal container that contains a cream greasy lip-balm-like substance. It seems like you are supposed to rub it on a tattoo, to magically remove it. ";
+	if C is sure and C is cursed, say "Since it is cursed, using it would probably make it give you a new tattoo, or something stupid like that.";
+	otherwise say "[line break]".
 
 To decide which number is the alchemy key of (A - erasure-salve):
 	decide on 37.

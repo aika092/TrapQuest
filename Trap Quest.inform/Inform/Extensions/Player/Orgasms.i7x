@@ -490,8 +490,10 @@ This is the players expel things when they orgasm rule:
 	check sudden spit and expulsion with reason T.
 The players expel things when they orgasm rule is listed last in the orgasm resolution rules.
 
+milk-squirt-orgasms is initially false.
+
 This is the hentai orgasm resolution rule:
-	if the milk volume of breasts > 4 and the player is not in a predicament room and the class of the player is not cowgirl and the class of the player is not royal slave:[###maybe have this influenced by breast sensitivity]
+	if milk-squirt-orgasms is true and the milk volume of breasts > 4 and the player is not in a predicament room and the class of the player is not cowgirl and the class of the player is not royal slave:
 		let N be bottom level lactation cover;
 		let M be the milk volume of breasts / 5;
 		say "Your nipples start to spontaneously squirt milk into [if N is clothing]your [printed name of N][otherwise]a puddle on the floor[end if].[line break][variable custom style][if the bimbo of the player < 8]Gross![otherwise]Uh-oh![end if][roman type]";
@@ -500,7 +502,7 @@ This is the hentai orgasm resolution rule:
 		if N is clothing:
 			AnnouncedExpel milk on N by M;
 		otherwise:
-			milkpuddleup M;
+			MilkPuddleUp M;
 			if M > 2, cutshow figure of lactation orgasm 1 for breasts;
 		decrease the milk volume of breasts by M.
 The hentai orgasm resolution rule is listed last in the orgasm resolution rules.

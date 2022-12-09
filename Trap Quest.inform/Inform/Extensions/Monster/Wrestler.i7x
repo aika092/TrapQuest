@@ -99,6 +99,8 @@ To set up (M - a wrestler):
 	let P be a random vibrating plug panties;
 	add P to the tradableItems of M, if absent;
 	add plugsuit to the tradableItems of M, if absent;
+	add resistance-powder to the tradableItems of M, if absent;
+	add resistance-powder to the taxableItems of M, if absent;
 	add piece-of-rubber to the tradableItems of M, if absent;
 	add piece-of-rubber to the taxableItems of M, if absent;
 	let W be a random ben wa balls;
@@ -171,6 +173,8 @@ To compute perception of (M - a wrestler):
 		otherwise:
 			say "[speech style of M]'Uh-oh, did you upset [big literalMistress of dominatrix]? I'm probably not allowed to talk to you then. Byeeee!'[roman type][line break]";
 			bore M;
+	otherwise if the current-errand of M is completed and M is not uniquely unfriendly:
+		compute errand completion of M;
 	otherwise if the latex-transformation of the player > 6 or there is a worn messed knickers:
 		say "[big he of M] seems a little intrigued by you but leaves you alone.";
 		alwayscutshow figure of wrestler interact 2 for M;
@@ -1009,7 +1013,7 @@ To watersports dominate (M - a wrestler):
 	let C be a random worn bottom level protection clothing;
 	say "You slam [NameDesc of M] against a wall, pushing [him of M] to [his of M] knees as you [if C is clothing and the player is not possessing a penis]pull down your [printed name of C][otherwise if the player is possessing a vagina]use your fingers to spread your nether lips[otherwise if C is not strapon-panties and C is clothing and the player is possessing a penis]fish your [player-penis] out of your [printed name of C][otherwise if the player is possessing a penis]take aim with your [sexual-player-penis][otherwise]attempt to aim your urethral opening correctly[end if].[line break]";
 	if the player is possessing a vagina:[as in has a vagina]
-		say "[line break][speech style of M]'[one of]Yes! YES! [big please], make me your toilet![or]Fuuuck yeeesss!'[or]Toilet time!'[at random][roman type][line break] [big he of M] opens wide for the incoming stream of [urine], gargling happily as [his of M] mouth slowly fills with the frothy liquid. You let out a long sigh of relief as the flow peters out, and [he of M] swallows it all in one gulp.";
+		say "[line break][speech style of M]'[one of]Yes! YES! [big please], make me your toilet!'[or]Fuuuck yeeesss!'[or]Toilet time!'[at random][roman type][line break] [big he of M] opens wide for the incoming stream of [urine], gargling happily as [his of M] mouth slowly fills with the frothy liquid. You let out a long sigh of relief as the flow peters out, and [he of M] swallows it all in one gulp.";
 		strongDignify;
 	otherwise if the size of penis > 8:
 		say "[speech style of M]'So... BIG...'[roman type][line break]A little bit of drool rolls out of [NameDesc of M][']s mouth as [he of M] stares at your [sexual-player-penis].[line break][speech style of M]'[big please] make me your toilet. [big please] let me drink it...'[roman type][line break]A good Samaritan as always, you tilt [his of M] head up, allowing relief to wash over your body as you empty your bladder directly into [his of M] mouth. [big he of M] holds all of it in [his of M] mouth, gargling happily before swallowing it all in a single gulp.";

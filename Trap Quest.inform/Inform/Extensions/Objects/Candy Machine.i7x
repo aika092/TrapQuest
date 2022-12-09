@@ -27,7 +27,8 @@ A candy machine has a number called combo.
 starting-pack-given is a number that varies.
 
 To decide which number is max-candy:
-	if the class of the player is trick-or-treater, decide on 0;
+	repeat with C running through worn clothing:
+		if the quest of C is trick-or-treat-quest, decide on 0;
 	decide on 3.
 
 To say ExamineDesc of (C - candy machine):

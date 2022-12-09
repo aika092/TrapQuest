@@ -395,6 +395,9 @@ To compute sword destiny of (C - gladiator-sword):
 Report taking gladiator-sword:
 	try wearing the noun.
 
+Report wearing gladiator-sword:
+	if the noun is unremovable, say "[bold type]A magic chain appears, binding [NameDesc of the noun] to your wrist![line break][variable custom style]I'm being punished... I won't be able to remove the sword until I've used it in battle some more.[roman type][line break]".
+
 To BurdenUp (C - gladiator-sword) by (N - a number):
 	increase the burden of C by N;
 	if the burden of C > 0 and the burden of C + 10 > the strength of the player and the burden of C + 10 - N <= the strength of the player, say "[bold type]A magic chain appears, binding [NameDesc of C] to your wrist![line break][variable custom style]I'm being punished... I won't be able to remove the sword until I've used it in battle some more.[roman type][line break]";
@@ -410,11 +413,26 @@ To compute survival reward of (C - gladiator-sword):
 	say "The [MediumDesc of C] suddenly gains several pounds of extra weight, significantly weighing you down.";
 	BurdenUp C by 5.
 
+To compute periodic effect of (C - gladiator-sword):
+	if breasts is not lewdly exposed:
+		say "Reacting to your [BreastDesc] no longer being exposed, [NameDesc of C] becomes red hot, causing serious pain to the palm of your hand!";
+		if C is unremovable:
+			PainUp 55;
+			say "The magic chain temporarily eventually retracts, but only after your hand has been tortured by magical burning pain for several seconds. ";
+		otherwise:
+			PainUp 15;
+		say "You are forced to immediately drop it to the ground.";
+		now C is in the location of the player.
+
+To compute school periodic effect of (C - gladiator-sword):
+	compute periodic effect of C.
+
 This is the gladiator sword wants puppies to breathe rule:
 	if gladiator-sword is worn and wearing-target is not fully exposing and wearing-target is not chestless:
 		if summoning is 0 and autowear is false, say "Your sword arm actively prevents you from putting on your [ShortDesc of wearing-target]! Looks like your [ShortDesc of gladiator-sword] wants your chest to stay uncovered!";
 		rule fails.
 The gladiator sword wants puppies to breathe rule is listed in the bra wearability rules.
+The gladiator sword wants puppies to breathe rule is listed in the corset wearability rules.
 The gladiator sword wants puppies to breathe rule is listed in the underdress wearability rules.
 The gladiator sword wants puppies to breathe rule is listed in the overdress wearability rules.
 

@@ -142,6 +142,7 @@ To set up (M - dominatrix):
 	now the health of M is the maxhealth of M;
 	let L be a random lubricant;
 	add L to the tradableItems of M, if absent;
+	add restriction-salve to the tradableItems of M, if absent;
 	add focus band to the taxableItems of M, if absent;
 	calm M;
 	now the boredom of M is 1000.
@@ -234,6 +235,8 @@ To compute perception of (M - dominatrix):
 	otherwise if wrestler-jumpsuit is worn and wrestler-hood is off-stage and wrestler-hood is actually summonable:
 		say "[speech style of M]'Did you lose your hood, [if watersports fetish is 1]Toilet[otherwise]Slave[end if]? You are supposed to always wear one of these while in my presence.'[roman type][line break][BigNameDesc of M] puts a wrestler hood on you, to match your outfit!";
 		summon wrestler-hood cursed with quest;
+	otherwise if the current-errand of M is completed and M is not uniquely unfriendly:
+		compute errand completion of M;
 	otherwise if the class of the player is living sex doll:
 		say "It doesn't look like [he of M]'s interested in you.";
 		bore M;
@@ -1366,7 +1369,7 @@ Definition: dominatrix-cage is immune to change: decide yes.
 Definition: dominatrix is distracted:
 	let M be a random unleashed wrestler in Hotel37;
 	if M is monster:
-		if the player is in Hotel37 and dominatrix is in Hotel37 and dominatrix-cage is in Hotel37 and the number of caged monsters in Hotel37 is 0 and dominatrix-cage is not grabbing the player and ((diaper quest is 0 and the player is an april 2021 top donator) or (diaper quest is 1 and the player is an april 2021 diaper donator)):
+		if the player is in Hotel37 and dominatrix is in Hotel37 and dominatrix-cage is in Hotel37 and the number of caged monsters in Hotel37 is 0 and dominatrix-cage is not grabbing the player and the player is the donator:
 			if M is uninterested or M is friendly:
 				say "[speech style of dominatrix]'[WrestlerNickname], I think you've been having too much fun recently. It's time for you to remember your place. Get in.'[line break][speech style of M]'*sniff* Yes [big literalMistress of dominatrix]...'[roman type][line break]";
 				compute dominatrix caging of M;
@@ -1375,7 +1378,7 @@ Definition: dominatrix is distracted:
 				say "[speech style of dominatrix]'Okay, I'll deal with you in a moment. But first - [WrestlerNickname], you forget your place. What are you?'[line break][speech style of M]'*sniff* A s-submissive s-slave, [big literalMistress of dominatrix]...'[line break][speech style of dominatrix]'That's right. And where do submissive slaves go when they've been naughty?'[line break][speech style of M]'Aaaah... Oh no... In their cage, [big literalMistress of dominatrix]...'[roman type][line break]";
 				compute dominatrix caging of M;
 				decide yes;
-		otherwise if dominatrix is in Hotel37 and dominatrix is uninterested and dominatrix-cage is in Hotel37 and the number of caged monsters in Hotel37 is 0 and ((diaper quest is 0 and the player is an april 2021 top donator) or (diaper quest is 1 and the player is an april 2021 diaper donator)) and the player is not in Hotel37:
+		otherwise if dominatrix is in Hotel37 and dominatrix is uninterested and dominatrix-cage is in Hotel37 and the number of caged monsters in Hotel37 is 0 and the player is the donator and the player is not in Hotel37:
 			compute dominatrix caging of M;
 			decide yes;
 	decide no.

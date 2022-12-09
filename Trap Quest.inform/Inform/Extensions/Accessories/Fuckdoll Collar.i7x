@@ -48,10 +48,13 @@ Definition: fuckdoll collar is pink themed: decide yes.
 collar-latex-cursed is a number that varies.
 
 To compute periodic effect of (C - fuckdoll collar):
-	if inflation fetish is 1 and the latex-transformation of the player is 0 and collar-latex-cursed is 0:
-		now collar-latex-cursed is 1;
-		say LatexTransformClue; [#LXorDD]
-		now the latex-transformation of the player is 1.
+	if the latex-transformation of the player is 0:
+		if inflation fetish is 1 and collar-latex-cursed is 0:
+			now collar-latex-cursed is 1;
+			say LatexTransformClue; [#LXorDD]
+			now the latex-transformation of the player is 1;
+		otherwise:
+			compute slave collar wisp of C.
 
 
 

@@ -57,7 +57,8 @@ Carry out showering:
 		otherwise:
 			say "Something went wrong, there's nowhere for the player to go swimming here. Please report this bug.";
 	otherwise:
-		compute swimming in the noun.
+		compute swimming in the noun;
+	trigger swim-wisp-quest.
 
 Understand "shower [something]", "shower under [something]", "clean myself with [something]", "clean me with [something]", "shower in [something]", "shower with [something]", "wash in [something]", "wash with [something]", "bathe in [something]", "bathe with [something]", "bathe in [something]", "swim in [something]" as showering.
 

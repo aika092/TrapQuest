@@ -11,7 +11,7 @@ To decide which figure-name is the examine-image of (C - condom-pack):
 	decide on figure of condom pack.
 
 To say ExamineDesc of (C - condom-pack):
-	say "A small box of condoms labelled 'SuperSafe Condoms, for a slut on the go. This magic condom-pack of Holding contains over a thousand condoms, more than enough for even the biggest of sluts. 100% safe and user foolproof. Warning: Do not attempt to store inside bags of holding. Magical safety enchantment causes used condoms to be ungraspable by women and traps. Attempt to use sharp objects or teeth.'".
+	say "A small box of condoms labelled 'SuperSafe Condoms, for a slut on the go. This magic condom-pack of Holding contains over a thousand condoms, more than enough for even the biggest of sluts. 100% safe and user foolproof. Warning: Do not attempt to store inside bags of holding. Magical safety enchantment causes used condoms to be ungraspable by feminine entities. If you are feminine-leaning, please use sharp objects or teeth to detach used condoms.'".
 
 Definition: condom-pack is never-in-bag: decide yes.
 
@@ -85,11 +85,17 @@ Definition: a clothing (called C) is condom pinnable:
 
 Definition: a shoes is condom pinnable: decide no.
 
-Definition: an overdress is condom pinnable: decide yes.
+Definition: an overdress (called C) is condom pinnable:
+	unless C is biological or C is metal or C is glass or C is bondage, decide yes;
+	decide no
 
-Definition: a stockings is condom pinnable: decide yes.
+Definition: a stockings (called C) is condom pinnable:
+	unless C is biological or C is metal or C is glass or C is bondage, decide yes;
+	decide no
 
-Definition: a belt is condom pinnable: decide yes.
+Definition: a belt (called C) is condom pinnable:
+	unless C is biological or C is metal or C is glass or C is bondage, decide yes;
+	decide no
 
 Definition: a clothing is condom pinned:
 	if the total condoms of it > 0, decide yes;
@@ -238,7 +244,9 @@ To say CondomNewbieTip:
 
 To say CondomRequestFlav of (M - a monster):
 	if the player is able to speak and M is intelligent:
-		if the chosen-orifice of M is vagina and the pregnancy of the player is 0 and pregnancy fetish is 1:
+		if the class of the player is priestess and runic headband is not purity:
+			say "[variable custom style]'[if the player is not a pervert and runic headband is cursed][one of]The voice said I've got to make you wear this.'[or]I need you to put this on.'[stopping][otherwise if the sex addiction of the player > 9][one of]Here's the deal: You get to claim my cunt, but my Goddess gets to keep your cum.'[or]I'm a bad [boy of the player], but not that bad. My Goddess insists that you wear one of these.'[or]After you've fucked me silly, my Goddess makes me wear your cum-filled condom on my headband like a trophy.'[or]To creampie a holy priestess is an unforgiveable sin. But as long as you're wearing one of these, pounding my pussy into the ground is totally a-ok!'[in random order][otherwise][one of]Whilst the Goddess has permitted you to violate my body, she has not permitted you to defile my womb.'[or]To protect my sacred womb whilst you claim my sinful pussy.'[or]Whilst my vagina is yours to enjoy, my womb must remain unsullied.'[or]A sinful priestess must remain protected from [semen] whilst [he of the player] performs [his of the player] holy duties.'[in random order][end if][roman type][line break]";
+		otherwise if the chosen-orifice of M is vagina and the pregnancy of the player is 0 and pregnancy fetish is 1:
 			say "[variable custom style]'[if the vaginal sex addiction of the player < 4 and the children of the player is 0][one of]Please please please wear a condom, I can't risk getting pregnant in this crazy world!'[or]Will you at least make sure I don't get pregnant?!'[or]Please wear this if you have to do that.'[in random order][otherwise if the vaginal sex addiction of the player < 7 and the children of the player is 0][one of]Please do me the one courtesy of wrapping your tool. I think I might be fertile.'[or]Please wear this. Unless you'd rather have a kid.'[or]If you don't wear this, there's a chance I'll get pregnant.'[in random order][otherwise if the children of the player is 0][one of]Hey big boy, you should wear one of these unless you like playing the pregnancy lottery.'[or]I'm still not sure if I can get pregnant here, but I guess it's better safe than sorry?'[or]Bareback might be more fun, but this is probably more responsible.'[or]I guess it's up to you big guy, but I might become your baby momma if you don't wear one of these.'[in random order][otherwise if the vaginal sex addiction of the player < 5][one of]Please wear this, I don't want to have to have any more children...'[or]Please, I'm begging you, I can't get pregnant again, I just can't!'[in random order][otherwise][one of]Hey big guy, would you mind wearing one of these? Bareback is fun, but childbirth is painful...'[or]I'd wear one of these if I were you, I've already been knocked up down here and I'd rather not have it happen again.'[or]There's a good chance I'll get pregnant if you don't wear one of these. It's happened before.'[in random order][end if][roman type][line break]";
 		otherwise if the humiliation of the player > 29000 and total used condoms > 0:
 			say "[second custom style]'[if total used condoms > 10][one of]Hey honey, why don't you add another [']trophy['] to my collection? If you can find any spare space, teehee!'[or]Want to add to this ridiculous display? Be my guest, just wear one of these.'[or]You want to add your cum to the collection, don't you? I can tell. Here, take one of these.'[or]If you want to make me look like even more of a fucked-up cum addict, I don't mind.'[or]So... have you considered adding to my impressive collection?'[in random order][otherwise][one of]Hey honey, why don't you add another [']trophy['] to my collection?'[or]I'm starting to build a collection of mementos, want to contribute?'[or]Want to help me show the world how big a whore I am?'[or]Hey baby, want to help me save your cum for later? Wear this.'[or]If you cum in this and pin it to me, I promise I'll wear it with pride.'[in random order][end if][roman type][line break]";

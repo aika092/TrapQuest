@@ -625,10 +625,13 @@ To compute default seduction choice of (M - a monster):
 		compute SeductionDance of M;
 	otherwise if MCQ matches the text "knees":
 		if turns-spent-seducing is 0, compute FirstTurnSeduceSubmitAnnounce of M;
-		now auto is 1;
-		try kneeling;
-		now auto is 0;
-		increase the seductions-performed of thighs by 2;
+		if the class of the player is princess and debugmode is 0 and the delicateness of the player < 9 and the bimbo of the player < 10:
+			say "A strange tingle passes through your head, and a strange voice orders you to stay on your feet.[line break][first custom style]'A princess does not kneel for anyone!'[roman type][line break]";
+		otherwise:
+			now auto is 1;
+			try kneeling;
+			now auto is 0;
+			increase the seductions-performed of thighs by 2;
 	otherwise if MCQ matches the text "kiss":
 		if turns-spent-seducing is 0, compute FirstTurnSeduceKissAnnounce of M;
 		if MCQ matches the text "soul", compute SeductionSoulKiss of M;

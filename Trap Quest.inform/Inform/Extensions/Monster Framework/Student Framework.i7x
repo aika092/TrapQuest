@@ -325,6 +325,33 @@ To compute fleeing of (M - a student):
 		now the scared of M is 0;
 		calm M.
 
+Definition: a student (called M) is distracted:
+	if headmistress is in the location of M:
+		if academy-toilet-key is held by headmistress and (M is not interested or M is friendly) and (headmistress is not interested or headmistress is friendly):
+			if M is in the location of the player, say "[BigNameDesc of M] awkwardly presents [himself of M] to [NameDesc of headmistress][if diaper lover > 0], while doing a little [']potty dance['][end if].[line break][speech style of M]'Please could I have the key to the toilets, Ma[']am?'[roman type][line break]";
+			if the current-rank of M >= 5 or a random number between 2 and 5 < the current-rank of M:
+				if M is in the location of the player, say "[BigNameDesc of headmistress] frowns.[line break][speech style of M]'[if the current-rank of M >= 5]You're a high enough rank that you should be using your peers as urinals, not the normal boring toilet[otherwise]No, I think not. I expect you to hold it for a while longer than this[end if].'[roman type][line break]";
+				compute mandatory room leaving of headmistress;
+				now headmistress is moved;
+			otherwise:
+				if M is in the location of the player, say "[BigNameDesc of headmistress] nods and gives [him of M] the key.[line break][speech style of M]'Bring it back after you're done. And don't forget to bring a teacher with you to supervise you.'[roman type][line break]";
+				now M is carrying academy-toilet-key;
+				compute mandatory room leaving of M;
+				now M is moved;
+				now headmistress is moved;
+			decide yes;
+		if academy-toilet-key is held by M and (M is not interested or M is friendly) and (headmistress is not interested or headmistress is friendly):
+			if M is in the location of the player, say "[BigNameDesc of headmistress] holds out [his of M] hand expectantly.[line break][speech style of headmistress]'The toilet key.'[line break][speech style of M]'B-but I haven't had a chance to-'[line break][speech style of headmistress]'You had your chance. TOILET KEY. NOW.'[line break][speech style of M]'Y-Yes headmistress...'[roman type][line break][BigNameDesc of M] hands the academy toilet key back to [NameDesc of headmistress].";
+			now headmistress is carrying academy-toilet-key;
+			compute mandatory room leaving of headmistress;
+			now headmistress is moved;
+			decide yes;
+	decide no.
+
+To say ErrandThanksFlav of (T - academy-toilet-key) from (M - a student):
+	say "[speech style of M]'I'm going to tell [NameDesc of headmistress] that I have it to you, so you'd better remember to return it to [him of headmistress] after you're done.'[roman type][line break]".
+
+
 Part - Perception
 
 To compute perception of (M - a student):
@@ -690,6 +717,7 @@ To compute punishment of (P - student-bully-swimming-pool):
 		compute TQ swimmingpool swimming at 4 with 1;
 	otherwise:
 		compute DQ swimmingpool swimming at 4 with 1;
+	trigger swim-wisp-quest;
 	compute crowd satisfaction of current-monster;
 	satisfy current-monster.
 

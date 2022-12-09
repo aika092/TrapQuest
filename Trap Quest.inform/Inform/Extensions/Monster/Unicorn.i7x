@@ -98,6 +98,8 @@ To set up (M - unicorn):
 	now the raw difficulty of M is the starting difficulty of M;
 	add demon tail plug to the tradableItems of M, if absent;
 	add demon tail plug to the taxableItems of M, if absent;
+	add luck-potion to the tradableItems of M, if absent;
+	add luck-potion to the taxableItems of M, if absent;
 	add demon belt to the tradableItems of M, if absent;
 	now the health of M is the maxhealth of M.
 
@@ -124,6 +126,8 @@ To compute perception of (M - unicorn):
 	otherwise if the class of the player is princess:
 		say "[big he of M] snarls.[line break][speech style of M]'[one of]Get ready to pay.'[or]Home wrecking BITCH!'[or]Time for me to finally get my REVENGE.'[at random][roman type][line break]";
 		anger M;
+	otherwise if the current-errand of M is completed and M is not uniquely unfriendly:
+		compute errand completion of M;
 	otherwise if penis is lewdly exposed or vagina is lewdly exposed:
 		let B be breasts;
 		if penis is lewdly exposed and the player is possessing a penis, now B is penis;
@@ -381,8 +385,12 @@ To say PullOutFlav of (M - unicorn) in (F - a fuckhole):
 	otherwise say "[BigNameDesc of M] suddenly pulls out and sprays [his of M] load all over the ground.";
 
 To say MessyPullOutFlav of (M - unicorn) in (F - a fuckhole):
-	if the reaction of the player is 1, say "[one of]Your continued struggling pushes [NameDesc of M] away at the last moment, causing [him of M] to spray your [variable F] with fresh [semen][or][BigNameDesc of M] accidentally slips out of you at the last moment, shooting [his of M] load all over your [variable F] and thighs[or]Thanks to your struggling, [BigNameDesc of M] is unable to hold on to you, and [his of M] [DickDesc of M] slips out of you just in time for [him of M] to cover your [variable F] with [semen][at random]. [big he of M] immediately slumps over and falls asleep.";
-	otherwise say "[BigNameDesc of M] suddenly pulls out and sprays [his of M] load all over your thighs.";
+	if bukkake fetish is 1:
+		if the reaction of the player is 1, say "[one of]Your continued struggling pushes [NameDesc of M] away at the last moment, causing [him of M] to spray your [variable F] with fresh [semen][or][BigNameDesc of M] accidentally slips out of you at the last moment, shooting [his of M] load all over your [variable F] and butt[or]Thanks to your struggling, [BigNameDesc of M] is unable to hold on to you, and [his of M] [DickDesc of M] slips out of you just in time for [him of M] to cover your [variable F] with [semen][at random]. [big he of M] immediately slumps over and falls asleep.";
+		otherwise say "[BigNameDesc of M] suddenly pulls out and sprays [his of M] load all over your [AssDesc].";
+	otherwise:
+		if the reaction of the player is 1, say "[one of]Your continued struggling pushes [NameDesc of M] away at the last moment, causing [him of M] to spray your [variable F] with fresh [semen][or][BigNameDesc of M] accidentally slips out of you at the last moment, shooting [his of M] load all over your [variable F] and thighs[or]Thanks to your struggling, [BigNameDesc of M] is unable to hold on to you, and [his of M] [DickDesc of M] slips out of you just in time for [him of M] to cover your [variable F] with [semen][at random]. [big he of M] immediately slumps over and falls asleep.";
+		otherwise say "[BigNameDesc of M] suddenly pulls out and sprays [his of M] load all over your thighs.".
 
 [To say MasturbationDeclarationFlav of (M - unicorn):
 	say "[speech style of M]'[one of]Hmmph. You don't deserve what I'm about to do.'[or]You're lucky I'm doing this.'[stopping][roman type][line break]".

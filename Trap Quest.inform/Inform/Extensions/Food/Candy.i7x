@@ -183,11 +183,10 @@ Carry out TQeating digestive biscuit:
 		say "You don't feel any different.".
 
 To compute (M - a robochef) cooking (I - digestive biscuit):
-	let D be a random off-stage cookie;
-	if D is food:
-		now the quality of D is a random number between 1 and -2;
-		now the fat of D is 2;
-		now D is carried by M.
+	if cookie is off-stage:
+		now the quality of cookie is a random number between -2 and 1;
+		now the fat of cookie is 2;
+		now cookie is carried by M.
 
 A liquorice is a candy. The text-shortcut of liquorice is "lq".
 
@@ -638,10 +637,9 @@ a time based rule (this is the toffee poison decay rule):
 			now toffee-poison-timer is 0.
 
 To compute (M - a robochef) cooking (I - toffee):
-	let D be a random off-stage cookie;
-	if D is food:
-		now the quality of D is a random number between 2 and 0;
-		now the fat of D is 3;
-		now D is carried by M.
+	if cookie is off-stage:
+		now the quality of cookie is a random number between 0 and 2;
+		now the fat of cookie is 3;
+		now cookie is carried by M.
 
 Candy ends here.

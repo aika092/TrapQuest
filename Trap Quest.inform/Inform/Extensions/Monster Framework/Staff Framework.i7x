@@ -123,7 +123,7 @@ To say NastyTrapReactFlav of (M - a staff member):
 Part - Protection
 
 To compute (M - a staff member) protecting against (X - a monster):
-	if the health of X < the maxhealth of X:
+	if the health of X < the maxhealth of X or X is wrangling a body part:
 		say "[speech style of M]'[if X is staff member]Another rebellion?!'[otherwise]NO FIGHTING! BOTH OF YOU ON THE GROUND!'[end if][roman type][line break][BigNameDesc of M] turns aggressive.";
 		anger M;
 	otherwise:
@@ -140,10 +140,10 @@ To compute (M - a staff member) protecting against (X - nurse): [The nurse assau
 	if armband is not worn, compute M protecting against headmistress. [There's a rebellion afoot!]
 
 To compute (M - a staff member) seeking (D - a direction): [Staff members don't stalk the player around the school in normal circumstances.]
-	if (academy-toilet-key is not held or M is not teacher) and M is friendly and the player is not in danger:
+	if the friendly boredom of M >= 0 and M is friendly and the player is not in danger:
 		distract M;
 	otherwise:
-		try M going D;
+		blockable move M to D;
 		compute monstermotion reactions of M.
 
 Part - Combat
@@ -306,21 +306,6 @@ To say DismissalResponseStalker of (M - a staff member):
 To say DismissalResponseDefault of (M - a staff member):
 	say "[speech style of M]'I beg your pardon, young one?! I will tell you when you're allowed to proceed unsupervised in these halls[if M is not interested]. Now run along before I change my mind[end if].'[roman type][line break]".
 
-talk-teacher-toilet is a talk-object.
-
-To consider (T - talk-teacher-toilet) for (M - a monster):
-	if M is teacher and locked-toilets is true and academy-toilet-key is held and M is friendly:
-		now the printed name of T is the substituted form of "[variable custom style]'[if the player is proud]I can't believe I'm saying this, but would you please accompany me so that I can use the toilet?'[otherwise if the diaper addiction of the player < 5]Please could you supervise me while I use the toilet?'[otherwise]Please can you help me use the potty?'[end if][roman type][line break]";
-		set next numerical response to the substituted form of "[printed name of T]".
-
-To execute (T - talk-teacher-toilet) for (M - a monster):
-	say "[speech style of M]'[one of]Of course[or]Okay but make it quick, I'm busy[or]Hurry up then, let's go[in random order].'[roman type][line break]";
-	interest M;
-	now the friendly boredom of M is 0.
-
-To decide which number is the seek roll of (M - a teacher):
-	if academy-toilet-key is held and M is friendly, decide on 1; [100% chance to follow you to toilet if necessary]
-	decide on a random number between 0 and 3. [Most monsters have a 75% chance of successfully moving.]
 
 To say MasturbationAfterFlav of (M - a teacher):
 	say "After this [he of M] seems satisfied, and [if refractoryperiod > 0]flexes [his of M] wrist muscles in pride.[otherwise if the player is a bit horny][MasturbationTeaseFlav of M][otherwise]pulls back.[end if][line break][speech style of M]'Right, run along now!'[roman type][line break][if hot-tub is in the location of M]It doesn't seem like [he of M] is going to let you stay here.[end if]".
@@ -331,6 +316,9 @@ To compute masturbation aftermath of (M - a teacher):
 	FavourUp M;
 	say MasturbationAftermath of M;
 	calm M.
+
+To say conventional greeting of (M - a teacher):
+	say "'Hi [if M is presenting as male]Sir[otherwise]Miss[end if]. Do you have a minute?'";
 
 Part - Lessons
 
@@ -796,7 +784,7 @@ To execute (A - new-fuckhole-assembly):
 locked-toilets is initially false.
 locked-toilets-assembly is an assembly.
 Definition: locked-toilets-assembly is eligible:
-	if locked-toilets is false and headmistress is alive and headmistress is undefeated and watersports mechanics is 1 and (diaper quest is 0 and the player is a june 2021 top donator) or (diaper quest is 1 and the player is a june 2021 diaper donator):
+	if locked-toilets is false and headmistress is alive and headmistress is undefeated and watersports mechanics is 1 and the player is the donator:
 		if genericAssemblyTime is true, decide yes;
 		repeat with R running through academic rooms:
 			if the urine-puddle of R > 0, decide yes;
@@ -918,7 +906,7 @@ To check school toilet supervision:
 
 missing-key-assembly is an assembly.
 Definition: missing-key-assembly is eligible:
-	if locked-toilets is true and headmistress is alive and headmistress is undefeated and academy-toilet-key is on-stage and academy-toilet-key is not carried by headmistress, decide yes;
+	if locked-toilets is true and headmistress is alive and headmistress is undefeated and academy-toilet-key is on-stage and academy-toilet-key is not carried by a monster, decide yes;
 	decide no.
 
 To say AssemblyStartFlav of (A - missing-key-assembly):
@@ -1213,7 +1201,7 @@ An all time based rule (this is the detention chair rule):
 
 To compute wand chair detention:
 	repeat with M running through uninterested alive students:
-		if the boredom of M is 0, check seeking 1 of M; [NPCs make their way to watch the spectacle]
+		if the boredom of M <= 0, check seeking 1 of M; [NPCs make their way to watch the spectacle]
 	if detention-turns > 0:
 		say "The magic wand [one of]buzzes powerfully[or]continues to buzz[stopping]!";[possibly add text here describing arousal so far]
 		FatigueUp 30;

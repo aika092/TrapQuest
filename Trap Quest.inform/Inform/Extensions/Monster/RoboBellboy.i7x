@@ -92,6 +92,8 @@ To compute perception of (M - a robobellboy):
 		say "[first custom style]'NEARBY MESSY [if there is a worn diaper]DIAPER[otherwise]UNDERWEAR[end if] DETECTED. [caps please] ASSUME THE NAPPY INSPECTION SUBMISSION POSITION.'[roman type][line break]";
 		anger M;
 		if there is worn perceived unmessed knickers, compute state check of a random worn messed knickers;
+	otherwise if the current-errand of M is completed and M is not uniquely unfriendly:
+		compute errand completion of M;
 	otherwise if the class of the player is maid or the player is hotel employed:
 		say "[first custom style]'SERVANT, YOUR SERVICES ARE REQUIRED.'[roman type][line break]";
 		anger M;
@@ -451,6 +453,7 @@ To compute bra forcing of (M - senior robobellboy):
 	let C be a random off-stage trainee bra;
 	if C is clothing and C is actually summonable:
 		summon C;
+		now C is magnetised;
 		say "[BigNameDesc of M] opens up [his of M] chest compartment and pulls out a [ShortDesc of C]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as [he of M] forces the item onto your body, where the straps snap together and emit a small tone that worries you.[line break][first custom style]MAMMARY IMPROVEMENT REGIMEN INITIATED. [caps please] WAIT PATIENTLY FOR FURTHER OPTIMISATION.[roman type][line break]";
 		bore M;
 		FavourUp M;
@@ -461,6 +464,7 @@ To compute knickers forcing of (M - senior robobellboy):
 	let C be a random off-stage trainee thigh highs;
 	if C is clothing and C is actually summonable:
 		summon C;
+		now C is magnetised;
 		say "[BigNameDesc of M] opens up [his of M] chest compartment and pulls out a pair of [ShortDesc of C]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as [he of M] forces them onto your body, where it clings to your skin like glue.[line break][first custom style]'FULL MENTAL REGIMEN INITIATED. [caps please] WAIT PATIENTLY FOR FURTHER OPTIMISATION.'[roman type][line break]";
 		bore M;
 		FavourUp M;

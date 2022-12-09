@@ -66,7 +66,9 @@ To repair (C - clothing):
 		if C is hobble-skirted, now C is crotch-skirted;
 		otherwise now C is crotch-intact;
 	if C is zippable:
-		ZipUp C.
+		now C is crotch-zipped;
+		if C is worn, force clothing-focus redraw; [Forces redraw of clothing inventory window]
+		if C is carried, force inventory-focus redraw. [Forces redraw of inventory window]
 
 [!<DisplaceClothing>+
 

@@ -11,8 +11,9 @@ We don't want to check this all the time.
 +!]
 To check immobility:
 	follow the immobility rules;
-	if the rule failed, now player-immobile is true;
-	otherwise now player-immobile is false.
+	unless debugmode > 1:
+		if the rule failed, now player-immobile is true;
+		otherwise now player-immobile is false.
 
 [!<YourselfIsImmobile>+
 

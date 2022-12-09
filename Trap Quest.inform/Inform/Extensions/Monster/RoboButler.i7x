@@ -53,7 +53,9 @@ Part 2 - Perception
 To compute perception of (M - a robobutler):
 	say "[BigNameDesc of M] notices you!";
 	FavourDown M;
-	if the class of the player is maid:
+	if the current-errand of M is completed and M is not uniquely unfriendly:
+		compute errand completion of M;
+	otherwise if the class of the player is maid:
 		say "[big he of M] seems to recognise you as a member of staff and leaves you alone.";
 		calm M;
 	otherwise if dominatrix-cage is grabbing the player or M is friendly:

@@ -150,6 +150,7 @@ A later time based rule (this is the compute doom rule):
 						set shortcut of X;
 						say "You watch with glee as a [printed name of X] shimmers into existence at your feet!";
 						compute autotaking X;
+					progress quest of doom-ritual-quest;
 			otherwise:
 				if doom notes is off-stage, say "[one of][bold type]Perhaps there's some way to permanently stop this ritual from happening. Maybe you should ask a witch.[roman type][line break][or][stopping]";
 				otherwise say "[bold type]You want to perform the ritual[one of] to send the elder ones back to sleep[or][stopping].[roman type][line break]You [if doom notes is not held][bold type]do not [roman type][end if]have the instructions from the witch.[line break]You [if BLT is a thing]have a bell ([NameDesc of BLT])[otherwise][bold type]do not [roman type]have a bell[end if].[line break]You [if BT is a thing]have a book ([NameDesc of BT])[otherwise][bold type]do not [roman type]have a book[end if].[line break]You [if CT is a thing]have a candle ([NameDesc of CT])[otherwise][bold type]do not [roman type]have a candle[end if].";

@@ -106,6 +106,7 @@ Checks if a player is messy and really unhappy about it.
 +!]
 Definition: yourself is upset about mess:
 	if there is a messy monster penetrating face and the diaper addiction of the player < messyDiaperSmellEnjoymentLevel, decide yes;
+	if diaper messing >= 6 and diaper-box is worn and diaper-box is diaper-dumped and the diaper addiction of the player < messyDiaperSmellEnjoymentLevel, decide yes;
 	let D be a random worn perceived messed diaper;
 	if the location of the player is nonstandard:
 		if diaper messing >= 6 and (there is a carried soiled-diaper or there is a soiled-diaper in the location of the player), decide yes;
@@ -158,7 +159,7 @@ To compute soiling:
 				say "You shiver uncontrollably as you continue to wallow in your own mess[one of]. But instead of feeling more little, you feel a sense of holy pride welling up inside of you![or], but in a good, holy way.[stopping]";
 			otherwise:
 				say "You shiver uncontrollably as you continue to wallow in your own mess.";
-				DelicateUp 1;
+				SlowDelicateUp 1;
 		unless current-predicament is team-quiz-predicament and the questionFails of team-quiz-predicament < 2, check real messing.
 
 [How high will the game allow rectum incontinence to go?]
@@ -346,7 +347,7 @@ To compute messing:
 			say "BUG - there was nothing to have a bowel movement into!";
 		otherwise:
 			compute messing of D;
-		if diaper quest is 1 and chilli pepper tattoo is worn and the player is getting unlucky:
+		if diaper quest is 1 and chilli pepper tattoo is worn and the player is not in a predicament room and the player is getting unlucky:
 			say "[bold type]As it comes out, it burns painfully like a spicy curry![roman type][line break]";
 			PainUp 10;
 		otherwise:
@@ -496,28 +497,30 @@ Player tries to go number 2.
 Check messing:
 	if the total squirtable fill of belly > 0, try squatting instead;
 	if the player is not feeling full and the player is rectum incontinent, say "You've become so incontinent that you cannot feel or control this anymore! No matter how much you push, you feel absolutely nothing!" instead;
-	if the player is able to use a toilet and the location of the player is toilets:
-		allocate 6 seconds;
-		if rectum > 1 and (the player is feeling full or rectum > 3 or rectum >= rectum-risky-level):
-			compute toilet use instead;
-		otherwise:
-			say "You sit on the toilet and push, but nothing comes out." instead;
-	if the location of the player is toilets and the player is flying and the diaper addiction of the player < 15:
-		say "[variable custom style]I'll need to wait until I land to use that toilet.[roman type][line break]" instead;
-	otherwise if the location of the player is toilets and there is a worn total protection diaper:
-		say "Do you want to go inside your diaper? ";
-		if the player is bimbo consenting, do nothing;
-		otherwise say "[variable custom style]I can't use the toilet like that right now, I need to remove some clothing first.[roman type][line break]" instead;
-	otherwise if the location of the player is toilets:
-		say "[variable custom style]I can't use the toilet right now.[roman type][line break]" instead;
+	if auto is 0:
+		if the player is able to use a toilet and the location of the player is toilets:
+			allocate 6 seconds;
+			if rectum > 1 and (the player is feeling full or rectum > 3 or rectum >= rectum-risky-level):
+				compute toilet use instead;
+			otherwise:
+				say "You sit on the toilet and push, but nothing comes out." instead;
+		if the location of the player is toilets and the player is flying and the diaper addiction of the player < 15:
+			say "[variable custom style]I'll need to wait until I land to use that toilet.[roman type][line break]" instead;
+		otherwise if the location of the player is toilets and there is a worn total protection diaper:
+			say "Do you want to go inside your diaper? ";
+			if the player is bimbo consenting, do nothing;
+			otherwise say "[variable custom style]I can't use the toilet like that right now, I need to remove some clothing first.[roman type][line break]" instead;
+		otherwise if the location of the player is toilets:
+			say "[variable custom style]I can't use the toilet right now.[roman type][line break]" instead;
 	if the number of worn total protection soilable knickers is 0, say "[variable custom style]I have no safe way to do that. [if the diaper addiction of the player >= 8 and the diaper addiction of the player <= 16 and (the humiliation of the player >= 30000 or the number of intelligent monsters in the location of the player is 0)]I guess if I was wearing a diaper...[roman type][line break]" instead;
-	if the diaper addiction of the player < 4 and suppository is 0 and the number of worn desperation clothing is 0:
-		if debugmode is 0, say "[variable custom style]I can't bring myself to do that on purpose.[roman type][line break]" instead;
-		otherwise say "If debug was disabled, player would refuse to do this.";
-	[unless diaper messing >= 4 or (there is a worn total protection diaper and the player is not immobile and the player is not in danger and there is a willing to change diapers monster in the location of the player), say "Something tells you that if you did this, there would be no way to immediately get changed.[line break][variable custom style]I should wait until I'm in a room with someone who's willing to change me.[roman type][line break]" instead;]
-	if the humiliation of the player < 20000 and there is an intelligent awake monster in the location of the player and the diaper addiction of the player < 15:
-		if debugmode > 0, say "If debug mode was disabled, the player would refuse.";
-		otherwise say "[variable custom style]I can't bring myself to do that with people watching.[roman type][line break]" instead;
+	if auto is 0:
+		if the diaper addiction of the player < 4 and suppository is 0 and the number of worn desperation clothing is 0:
+			if debugmode is 0, say "[variable custom style]I can't bring myself to do that on purpose.[roman type][line break]" instead;
+			otherwise say "If debug was disabled, player would refuse to do this.";
+		[unless diaper messing >= 4 or (there is a worn total protection diaper and the player is not immobile and the player is not in danger and there is a willing to change diapers monster in the location of the player), say "Something tells you that if you did this, there would be no way to immediately get changed.[line break][variable custom style]I should wait until I'm in a room with someone who's willing to change me.[roman type][line break]" instead;]
+		if the humiliation of the player < 20000 and there is an intelligent awake monster in the location of the player and the diaper addiction of the player < 15:
+			if debugmode > 0, say "If debug mode was disabled, the player would refuse.";
+			otherwise say "[variable custom style]I can't bring myself to do that with people watching.[roman type][line break]" instead;
 	unless rectum > 1 and (the player is feeling full or rectum > 3 or rectum >= rectum-risky-level):
 		allocate 6 seconds;
 		say "You [if the player is upright and the player is shameless]squat like a shameless toddler and [otherwise if the player is upright and the player is ashamed]blush as you squat down and [otherwise]squat a little bit as discreetly as you can and [end if]push. But [one of]it was all for nothing - [or][stopping]nothing comes out!" instead.
@@ -526,7 +529,7 @@ Carry out messing:
 	now voluntarySquatting is 1;
 	allocate 6 seconds;
 	let berri-scene be 0;
-	if diaper quest is 1 and there is a worn diaper and the player is in Hotel38 and the human-toilet-scene of woman-player is 2 and the player is not immobile and the player is not in danger:
+	if auto is 0 and diaper quest is 1 and there is a worn diaper and the player is in Hotel38 and the human-toilet-scene of woman-player is 2 and the player is not immobile and the player is not in danger:
 		say "Sit on the Punishment Potty?";
 		if the player is bimbo consenting:
 			say "You sit on the Punishment Potty, smushing your [random worn diaper] into [NameDesc of woman-player][']s face.[line break][speech style of woman-player]'Wait please, no, [one of]let's talk about this[or]not again[stopping]- FFFFFFFFBBBBBFFFFFTTTT!'[roman type][line break][BigNameDesc of woman-player][']s pleas are blocked out by your padded butt.";

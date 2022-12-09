@@ -238,6 +238,7 @@ To loot (M - a facehugger):
 hugger-gag is a ballgag. hugger-gag is unique. a hugger-gag is biological. The printed name of hugger-gag is "[clothing-title-before]facehugging facehugger[clothing-title-after]". The text-shortcut of hugger-gag is "fhg". Understand "face", "hugging", "facehugging" as hugger-gag. A hugger-gag has a number called charge.
 
 Definition: hugger-gag is transformation-proteted: decide yes.
+Definition: hugger-gag is tearable: decide no. [NPCs can't remove it to use your mouth]
 Report taking off hugger-gag:
 	say "You discard the inert facehugger, and it drops to the ground, lifeless.";
 	only destroy the noun.
@@ -288,6 +289,7 @@ A hugger-panties is a kind of knickers. Understand "hugging" as hugger-panties. 
 
 Definition: a hugger-panties is egg-fathering: decide yes.
 Definition: a hugger-panties is transformation-proteted: decide yes.
+Definition: a hugger-panties is tearable: decide no. [NPCs can't remove it to use your orifices]
 Report taking off a hugger-panties:
 	say "You discard the inert facehugger, and it drops to the ground, lifeless.";
 	only destroy the noun.

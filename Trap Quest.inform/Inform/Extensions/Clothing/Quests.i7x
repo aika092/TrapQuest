@@ -1432,6 +1432,8 @@ banish-wisp-quest is a wisp quest. The printed name of banish-wisp-quest is "cho
 drink-wisp-quest is a wisp quest. The printed name of drink-wisp-quest is "empty all your drinks".
 Definition: drink-wisp-quest is appropriate: decide no.
 
+swim-wisp-quest is a wisp quest. The printed name of swim-wisp-quest is "go for a swim".
+
 
 A wisp trigger is a kind of thing.
 
@@ -1675,6 +1677,9 @@ The quest listing rules is a rulebook.
 Carry out QuestRecalling:
 	now total-quests-listed is 0;
 	follow the quest listing rules;
+	repeat with M running through alive undefeated intelligent monsters:
+		if the current-errand of M is not no-errand and the current-errand of M is not rejected-errand:
+			say "You were given a quest by [NameDesc of M]: [RequestAssign of M]";
 	repeat with C running through worn clothing:
 		let Q be the quest of C;
 		if Q is not no-clothing-quest and (Q is persistent or C is cursed):

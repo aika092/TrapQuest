@@ -1,6 +1,6 @@
 Shirt by Dresses begins here.
 
-A shirt is a kind of overdress. A shirt is usually unskirted. A shirt is usually fully covering. A shirt is usually manly. A shirt is usually only arm covering. A shirt is usually not-top-displacable.
+A shirt is a kind of overdress. A shirt is usually unskirted. A shirt is usually fully covering. A shirt is usually manly. A shirt is usually only arm covering. A shirt is usually not-top-displacable. Understand "shirt" as a shirt.
 
 To decide which number is the initial outrage of (C - a shirt):
 	decide on 0.
@@ -123,29 +123,27 @@ Definition: a polo shirt is pink themed: decide yes.
 
 Part 5 - Torn Shirt
 
-A torn shirt is a kind of shirt. A torn shirt is usually very low cut. The printed name of torn shirt is usually "[clothing-title-before]torn shirt[clothing-title-after]". The text-shortcut of torn shirt is "trs".
+torn-shirt is a shirt. torn-shirt is very low cut. The printed name of torn-shirt is "[clothing-title-before]torn shirt[clothing-title-after]". The text-shortcut of torn-shirt is "trs". Understand "torn" as torn-shirt.
 
 Figure of torn shirt is the file "Items/Clothes/Upper/Shirts/shirt2.png".
 
-There is 1 torn shirt.
-
-To decide which figure-name is clothing-image of (C - a torn shirt):
+To decide which figure-name is clothing-image of (C - torn-shirt):
 	decide on figure of torn shirt.
 
-To say ClothingDesc of (C - a torn shirt):
+To say ClothingDesc of (C - torn-shirt):
 	say "This longsleeved dark shirt would be very modest if it wasn't for the torn strips over the breasts, leaving a lot of cleavage to be shown.".
 
-To say ShortDesc of (C - a torn shirt):
+To say ShortDesc of (C - torn-shirt):
 	say "torn shirt".
-To say MediumDesc of (C - a torn shirt):
+To say MediumDesc of (C - torn-shirt):
 	say "provocative torn shirt".
 
-To decide which number is the initial outrage of (C - a torn shirt):
+To decide which number is the initial outrage of (C - torn-shirt):
 	decide on 4.
 
-To decide which number is the adult-influence of (C - a torn shirt):
+To decide which number is the adult-influence of (C - torn-shirt):
 	decide on 1.
 
-Definition: a torn shirt is black themed: decide yes.
+Definition: torn-shirt is black themed: decide yes.
 
 Shirt ends here.

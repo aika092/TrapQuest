@@ -211,114 +211,118 @@ To compute spell outrageousness reaction of (M - a monster) to (S - a magic-spel
 			if diaper quest is 0, compute disapproval of M;
 			otherwise compute cringe disapproval of M.
 
-A game universe initialisation rule:
-	choose a blank row in the Table of Possible Incantations;
-	now the phrase entry is "love to cum";
-	now the naughtiness entry is 4;
-	if diaper quest is 0:
+
+incantations-initialised is initially false.
+A game universe initialisation rule (this is the incantation initialisation rule):
+	if incantations-initialised is false: [allows us to call it early without double-calling it]
+		now incantations-initialised is true;
 		choose a blank row in the Table of Possible Incantations;
-		now the phrase entry is "love having anal orgasms";
-		now the naughtiness entry is 6;
-		choose a blank row in the Table of Possible Incantations;
-		now the phrase entry is "love cock";
-		now the naughtiness entry is 7;
-		choose a blank row in the Table of Possible Incantations;
-		now the phrase entry is "spread my legs for anyone any time";
-		now the naughtiness entry is 8;
-		choose a blank row in the Table of Possible Incantations;
-		now the phrase entry is "drink cum out of used condoms";
-		now the naughtiness entry is 9;
-		choose a blank row in the Table of Possible Incantations;
-		now the phrase entry is "suck cock for cash";
-		now the naughtiness entry is 10;
-		choose a blank row in the Table of Possible Incantations;
-		now the phrase entry is "fuck [GrossMates]";
-		now the naughtiness entry is 11;
-	if a2m fetish > 0:
-		choose a blank row in the Table of Possible Incantations;
-		now the phrase entry is "let guys clean their cocks off in my mouth after they've finished in my asshole";
-		now the naughtiness entry is 12;
-	if a2m fetish > 1:
-		choose a blank row in the Table of Possible Incantations;
-		now the phrase entry is "love drinking anal creampies";
-		now the naughtiness entry is 13;
-	if watersports fetish is 1:
-		choose a blank row in the Table of Possible Incantations;
-		now the phrase entry is "am a disgusting piss drinking human urinal";
-		now the naughtiness entry is 14;
-	if interracial fetish is 1:
-		choose a blank row in the Table of Possible Incantations;
-		now the phrase entry is "am addicted to big [BlackCock]";
-		now the naughtiness entry is 9;
-	if bukkake fetish is 1:
-		choose a blank row in the Table of Possible Incantations;
-		now the phrase entry is "want to be covered in thick sticky man cream";
-		now the naughtiness entry is 11;
-	if weight gain fetish is 1:
-		choose a blank row in the Table of Possible Incantations;
-		now the phrase entry is "am a fat disgusting pig";
-		now the naughtiness entry is 6;
-	if pregnancy fetish > 0:
-		choose a blank row in the Table of Possible Incantations;
-		now the phrase entry is "can't wait to be knocked up";
-		now the naughtiness entry is 5;
-	if artificial enhancements fetish is 1:
-		choose a blank row in the Table of Possible Incantations;
-		now the phrase entry is "try to be the best fuck doll I can be";
-		now the naughtiness entry is 7;
-		choose a blank row in the Table of Possible Incantations;
-		now the phrase entry is "want to have massive fake ass cheeks and even bigger cock pillow tits";
-		now the naughtiness entry is 9;
-	if ungape is 0 and diaper quest is 0:
-		choose a blank row in the Table of Possible Incantations;
-		now the phrase entry is "have assfucked so many cocks that my butthole won't close up any more";
-		now the naughtiness entry is 10;
-	if mythical creatures fetish is 1:
-		choose a blank row in the Table of Possible Incantations;
-		now the phrase entry is "am so loose I can take a horsecock";
-		now the naughtiness entry is 11;
-	if egg laying fetish is 1:
-		choose a blank row in the Table of Possible Incantations;
-		now the phrase entry is "love laying eggs from my butthole";
-		now the naughtiness entry is 9;
-	if diaper lover > 0:
-		choose a blank row in the Table of Possible Incantations;
-		now the phrase entry is "love thick diapers";
-		now the naughtiness entry is 6;
-		choose a blank row in the Table of Possible Incantations;
-		now the phrase entry is "love my wet nappies";
-		now the naughtiness entry is 9;
-		choose a blank row in the Table of Possible Incantations;
-		now the phrase entry is "pee myself for fun";
-		now the naughtiness entry is 10;
-		choose a blank row in the Table of Possible Incantations;
-		now the phrase entry is "need a hard spanking on my naughty bottom";
-		now the naughtiness entry is 7;
-		choose a blank row in the Table of Possible Incantations;
-		now the phrase entry is "deserve to be punished for touching my no-no without permission";
-		now the naughtiness entry is 8;
-		choose a blank row in the Table of Possible Incantations;
-		now the phrase entry is "need to be kept in super-thick Pampies";
-		now the naughtiness entry is 7;
-		choose a blank row in the Table of Possible Incantations;
-		now the phrase entry is "am going tinkles in my diaper";
-		now the naughtiness entry is 11;
-		choose a blank row in the Table of Possible Incantations;
-		now the phrase entry is "want my mommy";
-		now the naughtiness entry is 5;
-		choose a blank row in the Table of Possible Incantations;
-		now the phrase entry is "need to go tinkles";
-		now the naughtiness entry is 3;
-		choose a blank row in the Table of Possible Incantations;
-		now the phrase entry is "have my squirt-squirt cummies inside my Pampies";
-		now the naughtiness entry is 13;
-		if diaper messing >= 3:
+		now the phrase entry is "love to cum";
+		now the naughtiness entry is 4;
+		if diaper quest is 0:
 			choose a blank row in the Table of Possible Incantations;
-			now the phrase entry is "love doing stinkies in my panties";
+			now the phrase entry is "love having anal orgasms";
+			now the naughtiness entry is 6;
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "love cock";
+			now the naughtiness entry is 7;
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "spread my legs for anyone any time";
+			now the naughtiness entry is 8;
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "drink cum out of used condoms";
+			now the naughtiness entry is 9;
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "suck cock for cash";
+			now the naughtiness entry is 10;
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "fuck [GrossMates]";
+			now the naughtiness entry is 11;
+		if a2m fetish > 0:
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "let guys clean their cocks off in my mouth after they've finished in my asshole";
+			now the naughtiness entry is 12;
+		if a2m fetish > 1:
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "love drinking anal creampies";
+			now the naughtiness entry is 13;
+		if watersports fetish is 1:
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "am a disgusting piss drinking human urinal";
 			now the naughtiness entry is 14;
+		if interracial fetish is 1:
 			choose a blank row in the Table of Possible Incantations;
-			now the phrase entry is "get turned on when I poop my panties";
-			now the naughtiness entry is 16.
+			now the phrase entry is "am addicted to big [BlackCock]";
+			now the naughtiness entry is 9;
+		if bukkake fetish is 1:
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "want to be covered in thick sticky man cream";
+			now the naughtiness entry is 11;
+		if weight gain fetish is 1:
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "am a fat disgusting pig";
+			now the naughtiness entry is 6;
+		if pregnancy fetish > 0:
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "can't wait to be knocked up";
+			now the naughtiness entry is 5;
+		if artificial enhancements fetish is 1:
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "try to be the best fuck doll I can be";
+			now the naughtiness entry is 7;
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "want to have massive fake ass cheeks and even bigger cock pillow tits";
+			now the naughtiness entry is 9;
+		if ungape is 0 and diaper quest is 0:
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "have assfucked so many cocks that my butthole won't close up any more";
+			now the naughtiness entry is 10;
+		if mythical creatures fetish is 1:
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "am so loose I can take a horsecock";
+			now the naughtiness entry is 11;
+		if egg laying fetish is 1:
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "love laying eggs from my butthole";
+			now the naughtiness entry is 9;
+		if diaper lover > 0:
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "love thick diapers";
+			now the naughtiness entry is 6;
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "love my wet nappies";
+			now the naughtiness entry is 9;
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "pee myself for fun";
+			now the naughtiness entry is 10;
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "need a hard spanking on my naughty bottom";
+			now the naughtiness entry is 7;
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "deserve to be punished for touching my no-no without permission";
+			now the naughtiness entry is 8;
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "need to be kept in super-thick Pampies";
+			now the naughtiness entry is 7;
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "am going tinkles in my diaper";
+			now the naughtiness entry is 11;
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "want my mommy";
+			now the naughtiness entry is 5;
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "need to go tinkles";
+			now the naughtiness entry is 3;
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "have my squirt-squirt cummies inside my Pampies";
+			now the naughtiness entry is 13;
+			if diaper messing >= 3:
+				choose a blank row in the Table of Possible Incantations;
+				now the phrase entry is "love doing stinkies in my panties";
+				now the naughtiness entry is 14;
+				choose a blank row in the Table of Possible Incantations;
+				now the phrase entry is "get turned on when I poop my panties";
+				now the naughtiness entry is 16.
 
 [
 IDEAS FOR SPELLS:
@@ -330,6 +334,8 @@ Body size / slutty stats reduce
 ]
 
 magic-mapping is a magic-spell.
+To decide which number is the raw-magic-cost of (S - magic-mapping):
+	decide on 5.
 Definition: magic-mapping is staller: decide no.
 To say MagicSpellEffect of (S - magic-mapping):
 	say "conjure a mental map of the entire region".

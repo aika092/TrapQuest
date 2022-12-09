@@ -677,7 +677,7 @@ To compute periodic effect of (C - a trainee bra):[remember that training-progre
 				ProgressUp senior robobellboy;
 			otherwise:
 				say "Your [printed name of C] [if the training-progress of C < 1]tightens and emits a short tone[otherwise]emits [the training-progress of C + 1] short tones, tightening slightly each time[end if]. The flexible lining of the bra begins to vibrate, secreting a warm fluid that it simultaneously massages into your [BreastDesc]. It feels way better than it has any right to, and when it finally stops, you're sure your chest is a lot more sensitive than it used to be.";
-				increase the raw sensitivity of breasts by 1;
+				BreastsSensitivityUp 1;
 				TitFuckAddictUp 1;
 				if lactation fetish is 1, increase the lactation rate of breasts by 1;
 				arouse 100 + (the sensitivity of breasts * 10);
@@ -880,6 +880,8 @@ To transform (C - black-lace-bra):
 	otherwise:
 		say "Paper bills appear on the bra, sewn on and completely unremovable, but looking as though they've just been tucked into the cups!";
 		now C is monified.
+To uniquely destroy (C - black-lace-bra):
+	now C is not monified.
 
 [Carry out taking black-lace-bra:
 	if the noun is in Hotel20 and the player is getting unlucky, now the noun is provocation.]

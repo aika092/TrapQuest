@@ -72,8 +72,12 @@ A time based rule (this is the iron-maiden-punishment rule):
 			if D is diaper, compute automatic state check of D;
 			say "The feathers [one of]begin to [or][stopping]twist back and forth, tickling your armpits, making you [one of]shudder[or]wiggle and squirm[or]writhe around[then at random][one of], making it difficult to hold onto your bladder[if diaper messing >= 3] and bowels[end if][or][stopping]!";
 			if diaper messing >= 3, compute soiling;
+			let T be "The tickling makes your muscles involuntarily clench, and";
+			check sudden spit and expulsion with reason T;
 		otherwise:
 			say "The feathers [one of]begin to [or][stopping]twist back and forth, tickling your armpits, making you [one of]shudder[or]wiggle and squirm[or]writhe around[then at random].";
+			let T be "The tickling makes your muscles involuntarily clench, and";
+			check sudden spit and expulsion with reason T;
 			passively stimulate arms from M times 3;
 			if the player is horny:
 				say "The ghostly hands eagerly finger your [BreastDesc] and [genitals]!";
@@ -123,7 +127,7 @@ To trigger (Y - a cage trap):
 		now Y is not untriggered;
 		now Y is triggered;
 		now Y is revealed;
-		now the reset-timer of Y is 30;
+		now the reset-timer of Y is a random number between 30 and 60;
 		now the stance of the player is 1;
 		repeat with M running through reactive monsters:
 			say TriggeredTrapReactFlav of M.

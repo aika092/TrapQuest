@@ -46,7 +46,7 @@ To DoseDown (B - a bottle):
 To DoseDown (B - a bottle) by (N - a number):
 	if the doses of B > 0:
 		decrease the doses of B by N;
-		if the doses of B < 0, now the doses of B is 0;
+		if the doses of B <= 0, DoseEmpty B;
 		force inventory-focus redraw. [Force inventory window redraw]
 
 To DoseFill (B - a bottle):
@@ -55,13 +55,18 @@ To DoseFill (B - a bottle):
 		force inventory-focus redraw. [Force inventory window redraw]
 
 To SetDose (B - a bottle) to (N - a number):
-	if the doses of B is not N:
-		now the doses of B is N;
-		if the doses of B > the max-doses of B, now the doses of B is the max-doses of B;
-		if the doses of B < 0, now the doses of B is 0;
-		force inventory-focus redraw. [Force inventory window redraw]
+	if N is 0:
+		DoseEmpty B;
+	otherwise:
+		if the doses of B is not N:
+			now the doses of B is N;
+			if the doses of B > the max-doses of B, now the doses of B is the max-doses of B;
+			if the doses of B < 0, now the doses of B is 0;
+			force inventory-focus redraw. [Force inventory window redraw]
 
 To DoseEmpty (B - a bottle):
+	now B is player-origin;
+	cancel father material of B;
 	if the doses of B is not 0:
 		now the doses of B is 0;
 		force inventory-focus redraw. [Force inventory window redraw]
@@ -103,7 +108,7 @@ A bottle has a drink-colour called the fill-colour. Understand the fill-colour p
 
 To say PotionType of (B - a bottle):
 	say "a [fill-colour of B] liquid";
-	if the fill-type of B is remembered, say " ([FillName the fill-type of B][if the fill-colour of B is creamy and the number of things inseminating B is 1] from the [MediumDesc of a random thing inseminating B][end if])".
+	if the fill-type of B is remembered, say " ([FillName the fill-type of B][if the fill-colour of B is creamy and the number of things inseminating B > 0] from the [list of things inseminating B][end if])".
 
 To say ShortDesc of (B - a bottle):
 	if the fill-type of B is remembered, say "[FillName the fill-type of B]";
@@ -118,7 +123,7 @@ A bottle can be player-origin or monster-origin. A bottle is usually player-orig
 
 [!<Bottle>@<WhichNumberIsTheFillType>+
 
-This core function allows us to get a number from the table of drinks table based on the colour of the bottle.
+This core function allows us to get a number from the table of drinks based on the colour of the bottle.
 
 +@!]
 To decide which number is the fill-type of (B - a bottle):

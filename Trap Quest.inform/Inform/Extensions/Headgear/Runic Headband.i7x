@@ -73,7 +73,7 @@ To compute class outfit of (H - runic headband):
 
 [Gotta allow the player to get those ritual beads, even if the headband appeared via roleplay mechanic]
 Report wearing runic headband:
-	if ritual-beads is off-stage:
+	if ritual-beads is off-stage and diaper quest is 0:
 		now ritual-beads is in the location of the player;
 		say "A set of [ritual-beads] appears on the ground in front of you!";
 		compute autotaking ritual-beads.

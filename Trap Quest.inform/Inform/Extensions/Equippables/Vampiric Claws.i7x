@@ -18,7 +18,7 @@ To say ShortDesc of (W - vampiric claws):
 	say "vampiric claws".
 
 Definition: vampiric claws is removable:
-	if there is a worn wood-dong, decide yes;
+	if wood-dong is worn, decide yes;
 	decide no.
 
 To decide which number is the slap damage improvement of (W - vampiric claws):

@@ -99,4 +99,7 @@ To say ShortDesc of (C - tight-grey-dress):
 To decide which number is the initial outrage of (C - tight-grey-dress):
 	decide on 3.
 
+A diaper quest fix rule:
+	now tight-grey-dress is in Holding Pen;
+
 Maternity Dress ends here.

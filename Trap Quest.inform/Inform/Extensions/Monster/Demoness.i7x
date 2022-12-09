@@ -132,6 +132,8 @@ To say MonsterComment of (M - a demoness):
 To set up (M - a demoness):
 	reset M;
 	now the monstersetup of M is 1;
+	add balance-potion to the tradableItems of M, if absent;
+	add balance-potion to the taxableItems of M, if absent;
 	add infernal gem to the banishItems of M, if absent;
 	add dildo-heels to the banishItems of M, if absent;
 	now the raw difficulty of M is the starting difficulty of M;
@@ -289,9 +291,8 @@ To compute perception of (M - a demoness):
 	let T be 1;
 	repeat with H running through worn heels:
 		if H is dildo-heels or the heel-height of H > 3, now T is 0;
-	if the player is flying:
-		say "The demoness has noticed the player flying, this should be impossible since [he of M] lives in the woods. Report the bug to Aika please!";
-		anger M;
+	if the current-errand of M is completed and M is not uniquely unfriendly:
+		compute errand completion of M;
 	otherwise if the latex-transformation of the player > 3:
 		say "[big he of M] doesn't seem interested for some reason.";
 		bore M;
@@ -1727,6 +1728,12 @@ To UnidentifiablePosterReaction of (M - a demoness) with (P - a poster):
 
 To say RewardFlav of (M - a demoness) for (T - a thing):
 	say "[speech style of M]'[one of]Don't say I never do anything for you[or]A gift, from the demon plane[cycling].'[roman type][line break][BigNameDesc of M] summons a [T] on the ground in front of you.".
+
+To say MonsterOfferAcceptFlav of (M - a demoness) to (T - a thing):
+	if M is unfriendly:
+		say "[BigNameDesc of M] smirks.[line break][speech style of M]'You hope to appease me with this? [if the bartering value of T for M + the favour of M > the aggro limit of M + 4]Fufufu, well, this time, you have read the room well[otherwise if the bartering value of T for M + the favour of M > the aggro limit of M]Perhaps for a while, it shall suffice[otherwise]You hope to buy yourself a few minutes['] grace with this? Go on then, run. Let's see how far you get[end if].'[roman type][line break]";
+	otherwise:
+		say "[BigNameDesc of M] nods approvingly.[line break][speech style of M]'I accept your tribute.'[roman type][line break]".
 
 To say OfferFriendshipFlav of (M - a demoness):
 	say "[speech style of M][if M is guardian]'Come now, pet, let us take a stroll together[otherwise if M is buddy]'I find my fondness for you is growing. Interesting[otherwise]'I suppose you're not the worst mortal I've ever [one of]met[or]encountered[or]known[stopping][end if].'[roman type][line break]".

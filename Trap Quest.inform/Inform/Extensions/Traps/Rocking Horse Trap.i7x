@@ -85,13 +85,18 @@ Carry out rocking:
 		now Y is not grabbing the player;
 	otherwise if the player is not diapered:
 		let K be a random worn knickers;
-		if K is knickers:
+		let TP be a random worn tail plug;
+		if K is clothing:
 			say "As you rock, you feel your [ShortDesc of K] getting lighter and lighter. You look down just in time to witness it fade from existence!";
 			destroy K;
+		otherwise if TP is clothing:
+			say "As you rock, you feel your [ShortDesc of TP] getting looser. You look down just in time to witness it plop out, onto the ground!";
+			now TP is in the location of the player;
 		otherwise:
 			let D be a random eligible diaper;
 			if D is diaper:
 				say "As you rock, you feel your butt pushed slightly upwards by soft padding as a [ShortDesc of D] appears on you!";
+				PinkWardrobeUnclash D;
 				summon D cursed with quest;
 				cutshow figure of Rocking Horse Cutscene for Y;
 	otherwise if the TrapNo of Y is 3 and tough-shit is 1 and the DQBulk of D >= the DQBulk of the player:

@@ -2,6 +2,8 @@ Skeleton Key by Consumables begins here.
 
 An unlock-key is a kind of collectible. Understand "key" as an unlock-key. The tradability of an unlock-key is usually 13.
 
+Definition: an unlock-key is immune to change: decide yes.
+
 A specific-key is a kind of unlock-key. There are 8 specific-keys. The printed name of specific-key is "[TQlink of item described]key[lock-desc][shortcut-desc][TQxlink of item described][verb-desc of item described]".
 When play begins:
 	let V be 1;
@@ -121,6 +123,7 @@ The printed name of academy-toilet-key is "[TQlink of item described]academy toi
 To say ExamineDesc of (B - academy-toilet-key):
 	say "This key unlocks the padlocks in the academy's toilets.".
 To decide which number is the bartering value of (K - academy-toilet-key) for (M - headmistress):
+	if M is unfriendly, decide on 1;
 	decide on 10.
 To compute resolution of (M - headmistress) taking (T - academy-toilet-key):
 	if M is unfriendly:
@@ -131,7 +134,7 @@ To compute resolution of (M - headmistress) taking (T - academy-toilet-key):
 To say FriendlyOfferFlav of (T - academy-toilet-key):
 	say "'I'm all done now.'".
 To say MonsterOfferAcceptFlav of (M - headmistress) to (T - academy-toilet-key):
-	say "[speech style of M]'Good [boy of the player].'".
+	say "[speech style of M]'Good [boy of the player].'[roman type][line break]".
 
 
 human-toilet-key is an unlock-key. human-toilet-key is in Holding Pen. [It doesn't start off-stage so that we can easily determine if it's been used yet or not.]

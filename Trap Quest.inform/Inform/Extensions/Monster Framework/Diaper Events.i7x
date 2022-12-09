@@ -236,6 +236,8 @@ Definition: a monster is diaper change chastity cummies rewarding: decide no.
 
 Definition: a monster is diaper change during cummies rewarding: decide no.
 
+Definition: a monster is diaper change during special ready: decide no.
+
 Definition: a monster (called M) is diaper change complete cummies rewarding:
 	if M is intelligent and M is diaper change cummies rewarding, decide yes;
 	decide no.
@@ -259,7 +261,8 @@ To compute diaper change of (M - a monster):
 		now current-diaper is a random top level protection clothing; [Top level takes priority]
 		if current-diaper is worn no protection overdress, now current-diaper is nothing; [These are allowed to stay around!]
 		if (current-diaper is nothing or current-diaper is chastity bond) and there are worn knickers, now current-diaper is a random worn knickers; [All knickers MUST be removed]
-		if current-diaper is unmessed unremovable knickers:
+		if (current-diaper is nothing or current-diaper is chastity bond) and there is a worn tail plug, now current-diaper is a random worn tail plug;
+		if current-diaper is unmessed unremovable clothing:
 			say "[speech style of M]'I can't remove that [ShortDesc of current-diaper]. Damn, I guess I'll have to leave you like this, for now.'[roman type][line break]";
 			satisfy M;
 			dislodge M;
@@ -298,15 +301,19 @@ To compute diaper change of (M - a monster):
 					now M is carrying current-diaper;
 					dislodge current-diaper;
 					if current-diaper is diaper, DiaperAddictUp 1;
-					rule succeeds;
+					if current-diaper is not diaper-stack, rule succeeds; [we remove diaper stack and put on new diaper in same turn to avoid loads of glitches]
 			otherwise:
 				say DiaperChangeRemovalFlav of M;
 				if current-diaper is not diaper-stack, now M is carrying current-diaper;
 				dislodge current-diaper;
+				now current-diaper is temporarily-removed; [NPC will try to put this back on afterwards]
 				if current-diaper is diaper, DiaperAddictUp 1;
 				if current-diaper is not diaper-stack, rule succeeds; [we remove diaper stack and put on new diaper in same turn to avoid loads of glitches]
 		otherwise if old-diaper is diaper and M is diaper change during cummies rewarding and the player is able to orgasm so soon and the number of worn chastity bond is 0: [player was wearing a diaper, what a good girl! she gets cummies]
 			compute diaper change during cummies reward of M;
+			rule succeeds;
+		otherwise if M is diaper change during special ready: [the monster does something unique in the middle of a diaper change]
+			compute diaper change during special of M;
 			rule succeeds;
 		if new-diaper is nothing: [If we just did a double diaper then we skip all this]
 			say DiaperPowderFlav of M;
@@ -371,15 +378,14 @@ To compute diaper change of (M - a monster):
 		repeat with C running through temporarily-removed diaper covers carried by M: [diaper covers need to go on first]
 			if C is actually summonable:
 				say "[BigNameDesc of M] replaces your [C].";
-				only summon C;
-			if C is not worn, destroy C; [Something went wrong, but we still want this item to be available in the game universe]
+				now C is worn by the player;
 		repeat with C running through temporarily-removed clothing carried by M:
 			if C is actually summonable:
 				say "[BigNameDesc of M] replaces your [C].";
-				only summon C;
-			if C is not worn, destroy C; [Something went wrong, but we still want this item to be available in the game universe]
+				now C is worn by the player;
 		repeat with C running through worn crotch-displaced clothing:
 			compute M replacing C;
+		validate layers; [just in case anything fucky happened with clothing layers]
 		satisfy M;
 		let vm be a random video-monitor in the location of the player;
 		if vm is video-monitor and the video-caller of vm is not the throne and vm is not recording-disgrace:
@@ -412,6 +418,9 @@ To compute diaper change during cummies reward of (M - a monster):
 	anally orgasm shamefully;
 	diaperaddictup 1.
 
+To compute diaper change during special of (M - a monster):
+	say "BUG - [NameDesc of M] has not had a scene coded for giving the player a mid-diaper-change special interaction.".
+
 To compute diaper change complete cummies reward of (M - a monster):
 	say "[speech style of M]'[one of]You've been such a good baby recently, I think you need a little reward.'[or]Time for your squirt squirt, for being such a good baby!'[stopping][roman type][line break][BigNameDesc of M] starts to rub you through the front of your diaper. You soon feel a certain warmth rising, and you [if the sex addiction of the player > 12]sigh in glee and [otherwise]can't help but[end if] explode an orgasm into your new nappy.";
 	vaginally orgasm shamefully; [This automatically gives diaper addiction because the player will be wearing a total protection diaper at this moment.]
@@ -419,7 +428,7 @@ To compute diaper change complete cummies reward of (M - a monster):
 	FavourDown M by 2.
 
 To say DiaperChangeRemovalFlav of (M - a monster):
-	say "[BigNameDesc of M] [if current-diaper is diaper]slowly pulls your [ShortDesc of current-diaper] away[otherwise]rips off your [ShortDesc of current-diaper][end if][if current-diaper is messed knickers]. Taking out several baby wipes, [he of M] gently but efficiently wipes your bottom down until it is completely clean[end if].".
+	say "[BigNameDesc of M] [if current-diaper is diaper]slowly pulls your [ShortDesc of current-diaper] away[otherwise]eases off your [ShortDesc of current-diaper][end if][if current-diaper is messed knickers]. Taking out several baby wipes, [he of M] gently but efficiently wipes your bottom down until it is completely clean[end if].".
 
 To say DiaperPowderFlav of (M - a monster):
 	say "".
@@ -518,7 +527,7 @@ To decide which number is the spanking length of (M - a monster):
 	decide on a random number between 2 and 4.
 
 To decide which number is the spank strength of (M - a monster):
-	decide on 3.
+	decide on 2 + (the difficulty of M / 6).
 
 Definition: a monster is eager to enhance the spanking:
 	if a random number between 0 and 2 < the number of ass covering clothing, decide yes;
@@ -625,10 +634,10 @@ To compute unique masturbation effect of (M - a monster):
 	if D is diaper and refractoryperiod <= 0:
 		say "[one of]The gross squishiness of your messy diaper being rubbed makes you cringe and shudder as it oozes around your loins.[or][or][cycling]";
 		humiliate 150;
-		DelicateUp 1.
+		SlowDelicateUp 1.
 
 To decide which number is the masturbation length of (M - a monster):
-	decide on a random number between 3 and 5.
+	decide on a random number between 4 and 7.
 
 To decide which number is the masturbation skill of (M - a monster):
 	decide on the difficulty of M * 100.
@@ -1150,7 +1159,7 @@ To compute MessyDiaperFacesitBreathe of (T - an object):
 		say MessyDiaperFacesitBreatheDiaperAddictionFlav of T;
 		SilentlyDiaperAddictUp 1;
 	otherwise:
-		DelicateUp 1.
+		SlowDelicateUp 1.
 
 To say MessyDiaperFacesitBreatheFlav of (T - an object):
 	say "You [if the player is not tolerating messy diapers]can't help but [end if][one of]breathe[or]inhale[cycling] [one of]through the disgusting soiled padding[or]the foul odour of the toxic sludge on the other side of the diaper[or]the concentrated stench of the messy diaper[or]the horrid fumes of the dirty nappy[in random order] [one of]pressed into your face[or]smushed up against your nostrils[or]that your nose is buried in[in random order].";
@@ -1195,7 +1204,7 @@ To compute WetDiaperFacesitBreathe of (T - an object):
 			say WetDiaperFacesitBreatheDiaperAddictionFlav of T;
 			SilentlyDiaperAddictUp 1;
 		otherwise:
-			DelicateUp 1.
+			SlowDelicateUp 1.
 
 To say WetDiaperFacesitBreatheFlav of (T - an object):
 	say "You struggle to [one of]breathe[or]inhale[cycling] [one of]through the warm soggy padding[or]your air through the wet diaper[or]enough oxygen through the [urine]-soaked diaper[or]in through the soiled nappy[in random order] [one of]pressed into your face[or]smushed up against your nostrils[or]that your nose is buried in[in random order].";

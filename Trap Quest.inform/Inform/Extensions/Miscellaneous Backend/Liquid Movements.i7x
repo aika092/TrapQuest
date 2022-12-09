@@ -115,8 +115,11 @@ To LiquidSoak (L - water) On (C - a clothing):
 
 [The SQUIRT function is the triage function we should ALWAYS call FIRST when liquid comes near it. The function should be able to determine itself whether the object is eligible for being considered for soaking based on liquid type and fetish settings.]
 To SilentSquirt (L - a liquid-object) On (C - an object) by (N - a number):
-	now C is soaked;
-	if C is thighs or bukkake fetish is 1 or L is water, UniqueSquirt L on C by N. [only thighs accept cum when bukkake fetish is disabled]
+	if C is nothing:
+		UniqueSquirt L on C by N;
+	otherwise:
+		now C is soaked;
+		if C is thighs or bukkake fetish is 1 or L is water, UniqueSquirt L on C by N. [only thighs accept cum when bukkake fetish is disabled]
 
 [This version of the SQUIRT function is for when the liquid has already hit somewhere else and is now continuing its journey elsewhere, going from the OUTSIDE inwards.]
 To ContinuedSquirt (L - a liquid-object) On (C - an object) by (N - a number):
@@ -232,7 +235,7 @@ To UniqueSquirt (L - a liquid-object) On (C - Face) by (N - a number):
 			otherwise:
 				say "The [variable L] washes all the make-up from your face. ";
 			FaceDown N;
-	if N > 0 and breasts is unsoaked: [leftover liquid drips down to BREASTS]
+	if N > 0 and breasts is unsoaked and the player is upright: [leftover liquid drips down to BREASTS]
 		say "[announced L] drips down your chin and onto your [BreastDesc].";
 		ContinuedSquirt L on Breasts by N;
 		now N is 0;
@@ -362,7 +365,7 @@ To UniqueSquirt (L - a liquid-object) On (C - Breasts) by (N - a number):
 				if BLLC is somewhat fluid vulnerable, say "[announced L] flows into your [ShortDesc of BLLC].";
 				ContinuedDribble L on BLLC by N;
 				now N is 0;
-	if N > 0 and belly is unsoaked:
+	if N > 0 and belly is unsoaked and the player is upright:
 		say "[announced L] drips down your chest and towards your [BellyDesc].";
 		ContinuedDribble L on Belly by N;
 		now N is 0;
@@ -398,7 +401,7 @@ To UniqueSquirt (L - a liquid-object) On (C - Belly) by (N - a number):
 			[say "[announced L] oozes into your [ShortDesc of BC].";]
 			ContinuedDribble L on BC by N;
 			now N is 0;
-	if N > 0 and hips is unsoaked:
+	if N > 0 and hips is unsoaked and the player is upright:
 		say "[announced L] drips down your belly and to your loins.";
 		ContinuedDribble L on Hips by N;
 		now N is 0;

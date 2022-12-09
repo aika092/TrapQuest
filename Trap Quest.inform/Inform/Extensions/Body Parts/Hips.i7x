@@ -251,8 +251,11 @@ To say TotalDesc of hips:
 	otherwise:
 		say "Your buttcheeks are currently completely visible.".
 
-To say HipModestyFlav of (C - a clothing): [This is purely flavour - if hip modesty makes an outfit more outrageous, this should be coded directly into the outrage influence.]
-	if the hipModesty of C is 0, say "The provocative cut of the skirt [if C is worn]exposes your thighs and hips[otherwise]would leave your thighs and hips exposed[end if].";
+To say HipModestyFlav of (C - a clothing):
+	say "". [Anything we would have to say about hip covering is obvious, unless the item is a skirt, or particularly special.]
+
+To say HipModestyFlav of (C - a skirt): [This is purely flavour - if hip modesty makes an outfit more outrageous, this should be coded directly into the outrage influence.]
+	if the hipModesty of C is 0, say "The provocative cut [if C is skirted]of the skirt [end if][if C is worn]exposes your thighs and hips[otherwise]would leave your thighs and hips exposed[end if].";
 	otherwise say "The shape of your hips [if C is worn]is still[otherwise]will still be[end if] visible through the fabric.".
 
 To say AssDesc:

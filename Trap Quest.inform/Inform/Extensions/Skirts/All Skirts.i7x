@@ -516,29 +516,29 @@ Definition: tartan miniskirt is orange themed: decide yes.
 Definition: tartan miniskirt is layer-concealing: decide no.
 Definition: tartan miniskirt is partially-layer-concealing: decide yes.
 
-A naughty skirt is a kind of skirt. A naughty skirt is usually leather. A naughty skirt is transformation-rare. A naughty skirt is usually butt-windowed.
+naughty-skirt is a skirt. naughty-skirt is leather. naughty-skirt is transformation-rare. naughty-skirt is butt-windowed.
 
-There is 1 naughty skirts. Printed name of naughty skirt is "[clothing-title-before]naughty leather skirt[clothing-title-after]". The text-shortcut of naughty skirt is "nls". Figure of naughty skirt is the file "Items/Clothes/Lower/Skirts/naughtyskirt1.jpg".
+Printed name of naughty-skirt is "[clothing-title-before]naughty leather skirt[clothing-title-after]". The text-shortcut of naughty-skirt is "nls". Figure of naughty skirt is the file "Items/Clothes/Lower/Skirts/naughtyskirt1.jpg".
 
-To decide which figure-name is clothing-image of (C - a naughty skirt):
+To decide which figure-name is clothing-image of (C - naughty-skirt):
 	decide on figure of naughty skirt.
 
-To say ClothingDesc of (C - a naughty skirt):
+To say ClothingDesc of (C - naughty-skirt):
 	say "This tight knee length black skirt has a deep groove at the top with laces, which shows off [if diaper quest is 1]what underwear or incontinence aid the wearer has on[otherwise]lots of butt cleavage, and even the wearer's crotch[end if].".
 
-To say ShortDesc of (Y - a naughty skirt):
+To say ShortDesc of (Y - naughty-skirt):
 	say "assless leather skirt".
 
-To say MediumDesc of (Y - a naughty skirt):
+To say MediumDesc of (Y - naughty-skirt):
 	say "butt cheek exposing leather skirt".
 
-To decide which number is the initial outrage of (C - a naughty skirt):
+To decide which number is the initial outrage of (C - naughty-skirt):
 	decide on 6.
 
-Definition: a naughty skirt is black themed: decide yes.
-Definition: a naughty skirt is potentially vagina covering: decide no. [ass window is so big, even the vag is exposed]
-Definition: a naughty skirt is potentially asshole covering: decide no.
-Definition: a naughty skirt is potentially-bottom-layer-concealing: decide no. [partially exposing]
+Definition: naughty-skirt is black themed: decide yes.
+Definition: naughty-skirt is potentially vagina covering: decide no. [ass window is so big, even the vag is exposed]
+Definition: naughty-skirt is potentially asshole covering: decide no.
+Definition: naughty-skirt is potentially-bottom-layer-concealing: decide no. [partially exposing]
 
 office skirt is a skirt. Printed name of office skirt is "[clothing-title-before]office skirt[clothing-title-after]". The text-shortcut of office skirt is "os". office skirt is nylon. office skirt is hobble-skirted. office skirt is crotch-skirted.
 

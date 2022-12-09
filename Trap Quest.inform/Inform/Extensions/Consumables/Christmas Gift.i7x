@@ -228,7 +228,7 @@ Carry out unwrapping:
 	destroy the noun.
 
 To decide which number is the bartering value of (T - a christmas gift) for (M - a monster):
-	if M is intelligent:
+	if M is intelligent and M is not student and M is not staff member:
 		let C be a random worn christmas themed dress;
 		if C is clothing:
 			if diaper quest is 1, decide on the initial cringe of C;

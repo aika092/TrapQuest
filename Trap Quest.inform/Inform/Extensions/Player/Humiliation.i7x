@@ -466,8 +466,14 @@ To say DisgracePostReaction strength (S - a number):
 To compute digital reputation damage (T - a text) strength (S - a number) quality (N - a number):
 	if the number of blank rows in the Table of Published Disgraces > 0:
 		decrease N by a random number between 0 and 1;
+		let H be the concealer of face;
+		if H is a thing:
+			now T is " (with your face concealed under [NameDesc of H])";
+			now S is 0;
+		otherwise if face is listed in the armUses of arms:
+			now T is " (with your face partially concealed under your arm)";
+			now S is (S + 1) / 2;
 		now T is "[if N < 1]a low resolution photo[otherwise if N < 3]a high resolution photo[otherwise if N < 5]an animated gif[otherwise]a high quality video[end if] showing [T] [ReputationAttire]";
-		if face is listed in the armUses of arms, now S is (S + 1) / 2;
 		let W be "[if S < a random number between 3 and 5][sexyWebsite][otherwise][sluttyWebsite][end if]";
 		choose a blank row in Table of Published Disgraces;
 		now the content entry is the substituted form of T;

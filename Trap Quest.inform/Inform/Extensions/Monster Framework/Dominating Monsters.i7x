@@ -418,7 +418,7 @@ Check dominating:
 	[if the latex-transformation of the player >= 6, say "You wouldn't feel anything from it, so you don't see the point." instead;]
 	if the player is prone, say "That would be a little hard to do from your knees." instead;
 	if the noun is sex-enslaved and the player is the donator, compute enslaved domination of the noun instead;
-	if the noun is caged and the player is an april 2021 top donator, compute caged domination of the noun instead;
+	if the noun is caged and the player is the donator, compute caged domination of the noun instead;
 	say "You would need to defeat [NameDesc of the noun] first." instead;
 	unless the noun is interested, say "[BigNameDesc of the noun] isn't looking at you right now. Try getting their attention first." instead;
 	now player-fucker is face;[player-fucker is what is used to fuck the monster. Face is merely a default value]

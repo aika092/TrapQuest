@@ -66,10 +66,13 @@ To say MonsterDesc of (M - a fairy):
 To set up (M - a fairy):
 	reset M;
 	now the monstersetup of M is 1;
+	add pink-hair to the tradableItems of M, if absent;
 	add pink-hair to the taxableItems of M, if absent;
+	add womb-potion to the tradableItems of M, if absent;
+	add womb-potion to the taxableItems of M, if absent;
 	if pregnancy fetish is 1:
 		let T be a random birth control for sissies T-shirt;
-		add T to the tradableItems of M, if absent;
+		add T to the taxableItems of M, if absent;
 	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M.
 
@@ -124,14 +127,23 @@ Definition: a fairy (called M) is uniquely unfriendly:
 	decide no.
 
 To compute perception of (M - a fairy):
-	say "[BigNameDesc of M] giggles and focuses [his of M] eyes on you[if the player is sluttily dressed], even though [he of M]'s naked [himself of M][end if]. [if M is unfriendly][big he of M] starts flying towards you...[otherwise][big he of M] doesn't seem aggressive right now.[end if]";
-	display interaction of M.
+	say "[BigNameDesc of M] giggles and focuses [his of M] eyes on you[if the player is sluttily dressed], even though [he of M]'s naked [himself of M][end if]. ";
+	if the current-errand of M is completed and M is not uniquely unfriendly:
+		compute errand completion of M;
+	otherwise:
+		say "[if M is unfriendly][big he of M] starts flying towards you...[otherwise][big he of M] doesn't seem aggressive right now.[end if]";
+		display interaction of M.
 
 To display interaction of (M - a fairy):
 	alwayscutshow figure of fairy interact 1 for M.
 
 To compute DQ perception of (M - a fairy):
-	say "[BigNameDesc of M] giggles and focuses [his of M] eyes on you. [if M is unfriendly][big he of M] starts flying towards you...[otherwise][big he of M] doesn't seem aggressive right now.[end if]".
+	say "[BigNameDesc of M] giggles and focuses [his of M] eyes on you. ";
+	if the current-errand of M is completed and M is not uniquely unfriendly:
+		compute errand completion of M;
+	otherwise:
+		say "[if M is unfriendly][big he of M] starts flying towards you...[otherwise][big he of M] doesn't seem aggressive right now.[end if]";
+		display interaction of M.
 
 To make (M - a fairy) expectant:
 	do nothing.

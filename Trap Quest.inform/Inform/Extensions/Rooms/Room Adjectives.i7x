@@ -6,7 +6,7 @@ A room can be dodgy. A room is usually not dodgy. [A dodgy room in the Woods has
 
 A room can be creaky. A room is usually not creaky. [A creaky room in the mansion has a container.]
 
-A room can be garlic. A room is usually not garlic. [Normal ghosts can't enter these rooms and can't ambush you in them.]
+A room can be ungarlic, garlic, or garlic-waned. [Normal ghosts can't enter these rooms and can't ambush you in them.]
 
 A room can be roofed or no-roof. A room is usually roofed. [Does it have a ceiling.]
 

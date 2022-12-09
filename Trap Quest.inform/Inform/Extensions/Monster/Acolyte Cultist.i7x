@@ -99,6 +99,8 @@ To set up (M - an acolyte):
 	reset M;
 	now the monstersetup of M is 1;
 	now the raw difficulty of M is the starting difficulty of M + doomed;
+	add black candle to the taxableItems of M;
+	add cultist veil to the tradableItems of M;
 	now the health of M is the maxhealth of M.
 
 To decide which number is the starting difficulty of (M - an acolyte):
@@ -195,9 +197,21 @@ To say MonsterOfferAcceptFlav of (M - an acolyte) to (T - a thing):
 	otherwise:
 		say "[BigNameDesc of M] turns [his of M] full attention to [NameDesc of T], completely ignoring you for now!".
 
+To say ErrandThanksFlav of (T - a thing) from (P - an acolyte):
+	say "[speech style of P]'[Azathot] [one of]rewards those who do the Old Ones['] bidding[or]takes, but [Azathot] also provides[in random order].'[roman type][line break]"
+
 To compute disgusting spit reaction of (M - an acolyte):
 	say "[BigNameDesc of M] shakes [his of M] head with disappointment.[line break][speech style of M]'When you receive the gift of bodily fluids, you should swallow it gladly, and give thanks.'[roman type][line break][if the urine volume of face > 0][strongHumiliateReflect][otherwise][moderateHumiliateReflect][end if]";
 	FavourDown M with consequences.
+
+To say TriggeredTrapReactFlav of (M - an acolyte):
+	say "[BigNameDesc of M] cocks [his of M] head.[line break][speech style of M]'You must really be new here.'[roman type][line break]".
+To say HarshTrapReactFlav of (M - an acolyte):
+	say "[BigNameDesc of M] nods [his of M] head.[line break][speech style of M]'Each newcomer falls for that. Once.'[roman type][line break]".
+To say NastyTrapReactFlav of (M - an acolyte):
+	say HarshTrapReactFlav of M.
+To say LewdTrapReactFlav of (M - an acolyte):
+	say "[BigNameDesc of M] shamelessly [one of]plays with[or]fingers[or]touches[in random order] [his of M] pussy as [he of M] [one of]watches[or]looks at[or]observes[cycling] you.[one of][line break][speech style of M]'I was hoping this might happen...'[roman type][line break][or][stopping]".
 
 Part 2 - Perception
 
@@ -205,7 +219,7 @@ To decide which number is the bimbo tolerance of (M - an acolyte): [What number 
 	if M is mindless acolyte, decide on 30;
 	if the class of the player is cultist, decide on 30;
 	if M is wenchy and there is a worn demon codpiece, decide on 1;
-	decide on 18.
+	decide on 21.
 
 To decide which number is the bab tolerance of (M - an acolyte): [What number of cringe they become immediately unfriendly.]
 	decide on the bimbo tolerance of M.
@@ -223,7 +237,9 @@ To compute perception of (M - a mindless acolyte):
 
 To compute perception of (M - an acolyte):
 	say "[BigNameDesc of M] notices you![line break]";
-	if the class of the player is cultist and (the pregnancy of the player > 0 or xavier-diaper-link > 0):
+	if the current-errand of M is completed and M is not uniquely unfriendly:
+		compute errand completion of M;
+	otherwise if the class of the player is cultist and (the pregnancy of the player > 0 or xavier-diaper-link > 0):
 		say "[speech style of M]'Well met [brother of the player], though why do you not wait with the other blessed downstairs?'[roman type][line break]";
 		calm M;
 	otherwise if the player-class is cultist:
@@ -583,6 +599,9 @@ To compute unique banishment of (M - an acolyte):
 		if B is a thing:
 			say "[BigNameDesc of M] left behind a [ShortDesc of B]!";
 			compute autotaking B.
+
+To say TaxReturnDismay of (M - an acolyte):
+	say "[speech style of M]'[if black candle is in the location of the player]I'm sorry sisters, I could not stop [him of M] from taking it!'[otherwise]Nothing material will have any value anyway, soon enough!'[end if][roman type][line break]".
 
 The acolyte priority attack rules is a rulebook. The priority attack rules of an acolyte is usually the acolyte priority attack rules.
 

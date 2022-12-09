@@ -26,7 +26,7 @@ To say ShortDesc of (C - a bracelet):
 
 This is the bracelets limited to two rule:
 	if the number of worn bracelets > 1:
-		if summoning is 0 and autowear is false, say "You can't wear [the noun] because you are already wearing two bracelets!";
+		if summoning is 0 and autowear is false, say "You can't wear [the noun] because you are already wearing two bracelets - [list of worn bracelets].";
 		rule fails.
 The bracelets limited to two rule is listed in the bracelet wearability rules.
 

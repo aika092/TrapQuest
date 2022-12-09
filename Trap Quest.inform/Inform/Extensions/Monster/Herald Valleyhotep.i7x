@@ -48,7 +48,9 @@ Part 1 - Perception
 Definition: herald is scarable: decide no.
 
 To compute perception of (M - herald):
-	if the player-class is cultist:
+	if the current-errand of M is completed and M is not uniquely unfriendly:
+		compute errand completion of M;
+	otherwise if the player-class is cultist:
 		say "[speech style of M]'Oh are you, like, still here? Were you, like, wanting a blessing or some junk?'[roman type][line break]";
 		calm M;
 	otherwise if the player-class is succubus:

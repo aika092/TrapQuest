@@ -124,7 +124,7 @@ Carry out mopping clothing:[TODO: breasts largeness 10+ will touch the ground an
 		otherwise:
 			increase D by the urine-puddle of the location of the player;
 			decrease E by the urine-puddle of the location of the player;
-			UrineSoakUp the noun by the urine-puddle of the player;
+			UrineSoakUp the noun by the urine-puddle of the location of the player;
 			now the urine-puddle of the location of the player is 0;
 	if the milk-puddle of the location of the player > 0 and E > 0:
 		if the milk-puddle of the location of the player > E:
@@ -135,7 +135,7 @@ Carry out mopping clothing:[TODO: breasts largeness 10+ will touch the ground an
 		otherwise:
 			increase D by the milk-puddle of the location of the player;
 			decrease E by the milk-puddle of the location of the player;
-			MilkSoakUp the noun by the milk-puddle of the player;
+			MilkSoakUp the noun by the milk-puddle of the location of the player;
 			now the milk-puddle of the location of the player is 0;
 	if the semen-puddle of the location of the player > 0 and E > 0:
 		if the semen-puddle of the location of the player > E:
@@ -146,7 +146,7 @@ Carry out mopping clothing:[TODO: breasts largeness 10+ will touch the ground an
 		otherwise:
 			increase D by the semen-puddle of the location of the player;
 			decrease E by the semen-puddle of the location of the player;
-			SemenSoakUp the noun by the semen-puddle of the player;
+			SemenSoakUp the noun by the semen-puddle of the location of the player;
 			now the semen-puddle of the location of the player is 0;
 	if the noun is pink-spraybottle:
 		increase the work ethic of the noun by D * 30;

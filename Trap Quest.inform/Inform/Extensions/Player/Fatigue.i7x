@@ -34,7 +34,7 @@ Busy is a number that varies. Busy is 0.
 
 To FatigueUp (X - a number):
 	if the player is in Predicament20, now X is 0; [No fatigue gain in the final room of the predicament zone]
-	if X > 0, now fatimod is 0;[Gaining fatigue resets the bonus you get for resting several turns in a row]
+	if X > 0, now fatimod is 1;[Gaining fatigue resets the bonus you get for resting several turns in a row]
 	increase the fatigue of the player by X;
 	if the fatigue of the player > the buckle threshold of the player, now the fatigue of the player is the buckle threshold of the player.
 

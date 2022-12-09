@@ -34,6 +34,7 @@ To say MonsterDesc of (M - kitsune):
 
 To set up (M - kitsune):
 	reset M;
+	add escape-powder to the tradableItems of M, if absent;
 	now the monstersetup of M is 1;
 	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M;
@@ -130,7 +131,10 @@ Definition: kitsune is normally annoyed: decide yes. [Kitsune never drops to unf
 
 To compute perception of (M - kitsune):
 	if the target-disguise of M is M:
-		say "Well hello there. Have anything for me?";
+		if the current-errand of M is completed and M is not uniquely unfriendly:
+			compute errand completion of M;
+		otherwise:
+			say "Well hello there. Have anything for me?";
 		alwayscutshow figure of kitsune interact 2 for M;
 	otherwise:
 		distract M.

@@ -2,6 +2,8 @@ Game Universe Initialisation by Miscellaneous Backend begins here.
 
 The game universe initialisation rules is a rulebook.
 
+Figure of YesNoBackgroundHalloween is the file "Special/Buttons/YesNo/vamp.jpg".
+
 [!<StartTheMachine>+
 
 The button has been pushed, let's set up the actual game environment. Doing this separately from engine initialisation allows us to split up the setup lag at the start of the game into two chunks.
@@ -42,7 +44,7 @@ To Start The Machine:
 		say "You notice that [if latex prisoner is 0 and halloween content is 0 and christmas content is 0]you are naked, and that [end if]you have a tattoo of the [if background-pure is 1]word 'VIRGIN' on your belly[otherwise]words 'INK ME' on the back of your left hand[end if].[line break]";
 		focus-consider a random worn tattoo;
 	if background-nurse is 1:
-		let B be a random bandage;
+		let B be a random unowned bandage;
 		now B is held by the player;
 		say "You notice that you seem to have some medical supplies. Handy![line break]";
 	if christmas content is 1:
@@ -69,28 +71,82 @@ To Start The Machine:
 			increase the transform-resistance of present outfit by 1;
 			say "You seem to have been given some kind of... sexy festive outfit to wear?! This must be some weird Christmas-themed event...";
 	if halloween content is 1:
+		now temporaryYesNoBackground is Figure of YesNoBackgroundHalloween;
 		set up vampiress;
 		now vampiress is in Mansion01;
 		interest vampiress;
 		calm vampiress;
 		now the pink pill is in pink wardrobe;
-		now candy corn is in Mansion28;
-		now liquorice is in Mansion36;
-		now strawberry lace is in Mansion16;
-		let H be a random fetish appropriate halloween headgear;
-		compute full outfit summon of H;
+		now player-numerical-response is 3;
+		if diaper quest is 0:
+			say "[bold type]Dark forces are more powerful at this time of year! You sense a sinister energy in the air... Shaping your fate...[roman type][paragraph break]In front of you, in the darkness, are three items. You see a crucifix, a pentagram, and a human bone in front of you. You could reach out and touch one, if you like...";
+			reset multiple choice questions;
+			set numerical response 1 to "Touch the crucifix"; [refresh room blessings]
+			set numerical response 2 to "Touch the pentagram"; [doom quest starts but you get the necronomicon?]
+			set numerical response 3 to "Touch the bone"; [trick or treat]
+			set numerical response 4 to "Don't touch anything, and let the dark forces choose randomly for you...";
+			compute multiple choice question;
+			if player-numerical-response is 4, now player-numerical-response is a random number between 1 and 3;
+		now temporaryYesNoBackground is Figure of small image;
+		if player-numerical-response is 1:
+			compute full outfit summon of rubber nun cowl;
+			repeat with RM running through garlic haunted rooms:
+				now RM is garlic-waned;
+			say "[second custom style]Ding Dong![roman type][line break]The giant manor house's doorbell sounds surprisingly cheerful and welcoming considering how scary the place looks from the outside. And yet, when the door opens, it opens with a creepy creak like you might expect from such an old and grand door. The [man of vampiress] who greets you has red eyes and very, very pale skin.[line break][variable custom style]'Trick or treat!'[roman type][line break]You say automatically, without thinking. The [man of vampiress] rolls [his of vampiress] eyes.[line break][speech style of vampiress]'You're here to renew my blessings, right? They've been waning for ages. I've been waking up to fucking ghost cum on my face for the last month. Seriously, you're lucky there's no nun version of TrustPilot.'[roman type][line break][big he of vampiress] ushers you inside.[line break][speech style of vampiress]'Just go on in, and get on with it. And don't touch my stuff!'[roman type][line break]";
+			repeat with M running through alive acolytes:
+				finally destroy M;
+		otherwise if player-numerical-response is 2:
+			compute full outfit summon of witch's hat;
+			now doom notes is carried by the player;
+			now the doom-warned of witch is 1;
+			repeat with P running through on-stage pedestals:
+				if pocket necronomicon is in P:
+					now P is fertile;
+					now the paid of P is 2;
+			say "[second custom style]Ding Dong![roman type][line break]The giant manor house's doorbell sounds surprisingly cheerful and welcoming considering how scary the place looks from the outside. And yet, when the door opens, it opens with a creepy creak like you might expect from such an old and grand door. The [man of vampiress] who greets you has red eyes and very, very pale skin.[line break][variable custom style]'Trick or treat!'[roman type][line break]You say automatically, without thinking. The [man of vampiress] claps [his of vampiress] hands with relief.[line break][speech style of vampiress]'You're the doom specialist, right? Thank god you're here. Some friendly ladies set up a little meetup in the back of my mansion, and I didn't think anything of it at first, but lately the dark energy emanating from that wing of the house has been getting a little out of hand.'[roman type][line break][big he of vampiress] leans in close and speaks in a barely audible whisper.[line break][speech style of vampiress]'I think they're trying to wake an elder god.'[roman type][line break][big he of vampiress] pulls back and gives you a knowing look.[line break][speech style of vampiress]'Your Head Office sent this, for me to give to you.'[roman type][line break][big he of vampiress] hands you a piece of paper, with instructions on how to stop the alleged ritual.[line break][speech style of vampiress]'Oh, and I managed to steal a book from them when they weren't looking. I think it's important. I am keeping it secure in one of the pedestals in my library. You'll be able to open it with this. Just don't spill it before you get there!'[roman type][line break][BigNameDesc of vampiress] points to a goblet that appears to be full of [semen], sitting on a sideboard near the front door.";
+			repeat with M running through alive ghosts:
+				finally destroy M;
+			now witch's goblet is in the location of the player;
+			now witch's goblet is sure;
+			now the fill-colour of witch's goblet is creamy;
+			now the doses of witch's goblet is 2;
+			now vampiress is inseminating witch's goblet;
+			follow the incantation initialisation rule;
+			MagicPowerUp 5;
+			say "[bold type]New arcane knowledge appears in your mind! You've learned a new spell![NewbieSpellFlav]";
+			compute learning of magic-mapping;
+			force commence doom;
+			say "[if there is a worn bag of holding][BigNameDesc of witch's goblet] can't go in your bag, so it[otherwise]Picking up [NameDesc of witch's goblet][end if] will negatively affect your appearance. Do you want to pick it up?";
+			if the player is consenting:
+				now witch's goblet is carried by the player;
+				say "You pick up the goblet full of [semen].";
+		otherwise if player-numerical-response is 3:
+			now candy corn is in Mansion28;
+			now liquorice is in Mansion36;
+			now strawberry lace is in Mansion16;
+			if hellhound is off-stage, set up hellhound;
+			regionally place hellhound;
+			repeat with M running through alive ghosts:
+				finally destroy M;
+			summon skeleton-playsuit cursed;
+			now the quest of skeleton-playsuit is trick-or-treat-quest;
+			summon skeleton stockings uncursed;
+			say "You are wearing a [skeleton-playsuit] and a [skeleton stockings].";
+			say "[second custom style]Ding Dong![roman type][line break]The giant manor house's doorbell sounds surprisingly cheerful and welcoming considering how scary the place looks from the outside. And yet, when the door opens, it opens with a creepy creak like you might expect from such an old and grand door. The [man of vampiress] who greets you has red eyes and very, very pale skin.[line break][variable custom style]'Trick or treat!'[roman type][line break]You say automatically, without thinking. The [man of vampiress] licks [his of vampiress] lips.[line break][speech style of vampiress]'Why not both?'[roman type][line break][big he of vampiress] offers seductively, before ushering you inside.[line break][speech style of vampiress]'I did have some candy for you but my house is so big that I've lost it all somewhere around here. Why don't you have a little look around and see if you can find it all? There should be [bold type]three pieces of candy[roman type] [speech style of vampiress]for you to find. Feel free to eat it all when you find it. Just watch out for the guard dog. [big he of hellhound] often fancies a [']bone[']...'[roman type][line break]";
+		follow the player class rules; [update class]
 		let C be bat-pattern-corset;
 		if diaper quest is 1, now C is bat-shape-corset;
-		now C is in the location of the player;
-		now C is cursed;
-		now C is provocation;
+		now C is in Mansion16;
+		if a random number between 1 and 3 is 1:
+			now C is cursed;
+			now C is provocation;
 		now the raw-magic-modifier of C is a random number between 1 and 3;
-		let SM be a random space mead;
-		now SM is in the location of the player;
-		say "[second custom style]Ding Dong![roman type][line break]The giant manor house's doorbell sounds surprisingly cheerful and welcoming considering how scary the place looks from the outside. And yet, when the door opens, it opens with a creepy creak like you might expect from such an old and grand door. The [man of vampiress] who greets you has red eyes and very, very pale skin. [big he of vampiress] looks at your bare chest.[line break][if the player is sexed female][speech style of vampiress]'Nice tits.'[roman type][line break][end if]You look down and see that half of your outfit is for some reason on the ground in front of you instead of covering your chest![line break][variable custom style]'Trick or treat[if diaper lover > 0]! And, erm, could I use your bathroom?'[otherwise]!'[end if][roman type][line break]You say automatically, without thinking. [if diaper lover > 0]It's true - you really really do need the loo. [end if]The [man of vampiress] licks [his of vampiress] lips.[line break][speech style of vampiress]'[if diaper lover > 0]Why of course you can sweetie. Come on in...'[otherwise]Why not both?'[end if][roman type][line break][big he of vampiress] offers seductively, before ushering you inside.[line break][speech style of vampiress]'I did have some candy for you but my house is so big that I've lost it all somewhere around here. Why don't you have a little look around and see if you can find it all? There should be [bold type]three pieces of candy[roman type] [speech style of vampiress]for you to find. Feel free to eat it all when you find it.'[roman type][line break]You also notice a [C] on the ground nearby. You sense that wearing it should make you feel much more powerful! Intriguing...";
-		if diaper lover > 0, now the bladder of the player is 8;
-		if diaper messing >= 3, now rectum is 11;
+		[let SM be a random space mead;
+		now SM is in the location of the player;]
+		[say "[second custom style]Ding Dong![roman type][line break]The giant manor house's doorbell sounds surprisingly cheerful and welcoming considering how scary the place looks from the outside. And yet, when the door opens, it opens with a creepy creak like you might expect from such an old and grand door. The [man of vampiress] who greets you has red eyes and very, very pale skin. [big he of vampiress] looks at your bare chest.[line break][if the player is sexed female][speech style of vampiress]'Nice tits.'[roman type][line break][end if]You look down and see that half of your outfit is for some reason on the ground in front of you instead of covering your chest![line break][variable custom style]'Trick or treat[if diaper lover > 0]! And, erm, could I use your bathroom?'[otherwise]!'[end if][roman type][line break]You say automatically, without thinking. [if diaper lover > 0]It's true - you really really do need the loo. [end if]The [man of vampiress] licks [his of vampiress] lips.[line break][speech style of vampiress]'[if diaper lover > 0]Why of course you can sweetie. Come on in...'[otherwise]Why not both?'[end if][roman type][line break][big he of vampiress] offers seductively, before ushering you inside.[line break][speech style of vampiress]'I did have some candy for you but my house is so big that I've lost it all somewhere around here. Why don't you have a little look around and see if you can find it all? There should be [bold type]three pieces of candy[roman type] [speech style of vampiress]for you to find. Feel free to eat it all when you find it.'[roman type][line break]";]
 		if diaper quest is 1:
+			now the bladder of the player is 8;
+			if diaper messing >= 3, now rectum is 11;
 			set up ghostly tentacle;
 			now ghostly tentacle is in a random placed mandatory haunted room;
 		display inventory-focus stuff;

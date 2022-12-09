@@ -168,9 +168,13 @@ Report going:
 	if orc is guarding and orc is on-stage and orc is not in Dungeon07 and orc is not in the location of the player, bore orc.
 
 To compute perception of (M - orc):
-	say "[BigNameDesc of M] notices you[if the player is sluttily dressed], grinning at how you're dressed[one of] even though [he of M] is completely naked [himself of M][or][stopping].[otherwise]![end if][line break][speech style of M]'Pleasant tidings, [if M is bride-consort]my blushing bride[otherwise]young one[end if][one of].'[roman type][line break][big he of M] speaks with a very posh and dignified accent, completely at odds with [his of M] rough exterior.[line break][speech style of M]'[or]. [stopping][if the poker-timer of M > 0]The table is still recharging, so come back some time soon[otherwise]Perhaps you'd like to play a game of poker with me? Just let me know[end if].'[roman type][line break]";
-	if the player is not able to speak, say "[speech style of M]'Oh, you can't speak right now, can you. Well in that case, perhaps just poke me to let me know you want to play.'[roman type][line break]";
-	if newbie tips is 1, say "[one of][newbie style]Newbie tip: The orc won't fight you. [big he of M] just wants you to play at the magic poker table.[roman type][line break][or][stopping]".
+	say "[BigNameDesc of M] notices you[if the player is sluttily dressed], grinning at how you're dressed[one of] even though [he of M] is completely naked [himself of M][or][stopping].[otherwise]![end if]";
+	if the current-errand of M is completed:
+		compute errand completion of M;
+	otherwise:
+		say "[speech style of M]'Pleasant tidings, [if M is bride-consort]my blushing bride[otherwise]young one[end if][one of].'[roman type][line break][big he of M] speaks with a very posh and dignified accent, completely at odds with [his of M] rough exterior.[line break][speech style of M]'[or]. [stopping][if the poker-timer of M > 0]The table is still recharging, so come back some time soon[otherwise]Perhaps you'd like to play a game of poker with me? Just let me know[end if].'[roman type][line break]";
+		if the player is not able to speak, say "[speech style of M]'Oh, you can't speak right now, can you. Well in that case, perhaps just poke me to let me know you want to play.'[roman type][line break]";
+		if newbie tips is 1, say "[one of][newbie style]Newbie tip: The orc won't fight you. [big he of M] just wants you to play at the magic poker table.[roman type][line break][or][stopping]".
 
 To compute friendly boredom of (M - orc):
 	if the player is not in the location of M, now M is uninterested.
@@ -963,7 +967,7 @@ To compute poker minigame:
 					let C1 be ballet heels;
 					if leather-thigh-high-boots is off-stage and the heel skill of the player < 4, now C1 is leather-thigh-high-boots;
 					let C2 be a random off-stage jacket;
-					let C3 be a random off-stage naughty skirt;
+					let C3 be naughty-skirt;
 					let C4 be pinafore-dress;
 					if C4 is not off-stage or C2 is worn or C3 is worn or C4 is not class summonable:
 						now C4 is a random off-stage heart stockings;
@@ -980,7 +984,7 @@ To compute poker minigame:
 						now the raw-magic-modifier of C2 is -1;
 						set up sex-based influence of C2;
 						compute summoned quest of C2;
-					otherwise if PS is 2 and C3 is class summonable:
+					otherwise if PS is 2 and C3 is off-stage and C3 is class summonable:
 						say "[speech style of orc]'The [poker card of PC] gives you a naughty skirt.'[roman type][line break]";
 						class summon C3;
 						now C3 is cursed;

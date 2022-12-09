@@ -71,7 +71,7 @@ A later time based rule (this is the robo vacuum cleaner rule):
 		let availableForBagDuty be false;
 		let F be vagina;
 		if the player is possessing a penis or the player is not possessing a vagina, now F is asshole;
-		if the player is an april 2021 top donator and the player is upright and robo vacuum cleaner is not penetrating a fuckhole:
+		if the player is the donator and the player is upright and robo vacuum cleaner is not penetrating a fuckhole:
 			if black hood is worn and black hood is not blessed:
 				now availableForBagDuty is true;
 			otherwise if black hood is off-stage and black hood is actually summonable and the number of pussy covering clothing is 0 and F is not actually occupied and the number of worn unremovable shoes is 0 and skirted-maid-corset is unclash summonable:
@@ -102,6 +102,11 @@ A later time based rule (this is the robo vacuum cleaner rule):
 			let collecting be nothing;
 			say "[BigNameDesc of robo vacuum cleaner] hums loudly as it hovers over the puddle of [if the semen-puddle of (the location of robo vacuum cleaner) > 0][semen] [end if][if the semen-puddle of (the location of robo vacuum cleaner) > 0 and (the urine-puddle of (the location of robo vacuum cleaner) > 0 or the milk-puddle of (the location of robo vacuum cleaner) > 0)]and [end if][if the urine-puddle of (the location of robo vacuum cleaner) > 0][urine] [end if][if the urine-puddle of (the location of robo vacuum cleaner) > 0 and the milk-puddle of (the location of robo vacuum cleaner) > 0]and [end if][if the milk-puddle of (the location of robo vacuum cleaner) > 0][milk] [end if]in this room, sucking [if fluidRemaining > 6]some[otherwise]all[end if] of it up into the clear tube.";
 			if robo vacuum cleaner is not penetrating face or black hood is not worn or black hood is blessed:
+				if robo vacuum cleaner is penetrating a fuckhole: [if there's something penetrating face that's not going to leave willingly, we are going to get into an infinite loop]
+					let C be a random clothing penetrating face;
+					if C is clothing and C is not autoremovable:
+						say "[BigNameDesc of robo vacuum cleaner] shoots [NameDesc of C] with some sort of high-tech laser. [BigNameDesc of C] disintegrates!";
+						destroy C;
 				reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 				if robo vacuum cleaner is penetrating face, set numerical response 0 to "point the other end of the tube to the ground";
 				otherwise set numerical response 0 to "leave the tube alone";

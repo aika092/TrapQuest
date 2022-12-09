@@ -1,6 +1,6 @@
 Glittering Rose by Headgear begins here.
 
-glittering rose is a headgear. glittering rose is blondeness-positive. glittering rose is brightness-positive. glittering rose is redness-positive. glittering rose is hair growing. glittering rose is dexterity-influencing. glittering rose is womanly. The text-shortcut of glittering rose is "glr". Understand "glit", "glitter" as glittering rose.
+glittering rose is a headgear. glittering rose is blondeness-positive. glittering rose is brightness-positive. glittering rose is redness-positive. glittering rose is hair growing. glittering rose is dexterity-influencing. glittering rose is womanly. glittering rose is biological. The text-shortcut of glittering rose is "glr". Understand "glit", "glitter" as glittering rose.
 
 The printed name of glittering rose is "[clothing-title-before]glittering rose[clothing-title-after]".
 

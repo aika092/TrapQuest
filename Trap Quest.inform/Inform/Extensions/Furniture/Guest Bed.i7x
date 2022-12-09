@@ -1,6 +1,6 @@
 Guest Bed by Furniture begins here.
 
-A guest bed is a kind of furniture. There is 1 guest bed in Mansion02. The printed name of guest bed is "[TQlink of item described]guest bed[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "guest", "bed" as guest bed. The text-shortcut of guest bed is "pgb". A guest bed has a number called song. song is usually 0. A guest bed can be tended. A guest bed is usually not tended. A guest bed has a number called holeCount. The holeCount of a guest bed is usually 0.
+A guest bed is a kind of furniture. There is 1 guest bed in Mansion02. The printed name of guest bed is "[TQlink of item described]guest bed[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "guest", "bed" as guest bed. The text-shortcut of guest bed is "pgb". A guest bed has a number called song. A guest bed can be tended. A guest bed has a number called holeCount.
 
 To say ExamineDesc of (C - a guest bed):
 	say "A comfortable looking bed with shale grey pillows and a solid black comforter. It looks surprisingly mundane[if there is a clairvoyant acolyte in the location of the player and bukkake fetish is 1], but [NameDesc of clairvoyant acolyte] has obviously been 'leaking' on the sheets[end if].".

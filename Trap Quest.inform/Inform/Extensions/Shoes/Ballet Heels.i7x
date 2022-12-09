@@ -13,7 +13,7 @@ To decide which figure-name is the clothing-image of (H - ballet heels):
 Figure of ballet heels is the file "Items/Clothes/Lower/Feet/Ballet/balletheels1.png".
 
 To decide which number is the unique outrage of (C - ballet heels):
-	decide on 4.
+	decide on 1.
 
 To decide which number is the hindrance-modifier of (C - ballet heels):
 	decide on 0.

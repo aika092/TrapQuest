@@ -771,8 +771,9 @@ An all later time based rule (this is the uncovered reminder rule):
 				say "[if the number of entries in T is 1]is [one of][or]still [stopping]dampening your strength and speed because you are wearing a skirt over it[otherwise]are still each dampening your strength and speed because you are wearing a skirt over them[end if]![roman type][line break]";
 
 An intelligence theme rule:
-	repeat with C running through worn uncovered themed currently concealed clothing:
-		decrease tempThemeBonus by 2.
+	if the player is not in a predicament room:
+		repeat with C running through worn uncovered themed currently concealed clothing:
+			decrease tempThemeBonus by 2.
 
 Section - Food Themed
 

@@ -560,7 +560,7 @@ To execute (E - pledge-lesson-magic):
 A magic consequences rule (this is the pledge-lesson magic consequence rule):
 	if the implant of pledge-lesson-magic is 1:
 		if diaper quest is 0:
-			say "The magic ripples through your arms, activating the magic pledge you've just broken. ";
+			say "The magic ripples through your arms, activating the magic pledge you've just broken. [if the raw vaginal sex addiction of the player is 10]But your addiction to vaginal sex is already so extreme, that nothing more happens![end if]";
 			VaginalSexAddictUp 1;
 		otherwise:
 			say "The magic ripples through your arms, activating the magic pledge you've just broken. Your bladder [if diaper lover > 3]and bowels explode[otherwise]explodes[end if] [if the bladder of the player >= 12]to inhuman levels of fullness[otherwise]with contents until completely full[end if]!";

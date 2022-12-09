@@ -7,19 +7,35 @@ To decide which text is the class of the player:
 
 The player class rules is a rulebook.
 
+This is the trick-or-treater class rule:
+	if rubber nun cowl is worn:
+		now player-class is "holy purifier";
+		rule succeeds;
+	if witch's hat is worn:
+		if witch's hat is blessed, now player-class is "head witch";
+		otherwise now player-class is "doom specialist";
+		rule succeeds;
+	repeat with C running through worn clothing:
+		if the quest of C is trick-or-treat-quest:
+			now player-class is "trick or treater";
+			rule succeeds.
+The trick-or-treater class rule is listed in the player class rules.
+Definition: a text (called T) is trick-or-treater:
+	if T is "trick or treater" or T is "holy purifier"[ or T is "doom specialist"], decide yes;
+	decide no.
+Check going down:
+	if the class of the player is trick-or-treater:
+		let H be a random worn headgear;
+		repeat with C running through worn clothing:
+			if the quest of C is trick-or-treat-quest, now H is C;
+		say "Your [H] is somehow preventing you from leaving while you're a ['][player-class][']!" instead.
+
 This is the sissy class rule:
 	if there is worn sissy bow:
 		now player-class is "sissy";
 		rule succeeds.
 The sissy class rule is listed in the player class rules.
 sissyclass is a text that varies. sissyclass is "sissy".
-
-This is the trick-or-treater class rule:
-	if there is worn halloween headgear:
-		now player-class is "trick or treater";
-		rule succeeds.
-The trick-or-treater class rule is listed in the player class rules.
-trick-or-treater is a text that varies. trick-or-treater is "trick or treater".
 
 This is the princess class rule:
 	let H be a random worn tiara;

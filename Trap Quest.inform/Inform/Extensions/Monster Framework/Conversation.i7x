@@ -83,8 +83,9 @@ To compute chosen conversation of (M - a monster):
 		repeat with T running through talk-objects:
 			if debugmode > 1, say "Checking against: [printed name of T][line break]";
 			if TXT is not "" and the printed name of T matches the text TXT:
-				allocate 4 seconds;
-				say "[variable custom style][TXT][roman type][line break]";
+				unless T is talk-request: [talk request opens a new menu and so is handled in a special manner]
+					allocate 4 seconds;
+					say "[variable custom style][TXT][roman type][line break]";
 				now TXT is ""; [makes sure there's no more matches somehow and means that the interpreter doesn't need to waste any more time doing any more complex string comparisons]
 				execute T for M;
 			otherwise:
@@ -279,8 +280,13 @@ To compute basic greeting to (M - a monster):
 	otherwise if M is interested:
 		compute vanity response of M;
 	otherwise:
-		now the boredom of M is 0;
+		GreetBoredomReset M;
 		check guaranteed perception of M.
+
+To GreetBoredomReset (M - a monster):
+	now the boredom of M is 0.
+To GreetBoredomReset (M - a fairy):
+	do nothing. [fairies treat boredom differently than other monsters - they're friendly when bored of messing with you]
 
 [!<ComputeVanityGreetingToMonster>+
 
@@ -710,7 +716,11 @@ Displayed when the player greets a monster that is already paying attention to t
 
 +!]
 To say VanityGreeting to (M - a monster):
-	if the player is a masochist:
+	if M is teacher and locked-toilets is true and academy-toilet-key is held:
+		say "'[if the player is proud]I can't believe I'm saying this, but would you please accompany me so that I can use the toilet?'[otherwise if the diaper addiction of the player < 5]Please could you supervise me while I use the toilet?'[otherwise]Please can you help me use the potty?'[end if]";
+	otherwise if the player is toilet traumatized bursting:
+		say "'I need the toilet, but [if academy-toilet-key is held and M is teacher]academy rules say that I need supervision[otherwise]I'm too scared to go alone[end if]. Would you please come with me?'";
+	otherwise if the player is a masochist:
 		say "'[one of]Are you getting used to seeing the back of my head?'[or]Maybe you and I should head somewhere more private, hmm?'[or]Where am I taking you, I wonder?'[at random]";
 	otherwise:
 		say "'[one of]Hey, can you follow me?'[or]Hey, follow me.'[or]Hey, you're following me, right?'[or]Follow me, please.'[at random]".
@@ -723,6 +733,7 @@ Displayed after the player greets a monster that is already paying attention to 
 
 +!]
 To compute vanity response of (M - a monster):
+	now the friendly boredom of M is 0;
 	let N be a random unfriendly monster penetrating a body part;
 	unless N is monster, now N is a random monster penetrating a body part;
 	if M is penetrating a body part:
@@ -740,6 +751,13 @@ To compute vanity response of (M - a monster):
 	otherwise:
 		if M is ally:
 			say VanityAccepted of M;
+		otherwise if the player is toilet traumatized bursting:
+			if there is a worn diaper:
+				say VanityPointless of M;
+			otherwise if M is diaper disciplining:
+				say VanityDisciplined of M;
+			otherwise:
+				say VanityPitied of M;
 		otherwise if M is acquaintance:
 			say VanityAnnoyed of M;
 		otherwise:
@@ -758,7 +776,43 @@ To say VanityAccepted of (M - a monster):
 	if M is guarding or M is caged:
 		say "[speech style of M]'Sorry, I can't.'[roman type][line break]";
 	otherwise:
-		say "[speech style of M]'Sure, I can follow you.'[roman type][line break]".
+		say "[speech style of M]'Sure, I can follow you.'[roman type][line break]";
+		now the friendly boredom of M is -10.
+
+[!<SayVanityPointlessOfMonster>+
+
+Displayed after the player greets a monster that is already paying attention to them, and needs accompanying to the toilet, but is already wearing a diaper.
+
+@param <Monster>:<M> The monster being greeted
+
++!]
+To say VanityPointless of (M - a monster):
+	say "[speech style of M]'Why can't you just go in your diaper like the rest of the babies?'[roman type][line break]".
+
+[!<SayVanityDisciplinedOfMonster>+
+
+Displayed after the player greets a monster that is already paying attention to them, and needs accompanying to the toilet, but M is demanding they wear diapers.
+
+@param <Monster>:<M> The monster being greeted
+
++!]
+To say VanityDisciplined of (M - a monster):
+	say "[speech style of M]'Are you mocking me?! I demanded you stay in diapers. That's it, come here!'[roman type][line break]";
+	anger M.
+
+[!<SayVanityPitiedOfMonster>+
+
+Displayed after the player greets a monster that is already paying attention to them, and needs accompanying to the toilet.
+
+@param <Monster>:<M> The monster being greeted
+
++!]
+To say VanityPitied of (M - a monster):
+	if M is guarding or M is caged:
+		say "[speech style of M]'Sorry, I can't. You'll have to brave the toilet alone!'[roman type][line break]";
+	otherwise:
+		say "[speech style of M]'Aww, you poor sweet [boy of M]. Sure, I can hold your hand while you do your [if the player is feeling full or the total squirtable fill of belly > 0]poopies[otherwise]tinkles[end if].'[roman type][line break]";
+		now the friendly boredom of M is -10.
 
 [!<SayVanityAnnoyedOfMonster>+
 
@@ -1116,7 +1170,7 @@ To compute default teaching of (M - a monster):
 
 [Skill question. This is in case there's an npc that wants this to be modular]
 To say TeachQuestion of (M - a monster):
-	say "'Can you teach me anything useful?'";
+	say "'Can you teach me anything useful?'".
 
 Chapter 3 Drink Requesting
 
@@ -1581,6 +1635,12 @@ To compute unfriendly dismissal of (M - a monster):
 To say DefeatedDismissal of (M - a monster):
 	say "'Leave me be, now.'".
 
+
+[We put this talk object before the fluff questions to make sure it's never blocked by the fluff questions.]
+talk-request is a talk-object.
+
+
+
 Chapter - Fluff Questions
 
 Definition: a monster is fluff-question-appropriate:
@@ -1732,5 +1792,1015 @@ To say AdviceAnswer of (M - a monster):
 		say "[speech style of M]'Don't eat yellow snow. Unless you get off on it or something.'[roman type][line break]";
 	otherwise:
 		say "[speech style of M]'Don't eat yellow snow.'[roman type][line break]".
+
+
+Volume - Errands
+
+An errand is a kind of object. no-errand is an errand. rejected-errand is an errand.
+To say ErrandFlav of (E - an errand) for (P - a person):
+	say "I want you to do something, but I don't know how to phrase it. Oops, please report a bug. ".
+To say ErrandFlav of (P - a person):
+	let E be the current-errand of P;
+	say ErrandFlav of E for P.
+Definition: an errand is completed: decide no.
+A reward is a kind of object. no-reward is a reward.
+errand-giver is an object that varies.
+A person has an object called the current-errand. The current-errand of a person is usually no-errand.
+A person has an object called the current-reward.
+Definition: an errand is appropriate: decide no. [Fetish wise and gamestate wise, should this be able to be given as an errand right now?]
+Definition: an errand (called E) is available:
+	repeat with M running through alive undefeated intelligent monsters:
+		if the current-errand of M is E, decide no;
+	decide yes.
+To decide which number is the errand-weight of (E - an errand) for (P - a person): [chance the NPC will choose this errand]
+	decide on 0.
+To decide which number is the errand-value of (T - a thing) for (P - a person): [a way to flag that this item can be used to complete the errand]
+	if T is stolen and the current-errand of P is theft-errand, decide on 1;
+	decide on 0.
+Definition: an errand (called E) is eligible:
+	if errand-giver is a person:
+		if E is not appropriate, decide no;
+		if the errand-weight of E for errand-giver > 0, decide yes;
+	decide no.
+To set up (E - an errand):
+	do nothing.
+To compute instant effect of (E - an errand) for (P - a person):
+	do nothing.
+To compute errand completion of (P - a person):
+	if seconds is 0, allocate 6 seconds;
+	compute completion of the current-errand of P for P.
+To compute completion of (E - an errand) for (P - a person):
+	now the current-errand of P is no-errand;
+	if P is a monster, calm P;
+	compute unique completion of E for P;
+	compute errand reward of E for P.
+To compute unique completion of (E - an errand) for (P - a person):
+	say "BUG - this errand is missing its completion function for [NameDesc of P]!".
+To compute errand reward of (E - an errand) for (P - a person):
+	compute errand rewarding of the current-reward of P from P;
+	now the current-reward of P is no-reward.
+To choose an errand for (P - a person):
+	now errand-giver is P;
+	choose an errand.
+To choose an errand:
+	let chosen-errand be no-errand;
+	let total-errand-weight be 0;
+	let LE be the list of eligible errands;
+	repeat with E running through LE:
+		increase total-errand-weight by the errand-weight of E for errand-giver;
+	if debugmode > 1, say "Total errand weight: [total-errand-weight].";
+	if total-errand-weight > 0:
+		sort LE in random order;
+		let R be a random number between 1 and total-errand-weight;
+		let E be entry 1 in LE;
+		let EW be the errand-weight of E for errand-giver;
+		while EW < R:
+			decrease R by EW;
+			remove E from LE;
+			now E is entry 1 in LE;
+			now EW is the errand-weight of E for errand-giver;
+		now chosen-errand is E;
+	now the current-errand of errand-giver is chosen-errand;
+	set up chosen-errand.
+
+
+vine-egg-errand is an errand.
+Definition: vine-egg-errand is appropriate:
+	if egg laying fetish is 1, decide yes;
+	decide no.
+Definition: vine-egg-errand is completed:
+	repeat with E running through carried small eggs:
+		if the egg-origin of E is a vine, decide yes;
+	decide no.
+To decide which number is the errand-weight of (E - vine-egg-errand) for (P - a person):
+	if playerRegion is Woods, decide on 0; [they can get it themselves]
+	if P is a robot or P is a student, decide on 0;
+	decide on 1.
+To decide which number is the errand-value of (E - an egg) for (P - a person):
+	if the current-errand of P is vine-egg-errand and the egg-origin of E is a vine, decide on 1;
+	decide on 0.
+To say ErrandFlav of (E - vine-egg-errand) for (P - a person):
+	say "I need a small egg. Specifically, the kind you'll find inside a [']vitis ovipositus['], a type of vine that grows in the Woods near here. ".
+To compute unique completion of (E - vine-egg-errand) for (P - a person):
+	let EG be a random carried small egg;
+	if the errand-value of EG for P is 0:
+		repeat with EGX running through carried small eggs:
+			if the errand-value of EG for P > 0, now EG is EGX;
+	say "You hand [NameDesc of EG] to [NameDesc of P].[line break][speech style of P]'This is exactly what I need. Perfect.'[roman type][line break]";
+	now EG is carried by P.
+
+fertility-idol-errand is an errand.
+Definition: fertility-idol-errand is appropriate:
+	if playerRegion is mansion, decide no; [they could see it themselves]
+	if diaper quest is 0 and Mansion01 is placed and fertility idol is off-stage, decide yes;
+	decide no.
+Definition: fertility-idol-errand is completed:
+	if fertility idol is held, decide yes;
+	decide no.
+To decide which number is the errand-weight of (E - fertility-idol-errand) for (P - a monster):
+	if P is a robot or P is a student, decide on 0;
+	decide on 1.
+To decide which number is the errand-value of (E - fertility idol) for (P - a person):
+	if the current-errand of P is fertility-idol-errand, decide on 1;
+	decide on 0.
+To say ErrandFlav of (E - fertility-idol-errand) for (P - a person):
+	say "Somewhere in the mansion, I believe you may find an ancient fertility idol. I want to see it. ".
+To set up (E - fertility-idol-errand):
+	if a random number between 1 and 2 is 1, now fertility idol is fertility-cursed;
+	now fertility idol is in a random placed haunted room.
+To compute unique completion of (E - fertility-idol-errand) for (P - a person):
+	say "[BigNameDesc of P] looks at [NameDesc of fertility idol] with awe.[line break][speech style of P]'So it is real after all...'[roman type][line break]You try to hand it to [him of P], but [he of P] immediately backs away.[line break][speech style of P]'Are you crazy? I'm not touching that! It might be cursed!'[roman type][line break]".
+
+giant-pencil-errand is an errand.
+Definition: giant-pencil-errand is appropriate:
+	if giant-pencil is off-stage, decide yes;
+	decide no.
+Definition: giant-pencil-errand is completed:
+	if giant-pencil is carried, decide yes;
+	decide no.
+To decide which number is the errand-weight of (E - giant-pencil-errand) for (P - an aeromancer):
+	decide on 10.
+To decide which number is the errand-value of (E - giant-pencil) for (P - a person):
+	if the current-errand of P is giant-pencil-errand, decide on 1;
+	decide on 0.
+To set up (E - giant-pencil-errand):
+	now giant-pencil is in WoodsBoss01.
+To say ErrandFlav of (E - giant-pencil-errand) for (P - a person):
+	say "I dropped my favourite pencil down a big hole in the woods, and. well, I didn't fancy risking getting knocked up by tentacle eggs so I decided not to go down and get it. But you look like you are a bit of a risk-taker... So yeah. Get my pencil for me. That's my price. ".
+To compute unique completion of (E - giant-pencil-errand) for (P - a person):
+	say "You hand [NameDesc of giant-pencil] to [NameDesc of P]. [BigNameDesc of P] squeals with delight.[line break][speech style of P]'Mr. Squiggles! You're all right!!!'[roman type][line break]You watch a grown [man of P] cuddle an inanimate pencil as it if was a pet.";
+	now giant-pencil is carried by P.
+
+get-pregnant-errand is an errand.
+Definition: get-pregnant-errand is appropriate:
+	if pregnancy fetish is 1 and the pregnancy of the player is 0 and the player is possessing a vagina, decide yes;
+	decide no.
+Definition: get-pregnant-errand is completed:
+	if (the pregnancy of the player is 1 or the pregnancy of the player is 2) and the largeness of belly > 3, decide yes;
+	decide no.
+To decide which number is the errand-weight of (E - get-pregnant-errand) for (P - an acolyte):
+	decide on 10.
+To decide which number is the errand-weight of (E - get-pregnant-errand) for (P - a fairy):
+	decide on 10.
+To decide which number is the errand-value of (E - belly) for (P - a person):
+	if the current-errand of P is get-pregnant-errand and get-pregnant-errand is completed,	decide on 1;
+	decide on 0.
+To say ErrandFlav of (E - get-pregnant-errand) for (P - a person):
+	say "I want to see a cutie with a bun in [his of the player] oven! So I want you to come and see me when you're all knocked up, and showing. ".
+To say ErrandFlav of (E - get-pregnant-errand) for (P - an acolyte):
+	say "To properly serve the great ones, all [men of the player] must be [']blessed[']! So I want you to come and see me when you've conceived a child, and are showing. ".
+To compute unique completion of (E - get-pregnant-errand) for (P - a person):
+	say "You show your round pregnant belly to [NameDesc of P]. [BigNameDesc of P] squeals with delight.[line break][speech style of P]'Congratulations! You must be so proud!'[roman type][line break]".
+To compute unique completion of (E - get-pregnant-errand) for (P - an acolyte):
+	say "You show your round pregnant belly to [NameDesc of P]. [BigNameDesc of P] puts a hand to it, and purrs.[line break][speech style of P]'This pleases the Great Ones.'[roman type][line break]";
+	if the pregnancy of the player is 1 and the player is getting unlucky:
+		say "With one hand resting on your belly, [NameDesc of P] raises [his of P] other hand in the air and snaps [his of P] fingers. Suddenly, your pregnancy feels... Different.[line break][speech style of P]'Azathot has chosen you to be one of his disciples. Go and spread the good news. Carry your burden with pride. May you remain this way for the rest of your days.'[line break]Wait... What?! Has [he of P] just made me... PERMANENTLY PREGNANT?![roman type][line break][GotUnluckyFlav]";
+		now the pregnancy of the player is 2.
+
+get-drunk-errand is an errand.
+Definition: get-drunk-errand is appropriate:
+	if alcohol fetish is 1 and alcohol-level < 3, decide yes;
+	decide no.
+Definition: get-drunk-errand is completed:
+	if alcohol-level >= 3, decide yes;
+	decide no.
+To decide which number is the errand-weight of (E - get-drunk-errand) for (P - an acolyte):
+	decide on 10.
+To say ErrandFlav of (E - get-drunk-errand) for (P - a person):
+	say "To be closer to the Great Ones, you must cloud your mind. Drink, and be enlightened. Return to me in a heightened state of insobriety. ".
+To compute unique completion of (E - get-drunk-errand) for (P - a person):
+	say "You present yourself to [NameDesc of P], gently swaying and grinning. [BigNameDesc of P] nods.[line break][speech style of P]'Good work, acolyte! We will make a mindless vassal of you yet!'[roman type][line break]".
+
+mess-yourself-errand is an errand.
+Definition: mess-yourself-errand is appropriate:
+	if diaper messing >= 3 and rectum > 1 and there is a worn total protection soilable knickers and asshole is not actually occupied and the number of live things penetrating vagina is 0 and (the number of things grabbing the player is 0 or diaper quest is 1) and the player is feeling full, decide yes;
+	decide no.
+To decide which number is the errand-weight of (E - mess-yourself-errand) for (P - an adult baby slave):
+	decide on 10.
+To decide which number is the errand-weight of (E - mess-yourself-errand) for (P - a wrestler):
+	decide on 4.
+To decide which number is the errand-weight of (E - mess-yourself-errand) for (P - a matron):
+	decide on 3.
+To say ErrandFlav of (E - mess-yourself-errand) for (P - a person):
+	say "You need to poop right now, don't you? Well then, that's what I want to see. Squat down like a [if the player is upright]dumb pathetic toddler[otherwise]frog[end if]and push, and mess yourself. Right now. ".
+To compute instant effect of (E - mess-yourself-errand) for (P - a person):
+	let normal-refusal be false;
+	if the diaper addiction of the player < 4 and suppository is 0 and the number of worn desperation clothing is 0, now normal-refusal is true;
+	if the humiliation of the player < 20000 and there is an intelligent awake monster in the location of the player and the diaper addiction of the player < 15, now normal-refusal is true;
+	say "Squat and mess yourself[if normal-refusal is true]? [bold type]You would normally be unable to bring yourself do such a thing in front of people. If you spend your willpower forcing yourself to debase yourself like this in order to get a reward, it may significantly affect your self-esteem moving forward.[roman type][line break][otherwise]?[end if]";
+	if the player is bimbo consenting:
+		now auto is 1;
+		try messing;
+		now auto is 0;
+		if normal-refusal is true, obsceneHumiliate;
+		compute errand reward of E for P;
+	otherwise:
+		say "[variable custom style]'I'm sorry, but there's no way I'm going to do that.'[line break][speech style of P]'Disappointing. Of course, this means you won't be getting anything from me.'[roman type][line break][BigNameDesc of P] turns up [his of P] nose towards you.";
+		now the current-errand of P is rejected-errand;
+	now the current-reward of P is no-reward.
+
+royal-sigil-errand is an errand.
+Definition: royal-sigil-errand is appropriate:
+	if there is a summon-available royal guard, decide yes;
+	decide no.
+Definition: royal-sigil-errand is completed:
+	if there is a carried royal sigil, decide yes;
+	decide no.
+To decide which number is the errand-weight of (E - royal-sigil-errand) for (P - a centaur):
+	if there is a royal sigil held by P, decide on 0;
+	decide on 10.
+To decide which number is the errand-value of (E - a royal sigil) for (P - a person):
+	if the current-errand of P is royal-sigil-errand, decide on 1;
+	decide on 0.
+To say ErrandFlav of (E - royal-sigil-errand) for (P - a person):
+	say "The Princess named me an honorary guard of these woods, but [he of ex-princess] never gave me a royal sigil. And I really want one. I know each of the guards down in [his of ex-princess] dungeon has one. I want you to demand items from one until [he of a random royal guard] is forced to give you it, and then bring it to me. ".
+To compute unique completion of (E - royal-sigil-errand) for (P - a person):
+	let RS be a random carried royal sigil;
+	say "You hand [NameDesc of RS] to [NameDesc of P].[line break][speech style of P]'Yes! Finally, people will believe me when I tell them that I am the princess's knight!'[roman type][line break]";
+	now RS is carried by P.
+
+adventurer-attack-errand is an errand. adventurer-attack-errand has a number called old-bimbo-count.
+To decide which number is bimbo-adventurer-count:
+	let N be 0;
+	repeat with M running through explorers:
+		if the explorer-bimbo of M >= 2, increase N by 1;
+	decide on N.
+Definition: adventurer-attack-errand is appropriate:
+	if the old-bimbo-count of adventurer-attack-errand is not 0, decide no;
+	repeat with M running through alive explorers:
+		if the explorer-bimbo of M < 2, decide yes;
+		decide no.
+Definition: adventurer-attack-errand is completed:
+	if bimbo-adventurer-count > the old-bimbo-count of adventurer-attack-errand, decide yes;
+	decide no.
+To decide which number is the errand-weight of (E - adventurer-attack-errand) for (P - a demoness):
+	decide on 10.
+To decide which number is the errand-weight of (E - adventurer-attack-errand) for (P - a witch):
+	decide on 5.
+To decide which number is the errand-weight of (E - adventurer-attack-errand) for (P - pimp):
+	decide on 10.
+To say ErrandFlav of (E - adventurer-attack-errand) for (P - a person):
+	say "There are these other cheeky adventurers running around this place at the same time as you. You might have bumped into some of them? [if P is pimp]Well, I think you should show them who's boss. Kick and slap them around a bit, until they give up on their goals and settle for some... 'gainful employment' up here with me[otherwise]Well, they are weak and pathetic, and pissing me off. I want you to kick and slap one of them around until they conclude that a live of adventuring isn't for them[end if]. ".
+To compute unique completion of (E - adventurer-attack-errand) for (P - a person):
+	now the old-bimbo-count of adventurer-attack-errand is 0;
+	say "[speech style of P]'I heard that another of those dumb bitches has given up [his of a random explorer] dreams of being adventurer and decided that a life as a [if diaper quest is 1]diaper slut[otherwise]whore[end if] is more appropriate for a slut like [him of a random explorer]. I assume that was your doing? Anyway, I'm happy!'[roman type][line break]".
+
+satisfy-pimp-errand is an errand. satisfy-pimp-errand has an object called the satisfy-target.
+Definition: satisfy-pimp-errand is appropriate:
+	repeat with M running through alive explorers:
+		if satisfy-pimp-errand is not available, decide no;
+	if pimp is alive, decide yes;
+	decide no.
+Definition: satisfy-pimp-errand is completed:
+	if the satisfy-target of satisfy-pimp-errand is the pimp, decide yes;
+	decide no.
+To decide which number is the errand-weight of (E - satisfy-pimp-errand) for (P - an explorer):
+	decide on 10.
+To say ErrandFlav of (E - satisfy-pimp-errand) for (P - a person):
+	say "Um, well, I'm currently in debt to the pimp in [if playerRegion is hotel]this[otherwise]the[end if] hotel. Perhaps you could ask [him of pimp] if there's anything you can do to pay off my debts? ".
+To compute unique completion of (E - satisfy-pimp-errand) for (P - a person):
+	now the satisfy-target of satisfy-pimp-errand is nothing;
+	say "[speech style of P]'The pimp said we're all square now. Thanks a bunch!'[roman type][line break]".
+
+portal-clothes-errand is an errand. portal-clothes-errand has an object called the satisfy-target.
+Definition: portal-clothes-errand is appropriate:
+	if diaper quest is 1, decide no;
+	if portal-hotpants is unclash summonable or (the largeness of breasts > 3 and portal-bra is unclash summonable), decide yes;
+	decide no.
+To decide which number is the errand-weight of (E - portal-clothes-errand) for (P - pimp):
+	decide on 10.
+To say ErrandFlav of (E - portal-clothes-errand) for (P - a person):
+	say "Sure, I'll just add you to the list of bitches in debt to me. I have a special way of helping you pay it off over time. You don't even need to be in the hotel. It's that simple... ".
+To compute instant effect of (E - portal-clothes-errand) for (P - a person):
+	say "Agree to go into debt with [NameDesc of P]?";
+	if the player is bimbo consenting:
+		say "You nod, and then [NameDesc of pimp] produces [if portal-hotpants is worn and portal-bra is worn]two bizarre items[otherwise]a bizarre item[end if] of clothing made out of concrete and gold. [BigNameDesc of pimp] snaps [his of pimp] fingers.";
+		if portal-hotpants is unclash summonable, unclash class summon portal-hotpants;
+		if the largeness of breasts > 3 and portal-bra is unclash summonable, unclash class summon portal-bra;
+		if portal-bra is worn, say "[BigNameDesc of portal-bra] appears against your chest. Your breasts disappear through the portal on the inside[if the player is in Hotel44], and appear on the right-hand mannequin beside you[end if]. ";
+		if portal-hotpants is worn, say "[BigNameDesc of portal-hotpants] appears against your crotch. [if the player is in Hotel44]Your [player-crotch] appear on the left-hand mannequin beside you. [end if]";
+		say "[line break][speech style of pimp]'Now I can sell you for sex at any time, and take ALL the profits for myself[if the player is not in Hotel44]. You'll see what I mean soon enough[end if].'[roman type][line break]";
+		now the favour of pimp is the aggro limit of pimp - 7;
+		compute errand reward of E for P;
+		if P is interested monster, satisfy P;
+	otherwise:
+		say "[variable custom style]'I'm sorry, but I don't like the sound of that.'[line break][speech style of P]'Well then, this was a waste of my time.'[roman type][line break][BigNameDesc of P] shrugs with annoyance.";
+		now the current-errand of P is rejected-errand;
+	now the current-reward of P is no-reward.
+
+breast-growth-errand is an errand. breast-growth-errand has a number called old-breasts-largeness.
+Definition: breast-growth-errand is appropriate:
+	if diaper quest is 1, decide no;
+	if breast-growth-errand is not available, decide no;
+	if the largeness of breasts <= old-breasts-largeness of breast-growth-errand, decide no;
+	if the player is not top heavy, decide yes;
+	decide no.
+Definition: breast-growth-errand is completed:
+	if the largeness of breasts > old-breasts-largeness of breast-growth-errand, decide yes;
+	decide no.
+To decide which number is the errand-weight of (E - breast-growth-errand) for (P - a gladiator):
+	decide on 10.
+To decide which number is the errand-value of (E - breasts) for (P - a person):
+	if the current-errand of P is breast-growth-errand and breast-growth-errand is completed,	decide on 1;
+	decide on 0.
+To say ErrandFlav of (E - breast-growth-errand) for (P - a person):
+	let BS be the old-breasts-largeness of E + 1;
+	say "To be honest, I'm keen to see if you can grow your breasts [if the old-breasts-largeness of E <= 6]to at least a [BraSize BS] cup[otherwise]any bigger[end if]. Perhaps go breathe in some pink smoke or something, and then come back to me? ".
+To set up (E - breast-growth-errand):
+	if the largeness of breasts < 7:
+		now the old-breasts-largeness of E is max breast size - 1;
+		if the old-breasts-largeness of E > 6, now the old-breasts-largeness of E is 6;
+	otherwise:
+		now the old-breasts-largeness of E is the largeness of breasts.
+To compute unique completion of (E - breast-growth-errand) for (P - a person):
+	say "[BigNameDesc of P] admires your [BreastDesc].[line break][speech style of P]'Yep, they're definitely bigger! Bravo! How magnificent.'[roman type][line break]".
+
+butt-growth-errand is an errand. butt-growth-errand has a number called old-hips-thickness.
+Definition: butt-growth-errand is appropriate:
+	if diaper quest is 1, decide no;
+	if butt-growth-errand is not available, decide no;
+	if the thickness of hips <= old-hips-thickness of butt-growth-errand, decide no;
+	if the player is not top heavy, decide yes;
+	decide no.
+Definition: butt-growth-errand is completed:
+	if the thickness of hips > old-hips-thickness of butt-growth-errand, decide yes;
+	decide no.
+To decide which number is the errand-weight of (E - butt-growth-errand) for (P - orc):
+	decide on 10.
+To decide which number is the errand-value of (E - hips) for (P - a person):
+	if the current-errand of P is butt-growth-errand and butt-growth-errand is completed,	decide on 1;
+	decide on 0.
+To say ErrandFlav of (E - butt-growth-errand) for (P - a person):
+	say "I like a [boy of the player] with thick wide hips. I wonder if you can find a way to make yours any thicker? ".
+To set up (E - butt-growth-errand):
+	now the old-hips-thickness of E is the thickness of hips.
+To compute unique completion of (E - butt-growth-errand) for (P - a person):
+	say "[BigNameDesc of P] admires your [HipDesc].[line break][speech style of P]'Yep, they're definitely thicker! Most delicious! Now I wonder if I'll ever be lucky enough to get a lapdance from a [boy of the player] like you.'[roman type][line break]".
+
+dungeon-altar-errand is an errand. dungeon-altar-errand has a number called altar-used.
+Definition: dungeon-altar-errand is appropriate: decide yes.
+Definition: dungeon-altar-errand is completed:
+	if the altar-used of dungeon-altar-errand is 1, decide yes;
+	decide no.
+To decide which number is the errand-weight of (E - dungeon-altar-errand) for (P - Icarus):
+	decide on 10.
+To say ErrandFlav of (E - dungeon-altar-errand) for (P - a person):
+	say "To be honest, I don't want much. The Goddess provides everything I need. But... It would be nice if you could put in a good word for me. Perhaps by going to the dungeon altar and placing yourself upon it while thinking of me. ".
+To compute unique completion of (E - dungeon-altar-errand) for (P - a person):
+	now the altar-used of E is 0;
+	say "[BigNameDesc of P] gives you a friendly rub on your head.[line break][speech style of P]'Thanks so much for your prayer. [one of]I'm getting a bigger room when I get back upstairs, and also the big G has agreed that once you arrive in the afterlife, you'll spend the first hundred thousand years in my room as my live-in fuckpuppet! How generous is that?! Huh? What's that face for?'[or]The big G has extended your afterlife fuckpuppet duty by an additional million years, and now I'm going to be allowed to invite friends to use you too! How awesome is that?!'[or]The big G has added another [one of]billion[or]trillion[or]quadrillion[or]googol[or]googleplex[stopping] years to your time with me in the afterlife as my fuckpuppet. We're going to have such a great time together!'[stopping][roman type][line break]".
+
+theft-errand is an errand.
+Definition: theft-errand is appropriate:
+	if there is a stolen thing, decide no;
+	decide yes.
+Definition: theft-errand is completed:
+	if there is a held stolen thing, decide yes;
+	decide no.
+To decide which number is the errand-weight of (E - theft-errand) for (P - a kitsune):
+	decide on 10.
+To say ErrandFlav of (E - theft-errand) for (P - a person):
+	say "I want you to be brave and bold, and do something naughty. Steal something from the shop in the dungeon, and bring it here to prove it. ".
+To compute unique completion of (E - theft-errand) for (P - a person):
+	let ST be a random held stolen thing;
+	say "You show [NameDesc of ST] to [NameDesc of P].[line break][speech style of P]'Hehe, good job! Now we're partners in crime!'[roman type][line break]".
+
+abc-shortalls-errand is an errand.
+Definition: abc-shortalls-errand is appropriate:
+	if the number of worn diapers is 0, decide no;
+	if ABC shortalls is on-stage, decide no;
+	if there is a worn usually unautoremovable dress, decide no;
+	if there is a worn usually unautoremovable trousers, decide no;
+	if there is a worn usually unautoremovable skirt, decide no;
+	if there is an off-stage specific-key and ABC shortalls is unclash summonable, decide yes;
+	decide no.
+To decide which number is the errand-weight of (E - abc-shortalls-errand) for (P - matron):
+	decide on 10.
+To say ErrandFlav of (E - abc-shortalls-errand) for (P - a person):
+	say "I have this adorable new pair of shortalls I've been looking to try out on someone. I think it would fit you perfectly. So, the deal is: Be a good little munchkin and let me lock you in these shortalls. ".
+To compute instant effect of (E - abc-shortalls-errand) for (P - a person):
+	say "Allow [NameDesc of P] to lock you in childish shortalls?";
+	if the player is bimbo consenting:
+		let D be a random worn overdress;
+		let U be a random worn underdress;
+		let T be a random worn trousers;
+		let S be a random worn skirt;
+		say "You nod your consent[if D is a thing]. You remove your [ShortDesc of D][end if][if T is a thing]. You remove your [ShortDesc of T][end if][if S is a thing]. You remove your [ShortDesc of S][end if][if U is a thing]. You remove your [ShortDesc of U][end if]. [BigNameDesc of P] picks up the shortalls and flings them at you.";
+		unclash class summon ABC shortalls;
+		let K be a random off-stage specific-key;
+		compute P locking ABC shortalls with K;
+		compute errand reward of E for P;
+	otherwise:
+		say "[variable custom style]'Err, thank you, but no thanks.'[line break][speech style of P]'Hmm. I'm disappointed.'[roman type][line break][BigNameDesc of P] folds [his of P] arms and frowns.";
+		now the current-errand of P is rejected-errand;
+	now the current-reward of P is no-reward.
+
+To say LockDeclarationFlav of (M - matron) for (C - ABC shortalls):
+	say "".
+To say LockCommentFlav of (M - matron) for (C - ABC shortalls):
+	say "[speech style of M]'Oh it's so perfect on you! And I love that you can't take it off without my permission. I guess you'll need to come to me for your diaper changes from now on, hmm?'[roman type][line break]".
+
+robochef-reboot-errand is an errand.
+Definition: robochef-reboot-errand is appropriate:
+	if robochef is alive and the raw difficulty of robochef is the starting difficulty of robochef, decide yes;
+	decide no.
+Definition: robochef-reboot-errand is completed:
+	if robochef is awake, decide yes;
+	decide no.
+To decide which number is the errand-weight of (E - robochef-reboot-errand) for (P - mechanic):
+	decide on 10.
+To say ErrandFlav of (E - robochef-reboot-errand) for (P - a person):
+	say "My tablet just informed me that my robot chef has encountered an error and needs a manual reboot. If you can find it, it just needs both of its eyes touched at the same time for five seconds. Just make sure you do it for exactly five seconds. ".
+To set up (E - robochef-reboot-errand):
+	now the sleep of robochef is 999999.
+To compute unique completion of (E - robochef-reboot-errand) for (P - a person):
+	say "[speech style of P]'Oh hey, thanks, I can see here that the robochef is back up and running.'[roman type][line break]".
+To compute annoyed awakening of (M - robochef):
+	say "You try to make sure that you hold its eyes for five seconds exactly. 5... 4... 3... 2... 1.[line break][speech style of M]'STANDBY, REBOOTING... REBOOTING COMPLETED. HOLD TIME: ";
+	now seconds is 5;
+	now the sleep of M is 0;
+	if the player is getting lucky:
+		say "5.0 SECONDS EXACTLY. ACTIVATING STANDARD CHEF MODE.'[roman type][line break]Looks like you did it properly! [GotLuckyFlav]";
+		progress quest of poking-quest;
+	otherwise:
+		let DX be a random number between 1 and 6;
+		say "5.[DX] SECONDS. ACTIVATING ENHANCED COMBAT MODE.'[roman type][line break]Its eyes turn red, and significantly increase in brightness. Uhhhh, that doesn't seem good...";
+		increase the raw difficulty of M by DX;
+		progress quest of poking-quest;
+		now M is interested;
+		anger M.
+
+mystical-amulet-errand is an errand.
+Definition: mystical-amulet-errand is appropriate:
+	if there is a worn steel collar or the class of the player is succubus, decide no;
+	if mystical amulet is on-stage and mystical amulet is not held by mechanic, decide yes;
+	decide no.
+Definition: mystical-amulet-errand is completed:
+	if mystical amulet is held, decide yes;
+	decide no.
+To decide which number is the errand-weight of (E - mystical-amulet-errand) for (P - mechanic):
+	decide on 4.
+To say ErrandFlav of (E - mystical-amulet-errand) for (P - a person):
+	say "There's an amulet somewhere in this world, maybe you've encountered it already. Last I heard it was being guarded by a large monster. I want you to retrieve it for me. ".
+To compute completion of (E - mystical-amulet-errand) for (P - mechanic):
+	say "[speech style of P]'The amulet! [if mystical amulet is currently-in-bag]I can sense that you have it! [end if]Give it to me at once!'[roman type][line break]Give [NameDesc of mystical amulet] to [NameDesc of P]?";
+	if the player is consenting:
+		follow the mechanic claims amulet rule;
+		if P is alive:
+			now the current-errand of P is no-errand;
+			compute errand reward of E for P;
+	otherwise:
+		anger P;
+		now P is interested;
+		say "[speech style of P]'You will regret your insolence!'[roman type][line break]";
+		now the current-errand of P is no-errand;
+		now the current-reward of P is no-reward.
+
+cock-candle-errand is an errand.
+Definition: cock-candle-errand is appropriate:
+	if cock candle is on-stage and cock candle is not carried, decide yes;
+	decide no.
+Definition: cock-candle-errand is completed:
+	if cock candle is carried, decide yes;
+	decide no.
+To decide which number is the errand-weight of (E - cock-candle-errand) for (P - dominatrix):
+	decide on 10.
+To decide which number is the errand-value of (E - cock candle) for (P - a person):
+	if the current-errand of P is cock-candle-errand, decide on 1;
+	decide on 0.
+To say ErrandFlav of (E - cock-candle-errand) for (P - a person):
+	say "I've heard legends of magic candles that never extinguish. Such an artifact would be excellent for my wax play. Think you can find one for me? ".
+To compute completion of (E - cock-candle-errand) for (P - a person):
+	say "[speech style of P]'Unbelievable, you actually found one!'[roman type][line break][BigNameDesc of P] happily takes [NameDesc of cock candle] from you.";
+	now cock candle is carried by P.
+
+special-delivery-errand is an errand.
+Definition: special-delivery-errand is appropriate:
+	if golden-phallus is off-stage and shopkeeper is alive and shopkeeper is undefeated and ex-princess is not in the location of shopkeeper, decide yes;
+	decide no.
+Definition: special-delivery-errand is completed:
+	if golden-phallus is carried, decide yes;
+	decide no.
+To decide which number is the errand-weight of (E - special-delivery-errand) for (P - ex-princess):
+	if P is unconcerned, decide on 10;
+	decide on 0.
+To decide which number is the errand-value of (E - golden-phallus) for (P - a person):
+	if the current-errand of P is special-delivery-errand, decide on 1;
+	decide on 0.
+To say ErrandFlav of (E - special-delivery-errand) for (P - a person):
+	say "Sure, I'd be more than happy to. But first, I have something to ask of you... I ordered a special delivery to be delivered to the shop, for me to collect, but I'm currently in some minor legal disputes with the shopkeeper and I'm not supposed to talk to [him of shopkeeper] without our lawyers present. Could you be a doll and go collect it for me? It should be, erm, [bold type]long, hard, and made of gold, and on the floor of the Dungeon Shop.[speech style of P] ".
+To set up (E - special-delivery-errand):
+	now golden-phallus is in Dungeon41;
+	now the size of golden-phallus is 3;
+	if the player is getting unlucky:
+		now golden-phallus is cursed;
+		now golden-phallus is expansion;
+	otherwise if the player is getting lucky:
+		now golden-phallus is blessed;
+		now golden-phallus is refreshment;
+	otherwise:
+		now golden-phallus is bland.
+Report taking golden-phallus:
+	if the current-errand of ex-princess is special-delivery-errand and shopkeeper is in the location of the player and shopkeeper is awake and shopkeeper is undefeated and shopkeeper is interested:
+		if the player is able to speak, say "[variable custom style]'I'm collecting this for the Princess.'[roman type][line break]You explain to [NameDesc of shopkeeper], who nods pleasantly.";
+		say "[speech style of shopkeeper]'Tell that money-grubbing, rent-hiking bitch that I hope [he of ex-princess] enjoys [his of ex-princess] new toy.'[roman type][line break]".
+To compute unique completion of (E - special-delivery-errand) for (P - a person):
+	say "You give [NameDesc of golden-phallus] to [NameDesc of P].[line break][speech style of P]'You're the best. Thank you so much, [NameBimbo].'[roman type][line break]";
+	now golden-phallus is carried by P.
+
+new-battery-errand is an errand.
+Definition: new-battery-errand is appropriate:
+	if spare-battery is off-stage, decide yes;
+	decide no.
+Definition: new-battery-errand is completed:
+	if spare-battery is carried, decide yes;
+	decide no.
+To decide which number is the errand-weight of (E - new-battery-errand) for (P - a robot):
+	decide on 10.
+To decide which number is the errand-value of (E - spare-battery) for (P - a person):
+	if the current-errand of P is new-battery-errand, decide on 1;
+	decide on 0.
+To say ErrandFlav of (E - new-battery-errand) for (P - a person):
+	say "BATTERY LEVELS LOW. REQUESTED ITEM: SPARE BATTERY. LOCATION: UNKNOWN. ".
+To set up (E - new-battery-errand):
+	now spare-battery is in a random placed modern room;
+	while spare-battery is nearby:
+		now spare-battery is in a random placed modern room.
+To compute unique completion of (E - new-battery-errand) for (P - a person):
+	say "You give [NameDesc of spare-battery] to [NameDesc of P].[line break][speech style of P]'ANALYZING... SPARE BATTERY DETECTED. APPROPRIATE REWARD DISPENSION LOADING...'[roman type][line break]";
+	now spare-battery is carried by P.
+To say RequestAssign of (M - a robot):
+	let E be the current-errand of M;
+	say "[speech style of M]'[ErrandFlav of E for M]ERRAND ASSIGNATION COMPLETE.'[roman type][line break]".
+To say RequestRejection of (M - a robot):
+	say "[speech style of M]'ERROR: LIST OF ACCEPTABLE EXCHANGES IS EMPTY. CANNOT PRINT ITEM FROM EMPTY LIST.'[roman type][line break]".
+To say RequestDuplicationRejection of (M - a robot):
+	say "[speech style of M]'ERROR: REQUEST ALREADY LIVE. [ErrandFlav of M]ERRAND REPETITION COMPLETE.'[roman type][line break]".
+
+chef-cookie-errand is an errand.
+Definition: chef-cookie-errand is appropriate:
+	if cookie is off-stage and vampiress is alive, decide yes;
+	decide no.
+Definition: chef-cookie-errand is completed:
+	if cookie is carried by vampiress, decide yes;
+	decide no.
+To decide which number is the errand-weight of (E - chef-cookie-errand) for (P - robochef):
+	decide on 25.
+To decide which number is the bartering value of of (E - cookie) for (P - vampiress):
+	if the quality of E <= -3 and the current-errand of robochef is chef-cookie-errand, decide on 10;
+	decide on 0.
+To say MonsterOfferAcceptFlav of (M - vampiress) to (T - cookie):
+	say "[speech style of M]'Oh how wonderful! I'd forgotten I'd ordered this. Thank you for bringing it to me safely!'[roman type][line break]".
+To compute offer reward of (M - vampiress) for (T - cookie):
+	if M is in the location of the player:
+		say "[speech style of M]'Would you like a bite?'[roman type][line break][BigNameDesc of vampiress] offers the cookie to you.";
+		if the player is bimbo consenting:
+			say "You shrug, and take a bite.";
+			StomachFoodUp 1;
+			if the player is getting unlucky:
+				say "You start feeling a bit woozy as the food settles in your stomach, and you realise that there's some seriously unusual chemicals in this cookie. You feel your [asshole] tingling with enthusiastic sensitivity! [GotUnluckyFlav]";
+				AnalSexAddictUp 3;
+			otherwise:
+				say "You feel great! You're fully healed, and you feel stronger, faster and smarter!";
+				BodyHeal 10;
+				StrengthUp 1;
+				DexUp 1;
+				IntUp 1;
+				AnalSexAddictUp 1.
+To say ErrandFlav of (E - chef-cookie-errand) for (P - a person):
+	say "DELIVERY COURIER REQUIRED. DELIVERY ADDRESS: HAUNTED MANSION. CUSTOMER ENTITY: VAMPIRESS. ".
+To compute instant effect of (E - chef-cookie-errand) for (P - a person):
+	now the quality of cookie is -3;
+	now the fat of cookie is 3;
+	say "[BigNameDesc of robochef] takes a rather lewdly decorated cookie out of [his of robochef] compartment and places it on the ground in front of you.";
+	now cookie is in the location of the player.
+To compute unique completion of (E - chef-cookie-errand) for (P - a person):
+	say "[speech style of P]'CUSTOMER REPORTED SUCCESSFUL DELIVERY. APPROPRIATE REWARD DISPENSION LOADING...'[roman type][line break]".
+
+pimp-delivery-errand is an errand.
+Definition: pimp-delivery-errand is appropriate:
+	if slave collar is off-stage and pimp is alive, decide yes;
+	decide no.
+Definition: pimp-delivery-errand is completed:
+	if slave collar is carried by pimp, decide yes;
+	decide no.
+To decide which number is the errand-weight of (E - pimp-delivery-errand) for (P - shopkeeper):
+	decide on 10.
+To decide which number is the errand-value of (E - slave collar) for (P - a person):
+	if P is pimp and the current-errand of shopkeeper is pimp-delivery-errand, decide on 1;
+	decide on 0.
+To say ErrandFlav of (E - pimp-delivery-errand) for (P - a person):
+	say "Hey yeah, the pimp in the hotel wants this delivered to [him of pimp], but obviously I can't leave my shop alone. Could you please take care of the delivery? ".
+To compute instant effect of (E - pimp-delivery-errand) for (P - a person):
+	now slave collar is carried by the player;
+	now slave collar is cursed;
+	compute quest of slave collar;
+	say "[BigNameDesc of P] hands you a [slave collar].".
+To compute special collar delivery:
+	say "[BigNameDesc of pimp] happily takes [NameDesc of slave collar] from you.[line break][speech style of pimp]'Thanks a lot! ";
+	if pimp is normally buddy or slave collar is not actually summonable:
+		say "I can't wait to find the right whore to lock this on.'[roman type][line break]";
+		now slave collar is carried by pimp;
+	otherwise:
+		say " This is especially convenient because I have a deserving whore right here!'[roman type][line break][BigNameDesc of pimp] makes a leap for your neck as quick as lightning... And before you can react, [he of pimp] has managed to close [NameDesc of slave collar] around it!";
+		summon slave collar cursed with quest;
+		say "[speech style of pimp]'Couldn't have planned that better if I'd tried!'[roman type][line break][BigNameDesc of pimp] declares proudly.".
+To compute unique completion of (E - pimp-delivery-errand) for (P - a person):
+	say "[BigNameDesc of P] gives you a thumbs up.[line break][speech style of P]'I heard from the pimp that [he of pimp] got [his of pimp] delivery. Great job!'[roman type][line break]".
+
+mechanic-delivery-errand is an errand.
+Definition: mechanic-delivery-errand is appropriate:
+	if love-letters is off-stage and mechanic is alive, decide yes;
+	decide no.
+Definition: mechanic-delivery-errand is completed:
+	if love-letters is carried by mechanic, decide yes;
+	if love-letters is carried by demon lord, decide yes;
+	decide no.
+To decide which number is the errand-weight of (E - mechanic-delivery-errand) for (P - unicorn):
+	decide on 10.
+To decide which number is the errand-value of (E - love-letters) for (P - a person):
+	if the current-errand of unicorn is mechanic-delivery-errand and (P is mechanic or P is demon lord), decide on 1;
+	decide on 0.
+To say ErrandFlav of (E - mechanic-delivery-errand) for (P - a person):
+	say "The mechanic in the hotel has told me I have to keep a low profile, and hide the fact that we're together... But I can't stop desperately wanting to tell [him of mechanic] how much I love [him of mechanic]! Could you please send these to [him of mechanic]? [big he of mechanic][']ll know who they're from. ".
+To compute instant effect of (E - mechanic-delivery-errand) for (P - a person):
+	now love-letters is carried by the player;
+	say "[BigNameDesc of P] hands you a large stack of [love-letters].".
+To compute special letter delivery:
+	let M be mechanic;
+	if demon lord is alive, now M is demon lord;
+	say "[BigNameDesc of M] grumbles as [he of M] takes [NameDesc of love-letters] from you.[line break][speech style of M]'More letters! What am I going to do with that crazy nympho of mine...'[roman type][line break]".
+To compute unique completion of (E - mechanic-delivery-errand) for (P - a person):
+	say "[BigNameDesc of P] gives you a hug.[line break][speech style of P]'Thanks for delivering those letters. Have you got a reply for me? Not yet? Hmmmm... Well, I'm sure [he of mechanic][']ll have one to send back to me soon!'[roman type][line break]".
+
+wench-cup-errand is an errand.
+Definition: wench-cup-errand is appropriate:
+	if there is an alive undefeated wench, decide yes;
+	decide no.
+Definition: wench-cup-errand is completed:
+	repeat with B running through carried bottles:
+		if the fill-colour of B is creamy and there is a wench inseminating B, decide yes;
+	decide no.
+To decide which number is the errand-weight of (E - wench-cup-errand) for (P - vampiress):
+	decide on 10.
+To decide which number is the errand-value of (B - a bottle) for (P - a person):
+	if B is empty, decide on 0;
+	if the current-errand of P is wench-cup-errand:
+		if the fill-colour of B is creamy and there is a wench inseminating B, decide on 1;
+	if the current-errand of P is milk-cup-errand:
+		if the fill-colour of B is white, decide on 1;
+	if the current-errand of P is energy-cup-errand:
+		if the fill-type of B is 3, decide on 1;
+	decide on 0.
+To say ErrandFlav of (E - wench-cup-errand) for (P - a person):
+	let M be a random wench;
+	say "There was this slut who came here briefly once, with the most delicious semen inside [his of M] [if a2m fetish > 0 or M is presenting as male]ass[otherwise]pussy[end if]. But I think I scared [him of M] away, because [he of M] never came back. Maybe you've met [him of M]? Bleach blonde hair, blouse caked in cum? Well, I want you to find [him of M] and a cup of the cum from [his of M] [if a2m fetish > 0 or M is presenting as male]asshole[otherwise]coochie[end if]. ".
+To compute unique completion of (E - wench-cup-errand) for (P - a person):
+	let BO be a random carried bottle;
+	repeat with B running through carried non-empty bottles:
+		if the fill-colour of B is creamy and there is a wench inseminating B, now BO is B;
+	say "You present [NameDesc of BO] to [NameDesc of P].[line break][speech style of P]'Don't tell me... You got some?!'[roman type][line break][BigNameDesc of P] brings [NameDesc of BO] to [his of P] lips, and has a taste.[line break][speech style of P]'This is it! This is that delicious cum that I've dreamed of tasting again!'[roman type][line break][big he of P] swings [NameDesc of BO] back and downs the rest of the thick creamy [']drink['], ";
+	DoseEmpty BO;
+	say "and then hands [NameDesc of BO] back to you.".
+
+wench-protection-errand is an errand. wench-protection-errand has a number called protected.
+Definition: wench-protection-errand is appropriate:
+	if playerRegion is not Dungeon, decide no;
+	if the protected of wench-protection-errand is not 0, decide no;
+	if there is an alive undefeated interested royal guard, decide no;
+	if there is an alive undefeated uninterested royal guard, decide yes;
+	decide no.
+Definition: wench-protection-errand is completed:
+	if the protected of wench-protection-errand is 1, decide yes;
+	decide no.
+To decide which number is the errand-weight of (E - wench-protection-errand) for (P - wench):
+	decide on 10.
+To decide which number is the errand-value of (E - slave collar) for (P - a person):
+	if P is pimp and the current-errand of shopkeeper is wench-protection-errand, decide on 1;
+	decide on 0.
+To say ErrandFlav of (E - wench-protection-errand) for (P - a person):
+	say "Um, I can't think of anything... No, wait! Yes! Protect me from [him of prison guard]!".
+To compute instant effect of (E - wench-protection-errand) for (P - a person):
+	let M be a random alive undefeated royal guard;
+	now M is in the location of the player;
+	now M is interested;
+	now the sleep of M is 0;
+	say "[BigNameDesc of M] has just entered the room![line break][speech style of M]'You, wench! It's time for your next punishment! Behold, the long cock of the law!'[roman type][line break]Do you stand in front of [NameDesc of P] and protect [him of P]?";
+	if the player is consenting:
+		say "You put yourself between [NameDesc of M] and [his of M] target, making yourself the new target.[line break][speech style of M]'You want a taste of the law too?!'[roman type][line break]";
+		anger M;
+		now the protected of E is 1;
+	otherwise:
+		say "You timidly stand aside and let [NameDesc of M] fulfil [his of M] [']legal obligations['].[line break][speech style of P]'Goddammit! I'll remember this, [NameBimbo]!'[roman type][line break]That's all [he of P] manages to say before [his of P] mouth is filled with [NameDesc of M][']s [manly-penis]. After that, the only sounds [he of P] makes are gagging sounds, as [NameDesc of M][']s [manly-penis] repeatedly strikes the back of [his of P] throat... And then gargling sounds as [NameDesc of M] shoots [his of M] load down [NameDesc of P][']s gullet. [NameDesc of P] is left choking and exhausted on the ground, and [he of P] eventually slowly crawls away.[line break][speech style of M]'Good choice, citizen.'[roman type][line break][BigNameDesc of M] nods in your direction.";
+		anger P;
+		bore P;
+		regionally place P;
+		satisfy M;
+		now the protected of E is -1.
+
+human-urinal-errand is an errand.
+Definition: human-urinal-errand is appropriate:
+	if watersports fetish is 1 and face is not actually occupied, decide yes;
+	decide no.
+To decide which number is the errand-weight of (E - human-urinal-errand) for (P - a wrestler):
+	decide on 10.
+To decide which number is the errand-weight of (E - human-urinal-errand) for (P - a demoness):
+	decide on 2.
+To decide which number is the errand-weight of (E - human-urinal-errand) for (P - kitsune):
+	decide on 2.
+To say ErrandFlav of (E - human-urinal-errand) for (P - a person):
+	say "Well, I really need to piss right now! Fancy being my urinal? ".
+To compute instant effect of (E - human-urinal-errand) for (P - a person):
+	say "Do you [if the player is upright]get on your knees in front of [NameDesc of P] and [end if]let [him of P] use you as a human urinal?";
+	if the player is bimbo consenting:
+		if the player is upright:
+			now auto is 1;
+			try kneeling;
+			now auto is 0;
+		say "You obediently open your mouth, and [NameDesc of P] steps up so that [his of P] crotch is in your face. [big he of P] [if P is a wrestler]unzips the crotch of [his of P] catsuit, and [end if]sighs pleasantly as [he of P] lets loose.";
+		FacePiss from P;
+		compute errand reward of E for P;
+	otherwise:
+		say "[variable custom style]'I'd really rather you didn't.'[line break][speech style of P]'[if P is demoness]You disappoint me, mortal! You have yet to learn your place! I am done with you, then.'[roman type][line break][BigNameDesc of P] seems offended.[otherwise]You want me to do things for you, but you won't even drink my piss?! What sort of friend are you?!'[roman type][line break][BigNameDesc of P] sounds hurt.[end if]";
+		now the current-errand of P is rejected-errand;
+	now the current-reward of P is no-reward.
+
+cum-kiss-errand is an errand.
+Definition: cum-kiss-errand is appropriate: decide yes.
+Definition: cum-kiss-errand is completed:
+	if face is not actually occupied:
+		if diaper quest is 1 and the milk volume of face > 0, decide yes;
+		if diaper quest is 0 and the semen volume of face > 0, decide yes;
+	decide no.
+To decide which number is the errand-weight of (E - cum-kiss-errand) for (P - a wrestler):
+	decide on 3.
+To decide which number is the errand-value of (E - face) for (P - a person):
+	if the current-errand of P is cum-kiss-errand and cum-kiss-errand is completed, decide on 1;
+	decide on 0.
+To say ErrandFlav of (E - cum-kiss-errand) for (P - a person):
+	say "Hmm... I want you to get a lovely amount of [if diaper quest is 1]milk[otherwise]cum[end if] in your mouth... And then give me a kiss. ".
+To compute unique completion of (E - cum-kiss-errand) for (P - a person):
+	say "You move your face close to [NameDesc of P][']s and [he of P] opens [his of P] mouth, clearly ready and willing. You lock lips in a nasty, sloppy wet kiss, and then [NameDesc of P] uses [his of P] tongue to lap the thick white [if diaper quest is 1][milk][otherwise]cock snot[end if] from yours. It's noisy, wet and nasty, but soon enough, [NameDesc of P] has finished receiving your [']snowball['], and merrily gulps it down. [big he of P] sighs dreamily.[line break][speech style of P]'That was perfect.'[roman type][line break]";
+	MouthEmpty.
+
+milk-cup-errand is an errand.
+Definition: milk-cup-errand is appropriate:
+	if lactation fetish is 1, decide yes;
+	decide no.
+Definition: milk-cup-errand is completed:
+	repeat with B running through carried non-empty bottles:
+		if the fill-colour of B is white, decide yes;
+	decide no.
+To decide which number is the errand-weight of (E - milk-cup-errand) for (P - a royal guard):
+	decide on 3.
+To say ErrandFlav of (E - milk-cup-errand) for (P - a person):
+	say "Mother always told me that milk is good for my muscles and bones... And having been stuck down here for so long, I've really struggled to keep it in my diet. So what I want is a drink of milk. Is that something you think you could get for me? ".
+To compute unique completion of (E - milk-cup-errand) for (P - a person):
+	let BO be a random carried bottle;
+	repeat with B running through carried non-empty bottles:
+		if the fill-colour of B is white, now BO is B;
+	say "You present [NameDesc of BO] to [NameDesc of P].[line break][speech style of P]'Oh, excellent. Just what the doctor ordered!'[roman type][line break][BigNameDesc of P] brings [NameDesc of BO] to [his of P] lips, and takes a sip.[line break][speech style of P]'Hmm, this tastes... unique! Sweeter than I'm used to. What sort of special diet was this cow on, I wonder.'[roman type][line break][big he of P] swings [NameDesc of BO] back and downs the rest of youre thick creamy drink, ";
+	DoseEmpty BO;
+	say "and then hands [NameDesc of BO] back to you.".
+
+energy-cup-errand is an errand.
+Definition: energy-cup-errand is appropriate: decide yes.
+Definition: energy-cup-errand is completed:
+	repeat with B running through carried non-empty bottles:
+		if the fill-type of B is 3, decide yes;
+	decide no.
+To decide which number is the errand-weight of (E - energy-cup-errand) for (P - a student):
+	decide on 9999999.
+To say ErrandFlav of (E - energy-cup-errand) for (P - a person):
+	say "Okay. But first, I want an energy drink. You know, from the vending machine in the food hall... ".
+To compute unique completion of (E - energy-cup-errand) for (P - a person):
+	let BO be a random carried bottle;
+	repeat with B running through carried non-empty bottles:
+		if the fill-type of B is 3, now BO is B;
+	say "You present [NameDesc of BO] to [NameDesc of P].[line break][speech style of P]'Cheers.'[roman type][line break][BigNameDesc of P] brings [NameDesc of BO] to [his of P] lips, and takes a sip.[line break][speech style of P]'I feel better already!'[roman type][line break][big he of P] ";
+	DoseDown BO;
+	say "hands [NameDesc of BO] back to you.".
+
+chastity-errand is an errand.
+Definition: chastity-errand is appropriate:
+	if bondage protection is 2, decide no;
+	if there is a worn chastity bond, decide no;
+	if vagina is actually occupied, decide no;
+	if there is pussy covering actually unavoidable clothing, decide no;
+	if the player is not possessing a vagina and the player is not possessing a penis, decide no;
+	if there is an off-stage specific-key, decide yes;
+	decide no.
+To decide which number is the errand-weight of (E - chastity-errand) for (P - dominatrix):
+	decide on 10.
+To decide which number is the errand-weight of (E - chastity-errand) for (P - matron):
+	decide on 10.
+To say ErrandFlav of (E - chastity-errand) for (P - a person):
+	say "I have a fun idea I thought we could try out... I want you to wear this chastity device for me. Just for a while... You'll be able to get the key back soon, I promise! It'll be like a fun kinky scavenger hunt. ".
+To compute instant effect of (E - chastity-errand) for (P - a person):
+	let C be a random off-stage fetish appropriate chastity cage;
+	if the player is possessing a vagina,	now C is chastity-belt;
+	if C is nothing, now C is a random fetish appropriate chastity cage;
+	say "As soon as you have nodded your assent, [NameDesc of P] is excitedly fitting [NameDesc of C] to your [if C is chastity-belt]loins[otherwise][player-penis][end if]. After [he of P] has locked it on, [he of P] explains where the key is.";
+	let K be a random off-stage specific-key;
+	summon C locked;
+	now K is covering C;
+	if a random number between 1 and 2 is 1:
+		say "[speech style of P]'I've left the key in a random bedroom in this Hotel. Or was it in the Mansion? I forget. Tee-hee! What? I told you, it's a scavenger hunt!'[roman type][line break]";
+		if the player is getting lucky:
+			now K is in a random placed guest modern room;
+		otherwise:
+			now K is in Mansion16;
+	otherwise:
+		let M be eager patron;
+		say "[speech style of P]'I've left the key with a regular customer of the [']Brothel Beds['] here. Tee-hee! What? I told you, it's a scavenger hunt!'[roman type][line break]";
+		now M is carrying K;
+		add K to the taxableItems of M;
+		add K to the tradableItems of M.
+
+
+wisp-errand is an errand.
+Definition: wisp-errand is appropriate: decide yes.
+Definition: wisp-errand is completed:
+	if the number of stalking wisps is 0, decide yes;
+	decide no.
+To decide which number is the errand-weight of (E - wisp-errand) for (P - an acolyte):
+	decide on 8.
+To decide which number is the errand-weight of (E - wisp-errand) for (P - witch):
+	decide on 6.
+To decide which number is the errand-weight of (E - wisp-errand) for (P - a wench):
+	decide on 6.
+To decide which number is the errand-weight of (E - wisp-errand) for (P - djinn):
+	decide on 6.
+To decide which number is the errand-weight of (E - wisp-errand) for (P - a gladiator):
+	decide on 4.
+To decide which number is the errand-weight of (E - wisp-errand) for (P - a person):
+	if P is robot or P is student, decide on 0;
+	decide on 1.
+To say ErrandFlav of (E - wisp-errand) for (P - a person):
+	say "You have debts to other entities that are as of yet unpaid. Fulfill your promises to them, and then return to me, and I will consider your price paid. ".
+To say ErrandFlav of (E - wisp-errand) for (P - a wench):
+	say "Um, there's some spooky things following you around... Please make them go away... ".
+To compute instant effect of (E - wisp-errand) for (P - a person):
+	while the number of stalking wisps < 2:
+		notice a wisp.
+To compute unique completion of (E - wisp-errand) for (P - a person):
+	say "[BigNameDesc of P] nods.[line break][speech style of P]'The spirits that were following you seem settled. This is good.'[roman type][line break]".
+To compute unique completion of (E - wisp-errand) for (P - a wench):
+	say "[BigNameDesc of P] sigh with relief.[line break][speech style of P]'Those spooky things don't seem to be flying around your head any more. Thank goodness.'[roman type][line break]".
+
+
+
+
+A requestable is a kind of object.
+Definition: a requestable is appropriate: decide no. [Gamestate wise, should this be able to request this right now?]
+[To decide which number is the requestability of (C - an object):
+	decide on 1.
+To decide which number is the requestability of (C - a thing):
+	decide on the tradability of C.]
+To say RequestFlav of (C - a thing):
+	say "'Please, is there anything I could do for you to consider giving me your [ShortDesc of C]?'".
+To say RequestFlav of (C - an object):
+	say "BUG - this requestable object doesn't yet have a request phrase.".
+To say RewardFlav of (C - an object):
+	say "give you what you want".
+To say RewardFlav of (C - a thing):
+	say "give you the [ShortDesc of C]".
+To say RewardFlav of (P - a person):
+	let R be the current-reward of P;
+	if R is a person, say "help you out with that";
+	otherwise say RewardFlav of R.
+To compute errand rewarding of (R - an object) for (P - a person):
+	say "BUG - this errand reward doesn't yet have a reward function.".
+[basic-item-request is a requestable.
+Definition: basic-item-request is appropriate: decide yes.
+To say RequestFlav of (C - basic-item-request):
+	say "'Is there anything I could do for you in exchange for a useful item?'".
+To say RewardFlav of (C - basic-item-request):
+	say "give you a little something".]
+To compute errand rewarding of (T - a thing) from (P - a person):
+	if T is off-stage or T is carried by P:
+		say ErrandThanksFlav of T from P;
+		say "[BigNameDesc of P] produces [NameDesc of T], and places it on the ground in front of you.";
+		now T is in the location of P;
+		compute autotaking T;
+	otherwise:
+		say "[speech style of P]'That's very kind of you, but I'm afraid I don't have the [ShortDesc of T] in my possession any more. Sorry hun, you snooze, you lose.'[roman type][line break]".
+To say ErrandThanksFlav of (T - a thing) from (P - a person):
+	say "[speech style of P]'[one of]You're the best[or]I'm seriously grateful[or]I'm so glad you came through for me[or]I'm genuinely appreciative[or]You've earned your reward[in random order]. Here, take this in return, as promised.'[roman type][line break]".
+
+transfer-debt-request is a requestable.
+Definition: transfer-debt-request is appropriate:
+	if the noun is pimp and the satisfy-target of satisfy-pimp-errand is an explorer, decide yes;
+	decide no.
+To say RequestFlav of (C - transfer-debt-request):
+	let M be the satisfy-target of satisfy-pimp-errand;
+	say "'The [MediumDesc of M] said that [he of M][']s in debt to you... Can we make a deal and have you cancel [his of M] debt?'".
+To say RewardFlav of (C - transfer-debt-request):
+	say "cancel the slut's debt".
+To compute errand rewarding of (T - transfer-debt-request) from (P - a person):
+	say "[speech style of P]'Okay, it's done. I've transferred the slut's debt to you, and you'll be paying it off with your body for the next while. Enjoy it if you can, haha!'[roman type][line break][BigNameDesc of P] loses interest in you for now.";
+	bore P;
+	now the satisfy-target of satisfy-pimp-errand is pimp.
+
+sword-removal-request is a requestable.
+Definition: sword-removal-request is appropriate:
+	if the noun is gladiator and gladiator-sword is worn and gladiator-sword is unremovable, decide yes;
+	decide no.
+To say RequestFlav of (C - sword-removal-request):
+	say "'Please, I beg you, help me remove the chain binding me to this sword!'".
+To say RewardFlav of (C - sword-removal-request):
+	say "get the sword to release you".
+To compute errand rewarding of (T - sword-removal-request) from (P - a person):
+	say "[speech style of P]'Hold your sword hand out to me.'[roman type][line break][BigNameDesc of P] clasps the sword hilt from the other side, so now both your hands are holding it together.[line break][speech style of P]'I accept the burden.'[roman type][line break]You watch with marvel as the magic chain unwraps from around your wrist, and wraps around [NameDesc of P][']s instead! [big he of P] is now the one stuck wielding the sword.[line break][speech style of P]'Perhaps when you are a more seasoned warrior, you will want to accept the burden yourself again.'[roman type][line break]";
+	now gladiator-sword is carried by P;
+	now the burden of gladiator-sword is 0.
+
+be-my-urinal is a requestable.
+Definition: be-my-urinal is appropriate:
+	if watersports fetish is 0 or the player is not bursting, decide no;
+	if the noun is wrestler or the noun is wench, decide yes;
+	if the noun is student and the current-rank of the noun >= 5, decide yes;
+	decide no.
+To say RequestFlav of (C - be-my-urinal):
+	say "'I really need to pee... Would you mind letting me use your mouth?'".
+To say RewardFlav of (C - be-my-urinal):
+	say "drink your piss".
+To compute errand rewarding of (T - be-my-urinal) from (P - a person):
+	say "[speech style of P]'So... Do you still need to use the toilet?'[roman type][line break]";
+	if the player is bursting:
+		let C be a random worn actually unavoidable pee covering clothing;
+		if C is clothing:
+			say "You shake your head. You actually can't get [NameDesc of C] out of the way. All that for no reward!";
+		otherwise if the player is consenting:
+			say "You nod your head, and [NameDesc of P] gets on [his of P] knees and opens [his of P] mouth wide. You move your [genitals] close and feed [him of P] with your fresh [urine]! [big he of P] accepts being used as a human toilet without complaint, and swallows every single drop down.";
+			moderateDignify;
+			now the bladder of the player is 0;
+			SportsGet;
+		otherwise:
+			say "You shake your head, deciding against it for some reason.";
+	otherwise:
+		say "You shake your head. The need has gone. All that for nothing!".
+
+
+
+To consider (T - talk-request) for (M - a monster):
+	if M is intelligent and M is interested and M is undefeated and M is not caged and the player is not in a predicament room and M is friendly:
+		now the printed name of T is the substituted form of "Request something from [him of M]...";
+		set next numerical response to the substituted form of "[printed name of T]";
+
+To execute (T - talk-request) for (M - a monster):
+	reset multiple choice questions;
+	now errand-giver is M;
+	let LR be a list of objects;
+	let N be 0;
+	repeat with R running through appropriate requestables:
+		if N < 9:
+			increase N by 1;
+			add R to LR;
+			set next numerical response to the substituted form of "[RequestFlav of R]";
+	repeat with R running through things carried by M:
+		if N < 9:
+			increase N by 1;
+			add R to LR;
+			set next numerical response to the substituted form of "[RequestFlav of R]";
+	repeat with R running through the tradableItems of M:
+		if N < 9 and R is off-stage and R is not listed in LR:
+			increase N by 1;
+			add R to LR;
+			set next numerical response to the substituted form of "[RequestFlav of R]";
+	set numerical response 0 to "cancel";
+	compute multiple choice question;
+	if player-numerical-response > 0:
+		let R be entry player-numerical-response in LR;
+		allocate 4 seconds;
+		say "[variable custom style][RequestFlav of R][roman type][line break]";
+		if M is staff member:
+			say "[speech style of M]'I can't think of anything right now, no. Maybe in the future...'[roman type][line break]";
+		otherwise if M is woman-player:
+			say "[speech style of M]'If I could afford to, I'd do that for free.'[roman type][line break]";
+		otherwise if the current-errand of M is no-errand:
+			now the current-reward of M is R;
+			choose an errand for M;
+			if the current-errand of M is no-errand:
+				say RequestRejection of M;
+			otherwise:
+				say RequestAcceptance of M;
+				compute instant effect of the current-errand of M for M;
+		otherwise:
+			if the current-errand of M is rejected-errand, say "[speech style of M]'No thank you. I tried making you an offer before, and you disappointed me. I'm done playing such games with you.'[roman type][line break]";
+			otherwise say RequestDuplicationRejection of M.
+
+To say RequestAcceptance of (M - a monster):
+	say RequestAssign of M.
+
+To say RequestAssign of (M - a monster):
+	let E be the current-errand of M;
+	say "[speech style of M]'[ErrandFlav of E for M]Do that, and I'll [RewardFlav of M].'[roman type][line break]".
+
+To say RequestRejection of (M - a monster):
+	say "[speech style of M]'No, I don't think so.'[roman type][line break]".
+
+To say RequestDuplicationRejection of (M - a monster):
+	say "[speech style of M]'No, let's not complicate things. You've already got something you're supposed to do for me. [ErrandFlav of M]Do that, and I'll [RewardFlav of M].'[roman type][line break]".
 
 Conversation ends here.

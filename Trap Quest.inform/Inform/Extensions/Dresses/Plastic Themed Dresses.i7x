@@ -123,7 +123,7 @@ To decide which object is the unique-upgrade-target of (C - plastic-is-fantastic
 	if the used condoms of C > 0, decide on condoms dress;
 	decide on nothing.
 
-daddy issues dress is a growing silicone dress. daddy issues dress is high cut. Understand "pink", "rubber" as daddy issues dress.
+daddy issues dress is a growing silicone dress. daddy issues dress is high cut. daddy issues dress is not-top-displacable. Understand "pink", "rubber" as daddy issues dress.
 
 Definition: daddy issues dress is class-relevant:
 	if the class of the player is silicone queen or the class of the player is schoolgirl, decide yes;

@@ -46,8 +46,41 @@ To say BecomesBoredFlav of (M - vine boss):
 
 Part 2 - Combat
 
+vine boss has a number called block-type.
+
+Definition: vine boss (called M) is successfully blocking: [Do they succeed in a roll to stop the player moving]
+	if the block-type of M is 0 and the player is getting unlucky:
+		now the block-type of M is 2;
+	otherwise:
+		now the block-type of M is 0;
+		let D be the difficulty of M; [For most monsters it's multiplied by 2, but not for this one]
+		let MR be the movement reduction of the player; [When we check the movement reduction of the player for the first time in a round, if it is significant, it outputs text explaining why the player is struggling to move away from the monster.]
+		if exposing-magical-dress is worn, now MR is D / -2;
+		let DM be D + MR;
+		if combatSpeed > 1 and DM > the dexterity of the player, increase D by (DM - the dexterity of the player) * (combatSpeed - 1); [double the likelihood of success by doubling the difference between DM and Dex]
+		let R be MR + a random number from 1 to D;
+		if debuginfo > 0, say "[input-style][ShortDesc of M][']s movement block check: player movement penalty ([MR]) + block skill d[D] ([R - MR]) = [R] | ([dexterity of the player].5) dexterity[roman type][line break]";
+		if R > the dexterity of the player:
+			if the player is getting unlucky:
+				now the block-type of M is 1;
+				decide no;
+			decide yes;
+		decide no.
+
 To say MovementBlock of (M - vine boss):
-	say "As you clamber to escape the pit, a vine wraps around your ankle and pulls you right back down to where you started!".
+	if the block-type of M is 0:
+		say "As you clamber to escape the pit, a vine wraps around your ankle and pulls you right back down to where you started!";
+	otherwise:
+		if the block-type of M is 1:
+			say "You almost make it to the top, but then your grip fails at the last moment, and you plummet back down to the ground! [GotUnluckyFlav]";
+		otherwise:
+			say "As you are climbing, you come face-to-face with the tip of a live vine![line break][variable custom style]Uh-oh.[roman type][line break][']Uh-oh['] is right - it blasts you in the face with a powerful jet of [if diaper quest is 1]water[otherwise][semen][end if], which sends you falling down to the ground and landing painfully on your back! [GotUnluckyFlav]";
+			if diaper quest is 1, AnnouncedSquirt water on face by 20;
+			otherwise AnnouncedSquirt semen on face by 20;
+			BodyRuin 1;
+		if the player is upright:
+			now the stance of the player is 1;
+			say "[bold type]You are now on your knees.[roman type][line break]".
 
 To compute unique teleportation to (R - Woods16):
 	unless the player is flying:

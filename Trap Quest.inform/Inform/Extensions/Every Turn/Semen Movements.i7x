@@ -45,6 +45,9 @@ An all time based rule (this is the compute cum movements rule):
 		if the pregnancy of the player > 0 and timeBombTime <= 0 and playerRegion is not school:
 			if the latex-transformation of the player > 3 and the pregnancy of the player is 1, now the pregnancy of the player is 2;
 			compute pregnancy;
+		if the womb volume of vagina > 0 and (diaper quest is 1 or the player is not possessing a vagina):
+			say "BUG - semen just got into your womb, but [if diaper quest is 1]this is diaper quest[otherwise]you don't even have one[end if]! Please report this as a bug.";
+			now the womb volume of vagina is 0;
 		if the remainder after dividing time-earnings by vagina-semen-frequency < time-seconds:
 			if the womb volume of vagina > 0 and the player is able to get pregnant:
 				let PR be the pregnancy resistance of the player;
@@ -224,7 +227,10 @@ To compute enema leaking with reason (T - a text):
 			otherwise:
 				say ". ";
 				now C is thighs;
-			if milk-count + urine-count + semen-count > 1:
+			if current-predicament is joint-fuckhole-predicament and the player is in Predicament01:
+				say "It drops down onto [NameDesc of torn-shirt].";
+				SemenSoakUp torn-shirt by total-count;
+			otherwise if milk-count + urine-count + semen-count > 1:
 				AnnouncedExpel murkwater on C by total-count;
 			otherwise: [water gets converted into other liquids for simplicity]
 				if semen-count > 0:

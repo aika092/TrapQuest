@@ -226,6 +226,8 @@ To transform (C - black-lace-thong):
 	otherwise:
 		say "Paper bills appear on the thong, sewn on and completely unremovable, but looking as though they've just been tucked into the front!";
 		now C is monified.
+To uniquely destroy (C - black-lace-thong):
+	now C is not monified.
 
 [Carry out taking black-lace-thong:
 	if the noun is in Hotel20 and the player is getting unlucky, now the noun is provocation.]
@@ -240,7 +242,7 @@ Definition: heart-strap-thong is heart themed: decide yes.
 To decide which number is the penis-capacity of (K - heart-strap-thong):
 	decide on 2.
 To decide which number is the unique outrage of (K - heart-strap-thong):
-	decide on 3.
+	decide on 1.
 To decide which number is the crotch-tightness of (C - heart-strap-thong):
 	decide on 1. [can't cause cameltoes]
 
@@ -254,7 +256,7 @@ Definition: spades-strap-thong is interracial themed: decide yes.
 To decide which number is the penis-capacity of (K - spades-strap-thong):
 	decide on 2.
 To decide which number is the unique outrage of (K - spades-strap-thong):
-	decide on 3.
+	decide on 1.
 To decide which number is the crotch-tightness of (C - spades-strap-thong):
 	decide on 1. [can't cause cameltoes]
 

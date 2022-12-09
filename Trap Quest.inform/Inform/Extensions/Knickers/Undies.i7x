@@ -21,13 +21,6 @@ To say MediumDesc of (U - an undies):
 To say selfexaminetitle of (U - an undies):
 	say "pair of undies".
 
-To decide which number is the core outrage of (C - an undies): [This is plugged into both outrage and cringe]
-	if C is crotch-exposing, decide on 15;
-	let O be 13 - the penis-capacity of C;
-	if O < 11 and C is actually sheer, decide on 11; [Sheer undies? Very lewd!]
-	if O < 6, decide on 6; [It's always a bit outrageous to have your underwear on display]
-	decide on O.
-
 Report wearing undies:
 	if the noun is cursed and diaper quest is 0:
 		if the thickness of hips < max hip size and a random number between 1 and 2 is 1:

@@ -125,8 +125,8 @@ Check entering the throne:
 				say "[variable custom style]I'm a princess now?![roman type][line break]" instead;
 			otherwise if the class of the player is bride:
 				let C be a random worn headgear;
-				now the quest of C is betrothal-quest;
 				transform C into tiara-veil;
+				uniquely set up tiara-veil;
 				now bride-consort is mechanic;
 				say "[variable custom style]So I'm a princess now too? And... what's this I can feel... I'm betrothed to someone? My destiny is to consummate my wedding night... with someone in [if Hotel01 is placed]the hotel[otherwise]a hotel somewhere[end if]?[roman type][line break]";
 				PinkWardrobeUnclash princess bride dress;

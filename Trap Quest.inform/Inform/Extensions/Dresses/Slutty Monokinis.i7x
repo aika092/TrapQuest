@@ -355,7 +355,7 @@ To decide which number is the wornArmsRequired of (C - anal-beads-blue-swimsuit)
 	decide on 0.
 
 To say ClothingDesc of (P - anal-beads-blue-swimsuit):
-	say "This black sheer backless thong has a set of [bold type][DongSize the plug size of P][roman type][line break] anal beads instead of a normal rear thong section. It will only stay in place if it's pushed inside your butt.".
+	say "This black sheer backless thong has a set of [bold type][DongSize the plug size of P][roman type] anal beads instead of a normal rear thong section. It will only stay in place if it's pushed inside your butt.".
 
 To say selfexamineuniquetitle of (K - anal-beads-blue-swimsuit):
 	say "pair of anal beads plug panties".

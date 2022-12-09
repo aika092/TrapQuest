@@ -457,20 +457,18 @@ To lock pedestals:
 		if L is 4 and lactation fetish is 1, now P is chilled.
 
 To add treasure to (X - a pedestal):[This function should happen when the mansion is generated, not when the pedestal is opened.]
-	if there is an off-stage pocket necronomicon:
-		let P be a random off-stage pocket necronomicon;
-		now P is in X;
-		now P is museum-store;
+	if pocket necronomicon is off-stage:
+		now pocket necronomicon is in X;
+		now pocket necronomicon is museum-store;
 		now the paid of X is 3;
 	otherwise if there is an off-stage magic lamp:
 		let P be a random off-stage magic lamp;
 		now P is in X;
 		now P is museum-store;
 		now the paid of X is 2;
-	otherwise if there is an off-stage wood-dong and diaper quest is 0:[if this is found in the mansion shop, it's ridiculously expensive]
-		let P be a random off-stage wood-dong;
-		now P is in X;
-		now P is museum-store;
+	otherwise if diaper quest is 0 and wood-dong is off-stage:[if this is found in the mansion shop, it's ridiculously expensive]
+		now wood-dong is in X;
+		now wood-dong is museum-store;
 		now the paid of X is 10;
 	otherwise:
 		let P be a random off-stage rare fetish appropriate clothing;

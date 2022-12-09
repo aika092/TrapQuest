@@ -9,8 +9,7 @@ To decide which figure-name is the monster-image of (M - hellhound):
 Understand "hell", "hound", "dog", "puppy", "slave" as hellhound. The text-shortcut of hellhound is "hh".
 
 Definition: hellhound is mansion dwelling:
-	if mythical creature fetish is 1 or diaper quest is 1, decide yes;
-	decide no.
+	decide yes.
 
 Definition: hellhound is musky:
 	if the refractory-period of it <= 0, decide yes;
@@ -28,7 +27,7 @@ To say MediumDesc of (M - hellhound):
 
 To say MonsterDesc of (M - hellhound):
 	if mythical creature fetish is 1:
-		say "This huge black canine is as tall as you even when [he of M]'s on all fours. [big his of M] spiked tail, sharp fangs and elongated claws are dead give-aways that [he of M] is from another plane[if pet collar is off-stage][big he of M] holds a collar and leash in [his of M] mouth, as if [he of M]'s looking for someone to take [him of M] on a walk, or more likely, a pet of [his of M] own to lead around! [end if][big he of M] stares at you with glowing red eyes, letting you know that a keen intelligence lies hidden behind the bestial mask.";
+		say "This huge black canine is as tall as you even when [he of M]'s on all fours. [big his of M] spiked tail, sharp fangs and elongated claws are dead give-aways that [he of M] is from another plane. [if pet collar is off-stage][big he of M] holds a collar and leash in [his of M] mouth, as if [he of M]'s looking for someone to take [him of M] on a walk, or more likely, a pet of [his of M] own to lead around! [end if][big he of M] stares at you with glowing red eyes, letting you know that a keen intelligence lies hidden behind the bestial mask.";
 	otherwise:
 		say "This [man of M] has black bondage items keeping [his of M] arms and legs fully bent, forcing [him of M] to crawl along on [his of M] elbows and knees. [big he of M] seems pretty happy though, and you can make out a joyous and playful expression behind [his of M] fetish hood. [if diaper quest is 1]A thick black diaper covers [his of M] rear[otherwise]Naked just like a real animal, [he of M][']s completely naked and [his of M] and average sized [DickDesc of M] are completely visible. A black cock ring is situated near the base of [his of M] shaft.[end if].".
 
@@ -220,6 +219,9 @@ To compute perception of (M - hellhound):
 	if the class of the player is living sex doll:
 		say "[BigNameDesc of M] sniffs you, and then decides to leave you alone.";
 		bore M;
+	otherwise if skeleton-playsuit is worn or skeleton stockings is worn:
+		say "[BigNameDesc of M] barks eagerly upon seeing your [if skeleton-playsuit is worn]skeleton playsuit[end if][if skeleton-playsuit is worn and skeleton stockings is worn] and [end if][if skeleton stockings is worn]skeleton stockings[end if]! It looks like [he of M] wants a bone for [himself of M]![line break][variable custom style][if the player is able to speak]'Uh-oh... Bad dog! Down!'[otherwise]Uh-oh...[end if][roman type][line break]";
+		anger M;
 	otherwise if the player is pheromonal:
 		anger M;
 		say "[BigNameDesc of M] sniffs the air as a waft of your pheromones catches [his of M] attention. [big his of M] massive demon cock swells, and [he of M] turns towards you with visible aggression! [if mythical creature fetish is 1]You could swear you see [his of M] mouth form into a sinister smile[otherwise][big his of M] smile just got even wider[end if]...";

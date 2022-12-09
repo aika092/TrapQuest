@@ -69,22 +69,22 @@ To decide which number is the zap damage improvement of (W - a pocketbook):
 
 Section 1 - Pocket Necronomicon
 
-A pocket necronomicon is a kind of pocketbook. A pocket necronomicon is unique. The text-shortcut of pocket necronomicon is "pkn". There is 1 pocket necronomicon. Understand "book", "necro", "nomicon", "nomic" as pocket necronomicon.
+pocket necronomicon is a pocketbook. pocket necronomicon is unique. The text-shortcut of pocket necronomicon is "pkn". Understand "book", "necro", "nomicon", "nomic" as pocket necronomicon.
 
 Figure of necronomicon is the file "Items/Accessories/Equippables/book2.png".
 
-To decide which figure-name is the clothing-image of (C - a pocket necronomicon):
+To decide which figure-name is the clothing-image of (C - pocket necronomicon):
 	decide on figure of necronomicon.
 
-Definition: a pocket necronomicon is fetish appropriate: decide yes.
-Definition: a pocket necronomicon is shop-eligible: decide no.
+Definition: pocket necronomicon is fetish appropriate: decide yes.
+Definition: pocket necronomicon is shop-eligible: decide no.
 
-To say UniqueClothingDesc of (C - a pocket necronomicon):
+To say UniqueClothingDesc of (C - pocket necronomicon):
 	say "A small black pocket-sized book, with the rather ominous title of NECRONOMICON down the spine. In all capital letters, which does seem a bit melodramatic.".
 
-To say ShortDesc of (C - a pocket necronomicon):
+To say ShortDesc of (C - pocket necronomicon):
 	say "necronomicon".
-To say MediumDesc of (C - a pocket necronomicon):
+To say MediumDesc of (C - pocket necronomicon):
 	say "pocket necronomicon".
 
 Carry out browsing pocket necronomicon:
@@ -151,12 +151,12 @@ To compute attack of (W - pocket necronomicon) at (M - a monster):
 							say "You feel weaker.";
 							StrengthDown 1.
 
-To decide which number is the humiliation-influence of (C - a pocket necronomicon):
+To decide which number is the humiliation-influence of (C - pocket necronomicon):
 	let B be -1;
 	increase B by the magic-modifier of C;
 	decide on B.
 
-Definition: a pocket necronomicon is magic themed: decide yes.
+Definition: pocket necronomicon is magic themed: decide yes.
 
 Section 2 - Book of Do Overs
 

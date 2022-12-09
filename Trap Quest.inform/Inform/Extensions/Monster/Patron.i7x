@@ -1266,6 +1266,11 @@ To compute payment of (M - a patron):
 		if M is pissed off:
 			say PissedOffFlav of M;
 			decrease the employee-record of senior robobellboy by 1;
+		otherwise if there is a specific-key held by M:
+			let K be a random specific-key held by M;
+			say "[speech style of M]'A little birdie told me that you'll accept this as payment!'[roman type][line break][BigNameDesc of M] drops [NameDesc of K] onto the bed.";
+			now K is in the location of the player;
+			compute autotaking K;
 		otherwise if VIP-card is held by M:
 			say "[BigNameDesc of M] flashes [his of M] [VIP-card].[line break][speech style of M]'Thanks for the VIP card! It's great to never have to pay for this.'[roman type][line break]";
 		otherwise:

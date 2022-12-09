@@ -100,7 +100,7 @@ To compute baby hotel chair sitting:
 				decrease S by the total-soak of K;
 				if S < 5, now S is 5;
 				[if K is fluid immune, now S is 1;]
-				PissSoak S on K;
+				AnnouncedExpel urine on K by S;
 				say "The pumping keeps going for what feels like a full 10 seconds before it stops[if the urine-soak of K > 0], leaving your the inside of your [ShortDesc of K] feeling very wet[end if].";
 			otherwise:
 				say "You feel something very thin poke its way through the [if K is not total protection]gap[otherwise if K is diaper]padding[otherwise if K is metal or K is plastic]leg hole[otherwise]fabric[end if] of your [ShortDesc of K] and then start pumping. Your [ShortDesc of K] is being filled with something warm and viscous - it's [semen]!";

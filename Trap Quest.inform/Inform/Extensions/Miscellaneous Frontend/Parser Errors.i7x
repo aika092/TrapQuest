@@ -10,18 +10,18 @@ Rule for printing a parser error when the latest parser error is the not a verb 
 	say "That's not a verb I recognise. But if you really think it should be, maybe tell Aika?" instead;
 
 Rule for printing a parser error when the latest parser error is the didn't understand error:
-	if the bimbo of the player > 12, say "[second custom style]I'm such a dumb slut I can't even write words in my head properly! I should probably try again, I guess.[roman type][line break]" instead;
+	if the bimbo of the player > 12, say "[second custom style]I'm such a dumb [if diaper quest is 1]baby[otherwise]slut[end if] I can't even write words in my head properly! I should probably try again, I guess.[roman type][line break]" instead;
 	otherwise say "I didn't understand that phrase." instead.
 
 Last error is a text that varies. The last error is "derp".
 
 Rule for printing a parser error when the latest parser error is the not a verb I recognise error:
 	now the last error is the player's command;
-	if the bimbo of the player > 12, say "[second custom style]What does '[last error]' mean? Is it another word for '[one of]put it up my butt[or]give a blowjob[or]suck on greedily[in random order]'?[roman type][line break]" instead;
+	if the bimbo of the player > 12, say "[second custom style]What does '[last error]' mean? [if diaper quest is 1]I'm too much of a dumb baby to know that complicated word...[otherwise]Is it another word for '[one of]put it up my butt[or]give a blowjob[or]suck on greedily[in random order]'?[end if][roman type][line break]" instead;
 	otherwise say "[variable custom style]I don't know how to do that![roman type][line break]" instead.
 
 Rule for printing a parser error when the latest parser error is the noun did not make sense in that context error:
-	if the bimbo of the player > 12, say "[second custom style]What does that mean? Is it another word for '[one of]put it up my butt[or]give a blowjob[or]suck on greedily[in random order]'?[roman type][line break]" instead;
+	if the bimbo of the player > 12, say "[second custom style]What does that mean? [if diaper quest is 1]I'm too much of a dumb baby to know that complicated word...[otherwise]Is it another word for '[one of]put it up my butt[or]give a blowjob[or]suck on greedily[in random order]'?[end if][roman type][line break]" instead;
 	otherwise say "[variable custom style]I don't know how to do that![roman type][line break]" instead.
 
 Parser Errors ends here.

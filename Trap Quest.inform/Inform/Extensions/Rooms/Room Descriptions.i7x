@@ -21,6 +21,7 @@ To say RoomTrapDesc:
 				now X is 1; [We only mention each direction once.]
 				say "A thin wire [if the location of the player is no-roof]is strung tightly between two trees either side of the [trap-direction of A] exit[otherwise]crosses the [trap-direction of A] exit of the room[end if] at knee height. ";
 	if the location of the player is garlic, say "[if the location of the player is Mansion23]Something about this room feels less... alive than everywhere else[otherwise if the location of the player is no-roof]There is a glowing crest on the ground here, emanating a gentle aura of calm into your surroundings. The air here doesn't feel quite as heavy as it is everywhere else[otherwise]There is a glowing crest painted onto the floorboards in this room, emanating a pleasant feeling of calm into your surroundings. The air here doesn't feel quite as heavy as it is everywhere else[end if].";
+	if the location of the player is garlic-waned, say "There is a crest [if the location of the player is no-roof]on the ground here[otherwise]painted onto the floorboards in this room[end if], but it's not glowing like it should be.";
 	say RoomMonsterDesc.
 
 To say RoomMonsterDesc:

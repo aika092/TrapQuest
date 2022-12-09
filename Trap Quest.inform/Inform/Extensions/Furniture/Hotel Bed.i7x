@@ -65,6 +65,9 @@ HotelBedPatrons is a kind of hotel bed. There are 2 HotelBedPatrons. 1 HotelBedP
 patronbed uses is a number that varies.
 
 To compute PatronSpawning of (F - a hotel bed):
+	compute PatronSpawning of F with 0 men. [random number of men]
+
+To compute PatronSpawning of (F - a hotel bed) with (MN - a number) men:
 	increase patronbed uses by 1;
 	let R be 1;
 	if diaper quest is 1:
@@ -72,10 +75,14 @@ To compute PatronSpawning of (F - a hotel bed):
 		now M is in the location of the player;
 		set up M;
 	otherwise:
-		let H be patronbed uses;
-		if H > 8, now H is 8;
-		now R is a random number between 1 and H;
-		if R > 6, now R is 6;
+		if MN > 0:
+			now R is MN;
+			if R > 8, now R is 8;
+		otherwise: [chosen randomly]
+			let H be patronbed uses;
+			if H > 8, now H is 8;
+			now R is a random number between 1 and H;
+			if R > 6, now R is 6;
 		repeat with N running from 1 to R:
 			let M be a random off-stage generic-appropriate pimp-appropriate patron;
 			if M is a monster:

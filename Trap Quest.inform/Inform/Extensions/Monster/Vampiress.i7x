@@ -172,7 +172,10 @@ Definition: vampiress (called M) is objectifying the player:
 To compute perception of (M - vampiress):
 	say "[BigNameDesc of M] notices you!";
 	if the player is not able to get horny or the player is barbie:[covers living sex doll]
-		say "[speech style of M]'You are not even fit for feeding. How amusing. Now get out of my sight.'[roman type][line break]";
+		if the current-errand of M is completed and M is not uniquely unfriendly:
+			compute errand completion of M;
+		otherwise:
+			say "[speech style of M]'You are not even fit for feeding. How amusing. Now get out of my sight.'[roman type][line break]";
 		distract M;
 		if M is chain-tethering:
 			let C be a random worn collar;
@@ -185,6 +188,8 @@ To compute perception of (M - vampiress):
 	otherwise if the class of the player is vixen:
 		say "[speech style of M]'[one of]Did you think you could fool me with that disguise, fox girl? Don't worry, darling. This time, everything you'll be taking from me is free.'[or]There you are, darling. I have something here that you simply must take. I won't take no for an answer, darling.'[stopping][roman type][line break]";
 		anger M;
+	otherwise if the current-errand of M is completed and M is not uniquely unfriendly:
+		compute errand completion of M;
 	otherwise if the class of the player is barbarian:
 		say "[speech style of M]'[one of]Oh my, a cave[if the player is presenting as female]woman[otherwise]man[end if]? Hm. No point with the pretext then. Get on your knees.'[or]Oh, a barbarian. How retro. Can you get on your knees for me, darling? Do you know that that means?'[or]So, you're a barbarian? Hm. It feels pointless, but we can avoid being violent, can't we? Get on your knees.'[at random][roman type][line break]";
 		anger M;
@@ -746,7 +751,13 @@ To say MonsterTripAnnounceFlav of (M - vampiress):
 	say "[BigNameDesc of M] lunges at you with cat-like quickness, grabbing your chin and forcing you to look [him of M] directly in the eye!".
 
 To say MonsterTrippedFlav of (M - vampiress):
-	say "Tingles pass through your head as you are forced to stare deeply into [his of M] eyes, and you find yourself nodding slowly as you drop to your knees.".
+	say "Tingles pass through your head as you are forced to stare deeply into [his of M] eyes, and you find yourself nodding slowly as you drop to your knees.[line break][speech style of M]'Now stay down.'[roman type][line break][BigNameDesc of M] commands. You feel your mind and this powerful command fighting for control of your arms and legs...";
+	if the player is getting unlucky:
+		now another-turn is 1;
+		now another-turn-flavour is "It takes you a few moments to shake off [NameDesc of M]'s command to stay on your knees. [GotUnluckyFlav]";
+		now the last-interaction of M is 0; [she doesn't wait for you to present a body part]
+	otherwise:
+		say "You manage to overpower the command, this time, and still have control over your body.".
 
 To say MonsterFailedTripFlav of (M - vampiress):
 	say "Tingles pass through your head as you are forced to stare deeply into [his of M] eyes, but you snap out of it and quickly break [his of M] grip!".
@@ -862,7 +873,7 @@ To say DiaperChangeRemovalFlav of (M - vampiress):
 	say "[BigNameDesc of M] uses [his of M] telekinesis to send the [ShortDesc of current-diaper] sailing away into the distance[if current-diaper is messed knickers]. After indulging [himself of M] with a couple of gleeful deep breaths, [NameDesc of M] snaps [his of M] fingers and your entire body becomes as clean and soft as... a baby's bottom[end if].".
 
 To say DiaperChangeFlav of (M - vampiress):
-	say "Without even moving a muscle, you watch as [if old-diaper is new-diaper]an identical (but clean) [ShortDesc of new-diaper][otherwise]a [ShortDesc of new-diaper][end if] appears out of thin air and sails onto your bum and then fixes itself in place.".
+	say "Without [him of M] even moving a muscle, you watch as [if old-diaper is new-diaper]an identical (but clean) [ShortDesc of new-diaper][otherwise]a [ShortDesc of new-diaper][end if] appears out of thin air and sails onto your bum and then fixes itself in place.".
 
 To say DoubleDiaperFlav of (M - vampiress):
 	say DoubleDiaperAnnounceFlav of M;
@@ -1015,7 +1026,7 @@ To decide which number is the dominationtype of (M - vampiress) using (F - penis
 
 Definition: vampiress (called M) is uniquely-fuckable:
 	if the stake of M is a sex toy and M is carrying the stake of M, decide no;
-	if the number of held sex toys is 0, decide no;
+	if the number of carried sex toys is 0 and the number of worn usually autoremovable sex toys is 0, decide no;
 	decide yes.
 
 To say UniqueFuckDesc of (M - vampiress):
@@ -1023,20 +1034,26 @@ To say UniqueFuckDesc of (M - vampiress):
 
 To decide which number is the dominationtype of (M - vampiress) using (F - face):
 	repeat with S running through held sex toys:
-		say "Use your [MediumDesc of S] as the stake?";
-		if the player is consenting:
-			now the stake of M is S;
-			decide on FUCK-UNIQUE;
+		if S is carried or S is usually autoremovable:
+			say "Use your [MediumDesc of S] as the stake?";
+			if the player is consenting:
+				dislodge S;
+				now S is carried by the player;
+				now the stake of M is S;
+				decide on FUCK-UNIQUE;
 	unless the stake of M is a sex toy:
-		let T be a random held sex toy;
+		let T be a random carried sex toy;
+		if T is nothing, let T be a random held usually autoremovable sex toy;
 		now the stake of M is T;
+		dislodge T;
+		now T is carried by the player;
 	decide on FUCK-UNIQUE.
 
 To decide which number is the submissiveness base of (M - vampiress):
 	let D be the difficulty of M;
 	increase D by player-fuckchoice * 2;
 	if the stake of M is an insertable thing, decrease D by 2;
-	if the stake of M is a wood-dong, decrease D by 2;
+	if the stake of M is a wood-dong, decrease D by 10;
 	decide on D.
 
 To say DominanceFailure of (M - vampiress):
@@ -1079,11 +1096,12 @@ To compute failed dominance punishment of (M - vampiress):
 
 To unique dominate (M - vampiress):
 	let S be the stake of M;
-	now M is carrying S;
 	say "You get behind [NameDesc of M] before [he of M] realises what's happening and immediately jam the [MediumDesc of S] right up [his of M] ass.[line break][speech style of M]'[one of]My weakness...[or]A s-stake? Oh SHIT![or]H-how did you find out m-my...[at random] A-aah...AAAAAH!'[roman type][line break][BigNameDesc of M] screams with pleasure as [his of M] [LongDickDesc of M] immediately jumps to erection, twitching and spasming as it shoots long ropes of [semen] across the floor.";
 	orgasm M;
 	FavourDown M by 5;
-	now player-fucking is DOMINANT-SUPER.
+	now player-fucking is DOMINANT-SUPER;
+	progress quest of mansion-purification-quest;
+	now M is carrying S.
 
 To blowjob dominate (M - vampiress):[You 'feed' the vampiress]
 	let C be a random bottom level protection clothing;

@@ -245,6 +245,7 @@ Definition: heart-pussy-skirt is class-relevant:
 	decide no.
 Definition: heart-pussy-skirt is potentially vagina covering: decide no.
 Definition: heart-pussy-skirt is potentially at least partially vagina covering: decide no.
+Definition: heart-pussy-skirt is potentially-bottom-layer-concealing: decide no.
 
 To decide which number is the initial outrage of (C - heart-pussy-skirt):
 	decide on 8.
@@ -275,6 +276,7 @@ Definition: heart-pussy-hobble-skirt is class-relevant:
 	decide no.
 Definition: heart-pussy-hobble-skirt is potentially vagina covering: decide no.
 Definition: heart-pussy-hobble-skirt is potentially at least partially vagina covering: decide no.
+Definition: heart-pussy-hobble-skirt is potentially-bottom-layer-concealing: decide no.
 
 To decide which number is the initial outrage of (C - heart-pussy-hobble-skirt):
 	decide on 8.

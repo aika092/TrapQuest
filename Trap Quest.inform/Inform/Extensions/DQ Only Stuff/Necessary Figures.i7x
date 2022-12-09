@@ -4,6 +4,8 @@ Figure of acolyte 5 is the file "NPCs/Mansion/Cultist/cultist5.png".
 To decide which figure-name is the monster-image of (M - an acolyte):
 	decide on figure of acolyte 5.
 
+Figure of agent angry is the file "NPCs/MultiFloor/Agent/agent2b.png".
+
 Figure of bianca defeated is the file "NPCs/School/Teacher/teacher3c.png".
 
 Figure of demoness cutscene 15 is the file "Special/Cutscene/cutscene-demoness-dq-facesit1.jpg".
@@ -33,7 +35,7 @@ To decide which figure-name is the examine-image of (C - dominatrix-cage):
 		decide on figure of dominatrix cage berri 1;
 	decide on figure of dominatrix cage empty.
 
-Figure of elder altar is the file "Env/Mansion/altar1.jpg".
+Figure of DungeonScenery01 is the file "Env/Dungeon/statue2.jpg".
 
 Figure of enema tag 1 is the file "Special/Cutscene/cutscene-enema-tag-1b.jpg".
 Figure of enema tag 1 finish line is the file "Special/Cutscene/cutscene-enema-tag-1d.jpg".
@@ -133,6 +135,12 @@ Figure of rank 5 misty is the file "NPCs/School/Student/student4h.png".
 
 Figure of rank 1 rosie is the file "NPCs/School/Student/student1a.png".
 Figure of rank 2 rosie is the file "NPCs/School/Student/student1c.png".
+
+Figure of shopkeeper 1a is the file "NPCs/Dungeon/Shopkeeper/shopkeeper4.jpg".
+Figure of shopkeeper 1b is the file "NPCs/Dungeon/Shopkeeper/shopkeeper4b.jpg".
+To decide which figure-name is Figure of Shopkeeper 1:
+	if shopkeeper is in Dungeon41, decide on Figure of shopkeeper 1a;
+	decide on Figure of shopkeeper 1b.
 
 Figure of Teacher Hannah is the file "NPCs/School/Teacher/teacher5a.png".
 

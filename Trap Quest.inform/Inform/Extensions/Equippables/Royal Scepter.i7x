@@ -192,8 +192,8 @@ To compute betrothal of (M - a monster):[This only triggers when the player is f
 					otherwise:
 						say "[if C is a thing]Your [C] pulses, and an[otherwise]An[end if] image of [NameDesc of bride-consort] appears in your head as an overwhelming feeling of guilt at your lack of loyalty washes over you.";
 				otherwise if bride-consort is monster:
-					if bride-consort is mating or C is a thing or the refractory-period of bride-consort > 0:
-						say "[if C is a thing]Your [C] pulses, and an[otherwise]An[end if] image of [NameDesc of bride-consort] appears in your head. You know that no matter who you have sex with, nothing could ever shake your everlasting connection.";
+					if the reaction of the player is 0 and (bride-consort is mating or C is a thing or the refractory-period of bride-consort > 0):
+						say "[if C is a thing]Your [C] pulses, and an[otherwise]An[end if] image of [NameDesc of bride-consort] appears in your head. You know that no matter who forces themselves on you, nothing could ever shake your everlasting connection.";
 					otherwise:
 						say "An image of [NameDesc of bride-consort] appears in your head as an overwhelming feeling of guilt washes over you.";
 						punish infidelity;

@@ -211,7 +211,9 @@ To set up (M - a gladiator):
 	if diaper quest is 0, add gladiator-sword to the banishItems of M, if absent;
 	add metal-disc to the taxableItems of M, if absent;
 	add red-pasties to the tradableItems of M, if absent;
-	add nail-bomb to the tradableItems of M, if absent;
+	add concealment-salve to the tradableItems of M, if absent;
+	add concealment-salve to the taxableItems of M, if absent;
+	add nail-bomb to the taxableItems of M, if absent;
 	now the raw difficulty of M is the starting difficulty of M;
 	now M is female;
 	if doomed is 5, SilentlyDifficultyUp M by 1;
@@ -293,11 +295,11 @@ To say DiaperReaction of (M - a gladiator):
 To compute (M - a monster) stomping (N - a gladiator):
 	if diaper quest is 1:
 		if M is in the location of the player, say "[BigNameDesc of N] charges at [NameDesc of M] with [his of N] [SwordDesc of N]. With incredible agility [NameDesc of M] grabs the sword and snaps it in two before body slamming [NameDesc of N]. As soon as [he of N] is out of sight, you hear [him of N] begin to scream. [big he of N] screams[line break][speech style of N]'No, [please], I need the toilet! Ahhhhh!'[roman type][line break]and then begins to wail like a baby. Moments later [NameDesc of M] stands back up, revealing that [NameDesc of N] is now lying in a very fully used diaper, and no longer has a sword. [big he of N] scrabbles at [his of N] diaper with [his of N] useless hands for a few moments before beginning to soil [himself of N] further. After [he of N] is done, [he of N] passes out from exhaustion.";
-		otherwise say "You hear the sound of a sword hitting stone, followed by a [man of M] shouting[line break][speech style of N]'No, [please], I need the toilet!'[roman type][line break]from [if N is nearby]nearby![otherwise]somewhere in the dungeon![end if]";
+		otherwise say "You hear the sound of a sword hitting stone, followed by a [man of M] shouting[line break][speech style of N]'No, [please], I need the toilet!'[roman type][line break]from [if N is nearby]nearby![otherwise]somewhere in the [playerRegion]![end if]";
 		now N is diaper-enslaved;
 	otherwise:
 		if M is in the location of the player, say "[BigNameDesc of N] charges at [NameDesc of M] with [his of N] [SwordDesc of N]. With incredible agility [NameDesc of M] dodges the attack, grabs [NameDesc of N], snaps the sword in two and and presses [his of M] [LongDickDesc of M] against [his of N] asshole. [big he of N] screams[line break][speech style of N]'Aaagh, [please], not there!'[roman type][line break]but before [he of N] has even finished [he of M] has started fucking and cumming inside [him of N]. You watch as [his of N] belly grows in front of your eyes. After [he of N] is full, [he of M] tosses [him of N] to the ground, where [he of N] promptly faints.";
-		otherwise say "You hear the sound of a sword hitting stone, followed by a [man of N] shouting[line break][speech style of N]'Aaagh, [please], not there!'[roman type][line break]from [if N is nearby]nearby![otherwise]somewhere in the dungeon![end if]";
+		otherwise say "You hear the sound of a sword hitting stone, followed by a [man of N] shouting[line break][speech style of N]'Aaagh, [please], not there!'[roman type][line break]from [if N is nearby]nearby![otherwise]somewhere in the [playerRegion]![end if]";
 		now N is fucked-silly;
 		now the sleep of N is 600.
 
@@ -552,7 +554,9 @@ To compute appearance assessment of (M - a gladiator):
 
 To compute perception of (M - a gladiator):
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed][one of], even though [he of M] is almost naked [himself of M][or][stopping].[otherwise]![end if]";
-	if the player is soulless and the class of the player is not succubus and the class of the player is not avatar:
+	if the current-errand of M is completed and M is not uniquely unfriendly:
+		compute errand completion of M;
+	otherwise if the player is soulless and the class of the player is not succubus and the class of the player is not avatar:
 		say "[BigNameDesc of M] looks at you carefully.[line break][speech style of M]'Oh my, just to look at your eyes I see there is nothing of true womanhood left inside your heart. Do not fear, I know just how to handle that...'[roman type][line break]";
 		anger M;
 	otherwise if M is purified:
@@ -630,6 +634,8 @@ To compute DQ perception of (M - a gladiator):
 	otherwise if M is uniquely unfriendly:
 		say "[speech style of M]'[if the times-submitted of M is 0][one of]Goodness gracious, this has gone too far! Clearly I need to take your care into my own hands.'[or]You need more than a diaper check, little one. You need reconditioning. Come here.'[or]Come here. I am going to train you further.'[then at random][otherwise]You again! [one of]On your knees!'[or]Your appearance has not improved since our last session. Clearly I must punish you further.'[at random][end if][roman type][line break]";
 		anger M;
+	otherwise if the current-errand of M is completed:
+		compute errand completion of M;
 	otherwise if there is a worn currently at least partially visible diaper or M is aware that the player needs a change:
 		compute diaper check of M;
 	otherwise if the diaper-duration of M > 0:
@@ -1878,6 +1884,12 @@ Part 4 - Conversation
 
 To say RewardFlav of (M - a gladiator) for (T - nail-bomb):
 	say "[BigNameDesc of M] removes the pink bomb from [his of M] belt.[line break][speech style of M]'If you find yourself in an unfair fight, this might prove invaluable.'[roman type][line break]".
+
+To say MonsterOfferAcceptFlav of (M - a gladiator) to (T - a thing):
+	if M is unfriendly:
+		say "[BigNameDesc of M] raises [his of M] eyebrows.[line break][speech style of M]'A peace offering? [if the bartering value of T for M + the favour of M > the aggro limit of M + 4]I must say, you have chosen your gift wisely. I gladly accept[otherwise if the bartering value of T for M + the favour of M > the aggro limit of M]Interesting. You have piqued my interest, and have earned yourself a temporary reprieve. How long my patience with you will last, though, remains to be seen[otherwise]I'll take this off your hands, but don't expect my mercy to last long. I'll be back for you soon, and next time, I won't be so easy to satisfy[end if].'[roman type][line break]";
+	otherwise:
+		say "[BigNameDesc of M] allows a genuine smile to form on [his of M] face.[line break][speech style of M]'[one of]You hope to gain powerful allies by showering them in gifts? Well, it's working[or]Your efforts at diplomacy are not going unnoticed[cycling].'[roman type][line break]".
 
 To say OfferFriendshipFlav of (M - a gladiator):
 	say "[speech style of M][if M is guardian]'I'm so proud of how much you've grown[otherwise if M is ally]'I wish you well in your next glorious battle[otherwise if M is buddy]'Continue to carry yourself with pride and dignity and the world shall be your oyster[otherwise if M is acquaintance]'You have gained my respect, for now[otherwise]'Hmm, perhaps you don't deserve to be judged quite so harshly[end if].'[roman type][line break]".

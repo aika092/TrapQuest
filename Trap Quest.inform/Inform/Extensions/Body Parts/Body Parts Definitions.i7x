@@ -239,7 +239,7 @@ To heal (F - a fuckhole) times (X - a number):
 	while X > 0:
 		decrease X by 1;
 		if the soreness of F > 0:
-			if Y is X - 1:
+			if X is Y - 1:
 				say "Your [variable F] feels [if X > 2 and the soreness of F > 2]much [end if]less sore."; [We only say this once.]
 				now the tolerated of F is 0;
 			decrease the soreness of F by 1.

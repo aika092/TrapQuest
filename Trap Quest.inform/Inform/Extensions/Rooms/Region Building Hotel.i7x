@@ -52,6 +52,7 @@ To Set Up The Hotel:
 	if diaper quest is 1:
 		destroy laundry robots;
 		now hotel changing station is in Hotel20;
+	if matron is hotel dwelling, now nursery crib is in Hotel22;
 	[if diaper quest is 0:
 		if black-lace-bra is off-stage, now black-lace-bra is in Hotel20;
 		if black-lace-thong is off-stage, now black-lace-thong is in Hotel20;

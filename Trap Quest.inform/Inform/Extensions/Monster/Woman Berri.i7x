@@ -845,7 +845,7 @@ Chapter - Changing Station Scene
 
 woman-player has a number called changing-station-scene.
 
-Report going when the changing-station-scene of woman-player is 0 and the player is a february 2021 diaper donator and the woman-bimbo of woman-player is 3 and the player is in Hotel20 and there is an automated changing station in the location of the player:
+Report going when the changing-station-scene of woman-player is 0 and the woman-bimbo of woman-player is 3 and the player is in Hotel20 and there is an automated changing station in the location of the player:
 	if debugmode is 1, say "Checking if berri can appear.";
 	if woman-player is relaxed redeploy appropriate:
 		deploy woman-player with woman-status 28;
@@ -885,7 +885,7 @@ Chapter - Matron Fight Scene
 
 woman-player has a number called matron-fight-scene.
 
-Report going when the matron-fight-scene of woman-player is 0 and the player is a february 2021 diaper donator and the woman-bimbo of woman-player is 2 and the player is in Hotel22 and matron is in Hotel22 and matron is threatening and the times-met of matron is 0:
+Report going when the matron-fight-scene of woman-player is 0 and the woman-bimbo of woman-player is 2 and the player is in Hotel22 and matron is in Hotel22 and matron is threatening and the times-met of matron is 0:
 	if debugmode is 1, say "Checking if berri can appear.";
 	if woman-player is relaxed redeploy appropriate:
 		deploy woman-player with woman-status 100;
@@ -934,7 +934,7 @@ A later time based rule (this is the berri matron rule):
 
 Chapter - Matron Play Scene
 
-Report going when the woman-old-bimbo of woman-player is 5 and the woman-bimbo of woman-player is 6 and the player is an april 2021 diaper donator and the player is in Hotel22 and matron is in Hotel22 and matron is threatening:
+Report going when the woman-old-bimbo of woman-player is 5 and the woman-bimbo of woman-player is 6 and the player is in Hotel22 and matron is in Hotel22 and matron is threatening:
 	if debugmode is 1, say "Checking if berri can appear.";
 	if woman-player is relaxed redeploy appropriate:
 		deploy woman-player with woman-status 26;
@@ -969,7 +969,7 @@ Chapter - Changing Station Tank
 
 Understand "rope" as woman-player when the changing-station-tank-scene of woman-player > 0.
 
-Report going when the woman-bimbo of woman-player is 5 and the changing-station-tank-scene of woman-player is 0 and the player is a december 2021 diaper donator and the player is in Hotel20 and hotel changing station is in Hotel20:
+Report going when the woman-bimbo of woman-player is 5 and the changing-station-tank-scene of woman-player is 0 and the player is in Hotel20 and hotel changing station is in Hotel20:
 	if debugmode is 1, say "Checking if berri can appear.";
 	if woman-player is relaxed redeploy appropriate:
 		deploy woman-player with woman-status 102;

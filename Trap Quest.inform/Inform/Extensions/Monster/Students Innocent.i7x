@@ -59,8 +59,8 @@ The text-shortcut of student-anya is "stan".
 
 Figure of anya rank 1 is the file "NPCs/School/Student/student10a.png".
 Figure of anya rank 2 is the file "NPCs/School/Student/student10b.png".
-Figure of anya rank 3 is the file "NPCs/School/Student/student10c.png".
-Figure of anya rank 2 diaper is the file "NPCs/School/Student/student10d.png".
+Figure of anya rank 3 is the file "NPCs/School/Student/student10d.png".
+Figure of anya rank 2 diaper is the file "NPCs/School/Student/student10c.png".
 Figure of anya rank 3 diaper is the file "NPCs/School/Student/student10e.png".
 
 To decide which figure-name is the monster-image of (M - student-anya):

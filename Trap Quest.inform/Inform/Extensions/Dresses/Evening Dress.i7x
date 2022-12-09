@@ -150,7 +150,7 @@ To decide which figure-name is clothing-image of (C - purple-evening-dress):
 	decide on figure of evening dress 5.
 
 To say ClothingDesc of (C - purple-evening-dress):
-	say "This provocative purple dress as a very low neckline and a long slit in the ankle-length dress which exposes a lot of thigh but also gives you free movement. It's very rare to find a skirted item that not only protects your crotch but also allows you to kick freely!".
+	say "This provocative purple dress has a very low neckline and a long slit in the ankle-length dress which exposes a lot of thigh but also gives you free movement. It's very rare to find a skirted item that not only protects your crotch but also allows you to kick freely!".
 
 To say ShortDesc of (C - purple-evening-dress):
 	say "purple evening dress".

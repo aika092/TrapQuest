@@ -1811,7 +1811,7 @@ Definition: naughty boy tattoo is drawable:
 	if the player is possessing a vagina or the player is gendered female or TG fetish > 0 or there is a worn belly-tattoo, decide no;
 	decide yes.
 Definition: naughty boy tattoo is eligible:
-	if the noun is star themed or the noun is naughty-or-nice outfit or the noun is naughty skirt or the noun is high maintenance T-shirt or the noun is spoiled crop top, decide yes;
+	if the noun is star themed or the noun is naughty-or-nice outfit or the noun is naughty-skirt or the noun is high maintenance T-shirt or the noun is spoiled crop top, decide yes;
 	decide no.
 To say tattoo-desc of (T - naughty boy tattoo):
 	say "The words 'Naughty Boy', surrounded by multicoloured stars, are inked on your belly.".
@@ -2856,7 +2856,7 @@ Definition: tear it up daddy tattoo is eligible:
 		if the noun is crotch covering and the noun is no protection, decide yes;
 		if the noun is top-ripped, decide yes;
 		if the noun is torn cutoffs, decide yes;
-		if the noun is torn shirt, decide yes;
+		if the noun is torn-shirt, decide yes;
 		if the noun is sword, decide yes;
 	decide no.
 To say tattoo-desc of (T - tear it up daddy tattoo):

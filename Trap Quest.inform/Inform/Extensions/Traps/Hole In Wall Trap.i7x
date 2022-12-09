@@ -348,7 +348,7 @@ To compute punishment of (P - hole-plug):
 	if C is plug:
 		[now the size of C is the openness of asshole + 2;
 		if the size of C > 10, now the size of C is 10;]
-		say "Suddenly you feel a hand groping your butt![line break][variable custom style][if the delicateness of the player < 8]What the fuck, get off of me![otherwise]Who's this?[end if][roman type][line break]The hand [if there is worn total protection clothing]quickly pulls your [list of worn total protection clothing] out of the way and then [end if]begins to slowly massage your [asshole] with a thumb.[line break][variable custom style][if the anal sex addiction of the player > 4 or (diaper quest is 1 and the player is a pervert)]Ooh, that feels good...[otherwise]No, get away from there![end if][roman type][line break]The thumb retreats and then something a lot harder and larger is pressed against your entrance. Your sphincter stretches around its bulbous body as it is slowly and smoothly pushed inside. You are now wearing a [ShortDesc of C]!";
+		say "Suddenly you feel a hand groping your butt![line break][variable custom style][if the delicateness of the player < 8]What the fuck, get off of me![otherwise]Who's this?[end if][roman type][line break]The hand [if there is worn total protection clothing]quickly pulls your [list of worn total protection clothing] out of the way and then [end if]begins to slowly massage your [asshole] with a thumb.[line break][variable custom style][if the anal sex addiction of the player > 4 or (diaper quest is 1 and the player is a pervert)]Ooh, that feels good...[otherwise]No, get away from there![end if][roman type][line break]The thumb retreats and then something a lot harder and larger is pressed against your entrance. Your sphincter stretches around its bulbous body as it is slowly and smoothly pushed inside. You are now wearing a [ShortDesc of C], and it appears to be stuck in with glue!";
 		repeat with D running through worn total protection clothing:
 			if D is crotch-zipped:
 				ZipDown D;
@@ -356,7 +356,8 @@ To compute punishment of (P - hole-plug):
 				displace D;
 			otherwise:
 				now D is in the location of hole-in-wall;
-		summon C cursed with quest;
+		summon C cursed;
+		gluify C;
 		ruin asshole;
 		say FullExamineDesc of C.
 

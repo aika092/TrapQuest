@@ -24,6 +24,7 @@ Figure of princess final battle food is the file "NPCs/MultiFloor/Princess/cutsc
 Figure of princess final battle inflation is the file "NPCs/MultiFloor/Princess/cutscene-princess-final-battle5.jpg".
 Figure of princess final battle harness is the file "NPCs/MultiFloor/Princess/cutscene-princess-final-battle6.jpg".
 Figure of princess final battle scan is the file "NPCs/MultiFloor/Princess/cutscene-princess-final-battle8.jpg".
+Figure of princess final battle facehugger is the file "NPCs/MultiFloor/Princess/cutscene-princess-final-battle10.jpg".
 
 To decide which figure-name is the monster-image of (M - ex-princess):
 	if M is unleashed: [dark princess]
@@ -55,6 +56,7 @@ To decide which figure-name is the monster-image of (M - ex-princess):
 		if current-final-battle-object is final-battle-sword:
 			if the uses of final-battle-sword is 1, decide on figure of princess final battle sword;
 			decide on figure of princess final battle sword semen;
+		if current-final-battle-object is final-battle-facehugger, decide on Figure of princess final battle facehugger;
 	if (M is in School35 and glittery-wand is carried by M and glittery-wand is cursed) or (M is guarding and current-final-battle-object is final-battle-wand-curse):
 		if diaper lover > 0, decide on figure of original diapered princess combat;
 		decide on figure of original princess combat;
@@ -180,6 +182,8 @@ To compute perception of (M - ex-princess):
 		say "[speech style of M]'Please don't look at my disgusting shame! [big please] don't watch!'[roman type][line break]";
 	otherwise if M is messy:
 		compute ChangeRequest of M;
+	otherwise if the current-errand of M is completed and M is not uniquely unfriendly:
+		compute errand completion of M;
 	otherwise:
 		say "[speech style of M]'Greetings [NameBimbo], saviour of Bimbacia!'[roman type][line break]".
 
@@ -845,7 +849,7 @@ To construct unique buttons for (T - ex-princess):
 				now the ButtonCommand entry is "use urinal";
 				now the ButtonColour entry is lightModeFullGreen;
 				if the player is prone, now the ButtonColour entry is lightModeFullYellow; [turn yellow - player needs to stand]
-		if T is guarding and current-final-battle-object is final-battle-wand-curse:
+		if T is guarding and (current-final-battle-object is final-battle-wand-curse or current-final-battle-object is final-battle-facehugger):
 			choose a blank row in the Table of Buttons;
 			now the ButtonImage entry is Figure of TakeAllButton;
 			now the ButtonCommand entry is "pull [text-shortcut of ex-princess]";
@@ -923,6 +927,24 @@ Definition: ex-princess (called M) is distracted:
 		Arouse 2000;
 		now the teaseTimer of headmistress is 50;
 		decide yes;
+	if M is unconcerned and golden-phallus is held by M:
+		if golden-phallus is carried by M:
+			if M is not in the location of the player: [she puts it in her butt]
+				now golden-phallus is worn by M;
+				now golden-phallus is expansion;
+				now golden-phallus is cursed;
+		otherwise: [it's worn]
+			if shopkeeper is undefeated and shopkeeper is awake and M is in the location of shopkeeper and M is in the location of the player:
+				say "[BigNameDesc of M] suddenly drops to [his of M] knees in front of [NameDesc of shopkeeper].[line break][speech style of M]'You bastard... You win. I've rescinded the new tax law. Now PLEASE let me remove this infernal thing!'[roman type][line break][BigNameDesc of shopkeeper] smirks.[line break][speech style of shopkeeper]'My my my, I'm sure I don't have any clue what you're talking about. I'm so glad to hear that you've seen reason though. And also, for completely no reason, I'm just going to say the words [']GOLDEN BITCH!['] out loud.'[roman type][line break][BigNameDesc of M] makes a panicked whining sound, and then squats and pulls [his of M] [if diaper lover > 0]diaper[otherwise]panties[end if] to one side. The [golden-phallus] you had brought to [him of M] comes sliding out of [his of M] asshole, except now it's three or four times as thick - you can't believe that thing was inside [him of M] - it's almost as thick as your leg!!![line break][speech style of shopkeeper]'Oh you put it in your asshole? You poor thing.'[roman type][line break][BigNameDesc of shopkeeper] remarks, but [he of shopkeeper] sounds more amused than remorseful. [big he of shopkeeper] bends down and picks [NameDesc of golden-phallus] up.[line break][speech style of shopkeeper]'I'm sorry, this must have been a faulty model. I'll be sure to return it to the sender, and inform them that your experience was less than satisfactory. And that they no longer have to concern themselves with import duty.'[roman type][line break][BigNameDesc of shopkeeper] says mockingly.[paragraph break]And then [NameDesc of shopkeeper] sighs, and offers the squatting, panting [NameDesc of M] [his of shopkeeper] hand.[line break][speech style of shopkeeper]'No hard feelings?'[roman type][line break][BigNameDesc of M] reluctantly accepts [his of shopkeeper] hand, and allows [him of shopkeeper] to pull [him of M] to [his of M] feet.[line break][speech style of M]'Ask me again when my asshole has closed back up properly.'[roman type][line break][BigNameDesc of M] grumbles.";
+				now golden-phallus is carried by shopkeeper;
+				now golden-phallus is bland;
+				now golden-phallus is sure;
+				now golden-phallus is identified;
+				decide yes;
+			otherwise if the refractory-period of M < 0:
+				now the refractory-period of M is a random number between 18 and 36;
+				if M is in the location of the player, say "[BigNameDesc of M] [one of]squeals, winces, and grasps at [his of M] crotch[one of] with a shocked look on [his of M] face.[line break][speech style of M]'Oh my god! I mean... It's nothing...'[roman type][line break][or]. [stopping][big he of M] is walking with a very visible waddle.[or]staggers, grasps [his of M] crotch, and [one of]grunts[or]groans[or]moans[at random]. What is going on down there?![cycling]";
+				decide yes;
 	decide no.
 
 Definition: ex-princess is messy:

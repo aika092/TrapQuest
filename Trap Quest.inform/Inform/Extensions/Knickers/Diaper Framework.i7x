@@ -112,8 +112,10 @@ Definition: a diaper (called D) is perceived dry rather than perceived wet:
 	if the known-total-soak of D > 0, decide no;
 	decide yes.
 
-Definition: a knickers (called D) is unmessed rather than messed:
-	if the mess of D <= 0, decide yes;
+Definition: a clothing is unmessed rather than messed: decide yes.
+
+Definition: a knickers is unmessed rather than messed:
+	if the mess of it <= 0, decide yes;
 	decide no.
 
 Definition: diaper-stack is unmessed rather than messed:

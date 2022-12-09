@@ -150,7 +150,7 @@ To say ModuleFlav of (M - sissy-staple):
 
 
 To say ClothingDesc of (C - sissy-staple):
-	say "Every now and then you can feel your prostate swelling as the tiny module releases yet another strong dose of aphrodisiacs and transformatives... You recall that unless you're plugged and caged like a perfect sissy, the module will continue to dump large cocktails of drugs into your quivering prostate. The only visual evidence is a futuristic looking implant above your [genitals].".
+	say "Every now and then you can feel your prostate swelling as the tiny module releases yet another strong dose of aphrodisiacs and transformatives... You recall that the module will continue to dump large cocktails of drugs into your quivering prostate. If you're plugged and caged like a perfect sissy, the transformatives may help you on your quest. If not... They'll just help turn you into a weak, limp-dicked, submissive sissy slut. The only visual evidence is a futuristic looking implant above your [genitals].".
 
 To say ShortDesc of (C - sissy-staple):
 	say "sissy staple".
@@ -446,7 +446,7 @@ This is the nipple chain already worn rule:
 The nipple chain already worn rule is listed in the nipple piercing wearability rules.
 
 This is the overdress nipple chain clash rule:
-	if wearing-target is actually nipple covering:
+	if wearing-target is actually nipple covering and (the player is in Predicament20 or the player is not in a predicament room):
 		repeat with N running through worn nipple chains:
 			if N is not blessed:
 				if summoning is 0 and autowear is false, say "Your [ShortDesc of N] is somehow preventing you from wearing any clothing that would cover your nipples! Maybe if you blessed it?";

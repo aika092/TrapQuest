@@ -12,10 +12,56 @@ To decide which figure-name is the examine-image of (C - chess piece):
 To say ExamineDesc of (C - chess piece):
 	say "The white king piece you kept after your victory against [NameDesc of chess-opponent of chess-lesson].".
 
+Definition: chess piece is ingredient: decide no.
 Definition: chess piece is immune to change: decide yes.
 
 To say ShortDesc of (C - chess piece):
 	say "chess piece".
+
+Part - Fertility Idol
+
+fertility idol is a collectible. The printed name of fertility idol is "[TQlink of item described]fertility idol[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of fertility idol is "fti". fertility idol can be fertility-cursed.
+
+Figure of fertility idol is the file "Items/Collectibles/fertility1.png".
+
+To decide which figure-name is the examine-image of (C - fertility idol):
+	decide on figure of fertility idol.
+
+To say ExamineDesc of (C - fertility idol):
+	say "A small stone carving of a woman with insanely large breasts and buttocks.".
+
+Definition: fertility idol is ingredient: decide no.
+Definition: fertility idol is immune to change: decide yes.
+Definition: fertility idol is pregnancy themed: decide yes.
+Definition: fertility idol is boob themed: decide yes.
+
+To say ShortDesc of (C - fertility idol):
+	say "fertility idol".
+
+Carry out taking fertility idol:
+	if the player is ready for common event TG:
+		say "[BigNameDesc of woman-player]'s magic surges down from your belly to your loins. [if the player is possessing a penis]Your [player-penis] feels... Absent![end if] The logical conclusion of what has just happened to you is clear, and it only takes a moment for you to check and confirm... You're no longer biologically male. You have a real, fully functional vagina and womb![line break][variable custom style]And I'm already 9 months pregnant... This is insane![roman type][line break]";
+		SexChange the player;
+	if fertility idol is fertility-cursed:
+		now fertility idol is not fertility-cursed;
+		if the pregnancy of the player is 0 and pregnancy fetish is 1 and the player is possessing a vagina:
+			say "[bold type]Suddenly, impossibly, your belly explodes in size, leaving you full-term pregnant![line break][variable custom style]What the fuck?! Oh... Oh my god...[roman type][line break]";
+			now the pregnancy of the player is 1;
+			now the womb volume of vagina is 30;
+			let M be a random ultimate-lesson-actor;
+			repeat with N running through alive monsters:
+				if the current-errand of N is fertility-idol-errand and N is father material, now M is N;
+			now the father is M;
+			check for extreme pregnancies;
+			check goddess eligibility;
+			trigger conception-wisp-trigger;
+		otherwise:
+			say "[bold type]Suddenly, you feel your breasts, hips and buttocks trying to rapidly expand![roman type][line break]";
+			BustUp 8;
+			HipUp 2;
+			AssSwell 2;
+			say "You now have [HipDesc].".
+
 
 Part - Ectoplasm
 
@@ -55,6 +101,8 @@ Figure of female id-card is the file "Items/Collectibles/idcard2.png".
 To decide which figure-name is the examine-image of (E - id-card):
 	if lady fetish is 1, decide on figure of female id-card;
 	decide on figure of id-card.
+
+Definition: id-card is ingredient: decide no.
 
 To say ExamineDesc of (B - id-card):
 	say "The mechanic's id-card.".
@@ -565,6 +613,27 @@ To decide which number is the bartering value of (T - giant-pencil) for (M - an 
 	decide on 2.
 To say MonsterOfferAcceptFlav of (M - a monster) to (T - giant-pencil):
 	say "[speech style of M]'Never hurts to have a spare!'[roman type][line break]".
+Definition: giant-pencil is immune to change:
+	if it is in WoodsBoss01, decide yes;
+	decide no.
+
+Section - Old Coin
+
+old-coin is a trinket. The text-shortcut of old-coin is "oldc". Figure of old-coin is the file "Items/Collectibles/Trinkets/oldcoin1.jpg". Understand "old", "coin" as old-coin.
+To decide which figure-name is the examine-image of (T - old-coin):
+	decide on figure of old-coin.
+To say ShortDesc of (T - old-coin):
+	say "old coin".
+To say MonsterOfferRejectFlav of (M - a monster) to (T - old-coin):
+	say "[speech style of M]'...Are you calling me a [cunt]?'[roman type][line break]".
+To decide which number is the bartering value of (T - old-coin) for (M - shopkeeper):
+	decide on 4.
+To say MonsterOfferAcceptFlav of (M - shopkeeper) to (T - old-coin):
+	say "[speech style of M]'A relic from a long lost era. Used by my ancient ancestors for their noble trade. I... I will keep this close to my chest, to honour and remember them.'[roman type][line break]".
+To decide which number is the bartering value of (T - old-coin) for (M - djinn):
+	decide on 2.
+To say MonsterOfferAcceptFlav of (M - djinn) to (T - old-coin):
+	say "[speech style of M]'Ah yes, I remember when this was common coinage. My master at the time used his wishes for some rather nefarious purposes, I recall. Good times... Fine, yes, I will take this off your hands, for nostalgia.'[roman type][line break]".
 
 Section - Rubber Duck
 
@@ -585,6 +654,27 @@ To say MonsterOfferAcceptFlav of (M - a monster) to (T - rubber-duck):
 	say "[speech style of M]'Bath time is more fun with toys! Thank you.'[roman type][line break]".
 Definition: rubber-duck is swimming themed: decide yes.
 
+Section - Love Letters
+
+love-letters is a trinket. The text-shortcut of love-letters is "lvlt". Figure of love-letters is the file "Items/Collectibles/Trinkets/loveletters1.jpg". Understand "love", "letters" as love-letters.
+To decide which figure-name is the examine-image of (T - love-letters):
+	decide on figure of love-letters.
+To say ShortDesc of (T - love-letters):
+	say "love letters".
+To decide which number is the bartering value of (T - love-letters) for (M - unicorn):
+	decide on 10.
+To say MonsterOfferAcceptFlav of (M - unicorn) to (T - love-letters):
+	say "[speech style of M]'Oh thank GOODNESS! I thought I'd lost these forever! Thank you for finding them for me!'[roman type][line break]".
+To decide which number is the bartering value of (T - love-letters) for (M - mechanic):
+	decide on 2.
+To say MonsterOfferAcceptFlav of (M - a monster) to (T - love-letters):
+	say "[speech style of M]'Ugh, yes, these are for me. I'll add them to the rest of the pile...'[roman type][line break]".
+To decide which number is the bartering value of (T - love-letters) for (M - demon lord):
+	decide on 2.
+To say MonsterOfferAcceptFlav of (M - demon lord) to (T - love-letters):
+	say "[speech style of M]'UGH, NOT MORE LOVE LETTERS! WELL, THEY ARE FROM MY FIANCEE, SO I GUESS I SHOULD TAKE THEM...'[roman type][line break]".
+Definition: love-letters is book themed: decide yes.
+
 Section - Romance Novel
 
 romance-novel is a trinket. The text-shortcut of romance-novel is "rnvl". Figure of romance-novel is the file "Items/Collectibles/Trinkets/novel1.jpg". Understand "romance", "novel" as romance-novel.
@@ -601,6 +691,18 @@ To decide which number is the bartering value of (T - romance-novel) for (M - a 
 To say MonsterOfferAcceptFlav of (M - a monster) to (T - romance-novel):
 	say "[speech style of M]'Ugh, so tacky! I will, erm, confiscate it from you and make sure it is properly disposed of. Why are you looking at me like that?'[roman type][line break]".
 Definition: romance-novel is book themed: decide yes.
+
+Section - Spare Battery
+
+spare-battery is a trinket. The text-shortcut of spare-battery is "sbty". Figure of spare-battery is the file "Items/Collectibles/Trinkets/battery1.jpg". Understand "spare", "battery" as spare-battery.
+To decide which figure-name is the examine-image of (T - spare-battery):
+	decide on figure of spare-battery.
+To say ShortDesc of (T - spare-battery):
+	say "spare battery".
+To decide which number is the bartering value of (T - spare-battery) for (M - a robot):
+	decide on 4.
+To say MonsterOfferAcceptFlav of (M - a monster) to (T - spare-battery):
+	say "[speech style of M]'ANALYZING... SPARE BATTERY DETECTED. SUBJECTIVE VALUE STATUS: 4. ACCEPTING TRANSACTION...'[roman type][line break]".
 
 Section - VIP Card
 

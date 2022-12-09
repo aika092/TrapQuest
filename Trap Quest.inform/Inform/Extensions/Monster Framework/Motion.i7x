@@ -93,6 +93,7 @@ To check seeking (N - a number) of (M - a monster):
 To check default seeking (N - a number) of (M - a monster):
 	[If N is 2, we need to flag that the monster has had its movement for the round and does not get to act again.]
 	if M is unleashed or M is unconcerned:
+		if debugmode > 0, say "[BigNameDesc of M] is following the player.";
 		if M is regional:
 			let L be the location of M;
 			let P be the location of the player;
@@ -112,6 +113,7 @@ To check default seeking (N - a number) of (M - a monster):
 			deinterest M.
 
 To decide which number is the seek roll of (M - a monster):
+	if the friendly boredom of M < 0 and M is friendly, decide on 1;
 	decide on a random number between 0 and 3. [Most monsters have a 75% chance of successfully moving.]
 
 To compute (M - a monster) seeking (D - a direction): [Default Compute Seeking if not specified for the monster.]
@@ -173,9 +175,8 @@ To compute scared reduction of (M - a monster):
 		if the scared of M < 0, now the scared of M is 0.
 
 To compute boredom reduction of (M - a monster):
-	if the boredom of M > 0:
-		decrease the boredom of M by seconds;
-		if the boredom of M <= 0, compute boredom reset of M;
+	decrease the boredom of M by seconds;
+	if the boredom of M <= 0 and the boredom of M + seconds > 0, compute boredom reset of M;
 	if the waitress-boredom of M > 0:
 		decrease the waitress-boredom of M by seconds;
 		if the waitress-boredom of M <= 0, now the waitress-boredom of M is 0.

@@ -18,7 +18,6 @@ Definition: shopkeeper is summoningRelevant: decide no. [Doesn't count towards t
 
 shopkeeper is in Dungeon41. Understand "shop", "keeper" as shopkeeper. The printed name of shopkeeper is "[if item described is in the location of the player][TQlink of item described][end if][input-style]well built shopkeeper[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of shopkeeper is "sh". Understand "well", "built" as shopkeeper.
 
-Figure of clothed shopkeeper is the file "NPCs/Dungeon/Shopkeeper/shopkeeper4.png".
 Figure of female shopkeeper is the file "NPCs/Dungeon/Shopkeeper/shopkeeper5.png".
 Figure of babified shopkeeper is the file "NPCs/Dungeon/Shopkeeper/shopkeeper6.png".
 
@@ -29,12 +28,8 @@ To say MediumDesc of (M - shopkeeper):
 	say "shopkeeper".
 
 To decide which figure-name is the monster-image of (M - shopkeeper):
-	if diaper quest is 1:
-		decide on figure of Clothed Shopkeeper;
-	otherwise if lady fetish is 1:
+	if diaper quest is 0 and lady fetish is 1:
 		decide on figure of female shopkeeper;
-	otherwise if the bimbo of the player > 10:
-		decide on figure of Shopkeeper 2;
 	otherwise:
 		decide on figure of Shopkeeper 1.
 
@@ -46,12 +41,12 @@ To say MonsterDesc of (M - shopkeeper):
 	if M is diaper-enslaved:
 		say "This tall black [man of M] has had [his of M] hair grown out and tied up with a large pink bow. [big his of M] sensible outfit has been replaced by some kind of purple martial art themed baby dress, with a tiny tutu sewn into the waist rather than a proper skirt. This fully exposes [his of M] big thick pale purple diaper which pushes [his of M] legs wide apart and forces [him of M] to waddle. Purple medieval themed baby booties and fingerless mittens complete the ensemble, which overall means that [his of M] air of dominance has been completely erased and replaced with an air of pathetic helplessness.";
 	otherwise if diaper quest is 1:
-		say "This tall well dressed black [man of M] looks very friendly, but you also can't help but notice that [he of M] is very well built. [big he of M] exudes an air of dominance.";
+		say "This tall black [man of M] is dressed from head to toe in [']sexy['] baby gear - A puffy yellow top with frills at the sleeves, cute pink skirted dungarees, and a huge thick white diaper. Knee-high frilly white socks sit under cute chunky pink high heels. You also can't help but notice that [he of M] is very busty, and rather well built. [big he of M] exudes an air of power, despite [his of M] cutesy appearance.";
 	otherwise:
 		say "[one of]The shopkeeper is a chiselled black [man of M] with thick, sinewy muscles covering [his of M] entire body. Despite the fact that [he of M]'s naked, you can tell from [his of M] posture that it doesn't bother [him of M] in the least. It may have something to do with the subtle martial arts tattoos on [his of M] biceps, but more likely it's [his of M] [LongDickDesc of M]. [big he of M] constantly scans the room with a hawk-like gaze.[or]The shopkeeper is a giant naked black [man of M] with a [LongDickDesc of M] dangling freely between [his of M] legs. [big his of M] body is rippling with muscles, and [his of M] posture gives you the feeling that [he of M]'s a very skilled martial artist. [big he of M] constantly scans the room with a hawk-like gaze, seemingly not bothered by the fact you can see [his of M] junk.[sticky random]".
 
 To say MonsterComment of (M - a shopkeeper):
-	if lady fetish is 0, say "[if interracial fetish is 1 and the bimbo of the player < 4][line break][first custom style]Ugh, that [manly-penis] is so big, there's nowhere else I can look![otherwise if interracial fetish is 1 and the bimbo of the player < 7][first custom style]Why can't I look away from [his of M] massive black [manly-penis]?[otherwise if interracial fetish is 1 and the bimbo of the player < 11][line break][variable custom style]Wow, it's just so big, and... majestic...[otherwise if interracial fetish is 1 and the bimbo of the player < 14][variable custom style]I'm getting weak at the knees just looking at that majestic monster...[otherwise if interracial fetish is 1][line break][second custom style]I hope [he of M]'ll let me worship [his of M] godly [manly-penis].[otherwise if the player is gendered female and the bimbo of the player < 6][first custom style][one of]Ugh. Put your [manly-penis] away, sicko.[or]Oh I get it, [he of M] doesn't trust women so [he of M] has to watch me all the time. Misogynist.[or]This pig isn't even wearing clothes. Who does [he of M] think [he of M] is?[or][big he of M] looks so sure of [himself of M]. Typical. Men are so obsessed with their penises.[or]A [man of M] in charge of the shop. How original.[in random order][otherwise if the bimbo of the player < 6][first custom style][one of]I probably shouldn't steal anything. [big he of M]'d definitely notice.[or]That dude is cut! Maybe I should get [him of M] to give me some workout tips.[or]This guy looks like [he of M] knows [his of M] stuff. Wish [he of M]'d put some pants on, but still.[in random order][otherwise if the bimbo of the player < 10][variable custom style][one of]I can't stop staring at [his of M] penis.[or][big he of M] looks strong. I wonder what it would feel like if [he of M] let me touch [his of M] muscles.[or]I shouldn't steal anything. Who knows how [he of M] might punish me.[or]I don't think I could outrun [him of M] if I stole something. [big his of M] body is just, wow.[in random order][otherwise][second custom style][one of][big he of M]'s really sexy![or]What a yummy looking penis![or]I want to touch [his of M] muscles.[or]What a HUNK![or]I can't stop staring at [his of M] penis! It looks so yummy![or][big he of M]'s YUMMY[in random order][end if][roman type][line break]";
+	if lady fetish is 0, say "[if interracial fetish is 1 and the bimbo of the player < 4][line break][first custom style]Ugh, that [manly-penis] is so big, there's nowhere else I can look![otherwise if interracial fetish is 1 and the bimbo of the player < 7][first custom style]Why can't I look away from [his of M] massive black [manly-penis]?[otherwise if interracial fetish is 1 and the bimbo of the player < 11][line break][variable custom style]Wow, it's just so big, and... majestic...[otherwise if interracial fetish is 1 and the bimbo of the player < 14][variable custom style]I'm getting weak at the knees just looking at that majestic monster...[otherwise if interracial fetish is 1][line break][second custom style]I hope [he of M]'ll let me worship [his of M] godly [manly-penis].[otherwise if the player is gendered female and the bimbo of the player < 6][first custom style][one of]Ugh. Put your [manly-penis] away, sicko.[or]Oh I get it, [he of M] doesn't trust women so [he of M] has to watch me all the time. Misogynist.[or]This pig isn't even wearing clothes. Who does [he of M] think [he of M] is?[or][big he of M] looks so sure of [himself of M]. Typical. Men are so obsessed with their penises.[or]A [man of M] in charge of the shop. How original.[in random order][otherwise if the bimbo of the player < 6][first custom style][one of]I probably shouldn't steal anything. [big he of M]'d definitely notice.[or][big he of M] is cut! Maybe I should get [him of M] to give me some workout tips.[or]This guy looks like [he of M] knows [his of M] stuff. Wish [he of M]'d put some pants on, but still.[in random order][otherwise if the bimbo of the player < 10][variable custom style][one of]I can't stop staring at [his of M] penis.[or][big he of M] looks strong. I wonder what it would feel like if [he of M] let me touch [his of M] muscles.[or]I shouldn't steal anything. Who knows how [he of M] might punish me.[or]I don't think I could outrun [him of M] if I stole something. [big his of M] body is just, wow.[in random order][otherwise][second custom style][one of][big he of M]'s really sexy![or]What a yummy looking penis![or]I want to touch [his of M] muscles.[or]What a HUNK![or]I can't stop staring at [his of M] penis! It looks so yummy![or][big he of M]'s YUMMY[in random order][end if][roman type][line break]";
 	otherwise say "[if interracial fetish is 1 and the bimbo of the player < 4][line break][first custom style]Ugh, that [DickDesc of M] is so big, there's nowhere else I can look![otherwise if interracial fetish is 1 and the bimbo of the player < 7][first custom style]Why can't I look away from [his of M] massive black [DickDesc of M]?[otherwise if interracial fetish is 1 and the bimbo of the player < 11][line break][variable custom style]Wow, it's just so big, and... majestic...[otherwise if interracial fetish is 1 and the bimbo of the player < 14][variable custom style]I'm getting weak at the knees just looking at that majestic snake...[otherwise if interracial fetish is 1][line break][second custom style]I hope [he of M]'ll let me worship [his of M] godly [manly-penis].[otherwise if the player is gendered female and the bimbo of the player < 6][first custom style][one of]Ugh. Put your [manly-penis] away, sicko.[or]Oh I get it, [he of M] doesn't trust women so [he of M] has to watch me all the time. Misogynist.[or]This harlot isn't even wearing clothes. Who does [he of M] think [he of M] is?[or][big he of M] looks so sure of [himself of M]. Typical. [big he of M] should know that [DickDesc of M] doesn't mean anything to anyone.[or]A [man of M] in charge of the shop. I like it, but I wish [he of M] wasn't naked.[in random order][otherwise if the bimbo of the player < 6][first custom style][one of]I probably shouldn't steal anything. [big he of M]'d definitely notice.[or]That bitch is cut! Maybe I should get [him of M] to give me some workout tips. After [he of M] puts some underwear on, of course.[or]This chick looks like [he of M] knows [his of M] stuff. Wish [he of M]'d put some pants on, but still.[in random order][otherwise if the bimbo of the player < 10][variable custom style][one of]I can't stop staring at [his of M] [DickDesc of M].[or][big he of M] looks strong. I wonder what it would feel like if [he of M] let me touch [his of M] muscles.[or]I shouldn't steal anything. Who knows how [he of M] might punish me.[or]I don't think I could outrun [him of M] if I stole something. [big his of M] body is just, wow.[in random order][otherwise][second custom style][one of][big he of M]'s really sexy![or]What a yummy looking [DickDesc of M]![or]I want to touch [his of M] muscles.[or]What a HUNK![or]I can't stop staring at [his of M] [DickDesc of M]! It looks so yummy![in random order][end if][roman type][line break]".
 
 To say LongDickDesc of (M - shopkeeper):
@@ -66,7 +61,10 @@ To set up (M - shopkeeper):
 	now the monstersetup of M is 1;
 	now the raw difficulty of M is the starting difficulty of M;
 	now M is guarding;
-	now the health of M is the maxhealth of M.
+	now the health of M is the maxhealth of M;
+	add identification-powder to the tradableItems of M, if absent;
+	add identification-powder to the taxableItems of M, if absent;
+	if diaper quest is 1, now M is female.
 
 To decide which number is the starting difficulty of (M - shopkeeper):
 	decide on 13.
@@ -174,8 +172,12 @@ To say BecomesBoredFlav of (M - shopkeeper):
 	say "[BigNameDesc of M] seems to lose interest in you for now.".
 
 To say DiaperReaction of (M - shopkeeper):
-	if (there is a currently visible diaper or the player is shameless) and M is interested, say "[BigNameDesc of M] frowns as [he of M] watches you. It's very clear that [he of M] can tell what is happening.[line break][variable custom style][if the player is modest]Why did this have to happen to me?![otherwise if the player is not shameless]If [he of M] was kind, [he of M] would look away![otherwise]Yep that's right Sir, I'm going right now in my nappy![end if][roman type][line break]";
-	otherwise say "[BigNameDesc of M] doesn't look at you directly or say anything, so it's hard to gauge [if the player is not shameless]if [he of M] saw[otherwise][his of M] reaction[end if].".
+	if diaper quest is 1 and M is interested:
+		say "[BigNameDesc of M] gives you a little wink as [he of M] watches you. It's very clear that [he of M] can tell what is happening.[line break][variable custom style][if the player is modest]Why did this have to happen to me?![otherwise if the player is not shameless]If [he of M] was kind, [he of M] would look away![otherwise]Yep that's right Miss, I'm going right now in my nappy![end if][roman type][line break]";
+	otherwise if (there is a currently visible diaper or the player is shameless) and M is interested:
+		say "[BigNameDesc of M] frowns as [he of M] watches you. It's very clear that [he of M] can tell what is happening.[line break][variable custom style][if the player is modest]Why did this have to happen to me?![otherwise if the player is not shameless]If [he of M] was kind, [he of M] would look away![otherwise]Yep that's right Sir, I'm going right now in my nappy![end if][roman type][line break]";
+	otherwise:
+		say "[BigNameDesc of M] doesn't look at you directly or say anything, so it's hard to gauge [if the player is not shameless]if [he of M] saw[otherwise][his of M] reaction[end if].".
 
 Definition: shopkeeper (called M) is distracted:
 	if the refractory-period of M < 0 and M is reactive:
@@ -304,6 +306,8 @@ To compute perception of (M - shopkeeper):
 			otherwise compute M using sex doll 2;
 		otherwise:
 			say "[speech style of M]'I know you can't really understand me, but if you wait a while I'm sure I'll be ready to use you again soon.'[roman type][line break]";
+	otherwise if the current-errand of M is completed and M is not uniquely unfriendly:
+		compute errand completion of M;
 	otherwise if PSRB is bottle and the waitress-boredom of M <= 0 and M is not uniquely unfriendly and the waitress bartering value of PSRB for M > 0:
 		say "[if the outrage tolerance of M <= the saved appearance of the player][big he of M] seems aroused by your presence but doesn't act aggressively. [end if][big he of M] briefly glances at your [PSRB].";
 		calm M;
@@ -573,6 +577,7 @@ To satisfy (M - shopkeeper) for (N - a number) seconds:
 	if M is interested:
 		if the player is not in Dungeon41, bore M for N seconds;
 		FavourUp M;
+		if the refractory-period of M < 12, now the refractory-period of M is 12; [the player gets a chance to be spotted again next round without him wanting sex]
 		if M is in the location of the player and M is awake:
 			say SatisfiedFlav of M;
 			progress quest of nice-quest;
@@ -894,7 +899,7 @@ To compute punishment of (P - shopkeeper-retrieves-stolen):
 
 Definition: shopkeeper is willing to spank: decide yes.
 
-Definition: shopkeeper is willing to deliver enemas: decide yes.
+[Definition: shopkeeper is willing to deliver enemas: decide yes.]
 
 Definition: shopkeeper is willing to confiscate: decide yes.
 
@@ -907,7 +912,7 @@ Definition: shopkeeper (called M) is willing to change diapers:
 Definition: shopkeeper is willing to donate diapers: decide yes.
 
 To say SpankingStartFlav of (M - shopkeeper):
-	say "You see the large shopkeeper dive down to grab at your ankles with one rough hand, raising you up with ease and dangling you upside down. As you strain against the large [man of M] [he of M] quickly fastens your ankles into leather straps secured against a large metal beam, holding you firmly upside down. You're high up, making you unable to grab at anything but the air, and unable to look at anything but the shopkeeper as [he of M] runs a finger along a row of paddles on display! [BigNameDesc of M] grabs one on the end, one side completely covered in rubber spikes. Your thrashing only results in giving [NameDesc of M] a sinister smirk as [he of M] walks back over to you and raises [his of M] paddle, sending it crashing into your waiting behind!".
+	say "You see the large shopkeeper dive down to grab at your ankles with one rough hand, raising you up with ease and dangling you upside down. [one of][big he of M] is even stronger than [he of M] looks! [or][stopping]As you strain against the large [man of M] [he of M] quickly fastens your ankles into leather straps secured against a large metal beam, holding you firmly upside down. You're high up, making you unable to grab at anything but the air, and unable to look at anything but the shopkeeper as [he of M] runs a finger along a row of paddles on display! [BigNameDesc of M] grabs one on the end, one side completely covered in rubber spikes. Your thrashing only results in giving [NameDesc of M] a sinister smirk as [he of M] walks back over to you and raises [his of M] paddle, sending it crashing into your waiting behind!".
 
 To say DQChangeResistReactionFlav of (M - shopkeeper):
 	say "[BigNameDesc of M] looks frustrated.[line break][speech style of M]'[one of]Gahhh, is my merchandise too good for ya? This powder is imported, you know!'[or]Is the diaper too thin then? I got some REALLY thick ones in the back. I didn't use them, cause, you know, I thought you wanted to walk like an adult.'[in random order][roman type][line break]".
@@ -1157,7 +1162,7 @@ To say WhoAnswer of (M - shopkeeper):
 
 To say StoryQuestion of (M - shopkeeper): [Custom question here]
 	if diaper quest is 1:
-		say "'What's with this place?!'";
+		say "'What's with your outfit?'";
 	otherwise if the bimbo of the player < 7:
 		say "'So why are you naked?'";
 	otherwise if the bimbo of the player < 14:
@@ -1167,7 +1172,7 @@ To say StoryQuestion of (M - shopkeeper): [Custom question here]
 
 To say StoryAnswer of (M - shopkeeper):
 	if diaper quest is 1:
-		say "[speech style of M]'I don't know what you mean, how are things different where you come from?'[roman type][line break]";
+		say "[speech style of M]'When I first started out, I didn't get many customers, but that changed when I started wearing some of the merchandise myself. Suddenly people were flocking from all around to spend time in my shop. For some reason, the thicker the diapers I wear, the more I sell.'[roman type][line break]";
 	otherwise if the bimbo of the player < 7:
 		say "[speech style of M]'When I first started out, I didn't get many customers, but that changed when I started wearing more revealing clothing. It turns out that the girls that shop here tend to like a bit of eye candy, so I end up making most sales when I'm nude! Which suits me just fine.'[roman type][line break]";
 	otherwise:

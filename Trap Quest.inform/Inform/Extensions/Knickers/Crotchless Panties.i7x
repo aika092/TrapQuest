@@ -33,6 +33,9 @@ buckled crotchless-panties is a crotchless-panties. The printed name of buckled 
 Definition: buckled crotchless-panties is black themed: decide yes.
 crotch chain is a crotchless-panties. The printed name of crotch chain is "[clothing-title-before]crotch chain[clothing-title-after]".The text-shortcut of crotch chain is "cch".
 Definition: crotch chain is red themed: decide yes.
+To compute class set up of (C - crotch chain):
+	now C is cursed;
+	compute summoned quest of C.
 black-and-red lace crotchless-panties is a crotchless-panties. The printed name of black-and-red lace crotchless-panties is "[clothing-title-before]pair of black and red lace crotchless panties[clothing-title-after]".The text-shortcut of black-and-red lace crotchless-panties is "brcp". Understand "black and", "red" as black-and-red lace crotchless-panties.
 Definition: black-and-red lace crotchless-panties is red themed: decide yes.
 Definition: black-and-red lace crotchless-panties is black themed: decide yes.
@@ -200,6 +203,8 @@ To say ClothingDesc of (K - meat-toilet-panties):
 
 To decide which number is the initial outrage of (C - meat-toilet-panties):
 	decide on 8.
+To decide which number is the crotch-tightness of (C - meat-toilet-panties):
+	decide on 0.
 
 To compute periodic effect of (C - meat-toilet-panties):
 	if watersports fetish > 0:

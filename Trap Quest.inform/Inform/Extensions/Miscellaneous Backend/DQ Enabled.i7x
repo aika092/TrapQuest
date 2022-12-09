@@ -53,7 +53,7 @@ Include Unnecessary Figures by DQ Only Stuff.
 Include Necessary Figures by DQ Only Stuff.
 
 temporaryYesNoBackground is a figure-name that varies.
-A game universe initialisation rule:
+A game universe initialisation rule (this is the temporaryYesNoBackground initialisation rule):
 	now temporaryYesNoBackground is figure of small image.
 
 Chapter - Unused but referenced Figures

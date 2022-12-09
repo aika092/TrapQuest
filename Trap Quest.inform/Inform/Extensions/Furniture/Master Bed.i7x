@@ -9,7 +9,7 @@ To decide which figure-name is the examine-image of (C - a master bed):
 	decide on figure of hotel bed.
 
 Definition: yourself is bed-stuck:
-	if there is a furniture grabbing it, decide yes;
+	if there is a furniture grabbing the player, decide yes;
 	decide no.
 
 [NO COLLAR:

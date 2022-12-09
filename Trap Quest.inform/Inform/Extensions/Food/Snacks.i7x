@@ -138,10 +138,9 @@ Report TQeating pack of nuts:
 	DelicateDown 1.
 
 To compute (M - a robochef) cooking (I - pack of nuts):
-	let D be a random off-stage cookie;
-	if D is food:
-		now the quality of D is a random number between 2 and -1;
-		now the fat of D is 1;
-		now D is carried by M.
+	if cookie is off-stage:
+		now the quality of cookie is a random number between -1 and 2;
+		now the fat of cookie is 1;
+		now cookie is carried by M.
 
 Snacks ends here.

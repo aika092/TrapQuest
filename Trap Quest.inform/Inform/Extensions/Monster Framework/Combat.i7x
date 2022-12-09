@@ -1042,6 +1042,8 @@ To compute (M - a monster) attacking (C - a clothing): [This should change for a
 			compute M displacing C;
 		otherwise if R > the defence of C - 2 and C is rippable and a random number between -2 and unlucky <= 0: [NPCs less commonly rip clothing when unlucky is enabled]
 			compute M ripping C;
+		otherwise if M is intelligent and C is tearable and R > the defence of C + 2:
+			compute M removing C;
 		otherwise if R > the defence of C and (C is tearable or the damage of C >= 5):
 			compute M destroying C;
 		otherwise:
@@ -1053,7 +1055,7 @@ To compute (M - a monster) attacking (C - a diaper):
 	if C is crotch-zipped and M is intelligent:
 		say UnzipFlav of M at C;
 		ZipDown C;
-	otherwise if C is actually strippable:
+	otherwise if C is tearable and C is actually strippable:
 		say "[BigNameDesc of M] effortlessly pulls off your [ShortDesc of C]!";
 		if M is intelligent:
 			now M is carrying C;
@@ -1068,11 +1070,11 @@ To compute (M - a monster) attacking (C - a diaper):
 
 To compute (M - a monster) removing (C - a thing): [This is used for removing insertables]
 	if M is intelligent:
-		say "[BigNameDesc of M] effortlessly pulls out your [ShortDesc of C].";
+		say "[BigNameDesc of M] [if C is penetrating an orifice]effortlessly pulls out[otherwise][one of]removes[or]relieves you of[or]confiscates[then at random][end if] your [ShortDesc of C].";
 		now M is carrying C;
 		now C is temporarily-removed;
 	otherwise:
-		say "[BigNameDesc of M] effortlessly pulls out your [ShortDesc of C] and discards it onto the floor.";
+		say "[BigNameDesc of M] [if C is penetrating an orifice]effortlessly pulls out[otherwise]removes[end if] your [ShortDesc of C] and discards it onto the floor.";
 		now C is in the location of the player;
 	dislodge C.
 
@@ -1201,7 +1203,7 @@ This is the monster attacking ass covering clothing rule:
 The monster attacking ass covering clothing rule is listed last in the monster asshole insertion rules.
 
 This is the monster removing butt plug rule:
-	let C be a random worn insertable thing penetrating asshole;
+	let C be a random worn insertable tearable thing penetrating asshole;
 	if C is a thing:
 		compute current-monster removing C;
 		rule succeeds.
@@ -1277,7 +1279,7 @@ This is the monster unlocks annoying cages rule:
 The monster unlocks annoying cages rule is listed last in the monster vagina insertion rules.
 
 This is the monster removing cunt plug rule:
-	let C be a random worn insertable thing penetrating vagina;
+	let C be a random worn insertable tearable thing penetrating vagina;
 	if C is a thing:
 		compute current-monster removing C;
 		rule succeeds.
@@ -1316,7 +1318,7 @@ The monster mouth insertion rule is listed in the default monster insertion rule
 The monster mouth insertion rules is a rulebook.
 
 This is the monster removing gag rule:
-	let C be a random worn clothing penetrating face;
+	let C be a random worn tearable clothing penetrating face;
 	if C is a thing:
 		compute current-monster removing C;
 		rule succeeds.

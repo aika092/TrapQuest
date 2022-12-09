@@ -60,6 +60,7 @@ Figure of Barbara Cutscene 14 is the file "NPCs/MultiFloor/barbara/cutscene-barb
 Figure of Barbara Cutscene 15 is the file "NPCs/MultiFloor/barbara/cutscene-barbara-fuck2.jpg".
 Figure of Barbara Cutscene 16 is the file "NPCs/MultiFloor/barbara/cutscene-barbara-glue1.jpg".
 Figure of Barbara Cutscene 17 is the file "NPCs/MultiFloor/barbara/cutscene-barbara-glue2.jpg".
+Figure of Barbara Cutscene 18 is the file "NPCs/MultiFloor/barbara/cutscene-barbara-shopkeeper1.jpg".
 
 To decide which figure-name is the monster-image of (M - woman-player):
 	if the woman-status of M is 97:
@@ -668,6 +669,7 @@ The woman spawning to get shopkeeper discount rule is listed last in the womansp
 
 Report going when shopkeeper is in the location and woman-player is in the location and the woman-bimbo of woman-player <= 2 and the shopkeeper-scene of woman-player is 0 and woman-player is not interested and shopkeeper is not interested:
 	say "In this room you see that [NameDesc of shopkeeper] is not alone: [NameDesc of woman-player] is on [his of woman-player] knees, with four fifths of [his of shopkeeper] massive length stuffed into [his of woman-player] mouth. [big he of woman-player] is desperately trying to force that last bit in, causing the tip to penetrate [his of woman-player] throat. Lewd gagging noises fill the room as the distension in [his of woman-player] throat becomes more and more visible.[line break][speech style of shopkeeper]'Damn [boy of woman-player], you can really swallow a sword, can't you?! Unng, I'm reaching my limit...'[roman type][line break][BigNameDesc of shopkeeper] grunts and without a second thought grabs the back of [NameDesc of woman-player][']s head, forcing it forward and pushing that last inch of [his of shopkeeper] manhood in past [his of woman-player] jaw. Noises of weak resistance emanate from [NameDesc of woman-player][']s nose but it's too little too late - [NameDesc of shopkeeper] is cumming hard. [big he of shopkeeper] grips [his of woman-player] head tight with both arms keeping [his of shopkeeper] whole [manly-penis] firmly wedged inside for the duration of [his of shopkeeper] climax, each string of [semen] being accompanied by an involuntary gulp from [his of shopkeeper][']s new cumdump's gullet. [big he of shopkeeper] finally releases [him of woman-player] and [he of woman-player] falls back choking, spewing up lumps of thick [semen].[line break][speech style of woman-player]'Did I win?'[roman type][line break]Is all [he of woman-player] manages to say before [he of woman-player] collapses backward onto the ground.[line break][speech style of shopkeeper]'Yeah, you won honey.'[roman type][line break][BigNameDesc of shopkeeper] replies but [NameDesc of woman-player] has already passed out cold.";
+	cutshow figure of barbara cutscene 18 for woman-player;
 	now the sleep of woman-player is 200;
 	[increase the delayed sluttification of woman-player by 1;]
 	now the woman-status of woman-player is 92;
@@ -1027,7 +1029,7 @@ A later time based rule (this is the barbara robobellboy rule):
 				if the bellboy-fight-scene of woman-player <= 2:
 					if M is in the location of the player:
 						say "[speech style of woman-player]'Help me, [NameBimbo]! This crazy robot is trying to put me in weird clothes!'[roman type][line break]";
-						cutshow figure of barbara cutscene 10 for woman-player;
+						cutshow figure of barbara cutscene 10 for M;
 				otherwise if the bellboy-fight-scene of woman-player is 3:
 					if M is in the location of the player:
 						say "[BigNameDesc of M] holds [NameDesc of woman-player] still, and confiscates [his of woman-player] pistol.[line break][speech style of woman-player]'Let me go, you mad tin can!'[roman type][line break]";
@@ -1119,6 +1121,7 @@ Report going when the player is in School20 and first-time-swimming-pool is true
 				force immediate clothing-focus redraw;
 				say "You jump off the diving board into the pool. Just as you're in the air, your perception shifts. Instead of a pool of normal water that you're jumping into, it's in fact full of [semen]![line break][speech style of woman-player]'WHAT THE FUCK?!'[roman type][line break]You hear [NameDesc of woman-player] say from [his of woman-player] position at the side of the pool. [big he of woman-player] can clearly see it too. The last thing you see is [him of woman-player] turning and running from the room, with a hand over [his of woman-player] mouth and nose.[paragraph break]The next moment, you are submerged in the vile seed. Thankfully, it's enough like normal water that you can swim back to the surface.";
 				compute TQ swimmingpool swimming at 0 with 1;
+				trigger swim-wisp-quest;
 			try woman-player going east;
 			now woman-player is in Dungeon32.
 
@@ -1223,7 +1226,7 @@ To compute protection of (M - woman-player):
 To compute unique interaction of (M - woman-player):
 	if the woman-status of M is 96 and the patron-scene-done of M is 1 and M is in the location of the player:
 		compute patron scene climax of M;
-	otherwise if the woman-status of M is 82:
+	otherwise if the woman-status of M is 82 and pregnancy fetish is 1 and the pregnancy of the player is 0 and the player is immobile and (the player is possessing a vagina or the player is ready for event TG):
 		compute pregnancy swap of M;
 	otherwise if the woman-bimbo of M < 4 and the woman-status of M < 10 and the player is possessing a penis and the size of penis > 7:
 		compute penis siphoning of M;
@@ -1261,20 +1264,22 @@ To compute (M - woman-player) protecting against (X - a monster):
 			if prev-health is the maxhealth of X and the health of X < the maxhealth of X, say AllyInstigated of X.
 
 To compute pregnancy swap of (M - woman-player):
-	if pregnancy fetish is 1 and the pregnancy of the player is 0 and the player is immobile:
-		say "[speech style of woman-player]'I'm really sorry about this, but if I don't take this opportunity now, I know it'll never come again. I've got to do what's right for myself.'[roman type][line break][BigNameDesc of woman-player] advances on you, in your compromised position.[line break][variable custom style][if the player is able to speak]'[womanName], what are you...'[otherwise]Wait, what is [he of woman-player]...[end if][roman type][line break][big he of woman-player] presses a palm to your belly, and whispers into your ear.[line break][speech style of woman-player]'[one of]The witch taught me a special way... To get someone to share my burden[or]How was it last time? Are you excited to give birth again? I'm almost jealous[stopping].'[roman type][line break]Looking down with [horror the sex addiction of the player], you realise that [his of woman-player] belly has shrunk back to normal, and yours has expanded to that huge, full term pregnant size.[line break][variable custom style]Holy shit...[roman type][line break]";
-		cutshow figure of barbara cutscene 13 for woman-player;
-		now the pregnancy of the player is 1;
-		now the womb volume of vagina is 30;
-		if the woman-pregnancy of woman-player is 3, now the father is a random tentacle monster;
-		otherwise now the father is a random ultimate-lesson-actor;
-		now the woman-pregnancy of woman-player is 0;
-		check for extreme pregnancies;
-		check goddess eligibility;
-		trigger conception-wisp-trigger;
-		say "[BigNameDesc of woman-player] quickly takes [his of woman-player] leave.[line break][speech style of woman-player]'I hope, some day, you'll be able to forgive me!'[roman type][line break]";
-		compute mandatory room leaving of woman-player;
-		vanish woman-player.
+	say "[speech style of woman-player]'I'm really sorry about this, but if I don't take this opportunity now, I know it'll never come again. I've got to do what's right for myself.'[roman type][line break][BigNameDesc of woman-player] advances on you, in your compromised position.[line break][variable custom style][if the player is able to speak]'[womanName], what are you...'[otherwise]Wait, what is [he of woman-player]...[end if][roman type][line break][big he of woman-player] presses a palm to your belly, and whispers into your ear.[line break][speech style of woman-player]'[one of]The witch taught me a special way... To get someone to share my burden[or]How was it last time? Are you excited to give birth again? I'm almost jealous[stopping].'[roman type][line break]Looking down with [horror the sex addiction of the player], you realise that [his of woman-player] belly has shrunk back to normal, and yours has expanded to that huge, full term pregnant size.[line break][variable custom style]Holy shit...[roman type][line break]";
+	if the player is ready for event TG:
+		say "[BigNameDesc of woman-player]'s magic surges down from your belly to your loins. [if the player is possessing a penis]Your [player-penis] feels... Absent![end if] The logical conclusion of what has just happened to you is clear, and it only takes a moment for you to check and confirm... You're no longer biologically male. You have a real, fully functional vagina and womb![line break][variable custom style]And I'm already 9 months pregnant... This is insane![roman type][line break]";
+		SexChange the player;
+	cutshow figure of barbara cutscene 13 for woman-player;
+	now the pregnancy of the player is 1;
+	now the womb volume of vagina is 30;
+	if the woman-pregnancy of woman-player is 3, now the father is a random tentacle monster;
+	otherwise now the father is a random ultimate-lesson-actor;
+	now the woman-pregnancy of woman-player is 0;
+	check for extreme pregnancies;
+	check goddess eligibility;
+	trigger conception-wisp-trigger;
+	say "[BigNameDesc of woman-player] quickly takes [his of woman-player] leave.[line break][speech style of woman-player]'I hope, some day, you'll be able to forgive me!'[roman type][line break]";
+	compute mandatory room leaving of woman-player;
+	vanish woman-player.
 
 To compute penis siphoning of (M - woman-player):
 	if the player is immobile and the number of things penetrating penis is 0 and penis is exposed:

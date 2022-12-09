@@ -124,6 +124,8 @@ To say MonsterComment of (M - aeromancer):
 To set up (M - an aeromancer):
 	reset M;
 	now the monstersetup of M is 1;
+	add buoyancy-salve to the tradableItems of M, if absent;
+	add buoyancy-salve to the taxableItems of M, if absent;
 	if inflation fetish is 1 or artificial enhancements fetish is 1:
 		now the raw difficulty of M is the starting difficulty of M;
 		if M is in the Woods, SilentlyDifficultyUp M by 3;
@@ -804,11 +806,10 @@ To say DamageReactSubmissive of (M - an aeromancer):
 	say "[BigNameDesc of M] staggers, [if M is confident aeromancer]angrily shaking [his of M] wand as it spits out blue sparks[otherwise]whimpering as [his of M] wand spits out blue sparks[end if].".
 
 To compute tax return of (M - an aeromancer):
-	let P be a random off-stage golden phallus;
-	if a random number between 1 and 2 is 1 and P is golden phallus:
+	if a random number between 1 and 2 is 1 and golden-phallus is off-stage:
 		say "[BigNameDesc of M] points to [his of M] wand.[line break][speech style of M]'You want one of these?'[roman type][line break][BigNameDesc of M] manifests one out of thin air and tosses it to you.";
-		now P is in the location of the player;
-		compute autotaking P;
+		now golden-phallus is in the location of the player;
+		compute autotaking golden-phallus;
 		say "You can tell it's just a replica, with no magic power. Perhaps you can still find a use for it though.";
 	otherwise:
 		loot M;

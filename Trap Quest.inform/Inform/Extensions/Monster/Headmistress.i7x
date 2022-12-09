@@ -237,7 +237,11 @@ To execute (T - talk-headmistress-toilet) for (M - a monster):
 		if the rank of the player >= no-toilet-rank:
 			say "[BigNameDesc of M] looks at your armband and then shakes [his of M] head.[line break][speech style of M]'[one of]As of today, I have decided that [or][stopping][if no-toilet-rank is 4]Pink [end if]Diamond and higher ranked students are not allowed to use the toilets. [if no-toilet-rank is 4]If you want to pee, use a diaper like a good little baby slave[otherwise]At your high rank, you and your peers should be learning to be human toilets yourselves. You can pee in each others['] mouths, or wait until you get home[end if].'[roman type][line break]";
 		otherwise if academy-toilet-key is not carried by M:
-			say "[BigNameDesc of M] shrugs.[line break][speech style of M]'The key has not yet been returned to me. One of your fellow students must have it. You'll have to wait, or go find them.'[roman type][line break]";
+			if there is a student carrying academy-toilet-key:
+				let P be a random student carrying academy-toilet-key;
+				say "[BigNameDesc of M] shrugs.[line break][speech style of M]'The key has not yet been returned to me. [BigNameDesc of P] must still have it. You'll have to wait, or go find them.'[roman type][line break]";
+			otherwise:
+				say "[BigNameDesc of M] shrugs.[line break][speech style of M]'The key has not yet been returned to me. One of your fellow students must have it. You'll have to wait, or go find them.'[roman type][line break]";
 		otherwise if able-to-pee is 0:
 			say "[BigNameDesc of M] raises an eyebrow.[line break][speech style of M]'How would you manage that, considering what you're wearing?'[roman type][line break]";
 		otherwise:

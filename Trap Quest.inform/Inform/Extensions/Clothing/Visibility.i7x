@@ -35,15 +35,15 @@ Definition: a clothing (called C) is partially-mid-layer-concealing:
 	decide no.
 
 Definition: a clothing (called C) is potentially-bottom-layer-concealing:
-	if C is layer-concealing and C is potentially-partially-bottom-layer-concealing: [crotch-assless clothing doesn't hide what's underneath]
-		if (C is leg covering or C is skirted) and C is not usually thigh covering, decide no; [skirts and trousers that expose the thighs do not fully conceal the bottom layer area]
+	if C is layer-concealing and C is not-butt-windowed and C is potentially-partially-bottom-layer-concealing: [crotch-assless clothing doesn't hide what's underneath]
+		[if (C is leg covering or C is skirted) and C is not usually thigh covering, decide no;] [skirts and trousers that expose the thighs do not fully conceal the bottom layer area] [Aika disagrees with my past self and has commented this out]
 		decide yes;
 	decide no.
 Definition: a clothing (called C) is bottom-layer-concealing:
 	if C is worn and C is potentially-bottom-layer-concealing, decide yes;
 	decide no.
 Definition: a clothing (called C) is potentially-partially-bottom-layer-concealing:
-	if C is partially-layer-concealing and C is not-butt-windowed and (C is total protection or C is skirt-covering-crotch), decide yes; [crotch-assless clothing doesn't hide what's underneath, but both 'total protection' and 'skirt-covering-crotch' already check for this]
+	if C is partially-layer-concealing and (C is total protection or C is skirt-covering-crotch), decide yes; [crotch-assless clothing doesn't hide what's underneath, but both 'total protection' and 'skirt-covering-crotch' already check for this]
 	decide no.
 Definition: a clothing (called C) is partially-bottom-layer-concealing:
 	if C is worn and C is potentially-partially-bottom-layer-concealing, decide yes;
@@ -118,6 +118,8 @@ To decide which object is the coverer of (C - a clothing):
 	decide on M.
 
 [Layers + visibility]
+To decide which object is the concealer of (C - a wearthing):
+	decide on nothing. [Just to avoid errors when checking things like salves]
 [We will prioritise a top layer thing over a bottom layer thing. We prioritise a bottom layer thing over a middle layer thing.]
 To decide which object is the concealer of (C - a clothing):
 	if appearance-explained is 1 and debugmode > 1, say "Checking concealer of [C].";

@@ -291,6 +291,11 @@ To compute kneeling reaction of (M - bowsette):
 	if the temperament of M > 0, cutshow figure of happy bowsette kneel cutscene for M;
 	strongHumiliate.
 
+To compute (M - a monster) stomping (N - bowsette):
+	if M is in the location of the player, say "[BigNameDesc of N] squeals as [NameDesc of M] grabs [him of N] by the arms and lifts [him of N] into the air.[line break][speech style of N]'What?! No, wait! You can't do this! I'M supposed to be the Big Bad Boss! AIIIIEEEEE!'[roman type][line break][BigNameDesc of M] completely ignores [NameDesc of N][']s pleas, and lowers [NameDesc of N][']s exposed asshole onto [his of M] giant shaft.[line break][speech style of N]'You're going to break me! Awoooooo!'[roman type][line break]That's the last coherent thing [NameDesc of N] says. Before long, [he of N] is a wailing mess of sexual disgrace as [NameDesc of M] does [his of M] best to turn [NameDesc of N] inside-out with [his of M] [manly-penis]. By the time [NameDesc of M] has pumped [his of N] sorry guts full of [ShortDesc of M] spunk, [NameDesc of N] is completely delerious, and no longer the confident Queen Turtle that [he of N] once was. [big he of N] is left, defeated and exhausted, trapped upside down on [his of N] shell, shooting huge spurts of [semen] out of [his of N] backside.";
+	otherwise say "You hear the sound of [NameDesc of N] shouting[line break][speech style of N]'You can't do this! I'M supposed to be the Big Bad Boss! AIIIIEEEEE!'[roman type][line break]from [if N is nearby]nearby![otherwise]somewhere in the [playerRegion]![end if]";
+	now N is fucked-silly.
+
 Part 3 - Combat
 
 [To say waitingflav of (M - a bowsette):
@@ -432,7 +437,7 @@ Definition: bowsette is automatically banishable: [Will this NPC automatically r
 	decide no.
 
 To say BanishForceFlav of (M - bowsette):
-	say "You flick [his of M] nose threateningly.[line break][speech style of M]'Grr! I was a bit careless. This is not as I had planned...but I still how the power of the Stars, and I still have a hot round peach. Bwa ha ha! You'll get no more Stars from me! I'm not finished with you yet, but I'll let you go for now. You'll pay for this... later!'[roman type][line break] [BigNameDesc of M] lets out a final offended [speech style of M]'Rawr!'[roman type], and begins to flee!".
+	say "You flick [his of M] nose threateningly.[line break][speech style of M]'Grr! I was a bit careless. This is not as I had planned...but I still have the power of the Stars, and I still have a hot round peach. Bwa ha ha! You'll get no more Stars from me! I'm not finished with you yet, but I'll let you go for now. You'll pay for this... later!'[roman type][line break] [BigNameDesc of M] lets out a final offended [speech style of M]'Rawr!'[roman type], and begins to flee!".
 
 To standard loot (M - bowsette):
 	let X be a random off-stage plentiful accessory;

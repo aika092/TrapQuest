@@ -1013,9 +1013,8 @@ This function is called whenever a monster "M" is about to ejaculate in a fuckho
 
 +!]
 To compute (M - a monster) pulling out of (F - a fuckhole):
-	[if debugmode > 0, say "PULL OUT SUCCEEDED[line break]";]
-	if bukkake fetish is 1, compute M messily pulling out of F;
-	otherwise compute M cleanly pulling out of F.
+	if the player is getting lucky, compute M cleanly pulling out of F;
+	otherwise compute M messily pulling out of F.
 
 [!<ComputeMonsterMessilyPullingOutOfFuckhole>+
 
@@ -1028,7 +1027,8 @@ This function is called whenever a monster "M" is about to ejaculate in a fuckho
 To compute (M - a monster) messily pulling out of (F - a fuckhole):
 	get messy pull out image of M in F;
 	say MessyPullOutFlav of M in F;
-	AnnouncedSquirt semen on thighs by the semen load of M.
+	if bukkake fetish is 1, AnnouncedSquirt semen on hips by the semen load of M;
+	otherwise AnnouncedSquirt semen on thighs by the semen load of M.
 
 To get messy pull out image of (M - a monster) in (F - a fuckhole):
 	get clean pull out image of M in F.
@@ -1124,7 +1124,8 @@ Displays some text describing a monster "M" pulling out of a fuckhole "F" and pu
 To say MessyPullOutFlav of (M - a monster) in (F - a fuckhole):
 	let subs be the number of submission-assisting monsters in the location of the player;
 	let N be a random submission-assisting monster in the location of M;
-	say "[BigFuckerDesc of M] pulls out and sprays [if subs > 1]you and the others' crotches[otherwise if subs > 0]you and [FuckerDesc of N]'s crotches[otherwise]your crotch[end if] with [semen].".
+	if bukkake fetish is 1, say "[BigFuckerDesc of M] pulls out and sprays [if subs > 1]you and the others' butts[otherwise if subs > 0]you and [FuckerDesc of N]'s butts[otherwise]your [AssDesc][end if] with [semen].";
+	otherwise say "[BigFuckerDesc of M] pulls out and sprays [if subs > 1]you and the others' crotches[otherwise if subs > 0]you and [FuckerDesc of N]'s crotches[otherwise]your crotch[end if] with [semen].".
 
 To get orgasm image of (M - a monster) in (F - a fuckhole):
 	do nothing.

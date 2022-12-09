@@ -488,7 +488,7 @@ To say unique-verb-desc of (T - a monster):
 			say " [link][bracket]poke[close bracket][as]poke [text-shortcut of T][end link]";
 		if T is sex-enslaved and the player is the donator:
 			say " [link][bracket]torment[close bracket][as]torment [the text-shortcut of T][end link]";
-		otherwise if T is caged and the player is an april 2021 top donator:
+		otherwise if T is caged and the player is the donator:
 			say " [link][bracket]torment[close bracket][as]torment [the text-shortcut of T][end link]";
 		if T is actually seducable:
 			say " [link][bracket]seduce[close bracket][as]seduce [text-shortcut of T][end link]".

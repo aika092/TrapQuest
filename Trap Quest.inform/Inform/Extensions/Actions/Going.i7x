@@ -203,6 +203,17 @@ To decide which number is the movement reduction of the player:
 		if movement-reduction-flav-said is false:
 			now movement-reduction-flav-said is true;
 			now T is the substituted form of "The bondage connecting you to [student-name of the bound-target of quiz-partner] is severely hindering your movement!";
+	if diaper-box is worn:
+		if diaper-box is diaper-dumped:
+			increase X by 25;
+			if movement-reduction-flav-said is false:
+				now movement-reduction-flav-said is true;
+				now T is the substituted form of "The used diapers in [NameDesc of diaper-box] are obstructing the majority of your vision, making it impossible to move quickly!";
+		otherwise:
+			increase X by 5;
+			if movement-reduction-flav-said is false:
+				now movement-reduction-flav-said is true;
+				now T is the substituted form of "The heavy and unwieldy [MediumDesc of diaper-box] is affecting your balance, making it difficult to move quickly!";
 	if the player is upright:
 		if skirt-tray-vibrator is worn:
 			let C be the max-cakes of skirt-tray-vibrator - the cakes-taken of skirt-tray-vibrator;

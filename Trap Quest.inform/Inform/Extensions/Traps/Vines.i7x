@@ -155,6 +155,9 @@ To compute (V - a vine) penetrating:
 	otherwise:
 		let R be a random number between 1 and 2;
 		let F be asshole;
+		if the player is possessing a vagina: [no need to check this if the player only has an asshole]
+			repeat with M running through alive undefeated monsters:
+				if the current-errand of M is vine-egg-errand, now R is 1; [if you need to get a vine egg, they'll go asshole for you]
 		if the player is a pussy slut, now R is 2;
 		if R is 2 and the player is possessing a vagina and the player is not a butt slut, now F is vagina;
 		let H be a random number from 1 to 14;

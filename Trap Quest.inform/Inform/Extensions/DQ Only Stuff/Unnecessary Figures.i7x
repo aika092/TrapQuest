@@ -366,6 +366,9 @@ To decide which figure-name is Figure of Pink Lollipop:
 To decide which figure-name is Figure of Pole Cutscene 4:
 	decide on figure of small image.
 
+To decide which figure-name is Figure of PrisonBackground:
+	decide on figure of small image.
+
 To decide which figure-name is Figure of Team Enema Predicament:
 	decide on figure of small image.
 

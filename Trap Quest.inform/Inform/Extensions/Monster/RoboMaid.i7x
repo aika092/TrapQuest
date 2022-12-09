@@ -1,6 +1,6 @@
 RoboMaid by Monster begins here.
 
-A robomaid is a kind of robot. A robomaid is usually intelligent. Understand "maid", "robomaid" as robomaid. The leftover-type of a robomaid is usually 127.
+A robomaid is a kind of robot. A robomaid is intelligent. Understand "maid", "robomaid" as robomaid. The leftover-type of a robomaid is usually 127.
 
 dainty robomaid is a robomaid. The text-shortcut of dainty robomaid is "drm".
 prissy robomaid is a robomaid. The text-shortcut of prissy robomaid is "psrm".
@@ -39,6 +39,7 @@ To set up (M - a robomaid):
 	reset M;
 	now the monstersetup of M is 1;
 	add mechanical joint to the banishItems of M, if absent;
+	add erasure-salve to the tradableItems of M, if absent;
 	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M;
 	now M is unconcerned.
@@ -103,7 +104,9 @@ Part 2 - Perception
 
 To compute perception of (M - a robomaid):
 	say "[BigNameDesc of M] notices you!";
-	if the number of worn dirty clothing > 0:
+	if the current-errand of M is completed and M is friendly:
+		compute errand completion of M;
+	otherwise if the number of worn dirty clothing > 0:
 		if M is unfriendly:
 			say "[big his of M] eyes turn red and [he of M] spins towards you.[line break][speech style of M]'CLEANLINESS VIOLATION DETECTED. EMERGENCY LAUNDERING PROGRAM INITIATED.'[roman type][line break]";
 		otherwise:
@@ -119,6 +122,8 @@ To compute perception of (M - a robomaid):
 	otherwise if the class of the player is vixen:
 		say "[big his of M] eyes turn red and [he of M] spins toward you.[line break][speech style of M]'BURGLAR DETECTED! PUBLICITY STUNT PROGRAM INITIATED!'[roman type][line break]";
 		anger M;
+	otherwise if the current-errand of M is completed and M is not uniquely unfriendly:
+		compute errand completion of M;
 	otherwise if M is friendly:
 		say "[big he of M] glides towards you, striking a provocative pose as [he of M] addresses you in a monotone.[line break][speech style of M]'FLIRTATION PROGRAM CLASS ['][robogreeting of M]['] initiated. HEY, [robogreeting of M]. DOES THIS [one of]MAKE MY BOSOM UNIT LOOK BIG[or]SKIRT REVEAL SUFFICIENT CUSHIONING UNIT[or]POSE ACCENTUATE MY MONEY-SHOT APPARATUS[at random]?[roman type][line break][if the player is able to speak]Say yes?[end if]";
 		if the player is consenting and the player is able to speak and the refractory-period of M < 0:

@@ -6,7 +6,8 @@ Definition: agent is hotel dwelling:
 	if the player is a june 2022 top donator and diaper quest is 0, decide yes;
 	decide no.
 
-[Definition: agent is willing to urinate: decide yes.]
+Definition: agent is willing to do vaginal: decide yes.
+Definition: agent is willing to do anal: decide yes.
 
 Definition: agent is dark skinned: decide yes.
 
@@ -23,6 +24,7 @@ agent has a number called agent-scene-spotted.
 Figure of agent is the file "NPCs/MultiFloor/Agent/agent1.png".
 Figure of agent doggy is the file "NPCs/MultiFloor/Agent/cutscene-agent1.jpg".
 Figure of agent throat is the file "NPCs/MultiFloor/Agent/cutscene-agent2.jpg".
+Figure of agent doggy angry is the file "NPCs/MultiFloor/Agent/cutscene-agent3.jpg".
 
 To say ShortDesc of (M - agent):
 	say "[if M is agent-identified]agent[otherwise]lady[end if]".
@@ -31,15 +33,22 @@ To say MediumDesc of (M - agent):
 	say "suited [ShortDesc of M]".
 
 To decide which figure-name is the monster-image of (M - agent):
-	[if lady fetish is 1, decide on figure of female agent;]
+	if M is agent-deglassed, decide on figure of agent angry;
 	decide on figure of agent.
+
+To decide which figure-name is the anal-sex-monster-image of (M - agent):
+	decide on figure of agent doggy angry.
+To decide which figure-name is the vaginal-sex-monster-image of (M - agent):
+	decide on figure of agent doggy angry.
 
 Definition: agent is presenting as male:
 	if lady fetish is 2, decide yes;
 	decide no.
 
 To say MonsterDesc of (M - agent):
-	say "This tall, extremely curvy black [man of M] is wearing a tight grey suit that perfectly hugs [his of M] giant bust and thunderous thighs. Reflective sunglasses hide [his of M] eyes, and a small briefcase hides [his of M] crotch.".
+	say "This tall, extremely curvy black [man of M] is wearing a tight grey suit that perfectly hugs [his of M] giant bust and thunderous thighs. ";
+	if M is agent-deglassed, say "[big he of M] has lost [his of M] sunglasses, which has made [him of M] visibly furious with you[if diaper quest is 0]. [big he of M] has also raised [his of M] briefcase, revealing the bulge of [his of M] [LongDickDesc of M][end if].";
+	otherwise say "Reflective sunglasses hide [his of M] eyes[if diaper quest is 0], and a small briefcase hides [his of M] crotch[end if].".
 
 To say LongDickDesc of (M - agent):
 	if full-lady fetish is 1:
@@ -117,7 +126,7 @@ To say DisapprovalFlav of (M - agent):
 	say "You can't even tell if [NameDesc of M] is looking at you right now, because of [his of M] shades.".
 
 To say BecomesAggressive of (M - agent):
-	say "[big he of M] takes an offensive stance![line break][speech style of M]'Ok, time for some good fun.'[roman type][line break]".
+	say "[big he of M] takes an offensive stance![line break][speech style of M]'Okay, time for some bitch-breaking.'[roman type][line break]".
 
 To compute perception of (M - agent):
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][big he of M] maintains a neutral expression, and doesn't seem interested in interacting with you.";
@@ -133,12 +142,28 @@ To compute default waiting of (M - agent):
 
 The agent priority attack rules is a rulebook. The priority attack rules of agent is the agent priority attack rules.
 This is the agent trolls then leaves rule:
-	if agent is not agent-deglassed or the player is prone:
+	if agent is not agent-deglassed:
 		say "You blink with confusion.[line break][variable custom style]...What was I doing again?[roman type][line break]";
 		regionally place agent;
 		rule succeeds.
 The agent trolls then leaves rule is listed in the agent priority attack rules.
 
+To say PrepTaunt of (M - agent) in (F - a fuckhole):
+	say "[speech style of M]'You broke my glasses, so now I'm going to break your [F].'[roman type][line break][BigNameDesc of M] growls with vindictive cruelty. [big he of M] places one hand on your back and another on the back of your head, which [he of M] presses down into the ground, causing you to wince with pain[one of]. It would appear that [he of M] has zero intention of making this pleasant for you[or][stopping].".
+
+To compute unique penetration effect of (M - agent) in (F - a fuckhole):
+	PainUp 10.
+
+To compute sexBegging of (M - agent) in (F - a fuckhole):
+	if the sex-length of M is 1:[climax is always apparent when the player is begging]
+		say sexSubmitNearingClimax of M in F;
+		ruin F;
+	otherwise:
+		say "[speech style of M]'You'll never get mercy from me, [bitch]!'[roman type][line break][BigNameDesc of M] snarls. If anything, [he of M] just started thrusting a bit harder...";
+		ruin F.
+
+To say CreampieFlav of (M - agent) in (F - a fuckhole):
+	say "[if M is in the location of the player][line break][speech style of M]'[one of]Take this, you fucking [cunt]!'[or]You're mine now, [bitch]!'[in random order][roman type][line break][end if][BigFuckerDesc of M] [if M is in the location of the player]roars with catharsis and bottoms out as [he of M] shoots blast after blast of warm [semen] into[otherwise]bottoms out as [he of M] shoots blast after blast of warm [semen] into[end if] your [variable F]!".
 
 Section 3 - Damage
 

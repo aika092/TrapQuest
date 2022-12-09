@@ -126,7 +126,6 @@ To compute reward (N - a number) set up of (M - an imp):
 	now M is in the location of the player.
 
 Definition: an imp (called M) is objectifying the player:
-	if the player is prone and the player is immobile and the player is in danger, decide yes;
 	if the favour of M < the aggro limit of M, decide yes;
 	decide no.
 
@@ -264,8 +263,8 @@ Part 2 - Perception
 [imps should only be aggressive if you're stuck by the demoness]
 To compute perception of (M - an imp):
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]"; [The output for clothing humiliation takes place within the 'sluttily dressed' check.]
-	if M is unfriendly:
-		say "[BigNameDesc of M] grins evilly. Looks like [he of M]'s turned on you!";
+	if the player is prone and the player is immobile and the player is in danger and the refractory-period of M < the refractory-time of M - 30: [After they've just used you, they don't do it again immediately.]
+		say "[BigNameDesc of M] grins evilly. Looks like [he of M][']s turned on you!";
 		anger M;
 	otherwise:
 		say "[BigNameDesc of M] eyes you mischievously.".
@@ -303,6 +302,20 @@ To decide if (M - an imp) is willing to creampie (F - vagina):
 		if the class of the player is priestess, decrease N by 1;
 		if a random number between -1 and N < 1, decide no;
 	decide yes.
+
+The imp continue sex rules is a rulebook. The continue sex rules of an imp is usually the imp continue sex rules.
+
+This is the friendly fucking imps turn unfriendly rule:
+	if current-monster is friendly-fucking and the player is in danger:
+		let M be current-monster;
+		let N be a random unfriendly imp in the location of the player;
+		say "[BigNameDesc of M] [if N is a monster][one of]snickers[or]cackles[or]giggles[at random] and follows [NameDesc of N][']s lead.[otherwise]grins evilly. Despite you now having a new enemy, [big he of M] doesn't want to stop - [he of M] has betrayed you![end if]";
+		now M is not friendly-fucking;
+		anger M;
+	follow the check normal continue sex stuff rule;
+	if the rule succeeded, rule succeeds.
+The friendly fucking imps turn unfriendly rule is listed in the imp continue sex rules.
+
 
 Section 2 - Damage
 

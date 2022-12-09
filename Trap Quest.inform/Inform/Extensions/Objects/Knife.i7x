@@ -115,11 +115,10 @@ Carry out knifing:
 			destroy the noun;
 			now the noun is in Holding Pen. [stop it spawning again]
 Report knifing:
-	let M be a random friendly robochef in the location of the player;
-	if M is a monster:
-		say "[first custom style]'[one of]HAZARDOUS ACTIVITIES DETECTED! PACIFICATION PROTOCOL REQUIRED... PROTOCOL FOUND. RELEASE THE CHOPPING DEVICE AND PREPARE FOR [if diaper quest is 1]BABIFICATION[otherwise]ANAL INFUSION[end if] ROUTINE!'[or]UNAUTHORISED COOKING DETECTED! RELEASE THE SHARP WEAPON AND PREPARE FOR [if diaper quest is 1]APPROPRIATE[otherwise]ANAL BREWING[end if] PUNISHMENT ROUTINE.'[at random][roman type][line break]Uh-oh, looks like you've angered [NameDesc of M]!";
-		anger M;
-		interest M.
+	if robochef is in the location of the player and robochef is awake and robochef is undefeated and robochef is friendly:
+		say "[speech style of robochef]'[one of]HAZARDOUS ACTIVITIES DETECTED! PACIFICATION PROTOCOL REQUIRED... PROTOCOL FOUND. RELEASE THE CHOPPING DEVICE AND PREPARE FOR [if diaper quest is 1]BABIFICATION[otherwise]ANAL INFUSION[end if] ROUTINE!'[or]UNAUTHORISED COOKING DETECTED! RELEASE THE SHARP WEAPON AND PREPARE FOR [if diaper quest is 1]APPROPRIATE[otherwise]ANAL BREWING[end if] PUNISHMENT ROUTINE.'[at random][roman type][line break]Uh-oh, looks like you've angered [NameDesc of robochef]!";
+		anger robochef;
+		interest robochef.
 Understand "cut [something] with [something]", "slice [something] with [something]", "destroy [something] with [something]", "remove [something] with [something]" as knifing it with.
 Check cutting when the player is in Hotel19:
 	try knifing the noun with a random knife instead.

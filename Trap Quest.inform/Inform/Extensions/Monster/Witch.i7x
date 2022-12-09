@@ -36,6 +36,8 @@ To say MonsterComment of (M - a witch):
 To set up (M - witch):
 	reset M;
 	now the monstersetup of M is 1;
+	add magic-potion to the tradableItems of M, if absent;
+	add magic-potion to the taxableItems of M, if absent;
 	now the raw difficulty of M is the starting difficulty of M;
 	now M is unconcerned;
 	now the health of M is the maxhealth of M.
@@ -138,6 +140,8 @@ To compute perception of (M - witch):
 			say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break]";
 		now noticed is 2;
 		mention and maybe reattach dick by M;
+	otherwise if the current-errand of M is completed and M is not uniquely unfriendly:
+		compute errand completion of M;
 	otherwise if M is unbitchy:
 		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'Hey, you! Good to see you again. I hope you're having a fun adventure!'[roman type][line break]";
 		calm M;

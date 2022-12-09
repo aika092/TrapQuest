@@ -34,6 +34,9 @@ Definition: a cumslut collar is transformation-protected:
 To decide which object is the unique-upgrade-target of (C - a cumslut collar):
 	decide on fuckdoll collar.
 
+To compute periodic effect of (C - a cumslut collar):
+	compute slave collar wisp of C.
+
 Definition: a cumslut collar is semen themed: decide yes.
 Definition: a cumslut collar is gem themed: decide yes.
 Definition: a cumslut collar is pink themed: decide yes.

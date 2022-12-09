@@ -416,4 +416,51 @@ To demagnetise (C - a clothing):[Do not call this function unless you know it is
 	say "The [C] emits a sharp tone and the magnetic latches snap open!";
 	now C is not magnetised.
 
+Part - Diaper Box
+
+diaper-box is a hood. diaper-box is see-through. diaper-box is manly. diaper-box is plastic. diaper-box can be diaper-dumped.
+
+The printed name of diaper-box is "[clothing-title-before]used diaper box[clothing-title-after]". The text-shortcut of diaper-box is "dbx".
+
+Figure of diaper box is the file "Items/Accessories/Head/diaperbox1.jpg".
+Figure of diaper box dumped is the file "Items/Accessories/Head/diaperbox2.jpg".
+To decide which figure-name is the clothing-image of (C - diaper-box):
+	if diaper-box is diaper-dumped, decide on figure of diaper box dumped;
+	decide on figure of diaper box.
+
+To decide which number is the wornArmsRequired of (C - diaper-box):
+	decide on 2.
+
+Definition: diaper-box is ringagged: decide no.
+
+To say ShortDesc of (H - diaper-box):
+	say "used diaper box".
+
+To say ClothingDesc of (H - diaper-box):
+	say "This huge plastic box houses your head and countless [if diaper messing >= 7]disgusting messy[otherwise]used[end if] diapers, which [if H is diaper-dumped]have been dumped over your head, engulfing your face[otherwise]are held in an air-tight compartment above your head, threatening to drop down and engulf your face at any moment[end if].".
+
+To decide which object is the at least partial concealer of (C - diaper-box):
+	decide on nothing.
+
+[can't have its outrage lowered by being covered by arms]
+To decide which number is the outrage of (H - diaper-box):
+	if H is diaper-dumped, decide on 20;
+	decide on 12.
+To decide which number is the cringe of (H - diaper-box):
+	if H is diaper-dumped, decide on 16;
+	decide on 10.
+
+To compute school periodic effect of (H - diaper-box):
+	if H is diaper-dumped:
+		now H is dense;
+		if the player is upset about mess:
+			say "You choke and gag on the horrid fumes inside [NameDesc of diaper-box].";
+			SlowDelicateUp 1;
+		otherwise if a random number between 1 and 20 > the delicateness of the player:
+			say "You are [one of][or]still [stopping]finding being engulfed in used diapers very upsetting.";
+			SlowDelicateUp 1.
+
+
+
+
 Hoods ends here.

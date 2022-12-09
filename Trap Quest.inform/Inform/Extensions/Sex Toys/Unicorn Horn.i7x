@@ -19,6 +19,7 @@ Definition: a unicorn-horn is magic themed: decide yes.
 Definition: a unicorn-horn is horse themed: decide yes.
 
 To decide which number is the bartering value of (T - a unicorn-horn) for (M - a monster):
+	if M is student or M is staff member, decide on 0;
 	decide on 10.
 
 To compute resolution of (M - mechanic) taking (T - a unicorn-horn):

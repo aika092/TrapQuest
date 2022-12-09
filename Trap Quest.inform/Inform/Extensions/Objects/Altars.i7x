@@ -56,7 +56,9 @@ The elder altar gains charge when items are placed on the altar, and loses charg
 
 @!]
 The elder altar is a thing. The elder altar is in Mansion23. The elder altar is not portable. The printed name of elder altar is "[TQlink of item described]dark altar[shortcut-desc][if the charge of item described <= 0 and doomed >= 0] (glowing)[otherwise] (not glowing)[end if][TQxlink of item described][verb-desc of item described]". Understand "dark" as the elder altar. The indefinite article of the elder altar is "an". The elder altar has a number called charge. The text-shortcut of elder altar is "al".
+
 Figure of elder altar cock is the file "Env/Mansion/cumcock1.jpg".
+Figure of elder altar is the file "Env/Mansion/altar1.jpg".
 
 To decide which figure-name is the examine-image of (C - elder altar):
 	decide on figure of elder altar.
@@ -314,100 +316,104 @@ To AltarUniqueReward of (T - flower hairclip):
 
 To AltarPray (P - a person):
 	cutshow figure of dungeon altar cutscene for dungeon altar;
-	say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] I shall help you on your quest!'[roman type][line break]";
-	MagicPowerRefresh 4;
-	while 1 is 1:
-		let R be a random number from 1 to 9;
-		if the class of the player is priestess and (the vaginalvirgin of the player is 0 or the player is not possessing a vagina):
-			let T be ritual-beads;
-			if T is actually summonable and T is off-stage:
-				summon T;
-				now T is blessed;
-				say "You feel your [asshole] being forced open as a [printed name of T] materialises in your ass.";
+	if the altar-used of dungeon-altar-errand is 0 and the current-errand of Icarus is dungeon-altar-errand and Icarus is alive and Icarus is undefeated:
+		say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] I have heard your prayer for Icarus, and shall reward him accordingly!'[roman type][line break]";
+		now the altar-used of dungeon-altar-errand is 1;
+	otherwise:
+		say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] I shall help you on your quest!'[roman type][line break]";
+		MagicPowerRefresh 4;
+		while 1 is 1:
+			let R be a random number from 1 to 9;
+			if the class of the player is priestess and (the vaginalvirgin of the player is 0 or the player is not possessing a vagina):
+				let T be ritual-beads;
+				if T is actually summonable and T is off-stage:
+					summon T;
+					now T is blessed;
+					say "You feel your [asshole] being forced open as a [printed name of T] materialises in your ass.";
+					break;
+			if permanent makeup is 1:
+				say "The make up on your face feels less... permanent. Maybe it will start to fade soon!";
+				now permanent makeup is 0;
 				break;
-		if permanent makeup is 1:
-			say "The make up on your face feels less... permanent. Maybe it will start to fade soon!";
-			now permanent makeup is 0;
-			break;
-		if the pregnancy of the player > 0:
-			if (the number of carried pregnancy themed things - the number of carried pregnancy themed clothing is 0 and the number of worn pregnancy themed clothing is 0) or (the pregnancy of the player is 3 and the class of the player is not broodmother):
-				say "You feel an emptiness inside of you. Suddenly, your belly dramatically shrinks!";
-				now the pregnancy of the player is 0;
-				WombEmpty the womb volume of vagina;
-				now the small egg count of vagina is 0;
-				now the medium egg count of vagina is 0;
-				now the large egg count of vagina is 0;
+			if the pregnancy of the player > 0:
+				if (the number of carried pregnancy themed things - the number of carried pregnancy themed clothing is 0 and the number of worn pregnancy themed clothing is 0) or (the pregnancy of the player is 3 and the class of the player is not broodmother):
+					say "You feel an emptiness inside of you. Suddenly, your belly dramatically shrinks!";
+					now the pregnancy of the player is 0;
+					WombEmpty the womb volume of vagina;
+					now the small egg count of vagina is 0;
+					now the medium egg count of vagina is 0;
+					now the large egg count of vagina is 0;
+					break;
+			if the player is hungry:
+				say "You feel full!";
+				now the stomach-food of the player is 4;
+			if the thirst of the player > 3:
+				say "You feel that your thirst has been quenched.";
+				while the thirst of the player > 0:
+					increase the stomach-water of the player by 1;
+			if R is 1 and the largeness of breasts > 6 and the largeness of breasts > the real largeness of breasts:
+				say "You feel your breasts shrink.";
+				BustDown 4;
 				break;
-		if the player is hungry:
-			say "You feel full!";
-			now the stomach-food of the player is 4;
-		if the thirst of the player > 3:
-			say "You feel that your thirst has been quenched.";
-			while the thirst of the player > 0:
-				increase the stomach-water of the player by 1;
-		if R is 1 and the largeness of breasts > 6 and the largeness of breasts > the real largeness of breasts:
-			say "You feel your breasts shrink.";
-			BustDown 4;
-			break;
-		if R is 2 and the thickness of hips > 3 and the thickness of hips > the real thickness of hips:
-			say "You feel your hips shrink.";
-			HipDown 2;
-			break;
-		if R is 3 and the sex addiction of the player > 7:
-			say "You feel less perverted.";
-			SexAddictDown 2;
-			break;
-		otherwise if R is 3:
-			say "You feel more intelligent.";
-			IntUp 1;
-			break;
-		if R is 4 and the fatigue of the player > 100:
-			say "You feel instantly refreshed.";
-			now the fatigue of the player is 0;
-			break;
-		if R is 5:
-			if the body soreness of the player > 5 or the soreness of asshole > 5 or the soreness of vagina > 5:
-				say "Your entire body feels less sore.";
-				heal asshole times 2;
-				heal vagina times 2;
-				BodyHeal 2;
+			if R is 2 and the thickness of hips > 3 and the thickness of hips > the real thickness of hips:
+				say "You feel your hips shrink.";
+				HipDown 2;
 				break;
-		if R is 6 and the humiliation of the player < 40000 and the humiliation of the player >= 2000:
-			say "You feel less humiliated about your current situation.";
-			dignify 2000;
-			break;
-		if R is 7 and the largeness of hair > 7:
-			say "About half the length of your hair is magically chopped off!";
-			HairCut to the largeness of hair / 2;
-			break;
-		if R is 8 and the mystical size of penis < 10 and the player is somehow possessing a penis:
-			say "You feel more virile!";
-			SpecialPenisUp 1; [#LXorDD]
-			if the mystical size of penis is previous penis length, SexAddictDown 2;
-			break;
-		if R is 9:
-			if there is a worn tattoo and angel tattoo is not worn:
-				summon angel tattoo;
-				say "A tattoo of an angel appears on your right arm. You feel less slutty!";
+			if R is 3 and the sex addiction of the player > 7:
+				say "You feel less perverted.";
+				SexAddictDown 2;
 				break;
-	if the pregnancy of the player is 0 and the womb volume of vagina is 0 and runic headband is actually summonable:
-		say "A shimmering blue light surrounds you as your pure visible energy rushes around your body and then settles into the form of some kind of religious headband. A voice sounds in your head:[line break][second custom style]'Loyal Sister, you have been chosen to follow the holy path of righteousness! Go, with grace, but do not forget your duties.'[roman type][line break]";
-		summon runic headband cursed;
-		if the player is possessing a vagina and the vaginalvirgin of the player is 0:
-			say "[bold type]The pure aura of your headband clashes with your lost vaginal virginity![roman type][line break]";
-			compute virginity-loss of runic headband;
-	otherwise if flower hairclip is worn:
-		AltarUniqueReward of flower hairclip;
-	follow the player class rules;
-	if diaper quest is 0 and (runic headband is worn or the class of the player is priestess):
-		if ritual-beads is not held and ritual-beads is not in the location of the player:
-			only destroy ritual-beads;
-			now ritual-beads is in the location of the player;
-			say "[BigNameDesc of ritual-beads] appears at your feet.";
-			compute autotaking ritual-beads;
-		let C be a random worn cursed sex toy;
-		if C is sex toy:
-			bless C;
+			otherwise if R is 3:
+				say "You feel more intelligent.";
+				IntUp 1;
+				break;
+			if R is 4 and the fatigue of the player > 100:
+				say "You feel instantly refreshed.";
+				now the fatigue of the player is 0;
+				break;
+			if R is 5:
+				if the body soreness of the player > 5 or the soreness of asshole > 5 or the soreness of vagina > 5:
+					say "Your entire body feels less sore.";
+					heal asshole times 2;
+					heal vagina times 2;
+					BodyHeal 2;
+					break;
+			if R is 6 and the humiliation of the player < 40000 and the humiliation of the player >= 2000:
+				say "You feel less humiliated about your current situation.";
+				dignify 2000;
+				break;
+			if R is 7 and the largeness of hair > 7:
+				say "About half the length of your hair is magically chopped off!";
+				HairCut to the largeness of hair / 2;
+				break;
+			if R is 8 and the mystical size of penis < 10 and the player is somehow possessing a penis:
+				say "You feel more virile!";
+				SpecialPenisUp 1; [#LXorDD]
+				if the mystical size of penis is previous penis length, SexAddictDown 2;
+				break;
+			if R is 9:
+				if there is a worn tattoo and angel tattoo is not worn:
+					summon angel tattoo;
+					say "A tattoo of an angel appears on your right arm. You feel less slutty!";
+					break;
+		if the pregnancy of the player is 0 and the womb volume of vagina is 0 and runic headband is actually summonable:
+			say "A shimmering blue light surrounds you as your pure visible energy rushes around your body and then settles into the form of some kind of religious headband. A voice sounds in your head:[line break][second custom style]'Loyal Sister, you have been chosen to follow the holy path of righteousness! Go, with grace, but do not forget your duties.'[roman type][line break]";
+			summon runic headband cursed;
+			if the player is possessing a vagina and the vaginalvirgin of the player is 0:
+				say "[bold type]The pure aura of your headband clashes with your lost vaginal virginity![roman type][line break]";
+				compute virginity-loss of runic headband;
+		otherwise if flower hairclip is worn:
+			AltarUniqueReward of flower hairclip;
+		follow the player class rules;
+		if diaper quest is 0 and (runic headband is worn or the class of the player is priestess):
+			if ritual-beads is not held and ritual-beads is not in the location of the player:
+				only destroy ritual-beads;
+				now ritual-beads is in the location of the player;
+				say "[BigNameDesc of ritual-beads] appears at your feet.";
+				compute autotaking ritual-beads;
+			let C be a random worn cursed sex toy;
+			if C is sex toy:
+				bless C;
 	reset dungeon altar.
 
 To AltarReward (T - wrist bond):
@@ -899,7 +905,7 @@ To DevilPray (P - a person):
 	otherwise if diaper quest is 0 and mechanic is alive and bride-consort is throne and (the class of the player is bride or the class of the player is "princess" or the class of the player is "deepthroat princess" or the class of the player is "trained fuck princess" or the class of the player is "virgin warrior princess"):
 		let H be a random worn headgear;
 		transform H into tiara-veil;
-		now the quest of H is betrothal-quest;
+		uniquely set up tiara-veil;
 		now bride-consort is mechanic;
 		let C be a random worn removable overdress;
 		if C is a thing, WardrobeVanish C; [this would prevent the class summon below]

@@ -130,7 +130,7 @@ Definition: demon-diaper is pink themed: decide yes.
 
 Chapter 3 Waddle Diaper
 
-waddle diaper is a kind of pullup diaper. A waddle diaper is pvc. A waddle diaper is zippable. A waddle diaper is totally-exclusive. A waddle diaper is transformation-rare. A waddle diaper is womanly.
+waddle diaper is a kind of pullup diaper. A waddle diaper is pvc. A waddle diaper is zippable. A waddle diaper is crotch-zipped. A waddle diaper is totally-exclusive. A waddle diaper is transformation-rare. A waddle diaper is womanly.
 The DQFigure of waddle diaper is DQWaddle.
 Understand "waddle" as waddle diaper.
 To decide which number is the weight of (C - a waddle diaper):
@@ -172,7 +172,8 @@ Definition: a waddle diaper is transformation-protected:
 	if it is cursed, decide yes;
 	decide no.
 To potentially transform (C - a waddle diaper):
-	curse C.
+	curse C;
+	compute summoned quest of C.
 
 To say ShortDesc of (C - a waddle diaper):
 	say "waddle diaper".

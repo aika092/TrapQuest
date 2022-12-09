@@ -21,7 +21,7 @@ Definition: a magical dress is magic themed: decide yes.
 To decide which number is the initial outrage of (H - a magical dress):
 	decide on 4.
 
-lolita magical dress is a magical dress. lolita magical dress is short.
+lolita magical dress is a magical dress. lolita magical dress is short. lolita magical dress is low cut. lolita magical dress is top-displacable.
 
 Figure of lolita magical dress is the file "Items/Clothes/Upper/Special/MahouShoujo/magicaldress1.png".
 

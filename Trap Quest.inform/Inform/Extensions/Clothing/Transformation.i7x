@@ -194,12 +194,15 @@ To compute (C - a clothing) inheriting from (D - a clothing):
 	if D is glued, gluify C;
 	otherwise ungluify C;
 	if (C is ass plugging and D is ass plugging) or (C is vagina plugging and D is vagina plugging), now the plug size of C is the plug size of D;
+	if (C is ass plugging or C is vagina plugging) and D is a sex toy, now the plug size of C is the size of D;
+	if (D is ass plugging or D is vagina plugging) and C is a sex toy, now the size of C is the plug size of D;
 	repeat with B running through body parts:
 		if D is penetrating B:
-			if (B is asshole and C is ass plugging and D is ass plugging) or (B is vagina and C is vagina plugging and D is vagina plugging) or B is not fuckhole, now C is penetrating B;
-			now D is not penetrating B;
+			if C is sex toy or B is not fuckhole or (B is asshole and C is ass plugging) or (B is vagina and C is vagina plugging):
+				now C is penetrating B;
+				now D is not penetrating B;
 		otherwise:
-			now C is not penetrating B;
+			now C is not penetrating B; [just to be sure]
 	[if D is crotch-displaced and C is crotch covering, now C is crotch-displaced;] [not sure about this one]
 	if D is crotch-unzipped and C is crotch-zipped, ZipDown C;
 	if D is crotch-ripped and (C is crotch-intact or C is crotch-zipped or C is crotch-skirted) and there is an embodied thing penetrating a fuckhole, now C is crotch-ripped;

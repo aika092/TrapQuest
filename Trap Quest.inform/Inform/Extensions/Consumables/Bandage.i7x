@@ -16,8 +16,10 @@ A time based rule (this is the first aid cooldown rule):
 		if FAcooldown > 0, decrease FAcooldown by time-seconds;
 		if FAcooldown <= 0:
 			say "A new bandage appears in your [if there is a worn bag of holding]bag[otherwise]hand[end if]!";
-			let B be a random bandage;
-			now B is unowned;
+			let B be a random unowned bandage;
+			if B is nothing:
+				now B is a random bandage;
+				now B is unowned;
 			now B is carried by the player.
 
 bandaging is an action applying to one thing.

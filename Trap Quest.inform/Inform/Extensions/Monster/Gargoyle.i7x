@@ -101,7 +101,7 @@ Definition: gargoyle (called M) is vigilant:
 	if M is uninterested, decide no;
 	if the health of M < the maxhealth of M, decide yes;
 	if doomed > 2, decide yes;
-	if the player is soulless or there is a worn wood-dong, decide no;[she can't see you if you don't have a soul.]
+	if the player is soulless or wood-dong is worn, decide no;[she can't see you if you don't have a soul.]
 	if the size of penis >= 5, decide yes;
 	if the number of glazed body parts > 2, decide yes;
 	if there is museum-stolen currently perceivable thing, decide yes;

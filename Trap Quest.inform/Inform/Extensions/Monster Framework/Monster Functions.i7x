@@ -89,13 +89,11 @@ To finally destroy (M - a monster):
 	if the player is in the location of M, decrease the charge of the dungeon altar by the difficulty of M * 10;
 	if the player is in the location of M, decrease the charge of the elder altar by the difficulty of M * 10;
 	if the player is in the location of M and the charge of hotel altar > 0, decrease the charge of hotel altar by the difficulty of M * 10;
-	now the times-met of M is 0;
-	now the times-submitted of M is 0;
-	now the times-dominated of M is 0;
-	now the sex-length of M is 0;
 	now the collar-pulled of M is 0;
 	now M is not soul-stolen;
 	now the time-alive of M is 0;
+	now the sex-length of M is 0;
+	now the times-met of M is 0;
 	if M is bride-consort:
 		now the ceremony of betrothal-quest is true;
 		progress quest of betrothal-quest;
@@ -114,6 +112,8 @@ To reset (M - a monster): [We do this when the player faints to all monsters, ev
 	now the health of M is the maxhealth of M;
 	now the loot dropped of M is 0;
 	now the refractory-period of M is 0;
+	now the current-errand of M is no-errand;
+	now the current-reward of M is no-reward;
 	FavourReset M;
 	if M is unleashed and M is alive and M is not in a placed room and M is not in WoodsBoss01:
 		if M is in the Dungeon:

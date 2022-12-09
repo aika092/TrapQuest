@@ -4,7 +4,7 @@ A headgear is a kind of clothing. headgear is unique. headgear can be hair growi
 
 Definition: a headgear is roleplay: decide no. [Can this headgear appear in the wardrobe when picking the random headgear starting option.]
 
-To decide which number is the default-soak-limit of (C - a headgear): decide on 7.
+To decide which number is the default-soak-limit of (C - a headgear): decide on 5.
 
 headgear can be blondeness-neutral, blondeness-positive, blondeness-negative (this is the blondeness-influence property). headgear is usually blondeness-neutral.
 headgear can be brightness-neutral, brightness-positive, brightness-negative (this is the brightness-influence property). headgear is usually brightness-neutral.

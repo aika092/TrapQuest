@@ -834,6 +834,8 @@ To transform (C - black-lace-stockings):
 	otherwise:
 		say "Paper bills appear on the stockings, sewn on and completely unremovable, but looking as though they've just been tucked into the tops!";
 		now C is monified.
+To uniquely destroy (C - black-lace-stockings):
+	now C is not monified.
 
 [Carry out taking black-lace-stockings:
 	if the noun is in Hotel20 and the player is getting unlucky, now the noun is provocation.]
@@ -894,5 +896,29 @@ Definition: queen-of-spades-stockings is interracial themed: decide yes.
 To decide which number is the initial outrage of (C - queen-of-spades-stockings):
 	decide on 2.
 
+skeleton stockings is a stockings. skeleton stockings is unique. skeleton stockings is dense. skeleton stockings is polyester. The text-shortcut of skeleton stockings is "skls".
+
+Figure of skeleton stockings is the file "Items/Clothes/Lower/Legs/skeletonstockings1.png".
+
+To decide which figure-name is clothing-image of (C - skeleton stockings):
+	decide on figure of skeleton stockings.
+
+To say ClothingDesc of (C - skeleton stockings):
+	say "These black stockings go up to the your thighs. They have patterns of bones across the front, making them look like they're giving an X-ray view of your skeleton through them.".
+
+To say ShortDesc of (C - skeleton stockings):
+	say "pair of skeleton stockings".
+To say MediumDesc of (C - skeleton stockings):
+	say "pair of skeleton stockings".
+
+Definition: skeleton stockings is black themed: decide yes.
+Definition: skeleton stockings is white themed: decide yes.
+
+Definition: skeleton stockings is transformation-protected:
+	if skeleton-playsuit is worn, decide yes;
+	decide no.
+
+To decide which number is the bartering value of (C - skeleton stockings) for (M - hellhound):
+	decide on 6.
 
 All Stockings ends here.

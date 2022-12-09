@@ -31,7 +31,7 @@ To say MediumDesc of (C - a bodysuit):
 	say "bodysuit".
 
 
-Part - unicorn-playsuit
+Part - Unicorn Playsuit
 
 unicorn-playsuit is a bodysuit. unicorn-playsuit is bottom-exclusive. unicorn-playsuit is average cut. The printed name of unicorn-playsuit is "[clothing-title-before]unicorn playsuit[clothing-title-after]". The text-shortcut of unicorn-playsuit is "upst". Understand "unicorn", "playsuit" as unicorn-playsuit.
 
@@ -59,6 +59,46 @@ To decide which number is the initial cringe of (C - unicorn-playsuit):
 	decide on 4.
 To decide which number is the crotch-tightness of (C - unicorn-playsuit):
 	decide on 5.
+
+Part - Skeleton Playsuit
+
+skeleton-playsuit is a bodysuit. skeleton-playsuit is unique. skeleton-playsuit is polyester. skeleton-playsuit is bottom-exclusive. skeleton-playsuit is only arm covering. The printed name of skeleton-playsuit is "[clothing-title-before]skeleton playsuit[clothing-title-after]". The text-shortcut of skeleton-playsuit is "skps". Understand "skeleton", "playsuit" as skeleton-playsuit.
+
+Definition: skeleton-playsuit is black themed: decide yes.
+Definition: skeleton-playsuit is white themed: decide yes.
+Definition: skeleton-playsuit is transformation-protected: decide yes.
+
+Figure of skeleton playsuit is the file "Items/Clothes/Upper/Rompers/romper11.png".
+
+To decide which figure-name is clothing-image of (C - skeleton-playsuit):
+	decide on figure of skeleton playsuit.
+
+To say ClothingDesc of (C - skeleton-playsuit):
+	say "A skin-tight one-piece black playsuit. It has a pattern of bones across the front, making it look like it's giving an X-ray view of your skeleton through it.".
+
+To say ShortDesc of (C - skeleton-playsuit):
+	say "playsuit".
+To say MediumDesc of (C - skeleton-playsuit):
+	say "skeleton playsuit".
+
+To decide which number is the initial outrage of (C - skeleton-playsuit):
+	decide on 3.
+To decide which number is the initial cringe of (C - skeleton-playsuit):
+	decide on 4.
+
+To decide which number is the bartering value of (C - skeleton-playsuit) for (M - hellhound):
+	decide on 6.
+
+Carry out taking off skeleton-playsuit:
+	if the quest of skeleton-playsuit is trick-or-treat-quest:
+		repeat with C running through in-play candy:
+			if C is not held, destroy C;
+		now the quest of skeleton-playsuit is no-clothing-quest. [this quest is buggy if it can be reapplied later]
+
+To uniquely destroy skeleton-playsuit:
+	if the quest of skeleton-playsuit is trick-or-treat-quest:
+		repeat with C running through in-play candy:
+			if C is not held, destroy C.
 
 Part - Tongue Suit
 
@@ -813,6 +853,33 @@ Definition: lycra-bodysuit is class-transformation-protected:
 	if the class of the player is cumdumpster, decide yes;
 	decide no.
 Definition: lycra-bodysuit is green themed: decide yes.
+
+Part - ABC Shortalls
+
+ABC shortalls is a bodysuit. ABC shortalls is transformation-rare. ABC shortalls is arm exposing. The printed name of ABC shortalls is "[clothing-title-before]ABC shortalls[clothing-title-after]". The text-shortcut of ABC shortalls is "abc".
+
+Figure of ABC shortalls is the file "Items/Clothes/Upper/Rompers/shortalls1.png".
+
+To decide which figure-name is clothing-image of (C - ABC shortalls):
+	decide on figure of ABC shortalls.
+
+To say ClothingDesc of (C - ABC shortalls):
+	say "A pair of shortalls styled as blue dungarees over a yellow shirt with a Peter Pan collar. The blue bit has the letters 'ABC' in different colours on the front. The crotch is wide, clearly designed to accommodate a large diaper.".
+
+To say ShortDesc of (C - ABC shortalls):
+	say "shortalls".
+To say MediumDesc of (C - ABC shortalls):
+	say "ABC shortalls".
+
+To decide which number is the initial outrage of (C - ABC shortalls):
+	if diaper quest is 0, decide on the initial cringe of C;
+	decide on 0.
+To decide which number is the initial cringe of (C - ABC shortalls):
+	decide on 7.
+
+Definition: ABC shortalls is blue themed: decide yes.
+Definition: ABC shortalls is yellow themed: decide yes.
+Definition: ABC shortalls is babywear: decide yes.
 
 
 Volume - Leotard

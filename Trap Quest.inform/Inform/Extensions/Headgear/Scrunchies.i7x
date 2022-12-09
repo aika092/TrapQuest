@@ -29,6 +29,8 @@ This is the scrunchie must be the same colour rule:
 			rule fails.
 The scrunchie must be the same colour rule is listed in the headgear wearability rules.
 
+To decide which number is the default-soak-limit of (C - a scrunchie): decide on 3.
+
 To set up influence of (C - a scrunchie):
 	set up submissiveness-based influence of C.
 

@@ -1,6 +1,6 @@
 Hypno Traps by Traps begins here.
 
-A hypno trap is a kind of trap. cocksucker hypno trap is a hypno trap. fucktoy hypno trap is a hypno trap. BBC hypno trap is a hypno trap. diaper-hypno-trap is a hypno trap. A hypno trap is potentially wire. A hypno trap is potentially sticky. A hypno trap is potentially click. Understand "screen" as hypno trap. The printed name of a hypno trap is "hypno screen".
+A hypno trap is a kind of trap. cocksucker hypno trap is a hypno trap. fucktoy hypno trap is a hypno trap. BBC hypno trap is a hypno trap. milk-hypno-trap is a hypno trap. piss-hypno-trap is a hypno trap. diaper-hypno-trap is a hypno trap. A hypno trap is potentially wire. A hypno trap is potentially sticky. A hypno trap is potentially click. Understand "screen" as hypno trap. The printed name of a hypno trap is "hypno screen".
 
 This is the spawn initial hotel hypno traps rule:
 	repeat with T running through fetish appropriate hypno traps:
@@ -20,6 +20,14 @@ Definition: bbc hypno trap is fetish appropriate:
 	if interracial fetish is 1, decide yes;
 	decide no.
 
+Definition: milk-hypno-trap is fetish appropriate:
+	if lactation fetish is 1, decide yes;
+	decide no.
+
+Definition: piss-hypno-trap is fetish appropriate:
+	if watersports fetish is 1, decide yes;
+	decide no.
+
 Definition: diaper-hypno-trap is fetish appropriate:
 	if diaper lover > 0, decide yes;
 	decide no.
@@ -28,7 +36,7 @@ To say ExamineDesc of (T - a hypno trap):
 	say "A monitor revealed from within a hidden compartment in a wall. On the screen is [hypno content of T]. It's difficult to look away once you start watching it.".
 
 To say EnvironmentDesc of (T - a hypno trap):
-	say "A large [if T is expired]blank TV screen[otherwise if T is diaper-hypno-trap]TV screen showing adults being treated like babies[otherwise]TV screen showing degrading sex acts with a hypnotic pattern[end if] takes up a large portion of the wall in front of you. ".
+	say "A large [if T is expired]blank TV screen[otherwise if T is milk-hypno-trap]TV screen showing women's breasts being milked like cows[otherwise if T is diaper-hypno-trap]TV screen showing adults being treated like babies[otherwise]TV screen showing degrading sex acts with a hypnotic pattern[end if] takes up a large portion of the wall in front of you. ".
 
 To say ShortDesc of (T - a hypno trap):
 	say "hypno screen".
@@ -61,6 +69,12 @@ To say hypno content of (Y - a fucktoy hypno trap):
 To say hypno content of (Y - a BBC hypno trap):
 	say "a swirling hypnotic pattern, with short clips flashing constantly of porn stars worshipping and pleasuring incredibly sized black [manly-penis]s with every part of their body".
 
+To say hypno content of (Y - a milk-hypno-trap):
+	say "a swirling hypnotic pattern, with short clips flashing constantly of tits being milked with industrial dairy machinery".
+
+To say hypno content of (Y - a piss-hypno-trap):
+	say "a swirling hypnotic pattern, with short clips flashing constantly of women being used as urinals and swallowing [urine]".
+
 To say hypno content of (Y - a diaper-hypno-trap):
 	say "a swirling hypnotic pattern, with short clips flashing constantly of adults gleefully wetting [if diaper messing >= 4]and messing [end if]their diapers and playing around in them, frequently stopping to rub their padded crotches enthusiastically".
 
@@ -70,7 +84,7 @@ To compute hypno effect of (Y - a hypno trap):
 	if the player is immobile and R >= 0, increase R by 7; [There is always a chance of tearing eyes away even when immobile with low int]
 	if R > the intelligence of the player or the bimbo of the player > 14 or wanking is 1:
 		say "[if wanking is 1]You continue to stare at the screen, completely unable to look away. [otherwise if the bimbo of the player > 14]You don't even consider trying to look away, of course you want to watch! [otherwise if the player is immobile]Because you are held in place, you find it even more difficult to look elsewhere! [otherwise]You can't bring yourself to look away! [end if]";
-		say "[video content of Y]";
+		say video content of Y;
 		compute specific hypno effect of Y;
 		if woman-player is in the location of the player:
 			compute woman hypno shared progression;
@@ -116,7 +130,7 @@ To compute specific hypno effect of (Y - a cocksucker hypno trap):
 	if diaper quest is 0:
 		if the oral sex addiction of the player * 2 > semen taste addiction of the player, SemenTasteAddictUp 1;
 		otherwise OralSexAddictUp 1;
-	UrineTasteAddictUp 1.
+	[UrineTasteAddictUp 1.]
 
 To compute specific hypno effect of (Y - a fucktoy hypno trap):
 	if the player is gendered male:
@@ -134,6 +148,20 @@ To compute specific hypno effect of (Y - a BBC hypno trap):
 	commence animation of BBCHypnoAnimation;
 	if the raw BBC addiction of the player > the raw sex addiction of the player * 2, SexAddictUp 1;
 	BBCAddictUp 1.
+
+To compute specific hypno effect of (Y - a milk-hypno-trap):
+	commence animation of MilkHypnoAnimation;
+	if milk-squirt-orgasms is false and the sensitivity of breasts >= 4:
+		say "You feel a tingling in your nipples, as if [bold type]your orgasms are now directly linked to your breasts.[roman type][line break]";
+		now milk-squirt-orgasms is true;
+	otherwise:
+		say "[one of]Seeing the images on the screen, you can't help but crave that sensation on your own breasts.[or][or][cycling]";
+		BreastsSensitivityUp 1.
+
+To compute specific hypno effect of (Y - a piss-hypno-trap):
+	commence animation of PissHypnoAnimation;
+	say "[one of]Seeing the images on the screen, you find your own mouth opening, and your tongue feeling rather dry.[or][or][cycling]";
+	UrineTasteAddictUp 1.
 
 hypno-trigger-please is a number that varies.
 
@@ -166,13 +194,19 @@ To say specific video content of (Y - a hypno trap):
 	say "[second custom style]I AM A FILTHY SLUT[roman type][line break]". [Should never happen]
 
 To say specific video content of (Y - a cocksucker hypno trap):
-	say "[second custom style][one of]I CRAVE CUM[or]FIND A [caps man of shopkeeper][line break]DRAIN [caps his of shopkeeper] [if shopkeeper is a balls-haver]BALLS[otherwise]LOAD[end if][or]WORSHIP THE COCK[line break]SWALLOW YOUR PRIZE[or]I CAN'T WAIT[line break]FOR [caps him of shopkeeper] TO PAINT MY [if bukkake fetish is 1]FACE[otherwise]THROAT[end if][or]COCK TASTES GOOD[line break][if watersports fetish is 1]PISS[otherwise]CUM[end if] TASTES BETTER[or]MASSAGE [caps his of shopkeeper] [if shopkeeper is a balls-haver]BALLS[otherwise]LOAD[end if][line break]WITH MY TONGUE[or]GOOD THINGS CUM[line break]TO THOSE WHO BEG[or][if watersports fetish is 1]PISS ON[otherwise]FUCK[end if] MY FACE[or]USE MY THROAT[or]OPEN WIDE[line break]TAKE [caps him of shopkeeper] DEEP[or][caps he of shopkeeper] LIKES IT BEST[line break]WHEN I GAG[or]IF [caps he of shopkeeper] FEELS MY TEETH[line break]I GET A SLAP[or]I KEEP MY HANDS[line break]BEHIND MY BACK[or]I LOOK INTO [caps his of shopkeeper] EYES[line break]AS I GAG ON [caps his of shopkeeper] DICK[or]I CAN'T SAY NO[line break]WHEN MY MOUTH IS FULL OF DICK[or][if bukkake fetish is 1]GET COVERED IN SO MUCH CUM[line break]THAT MY EYES ARE GLUED SHUT[otherwise]GRAB MY HAIR[line break]PULL ME IN[end if][or][if bukkake fetish is 1]I KEEP [caps his of shopkeeper] CUM ON MY FACE[line break]IT MAKES ME LOOK PRETTY[otherwise]I HOLD [caps his of shopkeeper] CUM IN MY MOUTH[line break]TO SAVOUR THE TASTE[end if][in random order][roman type][line break]".
+	say "[second custom style][one of]I CRAVE CUM[or]FIND A [caps man of shopkeeper][line break]DRAIN [caps his of shopkeeper] [if shopkeeper is a balls-haver]BALLS[otherwise]LOAD[end if][or]WORSHIP THE COCK[line break]SWALLOW YOUR PRIZE[or]I CAN'T WAIT[line break]FOR [caps him of shopkeeper] TO PAINT MY [if bukkake fetish is 1]FACE[otherwise]THROAT[end if][or]COCK TASTES GOOD[line break]CUM TASTES BETTER[or]MASSAGE [caps his of shopkeeper] [if shopkeeper is a balls-haver]BALLS[otherwise]LOAD[end if][line break]WITH MY TONGUE[or]GOOD THINGS CUM[line break]TO THOSE WHO BEG[or]FUCK MY FACE[or]USE MY THROAT[or]OPEN WIDE[line break]TAKE [caps him of shopkeeper] DEEP[or][caps he of shopkeeper] LIKES IT BEST[line break]WHEN I GAG[or]IF [caps he of shopkeeper] FEELS MY TEETH[line break]I GET A SLAP[or]I KEEP MY HANDS[line break]BEHIND MY BACK[or]I LOOK INTO [caps his of shopkeeper] EYES[line break]AS I GAG ON [caps his of shopkeeper] DICK[or]I CAN'T SAY NO[line break]WHEN MY MOUTH IS FULL OF DICK[or][if bukkake fetish is 1]GET COVERED IN SO MUCH CUM[line break]THAT MY EYES ARE GLUED SHUT[otherwise]GRAB MY HAIR[line break]PULL ME IN[end if][or][if bukkake fetish is 1]I KEEP [caps his of shopkeeper] CUM ON MY FACE[line break]IT MAKES ME LOOK PRETTY[otherwise]I HOLD [caps his of shopkeeper] CUM IN MY MOUTH[line break]TO SAVOUR THE TASTE[end if][in random order][roman type][line break]".
 
 To say specific video content of (Y - a fucktoy hypno trap):
 	say "[second custom style][one of]FILL ME UP[or]FIND A COCK[line break]RIDE IT HARD[or][caps he of shopkeeper][']S SO STRONG[line break][caps he of shopkeeper] DOES WHAT [caps he of shopkeeper] WANTS[or]I CAN'T WAIT[line break]TO FEEL [caps him of shopkeeper] INSIDE ME[or]I CAN TASTE MY ASS[line break]ON [caps his of shopkeeper] DICK[or]ALL OF MY HOLES[line break]NEED FILLING WITH CUM[or]I WILL ONLY CUM[line break]WITH MASTER'S PERMISSION[or][if the player is possessing a penis]MY WILLY IS USELESS[line break]I NEED A REAL MAN[otherwise]MY JOB IN LIFE[line break]IS TO KEEP MY [caps cunt] WARM[end if][or]USE MY ASSHOLE[line break]AS YOUR PERSONAL [if watersports fetish is 1]URINAL[otherwise]CUM DUMP[end if][or][if pregnancy fetish is 1 and the player is possessing a vagina]BREED MY [caps cunt][line break]MAKE ME CARRY YOUR CHILD[otherwise]I DON'T USE CONDOMS[line break]SO I CAN FEEL [caps him of shopkeeper] CUM INSIDE[end if][or]I THANK [caps him of shopkeeper] POLITELY[line break]FOR RUINING MY ASS[or]ONE COCK IS GOOD[line break][if the player is possessing a vagina]THREE[otherwise]TWO[end if] COCKS IS BETTER[or][caps he of shopkeeper] PULLS ON MY HAIR[line break]SO I KNOW TO GO FASTER[or]MY BELLY IS FULL[line break]OF STRANGERS['] SEMEN[or]I DON'T KNOW [caps his of shopkeeper] NAME[line break][if pregnancy fetish is 1 and the player is possessing a vagina]BUT I'M CARRYING [caps his of shopkeeper] KID[otherwise]BUT I RECOGNISE [caps his of shopkeeper] DICK[end if][or][if egg laying fetish is 1 and the player is possessing a vagina]FILL MY [caps pussy] WITH CUM[line break]FILL MY BELLY WITH EGGS[otherwise]FILL MY BELLY SO MUCH[line break]THAT I CAN'T MOVE FOR HOURS[end if][or][if egg laying fetish is 1]I LET MONSTERS BREED ME[line break]WITH THEIR EGGS[otherwise]I KEEP A PLUG IN MY ASS[line break]SO I DON'T LOSE [caps his of shopkeeper] CUM[end if][or]MY FRIENDS ARE WATCHING[line break]NOW THEY KNOW WHO I REALLY AM[or]I'M NOT A WHORE[line break]I'D FUCK ANY GUY FOR FREE[in random order][roman type][line break]".
 
 To say specific video content of (Y - a BBC hypno trap):
 	say "[second custom style][one of]BLACK IS BETTER[line break]BLACK IS BEST[or]GET BLACKED[line break]NEVER GO BACK[or]BLACK IS BIGGER[line break]BIGGER IS BETTER[or]I'M A PATHETIC SUBMISSIVE [WhiteSub in upper case][line break]BORN TO SERVE [BlackCock in upper case][or][if the player is possessing a penis]MY WHITE WILLY IS USELESS[line break]I WAS BORN TO SERVE SUPERIOR COCKS[otherwise]MY JOB IN LIFE[line break]IS TO KEEP [BlackCock in upper case] HAPPY[end if][or]THE ONLY THING BETTER THAN A [BlackCock in upper case][line break]IS TWO[or][if pregnancy fetish is 1 and the player is possessing a vagina]MY [caps cunt] IS FOR BREEDING[line break]STRONG BLACK BABIES[otherwise]I ONLY USE CONDOMS[line break]WITH BORING WHITE COCKS[end if][or]MY HOLE IS SO [if ungape is 1]GREEDY[otherwise]STRETCHED[end if][line break]ONLY [BlackCock in upper case] CAN FULFIL IT[or]ONE [BlackCock in upper case] FOR MY MOUTH[line break][if the player is possessing a vagina]TWO EACH FOR MY [caps cunt] AND ASS[otherwise]TWO FOR MY ASS[end if][or]MY [if pregnancy fetish is 1]WOMB[otherwise]BELLY[end if] IS FULL[line break]OF MY BULL'S BABY BATTER[or]I DON'T CARE WHO [caps he of shopkeeper] IS[line break]IF [caps he of shopkeeper][']S BLACK THEN I'M GAME[or]WHEN A BLACK [caps man of shopkeeper] WALKS IN[line break]MY PANTIES HIT THE FLOOR[line break][or]I'LL SERVE AS A SEX SLAVE[line break]TO THE BLACK MASTER RACE[or]WHITE COCKS HAVE TO PAY[line break]BLACK ENTRY IS FREE[in random order][roman type][line break]".
+
+To say specific video content of (Y - a milk-hypno-trap):
+	say "[second custom style][one of]PUMP MY TITS[or]I'M A COW[or]JUST A COW[or]THEY'RE NOT BREASTS[line break]THEY'RE UDDERS[or]I'M NOT A PERSON[line break]I'M JUST CATTLE[or]MOO FOR MASTER[or]SQUEEZE MY TEATS[or]I BELONG ON A RANCH[or]SUCTION CUPS[line break]ON MY MILKERS[or]I MAKE MILK[line break]FOR OTHERS TO DRINK[or]MY MILKERS ARE FULL[or]IT FEELS GOOD TO BE MILKED[or]TO LACTATE[line break]IS GREAT[or]SUCK THE MILK[line break]OUT OF MY UDDERS[or]MILK SLUT FOR HIRE[or]MY TITS GET BIGGER[line break]MY MILK GETS THICKER[or]MAKE ME CUM[line break]WITH MY MILK JUGS[or]MILKING IS MAGICAL[in random order][roman type][line break]".
+
+To say specific video content of (Y - a piss-hypno-trap):
+	say "[second custom style][one of]DRINK IT DOWN[or]I'M JUST A RECEPTICLE[line break]FOR PISS[or]GLUG GLUG GLUG[line break]GLUG IT ALL DOWN[or]USE MY MOUTH[line break]AS YOUR TOILET[or]COCK TASTES GOOD[line break]PISS TASTES BETTER[or]PISS ON MY FACE[or]URINALS DON'T TALK[line break]THEY JUST DRINK[or]TOILET WHORE[or]PISS DRINKING SLUT[or]YUM YUM YUM[line break]I LOVE [caps his of shopkeeper] PISS[or]PISS IN MY HAIR[or]A STOMACH FILLED WITH PISS[line break]IS ALL I NEED[or]GARGLE AND GULP[or]DRAIN [caps his of shopkeeper] BLADDER[line break]DOWN MY THROAT[in random order][roman type][line break]".
 
 To say specific video content of (Y - a diaper-hypno-trap):
 	say "[second custom style][one of]I'M JUST A BABY[or]I'M JUST A DIAPERSLUT[or]CALL ME POTTYPANTS[or]NO TOILETS[line break]JUST DIAPERS[or]I'M NOT GROWN-UP[line break]I'LL NEVER GROW UP[or][if diaper messing >= 4]GRUNT AND PUSH[otherwise]I WET MY NAPPY[end if][or]SPANK MY ASS[line break][if diaper messing >= 4]AND SPREAD MY MESS[otherwise]AND MAKE IT RED[end if][or]FIND A MOMMY[line break]TO RUB MY DIAPER[or]I NEED[line break]A GROWN-UP[line break]TO TELL ME WHAT TO DO[or]I NEED A DADDY[line break][if the player is gendered male]TO MAKE ME HIS SISSY[otherwise]TO MAKE ME HIS BABYGIRL[end if][or][if the player is gendered male]GOOD SISSIES[otherwise]GOOD GIRLS[end if][line break]CREAM THEIR PAMPERS[or][if diaper quest is 1]DON'T THINK[line break]JUST LET IT GO[otherwise]PRETEND HIS COCK[line break]IS A PACIFIER[end if][or]WHEN I'M NAUGHTY[line break]PUT ME OVER YOUR KNEE[or][if diaper quest is 1]THE MORE I DRINK[line break]THE MORE I PEE[otherwise]FILL MY BOTTLE[line break]FULL OF CUM[end if][or][if lactation fetish is 1]FEED ME MILK[line break]FROM YOUR BREASTS[otherwise]BOUNCE ME[end if][line break]IN A DIAPER[line break]ON YOUR KNEE[or]FILL MY NAPPY[line break][if diaper quest is 1]SHOW MY FRIENDS[otherwise]WITH YOUR CUM[end if][or]RUB MY CLITTY[line break]THROUGH MY SOGGY PADDING[or][if diaper messing >= 3]MESS[otherwise]WET[end if] MYSELF ON PURPOSE[line break]DURING MY DIAPER CHECK[or]SPANK ME HARD ENOUGH[line break]AND YOU'LL MAKE ME CUM[or]CLEAN ME OUT[line break]WITH A BIG SOAPY ENEMA[or]THE FEELING OF [if diaper messing >= 3]POOPING[otherwise]WETTING[end if] MYSELF[line break]IS ABSOLUTE BLISS[or][caps please] LET ME PEE PEE PLEASE LET ME PEE PEE PLEASE LET ME PEE PEE PLEASE[in random order][roman type][line break]".

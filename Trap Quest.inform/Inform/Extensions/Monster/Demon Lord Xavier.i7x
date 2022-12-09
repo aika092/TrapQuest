@@ -164,42 +164,43 @@ To compute labour to (M - demon lord):
 		Delay Labour.
 
 To compute monstermotion of (M - demon lord):
-	let W be 0;
-	let N be a random off-stage robochef;
-	repeat with L running through leftovers in the location of M:
-		if the leftover-type of L is 117 or the leftover-type of L is 118 or the leftover-type of L is 119 or the leftover-type of L is 127:
-			now W is 1;
-	if W is 1:[he can't repair anything without his wrench]
-		let D be the difficulty of M - the starting difficulty of M;
-		if D < 0, now D is 0;
-		increase D by times-submitted of M;
-		let O be a random leftover in the location of M;
-		if the leftover-type of O is 117:
-			now N is a random off-stage robobellboy;
-			if N is monster:
+	unless ex-princess is guarding and ex-princess is in the location of M:
+		let W be 0;
+		let N be a random off-stage robochef;
+		repeat with L running through leftovers in the location of M:
+			if the leftover-type of L is 117 or the leftover-type of L is 118 or the leftover-type of L is 119 or the leftover-type of L is 127:
+				now W is 1;
+		if W is 1:[he can't repair anything without his wrench]
+			let D be the difficulty of M - the starting difficulty of M;
+			if D < 0, now D is 0;
+			increase D by times-submitted of M;
+			let O be a random leftover in the location of M;
+			if the leftover-type of O is 117:
+				now N is a random off-stage robobellboy;
+				if N is monster:
+					set up N;
+					DifficultyUp N by D;
+			otherwise if the leftover-type of O is 118:
+				now N is a random off-stage robobutler;
+				if N is monster:
+					set up N;
+					DifficultyUp N by D;
+			otherwise if the leftover-type of O is 127:
+				now N is a random off-stage robomaid;
+				if N is monster:
+					set up N;
+					DifficultyUp N by D;
+			otherwise if N is monster:
 				set up N;
 				DifficultyUp N by D;
-		otherwise if the leftover-type of O is 118:
-			now N is a random off-stage robobutler;
 			if N is monster:
-				set up N;
-				DifficultyUp N by D;
-		otherwise if the leftover-type of O is 127:
-			now N is a random off-stage robomaid;
-			if N is monster:
-				set up N;
-				DifficultyUp N by D;
-		otherwise if N is monster:
-			set up N;
-			DifficultyUp N by D;
-		if N is monster:
-			now N is in the location of M;
-			distract N;
-			if M is in the location of the player, say " [BigNameDesc of M] points at the pile and blasts it with lightning.[line break][speech style of M]'[one of]ARISE, SERVANT!'[or]RISE AND CONTINUE SERVING ME!'[or]STOP PRETENDING TO BE BROKEN. IT'S EMBARRASSING FOR ALL OF US.'[or]GET BACK TO WORK.'[in random order][roman type][line break]The broken parts, as if spurred on by [his of M] command, float off the ground and reassemble themselves with blistering speed. Within moments, a brand new [ShortDesc of N] is sitting in front of [him of M].";
-			otherwise say "You hear a thunderclap, followed by the sound of gears turning somewhere else in the hotel.";
-		destroy O;
-	otherwise:
-		compute room leaving of M.
+				now N is in the location of M;
+				distract N;
+				if M is in the location of the player, say " [BigNameDesc of M] points at the pile and blasts it with lightning.[line break][speech style of M]'[one of]ARISE, SERVANT!'[or]RISE AND CONTINUE SERVING ME!'[or]STOP PRETENDING TO BE BROKEN. IT'S EMBARRASSING FOR ALL OF US.'[or]GET BACK TO WORK.'[in random order][roman type][line break]The broken parts, as if spurred on by [his of M] command, float off the ground and reassemble themselves with blistering speed. Within moments, a brand new [ShortDesc of N] is sitting in front of [him of M].";
+				otherwise say "You hear a thunderclap, followed by the sound of gears turning somewhere else in the hotel.";
+			destroy O;
+		otherwise:
+			compute room leaving of M.
 
 Part 1 - Perception
 
@@ -215,7 +216,7 @@ To compute perception of (M - demon lord):
 		if there is worn perceived unmessed knickers, compute state check of a random worn messed knickers;
 	otherwise if the player is soulless and the player-class is not succubus:
 		say "[first custom style]'YOU WILL SERVE AS AN IDEAL VESSEL FOR ONE OF MY SERVANTS! KNEEL AND PREPARE YOURSELF!'[roman type][line break]";
-	otherwise if ex-princess is unconcerned and ex-princess is alive and the number of monsters in the location of the player is 1 and ((diaper quest is 0 and the player is a june 2021 top donator) or (diaper quest is 1 and the player is a june 2021 diaper donator)):
+	otherwise if ex-princess is unconcerned and ex-princess is alive and the number of monsters in the location of the player is 1 and ex-princess is not wearing golden-phallus and the player is the donator:
 		commence final battle;
 	otherwise if vaginalvirgin of the player is 1 and the player is possessing a vagina:
 		say "[first custom style]'[one of]YOU CANNOT RESIST ME, FOOLISH [caps boy of the player]!'[or]I WILL BE THE FIRST TO IMPALE YOU ON MY MIGHTY COCK, VIRGIN!'[or]I LOVE CHERRIES!'[or]SUBMIT YOURSELF, [caps boy of the player]! YOU CANNOT PROTECT YOUR VIRGINITY FROM ME!'[at random][roman type][line break]";
@@ -232,7 +233,7 @@ To compute perception of (M - demon lord):
 To compute DQ perception of (M - demon lord):
 	anger M;
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
-	if ex-princess is unconcerned and ex-princess is alive and the number of monsters in the location of the player is 1 and ((diaper quest is 0 and the player is a june 2021 top donator) or (diaper quest is 1 and the player is a june 2021 diaper donator)):
+	if ex-princess is unconcerned and ex-princess is alive and the number of monsters in the location of the player is 1 and ex-princess is not wearing golden-phallus and the player is the donator:
 		commence final battle;
 	otherwise if the class of the player is princess:
 		say "[first custom style]'PRINCESS! YOU DARE SHOW YOUR FACE HERE? YOU WILL SUBMIT TO ME!'[roman type][line break]";
@@ -1036,7 +1037,7 @@ To commence (F - final-battle-harness):
 		now current-final-battle-object is final-battle-magic-clash; [this object has concluded]
 	otherwise:
 		say "Eventually, the straps catch up to [NameDesc of ex-princess]. As they touch [him of ex-princess], [his of ex-princess] royal dress bursts into purple flames and disappears! Moments later, the straps have wrapped themselves around [his of ex-princess] body, and a padlock has slotted into place. [big he of ex-princess] is now wearing a set of purple baby reins!";
-	execute F.
+		execute F.
 To execute (F - final-battle-harness):
 	say "[BigNameDesc of demon lord] laughs as [he of demon lord] makes another intricate hand gesture.[line break][speech style of demon lord]'[one of]UNLIMITED... POWER[or]SQUIRM[or]FEEL THE PAIN[cycling]!'[roman type][line break][BigNameDesc of ex-princess][']s new purple baby reins light up with yellow electricity. [big he of ex-princess] [one of]squeals[or]screams[or]wails[stopping] in pain!";
 	decrease the health of ex-princess by the maxhealth of ex-princess / 12;
@@ -1125,6 +1126,44 @@ To execute (F - final-battle-sword):
 			SemenPuddleUp 50.
 
 
+final-battle-facehugger is a final-battle-object.
+Definition: final-battle-facehugger is appropriate:
+	if diaper lover is 1, decide yes;
+	decide no.
+To commence (F - final-battle-facehugger):
+	say "[BigNameDesc of demon lord] sends another red lightning bolt towards [NameDesc of ex-princess], and it hits [him of ex-princess] right on the front of [his of ex-princess] diaper.[line break][speech style of ex-princess]'Hah!'[roman type][line break][BigNameDesc of ex-princess] exclaims triumphantly - clearly that attack did no damage to [him of ex-princess] at all. But [NameDesc of demon lord] doesn't look frustrated - [he of demon lord] looks happy.[line break][speech style of demon lord]'SOMEONE'S HAVING A LITTLE ACCIDENT!'[roman type][line break]You look at [NameDesc of ex-princess][']s crotch, and realise that [he of demon lord][']s right - there's a rapidly growing yellow patch.[line break][speech style of ex-princess]'What the hell?!'[roman type][line break][BigNameDesc of ex-princess] sounds shocked - it's clear that [he of ex-princess] can't feel [himself of ex-princess] urinating at all.[line break][speech style of demon lord]'LET ME HELP YOU WITH THAT!'[roman type][line break]With a flick of [his of demon lord] wrist, [NameDesc of ex-princess][']s soggy diaper drops to the ground between [his of ex-princess] feet with a wet thud. For a brief moment, [he of ex-princess] is completely bottomless, and you can see everything. [big he of ex-princess] doesn't seem to care, though. In fact [he of ex-princess] looks elated.[line break][speech style of ex-princess]'I'm... I'm free? I'm free of the diaper curse?!'[roman type][line break]But before [he of ex-princess] has even finished speaking, an identical clean diaper has materialised over [his of ex-princess] crotch. [BigNameDesc of ex-princess] looks crestfallen.[line break][speech style of ex-princess]'No, of course not. What's the meaning of this?!'[roman type][line break][BigNameDesc of ex-princess] demands of [NameDesc of demon lord]. [BigNameDesc of demon lord] just shrugs.[line break][speech style of demon lord]'THERE'S CLEARLY A POWERFUL CURSE KEEPING YOU DIAPERED, BUT THAT'S NOTHING TO DO WITH ME.'[roman type][line break]";
+	say "The brief pause in action is suddenly ended as [NameDesc of ex-princess][']s old soggy diaper has leaped to life, and surged through the air towards [his of ex-princess] face, and appears to be attempting to engulf [NameDesc of ex-princess][']s head.[line break][speech style of ex-princess]'EEK!'[roman type][line break][big he of ex-princess][']s managed to get one hand between [his of ex-princess] face and the nasty [urine]-soaked padding, and is now locked in a struggle with [his of ex-princess] old diaper, as it tries to force its way past [his of ex-princess] arm and lock onto [his of ex-princess] face.[line break][speech style of demon lord]'THAT WAS MY DOING.'[roman type][line break][BigNameDesc of demon lord] chuckles cruelly. You can see that [he of demon lord] is focusing all [his of demon lord] energy on magically controlling the diaper, and trying to get it past [NameDesc of ex-princess][']s arm.[paragraph break][bold type]This seems dangerous[roman type] - it's possible that [NameDesc of ex-princess] can deal with this [himself of ex-princess], but if [he of ex-princess] fails, that diaper may never come off. [bold type]It could cause [him of ex-princess] to lose this battle right here and now.[roman type] If you don't want to risk that, you could probably help by [bold type]pull[roman type]ing... but once [NameDesc of ex-princess] is safe... Whose face is the nasty soggy diaper going to go for next?!".
+To execute (F - final-battle-facehugger):
+	if the player is getting unlucky:
+		say "[BigNameDesc of ex-princess] attempts to wrestle the diaper away with all [his of ex-princess] strength, but it's not enough. [big he of ex-princess] loses [his of ex-princess] grip on the diaper for just a sliver of a moment, and that's all the opportunity it needs to slip past and fully latch onto [his of ex-princess] face. [GotUnluckyFlav]You can hear [his of ex-princess] panicked moans from underneath the [urine]-soaked padding as [he of ex-princess] struggles to breathe. And now that [he of ex-princess] can't see, [he of ex-princess] can't fight. It's trivial for [NameDesc of demon lord] to strike [NameDesc of ex-princess] with powerful demonic lightning until [he of ex-princess] is on the brink of defeat. It's only after [NameDesc of ex-princess] is barely able to move that the facehugging diaper releases, and falls to the ground, inert.";
+		now the health of ex-princess is 0;
+	otherwise:
+		say "[BigNameDesc of ex-princess] attempts to wrestle the diaper away with all [his of ex-princess] strength... And thankfully manages to do so. Pinning it against one wall, [he of ex-princess] presses both palms into the padding.[line break][speech style of ex-princess]'I love the hot wet embrace of a freshly used diaper!'[roman type][line break]An ironic incantation, considering the situation, but nonetheless, [NameDesc of ex-princess] successfully summons the fire necessary to incinerate the diaper, leaving nothing behind but the aroma of lightly roasted [urine].";
+	now current-final-battle-object is final-battle-magic-clash. [this object has concluded]
+Check pulling ex-princess when ex-princess is guarding and current-final-battle-object is final-battle-facehugger:
+	if the player is immobile, say "You're a bit tied up right now!" instead;
+	allocate 6 seconds;
+	say "You run over to [NameDesc of ex-princess] and try to yank the diaper away from [his of ex-princess] head! You succeed, but end up stumbling backwards, clattering to the ground, with the diaper still in your hands, wrestling to get free.[line break][speech style of demon lord]'BAH!'[roman type][line break][BigNameDesc of demon lord] spins a finger around, and the diaper changes target, heading for your own face! Without [NameDesc of ex-princess][']s magical strength and skill, you don't last more than a few seconds of resistance before the magic soiled diaper manages to burst out of your grip, and engulf your face!";
+	now current-final-battle-object is final-battle-magic-clash; [this object has concluded]
+	now the player is in DiaperFacehuggerBlindfolded;
+	do nothing instead.
+A time based rule (this is the final battle diaper facehugger engulf rule):
+	if the player is in DiaperFacehuggerBlindfolded:
+		if ex-princess is guarding and the uses of final-battle-facehugger < a random number between 3 and 5:
+			say "The wet padding soaked with [NameDesc of ex-princess][']s [urine] presses tightly against your face[one of]. You can barely breathe at all through the saturated padding[or]. Despite your best attempts to resist, you can't pull it off[or][stopping].";
+			SlowDelicateUp 1;
+			increase the uses of final-battle-facehugger by 1;
+			if the health of demon lord > 3, decrease the health of demon lord by 3;
+		otherwise:
+			say "Finally, the diaper seems to use the last of its magical energy, and becomes inert. It drops off your face, and you can see and breathe again[if ex-princess is guarding]. It seems like [NameDesc of ex-princess] and [NameDesc of demon lord] have exchanged further blows since you were last able to see them[end if].";
+			now the player is in the location of demon lord.
+This is the facehugger prevents breathing rule:
+	if the player is in DiaperFacehuggerBlindfolded, decide yes;
+	decide no.
+The facehugger prevents breathing rule is listed in the breathing blocking rules.
+
+
+
 final-battle-final-chance is a final-battle-object.
 Definition: final-battle-final-chance is appropriate: decide no. [only appears as a special case at the end]
 To commence (F - final-battle-final-chance):
@@ -1163,7 +1202,7 @@ To commence final battle:
 	say "[BigNameDesc of demon lord] looks straight past you, to the person standing behind you.[line break][speech style of ex-princess]'Xavier.'[roman type][line break][BigNameDesc of ex-princess] is there, brandishing [his of ex-princess] wand. [BigNameDesc of demon lord] laughs, [his of demon lord] booming voice echoing throughout the entire hotel.[line break][speech style of demon lord]'PRINCESS! LONG HAVE I WAITED FOR THIS DAY. THE DAY I GET MY REVENGE!'[roman type][line break][BigNameDesc of demon lord] clicks [his of demon lord] fingers and a ring of fire appears around the three of you. Meanwhile, [NameDesc of ex-princess] wastes no time in beginning the incantation for [his of ex-princess] first spell.[line break][speech style of ex-princess]'I love to cum my brains out!'[roman type][line break]Several arcs of bright blue lightning shoot across the air towards [NameDesc of demon lord].[line break][speech style of demon lord]'OH, HOW APPROPRIATE!'[roman type][line break][BigNameDesc of demon lord] somehow catches the lightning in [his of demon lord] hand, and sends demonic energy back through the current and into [NameDesc of ex-princess][']s wand. Immediately you see a dark cloud forming around it as the curse takes hold.[line break][speech style of ex-princess]'Shit!'[roman type][line break]You see [NameDesc of ex-princess] move to drop [his of ex-princess] wand, but it's too late. It is glued to [his of ex-princess] hand now, and has taken on a life of its own, forcing [NameDesc of ex-princess] to press it against [his of ex-princess] own crotch and masturbate [himself of ex-princess] with powerful vibrations.[paragraph break]Meanwhile, you are still standing there, in the middle of this fight between giants, completely ignored.";
 
 To compute final battle:
-	if (diaper quest is 0 and the player is a june 2021 top donator) or (diaper quest is 1 and the player is a june 2021 diaper donator):
+	if the player is the donator:
 		if current-final-battle-object is final-battle-magic-clash:
 			let F be a random eligible appropriate final-battle-object;
 			if F is final-battle-object:
@@ -1211,6 +1250,9 @@ An all time based rule (this is the final battle keeps going rule):
 		if the health of ex-princess <= 0:
 			say "[bold type]A flash of red light fills the [playerRegion]. [roman type]You hear [NameDesc of ex-princess] cry out in terror, and then... [his of ex-princess] cry sounds like it's turning into manic laughter. And then you hear [NameDesc of demon lord][']s laughter joining [hers of ex-princess]. Uh-oh. That doesn't sound good.";
 			compute final battle loss;
+			if the player is in DiaperFacehuggerBlindfolded:
+				say "The diaper drops to the ground, inert.";
+				now the player is in the location of demon lord;
 			deinterest demon lord.
 
 To compute final battle loss:
@@ -1298,7 +1340,7 @@ To say DamageReactWeak of (M - demon lord):
 	say "[BigNameDesc of M] cringes in pain[one of]![line break][speech style of M]'I CAN'T BE DEFEATED! NOOOOO!'[roman type][line break][or]![stopping]".
 
 Definition: demon lord is wenchy:
-	if the player is a February 2022 top donator, decide yes;
+	if the player is the donator, decide yes;
 	decide no.
 
 Definition: demon lord is automatically banishable:

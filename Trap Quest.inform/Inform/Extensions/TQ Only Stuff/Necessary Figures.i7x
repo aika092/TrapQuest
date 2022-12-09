@@ -20,6 +20,7 @@ To decide which figure-name is Figure of IronMaidenBackground:
 	otherwise:
 		if iron-maiden is penetrating face, decide on Figure of IronMaidenBackgroundB;
 		otherwise decide on Figure of IronMaidenBackgroundA.
+Figure of PrisonBackground is the file "Map/prison1.jpg".
 Figure of demon lord is the file "NPCs/Bosses/Xavier/xavier2.png".
 Figure of modification machine is the file "Env/Hotel/modmachine1.png".
 Figure of slavehound is the file "NPCs/Mansion/Hound/hound2.png".
@@ -43,6 +44,8 @@ To decide which figure-name is the monster-image of (M - a mindless acolyte):
 
 
 Figure of aeromancer cutscene 7 is the file "Special/Cutscene/cutscene-aeromancer-punish1.jpg".
+
+Figure of agent angry is the file "NPCs/MultiFloor/Agent/agent2a.png".
 
 Figure of bianca defeated is the file "NPCs/School/Teacher/teacher3b.png".
 
@@ -216,6 +219,8 @@ To decide which figure-name is figure of princess final battle final chance:
 		if the uses of final-battle-final-chance is 2, decide on Figure of dark princess final battle defeat 2;
 		decide on Figure of dark princess final battle defeat 3.
 
+Figure of Shopkeeper 1 is the file "NPCs/Dungeon/Shopkeeper/shopkeeper3.png".
+
 Figure of Teacher Hannah is the file "NPCs/School/Teacher/teacher5b.png".
 Figure of Slave Hannah is the file "NPCs/School/Teacher/teacher5d.png".
 Figure of Teacher Hannah Cutscene 2 is the file "Special/Cutscene/cutscene-hannah-tug1.jpg".
@@ -368,6 +373,7 @@ Figure of Cumshot Reaction 4 is the file "Special/Cutscene/cutscene-cumshot-reac
 Figure of Cumshot Reaction 5 is the file "Special/Cutscene/cutscene-cumshot-reaction5.png".
 
 Figure of detention chair is the file "Env/School/detentionchair1.jpg".
+Figure of DungeonScenery01 is the file "Env/Dungeon/statue1.jpg".
 
 Figure of Egg Laying 1 is the file "Special/Cutscene/cutscene-egg-small1.jpg".
 Figure of Egg Laying 2 is the file "Special/Cutscene/cutscene-egg-small2.jpg".
@@ -378,8 +384,6 @@ Figure of Egg Laying 6 is the file "Special/Cutscene/cutscene-egg-large1.jpg".
 Figure of Egg Laying 7 is the file "Special/Cutscene/cutscene-egg-large2.jpg".
 
 Figure of Egg Laying 8 is the file "Special/Cutscene/cutscene-egg-small3.jpg".
-
-Figure of elder altar is the file "Env/Mansion/altar2.jpg".
 
 Figure of enema tag 1 is the file "Special/Cutscene/cutscene-enema-tag-1a.jpg".
 Figure of enema tag 1 finish line is the file "Special/Cutscene/cutscene-enema-tag-1c.jpg".
@@ -1934,6 +1938,89 @@ Figure of HypnoDPAnimation227 is the file "Special/Animations/HypnoDP/frame_227.
 Figure of HypnoDPAnimation228 is the file "Special/Animations/HypnoDP/frame_228.jpg".
 When play begins:
 	fill DPHypnoAnimation from Figure of HypnoDPAnimation000 to 228.
+
+
+
+Figure of HypnoMilkAnimation00 is the file "Special/Animations/HypnoMilk/frame00.jpg".
+Figure of HypnoMilkAnimation01 is the file "Special/Animations/HypnoMilk/frame01.jpg".
+Figure of HypnoMilkAnimation02 is the file "Special/Animations/HypnoMilk/frame02.jpg".
+Figure of HypnoMilkAnimation03 is the file "Special/Animations/HypnoMilk/frame03.jpg".
+Figure of HypnoMilkAnimation04 is the file "Special/Animations/HypnoMilk/frame04.jpg".
+Figure of HypnoMilkAnimation05 is the file "Special/Animations/HypnoMilk/frame05.jpg".
+Figure of HypnoMilkAnimation06 is the file "Special/Animations/HypnoMilk/frame06.jpg".
+Figure of HypnoMilkAnimation07 is the file "Special/Animations/HypnoMilk/frame07.jpg".
+Figure of HypnoMilkAnimation08 is the file "Special/Animations/HypnoMilk/frame08.jpg".
+Figure of HypnoMilkAnimation09 is the file "Special/Animations/HypnoMilk/frame09.jpg".
+Figure of HypnoMilkAnimation10 is the file "Special/Animations/HypnoMilk/frame10.jpg".
+Figure of HypnoMilkAnimation11 is the file "Special/Animations/HypnoMilk/frame11.jpg".
+Figure of HypnoMilkAnimation12 is the file "Special/Animations/HypnoMilk/frame12.jpg".
+Figure of HypnoMilkAnimation13 is the file "Special/Animations/HypnoMilk/frame13.jpg".
+Figure of HypnoMilkAnimation14 is the file "Special/Animations/HypnoMilk/frame14.jpg".
+Figure of HypnoMilkAnimation15 is the file "Special/Animations/HypnoMilk/frame15.jpg".
+Figure of HypnoMilkAnimation16 is the file "Special/Animations/HypnoMilk/frame16.jpg".
+Figure of HypnoMilkAnimation17 is the file "Special/Animations/HypnoMilk/frame17.jpg".
+Figure of HypnoMilkAnimation18 is the file "Special/Animations/HypnoMilk/frame18.jpg".
+Figure of HypnoMilkAnimation19 is the file "Special/Animations/HypnoMilk/frame19.jpg".
+Figure of HypnoMilkAnimation20 is the file "Special/Animations/HypnoMilk/frame20.jpg".
+Figure of HypnoMilkAnimation21 is the file "Special/Animations/HypnoMilk/frame21.jpg".
+Figure of HypnoMilkAnimation22 is the file "Special/Animations/HypnoMilk/frame22.jpg".
+Figure of HypnoMilkAnimation23 is the file "Special/Animations/HypnoMilk/frame23.jpg".
+Figure of HypnoMilkAnimation24 is the file "Special/Animations/HypnoMilk/frame24.jpg".
+Figure of HypnoMilkAnimation25 is the file "Special/Animations/HypnoMilk/frame25.jpg".
+Figure of HypnoMilkAnimation26 is the file "Special/Animations/HypnoMilk/frame26.jpg".
+Figure of HypnoMilkAnimation27 is the file "Special/Animations/HypnoMilk/frame27.jpg".
+Figure of HypnoMilkAnimation28 is the file "Special/Animations/HypnoMilk/frame28.jpg".
+Figure of HypnoMilkAnimation29 is the file "Special/Animations/HypnoMilk/frame29.jpg".
+Figure of HypnoMilkAnimation30 is the file "Special/Animations/HypnoMilk/frame30.jpg".
+Figure of HypnoMilkAnimation31 is the file "Special/Animations/HypnoMilk/frame31.jpg".
+Figure of HypnoMilkAnimation32 is the file "Special/Animations/HypnoMilk/frame32.jpg".
+Figure of HypnoMilkAnimation33 is the file "Special/Animations/HypnoMilk/frame33.jpg".
+Figure of HypnoMilkAnimation34 is the file "Special/Animations/HypnoMilk/frame34.jpg".
+Figure of HypnoMilkAnimation35 is the file "Special/Animations/HypnoMilk/frame35.jpg".
+Figure of HypnoMilkAnimation36 is the file "Special/Animations/HypnoMilk/frame36.jpg".
+Figure of HypnoMilkAnimation37 is the file "Special/Animations/HypnoMilk/frame37.jpg".
+Figure of HypnoMilkAnimation38 is the file "Special/Animations/HypnoMilk/frame38.jpg".
+Figure of HypnoMilkAnimation39 is the file "Special/Animations/HypnoMilk/frame39.jpg".
+Figure of HypnoMilkAnimation40 is the file "Special/Animations/HypnoMilk/frame40.jpg".
+Figure of HypnoMilkAnimation41 is the file "Special/Animations/HypnoMilk/frame41.jpg".
+Figure of HypnoMilkAnimation42 is the file "Special/Animations/HypnoMilk/frame42.jpg".
+Figure of HypnoMilkAnimation43 is the file "Special/Animations/HypnoMilk/frame43.jpg".
+Figure of HypnoMilkAnimation44 is the file "Special/Animations/HypnoMilk/frame44.jpg".
+Figure of HypnoMilkAnimation45 is the file "Special/Animations/HypnoMilk/frame45.jpg".
+Figure of HypnoMilkAnimation46 is the file "Special/Animations/HypnoMilk/frame46.jpg".
+Figure of HypnoMilkAnimation47 is the file "Special/Animations/HypnoMilk/frame47.jpg".
+Figure of HypnoMilkAnimation48 is the file "Special/Animations/HypnoMilk/frame48.jpg".
+Figure of HypnoMilkAnimation49 is the file "Special/Animations/HypnoMilk/frame49.jpg".
+Figure of HypnoMilkAnimation50 is the file "Special/Animations/HypnoMilk/frame50.jpg".
+Figure of HypnoMilkAnimation51 is the file "Special/Animations/HypnoMilk/frame51.jpg".
+Figure of HypnoMilkAnimation52 is the file "Special/Animations/HypnoMilk/frame52.jpg".
+Figure of HypnoMilkAnimation53 is the file "Special/Animations/HypnoMilk/frame53.jpg".
+Figure of HypnoMilkAnimation54 is the file "Special/Animations/HypnoMilk/frame54.jpg".
+Figure of HypnoMilkAnimation55 is the file "Special/Animations/HypnoMilk/frame55.jpg".
+Figure of HypnoMilkAnimation56 is the file "Special/Animations/HypnoMilk/frame56.jpg".
+Figure of HypnoMilkAnimation57 is the file "Special/Animations/HypnoMilk/frame57.jpg".
+Figure of HypnoMilkAnimation58 is the file "Special/Animations/HypnoMilk/frame58.jpg".
+Figure of HypnoMilkAnimation59 is the file "Special/Animations/HypnoMilk/frame59.jpg".
+Figure of HypnoMilkAnimation60 is the file "Special/Animations/HypnoMilk/frame60.jpg".
+Figure of HypnoMilkAnimation61 is the file "Special/Animations/HypnoMilk/frame61.jpg".
+Figure of HypnoMilkAnimation62 is the file "Special/Animations/HypnoMilk/frame62.jpg".
+Figure of HypnoMilkAnimation63 is the file "Special/Animations/HypnoMilk/frame63.jpg".
+Figure of HypnoMilkAnimation64 is the file "Special/Animations/HypnoMilk/frame64.jpg".
+Figure of HypnoMilkAnimation65 is the file "Special/Animations/HypnoMilk/frame65.jpg".
+Figure of HypnoMilkAnimation66 is the file "Special/Animations/HypnoMilk/frame66.jpg".
+Figure of HypnoMilkAnimation67 is the file "Special/Animations/HypnoMilk/frame67.jpg".
+Figure of HypnoMilkAnimation68 is the file "Special/Animations/HypnoMilk/frame68.jpg".
+Figure of HypnoMilkAnimation69 is the file "Special/Animations/HypnoMilk/frame69.jpg".
+Figure of HypnoMilkAnimation70 is the file "Special/Animations/HypnoMilk/frame70.jpg".
+Figure of HypnoMilkAnimation71 is the file "Special/Animations/HypnoMilk/frame71.jpg".
+Figure of HypnoMilkAnimation72 is the file "Special/Animations/HypnoMilk/frame72.jpg".
+Figure of HypnoMilkAnimation73 is the file "Special/Animations/HypnoMilk/frame73.jpg".
+Figure of HypnoMilkAnimation74 is the file "Special/Animations/HypnoMilk/frame74.jpg".
+Figure of HypnoMilkAnimation75 is the file "Special/Animations/HypnoMilk/frame75.jpg".
+Figure of HypnoMilkAnimation76 is the file "Special/Animations/HypnoMilk/frame76.jpg".
+Figure of HypnoMilkAnimation77 is the file "Special/Animations/HypnoMilk/frame77.jpg".
+When play begins:
+	fill MilkHypnoAnimation from Figure of HypnoMilkAnimation00 to 77.
 
 [Figure of PussyExpelAnimation000 is the file "Special/Animations/PussyExpel/frame_000.jpg".
 Figure of PussyExpelAnimation001 is the file "Special/Animations/PussyExpel/frame_001.jpg".

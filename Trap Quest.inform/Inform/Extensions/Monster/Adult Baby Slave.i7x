@@ -157,7 +157,9 @@ Part 2 - Perception
 
 To compute perception of (M - an adult baby slave):
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
-	if the class of the player is living sex doll:
+	if the current-errand of M is completed and M is not uniquely unfriendly:
+		compute errand completion of M;
+	otherwise if the class of the player is living sex doll:
 		say "It doesn't look like [he of M]'s interested in you.";
 		bore M;
 	otherwise if M is bratty adult baby slave and the times-met of M is 0:

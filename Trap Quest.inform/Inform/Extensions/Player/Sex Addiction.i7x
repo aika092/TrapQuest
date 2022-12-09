@@ -568,8 +568,11 @@ To SilentlyTitfuckAddictDown:
 	if the raw titfuck addiction of the player > 1, decrease the raw titfuck addiction of the player by 1.
 
 To BreastsSensitivityUp (X - a number):
-	if the raw sensitivity of breasts < 30, say "Your breasts feel [if X > 2]much [otherwise if X is 2]significantly [end if]more [if the sensitivity of breasts > 10]over[end if]sensitive.";
-	increase the raw sensitivity of breasts by X.
+	if the raw sensitivity of breasts < 30:
+		say "Your breasts feel [if X > 2]much [otherwise if X is 2]significantly [end if]more [if the sensitivity of breasts > 10]over[end if]sensitive.";
+		while X > 0:
+			decrease X by 1;
+			increase the raw sensitivity of breasts by 1.
 
 Book - BBC Addiction
 

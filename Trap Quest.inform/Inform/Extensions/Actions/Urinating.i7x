@@ -162,7 +162,14 @@ Check toileting:
 			otherwise if watersports mechanics is 1 and P is not a thing and AC is not a clothing:
 				say "If you sit on the toilet and push, you might accidentally wet your [ShortDesc of PC] at the same time. Do you want to risk it?";
 				if the player is not consenting, say "Action cancelled." instead;
-		if diaper lover > 0 and the times-terrorized of toilet-monster > 1 and the number of intelligent friendly monsters in the location of the player is 0, say "After your traumatizing experience with [NameDesc of toilet-monster], you're too scared to use the toilet all by yourself!" instead.
+		if the player is toilet traumatized and the number of intelligent friendly monsters in the location of the player is 0, say "After your traumatizing experience with [NameDesc of toilet-monster], you're too scared to use the toilet all by yourself!" instead.
+
+Definition: yourself is toilet traumatized:
+	if diaper lover > 0 and the times-terrorized of toilet-monster > 1, decide yes;
+	decide no.
+Definition: yourself is toilet traumatized bursting:
+	if (the player is bursting or the player is feeling full or the total squirtable fill of belly > 0) and the player is toilet traumatized, decide yes;
+	decide no.
 
 Carry out toileting:
 	if the location of the player is toilets:
@@ -706,7 +713,7 @@ To end urination:
 			say "[one of][line break][variable custom style][if the humiliation of the player < HUMILIATION-SHAMELESS - 1000]Oh no! No no no! Not one of me peeing! Fuck.[otherwise]Now everyone will know what a pervert I am.[end if][or][if the bimbo of the player < 14][variable custom style]Again?![otherwise][line break][second custom style]I bet that pic looks FILTHY![end if][stopping][roman type][line break]";
 			set up target-poster;
 	let T be a random worn I love my wet nappies T-shirt;
-	if T is clothing and diaper lover >= 1:
+	if T is clothing and diaper lover >= 1 and the player is not in a predicament room:
 		let D be a random eligible diaper;
 		if there is a worn diaper:
 			if T is cursed and the urine-soak of a random worn diaper is 0 or the urine-soak of a random worn diaper is the soak-limit of a random worn diaper:

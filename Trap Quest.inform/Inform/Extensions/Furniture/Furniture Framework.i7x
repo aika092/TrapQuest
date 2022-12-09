@@ -9,9 +9,10 @@ Section 1 - Furniture Verb
 
 Check entering furniture:
 	if the latex-transformation of the player > 5 and the noun is not HotelBedPatrons and the noun is not hotel chairs and the noun is not modification machine, say "You don't need to rest on furniture as you have no body soreness to heal[if the noun is milking bench] and no [milk] in your breasts[end if]." instead;
-	if the player is immobile, say "Aren't you a bit busy?" instead;
-	[if the fatigue of the player is 0 and the body soreness of the player is 0 and the noun is not modification machine and (the noun is not milking bench or the milk volume of breasts <= 0) and the noun is not lecture chair and the noun is not med bay bed, say "You feel completely fine." instead;]
-	if the player is in danger, say "You need to deal with the [random dangerous monster in the location of the player] first!" instead;
+	if the noun is not grabbing the player:
+		if the player is immobile, say "Aren't you a bit busy?" instead;
+		[if the fatigue of the player is 0 and the body soreness of the player is 0 and the noun is not modification machine and (the noun is not milking bench or the milk volume of breasts <= 0) and the noun is not lecture chair and the noun is not med bay bed, say "You feel completely fine." instead;]
+		if the player is in danger, say "You need to deal with the [random dangerous monster in the location of the player] first!" instead;
 	if the player is urine averse and the urine-puddle of the location of the player > 0 and the noun is not royal bed and the noun is not automated changing station, say "[variable custom style]I'm not resting in this room with the smell of [urine] everywhere![roman type]" instead;
 	if the noun is soggy hotel bed, say "[variable custom style]I'm not getting in those sheets again, they're soaked![roman type][line break]" instead;
 	if the player is clothing stuck, say "You can't because your [a random worn stuck clothing] is stuck in place!" instead;
@@ -67,6 +68,13 @@ Check entering furniture:
 			say "It seems like it isn't time for a lecture right now." instead;
 	if the noun is automated changing station:
 		if the player is prone, say "You would need to be on two feet to use this." instead;
+	if the noun is nursery crib and matron is in the location of the player and the number of worn diapers is 0:
+		allocate 6 seconds;
+		say "[BigNameDesc of matron] shakes [his of matron] head.[line break][speech style of matron]'I can't allow you to rest in there without a diaper on, sweetheart. Would you like a diaper?'[roman type][line break]";
+		if the player is bimbo consenting:
+			compute diaper change of matron instead;
+		otherwise:
+			say "[BigNameDesc of matron] blocks your path to the crib." instead;
 	compute furniture resting on the noun;
 	do nothing instead.
 

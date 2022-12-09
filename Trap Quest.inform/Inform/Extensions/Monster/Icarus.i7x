@@ -150,6 +150,8 @@ To compute perception of (M - Icarus):
 		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of]You look like your game's pretty much over anyway, right? So it shouldn't make any difference if I give you a once-over too!'[or]I really shouldn't, but I can't help myself!'[stopping][roman type][line break]";
 		anger M;
 		if lady fetish is 0, alwayscutshow figure of Icarus interact 5 for M;
+	otherwise if the current-errand of M is completed and M is not uniquely unfriendly:
+		compute errand completion of M;
 	otherwise if M is unfriendly:
 		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of]Look who's still lurking around nearby! Clearly you haven't had enough of me, huh?'[or]I've been wondering when you'd show your face here again. I'll make you wish you hadn't, haha!'[or]Lovely to see you again! Let's fuck.'[in random order][roman type][line break][if the player is upright][big he of M] takes an aggressive stance.[end if]";
 		if lady fetish is 0, alwayscutshow figure of Icarus interact 5 for M;

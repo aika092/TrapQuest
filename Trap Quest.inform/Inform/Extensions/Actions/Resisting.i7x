@@ -65,6 +65,12 @@ Check resisting:
 		say "It's hardly a resisting move to literally use your fingers to spread your [asshole] to allow [NameDesc of a random live thing penetrating asshole] inside, is it? You can only present yourself for anal while wearing these gape gloves!";
 		now forced submit is 1;
 		try submitting instead;
+	otherwise if the class of the player is bride and the player-reaction of the player is submitting and there is a virginity taking monster penetrating a body part and bride-consort is not the throne and bride-consort is not in the location of the player: [adultery!]
+		let H be a random worn headgear;
+		let M be a random virginity taking monster penetrating a body part;
+		now forced submit is 1;
+		say "Now that you have already started submitting, your [ShortDesc of H] refuses to let you start resisting. It fills you with feelings of guilt for not trying harder to prevent [NameDesc of M] from using you!";
+		try submitting instead;
 	otherwise if there is a live thing penetrating asshole and a random number between 14 and 19 < the the anal sex addiction of the player * 2:
 		say "You love anal sex too much, you can't will yourself to even [i]pretend[/i] to resist right now!";
 		now forced submit is 1;

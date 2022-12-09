@@ -273,7 +273,7 @@ Report examining clothing:
 					otherwise say "the fabric would dig deep inside your [vagina], and you would end up sporting a massive cameltoe!";
 	if the noun is top-ripped, say "The [if the noun is bra]cups have[otherwise]bust has[end if] been permanently ripped open.";
 	if the noun is not layer-concealing, say "The cut of the [ShortDesc of the noun] means that it [if the noun is partially-layer-concealing]only partially conceals[otherwise]completely fails to conceal[end if] items worn underneath it.";
-	if the assModesty of the noun > 0, say HipModestyFlav of the noun;
+	if the assModesty of the noun > 0, say HipModestyFlav of the noun; [this item covers at least some of the player's butt. That makes it worth mentioning whether it covers the player's hips.]
 	if the stolen-strength of the noun > 0, say "[bold type]It has stolen some of your strength, and you won't get it back until you wear it again.[roman type][line break]";
 	if debugmode > 0, say "[input-style]Liquid soak limit: [soak-limit of the noun][roman type][line break]";
 

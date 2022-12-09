@@ -32,38 +32,39 @@ To compute monsters:
 		finally destroy M.
 
 To compute turn (N - a number) of (M - a monster):
-	if debugmode > 1, say "Computing turn [N] of [M].";
-	[If N is 1, this is a full action
-	if N is 2, this is a passive action (no attacking or perception) because the player moved and we're just making NPCs move at the same time
-	if N is 3, this is a stationary passive action (only perception) because it already moved (probably with the player with N = 2 above)]
-	if the wrangle-bonus of M > 0 and M is wrangling a body part: [NPC is currently wrangling, and it can end automatically]
-		decrease the wrangle-bonus of M by 1;
-		if the wrangle-bonus of M is 0:
-			repeat with BP running through body parts wrangled by M:
-				say "[BigNameDesc of M][']s hold on your [BP] [one of]loosens[or]momentarily slips[or]briefly weakens[at random], and you are able to [one of]wriggle[or]pull[or]ease[or]slide[at random] free!";
-				now M is not wrangling BP;
-	now M is not trip-warned;
-	if M is seduced: [If the NPC got to its compute turn function, that means that the seduction failed (the NPC wasn't stalled) and we can exit the seduction minigame.]
-		if M is interested, now M is seduction-refused;
-		otherwise now M is unseduced;
-	if M is friendly-fucking:
-		if M is not grabbing the player and M is not penetrating a body part, now M is not friendly-fucking; [We need to make sure that NPCs have the friendly fucking flag removed after they've finished a session, and this is probably the most reliable way to do it, if a little messy.]
-	if M is dying:
-		finally destroy M;
-	otherwise if M is awake:[Monsters can't do anything if they are sleeping]
-		now current-monster is M; [Some functions care about which monster is current-monster]
-		if (M is penetrating a body part or M is grabbing the player) and the player is not in a nonstandard room, now M is in the location of the player; [Just in case there's a glitch where the player remains stuck but can't interact with the monster because somehow it's in a different room]
-		if M is in the location of the player or the player is in a nonstandard room, check immobility; [It's important that NPCs are aware whether the player is already immobile or not when deciding how to interact with the player]
-		if N is not 2:
-			let monster-engaged be 1;
-			if M is uninterested, now monster-engaged is 0;
-			check perception of M;
-			if debugmode > 1, say "Finished checking perception.";
-			if M is interested and monster-engaged is 0, now N is 3; [The monster doesn't get an action if it detected the player in the perception round this turn.]
-		if current-predicament is team-football-predicament and M is student and M is in a predicament room:
-			unless N is 2, compute football movement of M; [football moves don't happen at the same time as the player moving, they happen later]
-		otherwise if N < 3:
-			compute action N of M.
+	unless M is student and current-predicament is joint-fuckhole-predicament and M is in Predicament01:
+		if debugmode > 1, say "Computing turn [N] of [M].";
+		[If N is 1, this is a full action
+		if N is 2, this is a passive action (no attacking or perception) because the player moved and we're just making NPCs move at the same time
+		if N is 3, this is a stationary passive action (only perception) because it already moved (probably with the player with N = 2 above)]
+		if the wrangle-bonus of M > 0 and M is wrangling a body part: [NPC is currently wrangling, and it can end automatically]
+			decrease the wrangle-bonus of M by 1;
+			if the wrangle-bonus of M is 0:
+				repeat with BP running through body parts wrangled by M:
+					say "[BigNameDesc of M][']s hold on your [BP] [one of]loosens[or]momentarily slips[or]briefly weakens[at random], and you are able to [one of]wriggle[or]pull[or]ease[or]slide[at random] free!";
+					now M is not wrangling BP;
+		now M is not trip-warned;
+		if M is seduced: [If the NPC got to its compute turn function, that means that the seduction failed (the NPC wasn't stalled) and we can exit the seduction minigame.]
+			if M is interested, now M is seduction-refused;
+			otherwise now M is unseduced;
+		if M is friendly-fucking:
+			if M is not grabbing the player and M is not penetrating a body part, now M is not friendly-fucking; [We need to make sure that NPCs have the friendly fucking flag removed after they've finished a session, and this is probably the most reliable way to do it, if a little messy.]
+		if M is dying:
+			finally destroy M;
+		otherwise if M is awake:[Monsters can't do anything if they are sleeping]
+			now current-monster is M; [Some functions care about which monster is current-monster]
+			if (M is penetrating a body part or M is grabbing the player) and the player is not in a nonstandard room, now M is in the location of the player; [Just in case there's a glitch where the player remains stuck but can't interact with the monster because somehow it's in a different room]
+			if M is in the location of the player or the player is in a nonstandard room, check immobility; [It's important that NPCs are aware whether the player is already immobile or not when deciding how to interact with the player]
+			if N is not 2:
+				let monster-engaged be 1;
+				if M is uninterested, now monster-engaged is 0;
+				check perception of M;
+				if debugmode > 1, say "Finished checking perception.";
+				if M is interested and monster-engaged is 0, now N is 3; [The monster doesn't get an action if it detected the player in the perception round this turn.]
+			if current-predicament is team-football-predicament and M is student and M is in a predicament room:
+				unless N is 2, compute football movement of M; [football moves don't happen at the same time as the player moving, they happen later]
+			otherwise if N < 3:
+				compute action N of M.
 
 [!<computeUniqueEarlyActionOfMonster>+
 

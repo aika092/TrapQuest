@@ -536,6 +536,8 @@ water-count is a number that varies.
 
 currently-squirting is a number that varies.
 
+same-turn-squirting is initially false. [sometimes we need to tell the below function not to trigger extra turns, because we're in a big loop]
+
 To AssSquirt:
 	[This makes sure that the game doesn't start counting down to another expulsion whilst one is still happening]
 	reset all monster reactions;
@@ -677,8 +679,9 @@ To AssSquirt:
 				if target-poster is an expulsion poster and target-poster is off-stage and Y is a thing and (Y is not a camera trap or the reset-timer of Y < 99900):
 					say "[FlashFlav of Y][if Y is camera trap][ExpulsionFlashFlav of Y][end if]";
 					set up target-poster;
-				allocate 6 seconds;
-				compute extra turn; [After each type of egg comes out, the game world gets a turn to act.]
+				if same-turn-squirting is false:
+					allocate 6 seconds;
+					compute extra turn; [After each type of egg comes out, the game world gets a turn to act.]
 			increase element-count by 1;
 		otherwise if element-count is 1:
 			if medium-egg-count > 0:
@@ -695,8 +698,9 @@ To AssSquirt:
 				if target-poster is an expulsion poster and target-poster is off-stage and Y is a thing and (Y is not a camera trap or the reset-timer of Y < 99900):
 					say "[FlashFlav of Y][if Y is camera trap][ExpulsionFlashFlav of Y][end if]";
 					set up target-poster;
-				allocate 6 seconds;
-				compute extra turn;
+				if same-turn-squirting is false:
+					allocate 6 seconds;
+					compute extra turn;
 			increase element-count by 1;
 		otherwise if element-count is 2:
 			if large-egg-count > 0:
@@ -715,8 +719,9 @@ To AssSquirt:
 				if target-poster is an expulsion poster and target-poster is off-stage and Y is a thing and (Y is not a camera trap or the reset-timer of Y < 99900):
 					say "[FlashFlav of Y][if Y is camera trap][ExpulsionFlashFlav of Y][end if]";
 					set up target-poster;
-				allocate 6 seconds;
-				compute extra turn;
+				if same-turn-squirting is false:
+					allocate 6 seconds;
+					compute extra turn;
 			increase element-count by 1;
 		otherwise if element-count is 3:
 			if liquid-total > 0:
@@ -766,7 +771,7 @@ To AssSquirt:
 					say "a [if liquid-total > 6]huge [cascade][otherwise]few squirts[end if] of ";
 					if urine-count is 0 and semen-count is 0 and milk-count is 0, say "[if diaper messing >= 3 and rectum > 1 and there is worn total protection soilable clothing][one of]murky[or]lumpy[in random order] brown water[otherwise if diaper messing >= 3]enema water[otherwise]clear water[end if] ";
 					otherwise say "[if urine-count > 0 and semen-count > 0 and milk-count > 0]what must be a disgraceful mix of [urine], [milk] and [semen][otherwise if urine-count > 0 and semen-count > 0]what seems like a mix of [urine] and [semen][otherwise if urine-count > 0 and milk-count > 0]what seems like a mix of [urine] and [milk][otherwise if milk-count > 0 and semen-count > 0]what seems like a mix of [milk] and [semen][otherwise if urine-count > 0][urine][otherwise if semen-count > 0][semen][otherwise if milk-count > 0][milk][otherwise]BUG - can't find any liquid. Report this bug please[end if], directly from your [asshole] ";
-					say "[if the player is ass protected]into [NameDesc of random worn bottom level ass protection clothing][otherwise if collecting is a thing and collecting is not yourself]into [NameDesc of collecting][otherwise]onto your [ShortDesc of thighs][end if].";
+					say "[if the player is ass protected]into [NameDesc of random worn bottom level ass protection clothing][otherwise if collecting is a thing and collecting is not yourself]into [NameDesc of collecting][otherwise if voluntarySquatting is 1 or the player is prone]onto the ground[otherwise]onto your [ShortDesc of thighs][end if].";
 					if diaper messing >= 3 and rectum > 1 and there is worn total protection soilable clothing:
 						say "It is accompanied by [if rectum < 8]a large amount of squishy brown mush[otherwise if rectum < 10]a huge log of mess[otherwise]an ungodly amount of squishy, smelly goop[end if] as your bowels are completely excavated.";
 				if collecting is pedestal:
@@ -879,7 +884,9 @@ To AssSquirt:
 				let squirt-target be nothing;
 				if C is worn clothing:
 					now squirt-target is C;
-				otherwise if voluntarySquatting is 0:
+				otherwise if current-predicament is joint-fuckhole-predicament and the player is in Predicament01:
+					now squirt-target is torn-shirt;
+				otherwise if voluntarySquatting is 0 and the player is upright:
 					now squirt-target is thighs;
 				if temp-milk-count > 0:
 					AnnouncedExpel milk on squirt-target by temp-milk-count;
@@ -907,8 +914,9 @@ To AssSquirt:
 				if target-poster is an expulsion poster and target-poster is off-stage and Y is a thing and (Y is not a camera trap or the reset-timer of Y < 99900):
 					say "[FlashFlav of Y][if Y is camera trap][ExpulsionFlashFlav of Y][end if]";
 					set up target-poster;
-				allocate 6 seconds;
-				compute extra turn;
+				if same-turn-squirting is false:
+					allocate 6 seconds;
+					compute extra turn;
 				increase turn-count by 1;
 			otherwise:
 				increase element-count by 1;
@@ -937,6 +945,7 @@ To AssSquirt:
 				DexDown 1;
 	now currently-squirting is 0;
 	now voluntarySquatting is 0;
+	now same-turn-squirting is false;
 	if the semen volume of belly is 0, cancel father material of asshole.
 
 To say EggBeginsFlav:

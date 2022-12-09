@@ -70,6 +70,7 @@ To compute swimming in (H - hot-tub):
 			if N is monster:
 				say "[BigNameDesc of N][']s soft fondling gently stimulates you over time.";
 				passively stimulate thighs from N;
+				check for arousal change;
 			increase swim-turns by 1;
 			say "[line break]Do you want to get out yet?";
 			if the player is consenting:

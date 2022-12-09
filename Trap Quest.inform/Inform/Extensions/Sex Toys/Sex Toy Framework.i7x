@@ -322,7 +322,7 @@ To decide which number is the raw-masturbation-bonus of (C - a sex toy):
 To say ShortDesc of (C - a dong):
 	say "dildo".
 
-A wood-dong is a kind of sex toy. There is 1 rare wood-dong. Understand "wooden", "wood" as wood-dong. Wood-dong is biological. The text-shortcut of wood-dong is "wdd".
+A wood-dong is a sex toy. wood-dong is rare. Understand "wooden", "wood" as wood-dong. wood-dong is biological. The text-shortcut of wood-dong is "wdd".
 
 To decide which number is the raw-masturbation-bonus of (C - wood-dong):
 	decide on -2. [don't use this dildo if you want to cum fast]
@@ -331,7 +331,7 @@ To say MediumDesc of (C - wood-dong):
 	say "wooden dong".
 
 To say ClothingDesc of (C - wood-dong):
-	say "This dildo appears to have been carved out of wood. It doesn't look all that comfortable, but it can probably get the job done in a pinch.".
+	say "This dildo appears to have been carved out of wood. It doesn't [if C is worn]feel[otherwise]look[end if] all that comfortable, but it can probably get the job done in a pinch.".
 
 To uniquely set up (C - wood-dong):
 	do nothing.[never has an enchantment]

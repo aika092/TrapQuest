@@ -374,6 +374,7 @@ Carry Out Spitting:
 				SetDose collecting to (the total volume of face + 1) / 2;
 				if face is monster-origin, now collecting is monster-origin;
 				otherwise now collecting is player-origin;
+				compute father material of face into collecting;
 			repeat with M running through reactive people:
 				if the semen volume of face <= 0 and the urine volume of face <= 0:
 					compute boring spit reaction of M;

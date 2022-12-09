@@ -121,7 +121,7 @@ To decide which figure-name is the examine-image of (B - doom notes):
 	decide on figure of doom notes.
 
 To say ExamineDesc of (C - doom notes):
-	say "The witch's notes on the current threat. 'First you will need a bell. Any sort will do, even a really small one. Next you'll need a book, but not just any one. You'll probably need one of the books the cult uses, which will be in the mansion. Then you'll need a candle, the sort that might be used in dark rituals. I suspect one is in the dungeon. Then, take all three items to the dark altar past the mansion and read this incantation (the parchment then trails off into some language you don't know and hope you'll be able to pronounce).'".
+	say "The witch's notes on the current threat. 'First you will need a bell. Any sort will do, even a really small one. Next you'll need a book. Perhaps you could even use of the books the cult uses, which will be in the mansion. Then you'll need a candle, the sort that might be used in dark rituals. You may or may not be surprised to hear that th gladiators in the dungeon have been known to meddle with dark rituals. Then, take all three items to the dark altar past the mansion and read this incantation (the parchment then trails off into some language you don't know and hope you'll be able to pronounce).'[if the number of alive gladiators is 0][line break][newbie style]Top tip - the next NPC to spawn in the Dungeon should be a gladiator. But to get them to spawn, you may first need to defeat and banish a different NPC in the Dungeon, to make room for a new NPC to start spawning in that region.[roman type][line break][end if]".
 
 To say ShortDesc of (C - doom notes):
 	say "doom notes".

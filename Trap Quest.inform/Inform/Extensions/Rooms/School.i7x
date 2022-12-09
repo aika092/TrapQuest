@@ -311,7 +311,7 @@ To execute (T - dungeon-food-test):
 	say "[speech style of M]'Here's your food, little slave.'[roman type][line break][BigNameDesc of M] drops a dog bowl in front of you! It's filled with mushy peas[if watersports fetish is 1] drowned in [urine][otherwise if diaper quest is 0] drowned in [semen][end if]. Do you [if the player is upright]get down on your knees and [end if]eat it? ";
 	if the player is bimbo consenting:
 		StomachFoodUp 1;
-		say "You [if the player is upright]kneel and [end if]begin to eat the degrading meal without the use of your hands. You feel thoroughly humiliated as [NameDesc of M] watches you with a mocking sneer. [moderateHumiliateReflect]When you are finished [he of M] takes the bowl away.";
+		say "You [if the player is upright]kneel and [end if]begin to eat the degrading meal without the use of your hands. You feel thoroughly humiliated as [NameDesc of M] watches you with a mocking sneer. [strongHumiliateReflect]When you are finished [he of M] takes the bowl away.";
 		if watersports fetish is 1:
 			StomachUrineUp 1;
 		otherwise if diaper quest is 0:
@@ -320,7 +320,7 @@ To execute (T - dungeon-food-test):
 			say "Moments later, you feel your stomach growl angrily. Uh-oh...";
 			increase suppository by 1;
 		otherwise:
-			DelicateUp 1;
+			SlowDelicateUp 1;
 		now the stance of the player is 1;
 		increase dungeon-favour by 1;
 	otherwise:
@@ -371,11 +371,11 @@ Definition: dungeon-bottle-test is eligible:
 	decide no.
 To execute (T - dungeon-bottle-test):
 	let M be dungeon-test-monster;
-	say "[big he of M] holds a baby's bottle in front of you face, trying to coax the nipple into your mouth.[line break][speech style of M]'Time for your drinkies, baby!'[roman type][line break]Do you drink from the bottle? ";
+	say "[big he of M] holds a baby's bottle full of [milk] in front of you face, trying to coax the nipple into your mouth.[line break][speech style of M]'Time for your drinkies, baby!'[roman type][line break]Do you drink from the bottle? ";
 	if the player is bimbo consenting:
-		say "You accept the nipple into your mouth and begin to suck. Ugh, yuck, it tastes horrible! With the [NameDesc of M] holding the bottle, it really feels like you're a big baby. [moderateHumiliateReflect]";
-		DelicateUp 1;
-		StomachUp 2;
+		say "You accept the nipple into your mouth and begin to suck. With the [NameDesc of M] holding the bottle, it really feels like you're a big baby. [moderateHumiliateReflect]";
+		SlowDelicateUp 1;
+		StomachMilkUp 2;
 		increase dungeon-favour by 1;
 	otherwise:
 		say "[big he of M] growls at your refusal.[line break][speech style of M]'You'd really rather stay here even longer? Fine by me.'[roman type][line break]".

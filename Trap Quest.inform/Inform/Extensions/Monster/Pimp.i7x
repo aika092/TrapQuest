@@ -65,6 +65,8 @@ To set up (M - pimp):
 	now the monstersetup of M is 1;
 	now M is in Hotel44;
 	now the health of M is the maxhealth of M;
+	let E be a random off-stage electric fan;
+	if E is a thing, add E to the tradableItems of M;
 	if diaper quest is 0:
 		repeat with P running through pimp-pedestals:
 			now P is in Hotel44.
@@ -100,10 +102,10 @@ To compute (M - a monster) stomping (N - pimp):
 Part 1 - Perception
 
 To decide which number is the bimbo tolerance of (M - pimp):
-	decide on 20.
+	decide on 21.
 
 To decide which number is the bab tolerance of (M - pimp):
-	decide on 20.
+	decide on 21.
 
 To compute perception of (M - pimp):
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]"; [The output for clothing humiliation takes place within the 'sluttily dressed' check.]
@@ -112,9 +114,13 @@ To compute perception of (M - pimp):
 		if M is buddy:
 			say "[speech style of M]'Your debt is paid. I guess it's time to release you.'[roman type][line break]";
 			release pimp portals;
+		otherwise if the current-errand of M is completed:
+			compute errand completion of M;
 		otherwise:
 			say "[speech style of M]'Your debt isn't paid off yet. Come see me after a few more [brotha of shopkeeper]s have had their fun with you.'[roman type][line break][BigNameDesc of M] purposefully stops paying attention to you.";
 		distract M;
+	otherwise if the current-errand of M is completed and M is not uniquely unfriendly:
+		compute errand completion of M;
 	otherwise if M is unfriendly:
 		say "[speech style of M]'You owe me money, bitch. You'd best give me what you owe me right now or I'll find another way of taking it.'[roman type][line break]";
 	otherwise if the times-met of M is 0:
@@ -211,7 +217,7 @@ Section 1 - Protect and Attack
 The latex punishment rule of pimp is usually the no latex punishment rule.
 
 This is the pimp uses portals rule:
-	if diaper quest is 0 and the player is the donator and patronbed uses > 0 and the health of pimp <= the maxhealth of pimp:
+	if diaper quest is 0 and patronbed uses > 0 and the health of pimp <= the maxhealth of pimp:
 		if portal-hotpants is worn: [player has tried to fight the pimp again when the player is already portaled]
 			if the player is in Hotel44 and asshole is not actually occupied:
 				say "[speech style of pimp]'BIG mistake, [cunt]!'[roman type][line break][BigNameDesc of pimp] turns to the statue which currently hosts your genitalia, and takes the largest butt plug you've ever seen. Before you can stop [him of pimp], [he of pimp] shoves it into your [asshole]!";
@@ -635,7 +641,7 @@ To say MonsterOfferAcceptFlav of (M - pimp) to (T - pack of playing cards):
 	say "[BigNameDesc of M] nods.[line break][speech style of M]'I can use these, they fit nicely with my style.'[roman type][line break]".
 
 To say MonsterOfferAcceptFlav of (M - pimp) to (T - a thing):
-	if T is plentiful accessory and patronbed uses > 0, say "[BigNameDesc of M] smiles.[line break][speech style of M]'[one of]Good [boy of the player][or]That's my good little [if diaper quest is 1]baby[otherwise]whore[end if][or]Keep it up[in random order].'[roman type][line break]";
+	if T is plentiful accessory and (patronbed uses > 0 or M is unfriendly), say "[BigNameDesc of M] smiles.[line break][speech style of M]'[one of]Good [boy of the player][or]That's my good little [if diaper quest is 1]baby[otherwise]whore[end if][or]Keep it up[in random order].'[roman type][line break]";
 	otherwise say "[BigNameDesc of M] grins.[line break][speech style of M]'Ah yes, I can definitely give this to one of my whores to wear. Thanks.'[roman type][line break]".
 
 To compute resolution of (M - pimp) taking (T - a thing):

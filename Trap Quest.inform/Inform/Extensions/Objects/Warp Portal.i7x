@@ -118,6 +118,10 @@ To set up predicament status:
 		otherwise if C is not worn:
 			dislodge C;
 			now C is in Predicament20;
+		otherwise if C is a person: [e.g. slimegirl]
+			dislodge C;
+			now C is in Predicament-Pen;
+			add C to predicamentPenList;
 		otherwise:
 			now C is predicament-fixed;
 	if tough-shit is 0:

@@ -4,7 +4,6 @@ A chastity bond is a kind of bondage. A chastity bond is usually unique. A chast
 
 Definition: a chastity bond is crotch-pullup: decide no.
 
-
 To decide which number is the delicateness-influence of (C - a chastity bond):
 	decide on 1.
 

@@ -14,38 +14,41 @@ To compute poking of (M - a monster):
 	let handU be 0;
 	if the player is able to use their hands, now handU is 1;
 	allocate 2 seconds;
-	say "You poke [NameDesc of the noun][if handU is 0] with your nose[end if].";
-	if the noun is awake or the noun is defeated:
-		now the boredom of the noun is 0;
-		if the noun is not student, FavourDown the noun with consequences;
-		if the noun is interested:
-			if the noun is student and the noun is friendly:
-				HappinessDown the noun;
-				if the noun is unfriendly, distract the noun;
-			otherwise if the noun is orc:
-				say "[speech style of the noun]'Ah, you wish to play a hand of cards?'[roman type][line break][BigNameDesc of the noun] replies.";
-				execute talk-orc-poker for the noun;
-		otherwise if the noun is defeated:
-			if the noun is awake:
-				say "[BigNameDesc of the noun] is now [if the noun is fucked-silly]somewhat aware of your presence[otherwise]paying attention to you[end if].";
-				now the noun is interested;
+	say "You poke [NameDesc of M][if handU is 0] with your nose[end if].";
+	if M is awake or M is defeated:
+		now the boredom of M is 0;
+		if M is not student, FavourDown M with consequences;
+		if M is interested:
+			if M is student and M is friendly:
+				HappinessDown M;
+				if M is unfriendly, distract M;
+			otherwise if M is orc:
+				say "[speech style of M]'Ah, you wish to play a hand of cards?'[roman type][line break][BigNameDesc of M] replies.";
+				execute talk-orc-poker for M;
+		otherwise if M is defeated:
+			if M is awake:
+				say "[BigNameDesc of M] is now [if M is fucked-silly]somewhat aware of your presence[otherwise]paying attention to you[end if].";
+				now M is interested;
 			otherwise:
-				say "[BigNameDesc of the noun] doesn't wake up. [big he of the noun][']s out cold.";
+				say "[BigNameDesc of M] doesn't wake up. [big he of M][']s out cold.";
 		otherwise:
-			if the noun is woman-player:
+			if M is woman-player:
 				if the woman-status of woman-player is 0 and woman-player is stranger:
-					compute basic greeting to the noun;
+					compute basic greeting to M;
 				otherwise:
-					say "[BigNameDesc of the noun] is now paying attention to you.";
+					say "[BigNameDesc of M] is now paying attention to you.";
 					now woman-player is interested;
 			otherwise:
-				check guaranteed perception of the noun;
+				check guaranteed perception of M;
 	otherwise:
-		say "[BigNameDesc of M] wakes up, startled!";
-		now the sleep of M is 0;
-		decrease the favour of M by 1;
-		progress quest of poking-quest;
-		compute correct perception of M.
+		compute annoyed awakening of M.
+
+To compute annoyed awakening of (M - a monster):
+	say "[BigNameDesc of M] wakes up, startled!";
+	now the sleep of M is 0;
+	decrease the favour of M by 1;
+	progress quest of poking-quest;
+	compute correct perception of M.
 
 Understand "poke [something]", "awake [something]", "wake [something]" as poking.
 

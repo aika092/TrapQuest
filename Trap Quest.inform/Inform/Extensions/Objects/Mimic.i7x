@@ -116,7 +116,7 @@ To compute mimic teasing (N - 1):[hissing mimic. Will "poison" the player or ful
 				otherwise passively stimulate breasts from memic;
 		otherwise if R > 2:
 			say "Your nipples harden a little painfully, turning visibly red as a wave of newfound sensitivity washes over your chest.";
-			increase the raw sensitivity of breasts by 2;
+			BreastsSensitivityUp 2;
 		otherwise:
 			say "It feels like your whole body is on fire, and tears well up in your eyes as you wait for the venom to finally wear off.";
 			PainUp 20;
@@ -178,7 +178,9 @@ To compute mimic teasing (N - 4):[friendly mimic; messes with player penis size,
 		let A be the openness of asshole;
 		if A is V:
 			let L be a random off-stage lubricant;
+			if L is nothing, now L is a random lubricant;
 			say " and shoves a [printed name of L] into your hands.";
+			now L is carried by the player;
 		otherwise:
 			if A > V:
 				AssClose A - V;

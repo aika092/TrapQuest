@@ -157,7 +157,7 @@ To pollute (N - a number):
 		now the corruption of the sacred-pool is 999;
 		say "[one of]There is a noticeable shift in the air around you, and that reedy 'alive' feeling from inside the mansion slowly creeps in behind you and settles over the area.[or][stopping]";
 		repeat with G running through garlic rooms:
-			unless G is Mansion23, now G is not garlic;
+			unless G is Mansion23, now G is garlic-waned;
 		if doomed < 5 and doom counter > 0, increase doom counter by 150.
 
 To poolpurify (N - a number):

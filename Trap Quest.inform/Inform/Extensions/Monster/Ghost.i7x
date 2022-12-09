@@ -366,7 +366,7 @@ To compute (M - a ghost) removing (C - a sex toy):
 	dislodge C;
 	now M is penetrating chosen-orifice of M.
 
-To compute (M - a ghost) removing (C - a golden phallus):
+To compute (M - a ghost) removing (C - golden-phallus):
 	if C is blessed:
 		say "[BigNameDesc of M] floats behind you, but seems to back off when it gets near your [printed name of C]. It loses interest.";
 		distract M;[normally it would ignore the blessing since this item is cock shaped, but gold has magical properties]

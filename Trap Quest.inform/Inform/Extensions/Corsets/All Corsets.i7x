@@ -189,7 +189,7 @@ Understand "skirted", "bondage" as skirted-bondage-corset.
 To decide which number is the initial outrage of (C - skirted-bondage-corset):
 	decide on 12.
 
-skirted-maid-corset is a corset. skirted-maid-corset is latex. skirted-maid-corset is unique. skirted-maid-corset is knee-length. skirted-maid-corset is fully exposing. skirted-maid-corset is neck covering. skirted-maid-corset is only arm covering.
+skirted-maid-corset is a corset. skirted-maid-corset is latex. skirted-maid-corset is unique. skirted-maid-corset is short. skirted-maid-corset is fully exposing. skirted-maid-corset is neck covering. skirted-maid-corset is only arm covering.
 
 Definition: skirted-maid-corset is potentially-partially-bottom-layer-concealing: decide no. [doesn't cover the bottom at all thanks to apron window]
 
@@ -200,6 +200,7 @@ To decide which figure-name is clothing-image of (C - skirted-maid-corset):
 	decide on figure of skirted-maid-corset.
 
 Definition: skirted-maid-corset is black themed: decide yes.
+Definition: skirted-maid-corset is displacable: decide yes.
 
 To say ClothingDesc of (C - skirted-maid-corset):
 	say "A black latex underbust corset connected to a skirt with a completely transparent latex 'apron' at the front, providing a window through to your crotch. The outfit also wraps round the back to finish up at the neck, while leaving your [BreastDesc] entirely exposed. [bold type]You can sense that it magically prevents you from increasing your addiction to different tastes while worn.[roman type][line break]".

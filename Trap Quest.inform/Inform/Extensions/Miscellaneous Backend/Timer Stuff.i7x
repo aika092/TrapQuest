@@ -452,6 +452,8 @@ BBCHypnoAnimation is a g-looping cutscene animation track.
 OralHypnoAnimation is a g-looping cutscene animation track.
 ShemaleHypnoAnimation is a g-looping cutscene animation track.
 DPHypnoAnimation is a g-looping cutscene animation track.
+MilkHypnoAnimation is a g-looping cutscene animation track.
+PissHypnoAnimation is a g-looping cutscene animation track.
 DiaperHypnoAnimation is a g-looping cutscene animation track.
 To check speed change of (T - DPHypnoAnimation):
 	if the animation-speed of T is 1, now the animation-speed of T is 2. [Double the speed after the first loop]
@@ -583,5 +585,68 @@ To cease animation of (T - a loading animation track):
 	close the map-window;
 	now the position of the map-window is g-placeleft;
 	now the measurement of the map-window is 40.
+
+
+Figure of HypnoPissAnimation00 is the file "Special/Animations/HypnoPiss/frame00.jpg".
+Figure of HypnoPissAnimation01 is the file "Special/Animations/HypnoPiss/frame01.jpg".
+Figure of HypnoPissAnimation02 is the file "Special/Animations/HypnoPiss/frame02.jpg".
+Figure of HypnoPissAnimation03 is the file "Special/Animations/HypnoPiss/frame03.jpg".
+Figure of HypnoPissAnimation04 is the file "Special/Animations/HypnoPiss/frame04.jpg".
+Figure of HypnoPissAnimation05 is the file "Special/Animations/HypnoPiss/frame05.jpg".
+Figure of HypnoPissAnimation06 is the file "Special/Animations/HypnoPiss/frame06.jpg".
+Figure of HypnoPissAnimation07 is the file "Special/Animations/HypnoPiss/frame07.jpg".
+Figure of HypnoPissAnimation08 is the file "Special/Animations/HypnoPiss/frame08.jpg".
+Figure of HypnoPissAnimation09 is the file "Special/Animations/HypnoPiss/frame09.jpg".
+Figure of HypnoPissAnimation10 is the file "Special/Animations/HypnoPiss/frame10.jpg".
+Figure of HypnoPissAnimation11 is the file "Special/Animations/HypnoPiss/frame11.jpg".
+Figure of HypnoPissAnimation12 is the file "Special/Animations/HypnoPiss/frame12.jpg".
+Figure of HypnoPissAnimation13 is the file "Special/Animations/HypnoPiss/frame13.jpg".
+Figure of HypnoPissAnimation14 is the file "Special/Animations/HypnoPiss/frame14.jpg".
+Figure of HypnoPissAnimation15 is the file "Special/Animations/HypnoPiss/frame15.jpg".
+Figure of HypnoPissAnimation16 is the file "Special/Animations/HypnoPiss/frame16.jpg".
+Figure of HypnoPissAnimation17 is the file "Special/Animations/HypnoPiss/frame17.jpg".
+Figure of HypnoPissAnimation18 is the file "Special/Animations/HypnoPiss/frame18.jpg".
+Figure of HypnoPissAnimation19 is the file "Special/Animations/HypnoPiss/frame19.jpg".
+Figure of HypnoPissAnimation20 is the file "Special/Animations/HypnoPiss/frame20.jpg".
+Figure of HypnoPissAnimation21 is the file "Special/Animations/HypnoPiss/frame21.jpg".
+Figure of HypnoPissAnimation22 is the file "Special/Animations/HypnoPiss/frame22.jpg".
+Figure of HypnoPissAnimation23 is the file "Special/Animations/HypnoPiss/frame23.jpg".
+Figure of HypnoPissAnimation24 is the file "Special/Animations/HypnoPiss/frame24.jpg".
+Figure of HypnoPissAnimation25 is the file "Special/Animations/HypnoPiss/frame25.jpg".
+Figure of HypnoPissAnimation26 is the file "Special/Animations/HypnoPiss/frame26.jpg".
+Figure of HypnoPissAnimation27 is the file "Special/Animations/HypnoPiss/frame27.jpg".
+Figure of HypnoPissAnimation28 is the file "Special/Animations/HypnoPiss/frame28.jpg".
+Figure of HypnoPissAnimation29 is the file "Special/Animations/HypnoPiss/frame29.jpg".
+Figure of HypnoPissAnimation30 is the file "Special/Animations/HypnoPiss/frame30.jpg".
+Figure of HypnoPissAnimation31 is the file "Special/Animations/HypnoPiss/frame31.jpg".
+Figure of HypnoPissAnimation32 is the file "Special/Animations/HypnoPiss/frame32.jpg".
+Figure of HypnoPissAnimation33 is the file "Special/Animations/HypnoPiss/frame33.jpg".
+Figure of HypnoPissAnimation34 is the file "Special/Animations/HypnoPiss/frame34.jpg".
+Figure of HypnoPissAnimation35 is the file "Special/Animations/HypnoPiss/frame35.jpg".
+Figure of HypnoPissAnimation36 is the file "Special/Animations/HypnoPiss/frame36.jpg".
+Figure of HypnoPissAnimation37 is the file "Special/Animations/HypnoPiss/frame37.jpg".
+Figure of HypnoPissAnimation38 is the file "Special/Animations/HypnoPiss/frame38.jpg".
+Figure of HypnoPissAnimation39 is the file "Special/Animations/HypnoPiss/frame39.jpg".
+Figure of HypnoPissAnimation40 is the file "Special/Animations/HypnoPiss/frame40.jpg".
+Figure of HypnoPissAnimation41 is the file "Special/Animations/HypnoPiss/frame41.jpg".
+Figure of HypnoPissAnimation42 is the file "Special/Animations/HypnoPiss/frame42.jpg".
+Figure of HypnoPissAnimation43 is the file "Special/Animations/HypnoPiss/frame43.jpg".
+Figure of HypnoPissAnimation44 is the file "Special/Animations/HypnoPiss/frame44.jpg".
+Figure of HypnoPissAnimation45 is the file "Special/Animations/HypnoPiss/frame45.jpg".
+Figure of HypnoPissAnimation46 is the file "Special/Animations/HypnoPiss/frame46.jpg".
+Figure of HypnoPissAnimation47 is the file "Special/Animations/HypnoPiss/frame47.jpg".
+Figure of HypnoPissAnimation48 is the file "Special/Animations/HypnoPiss/frame48.jpg".
+Figure of HypnoPissAnimation49 is the file "Special/Animations/HypnoPiss/frame49.jpg".
+Figure of HypnoPissAnimation50 is the file "Special/Animations/HypnoPiss/frame50.jpg".
+Figure of HypnoPissAnimation51 is the file "Special/Animations/HypnoPiss/frame51.jpg".
+Figure of HypnoPissAnimation52 is the file "Special/Animations/HypnoPiss/frame52.jpg".
+Figure of HypnoPissAnimation53 is the file "Special/Animations/HypnoPiss/frame53.jpg".
+Figure of HypnoPissAnimation54 is the file "Special/Animations/HypnoPiss/frame54.jpg".
+Figure of HypnoPissAnimation55 is the file "Special/Animations/HypnoPiss/frame55.jpg".
+Figure of HypnoPissAnimation56 is the file "Special/Animations/HypnoPiss/frame56.jpg".
+Figure of HypnoPissAnimation57 is the file "Special/Animations/HypnoPiss/frame57.jpg".
+Figure of HypnoPissAnimation58 is the file "Special/Animations/HypnoPiss/frame58.jpg".
+When play begins:
+	fill PissHypnoAnimation from Figure of HypnoPissAnimation00 to 58.
 
 Timer Stuff ends here.

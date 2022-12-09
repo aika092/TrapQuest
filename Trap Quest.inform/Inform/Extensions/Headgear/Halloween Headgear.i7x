@@ -5,16 +5,11 @@ halloween headgear is a kind of headgear. halloween headgear is womanly.
 To set up influence of (C - a halloween headgear):
 	set up sex-based influence of C.
 
-[The halloween headgears are used in a couple of the predicaments in the predicament world. There's one room there where the player can go either down or up, so this function is probably intended for that.
-It seems like having a halloween headgear on will prevent you from leaving or entering a region. Again, that's probably intended.]
-Check going down when there is a worn halloween headgear:
-	unless the player is in a predicament room, say "Your [random worn headgear] is somehow preventing you from leaving while you're a [']trick or treater[']!" instead.
-
 Chapter - Quest
 
-To compute recycling of (H - a halloween headgear):
+[To compute recycling of (H - a halloween headgear):
 	repeat with C running through in-play candy:
-		if C is not held, destroy C.
+		if C is not held, destroy C.]
 
 trick-or-treat-quest is a headgear-clothing-quest.
 
@@ -117,30 +112,100 @@ Definition: rubber nun cowl is fetish appropriate:
 To decide which number is the initial outrage of (C - rubber nun cowl):
 	decide on 3.
 
+To compute periodic effect of (C - rubber nun cowl):
+	if the location of the player is garlic-waned:
+		say "[bold type]Your blessed aura interacts with the hidden runes in this room, renewing their power! This room is now once again purified and strengthened against malicious spirits.[roman type][line break]";
+		now the location of the player is garlic;
+		let RN be the number of garlic placed haunted rooms + the number of garlic-waned placed haunted rooms;
+		if debugmode > 0, say "Blessed rooms: [list of garlic placed haunted rooms]. Unblessed rooms: [list of garlic-waned placed haunted rooms]";
+		if the number of garlic placed haunted rooms > RN - 4, progress quest of mansion-purification-quest.
+
 Chapter - Class Outfit
 
 To compute full outfit summon of (H - rubber nun cowl):
-	summon H cursed;
+	now H is worn by the player;
+	now H is cursed;
+	now H is sure;
+	now H is identified;
+	set up H;
 	say "You are wearing a [H], ";
-	if red-orange briefs is actually summonable:
-		summon red-orange briefs uncursed;
-		say "a [red-orange briefs], ";
+	if nun-top is actually summonable:
+		summon nun-top uncursed;
+		now nun-top is blessed;
+		now nun-top is suppression;
+		now nun-top is charisma-influencing;
+		say "a [nun-top], ";
 	if black-rubber-hobble-skirt is actually summonable:
 		summon black-rubber-hobble-skirt uncursed;
+		now black-rubber-hobble-skirt is blessed;
+		now black-rubber-hobble-skirt is dexterity-influencing;
 		say "a [black-rubber-hobble-skirt], ";
+	if crotch chain is actually summonable:
+		summon crotch chain uncursed;
+		now crotch chain is blessed;
+		now crotch chain is intelligence-influencing;
+		say "a [crotch chain], ";
 	if black-leather-boots is actually summonable:
 		summon black-leather-boots uncursed;
+		now black-leather-boots is blessed;
+		now black-leather-boots is suppression;
+		now black-leather-boots is luck-influencing;
 		now the heel-height of black-leather-boots is 1;
-		say "and a [black-leather-boots]!";
-	blandify and reveal nun-top;
-	now nun-top is in the location of the player;
-	say "A [nun-top] is on the ground in front of you almost as if you forgot to put it on[if the largeness of breasts > 1], leaving you completely topless. Eek[end if]!".
+		say "and a [black-leather-boots]! ";
+	repeat with P running through on-stage pedestals:
+		if wood-dong is in P:
+			only destroy wood-dong;
+			now cum dump's undergarment is in P;
+			now P is fertile;
+			now the paid of P is 5;
+	if wood-dong is off-stage:
+		summon wood-dong uncursed;
+		now the size of wood-dong is 1;
+		now wood-dong is blessed;
+		now wood-dong is luck-influencing;
+		say "You can also feel that some sort of holy wooden ornament is secretly lodged inside your [asshole].";
 
 To compute class outfit of (H - rubber nun cowl):
 	class summon nun-top;
 	class summon black-rubber-hobble-skirt;
 	class summon black-leather-boots;
-	class summon red-orange briefs.
+	class summon crotch chain.
+
+Chapter - Quest
+
+mansion-purification-quest is a headgear-clothing-quest.
+
+To uniquely set up (C - rubber nun cowl):
+	now the quest of C is mansion-purification-quest.
+
+To say QuestFlav of (Q - mansion-purification-quest):
+	say "You sense it wants you to explore the haunted house to find lots of rooms with peaceful auras, to revive their blessings. ...There's also a secret extra mission. Drive a wooden stake into a defeated vampire.".
+
+To say QuestTitle of (Q - mansion-purification-quest):
+	say " (mansion purification quest)".
+
+To compute persistent reward of (Q - mansion-purification-quest) on (C - a clothing):
+	if vampiress is in the location of the player and the stake of vampiress is wood-dong and wood-dong is held by the player and player-fucking is DOMINANT-SUPER:
+		let D be a random off-stage ring;
+		if D is ring:
+			now D is solid gold;
+			set shortcut of D;
+			if D is actually summonable:
+				summon D;
+			otherwise:
+				now D is in the location of the player;
+			say "summoning a [MediumDesc of D] [if D is worn]straight onto your finger[otherwise]right in front of you[end if]!";
+		otherwise:
+			compute generic second time class reward of Q on C;
+		if C is not blessed:
+			say "You sense a blessing being laid upon your [ShortDesc of C]!";
+			now C is blessed;
+	otherwise if C is cursed:
+		compute generic first time class reward of Q on C;
+	otherwise if C is bland:
+		compute generic second time class reward of Q on C;
+	otherwise:
+		compute generic class reward of Q on C.
 
 witch's hat is a halloween headgear. witch's hat is latex. Figure of witch's hat is the file "Items/Accessories/Head/witchhat1.png". witch's hat is blondeness-negative. witch's hat is brightness-negative. witch's hat is redness-negative. The text-shortcut of witch's hat is "wtch".
 
@@ -169,18 +234,53 @@ Definition: witch's hat is fetish appropriate:
 To decide which number is the initial outrage of (C - witch's hat):
 	decide on 2.
 
+Chapter - Quest
+
+doom-ritual-quest is a headgear-clothing-quest.
+
+To uniquely set up (C - witch's hat):
+	now the quest of C is doom-ritual-quest.
+
+To say QuestFlav of (Q - doom-ritual-quest):
+	say "You sense it wants you to save the world from an Elder God by completing the Doom Ritual (read your [']doom notes[']!)".
+
+To say QuestTitle of (Q - doom-ritual-quest):
+	say " (doom ritual quest)".
+
+To compute persistent reward of (Q - doom-ritual-quest) on (C - a clothing):
+	let D be a random off-stage ring;
+	if D is ring:
+		now D is solid gold;
+		set shortcut of D;
+		if D is actually summonable:
+			summon D;
+		otherwise:
+			now D is in the location of the player;
+		say "summoning a [MediumDesc of D] [if D is worn]straight onto your finger[otherwise]right in front of you[end if]!";
+	otherwise:
+		compute generic second time class reward of Q on C;
+	if C is not blessed:
+		say "You sense a blessing being laid upon your [ShortDesc of C]!";
+		now C is blessed;
+	say "You feel a surge of magic power! You've been promoted to Head Witch!";
+	MagicPowerUp 8.
+
 Chapter - Class Outfit
 
-Definition: witch's hat (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
+[Definition: witch's hat (called C) is removal-blocking:
 	if wearing-target is latex court heels or (wearing-target is magic themed and wearing-target is not C), decide yes;
-	decide no.
+	decide no.]
 
 To compute full outfit summon of (H - witch's hat):
-	summon H cursed;
+	now H is worn by the player;
+	now H is cursed;
+	now H is sure;
+	now H is identified;
+	set up H;
 	say "You are wearing a [H], ";
-	[if witch's top is actually summonable:
+	if witch's top is actually summonable:
 		summon witch's top;
-		say "a [witch's top], ";]
+		say "a [witch's top], ";
 	if witch's trousers is actually summonable:
 		summon witch's trousers;
 		say "a [witch's trousers], ";
@@ -192,9 +292,9 @@ To compute full outfit summon of (H - witch's hat):
 		now the raw-magic-modifier of S is 0;
 		now the heel-height of S is 1;
 		say "and a [S]!";
-	blandify and reveal witch's top;
+	[blandify and reveal witch's top;
 	now witch's top is in the location of the player;
-	say "A [witch's top] is on the ground in front of you almost as if you forgot to put it on[if the largeness of breasts > 1], leaving you completely topless. Eek[end if]!".
+	say "A [witch's top] is on the ground in front of you almost as if you forgot to put it on[if the largeness of breasts > 1], leaving you completely topless. Eek[end if]!".]
 
 To compute class outfit of (H - witch's hat):
 	class summon witch's top;
@@ -229,7 +329,7 @@ To decide which number is the initial cringe of (C - doll hairbow):
 Chapter - Class Outfit
 
 Definition: doll hairbow (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
-	if wearing-target is orange themed and wearing-target is not C, decide yes;
+	if wearing-target is orange themed and wearing-target is not C and wearing-target is not pacifier, decide yes;
 	decide no.
 
 To compute full outfit summon of (H - doll hairbow):
@@ -247,6 +347,7 @@ To compute full outfit summon of (H - doll hairbow):
 	let P be a random ghost pacifier;
 	if P is actually summonable:
 		summon P;
+		now P is strength stealing;
 		say "a [P], ";
 	let S be black girly bow court heels;
 	if S is actually summonable:

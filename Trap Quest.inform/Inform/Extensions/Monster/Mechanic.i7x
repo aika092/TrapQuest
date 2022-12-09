@@ -134,7 +134,7 @@ Definition: mechanic is infernal:[he only counts as infernal if he is able to tr
 
 To compute monstermotion of (M - mechanic):
 	let W be 0;
-	let N be a random off-stage robochef;
+	let N be robochef;
 	repeat with L running through leftovers in the location of M:
 		if the leftover-type of L is 117 or the leftover-type of L is 118 or the leftover-type of L is 119 or the leftover-type of L is 127:
 			now W is 1;
@@ -157,10 +157,10 @@ To compute monstermotion of (M - mechanic):
 			if N is monster:
 				set up N;
 				SilentlyDifficultyUp N by D;
-		otherwise if N is monster:
+		otherwise if N is off-stage:
 			set up N;
 			SilentlyDifficultyUp N by D;
-		if N is monster:
+		if N is off-stage monster:
 			now N is in the location of M;
 			distract N;
 			if M is in the location of the player, say " [BigNameDesc of M] kneels down in front of the pile.[line break][speech style of M]'[one of]Wow, this fucking bug again?'[or]Fucking broken again, huh?'[or]I swear I fixed that last time. Fucking bullshit.'[or]Ugh, I hate this framework.'[in random order][roman type][line break][big he of M] repairs and replaces the broken parts with inhuman speed, destroying [his of M] wrench in the process. Finishing the rest of the work with [his of M] hands, [he of M] presses a button and a brand new [ShortDesc of N] rises up in front of [him of M].";
@@ -191,9 +191,11 @@ To say BecomesAggressive of (M - mechanic):
 
 To compute perception of (M - mechanic):
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]"; [The output for clothing humiliation takes place within the 'sluttily dressed' check.]
-	if the player is soulless and the class of the player is not succubus and the class of the player is not avatar:
+	if the player is soulless and the class of the player is not succubus and the class of the player is not avatar and the current-errand of M is not mystical-amulet-errand:
 		say "[speech style of M]'Well look at you. Is there even anything in there anymore? Well don't worry, that makes you a perfect candidate for a new [']quest['].'[roman type][line break]";
 		anger M;
+	otherwise if the current-errand of M is completed and M is not uniquely unfriendly:
+		compute errand completion of M;
 	otherwise if the class of the player is succubus and M is not carrying mystical amulet:
 		say "[speech style of M]Have you found it yet, slave?'[roman type][line break]";
 		calm M;
@@ -391,8 +393,8 @@ This is the mechanic strips princess rule:
 	if diaper quest is 0 and (the class of the player is "princess" or the class of the player is "deepthroat princess" or the class of the player is "trained fuck princess" or the class of the player is "virgin warrior princess") and bride-consort is throne and princess bride dress is unclash summonable and (the player is possessing a vagina or the player is ready for event TG):
 		let H be a random worn headgear;
 		say "[speech style of current-monster]'At long last, release shall be mine. To dispel your magic, I need simply make you my bride...'[roman type][line break][big he of current-monster] touches your [ShortDesc of H].";
-		now the quest of H is betrothal-quest;
 		transform H into tiara-veil;
+		uniquely set up tiara-veil;
 		now bride-consort is mechanic;
 		PinkWardrobeUnclash princess bride dress;
 		compute class outfit of tiara-veil;

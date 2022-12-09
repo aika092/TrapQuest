@@ -43,6 +43,12 @@ composed-explorer is an explorer. The explorer-type of composed-explorer is "com
 To set up (M - an explorer):
 	reset M;
 	now the monstersetup of M is 1;
+	if a random number between 1 and 2 is 1:
+		add blessing-potion to the taxableItems of M, if absent;
+		add blessing-potion to the tradableItems of M, if absent;
+	otherwise:
+		add enhancement-powder to the tradableItems of M, if absent;
+		add enhancement-powder to the taxableItems of M, if absent;
 	repeated set up M.
 
 To repeated set up (M - an explorer):
@@ -81,6 +87,8 @@ To decide which number is the difficulty of (M - an explorer):
 	decide on the raw difficulty of M.
 
 Definition: an explorer is too intimidating: decide no.
+Definition: an explorer is objectifying the player: decide no.
+Definition: an explorer is babifying the player: decide no.
 
 To compute monstermotion of (M - an explorer):
 	if the explorer-bimbo of M >= 2 and the scared of M <= 0:
@@ -94,47 +102,59 @@ To compute (M - a monster) stomping (N - an explorer):
 
 To compute perception of (M - an explorer):
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
-	if M is unfriendly:
+	if the current-errand of M is completed and M is not uniquely unfriendly:
+		compute errand completion of M;
+	otherwise if M is unfriendly:
 		compute eek reaction of M;
 	otherwise if the explorer-bimbo of M >= 2:
 		say WhorePerceptionFlav of M;
 	otherwise:
 		if the explorer-bimbo of M is 1, say "[big he of M] [one of]winks cheekily[or]smiles warmly at[or]licks [his of M] lips while looking at you[in random order] you then continues to focus on [his of M] own adventure.";
-		otherwise say "[big he of M] [one of]nods towards[or]smiles awkwardly at[or]raises [his of M] eyebrows politely towards[in random order] you then continues to focus on [his of M] own adventure.";
-		bore M for 150 seconds.
+		otherwise say "[big he of M] [one of]nods towards[or]smiles awkwardly at[or]raises [his of M] eyebrows politely towards[in random order] you then continues to focus on [his of M] own adventure.".
 
 To say WhorePerceptionFlav of (M - an explorer):
 	say "[speech style of M]'Hi, fancy seeing you here.'[roman type][line break]".
 
+To say CombatProvokedReaction of (M - an explorer):
+	say "".
+
 To compute eek reaction of (M - an explorer):
 	interest M;
 	now M is unconcerned;
-	say "[speech style of M]'EEEEK!'[roman type][line break][BigNameDesc of M] turns tail and tries to run away from you!";
+	say "[speech style of M]'EEEEK!'[roman type][line break][BigNameDesc of M] [if the scared of M <= 0]turns tail and tries to run away from you[otherwise]continues fleeing[end if]!";
 	now the scared of M is 100;
 	now the boredom of M is 0;
 	permanently anger M.
 
 [An easy way for them to get booted from their starting regions]
 Definition: an explorer (called M) is distracted:
-	let V be a random vines in the location of M;
-	if V is vines and V is aggressive and V is not penetrating a body part and V is not wrangling the player:
-		say "[BigNameDesc of M] shrieks as a vine wraps itself around [his of M] ankle! [big he of M] quickly tries to wrestle it off, but before [he of M] gets a chance, several more living vines have joined in, holding [him of M] tight. You watch with [if diaper quest is 1][horror the diaper addiction of the player] as [he of M] is lifted into the air, passed through a portal, and then made to faceplant [his of M] own diapered rear, as the vines begin stroking [his of M] pussy and bringing [him of M] to a shameful climax.[line break][speech style of M]'Please no, no more! Please, I just want to get out of here!'[roman type][line break]Almost as if they heard [NameDesc of M][']s pleas, another portal opens up underneath the poor diapered adventurer, this one leading to a hotel room. [big he of M] is unceremoniously dropped through the portal, onto the waiting hotel bed below. The portal then closes behind [him of M][otherwise][horror the sex addiction of the player] as not just one, but several wriggling vines find their way into both [his of M] poor pussy and [his of M] tight little asshole. Several awkward wailing and gargling sounds later, you watch as [NameDesc of M]'s belly bloats larger and larger under the pressure from the huge amounts of tentacle semen being poured inside [him of M].[line break][speech style of M]'F-fuck this! I'd r-rather be that rude pimp's whore, than stay out here where it's so dangerous...'[roman type][line break]Finally released from the clutches of the vines, [NameDesc of M] begins to drag [his of M] cum-leaking body towards the west[end if].";
-		compute banishment of M;
-		decide yes;
-	otherwise if M is in Mansion01:
-		say "You see [NameDesc of M] exiting the Mansion, going out into the Woods.";
-		compute banishment of M;
-		decide yes;
-	otherwise if M is in Stairwell01:
-		say "You see [NameDesc of M] climbing the staircase, going out into the open air.";
-		compute banishment of M;
-		decide yes;
-	otherwise if M is in Stairwell02:
-		say "You see [NameDesc of M] climbing the stairs and entering the rear entrance of the Hotel.";
-		compute banishment of M;
-		decide yes;
+	if M is in the location of the player:
+		let V be a random vines in the location of M;
+		if V is vines and V is aggressive and V is not penetrating a body part and V is not wrangling the player:
+			say "[BigNameDesc of M] shrieks as a vine wraps itself around [his of M] ankle! [big he of M] quickly tries to wrestle it off, but before [he of M] gets a chance, several more living vines have joined in, holding [him of M] tight. You watch with [if diaper quest is 1][horror the diaper addiction of the player] as [he of M] is lifted into the air, passed through a portal, and then made to faceplant [his of M] own diapered rear, as the vines begin stroking [his of M] pussy and bringing [him of M] to a shameful climax.[line break][speech style of M]'Please no, no more! Please, I just want to get out of here!'[roman type][line break]Almost as if they heard [NameDesc of M][']s pleas, another portal opens up underneath the poor diapered adventurer, this one leading to a hotel room. [big he of M] is unceremoniously dropped through the portal, onto the waiting hotel bed below. The portal then closes behind [him of M][otherwise][horror the sex addiction of the player] as not just one, but several wriggling vines find their way into both [his of M] poor pussy and [his of M] tight little asshole. Several awkward wailing and gargling sounds later, you watch as [NameDesc of M]'s belly bloats larger and larger under the pressure from the huge amounts of tentacle semen being poured inside [him of M].[line break][speech style of M]'F-fuck this! I'd r-rather be that rude pimp's whore, than stay out here where it's so dangerous...'[roman type][line break]Finally released from the clutches of the vines, [NameDesc of M] begins to drag [his of M] cum-leaking body towards the west[end if].";
+			compute banishment of M;
+			decide yes;
+		otherwise if M is in Hotel01 and the explorer-bimbo of M is 0:
+			say "You see [NameDesc of M] exiting the Hotel, going out into the Woods.";
+			compute banishment of M;
+			decide yes;
+		otherwise if M is in Mansion01:
+			say "You see [NameDesc of M] exiting the Mansion, going out into the Woods.";
+			compute banishment of M;
+			decide yes;
+		otherwise if M is in Stairwell01:
+			say "You see [NameDesc of M] climbing the staircase, going out into the open air.";
+			compute banishment of M;
+			decide yes;
+		otherwise if M is in Stairwell02:
+			say "You see [NameDesc of M] climbing the stairs and entering the rear entrance of the Hotel.";
+			compute banishment of M;
+			decide yes;
 	decide no.
 
+To check seeking (N - a number) of (M - an explorer): [They don't follow you]
+	check motion of M;
+	if M is not in the location of the player, bore M for 150 seconds.
 
 Section 3 - Damage
 
@@ -198,8 +218,9 @@ To compute patronMeeting of (M - an explorer) with (P - a patron):
 				if SR is listed in the taxableItems of M, remove SR from the taxableItems of M;
 				destroy SR;
 		otherwise:
-			say "[big he of P] whispers something into [his of M] ear. [BigNameDesc of M] [if the explorer-bimbo of M >= 2]smiles and[otherwise]turns right red, but[end if] nods. [big he of M] takes [NameDesc of P][']s [manly-penis] into [his of M] hands and starts giving [him of P] a handjob. [big he of M] [if the explorer-bimbo of M >= 2]gives you a cheeky wink[otherwise]is clearly rather embarrassed about the fact you're watching, and purposefully avoids eye contact with you[end if]. A short while later, [NameDesc of P] is painting the floor with [his of P] [semen]. You spot [NameDesc of M] biting [his of M] bottom lip as [he of M] watches the puddle of [semen] start to form. [BigNameDesc of P] takes [his of P] leave, leaving you and [NameDesc of M] standing there awkwardly, the evidence of the aftermath spilling out on the floor between you.";
+			say "[big he of P] whispers something into [his of M] ear. [BigNameDesc of M] [if the explorer-bimbo of M >= 2]smiles and[otherwise]turns right red, but[end if] nods. [big he of M] takes [NameDesc of P][']s [manly-penis] into [his of M] hands and starts giving [him of P] a handjob. [big he of M] [if the explorer-bimbo of M >= 2]gives you a cheeky wink[otherwise]is clearly rather embarrassed about the fact you're watching, and purposefully avoids eye contact with you[end if]. A short while later, [NameDesc of P] is painting the floor with [his of P] [semen]. You spot [NameDesc of M] biting [his of M] bottom lip as [he of M] watches the puddle of [semen] start to form. [BigNameDesc of P] takes [his of P] leave, leaving you and [NameDesc of M] standing there awkwardly, the evidence of the aftermath spilling out on the floor between you. It only takes a few seconds before [he of M] can't handle the awkward silence.[line break][speech style of M]'Um, see you around.'[roman type][line break][big he of M] takes [his of M] leave.";
 			SemenPuddleUp (the semen load of P) in (the location of M);
+			compute banishment of M;
 	otherwise:
 		SemenPuddleUp (the semen load of P) in (the location of M).
 

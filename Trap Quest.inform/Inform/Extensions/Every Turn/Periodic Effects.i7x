@@ -150,7 +150,7 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 		compute orifice soreness decay;
 	if the remainder after dividing local-earnings by 676 < local-seconds:
 		compute makeup decay;
-	if the remainder after dividing local-earnings by 421 < local-seconds:
+	if the remainder after dividing local-earnings by 211 < local-seconds:
 		compute magic regeneration;
 	let inflation-decay-rate be 29;
 	if the player is flying, now inflation-decay-rate is 9;

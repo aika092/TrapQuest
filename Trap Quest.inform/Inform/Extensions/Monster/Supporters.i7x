@@ -21,7 +21,9 @@ To say ChestDesc of (M - supporter-ai):
 To compute perception of (M - supporter-ai):
 	add M to new-acolytes;
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]"; [The output for clothing humiliation takes place within the 'sluttily dressed' check.]
-	if M is unfriendly:
+	if the current-errand of M is completed and M is not uniquely unfriendly:
+		compute errand completion of M;
+	otherwise if M is unfriendly:
 		say AlreadyUnfriendlyPerception of M;
 	otherwise if the class of the player is living sex doll:
 		if M is strapped:

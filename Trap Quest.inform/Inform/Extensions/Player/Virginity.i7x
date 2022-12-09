@@ -178,7 +178,7 @@ To virginpunish:
 		otherwise if the raw delicateness of the player < 15:
 			say VirginFlav;
 			say "You suddenly feel less able to stand up to the monsters you meet in this game.[line break][variable custom style]Maybe it's easier if I just [if the bimbo of the player < 10]do whatever I'm told![otherwise]fuck and suck till I'm a mindless whore and my [sissy-penis] is forgotten![end if][roman type][line break]";
-			DelicateUp 1.
+			SilentlyDelicateUp 1.
 
 To announce sissification:
 	if the player is a sissy, say "[one of]You [if the bimbo of the player < 9]reluctantly [end if]admit to yourself that you are now officially a sissy. You become acutely aware that 'sissy' is now your official title. You realise you feel more comfortable [bold type]beg[roman type]ging[bold type] for mercy[roman type] now.[or][stopping]".

@@ -48,7 +48,7 @@ Definition: a centaur is woods dwelling:
 	if diaper quest is 0 and mythical creature fetish is 1, decide yes;
 	decide no.
 
-Definition: centaur is controlling: decide no.[She can't exactly reach]
+Definition: centaur is controlling: decide no. [She can't exactly reach]
 
 Definition: centaur is musky:
 	if the refractory-period of it <= 0, decide yes;
@@ -57,7 +57,7 @@ Definition: centaur is a tripper: decide no.
 Definition: centaur is father material: decide yes.
 Definition: centaur is throater: decide yes.
 Definition: centaur is wenchy:
-	if the player is a June 2021 top donator, decide yes;
+	if the player is the donator, decide yes;
 	decide no.
 
 To say LongDickDesc of (M - centaur):
@@ -76,6 +76,11 @@ To set up (M - centaur):
 	now the monstersetup of M is 1;
 	now the raw difficulty of M is the starting difficulty of M;
 	if doomed is 5, SilentlyDifficultyUp M by 1;
+	let D be a random off-stage ring;
+	if D is ring:
+		now D is pink diamond;
+		set shortcut of D;
+		now M is carrying D;
 	now the health of M is the maxhealth of M.
 
 To decide which number is the starting difficulty of (M - centaur):
@@ -126,6 +131,8 @@ To compute perception of (M - centaur):
 	if the class of the player is succubus:
 		say "[BigNameDesc of M][']s face scrunches with hostility![line break][speech style of M]'[one of]Yet another demon?! There's no end to them! Have at you!'[or]Begone, demon! Have at you!'[or]Demon! Have at you!'[at random][roman type][line break]";
 		anger M;
+	otherwise if the current-errand of M is completed and M is not uniquely unfriendly:
+		compute errand completion of M;
 	otherwise:
 		compute appearance assessment of M;
 		if M is unfriendly:
@@ -638,7 +645,9 @@ To decide which number is the dominationtype of (M - centaur) using (F - penis):
 	decide on FUCK-UNIQUE.
 
 To say DominanceSuccess of (M - centaur):
-	if player-fucker is penis:
+	if player-fuckchoice is FUCK-WATERSPORTS:
+		watersports dominate M;
+	otherwise if player-fucker is penis:
 		handjob dominate M;
 	otherwise:
 		tease dominate M;

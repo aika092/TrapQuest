@@ -84,7 +84,7 @@ Definition: ivy leaves is green themed: decide yes.
 
 Part 3 - Living Tentacles
 
-living tentacles is a fertility outfit. living tentacles is biological. living tentacles is ridiculously low cut. living tentacles is unskirted. living tentacles is bottom-exclusive.
+living tentacles is a fertility outfit. living tentacles is biological. living tentacles is ridiculously low cut. living tentacles is not-top-displacable. living tentacles is unskirted. living tentacles is bottom-exclusive.
 
 Living tentacles has a number called charge. The charge of living tentacles is 0. The text-shortcut of living tentacles is "lvtl".
 

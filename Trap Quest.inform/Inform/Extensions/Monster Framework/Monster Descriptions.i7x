@@ -31,7 +31,7 @@ To say FullMonsterDesc of (M - a monster):
 	say BoldFullTitle of M;
 	say ImageDesc of M;
 	say MonsterDesc of M;
-	if M is undefeated, say MonsterComment of M;
+	if M is undefeated and diaper quest is 0, say MonsterComment of M;
 	if M is messy, say MessyMonsterFlav of M.
 
 To say MonsterDesc of (M - a monster):
@@ -156,6 +156,10 @@ After examining a monster:
 		otherwise if the health of the noun < the maxhealth of the noun / 2:
 			say "[BigNameDesc of noun] seems to be quite injured.";
 	if the noun is wrapped, say "[BigNameDesc of noun] is wearing a condom around [his of the noun] [manly-penis].";
+	repeat with T running through the tradableItems of the noun:
+		if T is off-stage, say "You can see that [he of noun] has a [ShortDesc of T].";
+	repeat with T running through things held by the noun:
+		say "You can see that [he of noun] still has the [ShortDesc of T].";
 	if players-dick-is-detached > 0: [#LXorDD]
 		say its-got-my-dick for the noun.
 

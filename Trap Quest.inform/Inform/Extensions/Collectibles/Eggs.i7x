@@ -235,7 +235,7 @@ A small egg is a kind of egg. The printed name of small egg is "[TQlink of item 
 To decide which figure-name is the examine-image of (C - a small egg):
 	decide on figure of small egg.
 To say ExamineDesc of (B - a small egg):
-	say "A small spherical [if the class of the player is santa's little helper]chocolate egg[otherwise if egg laying fetish is 0 or the player is in a predicament room]white ping pong ball[otherwise]white egg[end if], about half the size of a normal chicken egg[if B is laid]. You laid it out of your own body[end if].".
+	say "A small spherical [if the class of the player is santa's little helper]chocolate egg[otherwise if egg laying fetish is 0 or the player is in a predicament room]white ping pong ball[otherwise]white egg[end if], about half the size of a normal chicken egg[if B is laid]. You laid it out of your own body[end if][if B is laid and the egg-origin of B is a thing] after being oviposited by [NameDesc of egg-origin of B][otherwise if egg-origin of B is a thing]. It came from [NameDesc of egg-origin of B][end if].".
 To decide which number is the outrage of (C - a small egg):
 	decide on 4.
 
@@ -243,7 +243,7 @@ A medium egg is a kind of egg. The printed name of medium egg is "[TQlink of ite
 To decide which figure-name is the examine-image of (C - a medium egg):
 	decide on figure of medium egg.
 To say ExamineDesc of (B - a medium egg):
-	say "This looks exactly like you'd expect a large chicken egg to look like[if the class of the player is santa's little helper], except it is made of chocolate[end if][if B is laid]. You laid it out of your own body[end if].".
+	say "This looks exactly like you'd expect a large chicken egg to look like[if the class of the player is santa's little helper], except it is made of chocolate[end if][if B is laid]. You laid it out of your own body[end if][if B is laid and the egg-origin of B is a thing] after being oviposited by [NameDesc of egg-origin of B][otherwise if egg-origin of B is a thing]. It came from [NameDesc of egg-origin of B][end if].".
 To compute tentacle hatch of (E - a medium egg):
 	let M be a random off-stage facehugger;
 	if M is monster:
@@ -262,7 +262,7 @@ A large egg is a kind of egg. The printed name of large egg is "[TQlink of item 
 To decide which figure-name is the examine-image of (C - a large egg):
 	decide on figure of large egg.
 To say ExamineDesc of (B - a large egg):
-	say "This huge bird style egg is at least twice the size of your average chicken egg. It looks more like what you'd expect a small ostrich egg or small dinosaur egg to look like[if the class of the player is santa's little helper], except it is made of chocolate[end if]![if B is laid][line break]You laid it out of your own body, although now looking at its size you can hardly believe it.[end if]".
+	say "This huge bird style egg is at least twice the size of your average chicken egg. It looks more like what you'd expect a small ostrich egg or small dinosaur egg to look like[if the class of the player is santa's little helper], except it is made of chocolate[end if]![if B is laid][line break]You laid it out of your own body, although now looking at its size you can hardly believe it.[end if][if egg-origin of B is a thing][line break]It came from [NameDesc of egg-origin of B].[end if]".
 To compute tentacle hatch of (E - a large egg):
 	let M be a random off-stage tentacle monster;
 	if M is monster:

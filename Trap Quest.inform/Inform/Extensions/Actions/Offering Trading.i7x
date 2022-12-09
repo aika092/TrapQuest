@@ -26,12 +26,17 @@ Check offering it to:
 	if the second noun is not monster, say "You can only offer things to other people." instead;
 	if the second noun is penetrating a body part or the second noun is grabbing the player, say "It's a bit late for that, don't you think?" instead;
 	if the noun is body part, try presenting the noun instead;
-	if the second noun is rejecting the noun, say "You already tried that, and [he of the second noun] wasn't interested." instead;
 	if the noun is not portable, say "That's not something you can give." instead;
 	if the noun is diaper and the second noun is witch, try giving the noun to the second noun instead;
 	if the noun is worn and the noun is not autoremovable, say "You'd need to remove it first." instead;
 	if the second noun is uninterested, say "The [second noun] doesn't seem to be paying attention to you." instead;
 	if the second noun is mechanic and the woman-status of woman-player is 91 and the mechanic-scene of woman-player <= 3 and woman-player is in the location of the player and mechanic is unfriendly, say "[big he of mechanic] doesn't seem interested in counter-offers." instead;
+	if the errand-value of the noun for the second noun > 0 and the second noun is friendly:
+		if the noun is slave collar and the second noun is pimp:
+			compute special collar delivery instead;
+		otherwise:
+			compute errand completion of the second noun instead;
+	if the second noun is rejecting the noun, say "You already tried that, and [he of the second noun] wasn't interested." instead;
 	if the second noun is wench and the second noun is dangerous and the noun is desirable knickers and the second noun is not horny-wench:
 		allocate 4 seconds;
 		compute the second noun WenchReceiving the noun instead;
@@ -62,6 +67,7 @@ To say FriendlyOfferFlav of (T - a thing):
 Part - Monsters Reaction
 
 To decide which number is the bartering value of (T - a thing) for (M - a monster):
+	if M is student or M is staff member, decide on 0;
 	if T is plentiful accessory and M is intelligent, decide on the price of T;
 	decide on 0.
 

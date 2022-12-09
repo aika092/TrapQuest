@@ -332,7 +332,7 @@ To execute (E - bag-feeding-skirt):
 
 bag-feeding-exercise is a bag-feeding-effect.
 Definition: bag-feeding-exercise is appropriate:
-	if the noun is exercise themed, decide yes;
+	if the noun is exercise themed and weight gain fetish is 1, decide yes;
 	decide no.
 To execute (E - bag-feeding-exercise):
 	say "Your bag reacts to exercise theme of your [ShortDesc of noun] by making you fatter!";

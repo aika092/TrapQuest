@@ -285,7 +285,9 @@ To compute appearance assessment of (M - a wench):
 To compute perception of (M - a wench):
 	let PSRB be a random carried probably-serve-ready bottle;
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed][one of] even though [he of M] is in no better state [himself of M][or][or][or][or][cycling][end if].";
-	if the latex-transformation of the player > 6: [TODO maybe horny-wenches can have sex with male doll?]
+	if the current-errand of M is completed and M is not uniquely unfriendly:
+		compute errand completion of M;
+	otherwise if the latex-transformation of the player > 6: [TODO maybe horny-wenches can have sex with male doll?]
 		say "[big he of M] seems a [if M is horny-wench]bit aroused but[otherwise]little creeped out by your appearance and[end if] leaves you alone.";
 		bore M;
 	otherwise if M is horny-wench:
@@ -555,6 +557,7 @@ This is the wench asscum cup punishment rule:
 			dump champagne-glass;
 		now the fill-colour of champagne-glass is creamy;
 		DoseUp champagne-glass;
+		now M is inseminating champagne-glass;
 		say "[BigNameDesc of M] squats over the glass and allows a thick glob of [semen] to ooze out of [his of M] asshole and fill [NameDesc of champagne-glass], before handing it back to you.";
 		cutshow figure of wench cutscene 9 for M;
 		let W be a random nonstalking wisp;
@@ -609,6 +612,7 @@ To BBC brainwash (M - a wench) with (A - a submissive collar):
 			unseal QoS wench from M;
 		otherwise:
 			say "[BigFuckerDesc of M] looks quite smug with [his of M] new [ShortDesc of A] before [if shopkeeper is in the location of the player][NameDesc of shopkeeper] steps up and places a hand on [his of M] shoulder.[otherwise]a green portal suddenly opens behind [his of M], and [NameDesc of shopkeeper] walks through![end if][speech style of shopkeeper]'Wow, you really are just a greedy slut aren't you? Lucky for you, I'm in need of a 'personal attendant' who can serve my [']needs['].'[roman type][line break][BigFuckerDesc of shopkeeper] grins and gestures to [his of shopkeeper] [LongDickDesc of shopkeeper].[line break][speech style of M]'No way pig, I'll never touch your fucking di...'[roman type][line break]Before [he of M] can finish [his of M] sentence, [NameDesc of shopkeeper] effortlessly takes [NameDesc of M] into [his of shopkeeper] arms, presses [his of M] legs behind [his of M] head, and impales [NameDesc of M] on [his of shopkeeper] waiting [LongDickDesc of shopkeeper]. [BigFuckerDesc of M] looks to be in complete shock as [NameDesc of shopkeeper] pistons in and out of [his of M] [if lady fetish is 2]gripping anal ring[otherwise]dripping wet cunt[end if]. It's clearly not all bad as [he of M] starts to howl and moan like a pornstar. [BigFuckerDesc of M] suddenly seems to tense up before [his of M]'s wracked by an intense orgasm.[line break][speech style of M]'Oh fuck, oh fuck...so good... Yes yes yes fuck the shit out off me!'[roman type][line break]Strangely, you see a black spade tattoo appear under [his of M] left cheek as [he of M] orgasms yet again. This process repeats itself, as a tattoo reading [']BLACK COCK ONLY['] appears on [his of M] pubic mound. Seemingly satisfied with [NameDesc of M][']s rapidly deteriorating mental and physical state, [FuckerDesc of shopkeeper] puts the thoroughly stretched out and babbling [ShortDesc of M] down on the floor.[line break][speech style of shopkeeper]'If you want more of this dick, you know where to find me slut.'[roman type][line break][if shopkeeper is not in the location of the player][BigFuckerDesc of shopkeeper] leaves through the portal [he of M] came through and it closes behind [him of shopkeeper].[end if][speech style of M]'Wait, [daddytitle of shopkeeper]...need [BlackCock]..need your cum inside me.'[roman type][line break]Exhausted, [FuckerDesc of M] passes out on the floor.";
+			now the refractory-period of shopkeeper is the refractory-time of shopkeeper;
 			bbc-trainingUp M by 2;
 			bore M;
 			compute M sleeping 400 after sex.
@@ -752,8 +756,8 @@ To say FacesitSubmissionResponse of (M - a wench):
 	if the creampieTimer of M <= 0:
 		say "[one of][BigNameDesc of M] moans as you obediently lick [his of M] [HoleDesc of M].[or]You dig your tongue into [NameDesc of M][']s gaping [HoleDesc of M].[or]You tease [NameDesc of M][']s [if lady fetish is 2]anal ring[otherwise]clit[end if] with your tongue.[or]You [if the oral sex addiction of the player < 8]reluctantly[otherwise if the delicateness of the player < 10]somewhat reluctantly[otherwise]eagerly[end if] stroke the wench's [if lady fetish is 2]sphincter[otherwise]folds[end if] with your tongue.[in random order]";
 	otherwise:
-		say "[one of]You lick [NameDesc of M][']s [HoleDesc of M] with your tongue, swallowing the [semen] as it slowly flows into your mouth.[or]You dig your tongue into [NameDesc of M][']s [HoleDesc of M], which immediately rewards you with a thick glob of salty [semen].[or]You tease [NameDesc of M][']s [if lady fetish is 2]anal ring[otherwise]clit[end if] with your tongue. Warm [semen] slowly dribbles out of [his of M] [HoleDesc of M] and into your open mouth.[or]You spear your tongue into [NameDesc of M][']s gaping [HoleDesc of M], allowing the [semen] within to slowly roll into your mouth.[or]You obediently open your mouth, allowing the [semen] slowly oozing out of [his of M] [HoleDesc of M] to slide down your throat.[or]You [if the semen taste addiction of the player < 8]reluctantly[otherwise if the delicateness of the player < 10]somewhat reluctantly[otherwise]eagerly[end if] stroke the wench's [if lady fetish is 2]sphincter[otherwise]folds[end if] with your tongue, swallowing obediently as [semen] dribbles into your mouth.[or][if the semen taste addiction of the player < 8]You tease [his of M] [HoleDesc of M] with your tongue, trying to clean it out while tasting as little [semen] as possible. There's still quite a lot.[otherwise if the semen addiction of the player < 12]You obediently scour [his of M] [HoleDesc of M] with your tongue, hesitating only for a moment before swallowing the [semen] that trickles out.[otherwise]You kiss and lick every inch of [his of M] [HoleDesc of M], eagerly lapping up and swallowing any [semen] that trickles out.[end if][in random order]";
-		StomachSemenUp 1;
+		say "[one of]You lick [NameDesc of M][']s [HoleDesc of M] with your tongue, causing the [semen] inside to slowly flow into your mouth.[or]You dig your tongue into [NameDesc of M][']s [HoleDesc of M], which immediately rewards you with a thick glob of salty [semen].[or]You tease [NameDesc of M][']s [if lady fetish is 2]anal ring[otherwise]clit[end if] with your tongue. Warm [semen] slowly dribbles out of [his of M] [HoleDesc of M] and into your open mouth.[or]You spear your tongue into [NameDesc of M][']s gaping [HoleDesc of M], allowing the [semen] within to slowly roll into your mouth.[or]You obediently open your mouth, allowing the [semen] slowly oozing out of [his of M] [HoleDesc of M] to slide down your tongue.[or]You [if the semen taste addiction of the player < 8]reluctantly[otherwise if the delicateness of the player < 10]somewhat reluctantly[otherwise]eagerly[end if] stroke the wench's [if lady fetish is 2]sphincter[otherwise]folds[end if] with your tongue, swallowing obediently as [semen] dribbles into your mouth.[or][if the semen taste addiction of the player < 8]You tease [his of M] [HoleDesc of M] with your tongue, trying to clean it out while tasting as little [semen] as possible. There's still quite a lot.[otherwise if the semen addiction of the player < 12]You obediently scour [his of M] [HoleDesc of M] with your tongue, collecting the [semen] that trickles out on your tongue.[otherwise]You kiss and lick every inch of [his of M] [HoleDesc of M], eagerly lapping up any [semen] that trickles out.[end if][in random order]";
+		FaceFill semen by 1;
 		decrease the creampieTimer of M by 30;
 		if the creampieTimer of M < 0, now the creampieTimer of M is 0;
 	progress quest of creampie-drinking-quest.
@@ -851,7 +855,8 @@ To decide if (M - a wench) is flipping the player:
 	decide no.
 
 To compute (M - a wench) entering mouth:
-	if milking is 1:
+	dislodge M; [in case she is wrangling a body part herself]
+	if milking is 1 or there is a monster wrangling a body part:
 		do nothing;
 	otherwise:
 		if presented-orifice is penis:
@@ -1420,7 +1425,7 @@ To say PresentFriendlyRejectionFlav of (M - a wench):
 	otherwise:
 		say "[speech style of M]'Sorry, I don't really swing that way.'[roman type][line break]";
 
-To compute (M - a wench) considering (T - a vessel):
+To compute (M - a wench) considering (T - a bottle):
 	if M is unfriendly:
 		say "[speech style of M]'Why save it for later when I can feed you right now?'[roman type][line break][BigNameDesc of M] ignores the [T]!";
 		alwayscutshow figure of wench interact 13 for M;
@@ -1431,12 +1436,15 @@ To compute (M - a wench) considering (T - a vessel):
 			say WaitressOfferAcceptFlav of M to T;
 			say WaitressTakeFlav of M to T;
 			compute waitress resolution of M taking T;
+	otherwise if T is non-empty:
+		say "[speech style of M]'I'm not thirsty for that sort of thing right now.'[roman type][line break]";
 	otherwise if T is not tight topped:
 		say "[speech style of M]'[one of]With what? Cum? I don't know why you can't just lick me out, but I guess if you need a fix it's better than sucking [manly-penis] for it.'[or]Sure, I'm just glad to have it out of me.'[stopping][roman type][line break]";
 		say MonsterTakeFlav of M to T;
 		alwayscutshow figure of wench interact 8 for M;
 		SetDose T to 2;
 		now the fill-colour of T is creamy;
+		now M is inseminating T;
 	otherwise:
 		say "[BigNameDesc of M] shakes [his of M] head no.[line break][speech style of M]'What would I even fill it up with?'[roman type][line break]";
 		alwayscutshow figure of wench interact 10 for M.
@@ -1669,7 +1677,14 @@ To set up (M - workaholic wench):
 	reset M;
 	now the monstersetup of M is 1;
 	add white-bodice to the banishItems of M, if absent;
-	add condom-pack to the tradableItems of M;
+	add condom-pack to the tradableItems of M, if absent;
+	add condom-pack to the taxableItems of M, if absent;
+	add invigoration-elixir to the tradableItems of M, if absent;
+	add invigoration-elixir to the taxableItems of M, if absent;
+	let MK be a random off-stage make up kit;
+	if MK is a thing:
+		add MK to the tradableItems of M, if absent;
+		add MK to the taxableItems of M, if absent;
 	now the raw difficulty of M is the starting difficulty of M + 6;
 	if a2m fetish > 1, now the creampieTimer of M is 300;
 	now the health of M is the maxhealth of M;

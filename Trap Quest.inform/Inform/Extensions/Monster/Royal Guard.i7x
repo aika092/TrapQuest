@@ -320,7 +320,7 @@ To compute (M - a royal guard) npcBattling (N - a gladiator):
 	if N is undefeated:
 		say "[BigNameDesc of M][']s eyes are drawn [if M is interested]away from you [end if]to [NameDesc of N].[line break][speech style of M]'[one of]I do not approve of your appearance, wench. Get on your knees, or I will be forced to make you[or]You there, wench. Such a lascivious display is against the law. Get on your knees and receive your punishment[or]You cannot walk these halls with such an appearance, wench. Get on your knees. Now[in random order].'[roman type][line break][big he of M] narrows [his of M] eyes at [FuckerDesc of N], who slowly turns to look at [him of M].[line break][speech style of N]'Ha. [one of]A true woman kneels for no one.'[or]Me? Kneel to you? A real woman does not kneel.'[or]I will never kneel to any man, especially not you.'[in random order][roman type][line break]";
 		if a random number between 1 and 2 is 1:[guard loses]
-			say "[BigFuckerDesc of M] grabs [FuckerDesc of N] by the wrist and [if N is swordless]tries to wrench the sword out of [his of N] hand[otherwise]tries to smack [him of N][end if], but [FuckerDesc of N] reacts quickly and strikes [him of M] in the chest.[line break][speech style of M]'[one of]Oof-!'[or]Unh-!'[in random order][roman type][line break][FuckerDesc of M] immediately releases [him of N] and runs off before [FuckerDesc of N] can retaliate!";
+			say "[BigFuckerDesc of M] grabs [FuckerDesc of N] by the wrist and [if N is swordless]tries to wrench the sword out of [his of N] hand[otherwise]tries to smack [him of N][end if], but [FuckerDesc of N] reacts quickly and strikes [him of M] in the chest.[line break][speech style of M]'[one of]Oof-!'[or]Unh-!'[in random order][roman type][line break][BigFuckerDesc of M] immediately releases [him of N] and runs off before [FuckerDesc of N] can retaliate!";
 			now the refractory-period of M is 50;[so he doesn't try again immediately]
 			bore M;
 			compute mandatory room leaving of M;
@@ -465,6 +465,8 @@ To compute perception of (M - a royal guard):
 	otherwise if M is prison guard and there is worn locked clothing and M is not uniquely unfriendly:
 		if debugmode > 0, say "List of items the jailor cares about: [list of worn locked clothing].";
 		compute jailor perception of M;
+	otherwise if the current-errand of M is completed and M is not uniquely unfriendly:
+		compute errand completion of M;
 	otherwise if the class of the player is living sex doll:
 		say "[speech style of M]'A sex doll! Just what I need to satisfy my urges. Come here!'[roman type][line break]";
 		anger M;
@@ -575,6 +577,8 @@ To compute DQ perception of (M - a royal guard):
 		say "[TutorialGreet of M]";
 	otherwise if M is prison guard and there is worn locked clothing:
 		compute jailor perception of M;
+	otherwise if the current-errand of M is completed and M is not uniquely unfriendly:
+		compute errand completion of M;
 	otherwise if there is held stolen clothing and shopkeeper is unfriendly:
 		say "[speech style of M]'Halt, in the name of the law!'[roman type][line break]";
 		anger M;
@@ -883,7 +887,8 @@ To decide if (M - a royal guard) is willing to creampie (F - a fuckhole):
 	decide no.
 
 To say MessyPullOutFlav of (M - a royal guard) in (F - a fuckhole):
-	say "[one of][BigNameDesc of M] roars with pleasure, barely pulling out as [he of M] explodes, blasting your crotch with thick, creamy [semen].[or][BigNameDesc of M] grunts, [DickDesc of M] throbbing powerfully as [he of M] pulls out and douses your crotch with fresh, warm [semen].[at random] [if the semen addiction of the player < 7]You breathe a small sigh of relief as [he of M] slumps over, asleep.[otherwise if the semen addiction of the player < 12]You blink a couple times, glancing over your shoulder as [he of M] slumps over, asleep.[otherwise]You grumble in disappointment as [he of M] slumps over and falls asleep.[end if]".
+	if bukkake fetish is 1, say "[one of][BigNameDesc of M] roars with pleasure, barely pulling out as [he of M] explodes, blasting your [AssDesc] with thick, creamy [semen].[or][BigNameDesc of M] grunts, [DickDesc of M] throbbing powerfully as [he of M] pulls out and douses your [AssDesc] with fresh, warm [semen].[at random] [if the semen addiction of the player < 7]You breathe a small sigh of relief as [he of M] slumps over, asleep.[otherwise if the semen addiction of the player < 12]You blink a couple times, glancing over your shoulder as [he of M] slumps over, asleep.[otherwise]You grumble in disappointment as [he of M] slumps over and falls asleep.[end if]";
+	otherwise say "[one of][BigNameDesc of M] roars with pleasure, barely pulling out as [he of M] explodes, blasting your crotch with thick, creamy [semen].[or][BigNameDesc of M] grunts, [DickDesc of M] throbbing powerfully as [he of M] pulls out and douses your crotch with fresh, warm [semen].[at random] [if the semen addiction of the player < 7]You breathe a small sigh of relief as [he of M] slumps over, asleep.[otherwise if the semen addiction of the player < 12]You blink a couple times, glancing over your shoulder as [he of M] slumps over, asleep.[otherwise]You grumble in disappointment as [he of M] slumps over and falls asleep.[end if]".
 
 To say PullOutFlav of (M - a royal guard) in (F - a fuckhole):
 	say "[one of][BigNameDesc of M] roars with pleasure, barely pulling out as [he of M] explodes, spraying [semen] all over the ground.[or][BigNameDesc of M] grunts, [DickDesc of M] throbbing powerfully as [he of M] pulls out and douses the ground with fresh, warm [semen].[at random] [if the semen addiction of the player < 7]You breathe a small sigh of relief as [he of M] slumps over, asleep.[otherwise if the semen addiction of the player < 12]You blink a couple times, glancing over your shoulder as [he of M] slumps over, asleep.[otherwise]You grumble in disappointment as [he of M] slumps over and falls asleep.[end if]".

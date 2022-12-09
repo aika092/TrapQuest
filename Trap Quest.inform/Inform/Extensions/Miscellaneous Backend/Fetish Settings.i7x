@@ -228,7 +228,7 @@ To decide which number is april fools content:
 
 To decide which number is halloween content:
 	if the player is not a top donator, decide on 0;
-	if choice in row 80 of the Table of Player Options < 3, decide on 0;
+	if choice in row 80 of the Table of Player Options < 4, decide on 0;
 	decide on 1.
 
 To decide which number is futanari fetish:
