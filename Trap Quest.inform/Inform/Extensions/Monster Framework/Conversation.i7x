@@ -409,7 +409,7 @@ To compute annoyed punishment of (M - a monster):
 		summon B locked;
 	otherwise:
 		say "[speech style of M]'Shut up already!'[roman type][line break][BigNameDesc of M] backhands you harshly in the face!";
-		DelicateUp 1.
+		PainUp 20.
 
 [!<SayFriendlyPartnerGreetingToMonster>+
 
@@ -1828,7 +1828,11 @@ To compute instant effect of (E - an errand) for (P - a person):
 	do nothing.
 To compute errand completion of (P - a person):
 	if seconds is 0, allocate 6 seconds;
-	compute completion of the current-errand of P for P.
+	if (P is mechanic or P is demon lord) and love-letters is held:
+		calm P;
+		compute special letter delivery;
+	otherwise:
+		compute completion of the current-errand of P for P.
 To compute completion of (E - an errand) for (P - a person):
 	now the current-errand of P is no-errand;
 	if P is a monster, calm P;
@@ -2339,7 +2343,7 @@ To say RequestDuplicationRejection of (M - a robot):
 
 chef-cookie-errand is an errand.
 Definition: chef-cookie-errand is appropriate:
-	if cookie is off-stage and vampiress is alive, decide yes;
+	if diaper quest is 0 and cookie is off-stage and vampiress is alive, decide yes;
 	decide no.
 Definition: chef-cookie-errand is completed:
 	if cookie is carried by vampiress, decide yes;
@@ -2475,6 +2479,8 @@ Definition: wench-protection-errand is completed:
 	decide no.
 To decide which number is the errand-weight of (E - wench-protection-errand) for (P - wench):
 	decide on 10.
+To decide which number is the errand-weight of (E - wench-protection-errand) for (P - an adult baby slave):
+	decide on 10.
 To decide which number is the errand-value of (E - slave collar) for (P - a person):
 	if P is pimp and the current-errand of shopkeeper is wench-protection-errand, decide on 1;
 	decide on 0.
@@ -2485,18 +2491,20 @@ To compute instant effect of (E - wench-protection-errand) for (P - a person):
 	now M is in the location of the player;
 	now M is interested;
 	now the sleep of M is 0;
-	say "[BigNameDesc of M] has just entered the room![line break][speech style of M]'You, wench! It's time for your next punishment! Behold, the long cock of the law!'[roman type][line break]Do you stand in front of [NameDesc of P] and protect [him of P]?";
+	say "[BigNameDesc of M] has just entered the room![line break][speech style of M]'You, wench! It's time for your next punishment! Behold, the long [if diaper quest is 1]spanking paddle[otherwise]cock[end if] of the law!'[roman type][line break]Do you stand in front of [NameDesc of P] and protect [him of P]?";
 	if the player is consenting:
 		say "You put yourself between [NameDesc of M] and [his of M] target, making yourself the new target.[line break][speech style of M]'You want a taste of the law too?!'[roman type][line break]";
 		anger M;
 		now the protected of E is 1;
 	otherwise:
-		say "You timidly stand aside and let [NameDesc of M] fulfil [his of M] [']legal obligations['].[line break][speech style of P]'Goddammit! I'll remember this, [NameBimbo]!'[roman type][line break]That's all [he of P] manages to say before [his of P] mouth is filled with [NameDesc of M][']s [manly-penis]. After that, the only sounds [he of P] makes are gagging sounds, as [NameDesc of M][']s [manly-penis] repeatedly strikes the back of [his of P] throat... And then gargling sounds as [NameDesc of M] shoots [his of M] load down [NameDesc of P][']s gullet. [NameDesc of P] is left choking and exhausted on the ground, and [he of P] eventually slowly crawls away.[line break][speech style of M]'Good choice, citizen.'[roman type][line break][BigNameDesc of M] nods in your direction.";
+		say "You timidly stand aside and let [NameDesc of M] fulfil [his of M] [']legal obligations['].[line break][speech style of P]'Goddammit! I'll remember this, [NameBimbo]!'[roman type][line break]That's all [he of P] manages to say before [if diaper quest is 0][his of P] mouth is filled with [NameDesc of M][']s [manly-penis]. After that, the only sounds [he of P] makes are gagging sounds, as [NameDesc of M][']s [manly-penis] repeatedly strikes the back of [his of P] throat... And then gargling sounds as [NameDesc of M] shoots [his of M] load down [NameDesc of P][']s gullet. [NameDesc of P] is left choking[otherwise][NameDesc of M][']s spanking paddle connects with [his of P] butt. After that, the only sounds [he of P] makes are yelping and wailing sounds, as [NameDesc of M][']s paddle repeatedly strikes [his of P] tender bottom through [his of P] padding. [NameDesc of P] is left sobbing[end if] and exhausted on the ground, and [he of P] eventually slowly crawls away.[line break][speech style of M]'Good choice, citizen.'[roman type][line break][BigNameDesc of M] nods in your direction.";
 		anger P;
 		bore P;
 		regionally place P;
 		satisfy M;
 		now the protected of E is -1.
+To compute unique completion of (E - wench-protection-errand) for (P - a person):
+	say "[speech style of P]'Thank you for saving me back there!'[roman type][line break]".
 
 human-urinal-errand is an errand.
 Definition: human-urinal-errand is appropriate:
@@ -2741,7 +2749,55 @@ To compute errand rewarding of (T - be-my-urinal) from (P - a person):
 	otherwise:
 		say "You shake your head. The need has gone. All that for nothing!".
 
+be-my-diaper is a requestable.
+Definition: be-my-diaper is appropriate:
+	if watersports fetish is 0 or the player is not bursting, decide no;
+	if the noun is wrestler or the noun is adult baby slave, decide yes;
+	if diaper quest is 1 and the noun is student and the current-rank of the noun >= 5, decide yes;
+	decide no.
+To say RequestFlav of (C - be-my-diaper):
+	say "'I really need to pee... Would you mind letting me use your diaper?'".
+To say RewardFlav of (C - be-my-diaper):
+	say "let you pee in my diaper".
+To compute errand rewarding of (T - be-my-diaper) from (P - a person):
+	say "[speech style of P]'So... Do you still need to do a wee?'[roman type][line break]";
+	if the player is bursting:
+		let C be a random worn actually unavoidable pee covering clothing;
+		if C is clothing:
+			say "You shake your head. You actually can't get [NameDesc of C] out of the way. All that for no reward!";
+		otherwise if the player is consenting:
+			say "You nod your head, and [NameDesc of P] exposes [his of P] diaper and then pulls the front of the waistband forward, prompting you to guide your [genitals] so that your pee will go straight into [his of P] diaper. Which when you release, it does.[line break][speech style of P]'Hehe, that feels funny... And warm...'[roman type][line break]";
+			moderateDignify;
+			now the bladder of the player is 0;
+		otherwise:
+			say "You shake your head, deciding against it for some reason.";
+	otherwise:
+		say "You shake your head. The need has gone. All that for nothing!".
 
+unlock-my-clothing is a requestable. unlock-my-clothing has an object called the unlock-clothing-target.
+Definition: unlock-my-clothing is appropriate:
+	if the unlock-clothing-target of unlock-my-clothing is a clothing:
+		if the unlock-clothing-target of unlock-my-clothing is worn locked clothing, decide no;
+		repeat with P running through people:
+			if the current-reward of P is unlock-my-clothing, now the current-reward of P is no-reward;
+		now the unlock-clothing-target of unlock-my-clothing is nothing;
+	if the noun is generic-unlocker monster:
+		repeat with C running through worn locked clothing:
+			if bondage protection > 0 or the number of unlock-keys covering C is 0:
+				now the unlock-clothing-target of unlock-my-clothing is C;
+				decide yes;
+	decide no.
+To say RequestFlav of (C - unlock-my-clothing):
+	say "'Do you have a key that could unlock my [ShortDesc of the unlock-clothing-target of unlock-my-clothing]?'".
+To say RewardFlav of (C - unlock-my-clothing):
+	say "unlock your [ShortDesc of the unlock-clothing-target of unlock-my-clothing]".
+To compute errand rewarding of (T - unlock-my-clothing) from (P - a person):
+	let C be the unlock-clothing-target of T;
+	if C is worn locked clothing:
+		compute P unlocking C;
+		say "[speech style of P]'You're welcome.'[roman type][line break]";
+	otherwise:
+		say "[speech style of P]'So... Do you still need me to unlock [NameDesc of C]?'[roman type][line break]You shake your head. The need has gone. All that for nothing!".
 
 To consider (T - talk-request) for (M - a monster):
 	if M is intelligent and M is interested and M is undefeated and M is not caged and the player is not in a predicament room and M is friendly:

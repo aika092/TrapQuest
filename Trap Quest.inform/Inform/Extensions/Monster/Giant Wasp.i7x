@@ -105,6 +105,8 @@ To set up (M - a giant wasp):
 
 To decide which number is the girth of (M - a giant wasp):
 	decide on 3.
+To decide which number is the grossness of (M - a giant wasp): [grossness addiction needed to tolerate it]
+	decide on 11.
 
 Part 1 - Misc Flavour
 

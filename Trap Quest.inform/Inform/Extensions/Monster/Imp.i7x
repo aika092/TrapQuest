@@ -65,6 +65,8 @@ To say MediumDesc of (M - naughty imp):
 
 To decide which number is the girth of (M - an imp):
 	decide on 2.
+To decide which number is the grossness of (M - an imp): [grossness addiction needed to tolerate it]
+	decide on 5.
 
 Definition: an imp is infernal: decide yes.
 

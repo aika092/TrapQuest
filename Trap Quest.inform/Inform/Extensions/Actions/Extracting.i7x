@@ -21,8 +21,7 @@ Check extracting something with:
 Carry out extracting something with:
 	allocate 5 seconds;
 	now the fill-colour of the noun is the fill-colour of the second noun;
-	if the second noun is player-origin, now the noun is player-origin;
-	otherwise now the noun is monster-origin;
+	now the drink-origin of the noun is the drink-origin of the second noun;
 	if the doses of the second noun > the max-doses of the noun:
 		DoseFill the noun;
 		DoseDown the second noun by the max-doses of the noun;

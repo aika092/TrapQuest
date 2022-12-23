@@ -10,6 +10,7 @@ Definition: orc is dungeon dwelling:
 
 Definition: orc is dark skinned: decide yes.
 
+
 [Definition: orc is raunchy: decide yes.]
 
 
@@ -74,6 +75,8 @@ Check taking pack of playing cards when the player is in Dungeon07:
 
 To decide which number is the girth of (M - orc):
 	decide on 6.
+To decide which number is the grossness of (M - orc): [grossness addiction needed to tolerate it]
+	decide on 5.
 
 Definition: orc (called M) is willing to shag:
 	[if M is awake and the scared of M is 0 and the boredom of M < 120 and M is threatening, decide yes;]
@@ -776,16 +779,16 @@ To compute poker minigame:
 						AssSwell 2;
 				otherwise: [cursed diaper, transformed, locked diaper cover, glue (and diaper if there is no underwear)]
 					unless PV is listed in numbersExplained, say "[speech style of orc]'Eights affect your underwear.'[roman type][paragraph break]";
-					let DC be a random [off-stage] diaper cover;
+					let RDC be a random [off-stage] diaper cover;
 					if PS is 1 and there is worn upgradable knickers:
 						say "[speech style of orc]'The [poker card of PC] tries to transform your underwear into something more humiliating.'[roman type][line break]";
 						let K be a random worn upgradable knickers;
 						potentially transform K;
-					otherwise if PS is 2 and DC is actually summonable diaper cover:
+					otherwise if PS is 2 and RDC is actually summonable diaper cover:
 						say "[speech style of orc]'The [poker card of PC] gives you a locked diaper cover.'[roman type][line break]";
-						summon DC locked;
-						now DC is waddle-walking;
-						say "A [DC] appears around your loins!";
+						summon RDC locked;
+						now RDC is waddle-walking;
+						say "A [RDC] appears around your loins!";
 					otherwise if there is a worn diaper or the number of worn unremovable knickers is 0:
 						say "[speech style of orc]'The [poker card of PC] [if PS is not 3 or the number of worn diaper is 0]gives you a cursed diaper[end if][if PS is 3 and the number of worn knickers is 0] and [end if][if PS is 3]glues your underwear to your body[end if].'[roman type][line break]";
 						if PS is not 3 or the number of worn knickers is 0:

@@ -41,7 +41,7 @@ Carry out PeeBottling:
 	if the noun is vessel:
 		if the fill-type of the noun is not 21, dump the noun;
 		now the fill-colour of the noun is golden;
-		now the noun is player-origin;
+		now the noun is boring-origin;
 		while the doses of the noun < the max-doses of the noun and the bladder of the player > 0:
 			DoseUp the noun;
 			BladderDown 2;

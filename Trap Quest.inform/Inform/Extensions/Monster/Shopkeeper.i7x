@@ -16,6 +16,8 @@ Definition: shopkeeper is wenchy: decide yes.
 
 Definition: shopkeeper is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 
+Definition: shopkeeper is a generic-unlocker: decide yes.
+
 shopkeeper is in Dungeon41. Understand "shop", "keeper" as shopkeeper. The printed name of shopkeeper is "[if item described is in the location of the player][TQlink of item described][end if][input-style]well built shopkeeper[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of shopkeeper is "sh". Understand "well", "built" as shopkeeper.
 
 Figure of female shopkeeper is the file "NPCs/Dungeon/Shopkeeper/shopkeeper5.png".

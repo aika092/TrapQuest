@@ -44,14 +44,14 @@ Check giving:
 			allocate 6 seconds;
 			if the altar-uses of the second noun < 0, now the altar-uses of the second noun is 0;
 			say "[BigNameDesc of the second noun] brings the [ShortDesc of noun] to [his of the second noun] mouth and starts drinking! [big he of the second noun] downs the whole drink in one, without stopping for a breath. ";
-			if the noun is monster-origin or a2m fetish < 2:
+			if the noun is anal-origin or a2m fetish < 2:
 				say "After [he of the second noun][']s finished, [he of the second noun] falls down on [his of the second noun] shapely butt and sighs happily.[line break][second custom style]'[if the fill-colour of the noun is murky]Good enough[otherwise]Yep, that's the stuff[end if]. You've earned [if the doses of the noun is 1]one use[otherwise][doses of the noun] uses[end if] of the altar.'[roman type][line break]";
 				AltarUsesUp the doses of the noun;
 				if diaper quest is 0, cutshow figure of witch cutscene 1 for witch;
 			otherwise:
 				say "After [he of the second noun][']s finished, [he of the second noun] frowns.[line break][second custom style]'[one of]This is pretty bland, you know. I bet you just [if the fill-colour of the noun is golden]pissed directly into this cup[otherwise]used your own bodily fluids[end if], didn't you? This only gets you 1 use of the altar. Sorry but really I want something actually interesting, something that took some kinky act for you to collect. Go find someone else's cum or piss and then I'll properly reward you. Or at the very least, at least use a squirt dildo to stew this in your butthole for a bit first, that might add a little flavour.'[or]Boring and bland again. Only worth 1 use of the altar, I'm afraid.'[stopping][roman type][line break]";
 				AltarUsesUp 1;
-			if there is a worn waitress-enabling wearthing or (the class of the player is royal slave and the noun is monster-origin and the fill-colour of the noun is white), compute waitress resolution of the second noun taking the noun;
+			if there is a worn waitress-enabling wearthing or (the class of the player is royal slave and the noun is anal-origin and the fill-colour of the noun is white), compute waitress resolution of the second noun taking the noun;
 			DoseEmpty the noun;
 			do nothing instead;
 		otherwise if the noun is diaper:

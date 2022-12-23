@@ -229,6 +229,7 @@ This is the interracial random rule:
 	if choice in row 45 of the Table of Player Options is 0 or choice in row 45 of the Table of Player Options is 1, now choice in row 45 of the Table of Player Options is a random number between 0 and 1.
 The interracial random rule is listed in the random mode rules.
 
+
 To decide which number is mythical creature/creatures fetish:
 	if diaper quest is 1, decide on 0;
 	if choice in row 48 of the Table of Player Options <= 0, decide on 0;

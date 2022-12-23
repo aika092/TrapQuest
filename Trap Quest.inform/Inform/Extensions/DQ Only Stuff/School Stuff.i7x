@@ -516,6 +516,7 @@ To compute chess time:
 		otherwise:
 			say "[BigNameDesc of ST] is forced to drink more of the punishment [if diaper messing >= 3]NUTRI-LAX [end if]liquid.";
 			increase the student-rectum of chess-lesson by 2;
+		compute wallowing;
 		compute hunger and thirst;
 		compute bladder growth;
 		if the player is bursting:

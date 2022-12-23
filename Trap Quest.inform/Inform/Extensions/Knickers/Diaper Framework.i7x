@@ -476,7 +476,7 @@ Check wearing diaper when there is a worn diaper:
 	follow the global wearability rules;
 	if the rule failed, do nothing instead;
 	repeat with C running through worn crotch-in-place crotch covering skirts:
-		if autowear is false, say "You need to pull up your [printed name of C] to get this on successfully!" instead;
+		if autowear is false, say "You need to [if C is crotch-zipped]unzip[otherwise]pull up[end if] your [printed name of C] to get this on successfully!" instead;
 	repeat with C running through worn crotch-pullup clothing:
 		unless C is diaper or (C is no protection and wearing-target is not crotch-pullup): [You could put on a disposable diaper through a ripped dress]
 			if autowear is false, say "You need to [if C is displacable and wearing-target is not crotch-pullup]displace[otherwise]remove[end if] your [printed name of C] to get this on successfully!" instead;
@@ -703,6 +703,8 @@ To Drench (C - diaper-stack):
 To update diaper stack:
 	if diaper-stack is worn:
 		let N be the number of entries in the list of stacked diapers;
+		repeat with C running through the list of stacked diapers:
+			now the glue timer of C is the glue timer of diaper-stack;
 		compute diaper-stack inheriting from entry N in the list of stacked diapers;
 		now the mess of diaper-stack is 0;
 		now the foreign-mess of diaper-stack is 0;

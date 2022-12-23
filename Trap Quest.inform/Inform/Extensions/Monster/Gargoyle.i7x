@@ -11,6 +11,7 @@ Definition: gargoyle is willing to charm snakes if diaper quest is 0.
 
 Definition: gargoyle is willing to masturbate: decide yes.
 Definition: gargoyle is penis-virginity taking: decide no.
+Definition: gargoyle is a clothes-destroyer: decide yes.
 
 The text-shortcut of gargoyle is "gy". Understand "stone", "statue", "sentry" as gargoyle.
 
@@ -91,6 +92,8 @@ The spawn initial gargoyle rule is listed in the setting up mansion monsters rul
 
 To compute monstermotion of (M - gargoyle):
 	if M is unleashed, compute room leaving of M.
+
+To decide which number is the grossness of (M - gargoyle): decide on 7.
 
 Part 1 - Misc Flavour
 

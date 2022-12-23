@@ -150,6 +150,7 @@ To set up (M - a patron):
 	now M is not pissed off;[In case the patron was angry during his last session with the player. He's calmed down since then.]
 	now the health of M is the maxhealth of M;
 	now the wanking-target of M is nothing;
+	now the bladder of M is a random number between 0 and 1000;
 	now the refractory-period of M is 0.
 
 To decide which number is the starting difficulty of (M - a patron):
@@ -264,13 +265,13 @@ A time based rule (this is the patron encountering rule):
 				let PSRB be a random carried probably-serve-ready bottle;
 				if PSRB is a bottle and the waitress bartering value of PSRB for P > 0:
 					now P is in the location of the player;
-					set up P;
+					[set up P;]
 					compute waitressDemand of P on PSRB;
 				otherwise if watersports fetish is 1 and face is not actually occupied and there is a worn ringagged clothing:
 					compute player urinal use of P;
 				otherwise if M is a thing or a random number between 1 and 2 is 1:
 					now P is in the location of the player;
-					set up P;
+					[set up P;]
 					if M is a thing:
 						compute patronMeeting of M with P;
 					otherwise:
@@ -478,7 +479,7 @@ To compute patronEncounter of (M - an experienced patron):
 				increase the employee-record of senior robobellboy by 1;
 				if M is dark skinned and a random number between 2 and 10 > the bbc addiction of the player, BBCAddictUp 1;
 			otherwise:
-				say "You shake your head, and [he of M] rolls [his of M] eyes.[line break][speech style of M]'Hmph. Typical. Your manager will hear about his.'[roman type][line break][BigNameDesc of M] leaves the room.";
+				say "You shake your head, and [he of M] rolls [his of M] eyes.[line break][speech style of M]'Hmph. Typical. Your manager will hear about this.'[roman type][line break][BigNameDesc of M] leaves the room.";
 				decrease the employee-record of senior robobellboy by 1;
 	otherwise:
 		if debuginfo > 1, say "[input-style]Patron is ejaculating on the floor in [location of M].[roman type][line break]";
@@ -486,14 +487,23 @@ To compute patronEncounter of (M - an experienced patron):
 
 To compute patronEncounter of (M - a gross patron):
 	let R be a random number between 1 and 2;
-	if M is in the location of the player:
-		say "A [MediumDesc of M] walks into the room, [if R is 1 and watersports fetish is 1]stumbling a bit as [he of M] pisses in the corner[otherwise]and begins to masturbate as soon as [he of M] makes eye contact with you. [big he of M] groans with pleasure as [he of M] blows a big load on the ground[end if].";
 	if R is 1 and watersports fetish is 1:
+		if M is in the location of the player, say "A [MediumDesc of M] walks into the room, stumbling a bit as [he of M] pisses in the corner.";
 		if debuginfo > 1, say "[input-style]Patron is pissing on the floor in [location of M].[roman type][line break]";
 		UrinePuddleUp (the semen load of M) in (the location of M);
 	otherwise:
-		if debuginfo > 1, say "[input-style]Patron is ejaculating on the floor in [location of M].[roman type][line break]";
-		SemenPuddleUp (the semen load of M) in (the location of M).
+		if M is in the location of the player and face is undefended:
+			say "A [MediumDesc of M] walks into the room, and approaches you.[line break][speech style of M]'Give us a kiss, sweetie!'[line break][variable custom style]What a gross [man of M]...[roman type][line break]Let [him of M] kiss you?";
+			if the player is bimbo consenting:
+				say "You close your eyes and allow [NameDesc of M] to push [his of M] lips against yours. With some disgusting slobbery action, [he of M] explores your mouth with [his of M] bitter-tasting tongue.[line break][variable custom style]When was the last time [he of M] brushed [his of M] teeth?![roman type][line break][GrossOut 5]";
+			otherwise:
+				say "You shake your head, and [he of M] looks offended.[line break][speech style of M]'You bitches are all the same. So shallow! You only care about looks. Nice guys like me always get passed over. Well I'm not standing for it any more. Your manager will hear about this.'[roman type][line break][BigNameDesc of M] leaves the room.";
+				decrease the employee-record of senior robobellboy by 1;
+		otherwise:
+			if M is in the location of the player, say "A [MediumDesc of M] walks into the room, and begins to masturbate as soon as [he of M] makes eye contact with you. [big he of M] groans with pleasure as [he of M] blows a big load on the ground.";
+			if debuginfo > 1, say "[input-style]Patron is ejaculating on the floor in [location of M].[roman type][line break]";
+			SemenPuddleUp (the semen load of M) in (the location of M).
+
 
 To compute patronEncounter of (M - a dickhead patron):
 	if M is in the location of the player:
@@ -1797,6 +1807,8 @@ Definition: a patron (called M) is willing to spank gently:
 Definition: a patron (called M) is willing to masturbate:
 	if the health of M is the maxhealth of M and M is not pissed off and a random number between 0 and 10000 < the arousal of the player, decide yes;
 	decide no.
+
+Definition: a patron is willing to use a diaper urinal: decide yes.
 
 To say MasturbationDeclarationFlav of (M - a patron):
 	say "[speech style of M]'[one of]Oh, good, I see you're diapered like a baby should be. I guess you deserve a little reward[or]Lie down baby, [daddytitle of M] is going to make you feel good today[stopping]...'[roman type][line break]".

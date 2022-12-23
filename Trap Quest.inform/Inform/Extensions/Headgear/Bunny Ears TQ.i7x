@@ -105,7 +105,7 @@ To say WaitressTakeFlav of (M - a monster) to (T - a bottle):
 To compute waitress resolution of (M - a monster) taking (T - a bottle):
 	now the waitress-boredom of M is 300;
 	progress quest of milk-serve-quest;
-	if T is player-origin and the class of the player is royal slave:
+	if T is boring-origin and the class of the player is royal slave:
 		class summon cow print basque;
 	progress quest of bunny-waitress-quest;
 	DoseEmpty T;
@@ -154,7 +154,7 @@ To compute service spill punishment:
 					now the fill-colour of V is white;
 					DoseFill V;
 					if alcohol fetish is 1, now V is cursed;
-					if tough-shit is 0, now V is monster-origin; [Royal Slaves can only serve stuff brewed inside them but it would be harsh to enforce that here]
+					if tough-shit is 0, now V is vaginal-origin; [Royal Slaves can only serve stuff brewed inside them but it would be harsh to enforce that here]
 					say "Your [ShortVesselDesc of V] [if V is cursed]is surrounded by a dark glow. It [end if]magically fills itself with milk and then disappears from your hand, appearing on top of the [ShortDesc of serving table]!";
 				otherwise if STV is 0:
 					say "Your [ShortVesselDesc of V] disappears from your hand, appearing on top of the [ShortDesc of serving table]!";

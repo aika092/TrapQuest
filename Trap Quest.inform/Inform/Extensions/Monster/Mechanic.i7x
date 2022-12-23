@@ -14,6 +14,8 @@ Definition: mechanic is permanently banishable: decide no.
 
 Definition: mechanic is willing to have time out: decide no.
 
+Definition:mechanic is a generic-unlocker: decide yes.
+
 Definition: mechanic is blocker:
 	if the woman-status of woman-player is 91 and the mechanic-scene of woman-player <= 3 and woman-player is in the location of the player, decide no; [Barbara BJ scene]
 	decide yes.
@@ -628,6 +630,8 @@ Definition: mechanic is willing to change diapers: decide yes.
 Definition: mechanic is willing to donate diapers: decide yes.
 
 Definition: mechanic is willing to double diapers: decide yes.
+
+Definition: mechanic is willing to use a diaper urinal: decide yes.
 
 To say DoubleDiaperAnnounceFlav of (M - mechanic):
 	say "[BigNameDesc of M] starts fishing in [his of M] toolbox for ANOTHER diaper.[line break][speech style of M]'[one of]You see this load, little one? It's that full on purpose, isn't it? It's because you wanted two of [']em, right?'[or]I don't get paid enough to double diaper you... but you've made it completely necessary.'[in random order][roman type][line break]".

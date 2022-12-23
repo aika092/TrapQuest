@@ -146,7 +146,7 @@ The knickers top level clash rule is listed in the knickers wearability rules.
 This is the hobble skirt knickers top level clash rule:
 	if summoning is 0:
 		repeat with C running through worn total protection crotch covering skirts:
-			if autowear is false, say "You need to pull up your [printed name of C] to get this on successfully!";
+			if autowear is false, say "You need to [if C is crotch-zipped]unzip[otherwise]pull up[end if] your [printed name of C] to get this on successfully!";
 			rule fails.
 The hobble skirt knickers top level clash rule is listed in the knickers wearability rules.
 

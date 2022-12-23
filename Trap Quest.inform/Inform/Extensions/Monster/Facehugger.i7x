@@ -73,6 +73,8 @@ To decide which number is the difficulty of (M - a facehugger):
 To decide which number is the initial maxhealth of (M - a facehugger):
 	decide on 7.
 
+To decide which number is the grossness of (M - a facehugger): decide on 9.
+
 To compute labour to (M - a facehugger):
 	compute tentacle birth.[Possibly this can be changed so tentacle monster daddy is different from lake monster, vine, and belt daddy.]
 
@@ -121,6 +123,7 @@ To compute action (N - a number) of (M - a facehugger):
 					otherwise:
 						say "It pumps your [asshole] full of inhuman [semen]!";
 						assfill SL;
+					compute grossness of M;
 				otherwise if O is vagina:
 					if egg laying fetish is 1 and vagina is accepting womb eggs and C is not worn:
 						say "It pumps your womb full of its alien eggs!";
@@ -128,6 +131,7 @@ To compute action (N - a number) of (M - a facehugger):
 					otherwise:
 						say "It pumps your [vagina] full of inhuman [semen]!";
 						pussyfill SL;
+					compute grossness of M;
 				otherwise:
 					if egg laying fetish is 1 and super gag reflex < 2 and C is not worn:
 						say "It pumps your stomach full of eggs and inhuman [semen]! Your throat doesn't handle having eggs forced down it very well, and as soon as [NameDesc of M] pulls out, you puke it all up.";
@@ -142,11 +146,13 @@ To compute action (N - a number) of (M - a facehugger):
 					otherwise:
 						say "It pumps your stomach full of inhuman [semen]!";
 						StomachSemenUp SL;
+					compute grossness of M;
 				if C is worn:
 					now M is not penetrating O;
 					now C is penetrating O;
 					say "That doesn't seem to be the end of it, and its grip even tightens as it continues to violate your [variable O]![GotUnluckyFlav]";
 					destroy M;
+					compute grossness of C;
 				otherwise:
 					say "The legs let go of you and the body falls off, motionless and dead.";
 					increase facehuggers-fucked by 1;
@@ -168,16 +174,19 @@ To compute action (N - a number) of (M - a facehugger):
 				summon crotch-hugger;
 				gluify crotch-hugger;
 				destroy M;
+				compute grossness of crotch-hugger;
 			otherwise if ass-hugger is off-stage and ass-hugger is actually summonable:
 				say "[BigNameDesc of M] crawls up your leg and latches itself against your [asshole]! You can feel it inserting its ovipositor inside of you as it settles into place as your new 'underwear'. Uh-oh...";
 				summon ass-hugger;
 				gluify ass-hugger;
 				destroy M;
+				compute grossness of ass-hugger;
 			otherwise if hugger-gag is off-stage and hugger-gag is actually summonable:
 				say "[BigNameDesc of M] crawls up your body and latches itself onto your face! You can feel it inserting its ovipositor into your mouth as it settles into place as a sort-of 'gag'. Uh-oh...";
 				summon hugger-gag;
 				gluify hugger-gag;
 				destroy M;
+				compute grossness of hugger-gag;
 		otherwise:
 			say "[BigNameDesc of M] leaps at you, trying to latch onto your thigh!";
 			let D be a random number between 1 and the dexterity of the player;
@@ -188,7 +197,8 @@ To compute action (N - a number) of (M - a facehugger):
 				say "You manage to move yourself out of the way, and [NameDesc of M] goes flying past. It turns around, ready to try again...";
 			otherwise:
 				say "You don't move out of the way in time! It latches onto your thigh with an incredibly strong grip[one of]! Are you going to be able to rip it off?[or]![stopping]";
-				now M is wrangling thighs.
+				now M is wrangling thighs;
+				compute slow grossness of M.
 
 To decide which number is the strength roll of (M - a facehugger): [If this is less than strength, the player can remove the facehugger]
 	if the player is able to use manual dexterity, decide on a random number between 0 and 50;
@@ -242,6 +252,7 @@ Definition: hugger-gag is tearable: decide no. [NPCs can't remove it to use your
 Report taking off hugger-gag:
 	say "You discard the inert facehugger, and it drops to the ground, lifeless.";
 	only destroy the noun.
+To decide which number is the grossness of hugger-gag: decide on 9.
 
 [Figure of bit gag is the file "Items/Accessories/Head/bitgag1.jpg".]
 
@@ -278,6 +289,7 @@ To compute periodic effect of (P - hugger-gag):
 				say "The legs let go of you and the body falls off, motionless and dead.[GotLuckyFlav]";
 				increase facehuggers-fucked by 1;
 				only destroy P;
+		compute slow grossness of P.
 
 Definition: hugger-gag is fetish appropriate: decide no. [Never appears randomly]
 [Definition: hugger-gag is throater: decide yes.] [This is too imbalanced now that throating triggers suffocation]
@@ -293,6 +305,7 @@ Definition: a hugger-panties is tearable: decide no. [NPCs can't remove it to us
 Report taking off a hugger-panties:
 	say "You discard the inert facehugger, and it drops to the ground, lifeless.";
 	only destroy the noun.
+To decide which number is the grossness of a hugger-panties: decide on 9.
 
 To decide which figure-name is the clothing-image of (M - a hugger-panties):
 	decide on Figure of facehugger cutscene 4.
@@ -339,7 +352,8 @@ To compute periodic effect of (P - crotch-hugger):
 			if F is 1:
 				say "The legs let go of you and the body falls off, motionless and dead.[GotLuckyFlav]";
 				increase facehuggers-fucked by 1;
-				only destroy P.
+				only destroy P;
+		compute slow grossness of P.
 
 ass-hugger is a hugger-panties. ass-hugger is unique. ass-hugger is ass plugging. The printed name of ass-hugger is "[clothing-title-before]asshugging facehugger[clothing-title-after]". The text-shortcut of ass-hugger is "chg". Understand "asshugging" as ass-hugger. ass-hugger is crotch-exposing.
 
@@ -368,6 +382,7 @@ To compute periodic effect of (P - ass-hugger):
 			if F is 1:
 				say "The legs let go of you and the body falls off, motionless and dead.[GotLuckyFlav]";
 				increase facehuggers-fucked by 1;
-				only destroy P.
+				only destroy P;
+		compute slow grossness of P.
 
 Facehugger ends here.

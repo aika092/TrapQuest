@@ -269,6 +269,7 @@ To compute group kissing lesson of (M - a staff member):
 				now candyReceiver is M;
 		otherwise if candyReceiver is the player:
 			say "After you lock lips, you feel [student-name of currentCandy] pushing the candy into your mouth. Uh-oh. [bold type]You now have the candy in your mouth. [roman type]It feels [if candySucks > 4 * the number of students in the location of the player]about as big as it was at the start[otherwise if candySucks > 3 * the number of students in the location of the player]about two thirds as big as it was at the start[otherwise if candySucks > 2 * the number of students in the location of the player]about half as big as it was at the start[otherwise if candySucks > the number of students in the location of the player]about a third as big as it was at the start[otherwise]like it's almost all gone[end if].";
+			TasteGrossOut 3;
 		otherwise if candyReceiver is not M:
 			let STXX be STX;
 			if STXX is STE, now STXX is 1;
@@ -381,7 +382,7 @@ To compute french kissing lesson of (M - a staff member):
 			say "[if tonguedPerson is the player][teacher-name of M][']s tongue is currently in your mouth - [he of M] has control[otherwise]Your tongue is currently in [his of M] mouth - you have control[end if]. [if player-groped-level >= 0 and tonguedPerson is the player][big he of M][otherwise if player-groped-level >= 0]But [he of M] already[end if] [if player-groped-level is 0]has [his of M] hands on your [AssDesc].[otherwise if player-groped-level is 1]has one hand on your [AssDesc] and one hand on your [BreastDesc].[otherwise if player-groped-level > 1]has one hand on your [BreastDesc] and the other on your [genitals]![end if][line break]";
 			set numerical response 1 to "pull away and end the kiss[if newbie tips is 1] (have you entertained [teacher-name of teacher-angela] enough to avoid punishment?)[end if]";
 			set numerical response 2 to "keep kissing[if newbie tips is 1 and tonguedPerson is the player and player-groped-level < 2] ([teacher-name of M] gets more handsy, increasing stimulation in future rounds)[otherwise if newbie tips is 1 and tonguedPerson is the player] ([teacher-name of M] deals double vaginal stimulation while you allow her to retain full control of the situation)[end if]";
-			if tonguedPerson is the player, set numerical response 3 to "try to regain control by pushing your tongue into [his of M] mouth[if newbie tips is 1 and player-groped-level < 2] (extra humiliation this turn to try and prevent [teacher-name of M] from getting more handsy)[otherwise if newbie tips is 1] (extra humiliation this turn but if you succeed in getting [his of M] tongue out of your mouth you'll significantly reduce overall stimulation)[end if]";
+			if tonguedPerson is the player, set numerical response 3 to "try to regain control by pushing your tongue into [his of M] mouth[if newbie tips is 1 and player-groped-level < 2] (gross yourself out this turn to try and prevent [teacher-name of M] from getting more handsy)[otherwise if newbie tips is 1] (gross yourself out this turn but if you succeed in getting [his of M] tongue out of your mouth you'll significantly reduce overall stimulation)[end if]";
 			compute multiple choice question;
 			if player-numerical-response is 1:
 				now N is 10;
@@ -400,8 +401,8 @@ To compute french kissing lesson of (M - a staff member):
 					[passively stimulate face from M times 2;
 					check for arousal change;]
 				if player-numerical-response is 3:
-					say "Your tongues slither on top of each other for a few seconds as you fight to push [teacher-name of M][']s tongue back into [his of M] mouth. The feeling of [his of M] tongue on yours [if the player is a bit horny]arouses you further[otherwise]turns you on a little[end if], and the fact that your peers can see you eagerly leaning into the kiss makes you blush. ";
-					moderateHumiliate;
+					say "Your tongues slither on top of each other for a few seconds as you fight to push [teacher-name of M][']s tongue back into [his of M] mouth. The fact that your peers can see you eagerly leaning into the kiss makes you blush. [moderateHumiliateReflect][line break]The sloppiness of your two tongues pressing energetically against each other is a little gross.";
+					GrossOut 3;
 					if player-groped-level is 1:
 						repeat with IST running through innocent students in the location of the player:
 							say "[one of][IST] can't believe that you're kissing [teacher-name of M] so passionately, considering how [he of M][']s treating your body like a piece of meat.[or][stopping]";
@@ -1707,6 +1708,7 @@ To compute chess time:
 		increase the student-orgasm of chess-lesson by 1;
 	if the chess-victor of chess-lesson is 0:
 		compute chess players thinking;
+		compute wallowing;
 		compute hunger and thirst; [actual hunger and thirst numbers will be temporarily overridden (see the definition for 'yourself is thirsty'), but we do need the player to digest normally]
 		if watersports fetish is 1:
 			if a random number between 1 and 3 is 1:
@@ -2422,6 +2424,8 @@ To compute (M - an ultimate-lesson-actor) attacking (C - a clothing):
 	if C is crotch-zipped:
 		say UnzipFlav of M at C;
 		ZipDown C;
+	otherwise if C is locked:
+		compute M unlocking C;
 	otherwise if the chosen-orifice of M is breasts and C is actually top-displacable:
 		compute M topdisplacing C;
 	otherwise if C is displacable:
@@ -2465,25 +2469,31 @@ To compute tongue demand of (M - an ultimate-lesson-actor):
 		otherwise if a random number between 1 and 2 is 1:
 			let ST be a random student in the location of the lesson-teacher of ultimate-lesson;
 			if ST is monster and a2m fetish >= 2 and a random number between 1 and 2 is 1:
-				say "You hear [NameDesc of ST] yelp as [he of ST] is dragged towards you, and then [his of ST] asshole is pushed against your tongue. [NameDesc of M] barks an order at [him of ST].[line break][speech style of M]'Go on [student-name of ST], give [NameBimbo] what [he of the player] is asking for.'[roman type][line break][BigNameDesc of ST] mutters a muted apology as [he of ST] pushes out a fresh anal creampie onto your tongue. [BigNameDesc of M] laughs with a vindictive tone and then says just one word to you.";
+				say "You hear [NameDesc of ST] yelp as [he of ST] is dragged towards you, and then [his of ST] asshole is pushed against your tongue. [NameDesc of M] barks an order at [him of ST].[line break][speech style of M]'Go on [student-name of ST], give [NameBimbo] what [he of the player] is asking for.'[roman type][line break][BigNameDesc of ST] mutters a muted apology as [he of ST] pushes out a fresh anal creampie onto your tongue.";
+				FaceFill semen by 2;
+				now face is anal-origin;
+				TasteGrossOut 12;
 			otherwise:
 				say "You hear a satisfied grunt, and then ropes of salty [semen] splash onto your [if bukkake fetish is 1]face and [end if]tongue.";
 				if bukkake fetish is 1, CumFaceUp 3;
-			FaceFill semen by 2;
-			say "[speech style of M]'Swallow.'[roman type][line break]Do you obey?";
-			if the player is bimbo consenting:
-				say "You obediently swallow the load on your tongue.";
-				compute silent swallowing;
-			otherwise:
-				say "You make a disgusted sound and spit it out onto the floor.";
-				compute lesson veto;
+				FaceFill semen by 1;
+			if the total volume of face > 0:
+				say "[BigNameDesc of M] laughs with a vindictive tone and then says just one word to you.[line break][speech style of M]'Swallow.'[roman type][line break]Do you obey?";
+				if the player is bimbo consenting:
+					say "You obediently swallow the load on your tongue.";
+					compute silent swallowing;
+				otherwise:
+					say "You make a disgusted sound and spit it out onto the floor.";
+					compute lesson veto;
 		otherwise:
-			say "[big he of M] spits in your mouth.[line break][speech style of M]'Swallow.'[roman type][line break]Do you obey?";
-			if the player is bimbo consenting:
-				say "You obediently swallow the stranger's glob of saliva. [strongHumiliateReflect]";
-			otherwise:
-				say "You make a disgusted sound and spit it out onto the floor.";
-				compute lesson veto;
+			say "[big he of M] spits in your mouth.[line break][TasteGrossOut 4]";
+			if the total volume of face > 0:
+				say "[speech style of M]'Swallow.'[roman type][line break]Do you obey?";
+				if the player is bimbo consenting:
+					say "You obediently swallow the stranger's glob of saliva. [moderateHumiliateReflect]";
+				otherwise:
+					say "You make a disgusted sound and spit it out onto the floor.";
+					compute lesson veto;
 	otherwise:
 		compute lesson veto.
 
@@ -2554,10 +2564,10 @@ To compute anal torture of (M - an ultimate-lesson-actor):
 		let ST2 be entry 2 of LST;
 		say "[speech style of M]'Human centipede time, bitches!'[roman type][line break]You squeak with surprise as [NameDesc of ST1][']s asshole is pressed against your [LipDesc], while at the same time you hear [NameDesc of ST2] mewl with hesitation as [his of ST2] mouth gets forced against your [asshole]. [if the number of entries in LST > 3]The others make similar noises as you are all arranged in a line, mouth-to-asshole.[otherwise if the number of entries in LST is 3][BigNameDesc of entry 3 of LST] makes a similar noise as [he of entry 3 of LST] is face-planted between [NameDesc of ST2][']s buttcheeks.[end if][line break][speech style of M]'Well don't just sit there, start licking!'[roman type][line break]You shiver with arousal as [NameDesc of ST2] begins to probe your [asshole] with [his of ST2] tongue. Do you do the same?";
 		if the player is bimbo consenting:
-			if a2m fetish >= 2, say "You push your tongue as deep into [NameDesc of ST1][']s chute as you dare, and the strong tangy flavours of [semen][if the urine volume of belly > 0], [urine][end if] and ass begin to make you feel a bit light headed. [severeHumiliateReflect]";
-			otherwise say "You push your tongue as deep into [NameDesc of ST1][']s chute as you dare. [strongHumiliateReflect]";
+			if a2m fetish >= 2, say "You push your tongue as deep into [NameDesc of ST1][']s chute as you dare, and the strong tangy flavours of [semen][if the urine volume of belly > 0], [urine][end if] and ass begin to make you feel a bit light headed.[TasteGrossOut 9][strongHumiliateReflect]";
+			otherwise say "You push your tongue as deep into [NameDesc of ST1][']s chute as you dare[TasteGrossOut 7]. [strongHumiliateReflect]";
 			if a2m fetish >= 2 and the semen volume of belly + the urine volume of belly > 0:
-				say "Then, all of a sudden, you and the other students all begin squeaking in panic at the same time. Your tormentors have begun to tickle each of you at the ribs, and push on your bellies! There's nothing you can do in time to stop what happens next - each of you explodes, filling the mouth of the [boy of ST2] behind you with [semen][if the urine volume of belly > 0] and [urine][end if]. The room fills with the sound of squirting, swallowing, and gagging.";
+				say "Then, all of a sudden, you and the other students all begin squeaking in panic at the same time. Your tormentors have begun to tickle each of you at the ribs, and push on your bellies! There's nothing you can do in time to stop what happens next - each of you explodes, filling the mouth of the [boy of ST2] behind you with [semen][if the urine volume of belly > 0] and [urine][end if]. The room fills with the sound of squirting, swallowing, and gagging.[TasteGrossOut 12]";
 				FaceFill semen by the semen volume of belly;
 				FaceFill urine by the urine volume of belly;
 				empty belly liquids;

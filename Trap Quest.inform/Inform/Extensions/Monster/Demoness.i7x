@@ -1615,16 +1615,17 @@ To compute punishment of (P - demoness-facesit):
 	now M is penetrating face; [stops the player from speaking]
 	try urinating;
 	say "Only after [NameDesc of M] has seen your wetting shame does [he of M] stand up, freeing your face. [speech style of M]'As [one of]I thought[or]we already knew[stopping], it's you who needs this diaper, not me.'[roman type][line break]";
-	let D be a random massive diaper;
-	only destroy D;
-	if the number of worn knickers is 0 or (the player is diapered and D is DQBulkier):
-		say "[big he of M] puts [his of M] hands together and concentrates. [big his of M] giant soiled diaper disappears from [his of M] crotch, and appears around yours!";
-		if the player is diapered, DiaperAdd D;
-		otherwise summon D cursed with quest;
-		UrineSoakUp D by 10;
-		if diaper messing >= 7:
-			MessSet D to 20;
-			now the foreign-mess of D is 20;
+	if diaper swapping >= 3 or (diaper swapping > 0 and diaper messing < 7):
+		let D be a random massive diaper;
+		only destroy D;
+		if the number of worn knickers is 0 or (the player is diapered and D is DQBulkier):
+			say "[big he of M] puts [his of M] hands together and concentrates. [big his of M] giant soiled diaper disappears from [his of M] crotch, and appears around yours!";
+			if the player is diapered, DiaperAdd D;
+			otherwise summon D cursed with quest;
+			UrineSoakUp D by 10;
+			if diaper messing >= 7:
+				MessSet D to 20;
+				now the foreign-mess of D is 20;
 	satisfy M.
 
 To compute diaper pail substitute punishment of (M - a demoness):
@@ -1959,7 +1960,7 @@ To penetration dominate (M - a demoness):
 			say "You decide to ignore [his of M] warning, squeezing [his of M] ass as you push your [SexDesc of penis] into [his of M] tight [HoleDesc of M]. The heat of [his of M] body permeates your skin, intensifying the sensation of every nerve in your [SexShaft] and steadily grinding your stamina away. Ever more powerful waves of pleasure with every thrust, and within moments you find yourself groaning with pleasure as you flood [NameDesc of M][']s hungry cunt with several spurts of fresh [semen]. You feel a flash of pain as your crotch is enveloped in a red light, and [bold type]you realise you have become permanently more submissive![roman type]";
 			severeDignify;
 			orgasm;
-			SilentlyDelicateUp 2;
+			PainUp 30;
 			say AfterDominationComment 1 of M;
 	otherwise:[instant]
 		say "[line break][speech style of M]Generous mortals like you make me so hot. Even if your [sexual-player-penis] is so tiny.[roman type][line break][big he of M] pauses, [if lady fetish is 2]stretching [his of M] sphincter with [his of M] thumb[otherwise]spreading [his of M] pussy lips[end if] with a malicious grin.[line break][speech style of M]'I'll be too hot for you to handle. Pull out before you cum.'[roman type][line break] Agree to pull out? ";
@@ -1972,7 +1973,7 @@ To penetration dominate (M - a demoness):
 			say "You're way too horny to agree to something like that, eagerly pushing your [sissy-penis] into [his of M] tight [HoleDesc of M]. [big he of M] was being literal when [he of M] mentioned the heat, which permeates through your skin to your core, pushing you over the edge as soon as you bottom out. [BigNameDesc of M] smirks as you fill [him of M] with your pitiful load, and what used to be a pleasant heat becomes unbearable as your crotch is enveloped with ghastly red light. [bold type]You realise you have become permanently more submissive![roman type]";
 			moderateDignify;
 			orgasm;
-			SilentlyDelicateUp 2;
+			PainUp 30;
 			say AfterDominationComment 1 of M;
 	FuckGet.
 

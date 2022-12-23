@@ -3,11 +3,14 @@ Agent by Monster begins here.
 agent is a monster. agent is male. agent is intelligent. The leftover-type of agent is 149.
 
 Definition: agent is hotel dwelling:
-	if the player is a june 2022 top donator and diaper quest is 0, decide yes;
+	if diaper quest is 0 and the player is a june 2022 top donator, decide yes;
+	if diaper quest is 1 and diaper swapping > 1, decide yes;
 	decide no.
 
 Definition: agent is willing to do vaginal: decide yes.
 Definition: agent is willing to do anal: decide yes.
+
+Definition: an agent is a generic-unlocker: decide yes.
 
 Definition: agent is dark skinned: decide yes.
 
@@ -22,9 +25,6 @@ agent has a number called agent-scene.
 agent has a number called agent-scene-spotted.
 
 Figure of agent is the file "NPCs/MultiFloor/Agent/agent1.png".
-Figure of agent doggy is the file "NPCs/MultiFloor/Agent/cutscene-agent1.jpg".
-Figure of agent throat is the file "NPCs/MultiFloor/Agent/cutscene-agent2.jpg".
-Figure of agent doggy angry is the file "NPCs/MultiFloor/Agent/cutscene-agent3.jpg".
 
 To say ShortDesc of (M - agent):
 	say "[if M is agent-identified]agent[otherwise]lady[end if]".
@@ -36,10 +36,6 @@ To decide which figure-name is the monster-image of (M - agent):
 	if M is agent-deglassed, decide on figure of agent angry;
 	decide on figure of agent.
 
-To decide which figure-name is the anal-sex-monster-image of (M - agent):
-	decide on figure of agent doggy angry.
-To decide which figure-name is the vaginal-sex-monster-image of (M - agent):
-	decide on figure of agent doggy angry.
 
 Definition: agent is presenting as male:
 	if lady fetish is 2, decide yes;
@@ -114,8 +110,11 @@ Part 2 - Perception
 
 [The agent doesn't fight. She just trolls and leaves.]
 To anger (M - agent):
-	now current-monster is M;
-	follow the agent trolls then leaves rule.
+	if M is agent-deglassed:
+		permanently anger M;
+	otherwise:
+		now current-monster is M;
+		follow the agent trolls then leaves rule.
 
 To decide which number is the bimbo tolerance of (M - agent):
 	decide on 21. [never becomes aggressive]
@@ -129,8 +128,13 @@ To say BecomesAggressive of (M - agent):
 	say "[big he of M] takes an offensive stance![line break][speech style of M]'Okay, time for some bitch-breaking.'[roman type][line break]".
 
 To compute perception of (M - agent):
-	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][big he of M] maintains a neutral expression, and doesn't seem interested in interacting with you.";
-	bore M.
+	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
+	if M is agent-deglassed:
+		anger M;
+		say "[big he of M] stares at you with unfiltered rage.[line break][speech style of M]'[one of]Do you have any idea how much those glasses cost to make?!'[or]I'll never forgive you for breaking my glasses!'[stopping][roman type][line break]";
+	otherwise:
+		say "[big he of M] maintains a neutral expression, and doesn't seem interested in interacting with you.";
+		bore M.
 
 
 Part 4 - Combat
@@ -225,58 +229,84 @@ Part 5 - Memory Scenes
 An agent poster is a kind of poster.
 
 
-throat-agent-poster is an agent poster. throat-agent-poster is unidentifiable. throat-agent-poster has a text called poster-breast-desc. throat-agent-poster has a text called poster-belly-desc. throat-agent-poster has a text called poster-hip-desc. throat-agent-poster has a text called poster-hair-desc.
+first-agent-poster is an agent poster. first-agent-poster is unidentifiable. first-agent-poster has a text called poster-breast-desc. first-agent-poster has a text called poster-belly-desc. first-agent-poster has a text called poster-hip-desc. first-agent-poster has a text called poster-hair-desc.
 
-To decide which figure-name is the examine-image of (C - throat-agent-poster):
-	decide on Figure of agent throat.
+To decide which figure-name is the examine-image of (C - first-agent-poster):
+	decide on Figure of agent camera cutscene 1.
 
-To compute unique variables of (P - throat-agent-poster):
+To compute unique variables of (P - first-agent-poster):
 	now the poster-breast-desc of P is the substituted form of "[BreastDesc]";
 	now the poster-belly-desc of P is the substituted form of "[BellyDesc]";
 	now the poster-hip-desc of P is the substituted form of "[HipDesc]";
 	now the poster-hair-desc of P is the substituted form of "[HairColour] hair";
 
-To compute title of (P - throat-agent-poster):
-	now the title of P is "THROATED WHORE".
+To compute title of (P - first-agent-poster):
+	if diaper quest is 0, now the title of P is "THROATED WHORE";
+	otherwise now the title of P is "MOBILE URINAL".
 
-To say ShortDesc of (P - throat-agent-poster):
-	say "A grainy photo of the [MediumDesc of agent] standing over a naked submissive slut, and shoving [his of agent] [LongDickDesc of agent] down their throat. ".
+To say ShortDesc of (P - first-agent-poster):
+	say "A grainy photo of [if diaper quest is 0]the [MediumDesc of agent] standing over a naked submissive slut, and shoving [his of agent] [LongDickDesc of agent] down their throat[otherwise]someone standing above a kneeling diapered submissive, and urinating on their lower back, so that some of the piss goes into their diaper, and the rest puddles on the ground[end if]. ".
 
-To say ExamineDesc of (C - throat-agent-poster):
+To say ExamineDesc of (C - first-agent-poster):
 	say ShortDesc of C;
-	say "You can't see their face because it's completely covered up by [NameDesc of agent][']s junk. To be honest, it's impressive that it even fits! The slut underneath has [poster-breast-desc of C], [poster-belly-desc of C], [poster-hip-desc of C] and [poster-hair-desc of C]. That's all you can make out.";
+	say "You can't see their face because [if diaper quest is 0]it's completely covered up by [NameDesc of agent][']s junk. To be honest, it's impressive that it even fits! The slut underneath has [poster-breast-desc of C], [poster-belly-desc of C], [poster-hip-desc of C] and[otherwise]they're facing the wrong way. They have[end if] [poster-hair-desc of C]. That's all you can make out.";
 	say TitleDesc of C.
 
 
-doggy-agent-poster is an agent poster. doggy-agent-poster is identifiable.
+second-agent-poster is an agent poster. second-agent-poster is identifiable.
 
-To decide which figure-name is the examine-image of (C - doggy-agent-poster):
-	decide on Figure of agent doggy.
+To distribute (P - second-agent-poster):
+	if the player is in Hotel30 or (a random number between 1 and 2 is 1 and the player is not in Hotel40), now P is in Hotel40;
+	otherwise now P is in Hotel30;
+	compute title of P.
 
-To compute title of (P - doggy-agent-poster):
-	now the title of P is "MINDBROKEN COCKSLEEVE".
+To decide which figure-name is the examine-image of (C - second-agent-poster):
+	decide on Figure of agent camera cutscene 2.
 
-To say ShortDesc of (P - doggy-agent-poster):
-	say "A grainy photo of the [MediumDesc of agent] standing over you, and plowing you from behind. You're completely naked, and your face looks blank and expressionless. ".
+To compute title of (P - second-agent-poster):
+	if diaper quest is 0, now the title of P is "HYPNOTIZED COCKSLEEVE";
+	otherwise now the title of P is "HYPNOTIZED AND FILLED".
 
-To say ExamineDesc of (C - doggy-agent-poster):
+To say ShortDesc of (P - second-agent-poster):
+	say "A grainy photo of the [MediumDesc of agent] standing over you, and [if diaper quest is 0]plowing you[otherwise]filling you to the brim with giant enema syringes[end if] from behind. You're completely naked, and your face looks blank and expressionless. ".
+
+To say ExamineDesc of (C - second-agent-poster):
 	say ShortDesc of C;
 	say "You have absolutely no memory of this ever occurring... ";
 	say TitleDesc of C.
 
+Definition: agent is ready for next agent scene:
+	if diaper quest is 0 and the player is a june 2022 top donator and the times-met of agent > 0 and agent is not permanently banished and the agent-scene of agent < 2 and the agent-scene of agent is the agent-scene-spotted of agent:
+		if the number of worn unremovable nudism-disabling clothing is 0, decide yes;
+	if diaper quest is 1 and diaper swapping > 1 and there is a worn diaper and the times-met of agent > 0 and agent is not permanently banished and the agent-scene of agent < 2 and the agent-scene of agent is the agent-scene-spotted of agent:
+		let URC be the number of worn unremovable nudism-disabling clothing;
+		if diaper quest is 1, decrease URC by the number of worn unremovable nudism-enabling diapers;
+		if URC <= 0, decide yes;
+	decide no.
+
 To compute next agent scene:
 	if the agent-scene of agent is 0:
 		now the agent-scene of agent is 1;
-		set up throat-agent-poster;
-		ActualStomachSemenUp the semen load of agent;
-		compute refractoryReset of agent;
+		set up first-agent-poster;
+		if diaper quest is 0:
+			ActualStomachSemenUp the semen load of agent;
+			compute refractoryReset of agent;
+		otherwise:
+			let D be a random worn diaper;
+			let N be the soak-limit of D - the total-soak of D;
+			if N > 0:
+				increase the urine-soak of D by N;
+				now previous-clothing-glazed is -1; [force appearance reassessment]
+				if the player is diaper aware, compute awakened state check of D; [immediately make the player notice their new full diaper]
+			UrinePuddleUp 10;
 	otherwise if the agent-scene of agent is 1:
 		now the agent-scene of agent is 2;
-		set up doggy-agent-poster;
+		set up second-agent-poster;
 		compute agent anal;
 		if the number of blank rows in the Table of Published Disgraces > 0:
 			choose a blank row in Table of Published Disgraces;
-			now the content entry is "a high quality video showing you, naked, on your hands and knees, as the [MediumDesc of agent] holds some kind of small silver device in front of your face. You have a blank expression and are staring at the device while [he of agent] gives you some instructions.";
+			if diaper quest is 0, now the content entry is "a high quality video showing you, naked, on your hands and knees, as the [MediumDesc of agent] holds some kind of small silver device in front of your face. You have a blank expression and are staring at the device while [he of agent] gives you some instructions.";
+			otherwise now the content entry is "a high quality video showing you, naked, bent over, your belly full of a giant enema, as the [MediumDesc of agent] holds some kind of small silver device in front of your face. You have a blank expression and are staring at the device while [he of agent] gives you some instructions.";
 			now the published entry is the substituted form of "is live on www.hypnoheaven.xxx";
 			now the severity entry is 2;
 			now the popularity entry is 5;
@@ -286,20 +316,29 @@ To compute next agent scene:
 			now the viewsfuzz entry is a random number between -100 and 100.
 
 To compute agent anal:
-	AssFill the semen load of agent;
-	increase the soreness of asshole by 4;
-	if the soreness of asshole > 10, now the soreness of asshole is 10;
-	if the openness of asshole < the girth of agent, now the openness of asshole is the girth of agent;
+	if diaper quest is 0:
+		AssFill the semen load of agent;
+		if the soreness of asshole < 10:
+			increase the soreness of asshole by 4;
+			if the soreness of asshole > 10, now the soreness of asshole is 10;
+			if the agent-scene of agent is 2, say "[bold type]You feel like you suddenly notice that your [asshole] is more sore [if the openness of asshole < the girth of agent]and more gaped [end if]than it was before. And as your belly gurlges, you realise that your rectum feels like it's been filled with an anal creampie...[line break][variable custom style]What in the world?![roman type][line break]";
+		if the openness of asshole < the girth of agent, now the openness of asshole is the girth of agent;
+		if the agent-scene of agent > 2, say "[bold type]It's with mild horror that you notice that your [asshole] is once again suddenly sore, gaped and filled with [semen]. [roman type][if agent is agent-identified][BigNameDesc of agent] must have mind controlled you, assfucked you, and wiped your memory again!!![line break][variable custom style]I've got to find that bitch, and slap [his of agent] sunglasses off![otherwise][variable custom style]Why?! How?![end if][roman type][line break]";
+	otherwise:
+		let N be belly limit - the total squirtable fill of belly;
+		AssFill N water;
+		if the agent-scene of agent is 2, say "[bold type]Your belly gurlges, and you realise that your belly is huge and round, inflated to the brim with an enema![line break][variable custom style]What in the world?![roman type][line break]";
+		otherwise say "[bold type]It's with mild horror that you notice that your belly has once again been inflated to maximum size by a giant enema. [roman type][if agent is agent-identified][BigNameDesc of agent] must have mind controlled you, assfucked you, and wiped your memory again!!![line break][variable custom style]I've got to find that bitch, and slap [his of agent] sunglasses off![otherwise][variable custom style]Why?! How?![end if][roman type][line break]";
+	increase the agent-scene of agent by 1; [this minus 2 is the number of times it's happened already]
 	compute refractoryReset of agent.
 
 To compute agent reveal:
 	now agent is agent-identified;
-	say "As you watch the footage, you hear the words being spoken reverberate in your mind, as if they were a distant memory that's being awoken.[line break][speech style of agent]'That's right, stay there and take my cock up your ass, like a good little slut. And of course, I want you to forget about this entire thing afterwards.'[line break][variable custom style]Holy shit, has [he of agent] been mind-controlling and fucking me, and wiping my memories of it?![roman type][line break]The speech continues.[line break][speech style of agent]'And take care not to knock my sunglasses off. I don't want to actually get caught by my own control signal.'[line break][variable custom style]So... You need some sort of eye protection to avoid being controlled by [him of agent]...[roman type][line break]".
+	say "You hear the [NameDesc of agent][']s voice reverberate in your mind, as if they were a distant memory that's being awoken.[line break][speech style of agent]'That's right, stay there and [if diaper quest is 0]take my cock up your ass, like a good little slut[otherwise]let me fill your belly up all the way to the brim[end if]. And of course, I want you to forget about this entire thing afterwards.'[line break][variable custom style]Holy shit, has [he of agent] been mind-controlling and fucking me, and wiping my memories of it?![roman type][line break]The speech continues.[line break][speech style of agent]'And take care not to knock my sunglasses off. I don't want to actually get caught by my own control signal.'[line break][variable custom style]So... I need some sort of eye protection to avoid being controlled by [him of agent]... Or I need to slap those sunglasses off of [him of agent] before [he of agent] has a chance to react.[roman type][line break]".
 
 A later time based rule (this is the agent surprise sex rule):
 	if playerRegion is hotel and agent is not agent-deglassed and the refractory-period of agent < 0 and the agent-scene of agent > 1 and agent is not permanently banished and asshole is not actually occupied and a random number between 1 and 25 is 1:
-		compute agent anal;
-		say "[bold type]It's with mild horror that you notice that your [asshole] is once again suddenly sore, gaped and filled with [semen]. [roman type][if agent is agent-identified][BigNameDesc of agent] must have mind controlled you, assfucked you, and wiped your memory again!!![line break][variable custom style]I've got to find that bitch, and slap [his of agent] sunglasses off![otherwise][variable custom style]Why?! How?![end if][roman type][line break]".
+		compute agent anal.
 
 
 

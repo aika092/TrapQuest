@@ -64,7 +64,7 @@ To compute standard decanting of (D - a dispenser):
 	allocate 6 seconds;
 	say DecantingFlav of the noun;
 	now the fill-colour of the noun is fill-colour of the second noun;
-	now the noun is player-origin;
+	now the noun is boring-origin;
 	if the doses of the second noun > the max-doses of the noun:
 		DoseFill the noun;
 		DoseDown the second noun by the max-doses of the noun;

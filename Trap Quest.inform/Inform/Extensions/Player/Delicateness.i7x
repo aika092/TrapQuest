@@ -191,4 +191,143 @@ To FearUp (X - a number) with reason (T - a text): [This function is anticipated
 		if T is "", now T is the substituted form of "As you [one of]recoil[or]flinch[or]tense up[in random order] with fear,";
 		check sudden spit and expulsion with reason T.
 
+gross-sensation is a text that varies.
+silent-gross-out is initially false.
+
+[X should be the number at which the player can tolerate the grossness. X + 7 should be the number where it turns them on. At 5 or less grossness, the player will never have the most extreme reaction (hated).
+Room stinks of sex and cum: 2
+Room stinks of piss: 3
+Sloppy kiss / snowball kiss: 3
+Taste own pussy: 3
+Licking sweaty body part: 4
+Felching vaginal creampie: 4
+Spit in mouth: 4
+Masturbated in a wet diaper: 5
+Made to wear wet diaper / used as diaper urinal: 5
+Drinking mix of fluids: 5
+Intimacy with gross partner: 5
+Given a swirlie: 5
+Wet diaper on face: 6
+Puking when gagging: 6
+Intimacy with partially humanoid (centaur): 6
+Licking theoretically dirty body part / bottom of feet: 6
+Anilingus / A2M: 7
+Wearing messy diaper / messy diaper smell in the room: 7
+Intimacy with vaguely humanoid (deep one) or tentacles: 8
+Masturbated in messy diaper: 9
+Licking from puddle on ground: 9
+Licking bottom of shoe: 9
+Drinking anal creampie: 10
+Messy diapers near face: 10
+Intimacy with 90% bestial partner (hellhound): 11
+Messy diapers on face: 11
+Drinking / eating other anal food or enemas: 12
+]
+To GrossOut (X - a number):
+	say GrossOut X.
+To say GrossOut (X - a number):
+	GrossOut X with reason "" and sensation "feeling".
+
+To SmellGrossOut (X - a number):
+	say GrossOut X.
+To say SmellGrossOut (X - a number):
+	GrossOut X with reason "" and sensation "[one of]smell[or]stench[as decreasingly likely outcomes]".
+
+To TasteGrossOut (X - a number):
+	say TasteGrossOut X.
+To say TasteGrossOut (X - a number):
+	GrossOut X with reason "" and sensation "[one of]taste[or]flavour[as decreasingly likely outcomes]".
+
+To SilentlyGrossOut (X - a number):
+	now silent-gross-out is true;
+	GrossOut X with reason "" and sensation "";
+	now silent-gross-out is false;
+	compute potential addiction gain from grossness X.
+
+To GrossOut (X - a number) with reason (T - a text) and sensation (S - a text): [This function is anticipated to output some kind of flavour text when called]
+	NonAddictiveGrossOut X with reason T and sensation S;
+	compute potential addiction gain from grossness X.
+
+To NonAddictiveGrossOut (X - a number) with reason (T - a text) and sensation (S - a text): [This function is anticipated to output some kind of flavour text when called]
+	let G be X - the grossness addiction of the player;
+	if G >= 5: [hated]
+		if silent-gross-out is false, say "[variable custom style][one of]This is the most disgusting thing that's ever happened to me in my life[or]YEUUUURGH[or]I'm gonna puke[or]DISGUSTING[or]This is going to make me hurl[then at random]![roman type][line break]";
+		cool down 5000;
+	otherwise if G > 0: [disliked]
+		if silent-gross-out is false, say "[variable custom style][one of]Yuck[or]Gross[or]This is so nasty, eww[or]Yuck yuck yuck[or]Eurgh[or]I can't stand this [S][or]This is so wrong[in random order]![roman type][line break]";
+		cool down 1000;
+	otherwise if G > -7: [tolerated]
+		if silent-gross-out is false:
+			if the grossness addiction of the player < 7:
+				say "[variable custom style][one of]I don't want to get used to this, but I can tolerate it[or]Grim, but I can handle it[or]A little gross, I guess[or]Not my favourite [S][in random order].[roman type][line break]";
+			otherwise if the grossness addiction of the player < 14:
+				say "[variable custom style][one of]This is fucking gross, haha![or]How nasty.[or]Wow, that is one strong [S].[in random order][roman type][line break]";
+			otherwise:
+				say "[second custom style][one of]Nasty. Just the way I like it.[or]Yuck. But also, yum![or]Not a problem for a nasty bitch like me![in random order][roman type][line break]";
+	otherwise if G > -14: [loved]
+		if silent-gross-out is false:
+			if the grossness addiction of the player < 10:
+				say "[variable custom style][one of]I can't believe how much I love this disgusting [S][or]Oh my god, this is really turning me on[or]How fucked up is it that I fucking love this [S] now[in random order]![roman type][line break]";
+			if the grossness addiction of the player < 14:
+				say "[variable custom style][one of]I can't deny it any more... I fucking love this [S][or]This [S] is so gross, but it's also so fucking good[or]I'm getting addicted to this [S][in random order]![roman type][line break]";
+			otherwise:
+				say "[second custom style][one of]Yes... YES! SO DISGUSTING! SO GOOD![or]So gross! I need more![or]I can't get enough of this disgusting [S][or]I'm addicted to this [S][in random order]![roman type][line break]";
+			now G is G * -200;
+			arouse G;
+	otherwise: [boring]
+		if silent-gross-out is false, say "[second custom style][one of]I can hardly even call this gross any more. It just doesn't excite me.[or]Gross? More like boring...[or]What a boring [S]. I need something more extreme![in random order][roman type][line break]";
+	if G > 0:
+		let R be a random number between 1 and 10;
+		if debuginfo > 0, say "[input-style]Avoid flinch check: d10 ([R]) | [G].5 = ([X].5) grossness - ([grossness addiction of the player]) grossness addiction[roman type][line break]";
+		if G >= R:
+			if T is "", now T is the substituted form of "As you [one of]recoil[or]flinch[or]tense up[in random order] with disgust,";
+			check sudden spit and expulsion with reason T.
+
+To compute potential addiction gain from grossness (X - a number):
+	let G be X - the grossness addiction of the player;
+	let R be a random number between -9 and 5;
+	if debuginfo > 0, say "[input-style]Grossness gain avoidance check: d15 - 10 ([R]) | [G].5 = ([X].5) grossness - ([grossness addiction of the player]) grossness addiction[roman type][line break]";
+	if R < G:
+		GrossnessAddictUp 1.
+
+
+To SilentlyGrossOut (X - a number):
+	now silent-gross-out is true;
+	SlowGrossOut X;
+	now silent-gross-out is false;
+	compute slow addiction gain from grossness X.
+
+To SlowGrossOut (X - a number): [This function is anticipated to be called every turn for a potentially long number of turns, and so we want smaller text outputs and less addiction & arousal gain]
+	NonAddictiveSlowGrossOut X;
+	compute slow addiction gain from grossness X.
+
+To NonAddictiveSlowGrossOut (X - a number): [This function is anticipated to be called every turn for a potentially long number of turns, and so we want smaller text outputs and less addiction gain]
+	let G be X - the grossness addiction of the player;
+	if G >= 5: [hated]
+		if silent-gross-out is false, say "[variable custom style][one of]Gonna puke...[or]Gonna hurl...[or]DISGUSTING![or]YEUUUURGH![or]EEEUUURGH![or]I feel ill...[then at random][roman type][line break]";
+		cool down 1000;
+	otherwise if G > 0: [disliked]
+		if silent-gross-out is false, say "[variable custom style][one of]Yuck[or]Too gross[or]So nasty[or]Eww[or]Yuck yuck yuck[or]Eurgh[or]Too much[or]So wrong[in random order]![roman type][line break]";
+		cool down 200;
+	otherwise if G > -7: [tolerated]
+		if silent-gross-out is false:
+			if the grossness addiction of the player < 14:
+				say "[variable custom style][one of]Blergh[or]Grim[or]A little gross[or]Not nice[or]Barely tolerable[or]Yuck[in random order].[roman type][line break]";
+			otherwise:
+				say "[second custom style][one of]Hehe[or]Haha[or]Heh[at random], [one of]I'm so[or]I'm[or]this is[at random] [one of]pretty [or][purely at random][one of]nasty[or]gross[or]sick[or]fucked up[in random order].[roman type][line break]";
+	otherwise if G > -14: [loved]
+		if the grossness addiction of the player < 10 and silent-gross-out is false:
+			say "[variable custom style][one of]Aaah[or]Oooh[or]Mmmmm[or]Yes[or]Nice[in random order]...[roman type][line break]";
+		now G is G * -40;
+		arouse G;
+	otherwise: [boring]
+		say "[variable custom style][one of]Meh.[or][or]Boring...[or][or]Yawn.[or][cycling][roman type][line break]";
+
+To compute slow addiction gain from grossness (X - a number):
+	let G be X - the grossness addiction of the player;
+	let R be a random number between 0 and 9; [if the player is already tolerant, they won't gain more]
+	if debuginfo > 0, say "[input-style]Grossness gain avoidance check: d10 - 1 ([R]) | [G].5 = ([X].5) grossness - ([grossness addiction of the player]) grossness addiction[roman type][line break]";
+	if R < G:
+		SlowGrossnessAddictUp 1.
+
 Delicateness ends here.

@@ -318,7 +318,7 @@ This is the ejaculation capture rule:
 		SilentlySemenTasteAddictUp 1;
 		now the fill-colour of collecting is creamy;
 		DoseUp collecting by A / 3;
-		now collecting is player-origin;
+		now collecting is boring-origin;
 		if a random number between 1 and 5 is 1:
 			if bondage protection < 2 and the player is not immobile and collecting is waitress vessel:
 				compute service spill punishment;

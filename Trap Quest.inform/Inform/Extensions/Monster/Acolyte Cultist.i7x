@@ -64,6 +64,10 @@ Definition: clairvoyant acolyte is willing to do oral: decide yes.
 
 Definition: an acolyte is willing to fluff: decide yes.
 
+Definition: an acolyte is a diaper wetter:
+	if diaper quest is 1, decide yes;
+	decide no.
+
 [TODO: update to reflect chant-duration]
 To say MonsterDesc of (M - an acolyte):
 	if diaper quest is 0, say "A veiled [man of M] in a sheer black robe. What you can see of [his of M] expression suggests [he of M][']s not exactly all there. Still, despite looking like [he of M] hasn't seen the sun in a few years [he of M] does seem to be in quite good shape and could be unexpectedly dangerous.";

@@ -5,6 +5,7 @@ A royal guard is a kind of monster. A royal guard is usually intelligent. A roya
 Definition: a royal guard is willing to urinate: decide yes.
 Definition: a royal guard is father material: decide yes.
 Definition: a royal guard is raunchy: decide yes.
+Definition: a royal guard is a generic-unlocker: decide yes.
 
 Figure of Royal Guard is the file "NPCs/Dungeon/Guard/royalguard1.png".
 Figure of Female Royal Guard is the file "NPCs/Dungeon/Guard/royalguard2.png".
@@ -1215,6 +1216,8 @@ Definition: a royal guard is willing to confiscate: decide yes.
 
 Definition: a royal guard is willing to punish untidiness: decide yes.
 
+Definition: a royal guard is willing to use a diaper urinal: decide yes.
+
 Definition: a royal guard is eager to donate babywear:
 	if there is a worn diaper and purple-baby-reins is off-stage and purple-baby-reins is actually summonable, decide yes;
 	decide no.
@@ -1240,6 +1243,12 @@ To compute punishment of (P - guard-spanking-session):
 	compute spanking of current-monster.
 
 guard-incarceration is a diaper punishment. The priority of guard-incarceration is 5.
+
+To say EnticeFlav of (M - a monster) for (P - guard-incarceration):
+	say "[line break][speech style of M]'DOWN ON THE GROUND, CRIMINAL SCUM!'[roman type][line break]".
+
+To decide which number is the relevant addiction of (P - guard-incarceration):
+	decide on the delicateness of the player.
 
 Definition: guard-incarceration (called P) is appropriate:
 	if current-monster is royal guard and the number of barriers in the location of the player is 0 and Dungeon03 is placed and (current-monster is prison guard or (shopkeeper is off-stage and shopkeeper is unfriendly)), decide yes;

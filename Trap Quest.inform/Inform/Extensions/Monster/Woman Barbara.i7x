@@ -2,31 +2,6 @@ Woman Barbara by Monster begins here.
 
 Include Fishbowl by Headgear.
 
-To construct unique buttons for (M - woman-player):
-	if the woman-status of M is 93 and the dominatrix-contraption-scene of M <= 6 and M is awake and ButtonTableFull is 0:
-		unless dominatrix is interested and dominatrix is unfriendly and dominatrix is in the location of the player:
-			choose a blank row in the Table of Buttons;
-			now the ButtonImage entry is Figure of AddictionsButton;
-			now the ButtonCommand entry is "search [text-shortcut of M]";
-			now the ButtonColour entry is lightModeFullGreen;
-			if ButtonTableFull is 0 and the dominatrix-contraption-scene of M <= 2 and diaper quest is 0:
-				choose a blank row in the Table of Buttons;
-				now the ButtonImage entry is Figure of TakeAllButton;
-				now the ButtonCommand entry is "pull [text-shortcut of M]";
-				now the ButtonColour entry is lightModeFullGreen;
-	otherwise if the woman-status of M is 80 and the stool-scene of M < 2 and ButtonTableFull is 0:
-		choose a blank row in the Table of Buttons;
-		now the ButtonImage entry is Figure of TakeAllButton;
-		now the ButtonCommand entry is "pull [text-shortcut of M]";
-		let CL be lightModeFullGreen;
-		if the player is in danger, now CL is lightModeFullYellow;
-		if the player is immobile, now CL is lightModeFullRed;
-		now the ButtonColour entry is CL;
-		if ButtonTableFull is 0 and the player is possessing a penis or there is a worn strapon-panties:
-			choose a blank row in the Table of Buttons;
-			now the ButtonImage entry is Figure of TakeAllButton;
-			now the ButtonCommand entry is "fuck [text-shortcut of M]";
-			now the ButtonColour entry is CL.
 
 The current-name of woman-player is "Barbara". The old-name of woman-player is "Barbara".
 
@@ -985,7 +960,7 @@ An all time based rule (this is the barbara throne rule):
 						now the fill-colour of collecting is creamy;
 						DoseUp collecting by 4;
 						say "Several gulps worth of [semen] are spewed into the [ShortDesc of collecting].";
-						now collecting is monster-origin;
+						now collecting is anal-origin;
 					otherwise:
 						SemenPuddleUp 4;
 		otherwise:

@@ -96,6 +96,10 @@ Definition: a monster is willing to do oral:
 	if it is male, decide yes;
 	decide no.
 Definition: a monster is willing to urinate: decide no.
+Definition: a monster is willing to do licking: decide no.
+Definition: a monster is willing to do anilingus:
+	if a2m fetish > 1, decide yes;
+	decide no.
 Definition: a monster is willing to do titfucks:
 	if it is male, decide yes;
 	decide no.
@@ -132,9 +136,14 @@ To decide which number is the blue-balls-limit of (M - a monster):
 	decide on B.
 To decide which number is the default blue-balls-limit of (M - a monster):
 	decide on 10.
-A monster has a number called refractory-period. [This will be greater than 0 if an intelligent NPC has orgasmed recently. It is mainly used for preventing friendly sex hundreds of times in a row without pause.]
+A monster has a number called refractory-period. [This will be greater than 0 if an intelligent NPC has orgasmed recently. It is mainly used for preventing friendly sex hundreds of times in a row without pause. In diaper quest it is instead used for diapered NPC messing timers.]
 To decide which number is the refractory-time of (M - a monster):
 	decide on 300. [This can be tweaked for balancing purposes. Goes down by 4 per round.]
+A monster has a number called bladder. The bladder of a monster is usually 400. [Increases by 4 each turn. Divide by 100 to get a number similar to player's bladder]
+Definition: a monster is a urinater: decide yes. [Does this NPC have a bladder, and urinate?]
+Definition: a monster is a diaper wetter: decide no. [Does this NPC use a diaper rather than a toilet to urinate?]
+A monster can be enticed. [Has it already tried to entice the player this combat?]
+A monster has a number called temporary-damage-reduction. [Does this NPC have extra damage reduction until the next time they get bored?]
 A monster can be dragging.
 A monster has a number called monstersetup.
 Definition: a monster is nonexistent:
@@ -148,6 +157,8 @@ Definition: a monster is pale skinned:
 	if it is human and it is not dark skinned and it is not infernal, decide yes;
 	decide no.
 Definition: a monster is musky: decide no.
+Definition: a monster is a generic-unlocker: decide no. [Does it have access to keys to unlock clothing?]
+Definition: a monster is a clothes-destroyer: decide no. [Does it have enough strength to easily rip clothes apart, even ones with a metal chain and lock?]
 
 A monster can be doing nothing special, spanking the player, changing the player, feeding the player, whipping the player, masturbating the player, enema-filling the player (this is the punishment-attack-state property).
 A monster has a number called paralyse-status. [paralyse status of -1 makes you immune]
@@ -277,6 +288,7 @@ Definition: a monster is actually seducable:
 	if diaper quest is 0 and it is seducable and it is reactive and it is interested and it is unseduced and it is not penetrating a body part, decide yes;
 	decide no.
 A monster has a number called teaseTimer. [This number goes up when a defeated monster is dominated then down each turn. It stops the player from being able to continuously gain stats by dominating an NPC over and over again.]
+
 
 A monster has a number called throating. [Is it currently doing deepthroat oral? If so, for how many turns shall it do this?]
 Definition: a monster is throater:

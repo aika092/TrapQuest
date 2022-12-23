@@ -8,6 +8,8 @@ Definition: an adult baby slave is willing to do oral: decide yes.
 
 Definition: an adult baby slave is raunchy: decide yes.
 
+Definition: an adult baby slave is a diaper wetter: decide yes.
+
 Figure of angelic adult baby slave is the file "NPCs/MultiFloor/BabySlave/abs1.jpg". Figure of bratty adult baby slave is the file "NPCs/MultiFloor/BabySlave/abs2.jpg".
 
 To decide which figure-name is the monster-image of (M - angelic adult baby slave):
@@ -60,25 +62,34 @@ Definition: an adult baby slave is messy:
 		decide yes;
 	otherwise if it is caged and it is in the location of dominatrix-cage and the mess of dominatrix-cage > 0:
 		decide yes;
-	otherwise if diaper messing >= 6 and the messTimer of it >= 120:
+	otherwise if it is undefeated and diaper messing >= 6 and the messTimer of it >= 120:
 		decide yes;
 	decide no.
+
+To diaper change (M - an adult baby slave):
+	now the messTimer of M is 0;
+	if M is diaper-enslaved, now the refractory-period of M is a random number between (the messRefractoryLimit of M + 300) and 300.
 
 To decide which number is the messRefractoryLimit of (M - an adult baby slave):
 	if M is undefeated, decide on 99999; [otherwise we get SuddenMessFlav triggering every turn]
 	decide on -800.
 
 To compute unique periodic effect of (M - an adult baby slave):
-	if the class of the player is maid or a random number between 1 and 5 > 3, increase the peeTimer of M by 1;
-	if a random number between 30 and 100 <= the peeTimer of M:
-		if M is in the location of the player and M is not penetrating face:
-			if M is asleep, say "As you watch [NameDesc of M], [his of M] completely full diaper begins to leak, [urine] spilling out of the legholes and down to the floor. [big he of M] doesn't even stir from [his of M] slumber.";
-			otherwise say "[BigNameDesc of M] makes eye contact with you as a hissing sound emanates from [his of M] diaper. [big his of M] padding is so completely saturated that [his of M] [urine] just flows out of the legholes and down [his of M] legs. [big he of M] giggles cheekily.";
-		UrinePuddleUp the peeTimer of M / 10 in (the location of M);
-		now the peeTimer of M is 0;
+	if the class of the player is maid, increase the bladder of M by 4; [pees twice as much as an ordinary human]
 	if diaper messing >= 6:
 		increase the messTimer of M by 1;
-		if the messTimer of M is 120 and M is in the location of the player, say "All of a sudden, [NameDesc of M] scrunches [his of M] eyes shut, grunts, and fills [his of M] diaper with a heap of stinking shit.[line break][speech style of M]'That was a big one. I feel so much better now...'[roman type][line break][big he of M] coos, not at all ashamed about what just happened.".
+		if the messTimer of M is 120 and M is in the location of the player:
+			say "All of a sudden, [NameDesc of M] [if M is awake]scrunches [his of M] eyes shut, grunts, and fills [his of M] diaper with a heap of stinking shit.[line break][speech style of M]'That was a big one. I feel so much better now...'[roman type][line break][big he of M] coos, not at all ashamed about what just happened[otherwise]erupts with a loud trumpeting sound as [he of M] unloads a huge heap of stinking mush into [his of M] diaper. [big he of M] sighs pleasantly, and gently curls up into a ball, apparently still sound asleep and blissfully unaware of what [he of M] just did[end if].";
+			if the bladder of M >= 100, compute diaper wetting of M.
+
+
+To compute diaper wetting of (M - an adult baby slave): [This MUST cause bladder to empty or NPCs might get stuck]
+	if M is in the location of the player and M is not penetrating face:
+		if M is asleep, say "As you watch [NameDesc of M], [his of M] completely full diaper begins to leak, [urine] spilling out of the legholes and down to the floor. [big he of M] doesn't even stir from [his of M] slumber.";
+		otherwise say "[BigNameDesc of M] makes eye contact with you as a hissing sound emanates from [his of M] diaper. [big his of M] padding is so completely saturated that [his of M] [urine] just flows out of the legholes and down [his of M] legs. [big he of M] giggles cheekily.";
+	UrinePuddleUp the bladder of M / 100 in (the location of M);
+	now the bladder of M is 0.
+
 
 Part 1 - Misc Flavour
 
@@ -332,7 +343,9 @@ A breathing consequences rule (this is the consequences for breathing through AB
 	let M be a random adult baby slave penetrating face;
 	if M is monster:
 		say "You are forced to smell the pungent aroma of [NameDesc of M][']s soiled diaper.";
-		if M is messy or a random number between 1 and 20 >= the raw delicateness of the player, DelicateUp 1.
+		let G be wetDiaperFacesitGrossnessLevel;
+		if M is messy, now G is messyDiaperFacesitGrossnessLevel;
+		SlowGrossOut G.
 
 To compute (M - an adult baby slave) entering mouth:
 	if milking is 1:
@@ -381,7 +394,8 @@ To compute facial sex of (M - an adult baby slave):
 		say "[one of]You refuse to sit still as you are degraded like this! You struggle, failing to push [him of M] off you as [he of M] bounces [his of M] padded behind on your face. [or]You continue trying to fight [him of M], failing miserably to do any damage as [he of M] continues to grind [his of M] diapered bottom against you. [or]The only stimulation [he of M]'s going to get from you is pushing and muffled yelling! [or]You simply won't give in! At least if you pass out, you'll be able to look at yourself in the mirror. [in random order]";
 		if diaper messing >= 7 and M is not messy and the player is getting unlucky:
 			now the messTimer of M is 120;
-			say "[line break][one of][speech style of M]'I did warn you what I'd do if you didn't help me cum...'[roman type][line break][BigNameDesc of M] stays true to [his of M] threat - [he of M] clenches [his of M] fists and purposefully unloads a large load of poop into [his of M] diaper, right on top of your face. You can literally feel it through the plastic as it exits [him of M], the gross mushy stuff oozing against your face through the plastic as it spreads throughout [his of M] padding.[if the diaper addiction of the player < 20][line break][variable custom style]GROSS!!![roman type][line break][end if][or]You zone out and try to think about anything except the feeling of [NameDesc of M][']s genitals through [his of M] diaper, but you quickly come back to reality as you hear [him of M] grunt and feel a load of smelly mush push [his of M] diaper outward against your face. You gag and struggle as the garment continues to fill but ultimately find yourself unable to gain the leverage to overcome [him of M]. You simply accept your fate as [he of M] giggles between moans, humping your face with [his of M] dirty diaper. Perhaps you should have heeded [his of M] warning after all.[in random order]";
+			say "[line break][one of][speech style of M]'I did warn you what I'd do if you didn't help me cum...'[roman type][line break][BigNameDesc of M] stays true to [his of M] threat - [he of M] clenches [his of M] fists and purposefully unloads a large load of poop into [his of M] diaper, right on top of your face. You can literally feel it through the plastic as it exits [him of M], the gross mushy stuff oozing against your face through the plastic as it spreads throughout [his of M] padding.[or]You zone out and try to think about anything except the feeling of [NameDesc of M][']s genitals through [his of M] diaper, but you quickly come back to reality as you hear [him of M] grunt and feel a load of smelly mush push [his of M] diaper outward against your face. You gag and struggle as the garment continues to fill but ultimately find yourself unable to gain the leverage to overcome [him of M]. You simply accept your fate as [he of M] giggles between moans, humping your face with [his of M] dirty diaper[if the player is not tolerating messy facesits]. Perhaps you should have heeded [his of M] warning after all[end if].[in random order]";
+			SmellGrossOut messyDiaperFacesitGrossnessLevel;
 			DelicateUp 1;
 		otherwise:
 			if a random number between 1 and 3 > 1:
@@ -531,6 +545,14 @@ Definition: diaper-facesit is appropriate:
 	if the player is immobile, decide no;
 	decide yes.
 
+To say EnticeFlav of (M - a monster) for (P - diaper-facesit):
+	if M is intelligent, say "[line break][speech style of M]'[one of]You WANT me to sit this diaper on your face, don't try to deny it! Just get on your back and let it happen...'[or]Why fight me when you can just get on the ground and let me sit on your face?'[in random order][roman type][line break]";
+	otherwise say "[big he of M] gestures that [he of M] wants to sit on your face.".
+
+To decide which number is the relevant addiction of (P - diaper-facesit):
+	if current-monster is messy, decide on the grossness addiction of the player - 6;
+	decide on the grossness addiction of the player.
+
 To compute punishment of (P - diaper-facesit):
 	let M be current-monster;
 	if M is penetrating face:
@@ -544,6 +566,14 @@ To compute punishment of (P - diaper-facesit):
 		compute diaper sit of M.
 
 adult-baby-matron-drag is a diaper punishment. The priority of adult-baby-matron-drag is 5.
+
+To say EnticeFlav of (M - a monster) for (P - adult-baby-matron-drag):
+	say "[line break][speech style of M]'We don't have to fight! Just get on your knees, and let me take you to [daddy of matron]!'[roman type][line break]".
+
+To decide which number is the relevant addiction of (P - adult-baby-matron-drag):
+	decide on the bimbo of the player.
+
+
 Definition: an adult-baby-matron-drag (called P) is appropriate:
 	if current-monster is not adult baby slave, decide no;
 	if current-monster is eager to feed to master, decide yes;

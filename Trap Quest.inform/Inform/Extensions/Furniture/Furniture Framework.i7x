@@ -375,11 +375,11 @@ To release changing station diapers:
 To release changing station diapers on the player:
 	release changing station diapers;
 	if diaper messing is 6:
-		say "A cascade of foul, stinky, messy diapers falls to the ground right beside you.[if the diaper addiction of the player < 12][variable custom style]Gross![roman type][line break][end if]";
-		DiaperAddictUp 1;
+		say "A cascade of foul, stinky, messy diapers falls to the ground right beside you.";
+		SmellGrossOut messyDiaperSmellGrossnessLevel;
 	otherwise:
-		say "You are half-buried in a cascade of [if diaper messing > 6]foul, stinky, messy[otherwise]soggy used[end if] diapers.[if the diaper addiction of the player < 14][variable custom style]EEK! GROSS!!![roman type][line break][end if]";
-		DelicateUp 1;
-		DiaperAddictUp 1.
+		say "You are half-buried in a cascade of [if diaper messing > 6]foul, stinky, messy[otherwise]soggy used[end if] diapers.";
+		if diaper messing >= 7, SmellGrossOut messyDiaperFacesitGrossnessLevel;
+		otherwise SmellGrossOut wetDiaperFacesitGrossnessLevel.
 
 Furniture Framework ends here.

@@ -92,11 +92,20 @@ To lock (C - diaper-stack):
 	now C is locked.
 
 To unlock (C - a clothing):
-	now C is unlocked.
+	now C is unlocked;
+	keyfree C.
 To unlock (C - diaper-stack):
 	let D be entry (the number of entries in the list of stacked diapers) in the list of stacked diapers;
-	if D is clothing, unlock D;
-	now C is unlocked.
+	if D is clothing:
+		unlock D;
+		keyfree D;
+	now C is unlocked;
+	keyfree C.
+
+To keyfree (C - a clothing):
+	repeat with K running through unlock-keys covering C:
+		if K is in the location of the player or K is held, say "[BigNameDesc of K] crumbles to dust.";
+		destroy K.
 
 
 To uniquely destroy (K - an unlock-key):

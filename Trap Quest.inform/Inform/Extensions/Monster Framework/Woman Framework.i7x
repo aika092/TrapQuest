@@ -22,6 +22,9 @@ woman-player has a text called old-title. Understand the old-title property as d
 woman-player has a text called current-name. Understand the current-name property as describing woman-player.
 woman-player has a text called old-name. Understand the old-name property as describing woman-player.
 
+woman-player has a number called woman-diaper-state.
+woman-player has a number called woman-latest-diaper-state.
+
 Understand "mysterious", "woman" as woman-player.
 The text-shortcut of woman-player is "wo".
 
@@ -56,7 +59,6 @@ To uniquely interest (M - woman-player):
 To set up (M - woman-player):
 	now the monstersetup of M is 1;
 	[if lady fetish is 2, now M is truly-male;]
-	now M is in Woods01;
 	now the raw difficulty of M is 17;
 	now the health of M is the maxhealth of M;
 	calm M.
@@ -165,6 +167,7 @@ STATES:
 100: Matron / Senior bellboy fight scene
 101: DQ: Appeared by being in the hotel urinal scene with the wrestler.
 102: DQ: Appeared holding up the lid for the changing station tank.
+103: DQ: Appeared in Christmas box.
 ]
 
 Definition: woman-player is summon appropriate: decide no. [Can she be randomly selected to be summoned?]
@@ -208,6 +211,47 @@ To deploy (M - woman-player) with woman-status (V - a number):
 			say "[speech style of M]'Hey [NameBimbo]. I'm sorry I wish you didn't have to see me like this...'[roman type][line break]";
 		otherwise:
 			regionally place M.
+
+To construct unique buttons for (M - woman-player):
+	if the woman-status of M is 93 and the dominatrix-contraption-scene of M <= 6 and M is awake and ButtonTableFull is 0:
+		unless dominatrix is interested and dominatrix is unfriendly and dominatrix is in the location of the player:
+			choose a blank row in the Table of Buttons;
+			now the ButtonImage entry is Figure of AddictionsButton;
+			now the ButtonCommand entry is "search [text-shortcut of M]";
+			now the ButtonColour entry is lightModeFullGreen;
+			if ButtonTableFull is 0 and the dominatrix-contraption-scene of M <= 2 and diaper quest is 0:
+				choose a blank row in the Table of Buttons;
+				now the ButtonImage entry is Figure of TakeAllButton;
+				now the ButtonCommand entry is "pull [text-shortcut of M]";
+				now the ButtonColour entry is lightModeFullGreen;
+	otherwise if the woman-status of M is 80 and the stool-scene of M < 2 and ButtonTableFull is 0:
+		choose a blank row in the Table of Buttons;
+		now the ButtonImage entry is Figure of TakeAllButton;
+		now the ButtonCommand entry is "pull [text-shortcut of M]";
+		let CL be lightModeFullGreen;
+		if the player is in danger, now CL is lightModeFullYellow;
+		if the player is immobile, now CL is lightModeFullRed;
+		now the ButtonColour entry is CL;
+		if ButtonTableFull is 0 and the player is possessing a penis or there is a worn strapon-panties:
+			choose a blank row in the Table of Buttons;
+			now the ButtonImage entry is Figure of TakeAllButton;
+			now the ButtonCommand entry is "fuck [text-shortcut of M]";
+			now the ButtonColour entry is CL;
+	otherwise if the changing-station-tank-scene of M > 0 and ButtonTableFull is 0:
+		choose a blank row in the Table of Buttons;
+		now the ButtonImage entry is Figure of TakeAllButton;
+		now the ButtonCommand entry is "pull rope";
+		now the ButtonColour entry is lightModeFullGreen;
+		if the player is prone or the player is in danger, now the ButtonColour entry is lightModeFullYellow;
+		if the player is immobile, now the ButtonColour entry is lightModeFullRed;
+	otherwise if the woman-status of M is 103 and ButtonTableFull is 0: [diapered christmas gift]
+		choose a blank row in the Table of Buttons;
+		now the ButtonImage entry is Figure of TakeAllButton;
+		now the ButtonCommand entry is "pull [text-shortcut of M]";
+		let CL be lightModeFullGreen;
+		if the player is in danger, now CL is lightModeFullYellow;
+		if the player is immobile, now CL is lightModeFullRed;
+		now the ButtonColour entry is CL.
 
 The womanspawning rules is a rulebook.
 

@@ -45,7 +45,14 @@ To decide which figure-name is the monster-image of (M - a mindless acolyte):
 
 Figure of aeromancer cutscene 7 is the file "Special/Cutscene/cutscene-aeromancer-punish1.jpg".
 
+Figure of agent camera cutscene 1 is the file "NPCs/MultiFloor/Agent/cutscene-agent2.jpg".
+Figure of agent camera cutscene 2 is the file "NPCs/MultiFloor/Agent/cutscene-agent1.jpg".
 Figure of agent angry is the file "NPCs/MultiFloor/Agent/agent2a.png".
+Figure of agent doggy angry is the file "NPCs/MultiFloor/Agent/cutscene-agent3.jpg".
+To decide which figure-name is the anal-sex-monster-image of (M - agent):
+	decide on figure of agent doggy angry.
+To decide which figure-name is the vaginal-sex-monster-image of (M - agent):
+	decide on figure of agent doggy angry.
 
 Figure of bianca defeated is the file "NPCs/School/Teacher/teacher3b.png".
 

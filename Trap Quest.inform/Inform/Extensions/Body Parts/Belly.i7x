@@ -794,7 +794,7 @@ To AssSquirt:
 					now milk-count is 0;
 					now water-count is 0;
 				otherwise if collecting is bottle:
-					now collecting is monster-origin;
+					now collecting is anal-origin;
 					[In the first turn we decide what type of liquid the bottle is being filled with]
 					if turn-count is 0:
 						if urine-count > 0:

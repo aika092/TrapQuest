@@ -42,6 +42,7 @@ An all time based rule (this is the determining desirability rule):
 		now the desirability of vagina is 0;
 		now the desirability of penis is 0;
 		now the desirability of belly is 0; [remember that belly = urination]
+		now the desirability of thighs is 5; [remember that thighs = making the player lick something, e.g. anilingus]
 		if the largeness of breasts > 7:
 			now the desirability of breasts is the largeness of breasts / 2;
 			follow the tit slut eligibility rules;
@@ -56,6 +57,7 @@ An all time based rule (this is the determining desirability rule):
 			follow the piss slut eligibility rules;
 		follow the butt slut eligibility rules;
 		follow the blowjob slut eligibility rules;
+		follow the tongue slut eligibility rules;
 		repeat with B running through body parts:
 			if the desirability of B < 0, now the desirability of B is 0.
 
@@ -74,6 +76,22 @@ Let's check all the things that might increase the chances of titfucks.
 
 *!]
 the tit slut eligibility rules is a rulebook.
+
+[!<YourselfIsATongueSlut>+
+
+Let's check if the player has a huge magical influence towards licking forfeits.
+
++!]
+Definition: yourself is a tongue slut:
+	if the desirability of thighs >= 25 and thighs is most desirable, decide yes;
+	decide no.
+
+[!<tongueSlutEligibilityRules:Rulebook>*
+
+Let's check all the things that might increase the chances of licking forfeits.
+
+*!]
+the tongue slut eligibility rules is a rulebook.
 
 [!<YourselfIsABlowjobSlut>+
 
@@ -339,6 +357,10 @@ To compute seduction grope of (M - a monster):
 	otherwise if targeted-body-part is hips:
 		compute ass grope of M;
 		stimulate hips from M;
+	if targeted-body-part is an orifice:
+		compute grossness of M;
+	otherwise:
+		compute slow grossness of M;
 	if targeted-body-part is body part:
 		if refractoryperiod > RF, compute grope orgasm reaction of M.
 
@@ -703,6 +725,11 @@ To compute default seduction choice of (M - a monster):
 		now M is seduction-refused;
 	otherwise:
 		say "BUG - option not recognised.";
+	if M is grossing the player out:
+		if MCQ matches the text "condom" or MCQ matches the text "dance" or MCQ matches the text "pull" or MCQ matches the text "kneel":
+			SlowGrossOut 5;
+		otherwise if MCQ matches the text "kiss" or MCQ matches the text "pleasure" or MCQ matches the text "grind" or MCQ matches the text "massage" or MCQ matches the text "suck":
+			GrossOut 5 with reason "" and sensation "thing";
 	if M is seduced:
 		if the blue-balls of M >= the blue-balls-limit of M:
 			if the blue-balls of M < the blue-balls-limit of M + 5:

@@ -133,14 +133,6 @@ To decide which body part is the painful-part of (M - boogeymonster):
 	if B is not hips and B is not breasts, now B is belly;
 	decide on B.
 
-To compute (M - a monster) attacking (C - a clothing):
-	if C is displacable:
-		say "[BigNameDesc of M] pulls the crotch of your [printed name of C] to the side!";
-		displace C;
-	otherwise:
-		say "[BigNameDesc of M] rips off your [printed name of C]!";
-		destroy C.
-
 To compute (M - boogeymonster) attacking (C - a clothing):
 	say "[BigNameDesc of M] tears off your [printed name of C]!";
 	destroy C.

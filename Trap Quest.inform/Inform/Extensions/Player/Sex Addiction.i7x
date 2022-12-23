@@ -65,6 +65,7 @@ To decide which number is the relevant sex addiction of (M - a thing): [We want 
 	if M is breasts or M is penetrating breasts, decide on the titfuck addiction of the player * 2;
 	decide on the sex addiction of the player. [catch-all]
 
+
 Part 2 - Modify Sex Addiction
 
 The player has a number called raw sex addiction. The raw sex addiction of the player is usually 1. [Min 1 Max 20]
@@ -652,6 +653,92 @@ To SilentlybbcAddictDown (X - a number):
 
 To SilentlybbcAddictDown:
 	if the raw bbc addiction of the player > 1, decrease the raw bbc addiction of the player by 1.
+
+Book - Grossness Addiction
+
+Part 1 - Calculate Grossness Addiction
+
+To decide which number is the grossness addiction of the player:
+	decide on previous-grossness-addiction.
+
+To decide which number is the calculated grossness addiction of the player:
+	let S be the raw grossness addiction of the player;
+	repeat with C running through worn wearthings:
+		increase S by the grossness-addiction-influence of C;
+	if S > 20, decide on 20;
+	if S < 1, decide on 1;
+	decide on S.
+
+To decide which number is the grossness-addiction-influence of (C - a wearthing):
+	decide on 0.
+
+[Definition: a thing is gross:
+	if the grossness of it > 0, decide yes;
+	decide no.]
+To decide which number is the grossness of (T - a thing): [grossness addiction needed to tolerate it]
+	decide on 0.
+Definition: a thing is grossing the player out:
+	if the grossness of it > the grossness addiction of the player, decide yes;
+	decide no.
+Definition: a thing is freaking the player out:
+	if the grossness of it >= the grossness addiction of the player + 5, decide yes;
+	decide no.
+
+To compute grossness of (T - a thing):
+	if T is grossing the player out:
+		say "[BigNameDesc of T] is so gross[if T is freaking the player out] that it is making you [one of]freak out[or]panic[or]feel sick[in random order][end if]!";
+		GrossOut the grossness of T with reason "[BigNameDesc of T] grossing you out makes you shudder with nausea," and sensation "thing".
+
+To compute slow grossness of (T - a thing):
+	if T is grossing the player out, SlowGrossOut the grossness of T.
+
+Part 2 - Modify Grossness Addiction
+
+The player has a number called raw grossness addiction. The raw grossness addiction of the player is usually 1. [Min 1 Max 20]
+
+slowGrossness is a number that varies.
+To SlowGrossnessAddictUp (X - a number):
+	let slowGrossnessLimit be 1;
+	if the raw grossness addiction of the player >= 7, increase slowGrossnessLimit by 1;
+	if the raw grossness addiction of the player >= 14, increase slowGrossnessLimit by (the raw grossness addiction of the player - 12) / 2;
+	if debugmode > 0, say "Grossness threshold is [slowGrossnessLimit] ticks.";
+	while X > 0:
+		decrease X by 1;
+		increase slowGrossness by 1;
+		if debugmode > 0, say "[slowGrossness - 1] --> [slowGrossness].";
+		if slowGrossness > slowGrossnessLimit:
+			if debugmode > 0, say "Grossness addiction increased.";
+			now slowGrossness is 0;
+			GrossnessAddictUp 1.
+
+To GrossnessAddictUp (X - a number):
+	let S be the raw grossness addiction of the player;
+	SilentlyGrossnessAddictUp X;
+	now S is the raw grossness addiction of the player - S;
+	if S > 0:
+		if the calculated grossness addiction of the player <= 7, say "You [one of]are slowly growing[or]continue to grow[stopping] more tolerant of [GrossStuff].";
+		otherwise say "You feel like you are going to be [if S > 2]much[otherwise if S is 2]significantly[otherwise]a bit[end if] [if the calculated grossness addiction of the player > 10]more aroused by[otherwise]less turned off by[end if] [GrossStuff] from now on.".
+
+To SilentlyGrossnessAddictUp (X - a number):
+	while X > 0:
+		decrease X by 1;
+		if the raw grossness addiction of the player < 20, increase the raw grossness addiction of the player by 1.
+
+To GrossnessAddictDown (X - a number):
+	let S be the raw grossness addiction of the player;
+	SilentlyGrossnessAddictDown X;
+	decrease S by the raw grossness addiction of the player;
+	if S > 0:
+		say "You feel that from now on, you'll be [if S > 2]much [otherwise if S is 2]significantly [end if]less [if the calculated grossness addiction of the player > 10]confusingly delighted by[otherwise]weirdly tolerant of[end if] [GrossStuff].".
+
+To SilentlyGrossnessAddictDown (X - a number):
+	while X > 0:
+		decrease X by 1;
+		SilentlyGrossnessAddictDown.
+
+To SilentlyGrossnessAddictDown:
+	if the raw grossness addiction of the player > 1, decrease the raw grossness addiction of the player by 1.
+
 
 Book - Urine Taste Addiction
 

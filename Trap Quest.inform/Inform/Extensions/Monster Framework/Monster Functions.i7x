@@ -28,6 +28,7 @@ To bore (M - a monster) for (N - a number) seconds:
 
 To compute common boredom of (M - a monster) for (N - a number) seconds:
 	now M is unseduced;
+	now M is not enticed;
 	now the throating of M is 0;
 	now the objectification of M is 0;
 	now the babification of M is 0;
@@ -35,6 +36,7 @@ To compute common boredom of (M - a monster) for (N - a number) seconds:
 	now the last-tripped of M is 0;
 	now M is not trip-warned;
 	now the wrangle-bonus of M is 0;
+	now the temporary-damage-reduction of M is 0;
 	if debugmode > 1, say "Deinteresting [ShortDesc of M] for [N] seconds. Latest appearance seen is [latest-appearance of M].";
 	now the latest-appearance of M is 0;
 	if diaper quest is 1, now the latest-cringe of M is 0;

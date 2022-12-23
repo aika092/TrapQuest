@@ -103,7 +103,7 @@ To compute drinking (X - a bottle):
 			if the fill-type of X is 20: [semen]
 				repeat with T running through things inseminating X:
 					now T is inseminating face;
-				if X is monster-origin, now face is monster-origin;
+				now the drink-origin of face is the drink-origin of X;
 			if the fill-type of X < lowest-cursed or the fill-type of X > highest-cursed or (X is can or (X is sure and X is not cursed)):
 				now the curse-ID of X is sure;
 				now the Known corresponding to an Magic of the fill-type of X in the Table of Drinks is 1;
@@ -113,7 +113,22 @@ To compute drinking (X - a bottle):
 		if X is gold chalice, now A is 2;
 		if A is 1:
 			curse X;
-			if the curse-ID of X is sure, say "You feel the blessing of your [X] expire.".
+			if the curse-ID of X is sure, say "You feel the blessing of your [X] expire.";
+	if a2m fetish >= 2 and X is anal-origin:
+		if the fill-type of X is 20:
+			say "The distinct tangy aftertaste reminds you that this was at one point an anal creampie.";
+			TasteGrossOut 10;
+		otherwise:
+			say "The distinct tangy aftertaste reminds you that this liquid was at one point inside someone's butthole.";
+			TasteGrossOut 12;
+	otherwise if X is not boring-origin:
+		if the fill-type of X is 20:
+			say "The mild tangy aftertaste reminds you that this was at one point a creampie.";
+			TasteGrossOut 4;
+		otherwise:
+			say "The mild tangy aftertaste reminds you that this is not the first human orifice that this liquid has been inside.";
+			TasteGrossOut 6.
+
 
 To compute drinking effect (N - a number):
 	do nothing.
@@ -242,7 +257,7 @@ To compute drinking effect (N - 22):
 	suggest swallowing.
 
 To compute drinking effect (N - 23):
-	say "You close your eyes and drink the mix of liquids.[one of] You cringe and shudder in shame[if the humiliation of the player > 29500], which of course just turns you on even more[end if].[or].[or].[in random order]";
+	say "You close your eyes and drink the mix of liquids.";
 	FaceFill murkwater by 1;
 	suggest swallowing.
 

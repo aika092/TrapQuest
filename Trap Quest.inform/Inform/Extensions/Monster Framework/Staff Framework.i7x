@@ -4,6 +4,8 @@ A staff member is a kind of monster. A staff member is intelligent. A staff memb
 
 Definition: a staff member is controlling: decide no. [Will they grab onto subduing clothing e.g. a clitoris lead?]
 
+Definition: a staff member is a generic-unlocker: decide yes.
+
 Definition: a staff member is motionless-when-defeated: decide yes.
 
 Definition: a staff member is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
@@ -675,8 +677,9 @@ To execute (A - soiled-diaper-assembly):
 	let M be the assemblyAnnouncer of A;
 	let ST be a random student in the location of the player;
 	let SD be a random soiled-diaper in the location of the player;
-	say "[BigNameDesc of ST] [one of]smirks[or]laughs[or]harrumphs[or]grimaces[or]grins[in random order] as [he of ST] takes the [MediumDesc of SD] and smushes it into your face until you are forced to breathe the horrible smell. Your [one of]mind reels with shame[or]feeling of self-resentment continues to grow, from the shame[stopping].";
-	DelicateUp 1;
+	say "[BigNameDesc of ST] [one of]smirks[or]laughs[or]harrumphs[or]grimaces[or]grins[in random order] as [he of ST] takes the [MediumDesc of SD] and smushes it into your face.";
+	slowDelicateUp 1;
+	compute MessyDiaperFacesit of SD; [grossness addiction will be handled in here]
 	if the assemblyTime of A is 1, say "[speech style of M]'Okay, that's enough. And [NameBimbo], make sure you take your disgusting mess with you this time.'[roman type][line break]With that instruction from [NameDesc of M], the assembly appears to be over.".
 
 egg-assembly is an assembly.
@@ -1111,6 +1114,9 @@ To say GenericDetention of (M - a staff member):
 	say "[BigNameDesc of M] looks furious.[line break][speech style of M]'It's DETENTION for you, young Miss. Come with me now!'[roman type][line break]".
 
 dq-staff-detention is a diaper punishment. the priority of dq-staff-detention is 5.
+
+To say EnticeFlav of (M - a monster) for (P - dq-staff-detention):
+	say "[speech style of M]'It's DETENTION for you, young Miss. Get on your knees at once!'[roman type][line break]".
 
 To compute punishment of (P - a dq-staff-detention):
 	follow the unique punishment rule of current-monster.

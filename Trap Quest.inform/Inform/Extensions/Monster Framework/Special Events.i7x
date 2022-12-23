@@ -38,9 +38,10 @@ To FacePiss from (M - an object):
 				say "You position the [printed name of V] below your chin just in time, as your hair, face and mouth are blasted by a stream of [urine]. [one of]As your [printed name of V] quickly fills up you realise that the only thing more humiliating than being used as a toilet is being witnessed saving some for later! [or][stopping]";[But no extra humiliation hit?]
 				now the doses of V is max-doses of V;
 				now the fill-colour of V is golden;
-				now V is monster-origin;
+				now V is boring-origin;
 			otherwise:
 				say "Your face is blasted by a stream of [urine]. ";
+				SmellGrossOut 5;
 			compute urine hitting face;
 			if M is nothing: [currently only wrestler urinal scene]
 				say "[first custom style]'[one of]Ungrateful brat[or]You can't even be a urinal properly[or]Useless whore[or]Disrespectful bitch[or]Oh my, you disobedient wench[or]Gross, you let some get on my shoes you [cunt][in random order]!'[roman type][line break]The anonymous man [one of]slaps you in the face[or]kicks you in the belly[or]painfully twists your nipples[at random] as punishment.";
@@ -92,7 +93,7 @@ To decide which object is the juice-collector of (L - a liquid-object):
 		let LV be a list of things;
 		repeat with V running through carried vessels:
 			if V is not tight topped:
-				unless the doses of V >= the max-doses of V and (diaper quest is 1 or V is monster-origin) and ((L is urine and the fill-colour of V is golden) or (L is milk and the fill-colour of V is white) or (L is murkwater and the fill-colour of V is murky)), add V to LV; [vessels that satisfy these conditions, there would be no point in refilling with new stuff]
+				unless the doses of V >= the max-doses of V and ((L is urine and the fill-colour of V is golden) or (L is milk and the fill-colour of V is white) or (L is murkwater and the fill-colour of V is murky)), add V to LV; [vessels that satisfy these conditions, there would be no point in refilling with new stuff]
 		if the number of entries in LV > 0:
 			reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 			truncate LV to 9 entries;
@@ -541,7 +542,7 @@ To compute semen catching from (M - a monster) in (V - a bottle):
 		now the fill-colour of V is murky;
 	say strongHumiliateReflect;
 	SetDose V to (the total volume of face + 1) / 2;
-	now V is monster-origin;
+	now V is boring-origin;
 	MouthEmpty.
 
 
@@ -823,6 +824,7 @@ To compute facesit sex of (M - a monster):[see supporter framework for the defau
 		otherwise:
 			say FacesitSubmissionResponse of M;
 			decrease the sex-length of M by 1;
+			compute unique facesit submission effect of M;
 			if the sex-length of M > 2 and there is a worn tongue piercing, decrease the sex-length of M by 1.
 
 [If the monster wants another round after, sex length needs to be set above 0 in "unique facesit climax effect". If the monster shouldn't be satisfied, make them uninterested in the unique function]
@@ -835,6 +837,9 @@ To compute facesit climax of (M - a monster):
 		Satisfy M.
 
 To compute unique facesit climax effect of (M - a monster):
+	do nothing.
+
+To compute unique facesit submission effect of (M - a monster):
 	do nothing.
 
 [!<SaySwallowDemandOfMonster>+

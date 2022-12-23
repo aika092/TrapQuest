@@ -15,6 +15,7 @@ Understand "strict" as matron. The text-shortcut of matron is "mat".
 
 Figure of matron is the file "NPCs/Hotel/matron1.jpg".
 Figure of matron portal cutscene is the file "NPCs/Hotel/cutscene-matron-portal1.jpg".
+Figure of matron diaper change cutscene is the file "NPCs/Hotel/cutscene-matron-change1.jpg".
 
 To decide which figure-name is the monster-image of (M - matron):
 	decide on figure of matron.
@@ -32,6 +33,8 @@ To say MonsterComment of (M - a matron):
 	if diaper quest is 0 and lady fetish < 2, say "[variable custom style][if the diaper addiction of the player < 6 and the player is gendered male]What a MILF! This must be the [man of M] in charge of the princess. [otherwise if the diaper addiction of the player > 14][line break][second custom style]*giggle* [one of]Maybe [he of M] can be my [daddy of M][or]It's my [daddy of M][stopping]! [end if][if the delicateness of the player < 7]If I can play it cool, maybe [he of M]'ll be nice to me.[otherwise if the delicateness of the player < 12]I wonder what sorts of games [he of M]'d play with someone that's not [his of M] baby?[otherwise if the delicateness of the player < 16]I bet [he of M] could take real good care of me.[otherwise]I hope [he of M] can be my [daddy of M] and show me how to be a slut like [him of M].[end if][roman type][line break]".
 
 Definition: matron is able to remove cursed plugs: decide yes.
+
+Definition: matron is a generic-unlocker: decide yes.
 
 To set up (M - matron):
 	reset M;
@@ -415,7 +418,9 @@ To say DiaperPowderFlav of (M - matron):
 	say "[BigNameDesc of M] pulls out a bottle of baby power and squeezes it liberally over your crotch area, completely coating it and forming a huge white cloud of powder. ".
 
 To say DiaperChangeFlav of (M - matron):
-	say "From [DiaperSpace of M] [he of M] produces [if current-diaper is new-diaper]an identical (but clean) [new-diaper][otherwise]a [new-diaper][end if], which [he of M] slides underneath your bum[one of] and then fixes in place[or], folds it over and tapes it up[at random]. [if current-diaper is diaper][big he of M] chucks the old one into the diaper pail and you hear a little 'whoosh' as it is whisked away by some hidden mechanism.[end if][line break][speech style of M]'There now, [one of]isn't that much better? [or]You DO belong in them, oh yesh we do, oh yesh we do! [in random order]Off you trot now[one of]. But you'd better make sure that I never see you without a nappy on - you're my baby now, and you'll be kept in diapies for as long as I'm around!'[or]!'[stopping][roman type][line break][big he of M] releases you from the bondage and carries you back down onto the ground.".
+	say "From [DiaperSpace of M] [he of M] produces [if current-diaper is new-diaper]an identical (but clean) [new-diaper][otherwise]a [new-diaper][end if], which [he of M] slides underneath your bum[one of] and then fixes in place[or], folds it over and tapes it up[at random]. [if current-diaper is diaper][big he of M] chucks the old one into the diaper pail and you hear a little 'whoosh' as it is whisked away by some hidden mechanism.[end if]";
+	cutshow figure of matron diaper change cutscene;
+	say "[line break][speech style of M]'There now, [one of]isn't that much better? [or]You DO belong in them, oh yesh we do, oh yesh we do! [in random order]Off you trot now[one of]. But you'd better make sure that I never see you without a nappy on - you're my baby now, and you'll be kept in diapies for as long as I'm around!'[or]!'[stopping][roman type][line break][big he of M] releases you from the bondage and carries you back down onto the ground.".
 
 To say DiaperSpace of (M - matron):
 	say "underneath the table".
@@ -612,7 +617,9 @@ To consider farewell routine for (M - matron):
 		say "[speech style of M]'Run along now, you little minx! [one of]And say hi to the [ShortDesc of headmistress] for me[or]Play nice with the other babies, now[in random order]!'[roman type][line break][BigNameDesc of M] pushes you through the portal!";
 		cutshow Figure of matron portal cutscene for M;
 		now forced-portal is school portal;
+		dislodge M;
 		teleport via hotel portal;
+		now M is in Hotel22;
 	otherwise if there is a worn diaper and the player is tired:
 		if M is not interested, say "[BigNameDesc of matron] wrinkles [his of matron] forehead.[line break][speech style of M]'No, I shouldn't just leave you here like this. I have a responsibility to take care of you...'[roman type][line break]";
 		say "[speech style of M]'You're a bit [if the player is feeling dominant]cranky[otherwise]tired[end if], aren't you... You need a nap!'[roman type][line break]";

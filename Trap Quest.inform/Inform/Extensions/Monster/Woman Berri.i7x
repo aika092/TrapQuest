@@ -1,13 +1,5 @@
 Woman Berri by Monster begins here.
 
-To construct unique buttons for (M - woman-player):
-	if the changing-station-tank-scene of M > 0 and ButtonTableFull is 0:
-		choose a blank row in the Table of Buttons;
-		now the ButtonImage entry is Figure of TakeAllButton;
-		now the ButtonCommand entry is "pull rope";
-		now the ButtonColour entry is lightModeFullGreen;
-		if the player is prone or the player is in danger, now the ButtonColour entry is lightModeFullYellow;
-		if the player is immobile, now the ButtonColour entry is lightModeFullRed.
 
 The current-name of woman-player is "Berri". The old-name of woman-player is "Berri".
 
@@ -48,9 +40,11 @@ Figure of Berri Cutscene 11a is the file "NPCs/MultiFloor/berri/woman-cutscene11
 Figure of Berri Cutscene 11b is the file "NPCs/MultiFloor/berri/woman-cutscene11b.jpg".
 Figure of Berri Cutscene 11c is the file "NPCs/MultiFloor/berri/woman-cutscene11c.jpg".
 Figure of Berri Cutscene 11d is the file "NPCs/MultiFloor/berri/woman-cutscene11d.jpg".
+Figure of Berri Cutscene 12 is the file "NPCs/MultiFloor/berri/woman-cutscene12.jpg".
 
 To decide which figure-name is the monster-image of (M - woman-player):
 	if M is caged and M is in the location of dominatrix-cage, decide on the examine-image of dominatrix-cage;
+	if M is caged and playerRegion is dungeon, decide on figure of berri cutscene 12;
 	if the dominatrix-contraption-scene of M > 0 and the dominatrix-contraption-scene of M < 6:
 		if the dominatrix-contraption-scene of M < 4 or diaper messing < 3:
 			if watersports fetish is 1, decide on Figure of Berri Cutscene 1a;
@@ -136,13 +130,11 @@ To compute friendly boredom of (M - woman-player):
 			distract M;
 			if M is in the location of the player, say BecomesBoredFlav of M.
 
-woman-player has a number called woman-diaper-state.
-woman-player has a number called woman-latest-diaper-state.
-
 Definition: woman-player is soggy:
 	if the woman-diaper-state of it > 0 and diaper messing < 6, decide yes;
 	decide no.
 Definition: woman-player is messy:
+	if woman-player is caged and playerRegion is dungeon, decide yes;
 	if the woman-diaper-state of it > 0 and diaper messing >= 6, decide yes;
 	decide no.
 
@@ -674,6 +666,56 @@ Check pulling woman-player when the woman-status of woman-player is 98:
 	otherwise:
 		say "You try to lift [NameDesc of woman-player] out of the diaper pail but [he of woman-player] is so heavy! You don't manage it this time. Meanwhile, the smell of the stinky used diapers inside fills your nostrils, overwhelming you.";
 		DiaperAddictUp 1.
+
+Chapter - Christmas Box Scene
+
+To say CagedDominationFlav of (M - woman-player):
+	if the woman-status of woman-player is 103, say "You push [NameDesc of M][']s face even harder into the front of [his of M] diapered crotch, forcing [him of M] to smell it even more strongly. ";
+	otherwise say "You rattle the bars of [NameDesc of M][']s cage. ".
+
+Check pulling woman-player when the woman-status of woman-player is 103:
+	if the player is immobile, say "You're a bit busy!" instead;
+	if the player is prone, say "You would need to stand up first." instead;
+	if the player is not able to manually use manual dexterity, do nothing instead;
+	if the player is in danger, say "You can't do that in the middle of combat!" instead;
+	allocate 6 seconds;
+	say "You release the ribbons holding the [man of woman-player][']s legs bent, and then the ones keeping [his of woman-player] hands behind [his of woman-player] back. With a bit of assistance from you, [he of woman-player] is able to clamber out of the giant box.[line break][speech style of woman-player]'Oh thank you thank you so much, stranger! My name is Berri, and I'm an adventurer like you! I got too close to that [MediumDesc of boogeymonster], and then it grabbed me, and then the next thing I knew I was a diapered present inside a box! I've been in there forever!!! But I think now that you've freed me, my torment is finally over.'[roman type][line break]";
+	now woman-player is unleashed;
+	now woman-player is introduced;
+	interest woman-player;
+	now the woman-diaper-state of woman-player is 0;
+	if newbie tips is 1, say "[newbie style]Newbie tip: Berri is a special type of NPC, that under normal circumstances remains friendly throughout the entire course of the game, and will even fight alongside you, or appear to help you out of sticky situations. However if bad things happen, including if you lose a fight alongside [him of woman-player], [he of woman-player][']ll start to lose the game [himself of woman-player], and become more babified. Also, sometimes when you bump into [him of woman-player] [he of woman-player][']ll be in the middle of a predicament, and you have to choose whether to help [him of woman-player] or let it happen. Letting it happen usually either avoids the risk of bad stuff, or rewards you with powerful items. However, it'll continue Berri's progress towards becoming a diaper-addicted adult baby fetishist. A super-diaper-addicted Berri is a sort-of useless sidekick who can even do really unhelpful things like release the [ShortDesc of boogeymonster].[roman type][line break]";
+	now the text-shortcut of woman-player is "bri";
+	now the woman-status of woman-player is 1;
+	say "Perfectly on cue, a series of magical sparkles appears above you, forming letters in the air to read [']MERRY CHRISTMAS AIKA!['][paragraph break]";
+	if a random number between 1 and 2 is 1:
+		say "The letters descend upon you both in a shower of magic. Instantly, you can tell that something is wrong. The magic is angry - because YOU ARE NOT AIKA, AND YOU HAVE STOLEN THEIR CHRISTMAS PRESENT. Before you can react, you feel a rumbling down below... ";
+		let K be a random worn knickers;
+		if K is knickers:
+			unless K is plain-massive-diaper, silently transform K into plain-massive-diaper;
+			now plain-massive-diaper is cursed;
+		otherwise:
+			summon plain-massive-diaper cursed;
+		if diaper swapping >= 3:
+			MessSet plain-massive-diaper to 50;
+			say "As your thighs are forced wide apart, it only takes one look at [NameDesc of woman-player] with [his of woman-player] suddenly clean diaper to understand what's happened here - the magic has [if K is clean diaper]swapped [NameDesc of woman-player][']s nasty hypermessed diaper and yours[otherwise]put [NameDesc of woman-player][']s nasty hypermessed diaper on you, and given [him of woman-player] a clean one[end if]!!! The stupidly bulky [MediumDesc of plain-massive-diaper] is sealed tight to your waist, evidently magically cursed, and full of days worth of [NameDesc of woman-player][']s squelchy, slimy, sticky, stinky shit!";
+			GrossOut 10;
+		otherwise:
+			now rectum is 30;
+			increase suppository by 1;
+			say "As your thighs are forced wide apart, it only takes one look at [NameDesc of woman-player] with [his of woman-player] suddenly clean diaper to understand what's happened here - the magic has given you a replica of [his of woman-player] old super thick diaper, and judging by the sudden pressure in your backdoor, it has also filled your guts to the BRIM with insane amounts of poop! Poop that now urgently needs to come out! And even worse, the stupidly bulky [MediumDesc of plain-massive-diaper] is sealed tight to your waist, evidently magically cursed!";
+		compute summoned quest of plain-massive-diaper;
+		say "[speech style of woman-player]'Oh my god, I'm so sorry, I had no idea it might do that!!!'[roman type][line break][BigNameDesc of woman-player] squeaks.";
+	otherwise:
+		if diaper messing >= 6:
+			let SD be a random off-stage soiled-diaper;
+			if SD is soiled-diaper:
+				now the diaper-origin of SD is the substituted form of "giant diaper from Berri's time in the Christmas box";
+				now SD is in the location of the player;
+		say "The letters descend upon you both in a shower of magic. [BigNameDesc of woman-player][']s diaper is magically changed, the old giant messy one [if there is a soiled-diaper in the location of the player]appearing on the ground in front of you[otherwise]disappearing into the ether[end if]. Meanwhile, you feel yourself gaining new magical energy!";
+		MagicPowerUp 2;
+		say "[speech style of woman-player]'Thank goodness.'[roman type][line break][BigNameDesc of woman-player] says with a relieved sigh.";
+
 
 Chapter - Messy Diaper Scene
 
@@ -1287,7 +1329,7 @@ To say StrikingSuccessFlav of (M - woman-player) on (B - a body part):
 Part 7 - Conversation
 
 To say conventional greeting of (M - woman-player):
-	if the woman-status of M is 0 and M is stranger:
+	if M is stranger:
 		say FirstGreeting to M;
 	otherwise:
 		if the bimbo of the player < 4:
@@ -1305,7 +1347,10 @@ To say conventional greeting of (M - woman-player):
 
 To compute basic greeting to (M - woman-player):
 	if M is uninterested, check guaranteed perception of M; [This should make sure all flags and variable trackings are as normal for an NPC]
-	if the woman-status of M is 0 and M is stranger:
+	if M is stranger and the woman-status of M is 103:
+		say "It seems that [NameDesc of M] is either incapable or unwilling to reply. [big he of M] just groans into the crotch of [his of M] giant stinky diaper. You'll have to rescue [him of M] first if you want to interact with [him of M] - by [bold type]pull[roman type]ing [his of M] binds.";
+		deinterest M;
+	otherwise if M is stranger:
 		say "[speech style of M]'Oh shit! Wait... oh my god, are you another player? I didn't realise there was more than one of us playing at the same time! I wonder if we're allowed to work together? What's my name? People call me [']Berri['].'[roman type][line break]";
 		if newbie tips is 1, say "[newbie style]Newbie tip: Berri is a special type of NPC, that under normal circumstances remains friendly throughout the entire course of the game, and will even fight alongside you, or appear to help you out of sticky situations. However if bad things happen, including if you lose a fight alongside [him of M], [he of M][']ll start to lose the game [himself of M], and become more babified. Also, sometimes when you bump into [him of M] [he of M][']ll be in the middle of a predicament, and you have to choose whether to help [him of M] or let it happen. Letting it happen usually either avoids the risk of bad stuff, or rewards you with powerful items. However, it'll continue Berri's progress towards becoming a diaper-addicted adult baby fetishist. A super-diaper-addicted Berri is a sort-of useless sidekick who can even do really unhelpful things like release the [ShortDesc of boogeymonster].[roman type][line break]";
 		now M is introduced;
@@ -1393,8 +1438,9 @@ To compute basic greeting to (M - woman-player):
 		say "[speech style of M]'Thank you so much for saving me from that toilet prison. It was on a timer and if nobody saved me within the next few minutes, it would have locked permanently!'[roman type][line break]";
 	otherwise:
 		say "[speech style of M]'I'm not sure I want to talk right now.'[roman type][line break]";
-	interest M;
-	update woman name and bimbo.
+	if M is aware:
+		interest M;
+		update woman name and bimbo.
 
 talk-berri-question is a talk-object.
 

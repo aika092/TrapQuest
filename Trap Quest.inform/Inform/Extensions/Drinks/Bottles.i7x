@@ -65,20 +65,21 @@ To SetDose (B - a bottle) to (N - a number):
 			force inventory-focus redraw. [Force inventory window redraw]
 
 To DoseEmpty (B - a bottle):
-	now B is player-origin;
+	now B is boring-origin;
 	cancel father material of B;
 	if the doses of B is not 0:
 		now the doses of B is 0;
 		force inventory-focus redraw. [Force inventory window redraw]
+
+A bottle has a drink-origin. Understand the drink-origin property as describing a bottle. A bottle is usually boring-origin.
 
 [!<Bottle>@<curseID:CurseIDEnum>*
 
 It is possible for the player to know (sure) or not know (unsure) the BUC status of the bottle.
 
 *@!]
-A bottle has a curse-ID.
-Understand the curse-ID property as describing a bottle.
-A bottle is usually unsure.
+A bottle has a curse-ID. Understand the curse-ID property as describing a bottle. A bottle is usually unsure.
+
 
 [!<Bottle>@<magicCurse:MagicCurseEnum>*
 
@@ -108,18 +109,11 @@ A bottle has a drink-colour called the fill-colour. Understand the fill-colour p
 
 To say PotionType of (B - a bottle):
 	say "a [fill-colour of B] liquid";
-	if the fill-type of B is remembered, say " ([FillName the fill-type of B][if the fill-colour of B is creamy and the number of things inseminating B > 0] from the [list of things inseminating B][end if])".
+	if the fill-type of B is remembered, say " ([FillName the fill-type of B][if the fill-colour of B is creamy and the number of things inseminating B > 0] from the [list of things inseminating B][end if][if a2m fetish >= 2 and B is anal-origin] that has been inside someone's asshole[otherwise if B is not boring-origin] that has been inside someone's orifice[end if])".
 
 To say ShortDesc of (B - a bottle):
 	if the fill-type of B is remembered, say "[FillName the fill-type of B]";
 	otherwise say "[fill-colour of B] drink".
-
-[!<Bottle>@<origin:OriginEnum>*
-
-This variable maybe needs to be renamed, because what it really is checking is whether the liquid has at any point been up the player's ass. If it has, then it gets flagged as monster-origin. The exception is urine; if the urine came from collecting from being pissed on, then it gets flagged as monster-origin. This is mainly for tracking how valuable the liquid is to the witch. ###Selkie suggests: pee-origin-player or pee-origin-monster
-
-*@!]
-A bottle can be player-origin or monster-origin. A bottle is usually player-origin.
 
 [!<Bottle>@<WhichNumberIsTheFillType>+
 

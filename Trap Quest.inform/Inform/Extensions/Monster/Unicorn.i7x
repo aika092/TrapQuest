@@ -660,7 +660,7 @@ To say AnnoyedResponse of (M - unicorn):
 
 To compute annoyed punishment of (M - unicorn):
 	say "[line break][speech style of M]'[one of]QUIET, HUSSY!'[or]SHUT UP, HUSSY!'[in random order][roman type][line break][BigNameDesc of M][']s horn spews hot sparks as [he of M] shrieks with rage. The sparks pop like firecrackers on contact with your skin!";
-	DelicateUp 1.
+	PainUp 20.
 
 To say InvitationAccepted of (M - unicorn) with (N - a monster):
 	say "[speech style of M]'[one of]A-as long as you're willing.'[or]W-well, since you put it like that...'[or]O-oh, it's really OK?'[at random][roman type][line break]".

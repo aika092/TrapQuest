@@ -44,6 +44,8 @@ Definition: dominatrix is willing to do oral: decide yes.
 
 Definition: dominatrix is willing to do anal: decide yes.
 
+Definition: dominatrix is a generic-unlocker: decide yes.
+
 Definition: a dominatrix is willing to charm snakes:
 	if diaper quest is 0, decide yes;
 	if there is a worn chastity bond, decide no;
@@ -519,7 +521,7 @@ To compute facial sex of (M - dominatrix):
 			now M is not penetrating face;
 			compute torturing of M;
 		otherwise:
-			say "[speech style of M]'Good girl. And now underneath...'[roman type][line break][big he of M] tilts the boot back and pushes the sole towards your tongue.[line break][variable custom style][one of]Gross, that's the bit that's been touching the ground...[or]Eww, not again![stopping][roman type][line break]";
+			say "[speech style of M]'Good girl. And now underneath...'[roman type][line break][big he of M] tilts the boot back and pushes the sole towards your tongue.[line break][variable custom style][one of]Gross, that's the bit that's been touching the ground...[or]Eww![stopping][roman type][line break]";
 			cutshow figure of dominatrix cutscene 6 for M;
 			now the sex-length of M is 1;
 	decrease the sex-length of M by 1.
@@ -572,8 +574,12 @@ To say SexSubmissionFlav of (M - dominatrix):
 	if M is feeding the player:
 		say "You obediently suck on the bottle teat, allowing more [milk] into your mouth. [one of]It feels very lewd[or]You can't help but feel like it's a sex toy squirting liquid into your mouth[or]Kneeling in front of [NameDesc of M] makes this act feel very submissive[or]You cast your eyes downward in shame[in random order].";
 	otherwise if M is penetrating face:
-		if the sex-length of M > 0, say "You [if the delicateness of the player < 5]extremely reluctantly[otherwise if the delicateness of the player < 10]reluctantly[otherwise if the delicateness of the player < 14]timidly[otherwise]enthusiastically[end if] begin licking the toe of [his of M] boot. The disgusting taste of latex instantly hits your mouth[if the delicateness of the player >= 14], but you don't care[end if].";
-		otherwise say "It's so gross that you [if the delicateness of the player < 10]can barely bring yourself to do it[otherwise if the delicateness of the player < 14]are quite hesitant[otherwise]are slightly hesitant[end if], but you do it anyway, tonguing the foul tasting part of the shoe where it has been in contact with the ground. The disgusting taste of rubber and grime overpower your taste buds and leave you not wanting to put your tongue back in your mouth.";
+		if the sex-length of M > 0:
+			say "You [if the grossness addiction of the player < 3]extremely reluctantly[otherwise if the grossness addiction of the player < 6]reluctantly[otherwise if the grossness addiction of the player < 13]timidly[otherwise]enthusiastically[end if] begin licking the toe of [his of M] boot. The disgusting taste of latex instantly hits your mouth[if the grossness addiction of the player >= 13], but you don't care[end if].";
+			TasteGrossOut 6;
+		otherwise:
+			say "It's so gross that you [if the grossness addiction of the player < 6]can barely bring yourself to do it[otherwise if the grossness addiction of the player < 9]are quite hesitant[otherwise if the grossness addiction of the player < 16]are slightly hesitant[otherwise]know it's going to taste awful[end if], but you do it anyway, tonguing the foul tasting part of the shoe where it has been in contact with the ground. The disgusting taste of rubber and grime overpower your taste buds and leave you not wanting to put your tongue back in your mouth.";
+			TasteGrossOut 9;
 	otherwise:
 		say "[one of]You lie still and accept the invasion.[or]You submit to being used as a plaything.[or]You don't resist being used.[purely at random]".
 

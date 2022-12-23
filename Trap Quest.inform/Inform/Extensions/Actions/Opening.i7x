@@ -54,7 +54,19 @@ Report opening a container:
 		compute mimic;
 	otherwise:
 		if the noun is not emptied:
-			add treasure to the noun;
+			if the noun is wooden crate and the noun is not trapped and diaper quest is 1 and diaper messing >= 4 and the class of the player is santa's little helper and woman-player is stranger and the player is getting unlucky:
+				set up woman-player;
+				now the woman-bimbo of woman-player is 4;
+				now the woman-old-bimbo of woman-player is 4;
+				now woman-player is in the location of the player;
+				now woman-player is caged;
+				now the woman-status of woman-player is 103;
+				now the woman-diaper-state of woman-player is 5;
+				say "Instead of an item... You find... A person?! And not just any person, but a [man of woman-player] curled up in a pink latex bodysuit and the largest, fullest, stinkiest diaper you've ever seen, with nothing but laxatives to drink for the duration of [his of woman-player] imprisonment. As soon as you have opened the lid, the horrid fumes hit your nostrils.";
+				SmellGrossOut messyDiaperSmellGrossnessLevel;
+				say "And to think, this poor [man of woman-player] has been smelling [his of woman-player] own sordid aroma for who-knows-how-long!!![paragraph break]Looking more closely, you can see that [his of woman-player] arms and legs are tied up by ribbons - impossible for [him of woman-player] to untie on [his of woman-player] own, but trivial for you to free [him of woman-player]. There's also a note, that reads [']To Aika, Happy Christmas x['], but you have no idea who Aika is.[paragraph break]You could probably [bold type]pull[roman type] on [his of woman-player] binds to release [him of woman-player], or get out of here before the gross smell further offends your olfactory senses.";
+			otherwise:
+				add treasure to the noun;
 		otherwise if the number of objects in the noun is 0:
 			say "How lame, it's empty.";
 		otherwise:

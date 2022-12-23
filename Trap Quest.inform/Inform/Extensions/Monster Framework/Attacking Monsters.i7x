@@ -559,6 +559,7 @@ To damage (A - a number) on (M - a monster):
 		if damage-explained > 0, say "+1 (random bonus for low damage hits) ";
 	[Specific Monsters can add or subtract damage]
 	let N be the damage modifier of M;
+	decrease N by the temporary-damage-reduction of M;
 	if N is not 0:
 		increase attack-damage by N;
 		if damage-explained > 0, say "[if N >= 0]+[end if][N] (damage [if N < 0]reduction[otherwise]amplification[end if] of [ShortDesc of M]) ";

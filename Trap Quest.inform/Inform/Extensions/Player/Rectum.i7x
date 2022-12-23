@@ -89,14 +89,34 @@ An all later time based rule (this is the fullness causes intelligence loss rule
 		now fullness-time is 0;
 		if F > 0, say "Now that your bowels are empty, your ability to concentrate improves and your intelligence returns.".
 
-To decide which number is messyDiaperSmellToleranceLevel: decide on 15. [The level of diaper addiction where messy diaper stuff becomes less bad. Can be tweaked]
-To decide which number is messyDiaperSmellEnjoymentLevel: decide on 20. [The level of diaper addiction where messy diaper stuff has no effect. Can be tweaked]
+To decide which number is messyDiaperSmellGrossnessLevel: decide on 7. [The level of grossness addiction where messy diaper stuff becomes less bad. Can be tweaked]
+To decide which number is messyDiaperSmellEnjoymentLevel: decide on messyDiaperSmellGrossnessLevel + 7. [The level of grossness addiction where messy diaper stuff has no effect. Can be tweaked]
+
+To decide which number is wetDiaperFacesitGrossnessLevel: decide on 6. [The level of grossness addiction where wet diaper facesitting becomes less bad. Can be tweaked]
+To decide which number is wetDiaperFacesitEnjoymentLevel: decide on wetDiaperFacesitGrossnessLevel + 7. [The level of grossness addiction where wet diaper facesitting causes arousal. Can be tweaked]
+
+To decide which number is messyDiaperFacesitGrossnessLevel: decide on 11. [The level of grossness addiction where messy diaper facesitting becomes less bad. Can be tweaked]
+To decide which number is messyDiaperFacesitEnjoymentLevel: decide on messyDiaperFacesitGrossnessLevel + 7. [The level of grossness addiction where messy diaper facesitting causes arousal. Can be tweaked]
 
 Definition: yourself is tolerating messy diapers:
-	if the diaper addiction of the player >= messyDiaperSmellToleranceLevel, decide yes;
+	if the grossness addiction of the player >= messyDiaperSmellGrossnessLevel, decide yes;
 	decide no.
 Definition: yourself is enjoying messy diapers:
-	if the diaper addiction of the player >= messyDiaperSmellEnjoymentLevel, decide yes;
+	if the grossness addiction of the player >= messyDiaperSmellEnjoymentLevel, decide yes;
+	decide no.
+
+Definition: yourself is tolerating messy facesits:
+	if the grossness addiction of the player >= messyDiaperFacesitGrossnessLevel, decide yes;
+	decide no.
+Definition: yourself is enjoying messy facesits:
+	if the grossness addiction of the player >= messyDiaperFacesitEnjoymentLevel, decide yes;
+	decide no.
+
+Definition: yourself is tolerating wet facesits:
+	if the grossness addiction of the player >= wetDiaperFacesitGrossnessLevel, decide yes;
+	decide no.
+Definition: yourself is enjoying wet facesits:
+	if the grossness addiction of the player >= wetDiaperFacesitEnjoymentLevel, decide yes;
 	decide no.
 
 [!<YourselfIsUpsetAboutMess>+
@@ -105,16 +125,18 @@ Checks if a player is messy and really unhappy about it.
 
 +!]
 Definition: yourself is upset about mess:
-	if there is a messy monster penetrating face and the diaper addiction of the player < messyDiaperSmellEnjoymentLevel, decide yes;
-	if diaper messing >= 6 and diaper-box is worn and diaper-box is diaper-dumped and the diaper addiction of the player < messyDiaperSmellEnjoymentLevel, decide yes;
-	let D be a random worn perceived messed diaper;
+	if the player is tolerating messy facesits, decide no;
+	if there is a messy monster penetrating face, decide yes;
+	if diaper messing >= 6 and diaper-box is worn and diaper-box is diaper-dumped, decide yes;
+	if the player is tolerating messy diapers, decide no;
 	if the location of the player is nonstandard:
 		if diaper messing >= 6 and (there is a carried soiled-diaper or there is a soiled-diaper in the location of the player), decide yes;
 		if there is a messed knickers in the location of the player or there is a carried messed knickers, decide yes;
-	if turnsWithSoiledDiaper > 2 * (the square root of the diaper addiction of the player), decide yes;
+	if turnsWithSoiledDiaper > 2 * (the square root of the grossness addiction of the player), decide yes;
+	let D be a random worn perceived messed diaper;
 	if D is diaper:
-		if the player is an adult baby and the bimbo of the player > the known-mess of D, decide no;
-		if the diaper addiction of the player >= 7, decide no;
+		if the player is an adult baby, decide no;
+		if diaper quest is 1 and the class of the player is priestess, decide no;
 		decide yes;
 	if there is a worn perceived messed knickers, decide yes;
 	decide no.
@@ -154,13 +176,25 @@ To compute soiling:
 	if diaper messing >= 3 and chess table is grabbing the player and chess-victor of chess-lesson is 0:
 		compute chess soiling;
 	otherwise:
-		if the player is upset about sitting in mess and the delicateness of the player < 20 and (the player is not in a predicament room or the remainder after dividing time-earnings by 30 < time-seconds): [This would happen every turn during a predicament if we didn't hard-code some periodic timing here]
-			if diaper quest is 1 and the class of the player is priestess:
-				say "You shiver uncontrollably as you continue to wallow in your own mess[one of]. But instead of feeling more little, you feel a sense of holy pride welling up inside of you![or], but in a good, holy way.[stopping]";
-			otherwise:
-				say "You shiver uncontrollably as you continue to wallow in your own mess.";
-				SlowDelicateUp 1;
 		unless current-predicament is team-quiz-predicament and the questionFails of team-quiz-predicament < 2, check real messing.
+
+To compute wallowing:
+	if there is a worn perceived messed knickers:
+		if diaper quest is 1 and the class of the player is priestess:
+			say "You continue to wallow in your own mess[one of]. But instead of feeling grossed out, you feel a sense of holy contentment welling up inside of you![or], but in a good, holy way.[stopping]";
+		otherwise if the player is an adult baby:
+			say "You continue to wallow in your own mess[one of]. But instead of feeling grossed out, you feel a sense of innocent ambivalence.[or], but as a diapered adult baby, you don't mind at all.[stopping]";
+		otherwise:
+			say "You continue to wallow in your own mess.";
+			SlowGrossOut 5;
+	otherwise if there is a worn perceived wet diaper:
+		let D be a random worn diaper;
+		if the diaper addiction of the player > 10:
+			say "The sensation of wallowing in your [printed name of D] gradually arouses you.";
+			passively stimulate vagina from D;
+		otherwise if the diaper addiction of the player < 4:
+			say "You continue to wallow in your wet diaper.";
+			SlowGrossOut 3.
 
 [How high will the game allow rectum incontinence to go?]
 To decide which number is the max-rectum-incontinence of the player:

@@ -109,8 +109,10 @@ To compute diaper pail entrance:
 	now the player is in DiaperPail;
 	now diaperPailStruggleAttempts is 0;
 	let N be the number of soiled-diaper in DiaperPail;
-	say "The horrid sensation of your head being amongst the [if N > 1][N] used diapers[otherwise]messy diaper[end if] overwhelms your senses, [one of]and leaves you feeling smaller than before[or]almost making you cry[or]making you feel [if the player is feeling dominant]less dominant[otherwise]more submissive[end if] than before[in random order].";
-	SilentlyDelicateUp 1.
+	if the player is enjoying messy facesits, say "The intoxicating sensation of your head being amongst the [if N > 1][N] used diapers[otherwise]messy diaper[end if] excites you, but also makes you feel [if the player is feeling dominant]less dominant[otherwise]more submissive[end if] than before.";
+	otherwise say "The horrid sensation of your head being amongst the [if N > 1][N] used diapers[otherwise]messy diaper[end if] overwhelms your senses, [one of]and leaves you feeling smaller than before[or]almost making you cry[or]making you feel [if the player is feeling dominant]less dominant[otherwise]more submissive[end if] than before[in random order].";
+	SilentlyDelicateUp 1;
+	SmellGrossOut messyDiaperFacesitGrossnessLevel.
 
 To compute diaper pail exit:
 	repeat with SD running through soiled-diapers in DiaperPail:
@@ -154,12 +156,16 @@ Carry out BabChanging it with:
 	if the noun is not woman-player or diaper quest is 0:
 		allocate 6 seconds;
 		say "Settling [NameDesc of the noun] onto [his of the noun] back, you get to work cleaning up [his of the noun] messy nappy and replacing it with [if the second noun is a diaper][NameDesc of the second noun][otherwise]a diaper from your [MediumDesc of the second noun][end if]. Eventually [he of the noun][']s all clean and safely padded again.";
-		now the refractory-period of the noun is a random number between -100 and 300;
+		diaper change the noun;
 		let SD be a random off-stage soiled-diaper;
 		if diaper messing >= 6 and SD is soiled-diaper:
 			now SD is carried by the player;
 			say "You are now carrying the yucky [SD] that [he of the noun] was wearing before.";
 		if the second noun is diaper, only destroy the second noun.
 Understand "change [a person] with [something]", "change [a person] into [something]" as BabChanging it with.
+
+To diaper change (M - a monster):
+	now the refractory-period of M is a random number between (the messRefractoryLimit of M + 300) and 300.
+
 
 Soiled Diaper ends here.

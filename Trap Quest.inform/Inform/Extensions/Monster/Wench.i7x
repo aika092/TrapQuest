@@ -736,9 +736,9 @@ To compute hug attack of (M - a wench):
 		say "You duck away from [him of M]!".
 
 To compute facial sex of (M - a wench):
-	if bukkake fetish is 1 and lady fetish < 2 and a2m fetish > 1:[]
-		say "[one of]A large glob of [semen] leaks out of [his of M] ass and onto your face.[or]Warm [semen] seeps out of [his of M] asshole and onto your face.[or]Thick [semen] slowly trickles out of [his of M] asshole, rolling down the side of your nose and over your cheeks.[or]A fat wad of [semen] leaks out of [his of M] butt and plops wetly onto your face.[or][semen] oozes out of [his of M] gaping butthole, pooling on your face.[or]Thick [semen] dribbles out of [his of M] butt, rolling down your cheeks.[in random order][if the semen addiction of the player < 7][line break][first custom style]How disgusting![roman type][line break][end if][line break]";
-		CumFaceUp 1;
+	if lady fetish < 2 and a2m fetish > 1:
+		say "[one of]A large glob of [semen] leaks out of [his of M] ass and onto your face.[or]Warm [semen] seeps out of [his of M] asshole and onto your face.[or]Thick [semen] slowly trickles out of [his of M] asshole, rolling down the side of your nose and over your cheeks.[or]A fat wad of [semen] leaks out of [his of M] butt and plops wetly onto your face.[or][semen] oozes out of [his of M] gaping butthole, pooling on your face.[or]Thick [semen] dribbles out of [his of M] butt, rolling down your cheeks.[in random order][if the grossness addiction of the player < 7][line break][first custom style]How disgusting![roman type][line break][end if][line break]";
+		if bukkake fetish is 1, CumFaceUp 1;
 	compute facesit sex of M;
 	let D be a random worn messed knickers;
 	if D is clothing:
@@ -748,6 +748,9 @@ To compute facial sex of (M - a wench):
 		say "[BigNameDesc of M] lovingly rubs your diaper[one of] from [his of M] advantageous position[or][stopping].[line break][speech style of M]'[one of]What's this? Why are you wearing a nappy, honey? Are you having potty problems?'[or][DiaperHumiliation of M][stopping][roman type][line break]";
 		humiliate 200;
 		passively stimulate vagina from M.
+
+To compute unique facesit submission effect of (M - a wench):
+	SlowGrossOut 4. [When you submit and lick the creampie out of her, it's a bit gross]
 
 To say FacesitResisting of (M - a wench):
 	say "[one of]You refuse to let [him of M] use you as [his of M] own personal [if the creampieTimer of M > 0]cleaning service[otherwise]sex toy[end if]. [or]You keep your mouth shut, valuing your dignity over your ability to breathe. [or]You spitefully purse your lips, wanting to make sure [he of M] gets a little out of it as possible. [or]You keep your mouth shut. At least if you pass out, you'll still have some dignity. [in random order]".
@@ -776,6 +779,7 @@ To compute facial climax of (M - a wench):
 
 To compute unique facesit climax effect of (M - a wench):
 	SlowSemenTasteAddictUp 1;
+	slowGrossnessAddictUp 1;
 	compute M sleeping 400 after sex;
 	FavourUp M;
 	orgasm bore M.
@@ -868,9 +872,9 @@ To compute (M - a wench) entering mouth:
 		if M is flipping the player:
 			set up sex length of M in face;
 			say CommencingFacesitFlav of M;
-			if bukkake fetish is 1 and lady fetish < 2 and a2m fetish > 1:
-				say "A large glob of [semen] leaks out of [his of M] ass and onto your face.[if the semen addiction of the player < 7][line break][first custom style]How disgusting![roman type][line break][end if][line break]";
-				CumFaceUp 1;
+			if lady fetish < 2 and a2m fetish > 1:
+				say "A large glob of [semen] leaks out of [his of M] ass and onto your face.[if the grossness addiction of the player < 8][line break][first custom style]How disgusting![roman type][line break][end if][line break]";
+				if bukkake fetish is 1, CumFaceUp 1;
 			say "[one of][big his of M] hold on your neck and head is too strong, you'll have to choose between either [bold type]resist[roman type]ing and risk it taking longer until you can breathe or [bold type]submit[roman type]ing by licking [him of M] out, [if the creampieTimer of M > 0]swallowing the [semen] dripping from [his of M] [HoleDesc of M] and [end if]hoping [he of M] [if the oral sex addiction of the player < 3]finishes[otherwise if the oral sex addiction of the player < 7]climaxes[otherwise]cums over your face[end if] quickly[or]Once again, you won't be able to breathe until [he of M]'s finished with you[stopping]!";
 			now M is penetrating face;
 		otherwise:

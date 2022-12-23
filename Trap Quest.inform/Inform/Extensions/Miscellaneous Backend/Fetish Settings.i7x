@@ -56,7 +56,7 @@ choice
 0 [diaper focus]
 -1 [sex fainting]
 -1 [interracial fetish]
-0 [diaper quest]
+0 [diaper swapping]
 0 [roleplay fetish i.e. starting headgear]
 -1 [mythical creature fetish]
 0 [slow pregnancy]
@@ -95,6 +95,7 @@ choice
 0 [super gag reflex]
 0 [a2m fetish]
 1 [silicone milk clash]
+0 [diaper cumrag]
 
 [!<DecideWhichNumberIsOriginalPlayerGender>+
 
@@ -214,8 +215,10 @@ To decide which number is bondage protection:
 	decide on the choice in row 64 of the Table of Player Options.
 
 To decide which number is christmas content:
-	if the player is not a top donator, decide on 0;
-	decide on choice in row 65 of the Table of Player Options.
+	[if the player is not a top donator, decide on 0;
+	decide on choice in row 65 of the Table of Player Options.]
+	if choice in row 65 of the Table of Player Options is 1, decide on 0;
+	otherwise decide on 1.
 
 To decide which number is easter content:
 	if the player is not a top donator or diaper quest is 0, decide on 0;

@@ -776,7 +776,7 @@ To compute punishment of (P - student-bully-swirlie):
 		compute room leaving of M;
 	if the location of the player is not toilets, drag to School10 by current-monster;
 	let K be a random worn knickers;
-	say "[speech style of current-monster]'[if there is worn wet knickers][one of]Dumb baby! This is where you're supposed to go potty, not in your pants[or]Why are your [ShortDesc of K] wet? Don't you know you're supposed to piss in here?'[or]You're such a pathetic baby you couldn't make it to this toilet without wetting your [ShortDesc of K]!'[in random order][otherwise if the number of unfriendly students in the location of the player > 1]Let's play a fun little game, [bitch]. If you want us to treat you with respect... first you have to kiss the toilet like you love it.'[otherwise if diaper focus > 0]Oh yes, let's take a good look at big [boy of the player] potty, the one you probably can't even make it to in time!'[otherwise][one of]Trying to get a good look at the toilet? How about an even closer one!'[or]Seeing you here gives me an idea...'[in random order][end if][roman type][line break]";
+	say "[speech style of current-monster]'[if there is worn wet knickers][one of]Dumb baby! This is where you're supposed to go potty, not in your pants!'[or]Why are your [ShortDesc of K] wet? Don't you know you're supposed to piss in here?'[or]You're such a pathetic baby you couldn't make it to this toilet without wetting your [ShortDesc of K]!'[in random order][otherwise if the number of unfriendly students in the location of the player > 1]Let's play a fun little game, [bitch]. If you want us to treat you with respect... first you have to kiss the toilet like you love it.'[otherwise if diaper focus > 0]Oh yes, let's take a good look at big [boy of the player] potty, the one you probably can't even make it to in time!'[otherwise][one of]Trying to get a good look at the toilet? How about an even closer one!'[or]Seeing you here gives me an idea...'[in random order][end if][roman type][line break]";
 	compute swirlie of current-monster.
 
 Check going when the player is in School10:
@@ -790,8 +790,8 @@ Check going when the player is in School10:
 		do nothing instead. [failsafe]
 
 To compute swirlie of (M - a monster):
-	say "[BigNameDesc of M] grabs you by the head and dunks your face into the toilet water, and then flushes the water around you. It's deeply humiliating!";
-	severeHumiliate;
+	say "[BigNameDesc of M] grabs you by the head and dunks your face into the toilet water, and then flushes the water around you.";
+	GrossOut 5;
 	compute crowd jeering of M;
 	let ST be a random unfriendly nasty student in the location of M;
 	if ST is student and ST is not M:
@@ -807,16 +807,23 @@ To compute swirlie of (M - a monster):
 			PainUp 20;
 		satisfy ST;
 		compute room leaving of ST;
+	say "[speech style of M]'Gross, [NameBimbo], look at all the toilet water that's splashed up onto the rim! We can't leave the toilet like that. Lick it up, and then maybe we'll call it even...'[roman type][line break]";
 	let swirlieResisting be 0;
 	if the player is not feeling submissive:
-		say "Do you want to resist? ";
-		if the player is reverse bimbo consenting, now swirlieResisting is 1;
+		say "Lick the toilet water off of the rim of the toilet?";
+		if the player is not bimbo consenting, now swirlieResisting is 1;
 	if swirlieResisting is 1:
-		say "You buck and thrash and refuse to go down without a fight, screaming bubbles of anger into the swirling water. After a couple of seconds, [NameDesc of M] loses [his of M] grip and is forced to let you go.[line break][speech style of M]'[one of]Fucking [bitch]. I guess you haven't learned your lesson yet[or]Fucking idiot, you're supposed to keep your head under for the whole thing. That's it. I'm still mad at you. We'll do this again soon[in random order].'[roman type][line break]";
+		say "You buck and thrash and refuse to keep your face close to the toilet for any more moments than you have to. [BigNameDesc of M] still has a solid grip on your hair, so for the first couple of seconds, before you break free, it really hurts.";
+		PainUp 15;
+		say "[BigNameDesc of M] loses [his of M] grip and is forced to let you go.[line break][speech style of M]'Fucking [bitch]. I guess you haven't learned your lesson yet.'[roman type][line break]";
 		bore M;
 		compute crowd boredom of M;
 	otherwise:
-		say "You hold your breath and let your limbs hang limp and allow [him of M] to finish the flush cycle. Afterwards [he of M] wrenches you up by your [MediumDesc of hair] and throws you to the ground.[line break][speech style of M]'[one of]I guess you've learned your lesson. For now[or]Yeah. That's what I thought[or]It seems like you know love getting swirlies, huh? You didn't even fight back[cycling].'[roman type][line break]";
+		say "You stick out your tongue and allow [NameDesc of M] to guide your head by your hair, forcing you to lap up the water that splashed out of the toilet when you were given your swirlie.";
+		TasteGrossOut 9;
+		say "By the time [he of M] has finished with you, you have slurped up a significant amount of water into your mouth.";
+		FaceFill water by 1;
+		say "Afterwards [he of M] wrenches you up by your [MediumDesc of hair] and throws you to the ground.[line break][speech style of M]'[one of]I guess you've learned your lesson. For now[or]Yeah. That's what I thought[or]It seems like you really love this toilet, huh? You keep coming back to give it more big sloppy kisses. Disgusting, but kind of metal, too[cycling].'[roman type][line break]";
 		now the stance of the player is 1;
 		DelicateUp 1;
 		compute crowd satisfaction of M;
@@ -942,12 +949,15 @@ To execute (A - bully-rimjob):
 	say "[BigNameDesc of current-monster] pulls apart [his of current-monster] ass cheeks, and pushes [his of current-monster] asshole against your mouth.[line break][speech style of current-monster]'Lick it.'[roman type][line break]Do you obey?";
 	if the player is bimbo consenting:
 		say "It's humiliating, but you acquiesce and stick your tongue inside, sampling the bitter tastes of [his of current-monster] backdoor. [strongHumiliateReflect]";
+		TasteGrossOut 7;
 		HappinessUp current-monster;
 		if a2m fetish > 1 and the current-rank of current-monster > a random number between 2 and 5:
-			say "[BigNameDesc of current-monster] grunts and sighs as all of a sudden [he of current-monster] pushes out a big creamy helping of [semen] from [his of current-monster] [asshole] into your mouth! Yuck!";
+			say "[BigNameDesc of current-monster] grunts and sighs as all of a sudden [he of current-monster] pushes out a big creamy helping of [semen] from [his of current-monster] [asshole] into your mouth!";
+			TasteGrossOut 10;
 			FaceFill semen by 6;
 	otherwise:
 		say "[BigNameDesc of current-monster] settles for rubbing [his of current-monster] asshole over your nose and lips.";
+		GrossOut 4;
 	say "[speech style of current-monster]'Nasty bitch, you like that, don't you?'[roman type][line break]";
 
 bully-confiscate is a bully-action.

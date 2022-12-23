@@ -451,14 +451,24 @@ To decide which number is the cringe of (H - diaper-box):
 	decide on 10.
 
 To compute school periodic effect of (H - diaper-box):
-	if H is diaper-dumped:
+	if H is diaper-dumped and the player is able to breathe:
 		now H is dense;
-		if the player is upset about mess:
-			say "You choke and gag on the horrid fumes inside [NameDesc of diaper-box].";
-			SlowDelicateUp 1;
-		otherwise if a random number between 1 and 20 > the delicateness of the player:
-			say "You are [one of][or]still [stopping]finding being engulfed in used diapers very upsetting.";
-			SlowDelicateUp 1.
+		if diaper messing >= 7:
+			if the player is upset about mess:
+				say "You choke and gag on the horrid fumes inside [NameDesc of diaper-box].";
+			otherwise if the player is not enjoying messy facesits:
+				say "You are [one of][or]still [stopping]finding being engulfed in used diapers very upsetting.";
+			otherwise:
+				say "You continue to breathe in the stench of all the used diapers.";
+			SlowGrossOut messyDiaperFacesitGrossnessLevel;
+		otherwise:
+			if the player is not tolerating wet facesits:
+				say "You choke and gag on the horrid smells inside [NameDesc of diaper-box].";
+			otherwise if the player is not enjoying wet facesits:
+				say "You are [one of][or]still [stopping]finding being engulfed in used diapers very upsetting.";
+			otherwise:
+				say "You continue to breathe in the stench of all the used diapers.";
+			SlowGrossOut wetDiaperFacesitGrossnessLevel.
 
 
 

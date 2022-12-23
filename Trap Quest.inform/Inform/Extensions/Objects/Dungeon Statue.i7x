@@ -119,7 +119,7 @@ To compute dungeon statue interaction:
 		if X is 5:
 			let P be a random off-stage fetish appropriate pacifier;
 			if P is actually summonable:
-				say "As you pull your mouth away from the statue's penis, whilst your mouth is still in its submissive 'O' shape, you feel a new [if P is cock pacifier]phallic[end if] object slip into the vacant space. Even though you can't see anything, you feel the small squishy intrusion as it slides along your tongue, and you can feel that it's definitely shaped like a [if P is cock pacifier]penis, but it's not quite as hard as an actual manly [manly-penis] would be[otherwise]teat[end if]. Raising your hands to your mouth, you feel a little handle in front of a large flat circular section. It's a pacifier! A [if the bimbo of the player < 8]hopeful[otherwise]half-hearted[end if] tug on the handle [if the bimbo of the player < 8]reveals[otherwise]confirms[end if] what you had already started to suspect - you can't remove it...[if diaper quest is 0][line break][variable custom style]Maybe this is the game's way of telling me I'm getting an oral fixation...?[roman type][line break][end if]";
+				say "As you pull your [if diaper quest is 0]mouth away from the statue's penis, whilst your mouth is still in its submissive 'O' shape[otherwise]hand away from the statue's butt, whilst your mouth is in a pained 'O' shape[end if], you feel a new [if P is cock pacifier]phallic[end if] object slip into the vacant space. Even though you can't see anything, you feel the small squishy intrusion as it slides along your tongue, and you can feel that it's definitely shaped like a [if P is cock pacifier]penis, but it's not quite as hard as an actual manly [manly-penis] would be[otherwise]teat[end if]. Raising your hands to your mouth, you feel a little handle in front of a large flat circular section. It's a pacifier! A [if the bimbo of the player < 8]hopeful[otherwise]half-hearted[end if] tug on the handle [if the bimbo of the player < 8]reveals[otherwise]confirms[end if] what you had already started to suspect - you can't remove it...[if diaper quest is 0][line break][variable custom style]Maybe this is the game's way of telling me I'm getting an oral fixation...?[roman type][line break][end if]";
 				summon P cursed with quest;
 			otherwise:
 				say "You watch as some sort of pacifier gag begins to materialise in front of your mouth, but when it finds your lips already occupied, the magic fizzles.";
@@ -130,7 +130,8 @@ To compute dungeon statue interaction:
 				now wisp-success is true;
 				silently set up W;
 				now the wisp-quest of W is swim-wisp-quest;
-				now the wisp-trigger of W is lose-mouthful-wisp-trigger;
+				if diaper quest is 0, now the wisp-trigger of W is lose-mouthful-wisp-trigger;
+				otherwise now the wisp-trigger of W is lose-panties-wisp-trigger;
 				now the wisp-punishment of W is bimbo-wisp-punishment;
 				if (a random number between 0 and 1) + (a random number between 0 and 1) < game difficulty, now the wisp-punishment of W is a random appropriate wisp punishment;
 				now W is everywhere;

@@ -186,9 +186,9 @@ To say variable (L - a liquid-object):
 	otherwise if L is milk:
 		say milk;
 	otherwise if L is murkwater:
-		say "murky liquid";
+		say "a mixture of bodily fluids";
 	otherwise:
-		say "[L]".
+		say "water".
 
 [
     Selkie thinks that:

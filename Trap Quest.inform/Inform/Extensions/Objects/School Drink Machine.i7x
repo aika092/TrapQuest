@@ -39,7 +39,7 @@ To compute drink-machine decanting of (V - a vessel):
 To compute drink-machine filling of (V - a vessel):
 	if diaper quest is 1, now the fill-colour of V is white;
 	otherwise now the fill-colour of V is the Appearance corresponding to an Magic of 3 in the Table of Drinks;
-	now V is player-origin;
+	now V is boring-origin;
 	if the doses of V < the max-doses of V:
 		say "The [ShortDesc of V] is filled with [if V is empty]a[otherwise]another[end if] mouthful of [fill-colour of V] liquid.";
 		increase the doses of V by 1;

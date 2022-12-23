@@ -24,8 +24,8 @@ To compute spontaneous cumbustion: [TODO: Make different levels of mess/urine so
 				vaginally orgasm shamefully;
 			otherwise if R < 2 and the diaper addiction of the player > 10:
 				say "The stimulation from your [if the player is herm][ShortDesc of penis] and [ShortDesc of vagina][otherwise if the player is possessing a penis][ShortDesc of penis][otherwise if the player is possessing a vagina][ShortDesc of vagina][otherwise]urethral opening[end if] rubbing against the soft padding of your [printed name of D] quickly drives you over the edge!";
-				vaginally orgasm shamefully;
-		otherwise if the player is able to get horny:
+				vaginally orgasm shamefully; [below is now handled in compute wallowing]
+		[otherwise if the player is able to get horny:
 			if R < 16 and the known-urine-soak of D >= 6 and the perceived-mess of D > 0 and the diaper addiction of the player > 14:
 				say "The stimulation from your [if the player is herm][ShortDesc of penis] and [ShortDesc of vagina][otherwise if the player is possessing a penis][ShortDesc of penis][otherwise if the player is possessing a vagina][ShortDesc of vagina][otherwise]urethral opening[end if] rubbing against the [urine] soaked padding of your [printed name of D], combined with the [italic type]amazing[roman type] feeling of your stinky mess squelching around your [ShortDesc of Asshole], gradually arouses you.";
 				passively stimulate vagina from D;
@@ -40,7 +40,7 @@ To compute spontaneous cumbustion: [TODO: Make different levels of mess/urine so
 				passively stimulate vagina from D;
 			otherwise if R is 1:
 				say "Your [if the player is herm][ShortDesc of penis] and [ShortDesc of vagina][otherwise if the player is possessing a penis][ShortDesc of penis][otherwise if the player is possessing a vagina][ShortDesc of vagina][otherwise]urethral opening[end if] rubs against the soft padding of your [printed name of D], slowly stimulating you against your will.";
-				passively stimulate vagina from D.
+				passively stimulate vagina from D.]
 
 To decide which number is the stimulation of (D - a diaper) on (F - a body part):
 	decide on 1 + (the square root of the diaper addiction of the player).

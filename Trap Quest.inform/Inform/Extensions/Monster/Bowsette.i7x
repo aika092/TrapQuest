@@ -123,6 +123,7 @@ Definition: bowsette is willing to do titfucks:
 Definition: bowsette is willing to do oral:
 	if the temperament of bowsette > 0, decide yes;
 	decide no.
+Definition: bowsette is a clothes-destroyer: decide yes.
 
 To say speech style of (M - bowsette):
 	say second custom style.

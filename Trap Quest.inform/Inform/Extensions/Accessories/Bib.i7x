@@ -13,11 +13,11 @@ Definition: a bib is food themed: decide yes.
 Definition: a bib is star themed: decide yes.
 Definition: a bib is nudism-enabling: decide yes.
 
-To say ClothingDesc (C - a bib):
+To say ClothingDesc of (C - a bib):
 	say "A soft bib with a drawing of a cartoon giraffe's face on the front, surrounded by pink stars. [if the stomach-food of the player is 0]You feel hungry[otherwise]The bib seems to draw power from the fullness of your stomach[end if].".
-To say ShortDesc (C - a bib):
+To say ShortDesc of (C - a bib):
 	say "bib".
-To say MediumDesc (C - a bib):
+To say MediumDesc of (C - a bib):
 	say "soft giraffe bib".
 
 To decide which number is the strength-influence of (C - a bib):

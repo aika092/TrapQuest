@@ -60,7 +60,7 @@ To say ExamineDesc of (C - a choice trap):
 	say "A tablet - the screen has now turned off.".
 
 This is the spawn initial woods choice traps rule:
-	if the player is a december 2022 top donator:
+	if the player is a december 2022 top donator or (diaper quest is 1 and the player is a december 2022 diaper donator):
 		repeat with N running from 1 to 2:
 			let R be a random click untrapped trappable placed jungle room;
 			let T be a random off-stage choice trap;
@@ -68,7 +68,7 @@ This is the spawn initial woods choice traps rule:
 The spawn initial woods choice traps rule is listed in the set up woods traps rules.
 
 This is the spawn initial hotel choice traps rule:
-	if the player is a december 2022 top donator:
+	if the player is a december 2022 top donator or (diaper quest is 1 and the player is a december 2022 diaper donator):
 		repeat with N running from 1 to 2:
 			let R be a random click untrapped trappable placed modern room;
 			let T be a random off-stage choice trap;
@@ -181,7 +181,7 @@ Definition: brothel-trap-choice is appropriate:
 	if there is a hotel bed in the location of the player and the number of monsters in the location of the player is 0, decide yes;
 	decide no.
 To say ChoiceFlav of (C - brothel-trap-choice):
-	say "SEX WORK".
+	say "[if diaper quest is 1]FETISH[otherwise]SEX[end if] WORK".
 To trigger (C - brothel-trap-choice):
 	let F be a random hotel bed in the location of the player;
 	say "The tablet shows a new message: [']Sending your photo to three potential suitors, please stay still for the photo...[']";
@@ -193,6 +193,29 @@ To evade trigger (C - brothel-trap-choice):
 		let F be a random hotel bed in the location of the player;
 		say "The tablet shows a new message: [']Unable to take advertisement photo. Only one customer available for Blind Date...[']";
 		compute PatronSpawning of F with 1 men.
+
+diaper-trap-choice is a choice-trap-choice.
+Definition: diaper-trap-choice is appropriate:
+	if there is a currently uncovered diaper and there is an off-stage DQBulkier plentiful disposable diaper, decide yes;
+	decide no.
+To say ChoiceFlav of (C - diaper-trap-choice):
+	say "[if diaper-stack is worn]EXTRA DIAPER LAYER[otherwise]DOUBLE DIAPER[end if]".
+To trigger (C - diaper-trap-choice):
+	let D be a random off-stage DQBulkier plentiful disposable diaper;
+	blandify and reveal D;
+	gluify D;
+	say "There is a loud [']TWANG['] as something shoots up from a hidden compartment beneath your feet. A moment later, it's plain to see... You now have a [D] glued on below your [MediumDesc of random worn diaper]!";
+	diaperAdd D.
+To evade trigger (C - diaper-trap-choice):
+	if the player is getting unlucky:
+		say "You can't get away in time! [GotUnluckyFlav]";
+		trigger C;
+	otherwise:
+		let D be a random off-stage DQBulkier plentiful disposable diaper;
+		blandify and reveal D;
+		gluify D;
+		now D is in the location of the player;
+		say "You watch as, with a loud [']TWANG['], a [D] shoots up towards where you were standing just a split second ago, before landing on the ground with a soft thud.".
 
 facehugger-trap-choice is a choice-trap-choice.
 Definition: facehugger-trap-choice is appropriate:

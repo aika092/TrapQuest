@@ -20,6 +20,8 @@ Definition: pimp is able to remove cursed plugs: decide yes.
 
 Definition: pimp is butt slut immune: decide yes.
 
+Definition: pimp is a generic-unlocker: decide yes.
+
 Definition: pimp is wenchy:
 	if the player is the donator:
 		decide yes;

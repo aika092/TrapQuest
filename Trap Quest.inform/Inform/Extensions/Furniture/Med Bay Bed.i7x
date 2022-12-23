@@ -35,7 +35,7 @@ To compute furniture resting on (F - med bay bed):
 			now the body soreness of the player is 0;
 			now the fatigue of the player is 0;
 			let R be a random number between 1 and 2;
-			if the milk volume of breasts > the flesh volume of breasts / 2 or (the ready-for-milking of milking-quest is 1 and the class of the player is cowgirl):
+			if lactation fetish is 1 and (the milk volume of breasts > the flesh volume of breasts / 2 or (the ready-for-milking of milking-quest is 1 and the class of the player is cowgirl)):
 				say "[line break][speech style of nurse]'Oh and darling, while you're resting there, let's relieve your udders of some of this pressure, don't you think?'[roman type][line break][big he of nurse] doesn't bother to wait for you to respond! [big he of nurse] latches two suckers to your nipples, and turns a large milking machine on!";
 				let MV be 50 - the milk volume of breasts;
 				if MV < 4, now MV is 4;

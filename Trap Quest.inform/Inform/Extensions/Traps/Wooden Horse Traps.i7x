@@ -103,7 +103,7 @@ To trigger (Y - a painted horse):
 		say "A giant triangular block of wood with a horse head at the front shoots out from the ground beneath you, [if the player is prone]forcing you upright and [end if]pulling you up until your feet aren't touching the floor. The force of it on [NameDesc of G] causes you to gain some airtime after the horse reaches its full height, and you come tumbling down next to the horse.";
 		if seconds > 0 and the player is upright, try kneeling;
 		repeat with F running through fuckholes penetrated by G:
-			ruin G;
+			ruin F;
 	otherwise:
 		say "A giant triangular block of wood with a horse head at the front shoots out from the ground beneath you, [if the player is prone]forcing you upright and [end if]pulling you up until your feet aren't touching the floor. All of your weight is forced onto the top corner of this wooden 'horse' and more specifically onto your [if the player is possessing a vagina][vagina] and [end if][asshole]. [if the latex-transformation of the player > 3]Your rubbery crotch is unaffected by the weight on it. [otherwise if the player is diapered]The padding of your diaper is helping a bit but the pain is still unmanageable. [otherwise if the weight of the player < 5]Your light weight is helping at bit but the pain is still unmanageable. [otherwise if the weight of the player > 15]Your weight is making it even worse! [end if]You're going to quickly get more sore and if you stay on here for too long, you'll definitely faint! [one of]Looking forward, you notice that[or]Once again you can see that[stopping] there are five buttons embedded into the top of the head of the horse. [one of]Maybe one of them will let you down?[or]One of them should let you down.[stopping]";
 		now the stance of the player is 0;

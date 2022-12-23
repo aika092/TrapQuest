@@ -1283,6 +1283,7 @@ To decide what number is the quest-weighting of (Q - mouthful-quest) for (C - a 
 	decide on 1.
 
 Definition: mouthful-quest is appropriate:
+	if face is actually occupied, decide no;
 	if diaper quest is 0 and the semen taste addiction of the player < 20, decide yes;
 	decide no.
 

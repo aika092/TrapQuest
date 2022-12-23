@@ -714,9 +714,7 @@ Definition: yourself is walking past a sticky trap:
 
 To Test a Sticky Trap:
 	let CT be a random camera trap in the location of the player;
-	let URC be the number of worn unremovable clothing;
-	decrease URC by the number of worn piercings;
-	if diaper quest is 0 and the player is a june 2022 top donator and the times-met of agent > 0 and agent is not permanently banished and the agent-scene of agent < 2 and the agent-scene of agent is the agent-scene-spotted of agent and URC <= 0:
+	if agent is ready for next agent scene:
 		compute next agent scene;
 	otherwise:
 		let D be a random number from 1 to the dexterity of the player;

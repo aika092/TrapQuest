@@ -63,7 +63,74 @@ This is the toilet forbidden rule:
 	now choice in row 39 of the Table of Player Options is 1;
 	follow quit rule.
 
-Part 4 - Diaper Focus
+Part 3 - Diaper Swapper
+
+To decide which number is diaper swapping:
+	if diaper lover is 0, decide on 0;
+	if the player is not a december 2022 diaper donator, decide on 0;
+	decide on choice in row 46 of the Table of Player Options.
+
+Table of Wet Diaper Swapping Options
+title	subtable	description	toggle
+"I would like absolutely minimal scenes where I am put in an already used diaper."	--	--	diaper swap hater rule
+"I don't mind being put in used diapers, but only if they're unmessed."	--	--	diaper swap liker rule
+"In addition to the above, I'm also happy for people to pee in my diaper while I'm wearing it."	--	--	diaper swap lover rule
+
+Table of Messy Diaper Swapping Options
+title	subtable	description	toggle
+"I would like absolutely minimal scenes where I am put in an already used diaper."	--	--	diaper swap hater rule [0]
+"I don't mind being put in used diapers, but only if they're unmessed."	--	--	diaper swap liker rule [1]
+"In addition to the above, I'm also happy for people to pee in my diaper while I'm wearing it."	--	--	diaper swap lover rule [2]
+"In addition to the above, I'm also happy to be forced to wear a diaper that's already been messed in."	--	--	messy diaper swap liker rule [3]
+"In addition to the above, I'm also happy for people to mess in a diaper I'm currently wearing! (Mostly using magic)"	--	--	messy diaper swap lover rule [4]
+
+This is the diaper swap hater rule:
+	now choice in row 46 of the Table of Player Options is 0;
+	follow quit rule.
+
+This is the diaper swap liker rule:
+	now choice in row 46 of the Table of Player Options is 1;
+	follow quit rule.
+
+This is the diaper swap lover rule:
+	now choice in row 46 of the Table of Player Options is 2;
+	follow quit rule.
+
+This is the messy diaper swap liker rule:
+	now choice in row 46 of the Table of Player Options is 3;
+	follow quit rule.
+
+This is the messy diaper swap lover rule:
+	now choice in row 46 of the Table of Player Options is 4;
+	follow quit rule.
+
+Part 4 - Diaper Cumrag
+
+To decide which number is diaper cumrag:
+	if diaper lover is 0, decide on 0;
+	if the player is not a december 2022 diaper donator, decide on 0;
+	decide on choice in row 85 of the Table of Player Options.
+
+Table of Diaper Cumrag Options
+title	subtable	description	toggle
+"I don't want anyone else to ejaculate semen into my diaper."	--	--	diaper cumrag hater rule
+"I'm okay with risking people ejaculating semen into my diaper."	--	--	diaper cumrag liker rule
+"In addition to the above, I'm also happy to give a helping hand."	--	--	diaper cumrag lover rule
+
+This is the diaper cumrag hater rule:
+	now choice in row 85 of the Table of Player Options is 0;
+	follow quit rule.
+
+This is the diaper cumrag liker rule:
+	now choice in row 85 of the Table of Player Options is 1;
+	follow quit rule.
+
+This is the diaper cumrag lover rule:
+	now choice in row 85 of the Table of Player Options is 2;
+	follow quit rule.
+
+
+Part 5 - Diaper Focus
 
 Table of Diaper Focus Options
 title	subtable	description	toggle

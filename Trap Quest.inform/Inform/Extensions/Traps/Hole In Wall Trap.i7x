@@ -248,7 +248,8 @@ To compute punishment of (P - hole-wank):
 			let D be a random worn perceived messed diaper;
 			if D is diaper:
 				say "[one of]The gross squishiness of your messy diaper being used to masturbate you makes you cringe and shudder as it oozes around your loins.[or][or][cycling]";
-				DelicateUp 1;
+				GrossOut 8 with reason "" and sensation "feeling";
+				GrossnessAddictUp 1;
 			increase wank-attempts by 1;
 			compute extra turn;
 		if refractoryperiod > 0, say "The anonymous hand's owner is clearly satisfied with that as you feel it let go, lovingly pat your bottom a couple of times for good measure, and then leave you alone.";

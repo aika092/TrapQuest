@@ -25,6 +25,8 @@ Definition: vampiress is wenchy: decide yes.
 
 Definition: vampiress is mansion dwelling: decide yes.
 
+Definition: vampiress is a generic-unlocker: decide yes.
+
 The text-shortcut of vampiress is "va".
 Understand "vampire", "seductive", "vamp" as vampiress.
 Figure of Vampiress is the file "NPCs/Mansion/vampiress1.png".
@@ -813,6 +815,8 @@ To decide which number is the instant mess influence of (M - vampiress):
 Definition: vampiress is willing to masturbate: decide yes.
 
 Definition: vampiress is willing to confiscate: decide yes.
+
+Definition: vampiress is willing to use a diaper urinal: decide yes.
 
 vampiress-maiden is a diaper punishment. The priority of vampiress-maiden is 5.
 Definition: vampiress-maiden is appropriate:

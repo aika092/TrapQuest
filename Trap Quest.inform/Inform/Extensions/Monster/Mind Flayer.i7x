@@ -46,6 +46,8 @@ To set up (M - mind flayer):
 
 To decide which number is the starting difficulty of (M - mind flayer):
 	decide on 15.
+To decide which number is the grossness of (M - mind flayer): [grossness addiction needed to tolerate it]
+	decide on 6.
 
 To check mindflayerquest:
 	if alreadyspawned of mind flayer is 0 and diaper quest is 0:

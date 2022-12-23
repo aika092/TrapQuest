@@ -525,7 +525,7 @@ To say SwallowDemand of (M - demon lord):
 To compute angry punishment of (M - demon lord):
 	if the player is diapered:
 		say "[speech style of M]'INSOLENT MORTAL! YOU WOULD DARE DEFY AN ORDER FROM ME?! YOU WILL REGRET THIS DECISION, I ASSURE YOU.'[roman type][line break][BigNameDesc of M] begins manifesting some kind of energy ball between [his of M] hands, which [he of M] promptly shoots towards your gut. You bend over in extreme pain!";
-		delicateup 2;
+		PainUp 40;
 		say "It seems like the effect of [his of M] magic has not finished, as you feel your ";
 		if (diaper messing >= 3 and rectum > 0) or diaper messing >= 4:
 			say "large intestine swelling rapidly, as it is filled by something! You have a pretty good idea what...";
@@ -879,9 +879,13 @@ To execute (F - final-battle-pit):
 		now another-turn is 1;
 	otherwise if player-numerical-response is 2:
 		say "You close your eyes, pinch your nose, and leap.[line break][speech style of demon lord]'NO! WHAT A WASTE OF A POWERFUL SPELL!'[roman type][line break]The hotel's floor, or rather the pit's ceiling, closes up behind you. You plunge into the impossibly large mass of [if diaper quest is 0][semen][otherwise]diapers[end if] and are immediately engulfed. There's nothing but [if diaper quest is 0][semen][otherwise if diaper messing >= 7]shit-filled diapers[otherwise][urine]-soaked plastic[end if] in every direction. Your senses are overwhelmed, and you feel yourself begin to suffocate.";
-		DelicateUp 1;
+		let G be 2; [room stinks of cum]
 		if diaper quest is 1:
-			DiaperAddictUp 1;
+			if diaper messing >= 7, now G is messyDiaperFacesitGrossnessLevel;
+			otherwise now G is wetDiaperFacesitGrossnessLevel;
+		SmellGrossOut G;
+		if diaper quest is 1:
+			DelicateUp 1;
 		otherwise:
 			SemenAddictUp 1;
 		now current-final-battle-object is final-battle-magic-clash; [this object has concluded]
@@ -1151,7 +1155,7 @@ A time based rule (this is the final battle diaper facehugger engulf rule):
 	if the player is in DiaperFacehuggerBlindfolded:
 		if ex-princess is guarding and the uses of final-battle-facehugger < a random number between 3 and 5:
 			say "The wet padding soaked with [NameDesc of ex-princess][']s [urine] presses tightly against your face[one of]. You can barely breathe at all through the saturated padding[or]. Despite your best attempts to resist, you can't pull it off[or][stopping].";
-			SlowDelicateUp 1;
+			SlowGrossOut messyDiaperFacesitGrossnessLevel; [the face is on the inside of the piss soaked padding - approximately as bad as being on the outside of messed padding]
 			increase the uses of final-battle-facehugger by 1;
 			if the health of demon lord > 3, decrease the health of demon lord by 3;
 		otherwise:

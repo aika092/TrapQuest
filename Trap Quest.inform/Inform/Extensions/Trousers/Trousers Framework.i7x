@@ -78,7 +78,7 @@ The trousers already worn rule is listed in the trousers wearability rules.
 This is the hobble skirt trousers top level clash rule:
 	if summoning is 0:
 		repeat with C running through worn crotch-in-place crotch covering hobble-skirted clothing:
-			if autowear is false, say "You need to pull up your [printed name of C] to get this on successfully!";
+			if autowear is false, say "You need to [if C is crotch-zipped]unzip[otherwise]pull up[end if] your [printed name of C] to get this on successfully!";
 			rule fails.
 The hobble skirt trousers top level clash rule is listed in the trousers wearability rules.
 

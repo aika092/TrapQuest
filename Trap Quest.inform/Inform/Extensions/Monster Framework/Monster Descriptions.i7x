@@ -31,8 +31,15 @@ To say FullMonsterDesc of (M - a monster):
 	say BoldFullTitle of M;
 	say ImageDesc of M;
 	say MonsterDesc of M;
+	if diaper quest is 0, say GrossnessDesc of M;
 	if M is undefeated and diaper quest is 0, say MonsterComment of M;
 	if M is messy, say MessyMonsterFlav of M.
+
+To say GrossnessDesc of (M - a monster):
+	if M is freaking the player out:
+		say "[variable custom style][one of]If that thing comes anywhere near me, I'm going to freak the fuck out.[or]So gross! I would rather die than get intimate with [him of M].[or][big he of M][']s not going to try and fuck me, right?! RIGHT?! I'm gonna puke just thinking about it...[in random order][roman type][line break]";
+	otherwise if M is grossing the player out:
+		say "The thought of getting intimate with [him of M] [one of]grosses you out[or]makes you feel disgusted[or]makes you shudder with disgust[in random order].".
 
 To say MonsterDesc of (M - a monster):
 	say "This NPC seems to be missing [his of M] description!".

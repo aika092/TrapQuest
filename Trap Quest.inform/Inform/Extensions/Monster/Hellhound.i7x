@@ -19,6 +19,14 @@ Definition: hellhound is infernal:
 	if mythical creature fetish is 1, decide yes;
 	decide no.
 
+Definition: hellhound is a clothes-destroyer:
+	if mythical creature fetish is 1, decide yes;
+	decide no.
+
+Definition: hellhound is a diaper wetter:
+	if diaper quest is 1, decide yes;
+	decide no.
+
 To say ShortDesc of (M - hellhound):
 	say "[if mythical creature fetish is 1]hellhound[otherwise]puppy slave[end if]".
 
@@ -97,6 +105,9 @@ To decide which number is the girth of (M - hellhound):
 	if mythical creature fetish is 0, decide on 2;
 	if M is knotted, decide on 10;
 	decide on 4.
+To decide which number is the grossness of (M - hellhound): [grossness addiction needed to tolerate it]
+	if mythical creature fetish is 0, decide on 0;
+	decide on 11.
 
 Definition: hellhound is controlling: decide yes. [Will it grab onto subduing clothing e.g. a clitoris lead?]
 

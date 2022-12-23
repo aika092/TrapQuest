@@ -18,6 +18,8 @@ Understand "purified" as gladiator when the item described is purified.
 
 Definition: a gladiator is wenchy: decide yes.
 
+Definition: a gladiator is a generic-unlocker: decide yes.
+
 Definition: a gladiator is raunchy:
 	if it is male, decide yes;
 	decide no.
@@ -1350,6 +1352,8 @@ To say DiaperChangeStart of (M - a gladiator):
 Definition: a gladiator is willing to donate diapers: decide yes.
 
 Definition: a gladiator is diaper disciplining: decide yes.
+
+Definition: a gladiator is willing to use a diaper urinal: decide yes.
 
 To say DiaperChangeRemovalFlav of (M - a gladiator):
 	say "[speech style of M]'[one of]Hmmm, thicker or thinner diapers, which one should I choose?'[or]Come now, don't act like you're not enjoying my attention!'[in random order][roman type][line break][BigNameDesc of M] [if current-diaper is diaper]gets to work, ripping either side of your [MediumDesc of current-diaper] off and collecting it with one hand. [big he of M] holds the used diaper out to you and tuts[otherwise]rips off your [ShortDesc of current-diaper][end if][if current-diaper is messed knickers]. Taking out several baby wipes, [he of M] gently but efficiently wipes your bottom down until it is completely clean[end if].".

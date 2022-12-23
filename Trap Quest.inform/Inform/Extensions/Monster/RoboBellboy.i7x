@@ -341,6 +341,13 @@ To compute diaper change of (M - a robobellboy):
 	compute change forcing of M.
 
 bellboy-forced-bed is a diaper punishment. The priority of bellboy-forced-bed is 2.
+
+To say EnticeFlav of (M - a monster) for (P - bellboy-forced-bed):
+	say "[line break][speech style of M]'ASSUME THE CLIENT SERVICE SUBMISSION POSITION IMMEDIATELY.'[roman type][line break]".
+
+To decide which number is the relevant addiction of (P - bellboy-forced-bed):
+	decide on the bimbo of the player.
+
 Definition: a bellboy-forced-bed (called P) is appropriate:
 	if current-monster is not robobellboy, decide no;
 	if the player is at least partially immobile, decide no;
@@ -351,6 +358,13 @@ To compute punishment of (P - bellboy-forced-bed):
 	compute whore forcing of current-monster.
 
 bellboy-forced-clothing is a diaper punishment. The priority of bellboy-forced-clothing is 3.
+
+To say EnticeFlav of (M - a monster) for (P - bellboy-forced-clothing):
+	say "[line break][speech style of M]'ASSUME THE CLOTHING RECEPTION SUBMISSION POSITION IMMEDIATELY.'[roman type][line break]".
+
+To decide which number is the relevant addiction of (P - bellboy-forced-clothing):
+	decide on the humiliation of the player / 2000.
+
 Definition: a bellboy-forced-clothing (called P) is appropriate:
 	if current-monster is not robobellboy, decide no;
 	if current-monster is babifying the player and the player is not immobile, decide no; [Will do whore forcing regime instead.]

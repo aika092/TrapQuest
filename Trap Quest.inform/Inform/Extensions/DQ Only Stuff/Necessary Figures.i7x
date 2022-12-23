@@ -5,6 +5,8 @@ To decide which figure-name is the monster-image of (M - an acolyte):
 	decide on figure of acolyte 5.
 
 Figure of agent angry is the file "NPCs/MultiFloor/Agent/agent2b.png".
+Figure of agent camera cutscene 1 is the file "NPCs/MultiFloor/Agent/cutscene-agent4.jpg".
+Figure of agent camera cutscene 2 is the file "NPCs/MultiFloor/Agent/cutscene-agent5.jpg".
 
 Figure of bianca defeated is the file "NPCs/School/Teacher/teacher3c.png".
 

@@ -27,6 +27,8 @@ To set up (M - vine boss):
 
 To decide which number is the starting difficulty of (M - vine boss):
 	decide on 14.
+To decide which number is the grossness of (M - vine boss): [grossness addiction needed to tolerate it]
+	decide on 8.
 
 Definition: vine boss is concealment immune: decide yes. [Can the monster ignore salves of concealment, butt slut, etc.]
 

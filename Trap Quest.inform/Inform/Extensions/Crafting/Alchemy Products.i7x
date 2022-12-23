@@ -804,7 +804,7 @@ Definition: bull-strength-potion is recipe specific: decide yes.
 To compute recipe specific cursing of (T - bull-strength-potion):
 	let K be the alchemy key of T;
 	if the noun is bottle:
-		if the fill-colour of the noun is white and the noun is horn and the noun is monster-origin:
+		if the fill-colour of the noun is white and the noun is horn and the noun is not boring-origin:
 			now T is bland;
 			if the noun is blessed or (a random number between 1 and 4 <= the number of worn blue scrunchies and the class of the player is schoolgirl):
 				now T is blessed;

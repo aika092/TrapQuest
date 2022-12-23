@@ -39,6 +39,7 @@ To say MonsterComment of (M - centaur):
 
 Definition: a centaur is raunchy: decide yes.
 Definition: a centaur is able to be waited upon: decide yes. [Despite not being human, she will drink your drinks]
+Definition: a centaur is a generic-unlocker: decide yes.
 
 Definition: centaur is presenting as male:
 	if lady fetish is 2, decide yes;
@@ -85,6 +86,8 @@ To set up (M - centaur):
 
 To decide which number is the starting difficulty of (M - centaur):
 	decide on 9.
+To decide which number is the grossness of (M - centaur): [grossness addiction needed to tolerate it]
+	decide on 6.
 
 To decide which number is the initial maxhealth of (M - centaur):
 	if tutorial is 1, decide on 99999;

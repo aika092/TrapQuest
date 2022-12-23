@@ -461,7 +461,7 @@ Check entering giant-statue:
 	let V be 0;
 	if vine boss is alive or doomed is 5, now V is 1;
 	let R be a random number between 1 and 4;
-	if the player is very horny, now R is 5;
+	if the player is very horny and the player is potentially able to masturbate, now R is 5;
 	if R is 1 and pregnancy fetish is 1:
 		if diaper quest is 0 and the player is possessing a vagina:
 			say "You feel a tingling sensation in your core as a wave of energy washes over you.";

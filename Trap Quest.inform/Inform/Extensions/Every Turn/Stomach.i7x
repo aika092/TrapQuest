@@ -92,7 +92,9 @@ An all time based rule (this is the compute stomach rule):
 						now cold turkey of L is cold turkey limit of L;
 			if the class of the player is succubus, compute succubus hunger; [see Demon Horns extension.]
 		[say "Stomach time check: remainder after dividing [time-earnings] by [period] is [remainder after dividing time-earnings by Period]. Comparing it to round time of [time-seconds].";]
-		if the remainder after dividing time-earnings by stomach-period < time-seconds and the latex-transformation of the player < 5 and the player is not in Iron Maiden, compute hunger and thirst; [Iron Maiden triggers compute soiling every turn]
+		if the latex-transformation of the player < 5 and the player is not in Iron Maiden: [Iron Maiden triggers compute soiling and wallowing every turn]
+			if the remainder after dividing time-earnings by 60 < time-seconds, compute wallowing;
+			if the remainder after dividing time-earnings by stomach-period < time-seconds, compute hunger and thirst;
 		unless current-predicament is team-quiz-predicament and the questionFails of team-quiz-predicament < 2, compute bladder growth.
 
 To compute hunger and thirst:

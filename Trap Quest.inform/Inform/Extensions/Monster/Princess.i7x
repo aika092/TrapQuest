@@ -26,6 +26,8 @@ Figure of princess final battle harness is the file "NPCs/MultiFloor/Princess/cu
 Figure of princess final battle scan is the file "NPCs/MultiFloor/Princess/cutscene-princess-final-battle8.jpg".
 Figure of princess final battle facehugger is the file "NPCs/MultiFloor/Princess/cutscene-princess-final-battle10.jpg".
 
+Figure of princess cutscene 1 is the file "NPCs/MultiFloor/Princess/cutscene-princess-errand1.jpg".
+
 To decide which figure-name is the monster-image of (M - ex-princess):
 	if M is unleashed: [dark princess]
 		if M is male, decide on figure of dark princess 2;
@@ -263,15 +265,12 @@ This is the princess facesitting prevents breathing rule:
 	decide no.
 The princess facesitting prevents breathing rule is listed in the breathing blocking rules.
 
-[A breathing blocking decision rule (this is the consider breathing through princess padding rule):
-	if diaper quest is 1 and ex-princess is penetrating face:
-		say "Your nose and mouth is engulfed in [NameDesc of ex-princess][']s [if ex-princess is messy]messy[otherwise]soggy[end if] padding. ";
-		now breathing-this-turn is false.]
-
 A breathing consequences rule (this is the consequences for breathing through princess padding rule):
 	if diaper quest is 1 and ex-princess is penetrating face:
 		say "You are forced to smell the pungent aroma of [NameDesc of ex-princess][']s [if ex-princess is messy and diaper messing >= 7]stinky[otherwise][urine]-soaked[end if] diaper.";
-		if ex-princess is messy or a random number between 1 and 20 >= the raw delicateness of the player, DelicateUp 1.
+		let G be wetDiaperFacesitGrossnessLevel;
+		if ex-princess is messy, now G is messyDiaperFacesitGrossnessLevel;
+		SmellGrossOut G.
 
 To say MouthPenetrationFlav of (M - ex-princess):
 	if M is male:
@@ -776,8 +775,8 @@ An all later time based rule (this is the asscum annie rule):
 								now the doses of B is the max-doses of B;
 								now semen-caught is 2;
 								say "You place the [ShortDesc of B] below [his of ex-princess] butthole and use it to collect all the asscum!";
-								now B is monster-origin;
-				if semen-caught is 0:
+								now B is anal-origin;
+				if semen-caught is 0 and a2m fetish >= 2:
 					now autodrink is 1;
 					if the player is prone and the player is able to drink:
 						say "Do you seal [his of ex-princess] butthole with your lips and drink the asscum?";
@@ -936,6 +935,7 @@ Definition: ex-princess (called M) is distracted:
 		otherwise: [it's worn]
 			if shopkeeper is undefeated and shopkeeper is awake and M is in the location of shopkeeper and M is in the location of the player:
 				say "[BigNameDesc of M] suddenly drops to [his of M] knees in front of [NameDesc of shopkeeper].[line break][speech style of M]'You bastard... You win. I've rescinded the new tax law. Now PLEASE let me remove this infernal thing!'[roman type][line break][BigNameDesc of shopkeeper] smirks.[line break][speech style of shopkeeper]'My my my, I'm sure I don't have any clue what you're talking about. I'm so glad to hear that you've seen reason though. And also, for completely no reason, I'm just going to say the words [']GOLDEN BITCH!['] out loud.'[roman type][line break][BigNameDesc of M] makes a panicked whining sound, and then squats and pulls [his of M] [if diaper lover > 0]diaper[otherwise]panties[end if] to one side. The [golden-phallus] you had brought to [him of M] comes sliding out of [his of M] asshole, except now it's three or four times as thick - you can't believe that thing was inside [him of M] - it's almost as thick as your leg!!![line break][speech style of shopkeeper]'Oh you put it in your asshole? You poor thing.'[roman type][line break][BigNameDesc of shopkeeper] remarks, but [he of shopkeeper] sounds more amused than remorseful. [big he of shopkeeper] bends down and picks [NameDesc of golden-phallus] up.[line break][speech style of shopkeeper]'I'm sorry, this must have been a faulty model. I'll be sure to return it to the sender, and inform them that your experience was less than satisfactory. And that they no longer have to concern themselves with import duty.'[roman type][line break][BigNameDesc of shopkeeper] says mockingly.[paragraph break]And then [NameDesc of shopkeeper] sighs, and offers the squatting, panting [NameDesc of M] [his of shopkeeper] hand.[line break][speech style of shopkeeper]'No hard feelings?'[roman type][line break][BigNameDesc of M] reluctantly accepts [his of shopkeeper] hand, and allows [him of shopkeeper] to pull [him of M] to [his of M] feet.[line break][speech style of M]'Ask me again when my asshole has closed back up properly.'[roman type][line break][BigNameDesc of M] grumbles.";
+				cutshow Figure of princess cutscene 1 for M;
 				now golden-phallus is carried by shopkeeper;
 				now golden-phallus is bland;
 				now golden-phallus is sure;
@@ -990,10 +990,13 @@ To compute ChangeRequestDecision of (M - ex-princess):
 		if the player is upright:
 			say "[bold type]You get on your knees.[roman type][line break]";
 			now the stance of the player is 1;
-		say "[BigNameDesc of M] smiles with shy appreciation as [he of M] mounts your nose with the front of [his of M] diaper. The strong smell hits your nostrils as [he of M] begins to grind away. It's not a short process for [him of M] to build all the way to climax, and so by the time [he of M] finally does reach [his of M] peak, your nostrils and airways have been fully drenched in [his of M] shameful scent.";
+		let G be wetDiaperFacesitGrossnessLevel;
+		if diaper messing >= 7, now G is messyDiaperFacesitGrossnessLevel;
+		say "[BigNameDesc of M] smiles with shy appreciation as [he of M] mounts your nose with the front of [his of M] diaper. The strong smell hits your nostrils as [he of M] begins to grind away.";
+		SmellGrossOut G;
+		say "It's not a short process for [him of M] to build all the way to climax, and so by the time [he of M] finally does reach [his of M] peak, your nostrils and airways have been fully drenched in [his of M] shameful scent.";
+		SlowGrossOut G;
 		now the refractory-period of M is a random number between 0 and 200;
-		DelicateUp 1;
-		SexAddictUp 1;
 	otherwise if M is not in Dungeon11:
 		say "You wrinkle your nose and step away from [him of M]. [big he of M] looks crestfallen and frustrated.[line break][speech style of M]'...Fine. I won't force you. But don't expect me to be able to help you while I'm stuck like this.'[roman type][line break][big he of M] waddles away from you, towards the Throne Room.";
 		bore M;

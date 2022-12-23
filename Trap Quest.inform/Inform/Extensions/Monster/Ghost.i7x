@@ -7,6 +7,7 @@ Definition: a ghost is willing to do titfucks: decide no.
 Definition: a ghost is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 
 Definition: a ghost is father material: decide yes.
+Definition: a ghost is a urianter: decide no.
 
 Definition: a ghost is delayed:
 	if the last-interaction of it is 2 and diaper quest is 0, decide yes;
@@ -116,6 +117,8 @@ To decide which number is the starting difficulty of (M - jismbodied ghost):
 To decide which number is the girth of (M - jismbodied ghost):
 	if the location of the player is garlic, decide on 5;[weakened, but not beaten]
 	decide on 7.
+To decide which number is the grossness of (M - a ghost): [grossness addiction needed to tolerate it]
+	decide on 5.
 
 To compute unique periodic effect of (M - jismbodied ghost):
 	if a random number between 1 and 5 is 1 and diaper quest is 0:
@@ -815,7 +818,7 @@ Check kicking ghostly tentacle:
 
 Section - DQ
 
-ghostly-diaper-use is a diaper punishment. The priority of ghostly-diaper-use is 5.
+ghostly-diaper-use is a diaper punishment. The priority of ghostly-diaper-use is 4.
 Definition: ghostly-diaper-use (called P) is appropriate:
 	if current-monster is not ghostly tentacle, decide no;
 	if there is worn fluid vulnerable knickers, decide yes;
@@ -825,12 +828,13 @@ To compute punishment of (P - ghostly-diaper-use):
 	let M be current-monster;
 	let K be a random worn knickers;
 	say "[BigNameDesc of M] giggles in an extremely high-pitched voice and phases through you. But [he of M] doesn't come out the other side?! You feel a weird chill but nothing more as [NameDesc of M] inhabits the same space as you. And then... [he of M] starts urinating?! [big his of M] [urine] doesn't go into [his of M] ghostly diaper but becomes completely real!";
-	PissSoak 50 on K;
+	PissSoak 30 on K;
 	say "[variable custom style]Oh come on![roman type][line break]";
 	satisfy M.
 
 ghost-using is a diaper punishment. The priority of ghost-using is 5.
 Definition: ghost-using (called P) is appropriate:
+	if diaper swapping is 0, decide no;
 	if current-monster is not ghostly tentacle, decide no;
 	if there is worn knickers, decide yes;
 	decide no.
@@ -839,17 +843,18 @@ To compute punishment of (P - ghost-using):
 	let M be current-monster;
 	let D be a random worn diaper;
 	if D is diaper:
-		say "[BigNameDesc of M] floats down to you until [he of M] is occupying the same space as you. All you can feel is a freezing coldness. Moments later you hear an ethereal [second custom style]sigh[roman type] and then what sounds like a [if diaper messing >= 3]distant farting[otherwise]faint tinkling[end if]. [one of]Suddenly,[or]Once again[stopping] from the warmth below you, you can tell that [NameDesc of M] is using your diaper![line break][variable custom style][if the diaper addiction of the player < 8]That's fucking gross![otherwise if the diaper addiction of the player < 13]That's kind of rude...[otherwise]Haha, that feels funny![end if][roman type][line break]";
+		say "[BigNameDesc of M] floats down to you until [he of M] is occupying the same space as you. All you can feel is a freezing coldness. Moments later you hear an ethereal [second custom style]sigh[roman type] and then what sounds like a [if diaper swapping >= 4]distant farting[otherwise]faint tinkling[end if]. [one of]Suddenly,[or]Once again[stopping] from the warmth below you, you can tell that [NameDesc of M] is using your diaper![line break][variable custom style][if the diaper addiction of the player < 8]That's fucking gross![otherwise if the diaper addiction of the player < 13]That's kind of rude...[otherwise]Haha, that feels funny![end if][roman type][line break]";
 		UrineSoakUp D by 9;
-		if diaper messing >= 3:
+		if diaper swapping >= 4:
 			say "You squirm as the foreign mush squishes itself against your butt.";
 			MessUp D by 7;
 			increase the foreign-mess of D by 7;
+		GrossOut 5 with reason "The gross sensation of your diaper being filled by the ghost makes you shudder," and sensation "feeling";
 	otherwise:
-		say "[BigNameDesc of M] floats down to you until [his of M] is occupying the same space as you. All you can feel is a freezing coldness. Moments later you hear an ethereal [second custom style]sigh[roman type] and then what sounds like a [if diaper messing >= 3]distant farting[otherwise]faint tinkling[end if]. [one of]Suddenly,[or]Once again[stopping] you can feel pressure building inside of you. [BigNameDesc of M] is somehow using you as [his of M] own personal toilet, filling your bladder with [his of M] pee[if diaper messing >= 3] and your bowels with [his of M] poop[end if]![line break][variable custom style][if the diaper addiction of the player < 9]What the fuck, get out of me! This is so gross and weird!!![otherwise if the diaper addiction of the player < 15]Hnngh... Oh gosh this feels really uncomfortable, please stop![otherwise]So I guess I'm the diaper now! That's what I get for not wearing nappies like a good [boy of the player], haha![end if][roman type][line break]";
-		DelicateUp 1;
+		say "[BigNameDesc of M] floats down to you until [his of M] is occupying the same space as you. All you can feel is a freezing coldness. Moments later you hear an ethereal [second custom style]sigh[roman type] and then what sounds like a [if diaper swapping >= 4]distant farting[otherwise]faint tinkling[end if]. [one of]Suddenly,[or]Once again[stopping] you can feel pressure building inside of you. [BigNameDesc of M] is somehow using you as [his of M] own personal toilet, filling your bladder with [his of M] pee[if diaper swapping >= 4] and your bowels with [his of M] poop[end if]![line break][variable custom style][if the grossness addiction of the player < 7]What the fuck, get out of me! This is so gross and weird!!![otherwise if the grossness addiction of the player < 10]Hnngh... Oh gosh this feels really uncomfortable, please stop![otherwise]So I guess I'm the diaper now! That's what I get for not wearing nappies like a good [boy of the player], haha![end if][roman type][line break]";
+		GrossOut 9 with reason "The gross sensation of your bladder [if diaper swapping >= 4]and bowels [end if] being filled by the ghost makes you shudder," and sensation "feeling";
 		increase the bladder of the player by 9;
-		if diaper messing >= 3, increase rectum by 7;
+		if diaper swapping >= 4, increase rectum by 7;
 	satisfy M.
 
 

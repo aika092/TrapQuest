@@ -101,6 +101,7 @@ previous-milk-taste-addiction is a number that varies.
 previous-anal-sex-addiction is a number that varies.
 previous-oral-sex-addiction is a number that varies.
 previous-bbc-addiction is a number that varies.
+previous-grossness-addiction is a number that varies.
 previous-vaginal-sex-addiction is a number that varies.
 previous-titfuck-addiction is a number that varies.
 
@@ -210,6 +211,7 @@ To check for arousal change:
 		now previous-oral-sex-addiction is the calculated oral sex addiction of the player;
 		now previous-anal-sex-addiction is the calculated anal sex addiction of the player;
 		if interracial fetish is 1, now previous-bbc-addiction is the calculated bbc addiction of the player;
+		now previous-grossness-addiction is the calculated grossness addiction of the player;
 		now previous-vaginal-sex-addiction is the calculated vaginal sex addiction of the player;
 		now previous-titfuck-addiction is the calculated titfuck addiction of the player;
 		now previous-semen-taste-addiction is the calculated semen taste addiction of the player;
@@ -227,18 +229,28 @@ A grossed out player tends to refuse to rest and quickly loses arousal.
 +!]
 Definition: yourself is grossed out:
 	if the player is upset about mess, decide yes;
-	if diaper quest is 0 and the player is not a nympho and (the location of the player is Dungeon19 or the location of the player is Toilet01), decide yes;
+	if there is a freaking the player out thing penetrating a body part, decide yes;
+	if there is a freaking the player out seduced monster, decide yes;
 	decide no.
 
-[!<YourselfIsGrossedOut>+
+[!<YourselfIsPerturbed>+
 
 A player who is perturbed slowly loses arousal.
 
 +!]
 Definition: yourself is perturbed:
 	if the player is upset about urine or turnsWithSoiledDiaper > 0, decide yes;
-	if diaper quest is 0 and (the location of the player is Dungeon19 or the location of the player is Toilet01), decide yes;
+	if there is a grossing the player out thing penetrating a body part, decide yes;
+	if there is a grossing the player out seduced monster, decide yes;
+	if the player is upset about unclean toilets, decide yes; [stinks of piss]
 	decide no.
+
+Definition: yourself is upset about unclean toilets:
+	if diaper quest is 1, decide no;
+	if the grossness addiction of the player >= 3, decide no;
+	if the location of the player is Dungeon19 or the location of the player is Toilet01, decide yes;
+	decide no.
+
 
 Definition: yourself is magically horny: [Player gets horny even if grossed out]
 	if the player is in School34 or the player is in School13 or the player is in a nonstandard room, decide yes; [School dungeon room, school detention room, iron maiden]

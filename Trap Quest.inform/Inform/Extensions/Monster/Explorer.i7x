@@ -21,6 +21,10 @@ Definition: an explorer is willing to fluff: decide yes.
 gymnast-explorer is an explorer. The explorer-type of gymnast-explorer is "gymnast". The text-shortcut of gymnast-explorer is "gyma".
 
 blonde-explorer is an explorer. The explorer-type of blonde-explorer is "blonde". The text-shortcut of blonde-explorer is "bnda".
+To decide which figure-name is the monster-image of (M - blonde-explorer):
+	if the explorer-bimbo of M >= 2, decide on figure of blonde explorer 3;
+	if the explorer-bimbo of M is 1, decide on figure of blonde explorer 2;
+	decide on figure of blonde explorer 1.
 Report going:
 	if iron-maiden is in the location of the player and iron-maiden is revealed and (tentacle fetish is 0 or inhuman pregnancy < 2) and blonde-explorer is summon-available and blonde-explorer is off-stage:
 		set up blonde-explorer;
@@ -155,6 +159,12 @@ Definition: an explorer (called M) is distracted:
 To check seeking (N - a number) of (M - an explorer): [They don't follow you]
 	check motion of M;
 	if M is not in the location of the player, bore M for 150 seconds.
+
+To compute diaper wetting of (M - an explorer): [This MUST cause bladder to empty or NPCs might get stuck]
+	if M is in the location of the player:
+		if the explorer-bimbo of M >= 2, say "[BigNameDesc of M] sighs pleasantly, and you're pretty sure [he of M] is wetting [his of M] diaper.";
+		otherwise say "[BigNameDesc of M] suddenly squeaks and turns bright red, and you can hear a gentle hissing and crinkling sound. You look at [NameDesc of M] as [he of M] accidentally wets [himself of M], letting [him of M] know that [he of M][']s been caught. That just makes [him of M] turn even redder.";
+	now the bladder of M is 0.
 
 Section 3 - Damage
 

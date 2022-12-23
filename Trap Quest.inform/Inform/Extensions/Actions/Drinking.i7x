@@ -372,8 +372,7 @@ Carry Out Spitting:
 				if L is milk, now the fill-colour of collecting is white;
 				if L is murkwater, now the fill-colour of collecting is murky;
 				SetDose collecting to (the total volume of face + 1) / 2;
-				if face is monster-origin, now collecting is monster-origin;
-				otherwise now collecting is player-origin;
+				now the drink-origin of collecting is the drink-origin of face;
 				compute father material of face into collecting;
 			repeat with M running through reactive people:
 				if the semen volume of face <= 0 and the urine volume of face <= 0:

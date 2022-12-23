@@ -30,7 +30,10 @@ To check default motion of (M - a monster):
 	now M is moved.
 
 To compute monstermotion of (M - a monster): [This is default wandering if function is left undefined for a specific monster]
-	compute room leaving of M.
+	if M is a urinater and the bladder of M >= 1000:
+		compute toilet seeking of M;
+	otherwise:
+		compute room leaving of M.
 
 To compute mandatory room leaving of (M - a monster):
 	let L be the location of M;
@@ -68,6 +71,69 @@ To compute room leaving of (M - a monster): [This CANNOT be replaced with a func
 			otherwise if A is a random N-viable direction and P is unbossed and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
 				blockable move M to A;
 				compute monstermotion reactions of M.
+
+To compute toilet seeking of (M - a monster):
+	if M is a diaper wetter:
+		compute diaper wetting of M;
+	otherwise:
+		compute default toilet seeking of M.
+
+To compute default toilet seeking of (M - a monster):
+	let L be the location of M;
+	if L is not use-the-floor:
+		compute toilet use of M;
+	otherwise:
+		let LR be a list of rooms;
+		if M is in an academic room:
+			repeat with R running through placed academic rooms:
+				if R is not use-the-floor, add R to LR;
+		otherwise if M is in a modern room:
+			repeat with R running through placed modern rooms:
+				if R is not use-the-floor, add R to LR;
+		otherwise if M is in a haunted room:
+			repeat with R running through placed haunted rooms:
+				if R is not use-the-floor, add R to LR;
+		otherwise if M is in a jungle room:
+			repeat with R running through jungle rooms:
+				if R is not use-the-floor, add R to LR;
+		otherwise if M is in a labyrinth room:
+			repeat with R running through labyrinth rooms:
+				if R is not use-the-floor, add R to LR;
+		let TR be Holding Pen;
+		let LRE be the number of entries in LR;
+		if LRE > 0:
+			if LRE > 1:
+				let D be 99999;
+				repeat with R running through LR: [find the closest one]
+					let DX be the distance of R from L;
+					if DX < D:
+						now D is DX;
+						now TR is R;
+			otherwise: [only one valid target]
+				now TR is entry 1 in LR;
+			let A be the the best route from the location of M to TR through unbossed rooms;
+			if A is a direction:
+				let P be the room A from the location of M;
+				if the number of barriers in P is 0 and the number of barriers in the location of M is 0:
+					blockable move M to A;
+					compute monstermotion reactions of M;
+			otherwise: [Failed to find a valid path to target]
+				compute room leaving of M;
+		if TR is Holding Pen, compute room leaving of M. [Failed to find a legal toilet target]
+
+To compute toilet use of (M - a monster): [This MUST cause bladder to empty or NPCs might get stuck]
+	if M is in the location of the player:
+		if the location of M is toilets:
+			say "[BigNameDesc of M] uses the toilet to relieve [his of M] bladder.";
+		otherwise if the location of M is urinals:
+			say "[BigNameDesc of M] uses a urinal to relieve [his of M] bladder.";
+		otherwise:
+			say "[BigNameDesc of M] urinates into [NameDesc of water-body].";
+	now the bladder of M is 0.
+
+To compute diaper wetting of (M - a monster): [This MUST cause bladder to empty or NPCs might get stuck]
+	if M is in the location of the player, say "[BigNameDesc of M] sighs pleasantly, and you're pretty sure [he of M] is wetting [his of M] diaper.";
+	now the bladder of M is 0.
 
 [N is a nearby monster, in case we want to say something specific about hearing that type of monster nearby.]
 To say AttractionWorry of (N - a monster):
@@ -220,6 +286,7 @@ Definition: a monster (called M) is just messing:
 
 To compute periodic recovery of (M - a monster):
 	unless the class of the player is princess and M is asleep, decrease the refractory-period of M by 4;
+	if watersports mechanics is 1, increase the bladder of M by 4;
 	if M is just messing:
 		compute mess moment of M;
 	otherwise if the class of the player is princess and bride-consort is M:

@@ -52,6 +52,8 @@ To say MonsterComment of (M - deep one):
 
 To decide which number is the starting difficulty of (M - deep one):
 	decide on 10.
+To decide which number is the grossness of (M - deep one): [grossness addiction needed to tolerate it]
+	decide on 8.
 
 To set up (M - deep one):
 	reset M;

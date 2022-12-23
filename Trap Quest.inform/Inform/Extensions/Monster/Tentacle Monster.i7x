@@ -12,6 +12,7 @@ Definition: a tentacle monster is virginity taking: decide yes.
 Definition: a tentacle monster is father material: decide yes.
 Definition: a tentacle monster is egg-fathering: decide yes.
 Definition: a tentacle monster is throater: decide yes.
+Definition: a tentacle monster is a clothes-destroyer: decide yes.
 
 Definition: a tentacle monster is summoningRelevant:
 	if tentacle fetish is 0 and it is undefeated and it is regional, decide yes;
@@ -232,6 +233,8 @@ To decide which number is the girth of (M - a tentacle monster):
 	if M is massive, decide on 9;
 	if M is large, decide on 6;
 	decide on 4.
+To decide which number is the grossness of (M - a tentacle monster): [grossness addiction needed to tolerate it]
+	decide on 8.
 
 To decide which number is the base semen load of (M - a tentacle monster):
 	let C be 2;
@@ -607,6 +610,7 @@ This is the tentacle monster continues sex rule:[TODO: update for evolved tentac
 		otherwise if targeted-body-part is breasts:
 			say "Another tentacle purposefully glides straight [if there is worn breast covering clothing]up underneath your [random worn breast covering clothing] and [end if]between your breasts!";
 			now M is penetrating breasts;
+	compute slow grossness of M;
 	rule succeeds.
 The tentacle monster continues sex rule is listed last in the tentacle monster continue sex rules.
 

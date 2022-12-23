@@ -162,6 +162,7 @@ A later time based rule (this is the robo vacuum cleaner rule):
 					if U > 0, FaceFill urine by U;
 					if S > 0, FaceFill semen by S;
 					increase puddle-sucks of robo vacuum cleaner by 1;
+					SlowGrossOut 9;
 				otherwise if collecting is bottle:
 					if the doses of collecting > 0, say "You dump the [PotionType of collecting] out onto the floor. ";
 					dump collecting;
@@ -175,7 +176,7 @@ A later time based rule (this is the robo vacuum cleaner rule):
 					if L is milk, now the fill-colour of collecting is white;
 					if L is murkwater, now the fill-colour of collecting is murky;
 					SetDose collecting to SUM2;
-					now collecting is monster-origin;
+					now collecting is vaginal-origin;
 					while SPILL > 0:
 						if S > 0:
 							increase the semen-puddle of (the location of robo vacuum cleaner) by 1;

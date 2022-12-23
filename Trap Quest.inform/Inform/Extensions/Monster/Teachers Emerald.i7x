@@ -212,7 +212,16 @@ To say ClitPiercingConcede of (M - an innocent student):
 toy-lesson is a lesson. The lesson-teacher of toy-lesson is teacher-hannah.
 
 Definition: toy-lesson is lesson-appropriate:
-	if asshole is actually occupied, decide no;
+	let CM be current-monster;
+	now current-monster is the lesson-teacher of toy-lesson;
+	if asshole is actually occupied:
+		now current-monster is CM;
+		decide no;
+	repeat with C running through worn total protection clothing:
+		if C is not easy to remove:
+			now current-monster is CM;
+			decide no;
+	now current-monster is CM;
 	decide yes.
 
 To compute teaching of (L - toy-lesson):
@@ -487,7 +496,7 @@ To say EnslavedDominationFlav of (M - teacher-bianca):
 		now the fill-colour of collecting is creamy;
 		DoseUp collecting by 1;
 		say "A gulp's worth of [semen] collects in the [ShortDesc of collecting].";
-		now collecting is monster-origin;
+		now collecting is vaginal-origin;
 	otherwise:
 		say "Eventually the [semen] drips down to the ground beneath [his of M] feet.";
 		SemenPuddleUp 1.

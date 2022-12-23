@@ -2006,6 +2006,7 @@ To execute (TEP - team-enema-predicament):
 						otherwise:
 							now WL is 1;
 						decrease LN by 6;
+						if L is semen, SlowGrossOut 10;
 					now ML is 1;
 				otherwise:
 					now WL is 1;
@@ -2030,6 +2031,7 @@ To execute (TEP - team-enema-predicament):
 							StomachUrineUp 3;
 						otherwise:
 							StomachSemenUp 3;
+							TasteGrossOut 10;
 			if L is urine, now BL is LN;
 			otherwise now SB is LN;
 		if the stomach-liquid of the player > 3, StomachDown (the stomach-liquid of the player / 3);
@@ -2504,7 +2506,7 @@ To compute smoothie perception of (M - a bystander):
 		reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 		if the bananas-left of smoothie-predicament >= 1, set numerical response 1 to "equal parts oatmeal, prunes and banana - consumes 1 spare banana";
 		set numerical response 2 to "higher proportion of oatmeal - a thicker drink makes it a bit more likely [he of M][']ll get full before [he of M] finishes it, and if you are forced to drink any, it'll fill you up a bit more";
-		set numerical response 3 to "higher proportion of prunes - additional laxative effects if you are made to drink any";
+		set numerical response 3 to "higher proportion of prunes - unpleasant taste if you are made to drink any";
 		if the bananas-left of smoothie-predicament >= 2, set numerical response 4 to "higher proportion of banana - a tastier drink makes it a bit more likely [he of M] will enjoy it - consumes 2 spare bananas";
 		compute multiple choice question;
 		let CNR be player-numerical-response;
@@ -2517,7 +2519,7 @@ To compute smoothie perception of (M - a bystander):
 			decrease the bystanderInt1 of M by R;
 			if the bystanderInt1 of M < 5, StomachFoodUp 1;
 		otherwise if CNR is 3:
-			if the bystanderInt1 of M < 5, increase suppository by 1;
+			if the bystanderInt1 of M < 5 and suppository is 0, now suppository is 1;
 		otherwise:
 			let R be a random number between 2 and 4;
 			if debuginfo > 0, say "+ flavour bonus ([R]) ";
@@ -2560,12 +2562,15 @@ To compute (M - a bystander) drinking (CNR - a number):
 	if the bystanderInt1 of M < 1:
 		say "[BigNameDesc of M] takes [if CNR is 2]only a few sips before pulling away, apparently already feeling full[otherwise]one sip and pulls it away, an unpleasant look on [his of M] face[end if]. [big he of M] [one of]has a slightly irritated look[or]has a slight frown[or]has an annoyed look[in random order] on [his of M] face as [he of M] pours the mostly-full cup down the funnel. You are forced to gulp and swallow the entire [if CNR is 2]heavy [end if]drink...[SmoothieDisgusted of M]";
 		StomachFoodUp 3;
+		if CNR is 3, TasteGrossOut 5;
 	otherwise if the bystanderInt1 of M < 3:
 		say "[BigNameDesc of M] [if CNR is 2]takes a fair few gulps before pulling away, looking satisfied and full[otherwise]drinks several mouthfuls before [he of M] pulls it away, an undecided look on [his of M] face[end if]. [big he of M] then moves to pour the half-full cup down the funnel. You are forced to gulp and swallow the rest of [his of M] [if CNR is 2]thick and heavy [end if]drink...[SmoothieUnhappy of M]";
 		StomachFoodUp 2;
+		if CNR is 3, TasteGrossOut 4;
 	otherwise if the bystanderInt1 of M < 5:
 		say "[BigNameDesc of M] [if CNR is 2]swallows a number of big mouthfuls before eventually pulling away, looking extremely full[otherwise]drinks the majority of the cup before releasing it with a satisfied sigh[end if]. Still, there is a bit left in the cup. [SmoothieAlmostHappy of M]";
 		StomachFoodUp 1;
+		if CNR is 3, SlowGrossOut 4;
 	otherwise:
 		say SmoothieHappy of M;
 
@@ -2838,13 +2843,16 @@ To execute (L - team-face-crotch-predicament):
 			say "[BigNameDesc of ST] sighs with defeat and you can tell that [he of ST] is peeing[if playerAbove is 0 and K is diaper]. Mostly because you can FEEL it on your face! The [urine] soaks straight through [his of ST] bikini briefs, making your face warm, wet and smelly. YUCK[otherwise if playerAbove is 0]. Mostly because you can feel the padding in front of your nose turning warm. Over time that subtle but distinct smell of [urine] begins to hit your nostrils[otherwise if K is diaper] into [his of ST] bikini briefs. Looks like [he of ST] will be walking home wet and dripping[otherwise] in [his of ST] diaper. Looks like [he of ST] will be walking home wet and soggy[end if].";
 			if playerAbove is 0 and K is red-bikini-briefs:
 				if watersports fetish is 1 and K is diaper, SlowUrineTasteAddictUp 1;
-				otherwise DiaperAddictUp 1;
+				otherwise GrossOut wetDiaperFacesitGrossnessLevel;
 			now STBladder is 0;
 		if STBladder < 10 and playerAbove is 0:
-			say "The smell of [urine] goes to your head and makes you feel rather light-headed[if watersports fetish is 1 and K is diaper][otherwise if K is diaper or the remainder after dividing STBladder by 2 is 1], and perhaps a bit more perverse[end if].";
-			if K is diaper or the remainder after dividing STBladder by 2 is 1:
+			if K is diaper:
+				say "The smell of [urine] goes to your head and makes you feel rather light-headed[if watersports fetish is 1 and K is diaper][otherwise if K is diaper or the remainder after dividing STBladder by 2 is 1], and perhaps a bit more perverse[end if].";
 				if watersports fetish is 1 and K is diaper and the urine taste addiction of the player <= the sex addiction of the player, SlowUrineTasteAddictUp 1;
 				otherwise SexAddictUp 1;
+			otherwise:
+				say "The [urine]-soaked padding is still pressed into your face.";
+				SlowGrossOut wetDiaperFacesitGrossnessLevel;
 		decrease PredicamentMinutes by 1;
 		increase the bladder of the player by 1;
 		increase STBladder by 1;
@@ -3726,7 +3734,7 @@ To execute (TEP - team-snowball-predicament):
 				say roman type;
 			say "You and [student-name of M] stretch your bungee harnesses as far as they will go, meeting in the middle of the room over the sensor[if the player is very tired]. [bold type]You are very tired[otherwise if the player is tired]. [bold type]You are tired[end if].[roman type][line break]";
 			reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
-			set numerical response 1 to "transfer the cum slowly (increases fatigue faster; small chance of a major spillage, increasing with fatigue and mouthful volume)";
+			set numerical response 1 to "transfer the cum slowly (increases fatigue faster; small chance of a major spillage, increasing with fatigue and mouthful volume; feels a bit gross)";
 			set numerical response 2 to "transfer the cum quickly (reasonable chance of minor spillage, increasing with mouthful volume)";
 			if bukkake fetish is 1, set numerical response 3 to "transfer the cum quickly, pressing your bodies together (humiliating; any minor spillage will be caught by your clothing)";
 			compute multiple choice question;
@@ -3742,8 +3750,10 @@ To execute (TEP - team-snowball-predicament):
 					SemenPuddleUp SL in Predicament01;
 					if the plug size of PPP > 5, HappinessDown M;
 				otherwise:
-					say "You manage to successfully funnel your [if the semen volume of face > 1]entire [end if][MouthfulDesc] into [his of M] mouth.";
+					say "You manage to successfully funnel your [if the semen volume of face > 1]entire [end if][MouthfulDesc] into [his of M] mouth in a bit wet salty kiss with lots of tongues.";
 					if the fatigue of the player < F * 5, FatigueUp F;
+					now the semen volume of face is 0; [no accidental spitting]
+					SlowGrossOut 4;
 				say "Working against the bungee cord has made you both much more fatigued. ";
 			otherwise:
 				say "You [if player-numerical-response is 3]press your chest into [student-name of M][']s chest as tightly as you can, and [end if]lock lips with [him of M], before trying to push your [MouthfulDesc] into [his of M] mouth in one go. ";
@@ -3927,29 +3937,26 @@ To execute (TDVP - team-diaper-vibe-predicament):
 			if refractoryperiod is 3 and HOLD <= 0:
 				say "Orgasming whilst your nostrils are filled with the smell of a messy diaper has a significant effect on your mental state.";
 				SexAddictUp 1;
-				DiaperAddictUp 1;
+				GrossnessAddictUp 1;
 		otherwise:
 			if HOLD > 0 or LAX < 5, say "[NameDesc of M] is forced to drink some of the laxative!";
 			increase LAX by 1;
-			if HOLD <= 0 and the diaper addiction of the player <= 10:
-				if the arousal of the player > 0, say "The disgusting smell of diapers helps your arousal to quickly decrease.";
-				cool down 2500;
-			otherwise if HOLD > 0 or LAX < 5:
-				cool down 1000;
+			if HOLD <= 0:
+				say "The disgusting smell of the messy diaper above your head fills your nostrils.";
+				SlowGrossOut messyDiaperFacesitGrossnessLevel - 1;
 		if HOLD > 0:
 			decrease HOLD by LAX;
 			if LAX > 0, say "[student-name of M][']s stomach growls angrily[if LAX > a random number between 1 and 2]. [big he of M] groans through [his of M] gag[end if].";
 			if HOLD <= 0:
 				say "[student-name of M] moans with disappointment as [he of M] loses control of [his of M] sphincter. [big he of M] shudders in mid-air and then an incredibly loud rasping sound heralds a massive shitstorm being unleashed into the padding right above your head. You can hear it. You can smell it. You can see it! There's so much! And it smells so fucking bad!";
 				now temporaryYesNoBackground is Figure of team diaper weights predicament messy;
-				if LAX < 5:
-					say "You can't help but become a bit more accustomed to the smell of messy diapers.";
-					SilentlyDiaperAddictUp 1;
+				if LAX < 5, SmellGrossOut messyDiaperFacesitGrossnessLevel - 1;
 		if player-numerical-response is 2 and LAX is 5:
 			say "[bold type]The weight lifts! [roman type][student-name of M] quickly falls until [his of M] diaper is enveloping your face. But [he of M] keeps coming! You are forced onto your back, with [his of M] [if HOLD <= 0]stinky [end if]diaper completely covering your head. You can barely breathe!";
-		if HOLD <= 0 and LAX >= 5:
-			say "The smell of [student-name of M][']s horrible messy diaper fills your nostrils and mouth as you draw rasping breaths through [his of M] padding. You can't help but become a bit more accustomed to the smell of messy diapers.";
-			SilentlyDiaperAddictUp 1;
+			if HOLD <= 0, SmellGrossOut messyDiaperFacesitGrossnessLevel;
+		otherwise if HOLD <= 0 and LAX >= 5:
+			say "The smell of [student-name of M][']s horrible messy diaper fills your nostrils and mouth as you draw rasping breaths through [his of M] padding.";
+			SlowGrossOut messyDiaperFacesitGrossnessLevel;
 		decrease T by 10;
 		update arousal;
 	say "A beeping sound signals that the game is over. Your restraints fall away and you find you are able to leave. [BigNameDesc of M] just mutters some [if HOLD > 0]relieved[otherwise]frustrated[end if] complaints towards you before making for the door[if LAX > 0 and HOLD > 0]. As [he of M] leaves, you hear a loud tell-tale sound - [he of M] has lost control and is messing [himself of M] as [he of M] waddles away[end if].";
@@ -4151,12 +4158,12 @@ To execute (TSLP - team-scissor-lift-predicament):
 					let SDN be the number of soiled-diaper in the location of the player;
 					let SDD be SDN;
 					if there is a worn dirty diaper, increase SDD by 4;
-					let R1 be -2 - the raw diaper addiction of the player;
+					let R1 be -9;
 					let R2 be a random number between R1 and SDD;
-					if debuginfo > 0, say "[input-style]Diaper addiction check: RNG([R1]~[SDD]): ([R2]) | 0.5 addiction increase threshold[roman type][line break]";
+					if debuginfo > 0, say "[input-style]Grossness addiction check: RNG([R1]~[SDD]): ([R2]) | 0.5 addiction increase threshold[roman type][line break]";
 					if R2 > 0:
-						say "Spending so much time up there with [if SDN is 1]a used diaper[otherwise if SDN > 1][SDN] used diapers[end if][if SDN > 0 and there is a worn dirty diaper] and [end if][if there is a worn dirty diaper]your [D][end if], you can't help but become more accustomed to begin around diapers.";
-						SilentlyDiaperAddictUp 1;
+						say "Spending so much time up there with [if SDN is 1]a used diaper[otherwise if SDN > 1][SDN] used diapers[end if][if SDN > 0 and there is a worn dirty diaper] and [end if][if there is a worn dirty diaper]your [D][end if], you can't help but become more accustomed to gross smells.";
+						SlowGrossnessAddictUp 1;
 					if the player is extremely thirsty or the player is hungry:
 						say "[bold type]Your [if the player is hungry]stomach rumbles[end if][if the player is extremely thirsty and the player is hungry] and your [end if][if the player is extremely thirsty]throat is painfully dry[end if].[roman type][line break]";
 						if the player is getting unlucky:
@@ -4342,6 +4349,8 @@ To execute (TSLP - team-scissor-lift-predicament):
 												compute swallowing; [Must succeed to avoid infinite loops]
 											FaceFill EL by STE;
 											decrease STEnema by STE;
+											if EL is semen, TasteGrossOut 10;
+											otherwise TasteGrossOut 12;
 										otherwise:
 											say "You pull away, and the rest of the [EL] enema flows down through the grated platform to the ground below.";
 											HappinessDown M by 1;
@@ -4354,6 +4363,7 @@ To execute (TSLP - team-scissor-lift-predicament):
 							now STRectum is 1;
 							increase STDiaper by STBladder;
 							now STBladder is 0;
+							SmellGrossOut messyDiaperSmellGrossnessLevel;
 						otherwise if STBladder > the dedication of M + 4:
 							if diaper lover > 0:
 								say "[bold type][student-name of M] coughs awkwardly as a hissing sound fills the air. [roman type][big he of M] is wetting [himself of M], but trying not to draw attention to it. You don't say anything.";
@@ -6914,9 +6924,9 @@ To execute (P - diaper-maze-predicament):
 			say "Daylight shines down from the alleyway in front of you. [bold type]You've reached the exit! [roman type]You're free!";
 			if rival-progress of P < 25, say "[speech style of team-predicament-partner]'EEK!'[roman type][line break]You can hear [NameDesc of team-predicament-partner][']s scream of panic as [his of team-predicament-partner] diaper box presumably opens, engulfing [his of team-predicament-partner] face in the nasty nappies.";
 		otherwise:
-			if the player is upset about sitting in mess and the delicateness of the player < a random number between 1 and 25:
-				say "You shiver uncontrollably as you continue to wallow in your own mess.";
-				SlowDelicateUp 1;
+			if the player is upset about sitting in mess:
+				say "You continue to wallow in your own mess.";
+				SlowGrossOut 5;
 			let T be the substituted form of "Holding in your enema [one of]and walking at the same time is a real challenge[or]is becoming increasingly challenging[stopping],";
 			check enema holding with reason T;
 			compute school periodic effect of diaper-box;

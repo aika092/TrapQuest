@@ -43,6 +43,8 @@ To say ShortDesc of (M - minotaur):
 To say MediumDesc of (M - minotaur):
 	say "large [ShortDesc of minotaur][if M is caged] (caged)[end if]".
 
+Definition: minotaur is a clothes-destroyer: decide yes.
+
 Definition: minotaur is willing to do oral: decide no.
 
 Definition: minotaur is willing to do titfucks: decide no.
@@ -115,6 +117,8 @@ To decide which number is the starting difficulty of (M - minotaur):
 
 To decide which number is the girth of (M - minotaur):
 	decide on 8.
+To decide which number is the grossness of (M - minotaur): [grossness addiction needed to tolerate it]
+	decide on 5.
 
 To decide which number is the base semen load of (M - minotaur):
 	decide on 18.

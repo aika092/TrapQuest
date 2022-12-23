@@ -356,10 +356,12 @@ To execute (T - dungeon-oral-test):
 	let M be dungeon-test-monster;
 	if M is male:
 		say "[big he of M] positions [his of M] [manly-penis] in front of your mouth.[line break][speech style of M]'Suck it.'[roman type][line break]Do you perform fellatio on [him of M]? ";
-	otherwise:
+	otherwise if a2m fetish > 0:
 		say "[big he of M] bends over, pushing [his of M] ass into your face and more importantly [his of M] asshole over your mouth.[line break][speech style of M]'Lick it.'[roman type][line break]Do you perform anilingus on [him of M]? ";
+	otherwise:
+		say "[big he of M] bends over, pushing [his of M] ass into your face and more importantly [his of M] pussy over your mouth.[line break][speech style of M]'Lick it.'[roman type][line break]Do you perform cunnilingus on [him of M]? ";
 	if the player is bimbo consenting:
-		say "You [if M is male]accept [his of M] rod into your mouth and begin to work[otherwise]push your tongue into [his of M] sweaty hole and begin to lick[end if] away. [big he of M] seems happy to let you do all of the work, holding [himself of M] completely still. Even though it's not dirty, your tongue is still able to detect that unmistakable taste of ass[if M is male] - [he of M] must have recently been ruining some poor other student's butt[end if]. After what can't have been much more than ten seconds [BigNameDesc of M] seems satisfied. It doesn't look like [he of M] intends you to bring [him of M] to orgasm right now, and [he of M] withdraws. [severeHumiliateReflect][if the oral sex addiction of the player > 4]You are so used to bringing your partners to completion that this leaves you feeling somewhat uncomfortable![otherwise]You're just glad it was all over so quickly.[end if]";
+		say "You [if M is male]accept [his of M] rod into your mouth and begin to work[otherwise]push your tongue into [his of M] sweaty hole and begin to lick[end if] away. [big he of M] seems happy to let you do all of the work, holding [himself of M] completely still. [if a2m fetish > 0]Even though it's not dirty, your tongue is still able to detect that unmistakable taste of ass[otherwise]Your tongue is overwhelmed by the strong tangy taste of sweaty pussy[end if][if M is male] - [he of M] must have recently been ruining some poor other student's holes[end if]. [if a2m fetish > 0][TasteGrossOut 7][otherwise][TasteGrossOut 4][end if]After what can't have been much more than ten seconds [BigNameDesc of M] seems satisfied. It doesn't look like [he of M] intends you to bring [him of M] to orgasm right now, and [he of M] withdraws. [severeHumiliateReflect][if the oral sex addiction of the player > 4]You are so used to bringing your partners to completion that this leaves you feeling somewhat uncomfortable![otherwise]You're just glad it was all over so quickly.[end if]";
 		OralSexAddictUp 1;
 		increase dungeon-favour by 1;
 	otherwise:

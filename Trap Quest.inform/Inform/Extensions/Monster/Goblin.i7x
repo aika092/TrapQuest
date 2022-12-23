@@ -51,6 +51,8 @@ To decide which figure-name is the monster-image of (M - yellow goblin):
 
 To decide which number is the girth of (M - a goblin):
 	decide on 4.
+To decide which number is the grossness of (M - a goblin): [grossness addiction needed to tolerate it]
+	decide on 5.
 
 To say MonsterDesc of (M - a goblin):
 	say "A small curvaceous [man of M] with large pointy ears and an unnatural skin tone. There's no mistaking this for a human - [he of M]'s a goblin. [if M is uninterested][big he of M] is wearing an erotic white dress with a [']skirt['] section that dangles over [his of M] genitals, exposing the entirety of [his of M] hips[otherwise if M is male]The cloth covering [his of M] genitals has been pulled to one side, revealing a huge, throbbing goblin [manly-penis][otherwise]The cloth covering [his of M] genitals has been pulled to one side, revealing a puffy goblin pussy with a pierced clit[end if].";

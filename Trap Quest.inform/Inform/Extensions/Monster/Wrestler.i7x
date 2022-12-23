@@ -861,6 +861,12 @@ To say ConfiscationDeclarationFlav of (M - a wrestler) on (C - a clothing):
 
 wrestler-feeds-you-to-master is a diaper punishment. The priority of wrestler-feeds-you-to-master is 5.
 
+To say EnticeFlav of (M - a monster) for (P - wrestler-feeds-you-to-master):
+	say "[line break][speech style of M]'We don't have to fight! Just get on your knees, and let me take you to [daddy of matron]!'[roman type][line break]".
+
+To decide which number is the relevant addiction of (P - wrestler-feeds-you-to-master):
+	decide on the bimbo of the player.
+
 Definition: wrestler-feeds-you-to-master (called P) is appropriate:
 	if current-monster is not wrestler, decide no;
 	let N be a random alive dominatrix;
@@ -873,6 +879,13 @@ To compute punishment of (P - wrestler-feeds-you-to-master):
 
 wrestler-facesit is a diaper punishment. The priority of wrestler-facesit is 4.
 
+To say EnticeFlav of (M - a monster) for (P - wrestler-facesit):
+	say "[line break][speech style of M]'[one of]You WANT me to sit this diaper on your face, don't try to deny it! Just get on your back and let it happen...'[or]Why fight me when you can just get on the ground and let me sit on your face?'[in random order][roman type][line break]".
+
+To decide which number is the relevant addiction of (P - wrestler-facesit):
+	if current-monster is messy, decide on the grossness addiction of the player - 6;
+	decide on the grossness addiction of the player.
+
 Definition: wrestler-facesit (called P) is appropriate:
 	if current-monster is not wrestler, decide no;
 	if there is a worn wet diaper or there is a worn messed diaper, decide yes;
@@ -881,16 +894,27 @@ Definition: wrestler-facesit (called P) is appropriate:
 To compute punishment of (P - wrestler-facesit):
 	let M be current-monster;
 	let D be a random worn diaper;
-	say "[BigNameDesc of M] flips you onto your back and lies on top of you so that [his of M] latex-covered diaper bulge is right above your face. From this vantage point [he of M] gives you a diaper check, pushing [his of M] hand into your [MediumDesc of D] and moving [his of M] nose very close to get a good sniff.[line break][speech style of M]'That's what I thought. Well, to make this a proper 69 I need to make sure mine matches yours, right?'[roman type][line break]That's the last thing you hear [him of M] say before your head is engulfed by cold stretchy rubber and all you can do is wriggle with [joy the diaper addiction of the player]. You can feel the softness of [his of M] thick padding cushioning you against the heavy weight of the butt and body above it. [if D is wet]A very subtle hiss accompanies the sound of rain hitting an umbrella and you know that [NameDesc of M] is peeing [himself of M] right on top of your face. The padding begins to sag which makes the latex cling to your face even tighter. [end if][if D is messed]There's a rubber whine, like a little bit of air being released from a balloon. Then a rasping sound heralds the arrival of something new above your face. It feels like there's an avalanche of snow or something right on the other side of [his of M] latex bodysuit. Your head becomes even more enveloped in its rubbery prison, if that were even possible. [end if]You can't breathe and you can hardly hear a thing. [BigNameDesc of M] is saying something but you can't make out the words at all, as if you were underwater. And then [he of M] starts thrusting [his of M] hips forward and back, grinding over your face. Through the latex you can feel the [if D is wet]soggy [end if][if D is messed]lumpy [end if]padding as it is moved up and down, forward and back, squished inwards then outwards, squelched around your entire head. [BigNameDesc of M] is moaning but it sounds like [he of M][']s a hundred of metres away. [big he of M] rubs your own [MediumDesc of D] as [he of M] continues to grind, [one of]and you at first assume [he of M] is using [his of M] hands but you realise that it's actually [his of M] own face you can feel against[or]once again using [his of M] face to nuzzle[stopping] your crotch.";
+	say "[BigNameDesc of M] flips you onto your back and lies on top of you so that [his of M] latex-covered diaper bulge is right above your face. From this vantage point [he of M] gives you a diaper check, pushing [his of M] hand into your [MediumDesc of D] and moving [his of M] nose very close to get a good sniff.[line break][speech style of M]'That's what I thought. Well, to make this a proper 69 I need to make sure mine matches yours, right?'[roman type][line break]That's the last thing you hear [him of M] say before your head is engulfed by cold stretchy rubber and all you can do is wriggle with [joy the diaper addiction of the player]. You can feel the softness of [his of M] thick padding cushioning you against the heavy weight of the butt and body above it. [if D is wet]A very subtle hiss accompanies the sound of rain hitting an umbrella and you know that [NameDesc of M] is peeing [himself of M] right on top of your face. The padding begins to sag which makes the latex cling to your face even tighter. [end if][if D is messed and diaper messing >= 7]There's a rubber whine, like a little bit of air being released from a balloon. Then a rasping sound heralds the arrival of something new above your face. It feels like there's an avalanche of snow or something right on the other side of [his of M] latex bodysuit. Your head becomes even more enveloped in its rubbery prison, if that were even possible. [end if]You can't breathe and you can hardly hear a thing. ";
+	if D is messed and diaper messing >= 7, GrossOut messyDiaperFacesitGrossnessLevel;
+	otherwise GrossOut wetDiaperFacesitGrossnessLevel;
+	say "[BigNameDesc of M] is saying something but you can't make out the words at all, as if you were underwater. And then [he of M] starts thrusting [his of M] hips forward and back, grinding over your face. Through the latex you can feel the [if D is wet]soggy [end if][if D is messed and diaper messing >= 7]lumpy [end if]padding as it is moved up and down, forward and back, squished inwards then outwards, squelched around your entire head. [BigNameDesc of M] is moaning but it sounds like [he of M][']s a hundred of metres away. [big he of M] rubs your own [MediumDesc of D] as [he of M] continues to grind, [one of]and you at first assume [he of M] is using [his of M] hands but you realise that it's actually [his of M] own face you can feel against[or]once again using [his of M] face to nuzzle[stopping] your crotch.";
+	if D is messed and diaper messing >= 7, GrossOut messyDiaperFacesitGrossnessLevel;
+	otherwise GrossOut wetDiaperFacesitGrossnessLevel;
 	let DAU be 0;
 	if D is wet, increase DAU by 1;
 	if D is messed, increase DAU by 1;
 	DiaperAddictUp DAU;
 	ruin vagina;
-	say "And now [he of M][']s picking up the pace, pushing harder on top of your head to get your face even deeper into the spherical prison of [his of M] [if D is messed]messy[otherwise]soaking[end if] diaper. [big he of M] continues to speed up until [he of M] climaxes with a few sharp violent thrusts. [big he of M] falls forward, [his of M] own face planted firmly into the front of your own [ShortDesc of D], [his of M] own diapered butt lifting off of your face enough for you to now be able to gasp for air. Your mind is reeling in [horror the diaper addiction of the player] over what just happened[if the player is a bit horny] and [his of M] work on your own [genitals] has left you notably more aroused then you were when this started[end if]. [BigNameDesc of M] lovingly rubs [his of M] face in your loins for a few more seconds before getting up and beginning to stagger away.[line break][speech style of M]'That was fucking amazing... but I think I need to go find a change now. Until next time, [honey of M]...'[roman type][line break]";
+	say "And now [he of M][']s picking up the pace, pushing harder on top of your head to get your face even deeper into the spherical prison of [his of M] [if D is messed]messy[otherwise]soaking[end if] diaper. [big he of M] continues to speed up until [he of M] climaxes with a few sharp violent thrusts. [big he of M] falls forward, [his of M] own face planted firmly into the front of your own [ShortDesc of D], [his of M] own diapered butt lifting off of your face enough for you to now be able to gasp for air. Your mind is reeling in [horror the grossness addiction of the player] over what just happened[if the player is a bit horny] and [his of M] work on your own [genitals] has left you notably more aroused then you were when this started[end if]. [BigNameDesc of M] lovingly rubs [his of M] face in your loins for a few more seconds before getting up and beginning to stagger away.[line break][speech style of M]'That was fucking amazing... but I think I need to go find a change now. Until next time, [honey of M]...'[roman type][line break]";
 	bore M.
 
 wrestler-romper is a diaper punishment. The priority of wrestler-romper is 3.
+
+To say EnticeFlav of (M - a monster) for (P - wrestler-romper):
+	say "[line break][speech style of M]'Stop this, I just want to give you the perfect thing to wear! Come on, sit down and let me get it on you!'[roman type][line break]".
+
+To decide which number is the relevant addiction of (P - wrestler-romper):
+	decide on the humiliation of the player / 2000.
 
 Definition: wrestler-romper (called P) is appropriate:
 	if current-monster is not wrestler, decide no;

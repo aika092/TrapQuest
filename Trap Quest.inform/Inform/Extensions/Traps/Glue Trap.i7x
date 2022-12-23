@@ -831,7 +831,6 @@ Used to try to tear off glued worn clothing. If the player is strong enough, the
 Check tearing off:
 	if the noun is not worn glued clothing, say "That's not [if the noun is not clothing]something you can tear off[otherwise if the noun is not worn]worn[otherwise]glued[end if]." instead;
 	if the player is not able to manually use manual dexterity, do nothing instead.
-	[if gluePainThreshold > 0, say "Ow, ow, ow! It hurts too much, the pain is bringing tears to your eyes! You'll have to wait a bit longer before trying this again." instead.]
 
 To decide which number is the glue threshold of (C - a clothing):
 	decide on 450.

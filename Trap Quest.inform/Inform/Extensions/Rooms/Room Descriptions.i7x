@@ -155,5 +155,18 @@ To say ExamineDesc of (C - water-body):
 		say ExamineDesc of T;
 	otherwise:
 		say "This body of water is large enough to wash yourself in.".
+To say ShortDesc of (C - water-body):
+	let T be a random water-body-scenery in the location of the player;
+	if T is water-body-scenery:
+		say ShortDesc of T;
+	otherwise:
+		say "water".
+To say MediumDesc of (C - water-body):
+	let T be a random water-body-scenery in the location of the player;
+	if T is water-body-scenery:
+		say MediumDesc of T;
+	otherwise:
+		say "body of water".
+
 
 Room Descriptions ends here.

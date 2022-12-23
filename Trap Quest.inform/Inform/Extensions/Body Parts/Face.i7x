@@ -14,10 +14,12 @@ Face has a number called previous hair blondeness.
 Face has a number called make-up. [Min 0 Max 3 - A high number means slutty makeup.]
 Face has a number called lips.
 
+drink-origin is a kind of value. The drink-origins are boring-origin, vaginal-origin, anal-origin.
+Face has a drink-origin. Understand the drink-origin property as describing face. Face is boring-origin.
+
 Face has a number called semen volume.
 Face has a number called urine volume.
 Face has a number called milk volume.
-Face can be player-origin or monster-origin. Face is player-origin.
 To decide which number is the total volume of face:
 	decide on the semen volume of face + the urine volume of face + the milk volume of face.
 To decide which number is face-limit:
@@ -267,7 +269,6 @@ To FaceFill (L - a liquid-object) by (N - a number):
 			if L is semen:
 				increase the semen volume of face by 1;
 				compute father material of face;
-				if there is a live thing penetrating face, now face is monster-origin;
 			if L is urine, increase the urine volume of face by 1;
 			if L is milk, increase the milk volume of face by 1;
 			if L is murkwater:
@@ -305,7 +306,7 @@ To FaceFill (L - a liquid-object) by (N - a number):
 
 To MouthEmpty:
 	cancel father material of face;
-	now face is player-origin;
+	now face is boring-origin;
 	now the semen volume of face is 0;
 	now the urine volume of face is 0;
 	now the milk volume of face is 0;
@@ -330,7 +331,7 @@ To compute swallowing:
 	otherwise:
 		if auto < 2, say "You [if the player is always automatically swallowing]automatically [otherwise if auto is 1]accidentally [end if]gulp the [MouthfulDesc] down[if auto is 1] your throat[end if].";
 		StomachSemenUp the semen volume of face;
-		if the semen volume of face > 0 and face is monster-origin, progress quest of creampie-drinking-quest;
+		if the semen volume of face > 0 and face is not boring-origin, progress quest of creampie-drinking-quest;
 		StomachUrineUp the urine volume of face;
 		StomachMilkUp the milk volume of face;
 		MouthEmpty.
@@ -389,6 +390,8 @@ To suggest swallowing with (L - a liquid-object) consequences: [If the player do
 		otherwise if L is urine and the urine volume of face > 0 and the player is not getting lucky:
 			compute slightly addictive tasting of L;
 		otherwise if L is semen and the semen volume of face > 0 and the player is not getting lucky:
+			compute slightly addictive tasting of L;
+		otherwise if L is murkwater and the total volume of face > 0 and the player is not getting lucky:
 			compute slightly addictive tasting of L.
 
 To check accidental spitting:

@@ -525,7 +525,8 @@ To compute default facial sex of (M - a monster):
 			decrease the sex-length of M by 1;
 		otherwise:
 			say OralSubmissionResponse of M;[The idea here is that the player and "M" are working together, so we don't unnecessarily restrict ourselves with two flavour functions]
-			decrease the sex-length of M by 1.
+			decrease the sex-length of M by 1;
+	compute slow grossness of M.
 
 This is the default anal sex rule:
 	if current-monster is penetrating asshole, compute anal sex of current-monster.
@@ -546,7 +547,8 @@ To compute default anal sex of (M - a monster):
 	otherwise:[resisting]
 		compute sexResist of M in asshole;
 	decrease the sex-length of M by 1;
-	say "[one of][M sex reaction][or][cycling]".
+	say "[one of][M sex reaction][or][cycling]";
+	compute slow grossness of M.
 
 This is the default vaginal sex rule:
 	if current-monster is penetrating vagina, compute vaginal sex of current-monster.
@@ -567,7 +569,8 @@ To compute default vaginal sex of (M - a monster):
 	otherwise:
 		compute sexResist of M in vagina;
 	decrease the sex-length of M by 1;
-	say "[one of][M sex reaction][or][cycling]".
+	say "[one of][M sex reaction][or][cycling]";
+	compute slow grossness of M.
 
 This is the default titfuck rule:
 	if current-monster is penetrating breasts, compute titfuck of current-monster.
@@ -586,7 +589,8 @@ To compute titfuck of (M - a monster):
 	otherwise:
 		say TitfuckReceiveFlav of M;
 		decrease the sex-length of M by 1;
-	stimulate breasts.
+	stimulate breasts;
+	compute slow grossness of M.
 
 This is the default erection sex rule:
 	if current-monster is penetrating penis, compute erection sex of current-monster.
@@ -606,7 +610,8 @@ To compute erection sex of (M - a monster):
 	otherwise:
 		decrease the sex-length of M by 1;
 		stimulate penis from M;[special flavour for orgasms will trigger after normal flavour is shown.]
-		say "[one of][M sex reaction][or][cycling]".
+		say "[one of][M sex reaction][or][cycling]";
+	compute slow grossness of M.
 
 To compute post climax effect of (M - a monster) in (B - penis):[Note that this is not necessarily a "climax", just the end of the sex]
 	FuckGet.
@@ -854,6 +859,10 @@ Definition: face is a potential target:
 	if current-monster is willing to do oral, decide yes;
 	decide no.
 
+Definition: thighs is a potential target: [Thighs is used to target for making the player lick something.]
+	if current-monster is willing to do licking, decide yes;
+	decide no.
+
 Definition: vagina is a potential target:
 	if current-monster is willing to do vaginal and the player is possessing a vagina, decide yes;
 	decide no.
@@ -862,7 +871,7 @@ Definition: asshole is a potential target:
 	if current-monster is willing to do anal, decide yes;
 	decide no.
 
-Definition: belly is a potential target: [Belly is used to target for urination. And since urination can just go on the face and doesn't need to go inside the mouth, we don't need to check 'reasonable target'.]
+Definition: belly is a potential target: [Belly is used to target for urination.]
 	if current-monster is willing to urinate and watersports fetish is 1 and the latex-transformation of the player <= 4, decide yes;
 	decide no.
 
@@ -881,22 +890,25 @@ Definition: a body part (called B) is a reasonable target:
 	[If you want the monster to ignore buttslut and/or be able to take out plugs, you'll need to define the correct functions for your monster.]
 	if B is not a potential target, decide no; [First we check, is it a potential target? (see above)]
 	if debugmode > 1, say "[ShortDesc of B] is a potential target...[line break]";
+	if B is belly: [Instead it's about bladder fill.]
+		if the bladder of current-monster >= 600, decide yes;
+		decide no;
 	if there is a triggered cage trap in the location of the player:
 		unless (B is face or B is breasts or B is belly) and the number of worn stuck clothing + the number of stuck body parts is 0, decide no; [when trapped by a cage trap, the only parts accessible are your face and breasts, and that's only when you are stuck halfway out]
 	if B is fuckhole:
 		let C be a random worn top level ass protection clothing;
 		if B is vagina, let C be a random worn top level protection clothing;
-		if C is clothing and C is not rippable and C is not displacable and C is not tearable and (C is not crotch-zipped or current-monster is not intelligent):
+		if C is clothing and C is not rippable and C is not displacable and C is untearable and (C is not crotch-zipped or current-monster is not intelligent):
 			if debugmode > 1, say "[C] cannot be removed!";
 			decide no;
 	otherwise if B is breasts:
 		let C be a random worn top level titfuck protection clothing;
-		if C is clothing and C is actually not-top-displacable and C is not tearable:
+		if C is clothing and C is actually not-top-displacable and C is untearable:
 			if debugmode > 1, say "[C] cannot be removed!";
 			decide no;
-	otherwise if B is face:
+	otherwise if B is face or B is thighs:
 		let C be a random worn clothing penetrating face;
-		if C is clothing and C is not tearable:
+		if C is clothing and C is untearable:
 			if debugmode > 1, say "[C] cannot be removed!";
 			decide no;
 	if B is occupied and B is not usable without penetration: [If it's usable without penetration e.g. the mannequin applying makeup, then we will always decide yes even if the player is gagged!]
@@ -925,7 +937,7 @@ Definition: a body part (called B) is an actual target:
 	if debugmode > 1, say "[ShortDesc of B] is an actual target...";
 	decide yes.
 
-Definition: a belly (called B) is an actual target: [We can always piss on a face unless it's being fucked.]
+Definition: belly (called B) is an actual target: [We can always piss on a face unless it's being fucked.]
 	if the blue-balls of current-monster > a random number between 0 and 9, decide no; [This NPC wants to orgasm!]
 	if current-monster is wrapped, decide no; [can't piss through a condom!]
 	if B is a reasonable target and the number of monsters filling face is 0, decide yes;
@@ -1019,6 +1031,117 @@ This is the selection frustrated rule:
 	rule fails.
 The selection frustrated rule is listed last in the default diaper quest rules.
 
+To compute enticing of (M - a monster):
+	let CM be current-monster;
+	now current-monster is M;
+	if diaper quest is 1:
+		choose a diaper punishment;
+		if chosen diaper punishment is punishment-not-found:
+			if debugmode > 0, say "Tried to entice but no acceptable diaper punishment found.";
+		otherwise if chosen diaper punishment is dq-student-flee:
+			if debugmode > 0, say "Tried to entice but student just wants to flee.";
+		otherwise:
+			if debugmode > 0, say "Tried to entice and selected [chosen diaper punishment].";
+			say EnticeFlav of M for chosen diaper punishment;
+			let S be the relevant addiction of chosen diaper punishment;
+			if S > 5: [at 5 or less addiction, this can't happen]
+				check enticing of M with temptation level S;
+				if the player is prone, compute punishment of chosen diaper punishment;
+	otherwise:
+		compute the orifice choosing of M;
+		let B be the chosen-orifice of M;
+		if B is an actual target body part:
+			say EnticeFlav of M with B;
+			let S be the relevant sex addiction of B;
+			if B is thighs, now S is the grossness addiction of the player;
+			if B is belly, now S is the urine taste addiction of the player;
+			if S > 5: [at 5 or less addiction, this can't happen]
+				check enticing of M with temptation level S;
+				if the player is prone:
+					follow the insertion rules of M;
+	now current-monster is CM.
+
+
+To check enticing of (M - a monster) with temptation level (S - a number):
+	let A be the arousal of the player / 500;
+	let G be the grossness of M  - the grossness addiction of the player;
+	let N be A + S;
+	if G > 0, decrease N by G;
+	if debuginfo > 0, say "[input-style]Enticement stats: Arousal value ([A]) + Addiction level ([S])[if G > 0] - Grossness level ([G])[end if] = Enticement level [N][roman type][line break]";
+	if N > 28:
+		if debuginfo > 0, say "[input-style]Above 28 = maximum enticement level![roman type][line break]";
+		say "The combination of your arousal and [if diaper quest is 1]predilections[otherwise]addiciton[end if] makes it impossible for you to resist!";
+		now auto is 1;
+		try kneeling;
+		now auto is 0;
+	otherwise if N > 22:
+		if debuginfo > 0, say "[input-style]Above 22 = enticement level 3[roman type][line break]";
+		say "[if the player is a bit horny]The combination of your arousal and[otherwise]Your[end if] [if diaper quest is 1]predilections[otherwise]addiciton[end if] makes it extremely difficult for you to resist! The damage of your attacks against [NameDesc of M] will be seriously reduced.[paragraph break]Get on your knees and consent to what [he of M][']s asking for?[roman type][line break]";
+		increase the temporary-damage-reduction of M by 3;
+		if the player is consenting:
+			now auto is 1;
+			try kneeling;
+			now auto is 0;
+	otherwise if N > 18:
+		if debuginfo > 0, say "[input-style]Above 18 = enticement level 2[roman type][line break]";
+		say "[if the player is a bit horny]The combination of your arousal and[otherwise]Your[end if] attitude towards such acts makes it very difficult for you to resist! The damage of your attacks against [NameDesc of M] will be significantly reduced.[paragraph break]Get on your knees and consent to what [he of M][']s asking for?[roman type][line break]";
+		increase the temporary-damage-reduction of M by 2;
+		if the player is consenting:
+			now auto is 1;
+			try kneeling;
+			now auto is 0;
+	otherwise if N > 14:
+		if debuginfo > 0, say "[input-style]Above 14 = enticement level 1[roman type][line break]";
+		say "[if the player is a bit horny]The combination of your arousal and[otherwise]Your[end if] attitude towards such acts makes it very difficult for you to resist! The damage of your attacks against [NameDesc of M] will be slightly reduced.[paragraph break]Get on your knees and consent to what [he of M][']s asking for?[roman type][line break]";
+		increase the temporary-damage-reduction of M by 2;
+		if the player is consenting:
+			now auto is 1;
+			try kneeling;
+			now auto is 0;
+	otherwise:
+		if debuginfo > 0, say "[input-style]Below 15 = enticement level 0[roman type][line break]".
+
+
+To say EnticeFlav of (M - a monster) with (B - face):
+	if M is male:
+		say "[BigNameDesc of M] brandishes [his of M] [LongDickDesc of M]. ";
+		if M is intelligent, say "[line break][speech style of M]'[one of]Come on, you know you want to suck it.'[or]Just imagine how good this tastes...'[or]Are you sure you wouldn't rather just get on your knees and get facefucked already?'[in random order][roman type][line break]";
+		otherwise say "[big he of M] gestures it towards your face.";
+	otherwise:
+		say "[BigNameDesc of M] twirls and shows you [his of M] rear end. ";
+		if M is intelligent, say "[line break][speech style of M]'[one of]Come on, you know you want your face in here.'[or]I bet you can't wait for me to sit on your face...'[or]My pussy and your face are late for their date!'[in random order][roman type][line break]";
+		otherwise say "[big he of M] gestures it towards your face.".
+
+To say EnticeFlav of (M - a monster) with (B - breasts):
+	if M is male:
+		say "[BigNameDesc of M] brandishes [his of M] [LongDickDesc of M]. ";
+		if M is intelligent, say "[line break][speech style of M]'[one of]Come on, you know you want to titfuck me.'[or]I bet this would feel really good in between your tits...'[or]Have you ever given a titfuck to a [manly-penis] like this before?'[in random order][roman type][line break]";
+		otherwise say "[big he of M] gestures it towards your [BreastDesc].";
+	otherwise:
+		say "[big he of M] gestures towards your [BreastDesc].".
+
+To say EnticeFlav of (M - a monster) with (B - belly):
+	if M is male, say "[BigNameDesc of M] brandishes [his of M] [LongDickDesc of M]. ";
+	otherwise say "[BigNameDesc of M] spreads [his of M] pussy lips. ";
+	if M is intelligent, say "[line break][speech style of M]'[one of]Do you really want to fight me? Or do you just want to be a good little urinal?'[or]Do you want to drink some piss?'[or]Give up now, get on your knees, and drink my piss like a good little urinal.'[in random order][roman type][line break]";
+	otherwise say "It seems clear that [he of M] wants to piss on you.".
+
+To say EnticeFlav of (M - a monster) with (B - thighs):
+	if M is willing to do anilingus, say "[BigNameDesc of M] turns around and exposes [his of M] asshole. ";
+	otherwise say "[BigNameDesc of M] points one of [his of M] feet towards you. ";
+	if M is intelligent, say "[line break][speech style of M]'[one of]I'm going to make you lick this clean.'[or]The taste of my [if M is willing to do anilingus]asshole[otherwise]foot[end if] is going to be on your tongue for hours.'[or]Surrender, slut, and [if M is willing to do anilingus]bury your tongue in my ass[otherwise]kiss my feet[end if] to beg for mercy.'[in random order][roman type][line break]";
+	otherwise say "It seems clear that [he of M] wants you to lick it.".
+
+To say EnticeFlav of (M - a monster) with (F - a fuckhole):
+	if M is male, say "[BigNameDesc of M] brandishes [his of M] [LongDickDesc of M]. ";
+	if M is intelligent:
+		let T be "[one of]asshole[or]butthole[or]backdoor[as decreasingly likely outcomes]";
+		if F is vagina, now T is "[one of][pussy][or][cunt][or]slit[as decreasingly likely outcomes]";
+		say "[line break][speech style of M]'[one of]Just think how good you'll feel if you let me inside your [T]...'[or]Get on your knees, and let me ruin your [T] already...'[or]Calm yourself, sweetheart. All I want to do is fuck your [T].'[or]When I get you on your kness, this is going inside your [T]...'[or]Surrender now, and perhaps I'll be merciful on your [T].'[or]I'm going to make your [T] feel so good...'[in random order][roman type][line break]";
+	otherwise:
+		say "It seems clear that [he of M] wants to fuck your [variable F].".
+
+
 Section 2 Clothing Removal and Insertion
 
 This is the monster insertion rule:
@@ -1032,6 +1155,8 @@ To compute (M - a monster) attacking (C - a clothing): [This should change for a
 	if C is crotch-zipped and M is intelligent:
 		say UnzipFlav of M at C;
 		ZipDown C;
+	otherwise if C is locked and M is not a clothes-destroyer:
+		compute M unlocking C;
 	otherwise:
 		say PullAttempt of M at C;
 		let R be (a random number between the difficulty of M and 6) + (a random number between the difficulty of M and 6);
@@ -1055,6 +1180,8 @@ To compute (M - a monster) attacking (C - a diaper):
 	if C is crotch-zipped and M is intelligent:
 		say UnzipFlav of M at C;
 		ZipDown C;
+	otherwise if C is locked and M is not a clothes-destroyer:
+		compute M unlocking C;
 	otherwise if C is tearable and C is actually strippable:
 		say "[BigNameDesc of M] effortlessly pulls off your [ShortDesc of C]!";
 		if M is intelligent:
@@ -1107,6 +1234,25 @@ To compute (M - a monster) displacing (C - a clothing):
 
 To say DisplacesFlav of (C - a clothing):
 	say "pulls the [if C is hobble-skirted]skirt of your [ShortDesc of C] up, exposing your crotch[otherwise if C is trousers]waistband of your [ShortDesc of C] down to your knees[otherwise]crotch section of your [ShortDesc of C] to one side[end if]".
+
+To compute (M - a monster) unlocking (C - a clothing):
+	let K be a random unlock-key covering C;
+	if K is a thing and K is held by M:
+		say "[BigNameDesc of M] [KeyUnlocksFlav of C].";
+	otherwise if M is a generic-unlocker:
+		say "[BigNameDesc of M] [SkeletonKeyUnlocksFlav of C].";
+	otherwise:
+		say "[BigNameDesc of M] [MagicUnlocksFlav of C].";
+	unlock C.
+
+To say KeyUnlocksFlav of (C - a clothing):
+	say "produces the key for your [ShortDesc of C], puts it in to the lock, and twists. [BigNameDesc of C] is now unlocked!".
+
+To say SkeletonKeyUnlocksFlav of (C - a clothing):
+	say "produces a key, puts it in to the lock of your [ShortDesc of C], and twists. It works! [BigNameDesc of C] is now unlocked!".
+
+To say MagicUnlocksFlav of (C - a clothing):
+	say "touches the lock on your [ShortDesc of C], and to your surprise, it suddenly clicks open! Was that luck, or magic, or what?! In any case, [NameDesc of C] is now unlocked!".
 
 To compute (M - a monster) replacing (C - a clothing):
 	say "[BigNameDesc of M] pulls the [if C is hobble-skirted]skirt of your [ShortDesc of C] back down[otherwise if C is trousers]waistband of your [ShortDesc of C] back up to its proper place[otherwise]crotch section of your [ShortDesc of C] back in place[end if].";
@@ -1219,9 +1365,10 @@ To get anal penetration image for (M - a monster):
 	do nothing.
 
 To compute (M - a monster) entering anally:
-	compute M entering asshole.
+	compute M entering asshole;
+	compute grossness of M.
 
-To compute (M - a monster) entering (F - a fuckhole):[Generic function that shouldn't realistically come up.]
+To compute (M - a monster) entering (F - a fuckhole):
 	if F is not actually occupied:
 		set up sex length of M in F;
 		say "[BigNameDesc of M] forces [himself of M] into your [variable F]";
@@ -1295,7 +1442,8 @@ To get vaginal penetration image for (M - a monster):
 	do nothing.
 
 To compute (M - a monster) entering vaginally:
-	compute M entering vagina.
+	compute M entering vagina;
+	compute grossness of M.
 
 To compute (M - a monster) entering (F - vagina):
 	if F is not actually occupied:
@@ -1327,6 +1475,7 @@ The monster removing gag rule is listed last in the monster mouth insertion rule
 This is the monster penetrating mouth rule:
 	if current-monster is male or current-monster is tentacle monster and there is a held condom-providing thing, compute condom request choice of current-monster;
 	compute current-monster entering mouth;
+	compute grossness of current-monster;
 	rule succeeds.
 The monster penetrating mouth rule is listed last in the monster mouth insertion rules.
 
@@ -1368,7 +1517,8 @@ To compute (M - a monster) entering breasts:
 	otherwise say BreastsPenetrationFlav of M; [If you just want to change the text, replace the Flav function. Otherwise replace the entire compute function.]
 	now M is penetrating breasts;
 	compute unique penetration effect of M in breasts;
-	get breasts penetration image for M.
+	get breasts penetration image for M;
+	compute grossness of M.
 
 To say BreastsPenetrationFlav of (M - a monster):
 	say "[BigNameDesc of M] forces [his of M] [manly-penis] in between your [ShortDesc of breasts]!". [This needs changing for every monster! It's boring and might not even be accurate if the monster isn't male.]
@@ -1605,6 +1755,25 @@ To decide which number is the trip frequency of (M - a monster):
 	if TC > 2 and the trophy-mode of trip-trophy is 1 and there is worn heels, now TC is (TC + 1) / 2;
 	decide on TC.
 
+To decide which number is the entice rarity of (M - a monster):
+	decide on the raw entice rarity of M.
+To decide which number is the raw entice rarity of (M - a monster):
+	decide on 3 * combatSpeed. [The higher this is, the less often they do their entice move]
+Definition: a monster (called M) is ready to entice:
+	if diaper quest is 0 and the player is not a december 2022 top donator, decide no;
+	if diaper quest is 1 and the player is not a december 2022 diaper donator, decide no;
+	if M is enticed, decide no;
+	if M is uniquely ready to entice, decide yes;
+	decide no.
+Definition: a monster (called M) is uniquely ready to entice:
+	if diaper quest is 1:
+		if M is intelligent:
+			choose a diaper punishment;
+			if chosen diaper punishment is not punishment-not-found and chosen diaper punishment is not dq-student-flee, decide yes;
+	otherwise:
+		if M is male and M is raunchy and M is intelligent and there is an actual target body part, decide yes;
+	decide no.
+
 [!<ToComputeAttackChoiceOfMonster>
 
 Determines whether a monster will try to trip or attack the player this turn, or potentially do something else. Also, this function helps resolve the blindness status effect
@@ -1617,7 +1786,10 @@ To compute attack choice of (M - a monster):
 	if M is a tripper and the last-tripped of M >= the trip threshold of M:
 		now the last-tripped of M is 0;
 		if tutorial is 1 or (the wrangle-bonus of M < 3 and a random number between 1 and TC is 1), now TC is 0;
-	if TC <= 0:
+	if M is ready to entice and a random number between 1 and the raw entice rarity of M is 1:
+		now M is enticed;
+		compute enticing of M;
+	otherwise if TC <= 0:
 		compute tripping attack of M;
 	otherwise:
 		compute damaging attack of M;
