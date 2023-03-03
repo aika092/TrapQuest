@@ -172,7 +172,7 @@ To decide which number is the initial outrage of (C - cowbell):
 	decide on 5.
 
 To say ClassSummonFlav of (C - cowbell):
-	say "You feel a coldness on your chest. You look down to see that [if cowbell is held]the cowbell has reappeared[otherwise]a cowbell has appeared[end if]!".
+	say "You feel a coldness on your chest. You look down to see that a cowbell has appeared!".
 
 Figure of cowbell is the file "Items/Accessories/Neck/cowbell1.png".
 
@@ -201,7 +201,7 @@ To decide which number is the initial outrage of (C - meowcowbell):
 	decide on 6.
 
 To say ClassSummonFlav of (C - meowcowbell):
-	say "You feel a coldness on your chest. You look down to see that [if meowcowbell is held]the [ShortDesc of C] has reappeared[otherwise]a half-cat, half-cow themed bell has appeared[end if]!".
+	say "You feel a coldness on your chest. You look down to see that a half-cat, half-cow themed bell has appeared!".
 
 Figure of meowcowbell is the file "Items/Accessories/Neck/meowcowbell1.png".
 

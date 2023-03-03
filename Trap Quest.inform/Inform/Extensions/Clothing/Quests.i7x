@@ -1470,7 +1470,7 @@ Definition: change-wisp-trigger is eligible:
 
 condom-wisp-trigger is a wisp trigger. The printed name of condom-wisp-trigger is "get a[if total pinned condoms > 0]nother[end if] used condom pinned to your clothing".
 Definition: condom-wisp-trigger is appropriate:
-	if condom fetish is 1, decide yes;
+	if condom fetish >= 2, decide yes;
 	decide no.
 
 drunk-wisp-trigger is a wisp trigger. The printed name of drunk-wisp-trigger is "get rather drunk".
@@ -1519,6 +1519,9 @@ Definition: hold-breath-wisp-trigger is eligible:
 
 
 speak-wisp-trigger is a wisp trigger. The printed name of speak-wisp-trigger is "speak".
+Definition: speak-wisp-trigger is eligible:
+	if the player is able to speak and currently-speaking is false, decide yes;
+	decide no.
 This is the speak-wisp-trigger inconveniences speech rule:
 	repeat with W running through stalking wisps:
 		if the wisp-trigger of W is speak-wisp-trigger:

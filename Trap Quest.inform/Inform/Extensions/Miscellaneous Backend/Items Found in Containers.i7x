@@ -117,7 +117,6 @@ To compute generic treasure to (X - a thing):
 		now C is in X;
 		if C is bra, compute found size of C;
 		say "You find a [printed name of C]! This must be a rare item!";
-		if C is diaper cover, say "[one of][newbie style]Newbie tip: You've found a diaper cover! This can only be worn over a diaper, and reduces how much a soggy diaper weighs you down. They will often take a long time for enemies to get past.[roman type][line break][or][stopping]";
 		compute autotaking C;
 	otherwise if christmas content is 1 and a random number between 1 and 5 is 1:
 		let C be a random off-stage christmas gift;
@@ -134,11 +133,20 @@ To compute generic treasure to (X - a thing):
 		compute autotaking C;
 	otherwise if a random number between 1 and 7 > (4 - inventory handicap):
 		let T be nothing;
-		if a random number between 0 and (3 - inventory handicap) <= last-turn-nothing, now T is a random off-stage fetish appropriate mass collectible;
+		if a random number between 0 and (3 - inventory handicap) <= last-turn-nothing:
+			now T is a random off-stage fetish appropriate container-eligible thing;
+			if T is cursable:
+				let CR be a random number between 1 and 8;
+				if CR is 1, now T is cursed;
+				if CR is 8, now T is blessed;
+				now T is unsure;
+		otherwise:
+			now T is a random off-stage fetish appropriate mass collectible;
 		if T is a thing:
 			now T is in X;
-			say "You find a [ShortDesc of T]! Nice.";
-			if newbie tips is 1, say "[one of][newbie style]Newbie tip: You've found a token! These can be cashed in by using them at a crafting station, and will do something good. The beneficial effect will scale with the number you manage to collect so it's no problem to wait a while before cashing them in.[roman type][line break][or][stopping]";
+			if T is not mass collectible, say bold type;
+			say "You find a [MediumDesc of T]! [roman type]Nice.";
+			if T is mass collectible and newbie tips is 1, say "[one of][newbie style]Newbie tip: You've found a token! These can be cashed in by using them at a crafting station, and will do something good. The beneficial effect will scale with the number you manage to collect so it's no problem to wait a while before cashing them in.[roman type][line break][or][stopping]";
 			compute autotaking T;
 			now last-turn-nothing is 0;
 		otherwise:

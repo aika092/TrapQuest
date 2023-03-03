@@ -23,6 +23,7 @@ The player has a number called buttskill.
 The player has a number called divinationskill.
 The player has a number called zapskill.
 The player has a number called makeupskill.
+The player has a number called swordskill.
 
 Part 1 - Mercy
 
@@ -421,6 +422,25 @@ This is the makeupskill learn rule:
 	if the makeupskill of the player is 0, say "You have extra increased charisma for a while after applying a moderate amount of make up.";
 	now the makeupskill of the player is 1.
 The makeupskill learn rule is listed in the skill cheating rules.
+
+Part 21 - Sword Skill
+
+To teach swordskill:
+	if the swordskill of the player is 0:
+		say "[bold type]**You have learned how to properly swing a sword!**[line break]From now on, you'll roll slightly larger dice with all attacks with a sword.[roman type][line break]";
+		now the swordskill of the player is 1;
+		reset skill cooldown;
+	otherwise:
+		say "You've already learned how to properly swing a sword.".
+
+This is the swordskill list rule:
+	if the swordskill of the player is 1, say "You are skilled at swordplay.".
+The swordskill list rule is listed in the skill listing rules.
+
+This is the swordskill learn rule:
+	if the swordskill of the player is 0, say "You deal extra damage when swinging a sword.";
+	now the swordskill of the player is 1.
+The swordskill learn rule is listed in the skill cheating rules.
 
 Memorising is an action applying to one thing.
 Check memorising:

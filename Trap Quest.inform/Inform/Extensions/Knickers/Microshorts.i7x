@@ -38,7 +38,7 @@ To say ClothingDesc of (K - gold-microshorts):
 
 Chapter 2 Black Microshorts
 
-black-microshorts are a kind of microshorts. The printed name of black-microshorts is "[clothing-title-before]pair of black microshorts[clothing-title-after]". The text-shortcut of black-microshorts is "bmi". Understand "black" as black-microshorts.
+black-microshorts is a microshorts. The printed name of black-microshorts is "[clothing-title-before]pair of black microshorts[clothing-title-after]". The text-shortcut of black-microshorts is "bmi". Understand "black" as black-microshorts.
 
 Definition: black-microshorts is black themed: decide yes.
 

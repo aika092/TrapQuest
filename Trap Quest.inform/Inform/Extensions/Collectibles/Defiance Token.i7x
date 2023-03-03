@@ -15,7 +15,7 @@ To say ShortDesc of (C - defiance token):
 
 To compute mass collectible reward of (T - a defiance token):
 	allocate 6 seconds;
-	let N be (the number of held defiance tokens + 1) / 2;
+	let N be (the number of held defiance tokens + 2) / 3;
 	let RD be the raw delicateness of the player - 5;
 	if RD < 0, now RD is 0;
 	let NM be N - RD; [Any tokens that would reduce delicateness below 5 are redirected to a different effect]
@@ -27,12 +27,26 @@ To compute mass collectible reward of (T - a defiance token):
 	if NM > 0:
 		if the player is possessing a penis:
 			SpecialPenisUp NM;
-		otherwise if the player is not a top donator:
-			say "DEV NOTE: The player would grow a penis, but this is alpha tester content at the moment until it has undergone more testing and improvement.";
-		otherwise if choice in row 68 of the Table of Player Options is 0:
-			say "DEV NOTE: The player would grow a penis, but they can't because futanari is disabled. Another feature will replace this soon.";
+		otherwise if the player is a top donator and choice in row 68 of the Table of Player Options < 0 and NM > 1:
+			SpecialPenisUp NM * 3; [#LXorDD]
+		otherwise if strapon-dildo is held:
+			if the strap-length of strapon-dildo < 12:
+				say "[BigNameDesc of strapon-dildo] grows in size, from [strap-length of strapon-dildo] inch[if the strap-length of strapon-dildo > 1]es[end if] to ";
+				increase the strap-length of strapon-dildo by NM * 2;
+				if the strap-length of strapon-dildo >= 12, now the strap-length of strapon-dildo is 12;
+				say "[strap-length of strapon-dildo] inches!";
+			otherwise:
+				say "[BigNameDesc of strapon-dildo] tries to grows in size, but can't grow any longer!";
+				if strapon-dildo is not blessed:
+					say "You sense a blessing being laid upon it!";
+					bless strapon-dildo;
 		otherwise:
-			SpecialPenisUp NM; [#LXorDD]
+			blandify and reveal strapon-dildo;
+			now strapon-dildo is in the location of the player;
+			now the strap-length of strapon-dildo is NM * 3;
+			if the strap-length of strapon-dildo >= 12, now the strap-length of strapon-dildo is 12;
+			say "A [strapon-dildo] appears before you! You sense that if you wear it, you might feel even more dominant.";
+			compute autotaking strapon-dildo;
 	repeat with X running through held defiance tokens:
 		destroy X;
 	reset alchemy charge.

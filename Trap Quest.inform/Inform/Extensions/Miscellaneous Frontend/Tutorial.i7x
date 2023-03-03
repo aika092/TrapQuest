@@ -165,7 +165,7 @@ Report resisting when tutorial is 1:
 	if M is monster, compute attack of M;
 	if the sex-length of M is 0 and diaper quest is 0 and refractoryperiod <= 0:
 		anally orgasm shamefully;
-	if refractoryperiod > 2, say "[line break][newbie style]Sometimes during sex you can end up orgasming. Any orgasm you didn't cause yourself (i.e. any situation which isn't you masturbating or having sex where you're on top) is considered 'shameful' which means it increases your addiction to submissive sex[if the player is possessing a penis] and shrinks your penis size[end if]. It also adds to your fatigue meaning you'll probably need a rest soon afterwards. The higher your arousal the higher your chance of orgasming from stimulation, but for this tutorial we made you orgasm anyway just so you can see how it works.[roman type][line break]";
+	if refractoryperiod >= maxrefractoryperiod, say "[line break][newbie style]Sometimes during sex you can end up orgasming. Any orgasm you didn't cause yourself (i.e. any situation which isn't you masturbating or having sex where you're on top) is considered 'shameful' which means it increases your addiction to submissive sex[if the player is possessing a penis] and shrinks your penis size[end if]. It also adds to your fatigue meaning you'll probably need a rest soon afterwards. The higher your arousal the higher your chance of orgasming from stimulation, but for this tutorial we made you orgasm anyway just so you can see how it works.[roman type][line break]";
 	if M is asleep or (diaper quest is 1 and the sex-length of M is 0):
 		now the sleep of M is 0;
 		now M is uninterested;

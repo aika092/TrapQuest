@@ -49,17 +49,29 @@ To say ClothingDesc of (C - pvc-platform-heels):
 
 Definition: pvc-platform-heels is red themed: decide yes.
 
+satin-platform-heels is a platform heels. satin-platform-heels is satin. The text-shortcut of satin-platform-heels is "sph".
+
+Figure of satin platform heels is the file "Items/Clothes/Lower/Feet/Heels/Platform/platform2.png".
+
+To decide which figure-name is the clothing-image of (H - satin-platform-heels):
+	decide on the figure of satin platform heels.
+
+To say ClothingDesc of (C - satin-platform-heels):
+	say "A pair of [heel-height of C] inch black satin platform shoes with strong chunky heels and platforms. [SteadinessDesc of C]".
+
+Definition: satin-platform-heels is black themed: decide yes.
+
 leather-platform-heels is a platform heels. leather-platform-heels is leather. The text-shortcut of leather-platform-heels is "lph".
 
-Figure of leather platform heels is the file "Items/Clothes/Lower/Feet/Heels/Platform/platform2.png".
+Figure of leather platform heels is the file "Items/Clothes/Lower/Feet/Heels/Platform/platform4.png".
 
 To decide which figure-name is the clothing-image of (H - leather-platform-heels):
 	decide on the figure of leather platform heels.
 
 To say ClothingDesc of (C - leather-platform-heels):
-	say "A pair of [heel-height of C] inch black leather platform shoes with strong chunky heels and platforms. [SteadinessDesc of C]".
+	say "A pair of [heel-height of C] inch white leather platform shoes with strong chunky heels and platforms. [SteadinessDesc of C]".
 
-Definition: leather-platform-heels is black themed: decide yes.
+Definition: leather-platform-heels is white themed: decide yes.
 
 latex-platform-heels is a platform heels. latex-platform-heels is latex. The text-shortcut of latex-platform-heels is "lpf".
 

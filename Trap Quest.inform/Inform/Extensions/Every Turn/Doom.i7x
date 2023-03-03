@@ -77,13 +77,14 @@ To compute cultist conversion cutscene of (M - a monster):
 	let N be a random alive intelligent acolyte;
 	if N is nothing, now N is a random intelligent acolyte;
 	let R be the room south from Stairwell03;
-	say "You spot [NameDesc of M] nearby! [big he of M] turns around and notices you too. Before [he of M] can react to your presence, suddenly, [NameDesc of N] appears behind [him of M]! [BigNameDesc of N] pulls a black sack down over [NameDesc of M][']s head.[line break][speech style of M]'Hey, what's the big ide-MMMPH!'[roman type][line break][BigNameDesc of N] announces in a loud, proud voice.[line break][speech style of N]'Come, young one, and join our order. We shall bless you in the name of [Azathot].'[roman type][line break]You don't have a chance to try and do anything before [NameDesc of N] has [if playerRegion is mansion or the player is in Stairwell03 or the player is in R]dragged [NameDesc of M] away into the depths of the mansion[otherwise]somehow teleported away, taking [NameDesc of M] along with [him of N][end if].";
+	say "You spot [NameDesc of M] nearby! [big he of M] turns around and notices you too. Before [he of M] can react to your presence, suddenly, [NameDesc of N] appears behind [him of M]! [BigNameDesc of N] pulls a black sack down over [NameDesc of M][']s head.[line break][speech style of M]'Hey, what's the big ide-MMMPH!'[roman type][line break][BigNameDesc of N] announces in a loud, proud voice.[line break][speech style of N]'Come, young one, and join our [brother of N]hood. We shall bless you in the name of [Azathot].'[roman type][line break]You don't have a chance to try and do anything before [NameDesc of N] has [if playerRegion is mansion or the player is in Stairwell03 or the player is in R]dragged [NameDesc of M] away into the depths of the mansion[otherwise]somehow teleported away, taking [NameDesc of M] along with [him of N][end if].";
 	if M is listed in new-acolytes, remove M from new-acolytes;
 	let X be a random off-stage mindless acolyte;
 	if X is acolyte:
 		set up X;
 		summon X in the mansion;
 		now X is in Mansion23;
+		now the target-abductee of X is M;
 	if diaper quest is 0, cutshow Figure of cultist abduction cutscene for N;
 	otherwise focus-consider N;
 	focus-consider M;
@@ -95,13 +96,14 @@ Report going when the player is in School01:
 		let M be most-recent-furious;
 		let N be a random alive intelligent acolyte;
 		if N is nothing, now N is a random intelligent acolyte;
-		say "[bold type]As you enter the reception, you notice [M] [bold type]just leaving via the portal.[roman type][line break]But as [he of M] goes through it, the image on the other side glitches, and changes from a very normal looking house to the haunted mansion![line break][speech style of M]'Wait, this isn't where I wanted to go!'[roman type][line break]Suddenly, [NameDesc of N] appears behind [him of M]! [BigNameDesc of N] pulls a black sack down over [NameDesc of M][']s head.[line break][speech style of M]'Hey, what's the big ide-MMMPH!'[roman type][line break][BigNameDesc of N] announces in a loud, proud voice.[line break][speech style of N]'Come, young one, and join our order. We shall bless you in the name of [Azathot].'[roman type][line break]You watch with [horror the bimbo of the player] as [NameDesc of M] is dragged away.";
+		say "[bold type]As you enter the reception, you notice [M] [bold type]just leaving via the portal.[roman type][line break]But as [he of M] goes through it, the image on the other side glitches, and changes from a very normal looking house to the haunted mansion![line break][speech style of M]'Wait, this isn't where I wanted to go!'[roman type][line break]Suddenly, [NameDesc of N] appears behind [him of M]! [BigNameDesc of N] pulls a black sack down over [NameDesc of M][']s head.[line break][speech style of M]'Hey, what's the big ide-MMMPH!'[roman type][line break][BigNameDesc of N] announces in a loud, proud voice.[line break][speech style of N]'Come, young one, and join our [brother of N]hood. We shall bless you in the name of [Azathot].'[roman type][line break]You watch with [horror the bimbo of the player] as [NameDesc of M] is dragged away.";
 		now most-recent-furious is nothing;
 		let X be a random off-stage mindless acolyte;
 		if X is acolyte:
 			set up X;
 			summon X in the mansion;
 			now X is in Mansion23;
+			now the target-abductee of X is M;
 		focus-consider N;
 		focus-consider M;
 		force commence doom;
@@ -207,7 +209,7 @@ A later time based rule (this is the compute doom rule):
 		otherwise if doom counter > 300 and doomed is 1:
 			say "[bold type]You feel a strange sense of being watched, and the atmosphere begins to feel oddly humid. It is almost like something horrible is breathing down your neck.[roman type][line break]";
 			now doomed is 2;
-			if diaper quest is 1 and ghostly tentacle is off-stage:
+			if ghostly tentacle is off-stage and ghostly tentacle is not permanently banished:
 				set up ghostly tentacle;
 				summon ghostly tentacle in the mansion;
 			if a random number between 1 and 3 is 1 and enlightened gladiator is summon-available and enlightened gladiator is off-stage and enlightened gladiator is mansion dwelling, now the next-summon of mysterious-mummy is enlightened gladiator;

@@ -2,6 +2,9 @@ Chastity Cage by Bondage begins here.
 
 A chastity bond is a kind of bondage. A chastity bond is usually unique. A chastity bond is usually crotch-intact. a chastity bond is usually crotch-assless. Understand "chastity" as chastity bond.
 
+To decide which number is the penis-size-cap of (C - a chastity bond): [how long can the penis be inside this device? Mainly used for checking whether penis is visible under skirts or through clothing]
+	decide on 0.
+
 Definition: a chastity bond is crotch-pullup: decide no.
 
 To decide which number is the delicateness-influence of (C - a chastity bond):
@@ -62,6 +65,9 @@ Check taking off a sex toy:
 
 A chastity cage is a kind of chastity bond. A chastity cage is usually sheer. Understand "cage" as chastity cage. A chastity cage has a number called size. The printed name of a chastity cage is "[clothing-title-before][clothing-material of item described] chastity cage[clothing-title-after]".
 
+To decide which number is the penis-size-cap of (C - a chastity cage):
+	decide on 3.
+
 [Chastity cage descriptions will be in this general format]
 To say ClothingDesc of (C - a chastity cage):
 	say "A tight cage for your penis that stops you from getting an erection or stimulating your penis in any way.";
@@ -108,10 +114,13 @@ To compute periodic effect of (C - a chastity cage):
 		say "Since you no longer have a penis, your [ShortDesc of C] falls to the ground.";
 		now C is in the location of the player;
 	otherwise if the size of C > the size of penis + 1:
-		if C is cursed or the player is getting unlucky:
+		if C is cursed or sissy cumslut tattoo is worn or the player is getting unlucky:
 			say "You feel your [ShortDesc of C] start to vibrate and pulse as it shrinks and squeezes your [sissy-penis] down into a nub.";
 			transform C into nub-cage;
-			if nub-cage is not cursed, say GotUnluckyFlav;
+			if sissy cumslut tattoo is worn:
+				say "Your [sissy cumslut tattoo] heats up for a moment, as if claiming responsibility for this transformation!";
+			otherwise if nub-cage is not cursed:
+				say GotUnluckyFlav;
 		otherwise:
 			say "You feel your [ShortDesc of C] slip off your [sissy-penis] to the ground.";
 			now C is in the location of the player;
@@ -190,7 +199,7 @@ To compute periodic effect of (C - latex-cage):
 			say "You feel your [ShortDesc of C] start to vibrate and pulse as it shrinks and squeezes your [sissy-penis] down into a nub.";
 			transform C into nub-cage;
 			say GotUnluckyFlav;
-		otherwise if C is cursed:
+		otherwise if C is cursed or sissy cumslut tattoo is worn:
 			say "Your [ShortDesc of C] shrinks to match the new size of your [ShortDesc of penis]!";
 			now the size of C is the size of penis;
 		otherwise:
@@ -215,6 +224,9 @@ nub-cage is a chastity cage. Understand "nub" as nub-cage. a nub-cage has a numb
 Definition: nub-cage is fetish appropriate: decide no.
 Definition: nub-cage is transformation-protected: decide yes.
 
+To decide which number is the penis-size-cap of (C - nub-cage):
+	decide on 1.
+
 To compute post transformation effect of (C - nub-cage):
 	now the size of C is the size of penis.
 
@@ -235,12 +247,12 @@ To compute periodic effect of (C - nub-cage):
 	if the player is not possessing a penis:
 		say "Since you no longer have a penis, your [ShortDesc of C] falls to the ground.";
 		now C is in the location of the player;
-	otherwise if the size of C > the size of penis and C is cursed:
+	otherwise if the size of C > the size of penis and (C is cursed or sissy cumslut tattoo is worn):
 		say "Your [ShortDesc of C] shrinks[if the size of penis > min penis size], clearly planning to soon squeeze your [ShortDesc of penis] down even further[otherwise] down to the size of your [ShortDesc of penis], satisfied with its new smaller size[end if]!";
 		now the size of C is the size of penis;
 	otherwise:
 		increase the nub-charge of nub-cage by 1;
-		if the nub-charge of nub-cage > a random number between 15 and 25:
+		if the nub-charge of nub-cage > a random number between 35 and 50:
 			if the size of penis > min penis size:
 				say "Your [ShortDesc of C] starts to squeeze your [sissy-penis] down even smaller!";
 				passively stimulate penis from C;

@@ -88,6 +88,7 @@ To Set Up The Dungeon:
 		now a random kneeling stool in The Dungeon is cursed;
 	if lactation fetish is 1:
 		now dungeon-milking-bench is in a random sandy unrelaxing placed room;
+		now dungeon-milking-bench-lever is in the location of dungeon-milking-bench;
 		let MT be a random milk-tank in Holding Pen;
 		if MT is milk-tank and the number of milk-tanks in the location of dungeon-milking-bench is 0, now MT is in the location of dungeon-milking-bench;
 	repeat with N running from 1 to 7:

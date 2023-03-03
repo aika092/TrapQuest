@@ -1,6 +1,6 @@
 Cookie by Food begins here.
 
-cookie is a chef food. The printed name of cookie is "[TQlink of item described][if the quality of the item described > 1]chocolate chip cookie[otherwise if the quality of the item described > 0]cookie[otherwise if the quality of the item described > -1]cookie[otherwise if diaper quest is 1 and diaper messing >= 3]prune cookie[otherwise if diaper quest is 1]salty cookie[otherwise if the quality of the item described > -2]penis cookie[otherwise if the quality of the item described > -3]glazed cookie[otherwise]buttsex cookie[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of cookie is "cas".
+cookie is a chef food. The printed name of cookie is "[TQlink of item described][if the quality of the item described > 1]chocolate chip cookie[otherwise if the quality of the item described > 0]cookie[otherwise if the quality of the item described > -1]cookie[otherwise if diaper quest is 1 and diaper messing >= 3]prune cookie[otherwise if diaper quest is 1]salty cookie[otherwise if the quality of the item described > -2]penis cookie[otherwise if the quality of the item described > -3]glazed cookie[otherwise if item described is cookie-sliced]SLICED buttsex cookie[otherwise]buttsex cookie[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of cookie is "cas". cookie can be cookie-sliced.
 
 Figure of cookie is the file "Items/Collectibles/cookie1.png".
 Figure of penis cookie is the file "Items/Collectibles/cookie2.png".
@@ -25,7 +25,7 @@ To say ExamineDesc of (C - cookie):
 	otherwise if the quality of C > -3:
 		say "A penis shaped cookie covered in white 'glaze'.";
 	otherwise:
-		say "A heart shaped cookie that asks for butt sex.".
+		say "A heart shaped cookie that asks for butt sex[if C is cookie-sliced]. It has been cut into slices[end if].".
 
 To decide which number is the outrage of (C - cookie):
 	if the quality of C > -1, decide on 0;
@@ -78,5 +78,24 @@ A time based rule (this is the cookie poison decay rule):
 		if cookie-poison-timer <= 0:
 			say "[bold type]The drug from the cookie seems to have run its course and you are able to move normally again.[roman type][line break]";
 			now cookie-poison-timer is 0.
+
+To construct unique icons for (T - cookie):
+	if T is cookie-sliced, add Figure of Knife to the list of icons.
+
+To construct unique buttons for (T - cookie):
+	if T is not cookie-sliced and the quality of T <= -3 and ButtonTableFull is 0:
+		repeat with K running through held metal swords:
+			choose a blank row in the Table of Buttons;
+			now the ButtonImage entry is the examine-image of K;
+			now the ButtonCommand entry is "cut [the text-shortcut of T] with [the text-shortcut of K]";
+			now the ButtonColour entry is lightModeFullGreen;
+			if the player is in danger or the player is immobile, now the ButtonColour entry is lightModeFullRed; [turn red - player's in a bad spot]
+		let K be a random knife in the location of the player;
+		if K is knife:
+			choose a blank row in the Table of Buttons;
+			now the ButtonImage entry is the examine-image of K;
+			now the ButtonCommand entry is "cut [the text-shortcut of T] with [the text-shortcut of K]";
+			now the ButtonColour entry is lightModeFullGreen;
+			if the player is in danger or the player is immobile, now the ButtonColour entry is lightModeFullRed. [turn red - player's in a bad spot]
 
 Cookie ends here.

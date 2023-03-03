@@ -191,7 +191,11 @@ To compute pregnancy:
 			otherwise if the father is a monster:
 				let M be the father;
 				compute labour to M;[Dead fathers are handled in fatherhood of M]
-				if successful-pregnancy is 1, compute fatherhood to the father;
+				if successful-pregnancy is 1:
+					compute fatherhood to the father;
+					if the father is human and extreme images visible is 1:
+						if the father is dark skinned, cutshow figure of black birth;
+						cutshow figure of white birth;
 				if the class of the player is bride, compute housewife domestication;
 			otherwise: [The father is inanimate]
 				if inhuman pregnancy < 2 or (inhuman pregnancy >= 3 and the womb volume of vagina is 30): [If the stuff in brackets is true, we checked for an extreme pregnancy and purposefully chose not to give the player one this time.]
@@ -279,7 +283,13 @@ To compute god birth:
 To compute housewife domestication:
 	if the father is bride-consort and the consummation of betrothal-quest is true:
 		let D be a random worn overdress;
-		if D is clothing and D is removable:
+		if D is housewife dress:
+			now D is charisma-influencing;
+			if the raw-magic-modifier of D < 5:
+				say "Your [D] turns into a ";
+				increase the raw-magic-modifier of D by 1;
+				say "[D]!";
+		otherwise if D is clothing and D is removable:
 			transform D into housewife dress;
 		otherwise:
 			class summon housewife dress;

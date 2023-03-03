@@ -113,7 +113,7 @@ To compute unique recycling of (C - a pink scrunchie):
 
 To compute class outfit of (H - a pink scrunchie):
 	class summon longsleeved cheerleader outfit;
-	if the class of the player is cumdumpster, class summon condom-pom-pom;
+	if the class of the player is condom collector, class summon condom-pom-pom;
 	otherwise class summon purple-pom-pom.
 
 Chapter - Quest

@@ -25,6 +25,9 @@ Figure of demon lord is the file "NPCs/Bosses/Xavier/xavier2.png".
 Figure of modification machine is the file "Env/Hotel/modmachine1.png".
 Figure of slavehound is the file "NPCs/Mansion/Hound/hound2.png".
 
+Figure of white birth is the file "Special/Cutscene/cutscene-birth1.png".
+Figure of black birth is the file "Special/Cutscene/cutscene-birth2.png".
+
 Part - Monsters
 
 Figure of acolyte 1 is the file "NPCs/Mansion/Cultist/cultist1.png".
@@ -43,7 +46,7 @@ To decide which figure-name is the monster-image of (M - a mindless acolyte):
 		decide on figure of acolyte 2.
 
 
-Figure of aeromancer cutscene 7 is the file "Special/Cutscene/cutscene-aeromancer-punish1.jpg".
+Figure of aeromancer cutscene 7 is the file "NPCs/MultiFloor/Aeromancer/cutscene-aeromancer-punish1.jpg".
 
 Figure of agent camera cutscene 1 is the file "NPCs/MultiFloor/Agent/cutscene-agent2.jpg".
 Figure of agent camera cutscene 2 is the file "NPCs/MultiFloor/Agent/cutscene-agent1.jpg".
@@ -380,7 +383,11 @@ Figure of Cumshot Reaction 4 is the file "Special/Cutscene/cutscene-cumshot-reac
 Figure of Cumshot Reaction 5 is the file "Special/Cutscene/cutscene-cumshot-reaction5.png".
 
 Figure of detention chair is the file "Env/School/detentionchair1.jpg".
-Figure of DungeonScenery01 is the file "Env/Dungeon/statue1.jpg".
+Figure of DungeonScenery01a is the file "Env/Dungeon/statue1a.jpg".
+Figure of DungeonScenery01b is the file "Env/Dungeon/statue1b.jpg".
+To decide which figure-name is Figure of DungeonScenery01:
+	if lady fetish is 1, decide on Figure of DungeonScenery01b;
+	otherwise decide on Figure of DungeonScenery01a.
 
 Figure of Egg Laying 1 is the file "Special/Cutscene/cutscene-egg-small1.jpg".
 Figure of Egg Laying 2 is the file "Special/Cutscene/cutscene-egg-small2.jpg".
@@ -521,6 +528,9 @@ To decide which figure-name is the examine-image of (T - pink smoke):
 Figure of photo display predicament is the file "Special/Cutscene/cutscene-photo-display-predicament1.jpg".
 
 Figure of Pole Cutscene 4 is the file "Special/Cutscene/cutscene-pole4.png".
+
+Figure of swirlie knickers clean is the file "Special/Cutscene/cutscene-swirlie1.jpg".
+Figure of swirlie knickers wet is the file "Special/Cutscene/cutscene-swirlie2.jpg".
 
 Figure of Throne Cutscene 1 is the file "Special/Cutscene/cutscene-throne1.png".
 Figure of Throne Cutscene 2 is the file "Special/Cutscene/cutscene-throne2.png".
@@ -748,6 +758,10 @@ To decide which figure-name is the examine-image of (T - cool mom tattoo):
 Figure of cum-dump tattoo is the file "Items/Tats/tattoo83.jpg".
 To decide which figure-name is the examine-image of (T - cum-dump tattoo):
 	decide on figure of cum-dump tattoo.
+
+Figure of cumdump tattoo is the file "Items/Tats/tattoo200.jpg".
+To decide which figure-name is the examine-image of (T - cumdump tattoo):
+	decide on figure of cumdump tattoo.
 
 Figure of cum dumpster lip tattoo is the file "Items/Tats/tattoo41.jpg".
 To decide which figure-name is the examine-image of (T - cum dumpster lip tattoo):
@@ -1078,6 +1092,10 @@ To decide which figure-name is the examine-image of (T - whore-mouth tattoo):
 Figure of womb diagram tattoo is the file "Items/Tats/tattoo18.jpg".
 To decide which figure-name is the examine-image of (T - womb diagram tattoo):
 	decide on figure of womb diagram tattoo.
+
+Figure of womb diagram spade tattoo is the file "Items/Tats/tattoo205.jpg".
+To decide which figure-name is the examine-image of (T - womb diagram spade tattoo):
+	decide on figure of womb diagram spade tattoo.
 
 Figure of womb heart tattoo is the file "Items/Tats/tattoo143.jpg".
 To decide which figure-name is the examine-image of (T - womb heart tattoo):

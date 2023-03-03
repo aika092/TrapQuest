@@ -93,7 +93,7 @@ choice
 0 [halloween content]
 0 [realisticArms]
 0 [super gag reflex]
-0 [a2m fetish]
+0 [grossness fetish]
 1 [silicone milk clash]
 0 [diaper cumrag]
 
@@ -187,7 +187,17 @@ To decide which number is roleplay fetish:
 
 To decide which number is condom fetish:
 	if diaper quest is 1, decide on 0;
-	decide on the choice in row 53 of the Table of Player Options.
+	if choice in row 53 of the Table of Player Options <= 0, decide on 0;
+	otherwise decide on choice in row 53 of the Table of Player Options / 2.
+This is the condom fetish toggle rule:
+	if choice in row 53 of the Table of Player Options < 7, increase choice in row 53 of the Table of Player Options by 1;
+	otherwise now choice in row 53 of the Table of Player Options is 0.
+This is the condom fetish nightmare rule:
+	if the remainder after dividing choice in row 53 of the Table of Player Options by 2 is 1, now choice in row 53 of the Table of Player Options is 7.
+The condom fetish nightmare rule is listed in the nightmare mode rules.
+This is the condom fetish random rule:
+	if the remainder after dividing choice in row 53 of the Table of Player Options by 2 is 1, now choice in row 53 of the Table of Player Options is ((a random number between 0 and 3) * 2) + 1.
+The condom fetish random rule is listed in the random mode rules.
 
 To decide which number is tattoo-fetish:
 	if diaper quest is 1, decide on 0;
@@ -215,10 +225,8 @@ To decide which number is bondage protection:
 	decide on the choice in row 64 of the Table of Player Options.
 
 To decide which number is christmas content:
-	[if the player is not a top donator, decide on 0;
-	decide on choice in row 65 of the Table of Player Options.]
-	if choice in row 65 of the Table of Player Options is 1, decide on 0;
-	otherwise decide on 1.
+	if the player is not a top donator, decide on 0;
+	decide on choice in row 65 of the Table of Player Options.
 
 To decide which number is easter content:
 	if the player is not a top donator or diaper quest is 0, decide on 0;
@@ -262,21 +270,23 @@ To decide which number is super gag reflex:
 	if choice in row 82 of the Table of Player Options <= 0, decide on 0;
 	otherwise decide on choice in row 82 of the Table of Player Options.
 
-To decide which number is a2m fetish:
+
+To decide which number is grossness fetish:
 	if diaper quest is 1, decide on 0;
 	if choice in row 83 of the Table of Player Options <= 0, decide on 0;
 	otherwise decide on choice in row 83 of the Table of Player Options / 2.
-This is the a2m fetish toggle rule:
-	if choice in row 83 of the Table of Player Options < 5, increase choice in row 83 of the Table of Player Options by 1;
+To decide which number is a2m fetish:
+	if diaper quest is 1 or grossness fetish is 0, decide on 0;
+	decide on grossness fetish - 1.
+This is the grossness fetish toggle rule:
+	if choice in row 83 of the Table of Player Options < 7, increase choice in row 83 of the Table of Player Options by 1;
 	otherwise now choice in row 83 of the Table of Player Options is 0.
-This is the a2m fetish nightmare rule:
-	if the remainder after dividing choice in row 83 of the Table of Player Options by 2 is 1, now choice in row 83 of the Table of Player Options is 5.
-The a2m fetish nightmare rule is listed in the nightmare mode rules.
-This is the a2m fetish random rule:
-	if the remainder after dividing choice in row 83 of the Table of Player Options by 2 is 1, now choice in row 83 of the Table of Player Options is ((a random number between 0 and 2) * 2) + 1.
-The a2m fetish random rule is listed in the random mode rules.
-To decide which number is a2m fetish points:
-	decide on choice in row 83 of the Table of Player Options.
+This is the grossness fetish nightmare rule:
+	if the remainder after dividing choice in row 83 of the Table of Player Options by 2 is 1, now choice in row 83 of the Table of Player Options is 7.
+The grossness fetish nightmare rule is listed in the nightmare mode rules.
+This is the grossness fetish random rule:
+	if the remainder after dividing choice in row 83 of the Table of Player Options by 2 is 1, now choice in row 83 of the Table of Player Options is ((a random number between 0 and 3) * 2) + 1.
+The grossness fetish random rule is listed in the random mode rules.
 
 To decide which number is silicone milk clash:
 	if the player is not the donator, decide on 1;
@@ -334,7 +344,7 @@ To decide which number is positive points count:
 	increase X by natural brightness;
 	increase X by natural body shape * 2;
 	increase X by starting body shape * 2;
-	increase X by a2m fetish * 2;
+	increase X by grossness fetish;
 	increase X by condom fetish;
 	decide on X.
 

@@ -49,12 +49,11 @@ To compute attack of (E - prayer-beads) at (M - a monster):
 		say "You try to use your [ShortDesc of E] to cast a spell at [NameDesc of M]. Nothing happens!".
 
 To decide which number is the zap damage improvement of (E - prayer-beads):
-	if ritual-beads is worn:
-		if ritual-beads is autoremovable, decide on the notch-taken of ritual-beads;
+	if ritual-beads is worn and ritual-beads is autoremovable, decide on MagicPowerDamage + the magic-modifier of E + (the notch-taken of ritual-beads * 2);
 	decide on 0.
 
 To compute attack effect of (E - prayer-beads):
-	if ritual-beads is worn:
+	if attack-type is 5 and ritual-beads is worn and ritual-beads is autoremovable:
 		let F be a random body part penetrated by ritual-beads;
 		say "The [if the notch-taken of ritual-beads is 1]bead[otherwise][notch-taken of ritual-beads] beads[end if] send your [variable F] spasming as you pull [if the notch-taken of ritual-beads is 1]it[otherwise]them[end if] out!";
 		ruin F times (the notch-taken of ritual-beads + 1) / 2;
@@ -89,7 +88,7 @@ To compute periodic effect of (L - jinx-beads):
 		compute jinx of L.
 
 To decide which number is the zap damage improvement of (E - jinx-beads):
-	let W be 1;
+	let W be MagicPowerDamage + the magic-modifier of E;
 	if ritual-beads is worn:
 		if the notch-taken of E > 5, increase W by 1;
 		if the notch-taken of E is 10, increase W by 1;
@@ -154,8 +153,8 @@ To compute periodic effect of (W - fire-beads):
 			break.
 
 To decide which number is the zap damage improvement of (W - fire-beads):
-	let X be 3;
-	if ritual-beads is worn, increase X by (the notch-taken of ritual-beads / 2);[let's see if this is too weak]
+	let X be MagicPowerDamage + the magic-modifier of W + 3;
+	if ritual-beads is worn, increase X by the notch-taken of ritual-beads / 2;
 	decide on X.
 
 To compute attack of (W - fire-beads) at (M - a monster):

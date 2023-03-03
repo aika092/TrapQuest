@@ -121,7 +121,7 @@ To decide which number is the grossness of (M - a ghost): [grossness addiction n
 	decide on 5.
 
 To compute unique periodic effect of (M - jismbodied ghost):
-	if a random number between 1 and 5 is 1 and diaper quest is 0:
+	if a random number between 1 and 10 is 1 and diaper quest is 0:
 		if M is in the location of the player, say "[BigNameDesc of M] dribbles [semen] in its wake.";
 		PuddleUp semen by 1 in (the location of M).
 
@@ -192,8 +192,8 @@ Definition: a ghost (called M) is objectifying the player:
 	if the player is prone and the number of monsters in the location of the player is the number of ghosts in the location of the player, decide yes;
 	if [playerRegion is Mansion and ]the slime-puddle of the location of the player > 0, decide yes;
 	[if the class of the player is faerie, decide no;]
-	if the appearance of the player > the bimbo tolerance of M, decide yes;
-	decide no.[The ghost won't go for you unless you're vulnerable or slutty]
+	[if the appearance of the player > the bimbo tolerance of M, decide yes;]
+	decide no. [The ghost won't go for you unless you're vulnerable]
 
 To decide which number is the bimbo tolerance of (M - a ghost):
 	decide on 9.
@@ -397,8 +397,7 @@ To compute (M - a ghost) removing (B - a ballgag):
 
 Section 3 - Continue and Finish Sex
 
-Definition: a ghost (called M) is able to remove cursed plugs: [Can the monster remove all plugs & gags?]
-	decide yes.
+Definition: a ghost is able to remove cursed plugs: decide yes.
 
 The ghost-end-of-sex-rules is a rulebook. The end-of-sex-rules of a ghost is usually the ghost-end-of-sex-rules.
 
@@ -432,7 +431,6 @@ To get facial accepting image for (M - a ghost):
 To say OralCondomPieFlav of (M - a ghost):
 	say "[one of][BigNameDesc of M] shivers as it ejaculates into the condom[or][BigNameDesc of M] throbs powerfully, firing off jet after jet of [one of]ice cold[or]chilly[or]icy[in random order] [semen] into the condom.[or][BigNameDesc of M] spasms as it fills the condom with [his of M] load.[or][BigNameDesc of M] shivers as it begins to ejaculate, bulging the condom with [his of M] big load.[or][BigNameDesc of M] buries itself as far into your mouth as it will go, jet after jet of [semen] rushing into the increasingly bloated condom[or][BigNameDesc of M] forces [himself of M] down your throat, twitching as [he of M] thoroughly fills the condom fills with [his of M] load.[or][BigNameDesc of M] forces itself in all the way to the hilt. You can do nothing but wait helplessly as [he of M] thoroughly empties [his of M] load into the condom.[or][BigNameDesc of M] jizzes, throbbing as it fills the condom with [his of M] load.[in random order]".
 
-[TODO: also update for ghostly tentacle]
 To say FacialBrokenFree of (M - jismbodied ghost):
 	say "[one of][BigFuckerDesc of M]'s body deforms freely, avoiding your fingers as you frantically try to get ahold of it. You don't give up, and at the last moment you finally grab it and drag it out of your mouth.[or][BigFuckerDesc of M]'s body deforms, attempting to capture and hold your clawing fingers as you try to pry it out. You use all your strength at the last second and finally free your mouth![in random order]".
 
@@ -805,7 +803,7 @@ This is the deep one express rule:
 		let M be current-monster;
 		now the wind-up of M is 1;
 		now the bank of M is 0;
-		say "[bold type]The air seems to rumble as [NameDesc of M] shifts fully into the corporeal world. It seizes you by the wrist![roman type]";
+		say "[bold type]The air seems to rumble as [NameDesc of M] [bold type]shifts fully into the corporeal world. It seizes you by the wrist![roman type][line break]";
 		now M is wrangling arms;
 		now M is unphased;
 		rule succeeds.

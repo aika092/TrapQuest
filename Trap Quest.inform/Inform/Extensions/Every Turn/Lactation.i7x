@@ -2,20 +2,12 @@ Lactation by Every Turn begins here.
 
 A time based rule (this is the lactation rule):
 	if lactation fetish > 0:
-		let R be the lactation rate of breasts;
-		repeat with C running through worn wearthing:
-			if C is milk production clothing:
-				increase R by 1;
-				if C is cursed, increase R by 1;
-			if C is maternity dress, increase R by 1;
-			if C is milking basque, increase R by 1;
-			if C is nintendolls-logo tattoo, increase R by 2;
-			if C is abyssal tattoo and the class of the player is cowgirl, increase R by 2;
+		let R be the actual lactation rate of breasts;
 		if the latex-transformation of the player > 5 or there is a worn pasties, now R is 0;
 		if R > 0:
 			if R >= 100, now R is 10;
-			otherwise now R is the square root of R;
-			let L be 60 - (R * 4);
+			otherwise now R is R / 10;
+			let L be 55 - (R * 5);
 			if the remainder after dividing time-earnings by L < time-seconds:
 				let flav-said be 0;
 				if black strap hood is worn:
@@ -38,10 +30,16 @@ A time based rule (this is the lactation rule):
 							say "Your body has produced [if the milk volume of breasts < 5]enough[otherwise]so much[end if] [milk] that you now have [BreastDesc]!";
 							now flav-said is 1;
 				let LRT be 15 - the lactation rate of breasts;
+				if the class of the player is cowgirl or the class of the player is royal slave, let LRT be 25 - the lactation rate of breasts;
 				if LRT < 1, now LRT is 1;
-				if a random number between 1 and LRT is 1 and the lactation rate of breasts > 0:
-					say "You feel your [unless there is an ass covering milking basque]breasts['] [end if][milk] production [if R is 1]stop.[otherwise]rate [one of]slow down[or]decrease[or]lower[in random order].[end if]";
-					decrease the lactation rate of breasts by 1;
+				let LRTR be a random number between 1 and LRT;
+				if the lactation rate of breasts > 0:
+					if debuginfo > 1, say "[input-style]Lactation rate maintenance roll: d[LRT] ([LRTR]) | 1.5 threshold[roman type][line break]";
+					if LRTR is 1:
+						say "You feel your [unless there is an ass covering milking basque]breasts['] [end if][milk] production [if the lactation rate of breasts is 1]stop.[otherwise]rate [one of]slow down[or]decrease[or]lower[in random order].[end if]";
+						if debuginfo > 0, say "[input-style]Lactation rate [lactation rate of breasts] -> ";
+						decrease the lactation rate of breasts by 1;
+						if debuginfo > 0, say "[lactation rate of breasts][roman type][line break]";
 		if the milk volume of breasts > 0:
 			if the lactation rate of breasts > 3: [Selkie. (Incidentally: I put this comment in front of the "if" on this line, and Inform got confused.)]
 				if a random number between 1 and 70 is 1: [Added because it was saying this too often]
@@ -52,11 +50,8 @@ A time based rule (this is the lactation rule):
 			let L be 120;
 			if the class of the player is cowgirl, now L is 240;
 			decrease L by M * 2; [The more milk there is, the higher chance of lactation]
-			if (the class of the player is not cowgirl or the class of the player is maid or (the class of the player is royal slave and there is a worn crotch-in-place top-placed milking basque)) and the number of worn pasties is 0 and a random number between 0 and L <= 0: [We want to allow the cow slave class to still regularly lactate when the milking basque is in place] [lactation shouldn't happen when the player is wearing pasties]
+			if the milk volume of breasts >= 8 and (the class of the player is not cowgirl or the player is top heavy or (the class of the player is royal slave and there is a worn crotch-in-place top-placed milking basque)) and last-lactated-time - earnings >= 60 and a random number between 0 and L <= 0 and the number of worn pasties is 0: [We want to allow the cow slave class to still regularly lactate when the milking basque is in place] [lactation shouldn't happen when the player is wearing pasties] [once the player is top heavy, they can't cause lactation by their boobs growing big from having so much milk, so it happens here instead] [minimum 8 units of milk for leaking in this way]
 				trigger lactation;
-				if the class of the player matches the text "milkmaid" and milkmaid-apron-skirt is worn and M >= the flesh volume of breasts:
-					say "[bold type]As punishment for letting your breasts get so full without getting milked, your [MediumDesc of milkmaid-apron-skirt] vanishes![line break][variable custom style]Eek![roman type][line break]";
-					only destroy milkmaid-apron-skirt;
 			otherwise if M >= the milk capacity of breasts:
 				if the ready-for-milking of milking-quest is 0:
 					let quest-2b-milked be nothing;
@@ -89,6 +84,7 @@ To decide which object is bottom level lactation cover:
 To trigger lactation:
 	if milking is 0:
 		say "[bold type]";
+		let OM be the milk volume of breasts;
 		let M be a random number from 1 to (the milk volume of breasts / 2);
 		if M < 2, now M is 2;
 		if the milk volume of breasts is 2, now M is 1;
@@ -164,7 +160,9 @@ To trigger lactation:
 				summon royal circlet cursed;
 			now the lactation count of breasts is 0;
 		now last-lactated-time is earnings; [Record this: the idea is that the player will smell of milk for a while after lactating, and possibly exciting some monsters when they smell it.]
-		if N is gloryhole, progress quest of milking-quest;
-		otherwise now the ready-for-milking of milking-quest is 1.
+		if the class of the player matches the text "milkmaid" and milkmaid-apron-skirt is worn and OM >= the flesh volume of breasts:
+			say "[bold type]As punishment for letting your breasts get so full without getting milked, your [MediumDesc of milkmaid-apron-skirt] vanishes![line break][variable custom style]Eek![roman type][line break]";
+			only destroy milkmaid-apron-skirt;
+		if N is gloryhole, progress quest of milking-quest.
 
 Lactation ends here.

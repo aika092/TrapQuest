@@ -67,6 +67,8 @@ To decide which object is the concealer of (T - face):
 
 To decide which object is the at least partial concealer of (F - face):
 	if face is listed in the armUses of arms, decide on arms;
+	let H be a random worn not-see-through eye-mask;
+	if H is a thing, decide on H;
 	if there is a worn not-see-through hood, decide on a random worn not-see-through hood;
 	if cultist veil is worn, decide on cultist veil;
 	if floral bridal veil is worn and the ceremony of betrothal-quest is false, decide on floral bridal veil;
@@ -545,9 +547,6 @@ To compute puking:
 		now player-gagging is true;
 		add the player pukes rule to another-turn-rules, if absent.
 
-[A throater tends to be down the player's throat when penetrating face, allowing the player to gag but preventing puking.]
-Definition: a thing is throater: decide no.
-
 This is the player pukes rule:
 	if the latex-transformation of the player >= 5:
 		say "Your body tries to puke but your new rubber innards don't have the ability to do that any more!";
@@ -555,7 +554,7 @@ This is the player pukes rule:
 		say "Your body tries to puke but nothing comes up!";
 	otherwise:
 		let T be a random thing penetrating face;
-		if T is throater:
+		if T is actual throater:
 			say "Your throat spasms around [FuckerDesc of T] as you gag uncontrollably!";
 			compute puking; [We keep going]
 			if T is royal guard and the class of the player is princess:

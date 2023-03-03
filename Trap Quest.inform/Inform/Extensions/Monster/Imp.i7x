@@ -182,6 +182,7 @@ To check consensual submissive sex of (M - an imp):
 		now the chosen-orifice of current-monster is presented-orifice;
 		say PresentFriendlyAcceptanceFlav of current-monster;
 		now the chosen-orifice of M is presented-orifice;
+		if the chosen-orifice of M is face, now M is not-getting-licked;
 		now M is friendly-fucking;
 		if the imp-rudeness of M > 0, decrease the imp-rudeness of M by 1;
 		follow the insertion rules of M;

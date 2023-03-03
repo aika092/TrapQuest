@@ -131,11 +131,9 @@ The spawn initial minotaur rule is listed in the setting up dungeon monsters rul
 To compute unique early action of (M - minotaur):
 	if M is caged and M is not in Dungeon36, now M is in Dungeon36. [failsafe against rare bugs]
 
-Definition: minotaur (called M) is concealment immune: [Can the monster ignore salves of concealment, butt slut, etc.]
-	decide yes.
+Definition: minotaur is concealment immune: decide yes.
 
-Definition: minotaur (called M) is able to remove cursed plugs: [Can the monster remove all butt plugs?]
-	decide yes.
+Definition: minotaur is able to remove cursed plugs: decide yes.
 
 Definition: minotaur (called M) is willing to shag:
 	if M is awake and the scared of M is 0 and the boredom of M < 120 and M is threatening, decide yes;
@@ -666,10 +664,10 @@ To say VaginaPenetrationFlav of (M - minotaur):
 
 To compute default caged domination of (M - minotaur):
 	say CagedDominationFlav of M;
-	if the raw delicateness of the player > the EnslavedDominationThreshold of M:
+	if the humiliation of the player < the EnslavedDominationThreshold of M:
 		say "You feel vaguely better about yourself, but mostly just a bit ambivalent.";
 	otherwise:
-		DelicateDown 1;
+		Dignify 1000;
 	if the player is getting unlucky:
 		say "[BigNameDesc of M] reaches through the bars and manages to grab your arm!";
 		now M is wrangling arms.
@@ -699,19 +697,18 @@ To say DamageReactWeak of (M - minotaur):
 
 To compute unique automatic banishment of (M - minotaur):
 	let H be a random off-stage horn;
-	let X be a random off-stage equine-strapon;
 	let B be bull-strength-potion;
 	now M is bossdefeated;
 	if M is caged, say "The cage swings wildly, and then suddenly the chain snaps and the cage falls to the floor with a thud! The cage door's hinges snap, and the door falls away. ";
 	say "The injured [ShortDesc of M] turns and flees towards the exit of the dungeon. ";
 	if mythical creature fetish is 1:
-		if X is clothing and the player is getting lucky:
-			now the strap-length of X is 11;[15 inches]
+		if equine-strapon is off-stage and the player is getting lucky:
+			now the strap-length of equine-strapon is 11;[15 inches]
 			if full-lady fetish is 1, say "The huge strapon dildo [he of M] was wearing loosens and slips from [his of M] loins. It seems like you could actually wear it!";
 			otherwise say "A huge strapon dildo materialises on the floor in front of you.";
 			say GotLuckyFlav;
-			now X is in the location of the player;
-			compute autotaking X;
+			now equine-strapon is in the location of the player;
+			compute autotaking equine-strapon;
 			increase the loot dropped of M by 1;
 		if H is a thing:
 			say "One of [his of M] injured horns catches smacks into a low doorway and snaps clean off, clattering to the ground. [BigNameDesc of M] whines loudly with pain but doesn't stop running away. The [ShortDesc of H] appears to be hollow - you could almost use this as a drinking vessel!";
@@ -719,14 +716,13 @@ To compute unique automatic banishment of (M - minotaur):
 			compute autotaking H;
 			increase the loot dropped of M by 1;
 	otherwise:
-		now X is a random off-stage strapon-dildo;
-		if X is clothing and a random number between 1 and 3 is 1:
-			now the strap-length of X is 11;[15 inches]
+		if strapon-dildo is off-stage and a random number between 1 and 3 is 1:
+			now the strap-length of strapon-dildo is 11;[15 inches]
 			say "The huge strapon dildo [he of M] was wearing loosens and slips from [his of M] loins. It seems like you could actually wear it!";
 			if full-lady fetish is 1, say "The huge strapon dildo [he of M] was wearing loosens and slips from [his of M] loins. It seems like you could actually wear it!";
 			otherwise say "A huge strapon dildo materialises on the floor in front of you.";
-			now X is in the location of the player;
-			compute autotaking X;
+			now strapon-dildo is in the location of the player;
+			compute autotaking strapon-dildo;
 			increase the loot dropped of M by 1;
 		otherwise if B is potion:
 			say "In [his of M] haste, [he of M] dropped a [ShortDesc of B]!";

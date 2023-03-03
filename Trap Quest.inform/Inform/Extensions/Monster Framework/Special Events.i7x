@@ -67,7 +67,8 @@ To FacePiss from (M - an object):
 		if the powerup of WC thigh high boots > 15 and WC thigh high boots is stumbling:
 			say "You feel the stumbling enchantment being suppressed, and replaced by one that strengthens your kicks! Wow!";
 			now WC thigh high boots is kicking;
-		say "[roman type][line break]".
+		say "[roman type][line break]";
+	if M is monster, now the bladder of M is 0.
 
 [!<SayPissDrinkThreatOfObject>+
 
@@ -193,7 +194,10 @@ To DrinkPiss from (M - an object):
 		progress quest of human-toilet-quest;
 	otherwise if WC hood is off-stage and the raw urine taste addiction of the player > 2 and WC hood is actually summonable:
 		summon WC hood cursed;
-		say "[bold type]Suddenly your mouth is forced wide open as a [ShortDesc of WC hood] [bold type]appears around your head. You can't close it![roman type][line break]".
+		say "[bold type]Suddenly your mouth is forced wide open as a [ShortDesc of WC hood] [bold type]appears around your head. You can't close it![line break][variable custom style][if the player is broken]I'm just a toilet. That's all I am now.[otherwise]I'm not a men's toilets! I'm a human being![end if][roman type][line break]";
+	otherwise if the raw urine taste addiction of the player > 2 and WC collar is actually summonable and (the class of the player is cumdumpster or the class of the player is condom collector or the player is getting unlucky):
+		say "[bold type]Suddenly, a [WC collar] [bold type]appears around your neck![line break][variable custom style][if the player is broken]I'm just a toilet. That's all I am now.[otherwise]I'm not a men's toilets! I'm a human being![end if][roman type][line break]";
+		summon WC collar cursed with quest.
 
 [!<ComputeUniquePissDrinkEffectOfObject>+
 
@@ -203,6 +207,59 @@ Handles any unique effect to be triggered when the player swallows the urine of 
 +!]
 To compute unique piss drink effect of (M - an object):
 	do nothing.
+
+
+To say LickResisting of (M - a monster):
+	say "You refuse to engage with [FuckerDesc of M][']s foot, and clamp your mouth shut.".
+
+To say LickResistingResponse of (M - a monster):
+	if M is intelligent, say "[speech style of M]'[one of]Useless [slut][or]Lick my foot, you [whore][or]Use your tongue, you idiot[or]Dumb bitch, you can't even lick a foot properly[in random order]!'[roman type][line break]";
+	say "[BigFuckerDesc of M] holds you by the hair and [one of]wipes your mouth up and down the length of [his of M] foot[or]push [his of M] toes between your pursed lips, finding a wall of clenched teeth[or]rubs [his of M] toes across your sealed lips[or]pushes the sole of [his of M] foot into your nose and mouth[in random order].".
+
+To say LickSubmissionResponse of (M - a monster):
+	say "You [one of]plant countless kisses across the entirety of [FuckerDesc of M][']s foot[or]obediently lap your tongue up and down [FuckerDesc of M][']s foot[or]sensually suck on [FuckerDesc of M][']s toes[or]tenderly lick the top of each of [FuckerDesc of M][']s toes[or]try to fit all five of [FuckerDesc of M][']s toes into your mouth[in random order].".
+
+To say AnilingusResisting of (M - a monster):
+	say "You try in vain to pull away from [FuckerDesc of M][']s ass.".
+
+To say AnilingusResistingResponse of (M - a monster):
+	if M is intelligent, say "[speech style of M]'[one of]Useless good-for-nothing [slut][or]Get your tongue inside my ass already, you [whore][or]That's not how you give a rimjob, you idiot[or]Dumb bitch, come taste my ass properly[in random order]!'[roman type][line break]";
+	say "[BigFuckerDesc of M] grapples your head by the hair and [one of]rubs [his of M] butthole into your lips as roughly as [he of M] can[or]shoves your nose into [his of M] small sweaty sphincter[or]smushes [his of M] ass into your face[or]does [his of M] best to suffocate you with [his of M] ass cheeks[in random order]. You can't breathe!".
+
+To say AnilingusSubmissionResponse of (M - a monster):
+	say "You [if the sex-length of M > 2 and the grossness addiction of the player < 14][one of]plant several kisses directly onto [FuckerDesc of M][']s tight pink pucker[or]delicately lick the entrance to [FuckerDesc of M][']s sweaty butthole[or]sensually tease the entrance to [FuckerDesc of M][']s ass with your tongue[or]tenderly lick every wrinkle and fold of [FuckerDesc of M][']s anal sphincter[in random order][otherwise if the sex-length of M is 2 and the grossness addiction of the player < 14][one of]send your tongue inside the tight hole in front of your lips, experiencing the full extent of its bitter taste[or]allow your tongue to push inside [his of M] backdoor hole, now properly sampling its strong, bitter taste[in random order][otherwise][one of]swirl your tongue around inside [FuckerDesc of M][']s bitter butthole[or]energetically tongue-punch [FuckerDesc of M][']s bitter tasting fartbox, in and out, in and out[or]slither your tongue around inside [FuckerDesc of M][']s nasty, sweaty chute[or]extend your tongue as deep as you can get it inside [FuckerDesc of M][']s bitter asshole[or]use your tongue to dig for buried treasure deep inside [FuckerDesc of M][']s asshole[in random order][end if].".
+
+To compute lick end of (M - a monster):
+	if M is getting-asslicked, say AnilingusEndFlav of M;
+	otherwise say LickEndFlav of M;
+	if the favour of M < the aggro limit of M: [unfriendly from favour by more than 1 point]
+		let F be the favour of M;
+		if F < 4, now F is 4;
+		let R be a random number between -4 and the favour of M;
+		if debuginfo > 0, say "[input-style][MediumDesc of M] satisfied check: favour ([F]) -> RNG(-4~[F]) = [R] | 0.5 Satisfaction threshold[roman type][line break]";
+		if R <= 0:
+			dislodge M;
+			now M is not-getting-licked;
+			let CM be current-monster;
+			now current-monster is M;
+			if the number of actual target body parts > 1:
+				now targeted-body-part is thighs;
+				while targeted-body-part is thighs:
+					choose a sex method;
+				now the chosen-orifice of M is targeted-body-part;
+				say "[if M is intelligent][speech style of M]'I'm not satisfied yet!'[roman type][line break][end if]It looks like [NameDesc of M] intends to keep using you...";
+				if newbie tips is 1, say "[one of][newbie style]Newbie Tip: It's not straightforward to satisfy an NPC with just licking. And the more you resist, you'll avoid some gross tastes, but the more likely it is that they won't be satisfied.[roman type][line break][or][stopping]";
+				set up sex length of M in targeted-body-part;
+			now current-monster is CM.
+
+To say AnilingusEndFlav of (M - a monster):
+	if M is intelligent, say "[speech style of M]'[one of]That's enough[or]Okay asslicker, enough of that[in random order].'[roman type][line break]";
+	say "[BigFuckerDesc of M] pulls [his of M] asshole away from your mouth, and lets go of your hair.".
+
+To say LickEndFlav of (M - a monster):
+	if M is intelligent, say "[speech style of M]'[one of]That's enough[or]Okay bootlicker, enough of that[in random order].'[roman type][line break]";
+	say "[BigFuckerDesc of M] pulls [his of M] foot away from your mouth.".
+
 
 [!<AMonsterIsWillingToBukkake>+
 
@@ -934,8 +991,8 @@ To compute happy reward of (M - a monster):
 	compute default happy reward of M.
 
 To compute default happy reward of (M - a monster):
+	FavourUp M by 1;
 	if M is friendly-fucking:
-		FavourUp M by 1;
 		compute gifting reward of M;
 		if the loot dropped of M is 0 and M is gift giving:
 			say RewardEncouragementFlav of M;
@@ -1102,6 +1159,32 @@ To say FriendlyMouthPenetrationFlav of (M - a monster):
 		say "[one of][BigFuckerDesc of M] shoves [his of M] [DickDesc of M] into your open mouth and begins to guide your head back and forth. You hesitantly take your place as [his of M] obedient little cocksucker.[or][BigFuckerDesc of M] pushes [his of M] [DickDesc of M] into your open mouth. You push aside your misgivings and eagerly begin to suck.[or]You give [FuckerDesc of M]'s [DickDesc of M] an experimental lick, furtively glancing up at [him of M] as you allow it to slide into your mouth.[or][if the player is not wrist bound]You give the [DickDesc of M] in front of you a few hesitant tugs, embarrassment colouring your cheeks as [FuckerDesc of M] pushes [his of M] member into your open mouth.[otherwise]You shiver with what you pretend is disgust as [FuckerDesc of M] places [his of M] hands on your shoulders, pushing every inch of [his of M] firm, [DickDesc of M] into your open mouth.[end if][or]You lean forward, gingerly wrapping your lips around [FuckerDesc of M]'s [DickDesc of M] before you start getting second thoughts. [if M is unfriendly]Just as they set in, a firm hand grabs the back of your head, assuring you that you're in this until [he of M] decides you're finished.[end if][or][if the largeness of breasts > 5][BigFuckerDesc of M] fondles your [BreastDesc], leaving [his of M] [DickDesc of M] to stare you in the face. You look up at [him of M], and obediently lean forward as [his of M] hardness slides between your lips.[otherwise][BigFuckerDesc of M] pushes [his of M] [DickDesc of M] into your open mouth, ruffling your [ShortDesc of hair] as you hesitantly, but obediently begin to suck.[end if][or][BigFuckerDesc of M] shoves [his of M] [DickDesc of M] into your open mouth. Without too much of a second thought, you slowly begin to suck.[in random order]";
 	otherwise:
 		say "[one of][BigFuckerDesc of M] shoves [his of M] [DickDesc of M] into your open mouth. You hum happily as you begin to suck.[or][BigFuckerDesc of M] pushes [his of M] [DickDesc of M] into your open mouth. You gaze up at [him of M] as you eagerly bob your head back and forth.[or][if the player is not wrist bound]You wrap your fingers around [FuckerDesc of M]'s [DickDesc of M], moaning like the dirty whore you are as [he of M] slides it into your mouth.[otherwise]You drag your tongue up and down [FuckerDesc of M]'s shaft, moaning lecherously as [his of M][line break][second custom style]delicious[roman type][line break]meat slides into your mouth.[end if][or][if the largeness of breasts > 5]You wrap your lips around [FuckerDesc of M]'s [DickDesc of M] as [he of M] manhandles your [BreastDesc], locking eyes with [him of M] as you eagerly begin to suck.[otherwise][BigFuckerDesc of M] pushes [his of M] [DickDesc of M] into your open mouth, grinning down at you as you desperately worship [his of M] length with your tongue and throat.[end if][or][BigFuckerDesc of M] shoves [his of M] [DickDesc of M] into your open mouth. Your lips close around the invader at their first opportunity, all too eager [if the semen taste addiction of the player > 8]for that spermy goodness[otherwise]to get to work[end if].[or][BigFuckerDesc of M] pushes [his of M] [DickDesc of M] into your mouth and begins to guide your head back and forth. You give [him of M] a smouldering look, eagerly leaning into [his of M] movements as you rub [his of M] shaft with your tongue.[in random order]".
+
+
+To say FriendlyLickInitiationFlav of (M - a monster):
+	say LickInitiationFlav of M.
+
+To say LickInitiationFlav of (M - a monster):
+	if the grossness addiction of the player < 4:
+		say "[if M is not friendly-fucking][BigFuckerDesc of M] grabs you by the hair and pushes your face down onto one of [his of M] feet. [end if][one of]You gingerly start licking [FuckerDesc of M][']s feet, trying not to wretch as your tongue touches the sweaty skin.[or]You let the tip of your tongue touch [FuckerDesc of M][']s toes, forcing yourself not to pull back as your olfactory senses struggle with the gross taste and aroma.[or]You force yourself to lower your head to the ground, and plant a kiss on top of [FuckerDesc of M][']s foot, just above the toes.[or]You give [FuckerDesc of M][']s foot an experimental lick, and are dismayed to find that it tastes just as bad as you expected.[in random order]";
+	otherwise if the grossness addiction of the player < 11:
+		say "[if M is not friendly-fucking]with understanding, and lower your face to meet it. [end if][one of]You obediently start licking [FuckerDesc of M][']s feet, ignoring the sweaty taste.[or]You lick all five of [FuckerDesc of M][']s toes, one after another, as if greeting them [']hello['].[or]You plant several kisses on top of [FuckerDesc of M][']s foot, before giving it a quick long lick along its length to greet it.[in random order]";
+	otherwise:
+		say "[if M is not friendly-fucking and the grossness addiction of the player < 18][BigFuckerDesc of M] points at one of [his of M] feet, and you immediately leap to greet it with your face. [otherwise if M is not friendly-fucking][BigFuckerDesc of M] points at one of [his of M] feet, and you are soon greeting it with your face as instructed. [end if][one of][BigFuckerDesc of M] shoves [his of M] toes into your open mouth. You [if the grossness addiction of the player < 18]hum happily as you [end if]begin to suck.[or]You [if the grossness addiction of the player < 18]coo happily as you [end if]suck on each of [FuckerDesc of M][']s toes in turn, as if giving each of them a big wet kiss hello.[or]You immediately start [if the grossness addiction of the player < 18]enthusiastically [end if]licking every part of [FuckerDesc of M][']s sweaty feet that you can reach with your tongue.[in random order]".
+
+To say FriendlyAnilingusInitiationFlav of (M - a monster):
+	say AnilingusInitiationFlav of M.
+
+To say AnilingusInitiationFlav of (M - a monster):
+	say "[BigFuckerDesc of M] grabs you by the hair, and turning around, plants [his of M] asshole directly onto your mouth. ";
+	if the grossness addiction of the player <= 2:
+		say "Despite your disgust and desperate attempts to make it stop, it's undeniable that this moment, you are technically kissing a gross, sweaty butthole.";
+	otherwise if the grossness addiction of the player < 7:
+		say "It's just as sweaty and gross as you expect. You baulk at the thought of the task ahead of you.";
+	otherwise if the grossness addiction of the player < 14:
+		say "You know what [he of M] wants, and almost unthinkinly, your lips start to part...";
+	otherwise:
+		say "You excitedly part your lips and let your tongue flick out to enjoy that first delighfully disgusting taste of sweaty butthole.".
 
 [!<SayTitfuckResistFlavOfMonster>+
 

@@ -480,7 +480,7 @@ To start urination:
 		now pee-bottling is 0;
 		if debugmode is 1, say "resetting accidental urination flag.";
 		now delayed urination is 0;
-	if (there is a camera trap in the location of the player and refractoryperiod < 3) or there is a camera-bystander in the location of the player:
+	if (there is a camera trap in the location of the player and refractoryperiod < maxrefractoryperiod) or there is a camera-bystander in the location of the player:
 		let D be a random worn diaper;
 		if D is diaper and D is not currently visible, now target-poster is nothing; [peeing into a diaper that can't be seen shouldn't cause a reaction from cameras]
 		otherwise now target-poster is a random off-stage wetting poster;
@@ -648,7 +648,7 @@ To compute pee protected urination:
 				now flav-said is 1.
 
 To compute urination:
-	if (there is a camera trap in the location of the player and refractoryperiod < 3) or there is a camera-bystander in the location of the player, now target-poster is a random off-stage wetting poster;
+	if (there is a camera trap in the location of the player and refractoryperiod < maxrefractoryperiod) or there is a camera-bystander in the location of the player, now target-poster is a random off-stage wetting poster;
 	otherwise now target-poster is nothing;
 	if seconds is 0, allocate 6 seconds;
 	if the player is not pee protected or the player is able to use a toilet:

@@ -1,27 +1,26 @@
 Cumdumpster Hat by Headgear begins here.
 
-A cumdumpster hat is a kind of headgear. A cumdumpster hat is usually hair growing. Understand "cumdumpster" as cumdumpster hat.
+Volume - Condom Collector
 
-To set up influence of (C - a cumdumpster hat):
+A condom collector hat is a kind of headgear. A condom collector hat is usually hair growing.
+
+To set up influence of (C - a condom collector hat):
 	set up stat-based influence of C.
 
-To say ShortDesc of (H - a cumdumpster hat):
-	say "cum dumpster hat".
+To say ShortDesc of (H - a condom collector hat):
+	say "condom hat".
 
-[Definition: a cumdumpster hat is condom pinnable: decide yes.]
-Definition: a cumdumpster hat is semen themed: decide yes.
+[Definition: a condom collector hat is condom pinnable: decide yes.]
+Definition: a condom collector hat is semen themed: decide yes.
 
-To decide which number is the initial outrage of (C - a cumdumpster hat):
+To decide which number is the initial outrage of (C - a condom collector hat):
 	decide on 10.
 
-To compute unique recycling of (C - a cumdumpster hat):
-	now the condom-count of condom-eating-quest is 0.
-
-thirsty work condom hat is a cumdumpster hat. thirsty work condom hat is plastic.
+thirsty work condom hat is a condom collector hat. thirsty work condom hat is plastic.
 Definition: thirsty work condom hat is roleplay:
-	if condom fetish is 1, decide yes;
+	if condom fetish >= 2, decide yes;
 	decide no.
-The printed name of thirsty work condom hat is "[clothing-title-before]thirsty work cumdumpster hat[clothing-title-after]". The text-shortcut of thirsty work condom hat is "twch".
+The printed name of thirsty work condom hat is "[clothing-title-before]thirsty work condom collector hat[clothing-title-after]". The text-shortcut of thirsty work condom hat is "twch".
 
 Figure of thirsty work condom hat is the file "Items/Accessories/Head/cumdumpsterhat2.png".
 
@@ -37,12 +36,12 @@ To compute SelfExamineDesc of (H - thirsty work condom hat):
 Definition: thirsty work condom hat is drink themed: decide yes.
 Definition: thirsty work condom hat is red themed: decide yes.
 
-Definition: thirsty work condom hat is transformation-protected: decide no.
+[Definition: thirsty work condom hat is transformation-protected: decide no.
 To decide which object is the unique-upgrade-target of (C - thirsty work condom hat):
-	decide on cumdumpster condom hat.
+	decide on cumdumpster condom hat.]
 
-cumdumpster condom hat is a cumdumpster hat. cumdumpster condom hat is plastic.
-The printed name of cumdumpster condom hat is "[clothing-title-before]purple cumdumpster hat[clothing-title-after]". The text-shortcut of cumdumpster condom hat is "pcdh". Understand "purple" as cumdumpster condom hat.
+cumdumpster condom hat is a condom collector hat. cumdumpster condom hat is plastic.
+The printed name of cumdumpster condom hat is "[clothing-title-before]purple condom collector hat[clothing-title-after]". The text-shortcut of cumdumpster condom hat is "pcdh". Understand "purple" as cumdumpster condom hat.
 
 Figure of cumdumpster condom hat is the file "Items/Accessories/Head/cumdumpsterhat1.png".
 
@@ -61,7 +60,7 @@ To decide which number is the initial outrage of (C - cumdumpster condom hat):
 Definition: cumdumpster condom hat is drink themed: decide yes.
 Definition: cumdumpster condom hat is purple themed: decide yes.
 
-rubber condom hat is a cumdumpster hat. rubber condom hat is latex.
+rubber condom hat is a condom collector hat. rubber condom hat is latex.
 The printed name of rubber condom hat is "[clothing-title-before]condom hat[clothing-title-after]". The text-shortcut of rubber condom hat is "cdmh".
 
 Figure of rubber condom hat is the file "Items/Accessories/Head/condomhat1.png".
@@ -81,11 +80,11 @@ To decide which number is the initial outrage of (C - rubber condom hat):
 
 Chapter - Class Outfit
 
-Definition: a cumdumpster hat (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
+Definition: a condom collector hat (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
 	if the used condoms of wearing-target > 0 and (C is not wearing-target or C is not blessed), decide yes;
 	decide no.
 
-To say RemovalBlocked of (C - a cumdumpster hat):
+To say RemovalBlocked of (C - a condom collector hat):
 	say "Your [ShortDesc of C] is somehow preventing you from taking this off while it still has used condoms on it that you haven't yet eaten!".
 
 To respawn condom pack:
@@ -94,14 +93,11 @@ To respawn condom pack:
 		say "Suddenly a pack of condoms appears in your hand!";
 		now condom-pack is not condom-trapped.
 
-To compute class outfit of (H - a cumdumpster hat):
+To compute class outfit of (H - a condom collector hat):
+	if H is thirsty work condom hat, class summon meat-toilet-panties;
+	otherwise class summon green-thong;
 	class summon lycra-bodysuit;
 	class summon condom socks;
-	respawn condom pack.
-
-To compute class outfit of (H - thirsty work condom hat):
-	class summon bitch top;
-	class summon bitch bottoms;
 	respawn condom pack.
 
 To compute class outfit of (H - rubber condom hat):
@@ -115,44 +111,123 @@ To compute post transformation effect of (H - rubber condom hat):
 		let C be a random worn overdress;
 		if C is clothing and C is not condoms dress, transform C into condoms dress.
 
+To compute post transformation effect of (H - thirsty work condom hat):
+	compute class outfit of H.
+
 
 
 Chapter - Quest
 
-condom-eating-quest is a headgear-clothing-quest. condom-eating-quest has a number called condom-count. condom-eating-quest has a number called delayed-condom-count.
+condom-collecting-quest is a headgear-clothing-quest.
 
-To uniquely set up (C - a cumdumpster hat):
-	now the quest of C is condom-eating-quest.
+To uniquely set up (C - a condom collector hat):
+	now the quest of C is condom-collecting-quest.
 
-To say QuestFlav of (Q - condom-eating-quest):
-	say "You sense that it wants you to collect more condoms onto your clothing, and you can earn extra brownie points by eating the cum from your collected used condoms.";
-	if newbie tips is 1, say "[one of][newbie style]Newbie tip: Each condom that gets pinned to you increases the counter by 1. Each used condom you eat increases the counter by 1 again. You need to do this 5 times total.[roman type][line break][or][stopping]".
+To say QuestFlav of (Q - condom-collecting-quest):
+	say "You sense that it wants you to wearing used condoms from four different KNOWN people at the same time.";
+	if newbie tips is 1, say "[newbie style]Newbie Tip: You can examine items of clothing to see what you know about the sources of the cum in the pinned used condoms.[roman type][line break]".
 
-To say QuestTitle of (Q - condom-eating-quest):
-	say " (used condom collection & drinking quest)".
+To say QuestTitle of (Q - condom-collecting-quest):
+	say " (used condom collection quest)".
 
-To progress quest of (Q - condom-eating-quest):
-	repeat with C running through worn clothing:
-		if the quest of C is Q:
-			increase condom-count of Q by 1;
-			if condom-count of Q >= 5:
-				now the condom-count of Q is 0;
-				compute quest completion of Q on C;
+
+
+
+Volume - Cumpdumpster
+
+cumdump-headband is a headgear. cumdump-headband is hair growing. Understand "cumdump", "headband" as cumdump-headband.
+
+The printed name of cumdump-headband is "[clothing-title-before]cumdump headband[clothing-title-after]". The text-shortcut of cumdump-headband is "cdph".
+
+To set up influence of (C - cumdump-headband):
+	set up stat-based influence of C.
+
+To say ShortDesc of (H - cumdump-headband):
+	say "cumdump headband".
+
+Definition: cumdump-headband is semen themed: decide yes.
+Definition: cumdump-headband is oral sex themed: decide yes.
+[Definition: cumdump-headband is vaginal sex themed: decide yes.] [theme doesn't exist yet]
+Definition: cumdump-headband is anal sex themed: decide yes.
+Definition: cumdump-headband is white themed: decide yes.
+Definition: cumdump-headband is pink themed: decide yes.
+
+To decide which number is the initial outrage of (C - cumdump-headband):
+	decide on 5.
+
+Definition: cumdump-headband is roleplay:
+	if diaper quest is 0, decide yes;
+	decide no.
+
+Figure of cumdump headband is the file "Items/Accessories/Head/cumdumpsterhat3.png".
+
+To decide which figure-name is the clothing-image of (C - cumdump-headband):
+	decide on figure of cumdump headband.
+
+To say ClothingDesc of (H - cumdump-headband):
+	say "This white headband has the word 'CUMDUMP' on it in large pink letters, styled to making it look like they're oozing and dripping down the headband. [bold type]You can sense that it has changed the way your anal sphincter works[roman type] - expelling things from your butthole will now happen automatically, though never when you're plugged, and it will no longer hurt to hold things in.".
+
+To compute SelfExamineDesc of (H - cumdump-headband):
+	say "You are wearing a headband that reads 'CUMDUMP' on top of your [ShortDesc of hair]. ".
+
+
+
+Chapter - Class Outfit
+
+To compute cumdumpsterification:
+	if the player is not in a predicament room:
+		let H be a random worn headgear;
+		if H is a thing and the quest of H is cumdumpster-quest:
+			let LI be a list of things;
+			repeat with B running through orifices:
+				repeat with M running through things inseminating B:
+					add M to LI, if absent;
+			if H is cursed:
+				if the number of entries in LI >= 3, progress quest of cumdumpster-quest;
+			otherwise if the number of entries in LI > the cumdump-record of cumdumpster-quest:
+				progress quest of cumdumpster-quest;
+			if the number of entries in LI > the cumdump-record of cumdumpster-quest, now the cumdump-record of cumdumpster-quest is the number of entries in LI;
+		otherwise if ((cumdump-headband is off-stage and cumdump-headband is actually summonable) or H is thirsty work condom hat):
+			say "[bold type]You feel the game universe reacting to the fact that you're getting filled with [semen], while already having some [semen] up inside your guts![roman type][line break]";
+			if thirsty work condom hat is worn:
+				transform thirsty work condom hat into cumdumpster condom hat;
 			otherwise:
-				say "[BigNameDesc of C] wiggles happily! [one of]If you keep this up, surely you'll be rewarded eventually.[or]Keep it up![stopping]";
-				if total used condoms is 0 and C is thirsty work condom hat, transform C into cumdumpster condom hat.
+				say "A [ShortDesc of cumdump-headband] appears on your head!";
+				summon cumdump-headband cursed;
+		if WC hood is worn:
+			if WC-plug-panties is worn, WardrobeVanish WC-plug-panties;
+			class summon meat-toilet-panties;
+		if meat-toilet-panties is worn:
+			repeat with C running through worn clothing:
+				if the used condoms of C > 0 and C is not meat-toilet-panties:
+					say "The used condoms attached to your [C] are magically transferred to the meat toilet panties!";
+					UsedCondomUp meat-toilet-panties by the used condoms of C;
+					add the condom history of C to the condom history of meat-toilet-panties;
+					UsedCondomWipe C.
 
-To compute persistent reward of (Q - condom-eating-quest) on (C - a clothing):
-	if C is cursed:
-		compute generic first time class reward of Q on C;
-	otherwise:
-		increase delayed-condom-count of Q by 1;
-		say "infusing itself with [one of]powerful magic! You feel that something good will happen when you finally decide to stop being a cumdumpster.[or]even more blessed magic![stopping]".
+To compute class outfit of (H - cumdump-headband):
+	class summon bitch top;
+	class summon pink-hole-briefs;
+	class summon bitch bottoms.
 
-To uniquely destroy (C - a cumdumpster hat):
-	if the delayed-condom-count of condom-eating-quest > 0 and the quest of C is condom-eating-quest:
-		say "You can feel the blessed magic your [ShortDesc of C] had stored within itself shoot straight into your muscles!";
-		StrengthUp the delayed-condom-count of condom-eating-quest;
-		now the delayed-condom-count of condom-eating-quest is 0.
 
-Cumdumpster Hat ends here.
+Chapter - Quest
+
+cumdumpster-quest is a headgear-clothing-quest. cumdumpster-quest has a number called cumdump-record.
+
+To compute unique recycling of (C - cumdump-headband):
+	now the cumdump-record of cumdumpster-quest is 0.
+
+To uniquely set up (C - cumdump-headband):
+	now the quest of C is cumdumpster-quest.
+
+To say QuestFlav of (Q - cumdumpster-quest):
+	say "You sense that it wants you to have your mouth[if the player is possessing a vagina], womb[end if] and guts filled with cum from several different sources at the same time[if the cumdump-record of Q > 0] (current record is [cumdump-record of Q] different sources)[end if].".
+
+To say QuestTitle of (Q - cumdumpster-quest):
+	say " (internal cum collection quest)".
+
+
+
+
+Cumdumpster hat ends here.

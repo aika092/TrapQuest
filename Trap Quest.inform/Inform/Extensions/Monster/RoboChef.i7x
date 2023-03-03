@@ -134,11 +134,8 @@ To compute DQ perception of (M - robochef):
 		say "[big he of M] appears to be completely uninterested in you and continues on [his of M] way.";
 		bore M.
 
-Definition: robochef (called M) is concealment immune: [Can the monster ignore salves of concealment, butt slut, etc.]
-	decide yes.
+Definition: robochef is concealment immune: decide yes.
 
-Definition: robochef (called M) is able to remove cursed plugs: [Can the monster remove all butt plugs?]
-	decide yes.
 
 Part 4 - Combat
 

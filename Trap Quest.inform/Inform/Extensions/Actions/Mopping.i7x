@@ -152,6 +152,7 @@ Carry out mopping clothing:[TODO: breasts largeness 10+ will touch the ground an
 		increase the work ethic of the noun by D * 30;
 		if the noun is cursed, now D is D * 3;
 	FatigueUp D * 10;
+	if the noun is not pink-spraybottle and the semen-soak of the noun + the urine-soak of the noun + the milk-soak of the noun >= the soak-limit of the noun, say "The [printed name of noun] is now fully saturated." instead;
 	check regular humiliating situation.
 
 was-mopping is initially false.

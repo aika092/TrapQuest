@@ -1,13 +1,13 @@
 Strapon by Knickers begins here.
 
-A strapon-panties is a kind of knickers. The printed name of strapon-panties is "[clothing-title-before][PenisFlavour of item described][clothing-title-after]". Understand "strapon", "dildo", "strap on", "strap-on" as strapon-panties. A strapon-panties has a number called strap-length. A strapon-panties is usually totally-exclusive. A strapon-panties is usually leather. A strapon-panties is crotch-assless.
+A strapon-panties is a kind of knickers. The printed name of a strapon-panties is "[clothing-title-before][PenisFlavour of item described][clothing-title-after]". Understand "strapon", "dildo", "strap on", "strap-on" as a strapon-panties. a strapon-panties has a number called strap-length. a strapon-panties is usually totally-exclusive. a strapon-panties is usually leather. a strapon-panties is crotch-assless.
 
 Definition: a strapon-panties is penis themed: decide yes.
 Definition: a strapon-panties is fluid vulnerable: decide no.
 
 Figure of strapon-panties is the file "Items/Accessories/Toys/strapon1.png".
 
-To decide which figure-name is clothing-image of (C - strapon-panties):
+To decide which figure-name is clothing-image of (C - a strapon-panties):
 	decide on figure of strapon-panties.
 
 To say selfexamineuniquetitle of (K - a strapon-panties):
@@ -20,7 +20,7 @@ To set up magic attribute of (C - a strapon-panties):
 	let R be a random number between 1 and 3;
 	if R is 1, now C is dominance.
 
-Definition: a strapon-panties (called P) is fetish appropriate:
+Definition: a strapon-panties is fetish appropriate:
 	if diaper quest is 0, decide yes;
 	decide no.
 
@@ -31,7 +31,7 @@ To say ShortDesc of (H - a strapon-panties):
 	say "strap-on dildo".
 
 To decide which number is the price of (C - a strapon-panties):
-	decide on 2 + the strap-length of C.
+	decide on 4 + (the strap-length of C / 3).
 
 To say PenisFlavour of (K - a strapon-panties):[used any time you use "ShortDesc of penis"]
 	let N be the strap-length of K;
@@ -60,32 +60,34 @@ Definition: a strapon-panties is end of transformation chain: decide yes.
 Definition: a strapon-panties is displacable: decide no.
 To decide which number is the initial armour of (C - a strapon-panties):
 	decide on 15.
+To decide which number is the delicateness-influence of (C - a strapon-panties):
+	decide on -1 - the magic-modifier of C - (the strap-length of C / 3).
 
 Chapter 1 - Strapon Dildo
 
-A strapon-dildo is a kind of strapon-panties. The text-shortcut of a strapon-dildo is "stpd". There is 1 strapon-dildo. A strapon-dildo is crotch-assless. Understand "pouch", "nintendolls" as strapon-dildo.
+strapon-dildo is a strapon-panties. The text-shortcut of strapon-dildo is "stpd". strapon-dildo is crotch-assless. Understand "pouch", "nintendolls" as strapon-dildo.
 
-To decide which number is the penis-capacity of (K - a strapon-dildo):
+To decide which number is the penis-capacity of (K - strapon-dildo):
 	decide on the strap-length of K - 1.
 
-Definition: A strapon-dildo (called P) is dildo-usage:
-	if the size of penis >= the strap-length of P, decide no;
+Definition: strapon-dildo is dildo-usage:
+	if the size of penis >= the strap-length of strapon-dildo, decide no;
 	decide yes.
 
-To say PenisSoften of (K - a strapon-dildo):
+To say PenisSoften of (K - strapon-dildo):
 	say "The Nintendolls pouch shifts itself up on your body, completely covering your shaft. A silicone penis materialises out of it in a rush of 1s and 0s, and you feel a slight jolt as it replaces all the sensations from your [player-penis] with its own.".
 
-To say PenisHarden of (K - a strapon-dildo):
+To say PenisHarden of (K - strapon-dildo):
 	say "The silicone dildo disappears in a rush of 1s and 0s as your [player-penis] pops out of the pouch, and you feel a slight jolt as the sensation returns to normal.".
 
-To say ShortPenisFlav of (K - a strapon-dildo):[used any time you use "player-penis"]
+To say ShortPenisFlav of (K - strapon-dildo):[used any time you use "player-penis"]
 	if K is dildo-usage:
 		say "strap-on";
 	otherwise:
 		if the sexual-penis-length < 5, say sissy-penis;
 		otherwise say manly-penis.
 
-To say ShortDesc of (H - a strapon-dildo):
+To say ShortDesc of (H - strapon-dildo):
 	if H is dildo-usage, say "strap-on dildo";
 	otherwise say "Nintendolls pouch".
 
@@ -94,36 +96,32 @@ To say UniqueClothingDesc of (K - strapon-dildo):
 		say "A leather pouch with the Nintendolls logo printed along the front, along with a large number '[strap-length of K].' [if K is worn and the player is possessing a scrotum]It cradles your [ShortDesc of scrotum], gently stimulating them with the tiny nodes covering its inner surface.[otherwise if K is worn]It cradles your taint, gently stimulating it with tiny nodes covering its inner surface.[otherwise]The inside of it is covered in tiny silver nodes.[end if]";
 	otherwise if the player is possessing a penis:
 		say "A leather pouch with a [PenisSizeFlav the strap-length of K] silicone dildo mounted on the front. [if K is worn]Tiny metal nodes are passing a gentle current into your [ShortDesc of penis], transmitting sensation from the fake penis and forcing your real one to remain completely soft[otherwise]The inside of it is covered in tiny silver nodes[end if].";
-	otherwise if the player is possessing a vagina:
+	otherwise:
 		say "A [PenisSizeFlav the strap-length of K] silicone dildo mounted onto a small patch of leather. [if K is worn]Tiny metal nodes are passing a gentle current into your [vagina], transmitting all the sensation from the dildo to you[otherwise]The inner surface is covered in tiny metal nodes[end if].".
 
 Chapter 2 - Equine Strapon
 
-An equine-strapon is a kind of strapon-panties. An equine-strapon is usually unique. The text-shortcut of an equine-strapon is "eqsd". There are 2 equine-strapons. Understand "equine", "horse", "harness" as equine-strapon.
+equine-strapon is a strapon-panties. equine-strapon is unique. The text-shortcut of equine-strapon is "eqsd". Understand "equine", "horse", "harness" as equine-strapon.
 Figure of equine-strapon is the file "Items/Accessories/Toys/strapon3.png".
-To decide which figure-name is the examine-image of (H - an equine-strapon):
+To decide which figure-name is the examine-image of (H - equine-strapon):
 	decide on figure of equine-strapon.
 
-To decide which number is the heaviness of (H - an equine-strapon):
+To decide which number is the heaviness of (H - equine-strapon):
 	decide on 5.[heavy]
 
 Report wearing equine-strapon:[takes a long time to take on or off]
 	say "It takes a long time to finish putting yourself into the harness.";
 	now seconds is 12.
 
-Report going while there is a worn equine-strapon:
-	if the player is prone:
+Report going:
+	if the player is prone and equine-strapon is worn:
 		say "You feel a twinge of pleasure as the dildo drags along the ground behind you.";
 		Arouse 20.
 
-To uniquely set up (C - an equine-strapon):
+To uniquely set up (C - equine-strapon):
 	now the strap-length of C is 12.
 
-Definition: An equine-strapon (called P) is fetish appropriate:
-	if diaper quest is 0, decide yes;
-	decide no.
-
-To say PenisFlavour of (K - an equine-strapon):
+To say PenisFlavour of (K - equine-strapon):
 	let N be the strap-length of K;
 	if the size of penis >= N, say ShortDesc of penis;
 	otherwise say "[PenisSizeFlav N] [if mythical creature fetish is 1]industrial[otherwise]equine[end if] strapon [PenisShaftFlav N]".
@@ -143,7 +141,7 @@ To say PenisHarden of (K - an equine-strapon):
 
 Chapter 3 - Gemstone Strapon
 
-Gem-strapon is a strapon-panties. The text-shortcut of gem-strapon is "gspd". Gem-strapon is rare. Understand "thong", "gem", "encrusted", "gem-encrusted", "gem encrusted" as a gem-strapon. Gem-strapon is silk.
+Gem-strapon is a strapon-panties. The text-shortcut of gem-strapon is "gspd". Gem-strapon is rare. Understand "thong", "gem", "encrusted", "gem-encrusted", "gem encrusted" as gem-strapon. Gem-strapon is silk.
 
 Figure of gem-strapon is the file "Items/Accessories/Toys/strapon2.png".
 To decide which figure-name is the examine-image of (H - gem-strapon):
@@ -154,14 +152,14 @@ To say PenisFlavour of (K - gem-strapon):
 	if N < the size of penis, now N is the size of penis;
 	say "[PenisSizeFlav N] [ShortDesc of K]".
 
-To say ShortDesc of (H - a gem-strapon):
+To say ShortDesc of (H - gem-strapon):
 	say "gem-encrusted strap-on".
 
 This is the gemstrap blowjob slut rule:
 	if gem-strapon is worn, increase the desirability of face by 10.
 The gemstrap blowjob slut rule is listed in the blowjob slut eligibility rules.
 
-Definition: a gem-strapon is unlimited horniness: decide yes.
+Definition: gem-strapon is unlimited horniness: decide yes.
 
 To compute periodic effect of (G - gem-strapon):
 	Arouse 40;

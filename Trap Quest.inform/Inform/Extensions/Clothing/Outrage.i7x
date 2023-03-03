@@ -16,6 +16,9 @@ To decide which number is the outrage of (C - a wearthing):
 	if C is worn and C is not currently visible, decide on the partially visible outrage O of C;
 	decide on O.
 
+To decide which number is the unworn outrage of (C - a wearthing):
+	decide on 0.
+
 To decide which number is the notManlyFactor of (C - a clothing):
 	if the player is presenting as male and C is not manly, decide on 1;
 	decide on 0.
@@ -28,10 +31,8 @@ To decide which number is the unworn outrage of (C - a clothing):
 	if diaper quest is 0 and O < 6 + the semen-soak of C and the semen-soak of C > 2, now O is 9; [can't have significant amounts of cum on your clothing for less than 9 outrage (also we will apply fluid outrage as normal on top of this 9)]
 	if C is not worn or C is currently at least partially visible:
 		increase O by the fluid outrage of C;
-		if the used condoms of C > 1 and O < 12:
-			now O is 12;
-		otherwise if the used condoms of C is 1 and O < 7:
-			now O is 7;
+		if the used condoms of C > 0 and O < 11:
+			now O is 11;
 		increase O by the condom outrage of C;
 	if O > 20, now O is 20;
 	decide on O.
@@ -44,6 +45,7 @@ To decide which number is the fluid outrage of (C - a knickers):
 	decide on 0.
 
 To decide which number is the fluid cringe of (C - a clothing):
+	if it is external fluid immune and it is actually dense, decide on 0; [the liquid is all on the inside, and therefore not visible]
 	if C is worn and (C is not currently at least partially visible or (the at least partial concealer of C is not arms and C is not currently visible)), decide on 0; [In general, clothing doesn't reveal its wet status when partially concealed, but arms is the exception]
 	if C is swimming themed and the urine-soak of C < the soak-limit of C / 2: [Unless it's drenched in piss, we only care about semen-soak for swimwear]
 		decide on (1 + the semen-soak of C) / 2;

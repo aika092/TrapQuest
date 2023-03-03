@@ -27,7 +27,7 @@ Chapter - Class Outfit
 
 To compute class outfit of (H - cat-ears):
 	if diaper quest is 0 and the total magic power of the player >= 6, class summon exposing-magical-dress;
-	if the class of the player is cowgirl:
+	if the class of the player is "cowgirl" or the class of the player matches the text "meow":
 		compute meowcowification;
 	otherwise:
 		if exposing-magical-dress is not worn, class summon kitty claws;

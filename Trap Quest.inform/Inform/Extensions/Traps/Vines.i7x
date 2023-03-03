@@ -158,6 +158,7 @@ To compute (V - a vine) penetrating:
 		if the player is possessing a vagina: [no need to check this if the player only has an asshole]
 			repeat with M running through alive undefeated monsters:
 				if the current-errand of M is vine-egg-errand, now R is 1; [if you need to get a vine egg, they'll go asshole for you]
+			if there is a worn chastity bond or vaginal seal is worn, now R is 1;
 		if the player is a pussy slut, now R is 2;
 		if R is 2 and the player is possessing a vagina and the player is not a butt slut, now F is vagina;
 		let H be a random number from 1 to 14;
@@ -181,9 +182,7 @@ To compute condomCatch of (V - a vine) in (F - a fuckhole):
 
 To compute (V - a vine) penetrating (F - asshole):
 	let K be a random worn top level ass protection clothing;
-	if the player is ass protected:
-		[let K be a random worn top level ass protection clothing;]
-		compute V attacking K;
+	if the player is ass protected, compute V attacking K;
 	if the player is not ass protected and K is crotch-ripped or K is crotch-unzipped:
 		say "It continues straight into your [asshole] and immediately begins fucking you at full force!";
 		if V is wrangling a body part:
@@ -198,7 +197,7 @@ To compute (V - a vine) penetrating (F - asshole):
 			say "The vine powerfully pulls out the [T] and throws it on the ground.";
 			dislodge T;
 			now T is in the location of the player;
-	otherwise:
+	otherwise if V is grabbing the player or V is wrangling a body part: [if the attack on clothing failed, it will no longer be grabbing]
 		let N be a random vine wrangling a body part;
 		if N is V:
 			now V is penetrating asshole;
@@ -212,11 +211,9 @@ To compute (V - a vine) penetrating (F - asshole):
 		ruin asshole.
 
 To compute (V - a vine) penetrating (F - vagina):
-	let K be a random worn top level protection clothing;
-	if the player is pussy protected:
-		[let K be a random worn top level protection clothing;]
-		compute V attacking K;
-	if the player is not pussy protected and K is crotch-ripped or K is crotch-unzipped:
+	let K be a random top level protection clothing;
+	if K is clothing, compute V attacking K;
+	if the player is not pussy protected and (K is crotch-ripped or K is crotch-unzipped):
 		say "It continues straight into your [vagina] and immediately begins fucking you at full force!";
 		let N be a random vine wrangling a body part;
 		if N is V:
@@ -232,7 +229,7 @@ To compute (V - a vine) penetrating (F - vagina):
 			say "The vine powerfully pulls out the [ShortDesc of T] and throws it on the ground.";
 			dislodge T;
 			now T is in the location of the player;
-	otherwise:
+	otherwise if V is grabbing the player or V is wrangling a body part: [if the attack on clothing failed, it will no longer be grabbing]
 		if V is wrangling a body part:
 			now V is penetrating vagina;
 		otherwise:
@@ -255,9 +252,12 @@ To compute (V - a vine) attacking (K - a clothing):
 	otherwise if K is displacable:
 		say "The vine pulls your [if K is hobble-skirted]skirt up, exposing your crotch[otherwise if K is trousers]waistband down to your knees[otherwise]crotch section to one side[end if]!";
 		displace K;
-	otherwise:
-		say "The vine [one of]grabs[or]wiggles into[cycling] your [ShortDesc of K] and [one of]rips[or]powerfully tears[cycling] it off!";
+	otherwise if vine boss is in the location of the player:
+		say "[BigNameDesc of vine boss] emits a powerful roar, sending increased strength down into [NameDesc of V], giving it the power needed to rip off [NameDesc of K]!";
 		destroy K;
+	otherwise:
+		say "The vine prods with frustration against [NameDesc of K], unable to get it off! They are forced to let go of you.";
+		dislodge V.
 
 To say AssholePenetrationFlav of (V - a vine):
 	say "[one of]The vines holding your legs spread your [asshole] as another shoots out of the ground and begins fucking you at full force! [or]A vine shoots out of the ground between your feet and into your [asshole]. It begins fucking you at full force! [or]A single vine shoots out of the ground beneath your feet and into your [asshole]. It begins to fuck you at full force! [or]The vines [if the raw sex addiction of the player < 5]pry[otherwise]spread[end if] your thighs apart as an unseen vine beneath you shoves itself into your [asshole]. It begins fucking you at full force! [in random order]Owww!";

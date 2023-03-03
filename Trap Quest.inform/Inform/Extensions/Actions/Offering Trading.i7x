@@ -8,7 +8,7 @@ To decide which number is the charisma of the player:
 	let X be 0;
 	increase X by the make-up of face;
 	if the make-up of face is 2 and the makeupskill of the player is 1 and make up time - earnings < 1000, increase X by 5;
-	increase X by gem theme bonus * 2;
+	increase X by gem theme bonus;
 	repeat with C running through worn wearthings:
 		increase X by the charisma-influence of C;
 		if C is temptation clothing, increase X by 1;
@@ -16,7 +16,6 @@ To decide which number is the charisma of the player:
 	if the class of the player is succubus:
 		if demon horns is cursed, increase X by 1;
 		otherwise increase X by 2;
-	if bitch tattoo is worn, decrease X by 1;
 	decide on X.
 
 Offering it to is an action applying to two things.

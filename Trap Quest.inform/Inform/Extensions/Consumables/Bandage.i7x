@@ -49,6 +49,7 @@ To say unique-verb-desc of (T - bandage):
 	if inline hyperlinks >= 2, say "[if the body soreness of the player > 0] [link][bracket]use[close bracket][as]use [text-shortcut of T][end link]".
 
 Definition: a bandage is shop-eligible: decide yes.
+Definition: a bandage is container-eligible: decide yes.
 
 Understand "bandage with [something]", "bandage self with [something]" as bandaging.
 

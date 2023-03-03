@@ -5,6 +5,11 @@ Part - Monsters
 To decide which figure-name is Figure of aeromancer cutscene 7:
 	decide on figure of small image.
 
+To decide which figure-name is Figure of white birth:
+	decide on figure of small image.
+To decide which figure-name is Figure of black birth:
+	decide on figure of small image.
+
 To decide which figure-name is Figure of cultist abduction cutscene:
 	decide on figure of small image.
 

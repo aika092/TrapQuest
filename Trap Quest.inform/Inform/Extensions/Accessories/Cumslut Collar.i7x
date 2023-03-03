@@ -3,7 +3,7 @@ Cumslut Collar by Accessories begins here.
 A cumslut collar is a kind of submissive collar. There is 1 leather cumslut collar. Printed name of cumslut collar is "[clothing-title-before]cumslut collar[clothing-title-after]". The text-shortcut of cumslut collar is "cc".
 
 To decide which number is the initial outrage of (C - a cumslut collar):
-	decide on 15.
+	decide on 10.
 
 To decide which number is the oral-sex-addiction-influence of (C - a cumslut collar):
 	let S be 1;
@@ -41,5 +41,45 @@ Definition: a cumslut collar is semen themed: decide yes.
 Definition: a cumslut collar is gem themed: decide yes.
 Definition: a cumslut collar is pink themed: decide yes.
 Definition: a cumslut collar is black themed: decide yes.
+
+WC collar is a submissive collar. WC collar is leather. The printed name of WC collar is "[clothing-title-before]WC collar[clothing-title-after]". The text-shortcut of WC collar is "wcc".
+
+Definition: WC collar is class-relevant:
+	if the class of the player is human toilet, decide yes;
+	decide no.
+
+To decide which number is the initial outrage of (C - WC collar):
+	decide on 10.
+
+To decide which number is the urine-taste-addiction-influence of (C - WC collar):
+	let S be 1;
+	decrease S by the magic-modifier of C; [Positive magic = subtracted sex addiction]
+	decide on S.
+
+Figure of WC collar is the file "Items/Accessories/Neck/collar11.png".
+
+To decide which figure-name is clothing-image of (C - WC collar):
+	decide on figure of WC collar.
+
+To say ClothingDesc of (C - WC collar):
+	say "This pink leather collar has a metal tag dangling from it with the symbol of a male toilets on both sides, and the letters [']WC['].".
+
+To say ShortDesc of (C - WC collar):
+	say "WC collar".
+
+To decide which number is the bartering value of (T - WC collar) for (M - a wrestler):
+	decide on 6.
+
+Definition: WC collar is transformation-protected: decide yes.
+
+To compute periodic effect of (C - WC collar):
+	compute slave collar wisp of C.
+
+Definition: WC collar is pink themed: decide yes.
+Definition: WC collar is toilet themed: decide yes.
+
+This is the WC collar piss slut rule:
+	if WC collar is worn, increase the desirability of belly by 15.
+The WC collar piss slut rule is listed in the piss slut eligibility rules.
 
 Cumslut Collar ends here.

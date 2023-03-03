@@ -35,6 +35,9 @@ To decide which number is the bartering value of (T - an alchemy product) for (M
 
 To decide what number is the original price of (C - an alchemy product):
 	decide on 3.
+Definition: an alchemy product is container-eligible:
+	if the original price of it <= container-price-cap, decide yes;
+	decide no.
 
 To say MonsterOfferAcceptFlav of (M - witch) to (T - an alchemy product):
 	say "[BigNameDesc of M] gingerly takes it from you.[line break][speech style of M]'[if T is unsure]You couldn't even be bothered to identify it? Well, I guess I can pawn this off to some unsuspecting adventurer in the future. I'll take it[otherwise if T is cursed]Don't you think I have enough cursed [ShortDesc of T]s? No, no, I'll take it, just don't expect me to be over the moon or anything[otherwise if T is blessed]Wow, I haven't seen a blessed one of these in decades! I mean... not that I'm that old! Forget I said anything! Anyway, yes, thank you, I'll definitely take this off of your hands[otherwise]Nice, looks like it's in good condition too. Thanks[end if].'[roman type][line break]".
@@ -254,6 +257,9 @@ The backgroundColour of time-bomb is 65280. [lime]
 
 Definition: time-bomb is fetish appropriate:
 	if diaper quest is 0, decide yes;
+	decide no.
+Definition: time-bomb is container-eligible:
+	if playerRegion is mansion, decide yes;
 	decide no.
 
 To say MediumDesc of (B - time-bomb):
@@ -1295,6 +1301,41 @@ To oil (B - a tattoo) with (S - erasure-salve):
 		say "[BigNameDesc of B] begins to fade away! It's working![paragraph break]Within a few seconds, it's completely gone!";
 		destroy B.
 
+Part 5 - Salve of Reduction
+
+reduction-salve is a salve. The text-shortcut of reduction-salve is "sor". Understand "reduction" as reduction-salve.
+The backgroundColour of reduction-salve is 11701760. [dark yellow]
+
+To say MediumDesc of (C - reduction-salve):
+	say "salve of reduction".
+
+To say ExamineDesc of (C - reduction-salve):
+	say "A small round metal container that contains a yellow greasy lip-balm-like substance. The label says you are supposed to rub it on your [bold type]breasts[roman type], [bold type]belly[roman type] or [bold type]butt[roman type], to (hopefully) reduce its size. ";
+	if C is sure and C is cursed, say "Since it is cursed, using it would probably do the opposite. Perhaps you could find some other use for it, for example gifting.";
+	otherwise say "[if C is sure and C is blessed]The blessed magic will (attempt to) shrink another body part too.[otherwise][line break][end if]".
+
+To decide which number is the alchemy key of (A - reduction-salve):
+	decide on 38.
+
+To oil (B - a body part) with (S - reduction-salve):
+	if S is cursed:
+		say "Something feels wrong! Uh-oh...";
+		if B is breasts:
+			BustUp 3;
+		otherwise if B is hips:
+			HipUp 1;
+		otherwise if B is belly:
+			FatBellyUp 3;
+	otherwise:
+		say "You feel the magic of [NameDesc of S] try to shrink your [ShortDesc of B].";
+		if B is breasts or (S is blessed and B is hips):
+			BustDown 3;
+		if B is hips or S is blessed:
+			if weight gain fetish is 1, FatAssDown 2;
+			otherwise HipDown 2;
+		if B is belly:
+			FatBellyDown 4.
+
 SalveRubbing it on is an action applying to two things.
 
 Check SalveRubbing:
@@ -1304,7 +1345,7 @@ Check SalveRubbing:
 	if the second noun is glue, try GlueRubbing the noun on the second noun instead;
 	if the noun is not salve and the noun is not ectoplasm, say "I understood the verb as you wanting to apply a salve, but then the noun was not a salve." instead;
 	if the noun is erasure-salve and the second noun is not tattoo, say "That won't do anything - you should try rubbing it on a mark on your skin you want removed." instead;
-	if the noun is buoyancy-salve or the noun is restriction-salve:
+	if the noun is buoyancy-salve or the noun is restriction-salve or the noun is reduction-salve:
 		if the second noun is not breasts and the second noun is not hips and the second noun is not belly, say "You can only apply a salve to your [bold type]breasts[roman type], your [bold type]belly[roman type] or your [bold type]ass[roman type] at the moment." instead;
 	if the noun is concealment-salve:
 		if the second noun is hips, now the second noun is asshole;

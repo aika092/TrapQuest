@@ -769,6 +769,7 @@ student-bully-swirlie is a diaper punishment. The priority of student-bully-swir
 Definition: student-bully-swirlie is appropriate:
 	if current-monster is not student, decide no;
 	if locked-toilets is true, decide no;
+	if grossness fetish is 0, decide no;
 	if there is worn wet knickers or the location of the player is toilets, decide yes;
 	decide no.
 To compute punishment of (P - student-bully-swirlie):
@@ -781,17 +782,35 @@ To compute punishment of (P - student-bully-swirlie):
 
 Check going when the player is in School10:
 	let M be a random alive unfriendly student;
+	if student-laci is alive and student-laci is unfriendly, now M is student-laci;
 	if M is student, now current-monster is M;
-	if number of alive unfriendly students > (a random number between 2 and 3) and the number of friendly monsters in the location of the player is 0:
+	if student-bully-swirlie is appropriate and number of alive unfriendly students > (a random number between 2 and 3) and the number of friendly monsters in the location of the player is 0:
 		allocate 6 seconds;
 		now M is in School10;
 		say "[bold type]Suddenly, [NameDesc of M] [bold type]appears, blocking the way![roman type][line break]";
 		compute group bullying of M instead;
 		do nothing instead. [failsafe]
 
+Figure of swirlie diaper clean is the file "Special/Cutscene/cutscene-swirlie5.jpg".
+Figure of swirlie diaper wet is the file "Special/Cutscene/cutscene-swirlie6.jpg".
+Figure of swirlie diaper messed is the file "Special/Cutscene/cutscene-swirlie7.jpg".
+
 To compute swirlie of (M - a monster):
 	say "[BigNameDesc of M] grabs you by the head and dunks your face into the toilet water, and then flushes the water around you.";
-	GrossOut 5;
+	GrossOut 5 with reason "The gross sensation of the toilet flushing around you makes you shudder," and sensation "sensation";
+	let FG be Figure of swirlie knickers clean;
+	let D be a random worn knickers;
+	if D is diaper:
+		if D is messed:
+			now FG is Figure of swirlie diaper messed;
+		otherwise if the known-urine-soak of D > 0:
+			now FG is Figure of swirlie diaper wet;
+		otherwise:
+			now FG is Figure of swirlie diaper clean;
+	otherwise if D is knickers and the known-urine-soak of D > 0:
+		now FG is Figure of swirlie knickers wet;
+	if M is student-laci, cutshow FG for M;
+	now temporaryYesNoBackground is FG;
 	compute crowd jeering of M;
 	let ST be a random unfriendly nasty student in the location of M;
 	if ST is student and ST is not M:
@@ -827,7 +846,8 @@ To compute swirlie of (M - a monster):
 		now the stance of the player is 1;
 		DelicateUp 1;
 		compute crowd satisfaction of M;
-		satisfy M.
+		satisfy M;
+	now temporaryYesNoBackground is figure of small image.
 
 student-bully is a diaper punishment. The priority of student-bully is 1.
 Definition: student-bully is appropriate:
@@ -899,7 +919,7 @@ Definition: bully-plug is eligible:
 	decide no.
 To execute (A - bully-plug):
 	let P be a random thing penetrating asshole;
-	if P is clothing and (the player is not possessing a vagina or there is an embodied thing penetrating vagina):
+	if P is clothing and (the player is not possessing a vagina or vagina is actually occupied):
 		say "[speech style of current-monster]'Why do you have that in your ass? It obviously doesn't fit you, tryhard [bitch].'[roman type][line break][BigNameDesc of current-monster] smacks your ass, making sure [his of current-monster] palm connects with [NameDesc of P] so you feel it all the way inside your [asshole].";
 	otherwise:
 		now P is a random off-stage plentiful dong;
@@ -1012,7 +1032,7 @@ To execute (A - bully-lock-heels):
 
 bully-lock-gag is a bully-action.
 Definition: bully-lock-gag is eligible:
-	if bondage protection is 2 or face is actually occupied, decide no;
+	if bondage protection is 2 or face is actually occupied or there is a worn gag, decide no;
 	if there is an off-stage specific-key, decide yes;
 	decide no.
 To execute (A - bully-lock-gag):
@@ -1143,7 +1163,7 @@ To execute (P - prank-photo):
 
 prank-condom is a prank-action.
 Definition: prank-condom is eligible:
-	if condom fetish is 1 and the current-rank of current-monster > 1 and there is worn condom pinnable currently uncovered clothing, decide yes;
+	if condom fetish >= 2 and the current-rank of current-monster > 1 and there is worn condom pinnable currently uncovered clothing, decide yes;
 	decide no.
 To execute (A - prank-condom):
 	let C be a random worn condom pinnable currently uncovered clothing;

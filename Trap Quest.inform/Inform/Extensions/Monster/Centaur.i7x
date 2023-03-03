@@ -779,4 +779,8 @@ To say EscapeAnswer of (M - centaur):
 To say AdviceAnswer of (M - centaur):
 	say "[speech style of M]'[one of]Lube doesn't just make things slippery. It can also soothe a hole that's recently taken a lot of punishment, and in a pinch, you can even drink it.'[or]There's a slimegirl in this forest who knows of a technique once known only to gladiators. If you can earn [his of slimegirl] trust, [he of slimegirl] might be willing to teach you.'[or]Creampies are great, but if you don't want them, try begging. Of course, I can't pull out even if I want to, but in cases like mine you're better off struggling.'[or]Struggling will make deepthroating that much more difficult. Keep calm, relax, and you might find you have cock swallowing skills you never knew you had.'[at random][roman type][line break]".
 
+To compute teaching of (M - centaur):
+	say "[speech style of M]'Let me show you how to properly swing a sword. It's all about speed, not strength...'[roman type][line break]";
+	teach swordskill.
+
 Centaur ends here.

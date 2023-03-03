@@ -659,7 +659,8 @@ Book - Grossness Addiction
 Part 1 - Calculate Grossness Addiction
 
 To decide which number is the grossness addiction of the player:
-	decide on previous-grossness-addiction.
+	if the player is a december 2022 top donator or diaper quest is 1, decide on previous-grossness-addiction;
+	otherwise decide on the sex addiction of the player.
 
 To decide which number is the calculated grossness addiction of the player:
 	let S be the raw grossness addiction of the player;
@@ -712,12 +713,13 @@ To SlowGrossnessAddictUp (X - a number):
 			GrossnessAddictUp 1.
 
 To GrossnessAddictUp (X - a number):
-	let S be the raw grossness addiction of the player;
-	SilentlyGrossnessAddictUp X;
-	now S is the raw grossness addiction of the player - S;
-	if S > 0:
-		if the calculated grossness addiction of the player <= 7, say "You [one of]are slowly growing[or]continue to grow[stopping] more tolerant of [GrossStuff].";
-		otherwise say "You feel like you are going to be [if S > 2]much[otherwise if S is 2]significantly[otherwise]a bit[end if] [if the calculated grossness addiction of the player > 10]more aroused by[otherwise]less turned off by[end if] [GrossStuff] from now on.".
+	if the player is a december 2022 top donator or diaper quest is 1:
+		let S be the raw grossness addiction of the player;
+		SilentlyGrossnessAddictUp X;
+		now S is the raw grossness addiction of the player - S;
+		if S > 0:
+			if the calculated grossness addiction of the player <= 7, say "You [one of]are slowly growing[or]continue to grow[stopping] more tolerant of [GrossStuff].";
+			otherwise say "You feel like you are going to be [if S > 2]much[otherwise if S is 2]significantly[otherwise]a bit[end if] [if the calculated grossness addiction of the player > 10]more aroused by[otherwise]less turned off by[end if] [GrossStuff] from now on.".
 
 To SilentlyGrossnessAddictUp (X - a number):
 	while X > 0:

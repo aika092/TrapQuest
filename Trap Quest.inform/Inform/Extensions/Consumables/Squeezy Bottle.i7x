@@ -10,11 +10,25 @@ To decide which figure-name is the examine-image of (C - squeezy-bottle):
 Definition: squeezy-bottle is drink themed: decide yes.
 
 To say ExamineDesc of (B - squeezy-bottle):
-	say "A large bottle with one of those lids where you have to squeeze the bottle to get the liquid to come out. A label on the side says 'THE MANAGEMENT ARE NOT RESPONSIBLE FOR ANY SIDE EFFECTS THAT MAY OCCUR FROM DRINKING FROM THIS EXPERIMENTAL DEVICE'.[line break][variable custom style][if the bimbo of the player > 13]Sounds fair enough to me![otherwise]Sounds about right.[end if][roman type][line break]".
+	say "A large bottle with one of those lids where you have to squeeze the bottle to get the liquid to come out. ";
+	if the player is in a predicament room, say "[if business-briefcase-predicament is squeezy-bottle-drunk]It is now empty[otherwise]Who knows what's inside it[end if].";
+	otherwise say "A label on the side says 'THE MANAGEMENT ARE NOT RESPONSIBLE FOR ANY SIDE EFFECTS THAT MAY OCCUR FROM DRINKING FROM THIS EXPERIMENTAL DEVICE'.[line break][variable custom style][if the bimbo of the player > 13]Sounds fair enough to me![otherwise]Sounds about right.[end if][roman type][line break]".
 
 Definition: squeezy-bottle is immune to change: decide yes.
 
 Check drinking squeezy-bottle:
+	if current-predicament is business-briefcase-predicament and the player is in a predicament room:
+		if business-briefcase-predicament is squeezy-bottle-drunk, say "It's already empty." instead;
+		allocate 6 seconds;
+		say "You bring the tip of the bottle to your lips and squeeze it, allowing some of the strange tasting liquid to enter your mouth. You obediently swallow gulp after gulp until it's all gone.";
+		if diaper messing >= 4:
+			say "Your stomach almost immediately starts rumbling, and a pressure builds in your belly... Oh no. You've just drunk an entire bottle of laxative...";
+			now suppository is 5;
+			if the bladder of the player < 6, now the bladder of the player is 6;
+		otherwise:
+			say "You can feel your bladder almost immediately feeling more full than it did a moment ago. And then, with every passing moment, it feels even more full than the moment before! Oh no. You've just drunk an entire bottle of diuretic...";
+			if the bladder of the player < bladder-risky-level, now the bladder of the player is bladder-risky-level;
+		do nothing instead;
 	if the latex-transformation of the player > 4, say "You can no longer drink, you're too far through your transformation into a doll and your body doesn't need hydration any more." instead;
 	if the noun is not held and the player is flying, say "You can't reach!" instead;
 	if the player is overly full, say "Your stomach feels too full to drink any more right now, you should wait a while." instead;

@@ -102,10 +102,10 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 	[If enough experience has been gained, level up heel skill]
 	if the heel time of the player > minHeelXP and the player is upright, HeelUp 1;
 	[Real world changes]
-	if the remainder after dividing local-earnings by (500 / (fast breast expansion + 1)) < local-seconds:
-		if extreme proportions fetish is 1 or the remainder after dividing local-earnings by (1000 / (fast breast expansion + 1)) < local-seconds:
+	if the remainder after dividing local-earnings by (750 / (fast breast expansion + 1)) < local-seconds:
+		if extreme proportions fetish is 1 or the remainder after dividing local-earnings by (1500 / (fast breast expansion + 1)) < local-seconds:
 			if the flesh volume of breasts + the silicone volume of breasts > the real flesh volume of breasts:
-				repeat with N running from 1 to 3:
+				repeat with N running from 1 to 2:
 					if the flesh volume of breasts + the silicone volume of breasts > the real flesh volume of breasts, increase the real flesh volume of breasts by 1;
 				set real breast size;
 			if the thickness of hips > the real thickness of hips, increase the real thickness of hips by 1;
@@ -266,6 +266,18 @@ To compute stat healing:
 	if temp_int_dam > 0:
 		decrease temp_int_dam by 1;
 		say "[bold type]You feel as though your mind is slightly clearer![roman type][line break]";
+
+A later time based rule (this is the impermanence-counter rule):
+	repeat with C running through on-stage impermanence clothing:
+		increase the impermanence-counter of C by 1;
+		if the impermanence-counter of C > a random number between (combatSpeed * 15) and (combatSpeed * 40):
+			if C is not held or the player is prone or the player is not in danger: [never disappears in the middle of combat that's going well]
+				unless C is held by ex-princess or (C is in the location of the player and there is a tentacle monster in the location of the player): [doesn't disappear in the specific fight scene with tentacle monsters where they throw your wand to the other corner of the room]
+					if C is held or C is in the location of the player, say "[bold type]Your [ShortDesc of C] fades away, vanishing into thin air![roman type][line break]";
+					now C is blandness;
+					now the impermanence-counter of C is 0;
+					only destroy C.
+
 
 A time based rule (this is the compute jiggles rule):
 	if a random number between 2 and (300 / (1 + unlucky)) <= the square root of the largeness of breasts:

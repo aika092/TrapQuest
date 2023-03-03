@@ -105,8 +105,8 @@ To progress quest of (Q - milking-quest):
 		repeat with C running through worn clothing:
 			if the quest of C is Q:
 				increase the successful-milks of Q by 1;
-				if the successful-milks of Q > 2:
-					now the successful-milks of Q is 1;
+				if (C is cursed and the doses of MT >= 8) or the successful-milks of Q > a random number between 1 and 2:
+					now the successful-milks of Q is 0;
 					compute quest completion of Q on C;
 				otherwise:
 					say "Your [ShortDesc of C] pulse happily. [one of]If you keep up this sort of milking routine, you're sure to be rewarded eventually[or]Keep it up[stopping]!".

@@ -7,6 +7,7 @@ An adult baby slave has a number called peeTimer. An adult baby slave has a numb
 Definition: an adult baby slave is willing to do oral: decide yes.
 
 Definition: an adult baby slave is raunchy: decide yes.
+Definition: an adult baby slave is willing to do anilingus: decide no. [TODO: create an anilingus variation where it's diaper worship]
 
 Definition: an adult baby slave is a diaper wetter: decide yes.
 

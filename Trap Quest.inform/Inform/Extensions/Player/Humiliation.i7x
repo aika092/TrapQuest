@@ -239,7 +239,7 @@ To humiliate (X - a number):
 	let A be alcohol-level;
 	if alcohol fetish is 0, now A is 1; [balancing mechanic for when it's disabled]
 	now H is (H * (5 - A)) / 5; [alcohol reduces dignity loss]
-	delayed humiliate H.
+	delayed humiliate H * 2. [balancing tweak - double humiliation gain]
 
 To trivialHumiliate:
 	humiliate TRIVIAL-HUMILIATION.
@@ -429,7 +429,9 @@ To say DisgracePost (N - a number):
 	otherwise if secondslive > 0:
 		say "[if secondslive >= 60]. It was up for [secondslive / 60] minutes before you were able to delete it[otherwise]. It was only up for [secondslive] seconds before you were able to delete it[end if]";
 	otherwise if deletedtime entry > 0:
-		say ". It has since been deleted, but the damage is already done - a large number of your family and friends will have seen the post".
+		say ". It has since been deleted, but the damage is already done - a large number of your family and friends will have seen the post";
+	otherwise if severity entry is 0:
+		say ". It has not received any views".
 
 
 To say DisgracePostReaction (N - a number):
@@ -455,7 +457,9 @@ To say HumiliatingDisgracePostReaction (N - a number):
 
 To say DisgracePostReaction strength (S - a number):
 	say variable custom style;
-	if the player is modest:
+	if S <= 0:
+		say "This isn't harming my reputation, [if the player is shameless]not that I care either way[otherwise]thank goodness[end if].";
+	otherwise if the player is modest:
 		say "[if S < 100][one of]No, no, no, no, NO! This is on the real Internet?![or]No way, my friends will be able to see this![or]I can't believe this is on the real Internet...[then at random][otherwise][one of]Noooo! There's no way I can let anyone in the real world see this![or]No no no no no! I need to get this taken down RIGHT AWAY![or]If this is really on the actual Internet, I'll never ever be able to life this down! I'll be a walking disgrace![or]Oh god no... I'm never going to be able to look my family in the eyes ever again...[in random order][end if]";
 	otherwise if the player is not shameless:
 		say "[if S < 100][one of]Well, it could be worse, I guess...[or]This is pretty embarrassing, but hopefully I can laugh it off.[or]This is not good for my public reputation. Oh dear...[or]Well, as long as nobody I know sees this, it's actually kind of hot to think about strangers getting hot and heavy looking at me...[in random order][otherwise][one of]Oh god, how am I ever going to live this down?![or]Oh shit! I guess I've got to hope nobody I know ever sees this...[or]Fuck me, this is really damning. If this gets shared around my friends, I'll never be able to hold my head high again...[in random order][end if]";
@@ -467,12 +471,15 @@ To compute digital reputation damage (T - a text) strength (S - a number) qualit
 	if the number of blank rows in the Table of Published Disgraces > 0:
 		decrease N by a random number between 0 and 1;
 		let H be the concealer of face;
+		let PH be the at least partial concealer of face;
 		if H is a thing:
-			now T is " (with your face concealed under [NameDesc of H])";
+			if the player is not shameless, say "[variable custom style][one of]At least the [ShortDesc of H] should prevent my from being identifiable[or]At least they can't see my face[or]Thank goodness it didn't get my face[or]At least my identity is hidden[then at random].[roman type][line break]";
+			now T is "[T] (with your face concealed under [NameDesc of H])";
 			now S is 0;
-		otherwise if face is listed in the armUses of arms:
-			now T is " (with your face partially concealed under your arm)";
-			now S is (S + 1) / 2;
+		otherwise if PH is a thing:
+			if the player is not shameless, say "[variable custom style][one of]At least the [ShortDesc of H] should hopefully prevent my from being identifiable[or]At least there's a good chance they can't see my face[or]I hope it didn't get my face[or]At least my identity is hopefully hidden[then at random]...[roman type][line break]";
+			if a random number between 1 and 4 > 1, now S is 0;
+			now T is the substituted form of " (with your face partially concealed under [if PH is arms]your arm[otherwise][NameDesc of PH][end if], [if S is 0]fortunately [one of]leaving your identity a mystery[or]successfully maintaining your anonymity[or]preventing you from being recognised[at random][otherwise]unfortunately [one of]your face isn't probably protected, and you're [or][stopping]still easily recognisable[end if])";
 		now T is "[if N < 1]a low resolution photo[otherwise if N < 3]a high resolution photo[otherwise if N < 5]an animated gif[otherwise]a high quality video[end if] showing [T] [ReputationAttire]";
 		let W be "[if S < a random number between 3 and 5][sexyWebsite][otherwise][sluttyWebsite][end if]";
 		choose a blank row in Table of Published Disgraces;

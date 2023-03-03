@@ -517,6 +517,6 @@ To construct unique buttons for (T - face):
 			now the ButtonImage entry is Figure of DrinkButton;
 			now the ButtonCommand entry is "swallow";
 			now the ButtonColour entry is lightModeFullGreen;
-			if there is a throater thing penetrating face, now the ButtonColour entry is lightModeFullRed. [turn red - player can't swallow]
+			if there is an actual throater thing penetrating face, now the ButtonColour entry is lightModeFullRed. [turn red - player can't swallow]
 
 Body Parts Definitions ends here.

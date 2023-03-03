@@ -139,7 +139,7 @@ To say EnslavedDominationFlav of (M - headmistress):
 	say "[speech style of M]'H...haaah~'[roman type][line break]That seems to be all [he of M] is capable of saying with [his of M] tongue stuck out like that.".
 
 To decide which number is the EnslavedDominationThreshold of (M - headmistress):
-	decide on 6.
+	decide on a random number between 1000 and 6000.
 
 Part - Perception
 

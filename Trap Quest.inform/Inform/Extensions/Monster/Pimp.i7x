@@ -4,6 +4,8 @@ pimp is a monster. pimp is intelligent. pimp is male.
 
 Definition: pimp is father material: decide yes.
 
+Definition: pimp is condom obsessed: decide yes. [Does he ALWAYS have condoms on him?]
+
 Definition: pimp is dark skinned: decide yes.
 
 Definition: pimp is raunchy: decide yes.
@@ -15,10 +17,6 @@ Definition: pimp is willing to do oral: decide no.
 Definition: pimp is willing to do titfucks: decide no.
 
 Definition: pimp is human: decide yes.
-
-Definition: pimp is able to remove cursed plugs: decide yes.
-
-Definition: pimp is butt slut immune: decide yes.
 
 Definition: pimp is a generic-unlocker: decide yes.
 
@@ -116,6 +114,8 @@ To compute perception of (M - pimp):
 		if M is buddy:
 			say "[speech style of M]'Your debt is paid. I guess it's time to release you.'[roman type][line break]";
 			release pimp portals;
+			if the current-errand of M is completed:
+				compute errand completion of M;
 		otherwise if the current-errand of M is completed:
 			compute errand completion of M;
 		otherwise:

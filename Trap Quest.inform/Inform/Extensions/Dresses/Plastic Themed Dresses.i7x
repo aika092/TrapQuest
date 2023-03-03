@@ -147,7 +147,7 @@ condoms dress is a silicone dress. condoms dress is high cut.
 The printed name of condoms dress is "[clothing-title-before]condoms dress[clothing-title-after]". The text-shortcut of condoms dress is "cndd".
 
 Definition: condoms dress is class-relevant:
-	if the class of the player is silicone queen or the class of the player is cumdumpster, decide yes;
+	if the class of the player is silicone queen or the class of the player is condom collector, decide yes;
 	decide no.
 
 To compute class set up of (C - condoms dress):
@@ -184,7 +184,7 @@ This is the giant condom prevents hand use rule:
 The giant condom prevents hand use rule is listed in the hands restriction rules.
 
 Definition: giant condom is class-relevant:
-	if the class of the player is silicone queen or the class of the player is cumdumpster, decide yes;
+	if the class of the player is silicone queen or the class of the player is condom collector, decide yes;
 	decide no.
 
 Figure of giant condom is the file "Items/Clothes/Upper/Latex/rubberdress7.png".

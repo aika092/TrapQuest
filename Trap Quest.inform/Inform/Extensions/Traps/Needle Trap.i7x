@@ -31,7 +31,7 @@ To trigger (Y - a needle trap):
 		say "A tiny [needle] shoots out of [if playerRegion is Dungeon]the stone wall[otherwise if playerRegion is Woods]a tree[otherwise]a tiny hole in the wall[end if] and towards your [ShortDesc of C]! By sheer bad luck, the dart strikes [if the used condoms of C > 1]one of the condoms[otherwise]the condom[end if] pinned to it. It ruptures and bursts!";
 		if the used condoms of C > 0:
 			increase the empty condoms of C by 1;
-			decrease the used condoms of C by 1;
+			let M be the condomPop of C;
 		UnannouncedSquirt semen on C by 4;
 		say GotUnluckyFlav;
 	otherwise:

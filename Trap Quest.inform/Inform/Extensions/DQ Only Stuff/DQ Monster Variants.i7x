@@ -11,10 +11,12 @@ To say UniqueMonsterDesc of (M - gymnast-explorer):
 Definition: gymnast-explorer is a diaper wetter:
 	if the explorer-bimbo of gymnast-explorer >= 1, decide yes;
 	decide no.
+To decide which figure-name is Figure of gymnast explorer 1 cutscene 1:
+	decide on figure of small image.
 
-Figure of blonde explorer 1 is the file "NPCs/MultiFloor/Explorers/blonde4.jpg".
-Figure of blonde explorer 2 is the file "NPCs/MultiFloor/Explorers/blonde5.jpg".
-Figure of blonde explorer 3 is the file "NPCs/MultiFloor/Explorers/blonde6.jpg".
+Figure of blonde explorer 1 is the file "NPCs/MultiFloor/Explorers/blonde4.png".
+Figure of blonde explorer 2 is the file "NPCs/MultiFloor/Explorers/blonde5.png".
+Figure of blonde explorer 3 is the file "NPCs/MultiFloor/Explorers/blonde6.png".
 To say UniqueMonsterDesc of (M - blonde-explorer):
 	say "[big he of M] is wearing [if the explorer-bimbo of M is 0]a set of clothing which is a fashionable but provocative mixture of blue latex and black leather. It would be somewhat acceptable for this place if it wasn't for the bottom half - her sizeable rump is covered by nothing except a plain white disposable diaper. In one hand [he of M] has a white bag of holding, which again would look fine... If it wasn't for the fact that it has the words 'DIAPER CHANGING KIT' printed on each side[otherwise]a super short frilly pink babydoll dress with matching stockings and mary janes with pretty bows, a far cry away from [his of M] stylish blue and black thigh-highs, shoulder-length gloves and overbust corset that he was wearing before. [big he of M] still has a bag of holding, but it's now even more clearly a diaper bag, with pouches for baby milk and diaper changing equipment, and coloured in baby pink and baby blue. Speaking of baby pink, [his of M] fully exposed disposable diaper is thicker than before, and has a lovely shade of baby pink to parts of it, which perfectly match [his of M] bag, stockings and parts of [his of M] dress[end if][if the explorer-bimbo of M is 2]. The warm, cheerful look on [his of M] face and the way [he of M][']s shamelessly got [his of M] legs spread on the bed suggests to you that [he of M] is completely content[otherwise].[end if]".
 Definition: blonde-explorer is a diaper wetter: decide yes.

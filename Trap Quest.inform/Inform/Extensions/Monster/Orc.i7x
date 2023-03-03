@@ -9,6 +9,7 @@ Definition: orc is dungeon dwelling:
 [Definition: orc is willing to urinate: decide yes.]
 
 Definition: orc is dark skinned: decide yes.
+Definition: orc is condom obsessed: decide yes. [Does he always want to use a condom?]
 
 
 [Definition: orc is raunchy: decide yes.]
@@ -165,7 +166,8 @@ To say DisapprovalFlav of (M - orc):
 	say "You can literally see [NameDesc of M][']s [manly-penis] getting [one of]hard[or]harder and harder[stopping].[line break][speech style of M]'[one of]Ooh baby, you are looking fiiiine!'[or]Oh yeah, you're just begging for it, aren't you?'[in random order][roman type][line break]".
 
 To say BecomesAggressive of (M - orc):
-	say "[big he of M] takes an offensive stance![line break][speech style of M]'I can't take you seriously at all! We should be [if diaper quest is 1]disciplining you[otherwise]fucking[end if], not playing cards.'[roman type][line break]".
+	say "[big he of M] strokes [his of M] [manly-penis] as [he of M] watches you. [moderateHumiliateReflect]";
+	calm M.
 
 Report going:
 	if orc is guarding and orc is on-stage and orc is not in Dungeon07 and orc is not in the location of the player, bore orc.
@@ -423,6 +425,14 @@ To compute SeductionGrind of (M - orc):
 			transform H into stripper maid headdress;
 			compute class outfit of stripper maid headdress;
 			say "[variable custom style]The game is telling me that I'm a professional stripper now?![roman type][line break]";
+		otherwise if cumdump-headband is worn:
+			if bitch top is worn, WardrobeVanish bitch top;
+			class summon porn star tube top;
+			if bitch bottoms is worn, WardrobeVanish bitch top;
+			class summon black-microshorts;
+			class summon porn-star-suspenders;
+			transform cumdump-headband into stripper-ears;
+			say "[variable custom style]The game is telling me that I'm a professional sex worker now?![roman type][line break]";
 		if M is wrapped:
 			say "The [semen] fills [his of M] condom to the brim.";
 			compute default condom filling of M;

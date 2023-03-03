@@ -229,4 +229,28 @@ To compute school periodic effect of (C - football-gloves):
 		say "[BigNameDesc of football-gloves] fizzles from existence!";
 		only destroy football-gloves.
 
+briefcase is an equippable. briefcase has a number called charge.
+The printed name of briefcase is "[clothing-title-before]briefcase[clothing-title-after]". The text-shortcut of briefcase is "bfc". Figure of briefcase is the file "Items/Accessories/Equippables/briefcase1.jpg".
+Definition: briefcase is transformation-protected: decide yes.
+Definition: briefcase is removable: decide no.
+Definition: briefcase is discovered varied: decide no.
+To decide which figure-name is clothing-image of (H - briefcase):
+	decide on figure of briefcase.
+To say ClothingDesc of (Y - briefcase):
+	say "This briefcase has hidden buttons on the handle that you have to keep pressed to avoid the humiliating video being shared online. It also has a hidden slot, through which it occasionally drops a card onto the ground, with a QR code link to the video, and all your personal information.".
+To say ShortDesc of (Y - briefcase):
+	say "briefcase".
+To say MediumDesc of (Y - briefcase):
+	say "brown briefcase".
+To decide which number is the initial outrage of (C - briefcase):
+	decide on 0.
+To decide which number is the wornArmsRequired of (C - briefcase):
+	decide on 1.
+To compute periodic effect of (C - briefcase):
+	compute school periodic effect of C.
+To compute school periodic effect of (C - briefcase):
+	if the player is in Predicament20 or the player is not in a predicament room:
+		say "[BigNameDesc of briefcase] fizzles from existence!";
+		only destroy briefcase.
+
 Equippables Framework ends here.

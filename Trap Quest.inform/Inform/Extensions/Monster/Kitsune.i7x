@@ -125,6 +125,15 @@ To compute (M - a monster) stomping (N - kitsune):
 	set up disguise of N;
 	now the vanish timer of N is -1.
 
+To say HeldItems of (N - kitsune):
+	let M be the target-disguise of N;
+	repeat with T running through the tradableItems of M:
+		if T is off-stage, say "You can see that [he of M] has a [ShortDesc of T].";
+	repeat with T running through things held by M:
+		say "You can see that [he of M] still has the [ShortDesc of T].";
+	if players-dick-is-detached > 0: [#LXorDD]
+		say its-got-my-dick for M.
+
 Part 1 - Perception
 
 Definition: kitsune is objectifying the player: decide no.

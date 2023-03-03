@@ -124,6 +124,11 @@ To say NastyTrapReactFlav of (M - a staff member):
 
 Part - Protection
 
+To reset staff boredom: [when the player attacks a student, staff members shouldn't stay bored in the same room]
+	repeat with M running through uninterested staff members in the location of the player:
+		deinterest M; [resets boredom to 0]
+		check perception of M.
+
 To compute (M - a staff member) protecting against (X - a monster):
 	if the health of X < the maxhealth of X or X is wrangling a body part:
 		say "[speech style of M]'[if X is staff member]Another rebellion?!'[otherwise]NO FIGHTING! BOTH OF YOU ON THE GROUND!'[end if][roman type][line break][BigNameDesc of M] turns aggressive.";
@@ -1145,6 +1150,7 @@ To compute detention joint predicament of (M - a monster) with (ST - a student):
 	repeat with R running through predicament rooms:
 		totally clean R;
 	if the body soreness of the player > 4, now the body soreness of the player is 4;
+	now executing-predicament is true;
 	execute P;
 	set up predicament clothing for P;
 	increase the times-completed of P by 1;

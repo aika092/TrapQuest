@@ -911,9 +911,13 @@ To compute SeductionMasturbate of (M - a monster):
 To compute SeductionMasturbateClimax of (M - a monster):
 	say "[BigNameDesc of M] [one of]squeals[or]roars[or]growls[or]shudders[in random order] as [he of M] [one of]orgasms[or]climaxes[or]cums[in random order]! ";
 	if M is male:
-		say "[big his of M] load is spilled onto the floor.";
-		SemenPuddleUp the semen load of M;
-		if M is pale skinned and the bbc addiction of the player > 11, say "[variable custom style]Hmph! White [men of shopkeeper].[roman type][line break]";
+		if M is wrapped:
+			say "[big his of M] load fills the condom.";
+			compute condom filling of M;
+		otherwise:
+			say "[big his of M] load is spilled onto the floor.";
+			SemenPuddleUp the semen load of M;
+			if M is pale skinned and the bbc addiction of the player > 11, say "[variable custom style]Hmph! White [men of pimp].[roman type][line break]";
 	orgasm satisfy M;
 	progress quest of greet-quest.
 

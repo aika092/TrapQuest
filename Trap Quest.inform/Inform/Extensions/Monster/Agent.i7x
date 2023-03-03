@@ -13,6 +13,7 @@ Definition: agent is willing to do anal: decide yes.
 Definition: an agent is a generic-unlocker: decide yes.
 
 Definition: agent is dark skinned: decide yes.
+Definition: agent is condom prepared: decide yes. [Does she have condoms on her?]
 
 [Definition: agent is raunchy: decide yes.]
 

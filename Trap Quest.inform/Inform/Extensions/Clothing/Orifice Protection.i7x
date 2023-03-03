@@ -332,7 +332,7 @@ To decide what number is the anal defence of the player:
 To decide what number is the vaginal defence of the player:
 	let D be 0;
 	increase D by (the flesh volume of thighs / 2);
-	repeat with K running through top level protection clothing worn by the player:
+	repeat with K running through worn top level protection clothing:
 		let E be the armour of K - the damage of K;
 		if E > 0, increase D by E;
 		increase D by the magic-modifier of K;

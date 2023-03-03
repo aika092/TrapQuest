@@ -347,14 +347,14 @@ To Recover the Player:
 	now the flesh volume of belly is 0;]
 	now the squirt timer of belly is 0;
 	now the suffocation of the player is 0;
-	repeat with C running through throater things penetrating face:
+	repeat with C running through actual throater things penetrating face:
 		only destroy C; [otherwise the suffocation continues]
 	now the throne is not filling asshole;
 	now the throne is not untriggered;
 	now the throne is not triggered;
 	MilkPuddleUp the milk volume of breasts / 2;
-	now the milk volume of breasts is the square root of the lactation rate of breasts;
-	now the lactation rate of breasts is 0;
+	now the milk volume of breasts is the lactation rate of breasts;
+	now the lactation rate of breasts is the lactation rate of breasts / 2;
 	now the air volume of belly is 0; [always deflate belly of air even if ass is plugged]
 	let AP be a random thing penetrating asshole;
 	if AP is nothing or the player is in Dungeon19:

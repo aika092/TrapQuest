@@ -77,7 +77,7 @@ Virgin Warrior - transform the woods sword into a new weapon tbd
 Silicone Queen - eliminate weight of silicone implants entirely?
 Latex Fetish Model - add mindbreak protection, such that submitting is always your choice?
 Human Toilet - look at how urine actually works obv something with that
-Cumdumpster - maybe buff the acceptance of condoms by monsters
+Condom collector - maybe buff the acceptance of condoms by monsters
 Living Sex Doll - self-repairing]
 
 all-you-can-eat tattoo is a crotch tattoo. The tattoo-title of all-you-can-eat tattoo is "sundae".
@@ -323,6 +323,27 @@ This is the best-seat blowjob slut rule:
 	if best-seat tattoo is worn and the at least partial concealer of best-seat tattoo is nothing, increase the desirability of face by 15.
 The best-seat blowjob slut rule is listed in the blowjob slut eligibility rules.
 
+bird heartbeat tattoo is a body tattoo. The tattoo-title of bird heartbeat tattoo is "bird heartbeat".
+Figure of bird heartbeat tattoo is the file "Items/Tats/tattoo202.jpg".
+To decide which figure-name is the examine-image of (T - bird heartbeat tattoo):
+	decide on figure of bird heartbeat tattoo.
+Definition: bird heartbeat tattoo is eligible:
+	if the noun is bird themed or the noun is heart themed, decide yes;
+	decide no.
+To say tattoo-desc of (T - bird heartbeat tattoo):
+	say "A blue bird soars underneath your left breast, leaving a trail of a heartbeat.".
+To decide which object is the concealer of (T - bird heartbeat tattoo):
+	decide on a random worn actually dense belly covering clothing.
+To decide which object is the at least partial concealer of (T - bird heartbeat tattoo):
+	if T is listed in the armUses of arms, decide on arms;
+	decide on a random worn not-see-through belly covering clothing.
+To decide which number is the dexterity-influence of (T - bird heartbeat tattoo):
+	decide on 1.
+To decide which number is the sex-addiction-influence of (T - bird heartbeat tattoo):
+	decide on 1.
+Definition: bird heartbeat tattoo is heart themed: decide yes.
+Definition: bird heartbeat tattoo is bird themed: decide yes.
+
 bird kitty tattoo is a body tattoo. The tattoo-title of bird kitty tattoo is "bird and kitty".
 Figure of bird kitty tattoo is the file "Items/Tats/tattoo59.jpg".
 To decide which figure-name is the examine-image of (T - bird kitty tattoo):
@@ -412,6 +433,8 @@ To decide which number is the delicateness-influence of (C - bitch tattoo):
 	decide on -1.
 To decide which number is the humiliation-influence of (O - bitch tattoo):
 	decide on -2.
+To decide which number is the charisma-influence of (O - bitch tattoo):
+	decide on -1.
 
 black cock only tattoo is a lower back tattoo. The tattoo-title of black cock only tattoo is "black cock only".
 Definition: black cock only tattoo is drawable:
@@ -502,6 +525,40 @@ Report going when the player is in the location of HotelScenery01:
 		now focused-thing is T;
 		if another-turn-flavour is "", now another-turn-flavour is "[if the player is in the location of HotelScenery01]The robotic arms slowly release you.[end if]";
 		now another-turn is 1.
+
+brain tattoo is an arm-tattoo. brain tattoo has a number called tattoo-state. The tattoo-title of brain tattoo is "brain".
+Figure of brain tattoo 0 is the file "Items/Tats/tattoo203a.jpg".
+Figure of brain tattoo 1 is the file "Items/Tats/tattoo203b.jpg".
+Figure of brain tattoo 2 is the file "Items/Tats/tattoo203c.jpg".
+To decide which figure-name is the examine-image of (T - brain tattoo):
+	if the tattoo-state of T is 2, decide on Figure of brain tattoo 2;
+	if the tattoo-state of T is 1, decide on Figure of brain tattoo 1;
+	decide on Figure of brain tattoo 0.
+Definition: brain tattoo is drawable:
+	if it is not worn and it is eligible, decide yes;
+	decide no.
+Definition: brain tattoo is eligible:
+	if the noun is book themed or the noun is brains vest top or the noun is giant-pencil, decide yes;
+	decide no.
+To say tattoo-desc of (T - brain tattoo):
+	say "There is a drawing of a brain inked on your left wrist[if the tattoo-state of T >= 1]. It now has a 'toggle on' icon next to it[end if][if the tattoo-state of T >= 2]. But now the 'toggle on' has been toggled off, and above it, there's a heart icon which has been toggled on[end if].".
+To decide which number is the intelligence-influence of (T - brain tattoo):
+	if the tattoo-state of T is 1, decide on 2;
+	if the tattoo-state of T is 2, decide on -2;
+	decide on 1.
+To decide which number is the sex-addiction-influence of (T - brain tattoo):
+	if the tattoo-state of T is 2, decide on 2;
+	decide on 0.
+A magic consequences rule (this is the brain tattoo consequences rule):
+	if the tattoo-state of brain tattoo is 0 and the player is getting lucky:
+		say "[bold type]The magic fizzles against your brain tattoo, and it transforms! [roman type]It now has a [']toggle on['] icon next to it, and you can feel it singificantly improving your intelligence! Wow! [GotLuckyFlav]";
+		increase the tattoo-state of brain tattoo by 1;
+		cutshow examine-image of brain tattoo for brain tattoo;
+	otherwise if the tattoo-state of brain tattoo is 1 and the player is getting very unlucky:
+		say "[bold type]The magic fizzles against your brain tattoo, and it transforms! [roman type]The 'toggle on' has been toggled off, and above it, there's a heart icon which has been toggled on. Instead of increasing your intelligence, it is reducing it! And it's also increasing your obsession with sex... [GotUnluckyFlav]";
+		increase the tattoo-state of brain tattoo by 1;
+		cutshow examine-image of brain tattoo for brain tattoo.
+
 
 brainless bimbo tattoo is a left-asscheek tattoo. The tattoo-title of brainless bimbo tattoo is "brainless bimbo".
 Definition: brainless bimbo tattoo is drawable: decide no.
@@ -635,6 +692,30 @@ The buttslut tattoo butt slut rule is listed in the butt slut eligibility rules.
 
 Book - C Tattoos
 
+card butt tattoo is a body tattoo. The tattoo-title of card butt tattoo is "card butt".
+Figure of card butt tattoo is the file "Items/Tats/tattoo206.jpg".
+To decide which figure-name is the examine-image of (T - card butt tattoo):
+	decide on figure of card butt tattoo.
+Definition: card butt tattoo is drawable:
+	if it is not worn and it is eligible, decide yes;
+	decide no.
+Definition: card butt tattoo is eligible:
+	if the noun is playing card themed or the noun is heart themed, decide yes;
+	decide no.
+To say tattoo-desc of (T - card butt tattoo):
+	say "An illustration of a woman's butt stuck inside an ace playing card, creating the illusion of an upside-down heart, is tattooed on your shoulder.".
+To decide which number is the luck-influence of (C - card butt tattoo):
+	decide on 4.
+To decide which object is the concealer of (T - card butt tattoo):
+	decide on a random worn actually dense arm covering clothing.
+To decide which object is the at least partial concealer of (T - card butt tattoo):
+	if T is listed in the armUses of arms, decide on arms;
+	decide on a random worn not-see-through arm covering clothing.
+To decide which number is the initial outrage of (T - card butt tattoo):
+	decide on 4.
+Definition: card butt tattoo is playing card themed: decide yes.
+Definition: card butt tattoo is heart themed: decide yes.
+
 change-self tattoo is an arm-tattoo. The tattoo-title of change-self tattoo is "can't change self".
 Understand "can't", "cant", "change", "change self" as change-self tattoo.
 To say tattoo-desc of (T - change-self tattoo):
@@ -752,7 +833,7 @@ Definition: cum-dump tattoo is eligible:
 	if the noun is heart themed or the noun is semen themed or the noun is flower themed, decide yes;
 	if the noun is clothing:
 		if the semen-soak of the noun > 0 or the total condoms of the noun > 0, decide yes;
-		if the noun is cum dump's undergarment or the noun is pregnancy themed or the noun is lycra-bodysuit or the noun is ringagged, decide yes;
+		if the noun is cum dump's undergarment or the noun is pregnancy themed or the noun is ringagged or the noun is meat-toilet-panties, decide yes;
 	decide no.
 To say tattoo-desc of (T - cum-dump tattoo):
 	say "The words 'Cum Dump' are inked in cursive script in the middle of a heart made of flowers, under your left [if the largeness of breasts > 1]breast[otherwise]nipple[end if].".
@@ -770,6 +851,31 @@ To decide which number is the initial outrage of (T - cum-dump tattoo):
 Definition: cum-dump tattoo is semen themed: decide yes.
 Definition: cum-dump tattoo is flower themed: decide yes.
 Definition: cum-dump tattoo is heart themed: decide yes.
+
+cumdump tattoo is a body tattoo. The tattoo-title of cumdump tattoo is "cum dump". Understand "cum", "dump" as cumdump tattoo.
+Definition: cumdump tattoo is drawable:
+	if it is not worn and diaper quest is 0 and (it is eligible or the class of the player is cumdumpster), decide yes;
+	decide no.
+Definition: cumdump tattoo is eligible:
+	if the noun is semen themed, decide yes;
+	if the noun is clothing:
+		if the semen-soak of the noun > 0 or the total condoms of the noun > 0, decide yes;
+		if the noun is cum dump's undergarment or the noun is pregnancy themed or the noun is ringagged or the noun is meat-toilet-panties or the noun is bitch top or the noun is bitch bottoms, decide yes;
+	decide no.
+To say tattoo-desc of (T - cumdump tattoo):
+	say "The word 'Cumdump' is written in dripping pink letters, on the back of your left shoulder.".
+To decide which number is the semen-addiction-influence of (C - cumdump tattoo):
+	decide on 2.
+To decide which number is the semen-taste-addiction-influence of (C - cumdump tattoo):
+	decide on 2.
+To decide which object is the concealer of (T - cumdump tattoo):
+	decide on a random worn actually dense arm covering clothing.
+To decide which object is the at least partial concealer of (T - cumdump tattoo):
+	if T is listed in the armUses of arms, decide on arms;
+	decide on a random worn not-see-through arm covering clothing.
+To decide which number is the initial outrage of (T - cumdump tattoo):
+	decide on 12.
+Definition: cumdump tattoo is semen themed: decide yes.
 
 cum dumpster lip tattoo is a body tattoo. The tattoo-title of cum dumpster lip tattoo is "cum dumpster lip".
 Definition: cum dumpster lip tattoo is drawable:
@@ -1204,6 +1310,50 @@ This is the fairy cheek tattoo oral slut rule:
 	if fairy-cheek tattoo is worn, increase the desirability of face by 10.
 The fairy cheek tattoo oral slut rule is listed in the blowjob slut eligibility rules.
 
+finger gun hearts tattoo is a body tattoo. The tattoo-title of finger gun hearts tattoo is "cum dump". Understand "cum", "dump" as finger gun hearts tattoo.
+Definition: finger gun hearts tattoo is drawable:
+	if it is not worn and it is eligible, decide yes;
+	decide no.
+Definition: finger gun hearts tattoo is eligible:
+	if the noun is heart themed, decide yes;
+	if the noun is magic pistol, decide yes;
+	decide no.
+Figure of finger gun hearts tattoo is the file "Items/Tats/tattoo201.jpg".
+To decide which figure-name is the examine-image of (T - finger gun hearts tattoo):
+	decide on figure of finger gun hearts tattoo.
+To say tattoo-desc of (T - finger gun hearts tattoo):
+	say "A finger gun shooting a series of lovehearts is inked on the back of your left shoulder. You can sense that your magic damage is slightly increased, but also using magic causes you to get aroused.".
+To decide which object is the concealer of (T - finger gun hearts tattoo):
+	decide on a random worn actually dense arm covering clothing.
+To decide which object is the at least partial concealer of (T - finger gun hearts tattoo):
+	if T is listed in the armUses of arms, decide on arms;
+	decide on a random worn not-see-through arm covering clothing.
+To decide which number is the initial outrage of (T - finger gun hearts tattoo):
+	decide on 12.
+Definition: finger gun hearts tattoo is heart themed: decide yes.
+Definition: finger gun hearts tattoo is magic themed: decide yes.
+A magic consequences rule (this is the finger gun hearts tattoo consequences rule):
+	say "As you use your magic, you become a bit more aroused!";
+	arouse 800.
+
+fire palm tattoo is a body tattoo. The tattoo-title of fire palm tattoo is "fire palm".
+Figure of fire palm tattoo is the file "Items/Tats/tattoo132.jpg".
+To decide which figure-name is the examine-image of (T - fire palm tattoo):
+	decide on figure of fire palm tattoo.
+Definition: fire palm tattoo is eligible:
+	if the noun is magic themed or the noun is zap ready equippable or the noun is bomb or the noun is fire themed, decide yes;
+	decide no.
+To say tattoo-desc of (T - fire palm tattoo):
+	say "A drawing of a burning fire is inked on your right palm. You sense that it will enhance the power of any attacks you make with a wand.".
+To decide which object is the concealer of (T - fire palm tattoo):
+	decide on a random worn actually dense finger covering clothing.
+To decide which object is the at least partial concealer of (T - fire palm tattoo):
+	if T is listed in the armUses of arms, decide on arms;
+	decide on a random worn not-see-through finger covering clothing.
+To decide which number is the initial outrage of (T - fire palm tattoo):
+	decide on 1.
+Definition: fire palm tattoo is magic themed: decide yes.
+
 flower ballerina tattoo is an arm-tattoo. The tattoo-title of flower ballerina tattoo is "flower ballerina".
 Figure of flower ballerina tattoo is the file "Items/Tats/tattoo58.jpg".
 To decide which figure-name is the examine-image of (T - flower ballerina tattoo):
@@ -1224,24 +1374,6 @@ To decide which number is the initial cringe of (T - flower ballerina tattoo):
 	decide on 5.
 Definition: flower ballerina tattoo is ballet related: decide yes.
 Definition: flower ballerina tattoo is flower themed: decide yes.
-
-fire palm tattoo is a body tattoo. The tattoo-title of fire palm tattoo is "fire palm".
-Figure of fire palm tattoo is the file "Items/Tats/tattoo132.jpg".
-To decide which figure-name is the examine-image of (T - fire palm tattoo):
-	decide on figure of fire palm tattoo.
-Definition: fire palm tattoo is eligible:
-	if the noun is magic themed or the noun is zap ready equippable or the noun is bomb or the noun is fire themed, decide yes;
-	decide no.
-To say tattoo-desc of (T - fire palm tattoo):
-	say "A drawing of a burning fire is inked on your right palm. You sense that it will enhance the power of any attacks you make with a wand.".
-To decide which object is the concealer of (T - fire palm tattoo):
-	decide on a random worn actually dense finger covering clothing.
-To decide which object is the at least partial concealer of (T - fire palm tattoo):
-	if T is listed in the armUses of arms, decide on arms;
-	decide on a random worn not-see-through finger covering clothing.
-To decide which number is the initial outrage of (T - fire palm tattoo):
-	decide on 1.
-Definition: fire palm tattoo is magic themed: decide yes.
 
 for deposit only tattoo is a crotch tattoo. The tattoo-title of for deposit only tattoo is "for deposit only".
 Definition: for deposit only tattoo is drawable:
@@ -1765,6 +1897,16 @@ This is the measurement tattoo pussy slut rule:
 	if measurement tattoo is worn, increase the desirability of vagina by 5.
 The measurement tattoo pussy slut rule is listed in the pussy slut eligibility rules.
 
+missfit tattoo is a belly-tattoo. The tattoo-title of missfit tattoo is "missfit".
+Definition: missfit tattoo is eligible:
+	if the noun is exercise themed, decide yes;
+	decide no.
+Figure of missfit tattoo is the file "Items/Tats/tattoo204.jpg".
+To decide which figure-name is the examine-image of (T - missfit tattoo):
+	decide on figure of missfit tattoo.
+To say tattoo-desc of (T - missfit tattoo):
+	say "The word 'MISSFIT' is tattooed in red and orange letters below your chest. You feel like your endurance is better than normal.".
+
 mushbutt tattoo is a chest tattoo. The tattoo-title of mushbutt tattoo is "mushbutt".
 Definition: mushbutt tattoo is drawable: decide no.
 To say tattoo-desc of (T - mushbutt tattoo):
@@ -1964,6 +2106,22 @@ To decide which number is the initial outrage of (T - overcome tattoo):
 	decide on 3.
 
 Book - P Tattoos
+
+pamper-me tattoo is a crotch tattoo. The tattoo-title of pamper-me tattoo is "pamper me". Understand "pamper", "pamper me" as pamper-me tattoo.
+Figure of pamper-me tattoo is the file "Items/Tats/tattoo207.jpg".
+To decide which figure-name is the examine-image of (T - pamper-me tattoo):
+	decide on figure of pamper-me tattoo.
+Definition: pamper-me tattoo is eligible:
+	if the noun is diaper, decide yes;
+	if the noun is clothing and the charisma-influence of the noun > 0 and the noun is not charisma-influencing, decide yes;
+	decide no.
+To say tattoo-desc of (T - pamper-me tattoo):
+	say "The words 'pamper me' are tattooed above your crotch.".
+To decide which number is the diaper-addiction-influence of (T - pamper-me tattoo):
+	if diaper lover > 0, decide on 1;
+	decide on 0.
+To decide which number is the charisma-influence of (T - pamper-me tattoo):
+	decide on 2.
 
 paw print tattoo is an arm-tattoo. The tattoo-title of paw print tattoo is "paw print".
 Figure of paw print tattoo is the file "Items/Tats/tattoo60.jpg".
@@ -2541,12 +2699,18 @@ Definition: sissy cumslut tattoo is semen themed: decide yes.
 Definition: sissy cumslut tattoo is sissifying: decide yes.
 Definition: sissy cumslut tattoo is drawable: decide no. [appears from game effect]
 To say tattoo-desc of (T - sissy cumslut tattoo):
-	say "The words 'Sissy Cumslut' are tattooed in large letters above your crotch[if there is a worn chastity cage]. You can sense it's preventing you from removing your chastity cage[end if].".
+	say "The words 'Sissy Cumslut' are tattooed in large letters above your crotch[if there is a worn chastity cage]. You can sense it's preventing you from removing your chastity cage, and making sure that it shrinks in line with your [player-penis][end if].".
 To decide which number is the initial outrage of (T - sissy cumslut tattoo):
 	decide on 8.
 Definition: sissy cumslut tattoo (called C) is removal-blocking:
 	if wearing-target is a worn chastity bond, decide yes;
 	decide no.
+To compute school periodic effect of (C - sissy cumslut tattoo):
+	compute periodic effect of C.
+To compute periodic effect of (C - sissy cumslut tattoo):
+	if the player is not possessing a penis and the player is possessing a vagina:
+		say "[BigNameDesc of C] vanishes from you skin!";
+		destroy C.
 
 slimecock tattoo is a body tattoo. The tattoo-title of slimecock tattoo is "slimy cock". Understand "slimy" as slimecock tattoo.
 Definition: slimecock tattoo is drawable:
@@ -3314,6 +3478,27 @@ This is the womb diagram tattoo pussy slut rule:
 The womb diagram tattoo pussy slut rule is listed in the pussy slut eligibility rules.
 Definition: womb diagram tattoo is vagina themed: decide yes.
 Definition: womb diagram tattoo is pregnancy themed: decide yes.
+
+womb diagram spade tattoo is a crotch tattoo. The tattoo-title of womb diagram spade tattoo is "womb diagram spade".
+Definition: womb diagram spade tattoo is drawable:
+	if there is a worn crotch tattoo, decide no;
+	if diaper quest is 1, decide no;
+	decide yes.
+Definition: womb diagram spade tattoo is eligible:
+	if the noun is pregnancy themed or the noun is vagina themed or the noun is interracial themed, decide yes;
+	decide no.
+To say tattoo-desc of (T - womb diagram spade tattoo):
+	say "A huge drawing of the female's reproductive system is tattooed above your [vagina]. It has spades where the ovaries would be[if the player is possessing a vagina and pregnancy fetish > 0]. You can feel it making you even more fertile than usual, and encouraging lovers to use your main breeding hole[otherwise if the player is possessing a vagina]. You can feel it encouraging lovers to use your [vagina][end if].".
+To compute inking effect of (T - womb diagram spade tattoo):
+	increase the pregnancy rate of the player by 1.
+This is the womb diagram spade tattoo pussy slut rule:
+	if womb diagram spade tattoo is worn and the player is possessing a vagina, increase the desirability of vagina by 5.
+The womb diagram spade tattoo pussy slut rule is listed in the pussy slut eligibility rules.
+Definition: womb diagram spade tattoo is vagina themed: decide yes.
+Definition: womb diagram spade tattoo is pregnancy themed: decide yes.
+Definition: womb diagram spade tattoo is interracial themed: decide yes.
+Definition: womb diagram spade tattoo is playing card themed: decide yes.
+Definition: womb diagram spade tattoo is heart themed: decide yes.
 
 womb heart tattoo is a crotch tattoo. The tattoo-title of womb heart tattoo is "womb heart".
 To say tattoo-desc of (T - womb heart tattoo):

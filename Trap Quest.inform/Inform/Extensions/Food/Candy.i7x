@@ -23,16 +23,18 @@ Definition: a candy (called C) is standard tier:
 	if C is low tier, decide no;
 	decide yes.
 
-Definition: a candy (called C) is low tier:
-	decide no.
+Definition: a candy is low tier: decide no.
 
-Definition: a candy (called C) is top tier:
-	decide no.
+Definition: a candy is top tier: decide no.
 
-To decide which number is the tradability of (C - a candy):
-	if C is low tier, decide on 1;
-	if C is top tier, decide on 9;
-	decide on 3.
+A game universe initialisation rule:
+	repeat with C running through candy:
+		if C is low tier:
+			now the tradability of C is 1;
+		otherwise if C is top tier:
+			now the tradability of C is 9;
+		otherwise:
+			now the tradability of C is 3.
 
 Carry out TQeating candy:
 	allocate 6 seconds;
@@ -361,6 +363,10 @@ Definition: golden-creme-egg is top tier: decide yes.
 
 To decide which figure-name is the examine-image of (F - golden-creme-egg):
 	decide on figure of golden-creme-egg.
+
+To decide which number is the bartering value of (T - golden-creme-egg) for (M - a monster):
+	if M is intelligent and M is human, decide on 6;
+	decide on 0.
 
 creme-egg-timer is a number that varies.
 

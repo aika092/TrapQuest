@@ -54,7 +54,7 @@ Definition: white-monokini is white themed: decide yes.
 
 Part 2 - Green Monokini
 
-green monokini is a monokini. green monokini is very low cut. The text-shortcut of green monokini is "gmk". Understand "onepiece", "swimsuit" as green monokini.
+green monokini is a normal-monokini. green monokini is very low cut. The text-shortcut of green monokini is "gmk". Understand "onepiece", "swimsuit" as green monokini.
 
 Figure of green monokini is the file "Items/Clothes/Upper/Swimming/Monokinis/monokini1.png".
 
@@ -74,7 +74,7 @@ To say MediumDesc of (C - green monokini):
 
 Part 3 - Navy Monokini
 
-navy-monokini is a monokini. The text-shortcut of navy-monokini is "nvm".
+navy-monokini is a normal-monokini. The text-shortcut of navy-monokini is "nvm".
 
 Understand "navy", "onepiece", "swimsuit" as navy-monokini.
 
@@ -101,7 +101,7 @@ Definition: navy-monokini is blue themed: decide yes.
 
 Part 4 - Lolita Monokini
 
-lolita-monokini is a monokini. lolita-monokini is not-top-displacable.  The text-shortcut of lolita-monokini is "fsm".
+lolita-monokini is a normal-monokini. lolita-monokini is not-top-displacable.  The text-shortcut of lolita-monokini is "fsm".
 
 Understand "frilly", "lolita", "fashion", "lolita-fashion" as lolita-monokini.
 
@@ -133,7 +133,7 @@ Definition: lolita-monokini is sissifying: decide yes.
 
 Part 5 - Turtle Swimsuit
 
-turtle-swimsuit is a monokini. turtle-swimsuit is transformation-rare. turtle-swimsuit is not-top-displacable. The text-shortcut of turtle-swimsuit is "tsm".
+turtle-swimsuit is a normal-monokini. turtle-swimsuit is transformation-rare. turtle-swimsuit is not-top-displacable. The text-shortcut of turtle-swimsuit is "tsm".
 
 Understand "frilly", "turtle", "babygirl" as turtle-swimsuit.
 

@@ -65,7 +65,7 @@ To say MediumDesc of (C - purple-pom-pom):
 	say "pair of purple pom-poms".
 
 To decide which object is the unique-upgrade-target of (C - purple-pom-pom):
-	if the class of the player is cumdumpster, decide on condom-pom-pom;
+	if the class of the player is condom collector, decide on condom-pom-pom;
 	decide on nothing.
 
 Definition: purple-pom-pom is transformation-protected:
@@ -76,7 +76,7 @@ Definition: purple-pom-pom is condom pinnable: decide yes.
 To compute periodic effect of (C - purple-pom-pom):
 	if the used condoms of C > 0:
 		say "[bold type]Your [MediumDesc of C] reacts to having a used condom pinned to it![roman type] ";
-		now the used condoms of C is 0;
+		UsedCondomWipe C;
 		now the empty condoms of C is 0;
 		transform C into condom-pom-pom.
 

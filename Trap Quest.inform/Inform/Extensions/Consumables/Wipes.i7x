@@ -1,6 +1,6 @@
 Wipes by Consumables begins here.
 
-A pocketwipes is a kind of collectible. There are 3 pocketwipes. The printed name of pocketwipes is "[TQlink of item described]pack of pocketwipes[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of pocketwipes is "[TQlink of item described]packs of pocketwipes[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of pocketwipes is "pkw". Understand "pack", "pack of", "wipes" as pocketwipes.
+A pocketwipes is a kind of collectible. There are 5 pocketwipes. The printed name of pocketwipes is "[TQlink of item described]pack of pocketwipes[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of pocketwipes is "[TQlink of item described]packs of pocketwipes[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of pocketwipes is "pkw". Understand "pack", "pack of", "wipes" as pocketwipes.
 Figure of pocketwipes is the file "Items/Collectibles/pocketwipes1.png".
 
 To decide which figure-name is the examine-image of (C - a pocketwipes):
@@ -18,6 +18,7 @@ To decide which number is the cringe of (C - a pocketwipes):
 	decide on 3.
 To decide which number is the original price of (C - a pocketwipes):
 	decide on 1.
+Definition: a pocketwipes is container-eligible: decide yes.
 
 To decide which number is the crafting key of (C - a pocketwipes):
 	decide on 56.

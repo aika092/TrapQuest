@@ -398,7 +398,7 @@ To only destroy (C - clothing):
 	now the top-layer of C is 0;
 	now the mid-layer of C is 0;
 	now the bottom-layer of C is 0;
-	now the used condoms of C is 0;
+	UsedCondomWipe C;
 	now the empty condoms of C is 0;
 	repeat with K running through things inseminating C:
 		now K is not inseminating C;

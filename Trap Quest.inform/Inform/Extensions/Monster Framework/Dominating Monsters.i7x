@@ -410,6 +410,7 @@ Check dominating:
 	now player-fuckchoice is FUCK-NONE;
 	now player-fucking is DOMINANT-NONE;
 	if the noun is not monster, say "What would be the point of that?" instead;
+	if the player is broken, say "You consider yourself nothing but a pathetic worthless object. An object doesn't dominate or act on others." instead;
 	let vm be a random video-monitor in the location of the player;[too annoying to deal with, so it's not allowed.]
 	if vm is a video-monitor and the video-caller of vm is not the throne, say "You decide against it. You don't want to give your audience the wrong idea." instead;
 	if the noun is woman-player and the woman-status of woman-player is 80, compute PlayerWomanStoolFuck instead;
@@ -417,8 +418,13 @@ Check dominating:
 	##MG: Actually, this can't really cause detachment. Domination happens by defeating monsters, and while this function used to lead into domination, these days its only useful for bullying monsters that are already beaten.]
 	[if the latex-transformation of the player >= 6, say "You wouldn't feel anything from it, so you don't see the point." instead;]
 	if the player is prone, say "That would be a little hard to do from your knees." instead;
-	if the noun is sex-enslaved and the player is the donator, compute enslaved domination of the noun instead;
-	if the noun is caged and the player is the donator, compute caged domination of the noun instead;
+	if the player is the donator:
+		if the noun is sex-enslaved:
+			if the player is feeling submissive, say "Your nature is too submissive to do that." instead;
+			otherwise compute enslaved domination of the noun instead;
+		otherwise if the noun is caged:
+			if the player is feeling submissive, say "Your nature is too submissive to do that." instead;
+			otherwise compute caged domination of the noun instead;
 	say "You would need to defeat [NameDesc of the noun] first." instead;
 	unless the noun is interested, say "[BigNameDesc of the noun] isn't looking at you right now. Try getting their attention first." instead;
 	now player-fucker is face;[player-fucker is what is used to fuck the monster. Face is merely a default value]
@@ -826,8 +832,10 @@ To compute power bottom reward of (M - monster):
 		let condom-removed be 0;
 		repeat with C running through worn condom pinned clothing:
 			unless condom-removed is 1:
-				if the empty condoms of C > 1, decrease the empty condoms of C by 1;
-				otherwise decrease the used condoms of C by 1;
+				if the empty condoms of C > 1:
+					decrease the empty condoms of C by 1;
+				otherwise:
+					let M be the condomPop of C;
 				now condom-removed is 1;
 	DelicateDown 1;
 	now M is unwrapped.
@@ -1122,17 +1130,17 @@ To compute caged domination of (M - a monster):
 
 To compute default enslaved domination of (M - a monster):
 	say EnslavedDominationFlav of M;
-	if the raw delicateness of the player > the EnslavedDominationThreshold of M:
+	if the humiliation of the player < the EnslavedDominationThreshold of M:
 		say "You feel vaguely better about yourself, but mostly just a bit ambivalent.";
 	otherwise:
-		DelicateDown 1.
+		Dignify 1000.
 
 To compute default caged domination of (M - a monster):
 	say CagedDominationFlav of M;
-	if the raw delicateness of the player > the EnslavedDominationThreshold of M:
+	if the humiliation of the player < the EnslavedDominationThreshold of M:
 		say "You feel vaguely better about yourself, but mostly just a bit ambivalent.";
 	otherwise:
-		DelicateDown 1;
+		Dignify 1000;
 	FavourDown M.
 
 To say EnslavedDominationFlav of (M - a monster):
@@ -1142,6 +1150,6 @@ To say CagedDominationFlav of (M - a monster):
 	say "You rattle the bars of [NameDesc of M][']s cage. ".
 
 To decide which number is the EnslavedDominationThreshold of (M - a monster):
-	decide on a random number between 5 and 10.
+	decide on a random number between 6000 and 16000.
 
 Dominating Monsters ends here.

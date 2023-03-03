@@ -97,7 +97,7 @@ Check cleaning it with:[TODO: wiping into an open vessel]
 			say "You briefly consider wiping some of the [semen] off your [noun], but then you change your mind.[paragraph break][second custom style][one of]Sluts like me deserve to be covered in [semen]![or]I'm a dirty slut and I should look like one.[or][if the noun is face]How will guys know I'm an easy fuck if I don't have [semen] on my face?[otherwise]I didn't put it there, so I can't be sure I have permission to remove it.[end if][or]I deserve to have this on my [noun].[or]I like wearing it! No way am I wiping it off![or]I'm a whore, I deserve to be covered in it![or]A dirty whore like me should look the part![or]I'm a filthy slut, I deserve to be covered in [semen].[or]No way! I LIKE being dirty![or]I deserve to be covered in it. I'm a NAUGHTY girl![or]I'm supposed to wear it, I was naughty.[in random order][roman type][line break]" instead.
 
 Definition: a thing (called T) is acceptableCumRag:
-	if T is fluid immune clothing, decide no;
+	if T is clothing and T is not fluid vulnerable, decide no;
 	if T is arms and face is actually occupied or (semen is not craved and the semen taste addiction of the player < 8 and the thirst of the player < 4), decide no;
 	if the humiliation of the player > 28000 and the semen addiction of the player > 15 and ((semen is not craved and the player is not thirsty and the semen addiction of the player > the semen taste addiction of the player) or T is not arms), decide no;
 	decide yes.

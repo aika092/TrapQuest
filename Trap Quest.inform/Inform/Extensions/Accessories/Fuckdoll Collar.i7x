@@ -78,6 +78,7 @@ To decide which number is the bartering value of (T - heart-collar) for (M - an 
 
 Definition: heart-collar is transformation-protected: decide no.
 Definition: heart-collar is pink themed: decide yes.
+Definition: heart-collar is heart themed: decide yes.
 
 To decide which number is the initial outrage of (C - heart-collar):
 	if diaper quest is 0, decide on the initial cringe of C;
@@ -86,7 +87,44 @@ To decide which number is the initial cringe of (C - heart-collar):
 	decide on 4.
 
 To decide which object is the unique-upgrade-target of (C - heart-collar):
-	decide on spike-collar.
+	decide on sparkle-heart-collar.
+
+
+sparkle-heart-collar is a submissive collar. sparkle-heart-collar is leather. The printed name of sparkle-heart-collar is "[clothing-title-before]furry heart collar[clothing-title-after]". The text-shortcut of sparkle-heart-collar is "hrtc". Understand "furry", "heart", "collar" as sparkle-heart-collar.
+
+Figure of sparkle heart collar is the file "Items/Accessories/Neck/collar10.png".
+
+To decide which figure-name is clothing-image of (C - sparkle-heart-collar):
+	decide on figure of sparkle heart collar.
+
+To say ClothingDesc of (C - sparkle-heart-collar):
+	say "This pink leather collar has a metal heart at the front. It also has star shapes and pink fur decorating the rest of the collar.".
+
+To say ShortDesc of (C - sparkle-heart-collar):
+	say "heart collar".
+To say MediumDesc of (C - sparkle-heart-collar):
+	say "furry heart collar".
+
+To decide which number is the bartering value of (T - sparkle-heart-collar) for (M - matron):
+	decide on 2.
+To decide which number is the bartering value of (T - sparkle-heart-collar) for (M - an adult baby slave):
+	decide on 2.
+
+Definition: sparkle-heart-collar is transformation-protected: decide no.
+Definition: sparkle-heart-collar is pink themed: decide yes.
+Definition: sparkle-heart-collar is star themed: decide yes.
+Definition: sparkle-heart-collar is heart themed: decide yes.
+
+To decide which number is the initial outrage of (C - sparkle-heart-collar):
+	if diaper quest is 0, decide on the initial cringe of C;
+	decide on 0.
+To decide which number is the initial cringe of (C - sparkle-heart-collar):
+	decide on 7.
+
+To decide which object is the unique-upgrade-target of (C - sparkle-heart-collar):
+	if diaper quest is 0, decide on fuckdoll collar;
+	decide on nothing.
+
 
 
 spike-collar is a submissive collar. spike-collar is leather. The printed name of spike-collar is "[clothing-title-before]spike collar[clothing-title-after]". The text-shortcut of spike-collar is "spkc". Understand "spike", "collar" as spike-collar.

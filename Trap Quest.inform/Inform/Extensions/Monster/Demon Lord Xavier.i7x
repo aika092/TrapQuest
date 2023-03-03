@@ -549,6 +549,10 @@ To compute angry punishment of (M - demon lord):
 			say "[speech style of M]'INSOLENT MORTAL! YOU WOULD DARE DEFY AN ORDER FROM ME?! YOU WILL REGRET THIS DECISION, I ASSURE YOU.'[roman type][line break][BigNameDesc of M] smacks you with [his of M] tail, sending you flying into the nearby wall with a sickening crunch! The pain is worse than anything you've ever felt before.";
 			PainUp 40.
 
+Definition: demon lord is willing to let go: decide no.
+To say FriendlySexReleaseRefusalSpeech of (M - demon lord):
+	say "[speech style of M]'HAHAHA, YOU MISUNDERSTAND THE TERMS OF OUR BOND!'[roman type][line break]".
+
 Section 2 - DQ
 
 Definition: demon lord is willing to spank: decide yes.

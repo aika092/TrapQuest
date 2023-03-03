@@ -177,8 +177,15 @@ meat-toilet-panties is a crotchless-panties. meat-toilet-panties is unique. The 
 Definition: meat-toilet-panties is class-relevant:
 	if the class of the player is human toilet or the class of the player is cumdumpster, decide yes;
 	decide no.
+To compute class set up of (C - meat-toilet-panties):
+	follow the player class rules;
+	if watersports fetish is 1 and the class of the player is not human toilet, now C is crotch-ripped;
+	otherwise now C is crotch-intact.
+Definition: meat-toilet-panties is removable:
+	if the class of the player is human toilet and the class of the player is cumdumpster, decide no;
+	decide yes.
 To decide which number is the initial armour of (C - meat-toilet-panties):
-	decide on 9.
+	decide on 29.
 
 Figure of meat toilet panties closed is the file "Items/Clothes/Lower/Underwear/Skimpy/Crotchless/crotchless8a.png".
 Figure of meat toilet panties ripped is the file "Items/Clothes/Lower/Underwear/Skimpy/Crotchless/crotchless8b.png".
@@ -199,7 +206,7 @@ To compute SelfExamineDesc of (K - meat-toilet-panties):
 	say "A pair of meat toilet panties sits on your [ShortDesc of hips]. ";
 
 To say ClothingDesc of (K - meat-toilet-panties):
-	say "This white pair of crotchless panties has a toilet seat in front of the crotch, and the words 'MEAT TOILET' printed above. [if K is crotch-intact]As long as it doesn't open up, you'll be nicely protected[otherwise if K is crotch-ripped]The lid has been ripped off, so now there's just a permanent open seat surrounding your [player-crotch][otherwise]It's currently open, exposing your [player-crotch] to the world[end if].".
+	say "This white pair of crotchless panties has a toilet seat in front of the crotch, and the words 'MEAT TOILET' printed above. [if K is crotch-intact]As long as it doesn't open up, you'll be nicely protected[otherwise if K is crotch-ripped]The lid is missing, so there's just a permanent open seat surrounding your [player-crotch][otherwise]It's currently open, exposing your [player-crotch] to the world[end if].".
 
 To decide which number is the initial outrage of (C - meat-toilet-panties):
 	decide on 8.
@@ -213,6 +220,9 @@ To compute periodic effect of (C - meat-toilet-panties):
 			now C is crotch-exposing;
 		otherwise if C is crotch-exposing and the stomach-urine of the player > 0 and the number of embodied things penetrating a fuckhole is 0 and the number of worn tail plugs is 0:
 			say "[bold type]Your meat toilet panties react to the [urine] in your stomach, and the lid of the toilet seat closes, protecting your [player-crotch]! For now...[roman type][line break]";
+			now C is crotch-intact;
+		otherwise if C is crotch-ripped and the class of the player is human toilet and the stomach-urine of the player > 0 and the number of embodied things penetrating a fuckhole is 0 and the number of worn tail plugs is 0:
+			say "[bold type]Your meat toilet panties react to the [urine] in your stomach, and a new lid of the toilet seat appears, protecting your [player-crotch]! For now...[roman type][line break]";
 			now C is crotch-intact;
 	otherwise:
 		if C is crotch-intact and the stomach-semen of the player is 0:

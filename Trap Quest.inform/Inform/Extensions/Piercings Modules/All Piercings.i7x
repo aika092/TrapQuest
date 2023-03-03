@@ -156,46 +156,47 @@ To say ShortDesc of (C - sissy-staple):
 	say "sissy staple".
 
 To compute periodic effect of (P - sissy-staple):
-	unless there is worn ass plugging clothing:
-		increase the module-charge of P by 3;
-	otherwise:
-		decrease the module-charge of P by 1;
-	unless there is a worn chastity bond:
-		increase the module-charge of P by 3;
-	otherwise:
-		decrease the module-charge of P by 1;
-	if the module-charge of P > 100:
-		now the module-charge of P is 0;
-		say "You feel a sharp pain inside, followed by radiating warmth as your [asshole] tingles. The [ShortDesc of P] has dumped yet another load of [if the bimbo of the player < 10]drugs[otherwise][second custom style]yummy sissy juice[roman type][end if] right into your prostate. You feel your [sissy-penis] start to actively dribble precum as your prostate kicks into overdrive. Something about this process is too much for your poor [sissy-penis], [if the size of penis > min penis size]and you can see it visibily shrink[otherwise]and you can see it just twitch and leak. The [ShortDesc of P] coats your [asshole] with lubricant, encouraging you to go find a [manly-penis] to fuck. You coo softly[end if] as you sink deep into submissive fantisies.[roman type][line break]";
-		say "[second custom style][one of]GOOD SISSIES HAVE TINY CLITTIES[line break]GOOD SISSIES STAY LOCKED AWAY[or]HEAD DOWN ASS UP[line break]THAT'S HOW SISSIES LIKE TO FUCK[or]KEEP ME LOCKED AWAY[line break]CUM IN MY MOUTH[or]I'M A PATHETIC SUBMISSIVE SLUT[line break]I NEED AN ALPHA'S FAT DICK IN MY ASSHOLE TO CUM[or]MY TINY WILLY IS USELESS[line break]I WAS BORN TO SERVE SUPERIOR COCKS[or]THE ONLY THING BETTER THAN A COCK[line break]IS TWO COCKS INSIDE OF ME[or]CHASTITY CAGES KEEP ME FROM HAVING NAUGHTY ERECTIONS[line break]MY USELESS SISSY CUMMIES SHOULD STAY INSIDE MY TINY BALLS[in random order][roman type][line break]";
-		if the size of penis > min penis size:
-			PenisDown 1;
-			SilentlyDelicateUp 1;
+	if the player is possessing a penis:
+		if there is worn ass plugging clothing:
+			decrease the module-charge of P by 1;
 		otherwise:
+			increase the module-charge of P by 2;
+		if there is a worn chastity bond:
+			decrease the module-charge of P by 1;
+		otherwise:
+			increase the module-charge of P by 2;
+		if the module-charge of P > 100: [you're not pluged and caged]
+			now the module-charge of P is 0;
+			say "You feel a sharp pain inside, followed by radiating warmth as your [asshole] tingles. The [ShortDesc of P] has dumped yet another load of [if the bimbo of the player < 10]drugs[otherwise][second custom style]yummy sissy juice[roman type][end if] right into your prostate. You feel your [sissy-penis] start to actively dribble precum as your prostate kicks into overdrive. Something about this process is too much for your poor [sissy-penis], [if the size of penis > min penis size]and you can see it visibily shrink[otherwise]and you can see it just twitch and leak. The [ShortDesc of P] coats your [asshole] with lubricant, encouraging you to go find a [manly-penis] to fuck. You coo softly[end if] as you sink deep into submissive fantisies.[roman type][line break]";
+			say "[second custom style][one of]GOOD SISSIES HAVE TINY CLITTIES[line break]GOOD SISSIES STAY LOCKED AWAY[or]HEAD DOWN ASS UP[line break]THAT'S HOW SISSIES LIKE TO FUCK[or]KEEP ME LOCKED AWAY[line break]CUM IN MY MOUTH[or]I'M A PATHETIC SUBMISSIVE SLUT[line break]I NEED AN ALPHA'S FAT DICK IN MY ASSHOLE TO CUM[or]MY TINY WILLY IS USELESS[line break]I WAS BORN TO SERVE SUPERIOR COCKS[or]THE ONLY THING BETTER THAN A COCK[line break]IS TWO COCKS INSIDE OF ME[or]CHASTITY CAGES KEEP ME FROM HAVING NAUGHTY ERECTIONS[line break]MY USELESS SISSY CUMMIES SHOULD STAY INSIDE MY TINY BALLS[in random order][roman type][line break]";
+			if the size of penis > min penis size:
+				PenisDown 1;
+				SilentlyDelicateUp 1;
+			otherwise:
+				let L be a random lubricant;
+				now L is covering the asshole;
+				now the timer of L is a random number between 300 and 600;
+			if the player is getting unlucky:
+				say "You feel your [ShortDesc of P] release another drug that makes your hips swell and your [asshole] pucker for deep breeding from [manly-penis].";
+				HipUp 1;
+				AnalSexAddictUp 1;
+				say GotUnluckyFlav;
+			passively stimulate asshole from P times 5;
+		if the module-charge of P < -100: [you have been plugged and caged]
+			now the module-charge of P is 0;
+			say "You feel a sharp pain inside, followed by radiating warmth as your [asshole] tingles. The [ShortDesc of P] has dumped yet another load of [if the bimbo of the player < 10]drugs[otherwise][second custom style]yummy sissy juice[roman type][end if] right into your prostate. You feel your [sissy-penis] start to actively dribble precum as your prostate kicks into overdrive. Something about this process is too much for your poor [sissy-penis], and you can see it twitch and leak. The [ShortDesc of P] coats your [asshole] with lubricant, encouraging you to go find a [manly-penis] to fuck. [if the number of worn rigid actually nipple covering clothing is 0 and the player is able to use manual dexterity]You pinch your nipples as you sink deep into submissive fantisies.[end if][roman type][line break]";
+			say "[second custom style][one of]GOOD SISSIES HAVE TINY CLITTIES[line break]GOOD SISSIES STAY LOCKED AWAY[or]HEAD DOWN ASS UP[line break]THAT'S HOW SISSIES LIKE TO FUCK[or]KEEP ME LOCKED AWAY[line break]CUM IN MY MOUTH[or]I'M A PATHETIC SUBMISSIVE SLUT[line break]I NEED AN ALPHA'S FAT DICK IN MY ASSHOLE TO CUM[or]MY TINY WILLY IS USELESS[line break]I WAS BORN TO SERVE SUPERIOR COCKS[or]THE ONLY THING BETTER THAN A COCK[line break]IS TWO COCKS INSIDE OF ME[or]CHASTITY CAGES KEEP ME FROM HAVING NAUGHTY ERECTIONS[line break]MY USELESS SISSY CUMMIES SHOULD STAY INSIDE MY TINY BALLS[in random order][roman type][line break]";
+			SilentlyDelicateUp 1;
+			if a random number between 1 and 3 > 1 and the openness of asshole > a random number between 2 and 6:
+				say "You feel the [ShortDesc of P] tighten your [asshole] so you can better squeeze [second custom style][semen][roman type] from fat [manly-penis]![roman type][line break]";
+				AssClose 1;
+			otherwise:
+				say "You feel the [ShortDesc of P] is slowly training your mind and body to be a better fuckdoll. You feel more flexible, but also more submissive![roman type][line break]";
+				DexUp 1;
 			let L be a random lubricant;
-			now L is covering the asshole;
+			now L is covering asshole;
 			now the timer of L is a random number between 300 and 600;
-		if the player is getting unlucky:
-			say "You feel your [ShortDesc of P] release another drug that makes your hips swell and your [asshole] pucker for deep breeding from [manly-penis].";
-			HipUp 1;
-			AnalSexAddictUp 1;
-			say GotUnluckyFlav;
-		passively stimulate asshole from P times 5;
-	if the module-charge of P < -50:
-		now the module-charge of P is 0;
-		say "You feel a sharp pain inside, followed by radiating warmth as your [asshole] tingles. The [ShortDesc of P] has dumped yet another load of [if the bimbo of the player < 10]drugs[otherwise][second custom style]yummy sissy juice[roman type][end if] right into your prostate. You feel your [sissy-penis] start to actively dribble precum as your prostate kicks into overdrive. Something about this process is too much for your poor [sissy-penis], and you can see it twitch and leak. The [ShortDesc of P] coats your [asshole] with lubricant, encouraging you to go find a [manly-penis] to fuck. [if the number of worn rigid actually nipple covering clothing is 0 and the player is able to use manual dexterity]You pinch your nipples as you sink deep into submissive fantisies.[end if][roman type][line break]";
-		say "[second custom style][one of]GOOD SISSIES HAVE TINY CLITTIES[line break]GOOD SISSIES STAY LOCKED AWAY[or]HEAD DOWN ASS UP[line break]THAT'S HOW SISSIES LIKE TO FUCK[or]KEEP ME LOCKED AWAY[line break]CUM IN MY MOUTH[or]I'M A PATHETIC SUBMISSIVE SLUT[line break]I NEED AN ALPHA'S FAT DICK IN MY ASSHOLE TO CUM[or]MY TINY WILLY IS USELESS[line break]I WAS BORN TO SERVE SUPERIOR COCKS[or]THE ONLY THING BETTER THAN A COCK[line break]IS TWO COCKS INSIDE OF ME[or]CHASTITY CAGES KEEP ME FROM HAVING NAUGHTY ERECTIONS[line break]MY USELESS SISSY CUMMIES SHOULD STAY INSIDE MY TINY BALLS[in random order][roman type][line break]";
-		if a random number between 1 and 3 is 1:
-			say "You feel the [ShortDesc of P] is slowly training your mind and body to be a better fuckdoll. You feel more flexible, but also more submissive![roman type][line break]";
-			SilentlyDelicateUp 1;
-			DexUp 1;
-		otherwise:
-			say "You feel the [ShortDesc of P] tighten your [asshole] so you can better squeeze [second custom style][semen][roman type] from fat [manly-penis]![roman type][line break]";
-			AssClose 1;
-		let L be a random lubricant;
-		now L is covering asshole;
-		now the timer of L is a random number between 300 and 600;
-		passively stimulate asshole from P times 1.
+			passively stimulate asshole from P times 1.
 
 
 
@@ -516,21 +517,39 @@ The transform-resistance of a pair of earrings is usually 0.
 Definition: a pair of earrings is toilet themed:
 	if it is cursed and watersports fetish is 1, decide yes;
 	decide no.
+This is the earrings piss slut rule:
+	if there is a worn toilet themed pair of earrings, increase the desirability of belly by 8.
+The earrings piss slut rule is listed in the piss slut eligibility rules.
 Definition: a pair of earrings is interracial themed:
 	if it is cursed and watersports fetish is 0, decide yes;
 	decide no.
+To decide which number is the bbc-addiction-influence of (C - a pair of earrings):
+	if C is interracial themed, decide on 1;
+	decide on 0.
 Definition: a pair of earrings is oral sex themed:
 	if it is cursed and watersports fetish is 0 and interracial fetish is 0 and the variation of it < 3, decide yes;
 	decide no.
+To decide which number is the oral-sex-addiction-influence of (C - a pair of earrings):
+	if C is oral sex themed, decide on 1;
+	decide on 0.
 Definition: a pair of earrings is anal sex themed:
 	if it is cursed and watersports fetish is 0 and interracial fetish is 0 and the variation of it is not 2, decide yes;
 	decide no.
+To decide which number is the anal-sex-addiction-influence of (C - a pair of earrings):
+	if C is anal sex themed, decide on 1;
+	decide on 0.
 Definition: a pair of earrings is penis themed:
 	if it is bland or (it is cursed and watersports fetish is 0 and interracial fetish is 0 and the variation of it is not 1), decide yes;
 	decide no.
+To decide which number is the semen-addiction-influence of (C - a pair of earrings):
+	if C is penis themed, decide on 1;
+	decide on 0.
 Definition: a pair of earrings is vagina themed:
 	if it is cursed and watersports fetish is 0 and interracial fetish is 0 and the variation of it is 1, decide yes;
 	decide no.
+To decide which number is the vaginal-sex-addiction-influence of (C - a pair of earrings):
+	if C is vagina themed, decide on 1;
+	decide on 0.
 Definition: a pair of earrings is white themed:
 	if it is cursed, decide yes;
 	decide no.

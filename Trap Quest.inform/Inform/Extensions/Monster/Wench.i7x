@@ -1854,7 +1854,7 @@ To compute anal sex of (M - QoS wench):
 		ruin asshole;
 	decrease the sex-length of M by 1;
 	if M is not friendly-fucking:
-		if refractoryperiod > 2:
+		if refractoryperiod >= maxrefractoryperiod:
 			say "[BigNameDesc of M] bites [his of M] lip and spanks your [AssDesc].[line break][speech style of M]'Did you cum nice and hard for my [LongDickDesc of M]? See hun, I told you that [BlackCock] is simply the best, just wait til I find you a real black [daddytitle of shopkeeper].'[roman type][line break]";
 			BBCAddictUp 1.
 
@@ -1892,31 +1892,30 @@ To compute (M - a QoS wench) demanding erection:
 		summon C uncursed;
 		compute M locking C with K;
 		say "[BigFuckerDesc of M] gives the head of your now caged [sissy-penis] a kiss before sauntering off.";
-		Bore M;
-	otherwise if the size of penis < 8 and condom fetish is 1:
-		if the face is not actually occupied:
-			say "[BigFuckerDesc of M] raises an eyebrow as your [player-penis] falls painfully short of the 8 inch mark.[line break][speech style of M]'Hun, you're small but not that small... yet. Tell you what sweetie, you suck all the thick fertile cum from this condom of my favourite bull and we can forget all about that little problem between your legs.'[roman type][line break][BigFuckerDesc of M] dangles the [second custom style]bulging purple condom[roman type] over your face whilst stroking your [sissy-penis]. [Big he of M] then tips the contents of the condom into [his of M] mouth, sucking it empty. You don't have much time to react before [BigFuckerDesc of M] kisses you deeply as [he of M] pumps your [sissy-penis] faster and faster. You [if the semen taste addiction of the player > 6]eagerly swallow down the [semen] as [he of M] force feeds it to you, blushing hard whilst cumswapping with [FuckerDesc of M].[otherwise]gag as [FuckerDesc of M] force feeds you a huge load of [semen]. [BigFuckerDesc of M] pinches your nose and out of desperation to breathe, you start swallowing down the thick load of cum.[end if] Once you've swallowed down all of the [semen], [FuckerDesc of M] pumps your [ShortDesc of penis] even faster until you cum![line break][roman type]";
-			penis orgasm shamefully;
-			StomachSemenUp 3;
-			say "[speech style of M]'Wow you clearly enjoyed that! Soon I'll take you to [daddytitle of shopkeeper] to give you a fresh load of [semen] all over your face. See you later babe.'[roman type][line break]";
-			Bore M;
+		bore M;
+	otherwise if the size of penis < 8 and face is not actually occupied:
+		say "[BigFuckerDesc of M] raises an eyebrow as your [player-penis] falls painfully short of the 8 inch mark.[line break][speech style of M]'Hun, you're small but not that small... yet. Tell you what sweetie, you suck all the thick fertile cum from this condom of my favourite bull and we can forget all about that little problem between your legs.'[roman type][line break][BigFuckerDesc of M] dangles the [second custom style]bulging purple condom[roman type] over your face whilst stroking your [sissy-penis]. [Big he of M] then tips the contents of the condom into [his of M] mouth, sucking it empty. You don't have much time to react before [BigFuckerDesc of M] kisses you deeply as [he of M] pumps your [sissy-penis] faster and faster. You [if the semen taste addiction of the player > 6]eagerly swallow down the [semen] as [he of M] force feeds it to you, blushing hard whilst cumswapping with [FuckerDesc of M].[otherwise]gag as [FuckerDesc of M] force feeds you a huge load of [semen]. [BigFuckerDesc of M] pinches your nose and out of desperation to breathe, you start swallowing down the thick load of cum.[end if] Once you've swallowed down all of the [semen], [FuckerDesc of M] pumps your [ShortDesc of penis] even faster until you cum![line break][roman type]";
+		penis orgasm shamefully;
+		StomachSemenUp 3;
+		say "[speech style of M]'Wow you clearly enjoyed that! Soon I'll take you to [daddytitle of shopkeeper] to give you a fresh load of [semen] all over your face. See you later babe.'[roman type][line break]";
+		bore M;
 	otherwise if the size of penis < 8 and the size of penis > min penis size:
-		say "[BigFuckerDesc of M] raises an eyebrow as your [sissy-penis] falls painfully short of the 8 inch mark.[line break][speech style of M] 'Hun, you're small but not that small... yet. Tell you what sweetie, since we all know you're destined to be a submissive slut anyway, let me help you along!'[roman type][line break][BigFuckerDesc of M] pulls out what looks to be a small tube of moisturiser from [his of M] handbag. [BigFuckerDesc of M] then rubs it all over your [sissy-penis]. It tingles plesently, but to your [horror the delicateness of the player] your [sissy-penis] starts to shrink![line break][speech style of M]'Better be careful hun, get too much smaller and I [if bondage protection < 2]will lock away that little worm forever[otherwise]will stretch out that little asshole with my big black strapon[end if]. See ya later hun.'[line break][roman type]";
+		say "[BigFuckerDesc of M] raises an eyebrow as your [sissy-penis] falls painfully short of the 8 inch mark.[line break][speech style of M]'Hun, you're small but not that small... yet. Tell you what sweetie, since we all know you're destined to be a submissive slut anyway, let me help you along!'[roman type][line break][BigFuckerDesc of M] pulls out what looks to be a small tube of moisturiser from [his of M] handbag. [BigFuckerDesc of M] then rubs it all over your [sissy-penis]. It tingles plesently, but to your [horror the delicateness of the player] your [sissy-penis] starts to shrink![line break][speech style of M]'Better be careful hun, get too much smaller and I [if bondage protection < 2]will lock away that little worm forever[otherwise]will stretch out that little asshole with my big black strapon[end if]. See ya later hun.'[line break][roman type]";
 		penisdown 1;
 		SilentlyDelicateUp 1;
-		Bore M;
+		bore M;
 	otherwise:
 		if condom of kings is worn and condom of kings is not cursed:
 			say "[BigFuckerDesc of M] starts to hungrily worship your [manly-penis].[line break][speech style of M]'How's my favourite stud going? Remember keep this on til you become at least 14 inches long. If you cum before then, it will just show you're not worthy of this juicy ass! Come see again me when you're even bigger...[line break][roman type]";
 			passively stimulate penis from M;
-			Bore M;
+			bore M;
 		otherwise if condom of kings is not worn:
 			let H be a random condom of kings;
 			say "[speech style of M]'Well not half bad there stud. Here baby let me give you something fit for a big [boy of the player] like you.'[roman type][line break][BigFuckerDesc of M] licks the head of your [manly-penis] and swallows you to the hilt before spitting on your [penis] like the nastiest kind of pornstar. [BigFuckerDesc of M] suddenly pulls out a purple condom, takes it between [his of M] lips rolls it down the shaft of your [manly-penis] before deepthroating you again![line break][speech style of M]'Now this is a magical condom hun, make sure you hold back like a real stud and it'll make you even bigger.'[roman type][line break]";
 			summon H;
 			passively stimulate penis from M;
 			say "[BigFuckerDesc of M], seemingly satisfied with [his of m]'s work, saunters off.";
-			Bore M;
+			bore M;
 		otherwise:
 			say "[BigFuckerDesc of M] giggles at the sad sight of your [sissy-penis].[line break][speech style of M]'Looks like you're a true submissive[if the player is gendered male] sissy[end if] slut after all. Don't worry hun, I will soon break you into all the pleasures that [BlackCock] can bring you!'[line break][roman type]";
 			anger M.
@@ -1950,8 +1949,8 @@ This is the QoS wench shares you with BBC rule:
 			check tiara-of-spades transformation;
 			if N is friendly or N is uninterested:
 				now the boredom of N is 0;
-				Anger N;
-				compute correct perception of N;
+				anger N;
+				check guaranteed perception of N;
 			bore M;
 			compute monstermotion of M;
 		otherwise:

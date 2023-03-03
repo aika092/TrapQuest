@@ -113,6 +113,7 @@ To ActualStomachSemenUp (X - a number):
 		say SemenEncounterFlav;
 		now cold turkey of semen is 0;
 		if the stomach-food of the player < 2, now the stomach-food of the player is 2; [Improves hunger]
+		if the semen volume of belly > 0, compute cumdumpsterification;
 	while X > 0:
 		increase the stomach-semen of the player by 1;
 		decrease X by 1;

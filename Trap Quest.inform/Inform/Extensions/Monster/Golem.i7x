@@ -78,7 +78,7 @@ The unique punishment rule of golem is usually the golem merging rule.
 This is the golem merging rule:
 	if the player is prone, say "You cringe on the ground as the creature approaches you. [if artificial enhancements fetish is 1]You realise [he of golem] isn't stopping as [he of golem] moves towards you, and finally presses up against you! [big his of golem] cold fluid body engulfs you for a terrible instant before suddenly vanishing! Your relief quickly turns to dread at wondering what [he of golem] might have done to you...[otherwise]The creature embraces you in its mismatched arms, and your body suddenly feels warm! A feeling of horrible dread comes over you all of a sudden and your vision blacks out for a moment. When you come to, you are alone.[end if][line break]";
 	otherwise say "[BigNameDesc of golem][']s cold fluid body engulfs you for a terrible instant before suddenly vanishing! Your relief quickly turns to dread at wondering what [he of golem] might have done to you...";
-	cutshow Figure of Wrangling Golem 3 for golem;
+	cutshow Figure of Wrangling Golem 3;
 	if artificial enhancements fetish is 1:
 		if rubber top hat is off-stage and rubber top hat is actually summonable:
 			say "You're now wearing a small pink latex top hat!";

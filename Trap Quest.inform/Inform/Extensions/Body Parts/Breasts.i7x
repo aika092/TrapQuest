@@ -28,6 +28,18 @@ Breasts has a number called previous largeness.
 Breasts has a number called real largeness.
 
 Breasts has a number called lactation rate.
+To decide which number is the actual lactation rate of (B - breasts): [this is what is used to work out how frequently a new unit of milk is created, by square rooting it]
+	let R be the lactation rate of breasts * 10;
+	repeat with C running through worn wearthing:
+		if C is milk production clothing:
+			increase R by 10;
+			if C is cursed, increase R by 10;
+			if C is blessed, decrease R by 5;
+		if C is maternity dress, increase R by 15;
+		if C is milking basque, increase R by 15;
+		if C is nintendolls-logo tattoo, increase R by 25;
+		if C is abyssal tattoo and the class of the player is cowgirl, increase R by 20;
+	decide on R.
 
 Breasts has a number called lactation count.
 
@@ -656,8 +668,8 @@ To say BreastFillDesc:
 		say "They are ballooned with a massive amount of air. ".
 
 To say BreastLactationRate:
-	let R be the lactation rate of breasts;
-	if R > 0, say "The [if R < 2]sporadic tingling[otherwise if R < 4]occasional itch[otherwise if R < 6]recurrent tickling[otherwise if R < 8]persistent prickling[otherwise]incessant throbbing[end if] in your [if the largeness of breasts < 5][one of]breasts[or]boobs[or]tits[in random order][otherwise][one of]titties[or]jugs[or]udders[in random order][end if] warns you when you're about to [if R < 3]leak a few drops of milk[otherwise if R < 5]squirt your next cup of cream[otherwise if R < 7]pour your next pint of dairy[otherwise if R < 9]start spraying quarts of moo juice[otherwise]gush another gallon of nipple nectar[end if]. ".
+	let R be the actual lactation rate of breasts;
+	if R > 0, say "The [if R < 20]sporadic tingling[otherwise if R < 40]occasional itch[otherwise if R < 60]recurrent tickling[otherwise if R < 80]persistent prickling[otherwise]incessant throbbing[end if] in your [if the largeness of breasts < 5][one of]breasts[or]boobs[or]tits[in random order][otherwise][one of]titties[or]jugs[or]udders[in random order][end if] constantly reminds you that they are [if R < 30]slowly creating milk[otherwise if R < 50]producing milk at a steady rate[otherwise if R < 70]rapidly generating large quantities of milk[otherwise if R < 90]producing milk at very rapid rates[otherwise if R < 10]building up a supply of milk at an insanely high speed[otherwise]producing milk as fast as most dairy farms[end if]. ".
 
 To say BreastWeight:
 	let W be the weight of breasts;
@@ -747,9 +759,17 @@ Definition: a person (called P) is overbusted:
 	if the largeness of breasts > Z, decide yes;
 	decide no.
 
+To CupBustUp (X - a number):
+	repeat with N running from 1 to X:
+		unless the player is a flatchested trap or diaper quest is 1 or there is an uncursed restricting salve covering breasts or the player is top heavy:
+			let B be the largeness of breasts;
+			while B <= the largeness of breasts:
+				BustUp 1.
+
 To Bustup (X - a number):
 	let B be the largeness of breasts;
 	if the player is a flatchested trap or diaper quest is 1, now X is 0;
+	let grownABit be false;
 	while X > 0:
 		decrease X by 1;
 		if there is an uncursed restricting salve covering breasts:
@@ -764,6 +784,7 @@ To Bustup (X - a number):
 			if the air volume of breasts < Z, now Z is the air volume of breasts;
 			increase the flesh volume of breasts by Z;
 			decrease the air volume of breasts by Z;
+			now grownABit is true;
 		otherwise if the player is top heavy and lactation fetish is 1 and the milk volume of breasts > the flesh volume of breasts:
 			let Z be 0;
 			if fast breast expansion is 0 and extreme proportions fetish is 0, now Z is 1;
@@ -774,6 +795,7 @@ To Bustup (X - a number):
 			increase the flesh volume of breasts by Z;
 			decrease the milk volume of breasts by Z;
 			MilkUp Z;
+			now grownABit is true;
 		otherwise if the player is not top heavy:
 			let Z be 0;
 			if fast breast expansion is 0 and extreme proportions fetish is 0, now Z is 1;
@@ -781,6 +803,7 @@ To Bustup (X - a number):
 			if fast breast expansion is 1 and extreme proportions fetish is 0, now Z is a random number from 1 to 2;
 			if fast breast expansion is 1 and extreme proportions fetish is 1, now Z is 2;
 			increase the flesh volume of breasts by Z;
+			now grownABit is true;
 		otherwise:
 			say "[one of]You feel your breasts try to grow, but apparently they can't get any bigger![or][or][or][or][or][in random order]";
 			now X is 0;
@@ -810,6 +833,8 @@ To Bustup (X - a number):
 		compute bra strain;
 		update appearance level;
 		progress quest of bust-up-quest;
+	otherwise if grownABit is true:
+		say "Your [if the largeness of breasts is 1]chest has[otherwise][BreastDesc] have[end if] swelled a little bit.";
 	if the player is overbusted, say "[one of][bold type]BustUp function has increased breasts to larger than max size. Please report bug with as much information as possible about the situation.[roman type][line break][or][stopping]".
 
 To Set Real Breast Size:
@@ -868,21 +893,26 @@ To Milkup (X - a number):
 	while X > 0:
 		decrease X by 1;
 		if the milk volume of breasts < the milk capacity of breasts:
+			if debuginfo > 1, say "[input-style]Breast milk [the milk volume of breasts] -> ";
 			2MilkUp; [This is the player's breasts silently filling up with milk.]
+			if debuginfo > 1, say "[input-style][the milk volume of breasts] | [the milk capacity of breasts][roman type][line break]";
 		otherwise if the player is top heavy and X is 1: [This is only done for the final unit of milk]
 			increase the milk volume of breasts by 1;
 			trigger lactation; [We have filled the player's breasts beyond legal capacity so we trigger lactation, which will empty some of it.]
 		otherwise if the player is top heavy:
 			increase the milk volume of breasts by 1; [When temporarily overfilling beyond legal capacity, we don't want to break any bras that are suddenly "too small" so we don't use 2MilkUp]
 		otherwise:
+			if debuginfo > 1, say "[input-style]Breast milk [the milk volume of breasts] -> ";
 			2Milkup; [We do this if the player's breast flesh is completely full of milk but the breasts are still allowed to grow.]
+			if debuginfo > 1, say "[input-style][the milk volume of breasts] | [the milk capacity of breasts] -> [roman type][line break]";
 			increase the flesh volume of breasts by 1;
+			if debuginfo > 1, say "[input-style][the milk capacity of breasts][roman type][line break]";
 			update appearance level;
 	if old-B < the largeness of breasts:
 		say "Your breasts are forced to grow into [ShortDesc of breasts] to contain all the milk!";
 		progress quest of bust-up-quest;
 		unless last-lactated-time - earnings < 60, trigger lactation; [Don't want to cause lactation super frequently]
-	if the milk volume of breasts >= the milk capacity of breasts and a random number between 1 and 2 is 1 and (the milk volume of breasts > 5 or the player is top heavy), say "[one of][variable custom style]I really need a [if the bimbo of the player > 5]good [end if]milking![roman type][line break][or][or][cycling]".
+	if the milk volume of breasts >= the milk capacity of breasts and (the milk volume of breasts > 5 or the player is top heavy), say "[one of][variable custom style]I really need a [if the bimbo of the player > 5]good [end if]milking![roman type][line break][or][or][cycling]".
 
 To 2Milkup:
 	increase the milk volume of breasts by 1;

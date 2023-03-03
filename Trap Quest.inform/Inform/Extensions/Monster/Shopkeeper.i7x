@@ -9,6 +9,7 @@ shopkeeper has a number called BBCTrainingQuest. [0: Quest not started. 1: Quest
 Definition: shopkeeper is willing to urinate: decide yes.
 
 Definition: shopkeeper is dark skinned: decide yes.
+Definition: shopkeeper is condom prepared: decide yes. [Does he have condoms on him?]
 
 Definition: shopkeeper is raunchy: decide yes.
 
@@ -451,7 +452,11 @@ The latex punishment rule of shopkeeper is usually the no latex punishment rule.
 To compute (M - shopkeeper) urinating:
 	say UrinationFlav of M;
 	FacePiss from M;
-	send M home.
+	if M is in Dungeon41:
+		say "[speech style of M]'We've only just begun!'[roman type][line break]";
+		now the chosen-orifice of M is nothing;
+	otherwise:
+		send M home.
 
 To compute (M - shopkeeper) entering mouth:
 	if the class of the player is living sex doll: [Should any of this move into another function?]
@@ -578,14 +583,23 @@ To say DeepthroatCreampie of (M - shopkeeper):
 To satisfy (M - shopkeeper) for (N - a number) seconds:
 	if M is interested:
 		if the player is not in Dungeon41, bore M for N seconds;
-		FavourUp M;
+		calm M;
 		if the refractory-period of M < 12, now the refractory-period of M is 12; [the player gets a chance to be spotted again next round without him wanting sex]
 		if M is in the location of the player and M is awake:
-			say SatisfiedFlav of M;
+			if M is unfriendly:
+				say "[BigNameDesc of M] seems satisfied, and briefly loses interest.";
+				bore M for N seconds; [got to give the player a chance to leave if the shopkeeper is permanently unfriendly for some edge case reason]
+			otherwise:
+				say SatisfiedFlav of M;
+				dislodge M;
+				compute common boredom of M for N seconds;
 			progress quest of nice-quest;
 	otherwise:
 		bore M for N seconds;
 	send M home. [This makes sure the shopkeeper always makes it back to the shop.]
+
+To say SatisfiedFlav of (M - shopkeeper):
+	say "[BigNameDesc of M] seems satisfied.".
 
 To say SwallowDemand of (M - shopkeeper):
 	say "[speech style of M][one of]'You best swallow, [if the class of the player is princess]princess[otherwise][whore][end if], if you know what's good for you. Or else.'[or]'Be a good little slut and swallow my load. I've got a shop to run, stop stalling, I'm really not in the mood for your stupid games.'[or]'Mmnf, that was some good head. You better swallow to show how grateful you are... Or I might just take some of my pent up rage out on you.'[or]'I like a slut who knows [his of the player] place; swallow and I won't have to remind you who's in charge.'[or]'I hope you learned your lesson, whore, but let's make it even more entertaining. Swallow, or else.'[or]'I don't know, [if M is objectifying the player]I still feel like abusing you[otherwise]I'm still mad at you[end if]. If you swallow, I might just forget about it.'[or]'You better start swallowing, whore, I don't have time for your games.'[or]'Do I look like I'm playing around? Swallow my load or face the consequences.'[in random order][roman type][line break]".
@@ -623,7 +637,7 @@ To send (M - shopkeeper) home:
 				if D is a direction, say "[BigNameDesc of M] leaves to the [D].";
 			now M is in Dungeon41;
 		now M is guarding;
-		if M is interested, bore M.
+		if M is interested and the player is not in Dungeon41, bore M.
 
 To orgasm satisfy (M - shopkeeper) for (N - a number) seconds:
 	orgasm M;
@@ -957,12 +971,11 @@ To say BanishDemandFlav of (M - shopkeeper):
 
 To compute unique banishment of (M - shopkeeper):
 	say "[speech style of M]'I didn't want to be a shopkeeper anyway. I wanted to be a lumberjack...'[roman type][line break]";
-	let X be a random off-stage strapon-dildo;
-	if X is a thing and a random number between 1 and 3 is 1:
-		now the strap-length of X is 10;
-		say "[BigNameDesc of M] leaves [if full-lady fetish is 1][his of M][otherwise]a[end if] [X] behind.";
-		now X is in the location of the player;
-		compute autotaking X;
+	if strapon-dildo is off-stage and a random number between 1 and 3 is 1:
+		now the strap-length of strapon-dildo is 10;
+		now strapon-dildo is in the location of the player;
+		say "[BigNameDesc of M] leaves [if full-lady fetish is 1][his of M][otherwise]a[end if] [strapon-dildo] behind.";
+		compute autotaking strapon-dildo;
 	repeat with C running through on-stage store clothing:
 		now C is unowned;
 	check mindflayerquest.

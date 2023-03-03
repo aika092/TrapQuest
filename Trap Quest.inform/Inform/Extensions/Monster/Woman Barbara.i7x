@@ -135,6 +135,50 @@ To vanish (M - a monster):
 To say LeftoverDesc (N - 131):
 	say "[if playerRegion is Dungeon][woman-player] lies unconscious on the floor here but you can hardly tell that it's [him of woman-player]. [big he of woman-player][']s on [his of woman-player] back but [his of woman-player] belly is so large that it covers [his of woman-player] body from [his of woman-player] knees to [his of woman-player] neck. Minotaur [semen] is gradually spilling out of both [his of woman-player] mouth and from down below, you can see that [his of woman-player] belly is very slowly deflating.[otherwise][woman-player] lies unconscious on the floor here, with demon [semen] still slowly seeping out of [his of woman-player] gaping vagina.[end if]".
 
+To compute unique unsimulated periodic effect of (M - woman-player):
+	if the woman-status of M is 90 and the vine-scene of M >= 5 and the sleep of M > 440:
+		let L be the location of M;
+		if egg laying fetish is 1:
+			let V be a random vine;
+			let E be a random off-stage small egg;
+			if E is a thing:
+				now E is in L;
+				now the egg-origin of E is V;
+				if the player is in L, say "A [E] pops out of the unconscious [NameDesc of M][']s [HoleDesc of M].";
+		otherwise:
+			let collecting be nothing;
+			if the player is in L:
+				say "A big glob of [semen] spurts out of the unconscious [NameDesc of M][']s [HoleDesc of M].";
+				unless the player is at least partially immobile or the player is in danger or the player is not able to use their hands:
+					let LV be a list of things;
+					repeat with V running through carried vessels:
+						unless V is tight topped or (the fill-colour of V is creamy and the doses of V >= the max-doses of V), add V to LV;
+					if the number of entries in LV > 0:
+						reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+						truncate LV to 9 entries;
+						say "Where do you want to collect the [semen]?[line break]";
+						repeat with V running through LV:
+							if V is bottle, set next numerical response to "The [ShortDesc of V][if the doses of V > 0 and the fill-colour of V is not creamy] (You'll lose its current contents of [PotionType of V])[end if]";
+							otherwise set next numerical response to "[BigNameDesc of V]";
+						set numerical response 0 to "don't collect";
+						compute multiple choice question;
+						if player-numerical-response > 0, now collecting is entry player-numerical-response in LV;
+				if collecting is a vessel:
+					if the doses of collecting > 0 and the fill-colour of collecting is not creamy:
+						say "You tip the contents of the [ShortDesc of collecting] onto the floor.";
+						dump collecting;
+					now the fill-colour of collecting is creamy;
+					DoseUp collecting by 2;
+					say "Several gulps worth of [semen] are spewed into the [ShortDesc of collecting].";
+					if M is presenting as male:
+						now collecting is anal-origin;
+					otherwise if collecting is boring-origin:
+						now collecting is vaginal-origin;
+				otherwise:
+					say "The [semen] flows to the ground.";
+			if collecting is nothing, SemenPuddleUp 2 in L.
+
+
 Part - Magic Pistol
 
 Figure of magic pistol is the file "Items/Accessories/Equippables/pistol1.png".
@@ -758,8 +802,13 @@ To compute patron scene climax of (W - woman-player):
 			otherwise:
 				say "[BigNameDesc of W] pushes [his of W] lips tight against yours and then opens wide, sending both [his of W] tongue and the nasty mixture over into your mouth. ";
 				humiliate ULTRA-HUMILIATION;
-			if (the fill-colour of fishbowl is murky and (the semen taste addiction of the player < 14 or the urine taste addiction of the player < 14)) or (the fill-colour of the fishbowl is creamy and the semen taste addiction of the player < 12) or (the fill-colour of the fishbowl is golden and the urine taste addiction of the player < 12), say "It tastes just as disgusting as you'd expect for a mixture of almost every bodily fluid you can think of. ";
-			otherwise say "You find the taste surprisingly palatable, considering how many different locations inside people's bodies the liquid has recently been. ";
+			if the fill-colour of fishbowl is murky:
+				say "It tastes just as disgusting as you'd expect for a mixture of almost every bodily fluid you can think of. ";
+				TasteGrossOut 5;
+			otherwise if (the fill-colour of the fishbowl is creamy and the semen taste addiction of the player < 12) or (the fill-colour of the fishbowl is golden and the urine taste addiction of the player < 12):
+				say "It tastes just as disgusting as you'd expect. ";
+			otherwise:
+				say "You find the taste surprisingly palatable, considering how many different locations inside people's bodies the liquid has recently been. ";
 			say "You gulp the stuff down to the delight of the audience, who cheer and whoop as if they're watching a sports game. [BigNameDesc of M] cackles.[line break][speech style of M]'Oh my god, I can't believe you actually did that! That's the most disgusting thing I've ever seen in my life! You two are truly the filthiest whores in the entire world.'[roman type][line break]You turn red with shame.";
 			if the fill-colour of fishbowl is creamy:
 				StomachSemenUp 2 * the doses of fishbowl;

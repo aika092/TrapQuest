@@ -55,11 +55,11 @@ The setup starting pair of suspenders rule is listed in the setup starting items
 Report examining suspenders:
 	if newbie tips is 1, say "[one of][newbie style]Suspenders can enhance the effects of your stockings.[roman type][line break][or][stopping]".
 
-To say ShortDesc of (O - a suspenders):
+To say ShortDesc of (C - a suspenders):
 	say "pair of suspenders".
 
 To say ShortestDesc of (C - a suspenders):
-	say "pair of suspenders".
+	say ShortDesc of C.
 
 [Report wearing stockings when there are worn suspenders:
 	let S be a random worn suspenders;
@@ -153,7 +153,7 @@ To decide which figure-name is clothing-image of (C - princess-bride-suspenders)
 To say ClothingDesc of (S - princess-bride-suspenders):
 	say "A very feminine set of white silk suspenders with large sheer sections.".
 
-To say ShortDesc of (S - princess-bride-suspenders):
+To say MediumDesc of (S - princess-bride-suspenders):
 	say "bridal sissy suspenders".
 
 Definition: princess-bride-suspenders is sissifying: decide yes.
@@ -161,6 +161,36 @@ Definition: princess-bride-suspenders is white themed: decide yes.
 
 To decide which number is the initial outrage of (C - princess-bride-suspenders):
 	decide on 3.
+
+porn-star-suspenders is a suspenders. porn-star-suspenders is transformation-rare. porn-star-suspenders is polyester. The printed name of porn-star-suspenders is "[clothing-title-before]pair of porn star suspenders[clothing-title-after]". The text-shortcut of porn-star-suspenders is "psps". Figure of porn-star-suspenders is the file "Items/Clothes/Lower/Waist/Suspenders/suspenders8.png". Understand "porn", "star" as porn-star-suspenders.
+
+Definition: porn-star-suspenders is class-relevant:
+	if the class of the player is cumdumpster or the class of the player is stripper, decide yes;
+	decide no.
+
+To compute class set up of (C - porn-star-suspenders):
+	now C is elasticity.
+
+To decide which figure-name is clothing-image of (C - porn-star-suspenders):
+	decide on figure of porn-star-suspenders.
+
+To say ClothingDesc of (S - porn-star-suspenders):
+	say "A set of black suspenders with large white letters reading 'PORN STAR' on each thigh.".
+
+To say MediumDesc of (S - porn-star-suspenders):
+	say "porn star suspenders".
+
+Definition: porn-star-suspenders is black themed: decide yes.
+Definition: porn-star-suspenders is white themed: decide yes.
+Definition: porn-star-suspenders is star themed: decide yes.
+Definition: porn-star-suspenders is fetish appropriate:
+	if diaper quest is 1, decide no;
+	if the player is gendered female, decide yes;
+	decide no.
+Definition: porn-star-suspenders is end of transformation chain: decide yes. [It's the end of the transformation chain. This will make some things avoid bothering to attempt to transform it.]
+
+To decide which number is the initial outrage of (C - porn-star-suspenders):
+	decide on 4.
 
 a bridal sissy-suspenders is a kind of suspenders. There is 1 transformation-rare bridal sissy-suspenders. A bridal sissy-suspenders is usually silk. The printed name of a bridal sissy-suspenders is usually "[clothing-title-before]pair of bridal sissy suspenders[clothing-title-after]". The text-shortcut of bridal sissy-suspenders is "bss". Figure of bridal sissy-suspenders is the file "Items/Clothes/Lower/Waist/Suspenders/suspenders1.png". Understand "sissy" as bridal sissy-suspenders.
 
@@ -175,6 +205,10 @@ To say ShortDesc of (S - a bridal sissy-suspenders):
 
 Definition: a bridal sissy-suspenders is sissifying: decide yes.
 Definition: a bridal sissy-suspenders is pink themed: decide yes.
+Definition: a bridal sissy-suspenders is fetish appropriate:
+	if diaper quest is 1, decide yes;
+	if the player is gendered male, decide yes;
+	decide no.
 
 To set up influence of (C - a bridal sissy-suspenders):
 	now C is delicateness-influencing.
@@ -274,31 +308,48 @@ To compute periodic effect of (I - living belt of sturdiness):
 					increase the buildup of the living belt of sturdiness by 1;
 		otherwise:
 			say "Silver tentacles shoot out of the belt and towards your crotch! You quickly feel the warm, smooth tip of a tentacle trying to push its way into your [asshole]! ";
-			while the player is ass protected:
-				let A be a random top level ass protection clothing worn by the player;
-				say "The tentacle easily rips through your [printed name of A]!";
-				if A is rippable, now A is crotch-ripped;
-				otherwise destroy A;
-			if asshole is actually occupied:
-				say "The tentacle, unable to enter your occupied [asshole], spanks your butt in frustration![line break][variable custom style][one of]Owwwww[or]Ouch[or]Fuck[or]Owiee[purely at random]![roman type][line break]";
-				BodyRuin 1;
-			otherwise:
-				say "[if the openness of asshole < 8]With a moderate amount of effort and force, it manages to make its way in![otherwise]The tentacle slides into your loose hole with ease![end if]";
-				now the living belt of sturdiness is penetrating asshole;
-			if the player is possessing a vagina:
-				say "You feel the warm, smooth tip of a tentacle trying to push its way into your [vagina]! ";
-				while the player is pussy protected:
-					let A be a random top level protection clothing worn by the player;
+			let ass-protected be true;
+			while ass-protected is true:
+				let A be a random top level ass protection clothing;
+				if A is nothing or A is diaper or A is indestructible:
+					now ass-protected is false;
+				otherwise:
 					say "The tentacle easily rips through your [printed name of A]!";
 					if A is rippable, now A is crotch-ripped;
 					otherwise destroy A;
-				if vagina is actually occupied:
-					say "The tentacle, unable to enter your occupied [vagina], spanks your butt in frustration![line break][variable custom style][one of]Owwwww[or]Ouch[or]Fuck[or]Owiee[purely at random]![roman type][line break]";
+			let A be a random top level ass protection clothing;
+			if A is clothing and A is not diaper: [indestructible]
+				say "The tentacle, unable to get past [NameDesc of A], spanks your butt in frustration!";
+				PainUp 10;
+				BodyRuin 1;
+			otherwise:
+				if asshole is actually occupied:
+					say "The tentacle, unable to enter your occupied [asshole], spanks your butt in frustration!";
+					PainUp 10;
 					BodyRuin 1;
 				otherwise:
-					say "[if the openness of vagina < 8]With a moderate amount of effort and force, it manages to make its way in![otherwise]The tentacle slides into your loose hole with ease![end if]";
-					now the living belt of sturdiness is penetrating vagina;
-					appropriate-cutscene-display figure of living belt of sturdiness cutscene 1;
+					say "[if A is diaper]It slides in past the leghole of [NameDesc of A]. [end if][if the openness of asshole < 8]With a moderate amount of effort and force, it manages to make its way in![otherwise]The tentacle slides into your loose hole with ease![end if]";
+					now the living belt of sturdiness is penetrating asshole;
+				if the player is possessing a vagina:
+					say "You feel the warm, smooth tip of a tentacle trying to push its way into your [vagina]! ";
+					let pussy-protected be true;
+					while pussy-protected is true:
+						now A is a random top level protection clothing;
+						if A is nothing or A is diaper or A is indestructible:
+							now pussy-protected is false;
+						otherwise:
+							say "The tentacle easily rips through your [printed name of A]!";
+							if A is rippable, now A is crotch-ripped;
+							otherwise destroy A;
+					now A is a random top level protection clothing;
+					unless A is clothing and A is not diaper: [indestructible]
+						if vagina is actually occupied:
+							say "The tentacle, unable to enter your occupied [vagina], spanks your butt in frustration![line break][variable custom style][one of]Owwwww[or]Ouch[or]Fuck[or]Owiee[purely at random]![roman type][line break]";
+							BodyRuin 1;
+						otherwise:
+							say "[if A is diaper]It slides in past the leghole of [NameDesc of A]. [end if][if the openness of vagina < 8]With a moderate amount of effort and force, it manages to make its way in![otherwise]The tentacle slides into your loose hole with ease![end if]";
+							now the living belt of sturdiness is penetrating vagina;
+							appropriate-cutscene-display figure of living belt of sturdiness cutscene 1;
 	otherwise:
 		if the living belt of sturdiness is filling something:
 			say "The [if the living belt of sturdiness is penetrating asshole and the living belt of sturdiness is penetrating vagina]tentacles recede[otherwise]tentacle recedes[end if] back into the belt[if the player is not ass protected], leaving you open and exposed[otherwise].[end if].";
@@ -365,6 +416,10 @@ To say ShortDesc of (S - a sissy-suspenders):
 
 Definition: a sissy-suspenders is sissifying: decide yes.
 Definition: a sissy-suspenders is pink themed: decide yes.
+Definition: a sissy-suspenders is fetish appropriate:
+	if diaper quest is 1, decide yes;
+	if the player is gendered male, decide yes;
+	decide no.
 
 To decide which number is the initial outrage of (C - a sissy-suspenders):
 	decide on 5.

@@ -57,7 +57,6 @@ When play begins:
 			retrieve diaper options;
 			retrieve toilet allowance options;
 			retrieve silicone milk options;
-			retrieve condom options;
 			retrieve slow random options; [At this point, the player can choose to have the rest randomised, which sets quick start to 1]
 		if quick start is 1 or quick start is 2:
 			follow the random mode rules;
@@ -147,7 +146,8 @@ To fill in fake table blanks:
 		unless there is a choice in row 56 of the Table of Settings, now choice in row 56 of Table of Settings is 15;
 		unless there is a choice in row 57 of the Table of Settings, now choice in row 57 of Table of Settings is 1;
 		unless there is a choice in row 58 of the Table of Settings, now choice in row 58 of Table of Settings is 2;
-		unless there is a choice in row 59 of the Table of Settings, now choice in row 59 of Table of Settings is 0.
+		unless there is a choice in row 59 of the Table of Settings, now choice in row 59 of Table of Settings is 0;
+		unless there is a choice in row 60 of the Table of Settings, now choice in row 60 of Table of Settings is 0.
 
 To fill in legacy table blanks:
 	unless there is a choice in row 32 of the Table of Player Options, now choice in row 32 of Table of Player Options is 0;
@@ -389,17 +389,10 @@ To retrieve benefit options:
 To retrieve TG options:
 	if tg fetish >= 1 and the player is sexed male: [This doesn't award points and refers to the player's penis size so it comes after the benefit options.]
 		clear the screen;
-		now the current menu is the Table of TG Timing Options;
-		carry out the displaying activity;
-		clear the screen;
 		now the current menu is the Table of TG Occurence Options;
 		carry out the displaying activity;
-		clear the screen.
-
-To retrieve condom options:
-	if diaper quest is 0: [This doesn't award points and refers to the player's penis size so it comes after the benefit options.]
 		clear the screen;
-		now the current menu is the Table of Condom Options;
+		now the current menu is the Table of TG Timing Options;
 		carry out the displaying activity;
 		clear the screen.
 

@@ -34,6 +34,8 @@ This is the remove inappropriate swimwear rule:
 		if the initial cringe of B is 0, now B is in Holding Pen.
 The remove inappropriate swimwear rule is listed in the diaper quest fix rules.
 
+A normal-monokini is a kind of monokini.
+
 Chapter - Slutty Monokinis
 
 [There are a few different types of monokini, really just for transformation sequence handling.]

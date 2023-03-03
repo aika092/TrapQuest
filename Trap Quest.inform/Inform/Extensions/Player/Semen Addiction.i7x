@@ -73,6 +73,7 @@ To SemenAddictUp (X - a number):
 			if the raw semen addiction of the player < 20:
 				increase the raw semen addiction of the player by 1;
 				if the trophy-mode of condom-trophy > 0 and there is a live thing penetrating a fuckhole and the raw semen addiction of the player < 20, increase the raw semen addiction of the player by 1;
+				if the remainder after dividing condom fetish by 2 is 1 and there is a live thing penetrating a fuckhole and the raw semen addiction of the player < 20, increase the raw semen addiction of the player by 1;
 	if there is a live thing penetrating a fuckhole and creampieAddictCountdown <= 0, now creampieAddictCountdown is 2.
 
 To SemenAddictDown (X - a number):

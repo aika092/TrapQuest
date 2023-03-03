@@ -214,7 +214,7 @@ To compute betrothal of (M - a monster):[This only triggers when the player is f
 To punish infidelity:
 	humiliate the charge of floral bouquet * 40;
 	decrease the charge of floral bouquet by 1;
-	if floral bouquet is worn and condom fetish is 1:
+	if floral bouquet is worn and condom fetish >= 2:
 		if floral bouquet is blessed, now floral bouquet is bland;
 		transform floral bouquet into condoms bouquet;
 	let C be a random worn bridal dress;

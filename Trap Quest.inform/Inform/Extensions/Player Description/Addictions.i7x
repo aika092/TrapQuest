@@ -319,23 +319,24 @@ We explain how much the player likes bad tastes and smells.
 
 +!]
 This is the grossness addiction description rule:
-	if the grossness addiction of the player < 3:
-		say "Bad tastes and smells disgust you and kill your arousal.";
-	otherwise if the grossness addiction of the player < 5:
-		say "Bad tastes and smells upset you, and reduce your arousal.";
-	otherwise if the grossness addiction of the player < 8:
-		say "By digging deep, you can sometimes bring yourself to perform gross acts that might leave a bad taste in your mouth.";
-	otherwise if the grossness addiction of the player < 11:
-		say "You can generally tolerate [DetailedGrossStuff] without it affecting your arousal.";
-	otherwise if the grossness addiction of the player < 14:
-		say "You find [DetailedGrossStuff] undeniably arousing! As opposed to reducing your arousal, like it used to, gross stuff can in fact help you get off.";
-	otherwise if the grossness addiction of the player < 17:
-		say "You're rather addicted to [DetailedGrossStuff]. Just the thought of it can make you rather horny!";
-	otherwise if the grossness addiction of the player < 20:
-		say "You often find yourself craving your next [if diaper messing >= 6]sniff of a messy diaper[otherwise if a2m fetish >= 1]lick of a butthole[otherwise]taste of a sweaty foot[end if][if a2m fetish >= 2], or longing for a fresh anal creampie to savour on your tongue[otherwise if diaper swapping > 1], or for someone to use your diaper as their personal urinal[otherwise if diaper quest is 0], or longing for a fresh creampied pussy to devour and savour on your tongue[otherwise if diaper messing >= 7],or for someone to sit their diaper on your face as they soil themselves[end if].";
-	otherwise:
-		say "You are [bold type]obsessed[roman type] with [DetailedGrossStuff]. [if diaper messing >= 6]When a messy diaper is nearby, it takes all your self control not to shove your face into the back cover of it and breathe in deeply.[otherwise if a2m fetish >= 1]When you see an exposed butthole in front of your face, you can't help but immediately shove your tongue as deep inside as it will go, savouring every little bit of that wonderful bitter taste of ass.[otherwise]When someone puts their bare foot in front of your face, you can't help but eagerly start to lick it clean, delighting in that delicious tangy taste of sweat and dirt.[end if]";
-	if debuginfo > 0, say "[input-style](Grossness addiction [grossness addiction of the player] / 20)[roman type][line break]".
+	if the player is a december 2022 top donator or diaper quest is 1:
+		if the grossness addiction of the player < 3:
+			say "Bad tastes and smells disgust you and kill your arousal.";
+		otherwise if the grossness addiction of the player < 5:
+			say "Bad tastes and smells upset you, and reduce your arousal.";
+		otherwise if the grossness addiction of the player < 8:
+			say "By digging deep, you can sometimes bring yourself to perform gross acts that might leave a bad taste in your mouth.";
+		otherwise if the grossness addiction of the player < 11:
+			say "You can generally tolerate [DetailedGrossStuff] without it affecting your arousal.";
+		otherwise if the grossness addiction of the player < 14:
+			say "You find [DetailedGrossStuff] undeniably arousing! As opposed to reducing your arousal, like it used to, gross stuff can in fact help you get off.";
+		otherwise if the grossness addiction of the player < 17:
+			say "You're rather addicted to [DetailedGrossStuff]. Just the thought of it can make you rather horny!";
+		otherwise if the grossness addiction of the player < 20:
+			say "You often find yourself craving your next [if diaper messing >= 6]sniff of a messy diaper[otherwise if a2m fetish >= 1]lick of a butthole[otherwise]taste of a sweaty foot[end if][if a2m fetish >= 2], or longing for a fresh anal creampie to savour on your tongue[otherwise if diaper swapping > 1], or for someone to use your diaper as their personal urinal[otherwise if diaper quest is 0], or longing for a fresh creampied pussy to devour and savour on your tongue[otherwise if diaper messing >= 7],or for someone to sit their diaper on your face as they soil themselves[end if].";
+		otherwise:
+			say "You are [bold type]obsessed[roman type] with [DetailedGrossStuff]. [if diaper messing >= 6]When a messy diaper is nearby, it takes all your self control not to shove your face into the back cover of it and breathe in deeply.[otherwise if a2m fetish >= 1]When you see an exposed butthole in front of your face, you can't help but immediately shove your tongue as deep inside as it will go, savouring every little bit of that wonderful bitter taste of ass.[otherwise]When someone puts their bare foot in front of your face, you can't help but eagerly start to lick it clean, delighting in that delicious tangy taste of sweat and dirt.[end if]";
+		if debuginfo > 0, say "[input-style](Grossness addiction [grossness addiction of the player] / 20)[roman type][line break]".
 The grossness addiction description rule is listed in the addiction listing rules.
 
 [!<TheCurrentWearingDiaperState>+

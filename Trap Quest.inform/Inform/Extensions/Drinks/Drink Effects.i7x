@@ -201,10 +201,14 @@ To compute drinking effect (N - 4):
 		otherwise BustDown 1.
 
 To compute drinking effect (N - 5):
-	say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0]Mmm, a very heavy drink. You hold your head a bit higher as this drink gives you a boost of confidence![otherwise]Another heavy drink. You feel less submissive![end if]";
-	DelicateDown 1;
-	if the player is somehow possessing a penis and (the noun is blessed or a random number between 1 and 3 is 1): [#LXorDD]
-		SpecialPenisUp 1.
+	say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0]Mmm, a very heavy drink. You hold your head a bit higher as this drink gives you a boost of virility![otherwise if the player is somehow possessing a penis]Another heavy drink. You feel the magic going straight to your [player-penis]![otherwise]Another heavy drink. You feel a bit less [']girly[']![end if]";
+	if the player is somehow possessing a penis:
+		SpecialPenisUp 1;
+	if the player is possessing a vagina:
+		LabiaDown 1 with comment;
+	if the noun is blessed:
+		TitfuckAddictDown 1;
+		VaginalSexAddictDown 1.
 
 To compute drinking effect (N - 6):
 	if the Known corresponding to an Magic of N in the Table of Drinks is 0, say "Mmm, tastes like medicine! ";
@@ -249,11 +253,11 @@ To compute drinking effect (N - 22):
 	if the Known corresponding to an Magic of N in the Table of Drinks is 0:
 		say "A very familiar taste. Oh nice, it's [milk]! That must be healthy.";
 	otherwise:
-		say "[one of]A[or]Another[stopping] healthy gulp of [milk]. Yum!";
+		say "[one of]A[or]Another[stopping] healthy gulp of [milk][if the milk taste addiction of the player >= 3]. Yum![otherwise].[end if]";
 	FaceFill milk by 1;
 	if the noun is blessed, increase the fat-burning of the player by 100;
 	if there is a milking bench in the location of the player:
-		if (the class of the player is cowgirl and the class of the player is not catgirl) or (the class of the player is catgirl and the class of the player is not cowgirl), compute meowcowification;
+		if the class of the player is "cowgirl" or the class of the player matches the text "meow", compute meowcowification;
 	suggest swallowing.
 
 To compute drinking effect (N - 23):

@@ -16,7 +16,7 @@ To say FullExamineDesc of (B - asshole):
 
 To decide which object is the concealer of (A - asshole):
 	if water-fountain is penetrating asshole, decide on water-fountain;
-	let C be a random worn actually dense potentially at least partially asshole covering clothing;
+	let C be a random worn potentially asshole covering clothing;
 	if C is clothing, decide on C;
 	if the player is upright or the total volume of hips > 15, decide on hips;
 	decide on nothing.

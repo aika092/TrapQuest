@@ -7,6 +7,8 @@ Definition: a panties is rippable:
 	decide no.
 To decide which number is the penis-capacity of (K - a panties):
 	decide on 6.
+To decide which number is the assModesty of (C - a panties):
+	decide on 9.
 
 The printed name of panties is "[clothing-title-before][selfexamineuniquetitle of item described][clothing-title-after]".
 

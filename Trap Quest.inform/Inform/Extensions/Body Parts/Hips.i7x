@@ -11,6 +11,16 @@ REQUIRES COMMENTING
 @!]
 hips is a flesh. hips is everywhere. Understand "ass", "butt", "bottom", "rear", "bum", "behind", "rear end", "buttocks", "cheeks" as hips. The text-shortcut of hips is "hips".
 
+
+[
+Ass modesty is how much of the ass it covers. It usually is in line with armour which is usually in line with penis capacity (which defaults to 10). Here are some guidlines:
+Thongs and G-strings: 1
+Hotpants: 3
+Briefs: 6
+Panties: 9
+Most bodysuits etc: 10
+Trousers: 99
+]
 To decide which number is the usualAssModesty of (C - a clothing):
 	if C is skirt-covering-crotch, decide on 100;
 	if C is crotch covering:

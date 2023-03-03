@@ -313,7 +313,7 @@ To compute automatic actions:
 			let SA be auto;
 			now auto is 1;
 			follow the ability to stand rules;
-			unless the rule failed:
+			unless the rule failed or the player is monster stuck:
 				allocate 0 seconds;
 				[say "[bold type]You try to stand up.[roman type][line break]";]
 				try standing;
@@ -331,7 +331,7 @@ To compute automatic actions:
 To compute optional actions:
 	if was-mopping is true:
 		now was-mopping is false;
-		if total puddle > 0:
+		if total puddle > 0 and the noun is clothing and the semen-soak of the noun + the urine-soak of the noun + the milk-soak of the noun < the soak-limit of the noun:
 			say "Keep mopping? ";
 			if the player is consenting: [if this was bimbo consenting there are some edge case loops with broken players who infinitely lick a puddle while peeing]
 				now another-turn is 1;
@@ -345,7 +345,10 @@ Calculates the buckle threshold of the player based on strength and body sorenes
 
 +!]
 To decide which number is the buckle threshold of (Y - yourself):
-	decide on ((the strength of the player + 5 + (food theme bonus * 5)) * 20 * (10 - the body soreness of the player)) / 10.
+	let misc-bonus be 0;
+	if the class of the player is cumdumpster, now misc-bonus is the semen volume of belly + (the semen volume of vagina * 3);
+	if missfit tattoo is worn, increase misc-bonus by 15;
+	decide on ((the strength of the player + 5 + (food theme bonus * 5) + misc-bonus) * 20 * (10 - the body soreness of the player)) / 10.
 
 [!<DecideWhichNumberIsTheTiredThresholdOfThePlayer>+
 
@@ -377,11 +380,11 @@ To decide which number is the fatigue-influence of (C - a wearthing):
 To compute player standing:
 	now player-currently-resting is 0;
 	if the largeness of belly > 3 or the largeness of breasts > 16 or dungeon chains is worn or black hood is worn or (the ready-for-milking of milking-quest is 1 and the milk volume of breasts > 10 and the number of worn cowbelled clothing is 0)[ or there is worn heels], compute upright fatigue gain; [We only gain fatigue while standing for very big bodies or when wearing heels. Other fatigue gain comes from walking around and kicking.]
-	if diaper quest is 0 and the location of the player is Dungeon19:
+	[if diaper quest is 0 and the location of the player is Dungeon19:
 		if the soreness of asshole is 10:
 			say "The stench in this room takes you over the edge and you start to faint.";
 			now delayed fainting is 1;
-			now the fainting reason of the player is 3;
+			now the fainting reason of the player is 3;]
 	if the player is not vine fucked:
 		if the fatigue of the player >= the buckle threshold of the player:
 			unless the player is trap stuck:
@@ -476,17 +479,20 @@ To compute drill damage:
 
 To compute player kneeling:
 	if diaper quest is 0 and the location of the player is Dungeon19:
-		if the soreness of asshole > 7:
+		say "While on your knees, you get a very strong whiff of the stench in this room.";
+		SmellGrossOut 4;
+		[if the soreness of asshole > 7:
 			say "While on your knees, you get a very strong whiff of the stench in this room. It takes you over the edge and you start to faint.";
 			now delayed fainting is 1;
 			now the soreness of asshole is 7;
-			now the fainting reason of the player is 3;
+			now the fainting reason of the player is 3;]
 	if the player is able to breathe and detention chair is not grabbing the player:
 		compute fatigue loss;
 	if the player is not vine fucked, compute vines kneeling;
 	otherwise compute vines fucking.
 
 To decide which number is fatigue bonus:
+	if the class of the player is cumdumpster, decide on 20 + (the stomach-semen of the player * 10);
 	decide on 20.
 
 To compute fatigue loss:
@@ -544,7 +550,8 @@ Definition: yourself is breathing this turn:
 	decide yes.
 
 A breathing blocking rule (this is the can't breathe during deepthroat rule):
-	if there is a throater thing penetrating face, rule succeeds.
+	if there is an actual throater thing penetrating face, rule succeeds;
+	if there is a getting-asslicked monster penetrating face and the player-reaction of the player is resisting, rule succeeds.
 
 To decide which number is the suffocation limit of the player:
 	if the player is not needing to breathe, decide on 999999;
@@ -647,11 +654,14 @@ To Compute Compulsions:
 		now another-turn-stored-action is eating CND;
 		now another-turn-flavour is "The [candy-trophy][']s magical effect compels you to try and eat [NameDesc of CND]!";
 		now another-turn is 1;
-	otherwise:
+	if drinkme tattoo is worn and the total volume of face > 0 and a random number between 1 and 50 is 1:
+		say "[bold type]Your 'drink me' tattoo sends irresistible urges to your brain and you find yourself mindlessly swallowing your [MouthfulDesc]![roman type][line break]";
+		compute silent swallowing;
+	otherwise if the total volume of face is 0:
 		now autodrink is 1;
 		let B be a random held actually drinkable bottle;
-		if drinkme tattoo is worn and B is bottle and the player is not almost too full and a random number between 1 and 10 is 1 and the player is not in danger and the player is able to drink and the class of the player is not bunny and (the class of the player is not royal slave or the fill-type of B <= highest-cursed): [Need to make sure that royal slaves and bunny waitresses don't just drink all their stock]
-			say "Your 'drink me' tattoo sends irresistible urges to your brain and you find yourself mindlessly bringing the [ShortDesc of B] to your lips!";
+		if drinkme tattoo is worn and B is bottle and the player is not almost too full and the player is not overly full and a random number between 1 and 20 is 1 and the player is not in danger and the player is able to drink and the class of the player is not bunny and (the class of the player is not royal slave or the fill-type of B <= highest-cursed): [Need to make sure that royal slaves and bunny waitresses don't just drink all their stock]
+			say "[bold type]Your 'drink me' tattoo sends irresistible urges to your brain and you find yourself mindlessly bringing the [ShortDesc of B] to your lips![roman type][line break]";
 			try drinking B;
 			now another-turn is 1;
 		otherwise if there is a carried throbbing-tentacle:

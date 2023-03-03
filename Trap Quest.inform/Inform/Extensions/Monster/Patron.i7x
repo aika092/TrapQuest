@@ -70,6 +70,7 @@ To say MediumDesc of (M - impatient patron):
 	say "impatient patron".
 
 An experienced patron is a kind of patron.
+Definition: an experienced patron is condom obsessed: decide yes. [Does he always have condoms on him?]
 well dressed patron is an experienced patron. A suited patron is an experienced patron. The text-shortcut of well dressed patron is "wdp". The text-shortcut of suited patron is "spa".
 To decide which figure-name is the monster-image of (M - an experienced patron):
 	if lady fetish is 1:
@@ -92,6 +93,7 @@ To say MediumDesc of (M - suited patron):
 	say "suited patron".
 
 A gross patron is a kind of patron.
+Definition: a gross patron is condom prepared: decide yes. [Does he have condoms on him?]
 chubby patron is a gross patron. hairy patron is a gross patron. The text-shortcut of chubby patron is "cpa". The text-shortcut of hairy patron is "hpa". Understand "chunky" as hairy patron when lady fetish is 1.
 To decide which number is the girth of (M - gross patron):
 	decide on 2.
@@ -279,6 +281,7 @@ A time based rule (this is the patron encountering rule):
 						say "[big he of P] leaves the way [he of P] came in.";
 				otherwise:
 					now M is a random regional monster;
+					now P is in the location of M;
 					compute patronMeeting of M with P;
 				destroy P;
 				zero focus stuff; [Flags the focus window for a full redraw (prevents the patron from appearing in it at the end of the turn).]
@@ -306,6 +309,7 @@ To compute patronMeeting of (M - dominatrix-cage) with (P - a patron):
 		say "[speech style of P]'Suck it.'[roman type][line break][big he of P] orders you, bluntly. Do you suck [his of P] [manly-penis]?";
 		if the player is bimbo consenting:
 			say "You open your mouth and take [him of P] inside. With [his of P] hips already pressed against the bars, it's up to you to do all of the work, inching your head back and forth in the cramped space you have to work with. It takes a little time, but eventually you end up with your prize: A mouthful of [semen][if P is dickhead patron]. [BigNameDesc of P] doesn't even bother to say anything to you afterwards. [big he of P] just wipes [his of P] [manly-penis] on your nose and then wanders off.[otherwise].[line break][speech style of P]'[one of]That was just what I needed[or]Good job[or]Good slut[or]What a good little whore this one is[or]I wish I had a blowjob slave like this one at home[or]Yep, that was definitely worth it[in random order].'[roman type][line break][end if]";
+			now the player-reaction of the player is submitting;
 			now P is penetrating face;
 			BlowCount;
 			slightHumiliate;
@@ -448,6 +452,7 @@ To compute patronEncounter of (M - an inexperienced patron):
 		if the player is not able to use manual dexterity or the player is immobile:
 			say "You can't really help [him of M], so after an awkward moment of staring at each other [he of M] leaves the room.";
 		otherwise if the player is bimbo consenting:
+			now the player-reaction of the player is submitting;
 			say "You walk up to [him of M], looking [him of M] in the eye as you wrap your hand around [his of M] [LongDickDesc of M]. [BigNameDesc of M] can't hold on for long, and within moments [he of M] shoots a big load all over the ground.";
 			increase the employee-record of senior robobellboy by 1;
 			SemenPuddleUp (the semen load of M) in (the location of M);
@@ -467,6 +472,7 @@ To compute patronEncounter of (M - an experienced patron):
 		otherwise:
 			say "A [MediumDesc of M] walks into the room and immediately makes eye contact with you.[line break][speech style of M]'You. Whore. Fix this.'[roman type][line break][big he of M] gestures at [his of M] rapidly hardening [DickDesc of M]. It seems like [he of M] wants a handjob. Give [him of M] one?";[give him a handjob]
 			if the player is bimbo consenting:
+				now the player-reaction of the player is submitting;
 				say "You [if the player is feeling submissive]eagerly[otherwise]slowly[end if] wrap a hand around [his of M] [LongDickDesc of M] and start pumping away. The clinical expression on [his of M] face [if the player is shameless]makes the whole experience even more exciting, and by the time [he of M] finally blows [his of M] load on the ground you're feeling pretty hot[otherwise]makes it hard to focus, and when [he of M] finally blows [his of M] load, you aren't expecting it and most of it gets on you[end if]. Satisfied, [NameDesc of M] leaves the room as if nothing happened.";
 				moderateHumiliate;
 				if the player is shameless:
@@ -492,7 +498,7 @@ To compute patronEncounter of (M - a gross patron):
 		if debuginfo > 1, say "[input-style]Patron is pissing on the floor in [location of M].[roman type][line break]";
 		UrinePuddleUp (the semen load of M) in (the location of M);
 	otherwise:
-		if M is in the location of the player and face is undefended:
+		if M is in the location of the player and face is undefended and grossness fetish > 0:
 			say "A [MediumDesc of M] walks into the room, and approaches you.[line break][speech style of M]'Give us a kiss, sweetie!'[line break][variable custom style]What a gross [man of M]...[roman type][line break]Let [him of M] kiss you?";
 			if the player is bimbo consenting:
 				say "You close your eyes and allow [NameDesc of M] to push [his of M] lips against yours. With some disgusting slobbery action, [he of M] explores your mouth with [his of M] bitter-tasting tongue.[line break][variable custom style]When was the last time [he of M] brushed [his of M] teeth?![roman type][line break][GrossOut 5]";
@@ -520,6 +526,7 @@ To compute patronEncounter of (M - a dickhead patron):
 			otherwise if face is not actually occupied:
 				say "A [MediumDesc of M] walks into the room and makes a beeline for you as soon as [he of M] notices you.[line break][speech style of M]'Look, I don't have any money but whatever, you're just a whore anyway. Open up.'[roman type][line break][big he of M] holds [his of M] [LongDickDesc of M] in your face. Do you give [him of M] a quick blowjob? ";
 				if the player is bimbo consenting:
+					now the player-reaction of the player is submitting;
 					say "You barely have time to get your mouth open before [he of M] shoves it in, roughly fucking your face until [he of M] gives you a mouthful of [semen].[line break][speech style of M]'Thanks. Maybe I'll have some money for you next time.'[roman type][line break][big he of M] leaves as soon as [he of M] showed up.";
 					now M is penetrating face;
 					BlowCount;

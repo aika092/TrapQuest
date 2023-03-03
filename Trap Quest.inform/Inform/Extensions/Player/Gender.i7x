@@ -17,7 +17,7 @@ Definition: a person is presenting as female:
 	decide no.
 
 Definition: yourself is gendered female:
-	if the player is originally female and transGender is 0, decide yes;
+	if the player is originally female, decide yes;
 	if the player is originally male and transGender is 1, decide yes;
 	decide no.
 Definition: yourself is gendered male:
@@ -97,7 +97,7 @@ This is what we say if there's no custom sex change flavour provided by the even
 
 +!]
 To say DefaultSexchangeFlav:
-	say "Suddenly you feel your insides behind your crotch twisting and turning and rearranging themselves[if the player is possessing a penis], and then you shriek in surprise and horror as you realise you can't feel your [player-penis][end if]! [if the player is able to use manual dexterity]You reach down to feel yourself[otherwise]You look down[end if] and discover that a brand new woman's [vagina] has taken its place. ";
+	say "Suddenly you feel your insides behind your crotch twisting and turning and rearranging themselves[if the player is possessing a penis], and then you shriek in surprise and horror as you realise you can't feel your [player-penis][end if]! [if the player is able to use manual dexterity]You reach down to feel yourself[otherwise]You look down[end if] and discover that a brand new [variable custom style][vagina][roman type] has taken its place. ";
 	cutshow figure of body reaction 6 for vagina.
 
 [!<SexChangeClothing>+

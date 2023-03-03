@@ -191,6 +191,11 @@ To compute (M - a goblin) slinking away:
 
 Definition: a goblin is auto-banish-loot-dropping: decide no. [Will it automatically drop jewellery when it is banished in this manner?]
 
+To compute unique periodic effect of (M - a goblin):
+	let X be 0;
+	if M is interested, now X is 1;
+	if M is female and M is in the location of the player and the player is not in danger, say "[speech style of M]'All you have to do is [bold type]poke[speech style of M] my clit, and the ring is yours.'[roman type][line break]".
+
 To compute unique unsimulated periodic effect of (M - a goblin):
 	if M is not in the location of the player, destroy M.
 

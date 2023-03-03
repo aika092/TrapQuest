@@ -232,9 +232,6 @@ To decide which number is the girth of (M - a gladiator):
 To decide which number is the base semen load of (M - a gladiator):
 	let X be 4.
 
-Definition: a gladiator (called M) is able to remove cursed plugs: [Can the monster remove all butt plugs?]
-	decide yes.
-
 Definition: A gladiator (called M) is willing to shag:
 	if M is awake and the scared of M is 0 and the boredom of M < 120 and M is threatening and M is male, decide yes;
 	decide no.
@@ -332,10 +329,63 @@ Definition: a gladiator (called M) is distracted:
 		if N is nothing, let N be a random undefeated awake royal guard in the location of M;
 		if N is wench and (N is uninterested or N is friendly):
 			compute M npcBattling N;
+			decide yes;
 		if N is aeromancer and (N is uninterested or N is friendly):
 			compute M npcBattling N;
+			decide yes;
 		if N is royal guard and (N is uninterested or N is friendly):
 			compute M npcBattling N;
+			decide yes;
+	if M is awake and the times-met of M > 0:
+		let L be a random milking bench lever in the location of M;
+		if L is a thing and L is not lever-pulled and ((player-currently-resting is 1 and M is in the location of the player) or a random number between 1 and 3 is 1):
+			compute L pull of M;
+			decide yes;
+		otherwise if L is a thing and L is lever-pulled and player-currently-resting is 1 and milking is 0 and there is worn actually nipple covering clothing:
+			compute L pull of M;
+			decide yes;
+	decide no.
+
+To compute (L - a milking bench lever) pull of (M - a gladiator):
+	if M is in the location of the player:
+		if player-currently-resting is 1:
+			say "[BigNameDesc of M] observes you on the milking bench.";
+			if milking is 1 or the number of worn actually nipple covering clothing is 0:
+				say "[speech style of M]'This is a perfect opportunity for me to help you on your journey towards peak femininity.'[roman type][line break][big he of M] pulls the lever on the wall, switching it to the green plus sign!";
+			otherwise:
+				say "[speech style of M]'This is a perfect opportunity for me to help you on your journey towards peak femininity.'[roman type][line break][if L is not lever-pulled][big he of M] pulls the lever on the wall, switching it to the green plus sign![end if]";
+				let N be max-top-layer;
+				while N > 0: [start with top layered clothing and work downwards]
+					let B be nothing;
+					repeat with C running through worn top layer clothing:
+						if the top-layer of C is N, now B is C;
+					if B is actually nipple covering clothing:
+						if B is top-displacable:
+							now B is top-displaced;
+							say "[BigNameDesc of M] displaces your [printed name of B]!";
+						otherwise if B is actually strippable:
+							now B is in the location of the player;
+							say "[BigNameDesc of M] removes your [printed name of B]!";
+						otherwise if B is tearable:
+							say "[BigNameDesc of M] slips [his of M] sword through the seam of your [printed name of B], and destroys it!";
+							destroy B;
+						otherwise:
+							now N is 0;
+					decrease N by 1;
+			let C be a random worn actually nipple covering clothing;
+			if milking is 0 and C is clothing:
+				say "[BigNameDesc of M] snarls in frustration at being unable to remove your [ShortDesc of C].[line break][speech style of M]'Don't think you're getting off that easy! Just because I can't get to your nipples doesn't mean I'm out of options.'[roman type][line break][if M is friendly][BigNameDesc of M] turns aggressive!";
+				interest M;
+				anger M;
+			otherwise:
+				say "[speech style of M]'You can thank me later.'[roman type][line break]";
+				satisfy M;
+				compute mandatory room leaving of M;
+				cutshow monster-image of M;
+		otherwise:
+			if M is in the location of the player, say "[BigNameDesc of M] eyes up the lever on the wall.[line break][speech style of M]'Who keeps switching this back?!'[roman type][line break][big he of M] steps over to the lever, and pushes it up so that it is pointing to the green plus sign.";
+	now L is lever-pulled.
+
 
 To compute (M - a gladiator) npcBattling (N - a wench):
 	If N is QoS wench:
@@ -823,6 +873,14 @@ This is the gladiator sex conversion rule:
 			drag to Dungeon33 by M;
 		rule succeeds.
 The gladiator sex conversion rule is listed first in the gladiator unique punishment rules.
+
+This is the gladiator trolls milk bench rule:
+	if player-currently-resting is 1:
+		let L be a random milking bench lever in the location of the player;
+		if L is a thing and L is not lever-pulled:
+			compute L pull of current-monster;
+			rule succeeds.
+The gladiator trolls milk bench rule is listed first in the gladiator unique punishment rules.
 
 This is the gladiator fed up rule:
 	let M be current-monster;
@@ -1637,11 +1695,11 @@ To ride dominate (M - a gladiator):
 	let G be the openness of F - the girth of M;
 	say "You grab [NameDesc of M] by the wrist and try to [if M is swordless]overpower [him of M]. [big he of M][otherwise]wrench the sword out of [his of M] hand. [big he of M][end if] tries to resist, but [his of M] [DickDesc of M] throws off [his of M] balance, and [he of M] ends up falling on [his of M] ass. [PowerBottomComment of M] You sit in [his of M] lap, looking [him of M] in the eye as you grind on [his of M] shaft. [big his of M] eyes [if M is wild gladiator]narrow[otherwise]widen[end if].[line break][speech style of M]'[if M is wild gladiator][one of]You forget your role.'[or]You doubt my abilities?'[at random][otherwise][one of]T-that is my lesser part! S-stop this at once!'[or]You want that? But that's my-!'[or]What?! You're after my-?!'[at random][end if][roman type][line break][BigNameDesc of M] watches with bated breath as you line [his of M] drooling tip up with your hole. Your eyes meet as you drop your hips, and you share a wince as [his of M] [LongDickDesc of M] [if G > 2]slips[otherwise if G > -1]slides[otherwise]slooowly slides[end if] into your [variable F].";
 	now M is penetrating F;
-	now refractoryperiod is 3;
+	now refractoryperiod is maxrefractoryperiod; [prevents the player from cumming]
 	ruin F;
 	let C be a random worn chastity cage;
 	say "[line break][big he of M] tries to harden [his of M] expression, but from the way [he of M]'s twitching inside you, it's clear [he of M]'s actually desperate to see where you take things next. [if the relevant sex addiction of the player > 6]Luckily, you've been desperate to have this [DickDesc of M] inside of you from the moment you laid eyes on it, and you aren't about to back out now[otherwise if the times-submitted of M > 0]The thought of punishing [him of M] for all [he of M]'s done to you is enticing, but the exaggerated look of scorn on [his of M] face is too cute to ignore[otherwise]The thought of torturing [him of M] a little bit is enticing, but you're really horny, and [his of M] [DickDesc of M] is BIG![end if]. You [if the relevant sex addiction of the player > 10]enthusiastically[otherwise if the relevant sex addiction of the player > 5]confidently[otherwise]hesitantly[end if] begin to move your hips, [if C is clothing]cage jiggling uselessly[otherwise if the size of penis > 4][player-penis] tapping [his of M] belly[otherwise if the player is possessing a penis][sissy-penis] jiggling happily[otherwise]breasts [BreastBouncingDesc][end if] as your bouncing hips drive [him of M] into your [if the player is sexed male]prostate[otherwise]G-spot[end if] over and over again. [big he of M] accepts [his of M] punishment without flinching or looking away, panting quietly as you treat [him of M] like your own personal dildo. Your wild pace eventually takes its toll, and you find yourself shutting your eyes and speeding up as you race toward your peak.[line break]";
-	now refractoryperiod is 0;
+	now refractoryperiod is 0; [player is now able to cum]
 	let R be the semi-dominance roll for M;
 	if M is wrapped:
 		if debugmode > 0, say "[bold type]SKIPPED[roman type][line break]";

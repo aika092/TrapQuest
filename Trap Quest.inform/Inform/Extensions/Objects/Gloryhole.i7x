@@ -328,7 +328,7 @@ An all time based rule (this is the compute gloryhole rule):
 					if delayed fainting is 0, say "The rapidly deflating [manly-penis] is withdrawn from the hole.";
 					compute gloryhole dislodging;
 				otherwise:
-					if gloryhole is throater, say "The [manly-penis] in the upper hole keeps thrusting in and out of your mouth and throat[one of], causing you to make lewd gagging sounds[or][or][or][cycling]!";
+					if gloryhole is actual throater, say "The [manly-penis] in the upper hole keeps thrusting in and out of your mouth and throat[one of], causing you to make lewd gagging sounds[or][or][or][cycling]!";
 					otherwise say "The [manly-penis] in the gloryhole continues to [one of]fuck your mouth![or]gently thrust.[or]move slowly in and out.[or]fuck your face![in random order]";
 			otherwise if gloryhole is blowjob portal:
 				if the turns trapped of gloryhole > a random number between 3 and 7 and player-urinating is 0:
@@ -344,7 +344,7 @@ An all time based rule (this is the compute gloryhole rule):
 				if delayed fainting is 0, say "The rapidly deflating [manly-penis] is withdrawn from the hole.";
 				compute gloryhole dislodging;
 			otherwise:
-				if gloryhole is throater, say "The [manly-penis] in the gloryhole continues to [one of]fuck your throat![or]vigorously thrust.[in random order]";
+				if gloryhole is actual throater, say "The [manly-penis] in the gloryhole continues to [one of]fuck your throat![or]vigorously thrust.[in random order]";
 				otherwise say "The [manly-penis] in the gloryhole continues to [one of]fuck your mouth![or]gently thrust.[or]move slowly in and out.[or]fuck your face![in random order]";
 		if the turns trapped of gloryhole > 12:
 			say "Gloryhole is broken and should have let you go by now! Please report the bug to Aika.";
@@ -358,7 +358,7 @@ To compute gloryhole BJ completion:
 		say "[one of]The [manly-penis] spasms as it fills the condom with a huge load[or]The [manly-penis] throbs powerfully as it fills the condom with a nice, big load[or]The [manly-penis] jizzes, filling the condom with a really big load[in random order]. ";
 		compute default condom filling of a random fairy;
 		now gloryhole is gloryunwrapped;
-	otherwise if gloryhole is throater:
+	otherwise if gloryhole is actual throater:
 		say "The [manly-penis] [one of]explodes down your throat[or]jizzes directly down your throat[at random], removing your choice of whether to swallow the salty gift.";
 		StomachSemenUp the semen load of M;
 	otherwise:

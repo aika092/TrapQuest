@@ -83,7 +83,7 @@ Definition: a skirt is ingredient: decide yes.
 To decide which number is the crafting key of (C - a skirt):
 	decide on 54.
 
-[This is supposed to line up with DQBulk]
+[This is supposed to line up with DQBulk, i.e. if DQBulk is bigger than this, we can see the bottom of your diaper (defaultDiaperCoveringLength). Ideally it also lines up with how many inches of penis it can hide (penis-capacity is 1 + skirtLength*2).]
 To decide which number is the skirtLength of (C - a clothing):
 	if C is super-short or C is unskirted or C is crotch-displaced or C is crotch-unzipped or C is crotch-ripped, decide on -1;
 	if C is short, decide on 1;

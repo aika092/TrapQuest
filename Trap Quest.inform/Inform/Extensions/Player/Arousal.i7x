@@ -211,11 +211,11 @@ To check for arousal change:
 		now previous-oral-sex-addiction is the calculated oral sex addiction of the player;
 		now previous-anal-sex-addiction is the calculated anal sex addiction of the player;
 		if interracial fetish is 1, now previous-bbc-addiction is the calculated bbc addiction of the player;
-		now previous-grossness-addiction is the calculated grossness addiction of the player;
 		now previous-vaginal-sex-addiction is the calculated vaginal sex addiction of the player;
 		now previous-titfuck-addiction is the calculated titfuck addiction of the player;
 		now previous-semen-taste-addiction is the calculated semen taste addiction of the player;
 		now previous-semen-addiction is the calculated semen addiction of the player;
+	now previous-grossness-addiction is the calculated grossness addiction of the player;
 	if diaper quest is 1 or lactation fetish is 1, now previous-milk-taste-addiction is the calculated milk taste addiction of the player;
 	if watersports fetish is 1, now previous-urine-taste-addiction is the calculated urine taste addiction of the player;
 	now previous-sex-addiction is the calculated sex addiction of the player.
@@ -276,7 +276,7 @@ Definition: yourself is able to get horny:
 	if the class of the player is princess and bride-consort is monster and the refractory-period of bride-consort > 0, decide no;
 	[#LXorDD: with the new age 'sensitive' sexdolls, let's see how it goes if we allow them to get horny.]
 	[if the latex-transformation of the player > 3, decide no;]
-	if refractoryperiod > 2 and (the player is not possessing a vagina or the number of live things penetrating a fuckhole is 0), decide no; [Player can't gain arousal on the turn that they cum. Except women, during sex, who can have continued orgasms.]
+	if refractoryperiod >= maxrefractoryperiod and (the player is not possessing a vagina or the number of live things penetrating a fuckhole is 0), decide no; [Player can't gain arousal on the turn that they cum. Except women, during sex, who can have continued orgasms.]
 	[if the player is barbie, decide no;]
 	decide yes.
 

@@ -21,6 +21,7 @@ To check consensual submissive sex of (M - a monster):
 		follow the monster friendly convinced rule of M;
 		if the rule succeeded:
 			now the chosen-orifice of M is presented-orifice;
+			if the chosen-orifice of M is face, now M is not-getting-licked;
 			now M is friendly-fucking;
 			FavourUp M by the sex desire of M;
 			follow the insertion rules of M;

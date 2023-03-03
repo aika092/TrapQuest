@@ -16,7 +16,7 @@ Definition: yourself is able to wank:
 Definition: yourself is fapping-blocked:
 	if there is a worn chastity cage or there is a worn restricting research airhancer or there is a worn creamfilled condom of kings, decide yes;
 	if there is a worn strapon-panties:
-		unless there is a worn not dildo-usage strapon-dildo, decide yes;
+		unless strapon-dildo is worn and strapon-dildo is not dildo-usage, decide yes;
 	if the player is barbie and the player is not holding the players-detached-dick, decide yes; [#LXorDD]
 	decide no.
 

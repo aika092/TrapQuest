@@ -34,6 +34,9 @@ To restock (C - a can):
 		add B to Standard Item Pen.
 
 To say ShortDesc of (B - a can):
+	say "can".
+
+To say MediumDesc of (B - a can):
 	if the fill-type of B is remembered, say "can of [FillName the fill-type of B]";
 	otherwise say "[fill-colour of B] can".
 

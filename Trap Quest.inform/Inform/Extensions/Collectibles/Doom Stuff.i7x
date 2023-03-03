@@ -80,12 +80,13 @@ To say ExamineDesc of (C - cock candle):
 
 Report taking cock candle:
 	if tough-shit is 1, force commence doom;
-	if the player is getting lucky:
-		say "You feel a cursed spirit attempt to escape, but remain trapped within the candle. For now.";
-	otherwise:
-		now cock candle is not wisped;
-		say "As you disturb the candle, you feel a cursed spirit escape through the flame!";
-		deploy a wisp.
+	unless the player is in a predicament room:
+		if the player is getting lucky:
+			say "You feel a cursed spirit attempt to escape, but remain trapped within the candle. For now.";
+		otherwise:
+			now cock candle is not wisped;
+			say "As you disturb the candle, you feel a cursed spirit escape through the flame!";
+			deploy a wisp.
 
 To say ShortDesc of (C - cock candle):
 	say "cock candle".

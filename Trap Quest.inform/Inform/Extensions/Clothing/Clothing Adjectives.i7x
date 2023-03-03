@@ -1,6 +1,8 @@
 Clothing Adjectives by Clothing begins here.
 
-A wearthing can be predicament-normal, predicament-temporary or predicament-fixed (this is the predicament-persistence property). A wearthing is usually predicament-normal. [AFTER initial predicament execution, anything not predicament-fixed gets set to predicament-temporary. Anything predicament-temporary is removed at the end of a predicament. NB this means that if a wearthing is summoned DURING initial predicament execution, it must be manually set to predicament-fixed.]
+A wearthing can be predicament-normal, predicament-temporary or predicament-fixed (this is the predicament-persistence property). A wearthing is usually predicament-normal. [AFTER initial predicament execution, anything not predicament-fixed gets set to predicament-temporary. Anything predicament-temporary is removed at the end of a predicament. NB this means that if a wearthing is summoned DURING initial predicament execution, it must be manually set to predicament-fixed.
+
+We also use predicament-fixed to set clothing in the junk room to be immune to change.]
 
 [!<Clothing>@
 
@@ -264,12 +266,15 @@ Clothing can be ass plugging. Clothing is usually not ass plugging.
 Clothing can be vagina plugging. Clothing is usually not vagina plugging.
 Clothing has a number called plug size. The plug size of clothing is usually 0.
 Clothing can be purity. Clothing is usually not purity. [Means they care about your virginity.]
-A Magic-type is a kind of value. The magic-types are blandness, dressup, milk production, absorption, temptation, suppression, bed wetting, confidence, endurance, dominance, constriction, speed, kicking, protection, posture training, expansion, refreshment, rejuvenation, possession, maturity, respiration, durability, stumbling, provocation, exposure, audible jiggles, desperation, augmentation, elasticity, waddle-walking, draining, strength stealing and hostility. Clothing has a magic-type. The magic-type of clothing is usually blandness.
+
+A Magic-type is a kind of value. The magic-types are blandness, dressup, milk production, absorption, temptation, suppression, bed wetting, confidence, endurance, dominance, constriction, speed, kicking, protection, posture training, expansion, refreshment, rejuvenation, possession, maturity, respiration, durability, stumbling, provocation, exposure, audible jiggles, desperation, augmentation, elasticity, waddle-walking, draining, strength stealing, impermanence and hostility. Clothing has a magic-type. The magic-type of clothing is usually blandness.
+A clothing has a number called impermanence-counter.
+
 Magic-ID is a kind of value. The magic-IDs are unidentified and identified. Clothing has a Magic-ID. The Magic-ID of clothing is usually unidentified.
 Clothing has a number called raw-magic-modifier. The raw-magic-modifier of clothing is usually 0.
 To decide which number is the penis-capacity of (C - a clothing):[what's the largest size of penis it can cover?]
 	if C is skirted:
-		if the player is upright or C is not worn, decide on the skirtLength of C * 2;
+		if the player is upright or C is not worn, decide on 1 + the skirtLength of C * 2;
 		otherwise decide on the skirtLength of C - 2;
 	decide on 10.
 To decide which number is the crotch-tightness of (C - a clothing): [the higher the number, the more tight, which gets closer to cameltoe. labia plumpness is added to this. 4+ increases outrage in certain circumstances. 5 is cameltoe city, and counts as partially exposed.]
@@ -326,7 +331,7 @@ A clothing has a number called draining-charge.
 Clothing can be womanly or manly. Clothing is usually womanly. [Manly clothing is anything that is not specifically something only women should wear. E.g. a T-shirt]
 Clothing can be restart immune. Clothing is usually not restart immune. [This means it won't disappear or change when the map is reset.]
 Clothing can be spikey. A clothing is usually not spikey.
-A clothing has a number called used condoms. A clothing has a number called empty condoms.
+A clothing has a number called used condoms. A clothing has a number called empty condoms. A clothing has a list of things called the condom history.
 A clothing has a number called stolen-strength. [This strength is returned when the item is worn again]
 Definition: an object is removal-blocking: decide no. [Some items can prevent other clothing from being removed until it is removed]
 [!<Clothing>@<temporarilyDisplaced:Boolean>*
@@ -464,9 +469,11 @@ To say NipSlipFlav:
 	let C be a random worn actually nipple covering clothing;
 	if C is clothing, say "[bold type]You look down and notice that your [ShortDesc of C] has fallen open a bit, exposing a nipple. [roman type][moderateHumiliateReflect]You quickly fix the wardrobe malfunction.";
 	otherwise say "[bold type]Minor bug - game calculated that you had experienced a nip slip but couldn't find a relevant item of clothing.[roman type][line break]".
+To compute nip slip reaction of (M - a monster):
+	if diaper quest is 1, compute dq nip slip reaction of M;
+	otherwise compute tq nip slip reaction of M.
 To compute tq nip slip reaction of (M - a monster):
 	say NipSlipSeenFlav of M;
-	FavourDown M;
 	now groping-person is M;
 	update gropability;
 	if the gropability of breasts > 0, increase the gropability of breasts by 8;
@@ -475,12 +482,13 @@ To compute tq nip slip reaction of (M - a monster):
 		now targeted-body-part is breasts;
 		compute grope of M;
 	say NipSlipFlav;
-	if M is friendly human monster, progress quest of chest-exposing-quest from M.
+	if M is friendly human monster, progress quest of chest-exposing-quest from M;
+	FavourDown M with consequences.
 To compute dq nip slip reaction of (M - a monster):
 	say DQNipSlipSeenFlav of M;
-	FavourDown M;
 	say NipSlipFlav;
-	if M is friendly human monster, progress quest of chest-exposing-quest from M.
+	if M is friendly human monster, progress quest of chest-exposing-quest from M;
+	FavourDown M with consequences.
 To say NipSlipSeenFlav of (M - a monster):
 	say "[speech style of M]'[one of]Err, I can see your nipple.'[or]Are you aware your nipple is on show?'[or]Nip-slip alert.'[in random order][roman type][line break]".
 To say DQNipSlipSeenFlav of (M - a monster):

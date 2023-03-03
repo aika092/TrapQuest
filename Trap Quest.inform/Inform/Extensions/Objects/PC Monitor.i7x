@@ -439,6 +439,9 @@ Check inserting it into while the second noun is security interface:
 		say "You put the [ShortDesc of the noun] in the chute, which closes. A feminine robotic voice speaks:[line break][second custom style]'SCANNING...'[roman type][line break]";
 		if the noun is soiled-diaper:
 			if the diaper-origin of the noun matches the text "mechanic" or the diaper-origin of the noun matches the text "pimp" or the diaper-origin of the noun matches the text "Xavier", now authentication-success is true;
+		if the noun is clothing:
+			repeat with M running through the condom history of the noun:
+				now M is inseminating the noun; [this will be reset in the only destroy function anyway]
 		if mechanic is inseminating the noun or pimp is inseminating the noun or demon lord is inseminating the noun, now authentication-success is true;
 		only destroy the noun;
 	if authentication-success is true:

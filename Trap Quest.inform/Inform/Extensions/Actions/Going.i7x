@@ -136,7 +136,7 @@ Part 1 - Movement Hindrance Definitions
 
 Definition: yourself is waddling:
 	if there is worn waddle-walking clothing, decide yes;
-	if there is a worn diaper cover, decide no;
+	[if there is a worn diaper cover, decide no;] [diaper covers used to be a good thing]
 	let D be a random worn diaper;
 	if D is diaper and the weight of D > 2, decide yes;
 	decide no.

@@ -245,7 +245,7 @@ To loot (M - a facehugger):
 
 [If the player gets unlucky, they can get attacked by a more permanent facehugger variant. The only way to get rid of them is for the player to get lucky, or to use special means like the elder altar or wishing well.]
 
-hugger-gag is a ballgag. hugger-gag is unique. a hugger-gag is biological. The printed name of hugger-gag is "[clothing-title-before]facehugging facehugger[clothing-title-after]". The text-shortcut of hugger-gag is "fhg". Understand "face", "hugging", "facehugging" as hugger-gag. A hugger-gag has a number called charge.
+hugger-gag is a ballgag. hugger-gag is unique. a hugger-gag is biological. The printed name of hugger-gag is "[clothing-title-before]facehugging facehugger[clothing-title-after]". The text-shortcut of hugger-gag is "fhg". Understand "facehugger", "hugging", "facehugging" as hugger-gag. A hugger-gag has a number called charge.
 
 Definition: hugger-gag is transformation-proteted: decide yes.
 Definition: hugger-gag is tearable: decide no. [NPCs can't remove it to use your mouth]

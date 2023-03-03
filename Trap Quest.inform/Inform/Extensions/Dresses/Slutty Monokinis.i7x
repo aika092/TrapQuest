@@ -374,10 +374,6 @@ Definition: anal-beads-blue-swimsuit is actually top-replacable:
 	if there is a combative monster, decide no;
 	decide yes.
 
-Definition: anal-beads-blue-swimsuit is potentially at least partially asshole covering:
-	if anal-beads-blue-swimsuit is penetrating asshole, decide yes;
-	decide no.
-
 To say TopDisplaceFlav of (C - anal-beads-blue-swimsuit):
 	say "You remove your fingers from the collar-holes of the [ShortDesc of C], causing the top half to drop down, exposing your [BreastDesc].".
 

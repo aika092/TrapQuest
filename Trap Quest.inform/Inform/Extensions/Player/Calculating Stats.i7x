@@ -84,6 +84,7 @@ To decide which number is the flat strength of the player:
 		if the milk volume of breasts > 37, increase S by 1;
 		if the milk volume of breasts > 40, increase S by 1;
 	if the class of the player is bunny, increase S by the total squirtable fill of belly / 5;
+	if the class of the player is human toilet, increase S by the square root of the stomach-urine of the player;
 	if the class of the player is symbiote:
 		if the player is a bit horny, increase S by 1;
 		if the player is horny, increase S by 1;
@@ -257,7 +258,7 @@ To decide which number is the flat intelligence of the player:
 	if the player is fighting against no-panties, decrease I by 4;
 	if the player is fighting against topless, decrease I by 4;
 	if the class of the player is cowgirl, decrease I by the sensitivity of breasts / 2;
-	if the class of the player is cumdumpster, increase I by the square root of total pinned condoms;
+	if the class of the player is condom collector, increase I by the square root of total pinned condoms;
 	if the class of the player is priestess, increase I by 2;
 	repeat with T running through worn wearthings:
 		increase I by the intelligence-influence of T;

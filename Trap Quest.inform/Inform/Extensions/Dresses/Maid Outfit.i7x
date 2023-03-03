@@ -350,7 +350,7 @@ Definition: black-latex-maid-outfit is class-relevant:
 
 Part 13 - Milkmaid Outfit
 
-milkmaid-outfit is a maid outfit. milkmaid-outfit is very low cut. milkmaid-outfit is neck covering. milkmaid-outfit is totally-exclusive. milkmaid-outfit is only arm covering. milkmaid-outfit is nylon. milkmaid-outfit is unskirted. milkmaid-outfit is belly exposing. The printed name of milkmaid-outfit is "[clothing-title-before]milkmaid outfit[clothing-title-after]". Understand "milkmaid" as milkmaid-outfit. The text-shortcut of milkmaid-outfit is "mmo".
+milkmaid-outfit is a maid outfit. milkmaid-outfit is very low cut. milkmaid-outfit is optional-top-displacable. milkmaid-outfit is neck covering. milkmaid-outfit is totally-exclusive. milkmaid-outfit is only arm covering. milkmaid-outfit is nylon. milkmaid-outfit is unskirted. milkmaid-outfit is belly exposing. The printed name of milkmaid-outfit is "[clothing-title-before]milkmaid outfit[clothing-title-after]". Understand "milkmaid" as milkmaid-outfit. The text-shortcut of milkmaid-outfit is "mmo".
 
 To decide which figure-name is clothing-image of (C - milkmaid-outfit):
 	decide on figure of maid outfit 13.

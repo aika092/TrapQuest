@@ -43,7 +43,7 @@ To say EnslavedDominationFlav of (M - teacher-serenity):
 		now the sleep of M is 120.
 
 To decide which number is the EnslavedDominationThreshold of (M - teacher-serenity):
-	decide on 7.
+	decide on 12000.
 
 heel-lesson is a lesson. The lesson-teacher of heel-lesson is teacher-serenity.
 
@@ -195,9 +195,12 @@ To compute teaching of (L - roulette-lesson):
 					say "You take a canister at random. You put your mouth around the nozzle and push the canister down! ";
 					if CD is 0:
 						remove yourself from LST;
-						say "Something slimy and wrong floods your mouth. You immediately know you're drinking the combined spit of your classmates and [NameDesc of M][']s special sauce. It feels so wrong! [if diaper quest is 1]You feel a twinge behind your bladder. [end if][moderateHumiliateReflect]";
-						if diaper quest is 1, increase temporary-bladder-incontinence by a random number between 3 and 5;
-						otherwise SexAddictUp 1;
+						say "Something slimy and wrong floods your mouth. You immediately know you're drinking the combined spit of your classmates and [NameDesc of M][']s special sauce. It feels so wrong! [if diaper quest is 1]You feel a twinge behind your bladder. [end if][strongHumiliateReflect]";
+						if diaper quest is 1:
+							increase temporary-bladder-incontinence by a random number between 3 and 5;
+							TasteGrossOut 2;
+						otherwise:
+							TasteGrossOut 5;
 						repeat with TST running through innocent students in the location of the player:
 							if TST is not listed in LST, FavourDown TST; [innocent students that are watching are disgusted]
 					otherwise if entry CD in LD matches the text "alcohol":
@@ -311,7 +314,7 @@ To compute teaching of (M - teacher-angela):
 To say EnslavedDominationFlav of (M - teacher-angela):
 	say "You snap your fingers in front of [NameDesc of M][']s face. [big he of M] doesn't even seem to register you at all. It seems like nobody's home.".
 To decide which number is the EnslavedDominationThreshold of (M - teacher-angela):
-	decide on 15.
+	decide on 20000.
 
 make-up-lesson is a lesson. The lesson-teacher of make-up-lesson is teacher-angela.
 

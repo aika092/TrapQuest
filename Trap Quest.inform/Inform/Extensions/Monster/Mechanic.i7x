@@ -5,6 +5,7 @@ mechanic is a monster. mechanic is intelligent. mechanic is male.
 Definition: mechanic is willing to urinate: decide yes.
 
 Definition: mechanic is father material: decide yes.
+Definition: mechanic is condom prepared: decide yes. [Does he have condoms on him?]
 
 Definition: mechanic is raunchy: decide yes.
 
@@ -450,7 +451,7 @@ To set up sex length of (M - mechanic) in (F - a fuckhole):
 	set up sex length (a random number between 2 and 3) of M in F.
 
 To compute (M - mechanic) entering mouth:
-	if watersports fetish is 1 and the latex-transformation of the player <= 4 and the charisma of the player > a random number between 0 and (the favour of M / 2) and M is not wrapped and M is unfriendly:
+	if watersports fetish is 1 and the bladder of M >= 300 and the latex-transformation of the player <= 4 and the charisma of the player < a random number between 0 and (the favour of M / 2) and M is not wrapped and M is unfriendly:
 		say "[big he of M] cruelly grabs you by the hair, yanking you forward so your face is oriented straight at [his of M] crotch. [if the bimbo of the player < 13]You look on in [horror][otherwise]Your heart pumps with excitement[end if] as [he of M] begins urinating in your face.";
 		FacePiss from M;
 		if the blue-balls of M > 0, now the blue-balls of M is 0;
@@ -728,9 +729,9 @@ To compute tax return of (M - mechanic):
 				now X is B;
 				now X is blessed;
 				break;
-		if a random number between 1 and 3 is 1:
-			now X is a random off-stage strapon-dildo;
-			now the strap-length of X is 8;
+		if strapon-dildo is off-stage and a random number between 1 and 3 is 1:
+			now X is strapon-dildo;
+			now the strap-length of strapon-dildo is 8;
 		if X is a thing:
 			say "[BigNameDesc of M] drops a [printed name of X] at your feet.[line break][speech style of M]'I hope you find it useful... because you're going to suffer for it greatly the next time I get my hands on you.'[roman type][line break]";
 			now X is in the location of the player;

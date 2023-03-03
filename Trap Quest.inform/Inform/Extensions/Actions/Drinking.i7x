@@ -249,7 +249,7 @@ Check drinking breasts:
 
 Swallowing is an action applying to nothing.
 Check Swallowing:
-	let T be a random throater thing penetrating face;
+	let T be a random actual throater thing penetrating face;
 	if T is a thing, say "[BigNameDesc of T] is inside your throat, making this impossible." instead.
 Carry Out Swallowing:
 	allocate 3 seconds;

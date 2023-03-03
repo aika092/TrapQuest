@@ -302,4 +302,38 @@ To say MediumDesc of (C - burgundy tube top):
 To say ClothingDesc of (C - burgundy tube top):
 	say "A supertiny burgundy tube that clings tightly to your chest and has long sleeves attached to help it stay in place.".
 
+Part 12 - Porn Star Tube Top
+
+porn star tube top is a tube top. porn star tube top is neck covering. porn star tube top is transformation-rare. porn star tube top is polyester.
+The printed name of porn star tube top is "[clothing-title-before]porn star tube top[clothing-title-after]". The text-shortcut of porn star tube top is "pstt".
+
+Definition: porn star tube top is class-relevant:
+	if the class of the player is cumdumpster or the class of the player is stripper, decide yes;
+	decide no.
+
+To compute class set up of (C - porn star tube top):
+	now C is audible jiggles;
+	now C is cursed;
+	compute summoned quest of C.
+
+Definition: porn star tube top is white themed: decide yes.
+Definition: porn star tube top is black themed: decide yes.
+Definition: porn star tube top is star themed: decide yes.
+
+Figure of porn star tube top is the file "Items/Clothes/Upper/TubeTops/tubetop11.png".
+
+To decide which figure-name is clothing-image of (C - porn star tube top):
+	decide on figure of porn star tube top.
+
+To say ShortDesc of (C - porn star tube top):
+	say "tube top".
+To say MediumDesc of (C - porn star tube top):
+	say "porn star tube top".
+
+To say ClothingDesc of (C - porn star tube top):
+	say "A black and white tube top that clings tightly to your chest and is connected to a matching collar by thin black straps. Both the collar and the tube have the words 'PORN STAR' on them.".
+
+To decide which number is the initial outrage of (C - porn star tube top):
+	decide on 5.
+
 Tube Top ends here.

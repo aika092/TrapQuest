@@ -89,7 +89,7 @@ To say StoryAnswer of (M - student-anya):
 	say "[speech style of M]'I'm a latex fashion model but my agent says I'm too shy in front of a camera to properly make it big. He suggested I come here to learn how to [']loosen up[']...'[roman type][line break]".
 
 To say WhereAnswer of (M - student-anya):
-	say "[speech style of M]'[if the rank of the player <= 1]This is a place to learn how to be less of a prude. That's why I've been sent here anyway.'[otherwise if diaper quest is 1]Some of the other [sissy-girls] were saying you can't get to the top of the fetish modelling businses without soiling yourself on camera. I'm hoping it doesn't come to that...'[otherwise]Some of the other [sissy-girls] were saying you can't get to the top without sucking some [manly-penis]s. I'm hoping it doesn't come to that...'[end if][roman type][line break]".
+	say "[speech style of M]'[if the rank of the player <= 1]This is a place to learn how to be less of a prude. That's why I've been sent here anyway.'[otherwise if diaper quest is 1]Some of the other [sissy-girls] were saying you can't get to the top of the fetish modelling business without soiling yourself on camera. I'm hoping it doesn't come to that...'[otherwise]Some of the other [sissy-girls] were saying you can't get to the top without sucking some [manly-penis]s. I'm hoping it doesn't come to that...'[end if][roman type][line break]".
 
 
 Part - Default Conversation

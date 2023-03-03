@@ -1,6 +1,6 @@
 Electric Fan by Consumables begins here.
 
-An electric fan is a kind of thing. There are 3 electric fans. The printed name of electric fan is "[TQlink of item described][if item described is blessed]blessed [end if]electric fan[TQxlink of item described][verb-desc of item described]". The printed plural name of electric fan is "[TQlink of item described][if item described is blessed]blessed [end if]electric fans[TQxlink of item described][verb-desc of item described]". The text-shortcut of electric fan is "ef".
+An electric fan is a kind of thing. There are 4 electric fans. The printed name of electric fan is "[TQlink of item described][if item described is sure and item described is blessed]blessed [otherwise if item described is sure and item described is cursed]cursed [end if]electric fan[TQxlink of item described][verb-desc of item described]". The printed plural name of electric fan is "[TQlink of item described][if item described is blessed]blessed [end if]electric fans[TQxlink of item described][verb-desc of item described]". The text-shortcut of electric fan is "ef".
 When play begins:
 	let fanShortcutCount be 1;
 	repeat with E running through electric fan:
@@ -12,10 +12,12 @@ Figure of fan is the file "Items/Collectibles/fan1.png".
 To decide which figure-name is the examine-image of (E - an electric fan):
 	decide on figure of fan.
 An electric fan has a magic-curse. An electric fan is usually bland.
-An electric fan has a curse-ID. [Just because otherwise we get programming errors when other functions try to set its curse-ID]
+An electric fan has a curse-ID. An electric fan is usually unsure.
+Understand the magic-curse property as describing an electric fan when item described is sure.
 To decide which number is the alchemy key of (C - an electric fan):
 	decide on 21.
 Definition: an electric fan is product: decide yes.
+Definition: an electric fan is cursable: decide yes.
 To decide which number is the bartering value of (T - an electric fan) for (M - an aeromancer):
 	decide on 5.
 To decide which number is the bartering value of (T - an electric fan) for (M - a mechanic):
@@ -124,6 +126,11 @@ Carry out fanning:
 					now RD is the room D from R;
 				say "The gale pushes you to the [D][if the noun is cursed]. It must have been cursed[end if]!";
 				teleport to RD;
+			if the noun is not cursed and there is held wet fluid vulnerable clothing:
+				say "The warm air dries out all your clothes!";
+				repeat with C running through wet fluid vulnerable clothing:
+					clean C;
+					WaterEmpty C;
 	otherwise if there is a monster in R:
 		say "It doesn't affect the [list of monsters in the location of the player]!";
 	if the location of the player is R, say "Soon, it apparently runs out of battery and stops working. [if the location of the player is smoky and the noun is cursed]The smoke settles back down to waist height. [end if]You discard the expired fan.";

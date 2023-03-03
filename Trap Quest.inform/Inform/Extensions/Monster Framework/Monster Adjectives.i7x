@@ -22,6 +22,7 @@ To decide which number is the starting difficulty of (M - a monster):
 		decide on 6;
 	decide on 5.
 A monster can be friendly-fucking. [Are they having non-aggressive sex with you?]
+A monster can be not-getting-licked, getting-licked, or getting-asslicked (this is the monster-licking property). [Is your tongue on a different part of their body than their genitals?]
 Definition: a monster is damageable: decide yes. [A monster who is not damageable takes no damage from attacks.]
 A monster has a number called health. The health of a monster is usually 10. [Current HP, if this hits 0 they die.]
 To decide which number is the maxhealth of (M - a monster):
@@ -82,7 +83,7 @@ To say speech style of (M - a person):
 	otherwise say second custom style.
 To say speech style of (M - yourself):
 	say variable custom style.
-Definition: a monster is raunchy: decide no.
+Definition: a monster is raunchy: decide no. [is it interested in friendly sex]
 A monster can be airborne or flightless. A monster is usually flightless. [Does the monster fly or does it walk around? (Currently used to decide if the monster can stop the player standing back up by standing on their hair)]
 A monster can be strangers, survived or triumphant (this is the monster-history property). A monster is usually strangers. [A monster who is strangers has never voluntarily gotten aggressive at the player. A survived monster has attacked the player, and then failed to catch them, and then gotten bored. A triumphant monster has defeated the player. We use this to reward the player for surviving several encounters with DIFFERENT enemies.]
 [The following variables are used for deciding what body parts can be automatically presented to a monster.]
@@ -96,14 +97,23 @@ Definition: a monster is willing to do oral:
 	if it is male, decide yes;
 	decide no.
 Definition: a monster is willing to urinate: decide no.
-Definition: a monster is willing to do licking: decide no.
+Definition: a monster is willing to do licking:
+	if it is human and it is intelligent and it is raunchy, decide yes;
+	decide no.
 Definition: a monster is willing to do anilingus:
-	if a2m fetish > 1, decide yes;
+	if it is willing to do licking and a2m fetish > 0, decide yes;
+	decide no.
+Definition: a monster is eager to do anilingus:
+	if it is willing to do anilingus and the remainder after dividing earnings by 4 < (a2m fetish + 1), decide yes; [50% of turns for a2m = 1; 75% of turns for a2m = 2]
 	decide no.
 Definition: a monster is willing to do titfucks:
 	if it is male, decide yes;
 	decide no.
 Definition: a monster is willing to charm snakes: decide no.[penis-centric sex]
+Definition: a monster is condom obsessed: decide no. [Does he always use condoms if possible?]
+Definition: a monster is condom prepared: [Does he have condoms on him?]
+	if it is condom obsessed, decide yes;
+	decide no.
 Definition: a monster (called M) is enjoys sex:
 	if M is willing to do anal or M is willing to do vaginal or M is willing to do oral or M is willing to do titfucks, decide yes;
 	decide no.
@@ -291,8 +301,12 @@ A monster has a number called teaseTimer. [This number goes up when a defeated m
 
 
 A monster has a number called throating. [Is it currently doing deepthroat oral? If so, for how many turns shall it do this?]
-Definition: a monster is throater:
-	if the throating of it > 0, decide yes;
+Definition: a thing is throater: decide no. [Does it always cause deepthroat?]
+Definition: a thing is actual throater:
+	if it is a monster and the throating of it > 0, decide yes;
+	if it is throater:
+		if it is monster and it is not not-getting-licked, decide no; [penetrating face, but not in the normal way]
+		decide yes;
 	decide no.
 To say silentThroat (M - a monster): [Shortcut to flag to the game that the NPC is deepthroating this turn]
 	increase the throating of M by 1.
@@ -316,13 +330,14 @@ A game universe initialisation rule:
 		add M to L, if absent;
 	sort L in random order;
 	repeat with M running through intelligent monsters:
-		if the number of entries in L > 0:
-			let X be entry 1 in L;
-			add X to the tradableItems of M;
-			remove X from L;
-		otherwise:
-			let X be a random mass collectible;
-			add X to the tradableItems of M.
+		unless M is student or M is staff member or M is ex-princess:
+			if the number of entries in L > 0:
+				let X be entry 1 in L;
+				add X to the tradableItems of M;
+				remove X from L;
+			otherwise:
+				let X be a random mass collectible;
+				add X to the tradableItems of M.
 
 [Flags a monster as having a soul or not having a soul.]
 A monster can be soul-stolen or not soul-stolen. A monster is usually not soul-stolen.

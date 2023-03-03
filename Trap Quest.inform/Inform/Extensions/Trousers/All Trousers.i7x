@@ -34,6 +34,9 @@ bitch bottoms is a trousers. bitch bottoms is leg exposing.
 The printed name of bitch bottoms is "[clothing-title-before]bitch bottoms[clothing-title-after]". The text-shortcut of bitch bottoms is "bbtm".
 Figure of bitch bottoms is the file "Items/Clothes/Lower/Pants/bitchbottoms1.png".
 Definition: bitch bottoms is usually at least partially thigh covering: decide yes.
+Definition: bitch bottoms is class-relevant:
+	if the class of the player is cumdumpster, decide yes;
+	decide no.
 To decide which figure-name is clothing-image of (H - bitch bottoms):
 	decide on figure of bitch bottoms.
 To say UniqueClothingDesc of (Y - bitch bottoms):
@@ -194,16 +197,18 @@ To decide which object is the unique-upgrade-target of (C - a jeans):
 	if the number of worn knickers is 0, decide on a random off-stage cutoffs;
 	decide on nothing.
 
-full-zip-jeans is a jeans. full-zip-jeans is zippable. The printed name of full-zip-jeans is "[clothing-title-before]zip-up jeans[clothing-title-after]". The text-shortcut of full-zip-jeans is "zje". Understand "zip-up" as full-zip-jeans.
+denim-jeans is a jeans.
 
-Figure of full zip jeans is the file "Items/Clothes/Lower/Pants/jeans1.png".
-To decide which figure-name is clothing-image of (H - full-zip-jeans):
-	decide on figure of full zip jeans.
+The printed name of denim-jeans is "[clothing-title-before]denim jeans[clothing-title-after]". The text-shortcut of denim-jeans is "dje".
 
-To say UniqueClothingDesc of (J - full-zip-jeans):
+Figure of jeans is the file "Items/Clothes/Lower/Pants/jeans1.png".
+To decide which figure-name is clothing-image of (H - denim-jeans):
+	decide on figure of jeans.
+
+To say UniqueClothingDesc of (J - denim-jeans):
 	say "A pair of tight fitting denim jeans.".
 
-To say MediumDesc of (Y - full-zip-jeans):
+To say MediumDesc of (Y - denim-jeans):
 	say "pair of zip up jeans".
 
 V-crotch-jeans is a jeans. The printed name of V-crotch-jeans is "[clothing-title-before]V-crotch jeans[clothing-title-after]". The text-shortcut of V-crotch-jeans is "vje". Understand "V-crotch" as V-crotch-jeans.

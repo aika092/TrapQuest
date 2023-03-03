@@ -224,7 +224,7 @@ To check tiara-of-spades transformation:
 
 To compute princess guard tease of (M - a royal guard):
 	allocate 6 seconds;
-	say "[BigNameDesc of tiara-of-spades] sends an irresistable suggestion through your body, and you find yourself placing a hand on [NameDesc of M][']s crotch.[line break][if the player is able to speak][variable custom style]'Think you've got what it takes to satify me?'[roman type][line break][end if]";
+	say "[BigNameDesc of tiara-of-spades] sends an irresistible suggestion through your body, and you find yourself placing a hand on [NameDesc of M][']s crotch.[line break][if the player is able to speak][variable custom style]'Think you've got what it takes to satify me?'[roman type][line break][end if]";
 	if the refractory-period of M > 0:
 		say "[BigNameDesc of M] hesitantly feels down at [his of M] crotch, and finds that it is soft, and as much as [he of M] wills it, it doesn't seem to be getting hard right now.[line break][speech style of M]'I am sorry to disappoint you, your Highness, but I don't believe that I can be of service right now...'[roman type][paragraph break][if the player is able to speak][variable custom style]'[one of]Ugh, you are walking, talking evidence of why white women prefer black [men of M].'[or]Pathetic.'[stopping][roman type][line break][BigNameDesc of M] hangs [his of M] head in shame.";
 	otherwise:

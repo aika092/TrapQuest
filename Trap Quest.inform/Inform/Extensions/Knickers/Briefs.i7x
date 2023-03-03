@@ -129,9 +129,12 @@ Report wearing a white-diagram briefs:
 
 pink-hole-briefs is a briefs. The text-shortcut of pink-hole-briefs is "phlb". pink-hole-briefs has a number called charge. Understand "pink", "pink hole" as pink-hole-briefs.
 To say selfexamineuniquetitle of (G - pink-hole-briefs):
-	say "pair of pink 'Hole' briefs".
+	say "pair of pink [']Hole['] briefs".
 To say UniqueClothingDesc of (G - pink-hole-briefs):
-	say "This stretchy pair of pink-hole-briefs says 'Hole' on the front, reminding any onlookers about what [if G is worn]your[otherwise]the wearer's[end if] [fuckholes] should be used as.".
+	say "This stretchy pair of pink-hole-briefs says [']Hole['] on the front, reminding any onlookers about what [if G is worn]your[otherwise]the wearer's[end if] [fuckholes] should be used as.".
+Definition: pink-hole-briefs is class-relevant:
+	if the class of the player is cumdumpster, decide yes;
+	decide no.
 Definition: pink-hole-briefs is vagina themed: decide yes.
 Definition: pink-hole-briefs is pink themed: decide yes.
 To compute periodic effect of (G - pink-hole-briefs):

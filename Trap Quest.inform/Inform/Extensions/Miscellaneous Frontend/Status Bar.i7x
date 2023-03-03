@@ -7,7 +7,7 @@ Rule for constructing the status line:
 		otherwise if new status line is 3:
 			fill status bar with Table of Minimal Status;
 		otherwise if debuginfo > 0:
-			fill status bar with Table of Debug Low Res Status;
+			fill status bar with Table of Debug Status;
 		otherwise:
 			if new status line is 2 or diaper quest is 1:
 				fill status bar with Table of Low Res Status;
@@ -90,17 +90,12 @@ To say LowResCombat:
 
 Part - Debug Res Status Bars
 
-Table of Debug High Res Status
-left	central	right
-"[TitleBimbo]"	""	""
-"STR: [saved-flat-strength]/30 DEX: [saved-flat-dexterity]/30 INT: [saved-flat-intelligence]/30"	"STATUS: [VagueInternalFeeling]   APPEARANCE: [saved appearance of the player]/20 DIGNITY: [humiliation of the player]/40000"	""
-"TITS: [largeness of breasts]/[max breast size] BELLY: [largeness of belly]/[max belly size] HIPS: [thickness of hips]/[max ass size]"	"HEALTH: [VagueExternalFeeling]   SEX ADDICTION: [sex addiction of the player]/20   DELICATENESS: [delicateness of the player]/20"	""
-
-Table of Debug Low Res Status
+Table of Debug Status
 left	central	right
 "[TitleBimbo]"	""	""
 "STR:[saved-flat-strength]/30 DEX:[saved-flat-dexterity]/30 INT:[saved-flat-intelligence]/30 TITS:[largeness of breasts]/[max breast size] BELLY:[largeness of belly]/[max belly size] HIPS:[thickness of hips]/[max ass size]"	""	""
-"[DebugLowResAppearance] DIGNITY:[humiliation of the player]/40000 SEX-ADDICTION:[sex addiction of the player]/20 DELICATENESS:[delicateness of the player]/20"	""	""
+"[TQDQ Appearance] ([if diaper quest is 1 and the saved cringe appearance of the player >= the saved appearance of the player][saved cringe appearance of the player][otherwise]saved appearance of the player[end if]/20)"	""	""
+"DIGNITY:[humiliation of the player]/40000 SEX-ADDICTION:[sex addiction of the player]/20 DELICATENESS:[delicateness of the player]/20"	""	""
 "FATIGUE:[fatigue of the player] DAMAGE:[body soreness of the player]/10 ASS:[soreness of asshole]/10 [if the player is possessing a vagina]PUSSY:[soreness of vagina]/10 [end if]HYDRATION:[stomach-liquid of the player] FOOD:[stomach-food of the player][if the total magic power of the player > 0] MAGIC: [magic power of the player] / [total magic power of the player][end if]"	""	""
 "STATUS: [VagueInternalFeeling] SLAP DICE: 2d[saved-printed-slap-damage] KNEE DICE: 2d[saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK DICE: 2d[saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks]"	""	""
 
@@ -661,8 +656,10 @@ Rule for constructing the status line while displaying:
 		fill status bar with table of slow pregnancy status;
 	otherwise if the current menu is the table of random settings:
 		fill status bar with table of random settings status;
-	otherwise if the current menu is the Table of TG Timing Options or the current menu is the Table of TG Occurence Options:
-		fill status bar with table of tg status;
+	otherwise if the current menu is the Table of TG Occurence Options:
+		fill status bar with table of tg occurence status;
+	otherwise if the current menu is the Table of TG Timing Options:
+		fill status bar with table of tg timing status;
 	otherwise:
 		if the endnode flag is 0,
 			fill status bar with Table of Deep Menu Status;
@@ -705,43 +702,49 @@ left	central	right
 Table of Pregnancy Choice Status
 left	central	right
 ""	""	""
-""	"Enable or disable inhuman pregnancy content?"	""
+"Enable or disable inhuman pregnancy content?"	""	""
 ""	""	""
 
 Table of Slow Pregnancy Status
 left	central	right
 ""	""	""
-""	"How would you like pregnancies to grow?"	""
+"How would you like pregnancies to grow?"	""	""
 ""	""	""
 
-Table of TG Status
+Table of TG Timing Status
 left	central	right
 ""	""	""
-""	"How would you like the game to handle your sex change?"	""
+"Some things can make you change sex before you reach minimum penis size. Please choose how rare or common you'd like that to be."	""	""
+""	""	""
+
+Table of TG Occurence Status
+left	central	right
+""	""	""
+"In this game, a magical sex change usually happens shortly after you reach minimum penis size. But you can configure the exact rules surrounding this to best suit your fantasy."	""	""
 ""	""	""
 
 Table of Diaper Choice Status
 left	central	right
 ""	""	""
-""	"Enable or disable certain diaper content?"	""
+"Enable or disable certain diaper content?"	""	""
 ""	""	""
 
 Table of Diaper Focus Status
 left	central	right
 ""	""	""
-""	"Make diapers the main focus of the game?"	""
+"Make diapers the main focus of the game?"	""	""
 ""	""	""
 
 Table of Toilet Allowance Status
 left	central	right
 ""	""	""
-""	"Enable the player to pull the diaper to one side when in a room with a toilet?"	""
+"Enable the player to pull the diaper to one side when in a room with a toilet?"	""	""
 ""	""	""
 
 Table of Random Settings Status
 left	central	right
 ""	""	""
-""	"Randomise Your Setup?"	""
+"Randomise Your Setup?"	""	""
 ""	""	""
 
 Status Bar ends here.

@@ -61,6 +61,7 @@ To compute TQ swimmingpool swimming at (swim-location - a number) with (swim-tur
 			if swim-location < 4, set next numerical response to "swim toward deep end";
 			if swim-location > 1, set next numerical response to "dive";
 			say "[line break]What should you do next?";
+			force immediate clothing-focus redraw;
 			compute multiple choice question;
 			let CNR be the chosen numerical response;
 			if CNR is "get out":
@@ -129,6 +130,7 @@ To compute DQ swimmingpool swimming at (swim-location - a number) with (swim-tur
 			if swim-location < 4, set next numerical response to "swim toward deep end";
 			if swim-location > 1, set next numerical response to "dive";
 			say "[line break]What should you do next?";
+			force immediate clothing-focus redraw;
 			compute multiple choice question;
 			let CNR be the chosen numerical response;
 			if CNR is "get out":
@@ -214,7 +216,7 @@ To compute treasure diving in (WB - swimming-pool) at (L - a number):
 					now F is carried by the player;
 				otherwise:
 					say "Your fingers find a hard object around the size of a quarter, and you unsuccessfully try to pry it off the bottom before running out of air and returning to the surface empty-handed.";
-			otherwise if N < 16 and condom fetish is 1:[condom]
+			otherwise if N < 16 and condom fetish >= 2:[condom]
 				let S be a random worn condom pinnable clothing;
 				if string-belt is worn, now S is string-belt;
 				if S is clothing and the player is getting unlucky:[It's a condom "leech"]

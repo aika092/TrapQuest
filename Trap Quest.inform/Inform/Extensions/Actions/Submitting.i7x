@@ -38,13 +38,14 @@ Report submitting:
 		if forced submit > 0:
 			if forced submit > 1, do nothing instead;[handled by the resisting function, since we don't know the reason why the player can't resist unless we do it there]
 			now forced submit is 0;
-		if the player is friendly fucked:
-			say FriendlySexSubmissionFlav of M;
-		otherwise:
-			if M is penetrating a body part or M is grabbing the player:
-				say SexSubmissionFlav of M;
+		unless M is penetrating face and M is not not-getting-licked: [no flavour for this here]
+			if the player is friendly fucked:
+				say FriendlySexSubmissionFlav of M;
 			otherwise:
-				compute wrangled submitting of M.
+				if M is penetrating a body part or M is grabbing the player:
+					say SexSubmissionFlav of M;
+				otherwise:
+					compute wrangled submitting of M.
 
 To compute wrangled submitting of (T - a thing):
 	say SexSubmissionFlav of T.

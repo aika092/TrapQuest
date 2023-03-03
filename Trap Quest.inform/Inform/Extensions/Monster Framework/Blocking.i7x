@@ -31,9 +31,12 @@ Definition: a monster is combative-or-blocking:
 	if it is combative, decide yes;
 	decide no.
 
+To decide which number is the movement block difficulty of (M - a monster):
+	decide on the difficulty of M * 2.
+
 Definition: a monster (called M) is successfully blocking: [Do they succeed in a roll to stop the player moving]
 	if M is not blocker, decide no;
-	let D be the difficulty of M * 2;
+	let D be the movement block difficulty of M;
 	if M is seduced and the sex-length of M < 6, decrease D by (6 - the sex-length of M);
 	let MR be the movement reduction of the player; [When we check the movement reduction of the player for the first time in a round, if it is significant, it outputs text explaining why the player is struggling to move away from the monster.]
 	if exposing-magical-dress is worn, now MR is D * -1;

@@ -225,7 +225,7 @@ To execute (E - bag-feeding-condoms):
 				say "[if the total condoms of the noun > 1 and EC > 0]one full condom[otherwise if the total condoms of the noun > 1]one condom[otherwise]it[end if] pins itself to your [ShortDesc of P]";
 				UsedCondomUp P by 1;
 				decrease UC by 1;
-				progress quest of condom-eating-quest;
+				progress quest of condom-collecting-quest;
 			otherwise:
 				say "[if the total condoms of the noun > 1 and the used condoms of the noun > 0]one empty condom[otherwise if the total condoms of the noun > 1]one condom[otherwise]it[end if] pins itself to your [ShortDesc of P]";
 				increase the empty condoms of P by 1;
@@ -234,8 +234,6 @@ To execute (E - bag-feeding-condoms):
 	otherwise:
 		say "[if UC + EC > 2]They all fly down and pin themselves[otherwise if UC + EC is 2]They both fly down and pin themselves[otherwise]It flies down and pins itself[end if] to your [MediumDesc of P]!";
 		UsedCondomUp P by UC;
-		increase the condom-count of condom-eating-quest by UC - 1;
-		progress quest of condom-eating-quest;
 		increase the empty condoms of P by EC;
 	if the total condoms of the noun > 1, say "[variable custom style][if the player is shameless or (the semen taste addiction of the player > 16 and the used condoms of the noun > 0)]Perfect! I didn't want to lose them![otherwise if the semen taste addiction of the player > 13 and the used condoms of the noun > 1]Ugh. Well at least I have some emergency drinks, I guess.[otherwise if the semen taste addiction of the player > 13 and the used condoms of the noun > 0]Ugh. Well at least I have an emergency drink, I guess.[otherwise]Oh come on! Is there no escaping these things?![end if][roman type][line break]";
 	otherwise say "[variable custom style][if the player is shameless or (the semen taste addiction of the player > 16 and the used condoms of the noun > 0)]Perfect! I didn't want to lose that![otherwise if the player is disgraced or (the semen taste addiction of the player > 12 and the used condoms of the noun > 0)]Grr... I guess it's here to stay for now.[otherwise]Oh come on! Is there no escaping this stupid condom?![end if][roman type][line break]".

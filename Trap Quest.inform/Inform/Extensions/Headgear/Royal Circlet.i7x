@@ -73,4 +73,18 @@ To say QuestFlav of (Q - milk-serve-quest):
 To say QuestTitle of (Q - milk-serve-quest):
 	say " (milk serving quest)".
 
+To compute generic first time class reward of (Q - milk-serve-quest) on (C - a clothing):
+	let D be a random off-stage ring;
+	if D is ring:
+		if C is royal circlet, now D is pure diamond;
+		otherwise now C is emerald;
+		set shortcut of D;
+		if D is actually summonable:
+			summon D;
+		otherwise:
+			now D is in the location of the player;
+		say "summoning a [MediumDesc of D] [if D is worn]straight onto your finger[otherwise]right in front of you[end if]!";
+	otherwise:
+		compute generic second time class reward of Q on C.
+
 Royal Circlet ends here.

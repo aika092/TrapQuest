@@ -1,8 +1,7 @@
 Orgasms by Player begins here.
 
-[TODO: orgasm count variables]
-
-refractoryperiod is a number that varies.
+refractoryperiod is a number that varies. [goes down by 1 per turn. While above 0, player (usually) can't orgasm again.]
+maxrefractoryperiod is a number that varies. maxrefractoryperiod is 6. [The number that refractoryperiod goes up to when the player orgasms.]
 orgasm-count is a number that varies. orgasm-count is 0.
 anal-orgasms is a number that varies. anal-orgasms is 0.
 vaginal-orgasms is a number that varies. vaginal-orgasms is 0.
@@ -103,7 +102,7 @@ To anally orgasm shamefully:
 		if newbie tips is 1, say shameful tip;
 		if the player is upright, check orgasm kneeling;
 	otherwise:
-		now refractoryperiod is 2.[The player couldn't cum, but we still increase it so the game does not immediately try again.]
+		now refractoryperiod is maxrefractoryperiod - 1.[The player couldn't cum, but we still increase it so the game does not immediately try again.]
 
 [!<SayVaginalOrgasmFlav>+
 
@@ -209,7 +208,8 @@ totalOrgasmCount is a number that varies.
 
 To orgasm:
 	increase orgasm-count by 1;
-	increase refractoryperiod by 3;
+	if refractoryperiod < 0, now refractoryperiod is 0;
+	increase refractoryperiod by maxrefractoryperiod;
 	[if the player is possessing a penis, now the rawness of penis is 0;]
 	follow the ejaculation rules;
 	follow the orgasm fatigue effects rules;

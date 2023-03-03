@@ -502,7 +502,7 @@ To say EnslavedDominationFlav of (M - teacher-bianca):
 		SemenPuddleUp 1.
 
 To decide which number is the EnslavedDominationThreshold of (M - teacher-bianca):
-	decide on 7.
+	decide on 12000.
 
 dress-lesson is a lesson. The lesson-teacher of dress-lesson is teacher-bianca.
 

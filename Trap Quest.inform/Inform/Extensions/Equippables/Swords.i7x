@@ -18,7 +18,9 @@ Check pulling a sword:
 	try taking the noun instead.
 
 Check taking a sword:
-	if there is a worn hand ready clothing, say "You try to pick up [NameDesc of the noun], but the hilt resists your touch. Maybe you need an open hand?" instead.
+	if there is a worn hand ready clothing:
+		say "You try to pick up [NameDesc of the noun], but the hilt resists your touch. Maybe you need an open hand?";
+		check clutch replacement instead.
 
 Report taking a sword:
 	if the noun is carried:
@@ -67,8 +69,10 @@ To say ExamineDesc of (S - which-sword):
 Definition: which-sword is immune to change: decide yes.
 
 Check taking which-sword:
-	if there is a worn hand ready clothing, say "You try, but the hilt resists your touch. Maybe you need an open hand?" instead;
-	if the player is wrist bound behind, say "You can't pull out the sword while your hands are stuck behind your back." instead.
+	if the player is wrist bound behind, say "You can't pull out the sword while your hands are stuck behind your back." instead;
+	if there is a worn hand ready clothing:
+		say "You try, but the hilt resists your touch. Maybe you need an open hand?" instead;
+		check clutch replacement instead.
 
 Definition: an equippable is destiny-appropriate: decide no.
 Definition: an equippable is destiny-prioritised: decide no.

@@ -2,6 +2,8 @@ Aeromancer by Monster begins here.
 
 An aeromancer is a kind of monster. An aeromancer is intelligent. The leftover-type of an aeromancer is usually 113. An aeromancer has a number called science requests. An aeromancer has a number called science history. An aeromancer has a number called inflation-choice. An aeromancer has a number called times-seeded. An aeromancer is a-dick-detacher. An aeromancer is a-dick-reattacher. [#LXorDD]
 
+An aeromancer has a monster called the fountain-target. [if fucked silly, the aeromancer spews out semen permanently, and we want to know where the semen came from]
+
 Definition: an aeromancer is willing to do anal: decide yes.
 
 Definition: an aeromancer is willing to do vaginal: decide yes.
@@ -36,48 +38,60 @@ To say BalloonDesc of (M - an aeromancer):
 
 Understand "massive", "massive-breasted" as aeromancer when the item described is ballooned.
 
-Figure of aeromancer 1 is the file "NPCs/Dungeon/Aeromancer/aeromancer1.jpg".
-Figure of aeromancer 2 is the file "NPCs/Dungeon/Aeromancer/aeromancer2.jpg".
-Figure of aeromancer 3 is the file "NPCs/Dungeon/Aeromancer/aeromancer3.jpg".
-Figure of aeromancer 4 is the file "NPCs/Dungeon/Aeromancer/aeromancer4.jpg".
-Figure of aeromancer 5 is the file "NPCs/Dungeon/Aeromancer/aeromancer5.jpg".
-Figure of aeromancer 6 is the file "NPCs/Dungeon/Aeromancer/aeromancer6.jpg".
-Figure of aeromancer 7 is the file "NPCs/Dungeon/Aeromancer/aeromancer7.jpg".
+Figure of aeromancer 1 is the file "NPCs/MultiFloor/Aeromancer/aeromancer1.jpg".
+Figure of aeromancer 2 is the file "NPCs/MultiFloor/Aeromancer/aeromancer2.jpg".
+Figure of aeromancer 3 is the file "NPCs/MultiFloor/Aeromancer/aeromancer3.jpg".
+Figure of aeromancer 4 is the file "NPCs/MultiFloor/Aeromancer/aeromancer4.jpg".
+Figure of aeromancer 5 is the file "NPCs/MultiFloor/Aeromancer/aeromancer5.jpg".
+Figure of aeromancer 6 is the file "NPCs/MultiFloor/Aeromancer/aeromancer6.jpg".
+Figure of aeromancer 7 is the file "NPCs/MultiFloor/Aeromancer/aeromancer7.jpg".
 
-Figure of aeromancer interact 1 is the file "Special/Cutscene/cutscene-aeromancer-interact1.png".
-Figure of aeromancer interact 2 is the file "Special/Cutscene/cutscene-aeromancer-interact2.png".
-Figure of aeromancer interact 3 is the file "Special/Cutscene/cutscene-aeromancer-interact3.png".
-Figure of aeromancer interact 4 is the file "Special/Cutscene/cutscene-aeromancer-interact4.png".
-Figure of aeromancer interact 5 is the file "Special/Cutscene/cutscene-aeromancer-interact5.png".
-Figure of aeromancer interact 6 is the file "Special/Cutscene/cutscene-aeromancer-interact6.png".
-Figure of aeromancer interact 7 is the file "Special/Cutscene/cutscene-aeromancer-interact7.png".
-Figure of aeromancer interact 8 is the file "Special/Cutscene/cutscene-aeromancer-interact8.png".
-Figure of aeromancer interact 9 is the file "Special/Cutscene/cutscene-aeromancer-interact9.png".
-Figure of aeromancer interact 10 is the file "Special/Cutscene/cutscene-aeromancer-interact10.png".
-Figure of aeromancer interact 11 is the file "Special/Cutscene/cutscene-aeromancer-interact11.png".
-Figure of aeromancer interact 12 is the file "Special/Cutscene/cutscene-aeromancer-interact12.png".
-Figure of aeromancer interact 13 is the file "Special/Cutscene/cutscene-aeromancer-interact13.png".
-Figure of aeromancer interact 14 is the file "Special/Cutscene/cutscene-aeromancer-interact14.png".
-Figure of aeromancer interact 15 is the file "Special/Cutscene/cutscene-aeromancer-interact15.png".
-Figure of aeromancer interact 16 is the file "Special/Cutscene/cutscene-aeromancer-interact16.png".
-Figure of aeromancer interact 17 is the file "Special/Cutscene/cutscene-aeromancer-interact17.png".
-Figure of aeromancer interact 18 is the file "Special/Cutscene/cutscene-aeromancer-interact18.png".
+Figure of aeromancer interact 1 is the file "NPCs/MultiFloor/Aeromancer/cutscene-aeromancer-interact1.png".
+Figure of aeromancer interact 2 is the file "NPCs/MultiFloor/Aeromancer/cutscene-aeromancer-interact2.png".
+Figure of aeromancer interact 3 is the file "NPCs/MultiFloor/Aeromancer/cutscene-aeromancer-interact3.png".
+Figure of aeromancer interact 4 is the file "NPCs/MultiFloor/Aeromancer/cutscene-aeromancer-interact4.png".
+Figure of aeromancer interact 5 is the file "NPCs/MultiFloor/Aeromancer/cutscene-aeromancer-interact5.png".
+Figure of aeromancer interact 6 is the file "NPCs/MultiFloor/Aeromancer/cutscene-aeromancer-interact6.png".
+Figure of aeromancer interact 7 is the file "NPCs/MultiFloor/Aeromancer/cutscene-aeromancer-interact7.png".
+Figure of aeromancer interact 8 is the file "NPCs/MultiFloor/Aeromancer/cutscene-aeromancer-interact8.png".
+Figure of aeromancer interact 9 is the file "NPCs/MultiFloor/Aeromancer/cutscene-aeromancer-interact9.png".
+Figure of aeromancer interact 10 is the file "NPCs/MultiFloor/Aeromancer/cutscene-aeromancer-interact10.png".
+Figure of aeromancer interact 11 is the file "NPCs/MultiFloor/Aeromancer/cutscene-aeromancer-interact11.png".
+Figure of aeromancer interact 12 is the file "NPCs/MultiFloor/Aeromancer/cutscene-aeromancer-interact12.png".
+Figure of aeromancer interact 13 is the file "NPCs/MultiFloor/Aeromancer/cutscene-aeromancer-interact13.png".
+Figure of aeromancer interact 14 is the file "NPCs/MultiFloor/Aeromancer/cutscene-aeromancer-interact14.png".
+Figure of aeromancer interact 15 is the file "NPCs/MultiFloor/Aeromancer/cutscene-aeromancer-interact15.png".
+Figure of aeromancer interact 16 is the file "NPCs/MultiFloor/Aeromancer/cutscene-aeromancer-interact16.png".
+Figure of aeromancer interact 17 is the file "NPCs/MultiFloor/Aeromancer/cutscene-aeromancer-interact17.png".
+Figure of aeromancer interact 18 is the file "NPCs/MultiFloor/Aeromancer/cutscene-aeromancer-interact18.png".
 
-Figure of aeromancer cutscene 1 is the file "Special/Cutscene/cutscene-aeromancer-balloon1.png".
-Figure of aeromancer cutscene 2 is the file "Special/Cutscene/cutscene-aeromancer-science1.png".
-Figure of aeromancer cutscene 3 is the file "Special/Cutscene/cutscene-aeromancer-science2.png".
-Figure of aeromancer cutscene 4 is the file "Special/Cutscene/cutscene-aeromancer-fuck1.png".
-Figure of aeromancer cutscene 5 is the file "Special/Cutscene/cutscene-aeromancer-fuck2.png".
-Figure of aeromancer cutscene 6 is the file "Special/Cutscene/cutscene-aeromancer-fuck3.png".
-Figure of aeromancer cutscene 8 is the file "Special/Cutscene/cutscene-aeromancer-fairy1.jpg".
+Figure of aeromancer cutscene 1 is the file "NPCs/MultiFloor/Aeromancer/cutscene-aeromancer-balloon1.png".
+Figure of aeromancer cutscene 2 is the file "NPCs/MultiFloor/Aeromancer/cutscene-aeromancer-science1.png".
+Figure of aeromancer cutscene 3 is the file "NPCs/MultiFloor/Aeromancer/cutscene-aeromancer-science2.png".
+Figure of aeromancer cutscene 4 is the file "NPCs/MultiFloor/Aeromancer/cutscene-aeromancer-fuck1.png".
+Figure of aeromancer cutscene 5 is the file "NPCs/MultiFloor/Aeromancer/cutscene-aeromancer-fuck2.png".
+Figure of aeromancer cutscene 6 is the file "NPCs/MultiFloor/Aeromancer/cutscene-aeromancer-fuck3.png".
+Figure of aeromancer cutscene 8 is the file "NPCs/MultiFloor/Aeromancer/cutscene-aeromancer-fairy1.jpg".
 
 To decide which figure-name is the monster-image of (M - an aeromancer):
+	decide on figure of aeromancer 1.
+
+To decide which figure-name is the pacified-image of (M - an aeromancer):
+	if M is fucked-silly,	decide on figure of aeromancer 7;
+	otherwise decide on figure of aeromancer 6.
+
+To decide which figure-name is the non-sex-profile of (M - an aeromancer):
 	if M is ballooned:
 		decide on figure of aeromancer 3;
+	otherwise if M is asleep:
+		decide on figure of aeromancer 6;
+	otherwise if the health of M <= the maxhealth of M / 2:
+		decide on figure of aeromancer 5;
 	otherwise if the previously-ballooned of M > 0 or M is confident aeromancer:
 		decide on figure of aeromancer 2;
-	otherwise:
-		decide on figure of aeromancer 1.
+	otherwise if M is interested:
+		decide on figure of aeromancer 4;
+	decide on the monster-image of M. [Final default!]
 
 To decide which figure-name is the anal-sex-monster-image of (M - an aeromancer):
 	decide on figure of aeromancer cutscene 4.
@@ -126,6 +140,7 @@ To set up (M - an aeromancer):
 	now the monstersetup of M is 1;
 	add buoyancy-salve to the tradableItems of M, if absent;
 	add buoyancy-salve to the taxableItems of M, if absent;
+	now the fountain-target of M is M;
 	if inflation fetish is 1 or artificial enhancements fetish is 1:
 		now the raw difficulty of M is the starting difficulty of M;
 		if M is in the Woods, SilentlyDifficultyUp M by 3;
@@ -171,12 +186,10 @@ To compute diaper mess reaction of (M - an aeromancer):
 		if M is in the location of the player, compute mandatory room leaving of M.
 
 To compute (M - a monster) stomping (N - an aeromancer):
-	if M is in the location of the player, say "With lightning speed [NameDesc of M] grabs [NameDesc of N] and starts fucking [his of N] ass furiously. [BigNameDesc of M] starts cumming inside [him of N] within seconds, and [he of N] screams in both pleasure and terror as [his of M] belly rapidly begins to expand. After [he of N] is full, [NameDesc of M] tosses [him of N] to the ground, where [he of N] promptly faints.";
+	if M is in the location of the player, say "With lightning speed [NameDesc of M] grabs [NameDesc of N] and starts fucking [his of N] ass furiously. [BigNameDesc of M] starts cumming inside [him of N] within seconds, and [he of N] screams in both pleasure and terror as [his of M] belly rapidly begins to expand. After [he of N] is full, [NameDesc of M] tosses [him of N] to the ground, where [he of N] promptly collapses, gargling incoherently as [his of M] poor destroyed asshole slowly oozes out [ShortDesc of M] [semen]. But despite the constant flow of [semen] exiting [his of N] belly, it doesn't get any smaller. You see a tell-tale sparkle of magic surging around [his of N] belly... Could [his of N] magic have somehow malfunctioned, turning [him of N] into a permanent [semen] fountain?!";
 	otherwise say "You hear a [boy of N] shout out in a mixture of ecstasy and terror from [if N is nearby]nearby![otherwise]somewhere in the dungeon![end if]";
-	destroy N;
-	let L be a random off-stage leftover;
-	now L is in the location of M;
-	now the leftover-type of L is the leftover-type of N.
+	now N is fucked-silly;
+	now the fountain-target of N is M.
 
 Definition: an aeromancer (called M) is distracted:
 	if inflation fetish is 1 and M is reactive and (M is uninterested or M is friendly):
@@ -351,12 +364,12 @@ To compute aeromancer science of (M - an aeromancer):
 		say "A beam flies straight from [his of M] wand to your face!";
 		if a random number between 1 and 3 > 1 and the raw largeness of hair < max hair length:
 			say "Your hair grows!";
-			HairUp 1;[####Selkie: Shouldn't the rest of these be 'otherwise' clauses? Or do we want there to be a possibility of multiple changes?]
+			HairUp 1;
 		if a random number between 1 and 3 > 1 and the make-up of face < 3:
 			say "Your make up gets thicker!";
 			FaceUp 1;
-		if a random number between 1 and 4 > 1:
-			say "You feel [smarter]!";
+		if the player is getting lucky:
+			say "You feel [smarter]! [GotLuckyFlav]";
 			IntUp 1;
 		if a random number between 1 and 3 > 1 and the lips of face < 2 + artificial enhancements fetish:
 			say "Your lips get plumper!";
@@ -407,28 +420,66 @@ Definition: an aeromancer is ballooned:
 	if the current-balloon of it > 0, decide yes;
 	decide no.
 
+To decide which number is the movement block difficulty of (M - an aeromancer):
+	if M is ballooned, decide on the difficulty of M / 2; [it's more difficult to block while floating]
+	decide on the difficulty of M * 2.
+
 To compute unique early action of (M - an aeromancer):
 	unless the player is prone or the player is immobile, compute ballooning of M.
 
 To decide which number is the initial maxhealth of (M - an aeromancer):
 	let X be 3;
 	increase X by (the difficulty of M * 10) / 3;
-	if M is ballooned, increase X by the difficulty of M;
+	if M is ballooned, increase X by the difficulty of M * 2;
 	decide on X.
 
 To compute ballooning of (M - an aeromancer):
 	if M is combative and M is not ballooned:
 		increase the balloon of M by 1;
-		let R be a random number between 2 and 5;
+		let R be a random number between (2 * combatSpeed) and (5 * combatSpeed);
 		if debuginfo > 0, say "[input-style]Aeromancer power-up check: air stored ([balloon of M]) | ([R].5) d4+1.5 power-up threshold[roman type][line break]";
 		if the balloon of M > R:
 			let D be the difficulty of M - the starting difficulty of M;
 			say "[speech style of M]'[one of]I've been waiting for an excuse to use this...' [or]Ultimate Airbag Transformation - Engage!' [stopping][roman type][line break][BigNameDesc of M] pushes [his of M] wand between [his of M] [ChestDesc of M] and massages it like a [manly-penis]. You watch [if the bimbo of the player < 6]in horror [end if]as [his of M] chest [if D < 1]grows, [otherwise if D < 2]doubles in size, [otherwise]quadruples in size, [end if][if the previously-ballooned of M > 0]jiggling[otherwise]bursting through [his of M] tight top[end if] as [if D < 1]air begins to whistle and swirl around [him of M]. [otherwise if D < 2]they begin to lift [him of M] off the ground, air whistling and swirling around [him of M] as [he of M] begins to hover gracefully about a foot in the air. [otherwise]they begin to lift [him of M] off the ground, air whistling, swirling and howling around [him of M] as [he of M] begins to hover gracefully about a foot in the air. [end if][big he of M]'s definitely going to be more powerful until [he of M] lands.";
 			if D >= 1, now M is airborne;
-			if M is wand-empowered, increase the balloon of M by the balloon of M;[She gets the power-up for twice the duration.]
+			if M is wand-empowered, increase the balloon of M by the balloon of M; [She gets the power-up for twice the duration.]
 			now the current-balloon of M is 1;
 			increase the health of M by the difficulty of M;
 			cutshow figure of aeromancer cutscene 1 for M.
+
+To compute unique periodic effect of (M - an aeromancer):
+	if M is fucked-silly:
+		let L be the location of M;
+		if the player is in L:
+			say "The unending steady flow of [ShortDesc of fountain-target of M] [semen] from [NameDesc of M][']s asshole continues[one of], sustained by [his of M] malfunctioning magic[or][stopping].[line break][speech style of M]'[one of]Gaaah[or]Eeee[or]Oowaaah[or]Haaaaah[or]Hnnnng[cycling]!'[roman type][line break]";
+			let collecting be nothing;
+			unless the player is at least partially immobile or the player is in danger or the player is not able to use their hands:
+				let LV be a list of things;
+				repeat with V running through carried vessels:
+					unless V is tight topped or (the fill-colour of V is creamy and the doses of V >= the max-doses of V), add V to LV;
+				if the number of entries in LV > 0:
+					reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+					truncate LV to 9 entries;
+					say "Where do you want to collect the [semen]?[line break]";
+					repeat with V running through LV:
+						if V is bottle, set next numerical response to "The [ShortDesc of V][if the doses of V > 0 and the fill-colour of V is not creamy] (You'll lose its current contents of [PotionType of V])[end if]";
+						otherwise set next numerical response to "[BigNameDesc of V]";
+					set numerical response 0 to "don't collect";
+					compute multiple choice question;
+					if player-numerical-response > 0, now collecting is entry player-numerical-response in LV;
+			if collecting is a vessel:
+				if the doses of collecting > 0 and the fill-colour of collecting is not creamy:
+					say "You tip the contents of the [ShortDesc of collecting] onto the floor.";
+					dump collecting;
+				now the fill-colour of collecting is creamy;
+				DoseUp collecting by 1;
+				say "A dollop of [ShortDesc of fountain-target of M] [semen] is spewed into the [ShortDesc of collecting].";
+				now collecting is anal-origin;
+				now the fountain-target of M is inseminating collecting;
+			otherwise:
+				SemenPuddleUp 1;
+		otherwise:
+			SemenPuddleUp 1 in L.
 
 To compute unique unsimulated periodic effect of (M - an aeromancer):
 	if M is ballooned:
@@ -471,7 +522,7 @@ To compute (M - an aeromancer) hurting (B - breasts):
 To compute (M - an aeromancer) hurting (F - face):
 	compute M hurting breasts.
 
-Definition: an aeromancer(called M) is damageable:
+Definition: an aeromancer (called M) is damageable:
 	if M is airborne and attack-type is 3:[At level 10, she can fly, and becomes immune to kicks]
 		decide no;
 	decide yes.

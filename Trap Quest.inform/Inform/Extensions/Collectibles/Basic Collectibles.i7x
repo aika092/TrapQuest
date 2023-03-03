@@ -20,7 +20,7 @@ To say ShortDesc of (C - chess piece):
 
 Part - Fertility Idol
 
-fertility idol is a collectible. The printed name of fertility idol is "[TQlink of item described]fertility idol[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of fertility idol is "fti". fertility idol can be fertility-cursed.
+fertility idol is a collectible. The printed name of fertility idol is "[TQlink of item described]fertility idol[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of fertility idol is "fti".
 
 Figure of fertility idol is the file "Items/Collectibles/fertility1.png".
 
@@ -34,6 +34,7 @@ Definition: fertility idol is ingredient: decide no.
 Definition: fertility idol is immune to change: decide yes.
 Definition: fertility idol is pregnancy themed: decide yes.
 Definition: fertility idol is boob themed: decide yes.
+Definition: fertility idol is cursable: decide yes.
 
 To say ShortDesc of (C - fertility idol):
 	say "fertility idol".
@@ -42,8 +43,8 @@ Carry out taking fertility idol:
 	if the player is ready for common event TG:
 		say "[BigNameDesc of woman-player]'s magic surges down from your belly to your loins. [if the player is possessing a penis]Your [player-penis] feels... Absent![end if] The logical conclusion of what has just happened to you is clear, and it only takes a moment for you to check and confirm... You're no longer biologically male. You have a real, fully functional vagina and womb![line break][variable custom style]And I'm already 9 months pregnant... This is insane![roman type][line break]";
 		SexChange the player;
-	if fertility idol is fertility-cursed:
-		now fertility idol is not fertility-cursed;
+	if fertility idol is cursed:
+		now fertility idol is bland;
 		if the pregnancy of the player is 0 and pregnancy fetish is 1 and the player is possessing a vagina:
 			say "[bold type]Suddenly, impossibly, your belly explodes in size, leaving you full-term pregnant![line break][variable custom style]What the fuck?! Oh... Oh my god...[roman type][line break]";
 			now the pregnancy of the player is 1;
@@ -634,6 +635,7 @@ To decide which number is the bartering value of (T - old-coin) for (M - djinn):
 	decide on 2.
 To say MonsterOfferAcceptFlav of (M - djinn) to (T - old-coin):
 	say "[speech style of M]'Ah yes, I remember when this was common coinage. My master at the time used his wishes for some rather nefarious purposes, I recall. Good times... Fine, yes, I will take this off your hands, for nostalgia.'[roman type][line break]".
+Definition: old-coin is vagina themed: decide yes.
 
 Section - Rubber Duck
 

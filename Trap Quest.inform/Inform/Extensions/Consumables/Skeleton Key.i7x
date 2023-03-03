@@ -2,6 +2,10 @@ Skeleton Key by Consumables begins here.
 
 An unlock-key is a kind of collectible. Understand "key" as an unlock-key. The tradability of an unlock-key is usually 13.
 
+Figure of key is the file "Items/Collectibles/key3.png".
+To decide which figure-name is the examine-image of (K - an unlock-key):
+	decide on Figure of key.
+
 Definition: an unlock-key is immune to change: decide yes.
 
 A specific-key is a kind of unlock-key. There are 8 specific-keys. The printed name of specific-key is "[TQlink of item described]key[lock-desc][shortcut-desc][TQxlink of item described][verb-desc of item described]".
@@ -12,7 +16,9 @@ When play begins:
 		increase V by 1.
 
 To say ExamineDesc of (K - a specific-key):
-	say "This small key looks like it is made to fit a specific lock.".
+	let K be item described;
+	let C be a random thing covered by K;
+	say "This small key looks like it is made to fit a specific lock[if C is a thing]. Indeed, you are pretty sure that it would fit the keyhole on [NameDesc of C][end if].".
 
 To say lock-desc:
 	let K be item described;
@@ -129,6 +135,9 @@ A later time based rule (this is the defeated prison guard key rule):
 
 academy-toilet-key is an unlock-key.
 The printed name of academy-toilet-key is "[TQlink of item described]academy toilet key[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of academy-toilet-key is "akey". Understand "academy toilet", "toilet key" as academy-toilet-key.
+Figure of toilet key is the file "Items/Collectibles/key4.png".
+To decide which figure-name is the examine-image of (K - academy-toilet-key):
+	decide on Figure of toilet key.
 To say ExamineDesc of (B - academy-toilet-key):
 	say "This key unlocks the padlocks in the academy's toilets.".
 To decide which number is the bartering value of (K - academy-toilet-key) for (M - headmistress):
@@ -148,10 +157,15 @@ To say MonsterOfferAcceptFlav of (M - headmistress) to (T - academy-toilet-key):
 
 human-toilet-key is an unlock-key. human-toilet-key is in Holding Pen. [It doesn't start off-stage so that we can easily determine if it's been used yet or not.]
 The printed name of human-toilet-key is "[TQlink of item described]human toilet key[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of human-toilet-key is "tkey". Understand "human toilet", "toilet key" as human-toilet-key.
+To decide which figure-name is the examine-image of (K - human-toilet-key):
+	decide on Figure of toilet key.
 To say ExamineDesc of (B - human-toilet-key):
-	say "This large key could release someone stuck in place as the hotel's human toilet.".
+	say "This key could release someone stuck in place as the hotel's human toilet.".
 
 house-key is an unlock-key.
+Figure of house key is the file "Items/Collectibles/key2.png".
+To decide which figure-name is the examine-image of (K - house-key):
+	decide on Figure of house key.
 The printed name of house-key is "[TQlink of item described]house key[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of house-key is "hkey". Understand "house key" as house-key.
 To say ExamineDesc of (B - house-key):
 	say "This small key unlocks your front door.".

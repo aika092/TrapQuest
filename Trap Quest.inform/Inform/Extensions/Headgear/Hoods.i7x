@@ -239,10 +239,11 @@ To compute class outfit of (H - WC hood):
 		follow the player class rules;
 	if meat-toilet-panties is worn:
 		repeat with C running through worn clothing:
-			if the used condoms of C > 0:
+			if the used condoms of C > 0 and C is not meat-toilet-panties:
 				say "The used condoms attached to your [C] are magically transferred to the meat toilet panties!";
 				UsedCondomUp meat-toilet-panties by the used condoms of C;
-				now the used condoms of C is 0;
+				add the condom history of C to the condom history of meat-toilet-panties;
+				UsedCondomWipe C;
 	class summon WC catsuit;
 	class summon WC thigh high boots;
 	class summon WC-plug-panties. [will be blocked by meat-toilet-panties being class-relevant]

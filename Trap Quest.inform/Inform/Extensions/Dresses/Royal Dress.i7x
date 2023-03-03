@@ -142,7 +142,7 @@ To decide which figure-name is clothing-image of (C - queen-of-spades-dress):
 	decide on figure of royal dress 4.
 
 To say ClothingDesc of (C - queen-of-spades-dress):
-	say "This 'dress' is really just some extremely eroticand exposing negligee, with a [']queen of spades['] theme, and spade-shaped nipple holes. It ties at the hips, allowing [if C is worn]your[otherwise]the wearer's[end if] crotch to remain fully accessible. Despite all this, it still feels somewhat regal.".
+	say "This 'dress' is really just some extremely erotic and exposing negligee, with a [']queen of spades['] theme, and spade-shaped nipple holes. It ties at the hips, allowing [if C is worn]your[otherwise]the wearer's[end if] crotch to remain fully accessible. Despite all this, it still feels somewhat regal.".
 
 Definition: queen-of-spades-dress is pink themed: decide no.
 Definition: queen-of-spades-dress is white themed: decide yes.

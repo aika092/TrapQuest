@@ -110,6 +110,7 @@ To Set Up The Mansion:
 	lock pedestals;
 	if lactation fetish is 1:
 		now mansion-milking-bench is in Mansion06;
+		now mansion-milking-bench-lever is in the location of mansion-milking-bench;
 		let MT be a random milk-tank in Holding Pen;
 		if MT is milk-tank and the number of milk-tanks in the location of mansion-milking-bench is 0, now MT is in the location of mansion-milking-bench;
 	if debugmode is 0 and loading scenes is 1, clear the screen;

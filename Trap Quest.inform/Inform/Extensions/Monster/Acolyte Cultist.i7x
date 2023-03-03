@@ -14,6 +14,7 @@ To say ShortDesc of (M - an acolyte):
 	say "cultist".
 
 A mindless acolyte is a kind of acolyte. A mindless acolyte is unintelligent. The entranced of a mindless acolyte is 1. A mindless acolyte is unconcerned.
+A mindless acolyte has a monster called target-abductee.
 Definition: a mindless acolyte is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 To say ShortDesc of (M - a mindless acolyte):
 	say "mindless cultist".
@@ -103,8 +104,8 @@ To set up (M - an acolyte):
 	reset M;
 	now the monstersetup of M is 1;
 	now the raw difficulty of M is the starting difficulty of M + doomed;
-	add black candle to the taxableItems of M;
-	add cultist veil to the tradableItems of M;
+	add black candle to the taxableItems of M, if absent;
+	add cultist veil to the tradableItems of M, if absent;
 	now the health of M is the maxhealth of M.
 
 To decide which number is the starting difficulty of (M - an acolyte):
@@ -114,12 +115,13 @@ To set up (M - a mindless acolyte):
 	reset M;
 	now the monstersetup of M is 1;
 	now the raw difficulty of M is the starting difficulty of M + (doomed * 2);
-	now the chant-duration of M is 1;[gives bonus damage]
+	now the chant-duration of M is 1; [gives bonus damage]
 	if doomed is 5:
 		now M is unleashed;
 	otherwise:
 		now M is unconcerned;
 	now M is in Mansion23;
+	now the target-abductee of M is M;
 	now the health of M is the maxhealth of M.
 
 To compute monstermotion of (M - a mindless acolyte):
@@ -222,11 +224,19 @@ Part 2 - Perception
 To decide which number is the bimbo tolerance of (M - an acolyte): [What number of outrage they become immediately unfriendly.]
 	if M is mindless acolyte, decide on 30;
 	if the class of the player is cultist, decide on 30;
-	if M is wenchy and there is a worn demon codpiece, decide on 1;
+	[if M is wenchy and there is a worn demon codpiece, decide on 1;]
 	decide on 21.
+
+To decide which number is the outrage tolerance of (M - an acolyte): [What number of outrage they slowly become unfriendly.]
+	if M is mindless acolyte, decide on 30;
+	if the class of the player is cultist, decide on 30;
+	decide on 13.
 
 To decide which number is the bab tolerance of (M - an acolyte): [What number of cringe they become immediately unfriendly.]
 	decide on the bimbo tolerance of M.
+
+To decide which number is the cringe tolerance of (M - an acolyte): [What number of cringe they slowly become unfriendly.]
+	decide on the outrage tolerance of M.
 
 Definition: a mindless acolyte is scarable: decide no.
 
@@ -241,14 +251,21 @@ To compute perception of (M - a mindless acolyte):
 
 To compute perception of (M - an acolyte):
 	say "[BigNameDesc of M] notices you![line break]";
-	if the current-errand of M is completed and M is not uniquely unfriendly:
+	if M is uniquely unfriendly: [can't be calmed]
+		say "[speech style of M]'Time to join us, [brother of the player]...'[roman type][line break]";
+	otherwise if the current-errand of M is completed and M is not uniquely unfriendly:
 		compute errand completion of M;
-	otherwise if the class of the player is cultist and (the pregnancy of the player > 0 or xavier-diaper-link > 0):
-		say "[speech style of M]'Well met [brother of the player], though why do you not wait with the other blessed downstairs?'[roman type][line break]";
+	otherwise if the class of the player is cultist:
+		if mystical amulet is worn:
+			say "[speech style of M]'Well met [brother of the player]! That amulet you possess bears a mighty power, you know. You could gain great favour from the [great ones] were you to gift it to them at their altar.'";
+		otherwise if the pregnancy of the player > 0 or xavier-diaper-link > 0:
+			say "[speech style of M]'Well met [brother of the player], though why do you not wait with the other blessed downstairs?'[roman type][line break]";
+		otherwise:
+			say "[speech style of M]'Well met [brother of the player]! I see you too are between blessings.'[roman type][line break]";
 		calm M;
-	otherwise if the player-class is cultist:
-		say "[speech style of M]'Well met [brother of the player]! I see you too are between blessings.'[roman type][line break]";
-		calm M;
+	otherwise if mystical amulet is worn:
+		say "[speech style of M]'That amulet! I must take it, and offer it to the [great ones]!'[roman type][line break][big he of M] adopts an aggressive pose.";
+		anger M;
 	otherwise if the player-class is succubus:
 		say "[speech style of M]'If you are willing to abase yourself before the Masters, you may pass, servant of Xavier.'[roman type][line break]";
 		calm M;
@@ -256,20 +273,48 @@ To compute perception of (M - an acolyte):
 		say "[speech style of M]'The [great ones] tolerate the existence of your kind, but watch your step.'[roman type][line break]";
 		calm M;
 	otherwise if the pregnancy of the player > 0:
-		say "[speech style of M]'Have you been blessed? You should report downstairs for your veil, it is improper that you maintain individuality.'[roman type][line break]";
+		say "[speech style of M]'Have you been blessed? You should make haste in earning your veil; it is improper that you maintain individuality.'[roman type][line break]";
 		calm M;
-	otherwise if the player is possessing a vagina and the pregnancy of the player is 0 and pregnancy fetish is 1:
-		say "[speech style of M]'An unbeliever, here! You too must serve the [great ones] with your [if diaper quest is 0]body[otherwise if diaper messing >= 3]bowels[otherwise]bladder[end if]!'[roman type][line break]";
-		anger M;
+	otherwise if M is unfriendly:
+		say "[speech style of M]'Time to join us, [brother of the player]...'[roman type][line break]";
 	otherwise:
-		say "[speech style of M]'An unbeliever? Here? And one who has no use as a vessel! You must be driven off!'[roman type][line break]";
-		anger M.
+		compute appearance assessment of M.
+
+To compute appearance assessment of (M - an acolyte):
+	if there is a worn currently visible messed knickers:
+		say "[speech style of M]'You smell foul. ...I love it.'[roman type][line break]";
+	otherwise if the appearance of the player > the outrage tolerance of M:
+		FavourDown M by 2;
+		if M is buddy:
+			say "[speech style of M]'[one of]A friendly warning, [men of the player] who look like that sometimes find themselves getting abducted around here...'[or]If you wish to avoid a [']blessing['], you may wish to not present yourself to me and my [brother of M]s in such a lewd manner in the future...'[in random order][roman type][line break]";
+		otherwise if M is friendly:
+			say "[speech style of M]'[one of]Your appearance is striking... Perhaps I should inform my [brother of M]s of your presence...'[or]When you wander our halls looking as you do, it makes me wonder if you might be better suited to a life with us...'[or]Hmm... You certainly look like you are ready to become a believer. I wonder...'[in random order][roman type][line break]";
+		otherwise:
+			say "[speech style of M]'An unbeliever, here! And one dressed as you are... You too must serve the [great ones] with your [if diaper quest is 0]body[otherwise if diaper messing >= 3]bowels[otherwise]bladder[end if]! I will not take no for an answer...'[roman type][line break][big he of M] adopts an aggressive pose.";
+	otherwise if diaper quest is 1 and the cringe appearance of the player > the cringe tolerance of M:
+		FavourDown M by 2;
+		if M is buddy:
+			say "[speech style of M]'[one of]A friendly warning, [men of the player] who look like that sometimes find themselves getting abducted around here...'[or]If you wish to avoid a [']blessing['], you may wish to not present yourself to me and my [brother of M]s in such a perverse manner in the future...'[in random order][roman type][line break]";
+		otherwise if M is friendly:
+			say "[speech style of M]'[one of]Your appearance is striking... Perhaps I should inform my [brother of M]s of your presence...'[or]When you wander our halls looking as you do, it makes me wonder if you might be better suited to a life with us...'[or]Hmm... You certainly look like you are ready to become a believer. I wonder...'[in random order][roman type][line break]";
+		otherwise:
+			say "[speech style of M]'An unbeliever, here! And one dressed as you are... You too must serve the [great ones] with your [if diaper messing >= 3]bowels[otherwise]bladder[end if]! I will not take no for an answer...'[roman type][line break][big he of M] adopts an aggressive pose.";
+	otherwise if the player is top-wardrobe-malfunctioning:
+		compute nip slip reaction of M;
+	otherwise:
+		say "[speech style of M]'[one of]Your timing is poor, traveller. This abode has recently come under our control... And we are very busy.'[or]We are keeping our eyes on you, traveller.'[or]Do not try to oppose us, non-believer. We serve a greater will...'[then at random]";
+	say "[roman type][line break]".
+
+To say NipSlipSeenFlav of (M - an acolyte):
+	say "[speech style of M]'Your clothing has displaced itself in order to expose yourself to me. A sign from [Azathot], perhaps...?'[roman type][line break]".
+To say DQNipSlipSeenFlav of (M - an acolyte):
+	say "[speech style of M]'Being unable to dress yourself properly is a sign that you may be better off under our oversight and care...'[roman type][line break]".
 
 To compute appearance assessment of (M - clairvoyant acolyte):
 	if mystical amulet is worn:
 		say "[speech style of M]'That amulet you possess bears a mighty power, [if the class of the player is cultist][brother of the player][otherwise]heretic[end if]. You could gain great favour from the [great ones] were you to gift it to them at their altar.'";
 	otherwise if the class of the player is cultist:
-		say "[speech style of M]'[one of]I knew you were coming, [brother of the player].'[or][big brother of the player], do you come for a prophecy?'[or]The Herald will arrive soon, [brother of the player]. Why do you waste time?'[at random]";
+		say "[speech style of M]'[one of]I knew you were coming, [brother of the player].'[or][big brother of the player], do you come for a prophecy?'[or]The Herald will arrive soon, [brother of the player]. Why do you waste time?'[in random order]";
 	otherwise if the times-met of M > 0 and the player is top-wardrobe-malfunctioning:
 		compute tq nip slip reaction of M;
 	otherwise:
@@ -318,6 +363,58 @@ To resolve sudden appearance change of (M - clairvoyant acolyte):
 Definition: clairvoyant acolyte is unfriendly rather than friendly:
 	if it is not pacified and it is not friendly-fucking and (it is not normally annoyed or it is uniquely unfriendly), decide yes; ["annoyed" is the final level of relationship before unfriendly]
 	decide no.
+
+Definition: an acolyte (called M) is distracted:
+	if M is awake and M is intelligent:
+		let L be a random milking bench lever in the location of M;
+		if L is a thing and L is not lever-pulled and ((player-currently-resting is 1 and M is in the location of the player) or a random number between 1 and 3 is 1):
+			compute L pull of M;
+			decide yes;
+		otherwise if L is a thing and L is lever-pulled and player-currently-resting is 1 and milking is 0 and there is worn actually nipple covering clothing:
+			compute L pull of M;
+			decide yes;
+	decide no.
+
+To compute (L - a milking bench lever) pull of (M - an acolyte):
+	if M is in the location of the player:
+		if player-currently-resting is 1:
+			say "[BigNameDesc of M] observes you on the milking bench.";
+			if milking is 1 or the number of worn actually nipple covering clothing is 0:
+				say "[speech style of M]'Let me help you maintain the blessed cycle of creation and consumption.'[roman type][line break][big he of M] pulls the lever on the wall, switching it to the green plus sign!";
+			otherwise:
+				say "[speech style of M]'[Azathot] wills that your breasts blossom with sacred nectar.'[roman type][line break][if L is not lever-pulled][big he of M] pulls the lever on the wall, switching it to the green plus sign![end if]";
+				let N be max-top-layer;
+				while N > 0: [start with top layered clothing and work downwards]
+					let B be nothing;
+					repeat with C running through worn top layer clothing:
+						if the top-layer of C is N, now B is C;
+					if B is actually nipple covering clothing:
+						if B is top-displacable:
+							now B is top-displaced;
+							say "[BigNameDesc of M] displaces your [printed name of B]!";
+						otherwise if B is actually strippable:
+							now B is in the location of the player;
+							say "[BigNameDesc of M] removes your [printed name of B]!";
+						otherwise if B is tearable:
+							say "[BigNameDesc of M] slips [his of M] ritual dagger through the seam of your [printed name of B], and destroys it!";
+							destroy B;
+						otherwise:
+							now N is 0;
+					decrease N by 1;
+			let C be a random worn actually nipple covering clothing;
+			if milking is 0 and C is clothing:
+				say "[BigNameDesc of M] snarls in frustration at being unable to remove your [ShortDesc of C].[line break][speech style of M]'Don't think you're getting off that easy! Just because I can't get to your nipples doesn't mean I'm out of options.'[roman type][line break][if M is friendly][BigNameDesc of M] turns aggressive!";
+				interest M;
+				anger M;
+			otherwise:
+				say "[speech style of M]'You can thank me later.'[roman type][line break]";
+				satisfy M;
+				compute mandatory room leaving of M;
+				cutshow monster-image of M;
+		otherwise:
+			if M is in the location of the player, say "[BigNameDesc of M] eyes up the lever on the wall.[line break][speech style of M]'[Azathot] wills that this bench remains on the [']enhancement['] setting.'[roman type][line break][big he of M] steps over to the lever, and pushes it up so that it is pointing to the green plus sign.";
+	now L is lever-pulled.
+
 
 Part 3 - Combat
 
@@ -592,10 +689,26 @@ Definition: an acolyte is automatically banishable:
 
 To say BanishFleeFlav of (M - an acolyte):
 	if M is intelligent:
-		say "[speech style of M]'[Azathot] will show me no mercy for this. You have doomed me! DOOMED!'[roman type][line break]";
+		say "[speech style of M]'[Azathot] will show me no mercy for this. You have doomed me! DOOMED!'[roman type][line break][BigNameDesc of M] flees towards the mansion entrance, likely never to be seen again.";
 	otherwise:
 		say "[BigNameDesc of M] is broken from [his of M] trance.[line break][speech style of M]'Huh? [one of]Where am I[or]What am I doing[or]Who am I[stopping]? Eeeeek!'[roman type][line break]";
-	say "[BigNameDesc of M] flees towards the mansion entrance, likely never to be seen again.".
+		if the target-abductee of M is M:
+			say "[BigNameDesc of M] flees towards the mansion entrance, likely never to be seen again.";
+		otherwise:
+			let N be the target-abductee of M;
+			say "You recognize that voice - it's [NameDesc of N]!";
+			if N is student:
+				say "[BigNameDesc of N] seems to be regaining some of [his of N] senses. [big he of N] flees towards the mansion entrance, likely never to be seen again.";
+			otherwise:
+				say "[BigNameDesc of N] seems to be regaining some of [his of N] senses. [big he of N] flees towards the mansion entrance, back out into the Woods.";
+				now N is summon-available;
+				if N is hotel dwelling:
+					summon N in the hotel;
+				otherwise if N is dungeon dwelling:
+					summon N in the dungeon;
+				otherwise:
+					summon N in the woods;
+			cutshow monster-image of N for M;
 
 To compute unique banishment of (M - an acolyte):
 	if M is intelligent:
@@ -733,19 +846,23 @@ To say FirstResponse of (M - an acolyte):
 	if the class of the player is cultist:
 		say "[speech style of M]'A fine day to you, [brother of the player].'[roman type][line break]";
 	otherwise if the player-class is succubus:
-		say "[speech style of M]'Do not speak to me as though we are allies, we merely tolerate your presence demon.'[roman type][line break]";
+		say "[speech style of M]'Do not speak to me as though we are allies, we merely tolerate your presence, demon.'[roman type][line break]";
 	otherwise if M is unfriendly:
 		say TauntRejected of M;
-	otherwise:[if she's friendly, it probably means the player is pregnant]
-		say "[speech style of M]'Greetings, but know that it is improper for the blessed to speak.'[roman type][line break]".
+	otherwise if the pregnancy of the player > 0 or xavier-diaper-link > 0:
+		say "[speech style of M]'Greetings, but know that it is improper for the blessed to speak.'[roman type][line break]";
+	otherwise:
+		say "[speech style of M]'Greetings. Tell me, have you ever considered joining a tight-knit [brother of M]hood? All it would cost you is your individuality...'[roman type][line break]".
 
 To say RepeatResponse of (M - an acolyte):
 	if the class of the player is cultist:
-		say "[speech style of M]'[one of]Yes [brother of the player], I am aware.'[or]Could we make this quick? I was trying to meditate on the void at the heart of all reality.'[or]As always a pleasure to see you, [brother of the player].'[at random][roman type][line break]";
+		say "[speech style of M]'[one of]Yes [brother of the player], I am aware.'[or]Could we make this quick? I was trying to meditate on the void at the heart of all reality.'[or]It is always a pleasure to be around my [brother of the player]s.'[in random order][roman type][line break]";
 	otherwise if the player-class is succubus:
-		say "[speech style of M]'[one of]Isn't there some demon you could be sucking off instead of bothering me?'[or]Come back to me when you've joined the winning side.[or]Seriously, go away. I'm kinda busy.[at random][roman type][line break]";
+		say "[speech style of M]'[one of]Isn't there some demon you could be sucking off instead of bothering me?'[or]Come back to me when you've joined the winning side.'[or]Seriously, go away. I'm kinda busy.'[in random order][roman type][line break]";
+	otherwise if the pregnancy of the player > 0 or xavier-diaper-link > 0:
+		say "[speech style of M]'[one of]The blessed are better seen than heard. Do remember that.'[or]Remember, the blessed are to open themselves to the void and be nothing. Which means no talking.'[or]You do know you shouldn't even be thinking, much less talking?'[in random order][roman type][line break]";
 	otherwise:
-		say "[speech style of M]'[one of]The blessed are better seen than heard. Do remember that.'[or]Remember, the blessed are to open themselves to the void and be nothing. Which means no talking'[or]You do know you shouldn't even be thinking, much less talking?'[at random][roman type][line break]".
+		say "[speech style of M]'[one of]Us acolytes carry spare veils for those that might prove worthy of joining us.'[or]Remember, existence is pointless.'[or]You are an insignificant spek of dirt the [great ones]['] eternal domain.'[then at random][roman type][line break]".
 
 To say TauntAccepted of (M - an acolyte):
 	say "[speech style of M]'Hm. You are still of use to the [great ones]. I will quarrel with you no further.'[roman type][line break][BigNameDesc of M] turns to leave.".
@@ -782,7 +899,11 @@ To say VanityAccepted of (M - an acolyte):
 	say "[speech style of M]'I see. Are you in need of protection?'[roman type][line break]".
 
 To say VanityAnnoyed of (M - an acolyte):
-	say "[speech style of M]'Er, you know the blessed are to be seen, not heard, correct?'[roman type][line break]".
+	if the pregnancy of the player > 0 or xavier-diaper-link > 0:
+		say "[speech style of M]'Er, you know the blessed are to be seen, not heard, correct?'[roman type][line break]";
+	otherwise:
+		say "[speech style of M]'You should think less of what your [brother of M]s can do for you, and more about what you can do for your [brother of M]s.'[roman type][line break]".
+
 
 Section 2 - Questioning
 
@@ -790,7 +911,7 @@ To say WhereAnswer of (M - an acolyte):
 	say "[speech style of M]'[one of]I think this used to be the house of a rich family. They're long since dead though.'[or]This is our temporary base. Kind of a fixer-upper, though.'[at random][roman type][line break]".
 
 To say WhoAnswer of (M - an acolyte):
-	say "[speech style of M]'We are all one in service of the [great ones], feel free to call me whatever you prefer.'[roman type][line break]".
+	say "[speech style of M]'A [if M is presenting as female]girl[otherwise]man[end if] has no name.'[roman type][line break]".
 
 To say StoryAnswer of (M - an acolyte):
 	say "[speech style of M]'[one of]I had a life before, but I was called into the service of the [great ones] when I was brought to their holy altar and experienced their glory first-hand.'[or]My story begins when I was brought to the holy altar and experienced the glory of the [great ones] first-hand. I knew then that I had a higher call.'[or]I just really like the outfits. And servitude of the almighty [great ones].'[at random][roman type][line break]".
@@ -799,7 +920,7 @@ To say EscapeAnswer of (M - an acolyte):
 	say "[speech style of M]'The void surrounds us all, there is no escape from it.'[roman type][line break]".
 
 To say AdviceAnswer of (M - an acolyte):
-	say "[speech style of M]'[one of]We left a copy of one of our holy scriptures with the curator of this mansion. [big he of vampiress] won't give it back...'[or]I think this place is haunted. And if it wasn't before we got here, it probably is now.'[or]The Deep One won't appreciate it if you bother the blessed sisters. We're still cleaning the walls after the last intruder.'[or]The altar downstairs will gladly consume any corruption you bring to it.'[or]Normally we don't name the [great ones] out of respect, but there is one that we avoid out of fear. No, I won't tell you his name, I don't fancy having my brains sucked out.'[or]I heard one of the other sisters grabbed a mannequin from the woods and tried to modify it. It, uh, didn't go that well.'[or]There are some demons that have seen the truth of the [great ones] and come over to our side. They are far more valuable than you, so make sure you show respect and do whatever they tell you.'[or]The people who used to own this house had strange taste, there are cursed mirrors all over the place.'[or]If you feel the need to loot this place, take care. Some of the boxes are... wrong.'[at random][roman type][line break]".
+	say "[speech style of M]'[one of]We left a copy of one of our holy scriptures with the curator of this mansion. [big he of vampiress] won't give it back...'[or]I think this place is haunted. And if it wasn't before we got here, it probably is now.'[or]The Deep One won't appreciate it if you bother the blessed [brother of M]s. We're still cleaning the walls after the last intruder.'[or]The altar downstairs will gladly consume any corruption you bring to it.'[or]Normally we don't name the [great ones] out of respect, but there is one that we avoid out of fear. No, I won't tell you his name, I don't fancy having my brains sucked out.'[or]I heard one of the other sisters grabbed a mannequin from the woods and tried to modify it. It, uh, didn't go that well.'[or]There are some demons that have seen the truth of the [great ones] and come over to our side. They are far more valuable than you, so make sure you show respect and do whatever they tell you.'[or]The people who used to own this house had strange taste, there are cursed mirrors all over the place.'[or]If you feel the need to loot this place, take care. Some of the boxes are... wrong.'[in random order][roman type][line break]".
 
 To compute teaching of (M - an acolyte):
 	say "[speech style of M]'For the weak and infirm of faith, the curses their clothing bear weigh them down. But we see that while blessing is limited, the power of curses is truly bottomless. If you open your mind to the [great ones], they will answer your call and their curses will flow to you as well.'[roman type][line break]";
@@ -811,7 +932,7 @@ To compute friendly drink of (M - an acolyte):
 	if the player-class is cultist:
 		say "[speech style of M]'It would not do for you to weaken, [brother of the player]. Here, drink this.'[roman type][line break][big he of M] hands you a small cup of amber liquid with an odd, sweet smell. As you drink it, you feel quite refreshed but also somehow empty inside.";
 		StomachUp 2;
-		humiliate MODERATE-HUMILIATION;
+		strongHumiliate;
 	otherwise:
 		say "[speech style of M]'Sorry, but only true servants of the [great ones] would [']appreciate['] what I have to offer you.'[roman type][line break]";
 	bore M;
@@ -1054,6 +1175,8 @@ To compute (M - clairvoyant acolyte) protecting against (X - a monster):
 	distract M.
 
 To compute unique periodic effect of (M - a clairvoyant acolyte):
+	if M is in Mansion02, now M is guarding;
+	otherwise now M is unleashed;
 	if a random number between 1 and 45 is 1:
 		if M is in the location of the player, say "[BigNameDesc of M] sighs as [if diaper quest is 1][milk]squirts out of [his of M] nipples[otherwise][semen] dribbles out of [his of M] [HoleDesc of M][end if]. [big he of M] recites a slow chant as it forms a puddle on the floor.";
 		if diaper quest is 0, PuddleUp semen by 1 in (the location of M);

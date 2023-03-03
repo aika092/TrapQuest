@@ -63,6 +63,7 @@ To decide which number is the girth of (M - Icarus):
 	decide on 3.
 
 Definition: Icarus is human: decide yes.
+Definition: Icarus is condom prepared: decide yes. [Does he have condoms on him?]
 
 To say LeftoverDesc (N - 128):
 	say "A bunch of huge white bird feathers littered over the ground are the only evidence that [NameDesc of Icarus] was defeated on this spot.".

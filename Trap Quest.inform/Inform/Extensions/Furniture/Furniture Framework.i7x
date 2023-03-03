@@ -58,10 +58,6 @@ Check entering furniture:
 		if the insertableGirthAcceptance of asshole < the girth of the noun, say "The dildos are just too large, there's no way you'd be able to get it in your [asshole]." instead;
 		if asshole is actually occupied, say "You can't sit on this chair properly because the [random thing penetrating asshole] would be in the way of the golden dildo." instead;
 		if the player is ass protected, say "You would need to get the [random worn top level protection clothing] out of the way first." instead;
-	if the noun is modification machine:
-		if the charge of the noun > 0:
-			allocate 6 seconds;
-			say "Nothing seems to happen." instead;
 	if the noun is lecture chair:
 		if the charge of the noun > 0 or timeBombTime > 0:
 			allocate 6 seconds;

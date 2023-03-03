@@ -311,7 +311,7 @@ Definition: a romper is unskirted themed:
 	if it is baby themed, decide yes;
 	decide no.
 
-Part 1 - Busy Patterned Romper
+Part - Busy Patterned Romper
 
 A busy patterned romper is a kind of romper. There is 1 busy patterned romper. The text-shortcut of busy patterned romper is "bpr". The printed name of busy patterned romper is usually "[clothing-title-before]busy patterned romper[clothing-title-after]".
 
@@ -340,7 +340,7 @@ To decide which object is the unique-upgrade-target of (C - a busy patterned rom
 Definition: a busy patterned romper is black themed: decide yes.
 Definition: a busy patterned romper is white themed: decide yes.
 
-Part 2 - Pink Baby Romper
+Part - Pink Baby Romper
 
 A pink baby romper is a kind of romper. There is 1 transformation-rare pink baby romper. A pink baby romper is top-exclusive. The text-shortcut of pink baby romper is "pbr". The printed name of pink baby romper is usually "[clothing-title-before]pink baby romper[clothing-title-after]".
 
@@ -370,7 +370,7 @@ To decide which object is the unique-upgrade-target of (C - a pink baby romper):
 Definition: a pink baby romper is pink themed: decide yes.
 Definition: a pink baby romper is baby themed: decide yes.
 
-Part 3 - Cupcake Baby Romper
+Part - Cupcake Baby Romper
 
 A cupcake baby romper is a kind of romper. There is 1 transformation-rare cupcake baby romper. A cupcake baby romper is top-exclusive. The text-shortcut of cupcake baby romper is "cpr". The printed name of cupcake baby romper is usually "[clothing-title-before]cupcake baby romper[clothing-title-after]".
 
@@ -401,7 +401,7 @@ Definition: a cupcake baby romper is food themed: decide yes.
 Definition: a cupcake baby romper is pink themed: decide yes.
 Definition: a cupcake baby romper is baby themed: decide yes.
 
-Part 4 - Yellow Baby Romper
+Part - Yellow Baby Romper
 
 A yellow baby romper is a kind of romper. There is 1 transformation-rare yellow baby romper. A yellow baby romper is top-exclusive. The text-shortcut of yellow baby romper is "ybr". The printed name of yellow baby romper is usually "[clothing-title-before]yellow baby romper[clothing-title-after]".
 
@@ -431,7 +431,7 @@ Definition: a yellow baby romper is babywear: decide yes.
 Definition: a yellow baby romper is yellow themed: decide yes.
 Definition: a yellow baby romper is baby themed: decide yes.
 
-Part 5 - Pink Hooded Romper
+Part - Pink Hooded Romper
 
 [this item only appears in a predicament, then disappears again]
 pink-hooded-romper is a bodysuit. pink-hooded-romper is unique. pink-hooded-romper is only arm covering. The text-shortcut of pink-hooded-romper is "phr". The printed name of pink-hooded-romper is "[clothing-title-before]pink hooded romper[clothing-title-after]". Understand "pink", "hooded", "romper" as pink-hooded-romper.
@@ -833,7 +833,15 @@ To decide which number is the initial outrage of (C - WC catsuit):
 
 Part - Lycra Bodysuit
 
-lycra-bodysuit is a catsuit. lycra-bodysuit is transformation-rare. lycra-bodysuit is low cut. lycra-bodysuit is optional-top-displacable. lycra-bodysuit is crotch-exposing. lycra-bodysuit is unskirted. lycra-bodysuit is leg covering. lycra-bodysuit is only arm covering. lycra-bodysuit is lycra. The printed name of lycra-bodysuit is "[clothing-title-before]lycra bodysuit[clothing-title-after]". The text-shortcut of lycra-bodysuit is "lyb". lycra-bodysuit is see-through. Understand "bodysuit" as lycra-bodysuit.
+lycra-bodysuit is a catsuit. lycra-bodysuit is transformation-rare. lycra-bodysuit is low cut. lycra-bodysuit is optional-top-displacable. lycra-bodysuit is unskirted. lycra-bodysuit is leg covering. lycra-bodysuit is only arm covering. lycra-bodysuit is lycra. The printed name of lycra-bodysuit is "[clothing-title-before]lycra bodysuit[clothing-title-after]". The text-shortcut of lycra-bodysuit is "lyb". lycra-bodysuit is see-through. Understand "bodysuit" as lycra-bodysuit.
+
+Definition: lycra-bodysuit is class-relevant:
+	if the class of the player is condom collector, decide yes;
+	decide no.
+To compute class set up of (C - lycra-bodysuit):
+	now C is elasticity;
+	now C is charisma-influencing;
+	now the raw-magic-modifier of C is 2.
 
 Figure of lycra-bodysuit is the file "Items/Clothes/Upper/Exposing/lycrabodysuit1.png".
 
@@ -849,9 +857,6 @@ To say ShortDesc of (C - lycra-bodysuit):
 To decide which number is the initial outrage of (C - lycra-bodysuit):
 	decide on 6.
 
-Definition: lycra-bodysuit is class-transformation-protected:
-	if the class of the player is cumdumpster, decide yes;
-	decide no.
 Definition: lycra-bodysuit is green themed: decide yes.
 
 Part - ABC Shortalls
@@ -884,7 +889,7 @@ Definition: ABC shortalls is babywear: decide yes.
 
 Volume - Leotard
 
-A leotard is a kind of bodysuit. A leotard is usually sheer-when-wet. A leotard is usually erect-nipple-exposing. A leotard has a number called charge.
+A leotard is a kind of bodysuit. A leotard is usually sheer-when-wet. A leotard is usually erect-nipple-exposing. A leotard has a number called charge. A leotard is usually top-displacable.
 
 Definition: a leotard is ballet related: decide yes.
 Definition: a leotard is sissifying: decide yes.
@@ -955,11 +960,18 @@ The printed name of sexy blue leotard is usually "[clothing-title-before]sexy bl
 
 There is 1 transformation-rare sexy blue leotard.
 
+Definition: a sexy blue leotard is potentially-top-layer-concealing: decide no. [top part is largely transparent]
+Definition: a sexy blue leotard is potentially-partially-mid-layer-concealing: decide no. [middle part is essentially completely transparent]
 Definition: a sexy blue leotard is star themed: decide yes.
 Definition: a sexy blue leotard is blue themed: decide yes.
 
 To decide which number is the initial outrage of (C - a sexy blue leotard):
 	decide on 5.
+
+To decide which number is the penis-capacity of (C - a sexy blue leotard):
+	decide on 7.
+To decide which number is the assModesty of (C - a sexy blue leotard):
+	decide on 8.
 
 Figure of sexy blue leotard is the file "Items/Clothes/Upper/Leotards/leotard2.png".
 To decide which figure-name is clothing-image of (C - a sexy blue leotard):
@@ -973,13 +985,20 @@ To say ClothingDesc of (C - a sexy blue leotard):
 	say "A blue leotard which is so sheer that it would reveal everything if it wasn't the for opaque stars over each nipple and the crotch.[if C is crotch-ripped]A rip at the bottom of the leotard means that it unfortunately doesn't protect the crotch region.[end if]".
 
 
-wing leotard is a leotard. wing leotard is very low cut. wing leotard is unique.
+wing leotard is a leotard. wing leotard is low cut. wing leotard is unique. wing leotard is optional-top-displacable.
 The printed name of wing leotard is "[clothing-title-before]wing themed leotard[clothing-title-after]".Understand "themed" as wing leotard. The text-shortcut of wing leotard is "wle".
 
 The tradability of wing leotard is 7.
 The raw-magic-modifier of wing leotard is 1.
 
+
+Definition: wing leotard is potentially-partially-mid-layer-concealing: decide no. [middle part is essentially completely transparent]
 Definition: wing leotard is inflation themed: decide yes.
+
+To decide which number is the penis-capacity of (C - wing leotard):
+	decide on 5.
+To decide which number is the assModesty of (C - wing leotard):
+	decide on 3.
 
 Figure of wing leotard is the file "Items/Clothes/Upper/Leotards/leotard3.png".
 To decide which figure-name is clothing-image of (C - wing leotard):

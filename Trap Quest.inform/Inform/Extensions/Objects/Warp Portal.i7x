@@ -151,9 +151,11 @@ To set up predicament status:
 
 To set up predicament clothing for (P - a predicament):
 	repeat with C running through on-stage wearthings:
-		if C is not in Predicament20 and (C is held or C is in a predicament room) and C is not predicament-fixed, now C is predicament-temporary.
+		if C is not in Predicament20 and (C is held or C is in a predicament room) and C is not predicament-fixed, now C is predicament-temporary;
+	now executing-predicament is false.
 
 forced-portal is an object that varies.
+executing-predicament is initially false. [this helps us flag whether we're currently in the 'execute P' part of a predicament, during which clothing flags such as predicament-normal behave differently.]
 
 To teleport via (W - a warp portal):
 	let D be nothing;
@@ -292,6 +294,7 @@ To teleport via (W - a warp portal):
 			now the printed name of Predicament01 is "Abandoned Warehouse";
 			repeat with R running through predicament rooms:
 				totally clean R;
+			now executing-predicament is true;
 			execute P;
 			set up predicament clothing for P;
 			increase the times-completed of P by 1;

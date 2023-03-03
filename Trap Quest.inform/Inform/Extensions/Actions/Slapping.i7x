@@ -18,6 +18,7 @@ To decide which number is the slap damage of (P - a person):
 		if (punch is 1 or C is slap ready) and the slap damage improvement of C is not 0:
 			let N be the slap damage improvement of C;
 			increase A by N;
+			if C is sword and the swordskill of the player is 1, increase A by 1;
 			if damage-explained > 1, say "[if N >= 0]+[end if][N] ([ShortDesc of C] bonus) ";
 	if punch is 1:
 		if the player is feeling dominant:
@@ -111,7 +112,8 @@ Carry out slapping:
 	unless there is a worn slap ready projectile equippable, say "[if the largeness of breasts >= 6 and the breastskill of the player is 0]Your [BreastDesc] are getting in the way and slightly reducing the power of your swing. [otherwise if the largeness of breasts > 12 and the breastskill of the player is 0]Your [BreastDesc] are getting in the way and significantly reducing the power of your swing. [end if][if the player is wrist bound]Unfortunately your wrists being bound significantly hampers the strength you can get into your slaps. [end if][if the player is zeroG and flight-attendant-top is not worn]Your body is weightless, meaning you can hardly get any force into your slap without sending yourself flying backwards. [otherwise if the player is on tiptoes and flight-attendant-top is not worn]Your body is so light that you don't have the grounding to put your full strength into the slap. [otherwise if living tentacles is worn]The tentacles wrapping around you flail about and strike the enemy as well! [end if]";
 	if there is a worn hostility clothing, compute hostileDamage;
 	damage A on the noun;
-	if the noun is combative, compute wrangle reaction of the noun.
+	if the noun is combative, compute wrangle reaction of the noun;
+	if the noun is student, reset staff boredom.
 Understand "slap [something]", "hit [something]", "punch [something]", "slash [something]", "slash at [something]", "swipe [something]", "swipe at [something]", "scratch [something]", "thrust at [something]", "swing at [something]", "sa [something]", "sl [something]", "pu [something]" as slapping.
 
 To decide which number is the zap damage of (P - a person):

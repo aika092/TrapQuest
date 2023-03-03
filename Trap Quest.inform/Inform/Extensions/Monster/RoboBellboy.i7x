@@ -1,6 +1,6 @@
 RoboBellboy by Monster begins here.
 
-A robobellboy is a kind of robot. Understand "bellboy", "bell", "boy" as robobellboy. A robobellboy is usually intelligent. The favour of a robobellboy is usually 11. The leftover-type of a robobellboy is usually 117. A robobellboy has a number called whore-intent.
+A robobellboy is a kind of robot. Understand "bellboy", "bell", "boy" as robobellboy. A robobellboy is usually intelligent. The favour of a robobellboy is usually 11. The leftover-type of a robobellboy is usually 117. A robobellboy has a number called whore-intent. A robobellboy has a number called modification-intent.
 
 Figure of robobellboy is the file "NPCs/Hotel/Robot/robobellboy1.jpg".
 Figure of senior robobellboy is the file "NPCs/Hotel/Robot/robobellboy2.jpg".
@@ -142,6 +142,9 @@ To compute perception of (M - senior robobellboy):
 		say "[big his of M] eyes turn red.[line break][speech style of M]'HELLO NEW TRAINEE. SEVERAL COMPLAINTS HAVE BEEN MADE OF YOUR LACKLUSTRE DEDICATION. SUBMIT IMMEDIATELY FOR PERFORMANCE OPTIMISATION.'[roman type][line break]";
 	otherwise if the class of the player is not catgirl and the class of the player is not puppygirl and (the number of worn crotch covering clothing is 0 or the number of worn breast covering clothing is 0):
 		say "[big his of M] eyes turn red.[line break][speech style of M]'ERROR LINE 34, PATRON UNSUITABLE. INITIALISING EJECTION PROTOCOL... ERROR... ERROR... HELLO NEW TRAINEE. [caps please] SUBMIT IMMEDIATELY FOR PERFORMANCE OPTIMISATION.";
+	otherwise if a random number between 1 and 3 is 1 and (the charge of modification machine <= 0 or (artificial enhancements fetish is 1 and there is an off-stage fetish appropriate module)):
+		say "[big his of M] eyes turn red.[line break][speech style of M]'HELLO TREASURED CUSTOMER. YOU HAVE BEEN SELECTED FOR COMPLIMENTAY MODIFICIATION. [caps please] ALLOW ME TO ESCORT YOU TO THE MODIFICATION MACHINE.'[roman type][line break]";
+		now the modification-intent of M is 1;
 	otherwise:
 		say "[speech style of M]'HELLO TREASURED CUSTOMER. [caps please] ALLOW THE BUTLER TO ASSIST YOU.'[roman type][line break][big he of M] appears to lose interest and continues on [his of M] way.";
 		bore M;
@@ -191,6 +194,8 @@ This is the robobellboy punishment rule:
 		compute trainee forcing of current-monster;
 	otherwise if the class of the player is maid:
 		compute maid forcing of current-monster;
+	otherwise if the modification-intent of current-monster is 1 and (the charge of modification machine <= 0 or (artificial enhancements fetish is 1 and there is an off-stage fetish appropriate module)):
+		compute modification forcing of current-monster;
 	otherwise if the whore-intent of current-monster is 1 or the bimbo of the player > 13 or the number of worn crotch covering clothing > 0 and the number of worn breast covering clothing > 0:
 		compute whore forcing of current-monster;
 	otherwise:
@@ -223,6 +228,17 @@ To compute trainee forcing of (M - a robobellboy):
 		satisfy M;
 	otherwise:
 		compute clothes forcing of M.
+
+To compute modification forcing of (M - a robobellboy):
+	now the target-room of M is Hotel02;
+	if the location of the player is the target-room of M and the player is not immobile:
+		say "[first custom style]'YOUR MODIFICATION IS READY.'[roman type][line break][BigNameDesc of M] places you onto [NameDesc of modification machine]!";
+		bore M for 400 seconds;
+		FavourUp M;
+		now the modification-intent of M is 0;
+		compute furniture resting on modification machine;
+	otherwise:
+		drag to the target-room of M by M.
 
 To compute maid forcing of (M - a robobellboy):
 	[One day I want to code a unique punishment for maids, once I've thought of a good one.]

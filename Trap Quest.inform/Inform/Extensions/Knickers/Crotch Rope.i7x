@@ -40,4 +40,45 @@ Carry out going when there is a worn crotch rope: [Should only ever be worn by f
 		say "As you move, the large knot at the front of your [printed name of C] rubs brutally against your [vagina], stimulating it and making it more sore!";
 		ruin vagina.
 
+vaginal seal is a knickers. vaginal seal is unique. vaginal seal is silk. The printed name of vaginal seal is "[clothing-title-before]vaginal seal[clothing-title-after]". The text-shortcut of vaginal seal is "vs". A vaginal seal is crotch-assless.
+
+To decide which number is the penis-capacity of (K - vaginal seal):
+	decide on 0.
+To decide which number is the soak-limit of (K - vaginal seal):
+	decide on 3.
+To decide which number is the initial armour of (C - vaginal seal):
+	decide on 99.
+To decide which number is the crotch-tightness of (C - vaginal seal):
+	decide on 2.
+To decide which number is the vaginal-sex-addiction-influence of (C - vaginal seal):
+	decide on 4.
+
+Definition: vaginal seal is displacable: decide no.
+Definition: vaginal seal is transformation-protected: decide yes.
+Definition: vaginal seal is tearable: decide no. [can't be removed by monsters]
+Definition: vaginal seal is white themed: decide yes.
+
+To compute SelfExamineDesc of (K - vaginal seal):
+	say "A magical seal protects your [vagina]. ";
+
+To decide which figure-name is clothing-image of (C - vaginal seal):
+	decide on figure of vaginal seal.
+
+To say ClothingDesc of (K - vaginal seal):
+	say "This thin sheet of silk has magical runes on it that prevent it being removed by anyone except yourself and the most powerful of entities.".
+Figure of vaginal seal is the file "Items/Clothes/Lower/Underwear/Special/vaginalseal1.png".
+
+To say selfexamineuniquetitle of (K - vaginal seal):
+	say "runic vaginal seal".
+
+To say ShortDesc of (K - vaginal seal):
+	say "vaginal seal".
+
+To decide which number is the initial outrage of (C - vaginal seal):
+	decide on 3.
+
+To set up influence of (C - vaginal seal):
+	now C is vaginal-sex-addiction-influencing.
+
+
 Crotch Rope ends here.

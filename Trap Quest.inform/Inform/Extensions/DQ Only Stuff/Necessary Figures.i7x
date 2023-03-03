@@ -144,6 +144,9 @@ To decide which figure-name is Figure of Shopkeeper 1:
 	if shopkeeper is in Dungeon41, decide on Figure of shopkeeper 1a;
 	decide on Figure of shopkeeper 1b.
 
+Figure of swirlie knickers clean is the file "Special/Cutscene/cutscene-swirlie3.jpg".
+Figure of swirlie knickers wet is the file "Special/Cutscene/cutscene-swirlie4.jpg".
+
 Figure of Teacher Hannah is the file "NPCs/School/Teacher/teacher5a.png".
 
 Figure of throne is the file "Env/Dungeon/throne1b.jpg".

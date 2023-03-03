@@ -11,6 +11,7 @@ To decide which figure-name is the monster-image of (M - gymnast-explorer):
 	decide on figure of gymnast explorer 1.
 To say UniqueMonsterDesc of (M - gymnast-explorer):
 	say "[big he of M] is wearing a tight shiny blue swimsuit and [if the explorer-bimbo of M is 0]nothing else[otherwise if the explorer-bimbo of M is 1]is prancing around like a ballerina on tip-toes[otherwise]is lying on the bed playfully, patiently waiting for [his of M] next client[end if].".
+Figure of gymnast explorer 1 cutscene 1 is the file "NPCs/MultiFloor/Explorers/gymnast1-cutscene1.png".
 
 
 Figure of blonde explorer 1 is the file "NPCs/MultiFloor/Explorers/blonde1.jpg".

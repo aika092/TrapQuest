@@ -188,10 +188,10 @@ To compute group kissing lesson of (M - a staff member):
 				if leastAroused is a student, say "while [student-name of leastAroused] [one of]just looks a bit annoyed at [if mostAroused is a student][student-name of mostAroused]'s[otherwise]your[end if] forwardness[or]mewls with irritation[in random order].";
 				otherwise say "which makes you feel awkward and perturbed.";
 			otherwise if leastArousal < 5000:
-				if leastAroused is a student, say "while [student-name of leastAroused] [one of]places [his of leastAroused] hands on [student-name of mostAroused]'s hips[or]opts for the somewhat milder approach of holding [student-name of mostAroused] at the waist[or]gently hugs [him of mostAroused] back[in random order].";
+				if leastAroused is a student, say "while [student-name of leastAroused] [one of]places [his of leastAroused] hands on [if mostAroused is a student][student-name of mostAroused]'s[otherwise]your[end if] hips[or]opts for the somewhat milder approach of holding [student-name of mostAroused] at the waist[or]gently hugs [if mostAroused is a student][him of mostAroused][otherwise]you[end if] back[in random order].";
 				otherwise say "while you gingerly embrace [him of mostAroused] back.";
 			otherwise if leastArousal < 8000:
-				if leastAroused is a student, say "while [student-name of leastAroused] [one of]runs [his of leastAroused] hands up and down [student-name of mostAroused]'s sides[or]holds [student-name of mostAroused] close and moans happily into [his of mostAroused] mouth[in random order].";
+				if leastAroused is a student, say "while [student-name of leastAroused] [one of]runs [his of leastAroused] hands up and down [if mostAroused is a student][student-name of mostAroused]'s[otherwise]your[end if] sides[or]holds [if mostAroused is a student][student-name of mostAroused][otherwise]you[end if] close and moans happily into [his of mostAroused] mouth[in random order].";
 				otherwise say "and you find yourself melting under [his of mostAroused] touch.";
 			otherwise:
 				if leastAroused is a student, say "and [student-name of leastAroused] [one of]grasps [if mostAroused is a student][him of mostAroused][otherwise]you[end if] in the same places[or]does the same back[in random order], creating a rather erotic view.";
@@ -283,7 +283,7 @@ To compute group kissing lesson of (M - a staff member):
 		if AST is student:
 			increase the lessonInt1 of AST by candyArousal;
 		otherwise if AST is the player:
-			say "[bold type]Some [one of][or]more [stopping]of the candy's aphrodesiac enters your blood stream from your stomach!";
+			say "[bold type]Some [one of][or]more [stopping]of the candy's aphrodesiac enters your blood stream from your stomach![roman type][line break]";
 			arouse candyArousal;
 			if the arousal of the player + the delayed arousal of the player < aroused-limit, now the delayed arousal of the player is aroused-limit - the arousal of the player; [after tasting the candy, the player always becomes aroused]
 			check for arousal change;
@@ -526,7 +526,7 @@ To say EnslavedDominationFlav of (M - teacher-seraphina):
 	otherwise:
 		say "You roughly push the bottom of [NameDesc of M][']s tray upwards, forcing [his of M] chest into [his of M] face, covering [him of M] in the whipped cream and sauce that had been used to decorate [his of M] exposed breasts.[line break][speech style of M]'Thank you for humiliating me, [if the player is presenting as male]Master[otherwise]Mistress[end if] [NameBimbo]...'[roman type][line break][BigNameDesc of M] quietly mutters. A few seconds later, the princess's magic causes the cream and sauce to redecorate [his of M] chest, just as it had been a few moments ago.".
 To decide which number is the EnslavedDominationThreshold of (M - teacher-seraphina):
-	decide on 8.
+	decide on 14000.
 
 tits-lesson is a lesson. The lesson-teacher of tits-lesson is teacher-seraphina.
 Definition: tits-lesson is lesson-appropriate:
@@ -766,7 +766,7 @@ To compute labour to (M - teacher-rochelle):
 To say EnslavedDominationFlav of (M - teacher-rochelle):
 	say "You grab [NameDesc of M] by the [manly-penis] and pull [him of M] into you. [if the player is able to speak][variable custom style]'Not so tough now, are you? Wimp.'[roman type][line break][otherwise]You stare into [his of M] eyes to let [him of M] know who's in charge. [end if][big he of M] just whimpers timidly and makes sure not to move lest [his of M] member accidentally get pulled so hard it hurts.".
 To decide which number is the EnslavedDominationThreshold of (M - teacher-rochelle):
-	decide on 13.
+	decide on 18000.
 
 practical-lesson is a lesson. The lesson-teacher of practical-lesson is teacher-hyacinthe.
 
@@ -824,10 +824,14 @@ To compute teaching of (L - practical-lesson):
 				now DL is penetrating face;
 				add face to LB, if absent;
 				increase enthusiasm by the oral sex addiction of the player;
-				let SAE be ass-count + pussy-count - the sex addiction of the player; [player isn't dirty enough to swallow that much nastiness]
-				if SAE > 0, decrease enthusiasm by SAE;
-				say "You [if enthusiasm < 4]hesitantly[otherwise if enthusiasm < 8]gracefully[otherwise]greedily[end if] take the [LongDickDesc of DL] into your mouth. ";
-				if the throatskill of the player is 1 and enthusiasm >= 4:
+				if ass-count > 0:
+					if the grossness addiction of the player >= 13 + ass-count, increase enthusiasm by 10;
+					if the grossness addiction of the player <= 7 + ass-count, decrease enthusiasm by 10;
+				otherwise if pussy-count > 0:
+					if the grossness addiction of the player >= 7 + pussy-count, increase enthusiasm by 5;
+					if the grossness addiction of the player <= pussy-count, decrease enthusiasm by 5;
+				say "You [if enthusiasm < 7]hesitantly[otherwise if enthusiasm < 14]gracefully[otherwise]greedily[end if] take the [LongDickDesc of DL] into your mouth. ";
+				if the throatskill of the player is 1 and enthusiasm >= 7:
 					say "You skilfully push the massive rod straight down your throat, making proud gagging sounds around it as you do. You move your head up and down, up and down, essentially fucking your own throat as you do. ";
 					increase stimulation-level by 3;
 				if player-filthiness < ass-count + pussy-count + stimulation-level:
@@ -836,14 +840,15 @@ To compute teaching of (L - practical-lesson):
 						say "By doing this, you've reduced [NameDesc of filthiest-student][']s chances of winning.";
 						if student-filthiness < player-filthiness, HappinessDown filthiest-student by 3;
 						otherwise HappinessDown filthiest-student;
-				increase stimulation-level by (enthusiasm + a random number between 2 and 4) / 3;
+				increase stimulation-level by (enthusiasm + a random number between 0 and 2) / 3;
 				if ass-count > 0:
-					say "The taste of [if ass-count > 1][ass-count] loads of sweaty ass juice[otherwise]tangy ass sweat[end if] [if pussy-count > 1]combined with [pussy-count] helpings of slimy cunt butter [otherwise if pussy-count > 0]combined with the unmistakable taste and texture of pussy juice [end if]overwhelms your senses and makes you retch. Even worse, you know that everyone is watching you and knows exactly what you're cleaning off of [NameDesc of DL][']s [DickDesc of DL]. Your cheeks burn with shame[if the player is shameless] and arousal[end if].";
+					say "The taste of [if ass-count > 1][ass-count] loads of sweaty ass juice[otherwise]tangy ass sweat[end if] [if pussy-count > 1]combined with [pussy-count] helpings of slimy cunt butter [otherwise if pussy-count > 0]combined with the unmistakable taste and texture of pussy juice [end if]overwhelms your senses and makes you retch. Even worse, you know that everyone is watching you and knows exactly what you're cleaning off of [NameDesc of DL][']s [DickDesc of DL].";
+					TasteGrossOut 6 + ass-count;
 				otherwise if pussy-count > 0:
-					say "The taste of [if pussy-count > 1][pussy-count] loads of slippery girl-slime[otherwise]the thin coating of pussy juice[end if] fills your mouth. Even worse, you know that everyone is watching you and knows exactly what you're cleaning off of [NameDesc of DL][']s [DickDesc of DL]. Your cheeks burn with shame[if the player is shameless] and arousal[end if].";
+					say "The taste of [if pussy-count > 1][pussy-count] loads of slippery girl-slime[otherwise]the thin coating of pussy juice[end if] fills your mouth. Even worse, you know that everyone is watching you and knows exactly what you're cleaning off of [NameDesc of DL][']s [DickDesc of DL].";
+					TasteGrossOut pussy-count;
 				otherwise if slobber-owner is a student:
 					say "You can taste [NameDesc of slobber-owner][']s slobbery saliva all over the shaft. It's a bit humiliating to be slurping someone else's spit off of a [DickDesc of DL]!";
-					humiliate 50;
 				humiliate (300 * ass-count) + (100 * pussy-count);
 				OralSexAddictUp 1;
 				say "By the time [NameDesc of DL] tells you to stop, the only thing coating [his of DL] [DickDesc of DL] is your own saliva[unless pussy-count is 0 and ass-count is 0 and slobber-owner is the player]. Everything else is in your stomach and on your tongue[end if].";
@@ -1338,7 +1343,7 @@ To compute teaching of (L - swimming-lesson):
 		decrease eventTimer by 1;
 		if eventTimer is 0 and the number of entries in LInPool > 0: [Something crazy happens.]
 			say "[bold type]Suddenly the lights turn red and a loud klaxon starts blaring. The timed event that [teacher-name of M] talked about is happening![roman type][line break]";
-			if condom fetish is 1 and CPS is clothing and a random number between 1 and 4 > 1: [Swimming condoms]
+			if condom fetish >= 2 and CPS is clothing and a random number between 1 and 4 > 1: [Swimming condoms]
 				now poolCrazyEvent is 2;
 				say "And then it happens: A sea of unused condoms, not in wrappers, rain from the ceiling. They land in the pool all over, and then begin swimming blindly around like leeches, filling up with [semen] from the pool as they move. ";
 				if yourself is listed in LInPool and the number of entries in LInPool is 1: [Player is the only person in the pool]
@@ -1365,7 +1370,7 @@ To compute teaching of (L - swimming-lesson):
 						UsedCondomUp CPS by 1;
 					otherwise:
 						say "A swimming condom connects with [NameDesc of ST] and latches onto [his of ST] outfit!";
-						if entry 1 in LOutOfPool is yourself, HappinessDown ST;
+						[if entry 1 in LOutOfPool is yourself, HappinessDown ST;] [this only made sense when the event was triggered by the first person leaving the pool]
 		if the player is listed in LInPool:
 			decrease semenAddictionCounter by 1;
 			if semenAddictionCounter <= 0:
@@ -2288,7 +2293,8 @@ To say MonsterDesc of (M - an ultimate-lesson-actor):
 	say "Who knows what this [man of M] looks like. You know nothing about [him of M][if the player is not in a predicament room], other than [he of M] clearly is a high ranking member of this institution[end if]. You'll probably never find out who [he of M] is.".
 To compute action (N - a number) of (M - an ultimate-lesson-actor):
 	if M is in a predicament room:
-		if current-predicament is gloryhole-key-predicament and gloryhole-key-predicament is ass-to-mouth-agreed and the sex-length of M > 0:
+		if current-predicament is business-briefcase-predicament and the sex-length of M is 0 and current-predicament is ass-to-mouth-agreed and M is penetrating asshole, now the sex-length of M is a random number between 1 and 2; [sometimes extends the length of the scene, and guarantees it always ends with oral creampie]
+		if (current-predicament is gloryhole-key-predicament or current-predicament is business-briefcase-predicament) and current-predicament is ass-to-mouth-agreed and the sex-length of M > 0:
 			if M is penetrating face:
 				dislodge M;
 				now M is penetrating asshole;
@@ -2297,7 +2303,9 @@ To compute action (N - a number) of (M - an ultimate-lesson-actor):
 			otherwise:
 				dislodge M;
 				now M is penetrating face;
-				say "[one of]You pull forward, allowing [NameDesc of M][']s [manly-penis] to fall out of your [asshole] with a soft 'pop'[or]You gently ease [NameDesc of M][']s thick shaft out of your [asshole][in random order], [one of]and then turn around to approach it with your face[or]before turning around[in random order]. [if the player is a nympho][one of]Secretly excited about the depravity of it all, [or]You fight back a strong desire to touch yourself as [or]You lick your lips greedily before [or]Salivating with anticipation, [in random order][otherwise if the player is a pervert][one of]You lick your lips nervously before [or]You force yourself not to hesitate before [or]Holding your breath, [or]Doing your best not to think too hard about what you're doing, [in random order][otherwise][one of]Doing your best to suppress your revulsion, [or]You fight back the urge to retch as [or]Holding your breath and pinching your nose, [or]Desperately trying not to think about what you're doing, [in random order][end if]you [one of]envelop the recently-sodomising stick with your [LipDesc][or]get to work sucking your own ass juices off this anonymous [man of M][']s [manly-penis][or]get to work licking up your own ass sweat[or]start to slurp the bitter wetness off [his of M] bulbous tip[or]use your mouth and tongue to clean off [his of M] [manly-penis][in random order]. [strongHumiliateReflect]";
+				say "[one of]You pull forward, allowing [NameDesc of M][']s [manly-penis] to fall out of your [asshole] with a soft 'pop'[or]You gently ease [NameDesc of M][']s thick shaft out of your [asshole][in random order], [one of]and then turn around to approach it with your face[or]before turning around[in random order]. [if the grossness addiction of the player >= 14][one of]Secretly excited about the depravity of it all, [or]You fight back a strong desire to touch yourself as [or]You lick your lips greedily before [or]Salivating with anticipation, [in random order][otherwise if the grossness addiction of the player >= 7][one of]You lick your lips nervously before [or]You force yourself not to hesitate before [or]Holding your breath, [or]Doing your best not to think too hard about what you're doing, [in random order][otherwise][one of]Doing your best to suppress your revulsion, [or]You fight back the urge to retch as [or]Holding your breath and pinching your nose, [or]Desperately trying not to think about what you're doing, [in random order][end if]you [one of]envelop the recently-sodomising stick with your [LipDesc][or]get to work sucking your own ass juices off this anonymous [man of M][']s [manly-penis][or]get to work licking up your own ass sweat[or]start to slurp the bitter wetness off [his of M] bulbous tip[or]use your mouth and tongue to clean off [his of M] [manly-penis][in random order].";
+				TasteGrossOut 7;
+				say strongHumiliateReflect;
 			decrease the sex-length of M by 1;
 		otherwise if M is penetrating face:
 			if (current-predicament is not gloryhole-key-predicament or gloryhole-key-predicament is not ass-to-mouth-agreed) and a random number between 1 and 3 > 1:
@@ -2308,7 +2316,7 @@ To compute action (N - a number) of (M - an ultimate-lesson-actor):
 					say "[one of][BigFuckerDesc of M] pushes forward as far as [he of M] can go, hissing through [his of M] teeth as [his of M] condom fills with warmth.[or][BigFuckerDesc of M][']s [DickDesc of M] throbs powerfully, firing off load after load of warm [semen] into the condom.[in random order]";
 					if lycra-bodysuit is in Toilet01:
 						say "After [he of M] pulls away, you hear [him of M] fumbling with the condom for a few moments.";
-						UsedCondomUp lycra-bodysuit by 1;
+						UsedCondomUp lycra-bodysuit from M;
 					orgasm M;
 					dislodge M;
 					now M is not wrapped;
@@ -2318,8 +2326,8 @@ To compute action (N - a number) of (M - an ultimate-lesson-actor):
 					orgasm M;
 					if the player is in Toilet02 and current-predicament is gloryhole-predicament and the semen-spat of gloryhole-predicament is 0, say "[bold type]If you spit it out, you will be penalised.[roman type][line break]";
 					if current-predicament is gloryhole-predicament, suggest swallowing;
-					if current-predicament is gloryhole-key-predicament:
-						if the keys-agreed of gloryhole-key-predicament > 0 and a random number between 1 and 2 is 1:
+					if current-predicament is gloryhole-key-predicament or current-predicament is business-briefcase-predicament:
+						if current-predicament is business-briefcase-predicament or (the keys-agreed of gloryhole-key-predicament > 0 and a random number between 1 and 2 is 1):
 							say "[speech style of M]'Swallow it. Or the deal's off.'[roman type][line break]";
 							reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 							set numerical response 1 to "swallow";
@@ -2332,12 +2340,21 @@ To compute action (N - a number) of (M - an ultimate-lesson-actor):
 								say "You do your best to make an exaggerated gulping sound.";
 								if a random number between 1 and 3 is 1:
 									say "[speech style of M]'I can tell that was fake, you naughty slut. That's it, you get nothing.'[roman type][line break]";
-									now the keys-agreed of gloryhole-key-predicament is 0;
+									if current-predicament is business-briefcase-predicament, make video go gloryhole viral;
+									otherwise now the keys-agreed of gloryhole-key-predicament is 0;
 								otherwise:
 									now player-numerical-response is 1;
 							otherwise if player-numerical-response is 3:
-								say "[variable custom style]'Uh-uh.'[roman type][line break]You make it clear that this would be a step too far for you.[line break][speech style of M]'Fine. [if the keys-agreed of gloryhole-key-predicament is 1]But you just lost your rights to this key[otherwise]But for that, instead of [the keys-agreed of gloryhole-key-predicament] keys, I'm only going to give you [the keys-agreed of gloryhole-key-predicament - 1][end if].'[roman type][line break]";
-								decrease the keys-agreed of gloryhole-key-predicament by 1;
+								say "[variable custom style]'Uh-uh.'[roman type][line break]You make it clear that this would be a step too far for you.";
+								if current-predicament is business-briefcase-predicament:
+									if the player is getting unlucky:
+										say "[speech style of M]'Well then, you just sucked my cock for nothing.'[roman type][line break][GotUnluckyFlav]";
+										make video go gloryhole viral;
+									otherwise:
+										say "[speech style of M]'Ugh, whatever.'[roman type][line break]";
+								otherwise:
+									say "[speech style of M]'Fine. [if the keys-agreed of gloryhole-key-predicament is 1]But you just lost your rights to this key[otherwise]But for that, instead of [the keys-agreed of gloryhole-key-predicament] keys, I'm only going to give you [the keys-agreed of gloryhole-key-predicament - 1][end if].'[roman type][line break]";
+									decrease the keys-agreed of gloryhole-key-predicament by 1;
 				otherwise: [Deepthroat cumshot]
 					compute deepthroat creampie of M;
 				if current-predicament is gloryhole-predicament:
@@ -2349,6 +2366,10 @@ To compute action (N - a number) of (M - an ultimate-lesson-actor):
 						AnalSexAddictUp 1;
 						now gloryhole-key-predicament is not ass-to-mouth-agreed;
 					compute gloryhole key resolution of M;
+				otherwise if current-predicament is business-briefcase-predicament:
+					if business-briefcase-predicament is not predicament-failed:
+						say "You sigh with relief as you see the card pushed through the hole. You successfully avoided disaster! You quickly scrunch it into a ball and flush it down the toilet, never to be seen again.";
+					say "[BigNameDesc of M] leaves the toilets.";
 				otherwise:
 					say "With [one of]an ashamed[or]a satisfied[or]a giddy[purely at random] noise, [NameDesc of M] pulls [his of M] [manly-penis] back through the hole and quickly [one of]leaves[or]makes [himself of M] scarce[or]flees the scene[in random order].[if current-predicament is nun-walk-predicament and the semen volume of face < 4 and the semen volume of face > 0][line break][variable custom style]I've got some cum now... but is it enough to make sure I still have some left if I accidentally lose some on the way home?[roman type][line break][end if]";
 				destroy M;
@@ -2372,7 +2393,11 @@ To say FriendlySexResistFlav of (M - an ultimate-lesson-actor):
 	say "[if M is not penetrating face][variable custom style]'[one of]I can't take any more[or]Screw this[stopping]!'[roman type][line break][otherwise if the player is able to make sounds][variable custom style][muffled sounds][roman type][line break][end if]";
 	say "Fed up, you pull away from [NameDesc of M][']s [manly-penis][if M is penetrating face], coughing and spluttering as you do[end if].".
 To compute FriendlySexRelease of (M - an ultimate-lesson-actor):
-	say "[BigNameDesc of M] makes [one of]a disappointed[or]a frustrated[or]an annoyed[in random order] sound[if current-predicament is gloryhole-predicament] and then leaves[end if].[line break][MissedGloryholeCock]";
+	if current-predicament is business-briefcase-predicament:
+		say "[speech style of M]'Fucking useless whore! That's it...'[roman type][line break]";
+		make video go gloryhole viral;
+	otherwise:
+		say "[BigNameDesc of M] makes [one of]a disappointed[or]a frustrated[or]an annoyed[in random order] sound[if current-predicament is gloryhole-predicament] and then leaves[end if].[line break][MissedGloryholeCock]";
 	dislodge M;
 	destroy M.
 To check perception of (M - an ultimate-lesson-actor):

@@ -132,7 +132,7 @@ To say ChoiceFlav of (C - dress-trap-choice):
 	say "FETISH DRESS".
 To trigger (C - dress-trap-choice):
 	unclash class summon the chosen-dress of dress-trap-choice;
-	now C is locked.
+	now the chosen-dress of dress-trap-choice is locked.
 To evade trigger (C - dress-trap-choice):
 	if the player is getting lucky:
 		say "The ['][ChoiceFlav of C]['] punishment seems to miss, or fizzle, or something! [GotLuckyFlav]";

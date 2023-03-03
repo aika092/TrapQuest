@@ -170,6 +170,9 @@ Figure of deepthroat princess crop top is the file "Items/Clothes/Upper/CropTops
 To set up influence of (C - deepthroat princess crop top):
 	now C is oral-sex-addiction-influencing.
 
+To compute class set up of (C - deepthroat princess crop top):
+	now C is strength stealing.
+
 To decide which figure-name is clothing-image of (C - deepthroat princess crop top):
 	decide on figure of deepthroat princess crop top.
 
@@ -182,6 +185,10 @@ To say ShortDesc of (C - deepthroat princess crop top):
 Definition: deepthroat princess crop top is royalty themed: decide yes.
 Definition: deepthroat princess crop top is oral sex themed: decide yes.
 Definition: deepthroat princess crop top is white themed: decide yes.
+
+This is the deepthroat princess crop top blowjob slut rule:
+	if deepthroat princess crop top is worn, increase the desirability of face by 10.
+The deepthroat princess crop top blowjob slut rule is listed in the blowjob slut eligibility rules.
 
 Part 6 - Spoiled Crop Top
 
@@ -276,6 +283,9 @@ To say ShortDesc of (C - gross tank top):
 	say "'that's gross' tank top".
 
 Definition: gross tank top is black themed: decide yes.
+
+To decide which number is the grossness-addiction-influence of (C - gross tank top):
+	decide on 2.
 
 Part 10 - Plaid Tank Top
 

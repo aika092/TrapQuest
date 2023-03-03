@@ -7,55 +7,55 @@ To decide which number is the adult-influence of (C - a business dress):
 
 Part 1 - Polka Dot Business Dress
 
-A polka dot business dress is a kind of business dress. There is 1 polka dot business dress. A polka dot business dress is fully covering. The text-shortcut of polka dot business dress is "pol". The printed name of polka dot business dress is usually "[clothing-title-before]polka dot business dress[clothing-title-after]".
+polka dot business dress is a business dress. polka dot business dress is fully covering. The text-shortcut of polka dot business dress is "pol". The printed name of polka dot business dress is "[clothing-title-before]polka dot business dress[clothing-title-after]".
 
 Figure of polka dot business dress is the file "Items/Clothes/Upper/Business/businessdress2.png".
 
-To decide which figure-name is clothing-image of (C - a polka dot business dress):
+To decide which figure-name is clothing-image of (C - polka dot business dress):
 	decide on figure of polka dot business dress.
 
-To say ClothingDesc of (M - a polka dot business dress):
+To say ClothingDesc of (M - polka dot business dress):
 	say "This vintage-style black and white polka dot dress looks stylish but also very smart.".
 
-To say ShortDesc of (C - a polka dot business dress):
+To say ShortDesc of (C - polka dot business dress):
 	say "polka dot business dress".
-To say MediumDesc of (C - a polka dot business dress):
+To say MediumDesc of (C - polka dot business dress):
 	say "black and white polka dot patterned business dress".
 
-To decide which number is the initial outrage of (C - a polka dot business dress):
+To decide which number is the initial outrage of (C - polka dot business dress):
 	decide on 1.
 
-Definition: a polka dot business dress is black themed: decide yes.
-Definition: a polka dot business dress is black-and-white themed: decide yes.
+Definition: polka dot business dress is black themed: decide yes.
+Definition: polka dot business dress is black-and-white themed: decide yes.
 
-To decide which object is the unique-upgrade-target of (C - a polka dot business dress):
+To decide which object is the unique-upgrade-target of (C - polka dot business dress):
 	if vest-dress is off-stage, decide on vest-dress;
-	otherwise decide on a random off-stage pinstripe business dress.
+	otherwise decide on pinstripe business dress.
 
 Part 2 - Pinstripe Business Dress
 
-A pinstripe business dress is a kind of business dress. There is 1 transformation-rare pinstripe business dress. A pinstripe business dress is low cut. A pinstripe business dress is only arm covering. A pinstripe business dress is usually short. A pinstripe business dress is usually erect-nipple-exposing. The text-shortcut of pinstripe business dress is "pin". The printed name of pinstripe business dress is usually "[clothing-title-before]pinstripe business dress[clothing-title-after]".
+pinstripe business dress is a business dress. pinstripe business dress is transformation-rare. pinstripe business dress is low cut. pinstripe business dress is only arm covering. pinstripe business dress is short. A pinstripe business dress is erect-nipple-exposing. The text-shortcut of pinstripe business dress is "pin". The printed name of pinstripe business dress is "[clothing-title-before]pinstripe business dress[clothing-title-after]".
 
 Figure of pinstripe business dress is the file "Items/Clothes/Upper/Business/businessdress1.png".
 
-To decide which figure-name is clothing-image of (C - a pinstripe business dress):
+To decide which figure-name is clothing-image of (C - pinstripe business dress):
 	decide on figure of pinstripe business dress.
 
-To say ClothingDesc of (M - a pinstripe business dress):
+To say ClothingDesc of (M - pinstripe business dress):
 	say "This black and white pinstripe dress would look very smart if it wasn't for its deeply cut cleavage, which seems to be styled to look like the wearer has purposefully unbuttoned it to show off her assets. It also has way too short a hemline for a respectable businesswoman.".
 
-To say ShortDesc of (C - a pinstripe business dress):
+To say ShortDesc of (C - pinstripe business dress):
 	say "pinstripe business dress".
-To say MediumDesc of (C - a pinstripe business dress):
+To say MediumDesc of (C - pinstripe business dress):
 	say "short black and white pinstripe patterned business dress".
 
-To decide which number is the initial outrage of (C - a pinstripe business dress):
+To decide which number is the initial outrage of (C - pinstripe business dress):
 	decide on 4.
 
-Definition: a pinstripe business dress is black themed: decide yes.
-Definition: a pinstripe business dress is white themed: decide yes.
+Definition: pinstripe business dress is black themed: decide yes.
+Definition: pinstripe business dress is white themed: decide yes.
 
-To decide which object is the unique-upgrade-target of (C - a pinstripe business dress):
+To decide which object is the unique-upgrade-target of (C - pinstripe business dress):
 	if diaper quest is 1, decide on cheeky schoolgirl outfit;
 	decide on a random off-stage fetish business dress.
 
@@ -111,6 +111,6 @@ Definition: vest-dress is tartan themed: decide yes.
 
 To decide which object is the unique-upgrade-target of (C - vest-dress):
 	if there is a worn scrunchie, decide on cheeky schoolgirl outfit;
-	decide on a random off-stage pinstripe business dress.
+	decide on pinstripe business dress.
 
 Business Dresses ends here.

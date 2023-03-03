@@ -46,9 +46,10 @@ To compute poking of (M - a monster):
 To compute annoyed awakening of (M - a monster):
 	say "[BigNameDesc of M] wakes up, startled!";
 	now the sleep of M is 0;
-	decrease the favour of M by 1;
+	deinterest M;
+	FavourDown M;
 	progress quest of poking-quest;
-	compute correct perception of M.
+	check guaranteed perception of M.
 
 Understand "poke [something]", "awake [something]", "wake [something]" as poking.
 

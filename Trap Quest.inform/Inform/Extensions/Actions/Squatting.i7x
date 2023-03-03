@@ -18,6 +18,7 @@ Squatting is an action applying to nothing.
 
 Check squatting:
 	if the trophy-mode of expel-trophy is 1 and the player is not in a predicament room, say "Thanks to the magic power of [NameDesc of expel-trophy], this only happens automatically." instead;
+	if cumdump-headband is worn, say "Thanks to the magic power of [NameDesc of cumdump-headband], this only happens automatically." instead;
 	if the semen addiction of the player >= 20 and the semen volume of belly > 0, say "[variable custom style]There's no way I'm letting out my precious [semen] until I literally can't hold it in any longer![roman type][line break]" instead;
 	if the semen addiction of the player > 16 and the semen volume of belly > 0 and the incidents of enema-cramping <= 0, say "[variable custom style]I think I'd like to keep holding onto the warm cum, at least until I start cramping.[roman type][line break]" instead;
 	if the total squirtable fill of belly <= 0, say "You don't have any liquid[if egg laying fetish is 1] or eggs[end if] in your belly." instead;
@@ -26,7 +27,7 @@ Check squatting:
 	if there is an enema-filling the player monster, say "You can't do that while the [random enema-filling the player monster] is still administering your enema!" instead;
 	if auto is 0:
 		if the humiliation of the player < public-squatting-limit:
-			if there is an intelligent awake monster in the location of the player and the diaper addiction of the player < 17:
+			if there is an intelligent awake monster in the location of the player and the diaper addiction of the player < 17 and portal-hotpants is not worn:
 				if debugmode > 0, say "If debug mode was disabled, the player would refuse.";
 				otherwise say "[variable custom style]I can't bring myself to do that with people watching.[roman type][line break]" instead;
 			otherwise if the player is in HoleInWall or the player is in a blindroom:

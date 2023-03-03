@@ -137,7 +137,7 @@ To say EnslavedDominationFlav of (M - receptionist):
 	say "[speech style of M]'H...haaah~ Thank you for punishing me, [if the player is presenting as male]Master[otherwise]Mistress[end if] [NameBimbo]...'[roman type][line break]".
 
 To decide which number is the EnslavedDominationThreshold of (M - receptionist):
-	decide on 6.
+	decide on a random number between 3000 and 8000.
 
 Part - Combat
 

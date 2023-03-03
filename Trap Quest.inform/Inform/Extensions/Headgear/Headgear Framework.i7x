@@ -16,6 +16,7 @@ Definition: a headgear is cursable: decide no.
 Definition: a headgear is magic-enhanceable: decide yes.
 Definition: a headgear is blessable: decide no.
 Definition: a headgear is class-transformation-protected: decide yes.
+Definition: a headgear is immune to change: decide yes.
 
 [Headgears come with quests. These quests (unless super special) will reward with jewellery or stats the first time they are completed, then X the second time they are completed, and then minor healing from then on.]
 

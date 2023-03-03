@@ -68,6 +68,28 @@ To LabiaUp (X - a number) with comment:
 	if increased is 0:
 		say "You feel your [vagina] tingle, but apparently you've already attained maximum cameltoe.".
 
+To LabiaDown (X - a number):
+	while X > 0:
+		decrease X by 1;
+		if the labia plumpness of vagina > 0:
+			decrease the labia plumpness of vagina by 1;
+	update appearance level.
+
+[ LabiaDown, and make a comment about them shrinking.]
+To LabiaDown (X - a number) with comment:
+	let decreased be 0;
+	while X > 0:
+		decrease X by 1;
+		if the labia plumpness of vagina > 0:
+			decrease the labia plumpness of vagina by 1;
+			increase decreased by 1;
+			if X is 0:
+				say "You feel your [one of]labia[or]pussy lips[or]lady bits[or]coochie's lips[or][']flower petals['][at random] shrink back[if decreased > 1] - a whole lot! - now[otherwise],[end if] towards a more normal size.";
+				update appearance level;
+				try examining vagina;
+	if decreased is 0:
+		say "You feel your [vagina] tingle, but nothing else happens.".
+
 [Can it be accessed right now with nothing blocking it?]
 Definition: vagina is undefended:
 	if vagina is actually occupied or the player is pussy protected or the player is not possessing a vagina, decide no;
@@ -452,6 +474,7 @@ To WombFill (X - a number):
 		if vagina is accepting womb semen:
 			increase the womb volume of vagina by 1;
 			compute father material of vagina;
+			if the number of things inseminating vagina >= 2, compute cumdumpsterification;
 			if the class of the player is faerie and the pregnancy of the player is 0:
 				say "[one of]Powerful[or]More[stopping] magic courses up through your [vagina] to the rest of your body!";
 				MagicPowerUp 1;
@@ -542,12 +565,33 @@ To compute father material of (T - a thing):
 
 To compute father material of (F - a body part):
 	repeat with M running through things penetrating F:
-		now M is inseminating F.
+		now M is inseminating F;
+	if the number of things inseminating F >= 2, compute cumdumpsterification.
+
+To say inseminators of (T - a thing):
+	let LX be the list of things inseminating T;
+	let LXN be the number of entries in LX;
+	repeat with X running through LX:
+		say "[FuckerDesc of X][if LXN > 2], [otherwise if LXN is 2] and [end if]";
+		decrease LXN by 1.
+
 
 To compute father material of (F - vagina):
 	if the pregnancy of the player is 0: [Once pregnant you don't get any more potential fathers!]
+		if pregnancy fetish is 1:
+			repeat with M running through father material things penetrating F:
+				now M is inseminating F;
+		otherwise:
+			repeat with M running through things penetrating F:
+				now M is inseminating F;
+	let N be the number of things inseminating F;
+	if N >= 2:
+		compute cumdumpsterification;
+	otherwise if N is 1:
 		repeat with M running through father material things penetrating F:
-			now M is inseminating F.
+			if M is not inseminating F, compute cumdumpsterification. [It's new cum, even if it's not officially on the list of potential fathers]
+
+
 
 To compute father material of (F - a thing) into (T - a thing):
 	if the pregnancy of the player is 0 or T is not vagina: [Just in case]

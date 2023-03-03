@@ -104,8 +104,13 @@ To decide which figure-name is the sex-profile of (M - a monster):
 		if M is penetrating asshole, decide on anal-sex-monster-image of M;
 		if M is penetrating vagina, decide on vaginal-sex-monster-image of M;
 		if M is penetrating breasts, decide on titfuck-monster-image of M;
-		if M is penetrating face, decide on oral-sex-monster-image of M;
+		if M is penetrating face:
+			if M is getting-licked, decide on lick-monster-image of M;
+			if M is getting-asslicked, decide on asslick-monster-image of M;
+			decide on oral-sex-monster-image of M;
 	decide on figure of Missing NPC. [Defaults back to the non-sex stuff.]
+
+Figure of anilingus 1 is the file "Special/Cutscene/cutscene-anilingus1.jpg".
 
 To decide which figure-name is the anal-sex-monster-image of (M - a monster):
 	decide on figure of Missing NPC.
@@ -113,6 +118,11 @@ To decide which figure-name is the vaginal-sex-monster-image of (M - a monster):
 	if the latex-transformation of the player > 6 and M is male and M is pale skinned, decide on figure of latex curse 6;
 	decide on figure of Missing NPC.
 To decide which figure-name is the oral-sex-monster-image of (M - a monster):
+	decide on figure of Missing NPC.
+To decide which figure-name is the lick-monster-image of (M - a monster):
+	decide on figure of Missing NPC.
+To decide which figure-name is the asslick-monster-image of (M - a monster):
+	if M is human and M is not dark skinned, decide on figure of anilingus 1;
 	decide on figure of Missing NPC.
 To decide which figure-name is the titfuck-monster-image of (M - a monster):
 	decide on figure of Missing NPC.
@@ -163,12 +173,15 @@ After examining a monster:
 		otherwise if the health of the noun < the maxhealth of the noun / 2:
 			say "[BigNameDesc of noun] seems to be quite injured.";
 	if the noun is wrapped, say "[BigNameDesc of noun] is wearing a condom around [his of the noun] [manly-penis].";
-	repeat with T running through the tradableItems of the noun:
-		if T is off-stage, say "You can see that [he of noun] has a [ShortDesc of T].";
-	repeat with T running through things held by the noun:
-		say "You can see that [he of noun] still has the [ShortDesc of T].";
+	say HeldItems of the noun.
+
+To say HeldItems of (M - a monster):
+	repeat with T running through the tradableItems of M:
+		if T is off-stage, say "You can see that [he of M] has a [ShortDesc of T].";
+	repeat with T running through things held by M:
+		say "You can see that [he of M] still has the [ShortDesc of T].";
 	if players-dick-is-detached > 0: [#LXorDD]
-		say its-got-my-dick for the noun.
+		say its-got-my-dick for M.
 
 To say FavourDesc of (M - a monster):
 	let O be a random body part penetrated by M;

@@ -89,7 +89,7 @@ To womanUnsluttify:
 		decrease the delayed sluttification of woman-player by 1.
 
 This is the spawn initial woman rule:
-	summon woman-player in the woods.
+	if woman-player is off-stage and woman-player is stranger, now woman-player is in Woods01.
 The spawn initial woman rule is listed in the setting up woods monsters rules.
 
 To uniquely destroy (M - woman-player): [Are there any special rules we need to follow?]
@@ -206,7 +206,7 @@ To deploy (M - woman-player) with woman-status (V - a number):
 			otherwise say "You hear a mechanism whirring, and what sounds like a metal door swing open.";
 		otherwise if V is 82:
 			now M is in the location of the player;
-			say "[bold type]You spot [NameDesc of M] waddling up to you, naked and with a very pregnant belly![roman type] [big he of M] seems rather tired and at the end of [his of M] tether.";
+			say "[bold type]You spot [NameDesc of M] [bold type]waddling up to you, naked and with a very pregnant belly![roman type] [big he of M] seems rather tired and at the end of [his of M] tether.";
 			interest M;
 			say "[speech style of M]'Hey [NameBimbo]. I'm sorry I wish you didn't have to see me like this...'[roman type][line break]";
 		otherwise:

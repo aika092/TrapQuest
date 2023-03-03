@@ -92,6 +92,7 @@ choice
 1 [areYouSure]
 2 [combatSpeed]
 0 [simulatedInternet]
+0 [extreme images visible]
 
 To decide which number is YesNoPreference:
 	decide on choice in row 1 of the Table of Settings.
@@ -698,6 +699,7 @@ This is the images visible toggle rule:
 		now choice in row 7 of the Table of Settings is 0;
 		now choice in row 10 of the Table of Settings is 0;
 		now choice in row 29 of the Table of Settings is 0;
+		now choice in row 60 of the Table of Settings is 0;
 		now the choice in row 2 of the Table of Settings is 0.
 
 This is the side images toggle rule:
@@ -928,7 +930,7 @@ This is the areYouSure toggle rule:
 	otherwise:
 		now choice in row 57 of Table of Settings is 0.
 
-To decide which number is combatSpeed:
+To decide which number is combatSpeed: [the higher this is, the slower combat goes]
 	decide on choice in row 58 of Table of Settings.
 
 This is the combat speed toggle rule:
@@ -945,6 +947,16 @@ This is the simulated internet toggle rule:
 		increase choice in row 59 of Table of Settings by 1;
 	otherwise:
 		now choice in row 59 of Table of Settings is 0.
+
+To decide which number is extreme images visible:
+	decide on choice in row 60 of Table of Settings.
+
+This is the extreme images visible toggle rule:
+	if extreme images visible is 0:
+		now the choice in row 2 of the Table of Settings is 1;
+		now the choice in row 60 of Table of Settings is 1;
+	otherwise:
+		now choice in row 60 of Table of Settings is 0.
 
 Part - Settings
 

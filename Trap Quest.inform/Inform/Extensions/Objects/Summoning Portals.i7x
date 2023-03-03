@@ -117,7 +117,7 @@ To ChargeUp (S - a summoning portal) by (X - a number):
 	if X > 0:
 		increase the charge of S by X;
 		increase the reset-count of S by 1;
-		say "The energy surrounding [NameDesc of S][if X < 60] slightly[otherwise if X >= 200] significantly[end if] weakens.";
+		if S is in the location of the player or S is nearby, say "The energy surrounding [NameDesc of S][if X < 60] slightly[otherwise if X >= 200] significantly[end if] weakens.";
 		let R be the currentRegion of S;
 		if the charge of S >= 500 and doomed < 5 and the number of regionalRelevant monsters >= the regionalMonsterCount of R:
 			now S is not active;

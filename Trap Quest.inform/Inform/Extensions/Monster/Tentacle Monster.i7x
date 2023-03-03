@@ -311,6 +311,7 @@ To say SummoningFlav of (M - a tentacle monster):
 		distract M;
 		if inhuman pregnancy >= 2, say "[bold type]You [if S is player-breeder]watch as your previous self gives birth to a grey mass of tentacles with a loud squelch. The newborn tentacle monster looks around, blinking with a single giant eye as it takes in its new surroundings[otherwise if S is tentacle-breeder]watch as the girl stuck to the wall gives birth to a grey mass of tentacles with a loud squelch. The newborn tentacle monster looks around, blinking with a single giant eye as it takes in its new surroundings[otherwise]hear a loud squelch and mindless moaning coming from nearby[end if]![roman type][line break]";
 		otherwise say "[bold type]You [if S is tentacle-breeder]watch as the hole in the flesh in the wall widens, and a ball of grey flesh drops out to the ground. The newly spawned tentacle monster looks at you with its single eye before scuttling off into the distance[otherwise]hear a loud squelch coming from nearby[end if]![roman type][line break]";
+		if M is in the location of the player, cutshow examine-image of M for M;
 		compute mandatory room leaving of M;
 	otherwise:
 		say "BUG - [NameDesc of M] was supposed to be summoned but it wasn't successful.".
@@ -604,7 +605,7 @@ This is the tentacle monster continues sex rule:[TODO: update for evolved tentac
 						displace C;
 					otherwise:
 						say "You feel a tentacle try to pull your [ShortDesc of C] out of the way, but it [one of][or]still [stopping]doesn't have the strength!";
-				otherwise:
+				otherwise if C is tearable and C is destructible:
 					say "You feel a tentacle rip your [ShortDesc of C] away!";
 					destroy C;
 		otherwise if targeted-body-part is breasts:

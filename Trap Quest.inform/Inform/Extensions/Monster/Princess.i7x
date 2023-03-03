@@ -26,7 +26,7 @@ Figure of princess final battle harness is the file "NPCs/MultiFloor/Princess/cu
 Figure of princess final battle scan is the file "NPCs/MultiFloor/Princess/cutscene-princess-final-battle8.jpg".
 Figure of princess final battle facehugger is the file "NPCs/MultiFloor/Princess/cutscene-princess-final-battle10.jpg".
 
-Figure of princess cutscene 1 is the file "NPCs/MultiFloor/Princess/cutscene-princess-errand1.jpg".
+Figure of princess cutscene 1 is the file "NPCs/MultiFloor/Princess/cutscene-princess-errand1.png".
 
 To decide which figure-name is the monster-image of (M - ex-princess):
 	if M is unleashed: [dark princess]
@@ -735,7 +735,14 @@ To compute (M - ex-princess) enslaving (N - headmistress):
 		if M is in the location of the player:
 			if the health of N > 0 and N is unleashed:
 				say "[one of][BigNameDesc of N] notices you and [NameDesc of M] and a look of horror and disbelief crosses [his of N] face.[line break][speech style of N]'No, it can't be! I won't let you!'[roman type][line break][or][stopping]";
-				if W is not glittery-wand or (a random number between 1 and 2 is 1 and W is not cursed):
+				if W is impermanence:
+					now enslave-success is 0;
+					now the princess-power of M is -1;
+					only destroy W;
+					now glittery-wand is carried by M;
+					now glittery-wand is cursed;
+					say "[BigNameDesc of N] throws a magic cloud of shadow towards [NameDesc of M], but [he of M] sees it coming in time and moves to deflect it with [his of M] [ShortDesc of W].[line break][speech style of M]'Too easy!'[roman type][line break][BigNameDesc of M] smiles proudly as [he of M] strikes the shadow with the wand... Or does [he of M]? Just as [he of M] makes [his of M] move, the wand vanishes from [his of M] hand![line break][speech style of M]'Wait WHAT? You gave me a wand of IMPERMANENCE?! YOU IDIOT! NOOOO!'[roman type][line break]That's all [NameDesc of M] has time to say before the shadow wraps itself around the [ShortDesc of W], and a new cursed wand appears in [his of M] hand.[line break][speech style of N]'Here you go, a brand new wand, of my own creation, just for you!'[roman type][line break][BigNameDesc of M] shakes [his of M] hand, trying to drop the black wand, but is unable to. You watch with [horror the sex addiction of the player] as clearly against [his of M] will, [his of M] hand pushes the head of the vibrator towards [his of M] clitoris. There's nothing either of you can do to stop it as [he of M] begins to use the wand to masturbate rather than fight. It looks like you'll have to finish this fight all on your own...";
+				otherwise if W is not glittery-wand or (a random number between 1 and 2 is 1 and W is not cursed):
 					say "[BigNameDesc of N] tries to throw [one of]a[or]another[stopping] magic cloud of shadow towards [NameDesc of M], but [he of M] [one of]sees it coming in time and defects[or]manages to continue to find the strength to[stopping] it with [his of M] [ShortDesc of W], sending it hurtling ";
 					if W is royal scepter:
 						say "back to its caster. [BigNameDesc of N] screams as [he of N] is engulfed in the darkness, and when it clears, [he of N] looks rather different.";
@@ -798,7 +805,6 @@ An all later time based rule (this is the asscum annie rule):
 							say "Suddenly, a [printed name of C] appears around your waist!";
 						UsedCondomUp C by 1;
 						say "The condom whizzes onto and attaches itself to your [MediumDesc of C]!";
-						progress quest of condom-eating-quest;
 						say CondomNewbieTip;
 						force immediate clothing-focus redraw;
 					otherwise:

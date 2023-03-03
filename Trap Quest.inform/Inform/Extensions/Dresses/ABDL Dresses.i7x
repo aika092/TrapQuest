@@ -37,7 +37,7 @@ Definition: purple-baby-reins is purple themed: decide yes.
 
 Part - Baby Dresses
 
-A baby-dress is a kind of overdress. A baby-dress is usually transformation-rare. A baby-dress is usually high cut. A baby-dress is usually no-crotch. A baby-dress is usually short. A baby-dress is usually top-exclusive.
+A baby-dress is a kind of overdress. A baby-dress is usually transformation-rare. A baby-dress is usually high cut. A baby-dress is usually short. A baby-dress is usually top-exclusive.
 
 A baby-party-dress is a kind of baby-dress. A baby-party-dress is usually super-short. Understand "super", "short" as baby-party-dress.
 
@@ -338,5 +338,40 @@ To say MediumDesc of (C - sailor-fleece-dress):
 Definition: sailor-fleece-dress is blue themed: decide yes.
 Definition: sailor-fleece-dress is swimming themed: decide yes.
 Definition: sailor-fleece-dress is bow themed: decide yes.
+
+Part - Bear Dress
+
+[not inherently ABDL, but it fits here better than anywhere else.]
+
+bear-dress is an overdress. The printed name of bear-dress is "[clothing-title-before]bear dress[clothing-title-after]". Understand "bear", "dress" as bear-dress. The text-shortcut of bear-dress is "brd".
+
+Figure of bear dress is the file "Items/Clothes/Upper/Dresses/bear1.png".
+
+To decide which figure-name is clothing-image of (C - bear-dress):
+	decide on figure of bear dress.
+
+To say ClothingDesc of (C - bear-dress):
+	say "A brown dress with straps over the shoulders and a cute motif of a bear's face on the front.".
+
+To say ShortDesc of (C - bear-dress):
+	say "bear dress".
+To say MediumDesc of (C - bear-dress):
+	say "bear dress".
+
+Definition: bear-dress is brown themed: decide yes.
+Definition: bear-dress is bear themed: decide yes.
+
+To decide which number is the initial outrage of (C - bear-dress):
+	decide on 2.
+To decide which number is the initial cringe of (C - bear-dress):
+	decide on 3.
+
+To decide which object is the unique-upgrade-target of (C - bear-dress):
+	if diaper lover > 0 and C is worn:
+		now C is in Holding Pen;
+		let TP be a random teddybear playsuit;
+		if TP is actually summonable, decide on TP;
+		now C is worn by the player;
+	decide on nothing.
 
 ABDL Dresses ends here.

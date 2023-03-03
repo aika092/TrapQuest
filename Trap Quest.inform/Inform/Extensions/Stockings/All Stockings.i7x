@@ -87,9 +87,9 @@ To decide which object is the at least partial concealer of (C - a stockings):
 
 This is the remove inappropriate stockings rule:
 	repeat with B running through latex stockings:
-		now B is in Holding Pen;
+		unless B is black-and-orange rubber stockings, now B is in Holding Pen;
 	repeat with B running through mesh stockings:
-		now B is in Holding Pen.
+		unless B is fishnet stockings, now B is in Holding Pen.
 The remove inappropriate stockings rule is listed in the diaper quest fix rules.
 
 Definition: a stockings is ingredient: decide yes.
@@ -136,7 +136,7 @@ This is the stockings already worn rule:
 The stockings already worn rule is listed in the stockings wearability rules.
 
 This is the stockings leg covering clash rule:
-	if wearing-target is exclusive leg covering clothing:
+	if wearing-target is exclusive usually thigh covering unskirted clothing:
 		repeat with O running through worn stockings:
 			if summoning is 0 and autowear is false, say "You can't wear that because it's exclusive, and you're already wearing the [O]!";
 			rule fails.
@@ -151,7 +151,7 @@ The shoes stockings clash rule is listed in the stockings wearability rules.
 
 This is the leg covering stockings clash rule:
 	if wearing-target is stockings:
-		repeat with O running through worn leg covering clothing:
+		repeat with O running through worn usually ankle covering clothing:
 			if O is not skirted or (O is not slitted and summoning is 0 and O is not crotch-displaced):
 				if summoning is 0 and autowear is false, say "You can't wear that over the [O]!";
 				rule fails.
@@ -301,7 +301,7 @@ Definition: condom socks is usually at least partially thigh covering: decide no
 Definition: condom socks is calf covering: decide no.
 
 Definition: condom socks is class-relevant:
-	if the class of the player is cumdumpster, decide yes;
+	if the class of the player is condom collector, decide yes;
 	decide no.
 
 To compute class set up of (C - condom socks):

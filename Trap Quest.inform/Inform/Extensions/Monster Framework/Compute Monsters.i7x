@@ -49,6 +49,8 @@ To compute turn (N - a number) of (M - a monster):
 			otherwise now M is unseduced;
 		if M is friendly-fucking:
 			if M is not grabbing the player and M is not penetrating a body part, now M is not friendly-fucking; [We need to make sure that NPCs have the friendly fucking flag removed after they've finished a session, and this is probably the most reliable way to do it, if a little messy.]
+		if M is not not-getting-licked:
+			if M is not penetrating face, now M is not-getting-licked; [same as above but for licking]
 		if M is dying:
 			finally destroy M;
 		otherwise if M is awake:[Monsters can't do anything if they are sleeping]

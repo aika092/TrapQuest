@@ -16,7 +16,7 @@ To decide which figure-name is the examine-image of (C - DungeonScenery01):
 
 To say ExamineDesc of (C - DungeonScenery01):
 	if diaper quest is 0:
-		say "A row of six statues of naked men with a ridiculously sized [if the bimbo of the player > 13][line break][second custom style]but yummy looking[roman type][line break][end if][manly-penis]s. There seems to be a hollow tube inside each [manly-penis], with an exit at the tip.";
+		say "A row of six statues of naked [men of pimp] with a ridiculously sized [if the bimbo of the player > 13][line break][second custom style]but yummy looking[roman type][line break][end if][manly-penis]s. There seems to be a hollow tube inside each [manly-penis], with an exit at the tip.";
 		if newbie tips is 1, say "[one of][newbie style]Newbie tip: These can be sucked, and eventually you can work out which ones heal the soreness of your orifices and replenishing some of your magic... but all will force you to drink some semen. Overall, they're very useful but if you use them too much, you might find yourself with a new oral fixation.[or][stopping]";
 	otherwise:
 		say "A line of bronze women with their big bare butts pointing towards you. They look weirdly... spankable.";

@@ -17,11 +17,12 @@ Definition: a clothing is alwaysSure: [Should never be considered to possibly be
 	if it is cursable, decide no;
 	decide yes.
 
-Definition: a thing is cursable: decide no.
+Definition: a thing is cursable: decide no. [Does it have the magic-curse property?]
 Definition: a bottle is cursable: [TODO: work out why I coded this like this]
 	if it is held, decide yes;
 	decide no.
 Definition: a clothing is cursable: decide yes.
+Definition: an alchemy product is cursable: decide yes.
 
 Definition: a thing (called T) is actually cursable:
 	if T is not cursable, decide no;
@@ -30,14 +31,12 @@ Definition: a thing (called T) is actually cursable:
 
 [avoids errors if the item is not something that can be cursed]
 Definition: a thing (called T) is maybe-cursed:
-	if T is bottle or T is collectible or T is clothing or T is alchemy product:
-		if T is cursed, decide yes;
+	if T is cursable and T is cursed, decide yes;
 	decide no.
 
 [avoids errors if the item is not something that can be blessed]
 Definition: a thing (called T) is maybe-blessed:
-	if T is bottle or T is collectible or T is clothing or T is alchemy product:
-		if T is blessed, decide yes;
+	if T is cursable and T is blessed, decide yes;
 	decide no.
 
 [!<AThingIsBlessable>+

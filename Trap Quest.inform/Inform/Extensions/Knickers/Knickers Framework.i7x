@@ -169,9 +169,9 @@ Report wearing knickers:
 	if the player is possessing a penis and the penis-capacity of the noun > 0:
 		if the noun is crotch-intact and the noun is pussy covering:
 			if the noun is potentially penis covering:
-				say "Your [ShortDesc of penis] [if the size of penis >= the penis-capacity of the noun]barely fits[otherwise]fits comfortably[end if] inside the fabric!";
+				say "Your [ShortDesc of penis] [if the size of penis > the effective size of penis](currently restricted to [the effective size of penis] inches) [end if][if the effective size of penis >= the penis-capacity of the noun]barely fits[otherwise]fits comfortably[end if] inside the fabric!";
 			otherwise:
-				say "Your [ShortDesc of penis] can't even fit inside this tiny piece of fabric!".
+				say "Your [ShortDesc of penis] [if the size of penis > the effective size of penis](currently restricted to [the effective size of penis] inches) [end if]can't even fit inside this tiny piece of fabric!".
 
 Check taking off worn knickers:
 	if the player is ankle bound and the noun is not disposable diaper, say "You won't be able to successfully get these off whilst your ankles are bound..." instead;

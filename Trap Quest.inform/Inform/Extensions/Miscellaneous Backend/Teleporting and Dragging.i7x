@@ -42,16 +42,19 @@ To teleport to (R - a room):
 		if T is held, say "[bold type][BigNameDesc of T] [bold type]is ripped from your hands by an invisible force, and in your mind's eye you can see that it has been taken to the 'Trophy Hall'![roman type][line break]";
 		now T is in School31;
 	if the player is glue stuck, compute raw glue escaping a random glue in the location of the player with 1;[this may be causing lag]
-	if iron-maiden is in R:
-		now the player is in Iron Maiden;
-		say "Everything goes dark. Your arms are trapped in an arched position above your head. There's cushioning all around you. Wait... Are you... are you back in the Iron Maiden?![line break][variable custom style]Oh no![roman type][line break]";
-		now iron-maiden is not untriggered;
-		now iron-maiden is revealed;
-		now iron-maiden is expired;
-		now iron-maiden-turns is 0;
-	otherwise if hole-in-wall is revealed and hole-in-wall is in R:
-		compute HoleInWallEntrance;
-		say "Everything goes dark. Your waist feels trapped... halfway through a wall! Your front half is inside some small chamber, while your rear half is exposed inside the [R] in the hotel![line break][variable custom style]Oh no![roman type][line break]";
+	if player-dragger is yourself: [it was a teleport, rather than a drag]
+		if iron-maiden is in R:
+			now the player is in Iron Maiden;
+			say "Everything goes dark. Your arms are trapped in an arched position above your head. There's cushioning all around you. Wait... Are you... are you back in the Iron Maiden?![line break][variable custom style]Oh no![roman type][line break]";
+			now iron-maiden is not untriggered;
+			now iron-maiden is revealed;
+			now iron-maiden is expired;
+			now iron-maiden-turns is 0;
+		otherwise if hole-in-wall is revealed and hole-in-wall is in R:
+			compute HoleInWallEntrance;
+			say "Everything goes dark. Your waist feels trapped... halfway through a wall! Your front half is inside some small chamber, while your rear half is exposed inside the [R] in the hotel![line break][variable custom style]Oh no![roman type][line break]";
+		otherwise:
+			now the player is in R;
 	otherwise:
 		now the player is in R;
 	zero focus stuff; [Location has changed so we need to empty the location window]

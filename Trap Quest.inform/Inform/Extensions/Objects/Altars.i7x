@@ -625,10 +625,10 @@ To ElderBreed (F - vagina):[this one needs handling for pussy covering clothing 
 		now whisper-tracking is 1.
 
 To ElderBreed (F - asshole):
-	repeat with C running through top level protection clothing worn by the player:
+	repeat with C running through top level protection clothing:
 		say "Your [C] vanishes in an ominous black flame!";
 		destroy C;
-	repeat with E running through bottom level protection clothing worn by the player:
+	repeat with E running through bottom level protection clothing:
 		say "Your [E] vanishes in an ominous black flame!";
 		destroy E;
 	repeat with D running through things penetrating a fuckhole:
@@ -797,7 +797,12 @@ To AltarReward (T - runic headband):
 			unless T is blessed, now T is blessed;
 			say "Blue light condenses around [NameDesc of T], and the pinned condoms disappear!";
 			progress quest of priestess-vaginal-service-quest;
-			now the used condoms of T is 0;
+			UsedCondomWipe T;
+			let C be a random worn priestess outfit;
+			if C is clothing and the raw-magic-modifier of C < 5:
+				say "A blue hue surrounds your [C]. ";
+				increase the raw-magic-modifier of C by 1;
+				say "It is now a [C]!";
 		reset dungeon altar.
 
 To AltarReward (T - a condom hat):
@@ -809,7 +814,7 @@ To AltarReward (T - a condom hat):
 		now the quest of C is priestess-vaginal-service-quest;
 		now C is not purity;
 		increase the empty condoms of C by the used condoms of C;
-		now the used condoms of C is 0;
+		UsedCondomWipe C;
 		let PO be a random worn dress;
 		if PO is clothing and the number of worn dress is 1: [progressively worse but rarer ways of getting the right outfit on]
 			transform PO into cameltoe-priestess-outfit;
@@ -842,7 +847,13 @@ To AltarReward (T - ritual-beads):
 				compute light reward of T at N;
 			otherwise:
 				compute light reward of T at N;
+			if vaginal seal is off-stage:
+				blandify and reveal vaginal seal;
+				now vaginal seal is in the location of the player;
+				say "A [vaginal seal] flutters to the ground in front of you!";
+				compute autotaking vaginal seal;
 			progress quest of priestess-service-quest;
+			progress quest of priestess-vaginal-service-quest;
 		reset dungeon altar.
 
 [!<ComputeLightRewardOfRitualBeads>+

@@ -103,6 +103,7 @@ Carry out purifying tentacle-breeder:
 				now the boredom of M is 150;
 				now the health of M is the maxhealth of M / 2;
 				say "[BigNameDesc of M] pulls [himself of M] up onto two feet.[line break][speech style of M]'Thank you so much for saving me. At last I shall be able to continue my adventure.'[one of][line break][variable custom style][big he of M] plans to keep exploring this place after what [he of M][']s been through[if M is composed-explorer]?! And even though [he of M][']s HEAVILY PREGNANT[end if]?![or][stopping][roman type][line break]";
+				now M is moved;
 	if the class of the player is "virgin warrior" and virgin magical girl outfit is off-stage:
 		class summon virgin magical girl outfit;
 	otherwise if heart hairpin is off-stage:
@@ -123,8 +124,8 @@ Carry out purifying tentacle-breeder:
 
 To compute summoning check of (T - a tentacle-breeder):
 	if the total magic power of the player > 0 and T is regional:
-		let TS be time-seconds - the number of alive regional on-stage tentacle monsters;
-		if TS > 0, decrease the charge of T by time-seconds;
+		let TS be time-seconds - the number of alive regional tentacle monsters;
+		if TS > 0, decrease the charge of T by TS;
 		if the charge of T < 1:
 			let M be the summonChoice of T;
 			if M is monster:

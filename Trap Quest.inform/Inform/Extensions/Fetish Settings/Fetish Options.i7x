@@ -18,7 +18,8 @@ title	subtable	description	toggle
 "Big Black Cocks - 2 points ([if choice in row 45 of the Table of Player Options is -1]never[otherwise if choice in row 45 of the Table of Player Options is 0]not now[otherwise if choice in row 45 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	interracial fetish toggle rule
 "Mythical Creatures (this enables sex with fantasy creatures e.g. minotaurs, there are no real-life animals) - [mythical creature points] points ([if choice in row 48 of the Table of Player Options is -1]never[otherwise if choice in row 48 of the Table of Player Options is 0]not now[otherwise if choice in row 48 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	mythical creature fetish toggle rule
 "Tentacle Monsters Everywhere (this causes tentacle monsters to spawn in all regions until you purify the spawners) - 6 points ([if choice in row 61 of the Table of Player Options is -1]never[otherwise if choice in row 61 of the Table of Player Options is 0]not now[otherwise if choice in row 61 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	tentacle fetish toggle rule
-"Ass to Mouth Content - [if a2m fetish is 0][italic type]minimal (only can happen if you do it on purpose)[otherwise if a2m fetish is 1]normal (anilingus & oral after anal sex)[otherwise][bold type]all (drinking and eating edible things that have been up a butt; don't worry no scat)[end if] [if the remainder after dividing choice in row 83 of the Table of Player Options by 2 is 0]always[otherwise]but can be randomised[end if] - [a2m fetish * 2] points[roman type]"	--	--	a2m fetish toggle rule
+"[']Gross['] Licking - [if grossness fetish is 0]minimal (pretty much all foot and ass licking can only happen if you do it on purpose)[otherwise if grossness fetish is 1]foot licking only (ass-to-mouth can only happen if you do it on purpose)[otherwise if grossness fetish is 2][italic type]normal (foot licking & anilingus & oral after anal sex)[otherwise][bold type]full[roman type] (foot worship, and drinking & eating things that have been up a butt; don't worry no scat)[end if] [if the remainder after dividing choice in row 83 of the Table of Player Options by 2 is 0]always[otherwise]this time[end if] - [grossness fetish] points[roman type]"	--	--	grossness fetish toggle rule
+"Condoms - [if condom fetish is 0]minimal (NPCs won't wear them without prompting; you don't have to wear used condoms)[otherwise if condom fetish is 1]normal (NPCs might used condoms on their own; creampie addiction increases faster)[otherwise if condom fetish is 2][italic type]worn (NPCs rarely wear them without prompting; you will be made to wear used condoms)[otherwise][bold type]full [roman type](NPCs might use condoms on their own; creampie addiction increases faster; you will be made to wear used condoms)[end if] [if the remainder after dividing choice in row 53 of the Table of Player Options by 2 is 0]always[otherwise]this time[end if] - [condom fetish] points[roman type]"	--	--	condom fetish toggle rule
 "NPC gender preference (changes the description of some NPCs - but most alternate images don't exist yet!): ([if lady fetish is 0]No preference[otherwise if lady fetish is 1]Feminine NPCs only[otherwise]Masculine NPCs only[end if] [if the remainder after dividing choice in row 70 of the Table of Player Options by 2 is 0]never randomise[otherwise]for now, but can be randomised[end if] - [if the player is a top donator]free[otherwise]alpha testers only for now[end if])"	--	--	lady fetish toggle rule
 "Alcohol - 2 points ([if the player is not the donator]beta testers only for now![otherwise if choice in row 69 of the Table of Player Options is -1]never[otherwise if choice in row 69 of the Table of Player Options is 0]not now[otherwise if choice in row 69 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	alcohol fetish toggle rule
 "Male-To-Female Sex Change - 2 points ([if choice in row 10 of the Table of Player Options is -1]never[otherwise if choice in row 10 of the Table of Player Options is 0]not now[otherwise if choice in row 10 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	TG fetish toggle rule
@@ -297,18 +298,5 @@ This is the futanari fetish rule:
 	otherwise:
 		now choice in row 68 of the Table of Player Options is 0.
 
-
-Table of Condom Options
-title	subtable	description	toggle
-"I don't want people to use condoms unless I ask them to (disables a significant amount of times that you would end up with used condoms pinned to your clothes without a chance to prevent it)."	--	--	condom hater rule
-"People should use condoms whenever they like! (+1 point)"	--	--	condom lover rule
-
-This is the condom hater rule:
-	now choice in row 53 of the Table of Player Options is 0;
-	follow quit rule.
-
-This is the condom lover rule:
-	now choice in row 53 of the Table of Player Options is 1;
-	follow quit rule.
 
 Fetish Options ends here.

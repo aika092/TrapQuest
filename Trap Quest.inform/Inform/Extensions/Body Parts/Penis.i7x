@@ -11,6 +11,11 @@ Understand "crotch", "groin" as vagina when the player is possessing a vagina.
 Understand "crotch", "groin" as penis when the player is not possessing a vagina.
 
 penis has a number called size. The size of penis is usually 0.
+To decide which number is the effective size of (P - penis):
+	if players-dick-is-detached > 0, decide on 0;
+	let C be a random worn chastity bond;
+	if C is a thing, decide on the penis-size-cap of C;
+	decide on the size of penis;
 
 penis has a number called real size. The real size of penis is usually 0.
 
@@ -108,7 +113,7 @@ Definition: penis is lewdly exposed:
 	decide no.
 
 To decide which number is the lewdly exposed outrage of (P - penis):
-	decide on 11 - (the size of penis / 2). [allows us to easily tweak this number]
+	decide on 11 - (the effective size of penis / 2). [allows us to easily tweak this number]
 
 [!<PenisIsAtLeastPartiallyLewdlyExposed>+
 
@@ -120,7 +125,7 @@ Definition: penis is at least partially lewdly exposed:
 	decide no.
 
 To decide which number is the at least partially lewdly exposed outrage of (P - penis):
-	decide on 8 - (the size of penis / 2). [allows us to easily tweak this number]
+	decide on 8 - (the effective size of penis / 2). [allows us to easily tweak this number]
 
 [!<PenisIsExposed>+
 
@@ -155,11 +160,11 @@ Definition: a clothing (called C) is potentially penis covering:
 	if C is skirted crotch-in-place clothing:
 		if there is pussy covering unskirted clothing, decide yes; [your penis is propped up, so it's concealed by all skirts.]
 		if penis is penis-erect:[erect penises are twice as hard to cover]
-			if the size of penis <= the penis-capacity of C / 2, decide yes;
+			if the effective size of penis <= the penis-capacity of C / 2, decide yes;
 		otherwise:
-			if the size of penis <= the penis-capacity of C, decide yes; [if the skirt is long enough, it protects you]
+			if the effective size of penis <= the penis-capacity of C, decide yes; [if the skirt is long enough, it protects you]
 	otherwise if C is potentially pussy covering clothing:
-		if the size of penis <= the penis-capacity of C, decide yes;
+		if the effective size of penis <= the penis-capacity of C, decide yes;
 	decide no.
 
 Definition: a clothing (called C) is potentially erection concealing:
@@ -168,11 +173,18 @@ Definition: a clothing (called C) is potentially erection concealing:
 Definition: a diaper is potentially erection concealing: decide yes.
 
 Definition: a clothing is potentially penis concealing:
-	if it is actually dense and it is potentially penis covering and (penis is not penis-erect or the size of penis < 3 or it is potentially erection concealing), decide yes;
+	if it is actually dense and it is potentially penis covering and (penis is not penis-erect or the effective size of penis < 3 or it is potentially erection concealing), decide yes;
 	decide no.
 [Erections can show up as "tents" in skirts or dresses or even less discreetly for some tighter clothing. However, as long as the player's penis isn't sticking all the way out (making it uncovered) then the clothing should still count as partial concealment.]
-Definition: a clothing is potentially at least partially penis concealing:
-	if it is not see-through and it is potentially penis covering, decide yes;
+Definition: a clothing (called C) is potentially at least partially penis concealing:
+	if C is not-see-through and C is potentially penis covering, decide yes;
+	if C is not-see-through skirted crotch-in-place clothing:
+		if penis is penis-erect:[erect penises are twice as hard to cover]
+			if the effective size of penis <= (the penis-capacity of C * 2) / 3, decide yes;
+		otherwise:
+			if the penis-capacity of C > 1, decide yes; [if the skirt is long enough, it protects you at least a bit]
+	otherwise if C is not-see-through potentially pussy covering clothing:
+		if the effective size of penis <= (the penis-capacity of C * 3) / 2, decide yes;
 	decide no.
 
 [!<DecideWhichObjectIsTheConcealerOfPenis>+
@@ -247,7 +259,7 @@ Definition: penis is able to get erect:
 	[#LXorDD I think it now makes sense to handle a detached penis becoming erect here.]
 	if the player is not possessing a penis and the players-dick-is-detached is 0, decide no;
 	if penis is penis-erect, decide yes;
-	if there is a worn chastity cage, decide no;
+	if there is a worn chastity bond, decide no;
 	if broken-clitty tattoo is worn, decide no;
 	if there is a worn restricting research airhancer, decide no;
 	if refractoryperiod > 0, decide no;[except in special circumstances, you can't get hard immediately after an orgasm]
@@ -264,7 +276,6 @@ Definition: penis is erect-at-will:
 	if the player is very horny, increase A by 1;
 	increase A by the size of penis;[if you're bigger, it's easier to get erect]
 	let D be 0;
-	[if the wanktime of the player > 100, decrease D by the wanktime of the player / 5;[if you came recently, it's harder to get an erection] This was commented out around the time of the most recent chastity cage rework.]
 	decrease D by the penis-obedience of penis;[if you haven't been told to get an erection, it may be harder]
 	decrease D by the anal sex addiction of the player / 2;[your addiction to anal sex also interferes with your erections]
 	let R be a random number between A and D;
@@ -479,8 +490,10 @@ To say SexShaft:
 
 To say TotalDesc of penis:
 	if the player is possessing a penis:
-		if there is a worn chastity cage:
-			say "Your [ShortDesc of penis] and [ShortDesc of scrotum] are kept soft and locked away inside a chastity cage. ";
+		let C be a random worn chastity bond;
+		if C is a thing:
+			let E be the effective size of penis;
+			say "Your [ShortDesc of penis] and [ShortDesc of scrotum] are kept soft and locked away inside a [ShortDesc of C], which prevents it from getting longer than [E] [if E is 1]inch[otherwise]inches[end if]. ";
 		otherwise if there is pussy covering clothing:
 			say "You have a[if penis is penis-erect]n erect[end if] [ShortDesc of penis] and [ShortDesc of scrotum]. ";
 		otherwise:
@@ -495,7 +508,12 @@ To say PenisModesty:
 		if W is clothing:
 			say "It is [if penis is exposed]clearly[otherwise]partially[end if] visible [if W is actually dense]poking out of[otherwise]through[end if] your [ShortDesc of W]. ";
 		otherwise:
-			say "You have no clothing covering it. ";
+			let C be a random worn skirted crotch-in-place clothing;
+			if C is clothing and the number of pussy covering unskirted clothing is 0: [your penis is not propped up by knickers or whatever]
+				if penis is penis-erect, say "Your erection is pushing your [ShortDesc of C] away, exposing itself.";
+				otherwise say "It dangles down lower than your [ShortDesc of C] covers.";
+			otherwise:
+				say "You have no clothing covering it. ";
 	otherwise if the player is possessing a penis:
 		let W be the concealer of penis;
 		say "It can't be seen thanks to the [ShortDesc of W]. ";
@@ -511,6 +529,9 @@ To say PenisModesty:
 		let P be a random thing penetrating penis;
 		if P is monster, say "Monsters are definitely paying extra attention to it.";
 		otherwise say "You have a feeling that monsters are paying extra attention to it.".
+
+To say HoleDesc of (M - a thing):
+	say "hole".
 
 Part 3 - Modify Penis Stats
 

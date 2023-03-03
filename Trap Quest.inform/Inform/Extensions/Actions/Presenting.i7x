@@ -150,11 +150,20 @@ Carry out direct-presenting something to:
 		let Lorder be a list of clothing;
 		let displacingFinished be 0;
 		if the noun is face:
-			let urine-request be 0;
-			if watersports fetish is 1 and the second noun is willing to urinate and (the player is thirsty or the urine taste addiction of the player > 6 or the player is disgraced or debugmode > 0):
-				say "Would you like to specifically ask [if the player is a pervert]to be pissed on[otherwise]for a golden shower[end if]? ";
-				if the player is consenting, now urine-request is 1;
-			if urine-request is 1:
+			reset multiple choice questions;
+			now player-numerical-response is 1;
+			set numerical response 1 to "Just suggest normal oral sex.";
+			if watersports fetish is 1 and the second noun is willing to urinate and (the player is thirsty or the urine taste addiction of the player > 6 or the player is disgraced or debugmode > 0 or the class of the player is human toilet):
+				increase player-numerical-response by 1;
+				set next numerical response to "Ask to be pissed on";
+			if the second noun is willing to do licking and (the grossness addiction of the player >= 4 or the player is disgraced or debugmode > 0):
+				increase player-numerical-response by 1;
+				set next numerical response to "Ask to worship [him of the second noun] with your tongue";
+			if the second noun is willing to do anilingus and (the grossness addiction of the player >= 7 or the player is disgraced or debugmode > 0):
+				increase player-numerical-response by 1;
+				set next numerical response to "Ask to lick [his of the second noun] asshole";
+			if player-numerical-response > 1, compute multiple choice question;
+			if chosen numerical response matches the text "pissed":
 				if the player is able to speak and auto is not 1 and (the player is not broken or the second noun is friendly):
 					if the second noun is a dangerous intelligent monster:
 						say UnfriendlyPissRequest of the second noun;
@@ -163,6 +172,25 @@ Carry out direct-presenting something to:
 				say PissRequestFlav of the second noun;
 				if the humiliation of the player < HUMILIATION-MODEST - 3500, say "[one of][first custom style]I can hardly believe what I'm doing! How degrading...[roman type][line break][or][stopping]";
 				now presented-orifice is belly;
+			otherwise if chosen numerical response matches the text "tongue":
+				if the player is able to speak and auto is not 1 and (the player is not broken or the second noun is friendly):
+					if the second noun is a dangerous intelligent monster:
+						say UnfriendlyLickRequest of the second noun;
+					otherwise if the second noun is friendly intelligent monster:
+						say FriendlyLickRequest of the second noun;
+				say LickRequestFlav of the second noun;
+				if the humiliation of the player < HUMILIATION-MODEST - 3500, say "[one of][first custom style]I can hardly believe what I'm doing! How degrading...[roman type][line break][or][stopping]";
+				now presented-orifice is thighs;
+			otherwise if chosen numerical response matches the text "asshole":
+				if the player is able to speak and auto is not 1 and (the player is not broken or the second noun is friendly):
+					if the second noun is a dangerous intelligent monster:
+						say UnfriendlyAnilingusRequest of the second noun;
+					otherwise if the second noun is friendly intelligent monster:
+						say FriendlyAnilingusRequest of the second noun;
+				say AnilingusRequestFlav of the second noun;
+				if the humiliation of the player < HUMILIATION-MODEST - 3500, say "[one of][first custom style]I can hardly believe what I'm doing! How degrading...[roman type][line break][or][stopping]";
+				now presented-orifice is thighs;
+				now the second noun is getting-asslicked;
 			otherwise:
 				if the player is able to speak and auto is not 1 and (the player is not broken or the second noun is friendly):
 					if the second noun is a dangerous intelligent monster:
@@ -431,13 +459,130 @@ To say FriendlyOralRequest of (M - a monster):
 					say "[variable custom style]'Hey let's have some fun. I'm really great at cunnilingus, you know. [one of]I mean, not that I'm a weird rugmuncher[or]I'm not saying I have an oral fixation[in random order] or anything...'";
 	say "[roman type][line break]".
 
+[!<SayLickRequestFlavOfMonster>+
+
+This makes sure there is flavour even if the player can't speak.
+
++!]
+To say LickRequestFlav of (M - a monster):
+	if the player is not able to speak or M is unintelligent or the player is disgraced or the grossness addiction of the player >= 11, say "You open your mouth wide and stick out your tongue, [if there is a worn tongue piercing]showing off your slutty tongue piercing and [end if]trying to signal that [if M is friendly and the grossness addiction of the player >= 11]you are requesting permission to worship [him of M] with your tongue[otherwise if M is friendly]you want to worship [him of M] with your tongue[otherwise if the humiliation of the player >= HUMILIATION-BROKEN]you're ready to worship [his of M] feet[otherwise if highest body part sex addiction * 2 < the grossness addiction of the player]you'd rather lick [his of M] feet than have sex[otherwise]you'd rather lick [his of M] feet right now[end if].".
+
+[!<SayUnfriendlyLickRequestOfMonster>+
+
+The monster is demanding sex, and the player is suggesting a particular type.
+
++!]
+To say UnfriendlyLickRequest of (M - a monster):
+	if M is willing to do anilingus: [can't only suggest feet, as it might not be feet that ends up happening]
+		if the player is a nympho:
+			say "[if the player is feeling dominant and M is unintimidating][first custom style]'What are you waiting for, [stud-worm of M]? Make me degrade myself by tasting your feet. But bear in mind that I'll be back, and next time you'll be the one on [his of M] knees...'[otherwise if the grossness addiction of the player < 4][variable custom style]'I guess if you wanted to be as gross and cruel as possible, you'd make me lick your feet, wouldn't you?'[otherwise if the grossness addiction of the player < 11][variable custom style]'Okay, you win. If you really want to treat me as a loser, I suggest you make me lick your dirty, sweaty feet...'[otherwise][second custom style]'[one of]I guess that makes me your personal foot worshiper now then, huh?'[or]Uh-oh, why do I get the feeling I'm about to be forced to taste your glorious dirty feet? *giggle*'[or]This pathetic foot licker is ready for [his of the player] dirty, sweaty feet, [stud of M]!'[in random order][end if][roman type][line break]";
+		otherwise:
+			say "[if the player is feeling dominant and M is unintimidating][first custom style]'I imagine you plan to degrade me by making me kiss your feet... It would appear that I am powerless to stop you right now, just bear in mind that there will be consequences once I have recovered.'[otherwise if the grossness addiction of the player < 4][first custom style]'You can degrade me with your feet if you must. But I'm not going to pretend not to be disgusted by it.'[otherwise if the grossness addiction of the player < 11][variable custom style]'Okay, you win. Will you let me go if I worship your feet?'[otherwise][variable custom style]'Please, let me clean your sweaty feet with my tongue. I'm very good at it by now. N-not that I've been licking feet for so long that I like the taste, or anything...'[end if][roman type][line break]";
+	otherwise: [it's gonna be foot worship]
+		if the player is a nympho:
+			say "[if the player is feeling dominant and M is unintimidating][first custom style]'What are you waiting for, [stud-worm of M]? Make me degrade myself by tasting your feet. But bear in mind that I'll be back, and next time you'll be the one on [his of M] knees...'[otherwise if the grossness addiction of the player < 4][variable custom style]'I guess if you wanted to be as gross and cruel as possible, you'd make me lick your feet, wouldn't you?'[otherwise if the grossness addiction of the player < 11][variable custom style]'Okay, you win. If you really want to treat me as a loser, I suggest you make me lick your dirty, sweaty feet...'[otherwise][second custom style]'[one of]I guess that makes me your personal foot worshiper now then, huh?'[or]Uh-oh, why do I get the feeling I'm about to be forced to taste your glorious dirty feet? *giggle*'[or]This pathetic foot licker is ready for [his of the player] dirty, sweaty feet, [stud of M]!'[in random order][end if][roman type][line break]";
+		otherwise:
+			say "[if the player is feeling dominant and M is unintimidating][first custom style]'I imagine you plan to degrade me by making me kiss your feet... It would appear that I am powerless to stop you right now, just bear in mind that there will be consequences once I have recovered.'[otherwise if the grossness addiction of the player < 4][first custom style]'You can degrade me with your feet if you must. But I'm not going to pretend not to be disgusted by it.'[otherwise if the grossness addiction of the player < 11][variable custom style]'Okay, you win. Will you let me go if I worship your feet?'[otherwise][variable custom style]'Please, let me clean your sweaty feet with my tongue. I'm very good at it by now. N-not that I've been licking feet for so long that I like the taste, or anything...'[end if][roman type][line break]".
+
+[!<SayFriendlyLickRequestOfMonster>+
+
+The player initiates licking with a friendly NPC.
+
++!]
+To say FriendlyLickRequest of (M - a monster):
+	if the player is a nympho:
+		if the grossness addiction of the player < 4:
+			if the player is feeling dominant:
+				say "[variable custom style]'Hmm, I wonder what the feet of a [stud-worm of M] like you tastes like. Come here and let me find out.'";
+			otherwise:
+				say "[variable custom style]'[one of]I need someone to train my tongue to love the taste of feet.'[or]I have a confession to make... I hate the taste of sweaty feet. So I need to keep licking them until I get used to the taste.'[in random order]";
+		otherwise if the grossness addiction of the player < 11:
+			if the player is feeling dominant, say "[variable custom style]Stay there. I'm going to lick your feet now, and I expect you to like it.'";
+			otherwise say "[variable custom style]'[one of]I... I don't usually ask people this, but please can I lick your feet? If you don't mind...'[or]Would you mind if I tasted the sweat from your feet?'[or]Don't you think it'd be really hot if you forced me to lick your feet right about now?'[in random order]";
+		otherwise:
+			say "[variable custom style]'[one of]Mmmmm, please [stud of M], I'm desperate to taste your delicious feet...'[or]Please would you do me the great honour of letting me worship your feet, [stud of M]?'[in random order]";
+	otherwise:
+		if the grossness addiction of the player < 4:
+			if the player is feeling dominant:
+				say "[variable custom style]'Stand still. I'm going to try a quick taste of your feet, just to confirm that I hate it as much as I expect.'";
+			otherwise:
+				say "[variable custom style]'[one of]I've decided to um... lick your feet. Please don't ask why...'[or]I need to taste your feet, so I'd appreciate it if you let me.'[in random order]";
+		otherwise if the grossness addiction of the player < 11:
+			if the player is feeling dominant:
+				say "[variable custom style]'[one of]I've got a weird craving for the taste of foot sweat, and I'm going to use your feet to get it.'[or]I feel like finding out what your toes taste like. As long as you remember that I'm in charge, got it?'[in random order]";
+			otherwise:
+				say "[variable custom style]'[one of]I've got a weird request... would you mind if I tasted your feet?'[or]Hey [stud of M], I was hoping you'd let me worship your feet?'[in random order]";
+		otherwise:
+			if the player is feeling dominant:
+				say "[variable custom style]'[one of]Oh yes... you look like you've got some delicious dirty feet for me to sample. Stay right there [stud-worm of M], and try to make sure we get all five of your toes in my mouth.'[or]You, [stud-worm of M]! My tongue is desperate for a taste of your nasty, filthy feet, so you better get over here and serve me a fresh sample, pronto.'[in random order]";
+			otherwise:
+				say "[variable custom style]'Hey, do you like getting your feet worshipped? I've been told I'm really good at it. Not that I'm addicted to the taste of dirty feet or anything...'";
+	say "[roman type][line break]".
+
+[!<SayAnilingusRequestFlavOfMonster>+
+
+This makes sure there is flavour even if the player can't speak.
+
++!]
+To say AnilingusRequestFlav of (M - a monster):
+	[if the player is not able to speak or M is unintelligent or the player is disgraced or the grossness addiction of the player >= 11, ]
+	say "You open your mouth wide and stick out your tongue, [if there is a worn tongue piercing]showing off your slutty tongue piercing and [end if]trying to signal that [if M is friendly and the grossness addiction of the player >= 14]you are requesting permission to tongue-fuck [his of M] asshole[otherwise if M is friendly]you want to lick [his of M] asshole[otherwise if the humiliation of the player >= HUMILIATION-BROKEN]you're ready to lick [his of M] asshole[otherwise if highest body part sex addiction * 2 < the grossness addiction of the player]you'd rather lick [his of M] asshole than have sex[otherwise]you'd rather lick [his of M] asshole right now[end if].".
+
+[!<SayUnfriendlyAnilingusRequestOfMonster>+
+
+The monster is demanding sex, and the player is suggesting a particular type.
+
++!]
+To say UnfriendlyAnilingusRequest of (M - a monster):
+	say "".
+	[if the player is a nympho:
+		say "[if the player is feeling dominant and M is unintimidating][first custom style]'What are you waiting for, [stud-worm of M]? Make me degrade myself by tasting your feet. But bear in mind that I'll be back, and next time you'll be the one on [his of M] knees...'[otherwise if the grossness addiction of the player < 4][variable custom style]'I guess if you wanted to be as gross and cruel as possible, you'd make me lick your feet, wouldn't you?'[otherwise if the grossness addiction of the player < 11][variable custom style]'Okay, you win. If you really want to treat me as a loser, I suggest you make me lick your dirty, sweaty feet...'[otherwise][second custom style]'[one of]I guess that makes me your personal foot worshiper now then, huh?'[or]Uh-oh, why do I get the feeling I'm about to be forced to taste your glorious dirty feet? *giggle*'[or]This pathetic foot licker is ready for [his of the player] dirty, sweaty feet, [stud of M]!'[in random order][end if][roman type][line break]";
+	otherwise:
+		say "[if the player is feeling dominant and M is unintimidating][first custom style]'I imagine you plan to degrade me by making me kiss your feet... It would appear that I am powerless to stop you right now, just bear in mind that there will be consequences once I have recovered.'[otherwise if the grossness addiction of the player < 4][first custom style]'You can degrade me with your feet if you must. But I'm not going to pretend not to be disgusted by it.'[otherwise if the grossness addiction of the player < 11][variable custom style]'Okay, you win. Will you let me go if I worship your feet?'[otherwise][variable custom style]'Please, let me clean your sweaty feet with my tongue. I'm very good at it by now. N-not that I've been licking feet for so long that I like the taste, or anything...'[end if][roman type][line break]".]
+
+[!<SayFriendlyAnilingusRequestOfMonster>+
+
+The player initiates licking with a friendly NPC.
+
++!]
+To say FriendlyAnilingusRequest of (M - a monster):
+	say "".
+	[if the player is a nympho:
+		if the grossness addiction of the player < 4:
+			if the player is feeling dominant:
+				say "[variable custom style]'Hmm, I wonder what the feet of a [stud-worm of M] like you tastes like. Come here and let me find out.'";
+			otherwise:
+				say "[variable custom style]'[one of]I need someone to train my tongue to love the taste of feet.'[or]I have a confession to make... I hate the taste of sweaty feet. So I need to keep licking them until I get used to the taste.'[in random order]";
+		otherwise if the grossness addiction of the player < 11:
+			if the player is feeling dominant, say "[variable custom style]Stay there. I'm going to lick your feet now, and I expect you to like it.'";
+			otherwise say "[variable custom style]'[one of]I... I don't usually ask people this, but please can I lick your feet? If you don't mind...'[or]Would you mind if I tasted the sweat from your feet?'[or]Don't you think it'd be really hot if you forced me to lick your feet right about now?'[in random order]";
+		otherwise:
+			say "[variable custom style]'[one of]Mmmmm, please [stud of M], I'm desperate to taste your delicious feet...'[or]Please would you do me the great honour of letting me worship your feet, [stud of M]?'[in random order]";
+	otherwise:
+		if the grossness addiction of the player < 4:
+			if the player is feeling dominant:
+				say "[variable custom style]'Stand still. I'm going to try a quick taste of your feet, just to confirm that I hate it as much as I expect.'";
+			otherwise:
+				say "[variable custom style]'[one of]I've decided to um... lick your feet. Please don't ask why...'[or]I need to taste your feet, so I'd appreciate it if you let me.'[in random order]";
+		otherwise if the grossness addiction of the player < 11:
+			if the player is feeling dominant:
+				say "[variable custom style]'[one of]I've got a weird craving for the taste of foot sweat, and I'm going to use your feet to get it.'[or]I feel like finding out what your toes taste like. As long as you remember that I'm in charge, got it?'[in random order]";
+			otherwise:
+				say "[variable custom style]'[one of]I've got a weird request... would you mind if I tasted your feet?'[or]Hey [stud of M], I was hoping you'd let me worship your feet?'[in random order]";
+		otherwise:
+			if the player is feeling dominant:
+				say "[variable custom style]'[one of]Oh yes... you look like you've got some delicious dirty feet for me to sample. Stay right there [stud-worm of M], and try to make sure we get all five of your toes in my mouth.'[or]You, [stud-worm of M]! My tongue is desperate for a taste of your nasty, filthy feet, so you better get over here and serve me a fresh sample, pronto.'[in random order]";
+			otherwise:
+				say "[variable custom style]'Hey, do you like getting your feet worshipped? I've been told I'm really good at it. Not that I'm addicted to the taste of dirty feet or anything...'";
+	say "[roman type][line break]".]
+
 [!<SayPissRequestFlavOfMonster>+
 
 This makes sure there is flavour even if the player can't speak.
 
 +!]
 To say PissRequestFlav of (M - a monster):
-	if the player is not able to speak or M is unintelligent or the humiliation of the player > HUMILIATION-DISGRACED or the player is feeling submissive, say "You open your mouth wide and stick out your tongue, [if there is a worn tongue piercing]showing off your slutty tongue piercing and [end if]trying to signal that [if the second noun is friendly and the delicateness of the player > 12]you are requesting permission to drink [his of the second noun] [urine][otherwise if the second noun is friendly]you want to drink [his of M] [urine][otherwise if the humiliation of the player >= HUMILIATION-BROKEN]you're ready to become [his of M] [one of]human toilet[or]obedient urinal[at random][otherwise if highest body part sex addiction * 2 < the urine taste addiction of the player]you'd rather get pissed on rather than have sex[otherwise]you'd rather drink [his of M] piss right now[end if].".
+	if the player is not able to speak or M is unintelligent or the player is disgraced or the player is feeling submissive, say "You open your mouth wide and stick out your tongue, [if there is a worn tongue piercing]showing off your slutty tongue piercing and [end if]trying to signal that [if M is friendly and the delicateness of the player > 12]you are requesting permission to drink [his of M] [urine][otherwise if M is friendly]you want to drink [his of M] [urine][otherwise if the humiliation of the player >= HUMILIATION-BROKEN]you're ready to become [his of M] [one of]human toilet[or]obedient urinal[at random][otherwise if highest body part sex addiction * 2 < the urine taste addiction of the player]you'd rather get pissed on rather than have sex[otherwise]you'd rather drink [his of M] piss right now[end if].".
 
 [!<SayUnfriendlyPissRequestOfMonster>+
 
@@ -541,7 +686,7 @@ This makes sure there is flavour even if the player can't speak.
 
 +!]
 To say TitfuckRequestFlav of (M - a monster):
-	if the player is not able to speak or M is unintelligent or the humiliation of the player > HUMILIATION-DISGRACED or the player is feeling submissive, say "You thrust your [BreastDesc] out, [if there is a worn nipple piercing]showing off your slutty nipple piercings and [end if]trying to signal that [if the second noun is a friendly monster]you'd really enjoy giving [him of second noun] a titfuck right about now[otherwise if the humiliation of the player < HUMILIATION-BROKEN]you'd rather have your breasts used for sex[otherwise]you're ready to have your breasts used[end if].".
+	if the player is not able to speak or M is unintelligent or the humiliation of the player > HUMILIATION-DISGRACED or the player is feeling submissive, say "You thrust your [BreastDesc] out, [if there is a worn nipple piercing]showing off your slutty nipple piercings and [end if]trying to signal that [if M is a friendly monster]you'd really enjoy giving [him of second noun] a titfuck right about now[otherwise if the humiliation of the player < HUMILIATION-BROKEN]you'd rather have your breasts used for sex[otherwise]you're ready to have your breasts used[end if].".
 
 [!<SayUnfriendlyVaginalRequestOfMonster>+
 
@@ -642,7 +787,7 @@ This makes sure there is flavour even if the player can't speak.
 
 +!]
 To say VaginalRequestFlav of (M - a monster):
-	if the player is not able to speak or M is unintelligent or the humiliation of the player > HUMILIATION-DISGRACED or the player is feeling submissive, say "You spread your ass cheeks and pussy lips wide and wiggle your hips, trying to signal that [if the second noun is a friendly male monster]you'd really enjoy getting fucked right now[otherwise if the second noun is friendly]you'd love to have your [vagina] played with right now[otherwise if the humiliation of the player < HUMILIATION-BROKEN and the delicateness of the player < 10]you'd rather get fucked in the [vagina][otherwise]you're ready to have your [vagina] used[end if].".
+	if the player is not able to speak or M is unintelligent or the humiliation of the player > HUMILIATION-DISGRACED or the player is feeling submissive, say "You spread your ass cheeks and pussy lips wide and wiggle your hips, trying to signal that [if M is a friendly male monster]you'd really enjoy getting fucked right now[otherwise if M is friendly]you'd love to have your [vagina] played with right now[otherwise if the humiliation of the player < HUMILIATION-BROKEN and the delicateness of the player < 10]you'd rather get fucked in the [vagina][otherwise]you're ready to have your [vagina] used[end if].".
 
 [!<SayTakeMyVirginityOfMonster>+
 
@@ -762,7 +907,7 @@ This makes sure there is flavour even if the player can't speak.
 
 +!]
 To say AnalRequestFlav of (M - a monster):
-	if the player is not able to speak or M is unintelligent or the humiliation of the player > HUMILIATION-DISGRACED or the player is feeling submissive, say "You spread your ass cheeks and [asshole] wide and wiggle your hips, trying to signal that [if the second noun is friendly]you'd really enjoy getting ass-fucked right now[otherwise if the humiliation of the player < HUMILIATION-BROKEN and the anal sex addiction of the player < 4 and the player is not possessing a vagina]you're consenting to getting fucked in the [asshole][otherwise if the humiliation of the player < HUMILIATION-BROKEN and the delicateness of the player < 10]you'd rather get fucked in the [asshole][otherwise]you're ready to have your [asshole] used[end if].".
+	if the player is not able to speak or M is unintelligent or the humiliation of the player > HUMILIATION-DISGRACED or the player is feeling submissive, say "You spread your ass cheeks and [asshole] wide and wiggle your hips, trying to signal that [if M is friendly]you'd really enjoy getting ass-fucked right now[otherwise if the humiliation of the player < HUMILIATION-BROKEN and the anal sex addiction of the player < 4 and the player is not possessing a vagina]you're consenting to getting fucked in the [asshole][otherwise if the humiliation of the player < HUMILIATION-BROKEN and the delicateness of the player < 10]you'd rather get fucked in the [asshole][otherwise]you're ready to have your [asshole] used[end if].".
 
 [!<SayTakeMyAnalVirginityOfMonster>+
 
@@ -786,7 +931,7 @@ To say TakeMyAnalVirginity of (M - a monster):
 			say "[second custom style]'[if the sex addiction of the player < 13]I can't pretend any more... [end if]I'm desperate for someone to take my anal cherry and show me what true submissive bliss is. Are you up for it? [if the sex addiction of the player > 10]Be as rough as you want... I deserve it[otherwise]I just have a feeling you're the right person to be my first[end if].'".
 
 To say PenetrationRequestFlav of (M - a monster):
-	if the player is not able to speak or M is unintelligent or the humiliation of the player > HUMILIATION-DISGRACED or the player is feeling submissive, say "You thrust out your hips and [if the player is able to use manual dexterity]point at your [player-penis][otherwise]shake your [player-penis][end if], trying to signal that [if the second noun is friendly]you'd really enjoy some penis play right now[otherwise if the humiliation of the player < HUMILIATION-BROKEN and the anal sex addiction of the player < 4 and the player is not possessing a vagina]you're consenting to having your [player-penis] punished[otherwise if the humiliation of the player < HUMILIATION-BROKEN and the delicateness of the player < 10]you'd rather get your [player-penis] punished[otherwise]you're ready to have your [player-penis] used[end if].".
+	if the player is not able to speak or M is unintelligent or the humiliation of the player > HUMILIATION-DISGRACED or the player is feeling submissive, say "You thrust out your hips and [if the player is able to use manual dexterity]point at your [player-penis][otherwise]shake your [player-penis][end if], trying to signal that [if M is friendly]you'd really enjoy some penis play right now[otherwise if the humiliation of the player < HUMILIATION-BROKEN and the anal sex addiction of the player < 4 and the player is not possessing a vagina]you're consenting to having your [player-penis] punished[otherwise if the humiliation of the player < HUMILIATION-BROKEN and the delicateness of the player < 10]you'd rather get your [player-penis] punished[otherwise]you're ready to have your [player-penis] used[end if].".
 
 To say UnfriendlyPenetrationRequest of (M - a monster):
 	if M is virginity taking and the analvirgin of the player is 1:

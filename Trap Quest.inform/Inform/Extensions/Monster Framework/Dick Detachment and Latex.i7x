@@ -589,16 +589,17 @@ To compute restoration of dick by (M - a monster):
 			say "magic token. Huh. So that's where they come from? I always wondered about that.'[roman type][line break]";
 		otherwise:
 			say "strap-on you could wear, I suppose.'[roman type][line break]";
-			now S is a random off-stage strapon-dildo;
-			summon S uncursed;
-			now the strap-length of S is the size of players-detached-dick;
+			now S is strapon-dildo;
+			summon strapon-dildo uncursed;
+			now the strap-length of strapon-dildo is the size of players-detached-dick;
 		if S is nothing:
 			say "But a moment later, the last sorry remnant of your detached dick fuzzes and disappears.[line break][speech style of M]'Wow. That thing was so depleted, I guess, it couldn't even manage that much!'[roman type][line break]";
 			strongHumiliate;
 		otherwise:
 			moderateHumiliate;
-			now S is in the location of the player;
-			compute autotaking S;
+			if S is not worn:
+				now S is in the location of the player;
+				compute autotaking S;
 		destroy players-detached-dick instead;
 	otherwise if the player is possessing a vagina:
 		if players-dick-is-detached is 2:
@@ -1069,7 +1070,7 @@ To decide if penis-is-detachable by (M - a thing) using (method - a number):
 	decide yes.
 
 Check taking off worn portal-cock-ring:
-	if the player is pussy protected, say "Your [printed name of random top level protection clothing worn by the player] is preventing you." instead;
+	if the player is pussy protected, say "Your [printed name of random top level protection clothing] is preventing you." instead;
 	if there is a worn chastity cage, say "You can't remove it, because of your chastity cage." instead.
 
 Report taking off portal-cock-ring:
@@ -1165,8 +1166,8 @@ To decide if successful experimental bra dressup by (P - a person):
 		say "[BigNameDesc of P] summons up a [ShortDesc of B] which you feel appear over your [BreastDesc], fitting snugly.";
 	if B is not cursed:
 		say "The [ShortDesc of B] is surrounded by a dark pink glow, as it becomes cursed!";
-		now B is cursed;
-		compute summoned quest of B;
+		curse B;
+	if the quest of B is no-clothing-quest, compute summoned quest of B;
 	now the Magic-type of B is augmentation;
 	say "You feel a strange sensation pass through the [ShortDesc of B].";
 	now augmentation-grow-charge of B is augmentation-charging-time of B; [So it's ready to make the player grow]

@@ -133,7 +133,6 @@ To say MonsterComment of (M - dominatrix):
 			say "[second custom style][one of]I'm looking forward to getting POUNDED by that![or][big literalMistress of M] is going to be so happy. I'm determined to last longer this time![or]I hope [literalMistress of M] feels like fucking me today. I hate boot for dinner...[or]Teehee! It's SO big![or][big literalMistress of M] is going to rut me like an animal!~[or]I think [literalMistress of M] is going to give me permission to cum soon! OOooh I can't wait![or][big literalMistress of M] did such a good job training me, I'm sure I can take [his of M] strapon no problem![or]I love getting pounded by my [literalMistress of M]![or]I hope [literalMistress of M] is rough today...[in random order]";[highest bimbo functions are combined]
 	say "[roman type][line break]";
 
-Definition: dominatrix is able to remove cursed plugs: decide yes.
 Definition: dominatrix is penis-virginity taking: decide no.
 Definition: dominatrix is wenchy: decide yes.
 
@@ -299,6 +298,12 @@ To compute dq perception of (M - dominatrix):
 
 To say BecomesBoredFlav of (M - dominatrix):
 	if M is uninterested, say "[BigNameDesc of M] seems to lose interest in you for now.".
+
+To say MonsterOfferAcceptFlav of (M - a dominatrix) to (T - a thing):
+	if M is unfriendly:
+		say "[BigNameDesc of M] nods approvingly.[line break][speech style of M]'This will serve, to earn you brief reprieve before your punishment...'[roman type][line break]";
+	otherwise:
+		say "[BigNameDesc of M] smiles politely.[line break][speech style of M]'I gladly accept your tribute.'[roman type][line break]".
 
 Part 3 - Motion
 
@@ -590,7 +595,7 @@ To set up sex length of (M - dominatrix) in (B - a body part):
 	set up sex length (a random number between 3 and 4) of M in B.[remember, this only applies if sex length is 0 or less]
 
 To compute unique penetration effect of (M - dominatrix) in (B - a body part):
-	if refractoryperiod is 3 and M is not friendly-fucking:
+	if refractoryperiod >= maxrefractoryperiod and M is not friendly-fucking:
 		say "[BigNameDesc of M] tuts and shakes [his of M] head in disapproval.[line break][speech style of M]'Did I say you could cum? I didn't think so. Well, I guess this just shows you aren't ready to be treated any differently.'[roman type][line break]";
 		if the player is possessing a penis, cutshow figure of dominatrix cutscene 7 for M;
 		now the disappointment of M is 1;
@@ -889,9 +894,9 @@ To say DamageReactWeak of (M - dominatrix):
 
 To compute unique banishment of (M - dominatrix):
 	progress quest of dominatrix-quest;
-	let X be a random off-stage strapon-dildo;
-	if the strap-on girth of M >= 6 and mythical creature fetish is 1, now X is a random off-stage equine-strapon;
-	if X is clothing:
+	let X be strapon-dildo;
+	if the strap-on girth of M >= 6 and mythical creature fetish is 1 and equine-strapon is off-stage, now X is equine-strapon;
+	if X is off-stage clothing:
 		now the strap-length of X is the strap-on girth of M + 5;
 		if the strap-on girth of M >= 6, now the strap-length of X is 12; [20 inches]
 		say "[BigNameDesc of M] unstraps and drops [his of M] [X] to help [himself of M] run faster!";

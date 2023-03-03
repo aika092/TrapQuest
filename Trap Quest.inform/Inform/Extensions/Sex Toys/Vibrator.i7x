@@ -56,30 +56,30 @@ To say ClothingDesc of (C - purple-vibrator):
 remote-controlled-vibrator is a vibrator. remote-controlled-vibrator is unique. The text-shortcut of remote-controlled-vibrator is "fvi".
 To decide which number is the stimulation of (T - remote-controlled-vibrator) on (F - a body part):
 	if current-predicament is team-girlfriends-predicament, decide on 8;
-	decide on 3.
+	decide on 2.
 To decide which number is the initial outrage of (S - remote-controlled-vibrator):
 	decide on 8.
 Figure of remote controlled vibrator 1 is the file "Items/Accessories/Toys/vibrator2.png".
 Figure of remote controlled vibrator 2 is the file "Items/Accessories/Toys/vibrator3.png".
 To decide which figure-name is clothing-image of (C - remote-controlled-vibrator):
-	if the player is possessing a penis, decide on figure of remote controlled vibrator 2;
-	decide on figure of remote controlled vibrator 1.
+	if the player is possessing a vagina, decide on figure of remote controlled vibrator 1;
+	decide on figure of remote controlled vibrator 2.
 Definition: remote-controlled-vibrator is discovered varied: decide no.
 Definition: remote-controlled-vibrator is fetish appropriate: decide no. [Stops it spawning randomly]
 To say ClothingDesc of (C - remote-controlled-vibrator):
 	if current-predicament is team-girlfriends-predicament:
-		say "This hi-tech [if the player is possessing a penis]onahole [end if]vibrator stimulates you unless [student-name of team-predicament-partner][']s ring is touching it.";
+		say "This hi-tech [if the player is not possessing a vagina]onahole [end if]vibrator stimulates you unless [student-name of team-predicament-partner][']s ring is touching it.";
 	otherwise if current-predicament is not team-football-predicament:
-		say "This is a modern looking [if the player is possessing a penis]onahole [end if]vibrator.";
+		say "This is a modern looking [if the player is not possessing a vagina]onahole [end if]vibrator.";
 	otherwise if the game-state of team-football-predicament is 0:
-		if current-predicament is team-football-predicament, say "This hi-tech remote controlled [if the player is possessing a penis]onahole vibrator wrapped around your [player-penis][otherwise]vibrator[end if] vibrates more strongly the closer it is to the football. Apparently it also has a hollow section, and the loser of the game will find their [if the player is not possessing a vagina]pants[otherwise][vagina][end if] filled to the brim with cum.";
-		otherwise say "This hi-tech [if the player is possessing a penis]onahole [end if]vibrator was used in an extra credit lesson.";
+		if current-predicament is team-football-predicament, say "This hi-tech remote controlled [if the player is not possessing a vagina]onahole vibrator wrapped around your [player-penis][otherwise]vibrator[end if] vibrates more strongly the closer it is to the football. Apparently it also has a hollow section, and the loser of the game will find their [if the player is not possessing a vagina]pants[otherwise][vagina][end if] filled to the brim with cum.";
+		otherwise say "This hi-tech [if the player is not possessing a vagina]onahole [end if]vibrator was used in an extra credit lesson.";
 	otherwise if the game-state of team-football-predicament is 1:
 		say "This hi-tech remote controlled vibrator has turned itself off.";
 	otherwise if the toy-charge of C >= 10:
 		say "This hi-tech remote controlled vibrator has run out of battery.";
 	otherwise:
-		say "A hi-tech remote controlled [if the player is possessing a penis]onahole [end if]vibrator that was used in the football extra credit lesson.".
+		say "A hi-tech remote controlled [if the player is not possessing a vagina]onahole [end if]vibrator that was used in the football extra credit lesson.".
 To compute periodic effect of (P - remote-controlled-vibrator):
 	if current-predicament is team-girlfriends-predicament:
 		if girlfriend-partner is not snogged:
@@ -88,13 +88,13 @@ To compute periodic effect of (P - remote-controlled-vibrator):
 				now the toy-charge of P is 11;
 			otherwise:
 				let F be vagina;
-				if the player is possessing a penis, now F is penis;
+				if the player is not possessing a vagina, now F is penis;
 				say "Your [ShortDesc of P] whirs away [if F is vagina]inside you[otherwise]around your [player-penis][end if]!";
 				stimulate F from P;
 		if the player is not in a predicament room, increase the toy-charge of P by 1;
 	otherwise if current-predicament is not team-football-predicament:
 		let F be vagina;
-		if the player is possessing a penis, now F is penis;
+		if the player is not possessing a vagina, now F is penis;
 		say "Your [ShortDesc of P] whirs away [if F is vagina]inside you[otherwise]around your [player-penis][end if]!";
 		stimulate F from P;
 	otherwise if the game-state of team-football-predicament is not 1:
@@ -103,7 +103,7 @@ To compute periodic effect of (P - remote-controlled-vibrator):
 			now the toy-charge of P is 11;
 		otherwise:
 			let F be vagina;
-			if the player is possessing a penis, now F is penis;
+			if the player is not possessing a vagina, now F is penis;
 			if football is in the location of the player or the game-state of team-football-predicament is 2: [double stimulation]
 				if the football-possessor of football is the player or the game-state of team-football-predicament is 2: [triple stimulation]
 					if F is penis:

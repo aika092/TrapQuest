@@ -69,6 +69,7 @@ the magic consequences rules is a rulebook.
 
 To decide which number is MagicPowerDamage:
 	let X be 3 + magic theme bonus + the intelligence of the player / 4;
+	if the class of the player is cumdumpster, increase X by (3 + the stomach-semen of the player) / 4;
 	decide on X.
 
 To compute spell consequences of (Z - a thing):
@@ -89,7 +90,7 @@ To decide which number is the magic-cost of (Z - a thing):
 	decide on M.
 
 Definition: a tentacle monster is a tripper:
-	if the class of the player is "magical schoolgirl" or there is a worn zap ready equippable, decide yes;
+	if the class of the player is "magical schoolgirl" or (there is a worn zap ready equippable and heart hairpin is off-stage and heart hairpin is actually summonable), decide yes;
 	decide no.
 
 To say TripChanceFlav of (M - a tentacle monster):
@@ -104,7 +105,10 @@ To say MonsterTrippedFlav of (M - a tentacle monster):
 	repeat with H running through worn equippables:
 		if H is not gloves:
 			now H is in the location of the player;
-			say "Your [H] is wrestled out of your hand and thrown to the corner of the room!".
+			say "Your [H] is wrestled out of your hand and thrown to the corner of the room!";
+	if heart hairpin is off-stage and heart hairpin is actually summonable:
+		say "A heart hairpin appears in your hair!";
+		summon heart hairpin cursed.
 
 Check taking equippable when the player is immobile:
 	if the noun is not held, say "You try to reach it but it's too far away!" instead.
@@ -332,6 +336,38 @@ Heal
 Body size / slutty stats reduce
 
 ]
+
+
+
+wand-summoning is a magic-spell.
+To decide which number is the raw-magic-cost of (S - wand-summoning):
+	decide on 1.
+Definition: wand-summoning is reactive-only: decide no.
+To say MagicSpellEffect of (S - wand-summoning):
+	say "summon a magic wand".
+Report Spellcasting wand-summoning:
+	check clutch replacement;
+	let E be a random worn hand ready clothing;
+	if E is clothing, now wearing-target is E;
+	let H be a random worn headgear;
+	if E is clothing and ((E is vibe-wand or E is cursed or E is unremovable or E is bag of holding) or (H is clothing and H is removal-blocking)): [class wands can't be replaced by this spell]
+		say "The spell doesn't seem to work while you're holding [NameDesc of E]!";
+	otherwise:
+		let W be nintendolls-wand;
+		if the class of the player is magical girl, now W is a random heart wand;
+		if the class of the player is "magical schoolgirl", now W is notebook;
+		PinkWardrobeUnclash W;
+		summon W uncursed;
+		now W is impermanence;
+		say "With a flash of pink, [NameDesc of W] appears in your hand! Wow! [bold type]It has the [']impermanence['] property,[roman type] which means that it will disappear at some point in the near future.".
+
+An all later time based rule (this is the magical girl spell rule):
+	if the total magic power of the player > 0 and wand-summoning is uncastable:
+		now wand-summoning is everywhere;
+		now the outrageousness of wand-summoning is 6;
+		now the incantation of wand-summoning is "call upon the power of girlcum";
+		now the text-shortcut of wand-summoning is "call upon the power of girlcum";
+		say "[bold type]You now instinctively know how to [MagicSpellEffect of wand-summoning]! The magic incantation is 'I [incantation of wand-summoning]'.[SpelloutrageousnessInfo of wand-summoning][roman type][line break]".
 
 magic-mapping is a magic-spell.
 To decide which number is the raw-magic-cost of (S - magic-mapping):

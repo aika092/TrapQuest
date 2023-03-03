@@ -26,7 +26,15 @@ A later time based rule (this is the knife charge decay rule):
 
 Knifing it with is an action applying to two things.
 Check knifing:
-	if the second noun is knife:
+	if the noun is cookie and (the second noun is knife or the second noun is metal sword):
+		if the quality of cookie > -3, say "That's not the kind of cookie that could be cut into slices." instead;
+		if cookie is cookie-sliced, say "That's already cut into slices." instead;
+		if the player is not able to manually use manual dexterity, do nothing instead;
+		if the player is immobile or the player is in danger, say "You are a bit busy right now!" instead;
+		allocate 6 seconds;
+		now cookie is cookie-sliced;
+		say "You carefully cut the cookie into slices." instead;
+	otherwise if the second noun is knife:
 		if the noun is monster, say "Since it's on such a short chain, you really doubt that would work." instead;
 		if the class of the player is not santa's little helper and the noun is not wrist-bound-behind clothing:
 			if the player is not able to manually use manual dexterity, do nothing instead;

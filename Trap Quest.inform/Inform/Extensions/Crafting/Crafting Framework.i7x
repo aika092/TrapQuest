@@ -108,7 +108,19 @@ Definition: a number (called K) is ingredient appropriate: [Will this ingredient
 	if K is 18 and diaper quest is 1, decide no; [Minotaur horn]
 	decide yes.
 
-Definition: thing is product: decide no.
+Definition: a thing is product: decide no.
+Definition: a thing is container-eligible: [is it common enough to just appear in containers?]
+	if it is product:
+		if it is recipe specific:
+			decide no;
+		otherwise if the original price of it <= container-price-cap:
+			decide yes;
+	decide no.
+To decide which number is container-price-cap:
+	if playerRegion is Mansion, decide on 5;
+	if playerRegion is Dungeon, decide on 2;
+	decide on 3.
+Definition: a wearthing is container-eligible: decide no.
 
 [Giving each alchemy product a different number (key) is the only way I can work out how to be able to randomise different types into a table.]
 To decide which number is the alchemy key of (A - a thing):

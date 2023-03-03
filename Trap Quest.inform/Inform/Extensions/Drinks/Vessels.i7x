@@ -237,7 +237,7 @@ To compute drunken adventure:
 		say "You wake up lying face down in the Throne Room, dizzy and confused, and with a pounding headache that is making it difficult to think properly.[line break][variable custom style]What the hell [one of]happened[or]did I do this time[stopping]?[roman type][line break]";
 		let condoms-used be 0;
 		if diaper quest is 0:
-			if condom fetish is 1 and there is worn condom pinnable clothing and a random number between 1 and 2 is 1:
+			if condom fetish >= 2 and there is worn condom pinnable clothing and a random number between 1 and 2 is 1:
 				now condoms-used is the number of worn condom pinnable clothing;
 				say "As if to answer your question, you realise that there are now ";
 				repeat with C running through worn condom pinnable clothing:
@@ -251,8 +251,6 @@ To compute drunken adventure:
 						say ", ";
 					if condoms-used > 1, decrease condoms-used by 1; [we keep it at 1 for the pregnancy check below]
 				say "[variable custom style]Oh [if the player is not a pervert]god[otherwise]wow[end if], I really banged all these men?![roman type][line break]";
-				increase the condom-count of condom-eating-quest by 3;
-				progress quest of condom-eating-quest;
 				progress quest of condom-creampie-quest;
 			otherwise:
 				SemenPuddleUp 10;
@@ -348,7 +346,7 @@ To compute cursed drinking (X - novelty mug):
 			say "It tastes like [one of]milk, but somehow you know something isn't right. It's too tangy and... sweet? This must be human[or]tangy[stopping] breast milk...";
 			FaceFill milk by 1;
 			if there is a milking bench in the location of the player:
-				if (the class of the player is cowgirl and the class of the player is not catgirl) or (the class of the player is catgirl and the class of the player is not cowgirl), compute meowcowification;
+				if the class of the player is "cowgirl" or the class of the player matches the text "meow", compute meowcowification;
 			suggest swallowing with milk consequences;
 	otherwise:
 		say "It tastes like milk, but somehow you know something isn't right. ";

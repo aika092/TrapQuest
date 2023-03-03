@@ -341,6 +341,11 @@ To say DragFlav of (M - a wrestler) to (R - a room):
 To say DragArrival of (M - a wrestler) to (R - Hotel31):
 	say "[speech style of M]'Here we are!'[line break][variable custom style][one of][if the bimbo of the player < 8]Oh god, why is there a gap between those urinals?[otherwise]Why are we here I wonder?[end if][or][if the bimbo of the player < 13]No no no please not again![otherwise]Uh-oh, looks like it's toilet time again![end if][stopping][roman type][line break]".
 
+A time based rule (this is the stuff can't exist in urinal room rule):
+	if the player is in UrinalBlindfolded:
+		repeat with T running through things in UrinalBlindfolded:
+			if T is not the player and T is not held, now T is in Hotel31.
+
 To UrinalWait:
 	let M be a random wrestler grabbing the player;
 	let N be the urinal-boredom of M;
@@ -379,7 +384,7 @@ This is the wrestler feeds you to master rule:
 			say "[BigNameDesc of M] dumps you in front of the [N] in this room, and then promptly skips away, merrily humming to [himself of M].";
 			if N is friendly or N is uninterested:
 				now the boredom of N is 0;
-				compute correct perception of N;
+				check guaranteed perception of N;
 			bore M;
 			compute monstermotion of M;
 		otherwise: [Should never happen since the matron / dominatrix shouldn't be wondering around until their times-met is higher than 0. But just in case.]
@@ -630,8 +635,10 @@ To compute (M - a wrestler) entering mouth:
 To say FriendlyMouthPenetrationFlav of (M - a wrestler):
 	let C be a random worn top level protection clothing;
 	if C is clothing:
-		if C is displacable, displace C;
-		otherwise now C is in the location of the player;
+		if C is displacable:
+			displace C;
+		otherwise if C is tearable:
+			now C is in the location of the player;
 	say "[BigNameDesc of M] joins you on the floor, [if C is clothing and the size of penis <= the armour of C and the size of penis > 2]fishing your [ShortDesc of penis] out of your [printed name of C][otherwise if C is clothing]pulling down your [printed name of C][otherwise if the player is possessing a penis]stroking your [ShortDesc of penis][otherwise]planting a kiss on your outer lips[end if] as [he of M] pulls you on top of [him of M]. [if the oral sex addiction of the player < 3][one of]Already feeling [his of M] probing tongue on your [genitals], you lean in and start some hesitant probing of your own.[or]You take the time to build up some extra courage before hesitantly forcing your tongue to work.[at random][otherwise if the oral sex addiction of the player < 7][one of]Already feeling [his of M] probing tongue on your [genitals], you lean in and do some eager probing of your own.[or]You find yourself ruminating on how enticing [his of M] crotch looks for a moment before diving in.[at random][otherwise][one of]You don't even wait for [him of M] to start, eagerly shoving your face in [his of M] crotch and sending your tongue to work[or]You immediately dive in, desperate to get a taste of [his of M] beautiful crotch.[at random][end if]";
 	if the player is possessing a scrotum, cutshow figure of wrestler cutscene 9 for M;
 	otherwise cutshow figure of wrestler cutscene 8 for M.
@@ -1092,7 +1099,7 @@ To compute failed dominance punishment of (M - a wrestler):
 			decrease R by 1;
 			while R > 0 and M is interested:
 				stimulate penis from M;
-				if refractoryperiod < 3:
+				if the player is unable to orgasm so soon:
 					say "You gasp and shiver [one of]unprepared[or]still unprepared[stopping] for the surprisingly intense sensation. Your [sissy-penis] spasms a couple times, leaking precum, but an orgasm doesn't arrive.[line break][speech style of M][if R is 0]'Aww, oh well. I'll make you cum with some fisting later.'[otherwise]'[one of]Come on, cutie! Aren't you close?'[or]It's twitching!'[or]Come on, cum for me!'[at random][end if][roman type][line break]";
 					slightHumiliate;
 				otherwise:

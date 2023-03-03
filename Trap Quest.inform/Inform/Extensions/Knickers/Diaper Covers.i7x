@@ -1,6 +1,6 @@
 Diaper Covers by Knickers begins here.
 
-diaper cover is a kind of clothing. A diaper cover is usually manly. A diaper cover is usually crotch-intact. A diaper cover is usually polyester. A diaper cover is usually rare. A diaper cover is usually diaper-addiction-influencing.
+diaper cover is a kind of clothing. A diaper cover is usually manly. A diaper cover is usually crotch-intact. A diaper cover is usually polyester. A diaper cover is usually diaper-addiction-influencing.
 
 Definition: a diaper cover is baby themed: decide yes.
 Definition: a diaper cover is fetish appropriate:
@@ -36,9 +36,9 @@ To compute recipe specific cursing of (T - a diaper cover):
 			now T is bland;
 		otherwise:
 			now T is cursed;
-			now T is bed wetting;
+			now T is waddle-walking;
 	otherwise:
-		now T is bed wetting;
+		now T is waddle-walking;
 		now T is cursed.
 
 To decide what number is the price of (C - a diaper cover):
@@ -143,17 +143,26 @@ This is the diaper cover already worn rule:
 The diaper cover already worn rule is listed in the diaper cover wearability rules.
 
 This is the diaper covers disabled rule:
-	if diaper lover <= 0 and wearing-target is diaper cover:
+	if diaper lover <= 0:
 		if summoning is 0 and autowear is false, say "You can't wear this, you should even be able to see this, whoops! Please report the bug.";
 		rule fails.
 The diaper covers disabled rule is listed in the diaper cover wearability rules.
 
-This is the diaper cover overdress clash rule:
-	if summoning is 0:
-		repeat with C running through worn crotch covering overdresses:
-			if autowear is false, say "You can't wear that over your [printed name of C]!";
-			rule fails.
-The diaper cover overdress clash rule is listed in the diaper cover wearability rules.
+This is the diaper cover crotch clash rule:
+	repeat with C running through worn crotch covering clothing:
+		unless C is knickers:
+			if C is bottom-exclusive:
+				if autowear is false, say "You can't wear that at the same time as your [printed name of C]!";
+				rule fails;
+			if summoning is 0:
+				if wearing-target is crotch-pullup and C is crotch-pullup:
+					if autowear is false, say "You can't wear that over your [printed name of C]!";
+					rule fails;
+				otherwise if wearing-target is crotch-tie-up and C is crotch-in-place:
+					if autowear is false, say "You can't get that on without first displacing your [printed name of C]!";
+					rule fails.
+The diaper cover crotch clash rule is listed in the diaper cover wearability rules.
+
 
 This is the diaper cover only goes over diapers rule:
 	if the number of worn diapers is 0:

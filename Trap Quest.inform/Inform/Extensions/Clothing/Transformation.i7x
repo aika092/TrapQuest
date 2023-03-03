@@ -229,6 +229,7 @@ To compute (C - a clothing) inheriting from (D - a clothing):
 			now the perceived-water-soak of C is (the perceived-water-soak of D * the soak-limit of C) / the soak-limit of D;
 			now the perceived-urine-soak of C is (the perceived-urine-soak of D * the soak-limit of C) / the soak-limit of D;
 	now the used condoms of C is the used condoms of D;
+	add the condom history of D to the condom history of C;
 	now the empty condoms of C is the empty condoms of D;
 	repeat with M running through things inseminating D:
 		now M is inseminating C;
@@ -311,6 +312,7 @@ To say TransformReaction of (C - a clothing): [We make the assumption it's worse
 			say "[if C is too boring and C is actually dense and C is breast covering or C is belly covering or C is crotch covering][line break][second custom style][one of]Ugh, this is still way too plain for me![or]*sigh* Isn't there any way to make it even more revealing?[or]Aww, I was hoping for something even more slutty![or]Hmm, can't it get even more revealing?[in random order][otherwise if C is too boring][second custom style][one of]Ugh, this is still way too boring for me![or]*sigh* Isn't there any way to make it even more lewd?[or]I would prefer something that properly lets everyone know just how slutty I am![or]Hmm, this is better but it doesn't scream 'FUCK ME' in the way I was hoping.[or]Hmm, better, but still too boring for me.[in random order][otherwise if the bimbo of the player < 7][line break][first custom style][one of]I don't have any problems with wearing this.[or]I'm fine with wearing this.[purely at random][otherwise][line break][variable custom style][one of]I love wearing this![or]I feel AMAZING wearing this![or]Ooh, I'm fine wearing this![or]Ooh, how lush! I'm more than happy wearing this.[or]Wow, I look [beautiful] in this![in random order][end if][roman type][line break]".
 
 To silently transform (D - a clothing) into (C - a clothing):
+	blandify and reveal C;
 	now C is worn by the player;
 	compute C inheriting from D;
 	only destroy D;

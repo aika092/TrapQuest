@@ -192,7 +192,9 @@ To decide which object is the at least partial concealer of (C - a wearthing):
 [This is at what bulk levels the clothing can prevent people from even knowing there's a diaper there]
 To decide which number is the diaperHidingLength of (C - a clothing):
 	if C is crotch-displaced or C is crotch-unzipped or C is crotch-ripped, decide on -1;
-	if C is skirted and C is not hobble-skirted, decide on the skirtLength of C; [Hobble skirts are too tight to conceal thick diapers]
+	if C is skirted and C is not hobble-skirted:
+		if the skirtLength of C > 6, decide on 6; [essentially, by default, as soon as a diaper forces your thighs apart, you can't hide the fact you're wearing it with a skirt]
+		decide on the skirtLength of C; [Hobble skirts are too tight to conceal thick diapers]
 	decide on the defaultDiaperHidingLength of C.
 
 To decide which number is the defaultDiaperHidingLength of (C - a clothing):

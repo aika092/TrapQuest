@@ -123,7 +123,7 @@ Include Woman Berri by Monster.
 A bukkake trap door is a kind of trap. A bukkake hose is a kind of trap.
 A dildo trap is a kind of trap. A dildo pole trap is a kind of dildo trap. A drill pole trap is a kind of dildo trap. A creampie pole trap is a kind of dildo trap. A ghostly dildo pole trap is a kind of dildo trap.
 
-A milking bench is a kind of furniture. dungeon-milking-bench is a milking bench. mansion-milking-bench is a milking bench. A dildo rocking stool is a kind of furniture.
+A milking bench is a kind of furniture. A milking bench lever is a kind of thing. dungeon-milking-bench is a milking bench. mansion-milking-bench is a milking bench. dungeon-milking-bench-lever is a milking bench lever. mansion-milking-bench-lever is a milking bench lever. A dildo rocking stool is a kind of furniture.
 
 To compute orgasm resolution of (R - a dildo trap):
 	do nothing.

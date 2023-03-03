@@ -93,19 +93,19 @@ Definition: predicament-painted-cutoffs is transformation-protected: decide yes.
 Definition: predicament-painted-cutoffs is removable: decide no.
 Definition: predicament-painted-cutoffs is discovered varied: decide no.
 Definition: predicament-painted-cutoffs is potentially at least partially asshole covering:
-	if current-predicament is vibe-photo-predicament, decide no;
+	if current-predicament is vibe-photo-predicament, decide yes;
 	if it is hand-blocked, decide yes;
 	decide no.
 Definition: predicament-painted-cutoffs is potentially asshole covering:
-	if current-predicament is vibe-photo-predicament, decide yes;
-	if it is hand-blocked, decide yes;
-	decide no.
-Definition: predicament-painted-cutoffs is potentially at least partially vagina covering:
 	if current-predicament is vibe-photo-predicament, decide no;
 	if it is hand-blocked, decide yes;
 	decide no.
-Definition: predicament-painted-cutoffs is potentially vagina covering:
+Definition: predicament-painted-cutoffs is potentially at least partially vagina covering:
 	if current-predicament is vibe-photo-predicament, decide yes;
+	if it is hand-blocked, decide yes;
+	decide no.
+Definition: predicament-painted-cutoffs is potentially vagina covering:
+	if current-predicament is vibe-photo-predicament, decide no;
 	if it is hand-blocked, decide yes;
 	decide no.
 

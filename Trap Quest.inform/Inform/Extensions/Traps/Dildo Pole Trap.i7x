@@ -139,7 +139,7 @@ To compute (Y - a dildo trap) penetration of (C - an object) into (G - a fuckhol
 			say "Programming error: someone passed non-clothing to compute dildo penetration.";
 		otherwise if C is rippable:
 			say "Your [ShortDesc of C] is now torn at the crotch.";
-			ZipOrRip C;
+			now C is crotch-ripped;
 		otherwise:
 			say "Your [ShortDesc of C] is destroyed.";
 			destroy C;
@@ -303,7 +303,15 @@ To Jump From The Dildo:
 To compute jump bounce of (Y - a trap):
 	let H be a random worn hindrance-enabling shoes;
 	let F be a random fuckhole penetrated by Y;
-	say "You [if H is shoes]manage to jump whilst in your [ShoeType of H][otherwise]jump a bit clumsily[end if] and the dildo very nearly exits you, but then you fall back on it hard! [if Y is creampie pole trap]As you fuck yourself with the dildo, it squirts even more warm [semen] into your [variable F]![otherwise]You basically just fucked yourself with the dildo![end if][line break][if the bimbo of the player < 14]Damn, maybe try again?[otherwise][line break][second custom style]Again again![roman type][line break][end if]";
+	if F is vagina and asshole is not actually occupied and a random number between 1 and 2 is 1:
+		say "You [if H is shoes]manage to jump whilst in your [ShoeType of H][otherwise]jump a bit clumsily[end if] and the dildo successfully exits you! ...But then you fall back on it hard... and it slips into your [asshole]! [if Y is creampie pole trap]As you land back the dildo, it squirts warm [semen] into your [variable F]![otherwise]You basically just gave yourself a [']wrong hole surprise[']![end if]";
+		dislodge Y;
+		now F is asshole;
+		now Y is penetrating F;
+		ruin F; [double ruining!]
+		FearUp 15;
+	otherwise:
+		say "You [if H is shoes]manage to jump whilst in your [ShoeType of H][otherwise]jump a bit clumsily[end if] and the dildo very nearly exits you, but then you fall back on it hard! [if Y is creampie pole trap]As you fuck yourself with the dildo, it squirts even more warm [semen] into your [variable F]![otherwise]You basically just fucked yourself with the dildo![end if][line break][if the bimbo of the player < 14]Damn, maybe try again?[otherwise][line break][second custom style]Again again![roman type][line break][end if]";
 	if Y is creampie pole trap:
 		get creampie cutscene of Y;
 		if F is vagina, PussyFill 2;

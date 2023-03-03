@@ -181,7 +181,7 @@ To say ClothingDesc of (C - black-fetish-cheerleader-outfit):
 Definition: black-fetish-cheerleader-outfit is black themed: decide yes.
 
 
-denim-overalls is a cheerleader outfit. Understand "overalls" as denim-overalls. denim-overalls is very low cut. denim-overalls is denim. denim-overalls is unskirted. denim-overalls is crotch-intact. denim-overalls is leg covering. denim-overalls is arm exposing. denim-overalls is normally-partially-nipple-covering.
+denim-overalls is a cheerleader outfit. Understand "overalls" as denim-overalls. denim-overalls is low cut. denim-overalls is denim. denim-overalls is unskirted. denim-overalls is crotch-intact. denim-overalls is leg covering. denim-overalls is arm exposing. denim-overalls is normally-partially-nipple-covering.
 
 Figure of denim overalls is the file "Items/Clothes/Upper/Special/Cheerleader/cheerleader9.png".
 
