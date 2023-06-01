@@ -21,9 +21,14 @@ Displays text when a male player has a shameful anal orgasm
 
 +!]
 To say ProstateOrgasmFlav:
-	let M be a random monster penetrating asshole;
-	if M is monster, compute prostate orgasm hijack of M;
-	otherwise say DefaultProstateOrgasmFlav.
+	let A be a random monster penetrating asshole;
+	let M be a random masturbating the player monster;
+	if M is monster:
+		compute masturbation climax of M;
+	otherwise if A is monster:
+		compute anal orgasm hijack of A;
+	otherwise:
+		say DefaultProstateOrgasmFlav.
 
 [!<ComputeProstateOrgasmHijackOfMonster>+
 
@@ -49,9 +54,14 @@ Displays text when the player experiences a shameful anal orgasm
 
 +!]
 To say AnalOrgasmFlav:
-	let M be a random monster penetrating asshole;
-	if M is monster, compute anal orgasm hijack of M;
-	otherwise say DefaultAnalOrgasmFlav.
+	let A be a random monster penetrating asshole;
+	let M be a random masturbating the player monster;
+	if M is monster:
+		compute masturbation climax of M;
+	otherwise if A is monster:
+		compute anal orgasm hijack of A;
+	otherwise:
+		say DefaultAnalOrgasmFlav.
 
 [!<ComputeAnalOrgasmHijackOfMonster>+
 
@@ -110,9 +120,14 @@ Displays text when the player experiences a shameful vaginal orgasm
 
 +!]
 To say VaginalOrgasmFlav:
-	let M be a random monster penetrating vagina;
-	if M is monster, compute vaginal orgasm hijack of M;
-	otherwise say DefaultVaginalOrgasmFlav.
+	let V be a random monster penetrating vagina;
+	let M be a random masturbating the player monster;
+	if M is monster:
+		compute masturbation climax of M;
+	otherwise if V is monster:
+		compute vaginal orgasm hijack of V;
+	otherwise:
+		say DefaultVaginalOrgasmFlav.
 
 [!<ComputeVaginalOrgasmHijackOfMonster>+
 
@@ -163,13 +178,29 @@ To breasts orgasm shamefully:
 
 [Triggers from femdom/sissydom where the player is on the bottom.]
 To penis orgasm shamefully:
-	say "[if the player is unable to orgasm so soon]Despite your lack of arousal you[otherwise]You[end if] feel a wave of pleasure and your [if the player is upright]knees buckle[otherwise]muscles tense then relax[end if] as you [one of]cum hard[or]climax[or]orgasm[at random].[roman type][line break]";
+	say PenisOrgasmFlav;
 	orgasm;
 	[punish shameful male orgasm; For now, this doesn't reduce penis size or trigger TG]
 	if there is a live thing penetrating penis, PenisObedienceUp 1;
 	slowSexAddictUp 1 + the number of live things penetrating face;
 	[if newbie tips is 1, say shameful tip;]
 	if the player is upright, check orgasm kneeling.
+
+To say PenisOrgasmFlav:
+	[let P be a random monster penetrating penis;]
+	let M be a random masturbating the player monster;
+	if M is monster:
+		compute masturbation climax of M;
+	[otherwise if V is monster:
+		compute penis orgasm hijack of M;]
+	otherwise:
+		say DefaultPenisOrgasmFlav.
+
+To say DefaultPenisOrgasmFlav:
+	say DefaultOrgasmFlav.
+
+To say DefaultOrgasmFlav:
+	say "[if the player is unable to orgasm so soon]Despite your lack of arousal you[otherwise]You[end if] feel a wave of pleasure and your [if the player is upright]knees buckle[otherwise]muscles tense then relax[end if] as you [one of]cum hard[or]climax[or]orgasm[at random].[roman type][line break]".
 
 To punish shameful male orgasm:
 	if the player is not in a predicament room:
@@ -413,9 +444,10 @@ This is the monster orgasm cutscene rule:
 	if M is monster and image cutscenes > 0, get orgasm image of M in a random fuckhole penetrated by M.
 The monster orgasm cutscene rule is listed last in the orgasm resolution rules.
 
-This is the orgasm wisp rule:
-	trigger orgasm-wisp-trigger.
-The orgasm wisp rule is listed last in the orgasm resolution rules.
+This is the orgasm quest rule:
+	trigger orgasm-wisp-trigger;
+	progress quest of anal-orgasm-quest.
+The orgasm quest rule is listed last in the orgasm resolution rules.
 
 This is the drill orgasm cutscene rule:
 	let D be a random drill pole trap penetrating a fuckhole;
@@ -427,9 +459,19 @@ This is the update arousal orgasm resolution rule:
 	update arousal. [This prevents us from updating the player next turn saying 'did you know, you're less horny now!']
 The update arousal orgasm resolution rule is listed last in the orgasm resolution rules.
 
+This is the diaper quest faerie orgasm resolution rule:
+	if diaper quest is 1 and the class of the player is faerie:
+		say "[one of]Powerful[or]More[stopping] magic courses up through your [vagina] to the rest of your body!";
+		MagicPowerUp 1;
+		progress quest of faerie-orgasms-quest.
+The diaper quest faerie orgasm resolution rule is listed last in the orgasm resolution rules.
+
+diaperOrgasmCount is a number that varies.
+
 This is the diaper orgasm resolution rule:
 	if diaper lover > 0:
 		let D be a random worn total protection diaper;
+		if D is diaper, increase diaperOrgasmCount by 1;
 		if the player is grossed out:
 			say "You can feel the gross smell in your nostrils being imprinted into your brain...";
 			if diaper focus > 0 and the raw sex addiction of the player < the raw diaper addiction of the player:
@@ -444,7 +486,8 @@ This is the diaper orgasm resolution rule:
 			otherwise if D is clean:
 				DiaperAddictUp 1;
 			otherwise:
-				DiaperAddictUp 2;
+				DiaperAddictUp 1;
+				SexAddictUp 1;
 		otherwise if the number of worn diaper is 0 and the number of changing the player monsters grabbing the player is 0:
 			if diaper quest is 1, SexAddictUp 1;
 			DiaperAddictDown 1.
@@ -472,7 +515,7 @@ This is the BBC orgasm resolution rule:
 						BBCAddictUp 1; [no tats left. Do it raw]
 				otherwise:
 					if a random number between 5 and 25 > the raw bbc addiction of the player, BBCAddictUp 1;
-			otherwise if M is human:
+			otherwise if M is human and M is not ultimate-lesson-actor:
 				if a random number between -1 and 7 < the raw bbc addiction of the player, BBCAddictDown 1.
 The BBC orgasm resolution rule is listed last in the orgasm resolution rules.
 
@@ -506,12 +549,6 @@ This is the hentai orgasm resolution rule:
 			if M > 2, cutshow figure of lactation orgasm 1 for breasts;
 		decrease the milk volume of breasts by M.
 The hentai orgasm resolution rule is listed last in the orgasm resolution rules.
-
-[This is the ass expulsion from orgasm rule:
-	if asshole is not actually occupied and the total squirtable fill of belly > 0 and currently-squirting is 0:
-		say "As you cum, you can't help but let go of your anal sphincter!";
-		AssSquirt.
-The ass expulsion from orgasm rule is listed last in the orgasm resolution rules.]
 
 This is the drilldo orgasm resolution rule:
 	if there is a dildo trap penetrating a fuckhole:

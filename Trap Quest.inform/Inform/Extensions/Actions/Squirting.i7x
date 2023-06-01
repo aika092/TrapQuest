@@ -33,7 +33,7 @@ Carry out squirting:
 			say "The [fill-colour of the noun] liquid is forced into your [vagina] but quickly flows out onto the ground.";
 	otherwise if the noun is penetrating asshole:
 		if the humiliation of the player < HUMILIATION-SHAMELESS - 3000, say "[one of]The humiliation hits you even before you've done the act, and your hand shakes as you move it to the bulb of the dildo.[or][stopping]";
-		humiliate SEVERE-HUMILIATION + MODERATE-HUMILIATION;
+		severeHumiliate;
 		if the fill-colour of the noun is creamy:
 			say "You give yourself an artificial anal creampie as the [semen] flows up your [asshole].";
 			AssFill 2;

@@ -93,7 +93,7 @@ To decide if (C - players-detached-dick) is pick-uppable:
 	if a random person holding players-detached-dick is a person, decide no;
 	decide yes.
 
-To decide what number is the price of (C - players-detached-dick):
+To decide what number is the original price of (C - players-detached-dick):
 	let X be the size of players-detached-dick + 1;
 	if the latex-transformation of the player < 3, increase X by 1;
 	decide on X.
@@ -264,7 +264,7 @@ To compute maybe drop dick by (M - a monster):
 				if M2 is shopkeeper:
 					say "[first custom style]'Since you didn't seem to want it, I'll shelve it again.'[roman type][line break]";
 					now players-detached-dick is in Dungeon41;
-					now players-detached-dick is store;
+					now the owner of players-detached-dick is shopkeeper;
 				otherwise:
 					say "Looks like you'll have to somehow [']persuade['] [printed name of M2] to give it back to you.";
 			otherwise: [no one has picked it up]
@@ -278,12 +278,12 @@ To compute maybe donate dick to shop by (M - a monster):
 		compute maybe drop dick by M; [drop dick here, if carried]
 		if players-detached-dick is pick-uppable: [On the ground, no one grabbed it]
 			if shopkeeper is in Dungeon41 and shopkeeper is alive and shopkeeper is undefeated:
-				now players-detached-dick is store;
+				now the owner of players-detached-dick is shopkeeper;
 				if the player is not in Dungeon41:
 					say "You feel a manly pair of hands pick up the [ShortDesc of players-detached-dick] and turn it over, tapping and rubbing it a few times. You feel them attach some sort of tag to it, then put it down on a hard surface.";
 				otherwise if M is not shopkeeper:
-					say "The shopkeeper takes the [ShortDesc of players-detached-dick] and nods. [speech style of shopkeeper]'Thanks for that, [M]. [if size of players-detached-dick < 3]It could make a fun novelty item[otherwise if size of players-detached-dick < 7]. It's a bit on the small size, but I might be able to sell it[otherwise]. Not the biggest I've seen, but it should fetch a fair price[end if].'[roman type][line break][big he of shopkeeper] [if players-detached-dick is store][one of]dusts off[or]repositions[or]checks[in random order] the price tag[otherwise]puts a price tag on it[end if] and sits it on [his of shopkeeper] shelf, while you gape in shock at this transaction.";
-					now players-detached-dick is store;
+					say "The shopkeeper takes the [ShortDesc of players-detached-dick] and nods. [speech style of shopkeeper]'Thanks for that, [ShortDesc of M]. [if size of players-detached-dick < 3]It could make a fun novelty item[otherwise if size of players-detached-dick < 7]. It's a bit on the small size, but I might be able to sell it[otherwise]. Not the biggest I've seen, but it should fetch a fair price[end if].'[roman type][line break][big he of shopkeeper] [if players-detached-dick is store][one of]dusts off[or]repositions[or]checks[in random order] the price tag[otherwise]puts a price tag on it[end if] and sits it on [his of shopkeeper] shelf, while you gape in shock at this transaction.";
+					now the owner of players-detached-dick is shopkeeper;
 				otherwise if M is shopkeeper:
 					say "The shopkeeper picks up [ShortDesc of players-detached-dick] and nods. [speech style of shopkeeper]'[if size of players-detached-dick < 3]This could make a fun novelty item[otherwise if size of players-detached-dick < 7]. A bit on the small size, but I might be able to sell it[otherwise]. Not the biggest I've seen, but it should fetch a fair price[end if].'[roman type][line break][big he of shopkeeper] puts a price tag on it and sits it on [his of M] shelf, while you gape in shock.";
 			otherwise if the player is in Dungeon41:
@@ -498,7 +498,7 @@ To describe detached dick dropping:
 	let R be the location of players-detached-dick;
 	if R is Dungeon41:
 		if shopkeeper is alive and shopkeeper is undefeated:
-			now players-detached-dick is store;
+			now the owner of players-detached-dick is shopkeeper;
 			say "It's at that moment you feel a powerful, manly hand grip your dick and lift it! You feel warm water (you hope!) running over it, then squirm as a soft cloth is repeatedly squeezed around your dick. Gawd! It's definitely still erect![line break]Then you feel it set down somewhere, and the hand release it.";
 			arouse 50; [We can't passively stimulate penis from shopkeeper because it would convert it to stimulating the vagina.]
 		otherwise:
@@ -1234,8 +1234,7 @@ To (M - a monster) wanders off with dick:
 	while M is in the location of the player:
 		regionally place M;
 	if the player is in Dungeon41: [Did this happen in the store?]
-		if players-detached-dick is store: [if it wasn't paid for...]
-			now players-detached-dick is stolen;
+		if the owner of players-detached-dick is shopkeeper: [if it wasn't paid for...]
 			if shopkeeper is in Dungeon41:
 				say "[one of]You stare at the shopkeeper, who appears not to have noticed [NameDesc of M] just stole [his of shopkeeper] dick. Uh, that is: [i]your[/i] dick, that somehow had wound up in [his of shopkeeper] shop. It's really your dick, not [his of shopkeeper]. That's not what you meant! [His of shopkeeper] dick is- You feel a prickle of sweat. You are [i]not[/i] going to finish that thought![or]Does the shopkeeper realise [NameDesc of M] just stole [his of shopkeeper] [ShortDesc of players-detached-dick]? You bite your lip: not [i][his of shopkeeper][/i]: that's really a [player-penis], and it really belongs to you! Though, staring at the massive build of the shopkeeper and [his of shopkeeper] commanding expression, you know it'd be a... [i]hard[/i] task to convince [him of shopkeeper] of that.[or]Has the shopkeeper realised [NameDesc of M] just disappeared with some of [his of shopkeeper] goods: namely, your dick, which currently looks like a [ShortDesc of players-detached-dick]? Will you get in trouble if you manage to persuade [him of M] to give it back to you?[or]The shopkeeper appears not to have noticed what [he of M] just did. Or did [he of M] pay and you didn't notice? Oh god, will [he of shopkeeper] blame you if you do get [NameDesc of M] to slip it back to you? And why is the thought of [him of M]... uh, [']giving['] it back to you got you squirming with excitement?[in random order][line break]";
 			otherwise if the shopkeeper is alive:

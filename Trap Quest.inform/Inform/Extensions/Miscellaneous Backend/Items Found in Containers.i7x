@@ -214,6 +214,9 @@ This is the autotaking continues rule:
 					try wearing I;
 				if I is worn:
 					do nothing;
+				otherwise if I is autobinding clothing and the player is not in a predicament room and I is unclash summonable:
+					say "[bold type]Suddenly, [NameDesc of I] disappears from your hands![roman type][line break]";
+					autobind I;
 				otherwise:
 					if I is not food and I is not bottle and I is not plentiful accessory, say "You add the [FullTitle of I] to your bag.";
 					otherwise say "You are now carrying the [FullTitle of I].";

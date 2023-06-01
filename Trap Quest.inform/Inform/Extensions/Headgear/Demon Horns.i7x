@@ -8,9 +8,14 @@ The printed name of demon horns is "[clothing-title-before]demon horns[clothing-
 
 Figure of demon horns 1 is the file "Items/Accessories/Head/demonhorns1.png".
 Figure of demon horns 2 is the file "Items/Accessories/Head/demonhorns2.png".
+Figure of demon horns 3 is the file "Items/Accessories/Head/demonhorns3.jpg".
 
 To decide which figure-name is the clothing-image of (C - demon horns):
 	if soulstone is worn, decide on figure of demon horns 2;
+	decide on figure of demon horns 1.
+
+To decide which figure-name is the examine-image of (C - demon horns):
+	if soulstone is worn, decide on figure of demon horns 3;
 	decide on figure of demon horns 1.
 
 To say ClothingDesc of (H - demon horns):
@@ -76,7 +81,10 @@ To compute succubus transformation:
 		now C is in pink wardrobe;
 	summon demon horns;
 	summon K;
-	if K is worn and demon horns is worn, now demon horns is biological;
+	if K is worn and demon horns is worn:
+		now demon horns is biological;
+		say "Your skin changes colour, to a demonic red tint... and you observe that the horns are not a fake piece of headgear, but real actual horns!!!";
+		cutshow Figure of demon horns 3 for demon horns;
 	now the soul addiction of the player is 1.
 
 cold souly is a number that varies.

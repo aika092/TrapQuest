@@ -18,7 +18,8 @@ To set up magic attribute of (C - an anal beads):
 	if R < 3 and diaper quest is 0, now C is temptation;
 	if R < 5 and the size of C < 6, now C is expansion;
 	if R is 5, now C is stumbling;
-	if R is 6, now C is refreshment.
+	if R is 6, now C is refreshment;
+	set up rare magic attribute of C.
 
 To uniquely destroy (T - an anal beads):
 	now the notch-taken of T is 0.
@@ -149,7 +150,7 @@ Carry out unplugging anal beads:
 		let F be a random orifice penetrated by the noun;
 		if the player is in danger:
 			say "Blood rushes to your head as you feel incredibly humiliated, submissively pulling the [PlugSize size of item described] bead[if N > 1]s[end if] out of your fuckhole, [if the notch-taken of the noun > N]creating a perverted show[otherwise]making it available[end if] for [NameDesc of a random combative monster]. Your cheeks turn a beetroot shade of red.";
-			humiliate 125;
+			strongHumiliate;
 			compute player submission;
 		if the girth of the noun > the openness of F + 2:
 			say "[if N > 3]You pull hard, hurting your [variable F] in the process. [otherwise if N > 2]You pull relatively hard, making yourself a little sore in the process. [end if]You hear a loud 'PLOP' as a [PlugSize size of the noun] bead comes out of your [variable F][if N is 2], followed shortly after by a second, quieter pop as another one of the [ShortDesc of the noun] slips out through your relaxed [variable F][otherwise if N > 2], followed shortly after by [N - 1] quieter pops as the other [ShortDesc of the noun] slip out through your relaxed [variable F][end if].";

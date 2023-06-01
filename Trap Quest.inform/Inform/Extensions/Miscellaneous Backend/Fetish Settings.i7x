@@ -270,11 +270,21 @@ To decide which number is super gag reflex:
 	if choice in row 82 of the Table of Player Options <= 0, decide on 0;
 	otherwise decide on choice in row 82 of the Table of Player Options.
 
-
+[
+0: Minimal grossness
+1: Foot licking only
+2: Ass-to-mouth and foot licking
+3: Drinking butt stuff too
+]
 To decide which number is grossness fetish:
 	if diaper quest is 1, decide on 0;
 	if choice in row 83 of the Table of Player Options <= 0, decide on 0;
 	otherwise decide on choice in row 83 of the Table of Player Options / 2.
+[
+0: Minimal A2M
+1: Anilingus and ass-to-mouth
+2: Drinking butt stuff too
+]
 To decide which number is a2m fetish:
 	if diaper quest is 1 or grossness fetish is 0, decide on 0;
 	decide on grossness fetish - 1.

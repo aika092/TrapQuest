@@ -78,6 +78,7 @@ To solve the puzzle:
 		make all directions possible for R;
 	let only-singles-left be 0;
 	let puzzleAttempts be 0;
+	let solvableRoomAttempts be 0;
 	while Terra Incognita is open:
 		let P be a random solvable room;
 		if P is nothing and only-singles-left is 0:
@@ -88,6 +89,7 @@ To solve the puzzle:
 			now P is a random solvable room;
 		if debugmode > 0, say "P is [P]. ";
 		if P is room:
+			increase solvableRoomAttempts by 1;
 			now target-puzzle-piece is P;
 			now chosen-puzzle-direction is a random empty puzzle socket direction;
 			if debugmode > 0, say "Direction is [chosen-puzzle-direction]. ";
@@ -110,6 +112,17 @@ To solve the puzzle:
 				otherwise:
 					[This means there is a room already there, it's just that this room isn't connected to it.]
 					flag chosen-puzzle-direction as impossible;
+				if solvableRoomAttempts > 1000:
+					now debugmode is 1;
+					if solvableRoomAttempts > 1010:
+						say "Alert! The game has encountered a game-breaking bug, it can't find a solution for the map puzzle to this region! It is trying to put [P] into the region but can't manage it. Please report this bug to the devs with the transcript above of the game trying to build this region.";
+						say "If you are a developer or tester or just curious, you can keep trying to build the map. Would you like to try to rebuild the map?";
+						if the player is consenting:
+							now solvableRoomAttempts is 0;
+						otherwise:
+							say "The game will now abandon trying to build this region. Return from whence you came; do not try to progress through it.";
+							now Terra Incognita is closed;
+							if the player is not a top donator, now debugmode is 0;
 		otherwise:
 			[We either have finished or need to reset]
 			if debugmode > 0, say "[bold type][line break]REGION COMPLETE. [number of unplaced puzzle piece rooms] rooms unused: [list of unplaced puzzle piece rooms][roman type][line break]";

@@ -62,6 +62,9 @@ Used in the setUpClothing function. Sets up the magic modifier for this clothing
 To set up magic state of (C - a clothing):
 	if C is alwaysSure, now C is sure;
 	if C is alwaysIdentified, now C is identified;
+	set up default magic state of C.
+
+To set up default magic state of (C - a clothing):
 	if C is discovered varied:
 		now the raw-magic-modifier of C is 0;
 		now C is bland;
@@ -72,6 +75,7 @@ To set up magic state of (C - a clothing):
 			increase the raw-magic-modifier of C by a random number between -1 and 1;
 			increase the raw-magic-modifier of C by a random number between -1 and 1;
 		set up BUC of C;
+		now C is blandness;
 		set up magic attribute of C.
 
 To set up BUC of (C - a clothing):
@@ -80,7 +84,13 @@ To set up BUC of (C - a clothing):
 	if R >= 7 and C is not cursed, now C is blessed.
 
 To set up magic attribute of (C - a clothing):
-	now C is blandness;
-	if a random number between 1 and 10 is unlucky, now C is provocation.
+	set up rare magic attribute of C.
+
+To set up rare magic attribute of (C - a clothing):
+	if C is blandness:
+		if a random number between 1 and 10 is unlucky:
+			now C is provocation;
+		otherwise if ((diaper quest is 0 and the player is a may 2023 top donator) or (diaper quest is 1 and the player is a may 2023 diaper donator)) and a random number between 0 and 24 <= unlucky:
+			now C is autobinding.
 
 Clothing Setup ends here.

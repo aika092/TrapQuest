@@ -148,7 +148,6 @@ title	subtable	description	toggle
 "Map Window: On / Off: [if map images > 0]ON[otherwise]OFF[end if]"	--	--	map images toggle rule
 "Loading Screens: On / Off: [if loading scenes is 1]ON[otherwise]OFF[end if]"	--	--	loading scenes toggle rule
 
-Figure of Demoness is the file "NPCs/Forest/Demoness/demoness2.png".
 Figure of Shopkeeper 1 is the file "NPCs/Dungeon/Shopkeeper/shopkeeper3.png". Figure of Shopkeeper 2 is the file "NPCs/Dungeon/Shopkeeper/shopkeeper3.png".
 Figure of Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator1.png".
 

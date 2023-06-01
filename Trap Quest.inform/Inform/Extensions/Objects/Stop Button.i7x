@@ -1,6 +1,6 @@
 Stop Button by Objects begins here.
 
-A stop button is a kind of thing. A stop button is usually not portable. 1 stop button is in Hotel36. The printed name of a stop button is "[TQlink of item described]STOP button[TQxlink of item described][verb-desc of item described]". The text-shortcut of stop button is "stp". Figure of stop button is the file "Env/Hotel/capsule1.png".
+A stop button is a kind of thing. A stop button is usually not portable. 1 stop button is in Hotel36. The printed name of a stop button is "[TQlink of item described]STOP button[TQxlink of item described][verb-desc of item described]". The text-shortcut of stop button is "stp". Figure of stop button is the file "Env/Hotel/capsule1.jpg".
 
 To decide which figure-name is the examine-image of (C - a stop button):
 	decide on figure of stop button.

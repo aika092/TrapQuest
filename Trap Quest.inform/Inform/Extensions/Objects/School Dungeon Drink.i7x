@@ -17,7 +17,7 @@ Check drinking school dungeon drink:
 Carry out drinking school dungeon drink:
 	allocate 6 seconds;
 	say "[one of]You put your lips around the [if diaper quest is 1]pacifier nub[otherwise]dildo[end if] and suck. It's a little humiliating but water fills your mouth and you happily drink it down.";
-	humiliate 50;
+	moderateHumiliate;
 	StomachWaterUp 2.
 
 School Dungeon Drink ends here.

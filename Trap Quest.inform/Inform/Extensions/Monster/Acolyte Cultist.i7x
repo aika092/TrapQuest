@@ -2,6 +2,8 @@ Acolyte Cultist by Monster begins here.
 
 An acolyte is a kind of monster. An acolyte is usually intelligent. An acolyte is usually female. Understand "cultist" as acolyte.
 
+A monster can be previously-cultist. [They were already a culist once]
+
 Definition: an acolyte is wenchy: decide yes.
 
 Definition: an acolyte is mansion dwelling: decide yes.
@@ -14,6 +16,7 @@ To say ShortDesc of (M - an acolyte):
 	say "cultist".
 
 A mindless acolyte is a kind of acolyte. A mindless acolyte is unintelligent. The entranced of a mindless acolyte is 1. A mindless acolyte is unconcerned.
+A mindless acolyte can be egged. [Has not yet given birth to a slimeball]
 A mindless acolyte has a monster called target-abductee.
 Definition: a mindless acolyte is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 To say ShortDesc of (M - a mindless acolyte):
@@ -69,6 +72,16 @@ Definition: an acolyte is a diaper wetter:
 	if diaper quest is 1, decide yes;
 	decide no.
 
+To compute toilet seeking of (M - a mindless acolyte):
+	if M is a diaper wetter:
+		compute diaper wetting of M;
+	otherwise if M is unleashed:
+		compute default toilet seeking of M;
+	otherwise:
+		if M is in the location of the player, say "[BigNameDesc of M] begins urinating, on the spot. A pool of [urine] collects between [his of M] knees, but [he of M] doesn't pay it any attention at all.";
+		UrinePuddleUp (the bladder of M / 200) in (the location of M);
+		now the bladder of M is 0.
+
 [TODO: update to reflect chant-duration]
 To say MonsterDesc of (M - an acolyte):
 	if diaper quest is 0, say "A veiled [man of M] in a sheer black robe. What you can see of [his of M] expression suggests [he of M][']s not exactly all there. Still, despite looking like [he of M] hasn't seen the sun in a few years [he of M] does seem to be in quite good shape and could be unexpectedly dangerous.";
@@ -120,6 +133,7 @@ To set up (M - a mindless acolyte):
 		now M is unleashed;
 	otherwise:
 		now M is unconcerned;
+		if pregnancy fetish is 1 or egg laying fetish is 1, now M is egged;
 	now M is in Mansion23;
 	now the target-abductee of M is M;
 	now the health of M is the maxhealth of M.
@@ -342,8 +356,8 @@ To compute kneeling reaction of (M - an acolyte):
 
 To compute diaper mess reaction of (M - an acolyte):
 	say "[BigNameDesc of M] solemnly chants [speech style of M]'Blessings be with you.'[roman type][line break]";
-	humiliate 200;
-	if voluntarySquatting is 1, humiliate 600.
+	severeHumiliate;
+	if voluntarySquatting is 1, ultraHumiliate.
 
 To say ToiletReactionFlav of (M - an acolyte):
 	say "[BigNameDesc of M] doesn't even flinch, as if watching you use the toilet is completely normal to [him of M].".
@@ -357,10 +371,10 @@ To say ClothesPeeReaction of (M - an acolyte):
 To say DiaperReaction of (M - an acolyte):
 	say "[BigNameDesc of M] slightly bows [his of M] head.[line break][speech style of M]'Amen.'[roman type][line break]".
 
-To resolve sudden appearance change of (M - clairvoyant acolyte):
+To check sudden objectification of (M - clairvoyant acolyte):
 	do nothing. [She could get you in an infinite loop if she became unfriendly while friendly-fucking]
 
-Definition: clairvoyant acolyte is unfriendly rather than friendly:
+Definition: clairvoyant acolyte is calculated unfriendly:
 	if it is not pacified and it is not friendly-fucking and (it is not normally annoyed or it is uniquely unfriendly), decide yes; ["annoyed" is the final level of relationship before unfriendly]
 	decide no.
 
@@ -411,6 +425,7 @@ To compute (L - a milking bench lever) pull of (M - an acolyte):
 				satisfy M;
 				compute mandatory room leaving of M;
 				cutshow monster-image of M;
+				cutshow figure of milking bench cutscene 6 for L;
 		otherwise:
 			if M is in the location of the player, say "[BigNameDesc of M] eyes up the lever on the wall.[line break][speech style of M]'[Azathot] wills that this bench remains on the [']enhancement['] setting.'[roman type][line break][big he of M] steps over to the lever, and pushes it up so that it is pointing to the green plus sign.";
 	now L is lever-pulled.
@@ -633,6 +648,12 @@ To compute standard damage of (M - a mindless acolyte):
 			if M is uninterested, say "[BigNameDesc of M][']s head snaps toward you, and [he of M] assumes an aggressive stance.";
 			interest M;
 			anger M;
+		otherwise if M is egged and the health of M < (the maxhealth of M / 4) and there is an off-stage slimeball:
+			say "[BigNameDesc of M][']s belly undusaltes and wobbles... [bold type]And then [he of M] lets out [one of]a gutteral groan[or]a soft moan[or]a mindless cooing sound[at random] as [one of]a ball of slime exits [his of M] vagina, suddenly and perhaps prematurely born into this world. [roman type]It begins to hop around, as if it's somehow alive[or]just like before, a living slimeball is birthed from [his of M] vagina[stopping]![roman type][line break]";
+			now M is not egged;
+			let S be a random off-stage slimeball;
+			set up S;
+			now S is in the location of M;
 		otherwise:
 			say "The cultist still does not seem to notice your presence.";
 			calm M;
@@ -697,6 +718,7 @@ To say BanishFleeFlav of (M - an acolyte):
 		otherwise:
 			let N be the target-abductee of M;
 			say "You recognize that voice - it's [NameDesc of N]!";
+			now N is previously-cultist;
 			if N is student:
 				say "[BigNameDesc of N] seems to be regaining some of [his of N] senses. [big he of N] flees towards the mansion entrance, likely never to be seen again.";
 			otherwise:
@@ -708,6 +730,7 @@ To say BanishFleeFlav of (M - an acolyte):
 					summon N in the dungeon;
 				otherwise:
 					summon N in the woods;
+				now the monstersetup of N is 0;
 			cutshow monster-image of N for M;
 
 To compute unique banishment of (M - an acolyte):
@@ -949,7 +972,7 @@ To compute unfriendly drink of (M - an acolyte):
 		compute unfriendly drink of M;
 	otherwise:
 		say "[if M is uninterested]You spot [NameDesc of M]! You beg [him of M][otherwise]You can't control yourself - you beg [NameDesc of M][end if] to give you something to drink. [big he of M] nods and pulls out a small cup of amber liquid. You snatch it from [him of M] and down it in one. You feel much less thirsty, but you somehow feel empty inside. The cultist nods at you and turns away.";
-		humiliate MODERATE-HUMILIATION;
+		moderateHumiliate;
 		StomachUp 2;
 		bore M;
 		now the stance of the player is 1;]

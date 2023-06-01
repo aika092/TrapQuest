@@ -99,6 +99,7 @@ To run the engine:
 		if AT is 1:
 			force allocate 6 seconds;
 			if ATflav is not "", say "[bold type][ATflav][roman type][line break]";
+			wait 75 ms before continuing;
 			if the number of entries in LR > 0:
 				repeat with R running through LR:
 					follow R; [This way, if the stored rule demands another turn, and adds another stored rule in, we don't truncate away that rule too early.]
@@ -251,9 +252,10 @@ To compute turn:
 		if april fools done is 0: [This stops us checking immobility and danger every single turn forever]
 			if the player is not immobile and the player is not in danger and earnings < starting-earnings - 480, compute april fools;
 	otherwise: [failsafe]
-		now earnings is 999999;
+		now earnings is 999909;
+		now last-puddle-cleanup is 999999;
 	compute MonsterSetUpFix;
-	if the player is not breathing this turn, say "You [if the suffocation of the player > 0]continue to [end if]hold your breath.";
+	if the player is holding-breath-this-turn, say "You [if the suffocation of the player > 0]continue to [end if]hold your breath.";
 	compute flight; [Flight stuff must go first and last - the concept is it's checking if anything that happened caused the player to start flying.]
 	if lagdebug is true:
 		say "Computing player [if the player is upright]standing[otherwise]kneeling[end if].";
@@ -288,8 +290,9 @@ To compute turn:
 	compute monster sleeping;
 	now time-seconds is local-seconds;
 	now time-earnings is local-earnings;
-	repeat with M running through alive dying monsters:
-		finally destroy M;
+	repeat with M running through alive monsters:
+		if M is dying, finally destroy M;
+		otherwise now M is recently-unknown; [reset what we know about the friendliness of the NPC]
 	if lagdebug is true:
 		say "Computing later time.";
 		wait 200 ms before continuing;
@@ -478,7 +481,7 @@ To compute drill damage:
 		stimulate F from D. [extra stimulation and chance of orgasm]
 
 To compute player kneeling:
-	if diaper quest is 0 and the location of the player is Dungeon19:
+	if diaper quest is 0 and the location of the player is Dungeon19 and the player is air breathing vulnerable:
 		say "While on your knees, you get a very strong whiff of the stench in this room.";
 		SmellGrossOut 4;
 		[if the soreness of asshole > 7:
@@ -486,7 +489,7 @@ To compute player kneeling:
 			now delayed fainting is 1;
 			now the soreness of asshole is 7;
 			now the fainting reason of the player is 3;]
-	if the player is able to breathe and detention chair is not grabbing the player:
+	if the player is able to recover and detention chair is not grabbing the player:
 		compute fatigue loss;
 	if the player is not vine fucked, compute vines kneeling;
 	otherwise compute vines fucking.
@@ -515,39 +518,51 @@ The breathing consequences rules is a rulebook.
 [breathing-this-turn is initially true.]
 player-breathing is initially true.
 ManuallyBreathing is an action applying to nothing.
+Check ManuallyBreathing:
+	if yourself is not needing to breathe:
+		now player-breathing is true;
+		say "You currently have no way (or need) to breathe at all!" instead.
 Carry out ManuallyBreathing:
 	if player-breathing is false:
-		say "You will now [bold type]breathe normally[roman type] when time moves forward.";
+		say "You will now [bold type]breathe normally[if tubesuit is worn] through your tubesuit mask[end if][roman type] when time moves forward.";
 		now player-breathing is true;
 	otherwise:
 		say "You will now try to [bold type]hold your breath[roman type] when time moves forward until you use the [bold type]breathe[roman type] command or run out of oxygen.";
 		now player-breathing is false.
 Understand "breath", "breathe", "hold breath", "hold my breath", "hold breathe", "hold my breathe" as ManuallyBreathing.
 
+Definition: yourself is air breathing vulnerable:
+	if the player is not needing to breathe, decide no;
+	if tubesuit is worn, decide no;
+	decide yes.
 Definition: yourself is needing to breathe:
 	if the class of the player is living sex doll, decide no;
 	decide yes.
 
 Definition: yourself is able to breathe:
-	if player-breathing is false, decide no;
+	if player-breathing is false or the player is not air breathing vulnerable, decide no;
 	follow the breathing blocking rules;
 	if the rule succeeded, decide no;
 	decide yes.
-Definition: yourself is breathing this turn:
+Definition: yourself is able to recover:
+	if the player is not air breathing vulnerable or the player is able to breathe, decide yes;
+	decide no.
+Definition: yourself is holding-breath-this-turn: [if we return yes, we output flavour about holding our breath]
+	if the player is not needing to breathe, decide no;
 	follow the breathing blocking rules;
-	if the rule succeeded, decide no;
+	if the rule succeeded, decide yes;
 	if the suffocation of the player >= the suffocation limit of the player:
 		say "You can't bring yourself to hold your breath any longer!";
 		now player-breathing is true;
-		decide yes;
-	if player-breathing is false, decide no;
+		decide no;
+	if player-breathing is false, decide yes;
 	[follow the breathing blocking decision rules;
 	if breathing-this-turn is false:
 		say "Do you want to hold your breath?";
 		if the player is consenting, decide no;
 		now breathing-this-turn is true;
 		follow the breathing consequences rules;]
-	decide yes.
+	decide no.
 
 A breathing blocking rule (this is the can't breathe during deepthroat rule):
 	if there is an actual throater thing penetrating face, rule succeeds;
@@ -559,12 +574,12 @@ To decide which number is the suffocation limit of the player:
 	decide on 8.
 
 Definition: yourself is able to faint from suffocation:
-	if diaper quest is 1 or the player is not needing to breathe or (sex fainting is 0 and bulging-slutty-sister is not penetrating face), decide no;
+	if diaper quest is 1 or the player is not air breathing vulnerable or (sex fainting is 0 and bulging-slutty-sister is not penetrating face), decide no;
 	decide yes.
 
 An all later time based rule (this is the breathe or suffocate rule):
 	if the player is needing to breathe:
-		if the player is able to breathe:
+		if the player is able to breathe or the player is not air breathing vulnerable:
 			if the suffocation of the player > 0:
 				let M be a random monster penetrating face;
 				if M is monster:
@@ -573,7 +588,7 @@ An all later time based rule (this is the breathe or suffocate rule):
 					decrease the suffocation of the player by 1;
 					if the suffocation of the player <= 0, say "You have regained all your oxygen and are now able to breathe normally again.";
 					otherwise say "[one of]You are able to take a gasp of fresh air! Thank goodness! [or]You breathe quickly through an open mouth. [or]You breathe heavily. [stopping]You feel a little better, but are still [if the suffocation of the player > 2][bold type]seriously[roman type] [otherwise if the suffocation of the player is 1]a little [end if]weakened from being out of breath.";
-			follow the breathing consequences rules;
+			if the player is air breathing vulnerable, follow the breathing consequences rules;
 		otherwise if the suffocation of the player >= the suffocation limit of the player:
 			if the player is able to faint from suffocation:
 				say "After giving a final frantic wiggle[if there is a monster penetrating face or there is a monster grabbing the player] to try and escape[end if], your brain gives up. You [if watersports mechanics is 1]wet yourself and then [end if]pass out.";
@@ -594,7 +609,7 @@ An all later time based rule (this is the breathe or suffocate rule):
 			if M is monster, compute extra suffocation of M.
 
 To compute extra suffocation of (M - a monster):
-	if the player is needing to breathe:
+	if the player is air breathing vulnerable:
 		let R be a random number between -2 and the reaction of the player;
 		if debuginfo > 0, say "[input-style]Additional suffocation (from [MediumDesc of M]) avoidance check: RNG between -2 and player reaction ([reaction of the player]) = [R] | -0.5[roman type][line break]";
 		if R < 0:
@@ -765,7 +780,7 @@ The hypno triggers rules is a rulebook.
 This is the great ones hypno rule:
 	if hypno-trigger is "great one" and player-hypno-great is 1:
 		say "Just thinking about the [great ones] makes you feel how powerless you are in comparison to them!";
-		humiliate 20.
+		slightHumiliate.
 The great ones hypno rule is listed in the hypno triggers rules.
 
 This is the present-for-oral hypno rule:

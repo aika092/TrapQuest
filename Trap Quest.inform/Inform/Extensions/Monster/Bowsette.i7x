@@ -88,7 +88,7 @@ To bowsettify (M - a monster):
 		if the player is getting lucky:
 			now the temperament of bowsette is 2;
 			say "I feel... AMAZING! Oh, yes, thank you, [NameBimbo]... I like this new form very much.'[roman type][line break][GotLuckyFlav]";
-			now the favour of bowsette is the favour of M;
+			FavourSet bowsette to the favour of M;
 		otherwise:
 			now the temperament of bowsette is 1;
 			say "I feel... HORNY! Oh, yes, so very horny! It's time for Bowsette to FUCK!!! Starting with you...'[roman type][line break]";
@@ -306,6 +306,29 @@ Part 3 - Combat
 		say "[variable custom style][muffled sounds][roman type][line break]".]
 
 Section 1 - Protect and Attack
+
+To compute tripping attack of (M - bowsette):
+	if egg laying fetish is 1 and the total fill of belly <= belly limit - 4 and a random number between 0 and 2 < the temperament of M:
+		say "[speech style of M]'[one of]Get egged[or]Have another turtle egg[stopping]!'[roman type][line break][BigNameDesc of M] suddenly cups [his of M] hands together and shoots a blast of magic towards your belly. Your innards experience excruciating cramping as they are forced to painfully stretch, thanks to the suddenly introduction of a giant egg, directly into your poor colon!";
+		increase the large egg count of belly by 1;
+		add M to the large-egg-origins of belly;
+		PainUp 25;
+		if the player is prone:
+			trigger trip-wisp-trigger;
+			check attack of M;
+		otherwise:
+			say MonsterFailedTripFlav of M;
+	otherwise:
+		say MonsterTripAnnounceFlav of M;
+		let D be the tripping roll of M;
+		if (D >= the dexterity of the player and the blind-status of M is not 1) or tutorial is 1:
+			say MonsterTrippedFlav of M;
+			try kneeling;
+			if the player is prone and tutorial is 0:
+				trigger trip-wisp-trigger;
+				check attack of M;
+		otherwise:
+			say MonsterFailedTripFlav of M.
 
 To compute (M - bowsette) protecting against (X - a monster):
 	if M is ally:

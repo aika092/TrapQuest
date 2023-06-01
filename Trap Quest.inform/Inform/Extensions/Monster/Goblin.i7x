@@ -8,6 +8,7 @@ Definition: a goblin is presenting as male:
 
 Definition: a goblin is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 Definition: a goblin is seducable: decide no.
+Definition: a goblin is a urinater: decide no.
 
 Figure of green goblin is the file "NPCs/Mansion/Goblin/goblin1a.jpg".
 Figure of green goblin male is the file "NPCs/Mansion/Goblin/goblin1b.jpg".
@@ -62,7 +63,7 @@ To set up (M - a goblin):
 	now the monstersetup of M is 1;
 	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M;
-	now the favour of M is 99.[always start at max favour]
+	FavourSet M to 99.[always start at max favour]
 
 To decide which number is the starting difficulty of (M - a goblin):
 	decide on 8.
@@ -82,6 +83,11 @@ To check consensual submissive sex of (M - a goblin):
 
 To say PresentFriendlyRejectionFlav of (M - a goblin):
 	say "[speech style of M]'That's not how this works, hun. You won, fair and square. So, [if M is male]no dick for you[otherwise]I get to be the bottom[end if].'[roman type][line break]".
+
+To compute labour to (M - a goblin):
+	compute pregnancy clothing displacement;
+	say "[PregFlav]You feel yourself start to give birth. You feel a burning desire for the father of your goblin child to appear, but nobody does, and without [NameDesc of M] there to assist with the delivery you feel yourself begin to pass out due to the pain. In your groggy state you think you see some cherubic angels appear and begin to take the baby up into the heavens.[line break][second custom style]'Don't worry [TitleBimbo], we'll take care of this one for you. Good luck on your quest!'[roman type][line break]When you properly regain your senses, there are no babies, no cherubs, just you on the floor with a rapidly deflating belly and your vaginal juices sprayed across the ground below your crotch.[if the pregnancy rate of the player is 1][line break]Deep down, you can feel your womb crying out to begin the process all over again.[end if]";
+	if the pregnancy rate of the player < 2, increase the pregnancy rate of the player by 1.
 
 Part 2 - Painting
 

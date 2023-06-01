@@ -5,6 +5,7 @@ A wench is a kind of monster. A wench is intelligent. The wench has a number cal
 A horny-wench is a kind of wench.
 
 Definition: a wench is willing to do oral: decide yes.
+Definition: a wench is willing to do licking: decide no. [That's essentially what her oral routine is, after all!]
 
 Definition: a wench is raunchy: decide yes.
 
@@ -145,7 +146,10 @@ To set up (M - a wench):
 	reset M;
 	now the monstersetup of M is 1;
 	add white-bodice to the banishItems of M, if absent;
-	add a random bag lunch to the tradableItems of M;
+	let baglunchlisted be false;
+	repeat with X running through the tradableItems of M:
+		if X is bag lunch, now baglunchlisted is true;
+	if baglunchlisted is false, add a random bag lunch to the tradableItems of M;
 	now the raw difficulty of M is the starting difficulty of M;
 	if a2m fetish > 1, now the creampieTimer of M is 300;
 	now the health of M is the maxhealth of M;
@@ -421,16 +425,16 @@ To say WaitingFlav of (M - a wench):
 	otherwise if the semen taste addiction of the player < 11:
 		say "[one of]You are surprised with how calm you feel about the idea of swallowing the [semen] dripping out of [NameDesc of M][']s holes.[or]You wait obediently, convincing yourself it's because you have no other choice, and not because you are starting to enjoy the taste of [semen].[or][line break][variable custom style]'I don't care if I have to eat you out, but please don't stay so long that you make me faint.'[roman type][line break][or][line break][variable custom style]'Okay I'll lick it out of you but only because you're forcing me. I'm not a [semen] craving addict like you.'[roman type][line break][or][if the sex addiction of the player < 11]You try not to think about[otherwise]You find yourself thinking about[end if] all the [manly-penis]s that must have been the source of that much [semen].[or][if the player is feeling dominant]Internally you feel disgusted by the idea of [him of M] sitting on your face, but[otherwise]You[end if] find yourself licking your lips in anticipation.[in random order]";
 	otherwise:
-		say "[one of][if the player is feeling dominant]You are stunned with indecision - you don't want to have to lick [him of M] out but you do love the idea of getting to swallow some more [semen].[otherwise]You stared at [his of M] [semen] dripping filled [HoleDesc of M] and lick your lips greedily. It's like Christmas come early![end if][or]You stare at [NameDesc of M][']s [semen] coated [if lady fetish is 2]pussy lips and [end if]thighs, and find yourself licking your lips in anticipation.[line break][second custom style]'It's a tough job, but somebody's got to do it.'[roman type][line break][or][line break][second custom style]'I do love [semen]...'[roman type][line break][or][line break][second custom style]If [he of M] thinks I'm not going to enjoy swallowing that [semen], [he of M]'s sorely mistaken![roman type][line break][or][line break][second custom style]'I'm always up for getting another taste of a stranger's [semen]!'[roman type][line break][in random order]".
+		say "[one of][if the player is feeling dominant]You are stunned with indecision - you don't want to have to lick [him of M] out but you do love the idea of getting to swallow some more [semen].[otherwise]You stared at [his of M] [semen] dripping filled [HoleDesc of M] and lick your lips greedily. It's like Christmas come early![end if][or]You stare at [NameDesc of M][']s [semen] coated [if lady fetish is 2]pussy lips and [end if]thighs, and find yourself licking your lips in anticipation.[line break][second custom style]'It's a tough job, but somebody's got to do it.'[roman type][line break][or][line break][second custom style]'I do love [semen]...'[roman type][line break]You say out loud.[or][line break][second custom style]If [he of M] thinks I'm not going to enjoy swallowing that [semen], [he of M]'s sorely mistaken![roman type][line break][or][line break][second custom style]'I'm always up for getting another taste of a stranger's [semen]!'[roman type][line break]You announce happily.[in random order]".
 
 To compute flying player taunting of (M - a wench):
 	if a random number from 1 to 6 is 1:
 		say "[BigNameDesc of M] jeers at you.[line break][speech style of M]'[one of]Look at this [if weight gain fetish is 1]fat [end if]bitch stuck on the ceiling! Haha![or]When you get down I'll show you who's boss![or]I can't believe you're still up there![or]I hope you're as disgusted with yourself as I am with you. You can't even move![or]What kind of dumb bitch gets [himself of the player] stuck on the ceiling?[or]You look absolutely disgraceful, you know that, right?[or][if weight gain fetish is 1]Fatty[otherwise]Someone[end if][']s going to get a pounding when [he of the player] gets back down here![in random order]'[roman type][line break][if the humiliation of the player < 17500]You [one of]wince[or]shudder[or]cringe[purely at random] with shame.";
-		humiliate 20.
+		slightHumiliate.
 
 To say LandingTaunt of (M - a wench):
 	say "[BigNameDesc of M] giggles.[line break][speech style of M]'That's it, come here fatty...'[roman type][line break]";
-	humiliate 50.
+	moderateHumiliate.
 
 The wench priority attack rules is a rulebook. The priority attack rules of a wench is usually the wench priority attack rules.
 
@@ -557,6 +561,7 @@ This is the wench asscum cup punishment rule:
 			dump champagne-glass;
 		now the fill-colour of champagne-glass is creamy;
 		DoseUp champagne-glass;
+		now champagne-glass is anal-origin;
 		now M is inseminating champagne-glass;
 		say "[BigNameDesc of M] squats over the glass and allows a thick glob of [semen] to ooze out of [his of M] asshole and fill [NameDesc of champagne-glass], before handing it back to you.";
 		cutshow figure of wench cutscene 9 for M;
@@ -627,7 +632,7 @@ To compute brainWashedGreeting of (M - a wench):
 To bbc-trainingUp (M - a wench) by (N - a number):
 	if interracial fetish is 1:
 		increase the bbc-training of M by N;
-		if the bbc-training of M > 4, unseal QoS wench from M.
+		if the bbc-training of M >= 3, unseal QoS wench from M.
 
 To unseal QoS wench from (M - a monster):
 	set up QoS wench;
@@ -646,7 +651,7 @@ To decide which number is the bartering value of (T - a submissive collar) for (
 
 To compute monstermotion of (M - a wench):
 	if QoS wench is not alive and shopkeeper is alive:
-		if the bbc-training of M < 2 or M is not in Dungeon41:
+		if the bbc-training of M < 1 or M is not in Dungeon41:
 			compute room leaving of M;
 		otherwise if M is in the location of the player:
 			if M is in Dungeon41:
@@ -746,7 +751,7 @@ To compute facial sex of (M - a wench):
 		if there is worn perceived unmessed knickers, compute state check of a random worn messed knickers;
 	otherwise if there is a worn diaper:
 		say "[BigNameDesc of M] lovingly rubs your diaper[one of] from [his of M] advantageous position[or][stopping].[line break][speech style of M]'[one of]What's this? Why are you wearing a nappy, honey? Are you having potty problems?'[or][DiaperHumiliation of M][stopping][roman type][line break]";
-		humiliate 200;
+		severeHumiliate;
 		passively stimulate vagina from M.
 
 To compute unique facesit submission effect of (M - a wench):
@@ -1643,7 +1648,7 @@ To compute unfriendly drink of (M - a wench):
 	StomachSemenUp a random number between 1 and 2;
 	bore M for 400 seconds;
 	now the stance of the player is 1;
-	humiliate 250.]
+	severeHumiliate.]
 
 Part 5 - Trading
 

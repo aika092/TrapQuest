@@ -11,7 +11,8 @@ To explain appearance:
 	now appearance-explained is 0.
 
 To decide which number is the appearance of the player: [Update values first. Forces a new line if triggered in the middle of a sentence; consider just using saved appearance and fingers crossed it's not horribly inaccurate.]
-	potentially update appearance and cringe levels;
+	[potentially update appearance and cringe levels;]
+	if lagdebug is true, say "CHECKING APPEARANCE. ";
 	decide on the saved appearance of the player.
 
 To decide which number is the saved appearance of the player: [When an NPC looks at the player, how slutty do they look?]
@@ -28,20 +29,28 @@ To decide which number is the saved appearance of the player: [When an NPC looks
 	if A > 20, decide on 20;
 	decide on A.
 
+Definition: a thing is currently-appearance-influencing:
+	if it is carried and it is currently-not-in-bag, decide yes;
+	decide no.
+Definition: a wearthing is currently-appearance-influencing:
+	if it is worn, decide yes;
+	if it is carried and it is currently-not-in-bag, decide yes;
+	decide no.
+Definition: a body part is currently-appearance-influencing:
+	decide yes.
+
+outrage-level-counts is a list of numbers that varies.
+
 To decide which number is cumulative-outrage-level:
 	let A be calculated-appearance-outrage-level; [Outrage of the lewdest worn thing / exposed body part]
 	let A2 be A / 2; [Half outrage of lewdest thing, i.e. total outrage if this is the only lewd thing]
 	let A3 be A - A2; [Difference between half outrage and full outrage (will either be same as A2 or A2+1 depending on whether A is odd or even)]
-	let N be 0; [How many items are at least half as lewd as A?]
-	let maxSimilarItems be 4;
-	repeat with C running through worn wearthings:
-		if the outrage of C >= A2, increase N by 1;
-	repeat with C running through carried currently-not-in-bag things:
-		if the outrage of C / 2 >= A2, increase N by 1;
-	repeat with C running through body parts:
-		if the outrage of C >= A2, increase N by 1;
-	if N > maxSimilarItems, now N is maxSimilarItems;
-	decrease A by (A3 * (maxSimilarItems - N)) / maxSimilarItems; [The more items there are within 50% of A, the less we subtract from A. And if there are lots of lewd items within 50% of A, appearance hits its max value for this item, i.e. its raw outrage rating. If N is 0 then we decrease A by A3. If N is 4 we decrease A by 0.]
+	let N be -1; [How many items are at least half as lewd as A?]
+	[let maxSimilarItems be 4;] [optimized by just hardcoding the number 4 in everywhere]
+	repeat with X running from A2 to A:
+		if N < 4, increase N by entry X in outrage-level-counts; [if it's over 4, we don't need to keep doing this]
+	if N > 4, now N is 4;
+	decrease A by (A3 * (4 - N)) / 4; [The more items there are within 50% of A, the less we subtract from A. And if there are lots of lewd items within 50% of A, appearance hits its max value for this item, i.e. its raw outrage rating. If N is 0 then we decrease A by A3. If N is 4 we decrease A by 0.]
 	if appearance-explained is 1, say "(cumulative outrage level is [A]) ";
 	if A > 20, decide on 20;
 	decide on A.
@@ -70,22 +79,16 @@ To decide which number is appearance-outrage-level:
 	let O be 0;
 	now appearance-outrage-target is arms;
 	now second-appearance-outrage-target is arms;
-	repeat with C running through worn wearthings:
+	let OC be 0;
+	truncate outrage-level-counts to 0 entries;
+	repeat with N running from 1 to 20:
+		add 0 to outrage-level-counts;
+	repeat with C running through currently-appearance-influencing things:
 		if appearance-explained is 1 and debugmode > 1, say "Looking at [C].";
-		let OC be the outrage of C; [to make sure we only spend the CPU cycles to calculate it once]
+		now OC is the outrage of C; [to make sure we only spend the CPU cycles to calculate it once]
+		if C is carried and C is currently-not-in-bag, now OC is OC / 2;
 		if appearance-explained is 1 and debugmode > 1, say "Outrage is [OC].";
-		if OC > O:
-			now O is OC;
-			now second-appearance-outrage-target is appearance-outrage-target;
-			now appearance-outrage-target is C;
-	repeat with C running through currently-not-in-bag things:
-		let OC be the outrage of C / 2; [to make sure we only spend the CPU cycles to calculate it once]
-		if OC > O:
-			now O is OC;
-			now second-appearance-outrage-target is appearance-outrage-target;
-			now appearance-outrage-target is C;
-	repeat with C running through body parts:
-		let OC be the outrage of C; [to make sure we only spend the CPU cycles to calculate it once]
+		if OC > 0, now entry OC in outrage-level-counts is (entry OC in outrage-level-counts + 1);
 		if OC > O:
 			now O is OC;
 			now second-appearance-outrage-target is appearance-outrage-target;
@@ -151,9 +154,11 @@ To potentially update appearance and cringe levels:
 	follow the appearance needs updating rules;
 	if the rule succeeded:
 		update appearance level;
-		follow the appearance validation check update rules. [Update the values for items worn etc.]
+		[follow the appearance validation check update rules.] [Update the values for items worn etc.]
+
 An all later time based rule (this is the update appearance and cringe rule):
-	potentially update appearance and cringe levels.
+	[potentially update appearance and cringe levels.]
+	update appearance level.
 
 To update appearance level:
 	now calculated-appearance-outrage-level is appearance-outrage-level;

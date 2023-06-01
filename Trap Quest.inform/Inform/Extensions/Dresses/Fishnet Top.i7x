@@ -11,7 +11,8 @@ To decide which number is the initial outrage of (C - a fishnet top):
 To set up magic attribute of (C - a fishnet top):
 	if a random number between 1 and 3 is 1, now C is endurance;
 	if a random number between 1 and 3 is 1, now C is dominance;
-	if a random number between 1 and 3 is 1, now C is protection.
+	if a random number between 1 and 3 is 1, now C is protection;
+	set up rare magic attribute of C.
 
 To say ShortDesc of (C - a fishnet top):
 	say "lewd fishnet top".

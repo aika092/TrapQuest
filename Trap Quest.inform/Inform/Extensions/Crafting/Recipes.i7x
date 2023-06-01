@@ -65,6 +65,9 @@ To decide which object is the recipe of (N - a number):
 		if the recipe-key of R is N, decide on R;
 	decide on nothing.
 
+To say ShortRecipeDesc of (C - a thing):
+	say ShortDesc of C.
+
 [Not actually a recipe but this seems like a sensible place to put this code]
 
 Recipe for latex curse reversal is a kind of thing. A recipe for latex curse reversal is usually portable. The printed name of recipe for latex curse reversal is "[TQlink of item described]recipe for latex curse reversal[shortcut-desc][TQxlink of item described][verb-desc of item described]". There is 1 recipe for latex curse reversal. The text-shortcut of recipe for latex curse reversal is "rlc".

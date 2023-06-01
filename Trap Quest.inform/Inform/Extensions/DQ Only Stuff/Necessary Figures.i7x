@@ -10,7 +10,7 @@ Figure of agent camera cutscene 2 is the file "NPCs/MultiFloor/Agent/cutscene-ag
 
 Figure of bianca defeated is the file "NPCs/School/Teacher/teacher3c.png".
 
-Figure of demoness cutscene 15 is the file "Special/Cutscene/cutscene-demoness-dq-facesit1.jpg".
+Figure of demoness cutscene 15 is the file "NPCs/Forest/Demoness/cutscene-demoness-dq-facesit1.jpg".
 Figure of detention chair is the file "Env/School/detentionchair2.jpg".
 
 Figure of dominatrix 1 is the file "NPCs/Hotel/Dominatrix/diapernatrix1.jpg".
@@ -87,6 +87,16 @@ Figure of nintendolls gameshow 4 is the file "Special/Epilogue/epilogue-nintendo
 
 Figure of female orc is the file "NPCs/Dungeon/Orc/orc2b.png".
 
+
+Figure of white gross patron is the file "NPCs/Hotel/Patron/patron5a.png".
+Figure of black gross patron is the file "NPCs/Hotel/Patron/patron6a.png".
+Figure of femme white experienced patron is the file "NPCs/Hotel/Patron/patron3c.png".
+Figure of femme black experienced patron is the file "NPCs/Hotel/Patron/patron4c.png".
+Figure of femme white gross patron is the file "NPCs/Hotel/Patron/patron5b.png".
+Figure of femme black gross patron is the file "NPCs/Hotel/Patron/patron6c.png".
+Figure of femme white dickhead patron is the file "NPCs/Hotel/Patron/patron7c.png".
+Figure of femme black dickhead patron is the file "NPCs/Hotel/Patron/patron8c.png".
+
 Figure of pink smoke 0 is the file "Env/MultiFloor/smoke0.jpg".
 Figure of pink smoke 1 is the file "Env/MultiFloor/smoke1.jpg".
 Figure of pink smoke 2 is the file "Env/MultiFloor/smoke2.jpg".
@@ -97,12 +107,12 @@ To decide which figure-name is the examine-image of (T - pink smoke):
 	decide on figure of pink smoke 1.
 
 Figure of babhound is the file "NPCs/Mansion/Hound/hound3.png".
-Figure of Puppy Cutscene 1 is the file "Special/Cutscene/cutscene-puppy1.jpg".
-Figure of Puppy Cutscene 2 is the file "Special/Cutscene/cutscene-puppy2.jpg".
-Figure of Puppy Cutscene 3 is the file "Special/Cutscene/cutscene-puppy3.jpg".
-Figure of Puppy Cutscene 4 is the file "Special/Cutscene/cutscene-puppy4.jpg".
-Figure of Puppy Cutscene 5 is the file "Special/Cutscene/cutscene-puppy5.jpg".
-Figure of Puppy Cutscene 6 is the file "Special/Cutscene/cutscene-puppy6.jpg".
+Figure of Puppy Cutscene 1 is the file "NPCs/Mansion/Hound/cutscene-puppy1.jpg".
+Figure of Puppy Cutscene 2 is the file "NPCs/Mansion/Hound/cutscene-puppy2.jpg".
+Figure of Puppy Cutscene 3 is the file "NPCs/Mansion/Hound/cutscene-puppy3.jpg".
+Figure of Puppy Cutscene 4 is the file "NPCs/Mansion/Hound/cutscene-puppy4.jpg".
+Figure of Puppy Cutscene 5 is the file "NPCs/Mansion/Hound/cutscene-puppy5.jpg".
+Figure of Puppy Cutscene 6 is the file "NPCs/Mansion/Hound/cutscene-puppy6.jpg".
 
 Figure of Podium Cutscene 1 is the file "Special/Cutscene/cutscene-podium1.jpg".
 Figure of Podium Cutscene 2 is the file "Special/Cutscene/cutscene-podium2.jpg".
@@ -115,17 +125,18 @@ Figure of rank 3 candy messy is the file "NPCs/School/Student/student5eM.png".
 Figure of rank 3 candy double diaper is the file "NPCs/School/Student/student5eD.png".
 To decide which figure-name is figure of rank 3 candy:
 	if student-candy is messy, decide on figure of rank 3 candy messy;
-	if the student-diaper-state of student-candy is 1, decide on figure of rank 3 candy double diaper;
+	if the student-diaper-mess of student-candy is 1, decide on figure of rank 3 candy double diaper;
 	decide on figure of rank 3 candy dry.
 Figure of rank 4 candy is the file "NPCs/School/Student/student5g.png".
 
 Figure of rank 2 laci is the file "NPCs/School/Student/student3f.png".
 Figure of rank 3 laci dry is the file "NPCs/School/Student/student3g.png".
 Figure of rank 3 laci messy is the file "NPCs/School/Student/student3gm.png".
-Figure of rank 3 laci double diaper is the file "NPCs/School/Student/student3gmd.png".
+Figure of rank 3 laci double diaper messy is the file "NPCs/School/Student/student3gmd.png".
 To decide which figure-name is figure of rank 3 laci:
-	if student-laci is messy, decide on figure of rank 3 laci messy;
-	if the student-diaper-state of student-laci is 1, decide on figure of rank 3 laci double diaper;
+	if student-laci is messy:
+		if the student-extra-diapers of student-laci > 0, decide on figure of rank 3 laci double diaper messy;
+		decide on figure of rank 3 laci messy;
 	decide on figure of rank 3 laci dry.
 Figure of rank 4 laci is the file "NPCs/School/Student/student3h.png".
 Figure of rank 5 laci is the file "NPCs/School/Student/student3i.png".
@@ -143,6 +154,11 @@ Figure of shopkeeper 1b is the file "NPCs/Dungeon/Shopkeeper/shopkeeper4b.jpg".
 To decide which figure-name is Figure of Shopkeeper 1:
 	if shopkeeper is in Dungeon41, decide on Figure of shopkeeper 1a;
 	decide on Figure of shopkeeper 1b.
+Figure of babified shopkeeper urinal is the file "NPCs/Dungeon/Shopkeeper/shopkeeper6a.jpg".
+Figure of babified shopkeeper is the file "NPCs/Dungeon/Shopkeeper/shopkeeper6b.jpg".
+To decide which figure-name is the pacified-image of (M - shopkeeper):
+	if M is diaper-enslaved, decide on figure of babified shopkeeper;
+	decide on figure of Missing NPC.
 
 Figure of swirlie knickers clean is the file "Special/Cutscene/cutscene-swirlie3.jpg".
 Figure of swirlie knickers wet is the file "Special/Cutscene/cutscene-swirlie4.jpg".
@@ -174,12 +190,16 @@ Figure of Vibe Pose Predicament 2 is the file "Special/Cutscene/cutscene-vibe-po
 Figure of Vines Cutscene 3a is the file "Special/Cutscene/cutscene-vines3a.jpg".
 Figure of Vines Cutscene 3b is the file "Special/Cutscene/cutscene-vines3b.jpg".
 
-Figure of cutscene-xavier-nightmare-diaper-clean is the file "Special/Cutscene/cutscene-xavier-nightmare-diaper1.jpg".
-Figure of cutscene-xavier-nightmare-diaper-messy is the file "Special/Cutscene/cutscene-xavier-nightmare-diaper2.jpg".
-Figure of cutscene-xavier-nightmare-gag-clean is the file "Special/Cutscene/cutscene-xavier-nightmare-gag1.jpg".
-Figure of cutscene-xavier-nightmare-gag-wet is the file "Special/Cutscene/cutscene-xavier-nightmare-gag2.jpg".
-Figure of cutscene-xavier-nightmare-belt-clean is the file "Special/Cutscene/cutscene-xavier-nightmare-belt1.jpg".
-Figure of cutscene-xavier-nightmare-belt-messy is the file "Special/Cutscene/cutscene-xavier-nightmare-belt2.jpg".
+Figure of WoodsStatueButtonHead is the file "Special/Buttons/statue3d.jpg".
+Figure of WoodsStatueButtonHand is the file "Special/Buttons/statue3e.jpg".
+Figure of WoodsStatueButtonFoot is the file "Special/Buttons/statue3f.jpg".
+
+Figure of cutscene-xavier-nightmare-diaper-clean is the file "NPCs/Bosses/Xavier/cutscene-xavier-nightmare-diaper1.jpg".
+Figure of cutscene-xavier-nightmare-diaper-messy is the file "NPCs/Bosses/Xavier/cutscene-xavier-nightmare-diaper2.jpg".
+Figure of cutscene-xavier-nightmare-gag-clean is the file "NPCs/Bosses/Xavier/cutscene-xavier-nightmare-gag1.jpg".
+Figure of cutscene-xavier-nightmare-gag-wet is the file "NPCs/Bosses/Xavier/cutscene-xavier-nightmare-gag2.jpg".
+Figure of cutscene-xavier-nightmare-belt-clean is the file "NPCs/Bosses/Xavier/cutscene-xavier-nightmare-belt1.jpg".
+Figure of cutscene-xavier-nightmare-belt-messy is the file "NPCs/Bosses/Xavier/cutscene-xavier-nightmare-belt2.jpg".
 
 Figure of Babified Royal Guard 1 is the file "NPCs/Dungeon/royalguardbab1.jpg".
 Figure of Babified Royal Guard 2 is the file "NPCs/Dungeon/royalguardbab2.jpg".

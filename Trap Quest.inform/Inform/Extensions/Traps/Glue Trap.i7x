@@ -804,7 +804,7 @@ To compute glued reaction of (M - a monster):
 	if a random number between 1 and 3 < 3: [+? "and M is intelligent"? ]
 		say "[BigNameDesc of M] [if M is intelligent][one of]looks at you with amusement[or]grins at your hampered situation[at random][otherwise][one of]senses your vulnerability[or]sees your helplessness[at random][end if]";
 		FavourDown M;
-		humiliate 200;
+		severeHumiliate;
 		if M is objectifying the player:
 			interest M;
 			if M is intelligent:
@@ -836,9 +836,17 @@ To decide which number is the glue threshold of (C - a clothing):
 	decide on 450.
 
 To gluify (C - a clothing):
-	now the glue timer of C is the glue threshold of C.
+	now the glue timer of C is the glue threshold of C;
+	if C is diaper-stack:
+		repeat with D running through the list of stacked diapers:
+			now the glue timer of D is the glue threshold of C;
+			if debugmode > 0, say "[input-style]Glue level of [ShortDesc of D] is now [glue timer of D].[roman type][line break]";
+	if debugmode > 0, say "[input-style]Glue level of [ShortDesc of C] is now [glue timer of C].[roman type][line break]".
 To ungluify (C - a clothing):
-	now the glue timer of C is 0.
+	now the glue timer of C is 0;
+	if C is diaper-stack:
+		repeat with D running through the list of stacked diapers:
+			now the glue timer of D is 0.
 
 Definition: a clothing is glued rather than unglued:
 	if the glue timer of it > 0, decide yes;
@@ -859,6 +867,10 @@ Carry out tearing off worn clothing:
 	let R be a random number between 1 and 20;
 	if debuginfo > 0, say "[input-style]Glue tugging check: Dexterity ([dexterity of the player].5) | ([R]) d20 Difficulty[roman type][line break]";
 	decrease the glue timer of C by 100;
+	if C is diaper-stack:
+		let N be the number of entries in the list of stacked diapers;
+		let D be entry N in the list of stacked diapers;
+		decrease the glue timer of D by 100;
 	if the dexterity of the player < R:
 		say "You struggle to do it delicately enough, and end up hurting yourself!";
 		PainUp 10;

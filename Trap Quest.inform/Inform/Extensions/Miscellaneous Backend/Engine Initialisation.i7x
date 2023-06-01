@@ -388,6 +388,7 @@ To retrieve benefit options:
 
 To retrieve TG options:
 	if tg fetish >= 1 and the player is sexed male: [This doesn't award points and refers to the player's penis size so it comes after the benefit options.]
+		now choice in row 73 of the Table of Player Options is 0; [we have to reset it each time we are getting new responses]
 		clear the screen;
 		now the current menu is the Table of TG Occurence Options;
 		carry out the displaying activity;

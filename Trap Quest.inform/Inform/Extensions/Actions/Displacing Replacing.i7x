@@ -13,7 +13,7 @@ This is the can't displace glued clothing rule:
 The can't displace glued clothing rule is listed in the displacing rules.
 
 This is the can't displace without hands rule:
-	if the player is not able to use their hands or the player is wrist bound behind:
+	if the player is not able to use their hands or the player is wrist bound behind or wrist collar bar is worn:
 		if auto is 0, say "You don't have the manual dexterity to displace your clothing!";
 		rule fails.
 The can't displace without hands rule is listed in the displacing rules.
@@ -101,6 +101,7 @@ Check replacing:
 	if the noun is crotch-in-place, say "That's already in the right place." instead;
 	if the player is in HoleInWall or the player is in DiaperPail, say "You can't reach that at the moment!" instead;
 	if the player is not able to manually use their hands, do nothing instead;
+	if wrist collar bar is worn, say "You can't reach that low down!" instead;
 	if the noun is ass plugging:
 		let P be a random thing penetrating asshole;
 		if P is a thing and P is not the noun, say "You can't because the [P] is already in your [asshole]." instead;

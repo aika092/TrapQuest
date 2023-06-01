@@ -31,6 +31,10 @@ A game universe initialisation rule:
 To uniquely set up (C - a johnson):
 	if the size of C is 0, now the size of C is a random number between 1 and 10.
 
+To set up magic attribute of (C - a johnson):
+	set up toy enchantments of C;
+	set up rare magic attribute of C.
+
 flesh-johnson is a johnson. Understand "flesh-coloured", "coloured", "flesh" as flesh-johnson.
 
 To set up toy enchantments of (C - flesh-johnson):
@@ -44,7 +48,7 @@ To decide which figure-name is clothing-image of (C - blue-johnson):
 	decide on figure of johnson 1.
 To set up toy enchantments of (C - blue-johnson):
 	if a random number between 1 and 2 is 1, now C is expansion;
-	now C is refreshment.
+	otherwise now C is refreshment.
 
 green-johnson is a johnson. Understand "green" as green-johnson.
 To say DongColour of (D - green-johnson):

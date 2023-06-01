@@ -10,26 +10,33 @@ Figure of hulk is the file "NPCs/Bosses/Minotaur/hulk1.png".
 Figure of female hulk is the file "NPCs/Bosses/Minotaur/hulk2.png".
 
 Figure of Minotaur Cutscene 1 is the file "NPCs/Bosses/Minotaur/cutscene-minotaur-stomp1.png".
-Figure of Minotaur Cutscene 2 is the file "NPCs/Bosses/Minotaur/cutscene-minotaur-sleep1.png".
-Figure of Minotaur Cutscene 3 is the file "NPCs/Bosses/Minotaur/cutscene-minotaur-fuck1.png".
+Figure of Minotaur Cutscene 2 is the file "NPCs/Bosses/Minotaur/cutscene-minotaur-sleep1.jpg".
+Figure of Minotaur Cutscene 2b is the file "NPCs/Bosses/Minotaur/cutscene-minotaur-sleep2.png".
+Figure of Minotaur Cutscene 3a is the file "NPCs/Bosses/Minotaur/cutscene-minotaur-fuck1a.png".
+Figure of Minotaur Cutscene 3b is the file "NPCs/Bosses/Minotaur/cutscene-minotaur-fuck1b.png".
 Figure of Minotaur Cutscene 4 is the file "NPCs/Bosses/Minotaur/cutscene-minotaur-fuck2.png".
 Figure of Minotaur Cutscene 5 is the file "NPCs/Bosses/Minotaur/cutscene-minotaur-climax1.png".
 Figure of Minotaur Cutscene 6 is the file "NPCs/Bosses/Minotaur/cutscene-minotaur-splash1.png".
 Figure of Minotaur Cutscene 7 is the file "NPCs/Bosses/Minotaur/cutscene-minotaur-ready1.png".
 Figure of Minotaur Cutscene 8a is the file "NPCs/Bosses/Minotaur/cutscene-minotaur-fuck3a.jpg".
 Figure of Minotaur Cutscene 8b is the file "NPCs/Bosses/Minotaur/cutscene-minotaur-fuck3b.jpg".
+Figure of Minotaur Cutscene 9 is the file "NPCs/Bosses/Minotaur/cutscene-minotaur-ready2.png".
 
 To decide which figure-name is the monster-image of (M - minotaur):
 	if mythical creature fetish is 1:
 		if lady fetish is 1, decide on figure of female minotaur;
-		if M is penetrating a body part and M is asleep, decide on figure of minotaur cutscene 2;
+		if M is penetrating a body part and M is asleep, decide on figure of minotaur cutscene 2b;
+		if the player is in danger and the number of body parts penetrated by M is 0 and the player is prone, decide on figure of minotaur cutscene 9;
 		if M is caged, decide on figure of minotaur caged;
 		otherwise decide on figure of minotaur;
 	otherwise:
 		if lady fetish is 1, decide on figure of female hulk;
 		decide on figure of hulk;
 To decide which figure-name is the anal-sex-monster-image of (M - minotaur):
-	if lady fetish is 0 and mythical creature fetish is 1, decide on figure of minotaur cutscene 3;
+	if lady fetish is 0 and mythical creature fetish is 1:
+		if M is asleep, decide on figure of minotaur cutscene 2b;
+		if the player is sexed female, decide on figure of minotaur cutscene 3a;
+		otherwise decide on figure of minotaur cutscene 3b;
 	decide on figure of missing NPC.
 To decide which figure-name is the vaginal-sex-monster-image of (M - minotaur):
 	if lady fetish is 0 and mythical creature fetish is 1, decide on figure of minotaur cutscene 4;
@@ -399,7 +406,7 @@ The latex punishment rule of minotaur is the no latex punishment rule.
 
 To say LandingTaunt of (M - minotaur):
 	say "[BigNameDesc of M] growls with impatience.";
-	humiliate 50.
+	moderateHumiliate.
 
 To decide which number is the rounds of sex left of (M - minotaur):
 	decide on 1. [We don't do climax the standard way]
@@ -424,7 +431,7 @@ To compute anal sex of (M - minotaur):
 			now M is not penetrating asshole;
 		otherwise:
 			say "[one of][BigNameDesc of M] is completely spent, and collapses on top of you, crushing your body. You can't manage to crawl out from underneath [his of M] weight![or][BigNameDesc of M], spent, collapses on top of you, crushing you under [his of M] full weight. You try, but you don't manage to crawl out from underneath [him of M]![or][BigNameDesc of M] lets go of you as the torrent finally stops, collapsing on top of you just before you manage to crawl out from underneath [him of M].[or][BigNameDesc of M], completely spent, collapses on top of you, pinning you down with [his of M] full weight. No matter what you do, you can't manage to crawl out from underneath [him of M]![at random] You're going to have to wait [one of]like this with [his of M] [DickDesc of M] in your [asshole] until [he of M] wakes up...[or]with [his of M] [DickDesc of M] buried in your [asshole] until [he of M] wakes up...[at random]";
-			if lady fetish is 0 and mythical creature fetish is 1, alwayscutshow figure of minotaur cutscene 2 for M;
+			if lady fetish is 0 and mythical creature fetish is 1, alwayscutshow figure of minotaur cutscene 2b for M;
 		say CreampieReactionFlav to M in asshole;
 		if mythical creature fetish is 1 and cow-horns is off-stage and cow-ears is worn and (M is the father or M is mating):
 			say "[bold type]Your fake cow ears transform into a pair of very permanent horns[roman type][line break]";
@@ -605,7 +612,9 @@ This is the minotaur replaces the monster rule:
 	let N be a random monster penetrating a fuckhole;
 	if there is a monster penetrating asshole, now N is a random monster penetrating asshole; [This is the one who's important to get rid of since this is where we're going.]
 	say "[BigNameDesc of M] kicks the [N] out of the way, and takes over! [big he of M] [one of]sticks [his of M] giant [DickDesc of M] in your [asshole],[or]shoves [his of M] massive [DickDesc of M] up your ass[or]jams [his of M] giant dick into your [asshole][or]clumsily rams [his of M] huge dick in your [asshole][at random] and [one of]starts cumming[or]starts to cum[at random] almost immediately![line break][variable custom style][if the anal sex addiction of the player < 4]Oh Fuck![otherwise if the anal sex addiction of the player < 6]I thought I was safe with the [N] inside me![otherwise]Finally, a real dick![end if][roman type][line break]";
-	if lady fetish is 0 and mythical creature fetish is 1, cutshow figure of minotaur cutscene 3 for M;
+	if lady fetish is 0 and mythical creature fetish is 1:
+		if the player is sexed female, cutshow figure of minotaur cutscene 3a for M;
+		otherwise cutshow figure of minotaur cutscene 3b for M;
 	now the sex-length of M is 0;
 	now the chosen-orifice of M is asshole;
 	destroy N;

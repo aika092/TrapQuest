@@ -1,6 +1,6 @@
 Dungeon Chains by Objects begins here.
 
-dungeon chains is an ankle bond. dungeon chains is in School34. dungeon chains is sure. dungeon chains is identified.
+dungeon chains is an ankle bond. dungeon chains is in School34. dungeon chains is sure. dungeon chains is identified. dungeon chains is stuck.
 
 Definition: dungeon chains is immune to change: decide yes.
 Definition: dungeon chains is actually summonable: decide no.
@@ -17,7 +17,10 @@ To say ExamineDesc of (C - dungeon chains):
 
 To compute periodic effect of (C - dungeon chains):
 	if the player is upright:
-		say "[bold type][BigNameDesc of C][bold type] [one of]seems to be somehow draining you of your energy to remain standing[or]drains more of your energy away[stopping].[roman type][line break]";
+		say "[bold type][BigNameDesc of C][bold type] [one of]are forcing you to squat in a position that's very difficult to hold, making your legs grow tired very rapidly[or]drains more of your energy away[stopping].[roman type][line break]";
 		FatigueUp the buckle threshold of the player / 5.
+
+Check taking dungeon chains:
+	say "The dungeon chains are attached to the wall." instead.
 
 Dungeon Chains ends here.

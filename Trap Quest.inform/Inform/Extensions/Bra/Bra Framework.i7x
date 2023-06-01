@@ -128,7 +128,8 @@ To set up magic attribute of (B - a bra):
 	if R is 3 or R is 4, now B is cursed;
 	if B is uncovered themed and a random number between 1 and 10 is 1:
 		now B is exposure;
-		now B is cursed.
+		now B is cursed;
+	set up rare magic attribute of B.
 
 To Assign Size to (B - a bra):
 	if diaper quest is 1, now the size of B is 5;
@@ -218,6 +219,9 @@ Understand "KK cup" as bra when the size of item described is 15.
 
 To compute (C - a bra) unique inheriting from (D - a bra):
 	now the size of C is the size of D;
+	cupsizefix C.
+
+To cupsizefix (C - a bra):
 	if the largeness of breasts > the size of C, now the size of C is the largeness of breasts;
 	if the size of C > the max size of C, now the size of C is the max size of C;
 	if the size of C < the min size of C, now the size of C is the min size of C.

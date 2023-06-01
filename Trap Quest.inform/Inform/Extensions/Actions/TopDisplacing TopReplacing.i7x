@@ -32,8 +32,7 @@ To say TopDisplaceFlav of (C - a clothing):
 Report TopDisplacing:
 	allocate arm use;
 	allocate 4 seconds;
-	compute player submission;
-	force clothing-focus redraw; [This forces the clothing window to redraw]
+	compute player submission.
 
 Definition: a clothing (called C) is top level covering: [we only care about breast exposure, nipples are irrelevant.]
 	if C is not actually breast covering, decide no;
@@ -78,9 +77,6 @@ Carry out topReplacing:
 
 To say TopReplaceFlav of (C - a clothing):
 	say "You pull the [ShortDesc of C] back into its proper position over your [BreastDesc].".
-
-Report topReplacing:
-	force clothing-focus redraw. [This forces the clothing window to redraw]
 
 Understand "pull up [something]", "button [something]", "pull [something] closed" as topReplacing.
 

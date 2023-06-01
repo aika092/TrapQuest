@@ -335,6 +335,18 @@ To say QuestFlav of (Q - piss-drinking-quest):
 To say QuestTitle of (Q - piss-drinking-quest):
 	say " (urine drinking quest)".
 
+Part - Orgasm Quest
+
+orgasm-quest is a clothing-quest.
+
+Definition: orgasm-quest is appropriate: decide no. [Only appears from specific events]
+
+To say QuestFlav of (Q - orgasm-quest):
+	say "You sense that it wants you to have an orgasm.".
+
+To say QuestTitle of (Q - orgasm-quest):
+	say " (orgasm quest)".
+
 Part - Anal Orgasm Quest
 
 anal-orgasm-quest is a clothing-quest.
@@ -1425,6 +1437,7 @@ Definition: learn-spell-wisp-quest is eligible:
 
 bowl-wisp-quest is a wisp quest. The printed name of bowl-wisp-quest is "eat food from a bowl".
 Definition: bowl-wisp-quest is appropriate:
+	if the total volume of face > 0, decide no; [otherwise player can get a quest to hold a mouthful until they eat]
 	if Hotel01 is placed or School01 is discovered, decide yes;
 	decide no.
 
@@ -1482,7 +1495,7 @@ spill-wisp-trigger is a wisp trigger. The printed name of spill-wisp-trigger is 
 
 dp-wisp-trigger is a wisp trigger. The printed name of dp-wisp-trigger is "have two holes penetrated or used at the same time".
 Definition: dp-wisp-trigger is eligible:
-	if the number of actually occupied fuckholes > 1, decide no;
+	if diaper quest is 1 or the number of actually occupied fuckholes > 1, decide no;
 	decide yes.
 
 cum-panties-wisp-trigger is a wisp trigger. The printed name of cum-panties-wisp-trigger is "get cum in your undies".

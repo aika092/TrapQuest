@@ -144,20 +144,22 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 	if the remainder after dividing local-earnings by 297 < local-seconds and the player is possessing a penis and the penetrativevirgin of the player is 1 and virgincursed > 0 and transGender is 0 and the player is not in a predicament room:
 		virginpunish;
 	[Various periodic decays]
-	if the remainder after dividing local-earnings by 611 < local-seconds:
-		compute hair colour decay;
-	if the remainder after dividing local-earnings by 49 < local-seconds:
-		compute orifice soreness decay;
-	if the remainder after dividing local-earnings by 676 < local-seconds:
-		compute makeup decay;
-	if the remainder after dividing local-earnings by 211 < local-seconds:
-		compute magic regeneration;
-	let inflation-decay-rate be 29;
-	if the player is flying, now inflation-decay-rate is 9;
-	if the remainder after dividing local-earnings by inflation-decay-rate < local-seconds:
-		compute inflation decay;
-	if the remainder after dividing local-earnings by 49 < local-seconds and temp_str_dam + temp_dex_dam + temp_int_dam > 0:
-		compute stat healing;
+	if playerRegion is not school:
+		if the remainder after dividing local-earnings by 611 < local-seconds:
+			compute hair colour decay;
+		if the remainder after dividing local-earnings by 49 < local-seconds:
+			compute orifice soreness decay;
+		if the remainder after dividing local-earnings by 676 < local-seconds:
+			compute makeup decay;
+		if the remainder after dividing local-earnings by 211 < local-seconds:
+			compute magic regeneration;
+		if the remainder after dividing local-earnings by 49 < local-seconds and temp_str_dam + temp_dex_dam + temp_int_dam > 0:
+			compute stat healing;
+	if playerRegion is not school or the player is flying:
+		let inflation-decay-rate be 29;
+		if the player is flying, now inflation-decay-rate is 9;
+		if the remainder after dividing local-earnings by inflation-decay-rate < local-seconds:
+			compute inflation decay;
 	[Latex Transformation]
 	if the remainder after dividing local-earnings by latex transformation rate < local-seconds:
 		compute latex transformation;
@@ -270,7 +272,7 @@ To compute stat healing:
 A later time based rule (this is the impermanence-counter rule):
 	repeat with C running through on-stage impermanence clothing:
 		increase the impermanence-counter of C by 1;
-		if the impermanence-counter of C > a random number between (combatSpeed * 15) and (combatSpeed * 40):
+		if the impermanence-counter of C > a random number between (combatSpeed * 8) and (combatSpeed * 20):
 			if C is not held or the player is prone or the player is not in danger: [never disappears in the middle of combat that's going well]
 				unless C is held by ex-princess or (C is in the location of the player and there is a tentacle monster in the location of the player): [doesn't disappear in the specific fight scene with tentacle monsters where they throw your wand to the other corner of the room]
 					if C is held or C is in the location of the player, say "[bold type]Your [ShortDesc of C] fades away, vanishing into thin air![roman type][line break]";
@@ -547,17 +549,28 @@ To compute latex transformation:
 		if the latex-transformation of the player is 8:
 			say "You feel yourself stop breathing and your heart stop beating, but you realise you no longer need either, you don't have flesh or blood or anything inside you, just tubes and air. Your hands and feet lose their digits and their shape and just turn into rounded ends, as if you were wearing fully rounded mittens. [if the number of things held by the player > 0]You drop everything that you are carrying. It seems unlikely that you'll be able to carry more than one thing carefully in between your two doll stumps now.[end if][line break]You have completely transformed into a latex sex doll. You definitely feel less nimble, too.";
 			say "But even though your heart and breathing have stopped, you realise your arousal hasn't changed at all. Most of your skin feels completely numb, but a few [i]special[/i] areas feel flushed and delicate, still tingling with pleasure, sensitive to every touch. The shock you feel at that makes you suddenly aware of your widened eyes and your mouth, your [LipDesc] now gaping open in a perfect 'O' shape. And then you realise in dismay that you can't change either your expression or the shape of your 'please-fuck-me' lips!";
-			appropriate-cutscene-display figure of latex curse 3;
+			appropriate-cutscene-display figure of latex curse 3 with priority 4; [with the player dropping so many items, a focus window cutscene would be tiny]
 			if players-dick-is-detached > 0:
 				now the IsPlastic of players-detached-dick is 1; [#LXorDD]
 				say "You feel an echo of the magic from your [DetachedPenis][one of], and suddenly worry that it could bad news, having this happen while it was still detached.[or]. Did someone warn you against letting that happen?[or]. That can't be a good sign.[at random]";
 			repeat with H running through things carried by the player:
 				now H is in the location of the player;
+			let BG be a random worn bag of holding;
+			if BG is clothing:
+				now BG is in the location of the player;
+				dislodge BG;
 			repeat with C running through worn clothing:
 				if C is fake-nails, only destroy C;
 				if C is bracelet or C is wrist bond:
-					say "Your [ShortDesc of C] fall off your wrists and onto the ground.";
+					say "Your [ShortDesc of C] falls off your wrist and onto the ground.";
 					now C is in the location of the player;
+				if C is ring:
+					say "You no longer have fingers, so your [ShortDesc of C] falls to the ground.";
+					now C is in the location of the player;
+				if C is equippable and C is not gloves:
+					say "[BigNameDesc of C] falls to the ground.";
+					now C is in the location of the player;
+					dislodge C;
 			now the latex-transformed-start is (starting-earnings - earnings ) / 60; [We track how long the player plays as a fully transformed sex doll]
 			increase the latex-transformed-count by 1;
 		say "[roman type][line break]".

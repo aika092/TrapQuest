@@ -232,16 +232,18 @@ Report waiting when the player is in MimicCrib:
 	otherwise:
 		let G be wetDiaperFacesitGrossnessLevel;
 		if diaper messing >= 7, now G is messyDiaperFacesitGrossnessLevel;
-		say "All of a sudden, white objects start to rain from the darkness above you. As the first ones thump against your face and body you realise with [horror the diaper addiction of the player] what they are - used disposable diapers! As more and more start to pile on top of each other on and around you, [if diaper messing >= 7]the disgusting smell of them[otherwise]the stench of piss[end if] soon fills your nostrils[if the grossness addiction of the player < G], making you gag[end if].";
-		SmellGrossOut G;
-		appropriate-cutscene-display figure of mimic cutscene 4;
-		say "And still they continue to fall, threatening to bury you under their combined bulk and weight. You begin to struggle but it's no use - you feel like you're sinking in a quicksand made out of used nappies. Soon they are covering your entire body and you can't even breathe properly; you begin to cough and splutter as you try to suck a little oxygen through the thick rancid padding.";
-		SmellGrossOut G;
-		say "Just as you begin to feel light-headed [one of]and resign yourself to the reality of meeting your end,[or]once again[stopping] you are suddenly spat out of the crib back into the mansion, but now thoroughly exhausted and with tears in your eyes.";
-		PainUp 10;
-		if watersports fetish is 1, SilentlyUrineTasteAddictUp 1;
-		otherwise DiaperAddictUp 1;
-		now the fatigue of the player is the buckle threshold of the player;
+		say "All of a sudden, white objects start to rain from the darkness above you. As the first ones thump against your face and body you realise with [horror the diaper addiction of the player] what they are - used disposable diapers! ";
+		if the player is air breathing vulnerable:
+			say "As more and more start to pile on top of each other on and around you, [if diaper messing >= 7]the disgusting smell of them[otherwise]the stench of piss[end if] soon fills your nostrils[if the grossness addiction of the player < G], making you gag[end if].";
+			SmellGrossOut G;
+			appropriate-cutscene-display figure of mimic cutscene 4;
+			say "And still they continue to fall, threatening to bury you under their combined bulk and weight. You begin to struggle but it's no use - you feel like you're sinking in a quicksand made out of used nappies. Soon they are covering your entire body and you can't even breathe properly; you begin to cough and splutter as you try to suck a little oxygen through the thick rancid padding.";
+			SmellGrossOut G;
+			say "Just as you begin to feel light-headed [one of]and resign yourself to the reality of meeting your end,[or]once again[stopping] you are suddenly spat out of the crib back into the mansion, but now thoroughly exhausted and with tears in your eyes.";
+			PainUp 10;
+			now the fatigue of the player is the buckle threshold of the player;
+		otherwise:
+			say "As more and more start to pile on top of each other on and around you, you close your eyes and your senses to the foul items around you. Since you don't need to breathe the air around you to stay conscious, you are unaffected by the attempted assault on your olfactory senses.[paragraph break]Perhaps sensing that its actions have been in vain, the mimic doesn't take long before deciding to spit you back out into the mansion.";
 	now the stance of the player is 1;
 	now the player is in the source-room of the location of the player;
 	say "[bold type]You are on your knees. [roman type]The mimic disappears in a puff of pink smoke.";

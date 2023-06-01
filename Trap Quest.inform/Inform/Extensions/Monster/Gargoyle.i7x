@@ -12,6 +12,7 @@ Definition: gargoyle is willing to charm snakes if diaper quest is 0.
 Definition: gargoyle is willing to masturbate: decide yes.
 Definition: gargoyle is penis-virginity taking: decide no.
 Definition: gargoyle is a clothes-destroyer: decide yes.
+Definition: gargoyle is a urinater: decide no.
 
 The text-shortcut of gargoyle is "gy". Understand "stone", "statue", "sentry" as gargoyle.
 

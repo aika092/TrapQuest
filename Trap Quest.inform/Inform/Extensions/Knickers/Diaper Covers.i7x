@@ -41,7 +41,7 @@ To compute recipe specific cursing of (T - a diaper cover):
 		now T is waddle-walking;
 		now T is cursed.
 
-To decide what number is the price of (C - a diaper cover):
+To decide what number is the original price of (C - a diaper cover):
 	decide on 2.
 
 The printed name of diaper cover is usually "[clothing-title-before][selfexamineuniquetitle of item described][clothing-title-after]". The text-shortcut of diaper cover is "dc".

@@ -36,8 +36,12 @@ urinal is a backdrop. Understand "potty", "urinals", "bathroom" as urinal. The t
 To say ExamineDesc of (T - toilet):
 	say "A toilet[if watersports mechanics is 1]. You can [bold type]use[roman type] this to relieve yourself[end if].".
 To say ExamineDesc of (T - urinal):
-	if the hotel-urinal-scene of woman-player > 0 and the player is in Hotel31, say "[if there is a wrestler in Holding Pen][BigNameDesc of random wrestler in Holding Pen] and [NameDesc of woman-player] are here, bound in latex bodysuits as diapered human urinals[otherwise][BigNameDesc of woman-player] is here, bound in a latex bodysuit as a diapered human urinal[end if].";
-	otherwise say "A urinal[if watersports mechanics is 1]. You can [bold type]use[roman type] this to relieve yourself[end if].".
+	if the hotel-urinal-scene of woman-player > 0 and the player is in Hotel31:
+		say "[if there is a wrestler in Holding Pen][BigNameDesc of random wrestler in Holding Pen] and [NameDesc of woman-player] are here, bound in latex bodysuits as diapered human urinals[otherwise][BigNameDesc of woman-player] is here, bound in a latex bodysuit as a diapered human urinal[end if].";
+	otherwise if diaper quest is 1 and the player is in Dungeon41:
+		say "This poor black [man of shopkeeper] has been encased in a red latex catsuit, complete with matching ring-gagged hood. A stupidly thick diaper sits between [his of shopkeeper] legs underneath the catsuit, keeping [his of shopkeeper] thighs far apart. [big his of shopkeeper] wrists and neck are trapped inside holes inside one of the shelves attached to the wall of [his of shopkeeper] shop, preventing [him of shopkeeper] from standing up or moving away. [big he of shopkeeper] can't speak, can't move, can't do anything but sit there, moan, and fill [his of shopkeeper] huge diaper over time, relying on visitors to feed [him of shopkeeper] food or drink through [his of shopkeeper] permanently open mouth. A men's toilets sign on [his of shopkeeper] bib encourages people to serve [his of shopkeeper] drinks directly from their bladders.";
+	otherwise:
+		say "A urinal[if watersports mechanics is 1]. You can [bold type]use[roman type] this to relieve yourself[end if].".
 
 To decide which figure-name is the examine-image of (T - toilet):
 	if the player is in the location of ex-princess and ex-princess is caged, decide on examine-image of ex-princess;
@@ -45,6 +49,7 @@ To decide which figure-name is the examine-image of (T - toilet):
 		if locked-toilets is true, decide on figure of school toilets locked;
 		otherwise decide on figure of school toilets;
 	if diaper quest is 1 and the player is in Hotel38 and the human-toilet-scene of woman-player is 2, decide on figure of human toilet;
+	if diaper quest is 1 and the player is in Dungeon41, decide on figure of babified shopkeeper urinal;
 	if diaper quest is 0 and the player is in Hotel38 and watersports fetish is 1 and a2m fetish >= 2 and the human-toilet-scene of woman-player is not 1, decide on figure of human toilet;
 	if diaper quest is 0 and the player is in Toilet01, decide on figure of male toilet;
 	if diaper quest is 0 and playerRegion is not Dungeon, decide on figure of female toilet;
@@ -404,7 +409,7 @@ To compute urinal use:
 	if seconds is 0, allocate 6 seconds;
 	if there is displacable pee covering clothing, say "Pulling the crotch fabric of your [ShortDesc of random displacable pee covering clothing] to one side, you ";
 	otherwise say "You ";
-	if the location of the player is urinals, say "[if the player is possessing a penis]walk up to[otherwise]squat in front of[end if] the urinal and ";
+	if the location of the player is urinals, say "[if the player is possessing a penis]walk up to[otherwise]squat in front of[end if] [if the player is in Dungeon41][NameDesc of shopkeeper][otherwise]the urinal[end if] and ";
 	say "release your hold on your bladder.";
 	if the bladder of the player > 0:
 		if the hotel-urinal-scene of woman-player > 0 and the player is in Hotel31:
@@ -446,6 +451,8 @@ To compute urinal use:
 				otherwise:
 					say "[BigNameDesc of M] groans in frustration as the [urine] trickles down [his of M] latex bodysuit into the drain.";
 					FavourDown woman-player;
+		otherwise if the player is in Dungeon41:
+			say "[BigNameDesc of shopkeeper] groans in frustration as the [urine] floods [his of shopkeeper] mouth, and [he of shopkeeper] is forced to swallow. But there's absolutely nothing [he of shopkeeper] can do about it but drink it down, and wait until it comes out [his of shopkeeper] own bladder a bit later and joins the rest of the [urine] soaking [his of shopkeeper] extra-thick padding.";
 		now the bladder of the player is 0;
 		unless the location of the player is School35: [princess urinal]
 			repeat with M running through reactive monsters:
@@ -459,8 +466,8 @@ To compute toilet reaction of (M - a monster):
 	say ToiletReactionFlav of M.
 
 To say ToiletReactionFlav of (M - a monster):
-	if M is friendly, say "[BigNameDesc of M] politely looks away.";
-	otherwise say "[BigNameDesc of M] stares at you[if M is human], frowning[end if].".
+	if M is friendly, say "[BigNameDesc of M] politely looks away. [trivialHumiliateReflect]";
+	otherwise say "[BigNameDesc of M] stares at you[if M is human], frowning[end if]. [moderateHumiliateReflect]".
 
 Carry out urinating:
 	start urination.
@@ -536,15 +543,14 @@ To start urination:
 				say "You stay where you are. ";
 		say "You [if delayed urination is 1]involuntarily [end if]release your hold on your bladder. ";
 		compute pee protected urination;
-		if K is diaper and the player is in the location of dungeon altar:
-			if diaper quest is 1:
-				if the class of the player is priestess:
-					repeat with S running through worn potentially at least partially asshole covering displacable clothing:
-						if S is not K:
-							say "A holy glow surrounds your [ShortDesc of S] as it [if S is skirted]billows upwards[otherwise]falls down[end if], exposing the rapidly yellowing diaper underneath!";
-							displace S;
-				progress quest of priestess-service-quest;
-			if the class of the player is priestess and K is currently visible:
+		if K is diaper:
+			if diaper quest is 1 and the class of the player is priestess:
+				repeat with S running through worn potentially at least partially asshole covering displacable clothing:
+					if S is not K:
+						say "A holy glow surrounds your [ShortDesc of S] as it [if S is skirted]billows upwards[otherwise]falls down[end if], exposing the rapidly yellowing diaper underneath!";
+						displace S;
+				[progress quest of priestess-service-quest;]
+			if the class of the player is priestess and the player is in the location of dungeon altar and K is currently visible:
 				let M be a random uninterested willing to change diapers intelligent undefeated monster in the dungeon;
 				if M is monster:
 					now M is in the location of the player;
@@ -607,6 +613,7 @@ To compute pee protected urination:
 			AnnouncedExpel urine on K by N;
 		otherwise:
 			let flav-said be 0;
+			let totalOverflow be 0;
 			repeat with X running from 1 to N:
 				if K is nothing:
 					if player-currently-resting is 1 and there is a hotel bed in the location of the player:
@@ -615,10 +622,10 @@ To compute pee protected urination:
 					otherwise if toilet-sitting is true:
 						if flav-said is 0, say "Your [urine] drips through your clothing and into the toilet.";
 					otherwise:
-						UrinePuddleUp 1;
-						if flav-said is 0, say "Your [urine] drips through your clothing and onto the ground.";
-						if there is bottom level pee protection clothing, now overflowed is 2;
-					if there is a worn diaper and diaper quest is 1, progress quest of priestess-service-quest;
+						increase totalOverflow by 1;
+						if flav-said is 0, say "Your [urine] drips through your clothing!";
+						if there is bottom level pee protection clothing, now overflowed is 2; [TODO: work out why I thought that there sometimes might not be pee protection clothing here]
+					[if there is a worn diaper and diaper quest is 1, progress quest of priestess-service-quest;] [this isn't properly using a diaper! not sure why this was put here]
 					trigger pee-wisp-trigger;
 				otherwise:
 					if flav-said is 0, say "Your [urine] flows into your [ShortDesc of K][unless K is fluid immune or K is diaper], soaking it[end if].";
@@ -633,8 +640,8 @@ To compute pee protected urination:
 					let sK be a random worn bottom level soakable pee protection clothing;
 					if K is not sK and X < N: [We now need to soak past the original thing we were urinating into and this isn't the last unit of urine]
 						say urinationoverflow of K;
+						if diaper quest is 1 and overflowed is 0, progress quest of priestess-service-quest;
 						now overflowed is 1;
-						if diaper quest is 1, progress quest of priestess-service-quest;
 						if diaper lover >= 1 and delayed urination is 0 and the player is not in a predicament room:
 							let H be a random off-stage victorian-baby-bonnet;
 							if H is actually summonable:
@@ -645,7 +652,8 @@ To compute pee protected urination:
 					otherwise if K is diaper-stack and diaper quest is 1 and X is N:
 						let dK be entry 1 in the list of stacked diapers;
 						if the total-soak of dK >= the soak-limit of dK, progress quest of priestess-service-quest; [only the innermost diaper needs to be full]
-				now flav-said is 1.
+				now flav-said is 1;
+			if totalOverflow > 0, AnnouncedExpel urine on thighs by totalOverflow.
 
 To compute urination:
 	if (there is a camera trap in the location of the player and refractoryperiod < maxrefractoryperiod) or there is a camera-bystander in the location of the player, now target-poster is a random off-stage wetting poster;
@@ -704,6 +712,7 @@ To compute urination:
 To end urination:
 	now player-urinating is 0;
 	force clothing-focus redraw; [This forces the clothing window to redraw]
+	update appearance level;
 	if target-poster is a wetting poster:
 		if the old-peereaction of target-poster > 0:
 			let Y be a random camera trap in the location of the player;
@@ -793,6 +802,7 @@ To check pee leaking with reason (T - a text):
 	now player-just-leaked is false;
 	if diaper lover > 0 and the player is not incontinent:
 		let B be the bladder of the player;
+		if B > 0 and T is not "", increase B by the expulsion-weakness of the player;
 		let I be bladder-squirty-level;
 		if B > I:
 			decrease B by I;
@@ -830,6 +840,7 @@ To check full wetting with reason (T - a text):
 		let I be bladder-risky-level;
 		let B be bladder-bursting-level; [difference between bladder and risky level]
 		let resting-wetter be 0;
+		if T is not "", now resting-wetter is the expulsion-weakness of the player;
 		if player-currently-resting is 1 and (there is a worn bed wetting clothing or bed-wetter tattoo is worn) and the bladder of the player > 2, now resting-wetter is 3;
 		if the player is in Iron Maiden, now resting-wetter is 5;
 		if B >= 0 or resting-wetter > 0:
@@ -874,7 +885,7 @@ To say PeeReaction (N - 0):
 	if M is monster:
 		say WaterBodyPeeDeclaration of M;
 		repeat with Z running through reactive monsters:
-			humiliate 100;
+			strongHumiliate;
 			say WaterBodyPeeReaction of Z;
 	otherwise:
 		say "You sigh pleasantly, and now feel much more comfortable.".
@@ -900,7 +911,7 @@ To say PeeReaction (N - 1):
 			let M2 be a random reactive monster;
 			say GroundPeeSexDeclaration of M2;
 		repeat with Z running through reactive monsters:
-			humiliate 300;
+			obsceneHumiliate;
 			if Z is penetrating a body part or Z is grabbing the player, say GroundPeeSexReaction of Z;
 			otherwise say GroundPeeReaction of Z;
 	otherwise:
@@ -909,7 +920,7 @@ To say PeeReaction (N - 1):
 			if M is monster:
 				say GroundPeeDeclaration of M;
 				repeat with Z running through reactive monsters:
-					humiliate 100;
+					strongHumiliate;
 					say GroundPeeReaction of Z;
 			otherwise if playerRegion is Woods:
 				say "You sigh pleasantly, and now feel much more comfortable. ";
@@ -919,14 +930,14 @@ To say PeeReaction (N - 1):
 			if M is monster:
 				say GroundPeeDeclaration of M;
 				repeat with Z running through reactive monsters:
-					humiliate 200;
+					severeHumiliate;
 					say GroundPeeReaction of Z;
 			otherwise if M is in the Woods:
 				say "You sigh pleasantly, and now feel much more comfortable. ";
 			otherwise:
 				say "[variable custom style][if the humiliation of the player < HUMILIATION-MODEST - 1000 and playerRegion is Dungeon]How embarrassing! I need to find a toilet next time.[otherwise][one of]This isn't even the most humiliating thing I've been through today.[or]Ahh, sweet release.[stopping][end if][roman type][line break]";
-				humiliate 50;
-	humiliate 100;
+				moderateHumiliate;
+	strongHumiliate;
 	if target-poster is a poster:
 		now old-monster of target-poster is M;
 		now old-peereaction of target-poster is N.
@@ -1014,14 +1025,14 @@ To say PeeReaction (N - 3):
 		if M is monster:
 			if the humiliation of the player < HUMILIATION-DISGRACED + 3500, say "[if the player is able to speak][line break][variable custom style]'Oh god, not now!'[roman type][line break][end if]You are brought to tears in shame as you are forced to let go into your [K] right in front of [NameDesc of M].";
 			otherwise say "[BrokenPeeFlav during sex with M]";
-			humiliate 300;
+			obsceneHumiliate;
 		otherwise:
 			now M is a random reactive monster;
 			if delayed urination is 0: [Purposeful urination]
 				if M is monster:
 					say ClothesPeeDeclaration of M;
 					repeat with Z running through reactive monsters:
-						humiliate 200;
+						severeHumiliate;
 						say ClothesPeeReaction of Z;
 				otherwise:
 					unless K is WC-plug-panties, say "[one of][line break][variable custom style]Yuck.[or][variable custom style]Eww![or][if the bimbo of the player > 9][line break][second custom style]Uh-oh, I'm a bad girl![otherwise][line break][first custom style]Err, whoops.[end if][purely at random][roman type][line break]";
@@ -1029,11 +1040,11 @@ To say PeeReaction (N - 3):
 				if M is monster:
 					say ClothesPeeDeclaration of M;
 					repeat with Z running through reactive monsters:
-						humiliate 300;
+						obsceneHumiliate;
 						say ClothesPeeReaction of Z;
 				otherwise:
 					unless K is WC-plug-panties, say "[one of][line break][variable custom style]Err, whoops![or][if saved-flat-intelligence < 6][line break][second custom style]Uh-oh, I had a little accident![otherwise][line break][first custom style]I can't believe I just let that happen...[end if][or][variable custom style]I guess I should try and find a toilet next time...[purely at random][roman type][line break]";
-					humiliate 150;
+					severeHumiliate;
 		humiliate 275;
 	if target-poster is a poster:
 		now old-monster of target-poster is M;

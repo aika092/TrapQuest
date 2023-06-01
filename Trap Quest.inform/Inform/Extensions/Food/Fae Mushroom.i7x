@@ -40,7 +40,7 @@ Carry out mushroomeating:
 	if playerRegion is Mansion:
 		while target-teleport is Dungeon12 or target-teleport is the location of the player:
 			now target-teleport is a random placed haunted room;
-	say "As you eat the mushroom, you feel yourself sucked through a portal. The scenery around you slightly changes, and you are now in [printed name of target-teleport]!";
+	say "As you eat the mushroom, you feel yourself sucked through a portal. The scenery around you slightly changes, and you are now in the [printed name of target-teleport]!";
 	teleport to target-teleport;
 	if egg laying fetish is 1 and playerRegion is Woods and rubber bunny ears is off-stage and rubber bunny ears is actually summonable:
 		say "[bold type]A latex cream hood with a large pair of rubber bunny ears on top appears on your head![roman type][line break]";

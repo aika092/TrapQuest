@@ -576,12 +576,12 @@ To OnlyPenisUp (X - a number):
 		now X is 0;
 		say "Your [ShortDesc of metal-cage] is preventing your [player-penis] from getting any larger!";
 	if X > 0:
-		[We're now allowing penis size to increase above the max of 9, a 10" cock, if they're latex-TFed enough, but if they try to grow over 12 they'll burst. This used to happen only if their penis was detached AND they were latex TFed.]
+		[We're now allowing penis size to increase above the max of 10, a 12" cock, if they're latex-TFed enough, but if they try to grow over 12 they'll burst. This used to happen only if their penis was detached AND they were latex TFed.]
 		let sense be "feel";
 		if players-dick-is-detached > 0:
 			if players-detached-dick is in the location of the player, now sense is "see";
-		if the size of penis >= 9:
-			if (the latex-transformation of the player - 5) >= (the size of penis - 9): [If LHS of 1, 2, or 3 > RHS of 1 or 2, they're rubbery enough to try to grow, and maybe burst!]
+		if the size of penis > 9:
+			if the latex-transformation of the player >= 6: [If LHS of 1, 2, or 3 > RHS of 1 or 2, they're rubbery enough to try to grow, and maybe burst!]
 				say "You [sense] your [if players-dick-is-detached > 0]stolen [end if]monster of a [manly-penis] try to grow even larger, ";
 				if the size of penis < 12:
 					say "swelling even bigger, its [LatexFlav]skin stretching dangerously. It's starting to hurt, like it could pop![run paragraph on][if the size of penis >= 11] Seriously, you [sense] its skin thinning, reminding you of an over-stretched balloon.[end if][if players-dick-is-detached > 0][line break][variable custom style]I need to get it reattached, and sooner rather than later![roman type][end if][line break]";
@@ -595,7 +595,7 @@ To OnlyPenisUp (X - a number):
 						if players-dick-is-detached > 0:
 							uniquely destroy players-detached-dick;
 							now the size of players-detached-dick is -1;
-						humiliate SEVERE-HUMILIATION;
+						severeHumiliate;
 						if TG fetish > 0 and the player is not possessing a vagina:
 							SexChange the player;
 						otherwise:
@@ -608,7 +608,7 @@ To OnlyPenisUp (X - a number):
 				otherwise:
 					say "Your monster of a [manly-penis] can't seem to grow any larger! You feel like a stud!";
 				dignify 50;
-		otherwise: [dick is < 9, which is 10"]
+		otherwise:[dick is <= 9, which is 10"]
 			if players-dick-is-detached > 0:
 				say "You feel your detached penis grow into "; [#LXorDD This is mainly to cover the possibility of it being detached and a flat disc, i.e. zero sized. I'm just being defensive]
 			otherwise if the player is possessing a penis:

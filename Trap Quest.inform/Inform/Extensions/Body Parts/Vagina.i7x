@@ -108,7 +108,7 @@ Definition: vagina is at least partially exposed:
 To decide which number is current cameltoe: [0 means no cameltoe, 1 means slight cameltoe, 2 means full cameltoe]
 	if the player is not possessing a vagina, decide on 0;
 	if vagina is exposed or vagina is not at least partially exposed, decide on 0;
-	if there is worn actually dense potentially pussy covering clothing: [There's dense pussy covering clothing! So if it wasn't for the cameltoe effect, vagina wouldn't be visible at all. So we know we have a cameltoe.]
+	if there is worn actually dense potentially pussy covering at least slightly cameltoe creating clothing: [There's dense pussy covering clothing! So if it wasn't for the cameltoe effect, vagina wouldn't be visible at all. So we know we have a cameltoe.]
 		if there is at least slightly cameltoe blocking clothing, decide on 1; [something worn is blocking full cameltoes]
 		decide on 2;
 	decide on 0.
@@ -692,6 +692,7 @@ To compute womb egg laying:
 					now the egg-origin of E is nothing;
 				if a random number between 1 and 5 is 1, now the hatching of E is 1;
 				if the pregnancy of the player is 3 and a random number between 1 and 4 is 1, now the hatching of E is a random number between 100 and 130;
+				if the egg-origin of E is ghost or the egg-origin of E is ghostly dildo pole trap or the egg-origin of E is the throne, now the hatching of E is 1;
 				if the remainder after dividing small egg count of vagina by 3 is 0: [1 ruin for 3 eggs]
 					now E is penetrating vagina;
 					ruin vagina;
@@ -742,14 +743,19 @@ Section - Image for graphics window
 
 Figure of PussyObject0 is the file "CharWins/FocusWin/Vagina/pussy0.jpg".
 Figure of PussyObject1 is the file "CharWins/FocusWin/Vagina/pussy1.jpg".
-Figure of PussyObject1B is the file "CharWins/FocusWin/Vagina/pussy1b.jpg".
+Figure of PussyObject2 is the file "CharWins/FocusWin/Vagina/pussy2.jpg".
+Figure of PussyObject3 is the file "CharWins/FocusWin/Vagina/pussy3.jpg".
+Figure of PussyObjectCum is the file "CharWins/FocusWin/Vagina/pussy1b.jpg".
 
 To decide which figure-name is the examine-image of (T - vagina):
-	if the vaginalvirgin of the player is 1:
+	if the semen volume of vagina > 0, decide on Figure of PussyObjectCum;
+	if the labia plumpness of vagina is 0:
 		decide on Figure of PussyObject0;
-	otherwise if the semen volume of vagina > 0:
-		decide on Figure of PussyObject1B;
+	otherwise if the labia plumpness of vagina is 1:
+		decide on Figure of PussyObject1;
+	otherwise if the labia plumpness of vagina is 2:
+		decide on Figure of PussyObject2;
 	otherwise:
-		decide on Figure of PussyObject1.
+		decide on Figure of PussyObject3.
 
 Vagina ends here.

@@ -23,8 +23,8 @@ To decide which number is the hindrance-modifier of (S - a stockings):
 	decide on X.
 
 To set up magic attribute of (H - a stockings):
-	let R be a random number between 1 and 7;
-	if R is 1, now H is confidence;
+	let R be a random number between 1 and 9;
+	if R is 1, now H is sneaking;
 	if R is 2, now H is endurance;
 	if R is 3:
 		now H is posture training;
@@ -32,7 +32,8 @@ To set up magic attribute of (H - a stockings):
 	if R is 4:
 		now H is stumbling;
 		if diaper lover > 0 and a random number between 1 and 2 is 1, now H is respiration;
-	if R is 3 or R is 4, curse H.
+	if R is 3 or R is 4, curse H;
+	set up rare magic attribute of H.
 
 To set up magic state of (C - a stockings): [Less variance than most items]
 	if C is discovered varied:
@@ -40,7 +41,8 @@ To set up magic state of (C - a stockings): [Less variance than most items]
 		now C is bland;
 		increase the raw-magic-modifier of C by a random number between -1 and 1;
 		if a random number between 1 and 3 is 1, increase the raw-magic-modifier of C by a random number between -1 and 1;
-		set up BUC of C.
+		set up BUC of C;
+		set up magic attribute of C.
 
 To decide which number is the knee-modifier of (S - a wearthing):
 	decide on 0.
@@ -154,7 +156,10 @@ This is the leg covering stockings clash rule:
 		repeat with O running through worn usually ankle covering clothing:
 			if O is not skirted or (O is not slitted and summoning is 0 and O is not crotch-displaced):
 				if summoning is 0 and autowear is false, say "You can't wear that over the [O]!";
-				rule fails.
+				rule fails;
+		repeat with O running through worn exclusive usually thigh covering unskirted clothing:
+			if summoning is 0 and autowear is false, say "You can't wear that at the same time as the [O]!";
+			rule fails.
 The leg covering stockings clash rule is listed in the stockings wearability rules.
 
 stockings removability rules is a rulebook. The removability rules of stockings is usually stockings removability rules.
@@ -882,7 +887,7 @@ To decide which figure-name is the clothing-image of (C - queen-of-spades-stocki
 	decide on figure of queen of spades stockings.
 
 To say ClothingDesc of (C - queen-of-spades-stockings):
-	say "A pair of tall white stockings have a pattern of black spades at the frill at the top. You sense it has the power to occasionally empower your knees against white [men of shopkeeper].".
+	say "A pair of tall white stockings have a pattern of black spades at the frill at the top. You sense it has the power to occasionally empower your knees against white [men of male-m].".
 
 To say ShortDesc of (C - queen-of-spades-stockings):
 	say "pair of white stockings".

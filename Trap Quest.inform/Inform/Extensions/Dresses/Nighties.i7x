@@ -79,7 +79,7 @@ A nightgown is a kind of nightie. A nightgown is usually rare. A nightgown is us
 
 The printed name of nightgown is usually "[clothing-title-before]nightgown[clothing-title-after]". The text-shortcut of nightgown is "nig".
 
-To decide what number is the price of (C - a nightgown):
+To decide what number is the original price of (C - a nightgown):
 	decide on 3.
 
 Figure of nightgown is the file "Items/Clothes/Upper/Exposing/Nighties/nightie2.png".

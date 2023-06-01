@@ -47,9 +47,14 @@ To compute class set up of (C - demon tail plug):
 		now C is bland.
 
 To compute periodic effect of (C - demon tail plug):
-	if demon horns is off-stage and demon horns is actually summonable and a random number between 1 and (50 - unlucky * 10 ) is 1:
+	if demon horns is off-stage and demon horns is actually summonable and a random number between (unlucky * 10) and 50 is 10:
 		summon demon horns cursed;
-		say "[bold type]You feel your hair parting as a pair of felt horns materialise on your head![line break][variable custom style]This feels like a Halloween costume.[roman type][line break]".
+		say "[bold type]You feel your hair parting as a pair of [if soulstone is not worn]felt [end if]horns materialise on your head!";
+		if soulstone is worn:
+			say "Your skin changes colour, to a demonic red tint... and you observe that the horns are not a fake piece of headgear, but real actual horns!!!";
+			cutshow Figure of demon horns 3 for demon horns;
+		otherwise:
+			say "[variable custom style]This feels like a Halloween costume.[roman type][line break]".
 
 Definition: demon tail plug is demonic: decide yes.
 Definition: demon tail plug is red themed: decide yes.

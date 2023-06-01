@@ -56,7 +56,7 @@ To compute clothesRinsing of (C - a clothing) in (T - a thing):
 			say "The glue on [NameDesc of C] is rapidly weakening!";
 		otherwise:
 			now the glue timer of C is 0;
-			say "The glue on [NameDesc of C] has completely degraded[if C is worn]. It's no longer stuck to you![otherwise].[end if]";
+			say "The glue on [NameDesc of C] has completely degraded[if C is worn]. It's no longer stuck to you![otherwise].[end if]".
 
 To compute bodyRinsing of (B - a body part) in (T - a thing):[TODO: change so it pollutes the pool again]
 	increase tracked-semen by the semen coating of B;

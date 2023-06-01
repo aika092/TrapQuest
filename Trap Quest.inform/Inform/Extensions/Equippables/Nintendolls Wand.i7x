@@ -37,6 +37,7 @@ To say ClothingDesc of (W - glittery-wand):
 To decide which number is the raw-masturbation-bonus of (W - glittery-wand):
 	decide on 1.
 To compute climax effect of (E - a glittery-wand):
+	MagicPowerRefresh 5;
 	if the raw sex addiction of the player < 20:
 		say "Your orgasm was so powerful that you feel [if the player is a pervert]even more [end if]perverted as a result.";
 		SexAddictUp 1.

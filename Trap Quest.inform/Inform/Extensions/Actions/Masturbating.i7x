@@ -90,13 +90,13 @@ The sex doll can't wank rule is listed last in the global masturbation restricti
 
 This is the too slutty to wank rule:
 	if auto is 0 and the number of monsters penetrating a body part is 0:
-		if (the anal sex addiction of the player > 13 or the vaginal sex addiction of the player > 13) and the player is not very horny:
+		if (the anal sex addiction of the player > 5 or the vaginal sex addiction of the player > 5) and the player is not very horny:
 			say TooSluttyToWank;
 			rule fails;
-		if (the anal sex addiction of the player > 15 or the vaginal sex addiction of the player > 15) and the player is not extremely horny:
+		if (the anal sex addiction of the player > 7 or the vaginal sex addiction of the player > 7) and the player is not extremely horny:
 			say TooSluttyToWank;
 			rule fails;
-		if (the anal sex addiction of the player > 20 or the vaginal sex addiction of the player > 20):
+		if (the anal sex addiction of the player >= 10 or the vaginal sex addiction of the player >= 10):
 			say TooSluttyToWank;
 			rule fails.
 The too slutty to wank rule is listed last in the global masturbation restriction rules.
@@ -319,23 +319,23 @@ To say PlayerFantasy:
 	otherwise if diaper focus is 1 and the diaper addiction of the player > 9:
 		say "[one of][if the player is gendered male]having a girlfriend force you into diapers before making you wet yourself[otherwise]having a boyfriend force you into diapers before making you wet yourself[end if][or]a dominatrix turning you into a baby against your will and parading you around town for everyone to see your humiliation[or]being blackmailed by your best friend to become her personal diaper slave[or]losing control of your bladder and having to wear diapers as people mock you for being a big baby[in random order]";
 	otherwise if diaper focus is 1 and the diaper addiction of the player > 4:
-		say "[one of][if the player is possessing a penis]a cute diapered slut sucking your [manly-penis][otherwise if the player is possessing a vagina]a cute [boy of shopkeeper] in a diaper eating your [vagina][otherwise]diapered sex[end if][or]forcing those bitches who put you in here into diapers[or]someone being forcibly diapered before shamefully cumming into their padding[or]a girl being diapered and pulled over a mommy-domme's knee for a spanking[in random order]";
+		say "[one of][if the player is possessing a penis]a cute diapered slut sucking your [manly-penis][otherwise if the player is possessing a vagina]a cute [boy of male-m] in a diaper eating your [vagina][otherwise]diapered sex[end if][or]forcing those bitches who put you in here into diapers[or]someone being forcibly diapered before shamefully cumming into their padding[or]a girl being diapered and pulled over a mommy-domme's knee for a spanking[in random order]";
 	otherwise if the bimbo of the player < 4 and the player is gendered male and wanktype is not ASS-WANK:[dominating women]
 		say "[one of]steamy sex with your [RelationDesc of Fn], [MediumDesc of Fn][or]letting a team of super hot cheerleaders take turns sucking your dick[or]having a threesome with a couple of [if extreme proportions fetish is 1]stacked as hell bitches[otherwise]super fine bitches[end if][or][if the analvirgin of the player is 1]anally[otherwise]revenge[end if] fucking [if the intelligence of the player > 5]the slutty sisters[otherwise]the sexy bitches[end if] who put you in here[or]sexy [men of dominatrix] with big [if lady fetish is 2]asses[otherwise]breasts[end if] and an interest in sitting on your cock[in random order]";
 	otherwise if the bimbo of the player < 4 and wanktype is not ASS-WANK:[dominating/humiliating men, equal sex with women]
-		say "[one of]life as a powerful business woman, with a cute secretary that's always there when you feel like having an orgasm[or]having steamy sex with your [RelationDesc of Fn] on [his of Fn] boyfriend's bed[or]forcing the bitches who put you in here to pleasure you as you redesign their wardrobe from scratch[or]forcing your [RelationDesc of Nn] to hang up a picture of [himself of Nn] in a dress in [his of Nn] office[or]sex with a cute [boy of shopkeeper] that always respects your boundaries and has the sense to be gone when you're not horny anymore[or]a whirlwind romance with your [RelationDesc of Nn] wife[in random order]";
+		say "[one of]life as a powerful business woman, with a cute secretary that's always there when you feel like having an orgasm[or]having steamy sex with your [RelationDesc of Fn] on [his of Fn] boyfriend's bed[or]forcing the bitches who put you in here to pleasure you as you redesign their wardrobe from scratch[or]forcing your [RelationDesc of Nn] to hang up a picture of [himself of Nn] in a dress in [his of Nn] office[or]sex with a cute [boy of male-m] that always respects your boundaries and has the sense to be gone when you're not horny anymore[or]a whirlwind romance with your [RelationDesc of Nn] wife[in random order]";
 	otherwise if the bimbo of the player < 8 and the player is gendered male:[Being dominated by women, or the player isn't dominated but there's emphasis on penises]
 		say "[one of]sexy [men of dominatrix] getting fucked by long, hard cocks[or]being pinned underneath a strongly muscled [if futanari fetish > 0]futa[otherwise]woman[end if] as she plows you with her big hard [if futanari fetish is 0]strapon[otherwise]cock[end if][or]having a threesome with a girl and her strong, muscular boyfriend[or]serving a gorgeous [man of dominatrix] as [he of dominatrix] locks you into chastity[in random order]";
 	otherwise if the bimbo of the player < 8:[being dominated by women, men taking passive/equal role]
-		say "[one of]the slutty sisters and their sexy choice of clothes[or]being stripped nude by a tall, strapon-wearing [man of dominatrix] and roughly impaled on [his of dominatrix] plastic cock[or]joining in after walking in on your [RelationDesc of Fn] and [his of Fn] boyfriend having sex[or]getting in bed with the cute [boy of shopkeeper] from the accounting division[or]being held down by a tall, shirtless [man of shopkeeper] as the slutty sisters take turns pounding you with strapon dildos[in random order]";
+		say "[one of]the slutty sisters and their sexy choice of clothes[or]being stripped nude by a tall, strapon-wearing [man of dominatrix] and roughly impaled on [his of dominatrix] plastic cock[or]joining in after walking in on your [RelationDesc of Fn] and [his of Fn] boyfriend having sex[or]getting in bed with the cute [boy of male-m] from the accounting division[or]being held down by a tall, shirtless [man of male-m] as the slutty sisters take turns pounding you with strapon dildos[in random order]";
 	otherwise if the bimbo of the player < 12 and the player is gendered male:[submitting to women and men at the same time. Submitting to men because of women.]
 		say "[one of]making out with your [RelationDesc of Fn] after [his of Fn] boyfriend [if bukkake fetish is 1]unloads on your face[otherwise if watersports fetish is 1]pisses on your face[otherwise]fills your mouth with load[end if][or]eating out your [RelationDesc of Fn] right after [his of Fn] boyfriend finishes giving [him of Fn] a massive creampie[or]waking up naked in a sorority house with [if bukkake fetish is 1][semen] all over your face[otherwise if artificial enhancements fetish is 1]lipstick tattooed on your face[otherwise]a huge plug in your ass[end if] and a cowbell around your neck[or]sucking off your [RelationDesc of Dn] until [he of Dn] comes[in random order]";
 	otherwise if the bimbo of the player < 12:[submitting to people the player knows, sex with strangers]
-		say "[one of]tall, muscular [men of shopkeeper] with big, hard [DickDesc of shopkeeper]s[or]the last [boy of shopkeeper] that called you a frigid prude, and how [his of shopkeeper] [if bukkake fetish is 1][semen] would feel all over your face[otherwise if pregnancy fetish is 1][semen] would feel oozing out of your [vagina][otherwise][manly-penis] would feel inside your mouth[end if][or]letting your [RelationDesc of Fn]'s boyfriend [if bukkake fetish is 1]cum on your face[otherwise]fuck you in the ass[end if][or][if pregnancy fetish is 1]letting a stranger fuck your [vagina] without a condom[otherwise]getting into a stranger's car and sucking [his of shopkeeper] [DickDesc of shopkeeper] until you get to [his of shopkeeper] apartment[end if][or]letting your [RelationDesc of Nn] fuck you in front of all your friends[in random order]";
+		say "[one of]tall, muscular [men of male-m] with big, hard [DickDesc of male-m]s[or]the last [boy of male-m] that called you a frigid prude, and how [his of male-m] [if bukkake fetish is 1][semen] would feel all over your face[otherwise if pregnancy fetish is 1][semen] would feel oozing out of your [vagina][otherwise][manly-penis] would feel inside your mouth[end if][or]letting your [RelationDesc of Fn]'s boyfriend [if bukkake fetish is 1]cum on your face[otherwise]fuck you in the ass[end if][or][if pregnancy fetish is 1]letting a stranger fuck your [vagina] without a condom[otherwise]getting into a stranger's car and sucking [his of male-m] [DickDesc of male-m] until you get to [his of male-m] apartment[end if][or]letting your [RelationDesc of Nn] fuck you in front of all your friends[in random order]";
 	otherwise if the bimbo of the player < 15:[degradation from strangers]
-		say "[one of]getting fucked until [if the player is possessing a vagina and pregnancy fetish is 1]you're pregnant[otherwise]you can't walk[end if][or]being pinned down and fucked by muscular [men of shopkeeper] with big hard [DickDesc of shopkeeper]s[or]being blindfolded, bound, and stuffed full of dildos[or][if the player is gendered female]arriving at an important meeting and immediately getting slammed on the table and fucked by the majority shareholder[otherwise]making money on porno sets as a cock warmer between scenes[end if][or][if bukkake fetish is 1 and a random number between 1 and 2 is 1]the feeling of thick, warm [semen] rolling down your face[otherwise if watersports fetish is 1 and a random number between 1 and 2 is 1]the feeling of warm, frothy [urine] streaming into your mouth[otherwise if the raw semen taste addiction of the player > 10]the feeling of thick, warm [semen] spurting into your mouth and rolling down your throat[otherwise]the feeling of a warm, hard [DickDesc of shopkeeper]s in your mouth[end if][in random order]";
+		say "[one of]getting fucked until [if the player is possessing a vagina and pregnancy fetish is 1]you're pregnant[otherwise]you can't walk[end if][or]being pinned down and fucked by muscular [men of male-m] with big hard [DickDesc of male-m]s[or]being blindfolded, bound, and stuffed full of dildos[or][if the player is gendered female]arriving at an important meeting and immediately getting slammed on the table and fucked by the majority shareholder[otherwise]making money on porno sets as a cock warmer between scenes[end if][or][if bukkake fetish is 1 and a random number between 1 and 2 is 1]the feeling of thick, warm [semen] rolling down your face[otherwise if watersports fetish is 1 and a random number between 1 and 2 is 1]the feeling of warm, frothy [urine] streaming into your mouth[otherwise if the raw semen taste addiction of the player > 10]the feeling of thick, warm [semen] spurting into your mouth and rolling down your throat[otherwise]the feeling of a warm, hard [DickDesc of male-m]s in your mouth[end if][in random order]";
 	otherwise:[even more degradation from strangers]
-		say "[one of]getting gangbanged in the alleyway behind your favourite bar[or][if the player is gendered female]using all that time you wasted in business school to further your career as porn actress[otherwise]becoming a pornographic actress[end if][or]waking up bound, naked, and surrounded by a gang of complete strangers with big hard [DickDesc of shopkeeper]s[or]giving a wet, sloppy blowjob to every [man of shopkeeper] that passes you in the street[or]play-testing even more [i]fun[/i] games for Nintendolls[in random order]".
+		say "[one of]getting gangbanged in the alleyway behind your favourite bar[or][if the player is gendered female]using all that time you wasted in business school to further your career as porn actress[otherwise]becoming a pornographic actress[end if][or]waking up bound, naked, and surrounded by a gang of complete strangers with big hard [DickDesc of male-m]s[or]giving a wet, sloppy blowjob to every [man of male-m] that passes you in the street[or]play-testing even more [i]fun[/i] games for Nintendolls[in random order]".
 
 [!<cameWhileWanking:Integer>*
 
@@ -458,6 +458,9 @@ Check masturbating:
 		otherwise:
 			now wanktype is ASS-WANK;
 	if auto is 0:
+		let AF be 1;
+		if the player is upright:
+			if the player is not anal flexible or the living belt of sturdiness is penetrating asshole, now AF is 0;
 		if (the wanktime of the player > 100 or lock-it tattoo is worn) and the number of worn diapers is 0 and the number of on-stage chastity bonds is 0:
 			say "You hesitate, having a sneaking suspicion that [masturbating][if diaper quest is 1] while not wearing a diaper[end if] [if the wanktime of the player > 100]so soon after a previous orgasm [end if]has a [italic type]chance[roman type] of the girls running the game punishing you for it. Do you want to go ahead and risk it? ";
 			unless the player is in agreement, say "You decide against it." instead;
@@ -465,14 +468,14 @@ Check masturbating:
 			say "You [if wanktype is ASS-WANK]are still wearing your[otherwise]will get yourself off through your[end if] [ShortDesc of random bottom level pee protection clothing] which will cause you to ejaculate into it, is that what you want? ";
 			if the player is not bimbo consenting, say "Then you better [bold type]remove[roman type] or [bold type]displace[roman type] the [random bottom level pee protection clothing] first." instead;
 		if wanktype is ASS-WANK: [If it's automatic masturbation, we won't notify the player.]
-			say "You can only use your ass to masturbate right now right now[if the player is not anal flexible and the player is upright], and you'll have to get on your knees first[end if]. Is that OK? ";
+			say "You can only use your ass to masturbate right now[if AF is 0 and the player is not anal flexible], and since you aren't flexible enough to do it standing up, you'll have to get on your knees first[otherwise if AF is 0], and since your belt is in the way, you'll have to get on your knees first[end if]. Is that OK? ";
 			unless the player is bimbo consenting:
 				say "You decide against it.";
 				now wanktype is NO-WANK instead;
 		otherwise if the buttskill of the player is 1: [if wanktype is already ASS-WANK, then it's the only way the player can masturbate]
-			say "Use your ass to masturbate? [if the player is not anal flexible and the player is upright]You'll have to get on your knees first.[end if]";
+			say "Use your ass to masturbate? [if AF is 0 and the player is not anal flexible]You aren't flexible enough to do it standing up, so you'll have to get on your knees first.[otherwise if AF is 0]You'll have to get on your knees first, since the belt is in the way.[end if]";
 			if the player is bimbo consenting:
-				if the player is not anal flexible and the player is upright:
+				if AF is 0:
 					now auto is 1;
 					try kneeling;
 					now auto is 0;
@@ -503,18 +506,25 @@ Carry out masturbating:
 	now masturbation-object is arms;
 	if auto is 0:
 		if wanktype is ASS-WANK:
-			let LV be a list of things;
-			repeat with O running through carried insertable things:
-				if the girth of O <= the insertableGirthAcceptance of asshole, add O to LV;
-			if the number of entries in LV > 0:
-				reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
-				truncate LV to 9 entries;
-				say "How do you want to anally masturbate?[line break]";
-				repeat with V running through LV:
-					set next numerical response to "with [NameDesc of V]";
-				set numerical response 0 to "just use your fingers";
-				compute multiple choice question;
-				if player-numerical-response > 0, now masturbation-object is entry player-numerical-response in LV;
+			let IT be a random worn insertable thing;
+			if IT is clothing and IT is penetrating asshole:
+				now masturbation-object is IT;
+			otherwise:
+				let LV be a list of things;
+				repeat with O running through carried insertable things:
+					if the girth of O <= the insertableGirthAcceptance of asshole, add O to LV;
+				if the number of entries in LV > 0:
+					reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+					truncate LV to 9 entries;
+					say "How do you want to anally masturbate?[line break]";
+					repeat with V running through LV:
+						set next numerical response to "with [NameDesc of V]";
+					set numerical response 0 to "just use your fingers";
+					compute multiple choice question;
+					if player-numerical-response > 0, now masturbation-object is entry player-numerical-response in LV;
+					if masturbation-object is clothing and masturbation-object is not worn and masturbation-object is not disembodied:[insertable clothes, like plug panties, must be worn before using them to masturbate.]
+						now masturbation-object is arms;
+						say "Then you'll have to put it on first." instead;
 		otherwise if the player is able to wank:
 			let LV be a list of things;
 			if (wanktype is VAG-WANK or wanktype is HERM-WANK) and vagina is not actually occupied and the number of cursed pussy covering clothing is 0:
@@ -641,7 +651,7 @@ This is the masturbation climax rule:
 	if a random number between 1 and the sex addiction of the player < 6, SexAddictUp 1;
 	orgasm; [handle anything that needs to happen for an orgasm]
 	if (the wanktime of the player > 100 or lock-it tattoo is worn) and the number of on-stage chastity bonds is 0 and the number of worn diapers is 0:[Put the player in chastity if necessary]
-		let C be a random off-stage fetish appropriate chastity bond;;
+		let C be a random off-stage fetish appropriate chastity bond;
 		if C is actually summonable:[This should handle "penis cage" + no penis situations on its own.]
 			if the player is getting unlucky:
 				if players-dick-is-detached is 0: [#LXorDD]
@@ -710,7 +720,8 @@ To say InstantMasturbationFlav of (O - an object) with (M - a thing) in (C - an 
 			let oro be a random orifice penetrated by the players-detached-dick;
 			literally self pleasure by the player in oro;
 	otherwise if O is vibe-wand:
-		say "[one of]You turn on the [ShortDesc of O] and grind [if wanktype is HERM-WANK]both sets of genitals against it[otherwise if wanktype is COCK-WANK]your [mystical ShortDesc of penis] against it[otherwise]grind it against your clit[end if], [if M is a live thing]focusing all your thoughts on [NameDesc of M][otherwise]fantasising about [PlayerFantasy][end if]. [if A < 5]It's almost embarrassing how much it turns you on[otherwise if A < 10]It's a little surprising how much it turns you on[otherwise]It makes you uncontrollably turned on[end if], and as the pleasure rapidly builds upon itself, you realise you're already about to cum.[or]You turn on the [ShortDesc of O] and begin to stimulate your [if wanktype is HERM-WANK][mystical ShortDesc of penis] and clit[otherwise if wanktype is COCK-WANK][mystical ShortDesc of penis][otherwise]clit[end if][if C is clothing] through your [ShortDesc of C][end if], closing your eyes as you [if M is a live thing]focus on [NameDesc of M][otherwise]fantasise about [PlayerFantasy][end if]. Nothing more than a moment passes, [if A < 5]and you are immediately ashamed to[otherwise if A < 10]and you tell yourself you should be ashamed to[otherwise]and you feel your muscles tightening in anticipation as you[end if] realise that you're already going to cum.[or]You switch on [ShortDesc of O] and roll the vibrating end [if wanktype is HERM-WANK]down your [mystical ShortDesc of penis] and over your clit[otherwise if wanktype is COCK-WANK]around the head of your [mystical ShortDesc of penis][otherwise]around and around your clit[end if]. The [if C is clothing]sensation of being stimulated through your [ShortDesc of C][otherwise]strong stimulation[end if] combines with [if M is a live thing]the reality of what you're allowing [NameDesc of M] to do with you[otherwise]your fantasy of [PlayerFantasy][end if] and just like that, you realise you're already going to cum.[in random order]";
+		if O is royal scepter and O is blacked, say "You press [NameDesc of O] against [if wanktype is HERM-WANK]both sets of genitals[otherwise if wanktype is COCK-WANK]your [mystical ShortDesc of penis][otherwise]your clit[end if], and immediately find your mind filled with visions of delicious, glorious, giant black cocks. [if A < 5]It's almost embarrassing how much it turns you on[otherwise if A < 10]It's a little surprising how much it turns you on[otherwise]It makes you uncontrollably turned on[end if], and as the pleasure rapidly builds upon itself, you realise you're already about to cum.";
+		otherwise say "[one of]You turn on the [ShortDesc of O] and grind [if wanktype is HERM-WANK]both sets of genitals against it[otherwise if wanktype is COCK-WANK]your [mystical ShortDesc of penis] against it[otherwise]grind it against your clit[end if], [if M is a live thing]focusing all your thoughts on [NameDesc of M][otherwise]fantasising about [PlayerFantasy][end if]. [if A < 5]It's almost embarrassing how much it turns you on[otherwise if A < 10]It's a little surprising how much it turns you on[otherwise]It makes you uncontrollably turned on[end if], and as the pleasure rapidly builds upon itself, you realise you're already about to cum.[or]You turn on the [ShortDesc of O] and begin to stimulate your [if wanktype is HERM-WANK][mystical ShortDesc of penis] and clit[otherwise if wanktype is COCK-WANK][mystical ShortDesc of penis][otherwise]clit[end if][if C is clothing] through your [ShortDesc of C][end if], closing your eyes as you [if M is a live thing]focus on [NameDesc of M][otherwise]fantasise about [PlayerFantasy][end if]. Nothing more than a moment passes, [if A < 5]and you are immediately ashamed to[otherwise if A < 10]and you tell yourself you should be ashamed to[otherwise]and you feel your muscles tightening in anticipation as you[end if] realise that you're already going to cum.[or]You switch on [ShortDesc of O] and roll the vibrating end [if wanktype is HERM-WANK]down your [mystical ShortDesc of penis] and over your clit[otherwise if wanktype is COCK-WANK]around the head of your [mystical ShortDesc of penis][otherwise]around and around your clit[end if]. The [if C is clothing]sensation of being stimulated through your [ShortDesc of C][otherwise]strong stimulation[end if] combines with [if M is a live thing]the reality of what you're allowing [NameDesc of M] to do with you[otherwise]your fantasy of [PlayerFantasy][end if] and just like that, you realise you're already going to cum.[in random order]";
 	otherwise if C is clothing:[If C is clothing, we know M isn't in the way. Also, O isn't a thing beyond this point]
 		say "[one of]You eagerly begin to grab and rub [if wanktype is HERM-WANK]both sets of genitals[otherwise if wanktype is COCK-WANK]your [mystical ShortDesc of penis][otherwise]your clit[end if] through your [ShortDesc of C], [if M is a live thing]focusing all your thoughts on [NameDesc of M][otherwise]fantasising about [PlayerFantasy][end if]. [if A < 5]It's a little embarrassing how much it turns you on[otherwise if A < 10]It gets you even more turned on[otherwise]It makes you uncontrollably turned on[end if], and as much as the sensation is dampened by the [clothing-material of C], you realise you're already going to cum.[or]You begin to rub yourself through your [ShortDesc of C], closing your eyes as you [if M is a live thing]focus on [NameDesc of M][otherwise]fantasise about [PlayerFantasy][end if]. Even through the fabric, the pleasure rapidly intensifies, and you realise [if A < 5]with shame [otherwise if A < 10] [otherwise]with anticipation [end if]that you're about to cum.[or]You touch yourself through the [ShortDesc of C], [if wanktype is HERM-WANK]teasing your clit and groping your shaft[otherwise if wanktype is COCK-WANK]groping your [mystical ShortDesc of penis][otherwise]teasing your clit[end if] through the fabric. [if A < 5 and M is a live thing]It feels wrong, but you focus on [NameDesc of M][otherwise if M is a live thing]You focus as much as you can on [NameDesc of M][otherwise]A fantasy of [PlayerFantasy] enters your thoughts[end if], and just like that, you realise you're already going to cum.[in random order]";
 	otherwise:
@@ -754,7 +765,9 @@ To say StartMasturbationFlav of (O - an object) with (M - a thing) in (C - an ob
 	let R be a random number from 1 to 3;
 	if C is chastity cage, now C is nothing;
 	if auto < 2:
-		if wanktype is HERM-WANK:
+		if O is royal scepter and O is blacked:
+			say "You press [NameDesc of O] against [if wanktype is HERM-WANK]both sets of genitals[otherwise if wanktype is COCK-WANK]your [mystical ShortDesc of penis][otherwise]your clit[end if], and immediately find your mind filled with visions of delicious, glorious, giant black cocks.";
+		otherwise if wanktype is HERM-WANK:
 			if vagina is actually occupied:
 				say "You [if O is vibe-wand]switch on the [ShortDesc of O] and gingerly hold it against[otherwise]start rubbing[end if] your [if penis is penis-erect][mystical ShortDesc of penis], using your other hand to play with your clit[otherwise]clit, allowing your [mystical ShortDesc of penis] to grow good and hard[end if] as [if there is a live thing penetrating vagina]the [random live thing penetrating vagina] continues to pump away[otherwise]your pussy muscles clench around the [random thing penetrating vagina][end if].";
 			otherwise if O is vibe-wand:
@@ -884,7 +897,9 @@ Displays the flavor for an ongoing masturbation session.
 To say OngoingMasturbationFlav of (O - an object) with (N - a thing) in (C - an object):
 	let M be N;
 	if C is chastity cage, now C is nothing;
-	if wanktype is not VAG-WANK:[TODO: update for herm]
+	if O is royal scepter and O is blacked:
+		say "You hold [NameDesc of O] against your [genitals], your thoughs overwhelmed by nothing except the concept of big, beautiful, bulging black cock.";
+	otherwise if wanktype is not VAG-WANK:[TODO: update for herm]
 		if O is vibe-wand:
 			say "[one of]You shudder with pleasure as your [printed name of O] vibrates against your [player-penis], [if M is a live thing]focusing all your thoughts on [NameDesc of M][otherwise]fantasising about [PlayerFantasy][end if].[or]You half register the sticky wetness of your precum as you use your [printed name of O] to smear it up and down your shaft, [if M is a live thing]totally absorbed in pleasuring [NameDesc of M] even more[otherwise]too enthralled by the thought of [PlayerFantasy][end if].[or]The [printed name of O] provides a unique sensation as you [if the size of penis < 3]tenderly[otherwise if the humiliation of the player < HUMILIATION-MODEST + 4000]abashedly[otherwise]eagerly[end if] rub it against your [player-penis], [if M is a live thing]allowing [NameDesc of M] to use you[otherwise]fantasising about [PlayerFantasy][end if].[or]You continue to stimulate your [player-penis] with your [printed name of O], [if the bimbo of the player < 8]trying to ignore[otherwise]relishing in[end if] its unmistakable sex toy hum as you [if M is a live thing]close your eyes and focus on how [NameDesc of M] feels[otherwise]fantasise about [PlayerFantasy][end if].[or]You lose yourself to pleasure, [if the bimbo of the player < 4]grunting[otherwise if the bimbo of the player < 8]groaning[otherwise if the bimbo of the player < 12]moaning[otherwise if the bimbo of the player < 15]cooing[otherwise]shamelessly moaning[end if] as you vigorously rub the [printed name of O] against your [player-penis].[or]You use your [printed name of O] to pin your [player-penis] against your body, precum rolling off your shaft as you [if M is a live thing]use your body to pleasure both yourself and [NameDesc of M][otherwise]fantasise about [PlayerFantasy][end if].[at random]";
 		otherwise if C is clothing:

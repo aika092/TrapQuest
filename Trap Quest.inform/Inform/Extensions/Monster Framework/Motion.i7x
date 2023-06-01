@@ -1,39 +1,65 @@
 Motion by Monster Framework begins here.
 
 To compute guarding action of (M - a monster):
-	do nothing.
+	compute default motion actions of M.
 
 To check motion of (M - a monster):
 	check default motion of M.
 
 To check default motion of (M - a monster):
+	if lagdebug is true:
+		say "Default motion of [M]...";
+		wait 200 ms before continuing;
 	if M is penetrating a body part:
 		dislodge M;
-	if diaper messing >= 6 and M is undefeated and M is willing to punish untidiness and the player is not in the location of M: [While the NPC idly wanders, it can pick up leftover soiled diapers]
-		repeat with D running through on-stage soiled-diaper:
-			if D is in the location of M:
-				if M is in the location of the player, say "[BigNameDesc of M] picks up [NameDesc of D] with a disgusted look on [his of M] face.";
-				now D is carried by M;
-				now the boredom of M is 0;
-		if players-detached-dick is in the location of M: [#LXorDD]
-			let X be 0;
-			if M is aeromancer:
-				now X is the latex-transformation of the player / 2; [They're more interested the more TF-ed you are]
-			otherwise if M is djinn:
-				now X is 3;
-			otherwise if M is intelligent:
-				increase X by 1;
-			if a random number between 1 and 10 < X:
-				compute handing over detached dick to M;
-				say "You feel something grab your detached dick[if the player is in the location of M], right in front of you, just before you can![otherwise] - wherever that may be. Wah![end if]";
-	compute monstermotion of M;
+	if M is undefeated:
+		if lagdebug is true:
+			say "Default motion actions...";
+			wait 200 ms before continuing;
+		compute default motion actions of M;
+		if M is a urinater and the bladder of M >= 1000:
+			if lagdebug is true:
+				say "Toilet seeking...";
+				wait 200 ms before continuing;
+			compute toilet seeking of M;
+		otherwise:
+			if lagdebug is true:
+				say "Monstermotion...";
+				wait 200 ms before continuing;
+			compute monstermotion of M;
+	otherwise:
+		compute monstermotion of M;
 	now M is moved.
 
+To compute default motion actions of (M - a monster):
+	if diaper messing >= 6 and M is willing to punish untidiness and the player is not in the location of M: [While the NPC idly wanders, it can pick up leftover soiled diapers]
+		repeat with D running through soiled-diaper in the location of M:
+			[if M is in the location of the player, say "[BigNameDesc of M] picks up [NameDesc of D] with a disgusted look on [his of M] face.";] [could never happen]
+			now D is carried by M;
+			now the boredom of M is 0;
+		repeat with D running through dirty diapers in the location of M:
+			[if M is in the location of the player, say "[BigNameDesc of M] picks up [NameDesc of D] with a disgusted look on [his of M] face.";] [could never happen]
+			now D is carried by M;
+			now the boredom of M is 0;
+	if M is intelligent and M is uninterested:
+		repeat with D running through unlock-key in the location of M:
+			if M is in the location of the player, say "[BigNameDesc of M] picks up [NameDesc of D] with an intrigued look on [his of M] face.";
+			now D is carried by M;
+			now the boredom of M is 0;
+	if players-detached-dick is in the location of M: [#LXorDD]
+		let X be 0;
+		if M is aeromancer:
+			now X is the latex-transformation of the player / 2; [They're more interested the more TF-ed you are]
+		otherwise if M is djinn:
+			now X is 3;
+		otherwise if M is intelligent:
+			increase X by 1;
+		if a random number between 1 and 10 < X:
+			compute handing over detached dick to M;
+			say "You feel something grab your detached dick[if the player is in the location of M], right in front of you, just before you can![otherwise] - wherever that may be. Wah![end if]";
+
 To compute monstermotion of (M - a monster): [This is default wandering if function is left undefined for a specific monster]
-	if M is a urinater and the bladder of M >= 1000:
-		compute toilet seeking of M;
-	otherwise:
-		compute room leaving of M.
+	compute room leaving of M.
 
 To compute mandatory room leaving of (M - a monster):
 	let L be the location of M;
@@ -55,20 +81,26 @@ To blockable move (M - a monster) to (D - a direction):
 		try M going D.
 
 To compute room leaving of (M - a monster): [This CANNOT be replaced with a function that potentially doesn't make them leave the room, for any NPC. Some while loops rely on this to eventually succeed or the game will freeze. 'blockable move' function is acceptable because when we compute mandatory room leaving we set travel-opposite to down]
+	if lagdebug is true:
+		say "Room leaving...";
+		wait 200 ms before continuing;
 	if M is in Dungeon11 or M is in Dungeon10:
 		blockable move M to east;
 	otherwise if M is in School33 and M is uninterested:
 		blockable move M to west;
 	otherwise:
 		now neighbour finder is the location of M;
+		if lagdebug is true:
+			say "Choosing direction...";
+			wait 200 ms before continuing;
 		let A be a random N-viable direction;
+		if lagdebug is true:
+			say "Chosen [A]...";
+			wait 200 ms before continuing;
 		if debugmode > 1, say "[input-style][MediumDesc of M] chooses [A].[roman type][line break]";
-		if A is a direction:
+		if A is a direction and a random number between 1 and 100 > 55:
 			let P be the room A from the location of M;
-			if A is a random N-viable direction and P is unbossed and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
-				blockable move M to A;
-				compute monstermotion reactions of M;
-			otherwise if A is a random N-viable direction and P is unbossed and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
+			if P is unbossed and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
 				blockable move M to A;
 				compute monstermotion reactions of M.
 
@@ -78,57 +110,99 @@ To compute toilet seeking of (M - a monster):
 	otherwise:
 		compute default toilet seeking of M.
 
-To compute default toilet seeking of (M - a monster):
-	let L be the location of M;
-	if L is not use-the-floor:
-		compute toilet use of M;
-	otherwise:
-		let LR be a list of rooms;
-		if M is in an academic room:
-			repeat with R running through placed academic rooms:
-				if R is not use-the-floor, add R to LR;
-		otherwise if M is in a modern room:
-			repeat with R running through placed modern rooms:
-				if R is not use-the-floor, add R to LR;
-		otherwise if M is in a haunted room:
-			repeat with R running through placed haunted rooms:
-				if R is not use-the-floor, add R to LR;
-		otherwise if M is in a jungle room:
-			repeat with R running through jungle rooms:
-				if R is not use-the-floor, add R to LR;
-		otherwise if M is in a labyrinth room:
-			repeat with R running through labyrinth rooms:
-				if R is not use-the-floor, add R to LR;
-		let TR be Holding Pen;
-		let LRE be the number of entries in LR;
-		if LRE > 0:
-			if LRE > 1:
+Definition: a monster is closest-toilet-preferring: decide no.
+
+To set up toilet preference of (M - a monster):
+	let LR be a list of rooms;
+	if M is in an academic room:
+		repeat with R running through placed academic rooms:
+			if R is not use-the-floor:
+				unless R is School35 and (R is not seen or (M is student and the current-rank of M < 6)), add R to LR; [non-gold students are unaware of secret area even after it is revealed]
+	otherwise if M is in a modern room:
+		repeat with R running through placed modern rooms:
+			if R is not use-the-floor, add R to LR;
+	otherwise if M is in a haunted room:
+		repeat with R running through placed haunted rooms:
+			if R is not use-the-floor, add R to LR;
+	otherwise if M is in a jungle room:
+		repeat with R running through jungle rooms:
+			if R is not use-the-floor, add R to LR;
+	otherwise if M is in a labyrinth room:
+		repeat with R running through labyrinth rooms:
+			if R is not use-the-floor, add R to LR;
+	let TR be Holding Pen;
+	let LRE be the number of entries in LR;
+	if LRE > 0:
+		if LRE > 1:
+			if M is closest-toilet-preferring:
 				let D be 99999;
 				repeat with R running through LR: [find the closest one]
-					let DX be the distance of R from L;
+					let DX be the distance of R from the location of M;
 					if DX < D:
 						now D is DX;
 						now TR is R;
-			otherwise: [only one valid target]
+			otherwise:
+				sort LR in random order;
 				now TR is entry 1 in LR;
-			let A be the the best route from the location of M to TR through unbossed rooms;
-			if A is a direction:
-				let P be the room A from the location of M;
+		otherwise: [only one valid target]
+			now TR is entry 1 in LR;
+	now the target-toilet of M is TR.
+
+To compute default toilet seeking of (M - a monster):
+	let L be the location of M;
+	unless L is use-the-floor or (locked-toilets is true and L is School10 and academy-toilet-key is not held by M):
+		compute toilet use of M;
+	otherwise:
+		let TR be the target-toilet of M;
+		let ATKM be M;
+		if TR is not regional and M is regional, set up toilet preference of M;
+		if TR is regional:
+			let A be down;
+			if (locked-toilets is true and TR is School10 and academy-toilet-key is not held by M):
+				let X be the location of academy-toilet-key;
+				let KM be a random monster carrying academy-toilet-key;
+				if KM is a monster:
+					now X is the location of KM;
+					now ATKM is KM;
+				now A is the the best route from L to X through unbossed rooms;
+			otherwise:
+				now A is the the best route from L to TR through unbossed rooms;
+			if M is student: [students can't go where they can't go]
+				let P be the room A from L;
+				if the entry-rank of P > the entry-rank of L and the entry-rank of P > the current-rank of M, now A is down;
+			if A is not down:
+				let P be the room A from L;
 				if the number of barriers in P is 0 and the number of barriers in the location of M is 0:
 					blockable move M to A;
 					compute monstermotion reactions of M;
+					if ATKM is not M: [academy toilet key is held by another monster]
+						if ATKM is in L and the bladder of ATKM < 1000 and (M is not student or ATKM is not headmistress): [there's a special cutscene for a student asking the headmistress for the key]
+							if the player is in L, say "[BigNameDesc of M] takes [NameDesc of academy-toilet-key] from [NameDesc of ATKM].";
+							now academy-toilet-key is carried by M;
+					otherwise if academy-toilet-key is in L:
+						if the player is in L, say "[BigNameDesc of M] takes [NameDesc of academy-toilet-key] from the ground.";
+						now academy-toilet-key is carried by M;
 			otherwise: [Failed to find a valid path to target]
 				compute room leaving of M;
-		if TR is Holding Pen, compute room leaving of M. [Failed to find a legal toilet target]
+		otherwise: [Failed to find a legal toilet target]
+			compute room leaving of M.
+
+[Everybody is assumed to have instantly gone to the toilet when they reached 1000 bladder]
+To compute bladder cleanup:
+	repeat with M running through monsters:
+		if M is regional:
+			now the bladder of M is the remainder after dividing the bladder of M by 1000.
 
 To compute toilet use of (M - a monster): [This MUST cause bladder to empty or NPCs might get stuck]
-	if M is in the location of the player:
+	if M is in the location of the player or (debugmode > 0 and debuginfo > 1):
+		if M is not in the location of the player, say input-style;
 		if the location of M is toilets:
 			say "[BigNameDesc of M] uses the toilet to relieve [his of M] bladder.";
 		otherwise if the location of M is urinals:
 			say "[BigNameDesc of M] uses a urinal to relieve [his of M] bladder.";
 		otherwise:
 			say "[BigNameDesc of M] urinates into [NameDesc of water-body].";
+		if M is not in the location of the player, say roman type;
 	now the bladder of M is 0.
 
 To compute diaper wetting of (M - a monster): [This MUST cause bladder to empty or NPCs might get stuck]
@@ -193,11 +267,10 @@ To compute fleeing of (M - a monster): [Default Compute Fleeing if not specified
 	if M is scarable:
 		now neighbour finder is the location of M;
 		let A be a random N-viable direction;
-		let P be the room A from the location of M;
-		if A is a random N-viable direction and the room A from the location of M is unbossed and P is not the location of the player and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
-			blockable move M to A;
-		otherwise if A is a random N-viable direction and P is not the location of the player and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
-			blockable move M to A.
+		if A is a direction and a random number between 1 and 100 > 40:
+			let P be the room A from the location of M;
+			if P is unbossed and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
+				blockable move M to A.
 
 The motion reaction rules is a rulebook.
 
@@ -208,7 +281,7 @@ To compute monstermotion reactions of (M - a monster): [If the NPC stumbles acro
 
 This is the monster notices the player urinating rule:
 	if player-urinating is 1:
-		humiliate 200;
+		severeHumiliate;
 		if there is a worn pee covering diaper:
 			say DiaperDeclaration of current-monster;
 		otherwise if there is a worn pee covering clothing:
@@ -281,7 +354,7 @@ To decide which number is the messRefractoryLimit of (M - a monster):
 	decide on -800.
 
 Definition: a monster (called M) is just messing:
-	if M is messy and the refractory-period of M + 4 > the messRefractoryLimit of M, decide yes;
+	if M is diaper-enslaved and M is messy and the refractory-period of M + 4 > the messRefractoryLimit of M, decide yes;
 	decide no.
 
 To compute periodic recovery of (M - a monster):
@@ -295,7 +368,16 @@ To compute periodic recovery of (M - a monster):
 			Arouse 10.[The princess will get a little hornier every turn her consort goes unsatisfied]
 
 To compute mess moment of (M - a monster):
-	if M is in the location of the player, say SuddenMessFlav of M.
+	if M is in the location of the player, compute default mess moment of M.
+
+To compute default mess moment of (M - a monster):
+	say SuddenMessFlav of M;
+	if the diaper addiction of the player < 8:
+		say "The sight and sounds of [NameDesc of M][']s episode disgust you, lowering your arousal.";
+		cool down 3000;
+	otherwise if the diaper addiction of the player > 13:
+		say "You can't help but find the sight and sounds of [NameDesc of M][']s episode deeply arousing.";
+		arouse 3000.
 
 To say SuddenMessFlav of (M - a monster):
 	say "[speech style of M]'Hnnnng...'[roman type][line break]All of a sudden, [NameDesc of M][']s belly grumbles and then you hear a cacophony of awful sounds as [he of M] fills [his of M] diaper.[line break][variable custom style][one of]Oh come on! So I guess I'm supposed to change [him of M]?[or]Uh-oh. Somebody needs a change...[stopping][roman type][line break]".

@@ -22,9 +22,13 @@ To bore (M - a monster):
 To bore (M - a monster) for (N - a number) seconds:
 	dislodge M;
 	compute common boredom of M for N seconds;
+	compute unique boredom of M;
 	now M is uninterested;
 	now the boredom of M is N;
 	if M is diaper-instructing, now the boredom of M is the boredom of M / 2. [Diaper checks happen more frequently]
+
+To compute unique boredom of (M - a monster):
+	do nothing.
 
 To compute common boredom of (M - a monster) for (N - a number) seconds:
 	now M is unseduced;
@@ -38,8 +42,7 @@ To compute common boredom of (M - a monster) for (N - a number) seconds:
 	now the wrangle-bonus of M is 0;
 	now the temporary-damage-reduction of M is 0;
 	if debugmode > 1, say "Deinteresting [ShortDesc of M] for [N] seconds. Latest appearance seen is [latest-appearance of M].";
-	now the latest-appearance of M is 0;
-	if diaper quest is 1, now the latest-cringe of M is 0;
+	compute common latest appearance reset of M;
 	[now the latest-appearance of M is the appearance of the player;
 	if debugmode > 1, say "Latest appearance seen is now [latest-appearance of M].";
 	if diaper quest is 1, now the latest-cringe of M is the cringe appearance of the player;]
@@ -52,8 +55,11 @@ To compute common boredom of (M - a monster) for (N - a number) seconds:
 	if N >= 50 and playerRegion is not School and the player is not in Dungeon12:[Dungeon12 is the Throne Room. We don't want to let the player farm by going in and out of the Royal Chambers.]
 		let R be a random number between 1 and 50;
 		decrease the charge of the dungeon altar by R;
-		decrease the charge of the elder altar by R;
-		if the charge of hotel altar > 0, decrease the charge of hotel altar by R;
+		decrease the charge of the elder altar by R.
+
+To compute common latest appearance reset of (M - a monster):
+	now the latest-appearance of M is 0;
+	if diaper quest is 1, now the latest-cringe of M is 0.
 
 To satisfy (M - a monster):
 	satisfy M for 500 seconds.
@@ -90,7 +96,6 @@ To finally destroy (M - a monster):
 	uniquely destroy M;
 	if the player is in the location of M, decrease the charge of the dungeon altar by the difficulty of M * 10;
 	if the player is in the location of M, decrease the charge of the elder altar by the difficulty of M * 10;
-	if the player is in the location of M and the charge of hotel altar > 0, decrease the charge of hotel altar by the difficulty of M * 10;
 	now the collar-pulled of M is 0;
 	now M is not soul-stolen;
 	now the time-alive of M is 0;
@@ -106,8 +111,8 @@ To finally destroy (M - a monster):
 
 To reset (M - a monster): [We do this when the player faints to all monsters, even if they are remaining in play.]
 	unique reset M;
-	now M is not dying;
 	deinterest M; [this includes dislodging]
+	now M is not dying;
 	now the sleep of M is 0;
 	now the scared of M is 0;
 	now the last-interaction of M is 0;
@@ -172,6 +177,7 @@ To standard loot (M - a monster):
 		compute autotaking X.
 
 To compute loot dropping of (X - a thing) by (M - a monster):
+	unless M is dying, now the owner of X is M;
 	say "[BigNameDesc of M] [if the loot dropped of M > 0]also [end if][if M is dying or M is not in the location of the player]dropped[otherwise]drops[end if] a [printed name of X]!".
 
 To compute appraisal of (X - an accessory) from (M - a monster):

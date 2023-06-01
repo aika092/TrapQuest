@@ -36,7 +36,7 @@ white-monokini is a monokini. white-monokini is sheer-when-wet. white-monokini i
 Figure of white-monokini is the file "Items/Clothes/Upper/Swimming/Monokinis/monokini3.png".
 
 To decide which number is the initial outrage of (C - white-monokini):
-	decide on 9.
+	decide on 4.
 
 To decide which figure-name is clothing-image of (C - white-monokini):
 	decide on figure of white-monokini.
@@ -249,6 +249,43 @@ To decide which number is the initial outrage of (C - bimbo monokini):
 
 To decide which number is the assModesty of (C - bimbo monokini):
 	decide on 3.
+
+Part 9 - Gris Monokini
+
+gris monokini is a minimalist monokini. gris monokini is very low cut. gris monokini is top-displacable. gris monokini is unique. The text-shortcut of gris monokini is "mtmk". Understand "mostly", "transparent", "swimsuit" as gris monokini.
+
+Figure of gris monokini is the file "Items/Clothes/Upper/Swimming/Monokinis/monokini9.png".
+
+Definition: gris monokini is black themed: decide yes.
+Definition: gris monokini is layer-concealing: decide no. [No layer is fully concealed]
+Definition: gris monokini is partially-layer-concealing: decide yes. [Most layers are partially concealed]
+Definition: gris monokini is potentially-partially-mid-layer-concealing: decide no. [Belly is fully exposed]
+
+To compute post transformation effect of (C - gris monokini):
+	now C is strength-influencing;
+	now the raw-magic-modifier of C is 2.
+
+To decide which figure-name is clothing-image of (C - gris monokini):
+	decide on figure of gris monokini.
+
+To say ClothingDesc of (C - gris monokini):
+	say "This tight fitting onepiece strapless swimsuit is almost entirely see-through, except for strips of opaque fabric over the centre of the chest, and the crotch, starting right at the bottom of the mons pubis. So despite it covering the same amount of area as many strapless swimsuits, it is in practice much, much sluttier.".
+
+To say ShortDesc of (C - gris monokini):
+	say "mostly transparent swimsuit".
+To say MediumDesc of (C - gris monokini):
+	say "swimsuit with risque transparent area".
+
+To decide which number is the initial outrage of (C - gris monokini):
+	decide on 9.
+To decide which number is the assModesty of (C - gris monokini):
+	decide on 0.
+
+To compute class set up of (C - gris monokini):
+	set up BUC of gris monokini;
+	now gris monokini is audible jiggles;
+	now the raw-magic-modifier of gris monokini is 2;
+	set up random-based influence of gris monokini.
 
 
 Monokinis ends here.

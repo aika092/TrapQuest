@@ -143,6 +143,7 @@ To say UniqueClothingDesc of (G - black-panties):
 	say "A pair of comfy black panties.".
 Understand "black" as black-panties.
 Definition: black-panties is black themed: decide yes.
+The DQFigure of black-panties is DQBlackPants.
 
 black-sucking-cocks-panties is a panties. The text-shortcut of black-sucking-cocks-panties is "bsp".
 To say selfexamineuniquetitle of (G - black-sucking-cocks-panties):
@@ -181,7 +182,7 @@ To compute early pregnancy eagerness:
 		if the pregnancy rate of the player is 1, now the pregnancy rate of the player is 2;
 		if the mystical size of penis > min penis size, SpecialPenisDown 1. [#LXorDD]
 
-blue-panties is a panties. The text-shortcut of blue-panties is "bpa".
+blue-panties is a panties. The text-shortcut of blue-panties is "bpa".  The DQFigure of blue-panties is DQBluePants.
 To say selfexamineuniquetitle of (G - blue-panties):
 	say "pair of blue panties".
 To say UniqueClothingDesc of (G - blue-panties):
@@ -218,7 +219,7 @@ To say UniqueClothingDesc of (G - pale-panties):
 Definition: pale-panties is sissifying: decide yes.
 Definition: pale-panties is pink themed: decide yes.
 
-pink-kitty-panties is a panties. Understand "pink", "kitty" as pink-kitty-panties. The text-shortcut of pink-kitty-panties is "pkp".
+pink-kitty-panties is a panties. Understand "pink", "kitty" as pink-kitty-panties. The text-shortcut of pink-kitty-panties is "pkp". The DQFigure of pink-kitty-panties is DQPinkPants.
 To say selfexamineuniquetitle of (G - pink-kitty-panties):
 	say "pair of pink kitty panties".
 To say UniqueClothingDesc of (G - pink-kitty-panties):
@@ -226,7 +227,7 @@ To say UniqueClothingDesc of (G - pink-kitty-panties):
 Definition: pink-kitty-panties is cat themed: decide yes.
 Definition: pink-kitty-panties is pink themed: decide yes.
 
-blue-thirsty-panties is a panties. Understand "blue", "thirsty" as blue-thirsty-panties. The text-shortcut of blue-thirsty-panties is "thp".
+blue-thirsty-panties is a panties. Understand "blue", "thirsty" as blue-thirsty-panties. The text-shortcut of blue-thirsty-panties is "thp". The DQFigure of blue-thirsty-panties is DQBluePants.
 To say selfexamineuniquetitle of (G - blue-thirsty-panties):
 	say "pair of blue thirsty panties".
 To say UniqueClothingDesc of (G - blue-thirsty-panties):

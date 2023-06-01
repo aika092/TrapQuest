@@ -27,10 +27,10 @@ To say item style:
 	if shortcuts is 1, say newbie style.
 
 To say clothing-title-before:
-	say "[TQlink of item described][item style][cumdesc][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][if item described is glued]glued [end if][raw-magic-modifier-desc]".
+	say "[TQlink of item described][item style][cumdesc][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]".
 
 To say clothing-title-after:
-	say "[if magic-ID of the item described is identified and magic-type of the item described is not blandness] of [magic-type of the item described][end if][roman type][quest-desc][shortcut-desc][displacement-desc][if the stolen-strength of item described > 0] (STOLEN STRENGTH)[end if][TQxlink of item described][verb-desc of item described]".
+	say "[if magic-ID of the item described is identified and magic-type of the item described is not blandness] of [magic-type of the item described][end if][roman type][quest-desc][shortcut-desc][displacement-desc of item described][if the stolen-strength of item described > 0] (STOLEN STRENGTH)[end if][TQxlink of item described][verb-desc of item described]".
 
 To say shortcut-desc:
 	if shortcuts is 1 and inline hyperlinks is 0 and the text-shortcut of item described is not "", say "[bracket][text-shortcut of item described][close bracket]".
@@ -68,7 +68,8 @@ To repair (C - clothing):
 	if C is zippable:
 		now C is crotch-zipped;
 		if C is worn, force clothing-focus redraw; [Forces redraw of clothing inventory window]
-		if C is carried, force inventory-focus redraw. [Forces redraw of inventory window]
+		if C is carried, force inventory-focus redraw; [Forces redraw of inventory window]
+	if C is worn, update appearance level.
 
 [!<DisplaceClothing>+
 
@@ -80,6 +81,7 @@ To Displace (C - clothing):
 		now C is crotch-displaced;
 		dislodge C;
 		force clothing-focus redraw; [Forces redraw of clothing inventory window]
+		update appearance level;
 	otherwise:
 		TopDisplace C.
 
@@ -97,7 +99,8 @@ To Replace (C - clothing):
 		if C is vagina plugging:
 			now C is penetrating vagina;
 			ruin vagina;
-		force clothing-focus redraw. [Forces redraw of clothing inventory window]
+		force clothing-focus redraw; [Forces redraw of clothing inventory window]
+		update appearance level.
 
 [!<TopDisplaceClothing>+
 
@@ -107,7 +110,8 @@ Clothing goes from top in place to displaced
 To TopDisplace (C - clothing):
 	if C is actually top-displacable:
 		now C is top-displaced;
-		force clothing-focus redraw. [Forces redraw of clothing inventory window]
+		force clothing-focus redraw; [Forces redraw of clothing inventory window]
+		update appearance level.
 
 [!<TopReplaceClothing>+
 
@@ -117,7 +121,8 @@ Clothing goes from displaced to in place.
 To TopReplace (C - clothing):
 	if C is not top-placed:
 		now C is top-placed;
-		force clothing-focus redraw. [Forces redraw of clothing inventory window]
+		force clothing-focus redraw; [Forces redraw of clothing inventory window]
+		update appearance level.
 
 [!<ZipDownClothing>+
 
@@ -127,7 +132,8 @@ Clothing goes from zipped to unzipped
 To ZipDown (C - clothing):
 	if C is crotch-zipped:
 		now C is crotch-unzipped;
-		force clothing-focus redraw. [Forces redraw of clothing inventory window]
+		force clothing-focus redraw; [Forces redraw of clothing inventory window]
+		update appearance level.
 
 [!<ZipUpClothing>+
 
@@ -137,122 +143,133 @@ Clothing goes from unzipped to zipped.
 To ZipUp (C - clothing):
 	if C is crotch-unzipped:
 		now C is crotch-zipped;
-		force clothing-focus redraw. [Forces redraw of clothing inventory window]
+		force clothing-focus redraw; [Forces redraw of clothing inventory window]
+		update appearance level.
 
 To ZipOrRip (C - a clothing):
 	ZipDown C;
-	if C is rippable and (C is crotch-intact or C is crotch-skirted), now C is crotch-ripped.
+	if C is rippable and (C is crotch-intact or C is crotch-skirted):
+		now C is crotch-ripped;
+		update appearance level.
 
 To delayed imprint destroy (C - a clothing):
 	now C is in soon-to-imprint.
 
 To SemenSoakUp (C - a clothing) by (N - a number):
-	if C is listed in the list of stacked diapers:
-		now previous-clothing-glazed is -1; [force appearance reassessment]
-		let dCapacity be the soak-limit of C - the total-soak of C;
-		let dLeftover be N - dCapacity;
-		if dLeftover > 0: [semen leaks downwards]
-			increase the semen-soak of C by dCapacity;
-			increase the perceived-semen-soak of C by dCapacity;
-			increase the semen-soak of diaper-stack by dCapacity;
-			increase the perceived-semen-soak of diaper-stack by dCapacity;
-			let E be 0;
-			repeat with D running through the list of stacked diapers:
-				if D is C:
-					now E is 1;
-				otherwise if E is 1: [the next diaper down]
-					now E is 0;
-					SemenSoakUp D by dLeftover;
+	if N > 0:
+		if C is listed in the list of stacked diapers:
+			now previous-clothing-glazed is -1; [force appearance reassessment]
+			let dCapacity be the soak-limit of C - the total-soak of C;
+			let dLeftover be N - dCapacity;
+			if dLeftover > 0: [semen leaks downwards]
+				increase the semen-soak of C by dCapacity;
+				increase the perceived-semen-soak of C by dCapacity;
+				increase the semen-soak of diaper-stack by dCapacity;
+				increase the perceived-semen-soak of diaper-stack by dCapacity;
+				let E be 0;
+				repeat with D running through the list of stacked diapers:
+					if D is C:
+						now E is 1;
+					otherwise if E is 1: [the next diaper down]
+						now E is 0;
+						SemenSoakUp D by dLeftover;
+			otherwise:
+				increase the semen-soak of C by N;
+				increase the perceived-semen-soak of C by N;
+				increase the semen-soak of diaper-stack by N;
+				increase the perceived-semen-soak of diaper-stack by N;
 		otherwise:
 			increase the semen-soak of C by N;
-			increase the perceived-semen-soak of C by N;
-			increase the semen-soak of diaper-stack by N;
-			increase the perceived-semen-soak of diaper-stack by N;
-	otherwise:
-		increase the semen-soak of C by N;
-		now previous-clothing-glazed is -1; [force appearance reassessment]
-		if C is diaper, increase the perceived-semen-soak of C by N.
+			now previous-clothing-glazed is -1; [force appearance reassessment]
+			if C is diaper, increase the perceived-semen-soak of C by N;
+		if C is worn, update appearance level.
 
 To UrineSoakUp (C - a clothing) by (N - a number):
-	if C is listed in the list of stacked diapers:
-		now previous-clothing-glazed is -1; [force appearance reassessment]
-		let dCapacity be the soak-limit of C - the total-soak of C;
-		let dLeftover be N - dCapacity;
-		if dLeftover > 0: [urine leaks downwards]
-			increase the urine-soak of C by dCapacity;
-			increase the perceived-urine-soak of C by dCapacity;
-			increase the urine-soak of diaper-stack by dCapacity;
-			increase the perceived-urine-soak of diaper-stack by dCapacity;
-			let E be 0;
-			repeat with D running through the list of stacked diapers:
-				if D is C:
-					now E is 1;
-				otherwise if E is 1: [the next diaper down]
-					now E is 0;
-					UrineSoakUp D by dLeftover;
+	if N > 0:
+		if C is listed in the list of stacked diapers:
+			now previous-clothing-glazed is -1; [force appearance reassessment]
+			let dCapacity be the soak-limit of C - the total-soak of C;
+			let dLeftover be N - dCapacity;
+			if dLeftover > 0: [urine leaks downwards]
+				increase the urine-soak of C by dCapacity;
+				increase the perceived-urine-soak of C by dCapacity;
+				increase the urine-soak of diaper-stack by dCapacity;
+				increase the perceived-urine-soak of diaper-stack by dCapacity;
+				let E be 0;
+				repeat with D running through the list of stacked diapers:
+					if D is C:
+						now E is 1;
+					otherwise if E is 1: [the next diaper down]
+						now E is 0;
+						UrineSoakUp D by dLeftover;
+			otherwise:
+				increase the urine-soak of diaper-stack by N;
+				increase the perceived-urine-soak of diaper-stack by N;
+				increase the urine-soak of C by N;
+				increase the perceived-urine-soak of C by N;
 		otherwise:
-			increase the urine-soak of diaper-stack by N;
-			increase the perceived-urine-soak of diaper-stack by N;
 			increase the urine-soak of C by N;
-			increase the perceived-urine-soak of C by N;
-	otherwise:
-		increase the urine-soak of C by N;
-		now previous-clothing-glazed is -1; [force appearance reassessment]
-		if C is diaper, increase the perceived-urine-soak of C by N.
+			now previous-clothing-glazed is -1; [force appearance reassessment]
+			if C is diaper, increase the perceived-urine-soak of C by N;
+		if C is worn, update appearance level.
 
 To MilkSoakUp (C - a clothing) by (N - a number):
-	if C is listed in the list of stacked diapers:
-		now previous-clothing-glazed is -1; [force appearance reassessment]
-		let dCapacity be the soak-limit of C - the total-soak of C;
-		let dLeftover be N - dCapacity;
-		if dLeftover > 0: [milk leaks downwards]
-			increase the milk-soak of C by dCapacity;
-			increase the perceived-milk-soak of C by dCapacity;
-			increase the milk-soak of diaper-stack by dCapacity;
-			increase the perceived-milk-soak of diaper-stack by dCapacity;
-			let E be 0;
-			repeat with D running through the list of stacked diapers:
-				if D is C:
-					now E is 1;
-				otherwise if E is 1: [the next diaper down]
-					now E is 0;
-					MilkSoakUp D by dLeftover;
+	if N > 0:
+		if C is listed in the list of stacked diapers:
+			now previous-clothing-glazed is -1; [force appearance reassessment]
+			let dCapacity be the soak-limit of C - the total-soak of C;
+			let dLeftover be N - dCapacity;
+			if dLeftover > 0: [milk leaks downwards]
+				increase the milk-soak of C by dCapacity;
+				increase the perceived-milk-soak of C by dCapacity;
+				increase the milk-soak of diaper-stack by dCapacity;
+				increase the perceived-milk-soak of diaper-stack by dCapacity;
+				let E be 0;
+				repeat with D running through the list of stacked diapers:
+					if D is C:
+						now E is 1;
+					otherwise if E is 1: [the next diaper down]
+						now E is 0;
+						MilkSoakUp D by dLeftover;
+			otherwise:
+				increase the milk-soak of C by N;
+				increase the perceived-milk-soak of C by N;
+				increase the milk-soak of diaper-stack by N;
+				increase the perceived-milk-soak of diaper-stack by N;
 		otherwise:
 			increase the milk-soak of C by N;
-			increase the perceived-milk-soak of C by N;
-			increase the milk-soak of diaper-stack by N;
-			increase the perceived-milk-soak of diaper-stack by N;
-	otherwise:
-		increase the milk-soak of C by N;
-		now previous-clothing-glazed is -1; [force appearance reassessment]
-		if C is diaper, increase the perceived-milk-soak of C by N.
+			now previous-clothing-glazed is -1; [force appearance reassessment]
+			if C is diaper, increase the perceived-milk-soak of C by N;
+		if C is worn, update appearance level.
 
 To WaterSoakUp (C - a clothing) by (N - a number):
-	if C is listed in the list of stacked diapers:
-		now previous-clothing-glazed is -1; [force appearance reassessment]
-		let dCapacity be the soak-limit of C - the total-soak of C;
-		let dLeftover be N - dCapacity;
-		if dLeftover > 0: [water leaks downwards]
-			increase the water-soak of C by dCapacity;
-			increase the perceived-water-soak of C by dCapacity;
-			increase the water-soak of diaper-stack by dCapacity;
-			increase the perceived-water-soak of diaper-stack by dCapacity;
-			let E be 0;
-			repeat with D running through the list of stacked diapers:
-				if D is C:
-					now E is 1;
-				otherwise if E is 1: [the next diaper down]
-					now E is 0;
-					WaterSoakUp D by dLeftover;
+	if N > 0:
+		if C is listed in the list of stacked diapers:
+			now previous-clothing-glazed is -1; [force appearance reassessment]
+			let dCapacity be the soak-limit of C - the total-soak of C;
+			let dLeftover be N - dCapacity;
+			if dLeftover > 0: [water leaks downwards]
+				increase the water-soak of C by dCapacity;
+				increase the perceived-water-soak of C by dCapacity;
+				increase the water-soak of diaper-stack by dCapacity;
+				increase the perceived-water-soak of diaper-stack by dCapacity;
+				let E be 0;
+				repeat with D running through the list of stacked diapers:
+					if D is C:
+						now E is 1;
+					otherwise if E is 1: [the next diaper down]
+						now E is 0;
+						WaterSoakUp D by dLeftover;
+			otherwise:
+				increase the water-soak of C by N;
+				increase the perceived-water-soak of C by N;
+				increase the water-soak of diaper-stack by N;
+				increase the perceived-water-soak of diaper-stack by N;
 		otherwise:
 			increase the water-soak of C by N;
-			increase the perceived-water-soak of C by N;
-			increase the water-soak of diaper-stack by N;
-			increase the perceived-water-soak of diaper-stack by N;
-	otherwise:
-		increase the water-soak of C by N;
-		now previous-clothing-glazed is -1; [force appearance reassessment]
-		if C is diaper, increase the perceived-water-soak of C by N.
+			now previous-clothing-glazed is -1; [force appearance reassessment]
+			if C is diaper, increase the perceived-water-soak of C by N;
+		if C is worn, update appearance level.
 
 [We call the stealth functions when it's a way that a 100% babified player might not notice the soaking happening.]
 
@@ -378,13 +395,17 @@ To WaterEmpty (C - a clothing):
 To Drench (C - a clothing):
 	increase the water-soak of C by the soak-limit of C - the total-soak of C;
 	if C is diaper and the player is diaper aware, now the perceived-water-soak of C is the water-soak of C;
-	if tough-shit is 0 and C is held:
-		if C is glued:
-			ungluify C;
-			say "[BigNameDesc of C] is no longer covered in glue!";
-			if C is worn, force immediate clothing-focus redraw;
-			if C is carried, force immediate inventory-focus redraw;
-		if C is worn, update appearance level.
+	if tough-shit is 0 and C is glued and C is not hugger-panties and C is not hugger-gag:
+		decrease the glue timer of C by 50;
+		if the glue timer of C > 0:
+			if C is held, say "The glue on [NameDesc of C] is rapidly weakening!";
+		otherwise:
+			now the glue timer of C is 0;
+			if C is held, say "The glue on [NameDesc of C] has completely degraded[if C is worn]. It's no longer stuck to you![otherwise].[end if]";
+	if C is carried, force immediate inventory-focus redraw;
+	if C is worn:
+		force immediate clothing-focus redraw;
+		update appearance level.
 
 [!<OnlyDestroyClothing>+
 
@@ -418,7 +439,7 @@ To only destroy (C - clothing):
 	unless C is alwaysSure, now C is unsure;
 	unless C is alwaysIdentified, now C is unidentified;
 	now the raw-magic-modifier of C is 0;
-	now C is unowned;
+	now the owner of C is nothing;
 	now the damage of C is 0;
 	now C is not-influencing;
 	now C is not temporarily-displaced;

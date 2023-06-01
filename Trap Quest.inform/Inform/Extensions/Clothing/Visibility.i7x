@@ -85,6 +85,12 @@ Definition: a wearthing (called C) is currently uncovered:
 		decide no;
 	decide yes.
 
+Definition: a wearthing (called C) is currently unconcealed:
+	if C is not worn, decide no;
+	if C is currently concealed:
+		decide no;
+	decide yes.
+
 [Layers, not visibility. Mesh items don't count as covering at all since liquid can get through]
 To decide which object is the top-coverer of (C - a clothing):
 	if the top-layer of C > 0:
@@ -238,18 +244,5 @@ To decide which object is the at least partial concealer of (K - a knickers):
 		if C is not K and (the bottom-layer of C > the bottom-layer of K or C is skirted), decide on C;
 	if K is listed in the armUses of arms, decide on arms;
 	decide on nothing.
-
-To decide which object is the at least partial concealer of (S - a sex toy):
-	if S is penetrating vagina:
-		decide on the at least partial concealer of vagina;
-	otherwise:
-		decide on the at least partial concealer of asshole.
-
-To decide which object is the concealer of (S - a sex toy):
-	if current-predicament is team-girlfriends-predicament and the player is in a predicament room, decide on nothing;
-	if S is penetrating vagina:
-		decide on the concealer of vagina;
-	otherwise:
-		decide on the concealer of asshole.
 
 Visibility ends here.

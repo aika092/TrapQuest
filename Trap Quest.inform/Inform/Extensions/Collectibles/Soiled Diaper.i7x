@@ -44,7 +44,7 @@ This is the soiled diapers smell gross rule:
 	if messySmellSource is nothing and diaper messing >= 6, now messySmellSource is a random soiled-diaper in the location of the player;
 	if messySmellSource is nothing and woman-player is in the location of the player and the woman-status of woman-player is 81, now messySmellSource is woman-player;
 	if messySmellSource is nothing and the hole-in-wall-scene of woman-player > 0 and woman-player is in HoleInWall and hole-in-wall is in the location of the player, now messySmellSource is hole-in-wall;
-	if messySmellSource is a thing:
+	if messySmellSource is a thing and the player is air breathing vulnerable:
 		if turnsWithSoiledDiaper < 100, increase turnsWithSoiledDiaper by 1;
 		if turnsWithSoiledDiaper is 1 and the player is perturbed and the player is not grossed out, say "The gross smell of [NameDesc of messySmellSource] is gradually filling your nostrils.";
 	otherwise if turnsWithSoiledDiaper > 0 and the number of worn messed knickers is 0:
@@ -93,6 +93,9 @@ Check inserting something into a diaper pail:
 		if the player is immobile or the player is in danger, say "You're a bit busy!" instead;
 		allocate 3 seconds;
 		say "You open the lid of the diaper pail[if the diaper addiction of the player < 12], holding your nose[end if], and push [NameDesc of the noun] into it. You quickly close the lid again.";
+		if the noun is wet diaper:
+			say "You feel some self-repect returning to you at properly disposing of your wet diaper.";
+			dignify 400;
 		only destroy the noun;
 		if the noun is soiled-diaper, add the noun to the pailed-diapers of the second noun, if absent;
 	otherwise:
@@ -112,7 +115,7 @@ To compute diaper pail entrance:
 	if the player is enjoying messy facesits, say "The intoxicating sensation of your head being amongst the [if N > 1][N] used diapers[otherwise]messy diaper[end if] excites you, but also makes you feel [if the player is feeling dominant]less dominant[otherwise]more submissive[end if] than before.";
 	otherwise say "The horrid sensation of your head being amongst the [if N > 1][N] used diapers[otherwise]messy diaper[end if] overwhelms your senses, [one of]and leaves you feeling smaller than before[or]almost making you cry[or]making you feel [if the player is feeling dominant]less dominant[otherwise]more submissive[end if] than before[in random order].";
 	SilentlyDelicateUp 1;
-	SmellGrossOut messyDiaperFacesitGrossnessLevel.
+	if the player is air breathing vulnerable, SmellGrossOut messyDiaperFacesitGrossnessLevel.
 
 To compute diaper pail exit:
 	repeat with SD running through soiled-diapers in DiaperPail:

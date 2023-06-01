@@ -8,6 +8,7 @@ facehuggers-fucked is a number that varies.
 Definition: a facehugger is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 Definition: a facehugger is egg-fathering: decide yes.
 Definition: a facehugger is virginity taking: decide yes.
+Definition: a facehugger is a urinater: decide no.
 
 To decide which number is the girth of (M - a facehugger):
 	decide on 1.
@@ -97,7 +98,10 @@ To compute action (N - a number) of (M - a facehugger):
 			let D be a random number between 1 and the dexterity of the player;
 			let X be D;
 			if the player is prone, decrease X by 8;
-			if debuginfo > 0, say "[input-style]Facehugger evasion check: dexterity roll (d[dexterity of the player]) = [D] [if the player is prone]- kneeling penalty (8) = [X] [end if]| (6.5) Facehugger evasion difficulty[roman type][line break]";
+			if the player is immobile:
+				now X is 0;
+			otherwise if debuginfo > 0:
+				say "[input-style]Facehugger evasion check: dexterity roll (d[dexterity of the player]) = [D] [if the player is prone]- kneeling penalty (8) = [X] [end if]| (6.5) Facehugger evasion difficulty[roman type][line break]";
 			let C be nothing;
 			if O is face and hugger-gag is off-stage, now C is hugger-gag;
 			if O is vagina and crotch-hugger is off-stage, now C is crotch-hugger;
@@ -106,7 +110,7 @@ To compute action (N - a number) of (M - a facehugger):
 				say "You manage to move yourself out of the way, and [NameDesc of M] goes flying past. It turns around, ready to try again...";
 			otherwise:
 				let SL be a random number between 3 and 5;
-				say "You don't move out of the way in time! It latches on, quickly pushing its ovipositor into your [variable O] before you have a chance to rip it off.";
+				say "[if the player is not immobile]You don't move out of the way in time! [end if]It latches on, quickly pushing its ovipositor into your [variable O] before you have a chance to rip it off.";
 				now M is penetrating O;
 				if O is fuckhole, ruin O;
 				if the player is able to use their hands:
@@ -157,6 +161,7 @@ To compute action (N - a number) of (M - a facehugger):
 					say "The legs let go of you and the body falls off, motionless and dead.";
 					increase facehuggers-fucked by 1;
 					destroy M;
+					check tentacle clear;
 		otherwise if M is wrangling thighs:
 			let C be a random pussy covering tearable skirted clothing;
 			if C is nothing, now C is a random currently uncovered tearable knickers;
@@ -206,7 +211,8 @@ To decide which number is the strength roll of (M - a facehugger): [If this is l
 
 To compute WrangleResistSuccess of (T - a facehugger):
 	say "You manage to rip it off your thigh, and fling it into a wall! It goes rigid and falls to the ground, dead.";
-	destroy T.
+	destroy T;
+	check tentacle clear.
 
 To say WrangleResistFailFlav of (T - a facehugger):
 	if the player is able to use manual dexterity, say "You try to yank it off, but [NameDesc of T] holds on tightly!";
@@ -215,6 +221,7 @@ To say WrangleResistFailFlav of (T - a facehugger):
 To compute (M - a monster) stomping (N - a facehugger):
 	if M is in the location of the player, say "[BigNameDesc of M] kills the [N].";
 	destroy N;
+	if M is in the location of the player, check tentacle clear;
 	let L be a random off-stage leftover;
 	now L is in the location of M;
 	now the leftover-type of L is the leftover-type of N.
@@ -251,6 +258,7 @@ Definition: hugger-gag is transformation-proteted: decide yes.
 Definition: hugger-gag is tearable: decide no. [NPCs can't remove it to use your mouth]
 Report taking off hugger-gag:
 	say "You discard the inert facehugger, and it drops to the ground, lifeless.";
+	check tentacle clear;
 	only destroy the noun.
 To decide which number is the grossness of hugger-gag: decide on 9.
 
@@ -288,6 +296,7 @@ To compute periodic effect of (P - hugger-gag):
 			if F is 1:
 				say "The legs let go of you and the body falls off, motionless and dead.[GotLuckyFlav]";
 				increase facehuggers-fucked by 1;
+				check tentacle clear;
 				only destroy P;
 		compute slow grossness of P.
 
@@ -304,6 +313,7 @@ Definition: a hugger-panties is transformation-proteted: decide yes.
 Definition: a hugger-panties is tearable: decide no. [NPCs can't remove it to use your orifices]
 Report taking off a hugger-panties:
 	say "You discard the inert facehugger, and it drops to the ground, lifeless.";
+	check tentacle clear;
 	only destroy the noun.
 To decide which number is the grossness of a hugger-panties: decide on 9.
 
@@ -352,6 +362,7 @@ To compute periodic effect of (P - crotch-hugger):
 			if F is 1:
 				say "The legs let go of you and the body falls off, motionless and dead.[GotLuckyFlav]";
 				increase facehuggers-fucked by 1;
+				check tentacle clear;
 				only destroy P;
 		compute slow grossness of P.
 
@@ -382,7 +393,26 @@ To compute periodic effect of (P - ass-hugger):
 			if F is 1:
 				say "The legs let go of you and the body falls off, motionless and dead.[GotLuckyFlav]";
 				increase facehuggers-fucked by 1;
+				check tentacle clear;
 				only destroy P;
 		compute slow grossness of P.
+
+[Monsters can rip off facehuggers, causing them to be normal facehuggers again]
+An all time based rule (this is the facehuggers-removed rule):
+	repeat with C running through alive hugger-panties:
+		if C is not held:
+			if C is not in the school:
+				let M be a random off-stage facehugger;
+				if M is monster:
+					set up M;
+					now M is in the location of C;
+			only destroy C;
+	if hugger-gag is alive and hugger-gag is not held:
+		if hugger-gag is not in the school:
+			let M be a random off-stage facehugger;
+			if M is monster:
+				set up M;
+				now M is in the location of hugger-gag;
+		only destroy hugger-gag.
 
 Facehugger ends here.

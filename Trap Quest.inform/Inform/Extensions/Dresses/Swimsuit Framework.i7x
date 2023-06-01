@@ -2,6 +2,10 @@ Swimsuit Framework by Dresses begins here.
 
 A swimsuit is a kind of underdress. A swimsuit is usually unskirted. A swimsuit is usually nylon. A swimsuit is usually bottom-exclusive. A swimsuit is usually top-displacable. A swimsuit is usually erect-nipple-exposing. The text-shortcut of swimsuit is "ss". The printed name of a swimsuit is "[clothing-title-before][MediumDesc of item described][clothing-title-after]".
 
+Definition: swimsuit is same-type:
+	if theme-share-target is swimsuit, decide yes;
+	decide no.
+
 To compute SelfExamineDesc of (C - a swimsuit):
 	say "A [ShortDesc of C] clings tightly to your body. ".
 
@@ -12,7 +16,8 @@ To say MediumDesc of (C - a swimsuit):
 
 To set up magic attribute of (C - a swimsuit):
 	if a random number between 1 and 2 is 1, now C is dominance;
-	if a random number between 1 and 3 is 1, now C is protection.
+	if a random number between 1 and 3 is 1, now C is protection;
+	set up rare magic attribute of C.
 
 Definition: a swimsuit is swimming themed: decide yes.
 Definition: a swimsuit is uncovered themed: decide yes.

@@ -11,8 +11,7 @@ To dislodge (C - a thing):
 		now C is not grabbing B;
 	repeat with B running through body parts wrangled by C:
 		now C is not wrangling B;
-		if C is monster: [there may have been a timer counting down to automatic release, using these variables]
-			now the wrangle-bonus of C is 0;
+		if C is monster, now the wrangle-bonus of C is 0; [there may have been a timer counting down to automatic release, using these variables]
 	repeat with B running through things covered by C:
 		now C is not covering B.
 
@@ -21,7 +20,7 @@ To compute unique dislodging of (C - a thing):
 
 To destroy (T - a thing):
 	uniquely destroy T;
-	now T is unowned;
+	now the owner of T is nothing;
 	remove T from play;
 	repeat with M running through monsters:
 		now M is not rejecting T;

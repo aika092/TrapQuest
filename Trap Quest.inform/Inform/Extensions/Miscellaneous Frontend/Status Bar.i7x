@@ -235,18 +235,18 @@ To say VagueDignity:
 To say VagueHumiliation:
 	let B be the saved appearance of the player;
 	if the player-class is not succubus:
-		if the humiliation of the player < HUMILIATION-PROUD:
+		if the player is proud:
 			say "[if B > 9]Mortified[otherwise if B > 5]Embarrassed[otherwise if B > 1]Uncomfortable[otherwise]Smug[end if]";
-		otherwise if the humiliation of the player < HUMILIATION-MODEST:
+		otherwise if the player is modest:
 			say "[if B > 12]Mortified[otherwise if B > 8]Embarrassed[otherwise if B > 5]Uncomfortable[otherwise if B > 2]Bold[otherwise]Dignified[end if]";
-		otherwise if the humiliation of the player < HUMILIATION-DISGRACED:
+		otherwise if the player is not disgraced:
 			say "[if B > 8]Embarrassed[otherwise if B > 6]Uncomfortable[otherwise if B > 2]Cheeky[otherwise]Bored[end if]";
-		otherwise if the humiliation of the player < HUMILIATION-SHAMELESS:
+		otherwise if the player is not shameless:
 			say "[if B > 8]Pitiable[otherwise if B > 4]Cheap[otherwise]Bored[end if]";
-		otherwise if the humiliation of the player < HUMILIATION-BROKEN:
+		otherwise if player is not broken:
 			say "[if B > 13]Shameless[otherwise if B > 8]Notorious[otherwise]Bored[end if]";
 		otherwise:
-			say "[if the intelligence of the player > 5]Absent[otherwise if the intelligence of the player > 2]Scatterbrained[otherwise]Unthinking[end if]";
+			say "[if the intelligence of the player > 5]Ambivalent[otherwise if the intelligence of the player > 2]Absent[otherwise]Unthinking[end if]";
 	otherwise:
 		if the humiliation of the player < HUMILIATION-PROUD:
 			say "In Control";
@@ -309,7 +309,7 @@ To say VagueCringeHumiliation:
 	otherwise if the player is not broken:
 		say "[if B > 10]Shameless[otherwise]Bored[end if]";
 	otherwise:
-		say "Completely Content".
+		say "Ambivalent".
 
 To say VagueCringeAppearance:
 	let B be the saved cringe appearance of the player;

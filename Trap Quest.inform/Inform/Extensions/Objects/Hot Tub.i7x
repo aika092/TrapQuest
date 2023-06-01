@@ -40,9 +40,9 @@ To compute swimming in (H - hot-tub):
 					say "[BigNameDesc of M] turns up at the door![line break][speech style of M]'I thought I might find you here. Don't mind if I join you!'[roman type][line break][big he of M] is soon seated next to you in the tub, [his of M] wandering hands and fingers soon probing and groping you.";
 		if diaper quest is 1 or there is a worn diaper:
 			let N be a random interested teacher in the location of the player;
-			if N is monster and the player is horny:
-				if there is a worn diaper, say "[line break][speech style of N]'Wearing a diaper in the tub? What a kinky [boy of the player] you are. Do you like the feeling of all that soggy squishy padding against your no-no?'[roman type][line break][BigNameDesc of N] starts to move [his of N] hand towards your crotch. It looks like you're going to have to decide whether or not to let [him of N] play with you...[line break]Do you let [his of N] masturbate you through your soaked padding? ";
-				otherwise say "[line break][speech style of N]'Not wearing a diaper? What a shame. But on the other hand, if there's no padding in the way... What's to stop me from doing this?'[roman type][line break][BigNameDesc of N] starts to move [his of N] hand towards your crotch. It looks like you're going to have to decide whether or not to let [him of N] play with you...[line break]Do you let [his of N] masturbate you? ";
+			if N is monster and (the player is horny or (the player is a bit horny and the player is getting unlucky)):
+				if there is a worn diaper, say "[line break][speech style of N]'Wearing a diaper in the tub? What a kinky [boy of the player] you are. Do you like the feeling of all that soggy squishy padding against your no-no?'[roman type][line break][BigNameDesc of N] starts to move [his of N] hand towards your crotch. It looks like you're going to have to decide whether or not to let [him of N] play with you...[line break]Do you let [him of N] masturbate you through your soaked padding? ";
+				otherwise say "[line break][speech style of N]'Not wearing a diaper? What a shame. But on the other hand, if there's no padding in the way... What's to stop me from doing this?'[roman type][line break][BigNameDesc of N] starts to move [his of N] hand towards your crotch. It looks like you're going to have to decide whether or not to let [him of N] play with you...[line break]Do you let [him of N] masturbate you? ";
 				if the player is bimbo consenting:
 					compute masturbation of N;
 				otherwise:
@@ -50,7 +50,7 @@ To compute swimming in (H - hot-tub):
 				now swimming is 0;
 		otherwise:
 			let N be a random interested male teacher in the location of the player;
-			if N is monster and the player is horny:
+			if N is monster and (the player is horny or (the player is a bit horny and the player is getting unlucky)):
 				say "[line break][speech style of N]'While we're both here, let's see how your blowjob skills are coming along, eh?'[roman type][line break]It looks like you're going to have to decide whether or not to accept the rather blunt proposal...[line break]Do you suck [his of N] [DickDesc of N]? ";
 				if the player is bimbo consenting:
 					now presented-orifice is face;

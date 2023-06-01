@@ -67,7 +67,7 @@ UrinalBlindfolded is a blindroom. "You are chained to the floor on your knees in
 DiamondLessonBlindfolded is a blindroom. "You are in the diamond classroom, but your eyes have been covered with a blindfold. You can't see a thing!".
 DiaperFacehuggerBlindfolded is a blindroom. "Your face is completely enguled by the [urine]-soaked padding of the diaper facehugger. You can't see a thing!". The printed name of DiaperFacehuggerBlindfolded is "Diaper Facehugger".
 Iron Maiden is a linkedroom. "You are trapped inside a claustrophobic metal cage! It has closed tightly around you, preventing you from moving a muscle. The walls of the cage seem to be lined with slimy tentacles.".
-HoleInWall is a linkedroom. "You are trapped with your front half inside a pitch black room! You won't be able to get back out without help.". The printed name of HoleInWall is "Hole In Wall".
+HoleInWall is an itemstatic linkedroom. "You are trapped with your front half inside a pitch black room! You won't be able to get back out without help.". The printed name of HoleInWall is "Hole In Wall".
 MimicCrib is a linkedroom. "You are trapped inside the living, breathing belly of some kind of shapeshifting creature that has decided to take a twisted form of a crib.". The printed name of MimicCrib is "Inside the 'crib'".
 DiaperPail is a linkedroom. "You are stuck upside down inside a diaper pail, with your legs flailing wildly above you! Yuck!". The printed name of DiaperPail is "Inside the diaper pail".
 Figure of DiaperPailBackground is the file "Map/pail1.jpg".

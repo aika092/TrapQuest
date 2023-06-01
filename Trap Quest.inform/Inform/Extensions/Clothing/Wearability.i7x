@@ -194,6 +194,13 @@ This is the crotch covering clothing can't have an exclusive clash rule:
 						if the rule succeeded, rule fails.
 The crotch covering clothing can't have an exclusive clash rule is listed in the global wearability rules.
 
+This is the one skirt rule:
+	if wearing-target is skirted:
+		repeat with C running through worn skirted clothing:
+			if summoning is 0 and autowear is false, say "You can't wear two items with skirts at the same time, and you're already wearing the [C]!";
+			rule fails.
+The one skirt rule is listed in the global wearability rules.
+
 This is the ass protected players can't wear ass plugging clothes rule:
 	if the player is ass protected and wearing-target is ass plugging:
 		if wearing-target is embodied:
@@ -269,6 +276,13 @@ This is the legs shoes clash rule:
 					say "You can't put these on without risking ripping the fabric, because the heels of your [printed name of C] are stretching the fabric dangerously as you try and put them in the leg holes.";
 					rule fails.
 The legs shoes clash rule is listed in the global wearability rules.
+
+This is the wrist collar bar unwearable rule:
+	if summoning is 0 and wrist collar bar is worn:
+		if wearing-target is bra or wearing-target is dress or wearing-target is corset or wearing-target is belt or wearing-target is knickers or wearing-target is trousers or wearing-target is diaper cover or wearing-target is stockings or wearing-target is sex toy or wearing-target is chastity bond or wearing-target is ankle bond:
+			if autowear is false, say "You can't reach that low down!";
+			rule fails.
+The wrist collar bar unwearable rule is listed in the global wearability rules.
 
 This is the clothes can't interrupt anal sex rule:
 	if wearing-target is total protection:

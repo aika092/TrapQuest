@@ -23,6 +23,10 @@ To compute student perception of (M - a tryhard student):
 To say LewdAppearanceAssessment of (M - a tryhard student):
 	say "[BigNameDesc of M] [one of]clenches [his of M] fists[or]grinds [his of M] teeth[in random order].[line break][speech style of M]'[one of]You're making the rest of us look bad!'[or]If you look like that, the teachers won't pay all of their attention to me!'[in random order][roman type][line break]".
 
+To say ToiletReactionFlav of (M - a tryhard student):
+	if the current-rank of M > 4, say "[BigNameDesc of M] stares at you, nodding with approval. [slightHumiliateReflect]";
+	otherwise say "[BigNameDesc of M] forces [himself of M] to stare at you, with a serious expression, as if it's a test of [his of M] own ability to enjoy watching someone else use the toilet. [moderateHumiliateReflect]".
+
 Part - Laci
 
 student-laci is a tryhard student.
@@ -126,7 +130,7 @@ To say WhereAnswer of (M - student-misty):
 	say "[speech style of M]'[if the rank of the player <= 1]This is an... exotic skills academy. But surely you know this already?'[otherwise]You've got to be willing to try anything once. And then twice. And then three times...'[end if][roman type][line break]".
 
 To say StoryAnswer of (M - student-misty):
-	if diaper quest is 0, say "[speech style of M]'There's a lot of money in winning wet T-shirt contests in my home town. With the skills and techniques [if the current-rank of M is 2]I'll learn here, I'll have the courage to sign up and wear daring enough clothing to win[otherwise if the current-rank of M is 3]I'm learning here, I'll have no trouble showing off my practically bare tits to the crowd and raking in the dosh[otherwise]I've learned here, I think I'm going to do much better than just rake in all that prize money. I reckon a glamour model scout will notice me in no time, and after I suck [his of shopkeeper] [manly-penis] a few times I'm sure I can convince [him of shopkeeper] to offer me a lucrative contract[end if]!'[roman type][line break]";
+	if diaper quest is 0, say "[speech style of M]'There's a lot of money in winning wet T-shirt contests in my home town. With the skills and techniques [if the current-rank of M is 2]I'll learn here, I'll have the courage to sign up and wear daring enough clothing to win[otherwise if the current-rank of M is 3]I'm learning here, I'll have no trouble showing off my practically bare tits to the crowd and raking in the dosh[otherwise]I've learned here, I think I'm going to do much better than just rake in all that prize money. I reckon a glamour model scout will notice me in no time, and after I suck [his of male-m] [manly-penis] a few times I'm sure I can convince [him of male-m] to offer me a lucrative contract[end if]!'[roman type][line break]";
 	otherwise say "[speech style of M]'I caught my boyfriend reading some weird stories. He explained he finds it hot when [men of M] are desperate to go to the toilet and then sometimes end up wetting themselves. So I thought I'd come here to learn more about how to turn his fantasy into a reality. What can I say, I'm a dedicated [boy of M]friend...'[roman type][line break]".
 
 To compute friendly drink of (M - a student-misty):

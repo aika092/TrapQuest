@@ -60,7 +60,7 @@ Check plugging something with:
 Carry out plugging something with:
 	allocate arm use;
 	allocate 6 seconds;
-	humiliate 50;
+	moderateHumiliate;
 	compute toyInsertion of the second noun into the noun;
 	unless the second noun is worn:
 		if the second noun is penetrating the noun, now the second noun is worn by the player;
@@ -149,7 +149,7 @@ Carry out unplugging something:
 			let M be a random combative monster;
 			if M is monster:
 				say "Blood rushes to your head as you feel incredibly humiliated, submissively pulling [NameDesc of noun] out of your fuckhole to make it available for [NameDesc of M]. Your cheeks turn a beetroot shade of red.";
-				humiliate 125;
+				strongHumiliate;
 				compute player submission;
 			if F is face: [#LXorDD: the aeromancer can shove your detached dick into your mouth]
 				say "[BigNameDesc of the noun] makes a loud 'SHLURP' as you pull it out of your [variable F], cleaning it as it emerges from your [LipDesc].";

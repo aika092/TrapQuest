@@ -139,27 +139,49 @@ To evade trigger (C - dress-trap-choice):
 	otherwise:
 		trigger C.
 
-bukkake-trap-choice is a choice-trap-choice.
-Definition: bukkake-trap-choice is appropriate:
-	if bukkake fetish is 1, decide yes;
+slime-trap-choice is a choice-trap-choice.
+Definition: slime-trap-choice is appropriate:
+	if diaper quest is 0, decide yes;
 	decide no.
-To say ChoiceFlav of (C - bukkake-trap-choice):
-	say "BUKKAKE".
-To trigger (C - bukkake-trap-choice):
-	say "A hidden compartment inside the container opens, and a rubber dildo starts to blast you with [semen]! There's a crazy amount of the stuff!";
-	AnnouncedSquirt semen on face by 20.
-To evade trigger (C - bukkake-trap-choice):
-	say "A hidden compartment inside the container opens, and a rubber dildo starts to shoot out [semen]! There's a crazy amount of the stuff!";
-	if the player is getting unlucky:
-		say "The blast is so powerful that it still hits you square in the face, even though you pulled back as quickly as you could. [GotUnluckyFlav]";
+To say ChoiceFlav of (C - slime-trap-choice):
+	say "SLIMED".
+To trigger (SC - slime-trap-choice):
+	if a random number between 1 and 2 is bukkake fetish:
+		say "A hidden compartment inside the container opens, and a rubber dildo starts to blast you with [semen]! There's a crazy amount of the stuff!";
 		AnnouncedSquirt semen on face by 20;
-	otherwise if the player is getting lucky:
-		say "It all lands on the ground. [GotLuckyFlav]";
-		PuddleUp semen by 20;
 	otherwise:
-		say "Most lands on the ground, but some of the spray gets on your body.";
-		PuddleUp semen by 12;
-		AnnouncedSquirt semen on hips by 8.
+		say "A hidden compartment inside the container opens, and a large blob of slime shoots out some sort of tiny cannon, hitting you right in the chest!";
+		let C be a random worn breast covering clothing;
+		if C is clothing and C is not glued:
+			say "You feel it getting under your [ShortDesc of C], where it begins to solidify, gluing it to you!";
+			gluify C;
+		compute slime expansion.
+To evade trigger (C - slime-trap-choice):
+	if a random number between 1 and 2 is bukkake fetish:
+		say "A hidden compartment inside the container opens, and a rubber dildo starts to shoot out [semen]! There's a crazy amount of the stuff!";
+		if the player is getting unlucky:
+			say "The blast is so powerful that it still hits you square in the face, even though you pulled back as quickly as you could. [GotUnluckyFlav]";
+			AnnouncedSquirt semen on face by 20;
+		otherwise if the player is getting lucky:
+			say "It all lands on the ground. [GotLuckyFlav]";
+			PuddleUp semen by 20;
+		otherwise:
+			say "Most lands on the ground, but some of the spray gets on your body.";
+			PuddleUp semen by 12;
+			AnnouncedSquirt semen on hips by 8;
+	otherwise:
+		if there is a patron in the location of the player:
+			say "The device seems to detect that you are now busy with your [']sex work['], and a buzzer sounds, indicating that it has deemed it unsafe to release the slimeball into the [location of the player].";
+		otherwise:
+			let SB be a random off-stage slimeball;
+			if SB is a thing:
+				say "A hidden compartment inside the container opens, and a large blob of slime shoots out some sort of tiny cannon, landing right next to where you were a moment ago! And then... It wobbles, and begins to hop! It's alive!";
+				set up SB;
+				now SB is in the location of the player;
+				now SB is stalled;
+			otherwise:
+				say "The ['][ChoiceFlav of C]['] punishment seems to miss, or fizzle, or something! [GotLuckyFlav]".
+
 
 hypno-trap-choice is a choice-trap-choice.
 To say ChoiceFlav of (C - hypno-trap-choice):
@@ -247,6 +269,52 @@ To evade trigger (C - facehugger-trap-choice):
 		say "A hidden compartment inside the container opens, and a [MediumDesc of M] leaps out!";
 		now M is stalled;
 		say "At least, because you backed away, it wasn't able to leap on you just yet.".
+
+teleport-trap-choice is a choice-trap-choice.
+To say ChoiceFlav of (C - teleport-trap-choice):
+	say "TELEPORTATION".
+To trigger (C - teleport-trap-choice):
+	if playerRegion is hotel:
+		if the player is getting unlucky:
+			let LR be a list of rooms;
+			add Dungeon31 to LR;
+			if Hotel37 is placed, add Hotel37 to LR;
+			if Hotel02 is placed, add Hotel02 to LR;
+			if Dungeon36 is placed and minotaur is caged and minotaur is in Dungeon36, add Dungeon36 to LR;
+			if Woods16 is placed, add Woods16 to LR;
+			if Mansion23 is placed, add Mansion23 to LR;
+			let L be the location of iron-maiden;
+			if L is a placed room, add L to LR;
+			let L be the location of hole-in-wall;
+			if L is a placed room and hole-in-wall is revealed, add L to LR;
+			if diaper messing >= 7:
+				repeat with DPL running through placed rooms:
+					if there is a diaper pail in DPL, add DPL to LR;
+			sort LR in random order;
+			let R be entry 1 in LR;
+			say "A beam of blue light appears around you. You can sense it has a very specific target in mind for you, and it's not going to be a nice place! [GotUnluckyFlav]";
+			teleport to R;
+		otherwise:
+			let R be a random placed roomstandard room;
+			while R is an academic room or R is a predicament room or R is a painting-room or R is an introductory room:
+				now R is a random placed roomstandard room;
+			say "A beam of blue light appears around you, teleporting you to who knows where!";
+			teleport to R.
+To evade trigger (C - teleport-trap-choice):
+	say "A beam of blue light appears where you were standing a split second ago. It fails to teleport you where it wanted to!";
+	if the player is getting unlucky:
+		if diaper messing >= 7:
+			say "As the portal briefly opens, several soiled diapers spill out into the ground around you! [GotUnluckyFlav][line break][variable custom style]Was... Was it going to teleport me into a diaper pail?!?!?!?![roman type][line break]";
+			repeat with N running from 1 to 5:
+				let SD be a random off-stage soiled-diaper;
+				if SD is soiled-diaper:
+					now the diaper-origin of SD is the substituted form of "disposable diaper";
+					now SD is in the location of the player;
+			if the player is air breathing vulnerable, SmellGrossOut messyDiaperSmellGrossnessLevel;
+		otherwise:
+			say "As the portal briefly opens, pink smoke from the intended destination leaks into the [location of the player]. Now this room is filled with pink smoke too! [GotUnluckyFlav]";
+			now the location of the player is smoky;
+			update backdrop positions.
 
 To trigger (Y - a choice trap):
 	now the reset-timer of Y is 250;

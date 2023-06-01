@@ -23,6 +23,15 @@ Definition: yourself is gagged:[Refers specifically to gags that occupy face]
 			decide yes;
 	decide no.
 
+Definition: yourself is mouthblocked: [not just gags]
+	if the player is gagged, decide yes;
+	repeat with C running through things penetrating face:
+		if C is ringagged clothing:
+			if C is penetrating face, now C is not penetrating face; [Failsafe that should pick up bugs and fix them]
+		otherwise:
+			decide yes;
+	decide no.
+
 To decide which number is the initial outrage of (C - a small ballgag):
 	decide on 3.
 

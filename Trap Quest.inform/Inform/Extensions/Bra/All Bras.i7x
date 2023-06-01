@@ -488,6 +488,9 @@ To set up influence of (C - a pasties):
 To decide which number is the initial outrage of (C - a pasties):
 	decide on 6.
 
+To decide which number is the chasrima-influence of (C - a pasties):
+	decide on 1 + the magic-modifier of C.
+
 To compute bra strain of (C - a pasties):
 	do nothing.
 
@@ -931,5 +934,34 @@ Definition: spades-strap-bra is interracial themed: decide yes.
 To decide which number is the initial outrage of (C - spades-strap-bra):
 	decide on 6.
 
+onahole-bra is a bra. onahole-bra is unique. onahole-bra is pvc. The printed name of onahole-bra is "[clothing-title-before]onahole bra[clothing-title-after]". The text-shortcut of onahole-bra is "ohb". Understand "onahole", "bra" as onahole-bra. The min size of onahole-bra is 6. The max size of onahole-bra is 18. The support of onahole-bra is 2. onahole-bra is fully covering. onahole-bra is neck covering. onahole-bra is not-displacable-always-fuckable.
+
+To say ClothingDesc of (K - onahole-bra):
+	say "This bra has an in-built onahole to allow people to get extra pleasure when fucking your tits. It also has a clear plastic section above the onahole, which acts like a bib to catch the [semen]. It reduces the amount of stimulation your breasts receive from being fucked.".
+
+To compute SelfExamineDesc of (K - onahole-bra):
+	say ClothingDesc of K.
+
+To say ShortDesc of (K - onahole-bra):
+	say "onahole bra".
+
+Figure of Onahole Bra is the file "Items/Clothes/Upper/Bras/onaholebra1.png".
+
+To decide which figure-name is clothing-image of (C - onahole-bra):
+	decide on figure of Onahole Bra.
+
+Definition: onahole-bra is purple themed: decide yes.
+
+To compute periodic effect of (C - onahole-bra):
+	if the player is not a may 2023 top donator, only destroy C.
+To compute school periodic effect of (C - onahole-bra):
+	compute periodic effect of C.
+
+To decide which number is the initial outrage of (C - onahole-bra):
+	decide on 13.
+
+This is the onahole-bra tit slut rule:
+	if onahole-bra is currently visible, increase the desirability of breasts by 15.
+The onahole-bra tit slut rule is listed in the tit slut eligibility rules.
 
 All Bras ends here.

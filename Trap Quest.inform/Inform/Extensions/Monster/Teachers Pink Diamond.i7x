@@ -136,13 +136,14 @@ To compute teaching of (L - enema-tag-lesson):
 	let distancePerLap be 10;
 	let lapsToWin be 5;
 	now the stance of the player is 0;
-	say "You are made to bend over and enema kits are used to slowly but surely fill your bellies with [LQ]. Your bellies start to visibly expand until you all look nine months pregnant. [one of]While the enemas are going in, [NameDesc of M] gives a briefing. [big he of M] points to a [man of shopkeeper] wearing a full black zentai bodysuit that covers even [his of shopkeeper] face.[line break][speech style of M]'The rules are as follows. In order to get a promotion, all you have to do is make it [lapsToWin] times around this racetrack. But that [man of shopkeeper] there has been instructed to hunt down and hump the student who [bold type]most recently expelled their enema[speech style of M] and [bold type]has not yet refilled their belly to the brim[if diaper quest is 1] or is not wearing a clean diaper[end if]. [speech style of M]Moreover, [he of shopkeeper][']s allowed to run through the middle of the track, so there's no escaping [him of shopkeeper] for too long. What this means is that it's very dangerous to try and run the race without a full belly[if diaper quest is 1] and a diaper[end if]. You'll find enema refilling kits at the finish line, so you can decide to have a [']pit stop['] at the end of any lap you choose. You are not allowed to run backwards, so either stop at the line or don't, it's up to you! You can also abandon the race at any time by stepping off the track, but then you won't be promoted[if a2m fetish is 2 and watersports fetish is 1]. Also, as long as there's at least one winner, the first person to abandon gets a punishment[end if].'[roman type][line break][or][stopping]You are all led to the starting line, and then with a bang the race begins.";
+	say "You are made to bend over and enema kits are used to slowly but surely fill your bellies with [LQ]. Your bellies start to visibly expand until you all look nine months pregnant. [one of]While the enemas are going in, [NameDesc of M] gives a briefing. [big he of M] points to a [man of male-m] wearing a full black zentai bodysuit that covers even [his of male-m] face.[line break][speech style of M]'The rules are as follows. In order to get a promotion, all you have to do is make it [lapsToWin] times around this racetrack. But that [man of male-m] there has been instructed to hunt down and hump the student who [bold type]most recently expelled their enema[speech style of M] and [bold type]has not yet refilled their belly to the brim[if diaper quest is 1] or is not wearing a clean diaper[end if]. [speech style of M]Moreover, [he of male-m][']s allowed to run through the middle of the track, so there's no escaping [him of male-m] for too long. What this means is that it's very dangerous to try and run the race without a full belly[if diaper quest is 1] and a diaper[end if]. You'll find enema refilling kits at the finish line, so you can decide to have a [']pit stop['] at the end of any lap you choose. You are not allowed to run backwards, so either stop at the line or don't, it's up to you! You can also abandon the race at any time by stepping off the track, but then you won't be promoted[if a2m fetish is 2 and watersports fetish is 1]. Also, as long as there's at least one winner, the first person to abandon gets a punishment[end if].'[roman type][line break][or][stopping]You are all led to the starting line, and then with a bang the race begins.";
 	now bigGameLoop is 3; [tells the game not to refresh any windows]
 	let LST be the list of people in the location of the player; [turn order]
 	repeat with ST running through students in the location of the player:
 		now the lessonInt1 of ST is 0; [distance travelled]
 		now the lessonInt2 of ST is 0; [times humped]
-		now the student-diaper-state of ST is 0; [enema situation]
+		now the student-diaper-mess of ST is 0; [enema situation]
+		now the student-extra-diapers of ST is 2;
 	let playerDistance be 0; [player distance travelled]
 	let LSZ be a list of people; [zentai target stack]
 	let latestZentaiTarget be M; [who was the zentai man targeting on his last turn]
@@ -160,7 +161,7 @@ To compute teaching of (L - enema-tag-lesson):
 				repeat with RNR running through LST:
 					if RNR is a student:
 						let lapD be the remainder after dividing lessonInt1 of RNR by distancePerLap;
-						say "[BigNameDesc of RNR] is [(lapD * 100) / distancePerLap]% of the way through lap [1 + (lessonInt1 of RNR / distancePerLap)]. [big he of RNR] [if the student-diaper-state of RNR is 0]has a full belly[otherwise if diaper quest is 0]has an empty belly[otherwise if diaper messing >= 3]has a full messy [his of RNR] diaper[otherwise]has a full diaper[end if].[roman type][line break]";
+						say "[BigNameDesc of RNR] is [(lapD * 100) / distancePerLap]% of the way through lap [1 + (lessonInt1 of RNR / distancePerLap)]. [big he of RNR] [if the student-diaper-mess of RNR is 0]has a full belly[otherwise if diaper quest is 0]has an empty belly[otherwise if diaper messing >= 3]has a full messy [his of RNR] diaper[otherwise]has a full diaper[end if].[roman type][line break]";
 					otherwise if RNR is yourself:
 						let lapD be the remainder after dividing playerDistance by distancePerLap;
 						say "[input-style]You[roman type] are [(lapD * 100) / distancePerLap]% of the way through lap [1 + (playerDistance / distancePerLap)]. You [if the total squirtable fill of belly > 0]have a full belly[otherwise if diaper quest is 0]have an empty belly[otherwise if diaper messing >= 3]have a full messy [his of RNR] diaper[otherwise]have a full diaper[end if][if the player is very tired][bold type]. You are very tired[otherwise if the player is tired][bold type]. You are tired[end if].[roman type][line break]";
@@ -171,7 +172,7 @@ To compute teaching of (L - enema-tag-lesson):
 					let TGT be entry LSZE in LSZ;
 					if TGT is not latestZentaiTarget:
 						if zentaiDistance >= -1 or zentaiDistance <= -999: [humping not started]
-							say "[bold type]The [man of shopkeeper] in black turns to focus on [YouDesc of TGT]![roman type][line break]";
+							say "[bold type]The [man of male-m] in black turns to focus on [YouDesc of TGT]![roman type][line break]";
 							if zentaiDistance >= 1: [chasing another racer]
 								now zentaiDistance is a random number between 1 and 2;
 							otherwise if zentaiDistance <= -999: [standing in the middle]
@@ -191,27 +192,27 @@ To compute teaching of (L - enema-tag-lesson):
 						otherwise: [humping already started so will be finished]
 							now TGT is latestZentaiTarget;
 					if zentaiDistance >= -1:
-						say "[bold type]The [man of shopkeeper] in black sprints across the grass towards [YouDesc of TGT]! [roman type][one of]Because [he of shopkeeper][']s allowed to go across the centre of the field, there's no way to stop [him of shopkeeper] gaining on [if TGT is yourself]you[otherwise][him of TGT][end if]! [or][stopping][big he of shopkeeper] [if zentaiDistance <= 0][bold type]is in catching range[otherwise if zentaiDistance is 1]will be in catching range in [bold type]one turn[otherwise]will be in catching range in [zentaiDistance] turns[end if].[roman type][line break]";
-						if zentaiDistance is 0, say "[big he of shopkeeper] hasn't managed to catch [if TGT is yourself]you[otherwise][him of TGT][end if] yet.";
+						say "[bold type]The [man of male-m] in black sprints across the grass towards [YouDesc of TGT]! [roman type][one of]Because [he of male-m][']s allowed to go across the centre of the field, there's no way to stop [him of male-m] gaining on [if TGT is yourself]you[otherwise][him of TGT][end if]! [or][stopping][big he of male-m] [if zentaiDistance <= 0][bold type]is in catching range[otherwise if zentaiDistance is 1]will be in catching range in [bold type]one turn[otherwise]will be in catching range in [zentaiDistance] turns[end if].[roman type][line break]";
+						if zentaiDistance is 0, say "[big he of male-m] hasn't managed to catch [if TGT is yourself]you[otherwise][him of TGT][end if] yet.";
 					if zentaiDistance <= -1: [humping]
 						if zentaiDistance is -1: [start of humping]
-							say "[bold type]The [man of shopkeeper] in black [if TGT is listed in LSS]grabs [YouDesc of TGT] [bold type]from behind[otherwise]tackles [YouDesc of TGT] [bold type]to the ground[end if]! [roman type]";
+							say "[bold type]The [man of male-m] in black [if TGT is listed in LSS]grabs [YouDesc of TGT] [bold type]from behind[otherwise]tackles [YouDesc of TGT] [bold type]to the ground[end if]! [roman type]";
 							if TGT is listed in LSS:
 								remove TGT from LSS;
 								say "The enema nozzle is yanked out of [if TGT is yourself]your[otherwise][student-name of TGT][']s[end if] butthole. ";
 								if diaper quest is 1:
-									say "[big he of shopkeeper] forces [YouDesc of TGT] back into [if TGT is yourself]your[otherwise][his of TGT][end if] soiled diaper! ";
+									say "[big he of male-m] forces [YouDesc of TGT] back into [if TGT is yourself]your[otherwise][his of TGT][end if] soiled diaper! ";
 									now plain-massive-diaper is worn by the player;
 									force immediate clothing-focus redraw;
 									zero focus stuff;
 									display focus stuff;
 							if diaper quest is 0:
-								say "[big his of shopkeeper] erect [manly-penis] springs free from the crotch region of [his of shopkeeper] zentai and within moments is pressing against [if TGT is yourself]your[otherwise][student-name of TGT][']s[end if] asshole... and then it's shoved inside![line break][speech style of TGT]'[one of]Aaahn!'[or]Fuuuuckkkk!'[or]Haaaaaah!'[or]Eeeeeee!'[in random order][roman type][line break]The [man of shopkeeper] in black begins ass-fucking [YouDesc of TGT] for all [he of shopkeeper][']s worth.";
+								say "[big his of male-m] erect [manly-penis] springs free from the crotch region of [his of male-m] zentai and within moments is pressing against [if TGT is yourself]your[otherwise][student-name of TGT][']s[end if] asshole... and then it's shoved inside![line break][speech style of TGT]'[one of]Aaahn!'[or]Fuuuuckkkk!'[or]Haaaaaah!'[or]Eeeeeee!'[in random order][roman type][line break]The [man of male-m] in black begins ass-fucking [YouDesc of TGT] for all [he of male-m][']s worth.";
 							otherwise:
-								say "[big he of shopkeeper] starts humping away at the [if diaper messing >= 3]filth-filled[otherwise]soggy[end if] seat of [if TGT is yourself]your[otherwise][student-name of TGT][']s[end if] padding, making nasty squelchy sounds as [he of shopkeeper] bashes repeatedly against [if TGT is yourself]your[otherwise][student-name of TGT][']s[end if] [if TGT is yourself][player-crotch][otherwise]crotch[end if]!";
+								say "[big he of male-m] starts humping away at the [if diaper messing >= 3]filth-filled[otherwise]soggy[end if] seat of [if TGT is yourself]your[otherwise][student-name of TGT][']s[end if] padding, making nasty squelchy sounds as [he of male-m] bashes repeatedly against [if TGT is yourself]your[otherwise][student-name of TGT][']s[end if] [if TGT is yourself][player-crotch][otherwise]crotch[end if]!";
 						otherwise:
-							if diaper quest is 1, say "[bold type]The [man of shopkeeper] in black continues to hump and squelch against [if TGT is yourself]your[otherwise][student-name of TGT][']s[end if] soiled diaper![roman type][line break]";
-							otherwise say "[bold type]The [man of shopkeeper] in black continues to rapidly thrust in and out of [if TGT is yourself]your[otherwise][student-name of TGT][']s[end if] asshole![roman type][line break]";
+							if diaper quest is 1, say "[bold type]The [man of male-m] in black continues to hump and squelch against [if TGT is yourself]your[otherwise][student-name of TGT][']s[end if] soiled diaper![roman type][line break]";
+							otherwise say "[bold type]The [man of male-m] in black continues to rapidly thrust in and out of [if TGT is yourself]your[otherwise][student-name of TGT][']s[end if] asshole![roman type][line break]";
 						decrease zentaiDistance by 1;
 						if TGT is yourself:
 							if diaper quest is 0:
@@ -224,28 +225,28 @@ To compute teaching of (L - enema-tag-lesson):
 							if refractoryperiod > 0 or zentaiDistance < ( -3 - diaper quest):
 								if refractoryperiod > 0, say severeHumiliateReflect;
 								if diaper quest is 0 and zentaiDistance < -3:
-									say "The [man of shopkeeper] in black grunts from behind [his of shopkeeper] mask as [he of shopkeeper] orgasms! [big he of shopkeeper] pulls out as [he of shopkeeper] ejaculates.";
+									say "The [man of male-m] in black grunts from behind [his of male-m] mask as [he of male-m] orgasms! [big he of male-m] pulls out as [he of male-m] ejaculates.";
 									UnannouncedSquirt semen on thighs by (the semen load of ULA);
-								say "[bold type]The [man of shopkeeper] in black seems satisfied by this, and turns away from you.[roman type][line break]";
+								say "[bold type]The [man of male-m] in black seems satisfied by this, and turns away from you.[roman type][line break]";
 								remove yourself from LSZ;
 								now zentaiDistance is 0;
 						otherwise:
 							increase lessonInt2 of TGT by 1;
 							if zentaiDistance < a random number between -2 and -3:
-								say "[speech style of TGT]'Nooo! I'm cumming!'[roman type][line break][BigNameDesc of TGT] announces in shame as [he of TGT] shudders and screams in climax. After [he of shopkeeper] has left [him of TGT] exhausted and panting, the [man of shopkeeper] in black leaves [student-name of TGT] alone to recover.";
+								say "[speech style of TGT]'Nooo! I'm cumming!'[roman type][line break][BigNameDesc of TGT] announces in shame as [he of TGT] shudders and screams in climax. After [he of male-m] has left [him of TGT] exhausted and panting, the [man of male-m] in black leaves [student-name of TGT] alone to recover.";
 								remove TGT from LSZ;
 								now zentaiDistance is 0;
 				otherwise if zentaiDistance is not -999:
 					now zentaiDistance is -999;
-					say "[bold type]The [man of shopkeeper] in black returns to the middle of the racetrack.[roman type][line break]";
+					say "[bold type]The [man of male-m] in black returns to the middle of the racetrack.[roman type][line break]";
 					now latestZentaiTarget is M;
 				otherwise:
-					say "[bold type]The [man of shopkeeper] in black stands patiently, right in the middle of the racetrack.[roman type][line break]";
+					say "[bold type]The [man of male-m] in black stands patiently, right in the middle of the racetrack.[roman type][line break]";
 			otherwise if ST is listed in LSS:
 				remove ST from LSS;
 				if ST is listed in LSZ, remove ST from LSZ;
 				if ST is student:
-					now the student-diaper-state of ST is 0;
+					now the student-diaper-mess of ST is 0;
 					say "[BigNameDesc of ST] finishes filling [himself of ST] up with a new [variable LQ] enema.";
 				otherwise:
 					FatigueDown the buckle threshold of the player / 4;
@@ -274,7 +275,7 @@ To compute teaching of (L - enema-tag-lesson):
 					let pitstopping be false; [have they decided to pitstop?]
 					let bellyFill be the total squirtable fill of belly;
 					if ST is student:
-						if the student-diaper-state of ST is 0, now bellyFill is 30;
+						if the student-diaper-mess of ST is 0, now bellyFill is 30;
 						otherwise now bellyFill is 0;
 					let previousD be playerDistance;
 					if ST is student, now previousD is lessonInt1 of ST;
@@ -331,7 +332,7 @@ To compute teaching of (L - enema-tag-lesson):
 							now D2 is playerDistance;
 						otherwise:
 							now D1 is a random number between 3 and 4;
-							if the student-diaper-state of ST is 0, decrease D1 by a random number between 1 and 2;
+							if the student-diaper-mess of ST is 0, decrease D1 by a random number between 1 and 2;
 							if the dedication of ST <= a random number between -2 and 0, now D1 is 0;
 							increase the lessonInt1 of ST by D1;
 							now D2 is lessonInt1 of ST;
@@ -367,7 +368,7 @@ To compute teaching of (L - enema-tag-lesson):
 									now playerDistance is nextLapDistance;
 									now pitstopping is true;
 								otherwise:
-									say "The [man of shopkeeper] in black doesn't seem impressed by this!!!";
+									say "The [man of male-m] in black doesn't seem impressed by this!!!";
 									add yourself to LSZ;
 							otherwise:
 								if the dedication of ST > the lessonInt1 of ST - nextLapDistance:
@@ -379,7 +380,7 @@ To compute teaching of (L - enema-tag-lesson):
 								if the player is consenting:
 									now pitstopping is true;
 								otherwise if yourself is not listed in LSZ:
-									say "The [man of shopkeeper] in black doesn't seem impressed by this!!!";
+									say "The [man of male-m] in black doesn't seem impressed by this!!!";
 									add yourself to LSZ;
 							otherwise:
 								if zentaiDistance > 1 or LSZE is 0 or ST is not listed in LSZ, now pitstopping is true;
@@ -419,7 +420,7 @@ To compute teaching of (L - enema-tag-lesson):
 						otherwise:
 							if diaper quest is 1, say "[BigNameDesc of ST][bold type][']s diaper explodes outwards with a loud wet noise as [he of ST] loses control and expels [his of ST] [variable LQ] enema into [his of ST] padding![roman type][line break]";
 							otherwise say "[BigNameDesc of ST] [bold type][one of]squeals[or]exclaims in surprise[or]mewls with shame[or]groans with despair[in random order] as [his of ST] [one of]backdoor explodes[or]sphincter gives up[or]asshole opens[in random order] and the [variable LQ] enema comes [one of]gushing[or]shooting[at random] out.[roman type][line break]";
-							now the student-diaper-state of ST is 3;
+							now the student-diaper-mess of ST is 3;
 						remove ST from LSE;
 						add ST to LSZ;
 					otherwise: [enema held]
@@ -438,7 +439,7 @@ To compute teaching of (L - enema-tag-lesson):
 									say "[bold type]Your belly begins to cramp. Holding the enema in for any longer will hurt.[line break][newbie style](To expel it, you must stand still for a turn.)[roman type][line break]";
 								increase M1 by 1;
 						otherwise:
-							if the student-diaper-state of ST is 0 and the dedication of ST <= a random number between -1 and 0:
+							if the student-diaper-mess of ST is 0 and the dedication of ST <= a random number between -1 and 0:
 								say "[BigNameDesc of ST] [bold type]drops to [his of ST] knees, clutching [his of ST] belly in pain![roman type][line break]";
 								add ST to LSE;
 			if ST is yourself:
@@ -460,7 +461,7 @@ To compute teaching of (L - enema-tag-lesson):
 			promote ST;
 	if the number of entries in LSP > 0:
 		if (diaper quest is 0 and a2m fetish >= 2 and watersports fetish is 1 and punishmentTarget is not M) or (diaper quest is 1 and diaper messing >= 6): [TODO: non a2m punishment]
-			say "[BigNameDesc of M] turns to [YouDesc of punishmentTarget].[line break][speech style of M]'And now, the punishment for the biggest loser.'[roman type][line break][BigNameDesc of M] makes [if punishmentTarget is you]you[otherwise][student-name of punishmentTarget][end if] lie down on the ground, and then gets ";
+			say "[BigNameDesc of M] turns to [YouDesc of punishmentTarget].[line break][speech style of M]'And now, the punishment for the biggest loser.'[roman type][line break][BigNameDesc of M] makes [if punishmentTarget is yourself]you[otherwise][student-name of punishmentTarget][end if] lie down on the ground, and then gets ";
 			let E be the number of entries in LSP;
 			repeat with ST running through LSP:
 				say "[if ST is student][student-name of ST][otherwise]you[end if][if E is 2] and[otherwise if E > 2],[end if] ";
@@ -469,8 +470,8 @@ To compute teaching of (L - enema-tag-lesson):
 			repeat with ST running through LSP:
 				say "[speech style of M]'[if ST is student][student-name of ST][otherwise][NameBimbo][end if], you [if E is 0]first[otherwise]next[end if].'[roman type][line break]";
 				if diaper quest is 1:
-					say "[BigYouDesc of ST] [if ST is student]lowers [his of ST][otherwise]lower your[end if] [if diaper messing >= 3]filthy[otherwise]soaking wet[end if] nappy onto [if punishmentTarget is student][NameDesc of ST][']s[otherwise]your[end if] face, engulfing it, making [if punishmentTarget is student][him of punishmentTarget][otherwise]you[end if] retch and gag [one of]as [if punishmentTarget is student][he of punishmentTarget] struggles[otherwise]you struggle[end if] to breathe[or]some more[stopping].";
-					if punishmentTarget is yourself, DiaperAddictUp 1;
+					say "[BigYouDesc of ST] [if ST is student]lowers [his of ST][otherwise]lower your[end if] filthy nappy onto [if punishmentTarget is student][NameDesc of ST][']s[otherwise]your[end if] face, engulfing it, making [if punishmentTarget is student][him of punishmentTarget][otherwise]you[end if] retch and gag [one of]as [if punishmentTarget is student][he of punishmentTarget] struggles[otherwise]you struggle[end if] to breathe[or]some more[stopping].";
+					if punishmentTarget is yourself and the player is air breathing vulnerable, SmellGrossOut messyDiaperSmellGrossnessLevel;
 				otherwise:
 					say "[BigYouDesc of ST] [if ST is student]lowers [his of ST][otherwise]lower your[end if] asshole onto [if punishmentTarget is student][NameDesc of ST][']s[otherwise]your[end if] mouth and push, forcing [if punishmentTarget is student][him of punishmentTarget][otherwise]you[end if] to take the full blast into [his of ST] mouth.[line break][one of][variable custom style]Yuck![roman type][line break][or][speech style of punishmentTarget]'Blllrrrrg!'[roman type][line break][if punishmentTarget is student]It spews out of [his of punishmentTarget] nose as [his of punishmentTarget] mouth overflows.[end if][stopping]";
 					if punishmentTarget is yourself:
@@ -679,6 +680,7 @@ To compute princess reveal of (M - a monster):
 		say "[BigNameDesc of M] continues to speak.[line break][speech style of M]'Now that you've proven your loyalty to our cause, I've got something special to show you. Come with me!'[roman type][line break][BigNameDesc of M] leads you down to the other end of the school.";
 		repeat with N running through monsters in the location of the player:
 			now N is in the location of ex-princess;
+			unless N is M, interest N;
 		reveal the school dungeon;
 		teleport to the location of ex-princess;
 		now the stance of the player is 0;

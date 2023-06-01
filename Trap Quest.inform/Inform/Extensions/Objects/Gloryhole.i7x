@@ -227,7 +227,7 @@ To say SexResistFlav of (G - gloryhole):
 		if a random number between 3 and the oral sex addiction of the player > 6:
 			say "You can't bring yourself to stop right now! [SexSubmissionFlav of G]";
 		otherwise:
-			say "You shuffle backwards, removing the [manly-penis] from you mouth and giving the anonymous [man of shopkeeper] blue balls.[line break][first custom style]'[one of]Fucking bitch! Come back here!'[or]What the fuck? You've got to be shitting me!'[or]Hey [bitch], I wasn't finished!'[or]You fucking [slut]! Finish sucking my [manly-penis] you little [bitch]!'[in random order][roman type][line break]He doesn't seem happy, but after a few seconds the [manly-penis] is removed from the hole.";
+			say "You shuffle backwards, removing the [manly-penis] from you mouth and giving the anonymous [man of male-m] blue balls.[line break][first custom style]'[one of]Fucking bitch! Come back here!'[or]What the fuck? You've got to be shitting me!'[or]Hey [bitch], I wasn't finished!'[or]You fucking [slut]! Finish sucking my [manly-penis] you little [bitch]!'[in random order][roman type][line break]He doesn't seem happy, but after a few seconds the [manly-penis] is removed from the hole.";
 			compute gloryhole dislodging;
 	otherwise if G is normal glory hole:
 		say "You try to pull away but the magical suction is holding you tightly against the wall!";
@@ -293,7 +293,7 @@ An all time based rule (this is the compute gloryhole rule):
 						otherwise if the size of penis is 1:
 							now tinyDickGrabbed is 1;
 							say "For several seconds, nothing happens. Then you feel a tongue flick past the end of your [player-penis]. It freezes, then slowly slides down, tracing a line directly below it, probing at the place where your ballsack [italic type]used[roman type] to be. You hear a woman giggle.[line break][variable custom style]'You poor sod, I really thought some bitch had shoved her vag up here for a lapping, but you're actually a guy, aren't you? Normally I'd have no chance of reaching your tiny nubbin, but the Nintendolls R&D department planned for this unlikely event. Hang on...'[roman type][line break]You feel her tongue withdraw, then something oily and circular presses forwards against your mostly-smooth mound, and suddenly a powerful humming starts and the suction increases ten-fold! You feel your tiny clitoris swell and bulge, almost painfully. It reminds you of what your erections [italic type]used[roman type] to feel like. At least, until the girl snorts in disbelief.[line break][variable custom style]'Wow, that's much bigger now - it must be the size of a cigarette butt! Looks pretty red though, babe - I hope your tender little raspberry isn't going to burst!'[roman type][line break]";
-							humiliate 400;
+							obsceneHumiliate;
 						otherwise:
 							say "You feel the girl keep her mouth wrapped around your [player-penis] to catch your [if the semen load of the player > 4]entire [otherwise if the semen load of the player < 3]tiny[end if]load, and then swallow it all in one [if the semen load of the player > 7]large gulp[otherwise if the semen load of the player < 3]small sip[otherwise]swallow[end if]. The lips remove themselves from your member and then the magical force keeping you pressed to the wall disappears, allowing you to leave. You slowly pull your [player-penis] out of the hole.";
 							BlowGet;

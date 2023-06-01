@@ -329,8 +329,10 @@ To say MediumDesc of (C - a blue mostly-sheer monokini):
 	say "mostly sheer blue swimsuit".
 
 Definition: a blue mostly-sheer monokini is blue themed: decide yes.
-Definition: a blue mostly-sheer monokini is potentially cameltoe blocking: decide no. [This causes it to not be potentially vagina covering, leaving vagina always partially visible through it]
+Definition: a blue mostly-sheer monokini is potentially vagina covering: decide no.
+Definition: a blue mostly-sheer monokini is potentially at least partially vagina covering: decide no.
 Definition: a blue mostly-sheer monokini is potentially penis concealing: decide no.
+Definition: a blue mostly-sheer monokini is potentially at least partially penis concealing: decide no.
 
 
 Part 15 - Anal Beads Blue Swimsuit

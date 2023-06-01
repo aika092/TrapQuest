@@ -194,15 +194,11 @@ To compute friendly boredom of (M - ex-princess):
 
 Part 2 - Misc Flavour
 
-To IdentifiablePosterReaction of (M - ex-princess):
-	say "[BigNameDesc of M] looks at the poster and then presses [his of M] palm into [his of M] face.[line break][speech style of M]'THIS is the person who rescued me from [slut school]? REALLY?'[roman type][line break]";
-	say "You turn bright red with shame.";
-	humiliate the lewdness of a random poster in the location of the player * 2.
+To say IdentifiablePosterReactionFlav of (M - ex-princess):
+	say "[BigNameDesc of M] looks at the poster and then presses [his of M] palm into [his of M] face.[line break][speech style of M]'THIS is the person who rescued me from [slut school]? REALLY?'[roman type][line break]".
 
-To UnidentifiablePosterReaction of (M - ex-princess) with (P - a poster):
-	say "[BigNameDesc of M] looks at the banner with a big frown on [his of M] face. [big he of M] doesn't seem to realise it is you.[line break][speech style of M]'Has this world become overrun with harlots and whores like this one? Seriously, do they have no shame?'[roman type][line break]";
-	say "You turn slightly red but don't say a word.";
-	humiliate the lewdness of a random poster in the location of the player / 2.
+To say UnidentifiablePosterReactionFlav of (M - ex-princess) with (P - a poster):
+	say "[BigNameDesc of M] looks at the banner with a big frown on [his of M] face. [big he of M] doesn't seem to realise it is you.[line break][speech style of M]'Has this world become overrun with harlots and whores like this one? Seriously, do they have no shame?'[roman type][line break]".
 
 Part 3 - Combat
 
@@ -219,7 +215,9 @@ To compute interaction of (M - ex-princess):
 					compute quest completion of tentacle-research-quest on C;
 		otherwise if M is messy and M is in Dungeon11:
 			say "[BigNameDesc of M] continues to press [his of M] vibrating wand into the front of [his of M] soiled diaper.[line break][speech style of M]'Please... [one of]you stupid curse... just let me cum...'[or]just once...'[or]I really need to cum... and get a change!'[or]I hate this smell!'[cycling][roman type][line break]";
-			compute ChangeRequestDecision of M.
+			compute ChangeRequestDecision of M;
+		otherwise if the current-errand of M is completed:
+			compute errand completion of M.
 
 To compute (M - ex-princess) protecting against (X - a monster):
 	if M is in the school:
@@ -243,7 +241,7 @@ To compute (M - ex-princess) standard fighting against (X - a royal guard):
 To compute (M - ex-princess) standard fighting against (X - shopkeeper):
 	say "[BigNameDesc of M] raises a hand towards [NameDesc of X].[line break][speech style of M]'[if there is a held store thing]I shall pay for [his of the player] items[otherwise]This one is with me[end if].'[roman type][line break][BigNameDesc of X] bows.[line break][speech style of X]'Of course, your grace.'[roman type][line break]";
 	repeat with T running through held store things:
-		now T is unowned;
+		now the owner of T is nothing;
 	send X home.
 
 To compute failed damage of (M - ex-princess):
@@ -266,7 +264,7 @@ This is the princess facesitting prevents breathing rule:
 The princess facesitting prevents breathing rule is listed in the breathing blocking rules.
 
 A breathing consequences rule (this is the consequences for breathing through princess padding rule):
-	if diaper quest is 1 and ex-princess is penetrating face:
+	if diaper quest is 1 and ex-princess is penetrating face and the player is air breathing vulnerable:
 		say "You are forced to smell the pungent aroma of [NameDesc of ex-princess][']s [if ex-princess is messy and diaper messing >= 7]stinky[otherwise][urine]-soaked[end if] diaper.";
 		let G be wetDiaperFacesitGrossnessLevel;
 		if ex-princess is messy, now G is messyDiaperFacesitGrossnessLevel;
@@ -289,7 +287,7 @@ To compute facial sex of (M - ex-princess):
 		compute facesit sex of M.
 
 To compute diaper facesit sex of (M - ex-princess):
-	if the reaction of the player > 0, humiliate 200;
+	if the reaction of the player > 0, severeHumiliate;
 	TimesSubmittedUp M by 1;
 	decrease the sex-length of M by 1;
 	if the diaper addiction of the player >= 10:
@@ -533,7 +531,8 @@ Definition: ex-princess is willing to give snacks:
 Part 5 - Trading
 
 To compute final resolution of (M - ex-princess) taking (T - a thing):
-	now M is carrying T.
+	if T is skeleton key, destroy T;
+	otherwise now M is carrying T.
 
 To decide which number is the bartering value of (T - a thing) for (M - ex-princess):
 	if M is caged and the number of monsters in the location of M is 1:
@@ -563,45 +562,46 @@ To compute resolution of (M - ex-princess) taking (T - a thing):
 	do nothing.
 
 To compute resolution of (M - ex-princess) taking (T - skeleton key):
-	destroy T;
-	now M is guarding;
-	now the princess-power of M is 14;
-	if M is carrying royal scepter, now the princess-power of M is 16;
-	now School35 is use-the-floor;
-	let LN be the list of alive undefeated staff members;
-	sort LN in random order;
-	repeat with N running through LN:
-		now N is in School33;
-		anger N;
-		now N is guarding;
-		now the scared of N is 0;
-		if the number of unleashed staff member in the location of M < 2:
-			now N is unleashed;
-			try N going north;
-			if N is unfriendly, interest N;
-			otherwise deinterest N;
-	repeat with N running through alive students:
-		now N is guarding; [This will stop them joining the fight]
-	let STN be the number of staff members in the location of the player;
-	if STN > 0:
-		say "There's no time to talk to [NameDesc of M] about [his of M] outfit before [his of M] [if STN > 1]captors arrive[otherwise]captor arrives[end if], clearly somehow alerted to [his of M] escape!";
-		let N be headmistress;
-		if N is not in the location of the player, now N is a random staff member in the location of the player;
-		say "[BigNameDesc of N] speaks.[line break][speech style of N]'Really, [NameBimbo]? After all the trust we put in you, and all we've taught you, this is how you repay us? You WILL regret this.'[roman type][line break]";
-		if armband is held:
-			say "Your [MediumDesc of armband] vanishes!";
-			destroy armband; [destroyed rather than in Holding Pen will allow the player back into the school]
-		say "[speech style of M]'Not likely.'[roman type][line break]";
-		now N is a random unleashed staff member in the location of M;
-		compute M enslaving N;
-		if STN > 1:
-			if royal scepter is carried by M:
-				repeat with STU running through staff members:
-					if STU is unleashed and (STU is sapphire-teacher or STU is not teacher), compute M enslaving STU;
-			otherwise:
-				say "[BigNameDesc of M] falls to [his of M] knees with fatigue. [big he of M] looks up at you.[speech style of M]'You can take care of the [if STN > 2]others[otherwise]other one[end if], right?'[roman type][line break]";
-				if the player is prone, say "With a final flick of [his of M] wand, [he of M] helps you to stand.";
-				now the stance of the player is 0;
+	if M is caged:
+		destroy T;
+		now M is guarding;
+		now the princess-power of M is 14;
+		if M is carrying royal scepter, now the princess-power of M is 16;
+		now School35 is use-the-floor;
+		let LN be the list of alive undefeated staff members;
+		sort LN in random order;
+		repeat with N running through LN:
+			now N is in School33;
+			anger N;
+			now N is guarding;
+			now the scared of N is 0;
+			if the number of unleashed staff member in the location of M < 2:
+				now N is unleashed;
+				try N going north;
+				if N is unfriendly, interest N;
+				otherwise deinterest N;
+		repeat with N running through alive students:
+			now N is guarding; [This will stop them joining the fight]
+		let STN be the number of staff members in the location of the player;
+		if STN > 0:
+			say "There's no time to talk to [NameDesc of M] about [his of M] outfit before [his of M] [if STN > 1]captors arrive[otherwise]captor arrives[end if], clearly somehow alerted to [his of M] escape!";
+			let N be headmistress;
+			if N is not in the location of the player, now N is a random staff member in the location of the player;
+			say "[BigNameDesc of N] speaks.[line break][speech style of N]'Really, [NameBimbo]? After all the trust we put in you, and all we've taught you, this is how you repay us? You WILL regret this.'[roman type][line break]";
+			if armband is held:
+				say "Your [MediumDesc of armband] vanishes!";
+				destroy armband; [destroyed rather than in Holding Pen will allow the player back into the school]
+			say "[speech style of M]'Not likely.'[roman type][line break]";
+			now N is a random unleashed staff member in the location of M;
+			compute M enslaving N;
+			if STN > 1:
+				if royal scepter is carried by M:
+					repeat with STU running through staff members:
+						if STU is unleashed and (STU is sapphire-teacher or STU is not teacher), compute M enslaving STU;
+				otherwise:
+					say "[BigNameDesc of M] falls to [his of M] knees with fatigue. [big he of M] looks up at you.[speech style of M]'You can take care of the [if STN > 2]others[otherwise]other one[end if], right?'[roman type][line break]";
+					if the player is prone, say "With a final flick of [his of M] wand, [he of M] helps you to stand.";
+					now the stance of the player is 0;
 
 Check going while ex-princess is guarding:
 	if ex-princess is in the location of the player, say "If you leave [NameDesc of ex-princess] here, [he of ex-princess] might get defeated and captured again. You should see this through to the end." instead.
@@ -660,6 +660,9 @@ An all later time based rule (this is the school rescue fight rule):
 						if diaper focus > 0, now M is diaper-enslaved;
 						otherwise now M is sex-enslaved;
 						now M is in School34;
+						repeat with T running through things held by M:
+							if T is clothing, now T is in School15;
+							otherwise destroy T;
 						compute N dungeon locking;
 			if M is guarding:
 				now the health of M is 1;
@@ -792,24 +795,12 @@ An all later time based rule (this is the asscum annie rule):
 				if semen-caught is 1:
 					say "Opening your [LipDesc] wide, you push them against [NameDesc of ex-princess][']s [asshole], trying to make sure you don't miss a single gulp of the flow of [semen] that's spurting out of [his of ex-princess] backdoor. [if the semen taste addiction of the player < 8]Wincing, you[otherwise]You[end if] swallow down every last drop of [his of ex-princess] magic anal creampie.";
 					StomachSemenUp 2;
-					humiliate MODERATE-HUMILIATION;
+					moderateHumiliate;
 					progress quest of creampie-drinking-quest;
 				otherwise if semen-caught is 0:
 					say "The [semen] splurts and splatters to the ground[if the player is upright]. If you were on your knees, you might have had a chance to catch it[end if].";
-					if the player is in School34:
-						say "Suddenly a condom soars in from the hallway. The [semen] on the ground begins to rise into the air, and is soon filling the condom!";
-						let C be a random worn condom pinnable clothing;
-						if C is nothing, now C is string-belt;
-						unless C is worn:
-							summon C cursed;
-							say "Suddenly, a [printed name of C] appears around your waist!";
-						UsedCondomUp C by 1;
-						say "The condom whizzes onto and attaches itself to your [MediumDesc of C]!";
-						say CondomNewbieTip;
-						force immediate clothing-focus redraw;
-					otherwise:
-						let L be the location of ex-princess;
-						PuddleUp semen by 3 in L;
+					let L be the location of ex-princess;
+					PuddleUp semen by 3 in L;
 			otherwise:
 				let L be the location of ex-princess;
 				PuddleUp semen by 3 in L;
@@ -820,7 +811,7 @@ An all later time based rule (this is the asscum annie rule):
 An all later time based rule (this is the fannie facerub rule):
 	if ex-princess is diaper-enslaved and playerRegion is School:
 		if ex-princess is in the location of the player:
-			let D be a random dirty diaper;
+			let D be a random worn dirty diaper;
 			if D is diaper:
 				say "[BigNameDesc of ex-princess] groans as [he of ex-princess] can't help but rub [his of ex-princess] face into the seat of your diaper.[line break][speech style of ex-princess]'[one of]I can't stop myself... Noooo!'[or]I'm sorry, I'm so sorry!'[or]Eurgh, this is so disgusting!'[or][if the player is in School34]This is your fault, how could you let them defeat us?! I'm gong to be stuck doing this for centuries...'[otherwise][big please] move away from me, don't make me do this!'[end if][or]I can't believe I'm doing this...'[or]Why me? Why me???'[or]Why did I even create this place? Did I secretly... Eurgh... Want this all along?'[or]No. No. It's too disgusting! Make it stop!'[or]Euuuuurgh, yuck yuck yuck...'[or]Ugh, the smell!'[then at random][roman type][line break]";
 				ruin vagina;
@@ -919,8 +910,11 @@ An all time based rule (this is the caged princess tortured rule):
 			increase the torment-count of M by 1;
 			increase the current-torment of M by 60;
 			say "[BigNameDesc of N] pushes the button and you watch with [horror the sex addiction of the player] as ";
-			if diaper quest is 1, say "mechanical winches clunk into motion, forcing [his of ex-princess] arms up and [his of ex-princess] neck and head down, and down, and down until [his of ex-princess] face is pressed into the soiled diapers on the ground. The diapers queued up in the tube roll out, falling down on top of [his of ex-princess] head, half-burying [his of ex-princess] face in gross used nappies. A loud vibrating sound can be heard through the intercom.[line break][speech style of N]'[one of]Oooh, are you enjoying smelling our nasty used diapers?'[or]That's right bitch, get a good sniff of our diapers while you cum!'[in random order][roman type][line break]A frustrated groan escapes [NameDesc of ex-princess][']s lips, which soon turns into a sexual moan.";
-			otherwise say "the [if watersports fetish is 1][urine][otherwise][semen][end if] begins to flow down the tube.[line break][speech style of N]'[one of]Get to work, [if watersports fetish is 1]toilet [boy of M][otherwise]cum-bucket[end if][or]Time's ticking, [cunt][or]Grub's up, bitch[then at random]!'[roman type][line break][BigNameDesc of M] [one of]sobs quietly to [himself of M][or]mutters expletives under [his of M] breath[or]groans weakly[in random order] as [he of M] gets to work.".
+			if diaper quest is 1:
+				say "mechanical winches clunk into motion, forcing [his of ex-princess] arms up and [his of ex-princess] neck and head down, and down, and down until [his of ex-princess] face is pressed into the soiled diapers on the ground. The diapers queued up in the tube roll out, falling down on top of [his of ex-princess] head, half-burying [his of ex-princess] face in gross used nappies. A loud vibrating sound can be heard through the intercom.[line break][speech style of N]'[one of]Oooh, are you enjoying smelling our nasty used diapers?'[or]That's right bitch, get a good sniff of our diapers while you cum!'[in random order][roman type][line break]A frustrated groan escapes [NameDesc of ex-princess][']s lips, which soon turns into a sexual moan.";
+			otherwise:
+				now the bladder of N is 0;
+				say "the [if watersports fetish is 1][urine][otherwise][semen][end if] begins to flow down the tube.[line break][speech style of N]'[one of]Get to work, [if watersports fetish is 1]toilet [boy of M][otherwise]cum-bucket[end if][or]Time's ticking, [cunt][or]Grub's up, bitch[then at random]!'[roman type][line break][BigNameDesc of M] [one of]sobs quietly to [himself of M][or]mutters expletives under [his of M] breath[or]groans weakly[in random order] as [he of M] gets to work.".
 
 
 [We can make this resolve to 'yes' and also output some text about what they get up to instead of taking their action.]
@@ -969,7 +963,7 @@ To compute boredom reset of (M - ex-princess):
 
 To compute mess moment of (M - ex-princess):
 	if M is in the location of the player:
-		say SuddenMessFlav of M;
+		compute default mess moment of M;
 	otherwise if M is unconcerned:
 		bore M;
 		now M is in Dungeon11.
@@ -998,9 +992,11 @@ To compute ChangeRequestDecision of (M - ex-princess):
 			now the stance of the player is 1;
 		let G be wetDiaperFacesitGrossnessLevel;
 		if diaper messing >= 7, now G is messyDiaperFacesitGrossnessLevel;
-		say "[BigNameDesc of M] smiles with shy appreciation as [he of M] mounts your nose with the front of [his of M] diaper. The strong smell hits your nostrils as [he of M] begins to grind away.";
-		SmellGrossOut G;
-		say "It's not a short process for [him of M] to build all the way to climax, and so by the time [he of M] finally does reach [his of M] peak, your nostrils and airways have been fully drenched in [his of M] shameful scent.";
+		say "[BigNameDesc of M] smiles with shy appreciation as [he of M] mounts your nose with the front of [his of M] diaper. ";
+		if the player is air breathing vulnerable:
+			say "The strong smell hits your nostrils as [he of M] begins to grind away.";
+			SmellGrossOut G;
+			say "It's not a short process for [him of M] to build all the way to climax, and so by the time [he of M] finally does reach [his of M] peak, your nostrils and airways have been fully drenched in [his of M] shameful scent.";
 		SlowGrossOut G;
 		now the refractory-period of M is a random number between 0 and 200;
 	otherwise if M is not in Dungeon11:

@@ -27,7 +27,7 @@ Carry out PinkEating:
 	allocate 6 seconds;
 	say "As you eat the pill, you feel yourself sucked through a portal. ";
 	if the player is glue stuck, compute raw glue escaping a random glue in the location of the player with 1;
-	say " The scenery around you slightly changes, and you are now in [Dungeon12]! ";
+	say " The scenery around you slightly changes, and you are now in the [Dungeon12]! ";
 	repeat with M running through things in the location of the player:
 		if M is grabbing the player or M is penetrating a body part:
 			if M is embodied:

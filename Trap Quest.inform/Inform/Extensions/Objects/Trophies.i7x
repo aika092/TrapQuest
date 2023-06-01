@@ -62,10 +62,10 @@ Definition: bbc-trophy is fetish appropriate:
 Carry out TrophySwitching bbc-trophy:
 	say "You rub the trophy[if the player is wrist bound behind] with your nose[end if]. ";
 	if the trophy-mode of bbc-trophy is 0:
-		say "The trophy's glow changes from red to green. You can tell that [bold type]black [men of shopkeeper] are now more virile and white [men of shopkeeper] are now finding it more difficult to satisfy their lovers.[roman type][line break]";
+		say "The trophy's glow changes from red to green. You can tell that [bold type]black [men of male-m] are now more virile and white [men of male-m] are now finding it more difficult to satisfy their lovers.[roman type][line break]";
 		now the trophy-mode of bbc-trophy is 1;
 	otherwise:
-		say "The trophy's glow changes from green to red. You can tell that [bold type][men of shopkeeper] of all races have returned to their normal levels of virility.[roman type][line break]";
+		say "The trophy's glow changes from green to red. You can tell that [bold type][men of male-m] of all races have returned to their normal levels of virility.[roman type][line break]";
 		now the trophy-mode of bbc-trophy is 0.
 
 pain-trophy is a trophy. The printed name of pain-trophy is "[TQlink of item described]dominatrix trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of pain-trophy is "dmnt". Understand "dominatrix" as pain-trophy.
@@ -229,13 +229,17 @@ A magic consequences rule (this is the trophy magic consequence rule):
 		if egg laying fetish is 1 and the player is possessing a vagina and (the pregnancy of the player <= 0 or the pregnancy of the player is 3):
 			say "Less of your magic power is depleted than normal. But at the same time, you feel an egg manifest itself inside your womb!";
 			WombFill 1 medium eggs;
-			if the number of egg-fathering things penetrating vagina is 0, add the throne to the medium-egg-origins of vagina;
+			if the number of egg-fathering things penetrating vagina is 0:
+				if mythical creatures fetish is 1 and buzzing giant wasp is not listed in the medium-egg-origins of vagina, add buzzing giant wasp to the medium-egg-origins of vagina;
+				otherwise add the throne to the medium-egg-origins of vagina;
 		otherwise:
 			say "Less of your magic power is depleted than normal. But at the same time, you feel ";
 			if egg laying fetish is 1:
 				say "an egg manifest itself inside your belly!";
 				AssFill 1 medium eggs;
-				if the number of egg-fathering things penetrating asshole is 0, add the throne to the medium-egg-origins of belly;
+				if the number of egg-fathering things penetrating asshole is 0:
+					if mythical creatures fetish is 1 and buzzing giant wasp is not listed in the medium-egg-origins of vagina, add buzzing giant wasp to the medium-egg-origins of vagina;
+					otherwise add the throne to the medium-egg-origins of vagina;
 			otherwise if a random number between 0 and watersports fetish is 1:
 				say "some [urine] appear inside your belly!";
 				AssFill 2 urine;

@@ -15,7 +15,7 @@ To decide which number is the usualAssModesty of (C - a dining dress): decide on
 
 Part 1 - Red Dining Dress
 
-A red dining dress is a kind of dining dress. There is 1 red dining dress. The text-shortcut of red dining dress is "rdd". The printed name of red dining dress is usually "[clothing-title-before]red dining dress[clothing-title-after]".
+A red dining dress is a kind of dining dress. There is 1 red dining dress. A red dining dress is high cut. The text-shortcut of red dining dress is "rdd". The printed name of red dining dress is usually "[clothing-title-before]red dining dress[clothing-title-after]".
 
 Figure of red dining dress is the file "Items/Clothes/Upper/Dresses/Evening/diningdress1.png".
 

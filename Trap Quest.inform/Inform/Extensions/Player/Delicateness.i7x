@@ -128,7 +128,7 @@ To PainUp (X - a number): [This function is anticipated to output some kind of f
 
 slowDelicateness is a number that varies.
 To SlowDelicateUp (X - a number):
-	let slowDelicatenessLimit be 0[ - diaper quest];
+	let slowDelicatenessLimit be 0[ + diaper quest];
 	if the player is not feeling dominant, increase slowDelicatenessLimit by 1;
 	if the player is feeling submissive, increase slowDelicatenessLimit by (the delicateness of the player - 13) / 2; [submissives are used to submitting so much that it takes a long time for their submissiveness to get even worse]
 	if debugmode > 0, say "Delicateness threshold is [slowDelicatenessLimit] ticks.";
@@ -188,7 +188,7 @@ To FearUp (X - a number) with reason (T - a text): [This function is anticipated
 	let R be a random number between 11 and 20;
 	if debuginfo > 0, say "[input-style]Avoid flinch check: d10+9 ([R]) | [X + the delicateness of the player].5 = ([delicateness of the player]) delicateness + ([X].5) fear rating[roman type][line break]";
 	if X + the delicateness of the player >= R:
-		if T is "", now T is the substituted form of "As you [one of]recoil[or]flinch[or]tense up[in random order] with fear,";
+		if T is "", now T is the substituted form of "As you [one of]recoil[or]flinch[or]tense up[in random order] with [if X > 5]fear[otherwise][one of]surprise[or]shock[cycling][end if],";
 		check sudden spit and expulsion with reason T.
 
 gross-sensation is a text that varies.
@@ -223,6 +223,7 @@ Messy diapers near face: 10
 Intimacy with 90% bestial partner (hellhound): 11
 Messy diapers on face: 11
 Drinking / eating other anal food or enemas: 12
+Made to wear someone else's messy diaper: 12
 ]
 To GrossOut (X - a number):
 	say GrossOut X.
@@ -254,10 +255,10 @@ To NonAddictiveGrossOut (X - a number) with reason (T - a text) and sensation (S
 		let G be X - the grossness addiction of the player;
 		if G >= 5: [hated]
 			if silent-gross-out is false, say "[variable custom style][one of]This is the most disgusting thing that's ever happened to me in my life[or]YEUUUURGH[or]I'm gonna puke[or]DISGUSTING[or]This is going to make me hurl[then at random]![roman type][line break]";
-			cool down 5000;
+			gross cool down 5000;
 		otherwise if G > 0: [disliked]
 			if silent-gross-out is false, say "[variable custom style][one of]Yuck[or]Gross[or]This is so nasty, eww[or]Yuck yuck yuck[or]Eurgh[or]I can't stand this [S][or]This is so wrong[in random order]![roman type][line break]";
-			cool down 1000;
+			gross cool down 1000;
 		otherwise if G > -7: [tolerated]
 			if silent-gross-out is false:
 				if the grossness addiction of the player < 7:
@@ -266,6 +267,7 @@ To NonAddictiveGrossOut (X - a number) with reason (T - a text) and sensation (S
 					say "[variable custom style][one of]This is fucking gross, haha![or]How nasty.[or]Wow, that is one strong [S].[in random order][roman type][line break]";
 				otherwise:
 					say "[second custom style][one of]Nasty. Just the way I like it.[or]Yuck. But also, yum![or]Not a problem for a nasty bitch like me![in random order][roman type][line break]";
+			gross cool down 0;
 		otherwise if G > -14: [loved]
 			if silent-gross-out is false:
 				if the grossness addiction of the player < 10:
@@ -273,7 +275,7 @@ To NonAddictiveGrossOut (X - a number) with reason (T - a text) and sensation (S
 				if the grossness addiction of the player < 14:
 					say "[variable custom style][one of]I can't deny it any more... I fucking love this [S][or]This [S] is so gross, but it's also so fucking good[or]I'm getting addicted to this [S][in random order]![roman type][line break]";
 				otherwise:
-					say "[second custom style][one of]Yes... YES! SO DISGUSTING! SO GOOD![or]So gross! I need more![or]I can't get enough of this disgusting [S][or]I'm addicted to this [S][in random order]![roman type][line break]";
+					say "[second custom style][one of]Yes... YES! SO DISGUSTING! SO GOOD[or]So gross! I need more[or]I can't get enough of this disgusting [S][or]I'm addicted to this [S][in random order]![roman type][line break]";
 				now G is G * -200;
 				arouse G;
 		otherwise: [boring]
@@ -284,6 +286,13 @@ To NonAddictiveGrossOut (X - a number) with reason (T - a text) and sensation (S
 			if G >= R:
 				if T is "", now T is the substituted form of "As you [one of]recoil[or]flinch[or]tense up[in random order] with disgust,";
 				check sudden spit and expulsion with reason T.
+
+To gross cool down (N - a number):
+	if the class of the player is faerie:
+		say "This SHOULD turn you off, but your nympho fairie instinct instead floods you with perverse arousal!";
+		arouse 1500;
+	otherwise if N > 0:
+		cool down N.
 
 To compute potential addiction gain from grossness (X - a number):
 	if the player is a december 2022 top donator or diaper quest is 1:
@@ -309,16 +318,17 @@ To NonAddictiveSlowGrossOut (X - a number): [This function is anticipated to be 
 		let G be X - the grossness addiction of the player;
 		if G >= 5: [hated]
 			if silent-gross-out is false, say "[variable custom style][one of]Gonna puke...[or]Gonna hurl...[or]DISGUSTING![or]YEUUUURGH![or]EEEUUURGH![or]I feel ill...[then at random][roman type][line break]";
-			cool down 1000;
+			slow gross cool down 1000;
 		otherwise if G > 0: [disliked]
 			if silent-gross-out is false, say "[variable custom style][one of]Yuck[or]Too gross[or]So nasty[or]Eww[or]Yuck yuck yuck[or]Eurgh[or]Too much[or]So wrong[in random order]![roman type][line break]";
-			cool down 200;
+			slow gross cool down 200;
 		otherwise if G > -7: [tolerated]
 			if silent-gross-out is false:
 				if the grossness addiction of the player < 14:
 					say "[variable custom style][one of]Blergh[or]Grim[or]A little gross[or]Not nice[or]Barely tolerable[or]Yuck[in random order].[roman type][line break]";
 				otherwise:
 					say "[second custom style][one of]Hehe[or]Haha[or]Heh[at random], [one of]I'm so[or]I'm[or]this is[at random] [one of]pretty [or][purely at random][one of]nasty[or]gross[or]sick[or]fucked up[in random order].[roman type][line break]";
+				slow gross cool down 0;
 		otherwise if G > -14: [loved]
 			if the grossness addiction of the player < 10 and silent-gross-out is false:
 				say "[variable custom style][one of]Aaah[or]Oooh[or]Mmmmm[or]Yes[or]Nice[in random order]...[roman type][line break]";
@@ -326,6 +336,13 @@ To NonAddictiveSlowGrossOut (X - a number): [This function is anticipated to be 
 			arouse G;
 		otherwise: [boring]
 			say "[variable custom style][one of]Meh.[or][or]Boring...[or][or]Yawn.[or][cycling][roman type][line break]";
+
+To slow gross cool down (N - a number):
+	if the class of the player is faerie:
+		say "[one of]This SHOULD turn you off, but your nympho fairie instinct instead floods you with perverse arousal![or][or][or][or][or][cycling]";
+		arouse 750;
+	otherwise if N > 0:
+		cool down N.
 
 To compute slow addiction gain from grossness (X - a number):
 	if the player is a december 2022 top donator or diaper quest is 1:

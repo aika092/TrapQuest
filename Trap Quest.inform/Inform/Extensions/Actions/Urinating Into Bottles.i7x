@@ -46,7 +46,7 @@ Carry out PeeBottling:
 			DoseUp the noun;
 			BladderDown 2;
 		say "You pee into the [noun][if the bladder of the player > 0], but it's now full and you can't stop going![otherwise if the max-doses of the noun is the doses of the noun], and it's now full.[otherwise].[end if][if the humiliation of the player < 25000][line break][variable custom style]Yuk, why am I doing this?[roman type][line break][end if]";
-		humiliate MODERATE-HUMILIATION + SLIGHT-HUMILIATION;
+		moderateHumiliate;
 		if the bladder of the player > 0:
 			now delayed urination is 1;
 			now pee-bottling is 1;

@@ -29,6 +29,8 @@ To compute interaction of (M - a monster):
 					FavourDown M by 2 with consequences;
 	otherwise if M is undefeated and M is not caged and the player is in danger:
 		compute protection of M;
+	otherwise if the current-errand of M is completed:
+		compute errand completion of M;
 	otherwise:
 		compute unique interaction of M.
 

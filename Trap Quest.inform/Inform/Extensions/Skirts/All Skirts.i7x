@@ -23,7 +23,8 @@ To set up magic attribute of (S - a skirt):
 		if diaper quest is 1, now S is respiration;
 	if R is 4, now the magic-type of S is dressup;
 	if R >= 5 and S is super-short or S is actually sheer, now the magic-type of S is protection;
-	if R is 3, curse S.
+	if R is 3, curse S;
+	set up rare magic attribute of S.
 
 To restock (C - a skirt):
 	let B be a random basic loot skirt;
@@ -153,7 +154,7 @@ To decide which figure-name is clothing-image of (C - chequered skirt):
 	decide on figure of chequered skirt.
 
 To say ClothingDesc of (C - chequered skirt):
-	say "This tight skirt has a busy repeating white and black pattern[if C is not diaper covering]. The tight fabric has been pushed up by your thick diaper, partially exposing it[end if].".
+	say "This tight skirt has a busy repeating white and black pattern[if there is a worn diaper and C is not diaper covering]. The tight fabric has been pushed up by your thick diaper, partially exposing it[end if].".
 
 To compute SelfExamineDesc of (Y - chequered skirt):
 	say "Strips of white skirt flow from your waist, exposing some thigh.".
@@ -419,9 +420,9 @@ Definition: orange tartan microskirt is orange themed: decide yes.
 A pink microskirt is a kind of microskirt. There is 1 pink microskirt. Printed name of pink microskirt is "[clothing-title-before]pink microskirt[clothing-title-after]". The text-shortcut of pink microskirt is "pms". Figure of pink microskirt is the file "Items/Clothes/Lower/Skirts/Micro/microskirt3.png".
 Definition: a pink microskirt is tartan themed: decide yes.
 Definition: a pink microskirt is pink themed: decide yes.
-A black sporty microskirt is a kind of microskirt. A black sporty microskirt is usually plentiful. There is 1 black sporty microskirt. A black sporty microskirt is usually nylon. Printed name of black sporty microskirt is "[clothing-title-before]black sporty microskirt[clothing-title-after]". The text-shortcut of black sporty microskirt is "bms". Figure of black sporty microskirt is the file "Items/Clothes/Lower/Skirts/Micro/microskirt4.png".
-Definition: a black sporty microskirt is exercise themed: decide yes.
-Definition: a black sporty microskirt is black themed: decide yes.
+black-sporty-microskirt is a microskirt. black-sporty-microskirt is transformation-rare. black-sporty-microskirt is nylon. Printed name of black-sporty-microskirt is "[clothing-title-before]black sporty microskirt[clothing-title-after]". The text-shortcut of black-sporty-microskirt is "bms". Figure of black sporty microskirt is the file "Items/Clothes/Lower/Skirts/Micro/microskirt4.png". Understand "black", "sporty", "microskirt" as black-sporty-microskirt.
+Definition: black-sporty-microskirt is exercise themed: decide yes.
+Definition: black-sporty-microskirt is black themed: decide yes.
 A babydoll microskirt is a kind of microskirt. There is 1 babydoll microskirt. A babydoll microskirt is usually mesh. A babydoll microskirt is sheer. The printed name of babydoll microskirt is "[clothing-title-before]babydoll microskirt[clothing-title-after]". The text-shortcut of babydoll microskirt is "bdm". Figure of babydoll microskirt is the file "Items/Clothes/Lower/Skirts/Micro/microskirt6.png".
 Definition: a babydoll microskirt is sissifying: decide yes.
 Definition: a babydoll microskirt is pink themed: decide yes.
@@ -444,16 +445,16 @@ To decide which figure-name is clothing-image of (C - a pink microskirt):
 	decide on figure of pink microskirt.
 To say ClothingDesc of (C - a pink microskirt):
 	say "This pink skirt is only crotch high. [one of]Really, it should be called a belt.[or]Only the sluttiest of girls would wear this, especially without anything else underneath.[or]It conceals absolutely nothing![at random]".
-To decide which figure-name is clothing-image of (C - a black sporty microskirt):
+To decide which figure-name is clothing-image of (C - black-sporty-microskirt):
 	decide on figure of black sporty microskirt.
-To say ClothingDesc of (C - a black sporty microskirt):
+To say ClothingDesc of (C - black-sporty-microskirt):
 	say "This black lycra skirt is only crotch high. It has pink stripes which make it appear sporty.".
 To decide which figure-name is clothing-image of (C - a babydoll microskirt):
 	decide on figure of babydoll microskirt.
 To say ClothingDesc of (C - a babydoll microskirt):
 	say "This pink frilly skirt is extremely delicate and sheer. But that doesn't even matter because it is only crotch high!".
 
-To decide which number is the dexterity-influence of (C - a black sporty microskirt):
+To decide which number is the dexterity-influence of (C - black-sporty-microskirt):
 	decide on 2 + the magic-modifier of C.
 
 To set up influence of (C - a microskirt):
@@ -467,7 +468,7 @@ To compute SelfExamineDesc of (Y - a microskirt):
 
 To say ShortDesc of (Y - a microskirt):
 	say "tiny [clothing-material of Y] microskirt".
-To say ShortDesc of (Y - a black sporty microskirt):
+To say ShortDesc of (Y - black-sporty-microskirt):
 	say "tiny black lycra microskirt".
 
 To decide which number is the initial outrage of (C - a microskirt):
@@ -602,7 +603,8 @@ To say MediumDesc of (Y - latex-backless-hobble-skirt):
 	say "tight black punishment skirt with butt window".
 
 To set up magic attribute of (C - latex-backless-hobble-skirt):
-	if a random number between 1 and 3 is 1, now C is stumbling.
+	if a random number between 1 and 3 is 1, now C is stumbling;
+	set up rare magic attribute of C.
 
 Definition: latex-backless-hobble-skirt is end of transformation chain:
 	if the unique-upgrade-target of it is nothing, decide yes;

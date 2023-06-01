@@ -1,6 +1,6 @@
 Golem by Monster begins here.
 
-golem is a monster. golem is neuter. golem is guarding. The poison-status of golem is -1.
+golem is a monster. golem is neuter. golem is guarding. The poison-status of golem is -1. The  blind-status of golem is -1.
 
 The text-shortcut of golem is "gol". Understand "silicone", "slime" as golem.
 
@@ -45,18 +45,19 @@ To compute monstermotion of (M - golem):
 
 To MonsterStomp (M - golem):
 	let stomped be 0;
-	repeat with N running through undefeated awake monsters in the location of M:
+	repeat with N running through undefeated awake human intelligent male monsters in the location of M:
 		if stomped is 0 and N is not penetrating a body part and N is not grabbing the player and N is not M:
 			compute N stomping M; [reversed]
 			now stomped is 1.
 
 To compute (M - a monster) stomping (N - golem):
-	say "[BigNameDesc of M] grabs [NameDesc of N], but the golem seems happier for it! [if artificial enhancements fetish is 1][big his of N] body engulfs [NameDesc of M], and [NameDesc of M][']s muscles bulge out with new definition and power![otherwise][big his of N] body dissolves into a mass of ones and zeroes, which are absorbed into [NameDesc of M][']s skin. [big he of M] grunts as [his of M] muscles suddenly bulge out with even more definition and power![end if]";
+	if M is in the location of the player, say "[BigNameDesc of M] grabs [NameDesc of N], but the golem seems happier for it! [if artificial enhancements fetish is 1][big his of N] body engulfs [NameDesc of M], and [NameDesc of M][']s muscles bulge out with new definition and power![otherwise][big his of N] body dissolves into a mass of ones and zeroes, which are absorbed into [NameDesc of M][']s skin. [big he of M] grunts as [his of M] muscles suddenly bulge out with even more definition and power![end if]";
 	SilentlyDifficultyUp M by 6;
 	destroy N.
 
 Definition: golem is objectifying the player: decide yes.
 Definition: golem is scarable: decide no.
+Definition: golem is a urinater: decide no.
 
 Definition: golem (called M) is successfully blocking: [Do they succeed in a roll to stop the player moving]
 	if the noun is up or the noun is down, decide yes;
@@ -143,6 +144,8 @@ To compute golem attack stickiness:
 			otherwise now golem is wrangling thighs;
 			now golem is stalled.
 
+The latex punishment rule of golem is the no latex punishment rule.
+
 The golem priority attack rules is a rulebook. The priority attack rules of a golem is the golem priority attack rules.
 
 [Once partially stuck, you'll soon be fully stuck]
@@ -196,5 +199,184 @@ To say MuteGreetResponse of (M - golem):
 
 To say MuteQuestion of (M - golem):
 	say SexDollQuestion of M.
+
+
+
+
+
+A slimeball is a kind of monster. slimeball is neuter. The text-shortcut of slimeball is "slmb". The poison-status of a slimeball is -1. The  blind-status of a slimeball is -1.
+
+There are 10 slimeballs.
+
+Definition: a slimeball is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
+Definition: a slimeball is a urinater: decide no.
+
+slimeballShortcutCount is initially 1.
+To slimeballShortcutAssign (C - a slimeball):
+	if the text-shortcut of C is "slmb":
+		now the text-shortcut of C is substituted form of "slmb[slimeballShortcutCount]";
+		increase slimeballShortcutCount by 1.
+
+Figure of slimeball is the file "NPCs/MultiFloor/Slimeball/slimeball1.png".
+Figure of slimeball cutscene 1 is the file "NPCs/MultiFloor/Slimeball/cutscene-slimeball-attack1.png".
+Figure of slimeball cutscene 2 is the file "NPCs/MultiFloor/Slimeball/cutscene-slimeball-attack2.jpg".
+
+To decide which figure-name is the monster-image of (M - slimeball):
+	[if M is wrangling breasts, decide on figure of slimeball cutscene 2;]
+	[if M is wrangling arms, decide on figure of slimeball cutscene 1;]
+	decide on figure of slimeball.
+
+To say ShortDesc of (M - slimeball):
+	say "slimeball".
+
+To say MediumDesc of (M - slimeball):
+	say "slimeball".
+
+To say MonsterDesc of (M - slimeball):
+	say "This weird blue blob of slime appears to be able to wobble around, and even hop and leap. If you look at it the right way, it looks a lot like a boob.".
+
+To set up (M - slimeball):
+	reset M;
+	now the monstersetup of M is 1;
+	now the raw difficulty of M is 1;
+	now the health of M is the maxhealth of M;
+	slimeballShortcutAssign M;
+	anger M;
+	interest M.
+
+To decide which number is the difficulty of (M - a slimeball):
+	decide on the raw difficulty of M.
+
+To decide which number is the initial maxhealth of (M - a slimeball):
+	decide on 7.
+
+Definition: a slimeball is too intimidating: decide no.
+
+[To compute monstermotion of (M - a slimeball):
+	do nothing.
+
+To compute (M - a slimeball) seeking (D - a direction):
+	do nothing.]
+
+To compute action (N - a number) of (M - a slimeball):
+	if M is in the location of the player and N is not 2:
+		anger M;
+		interest M;
+		say "[BigNameDesc of M] leaps at you, trying to latch onto your body!";
+		let D be a random number between 1 and the dexterity of the player;
+		let X be D;
+		if the player is prone, decrease X by 8;
+		if the player is immobile:
+			now X is 0;
+		otherwise if debuginfo > 0:
+			say "[input-style]Slimeball evasion check: dexterity roll (d[dexterity of the player]) = [D] [if the player is prone]- kneeling penalty (8) = [X] [end if]| (6.5) Facehugger evasion difficulty[roman type][line break]";
+		if X > 6:
+			say "You manage to move yourself out of the way, and [NameDesc of M] goes flying past. But it's still wobbling, preparing to try again...";
+		otherwise:
+			say "[if the player is not immobile]You don't move out of the way in time! [end if]It splashes against you, coating you in its slime!";
+			now M is wrangling arms;
+			compute slow grossness of M;
+			reset multiple choice questions;
+			set numerical response 1 to "Try to rip it off";
+			set numerical response 2 to "Wait to see what happens next";
+			now player-numerical-response is 2;
+			now temporaryYesNoBackground is figure of slimeball cutscene 1;
+			if the player is able to use their hands, compute multiple choice question;
+			if player-numerical-response is 1:
+				if the player is getting unlucky:
+					say "Your hands slip as you struggle to grasp at the slime. You can't get a good enough grip! ";
+					let C be a random worn arm covering clothing;
+					if C is clothing and C is not glued:
+						say "You feel it getting under your [ShortDesc of C], where it begins to solidify, gluing it to you!";
+						gluify C;
+					otherwise if artificial enhancements fetish is 1 and fake-nails is off-stage and fake-nails is actually summonable:
+						say "You watch as a set of delicate fake nails are rapidly formed on top of your fingernails!";
+						summon fake-nails cursed with quest;
+					if the player is top heavy:
+						say "The slime expands and hardens, creating an impression of larger breasts over your existing [BreastDesc]. Your breasts can't actually grow any more, but you can feel them becoming more sensitive and... sexual.";
+					otherwise:
+						say "The slime expands and hardens, creating an impression of larger breasts over your existing [BreastDesc]. And then, it somehow shivers and merges with the body underneath, drastically enhancing your bust size[if artificial enhancements fetish is 1] with silicone implants[end if].";
+						cutshow figure of slimeball cutscene 2 for M;
+						say GotUnluckyFlav;
+						BustImplantsUp 4;
+						focus-consider breasts;
+						say "You can also feel them becoming more sensitive and... sexual.";
+					TitfuckAddictUp 1;
+					if the raw sensitivity of breasts < 30, increase the raw sensitivity of breasts by 2;
+					destroy M;
+				otherwise:
+					say "You manage to grip enough of the slime that you can wrestle it away from your body, and it all seeps back together into one big blob, which you throw at the ground. ";
+					dislodge M;
+			otherwise:
+				compute slime expansion;
+				destroy M;
+			now temporaryYesNoBackground is figure of small image.
+
+To compute slime expansion:
+	say "The slime gently oozes into your skin. ";
+	let R be a random number between 1 and 4;
+	if R is 1:
+		if the lips of face < max lip size:
+			say "You feel its expansion power transferred to your mouth. ";
+			LipsUp 1;
+			say "You feel your lips swell, until you now have [LipDesc]!";
+		otherwise if the raw oral sex addiction of the player < 10:
+			OralSexAddictUp 1;
+		otherwise:
+			SemenTasteAddictUp 1;
+	otherwise if R is 2:
+		say "You feel its expansion power transferred to [if the silicone volume of breasts > 0]the implants in [otherwise if artificial enhancements fetish is 1]silicone implants in [end if]your breasts.";
+		BustImplantsUp 1;
+	otherwise if R is 3:
+		say "You feel its expansion power transferred to [if the silicone volume of hips > 0]the implants in [otherwise if artificial enhancements fetish is 1]silicone implants in [end if]your buttcheeks.";
+		AssImplantsUp 1;
+	otherwise if the player is possessing a vagina and the labia plumpness of vagina < max labia plumpness:
+		say "You feel its expansion power transferred to your [vagina].";
+		LabiaUp 1 with comment;
+	otherwise if the raw vaginal sex addiction of the player < 10 and (the player is possessing a vagina or TG fetish is 1):
+		VaginalSexAddictUp 1;
+	otherwise if the raw titfuck addiction of the player < 10 and max breast size > 6:
+		TitfuckAddictUp 1;
+	otherwise:
+		AnalSexAddictUp 1.
+
+To compute (M - a monster) stomping (N - a slimeball):
+	if M is in the location of the player, say "[BigNameDesc of M] stomps on the [N].";
+	destroy N;
+	let L be a random off-stage leftover;
+	now L is in the location of M;
+	now the leftover-type of L is the leftover-type of N.
+
+Section 3 - Damage
+
+[Chance for the slimeball to completely dodge the attack.]
+To decide which number is the damage modifier of (M - a slimeball):
+	if (a random number between 1 and the dexterity of the player) + (a random number between 1 and the dexterity of the player) < a random number between 3 and 12, decide on (attack-damage * -1);
+	decide on 0.
+
+To say damage-flavour of (N - a number) on (M - a slimeball):
+	if N is 0:
+		say "[BigNameDesc of M] hops backwards, dodging your attack! Try again?";
+	otherwise:
+		say "A direct hit! But [NameDesc of M] manages to maintain its form.".
+
+To compute standard damage of (M - a slimeball):
+	if the health of M <= 0, compute defeat of M.
+
+To compute defeat of (M - a slimeball):
+	say "[BigNameDesc of M] loses its structural integrity, and collapses into an inanimate sticky puddle of ectoplasm.";
+	loot M;
+	destroy M.
+
+To loot (M - a slimeball):
+	let D be a random off-stage ectoplasm;
+	if D is ectoplasm:
+		now D is in the location of the player;
+		compute autotaking D.
+
+
+
+
+
 
 Golem ends here.

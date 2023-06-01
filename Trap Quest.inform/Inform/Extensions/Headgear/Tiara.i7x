@@ -35,10 +35,13 @@ Definition: silver-tiara is grey themed: decide yes.
 Chapter - Class Outfit
 
 To compute class outfit of (H - silver-tiara):
-	if the throatskill of the player is 1:
-		class summon deepthroat princess crop top;
+	if the quest of H is virginity-retention-quest:
+		class summon virgin princess outfit;
 	otherwise:
-		class summon lolita royal dress;
+		if the throatskill of the player is 1:
+			class summon deepthroat princess crop top;
+		otherwise:
+			class summon lolita royal dress;
 	class summon royal scepter.
 
 To compute virginity-loss of (C - a tiara):
@@ -220,6 +223,7 @@ To check tiara-of-spades transformation:
 					if the rule succeeded:
 						WardrobeVanish O;
 			transform R into queen-of-spades-dress;
+			compute class set up of queen-of-spades-dress;
 		transform H into tiara-of-spades.
 
 To compute princess guard tease of (M - a royal guard):

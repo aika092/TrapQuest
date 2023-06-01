@@ -18,7 +18,8 @@ To uniquely set up (C - a strapon-panties):
 
 To set up magic attribute of (C - a strapon-panties):
 	let R be a random number between 1 and 3;
-	if R is 1, now C is dominance.
+	if R is 1, now C is dominance;
+	set up rare magic attribute of C.
 
 Definition: a strapon-panties is fetish appropriate:
 	if diaper quest is 0, decide yes;
@@ -30,7 +31,7 @@ Definition: a strapon-panties is dildo-usage: decide yes.
 To say ShortDesc of (H - a strapon-panties):
 	say "strap-on dildo".
 
-To decide which number is the price of (C - a strapon-panties):
+To decide what number is the original price of (C - a strapon-panties):
 	decide on 4 + (the strap-length of C / 3).
 
 To say PenisFlavour of (K - a strapon-panties):[used any time you use "ShortDesc of penis"]

@@ -112,11 +112,18 @@ Carry out knifing:
 		otherwise if second noun is knife:
 			if the charge of the second noun > 0:
 				say "The knife seems to be completely dull at the moment! You give up.";
+			otherwise if the noun is diaper-stack:
+				let OutsideDiaper be entry (the number of entries in the list of stacked diapers) in the list of stacked diapers;
+				say "You force the knife under and through the [clothing-material of OutsideDiaper] material of the [OutsideDiaper] and slice straight through it as if it were made of butter. It is completely destroyed! The knife loses its glow[if newbie tips is 1][one of]. Maybe it needs to recharge?[or].[stopping][otherwise].[end if]";
+				diaperRemove OutsideDiaper;
+				now OutsideDiaper is worn by the player; [to make imprinting work when it's destroyed below]
+				destroy the noun;
+				now the charge of the second noun is 500;
 			otherwise:
 				say "You force the knife under and through the [clothing-material of the noun] material of the [noun] and slice straight through it as if it were made of butter. It is completely destroyed! The knife loses its glow[if newbie tips is 1][one of]. Maybe it needs to recharge?[or].[stopping][otherwise].[end if]";
 				destroy the noun;
 				now the charge of the second noun is 500;
-				now the noun is in Holding Pen; [stop it spawning again]
+				unless the noun is diaper, now the noun is in Holding Pen; [stop it spawning again]
 		otherwise:
 			say "You force the blade under and through the [clothing-material of the noun] material of the [noun] and slice straight through it as if it were made of butter. It is completely destroyed! The blade loses its glow, and it is no longer blessed.";
 			now the second noun is bland;

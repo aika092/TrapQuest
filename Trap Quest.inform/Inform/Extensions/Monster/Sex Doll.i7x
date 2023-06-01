@@ -6,6 +6,7 @@ Definition: a sex doll is willing to do titfucks: decide no.
 Definition: a sex doll is forced to wear a condom: decide no.
 
 Definition: a sex doll is dungeon dwelling: decide yes.
+Definition: a sex doll is a urinater: decide no.
 
 Figure of Male Sex Doll is the file "NPCs/Dungeon/SexDoll/sexdoll1.png".
 Figure of Female Sex Doll is the file "NPCs/Dungeon/SexDoll/sexdoll2.png".

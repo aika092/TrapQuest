@@ -22,6 +22,8 @@ Part - Fertility Idol
 
 fertility idol is a collectible. The printed name of fertility idol is "[TQlink of item described]fertility idol[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of fertility idol is "fti".
 
+fertility idol has a magic-curse.
+
 Figure of fertility idol is the file "Items/Collectibles/fertility1.png".
 
 To decide which figure-name is the examine-image of (C - fertility idol):
@@ -148,7 +150,7 @@ To say MonsterTakeFlav of (M - a mechanic) for (T - infernal gem):
 	otherwise if the xavier-power of M < 4:
 		say "[speech style of M]'Yeah! I feel POWERFUL now! Hahaha! In fact, I'm actually feeling generous!'";
 	otherwise:
-		say "[BigNameDesc of M] crushes the [T] into a sparkling powder and knocks it back.[line break][speech style of M]Yeah... YEAH! I can feel it now! The POWER running through my veins! Yes! Behold my true form, unleashed again upon this MORTAL PLANE!'";
+		say "[speech style of M]Yeah... YEAH! I can feel it now! The POWER running through my veins! Yes! Behold my true form, unleashed again upon this MORTAL PLANE!'";
 	say "[roman type][line break]".
 
 To compute final resolution of (M - a mechanic) taking (T - infernal gem):
@@ -371,7 +373,7 @@ To say MonsterTakeFlav of (M - mechanic) for (T - soul gem):
 	otherwise if the xavier-power of M < 4:
 		say "[speech style of M]'Yeah! I feel POWERFUL now! Hahaha! In fact, I'm actually feeling generous!'[roman type][line break]";
 	otherwise:
-		say "[BigNameDesc of M] crushes the [T] into a sparkling powder and knocks it back.[line break][speech style of M]Yeah... YEAH! I can feel it now! The POWER running through my veins! Yes! Behold my true form, unleashed again upon this MORTAL PLANE!'[roman type][line break]".
+		say "[line break][speech style of M]Yeah... YEAH! I can feel it now! The POWER running through my veins! Yes! Behold my true form, unleashed again upon this MORTAL PLANE!'[roman type][line break]".
 
 To compute final resolution of (M - mechanic) taking (T - soul gem):
 	XavierUp M by 3;
@@ -410,7 +412,7 @@ To say MonsterOfferRejectFlav of (M - witch) to (T - soul gem):
 		if the class of the player is succubus and there is a worn soulstone:
 			say "[BigNameDesc of M] sighs.[line break][speech style of M]'I'm sorry, but I can't help you. Your soul can never be returned to your body as long as that stone remains in your chest. You'd need much stronger magic than I'm capable of if you want to remove it.'[roman type][line break]";
 		otherwise if the class of the player is avatar:
-			say "[BigNameDesc of M] snorts.[line break][speech style of M]'Sorry, but you and I both know the space is currently occupied. Kick ['][big him of shopkeeper]['] out first.'[roman type][line break]";
+			say "[BigNameDesc of M] snorts.[line break][speech style of M]'Sorry, but you and I both know the space is currently occupied. Kick ['][big him of male-m]['] out first.'[roman type][line break]";
 		otherwise if the player is souled:
 			say "[BigNameDesc of M] frowns.[line break][speech style of M]'I can't return a soul to someone who already has one. I'm not even sure how you GOT that.'[roman type][line break]";
 		otherwise:

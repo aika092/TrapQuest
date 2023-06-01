@@ -23,6 +23,7 @@ The story description is "Explore a dangerous world of transformation, penetrati
 The release number is 13.
 
 Definition: a thing is thigh-spreading: decide no.
+Definition: a clothing is thighs-spread-blocking: decide no.
 
 robomatron is a monster.
 boogeymonster is a monster.

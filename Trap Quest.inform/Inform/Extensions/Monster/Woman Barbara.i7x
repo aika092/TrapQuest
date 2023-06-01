@@ -701,8 +701,8 @@ To compute patron scene of (W - woman-player):
 	let C be 8;
 	repeat with M running through off-stage patrons:
 		if C > 0 and M is not real-life patron and M is generic-appropriate:
-			now M is in the location of the player;
 			set up M;
+			now M is in the location of the player;
 			decrease C by 1;
 			make M expectant;
 	now neighbour finder is the location of the player;
@@ -798,10 +798,10 @@ To compute patron scene climax of (W - woman-player):
 			say "You clench your eyes shut and open your mouth, letting your tongue hang out [if the player is a nympho]lewdly[otherwise]as a sign of submission[end if]. ";
 			if the patron-scene-fighting of W > 3:
 				say "[BigNameDesc of W] mounts your face and places [his of W] butthole right on top of your tongue.[line break][speech style of W]'[if the woman-bimbo of W < 5]Sorry about this...'[otherwise]Drink up, bitch!'[end if][roman type][line break]You feel [his of W] sphincter relax and open as [he of W] pushes, and the torrent of ass-goop squirts into your mouth. ";
-				humiliate TOTAL-HUMILIATION;
+				totalHumiliate;
 			otherwise:
 				say "[BigNameDesc of W] pushes [his of W] lips tight against yours and then opens wide, sending both [his of W] tongue and the nasty mixture over into your mouth. ";
-				humiliate ULTRA-HUMILIATION;
+				ultraHumiliate;
 			if the fill-colour of fishbowl is murky:
 				say "It tastes just as disgusting as you'd expect for a mixture of almost every bodily fluid you can think of. ";
 				TasteGrossOut 5;
@@ -1138,8 +1138,9 @@ Report going when the player is in School20 and first-time-swimming-pool is true
 				if able-to-wear-swimsuit is true:
 					say "You strip down and don the swimsuit.";
 					repeat with C running through worn usually autoremovable clothing:
-						now C is in the location of the player;
-						dislodge C;
+						unless C is armband:
+							now C is in the location of the player;
+							dislodge C;
 					if MSM is cursed, summon MSM cursed with quest;
 					otherwise summon MSM uncursed;
 				force immediate clothing-focus redraw;
@@ -1338,6 +1339,8 @@ This is the woman unique punishment rule:
 		if another-turn-flavour is "", now another-turn-flavour is the substituted form of "It takes you a moment to recover from the fall.";
 		now another-turn is 1;
 	otherwise if playerRegion is Dungeon and G is glue:
+		let L be the location of G;
+		drag to L by woman-player;
 		say "[speech style of woman-player]'[if the woman-bimbo of woman-player < 5]Do you regret making an enemy of me yet?'[otherwise]This is my favourite spot down here! Enjoy!'[end if][roman type][line break][big he of woman-player] pushes you into the glue.";
 		increase the times-stuck of G by 1;
 		now the player-motion of the player is 0;
@@ -1508,7 +1511,8 @@ To compute basic greeting to (M - woman-player):
 	otherwise if the woman-status of M is 90:
 		say "[speech style of M]'Let's keep away from those vines, shall we?'[roman type][line break]";
 	otherwise if the woman-status of M is 94:
-		if there is a revealed hypno trap in the location of M:
+		let HT be a random revealed hypno trap in the location of M;
+		if HT is a thing and HT is not expired:
 			say "[speech style of M]'Huh? Oh crap, another hypno trap! Let's get out of here!'[roman type][line break]";
 			compute mandatory room leaving of M;
 			now M is uninterested;
@@ -1547,13 +1551,14 @@ To say BarbaraQuestion:
 		say "'Can we chat?'".
 
 To execute (T - talk-barbara-question) for (M - a monster):
+	let HT be a random revealed hypno trap in the location of M;
 	if the woman-status of M is 91 and the mechanic-scene of M <= 5 and M is in the location of the player and mechanic is unfriendly:
 		say "[speech style of M]'HYUK HYUK HYUK'[roman type][line break]";
 	otherwise if the woman-status of M is 80:
 		say "[speech style of M]'MMMMPH!'[roman type][line break]";
 	otherwise if M is angered:
 		say "[speech style of M]'[if the player is upright]That's a great question. Let me answer it with my fist.'[otherwise]I don't think you're in the position to be the one asking questions right now, do you?'[roman type][line break]";
-	otherwise if there is a revealed hypno trap in the location of M: [looking at hypno trap]
+	otherwise if HT is a thing and HT is not expired: [looking at hypno trap]
 		say "[speech style of M]'Uuuuuuuuh...'[roman type][line break]";
 	otherwise if the woman-status of M is 0:
 		if the woman-bimbo of M < 3:

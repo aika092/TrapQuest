@@ -39,19 +39,21 @@ To say ShortDesc of (M - a demoness):
 To say SoulDesc of (M - a demoness):
 	if M is power-peaked, say "greater ";
 
-Figure of demoness interact 1 is the file "Special/Cutscene/cutscene-demoness-interact1.png".
-Figure of demoness interact 2 is the file "Special/Cutscene/cutscene-demoness-interact2.png".
-Figure of demoness interact 3 is the file "Special/Cutscene/cutscene-demoness-interact3.png".
-Figure of demoness interact 4 is the file "Special/Cutscene/cutscene-demoness-interact4.png".
-Figure of demoness interact 5 is the file "Special/Cutscene/cutscene-demoness-interact5.png".
-Figure of demoness interact 6 is the file "Special/Cutscene/cutscene-demoness-interact6.png".
-Figure of demoness interact 7 is the file "Special/Cutscene/cutscene-demoness-interact7.png".
-Figure of demoness interact 8 is the file "Special/Cutscene/cutscene-demoness-interact8.png".
-Figure of demoness interact 9 is the file "Special/Cutscene/cutscene-demoness-interact9.png".
-Figure of demoness interact 10 is the file "Special/Cutscene/cutscene-demoness-interact10.png".
+Figure of Demoness is the file "NPCs/Forest/Demoness/demoness1.png".
 
-Figure of demoness cutscene 4 is the file "Special/Cutscene/cutscene-demoness-heat1.png".
-Figure of demoness cutscene 14 is the file "Special/Cutscene/cutscene-demoness-strut1.png".
+Figure of demoness interact 1 is the file "NPCs/Forest/Demoness/cutscene-demoness-interact1.png".
+Figure of demoness interact 2 is the file "NPCs/Forest/Demoness/cutscene-demoness-interact2.png".
+Figure of demoness interact 3 is the file "NPCs/Forest/Demoness/cutscene-demoness-interact3.png".
+Figure of demoness interact 4 is the file "NPCs/Forest/Demoness/cutscene-demoness-interact4.png".
+Figure of demoness interact 5 is the file "NPCs/Forest/Demoness/cutscene-demoness-interact5.png".
+Figure of demoness interact 6 is the file "NPCs/Forest/Demoness/cutscene-demoness-interact6.png".
+Figure of demoness interact 7 is the file "NPCs/Forest/Demoness/cutscene-demoness-interact7.png".
+Figure of demoness interact 8 is the file "NPCs/Forest/Demoness/cutscene-demoness-interact8.png".
+Figure of demoness interact 9 is the file "NPCs/Forest/Demoness/cutscene-demoness-interact9.png".
+Figure of demoness interact 10 is the file "NPCs/Forest/Demoness/cutscene-demoness-interact10.png".
+
+Figure of demoness cutscene 4 is the file "NPCs/Forest/Demoness/cutscene-demoness-heat1.png".
+Figure of demoness cutscene 14 is the file "NPCs/Forest/Demoness/cutscene-demoness-strut1.png".
 
 To decide which figure-name is the monster-image of (M - a demoness):
 	decide on figure of demoness.
@@ -298,7 +300,7 @@ To compute perception of (M - a demoness):
 		bore M;
 	otherwise if M is uniquely unfriendly:
 		anger M;
-		if there is soiled-diaper carried by M:
+		if there is soiled-diaper carried by M or there is a dirty diaper carried by M:
 			say "[speech style of M]'[one of]You there, you disgusting mortal! I'm sure it's you who left this for me to find! How vile[or]Vile mortal, stop leaving your horrendous used garments around for me to find[stopping]!'[roman type][line break]";
 		otherwise if the class of the player is priestess:
 			say "Immediately upon seeing you, [he of M] shrieks:[line break][speech style of M]Your holy aura has no power out here, mortal! Get on your knees and submit to me as your new [literalMistress of M], or I will make you!'[roman type][line break][if M is friendly]Apparently [he of M] doesn't like priestesses...[end if]";
@@ -379,7 +381,7 @@ To compute DQ perception of (M - a demoness):
 		anger M;
 	otherwise if M is uniquely unfriendly:
 		anger M;
-		if there is soiled-diaper carried by M:
+		if there is soiled-diaper carried by M or there is a dirty diaper carried by M:
 			say "[speech style of M]'[one of]You there, you disgusting mortal! I'm sure it's you who left this for me to find! How vile[or]Vile mortal, stop leaving your horrendous used garments around for me to find[stopping]!'[roman type][line break]";
 		otherwise if the class of the player is priestess:
 			say "Immediately upon seeing you, [he of M] shrieks:[line break][speech style of M]Your holy aura has no power out here, mortal! Get on your knees and submit to me as your new [literalMistress of M], or I will make you!'[roman type][line break][if M is friendly]Apparently [he of M] doesn't like priestesses...[end if]";
@@ -738,7 +740,7 @@ To compute (M - a demoness) taking soul:
 	now the player is soulless;
 	now M is carrying soul gem;
 	SilentlyDifficultyUp M by 2;
-	humiliate 1000.
+	ultraHumiliate.
 
 The demoness unique punishment rules is a rulebook. The unique punishment rule of demoness is usually the demoness unique punishment rules.
 
@@ -882,19 +884,22 @@ This is the demoness attacking ass covering clothing rule:
 The demoness attacking ass covering clothing rule is listed last in the demoness asshole insertion rules.
 
 To compute (M - a demoness) attacking (C - a clothing):
-	say "[BigNameDesc of M] touches a finger to the crotch of your [ShortDesc of C] and you can feel the heat... [he of M][']s trying to burn them off!";
-	let R be (a random number between the difficulty of M and 6) + (a random number between the difficulty of M and 6);
-	if M is power-peaked, now R is 99;
-	if debuginfo > 0, say ClothingAttackDebug of M on C with R;
-	if R > the defence of C:
-		say "[big he of M] burns them completely off!";
-		destroy C;
-	otherwise if R > the defence of C - 3 and C is rippable:
-		ZipOrRip C;
-		say "[big he of M] has managed to create a hole at the crotch of your [C]!";
+	if C is indestructible:
+		compute SelectionFrustrated of M;
 	otherwise:
-		say "[big he of M]'s slowly burning them off!";
-		damage C.
+		say "[BigNameDesc of M] touches a finger to the crotch of your [ShortDesc of C] and you can feel the heat... [he of M][']s trying to burn them off!";
+		let R be (a random number between the difficulty of M and 6) + (a random number between the difficulty of M and 6);
+		if M is power-peaked, now R is 99;
+		if debuginfo > 0, say ClothingAttackDebug of M on C with R;
+		if R > the defence of C:
+			say "[big he of M] burns them completely off!";
+			destroy C;
+		otherwise if R > the defence of C - 3 and C is rippable:
+			ZipOrRip C;
+			say "[big he of M] has managed to create a hole at the crotch of your [C]!";
+		otherwise:
+			say "[big he of M]'s slowly burning them off!";
+			damage C.
 
 This is the demoness removing butt plug rule:
 	let C be a random worn insertable thing penetrating chosen-orifice of current-monster;
@@ -925,17 +930,21 @@ This is the demoness penetrating asshole rule:
 The demoness penetrating asshole rule is listed last in the demoness asshole insertion rules.
 
 To compute (M - a demoness) entering anally:
-	now M is heel-mode;
-	if the excitement of M < the difficulty of M, now the excitement of M is the difficulty of M;
-	if the player is possessing a penis:
-		if there is a worn chastity cage:
-			say "[big he of M] taps your chastity cage with [his of M] foot, laughing as your [sissy-penis] strains in its tight prison. [big he of M] then traces a finger around your [asshole][if the player is possessing a scrotum] and squeezes your balls[end if] as you squirm beneath [him of M].[line break][speech style of M]'[one of]You [if the player is gendered male]sissy [end if]mortals are so fun to crush...'[or]Awww is your [sissy-penis] all locked away? I hope you like anal, because that's all the sex you're getting from now on...'[or]I'm going to spread you out slut, try not to lose your mind.'[stopping][roman type][line break]";
-		otherwise:
-			if the player is possessing a scrotum, say "[big he of M][if the size of penis >= 8] gives your [ShortDesc of penis] a few generous pumps and runs [his of M] fingernails down your lower back.[otherwise] slaps your [AssDesc] and presses one of [his of M] heels into your dangling [sissy-penis] and balls, the long 8 inch heel reminding you of your sexual inadequacy.[end if][roman type][line break][speech style of M]'Get ready to be stretched out by your [literalMistress of M].'[roman type][line break]";
-			otherwise say "[big he of M][if the size of penis >= 8] gives your [ShortDesc of penis] a few generous pumps and runs [his of M] fingernails down your lower back.[otherwise] slaps your [AssDesc] and presses one of [his of M] heels into your dangling [sissy-penis], the long 8 inch heel reminding you of your sexual inadequacy.[end if][roman type][line break][speech style of M]'Get ready to be stretched out by your [literalMistress of M].'[roman type][line break]";
-	say "[BigNameDesc of M] lifts up one of [his of M] feet, on which are [his of M] unique black shoes with [one of]dulled[or]shiny[sticky random] glass dildos for heels. [big he of M] continues cackling and pushes the heel into your [asshole]! As the demoness sinks in, [he of M] curls [his of M] lips into a wicked grin, gritting [his of M] teeth and going wide-eyed. Clearly [he of M] enjoys [himself of M] behind you as a cackle rings out to [if M is abyssal demoness]echo off the walls[otherwise]rustle the trees[end if]. Either [he of M] is really pent up or just enjoys ruining the players. Some kind of magic grasp is preventing you from moving.";
-	now M is penetrating asshole;
-	if the soreness of asshole < 10, ruin asshole.
+	if asshole is not actually occupied:
+		now M is heel-mode;
+		if the excitement of M < the difficulty of M, now the excitement of M is the difficulty of M;
+		if the player is possessing a penis:
+			if there is a worn chastity cage:
+				say "[big he of M] taps your chastity cage with [his of M] foot, laughing as your [sissy-penis] strains in its tight prison. [big he of M] then traces a finger around your [asshole][if the player is possessing a scrotum] and squeezes your balls[end if] as you squirm beneath [him of M].[line break][speech style of M]'[one of]You [if the player is gendered male]sissy [end if]mortals are so fun to crush...'[or]Awww is your [sissy-penis] all locked away? I hope you like anal, because that's all the sex you're getting from now on...'[or]I'm going to spread you out slut, try not to lose your mind.'[stopping][roman type][line break]";
+			otherwise:
+				if the player is possessing a scrotum, say "[big he of M][if the size of penis >= 8] gives your [ShortDesc of penis] a few generous pumps and runs [his of M] fingernails down your lower back.[otherwise] slaps your [AssDesc] and presses one of [his of M] heels into your dangling [sissy-penis] and balls, the long 8 inch heel reminding you of your sexual inadequacy.[end if][roman type][line break][speech style of M]'Get ready to be stretched out by your [literalMistress of M].'[roman type][line break]";
+				otherwise say "[big he of M][if the size of penis >= 8] gives your [ShortDesc of penis] a few generous pumps and runs [his of M] fingernails down your lower back.[otherwise] slaps your [AssDesc] and presses one of [his of M] heels into your dangling [sissy-penis], the long 8 inch heel reminding you of your sexual inadequacy.[end if][roman type][line break][speech style of M]'Get ready to be stretched out by your [literalMistress of M].'[roman type][line break]";
+		say "[BigNameDesc of M] lifts up one of [his of M] feet, on which are [his of M] unique black shoes with [one of]dulled[or]shiny[sticky random] glass dildos for heels. [big he of M] continues cackling and pushes the heel into your [asshole]! As the demoness sinks in, [he of M] curls [his of M] lips into a wicked grin, gritting [his of M] teeth and going wide-eyed. Clearly [he of M] enjoys [himself of M] behind you as a cackle rings out to [if M is abyssal demoness]echo off the walls[otherwise]rustle the trees[end if]. Either [he of M] is really pent up or just enjoys ruining the players. Some kind of magic grasp is preventing you from moving.";
+		now M is penetrating asshole;
+		if the soreness of asshole < 10, ruin asshole;
+	otherwise:
+		say "[BigNameDesc of M] sees that you are already occupied and loses interest.";
+		Distract M.
 
 This is the demoness mouth insertion rule:
 	if the chosen-orifice of current-monster is face, follow the demoness mouth insertion rules.
@@ -1529,6 +1538,9 @@ To say DamageReactSubmissive of (M - a demoness):
 Definition: a demoness is automatically banishable:
 	if the magic power of the player >= 2 and the divinationskill of the player is 1, decide no;
 	decide yes.
+Definition: a demoness is auto-banish-loot-dropping:
+	if it is automatically banishable, decide no;
+	decide yes.
 
 Definition: a demoness is taxable:
 	decide no.
@@ -1648,6 +1660,9 @@ To say DiaperChangeComment of (M - demoness):
 	if the diaper-duration of M <= 0, say "[speech style of M]'And that will stay on unless you want punishment beyond words!'[roman type][line break]";
 	otherwise say "[speech style of M]'[one of]That was far too easy - you're nothing but a baby[or]And another [man of the player] falls to the crinkly grip of a diaper~[or]Mmm yes, how adorable. I picked the right diaper for sure[in random order].'[roman type][line break]".
 
+To say DiaperDonateComment of (M - demoness):
+	say "[speech style of M]'And you'll wear diapers until I say that you have permission to wear grown-up panties again, or there'll be hell to pay! Literally! Hahaha...'[roman type][line break]".
+
 Definition: a demoness is willing to masturbate:
 	if there is a sex toy penetrating asshole or the player is possessing a penis or the player is very horny, decide yes;
 	decide no.
@@ -1717,15 +1732,11 @@ To say DQFeedingResistReactionFlav of (M - a demoness):
 
 Part 6 - Conversation
 
-To IdentifiablePosterReaction of (M - a demoness):
-	say "[BigNameDesc of M] looks at you, blinks, then looks back to the poster. Upon realising that it is you, [he of M] starts laughing uncontrollably.";
-	say "You turn bright red with shame.";
-	humiliate the lewdness of a random poster in the location of the player * 2.
+To say IdentifiablePosterReactionFlav of (M - a demoness):
+	say "[BigNameDesc of M] looks at you, blinks, then looks back to the poster. Upon realising that it is you, [he of M] points at you and starts laughing uncontrollably.".
 
-To UnidentifiablePosterReaction of (M - a demoness) with (P - a poster):
-	say "[speech style of M]'Now that is one [tasty] piece of ass.'[roman type][line break]";
-	say "You turn slightly red but don't say a word.";
-	humiliate the lewdness of a random poster in the location of the player / 2.
+To say UnidentifiablePosterReactionFlav of (M - a demoness) with (P - a poster):
+	say "[speech style of M]'Now that is one [tasty] piece of ass.'[roman type][line break]".
 
 To say RewardFlav of (M - a demoness) for (T - a thing):
 	say "[speech style of M]'[one of]Don't say I never do anything for you[or]A gift, from the demon plane[cycling].'[roman type][line break][BigNameDesc of M] summons a [T] on the ground in front of you.".
@@ -2011,7 +2022,7 @@ To watersports dominate (M - a demoness):
 		ultraDignify;
 		now the bladder of the player is 0;
 		SilentlyDifficultyUp M by 2;
-		now the favour of M is -99;
+		FavourSet M to -99;
 		say AfterDominationComment 5 of M;
 		SportsGet.
 

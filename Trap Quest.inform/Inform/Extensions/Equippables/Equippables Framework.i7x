@@ -112,9 +112,7 @@ A vibe-wand is a kind of equippable. A vibe-wand is usually zap ready. Understan
 wandAttacks is a number that varies.
 
 To decide which number is the masturbation-bonus of (E - a vibe-wand):
-	let X be 1;
-	increase X by the raw-masturbation-bonus of E;
-	decide on X.
+	decide on 1 + the magic-modifier of E + the raw-masturbation-bonus of E.
 
 To decide which number is the zap damage improvement of (W - a vibe-wand):
 	let X be MagicPowerDamage + 2;

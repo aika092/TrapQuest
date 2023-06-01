@@ -2,9 +2,10 @@ Vine Boss by Monster begins here.
 
 vine boss is a monster. vine boss is neuter. The blind-status of vine boss is -1.
 
-vine boss is in WoodsBoss01. Understand "monstrous" as vine boss. Figure of Vine Boss is the file "NPCs/Bosses/vineboss1.png". The text-shortcut of vine boss is "vb".
+vine boss is in WoodsBoss01. Understand "monstrous" as vine boss. Figure of Vine Boss is the file "NPCs/Bosses/VineBoss/vineboss1.png". The text-shortcut of vine boss is "vb".
 
 Definition: vine boss is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
+Definition: vine boss is a urinater: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 
 To say ShortDesc of (M - vine boss):
 	say "vine boss".
@@ -23,7 +24,14 @@ To set up (M - vine boss):
 	reset M;
 	now the monstersetup of M is 1;
 	now the raw difficulty of M is the starting difficulty of M;
-	now the health of M is the maxhealth of M.
+	now the health of M is the maxhealth of M;
+	let V be a random vine;
+	repeat with N running from 1 to 3:
+		let E be a random off-stage small egg;
+		if E is egg:
+			now E is in WoodsBoss01;
+			now the egg-origin of E is V.
+
 
 To decide which number is the starting difficulty of (M - vine boss):
 	decide on 14.

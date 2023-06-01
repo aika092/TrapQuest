@@ -2,9 +2,10 @@ Haunted Mirror Trap by Traps begins here.
 
 A haunted mirror trap is a kind of trap. There are 5 pressure haunted mirror traps. The text-shortcut of a haunted mirror trap is "mrr". The printed name of a haunted mirror trap is "[TQlink of item described]haunted mirror[TQxlink of item described]".
 
-Figure of haunted mirror is the file "Env/Mansion/mirror1.jpg".
+Figure of haunted mirror active is the file "Env/Mansion/mirror1.jpg".
+Figure of haunted mirror inactive is the file "Env/Mansion/mirror2.jpg".
 To decide which figure-name is the examine-image of (T - a haunted mirror trap):
-	decide on figure of haunted mirror.
+	decide on figure of haunted mirror inactive.
 
 [!<HauntedMirrorTrap>@<SayEnvironmentDesc>+
 
@@ -44,9 +45,10 @@ To trigger (Y - a haunted mirror trap):
 	say "A section of the wall in front of you slides away, revealing a large mirror. ";
 	if times-mirrored is 0:
 		if mirror-maiden is acceptable, compute resolution of mirror-maiden;
-		compute resolution of mirror nipple tweak;
+		otherwise compute resolution of mirror nipple tweak;
+		cutshow Figure of haunted mirror active for Y;
 	otherwise:
-		compute mirror;
+		compute mirror Y;
 	now the player-motion of the player is 0;
 	increase times-mirrored by 1;
 	now mirror-triggered is 1;
@@ -55,7 +57,7 @@ To trigger (Y - a haunted mirror trap):
 To compute turn trap effect of (T - a haunted mirror trap):
 	if player-currently-resting is 0 and mirror-triggered is 0 and wanking is 0 and player-urinating is 0 and mirror-delayed is 0 and the player is not immobile and the number of things wrangling a body part is 0:
 		say "[bold type]The mirror in this room tries to grab your focus[one of] with some kind of demonic power[or][stopping]![roman type][line break]";
-		compute mirror.
+		compute mirror T.
 
 To compute time decay of (T - a haunted mirror trap):
 	if the reset-timer of T - time-seconds < 200:
@@ -63,13 +65,14 @@ To compute time decay of (T - a haunted mirror trap):
 		if T is nearby, say "The [T] in the [location of T] finally stops.";
 		now T is expired.
 
-To compute mirror:
+To compute mirror (T - a haunted mirror trap):
 	now mirror-triggered is 1;
 	if the player is in Iron Maiden:
 		do nothing;
 	otherwise if a random number between 5 and the intelligence of the player < a random number between 5 and 15:
 		let M be a random acceptable mirror attack;
 		compute resolution of M;
+		cutshow Figure of haunted mirror active for T;
 		if M is one-turn, say "You feel the possessing spirit lose control of your body as you finally manage to tear your eyes away from the mirror.";
 	otherwise:
 		say "You manage to keep your focus away, preventing it from capturing your stare. You should leave the room before you're forced to look at it again!".

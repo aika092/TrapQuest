@@ -6,7 +6,7 @@ A video-monitor has a text called video-event. The video-event of a video-monito
 A video-monitor has a thing called video-caller. The video-caller of a video-monitor is usually the throne.
 A video-monitor can be recording-disgrace or not recording-disgrace. A video-monitor is usually not recording-disgrace.
 A video-monitor has a number called call-cooldown.
-A video-monitor has a number called currentlyOn.
+A video-monitor has a number called currentlyOn. [Aika's note to self: As far as I can tell, this is pretty much always set to 1? Is it completely pointless, or do some screens start at 0 and then spring to life? Worth checking.]
 
 A later time based rule:
 	let V be a random video-monitor regionally in playerRegion;
@@ -41,6 +41,8 @@ A later time based rule:
 						say "[bold type]A wall of fire appears at each exit, trapping you in!";
 						now flaming-wall is in the location of the player;
 					say "[roman type][line break]";
+			otherwise if the call-cooldown of V <= 0 and V is in the location of the player:
+				CheckDisgracePunishemnt of V;
 			otherwise:
 				if the call-cooldown of V > 0, decrease the call-cooldown of V by seconds;
 				CheckActivation of V;
@@ -69,7 +71,7 @@ To CheckActivation of (C - a video-monitor):
 To beginCall of (C - a video-monitor):
 	let M be the video-caller of C;
 	now the currentlyOn of C is 1;
-	say "[bold type]Suddenly, you hear the sound of your computer making a video call. [roman type]You look up with a start and see that yes indeed, your PC monitor is now wide awake, and with that green calling symbol over a blue background. Moments later, the video call is answered, and [if M is slutty sister]the face of one of the Nintendolls who put you in this game, along with the faces of several unfamiliar people in suits.[otherwise][FriendStatus of M][end if][NewAppearanceReaction of M][NewCircumstanceReaction of M][FriendRespond to M]".
+	say "[bold type]Suddenly, you hear the sound of your computer making a video call. [roman type]You look up with a start and see that yes indeed, your PC monitor is now wide awake, and with that green calling symbol over a blue background. Moments later, the video call is answered, and [if M is slutty sister]the face of one of the Nintendolls who put you in this game, along with the faces of several unfamiliar people in suits.[otherwise][FriendStatus of M][end if][if currentlyPublicDisgracing is false][NewAppearanceReaction of M][NewCircumstanceReaction of M][FriendRespond to M][end if]".
 
 To say FriendStatus of (M - a monster):[The status of your friend could potentially change]
 	say "the face of your [RelationDesc of M] [MediumDesc of M] is staring back at you.";
@@ -278,7 +280,7 @@ To say HumiliatingSlideDesc (N - a number):
 To beginCall of (C - pc-monitor):
 	let M be the video-caller of C;
 	now the currentlyOn of C is 1;
-	say "[bold type]Suddenly, you hear the sound of your computer making a video call. [roman type]You look up with a start and see that yes indeed, your PC monitor is now wide awake, and with that green calling symbol over a blue background. Moments later, the video call is answered, and [if M is slutty sister]the face of one of the Nintendolls who put you in this game, along with several unfamiliar people in suits appear.[otherwise][FriendStatus of M][end if][NewAppearanceReaction of M][NewCircumstanceReaction of M][FriendRespond to M]".
+	say "[bold type]Suddenly, you hear the sound of your computer making a video call. [roman type]You look up with a start and see that yes indeed, your PC monitor is now wide awake, and with that green calling symbol over a blue background. Moments later, the video call is answered, and [if M is slutty sister]the face of one of the Nintendolls who put you in this game, along with several unfamiliar people in suits appear.[otherwise][FriendStatus of M][end if][if currentlyPublicDisgracing is false][NewAppearanceReaction of M][NewCircumstanceReaction of M][FriendRespond to M][end if]".
 
 [There is a pc-monitor in Mansion02. ]
 
@@ -309,7 +311,7 @@ Definition: a crystal-monitor is video-callable:
 
 To beginCall of (C - crystal-monitor):
 	let M be the video-caller of C;
-	say "[bold type]Suddenly, you hear the sound of a video call coming from the magical computer. [roman type]You look over at the monitor, and see the flickering image on the screen has changed to a green calling symbol over a blue background. Moments later, the video call is answered, and [if M is slutty sister]the face of one of the Nintendolls who put you in this game, along with several unfamiliar people in suits appear. [otherwise][FriendStatus of M][end if][NewAppearanceReaction of M][NewCircumstanceReaction of M][FriendRespond to M]".
+	say "[bold type]Suddenly, you hear the sound of a video call coming from the magical computer. [roman type]You look over at the monitor, and see the flickering image on the screen has changed to a green calling symbol over a blue background. Moments later, the video call is answered, and [if M is slutty sister]the face of one of the Nintendolls who put you in this game, along with several unfamiliar people in suits appear. [otherwise][FriendStatus of M][end if][if currentlyPublicDisgracing is false][NewAppearanceReaction of M][NewCircumstanceReaction of M][FriendRespond to M][end if]".
 
 Section - Security Interface
 
@@ -493,6 +495,335 @@ To construct unique buttons for (T - security interface):
 		choose a blank row in the Table of Buttons;
 		now the ButtonImage entry is Figure of map stairs down;
 		now the ButtonCommand entry is "enter [text-shortcut of T]";
-		now the ButtonColour entry is lightModeFullRed;
+		now the ButtonColour entry is lightModeFullRed.
+
+
+
+
+A disgrace-punishment is a kind of object. A disgrace-punishment can be disgrace-punishment-done.
+
+Definition: a disgrace-punishment is appropriate: decide yes.
+Definition: a disgrace-punishment is eligible:
+	if it is disgrace-punishment-done, decide no;
+	decide yes.
+Definition: a disgrace-punishment is prioritised: decide no.
+
+To say DPTitle of (DP - a disgrace-punishment):
+	say "Mystery Punishment".
+To compute disgrace punishment effect of (DP - a disgrace-punishment):
+	do nothing.
+
+To compute disgrace punishment execution of (DP - a disgrace-punishment):
+	now DP is disgrace-punishment-done;
+	compute unique disgrace punishment execution of DP.
+
+To compute unique disgrace punishment execution of (DP - a disgrace-punishment):
+	say "BUG - This disgrace punishment has no execution function.".
+
+punished public disgrace is a number that varies. [what's the most recent public disgrace number we've punished the player at?]
+
+To decide which number is next-public-disgrace-threshold:
+	if punished public disgrace < 500, decide on 500;
+	if punished public disgrace < 2000, decide on 2000;
+	if punished public disgrace < 5000, decide on 5000;
+	decide on 9999999.
+
+currentlyPublicDisgracing is initially false.
+
+
+public-disgrace-punishment-stupid is a disgrace-punishment.
+Definition: public-disgrace-punishment-stupid is appropriate:
+	if punished public disgrace < 500, decide yes;
+	decide no.
+To say DPTitle of (DP - public-disgrace-punishment-stupid):
+	say "[he of the player] looks stupid".
+To compute disgrace punishment effect of (DP - public-disgrace-punishment-stupid):
+	say "All of a sudden, it feels significantly harder to think...";
+	IntDown 2.
+
+public-disgrace-punishment-plastic is a disgrace-punishment.
+Definition: public-disgrace-punishment-plastic is appropriate:
+	if punished public disgrace < 500 and the player is not top heavy, decide yes;
+	decide no.
+To say DPTitle of (DP - public-disgrace-punishment-plastic):
+	say "[he of the player] doesn't have the body to match that look".
+To compute disgrace punishment effect of (DP - public-disgrace-punishment-plastic):
+	say "Suddenly, your chest and ass rapidly expand[if artificial enhancements fetish is 1], filling with large silicone implants[end if]!";
+	BustImplantsUp 4;
+	AssImplantsUp 2.
+
+public-disgrace-punishment-clothes is a disgrace-punishment.
+Definition: public-disgrace-punishment-clothes is appropriate:
+	if punished public disgrace < 500 and pink fetish dress is actually summonable, decide yes;
+	decide no.
+Definition: public-disgrace-punishment-clothes is prioritised:
+	if the player is naked, decide yes;
+	decide no.
+To say DPTitle of (DP - public-disgrace-punishment-clothes):
+	say "[he of the player] needs to put on some clothes".
+To compute disgrace punishment effect of (DP - public-disgrace-punishment-clothes):
+	let FD be a random fetish appropriate off-stage actually summonable fetish dress;
+	if FD is nothing, let FD be a random fetish appropriate actually summonable fetish dress;
+	say "All of a sudden, a [MediumDesc of pink fetish dress] appears on you!";
+	summon FD cursed with quest;
+	if diaper quest is 1 and the number of worn knickers is 0:
+		let D be random eligible diaper;
+		if D is diaper:
+			say "And then a [MediumDesc of D] appears underneath!";
+			summon D cursed with quest.
+
+public-disgrace-punishment-incontinence is a disgrace-punishment.
+Definition: public-disgrace-punishment-incontinence is appropriate:
+	if punished public disgrace < 500 and diaper lover > 0 and the player is not incontinent, decide yes;
+	decide no.
+To say DPTitle of (DP - public-disgrace-punishment-incontinence):
+	say "[he of the player] looks like a big dumb baby".
+To compute disgrace punishment effect of (DP - public-disgrace-punishment-incontinence):
+	say "Suddenly, you feel a horrible twinge behind your crotch! ";
+	BladderIncontinenceUp 1;
+	RectumIncontinenceUp 1.
+
+
+public-disgrace-punishment-teleport is a disgrace-punishment.
+Definition: public-disgrace-punishment-teleport is appropriate:
+	if punished public disgrace >= 500 and punished public disgrace < 2000, decide yes;
+	decide no.
+To say DPTitle of (DP - public-disgrace-punishment-teleport):
+	say "I want [him of the player] to go away".
+To compute disgrace punishment effect of (DP - public-disgrace-punishment-teleport):
+	say "All of a sudden, you are whisked away!";
+	compute bad teleport.
+
+public-disgrace-punishment-chastity is a disgrace-punishment.
+Definition: public-disgrace-punishment-chastity is appropriate:
+	if punished public disgrace >= 500 and punished public disgrace < 2000 and chastity-belt is actually summonable, decide yes;
+	decide no.
+To say DPTitle of (DP - public-disgrace-punishment-chastity):
+	say "[he of the player] should be locked up".
+To compute disgrace punishment effect of (DP - public-disgrace-punishment-chastity):
+	let C be a random fetish appropriate off-stage chastity cage;
+	if C is nothing or the player is not possessing a penis, now C is chastity-belt;
+	say "All of a sudden, a [MediumDesc of C] appears on you! A quick check reveals what you already suspected - it's locked on!";
+	summon C locked.
+
+public-disgrace-punishment-butt-slut is a disgrace-punishment.
+Definition: public-disgrace-punishment-butt-slut is appropriate:
+	if diaper quest is 0 and punished public disgrace >= 500 and punished public disgrace < 2000 and the anal sex addiction of the player < 10, decide yes;
+	decide no.
+Definition: public-disgrace-punishment-butt-slut is prioritised:
+	if there is a currently visible anal sex themed wearthing, decide yes;
+	decide no.
+To say DPTitle of (DP - public-disgrace-punishment-butt-slut):
+	say "[he of the player] looks like a butt slut".
+To compute disgrace punishment effect of (DP - public-disgrace-punishment-butt-slut):
+	AnalSexAddictUp 6; [outputs anal sex addiction increase text]
+	say "...And not just a little. You can feel your [asshole] suddenly desperately begging... ACHING to be penetrated, stretched, and [']bred['][if the raw anal sex addiction of the player > 7]. Deep down in your core, it now feels like being on the receiving end of anal sex is an extremely base fulfilment need of your life[end if].".
+
+
+public-disgrace-punishment-fetishes is a disgrace-punishment.
+Definition: public-disgrace-punishment-fetishes is appropriate:
+	if punished public disgrace >= 2000 and (diaper lover > 0 or egg laying fetish is 1 or (mythical creature fetish is 1 and lactation fetish is 1 and pregnancy fetish is 1 and minotaur is alive and cow-horns is off-stage and cow-horns is actually summonable)), decide yes;
+	decide no.
+Definition: public-disgrace-punishment-fetishes is prioritised:
+	if there is a currently visible anal sex themed wearthing, decide yes;
+	decide no.
+To say DPTitle of (DP - public-disgrace-punishment-fetishes):
+	say "[he of the player] looks like [he of the player][']s into some fucked up fetishes".
+To compute disgrace punishment effect of (DP - public-disgrace-punishment-fetishes):
+	if egg laying fetish is 1:
+		say "Oh god... You feel your belly [if the player is possessing a vagina and the pregnancy of the player is 0]and womb [end if]suddenly filled a combination of different-sized eggs! ...And why do you get the suspicion that most if not all of these eggs have been [']fertilized[']...";
+		let TM be a random tentacle monster;
+		while total fill of belly <= belly limit - 4:
+			increase the large egg count of belly by 1;
+			add TM to the large-egg-origins of belly;
+			if total fill of belly <= belly limit - 2:
+				increase the medium egg count of belly by 1;
+				if a random number between 0 and mythical creatures fetish is 1, add buzzing giant wasp to the medium-egg-origins of belly;
+				otherwise add TM to the medium-egg-origins of belly;
+			if total fill of belly <= belly limit - 1:
+				increase the small egg count of belly by 1;
+				if a random number between 0 and mythical creatures fetish is 1, add buzzing giant wasp to the small-egg-origins of belly;
+				otherwise add TM to the small-egg-origins of belly;
+	if diaper lover > 0:
+		say "Suddenly, you feel a horrible twinge behind your crotch! ";
+		BladderIncontinenceUp 1;
+		RectumIncontinenceUp 1;
+		let D be a random eligible diaper;
+		if D is actually summonable:
+			say "A [MediumDesc of D] appears on you!";
+			summon D cursed with quest;
+		otherwise if diaper quest is 1 and there is a worn diaper:
+			say "A [MediumDesc of D] appears on you at the same time as your [MediumDesc of random worn diaper]!";
+			diaperAdd D;
+		let DC be a random off-stage diaper cover;
+		if DC is a thing and DC is actually summonable:
+			say "A [MediumDesc of DC] appears on you, locked at the waist!";
+			summon DC locked;
+	if mythical creature fetish is 1 and lactation fetish is 1 and pregnancy fetish is 1 and minotaur is alive and cow-horns is off-stage and cow-horns is actually summonable:
+		say "A [MediumDesc of cow-horns] appears on your head!";
+		summon cow-horns cursed;
+		now cow-horns is intelligence-influencing;
+		now the raw-magic-modifier of cow-horns is -2;
+		now cow-horns is draining;
+		say "You instantly feel negatively-charged magic seeping into your skin. [bold type]The longer you wear this, the more your intelligence will be drained!!![roman type][line break]";
+		if minotaur is caged:
+			say "You hear a loud metallic thud in the distance... Was a huge cage just dropped and opened?!";
+			now minotaur is unleashed.
+
+public-disgrace-punishment-stat-drain is a disgrace-punishment.
+Definition: public-disgrace-punishment-stat-drain is appropriate:
+	if punished public disgrace >= 2000, decide yes;
+	decide no.
+To say DPTitle of (DP - public-disgrace-punishment-stat-drain):
+	say "stat drain".
+To compute disgrace punishment effect of (DP - public-disgrace-punishment-stat-drain):
+	say "All of a sudden, you feel your thoughts become a lot more sexual and perverted!";
+	SexAddictUp 4;
+	if game difficulty > a random number between 0 and 3:
+		say "Even worse, you feel lots of your strength and dexterity suddenly ripped away, leaving you much weaker and less flexible than before...";
+		StrengthDown 3;
+		DexDown 3;
+	otherwise:
+		say "Even worse, you feel lots of your strength and dexterity temporarily taken away...";
+		increase temp_str_dam by 4;
+		increase temp_dex_dam by 4.
+
+public-disgrace-punishment-bondage is a disgrace-punishment.
+Definition: public-disgrace-punishment-bondage is appropriate:
+	if punished public disgrace >= 2000 and bondage protection < 2 and the player is not wrist bound, decide yes;
+	decide no.
+To say DPTitle of (DP - public-disgrace-punishment-bondage):
+	say "brutal bondage".
+To compute disgrace punishment effect of (DP - public-disgrace-punishment-bondage):
+	if slave-dress is unclash summonable:
+		say "All of a sudden, a [MediumDesc of slave-dress] appears on you! Your wrists are now chained to your sides!";
+		PinkWardrobeUnclash slave-dress;
+		summon slave-dress locked;
+	otherwise:
+		say "All of a sudden, a [MediumDesc of wrist collar bar] appears on you! Your wrists are now locked together!";
+		summon wrist collar bar locked;
+	let G be a random off-stage ballgag;
+	if diaper quest is 1, now G is a random off-stage pacifier;
+	if G is actually summonable clothing:
+		say "It is followed up by a locked [MediumDesc of G]!";
+		summon G locked.
+
+public-disgrace-punishment-princess-bride is a disgrace-punishment.
+Definition: public-disgrace-punishment-princess-bride is appropriate:
+	if diaper quest is 0 and punished public disgrace >= 2000 and the player is possessing a vagina and the vaginalvirgin of the player is 1 and (the class of the player is "bride" or tiara-veil is actually summonable) and bride-consort is throne and (mechanic is alive or Hotel01 is not placed) and princess bride dress is unclash summonable, decide yes;
+	decide no.
+To say DPTitle of (DP - public-disgrace-punishment-princess-bride):
+	say "Princess Bride".
+To compute disgrace punishment effect of (DP - public-disgrace-punishment-princess-bride):
+	let C be a random worn headgear;
+	if C is headgear:
+		transform C into tiara-veil;
+		uniquely set up tiara-veil;
+	otherwise:
+		summon tiara-veil cursed;
+	now bride-consort is mechanic;
+	say "[variable custom style]So I'm a princess now too? And... what's this I can feel... I'm betrothed to someone? My destiny is to consummate my wedding night... with someone in [if Hotel01 is placed]the hotel[otherwise]a hotel somewhere[end if]?[roman type][line break]";
+	if C is headgear:
+		PinkWardrobeUnclash princess bride dress;
+		compute class outfit of tiara-veil;
+	say "[variable custom style]Any why is my dress so lewd? Who exactly have I supposedly married?![roman type][line break]".
+
+public-disgrace-punishment-sissy is a disgrace-punishment.
+Definition: public-disgrace-punishment-sissy is appropriate:
+	if diaper quest is 0 and punished public disgrace >= 2000 and the player is gendered male and the player is sexed male, decide yes;
+	decide no.
+To say DPTitle of (DP - public-disgrace-punishment-sissy):
+	say "total sissy".
+To compute disgrace punishment effect of (DP - public-disgrace-punishment-sissy):
+	let H be pink sissy bow;
+	if diaper lover > 0 and baby sissy bow is off-stage, now H is baby sissy bow;
+	if H is off-stage and H is actually summonable:
+		say "Suddenly, a [MediumDesc of H] appears in your hair!";
+		summon H cursed;
+	let LC be the list of off-stage sissifying fetish appropriate clothing;
+	sort LC in random order;
+	repeat with C running through LC:
+		if C is not unique and C is actually summonable:
+			say "A [MediumDesc of C] appears on you!";
+			summon C cursed with quest;
+	if chastity-belt is actually summonable, compute disgrace punishment effect of public-disgrace-punishment-chastity;
+	if asshole is not actually occupied:
+		let P be a random mamba;
+		say "A [if the openness of asshole < 10]much too huge [end if][MediumDesc of P] appears inside your [asshole]!";
+		summon P cursed with quest;
+		now the size of P is the openness of asshole + 3;
+		if the size of P > 10, now the size of P is 10;
+		say "[variable custom style]Holy shit, I'm being stretched too wide![roman type][line break]";
+		ruin asshole;
+	if game difficulty > a random number between 0 and 3:
+		say "Even worse, you feel lots of your strength fading away...";
+		StrengthDown 3;
+	otherwise:
+		say "Even worse, you feel lots of your strength temporarily taken away...";
+		increase temp_str_dam by 3.
+
+
+
+To CheckDisgracePunishemnt of (V - a video-monitor):
+	let NPDT be next-public-disgrace-threshold;
+	if the public disgrace of the player > NPDT:
+		now currentlyPublicDisgracing is true;
+		let LDP be the list of eligible appropriate disgrace-punishments;
+		let T be "a really outrageous picture of you";
+		let WPD be worst public disgrace;
+		if WPD > 0:
+			choose row WPD in Table of Published Disgraces;
+			now T is the content entry;
+		if NPDT is 500:
+			let M be platonic-friend;
+			now the video-caller of V is M;
+			beginCall of V;
+			say "[speech style of M]'[OriginalNameBimbo]? [GenericSituationReaction of the video-caller of V]I was browsing Redlit and right near the top was this link, and I clicked on it... and I saw [T]... [if the times-called of M is 0]And then there was this button inviting me to click it if I knew you in real life. And so I clicked that, and it got me to verify I really knew you by entering some of your details... And now I'm here[otherwise]And then you started calling me again[end if]? And now I've got a whole load of really weird-looking options in front of me? What are these about?!'[roman type][line break][BigNameDesc of M] frowns, studying [his of M] screen.[paragraph break][variable custom style][if the player is able to speak]'[MediumDesc of M], wait, please, I can explain!'[roman type][line break]But [NameDesc of M] is acting like [he of M] can't hear you.[otherwise]Huh? What options can [he of M] be looking at?![roman type][paragraph break][end if][speech style of M]'I can choose between ";
+			let LDPE be the number of entries in LDP;
+			repeat with DP running through LDP:
+				say "['][DPTitle of DP]['][if LDPE > 2], [otherwise if LDPE is 2] or [otherwise]...'[roman type][paragraph break][end if]";
+				decrease LDPE by 1;
+			let DP be a random eligible appropriate prioritised disgrace-punishment;
+			if DP is nothing:
+				sort LDP in random order;
+				now DP is entry 1 in LDP;
+			say "[variable custom style]Wait what?![roman type][paragraph break][speech style of M]'I guess if I have to choose right now, I guess ['][DPTitle of DP][']...'[roman type][line break]You see [NameDesc of M] click on a button.";
+			compute disgrace punishment effect of DP;
+			now DP is disgrace-punishment-done;
+			if V is in the location of the player, say "[speech style of M]'This is really weird, [OriginalNameBimbo]. Are you going to explain to me what's going on?'[roman type][line break]But just at that moment, the call goes dead.";
+		otherwise if NPDT is 2000:
+			let M be fancied-friend;
+			now the video-caller of V is M;
+			beginCall of V;
+			let DP be a random eligible appropriate prioritised disgrace-punishment;
+			if DP is nothing:
+				sort LDP in random order;
+				now DP is entry 1 in LDP;
+			say "[speech style of M]'[OriginalNameBimbo]? [if the times-called of M is 0]Oh gosh, it really is you! [end if][GenericSituationReaction of the video-caller of V]My brother sent me [T]... [if the times-called of M is 0]I couldn't believe it could really be you, but obviously I was mistaken about you. Otherwise why would have you called me while looking like that?! [otherwise]And then you called me again, looking like that. That's so inappropriate! [end if]You want me to choose one of these options, huh? Fine - I'm choosing the one that says ['][DPTitle of DP][']. Now, I never want to hear from you again.'[paragraph break][variable custom style][if the player is able to speak]'Wait, no, please [MediumDesc of M], listen!-'[roman type][line break]But [NameDesc of M] has already hung up...";
+			compute disgrace punishment effect of DP;
+			now DP is disgrace-punishment-done;
+		otherwise:
+			let M be nemesis-friend;
+			now the video-caller of V is M;
+			beginCall of V;
+			say "[speech style of M]'[']Sup, loser. As soon as I saw that video online of [T]... I knew you were in the Nintendolls['] new virtual reality game. I got in touch, and they've given me a chance to make your life even more miserable. Let's see, there's a few options in front of me: ";
+			let LDPE be the number of entries in LDP;
+			repeat with DP running through LDP:
+				say "['][DPTitle of DP]['][if LDPE > 2], [otherwise if LDPE is 2] or [otherwise]... [roman type][paragraph break][end if]";
+				decrease LDPE by 1;
+			let DP be a random eligible appropriate prioritised disgrace-punishment;
+			if DP is nothing:
+				sort LDP in random order;
+				now DP is entry 1 in LDP;
+			say "I think I'm gonna choose this one. Enjoy whatever exactly ['][DPTitle of DP]['] does to you. Hopefully they'll let me watch...'[roman type][line break]But as soon as [MediumDesc of M] makes [his of M] selection, the call goes dead.";
+			compute disgrace punishment effect of DP;
+			now DP is disgrace-punishment-done;
+		increase the times-called of the video-caller of V by 1;
+		now currentlyPublicDisgracing is false;
+		now the video-caller of V is the throne;
+		now punished public disgrace is NPDT.
+
+A divination-space is a kind of thing. A divination-space is not portable. A divination-space has a number called charge. The charge of a divination-space is usually -200. The printed name of a divination-space is "[TQlink of item described]altar[shortcut-desc] [GlowDesc of the item described][TQxlink of item described][verb-desc of item described]". The text-shortcut of a divination-space is "dvs". [Figure of dungeon altar is the file "Env/Dungeon/altar1.jpg". Figure of dungeon altar cutscene is the file "Special/Cutscene/cutscene-altar-pray1.jpg".]
+
 
 PC Monitor ends here.

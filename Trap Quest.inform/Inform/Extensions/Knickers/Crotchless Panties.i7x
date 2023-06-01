@@ -22,7 +22,8 @@ To say selfexamineuniquetitle of (K - a crotchless-panties):
 To set up magic attribute of (C - a crotchless-panties):
 	let R be a random number between 1 and 3;
 	if R is 1, now C is protection;
-	if R is 2, now C is elasticity.
+	if R is 2, now C is elasticity;
+	set up rare magic attribute of C.
 
 pearl crotchless-panties is a crotchless-panties. The printed name of pearl crotchless-panties is "[clothing-title-before]pair of stimulating crotchless panties[clothing-title-after]". Understand "stimulating" as pearl crotchless-panties. The text-shortcut of pearl crotchless-panties is "stcp".
 To compute class set up of (C - pearl crotchless-panties):

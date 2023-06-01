@@ -6,6 +6,7 @@ witch is a-dick-reattacher.
 witch is in Woods20. Understand "sneering" as witch. The text-shortcut of witch is "wi". A witch has a number called altar-questioned. A witch has a number called doom-warned. The doom-warned of a witch is usually 0.
 
 Definition: witch is dark skinned: decide yes.
+Definition: witch is closest-toilet-preferring: decide yes.
 
 Definition: witch is willing to fluff:
 	if witch is unbitchy, decide yes;
@@ -74,6 +75,17 @@ To say DiaperReaction of (M - witch):
 
 To compute disgusting spit reaction of (M - witch):
 	say "[BigNameDesc of M] subtly licks [his of M] lips as [he of M] watches you. [if the urine volume of face > 0][strongHumiliateReflect][otherwise][moderateHumiliateReflect][end if]".
+
+Definition: witch is a diaper wetter: decide yes.
+
+To compute diaper wetting of (M - witch): [This MUST cause bladder to empty or NPCs might get stuck]
+	let D be a random diaper held by witch;
+	if D is diaper:
+		if M is in the location of the player, say "[BigNameDesc of M] sighs pleasantly, and you're pretty sure [he of M] is wetting [his of M] [MediumDesc of D].";
+	otherwise:
+		if M is in the location of the player, say "[BigNameDesc of M] [if lady fetish is not 2]parts [his of M] pussy lips and [end if]sighs pleasantly, and you watch as [he of M] shamelessly sprinkles the ground with [his of M] [urine].";
+		PuddleUp urine by (the bladder of M / 100) in (the location of M);
+	now the bladder of M is 0.
 
 Part 2 - Perception
 
@@ -177,7 +189,7 @@ Report dropping in the presence of witch:
 	increase altar-drops by 1;
 	if altar-drops > 5 and the bimbo of the player < 10 and the class of the player is maid:
 		say "Like a busy and industrious little maid, you neatly pile up your equipment, keeping one nervous eye on the nearby altar, hoping that nothing too nasty wanders up while you're stripping yourself down to the bare minimum. [BigNameDesc of M] seems to be watching you with a smirking expression, as if [he of M] knows what you're doing. But [he of M] says nothing. Somehow, that makes it even more humiliating.";
-		humiliate 200;
+		severeHumiliate;
 		now altar-drops is -200.
 
 Part 3 - Motion and Seeking
@@ -190,7 +202,7 @@ To compute monstermotion of (M - witch):
 	if the location of M is not Woods20:
 		let L be the location of M;
 		let D be the best route from L to Woods20;
-		if a random number between 1 and 5 > 2 and D is N-viable:
+		if a random number between 1 and 5 > 1 and D is N-viable:
 			blockable move M to D;
 			compute monstermotion reactions of M.
 

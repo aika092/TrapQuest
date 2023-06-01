@@ -25,7 +25,7 @@ To say ClothingDesc of (C - armadillo heels):
 To set up influence of (C - armadillo heels):
 	now C is anal-sex-addiction-influencing.
 
-To decide what number is the price of (C - armadillo heels):
+To decide what number is the original price of (C - armadillo heels):
 	decide on 3.
 
 Definition: armadillo heels is party themed: decide yes.

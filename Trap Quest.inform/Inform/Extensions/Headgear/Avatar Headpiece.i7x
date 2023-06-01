@@ -140,7 +140,7 @@ To compute generic class reward of (Q - soul-harvest-quest) on (C - a clothing):
 
 To compute virginity-loss of (C - avatar-headpiece):
 	now C is not purity;
-	say "You hear a sharp *snap* as your horns simultaneously break and fall off.[line break][first custom style]'You SLUT! Nobody's going to want their soul harvested by some used-up whore like you!'[roman type][line break]The voice of your master echoes inside your head as [his of shopkeeper] presence abruptly shifts out of you.[line break][first custom style]'My only choice is to turn you into an altar girl. Don't worry, all you have to do is fuck a couple of demons. It should come naturally for a dirty slut like you.'[roman type][line break]Your [ShortDesc of C] trembles as the two holes close up, and the hood disintegrates into ash, leaving only the golden tiara sitting on your head.";
+	say "You hear a sharp *snap* as your horns simultaneously break and fall off.[line break][first custom style]'You SLUT! Nobody's going to want their soul harvested by some used-up whore like you!'[roman type][line break]The voice of your master echoes inside your head as [his of male-m] presence abruptly shifts out of you.[line break][first custom style]'My only choice is to turn you into an altar girl. Don't worry, all you have to do is fuck a couple of demons. It should come naturally for a dirty slut like you.'[roman type][line break]Your [ShortDesc of C] trembles as the two holes close up, and the hood disintegrates into ash, leaving only the golden tiara sitting on your head.";
 	now C is cursed;
 	now the quest of C is demon-slut-quest;
 	transform C into gold-tiara;

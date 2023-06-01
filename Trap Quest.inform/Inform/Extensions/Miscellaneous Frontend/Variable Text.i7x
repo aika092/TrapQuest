@@ -545,7 +545,7 @@ To say honey of (M - a person):
 	if the class of the player is santa's little helper:
 		say "snowflake";
 	otherwise:
-		say "[one of]honey[or]dear[or]sunshine[or]darling[or]cutie[or]cupcake[or]sweetums[or]sweetheart[or]snowflake[at random]".
+		say "[one of]honey[or]dear[or]sunshine[or]darling[or]cutie[or]cupcake[or]sweetums[or]sweetheart[or]snowflake[or]squirt[at random]".
 
 To say child of (M - a monster):
 	if the class of the player is santa's little helper:
@@ -582,7 +582,7 @@ To say slut school:
 
 To say muffled sounds:
 	if the player is able to make sounds:
-		if there is a thing penetrating face or the player is gagged:
+		if the player is mouthblocked:
 			say gag sounds;
 		otherwise:
 			say open mouth sounds.

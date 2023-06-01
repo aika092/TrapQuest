@@ -97,7 +97,7 @@ To say DefaultAppearanceDesc of (C - a clothing):
 
 Report examining an exclusive clothing:
 	if the noun is totally-exclusive:
-		say "Somehow you can tell that this item is [bold type]exclusive[roman type], meaning you can't wear anything [if the noun is breast covering]else on your top half[otherwise]on top of or underneath it[end if].";
+		say "Somehow you can tell that this item is [bold type]exclusive[roman type], meaning you can't wear anything [if the noun is breast covering and the noun is belly exposing and the noun is crotch exposing]else on your top half[otherwise]on top of or underneath it[end if].";
 	otherwise if the noun is top-exclusive:
 		say "Somehow you can tell that this item is [bold type]top level[roman type], meaning you can't wear anything on top of it.";
 	otherwise if the noun is bottom-exclusive:
@@ -152,7 +152,7 @@ To say InfluenceDesc of (C - a wearthing):
 	if the titfuck-addiction-influence of C < 0 and diaper quest is 0, say "You can sense that this [item of C] is [if the titfuck-addiction-influence of C < -1]significantly [end if][if the titfuck addiction of the player > 4]reducing your breasts['] desire to feel a big hard [manly-penis] thrust between them[otherwise]helping you suppress any weird pleasurable sensations you might get if you pleasured a man with your breasts[end if].";
 	if the titfuck-addiction-influence of C > 0 and diaper quest is 0, say "You can sense that this [item of C] is making you feel [if the titfuck-addiction-influence of C > 1]a lot [end if]more sexual pleasure from [if the titfuck addiction of the player < 5]rubbing a [manly-penis] between your breasts[otherwise]worshipping a [manly-penis] with your tits[end if].";
 	if the bbc-addiction-influence of C < 0 and interracial fetish is 1, say "You can sense that this [item of C] is [if the bbc-addiction-influence of C < -1]significantly [end if][if the BBC addiction of the player > 7]reducing your preference for [BlackCock][otherwise]helping you maintain your sexual preferences when it comes to race[end if].";
-	if the bbc-addiction-influence of C > 0 and interracial fetish is 1, say "You can sense that this [item of C] is making you feel [if the bbc-addiction-influence of C > 1]a lot [end if]more [if the BBC addiction of the player < 13]interested in black [men of shopkeeper][otherwise]addicted to [BlackCock][end if].";
+	if the bbc-addiction-influence of C > 0 and interracial fetish is 1, say "You can sense that this [item of C] is making you feel [if the bbc-addiction-influence of C > 1]a lot [end if]more [if the BBC addiction of the player < 13]interested in black [men of male-m][otherwise]addicted to [BlackCock][end if].";
 	if the sex-addiction-influence of C < 0, say "You can sense that this [item of C] is [if the sex-addiction-influence of C < -1]significantly [end if][if diaper quest is 1]reducing your cravings for orgasms[otherwise if the sex addiction of the player > 7]reducing your [one of]cravings for orgasms[or]obsession with kinky sex acts[cycling][otherwise]helping you [one of]maintain a sensible, normal libido[or]suppress perverted thoughts[cycling][end if].";
 	if the sex-addiction-influence of C > 0, say "You can sense that this [item of C] is making you [if diaper quest is 1]crave orgasms[otherwise if the sex addiction of the player > 7][one of]crave orgasms and sex[or]daydream about lewd acts[or]get aroused by perverse things[cycling][otherwise][one of]think about sex[or]think perverted thoughts[cycling][end if] [if the sex-addiction-influence of C > 1]a lot [end if]more.";
 	if the semen-addiction-influence of C < 0 and diaper quest is 0, say "You can sense that this [item of C] is [if the semen-addiction-influence of C < -1]really [end if]helping you avoid any [if the semen addiction of the player < 4]weird [end if]temptations to experience [if the player is not possessing a vagina and the bimbo of the player < 10]anal [end if]creampies[if bukkake fetish is 1] and facials[end if].";
@@ -303,6 +303,9 @@ Report examining clothing:
 Report examining protection clothing:
 	if the noun is identified, say "An aura of magic protection surrounds this item, helping protect [if the noun is worn]you[otherwise]the wearer[end if] from harm in combat.".
 
+Report examining sneaking clothing:
+	if the noun is identified, say "An aura of illusion magic surrounds this item, which means that while you're wearing it, people are less likely to notice you.".
+
 To say CurrentlyConcealedFlav of (C - a wearthing):
 	let X be the concealer of C;
 	say "It can't be seen thanks to your [ShortDesc of X].".
@@ -327,7 +330,7 @@ To say CurrentlyPartiallyConcealedFlav of (C - a diaper):
 	say "[if CC is body part]Most of it can still be clearly seen past[otherwise]The shape of it is clearly visible through[end if] your [ShortDesc of CC].".
 
 To say CurrentlyVisibleFlav of (C - a diaper):
-	say "It is currently visible to anyone who looks at you.".
+	say "[if there is worn potentially at least partially asshole covering potentially-partially-bottom-layer-concealing clothing]The crotch area[otherwise]It[end if] is currently visible to anyone who looks at you.".
 
 Report examining clothing:
 	say PlayerThoughts of the noun.

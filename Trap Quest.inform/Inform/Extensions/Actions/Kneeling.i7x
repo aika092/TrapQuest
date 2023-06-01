@@ -116,7 +116,7 @@ Carry out kneeling:
 	otherwise allocate 1 seconds. [seconds = 1 means monsters don't get delayed in "report kneeling when the player is in danger"]
 
 Check kneeling when the location of the player is smoky:
-	if areYouSure is 1 and the player is upright and seconds is 0 and auto is 0 and the player is needing to breathe and the player is able to breathe:
+	if areYouSure is 1 and the player is upright and seconds is 0 and auto is 0 and the player is air breathing vulnerable and the player is able to breathe:
 		say "There is [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room...";
 		reset multiple choice questions;
 		set numerical response 1 to "Continue kneeling and breathing";
@@ -141,7 +141,7 @@ Report kneeling when the player is in danger and seconds > 1: [This is where we 
 	if there is an intelligent combative monster, now N is a random intelligent combative monster; [We only compute the reaction of one enemy. We prioritise the reaction of intelligent monsters as they probably have a more interesting response.]
 	otherwise now N is a random combative monster;
 	compute correct kneeling reaction of N;
-	if the class of the player is princess, humiliate SLIGHT-HUMILIATION - TRIVIAL-HUMILIATION;
+	if the class of the player is princess, slightHumiliate;
 	if newbie tips is 1 and the soreness of asshole > 5 or the soreness of vagina > 5, say "[one of][newbie style]Newbie tip: You could always try 'offer mouth' to avoid your sore holes getting any sorer! Of course, it'll increase humiliation, and there's a chance it won't work.[roman type][line break][or][stopping]";
 	repeat with M running through combative monsters:
 		if M is human and the health of M >= the maxhealth of M, progress quest of obedience-quest;

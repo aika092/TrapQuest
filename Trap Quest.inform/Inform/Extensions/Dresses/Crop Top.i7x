@@ -37,7 +37,8 @@ Definition: milk crop top (called C) is fetish appropriate:
 	decide no.
 
 To set up magic attribute of (C - milk crop top):
-	if lactation fetish is 1, now C is milk production.
+	if lactation fetish is 1, now C is milk production;
+	set up rare magic attribute of C.
 
 To decide which number is the initial outrage of (C - milk crop top):
 	decide on 4.

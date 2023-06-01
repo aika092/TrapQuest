@@ -15,7 +15,8 @@ To decide which number is the initial outrage of (C - a tube top):
 	decide on 3.
 
 To set up magic attribute of (C - a tube top):
-	if a random number between 1 and 3 is 1, now C is endurance.
+	if a random number between 1 and 3 is 1, now C is endurance;
+	set up rare magic attribute of C.
 
 This is the remove inappropriate tube tops rule:
 	repeat with B running through tube tops:
@@ -217,7 +218,8 @@ A jacket is a kind of tube top. A jacket is usually dense.
 Definition: a jacket is black themed: decide yes.
 
 To set up magic attribute of (C - a jacket):
-	if a random number between 1 and 4 is 1, now C is dominance.
+	if a random number between 1 and 4 is 1, now C is dominance;
+	set up rare magic attribute of C.
 
 To say ShortDesc of (C - a jacket):
 	say "[clothing-material of C] jacket".

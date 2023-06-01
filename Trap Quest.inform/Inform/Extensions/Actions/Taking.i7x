@@ -34,14 +34,10 @@ Check taking store thing while the player is in Dungeon41 and Dungeon41 is guard
 	if there is held store thing, say "[one of][line break][first custom style]'[big please] only consider one item of clothing at a time, or we'll all get confused. And we don't offer change here.'[roman type][line break]What a cheeky way of running a business! [big he of shopkeeper] seems serious though, so you decide to leave it alone.[or]You remember the strict rules about only considering one item at a time and decide to leave it alone.[stopping]" instead.
 
 Report taking store thing:
-	unless the location of the player is guarded:
-		compute stealing of the noun;
-		if shopkeeper is in the location of the player and shopkeeper is not interested:
-			now the boredom of shopkeeper is 0; [Just in case]
-			check perception of shopkeeper.
+	if shopkeeper is in the location of the player and shopkeeper is not interested:
+		now the boredom of shopkeeper is 0; [Just in case]
+		check perception of shopkeeper.
 
-Report dropping stolen thing while the player is in Dungeon41:
-	if shopkeeper is alive and shopkeeper is undefeated, now the noun is store.
 Understand "t [something]", "ta [something]" as taking.
 
 takingStuff is initially false.
@@ -60,5 +56,109 @@ Carry out taking:
 
 Report taking:
 	if debugmode is 2, say "REPORT.".
+
+
+Stealing is an action applying to one thing.
+Check stealing:
+	if the noun is not monster, say "This verb is used for stealing items from NPCs." instead;
+	if the noun is caged, say "You can't reach." instead;
+	if the noun is explorer, say "[big he of the noun][']s literally holding it in [his of the noun] hand." instead;
+	if the player is immobile or the player is in danger, say "Aren't you a bit busy?" instead;
+	if the player is prone and the noun is awake and the noun is not easy-steal, say "You should probably be standing to try that." instead;
+	if the player is not able to manually use their hands, do nothing instead;
+	if the noun is not easy-steal and the noun is awake and the player is not able to manually use manual dexterity, do nothing instead;
+	if the number of entries in the tradableItems of the noun is 0 and the number of things carried by the noun is 0, say "[BigNameDesc of the noun] has nothing for you to steal." instead;
+	if the noun is interested and the noun is not easy-steal and the noun is awake, say "[BigNameDesc of the noun] is looking right at you." instead.
+Carry out stealing:
+	let LT be a list of things;
+	repeat with T running through the tradableItems of the noun:
+		if T is off-stage:
+			add T to LT, if absent;
+	repeat with T running through things carried by the noun:
+		add T to LT, if absent;
+	reset multiple choice questions;
+	truncate LT to 9 entries;
+	say "What do you want to try and steal?";
+	repeat with T running through LT:
+		set next numerical response to "The [ShortDesc of T]";
+	set next numerical response to "cancel";
+	compute multiple choice question;
+	if player-numerical-response > 0:
+		let T be entry player-numerical-response in LT;
+		allocate 5 seconds;
+		if the noun is not easy-steal and the noun is awake:
+			say "You attempt to snatch the [ShortDesc of T] from [NameDesc of the noun] without [him of the noun] noticing.";
+			let D be (a random number between 1 and the dexterity of the player) + (a random number between 1 and the dexterity of the player);
+			let MD be the steal-difficulty of the noun for T;
+			let S be the stealth of the player;
+			if debuginfo > 0, say "[input-style]Steal attempt check: Dexterity 2d[dexterity of the player] ([D]) + Stealth ([S]) = [D + S] | [MD].5 Perfect steal difficulty / [(MD * 2) / 3].5 Partial success difficulty[roman type][line break]";
+			if D + S > MD: [full success]
+				compute full stealing success of T from the noun;
+			otherwise if D > (MD * 2) / 3: [partial success]
+				compute partial stealing success of T from the noun;
+			otherwise:
+				compute stealing fail of T from the noun;
+		otherwise if the noun is not easy-steal and the player is getting very unlucky:
+			compute sleep stealing fail of T from the noun;
+		otherwise:
+			say "You easily take [NameDesc of T].";
+			now T is carried by the player;
+			now the owner of T is the noun;
+			if T is listed in the tradableItems of the noun, remove T from the tradableItems of the noun.
+
+To compute full stealing success of (T - a thing) from (M - a monster):
+	say "You swipe [NameDesc of T] away without [him of M] having a clue!";
+	now T is carried by the player;
+	now the owner of T is M;
+	if T is listed in the tradableItems of M, remove T from the tradableItems of M;
+	progress quest of stealing-quest.
+
+To compute partial stealing success of (T - a thing) from (M - a monster):
+	say "As you pull [NameDesc of T] away, [NameDesc of M] feels the movement, and whirls around. You've been caught red-handed![if M is intelligent][line break][StealProvokedReaction of M][end if]";
+	now T is carried by the player;
+	now the owner of T is M;
+	if T is listed in the tradableItems of M, remove T from the tradableItems of M;
+	interest M;
+	anger M;
+	let N be the bartering value of T for M;
+	FavourDown M by N;
+	progress quest of stealing-quest.
+
+To compute stealing fail of (T - a thing) from (M - a monster):
+	say "[big he of M] whirls round as soon as your hand touches the [ShortDesc of T][if M is human], and grabs you by the wrist[end if]. [StealProvokedReaction of M]";
+	interest M;
+	anger M;
+	let N be (2 * the bartering value of T for M) / 3;
+	FavourDown M by N;
+	now M is wrangling arms.
+
+To compute sleep stealing fail of (T - a thing) from (M - a monster):
+	say "As you pull [NameDesc of T] away, [NameDesc of M] [one of]starts awake[or]suddenly wakes up[or]suddenly opens [his of M] eyes[in random order]. You've been caught red-handed![if M is intelligent][line break][StealProvokedReaction of M][end if]";
+	now T is carried by the player;
+	now the owner of T is M;
+	if T is listed in the tradableItems of M, remove T from the tradableItems of M;
+	interest M;
+	now the sleep of M is 0;
+	anger M;
+	let N be the bartering value of T for M;
+	FavourDown M by N;
+	progress quest of stealing-quest.
+
+To say StealProvokedReaction of (M - a monster):
+	if M is intelligent, say "[speech style of M]'[one of]You would steal from me?!'[or]This will not go unpunished...'[or]How DARE you!'[or]What do you think you're doing?!'[in random order][roman type][line break]";
+	otherwise say "Uh-oh...".
+
+To say PartialSuccessStealProvokedReaction of (M - a monster):
+	if M is intelligent, say "[speech style of M]'[one of]You would steal from me?!'[or]This will not go unpunished...'[or]How DARE you!'[or]What do you think you're doing?!'[in random order][roman type][line break]";
+	otherwise say "Uh-oh...".
+
+To decide which number is the steal-difficulty of (M - a monster) for (T - a thing):
+	decide on the difficulty of M * 2.
+
+Definition: a monster is easy-steal:
+	if it is defeated, decide yes;
+	decide no.
+
+Understand "steal [something]", "steal from [something]", "pickpocket [something]" as stealing.
 
 Taking ends here.

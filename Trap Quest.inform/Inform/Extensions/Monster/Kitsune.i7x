@@ -254,6 +254,7 @@ To compute offer reward of (M - kitsune) for (T - a thing):
 	FavourUp M by ((1 + BV) / 2);
 	if the favour of M > 8 and the special-gifted of M is 0:
 		say "[speech style of M]'How about something special this time? I know, these are cute!'[roman type][line break]";
+		set up fox ears;
 		now fox ears is in the location of M;
 		say "A headband with a pair of fox ears on it appears on the ground!";
 		now the special-gifted of M is 1;

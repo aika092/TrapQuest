@@ -338,8 +338,7 @@ To add treasure to (X - a treasure chest):
 			if C is bra:
 				add C to L;
 				now the size of C is the largeness of breasts;
-				if the size of C > the max size of C, now the size of C is the max size of C;
-				if the size of C < the min size of C, now the size of C is the min size of C;
+				cupsizefix C;
 		now C is a random pinkWardrobeAppropriate suspenders;
 		if C is clothing, add C to L;
 		now C is a random pinkWardrobeAppropriate skirted overdress;
@@ -356,7 +355,7 @@ To add treasure to (X - a treasure chest):
 			if the raw-magic-modifier of Z > 2, now the raw-magic-modifier of Z is a random number between 0 and 2;
 			if Z is cursed, assign quest to Z;
 			otherwise now Z is blandness;
-			now Z is unowned;
+			now the owner of Z is nothing;
 		let I be a random off-stage can;
 		if I is can, now I is in X;
 		say "You find a lot of stuff in here. But something tells you that you can't be sure if any of it has any magical effects until you put them on...";
@@ -385,7 +384,6 @@ To say NewbieMagicSpells:
 Section - Pedestals
 
 Carry out taking museum-store thing:
-	now the noun is museum-stolen;
 	if the location of the player is mansion28 and lipstick collar is worn and the player is getting unlucky:
 		let V be vampiress;
 		now the collar-ready of V is -15;[she'll chase a long time]
@@ -459,22 +457,22 @@ To lock pedestals:
 To add treasure to (X - a pedestal):[This function should happen when the mansion is generated, not when the pedestal is opened.]
 	if pocket necronomicon is off-stage:
 		now pocket necronomicon is in X;
-		now pocket necronomicon is museum-store;
+		now the owner of pocket necronomicon is vampiress;
 		now the paid of X is 3;
 	otherwise if there is an off-stage magic lamp:
 		let P be a random off-stage magic lamp;
 		now P is in X;
-		now P is museum-store;
+		now the owner of P is vampiress;
 		now the paid of X is 2;
 	otherwise if diaper quest is 0 and wood-dong is off-stage:[if this is found in the mansion shop, it's ridiculously expensive]
 		now wood-dong is in X;
-		now wood-dong is museum-store;
+		now the owner of wood-dong is vampiress;
 		now the paid of X is 10;
 	otherwise:
 		let P be a random off-stage rare fetish appropriate clothing;
 		if P is a thing:
 			now P is in X;
-			now P is museum-store;
+			now the owner of P is vampiress;
 			now the paid of X is the price of P / 3;
 			if the paid of X <= 0, now the paid of X is 1;
 		otherwise:
@@ -527,7 +525,7 @@ Carry out drinking a pedestal:
 	otherwise if diaper lover > 0:
 		say "You put your lips on the end of the [pedestal-variant of the noun] sippy cup and suck. Warm sweet fluid immediately rushes into your mouth and straight down your throat![line break]";
 		StomachUp the paid of the noun;
-		Humiliate 10 * the paid of the noun;
+		Humiliate HUMILIATION-BASE * 2 * the paid of the noun;
 		repeat with N running from 1 to the paid of the noun:
 			let R be a random number between 1 and 3;
 			if R is 1:
@@ -551,7 +549,7 @@ Carry out drinking a pedestal:
 	now the paid of the noun is 0;
 	now the noun is open;
 	repeat with X running through things in the noun:
-		now X is unowned;
+		now the owner of X is nothing;
 		compute autotaking X.
 
 Carry out pouring bottle into pedestal:
@@ -591,7 +589,7 @@ To say fullPaymentSatisfy of (P - a pedestal):
 	otherwise:
 		say "The [pedestal-variant of P] basin fills with [milk], and you hear a deep rumble as the [pedestal-variant of P] carvings in the base fill out impressively, breasts growing and hips widening as the glass dome opens with a distinctive *shunk*.";
 	repeat with X running through things in P:
-		now X is unowned;
+		now the owner of X is nothing;
 		compute autotaking X;
 	now P is open.
 

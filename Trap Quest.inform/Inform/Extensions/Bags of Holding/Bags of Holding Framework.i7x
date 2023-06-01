@@ -53,7 +53,7 @@ To decide which number is not-in-bag-things:
 Check taking something:
 	if the noun is held by a monster:
 		let M be a random monster holding the noun;
-		say "[BigNameDesc of M] is holding [NameDesc of M]." instead;
+		say "[BigNameDesc of M] is holding [NameDesc of the noun]." instead;
 	if the noun is not bag of holding and not-in-bag-things >= 15:
 		if there is a worn bag of holding:
 			if the noun is never-in-bag, say "You are at your limit for carrying [if diaper messing >= 6]messy diapers, [end if]food and drink, and other items that can't go in your bag of holding. You'll have to drop some if you want to pick up more." instead;
@@ -136,8 +136,8 @@ To compute periodic effect of (C - a bag of holding):
 		let NM be the number of in-bag things - the number of in-bag mass collectibles;
 		let N be NM - bagHungerAllowance;
 		if N < 1, now N is 1;
-		let H be 10 + (bagHungerSpeed / (N * N));
-		let H2 be 10 + (bagHungerSpeed / ((N + 1) * (N + 1)));
+		let H be bagHungerSpeed / (N * N);
+		let H2 be bagHungerSpeed / ((N + 1) * (N + 1));
 		if debuginfo > 1, say "[input-style]Bag of holding hunger ([hunger of C]) | ([H]) Hunger limit ([NM] items in bag)[roman type][line break]";
 		if the hunger of C > H and the hunger-declared of C > 0: [The time between consumptions increases exponentially with stuff in the bag]
 			if the hunger-declared of C is 1:

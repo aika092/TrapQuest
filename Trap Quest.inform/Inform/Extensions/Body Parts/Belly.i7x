@@ -670,7 +670,7 @@ To AssSquirt:
 	while the player is able to expel and element-count < 5:
 		if element-count is 0:
 			if small-egg-count > 0:
-				say "[EggBeginsFlav]";
+				say EggBeginsFlav;
 				lay small-egg-count small eggs;
 				progress quest of egg-laying-quest;
 				if voluntarySquatting is 0, progress quest of egg-holding-quest;
@@ -988,6 +988,7 @@ To lay (X - a number) small eggs:
 			now S is laid;
 			now the egg-origin of S is M;
 			if a random number between 1 and 4 is 1, now the hatching of S is 1;
+			if the egg-origin of S is ghost or the egg-origin of S is ghostly dildo pole trap or the egg-origin of S is the throne, now the hatching of S is 1;
 		if egg laying fetish is 0:
 			appropriate-cutscene-display figure of egg laying 8;
 		otherwise if the semen volume of belly > 6:
@@ -1190,7 +1191,7 @@ To compute enema reactions:
 			now M is reacted-already.
 
 To compute enema floor reaction of (M - a person):
-	if voluntarySquatting is 1, humiliate 500;
+	if voluntarySquatting is 1, ultraHumiliate;
 	if M is monster:
 		FavourDown M with consequences;
 		if M is interested and M is friendly:
@@ -1208,7 +1209,6 @@ To say EnemaReactionFlav of (M - a person) into (C - a clothing):
 
 Section - Image for graphics window
 
-Figure of CumBellyButton is the file "CharWins/FocusWin/Belly/bellycum.png".
 Figure of BellyObject1 is the file "CharWins/FocusWin/Belly/belly1.jpg".
 Figure of BellyObject2 is the file "CharWins/FocusWin/Belly/belly2.jpg".
 Figure of BellyObject3 is the file "CharWins/FocusWin/Belly/belly3.jpg".
@@ -1219,24 +1219,58 @@ Figure of BellyObject7 is the file "CharWins/FocusWin/Belly/belly7.jpg".
 Figure of BellyObject8 is the file "CharWins/FocusWin/Belly/belly8.jpg".
 Figure of BellyObject9 is the file "CharWins/FocusWin/Belly/belly9.jpg".
 Figure of BellyObject10 is the file "CharWins/FocusWin/Belly/belly10.jpg".
-Figure of BellyObject11 is the file "CharWins/FocusWin/Belly/belly11.jpg".
+[Figure of BellyObject11 is the file "CharWins/FocusWin/Belly/belly11.jpg".]
 Figure of BellyObject12 is the file "CharWins/FocusWin/Belly/belly12.jpg".
-Figure of BellyObject13 is the file "CharWins/FocusWin/Belly/belly13.jpg".
+[Figure of BellyObject13 is the file "CharWins/FocusWin/Belly/belly13.jpg".]
+Figure of BellyObject14 is the file "CharWins/FocusWin/Belly/belly14.jpg".
+[Figure of BellyObject15 is the file "CharWins/FocusWin/Belly/belly15.jpg".]
+Figure of BellyObject16 is the file "CharWins/FocusWin/Belly/belly16.jpg".
+
+Figure of BellyObjectGlazed1 is the file "CharWins/FocusWin/Belly/belly1c.jpg".
+Figure of BellyObjectGlazed2 is the file "CharWins/FocusWin/Belly/belly2c.jpg".
+Figure of BellyObjectGlazed3 is the file "CharWins/FocusWin/Belly/belly3c.jpg".
+Figure of BellyObjectGlazed4 is the file "CharWins/FocusWin/Belly/belly4c.jpg".
+Figure of BellyObjectGlazed5 is the file "CharWins/FocusWin/Belly/belly5c.jpg".
+Figure of BellyObjectGlazed6 is the file "CharWins/FocusWin/Belly/belly6c.jpg".
+Figure of BellyObjectGlazed7 is the file "CharWins/FocusWin/Belly/belly7c.jpg".
+Figure of BellyObjectGlazed8 is the file "CharWins/FocusWin/Belly/belly8c.jpg".
+Figure of BellyObjectGlazed9 is the file "CharWins/FocusWin/Belly/belly9c.jpg".
+Figure of BellyObjectGlazed10 is the file "CharWins/FocusWin/Belly/belly10c.jpg".
+[Figure of BellyObjectGlazed11 is the file "CharWins/FocusWin/Belly/belly11c.jpg".]
+Figure of BellyObjectGlazed12 is the file "CharWins/FocusWin/Belly/belly12c.jpg".
+[Figure of BellyObjectGlazed13 is the file "CharWins/FocusWin/Belly/belly13c.jpg".]
+Figure of BellyObjectGlazed14 is the file "CharWins/FocusWin/Belly/belly14c.jpg".
+[Figure of BellyObjectGlazed15 is the file "CharWins/FocusWin/Belly/belly15c.jpg".]
+Figure of BellyObjectGlazed16 is the file "CharWins/FocusWin/Belly/belly16c.jpg".
 
 To decide which figure-name is the examine-image of (T - belly):
-	if T is overglazed and the largeness of belly <= 5, decide on Figure of CumBellyButton;
-	if the largeness of belly < 2, decide on figure of BellyObject1;
-	if the largeness of belly is 2, decide on figure of BellyObject2;
-	if the largeness of belly is 3, decide on figure of BellyObject3;
-	if the largeness of belly is 4, decide on figure of BellyObject4;
-	if the largeness of belly is 5, decide on figure of BellyObject5;
-	if the largeness of belly is 6, decide on figure of BellyObject6;
-	if the largeness of belly is 7, decide on figure of BellyObject7;
-	if the largeness of belly is 8, decide on figure of BellyObject8;
-	if the largeness of belly is 9, decide on figure of BellyObject9;
-	if the largeness of belly is 10, decide on figure of BellyObject10;
-	if the largeness of belly is 11, decide on figure of BellyObject11;
-	if the largeness of belly is 12, decide on figure of BellyObject12;
-	decide on figure of BellyObject13.
+	if T is overglazed:
+		if the largeness of belly < 2, decide on figure of BellyObjectGlazed1;
+		if the largeness of belly is 2, decide on figure of BellyObjectGlazed2;
+		if the largeness of belly is 3, decide on figure of BellyObjectGlazed3;
+		if the largeness of belly is 4, decide on figure of BellyObjectGlazed4;
+		if the largeness of belly is 5, decide on figure of BellyObjectGlazed5;
+		if the largeness of belly is 6, decide on figure of BellyObjectGlazed6;
+		if the largeness of belly is 7, decide on figure of BellyObjectGlazed7;
+		if the largeness of belly is 8, decide on figure of BellyObjectGlazed8;
+		if the largeness of belly is 9, decide on figure of BellyObjectGlazed9;
+		if the largeness of belly is 10, decide on figure of BellyObjectGlazed10;
+		if the largeness of belly is 11, decide on figure of BellyObjectGlazed12;
+		if the largeness of belly is 12, decide on figure of BellyObjectGlazed14;
+		decide on figure of BellyObjectGlazed16;
+	otherwise:
+		if the largeness of belly < 2, decide on figure of BellyObject1;
+		if the largeness of belly is 2, decide on figure of BellyObject2;
+		if the largeness of belly is 3, decide on figure of BellyObject3;
+		if the largeness of belly is 4, decide on figure of BellyObject4;
+		if the largeness of belly is 5, decide on figure of BellyObject5;
+		if the largeness of belly is 6, decide on figure of BellyObject6;
+		if the largeness of belly is 7, decide on figure of BellyObject7;
+		if the largeness of belly is 8, decide on figure of BellyObject8;
+		if the largeness of belly is 9, decide on figure of BellyObject9;
+		if the largeness of belly is 10, decide on figure of BellyObject10;
+		if the largeness of belly is 11, decide on figure of BellyObject12;
+		if the largeness of belly is 12, decide on figure of BellyObject14;
+		decide on figure of BellyObject16.
 
 Belly ends here.

@@ -37,9 +37,12 @@ The knickers can't be summoned with no panties fetish rule is listed in the knic
 topless temporary fetish is a number that varies.
 
 To decide which number is topless-fetish:
-	if diaper quest is 1, decide on 0;
-	if topless temporary fetish > 0 or topless tattoo is worn or black strap hood is worn, decide on 1;
-	otherwise decide on 0.
+	if diaper quest is 1:
+		if the class of the player is faerie and the largeness of breasts > 1, decide on 1;
+		otherwise decide on 0;
+	otherwise:
+		if topless temporary fetish > 0 or topless tattoo is worn or black strap hood is worn, decide on 1;
+		otherwise decide on 0.
 
 Definition: a clothing (called C) is topless-fetish-disallowed:
 	if topless-fetish is 1:
@@ -58,7 +61,7 @@ The topless tattoo gets focused when relevant rule is listed in the focus findin
 braless reminder is a number that varies. braless reminder is 0.
 
 An all later time based rule (this is the fighting against topless fetish rule):
-	if topless-fetish is 1, say "[one of][if the humiliation of the player >= 37000][bold type]You have now become so addicted to the sexual thrill of degradation that you feel that you must keep your nipples at least partially visible at all times.[roman type][line break][end if][or][stopping]";
+	if topless-fetish is 1, say "[one of][if the class of the player is faerie][bold type]As a faerie, you have an aversion to wearing human clothes. Specifically, you feel that you must keep your nipples at least partially visible at all times.[roman type][line break][otherwise if the humiliation of the player >= 37000][bold type]You have now become so addicted to the sexual thrill of degradation that you feel that you must keep your nipples at least partially visible at all times.[roman type][line break][end if][or][stopping]";
 	if the player is fighting against topless:
 		if braless reminder <= 0:
 			let C be a random worn topless-fetish-disallowed clothing;

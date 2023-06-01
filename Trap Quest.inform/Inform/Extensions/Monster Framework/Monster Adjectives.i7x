@@ -2,6 +2,7 @@ Monster Adjectives by Monster Framework begins here.
 
 A monster is a kind of animal. A dungeon boss is a kind of monster.
 Definition: a dungeon boss is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
+Definition: a dungeon boss is a urinater: decide no.
 A monster can be interested or uninterested. A monster is usually uninterested. [Are they currently actively looking to interact with the player?]
 A monster has a number called sleep. [The number of seconds until they wake up.]
 Definition: a monster is awake rather than asleep:
@@ -36,6 +37,7 @@ To decide which number is the initial maxhealth of (M - a monster):
 A monster has a number called boredom. [The number of seconds until they will begin actively perceiving. If the monster doesn't fall asleep, set this to something between 100 and 250 after sex to stop the monster just fucking the player repeatedly.]
 A monster has a number called friendly boredom. [The number of turns that the monster has been following the player around. The higher it gets, the more chance that the monster will get bored and leave the player alone.]
 A monster has a room called target-room. [Any monster that can change locations at unusual times might want to use this to hold a room in memory.]
+A monster has a room called target-toilet. [This is the toilet that the NPC prefers to use.]
 [A monster can be captive or released. A monster is usually released.] [Captive monsters are completely docile unless attacked, and they usually have a trigger to become 'released'.] [Replaced with the monster-restriction property]
 A monster can be dying. [A flag used by the game to remind itself that the monster should be removed from play.]
 Definition: A monster is wenchy: decide no.
@@ -60,7 +62,7 @@ A monster can be trip-warned.[Did the player get a warning about their incoming 
 A monster can be notebook-studied.
 A monster can be bossdefeated.
 A monster can be diaper-committed.
-A monster can be double-diaper-committed.
+A monster can be double-diaper-committed. [Going to double diaper you now]
 A monster has a number called dismissRefused. [Have they refused to be dismissed?]
 A monster can be summon-available or permanently banished. A monster is usually summon-available. [Can it come back?]
 Definition: a monster is summon appropriate:
@@ -117,6 +119,7 @@ Definition: a monster is condom prepared: [Does he have condoms on him?]
 Definition: a monster (called M) is enjoys sex:
 	if M is willing to do anal or M is willing to do vaginal or M is willing to do oral or M is willing to do titfucks, decide yes;
 	decide no.
+Definition: a monster is wrangling-while-kneeling: decide no. [For use if there's NPCs that need to maintain their wrangles when the players gets on their knees.]
 A monster has an object called chosen-orifice. The chosen-orifice of a monster is usually nothing.
 [The following rules are what command the monster's behaviour in combat and sex.]
 The nothing coded yet rules is a rulebook.
@@ -130,8 +133,12 @@ The default taunting rules is a rulebook. A monster has a rulebook called taunti
 A monster has a rule called the monster fucked taunting rule. The monster fucked taunting rule of a monster is usually the default monster fucked taunting rule.
 A monster has a rule called the latex punishment rule. The latex punishment rule of a monster is usually the default latex punishment rule. [If you want your monster to be able to have sex with the player when they are a sex doll, you need to change this to the "no latex punishment rule".]
 The default diaper quest rules is a rulebook. A monster has a rulebook called the diaper quest rules. The diaper quest rules of a monster is usually the default diaper quest rules.
-A monster has a number called times-changed.
+A monster has a number called times-changed. [THIS SHOULD NEVER BE RESET TO 0. The diaper addiction section of the humiliating situation 'low-addiction' makes an assumption that if the player has had their diaper changed, there will be a monster out there with this at a nonzero level.]
+Definition: a monster is change-intimate:
+	if the times-changed of it > 0, decide yes;
+	decide no.
 A monster has a rule called the diaper punishment rule. The diaper punishment rule of a monster is usually the default diaper punishment rule.
+A monster has a rule called the stolen item recovery rule. The stolen item recovery rule of a monster is usually the default stolen item recovery rule.
 A monster has a rule called the unique punishment rule. The unique punishment rule of a monster is usually the default unique punishment rule.
 A monster has a rule called the monster convinced rule. The monster convinced rule of a monster is usually the default monster convinced rule.
 A monster has a rule called the monster friendly convinced rule. The monster friendly convinced rule of a monster is usually the default monster friendly convinced rule.
@@ -292,7 +299,7 @@ Definition: a monster is seduce-satisfiable:
 	if it is intelligent and it is not robot, decide yes;
 	decide no. [Can the player bring it closer to orgasm? If not, seduction will mainly be about condoms]
 Definition: a monster is seducable:
-	if it is male and it is willing to do anal, decide yes;
+	if it is willing to do oral or it is willing to do anal or it is willing to do vaginal or it is willing to charm snakes, decide yes;
 	decide no.
 Definition: a monster is actually seducable:
 	if diaper quest is 0 and it is seducable and it is reactive and it is interested and it is unseduced and it is not penetrating a body part, decide yes;
@@ -330,7 +337,7 @@ A game universe initialisation rule:
 		add M to L, if absent;
 	sort L in random order;
 	repeat with M running through intelligent monsters:
-		unless M is student or M is staff member or M is ex-princess:
+		unless M is student or M is staff member or M is ex-princess or M is goblin:
 			if the number of entries in L > 0:
 				let X be entry 1 in L;
 				add X to the tradableItems of M;

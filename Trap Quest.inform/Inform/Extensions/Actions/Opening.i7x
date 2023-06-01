@@ -44,7 +44,6 @@ Carry out opening a container:
 	allocate 2 seconds;
 	let R be a random number between 1 and 30;
 	decrease the charge of the elder altar by R;
-	decrease the charge of the hotel altar by R;
 	decrease the charge of the dungeon altar by R.
 
 Report opening a container:
@@ -62,9 +61,11 @@ Report opening a container:
 				now woman-player is caged;
 				now the woman-status of woman-player is 103;
 				now the woman-diaper-state of woman-player is 5;
-				say "Instead of an item... You find... A person?! And not just any person, but a [man of woman-player] curled up in a pink latex bodysuit and the largest, fullest, stinkiest diaper you've ever seen, with nothing but laxatives to drink for the duration of [his of woman-player] imprisonment. As soon as you have opened the lid, the horrid fumes hit your nostrils.";
-				SmellGrossOut messyDiaperSmellGrossnessLevel;
-				say "And to think, this poor [man of woman-player] has been smelling [his of woman-player] own sordid aroma for who-knows-how-long!!![paragraph break]Looking more closely, you can see that [his of woman-player] arms and legs are tied up by ribbons - impossible for [him of woman-player] to untie on [his of woman-player] own, but trivial for you to free [him of woman-player]. There's also a note, that reads [']To Aika, Happy Christmas x['], but you have no idea who Aika is.[paragraph break]You could probably [bold type]pull[roman type] on [his of woman-player] binds to release [him of woman-player], or get out of here before the gross smell further offends your olfactory senses.";
+				say "Instead of an item... You find... A person?! And not just any person, but a [man of woman-player] curled up in a pink latex bodysuit and the largest, fullest, stinkiest diaper you've ever seen, with nothing but laxatives to drink for the duration of [his of woman-player] imprisonment. ";
+				if the player is air breathing vulnerable:
+					say "As soon as you have opened the lid, the horrid fumes hit your nostrils.";
+					SmellGrossOut messyDiaperSmellGrossnessLevel;
+				say "And to think, this poor [man of woman-player] has been smelling [his of woman-player] own sordid aroma for who-knows-how-long!!![paragraph break]Looking more closely, you can see that [his of woman-player] arms and legs are tied up by ribbons - impossible for [him of woman-player] to untie on [his of woman-player] own, but trivial for you to free [him of woman-player]. There's also a note, that reads [']To Aika, Happy Christmas x['], but you have no idea who Aika is.[paragraph break]You could probably [bold type]pull[roman type] on [his of woman-player] binds to release [him of woman-player][if the player is air breathing vulnerable], or get out of here before the gross smell further offends your olfactory senses[end if].";
 			otherwise:
 				add treasure to the noun;
 		otherwise if the number of objects in the noun is 0:

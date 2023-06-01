@@ -38,7 +38,7 @@ To set up (M - herald):
 	now the health of M is the maxhealth of M.
 
 To decide which number is the starting difficulty of (M - herald):
-	decide on 15.
+	decide on 20.
 
 To say speech style of (M - herald):
 	say second custom style.
@@ -46,6 +46,7 @@ To say speech style of (M - herald):
 Part 1 - Perception
 
 Definition: herald is scarable: decide no.
+Definition: herald is a urinater: decide no.
 
 To compute perception of (M - herald):
 	if the current-errand of M is completed and M is not uniquely unfriendly:
@@ -223,7 +224,7 @@ To say AdviceAnswer of (M - herald):
 To compute teaching of (M - herald):
 	say "[speech style of M]'Teach you something? What a strange request... Like, fine. Gaze into me, if you dare...'[roman type][line break]For a terrible moment [his of M] skin shifts into an infinite field of swirling patterns that assaults your mind and self! You feel [smarter], but also like your sanity has slipped away!";
 	IntUp 1;
-	humiliate 500;
+	obsceneHumiliate;
 	reset skill cooldown.
 
 The herald has a number called gifted. The gifted of herald is usually 0.
@@ -281,7 +282,7 @@ To compute herald's gift:
 				SilentlyDelicateUp 2;
 			if R is 4:
 				say "You feel a terrible sense of foreboding!";
-				humiliate 400;
+				obsceneHumiliate;
 				SexAddictUp 1;
 				if diaper quest is 0, SemenAddictUp 1;
 				otherwise DiaperAddictUp 1;

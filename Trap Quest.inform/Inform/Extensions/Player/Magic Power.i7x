@@ -174,6 +174,9 @@ Definition: a magic-spell is uncastable rather than castable:
 	decide no.
 Definition: a magic-spell is fetish appropriate: decide yes.
 Definition: a magic-spell is staller: decide yes. [Does it make all NPCs lose a turn?]
+Definition: a magic-spell is costable rather than uncostable: [does the player have enough max magic power to ever play this?]
+	if the raw-magic-cost of it <= the total magic power of the player, decide yes;
+	decide no.
 
 Spellcasting is an action applying to one thing.
 Check Spellcasting:
@@ -223,28 +226,76 @@ A game universe initialisation rule (this is the incantation initialisation rule
 		choose a blank row in the Table of Possible Incantations;
 		now the phrase entry is "love to cum";
 		now the naughtiness entry is 4;
+		choose a blank row in the Table of Possible Incantations;
+		now the phrase entry is "am a naughty [boy of the player] who needs a good spanking";
+		now the naughtiness entry is 8;
 		if diaper quest is 0:
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "love cock";
+			now the naughtiness entry is 5;
 			choose a blank row in the Table of Possible Incantations;
 			now the phrase entry is "love having anal orgasms";
 			now the naughtiness entry is 6;
 			choose a blank row in the Table of Possible Incantations;
-			now the phrase entry is "love cock";
+			now the phrase entry is "love the taste of cum";
 			now the naughtiness entry is 7;
 			choose a blank row in the Table of Possible Incantations;
-			now the phrase entry is "spread my legs for anyone any time";
+			now the phrase entry is "can't rememeber how many [manly-penis]s I've sucked today";
 			now the naughtiness entry is 8;
 			choose a blank row in the Table of Possible Incantations;
-			now the phrase entry is "drink cum out of used condoms";
+			now the phrase entry is "will spread my legs for anyone";
 			now the naughtiness entry is 9;
 			choose a blank row in the Table of Possible Incantations;
 			now the phrase entry is "suck cock for cash";
 			now the naughtiness entry is 10;
 			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "am a walking talking free use fuckhole";
+			now the naughtiness entry is 11;
+			choose a blank row in the Table of Possible Incantations;
 			now the phrase entry is "fuck [GrossMates]";
+			now the naughtiness entry is 12;
+		if pregnancy fetish > 0:
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "can't wait to be knocked up";
+			now the naughtiness entry is 5;
+		if weight gain fetish is 1:
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "am a fat disgusting pig";
+			now the naughtiness entry is 7;
+		if artificial enhancements fetish is 1:
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "try to be the best fuck doll I can be";
+			now the naughtiness entry is 8;
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "want to have even bigger cock pillow tits";
+			now the naughtiness entry is 9;
+		if interracial fetish is 1:
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "am addicted to big [BlackCock]";
+			now the naughtiness entry is 9;
+		if egg laying fetish is 1:
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "love laying eggs from my butthole";
+			now the naughtiness entry is 9;
+		if ungape is 0 and diaper quest is 0:
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "have assfucked so many cocks that my butthole won't close up any more";
+			now the naughtiness entry is 10;
+		if condom fetish is 1:
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "drink cum from used condoms";
+			now the naughtiness entry is 11;
+		if bukkake fetish is 1:
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "want to be covered in thick sticky man cream";
+			now the naughtiness entry is 11;
+		if mythical creatures fetish is 1:
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "am so loose I can take a horsecock";
 			now the naughtiness entry is 11;
 		if a2m fetish > 0:
 			choose a blank row in the Table of Possible Incantations;
-			now the phrase entry is "let guys clean their cocks off in my mouth after they've finished in my asshole";
+			now the phrase entry is "clean their cocks off with my mouth after they pull out of my asshole";
 			now the naughtiness entry is 12;
 		if a2m fetish > 1:
 			choose a blank row in the Table of Possible Incantations;
@@ -254,79 +305,69 @@ A game universe initialisation rule (this is the incantation initialisation rule
 			choose a blank row in the Table of Possible Incantations;
 			now the phrase entry is "am a disgusting piss drinking human urinal";
 			now the naughtiness entry is 14;
-		if interracial fetish is 1:
-			choose a blank row in the Table of Possible Incantations;
-			now the phrase entry is "am addicted to big [BlackCock]";
-			now the naughtiness entry is 9;
-		if bukkake fetish is 1:
-			choose a blank row in the Table of Possible Incantations;
-			now the phrase entry is "want to be covered in thick sticky man cream";
-			now the naughtiness entry is 11;
-		if weight gain fetish is 1:
-			choose a blank row in the Table of Possible Incantations;
-			now the phrase entry is "am a fat disgusting pig";
-			now the naughtiness entry is 6;
-		if pregnancy fetish > 0:
-			choose a blank row in the Table of Possible Incantations;
-			now the phrase entry is "can't wait to be knocked up";
-			now the naughtiness entry is 5;
-		if artificial enhancements fetish is 1:
-			choose a blank row in the Table of Possible Incantations;
-			now the phrase entry is "try to be the best fuck doll I can be";
-			now the naughtiness entry is 7;
-			choose a blank row in the Table of Possible Incantations;
-			now the phrase entry is "want to have massive fake ass cheeks and even bigger cock pillow tits";
-			now the naughtiness entry is 9;
-		if ungape is 0 and diaper quest is 0:
-			choose a blank row in the Table of Possible Incantations;
-			now the phrase entry is "have assfucked so many cocks that my butthole won't close up any more";
-			now the naughtiness entry is 10;
-		if mythical creatures fetish is 1:
-			choose a blank row in the Table of Possible Incantations;
-			now the phrase entry is "am so loose I can take a horsecock";
-			now the naughtiness entry is 11;
-		if egg laying fetish is 1:
-			choose a blank row in the Table of Possible Incantations;
-			now the phrase entry is "love laying eggs from my butthole";
-			now the naughtiness entry is 9;
 		if diaper lover > 0:
-			choose a blank row in the Table of Possible Incantations;
-			now the phrase entry is "love thick diapers";
-			now the naughtiness entry is 6;
-			choose a blank row in the Table of Possible Incantations;
-			now the phrase entry is "love my wet nappies";
-			now the naughtiness entry is 9;
-			choose a blank row in the Table of Possible Incantations;
-			now the phrase entry is "pee myself for fun";
-			now the naughtiness entry is 10;
-			choose a blank row in the Table of Possible Incantations;
-			now the phrase entry is "need a hard spanking on my naughty bottom";
-			now the naughtiness entry is 7;
-			choose a blank row in the Table of Possible Incantations;
-			now the phrase entry is "deserve to be punished for touching my no-no without permission";
-			now the naughtiness entry is 8;
-			choose a blank row in the Table of Possible Incantations;
-			now the phrase entry is "need to be kept in super-thick Pampies";
-			now the naughtiness entry is 7;
-			choose a blank row in the Table of Possible Incantations;
-			now the phrase entry is "am going tinkles in my diaper";
-			now the naughtiness entry is 11;
-			choose a blank row in the Table of Possible Incantations;
-			now the phrase entry is "want my mommy";
-			now the naughtiness entry is 5;
 			choose a blank row in the Table of Possible Incantations;
 			now the phrase entry is "need to go tinkles";
 			now the naughtiness entry is 3;
 			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "love thick diapers";
+			now the naughtiness entry is 4;
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "want my mommy";
+			now the naughtiness entry is 5;
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "need double diapers to stop me leaking";
+			now the naughtiness entry is 6;
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "need a hard spanking on my naughty bottom";
+			now the naughtiness entry is 7;
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "need to be locked in super-thick Pampies";
+			now the naughtiness entry is 8;
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "deserve to be punished for touching my no-no without permission";
+			now the naughtiness entry is 9;
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "love my wet nappies";
+			now the naughtiness entry is 10;
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "pee myself for fun";
+			now the naughtiness entry is 11;
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "am going tinkles in my diaper";
+			now the naughtiness entry is 12;
+			choose a blank row in the Table of Possible Incantations;
 			now the phrase entry is "have my squirt-squirt cummies inside my Pampies";
 			now the naughtiness entry is 13;
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "love sniffing soaking wet nappies";
+			now the naughtiness entry is 14;
 			if diaper messing >= 3:
 				choose a blank row in the Table of Possible Incantations;
-				now the phrase entry is "love doing stinkies in my panties";
-				now the naughtiness entry is 14;
+				now the phrase entry is "am a pathetic poopy pottypants";
+				now the naughtiness entry is 13;
 				choose a blank row in the Table of Possible Incantations;
-				now the phrase entry is "get turned on when I poop my panties";
-				now the naughtiness entry is 16.
+				now the phrase entry is "love doing stinkies in my panties";
+				now the naughtiness entry is 15;
+				choose a blank row in the Table of Possible Incantations;
+				now the phrase entry is "get turned on when I mess myself";
+				now the naughtiness entry is 15;
+			if diaper messing >= 7:
+				choose a blank row in the Table of Possible Incantations;
+				now the phrase entry is "sniff messy diapers for fun";
+				now the naughtiness entry is 15;
+				choose a blank row in the Table of Possible Incantations;
+				now the phrase entry is "rub my face in the back of messy nappies";
+				now the naughtiness entry is 16;
+			if diaper swapping >= 2:
+				choose a blank row in the Table of Possible Incantations;
+				now the phrase entry is "want you to piss in my padding";
+				now the naughtiness entry is 14;
+			if diaper cumrag >= 1:
+				choose a blank row in the Table of Possible Incantations;
+				now the phrase entry is "want your to feel [men of male-m][']s spunk oozing down inside my Pampies";
+				now the naughtiness entry is 15.
+
 
 [
 IDEAS FOR SPELLS:
@@ -359,7 +400,17 @@ Report Spellcasting wand-summoning:
 		PinkWardrobeUnclash W;
 		summon W uncursed;
 		now W is impermanence;
-		say "With a flash of pink, [NameDesc of W] appears in your hand! Wow! [bold type]It has the [']impermanence['] property,[roman type] which means that it will disappear at some point in the near future.".
+		say "With a flash of pink, [NameDesc of W] appears in your hand! Wow! [bold type]It has the [']impermanence['] property,[roman type] which means that it will disappear at some point in the near future.";
+		if the class of the player is adventurer and the player is a may 2023 top donator and the number of worn headgear is 0 and lolita magical dress is off-stage and the number of worn unremovable nudism-disabling clothing is 0 and a random number between 1 and 2 is 1:
+			say "Looking down, you realise that the flash of pink did more than just summon a wand - it sent all of your clothing back to the pink wardrobe, and summoned a cursed but powerful [ShortDesc of lolita magical dress]! ...Is that a good thing, or a bad thing?";
+			repeat with C running through worn nudism-disabling clothing:
+				dislodge C;
+				now C is in pink wardrobe;
+			summon lolita magical dress cursed;
+			now lolita magical dress is impermanence;
+			now lolita magical dress is intelligence-influencing;
+			now the raw-magic-modifier of lolita magical dress is 2;
+			try examining lolita magical dress.
 
 An all later time based rule (this is the magical girl spell rule):
 	if the total magic power of the player > 0 and wand-summoning is uncastable:
@@ -401,11 +452,47 @@ Report Spellcasting magic-blinking:
 	otherwise:
 		say "Your body shimmers and then disappears! A split second later, you have reappeared to the [D] in the [R].";
 		repeat with M running through interested monsters in the location of the player:
-			let F be the favour of M;
-			deinterest M;
-			now the favour of M is F; [no favour change]
+			if the player is getting lucky:
+				let F be the favour of M;
+				deinterest M;
+				FavourSet M to F; [no favour change]
 			now M is moved; [won't move again this turn]
 		teleport to R.
+Definition: magic-blinking is staller: decide no. [Does it make all NPCs lose a turn?]
+
+magic-warping is a magic-spell.
+To decide which number is the raw-magic-cost of (S - magic-warping):
+	decide on 8.
+Definition: magic-warping is reactive-only: decide yes.
+To say MagicSpellEffect of (S - magic-warping):
+	say "teleport away to a random location in this region".
+Report Spellcasting magic-warping when there is a reactive monster:
+	if the player is trap stuck or the player is vine stuck or a random lake monster is penetrating an orifice:
+		say "The magic tries to teleport you, but something holding onto you prevents the magical from successfully moving you!";
+	otherwise if playerRegion is school or the player is in a painting-room:
+		say "The magic of this dimension seems to prevent this from working!";
+	otherwise:
+		let target-teleport be Dungeon12;
+		if playerRegion is Dungeon:
+			while target-teleport is Dungeon12 or target-teleport is the location of the player:
+				now target-teleport is a random placed labyrinth room;
+		if playerRegion is Woods:
+			while target-teleport is Dungeon12 or target-teleport is the location of the player:
+				now target-teleport is a random placed jungle room;
+		if playerRegion is Hotel:
+			while target-teleport is Dungeon12 or target-teleport is the location of the player:
+				now target-teleport is a random placed modern room;
+		if playerRegion is Mansion:
+			while target-teleport is Dungeon12 or target-teleport is the location of the player:
+				now target-teleport is a random placed haunted room;
+		say "You feel yourself sucked through a portal. The scenery around you slightly changes, and you are now in the [printed name of target-teleport]!";
+		repeat with M running through interested monsters in the location of the player:
+			let F be the favour of M;
+			deinterest M;
+			FavourSet M to F; [no favour change]
+			now M is moved; [won't move again this turn]
+		teleport to target-teleport.
+Definition: magic-warping is staller: decide no. [Does it make all NPCs lose a turn?]
 
 magic-inflating is a magic-spell.
 Definition: magic-inflating is fetish appropriate:
@@ -531,6 +618,59 @@ To say MagicSpellEffect of (S - magic-luck):
 Report Spellcasting magic-luck when there is a reactive monster:
 	increase luck-timer of luck-tincture by 30;
 	say "A golden aura begins to shimmer around you.[line break][variable custom style][one of]I feel amazing! Maybe I should look for things that would usually require me to get lucky...[or]I feel lucky![stopping][roman type][line break]".
+Definition: magic-luck is staller: decide no. [Does it make all NPCs lose a turn?]
+
+magic-bandage is a magic-spell.
+To decide which number is the raw-magic-cost of (S - magic-bandage):
+	decide on 2.
+To say MagicSpellEffect of (S - magic-bandage):
+	say "manifest a medkit bandage".
+Report Spellcasting magic-bandage when there is a reactive monster:
+	let C be a random off-stage bandage;
+	if C is a thing:
+		now C is carried by the player;
+		say "A brand new [C] appears [if C is currently-in-bag]inside your bag of holding[otherwise]in your hand[end if]. Nice!";
+	otherwise:
+		say "Nothing happens! There must be too many bandages loaded in the game universe already...".
+Definition: magic-bandage is staller: decide no. [Does it make all NPCs lose a turn?]
+
+magic-mouthful is a magic-spell.
+To decide which number is the raw-magic-cost of (S - magic-mouthful):
+	decide on 1.
+To say MagicSpellEffect of (S - magic-mouthful):
+	say "manifest a mouthful of liquid".
+Report Spellcasting magic-mouthful when there is a reactive monster:
+	let L be semen;
+	if diaper quest is 1, now L is milk;
+	if lactation fetish is 1 and a random number between -1 and watersports fetish is -1, now L is milk;
+	if a random number between 0 and watersports fetish is 1, now L is urine;
+	say "[if the total volume of face is 0]Your mouth is suddenly filled to the brim with [variable L][otherwise]The magic begins to manifest [variable L] in your mouth[end if]!";
+	FaceFill L by 4.
+Definition: magic-mouthful is staller: decide yes. [Does it make all NPCs lose a turn?]
+
+magic-diaper-change is a magic-spell.
+To decide which number is the raw-magic-cost of (S - magic-diaper-change):
+	decide on 4.
+To say MagicSpellEffect of (S - magic-diaper-change):
+	say "magically make a worn diaper [if diaper messing >= 4]clean and [end if]dry again".
+Report Spellcasting magic-diaper-change when there is a reactive monster:
+	let D be a random worn diaper;
+	if D is diaper:
+		if D is diaper-stack:
+			let N be a random number between 1 and the number of entries in the list of stacked diapers;
+			now D is entry N in the list of stacked diapers;
+		say "The magic searches for a worn diaper, and finds [NameDesc of D]! ";
+		if D is perceived wet or D is perceived messed, say "Your [D] is suddenly, magically, completely [if D is dirty]unsoiled and [end if]dry again!";
+		otherwise say "It's already completely dry, so nothing happens...";
+		fully clean D;
+	otherwise:
+		say "The magic searches for a worn diaper, but can't find one! Nothing happens.".
+Definition: magic-diaper-change is staller:
+	if there is a worn diaper, decide yes;
+	decide no.
+Definition: magic-diaper-change is fetish appropriate:
+	if diaper lover > 0, decide yes;
+	decide no.
 
 magic-clothe is a magic-spell.
 To decide which number is the raw-magic-cost of (S - magic-clothe):
@@ -549,5 +689,6 @@ Report Spellcasting magic-clothe when there is a reactive monster:
 		unless the quest of C is no-clothing-quest, say QuestFlav of C;
 	otherwise:
 		say "Nothing happens! The universe couldn't find an item of clothing to make you wear.".
+Definition: magic-clothe is staller: decide no. [Does it make all NPCs lose a turn?]
 
 Magic Power ends here.

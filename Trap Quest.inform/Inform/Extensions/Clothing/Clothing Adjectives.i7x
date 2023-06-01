@@ -4,6 +4,10 @@ A wearthing can be predicament-normal, predicament-temporary or predicament-fixe
 
 We also use predicament-fixed to set clothing in the junk room to be immune to change.]
 
+Definition: a wearthing is unworn:
+	if it is worn, decide no;
+	decide yes.
+
 [!<Clothing>@
 
 REQUIRES COMMENTING
@@ -11,7 +15,7 @@ REQUIRES COMMENTING
 @inherits <WearThing>
 
 @!]
-A clothing is a kind of wearthing. A clothing is wearable. Understand "worn" as clothing when item described is worn. Understand "unworn", "not worn" as clothing when item described is not worn. Understand "held", "carried", "taken" as a thing when item described is carried. Understand "unheld", "uncarried", "not held", "not carried", "untaken", "not taken" as a thing when item described is not held.
+A clothing is a kind of wearthing. A clothing is wearable. Understand "worn" as clothing when item described is worn. Understand "unworn", "not worn" as clothing when item described is unworn. Understand "held", "carried", "taken" as a thing when item described is carried. Understand "unheld", "uncarried", "not held", "not carried", "untaken", "not taken" as a thing when item described is not held.
 
 Clothing can be cotton, latex, glass, leather, pvc, satin, mesh, wool, nylon, metal, biological, hemp, silk, velvet, denim, lycra, plastic, polyester (this is the clothing-material property). Clothing is usually cotton. Understand the clothing-material property as describing a clothing.
 
@@ -267,7 +271,7 @@ Clothing can be vagina plugging. Clothing is usually not vagina plugging.
 Clothing has a number called plug size. The plug size of clothing is usually 0.
 Clothing can be purity. Clothing is usually not purity. [Means they care about your virginity.]
 
-A Magic-type is a kind of value. The magic-types are blandness, dressup, milk production, absorption, temptation, suppression, bed wetting, confidence, endurance, dominance, constriction, speed, kicking, protection, posture training, expansion, refreshment, rejuvenation, possession, maturity, respiration, durability, stumbling, provocation, exposure, audible jiggles, desperation, augmentation, elasticity, waddle-walking, draining, strength stealing, impermanence and hostility. Clothing has a magic-type. The magic-type of clothing is usually blandness.
+A Magic-type is a kind of value. The magic-types are blandness, dressup, milk production, absorption, temptation, suppression, bed wetting, confidence, endurance, dominance, constriction, speed, kicking, protection, posture training, expansion, refreshment, rejuvenation, possession, maturity, respiration, durability, stumbling, provocation, exposure, audible jiggles, desperation, augmentation, elasticity, waddle-walking, draining, strength stealing, impermanence, autobinding, sneaking and hostility. Clothing has a magic-type. The magic-type of clothing is usually blandness.
 A clothing has a number called impermanence-counter.
 
 Magic-ID is a kind of value. The magic-IDs are unidentified and identified. Clothing has a Magic-ID. The Magic-ID of clothing is usually unidentified.
@@ -346,6 +350,12 @@ It's been removed by something or someone that has the intent to replace it afte
 
 *!]
 Clothing can be temporarily-removed.
+[!<Clothing>@<temporarilyUnlocked:Boolean>*
+
+It's been unlocked by something or someone that has the intent to relock it after punishing the player.
+
+*!]
+Clothing can be temporarily-unlocked.
 Definition: a clothing (called C) is subduing:[Can C be held by monsters to fully control the player?]
 	decide no.
 [!<YourselfIsSubdued>+
@@ -378,6 +388,7 @@ Definition: a piercing is nudism-enabling: decide yes.
 Definition: a bondage is nudism-enabling: decide yes.
 Definition: an equippable is nudism-enabling: decide yes.
 Definition: a bag of holding is nudism-enabling: decide yes.
+Definition: a shoes is nudism-enabling: decide yes.
 Definition: yourself is clothed:
 	if there is worn nudism-disabling clothing, decide yes;
 	decide no.
@@ -385,8 +396,7 @@ Definition: yourself is naked:
 	if the player is clothed, decide no;
 	decide yes.
 
-Definition: a clothing (called C) is ringagged: [Is it something that includes a ring gag?]
-	decide no.
+Definition: a clothing is ringagged: decide no. [Is it something that includes a ring gag?]
 
 [!<ClothingIsBasicLoot>+
 
@@ -416,6 +426,7 @@ To decide which number is the stealth-influence of (C - a wearthing):
 	decide on 0.
 To decide which number is the stealth-influence of (C - a clothing):
 	let N be 0;
+	if C is sneaking, increase N by 3;
 	if C is nudism-disabling and C is actually dense, decrease N by 1;
 	if C is gem themed, decrease N by 1;
 	if C is bsounding, decrease N by 6;

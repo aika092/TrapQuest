@@ -95,7 +95,7 @@ To trigger lactation:
 			say "You feel a strange tingle in your chest... a feeling like... something weird is going on. Your nipples perk up and feel strangely sensitive. The feeling intensifies, and then with a shock you stare at your chest as you work out what's happening.[line break]";
 			if the player is sexed male:
 				say "[variable custom style]This is not possible! What the hell is this crazy game doing to me?![roman type][line break]";
-				humiliate 200;
+				severeHumiliate;
 		let N be bottom level lactation cover;
 		if yellow-pacifier is worn:
 			say "[one of]You feel [milk] leak from your [BreastDesc], but the milk never reaches [if bottom level lactation cover is clothing]your [bottom level lactation cover][otherwise]the air[end if]![roman type] Instead you feel your [ShortDesc of yellow-pacifier] magically feeding it back into your body via your mouth[or]Once again you feel [milk] leak from your nipples and magically appear in your mouth[stopping].[line break][variable custom style][if the milk taste addiction of the player < 7][one of]Yuck![or]Gross...[or]My own milk? Eww![or]I'm breastfeeding myself, gross![in random order][otherwise if the milk taste addiction of the player < 14][one of]At least it tastes good.[or]This is a bit weird, but I've done weirder.[or]Well I guess it's good for my nutrition...[or]Does all breast milk taste this good?[in random order][otherwise][one of]Yum![or]How delicious![or]So tasty![or]Ooh, I want to drink even more![in random order][end if][roman type][line break]";
@@ -129,11 +129,11 @@ To trigger lactation:
 				if tempM < 4:
 					increase the lactation rate of breasts by 2;
 					arouse 50;
-					humiliate 50;
+					moderateHumiliate;
 				otherwise:
 					increase the lactation rate of breasts by 4;
 					arouse 200;
-					humiliate 100;
+					strongHumiliate;
 		otherwise:
 			if M is 1:
 				say "A few drops of [milk] leak from your [BreastDesc] and drip to the floor.[roman type][line break]";

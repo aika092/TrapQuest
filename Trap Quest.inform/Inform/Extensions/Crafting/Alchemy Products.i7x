@@ -117,6 +117,8 @@ A game universe initialisation rule:
 		now the text-shortcut of W is the substituted form of "smk[K]";
 		increase K by 1.
 
+smokeMoving is initially false. [is the player moving after throwing a smoke bomb?]
+
 Carry out SmokeBombing a smoke bomb to a direction:
 	allocate 3 seconds;
 	say "You cast the smoke bomb to the ground. ";
@@ -124,7 +126,7 @@ Carry out SmokeBombing a smoke bomb to a direction:
 		say "Suddenly the entire room is filled with [if the location of the player is smoky]even more [end if][if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke! ";
 		now the location of the player is smoky;
 		update backdrop positions;
-		if the player is upright:
+		if the player is upright and the player is air breathing vulnerable:
 			say "Before it settles down to below waist height, you are forced to breathe some in.";
 			compute pink smoke;
 		say "Oh no! The bomb itself must have been cursed! You must have created it with the wrong recipe...";
@@ -139,9 +141,11 @@ Carry out SmokeBombing a smoke bomb to a direction:
 				if the noun is blessed:
 					let F be the favour of M;
 					deinterest M;
-					now the favour of M is F; [no favour change]
+					FavourSet M to F; [no favour change]
 				now M is moved; [won't move again this turn]
-		try going the second noun.
+		now smokeMoving is true;
+		try going the second noun;
+		now smokeMoving is false.
 
 To decide what number is the original price of (C - a smoke bomb):
 	decide on 1.
@@ -458,8 +462,8 @@ Check drinking nail-bomb:
 		now attack-type is 4;
 		repeat with M running through monsters in the location of the player:
 			if nail-bomb is bland or M is dangerous:
-				let D be a random number between 25 and 32;
-				if nail-bomb is blessed, increase D by 14;
+				let D be a random number between 13 and 20;
+				if nail-bomb is blessed, increase D by 7;
 				increase D by fire theme bonus * 10;
 				damage (D * combatSpeed) on M;
 				now latestCombatFocus is M;
@@ -635,6 +639,7 @@ To decide which figure-name is the examine-image of (V - an potion):
 Section 1 Potion of Balance
 
 balance-potion is a potion. The text-shortcut of balance-potion is "pba". Understand "balance" as balance-potion.
+The backgroundColour of balance-potion is 142862. [dark green]
 
 To say MediumDesc of (B - balance-potion):
 	say "potion of balance".
@@ -871,7 +876,7 @@ Carry out quaffing space mead:
 			say "For an instant your mind opens up to an infinite vista of possibilities, and even after it fades you still feel somewhat [smarter].";
 			IntUp 1;
 	if the noun is not blessed:
-		humiliate 500;
+		obsceneHumiliate;
 		say "It feels as though a vast emptiness has eaten away at your sense of self.";
 	increase alcohol level.
 
@@ -926,7 +931,8 @@ Carry out quaffing magic-potion:
 		MagicPowerUp 1;
 		MagicPowerRefresh 10;
 		if the noun is blessed:
-			let S be a random uncastable fetish appropriate magic-spell;
+			let S be a random costable uncastable fetish appropriate magic-spell;
+			if S is nothing, let S be a random uncastable fetish appropriate magic-spell;
 			if S is magic-spell:
 				say "[bold type]New arcane knowledge appears in your mind! You've learned a new spell![NewbieSpellFlav]";
 				compute learning of S.
@@ -1092,9 +1098,13 @@ Carry Out PowderRubbing escape-powder on a thing:
 		say "With a quiet hiss, the glue disappears!";
 		ungluify the second noun;
 	if unlockGo is 1 or the second noun is not cursed:
-		say "With a flash of silver it is suddenly no longer on your body but instead in your [if there is a worn bag of holding][ShortDesc of a random worn bag of holding][otherwise]hands[end if]!";
+		if the second noun is sword:
+			now the second noun is in the location of the player;
+			say "With a flash of silver it suddenly slips out of your hand down to the ground!";
+		otherwise:
+			now the second noun is carried by the player;
+			say "With a flash of silver it is suddenly no longer on your body but instead in your [if there is a worn bag of holding][ShortDesc of a random worn bag of holding][otherwise]hands[end if]!";
 		dislodge the second noun;
-		now the second noun is carried by the player.
 
 A salve is a kind of alchemy product. Understand "salve", "salve of" as a salve.
 

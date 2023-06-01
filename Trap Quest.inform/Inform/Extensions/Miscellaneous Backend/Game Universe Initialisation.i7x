@@ -352,7 +352,7 @@ To initialise latex prisoner:
 				otherwise now the raw-magic-modifier of C is 0;
 			now C is identified;
 			now C is sure;
-			now C is unowned;
+			now the owner of C is nothing;
 			if C is not headgear:
 				now C is bland;
 				if C is heels:
@@ -437,8 +437,7 @@ To initialise wardrobe:
 	if C is bikini top:
 		add C to L;
 		now the size of C is the largeness of breasts;
-		if the size of C > the max size of C, now the size of C is the max size of C;
-		if the size of C < the min size of C, now the size of C is the min size of C;
+		cupsizefix C;
 	now C is a random pinkWardrobeAppropriate nylon stockings;
 	if C is nothing, now C is a random pinkWardrobeAppropriate stockings;
 	if C is clothing, add C to L;

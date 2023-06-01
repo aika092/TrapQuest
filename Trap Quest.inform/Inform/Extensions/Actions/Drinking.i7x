@@ -185,10 +185,10 @@ Carry out drinking a vessel:
 	allocate 6 seconds;
 	if the noun is a squirt dildo:
 		say "You put the dildo in your mouth and squeeze. You gulp down the liquid that comes out.";
-		humiliate 50;
+		moderateHumiliate;
 	if the noun is a baby's bottle:
 		say "You put the bottle in your mouth and suck. You gulp down the liquid as it comes out.";
-		humiliate 40;
+		moderateHumiliate;
 	compute drinking the noun;
 	if the fill-colour of the noun is not creamy and the fill-colour of the noun is not golden and the fill-colour of the noun is not white and the fill-colour of the noun is not murky, StomachUp 2;
 	DoseDown the noun;

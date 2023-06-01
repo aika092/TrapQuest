@@ -46,7 +46,7 @@ Carry out offering it to:
 	now convincing power is 0;
 	say OfferFlav of the noun;
 	increase convincing power by the bartering value of the noun for the second noun;
-	if convincing power > 0:
+	if convincing power > 0 and the owner of the noun is not the second noun:
 		increase convincing power by ((the charisma of the player * 4) scaled) / 4; [makes it slightly more logarithmic]
 	if convincing power > 10, now convincing power is 10;
 	compute the second noun considering the noun.
@@ -55,7 +55,7 @@ Understand "offer [something] to [something]", "trade [something] with [somethin
 
 To say OfferFlav of (T - a thing):
 	if the player is able to speak:
-		say "[variable custom style][if the second noun is unfriendly]'Please, take this instead!'[otherwise][FriendlyOfferFlav of T][end if][roman type][line break]";
+		say "[variable custom style][if the owner of the noun is the second noun]'Here, you can have it back!'[otherwise if the second noun is unfriendly]'Please, take this instead!'[otherwise][FriendlyOfferFlav of T][end if][roman type][line break]";
 	otherwise if the player is able to make sounds:
 		say "[variable custom style][muffled sounds][roman type][line break]";
 	otherwise:
@@ -66,7 +66,7 @@ To say FriendlyOfferFlav of (T - a thing):
 Part - Monsters Reaction
 
 To decide which number is the bartering value of (T - a thing) for (M - a monster):
-	if M is student or M is staff member, decide on 0;
+	if M is student or M is staff member or M is robomatron or M is slutty sister or M is orc, decide on 0;
 	if T is plentiful accessory and M is intelligent, decide on the price of T;
 	decide on 0.
 
@@ -83,6 +83,12 @@ To decide which number is the convincability of (M - a monster):
 To compute (M - a monster) considering (T - a thing):
 	if M is not interested:
 		say "[BigNameDesc of M] isn't even looking at you.";
+	otherwise if M is able to see stolen goods and M is not the owner of T:
+		say MonsterThiefOfferRejectFlav of M to T;
+	otherwise if M is the owner of T:
+		say MonsterThiefOfferAcceptFlav of M to T;
+		say ReclaimFlav of M for T;
+		compute final resolution of M taking T; [NO favour gain]
 	otherwise if (M is shopkeeper or M is royal guard) and there is held stolen thing:
 		say MonsterCriminalOfferRejectFlav of M to T;
 	otherwise if convincing power > 0 and (M is friendly or (convincing power + the convincability of M) >= the square root of (a random number between 1 and 15)):
@@ -97,6 +103,12 @@ To compute (M - a monster) considering (T - a thing):
 To say MonsterOfferRejectFlav of (M - a monster) to (T - a thing):
 	if M is intelligent, say "[if M is unfriendly][BigNameDesc of M] smiles.[otherwise][BigNameDesc of M] looks a bit confused.[end if][line break][speech style of M][if convincing power > 0 and M is unfriendly]'You're not going to get let off that easy.'[otherwise]'Why the hell would I want that?'[end if][roman type][line break]";
 	otherwise say "[BigNameDesc of M] completely ignores the [T].".
+
+To say MonsterThiefOfferRejectFlav of (M - a monster) to (T - a thing):
+	if M is intelligent, say "[BigNameDesc of M] scowls.[line break][speech style of M]'How dare you steal my stuff and THEN try to trade for it!'[roman type][line break]".
+
+To say MonsterThiefOfferAcceptFlav of (M - a monster) to (T - a thing):
+	if M is intelligent, say "[speech style of M]'Of course I'll take it, it's ALREADY MINE!'[roman type][line break]".
 
 To say MonsterCriminalOfferRejectFlav of (M - a monster) to (T - a thing):
 	if M is intelligent, say "[BigNameDesc of M] frowns.[line break][speech style of M]'It's too late for that!'[roman type][line break]".

@@ -231,7 +231,7 @@ To reflect on (A - outrageous-dry-diaper):
 
 outrageous-wet-diaper is a humiliating situation.
 Definition: outrageous-wet-diaper (called A) is applicable:
-	if the player is modest and the diaper addiction of the player < 8 and there is a worn perceived wet unmessed diaper, decide yes;
+	if the player is modest and the diaper addiction of the player < 5 and there is a worn perceived wet unmessed diaper, decide yes;
 	decide no.
 To reflect on (A - outrageous-wet-diaper):
 	if there is a worn cursed diaper or change-self tattoo is worn, say "[variable custom style][one of]I'm in a wet diaper, and I can't even change myself... I've got to find a way out of this situation before someone gives me a diaper check and finds out...[or]This isn't fair, it's not normal to be stuck in a CURSED diaper!!! How am I supposed to stay dry when even magic is working against me?![or]I've got to find some kind of magical being, or altar, or something... I would worship anyone and anything right now that could get me out of this DISGUSTING SOGGY DIAPER before people get the impression that I can't control my own bladder![in random order][roman type][line break]";
@@ -287,6 +287,7 @@ To reflect on (HS - low-addiction):
 		if the player is possessing a vagina, add "vaginal sex addiction" to AL;
 		if max breast size > 4, add "titfuck addiction" to AL;
 		if interracial fetish is 1, add "bbc addiction" to AL;
+	if diaper lover > 0, add "diaper addiction" to AL;
 	let R be a random number from 1 to the number of entries in AL;
 	let A be entry R in AL;
 	if A exactly matches the text "semen addiction":
@@ -350,7 +351,7 @@ To reflect on (HS - low-addiction):
 				say ".";
 				cool down ARS;
 			otherwise if ARS > 0:
-				say "Your [asshole] [one of]twitches[or]has a little spasm[or]winks of its own accord[in random order], [if ARS <= 1000 and the analvirgin of the player is 1]prompting you to daydream about what [one of]it might be like to lose your anal virginity[or]anal sex would feel like[cycling][otherwise if ARS <= 1000]prompting you to daydream about anal sex[otherwise if ARS <= 2000 and the analvirgin of the player is 1]as if desperate to [one of]lose its virginity[or]learn what it feels like to be filled with [manly-penis][cycling][otherwise if ARS <= 2000]as if eager to experience [one of]more anal sex[or]some more anal action[or]stretching and stimulation once again[in random order][otherwise]desperately begging to be [one of]filled[or]stuffed full of hard [manly-penis][or]pounded and stretched some more[in random order][end if], turning you on[if the soreness of asshole > 6] even though you're so sore down there already[otherwise if the soreness of asshole > 3] despite your asshole feeling a bit tender right now[end if].";
+				say "Your [asshole] [one of]twitches[or]has a little spasm[or]winks of its own accord[in random order], [if ARS <= 1000 and the analvirgin of the player is 1]prompting you to daydream about what [one of]it might be like to lose your anal virginity[or]anal sex would feel like[cycling][otherwise if ARS <= 1000]prompting you to daydream about anal sex[otherwise if ARS <= 2000 and the analvirgin of the player is 1]as if desperate to [one of]lose its virginity[or]learn what it feels like to be filled with [manly-penis][cycling][otherwise if ARS <= 2000]as if eager to experience [one of]more anal sex[or]some more anal action[or]stretching and stimulation once again[in random order][otherwise]desperately begging to be [one of]filled[or]stuffed full of hard [manly-penis][or]pounded and stretched[in random order][end if], turning you on[if the soreness of asshole > 6] even though you're so sore down there already[otherwise if the soreness of asshole > 3] despite your asshole feeling a bit tender right now[end if].";
 				arouse ARS;
 	otherwise if A exactly matches the text "vaginal sex addiction":
 		if vagina is not actually occupied:
@@ -359,13 +360,13 @@ To reflect on (HS - low-addiction):
 			if ARS > 3000, now ARS is 3000; [max 3000 arousal gain]
 			if ARS < 0 and the arousal of the player > 0:
 				now ARS is ARS * -1;
-				say "The thought of further vaginal action [if the soreness of vagina > 4]while you are so sore [end if] makes your [vagina][one of]clench shut[or]tense up[in random order]";
+				say "The thought of further vaginal action [if the soreness of vagina > 4]while you are so sore [end if]makes your [vagina] [one of]clench shut[or]tense up[in random order]";
 				if the arousal of the player > 0 and the player is able to cool down:
 					say ", and makes you feel [if ARS > the arousal of the player]completely unaroused[otherwise]less aroused[end if]";
 				say ".";
 				cool down ARS;
 			otherwise if ARS > 0:
-				say "Your [vagina] [one of]pulses gently[or]relaxes and tightens of its own accord[in random order], [if ARS <= 1000 and the vaginalvirgin of the player is 1]prompting you to daydream about what [one of]it might be like to lose your vaginal virginity[or]vaginal sex would feel like[cycling][otherwise if ARS <= 1000]prompting you to daydream about vaginal sex[otherwise if ARS <= 2000 and the vaginalvirgin of the player is 1]as if desperate to [one of]lose its virginity[or]learn what it feels like to be filled with [manly-penis][cycling][otherwise if ARS <= 2000]as if eager to experience [one of]more vaginal sex[or]some more vaginal action[or]stretching and stimulation once again[in random order][otherwise]desperately begging to be [one of]filled[or]stuffed full of hard [manly-penis][or]pounded and stretched some more[in random order][end if], turning you on[if the soreness of vagina > 6] even though you're so sore down there already[otherwise if the soreness of vagina > 3] despite your hole feeling a bit tender right now[end if].";
+				say "Your [vagina] [one of]pulses gently[or]relaxes and tightens of its own accord[in random order], [if ARS <= 1000 and the vaginalvirgin of the player is 1]prompting you to daydream about what [one of]it might be like to lose your vaginal virginity[or]vaginal sex would feel like[cycling][otherwise if ARS <= 1000]prompting you to daydream about vaginal sex[otherwise if ARS <= 2000 and the vaginalvirgin of the player is 1]as if desperate to [one of]lose its virginity[or]learn what it feels like to be filled with [manly-penis][cycling][otherwise if ARS <= 2000]as if eager to experience [one of]more vaginal sex[or]some more vaginal action[or]stretching and stimulation once again[in random order][otherwise]desperately begging to be [one of]filled[or]stuffed full of hard [manly-penis][or]pounded and stretched[in random order][end if], turning you on[if the soreness of vagina > 6] even though you're so sore down there already[otherwise if the soreness of vagina > 3] despite your hole feeling a bit tender right now[end if].";
 				arouse ARS;
 	otherwise if A exactly matches the text "oral sex addiction":
 		if face is not actually occupied and the total volume of face is 0:
@@ -380,15 +381,77 @@ To reflect on (HS - low-addiction):
 				say ".";
 				cool down ARS;
 			otherwise if ARS > 0:
-				say "[one of]Your mouth forms an [']O['] shape[or]Your mouth relaxes into a pout[or]You find yourself licking your lips[or]You bite your bottom lip[in random order] [if ARS <= 1000 and the oralvirgin of the player is 1]as you imagine what it must be like to [one of]pleasure a [manly-penis] with your mouth[or]give a [man of shopkeeper] a blowjob[cycling][otherwise if ARS <= 1000]prompting you to daydream about [one of]pleasuring someone with your mouth[or]how fun oral sex can be[or]how nice a [manly-penis] can feel against your lips[in random order][otherwise if the oralvirgin of the player is 1]as you realise you have a [one of]new [or][stopping]burning curiosity to [one of]find out what it's like to suck a [manly-penis][or]learn what it feels like to give a blowjob[cycling][otherwise][one of]as you look forward to giving your next blowjob[or]as you daydream about getting to suck on another [manly-penis][or]as you daydream about your throat getting pounded by a huge [manly-penis][or]as you imagine what your next facefucking will be like[in random order][end if]. [if ARS <= 500]You find that the thought turns you on[otherwise]The thought [one of]arouses you[or]turns you on[in random order][end if].";
+				say "[one of]Your mouth forms an [']O['] shape[or]Your mouth relaxes into a pout[or]You find yourself licking your lips[or]You bite your bottom lip[in random order] [if ARS <= 1000 and the oralvirgin of the player is 1]as you imagine what it must be like to [one of]pleasure a [manly-penis] with your mouth[or]give a [man of male-m] a blowjob[cycling][otherwise if ARS <= 1000]prompting you to daydream about [one of]pleasuring someone with your mouth[or]how fun oral sex can be[or]how nice a [manly-penis] can feel against your lips[in random order][otherwise if the oralvirgin of the player is 1]as you realise you have a [one of]new [or][stopping]burning curiosity to [one of]find out what it's like to suck a [manly-penis][or]learn what it feels like to give a blowjob[cycling][otherwise][one of]as you look forward to giving your next blowjob[or]as you daydream about getting to suck on another [manly-penis][or]as you daydream about your throat getting pounded by a huge [manly-penis][or]as you imagine what your next facefucking will be like[in random order][end if]. [if ARS <= 500]You find that the thought turns you on[otherwise]The thought [one of]arouses you[or]turns you on[in random order][end if].";
 				arouse ARS;
 	otherwise if A exactly matches the text "titfuck addiction":
 		if breasts is not actually occupied:
 			let SA be the titfuck addiction of the player - 1;
+			let ARS be (SA * 500) - 2000; [depending on addiction, we can gain or lose arousal... although actually there's no losing arousal for thinking about tifuck addiction]
+			if ARS > 1500, now ARS is 1500; [max 1500 arousal gain]
+			if ARS > 0:
+				say "[if ARS <= 1000]The thought of [one of]the feeling of a [man of male-m] thrusting [his of male-m] [manly-penis] in and out of your cleavage[or]someone grabbing your breasts and using them for sex[or]pleasuring a [manly-penis] with your breasts[in random order] [one of]enters your head[or]crosses your thoughts[or]pops into your mind[at random], [one of]turning you on[or]making you flush with arousal[in random order][otherwise][one of]You can't help but think about how delightful getting titfucked is[or]You find yourself thinking forward to the next time you get titfucked[or]You daydream about the next time you get to pump a [manly-penis] in between your breasts[in random order], and [one of]get more and more exicited[or]get all worked up[in random order][end if].";
+				arouse ARS;
+	otherwise if A exactly matches the text "diaper addiction":
+		let D be a random worn diaper;
+		if D is diaper: [if diaper addiction is less than 5, the player hates bulk and hates wet. opposite is true if diaper addiction greater than 9.]
+			say "You squeeze your legs together, feeling the [if thighs is spread]superthick [otherwise if the DQBulk of D > 4]thick [end if][if D is perceived dry and D is perceived unmessed]dry [end if]padding of your [ShortDesc of D] between your thighs. ";
+			compute automatic state check of D;
+			let SA be 0;
+			let thicknessLove be the diaper addiction of the player - (the DQBulk of D + 6); [if this is a positive number, the player likes diapers this thick]
+			if diaper addiction of the player < 5:
+				decrease SA by the DQBulk of D;
+				if D is perceived wet, decrease SA by 4;
+			otherwise if thicknessLove > 0:
+				increase SA by the DQBulk of D;
+				if D is wet, increase SA by 4;
+			let ARS be SA * 500; [depending on addiction, we can gain or lose arousal]
+			if ARS > 0:
+				if D is perceived dry, say "[if thicknessLove > 5]The fact you're wearing a diaper is arousing and exciting, but you can't help but wish it was a bit bulkier. You can't wait until someone puts you in a big poofy diaper that really makes you waddle[otherwise if thicknessLove > 2]The padding feels nice against your skin, and you can't help but fantasise about how it will feel when you've soaked it with your [urine][otherwise if the DQBulk of D <= 4][one of]You surprise yourself as you realise that squeezing your padding like this is[or]Once again, you find that it's[stopping] turning you on[otherwise if thighs is not spread]You just love how bulky this diaper is! Your arousal spikes as you clench your legs together and imagine how wonderfully squishy it will feel after it's been filled with [urine][otherwise]You shudder with blissful arousal as you feel the absurdly bulky padding preventing your thighs from even getting close to touching each other! You are addicted to wearing stupidly giant diapers like this. You can't wait to fill it with your [urine][end if].";
+				otherwise say "[if thicknessLove > 2]The wet padding squelches lewdly against your thighs, causing you to shudder with pleasure[otherwise if the DQBulk of D <= 4][one of]You surprise yourself as you realise that squeezing your wet, squelchy padding like this[or]Once again, you find that the wet squelchy sensation[stopping] is turning you on[otherwise if thighs is not spread]You just love how bulky this diaper is! Your arousal spikes as you clench your legs together and feel all that thick, wet padding squelching against your loins[otherwise]You shudder with blissful arousal as you feel the absurdly bulky, wet and squishy padding preventing your thighs from even getting close to touching each other! You are addicted to soaking stupidly giant diapers like this[end if].";
+				arouse ARS;
+			otherwise if ARS is 0:
+				say "[if thicknessLove < -4]You might enjoy wearing more normal diapers, but this one is just too absurdly bulky, and you just feel awkward and stupid[otherwise]Wearing such a bulky diaper is making you feel a bit self-conscious. Perhaps it's a little fun, but it's mostly just awkward and distracting[end if].";
+			otherwise:
+				if D is perceived dry, say "[if the DQBulk of D <= 4]How anyone could get sexual thrills from wearing a diaper is beyond you. It does nothing but actively suppress your arousal[otherwise if thighs is not spread]The outrageously bulky nature of this diaper makes it even more upsetting to wear than a normal diaper. Your arousal is significantly reduced[otherwise]You shudder with mild horror as you feel the absurdly bulky padding preventing your thighs from even getting close to touching each other, how humiliating it looks, and how much it's restricting your movement[end if].";
+				now ARS is ARS * -1;
+				cool down ARS;
+		otherwise if diaperOrgasmCount > a random number between 0 and diaperChangeCount:
+			say "Your mind wanders back to the memory of the recent time you orgasmed [if the player is possessing a penis]into your[otherwise]while wearing a[end if] diaper. ";
+			let SA be the diaper addiction of the player;
+			let ARS be (SA * 500) - 3000; [depending on addiction, we can gain or lose arousal]
+			if ARS > 3000, now ARS is 3000; [max 3000 arousal gain]
+			if ARS > 0:
+				say "[if ARS <= 2000]You feel your [player-crotch] twinge with pleasure at the thought[otherwise]The memory brings floods of arousal back with it - you're desperate to experience that unique sensation of cumming while padded again and again[end if].";
+				arouse ARS;
+			otherwise if ARS < 0:
+				say "[if ARS >= -2000]You shiver uncomfortably, wishing you hadn't thought about that again. Your arousal lowers[otherwise]You shudder with disgust, feeling deeply unaroused by the memory[end if][if the player is a pervert]. You love orgasms, but you have no desire to climax while wearing a childish incontinence aid, ever again[end if].";
+				now ARS is ARS * -1;
+				cool down ARS;
+			otherwise:
+				say "[one of]You have mixed feelings about the experience[or]You reflect that the memory doesn't disgust you as much as it used to[or]You still feel rather ambivalent about it[stopping].";
+		otherwise if diaperChangeCount > 0:
+			let M be a random change-intimate monster;
+			say "Your mind wanders back to the memory of [NameDesc of M] laying you down on your back and changing your diaper[one of]. It's one of the most submissive and humiliating experiences you've ever had in your life[or][stopping]. ";
+			let SA be the diaper addiction of the player / 2;
+			increase SA by the delicateness of the player / 2;
+			let ARS be (SA * 500) - 3000; [depending on addiction, we can gain or lose arousal]
+			if ARS > 3000, now ARS is 3000; [max 3000 arousal gain]
+			if ARS > 0:
+				say "[if ARS <= 1500]You feel your heart beat faster as you become slightly aroused by the thought that it was unlikely the last time that a near-stranger cares for you in such a degrading and intimate manner[otherwise]The memory brings floods of arousal back with it[one of] - you're undeniably now a submissive diaper fetishist[or][stopping][end if].";
+				arouse ARS;
+			otherwise if ARS < 0:
+				say "[if ARS >= -1500]You wince at the shameful, distressing thought that it might not be the last time that someone does that to you[otherwise]You grimace with disgust, feeling deeply unsettled as you recall how uncomfortable, submissive, and inappropriately intimate that had been. Your arousal plummets[end if].";
+				now ARS is ARS * -1;
+				cool down ARS;
+			otherwise:
+				say "[one of]You have mixed feelings about the experience[or]You reflect that the memory doesn't disgust you as much as it used to[or]You still feel rather ambivalent about it[stopping].";
+	otherwise if A exactly matches the text "grossness addiction":
+		if the player is not grossed out:
+			let SA be the grossness addiction of the player - 1;
 			let ARS be (SA * 500) - 2000; [depending on addiction, we can gain or lose arousal]
 			if ARS > 1500, now ARS is 1500; [max 1500 arousal gain]
 			if ARS > 0:
-				say "[if ARS <= 1000]The thought of [one of]the feeling of a [man of shopkeeper] thrusting [his of shopkeeper] [manly-penis] in and out of your cleavage[or]someone grabbing your breasts and using them for sex[or]pleasuring a [manly-penis] with your breasts[in random order] [one of]enters your head[or]crosses your thoughts[or]pops into your mind[at random], [one of]turning you on[or]making you flush with arousal[in random order][otherwise][one of]You can't help but think about how delightful getting titfucked is[or]You find yourself thinking forward to the next time you get titfucked[or]You daydream about the next time you get to pump a [manly-penis] in between your breasts[in random order], and [one of]get more and more exicited[or]get all worked up[in random order][end if].";
+				say "[if ARS <= 1000]The thought of [one of]the feeling of a [man of male-m] thrusting [his of male-m] [manly-penis] in and out of your cleavage[or]someone grabbing your breasts and using them for sex[or]pleasuring a [manly-penis] with your breasts[in random order] [one of]enters your head[or]crosses your thoughts[or]pops into your mind[at random], [one of]turning you on[or]making you flush with arousal[in random order][otherwise][one of]You can't help but think about how delightful getting titfucked is[or]You find yourself thinking forward to the next time you get titfucked[or]You daydream about the next time you get to pump a [manly-penis] in between your breasts[in random order], and [one of]get more and more exicited[or]get all worked up[in random order][end if].";
 				arouse ARS;
 	otherwise if A exactly matches the text "bbc addiction":
 		let SA be the bbc addiction of the player - 1;
@@ -396,13 +459,13 @@ To reflect on (HS - low-addiction):
 		if ARS > 1500, now ARS is 1500; [max 1500 arousal gain]
 		if ARS < 0 and the arousal of the player > 0:
 			now ARS is ARS * -1;
-			say "The thought of all the [one of]black[or]dark skinned[purely at random] [one of][men of shopkeeper][or]thugs[or]horny bastards[cycling] in this game and [one of]their dirty hands getting on your body[or]what you'll possibly end up doing with them[or]what they want to do to you[or]the scandal it would be if your family learned that you'd been intimate with them[then at random] [one of]causes you to shudder with disgust[or]makes you cringe[or]makes you shiver with concern[or]makes you feel nervous[then at random]";
+			say "The thought of all the [one of]black[or]dark skinned[purely at random] [one of][men of male-m][or]thugs[or]horny bastards[cycling] in this game and [one of]their dirty hands getting on your body[or]what you'll possibly end up doing with them[or]what they want to do to you[or]the scandal it would be if your family learned that you'd been intimate with them[then at random] [one of]causes you to shudder with disgust[or]makes you cringe[or]makes you shiver with concern[or]makes you feel nervous[then at random]";
 			if the arousal of the player > 0 and the player is able to cool down:
 				say ", and leaves you feeling [if ARS > the arousal of the player]completely unaroused[otherwise]less aroused[end if]";
 			say ".";
 			cool down ARS;
 		otherwise if ARS > 0:
-			say "[one of]You daydream about[or]Your thoughts drift to thoughts of[or]You lick your lips as you think about[in random order] [one of]how sexy black people look[or]the dominant presence a strong, tall black [man of shopkeeper] can have in a room[or]how black [men of shopkeeper] are on average stronger and more muscular than white [men of shopkeeper][or]how black [men of shopkeeper] have such bigger, thicker, juicier [manly-penis]s[or]how you love submitting to black [men of shopkeeper][then at random]. [if ARS <= 1000]It leaves you feeling [one of]excited[or]a bit more aroused[or]a little worked up[in random order][otherwise]It makes you [one of]horny[or]more aroused[or]all worked up[in random order], and [one of]weirdly excited for your next opportunity to see a [BlackCock][or]eager for your next experience with [BlackCock][or]desperate to encounter another [BlackCock][or]craving [BlackCock][or]craving even more [BlackCock][stopping][end if].";
+			say "[one of]You daydream about[or]Your thoughts drift to thoughts of[or]You lick your lips as you think about[in random order] [one of]how sexy black people look[or]the dominant presence a strong, tall black [man of male-m] can have in a room[or]how black [men of male-m] are on average stronger and more muscular than white [men of male-m][or]how black [men of male-m] have such bigger, thicker, juicier [manly-penis]s[or]how you love submitting to black [men of male-m][then at random]. [if ARS <= 1000]It leaves you feeling [one of]excited[or]a bit more aroused[or]a little worked up[in random order][otherwise]It makes you [one of]horny[or]more aroused[or]all worked up[in random order], and [one of]weirdly excited for your next opportunity to see a [BlackCock][or]eager for your next experience with [BlackCock][or]desperate to encounter another [BlackCock][or]craving [BlackCock][or]craving even more [BlackCock][stopping][end if].";
 			arouse ARS;
 	otherwise:
 		repeat with LQ running through liquid-objects:

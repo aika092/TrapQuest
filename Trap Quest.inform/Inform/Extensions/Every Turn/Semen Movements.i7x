@@ -33,7 +33,7 @@ An all time based rule (this is the compute cum movements rule):
 				if a random number between 1 and (150 - (the largeness of belly * 5)) is 1:
 					if the bimbo of the player < 12, say "[first custom style][one of]There is no way that I should look this pregnant...[or]I can't get pregnant without a womb, can I?![or]Looking like I'm pregnant is so humiliating...[or]How am I supposed to remain dignified with this belly that makes me look pregnant?![at random][roman type][line break]";
 					otherwise say "[second custom style][one of]It's almost as if I'm pregnant... *giggle*[or]Can a girl get pregnant even if she doesn't have the right parts?[or]I guess I do look pretty silly with this huge belly...[or]Anyone looking at me would think that I'm a pregnant girl![at random][roman type][line break]";
-					humiliate 50 * the largeness of belly; [Special case for humiliation; makes it actually meaningful to take pregnancy fetish as male]
+					humiliate HUMILIATION-BASE * 10 * the largeness of belly; [Special case for humiliation; makes it actually meaningful to take pregnancy fetish as male]
 				otherwise if M is actually summonable and a random number between 1 and 45 is 1 and the largeness of breasts < 17:
 					summon M cursed;
 					now the size of M is the largeness of breasts + 3;
@@ -122,7 +122,6 @@ Definition: yourself is able to expel:
 
 To decide which number is belly strain balance: [tweak this number to balance this mechanic]
 	if there is a rejuvenation clothing penetrating asshole, decide on 160;[rejuvenation dildos suck unless they help you handle enemas in some way, but I'm not certain how to implement "enema-helping" on only the rejuvenation clothing, especially when magical enchantments can sometimes change. Maybe it needs to be a definition instead?]
-	[if the player is in a predicament room, decide on 15;]
 	decide on 40.
 
 To compute enema holding:
@@ -180,6 +179,7 @@ To check enema holding with reason (T - a text):
 					say "[one of]Your belly growls as the [enema] swirls around inside[or][if the player is upright]You stagger slightly[otherwise]Your arms and legs shake slightly[end if] as the [enema] sloshes around inside you[or]Your stomach makes a gurgling sound as your [enema] bubbles away inside[or]Your [enema] puts more and more pressure on your rectum[or]The [enema] eddies and whirls inside your belly[in random order], [one of]making you feel uneasy[or]and you feel quite uncomfortable[or]making you a bit queasy[or]causing your intestines to cramp a bit[in random order].";
 			otherwise: [pain etc. ignores block above and goes straight here]
 				let R be (a random number between 6 and 40) - the rectum-incontinence of the player;
+				if T is not "", now R is R / the expulsion-weakness of the player;
 				if the player is in an unbossed predicament room and the small egg count of belly <= 0, now R is a random number between 2 and 8; [you pop very quickly when running through that neighbourhood with an enema]
 				if expelling-allowed is true and R < strain factor and (T is not "" or the player is able to automatically expel or (there is a worn crotch-in-place milking basque and the total fill of belly >= belly limit - 5)):
 					if T is "":
@@ -204,13 +204,15 @@ To compute enema leaking with reason (T - a text):
 		now urine-count is 0;
 		now semen-count is 0;
 		now water-count is 0;
+		now small-egg-count is 0;
 		[total-count is the total count of all elements currently inside.]
 		let total-count be 0;
 		if the milk volume of belly > 0, now milk-count is 1;
 		if the urine volume of belly > 0, now urine-count is 1;
 		if the semen volume of belly > 0, now semen-count is 1;
 		if the water volume of belly > 0, now water-count is 1;
-		now total-count is milk-count + urine-count + semen-count + water-count;
+		if the small egg count of belly > 0, now small-egg-count is 1;
+		now total-count is milk-count + urine-count + semen-count + water-count + small-egg-count;
 		if total-count > 0:
 			now player-just-enema-leaked is true;
 			let C be a random worn bottom level ass protection clothing;
@@ -221,34 +223,50 @@ To compute enema leaking with reason (T - a text):
 			if CK is clothing and K is not currently visible, now K is CK;
 			if K is clothing, now KSK is the total-soak of K;
 			let P be a random thing penetrating asshole;
-			if cumdump-headband is worn and T is "", say "[one of]your sphincter momentarily relaxes[or]your asshole briefly opens[or]your sphincter spasms on its own[in random order] and [one of]a little bit of[or]a small squirt of[in random order] ";
-			otherwise say "[T] [one of]your sphincter momentarily spasms[or]you lose control of your sphincter for a split second[or]your sphincter spasms on its own[in random order] and [one of]a little bit of[or]a small squirt of[in random order] ";
-			if urine-count is 0 and semen-count is 0 and milk-count is 0, say "[if diaper messing >= 3]enema water[otherwise]clear water[end if] ";
-			otherwise say "[if urine-count > 0 and semen-count > 0 and milk-count > 0]what must be a disgraceful mix of [urine], [milk] and [semen][otherwise if urine-count > 0 and semen-count > 0]what seems like a mix of [urine] and [semen][otherwise if urine-count > 0 and milk-count > 0]what seems like a mix of [urine] and [milk][otherwise if milk-count > 0 and semen-count > 0]what seems like a mix of [milk] and [semen][otherwise if urine-count > 0][urine][otherwise if semen-count > 0][semen][otherwise if milk-count > 0][milk][otherwise]BUG - can't find any liquid. Report this bug please[end if] ";
-			say "[one of]escapes[or]spills out[or]comes out[at random][if P is a thing] around the sides of [NameDesc of P][end if]";
-			if C is clothing:
-				say " into [NameDesc of C]. ";
-			otherwise:
-				say ". ";
-				now C is thighs;
-			if current-predicament is joint-fuckhole-predicament and the player is in Predicament01:
-				say "It drops down onto [NameDesc of torn-shirt].";
-				SemenSoakUp torn-shirt by total-count;
-			otherwise if milk-count + urine-count + semen-count > 1:
-				AnnouncedExpel murkwater on C by total-count;
-			otherwise: [water gets converted into other liquids for simplicity]
-				if semen-count > 0:
-					AnnouncedExpel semen on C by total-count;
-				otherwise if milk-count > 0:
-					AnnouncedExpel milk on C by total-count;
-				otherwise if urine-count > 0:
-					AnnouncedExpel urine on C by total-count;
+			if cumdump-headband is worn and T is "", say "[one of]your sphincter momentarily relaxes[or]your asshole briefly opens[or]your sphincter spasms on its own[in random order] and ";
+			otherwise say "[T] [one of]your sphincter momentarily spasms[or]you lose control of your sphincter for a split second[or]your sphincter spasms on its own[in random order] and ";
+			if small-egg-count is 1:
+				lay 1 small eggs;
+				progress quest of egg-laying-quest;
+				if voluntarySquatting is 0, progress quest of egg-holding-quest;
+				let Y be a random camera trap in the location of the player;
+				if Y is not a thing, now Y is a random camera-bystander in the location of the player;
+				if target-poster is an expulsion poster and target-poster is off-stage and Y is a thing and (Y is not a camera trap or the reset-timer of Y < 99900):
+					say "[FlashFlav of Y][if Y is camera trap][ExpulsionFlashFlav of Y][end if]";
+					set up target-poster;
+				if total-count > 1, say "The [if the player is in a predicament room]ball[otherwise]egg[end if] is followed by ";
+			if milk-count + urine-count + semen-count + water-count > 0:
+				say "[one of]a little bit of[or]a small squirt of[in random order] ";
+				if urine-count is 0 and semen-count is 0 and milk-count is 0 and water-count is 1:
+					say "[if diaper messing >= 3]enema water[otherwise]clear water[end if] ";
+				otherwise if urine-count is 0 and semen-count is 0 and milk-count is 0 and water-count is 0:
+					say "[if diaper messing >= 3]enema water[otherwise]clear water[end if] ";
 				otherwise:
-					AnnouncedExpel water on C by total-count;
-			decrease the milk volume of belly by milk-count;
-			decrease the urine volume of belly by urine-count;
-			decrease the semen volume of belly by semen-count;
-			decrease the water volume of belly by water-count;
+					say "[if urine-count > 0 and semen-count > 0 and milk-count > 0]what must be a disgraceful mix of [urine], [milk] and [semen][otherwise if urine-count > 0 and semen-count > 0]what seems like a mix of [urine] and [semen][otherwise if urine-count > 0 and milk-count > 0]what seems like a mix of [urine] and [milk][otherwise if milk-count > 0 and semen-count > 0]what seems like a mix of [milk] and [semen][otherwise if urine-count > 0][urine][otherwise if semen-count > 0][semen][otherwise if milk-count > 0][milk][otherwise]BUG - can't find any liquid. Report this bug please[end if] ";
+				say "[one of]escapes[or]spills out[or]comes out[at random][if P is a thing] around the sides of [NameDesc of P][end if]";
+				if C is clothing:
+					say " into [NameDesc of C]. ";
+				otherwise:
+					say ". ";
+					now C is thighs;
+				if current-predicament is joint-fuckhole-predicament and the player is in Predicament01:
+					say "It drops down onto [NameDesc of torn-shirt].";
+					SemenSoakUp torn-shirt by total-count;
+				otherwise if milk-count + urine-count + semen-count > 1:
+					AnnouncedExpel murkwater on C by total-count;
+				otherwise: [water gets converted into other liquids for simplicity]
+					if semen-count > 0:
+						AnnouncedExpel semen on C by total-count;
+					otherwise if milk-count > 0:
+						AnnouncedExpel milk on C by total-count;
+					otherwise if urine-count > 0:
+						AnnouncedExpel urine on C by total-count;
+					otherwise:
+						AnnouncedExpel water on C by total-count;
+				decrease the milk volume of belly by milk-count;
+				decrease the urine volume of belly by urine-count;
+				decrease the semen volume of belly by semen-count;
+				decrease the water volume of belly by water-count;
 			if the total squirtable fill of belly is 0 and the holding strain of belly > 0:
 				if rectum < 2, say "Your belly is now empty.";
 				reset all enema effects;

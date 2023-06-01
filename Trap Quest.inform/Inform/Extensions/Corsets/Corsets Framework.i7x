@@ -45,7 +45,8 @@ To set up magic attribute of (C - a corset):
 	if R is 3, now C is posture training;
 	if R is 4, now C is constriction;
 	if R is 5, now C is provocation;
-	if R is 3 or R is 4, curse C.
+	if R is 3 or R is 4, curse C;
+	set up rare magic attribute of C.
 
 To restock (C - a corset):
 	let B be a random basic loot corset;

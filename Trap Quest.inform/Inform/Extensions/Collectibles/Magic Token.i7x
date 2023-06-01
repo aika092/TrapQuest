@@ -15,7 +15,8 @@ To say ShortDesc of (C - a magic token):
 To compute mass collectible reward of (T - a magic token):
 	allocate 6 seconds;
 	let N be (the number of held magic tokens + 1) / 2;
-	let S be a random uncastable fetish appropriate magic-spell;
+	let S be a random costable uncastable fetish appropriate magic-spell;
+	if S is nothing, let S be a random uncastable fetish appropriate magic-spell;
 	say "You place [if number of held magic tokens is 1]the metal token[otherwise if number of held magic tokens is 2]both metal tokens[otherwise]all [number of held magic tokens] metal tokens[end if] into the bowl and there [if number of held magic tokens is 1]it instantly turns[otherwise]they instantly turn[end if] into a sparkly glitter, which explodes into the air, coating you. As the glitter hits you, you feel magic energy rushing through your body! ";
 	if the number of held magic tokens > (a random number between 1 and 5) and S is magic-spell:
 		decrease N by 1;

@@ -20,38 +20,38 @@ To say ShortDesc of (M - a wrestler):
 To say MediumDesc of (M - a wrestler):
 	say "wrestler".
 
-Figure of wrestler is the file "NPCs/Hotel/wrestler1.png".
-Figure of diapered wrestler is the file "NPCs/Hotel/wrestler2.png".
+Figure of wrestler is the file "NPCs/Hotel/Wrestler/wrestler1.png".
+Figure of diapered wrestler is the file "NPCs/Hotel/Wrestler/wrestler2.png".
 
-Figure of wrestler interact 1 is the file "Special/Cutscene/cutscene-wrestler-interact1.png".
-Figure of wrestler interact 2 is the file "Special/Cutscene/cutscene-wrestler-interact2.png".
-Figure of wrestler interact 3 is the file "Special/Cutscene/cutscene-wrestler-interact3.png".
-Figure of wrestler interact 4 is the file "Special/Cutscene/cutscene-wrestler-interact4.png".
-Figure of wrestler interact 5 is the file "Special/Cutscene/cutscene-wrestler-interact5.png".
-Figure of wrestler interact 6 is the file "Special/Cutscene/cutscene-wrestler-interact6.png".
-Figure of wrestler interact 7 is the file "Special/Cutscene/cutscene-wrestler-interact7.png".
-Figure of wrestler interact 8 is the file "Special/Cutscene/cutscene-wrestler-interact8.png".
-Figure of wrestler interact 9 is the file "Special/Cutscene/cutscene-wrestler-interact9.png".
-Figure of wrestler interact 10 is the file "Special/Cutscene/cutscene-wrestler-interact10.png".
-Figure of wrestler interact 11 is the file "Special/Cutscene/cutscene-wrestler-interact11.png".
-Figure of wrestler interact 12 is the file "Special/Cutscene/cutscene-wrestler-interact12.png".
-Figure of wrestler interact 13 is the file "Special/Cutscene/cutscene-wrestler-interact13.png".
-Figure of wrestler interact 14 is the file "Special/Cutscene/cutscene-wrestler-interact14.png".
-Figure of wrestler interact 15 is the file "Special/Cutscene/cutscene-wrestler-interact15.png".
-Figure of wrestler interact 16 is the file "Special/Cutscene/cutscene-wrestler-interact16.png".
+Figure of wrestler interact 1 is the file "NPCs/Hotel/Wrestler/cutscene-wrestler-interact1.png".
+Figure of wrestler interact 2 is the file "NPCs/Hotel/Wrestler/cutscene-wrestler-interact2.png".
+Figure of wrestler interact 3 is the file "NPCs/Hotel/Wrestler/cutscene-wrestler-interact3.png".
+Figure of wrestler interact 4 is the file "NPCs/Hotel/Wrestler/cutscene-wrestler-interact4.png".
+Figure of wrestler interact 5 is the file "NPCs/Hotel/Wrestler/cutscene-wrestler-interact5.png".
+Figure of wrestler interact 6 is the file "NPCs/Hotel/Wrestler/cutscene-wrestler-interact6.png".
+Figure of wrestler interact 7 is the file "NPCs/Hotel/Wrestler/cutscene-wrestler-interact7.png".
+Figure of wrestler interact 8 is the file "NPCs/Hotel/Wrestler/cutscene-wrestler-interact8.png".
+Figure of wrestler interact 9 is the file "NPCs/Hotel/Wrestler/cutscene-wrestler-interact9.png".
+Figure of wrestler interact 10 is the file "NPCs/Hotel/Wrestler/cutscene-wrestler-interact10.png".
+Figure of wrestler interact 11 is the file "NPCs/Hotel/Wrestler/cutscene-wrestler-interact11.png".
+Figure of wrestler interact 12 is the file "NPCs/Hotel/Wrestler/cutscene-wrestler-interact12.png".
+Figure of wrestler interact 13 is the file "NPCs/Hotel/Wrestler/cutscene-wrestler-interact13.png".
+Figure of wrestler interact 14 is the file "NPCs/Hotel/Wrestler/cutscene-wrestler-interact14.png".
+Figure of wrestler interact 15 is the file "NPCs/Hotel/Wrestler/cutscene-wrestler-interact15.png".
+Figure of wrestler interact 16 is the file "NPCs/Hotel/Wrestler/cutscene-wrestler-interact16.png".
 
-Figure of Wrestler Cutscene 1 is the file "Special/Cutscene/cutscene-wrestler-relax1.png".
-Figure of Wrestler Cutscene 2 is the file "Special/Cutscene/cutscene-wrestler-piss3.png".
-Figure of Wrestler Cutscene 3 is the file "Special/Cutscene/cutscene-wrestler-stance1.png".
-Figure of Wrestler Cutscene 4 is the file "Special/Cutscene/cutscene-wrestler-carry1.png".
-Figure of Wrestler Cutscene 5 is the file "Special/Cutscene/cutscene-wrestler-carry2.png".
-Figure of Wrestler Cutscene 6 is the file "Special/Cutscene/cutscene-wrestler-piss1.png".
-Figure of Wrestler Cutscene 7 is the file "Special/Cutscene/cutscene-wrestler-piss2.png".
-Figure of Wrestler Cutscene 8 is the file "Special/Cutscene/cutscene-wrestler-friendly1.png".
-Figure of Wrestler Cutscene 9 is the file "Special/Cutscene/cutscene-wrestler-friendly2.png".
-Figure of Wrestler Cutscene 10 is the file "Special/Cutscene/cutscene-wrestler-friendly3.png".
-Figure of Wrestler Cutscene 11 is the file "Special/Cutscene/cutscene-wrestler-friendly4.png".
-Figure of Wrestler Cutscene 12 is the file "Special/Cutscene/cutscene-wrestler-friendly5.png".
+Figure of Wrestler Cutscene 1 is the file "NPCs/Hotel/Wrestler/cutscene-wrestler-relax1.png".
+Figure of Wrestler Cutscene 2 is the file "NPCs/Hotel/Wrestler/cutscene-wrestler-piss3.png".
+Figure of Wrestler Cutscene 3 is the file "NPCs/Hotel/Wrestler/cutscene-wrestler-stance1.png".
+Figure of Wrestler Cutscene 4 is the file "NPCs/Hotel/Wrestler/cutscene-wrestler-carry1.png".
+Figure of Wrestler Cutscene 5 is the file "NPCs/Hotel/Wrestler/cutscene-wrestler-carry2.png".
+Figure of Wrestler Cutscene 6 is the file "NPCs/Hotel/Wrestler/cutscene-wrestler-piss1.png".
+Figure of Wrestler Cutscene 7 is the file "NPCs/Hotel/Wrestler/cutscene-wrestler-piss2.png".
+Figure of Wrestler Cutscene 8 is the file "NPCs/Hotel/Wrestler/cutscene-wrestler-friendly1.png".
+Figure of Wrestler Cutscene 9 is the file "NPCs/Hotel/Wrestler/cutscene-wrestler-friendly2.png".
+Figure of Wrestler Cutscene 10 is the file "NPCs/Hotel/Wrestler/cutscene-wrestler-friendly3.png".
+Figure of Wrestler Cutscene 11 is the file "NPCs/Hotel/Wrestler/cutscene-wrestler-friendly4.png".
+Figure of Wrestler Cutscene 12 is the file "NPCs/Hotel/Wrestler/cutscene-wrestler-friendly5.png".
 
 To decide which figure-name is the monster-image of (M - a wrestler):
 	if M is caged and M is in the location of dominatrix-cage, decide on the examine-image of dominatrix-cage;
@@ -133,17 +133,13 @@ To say SummoningFlav of (M - a wrestler):
 To say ToiletReactionFlav of (M - a wrestler):
 	say "[BigNameDesc of M] licks [his of M] lips.[line break][speech style of M]'[if watersports fetish is 1]You know, it's unusual getting to watch someone else pee without me being on my knees underneath them[otherwise]Is the big [boy of the player] trying to prove [he of the player] doesn't need diapers? How adorable[end if]!'[roman type][line break]".
 
-To IdentifiablePosterReaction of (M - a wrestler):
+To say IdentifiablePosterReactionFlav of (M - a wrestler):
 	say "[BigNameDesc of M] looks at you, blinks, then looks back to the banner. Upon realising that it is you, [he of M] grins widely and gives you a sly wink.";
-	alwayscutshow figure of wrestler interact 10 for M;
-	say "You turn bright red with shame.";
-	humiliate the lewdness of a random poster in the location of the player * 2.
+	alwayscutshow figure of wrestler interact 10 for M.
 
-To UnidentifiablePosterReaction of (M - a wrestler) with (P - a poster):
+To say UnidentifiablePosterReactionFlav of (M - a wrestler) with (P - a poster):
 	say "[speech style of M]'I'm jealous of whoever that is. I wish there were banners of me up around the place!'[roman type][line break]";
-	alwayscutshow figure of wrestler interact 9 for M;
-	say "You turn slightly red but don't say a word.";
-	humiliate the lewdness of a random poster in the location of the player / 2.
+	alwayscutshow figure of wrestler interact 9 for M.
 
 To compute (M - demon lord) stomping (N - a wrestler):
 	if M is in the location of the player, say "With a flick of [his of M] tail, [NameDesc of M] grabs [NameDesc of N] and pulls [him of N] towards [him of M].[line break][speech style of N]'Ooooh, this should be fun!'[roman type][line break][BigNameDesc of N] squeaks with excitement.[line break]Remaining fully standing, [NameDesc of M] lowers [NameDesc of N] onto [his of M] giant erect red [DickDesc of M] and starts fucking [his of N] cunt furiously. [big he of N] screams in both pleasure and pain - [NameDesc of M][']s member is clearly much bigger than expected and almost splits [him of N] in two. Soon the intense stretching and fucking is too much even for this seasoned sex slave slut and [he of N] starts wailing in distress. But it's already too late - [NameDesc of M] is coming inside [him of N] while forcing [him of N] further and further down [his of M] [DickDesc of M]. [BigNameDesc of N][']s belly balloons out, noisily stretching [his of N] latex catsuit. After [NameDesc of M] has finished, [his of M] tail lets go of [NameDesc of N][']s waist and [he of N] falls to the ground, where [he of N] promptly faints.";
@@ -282,11 +278,11 @@ To compute kneeling reaction of (M - a wrestler):
 To compute flying player taunting of (M - a wrestler):
 	if a random number from 1 to 6 is 1:
 		say "[BigNameDesc of M] jeers at you.[line break][speech style of M]'[one of]Look at this [if weight gain fetish is 1]fat [end if]bitch stuck on the ceiling! Haha![or]When you get down I'll show you who's boss![or]I can't believe you're still up there![or]I hope you're as disgusted with yourself as I am with you. You can't even move![or]What kind of dumb bitch gets [himself of the player] stuck on the ceiling?[or]You look absolutely disgraceful, you know that, right?[or][if weight gain fetish is 1]Fatty[otherwise]Someone[end if][']s going to get a pounding when [he of the player] gets back down here![in random order]'[roman type][line break][if the humiliation of the player < 17500]You [one of]wince[or]shudder[or]cringe[purely at random] with shame.";
-		humiliate 20.
+		slightHumiliate.
 
 To say LandingTaunt of (M - a wrestler):
 	say "[BigNameDesc of M] giggles.[line break][speech style of M]'That's it, come here [if weight gain fetish is 1]fatty[otherwise][bitch][end if]...'[roman type][line break]";
-	humiliate 50.
+	moderateHumiliate.
 
 The wrestler unique punish rules is a rulebook.
 This is the wrestler unique punishment rule:
@@ -805,7 +801,7 @@ To compute diaper mess reaction of (M - a wrestler):
 	otherwise:
 		say "[BigNameDesc of M] looks surprised.[line break][speech style of M]'Oh I didn't realise we were supposed to be playing... My turn next! But first you have to get under my butt...'[roman type][line break]";
 		anger M;
-	humiliate 200.
+	severeHumiliate.
 
 To say DiaperReaction of (M - a wrestler):
 	if there is a currently visible diaper or the player is shameless:
@@ -1170,6 +1166,7 @@ To say FriendlySexReleaseRefusalSpeech of (M - a wrestler):
 Part 5 - Conversation
 
 To compute loot dropping of (P - a ben wa balls) by (M - a wrestler):
+	unless M is dying, now the owner of P is M;
 	say "[speech style of M]'FINE! I'll give you my favourite toy.'[roman type][line break][BigNameDesc of M] unzips [his of M] bodysuit and pulls a [P] out of [his of P] asshole.[line break][speech style of M]'Happy now?'[roman type][line break]".
 
 talk-wrestler-cage is a talk-object.

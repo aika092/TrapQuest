@@ -65,6 +65,7 @@ Figure of milking bench cutscene 2 is the file "Special/Cutscene/cutscene-milkin
 Figure of milking bench cutscene 3 is the file "Special/Cutscene/cutscene-milking-bench3.jpg".
 Figure of milking bench cutscene 4 is the file "Special/Cutscene/cutscene-milking-bench4.jpg".
 Figure of milking bench cutscene 5 is the file "Special/Cutscene/cutscene-milking-bench5.jpg".
+Figure of milking bench cutscene 6 is the file "Special/Cutscene/cutscene-milking-bench6.jpg".
 
 To compute furniture resting on (M - a milking bench):
 	let enhancing-enabled be false;

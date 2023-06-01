@@ -229,12 +229,8 @@ This is the robobutler punishment rule:
 				break;
 		if P is plug:
 			say "[speech style of M]'CORRECTING ANOMALOUS DISCHARGE.'[roman type][line break][BigNameDesc of M] pulls out a [printed name of P], and pushes it into your [variable O]!";
-			now P is cursed;
-			if O is vagina:
-				summon P vaginally;
-			otherwise:
-				summon P;
-			compute summoned quest of P;
+			if O is vagina, summon P cursed vaginally with quest;
+			otherwise summon P cursed with quest;
 			satisfy M for 500 seconds;
 			rule succeeds;
 		otherwise:

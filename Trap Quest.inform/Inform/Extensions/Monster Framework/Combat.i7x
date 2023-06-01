@@ -210,7 +210,6 @@ To compute demonBoon of (M - a monster):
 		say "You feel a surge in [NameDesc of M]'s unholy aura!";
 		SilentlyDifficultyUp M by 1;
 		FavourUp M by 1;
-	decrease the charge of hotel altar by 150;
 	RitualUp 2.
 
 To compute priestessBlessing of (M - a monster):
@@ -237,6 +236,7 @@ To RitualUp (X - a number):
 				say "Blue light condenses around the end of [NameDesc of R], as another [PlugSize size of R] bead appears next to the hoop.";
 				increase the notches of R by 1;
 				force immediate clothing-focus redraw; [This forces the clothing window to redraw]
+				update appearance level;
 			otherwise:
 				say "[BigNameDesc of R] shifts slightly inside of you, but doesn't seem to get any longer. Maybe because it's not properly inside you?";
 		otherwise:
@@ -285,7 +285,12 @@ To compute replacement of (D - a clothing):
 		otherwise:
 			say "[BigNameDesc of current-monster], unable to replace your [D], just drops it onto the ground.";
 			now D is not temporarily-removed;
-			now D is in the location of the player.
+			now D is not temporarily-unlocked;
+			now D is in the location of the player;
+	if D is worn and D is temporarily-unlocked:
+		say "With a click, [if current-monster is intelligent][NameDesc of current-monster] locks [NameDesc of D][otherwise]the lock on [NameDesc of D] has somehow relocked itself[end if]!";
+		now D is locked;
+		now D is not temporarily-unlocked.
 
 This is the default facial climax rule:
 	if current-monster is penetrating face:
@@ -427,6 +432,7 @@ This is the default anal climax rule:
 		compute anal climax of current-monster;
 		if current-monster is awake and the rounds of sex left of current-monster is 0:
 			replace any buttplugs;
+			replace any chastity;
 			replace any diapers;
 			replace any clothes.
 The default anal climax rule is listed in the default end-of-sex rules.
@@ -434,6 +440,10 @@ The default anal climax rule is listed in the default end-of-sex rules.
 To replace any buttplugs:
 	repeat with G running through temporarily-removed sex toys carried by current-monster:
 		compute replacement of G in asshole.
+
+To replace any chastity:
+	repeat with C running through temporarily-removed chastity bond carried by current-monster:
+		compute replacement of C.
 
 To replace any diapers:
 	repeat with D running through temporarily-removed diapers carried by current-monster:
@@ -454,6 +464,7 @@ This is the default vaginal climax rule:
 		compute vaginal climax of current-monster;
 		if current-monster is awake and the rounds of sex left of current-monster is 0:
 			replace any cuntplugs;
+			replace any chastity;
 			replace any diapers;
 			replace any clothes.
 The default vaginal climax rule is listed in the default end-of-sex rules.
@@ -622,7 +633,7 @@ This is the default titfuck rule:
 The default titfuck rule is listed in the default progress sex rules.
 
 To compute titfuck of (M - a monster):
-	[humiliate 75;]
+	[strongHumiliate;]
 	if the sex-length of M is 1 and M is anticipating-climax:
 		say TitfuckNearingClimaxFlav of M;
 		decrease the sex-length of M by 1;
@@ -853,6 +864,34 @@ The monster punishes diaper rule is listed last in the monster punishment rules.
 
 This is the default diaper punishment rule:
 	do nothing. [If the monster does something specific to players wearing diapers, consider replacing this rule with a rule that succeeds.]
+
+This is the stolen item recovery rule:
+	follow the stolen item recovery rule of current-monster;
+	if the rule succeeded, rule succeeds.
+The stolen item recovery rule is listed last in the monster punishment rules.
+
+This is the default stolen item recovery rule:
+	repeat with C running through held things:
+		if the owner of C is current-monster and (C is not worn or C is actually strippable):
+			if C is currently perceivable:
+				compute current-monster reclaiming C;
+				rule succeeds;
+			otherwise if current-monster is intelligent and C is currently-in-bag and (current-monster is shopkeeper or the player is not getting lucky):
+				let BH be a random worn bag of holding;
+				say "[BigNameDesc of current-monster] spots [NameDesc of C] at the top of your [NameDesc of BH][if current-monster is shopkeeper].[otherwise]![end if]";
+				FavourDown current-monster;
+				compute current-monster reclaiming C;
+				rule succeeds.
+
+To compute (M - a monster) reclaiming (C - a thing):
+	say ReclaimDeclaractionFlav of M for C;
+	say ReclaimFlav of M for C;
+	compute final resolution of M taking C.
+
+To say ReclaimDeclaractionFlav of (M - a monster) for (C - a thing):
+	if M is intelligent, say "[speech style of M]'[one of]I'll be taking this back.'[or]Give it back, thief!'[or]I'm going to make you regret taking this.'[or]Did you really thing you'd get away with stealing this from me?'[in random order][roman type][line break]".
+To say ReclaimFlav of (M - a monster) for (C - a thing):
+	say "[BigNameDesc of M] [if C is worn][one of]pulls[or]yanks[or]wriggles[at random] [NameDesc of C] off of you[otherwise]takes [NameDesc of C] back[one of] into [his of M] possession[or] from you[or][stopping][end if].".
 
 This is the unique punishment rule:
 	follow the unique punishment rule of current-monster;
@@ -1203,6 +1242,7 @@ To compute (M - a monster) attacking (C - a clothing): [This should change for a
 		ZipDown C;
 	otherwise if C is locked and M is not a clothes-destroyer:
 		compute M unlocking C;
+		now C is temporarily-unlocked;
 	otherwise:
 		say PullAttempt of M at C;
 		let R be (a random number between the difficulty of M and 6) + (a random number between the difficulty of M and 6);
@@ -1228,6 +1268,7 @@ To compute (M - a monster) attacking (C - a diaper):
 		ZipDown C;
 	otherwise if C is locked and M is not a clothes-destroyer:
 		compute M unlocking C;
+		now C is temporarily-unlocked;
 	otherwise if C is tearable and C is actually strippable:
 		say "[BigNameDesc of M] effortlessly pulls off your [ShortDesc of C]!";
 		if M is intelligent:
@@ -1272,7 +1313,7 @@ To say UnzipFlav of (M - a monster) at (C - a clothing):
 	say "[BigNameDesc of M] pulls down the zipper on your [ShortDesc of C][if the number of ass covering clothing is 1], exposing your [fuckholes][end if]!".
 
 To say PullAttempt of (M - a monster) at (C - a clothing):
-	say "[BigNameDesc of M] pulls at your [ShortDesc of C] to try and rip it off!".
+	say "[BigNameDesc of M] pulls at your [ShortDesc of C]!".
 
 To compute (M - a monster) destroying (C - a clothing):
 	say "[BigNameDesc of M] rips it off, destroying it completely!";

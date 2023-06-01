@@ -25,7 +25,7 @@ Increases once per turn. At 300 (might change), resets and a new mindless cultis
 new-acolytes is a list of people that varies.
 To update new acolytes:
 	repeat with M running through explorers:
-		if M is regional:
+		if M is not previously-cultist and M is regional:
 			add M to new-acolytes, if absent;
 		otherwise:
 			if M is listed in new-acolytes, remove M from new-acolytes.
@@ -64,7 +64,7 @@ To force commence doom:
 		if catbell is off-stage:
 			blandify and reveal catbell;
 			now catbell is in Dungeon41;
-			now catbell is store;
+			now the owner of catbell is shopkeeper;
 		add black candle to the taxableItems of dominatrix;
 		add black candle to the tradableItems of dominatrix;
 		repeat with M running through dungeon dwelling gladiators:
@@ -119,7 +119,7 @@ A later time based rule (this is the compute doom rule):
 		if the player is in Stairwell03 or the player is in R:
 			let W be a random alive wench;
 			update new acolytes;
-			if tough-shit is 1 and the number of entries in new-acolytes is 0 and W is monster:
+			if tough-shit is 1 and the number of entries in new-acolytes is 0 and W is monster and W is not previously-cultist:
 				compute banishment of W;
 				add W to new-acolytes, if absent;
 			if the number of entries in new-acolytes is 0 and tough-shit is 1:

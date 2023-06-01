@@ -19,29 +19,10 @@ To FavourDown (M - a patron) by (N - a number):
 		decrease the favour of M by N;
 		if M is in the location of the player, say "You get the impression that [NameDesc of M] [one of]is unimpressed with you[or]didn't like that[or]will be inclined to pay you less in the future[in random order].".
 
-Figure of white inexperienced patron is the file "NPCs/Hotel/Patron/patron1.png".
-Figure of subby inexperienced patron is the file "NPCs/Hotel/Patron/patron1c.png".
-Figure of black inexperienced patron is the file "NPCs/Hotel/Patron/patron2.png".
 Figure of white experienced patron is the file "NPCs/Hotel/Patron/patron3.png".
-Figure of eldritch experienced patron is the file "NPCs/Hotel/Patron/patron3d.png".
 Figure of black experienced patron is the file "NPCs/Hotel/Patron/patron4.png".
-Figure of white gross patron is the file "NPCs/Hotel/Patron/patron5.png".
-Figure of black gross patron is the file "NPCs/Hotel/Patron/patron6.png".
-Figure of furry patron is the file "NPCs/Hotel/Patron/patron6c.png".
 Figure of white dickhead patron is the file "NPCs/Hotel/Patron/patron7.png".
 Figure of black dickhead patron is the file "NPCs/Hotel/Patron/patron8.png".
-Figure of crimson dickhead patron is the file "NPCs/Hotel/Patron/patron8c.png".
-
-Figure of femme white inexperienced patron is the file "NPCs/Hotel/Patron/patron1b.png".
-Figure of femme black inexperienced patron is the file "NPCs/Hotel/Patron/patron2b.png".
-Figure of femme white experienced patron is the file "NPCs/Hotel/Patron/patron3b.png".
-Figure of femme black experienced patron is the file "NPCs/Hotel/Patron/patron4b.png".
-Figure of femme white experienced patron cropped is the file "NPCs/Hotel/Patron/patron3c.png".
-Figure of femme black experienced patron cropped is the file "NPCs/Hotel/Patron/patron4c.png".
-Figure of femme white gross patron is the file "NPCs/Hotel/Patron/patron5b.png".
-Figure of femme black gross patron is the file "NPCs/Hotel/Patron/patron6b.png".
-Figure of femme white dickhead patron is the file "NPCs/Hotel/Patron/patron7b.png".
-Figure of femme black dickhead patron is the file "NPCs/Hotel/Patron/patron8b.png".
 
 To say ShortDesc of (M - a patron):
 	say "patron".
@@ -74,19 +55,15 @@ Definition: an experienced patron is condom obsessed: decide yes. [Does he alway
 well dressed patron is an experienced patron. A suited patron is an experienced patron. The text-shortcut of well dressed patron is "wdp". The text-shortcut of suited patron is "spa".
 To decide which figure-name is the monster-image of (M - an experienced patron):
 	if lady fetish is 1:
-		if diaper quest is 1:
-			if M is well dressed patron, decide on figure of femme black experienced patron cropped;
-			otherwise decide on figure of femme white experienced patron cropped;
 		if M is well dressed patron or interracial fetish is 1, decide on figure of femme black experienced patron;
 		otherwise decide on figure of femme white experienced patron;
 	if M is well dressed patron or interracial fetish is 1, decide on figure of black experienced patron;
 	otherwise decide on figure of white experienced patron.
 To say PatronDesc of (M - an experienced patron):
-	if diaper quest is 1, say "This [man of M] is wearing a smart suit and has quite a serious mature face.";
+	if diaper quest is 1, say "This [man of M] is wearing a smart suit and has quite a serious mature face.[line break][if the player is not a pervert][first custom style][one of][big he of M] isn't thinking that this is going to get sexual, is [he of M]?[or]Not again![stopping][otherwise if the player is feeling submissive][second custom style][one of]I hope [he of M] gives obedient babies their cummies![or]Yay, [daddy of M]'s home![stopping][otherwise][variable custom style]Something tells me [he of M]'s going to want to be in charge...[end if][roman type][line break]";
 	otherwise say "This particular [man of M] is wearing a smart suit and [he of M] doesn't stare at you like you might expect, seeming only mildly interested. You guess that [he of M]'s been with a lot of whores in [his of M] time, and just wants a body to use to get [his of M] rocks off.[line break]".
 To say MonsterComment of (M - an experienced patron):
-	if diaper quest is 1, say "[if the player is not a pervert][line break][first custom style][one of][big he of M] isn't thinking that this is going to get sexual, is [he of M]?[or]Not again![stopping][otherwise if the player is feeling submissive][line break][second custom style][one of]I hope [he of M] gives obedient babies their cummies![or]Yay, [daddy of M]'s home![stopping][otherwise][line break][variable custom style]Something tells me [he of M]'s going to want to be in charge...[end if][roman type][line break]";
-	otherwise say "[if the player is not a pervert][first custom style]Trust me, I'm not interested in you either, buddy.[otherwise if the player is broken][variable custom style]Well [he of M]'s right, I'm just an object to be used.[otherwise if the player is shameless][second custom style][big he of M] certainly knows how to frustrate an attention whore like me![otherwise][variable custom style]The least [he of M] could do is at least appreciate my beauty![end if][roman type][line break]".
+	say "[if the player is not a pervert][first custom style]Trust me, I'm not interested in you either, buddy.[otherwise if the player is broken][variable custom style]Well [he of M]'s right, I'm just an object to be used.[otherwise if the player is shameless][second custom style][big he of M] certainly knows how to frustrate an attention whore like me![otherwise][variable custom style]The least [he of M] could do is at least appreciate my beauty![end if][roman type][line break]".
 To say MediumDesc of (M - well dressed patron):
 	say "well dressed patron".
 To say MediumDesc of (M - suited patron):
@@ -129,10 +106,10 @@ To decide which figure-name is the monster-image of (M - a dickhead patron):
 	if lady fetish is 1:
 		if M is menacing patron or interracial fetish is 1, decide on figure of femme black dickhead patron;
 		otherwise decide on figure of femme white dickhead patron;
-	if M is menacing patron or interracial fetish is 1, decide on figure of black dickhead patron;
+	if diaper quest is 0 and (M is menacing patron or interracial fetish is 1), decide on figure of black dickhead patron;
 	otherwise decide on figure of white dickhead patron.
 To say PatronDesc of (M - a dickhead patron):
-	say "This particular [man of M] stares at you with vindictive eyes. It looks like [if lady fetish is 1][he of M]'s the type to enjoy being rough in the bedroom[otherwise][he of M]'s both aroused and disgusted by you[end if].".
+	say "This particular [man of M] stares at you with vindictive eyes. It looks like [if lady fetish is 1][he of M]'s the type to enjoy being cruel to others[otherwise][he of M]'s both aroused and disgusted by you[end if].".
 To say MonsterComment of (M - a dickhead patron):
 	if lady fetish is 1, say "[if the player is not a pervert][first custom style]So [he of M]'s a pervert AND an asshole.[otherwise if the player is not a nympho][variable custom style]Rough sex can be fun, but [he of M] doesn't have to be a dick about it.[otherwise if the player is feeling submissive][second custom style]The irony is, I'd let [him of M] treat me like a piece of shit for free![otherwise][second custom style]If [he of M]'s paying, [he of M]'s more than welcome to treat me like a piece of trash![end if][roman type][line break]";
 	otherwise say "[if the player is not a pervert][first custom style]I'm just disgusted.[otherwise if the humiliation of the player > 31500][variable custom style]I'm disgusted by me too.[otherwise if the sex addiction of the player > 12][second custom style]I'm just aroused![otherwise][variable custom style]The feeling is mutual![end if][roman type][line break]";
@@ -149,10 +126,10 @@ To set up (M - a patron):
 	if the monstersetup of M is 0, now the raw difficulty of M is the starting difficulty of M;
 	now the monstersetup of M is 1;
 	now M is unleashed;
-	now M is not pissed off;[In case the patron was angry during his last session with the player. He's calmed down since then.]
+	now M is not pissed off; [In case the patron was angry during his last session with the player. He's calmed down since then.]
 	now the health of M is the maxhealth of M;
 	now the wanking-target of M is nothing;
-	now the bladder of M is a random number between 0 and 1000;
+	now the bladder of M is a random number between 500 and 1000;
 	now the refractory-period of M is 0.
 
 To decide which number is the starting difficulty of (M - a patron):
@@ -203,6 +180,9 @@ To compute fatherhood to (M - a patron):
 
 Definition: a patron is human: decide yes.
 Definition: a patron is pimp-appropriate: decide yes.
+Definition: an inexperienced patron is pimp-appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
 Definition: a dickhead patron is pimp-appropriate:
 	if pimp is alive and pimp is normally ally, decide no;
 	decide yes.
@@ -228,7 +208,7 @@ To compute diaper mess reaction of (M - a patron):
 		say "[BigNameDesc of M] [one of]visibly recoils[or]cries out with shock[or]steps back in horror[or]yells with surprise[in random order]. [if there is a barrier in the location of the player][line break][speech style of M]'[one of]Woah, this is not what I wanted!!! Too far!'[or]What the hell? This isn't what I'm paying for! Oh god, that smell!'[or]What the fuck are you doing?! Yuck, stop!!!'[or]Is this some kind of prank? That stinks!'[or]Nope, sorry, way too far for me. I'm out.'[or]Nope, nope nope nope. This is not my scene. No thank you!'[in random order][roman type][line break][end if][line break]";
 		say "[BigNameDesc of M] [if M is penetrating an orifice]pulls out and [end if]leaves in a hurry.";
 		destroy M;
-	humiliate 400.
+	obsceneHumiliate.
 
 To compute (M - a demon lord) stomping (N - a patron):
 	if M is in the location of the player, say "[M] roars at the [N].[line break][speech style of M]'GET OUT OF MY WAY[one of], MORTAL[or][stopping]!'[roman type][line break]The [N] doesn't need telling twice - [he of N] runs out the room as fast as [his of N] legs can carry [him of N]!";
@@ -277,7 +257,15 @@ A time based rule (this is the patron encountering rule):
 					if M is a thing:
 						compute patronMeeting of M with P;
 					otherwise:
-						compute patronEncounter of P;
+						if trashcan is worn and trashcan is trash-ready:
+							if the tissue-fill of trashcan < 2:
+								say "[BigNameDesc of P] enters the room! [big he of P] spots [NameDesc of trashcan].[line break][speech style of P]'[one of]Ah, just what I needed. My pockets were overflowing[or]Looks like you've got a bit of spare room[stopping]!'[roman type][line break][big he of P] produces a frankly horrific number of slimy [semen]-soaked tissues, which [he of P] desposits in [NameDesc of trashcan].";
+								increase the tissue-fill of trashcan by 1;
+							otherwise:
+								say "[BigNameDesc of P] enters the room! [big he of P] drops a used condom on top of [NameDesc of trashcan], without even bothering to look you in the eyes.";
+								increase the used condoms of trashcan by 1;
+						otherwise:
+							compute patronEncounter of P;
 						say "[big he of P] leaves the way [he of P] came in.";
 				otherwise:
 					now M is a random regional monster;
@@ -442,9 +430,14 @@ To compute waitressDemand of (M - an inexperienced patron) on (B - a bottle):
 	compute waitress resolution of M taking B.
 
 To compute patronEncounter of (M - a patron):
-	if debuginfo > 1, say "[input-style]Patron is ejaculating on the floor in [location of M].[roman type][line break]";
-	if M is in the location of the player, say "A [MediumDesc of M] walks into the room and immediately begins to masturbate. [big he of M] grunts in pleasure as [he of M] blows [his of M] load on the ground.";
-	SemenPuddleUp 1 in (the location of M).
+	compute genericPatronEncounter of M.
+
+To compute genericPatronEncounter of (M - a patron):
+	let R be the location of M;
+	if R is nothing, now R is a random placed modern room;[Sometimes, this function triggers when the patron isn't in any room, so we need to give him a random room just in case.]
+	if debuginfo > 1, say "[input-style]Patron is ejaculating on the floor in [R].[roman type][line break]";
+	if R is the location of the player, say "A [MediumDesc of M] walks into the room and immediately begins to masturbate. [big he of M] grunts in pleasure as [he of M] blows [his of M] load on the ground.";
+	SemenPuddleUp 1 in R.
 
 To compute patronEncounter of (M - an inexperienced patron):
 	if M is in the location of the player:
@@ -461,8 +454,7 @@ To compute patronEncounter of (M - an inexperienced patron):
 		otherwise:
 			say "[if the bimbo of the player >= 8][big he of M]'s really cute, but you're not in the mood for that right now, so you let the eye contact hang until [he of M] awkwardly[otherwise]You're not interested in [him of M] at all, so after awkwardly staring at each other for a moment, [he of M][end if] leaves the room.";
 	otherwise:
-		if debuginfo > 1, say "[input-style]Patron is ejaculating on the floor in [location of M].[roman type][line break]";
-		SemenPuddleUp 1 in (the location of M).
+		compute genericPatronEncounter of M.
 
 To compute patronEncounter of (M - an experienced patron):
 	if M is in the location of the player:
@@ -488,8 +480,7 @@ To compute patronEncounter of (M - an experienced patron):
 				say "You shake your head, and [he of M] rolls [his of M] eyes.[line break][speech style of M]'Hmph. Typical. Your manager will hear about this.'[roman type][line break][BigNameDesc of M] leaves the room.";
 				decrease the employee-record of senior robobellboy by 1;
 	otherwise:
-		if debuginfo > 1, say "[input-style]Patron is ejaculating on the floor in [location of M].[roman type][line break]";
-		SemenPuddleUp 1 in (the location of M).
+		compute genericPatronEncounter of M.
 
 To compute patronEncounter of (M - a gross patron):
 	let R be a random number between 1 and 2;
@@ -506,9 +497,7 @@ To compute patronEncounter of (M - a gross patron):
 				say "You shake your head, and [he of M] looks offended.[line break][speech style of M]'You bitches are all the same. So shallow! You only care about looks. Nice guys like me always get passed over. Well I'm not standing for it any more. Your manager will hear about this.'[roman type][line break][BigNameDesc of M] leaves the room.";
 				decrease the employee-record of senior robobellboy by 1;
 		otherwise:
-			if M is in the location of the player, say "A [MediumDesc of M] walks into the room, and begins to masturbate as soon as [he of M] makes eye contact with you. [big he of M] groans with pleasure as [he of M] blows a big load on the ground.";
-			if debuginfo > 1, say "[input-style]Patron is ejaculating on the floor in [location of M].[roman type][line break]";
-			SemenPuddleUp (the semen load of M) in (the location of M).
+			compute genericPatronEncounter of M.
 
 
 To compute patronEncounter of (M - a dickhead patron):
@@ -545,14 +534,13 @@ To compute patronEncounter of (M - a dickhead patron):
 		otherwise:
 			say "A [MediumDesc of M] walks into the room, stopping for a moment when [he of M] notices you. [big he of M] leaves without saying anything.";
 	otherwise:
-		if debuginfo > 1, say "[input-style]Patron is ejaculating on the floor in [location of M].[roman type][line break]";
-		SemenPuddleUp 1 in (the location of M).
+		compute genericPatronEncounter of M.
 
 To say EnemaFloorReactionFlav of (M - a patron):
 	say "[BigNameDesc of M] [if M is interested][one of]smirks[or]chuckles[or]cackles[or]pretends to gag in disgust[or]laughs[or]tuts[or]exhales through [his of M] nose[or]guffaws[or]grins[then at random][otherwise]turns to look at you[end if].[line break][speech style of M]'[one of]How lewd[or]Disgusting[or]So gross[or]What a tramp[or]How foul[or]Oh my god[or]There it goes[or]An utter disgrace[or]Eww[or]What a dirty slut[or]You filthy skank[in random order].'[roman type][line break][slightHumiliateReflect]".
 
 To compute enema floor reaction of (M - a patron): [Doesn't lose favour]
-	if voluntarySquatting is 1, humiliate 500.
+	if voluntarySquatting is 1, obsceneHumiliate.
 
 Part 2 - Perception
 
@@ -566,7 +554,7 @@ To check perception of (M - a patron):
 		now the last-tripped of M is 0;
 		now the last-interaction of M is 0;
 		if woman-player is in the location of the player:
-			anger M;
+			deinterest M;
 		otherwise if M is the father:
 			calm M;
 			say "[BigNameDesc of M] notices you![line break][BigNameDesc of M] seems to be waiting for something..."; [Waiting for you to give birth to their baby]
@@ -703,8 +691,7 @@ To compute DQ perception of (M - a patron):
 	anger M;
 	say "[BigNameDesc of M] notices you.";
 	if there are worn messed knickers:
-		say "[speech style of M]'Oh gosh, that smell! Err, I'll come back later.'[roman type][line break][BigNameDesc of M] leaves the way [he of M] came.";
-		destroy M;
+		say "[speech style of M]'Oh gosh, that smell! You have gotten into character already, I see...'[roman type][line break]";
 		if there is worn perceived unmessed knickers, compute state check of a random worn messed knickers;
 	otherwise:
 		say "[speech style of M]'[one of]I assume that this is the right room, and you are the adult baby slave for hire, yes? Good.'[or][daddytitle of M]'s home, honey! Are you ready to play?'[stopping][roman type][line break]".
@@ -896,7 +883,7 @@ To say ThreesomeSexSubmission of (M - a patron):
 	let A be a random patron penetrating asshole;
 	if V is patron and A is patron:[double penetration]
 		if X < 7:
-			say "[one of]You find yourself stunned into submission as [NameDesc of V] and [NameDesc of A] fuck your [vagina] and [asshole] at the same time.[or]You don't dare more an inch as the intense feelings of being powerfully plowed in both the [vagina] and [asshole] at the same time threaten to overwhelm you.[or]You overcome your temptation to lash out against [NameDesc of V] and [NameDesc of A], and instead hold perfectly still and pray that your double penetration session will be over soon.[or]Your mind reels as you try to deal with the intensity of having both your lower orifices fucked at the same time. As one pushes in the other pulls out, giving you absolutely no time to mentally steel yourself for the next thrusts.[or]Your legs twitch uncontrollably as you try to hold your hips as still as possible in order to not get seriously injured from this brutal double penetration.[in random order]";
+			say "[one of]You find yourself stunned into submission as [NameDesc of V] and [NameDesc of A] fuck your [vagina] and [asshole] at the same time.[or]You don't dare move an inch as the intense feelings of being powerfully plowed in both the [vagina] and [asshole] at the same time threaten to overwhelm you.[or]You overcome your temptation to lash out against [NameDesc of V] and [NameDesc of A], and instead hold perfectly still and pray that your double penetration session will be over soon.[or]Your mind reels as you try to deal with the intensity of having both your lower orifices fucked at the same time. As one pushes in the other pulls out, giving you absolutely no time to mentally steel yourself for the next thrusts.[or]Your legs twitch uncontrollably as you try to hold your hips as still as possible in order to not get seriously injured from this brutal double penetration.[in random order]";
 		otherwise if X < 14:
 			say "[one of]Partially terrified of getting hurt and partially from pleasure, you find yourself not resisting [NameDesc of V] and [NameDesc of A] as they make good use of both of your fuckholes, with no evident concern for your feelings.[or]You somewhat hesitantly push back against [NameDesc of V] and [NameDesc of A], trying to keep them happy.[or]You push your face into the pillow and groan loudly. You know you're giving into what the game wants, but also at least this way it won't take too long for them to climax.[or]You find yourself lewdly yelping with each thrust of [NameDesc of V] and [NameDesc of A] [DickDesc of M]s into your [vagina] and [asshole].[or]You allow [NameDesc of V] and [NameDesc of A] to guide your hips with their hands, and soon you have fallen into a steady rhythm.[in random order]";
 		otherwise:
@@ -1059,6 +1046,7 @@ To say GangSexResist of (M - a patron):
 			say "[one of]You struggle playfully as the patrons fuck your pussy, ass, and [BreastDesc], knowing you're completely pinned under [NameDesc of B][']s weight.[or]You pretend to squirm, openly enjoying yourself as the patrons use your [vagina], tits, and [asshole].[or]You struggle playfully as the patrons manhandle you, testing their grip. Your wrists are held in place by [NameDesc of B] as [he of B] uses your [BreastDesc], [NameDesc of A] holds your elbows as [he of A] fucks your [asshole], and [NameDesc of V] easily holds onto your legs as [he of V] drills your [vagina]. There's definitely nothing you can do as they work together to hold you in place. Just the way you like it![or]You do everything you can to piss off the patrons as they tittyfuck you and pound your fuckholes, hoping they get even rougher with you.[or]You pretend to fight [NameDesc of B] as [he of B] fucks your [BreastDesc], screaming in pure bliss as [NameDesc of A] and [NameDesc of V] mercilessly jackhammer your dirty fuckholes.[in random order]".
 
 [Each combination of player sex and patrons only gets one variation, otherwise this is less a QoL addition and more Homer's Odyssey. This is only an introduction, climaxmasturbationflav should handle the actual payoff.]
+[KNOWN ISSUE - this function assumes that the player is female and has a vagina and is doing a vaginal wank. It needs to check 'wanktype is not VAG-WANK' and have alternate flavour for that.]
 To say InstantMasturbationFlav of (O - an object) with (M - a patron) in (C - an object):
 	let V be a random patron penetrating vagina;
 	let F be a random patron penetrating face;
@@ -1327,7 +1315,7 @@ Section 1 - Attack
 
 To say LandingTaunt of (M - a patron):
 	say "[BigNameDesc of M] smirks.[line break][speech style of M]'[one of]Haha, at last![or]I've never seen such a ridiculous sight in my life.[in random order]'[roman type][line break]";
-	humiliate 50.
+	moderateHumiliate.
 
 Definition: a body part (called B) is available for rubbing:
 	repeat with M running through alive patrons:
@@ -1790,12 +1778,33 @@ To say (M - a patron) sex reaction:
 
 Section 2 - DQ
 
+[we need to change how satify and bore work so that the patrons compute their payment functions at the end of diaper quest punishments, with satisfy meaning payment, and bore meaning no payment.]
 To satisfy (M - a patron) for (N - a number) seconds:
-	if there is a hotel bed in the location of M:
-		compute payment of M;
-	otherwise:
-		if M is in the location of the player, say "[BigNameDesc of M] seems satisfied, and leaves the we [he of M] came.";
-		destroy M.
+	dislodge M;
+	compute common boredom of M for N seconds;
+	compute unique boredom of M;
+	now M is uninterested;
+	now the boredom of M is N;
+	unless M is dying:
+		if there is a hotel bed in the location of M:
+			compute payment of M;
+		otherwise:
+			if M is in the location of the player, say "[BigNameDesc of M] seems satisfied, and leaves the we [he of M] came.";
+			destroy M. [sets M to dying, meaning it will be cleaned up at end of turn]
+
+To bore (M - a patron) for (N - a number) seconds:
+	dislodge M;
+	compute common boredom of M for N seconds;
+	compute unique boredom of M;
+	now M is uninterested;
+	now the boredom of M is N;
+	unless M is dying:
+		if there is a hotel bed in the location of M:
+			now M is pissed off;
+			compute payment of M;
+		otherwise:
+			if M is in the location of the player, say "[BigNameDesc of M] leaves the we [he of M] came.";
+			destroy M. [sets M to dying, meaning it will be cleaned up at end of turn]
 
 Definition: a patron is willing to donate diapers:
 	if there is a worn diaper bag of holding or there is a worn baby diaper bag of holding, decide yes;
@@ -1810,15 +1819,30 @@ Definition: a patron is willing to spank: decide yes.
 Definition: a patron (called M) is willing to spank gently:
 	if M is pissed off, decide no;
 	decide yes.
+Definition: a dickhead patron is willing to spank gently: decide no.
 
-Definition: a patron (called M) is willing to masturbate:
-	if the health of M is the maxhealth of M and M is not pissed off and a random number between 0 and 10000 < the arousal of the player, decide yes;
+Definition: an experienced patron (called M) is willing to masturbate:
+	if the health of M is the maxhealth of M and M is not pissed off and a random number between 0 and 5000 < the arousal of the player, decide yes;
 	decide no.
 
-Definition: a patron is willing to use a diaper urinal: decide yes.
+Definition: a gross patron is willing to use a diaper urinal: decide yes.
+Definition: a gross patron is eager to use a diaper urinal:
+	if it is able to use a diaper urinal, decide yes; [no bladder requirement]
+	decide no.
+Definition: a dickhead patron is willing to use a diaper cumrag: decide yes.
+
+Definition: a patron is willing to forcefeed:
+	if diaper messing >= 3 and there is a worn diaper, decide yes;
+	decide no.
+
+Definition: a dickhead patron is willing to forcefeed pills: decide yes.
+
+To decide which number is the forcefeed-length of (M - a dickhead patron):
+	decide on 4.
 
 To say MasturbationDeclarationFlav of (M - a patron):
-	say "[speech style of M]'[one of]Oh, good, I see you're diapered like a baby should be. I guess you deserve a little reward[or]Lie down baby, [daddytitle of M] is going to make you feel good today[stopping]...'[roman type][line break]".
+	if there is worn messed knickers, say "[speech style of M]'Let's find out if you're really as perverted as you make it seem...'[roman type][line break]";
+	otherwise say "[speech style of M]'[one of]Oh, good, I see you're diapered like a baby should be. I guess you deserve a little reward[or]Lie down baby, [daddytitle of M] is going to make you feel good today[stopping]...'[roman type][line break]".
 
 To say MasturbationStartFlav of (M - a patron):
 	say "[BigNameDesc of M] leads you to lie on the bed on your back, with your head comfortably on the pillow. [big he of M] places one hand lovingly on your [if the largeness of breasts > 2][BreastDesc][otherwise]tummy[end if] and [his of M] other hand over [if there is a worn diaper]the crotch of your diaper[otherwise if the player is possessing a vagina]your [vagina][otherwise if the player is possessing a penis]your [ShortDesc of penis][end if]!".
@@ -1828,28 +1852,27 @@ To say DiaperMasturbationFlav of (M - a patron):
 	say "[BigNameDesc of M] [one of]pushes [his of M] fist into the front of your [D], letting you feel the bumps of [his of M] knuckles through the padding[or]swirls two fingers around the the front of your [D], as if it was a vagina[or]lightly spanks your [genitals] through the padding of your [D][or]rubs [his of M] entire hand in circles over the front of your [D][at random]. [if the player is able to get horny][one of]It feels amazing[or]You can feel yourself getting more and more aroused[or]You shiver with shameful pleasure[in random order].".
 
 To say MasturbationAfterFlav of (M - a patron):
-	say "[BigNameDesc of M] seems [if refractoryperiod > 0]satisfied[otherwise]to grow tired[end if] and pulls away. [if refractoryperiod <= 0][line break][speech style of M]'[one of]Haha, okay, that's enough fun for now.'[or]That's enough for now I think. And no touching yourself while I'm gone either! Be a good baby for [daddytitle of M].'[or]This is taking too long. Don't touch yourself until I return, then maybe next time I'll have more luck.'[in random order][roman type][line break][end if]";
+	say "[BigNameDesc of M] seems [if refractoryperiod > 0]satisfied[otherwise]to grow tired[end if] and pulls away.[line break][speech style of M]'[if refractoryperiod > 0][one of]Watching you cum like that was just as hot as I'd hoped it would be[or]Making little brats like you cream themselves is just such a delight[stopping].'[otherwise][one of]Haha, okay, that's enough fun for now.'[or]That's enough for now I think. And no touching yourself while I'm gone either! Be a good baby for [daddytitle of M].'[or]This is taking too long. Don't touch yourself until I return, then maybe next time I'll have more luck.'[in random order][end if][roman type][line break]";
 	compute payment of M.
 
 To say SpankingStartFlav of (M - a patron):
 	say "[BigNameDesc of M] pushes your face down into the mattress, leaving your butt high in the air.".
 
 To say SpankingDeclarationFlav of (M - a patron):
-	say "[speech style of M]'[one of][if M is pissed off]Well well well, it looks like the tables have turned. Do you have any regrets?'[otherwise]I trust you've been trained in how to properly receive a spanking.'[end if][or]Oh yes, you know what time it is!'[cycling][roman type][line break]".
+	say "[speech style of M]'[if M is pissed off]Well well well, it looks like the tables have turned. Do you have any regrets?'[otherwise if the number of worn diapers is 0]I can't believe you're not even wearing a diaper. What sort of baby-for-hire are you?! Well, it's your problem, really. It just means that this spanking is going to hurt twice as much...'[otherwise if M is experienced patron]I trust you've been trained in how to properly receive a spanking.'[otherwise]I'm gonna make you scream, little [boy of the player].'[end if][roman type][line break]".
 
 To say SpankingMercyRejectionFlav of (M - a patron):
-	say "[speech style of M]'[if M is pissed off]There's no chance of that, you little brat!'[otherwise]No no baby, I'm determined to get my money's worth today. You'll take what you're given.'[end if][roman type][line break][BigNameDesc of M] has an evil smile on [his of M] face.".
+	say "[speech style of M]'[if M is pissed off]There's no chance of that, you little brat!'[otherwise if M is dickhead patron]Do I look like the sort of [man of M] who goes easy on whiny little bitches like you?'[otherwise]No no baby, I'm determined to get my money's worth today. You'll take what you're given.'[end if][roman type][line break][BigNameDesc of M] has an evil smile on [his of M] face.".
 
 To say SoftSpankingFlav of (M - a patron):
-	say "[BigNameDesc of M][']s resolve weakens, and then [he of M] delivers just a few weak blows to your [buttcheeks] with [his of M] hand. [if there is a worn diaper]Your [random worn diaper] softens the blows even further, so that they just feel like gentle pats. [end if][line break][speech style of M]'Well I guess I'll let you off this time, but that was really boring.'[roman type][line break][BigNameDesc of M] lets you go.";
-	now M is pissed off;
+	say "[BigNameDesc of M] hesitates, and then [he of M] delivers just weak, playful blows to your [buttcheeks] with [his of M] hand. [if there is a worn diaper]Your [random worn diaper] softens the blows even further, so that they just feel like gentle pats. [end if][line break][speech style of M]'I guess we are supposed to just be roleplaying, after all.'[roman type][line break][BigNameDesc of M] soon grows bored, and then lets you go.";
 	compute payment of M.
 
 To say SpankingFlav of (M - a patron):
 	say "[BigNameDesc of M] [one of]clearly knows what [he of M]'s doing, and [or][stopping]delivers [one of]four[or]three[or]five[as decreasingly likely outcomes] well-targeted open-palmed slaps to your [buttcheeks]. [if there is a worn diaper][DiaperSoftenFlav of M][end if]".
 
 To say DiaperSoftenFlav of (M - a patron):
-	say "[one of]Your [random worn diaper] softens the blows but [his of M] cold clinical technique is too good to prevent you from still feeling pain! [or][DiaperSoftenShortFlav of M][stopping]".
+	say "[one of]Your [ShortDesc of a random worn diaper] softens the blows but [his of M] cold clinical technique is too good to prevent you from still feeling pain! [or][DiaperSoftenShortFlav of M][stopping]".
 
 To say SpankingAfterFlav of (M - a patron):
 	say "After this [he of M] seems satisfied, and begins to rub your sore [if asshole is lewdly exposed][buttcheeks][otherwise if there is a worn diaper]bottom through your padding[otherwise]bottom[end if] lovingly and speaks in a soothing voice.[line break][speech style of M]'[if M is pissed off]That's what you get for being disobedient, little baby. Maybe next time you'll listen to [daddytitle of M]'s instructions and obey them properly?'[otherwise][one of]It's okay, [daddytitle of M]'s here, [daddytitle of M] loves you[or]There there. [daddytitle of M] only spanks you because [he of M] loves you and wants you to be the perfect baby[or]Wasn't that fun, baby? [daddytitle of M] had fun[or]Aww, does your bum-bum hurt, little Princess? It's supposed to[in random order].'[end if][roman type][line break]After your heart rate starts to calm down, [he of M] gets up. ";
@@ -1858,20 +1881,8 @@ To say SpankingAfterFlav of (M - a patron):
 To say DQSpankResistReactionFlav of (M - patron):
 	say "[BigNameDesc of M] [if M is well dressed patron]smiles.[line break][speech style of M]'[one of]Oh, you've done this before have you? Just enough thrashing as to not actually get away. Yes, well done!'[or]Sorry cutie, I guess we forgot to agree on a safe-word!'[cycling][otherwise]frowns.[line break][speech style of M]'[one of]Now see here child, I paid extra for NO struggling. I'll be telling your supervisor about this!'[or]Are we crying now? As if that'll get you a better tip!'[cycling][roman type][line break]".
 
-Definition: a patron (called M) is willing to forcefeed:
-	if diaper messing >= 3, decide yes;
-	decide no.
-
-Definition: a dickhead patron is willing to forcefeed pills: decide yes.
-
-To decide which number is the forcefeed-length of (M - a patron):
-	decide on 3.
-
-To decide which number is the forcefeed-length of (M - a dickhead patron):
-	decide on 4.
-
 To say ForcefeedDeclarationFlav of (M - a patron):
-	say "[speech style of M]'[one of]I like to keep my babies bellies nice and full.'[or]I've brought some stuff for you to eat, so be a good girl and let me feed you, OK?'[in random order][roman type][line break]".
+	say "[speech style of M]'[one of]I like to keep my babies bellies nice and full.'[or]I've brought some stuff for you to eat, so be a good [boy of the player] and let me feed you, OK?'[in random order][roman type][line break]".
 
 To say ForcefeedPillDeclarationFlav of (M - a patron):
 	say "[speech style of M]'[one of]Hehehe... I've got one more trick up my sleeve...'[or]I paid extra on the way in for one of these... I'm gonna make you explode!'[then at random][roman type][line break]".

@@ -30,24 +30,29 @@ To compute (M - a monster) locking (C - a clothing) with (K - an object):
 		say LockDeclarationFlav of M for C;
 		say LockFlav of M for C;
 		now C is locked;
-		if K is specific-key:
-			now K is covering C;
-			now M is carrying K;
-			add K to the taxableItems of M;
-			add K to the tradableItems of M;
-		say LockAfterFlav of M for C;
-		say LockCommentFlav of M for C;
+		if M is intelligent:
+			if K is specific-key:
+				now K is covering C;
+				now M is carrying K;
+				add K to the taxableItems of M;
+				add K to the tradableItems of M;
+				say LockAfterFlav of M for C;
+			say LockCommentFlav of M for C;
+		otherwise if K is specific-key:
+			say "Then you can do nothing but watch as [NameDesc of K] surges back into the air, before flying off to another unknown part of this world. Where has it ended up? Will you be able to find it on the ground somewhere, or will someone else pick it up first?! You wish you had a way of knowing...";
+			now K is in a random placed visited roomstandard room;
 	otherwise:
 		say "Bug: [C] is not worn when we tried to get [M] to lock it on you.".
 
 To say LockDeclarationFlav of (M - a monster) for (C - a clothing):
 	if M is intelligent, say "[speech style of M]'[one of]I reckon this will do wonders for your obedience.'[or]Hold still, this will only take a moment...'[or]If I have anything to say about it, you'll be wearing this for a long time...'[in random order][roman type][line break]".
 To say LockFlav of (M - a monster) for (C - a clothing):
-	say "With an audible click, [NameDesc of M] locks [NameDesc of C]. You won't be able to take it off without the key!".
+	if M is intelligent, say "With an audible click, [NameDesc of M] locks [NameDesc of C]. You won't be able to take it off without the key!";
+	otherwise say "You watch with [horror the bimbo of the player] as a magic key descends from above, surging towards [NameDesc of C] and [if C is bondage]locking it[otherwise]locking the padlock of a tight metal chain that has appeared through the [clothing-material of C] fabric[end if].".
 To say LockAfterFlav of (M - a monster) for (C - a clothing):
 	say "[BigNameDesc of M] keeps the key!".
 To say LockCommentFlav of (M - a monster) for (C - a clothing):
-	if M is intelligent, say "[speech style of M]'[one of]I guess you're at my mercy now, aren't you?'[or]If you ever want to be let out, you'd better start acting right.'[in random order][roman type][line break]".
+	say "[speech style of M]'[one of]I guess you're at my mercy now, aren't you?'[or]If you ever want to be let out, you'd better start acting right.'[in random order][roman type][line break]".
 
 skeleton key is an unlock-key. The printed name of skeleton key is "[TQlink of item described]skeleton key[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of skeleton key is "skey". The tradability of a skeleton key is 17. [ally]
 
@@ -128,10 +133,8 @@ Check drinking an unlock-key:
 	say "On what? Try [bold type]unlock (noun)[roman type] instead." instead.
 
 A later time based rule (this is the defeated prison guard key rule):
-	if prison guard is defeated and prison guard is alive and skeleton key is off-stage and prison guard is in the location of the player:
-		now skeleton key is in the location of the player;
-		say "As [NameDesc of prison guard] shuffles along nearby, a [skeleton key] drops from [his of prison guard] pocket!";
-		compute autotaking skeleton key.
+	if prison guard is defeated and prison guard is alive and prison guard is in the location of the player:
+		add skeleton key to the tradableItems of prison guard, if absent.
 
 academy-toilet-key is an unlock-key.
 The printed name of academy-toilet-key is "[TQlink of item described]academy toilet key[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of academy-toilet-key is "akey". Understand "academy toilet", "toilet key" as academy-toilet-key.

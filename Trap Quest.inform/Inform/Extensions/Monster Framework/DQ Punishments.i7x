@@ -205,7 +205,8 @@ Definition: a monster (called M) is eager to masturbate:
 	if M is masturbating the player, decide yes;
 	let D be a random worn diaper;
 	if D is not diaper, decide no;
-	if D is messed or D is not total protection, decide no;
+	if D is not total protection, decide no;
+	if D is messed and M is not willing to masturbate messy players, decide no;
 	if M is able to carry out masturbation, decide yes;
 	decide no.
 
@@ -219,8 +220,8 @@ Definition: a monster (called M) is able to carry out masturbation:
 
 Definition: a monster is willing to masturbate: decide no.
 
-Definition: a monster (called M) is only willing to masturbate horny players: [If this is changed for an intelligent NPC make sure to change MasturbationDeclarationFlav as well]
-	decide yes.
+Definition: a monster is only willing to masturbate horny players: decide yes. [If this is changed for an intelligent NPC make sure to change MasturbationDeclarationFlav as well]
+Definition: a monster is willing to masturbate messy players: decide yes. [If this is changed for an intelligent NPC make sure to change MasturbationDeclarationFlav as well]
 
 Definition: masturbation-session (called P) is appropriate:
 	if current-monster is willing to masturbate and current-monster is eager to masturbate, decide yes;
@@ -281,7 +282,12 @@ Definition: a monster (called M) is eager to forcefeed:
 Definition: a monster (called M) is able to forcefeed:
 	repeat with N running through monsters grabbing the player:
 		if N is not M, decide no;
-	if there is a worn cursed ballgag and M is not able to remove cursed plugs, decide no;
+	if the player is mouthblocked:
+		repeat with C running through things penetrating face:
+			if C is not clothing, decide no;
+			if C is not ringagged:
+				if C is locked, decide no;
+				if C is cursed and M is not able to remove cursed plugs, decide no;
 	decide yes.
 
 Definition: a monster is willing to forcefeed: decide no.
@@ -391,6 +397,7 @@ Definition: a monster (called M) is able to punish untidiness:
 	repeat with N running through monsters grabbing the player:
 		if N is not M, decide no;
 	if there is a soiled-diaper carried by M, decide yes;
+	if there is a dirty diaper carried by M, decide yes;
 	decide no.
 
 [When setting this to 'decide yes', make sure that the NPC doesn't have a custom "uniquely unfriendly" function that needs to have related stuff added. And probably make sure that their perception functions have been updated to make it clear why they're unfriendly.]
@@ -415,7 +422,7 @@ To decide which number is the relevant addiction of (P - diaper-urinal):
 	decide on the grossness addiction of the player.
 
 Definition: a monster (called M) is eager to use a diaper urinal:
-	if M is able to use a diaper urinal and the bladder of M >= 600, decide yes;
+	if M is able to use a diaper urinal and the bladder of M >= 800, decide yes;
 	decide no.
 
 Definition: a clothing (called C) is diaper urinal blocking:

@@ -63,21 +63,21 @@ Figure of cage ass expansion trap is the file "Env/Forest/cage4.jpg".
 
 Figure of cultist abduction cutscene is the file "Special/Cutscene/cutscene-cultist-abduct1.jpg".
 
-Figure of demoness cutscene 1 is the file "Special/Cutscene/cutscene-demoness-soul1.png".
-Figure of demoness cutscene 2 is the file "Special/Cutscene/cutscene-demoness-heel1.png".
-Figure of demoness cutscene 3 is the file "Special/Cutscene/cutscene-demoness-heel2.png".
-Figure of demoness cutscene 5 is the file "Special/Cutscene/cutscene-demoness-resist1.png".
-Figure of demoness cutscene 6 is the file "Special/Cutscene/cutscene-demoness-resist2.png".
-Figure of demoness cutscene 7 is the file "Special/Cutscene/cutscene-demoness-tentacle1.png".
-Figure of demoness cutscene 8 is the file "Special/Cutscene/cutscene-demoness-oral1.png".
-Figure of demoness cutscene 9 is the file "Special/Cutscene/cutscene-demoness-accept1.png".
-Figure of demoness cutscene 10 is the file "Special/Cutscene/cutscene-demoness-accept2.png".
-Figure of demoness cutscene 11 is the file "Special/Cutscene/cutscene-demoness-oralcreampie1.png".
-Figure of demoness cutscene 12 is the file "Special/Cutscene/cutscene-demoness-vaginalcreampie1.png".
-Figure of demoness cutscene 13 is the file "Special/Cutscene/cutscene-demoness-vaginal1.png".
+Figure of demoness cutscene 1 is the file "NPCs/Forest/Demoness/cutscene-demoness-soul1.png".
+Figure of demoness cutscene 2 is the file "NPCs/Forest/Demoness/cutscene-demoness-heel1.png".
+Figure of demoness cutscene 3 is the file "NPCs/Forest/Demoness/cutscene-demoness-heel2.png".
+Figure of demoness cutscene 5 is the file "NPCs/Forest/Demoness/cutscene-demoness-resist1.png".
+Figure of demoness cutscene 6 is the file "NPCs/Forest/Demoness/cutscene-demoness-resist2.png".
+Figure of demoness cutscene 7 is the file "NPCs/Forest/Demoness/cutscene-demoness-tentacle1.png".
+Figure of demoness cutscene 8 is the file "NPCs/Forest/Demoness/cutscene-demoness-oral1.png".
+Figure of demoness cutscene 9 is the file "NPCs/Forest/Demoness/cutscene-demoness-accept1.png".
+Figure of demoness cutscene 10 is the file "NPCs/Forest/Demoness/cutscene-demoness-accept2.png".
+Figure of demoness cutscene 11 is the file "NPCs/Forest/Demoness/cutscene-demoness-oralcreampie1.png".
+Figure of demoness cutscene 12 is the file "NPCs/Forest/Demoness/cutscene-demoness-vaginalcreampie1.png".
+Figure of demoness cutscene 13 is the file "NPCs/Forest/Demoness/cutscene-demoness-vaginal1.png".
 
-Figure of Djinn Cutscene 1 is the file "Special/Cutscene/cutscene-djinn-fuck1.png".
-Figure of Djinn Cutscene 2 is the file "Special/Cutscene/cutscene-djinn-conception1.png".
+Figure of Djinn Cutscene 1 is the file "NPCs/Forest/Djinn/cutscene-djinn-fuck1.png".
+Figure of Djinn Cutscene 2 is the file "NPCs/Forest/Djinn/cutscene-djinn-conception1.png".
 
 Figure of dominatrix 1 is the file "NPCs/Hotel/Dominatrix/dominatrix1.png".
 Figure of dominatrix 2 is the file "NPCs/Hotel/Dominatrix/dominatrix2.png".
@@ -105,26 +105,26 @@ To decide which figure-name is the anal-sex-monster-image of (M - dominatrix):
 		otherwise decide on figure of dominatrix cutscene 4;
 	decide on figure of Missing NPC.
 
-Figure of Fairy Cutscene 1 is the file "Special/Cutscene/cutscene-fairy-birth1.png".
-Figure of Fairy Cutscene 2 is the file "Special/Cutscene/cutscene-fairy-birth2.png".
-Figure of Fairy Cutscene 3 is the file "Special/Cutscene/cutscene-fairy-belly1.png".
-Figure of Fairy Cutscene 4 is the file "Special/Cutscene/cutscene-fairy-hips1.png".
-Figure of Fairy Cutscene 5 is the file "Special/Cutscene/cutscene-fairy-hips2.png".
-Figure of Fairy Cutscene 6 is the file "Special/Cutscene/cutscene-fairy-hips3.png".
-Figure of Fairy Cutscene 7 is the file "Special/Cutscene/cutscene-fairy-belly2.png".
-Figure of Fairy Cutscene 8 is the file "Special/Cutscene/cutscene-fairy-milk1.png".
-Figure of Fairy Cutscene 9 is the file "Special/Cutscene/cutscene-fairy-milk2.png".
-Figure of Fairy Cutscene 10 is the file "Special/Cutscene/cutscene-fairy-breasts1.png".
-Figure of Fairy Cutscene 11 is the file "Special/Cutscene/cutscene-fairy-breasts2.png".
-Figure of Fairy Cutscene 12 is the file "Special/Cutscene/cutscene-fairy-breasts3.png".
-Figure of Fairy Cutscene 13 is the file "Special/Cutscene/cutscene-fairy-breasts4.png".
-Figure of Fairy Cutscene 14 is the file "Special/Cutscene/cutscene-fairy-breasts5.png".
-Figure of Fairy Cutscene 15 is the file "Special/Cutscene/cutscene-fairy-breasts6.png".
-Figure of Fairy Cutscene 16 is the file "Special/Cutscene/cutscene-fairy-breasts7.png".
-Figure of Fairy Cutscene 17 is the file "Special/Cutscene/cutscene-fairy-breasts8.png".
-Figure of Fairy Cutscene 18 is the file "Special/Cutscene/cutscene-fairy-vines1.jpg".
-Figure of Fairy Cutscene 19 is the file "Special/Cutscene/cutscene-fairy-vines2.jpg".
-Figure of Fairy Cutscene 20 is the file "Special/Cutscene/cutscene-fairy-vines3.png".
+Figure of Fairy Cutscene 1 is the file "NPCs/Forest/Fairy/cutscene-fairy-birth1.png".
+Figure of Fairy Cutscene 2 is the file "NPCs/Forest/Fairy/cutscene-fairy-birth2.png".
+Figure of Fairy Cutscene 3 is the file "NPCs/Forest/Fairy/cutscene-fairy-belly1.png".
+Figure of Fairy Cutscene 4 is the file "NPCs/Forest/Fairy/cutscene-fairy-hips1.png".
+Figure of Fairy Cutscene 5 is the file "NPCs/Forest/Fairy/cutscene-fairy-hips2.png".
+Figure of Fairy Cutscene 6 is the file "NPCs/Forest/Fairy/cutscene-fairy-hips3.png".
+Figure of Fairy Cutscene 7 is the file "NPCs/Forest/Fairy/cutscene-fairy-belly2.png".
+Figure of Fairy Cutscene 8 is the file "NPCs/Forest/Fairy/cutscene-fairy-milk1.png".
+Figure of Fairy Cutscene 9 is the file "NPCs/Forest/Fairy/cutscene-fairy-milk2.png".
+Figure of Fairy Cutscene 10 is the file "NPCs/Forest/Fairy/cutscene-fairy-breasts1.png".
+Figure of Fairy Cutscene 11 is the file "NPCs/Forest/Fairy/cutscene-fairy-breasts2.png".
+Figure of Fairy Cutscene 12 is the file "NPCs/Forest/Fairy/cutscene-fairy-breasts3.png".
+Figure of Fairy Cutscene 13 is the file "NPCs/Forest/Fairy/cutscene-fairy-breasts4.png".
+Figure of Fairy Cutscene 14 is the file "NPCs/Forest/Fairy/cutscene-fairy-breasts5.png".
+Figure of Fairy Cutscene 15 is the file "NPCs/Forest/Fairy/cutscene-fairy-breasts6.png".
+Figure of Fairy Cutscene 16 is the file "NPCs/Forest/Fairy/cutscene-fairy-breasts7.png".
+Figure of Fairy Cutscene 17 is the file "NPCs/Forest/Fairy/cutscene-fairy-breasts8.png".
+Figure of Fairy Cutscene 18 is the file "NPCs/Forest/Fairy/cutscene-fairy-vines1.jpg".
+Figure of Fairy Cutscene 19 is the file "NPCs/Forest/Fairy/cutscene-fairy-vines2.jpg".
+Figure of Fairy Cutscene 20 is the file "NPCs/Forest/Fairy/cutscene-fairy-vines3.png".
 
 Figure of ghost 1a is the file "NPCs/Mansion/Ghost/ghost1a.jpg".
 Figure of ghost 1b is the file "NPCs/Mansion/Ghost/ghost1b.jpg".
@@ -204,6 +204,27 @@ Figure of Wild Gladiator Cutscene 3 is the file "NPCs/MultiFloor/Gladiator/Cutsc
 Figure of Wild Gladiator Cutscene 4 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-wild-fuck4.jpg". [female anal woods]
 Figure of Wild Gladiator Cutscene 5 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-wild-delay1.png". [delay]
 
+[unnecessary in DQ]
+Figure of white inexperienced patron is the file "NPCs/Hotel/Patron/patron1.png".
+Figure of subby inexperienced patron is the file "NPCs/Hotel/Patron/patron1c.png".
+Figure of black inexperienced patron is the file "NPCs/Hotel/Patron/patron2.png".
+Figure of eldritch experienced patron is the file "NPCs/Hotel/Patron/patron3d.png".
+Figure of furry patron is the file "NPCs/Hotel/Patron/patron6d.png".
+Figure of crimson dickhead patron is the file "NPCs/Hotel/Patron/patron8d.png".
+
+Figure of femme white inexperienced patron is the file "NPCs/Hotel/Patron/patron1b.png".
+Figure of femme black inexperienced patron is the file "NPCs/Hotel/Patron/patron2b.png".
+
+[different in DQ]
+Figure of white gross patron is the file "NPCs/Hotel/Patron/patron5.png".
+Figure of black gross patron is the file "NPCs/Hotel/Patron/patron6.png".
+Figure of femme white experienced patron is the file "NPCs/Hotel/Patron/patron3b.png".
+Figure of femme black experienced patron is the file "NPCs/Hotel/Patron/patron4b.png".
+Figure of femme white gross patron is the file "NPCs/Hotel/Patron/patron5c.png".
+Figure of femme black gross patron is the file "NPCs/Hotel/Patron/patron6b.png".
+Figure of femme white dickhead patron is the file "NPCs/Hotel/Patron/patron7b.png".
+Figure of femme black dickhead patron is the file "NPCs/Hotel/Patron/patron8b.png".
+
 Figure of caged urinal princess is the file "NPCs/MultiFloor/Princess/cage1.jpg".
 Figure of caged urinal princess piss is the file "NPCs/MultiFloor/Princess/cage2.jpg".
 Figure of dark princess 1 is the file "NPCs/MultiFloor/Princess/darkprincess1.jpg".
@@ -244,6 +265,8 @@ Figure of quiz predicament room is the file "Special/Cutscene/cutscene-quiz1.jpg
 Figure of quiz predicament is the file "Special/Cutscene/cutscene-quiz3.jpg".
 
 Figure of hellhound is the file "NPCs/Mansion/Hound/hound1.png".
+
+Figure of hotel bed cutscene 1 is the file "Special/Cutscene/cutscene-hotel-bed1.jpg".
 
 Figure of rank 2 candy normal is the file "NPCs/School/Student/student5b.png".
 Figure of rank 2 candy pierced is the file "NPCs/School/Student/student5bP.png".
@@ -325,16 +348,37 @@ To decide which figure-name is Figure of rank 2 rosie:
 Figure of throne is the file "Env/Dungeon/throne1a.jpg".
 Figure of transformed throne is the file "Env/Dungeon/throne2a.jpg".
 
-Figure of Witch Cutscene 1 is the file "Special/Cutscene/cutscene-witch-satisfied1.png".
-Figure of Witch Cutscene 2 is the file "Special/Cutscene/cutscene-witch-defeated1.png".
+Figure of trashcan empty is the file "Items/Accessories/Other/trashcan1.png".
+Figure of trashcan full 0 condoms is the file "Items/Accessories/Other/trashcan3a.png".
+Figure of trashcan full 1 condom is the file "Items/Accessories/Other/trashcan3b.png".
+Figure of trashcan full 2 condoms is the file "Items/Accessories/Other/trashcan3c.png".
+Figure of trashcan full 3 condoms is the file "Items/Accessories/Other/trashcan3d.png".
+Figure of trashcan full 4 condoms is the file "Items/Accessories/Other/trashcan3e.png".
+Figure of trashcan full 5 condoms is the file "Items/Accessories/Other/trashcan3f.png".
 
-Figure of Wrestler Fingers 1 is the file "Special/Cutscene/cutscene-wrestler-fingers1.png".
-Figure of Wrestler Fingers 2 is the file "Special/Cutscene/cutscene-wrestler-fingers2.png".
-Figure of Wrestler Fingers 3 is the file "Special/Cutscene/cutscene-wrestler-fingers3.png".
-Figure of Wrestler Fingers 4 is the file "Special/Cutscene/cutscene-wrestler-fingers4.png".
-Figure of Wrestler Fingers 5 is the file "Special/Cutscene/cutscene-wrestler-fingers5.png".
-Figure of Wrestler Fingers 6 is the file "Special/Cutscene/cutscene-wrestler-fingers6.png".
-Figure of Wrestler Fucked Silly is the file "NPCs/Hotel/wrestler3.jpg".
+To decide which figure-name is clothing-image of (C - trashcan):
+	if the tissue-fill of trashcan < 2, decide on Figure of trashcan empty;
+	if the used condoms of trashcan <= 0, decide on Figure of trashcan full 0 condoms;
+	if the used condoms of trashcan is 1, decide on Figure of trashcan full 1 condom;
+	if the used condoms of trashcan is 2, decide on Figure of trashcan full 2 condoms;
+	if the used condoms of trashcan is 3, decide on Figure of trashcan full 3 condoms;
+	if the used condoms of trashcan is 4, decide on Figure of trashcan full 4 condoms;
+	decide on Figure of trashcan full 5 condoms.
+
+Figure of Witch Cutscene 1 is the file "NPCs/Forest/Witch/cutscene-witch-satisfied1.png".
+Figure of Witch Cutscene 2 is the file "NPCs/Forest/Witch/cutscene-witch-defeated1.png".
+
+Figure of WoodsStatueButtonHead is the file "Special/Buttons/statue3a.jpg".
+Figure of WoodsStatueButtonHand is the file "Special/Buttons/statue3b.jpg".
+Figure of WoodsStatueButtonFoot is the file "Special/Buttons/statue3c.jpg".
+
+Figure of Wrestler Fingers 1 is the file "NPCs/Hotel/Wrestler/cutscene-wrestler-fingers1.png".
+Figure of Wrestler Fingers 2 is the file "NPCs/Hotel/Wrestler/cutscene-wrestler-fingers2.png".
+Figure of Wrestler Fingers 3 is the file "NPCs/Hotel/Wrestler/cutscene-wrestler-fingers3.png".
+Figure of Wrestler Fingers 4 is the file "NPCs/Hotel/Wrestler/cutscene-wrestler-fingers4.png".
+Figure of Wrestler Fingers 5 is the file "NPCs/Hotel/Wrestler/cutscene-wrestler-fingers5.png".
+Figure of Wrestler Fingers 6 is the file "NPCs/Hotel/Wrestler/cutscene-wrestler-fingers6.png".
+Figure of Wrestler Fucked Silly is the file "NPCs/Hotel/Wrestler/wrestler3.jpg".
 To decide which figure-name is the pacified-image of (M - a wrestler):
 	if M is fucked-silly, decide on figure of Wrestler Fucked Silly;
 	decide on figure of Missing NPC.
@@ -578,8 +622,8 @@ Figure of Vibe Pose Predicament 2 is the file "Special/Cutscene/cutscene-vibe-po
 Figure of Vines Cutscene 1 is the file "Special/Cutscene/cutscene-vines1.jpg".
 Figure of Vines Cutscene 5 is the file "Special/Cutscene/cutscene-vines5.png".
 Figure of Vines Cutscene 7 is the file "Special/Cutscene/cutscene-vines7.png".
-Figure of Vine Boss Cutscene 1 is the file "Special/Cutscene/cutscene-vineboss1.png".
-Figure of Vine Boss Cutscene 2 is the file "Special/Cutscene/cutscene-vineboss2.jpg".
+Figure of Vine Boss Cutscene 1 is the file "NPCs/Bosses/VineBoss/cutscene-vineboss1.png".
+Figure of Vine Boss Cutscene 2 is the file "NPCs/Bosses/VineBoss/cutscene-vineboss2.jpg".
 
 Figure of water bomb is the file "Items/Collectibles/bomb2.png".
 Figure of water bomb cutscene 1 is the file "Special/Cutscene/cutscene-water-bomb-explode1.png".
@@ -1309,51 +1353,61 @@ To decide which figure-name is the examine-image of (T - face):
 				otherwise:
 					decide on Figure of Face335;
 
-Figure of CumBreastsButton is the file "CharWins/FocusWin/Breasts/breastscum.jpg".
-Figure of BreastsObject1 is the file "CharWins/FocusWin/Breasts/breasts1.jpg".
-Figure of BreastsObject2 is the file "CharWins/FocusWin/Breasts/breasts2.jpg".
-Figure of BreastsObject3 is the file "CharWins/FocusWin/Breasts/breasts3.jpg".
-Figure of BreastsObject4 is the file "CharWins/FocusWin/Breasts/breasts4.jpg".
-Figure of BreastsObject5 is the file "CharWins/FocusWin/Breasts/breasts5.jpg".
-Figure of BreastsObject6 is the file "CharWins/FocusWin/Breasts/breasts6.jpg".
-Figure of BreastsObject7 is the file "CharWins/FocusWin/Breasts/breasts7.jpg".
-Figure of BreastsObject8 is the file "CharWins/FocusWin/Breasts/breasts8.jpg".
-Figure of BreastsObject9 is the file "CharWins/FocusWin/Breasts/breasts9.jpg".
+[Figure of CumBreastsButton is the file "CharWins/FocusWin/Breasts/breastscum.jpg".]
+Figure of BreastsObject0 is the file "CharWins/FocusWin/Breasts/00.jpg".
+Figure of BreastsObject1 is the file "CharWins/FocusWin/Breasts/01.jpg".
+Figure of BreastsObject2 is the file "CharWins/FocusWin/Breasts/02.jpg".
+Figure of BreastsObject3 is the file "CharWins/FocusWin/Breasts/03.jpg".
+Figure of BreastsObject4 is the file "CharWins/FocusWin/Breasts/04.jpg".
+Figure of BreastsObject5 is the file "CharWins/FocusWin/Breasts/05.jpg".
+Figure of BreastsObject6 is the file "CharWins/FocusWin/Breasts/06.jpg".
+Figure of BreastsObject7 is the file "CharWins/FocusWin/Breasts/07.jpg".
+Figure of BreastsObject8 is the file "CharWins/FocusWin/Breasts/08.jpg".
+Figure of BreastsObject9 is the file "CharWins/FocusWin/Breasts/09.jpg".
+Figure of BreastsObject10 is the file "CharWins/FocusWin/Breasts/10.jpg".
+Figure of BreastsObject13 is the file "CharWins/FocusWin/Breasts/13.jpg".
+Figure of BreastsObject16 is the file "CharWins/FocusWin/Breasts/16.jpg".
+Figure of BreastsObject20 is the file "CharWins/FocusWin/Breasts/20.jpg".
+Figure of BreastsObjectFloating is the file "CharWins/FocusWin/Breasts/floating.png".
 
 To decide which figure-name is the examine-image of (T - breasts):
-	if T is overglazed, decide on Figure of CumBreastsButton;
-	if the largeness of breasts < 2, decide on figure of BreastsObject1;
-	if the largeness of breasts < 4, decide on figure of BreastsObject2;
-	if the largeness of breasts < 6, decide on figure of BreastsObject3;
-	if the largeness of breasts < 8, decide on figure of BreastsObject4;
-	if the largeness of breasts < 10, decide on figure of BreastsObject5;
-	if the largeness of breasts < 13, decide on figure of BreastsObject6;
-	if the largeness of breasts < 16, decide on figure of BreastsObject7;
-	if the largeness of breasts < 19, decide on figure of BreastsObject8;
-	decide on figure of BreastsObject9.
+	[if T is overglazed, decide on Figure of CumBreastsButton;]
+	if breasts-blinded is 1, decide on Figure of BreastsObjectFloating;
+	if the largeness of breasts <= 1, decide on figure of BreastsObject0;
+	if the largeness of breasts is 2, decide on figure of BreastsObject1;
+	if the largeness of breasts is 3, decide on figure of BreastsObject2;
+	if the largeness of breasts is 4, decide on figure of BreastsObject3;
+	if the largeness of breasts is 5, decide on figure of BreastsObject4;
+	if the largeness of breasts is 6, decide on figure of BreastsObject5;
+	if the largeness of breasts is 7, decide on figure of BreastsObject6;
+	if the largeness of breasts is 8, decide on figure of BreastsObject7;
+	if the largeness of breasts is 9, decide on figure of BreastsObject8;
+	if the largeness of breasts is 10, decide on figure of BreastsObject9;
+	if the largeness of breasts < 13, decide on figure of BreastsObject10;
+	if the largeness of breasts < 16, decide on figure of BreastsObject13;
+	if the largeness of breasts < 19, decide on figure of BreastsObject16;
+	decide on figure of BreastsObject20.
 
-Figure of CumHipsButton is the file "CharWins/FocusWin/Hips/cumhips.png".
-Figure of HipsObject1 is the file "CharWins/FocusWin/Hips/hips1.jpg".
+[Figure of HipsObject1 is the file "CharWins/FocusWin/Hips/hips1.jpg".]
 Figure of HipsObject2 is the file "CharWins/FocusWin/Hips/hips2.jpg".
 Figure of HipsObject3 is the file "CharWins/FocusWin/Hips/hips3.jpg".
-[Figure of HipsObject4 is the file "CharWins/FocusWin/Hips/hips4.jpg".]
+Figure of HipsObject4 is the file "CharWins/FocusWin/Hips/hips4.jpg".
 Figure of HipsObject5 is the file "CharWins/FocusWin/Hips/hips5.jpg".
 Figure of HipsObject6 is the file "CharWins/FocusWin/Hips/hips6.jpg".
 Figure of HipsObject7 is the file "CharWins/FocusWin/Hips/hips7.jpg".
-Figure of HipsObject8 is the file "CharWins/FocusWin/Hips/hips8.jpg".
-Figure of HipsObject9 is the file "CharWins/FocusWin/Hips/hips9.jpg".
+[Figure of HipsObject8 is the file "CharWins/FocusWin/Hips/hips8.jpg".
+Figure of HipsObject9 is the file "CharWins/FocusWin/Hips/hips9.jpg".]
 
 To decide which figure-name is the examine-image of (T - hips):
-	if T is overglazed, decide on Figure of CumHipsButton;
-	if the total volume of hips < 2, decide on figure of HipsObject1;
+	[if the total volume of hips < 2, decide on figure of HipsObject1;]
 	if the total volume of hips < 4, decide on figure of HipsObject2;
 	if the total volume of hips < 6, decide on figure of HipsObject3;
 	if the total volume of hips < 8, decide on figure of HipsObject3;
-	if the total volume of hips < 10, decide on figure of HipsObject5;
-	if the total volume of hips < 12, decide on figure of HipsObject6;
-	if the total volume of hips < 14, decide on figure of HipsObject7;
-	if the total volume of hips < 17, decide on figure of HipsObject8;
-	decide on figure of HipsObject9.
+	if the total volume of hips < 10, decide on figure of HipsObject4;
+	if the total volume of hips < 12, decide on figure of HipsObject5;
+	if the total volume of hips < 15, decide on figure of HipsObject6;
+	[if the total volume of hips < 17, decide on figure of HipsObject8;]
+	decide on figure of HipsObject7.
 
 Figure of HypnoBBCAnimation001 is the file "Special/Animations/HypnoBBC/frame_001.jpg".
 Figure of HypnoBBCAnimation002 is the file "Special/Animations/HypnoBBC/frame_002.jpg".

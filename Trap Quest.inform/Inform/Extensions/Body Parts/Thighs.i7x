@@ -24,7 +24,7 @@ To decide which object is the at least partial concealer of (T - thighs):
 
 Definition: thighs (called B) is spread:
 	if diaper lover <= 0, decide no;
-	if there is worn thigh-spreading clothing, decide yes;
+	if there is worn thigh-spreading clothing and the number of worn thighs-spread-blocking clothing is 0, decide yes;
 	decide no.
 
 Part 2 - Description
@@ -83,7 +83,7 @@ To FatThighsDown (X - a number):
 Section - Image for graphics window
 
 The text-shortcut of thighs is "thighs".
-Figure of CumThighsButton is the file "Special/Buttons/cumthighs.png".
+Figure of CumThighsButton is the file "CharWins/FocusWin/cumthighs.png".
 
 To decide which figure-name is the examine-image of (T - thighs):
 	if T is overglazed, decide on Figure of CumThighsButton;

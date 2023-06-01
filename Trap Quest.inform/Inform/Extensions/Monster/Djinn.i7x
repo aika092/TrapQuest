@@ -77,7 +77,7 @@ To say DiaperReaction of (M - djinn):
 
 To compute diaper mess reaction of (M - djinn):
 	say "[BigNameDesc of M] frowns.[line break][speech style of M]'[if M is friendly]Fortunately for you, I have no sense of smell in this ascended form. If I did, I would struggle to think of a horrible enough punishment for assailing my nostrils with the scent of your bowels.'[otherwise]Incredible. You are more pathetic than any other mortal I have ever met, in 4000 years of existence. That's quite a remarkable feat.'[end if][roman type][line break]";
-	humiliate 400.
+	obsceneHumiliate.
 
 To compute (M - a monster) stomping (N - djinn):
 	if M is in the location of the player, say "[BigNameDesc of M] kills the [N].";
@@ -136,7 +136,7 @@ To compute perception of (M - djinn):
 		compute appearance assessment of M.
 
 To compute DQ perception of (M - djinn):
-	if there is soiled-diaper carried by M:
+	if there is soiled-diaper carried by M or there is a dirty diaper carried by M:
 		say "[speech style of M]'[one of]You there, you disgusting mortal! I'm sure it's you who left this for me to find! How vile[or]Vile mortal, stop leaving your horrendous used garments around for me to find[stopping]!'[roman type][line break]";
 		anger M;
 	otherwise if M is unfriendly:
@@ -323,11 +323,11 @@ Definition: djinn is distracted:
 		if M is explorer:
 			let D be the best route from the location of the player to Stairwell02 through jungle rooms;
 			say "[BigNameDesc of djinn] spots [NameDesc of M].[line break][speech style of djinn]'Your third and final wish. I will hear it now.'[roman type][line break][BigNameDesc of M] looks nervous as [he of M] tries to decide what [he of M] wants to wish for. The time pressure seems to get to [him of M], and [he of M] panics.[line break][speech style of M]'I, um I wish for... ";
-			if the explorer-bimbo of M > 0, say "I wish for endless riches!'[roman type][line break][BigNameDesc of djinn] nods.[line break][speech style of djinn]'It is done. You now have access to endless riches. You must merely touch your new bed to summon one of an endless number of [men of shopkeeper] who will give you jewellery in exchange for your... [']services[']. Just make sure to give the pimp [his of pimp] cut.'[line break][speech style of M]'New bed? [']Services[']? PIMP?! What are you on about?!'[roman type][line break][BigNameDesc of M] squeaks.[line break][speech style of djinn]'Don't worry, I shall give you an attitude adjustment to match your new role as a [if diaper quest is 1]Professional Baby Slave[otherwise]Hotel Whore[end if].'[roman type][line break]You watch with [horror the bimbo of the player] as [NameDesc of M][']s eyes glaze over and then a vacant, happy smile grows upon [his of M] face.[line break][speech style of M]'Ooh, goodie! I'm gonna so rich!'[roman type][line break][big he of M] starts almost mindlessly walking away from you, but clearly with a fixed destination in mind.";
-			otherwise say "I wish for better self-control!'[roman type][line break][BigNameDesc of djinn] nods.[line break][speech style of djinn]'You are finding it difficult to resist touching yourself. Don't worry, you won't have that trouble any more.'[roman type][line break][BigNameDesc of djinn] snaps [his of djinn] fingers and suddenly [NameDesc of M] is wearing a tight set of bondage ropes that keep [his of M] hands bound behind [his of M] back.[line break][speech style of M]'Hey, what the hell is this?!'[roman type][line break][BigNameDesc of M] squeaks.[line break][speech style of djinn]'That's your final wish. No take-backs.'[line break][speech style of M]'This is bullshit! Please help me! How am I going to get free?'[roman type][line break][BigNameDesc of djinn] raises an eyebrow.[line break][speech style of djinn]'If you really want to ruin your wish and free your hands, I guess you will need to find a knife.'[roman type][line break][BigNameDesc of M] looks frustrated but also determined.[line break][speech style of M]'I know where I can find a knife. I just hope none of the robots find me first...'[roman type][line break][big he of M] starts walking away from you, clearly with a fixed destination in mind.";
+			if the explorer-bimbo of M > 0, say "I wish for endless riches!'[roman type][line break][BigNameDesc of djinn] nods.[line break][speech style of djinn]'It is done. You now have access to endless riches. You must merely touch your new bed to summon one of an endless number of [men of male-m] who will give you jewellery in exchange for your... [']services[']. Just make sure to give the pimp [his of pimp] cut.'[line break][speech style of M]'New bed? [']Services[']? PIMP?! What are you on about?!'[roman type][line break][BigNameDesc of M] squeaks.[line break][speech style of djinn]'Don't worry, I shall give you an attitude adjustment to match your new role as a [if diaper quest is 1]Professional Baby Slave[otherwise]Hotel Whore[end if].'[roman type][line break]You watch with [horror the bimbo of the player] as [NameDesc of M][']s eyes glaze over and then a vacant, happy smile grows upon [his of M] face.[line break][speech style of M]'Ooh, goodie! I'm gonna so rich!'[roman type][line break][big he of M] starts almost mindlessly walking away from you, but clearly with a fixed destination in mind.";
+			otherwise say "I wish for better self-control!'[roman type][line break][BigNameDesc of djinn] nods.[line break][speech style of djinn]'You are finding it difficult to resist touching yourself. Don't worry, you won't have that trouble any more.'[roman type][line break][BigNameDesc of djinn] snaps [his of djinn] fingers and suddenly ropes shoot out of nowhere and begin wrapping around [NameDesc of M]. Moments later, [he of M] is wearing a tight set of bondage ropes that keep [his of M] hands bound behind [his of M] back.[line break][speech style of M]'Hey, what the hell is this?!'[roman type][line break][BigNameDesc of M] squeaks.[line break][speech style of djinn]'That's your final wish. No take-backs.'[line break][speech style of M]'This is bullshit! Please help me! How am I going to get free?'[roman type][line break][BigNameDesc of djinn] raises an eyebrow.[line break][speech style of djinn]'If you really want to ruin your wish and free your hands, I guess you will need to find a knife.'[roman type][line break][BigNameDesc of M] looks frustrated but also determined.[line break][speech style of M]'I know where I can find a knife. I just hope none of the robots find me first...'[roman type][line break][big he of M] starts walking away from you, clearly with a fixed destination in mind.";
 			if D is a direction, try M going D;
 			compute banishment of M;
-			if the explorer-bimbo of M <= 1, cutshow Figure of exposed explorer 2a for M;
+			if the explorer-bimbo of M <= 1, cutshow Figure of exposed explorer 1 cutscene 1 for M;
 			otherwise cutshow the examine-image of M for M;
 			decide yes;
 	decide no.
@@ -419,11 +419,11 @@ To compute unique periodic effect of (M - djinn):
 To compute the flying player taunting of (M - djinn):
 	if a random number from 1 to 6 is 1:
 		say "[BigNameDesc of M] laughs at you.[line break][speech style of M]'[one of]Your attempt at flight is laughable.'[or]If the [great one] had intended you to fly, he would have given you my power!'[or]How dreadfully pathetic, even for a mortal.'[in random order][roman type][line break][if the humiliation of the player < 17500]You [one of]wince[or]shudder[or]cringe[purely at random] with shame.";
-		humiliate 20.
+		slightHumiliate.
 
 To say LandingTaunt of (M - djinn):
 	say "[BigNameDesc of M] [if a random number between 1 and 2 is 1]chuckles[otherwise]laughs mercilessly[end if].";
-	humiliate 50.
+	moderateHumiliate.
 
 To decide if (M - djinn) is losing wrapper in (F - asshole):
 	if the class of the player is priestess or the class of the player is cultist, decide yes;

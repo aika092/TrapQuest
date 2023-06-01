@@ -49,9 +49,9 @@ To decide which number is the soak-limit of (K - vaginal seal):
 To decide which number is the initial armour of (C - vaginal seal):
 	decide on 99.
 To decide which number is the crotch-tightness of (C - vaginal seal):
-	decide on 2.
-To decide which number is the vaginal-sex-addiction-influence of (C - vaginal seal):
 	decide on 4.
+To decide which number is the vaginal-sex-addiction-influence of (C - vaginal seal):
+   decide on 4 - the magic-modifier of C. [Yes, ansurfer, it's supposed to be positive influence! That's the down-side :)]
 
 Definition: vaginal seal is displacable: decide no.
 Definition: vaginal seal is transformation-protected: decide yes.

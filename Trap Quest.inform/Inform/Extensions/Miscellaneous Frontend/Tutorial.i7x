@@ -90,7 +90,7 @@ The TutorialArea is a region. Tutorial01, Tutorial02, Tutorial03, Tutorial04, Tu
 To compute tutorial treasure to (X - a container):
 	if X is in Tutorial01:
 		blandify navy-monokini;
-		now navy-monokini is unowned;
+		now the owner of navy-monokini is nothing;
 		now navy-monokini is not-influencing;
 		now navy-monokini is in X;
 		say Discovery of navy-monokini;
@@ -100,7 +100,7 @@ To compute tutorial treasure to (X - a container):
 		now the raw-magic-modifier of leather-peep-toe-heels is -1;
 		now leather-peep-toe-heels is cursed;
 		now leather-peep-toe-heels is blandness;
-		now leather-peep-toe-heels is unowned;
+		now the owner of leather-peep-toe-heels is nothing;
 		now leather-peep-toe-heels is intelligence-influencing;
 		now leather-peep-toe-heels is in X;
 		now the heel-height of leather-peep-toe-heels is 2;

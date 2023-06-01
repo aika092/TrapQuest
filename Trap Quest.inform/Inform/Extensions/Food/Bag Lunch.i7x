@@ -22,14 +22,14 @@ Carry out TQeating bag lunch:
 	if watersports fetish is 1:
 		StomachUp 1;
 		decrease X by 1;
-		humiliate 100 - (the urine taste addiction of the player * 10);
+		humiliate STRONG-HUMILIATION - (the urine taste addiction of the player * 10);
 	if lactation fetish is 1:
 		StomachUp 1;
 		decrease X by 1;
 		increase the fat-burning of the player by 5;
 	StomachFoodUp 1;
 	StomachSemenUp X;
-	humiliate 50 - the semen taste addiction of the player;
+	humiliate MODERATE-HUMILIATION - the semen taste addiction of the player;
 	destroy the noun.
 
 To say unique-verb-desc of (T - a bag lunch):

@@ -9,6 +9,7 @@ Definition: an imp is willing to urinate:
 Definition: an imp is father material: decide yes.
 
 Definition: an imp is raunchy: decide yes.
+Definition: an imp is a urinater: decide no.
 
 Definition: an imp is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 
@@ -111,7 +112,7 @@ To set up (M - an imp):
 	now the health of M is the maxhealth of M;
 	now the imp-rudeness of M is 0;
 	compute refractoryReset of M;
-	now the favour of M is 99.[always start at max favour]
+	FavourSet M to 99.[always start at max favour]
 
 To decide which number is the starting difficulty of (M - an imp):
 	decide on 3.
@@ -228,7 +229,7 @@ To say PresentFriendlyRejectionFlav of (M - an imp):
 To satisfy (M - an imp):
 	if M is interested:
 		dislodge M;
-		now the favour of M is 99;
+		FavourSet M to 99;
 		compute refractoryReset of M;
 		if M is in the location of the player and M is awake, say SatisfiedFlav of M;
 	otherwise:

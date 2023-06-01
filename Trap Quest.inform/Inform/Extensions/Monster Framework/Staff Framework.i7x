@@ -17,9 +17,9 @@ To compute monstermotion of (M - a staff member):
 	otherwise if a random number between 1 and 4 is 1 or (the player is at least partially immobile and (a random number between 1 and 2 is 1 or there is a teacher in the location of M)):
 		compute room leaving of M.
 
-Definition: a staff member is messy:
+[Definition: a staff member is messy:
 	if it is diaper-enslaved and diaper messing >= 6, decide yes;
-	decide no.
+	decide no.]
 
 To say FullMonsterDesc of (M - a staff member):
 	say ImageDesc of M;
@@ -113,14 +113,21 @@ To say ArmbandCalming of (M - a staff member):
 	if M is unfriendly, say "[BigNameDesc of M] calms down.".
 
 To compute toilet reaction of (M - a staff member):
-	if diaper quest is 1:
-		say "[BigNameDesc of M] claps and smiles whilst proudly watching you![line break][speech style of M]'[one of]Well done, you made it[or]Good [boy of the player][or]Who's a big [boy of the player][in random order]!'";
-	otherwise:
-		say "[BigNameDesc of M] watches you almost unblinkingly, as if supervising you![line break][speech style of M]'[one of]Good [boy of the player]s don't need privacy[or]Good, your exhibitionism is coming along nicely[then at random]!'";
-	say "[roman type][line break][strongHumiliateReflect]".
+	if M is undefeated:
+		if diaper quest is 1:
+			say "[BigNameDesc of M] claps and smiles whilst proudly watching you![line break][speech style of M]'[one of]Well done, you made it[or]Good [boy of the player][or]Who's a big [boy of the player][in random order]!'";
+		otherwise:
+			say "[BigNameDesc of M] watches you almost unblinkingly, as if supervising you![line break][speech style of M]'[one of]Good [boy of the player]s don't need privacy[or]Good, your exhibitionism is coming along nicely[then at random]!'";
+		say "[roman type][line break][strongHumiliateReflect]".
 
 To say NastyTrapReactFlav of (M - a staff member):
 	say "[BigNameDesc of M] [one of]looks very pleased[or]cackles to [himself of M][or]grins widely[in random order].[line break][speech style of M]'[one of]And thus, progress is made.'[or]I have to give you an A+ for effort.'[in random order][roman type][line break]".
+
+To compute boring spit reaction of (M - a staff member):
+	say "[BigNameDesc of M] smirks [one of]at you[or]subtly[or]and looks right at you[in random order]. [slightHumiliateReflect]".
+
+To compute disgusting spit reaction of (M - a staff member):
+	compute boring spit reaction of M.
 
 Part - Protection
 
@@ -141,7 +148,9 @@ To compute interaction of (M - a staff member):
 		if armband is not worn and there is fucked-silly alive staff member:
 			compute M protecting against headmistress; [There's a rebellion afoot!]
 		otherwise if the player is in danger:
-			compute protection of M.
+			compute protection of M;
+		otherwise if the current-errand of M is completed:
+			compute errand completion of M.
 
 To compute (M - a staff member) protecting against (X - nurse): [The nurse assaults the player on the bed, and this shouldn't upset the staff!]
 	if armband is not worn, compute M protecting against headmistress. [There's a rebellion afoot!]
@@ -326,6 +335,16 @@ To compute masturbation aftermath of (M - a teacher):
 
 To say conventional greeting of (M - a teacher):
 	say "'Hi [if M is presenting as male]Sir[otherwise]Miss[end if]. Do you have a minute?'";
+
+To consider angry punishment of (M - a staff member):
+	if the player is getting lucky:
+		say AngryForgiveness of M;
+		say GotLuckyFlav;
+	otherwise:
+		compute angry punishment of M.
+
+To say AngryForgiveness of (M - a staff member):
+	say "[one of][speech style of M]'I should punish you, but I have a busy day today.'[roman type][line break][or][speech style of M]'You deserve a punishment for that... But I'm on my break right now. So I'll let you off, this one time.'[roman type][line break][in random order]".
 
 Part - Lessons
 
@@ -563,7 +582,7 @@ To compute gloryhole lesson of (M - a monster):
 	otherwise:
 		try submitting;
 		if M is staff member:
-			say "[speech style of M]'Well done, [he of shopkeeper] seems to like you. I've seen enough already to know you deserve this.'[roman type][line break][BigNameDesc of M] waves a hand in your direction.";
+			say "[speech style of M]'Well done, [he of male-m] seems to like you. I've seen enough already to know you deserve this.'[roman type][line break][BigNameDesc of M] waves a hand in your direction.";
 			now armband is pink diamond;
 			say "You watch as the ID card inside your armband transforms!";
 			now the armband-title of armband is "Gloria";
@@ -769,7 +788,7 @@ To execute (A - student-furious-assembly):
 
 new-fuckhole-assembly is an assembly.
 Definition: new-fuckhole-assembly is eligible:
-	if headmistress is alive and headmistress is undefeated and most-recent-furious is a student and gloryhole is on-stage and the player is possessing a penis, decide yes;
+	if diaper quest is 0 and headmistress is alive and headmistress is undefeated and most-recent-furious is a student and gloryhole is on-stage and the player is possessing a penis, decide yes;
 	decide no.
 
 To say AssemblyStartFlav of (A - new-fuckhole-assembly):
@@ -1060,7 +1079,7 @@ To execute (A - disgrace-assembly):
 				now disgrace-viewed is true;
 				say DisgracePost N;
 				say "Several of the other students cackle mercilessly. ";
-				let S be 5 * DisgracePostImpact N;
+				let S be HUMILIATION-BASE * DisgracePostImpact N;
 				say DisgracePostReaction strength S;
 				humiliate S / 5;
 				now lastwitnessed entry is time-earnings;
@@ -1249,19 +1268,19 @@ To say detention chair tease response of (M - a monster):
 			if the delicateness of the player <= 12, say "You're just too tired to fight it, and say the words without hesitation.[line break]";[if we say this, it's because the player is really fatigued]
 			say "[variable custom style]'Thank you for putting me in my place, [if M is female]Ma'am[otherwise]Sir[end if].'[roman type][line break]";
 			say "You [one of]shiver[or]shudder[or]cringe[in random order] with shame.";
-			humiliate 60;[it's extra humiliating because you had to thank them]
+			strongHumiliate;[it's extra humiliating because you had to thank them]
 		otherwise:
 			say "[one of]You feel the camera on the edge of your vision, watching you[or]You know the camera is pointing right at you[at random]. Thank [NameDesc of M]? ";
 			if the player is bimbo consenting:
 				say "[variable custom style]'Thank you for putting me in my place, [if M is female]Ma'am[otherwise]Sir[end if].'[roman type][line break]";
 				say "You [one of]shiver[or]shudder[or]cringe[in random order] with shame, unable to look [him of M] in the eye as you [if the delicateness of the player < 3]growl[otherwise if the delicateness of the player < 6]mutter[otherwise]recite[end if] the words.";
-				humiliate 75;
+				strongHumiliate;
 			otherwise:
 				say "[if the delicateness of the player < 3]You say nothing and stick out your tongue at the camera[otherwise if the delicateness of the player < 6]You avert your eyes from the camera and say nothing[otherwise]You quickly avert your eyes from the camera, trying not to tremble as you purposefully say nothing[end if], fully aware that you've probably just earned an extra thirty seconds on the chair[one of] before you'll be released[or][stopping].";
 				increase detention-turns by 2;
 	otherwise:
 		say "You [one of]shiver[or]shudder[or]cringe[in random order] with shame.";
-		humiliate 50.
+		moderateHumiliate.
 
 This is the detention orgasm announcement rule:
 	if detention chair is grabbing the player and the player is able to speak:
@@ -1269,8 +1288,8 @@ This is the detention orgasm announcement rule:
 			say "You hear the camera in the corner focusing on you, and loudly blurt out the truth.[line break][variable custom style]'[one of]I CAME FROM BEING IN DETENTION!'[or]MY DETENTION PUNISHMENT JUST MADE ME CUM!'[or]ANYONE WHO CAN SEE ME SHOULD KNOW I JUST CAME FROM BEING IN DETENTION!'[in random order][roman type][line break]";
 			repeat with M running through reactive monsters:
 				say detention orgasm reaction of M;
-				humiliate 45;
-			humiliate 100;
+				moderateHumiliate;
+			strongHumiliate;
 			decrease detention-turns by a random number between 3 and 10;
 		otherwise:
 			say "[one of]You can't help but feel like you're being watched right now[or]You know you can't pretend that didn't just happen[or]The camera in the corner is pointing right at you[or]You know the camera was pointing right at you when you came[at random]. Announce that you just came? ";
@@ -1278,15 +1297,15 @@ This is the detention orgasm announcement rule:
 				say "[variable custom style]'[one of]GUESS WHO JUST CAME FROM BEING IN DETENTION!'[or]I[']M A [if diaper quest is 1]NAUGHTY BABY[otherwise]DIRTY SLUT[end if] WHO CAME FROM BEING IN DETENTION!'[or]LOOK AT ME! DETENTION MADE ME CUM!'[or]MY DETENTION PUNISHMENT JUST MADE ME CUM!'[or]ANYONE WHO CAN SEE ME SHOULD KNOW I JUST CAME FROM BEING IN DETENTION!'[in random order][roman type][line break]";[TODO: more interesting + nearby monsters react]
 				repeat with M running through reactive monsters:
 					say detention orgasm reaction of M;
-					humiliate 55;
-				humiliate 100;
+					moderateHumiliate;
+				strongHumiliate;
 				decrease detention-turns by a random number between 3 and 10;
 			otherwise:
 				say "You [if the delicateness of the player < 2]look right at the camera, refusing to say anything[otherwise]look away from the camera and say nothing[end if][if the number of monsters in the location of the player > 0], hoping your silence will prevent anyone around you from catching on[end if], with the knowledge that if the staff watching you through the camera can tell that you came, you've probably just failed to earn any bonus time towards your release.";
 				repeat with M running through reactive monsters:
 					if (the player is possessing a penis and penis is exposed and a random number between 1 and 2 is 1) or a random number between 1 and 4 is 1:[it's a lot harder to hide an orgasm when you just jizzed everywhere]
 						say detention orgasm reaction of M;
-						humiliate 40;
+						moderateHumiliate;
 		rule succeeds.
 The detention orgasm announcement rule is listed last in the orgasm resolution rules.
 
@@ -1320,7 +1339,7 @@ To compute remedial detention of (M - a staff member):
 	drag to School13 by M;
 	say "[speech style of M]'[if the health of M < the maxhealth of M]Clearly you need extra curriculum if you believe you have the time to be aggressive with teachers[otherwise]If you can't get to class on time then you'll have to catch up the hard way[end if]. Sit.'[roman type][line break][big he of M] points to the chair in the centre of the room.";
 	say "[if the delicateness of the player > 10]You crawl over to the [detention chair] and pull yourself into it[otherwise if the delicateness of the player > 4][BigNameDesc of M] drags you over to the [detention chair] and waits as you obediently pull yourself into it[otherwise][BigNameDesc of M] drags you over to the [detention chair], cruelly pinching your ear until you pull yourself into it[end if]. [big he of M] quickly straps you in place as a giant screen slowly lowers from the ceiling.[line break][speech style of M]'[one of]This is an advanced class, for YOUR benefit. Pay attention.[or]Pay attention this time.'[stopping][roman type][line break][big he of M] slides a pair of headphones into place over your ears, quickly leaving the room as the screen flickers to life and a [one of]syncopated[or]familiar[stopping] rhythm begins playing.";
-	if diaper quest is 0, say "A large, well-lit room fades onto the screen, and the music's volume slowly rises as a gorgeous [if tg fetish > 0]transsexual [end if]pornstar struts in from out of frame, wearing a form-fitting latex dress.[line break][first custom style]'Welcome to my classroom, students. Shut off your minds and let your bodies pay attention, girls.'[roman type][line break]The pulsing, rhythmic effect of the music creates a hypnotic swirling effect that burns itself into your vision, and you suddenly realise how [if the player is solely possessing a penis]hard[otherwise if the player is solely possessing a vagina]wet[otherwise]horny[end if] you've gotten as the screen fades to black and 'Chapter 1' appears in the centre of the frame. You have no choice but to fight off the hypnosis until you're released!";
+	if diaper quest is 0, say "A large, well-lit room fades onto the screen, and the music's volume slowly rises as a gorgeous [if tg fetish > 0]transsexual [end if]pornstar struts in from out of frame, wearing a form-fitting latex dress.[line break][first custom style]'Welcome to my classroom, students. Shut off your minds and let your bodies pay attention.'[roman type][line break]The pulsing, rhythm of the music creates a hypnotic swirling effect that burns itself into your vision, and you suddenly realise how [if the player is solely possessing a penis]hard[otherwise if the player is solely possessing a vagina]wet[otherwise]horny[end if] you've gotten as the screen fades to black and 'Chapter 1' appears in the centre of the frame. You have no choice but to fight off the hypnosis until you're released!";
 	otherwise say "PLACEHOLDER";
 	compute mandatory room leaving of M;
 	now M is in Holding Pen;
@@ -1338,17 +1357,17 @@ To compute rem chair detention:
 				Arouse 50;
 			otherwise if N < -3:
 				say "The music thumps relentlessly as you struggle through the rest of the chapter, feeling slight echoes of what the professor's interns are doing to her body.";
-				humiliate TRIVIAL-HUMILIATION + TRIVIAL-HUMILIATION;
+				trivialHumiliate;
 				Arouse 100;
 				FatigueUp 3;
 			otherwise if N < 6:
 				say "The music washes over you as you [if the sex addiction of the player < 5]reluctantly[otherwise]struggle to[end if] take in the rest of the chapter, feeling echoes of what the professor's interns are doing to her body.";
-				humiliate SLIGHT-HUMILIATION;
+				slightHumiliate;
 				Arouse 100;
 				FatigueUp 7;
 			otherwise:
 				say "The music washes over you as [if the intelligence of the player > 10]you attentively take in[otherwise]your mind absorbs[end if] the rest of the chapter, feeling everything the professor's interns are doing to her body.";
-				humiliate SLIGHT-HUMILIATION + TRIVIAL-HUMILIATION;
+				slightHumiliate;
 				RandomAddictUp 1;
 				Arouse 300;
 				FatigueUp 10;

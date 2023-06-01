@@ -19,6 +19,8 @@ Check entering furniture:
 	if the player is upset about mess and the noun is not automated changing station:
 		if diaper quest is 1 and the class of the player is priestess:
 			say "[variable custom style]I guess as a disgusting 'diaper priestess', I have to stay messy even when I lie down to rest. Yuck...[roman type][line break]";
+		otherwise if tubesuit is worn and the noun is modification machine:
+			do nothing; [Player won't refuse to sit down on the only place that will free them from the stink!]
 		otherwise:
 			if the player is upset about sitting in mess, say "[variable custom style]There's no way I'm resting until I've [if the bimbo of the player < 10]got[otherwise]been[end if] changed.[roman type][line break]" instead;
 			say "[variable custom style]There's no way I can rest with this awful smell.[roman type][line break]" instead;
@@ -372,10 +374,11 @@ To release changing station diapers on the player:
 	release changing station diapers;
 	if diaper messing is 6:
 		say "A cascade of foul, stinky, messy diapers falls to the ground right beside you.";
-		SmellGrossOut messyDiaperSmellGrossnessLevel;
+		if the player is air breathing vulnerable, SmellGrossOut messyDiaperSmellGrossnessLevel;
 	otherwise:
 		say "You are half-buried in a cascade of [if diaper messing > 6]foul, stinky, messy[otherwise]soggy used[end if] diapers.";
-		if diaper messing >= 7, SmellGrossOut messyDiaperFacesitGrossnessLevel;
-		otherwise SmellGrossOut wetDiaperFacesitGrossnessLevel.
+		if the player is air breathing vulnerable:
+			if diaper messing >= 7, SmellGrossOut messyDiaperFacesitGrossnessLevel;
+			otherwise SmellGrossOut wetDiaperFacesitGrossnessLevel.
 
 Furniture Framework ends here.

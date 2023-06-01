@@ -47,6 +47,8 @@ Definition: a pocketbook is book themed: decide yes.
 
 To say ShortDesc of (C - a pocketbook):
 	say "pocketbook".
+To say ShortRecipeDesc of (C - a pocketbook):
+	say "pocketbook".
 
 To decide which number is the bartering value of (T - a pocketbook) for (M - an aeromancer):
 	decide on 5.
@@ -94,9 +96,10 @@ Carry out browsing pocket necronomicon:
 		teach invoking;
 		if the player is not broken:
 			say "You feel somewhat less of a person.";
-			humiliate 2500;
+			totalHumiliate;
 	otherwise if the magic power of the player > 0:
-		let S be a random uncastable fetish appropriate magic-spell;
+		let S be a random costable uncastable fetish appropriate magic-spell;
+		if S is nothing, let S be a random uncastable fetish appropriate magic-spell;
 		if S is magic-spell:
 			say "Magic flows from your body, turning a black page in the book into the instructions for how to cast a new spell. Wow!";
 			say NewbieMagicSpells;
@@ -104,7 +107,7 @@ Carry out browsing pocket necronomicon:
 			compute spell consequences of the noun;
 			if the player is not broken:
 				say "You feel somewhat less of a person.";
-				humiliate 2500;
+				totalHumiliate;
 		otherwise:
 			say "It seems you've learned every spell you can, as no new text appears.";
 	otherwise:
@@ -140,7 +143,7 @@ To compute attack of (W - pocket necronomicon) at (M - a monster):
 						say "Your [ShortDesc of C] is surrounded by a spooky green hue. It [if C is not cursed]now feels cursed and [end if][one of]almost feels... possessed...[or]has become possessed by a ghost![stopping]";
 						now C is possession;
 						if C is not cursed:
-							now C is cursed;
+							fully curse C;
 							compute summoned quest of C;
 					otherwise:
 						let C be a random worn magic-enhanceable clothing;
@@ -240,15 +243,15 @@ Carry out browsing book of regrets:[TODO: player says something like "I didn't w
 				PussyClose 5;
 				PainUp 10;
 			otherwise if T matches the text "asshole":
-				say "'[one of]Ever since that first time, all I can think about is getting my [if the player is sexed male]prostate[otherwise][asshole][end if] pounded by that huge [manly-penis]! Now, that's the only way I get any satisfaction at all! It's not my fault my hot fuckhole makes such a great cumdump[or]I still get tingles in my [asshole] whenever I think about my first time. I'd sit on anyone's hard cock and bounce on it until they came if I could just get a second chance! It's only fair I should get to choose who breeds my nasty fuckhole[or]It seems like every time I meet a real [man of shopkeeper], [he of shopkeeper] decides the best place for [his of shopkeeper] [manly-penis] is up my [sissy] ass! I know you can't get your virginity back, but my slutty boy hole is getting tired of all these thick creamy loads[at random]! I want a do-over.' You cringe at what's written on the page, partly because of the [if the bimbo of the player > 14]prudish[end if]wording, but also because it captures how you've always felt on the inside ever since your first time getting fucked that way. The words light up as the book emits a wave of energy, erasing themselves from the page as your [asshole] suddenly and very painfully begins tightening up.";
+				say "'[one of]Ever since that first time, all I can think about is getting my [if the player is sexed male]prostate[otherwise][asshole][end if] pounded by that huge [manly-penis]! Now, that's the only way I get any satisfaction at all! It's not my fault my hot fuckhole makes such a great cumdump[or]I still get tingles in my [asshole] whenever I think about my first time. I'd sit on anyone's hard cock and bounce on it until they came if I could just get a second chance! It's only fair I should get to choose who breeds my nasty fuckhole[or]It seems like every time I meet a real [man of male-m], [he of male-m] decides the best place for [his of male-m] [manly-penis] is up my [sissy] ass! I know you can't get your virginity back, but my slutty boy hole is getting tired of all these thick creamy loads[at random]! I want a do-over.' You cringe at what's written on the page, partly because of the [if the bimbo of the player > 14]prudish[end if]wording, but also because it captures how you've always felt on the inside ever since your first time getting fucked that way. The words light up as the book emits a wave of energy, erasing themselves from the page as your [asshole] suddenly and very painfully begins tightening up.";
 				AssClose 5;
 				PainUp 10;
 			otherwise if T matches the text "diaper":
 				say "'[one of]I've reached the point where all I can think about when I'm horny is diapers! Panties, and even nudity, do nothing for me anymore, all I care about is wearing my precious pottypants. I find myself longing for people to rub my diaper so I can make my cummies in them more than I long to have real sex with them[or]I just came from soiling myself in front of Mommy and her friends. While they all laughed at me all I cared about was rubbing my diaper as hard as possible, how could I not after something like that happened? Situations like this are the only thing that arouse me anymore[or]It's a good thing I'm able to get off from using my diapers, seeing as that's all I'm good for now. I doubt anyone would be interested in me now after seeing me cum in a soiled diaper while playing in a baby bouncer without a hint of shame. No matter how much I enjoy it though, deep down I just want another chance at having real sex[at random]. I want a do-over.' You cringe at what's written on the page, partly because of the [if the delicateness of the player > 14]adult[end if]wording, but also because it captures how you feel about your growing addiction to diapers. The words light up as you move to turn the page, erasing themselves as it suddenly feels less attractive to soil your diapers, even as you start to feel more like the adult baby you fantasise about being.";
 				SilentlyDiaperAddictDown 4;
 			otherwise if T matches the text "orgasm":
-				if diaper quest is 0, say "'[one of]Whenever I look at a [man of shopkeeper], all I can think about is getting naked and bouncing on his big hard pants candy! I know I LOVE getting fucked senseless like the nasty whore I am, but sometimes I miss what it was like before[or]It's like my dirty cock warmer has a mind of its own sometimes. There is a time and place to get bent over a table and fucked full of [semen], but it's not all the time! If only I had a way to keep my slutty cumdump in line, like I did before[or]Milking a cock with my nasty fuckhole feels so good, and it's obviously the only thing I'm useful for. But, sometimes I think all this naughty sex I'm having is making me even more addicted to fun poundings! Not like I could stop now, but I know my [boy of shopkeeper]friend is going to get bored eventually[in random order]. I want a do-over.' You cringe at what's written on the page, partly because of the [if the bimbo of the player >= 14]prudish[end if] wording, but also because it captures how you feel about your growing addiction to sex. The words light up as you move to turn the page, erasing themselves as it suddenly gets a lot harder to think about getting fucked. It's a lot harder to think about anything...";
-				otherwise say "'[one of]It's like my dirty little no-no has a mind of its own sometimes. I don't want to be bad, but I can't stop thinking naughty thoughts! If only I had a way to keep my libido in line, like I did before[or]Touching my no-no feels so good. But, sometimes I think all this naughty fun I'm having is making me even more addicted to it! Not like I could stop now, but I know my [daddy of shopkeeper] isn't going to be impressed[at random]. I want a do-over.' You cringe at what's written on the page, partly because of the [if the bimbo of the player >= 14]prudish[end if] wording, but also because it captures how you feel about your growing addiction to orgasms. The words light up as you move to turn the page, erasing themselves as it suddenly gets a lot harder to think about masturbation.";
+				if diaper quest is 0, say "'[one of]Whenever I look at a [man of male-m], all I can think about is getting naked and bouncing on his big hard pants candy! I know I LOVE getting fucked senseless like the nasty whore I am, but sometimes I miss what it was like before[or]It's like my dirty cock warmer has a mind of its own sometimes. There is a time and place to get bent over a table and fucked full of [semen], but it's not all the time! If only I had a way to keep my slutty cumdump in line, like I did before[or]Milking a cock with my nasty fuckhole feels so good, and it's obviously the only thing I'm useful for. But, sometimes I think all this naughty sex I'm having is making me even more addicted to fun poundings! Not like I could stop now, but I know my [boy of male-m]friend is going to get bored eventually[in random order]. I want a do-over.' You cringe at what's written on the page, partly because of the [if the bimbo of the player >= 14]prudish[end if] wording, but also because it captures how you feel about your growing addiction to sex. The words light up as you move to turn the page, erasing themselves as it suddenly gets a lot harder to think about getting fucked. It's a lot harder to think about anything...";
+				otherwise say "'[one of]It's like my dirty little no-no has a mind of its own sometimes. I don't want to be bad, but I can't stop thinking naughty thoughts! If only I had a way to keep my libido in line, like I did before[or]Touching my no-no feels so good. But, sometimes I think all this naughty fun I'm having is making me even more addicted to it! Not like I could stop now, but I know my [daddy of male-m] isn't going to be impressed[at random]. I want a do-over.' You cringe at what's written on the page, partly because of the [if the bimbo of the player >= 14]prudish[end if] wording, but also because it captures how you feel about your growing addiction to orgasms. The words light up as you move to turn the page, erasing themselves as it suddenly gets a lot harder to think about masturbation.";
 				SilentlySexAddictDown 4;
 			otherwise if T matches the text "esteem":
 				say "'After everything I've allowed myself to do, it's become difficult to consider myself deserving of any respect. At this rate, I'll soon forget that I'm not just an object for other people to toy with and abuse. I want a do-over.' You cringe at what's written on the page, partly because of the [if the bimbo of the player >= 14]lame[end if] wording, but also because it captures how you feel about your growing addiction to orgasms. The words light up as you move to turn the page, erasing themselves as it suddenly feels a lot easier to bring yourself to advocate for yourself.";
@@ -262,7 +265,7 @@ Carry out browsing book of regrets:[TODO: player says something like "I didn't w
 			say "You don't find any particular page that would be useful or meaningful to read right now.".
 
 	[currently removed]
-	[say "'[one of]Sometimes I wish there was more to life than sucking my [man of shopkeeper]'s fat monster until [he of shopkeeper] comes. I know my place is on my knees, but it's getting out of hand! It's getting so hard to think when I'm not gargling a fresh load of yummy dick juice, and I KNOW it all started with that first blowjob[or]Whenever my lips are wrapped around a big hard cock, I know it's what I was always meant to do, but I can't focus on anything else! There used to be more to life than a delicious helping of yummy man stuff for breakfast lunch and dinner, but I can't remember what[or]Man cream is my favourite food, but sometimes I wish I didn't have to spend so much time every day draining every [if shopkeeper is a balls-haver]pair of aching balls[otherwise]aching [DickDesc of shopkeeper][end if] I run into! Every time I do it it feels even better than last time, and sometimes I run out of room in my nasty jizz tank in the middle of the day[in random order]! I want a do-over.' You cringe at what's written on the page, partly because of the [if the bimbo of the player > 14]prudish[end if] wording, but also because it captures how you feel about your growing addiction to blowjobs. The words light up as you move to turn the page, erasing themselves as it suddenly gets a lot harder to think about sucking cocks. It's a lot harder to think about anything...";
+	[say "'[one of]Sometimes I wish there was more to life than sucking my [man of male-m]'s fat monster until [he of male-m] comes. I know my place is on my knees, but it's getting out of hand! It's getting so hard to think when I'm not gargling a fresh load of yummy dick juice, and I KNOW it all started with that first blowjob[or]Whenever my lips are wrapped around a big hard cock, I know it's what I was always meant to do, but I can't focus on anything else! There used to be more to life than a delicious helping of yummy man stuff for breakfast lunch and dinner, but I can't remember what[or]Man cream is my favourite food, but sometimes I wish I didn't have to spend so much time every day draining every [if shopkeeper is a balls-haver]pair of aching balls[otherwise]aching [DickDesc of male-m][end if] I run into! Every time I do it it feels even better than last time, and sometimes I run out of room in my nasty jizz tank in the middle of the day[in random order]! I want a do-over.' You cringe at what's written on the page, partly because of the [if the bimbo of the player > 14]prudish[end if] wording, but also because it captures how you feel about your growing addiction to blowjobs. The words light up as you move to turn the page, erasing themselves as it suddenly gets a lot harder to think about sucking cocks. It's a lot harder to think about anything...";
 	SemenTasteAddictDown 4;]
 
 
@@ -344,7 +347,7 @@ Carry out browsing book of anal:
 	otherwise:
 		reset multiple choice questions;
 		set numerical response 1 to "Find a page focused on Brandi taking huge cocks.";
-		set numerical response 2 to "Find a page focused on Brandi's techniques for pleasing [men of shopkeeper] during anal sex.";
+		set numerical response 2 to "Find a page focused on Brandi's techniques for pleasing [men of male-m] during anal sex.";
 		set numerical response 3 to "Find a page focused on Brandi attracting men with her asshole.";
 		set numerical response 0 to "Don't read any specific page[if the noun is anal-enhanced] (RECOMMENDED because the book is currently enhancing your attacks!)[end if].";
 		compute multiple choice question;

@@ -17,11 +17,11 @@ Figure of lingerie-clad mannequin is the file "NPCs/Forest/Mannequin/mannequin7.
 Figure of skater mannequin is the file "NPCs/Forest/Mannequin/mannequin8.png".
 Figure of goth mannequin is the file "NPCs/Forest/Mannequin/mannequin9.png".
 
-Figure of Mannequin Cutscene 1 is the file "Special/Cutscene/cutscene-mannequin-event1.png".
-Figure of Mannequin Cutscene 2 is the file "Special/Cutscene/cutscene-mannequin-event2.png".
-Figure of Mannequin Cutscene 3 is the file "Special/Cutscene/cutscene-mannequin-force1.png".
-Figure of Mannequin Cutscene 4 is the file "Special/Cutscene/cutscene-mannequin-force2.png".
-Figure of Mannequin Cutscene 5 is the file "Special/Cutscene/cutscene-mannequin-event3.png".
+Figure of Mannequin Cutscene 1 is the file "NPCs/Forest/Mannequin/cutscene-mannequin-event1.png".
+Figure of Mannequin Cutscene 2 is the file "NPCs/Forest/Mannequin/cutscene-mannequin-event2.png".
+Figure of Mannequin Cutscene 3 is the file "NPCs/Forest/Mannequin/cutscene-mannequin-force1.png".
+Figure of Mannequin Cutscene 4 is the file "NPCs/Forest/Mannequin/cutscene-mannequin-force2.png".
+Figure of Mannequin Cutscene 5 is the file "NPCs/Forest/Mannequin/cutscene-mannequin-event3.png".
 
 The text-shortcut of mannequin is "man".
 
@@ -177,7 +177,12 @@ To say MonsterComment of (M - a mannequin):[TODO: fix this]
 To decide which object is the banish-item of (M - a mannequin):
 	decide on a random off-stage make up kit.
 To decide which object is the banish-item of (M - lingerie-clad mannequin):
-	decide on anal-beads-plug-panties.
+	if diaper quest is 0:
+		decide on anal-beads-plug-panties;
+	otherwise if black briefs is off-stage:
+		decide on black briefs;
+	otherwise:
+		decide on nothing.
 To decide which object is the banish-item of (M - skater mannequin):
 	decide on white-rollerskates.
 
@@ -186,7 +191,10 @@ To set up (M - a mannequin):
 	now the monstersetup of M is 1;
 	let T be the banish-item of M;
 	if T is a thing:
-		add T to the banishItems of M, if absent;
+		let MKexists be false; [check if there are any make up kits already in its banishItems]
+		repeat with X running through the banishItems of M:
+			if X is make up kit, now MKexists is true;
+		if MKexists is false, add T to the banishItems of M;
 	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M.
 

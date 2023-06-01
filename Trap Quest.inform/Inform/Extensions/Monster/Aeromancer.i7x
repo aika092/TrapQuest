@@ -180,7 +180,7 @@ To say DiaperReaction of (M - an aeromancer):
 
 To compute diaper mess reaction of (M - an aeromancer):
 	say "[BigNameDesc of M] recoils with shock.[line break][speech style of M]'Are you shitting me?! Pun not intended!!! [if M is uninterested]I'm getting out of here.'[otherwise]I'm not going anywhere near that.'[end if][roman type][line break]";
-	humiliate 400;
+	obsceneHumiliate;
 	if M is uninterested:
 		bore M;
 		if M is in the location of the player, compute mandatory room leaving of M.
@@ -207,6 +207,10 @@ Definition: an aeromancer (called M) is distracted:
 To say BalloonRuneTrapReactFlav of (M - an aeromancer):
 	say "[BigNameDesc of M] lights up with joy.[line break][speech style of M]'Ooh, how glorious! How wonderful! Such curves! Such beauty! You've made my day!'[roman type][line break]";
 	FavourUp M.
+
+To say ToiletReactionFlav of (M - an aeromancer):
+	if M is friendly, say "[BigNameDesc of M] bites [his of M] lip to attempt to hide a judging smirk, and then quickly scribbles a note in her notebook. [moderateHumiliateReflect]";
+	otherwise say "[BigNameDesc of M] snickers as [he of M] watches. [moderateHumiliateReflect]".
 
 Part 2 - Perception
 
@@ -420,7 +424,7 @@ Definition: an aeromancer is ballooned:
 	if the current-balloon of it > 0, decide yes;
 	decide no.
 
-To decide which number is the movement block difficulty of (M - an aeromancer):
+To decide which number is the default movement block difficulty of (M - an aeromancer):
 	if M is ballooned, decide on the difficulty of M / 2; [it's more difficult to block while floating]
 	decide on the difficulty of M * 2.
 
@@ -539,13 +543,13 @@ Section 1 - Attack
 To compute the flying player taunting of (M - an aeromancer):[TODO: angry aeromancers actually mess with you.]
 	if a random number from 1 to 6 is 1:
 		say "[BigNameDesc of M] laughs at you.[line break][speech style of M]'[one of]Enjoying your flight? Hahahaha!'[or]Is it a bird? Is it a plane? No, it's a dumb fat whore!'[or]I should attach a string to your toe and pull you around like a kite!'[or]You must be ballooning with humiliation! Get it? Haha.'[or]Don't let all that air get to your head! Get it? Because you're air-headed!'[or]Hey now, it looks like you've blown things way out of proportion! Bwahaha.'[in random order][roman type][line break][if the humiliation of the player < 17500]You [one of]wince[or]shudder[or]cringe[purely at random] with shame.";
-		humiliate 20.
+		slightHumiliate.
 
 The latex punishment rule of an aeromancer is usually the no latex punishment rule.
 
 To say LandingTaunt of (M - an aeromancer):
 	say "[BigNameDesc of M] [if a random number between 1 and 2 is 1]giggles[otherwise]laughs mercilessly[end if].";
-	humiliate 50.
+	moderateHumiliate.
 
 To compute fuckhole sex of (M - an aeromancer): [separated these out so it's less confusing to do if statements]
 	let F be a random fuckhole penetrated by M;

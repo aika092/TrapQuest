@@ -59,8 +59,13 @@ To say FriendlySexResistFlav of (T - a thing):
 To say FriendlySexResistFlav of (M - a monster):
 	if the player is able to speak, say "[variable custom style]'[if the player is in danger][one of]Oh god, we have to stop now!'[or]Uh-oh. Please get off quickly, I need to deal with this!'[or]FUCK!'[at random][otherwise][one of]This was fun, but we need to stop now.'[or]I'm finished now, please let me go!'[or]I've changed my mind, I don't want this!'[or]Sorry, I'm not feeling it any more.'[at random][end if][roman type][line break]";
 	otherwise say "[if the player is able to make sounds][variable custom style][muffled sounds][roman type][line break][end if]";
-	if M is penetrating an orifice, say "[one of]You tap [NameDesc of M] on the [if M is human]shoulder[otherwise]back[end if], trying to get [him of M] to stop.[or]You try to yank your [if M is penetrating a fuckhole]hips[otherwise if M is penetrating face]head[otherwise]body[end if] away from [NameDesc of M][']s grasp.[or]You try and pull [NameDesc of M] [if M is penetrating an orifice]out[otherwise]off[end if] of you.[or]You turn and try to push [NameDesc of M] off you.[purely at random]";
-	otherwise say "You squirm but can't get away!".
+	if M is penetrating an orifice:
+		if M is not-getting-licked:
+			say "[one of]You tap [NameDesc of M] on the [if M is human]shoulder[otherwise]back[end if], trying to get [him of M] to stop.[or]You try to yank your [if M is penetrating a fuckhole]hips[otherwise if M is penetrating face]head[otherwise]body[end if] away from [NameDesc of M][']s grasp.[or]You try and pull [NameDesc of M] [if M is penetrating an orifice]out[otherwise]off[end if] of you.[or]You turn and try to push [NameDesc of M] off you.[purely at random]";
+		otherwise:
+			say "You push back with your head, trying to pull your mouth away from [NameDesc of M][if M is getting-asslicked][']s asshole[end if].";
+	otherwise:
+		say "You squirm but can't get away!".
 
 To say FriendlySexSubmissionFlav of (T - a thing):
 	if number of body parts penetrated by T < 1:

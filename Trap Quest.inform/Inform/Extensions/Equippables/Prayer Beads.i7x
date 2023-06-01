@@ -90,8 +90,8 @@ To compute periodic effect of (L - jinx-beads):
 To decide which number is the zap damage improvement of (E - jinx-beads):
 	let W be MagicPowerDamage + the magic-modifier of E;
 	if ritual-beads is worn:
-		if the notch-taken of E > 5, increase W by 1;
-		if the notch-taken of E is 10, increase W by 1;
+		if the notch-taken of ritual-beads > 5, increase W by 1;
+		if the notch-taken of ritual-beads is 10, increase W by 1;
 	decide on W.
 
 To compute attack of (E - jinx-beads) at (M - a monster):

@@ -140,7 +140,8 @@ To set up magic attribute of (C - a tall platform heels):
 			now C is posture training;[They can't be stumbling]
 	otherwise:
 		if R is 1, now C is speed;
-		if R is 2, now C is kicking.
+		if R is 2, now C is kicking;
+	set up rare magic attribute of C.
 
 To uniquely set up (C - a tall platform heels):
 	if a random number between 1 and 2 is 1, now the heel-height of C is 9;

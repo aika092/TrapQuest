@@ -137,6 +137,8 @@ To decide which number is the initial outrage of (C - blue-exercise-shorts):
 	decide on 1.
 To decide which number is the crotch-tightness of (C - blue-exercise-shorts):
 	decide on 2.
+To decide which number is the diaperCoveringLength of (C - blue-exercise-shorts):
+	decide on 8.
 
 grey-exercise-shorts is an exercise shorts.
 The printed name of grey-exercise-shorts is "[clothing-title-before]tight grey exercise shorts[clothing-title-after]". Understand "tight", "grey" as grey-exercise-shorts. The text-shortcut of grey-exercise-shorts is "tges".

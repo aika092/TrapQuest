@@ -62,15 +62,15 @@ title	subtable	description	toggle
 "Transforming into a [if transGender is 1]biological [end if]woman should be something that is always at risk of happening to me at any time!"	--	--	spontaneous tg lover rule
 
 This is the spontaneous tg lover rule:
-	now the choice in row 73 of the Table of Player Options is 2;
+	increase the choice in row 73 of the Table of Player Options by 2;
 	follow quit rule.
 
 This is the spontaneous tg liker rule:
-	now the choice in row 73 of the Table of Player Options is 1;
+	increase the choice in row 73 of the Table of Player Options by 1;
 	follow quit rule.
 
 This is the spontaneous tg hater rule:
-	now the choice in row 73 of the Table of Player Options is 0;
+	[increase the choice in row 73 of the Table of Player Options by 0;]
 	follow quit rule.
 
 

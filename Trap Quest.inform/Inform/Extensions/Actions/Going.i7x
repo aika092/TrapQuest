@@ -56,6 +56,9 @@ Check going south:
 	now the travel-direction of the player is south;
 	now the travel-opposite of the player is north;
 
+To update travel opposite of (P - a person):
+	now the travel-opposite of P is the opposite-direction of the travel-direction of P.
+
 Check going up:
 	if there is a golem in the location of the player, say "[bold type][BigNameDesc of golem] [bold type]stands in front of the stairwell, blocking the way. [roman type]You're going to need to deal with [him of golem] first!" instead.
 
@@ -120,16 +123,38 @@ To compute time out of (M - a monster):
 Report going up:
 	update player region;
 	if map images > 0, display entire map;
+	compute bladder cleanup;
+	compute puddle cleanup;
 	compute clothing cleanup.
 
 Report going down:
 	update player region;
 	if map images > 0, display entire map;
+	compute bladder cleanup;
+	if playerRegion is not school, compute puddle cleanup;
 	compute clothing cleanup.
 
+last-puddle-cleanup is a number that varies. last-puddle-cleanup is 999999.
+To compute puddle cleanup:
+	if earnings < last-puddle-cleanup - 30:
+		repeat with R running through placed rooms:
+			if the semen-puddle of R > 0:
+				decrease the semen-puddle of R by 1;
+			if the urine-puddle of R > 0:
+				decrease the urine-puddle of R by 1;
+			if the milk-puddle of R > 0:
+				decrease the milk-puddle of R by 1;
+		now last-puddle-cleanup is earnings.
+
 To compute clothing cleanup:
-	repeat with C running through in-play clothing:
-		if C is not immune to change and C is not held by an alive person and C is not regional, destroy C.
+	if the player is able to use their hands:
+		repeat with C running through in-play clothing:
+			if C is not immune to change and C is not held by an alive person and C is not regional:
+				unless C is plentiful accessory, destroy C;
+			if C is plentiful regional accessory and C is not held by an alive person:
+				if a random number between 1 and 5 > 3: [40% of jewellery is picked up by the region's NPCs]
+					let M be a random alive intelligent undefeated regional monster;
+					if M is monster, now C is carried by M.
 
 
 Part 1 - Movement Hindrance Definitions
@@ -439,7 +464,7 @@ Check going:
 		repeat with M running through combative-or-blocking monsters:
 			if M is successfully blocking:
 				allocate 2 seconds;
-				say "[another-turn-flavour] [MovementBlock of M]" instead; [In the 'successfully blocking' check we fill `another-turn-flavour` with the details of the main thing slowing the player down.]
+				say "[another-turn-flavour] [MovementBlock of M][if smokeMoving is true]Despite the smoke, you couldn't get away! Drat![end if]" instead; [In the 'successfully blocking' check we fill `another-turn-flavour` with the details of the main thing slowing the player down.]
 		[All these checks only take place if the player is WALKING as opposed to crawling.]
 		if the player is upright:
 			[Here we increase heel experience. NB even if the player falls over, they still gain heel experience.]
@@ -478,7 +503,7 @@ Check going:
 		[All these checks only take place if the player is CRAWLING as opposed to walking.]
 		if the player is prone:
 			[We want to warn the player if they're going to crawl into a room they previously triggered a pink smoke trap in.]
-			if trap warning is 1 and the player is needing to breathe and the player is able to breathe:
+			if trap warning is 1 and the player is air breathing vulnerable and the player is able to breathe:
 				if the room noun from the location of the player is smoky:
 					say "There is [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in that room, and you are on your knees...";
 					reset multiple choice questions;
@@ -615,7 +640,7 @@ To compute slow movement:
 					if R is 1:
 						let X be the weight of a random diaper worn by the player;
 						say "[if X > 5]You walk very slowly with the most exaggerated waddle, caused by your [one of]almost impossibly inflated[or]extremely bloated[or]ridiculously oversized[in random order] diaper.[otherwise if X > 3]Your movement is significantly slowed because your [one of]incredibly inflated[or]very bloated[or]oversized[in random order] diaper is forcing you to waddle instead of walk.[otherwise]Your movement is slightly hampered by the way that your [one of]inflated[or]bloated[or]expanded[in random order] diaper is making you waddle.[end if]";
-						humiliate X * TRIVIAL-HUMILIATION * 2;
+						humiliate X * SLIGHT-HUMILIATION;
 			otherwise if the strut of the player is 1 and there is a worn heels:
 				say "[one of]You strut provocatively to the [travel-direction of the player].[or][or][or][or][or][or][or][or][or][or][or][or][cycling]";
 			otherwise if a random number from the bimbo of the player to 150 < 6 and there are worn stiletto heels or there are worn boots:
@@ -637,9 +662,7 @@ Definition: yourself is moving slowly:
 Carry out going while the player is in Dungeon41:
 	let flav-said be 0;
 	repeat with C running through held store things:
-		compute stealing of C;
 		if Dungeon41 is guarded:
-			increase the stolen-aware of shopkeeper by 1;
 			if flav-said is 0, say "[BigNameDesc of shopkeeper] sees you trying to leave.[line break][first custom style]'[one of]Stop, thief!'[or]Guards! Guards! Arrest this thieving whore!'[or]Where do you think you're going with that, bitch?'[or]Oi, you haven't paid for that!'[purely at random][roman type][line break]An alarm bell rings throughout the whole dungeon. Looks like you're in trouble with the law!";
 			repeat with M running through alive royal guards:
 				deinterest M;
@@ -647,7 +670,8 @@ Carry out going while the player is in Dungeon41:
 				now the sleep of M is 0;
 			interest shopkeeper;
 			anger shopkeeper;
-			now flav-said is 1.
+			now flav-said is 1;
+		progress quest of stealing-quest.
 
 Part 4 - Trap Triggers
 

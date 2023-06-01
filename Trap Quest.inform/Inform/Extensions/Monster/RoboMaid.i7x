@@ -314,7 +314,7 @@ To compute publicity stunt of (M - a robomaid):
 			SemenPuddleUp X in (the location of M);
 			FavourUp M;
 			increase the employee-record of senior robobellboy by 1;
-			humiliate X * (MODERATE-HUMILIATION + SLIGHT-HUMILIATION);
+			humiliate X * (MODERATE-HUMILIATION + 5);
 	repeat with N running through patrons in the location of the player:
 		destroy N.
 

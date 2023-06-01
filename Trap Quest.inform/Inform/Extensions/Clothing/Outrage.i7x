@@ -24,7 +24,7 @@ To decide which number is the notManlyFactor of (C - a clothing):
 	decide on 0.
 
 To decide which number is the unworn outrage of (C - a clothing):
-	if C is messed knickers and diaper quest is 0 and C is currently at least partially visible, decide on 20;
+	if C is messed knickers and diaper quest is 0 and C is currently at least partially visible, decide on 20; [in diaper quest, messed status affects cringe, not outrage]
 	let O be the initial outrage of C;
 	increase O by the notManlyFactor of C;
 	[if O < 11 and C is drinkable condom pinned, now O is 11;] [can't have condoms pinned to your clothing for less than 11 outrage (also each condom including the first adds +1)]
@@ -46,7 +46,10 @@ To decide which number is the fluid outrage of (C - a knickers):
 
 To decide which number is the fluid cringe of (C - a clothing):
 	if it is external fluid immune and it is actually dense, decide on 0; [the liquid is all on the inside, and therefore not visible]
-	if C is worn and (C is not currently at least partially visible or (the at least partial concealer of C is not arms and C is not currently visible)), decide on 0; [In general, clothing doesn't reveal its wet status when partially concealed, but arms is the exception]
+	if C is worn:
+		if C is not currently at least partially visible, decide on 0;
+		let LP be the at least partial concealer of C;
+		if LP is not arms and LP is not butt-windowed clothing and C is not currently visible, decide on 0; [In general, diapers don't reveal their wet status when partially concealed, but arms and butt-windowed clothing are the exceptions]
 	if C is swimming themed and the urine-soak of C < the soak-limit of C / 2: [Unless it's drenched in piss, we only care about semen-soak for swimwear]
 		decide on (1 + the semen-soak of C) / 2;
 	otherwise if diaper quest is 0:

@@ -42,7 +42,7 @@ Report going:
 				otherwise if R1 < the crawl count of the player or R2 < the crawl count of the player:
 					say "With all the time you've been spending crawling along the ground, you're beginning to [if playerRegion is woods]feel like a stray animal who lives in the woods[otherwise]think this place really needs a good cleaning[end if]...[line break]";
 			if the crawl count of the player >= 12, progress quest of crawling-quest;
-			if the class of the player is princess and the number of monsters in the location of the player > 0, humiliate 10;
+			if the class of the player is princess and the number of monsters in the location of the player > 0, slightHumiliate;
 			if the semen-puddle of the location of the player > 3 and bukkake fetish is 1:
 				if the largeness of breasts > 10 and the semen coating of breasts is 0:
 					say "[one of]Your [BreastDesc] become smeared with [semen] as they rub along the ground.[or][or][or][cycling]";
@@ -136,7 +136,7 @@ To compute generic class reward of (Q - puddle-cleaning-quest) on (C - a clothin
 			say "[BigNameDesc of pink-spraybottle] lights up, emitting a puff of green, minty vapour as it loses its curse.";
 			silently bless pink-spraybottle;
 		otherwise:
-			if the work ethic of pink-spraybottle >= 400:
+			if the work ethic of pink-spraybottle >= 400 and pink-spraybottle is not blessed:
 				say "[BigNameDesc of pink-spraybottle] lights up, emitting a puff of sweet-smelling vapour as it becomes blessed.";
 				silently bless pink-spraybottle;
 			otherwise:
@@ -251,7 +251,7 @@ To uniquely set up (C - stripper maid headdress):
 	now the puddles-cleaned of puddle-cleaning-quest is 0.
 
 To say QuestFlav of (Q - sexy-puddle-cleaning-quest):
-	say "You sense that it wants you to clean up messes you find on the floor, while in front of horny [men of shopkeeper].".
+	say "You sense that it wants you to clean up messes you find on the floor, while in front of horny [men of male-m].".
 
 To say QuestTitle of (Q - sexy-puddle-cleaning-quest):
 	say " (sexy cleaning quest)".

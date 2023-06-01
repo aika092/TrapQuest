@@ -51,24 +51,24 @@ To say soak-types of (C - a clothing):
 		if the known-urine-soak of C > 0, say "[urine][if the known-milk-soak of C > 0] and [milk][end if]";
 		otherwise say "[if the known-milk-soak of C > 0][milk][otherwise]water[end if]".
 
-To say displacement-desc:
-	if the item described is crotch-displaced and the item described is worn:
-		say " (pulled [if item described is trousers]down[otherwise if item described is hobble-skirted]up[otherwise]aside[end if])";
-	otherwise if the item described is crotch-unzipped:
+To say displacement-desc of (C - a clothing):
+	if C is crotch-displaced and C is worn:
+		say " (pulled [if C is trousers]down[otherwise if C is hobble-skirted]up[otherwise]aside[end if])";
+	otherwise if C is crotch-unzipped:
 		say " (unzipped)";
-	otherwise if the item described is crotch-ripped:
+	otherwise if C is crotch-ripped:
 		say " (ripped)";
-	if item described is locked clothing:
-		say " (locked)";
-	if the item described is top-ripped:
-		if the item described is crotch covering, say " (bust ripped)";
+	if C is locked, say " (locked)";
+	if C is glued, say " (glued)";
+	if C is top-ripped:
+		if C is crotch covering, say " (bust ripped)";
 		otherwise say " (ripped)";
-	otherwise if the item described is top-displaced and the item described is worn:
-		if the item described is not bra or the item described is not very low cut or higher:
+	otherwise if C is top-displaced and C is worn:
+		if C is not bra or C is not very low cut or higher:
 			say " (pulled down)";
 		otherwise:
 			say " (open)";
-	if the item described is condom pinned:
-		say " ([if the used condoms of the item described > 0][used condoms of the item described] used[end if][if the used condoms of the item described > 0 and the empty condoms of the item described > 0] & [end if][if the empty condoms of the item described > 0][empty condoms of the item described] empty[end if] [if the empty condoms of item described is 1 or (the empty condoms of item described is 0 and the used condoms of item described is 1)]condom[otherwise]condoms[end if])".
+	if C is condom pinned:
+		say " ([if the used condoms of C > 0][used condoms of C] used[end if][if the used condoms of C > 0 and the empty condoms of C > 0] & [end if][if the empty condoms of C > 0][empty condoms of C] empty[end if] [if the empty condoms of C is 1 or (the empty condoms of C is 0 and the used condoms of C is 1)]condom[otherwise]condoms[end if])".
 
 Printed Names ends here.

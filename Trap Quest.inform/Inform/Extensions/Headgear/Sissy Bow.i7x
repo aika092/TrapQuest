@@ -23,7 +23,7 @@ Definition: a sissy bow is bow themed: decide yes.
 
 Chapter - Quest
 
-asshole-presenting-quest is a headgear-clothing-quest.
+asshole-presenting-quest is a headgear-clothing-quest. [TODO: DQ quest]
 
 To uniquely set up (C - a sissy bow):
 	now the quest of C is asshole-presenting-quest.

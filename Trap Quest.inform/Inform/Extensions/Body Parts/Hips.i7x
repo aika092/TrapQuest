@@ -340,11 +340,11 @@ To say HipCum:
 To say AssFillDesc:
 	if the air volume of hips is 0:
 		say "";
-	otherwise if the total volume of hips > the air volume of hips * 2:
+	otherwise if the air volume of hips < 4:
 		say "It is slightly inflated with air. ";
-	otherwise if the total volume of hips > the air volume of hips:
+	otherwise if the air volume of hips < 8:
 		say "It is inflated with a decent amount of air. ";
-	otherwise if the total volume of hips is the air volume of hips or the total volume of hips > the air volume of hips / 2:
+	otherwise if the air volume of hips < 12:
 		say "It is ballooned with a huge amount of air. ";
 	otherwise:
 		say "It is ballooned with a massive amount of air. ".
@@ -352,14 +352,14 @@ To say AssFillDesc:
 To say AssImplantsDesc:
 	if the silicone volume of hips is 0:
 		say "";
-	otherwise if the total volume of hips > the silicone volume of hips * 2:
+	otherwise if the the silicone volume of hips < 4:
 		say "They contain small ass implants. ";
-	otherwise if the total volume of hips > the silicone volume of hips:
+	otherwise if the the silicone volume of hips < 8:
 		say "They contain medium sized ass implants. ";
-	otherwise if the total volume of hips > the silicone volume of hips / 2:
-		say "They contain large ass implants. ";
+	otherwise if the the silicone volume of hips < 12:
+		say "They contain huge ass implants. ";
 	otherwise:
-		say "The vast majority of your ass can be attributed to your ass implants. ";
+		say "The vast majority of your ass can be attributed to your stupidly giant ass implants. ".
 
 To say RealDesc of (XXX - hips): [So that both can be used.]
 	say RealHipDesc.
@@ -459,20 +459,23 @@ To AssInflate (X - a number):
 			say "Your [AssDesc] try to inflate further but have reached their limit!".
 
 To AssImplantsUp (X - a number):
-	let attempt-done be 0;
-	while X > 0:
-		decrease X by 1;
-		if the total weighty volume of hips < max ass size:
-			if the total volume of hips >= max ass size, decrease the air volume of hips by 1;
-			increase silicone volume of hips by 1;
-			if the thickness of hips < total weighty volume of hips - 3 and the thickness of hips < max hip size, HipUp 1; [Hip size increases a bit if ass is really big in comparison, excluding air]
-			if X is 0:
-				if the total volume of hips is 4, cutshow figure of body reaction 10 for hips;
-				if the total volume of hips is 6, cutshow figure of body reaction 11 for hips;
-				update appearance level;
-		otherwise if attempt-done < 2:
-			say "Your [AssDesc] are just too big, the skin won't stretch any further! Your new [if the silicone volume of hips > 0]and improved [end if]implants shrink under the pressure.";
-			now attempt-done is 2.
+	if artificial enhancements fetish is 0:
+		AssSwell X;
+	otherwise:
+		let attempt-done be 0;
+		while X > 0:
+			decrease X by 1;
+			if the total weighty volume of hips < max ass size:
+				if the total volume of hips >= max ass size, decrease the air volume of hips by 1;
+				increase silicone volume of hips by 1;
+				if the thickness of hips < total weighty volume of hips - 3 and the thickness of hips < max hip size, HipUp 1; [Hip size increases a bit if ass is really big in comparison, excluding air]
+				if X is 0:
+					if the total volume of hips is 4, cutshow figure of body reaction 10 for hips;
+					if the total volume of hips is 6, cutshow figure of body reaction 11 for hips;
+					update appearance level;
+			otherwise if attempt-done < 2:
+				say "Your [AssDesc] are just too big, the skin won't stretch any further! Your new [if the silicone volume of hips > 0]and improved [end if]implants shrink under the pressure.";
+				now attempt-done is 2.
 
 To AssImplantsDown (X - a number):
 	while X > 0:

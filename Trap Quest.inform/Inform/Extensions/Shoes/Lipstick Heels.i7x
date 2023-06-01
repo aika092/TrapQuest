@@ -17,7 +17,7 @@ To decide which number is the unique outrage of (C - a lipstick heels):
 To decide which number is the hindrance-modifier of (C - a lipstick heels):
 	decide on 0.
 
-To decide what number is the price of (C - a lipstick heels):
+To decide what number is the original price of (C - a lipstick heels):
 	decide on 2.
 
 To say UniqueShortDesc of (C - a lipstick heels):

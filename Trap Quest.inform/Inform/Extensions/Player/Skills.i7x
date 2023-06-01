@@ -171,7 +171,7 @@ To teach invoking:
 		say "[bold type]You already know how to invoke![roman type][line break]".
 
 This is the invokeskill list rule:
-	if the invokeskill of the player is 1, say "You know how to invoke dark gods, allowing you to [if the player-class is cultist]curse otherwise useless blessed clothing[otherwise]remove curses and bless the items on your person[end if].".
+	if the invokeskill of the player is 1, say "You know how to [link]invoke[end link] dark gods, allowing you to [if the player-class is cultist]curse otherwise useless blessed clothing[otherwise]remove curses and bless the items on your person[end if].".
 The invokeskill list rule is listed in the skill listing rules.
 
 This is the invokeskill learn rule:

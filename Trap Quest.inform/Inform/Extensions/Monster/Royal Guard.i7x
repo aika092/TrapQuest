@@ -211,6 +211,8 @@ To compute (M - a monster) stomping (N - a royal guard):[generic M here, but sho
 		if N is in the location of the player, say "[BigNameDesc of M] ruthlessly tears off [NameDesc of N]'s armour and pins [him of N] to the ground. [big he of N] cries out in pain as [NameDesc of M] rams [his of M] [LongDickDesc of M] into [his of N] [HoleDesc of N] and begins thrusting furiously. [BigNameDesc of N]'s eyes roll back in [his of N] head as [NameDesc of M] ejaculates, [his of N] belly expanding rapidly as [NameDesc of M] fills [him of N] with [semen]. Satisfied, [NameDesc of M] tosses [NameDesc of N] to the ground, where [he of N] faints.";
 		otherwise say "You hear a royal guard cry out in pain from [if N is nearby]nearby![otherwise]somewhere in the dungeon![end if]";
 		now N is fucked-silly;
+		repeat with C running through the taxableItems of N:
+			add C to the tradableItems of N, if absent;
 		now the sleep of N is 600.
 
 To say MonsterOfferAcceptFlav of (M - a royal guard) to (T - a thing):
@@ -306,6 +308,8 @@ Definition: a royal guard (called M) is distracted:
 				if watersports fetish is 1:
 					say "[BigNameDesc of M] takes this moment to release a blast of strong-smelling [urine] into [NameDesc of N][']s hair, soaking [his of N] hair, face, body and clothes with the hot golden liquid. By the time [he of M] has finished, [NameDesc of N] is a soaking wet, smelly mess. [big he of M] then shakes [his of M] member dry over [his of N] still-lowered head. ";
 				say "[BigNameDesc of M] stretches [his of M] spine.[if the class of the player is not princess][line break][speech style of M]'Let this be a lesson to BOTH of you, of why you should not make a mockery of the law.'[roman type][line break][big he of M] shoots you a measured glance, before returning to the poor exhausted [man of N] on [his of N] knees in front of [him of M].[end if][line break][speech style of M]'Now, let me be completely clear. If I ever see you in these halls again, I will keep you in that cell for so long that by the time you're released, you won't be able to remember what it's like to taste anything other than semen[if watersports fetish is 1] and piss[end if].'[roman type][line break][BigNameDesc of N] can't bring [himself of N] to say anything. [big he of N] just nods and begins slowly crawling towards the [if D is direction][D][otherwise]exit[end if], [semen] still swimming within [his of N] cleavage, spilling onto the ground a little at a time as [he of N] crawls, [his of N] tight bodysuit flossing [his of N] ass-crack with each little movement.";
+			otherwise if N is gymnast-explorer: [which it should be 100% of the time afaik]
+				say "[BigNameDesc of M] notices a red marker pen tucked behind [NameDesc of N][']s ear.[line break][speech style of M]'I recognise this pen... It has special powers when people other than yourself use it to write on your skin, does it not? Well, in that case...'[roman type][line break][BigNameDesc of N] yelps as the pen is snatched away from [him of N].[line break][speech style of N]'W-wait, what exactly are you planning to write with that...'[roman type][line break]But [NameDesc of M] does not reply, [his of M] attention fully on what [he of M] is scribbling onto [NameDesc of N][']s legs.[line break][speech style of M]'There we go. Now go, in a manner befitting a diapered diva such as yourself.'[roman type][line break][BigNameDesc of M] takes [NameDesc of N][']s hands and pulls [him of N] to [his of N] feet. Immediately, [NameDesc of N] springs onto tiptoes, [his of N] arms adopting a ballerina-style pose![line break][speech style of N]'W-what have you done to me?! Ooooooooh...'[roman type][line break]That last word is spoken becuase [if diaper messing >= 3][his of N] tummy rumbles, and then suddenly loudly unleashes a flood of poop out of [his of N] butthole and fills[otherwise][he of N] has suddenly let go of [his of N] bladder, and [his of N] [urine] is filling[end if] [his of N] bulky diaper to the brim.[line break][speech style of N]'Oh my god!'[roman type][line break]But despite clearly wanting to change how [he of N] is standing, [NameDesc of N] seems powerless to change from [his of N] ballerina pose. [big he of N] reads the words on [his of N] legs, and whimpers.[line break][speech style of M]'Perfect. Now go from here with both grace and disgrace.'[roman type][line break][BigNameDesc of N] groans as another surge of [if diaper messing >= 3]shit[otherwise][urine][end if] exits [his of N] body, and, panicking, forces a smile onto [his of N] face.[line break][speech style of N]'F-fine, have it your way, meanie!'[roman type][line break][BigNameDesc of N] does [his of N] best to hold [his of N] smile as [he of N] prances off towards the staircase, just like a ballerina.";
 			otherwise:
 				say "[BigNameDesc of M] points to [his of N] white panties.[line break][speech style of M]'First we shall strip you of your pride. Remove your undergarments.'[roman type][line break][BigNameDesc of N] scowls, and looks between you and [NameDesc of M] a few times before growling with frustration and complying, awkwardly pulling [his of M] underwear off, exposing [his of N] shaved genitals. [BigNameDesc of M] holds out an expectant hand, and [NameDesc of N] is forced to submissively hand over [his of N] only pair of panties. [BigNameDesc of M] bunches them up and pockets them.[line break][speech style of M]'Now then. You have a choice. You can either go outside wearing no underwear at all, or you can wear these.'[roman type][line break][BigNameDesc of M] produces a small pair of purple pull-ups, with a floral pattern. [BigNameDesc of N] can't help but complain.[line break][speech style of N]'Oh come on, seriously?!'[roman type][line break][BigNameDesc of M] ignores [him of N], and just waits for [him of N] to make [his of N] inevitable choice.[line break][speech style of N]'FINE. But I'm going to surprise you all by ROCKING in them. By the time I'm done, they'll be the latest stylish fashion trend.'[roman type][line break][BigNameDesc of N] rudely snatches the pull-up diaper out of [NameDesc of M][']s hand and pulls it up [his of N] legs. [BigNameDesc of M] just smiles.[line break][speech style of M]'Perhaps elsewhere you may manage to do that. But down here, diapered citizens are treated as a lower class. They are frequently checked, changed, and most importantly, trained. As long as you continue to flout my order and remain down here, you will now find that the members of this community will continuously make sure you are kept full of breast milk and baby food, and given good hard maintenance spankings to encourage discipline. It's not only the law, but the culture.'[roman type][line break][BigNameDesc of N][']s frown grows more and more frustrated as [NameDesc of M] speaks.[line break][speech style of N]'F-fuck this! The lower difficulty level doesn't make up for how creepy you all are down here. I'm out. Wish me luck upstairs.'[roman type][line break][big he of N] huffs and strides away towards the [if D is direction][D][otherwise]exit[end if].";
 			now the refractory-period of M is the refractory-time of M;
@@ -315,7 +319,14 @@ Definition: a royal guard (called M) is distracted:
 			decide yes;
 		otherwise if N is gladiator and (N is uninterested or N is friendly):
 			compute M npcBattling N;
+		otherwise if N is aeromancer and the player is a may 2023 top donator and (N is uninterested or N is friendly):
+			compute M npcBattling N;
 	decide no.
+
+To compute unique final action of (M - prison guard):
+	if M is undefeated and M is awake and M is in Dungeon06 and skeleton key is off-stage and M is not combative and skeleton key is not listed in the tradableItems of M:
+		if the player is in Dungeon06, say "[BigNameDesc of M] picks up a [skeleton key] from a hidden spot under [his of M] mattress.";
+		add skeleton key to the tradableItems of M.
 
 [The guard will sometimes challenge gladiators. If they're fucked silly, he wins automatically and gains a difficulty point, otherwise it's a 50/50]
 To compute (M - a royal guard) npcBattling (N - a gladiator):
@@ -345,6 +356,51 @@ To compute (M - a royal guard) npcBattling (N - a gladiator):
 		DifficultyUp M by 1;
 		unless N is interested:
 			compute mandatory room leaving of N.
+
+To compute (M - a royal guard) npcBattling (N - an aeromancer):
+	if N is ballooned:
+		say "[BigNameDesc of M][']s eyes are drawn [if M is interested]away from you [end if]to [NameDesc of N].[line break][speech style of M]'[one of]I have had enough of your grating voice, wench.' [or]You there, wench. Such a lascivious display is against the law. Get on your knees and receive your punishment.'[or]You cannot walk these halls with such an appearance, wench. Get on your knees. Now.'[in random order][roman type][line break][big he of M] narrows [his of M] eyes at [FuckerDesc of N], who turns to look at [him of M] with a smirk.[line break][speech style of N]'Do you cirrusly think you can take me?'[roman type][line break][BigFuckerDesc of M] dives at [FuckerDesc of N], but a blast of wind catches [him of M] in midair and slams [him of M] into the ground. [BigFuckerDesc of N] floats away laughing.";
+		now the refractory-period of M is 50;[so he doesn't try again immediately]
+		bore M;
+		DifficultyUp N by 1;
+		bore N;
+		compute mandatory room leaving of N;
+	otherwise:
+		say "[BigNameDesc of M][']s eyes go wide as they are drawn [if M is interested]away from you [end if]to [NameDesc of N].[line break][speech style of M]'[one of]Did you think I wouldn't recognize you, wench!'[or]You there, what are you doing out of your cell!'[or]You-! How did you escape those chains?'[in random order][roman type][line break][big he of M] grabs [FuckerDesc of N] by the wrist and pulls out a pair of handcuffs.[line break][speech style of N]'[one of]I'm sniffing out the real killer! Haven't you noticed my innoscent?'[or]But I was acloud out for good behavior!'[or]You've got it all wrong! That was only a dis-skies!'[in random order][roman type]";
+		if the previously-ballooned of N > 0 and the balloon of N > a random number between 2 and 5:[titty explosion]
+			if a random number between 1 and 4 is not 4:[guard loses]
+				say "[line break][speech style of M]'PUNS ARE AGAINST THE L-UNGH!'[roman type][line break][BigNameDesc of M]'s sentence is cut off as [NameDesc of N]'s breasts explode outward, knocking [him of M] into a wall! [BigNameDesc of N] looks more confident!";
+				now the current-balloon of N is 1;
+				DifficultyUp N by 1;
+				bore M;
+				compute mandatory room leaving of M;
+				now the refractory-period of M is 50;
+			otherwise:
+				say "[line break][speech style of M]'PUNS ARE AGAINST THE L-UNGH!'[roman type][line break][BigNameDesc of M]'s sentence is cut off as [NameDesc of N]'s breasts explode outward, smacking [him of M] in the face! Unfortunately for [NameDesc of N], that isn't enough to break [his of M] grip, and [his of N] [ChestDesc of N] jiggle obscenely as [he of N] is roughly handcuffed, gagged, and anklebound.[line break][speech style of M]'Worry not, citizen, the criminal has been apprehended! I'll get [him of N] out of your sight.'[roman type][line break][BigNameDesc of N] emits a muffled groan of frustration as [he of N] is dragged out of the room.";
+				now the balloon of N is 0;
+				DifficultyUp N by 1;
+				DifficultyUp M by 1;
+				bore M;
+				compute mandatory room leaving of M;
+				now the refractory-period of M is 50;
+		otherwise:
+			if a random number between 1 and 2 is 1:[guard loses]
+				say "[line break][speech style of M]'PUNS ARE AGAINST THE LAW!'[roman type][line break][BigNameDesc of M] snaps a cuff around one of [NameDesc of N]'s wrists, and is about to grab the other when a blast of air hits [him of N] in the chest, sending [him of N] flying out of the room! [BigNameDesc of N] runs off in the other direction.";
+				bore M;
+				bore N;
+				compute mandatory room leaving of M;
+				compute mandatory room leaving of N;
+				now the refractory-period of M is 50;
+			otherwise:[guard wins]
+				say "[line break][speech style of M]'PUNS ARE AGAINST THE LAW!'[roman type][line break][BigNameDesc of N] tries to shove [NameDesc of M] with a blast of air, but [NameDesc of M] jerks [his of N] arm at the perfect time, and [he of N] gets hit with [his of N] own attack! [BigNameDesc of N] is flattened against [NameDesc of M]'s chest, where [he of N] is easily handcuffed, gagged, and dragged to the ground. [NameDesc of M] turns back to you.[line break][speech style of M]'Worry not, citizen, the criminal has been apprehended! I'll get [him of N] out of your sight.'[roman type][line break][BigNameDesc of N] emits a muffled groan of frustration as [he of N] is dragged out of the room.";
+				DifficultyUp M by 1;
+				satisfy M;
+				bore M;
+				bore N;
+				compute mandatory room leaving of M;
+				now the refractory-period of M is the refractory-time of M;
+				compute mandatory room leaving of N.
+
 
 Part 2 - Perception
 
@@ -494,7 +550,7 @@ To compute perception of (M - a royal guard):
 		say "[big he of M] smiles politely.";
 		calm M;
 	otherwise if M is unfriendly:
-		if there is soiled-diaper carried by M:
+		if there is soiled-diaper carried by M or there is a dirty diaper carried by M:
 			say "[speech style of M]'[one of]You there! Is it you who's been littering these halls with your filth[or]You! You do know that I am still finding your disgusting diapers around these halls[stopping]?'[roman type][line break]";
 		otherwise if the class of the player is princess:
 			say "[speech style of M]'[if the times-submitted of M is 0][one of]Princess, I cannot contain myself any longer! It is time you made good on your flirtatious acts!'[or]My princess, I cannot avert my eyes from thine flirtatious acts any longer, my self control fails me! Lord, forgive me for the grave sin I am about to commit!'[at random][otherwise]Come here again, you slut of a princess! I think I shall enjoy another session with you.'[end if][roman type][line break]";
@@ -562,12 +618,20 @@ To compute DQ appearance assessment of (M - a royal guard):
 	otherwise if the class of the player is princess:
 		say "[one of][big he of M] smiles politely.[or][big he of M] bows gracefully.[or][line break][speech style of M]'Your Highness!'[roman type][line break][at random]";
 	otherwise if the saved cringe appearance of the player > the cringe tolerance of M:
-		if M is buddy, say "[speech style of M]'Erm, I'm sure I've just caught you at a bad moment, but you really should find more dignified clothing that reflects your [maturity] if you wish for us to remain amicable. ";
-		otherwise say "[speech style of M]'[if the times-changed of M is 0]You don't look like a grown adventurer to me. Go away and find some more appropriate attire before I am forced to treat you as though you have the [maturity] that you outwardly represent! [otherwise]You still look like a little girl. I suggest finding something more appropriate, and urgently. [end if]";
+		if M is buddy:
+			say "[speech style of M]'Erm, I'm sure I've just caught you at a bad moment, but you really should find more dignified clothing that reflects your [maturity] if you wish for us to remain amicable. ";
+		otherwise if the favour of M > the aggro limit of M + 2: [will stay friendly]
+			say "[speech style of M]'[if the times-changed of M is 0]You don't look like a grown adventurer to me. Go away and find some more appropriate attire before I am forced to treat you as though you have the [maturity] that you outwardly represent! [otherwise]You still look like a little [boy of the player]. I suggest finding something more appropriate, and urgently. [end if]";
+		otherwise: [will turn aggressive]
+			say "[speech style of M]'[if the times-changed of M is 0]You don't look like a grown adventurer to me. And we have strict rules for those who present themselves in an infantile manner. It is my duty as a royal guard to enforce this law. Prepare yourself... [otherwise]You still look like a little [boy of the player]. So I must once again enforce the law of the land. Do not resist. [end if]";
 		FavourDown M by 2;
 	otherwise if the saved appearance of the player > the outrage tolerance of M:
-		if M is buddy, say "[speech style of M]'I understand that you're trying to look like an adult, but your appearance is a disgrace. [big please] try and find something more sensible to wear before we meet again. ";
-		otherwise say "[speech style of M]'I am rather disgusted by your appearance. You look like a common whore. Find something more dignified to wear before crossing paths with me again, or I will be forced to treat you with the lack of respect that you deserve. ";
+		if M is buddy:
+			say "[speech style of M]'I understand that you're trying to look like an adult, but your appearance is a disgrace. [big please] try and find something more sensible to wear before we meet again. ";
+		otherwise if the favour of M > the aggro limit of M + 2: [will stay friendly]
+			say "[speech style of M]'I am rather disgusted by your appearance. You look like a common whore. Find something more dignified to wear before crossing paths with me again, or I will be forced to treat you with the lack of respect that you deserve. ";
+		otherwise: [will turn aggressive]
+			say "[speech style of M]'I am rather disgusted by your appearance. You look like a common whore. Since you cannot dress yourself, the resonsibility falls on me to dress you properly. Do not resist... ";
 		FavourDown M by 2;
 	otherwise if the player is top-wardrobe-malfunctioning:
 		compute dq nip slip reaction of M;
@@ -586,7 +650,7 @@ To compute DQ perception of (M - a royal guard):
 		say "[speech style of M]'Halt, in the name of the law!'[roman type][line break]";
 		anger M;
 	otherwise if M is uniquely unfriendly:
-		if there is soiled-diaper carried by M:
+		if there is soiled-diaper carried by M or there is a dirty diaper carried by M:
 			say "[speech style of M]'[one of]You there! Is it you who's been littering these halls with your filth[or]You, child! You do know that I am still finding your disgusting diapers around these halls[stopping]?'[roman type][line break]";
 		otherwise if the class of the player is princess:
 			say "[speech style of M]'[if the times-submitted of M is 0][one of]Princess, I am sorry but you have become unfit to rule our kingdom! I am forced to declare martial law. [big please] do not resist, I must now assist in the completion of your reconditioning...'[or]Princess, I have been informed that martial law is now in effect, and I must assist in your reconditioning. [big please] do not resist.'[stopping][otherwise]Come here again, Little Princess! It's time for [one of]a[or]another[stopping] [']conditioning session['].'[end if][roman type][line break]";
@@ -842,11 +906,11 @@ To get orgasm image of (M - a royal guard) in (F - a fuckhole):
 To compute the flying player taunting of (M - a royal guard):
 	if a random number from 1 to 6 is 1:
 		say "[BigNameDesc of M] taunts you.[line break][speech style of M]'[if the class of the player is princess][one of]My Princess, what happened to your sense of dignity?![or]You shame our kingdom with your acts, my Princess. I shall feel no regret for what I have in mind for you when you descend.[or]No true royalty would allow such a humiliating scenario to befall themselves.[or]Our Princess is naught but a dumb cow in need of breeding. Oh how I have dreamed for such an opportunity![or]Princess! Come down from there so that I can use you to deposit my seed. It would seem to be all you are good for now.[or]Are you really even the Princess? Or are you just a dumb obese whore in royal dress?[in random order]'[otherwise][one of]You wenches are so foolish, getting yourselves into such humiliating situations![or]You look like a life sized balloon![or]How do you expect anyone to respect you, never mind a noble such as myself?[or]Dumb fat girls deserve nothing less than a good ruining! I shall wait for you to descend.[or]Come down, little piggy, let me play with you.[or]Fat useless females like you are my favourite kind to use to relieve myself.[in random order]'[end if][roman type][line break][if the humiliation of the player < 17500]You [one of]wince[or]shudder[or]cringe[purely at random] with shame.";
-		humiliate 20.
+		slightHumiliate.
 
 To say LandingTaunt of (M - a royal guard):
 	if M is royal guard, say "[BigNameDesc of M] smirks.[line break][speech style of M]'[one of]Haha, at last!'[or]I've never seen such a ridiculous sight in my life.'[in random order][roman type][line break]";
-	humiliate 50.
+	moderateHumiliate.
 
 To say SwallowDemand of (M - a royal guard):
 	if M is not unfriendly:
@@ -875,9 +939,39 @@ To get creampie image of (M - a royal guard) in (F - a fuckhole):
 	otherwise cutshow figure of guard cutscene 6 for M;
 
 To compute post climax effect of (M - a royal guard) in (F - a fuckhole):
-	compute M sleeping 200 after sex;
+	if M is prison guard and bondage protection < 2 and the pregnancy of the player is 0 and there is an off-stage fetish appropriate chastity bond and the player is getting unlucky:
+		compute chastity locking of M after F;
+	otherwise if M is not prison guard:
+		compute M sleeping 200 after sex;
 	FavourUp M;
 	reset submissive wenches.
+
+To compute chastity locking of (M - a royal guard) after (B - a body part):
+	let CB be a random off-stage fetish appropriate chastity bond;
+	if CB is chastity bond and CB is actually summonable:
+		let K be a random off-stage specific-key;
+		if B is thighs, say "[speech style of M]'Pathetic. You clearly need to spend some more effort learning to use your tongue, rather than your [if the player is possessing a vagina]hole[otherwise]prick down there[end if]!'[roman type][line break][BigNameDesc of M] produces a sturdy-looking [ShortDesc of CB]! [big he of M] holds you [if the player is possessing a scrotum]by the balls [end if]firmly as [he of M] [if CB is chastity cage]squishes your [sissy-penis][otherwise]guides your loins[end if] into its frame."; [failed tongue worship]
+		otherwise say "[speech style of M]'[one of]Now I will show you how we tame unruly sluts around these parts[or]Your right to a shame-free orgasm has been revoked[or]Access to your genitals is a privilege, not a right[then at random]!'[roman type][line break][BigNameDesc of M] produces a sturdy-looking [ShortDesc of CB]! [big he of M] holds you [if the player is possessing a scrotum]by the balls [end if]firmly as [he of M] [if CB is chastity cage]squishes your [sissy-penis][otherwise]guides your loins[end if] into its frame. [GotUnluckyFlav]";
+		if the player is able to speak, say "[variable custom style]'[if the player is feeling dominant][one of]HEY! That is NOT okay! Unlock me right now!'[or]How DARE you!'[stopping][otherwise if the player is not feeling submissive][one of]Please, don't do this!'[or]Nooo, not again! Please, I'll be good! Just don't lock me up again...'[stopping][otherwise][one of]I understand...'[or]Yes Sir...'[cycling][end if][roman type][line break]";
+		otherwise say "[variable custom style][if the player is feeling dominant]The fucking bastard! This is outrageous![otherwise if the player is not feeling submissive]There's no way for me to stop [him of M]![otherwise]This is my fault...[end if][roman type][line break]";
+		summon CB uncursed;
+		if K is specific-key:
+			compute M locking CB with K;
+		otherwise:
+			say "[BigNameDesc of M] clicks the lock shut.";
+			now CB is locked;
+		say "[speech style of M]'Come find me another time, and I will decide whether your [if B is thighs][']training['][otherwise]sentence[end if] is over.'[roman type][line break]";
+		say FullExamineDesc of CB;
+		satisfy M.
+
+Definition: prison guard is actually-lick-unsatisfied:
+	if bondage protection < 2 and the pregnancy of the player is 0 and there is an off-stage fetish appropriate chastity bond:
+		compute chastity locking of prison guard after thighs;
+		decide yes;
+	otherwise if prison guard is default-actually-lick-unsatisfied:
+		decide yes;
+	decide no.
+
 
 To decide if (M - a royal guard) is willing to creampie (F - a fuckhole):
 	if tutorial is 1, decide yes;
@@ -1014,9 +1108,15 @@ This is the royal guard incarcerating a criminal rule:
 					if (tentacle fetish is 0 or inhuman pregnancy < 2) and gymnast-explorer is summon-available and gymnast-explorer is off-stage:
 						set up gymnast-explorer;
 						now gymnast-explorer is in Dungeon03;
-						now the sleep of gymnast-explorer is 250;
-						say "There is a [man of gymnast-explorer] sleeping on the ground here. [UniqueMonsterDesc of gymnast-explorer]It's unclear if [he of gymnast-explorer] was being kept prisoner here or if [he of gymnast-explorer] just chose a rather controversial place to take a nap.";
-						focus-consider gymnast-explorer;
+						if bukkake fetish is 1:
+							say "There is a [man of gymnast-explorer] sleeping on the ground here. [UniqueMonsterDesc of gymnast-explorer][big he of gymnast-explorer] is locked in two sets of wooden stocks, which have been positioned in such a way that [he of gymnast-explorer] is lying on [his of gymnast-explorer] back with [his of gymnast-explorer] knees positioned next to [his of gymnast-explorer], essentially in a sort of piledriver position. [big he of gymnast-explorer] is grunting and moaning and whining, and a few moments later, it's clear why, when [he of gymnast-explorer] wails, and a geyser of [semen] bursts out of [his of gymnast-explorer] asshole, squirting down like a foul fountain onto [his of gymnast-explorer] face, coating [his of gymnast-explorer] visage with [his of gymnast-explorer] own anal creampies.[paragraph break]A few seconds of coughing and spluttering later, [NameDesc of M] is unlocking [NameDesc of gymnast-explorer][']s restraints.[line break][speech style of M]'And with that, your sentence is over. You are a citizen once more... Until I see you behaving badly again, that is. Now go clean yourself up - you look disgusting.'[roman type][line break][BigNameDesc of M] spanks [NameDesc of gymnast-explorer], who yelps, and quickly crawls out of the cell.";
+							compute mandatory room leaving of gymnast-explorer;
+							now gymnast-explorer is moved;
+							cutshow Figure of gymnast explorer 1 cutscene 3 for gymnast-explorer;
+						otherwise:
+							now the sleep of gymnast-explorer is 250;
+							say "There is a [man of gymnast-explorer] sleeping on the ground here. [UniqueMonsterDesc of gymnast-explorer]It's unclear if [he of gymnast-explorer] was being kept prisoner here or if [he of gymnast-explorer] just chose a rather controversial place to take a nap.";
+							focus-consider gymnast-explorer;
 				repeat with G running through alive royal guards:
 					unless G is M or the boredom of G >= 300 or G is defeated or G is asleep:
 						now G is in Dungeon03;
@@ -1032,7 +1132,9 @@ This is the royal guard incarcerating a criminal rule:
 								now the sleep of X is 0;
 					say "[speech style of M]'Civilians disperse. From here on out, this criminal is in the hands of the law.'[roman type][line break][BigNameDesc of M] keeps you firmly pinned to the ground as [if N > 2]the other guards herd the 'civilians' [otherwise if N > 1][his of M] partner herds the 'civilians'[otherwise][he of M] shoos the 'civilians'[end if] out of the room.[line break][speech style of M]'Your crime spree ends here, villain. You have been sentenced to [if diaper quest is 1]forced babification[otherwise]ten minutes of community service[end if].'[roman type][line break][BigNameDesc of M] [if N is 1]throws you into the cell, following you in and locking the door behind [him of M][otherwise if N > 2]drags you into the cell as the rest of the guards follow you in and lock the door behind them[otherwise]the other guard follows you in and locks the door behind [him of M][end if].";
 					repeat with X running through monsters in the location of the player:
-						unless X is royal guard, compute mandatory room leaving of X;
+						unless X is royal guard:
+							compute mandatory room leaving of X;
+							now X is moved;
 				otherwise:
 					say "[speech style of M]'Your crime spree ends here, villain. You have been sentenced to [if diaper quest is 1]forced babification[otherwise]ten minutes of community service[end if].'[roman type][line break][BigNameDesc of M] [if N is 1]throws you into the cell, following you in and locking the door behind [him of M][otherwise if N > 2]drags you into the cell as the rest of the guards follow you in and lock the door behind them[otherwise]the other guard follows you in and locks the door behind [him of M][end if].";
 				anger M; [just to make sure nothing weird is going on]
@@ -1138,15 +1240,21 @@ To say ThreesomePrep of (M - a royal guard) with (N - a royal guard) in (F - vag
 
 [TODO: guard foursome, possibly]
 
-To compute angry punishment of (M - a royal guard):[Royal guards will always punish you if you struggle, unless you're a princess.]
+To compute angry punishment of (M - a royal guard): [Royal guards will always punish you if you struggle, unless you're a princess.]
 	if the class of the player is not princess:
 		say angry punishment insult of M;
 		if M is not friendly-fucking and (M is not seduced or M is unfriendly):
-			if bondage protection < 2 and bondage-corset is off-stage and bondage-corset is actually summonable:
+			if M is prison guard and bondage protection < 2 and the pregnancy of the player is 0 and there is an off-stage fetish appropriate chastity bond and the player is getting unlucky:
+				compute chastity locking of M after arms;
+			otherwise if bondage protection < 2 and bondage-corset is off-stage and bondage-corset is actually summonable:
 				summon bondage-corset uncursed;
 				say "[BigNameDesc of M] makes you wear a [bondage-corset]!";
 				let K be a random off-stage specific-key;
-				compute M locking bondage-corset with K;
+				if K is specific-key:
+					compute M locking bondage-corset with K;
+				otherwise:
+					say "[big he of M] clicks the lock shut.";
+					now bondage-corset is locked;
 			otherwise:
 				compute default angry punishment of M.
 
@@ -1260,7 +1368,7 @@ To compute punishment of (P - guard-incarceration):
 	follow the royal guard incarcerating a criminal rule.
 
 To say DiaperChangeStart of (M - a royal guard):
-	say "[BigNameDesc of M] rolls you onto your back and pins you down with one strong arm.[line break][speech style of M]'[if there is a worn diaper]Okay, let's get you out of this thing...'[otherwise][one of]This is the law of the land. Once it has been decided that you are unable to act like an adult, you are to be kept in diapers until such a time as I deem it appropriate to return you to adult status.'[or]Your name is still on the Young Offenders List, girl. You will be kept in nappies until that changes.'[stopping][end if][roman type][line break]".
+	say "[BigNameDesc of M] rolls you onto your back and pins you down with one strong arm.[line break][speech style of M]'[if there is a worn diaper and M is willing to double diapers and M is eager to double diapers]Okay, let's make sure your padding is sufficient...'[otherwise if there is a worn diaper]Okay, let's get you out of this thing...'[otherwise][one of]This is the law of the land. Once it has been decided that you are unable to act like an adult, you are to be kept in diapers until such a time as I deem it appropriate to return you to adult status.'[or]Your name is still on the Young Offenders List, girl. You will be kept in nappies until that changes.'[stopping][end if][roman type][line break]".
 
 To say DQChangeResistReactionFlav of (M - a royal guard):
 	say "[BigNameDesc of M] growls at your attempts to resist [him of M].[line break][speech style of M]'[one of]Leave it to someone as childish as you to be so ungrateful as to throw a tantrum while being cleaned.'[or]At this point I'm changing you for the benefit of my [men of a random patron], you have proven that you belong in sagging linens.'[or][if there is a worn messed knickers]Is this your grand plan? Don't worry, I have enough baby wipes to subdue the mess you're making[otherwise]Hah, your resistance would be comedic if you weren't making such a mess, now hold still[end if]!'[in random order][roman type][line break]".
@@ -1395,6 +1503,7 @@ To compute tax return of (M - a royal guard):
 		FavourUp M.
 
 To compute loot dropping of (X - a thing) by (M - a royal guard):
+	unless M is dying, now the owner of X is M;
 	say "[BigNameDesc of M] reaches for [his of M] [ShortDesc of X] and detaches it from [his of M] clothes.".
 
 To say TaxReturnDismay of (M - a royal guard):
@@ -1414,19 +1523,15 @@ Definition: prison guard is permanently banishable: decide no. [This guard just 
 
 Part 4 - Conversation
 
-To IdentifiablePosterReaction of (M - a royal guard):
+To say IdentifiablePosterReactionFlav of (M - a royal guard):
 	say "[BigNameDesc of M] looks at you, blinks, then looks back to the poster.[line break][speech style of M]'This is YOU in this image?! [if the class of the player is princess]My princess[otherwise]Good heavens[end if], [one of]you are a disgrace to this nation[or]you must atone for your antisocial behaviour[at random].'[roman type][line break]";
-	say "You turn bright red with shame.";
 	if M is friendly or M is uninterested:
 		say "[speech style of M]'I shall administer your punishment.'[roman type][line break][BigNameDesc of M] takes an aggressive stance.";
 		anger M;
-		interest M;
-	humiliate the lewdness of a random poster in the location of the player * 2.
+		interest M.
 
-To UnidentifiablePosterReaction of (M - a royal guard) with (P - a poster):
-	say "[speech style of M]'Hmph. How lewd.'[roman type][line break]";
-	say "You turn bright red but don't say a word.";
-	humiliate the lewdness of a random poster in the location of the player.
+To say UnidentifiablePosterReactionFlav of (M - a royal guard) with (P - a poster):
+	say "[speech style of M]'Hmph. How lewd.'[roman type][line break]".
 
 To compute FriendlySexRelease of (M - a royal guard):
 	if M is willing to let go:
@@ -1701,7 +1806,7 @@ To compute unfriendly drink of (M - a royal guard):
 		now the stance of the player is 1;
 		interest M;
 		compute M entering mouth;
-		humiliate 225;
+		severeHumiliate;
 	say line break.
 
 Section 4 - Food Requesting

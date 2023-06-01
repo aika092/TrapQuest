@@ -46,6 +46,15 @@ To decide which figure-name is Figure of Djinn Cutscene 1:
 To decide which figure-name is Figure of Djinn Cutscene 2:
 	decide on figure of small image.
 
+To decide which figure-name is Figure of blonde explorer 1 cutscene 1:
+	decide on figure of small image.
+To decide which figure-name is Figure of exposed explorer 1 cutscene 1:
+	decide on figure of small image.
+To decide which figure-name is Figure of gymnast explorer 1 cutscene 3:
+	decide on figure of small image.
+To decide which figure-name is Figure of exposed explorer 2a:
+	decide on figure of small image.
+
 To decide which figure-name is Figure of Fairy Cutscene 1:
 	decide on figure of small image.
 To decide which figure-name is Figure of Fairy Cutscene 2:
@@ -187,6 +196,9 @@ To decide which figure-name is Figure of Slave Hannah:
 	decide on figure of small image.
 
 To decide which figure-name is Figure of hellhound:
+	decide on figure of small image.
+
+To decide which figure-name is Figure of hotel bed cutscene 1:
 	decide on figure of small image.
 
 To decide which figure-name is Figure of Witch Cutscene 1:
@@ -360,6 +372,23 @@ To decide which figure-name is Figure of Oral Creampie Cutscene 3:
 To decide which figure-name is Figure of Oral Creampie Cutscene 4:
 	decide on figure of small image.
 To decide which figure-name is Figure of Oral Creampie Cutscene 6:
+	decide on figure of small image.
+
+To decide which figure-name is Figure of white inexperienced patron:
+	decide on figure of small image.
+To decide which figure-name is Figure of subby inexperienced patron:
+	decide on figure of small image.
+To decide which figure-name is Figure of black inexperienced patron:
+	decide on figure of small image.
+To decide which figure-name is Figure of eldritch experienced patron:
+	decide on figure of small image.
+To decide which figure-name is Figure of furry patron:
+	decide on figure of small image.
+To decide which figure-name is Figure of crimson dickhead patron:
+	decide on figure of small image.
+To decide which figure-name is Figure of femme white inexperienced patron:
+	decide on figure of small image.
+To decide which figure-name is Figure of femme black inexperienced patron:
 	decide on figure of small image.
 
 To decide which figure-name is Figure of Photo Display Predicament:

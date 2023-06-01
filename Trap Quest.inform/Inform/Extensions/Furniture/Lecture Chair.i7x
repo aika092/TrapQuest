@@ -45,7 +45,7 @@ To compute furniture resting on (C - a lecture chair):
 		say "The other [']students['] around you giggle and point, as you become the laughing stock of the nursery. ";
 		if the humiliation of the player < 40000, say "[if the delicateness of the player < 5]You growl in frustration, and hold back tears.[otherwise if the delicateness of the player < 16]You can't help but burst into tears at such a bizarre and humiliating situation![otherwise]You can't help but giggle along with them - what a disgusting baby you are![end if]";
 		if the delicateness of the player < 16, DelicateUp 2;
-		humiliate 500;
+		obsceneHumiliate;
 		say "Slowly, the other girls and the teacher begin to fade into nothing, leaving you alone[if there is a monster in the location of the player] with the [list of monsters in the location of the player][end if][if there is a worn total protection diaper and diaper messing is 3]. You look down at your nappy, expecting to see a large, bulging filthy undergarment, but it's completely clean! What the hell, did you imagine the whole thing?![otherwise] sitting in your soiled undergarment.[end if]";
 		if there is a worn total protection soilable knickers and asshole is not actually occupied and diaper messing >= 3, RectumIncontinenceUp 1;
 		otherwise BladderIncontinenceUp 1;

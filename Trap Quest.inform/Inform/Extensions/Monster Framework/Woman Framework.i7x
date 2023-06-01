@@ -66,7 +66,7 @@ To set up (M - woman-player):
 To decide which number is the difficulty of (M - woman-player):
 	decide on the raw difficulty of M + game difficulty - (woman-bimbo of M * 2).
 
-Definition: woman-player is unfriendly rather than friendly:
+Definition: woman-player is calculated unfriendly:
 	if it is angered and it is not pacified, decide yes;
 	decide no.
 Definition: woman-player is uniquely unfriendly: decide no.
@@ -115,11 +115,11 @@ To compute monstermotion of (M - woman-player):
 	otherwise if M is introduced and the woman-status of M < 90: [90 or above means she's spawned to get fucked, so she should stay still]
 		now neighbour finder is the location of M;
 		let A be a random N-viable direction;
-		let P be the room A from the location of M;
-		if A is a random N-viable direction and P is not Dungeon12:
-			try M going A;
-		otherwise if A is a random N-viable direction and P is not Dungeon12:
-			try M going A.
+		if A is a direction and a random number between 1 and 100 > 75:
+			let P be the room A from the location of M;
+			if P is not Dungeon12:
+				blockable move M to A;
+				compute monstermotion reactions of M.
 
 To compute (M - woman-player) seeking (D - a direction):
 	if the woman-status of M < 90: [90 or above means she's spawned to get fucked and should stay still]
@@ -148,7 +148,7 @@ STATES:
 29: Just rescued from the vine boss hole
 ==Anything below 30 implies that a scene has just ended so a new one shouldn't start, but she's able to move around as normal==
 
-==Anything 80 or above prevents protection==
+==Anything 80 or above prevents combat & protection==
 80: TQ: Anal only stool
 81: DQ: Hiding messy diaper
 82: TQ: Pregnant
@@ -169,6 +169,11 @@ STATES:
 102: DQ: Appeared holding up the lid for the changing station tank.
 103: DQ: Appeared in Christmas box.
 ]
+
+Definition: woman-player is easy-steal:
+	if the woman-status of woman-player is 80, decide yes; [anal only stool]
+	if the woman-status of woman-player >= 90, decide yes;
+	decide no.
 
 Definition: woman-player is summon appropriate: decide no. [Can she be randomly selected to be summoned?]
 Definition: woman-player is redeploy appropriate:
@@ -498,6 +503,12 @@ The woman gets bored and moves on rule is listed last in the woman wandering rul
 
 Part - Combat
 
+To check attack of (M - woman-player):
+	if the woman-status of M < 80, check default attack of M.
+Definition: woman-player is blocker:
+	if the woman-status of woman-player < 80, decide yes;
+	decide no.
+
 To say AllyDamageFlav of (M - woman-player) on (X - a monster):
 	say "[one of][line break][second custom style]'Let's do this!'[roman type][line break][or][line break][second custom style]'Take this!'[roman type][line break][stopping][line break][BigNameDesc of M] knees [NameDesc of X] with all [his of M] strength.".
 
@@ -575,6 +586,7 @@ To say BanishFleeFlav of (M - woman-player):
 	say "[BigNameDesc of M][']s body fizzles into blue cubes like something out of TRON, then completely disappears. It seems that [he of M][']s been removed from the game.".
 
 To compute loot dropping of (X - a thing) by (M - woman-player):
+	unless M is dying, now the owner of X is M;
 	say "You notice that [he of M][']s wearing a [printed name of X]!".
 
 Part - Conversation
@@ -601,8 +613,18 @@ To say undismissable of (M - woman-player):
 	say "[BigNameDesc of M] seems [if the woman-status of M is 80]a bit confused[otherwise]to choose to ignore that[end if].".
 
 To compute enema floor reaction of (M - woman-player):
-	humiliate 100;
-	if voluntarySquatting is 1, humiliate 200;
+	strongHumiliate;
+	if voluntarySquatting is 1, severeHumiliate;
 	if M is interested and M is friendly, say "[BigNameDesc of M] coughs and pretends [he of M] doesn't notice.".
+
+To say StealProvokedReaction of (M - woman-player):
+	now M is angered;
+	now M is introduced;
+	say "[speech style of M]'Hey, what the hell do you think you're doing, bitch?!'[roman type][line break]".
+
+To say PartialSuccessStealProvokedReaction of (M - woman-player):
+	now M is angered;
+	now M is introduced;
+	say "[speech style of M]'Hey, give that back, bitch!'[roman type][line break]".
 
 Woman Framework ends here.

@@ -730,7 +730,7 @@ Outputs the "DC" the player's mental dominance roll needs to beat in order to do
 +!]
 To decide which number is the submissiveness base of (M - a monster):
 	let D be the difficulty of M;
-	increase D by player-fuckchoice * 2;[player-fuckchoice corresponds to the type of sex]
+	increase D by player-fuckchoice * -2;[player-fuckchoice corresponds to the type of sex]
 	if M is wrapped, increase D by 2;[making them wear a condom will make domination slightly harder, but they will keep the condom on if you fail]
 	decide on D.
 
@@ -1060,7 +1060,7 @@ To compute failed dominance punishment of (M - a monster):
 		now another-turn is 1;[a male monster will usually just fuck you]
 	otherwise:
 		if debugmode > 0, say "Triggering default female monster punishment.";
-		humiliate 30;
+		moderateHumiliate;
 		if the number of worn not sissifying removable clothing > 0 and the player is getting unlucky:
 			compute angry punishment of M;
 		otherwise:

@@ -36,7 +36,7 @@ Definition: a schoolgirl outfit is potentially erection concealing: decide yes. 
 
 Part 1 - Cheeky Schoolgirl Outfit
 
-cheeky schoolgirl outfit is a schoolgirl outfit. cheeky schoolgirl outfit is fully covering.
+cheeky schoolgirl outfit is a schoolgirl outfit. cheeky schoolgirl outfit is knee-length. cheeky schoolgirl outfit is fully covering.
 
 The printed name of cheeky schoolgirl outfit is usually "[clothing-title-before]cheeky schoolgirl outfit[clothing-title-after]". The text-shortcut of cheeky schoolgirl outfit is "cso". Understand "black", "tie", "fleece", "skirt" as cheeky schoolgirl outfit.
 
@@ -46,7 +46,7 @@ To decide which figure-name is clothing-image of (C - cheeky schoolgirl outfit):
 	decide on figure of cheeky schoolgirl outfit.
 
 To say ClothingDesc of (C - cheeky schoolgirl outfit):
-	say "A white shirt with collar and tie, a black fleece and a short black skirt.".
+	say "A white shirt with collar and tie, a black fleece and a black skirt.".
 
 To decide which number is the initial outrage of (C - cheeky schoolgirl outfit):
 	decide on 2.

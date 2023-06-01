@@ -210,12 +210,13 @@ To compute unique periodic effect of (M - a gladiator):
 To set up (M - a gladiator):
 	reset M;
 	now the monstersetup of M is 1;
-	if diaper quest is 0, add gladiator-sword to the banishItems of M, if absent;
 	add metal-disc to the taxableItems of M, if absent;
-	add red-pasties to the tradableItems of M, if absent;
-	add concealment-salve to the tradableItems of M, if absent;
-	add concealment-salve to the taxableItems of M, if absent;
-	add nail-bomb to the taxableItems of M, if absent;
+	if diaper quest is 0:
+		add red-pasties to the tradableItems of M, if absent;
+		add concealment-salve to the tradableItems of M, if absent;
+		add concealment-salve to the taxableItems of M, if absent;
+		add nail-bomb to the taxableItems of M, if absent;
+		add gladiator-sword to the banishItems of M, if absent;
 	now the raw difficulty of M is the starting difficulty of M;
 	now M is female;
 	if doomed is 5, SilentlyDifficultyUp M by 1;
@@ -382,6 +383,7 @@ To compute (L - a milking bench lever) pull of (M - a gladiator):
 				satisfy M;
 				compute mandatory room leaving of M;
 				cutshow monster-image of M;
+				cutshow figure of milking bench cutscene 6 for L;
 		otherwise:
 			if M is in the location of the player, say "[BigNameDesc of M] eyes up the lever on the wall.[line break][speech style of M]'Who keeps switching this back?!'[roman type][line break][big he of M] steps over to the lever, and pushes it up so that it is pointing to the green plus sign.";
 	now L is lever-pulled.
@@ -771,11 +773,11 @@ To compute the flying player taunting of (M - a gladiator):
 	let R be a random number from 1 to 6;
 	if R is 1:
 		say "[BigNameDesc of M] berates you.[line break][speech style of M]'[one of]Proper women have slim, respectable figures. You on the other hand, have clearly let yourself go.[or]You are so obese that you can't even move. How could anyone ever respect you?[or]If your breasts were more substantial you wouldn't be lifted into the air so easily. What a useless person you are.[or]You look like an animal ready to be eaten, not a human ready to be respected.[or]Your current curves do not make you look attractive. They make you look like a slob.[in random order]'[roman type][line break][if the humiliation of the player < 17500]You [one of]wince[or]shudder[or]cringe[purely at random] with shame.";
-		humiliate 20.
+		slightHumiliate.
 
 To say LandingTaunt of (M - a gladiator):
 	say "[BigNameDesc of M] frowns.[line break][speech style of M]'[one of]Good. I shan't waste any more time waiting!'[or]So disgraceful. You can't even accept your punishment with dignity.'[in random order][roman type][line break]";
-	humiliate 50.
+	moderateHumiliate.
 
 To compute the default taunting of (M - a gladiator):
 	say "[if M is enlightened gladiator and M is male][BigNameDesc of M] furiously strokes [his of M] [DickDesc of M] as [he of M] watches you. [otherwise][BigNameDesc of M] stands still, patiently watching you. [end if]".
@@ -1435,7 +1437,7 @@ To say DQSpankResistReactionFlav of (M - a gladiator):
 	otherwise say "[speech style of M]'[one of]Goodness you are a toddler. I think I can find a diaper around here if you're going to take your punishment with such disgrace.'[or]Squirming only gets you more winks little one.'[or][if there is worn knickers]Are we regretting our choice in underwear yet? The thrashing says yes!'[otherwise]I don't back-pedal from a punishment, child. Do not try to escape!'[end if][in random order][roman type][line break]".
 
 To decide which number is the forcefeed-length of (M - a gladiator):
-	if M is unfriendly, decide on 3;
+	if M is unfriendly, decide on 4;
 	decide on 1.
 
 To say ForcefeedDeclarationFlav of (M - a gladiator):
@@ -1551,6 +1553,7 @@ To say BanishForceFlav of (M - a gladiator):
 			say "[BigNameDesc of M] eyes the lever in this room.[line break][speech style of M]'Beware your own hubris, [worm of M]. You may have defeated me, but do you really think you are the strongest power in this place?'[roman type][line break]With that, [he of M] shoves the lever. You hear a mechanism whirring, and what sounds like a metal door swing open.[line break][variable custom style]Uh-oh.[roman type][line break]";
 
 To compute loot dropping of (D - metal-disc) by (M - a gladiator):
+	unless M is dying, now the owner of D is M;
 	say "[BigNameDesc of M] plucks a [D] from [his of M] belt and tosses it towards you. It rolls towards you and comes to a halt at your feet.[line break][speech style of M]'There. A trophy for your victory. I wonder what I will take for my trophy the next time we fight...'[roman type][line break]".
 
 To say BanishDropFlav of (C - gladiator-sword) from (M - a gladiator):
@@ -1658,7 +1661,7 @@ To compute failed dominance punishment of (M - a gladiator):
 				say "You obediently lean forward, opening your mouth [if the delicateness of the player + the sex addiction of the player < 10]after a moment of hesitation[otherwise if the sex addiction of the player < 12]with little hesitation[otherwise]with no pretence of hesitation[end if] and [if O < 3]unenthusiastically[otherwise if O < 6]all too eagerly[otherwise]happily[end if] push your tongue into [his of M] [if M is presenting as male][asshole]. The[otherwise if interracial fetish is 1]proud ebony folds. The[otherwise]folds. The[end if] lack of control you have over the situation [if the times-seeded of M > 0]is reinforced by the creamy taste of your previous [one of]encounter[or]encounters[stopping] hitting your tongue, [otherwise]is reinforced by the fact that [he of M] hasn't enough bothered to restrain you, [end if]and you willingly submit to being [his of M] bitch until your tongue is fatigued enough to lose its dexterity.";
 				if interracial fetish is 1, passively stimulate face from M;
 				if the times-seeded of M > 0, StomachSemenUp 1;
-				humiliate 50 + ((the times-dominated of M - 1) * 3);
+				humiliate MODERATE-HUMILIATION + ((the times-dominated of M - 1) * 3);
 				LickCount;
 				Satisfy M;
 			unless player-fucker is penis, say GotUnluckyFlav;
@@ -1962,19 +1965,15 @@ To decide which number is the bartering value of (C - a cupless bra) for (M - a 
 To say MonsterOfferAcceptFlav of (M - a gladiator) to (C - a cupless bra):
 	say "[BigNameDesc of M] nods thoughtfully.[line break][speech style of M]'Feminine and leaves my breasts exposed no matter what their size. I'll take it.'[roman type][line break]".
 
-To IdentifiablePosterReaction of (M - a gladiator):
+To say IdentifiablePosterReactionFlav of (M - a gladiator):
 	if M is male, say "[BigNameDesc of M] looks at you, blinks, then looks back to the poster.[line break][speech style of M]'You are a complete and total disgrace to this world.'[roman type][line break]";
 	otherwise say "[BigNameDesc of M] looks at you, blinks, then looks back to the poster.[line break][speech style of M]'This is you in the image? [if M is friendly]I'm sorry, I cannot be seen to associate with such an unwomanly harlot[otherwise]You are even more of a disgrace than I realised[end if].'[roman type][line break]";
-	say "You turn bright red with shame.";
 	if M is friendly:
 		say "[BigNameDesc of M] leaves the way [he of M] came.";
-		destroy M;
-	humiliate the lewdness of a random poster in the location of the player * 2.
+		destroy M.
 
-To UnidentifiablePosterReaction of (M - a gladiator) with (P - a poster):
-	say "[speech style of M]'Be glad you are not the disgraced [man of P] in this image.'[roman type][line break]";
-	say "You turn bright red but don't say a word.";
-	humiliate the lewdness of a random poster in the location of the player.
+To say UnidentifiablePosterReactionFlav of (M - a gladiator) with (P - a poster):
+	say "[speech style of M]'Be glad you are not the disgraced [man of P] in this image.'[roman type][line break]".
 
 Section 1 - Greeting
 

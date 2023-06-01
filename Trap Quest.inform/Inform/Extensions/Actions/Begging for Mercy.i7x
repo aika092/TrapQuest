@@ -12,8 +12,8 @@ Check begging:
 		if the player is gagged:
 			allocate 6 seconds;
 			say "You try to beg for mercy, but all that comes out around your [ShortDesc of random thing filling face] is[line break][variable custom style]'Mm mm mmm mmmmph!'[roman type][line break]";
-		otherwise if there is a live thing penetrating face:
-			let M be a random live thing penetrating face;
+		otherwise if the player is mouthblocked:
+			let M be a random thing penetrating face;
 			if M is a male intelligent monster:
 				allocate 6 seconds;
 				say "[variable custom style]'GGHGPHMMN!'[roman type][line break][big he of M] probably didn't understand that.";
@@ -30,10 +30,10 @@ Carry out begging:
 	let X be 0;
 	allocate 6 seconds;
 	now the player-reaction of the player is begging for mercy;
-	humiliate 100;
+	strongHumiliate;
 	let N be a random monster penetrating a body part;
 	if N is nothing, now N is a random monster grabbing the player;
-	if the player is not having marital sex, humiliate 50;
+	if the player is not having marital sex, moderateHumiliate;
 	if N is monster:
 		say MercyAsk of N;
 		follow the speech penalties rules;

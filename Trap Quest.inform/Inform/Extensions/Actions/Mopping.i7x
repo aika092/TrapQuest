@@ -69,9 +69,9 @@ Carry out mopping face:
 	FaceFill urine by D;
 	decrease the urine-puddle of the location of the player by D;
 	if class of the player is catgirl:
-		if the player is not broken, humiliate SEVERE-HUMILIATION - (MODERATE-HUMILIATION * (the thirst of the player - 1));
+		if the player is not broken, humiliate (SEVERE-HUMILIATION) - (40 * (the thirst of the player - 1));
 	otherwise:
-		humiliate (SEVERE-HUMILIATION * 2) - (MODERATE-HUMILIATION * (the thirst of the player + 2));[This is probably one of the least dignified things you could do, but it's less humiliating the thirstier you are]
+		humiliate (OBSCENE-HUMILIATION) - (40 * (the thirst of the player + 2));[This is probably one of the least dignified things you could do, but it's less humiliating the thirstier you are]
 	suggest swallowing.
 
 

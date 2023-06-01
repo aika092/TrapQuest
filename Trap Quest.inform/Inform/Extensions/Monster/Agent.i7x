@@ -3,7 +3,7 @@ Agent by Monster begins here.
 agent is a monster. agent is male. agent is intelligent. The leftover-type of agent is 149.
 
 Definition: agent is hotel dwelling:
-	if diaper quest is 0 and the player is a june 2022 top donator, decide yes;
+	if diaper quest is 0 and the player is the donator, decide yes;
 	if diaper quest is 1 and diaper swapping > 1, decide yes;
 	decide no.
 
@@ -133,10 +133,34 @@ To compute perception of (M - agent):
 	if M is agent-deglassed:
 		anger M;
 		say "[big he of M] stares at you with unfiltered rage.[line break][speech style of M]'[one of]Do you have any idea how much those glasses cost to make?!'[or]I'll never forgive you for breaking my glasses!'[stopping][roman type][line break]";
+	otherwise if M is groping:
+		compute grope of M;
+		say "[BigNameDesc of M] loses interest.";
+		bore M;
+	otherwise if the player is top-wardrobe-malfunctioning:
+		compute tq nip slip reaction of M;
+		say "[BigNameDesc of M] loses interest.";
+		bore M;
 	otherwise:
 		say "[big he of M] maintains a neutral expression, and doesn't seem interested in interacting with you.";
 		bore M.
 
+To say BreastsGropeFlav of (M - agent):
+	say "[speech style of M]'[one of]Not bad tits, if I say so myself.'[or]Excellent perkiness.'[stopping][roman type][line break]".
+To say AssholeGropeFlav of (M - agent):
+	say "[speech style of M]'Why is it so easy to access your asshole, slut?'[roman type][line break]".
+To say VaginaGropeFlav of (M - agent):
+	say "[speech style of M]'Why is it so easy to access your [cunt], slut?'[roman type][line break]".
+To say PenisGropeFlav of (M - agent):
+	say "[speech style of M]'Why is everyone else's penis always so small?'[roman type][line break]".
+To decide which number is the belly grope preference of (M - agent):
+	decide on -1000.
+To decide which number is the face grope preference of (M - agent):
+	decide on -1000.
+To decide which number is the thighs grope preference of (M - agent):
+	decide on -1000.
+To say AssGropeFlav of (M - agent):
+	say "[speech style of M]'Hmm. Not bad...'[roman type][line break]".
 
 Part 4 - Combat
 
@@ -196,7 +220,7 @@ To say DamageReactTired of (M - agent):
 	say DamageReactWeak of M.
 
 To say DamageReactWeak of (M - agent):
-	say "[BigNameDesc of M] squeals in pain.[line break][speech style of M]'Fuck! Okay, time for a tactial retreat.'[roman type][line break][big he of M] turns and gets ready to run!";
+	say "[BigNameDesc of M] squeals in pain.[if the scared of M <= 0][line break][speech style of M]'Fuck! Okay, time for a tactical retreat.'[roman type][line break][big he of M] turns and gets ready to run![end if]";
 	now the scared of M is 100.
 
 Definition: agent is automatically banishable: decide yes.
@@ -232,6 +256,11 @@ An agent poster is a kind of poster.
 
 first-agent-poster is an agent poster. first-agent-poster is unidentifiable. first-agent-poster has a text called poster-breast-desc. first-agent-poster has a text called poster-belly-desc. first-agent-poster has a text called poster-hip-desc. first-agent-poster has a text called poster-hair-desc.
 
+To distribute (P - first-agent-poster):
+	if the player is in Hotel30 or (a random number between 1 and 2 is 1 and the player is not in Hotel40), now P is in Hotel40;
+	otherwise now P is in Hotel30;
+	compute title of P.
+
 To decide which figure-name is the examine-image of (C - first-agent-poster):
 	decide on Figure of agent camera cutscene 1.
 
@@ -257,8 +286,11 @@ To say ExamineDesc of (C - first-agent-poster):
 second-agent-poster is an agent poster. second-agent-poster is identifiable.
 
 To distribute (P - second-agent-poster):
-	if the player is in Hotel30 or (a random number between 1 and 2 is 1 and the player is not in Hotel40), now P is in Hotel40;
-	otherwise now P is in Hotel30;
+	if the player is in Hotel01 or (a random number between 1 and 2 is 1 and the player is not in Hotel40), now P is in Hotel40;
+	otherwise now P is in Hotel01;
+	if P is in the location of first-agent-poster:
+		if P is in Hotel01, now P is in Hotel40;
+		otherwise now P is in Hotel01;
 	compute title of P.
 
 To decide which figure-name is the examine-image of (C - second-agent-poster):
@@ -277,7 +309,7 @@ To say ExamineDesc of (C - second-agent-poster):
 	say TitleDesc of C.
 
 Definition: agent is ready for next agent scene:
-	if diaper quest is 0 and the player is a june 2022 top donator and the times-met of agent > 0 and agent is not permanently banished and the agent-scene of agent < 2 and the agent-scene of agent is the agent-scene-spotted of agent:
+	if diaper quest is 0 and the player is the donator and the times-met of agent > 0 and agent is not permanently banished and the agent-scene of agent < 2 and the agent-scene of agent is the agent-scene-spotted of agent:
 		if the number of worn unremovable nudism-disabling clothing is 0, decide yes;
 	if diaper quest is 1 and diaper swapping > 1 and there is a worn diaper and the times-met of agent > 0 and agent is not permanently banished and the agent-scene of agent < 2 and the agent-scene of agent is the agent-scene-spotted of agent:
 		let URC be the number of worn unremovable nudism-disabling clothing;

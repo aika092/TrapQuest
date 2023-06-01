@@ -499,24 +499,30 @@ To compute ectoplasm to (M - a ghost):
 	compute normal ectoplasm to M.
 
 To compute normal ectoplasm to (M - a ghost):
-	if bukkake fetish is 1, now the slime-puddle of the location of M is a random number between 5 and 10;
-	otherwise now the slime-puddle of the location of M is 3;
-	if M is jismbodied ghost, increase the slime-puddle of the location of M by 10;
-	if M is in the location of the player:
-		if the player is upright:
-			say "[if bukkake fetish is 1][BigNameDesc of M] ejaculates violently, knocking you to your knees with a torrent of bright grey, glowing slime[otherwise][BigNameDesc of M] releases a violent pulse of energy, knocking you to your knees[end if].";
-			try kneeling;
-		otherwise:
-			say "[if bukkake fetish is 1][BigNameDesc of M] ejaculates violently, dousing you in a thick layer of bright grey, glowing slime.[otherwise][BigNameDesc of M] releases a violent pulse of energy, causing everything in the vicinity to vibrate with powerful magic.[end if]";
-			say "[if bukkake fetish is 1]The thick slime on the floor instantly adheres[otherwise]The glowing surface of the floor seems to glue itself[end if] to your skin!";
-			increase the stickiness of the player by a random number between 2 and 4; [How many turns the player is trapped before they can move]
-		if M is jismbodied ghost or bukkake fetish is 0, cutshow Figure of ghost 2 ectoplasm cutscene for M;
-		otherwise cutshow Figure of ghost 1 ectoplasm cutscene for M;
+	let S be a random off-stage slimeball;
+	if diaper quest is 0 and S is slimeball and (M is not in the location of the player and M is friendly or M is uninterested or the player is not getting unlucky):
+		if M is in the location of the player, say "[BigNameDesc of M] ejaculates a voluminous rope of ghostly spunk, and this glowing slime the surges out of its tip forms into a ball, which begins to hop around as if it's somehow alive.";
+		set up S;
+		now S is in the location of M;
 	otherwise:
-		if M is nearby, say "[if bukkake fetish is 1]You see the [location of M] being doused in glowing [semen] by [NameDesc of M][otherwise]The [location of M] shakes with a violent pulse of energy from [NameDesc of M][end if]. A narrow escape!";
-		otherwise say "[if bukkake fetish is 1]You hear a sound similar to a fire hydrant being smashed open somewhere else in the mansion[otherwise]You hear a loud crash somewhere else in the mansion[end if].";
-	decrease the bank of M by 100;
-	now the wind-up of M is 0.
+		if bukkake fetish is 1, now the slime-puddle of the location of M is a random number between 5 and 10;
+		otherwise now the slime-puddle of the location of M is 3;
+		if M is jismbodied ghost, increase the slime-puddle of the location of M by 10;
+		if M is in the location of the player:
+			if the player is upright:
+				say "[if bukkake fetish is 1][BigNameDesc of M] ejaculates violently, knocking you to your knees with a torrent of bright grey, glowing slime[otherwise][BigNameDesc of M] releases a violent pulse of energy, knocking you to your knees[end if].";
+				try kneeling;
+			otherwise:
+				say "[if bukkake fetish is 1][BigNameDesc of M] ejaculates violently, dousing you in a thick layer of bright grey, glowing slime.[otherwise][BigNameDesc of M] releases a violent pulse of energy, causing everything in the vicinity to vibrate with powerful magic.[end if]";
+				say "[if bukkake fetish is 1]The thick slime on the floor instantly adheres[otherwise]The glowing surface of the floor seems to glue itself[end if] to your skin!";
+				increase the stickiness of the player by a random number between 2 and 4; [How many turns the player is trapped before they can move]
+			if M is jismbodied ghost or bukkake fetish is 0, cutshow Figure of ghost 2 ectoplasm cutscene for M;
+			otherwise cutshow Figure of ghost 1 ectoplasm cutscene for M;
+		otherwise:
+			if M is nearby, say "[if bukkake fetish is 1]You see the [location of M] being doused in glowing [semen] by [NameDesc of M][otherwise]The [location of M] shakes with a violent pulse of energy from [NameDesc of M][end if]. A narrow escape!";
+			otherwise say "[if bukkake fetish is 1]You hear a sound similar to a fire hydrant being smashed open somewhere else in the mansion[otherwise]You hear a loud crash somewhere else in the mansion[end if].";
+		decrease the bank of M by 100;
+		now the wind-up of M is 0.
 
 The ghost priority attack rules is a rulebook. The priority attack rules of a ghost is usually the ghost priority attack rules.
 
@@ -526,12 +532,19 @@ This is the ghost winding rule: [Ghosts should wind up if they have a full bank 
 		repeat with M running through ghosts in the location of the player:
 			if the wind-up of M is 1, now W is 1;
 		if W is 0:[Not a huge deal if the ghosts have a huge, super jizzy party, but it makes more sense that they do it in succession. No winding if a nearby ghost has already wound up. Otherwise, fair game.]
-			say "[if bukkake fetish is 1][BigNameDesc of current-monster] begins to glow brighter and brighter grey, a thin strand of slimy 'drool' leaking out of the tip as its veins bulge with sudden definition.[otherwise if diaper quest is 1][BigNameDesc of current-monster] begins to glow brighter and brighter orange, your surroundings creaking and shaking as the pale light fills the room.[otherwise][BigNameDesc of current-monster] begins to glow brighter and brighter grey, your surroundings creaking and shaking as the pale light fills the room.[end if]";
+			if current-monster is ghostly tentacle, say "[bold type][BigNameDesc of current-monster] [bold type]begins to glow brighter and brighter grey, your surroundings creaking and shaking as the pale light fills the room.";
+			otherwise say "[bold type][if diaper quest is 0][BigNameDesc of current-monster] [bold type]begins to glow brighter and brighter grey, a thin strand of slimy 'drool' leaking out of the tip as its veins bulge with sudden definition.[otherwise][BigNameDesc of current-monster] [bold type]begins to glow brighter and brighter orange, your surroundings creaking and shaking as the pale light fills the room.[end if]";
+			say "[roman type][line break]";
 			now the wind-up of current-monster is 1;[TODO: one of's]
 			repeat with N running through intelligent monsters in the location of current-monster:
 				compute ghost fleeing of N;
 			rule succeeds.
 The ghost winding rule is listed last in the ghost priority attack rules.
+
+To compute ghost fleeing of (M - a monster):
+	unless M is wrangling a body part or M is penetrating a body part or M is grabbing the player:
+		say "[BigFuckerDesc of M] immediately begins to look for a way out of the room.";
+		now the scared of M is 7.
 
 To compute tripping attack of (M - a ghost):
 	let C be a random worn displacable trousers;
@@ -798,7 +811,7 @@ To say DragFlav of (M - a ghost) to (R - a room):
 To say DragArrival of (M - a ghost) to (R - a room):
 	say "The portal spits you out in the [R], where [NameDesc of deep one] is there waiting for you, sporting a massive erection![if the player is upright][line break][bold type]You are now on your knees.[roman type][line break][end if]".
 
-This is the deep one express rule:
+[This is the deep one express rule:
 	if diaper quest is 0 and current-monster is ghostly tentacle and player is not immobile and the bank of current-monster > 15:
 		let M be current-monster;
 		now the wind-up of M is 1;
@@ -807,7 +820,7 @@ This is the deep one express rule:
 		now M is wrangling arms;
 		now M is unphased;
 		rule succeeds.
-The deep one express rule is listed first in the ghost priority attack rules.
+The deep one express rule is listed first in the ghost priority attack rules.]
 
 Check kneeing ghostly tentacle:
 	if the noun is wrangling a body part, say "It has you by the wrist! You can't reach it with your leg!" instead.

@@ -97,7 +97,16 @@ A poster has an object called old-special. [We can remember one unique special i
 
 To set up (P - a poster):
 	develop P;
-	distribute P.
+	distribute P;
+	if P is identifiable and (the player is not the donator or tough-shit is 1) and the number of blank rows in the Table of Published Disgraces > 0:
+		choose a blank row in Table of Published Disgraces;
+		let T be the substituted form of "a high resolution photo - [ShortDesc of P] It has been posted on [sluttyWebsite]";
+		now the severity entry is the lewdness of P / 50;
+		now the popularity entry is 5;
+		now the timestamp entry is earnings;
+		now the lastwitnessed entry is 0;
+		now the deletedtime entry is 0;
+		now the viewsfuzz entry is a random number between -100 and 100.
 
 To develop (P - a poster):
 	if the player is presenting as male, now the old-gender of P is 0;
@@ -222,14 +231,28 @@ An all time based rule (this is the monster spots poster rule):
 				now M is disapproving P.
 
 To IdentifiablePosterReaction of (M - a monster):
-	say "[BigNameDesc of M] looks at you, blinks, then looks back to the poster.[line break][speech style of M]'Wait a second, is this YOU?! Holy shit, [one of]you're a disgrace[or]you're disgusting[or]you're such a slut[or]what a slut[or]you're even more of a massive whore than I guessed[at random].'[roman type][line break]";
+	say IdentifiablePosterReactionFlav of M;
 	say "You turn bright red with shame.";
-	humiliate the lewdness of a random poster in the location of the player * 2.
+	humiliate (the lewdness of a random poster in the location of the player + HUMILIATION-BASE) * 2.
+
+To say IdentifiablePosterReactionFlav of (M - a monster):
+	say "[BigNameDesc of M] looks at you, blinks, then looks back to the poster.[line break][speech style of M]'Wait a second, is this YOU?! Holy shit, [one of]you're a disgrace[or]you're disgusting[or]you're such a slut[or]what a slut[or]you're even more of a massive whore than I guessed[at random].'[roman type][line break]".
 
 To UnidentifiablePosterReaction of (M - a monster) with (P - a poster):
-	say "[speech style of M]'Heh, [one of]this bitch is a total disgrace, whoever [he of P] is[or]that's fucking disgusting, I'm glad I don't know this [boy of P][or]I've never seen such a nasty sight in my life[or]what a slut[or]that's one fine booty[at random].'[roman type][line break]";
+	say UnidentifiablePosterReactionFlav of M with P;
 	say "You turn bright red but don't say a word.";
-	humiliate the lewdness of a random poster in the location of the player.
+	humiliate (the lewdness of a random poster in the location of the player + HUMILIATION-BASE) / 2.
+
+To IdentifiablePosterReaction of (M - a supporter):
+	say IdentifiablePosterReactionFlav of M;
+	say "You turn bright red with shame.";
+	FavourDown M;
+	if M is unfriendly:
+		say BecomesAggressive of M;
+		interest M.
+
+To say UnidentifiablePosterReactionFlav of (M - a monster) with (P - a poster):
+	say "[speech style of M]'Heh, [one of]this bitch is a total disgrace, whoever [he of P] is[or]that's fucking disgusting, I'm glad I don't know this [boy of P][or]I've never seen such a nasty sight in my life[or]what a slut[or]that's one fine booty[at random].'[roman type][line break]".
 
 To say PosterGenitals of (P - a poster):
 	if genitals visible of P is 1 and asshole visible of P is 1:

@@ -179,10 +179,13 @@ To compute (M - nurse) seeking (D - a direction):
 		compute monstermotion reactions of M.
 
 To compute monstermotion of (M - nurse):
-	if playerRegion is not school and M is undefeated:
-		say "BUG: [BigNameDesc of M] has followed the player out of the school. Please report along with a description of what recently happened. Region: [playerRegion]; Location: [location of M]; Player location: [location of the player].";
-		now M is in School01;
-	unless M is in School11, compute room leaving of M.
+	if M is undefeated:
+		if playerRegion is not school:
+			say "BUG: [BigNameDesc of M] has followed the player out of the school. Please report along with a description of what recently happened. Region: [playerRegion]; Location: [location of M]; Player location: [location of the player].";
+			now M is in School01;
+		otherwise if M is not in School11:
+			let D be the best route from the location of M to School11 through academic rooms;
+			if D is a direction, blockable move M to D.
 
 [Nurse always successfully follows the player]
 To decide which number is the seek roll of (M - nurse):
@@ -226,8 +229,8 @@ To compute facial climax of (M - nurse):
 Chapter - DQ
 
 To compute diaper mess reaction of (M - nurse):
-	humiliate 400;
-	if voluntarySquatting is 1, humiliate 500;
+	obsceneHumiliate;
+	if voluntarySquatting is 1, obsceneHumiliate;
 	if M is interested:
 		if M is doing nothing special and diaperChecking is 0:
 			compute diaper check of M;
@@ -263,10 +266,15 @@ To say DiaperCheckFlav of (M - nurse):
 	say "Without even looking at you in the eyes first, [NameDesc of M] grabs the crotch of your [MediumDesc of D] with [his of M] right hand, pinching and squishing it to check if it's all dry.".
 
 To say DiaperCheckResultsDryFlav of (M - nurse):
-	say "[speech style of M]'All dry.'[roman type][line break][big he of M] straightens up to address you normally.".
+	if wont-change of M > 0, say DiaperCheckNoChangeAllowedFlav of M;
+	otherwise say "[speech style of M]'All dry.'[roman type][line break][big he of M] straightens up to address you normally.".
 
 To say DiaperCheckResultsMostlyDryFlav of (M - nurse):
-	say "[speech style of M]'Not too wet yet.'[roman type][line break][big he of M] straightens up to address you normally.".
+	if wont-change of M > 0, say DiaperCheckNoChangeAllowedFlav of M;
+	otherwise say "[speech style of M]'Not too wet yet.'[roman type][line break][big he of M] straightens up to address you normally.".
+
+To say DiaperCheckNoChangeAllowedFlav of (M - nurse):
+	say "[speech style of M]'Sorry, force of habit. The truth is, your teacher told me that you're not allowed any diaper changes from me until you've attended [wont-change of M] more lesson[if wont-change of M > 1]s[end if].'[roman type][line break][big he of M] straightens up to address you normally.".
 
 To say DiaperChangeStart of (M - nurse):
 	unless M is in School12, drag to School12 by M;

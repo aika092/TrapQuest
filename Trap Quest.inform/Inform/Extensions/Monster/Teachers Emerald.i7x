@@ -48,6 +48,9 @@ To say EnslavedDominationFlav of (M - teacher-hannah):
 	say "You hold [NameDesc of M][']s wrists and force them down to the ground in front of [him of M]. This causes [his of M] magic enchanted paddle to spring to life, attacking [him of M] with powerful spanks from every direction. You laugh as [he of M] squeals and screams through [his of M] gag. Once you are satisfied, you release [his of M] wrist and [he of M] immediately adopts the correct position to cause the paddle to once again peacefully drop to the ground in front of [him of M], watching and waiting patiently for the next transgression.".
 
 pain-lesson is a lesson. The lesson-teacher of pain-lesson is teacher-hannah.
+To decide which number is the min-students of (L - pain-lesson):
+	if the player is wrist bound or the player is ankle bound or portal gag is worn, decide on 0;
+	decide on 1.
 
 To compute teaching of (L - pain-lesson):
 	allocate 1 seconds;
@@ -284,8 +287,10 @@ To compute teaching of (L - toy-lesson):
 						let P be entry CLTR in LP;
 						try examining P;
 						say "Choose [P]?";
+						now temporaryYesNoBackground is the examine-image of P;
 						if the player is consenting, now CP is P;
 						otherwise now CP is nothing;
+						now temporaryYesNoBackground is figure of small image;
 					if CP is yourself:
 						say "Input not understood. Please enter a number that corresponds to one of the toys.";
 						now CP is nothing;
@@ -580,7 +585,7 @@ To compute teaching of (L - dress-lesson):
 				say "'Class dismissed!'[roman type][line break]";
 			otherwise:
 				say "You try your best, bending at the waist and exposing your butt to the class. You can feel the attention of every single person in the room on your exposed [if the number of worn dense total protection knickers is 0][player-crotch][otherwise][ShortDesc of random worn knickers][end if], [if the player is shameless]which makes you shiver with excitement[otherwise]and can't help but feel a little shiver of excitement alongside the shame[end if]. You reach the ground and begin to pick up a piece of chalk. Deciding to show off your skills, you reach far to the left and right to try and pick up all the chalk in a single flourish. ";
-				humiliate MODERATE-HUMILIATION;
+				moderateHumiliate;
 				if a random number between 3 and 12 > the dexterity of the player:
 					say "You think you're going to manage it, but suddenly you feel unsteady and begin to topple. You try to react to this in time by putting some of your weight on your hands, but with your locked knees this goes badly and just sends you further off balance. You stumble and then fall to the ground, landing on your face with your butt high in the air, still exposed to all your classmates behind you. They all burst out laughing and you turn redder than ever!";
 					if the player is upright, try kneeling;

@@ -1,44 +1,25 @@
 Room Adjectives by Rooms begins here.
 
-A room can be sandy. A room is usually not sandy. [A sandy room in the Dungeon has a container.]
-
-A room can be dodgy. A room is usually not dodgy. [A dodgy room in the Woods has a container.]
-
-A room can be creaky. A room is usually not creaky. [A creaky room in the mansion has a container.]
-
+A room can be sandy. [A sandy room in the Dungeon has a container.]
+A room can be dodgy. [A dodgy room in the Woods has a container.]
+A room can be creaky. [A creaky room in the mansion has a container.]
 A room can be ungarlic, garlic, or garlic-waned. [Normal ghosts can't enter these rooms and can't ambush you in them.]
-
 A room can be roofed or no-roof. A room is usually roofed. [Does it have a ceiling.]
+A room can be guest. [A guest room in the Hotel has a wardrobe / minibar / safe container.]
+A room can be corporate. [A corporate room in the Hotel has a cabinet / safe container.]
+A room can be important. [An important room can contain a key item.]
+A room can be significant. [A significant room can contain a key item. What does this do?]
+A room can be smoky. [A smoky room has pink smoke in it.]
+A room can be itemstatic. [An itemstatic room prevents items left in it from being destroyed when the player leaves the region.]
 
-A room can be guest. A room is usually not guest. [A guest room in the Hotel has a wardrobe / minibar / safe container.]
-
-A room can be corporate. A room is usually not corporate. [A corporate room in the Hotel has a cabinet / safe container.]
-
-A room can be important. A room is usually not important. [An important room can contain a key item.]
-
-A room can be significant. A room is usually not significant. [A significant room can contain a key item. What does this do?]
-
-A room can be smoky. A room is usually not smoky. [A smoky room has pink smoke in it.]
-
-[!<Room>@<IsGluey>+
-
-A room is gluey if it has glue in it.
-
-+@!]
-A room can be gluey. A room is usually not gluey. [A gluey room has glue in it.]
-
-A room can be discovered. A room is usually not discovered. [A discovered room has been visited by the player.]
-
-A room can be seen. A room is usually not seen. [A seen room is every room next to a visited room.]
-
+A room can be gluey. [A gluey room has glue in it.]
+A room can be discovered. [A discovered room has been visited by the player.]
+A room can be seen. [A seen room is every room next to a visited room.]
 A room can be trappable or untrappable. A room is usually trappable. [An untrappable room doesn't have traps spawn, e.g. the shop.]
 
-A room can be mandatory. A room is usually not mandatory. [The game will not accept a map configuration that is missing this room.]
-
+A room can be mandatory. [The game will not accept a map configuration that is missing this room.]
 A room can be pinned or unpinned. A room is usually unpinned.
-
 A room has a direction called first forbidden direction. The first forbidden direction of a room is usually up.
-
 A room has a direction called second forbidden direction. The second forbidden direction of a room is usually up.
 
 A room can be use-the-floor, water-bodied, urinals or toilets (this is the toilet facilities property). A room is usually use-the-floor.

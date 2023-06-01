@@ -4,11 +4,51 @@ A thing has a text called a text-shortcut. Understand the text-shortcut property
 
 Part - Price and Ownership
 
-A thing can be unowned, store, museum-store, stolen, museum-stolen (this is the ownership property). A thing is usually unowned.
+A thing has an object called the owner.
+
+The current-perceiver is an object that varies.
+Definition: a thing (called T) is stolen-and-perceivable:
+	if the owner of T is current-perceiver and T is currently perceivable, decide yes;
+	decide no.
+To decide which object is random-stolen-item:
+	repeat with T running through held things:
+		if T is stolen-and-perceivable, decide on T;
+	decide on nothing.
+Definition: a monster (called M) is able to see stolen goods:
+	unless M is in the location of the player, decide no;
+	now the current-perceiver is M;
+	if random-stolen-item is nothing, decide no;
+	decide yes.
+
+Definition: a thing is unowned:
+	if the owner of it is nothing, decide yes;
+	decide no.
+Definition: a thing is store:
+	if the owner of it is shopkeeper:
+		if it is in Dungeon41, decide yes;
+		if it is held and the player is in Dungeon41, decide yes;
+	decide no.
+Definition: a thing is museum-store:
+	if the owner of it is vampiress:
+		if it is in Mansion28, decide yes;
+		if it is in a pedestal, decide yes;
+	decide no.
+Definition: a thing is stolen:
+	if the owner of it is shopkeeper and it is not in Dungeon41 and it is not held by shopkeeper and (it is not held or the player is not in Dungeon41), decide yes;
+	decide no.
+Definition: a thing is museum-stolen:
+	if the owner of it is vampiress and it is not in Mansion28 and it is not held by vampiress and it is not in a pedestal, decide yes;
+	decide no.
 
 To say ownership-desc of (T - a thing):
-	if the item described is stolen or the item described is museum-stolen, say "[roman type] (stolen)";
-	if the item described is store and the location of the player is not Mansion28, say "[roman type] ([if T is in Dungeon41 or the player is in Dungeon41]for sale - [price of item described][otherwise]cleverly stolen - please report bug[end if])".
+	let P be the owner of T;
+	if P is a person:
+		if P is shopkeeper:
+			if T is stolen, say "[roman type] (stolen from the dungeon shop)";
+		otherwise if P is vampiress:
+			if T is museum-stolen, say "[roman type] (stolen from the haunted mansion)";
+		otherwise if T is not held by P:
+			say "[roman type] (stolen from the [if P is monster][MediumDesc of P][otherwise][ShortDesc of P][end if])".
 
 To decide what number is the original price of (C - a thing):
 	decide on 0.

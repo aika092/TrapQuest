@@ -21,6 +21,10 @@ To say FarGoneAppearanceAssessment of (M - a nasty student):
 To say LewdAppearanceAssessment of (M - a nasty student):
 	say "[BigNameDesc of M] looks at you with distaste.[line break][speech style of M]'[one of]Look what the cat dragged in. You look like shit.'[or]Err, slut alert. Stop trying so hard, fuckface, you're making the rest of us look bad.'[or]Um, this is a place of education, not a brothel. Piss off, whore.'[in random order][roman type][line break]".
 
+To say ToiletReactionFlav of (M - a nasty student):
+	if the current-rank of M > 4, say "[BigNameDesc of M] stares at you, smirking. [slightHumiliateReflect]";
+	otherwise say "[BigNameDesc of M] scowls at you.[line break][speech style of M]'[one of]Don't do that in front of me, you tramp!'[or]You really are disgusting.'[or]Perverted exhibitionist freak.'[in random order][roman type][line break][strongHumiliateReflect]".
+
 Part - Lucy
 
 student-lucy is a nasty student.

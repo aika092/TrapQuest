@@ -23,9 +23,9 @@ Definition: Icarus is dungeon dwelling:
 	if diaper quest is 0 and christmas content is 0, decide yes;
 	decide no.
 
-Figure of Icarus 1 is the file "NPCs/MultiFloor/Icarus1.png".
-Figure of Icarus 2 is the file "NPCs/MultiFloor/Icarus2.jpg".
-Figure of Lady Icarus 1 is the file "NPCs/MultiFloor/IcarusFem1.jpg".
+Figure of Icarus 1 is the file "NPCs/Dungeon/Icarus/Icarus1.png".
+Figure of Icarus 2 is the file "NPCs/Dungeon/Icarus/Icarus2.jpg".
+Figure of Lady Icarus 1 is the file "NPCs/Dungeon/Icarus/IcarusFem1.jpg".
 
 To decide which figure-name is the monster-image of (M - Icarus):
 	if lady fetish is 1, decide on figure of Lady Icarus 1;
@@ -35,14 +35,14 @@ To decide which figure-name is the unfriendly-monster-image of (M - Icarus):
 	if lady fetish is 1, decide on figure of Lady Icarus 1;
 	decide on Figure of Icarus 2.
 
-Figure of Icarus interact 1 is the file "Special/Cutscene/cutscene-Icarus-interact1.jpg".
-Figure of Icarus interact 2 is the file "Special/Cutscene/cutscene-Icarus-interact2.jpg".
-Figure of Icarus interact 3 is the file "Special/Cutscene/cutscene-Icarus-interact3.jpg".
-Figure of Icarus interact 4 is the file "Special/Cutscene/cutscene-Icarus-interact4.jpg".
-Figure of Icarus interact 5 is the file "Special/Cutscene/cutscene-Icarus-interact5.jpg".
-Figure of Icarus interact 6 is the file "Special/Cutscene/cutscene-Icarus-interact6.jpg".
-Figure of Icarus interact 7 is the file "Special/Cutscene/cutscene-Icarus-interact7.jpg".
-Figure of Icarus interact 8 is the file "Special/Cutscene/cutscene-Icarus-interact8.jpg".
+Figure of Icarus interact 1 is the file "NPCs/Dungeon/Icarus/cutscene-Icarus-interact1.jpg".
+Figure of Icarus interact 2 is the file "NPCs/Dungeon/Icarus/cutscene-Icarus-interact2.jpg".
+Figure of Icarus interact 3 is the file "NPCs/Dungeon/Icarus/cutscene-Icarus-interact3.jpg".
+Figure of Icarus interact 4 is the file "NPCs/Dungeon/Icarus/cutscene-Icarus-interact4.jpg".
+Figure of Icarus interact 5 is the file "NPCs/Dungeon/Icarus/cutscene-Icarus-interact5.jpg".
+Figure of Icarus interact 6 is the file "NPCs/Dungeon/Icarus/cutscene-Icarus-interact6.jpg".
+Figure of Icarus interact 7 is the file "NPCs/Dungeon/Icarus/cutscene-Icarus-interact7.jpg".
+Figure of Icarus interact 8 is the file "NPCs/Dungeon/Icarus/cutscene-Icarus-interact8.jpg".
 
 To say MonsterDesc of (M - Icarus):
 	say "This well-built [man of M] has two giant feathery wings rooted in [his of M] back. There's no doubt that [he of M][']s some kind of angel. [big his of M] calm thoughtful gaze gives [him of M] an air of intelligence and wisdom beyond the apparent age of [his of M] body, which looks about 25 years old.".
@@ -79,7 +79,7 @@ To say DiaperReaction of (M - Icarus):
 
 To compute diaper mess reaction of (M - Icarus):
 	say "[BigNameDesc of M] recoils with shock and disgust.[line break][speech style of M]'No. Just no! What the fuck! [if M is uninterested]I'm getting out of here.'[otherwise]I'm not going anywhere near that.'[end if][roman type][line break]";
-	humiliate 400;
+	obsceneHumiliate;
 	if M is uninterested:
 		bore M;
 		if M is in the location of the player, compute mandatory room leaving of M.
@@ -93,6 +93,8 @@ To compute (M - a monster) stomping (N - Icarus):
 
 To compute labour to (M - Icarus):
 	say DefaultBirthScene.
+To compute fatherhood to (M - Icarus):
+	dislodge M.
 
 Part 1 - Misc Flavour
 
@@ -300,7 +302,7 @@ icarus-butt is a wearthing.
 Definition: icarus-butt is IcarusScienceAppropriate:
 	if the total weighty volume of hips >= 8 and the total volume of hips < 16 and max ass size >= 16, decide yes;
 	decide no.
-Figure of icarus-butt is the file "Special/Cutscene/cutscene-icarus-ball1.jpg".
+Figure of icarus-butt is the file "NPCs/Dungeon/Icarus/cutscene-icarus-ball1.jpg".
 To compute IcarusSummon of (C - icarus-butt):
 	say "A volleyball appears behind you, hovering above your butt. It begins bouncing against your [AssDesc], and each time it does, your cheeks swell in size a bit. They don't stop until your buttcheeks are so stupidly big that the volleyball can now balance perfectly still on top of your giant ass cheeks!";
 	increase the flesh volume of hips by 16 - the total volume of hips;
@@ -321,7 +323,7 @@ icarus-lips is a wearthing.
 Definition: icarus-lips is IcarusScienceAppropriate:
 	if the lips of face < 2, decide yes;
 	decide no.
-Figure of icarus-lips is the file "Special/Cutscene/cutscene-icarus-lips1.jpg".
+Figure of icarus-lips is the file "NPCs/Dungeon/Icarus/cutscene-icarus-lips1.jpg".
 To compute IcarusSummon of (C - icarus-lips):
 	say "[BigNameDesc of Icarus] blows glitter from [his of Icarus] palms onto your face. You feel your lips begin to swell!";
 	now the lips of face is 2;
@@ -333,7 +335,7 @@ icarus-hair is a wearthing.
 Definition: icarus-hair is IcarusScienceAppropriate:
 	if the largeness of hair < 9 and frozen hair is 0, decide yes;
 	decide no.
-Figure of icarus-hair is the file "Special/Cutscene/cutscene-icarus-hair1.jpg".
+Figure of icarus-hair is the file "NPCs/Dungeon/Icarus/cutscene-icarus-hair1.jpg".
 To compute IcarusSummon of (C - icarus-hair):
 	say "[BigNameDesc of Icarus] blows glitter from [his of Icarus] palms onto your hair. ";
 	if artificial enhancements fetish is 1:
@@ -352,7 +354,7 @@ icarus-belly is a wearthing.
 Definition: icarus-belly is IcarusScienceAppropriate:
 	if the pregnancy of the player is 0 and (inflation fetish is 1 or (pregnancy fetish is 1 and the player is possessing a vagina)), decide yes;
 	decide no.
-Figure of icarus-belly is the file "Special/Cutscene/cutscene-icarus-belly1.jpg".
+Figure of icarus-belly is the file "NPCs/Dungeon/Icarus/cutscene-icarus-belly1.jpg".
 To compute IcarusSummon of (C - icarus-belly):
 	say "[BigNameDesc of Icarus] forms [his of Icarus] hands into a ball and slowly pulls them apart. Your belly expands at the same time as [his of Icarus] hands!";
 	if the player is able to get pregnant:
@@ -396,7 +398,7 @@ Section 1 - Attack
 To compute the flying player taunting of (M - Icarus):
 	if a random number from 1 to 6 is 1:
 		say "[BigNameDesc of M] laughs at you.[line break][speech style of M]'[one of]If God wanted you to fly, he would have given you wings!'[or]Oh my, is that another angel I see?'[cycling][roman type][line break][if the player is proud]You [one of]wince[or]shudder[or]cringe[purely at random] with shame.";
-		humiliate 20.
+		slightHumiliate.
 
 The latex punishment rule of Icarus is usually the no latex punishment rule.
 

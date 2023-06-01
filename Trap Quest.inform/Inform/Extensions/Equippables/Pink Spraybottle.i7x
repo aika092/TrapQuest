@@ -79,7 +79,7 @@ To compute maidification of (C - a clothing):
 				transform H into black maid headdress;
 			otherwise:
 				say "[bold type]You yelp in surprise as a [ShortDesc of black maid headdress] [bold type]appears on you!";
-				destroy black maid headdress; [sets it up properly]
+				blandify and reveal black maid headdress; [sets it up properly]
 				now black maid headdress is worn by the player; [we don't summon it properly, because if we did, confusing things would happen when we compute the class outfit again below]
 				now black maid headdress is cursed;
 		say "[variable custom style]I guess I'm the maid now[if the bimbo of the player < 8]?[otherwise].[end if][roman type][line break]";

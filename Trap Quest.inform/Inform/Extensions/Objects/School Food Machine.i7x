@@ -34,7 +34,7 @@ Carry out MachineFeeding:
 	let M be a random monster in the location of the player;
 	if M is monster:
 		say "[if M is intelligent]The[otherwise]Even though you aren't sure how intelligent it is, the[end if] fact that [NameDesc of M] is watching you eat [if diaper quest is 0]something with [semen] in it, and [end if]so messily makes you shiver with shame.";
-		humiliate 100;
+		strongHumiliate;
 	StomachFoodUp 2;
 	if diaper quest is 0, StomachSemenUp 1;
 	trigger bowl-wisp-quest;

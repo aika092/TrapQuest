@@ -97,7 +97,7 @@ Check wearing pink scrunchie:
 	if the noun is worn:
 		repeat with B running through pink scrunchies in the location of the player:
 			if B is not worn, try wearing B instead;
-	if there is a worn blue scrunchie, say "Pink and blue don't go together, you need to find another pink one!" instead.
+	if there is a worn blue scrunchie, say "Pink and blue don't go together, you need to find another blue one!" instead.
 
 To decide which number is the intelligence-influence of (H - a pink scrunchie):
 	decide on -1.
@@ -126,7 +126,7 @@ To uniquely set up (C - a pink scrunchie):
 	now the quest of C is greet-quest.
 
 To say QuestFlav of (Q - greet-quest):
-	say "You sense it wants you to talk to (intelligent) friendly people who *might* want to [if diaper quest is 1]punish[otherwise]fuck[end if] you[if diaper quest is 0], and/or to make some [men of shopkeeper] climax from seduction routines (before they lose patience and fuck you normally)[end if].".
+	say "You sense it wants you to talk to (intelligent) friendly people who *might* want to [if diaper quest is 1]punish[otherwise]fuck[end if] you[if diaper quest is 0], and/or to make some [men of male-m] climax from seduction routines (before they lose patience and fuck you normally)[end if].".
 
 To say QuestTitle of (Q - greet-quest):
 	say " (attention seeking quest)".
@@ -170,7 +170,7 @@ Check wearing blue scrunchie:
 	if the noun is worn:
 		repeat with B running through blue scrunchies in the location of the player:
 			if B is not worn, try wearing B instead;
-	if there is a worn pink scrunchie, say "Pink and blue don't go together, you need to find another blue one!" instead.
+	if there is a worn pink scrunchie, say "Pink and blue don't go together, you need to find another pink one!" instead.
 
 Report wearing blue scrunchie:
 	uniquely set up the noun; [We need to make sure that if it's not got the right quest and BUC that it gets it now]

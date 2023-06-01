@@ -66,8 +66,21 @@ To say MediumDesc of (C - a sex toy):
 	say "[DongSize of C] [ShortDesc of C]".
 
 Report examining a sex toy:
-	repeat with O running through orifices penetrated by the noun:
-		say "It is currently inside your [variable O].".
+	if there is an orifice penetrated by the noun:
+		repeat with O running through orifices penetrated by the noun:
+			say "It is currently inside your [variable O]. ";
+		say insertedToleranceDesc of the noun;
+	otherwise:
+		say potentialToleranceDesc of the noun.
+
+To say insertedToleranceDesc of (P - a sex toy):
+	let F be a random fuckhole penetrated by P;
+	say "[if the girth of P < insertableGirthAcceptance of F - 3 and diaper quest is 0]Your experienced [variable F] is having no problems accommodating a [ShortDesc of P] of this size[otherwise if the girth of P < insertableGirthAcceptance of F - 3]Your new perverted brain is enjoying being stretched open a [ShortDesc of P] of this size - it doesn't feel bad at all[otherwise if the girth of P < insertableGirthAcceptance of F]Your [variable F] is moderately comfortable hosting a [ShortDesc of P] of this size[otherwise if the girth of P < insertableGirthAcceptance of F + 2]This [ShortDesc of P] is uncomfortably stretching your [variable F] to new limits[otherwise]This [ShortDesc of P] is insanely huge compared to what your [variable F] is accustomed to. It's making your [variable F] ache and throb, and it feels like an unwelcome intruder that you urgently need to remove[end if].".
+
+To say potentialToleranceDesc of (P - a sex toy):
+	let F be asshole;
+	if P is not plug and the player is possessing a vagina, now F is vagina;
+	say "[if the girth of P < insertableGirthAcceptance of F - 3 and diaper quest is 0]Your experienced [variable F] can easily take a plug of this size[otherwise if the girth of P < insertableGirthAcceptance of F - 3]Your new perverted self won't have any problems handling a plug of this size[otherwise if the girth of P < insertableGirthAcceptance of F]Your [variable F] shouldn't have any major problems taking a plug of this size[otherwise if the girth of P < insertableGirthAcceptance of F + 2]This plug would definitely stretch your [variable F] to new limits[otherwise]There's almost definitely no way that you could get this inside your [variable F][end if].".
 
 toyShortcutCount is initially 1.
 
@@ -98,7 +111,8 @@ To set up magic state of (C - a sex toy):
 	if C is discovered varied:
 		now the raw-magic-modifier of C is 0;
 		now C is bland;
-		set up BUC of C.
+		set up BUC of C;
+		set up magic attribute of C.
 
 To set up magic attribute of (C - a sex toy):
 	let R be a random number between 1 and 10;
@@ -112,7 +126,8 @@ To set up magic attribute of (C - a sex toy):
 		if diaper quest is 1, now C is bed wetting;
 	if R is 6:
 		if C is plug, now C is stumbling;
-		otherwise now C is dominance.
+		otherwise now C is dominance;
+	set up rare magic attribute of C.
 
 To uniquely set up (C - a sex toy):
 	ToyShortcutAssign C;
@@ -499,8 +514,7 @@ To say UniquePlugDesc of (P - a plug):
 		say "This giant beige butt plug has 3 huge bulges along it, just to make it even more intense when inserted and removed. Anyone managing to fit this inside them would have their hole kept open as wide as a 2 litre bottle. ".
 
 To say ClothingDesc of (P - a plug):
-	say "[UniquePlugDesc of P]";
-	say "[if P is penetrating asshole]It is currently nice and snug within your [asshole][otherwise if P is penetrating vagina]You've currently got this plug inside your [vagina][otherwise if the girth of P < insertableGirthAcceptance of asshole - 3 and diaper quest is 0]Your experienced [asshole] can easily take a plug of this size[otherwise if the girth of P < insertableGirthAcceptance of asshole - 3]Your new perverted self won't have any problems handling a plug of this size[otherwise if the girth of P < insertableGirthAcceptance of asshole]Your [asshole] shouldn't have any major problems taking a plug of this size[otherwise if the girth of P < insertableGirthAcceptance of asshole + 2]This plug would definitely stretch your [asshole] to new limits[otherwise]There's almost definitely no way that you could get this inside your [asshole][end if].".
+	say UniquePlugDesc of P.
 
 To decide which number is the bartering value of (T - a plug) for (M - a wrestler):
 	decide on the girth of T / 3.
@@ -518,7 +532,22 @@ Definition: a plug is transformation-protected:
 To decide which object is the unique-upgrade-target of (C - a plug):
 	decide on a random off-stage plentiful anal beads.
 
-Section 1 Tail Plug
+Section 1 Visibility
+
+To decide which object is the at least partial concealer of (S - a sex toy):
+	if S is penetrating vagina:
+		decide on the at least partial concealer of vagina;
+	otherwise:
+		decide on the at least partial concealer of asshole.
+
+To decide which object is the concealer of (S - a sex toy):
+	if current-predicament is team-girlfriends-predicament and the player is in a predicament room, decide on nothing;
+	if S is penetrating vagina:
+		decide on the concealer of vagina;
+	otherwise:
+		decide on the concealer of asshole.
+
+Section 2 Tail Plug
 
 This is the remove inappropriate tail plugs rule:
 	repeat with B running through tail plugs:
@@ -572,9 +601,15 @@ Check replacing:
 	if there is a worn tail plug:
 		unless the noun is crotch-assless or the noun is skirted or the noun is butt-windowed, say "You can't replace any clothing while you are wearing the [random worn tail plug]!" instead.
 
-To decide which object is the concealer of (C - a tail plug):
-	if entry 1 in the armUses of arms is C and entry 2 in the armUses of arms is C, decide on arms;
+To decide which object is the at least partial concealer of (S - a tail plug):
+	if entry 1 in the armUses of arms is S and entry 2 in the armUses of arms is S, decide on arms; [partially concealed by arms only if both are used]
+	let S be a random worn actually dense potentially asshole covering not-butt-windowed clothing;
+	if S is clothing, decide on S;
+	decide on the concealer of S.
+
+To decide which object is the concealer of (C - a tail plug): [not concealed by butt cheeks or arms]
 	let S be a random worn unskirted actually dense potentially asshole covering not-butt-windowed clothing; [tail plug not concealed by skirts]
+	let S be a random worn hobble-skirted actually dense potentially asshole covering not-butt-windowed clothing; [except hobble skirts]
 	decide on S.
 
 To say CurrentlyVisibleFlav of (C - a tail plug):

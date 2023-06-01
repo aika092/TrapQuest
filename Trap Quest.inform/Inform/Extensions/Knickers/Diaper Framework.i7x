@@ -237,7 +237,10 @@ To decide which number is the unique outrage of (C - a diaper):
 
 To decide which number is the fluid cringe of (C - a diaper):
 	if C is wet:
-		if C is worn and (C is not currently at least partially visible or (the at least partial concealer of C is not arms and C is not currently visible)), decide on 0; [In general, clothing doesn't reveal its wet status when partially concealed, but arms is the exception]
+		if C is worn:
+			if C is not currently at least partially visible, decide on 0;
+			let LP be the at least partial concealer of C;
+			if LP is not arms and LP is not butt-windowed clothing and C is not currently visible, decide on 0; [In general, diapers don't reveal their wet status when partially concealed, but arms and butt-windowed clothing are the exceptions]
 		if the total-soak of C >= the soak-limit of C, decide on 8;
 		decide on 5;
 	decide on 0.
@@ -366,6 +369,7 @@ Check taking off a worn messed knickers:
 
 Definition: a knickers is removable:
 	if it is messed, decide no;
+	if tubesuit is worn, decide no;
 	decide yes.
 
 To say MonsterOfferRejectFlav of (M - an intelligent monster) to (T - a diaper):
@@ -493,21 +497,29 @@ To diaperAdd (C - a clothing):
 			diaperStackStart with C;
 		otherwise:
 			let E be the number of entries in the list of stacked diapers;
-			repeat with N running from 1 to E: [Slot it in the correct place in the list]
-				let D be entry N in the list of stacked diapers;
-				if the DQBulk of C < the DQBulk of D, add C at entry N in the list of stacked diapers;
-			unless C is listed in the list of stacked diapers, add C to the list of stacked diapers;
+			repeat with N running from 1 to E: [If it's a smaller diaper, slot it in the correct place in the list]
+				unless C is listed in the list of stacked diapers:
+					let D be entry N in the list of stacked diapers;
+					if the DQBulk of C < the DQBulk of D, add C at entry N in the list of stacked diapers;
+			unless C is listed in the list of stacked diapers, add C to the list of stacked diapers; [slot it in place at the bottom if it hasn't been slotted higher up (i.e. it at least ties for thickest diaper)]
+			[If the outermost diaper is locked, transfer this data to the diaper stack object before the outermost diaper's status gets overridden]
+			update diaper stack lock status;
 			now C is in Holding Pen;
+			if debugmode > 1, say "[input-style]During diaperAdd: Glue level of [C] is [glue timer of C].[roman type][line break]";
 			update diaper stack;
 	otherwise:
 		say "BUG - attempted to add [C] to the diaper stack when it was already there. Please report to Aika, preferably with a save file!".
 
-To diaperPop:
-	let N be the number of entries in the list of stacked diapers;
-	diaperRemove entry N of the list of stacked diapers.
+To decide which object is diaperStackOuter:
+	if diaper-stack is worn, decide on entry (the number of entries in the list of stacked diapers) in the list of stacked diapers;
+	decide on nothing.
 
 To diaperRemove (C - a clothing):
 	let N be the number of entries in the list of stacked diapers;
+	if C is entry N in the list of stacked diapers:
+		repeat with K running through specific-keys covering diaper-stack:
+			now K is covering C;
+			now K is not covering diaper-stack;
 	if N <= 1:
 		say "BUG - trying to remove a diaper from a stack of [N].";
 	otherwise if C is not listed in the list of stacked diapers:
@@ -517,6 +529,7 @@ To diaperRemove (C - a clothing):
 		diaperUnstack;
 	otherwise:
 		remove C from the list of stacked diapers;
+		update diaper stack lock status;
 		update diaper stack.
 
 To diaperUnstack:
@@ -579,7 +592,7 @@ To say ExamineDesc of (C - diaper-stack):
 	let X be N;
 	while X > 0:
 		let D be entry X in the list of stacked diapers;
-		say "[if N is X]You[otherwise]Underneath this you[end if] are wearing the [ShortDesc of D]. [diaper-saturation-desc of D]";
+		say "[if N is X]You[otherwise]Underneath this you[end if] are wearing the [MediumDesc of D][if D is cursed] (cursed)[end if][displacement-desc of D]. [diaper-saturation-desc of D]";
 		if D is crotch-unzipped:
 			say "The crotch is currently unzipped.";
 		otherwise if D is no protection:
@@ -597,8 +610,7 @@ To decide which figure-name is the clothing-image of (D - diaper-stack):
 
 To compute unique periodic effect of (D - diaper-stack):
 	repeat with C running through the list of stacked diapers:
-		compute unique periodic effect of C;
-	[update diaper stack.]
+		compute unique periodic effect of C.
 
 To decide which number is the initial outrage of (C - diaper-stack):
 	if diaper quest is 1, decide on 0;
@@ -693,19 +705,47 @@ To WaterEmpty (C - diaper-stack):
 To Drench (C - diaper-stack):
 	repeat with D running through the list of stacked diapers:
 		Drench D;
+	if tough-shit is 0 and C is glued:
+		decrease the glue timer of C by 50;
+		if the glue timer of C > 0:
+			if C is held, say "The glue on [NameDesc of C] is rapidly weakening!";
+		otherwise:
+			now the glue timer of C is 0;
+			if C is held, say "The glue on [NameDesc of C] has completely degraded[if C is worn]. It's no longer stuck to you![otherwise].[end if]";
 	update diaper stack;
-	if tough-shit is 0 and C is held:
-		if C is glued:
-			ungluify C;
-			say "[BigNameDesc of C] is no longer covered in glue!";
-		if C is worn, update appearance level.
+	if C is worn:
+		force immediate clothing-focus redraw;
+		update appearance level.
+
+[Take the lock status of the outside diaper and apply it to the diaper-stack object]
+To update diaper stack lock status:
+	let OutsideDiaper be entry (the number of entries in the list of stacked diapers) in the list of stacked diapers;
+	if OutsideDiaper is locked:
+		now diaper-stack is locked;
+		repeat with K running through specific-keys covering OutsideDiaper:
+			now K is not covering OutsideDiaper;
+			now K is covering diaper-stack;
+	otherwise:
+		now diaper-stack is unlocked;
 
 To update diaper stack:
 	if diaper-stack is worn:
+		[before we inherit from the outside diaper, we need to force it to take on the lock status of the diaper-stack object, since if something has been locked or unlocked by a game effect, it will be the diaper-stack object]
 		let N be the number of entries in the list of stacked diapers;
-		repeat with C running through the list of stacked diapers:
-			now the glue timer of C is the glue timer of diaper-stack;
+		if diaper-stack is locked:
+			now entry N in the list of stacked diapers is locked;
+			repeat with K running through specific-keys covering diaper-stack:
+				now K is covering entry N in the list of stacked diapers;
+		otherwise:
+			now entry N in the list of stacked diapers is unlocked;
+		if debugmode > 1, say "[input-style]Before diaper stack update: Glue level of diaper stack is [glue timer of diaper-stack].[roman type][line break]";
 		compute diaper-stack inheriting from entry N in the list of stacked diapers;
+		[if diaper-stack object is locked, let's make sure specific-keys are pointing to the diaper-stack object and not the outer diaper that's being held off-stage]
+		if diaper-stack is locked:
+			repeat with K running through specific-keys covering entry N in the list of stacked diapers:
+				now K is not covering entry N in the list of stacked diapers;
+				now K is covering diaper-stack;
+		if debugmode > 1, say "[input-style]After diaper stack update: Glue level of diaper stack is [glue timer of diaper-stack].[roman type][line break]";
 		now the mess of diaper-stack is 0;
 		now the foreign-mess of diaper-stack is 0;
 		now the perceived-mess of diaper-stack is 0;
@@ -731,11 +771,11 @@ To update diaper stack:
 			increase the water-soak of diaper-stack by the water-soak of C;
 			increase the perceived-water-soak of diaper-stack by the perceived-water-soak of C;
 			increase the raw-soak-limit of diaper-stack by the soak-limit of C;
-		let C be entry N in the list of stacked diapers;
 		[stats the diaper stack takes from the outside diaper which aren't already in transformation inheritance go here]
-		now the armour of diaper-stack is the armour of C;
-		if C is knickers, now the DQFigure of diaper-stack is the DQFigure of C;
-	otherwise if diaper-stack is in-play:
+		let D be entry N in the list of stacked diapers;
+		now the armour of diaper-stack is the armour of D;
+		if D is knickers, now the DQFigure of diaper-stack is the DQFigure of D;
+	otherwise if diaper-stack is in-play and the player is not in a predicament room:
 		repeat with D running through the list of stacked diapers:
 			now D is in the location of diaper-stack;
 		now diaper-stack is in Holding Pen;
@@ -753,9 +793,10 @@ An all later time based rule (this is the maintain diaper stack rule):
 Check wearing store diaper:
 	if diaper-stack is worn, say "You can't do that without the shopkeeper having ample time to stop you." instead.
 
-A DQClothing is a kind of object. NoDQImage is a DQClothing. A knickers has a DQClothing called the DQFigure. The DQFigure of a knickers is usually DQBlackPants.
-DQCloth is a DQClothing. DQGiant is a DQClothing. DQHuge is a DQClothing. DQLarge is a DQClothing. DQMedium is a DQClothing. DQMoosive is a DQClothing. DQSmall is a DQClothing. DQVelcro is a DQClothing. DQBunny is a DQClothing. DQWaddle is a DQClothing. DQWhitePants is a DQClothing. DQBlackPants is a DQClothing. DQPinkPants is a DQClothing. DQPullups is a DQClothing. DQTrainingPants is a DQClothing. DQRubber is a DQClothing.
+A DQClothing is a kind of object. NoDQImage is a DQClothing. A knickers has a DQClothing called the DQFigure.
+DQCloth is a DQClothing. DQGiant is a DQClothing. DQHuge is a DQClothing. DQLarge is a DQClothing. DQMedium is a DQClothing. DQMoosive is a DQClothing. DQSmall is a DQClothing. DQVelcro is a DQClothing. DQBunny is a DQClothing. DQWaddle is a DQClothing. DQWhitePants is a DQClothing. DQBlackPants is a DQClothing. DQPinkPants is a DQClothing.  DQBluePants is a DQClothing. DQPullups is a DQClothing. DQTrainingPants is a DQClothing. DQRubber is a DQClothing.
 
+The DQFigure of a knickers is usually DQBlackPants.
 The DQFigure of diaper is usually DQMedium.
 
 To decide which number is the DQBulk of (D - a knickers):

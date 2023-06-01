@@ -10,20 +10,18 @@ A student has a number called lessonInt2. [Can be used to track various things i
 A student can be kissPunished. [Used in kissing lesson to track punishments]
 A student can be clitLeaded. [Do they have a clit lead permanently attached to their clit piercing?]
 A student can be cumCovered. [Are they covered in cum from the swimming lesson?]
-A student has a number called student-diaper-state.
-[
-1: Double diapered
-2+: Messy
-]
+A student has a number called student-diaper-mess.
+A student has a number called student-extra-diapers. [Diaper layers above 1]
 Definition: a student is messy:
-	if diaper quest is 1 and the student-diaper-state of it >= 2 and diaper messing >= 3, decide yes;
+	if diaper quest is 1 and the student-diaper-mess of it > 0 and diaper messing >= 3, decide yes;
 	decide no.
 Definition: a student is just messing: decide no.
 To LessonReset (M - a student):
 	now the lessonInt1 of M is 0;
 	now the lessonInt2 of M is 0;
 	now M is not cumCovered;
-	now the student-diaper-state of M is 0.
+	now the student-diaper-mess of M is 0;
+	now the student-extra-diapers of M is 0.
 
 Definition: a student is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 Definition: a student is controlling: decide no. [Will they grab onto subduing clothing e.g. a clitoris lead?]
@@ -47,10 +45,11 @@ To say MonsterDesc of (M - a student):
 	say "This student seems to be missing [his of M] description!".
 
 To say StudentDesc of (M - a student):
-	say "[if student-diaper-state of M > 0][DiaperStateDesc of M][end if][if M is kissPunished][KissPunishDesc of M][end if][if M is clitLeaded][ClitLeadDesc of M][end if][if M is cumCovered][CumCoveredDesc of M][end if][big he of M] is wearing an armband which says '[student-name of M] the [student-print of M]' in large [rank-colour of M] letters.".
+	say "[if student-diaper-mess of M > 0 or the student-extra-diapers of M > 0][DiaperStateDesc of M][end if][if M is kissPunished][KissPunishDesc of M][end if][if M is clitLeaded][ClitLeadDesc of M][end if][if M is cumCovered][CumCoveredDesc of M][end if][big he of M] is wearing an armband which says '[student-name of M] the [student-print of M]' in large [rank-colour of M] letters.".
 
 To say DiaperStateDesc of (M - a student):
-	say "[big he of M] is wearing an abnormally massive white diaper[if M is messy]. The diaper is bloated and discoloured brown, which is clear evidence that [he of M] has made the most massive of messes inside it[end if]. ".
+	if the student-extra-diapers of M > 0, say "[big he of M] is wearing an abnormally massive white diaper[if the student-extra-diapers of M > 1], with what looks like [the student-extra-diapers of M] extra layers of padding[end if][if M is messy]. The diaper is bloated and discoloured brown, which is clear evidence that [he of M] has made the most massive of messes inside it[end if]. ";
+	otherwise say "[big his of M] diaper is bloated and discoloured brown, which is clear evidence that [he of M] has made the most massive of messes inside it. ".
 
 To say KissPunishDesc of (M - a student):
 	say "[big his of M] lips have been permanently swollen as punishment for under-performing in the kissing lesson. ".
@@ -271,6 +270,25 @@ To compute monstermotion of (M - a student):
 		otherwise if the current-rank of M is 4:
 			now R is School30;
 		if the location of M is not R, now M is in R;
+	otherwise if academy-toilet-key is held by M: [got to take the key back]
+		let A be down;
+		let KM be headmistress;
+		if KM is off-stage or KM is defeated:
+			if nurse is alive and nurse is undefeated, now KM is receptionist;
+			if receptionist is alive and receptionist is undefeated, now KM is receptionist;
+		if KM is alive and KM is undefeated, now A is the the best route from the location of M to the location of headmistress through unbossed rooms;
+		otherwise now A is the the best route from the location of M to School08 through unbossed rooms;
+		let P be the room A from the location of M;
+		if the entry-rank of P > the entry-rank of the location of M and the entry-rank of P > the current-rank of M, now A is down;
+		if A is not down and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
+			blockable move M to A;
+			compute monstermotion reactions of M;
+		if M is in the location of KM and KM is undefeated:
+			if M is in the location of the player, say "[BigNameDesc of M] hands [NameDesc of academy-toilet-key] back to [NameDesc of KM].";
+			now academy-toilet-key is carried by KM;
+		otherwise if M is in School08:
+			if M is in the location of the player, say "[BigNameDesc of M] places [NameDesc of academy-toilet-key] onto [NameDesc of headmistress][']s desk.";
+			now academy-toilet-key is in School08;
 	otherwise if a random number between 1 and 4 is 1 or (M is in School35 and a random number between 1 and 5 > 2) or (the player is at least partially immobile and (a random number between 1 and 2 is 1 or there is a teacher in the location of M)):
 		compute room leaving of M.
 
@@ -294,26 +312,24 @@ To compute room leaving of (M - a student): [This CANNOT be replaced with a func
 				unless the entry-rank of P > the entry-rank of neighbour finder and the entry-rank of P > the current-rank of M, add A to LD;
 			otherwise:
 				add A to LD;
-		sort LD in random order;
-		let LDE be the number of entries in LD;
-		let A be entry 1 in LD;
-		let P be the room A from the location of M;
-		if a random number between 1 and LDE is 1 and P is unbossed and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
-			blockable move M to A;
-			compute monstermotion reactions of M;
-		otherwise if a random number between 1 and LDE is 1 and P is unbossed and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
-			blockable move M to A;
-			compute monstermotion reactions of M.
+		if the number of entries in LD is 0: [student has found themselves with 0 valid moves]
+			say "BUG - [NameDesc of M] has nowhere legal to walk. How did [he of M] get here?! ([location of M])[line break]";
+			add LA to LD;
+		let A be entry (a random number between 1 and the number of entries in LD) in LD;
+		if A is a direction and a random number between 1 and 100 > 55:
+			let P be the room A from the location of M;
+			if P is unbossed and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
+				blockable move M to A;
+				compute monstermotion reactions of M.
 
 To compute fleeing of (M - a student):
 	if the player is in danger or the health of M < the maxhealth of M:
 		now neighbour finder is the location of M;
 		let A be a random N-viable direction;
-		let P be the room A from the location of M;
-		if A is a random N-viable direction and the room A from the location of M is unbossed and P is not the location of the player and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
-			try M going A;
-		otherwise if A is a random N-viable direction and P is not the location of the player and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
-			try M going A;
+		if A is a direction and a random number between 1 and 100 > 30:
+			let P be the room A from the location of M;
+			if P is unbossed and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
+				blockable move M to A;
 		repeat with N running through staff members in the location of M: [Students alert teachers if they have been hurt.]
 			interest M;
 			unless M is in the location of the player:
@@ -327,9 +343,9 @@ To compute fleeing of (M - a student):
 
 Definition: a student (called M) is distracted:
 	if headmistress is in the location of M:
-		if academy-toilet-key is held by headmistress and (M is not interested or M is friendly) and (headmistress is not interested or headmistress is friendly):
+		if M is a urinater and the bladder of M >= 1000 and academy-toilet-key is held by headmistress and (M is not interested or M is friendly) and (headmistress is not interested or headmistress is friendly):
 			if M is in the location of the player, say "[BigNameDesc of M] awkwardly presents [himself of M] to [NameDesc of headmistress][if diaper lover > 0], while doing a little [']potty dance['][end if].[line break][speech style of M]'Please could I have the key to the toilets, Ma[']am?'[roman type][line break]";
-			if the current-rank of M >= 5 or a random number between 2 and 5 < the current-rank of M:
+			if 0 is 1 and (the current-rank of M >= 5 or a random number between 2 and 5 < the current-rank of M): [TODO add this back in but make students actually able to pee this way]
 				if M is in the location of the player, say "[BigNameDesc of headmistress] frowns.[line break][speech style of M]'[if the current-rank of M >= 5]You're a high enough rank that you should be using your peers as urinals, not the normal boring toilet[otherwise]No, I think not. I expect you to hold it for a while longer than this[end if].'[roman type][line break]";
 				compute mandatory room leaving of headmistress;
 				now headmistress is moved;
@@ -341,7 +357,7 @@ Definition: a student (called M) is distracted:
 				now headmistress is moved;
 			decide yes;
 		if academy-toilet-key is held by M and (M is not interested or M is friendly) and (headmistress is not interested or headmistress is friendly):
-			if M is in the location of the player, say "[BigNameDesc of headmistress] holds out [his of M] hand expectantly.[line break][speech style of headmistress]'The toilet key.'[line break][speech style of M]'B-but I haven't had a chance to-'[line break][speech style of headmistress]'You had your chance. TOILET KEY. NOW.'[line break][speech style of M]'Y-Yes headmistress...'[roman type][line break][BigNameDesc of M] hands the academy toilet key back to [NameDesc of headmistress].";
+			if M is in the location of the player, say "[BigNameDesc of headmistress] holds out [his of M] hand expectantly.[line break][speech style of headmistress]'The toilet key.'[line break][if M is urinater and the bladder of M >= 1000][speech style of M]'B-but I haven't had a chance to-'[line break][speech style of headmistress]'You had your chance. TOILET KEY. NOW.'[line break][end if][speech style of M]'Y-Yes headmistress...'[roman type][line break][BigNameDesc of M] hands the academy toilet key back to [NameDesc of headmistress].";
 			now headmistress is carrying academy-toilet-key;
 			compute mandatory room leaving of headmistress;
 			now headmistress is moved;
@@ -497,6 +513,7 @@ To FavourUp (M - a student) by (N - a number):
 
 To RespectUp (M - a student) by (N - a number): [This is the same mechanically as favour but with different flavour]
 	if N > 0 and M is alive:
+		now M is recently-unknown; [reset what we know about the friendliness of the NPC]
 		increase the favour of M by N;
 		say "You can tell that [NameDesc of M] [one of]is impressed with you[or]has [if M is not acquaintance]regained some[otherwise]gained[end if] respect for you[or]is happy with what [he of M] sees[or]approves[in random order].".
 
@@ -507,6 +524,7 @@ To RespectDown (M - a student) by (N - a number): [This is the same mechanically
 	if latest-top-malfunction is not 0 and M is reactive, now latest-top-malfunction is earnings; [If an intelligent interested NPC has lost favour with the player for whatever reason that probably means they would have seen a nip slip if one existed. So we'll say one didn't exist.]
 	if the class of the player is cheerleader and a random number between 1 and 2 is 1, decrease N by 1;
 	if N > 0 and M is alive:
+		now M is recently-unknown; [reset what we know about the friendliness of the NPC]
 		decrease the favour of M by N;
 		say "You can tell that [NameDesc of M] [if M is amicable student][one of]is feeling sorry for you[or]is pitying you[in random order][otherwise if M is friendly][one of]is unimpressed with you[or]has lost respect for you[or]is disgusted by what [he of M] sees[in random order][otherwise][one of]is utterly appalled by what [he of M] sees[or]has lost all respect for you[or]is deeply disgusted by you[in random order][end if].".
 
@@ -515,6 +533,7 @@ To HappinessUp (M - a student):
 
 To HappinessUp (M - a student) by (N - a number): [This is the same mechanically as favour but with different flavour]
 	if N > 0 and M is alive:
+		now M is recently-unknown; [reset what we know about the friendliness of the NPC]
 		increase the favour of M by N;
 		say "You can tell that [NameDesc of M] is [if M is not acquaintance][one of]pleased by that[or]trying to hide a smile[in random order][otherwise][one of]smiling about that[or]happy with you[in random order][end if].".
 
@@ -524,6 +543,7 @@ To HappinessDown (M - a student):
 To HappinessDown (M - a student) by (N - a number): [This is the same mechanically as favour but with different flavour]
 	if the class of the player is cheerleader and a random number between 1 and 2 is 1, decrease N by 1;
 	if N > 0 and M is alive:
+		now M is recently-unknown; [reset what we know about the friendliness of the NPC]
 		decrease the favour of M by N;
 		say "You can tell that [NameDesc of M] is [if M is amicable student][one of]a little disappointed[or]a tad vexed[in random order][otherwise if M is friendly][one of]not happy[or]irritated[or]frustrated[in random order][otherwise][one of]pissed off[or]furious[or]angry[in random order] with you[end if].".
 
@@ -1061,6 +1081,7 @@ To execute (A - bully-sharpie):
 	otherwise:
 		now the tattoo-title of marker chest tattoo is the substituted form of "[if diaper lover > 0 or lactation fetish is 1]Mommy's Milkers[otherwise]I HAVE NO TITS[end if]";
 		now the tattoo-outrage of marker chest tattoo is 7;
+	now the text-shortcut of marker chest tattoo is the substituted form of "[tattoo-title of marker chest tattoo]";
 	say "[speech style of current-monster]'There you go, now you look like the trashy [if diaper quest is 0]whore[otherwise]submissive[end if] you're destined to be!'[roman type][line break]".
 
 To say angry punishment insult of (M - a student):

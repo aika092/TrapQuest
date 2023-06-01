@@ -109,9 +109,9 @@ To say ClothingDesc of (S - sword-of-purity):
 			otherwise if BP is vagina and the player is not possessing a vagina:
 				say "";
 			otherwise if BP is at least partially exposed:
-				say "[BP]: [bold type]exposed[roman type][line break]";
+				say "[if BP is hips]butt[otherwise][BP][end if]: [bold type]exposed[roman type][line break]";
 			otherwise:
-				say "[BP]: [if BP is breasts and there is a worn warrior chestpiece][bold type]sexified by chestpiece[otherwise]not exposed[end if][roman type][line break]".
+				say "[if BP is hips]butt[otherwise][BP][end if]: [if BP is breasts and there is a worn warrior chestpiece][bold type]sexified by chestpiece[otherwise]not exposed[end if][roman type][line break]".
 
 To say ShortDesc of (S - sword-of-purity):
 	say "gleaming silver sword".
@@ -279,6 +279,12 @@ To decide which number is the slap damage improvement of (W - dildo sword):
 	decide on X.
 
 To compute attack of (W - dildo sword) at (M - a monster):
+	if W is penetrating a fuckhole:
+		let F be a random fuckhole penetrated by W;
+		say "The dildo sword rapdily slides out of your [variable F]! ";
+		ruin F;
+		now the raw-magic-modifier of W is 5;
+		dislodge W;
 	say "The floppy [W] makes a [if the magic-modifier of W > 3]powerful thud[otherwise]loud slapping sound[end if] as it hits [NameDesc of M].".
 
 Definition: dildo sword is insertable: decide yes.
@@ -316,9 +322,12 @@ Report plugging something with dildo sword:
 			stimulate F from the second noun times N;
 			finally arouse;
 			ruin F;
-	say "[if the second noun is cursed]Since you can't let go of the handle,[otherwise]Since the large dildo is so heavy, it can't stay inside on its own and[end if] you are forced to pull it back out. [if the raw-magic-modifier of the second noun < 5]As it comes out, you find that it is glistening with newly recharged magic power![end if]";
-	now the raw-magic-modifier of the second noun is 5;
-	dislodge the second noun.
+	if the second noun is cursed:
+		say "You tug, but the dildo won't come back out. [one of]Oh crap - [or]Once again, [stopping]the curse is now keeping the sword stuck inside you! Perhaps if you were to try and [bold type]slap[roman type] someone with it, it would forget that it's supposed to be stuck inside you for a moment...?";
+	otherwise:
+		say "[if the second noun is cursed]Since you can't let go of the handle,[otherwise]Since the large dildo is so heavy, it can't stay inside on its own and[end if] you are forced to pull it back out. [if the raw-magic-modifier of the second noun < 5]As it comes out, you find that it is glistening with newly recharged magic power![end if]";
+		now the raw-magic-modifier of the second noun is 5;
+		dislodge the second noun.
 
 To compute attack effect of (H - dildo sword):
 	if the raw-magic-modifier of H > 0 and attack-type is 1:
@@ -617,7 +626,7 @@ Definition: rattle is destiny-prioritised:
 	if the bladder-incontinence of the player > 3, decide yes;
 	decide no.
 Definition: rattle is destiny-appropriate:
-	if the player is diapered, decide yes;
+	if the player is diapered and the player is getting unlucky, decide yes;
 	decide no.
 
 Definition: rattle is baby themed: decide yes.

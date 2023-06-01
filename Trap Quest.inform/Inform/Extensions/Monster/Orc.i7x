@@ -50,7 +50,17 @@ To set up (M - orc):
 	now the raw difficulty of M is the starting difficulty of M;
 	now M is guarding;
 	now M is in Dungeon07;
-	now the health of M is the maxhealth of M.
+	now the health of M is the maxhealth of M;
+	let N be 3 - the number of accessories held by M;
+	if N > 0:
+		repeat with X running from 1 to N:
+			let A be a random off-stage plentiful accessory;
+			if A is accessory:
+				if X is 1, now A is emerald;
+				if X is 2, now A is ruby;
+				if X is 3, now A is pink diamond;
+				set shortcut of A;
+				now M is carrying A.
 
 To decide which number is the starting difficulty of (M - orc):
 	decide on 13.
@@ -89,13 +99,7 @@ To say PregGrowth of (M - orc):
 To compute labour to (M - orc):
 	if M is regional and M is alive:
 		compute pregnancy clothing displacement;
-		let MD be a random maternity dress;
-		say "[PregFlav][if the father is in the location of the player]The [father][otherwise]The [father] appears almost as if on cue! [big he of M][end if] kneels down on one knee and [if mythical creatures fetish is 1]you both watch as a disgusting pig's head begins to emerge from your vagina. This baby is just as much an orc as its father! You groan in despair as the half-pig baby slowly emerges from your womb[otherwise]delivers the beautiful mixed race human baby[end if]. [big he of M] takes it into [his of M] arms and begins to cradle it.[line break][first custom style]'A baby boy! [if the father is mating]A wonderful addition to our growing horde[otherwise]My first child. I will train him in the ways of orc culture, and when he comes of age, perhaps he will be a great enough leader lead an assault on a human settlement and kidnap all their women. We can dream[end if][if MD is not held]. Here, take this[end if].'[roman type][line break]";
-		if MD is not held:
-			blandify and reveal MD;
-			now MD is in the location of the player;
-			say "[BigNameDesc of M] hands you a brand new maternity dress!";
-			compute autotaking MD;
+		say "[PregFlav][if the father is in the location of the player]The [father][otherwise]The [father] appears almost as if on cue! [big he of M][end if] kneels down on one knee and [if mythical creatures fetish is 1]you both watch as a disgusting pig's head begins to emerge from your vagina. This baby is just as much an orc as its father! You groan in despair as the half-pig baby slowly emerges from your womb[otherwise]delivers the beautiful mixed race human baby[end if]. [big he of M] takes it into [his of M] arms and begins to cradle it.[line break][first custom style]'A baby boy! [if the father is mating]A wonderful addition to our growing horde[otherwise]My first child. I will train him in the ways of orc culture, and when he comes of age, perhaps he will be a great enough leader to command an assault on a human settlement and kidnap all their women. We can dream[end if].'[roman type][line break]";
 		say "Without giving you a chance to react, never mind reply, [he of M] leaves you to recover from your ordeal.";
 		if the father is in the location of the player:
 			say "For some reason, you are filled with a sense of deep fulfilment. You feel great!";
@@ -244,7 +248,7 @@ To say angry punishment insult of (M - orc):
 
 To say LandingTaunt of (M - orc):
 	say "[BigNameDesc of M] raises [his of M] eyebrows.[line break][speech style of M]'Nice of you to finally join me down here.'[roman type][line break]";
-	humiliate 50.
+	moderateHumiliate.
 
 To send (M - orc) home:
 	if M is alive:
@@ -1095,7 +1099,7 @@ To compute poker minigame:
 						otherwise now M is bowsette;
 					if M is dungeon boss:
 						now M is unleashed;
-						say "You hear the sound of a cage crashing and swinging open from elsewhere in the Dungeon![line break][variable custom style][if Dungeon36 is discovered]Oh... Oh no... The [ShortDesc of M]...[otherwise]What was that?![end if][roman type][line break]";
+						say "You hear the sound of a cage crashing and swinging open from elsewhere in the Dungeon![line break][variable custom style][if Dungeon36 is visited]Oh... Oh no... The [ShortDesc of M]...[otherwise]What was that?![end if][roman type][line break]";
 					otherwise if M is monster:
 						now M is massive;
 						summon M in the dungeon;
@@ -1118,18 +1122,7 @@ To compute poker minigame:
 						say "You feel significant amounts of physical strength leaving you![line break][variable custom style]No!!![roman type][line break]";
 				otherwise if PS is 3:
 					say "[speech style of orc]'The [poker card of PC] teleports you to a troublesome location. Err, I guess this is goodbye for now.'[roman type][line break]";
-					let LR be a list of rooms;
-					if diaper quest is 0:
-						let M be a random alive dungeon boss;
-						if M is monster, add the location of M to LR;
-					if Woods16 is placed, add Woods16 to LR;
-					if Hotel37 is placed, add Hotel37 to LR;
-					if Mansion23 is placed, add Mansion23 to LR;
-					if the number of entries in LR > 0:
-						sort LR in random order;
-						teleport to entry 1 in LR;
-					otherwise:
-						teleport to Dungeon31;
+					compute bad teleport;
 			add PV to numbersExplained;
 	if orc is in the location of the player, say "[line break][speech style of orc]'Well, that's that, for now. [one of]The poker table will need time to replenish its energy, so come back later for another round[or]I eagerly await our next match[stopping].'[roman type][line break]";
 	now orc is not playing-poker-badly;

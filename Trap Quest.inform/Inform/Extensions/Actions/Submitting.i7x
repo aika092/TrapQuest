@@ -21,11 +21,11 @@ Carry out submitting:
 		if (the player is shameless or the player is feeling submissive) and the player is not having marital sex:
 			do nothing; [shameless players don't find submissive sex to be embarrassing]
 		otherwise if the relevant sex addiction of the player < 7:
-			if the player is having marital sex, dignify 5;[princesses are humiliated less by sex with consorts.]
-			otherwise humiliate 25;
+			if the player is having marital sex, trivialDignify;[princesses are humiliated less by sex with consorts.]
+			otherwise slightHumiliate;
 		otherwise if the relevant sex addiction of the player < 14:
-			if the player is having marital sex, dignify 10;
-			otherwise humiliate 15;
+			if the player is having marital sex, slightDignify;
+			otherwise slightHumiliate;
 		otherwise:
 			if the player is having marital sex, dignify 20;[princesses who accept their role fully are more confident after sex with their consorts]
 	allocate 6 seconds.
@@ -38,7 +38,7 @@ Report submitting:
 		if forced submit > 0:
 			if forced submit > 1, do nothing instead;[handled by the resisting function, since we don't know the reason why the player can't resist unless we do it there]
 			now forced submit is 0;
-		unless M is penetrating face and M is not not-getting-licked: [no flavour for this here]
+		unless M is penetrating face and M is monster and M is not not-getting-licked: [no flavour for this here]
 			if the player is friendly fucked:
 				say FriendlySexSubmissionFlav of M;
 			otherwise:
@@ -59,8 +59,8 @@ Understand "submit", "surrender", "resign", "give up", "give in", "forfeit", "yy
 To compute player submission:
 	repeat with M running through awake monsters in the location of the player:
 		if the last-interaction of M is 0 and M is enjoys sex dangerous monster, say SubmissionFlav of M;
-		if the player is having marital sex, dignify the sex addiction of the player * 5;
-		otherwise humiliate 125;
+		if the player is having marital sex, dignify the sex addiction of the player * DIGNITY-BASE;
+		otherwise strongHumiliate;
 		compute submission reaction of M;
 	if there is an enjoys sex dangerous monster in the location of the player, say "[if the player is feeling dominant]You grit your teeth and try to suppress your rage.[otherwise]In a brief moment of clarity, you are horrified to see what you have become. The feeling soon fades and is replaced by shy enthusiasm.[end if]".
 

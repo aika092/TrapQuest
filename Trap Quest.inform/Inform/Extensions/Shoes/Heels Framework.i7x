@@ -144,7 +144,8 @@ To set up magic attribute of (C - a heels):
 			now C is stumbling;
 	otherwise:
 		if R is 1, now C is speed;
-		if R is 2, now C is kicking.
+		if R is 2, now C is kicking;
+	set up rare magic attribute of C.
 
 To uniquely set up (C - a heels):
 	set up heel length of C.

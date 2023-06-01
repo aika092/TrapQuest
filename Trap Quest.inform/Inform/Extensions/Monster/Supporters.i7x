@@ -19,7 +19,7 @@ To say ChestDesc of (M - supporter-ai):
 	otherwise say "boobs".
 
 To compute perception of (M - supporter-ai):
-	add M to new-acolytes;
+	unless M is previously-cultist, add M to new-acolytes;
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]"; [The output for clothing humiliation takes place within the 'sluttily dressed' check.]
 	if the current-errand of M is completed and M is not uniquely unfriendly:
 		compute errand completion of M;
@@ -242,7 +242,7 @@ To say CleavageClimaxFlav of (M - supporter-aika):
 To compute the flying player taunting of (M - supporter-aika):
 	if a random number from 1 to 6 is 1:
 		say "[BigNameDesc of M] waves to you.[line break][speech style of M]'[one of]Having fun with the inflation mechanics are you?'[or]I know it doesn't make much physical sense, but it sure is fun to get blown up like a balloon, isn't it?'[or]Don't worry, I can wait!'[in random order][roman type][line break]";
-		humiliate 20.
+		slightHumiliate.
 
 To compute labour to (M - supporter-aika):
 	if M is regional and M is alive:
@@ -517,11 +517,11 @@ To say ClimaxFlav of (M - supporter-critchett) in (F - a fuckhole):
 To compute the flying player taunting of (M - supporter-critchett):
 	if a random number from 1 to 6 is 1:
 		say "[BigNameDesc of M] grins as [he of M] holds a hand to [his of M] various curves while appraising your new inflated ones.[line break][speech style of M]'[one of]Oh, you seem to be enjoying growing your assets more than I am! You look like twice the slut!'[or]Silly bean, you can't hide from me on the ceiling. Come on down here so we can get together more.'[or]You look like a big inflatable dolly! So cute, I just need to keep you and diaper you!'[roman type][line break][big he of M] pats [his of M] own enormous diaper with a distinct squishing sound for certain emphasis.[in random order][roman type][line break][if the humiliation of the player < 17500]You [one of]wince[or]shudder[or]cringe[purely at random] with shame.";
-		humiliate 20.
+		slightHumiliate.
 
 To say LandingTaunt of (M - supporter-critchett):
 	say "[BigNameDesc of M] giggles, amused.[line break][speech style of M]'[one of]What goes up, must go down... on me! Right? Standing offer[or]Aww, I was hoping to catch you in my honeypouch! Can you get back up and we'll try again? You won't regret it[in random order]!'[roman type][line break]";
-	humiliate 50.
+	moderateHumiliate.
 
 [###WATERSPORTS STUFF###]
 
@@ -799,11 +799,11 @@ To say FacesitClimaxFlav of (M - supporter-teagan):
 To compute the flying player taunting of (M - supporter-teagan):
 	if a random number from 1 to 6 is 1:
 		say "[BigNameDesc of M] grins.[line break][speech style of M]'[one of]Ohmigosh, you look so pathetic up there...'[or]Hah, you fell for the Aeromancer's scheme! What a dumb whore!'[or]Fuck, you got pumped full of helium?! I got milk, not fair!'[in random order][roman type][line break][if the humiliation of the player < 17500]You [one of]wince[or]shudder[or]cringe[purely at random] with shame.";
-		humiliate 20.
+		slightHumiliate.
 
 To say LandingTaunt of (M - supporter-teagan):
 	say "[BigNameDesc of M] laughs at you.[line break][speech style of M]'[one of]Wow, so graceful[or]It's raining whores[in random order]!'[roman type][line break]";
-	humiliate 50.
+	moderateHumiliate.
 
 Part - Reiko
 
@@ -1051,7 +1051,7 @@ To say DefaultGreeting to (M - supporter-jim):
 To compute the flying player taunting of (M - supporter-jim):
 	if a random number from 1 to 6 is 1:
 		say "[BigNameDesc of M] grins.[line break][speech style of M]'[one of]Oh, [NameBimbo]! All you think about is balloons. All you talk about is balloons. Your beautiful house is full of bits and pieces of balloons. Your books are all about balloons, every time you sing a song, it is in some way obliquely connected with balloons... Everything you eat has to have 'balloon' incorporated in the title. Your dogs are all called Balloono. You tie balloons to your ankles in the evenings!'[or]You duck down and shout, 'Hey! Balloons!' when there are none about. Your whole life is becoming obsessively balloonic, you know... Oh-h-h! Why do I have to hang from this bloody gas bag all day?'[cycling][roman type][line break]";
-		humiliate 20.
+		slightHumiliate.
 
 [###WATERSPORTS STUFF###]
 
@@ -1511,11 +1511,11 @@ To say CreampieFlav of (M - supporter-serena) in (F - a fuckhole):
 To compute the flying player taunting of (M - supporter-serena):
 	if a random number from 1 to 6 is 1:
 		say "[BigNameDesc of M] grins.[line break][speech style of M]'[one of]Haha, what a loser! How did you manage to get stuck up there?'[or]Gosh, you sure are brave, I sure wouldn't be caught dead stuck on the ceiling like an oversized balloon!'[or]Get down here already you dumb bimbo! Are you really stuck?! Haha!'[in random order][roman type][line break][if the humiliation of the player < 17500]You [one of]wince[or]shudder[or]cringe[purely at random] with shame.";
-		humiliate 20.
+		slightHumiliate.
 
 To say LandingTaunt of (M - supporter-serena):
 	say "[BigNameDesc of M] smirks.[line break][speech style of M]'[one of]Like a lead balloon[or]Oof, that looked like it hurt[in random order]!'[roman type][line break]";
-	humiliate 50.
+	moderateHumiliate.
 
 [###WATERSPORTS STUFF###]
 

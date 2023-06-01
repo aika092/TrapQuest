@@ -54,6 +54,9 @@ To decide which figure-name is Figure of Dark Princess 4:
 To decide which figure-name is Figure of Dark Princess 5:
 	decide on figure of small image.
 
+To decide which figure-name is Figure of babified shopkeeper urinal:
+	decide on figure of small image.
+
 To decide which figure-name is Figure of Vines Cutscene 3a:
 	decide on figure of small image.
 To decide which figure-name is Figure of Vines Cutscene 3b:

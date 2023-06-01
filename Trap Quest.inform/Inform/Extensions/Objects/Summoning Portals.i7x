@@ -135,9 +135,6 @@ Decreases the charge of a summoning portal by a given amount
 +!]
 To ChargeDown (S - a summoning portal) by (X - a number):
 	decrease the charge of S by X.
-To ChargeDown (S - summoning-circle) by (X - a number):
-	if the number of alive royal guards is 0, now X is X * (1 + the number of held stolen clothing);
-	decrease the charge of S by X.
 
 Appeasing it with is an action applying to two things.
 
@@ -220,7 +217,7 @@ A time based rule (this is the monster summoning rule):
 		repeat with S running through summoning portals:
 			compute summoning check of S.
 
-[!<ComputeSummoningCheckOfPortal>+
+[!<ComputeSummoningPortalSummoningMonster>+
 
 Calls the regionally summoning function for summoning portal "S", which calls a relevant variant of summon M. Once the monster is set up, transfers the monster to the location of S and calls the monster's summoning flav function. The monster's boredom is set to 1 so the game has time to properly add it to the turn order.(or whatever causes the perception function to fire twice when monsters spawn. beats me dude.)
 
@@ -369,6 +366,10 @@ Carry out appeasing something with summoning-circle:
 		say "[BigNameDesc of the noun] lights up as you throw it into the circle, disintegrating as it absorbs some of the building energy.";
 		let P be the price of the noun;
 		ChargeUp summoning-circle by (P * 150);
+		only destroy the noun;
+	otherwise if the noun is pure totem:
+		say "[BigNameDesc of the noun] lights up as you throw it into the circle, disintegrating as it absorbs the building energy. A wave of relief passes through your surroundings as the last remnants of [NameDesc of the noun] disappear completely.";
+		ChargeUp the second noun by 900;
 		only destroy the noun;
 	otherwise if the noun is blessed clothing:
 		say "[BigNameDesc of the noun] lights up as you throw it into the circle, [if the noun is not cursable]disintegrating as it absorbs some of the building energy[otherwise]trembling visibly as holy energy stored inside [NameDesc of the noun] absorbs some of the building energy. [bold type]It is no longer blessed[roman type][end if].";
@@ -637,11 +638,11 @@ Carry out appeasing something with teleportation-pad:
 	if the noun is plentiful accessory:
 		say "[BigNameDesc of the noun] lights up as you throw it onto the pad, disintegrating as it absorbs some of the building energy.";
 		let P be the price of the noun;
-		ChargeUp summoning-circle by (P * 20);
+		ChargeUp summoning-circle by (P * 150);
 		only destroy the noun;
 	otherwise if the noun is pure totem:
 		say "[BigNameDesc of the noun] lights up as you throw it onto the pad, disintegrating as it absorbs the building energy. A wave of relief passes through your surroundings as the last remnants of [NameDesc of the noun] disappear completely.";
-		ChargeUp the second noun by 700;
+		ChargeUp the second noun by 900;
 		only destroy the noun;
 	otherwise if the noun is biological clothing or the noun is food:
 		say "You throw [NameDesc of the noun] onto the pad, which powers up and teleports [him of the noun] away, using up some of its energy.";
@@ -655,7 +656,14 @@ Carry out appeasing something with teleportation-pad:
 		ChargeUp the second noun by 150;
 		only destroy the noun;
 	otherwise:
-		say "You throw [NameDesc of the noun] into onto the pad. Nothing happens.".
+		let N be 0;
+		if the noun is clothing, now N is the urine-soak of the noun + the semen-soak of the noun + the milk-soak of the noun;
+		if N <= 0:
+			say "You throw [NameDesc of the noun] onto the pad. Nothing happens.";
+		otherwise:
+			say "The bodily fluids in [NameDesc of the noun] start to glow a fluorescent shade of blue as you throw it onto the pad, and as the liquid fizzles and evaporates, the energy rapidly builds.";
+			ChargeDown the second noun by N * 50;
+			clean the noun.
 
 Chapter 4 - Mysterious Mummy
 
@@ -712,7 +720,7 @@ To say MummyColour of (S - mysterious-mummy):
 			say "pink";
 		otherwise if M is mannequin:
 			say "black";
-		otherwise if M is demoness:
+		otherwise if M is demoness or M is hellhound:
 			say "red";
 		otherwise if M is kitsune:
 			say "silvery";
@@ -783,7 +791,7 @@ Carry out appeasing something with mysterious-mummy:
 			destroy the noun;
 		otherwise if the noun is pure totem:
 			say "[BigNameDesc of noun] lights up as you place it up at the mummy's feet, disintegrating as it absorbs the building energy. A wave of relief passes through your surroundings as the last remnants of [NameDesc of the noun] disappear completely.";
-			ChargeUp the second noun by 1000;
+			ChargeUp the second noun by 900;
 			only destroy the noun;
 		otherwise if the noun is blessed clothing:
 			say "[BigNameDesc of the noun] lights up as you throw it into the circle, [if the noun is not cursable]disintegrating as it absorbs some of the building energy[otherwise]trembling visibly as holy energy stored inside [NameDesc of the noun] absorbs some of the building energy. [bold type]It is no longer blessed[roman type][end if].";
@@ -798,7 +806,14 @@ Carry out appeasing something with mysterious-mummy:
 			ChargeUp the second noun by 400;
 			only destroy the noun;
 		otherwise:
-			say "You place [NameDesc of the noun] in front of [NameDesc of the second noun], but nothing happens.".
+			let N be 0;
+			if the noun is clothing, now N is the urine-soak of the noun + the semen-soak of the noun + the milk-soak of the noun;
+			if N <= 0:
+				say "You place [NameDesc of the noun] in front of [NameDesc of the second noun]. Nothing happens.";
+			otherwise:
+				say "The bodily fluids in [NameDesc of the noun] start to glow a fluorescent shade of blue as you place it in front of [NameDesc of the second noun], and as the liquid fizzles and evaporates, the energy rapidly builds.";
+				ChargeDown the second noun by N * 50;
+				clean the noun.
 
 Check entering mysterious-mummy:
 	if the player is immobile, say "Aren't you a bit tied up at the moment?" instead;

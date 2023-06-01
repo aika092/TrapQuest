@@ -138,7 +138,7 @@ cowgirlExplained is initially false.
 a later time based rule (this is the explaining cowgirl rule):
 	if cowgirlExplained is false and the class of the player is cowgirl:
 		now cowgirlExplained is true;
-		say "[bold type]Now that you have become the [']cowgirl['] class, you can sense that the more milk contained in your breasts, the more bonus strength you'll have, and the higher your minimum arousal level, and also the more milk contained and the more sensitive your breasts are, the less intelligence you'll have. Also, [men of shopkeeper] will be more likely to choose to fuck your tits (which can increase their sensitivity)[if diaper quest is 0]. Also, when horny, you will release pheromones that might attract certain mates[end if][if the class of the player is catgirl]. Also, since you are also a catgirl, you also get bonus dexterity the more milk is in your stomach[end if][if the class of the player is maid]. Also, since you are also a maid, cleaning up puddles causes your breasts to create more milk, and also you can serve vessels full of [milk] to anyone who's interested[end if].[roman type][line break]";
+		say "[bold type]Now that you have become the [']cowgirl['] class, you can sense that the more milk contained in your breasts, the more bonus strength you'll have, and the higher your minimum arousal level, and also the more milk contained and the more sensitive your breasts are, the less intelligence you'll have. Also, [men of male-m] will be more likely to choose to fuck your tits (which can increase their sensitivity)[if diaper quest is 0]. Also, when horny, you will release pheromones that might attract certain mates[end if][if the class of the player is catgirl]. Also, since you are also a catgirl, you also get bonus dexterity the more milk is in your stomach[end if][if the class of the player is maid]. Also, since you are also a maid, cleaning up puddles causes your breasts to create more milk, and also you can serve vessels full of [milk] to anyone who's interested[end if].[roman type][line break]";
 	otherwise if cowgirlExplained is true and the class of the player is not cowgirl:
 		now cowgirlExplained is false;
 		say "[bold type]Now that you are no longer the [']cowgirl['] class, you can sense that the bonus strength you were receiving from having milk in your breasts and the penalty intelligence for having sensitive breasts has gone.[roman type][line break]".
@@ -159,7 +159,7 @@ priestessExplained is initially false.
 a later time based rule (this is the explaining priestess rule):
 	if priestessExplained is false and the class of the player is priestess:
 		now priestessExplained is true;
-		say "[bold type]Now that you have become the [']priestess['] class, you can sense that you have increased intelligence and lowered strength. Also, you will always be able to confidently tell whether the dungeon altar is safe to use.[roman type][line break]";
+		say "[bold type]Now that you have become the [']priestess['] class, you can sense that you have increased intelligence and lowered strength. [if diaper quest is 1]Being grossed out won't make you lose arousal. [end if]Also, you will always be able to confidently tell whether the dungeon altar is safe to use.[roman type][line break]";
 	otherwise if priestessExplained is true and the class of the player is not priestess:
 		now priestessExplained is false;
 		say "[bold type]Now that you are no longer the [']priestess['] class, you can sense that the bonus intelligence and reduced strength has gone.[roman type][line break]".
@@ -365,22 +365,23 @@ a later time based rule (this is the explaining silicone rule):
 		say "[bold type]Now that you are no longer the [']silicone queen['] class, you sense that the bonus dexterity from having large plastic breasts has left you.[roman type][line break]".
 
 This is the latex fetish model class rule:
+	let T be "latex [if trashcan is worn]trashcan[otherwise]fetish[end if]";
 	if wrestler-hood is worn:
-		now player-class is "latex fetish wrestler";
+		now player-class is the substituted form of "[T] wrestler";
 		rule succeeds;
 	if rubber-baby-bonnet is worn:
-		now player-class is "latex fetish baby";
+		now player-class is the substituted form of "[T] baby";
 		rule succeeds;
 	if black strap hood is worn:
-		now player-class is "latex fetish slave";
+		now player-class is the substituted form of "[T] slave";
 		rule succeeds;
 	if black hood is worn:
-		now player-class is "latex fetish model";
-		if black-latex-maid-outfit is worn or skirted-maid-corset is worn, now the player-class is "latex fetish maid";
+		now player-class is the substituted form of "[T] model";
+		if black-latex-maid-outfit is worn or skirted-maid-corset is worn, now the player-class is the substituted form of "[T] maid";
 		rule succeeds.
 The latex fetish model class rule is listed in the player class rules.
 Definition: a text (called T) is latex fetish model:
-	if T matches the text "latex fetish", decide yes;
+	if T matches the text "latex", decide yes;
 	decide no.
 
 latexExplained is initially false.
@@ -397,7 +398,8 @@ This is the human toilet class rule:
 		now player-class is "toilet";
 		if meat-toilet-panties is worn:
 			now player-class is "meat toilet";
-			if the used condoms of meat-toilet-panties > 0, now player-class is "meat toilet trashcan";
+			if the used condoms of meat-toilet-panties > 0 or trashcan is worn, now player-class is "meat toilet trashcan";
+		if trashcan is worn, now player-class is "toilet trashcan";
 		rule succeeds.
 The human toilet class rule is listed in the player class rules.
 Definition: a text (called T) is human toilet:
@@ -621,7 +623,7 @@ brideExplained is initially false.
 a later time based rule (this is the explaining bride rule):
 	if brideExplained is false and the class of the player is bride:
 		now brideExplained is true;
-		say "[bold type]Now that you have become the [']bride['] class, [if bride-consort is the throne]you sense that some friendly [men of shopkeeper] who have met you at least once before will want to propose to you[otherwise]you sense you could be punished if you are unfaithful to [NameDesc of bride-consort] by making another [man of shopkeeper] orgasm[end if].[roman type][line break]";
+		say "[bold type]Now that you have become the [']bride['] class, [if bride-consort is the throne]you sense that some friendly [men of male-m] who have met you at least once before will want to propose to you[otherwise]you sense you could be punished if you are unfaithful to [NameDesc of bride-consort] by making another [man of male-m] orgasm[end if].[roman type][line break]";
 	otherwise if brideExplained is true and the class of the player is not bride:
 		now brideExplained is false;
 		say "[bold type]Now that you are no longer the [']bride['] class, you are no longer [if bride-consort is the throne]likely to be the recipient of marriage proposals[otherwise]required to be faithful to [NameDesc of bride-consort][end if].[if the player is a nympho] What a relief![end if][roman type][line break]".
@@ -735,7 +737,7 @@ a later time based rule (this is the explaining vixen rule):
 
 This is the faerie class rule:
 	if glittering rose is worn:
-		if the vaginalvirgin of the player is 1, now the player-class is "fairy godmother";
+		if diaper quest is 0 and the vaginalvirgin of the player is 1, now the player-class is "fairy godmother";
 		otherwise now the player-class is "faerie";
 		rule succeeds.
 The faerie class rule is listed in the player class rules.
@@ -747,10 +749,10 @@ faerieExplained is initially false.
 a later time based rule (this is the explaining faerie rule):
 	if faerieExplained is false and the class of the player is faerie:
 		now faerieExplained is true;
-		say "[bold type]Now that you have become the [']faerie['] class, you can sense that you can gain magic power by receiving vaginal creampies. Also, you can't bear the thought of wearing underwear.[roman type][line break]";
+		say "[bold type]Now that you have become the [']faerie['] class, you can sense that you can gain magic power by [if diaper quest is 0]receiving vaginal creampies[otherwise]orgasming[end if]. You can get (and stay) horny even when grossed out. Also, you can't bear the thought of wearing [if diaper lover > 0]unpadded [end if]underwear.[roman type][line break]";
 	otherwise if faerieExplained is true and the class of the player is not faerie:
 		now faerieExplained is false;
-		say "[bold type]Now that you are no longer the [']faerie['] class, you can sense that your ability to gain magic power via vaginal creampies has gone.[roman type][line break]".
+		say "[bold type]Now that you are no longer the [']faerie['] class, you can sense that your ability to gain magic power via [if diaper quest is 0]vaginal creampies[otherwise]orgasming[end if] has gone.[roman type][line break]".
 
 This is the bunny class rule:
 	if there is a worn bunny ears:
@@ -763,6 +765,8 @@ This is the bunny class rule:
 			now the player-class is "plastic [T] waitress";
 		otherwise if frilly bunny ears is worn:
 			now the player-class is "plastic [T] maid";
+		otherwise if rubber bunny ears is worn:
+			now the player-class is "latex [T]";
 		rule succeeds.
 The bunny class rule is listed in the player class rules.
 
@@ -860,7 +864,7 @@ Thanks to the walking condom multi-class, we have multiple different texts that 
 
 +!]
 Definition: a text (called T) is cumdumpster:
-	if T matches the text "cumdump" or T is "sinful priestess" or T matches the text "condom" or T matches the text "fucktoy" or T is "fraternity's bicycle" or T matches the text "meat" or T is "cum collector" or T is "porn star", decide yes;
+	if T matches the text "cumdump" or T is "sinful priestess" or T matches the text "fucktoy" or T is "fraternity's bicycle" or T matches the text "meat" or T is "cum collector" or T is "porn star", decide yes;
 	decide no.
 
 cumdumpsterExplained is initially false.
@@ -886,6 +890,8 @@ This is the condom collector class rule:
 			now the player-class is "walking condom";
 		otherwise if WC collar is worn:
 			now the player-class is "toilet trashcan";
+		otherwise if trashcan is worn:
+			now the player-class is "trashcan";
 		otherwise:
 			now the player-class is "condom collector";
 		rule succeeds.
@@ -902,12 +908,13 @@ Definition: a text (called T) is condom collector:
 
 condomCollectorExplained is initially false.
 a later time based rule (this is the explaining condom collector rule):
-	if condomCollectorExplained is false and the class of the player is condom collector:
-		now condomCollectorExplained is true;
-		say "[bold type]Now that you have become the [']condom collector['] class, you can sense that the more condoms you have pinned to your clothing (both full of semen and ones you've already swallowed the contents of), the more bonus intelligence you'll have.[roman type][line break]";
-	otherwise if condomCollectorExplained is true and the class of the player is not condom collector:
-		now condomCollectorExplained is false;
-		say "[bold type]Now that you are no longer the [']condom collector['] class, you can sense that the bonus intelligence you were receiving from having condoms pinned to your clothes has gone.[roman type][line break]".
+	if condom fetish >= 2:
+		if condomCollectorExplained is false and the class of the player is condom collector:
+			now condomCollectorExplained is true;
+			say "[bold type]Now that you have become the [']condom collector['] class, you can sense that the more condoms you have pinned to your clothing (both full of semen and ones you've already swallowed the contents of), the more bonus intelligence you'll have.[roman type][line break]";
+		otherwise if condomCollectorExplained is true and the class of the player is not condom collector:
+			now condomCollectorExplained is false;
+			say "[bold type]Now that you are no longer the [']condom collector['] class, you can sense that the bonus intelligence you were receiving from having condoms pinned to your clothes has gone.[roman type][line break]".
 
 [!<TheMagicalGirlClassRule>+
 
@@ -1013,7 +1020,7 @@ stripperExplained is initially false.
 a later time based rule (this is the explaining stripper rule):
 	if stripperExplained is false and the class of the player is stripper:
 		now stripperExplained is true;
-		say "[bold type]Now that you have become the [']stripper['] class, you can sense that the higher your heels, [men of shopkeeper] will get [']blue balls['] less rapidly.[roman type][line break]";
+		say "[bold type]Now that you have become the [']stripper['] class, you can sense that the higher your heels, [men of male-m] will get [']blue balls['] less rapidly.[roman type][line break]";
 	otherwise if stripperExplained is true and the class of the player is not stripper:
 		now stripperExplained is false;
 		say "[bold type]Now that you are no longer the [']stripper['] class, you can sense that people will get [']blue balls['] at the normal rate.[roman type][line break]".

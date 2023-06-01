@@ -87,6 +87,7 @@ Check cleaning it with:[TODO: wiping into an open vessel]
 		if the second noun is worn and the second noun is not gloves, say "You are currently wearing the [printed name of second noun], so it would be difficult to clean yourself with it." instead;
 	otherwise if the second noun is arms and the semen taste addiction of the player < 8 and the thirst of the player < 4:
 		say "You can't bring yourself to do that[if the semen addiction of the player > 12]. And even if you did like the taste, you love the feeling of it too much to remove it[end if]!" instead;
+	if the second noun is glued clothing, say "You can't use [NameDesc of the second noun] while it's covered in glue!" instead;
 	if the second noun is not acceptableCumRag:
 		if the second noun is arms and the semen addiction of the player > 15 and the semen addiction of the player > the semen taste addiction of the player:
 			say "You briefly consider wiping some of the [semen] off your [noun], but then you change your mind.[paragraph break][second custom style][one of]Sluts like me deserve to be covered in [semen]! I only get to drink it if there's extra left over.[or]It's more important for me to look like a slut than get to taste my favourite drink.[or][if the noun is face]How will guys know I want their [manly-penis] in my mouth don't have [semen] on my face? The best way to make sure I get to taste more cum is by keeping the stuff on my face there.[otherwise]I deserve to have this on my [noun]. Removing it would be unfair to the contributors.[end if][or]I like wearing it! No way am I wiping it off!, even if it is to taste it![or]If I want to taste [semen], I could convince a hunk to fuck my throat, not cheat by licking it off my body.[or]That would be cheating. I should find a cock to suck if I want a fix.[or]It would be more fun to let a guy cum in my ass, and then collect it in a cup. To lick cum off my own body would be too cheap and easy for a girl like me.[or]My body is all dirty and sweaty. I want to drink pure cum, straight from the tap.[or]I'm supposed to wear it, not drink it. I was naughty and this is my punishment[if the intelligence of the player > 13]. Semen, semen everywhere, through all my pores did shrink; semen, semen everywhere, nor any drop to drink. Ooh, that sounds like great idea for a poem! I'll call it 'The Rime of the Ancient Cum Guzzler'[end if].[in random order][roman type][line break]" instead;
@@ -97,7 +98,9 @@ Check cleaning it with:[TODO: wiping into an open vessel]
 			say "You briefly consider wiping some of the [semen] off your [noun], but then you change your mind.[paragraph break][second custom style][one of]Sluts like me deserve to be covered in [semen]![or]I'm a dirty slut and I should look like one.[or][if the noun is face]How will guys know I'm an easy fuck if I don't have [semen] on my face?[otherwise]I didn't put it there, so I can't be sure I have permission to remove it.[end if][or]I deserve to have this on my [noun].[or]I like wearing it! No way am I wiping it off![or]I'm a whore, I deserve to be covered in it![or]A dirty whore like me should look the part![or]I'm a filthy slut, I deserve to be covered in [semen].[or]No way! I LIKE being dirty![or]I deserve to be covered in it. I'm a NAUGHTY girl![or]I'm supposed to wear it, I was naughty.[in random order][roman type][line break]" instead.
 
 Definition: a thing (called T) is acceptableCumRag:
-	if T is clothing and T is not fluid vulnerable, decide no;
+	if T is clothing:
+		if T is not fluid vulnerable, decide no;
+		if T is glued, decide no;
 	if T is arms and face is actually occupied or (semen is not craved and the semen taste addiction of the player < 8 and the thirst of the player < 4), decide no;
 	if the humiliation of the player > 28000 and the semen addiction of the player > 15 and ((semen is not craved and the player is not thirsty and the semen addiction of the player > the semen taste addiction of the player) or T is not arms), decide no;
 	decide yes.
@@ -148,12 +151,11 @@ To 2Clean (P - a body part) with (C - a limb):
 
 Report cleaning it with when the second noun is clothing:
 	force inventory-focus redraw; [Forces redraw of inventory window]
-	if the second noun is store and Dungeon41 is guarded:
+	if the owner of the second noun is shopkeeper and the location of the player is guarded:
 		if shopkeeper is interested:
 			say "[speech style of shopkeeper]'Oi! I own that, don't use it as some kind of cum rag. GUARDS!'[roman type][line break]Looks like you're in trouble with the law!";
 			anger shopkeeper;
-			increase the stolen-aware of shopkeeper by 1;
-		compute stealing of the second noun.
+		progress quest of stealing-quest.
 
 To clean (C - a clothing):
 	now the urine-soak of C is 0;

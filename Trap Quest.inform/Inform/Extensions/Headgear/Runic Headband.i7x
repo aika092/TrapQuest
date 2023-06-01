@@ -7,7 +7,7 @@ Definition: runic headband is fluid immune: decide yes.
 The printed name of runic headband is "[clothing-title-before]runic headband[clothing-title-after]". The text-shortcut of runic headband is "rhb".
 
 To say ClothingDesc of (H - runic headband):
-	say "This white headband [if H is worn]sits on your forehead. It [end if]has runic characters embedded in silver most of the way around. You have no idea what they mean[if abyssal tattoo is worn]. The runes have turned black, and almost seem wet with some kind of sludge[end if].".
+	say "This white headband [if H is worn]sits on your forehead. It [end if]has runic characters embedded in silver most of the way around. You have no idea what they mean[if abyssal tattoo is worn]. The runes have turned black, and almost seem wet with some kind of sludge[end if][if diaper quest is 1]. You can sense it helping you stay horny even when grossed out[end if].".
 
 To say ShortDesc of (H - runic headband):
 	say "runic headband".
@@ -86,7 +86,7 @@ To uniquely set up (C - runic headband):
 	now the quest of C is priestess-service-quest.
 
 To say QuestFlav of (Q - priestess-service-quest):
-	say "You sense that it wants you to [if diaper quest is 1]stay in used diapers for as long as possible[otherwise]stay a virgin, and 'service' men while your [']ritual beads['] are FULLY inserted inside you, then present the beads at the dungeon altar[end if].".
+	say "You sense that it wants you to [if diaper quest is 1]repeatedly use the same diaper as much as possible[otherwise]stay a virgin, and 'service' men while your [']ritual beads['] are FULLY inserted inside you, then present the beads at the dungeon altar[end if].".
 
 To say QuestTitle of (Q - priestess-service-quest):
 	say " ([if diaper quest is 1]full diaper[otherwise]ritual beads 'service'[end if] quest)".

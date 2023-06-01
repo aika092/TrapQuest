@@ -3,9 +3,15 @@ Eggs by Collectibles begins here.
 An egg is a kind of collectible. An egg can be laid. An egg is usually not laid.
 An egg has an object called the egg-origin. [Where did the egg come from?]
 An egg can be shuddering. [Has the player seen it shudder?]
+An egg has a number called hatching. [Is it on a timer towards hatching? 0 is inert, 1+ is on a timer]
 
 Definition: an egg is insertable: decide yes.
 Definition: a thing is egg-fathering: decide no.
+
+Definition: an egg (called E) is immune to change:
+	if the egg-origin of E is a thing:
+		if the hatching of E > 0 or E is in WoodsBoss01, decide yes;
+	decide no.
 
 To construct normal icons for (T - an egg):
 	now IconTarget is T;
@@ -101,7 +107,6 @@ This is the egg stuffing rule:
 		change the text of the player's command to "finish setting".
 The egg stuffing rule is listed in the statsetting rules.
 
-An egg has a number called hatching.
 
 Check attacking egg:
 	if the player is at least partially immobile, say "You're a bit busy!" instead;
@@ -135,7 +140,7 @@ Check dropping egg:
 				unless E is the noun, now E is in the location of the player.
 
 Report examining egg when egg laying fetish is 1:
-	say "[if the noun is shuddering][bold type]You have seen it move and shudder, suggesting it has been successfully fertilised and incubated. [roman type][end if]The strong shell can't be destroy by brute force, but perhaps you could [bold type]drop[roman type] it down the toilet.".
+	say "[if the noun is shuddering][bold type]You have seen it move and shudder, suggesting it has been successfully fertilised and incubated. [roman type][end if]The strong shell can't be destroyed by brute force, but perhaps you could [bold type]drop[roman type] it down the toilet.".
 
 To compute flushing of (E - a thing):
 	allocate 2 seconds;
@@ -164,23 +169,37 @@ To compute hatchtime of (E - an egg):
 		compute hatch of E.
 
 To compute hatch of (E - an egg):
-	if the egg-origin of E is tentacle monster or the egg-origin of E is lake monster or the egg-origin of E is facehugger or the egg-origin of E is hugger-panties or the egg-origin of E is hugger-gag:
+	if the egg-origin of E is tentacle monster or the egg-origin of E is lake monster or the egg-origin of E is facehugger or the egg-origin of E is hugger-panties or the egg-origin of E is hugger-gag or the egg-origin of E is vine:
 		compute tentacle hatch of E;
-	otherwise if the egg-origin of E is carrot daggers or the egg-origin of E is a bunny ears:
+	otherwise if the egg-origin of E is carrot daggers or the egg-origin of E is a bunny ears or the egg-origin of E is bowsette:
 		compute bunny hatch of E;
-	otherwise if the egg-origin of E is the throne:
-		compute throne hatch of E;
+	otherwise if the egg-origin of E is the throne or the egg-origin of E is ghost or the egg-origin of E is ghostly dildo pole trap:
+		compute ghost hatch of E;
 	otherwise:
 		compute default hatch of E.
 
 To compute tentacle hatch of (E - an egg):
 	compute default hatch of E.
 
-To compute throne hatch of (E - an egg): [TODO: do something interesting here. NB this is both eggs from the throne and also eggs from the magic trophy]
-	compute default hatch of E.
+[when the egg origin is set to a ghost or the throne, which includes the magic spell consequence]
+To compute ghost hatch of (E - an egg):
+	let flav-said be 0;
+	let totalSlimes be 1;
+	if E is medium egg, now totalSlimes is 2;
+	if E is large egg, now totalSlimes is 4;
+	while totalSlimes > 0:
+		decrease totalSlimes by 1;
+		let L be a random off-stage slimeball;
+		if L is slimeball:
+			if flav-said is 0:
+				if E is held or E is in the location of the player, say "[BigNameDesc of E] [if E is small egg]shudders and morphs into an animated blob of slime[otherwise if E is medium egg]cracks open, revealing two animated blobs of slime, that begin to hop about[otherwise]cracks open, revealing four animated blobs of slime, that begin to hop about.[one of][line break][variable custom style]What in the world?[roman type][line break][or][stopping]";
+				now flav-said is 1;
+			now L is in the location of E;
+	if E is held or E is in the location of the player, say "[BigNameDesc of E] fizzles into nothingness.";
+	destroy E.
 
 To compute bunny hatch of (E - an egg):
-	if E is held or E is in the location of the player, say "[BigNameDesc of E] cracks open, and [one of]the tiniest, cutest little bunny rabbit you've ever seen[or]another tiny little bunny rabbit[stopping] pops out and hops away. [BigNameDesc of E] fizzles into nothingness.";
+	if E is held or E is in the location of the player, say "[BigNameDesc of E] cracks open, and [if the egg-origin of E is bowsette]a small half-turtle, half-human[otherwise][one of]the tiniest, cutest little bunny rabbit you've ever seen[or]another tiny little bunny rabbit[stopping][end if] pops out and hops away. [BigNameDesc of E] fizzles into nothingness.";
 	destroy E.
 
 To compute default hatch of (E - an egg):
@@ -193,7 +212,7 @@ To compute default hatch of (E - an egg):
 		let L be a random off-stage larva;
 		if L is larva:
 			if flav-said is 0:
-				if E is held or E is in the location of the player, say "[BigNameDesc of E] cracks open, and [if E is large egg]four maggot-like larvae worm their[otherwise if E is medium egg]two maggot-like larvae worm their[otherwise]a maggot-like larva worms its[end if] way out.[one of][line break][variable custom style]Gross![roman type][line break][or][stopping]";
+				if E is held or E is in the location of the player, say "[BigNameDesc of E] [if E is small egg]shudders[otherwise]cracks open[end if], and [if E is large egg]four maggot-like larvae worm their way out[otherwise if E is medium egg]two maggot-like larvae worm their way out[otherwise]starts to grow a tail. Moments later, it has morphed into a large maggot-like larva[end if].[one of][line break][variable custom style]Gross![roman type][line break][or][stopping]";
 				now flav-said is 1;
 			now L is in the location of E;
 			now the egg-origin of L is the egg-origin of E;
@@ -231,19 +250,35 @@ Definition: a large egg (called D) is available:
 To decide which number is the crafting key of (E - a large egg):
 	decide on 25.
 
-A small egg is a kind of egg. The printed name of small egg is "[TQlink of item described][if the class of the player is santa's little helper]small Easter egg[otherwise if egg laying fetish is 0 or the player is in a predicament room]ping pong ball[otherwise]small egg[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of small egg is "[TQlink of item described][if the class of the player is santa's little helper]small Easter eggs[otherwise if egg laying fetish is 0]ping pong balls[otherwise]small eggs[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of small egg is "se". There are 35 small eggs. Figure of small egg is the file "Items/Collectibles/egg1.jpg".
+A small egg is a kind of egg. The printed name of small egg is "[TQlink of item described][if the class of the player is santa's little helper]small Easter egg[otherwise if egg laying fetish is 0 or the player is in a predicament room]ping pong ball[otherwise]small egg[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of small egg is "[TQlink of item described][if the class of the player is santa's little helper]small Easter eggs[otherwise if egg laying fetish is 0]ping pong balls[otherwise]small eggs[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of small egg is "se". There are 35 small eggs.
+Figure of small egg normal is the file "Items/Collectibles/egg1a.jpg".
+Figure of small egg tentacle is the file "Items/Collectibles/egg1b.jpg".
+Figure of small egg easter is the file "Items/Collectibles/egg1c.jpg".
+Figure of small egg fish is the file "Items/Collectibles/egg1d.jpg".
+Figure of small egg ball is the file "Items/Collectibles/egg1e.jpg".
 To decide which figure-name is the examine-image of (C - a small egg):
-	decide on figure of small egg.
+	if the player is in a predicament room, decide on figure of small egg ball;
+	if the class of the player is santa's little helper, decide on figure of small egg easter;
+	if the egg-origin of C is giant wasp, decide on figure of small egg normal;
+	if the egg-origin of C is facehugger or the egg-origin of C is hugger-panties or the egg-origin of C is hugger-gag, decide on figure of small egg tentacle;
+	decide on figure of small egg fish.
 To say ExamineDesc of (B - a small egg):
-	say "A small spherical [if the class of the player is santa's little helper]chocolate egg[otherwise if egg laying fetish is 0 or the player is in a predicament room]white ping pong ball[otherwise]white egg[end if], about half the size of a normal chicken egg[if B is laid]. You laid it out of your own body[end if][if B is laid and the egg-origin of B is a thing] after being oviposited by [NameDesc of egg-origin of B][otherwise if egg-origin of B is a thing]. It came from [NameDesc of egg-origin of B][end if].".
+	say "A small spherical [if the class of the player is santa's little helper and the player is not in a predicament room]chocolate egg[otherwise if egg laying fetish is 0 or the player is in a predicament room]white ping pong ball[otherwise if the egg-origin of B is giant wasp]white egg[otherwise if the egg-origin of B is facehugger or the egg-origin of B is hugger-panties or the egg-origin of B is hugger-gag]egg with an eerie purple hue[otherwise]amphibian egg[end if], about half the size of a normal chicken egg[if B is laid]. You laid it out of your own body[end if][if B is laid and the egg-origin of B is a thing] after being oviposited by [NameDesc of egg-origin of B][otherwise if egg-origin of B is a thing]. It came from [NameDesc of egg-origin of B][end if].".
 To decide which number is the outrage of (C - a small egg):
 	decide on 4.
 
-A medium egg is a kind of egg. The printed name of medium egg is "[TQlink of item described]medium sized [if the class of the player is santa's little helper]Easter [end if]egg[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of medium egg is "[TQlink of item described]medium sized [if the class of the player is santa's little helper]Easter [end if]eggs[shortcut-desc][TQxlink of item described][verb-desc of item described]". understand "sized" as medium egg. The text-shortcut of medium egg is "mde". There are 30 medium eggs. Figure of medium egg is the file "Items/Collectibles/egg2.jpg".
+A medium egg is a kind of egg. The printed name of medium egg is "[TQlink of item described]medium sized [if the class of the player is santa's little helper]Easter [end if]egg[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of medium egg is "[TQlink of item described]medium sized [if the class of the player is santa's little helper]Easter [end if]eggs[shortcut-desc][TQxlink of item described][verb-desc of item described]". understand "sized" as medium egg. The text-shortcut of medium egg is "mde". There are 30 medium eggs.
+Figure of medium egg normal is the file "Items/Collectibles/egg2a.jpg".
+Figure of medium egg tentacle is the file "Items/Collectibles/egg2b.jpg".
+Figure of medium egg easter is the file "Items/Collectibles/egg2c.jpg".
+Figure of medium egg bunny is the file "Items/Collectibles/egg2d.jpg".
 To decide which figure-name is the examine-image of (C - a medium egg):
-	decide on figure of medium egg.
+	if the class of the player is santa's little helper, decide on figure of medium egg easter;
+	if the egg-origin of C is giant wasp, decide on figure of medium egg normal;
+	if the egg-origin of C is carrot daggers or the egg-origin of C is a bunny ears, decide on figure of medium egg bunny;
+	decide on figure of medium egg tentacle.
 To say ExamineDesc of (B - a medium egg):
-	say "This looks exactly like you'd expect a large chicken egg to look like[if the class of the player is santa's little helper], except it is made of chocolate[end if][if B is laid]. You laid it out of your own body[end if][if B is laid and the egg-origin of B is a thing] after being oviposited by [NameDesc of egg-origin of B][otherwise if egg-origin of B is a thing]. It came from [NameDesc of egg-origin of B][end if].".
+	say "This looks exactly like you'd expect a large chicken egg to look like[if the class of the player is santa's little helper], except it is made of chocolate[otherwise if the egg-origin of B is carrot daggers or the egg-origin of B is a bunny ears], except it has a red and white polka dot pattern[otherwise if the egg-origin of B is not giant wasp], except it has an eerie purple hue[end if][if B is laid]. You laid it out of your own body[end if][if B is laid and the egg-origin of B is a thing] after being oviposited by [NameDesc of egg-origin of B][otherwise if egg-origin of B is a thing]. It came from [NameDesc of egg-origin of B][end if].".
 To compute tentacle hatch of (E - a medium egg):
 	let M be a random off-stage facehugger;
 	if M is monster:
@@ -258,11 +293,18 @@ To compute tentacle hatch of (E - a medium egg):
 To decide which number is the outrage of (C - a medium egg):
 	decide on 6.
 
-A large egg is a kind of egg. The printed name of large egg is "[TQlink of item described]large [if the class of the player is santa's little helper]Easter [end if]egg[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of large egg is "[TQlink of item described]large [if the class of the player is santa's little helper]Easter [end if]eggs[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of large egg is "le". There are 15 large eggs. Figure of large egg is the file "Items/Collectibles/egg3.jpg".
+A large egg is a kind of egg. The printed name of large egg is "[TQlink of item described]large [if the class of the player is santa's little helper]Easter [end if]egg[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of large egg is "[TQlink of item described]large [if the class of the player is santa's little helper]Easter [end if]eggs[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of large egg is "le". There are 15 large eggs.
+[Figure of large egg normal is the file "Items/Collectibles/egg3a.jpg".]
+Figure of large egg tentacle is the file "Items/Collectibles/egg3b.jpg".
+Figure of large egg easter is the file "Items/Collectibles/egg3c.jpg".
+Figure of large egg koopa is the file "Items/Collectibles/egg3d.jpg".
 To decide which figure-name is the examine-image of (C - a large egg):
-	decide on figure of large egg.
+	if the class of the player is santa's little helper, decide on figure of large egg easter;
+	if the egg-origin of C is bowsette, decide on figure of large egg koopa;
+	[if the egg-origin of C is giant wasp, decide on figure of large egg normal;]
+	decide on figure of large egg tentacle.
 To say ExamineDesc of (B - a large egg):
-	say "This huge bird style egg is at least twice the size of your average chicken egg. It looks more like what you'd expect a small ostrich egg or small dinosaur egg to look like[if the class of the player is santa's little helper], except it is made of chocolate[end if]![if B is laid][line break]You laid it out of your own body, although now looking at its size you can hardly believe it.[end if][if egg-origin of B is a thing][line break]It came from [NameDesc of egg-origin of B].[end if]".
+	say "This huge bird style egg is at least twice the size of your average chicken egg. It looks more like what you'd expect a small ostrich egg or small dinosaur egg to look like[if the class of the player is santa's little helper], except it is made of chocolate[otherwise if the egg-origin of B is bowsette], except for the weird ridged texture and blue hue[otherwise if the egg-origin of B is not giant wasp], except for the eerie purple hue and... bulging, squirming, vein-like ridges[end if]![if B is laid][line break]You laid it out of your own body, although now looking at its size you can hardly believe it.[end if][if egg-origin of B is a thing][line break]It came from [NameDesc of egg-origin of B].[end if]".
 To compute tentacle hatch of (E - a large egg):
 	let M be a random off-stage tentacle monster;
 	if M is monster:

@@ -81,7 +81,7 @@ The hotel altar has a number called altar-intensity. The altar-intensity of hote
 
 To say GlowDesc of (A - hotel altar):
 	let N be the altar-intensity of A;
-	say "([if the charge of A > 0]dormant[otherwise if N < 2]glowing faintly[otherwise if N < 4]glowing strongly[otherwise]shining ominously[end if])";
+	say "([if the charge of A <= 0]dormant[otherwise if N < 2]glowing faintly[otherwise if N < 4]glowing strongly[otherwise]shining ominously[end if])";
 
 Figure of hotel altar is the file "Env/Hotel/statue1.jpg".
 
@@ -97,7 +97,7 @@ A time based rule (this is the hotel altar charge rule):
 
 To say ExamineDesc of (C - hotel altar):
 	let N be the altar-intensity of C;
-	say "A stone slab in front of a golden statue of a muscular [man of shopkeeper][if diaper quest is 0] with a huge [manly-penis][end if], with a water feature spewing from its tip which makes it look like he's constantly [if diaper quest is 1]urinating[otherwise]ejaculating[end if]. The statue's eyes are inset with huge red gemstones. [if charge of C > 0]It seems dormant. [otherwise if N < 2]The gemstones are glowing with a faint red light. [otherwise if N < 4]The gemstones are glowing with a strong red light. [otherwise]The gemstones are shining with ominous red light. [end if][if N is 1]You have used the altar 1 time.[otherwise if N > 0]You have used the altar [N] times.[end if]";
+	say "A stone slab in front of a golden statue of a muscular [man of male-m][if diaper quest is 0] with a huge [manly-penis][end if], with a water feature spewing from its tip which makes it look like he's constantly [if diaper quest is 1]urinating[otherwise]ejaculating[end if]. The statue's eyes are inset with huge red gemstones. [if charge of C > 0]It seems dormant. [otherwise if N < 2]The gemstones are glowing with a faint red light. [otherwise if N < 4]The gemstones are glowing with a strong red light. [otherwise]The gemstones are shining with ominous red light. [end if][if N is 1]You have used the altar 1 time.[otherwise if N > 0]You have used the altar [N] times.[end if]";
 	if newbie tips is 1, say "[one of][newbie style]Newbie tip: Each time you use this altar, you get a positive effect but also a curse wisp. The longer it has been since the last time you used the altar (the strength of the glowing eyes), the better the positive effect will be.[roman type][line break][or][stopping]".
 
 Check entering the dungeon altar:
@@ -278,7 +278,7 @@ Displays some text when the "altar goddess" addresses the player
 
 +!]
 To say GoddessAddress:
-	say "[if the class of the player is priestess]Loyal Sister [otherwise if the bimbo of the player < 5]Brave [otherwise if the bimbo of the player < 9]Beloved [otherwise]My favourite minx [end if][TitleBimbo],[if the bimbo of the player > 8 and the bimbo of the player < 13]my pet,[end if]";
+	say "[if the class of the player is priestess]Loyal Sister [otherwise if the bimbo of the player < 5]Brave [otherwise if the bimbo of the player < 9]Beloved [otherwise]My favourite minx [end if][TitleBimbo],[if the bimbo of the player > 8 and the bimbo of the player < 13] my pet,[end if]";
 
 [To AltarUniqueReward of (T - a headgear):
 	if the class of the player is adventurer and the vaginalvirgin of the player is 1 and T is not runic headband and runic headband is off-stage and T is not severed-tentacle and the number of worn headgear is 1 and T is worn:
@@ -808,7 +808,7 @@ To AltarReward (T - runic headband):
 To AltarReward (T - a condom hat):
 	if the player is possessing a vagina and the vaginalvirgin of the player is 0:
 		transform T into runic headband;
-		say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] you are not pure enough to be a proper priestess! But we still have uses for sluts like you who are smart enough to protect their womb with condoms. From now on, you must use that sinful [cunt] of yours to service the [men of shopkeeper] of this world. But beware, if you [if pregnancy fetish > 0]fall pregnant[otherwise]fill your sacred womb with too much seed[end if], you will not be forgiven, and the price will be dear. Present your headband with [']evidence['] of your service to my altar when your deeds are complete.'[roman type][line break]";
+		say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] you are not pure enough to be a proper priestess! But we still have uses for sluts like you who are smart enough to protect their womb with condoms. From now on, you must use that sinful [cunt] of yours to service the [men of male-m] of this world. But beware, if you [if pregnancy fetish > 0]fall pregnant[otherwise]fill your sacred womb with too much seed[end if], you will not be forgiven, and the price will be dear. Present your headband with [']evidence['] of your service to my altar when your deeds are complete.'[roman type][line break]";
 		let C be runic headband;
 		now C is cursed;
 		now the quest of C is priestess-vaginal-service-quest;
@@ -906,11 +906,11 @@ To DevilPray (P - a person):
 		repeat with M running through infernal monsters:
 			if the times-submitted of M > 0, now R is 0;
 	if diaper quest is 0 and avatar-summoned is false and the player is possessing a vagina and the vaginalvirgin of the player is 1 and the player is soulless and avatar-headpiece is actually summonable:
-		now R is 0;[free]
+		now R is 0; [free]
 		say "The statue's eyes glow with multicoloured light as a [if lady fetish is 1]husky, feminine[otherwise]deep, masculine[end if] voice echoes in your ear.[line break][first custom style]'A virgin, with a void for a soul... It would be a waste to make you an altar girl! That tight little hole in your chest is begging to be filled!'[roman type][line break]The statue's arms suddenly spring to life, grabbing either side of your head and forcing you to look directly into the its eyes as you feel *something* pressing in on you from *somewhere*. The empty feeling in your chest turns into a slow, painful sensation of stretching, and you let out a groan of pain as something HUGE and warm forces its way into your very core. Brand new horns push their way out of your forehead. Finally, a golden tiara and hood materialises on your head.[line break][first custom style]'Hm, looks like you weren't able to take all of me, but no matter. I am your master now, [NameBimbo], so get to work collecting souls while I work on improving your vessel.'[roman type][line break]";
 		summon avatar-headpiece cursed;
 		now avatar-summoned is true;
-	otherwise if R is 0 and gold-tiara is off-stage and gold-tiara is actually summonable:[having sex with a demon at least once will give the player the worshipper headgear]
+	otherwise if R is 0 and gold-tiara is off-stage and gold-tiara is actually summonable: [having sex with a demon at least once will give the player the worshipper headgear]
 		say "The statue's face seems to grin as a golden tiara materialises on your head.";
 		summon gold-tiara cursed;
 	otherwise if diaper quest is 0 and mechanic is alive and bride-consort is throne and (the class of the player is bride or the class of the player is "princess" or the class of the player is "deepthroat princess" or the class of the player is "trained fuck princess" or the class of the player is "virgin warrior princess"):

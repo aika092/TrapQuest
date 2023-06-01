@@ -49,6 +49,7 @@ To compute rest ending of (F - HotelBedCreamy):
 		say "[if F is unencountered]It is only as you start to get up you realise that underneath the covers, the entire bed is soaked in [semen]! [otherwise]Once again the [semen] from the thoroughly soaked bed has gotten all over you. [end if]Your body [if the number of worn fluid vulnerable clothing > 0]and clothes are[otherwise]is[end if] covered in a layer of [semen].";
 		say "[if the semen addiction of the player < 6][line break][first custom style]Ewww! How fucking gross. I need to clean up now![otherwise if the semen addiction of the player < 10][line break][variable custom style]I feel all slippery and weird![otherwise if the semen addiction of the player < 15][variable custom style]Ooh, it's all so sticky and thick! I wonder whose it is...[otherwise if the semen taste addiction of the player < the semen addiction of the player][line break][second custom style]Oh yay, stranger's cum all over me, I couldn't have wished for a better treat![otherwise][second custom style]Oh yay, stranger's cum all over me, I couldn't have wished for a better treat! I can't wait to taste it.[end if][roman type][line break]";
 		UnannouncedSquirt semen on thighs by 5;
+		cutshow Figure of hotel bed cutscene 1 for F;
 	otherwise:
 		say "[if F is unencountered]It is only as you start to get up, you wrinkle your nose at a weird smell. Suddenly you realise that underneath the covers, the entire bed was recently soaked in [semen]! The [otherwise]Once again the [end if]strong fumes of the rapidly drying moist baby butter assaults your senses and makes you feel funny.";
 		SlowSemenAddictUp 1.
@@ -71,9 +72,9 @@ To compute PatronSpawning of (F - a hotel bed) with (MN - a number) men:
 	increase patronbed uses by 1;
 	let R be 1;
 	if diaper quest is 1:
-		let M be a random off-stage experienced patron;
-		now M is in the location of the player;
+		let M be a random off-stage generic-appropriate pimp-appropriate patron;
 		set up M;
+		now M is in the location of the player;
 	otherwise:
 		if MN > 0:
 			now R is MN;
@@ -86,8 +87,8 @@ To compute PatronSpawning of (F - a hotel bed) with (MN - a number) men:
 		repeat with N running from 1 to R:
 			let M be a random off-stage generic-appropriate pimp-appropriate patron;
 			if M is a monster:
-				now M is in the location of the player;
 				set up M;
+				now M is in the location of the player;
 		now R is the number of patrons in the location of the player;
 		if R > 3, say "[first custom style]'Hey everyone, get in here!'[roman type][line break]";
 	let M be a random patron in the location of the player;

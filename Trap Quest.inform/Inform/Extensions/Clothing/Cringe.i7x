@@ -26,7 +26,7 @@ To decide which number is the cringe of (C - a diaper):
 	decide on O.
 
 To decide which number is the unworn cringe of (C - a clothing):
-	if C is messed knickers and C is currently at least partially visible, decide on 20;
+	if C is messed knickers and C is currently at least partially visible and tubesuit is not worn, decide on 20; [tubesuit protects against smell escaping]
 	let O be the initial cringe of C;
 	if C is not worn or C is currently at least partially visible, increase O by the fluid cringe of C;
 	if C is worn currently visible knickers:

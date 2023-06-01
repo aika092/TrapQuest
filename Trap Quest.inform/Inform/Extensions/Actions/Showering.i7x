@@ -125,35 +125,38 @@ To clean creampie in water body:
 			WombEmpty 2;
 		increase tracked-semen by (V - the semen volume of vagina) + (W - the womb volume of vagina);[ensure we track as much semen as we washed out]
 
+Definition: a clothing is watertight: decide no. [does it block all water from entering. more than just waterproof, it must also be sealed to the skin]
+
 To soak clothing in water body:
 	let quest-only-once be 0;
 	let X be tracked-semen;[above we used X to see if we cleaned the player's body. Now we're using it to see if we cleaned any clothes.]
 	repeat with C running through worn clothing: [now handle clothing]
-		if C is a growing silicone dress:
-			transform C into bimbo monokini;
-		otherwise if C is somewhat fluid vulnerable:
-			if quest-only-once is 0, now quest-only-once is 1;
-			let R be a random number between 2 and 4;[because clothing has a higher capacity than the player's body, it takes longer to "soak" clean.]
-			if diaper quest is 1, now R is 999; [we don't do this slow cleaning nonsense in DQ]
-			let S be the semen-soak of C + the urine-soak of C + the milk-soak of C;
-			while R > 0 and S > 0:[Clean off everything if S is already 0, then we go on to the next clothing.]
-				if the urine-soak of C > 0:
-					decrease the urine-soak of C by 1;
-				otherwise if the milk-soak of C > 0:
-					decrease the milk-soak of C by 1;
-				otherwise if the semen-soak of C > 0:
-					decrease the semen-soak of C by 1;
-				decrease S by 1;
-				decrease R by 1;
-				increase tracked-semen by 1;
-			if C is diaper:
-				if C is perceived messed and auto is 0, say "You allow the water to thoroughly clean your [C].";
-				otherwise say "The [C] quickly soaks up the water.";
-				if the soak-limit of C is the water-soak of C, say "It is now very heavy and won't be able to hold any more liquid.";
-			otherwise if the water-soak of C < the soak-limit of C:
-				say "Your [C] gets soaked with water.";
-		Drench C;
-		if C is knickers, MessSet C to 0;
+		unless C is watertight or the coverer of C is watertight:
+			if C is a growing silicone dress:
+				transform C into bimbo monokini;
+			otherwise if C is somewhat fluid vulnerable:
+				if quest-only-once is 0, now quest-only-once is 1;
+				let R be a random number between 2 and 4;[because clothing has a higher capacity than the player's body, it takes longer to "soak" clean.]
+				if diaper quest is 1, now R is 999; [we don't do this slow cleaning nonsense in DQ]
+				let S be the semen-soak of C + the urine-soak of C + the milk-soak of C;
+				while R > 0 and S > 0:[Clean off everything if S is already 0, then we go on to the next clothing.]
+					if the urine-soak of C > 0:
+						decrease the urine-soak of C by 1;
+					otherwise if the milk-soak of C > 0:
+						decrease the milk-soak of C by 1;
+					otherwise if the semen-soak of C > 0:
+						decrease the semen-soak of C by 1;
+					decrease S by 1;
+					decrease R by 1;
+					increase tracked-semen by 1;
+				if C is diaper:
+					if C is perceived messed and auto is 0, say "You allow the water to thoroughly clean your [C].";
+					otherwise say "The [C] quickly soaks up the water.";
+					if the soak-limit of C is the water-soak of C, say "It is now very heavy and won't be able to hold any more liquid.";
+				otherwise if the water-soak of C < the soak-limit of C:
+					say "Your [C] gets soaked with water.";
+			Drench C;
+			if C is knickers, MessSet C to 0;
 	if quest-only-once is 1, progress quest of swimming-quest.
 
 [TODO: semen cleaning doesn't happen all at once.]
@@ -219,10 +222,14 @@ To wash salves:
 To decide which number is the swimming challenge of the player:
 	[This is what makes it more difficult for the player to stand up.]
 	let W be 3;
-	repeat with C running through worn clothing:
+	repeat with C running through worn wearthing:
 		if C is swimming themed:
-			decrease W by 1 + the magic-modifier of C;
-		otherwise if C is not fluid immune:
+			if C is clothing:
+				decrease W by 2 + the magic-modifier of C;
+				if C is swimsuit, decrease W by 1;
+			otherwise:
+				decrease W by 1;
+		otherwise if C is clothing and C is not fluid immune:
 			increase W by the total-soak of C / 5; [Wearing soaked clothing will make your swimming worse.]
 	if the player is wrist bound, increase W by 5;
 	if the player is wrist bound behind, increase W by 10;

@@ -28,9 +28,9 @@ Definition: yourself is virtual:
 	if the player is in capsule or the player is in start, decide no;
 	decide yes.
 
-The player has a direction called travel-direction.
+A person has a direction called travel-direction.
 
-The player has a direction called travel-opposite.
+A person has a direction called travel-opposite.
 
 The player has a number called room-entering.
 

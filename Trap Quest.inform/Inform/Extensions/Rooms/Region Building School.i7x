@@ -12,6 +12,12 @@ To Set Up The School:
 	now school portal is in School01;
 	if watersports fetish is 1 and diaper quest is 0 and ex-princess is caged, now the location of ex-princess is urinals;
 	set up junk room;
+	if (diaper quest is 0 and the player is a may 2023 top donator) or (diaper quest is 1 and the player is a may 2023 diaper donator):
+		now gris monokini is in School19;
+		if a random number between 1 and 2 is 1, now gris monokini is autobinding;
+		if diaper quest is 0:
+			now black-sporty-microskirt is in School23;
+			if a random number between 1 and 2 is 1, now black-sporty-microskirt is autobinding;
 	repeat with M running through fetish appropriate staff members:
 		set up M;
 	set up rank one students.

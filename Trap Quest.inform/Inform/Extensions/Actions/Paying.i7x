@@ -44,7 +44,7 @@ Carry out paying:
 		let chosen jewellery be jewellery priced at P;
 		repeat with J running through chosen jewellery:
 			only destroy J;
-		now Z is unowned;
+		now the owner of Z is nothing;
 		if shopkeeper is in Dungeon41 and shopkeeper is friendly, say FriendlyPaymentReceivedFlav of Z;
 		otherwise say UnfriendlyPaymentReceivedFlav of Z;
 		trigger purchase-wisp-quest;

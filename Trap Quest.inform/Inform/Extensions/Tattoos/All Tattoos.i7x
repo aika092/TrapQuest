@@ -550,14 +550,15 @@ To decide which number is the sex-addiction-influence of (T - brain tattoo):
 	if the tattoo-state of T is 2, decide on 2;
 	decide on 0.
 A magic consequences rule (this is the brain tattoo consequences rule):
-	if the tattoo-state of brain tattoo is 0 and the player is getting lucky:
-		say "[bold type]The magic fizzles against your brain tattoo, and it transforms! [roman type]It now has a [']toggle on['] icon next to it, and you can feel it singificantly improving your intelligence! Wow! [GotLuckyFlav]";
-		increase the tattoo-state of brain tattoo by 1;
-		cutshow examine-image of brain tattoo for brain tattoo;
-	otherwise if the tattoo-state of brain tattoo is 1 and the player is getting very unlucky:
-		say "[bold type]The magic fizzles against your brain tattoo, and it transforms! [roman type]The 'toggle on' has been toggled off, and above it, there's a heart icon which has been toggled on. Instead of increasing your intelligence, it is reducing it! And it's also increasing your obsession with sex... [GotUnluckyFlav]";
-		increase the tattoo-state of brain tattoo by 1;
-		cutshow examine-image of brain tattoo for brain tattoo.
+	if brain tattoo is worn:
+		if the tattoo-state of brain tattoo is 0 and the player is getting lucky:
+			say "[bold type]The magic fizzles against your brain tattoo, and it transforms! [roman type]It now has a [']toggle on['] icon next to it, and you can feel it singificantly improving your intelligence! Wow! [GotLuckyFlav]";
+			increase the tattoo-state of brain tattoo by 1;
+			cutshow examine-image of brain tattoo for brain tattoo;
+		otherwise if the tattoo-state of brain tattoo is 1 and the player is getting very unlucky:
+			say "[bold type]The magic fizzles against your brain tattoo, and it transforms! [roman type]The 'toggle on' has been toggled off, and above it, there's a heart icon which has been toggled on. Instead of increasing your intelligence, it is reducing it! And it's also increasing your obsession with sex... [GotUnluckyFlav]";
+			increase the tattoo-state of brain tattoo by 1;
+			cutshow examine-image of brain tattoo for brain tattoo.
 
 
 brainless bimbo tattoo is a left-asscheek tattoo. The tattoo-title of brainless bimbo tattoo is "brainless bimbo".
@@ -1310,7 +1311,7 @@ This is the fairy cheek tattoo oral slut rule:
 	if fairy-cheek tattoo is worn, increase the desirability of face by 10.
 The fairy cheek tattoo oral slut rule is listed in the blowjob slut eligibility rules.
 
-finger gun hearts tattoo is a body tattoo. The tattoo-title of finger gun hearts tattoo is "cum dump". Understand "cum", "dump" as finger gun hearts tattoo.
+finger gun hearts tattoo is a body tattoo. The tattoo-title of finger gun hearts tattoo is "finger gun hearts".
 Definition: finger gun hearts tattoo is drawable:
 	if it is not worn and it is eligible, decide yes;
 	decide no.
@@ -1333,8 +1334,9 @@ To decide which number is the initial outrage of (T - finger gun hearts tattoo):
 Definition: finger gun hearts tattoo is heart themed: decide yes.
 Definition: finger gun hearts tattoo is magic themed: decide yes.
 A magic consequences rule (this is the finger gun hearts tattoo consequences rule):
-	say "As you use your magic, you become a bit more aroused!";
-	arouse 800.
+	if finger gun hearts tattoo is worn:
+		say "As you use your magic, your [finger gun hearts tattoo] makes you become a bit more aroused!";
+		arouse 500.
 
 fire palm tattoo is a body tattoo. The tattoo-title of fire palm tattoo is "fire palm".
 Figure of fire palm tattoo is the file "Items/Tats/tattoo132.jpg".
@@ -1363,7 +1365,7 @@ Definition: flower ballerina tattoo is eligible:
 	if the noun is wearthing and the seduction-dance-influence of the noun > 0, decide yes;
 	decide no.
 To say tattoo-desc of (T - flower ballerina tattoo):
-	say "A ballerina with a flower instead of a skirt is tattooed on the inside of your left arm. You can sense that it makes your seductive dancing more arousing.".
+	say "A ballerina with a flower instead of a skirt is tattooed on the inside of your left arm[if diaper quest is 0]. You can sense that it makes your seductive dancing more arousing[end if].".
 To decide which number is the seduction-dance-influence of (T - flower ballerina tattoo):
 	decide on 1.
 To decide which number is the heel-skill-influence of (T - flower ballerina tattoo):
@@ -2051,7 +2053,7 @@ To compute periodic effect of (C - nothing's sacred tattoo):
 	increase the soul-charge of C by 1;
 	if the soul-charge of C > 50 and the player is not soulless:
 		now the soul-charge of C is 0;
-		humiliate 500.
+		obsceneHumiliate.
 To decide which object is the concealer of (T - nothing's sacred tattoo):
 	decide on a random worn actually dense belly covering clothing.
 To decide which object is the at least partial concealer of (T - nothing's sacred tattoo):
@@ -2669,7 +2671,7 @@ Definition: showtime tattoo is eligible:
 	if the noun is wearthing and the seduction-dance-influence of the noun > 0, decide yes;
 	decide no.
 To say tattoo-desc of (T - showtime tattoo):
-	say "The word 'Show' is inked on the back your left leg and the word 'Time' on the back of your right leg. You can sense that it makes your seductive dancing more arousing.".
+	say "The word 'Show' is inked on the back your left leg and the word 'Time' on the back of your right leg[if diaper quest is 0]. You can sense that it makes your seductive dancing more arousing[end if].".
 To decide which number is the seduction-dance-influence of (T - showtime tattoo):
 	decide on 1.
 To decide which number is the heel-skill-influence of (T - showtime tattoo):

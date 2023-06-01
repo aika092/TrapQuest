@@ -1,6 +1,9 @@
 Room Descriptions by Rooms begins here.
 
 Definition: a room is nonstandard: decide no. [A nonstandard room has no doors, traps, etc to describe]
+Definition: a room is roomstandard:
+	if it is nonstandard, decide no;
+	decide yes.
 
 After looking:
 	repeat with L running through leftovers in the location of the player:

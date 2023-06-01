@@ -84,6 +84,9 @@ Part - Tight Grey Dress
 tight-grey-dress is an overdress. tight-grey-dress is bottom-exclusive. tight-grey-dress is only arm covering. tight-grey-dress is not-top-displacable. tight-grey-dress is high cut. tight-grey-dress is normally-partially-nipple-covering. The text-shortcut of tight-grey-dress is "tgyd". The printed name of tight-grey-dress is "[clothing-title-before]tight grey dress[clothing-title-after]". Understand "tight", "grey", "dress" as tight-grey-dress.
 
 Definition: tight-grey-dress is grey themed: decide yes.
+To decide which number is the stealth-influence of (C - tight-grey-dress):
+	if C is sneaking, decide on 4;
+	decide on 1.
 
 Figure of tight grey dress is the file "Items/Clothes/Upper/Dresses/tight1.png".
 
@@ -91,7 +94,7 @@ To decide which figure-name is clothing-image of (C - tight-grey-dress):
 	decide on figure of tight grey dress.
 
 To say ClothingDesc of (C - tight-grey-dress):
-	say "This short-sleeved grey dress is so figure-hugging that it can't even hide the contours of [if C is worn]your[otherwise]the wearer's[end if] nipples.".
+	say "This short-sleeved grey dress is so figure-hugging that it can't even hide the contours of [if C is worn]your[otherwise]the wearer's[end if] nipples. But it is a dark, plain colour, so it may perhaps help you to remain unnoticed in a dark corner.".
 
 To say ShortDesc of (C - tight-grey-dress):
 	say "tight grey dress".

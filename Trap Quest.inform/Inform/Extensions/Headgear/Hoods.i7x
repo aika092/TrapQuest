@@ -228,6 +228,10 @@ This is the WC hood piss slut rule:
 	if WC hood is worn, increase the desirability of belly by 10.
 The WC hood piss slut rule is listed in the piss slut eligibility rules.
 
+To compute unique periodic effect of (C - WC hood):
+	if the player is gagged and trashcan is not worn, class summon trashcan.
+
+
 Chapter - Class Outfit
 
 To compute unique recycling of (C - WC hood):

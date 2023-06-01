@@ -51,6 +51,7 @@ To say MonsterComment of (M - deep one):
 		say "[roman type][line break]".
 
 To decide which number is the starting difficulty of (M - deep one):
+	if pregnancy fetish is 1 or egg laying fetish is 1, decide on 8; [deep one is weaker if the cultists will be spawning slimeballs too]
 	decide on 10.
 To decide which number is the grossness of (M - deep one): [grossness addiction needed to tolerate it]
 	decide on 8.
@@ -72,16 +73,17 @@ To compute labour to (M - deep one):
 			StrengthUp 1;
 			DexUp 1;
 			IntUp 1;
-			humiliate 300;
+			obsceneHumiliate;
 	otherwise if M is alive:
 		Delay Labour.
 
 
 Definition: deep one is willing to do oral: decide no.
-
 Definition: deep one is willing to do titfucks: decide no.
 
 Definition: deep one is able to remove cursed plugs: decide yes.
+Definition: deep one is a urinater: decide no.
+
 
 To say LongDickDesc of (M - deep one):
 	say "[one of]lubricated[or][if full-lady fetish is 1]finned[otherwise]grey[end if][or]slimy[in random order] [DickDesc of M]".

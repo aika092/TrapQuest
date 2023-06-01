@@ -8,14 +8,14 @@ Definition: mind flayer is willing to do oral: decide yes.
 
 The text-shortcut of mind flayer is "mf".
 
-Figure of mindflayer is the file "NPCs/MultiFloor/mindflayer1.png".
+Figure of mindflayer is the file "NPCs/MultiFloor/Mindflayer/mindflayer1.png".
 
-Figure of Mindflayer Cutscene 1 is the file "Special/Cutscene/cutscene-mindflayer-perception1.png".
-Figure of Mindflayer Cutscene 2 is the file "Special/Cutscene/cutscene-mindflayer-suck1.png".
-Figure of Mindflayer Cutscene 3 is the file "Special/Cutscene/cutscene-mindflayer-suck2.png".
-Figure of Mindflayer Cutscene 4 is the file "Special/Cutscene/cutscene-mindflayer-suck3.png".
-Figure of Mindflayer Cutscene 5 is the file "Special/Cutscene/cutscene-mindflayer-drained1.png".
-Figure of Mindflayer Cutscene 6 is the file "Special/Cutscene/cutscene-mindflayer-drained2.png".
+Figure of Mindflayer Cutscene 1 is the file "NPCs/MultiFloor/Mindflayer/cutscene-mindflayer-perception1.png".
+Figure of Mindflayer Cutscene 2 is the file "NPCs/MultiFloor/Mindflayer/cutscene-mindflayer-suck1.png".
+Figure of Mindflayer Cutscene 3 is the file "NPCs/MultiFloor/Mindflayer/cutscene-mindflayer-suck2.png".
+Figure of Mindflayer Cutscene 4 is the file "NPCs/MultiFloor/Mindflayer/cutscene-mindflayer-suck3.png".
+Figure of Mindflayer Cutscene 5 is the file "NPCs/MultiFloor/Mindflayer/cutscene-mindflayer-drained1.png".
+Figure of Mindflayer Cutscene 6 is the file "NPCs/MultiFloor/Mindflayer/cutscene-mindflayer-drained2.png".
 
 To decide which figure-name is the monster-image of (M - mind flayer):
 	decide on figure of mindflayer.
@@ -93,7 +93,7 @@ A time based rule (this is the mindflayer domination rule):
 				OralSexAddictUp 1;
 			otherwise if (a random number between 1 and 2 < 3) and (the humiliation of the player < 40000):
 				say "You see images of yourself mindlessly complying as men use every part of your body, and you hear a voice in your head![line break][first custom style]'A man chooses, an object obeys.'[roman type][line break]You feel less and less like a person!";
-				humiliate 400;
+				obsceneHumiliate;
 			otherwise:
 				say "Images of erect penises fill your mind, and you hear a voice in your head![line break][first custom style]'Put us in you and revel in serving us.'[roman type][line break]You feel a sudden strange longing to fill your holes with [manly-penis]!";
 				OrificeAddictUp 1;

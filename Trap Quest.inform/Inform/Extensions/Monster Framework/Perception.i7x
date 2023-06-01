@@ -9,7 +9,7 @@ A monster has a number called latest-cringe. [The last time the NPC saw the play
 perceiving is a number that varies. [We want to suppress some text while we are in the middle of perception.]
 
 To FavourReset (M - a monster):
-	now the favour of M is the default favour of M.
+	FavourSet M to the default favour of M.
 
 To decide which number is the default favour of (M - a monster):
 	decide on 16 - game difficulty.
@@ -22,6 +22,7 @@ stealthActive is initially true.
 
 To decide which number is the stealth of the player:
 	let P be 2;
+	decrease P by the hindrance of the player;
 	repeat with C running through currently visible wearthing:
 		increase P by the stealth-influence of C;
 	if water-fountain is penetrating asshole, increase P by 6;
@@ -39,11 +40,9 @@ To check perception of (M - a monster):
 		if M is defeated:
 			compute defeated perception of M;
 		otherwise if M is interested:
-			if M is uniquely unfriendly and M is normally annoyed:
-				resolve sudden appearance change of M;
-			otherwise:
-				check disapproval of M;
-				check aggression change of M; [Is this NPC aggressive this turn, when they weren't at the start of the turn?]
+			if M is friendly:
+				check sudden objectification of M; [if M is objectifying or babifying the player, they will be set to unfriendly here]
+				if M is friendly, check disapproval of M;
 		otherwise:
 			now M is interested;
 			now the last-tripped of M is 0;
@@ -57,7 +56,7 @@ To check perception of (M - a monster):
 			if father-wait is false:
 				if the scared of M > 0 and M is scarable:
 					compute scared perception of M;
-				otherwise if stealthActive is true and (the player is stealthy or the blind-status of M > 0 or (M is woman-player and the woman-status of woman-player is 80)) and the player is not in a bossed room and a random number between 1 and the stealth of the player > 1:
+				otherwise if stealthActive is true and (the player is stealthy or the blind-status of M > 0 or (M is woman-player and the woman-status of woman-player is 80)) and the player is not in a bossed room and the player is not in danger and a random number between 1 and the stealth of the player > 1:
 					say PerceptionFail of M;
 					if the blind-status of M > 0, decrease the blind-status of M by 1;
 					deinterest M;
@@ -86,7 +85,7 @@ To check perception of (M - a monster):
 						passively stimulate asshole from herald;
 						if diaper quest is 1, now the babification of M is 1;
 						otherwise now the objectification of M is 1;
-						if M is uniquely unfriendly, resolve sudden appearance change of M;
+						if M is uniquely unfriendly, check sudden objectification of M;
 					otherwise:
 						now the previous-babification of M is the babification of M;
 						now the previous-objectification of M is the objectification of M;
@@ -110,14 +109,18 @@ To check perception of (M - a monster):
 							otherwise:
 								say "You manage to resist the urge to curtsey!";
 		now the latest-appearance of M is the appearance of the player;
-		if diaper quest is 1, now the latest-cringe of M is the cringe appearance of the player.
+		if diaper quest is 1, now the latest-cringe of M is the cringe appearance of the player;
+		if M is interested and M is friendly:
+			add M to friendly-guys, if absent. [List of NPCs that are friendly and interested this turn - used to check whether we should inform the player if this NPC suddenly turns unfriendly]
 
 To compute defeated perception of (M - a monster):
 	do nothing.
 
 To compute correct perception of (M - a monster):
 	now the latest-appearance of M is the appearance of the player;
-	if M is proposer:
+	if M is able to see stolen goods:
+		compute thief perception of M;
+	otherwise if M is proposer:
 		compute proposal of M;
 	otherwise if the class of the player is bride and M is bride-consort and there is a worn bouquet and M is not uniquely unfriendly:
 		compute bride perception of M;
@@ -133,6 +136,13 @@ To compute perception of (M - a monster):
 To say PerceptionFail of (M - a monster):
 	say "[BigNameDesc of M] fails to notice you.".
 
+To compute thief perception of (M - a monster):
+	now the current-perceiver is M;
+	let T be the random-stolen-item;
+	if M is intelligent, say "[speech style of M]'[one of]HEY! That's my [ShortDesc of T][or]Give me back my [ShortDesc of T], you [bitch][stopping]!'[roman type][line break][BigNameDesc of M] takes an aggressive stance!";
+	otherwise say "[BigNameDesc of M] focuses on the [T], and takes an aggressive stance!";
+	anger M.
+
 To reset orifice selection of (M - a monster):
 	now the chosen-orifice of M is nothing;
 	now the selection-frustration of M is 0.
@@ -141,20 +151,30 @@ To compute DQ perception of (M - a monster):
 	compute perception of M.
 
 To check aggression change of (M - a monster):
-	if M is listed in friendly-guys and M is unfriendly, resolve aggression change of M.
+	if M is listed in friendly-guys: [they were friendly AND INTERESTED at the start of the turn]
+		now M is recently-unknown; [check for friendliness again]
+		if M is unfriendly, resolve aggression change of M.
 
 To resolve aggression change of (M - a monster):
 	if M is listed in friendly-guys, remove M from friendly-guys;
 	interest M;
 	say BecomesAggressive of M.
 
-To resolve sudden appearance change of (M - a monster):
-	if the babification of M is 1 and the previous-babification of M is 0:
-		compute sudden babification of M; [The NPC is now unfriendly, because the player's appearance has changed. We need to make this obvious to the player by making them say something.]
-		now the previous-babification of M is 1;
-	otherwise if the objectification of M is 1 and the previous-objectification of M is 0:
-		compute sudden objectification of M; [The NPC is now unfriendly, because the player's appearance has changed. We need to make this obvious to the player by making them say something.]
-		now the previous-objectification of M is 1.
+[This function should only be called when a monster is currently friendly, as the text output will say something like "something changes about the way he's looking at you".]
+To check sudden objectification of (M - a monster):
+	let X be 0;
+	if M is babifying the player:
+		increase X by 1;
+	otherwise if M is objectifying the player:
+		increase X by 1;
+	if X > 0:
+		now M is recently-unfriendly;
+		if the babification of M is 1 and the previous-babification of M is 0:
+			compute sudden babification of M; [The NPC is now unfriendly, because the player's appearance has changed. We need to make this obvious to the player by making them say something.]
+			now the previous-babification of M is 1;
+		otherwise if the objectification of M is 1 and the previous-objectification of M is 0:
+			compute sudden objectification of M; [The NPC is now unfriendly, because the player's appearance has changed. We need to make this obvious to the player by making them say something.]
+			now the previous-objectification of M is 1.
 
 To compute curtsey reaction of (M - a monster):
 	if diaper quest is 1 and there is a worn currently visible diaper:
@@ -163,7 +183,7 @@ To compute curtsey reaction of (M - a monster):
 	otherwise:
 		FavourDown M by 2;
 	if M is uniquely unfriendly and M is normally annoyed:
-		resolve sudden appearance change of M;
+		check sudden objectification of M;
 	otherwise if M is friendly and M is groping:
 		compute grope of M;
 	otherwise:
@@ -221,6 +241,11 @@ To DifficultyDown (M - a monster) by (X - a number):
 		decrease the raw difficulty of M by 1;
 		decrease X by 1.
 
+[We use this to save the state of whether the enemy is unfriendly when possible, to reduce CPU cycles.
+recently-unknown means that the monster's friendliness rating has 'expired', meaning that we need to check again.
+]
+A monster can be recently-unknown, recently-unfriendly, or recently-friendly (this is the monster-friendliness property).
+
 [
 Aggro Ratings:
 BELOW AGGRO LIMIT: Unfriendly
@@ -230,9 +255,18 @@ AGGRO LIMIT + 4: Buddy
 AGGRO LIMIT + 7: Ally
 AGGRO LIMIT + 10: Guardian
 ]
+Definition: a monster (called M) is unfriendly rather than friendly:
+	if M is recently-unfriendly, decide yes;
+	if M is recently-friendly, decide no;
+	if M is calculated unfriendly:
+		now M is recently-unfriendly;
+		decide yes; ["annoyed" is the final level of relationship before unfriendly]
+	otherwise:
+		now M is recently-friendly;
+		decide no.
 
-Definition: a monster is unfriendly rather than friendly:
-	if it is not pacified and (it is not normally annoyed or it is uniquely unfriendly), decide yes; ["annoyed" is the final level of relationship before unfriendly]
+Definition: a monster is calculated unfriendly:
+	if it is not pacified and (it is not normally annoyed or it is uniquely unfriendly), decide yes;
 	decide no.
 
 [Selkie: it might be easier to remember, if this was termed temporarily unfriendly?]
@@ -242,8 +276,10 @@ Definition: a monster (called M) is uniquely unfriendly: [We can use this to eas
 	decide no.
 
 Definition: a monster (called M) is default uniquely unfriendly:
-	if M is objectifying the player, decide yes;
-	if M is babifying the player, decide yes;
+	if M is in the location of the player:
+		if M is objectifying the player, decide yes;
+		if M is babifying the player, decide yes;
+		if M is able to see stolen goods, decide yes;
 	if there is a soiled-diaper carried by M, decide yes;
 	decide no.
 
@@ -254,6 +290,7 @@ A monster has a number called babification. [Diaper quest version of objectifica
 A monster has a number called previous-babification.
 
 To compute sudden objectification of (M - a monster):
+	now M is recently-unfriendly;
 	if M is intelligent:
 		if M is raunchy, say "Something seems to change in the way [NameDesc of M] is looking at you.[line break][speech style of M]'[if M is penetrating a body part or M is grabbing the player]Yeah [slut], take it!'[otherwise if the player is monster fucked]You're going to just do that without asking me to join in?!'[otherwise]We should fuck.'[end if][roman type][line break]";
 		otherwise say "Something seems to change in the way [NameDesc of M] is looking at you.[line break][speech style of M]'Hmm, I've changed my mind...'[roman type][line break]";
@@ -391,13 +428,14 @@ To check disapproval of (M - a monster):
 		check default disapproval of M.
 
 To check default disapproval of (M - a monster):
+	now M is recently-unknown; [reset knowledge of whether NPC is friendly]
 	if M is interested:
 		if M is cringe disapproving:
 			compute cringe disapproval of M;
 		otherwise if M is outrage disapproving:
 			compute disapproval of M;
 	otherwise:
-		check perception of M.[The monster is given an extra chance to assess the player's appearance.]
+		check perception of M. [The monster is given an extra chance to assess the player's appearance.]
 
 [!<ComputeDisapprovalOfMonster>+
 
@@ -502,14 +540,17 @@ Chapter 3 - Modifying Aggro
 To anger (M - a monster): [This should bring the monster just into unfriendly territory.]
 	if the diaper-duration of M > 0, now the diaper-duration of M is the diaper punishment length of M;
 	if the favour of M > the aggro limit of M:
-		now the favour of M is the aggro limit of M.
+		now M is recently-unknown; [reset what we know about the friendliness of the NPC]
+		FavourSet M to the aggro limit of M.
 
 To calm (M - a monster): [This should bring the monster just into friendly territory.]
 	if the favour of M <= the aggro limit of M:
-		now the favour of M is the aggro limit of M + 1.
+		now M is recently-unknown; [reset what we know about the friendliness of the NPC]
+		FavourSet M to the aggro limit of M + 1.
 
 To permanently anger (M - a monster): [This should bring the monster far far into unfriendly territory.]
-	now the favour of M is -100.
+	now M is recently-unknown; [reset what we know about the friendliness of the NPC]
+	FavourSet M to -100.
 
 To FavourUp (M - a monster):
 	FavourUp M by 1.
@@ -523,6 +564,7 @@ To FavourDown (M - a monster) with consequences:
 To FavourUp (M - a monster) by (N - a number):
 	if the class of the player is cheerleader, increase N by 1;
 	if N > 0:
+		now M is recently-unknown; [reset what we know about the friendliness of the NPC]
 		increase the favour of M by N;
 		if M is royal guard and the refractory-period of M < 0:
 			progress quest of royal-quest;
@@ -536,7 +578,13 @@ To FavourDown (M - a monster) by (N - a number) with consequences:
 To FavourDown (M - a monster) by (N - a number):
 	if latest-top-malfunction is not 0 and M is reactive, now latest-top-malfunction is earnings; [If an intelligent interested NPC has lost favour with the player for whatever reason that probably means they would have seen a nip slip if one existed. So we'll say one didn't exist.]
 	if the class of the player is cheerleader and a random number between 1 and 2 is 1, decrease N by 1;
-	if N > 0, decrease the favour of M by N.
+	if N > 0:
+		now M is recently-unknown; [reset what we know about the friendliness of the NPC]
+		decrease the favour of M by N.
+
+To FavourSet (M - a monster) to (N - a number):
+	now M is recently-unknown; [reset what we know about the friendliness of the NPC]
+	now the favour of M is N.
 
 Part 2 - Reflection
 

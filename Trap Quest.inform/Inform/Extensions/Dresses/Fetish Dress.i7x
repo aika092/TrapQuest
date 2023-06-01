@@ -4,6 +4,10 @@ A fetish dress is a kind of overdress. A fetish dress is usually latex. A fetish
 
 The printed name of a fetish dress is "[clothing-title-before][MediumDesc of item described][clothing-title-after]".
 
+Definition: a fetish dress is fetish appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
+
 Figure of Latex Dress 1 is the file "Items/Clothes/Upper/Latex/latexdress1.png".
 Figure of Latex Dress 2 is the file "Items/Clothes/Upper/Latex/latexdress2.png".
 Figure of Latex Dress 3 is the file "Items/Clothes/Upper/Latex/latexdress3.png".
@@ -42,7 +46,8 @@ To decide which number is the heel-skill-influence of (O - a fetish dress):
 	decide on temp.
 
 To set up magic attribute of (C - a fetish dress):
-	if a random number between 1 and 2 is 1 and C is not cursed, now C is confidence.
+	if a random number between 1 and 2 is 1 and C is not cursed, now C is confidence;
+	set up rare magic attribute of C.
 
 To decide which object is the unique-upgrade-target of (C - a fetish dress):
 	if the number of worn trousers is 0:

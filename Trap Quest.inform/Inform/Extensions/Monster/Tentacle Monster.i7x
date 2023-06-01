@@ -21,20 +21,20 @@ Definition: a tentacle monster is summoningRelevant:
 Report examining tentacle monster:
 	progress quest of tentacle-research-quest.
 
-Figure of newborn tentacle monster is the file "NPCs/Bosses/TentacleMonster2.png".
-Figure of large tentacle monster is the file "NPCs/Bosses/boogeymonster1.png".
-Figure of massive tentacle monster is the file "NPCs/Bosses/TentacleMonster3.png".
-Figure of friendly newborn tentacle monster is the file "NPCs/Bosses/TentacleMonster4.png".
-Figure of friendly large tentacle monster is the file "NPCs/Bosses/TentacleMonster5.png".
-Figure of friendly massive tentacle monster is the file "NPCs/Bosses/TentacleMonster6.png".
+Figure of newborn tentacle monster is the file "NPCs/Bosses/TentacleMonster/TentacleMonster2.png".
+Figure of large tentacle monster is the file "NPCs/Bosses/TentacleMonster/boogeymonster1.png".
+Figure of massive tentacle monster is the file "NPCs/Bosses/TentacleMonster/TentacleMonster3.png".
+Figure of friendly newborn tentacle monster is the file "NPCs/Bosses/TentacleMonster/TentacleMonster4.png".
+Figure of friendly large tentacle monster is the file "NPCs/Bosses/TentacleMonster/TentacleMonster5.png".
+Figure of friendly massive tentacle monster is the file "NPCs/Bosses/TentacleMonster/TentacleMonster6.png".
 
-Figure of Tentacle Cutscene 1 is the file "Special/Cutscene/cutscene-tentacle-birth1.jpg".
-Figure of Tentacle Cutscene 2 is the file "Special/Cutscene/cutscene-tentacle-belly1.jpg".
-Figure of Tentacle Cutscene 3 is the file "Special/Cutscene/cutscene-tentacle-grab1.png".
-Figure of Tentacle Cutscene 4 is the file "Special/Cutscene/cutscene-tentacle-grab2.png".
-Figure of Tentacle Cutscene 5 is the file "Special/Cutscene/cutscene-tentacle-climax1.jpg".
-Figure of Tentacle Cutscene 6 is the file "Special/Cutscene/cutscene-tentacle-climax2.png".
-Figure of Tentacle Cutscene 7 is the file "Special/Cutscene/cutscene-tentacle-grab3.png".
+Figure of Tentacle Cutscene 1 is the file "NPCs/Bosses/TentacleMonster/cutscene-tentacle-birth1.jpg".
+Figure of Tentacle Cutscene 2 is the file "NPCs/Bosses/TentacleMonster/cutscene-tentacle-belly1.jpg".
+Figure of Tentacle Cutscene 3 is the file "NPCs/Bosses/TentacleMonster/cutscene-tentacle-grab1.png".
+Figure of Tentacle Cutscene 4 is the file "NPCs/Bosses/TentacleMonster/cutscene-tentacle-grab2.png".
+Figure of Tentacle Cutscene 5 is the file "NPCs/Bosses/TentacleMonster/cutscene-tentacle-climax1.jpg".
+Figure of Tentacle Cutscene 6 is the file "NPCs/Bosses/TentacleMonster/cutscene-tentacle-climax2.png".
+Figure of Tentacle Cutscene 7 is the file "NPCs/Bosses/TentacleMonster/cutscene-tentacle-grab3.png".
 
 To decide which figure-name is the monster-image of (M - a tentacle monster):
 	if M is newborn, decide on figure of newborn tentacle monster;

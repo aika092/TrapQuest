@@ -5,6 +5,9 @@ The printed plural name of a monster is usually "[monster-title-before of item d
 
 Understand "NPC", "enemy" as a monster.
 
+To decide which object is male-m: [this should always point towards an NPC who is always male normally, but female when all NPCs are set to female. It used to be the shopkeeper, but now the shopkeeper defaults to female in Diaper Quest.]
+	decide on pimp.
+
 Figure of Missing NPC is the file "NPCs/missing.jpg".
 
 To say ShortDesc of (M - a monster):

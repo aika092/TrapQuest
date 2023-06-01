@@ -92,6 +92,7 @@ Carry out rocking:
 		otherwise if TP is clothing:
 			say "As you rock, you feel your [ShortDesc of TP] getting looser. You look down just in time to witness it plop out, onto the ground!";
 			now TP is in the location of the player;
+			dislodge TP;
 		otherwise:
 			let D be a random eligible diaper;
 			if D is diaper:

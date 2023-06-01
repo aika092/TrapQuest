@@ -1,6 +1,6 @@
 All Corsets by Corsets begins here.
 
-ballet corset is a corset. ballet corset is top-exclusive. ballet corset is pvc. ballet corset is short. ballet corset is transformation-rare. ballet corset is normally-nipple-covering. ballet corset is average cut.
+ballet corset is a corset. ballet corset is top-exclusive. ballet corset is pvc. ballet corset is transformation-rare. ballet corset is normally-nipple-covering. ballet corset is average cut. ballet corset is super-short.
 
 The text-shortcut of ballet corset is "bcst".
 
@@ -74,7 +74,7 @@ To decide which number is the intelligence-influence of (C - a bat corset):
 	increase D by the magic-modifier of C;
 	decide on D.
 
-To decide what number is the price of (C - a bat corset):
+To decide what number is the original price of (C - a bat corset):
 	decide on 7.
 
 To say ShortDesc of (C - a bat corset):
@@ -191,7 +191,6 @@ To decide which number is the initial outrage of (C - skirted-bondage-corset):
 
 skirted-maid-corset is a corset. skirted-maid-corset is latex. skirted-maid-corset is unique. skirted-maid-corset is short. skirted-maid-corset is fully exposing. skirted-maid-corset is neck covering. skirted-maid-corset is only arm covering.
 
-Definition: skirted-maid-corset is potentially-partially-bottom-layer-concealing: decide no. [doesn't cover the bottom at all thanks to apron window]
 
 The text-shortcut of skirted-maid-corset is "smct".
 
@@ -213,6 +212,13 @@ Understand "skirted", "maid" as skirted-maid-corset.
 
 To decide which number is the initial outrage of (C - skirted-maid-corset):
 	decide on 12.
+
+[doesn't cover the bottom at all thanks to apron window]
+Definition: skirted-maid-corset is potentially-partially-bottom-layer-concealing: decide no.
+Definition: skirted-maid-corset is potentially at least partially vagina covering: decide no.
+Definition: skirted-maid-corset is potentially at least partially penis covering: decide no.
+Definition: skirted-maid-corset is potentially vagina covering:	decide no.
+Definition: skirted-maid-corset is potentially penis covering: decide no.
 
 fetish corset is a corset. fetish corset is latex. fetish corset is top-exclusive. fetish corset is sheer. fetish corset is transformation-rare.
 
@@ -294,7 +300,7 @@ To say MediumDesc of (C - santa corset):
 To say ClothingDesc of (C - santa corset):
 	say "A red overbust corset with fluffy white wool at the top and bottom, to reflect the festive nature of the item.[if C is worn][line break]It looks like it might be able to protect your breasts from injury.[end if]".
 
-To decide what number is the price of (C - santa corset):
+To decide what number is the original price of (C - santa corset):
 	decide on 6.
 
 
@@ -332,7 +338,7 @@ To uniquely set up (C - spike corset):
 
 Definition: spike corset is transformation-protected: decide yes.
 
-To decide what number is the price of (C - spike corset):
+To decide what number is the original price of (C - spike corset):
 	decide on 6.
 
 To say ShortDesc of (C - spike corset):

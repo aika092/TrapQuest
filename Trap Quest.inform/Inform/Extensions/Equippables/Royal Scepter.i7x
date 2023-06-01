@@ -21,8 +21,16 @@ To decide which figure-name is the clothing-image of (R - royal scepter):
 	if R is blacked, decide on figure of royal scepter blacked;
 	decide on figure of royal scepter.
 
+To compute climax effect of (E - royal scepter): [copy of the effect from the golden phallus, but better since you don't have to put it in]
+	MagicPowerRefresh 5;
+	let B be the body soreness of the player;
+	if E is not cursed, BodyHeal 1;
+	if E is blessed, BodyHeal 1;
+	if the body soreness of the player < B, say "[bold type]Somehow your body feels a bit less bruised![roman type][line break]";
+	if E is blacked, check tiara-of-spades transformation.
+
 To say ClothingDesc of (W - royal scepter):
-	if W is blacked, say "A white and black wand vibrator with a gem-encrused spade shape set into the top underneath a crown. [if tiara-of-spades is worn]Thanks to its synergy with your [tiara-of-spades], you can sense that whenever you satisfy a [BlackCock], it will gain significant magic power. [otherwise if there is a worn tiara]Perhaps if you had a more appropriate tiara, your wand would unlock some even more powerful abilities. You have a picture in your head, of you pleasuring [NameDesc of shopkeeper] while a poor jealous guard watches... [end if]";
+	if W is blacked, say "A white and black wand vibrator with a gem-encrused spade shape set into the top underneath a crown. [if tiara-of-spades is worn]Thanks to its synergy with your [tiara-of-spades], you can sense that whenever you satisfy a [BlackCock], it will gain significant magic power. [otherwise if there is a worn tiara][bold type]Perhaps if you had a more appropriate tiara, your wand would unlock some even more powerful abilities. [roman type]You have a picture in your head, of you pleasuring [NameDesc of shopkeeper] while a poor jealous guard watches. Or you could just use it to masturbate... [end if]";
 	otherwise say "A gold and pink wand vibrator, with opaque crystal ball set into the top underneath a golden crown. ";
 	let H be a random worn headgear;
 	if diaper quest is 0:
@@ -212,7 +220,7 @@ To compute betrothal of (M - a monster):[This only triggers when the player is f
 				if the consummation of betrothal-quest is true, progress quest of betrothal-quest. [if player hasn't consummated yet, we don't want to ruin the order of rewards]
 
 To punish infidelity:
-	humiliate the charge of floral bouquet * 40;
+	humiliate the charge of floral bouquet * (HUMILIATION-BASE * 8);
 	decrease the charge of floral bouquet by 1;
 	if floral bouquet is worn and condom fetish >= 2:
 		if floral bouquet is blessed, now floral bouquet is bland;

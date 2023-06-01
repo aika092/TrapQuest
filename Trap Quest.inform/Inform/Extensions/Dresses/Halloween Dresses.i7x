@@ -2,6 +2,10 @@ Halloween Dresses by Dresses begins here.
 
 nun-dress is an overdress. nun-dress is unique. nun-dress is fully covering. nun-dress is hobble-skirted. nun-dress is neck covering. nun-dress is finger covering. The text-shortcut of nun-dress is "nund". The printed name of nun-dress is "[clothing-title-before]nun dress[clothing-title-after]". Understand "nun", "dress" as nun-dress.
 
+To decide which number is the stealth-influence of (C - nun-dress):
+	if C is sneaking, decide on 4;
+	decide on 1.
+
 Figure of nun-dress is the file "Items/Clothes/Upper/Special/Halloween/nundress1a.png".
 Figure of nun-dress-xray is the file "Items/Clothes/Upper/Special/Halloween/nundress1b.jpg".
 Figure of nun-dress-xray-dong is the file "Items/Clothes/Upper/Special/Halloween/nundress1c.jpg".
@@ -23,7 +27,7 @@ To compute school periodic effect of (C - nun-dress): [A hacky way to make sure 
 		now the previous-temporary-image of C is figure of no-image-yet.
 
 To say ClothingDesc of (M - nun-dress):
-	say "This black and white nun dress looks pretty normal. There are some rather high slits at the sides of the skirt, but that could reasonably be suggested to be to make it easier to wear[if M is wrist-bound-behind]. Of course, looks can be deceiving. The arms inside the sleeves are fake. Your real arms are bound strictly behind your back. This wouldn't be much of a problem, but your fake arms are holding a large book open in front of you. The cover makes it look like a religious text, but anyone who notices the actual page it is open to will see that it is in fact a book cataloguing and explaining how to perform exotic sex acts[end if]...".
+	say "This black and white nun dress looks pretty normal. There are some rather high slits at the sides of the skirt, but that could reasonably be suggested to be to make it easier to wear[if M is wrist-bound-behind]. Of course, looks can be deceiving. The arms inside the sleeves are fake. Your real arms are bound strictly behind your back. This wouldn't be much of a problem, but your fake arms are holding a large book open in front of you. The cover makes it look like a religious text, but anyone who notices the actual page it is open to will see that it is in fact a book cataloguing and explaining how to perform exotic sex acts[end if]... It is a dark, plain colour, so it may perhaps help you to remain unnoticed in a dark corner.".
 
 This is the nun bondage prevents hand use rule:
 	if nun-dress is worn and nun-dress is wrist-bound-behind:

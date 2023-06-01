@@ -64,7 +64,8 @@ To say UniqueTitle of (K - crotchless bloomers):
 Figure of crotchless bloomers is the file "Items/Clothes/Lower/Underwear/Bloomers/bloomers2.png".
 
 To set up magic attribute of (C - crotchless bloomers):
-	if a random number between 1 and 3 is 1, now C is protection.
+	if a random number between 1 and 3 is 1, now C is protection;
+	set up rare magic attribute of C.
 
 To decide which number is the initial outrage of (C - a crotchless bloomers):
 	decide on 13.

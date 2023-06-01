@@ -111,6 +111,17 @@ Definition: a clothing (called C) is usually autoremovable: [Can it be removed o
 Definition: a clothing (called C) is usually unautoremovable: [Opposite of above]
 	if C is usually autoremovable, decide no;
 	decide yes.
+Definition: a knickers (called C) is autocleanremovable: [Can it be removed right now if it wasn't messed]
+	now autoremove is true;
+	let saved-mess be the mess of C;
+	now the mess of C is 0; [stops it from being unremovable]
+	if C is actually removable:
+		now autoremove is false;
+		now the mess of C is saved-mess;
+		decide yes;
+	now autoremove is false;
+	now the mess of C is saved-mess;
+	decide no.
 
 This is the not wearing rule:
 	if wearing-target is not worn:
@@ -164,6 +175,13 @@ This is the immobile unremovable rule:
 		if autoremove is false, say "You're a bit tied up at the moment!";
 		rule fails.
 The immobile unremovable rule is listed in the global removability rules.
+
+This is the wrist collar bar unremovable rule:
+	if summoning is 0 and wrist collar bar is worn:
+		if wearing-target is bra or wearing-target is dress or wearing-target is corset or wearing-target is belt or wearing-target is knickers or wearing-target is trousers or wearing-target is diaper cover or wearing-target is stockings or wearing-target is shoes or wearing-target is sex toy or wearing-target is chastity bond or wearing-target is ankle bond:
+			if autoremove is false, say "You can't reach that low down!";
+			rule fails.
+The wrist collar bar unremovable rule is listed in the global removability rules.
 
 This is the people won't automatically remove glue rule:
 	if wearing-target is glued clothing and (summoning is 1 or autoremove is true), rule fails.

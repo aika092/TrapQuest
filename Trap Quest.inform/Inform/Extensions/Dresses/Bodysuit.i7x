@@ -19,7 +19,8 @@ To set up magic attribute of (C - a bodysuit):
 	if C is cursed:
 		if a random number between 1 and 2 is 1, now the magic-type of C is posture training;
 	otherwise:
-		if a random number between 1 and 3 is 1, now the magic-type of C is speed.
+		if a random number between 1 and 3 is 1, now the magic-type of C is speed;
+	set up rare magic attribute of C.
 
 To decide which object is the unique-upgrade-target of (C - a bodysuit):
 	if diaper quest is 0 and there is a worn demonic wearthing, decide on tongue-suit;
@@ -120,7 +121,8 @@ To decide which figure-name is the clothing-image of (C - tongue-suit):
 		decide on figure of white tongue suit.
 
 To say ClothingDesc of (C - tongue-suit):
-	say "A [tonguesColour], skin-tight suit that goes up to the neck and down to the crotch. The suit clings to the body to make sure it hides none of its curves, and it has a long strip missing down the middle to show off a lot of cleavage. Almost countless red tongues snake out from underneath the fabric. [TongueStatus of C]".
+	say "A [tonguesColour], skin-tight suit that goes up to the neck and down to the crotch. The suit clings to the body to make sure it hides none of its curves, and it has a long strip missing down the middle to show off a lot of cleavage. Almost countless red tongues snake out from underneath the fabric. [TongueStatus of C]";
+	say "[bold type]You sense it makes you stronger, based on how horny you are.[roman type][line break]".
 
 To say ShortDesc of (C - tongue-suit):
 	say "tongued suit".
@@ -143,6 +145,9 @@ Definition: tongue-suit is black themed:
 To decide which number is the initial outrage of (C - tongue-suit):
 	if C is tonguing, decide on 18;
 	decide on 8.
+
+To decide which number is the strength-influence of (C - tongue-suit):
+	decide on the magic-modifier of C + (the arousal of the player / 2000).
 
 To compute periodic effect of (C - tongue-suit):
 	if C is crotch-in-place and the player is prone and there is a reactive dangerous willing to do vaginal monster and tonguesActive > 0:
@@ -297,7 +302,9 @@ Volume - Romper
 A romper is a kind of bodysuit. A romper is usually leg covering. Understand "romper" as a romper.
 
 To set up magic state of (C - a romper):
-	now the raw-magic-modifier of C is 0.
+	now the raw-magic-modifier of C is 0;
+	set up BUC of C;
+	set up magic attribute of C.
 
 Definition: a romper is displacable: decide no.
 Definition: a romper is potentially erection concealing:
@@ -695,7 +702,8 @@ To set up magic attribute of (C - a catsuit):
 	otherwise:
 		let R be a random number between 1 and 3;
 		if R is 2, now C is elasticity;
-		if R is 3, now C is speed.
+		if R is 3, now C is speed;
+	set up rare magic attribute of C.
 
 To decide which number is the dexterity-influence of (C - a catsuit):
 	let D be 0;
@@ -861,7 +869,7 @@ Definition: lycra-bodysuit is green themed: decide yes.
 
 Part - ABC Shortalls
 
-ABC shortalls is a bodysuit. ABC shortalls is transformation-rare. ABC shortalls is arm exposing. The printed name of ABC shortalls is "[clothing-title-before]ABC shortalls[clothing-title-after]". The text-shortcut of ABC shortalls is "abc".
+ABC shortalls is a bodysuit. ABC shortalls is transformation-rare. ABC shortalls is arm exposing. ABC shortalls is top-exclusive. The printed name of ABC shortalls is "[clothing-title-before]ABC shortalls[clothing-title-after]". The text-shortcut of ABC shortalls is "abc".
 
 Figure of ABC shortalls is the file "Items/Clothes/Upper/Rompers/shortalls1.png".
 
@@ -952,7 +960,8 @@ To say ClothingDesc of (C - a pink leotard):
 Definition: a pink leotard is pink themed: decide yes.
 Definition: a pink leotard is potentially erection concealing: decide yes. [frills conceal erections]
 To decide which number is the crotch-tightness of (C - a pink leotard):
-	decide on 0.  [frills conceal cameltoes]
+	if there is a worn diaper, decide on 3; [frills don't conceal diapers]
+	decide on 0. [frills conceal cameltoes]
 
 
 A sexy blue leotard is a kind of leotard.

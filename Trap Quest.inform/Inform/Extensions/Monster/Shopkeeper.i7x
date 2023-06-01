@@ -18,11 +18,11 @@ Definition: shopkeeper is wenchy: decide yes.
 Definition: shopkeeper is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 
 Definition: shopkeeper is a generic-unlocker: decide yes.
+Definition: shopkeeper is closest-toilet-preferring: decide yes.
 
 shopkeeper is in Dungeon41. Understand "shop", "keeper" as shopkeeper. The printed name of shopkeeper is "[if item described is in the location of the player][TQlink of item described][end if][input-style]well built shopkeeper[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of shopkeeper is "sh". Understand "well", "built" as shopkeeper.
 
 Figure of female shopkeeper is the file "NPCs/Dungeon/Shopkeeper/shopkeeper5.png".
-Figure of babified shopkeeper is the file "NPCs/Dungeon/Shopkeeper/shopkeeper6.png".
 
 To say ShortDesc of (M - shopkeeper):
 	say "shopkeeper".
@@ -36,13 +36,10 @@ To decide which figure-name is the monster-image of (M - shopkeeper):
 	otherwise:
 		decide on figure of Shopkeeper 1.
 
-To decide which figure-name is the pacified-image of (M - shopkeeper):
-	if M is diaper-enslaved, decide on figure of babified shopkeeper;
-	decide on figure of Missing NPC.
 
 To say MonsterDesc of (M - shopkeeper):
 	if M is diaper-enslaved:
-		say "This tall black [man of M] has had [his of M] hair grown out and tied up with a large pink bow. [big his of M] sensible outfit has been replaced by some kind of purple martial art themed baby dress, with a tiny tutu sewn into the waist rather than a proper skirt. This fully exposes [his of M] big thick pale purple diaper which pushes [his of M] legs wide apart and forces [him of M] to waddle. Purple medieval themed baby booties and fingerless mittens complete the ensemble, which overall means that [his of M] air of dominance has been completely erased and replaced with an air of pathetic helplessness.";
+		say "This poor black [man of M] has been encased in a red latex catsuit, complete with matching ring-gagged hood. A stupidly thick diaper sits between [his of M] legs underneath the catsuit, keeping [his of M] thighs far apart. [big his of M] wrists and neck are trapped inside holes inside one of the shelves attached to the wall of [his of M] shop, preventing [him of M] from standing up or moving away. [big he of M] can't speak, can't move, can't do anything but sit there, moan, and fill [his of M] huge diaper over time, relying on visitors to feed [him of M] food or drink through [his of M] permanently open mouth.";
 	otherwise if diaper quest is 1:
 		say "This tall black [man of M] is dressed from head to toe in [']sexy['] baby gear - A puffy yellow top with frills at the sleeves, cute pink skirted dungarees, and a huge thick white diaper. Knee-high frilly white socks sit under cute chunky pink high heels. You also can't help but notice that [he of M] is very busty, and rather well built. [big he of M] exudes an air of power, despite [his of M] cutesy appearance.";
 	otherwise:
@@ -134,7 +131,7 @@ To say MonsterOfferAcceptFlav of (M - shopkeeper) to (T - a thing):
 		repeat with C running through stolen things:
 			if N >= the price of C:
 				decrease N by the price of C;
-				now C is unowned;
+				now the owner of C is nothing;
 				trigger purchase-wisp-quest;
 			if total stolen value is 0, calm M;
 	otherwise:
@@ -239,11 +236,15 @@ To compute (M - shopkeeper) using sex doll (N - 2):
 
 To compute (M - a monster) stomping (N - shopkeeper):
 	if diaper quest is 1:
-		if M is in the location of the player, say "[BigNameDesc of M] leaps into the air and lands on the [N], who disappears underneath the monster. [if N is in Dungeon41]There's a scream, but it's not from beneath the beast, it's from above you - the [N] has somehow appeared above you, hog-tied and suspended from the ceiling, with a large sagging purple diaper, and matching purple baby booties, fingerless mittens, and shopkeeper outfit.[otherwise][big he of N] doesn't reappear...[end if]";
+		if M is in the location of the player, say "[BigNameDesc of M] leaps into the air and lands on the [N], who disappears underneath the monster. [if N is in Dungeon41]There's a scream, but it's not from beneath the beast, it's from the north shop wall - the [N] has somehow appeared there, bound in place as part of a shelf, in a red latex catsuit, complete with huge in-built diaper. It doesn't look like there's any way to free [him of N]![otherwise][big he of N] doesn't reappear...[end if]";
 		otherwise say "You hear the shopkeeper cry out in terror from [if N is nearby]nearby![otherwise]somewhere in the dungeon![end if]";
-		now N is diaper-enslaved;
-		if TG fetish is 1, now N is female;
-		now N is in Dungeon41;
+		if watersports fetish is 1:
+			now Dungeon41 is urinals;
+			now N is permanently banished;
+			destroy N;
+		otherwise:
+			now N is diaper-enslaved;
+			now N is in Dungeon41;
 	otherwise:
 		if M is in the location of the player, say "[BigNameDesc of M] forcefully pushes the [N] to the ground and stamps on [his of M] body. The [N] is now motionless on the ground.";
 		otherwise say "You hear the shopkeeper cry out in pain from [if N is nearby]nearby![otherwise]somewhere in the dungeon![end if]";
@@ -252,7 +253,7 @@ To compute (M - a monster) stomping (N - shopkeeper):
 		now L is in the location of M;
 		now the leftover-type of L is the leftover-type of N.
 
-Definition: a shopkeeper is motionless-when-defeated: decide yes.
+Definition: shopkeeper is motionless-when-defeated: decide yes.
 
 To compute proposal leaving of (M - shopkeeper):
 	do nothing.
@@ -262,15 +263,17 @@ Part 2 - Perception
 To anger (M - shopkeeper): [This should bring the shopkeeper just into unfriendly territory.]
 	if the diaper-duration of M > 0, now the diaper-duration of M is the diaper punishment length of M;
 	if the favour of M > the aggro limit of M:
-		now the favour of M is the aggro limit of M;
+		FavourSet M to the aggro limit of M;
 	now M is unleashed.
 
 To decide which number is the bimbo tolerance of (M - shopkeeper):
+	if the refractory-period of M > 0, decide on 21;
 	if diaper quest is 1, decide on 20;
 	if interracial fetish is 1, decide on 14;
 	decide on 18.
 
 To decide which number is the outrage tolerance of (M - shopkeeper):
+	if the refractory-period of M > 0, decide on 21;
 	decide on the bimbo tolerance of M / 2.
 
 To say DisapprovalFlav of (M - shopkeeper):
@@ -283,10 +286,16 @@ To bore (M - shopkeeper) for (N - a number) seconds:
 	dislodge M;
 	compute common boredom of M for N seconds;
 	now M is uninterested;
+	now the stolen-aware of M is 0;
 	if the player is in Dungeon41:
 		calm M; [The shopkeeper never gets distracted from his job, instead he just turns friendly after dealing with you]
 	otherwise:
 		send M home.
+
+To compute common latest appearance reset of (M - shopkeeper):
+	if M is not in the location of the player:
+		now the latest-appearance of M is 0;
+		if diaper quest is 1, now the latest-cringe of M is 0.
 
 Report going:
 	if shopkeeper is guarding and shopkeeper is on-stage and shopkeeper is not in Dungeon41 and shopkeeper is not in the location of the player, bore shopkeeper.
@@ -407,7 +416,7 @@ To compute deliveryRequest of (M - shopkeeper):
 
 
 To compute friendly boredom of (M - shopkeeper):
-	if the player is not in the location of M, now M is uninterested.
+	if the player is not in the location of M, deinterest M.
 
 Part 3 - Motion and Seeking
 
@@ -617,11 +626,11 @@ To say angry punishment clothing destruction of (M - shopkeeper) on (C - a cloth
 To compute the flying player taunting of (M - shopkeeper):
 	if a random number from 1 to 6 is 1:
 		say "[BigNameDesc of M] hurls abuse at you.[line break][speech style of M]'[if M is objectifying the player][one of]When you've finished playing balloon with your body, I'm going to balloon your body with something else!'[or]You look like a whore, so I wouldn't be surprised if you actually enjoy what I'm about to do to you.'[or]I'm willing to wager you haven't taken a [manly-penis] this big. Well it won't be long until you float down here, and then I'm going to leave you gaping.'[or]You're lucky, I like fucking fat chicks. Fucking them until they cry no more and promise to never steal from me again, that is.'[in random order][otherwise][one of]You fucking thief! You just wait until I get my hands on you!'[or]You're going to wish you never stole from my shop!'[or]In this land, criminals get prosecuted in a unique way. I'm sure you'll enjoy it.'[or]Haha! Your escape attempt was foiled by your own ridiculous body. I can't wait until you come down here and I get to show you how we treat criminal scum in these parts.'[in random order][end if][roman type][line break][if the humiliation of the player < 17500]You [one of]wince[or]shudder[or]cringe[purely at random] with shame.[end if]";
-		humiliate 20.
+		slightHumiliate.
 
 To say LandingTaunt of (M - shopkeeper):
 	say "[BigNameDesc of M] laughs at the sight of you.[line break][speech style of M]'[one of]About time! Prepare yourself, criminal scum.[or]Life is full of ups and downs I guess. Mainly downs for you from here on out, though.[in random order]'[roman type][line break]";
-	humiliate 50.
+	moderateHumiliate.
 
 To decide which number is the rounds of sex left of (M - shopkeeper):
 	decide on the sex-length of M.
@@ -631,6 +640,7 @@ To say sexSubmitNearingClimax of (M - shopkeeper) in (F - a fuckhole):[shopkeepe
 
 To send (M - shopkeeper) home:
 	if M is alive:
+		dislodge M;
 		if M is not in Dungeon41:
 			if M is in the location of the player:
 				let D be the best route from the location of M to Dungeon41 through labyrinth rooms;
@@ -749,14 +759,15 @@ This is the shopkeeper reclaiming stolen stuff rule:
 	let X be the number of held stolen things;
 	if X > 0:
 		say "[speech style of current-monster]'[if the number of dangerous royal guards in the location of the player > 1]Thank you for your help, officers[otherwise if the number of dangerous royal guards in the location of the player > 0]Thank you for your help, officer[otherwise]Oh you are in trouble now bitch[end if]. This bitch is going to get what's coming to [him of the player]. [if X > 1]I'll be taking these back!'[otherwise if X is 1]I'll be taking this back!'[end if][roman type][line break][if X > 1][BigNameDesc of current-monster] takes the stolen items from you.[otherwise if X is 1][BigNameDesc of current-monster] takes the [printed name of random stolen thing] from you.[end if]";
-		repeat with C running through held stolen things:
-			if C is bag of holding:
-				repeat with T running through in-bag things:
-					now T is in the location of the player;
-			now C is store;
-			now C is in Dungeon41;
-			dislodge C;
-		decrease the health of current-monster by 7; [This is so [he of M] is not on full health and so won't do nice things]
+		let LH be the list of held things;
+		repeat with C running through LH:
+			if the owner of C is current-monster:
+				if C is bag of holding:
+					repeat with T running through in-bag things:
+						if the owner of T is not current-monster, now T is in the location of the player;
+				now C is in Dungeon41;
+				dislodge C;
+		decrease the health of current-monster by 7; [This is so he is not on full health and so won't do nice things]
 		rule succeeds.
 
 To say BreastsPenetrationFlav of (M - shopkeeper):
@@ -835,7 +846,7 @@ To compute happy reward of (M - shopkeeper):
 		let C be a random held store thing;
 		if C is a thing:
 			if the favour of M - the aggro limit of M > a random number between 1 and the price of C:
-				now C is unowned;
+				now the owner of C is nothing;
 				say "[speech style of M]'That was incredible! Go on, take the [ShortDesc of C], it's yours. And [please] do come again!'[roman type][line break]";
 				check black lace transformation;
 				trigger purchase-wisp-quest;
@@ -847,7 +858,10 @@ To compute happy reward of (M - shopkeeper):
 			check black lace transformation.
 
 This is the shopkeeper punishes diaper rule:
-	if (there is a worn stolen diaper or there is a carried stolen diaper) and the number of worn unowned diapers is 0:
+	let D be a random worn diaper;
+	let legitWornDiaper be false;
+	if D is diaper and the owner of D is not shopkeeper, now legitWornDiaper is true;
+	if legitWornDiaper is false and (there is a worn stolen diaper or there is a carried stolen diaper):
 		compute diaper donating of current-monster;
 		rule succeeds;
 	otherwise if the player is diaper focused and there is a worn unsoiled diaper:
@@ -884,7 +898,7 @@ To compute diaper donating of (M - shopkeeper):
 		UrineSoakUp D by 1;
 	say "[speech style of M]'How disgusting! I can't sell this now. Fuck! Fine, you keep this one but I'd better not see you trying this again.'[roman type][line break]";
 	repeat with Z running through held stolen diapers:
-		now Z is unowned;
+		now the owner of Z is nothing;
 	if the number of held stolen things is 0:
 		say "[BigNameDesc of M], still angry but rapidly calming down, leaves you alone.";
 		send M home.
@@ -895,7 +909,7 @@ To compute diaper use of (M - shopkeeper):
 		say "[BigNameDesc of M] begins masturbating furiously.[line break][speech style of M]'Looks like you haven't used that diaper yet... let me help you get started!'[roman type][line break]Pulling the front of your [D] away from your waist, [he of M] points the tip of [his of M] cock inside your warm padding.[line break][speech style of M]'Ugh, yes...'[roman type][line break][big he of M] shoots ropes and ropes directly onto your [genitals], where it starts to drip and soak into your padding. [big he of M] lets go of the waistband, and it snaps back into place.";
 		say "[variable custom style][if the semen addiction of the player > 12 and the semen taste addiction of the player > the semen addiction of the player]Ooh it feels nice and warm, but I'd have preferred [he of M]'d let me drink it all![otherwise if the semen addiction of the player > 8]It feels so warm and comforting... I could get used to being used like this.[otherwise if the humiliation of the player < 18500]Somehow having my diaper used like this feels even more humiliating than when I'm used for sex.[otherwise]Oh gosh, it feels so hot and slimy. And there's so much[one of]. I'm going to squelch as I move now[or], I could swear [he of M]'s filled it even more than last time[stopping]...[end if][roman type][line break]";
 		cumsoak the semen load of M on D;
-		humiliate 400;
+		obsceneHumiliate;
 		say "[BigNameDesc of M] seems satisfied and docile now, and leaves you alone to recover.";
 	otherwise:
 		say "Bug: [NameDesc of M] can't find a diaper to use. Please report the issue giving as much detail as you can about your fetish options and what led up to this event!";
@@ -977,7 +991,7 @@ To compute unique banishment of (M - shopkeeper):
 		say "[BigNameDesc of M] leaves [if full-lady fetish is 1][his of M][otherwise]a[end if] [strapon-dildo] behind.";
 		compute autotaking strapon-dildo;
 	repeat with C running through on-stage store clothing:
-		now C is unowned;
+		now the owner of C is nothing;
 	check mindflayerquest.
 
 To say TaxDesc of (M - shopkeeper):
@@ -1002,7 +1016,7 @@ To standard loot (M - shopkeeper):
 		now X is in the location of the player;
 		if X is plentiful accessory, compute appraisal of X from M;
 		say "[BigNameDesc of M] produces a [printed name of X] from [his of M] lockbox.";
-		now X is stolen;
+		now the owner of X is M;
 		compute autotaking X.
 
 To compute pitying of (M - shopkeeper):
@@ -1138,7 +1152,7 @@ To execute (T - talk-shopkeeper-discount) for (M - a monster):
 	say "[speech style of shopkeeper]'[one of]Heh, you are a slutty one aren't you. Tell you what, if you can take this whole length in your mouth, I'll give you a small discount for a while.'[or]How can I refuse to let you try again after last time! I'm definitely ready for another round.'[stopping][roman type][paragraph break]Give it a go? ";
 	if the player is bimbo consenting:
 		now keriaxshopblow is 1;
-		humiliate 400;
+		obsceneHumiliate;
 		say "You get on your knees and take [his of shopkeeper] enormous length in your hands. The giant tool starts to grow even larger as the shopkeeper is aroused with anticipation. [if the bimbo of the player < 7]You close your[otherwise]You stare deeply into his[end if] eyes and open your mouth as you stretch your mouth as wide open as possible in order to get your lips around the head. As you move your face down the first half of the monster, you [if the bimbo of the player < 10]shiver with shame as you feel [his of shopkeeper] sex organ expand to fill your entire mouth.[otherwise]feel your own arousal build as your mouth fills with [manly-penis].[end if][line break]The next part of the member is a challenge, you have to force the head right to the back of your throat which takes some work, you have to move your head backwards and forwards a few times which causes you to make a lewd gagging sound. You can tell that the shopkeeper is greatly enjoying [himself of shopkeeper] by [if the bimbo of the player > 6]the look in [his of shopkeeper] eyes and [end if]the moans [he of shopkeeper] has started to make. ";
 		if the throatskill of the player is 1 or a random number between 0 and 1 < the number of lubricants covering face or the oral sex addiction of the player > a random number between 0 and 10:
 			say "[if the throatskill of the player is 1]Using your newly obtained deepthroating techniques[otherwise if there is a lubricant covering face]With the help of the slippery lubricant coating your mouth and throat[otherwise]Licking your lips nervously[end if], you try to open your throat and accept [his of shopkeeper] length inside it. [if the oral sex addiction of the player < 5]It takes several attempts to mentally steel yourself and allow your throat to relax, but you eventually manage to swallow the entirety of [his of shopkeeper] [manly-penis].[otherwise]You blank out your mind and find it surprisingly easy to relax your throat muscles. You take [his of shopkeeper] entire [manly-penis] and allow your throat to pulse around it by repeatedly making a swallowing motion.[end if][line break]Before you can react, whilst [his of shopkeeper] [manly-penis] is deep in your throat, [he of shopkeeper] starts to climax. [if the semen taste addiction of the player > 9]Without thinking you stay still and let [him of shopkeeper] ejaculate directly into your belly. After [he of shopkeeper] finishes filling your stomach with [his of shopkeeper] seed, [he of shopkeeper] slowly deflates, and eventually pulls [his of shopkeeper] entire length from your throat and mouth.[otherwise]you pull yourself back as fast as possible, but not before you are forced to swallow several strings of [his of shopkeeper] salty gift.[end if][line break][speech style of shopkeeper]'Unf, that was incredible. All right, you definitely deserve a discount for that performance. I'm going to give you 4 credits off everything in the store, for a while at least.'[roman type][line break]";
@@ -1528,7 +1542,7 @@ To set up store:
 			clean D;
 			repair D;
 			now D is in Dungeon41;
-			now D is store;
+			now the owner of D is shopkeeper;
 			if the player is in Dungeon41, say "[BigNameDesc of shopkeeper] adds a [D] to the display.";
 		increase diaper-stored by 1;
 	if pregnancy fetish is 1 and the number of maternity dress in Dungeon41 is 0:
@@ -1537,7 +1551,7 @@ To set up store:
 			increase shop-things by 1;
 			clean D;
 			now D is in Dungeon41;
-			now D is store;
+			now the owner of D is shopkeeper;
 			if the player is in Dungeon41, say "[BigNameDesc of shopkeeper] adds a [D] to the display.";
 	let ST be 8 - shop-things;
 	if ST > 0:
@@ -1552,22 +1566,22 @@ To set up store:
 			if yesPlease is 1, add C to LST2;
 		repeat with C running through LST2:
 			now C is in Dungeon41;
-			now C is store;
+			now the owner of C is shopkeeper;
 			if the player is in Dungeon41, say "[BigNameDesc of shopkeeper] adds a [C] to the display.";
 			increase shop-things by 1;
 	if the number of store trousers in Dungeon41 is 0: [We want at least one pair of trousers]
 		let T be a random off-stage shop-eligible trousers;
 		unless T is nothing:
 			now T is in Dungeon41;
-			now T is store;
+			now the owner of T is shopkeeper;
 			if the player is in Dungeon41, say "[BigNameDesc of shopkeeper] adds a [T] to the display.";
 	if designer handbag of holding is off-stage:
 		now designer handbag of holding is in Dungeon41;
-		now designer handbag of holding is store;
+		now the owner of designer handbag of holding is shopkeeper;
 		if the player is in Dungeon41, say "[BigNameDesc of shopkeeper] adds a [designer handbag of holding] to the display.";
 	if catbell is off-stage and doom counter > 0 and doomed < 5:
 		now catbell is in Dungeon41;
-		now catbell is store;
+		now the owner of catbell is shopkeeper;
 		if the player is in Dungeon41, say "[BigNameDesc of shopkeeper] adds a [catbell] to the display.";
 	repeat with C running through store things:
 		set up shop state of C.
@@ -1619,16 +1633,11 @@ To compute shopcycling:
 		wait 200 ms before continuing.
 
 To check stealing of (C - a thing):
-	if C is store and Dungeon41 is guarded:
+	if the owner of C is shopkeeper and the location of the player is guarded:
 		if shopkeeper is interested:
 			say "[speech style of shopkeeper]'Oi! Don't use my stuff without paying! GUARDS!'[roman type][line break]Looks like you're in trouble with the law!";
 			anger shopkeeper;
-			increase the stolen-aware of shopkeeper by 1;
-		compute stealing of C.
-
-To compute stealing of (C - a thing):
-	if C is not stolen:
-		now C is stolen;
 		progress quest of stealing-quest.
+
 
 Shopkeeper ends here.

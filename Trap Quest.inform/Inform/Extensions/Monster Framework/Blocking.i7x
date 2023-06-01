@@ -32,6 +32,10 @@ Definition: a monster is combative-or-blocking:
 	decide no.
 
 To decide which number is the movement block difficulty of (M - a monster):
+	if smokeMoving is true, decide on the difficulty of M / 2;
+	otherwise decide on the default movement block difficulty of M.
+
+To decide which number is the default movement block difficulty of (M - a monster):
 	decide on the difficulty of M * 2.
 
 Definition: a monster (called M) is successfully blocking: [Do they succeed in a roll to stop the player moving]

@@ -11,7 +11,8 @@ Definition: an undies is same-type:
 
 To set up magic attribute of (C - an undies):
 	let R be a random number between 1 and 8;
-	if R is 2, now C is elasticity.
+	if R is 2, now C is elasticity;
+	set up rare magic attribute of C.
 
 To say UniqueClothingDesc of (U - an undies):
 	say "A [selfexaminetitle of U]. ".
@@ -31,7 +32,7 @@ Report wearing undies:
 			SpecialPenisDown 1; [#LXorDD]
 
 To decide which object is the unique-upgrade-target of (C - an undies):
-	if diaper quest is 1 and there is a worn demonic wearthing and tongue-panties is off-stage, decide on tongue-panties;
+	if diaper quest is 0 and there is a worn demonic wearthing and tongue-panties is off-stage, decide on tongue-panties;
 	decide on nothing.
 
 This is the remove inappropriate undies rule:
@@ -42,9 +43,9 @@ This is the remove inappropriate undies rule:
 	now pink briefs is in Holding Pen;
 	now red briefs is in Holding Pen;
 	now black briefs is in Holding Pen;
+	now black room briefs is in Holding Pen;
 	now green-briefs is in Holding Pen;
 	now grey-briefs is in Holding Pen;
-	now pale blue-briefs is in Holding Pen;
 	now grey-hi-cut briefs is in Holding Pen;
 	now blue-polka-dot briefs is in Holding Pen;
 	now red-anal-briefs is in Holding Pen;

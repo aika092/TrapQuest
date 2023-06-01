@@ -175,12 +175,12 @@ To IdentifiablePosterReaction of (M - a supporter):
 	if M is unfriendly:
 		say BecomesAggressive of M;
 		interest M;
-	humiliate the lewdness of a random poster in the location of the player * 2.
+	humiliate (the lewdness of a random poster in the location of the player + HUMILIATION-BASE) * 2.
 
 To UnidentifiablePosterReaction of (M - a supporter) with (P - a poster):
 	say UnidentifiablePosterReactionFlav of M with P;
 	say "You turn bright red but don't say a word.";
-	humiliate the lewdness of a random poster in the location of the player.
+	humiliate (the lewdness of a random poster in the location of the player + HUMILIATION-BASE) / 2.
 
 Definition: a supporter is eager to get angry: decide no. [Does the NPC punish resistance?]
 
@@ -663,11 +663,11 @@ To say ClimaxFlav of (M - a supporter) in (F - a fuckhole):
 To compute the flying player taunting of (M - a supporter):
 	if a random number from 1 to 6 is 1:
 		say "[BigNameDesc of M] grins.[line break][speech style of M]'[one of]Haha, what a loser! How did you manage to get stuck up there?'[or]Gosh, you sure are brave, I sure wouldn't be caught dead stuck on the ceiling like an oversized balloon!'[or]Get down here already you dumb bimbo! Are you really stuck?! Haha!'[in random order][roman type][line break][if the humiliation of the player < 17500]You [one of]wince[or]shudder[or]cringe[purely at random] with shame.";
-		humiliate 20.
+		slightHumiliate.
 
 To say LandingTaunt of (M - a supporter):
 	say "[BigNameDesc of M] smirks.[line break][speech style of M]'[one of]Like a lead balloon[or]Oof, that looked like it hurt[in random order]!'[roman type][line break]";
-	humiliate 50.
+	moderateHumiliate.
 
 [###PREGNANCY STUFF###]
 

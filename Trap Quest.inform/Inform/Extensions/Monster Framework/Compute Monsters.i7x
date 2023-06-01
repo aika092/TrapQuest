@@ -18,12 +18,15 @@ To compute monsters:
 			if M is not interested and M is not in the location of the player, remove M from L;
 	sort L in random order;
 	repeat with M running through L:
-		if debugmode > 1, say "Computing [M]...";
+		if lagdebug is true:
+			say "Computing [M]...";
+			wait 200 ms before continuing;
 		increase the time-alive of M by seconds;
 		if M is bride-consort and M is defeated and there is a worn cursed headgear:
 			now the ceremony of betrothal-quest is true;
 			progress quest of betrothal-quest;
 		unless M is seeked or (M is stalled and (M is nearby or M is in the location of the player)): [Monsters that already got a chance to chase the player get no further action. If the player is moving slowly so monsters get a double move, monsters in the location of the player or nearby who aren't already chasing the player lose their first action.]
+			now M is recently-unknown; [reset whether we think this NPC is friendly or not]
 			if M is moved, compute turn 3 of M; [Monsters that already moved don't move again, but get a perception check.]
 			otherwise compute turn 1 of M; [This is a full monster turn.]
 	now shocked-monsters is 0;
@@ -37,12 +40,20 @@ To compute turn (N - a number) of (M - a monster):
 		[If N is 1, this is a full action
 		if N is 2, this is a passive action (no attacking or perception) because the player moved and we're just making NPCs move at the same time
 		if N is 3, this is a stationary passive action (only perception) because it already moved (probably with the player with N = 2 above)]
-		if the wrangle-bonus of M > 0 and M is wrangling a body part: [NPC is currently wrangling, and it can end automatically]
-			decrease the wrangle-bonus of M by 1;
-			if the wrangle-bonus of M is 0:
+		if M is wrangling a body part: [NPC is currently wrangling, and it can end automatically]
+			if M is not in the location of the player:
+				dislodge M;
+			otherwise if the player is prone and M is not wrangling-while-kneeling:
 				repeat with BP running through body parts wrangled by M:
-					say "[BigNameDesc of M][']s hold on your [BP] [one of]loosens[or]momentarily slips[or]briefly weakens[at random], and you are able to [one of]wriggle[or]pull[or]ease[or]slide[at random] free!";
+					say "[BigNameDesc of M] lets go of your [BP].";
 					now M is not wrangling BP;
+				now the wrangle-bonus of M is 0;
+			otherwise if the wrangle-bonus of M > 0:
+				decrease the wrangle-bonus of M by 1;
+				if the wrangle-bonus of M is 0:
+					repeat with BP running through body parts wrangled by M:
+						say "[BigNameDesc of M][']s hold on your [BP] [one of]loosens[or]momentarily slips[or]briefly weakens[at random], and you are able to [one of]wriggle[or]pull[or]ease[or]slide[at random] free!";
+						now M is not wrangling BP;
 		now M is not trip-warned;
 		if M is seduced: [If the NPC got to its compute turn function, that means that the seduction failed (the NPC wasn't stalled) and we can exit the seduction minigame.]
 			if M is interested, now M is seduction-refused;
@@ -101,6 +112,9 @@ To compute action (N - a number) of (M - a monster):
 				deinterest M;
 				now the scared of M is 0;
 	otherwise if M is interested:
+		if lagdebug is true:
+			say "[M] is interested.";
+			wait 200 ms before continuing;
 		if M is in the location of the player or M is grabbing the player or M is penetrating a body part:
 			if N is 1:
 				if M is penetrating a body part or M is grabbing the player or M is attack-threatening:
@@ -111,9 +125,6 @@ To compute action (N - a number) of (M - a monster):
 						compute friendly boredom of M; [Potentially make them bored]
 						if M is not interested and playerRegion is not school and M is threatening and M is regional:
 							progress quest of nice-quest;
-						[otherwise if M is interested and M is undefeated:
-							check disapproval of M;
-							check aggression change of M;] [Is this NPC aggressive this turn, when they weren't at the start of the turn?]
 					if M is interested, compute interaction of M; [If still interested, check if there's anything for them to do]
 		otherwise:
 			if M is unfriendly:
@@ -131,6 +142,9 @@ To compute action (N - a number) of (M - a monster):
 	otherwise if M is guarding:
 		compute guarding action of M;
 	otherwise if M is not distracted and M is not caged and (M is undefeated or M is not motionless-when-defeated):
+		if lagdebug is true:
+			say "[M] is NOT interested.";
+			wait 200 ms before continuing;
 		if (the boredom of M is 0 and M is unleashed and M is location-attracted) or M is messy, check seeking N of M;
 		otherwise check motion of M;
 	if M is submission-assisting:[TODO: handle problem where assisters randomly lose interest]

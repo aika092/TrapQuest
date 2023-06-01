@@ -3,7 +3,7 @@ Modification Machine by Furniture begins here.
 modification machine is furniture. The printed name of modification machine is "[TQlink of item described]modification machine[TQxlink of item described][shortcut-desc][verb-desc of item described]". modification machine is in Hotel02. Understand "chair" as modification machine. modification machine has a number called charge. The text-shortcut of modification machine is "mod".
 
 To say ExamineDesc of (C - modification machine):
-	say "What looks like a huge torture contraption, with several [if diaper quest is 1]nozzles[otherwise]phallic shaped insertables and shockers[end if] and spanking implements attached by metal arms to a gynaecologist's chair. Knowing this game, there's probably a chance of something good happening, and a bigger chance of something [if the bimbo of the player < 15]not so good[otherwise]FUN[end if] happening.".
+	say "What looks like a huge torture contraption, with several [if diaper quest is 1]nozzles[otherwise]phallic shaped insertables and shockers[end if] and spanking implements attached by metal arms to a gynaecologist's chair. Knowing this game, there's probably a chance of something good happening, and a bigger chance of something [if the bimbo of the player < 15]not so good[otherwise]FUN[end if] happening. [if the charge of C <= 0]A green light is on, indicating that it is fully charged[otherwise if artificial enhancements fetish is 1]A red light is on, [bold type]indicating that it will give you a new module if able[otherwise if tubesuit is worn]A red light is on, indicating that it is still charging and [bold type]it will automatically take a hefty payment from you to remove the tubesuit[otherwise]A red light is on, indicating that it is still charging[end if].[roman type][line break]".
 
 To decide which figure-name is the examine-image of (C - modification machine):
 	decide on figure of modification machine.
@@ -27,7 +27,18 @@ To compute furniture resting on (F - modification machine):
 	say "You lie down in the chair, and [one of]as you expected, [or]once again [stopping]solid metal restraints flip over from underneath the arms and legs of the chair to secure your [unless the player is wrist bound]wrists and [end if]ankles.";
 	if the charge of the noun > 0:
 		allocate 6 seconds;
-		if (artificial enhancements fetish is 0 or M is nothing):
+		if tubesuit is worn:
+			let X be 8;
+			let jewellery be list of held plentiful currently perceivable accessories;
+			truncate jewellery to 8 entries;
+			let chosen jewellery be jewellery priced at X;
+			say "[second custom style]'ERROR: Low power. The modification machine must recharge. ";
+			if the number of entries in chosen jewellery is 0:
+				say "User does not have enough jewellery to pay for early release.'[roman type][line break]A tinny female voice announces.";
+			otherwise:
+				say "Acquiring automatic EARLY RELEASE FEE...'[roman type][line break]A tinny female voice announces, as robotic hands come down and claim your [chosen jewellery], removing them from your person and retreating into the ceiling with them.";
+				compute tubesuit removal;
+		otherwise if (artificial enhancements fetish is 0 or M is nothing):
 			say "[second custom style]'ERROR: Low power. The modification machine must recharge.'[roman type][line break]A tinny female voice announces.";
 		otherwise:
 			say "A recording begins to play a tinny female voice as you settle into the chair.[line break][second custom style]'Hello TESTER [NameBimbo]! You have been selected to take part in a fantastic new trial to examine the engineering feasibility of an exciting new product line by R&D! Please remain perfectly still...'[roman type][line break]";
@@ -36,14 +47,38 @@ To compute furniture resting on (F - modification machine):
 			now M is a random off-stage fetish appropriate module;
 		say "The restraints flip open, allowing you to leave. ";
 		now F is not grabbing the player;
-		try standing;
+		if the player is prone, try standing;
 	otherwise:
 		now F is grabbing the player;
 		now the stance of the player is 1;
 		let R be a random number between 1 and 10;
 		if piercing-fetish is 1 and R < 6, now R is 1;
 		let P be a random eligible piercing;
-		if the player is sexed male and (the size of penis <= min penis size or the real size of penis <= min penis size) and tg fetish >= 1 and a random number between 1 and 3 > 1:
+		let tubesuit-wearable be false;
+		if tubesuit is fetish appropriate and tubesuit is off-stage:
+			now tubesuit-wearable is true;
+			repeat with C running through worn clothing:
+				if tubesuit-wearable is true and (C is nudism-disabling or C is sex toy): [computation efficiency]
+					if C is usually unautoremovable, now tubesuit-wearable is false;
+		if tubesuit-wearable is true or tubesuit is worn:
+			if tubesuit is worn:
+				say "[second custom style]'Thank you for your valuable data, TESTER. We hope you enjoyed your free tubesuit trial.'[roman type][line break]A tinny female voice announces.";
+				compute tubesuit removal;
+			otherwise:
+				say "[second custom style]'You have been recognised as FREE TRIAL TESTER. Please remain still while we install your brand new AUTO-RESPIRATOR COMBAT POWERSUIT.'[roman type][line break]A tinny female voice announces.";
+				repeat with C running through worn clothing:
+					if C is nudism-disabling or C is sex toy:
+						now C is in the location of the player;
+						dislodge C;
+						say "[BigNameDesc of F] removes your [C]!";
+				say "[second custom style]'Please wait, you are being hydrated.'[roman type][line break]The tinny female voice says emotionlessly. You yelp as a feeding tube is forced down your throat, and some sort of thick, nutrient-rich liquid is squirted down into your stomach, until you essentially feel very full of both food and drink. Unnecessarily full, really.";
+				while the player is not overly full:
+					StomachUp 1;
+					StomachFoodUp 1;
+				summon white-giant-diaper uncursed;
+				say "Next, a [white-giant-diaper] is pulled up your legs, and over your crotch.[line break][variable custom style][if the diaper addiction of the player < 8]Err, hey![otherwise]Neat.[end if][roman type][line break]Next, some kind of adhesive sealant is sprayed all over your skin. And then finally, a large latex purple onesie that streches all the way to your wrists and ankles is efficiently pulled up over your body, where is sticks in place, seemingly completely unremovable. You see that there are two breathing tubes leading from the rear of the butt section all the way to some sort of futuristic respirator. Before you can ask any questions, this respirator is sealed to your face, covering your nose and mouth. The emergent effect is very clear - your new purple [']powersuit['] is completely sealed to your skin and not even slightly breathable, so the only air you're breathing is whatever air is being kept within the padding of your rather thick diaper.[paragraph break]The tinny voice returns to explain in more detail.[line break][second custom style]'The all new NINTENDOLLS AUTO-RESPIRATOR COMBAT POWERSUIT 3000 provides the best combination of adventurer strength enhancement, protection and pragmatism available on the market. The neo-latex material is completely indestrucible and impenetrable. The in-built nanites not only strengthen the fabric, but also provide extra power to your muscles as you move and strike. Furthermore, the wearer is protected from airborne hazards thanks to the connected auto-respirator, which draws from an endless supply oxygen generated from the state-of-the-air internal OXY-GEN D1-PANTS located around your nether regions. This oxygen production device doubles up as a mobile waste collection garment, to remove any need for urgent powersuit removal. Adventurers only need remove the suit after their OXY-GEN D1-PANTS become saturated, which thanks to their 7000ml absorbance capacity, should only be once every 24 hours.[paragraph break]'PLEASE NOTE, in order to avoid damage to the FREE TRIAL UNIT, your respirator has been sealed to your face. Should you become too thirsty or hungry, please return here to end your free trial. PLEASE NOTE: returning to this machine to have the tubesuit removed before the charge cycle has completed will result in an EARLY REMOVAL FEE of 8 BAB BUCKS['] WORTH OF JEWELLERY. This machine will now begin recharging.'[roman type][line break]";
+				summon tubesuit uncursed;
+		otherwise if the player is sexed male and (the size of penis <= min penis size or the real size of penis <= min penis size) and tg fetish >= 1 and a random number between 1 and 3 > 1:
 			say "[bold type]A robotic contraption you hadn't noticed with a large sucker on the end shoots down over your crotch![roman type] You can't see what's happening but feel your insides behind your crotch twisting and turning and rearranging themselves[if the player is possessing a penis], and then you shriek in surprise and horror as you realise you can't feel your [player-penis][end if]! The sucker pulls back allowing you to realise that a brand new woman's [variable custom style][vagina][roman type] has taken its place. ";
 			SexChange the player;
 		otherwise if diaper quest is 0 and R <= 2 and P is actually summonable:
@@ -77,13 +112,18 @@ To compute furniture resting on (F - modification machine):
 		otherwise:
 			compute F widening asshole;
 		if F is grabbing the player and delayed fainting is 0:
-			say "The restraints flip open, allowing you to leave. ";
-			now F is not grabbing the player;
-			try standing;
 			allocate 6 seconds;
+			say "The restraints flip open, allowing you to leave. ";
+			dislodge F;
+			if the player is prone, try standing;
 		now the charge of F is 300;
 		now F is not grabbing the player;
-		if artificial enhancements fetish is 1 and M is a thing, say "A recording begins to play a tinny female voice as you settle into the chair.[line break][second custom style]'Hello TESTER [NameBimbo]! [one of]You have been selected to take part in a fantastic new trial to examine the engineering feasibility of an exciting new product line by R&D[or]We have more products from the same [']module['] line ready for simultaneous testing[stopping]! If you wish to take part, please lie on the chair again within the next 5 minutes.'[roman type][line break]";
+		if artificial enhancements fetish is 1 and M is a thing, say "A recording begins to play a tinny female voice as you settle into the chair.[line break][second custom style]'Hello TESTER [NameBimbo]! [one of]You have been selected to take part in a fantastic new trial to examine the engineering feasibility of an exciting new product line by R&D[or]We have more products from the same [']module['] line ready for simultaneous testing[stopping]! If you wish to take part, please lie on the chair again within the next 5 minutes.'[roman type][line break]".
+
+To compute tubesuit removal:
+	say "The robotic arms descend and begin the careful work of applying some sort of spray that smells like varnish to the tubesuit. After it has done this, it is able to peel it away from your skin and remove it completely.";
+	dislodge tubesuit;
+	now tubesuit is in Holding Pen.
 
 To compute (M - a modification machine) removing all protection from (F - a fuckhole):
 	let givenUp be 0;

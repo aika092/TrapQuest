@@ -953,50 +953,53 @@ To BustDeflate (X - a number):
 		if the air volume of breasts > 0, decrease the air volume of breasts by 1.
 
 To BustImplantsUp (X - a number):
-	if the player is a flatchested trap, now X is 0;
-	let attempt-done be 0;
-	while X > 0:
-		decrease X by 1;
-		if the player is not top heavy:
-			increase the silicone volume of breasts by 1;
-		otherwise if the air volume of breasts > 0:
-			decrease the air volume of breasts by 1;
-			increase the silicone volume of breasts by 1;
-		otherwise if silicone milk clash is 1 and the milk volume of breasts > the flesh volume of breasts and attempt-done is 0:
-			now attempt-done is 1;
-			say "Your new [if the silicone volume of breasts > 0]and improved [end if]implants put such internal pressure on your [BreastDesc] that they instantly lactate!";
-			trigger lactation;
-			increase the silicone volume of breasts by 1;
-		otherwise if attempt-done < 2:
-			say "Your [BreastDesc] are just too big, the skin won't stretch any further! Your new [if the silicone volume of breasts > 0]and improved [end if]implants shrink under the pressure.";
-			now attempt-done is 2;
-		if X is 0:
-			let C be a random worn overdress;
-			if the class of the player is schoolgirl and the silicone volume of breasts > 3 and C is clothing and C is not daddy issues dress:
-				repeat with S running through worn skirts:
-					WardrobeVanish S;
-				transform C into daddy issues dress;
-			otherwise if C is cheerleader outfit:
-				let L be a random off-stage rubber cheerleader outfit;
-				if blue-rubber-cheerleader-outfit is off-stage, now L is blue-rubber-cheerleader-outfit;
-				if C is a thing and L is a thing, transform C into L;
-			otherwise if C is a thing and the substituted form of player-class exactly matches the text "magical girl": [has to be exactly this class and not any cross-class]
-				transform C into anime superheroine top;
-			otherwise if playdude bunny waitress ears is worn and the class of the player is "bunny waitress": [no cross-class yet]
-				transform playdude bunny waitress ears into rubber-bunny-waitress-ears;
-				class summon rubber-bunny-waitress-outfit; [will be blocked if a class-relevant outfit is already worn]
-				let M be a random worn overdress;
-				if rubber-bunny-waitress-outfit is not held and M is a removable overdress, transform M into rubber-bunny-waitress-outfit;
-			otherwise if silver-tiara is worn and rubber-royal-dress is off-stage and rubber-royal-dress is unclash summonable:
-				let O be a random worn overdress;
-				if O is overdress:
-					transform O into rubber-royal-dress;
-				otherwise:
-					unclash class summon rubber-royal-dress;
-	compute bra strain;
-	update appearance level;
-	progress quest of bust-up-quest;
-	if the player is overbusted, say "[one of][bold type]BustImplants function has increased breasts to larger than max size. Please report bug with as much information as possible about the situation.[roman type][line break][or][stopping]";
+	if artificial enhancements fetish is 0:
+		BustUp X;
+	otherwise:
+		if the player is a flatchested trap, now X is 0;
+		let attempt-done be 0;
+		while X > 0:
+			decrease X by 1;
+			if the player is not top heavy:
+				increase the silicone volume of breasts by 1;
+			otherwise if the air volume of breasts > 0:
+				decrease the air volume of breasts by 1;
+				increase the silicone volume of breasts by 1;
+			otherwise if silicone milk clash is 1 and the milk volume of breasts > the flesh volume of breasts and attempt-done is 0:
+				now attempt-done is 1;
+				say "Your new [if the silicone volume of breasts > 0]and improved [end if]implants put such internal pressure on your [BreastDesc] that they instantly lactate!";
+				trigger lactation;
+				increase the silicone volume of breasts by 1;
+			otherwise if attempt-done < 2:
+				say "Your [BreastDesc] are just too big, the skin won't stretch any further! Your new [if the silicone volume of breasts > 0]and improved [end if]implants shrink under the pressure.";
+				now attempt-done is 2;
+			if X is 0:
+				let C be a random worn overdress;
+				if the class of the player is schoolgirl and the silicone volume of breasts > 3 and C is clothing and C is not daddy issues dress:
+					repeat with S running through worn skirts:
+						WardrobeVanish S;
+					transform C into daddy issues dress;
+				otherwise if C is cheerleader outfit:
+					let L be a random off-stage rubber cheerleader outfit;
+					if blue-rubber-cheerleader-outfit is off-stage, now L is blue-rubber-cheerleader-outfit;
+					if C is a thing and L is a thing, transform C into L;
+				otherwise if C is a thing and the substituted form of player-class exactly matches the text "magical girl": [has to be exactly this class and not any cross-class]
+					transform C into anime superheroine top;
+				otherwise if playdude bunny waitress ears is worn and the class of the player is "bunny waitress": [no cross-class yet]
+					transform playdude bunny waitress ears into rubber-bunny-waitress-ears;
+					class summon rubber-bunny-waitress-outfit; [will be blocked if a class-relevant outfit is already worn]
+					let M be a random worn overdress;
+					if rubber-bunny-waitress-outfit is not held and M is a removable overdress, transform M into rubber-bunny-waitress-outfit;
+				otherwise if silver-tiara is worn and rubber-royal-dress is off-stage and rubber-royal-dress is unclash summonable:
+					let O be a random worn overdress;
+					if O is overdress:
+						transform O into rubber-royal-dress;
+					otherwise:
+						unclash class summon rubber-royal-dress;
+		compute bra strain;
+		update appearance level;
+		progress quest of bust-up-quest;
+		if the player is overbusted, say "[one of][bold type]BustImplants function has increased breasts to larger than max size. Please report bug with as much information as possible about the situation.[roman type][line break][or][stopping]";
 
 To BustImplantsDown (X - a number):
 	while X > 0:

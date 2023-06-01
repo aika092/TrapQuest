@@ -561,7 +561,7 @@ To say (M - vampiress) sex reaction:
 		say "[speech style of M][one of]'As long as you're obedient, I'll do what I can to make sure that you enjoy yourself.'[or]'Don't even bother trying to fight... You won't get anywhere.'[in random order]";
 	otherwise:
 		say "[variable custom style]";
-		if the player is gagged:
+		if the player is not able to speak:
 			say "[one of][if the relevant sex addiction of M < 8]It's even worse because I can't say no! ...But now that I think about it, why would I want to do that? Wait, what?![otherwise if the relevant sex addiction of M < 12]I can't say no, but[line break][second custom style]why would I want to anyway?[roman type][line break][otherwise]It's so hot when I can't say no![end if][or][if the relevant sex addiction of M < 8]It's even more humiliating because I can't say no... But I guess it doesn't matter.[otherwise if the relevant sex addiction of M < 12][big he of M][']d listen to me if I was able to speak. Right? Because then, I could[line break][second custom style]beg [him of M] to keep going...[roman type][line break][otherwise]I love it when I can't say no![end if][or][if the relevant sex addiction of M < 8]I can't even call for... Wait, what was I thinking?[otherwise if the relevant sex addiction of M < 12]'MMMPH! MMhhmmMMPH!'[otherwise]It's even better because I can't say no![end if][at random]";
 		otherwise if the player is gendered male:
 			if the relevant sex addiction of M < 8:
@@ -992,6 +992,8 @@ To compute tax return of (M - vampiress):
 		say "[BigNameDesc of M] clicks [his of M] fingers and you hear the sound of glass grating against stone.";
 		if T is a thing:
 			say "[speech style of M]'Fine, my [ShortDesc of T] is yours. It is in the [location of P]. You can't miss it. But mark my words, if I catch you in my house again, you WILL become my next meal.'[roman type][line break]";
+			now P is open;
+			now the paid of P is 0;
 		otherwise:
 			say "[speech style of M]'Weird, I opened a pedestal with nothing in it. Perhaps consider reporting this as a game bug.'[roman type][line break]";
 	otherwise:
@@ -1282,15 +1284,11 @@ To compute successful dominance of (M - vampiress):
 
 Part 4 - Conversation
 
-To IdentifiablePosterReaction of (M - vampiress):
-	say "[BigNameDesc of M] looks at you, smirks, then looks back to the poster.[line break][speech style of M]'... I believe they caught your good side. [if the class of the player is vampire spawn]I wouldn't expect any less from one of my fledglings.'[roman type][line break]";
-	say "You turn bright red with shame.";
-	humiliate the lewdness of a random poster in the location of the player * 2.
+To say IdentifiablePosterReactionFlav of (M - vampiress):
+	say "[BigNameDesc of M] looks at you, smirks, then looks back to the poster.[line break][speech style of M]'... I believe they caught your good side. [if the class of the player is vampire spawn]I wouldn't expect any less from one of my fledglings.'[roman type][line break]".
 
-To UnidentifiablePosterReaction of (M - vampiress) with (P - a poster):
-	say "[speech style of M]'Is this what mortals call art nowadays? ...I like it.'[roman type][line break]";
-	say "You turn bright red but don't say a word.";
-	humiliate the lewdness of a random poster in the location of the player.
+To say UnidentifiablePosterReactionFlav of (M - vampiress) with (P - a poster):
+	say "[speech style of M]'Is this what mortals call art nowadays? ...I like it.'[roman type][line break]".
 
 Section 1 - Greeting
 

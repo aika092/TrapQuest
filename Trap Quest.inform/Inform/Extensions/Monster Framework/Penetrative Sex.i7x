@@ -651,7 +651,7 @@ Handles the player using the "beg" skill whilst being penetrated by a monster "M
 +!]
 To compute sexBegging of (M - a monster) in (F - a fuckhole):
 	let C be 0;
-	if the sex-length of M > 1 and a random number between 1 and the charisma of the player is 1:
+	if the sex-length of M > 1 and a random number between 1 and the charisma of the player > 0:
 		say (M) mercy sex (a random number between 1 and 7);
 	otherwise if the sex-length of M is 1:[climax is always apparent when the player is begging]
 		say sexSubmitNearingClimax of M in F;

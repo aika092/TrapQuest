@@ -573,8 +573,10 @@ To compute default seduction choice of (M - a monster):
 		set numerical response 0 to "try to escape";
 	otherwise:
 		set numerical response 0 to "stop seducing [him of M]";
+	if the player is not immobile and the seductions-performed of thighs < 2 and M is seduce-satisfiable:[If the player is upright, they can dance. If not, then they show off.]
+		if the player is upright, set next numerical response to "dance for [him of M]";
+		otherwise set next numerical response to "show yourself off to [him of M]";
 	if the player is upright:
-		if the player is not immobile and the seductions-performed of thighs < 2 and M is seduce-satisfiable, set next numerical response to "dance for [him of M]";
 		if face is not actually occupied and the seductions-performed of face is 0 and M is seduce-satisfiable:
 			if succsucc is 1, set next numerical response to "try to coax out [his of M] soul with a kiss";
 			set next numerical response to "[if succsucc is 1]just [end if]kiss [him of M]";
@@ -645,6 +647,13 @@ To compute default seduction choice of (M - a monster):
 	otherwise if MCQ matches the text "dance":
 		if turns-spent-seducing is 0, compute FirstTurnSeduceDanceAnnounce of M;
 		compute SeductionDance of M;
+	otherwise if MCQ matches the text "show":
+		if turns-spent-seducing is 0, compute FirstTurnSeduceShowoffAnnounce of M;
+		compute SeductionShowoff of M;
+		if the blue-balls of M >= the blue-balls-limit of M and a random number between 1 and 3 > 1:
+			now the selection-frustration of M is 0;
+			if the player is possessing a penis and penis is an actual target, now chosen-orifice is penis;
+			if the player is possessing a vagina and vagina is an actual target, now chosen-orifice is vagina;[if the monster can target the player's vagina, then it will prefer that.]
 	otherwise if MCQ matches the text "knees":
 		if turns-spent-seducing is 0, compute FirstTurnSeduceSubmitAnnounce of M;
 		if the class of the player is princess and debugmode is 0 and the delicateness of the player < 9 and the bimbo of the player < 10:
@@ -741,7 +750,7 @@ To compute default seduction choice of (M - a monster):
 				if M is unfriendly:
 					follow the sex attempt rules;
 				otherwise:
-					while M is interested and M is not penetrating a body part and the blue-balls of M >= the blue-balls-limit of M and M is seduced and M is friendly:
+					while M is interested and M is not penetrating a body part and the blue-balls of M >= the blue-balls-limit of M and M is seduced and M is friendly and the number of actual target body parts > 0:
 						follow the sex attempt rules;
 			otherwise:
 				anger M;
@@ -794,6 +803,30 @@ To say BlueBallsImpatientFlav of (M - a monster):
 			now auto is 1;
 			try kneeling;
 			now auto is 0.
+
+To compute FirstTurnSeduceShowoffAnnounce of (M - a monster):
+	compute FirstTurnSeduceDanceAnnounce of M.
+
+To compute SeductionShowoff of (M - a monster):
+	if a random number between 1 and the size of penis > a random number between 1 and 10 and M is willing to charm snakes and penis is exposed:
+		increase the seductions-performed of penis by 1;
+		increase the seductions-performed of thighs by 1;
+		say "You lean back and shake your [if penis is penis-erect and the player is a bit horny]hard, pre-cum drooling[otherwise if penis is penis-erect]rock-hard[otherwise]soft[end if] [ShortDesc of penis] in [NameDesc of M]'s direction. [strongHumiliateReflect]";
+		increase the blue-balls of M by a random number between 0 and (the square root of the gropability of penis);
+		increase the gropability of penis by 150;
+	otherwise if a random number between 1 and the vaginal sex addiction of the player > a random number between 1 and 10 and M is willing to do vaginal and vagina is exposed:
+		increase the seductions-performed of vagina by 1;
+		increase the seductions-performed of thighs by 1;
+		say "You lean back, spreading your legs so [NameDesc of M] can get a good look at your [if the semen volume of vagina > 0]cum-drooling[otherwise if the openness of vagina > 5]gaping[otherwise if the vaginalvirgin of the player is 1]virgin[otherwise if the player is a bit horny]wet[otherwise]tight[end if] [vagina]. [strongHumiliateReflect]";
+		increase the blue-balls of M by a random number between 0 and (the square root of the gropability of vagina);
+		increase the gropability of vagina by 150;
+	otherwise:
+		increase the seductions-performed of breasts by 1;
+		say "You lean back and shake your [ShortDesc of breasts] while [NameDesc of M] watches. [moderateHumiliateReflect]";
+		increase the blue-balls of M by a random number between 0 and (the square root of the gropability of breasts);
+		increase the gropability of breasts by 150;
+	if a random number between 1 and (the sex-length of M * 2) > a random number between 1 and 3, compute WeakSexProgress of M;
+	otherwise compute WeakSexFalter of M.
 
 To compute FirstTurnSeduceDanceAnnounce of (M - a monster):
 	if the player is able to speak:

@@ -37,9 +37,15 @@ Mansion31 is a creaky haunted room. The printed name of Mansion31 is "Quiet Room
 Mansion32 is a creaky mandatory haunted room. The printed name of Mansion32 is "Mansion Portal Room". "This room seems rather out of place, with a very futuristic-looking warp portal on the north wall.". The shape of Mansion32 is L4/0-0-0-1-1-1.
 Mansion33 is a creaky haunted room. The printed name of Mansion33 is "Old Library". "A large dusty room with high bookshelves lining the walls. It feels like nobody's been in here in years.". The shape of Mansion33 is L4/0-0-1-0-0-0.
 Mansion34 is a creaky haunted room. The printed name of Mansion34 is "Occult Room". "A small room decorated with expensive-looking purple rugs and tapestries.". The shape of Mansion34 is L4/0-0-0-1-1-1.
-Mansion35 is a haunted room. The printed name of Mansion35 is "Singed Room.". "A small room occupied with charred and burnt furniture. Something stinks.". The shape of Mansion35 is L4/0-0-1-1-0-1.
+Mansion35 is a creaky haunted room. The printed name of Mansion35 is "Singed Room.". "A small room occupied with charred and burnt furniture. Something stinks.". The shape of Mansion35 is L4/0-0-1-1-0-1.
 Mansion36 is a mandatory creaky haunted room. The printed name of Mansion36 is "Statue Room". "[ExamineDesc of MansionScenery01]".
 Mansion37 is a mandatory creaky haunted room. The printed name of Mansion37 is "Sewing Room". "A surprisingly modern looking sewing machine sits in this room. Convenient!". The shape of Mansion37 is L4/0-0-1-0-0-0.
+Mansion38 is a mandatory creaky haunted room. The printed name of Mansion38 is "Statue Room". "[ExamineDesc of MansionScenery02]".
+Mansion39 is a creaky haunted room. The printed name of Mansion39 is "Furnace Room". "This room used to have a working furnace in it. Now it has a non-working furnace in it.". The shape of Mansion39 is L4/0-0-1-1-1-0.
+Mansion40 is a creaky haunted room. The printed name of Mansion40 is "Broom Closet". "Despite the doorway being the same size as the rest, this room is tiny.". The shape of Mansion40 is L4/0-0-0-0-0-1.
+Mansion41 is a creaky haunted room. The printed name of Mansion41 is "Atrium". "This vast room gives off the impression of having been used for large gatherings.".
+Mansion42 is a creaky haunted room. The printed name of Mansion42 is "Soundproofed Room". "This room has soundproofing padding on all the walls... If the doorways weren't wide open, you probably wouldn't be able to hear any sounds from in here. And nobody outside the room would be able to hear you scream.".
+Mansion43 is a no-roof haunted room. The printed name of Mansion43 is "Graveyard". "A large patch of grass contains several gravestones, seemingly marking where a family was buried. The gravestones are so old that the engraving has faded away to beyond legibility.".
 
 [Hallways]
 
@@ -54,6 +60,6 @@ Mansion10 is a haunted room. The printed name of Mansion10 is "Peeling Hallway".
 Mansion27 is a no-roof haunted room. The printed name of Mansion27 is "Back Walk". "What probably used to be a well kept garden of fun-shaped bushes and trees is now little more than a creepy bramble full of vaguely human shapes.". The shape of Mansion27 is L4/0-0-0-0-1-1.
 Mansion09 is a haunted room. The printed name of Mansion09 is "Dark Hallway". "This hallway has a way of making you feel cramped and claustrophobic.".
 
-The Mansion is a region. Mansion00, Mansion01, Mansion02, Mansion03, Mansion04, Mansion05, Mansion06, Mansion07, Mansion08, Mansion09, Mansion10, Mansion11, Mansion12, Mansion13, Mansion14, Mansion15, Mansion16, Mansion17, Mansion18, Mansion19, Mansion20, Mansion21, Mansion22, Mansion23, Mansion24, Mansion25, Mansion26, Mansion27, Mansion28, Mansion29, Mansion30, Mansion31, Mansion32, Mansion33, Mansion34, Mansion35, Mansion36 and Mansion37 are in The Mansion.
+The Mansion is a region. Mansion00, Mansion01, Mansion02, Mansion03, Mansion04, Mansion05, Mansion06, Mansion07, Mansion08, Mansion09, Mansion10, Mansion11, Mansion12, Mansion13, Mansion14, Mansion15, Mansion16, Mansion17, Mansion18, Mansion19, Mansion20, Mansion21, Mansion22, Mansion23, Mansion24, Mansion25, Mansion26, Mansion27, Mansion28, Mansion29, Mansion30, Mansion31, Mansion32, Mansion33, Mansion34, Mansion35, Mansion36, Mansion37, Mansion38, Mansion39, Mansion40, Mansion41, Mansion42 and Mansion43 are in The Mansion.
 
 Mansion ends here.

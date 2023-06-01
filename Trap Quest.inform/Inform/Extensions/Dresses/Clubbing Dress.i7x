@@ -9,7 +9,8 @@ To decide which number is the dexterity-influence of (C - a clubbing dress):
 	decide on D.
 
 To set up magic attribute of (C - a clubbing dress):
-	if a random number between 1 and 5 is 1, now C is protection.
+	if a random number between 1 and 5 is 1, now C is protection;
+	set up rare magic attribute of C.
 
 To decide which number is the initial outrage of (C - a clubbing dress):
 	decide on 2.

@@ -38,7 +38,7 @@ An all later time based rule (this is the harsh inventory rule):
 Before doing something to an in-bag thing when there is a worn bag of holding and the current action is not examining the noun and the current action is not offering the noun to a thing and the current action is not giving the noun to a thing and the current action is not BagFeeding the noun to a thing and the player is not able to manually use their hands:
 	do nothing instead.
 
-Before doing something to a portable thing when the noun is not held and the noun is not person and the noun is not feeding bowls and the current action is not examining the noun and the current action is not offering the noun to a thing and the current action is not giving the noun to a thing and the current action is not knifing the noun with a thing and the current action is not taking the noun and the noun is not plentiful accessory and the player is not able to manually use their hands:
+Before doing something to a portable thing when the noun is not held and the noun is not person and the noun is not feeding bowls and the current action is not examining the noun and the current action is not offering the noun to a thing and the current action is not giving the noun to a thing and the current action is not knifing the noun with a thing and the current action is not taking the noun and the current action is not dropping the noun and the noun is not plentiful accessory and the player is not able to manually use their hands:
 	do nothing instead.
 
 This is the living sex doll can't use hands rule:

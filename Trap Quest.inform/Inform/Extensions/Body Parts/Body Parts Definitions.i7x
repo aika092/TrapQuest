@@ -88,6 +88,7 @@ To decide which number is the insertableGirthAcceptance of (F - a body part):
 	decide on 99.
 
 To decide which number is the insertableGirthAcceptance of (F - a fuckhole):
+	if diaper quest is 0 and F is actually occupied, decide on the openness of F; [When the item is already inside, we just want to check how much the orifice is being stretched. For example, in the sex toy insertedToleranceDesc function.]
 	if there is worn elasticity clothing, decide on 99;
 	let T be 2 + diaper quest + ungape;
 	if measurement tattoo is worn, increase T by 3;
@@ -337,7 +338,7 @@ To decide which number is the at least partially lewdly exposed outrage of (B - 
 	decide on (the lewdly exposed outrage of B * 5) / 9.
 To decide which number is the outrage of (B - a body part):
 	let O be 0;
-	if B is glazed and (B is exposed or (B is breasts and breasts is showing cleavage)), increase O by (the semen coating of B * 3); [the more cum, the more noticeable it is. quickly.]
+	if B is glazed and (B is exposed or (B is breasts and breasts is showing cleavage) or (B is at least partially exposed and the at least partial concealer of it is arms)), increase O by (the semen coating of B * 4); [the more cum, the more noticeable it is. quickly. Arms can't hide cum]
 	if B is lewdly exposed:
 		now O is the lewdly exposed outrage of B + O;
 	otherwise if B is at least partially lewdly exposed:

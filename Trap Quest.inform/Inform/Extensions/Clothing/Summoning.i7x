@@ -2,11 +2,18 @@ Summoning by Clothing begins here.
 
 To summon (C - a wearthing):
 	destroy C;
-	now C is worn by the player.
+	now C is worn by the player;
+	force immediate clothing-focus redraw;
+	update appearance level.
 
 To summon (C - a clothing):
 	only destroy C; [This cleans up all potentially incorrect flags except ripped and various effects]
-	only summon C.
+	soft summon C.
+
+To soft summon (C - a clothing): [No clothing reset]
+	only summon C;
+	force immediate clothing-focus redraw;
+	update appearance level.
 
 To only summon (C - a clothing):
 	layer C correctly;
@@ -36,7 +43,9 @@ To only summon (S - a sex toy): [We can only use summon for asshole at the momen
 
 To summon (P - a sex toy) vaginally:
 	only destroy P; [This cleans up all potentially incorrect flags]
-	only summon P vaginally.
+	only summon P vaginally;
+	force immediate clothing-focus redraw;
+	update appearance level.
 
 To only summon (P - a sex toy) vaginally:
 	if the player is possessing a vagina:
@@ -100,7 +109,11 @@ Definition: an object is actually summonable: decide no.
 
 Definition: a clothing (called C) is actually summonable:
 	now summoning is 1; [suppresses wearing text outputs, let the game know this is being summoned (some stuff can be summoned but not put on)]
-	if C is actually wearable, decide yes;
-	decide no.
+	if C is actually wearable:
+		now summoning is 0;
+		decide yes;
+	otherwise:
+		now summoning is 0;
+		decide no.
 
 Summoning ends here.

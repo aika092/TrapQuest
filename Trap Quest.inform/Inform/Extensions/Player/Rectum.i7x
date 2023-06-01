@@ -126,19 +126,22 @@ Checks if a player is messy and really unhappy about it.
 +!]
 Definition: yourself is upset about mess:
 	if the player is tolerating messy facesits, decide no;
-	if there is a messy monster penetrating face, decide yes;
-	if diaper messing >= 6 and diaper-box is worn and diaper-box is diaper-dumped, decide yes;
-	if the player is tolerating messy diapers, decide no;
-	if the location of the player is nonstandard:
-		if diaper messing >= 6 and (there is a carried soiled-diaper or there is a soiled-diaper in the location of the player), decide yes;
-		if there is a messed knickers in the location of the player or there is a carried messed knickers, decide yes;
-	if turnsWithSoiledDiaper > 2 * (the square root of the grossness addiction of the player), decide yes;
-	let D be a random worn perceived messed diaper;
-	if D is diaper:
-		if the player is an adult baby, decide no;
-		if diaper quest is 1 and the class of the player is priestess, decide no;
-		decide yes;
-	if there is a worn perceived messed knickers, decide yes;
+	if the player is air breathing vulnerable:
+		if there is a messy monster penetrating face, decide yes;
+		if diaper messing >= 6 and diaper-box is worn and diaper-box is diaper-dumped, decide yes;
+		if the player is tolerating messy diapers, decide no;
+		if the location of the player is nonstandard:
+			if diaper messing >= 6 and (there is a carried soiled-diaper or there is a soiled-diaper in the location of the player), decide yes;
+			if there is a messed knickers in the location of the player or there is a carried messed knickers, decide yes;
+		if turnsWithSoiledDiaper > 2 * (the square root of the grossness addiction of the player), decide yes;
+		let D be a random worn perceived messed diaper;
+		if D is diaper:
+			if the player is an adult baby, decide no;
+			if diaper quest is 1 and the class of the player is priestess, decide no;
+			decide yes;
+		if there is a worn perceived messed knickers, decide yes;
+	otherwise:
+		if tubesuit is worn and there is worn perceived messed knickers, decide yes;
 	decide no.
 
 Definition: yourself is upset about sitting in mess:
@@ -270,7 +273,7 @@ To check real messing with reason (T - a text):
 		otherwise:
 			let hold-strength be (a random number between 11 and 13) + (a random number between -1 and 1);
 			let I be hold-strength - (rectum-incontinence of the player + suppository + desperationCount);
-			if T is not "", now I is I / 2; [reduced hold strength while something crazy is happening]
+			if T is not "", now I is I / (1 + the expulsion-weakness of the player); [reduced hold strength while something crazy is happening]
 			if debuginfo > 0 and canMessNow is 1 and rectum > 1:
 				if T is "", say "[input-style]Mess self-control check: d5+11 ([hold-strength]) - bowel incontinence ([rectum-incontinence of the player]) - laxative effects ([suppository + desperationCount]) = [I + 0][if I < 4]; minimum 4[end if] | ([rectum].5) rectum volume[roman type][line break]";
 				otherwise say "[input-style]Sudden mess self-control check: d5+11 ([hold-strength]) - bowel incontinence ([rectum-incontinence of the player]) - laxative effects ([suppository + desperationCount]) **ALL DIVIDED BY 2 BECAUSE OF PAIN / FEAR / TICKLING / SQUATTING POSITION / ETC** = [I + 0][if I < 4]; minimum 4[end if] | ([rectum].5) rectum volume[roman type][line break]";
@@ -289,7 +292,7 @@ To check real messing with reason (T - a text):
 							if the rectum-incontinence of the player + suppository + desperationCount < 5, say "You try to hold it in but you start to cramp, and the pain is too much! ";
 							otherwise say "You try to hold it in but the pressure is too much and your control over your rectal muscles is too weak! ";
 							if the raw delicateness of the player < 20 and rectum-incontinence of the player < the max-rectum-incontinence of the player:
-								say "You could push forward with sheer force of will, but it will hurt and might even affect your long term continence. Would you like to dig deep and really hold on? ";
+								say "You could push forward with sheer force of will, but it will hurt and, if you're unlucky, might even affect your long term continence. Would you like to dig deep and really hold on? ";
 								let F be temporaryYesNoBackground;
 								if the player is reverse bimbo consenting:
 									now shouldMessNow is 0;
@@ -503,8 +506,8 @@ To say diaper mess declaration of (M2 - a monster):
 To compute diaper mess reaction of (M - a person):
 	if diaper quest is 1 and M is monster:
 		say "[BigNameDesc of M] looks at you with [one of]a smug expression[or]a judging expression[or]a caring expression[or]a mildly disgusted sneer[or]a smirk[in random order].[line break][speech style of M]'[one of]Pathetic.'[or]It's not polite to do that in front of people, you disgusting baby. Or can you not control yourself?'[or][if voluntarySquatting is 1]Pooping yourself on purpose in front of me? You really are a naughty little baby aren't you?'[otherwise]If you can't control your bum-bum then you're just a stinky little baby who doesn't deserve any respect.'[end if][or]It looks like you definitely need to be kept in diapers.'[or]Good. Your potty untraining seems to be going well.'[or]I can't believe you'd do that right in front of me!'[in random order][roman type][line break]";
-		humiliate 400;
-		if voluntarySquatting is 1, humiliate 500;
+		obsceneHumiliate;
+		if voluntarySquatting is 1, obsceneHumiliate;
 		unless M is staff member:
 			let previous-friendly be 0;
 			if M is friendly, now previous-friendly is 1;
@@ -513,8 +516,8 @@ To compute diaper mess reaction of (M - a person):
 			if M is unfriendly and previous-friendly is 1, say BecomesAggressive of M;
 	otherwise:
 		say "[BigNameDesc of M] looks at you with [one of]disgust[or]shock[or]horror[or]disbelief[or]distress in [his of M] eyes[or]a wide open mouth[as decreasingly likely outcomes].[line break][speech style of M]'[one of]Holy shit, you can't be serious... You're fucked up in the head.'[or][big please] [please] [caps please] tell me you did not just crap yourself in front of me?!'[or]What the fuck are you doing?! Yuck, stop!!!'[or]What in the world?! Can you not control your own body?! How disgusting.'[or]You're sick, you know that?'[or]This can't be real. Gross!'[in random order][roman type][line break]";
-		humiliate 400;
-		if voluntarySquatting is 1, humiliate 500;
+		obsceneHumiliate;
+		if voluntarySquatting is 1, obsceneHumiliate;
 		if M is monster and (M is friendly or M is uninterested):
 			if M is friendly, say "Unable to stomach what [he of M][']s seeing, [NameDesc of M] abandons you.";
 			bore M;

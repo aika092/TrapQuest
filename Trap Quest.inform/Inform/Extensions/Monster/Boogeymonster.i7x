@@ -79,15 +79,6 @@ To compute sleep reduction of (M - boogeymonster):
 			now the sleep of M is 0;
 			if M is in the location of the player, say "[BigNameDesc of M] wakes up!".[Very slight deviation from the default.]
 
-Part 3 - Boogeymonster Stomp
-
-[To compute (M - a monster) stomping (N - a monster): Consider this a template!
-	say "[BigNameDesc of M] kills the [N]!";
-	destroy N;
-	let L be a random off-stage leftover;
-	now L is in the location of M;
-	now the leftover-type of L is the leftover-type of N.]
-
 Part 4 - Combat
 
 Chapter 1 - Attack
@@ -116,7 +107,7 @@ The latex punishment rule of boogeymonster is usually the no latex punishment ru
 
 To say LandingTaunt of (M - boogeymonster):
 	say "[BigNameDesc of M] jitters with impatience.";
-	humiliate 50.
+	moderateHumiliate.
 
 To say StrikingSuccessFlav of (M - boogeymonster) on (B - a body part):
 	say "[BigNameDesc of M] strikes your [TargetName of B] with a spiked tentacle!";
@@ -245,7 +236,7 @@ To compute punishment of (N - boogeymonster-nightmare-aeroplane):
 				destroy X;
 			summon F cursed with silent quest;
 		unless B is worn, summon B cursed with silent quest;
-		humiliate 1000;
+		ultraHumiliate;
 		DiaperAddictUp 2;
 		if diaper messing >= 3, now rectum is 10;
 		now the bladder of the player is 10;

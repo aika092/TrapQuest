@@ -20,6 +20,7 @@ To compute SelfExamineDesc of (H - glittering rose):
 	say "A rose rests in your [ShortDesc of hair]. ".
 
 Definition: glittering rose is roleplay:
+	if diaper quest is 1, decide yes;
 	if the player is possessing a vagina and pregnancy fetish is 1, decide yes;
 	decide no.
 
@@ -41,7 +42,7 @@ To decide which number is the dexterity-influence of (C - glittering rose):
 Chapter - Class Outfit
 
 To compute class outfit of (H - glittering rose):
-	class summon red-pasties;
+	if diaper quest is 0, class summon red-pasties;
 	class summon butterfly wings;
 	class summon fairy-wand.
 
@@ -50,8 +51,11 @@ Chapter - Quest
 babymaking-quest is a headgear-clothing-quest. babymaking-quest has a number called previously-pregnant.
 
 To uniquely set up (C - glittering rose):
-	now the quest of C is babymaking-quest;
-	if the pregnancy of the player > 0 and the pregnancy of the player < 3, now the previously-pregnant of babymaking-quest is 1.
+	if diaper quest is 1:
+		now the quest of C is faerie-orgasms-quest;
+	otherwise:
+		now the quest of C is babymaking-quest;
+		if the pregnancy of the player > 0 and the pregnancy of the player < 3, now the previously-pregnant of babymaking-quest is 1.
 
 To say QuestFlav of (Q - babymaking-quest):
 	say "You sense it wants you to get pregnant.".
@@ -66,5 +70,29 @@ An all later time based rule (this is the check for new pregnancy rule):
 			progress quest of babymaking-quest;
 	otherwise if the pregnancy of the player <= 0:
 		now the previously-pregnant of babymaking-quest is 0.
+
+
+faerie-orgasms-quest is a headgear-clothing-quest. faerie-orgasms-quest has a number called faerie-orgasms.
+
+To compute unique recycling of (C - glittering rose):
+	now the faerie-orgasms of faerie-orgasms-quest is 0.
+
+To say QuestFlav of (Q - faerie-orgasms-quest):
+	say "You sense it wants you to have lots of orgasms.".
+
+To say QuestTitle of (Q - faerie-orgasms-quest):
+	say " (orgasm quest)".
+
+To progress quest of (Q - faerie-orgasms-quest):
+	repeat with C running through worn clothing:
+		if the quest of C is Q:
+			increase faerie-orgasms of Q by 1;
+			if faerie-orgasms of Q > 2:
+				compute quest completion of Q on C;
+				now the faerie-orgasms of Q is 1;
+			otherwise:
+				say "[BigNameDesc of C] shudders in approval. Keep it up!".
+
+
 
 Glittering Rose ends here.

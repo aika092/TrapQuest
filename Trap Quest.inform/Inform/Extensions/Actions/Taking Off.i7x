@@ -43,7 +43,7 @@ Carry out taking off clothing:
 	if the noun is actually breast covering clothing:
 		repeat with M running through willing to do titfucks dangerous intelligent monsters in the location of the player:
 			say "[BigNameDesc of M] looks at you inquisitively, clearly interested in what you might have in mind.";
-			humiliate 125;
+			strongHumiliate;
 	if the noun is scrunchie:
 		if the player is ponytailed, say "You remove one scrunchie, and the rest of your hair appears magically inside the other in a perfect ponytail!";
 		otherwise say "Your hair falls into its natural position.".

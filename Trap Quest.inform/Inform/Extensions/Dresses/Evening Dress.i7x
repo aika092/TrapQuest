@@ -17,7 +17,8 @@ To decide which number is the initial outrage of (C - an evening dress):
 	decide on 8.
 
 To set up magic attribute of (C - an evening dress):
-	if a random number between 1 and 2 is 1, now C is dominance.
+	if a random number between 1 and 2 is 1, now C is dominance;
+	set up rare magic attribute of C.
 
 To set up influence of (C - an evening dress):
 	set up sex-based influence of C.

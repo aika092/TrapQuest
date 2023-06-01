@@ -31,14 +31,16 @@ To set up influence of (C - a suspenders):
 	set up random-based influence of C.
 
 To set up magic attribute of (H - a suspenders):
-	let R be a random number between 1 and 7;
+	let R be a random number between 1 and 9;
 	if R is 1:
 		now H is speed;
 		if a random number between 0 and diaper quest is 1, now H is maturity;
 	if R is 2, now H is dominance;
+	if R is 3, now H is sneaking;
 	if R is 4 and diaper lover > 0:
 		now H is bed wetting;
-		curse H.
+		curse H;
+	set up rare magic attribute of H.
 
 To restock (C - a suspenders):
 	let B be a random basic loot suspenders;
@@ -231,7 +233,9 @@ To set up influence of (C - demon belt):
 	now C is strength-influencing.
 
 To set up magic state of (C - demon belt):
-	now the raw-magic-modifier of C is 2.
+	now the raw-magic-modifier of C is 2;
+	set up BUC of C;
+	set up magic attribute of C.
 
 Definition: demon belt is transformation-protected: decide yes.
 Definition: demon belt is demonic: decide yes.
@@ -492,6 +496,23 @@ To say MediumDesc of (C - bridal garter):
 
 Definition: bridal garter is condom pinnable: decide yes.
 Definition: bridal garter is nudism-enabling: decide yes.
+
+To decide which object is the concealer of (C - bridal garter):
+	repeat with D running through thigh covering actually dense clothing:
+		decide on D;
+	repeat with S running through worn actually dense knee-length or longer clothing:
+		unless S is crotch-displaced or S is crotch-unzipped, decide on S;
+	decide on nothing.
+
+To decide which object is the at least partial concealer of (C - bridal garter):
+	repeat with D running through thigh covering not-see-through clothing:
+		decide on D;
+	repeat with S running through worn not-see-through knee-length or longer clothing:
+		unless S is crotch-displaced, decide on S;
+	decide on nothing.
+
+
+
 
 maid apron is a clothing. [No clashes.] The printed name of maid apron is "[clothing-title-before]maid apron[clothing-title-after]". The text-shortcut of maid apron is "mapn". maid apron is unique.
 

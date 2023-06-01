@@ -13,7 +13,7 @@ To say ClothingDesc of (C - a pure totem):
 To say ShortDesc of (C - a pure totem):
 	say "totem of purity".
 
-To decide which number is the price of (C - a pure totem):
+To decide what number is the original price of (C - a pure totem):
 	decide on 7.
 
 To decide which number is the perceived-bimbo-influence of (C - a pure totem):

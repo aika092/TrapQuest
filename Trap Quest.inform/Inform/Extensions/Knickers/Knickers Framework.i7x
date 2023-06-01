@@ -89,7 +89,8 @@ To set up magic attribute of (K - a knickers):
 	if K is actually sheer and a random number between 1 and 4 is 1, now K is protection;
 	if K is uncovered themed and a random number between 1 and 8 is 1:
 		now K is exposure;
-		now K is cursed.
+		now K is cursed;
+	set up rare magic attribute of K.
 
 To set up influence of (C - a knickers):
 	set up random-based influence of C.

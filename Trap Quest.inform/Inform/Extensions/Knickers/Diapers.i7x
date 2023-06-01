@@ -426,7 +426,7 @@ To say selfexamineuniquetitle of (K - black-largish-diaper):
 Definition: black-largish-diaper is black themed: decide yes.
 Definition: black-largish-diaper is cat themed: decide yes.
 To say ClothingDesc of (C - black-largish-diaper):
-	say "A large white disposable diaper with rather thick padding, for heavy wetters. It has a blue-green kitty cat pattern.".
+	say "A large black disposable diaper with rather thick padding, for heavy wetters. It has a blue-green kitty cat pattern.".
 
 Chapter 9 Medium Diaper
 

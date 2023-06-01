@@ -364,10 +364,10 @@ To 2Humiliate (X - a number):
 		if the humiliation of the player > 32000 and the humiliation of the player < 33000, say "[one of][line break][second custom style]Things are so much easier when I just accept that I'm worthless.[roman type][line break]You now have barely a shred of self respect or dignity left. You are not far off from being unable to see yourself as anything but an object to be used.[or][stopping]";
 		if newbie tips is 1 and the humiliation of the player > HUMILIATION-PROUD, say "[one of][newbie style]Newbie tip: Your dignity is slowly declining. This isn't the biggest deal - it doesn't actually impact the game that much at first. In fact, right now there are some things that [NameBimbo] will refuse to wear, and by gaining a bit of humiliation you can unlock that restriction. However, if it gets out of hand, you can start to get aroused when you're humiliated further, which can be a quick way for the game to spiral out of control. [if mindbreak protection is 0]If you go even further, you can become 'broken' - this permanent condition is really bad because not only will all humiliation now arouse you, but whenever you end up on your knees, your brain will *click* and you won't be able to do anything to resist enemies until they're done with you.[end if][roman type][line break][or][stopping]";
 	otherwise:
-		if the humiliation of the player > HUMILIATION-PROUD and the humiliation of the player < HUMILIATION-PROUD + 1000, say "[one of]You feel a faint pain in your temples as your master seems to shift around inside of you. [big his of shopkeeper] sounds off in your head as you feel [his of shopkeeper] presence slightly expand![line break][first custom style]'Mmf. You've loosened up a little, but you're still so tight, aren't you, [NameBimbo]. I suppose I'll have to humiliate you a little more before we start making any real progress...'[roman type][line break][or][stopping]";
-		if the humiliation of the player > HUMILIATION-MODEST and the humiliation of the player < HUMILIATION-MODEST + 1000, say "[one of]You feel a sharp pain in your temples as your core once again begins to stretch. Your master's [if lady fetish is 1]husky[otherwise]deep[end if] voice booms in your head as [his of shopkeeper] presence increases sharply![line break][first custom style]'You're finally starting to loosen up, but we're still only halfway there. Just keep degrading yourself just like that, [NameBimbo]...'[roman type][line break][or][stopping]";
-		if the humiliation of the player > HUMILIATION-DISGRACED and the humiliation of the player < HUMILIATION-DISGRACED + 1000, say "[one of]You feel a splitting pain in your temples as the stretching sensation returns, intensifying more rapidly than ever before! Your master's [if lady fetish is 1]husky[otherwise]deep[end if] voice booms in your head as more and more of [his of shopkeeper] presence forces its way into your empty core.[line break][first custom style]We're past the halfway point, but there's still so much to go. Debase yourself more, [NameBimbo]. Soon you'll be able to take all of me...[roman type][line break][or][stopping]";
-		if the humiliation of the player > HUMILIATION-SHAMELESS and the humiliation of the player < HUMILIATION-SHAMELESS + 1000, say "[one of]You once again feel a splitting pain in your temples, but this time, the intense stretching sensation is accompanied by an odd feeling of pleasure. You can't help but moan as the enormous *girth* of your master's presence rushes into you anew, and [his of shopkeeper] powerful voice echoes inside your head.[line break][first custom style]'That's right, [NameBimbo]! Take. It. All! Yes, just a little more. Just a scintilla more space, and you'll take it all. We're so close...'[roman type][line break][or][stopping]".
+		if the humiliation of the player > HUMILIATION-PROUD and the humiliation of the player < HUMILIATION-PROUD + 1000, say "[one of]You feel a faint pain in your temples as your master seems to shift around inside of you. [big his of male-m] sounds off in your head as you feel [his of male-m] presence slightly expand![line break][first custom style]'Mmf. You've loosened up a little, but you're still so tight, aren't you, [NameBimbo]. I suppose I'll have to humiliate you a little more before we start making any real progress...'[roman type][line break][or][stopping]";
+		if the humiliation of the player > HUMILIATION-MODEST and the humiliation of the player < HUMILIATION-MODEST + 1000, say "[one of]You feel a sharp pain in your temples as your core once again begins to stretch. Your master's [if lady fetish is 1]husky[otherwise]deep[end if] voice booms in your head as [his of male-m] presence increases sharply![line break][first custom style]'You're finally starting to loosen up, but we're still only halfway there. Just keep degrading yourself just like that, [NameBimbo]...'[roman type][line break][or][stopping]";
+		if the humiliation of the player > HUMILIATION-DISGRACED and the humiliation of the player < HUMILIATION-DISGRACED + 1000, say "[one of]You feel a splitting pain in your temples as the stretching sensation returns, intensifying more rapidly than ever before! Your master's [if lady fetish is 1]husky[otherwise]deep[end if] voice booms in your head as more and more of [his of male-m] presence forces its way into your empty core.[line break][first custom style]We're past the halfway point, but there's still so much to go. Debase yourself more, [NameBimbo]. Soon you'll be able to take all of me...[roman type][line break][or][stopping]";
+		if the humiliation of the player > HUMILIATION-SHAMELESS and the humiliation of the player < HUMILIATION-SHAMELESS + 1000, say "[one of]You once again feel a splitting pain in your temples, but this time, the intense stretching sensation is accompanied by an odd feeling of pleasure. You can't help but moan as the enormous *girth* of your master's presence rushes into you anew, and [his of male-m] powerful voice echoes inside your head.[line break][first custom style]'That's right, [NameBimbo]! Take. It. All! Yes, just a little more. Just a scintilla more space, and you'll take it all. We're so close...'[roman type][line break][or][stopping]".
 
 blush factor is a number that varies.
 
@@ -418,6 +418,18 @@ To decide which number is the public disgrace of the player:
 		if there is a severity in row N of the Table of Published Disgraces, increase PD by DisgracePostImpact N;
 	decide on PD.
 
+To decide which number is worst public disgrace:
+	let PD be 0;
+	let DPI be 0;
+	repeat with N running from 1 to the number of filled rows in the Table of Published Disgraces:
+		if there is a severity in row N of the Table of Published Disgraces:
+			let DPIN be DisgracePostImpact N;
+			if DPIN > DPI:
+				now DPI is DPIN;
+				now PD is N;
+	decide on PD.
+
+
 To say DisgracePost (N - a number):
 	choose row N in Table of Published Disgraces;
 	let DPV be DisgracePostViews N;
@@ -435,12 +447,13 @@ To say DisgracePost (N - a number):
 
 
 To say DisgracePostReaction (N - a number):
-	let S be DisgracePostImpact N;
-	choose row N in Table of Published Disgraces;
-	if lastwitnessed entry > 0 and lastwitnessed entry <= time-earnings + 100:
-		say "[variable custom style]I saw this already just a few moments ago.[roman type][line break]";
-	otherwise:
-		say DisgracePostReaction strength S;
+	unless the player is broken:
+		let S be DisgracePostImpact N;
+		choose row N in Table of Published Disgraces;
+		if lastwitnessed entry > 0 and lastwitnessed entry <= time-earnings + 100:
+			say "[variable custom style]I saw this already just a few moments ago.[roman type][line break]";
+		otherwise:
+			say DisgracePostReaction strength S;
 	if the lastwitnessed entry is 0 and the published entry matches the text "hypnoheaven", compute agent reveal;
 	now lastwitnessed entry is time-earnings.
 
@@ -477,7 +490,7 @@ To compute digital reputation damage (T - a text) strength (S - a number) qualit
 			now T is "[T] (with your face concealed under [NameDesc of H])";
 			now S is 0;
 		otherwise if PH is a thing:
-			if the player is not shameless, say "[variable custom style][one of]At least the [ShortDesc of H] should hopefully prevent my from being identifiable[or]At least there's a good chance they can't see my face[or]I hope it didn't get my face[or]At least my identity is hopefully hidden[then at random]...[roman type][line break]";
+			if the player is not shameless, say "[variable custom style][one of]At least the [ShortDesc of PH] should hopefully prevent me from being identifiable[or]At least there's a good chance they can't see my face[or]I hope it didn't get my face[or]At least my identity is hopefully hidden[then at random]...[roman type][line break]";
 			if a random number between 1 and 4 > 1, now S is 0;
 			now T is the substituted form of " (with your face partially concealed under [if PH is arms]your arm[otherwise][NameDesc of PH][end if], [if S is 0]fortunately [one of]leaving your identity a mystery[or]successfully maintaining your anonymity[or]preventing you from being recognised[at random][otherwise]unfortunately [one of]your face isn't probably protected, and you're [or][stopping]still easily recognisable[end if])";
 		now T is "[if N < 1]a low resolution photo[otherwise if N < 3]a high resolution photo[otherwise if N < 5]an animated gif[otherwise]a high quality video[end if] showing [T] [ReputationAttire]";
@@ -506,14 +519,14 @@ To decide which text is ReputationAttire:
 			decide on "topless, with a [ShortDesc of C][if C is not actually dense clothing] partially covering your [genitals][end if][AF]";
 	otherwise:
 		let B be the at least partial concealer of breasts;
-		decide on "with a [ShortDesc of B][if C is nothing] and nothing covering your [genitals][otherwise if C is arms] and a hand trying to cover your [genitals][otherwise if C is clothing and C is not B] and a [ShortDesc of C][end if][AF]";
+		decide on "with [if B is arms]one arm [one of]trying to hide[or]covering[or]over[then at random] your [BreastDesc][otherwise]a [ShortDesc of B][end if][if C is nothing] and nothing covering your [genitals][otherwise if C is arms] and a hand trying to [one of]cover[or]conceal[cycling] your [genitals][otherwise if C is clothing and C is not B] and a [ShortDesc of C][end if][AF]";
 
 To say sexyWebsite:
 	if diaper quest is 1, say "embarrassedbabes.net";
-	otherwise say "[one of]trashyboners.xxx[or]publicnudity.xxx[or]embarrassedbabes.net[or]caughtoncandid.com[or]whoisthathottie.com[at random]".
+	otherwise say "[one of]trashyboners.xxx[or]publicnudity.xxx[or]embarrassedbabes.net[or]caughtoncandid.com[or]whoisthathottie.com[or]neighborhoodwatchers.org[or]localbirds.net[or]redintheface.com[or]probablyillegal.net[at random]".
 
 To say sluttyWebsite:
 	if diaper quest is 1, say "publicdisgraces.xxx";
-	otherwise say "[one of]publicdisgraces.xxx[or]caughtintheact.com[or]whoresexposed.net[or]sluthub.xxx[or]namedandshamed.com[at random]".
+	otherwise say "[one of]publicdisgraces.xxx[or]caughtintheact.com[or]whoresexposed.net[or]sluthub.xxx[or]namedandshamed.com[or]yourlocalwhore.net[or]ninjaflashers.xxx[or]flasherdirectory.org[or]seehershame.com[or]doxxmonkey.net[at random]".
 
 Humiliation ends here.

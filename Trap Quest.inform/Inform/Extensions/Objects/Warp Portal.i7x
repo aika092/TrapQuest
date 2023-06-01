@@ -81,7 +81,7 @@ To set up predicament status:
 	if female-gloryhole is in Holding Pen and diaper quest is 0, now female-gloryhole is in Toilet02; [it can be removed by some predicaments]
 	let LC be a list of things; [the list of clothing that MUST be automatically removed at the start of the predicament AND automatically replaced at the end]
 	repeat with C running through worn clothing:
-		if C is headgear:
+		if C is headgear or C is diaper-stack:
 			add C to LC;
 		otherwise:
 			now wearing-target is C;
@@ -91,16 +91,6 @@ To set up predicament status:
 			fully clean C;
 		if C is worn wearthing: [other worn things, e.g. salves, can stay]
 			if C is clothing and C is removable and C is not combat visor and C is not armband and C is not listed in LC: [this removable worn stuff goes to the final room, and the player will be offered to automatically rewear it all]
-				if C is diaper-stack:
-					let N be 1;
-					repeat with D running through the list of stacked diapers:
-						if N > 1: [diapers above the first go straight home]
-							now D is in Predicament20;
-						otherwise: [bottom diaper is the one you count as wearing]
-							now C is D;
-						increase N by 1;
-					now diaper-stack is in Holding Pen;
-					now the list of stacked diapers is { };
 				if C is cursed and the raw strength of the player > 1:
 					say "[bold type]As your [ShortDesc of C] is removed, you feel the curse steal some [one of]of your strength! You probably can only recover the strength by wearing it again after you get it back...[or]more of your strength.[stopping][roman type][line break]";
 					increase the stolen-strength of C by 1;
@@ -191,7 +181,7 @@ To teleport via (W - a warp portal):
 		increase NOptions by 1;
 		if newbie tips is 1, say "[one of][newbie style]Newbie tip: The Extra Credit zone puts you in a predicament where you could lose a lot of dignity and 'real world reputation' (the latter of which is only relevant for epilogues). Cursed clothing (except headgear) will be removed but will cost you 1 strength if you don't put it back on after you complete the task. [if tough-shit is 0]Other things like tattoos and make up will disappear for the duration of the predicament and reappear at the end. [end if]You will earn one 'trophy' which gives you the option to tweak a rule of the game universe and also gives you a permanent +1 to luck rolls. Finally, each time you go into the predicament zone, one of each type of crafting token will be lying on the floor somewhere in the region. So if you happen to stumble across any, you can often nab yourself that extra bonus. Or if you're brave, you could even go searching for them...[roman type][line break][or][stopping]";
 	if NOptions is 0, say "BUG! Player was able to enter a warp portal with zero viable exits...";
-	unless playerRegion is not school or the chosen numerical response of NOptions matches the text "Extra" or the player is not the donator, say "[line break][newbie style]You are currently unable to access the Extra Credit Zone because [if ex-princess is unconcerned]the Princess has purged the Academy of its staff[otherwise if predicamentJustDone is true and (class-time <= 0 or class-time is 1000)]you haven't gone to a normal class yet[otherwise if predicamentJustDone is true]you haven't spent enough time in the main game world since your most recent extra credit session[otherwise if the number of appropriate eligible predicaments is 0]there are no more predicaments coded for the combination of your current rank, sex, and fetish selection[otherwise if the latex-transformation of the player > 0]it wouldn't interact well with your rubbery state[otherwise if there is worn headgear and (the quest of a random worn headgear is just-wait-quest or the quest of a random worn headgear is nice-quest or the quest of a random worn headgear is naughty-quest)]your headgear quest would be interrupted[otherwise if (class-time is 1000 or class-time < 0) and armband is worn and armband is not solid gold and there is an alive undefeated correctly-ranked teacher]you need to go to class before you can apply for extra credit[otherwise if there is worn locked clothing]you are wearing locked clothing[otherwise if there is worn glued clothing]you are wearing glued clothing[otherwise]something you are currently wearing (not including headgear) is flagged as not being appropriate to remove (perhaps something with the curse quest of wearing it until your next lesson)[end if].[roman type][line break]";
+	unless playerRegion is not school or the chosen numerical response of NOptions matches the text "Extra" or the player is not the donator, say "[line break][newbie style]You are currently unable to access the Extra Credit Zone because [if ex-princess is unconcerned]the Princess has purged the Academy of its staff[otherwise if predicamentJustDone is true and (class-time <= 0 or class-time is 1000)]you haven't gone to a normal class yet[otherwise if predicamentJustDone is true]you haven't spent enough time in the main game world since your most recent extra credit session[otherwise if the number of appropriate eligible predicaments is 0]there are no more predicaments coded for the combination of your current rank, sex, and fetish selection[otherwise if the latex-transformation of the player > 0]it wouldn't interact well with your rubbery state[otherwise if there is worn headgear and (the quest of a random worn headgear is just-wait-quest or the quest of a random worn headgear is nice-quest or the quest of a random worn headgear is naughty-quest)]your headgear quest would be interrupted[otherwise if (class-time is 1000 or class-time < 0) and armband is worn and armband is not solid gold and there is an alive undefeated correctly-ranked teacher]you need to go to class before you can apply for extra credit[otherwise if there is worn unremovable dress]you are wearing an unremovable outfit[otherwise if there is worn locked clothing]you are wearing locked clothing[otherwise if there is worn glued clothing]you are wearing glued clothing[otherwise]something you are currently wearing (not including headgear) is flagged as not being appropriate to remove (perhaps something with the curse quest of wearing it until your next lesson)[end if].[roman type][line break]";
 	if forced-portal is a warp portal:
 		repeat with RG running through regions:
 			if forced-portal is regionally in RG, now the destination of W is RG;
@@ -322,10 +312,12 @@ To teleport via (W - a warp portal):
 				otherwise:
 					now the player is in School24;
 			update player region;
+			compute bladder cleanup;
 			display entire map;
 		otherwise:
 			now the player is in School01;
 			update player region;
+			compute bladder cleanup;
 			display entire map;
 			say "As you go through the portal, you find yourself [one of]in a large room with expensive marble walls and floor[or]back in the academy reception[stopping].";
 			if class-time is 0, now class-time is -1; [extra credit zone resets at -1 and lower]
@@ -336,6 +328,7 @@ To teleport via (W - a warp portal):
 		now the player is in the location of D;
 		if NPF is 1, now D is next-portal-forbidden;
 		update player region;
+		compute bladder cleanup;
 		now the location of the player is discovered;
 		repeat with MT running through milk-tanks:
 			DoseDown MT by 2;

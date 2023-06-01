@@ -218,7 +218,7 @@ To compute perception of (M - mechanic):
 	otherwise if (there is a worn diaper or the diaper-duration of M > 0) and the player is immobile:
 		say "[big he of M] seems to decide to leave you alone for now.";
 		distract M;
-	otherwise if there is soiled-diaper carried by M:
+	otherwise if there is soiled-diaper carried by M or there is a dirty diaper carried by M:
 		say "[speech style of M]'[one of]I believe this is yours? Don't try and deny it. I'm going to teach you why babies should clean up after themselves[or]Once again I found evidence of your disgusting accidents just lying around the floor of my hotel. I'm never going to let you get away with something like this[stopping]...'[roman type][line break]";
 		anger M;
 	otherwise if diaper quest is 1 and ((there is a worn currently at least partially visible diaper and M is not uniquely unfriendly) or M is aware that the player needs a change):
@@ -751,15 +751,11 @@ To standard loot (M - mechanic):
 
 Part 4 - Conversation
 
-To IdentifiablePosterReaction of (M - mechanic):
-	say "[BigNameDesc of M] looks at you, then at the banner, then back to you. Upon realising that it is you, [he of M] puts [his of M] hands on [his of M] hips and laughs loudly.";
-	say "You turn bright red with shame.";
-	humiliate the lewdness of a random poster in the location of the player * 2.
+To say IdentifiablePosterReactionFlav of (M - mechanic):
+	say "[BigNameDesc of M] looks at you, then at the banner, then back to you. Upon realising that it is you, [he of M] puts [his of M] hands on [his of M] hips and laughs loudly.".
 
-To UnidentifiablePosterReaction of (M - mechanic) with (P - a poster):
-	say "[BigNameDesc of M] looks at the banner with a big grin on [his of M] face. [big he of M] doesn't seem to realise it is you, but is clearly enjoying looking at it.";
-	say "You turn slightly red but don't say a word.";
-	humiliate the lewdness of a random poster in the location of the player / 2.
+To say UnidentifiablePosterReactionFlav of (M - mechanic) with (P - a poster):
+	say "[BigNameDesc of M] looks at the banner with a big grin on [his of M] face. [big he of M] doesn't seem to realise it is you, but is clearly enjoying looking at it.".
 
 To say RewardFlav of (M - mechanic) for (T - a thing):
 	say "[speech style of M]'Don't ask me where I got this.'[roman type][line break][BigNameDesc of M] puts a [T] on the ground in front of you.".

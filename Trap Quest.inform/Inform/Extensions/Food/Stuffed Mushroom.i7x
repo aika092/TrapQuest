@@ -25,7 +25,7 @@ Carry out TQeating stuffed mushroom:
 	otherwise if the quality of the noun is -2:
 		say "You can't deny how filling it was, but it's even harder to deny the slimy feeling of [semen] on your tongue and sliding down your throat in every single bite. It was more jizz than mushroom![line break][variable custom style][if the semen taste addiction of the player < 8]How could I eat something so obscene! I wasn't really that hungry, was I?[otherwise if the semen taste addiction of the player < 14]I guess if I had to choose between this and sucking dick when I'm hungry...[otherwise]So delicious! I might have to eat everything with [semen] on it now![end if][roman type][line break]";
 		BodyHeal the fat of the noun;
-		Humiliate 40 - the semen taste addiction of the player;
+		humiliate MODERATE-HUMILIATION - the semen taste addiction of the player;
 		StomachSemenUp 2;
 	otherwise if a random number between 3 and the quality of the noun is 3:
 		say "You feel way healthier after such a filling meal, albeit pretty lethargic.";

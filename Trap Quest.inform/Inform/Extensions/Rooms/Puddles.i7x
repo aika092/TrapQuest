@@ -69,6 +69,21 @@ To SemenPuddleUp (X - a number) in (R - HoleInWall):
 To SemenPuddleUp (X - a number) in (R - DiaperPail):
 	increase the semen-puddle of the location of most-recent-pail by X.
 
+To SemenPuddleUp (X - a number) in (R - School34):
+	if ex-princess is in R and the player is in R:
+		say "Suddenly a condom soars in from the hallway. The [semen] on the ground begins to rise into the air, and is soon filling the condom!";
+		let C be a random worn condom pinnable clothing;
+		if C is nothing, now C is string-belt;
+		unless C is worn:
+			summon C cursed;
+			say "Suddenly, a [printed name of C] appears around your waist!";
+		UsedCondomUp C by 1;
+		say "The condom whizzes onto and attaches itself to your [MediumDesc of C]!";
+		say CondomNewbieTip;
+		force immediate clothing-focus redraw;
+	otherwise:
+		increase the semen-puddle of R by X.
+
 To UrinePuddleUp (X - a number):
 	if X > 0, UrinePuddleUp X in the location of the player.
 
@@ -122,7 +137,7 @@ To MurkwaterPuddleUp (X - a number) in (R - a room):
 A time based rule (this is the puddles disappearing rule):
 	repeat with H running through placed haunted rooms:
 		if the slime-puddle of H > 0, decrease the slime-puddle of H by 1;
-	repeat with R running through placed jungle rooms:
+	repeat with R running through placed rooms:
 		if R is smoky:
 			decrease the smoke of wild gladiator by 1;
 			if the smoke of wild gladiator < 0, now R is not smoky;

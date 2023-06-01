@@ -18,7 +18,7 @@ To compute LaundryRobots:
 		say "As soon as you [if the player is upright]step over the threshold into this room[otherwise]are released[end if], several metal robotic arms shoot at you from every direction! Four robotic hands grab hold of each of your limbs respectively, rendering you immobile. ";
 		if C is messed knickers:
 			say "You yelp [if the bimbo of the player < 10][one of]in surprise[or]in frustration[stopping][otherwise]quietly[end if] as your entire body is picked up, carried over and dunked into a large hot vat of soapy water. The arms unceremoniously strip you of your [C] as you are repeatedly thrust into and out of the bubbly pool. Finally, you are dropped back down onto the ground, now dripping with water and suds. ";
-			repeat with F running through worn fluid vulnerable clothing:
+			repeat with F running through worn somewhat fluid vulnerable clothing:
 				clean F;
 				Drench F;
 				if F is knickers, WaterEmpty F;
@@ -37,10 +37,9 @@ To compute LaundryRobots:
 		say "The robotic arms above you move suddenly as you enter the room, but do not approach you.".
 
 Definition: a clothing (called C) is washable:
-	if C is cursed or C is locked or C is glued, decide no;
 	if C is fluid immune, decide no;
 	if the coverer of C is clothing, decide no;
-	if C is dirty, decide yes;
+	if C is dirty and C is autocleanremovable, decide yes;
 	decide no.
 
 Definition: a diaper is washable: decide no.
@@ -75,7 +74,7 @@ A later time based rule (this is the robo vacuum cleaner rule):
 		let availableForBagDuty be false;
 		let F be vagina;
 		if the player is possessing a penis or the player is not possessing a vagina, now F is asshole;
-		if the player is the donator and the player is upright and robo vacuum cleaner is not penetrating a fuckhole:
+		if the player is upright and robo vacuum cleaner is not penetrating a fuckhole:
 			if black hood is worn and black hood is not blessed:
 				now availableForBagDuty is true;
 			otherwise if black hood is off-stage and black hood is actually summonable and the number of pussy covering clothing is 0 and F is not actually occupied and the number of worn unremovable shoes is 0 and skirted-maid-corset is unclash summonable:
@@ -97,6 +96,9 @@ A later time based rule (this is the robo vacuum cleaner rule):
 					say "A black hood appears over your head![line break][variable custom style]Eek![roman type][line break]";
 					summon black hood cursed;
 				unclash class summon skirted-maid-corset;
+				if trashcan is unclash summonable:
+					unclash class summon trashcan;
+					now the tissue-fill of trashcan is 0;
 				if the number of worn heels is 0, class summon pink girly bow court heels;
 				now robo vacuum cleaner is penetrating F;
 				say "Before you know it, the robot has zipped under your feet and extended its vertical pole, impaling your [variable F]! Your [MediumDesc of random worn heels] prevent you from being able to jump, and the long dildo-on-a-pole prevents you from bending your knees, completely trapping you with a single metal rod!!! Wherever the robot goes, it's going to be taking you with it from now on!";
@@ -194,6 +196,8 @@ A later time based rule (this is the robo vacuum cleaner rule):
 			otherwise:
 				say "but because the other end of tube isn't plugged into anything, it just gets dumped back onto the ground!";
 		otherwise:
+			say "Please wait, robot vacuum cleaner is thinking...";
+			wait 150 ms before continuing;
 			let LR be the list of placed corporate modern rooms;
 			if robo vacuum cleaner is penetrating a fuckhole and (the patrol of robo vacuum cleaner > 3 or the puddle-sucks of robo vacuum cleaner > 4 or the patrol of robo vacuum cleaner > the number of entries in LR):
 				say "The dildo pole lowers slightly, allowing you to step off of it.";

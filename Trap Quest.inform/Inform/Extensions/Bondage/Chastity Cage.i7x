@@ -45,13 +45,16 @@ To say ClothingDesc of (C - chastity-belt):
 	if C is cursed, say "You can feel it slowly making you more and more aroused.";
 	say "[variable custom style][if the bimbo of the player < 3][one of]I'm having trouble understanding why the game would want me to wear this.[or]As long as I'm wearing this chastity belt, nothing can touch my genitals.[or]I'd rather it covered more than my crotch, but I can't really complain, I doubt anybody here can rip through solid metal.[in random order][otherwise if the bimbo of the player < 6][one of]Wearing this should make me relieved, but I just feel frustrated...[or]This isn't protecting me, it's just making me want sex![or]I know I shouldn't take this off, but... I want to.[in random order][otherwise if the bimbo of the player < 10][one of]It won't even let me touch my clit...[or]I thought I was supposed to have lots of sex. This is so dumb...[in random order][otherwise if the bimbo of the player < 13][one of]If it's against the rules to use my pussy, I should probably keep this on.[or]This is the game's way of telling me I don't deserve to get fucked in my pussy. It's probably right.[or]My asshole may be free when I wear this, but I can't touch myself when I'm getting fucked![in random order][otherwise][one of]I'm a dirty whore, I don't deserve to have my pussy fucked![or]More anal for me. Teehee![or]When this is on, I can't get double penetrated, and that's my favourite way to get fucked![or]If I find someone strong enough to pry this off, I'll probably find somebody with a big cock too![in random order][end if][roman type][line break]".
 
-To say ShortDesc of (C - a chastity-belt):
+To say ShortDesc of (C - chastity-belt):
 	say "chastity belt".
 
 To decide which figure-name is clothing-image of (C - chastity-belt):
 	decide on figure of female chastity cage.
 
 Definition: chastity-belt is grey themed: decide yes.
+Definition: chastity-belt is fetish appropriate:
+	if the player is possessing a vagina, decide yes;
+	decide no.
 
 To SexChange (J - chastity-belt):
 	if the player is possessing a penis and metal-cage is off-stage:
@@ -85,6 +88,10 @@ To say ShortDesc of (C - a chastity cage):
 
 Definition: a chastity cage is sissifying: decide yes.
 Definition: a chastity cage is transformation-protected: decide no.
+Definition: a chastity cage is fetish appropriate:
+	if the player is possessing a vagina, decide no;
+	if the player is possessing a penis, decide yes;
+	decide no.
 Definition: chastity cage is removable:
 	if sissy cumslut tattoo is worn, decide no;
 	decide yes.

@@ -9,8 +9,8 @@ Report TQeating chef food:
 	let Q be the quality of the noun;
 	if the flesh volume of arms > 3 and Q > 0, decrease Q by 1;
 	if the flesh volume of arms > 7 and Q > -2, now Q is 1;
-	if the quality of the noun > 0, Dignify 3 * Q;
-	otherwise Humiliate 10 * Q;
+	if the quality of the noun > 0, Dignify DIGNITY-BASE * Q;
+	otherwise Humiliate HUMILIATION-BASE * Q;
 	if weight gain fetish is 0:
 		FatigueUp the fat of the noun * 15;
 	otherwise:

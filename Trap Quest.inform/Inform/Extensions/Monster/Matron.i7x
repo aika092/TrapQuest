@@ -33,6 +33,7 @@ To say MonsterComment of (M - a matron):
 	if diaper quest is 0 and lady fetish < 2, say "[variable custom style][if the diaper addiction of the player < 6 and the player is gendered male]What a MILF! This must be the [man of M] in charge of the princess. [otherwise if the diaper addiction of the player > 14][line break][second custom style]*giggle* [one of]Maybe [he of M] can be my [daddy of M][or]It's my [daddy of M][stopping]! [end if][if the delicateness of the player < 7]If I can play it cool, maybe [he of M]'ll be nice to me.[otherwise if the delicateness of the player < 12]I wonder what sorts of games [he of M]'d play with someone that's not [his of M] baby?[otherwise if the delicateness of the player < 16]I bet [he of M] could take real good care of me.[otherwise]I hope [he of M] can be my [daddy of M] and show me how to be a slut like [him of M].[end if][roman type][line break]".
 
 Definition: matron is a generic-unlocker: decide yes.
+Definition: matron is closest-toilet-preferring: decide yes.
 
 To set up (M - matron):
 	reset M;
@@ -82,7 +83,7 @@ To compute MasturbationReaction of (M - matron):
 		say "[BigNameDesc of M] watches you with a bemused expression.";
 		if there is a worn total protection diaper:
 			say "[speech style of M]'[one of]Wow, you really are enjoying your nappies aren't you? Well don't let me stop you!'[or]Do you realise how much of a pathetic baby you look like right now? There's no way anyone in the world could treat you like a grown up again after this!'[or]What a good [if the player is presenting as male]sissy baby[otherwise]girl[end if]!'[stopping][roman type][line break][if the humiliation of the player < 40000]You turn [one of]bright[or]an even brighter shade of[stopping] red.[end if]";
-			humiliate 50;
+			moderateHumiliate;
 			now the boredom of M is 50; [This stops an unfriendly matron suddenly running out of boredom and interrupting the player to perform some maintenance feeding]
 		otherwise:
 			say "[speech style of M]'No no no! This is a nursery, young [if the player is gendered male]sissies[otherwise]girls[end if] like you do NOT get to have cummies like grown ups! I can't believe you would be so naughty! If you have to rub yourself, you'll do it through a diaper like a real adult baby.'[roman type][line break]";
@@ -197,8 +198,8 @@ To say DiaperReaction of (M - matron):
 	check guaranteed perception of M.
 
 To compute diaper mess reaction of (M - matron):
-	humiliate 400;
-	if voluntarySquatting is 1, humiliate 500;
+	obsceneHumiliate;
+	if voluntarySquatting is 1, obsceneHumiliate;
 	if M is interested:
 		if M is doing nothing special and diaperChecking is 0:
 			compute diaper check of M;
@@ -694,15 +695,11 @@ To compute tax return of (M - matron):
 
 Chapter 2 Conversation
 
-To IdentifiablePosterReaction of (M - matron):
-	say "[BigNameDesc of M] looks at you, blinks, then looks back to the poster. Upon realising that it is you, [he of M] starts laughing uncontrollably.";
-	say "You turn bright red with shame.";
-	humiliate the lewdness of a random poster in the location of the player * 2.
+To say IdentifiablePosterReactionFlav of (M - matron):
+	say "[BigNameDesc of M] looks at you, blinks, then looks back to the poster. Upon realising that it is you, [he of M] starts laughing uncontrollably.".
 
-To UnidentifiablePosterReaction of (M - matron) with (P - a poster):
-	say "[speech style of M]'Now that's one naughty minx in need of discipline.'[roman type][line break]";
-	say "You turn slightly red but don't say a word.";
-	humiliate the lewdness of a random poster in the location of the player / 2.
+To say UnidentifiablePosterReactionFlav of (M - matron) with (P - a poster):
+	say "[speech style of M]'Now that's one naughty minx in need of discipline.'[roman type][line break]".
 
 To say RewardFlav of (M - matron) for (T - a thing):
 	say "[speech style of M]'You deserve [one of]a[or]another[stopping] treat.'[roman type][line break][BigNameDesc of M] puts a [T] on the ground in front of you.".

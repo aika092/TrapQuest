@@ -191,8 +191,7 @@ To compute (C - a clothing) inheriting from (D - a clothing):
 	otherwise now C is unidentified;
 	if D is stuck, now C is stuck;
 	otherwise now C is not stuck;
-	if D is glued, gluify C;
-	otherwise ungluify C;
+	now the glue timer of C is the glue timer of D;
 	if (C is ass plugging and D is ass plugging) or (C is vagina plugging and D is vagina plugging), now the plug size of C is the plug size of D;
 	if (C is ass plugging or C is vagina plugging) and D is a sex toy, now the plug size of C is the size of D;
 	if (D is ass plugging or D is vagina plugging) and C is a sex toy, now the size of C is the plug size of D;
@@ -212,7 +211,7 @@ To compute (C - a clothing) inheriting from (D - a clothing):
 	if there is an embodied thing penetrating breasts:
 		if C is top-displacable:
 			now C is top-displaced;
-		otherwise if C is not-top-displacable:
+		otherwise if C is not-top-displacable and C is breast covering:
 			now C is top-ripped;
 	if D is messed knickers and C is soilable knickers:
 		now the mess of C is the mess of D;
@@ -239,7 +238,7 @@ To compute (C - a clothing) inheriting from (D - a clothing):
 		now K is not covering D;
 	now the quest of C is the quest of D;
 	if C is actually nipple covering or D is actually nipple covering, now latest-top-malfunction is earnings;
-	now the ownership of C is the ownership of D;
+	now the owner of C is the owner of D;
 	compute C unique inheriting from D.
 
 To compute (C - a clothing) unique inheriting from (D - a clothing):

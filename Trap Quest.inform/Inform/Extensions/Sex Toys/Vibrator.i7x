@@ -46,7 +46,8 @@ To set up magic attribute of (C - a vibrator):
 	let R be a random number between 1 and 10;
 	if R < 3 and diaper quest is 0, now C is temptation;
 	if R is 3, now C is endurance;
-	if R is 4, now C is dominance.
+	if R is 4, now C is dominance;
+	set up rare magic attribute of C.
 
 purple-vibrator is a vibrator.
 Definition: purple-vibrator is purple themed: decide yes.

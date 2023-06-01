@@ -132,8 +132,7 @@ To decide which number is total pinned condoms:
 	decide on N.
 
 Report examining a condom pinned clothing:
-	if the used condoms of the noun >= 20, say "[BigNameDesc of the noun] has an almost countless number of used condoms covering it.";
-	otherwise say "[BigNameDesc of the noun] has [if the used condoms of the noun > 1][used condoms of the noun] large cum-filled condoms pinned to it[otherwise if the used condoms of the noun is 1]a large cum-filled condom pinned to it[end if][if the used condoms of the noun > 0 and the empty condoms of the noun > 0], and [end if][if the empty condoms of the noun > 1][empty condoms of the noun] used condoms pinned to it that have been torn and sucked dry[otherwise if the empty condoms of the noun is 1]one used condom that has been torn and sucked dry pinned to it[end if].";
+	say CondomsPinnedDesc of the noun;
 	let LM be a list of things;
 	repeat with M running through the condom history of the noun:
 		if M is not the throne:
@@ -146,6 +145,10 @@ Report examining a condom pinned clothing:
 		repeat with M running through LM:
 			say "[NameDesc of entry LME in LM][if LME > 2], [otherwise if LME is 2] and [otherwise].[end if]";
 			decrease LME by 1.
+
+To say CondomsPinnedDesc of (C - a clothing):
+	if the used condoms of C >= 20, say "[BigNameDesc of C] has an almost countless number of used condoms covering it.";
+	otherwise say "[BigNameDesc of C] has [if the used condoms of C > 1][used condoms of C] large cum-filled condoms pinned to it[otherwise if the used condoms of C is 1]a large cum-filled condom pinned to it[end if][if the used condoms of C > 0 and the empty condoms of C > 0], and [end if][if the empty condoms of C > 1][empty condoms of C] used condoms pinned to it that have been torn and sucked dry[otherwise if the empty condoms of C is 1]one used condom that has been torn and sucked dry pinned to it[end if].".
 
 Definition: a monster is condom-preferring:
 	if the class of the player is condom collector, decide yes;
@@ -215,13 +218,18 @@ To compute default condom filling of (M - a monster):
 		let S be nothing;
 		if the class of the player is bride and the player is not in a predicament room:
 			now C is bridal garter;
-			now S is bridal garter;
-			if bridal garter is not worn, summon bridal garter cursed with silent quest;
+			if bridal garter is not worn:
+				now S is bridal garter;
+				summon bridal garter cursed with silent quest;
+		if the class of the player is human toilet or the class of the player is latex fetish model:
+			if trashcan is off-stage:
+				class summon trashcan;
+				if trashcan is worn, now C is trashcan;
 		if C is nothing:
 			now S is string-belt;
 			summon S cursed with silent quest;
 			now C is S;
-		if S is clothing, say "Suddenly, a [printed name of S] appears on you! [QuestFlav of S]";
+		if S is clothing, say "Suddenly, a [printed name of S] appears on you[if the quest of S is no-clothing-quest]![otherwise]! [QuestFlav of S][end if]";
 		compute M condom pinning on C.
 
 To compute (M - a monster) condom pinning on (C - a clothing):
@@ -229,8 +237,6 @@ To compute (M - a monster) condom pinning on (C - a clothing):
 	say CondomNewbieTip;
 	UsedCondomUp C from M;
 	say "[one of]They seem to magically fuse, and you now have a used condom hanging from your [C]! [or]The condom fuses to your [C] just like before. [or]The condom fuses to your [C]. [stopping]";
-	force clothing-focus redraw;
-	update appearance level;
 	progress quest of condom-creampie-quest;
 	if a random number between 1 and 12 < the semen addiction of the player:
 		say "You feel [one of]a little[or]a bit[or]slightly[at random] [if the semen addiction of the player >= 14]less addicted to[otherwise if the semen addiction of the player > 7]less interested in[otherwise]more resilient against the idea of[end if] creampies[if bukkake fetish is 1] and facials[end if].";
@@ -368,11 +374,13 @@ To compute condom biting:
 SpecificCondomBiting is an action applying to one thing.
 Check SpecificCondomBiting:
 	if the noun is not clothing, say "This verb is for eating used condoms pinned to clothing." instead;
+	if the noun is trashcan and the player is not in a predicament room, say "Strong magic prevents your hands from interacting with the trash can in any way!" instead;
 	if the total condoms of the noun <= 0, say "That has no condoms pinned on it." instead;
 	if the used condoms of the noun <= 0, say "That has no used condoms left - you've already sucked the cum out of all the ones it had. You greedy slut." instead;
 	let B be a random thing penetrating face;
 	if B is a thing, say "[variable custom style]That would probably actually be possible if [NameDesc of B] wasn't in my mouth...[roman type][line break]" instead;
-	if the player is not able to eat, say "You are currently unable to eat things." instead.
+	if the player is not able to eat, say "You are currently unable to eat things." instead;
+	if the noun is worn and the player is not able to manually use their hands, do nothing instead.
 Carry out SpecificCondomBiting:
 	compute condom biting of the noun.
 Understand "eat condom from [something]", "drink condom from [something]", "bite condom from [something]", "eat condom off [something]", "drink condom off [something]", "bite condom off [something]", "eat condom on [something]", "drink condom on [something]", "bite condom on [something]" as SpecificCondomBiting.
@@ -391,8 +399,11 @@ To compute condom biting of (C - a clothing):
 	suggest swallowing with semen consequences; [You can't avoid the taste addiction increase by not swallowing]
 	get oral creampie image for the player;
 	update appearance level;
-	if C is worn, force clothing-focus redraw; [Forces redraw of clothing window]
-	otherwise force inventory-focus redraw. [Forces redraw of inventory window]
+	if C is worn:
+		force clothing-focus redraw; [Forces redraw of clothing window]
+		update appearance level;
+	otherwise:
+		force inventory-focus redraw. [Forces redraw of inventory window]
 
 To compute spontaneous condom of (C - a clothing):
 	let P be a random worn condom pinnable clothing;
@@ -428,7 +439,11 @@ To UsedCondomUp (C - a clothing) from (T - a thing) by (N - a number):
 				if M is not the throne:
 					add M to LM, if absent;
 		if the number of entries in LM > 3, progress quest of condom-collecting-quest;
-	force immediate clothing-focus redraw.
+	if C is worn:
+		force immediate clothing-focus redraw;
+		update appearance level;
+	otherwise:
+		force immediate inventory-focus redraw.
 
 To decide which object is the condomPop of (C - a clothing):
 	let E be the number of entries in the condom history of C;

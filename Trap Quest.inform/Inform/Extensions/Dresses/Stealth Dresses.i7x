@@ -10,8 +10,7 @@ Definition: illusory kimono is red themed: decide yes.
 Definition: illusory kimono is slitted: decide yes.
 
 To decide which number is the stealth-influence of (C - illusory kimono):
-	if the class of the player is vixen, decide on 3 + the magic-modifier of C;
-	decide on 0.
+	decide on 3 + the magic-modifier of C.
 
 Definition: illusory kimono is class-transformation-protected:
 	if the class of the player is vixen, decide yes;
@@ -51,14 +50,14 @@ To decide which number is the crotch-tightness of (C - commando outfit):
 Figure of commando outfit is the file "Items/Clothes/Upper/Special/commando1.png".
 
 To decide which number is the stealth-influence of (C - commando outfit):
-	if playerRegion is woods or the player is in a park room, decide on 3;
-	decide on 0.
+	if playerRegion is woods or the player is in a park room, decide on 4;
+	decide on 2.
 
 To say ShortDesc of (C - commando outfit):
 	say "commando outfit".
 To say MediumDesc of (C - commando outfit):
 	say "camo patterned commando outfit".
 To say ClothingDesc of (C - commando outfit):
-	say "This camo patterned outfit covers your arms and crotch but the legs stop short high up the thighs. Still, it would really help you keep a low profile in areas with lots of foliage.".
+	say "This camo patterned outfit covers your arms and crotch but the legs stop short high up the thighs. Still, it would really help you keep a low profile, especially in areas with lots of foliage.".
 
 Stealth Dresses ends here.

@@ -141,10 +141,11 @@ An all later time based rule (this is the compute arousal rule):
 				now S is S / 4;
 			otherwise:
 				now S is S / 3;
-			if the player is grossed out:
-				increase S by 1000;
-			otherwise if the player is perturbed:
-				increase S by 200;
+			unless the class of the player is faerie or (diaper quest is 1 and the class of the player is priestess):
+				if the player is grossed out:
+					increase S by 1000;
+				otherwise if the player is perturbed:
+					increase S by 200;
 			cool down S;
 	if the arousal of the player < minimum arousal, now the arousal of the player is minimum arousal;
 	check for arousal change.
@@ -179,7 +180,7 @@ To check for arousal change:
 		if previous-horny is 3:
 			say "[bold type]You now feel desperately horny. You are having an even harder time thinking about anything non-sexual[if the bimbo of the player > 8][one of] [second custom style](Tee-hee, hard)[or][stopping][end if][run paragraph on][roman type] - [if diaper quest is 1]your intelligence is significantly reduced until you orgasm or cool off.[otherwise if there is an unfriendly monster penetrating a fuckhole and the player is feeling dominant][run paragraph on]you might struggle to bring yourself to properly resist now.[otherwise if the delicateness of the player < 12][run paragraph on]it's going to be a lot more difficult to say no to the advances of others now![otherwise][run paragraph on]once there's a [manly-penis] inside you, there's no way you're going to be anything but a willing fuckhole until you get off.[end if][roman type][line break]";
 		if previous-horny is 4:
-			say "[bold type][one of]You didn't even realise it was possible to be so aroused. [roman type]Your entire crotch burns with desire, your breathing is heavy and your thoughts are [if the intelligence of the player < 6]a jumbled mess[otherwise]all over the place[end if][or]Once again you find yourself extremely horny, more than you ever realised was possible before entering this virtual world[or]You are extremely horny once again[stopping].";
+			say "[bold type][one of]You didn't even realise it was possible to be so aroused. [roman type]Your entire crotch burns with desire, your breathing is heavy and your thoughts are [if the intelligence of the player < 6]a jumbled mess[otherwise]all over the place[end if][or]Once again you find yourself extremely horny, more than you ever realised was possible before entering this virtual world[or]You are extremely horny once again[stopping].[roman type][line break]";
 		if the class of the player is symbiote, say "[bold type][one of]Thanks to the symbiotic nature of your relationship with your tongued clothing, you feel your strength increase as well.[or]Once again, your symbiotic tongues also help increase your strength as you become more aroused.[stopping][roman type][line break]";
 		if the player is pheromonal and old-pheromonal is 0:
 			let H be a random worn headgear;
@@ -239,7 +240,7 @@ A player who is perturbed slowly loses arousal.
 
 +!]
 Definition: yourself is perturbed:
-	if the player is upset about urine or turnsWithSoiledDiaper > 0, decide yes;
+	if the diaper addiction of the player < 14 and the grossness addiction of the player < 14 and (the player is upset about urine or turnsWithSoiledDiaper > 0), decide yes;
 	if there is a grossing the player out thing penetrating a body part, decide yes;
 	if there is a grossing the player out seduced monster, decide yes;
 	if the player is upset about unclean toilets, decide yes; [stinks of piss]
@@ -251,11 +252,13 @@ Definition: yourself is upset about unclean toilets:
 	if the location of the player is Dungeon19 or the location of the player is Toilet01, decide yes;
 	decide no.
 
-
 Definition: yourself is magically horny: [Player gets horny even if grossed out]
-	if the player is in School34 or the player is in School13 or the player is in a nonstandard room, decide yes; [School dungeon room, school detention room, iron maiden]
+	if the class of the player is faerie, decide yes;
+	if the player is in School34 or the player is in School13 or the player is in School21 or the player is in a nonstandard room, decide yes; [School dungeon room, school detention room, hot tub, iron maiden]
 	if there is a rocking horse grabbing the player, decide yes;
-	if diaper quest is 1 and there is a vine grabbing the player, decide yes;
+	if diaper quest is 1:
+		if there is a vine grabbing the player, decide yes;
+		if the class of the player is priestess, decide yes;
 	decide no.
 
 [You have an animal class, and you will find it difficult to resist 'musky' opponents. Also, beastly monsters are less likely to stop chasing you when you leave the room.]

@@ -7,6 +7,9 @@ Definition: a slutty sister is summoningRelevant: decide no. [Doesn't count towa
 Definition: a slutty sister is presenting as male:
 	if lady fetish is 2, decide yes;
 	decide no.
+Definition: a slutty sister is a urinater: decide no. [If they went to the bathroom they'd not be very good guards]
+Definition: a slutty sister is ready to entice: decide no. [Never entices]
+Definition: a slutty sister is willing to do licking: decide no.
 
 bulging-slutty-sister is a slutty sister.
 The printed name of bulging-slutty-sister is "[if item described is in the location of the player][TQlink of item described][end if][input-style][ShortDesc of item described][if item described is asleep] (exhausted)[end if][shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". Understand "bloated", "cumfilled", "cum", "filled", "empty" as bulging-slutty-sister. The text-shortcut of bulging-slutty-sister is "bu".
@@ -173,11 +176,8 @@ To compute sleep reduction of (M - a slutty sister):
 
 To compute labour to (M - a slutty sister):
 	say DefaultBirthScene.
-
 To compute fatherhood to (M - a slutty sister): [if alive, do not change the status of the slutty sister]
-	if M is not alive:
-		say DefaultBirthScene;
-		if debugmode is 1, say "The father was [M], but [he of M] was dead.".
+	dislodge M.
 
 To compute diaper mess reaction of (M - a slutty sister):
 	do nothing.
@@ -204,7 +204,7 @@ To compute kneeling reaction of (M - bulging-slutty-sister):
 
 To say LandingTaunt of (M - a slutty sister):
 	say "[BigNameDesc of M] [one of]smiles widely[or]laughs mockingly[cycling].";
-	humiliate 50.
+	moderateHumiliate.
 
 The futanari unique punish rules is a rulebook.
 This is the futanari unique punishment rule:

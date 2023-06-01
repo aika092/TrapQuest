@@ -95,6 +95,11 @@ To compute (Y - a needle trap) injecting into (X - breasts):
 		increase the lactation rate of breasts by 1;
 		cutscene needle breasts;
 		NeedleDelicateUp;
+	otherwise if the silicone volume of breasts > 0:
+		say "Owww, that really hurt! You watch as the implants in your breasts have extra silicone pumped into them...";
+		BustImplantsUp 1;
+		cutscene needle breasts;
+		NeedleDelicateUp;
 	otherwise if lactation fetish is 1:
 		say "Owww, that really hurt! You watch the capsule at the end of the dart empty what looks like a lot of [milk] into your breasts.[unless the player is top heavy]They visibly swell.[end if]";
 		Milkup a random number between 2 and 4;
@@ -155,6 +160,11 @@ To compute (Y - a needle trap) injecting into (X - hips):
 	otherwise if inflation fetish is 1 and a random number between 1 and 2 is 1 and tutorial is 0:
 		say "Owww, that really hurt! You watch the large balloon at the back end of the dart empty a lot of air into your ass cheeks. They inflate as if they were also made of stretchy rubber!";
 		AssInflate a random number between 4 and 6;
+		cutscene needle hips;
+		NeedleDelicateUp;
+	otherwise if the silicone volume of hips > 0:
+		say "Owww, that really hurt! You watch as the implants in your ass cheeks have extra silicone pumped into them...";
+		AssImplantsUp 1;
 		cutscene needle hips;
 		NeedleDelicateUp;
 	otherwise:
@@ -409,7 +419,7 @@ To compute unique trigger of (Y - genitals-rune-trap):
 polymorph-rune-trap is a rune trap.
 
 Definition: polymorph-rune-trap is fetish appropriate:
-	if unlucky is 1, decide yes;
+	if unlucky is 1 or tough-shit is 1, decide yes;
 	decide no.
 
 Figure of polymorph rune trap is the file "Env/Dungeon/rune5a.jpg".
@@ -421,11 +431,31 @@ To decide which figure-name is the triggered-image of (T - polymorph-rune-trap):
 	decide on Figure of polymorph rune trap triggered.
 
 To compute unique trigger of (Y - polymorph-rune-trap):
-	let C be a random worn upgradable clothing;
-	if C is clothing:
-		potentially transform C;
+	if tough-shit is 1:
+		let C be a random worn cursable clothing;
+		if C is clothing:
+			say "Your [C] glows darkly... ";
+			decrease the raw-magic-modifier of C by 2;
+			if the raw-magic-modifier of C > 0, now the raw-magic-modifier of C is 0;
+			if C is not cursed, now C is cursed;
+			if C is blandness and diaper quest is 0:
+				if C is breast covering:
+					now C is audible jiggles;
+				otherwise if C is sex toy:
+					now C is expansion;
+				otherwise:
+					now C is temptation;
+			say "And suddenly, it is now a [C]![line break][variable custom style]Noooo![roman type][line break]";
+			if C is not-influencing, set up stat-based influence of C;
+			compute summoned quest of C;
+		otherwise:
+			say "Nothing seems to happen. Odd...";
 	otherwise:
-		say "Nothing seems to happen. Odd...".
+		let C be a random worn upgradable clothing;
+		if C is clothing:
+			potentially transform C;
+		otherwise:
+			say "Nothing seems to happen. Odd...".
 
 wisp-rune-trap is a rune trap.
 

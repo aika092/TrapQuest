@@ -78,7 +78,7 @@ To compute drinking (X - a bottle):
 			now the Known corresponding to an Magic of the fill-type of X in the Table of Drinks is 1;
 			if a random number between 1 and 5 > 3:
 				curse X;
-				say "You sense that the blessing of your [X] has been nullified.";
+				say "You sense that the blessing of your [ShortDesc of X] has been nullified.";
 			now the curse-ID of X is sure;
 		otherwise if X is gold chalice and X is not cursed:
 			if the fill-type of X > highest-cursed and the Known corresponding to an Magic of the fill-type of X in the Table of Drinks is 1, say "This [if the fill-type of X is 20][semen][otherwise if the fill-type of X is 21][urine][otherwise if the fill-type of X is 22][milk][otherwise]ungodly mix of bodily fluids[end if] tastes [if the fill-type of X is 22]much[otherwise]even[end if] more bitter than usual!";
@@ -113,7 +113,7 @@ To compute drinking (X - a bottle):
 		if X is gold chalice, now A is 2;
 		if A is 1:
 			curse X;
-			if the curse-ID of X is sure, say "You feel the blessing of your [X] expire.";
+			if the curse-ID of X is sure, say "You feel the blessing of your [ShortDesc of X] expire.";
 	if a2m fetish >= 2 and X is anal-origin:
 		if the fill-type of X is 20:
 			say "The distinct tangy aftertaste reminds you that this was at one point an anal creampie.";
@@ -197,8 +197,14 @@ To compute drinking effect (N - 4):
 		otherwise:
 			say "Your breasts and hips refuse to shrink...";
 	if the noun is blessed:
-		if the thickness of hips > the largeness of breasts, HipDown 1;
-		otherwise BustDown 1.
+		if diaper quest is 1:
+			if the raw-bladder-incontinence of the player > 0 or the raw-rectum-incontinence of the player > 0:
+				say "You feel the blessed potion of control improving your ability to hold onto your [if the raw-rectum-incontinence of the player > 0]bowels and [end if]bladder!";
+				if the raw-rectum-incontinence of the player > 0, decrease the raw-rectum-incontinence of the player by 1;
+				if the raw-bladder-incontinence of the player > 0, decrease the raw-bladder-incontinence of the player by 1;
+		otherwise:
+			if the thickness of hips > the largeness of breasts, HipDown 1;
+			otherwise BustDown 1.
 
 To compute drinking effect (N - 5):
 	say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0]Mmm, a very heavy drink. You hold your head a bit higher as this drink gives you a boost of virility![otherwise if the player is somehow possessing a penis]Another heavy drink. You feel the magic going straight to your [player-penis]![otherwise]Another heavy drink. You feel a bit less [']girly[']![end if]";

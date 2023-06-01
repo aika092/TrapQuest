@@ -6,9 +6,6 @@ Definition: a onesie is class-relevant:
 	if the player is actually an adult baby, decide yes;
 	decide no.
 
-To compute set up of (C - a onesie):
-	now C is protection.
-
 To compute SelfExamineDesc of (C - a onesie):
 	say "You are wearing a [ShortDesc of C]. ".
 
@@ -31,7 +28,7 @@ To decide which number is the heel-skill-influence of (O - a onesie):
 	decide on X.
 
 To set up magic attribute of (C - a onesie):
-	now C is absorption.
+	now C is protection.
 
 Definition: a onesie is sissifying: decide yes.
 Definition: a onesie is displacable: decide no.
@@ -66,7 +63,7 @@ To compute periodic effect of (L - a onesie):
 To decide which object is the unique-upgrade-target of (C - a onesie):
 	decide on nothing.
 
-Part 1 - Velcro Onesie
+
 
 velcro onesie is a onesie. velcro onesie is crotch-exposing. The text-shortcut of velcro onesie is "von".
 
@@ -130,5 +127,79 @@ Definition: cupcake onesie is food themed: decide yes.
 Definition: cupcake onesie is white themed: decide yes.
 Definition: cupcake onesie is displacable: decide yes.
 
+
+tubesuit is a onesie. tubesuit is unique. tubesuit is latex. tubesuit is manly. tubesuit is totally-exclusive. The text-shortcut of tubesuit is "ts".
+
+The printed name of tubesuit is "[clothing-title-before]tubesuit[clothing-title-after]".
+
+To say ShortDesc of (C - tubesuit):
+	say "tubesuit".
+To say MediumDesc of (C - tubesuit):
+	say "Nintendolls Auto-respirator Combat Powersuit 3000".
+
+Figure of tubesuit is the file "Items/Clothes/Upper/Special/Onesies/onesie5.png".
+
+To decide which figure-name is clothing-image of (C - tubesuit):
+	decide on figure of tubesuit.
+
+To say ClothingDesc of (C - tubesuit):
+	say "A purple latex onesie with a huge diaper built into the crotch area. Apparently the diaper somehow uses futuristic technology to create oxygen or something? Well, clearly it works, because your face is glued to the respirator which is connected by air tubes to the diaper. And you're not suffocating. The suit has nanobots in the fabric, which enhance the actions of your muscles, and also make it completely indestructible. The nanobots also slowly heal you over time, as long as you're on your knees. Both the suit and the respirator are fully sealed to your skin, and you can't remove them. The only way to remove them is to [bold type]return to the modification machine[roman type][line break]".
+
+To decide which number is the initial outrage of (C - tubesuit):
+	decide on 7.
+To decide which number is the initial cringe of (C - tubesuit):
+	decide on 4.
+To decide which number is the strength-influence of (C - tubesuit):
+	decide on 6.
+To decide which number is the dexterity-influence of (C - tubesuit):
+	decide on 3.
+
+To set up default magic state of (C - tubesuit):
+	now C is protection.
+
+Definition: tubesuit is purple themed: decide yes.
+Definition: tubesuit is cursable: decide no.
+Definition: tubesuit is sissifying: decide no.
+Definition: tubesuit is baby themed: decide no.
+Definition: tubesuit is removable: decide no.
+Definition: tubesuit is destructible: decide no.
+Definition: tubesuit is watertight: decide yes.
+Definition: tubesuit is transformation-protected: decide yes.
+Definition: tubesuit is fetish appropriate:
+	if diaper quest is 1 and diaper messing >= 7, decide yes;
+	decide no.
+To compute periodic effect of (C - tubesuit):
+	now tubesuit is penetrating face;
+	if the player is prone and the body soreness of the player > 0:
+		say "[bold type]You feel the nanobots in your [MediumDesc of C] working hard to heal the bruises on your body with their futuristic technology![roman type][line break]";
+		bodyheal 1;
+	if white-giant-diaper is not worn and diaper-stack is not worn:
+		let K be random worn knickers;
+		if K is clothing:
+			transform K into white-giant-diaper;
+		otherwise:
+			summon white-giant-diaper uncursed;
+			say "A new [white-giant-diaper] appears underneath [NameDesc of C]!";
+	if the player is not holding-breath-this-turn:
+		say "You [one of]are forced[or]continue[stopping] to breathe the air sealed within [NameDesc of C]. ";
+		let D be a random worn diaper;
+		compute automatic state check of D;
+		if D is messed:
+			say "You are forced to [one of]breathe in every single last disgusting vapour of stink emitted by[or]get a whiff of the full pungent stink of[or]smell the horrid concentrated aroma created by[or]sniff the intense foul scent of[at random] your messy [ShortDesc of D]!";
+			SlowGrossOut messyDiaperSmellGrossnessLevel + (the mess of D / 10);
+		otherwise if the urine-soak of D > 0:
+			say "[one of]Your olfactory senses are flooded by[or]You are forced to smell[or]You can't help but breathe in[in random order] the [one of]strong[or]powerful[purely at random] [one of]smell[or]scent[purely at random] of [urine] from your [ShortDesc of D]!";
+			SlowGrossOut 3 + (the urine-soak of D / 15);
+		otherwise if the semen-soak of D > 0:
+			say "It [one of]smells like[or]stinks of[or]smells strongly of[at random] [semen].";
+			SlowGrossOut 2;
+		otherwise:
+			say "It smells a [one of]bit[or]tad[or]little[at random] [one of]sweaty[or]clammy[or]stuffy[or]musty[in random order].".
+
+To compute school periodic effect of (C - tubesuit):
+	compute periodic effect of C.
+
+Check wearing tubesuit:
+	if the player is not a february 2023 diaper donator, say Latest Debug Needed instead.
 
 Onesie ends here.

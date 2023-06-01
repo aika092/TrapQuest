@@ -50,7 +50,7 @@ School17 is an academic room. The printed name of School17 is "Food Hall". "This
 School18 is a lecture academic room. The printed name of School18 is "Emerald Classroom". "This 'classroom' has rows of desks but no chairs. The walls are adorned with motifs of spanking equipment, bondage and fetishwear.". The shape of School18 is L5/0-0-0-0-1-0. The grid position of School18 is <5,11,7>. School18 is north of School03.
 To decide which number is the entry-rank of (R - School18):
 	decide on 2.
-School19 is an academic room. The printed name of School19 is "Changing Rooms". "This room has a few hooks to hang up clothing and not much else. A door to the west says 'Swimming Pool' on it[if gloryhole is in School19]. You blink in surprise as you look at the north wall. [ExamineDesc of gloryhole]Considering the nature of this school, it doesn't feel particularly out of place[end if].". The shape of School19 is L5/0-0-0-0-1-1. The grid position of School19 is <5,10,7>. School19 is north of School04.
+School19 is an itemstatic academic room. The printed name of School19 is "Changing Rooms". "This room has a few hooks to hang up clothing and not much else. A door to the west says 'Swimming Pool' on it[if gloryhole is in School19]. You blink in surprise as you look at the north wall. [ExamineDesc of gloryhole]Considering the nature of this school, it doesn't feel particularly out of place[end if].". The shape of School19 is L5/0-0-0-0-1-1. The grid position of School19 is <5,10,7>. School19 is north of School04.
 To decide which number is the entry-rank of (R - School19):
 	decide on 1.
 
@@ -64,7 +64,7 @@ To decide which number is the entry-rank of (R - School21):
 School22 is an academic room. The printed name of School22 is "Spectator Stands". "Tiered viewing benches face the [if diaper quest is 0][semen]-filled [end if]swimming pool.". The shape of School22 is L5/0-0-0-0-1-0. The grid position of School22 is <5,9,8>. School22 is north of School20.
 To decide which number is the entry-rank of (R - School22):
 	decide on 2.
-School23 is an academic room. The printed name of School23 is "Gym". "A large empty space typical of a school indoor gym, with the addition of racetrack markings around the outside.". The shape of School23 is L5/0-0-1-0-0-0. The grid position of School23 is <5,9,6>. School23 is south of School20.
+School23 is an itemstatic academic room. The printed name of School23 is "Gym". "A large empty space typical of a school indoor gym, with the addition of racetrack markings around the outside.". The shape of School23 is L5/0-0-1-0-0-0. The grid position of School23 is <5,9,6>. School23 is south of School20.
 To decide which number is the entry-rank of (R - School23):
 	decide on 2.
 

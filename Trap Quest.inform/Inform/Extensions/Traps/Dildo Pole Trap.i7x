@@ -17,7 +17,6 @@ REQUIRES COMMENTING
 
 @!]
 A dildo trap is a kind of trap. A dildo trap is usually potentially wire. The text-shortcut of a dildo trap is "dt".
-[Figure of dildo trap is the file "Env/MultiFloor/dildopole1.png".]
 Figure of dungeon dildo trap is the file "Env/Dungeon/dildopole1.jpg".
 Figure of woods dildo trap is the file "Env/Forest/dildopole1.jpg".
 Figure of hotel dildo trap is the file "Env/Hotel/dildopole1.jpg".
@@ -219,7 +218,7 @@ To DollyPose:
 	compute DollObservation humiliation;
 	if doll-stuck-num > a random number between 0 and 1:
 		say "You [doll-stuck] one last time and then the dildo trap slows and lowers, letting your toes touch the ground, then your heels, and finally the shaft slips out of you... with a wet, sucking slurp, making it sound as if you were [i]trying[/i] to hold it still inside you! Your cheeks burn.";
-		humiliate MODERATE-HUMILIATION;
+		moderateHumiliate;
 		dislodge T;
 	otherwise:
 		increase doll-stuck-num by 1.
@@ -252,7 +251,12 @@ To Jump From The Dildo:
 	let Y be a random trap penetrating a fuckhole;
 	let H be a random worn hindrance-enabling shoes;
 	let O be a random fuckhole penetrated by Y;
-	if the player is clothing stuck:
+	if playerRegion is mansion and egg laying fetish is 1 and (O is asshole or the pregnancy of the player is 0 or the pregnancy of the player is 3) and the player is getting unlucky:
+		say "Suddenly, before you can move, the ghostly blue dildo shifts and morphs, becoming something closer to a sphere! It detaches from the pole, and as your [if O is asshole]sphincter[otherwise]vaginal opening[end if] closes around it, it travels deep up inside your [if O is asshole]belly[otherwise]womb[end if].[line break][variable custom style]Was that... an egg?![roman type][line break]";
+		if O is vagina, wombfill 1 small eggs;
+		otherwise assfill 1 small eggs;
+		dislodge Y;
+	otherwise if the player is clothing stuck:
 		let C be a random stuck clothing worn by the player;
 		if C is cursed:
 			say "Your [ShortDesc of C] [if C is shoes]are[otherwise]is[end if] stuck, stopping you from jumping off the dildo!";
@@ -519,6 +523,8 @@ To say ExamineDesc of (C - a ghostly dildo pole trap):
 
 To decide which figure-name is the examine-image of (C - a ghostly dildo pole trap):
 	decide on figure of mansion dildo trap.
+
+Definition: a ghostly dildo pole trap is egg-fathering: decide yes.
 
 This is the spawn initial ghostly dildo pole traps rule:
 	repeat with N running from 1 to 3:

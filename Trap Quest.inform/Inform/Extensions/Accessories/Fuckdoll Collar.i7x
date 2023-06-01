@@ -90,7 +90,7 @@ To decide which object is the unique-upgrade-target of (C - heart-collar):
 	decide on sparkle-heart-collar.
 
 
-sparkle-heart-collar is a submissive collar. sparkle-heart-collar is leather. The printed name of sparkle-heart-collar is "[clothing-title-before]furry heart collar[clothing-title-after]". The text-shortcut of sparkle-heart-collar is "hrtc". Understand "furry", "heart", "collar" as sparkle-heart-collar.
+sparkle-heart-collar is a submissive collar. sparkle-heart-collar is leather. The printed name of sparkle-heart-collar is "[clothing-title-before]furry heart collar[clothing-title-after]". The text-shortcut of sparkle-heart-collar is "fhtc". Understand "furry", "heart", "collar" as sparkle-heart-collar.
 
 Figure of sparkle heart collar is the file "Items/Accessories/Neck/collar10.png".
 

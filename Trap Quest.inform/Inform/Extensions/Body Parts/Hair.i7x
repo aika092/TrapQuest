@@ -417,7 +417,7 @@ To compute hair liquids overflow: [This is so we don't have to copy paste 3 line
 
 Section - Image for graphics window
 
-Figure of CumHairButton is the file "Special/Buttons/cumhair.png".
+Figure of CumHairButton is the file "CharWins/FocusWin/cumhair.png".
 
 To decide which figure-name is the examine-image of (T - hair):
 	if T is glazed, decide on Figure of CumHairButton;

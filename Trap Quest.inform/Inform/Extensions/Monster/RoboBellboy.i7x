@@ -1,6 +1,6 @@
 RoboBellboy by Monster begins here.
 
-A robobellboy is a kind of robot. Understand "bellboy", "bell", "boy" as robobellboy. A robobellboy is usually intelligent. The favour of a robobellboy is usually 11. The leftover-type of a robobellboy is usually 117. A robobellboy has a number called whore-intent. A robobellboy has a number called modification-intent.
+A robobellboy is a kind of robot. Understand "bellboy", "bell", "boy" as robobellboy. A robobellboy is usually intelligent. The favour of a robobellboy is usually 11. The leftover-type of a robobellboy is usually 117. robobellboy can be modification-intending, whore-intending, or not-intending (this is the robobellboy-intention property).
 
 Figure of robobellboy is the file "NPCs/Hotel/Robot/robobellboy1.jpg".
 Figure of senior robobellboy is the file "NPCs/Hotel/Robot/robobellboy2.jpg".
@@ -50,14 +50,8 @@ To decide which room is the nearest patron:
 			now D is N;
 	decide on H.
 
-[This is the spawn initial robobellboy rule:
-	if the number of alive robobellboys is 0:
-		if debugmode > 0, say "Summoning bellboy in hotel.";
-		let M be a random robobellboy;
-		while M is senior robobellboy:[never the first one to spawn.]
-			now M is a random robobellboy;
-		summon M in the hotel.
-The spawn initial robobellboy rule is listed in the setting up hotel monsters rules.]
+To compute unique boredom of (M - a robobellboy):
+	now M is not-intending.
 
 Part 1 - Misc Flavour
 
@@ -115,7 +109,7 @@ To compute perception of (M - a robobellboy):
 		bore M;
 	if M is interested, now target-room of M is the nearest patron.[for some reason this function has pretty insane hang time on it, so I moved it into a place will it will trigger less frequently]
 
-Definition: a senior robobellboy is objectifying the player:
+Definition: senior robobellboy is objectifying the player:
 	if the employee-record of it < 0, decide yes;
 	decide no.
 
@@ -142,9 +136,9 @@ To compute perception of (M - senior robobellboy):
 		say "[big his of M] eyes turn red.[line break][speech style of M]'HELLO NEW TRAINEE. SEVERAL COMPLAINTS HAVE BEEN MADE OF YOUR LACKLUSTRE DEDICATION. SUBMIT IMMEDIATELY FOR PERFORMANCE OPTIMISATION.'[roman type][line break]";
 	otherwise if the class of the player is not catgirl and the class of the player is not puppygirl and (the number of worn crotch covering clothing is 0 or the number of worn breast covering clothing is 0):
 		say "[big his of M] eyes turn red.[line break][speech style of M]'ERROR LINE 34, PATRON UNSUITABLE. INITIALISING EJECTION PROTOCOL... ERROR... ERROR... HELLO NEW TRAINEE. [caps please] SUBMIT IMMEDIATELY FOR PERFORMANCE OPTIMISATION.";
-	otherwise if a random number between 1 and 3 is 1 and (the charge of modification machine <= 0 or (artificial enhancements fetish is 1 and there is an off-stage fetish appropriate module)):
+	otherwise if a random number between 1 and (3 - diaper quest) is 1 and (the charge of modification machine <= 0 or (artificial enhancements fetish is 1 and there is an off-stage fetish appropriate module)):
 		say "[big his of M] eyes turn red.[line break][speech style of M]'HELLO TREASURED CUSTOMER. YOU HAVE BEEN SELECTED FOR COMPLIMENTAY MODIFICIATION. [caps please] ALLOW ME TO ESCORT YOU TO THE MODIFICATION MACHINE.'[roman type][line break]";
-		now the modification-intent of M is 1;
+		now M is modification-intending;
 	otherwise:
 		say "[speech style of M]'HELLO TREASURED CUSTOMER. [caps please] ALLOW THE BUTLER TO ASSIST YOU.'[roman type][line break][big he of M] appears to lose interest and continues on [his of M] way.";
 		bore M;
@@ -194,9 +188,9 @@ This is the robobellboy punishment rule:
 		compute trainee forcing of current-monster;
 	otherwise if the class of the player is maid:
 		compute maid forcing of current-monster;
-	otherwise if the modification-intent of current-monster is 1 and (the charge of modification machine <= 0 or (artificial enhancements fetish is 1 and there is an off-stage fetish appropriate module)):
+	otherwise if current-monster is modification-intending and (the charge of modification machine <= 0 or (artificial enhancements fetish is 1 and there is an off-stage fetish appropriate module)):
 		compute modification forcing of current-monster;
-	otherwise if the whore-intent of current-monster is 1 or the bimbo of the player > 13 or the number of worn crotch covering clothing > 0 and the number of worn breast covering clothing > 0:
+	otherwise if the current-monster is whore-intending or the bimbo of the player > 13 or the number of worn crotch covering clothing > 0 and the number of worn breast covering clothing > 0:
 		compute whore forcing of current-monster;
 	otherwise:
 		compute clothes forcing of current-monster;
@@ -235,7 +229,6 @@ To compute modification forcing of (M - a robobellboy):
 		say "[first custom style]'YOUR MODIFICATION IS READY.'[roman type][line break][BigNameDesc of M] places you onto [NameDesc of modification machine]!";
 		bore M for 400 seconds;
 		FavourUp M;
-		now the modification-intent of M is 0;
 		compute furniture resting on modification machine;
 	otherwise:
 		drag to the target-room of M by M.
@@ -250,7 +243,6 @@ To compute whore forcing of (M - a robobellboy):
 		say "[first custom style]'YOUR CLIENTS WILL BEGIN ARRIVING SHORTLY.'[roman type][line break]";
 		bore M for 400 seconds;
 		FavourUp M;
-		now the whore-intent of M is 0;
 		repeat with N running through monsters in the location of the player:
 			compute mandatory room leaving of N;
 		let H be a random hotel bed in the location of the player;
@@ -267,7 +259,6 @@ To compute change forcing of (M - a robobellboy):
 		drag to Hotel20 by M;
 	say "[first custom style]'FULL CHANGING PROCESS ENGAGED. [caps please] RELAX.'[roman type][line break]";
 	bore M for 400 seconds;
-	now the whore-intent of M is 0;
 	let ACS be a random automated changing station in Hotel20;
 	if ACS is a thing:
 		now auto is 1;
@@ -340,12 +331,9 @@ To compute knickers forcing of (M - a robobellboy):
 		compute failed forcing of M.
 
 To compute failed forcing of (M - a robobellboy):
-	now the whore-intent of M is 1;
+	now M is whore-intending;
 	say "[BigNameDesc of M] seems to pause for a moment, and then seems to change his mind in how to deal with you.[line break][first custom style]'UNABLE TO SELECT SUITABLE FETISH ATTIRE; CLIENT WILL HAVE TO STAY NUDE. [if diaper quest is 1]BABY SLAVE[otherwise]PROSTITUTION[end if] DUTIES PROGRAM ENGAGED.'[roman type][line break]";
 	compute whore forcing of M.
-
-To uniquely destroy (M - a robobellboy): [Are there any special rules we need to follow?]
-	now the whore-intent of M is 0.
 
 Section 2- DQ
 
@@ -364,10 +352,9 @@ To say EnticeFlav of (M - a monster) for (P - bellboy-forced-bed):
 To decide which number is the relevant addiction of (P - bellboy-forced-bed):
 	decide on the bimbo of the player.
 
-Definition: a bellboy-forced-bed (called P) is appropriate:
+Definition: bellboy-forced-bed is appropriate:
 	if current-monster is not robobellboy, decide no;
 	if the player is at least partially immobile, decide no;
-	[if the cringe appearance of the player < 5, decide no;]
 	decide yes.
 
 To compute punishment of (P - bellboy-forced-bed):
@@ -381,7 +368,7 @@ To say EnticeFlav of (M - a monster) for (P - bellboy-forced-clothing):
 To decide which number is the relevant addiction of (P - bellboy-forced-clothing):
 	decide on the humiliation of the player / 2000.
 
-Definition: a bellboy-forced-clothing (called P) is appropriate:
+Definition: bellboy-forced-clothing is appropriate:
 	if current-monster is not robobellboy, decide no;
 	if current-monster is babifying the player and the player is not immobile, decide no; [Will do whore forcing regime instead.]
 	if the class of the player is not catgirl and the class of the player is not puppygirl and (the number of worn crotch covering clothing is 0 or the number of worn breast covering clothing is 0), decide yes;
@@ -389,6 +376,22 @@ Definition: a bellboy-forced-clothing (called P) is appropriate:
 
 To compute punishment of (P - bellboy-forced-clothing):
 	compute clothes forcing of current-monster.
+
+
+bellboy-forced-machine is a diaper punishment. The priority of bellboy-forced-machine is 5.
+
+To say EnticeFlav of (M - a monster) for (P - bellboy-forced-machine):
+	say "[line break][speech style of M]'ASSUME THE MODIFICATION SUBMISSION POSITION IMMEDIATELY.'[roman type][line break]".
+
+To decide which number is the relevant addiction of (P - bellboy-forced-machine):
+	decide on the delicateness of the player.
+
+Definition: bellboy-forced-machine is appropriate:
+	if current-monster is not modification-intending robobellboy, decide no;
+	decide yes.
+
+To compute punishment of (P - bellboy-forced-machine):
+	compute modification forcing of current-monster.
 
 Part 4 - Conversation
 
@@ -516,7 +519,6 @@ To compute whore forcing of (M - senior robobellboy):
 		say "[first custom style]'YOUR CLIENTS WILL BEGIN ARRIVING SHORTLY.'[roman type][line break]";
 		bore M for 400 seconds;
 		FavourUp M;
-		now the whore-intent of M is 0;
 		repeat with N running through monsters in the location of the player:
 			compute mandatory room leaving of N;
 		let H be a random hotel bed in the location of the player;
@@ -526,7 +528,7 @@ To compute whore forcing of (M - senior robobellboy):
 		drag to nearest patron by M.
 
 To compute failed forcing of (M - senior robobellboy):
-	now the whore-intent of M is 1;
+	now M is whore-intending;
 	say "[BigNameDesc of M] seems to pause for a moment, and then seems to change his mind in how to deal with you.[line break][first custom style]'UNABLE TO UPGRADE PERFORMANCE. PROSTITUTE MAY BE FULLY UPGRADED. PROSTITUTION DUTIES PROGRAM ENGAGED.'[roman type][line break]";
 	compute whore forcing of M.
 

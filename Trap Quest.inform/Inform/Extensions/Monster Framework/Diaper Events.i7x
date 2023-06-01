@@ -60,7 +60,7 @@ To compute diaper check of (M - a monster):
 	otherwise:
 		calm M;
 		say "[DiaperCheckFlav of M][DiaperCheckReactionFlav of M]";
-		humiliate 100;
+		strongHumiliate;
 		if D is total protection and D is soilable unmessed knickers and rectum > 1 and asshole is not actually occupied and rectum + the rectum-incontinence of the player + suppository > the instant mess influence of M:
 			say InstantMessFlav of M;
 			compute messing;
@@ -261,6 +261,7 @@ Definition: a monster is double diaper locking: decide no. [Does this NPC put yo
 old-diaper is an object that varies.
 current-diaper is an object that varies.
 new-diaper is an object that varies.
+diaperChangeCount is a number that varies.
 
 To compute diaper change of (M - a monster):
 	now current-diaper is nothing;
@@ -269,12 +270,12 @@ To compute diaper change of (M - a monster):
 	if M is friendly, anger M;
 	if M is uninterested, interest M;
 	if M is grabbing the player and M is changing the player:
-		now current-diaper is a random worn crotch covering clothing;
 		now current-diaper is a random top level protection clothing; [Top level takes priority]
+		[if current-diaper is nothing, now current-diaper is a random worn crotch covering clothing;] [this doesn't work because displaced stuff gets stuck in a loop]
 		if current-diaper is worn no protection overdress, now current-diaper is nothing; [These are allowed to stay around!]
-		if (current-diaper is nothing or current-diaper is chastity bond) and there are worn knickers, now current-diaper is a random worn knickers; [All knickers MUST be removed]
-		if (current-diaper is nothing or current-diaper is chastity bond) and there is a worn tail plug, now current-diaper is a random worn tail plug;
-		if current-diaper is unmessed unremovable clothing:
+		if (current-diaper is nothing or current-diaper is not urination blocking) and there are worn knickers, now current-diaper is a random worn knickers; [All knickers MUST be removed]
+		if (current-diaper is nothing or current-diaper is not urination blocking) and there is a worn tail plug, now current-diaper is a random worn tail plug;
+		if current-diaper is unmessed urination blocking unremovable clothing:
 			say "[speech style of M]'I can't remove that [ShortDesc of current-diaper]. Damn, I guess I'll have to leave you like this, for now.'[roman type][line break]";
 			satisfy M;
 			dislodge M;
@@ -285,7 +286,7 @@ To compute diaper change of (M - a monster):
 		if old-diaper is diaper and current-diaper is chastity bond and M is diaper change chastity cummies rewarding and the player is able to orgasm so soon:
 			compute diaper change chastity cummies reward of M;
 			rule succeeds;
-		otherwise if current-diaper is clothing and current-diaper is not chastity bond:
+		otherwise if current-diaper is clothing and current-diaper is urination blocking:
 			now old-diaper is current-diaper;
 			if current-diaper is crotch-zipped clothing and current-diaper is not knickers and (there is a worn crotch-tie-up knickers or the number of worn knickers is 0):
 				say UnzipFlav of M at current-diaper;
@@ -295,6 +296,7 @@ To compute diaper change of (M - a monster):
 				compute M displacing current-diaper;
 				rule succeeds;
 			otherwise if current-diaper is locked:
+				now current-diaper is temporarily-unlocked;
 				compute M unlocking current-diaper;
 				rule succeeds;
 			otherwise if current-diaper is diaper and M is willing to double diapers and M is eager to double diapers and (current-diaper is unmessed or diaper messing >= 4):
@@ -303,16 +305,18 @@ To compute diaper change of (M - a monster):
 				if new-diaper is diaper and new-diaper is not current-diaper:
 					say DoubleDiaperFlav of M;
 					blandify and reveal new-diaper; [clean and reset it]
-					if M is double diaper locking:
-						let K be a random off-stage specific-key;
-						compute M locking new-diaper with K;
-					otherwise:
+					if M is not double diaper locking: [if they don't lock it, they glue it]
 						say DoubleDiaperGlueFlav of M;
 						gluify new-diaper; [elsewise the player will almost always be able to remove it without issue]
+						if diaper-stack is worn, gluify diaper-stack; [adds glue to the others diapers in the stack too, otherwise it's not technically sealed to the player]
 					diaperAdd new-diaper;
+					if M is double diaper locking: [locking must happen after it is worn]
+						let K be a random off-stage specific-key;
+						compute M locking diaper-stack with K;
 					say DoubleDiaperAfterFlav of M;
 					[no 'rule succeeds' because we're done, so now we follow through to the end.]
 				otherwise: [couldn't find an eligible bulkier diaper]
+					if debugmode > 0, say "[input-style]Unable to find an eligible diaper that could fit on top of the [current-diaper].[roman type][line break]";
 					say DiaperChangeRemovalFlav of M;
 					now M is carrying current-diaper;
 					dislodge current-diaper;
@@ -377,6 +381,7 @@ To compute diaper change of (M - a monster):
 				otherwise:
 					if M is diaper disciplining, summon new-diaper uncursed;
 					otherwise summon new-diaper cursed;
+					if old-diaper is messed knickers, only destroy old-diaper; [don't want the NPC to be carrying around messed knickers]
 				if old-diaper is diaper:
 					fully clean new-diaper;
 					say DiaperChangeFlav of M;
@@ -397,12 +402,23 @@ To compute diaper change of (M - a monster):
 			if C is actually summonable:
 				say "[BigNameDesc of M] replaces your [C].";
 				now C is worn by the player;
+			now C is not temporarily-removed;
+		repeat with C running through worn temporarily-unlocked diaper covers:
+			say "[if M is intelligent][BigNameDesc of M] locks the padlock at the waistband of [NameDesc of C].[otherwise]The padlock at the waistband of [NameDesc of C] suddenly clicks shut![end if]";
+			now C is locked;
+			now C is not temporarily-unlocked;
 		repeat with C running through temporarily-removed clothing carried by M:
 			if C is actually summonable:
 				say "[BigNameDesc of M] replaces your [C].";
 				now C is worn by the player;
+			now C is not temporarily-removed;
 		repeat with C running through worn crotch-displaced clothing:
 			compute M replacing C;
+			now C is not temporarily-displaced;
+		repeat with C running through worn temporarily-unlocked clothing:
+			say "[if M is intelligent][BigNameDesc of M] locks [NameDesc of C].[otherwise]With a click, it would appear that [NameDesc of C] is suddenly locked again![end if]";
+			now C is locked;
+			now C is not temporarily-unlocked;
 		validate layers; [just in case anything fucky happened with clothing layers]
 		satisfy M;
 		let vm be a random video-monitor in the location of the player;
@@ -411,6 +427,7 @@ To compute diaper change of (M - a monster):
 			let T be the substituted form of "having your diaper changed."; [note that the video-event always needs to be a present participle]
 			now the video-event of vm is T;
 		increase the times-changed of M by 1;
+		increase diaperChangeCount by 1;
 		compute unique diaper change effect of M;
 		dislodge M;
 		repeat with C running through diapers carried by M:
@@ -472,7 +489,7 @@ To say DoubleDiaperAnnounceFlav of (M - a monster):
 
 To say DoubleDiaperGlueFlav of (M - a monster):
 	let N be the number of entries in the list of stacked diapers;
-	say "[BigNameDesc of M] pulls out a tube of glue, and uses it to seal [if N is 2]the two diapers[otherwise]each of your [N] diapers[end if] together.".
+	say "[BigNameDesc of M] pulls out a tube of glue, and uses it to seal [if N is 0]the two diapers[otherwise]each of your [N + 1] diapers[end if] together.".
 
 To say DoubleDiaperAfterFlav of (M - a monster):
 	if M is intelligent, say "[speech style of M]'[one of]Hahaha, that's perfect[or]Oh my, it fits even better than I imagined[or]I'm afraid you may be left with a bit of a waddle, haha[or]haha, I wonder if you'll even be able to walk now[in random order]!'[roman type][line break]".
@@ -613,7 +630,6 @@ Section - Masturbating
 	if the player is very horny, decrease O by 2;
 	if the player is horny, decrease O by 2;
 	if the size of penis > 7, increase O by 1;
-	[if the oral sex addiction of the player > 6, decrease O by 1;]
 	if the player is extremely horny:
 		if O > 5, now O is 1;
 		otherwise now O is 2;
@@ -640,7 +656,11 @@ To initiate masturbation of (M - a monster):
 
 To say MasturbationDeclarationFlav of (M - a monster):
 	if M is intelligent:
-		if there is a worn diaper, say "[speech style of M]'[one of]You're looking a little flustered there, baby. Let's see what I can do about that...'[or]Are you feeling good inside your nappy? Let [daddy of M] help with that...'[at random][roman type][line break]".
+		if there is a worn messed knickers:
+			say "[speech style of M]'[one of]Only the naughtiest perverts could be horny with a nasty stinky bum-bum...'[or]Is stewing in your own mess making you horny? I wonder...'[at random][roman type][line break]";
+			if there is worn perceived unmessed knickers, compute state check of a random worn messed knickers;
+		otherwise if there is a worn diaper:
+			say "[speech style of M]'[one of]You're looking a little flustered there, baby. Let's see what I can do about that...'[or]Are you feeling good inside your nappy? Let [daddy of M] help with that...'[at random][roman type][line break]".
 
 To say MasturbationStartFlav of (M - a monster):
 	say "[BigNameDesc of M] pushes down on your back with one powerful hand to keep you still, and places [his of M] other hand over [if there is a worn diaper]the crotch of your diaper[otherwise if the player is herm]your [genitals][otherwise if the player is possessing a vagina]your [vagina][otherwise if the player is possessing a penis]your [ShortDesc of penis][otherwise]your crotch[end if]!".
@@ -652,8 +672,9 @@ To progress masturbation of (M - a monster):
 	compute unique masturbation effect of M.
 
 To compute unique masturbation effect of (M - a monster):
-	if there is a worn perceived messed diaper:
-		say "[one of]The gross squishiness of your messy diaper being rubbed makes you shudder as it oozes around your loins.[or][or][cycling]";
+	let D be a random worn perceived messed knickers;
+	if D is a thing:
+		say "[one of]The gross squishiness of your messy [ShortDesc of D] being rubbed makes you shudder as it oozes around your loins.[or][or][cycling]";
 		SlowGrossOut 9.
 
 To decide which number is the masturbation length of (M - a monster):
@@ -675,18 +696,30 @@ To say DiaperMasturbationFlav of (M - a monster):
 
 [The purpose of this function is simply to allow us to override the default flavour for female orgasms, and of course to do the same for male orgasms.]
 To compute masturbation climax of (M - a monster):
+	say DefaultOrgasmFlav;
 	if there is a worn diaper, compute diaper masturbation climax of M;
-	otherwise compute vanilla masturbation climax of M.
+	otherwise compute vanilla masturbation climax of M;
+	say "Being made to orgasm in this way was a deeply submissive experience.";
+	DelicateUp 1.
 
 To compute diaper masturbation climax of (M - a monster):
-	if there is a worn perceived messed diaper:
+	let D be a random worn diaper;
+	if D is perceived messed:
+		say "The fact that [NameDesc of M] was able to make you orgasm while wearing a messy diaper makes you feel like a disgusting pervert.";
 		GrossOut 9;
-	if there is a worn perceived wet diaper:
-		GrossOut 5;
-	vaginally orgasm shamefully.
+	otherwise if D is perceived wet:
+		say "The fact that [NameDesc of M] was able to make you orgasm while wearing a wet diaper makes you feel rather deviant.";
+		GrossOut 5.
 
 To compute vanilla masturbation climax of (M - a monster):
-	vaginally orgasm shamefully.
+	let K be a random worn knickers;
+	if K is perceived messed knickers:
+		say "The fact that [NameDesc of M] was able to make you orgasm while wearing messy panties makes you feel like a depraved pervert.";
+		GrossOut 10;
+	otherwise if K is perceived wet knickers:
+		say "The fact that [NameDesc of M] was able to make you orgasm while wearing wet underwear makes it feel extra-dirty.";
+		GrossOut 4.
+
 
 To compute masturbation aftermath of (M - a monster):
 	say MasturbationAfterFlav of M;
@@ -728,6 +761,7 @@ To compute enema of (M - a monster):
 		dislodge M;
 		replace any buttplugs;
 		if the number of sex toy filling asshole is 0 and M is eager to plug an enema, compute enema plugging of M;
+		replace any chastity;
 		replace any diapers;
 		replace any clothes;
 		say EnemaAfterFlav of M;
@@ -782,7 +816,8 @@ To compute enema plugging of (M - a monster):
 	let P be a random off-stage plug;
 	now the size of P is the openness of asshole;
 	if the size of P < 9, increase the size of P by 1;
-	now P is cursed;
+	if M is intelligent, gluify P;
+	otherwise now P is cursed;
 	say EnemaPlugDeclarationFlav of M;
 	compute M buttplugging with P;
 	say EnemaPlugAfterFlav of M.
@@ -825,7 +860,7 @@ To compute forcefeed round (N - X) of (M - YOUR NPC HERE):
 	FEED SCENE X EFFECTS;
 
 To decide which number is the forcefeed-length of (M - YOUR NPC HERE):
-	decide on a random number between ??? and ???. [each ??? must be between 1 and X inclusive]
+	decide on a random number between ??? and ???. ((each ??? must be between 1 and X inclusive))
 
 To decide which number is the max-forcefeed-length of (M - YOUR NPC HERE):
 	decide on X.
@@ -860,7 +895,7 @@ To compute forcefeed start of (M - a monster):
 	say ForcefeedStartFlav of M.
 
 To decide which number is the forcefeed-length of (M - a monster):
-	decide on 2.
+	decide on 3.
 
 To decide which number is the max-forcefeed-length of (M - a monster): [Set this to however high the NPC's forcefeed rounds go. It shouldn't be less than their forcefeed-length.]
 	decide on the forcefeed-length of M.
@@ -887,7 +922,7 @@ To say ForcefeedDeclarationFlav of (M - a monster):
 	say "[speech style of M]'[one of]It looks like it's time for your din-dins!'[or]Babies need to eat and drink to keep up their strength... and to keep their bowels moving.'[in random order][roman type][line break]".
 
 To say ForcefeedPillDeclarationFlav of (M - a monster):
-	say "[speech style of M]'[one of]And finally... let's try this!'[or]This will keep your bowels moving!'[then at random][roman type][line break]".
+	say "[speech style of M]'[one of]This is good for your health, I promise...'[or]This will keep your bowels moving!'[then at random][roman type][line break]".
 
 To say ForcefeedStartFlav of (M - a monster):
 	say "[BigNameDesc of M] takes you onto [his of M] lap, your back pressing into [his of M] chest, and holds you very tightly. You won't be able to escape now.".
@@ -898,7 +933,7 @@ To decide which number is breast-milk-this-time:
 
 To compute forcefeed round (N - a number) of (M - a monster):
 	if N is 1 and M is willing to forcefeed pills:
-		if M is intelligent, say "[ForcefeedPillDeclarationFlav of M]";
+		if M is intelligent, say ForcefeedPillDeclarationFlav of M;
 		say "[BigNameDesc of M] pushes a small white pill into your mouth and forces you to swallow it. [one of]Almost immediately[or]Once again[stopping] you feel that your stomach is more... active. It feels like it's digesting its contents at double speed!";
 		DigestionTimerUp 360;
 	otherwise:
@@ -921,12 +956,13 @@ Section - Suppository
 
 To compute suppository of (M - a monster):
 	compute suppository prep of M;
-	say "[SuppositoryFlav of M]";
+	say SuppositoryFlav of M;
 	increase suppository by the suppository strength of M;
-	say "[SuppositoryAftermath of M]";
-	say "[SuppositoryAfterFlav of M]";
+	say SuppositoryAftermath of M;
+	say SuppositoryAfterFlav of M;
 	replace any buttplugs;
 	unless M is grabbing the player:
+		replace any chastity;
 		replace any diapers;
 		replace any clothes;
 		let vm be a random video-monitor in the location of the player;
@@ -1002,7 +1038,7 @@ To say body area of (C - a headgear):
 	say "head".
 
 To say ConfiscationReaction of (M - a monster) on (C - a clothing):
-	say "[variable custom style][if the player is not able to speak][muffled sounds][otherwise if the player is feeling dominant]'[one of]Hey, that's mine!'[or]Hey, I need that!'[or]Give that back!'[in random order][otherwise if the player is not feeling submissive]'[one of]Oi!'[or]That's not fair...'[or]I... that...'[in random order][otherwise]'[one of]*Sniff*... Okay...'[or]I guess it's for the best...'[or]You're the boss...'[or]I'm sorry...[in random order][end if][roman type][line break]".
+	say "[variable custom style][if the player is not able to speak][muffled sounds][otherwise if the player is feeling dominant]'[one of]Hey, that's mine!'[or]Hey, I need that!'[or]Give that back!'[in random order][otherwise if the player is not feeling submissive]'[one of]Oi!'[or]That's not fair...'[or]I... that...'[in random order][otherwise]'[one of]*Sniff*... Okay...'[or]I guess it's for the best...'[or]You're the boss...'[or]I'm sorry. I deserved to have that confiscated. Thank you for disciplining me... *Sniff*'[in random order][end if][roman type][line break]".
 
 To say ConfiscationAfterFlav of (M - a monster) on (C - a clothing):
 	if M is intelligent, say "[speech style of M]'[one of]You should be thankful that I don't punish you further.'[or]I think you've gotten off lightly really, don't you?'[or]Considering your behaviour, I think that you should be grateful I have chosen not to punish your more... physically.'[in random order][roman type][line break]".
@@ -1164,7 +1200,7 @@ To say WetDiaperFacesitExpulsionFlav of (T - an object):
 
 
 To compute MessyDiaperFacesit of (T - an object):
-	if the player is needing to breathe and the player is able to breathe:
+	if the player is air breathing vulnerable and the player is able to breathe:
 		say "There is a messy diaper in your face...";
 		reset multiple choice questions;
 		set numerical response 1 to "Continue breathing";
@@ -1203,7 +1239,7 @@ To say MessyDiaperFacesitHoldAddictionFlav of (T - an object):
 
 
 To compute WetDiaperFacesit of (T - an object):
-	if the player is needing to breathe and the player is able to breathe:
+	if the player is air breathing vulnerable and the player is able to breathe:
 		say "There is a wet diaper in your face...";
 		reset multiple choice questions;
 		set numerical response 1 to "Continue breathing";
@@ -1236,13 +1272,13 @@ Part - Diaper Urinal Use
 To compute diaper urinal use of (M - a monster):
 	say DiaperUrinalDeclarationFlav of M;
 	say DiaperUrinalDeclaration of M;
-	now player-numerical-response is 1;
+	now player-numerical-response is 2;
 	if the grossness addiction of the player < 11:
 		reset multiple choice questions;
-		set numerical response 1 to "Pull the waistband of your diaper forward for [NameDesc of M], to make it easier for [him of M] to piss inside it.";
-		set numerical response 2 to "Try in vain to stop the inevitable.";
+		set numerical response 1 to "Try in vain to stop the inevitable.";
+		set numerical response 2 to "Pull the waistband of your diaper forward for [NameDesc of M], to make it easier for [him of M] to piss inside it.";
 		compute multiple choice question;
-	if player-numerical-response is 1:
+	if player-numerical-response is 2:
 		say DiaperUrinalSubmission of M;
 		say DiaperUrinalSubmissionFlav of M;
 		if the diaper addiction of the player < 14, say strongHumiliateReflect;
@@ -1255,7 +1291,7 @@ To compute diaper urinal use of (M - a monster):
 		if M is intelligent, say "[speech style of M]'It would seem to me, that your padding clearly isn't thick enough to hold all the pee coming its way.'[roman type][line break]";
 		now M is double-diaper-committed;
 		compute diaper change of M;
-	otherwise if player-numerical-response is 2:
+	otherwise if player-numerical-response is 1:
 		compute diaper urinal resistance punishment check of M;
 	otherwise:
 		satisfy M.
@@ -1297,7 +1333,7 @@ To compute diaper urinal resistance punishment check of (M - a monster):
 	otherwise:
 		say "[speech style of M]'[one of]I hope by next time, that you will have learned your place, and will accept your role as a diaper urinal obediently.'[or]You'd better learn your place soon, or there will be consequences...'[stopping][roman type][line break]";
 		bore M;
-	if M is not interested:
+	if M is not interested and M is in the location of the player:
 		say "[BigNameDesc of M] turns and leaves you alone.".
 
 To compute diaper urinal resistance punishment of (M - a monster):
@@ -1317,40 +1353,68 @@ Part - Diaper Cumrag Use
 To compute diaper cumrag use of (M - a monster):
 	say DiaperCumragDeclarationFlav of M;
 	say DiaperCumragDeclaration of M;
-	now player-numerical-response is 1;
-	if the grossness addiction of the player < 11:
+	now player-numerical-response is 2;
+	if the grossness addiction of the player < 11 or (diaper cumrag >= 2 and the player is a pervert):
 		reset multiple choice questions;
-		set numerical response 1 to "Pull the waistband of your diaper forward for [NameDesc of M], to make it easier for [him of M] to cum inside it.";
-		set numerical response 2 to "Try in vain to stop the inevitable.";
+		if the grossness addiction of the player < 11, set next numerical response to "Try your best to stop [him of M] from getting [his of M] [semen] inside your diaper.";
+		otherwise say "[one of][bold type]You now enjoy the sensation of [men of male-m] ejaculating in your diaper, so you can no longer choose to fight against it.[roman type][line break][or][stopping]";
+		set next numerical response to "Pull the waistband of your diaper forward for [NameDesc of M], to make it easier for [him of M] to cum inside it.";
+		if diaper cumrag >= 2 and the player is a pervert, set next numerical response to "Do the dirty work for [NameDesc of M], masturbating [him of M] with your hands until [he of M] empties [his of M] balls into your diaper.";
 		compute multiple choice question;
-	if player-numerical-response is 1:
+	if the chosen numerical response matches the text "waistband":
 		say DiaperCumragSubmission of M;
 		say DiaperCumragSubmissionFlav of M;
-		if the diaper addiction of the player < 14, say strongHumiliateReflect;
+		say strongHumiliateReflect;
+		compute diaper cumrag ejaculating of M;
+		satisfy M;
+	otherwise if the chosen numerical response matches the text "dirty":
+		say DiaperCumragAssistance of M;
+		say DiaperCumragAssistanceFlav of M;
+		say severeHumiliateReflect;
+		compute diaper cumrag ejaculating of M;
+		if the player is getting lucky, compute default happy reward of M;
+		satisfy M;
+	otherwise if the player is getting lucky:
+		say DiaperCumragResistanceSuccess of M;
+		say DiaperCumragResistanceSuccessFlav of M;
+		bore M;
 	otherwise:
 		say DiaperCumragResistance of M;
 		say DiaperCumragResistanceFlav of M;
-	compute diaper cumrag ejaculating of M;
-	satisfy M.
+		compute diaper cumrag ejaculating of M;
+		satisfy M.
 
 
 To say DiaperCumragDeclarationFlav of (M - a monster):
 	if M is intelligent, say "[speech style of M]'[one of]Have you ever had your [daddytitle of M] cum in your nappy before, hmm? Well, there's a first time for everything...'[or]Come here, you sexy padded slut...'[stopping][roman type][line break]".
 
 To say DiaperCumragDeclaration of (M - a monster):
-	say "[BigNameDesc of M] begins masturbating [his of M] [manly-penis], clearly intent on using your diaper's padding as [his of M] cumrag!".
+	say "[BigNameDesc of M] begins masturbating [his of M] [manly-penis], clearly intent on [one of]asserting [his of M] dominance by cumming inside your diaper[or]using your diaper's padding as [his of M] cumrag[cycling]!".
 
 To say DiaperCumragSubmission of (M - a monster):
 	let D be a random worn knickers;
-	say "You [if the diaper addiction of the player >= 14]automatically [end if]pull forward the waistband of your [MediumDesc of D], willingly giving [NameDesc of M] easy access.";
-	if diaper cumrag > 1, say "You offer [NameDesc of M] your hand, and [he of M] allows you to finish the job for [him of M], pumping [his of M] meat for [him of M] while positioning it so that the tip is pointing down into your diaper.".
+	say "You [if the grossness addiction of the player >= 11]automatically [end if]pull forward the waistband of your [MediumDesc of D], willingly giving [NameDesc of M] easy access.".
 
 To say DiaperCumragSubmissionFlav of (M - a monster):
 	if M is intelligent, say "[speech style of M]'[one of]There's a good diaper cumrag.'[or]Good [boy of the player].'[cycling][roman type][line break]".
 
+To say DiaperCumragAssistance of (M - a monster):
+	let D be a random worn knickers;
+	say "You [if the grossness addiction of the player >= 11]automatically [end if]pull forward the waistband of your [MediumDesc of D], willingly giving [NameDesc of M] easy access. You then offer [NameDesc of M] your hand, and [he of M] allows you to finish the job for [him of M], pumping [his of M] meat for [him of M] while positioning it so that the tip is pointing down into your diaper.".
+
+To say DiaperCumragAssistanceFlav of (M - a monster):
+	if M is intelligent, say "[speech style of M]'[one of]Haha, you're that eager for me to blow my load into your Pampies, are you? You're looking forward to feeling my sticky seed against your skin as you waddle around, are you?'[or]Yes, yes, just like that!'[cycling][roman type][line break]".
+
+To say DiaperCumragResistanceSuccess of (M - a monster):
+	let D be a random worn diaper;
+	say "You make it as difficult as possible for [NameDesc of M]. And, fortunately, just as [he of M] starts orgasming and trying to shove [his of M] [manly-penis] inside the front of your [ShortDesc of D], you manage to throw your hips to the side, and [his of M] spills onto the ground instead. [GotLuckyFlav]".
+
+To say DiaperCumragResistanceSuccessFlav of (M - a monster):
+	say "[speech style of M]'Useless bitch! Cumrags aren't supposed to move! Ugh!'[roman type][line break]Fortunately, [he of M] seems too tired from [his of M] orgasm to decide to punish you further right now. [big he of M] just begins to stomp off in a huff.".
+
 To say DiaperCumragResistance of (M - a monster):
 	let D be a random worn diaper;
-	say "You make it as difficult as possible for [NameDesc of M], but of course in the end there's nothing you can do to stop [him of M] holding you in place and shoving [his of M] [manly-penis] inside the front of your [ShortDesc of D].".
+	say "You make it as difficult as possible for [NameDesc of M], but in the end there's nothing you can do to stop [him of M] holding you in place and shoving [his of M] [manly-penis] inside the front of your [ShortDesc of D].".
 
 To say DiaperCumragResistanceFlav of (M - a monster):
 	say "".

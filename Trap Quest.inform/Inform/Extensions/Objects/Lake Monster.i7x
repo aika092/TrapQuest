@@ -1,8 +1,9 @@
 Lake Monster by Objects begins here.
 
-Figure of lake monster is the file "NPCs/Bosses/tentaclemonster1.png".
-Figure of Lake Monster Cutscene 1 is the file "Special/Cutscene/cutscene-lake1.jpg".
-Figure of Lake Monster Cutscene 2 is the file "Special/Cutscene/cutscene-lake2.jpg".
+Figure of lake monster is the file "NPCs/Bosses/LakeMonster/tentaclemonster1.png".
+Figure of lake monster swimming is the file "NPCs/Bosses/LakeMonster/tentaclemonster3.jpg".
+Figure of Lake Monster Cutscene 1 is the file "NPCs/Bosses/LakeMonster/cutscene-lake1.jpg".
+Figure of Lake Monster Cutscene 2 is the file "NPCs/Bosses/LakeMonster/cutscene-lake2.jpg".
 
 A lake monster is a kind of person. A lake monster is usually unintelligent. There is 1 lake monster. The printed name of lake monster is usually "[TQlink of item described][input-style]lake monster[roman type][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of lake monster is "lm". A lake monster has a number called semen-sniffing. A lake monster is not portable. A lake monster can be lake-stalking or not lake-stalking. A lake monster is usually not lake-stalking. A lake monster has a number called swim-location. The swim-location of lake monster is usually 5.
 
@@ -360,6 +361,7 @@ To compute swimming in (WB - DungeonScenery03):
 		if M is in the location of the player:
 			say "You are currently being pursued by some huge aquatic monster, which is trying to capture you with its four thick, octopus-like tentacles.";
 			compute LakeChase at S;
+			now temporaryYesNoBackground is figure of lake monster swimming;
 			if M is not lake-stalking:
 				now swimming is 0;[you got fucked.]
 		otherwise:
@@ -449,6 +451,7 @@ To compute swimming in (WB - DungeonScenery03):
 				compute swimming fatigue check in WB;
 				if delayed fainting is 1, now swimming is 0;
 	if seconds > 0, increase seconds by swim-turns * 3;
+	now temporaryYesNoBackground is figure of small image;
 	display entire map.
 
 [
@@ -513,8 +516,13 @@ To compute treasure diving in (WB - DungeonScenery03) at (L - a number):
 		otherwise:
 			say "You find a single high-heel. You leave it behind as you swim back to the surface.";
 	otherwise if N is 17:[swimsuit]
-		let C be a random off-stage swimming themed clothing;
-		if C is clothing:
+		let C be a random off-stage plentiful fetish appropriate swimming themed clothing;
+		if the player is a may 2023 top donator and gris monokini is not held:
+			now gris monokini is carried by the player;
+			if gris monokini is unclash summonable:
+				say "[bold type]You find a [gris monokini]![roman type] You take it with you as you swim back to the surface. As you surface... You realise that you're no longer holding it? But... Then... Where has it gone?";
+				autobind gris monokini;
+		otherwise if C is clothing:
 			say "[bold type]You find a [MediumDesc of C]![roman type] You take it with you as you swim back to the surface.";
 			now the water-soak of C is the soak-limit of C;
 			now C is carried by the player;
@@ -568,14 +576,14 @@ location - current location]
 To compute LakeNotice (turns - a number) with (swim-location - a number):[TODO: factor in luck]
 	let M be a random lake monster;
 	if M is not lake-stalking and bukkake fetish is 1:[It hasn't noticed you. Let's see if it does. Disabled if bukkake is disabled.]
-		if debugmode > 0, say "[input style]Checking if player escapes notice...[line break]";
 		let T be tracked-semen;
 		let L be a random lake monster;
 		increase the semen-sniffing of L by T * 40;
 		increase the semen-sniffing of L by a random number between (turns * 5) and (swim-location * 10);[The longer you stick around, the higher the chance of being noticed.]
 		let R be a random number between 10 and 25 + a random number between 10 and 25;
-		if bukkake fetish is 0 or the latex-transformation of the player > 2, now R is 9999;[monster doesn't attack sex dolls]
+		if bukkake fetish is 0 or the latex-transformation of the player > 2, now R is 999999;[monster doesn't attack sex dolls]
 		if the class of the player is schoolgirl, now R is R * 10;[schoolgirls have the worst luck sometimes.]
+		if debugmode > 0, say "[input-style]Checking if player escapes notice... tracked semen is [T]; turns is [turns], R is [R]. R * 40 = [R * 40] | [semen-sniffing of L] (new semen sniffing)[roman type][line break]";
 		if (R * 40 < the semen-sniffing of L):[if a number between 800 and 1000 is less than the monster's "curiosity"]
 			if debugmode > 0, say "[bold type]FAILED[roman type]";
 			now M is lake-stalking;
@@ -603,8 +611,8 @@ To compute LakeChase at (swim-location - a number):
 To compute LakeStalk at (swim-location - a number):
 	let M be a random lake monster;
 	let L be the swim-location of M;
-	if L is swim-location or (a random number between 1 and -1) + L is swim-location or (L is 1 and swim-location is 0):[under you? Tries to grab you. Otherwise, 1 in 3.]
-		if debugmode > 0, say "[input style]Checking if monster secretly grabs...[roman type][line break]";
+	if L is swim-location or (a random number between -1 and 1) + L is swim-location or (L is 1 and swim-location is 0):[under you? Tries to grab you. Otherwise, 1 in 3.]
+		if debugmode > 0, say "[input-style]Checking if monster secretly grabs...[roman type][line break]";
 		let S be the swimming challenge of the player;
 		let D be a random number between -15 and 70;[Slightly easier for the player to dodge, since the monster is being sneaky, but still harder since the monster is being sneaky and doesn't let you use dexterity]
 		if L is swim-location, decrease D by 10;
@@ -628,7 +636,7 @@ To compute LakeStalk at (swim-location - a number):
 
 [The monster is stalking the player. Do they see it for what it is, or do they mistake it for treasure.]
 To say LakeShadowFlav of (W - DungeonScenery03):
-	if a random number between 1 and the intelligence of the player > 15:
+	if a random number between 1 and 15 < the intelligence of the player:
 		say "[line break]Suddenly you notice a huge shadow of something moving underneath the waters. As if reacting to your attention, four large tentacles quickly rise to the surface and move to surround you!";
 		now a random lake monster is in the location of the player;
 	otherwise:
@@ -636,7 +644,7 @@ To say LakeShadowFlav of (W - DungeonScenery03):
 
 To compute lake tentacle gangbang of (L - lake monster):
 	cutshow figure of lake monster cutscene 1 for L;
-	say "[line break]";
+	say line break;
 	compute secondLakeArm of L;
 	compute thirdLakeArm of L;
 	compute fourthLakeArm of L;

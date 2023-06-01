@@ -52,6 +52,7 @@ Definition: a dominatrix is willing to charm snakes:
 	decide no.
 
 Definition: dominatrix is hotel dwelling: decide yes.
+Definition: dominatrix is closest-toilet-preferring: decide yes.
 
 Figure of Dominatrix Cutscene 1 is the file "NPCs/Hotel/Dominatrix/cutscene-dominatrix-heel1.png".
 Figure of Dominatrix Cutscene 2 is the file "NPCs/Hotel/Dominatrix/cutscene-dominatrix-heel2.png".
@@ -141,8 +142,12 @@ To set up (M - dominatrix):
 	now the monstersetup of M is 1;
 	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M;
-	let L be a random lubricant;
-	add L to the tradableItems of M, if absent;
+	let noLube be true;
+	repeat with C running through the tradableItems of M:
+		if C is lubricant, now noLube is false;
+	if noLube is true:
+		let L be a random lubricant;
+		add L to the tradableItems of M;
 	add restriction-salve to the tradableItems of M, if absent;
 	add focus band to the taxableItems of M, if absent;
 	calm M;
@@ -277,7 +282,7 @@ To compute dq perception of (M - dominatrix):
 	if the woman-status of woman-player is 93 and the dominatrix-contraption-scene of woman-player <= 5 and woman-player is in the location of the player:
 		say "[BigNameDesc of M] grins.[line break][speech style of M]'Enjoying the show?'[roman type][line break]";
 		calm M;
-	otherwise if there is soiled-diaper carried by M:
+	otherwise if there is soiled-diaper carried by M or there is a dirty diaper carried by M:
 		say "[speech style of M]'[one of]I believe this is yours? Don't try and deny it. It appears I'm going to have to add you to my list of slaves-in-training, since you clearly can't be trusted to wander these halls on your own. For your first lesson, let's show you where we keep the diaper pail[or]Once again I found evidence of your disgusting accidents just lying around the floor of my hotel. I'm never going to let you get away with something like this[stopping]...'[roman type][line break]";
 		anger M;
 	otherwise if whip-of-domination is currently perceivable:
@@ -410,10 +415,9 @@ To compute stocks paddling of (M - dominatrix):
 			let P be a random off-stage generic-appropriate patron;
 			while X >= 0:
 				now P is a random off-stage generic-appropriate patron;
-				now P is in the location of the player;
 				set up P;
+				now P is in the location of the player;
 				anger P;
-				bore P;
 				decrease X by 1;
 			say "[if the number of patrons in the location of the player <= 1]A curious passer-by walks into the room, and upon seeing you, grins widely[otherwise if lady fetish is 1]Several women pile into the room! They seem very excited to see you[otherwise]Several men pile into the room! They seem very happy to see you[end if].[line break][speech style of M]'What do we have here then?'[roman type][line break][if bukkake fetish is 1][line break][speech style of M]'It's a show for you lot. Stand around and watch, and feel free to use [his of the player] face as a target board, if you know what I mean.'[roman type][line break]They do indeed seem to know, as they all start slowly stroking their meat while staring at you.[otherwise if face is actually occupied][line break][speech style of M]'I just wanted someone to watch, it's not as humiliating for the little bitch here if I'm the only one that knows. Feel free to wank, but don't touch [him of the player], [he of the player]'s mine.'[roman type][line break]The [man of P] doesn't need telling twice, and already has [his of P] hands wrapped around [his of P] [DickDesc of P]. [big his of P] eyes are locked with yours.[otherwise][line break][speech style of M]'This end is your end, do what you want. I'll handle the other.'[roman type][line break]The [man of P] doesn't need telling twice, and heads straight for you.[end if]";
 		if bukkake fetish is 1 and the number of patrons in the location of the player > 0:
@@ -455,7 +459,7 @@ To compute stocks paddling of (M - dominatrix):
 		if the sex-length of M > 0:
 			let P be a random patron penetrating face;
 			say "[one of]Using some kind of spanking paddle outside of your vision, the[or]The[stopping] [M] [one of]strikes[or]slaps[or]spanks[or]paddles[then at random] your ass cheeks hard![line break][variable custom style][if the player is able to speak]'[one of]Owwww!'[or]Aaaaah!'[or]OUUCH!'[at random][otherwise][one of]Fuck![or]Shit![or]'MMMMPH!'[or]'NNNNG!'[at random][end if][roman type][line break][if P is patron][one of]You shriek around [NameDesc of P]'s [DickDesc of P], which just makes you gag even harder.[or][or][or][cycling]";
-			Humiliate 150;
+			severeHumiliate;
 		otherwise:
 			say "[BigNameDesc of M] stops paddling you and unlocks the stocks, freeing you.[line break][speech style of M]'I hope you've learned your lesson. I don't want to have to do that again.'[roman type][line break]Something tells you [he of M]'s lying. For now, at least, [he of M] seems to have lost interest.";
 			bore M;
@@ -489,7 +493,7 @@ To compute whipping of (M - dominatrix):
 			PainUp 20;
 		otherwise if the reaction of the player is 2 or (the reaction of the player is 1 and a random number between the charisma of the player and 4 > the difficulty of M / 3):
 			say "[BigNameDesc of M] whips you only a few times, true to [his of M] word and holding back thanks to your submissive pleading. After this, [he of M] seems satisfied, and lets you down.[line break][speech style of M]'I'm surprised at how quickly you learned your lesson, slave. Disrespect me again and I may not be so gentle.'[roman type][line break]";
-			humiliate 100;
+			strongHumiliate;
 		otherwise:
 			say "[BigNameDesc of M] whips you several more times, grinding [his of M] strapon cock between your [AssDesc] as [he of M] brings you to the verge of tears. True to [his of M] word [he of M] seems to be holding back, and after [he of M]'s satisfied [he of M] gently lets you down.[line break][speech style of M]'Learn your lesson, slave, or next time I will not be so gentle.'[roman type][line break]";
 			PainUp 10;
@@ -904,6 +908,7 @@ To compute unique banishment of (M - dominatrix):
 		compute autotaking X.
 
 To compute loot dropping of (X - focus band) by (M - dominatrix):
+	unless M is dying, now the owner of X is M;
 	say "[BigNameDesc of M] removes a [printed name of X] from [his of M] arm.[line break][speech style of M]'When I next catch you, there will be no mercy. You will need something like this just to survive.'[roman type][line break]".
 
 To compute damaging attack of (M - dominatrix):
@@ -1214,15 +1219,11 @@ To compute scared reduction of (M - dominatrix):
 
 Part 6 - Conversation
 
-To IdentifiablePosterReaction of (M - dominatrix):
-	say "[BigNameDesc of M] looks at you, blinks, then looks back to the poster. Upon realising that it is you, [he of M] can't help but smile widely.";
-	say "You turn bright red with shame.";
-	humiliate the lewdness of a random poster in the location of the player * 2.
+To say IdentifiablePosterReactionFlav of (M - dominatrix):
+	say "[BigNameDesc of M] looks at you, blinks, then looks back to the poster. Upon realising that it is you, [he of M] can't help but smile widely.".
 
-To UnidentifiablePosterReaction of (M - dominatrix) with (P - a poster):
-	say "[speech style of M]'Now that's one dirty slut in need of discipline.'[roman type][line break]";
-	say "You turn slightly red but don't say a word.";
-	humiliate the lewdness of a random poster in the location of the player / 2.
+To say UnidentifiablePosterReactionFlav of (M - dominatrix) with (P - a poster):
+	say "[speech style of M]'Now that's one dirty slut in need of discipline.'[roman type][line break]".
 
 To say RewardFlav of (M - dominatrix) for (T - a thing):
 	say "[speech style of M]'Take this[one of], and when you use it, remember our time together[or] to remember me with[stopping].'[roman type][line break][BigNameDesc of M] puts a [T] on the ground in front of you.".

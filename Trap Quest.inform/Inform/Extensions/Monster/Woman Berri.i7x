@@ -25,8 +25,8 @@ Figure of Berri Cutscene 1a is the file "NPCs/MultiFloor/berri/woman-cutscene1a.
 Figure of Berri Cutscene 1b is the file "NPCs/MultiFloor/berri/woman-cutscene1b.jpg".
 Figure of Berri Cutscene 1c is the file "NPCs/MultiFloor/berri/woman-cutscene1c.jpg".
 Figure of Berri Cutscene 1d is the file "NPCs/MultiFloor/berri/woman-cutscene1d.jpg".
-Figure of Berri Cutscene 2 is the file "Special/Cutscene/cutscene-berri-vinepit1.jpg".
-Figure of Berri Cutscene 3 is the file "Special/Cutscene/cutscene-berri-craft1.jpg".
+Figure of Berri Cutscene 2 is the file "NPCs/MultiFloor/berri/woman-cutscene2.jpg".
+Figure of Berri Cutscene 3 is the file "NPCs/MultiFloor/berri/woman-cutscene3.jpg".
 Figure of Berri Cutscene 4 is the file "NPCs/MultiFloor/berri/woman-cutscene4.jpg".
 Figure of human toilet is the file "NPCs/MultiFloor/berri/woman-cutscene5.jpg".
 Figure of Berri Cutscene 6a is the file "NPCs/MultiFloor/berri/woman-cutscene6a.jpg".
@@ -62,7 +62,8 @@ To decide which figure-name is the monster-image of (M - woman-player):
 		decide on figure of woman 1;
 	if the woman-bimbo of M is 3:
 		if the woman-status of woman-player is 90 and the vine-scene of woman-player <= 4, decide on figure of woman 2b;
-		if there is a revealed hypno trap in the location of M, decide on figure of woman 2c;
+		let HT be a random revealed hypno trap in the location of M;
+		if HT is a thing and HT is not expired, decide on figure of woman 2c;
 		decide on figure of woman 2;
 	if the woman-bimbo of M is 4, decide on figure of woman 3;
 	if the woman-bimbo of M is 5:
@@ -137,6 +138,7 @@ Definition: woman-player is messy:
 	if woman-player is caged and playerRegion is dungeon, decide yes;
 	if the woman-diaper-state of it > 0 and diaper messing >= 6, decide yes;
 	decide no.
+Definition: woman-player is just messing: decide no.
 
 To vanish (M - a monster):
 	if M is woman-player and M is introduced:
@@ -569,7 +571,7 @@ A time based rule (this is the anal contraption predicament rule):
 			otherwise if the dominatrix-contraption-scene of W is 4:
 				say "[speech style of W]'Uh-oh...'[roman type][line break]Disaster strikes as with a loud [if diaper messing >= 3]BRRRRT[otherwise]hiss[end if], [NameDesc of woman-player] soils [himself of W] and fills [his of W] superthick diaper with a large helping of [if diaper messing >= 3]stinky mess[otherwise][urine][end if]. You can't smell a thing, which you realise probably means the entire odour is being well-contained within [NameDesc of woman-player][']s rubber prison.";
 			otherwise if the dominatrix-contraption-scene of W is 5:
-				say "The situation for [NameDesc of W] goes from bad to worse as a noise in the drain heralds the arrival of a new batch of [if watersports fetish is 1][urine][otherwise]green laxative drink[end if].[speech style of W]'Gaaaah...'[roman type][line break][BigNameDesc of W] is once again cut off by the liquid filling the tank, not only stopping [him of W] from speaking but also from breathing through [his of W] mouth. Once again needing to breathe through [his of W] nose, [NameDesc of W][']s face goes red as [he of W] is forced to experience the full scent of [his of W] soiled padding. But there's nothing for it but to breathe it all in, getting as much oxygen as [he of W] can through [his of W] own [if diaper messing >= 3]filth[otherwise][urine][end if]. At the same time, [he of W] begins once again desperately sucking and swallowing, hoping to once again gain access to fresh air.";
+				say "The situation for [NameDesc of W] goes from bad to worse as a noise in the drain heralds the arrival of a new batch of [if watersports fetish is 1][urine][otherwise]green laxative drink[end if].[speech style of W]'Gaaaah...'[roman type][line break][BigNameDesc of W] is once again cut off by the liquid filling the tank, not only stopping [him of W] from speaking but also from breathing through [his of W] mouth. Once again air breathing vulnerable through [his of W] nose, [NameDesc of W][']s face goes red as [he of W] is forced to experience the full scent of [his of W] soiled padding. But there's nothing for it but to breathe it all in, getting as much oxygen as [he of W] can through [his of W] own [if diaper messing >= 3]filth[otherwise][urine][end if]. At the same time, [he of W] begins once again desperately sucking and swallowing, hoping to once again gain access to fresh air.";
 				increase the delayed sluttification of W by 1;
 			otherwise:
 				say "[speech style of W]'Fbbbbrt... Fgaaahh... Can't think!'[roman type][line break]After finally emptying the tank and tube, that's all [NameDesc of W] manages to say in between deep breaths before the drainpipe unleashes a third serving of [if watersports fetish is 1][urine][otherwise]green laxative drink[end if] into the tray. [if watersports fetish is 1 and diaper messing >= 3][BigNameDesc of W] soils [himself of W] with a second helping of mess as [he of W] begins to breathe through [his of W] nose once again[otherwise]Forced to breathe through [his of W] nose once again, [NameDesc of W] begins to choke and gag between every gulp[end if]. [big his of W] eyes begin to roll up into the back of [his of W] head... Uh-oh, is this going to end badly?!";
@@ -824,18 +826,18 @@ A time based rule (this is the berri ass hook rule):
 		if player-numerical-response is 1:
 			say "You pull down on the hook with all your might.";
 			let S be a random number between 1 and the strength of the player;
-			if debuginfo > 0, say "[input-style]Hook pull roll: Strength d[strength of the player] ([S]) | (8.5) Difficulty[roman type][line break]";
-			if S > 8:
+			if debuginfo > 0, say "[input-style]Hook pull roll: Strength d[strength of the player] ([S]) | (7.5) Difficulty[roman type][line break]";
+			if S > 7:
 				say "Success! You manage to pull down the hook far enough that [NameDesc of woman-player] can detach [his of woman-player] panties and keep them intact.[line break][speech style of woman-player]'Thank you so much, [NameBimbo]! I don't know what I would have done without you...'[roman type][line break]";
 				FavourUp woman-player by 3;
 				now the woman-status of woman-player is 1;
 				now the ass-hook-scene of woman-player is -1;
 			otherwise:
-				say "You only manage to pull it down a couple of inches before you slip, and the hook yanks [his of woman-player] back up, renewing the wedgie.[line break][speech style of woman-player]'Ow ow ow ow! Careful!!!'[roman type][line break]";
+				say "You only manage to pull it down a couple of inches before you slip, and the hook yanks [his of woman-player] back up, renewing the wedgie.[line break][speech style of woman-player]'Ow ow ow ow! Careful!!!'[roman type][line break][if the strength of the player <= 7][one of][or][or]You are [one of]beginning to realise that you're unfortunately[or]definitely[stopping] just [bold type]not strong enough[roman type] to free [him of woman-player] this way, and so all you're doing is hurting [him of woman-player] more.[stopping][end if]";
 				FavourDown woman-player by 1;
 		otherwise if player-numerical-response is 2:
 			say "You pull at the waistband with both hands until it becomes to come apart. Moments later, with a loud ripping sound, the panties fall to pieces, and the hook is able to retract up into its hole in the ceiling.";
-			if M is royal guard and the player is getting unlucky:
+			if M is royal guard and the player is not getting lucky:
 				now guard-arrives is true;
 			otherwise:
 				say "[BigNameDesc of woman-player] turns bright red at you being able to see [his of woman-player] rude bits.[line break][speech style of woman-player]'Um, thanks, [NameBimbo]! I think...'[roman type][line break]";
@@ -1271,9 +1273,9 @@ This is the woman unique punishment rule:
 		summon P cursed;
 		say "[speech style of M]'Hahaha, that looks so ridiculous! Serves you right.'[roman type][line break]";
 	otherwise if playerRegion is Woods and vine boss is alive:
-		drag to Woods16 by M;
+		if the location of the player is not Woods16, drag to Woods16 by M;
 		say "[speech style of M]'Have fun, [if the woman-bimbo of M < 5]bitch.'[otherwise]*giggle*'[end if][roman type][line break][big he of M] pushes you down the hole.";
-		now the player is in WoodsBoss01;
+		teleport to WoodsBoss01;
 		if another-turn-flavour is "", now another-turn-flavour is the substituted form of "It takes you a moment to recover from the fall.";
 		now another-turn is 1;
 	otherwise if playerRegion is Dungeon and G is glue:
@@ -1428,7 +1430,8 @@ To compute basic greeting to (M - woman-player):
 	otherwise if the woman-status of M is 90:
 		say "[speech style of M]'Let's keep away from those vines, shall we?'[roman type][line break]";
 	otherwise if the woman-status of M is 94:
-		if there is a revealed hypno trap in the location of M:
+		let HT be a random revealed hypno trap in the location of M;
+		if HT is a thing and HT is not expired:
 			say "[speech style of M]'Huh? Oh crap, another hypno trap! Let's get out of here!'[roman type][line break]";
 			compute mandatory room leaving of M;
 			now M is uninterested;
@@ -1468,13 +1471,14 @@ To say BerriQuestion:
 		say "'Can we chat?'".
 
 To execute (T - talk-berri-question) for (M - a monster):
+	let HT be a random revealed hypno trap in the location of M;
 	if the woman-status of M is 98:
 		say "[speech style of M]'MMMMPH!'[roman type][line break]";
 	otherwise if the woman-status of woman-player is 91 and the mechanic-scene of woman-player <= 3:
 		say "[speech style of M]'EEEEEEEEEE!'[roman type][line break]";
 	otherwise if M is angered:
 		say "[speech style of M]'[if the player is upright]That's a great question. Let me answer it with my fist.'[otherwise]I don't think you're in the position to be the one asking questions right now, do you?'[roman type][line break]";
-	otherwise if there is a revealed hypno trap in the location of M: [looking at hypno trap]
+	otherwise if HT is a thing and HT is not expired: [looking at hypno trap]
 		say "[speech style of M]'Uuuuuuuuh...'[roman type][line break]";
 	otherwise if the woman-status of M is 0:
 		if the woman-bimbo of M < 3:

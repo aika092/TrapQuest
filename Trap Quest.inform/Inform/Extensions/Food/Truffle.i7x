@@ -32,7 +32,7 @@ Carry out TQeating truffle:
 				say "In fact, it's hard not to associate the taste of the truffle with the taste of [semen].";
 			otherwise:
 				say "[first custom style]I'm so disgusting. I can't believe I really ate that...[roman type][line break]";
-				Humiliate 125;
+				severeHumiliate;
 			Arouse the semen taste addiction of the player * 20;
 			StomachSemenUp 1;
 	otherwise if a random number between 3 and the quality of the noun is 3:

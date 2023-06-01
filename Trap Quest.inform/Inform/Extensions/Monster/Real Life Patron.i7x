@@ -51,6 +51,26 @@ Definition: a real-life patron is presenting as male:
 To say MonsterDesc of (M - a real-life patron):
 	say "This is your [RelationDesc of M], [MediumDesc of M]. You know [him of M] from outside the game, but after seeing you act like a [if diaper quest is 1]baby[otherwise]whore[end if] so many times, [he of M][']s paid a lot of money to [if diaper quest is 1]degrade you[otherwise]try you out[end if] [himself of M]!".
 
+To compute patronEncounter of (M - a real-life patron):
+	if M is in the location of the player:
+		say "You hear the sound of a camera shuttering, and turn to see [if the times-met of M is 0]what looks like [end if]your [RelationDesc of M], [MediumDesc of M] in the corner of the room, snapping pictures. [if the times-met of M is 0]Before you can be sure it's even [him of M], [otherwise]Before you can even try to stop [him of M], [end if][he of M] smirks and leaves the room!";
+		choose a blank row in Table of Published Disgraces;
+		now the content entry is the substituted form of "a candid snapshot of you wearing [if there is a worn overdress]a [ShortDesc of a random worn overdress][otherwise]your birthday suit[end if]";
+		now the published entry is the substituted form of "posted to your wall on facepage.com by [MediumDesc of M], accompanied by the comment 'Yes, this is really [friend-old-name of M]!'";
+		if there is a worn overdress:
+			let W be a random worn overdress;
+			let O be the unique outrage of W;
+			now the severity entry is O * 50;
+		otherwise:
+			now the severity entry is 500;
+		now the popularity entry is 0;
+		now the viewsfuzz entry is 0;
+		now the lastwitnessed entry is 0;
+		now the deletedtime entry is 0;
+		now the timestamp entry is 0;[by setting these to 0, the 'views' will be set to 1, which means there's no tracked views and the reputation damage is flat severity]
+	otherwise:
+		compute genericPatronEncounter of M.
+
 [Describes the player's friend reacting to their current name.]
 To say NewNameReact of (M - a real-life patron):
 	if the friend-old-name of M is not NameBimbo, say "[speech style of M]'Hello, ['][NameBimbo][']. Your new name really suits you.'[roman type][line break][moderateHumiliateReflect]";
@@ -102,7 +122,7 @@ To say NewAppearanceReaction of (M - a real-life patron):
 			now the friend-max-appearance of M is the appearance of the player;
 		if the player is naked and M is not real-seenNaked, now M is real-seenNaked.
 
-[generic reaction to seeing the player. Mostly ]
+[generic reaction to seeing the player]
 To say GenericSituationReaction of (M - a real-life patron):
 	let P be the appearance of the player;
 	let CA be -1;
@@ -170,7 +190,7 @@ To say FriendRespond to (M - a real-life patron):
 		if N is patron and diaper quest is 0:
 			if the player is able to speak:
 				say "[variable custom style]'Well, [he of N]'s trying to pay me for sex- BUT! But, I'm not going to play along! This isn't even real-'-[line break][roman type]Your attempt to explain the insane situation is hindered by a chuckle from [if the number of patrons in the location of the player > 1]one of the half-naked [men of N][otherwise]the half-naked [man of N][end if] behind you.[line break][speech style of M]'Haha, yeah, sure, I'm a figment of your imagination. Tell yourself whatever you have to, Sunshine, but you're not getting paid until my imaginary [DickDesc of M] has jizzed its imaginary load.'[roman type][line break]You turn bright red.";
-				humiliate SLIGHT-HUMILIATION;
+				slightHumiliate;
 			otherwise:
 				say "[variable custom style]Oh no! Now [he of M] thinks I'm a prostitute![roman type][line break]";
 		otherwise:
@@ -227,7 +247,7 @@ To say SingleWaitingFlavTQ of (M - a real-life patron):
 	if the times-submitted of M is 0:
 		say "[one of]You stare up at [NameDesc of M], still in shock. [or]You sigh, having lost any real hope of negotiation being successful. [stopping][line break][variable custom style]'This has to be a misunderstanding...'[roman type][line break][line break]Unsurprisingly, [he of M] completely ignores you.";
 	otherwise if the sex addiction of the player < 12:
-		say "You stare at [NameDesc of M] nervously.[line break][variable custom style]'[one of]This has to be some kind of mistake. You wouldn't actually do this to me...'[or]This is all a misunderstanding... My reputation is going to be ruined.'[or]You actually paid to have sex with me...'[or]You're actually going to do this. This isn't just a joke....'[in random order][roman type][line break]";
+		say "You stare at [NameDesc of M] nervously.[line break][variable custom style]'[one of]This has to be some kind of mistake. There's no way you'd actually agree to this...'[or]This is all a misunderstanding... My reputation is going to be ruined.'[or]You actually paid to have sex with me...'[or]We're actually going to do this. This isn't just a joke....'[in random order][roman type][line break]";
 	otherwise:
 		say "You look up at [NameDesc of M] and smile gently.[line break][variable custom style]'[one of]If it's you, I'd like to do it for free, but you know how it is.'[or]Go ahead and just treat me like a cheap whore. We're friends, it's OK.'[or]Since we're friends, I'll do whatever you want.'[or]Don't worry, I'll make sure you enjoy this. That's what friends are for.'[in random order][roman type][line break]".
 
@@ -336,11 +356,11 @@ To compute HangUpDisgraced of (C - a video-monitor) with (M - nemesis-friend):
 			now the timestamp entry is 0;[by setting these to 0, the 'views' will be set to 1, which means there's no tracked views and the reputation damage is flat severity]
 
 To compute HangUpUndisgraced of (C - a video-monitor) with (M - nemesis-friend):
-	say "[second custom style]'[one of]That was a little... boring. I thought you were going to do something really gross and slutty. What a waste of time.'[or]Really, nothing again? I was so sure you were a whore deep down...'[or]I know you're whoring it up in there. I'll catch you eventually.'[at random][roman type][line break][MediumDesc of M] hangs up the call, and the [MediumDesc of C] turns off.".
+	say "[second custom style]'[one of]That was a little... boring. I thought you were going to do something really gross and slutty. What a waste of time.'[or]Really, nothing again? I was so sure you were a whore deep down...'[or]I know you're whoring it up in there. I'll catch you eventually.'[stopping][roman type][line break][MediumDesc of M] hangs up the call, and the [MediumDesc of C] turns off.".
 
 To compute appearance assessment of (M - nemesis-friend):
 	say NewNameReact of M;
-	say "[line break][variable custom style]'[one of][MediumDesc of M]?! What are YOU doing here?'[roman type][line break][speech style of M]'I paid a ton of money to come into the game and fuck you. Isn't that great, [NameBimbo]? By the way, I hope you don't mind if I don't use protection.'[roman type][line break][or]I hate you so much, [MediumDesc of M]...'[roman type][line break][speech style of M]'Why should I care what a whore thinks?'[roman type][line break][stopping]".
+	say "[line break][variable custom style]'[one of][MediumDesc of M]?! What are YOU doing here?'[roman type][line break][speech style of M]'I paid a ton of money to come into the game and fuck you. Isn't that great, [NameBimbo]? By the way, I hope you don't mind if I don't use protection.'[roman type][line break][or]I hate you so much, [MediumDesc of M]...'[roman type][line break][speech style of M]'If you don't want this to happen, why not use your safeword? You aren't fooling anybody.'[roman type][line break][stopping]".
 
 To say PrepTaunt of (M - nemesis-friend) in (F - asshole):
 	say "[speech style of M]'Bite the pillow, [NameBimbo], I have some resentment I want to work out here.'[roman type][line break]".
@@ -470,7 +490,7 @@ To compute HangUpUndisgraced of (C - a video-monitor) with (M - fancied-friend):
 
 To compute appearance assessment of (M - fancied-friend):
 	say NewNameReact of M;
-	say "[line break][variable custom style]'[one of][MediumDesc of M]?! What are YOU doing here?'[roman type][line break][speech style of M]'Does it matter? Does the weird thrill you get from having sex with strangers not extend to people you know, [NameBimbo]? I paid the money, and that's all that matters to a whore like you, right?'[roman type][line break][or][MediumDesc of M], please w-'[roman type][line break][speech style of M]'Tell it to someone who respects you, [NameBimbo].'[roman type][line break][stopping]";
+	say "[line break][variable custom style]'[one of][MediumDesc of M]?! What are YOU doing here?'[roman type][line break][speech style of M]'Does it matter? Does the weird thrill you get from having sex with strangers not extend to people you know, [NameBimbo]? I paid the money, and that's all that matters to a whore like you, right?'[roman type][line break][or][MediumDesc of M], please w-'[roman type][line break][speech style of M]'Shut up. You and I both know you've always wanted to fuck me.'[roman type][line break][stopping]";
 
 To say PrepTaunt of (M - fancied-friend) in (F - asshole):
 	say "[speech style of M]'You like anal, don't you. Disgusting.'[roman type][line break]".
@@ -483,5 +503,11 @@ To say AnalVirginityTaunt of (M - fancied-friend):
 
 To say VaginalVirginityTaunt of (M - fancied-friend):
 	say "[speech style of M]'It's hard to believe you were still a virgin. I mean, you've acted like such a whore.'[roman type][line break]".
+
+
+
+
+
+
 
 Real Life Patron ends here.

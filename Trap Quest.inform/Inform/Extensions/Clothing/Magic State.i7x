@@ -139,7 +139,7 @@ To bless (B - a thing):
 		if B is not cursed and B is blessable:
 			say BlessBlessFlav of B;
 			now B is blessed;
-		otherwise:
+		otherwise if B is cursed:
 			say BlessBlandFlav of B;
 			now B is bland.
 
@@ -152,7 +152,7 @@ To silently bless (B - a thing):
 		if B is carried, force inventory-focus redraw; [This forces the inventory window to redraw]
 		if B is not cursed and B is blessable:
 			now B is blessed;
-		otherwise:
+		otherwise if B is cursed:
 			now B is bland.
 
 

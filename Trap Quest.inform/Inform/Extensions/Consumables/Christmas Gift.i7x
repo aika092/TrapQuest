@@ -212,7 +212,7 @@ Carry out unwrapping:
 	otherwise if X is a thing:
 		blandify X; [to reset it]
 		now X is carried by the player;
-		if X is clothing, now X is unowned;
+		now the owner of X is nothing;
 		if X is clothing or X is alchemy product:
 			if a random number between 1 and 3 is 1, now X is blessed;
 			if a random number between 1 and 6 is 1, now X is cursed;

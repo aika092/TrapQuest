@@ -149,7 +149,7 @@ Check pulling an ass hook:
 
 To HookPull:
 	if the player is wrist bound in front or (gape-gloves is worn and gape-gloves is wrist-bound-behind):
-		say "Your wrist bondage prevents you from reaching! This is fucking ridiculous, here you are, stuck in the middle of the [the printed name of the location of the player], held in place by a hook in your [asshole]. But unless something changes, you're never going to be able to move! It may be best to just [bold type]wait[roman type] and see what happens.";
+		say "Your wrist bondage prevents you from reaching[if playerRegion is school]! This is fucking ridiculous, here you are, stuck in the middle of the [the printed name of the location of the player], held in place by a hook in your [asshole]. But unless something changes, you're never going to be able to move! It may be best to just [bold type]wait[roman type] and see what happens[end if].";
 	otherwise:
 		let H be the noun;
 		if the player is wedgie hook stuck, now H is a random ass hook grabbing the player;

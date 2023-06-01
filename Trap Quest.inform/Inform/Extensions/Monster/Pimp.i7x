@@ -65,9 +65,15 @@ To set up (M - pimp):
 	now the monstersetup of M is 1;
 	now M is in Hotel44;
 	now the health of M is the maxhealth of M;
-	let E be a random off-stage electric fan;
-	if E is a thing, add E to the tradableItems of M;
+	let fanHeld be false;
+	repeat with C running through the tradableItems of M:
+		if C is electric fan, now fanHeld is true;
+	if fanHeld is false:
+		let E be a random off-stage electric fan;
+		if E is a thing, add E to the tradableItems of M;
 	if diaper quest is 0:
+		if the player is a may 2023 top donator:
+			add onahole-bra to the tradableItems of M, if absent;
 		repeat with P running through pimp-pedestals:
 			now P is in Hotel44.
 
@@ -119,7 +125,7 @@ To compute perception of (M - pimp):
 		otherwise if the current-errand of M is completed:
 			compute errand completion of M;
 		otherwise:
-			say "[speech style of M]'Your debt isn't paid off yet. Come see me after a few more [brotha of shopkeeper]s have had their fun with you.'[roman type][line break][BigNameDesc of M] purposefully stops paying attention to you.";
+			say "[speech style of M]'Your debt isn't paid off yet. Come see me after a few more [brotha of male-m]s have had their fun with you.'[roman type][line break][BigNameDesc of M] purposefully stops paying attention to you.";
 		distract M;
 	otherwise if the current-errand of M is completed and M is not uniquely unfriendly:
 		compute errand completion of M;
@@ -199,15 +205,11 @@ To say DiaperReaction of (M - pimp):
 	otherwise:
 		say "It seems that [NameDesc of M] is unaware of what you've just done.".
 
-To IdentifiablePosterReaction of (M - pimp):
-	say "[BigNameDesc of M] looks at you, then at the banner, then back to you. Upon realising that it is you, [he of M] puts [his of M] hands on [his of M] hips and laughs loudly.";
-	say "You turn bright red with shame.";
-	humiliate the lewdness of a random poster in the location of the player * 2.
+To say IdentifiablePosterReactionFlav of (M - pimp):
+	say "[BigNameDesc of M] looks at you, then at the banner, then back to you. Upon realising that it is you, [he of M] puts [his of M] hands on [his of M] hips and laughs loudly.[line break][speech style of M]'You look damn stupid!'[roman type][line break]".
 
-To UnidentifiablePosterReaction of (M - pimp) with (P - a poster):
-	say "[BigNameDesc of M] looks at the banner with a big grin on [his of M] face. [big he of M] doesn't seem to realise it is you, but is clearly enjoying looking at it.";
-	say "You turn slightly red but don't say a word.";
-	humiliate the lewdness of a random poster in the location of the player / 2.
+To say UnidentifiablePosterReactionFlav of (M - pimp) with (P - a poster):
+	say "[BigNameDesc of M] looks at the banner with a big grin on [his of M] face. [big he of M] doesn't seem to realise it is you, but is clearly enjoying looking at it.".
 
 To say PregGrowth of (M - pimp):
 	say "your pimp's [child]".
@@ -654,7 +656,7 @@ To compute resolution of (M - pimp) taking (T - a thing):
 			say "[speech style of M]'Your debt is paid. I guess it's time to release you.'[roman type][line break]";
 			release pimp portals;
 		otherwise:
-			say "[speech style of M]'Your debt isn't paid off yet. Come see me after a few more [brotha of shopkeeper]s have had their fun with you.'[roman type][line break]";
+			say "[speech style of M]'Your debt isn't paid off yet. Come see me after a few more [brotha of male-m]s have had their fun with you.'[roman type][line break]";
 	otherwise:
 		if M is guardian:
 			say "[speech style of M]'You're way ahead in your payments to me. As a reward I'll make sure to only send the easiest customers your way for now.'[roman type][line break]";

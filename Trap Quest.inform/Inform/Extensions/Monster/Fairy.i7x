@@ -11,19 +11,19 @@ Figure of diaper fairy is the file "NPCs/Forest/Fairy/fairy2.png".
 Figure of blue fairy is the file "NPCs/Forest/Fairy/fairy3.png".
 Figure of witch fairy is the file "NPCs/Forest/Fairy/fairy4.png".
 
-Figure of fairy interact 1 is the file "Special/Cutscene/cutscene-fairy-interact1.png".
-Figure of fairy interact 2 is the file "Special/Cutscene/cutscene-fairy-interact2.png".
-Figure of fairy interact 3 is the file "Special/Cutscene/cutscene-fairy-interact3.png".
-Figure of fairy interact 4 is the file "Special/Cutscene/cutscene-fairy-interact4.png".
-Figure of fairy interact 5 is the file "Special/Cutscene/cutscene-fairy-interact5.png".
-Figure of fairy interact 6 is the file "Special/Cutscene/cutscene-fairy-interact6.png".
-Figure of fairy interact 7 is the file "Special/Cutscene/cutscene-fairy-interact7.png".
-Figure of fairy interact 8 is the file "Special/Cutscene/cutscene-fairy-interact8.png".
-Figure of fairy interact 9 is the file "Special/Cutscene/cutscene-fairy-interact9.png".
-Figure of fairy interact 10 is the file "Special/Cutscene/cutscene-fairy-interact10.png".
-Figure of fairy interact 11 is the file "Special/Cutscene/cutscene-fairy-interact11.png".
-Figure of fairy interact 12 is the file "Special/Cutscene/cutscene-fairy-interact12.png".
-Figure of fairy interact 13 is the file "Special/Cutscene/cutscene-fairy-interact13.png".
+Figure of fairy interact 1 is the file "NPCs/Forest/Fairy/cutscene-fairy-interact1.png".
+Figure of fairy interact 2 is the file "NPCs/Forest/Fairy/cutscene-fairy-interact2.png".
+Figure of fairy interact 3 is the file "NPCs/Forest/Fairy/cutscene-fairy-interact3.png".
+Figure of fairy interact 4 is the file "NPCs/Forest/Fairy/cutscene-fairy-interact4.png".
+Figure of fairy interact 5 is the file "NPCs/Forest/Fairy/cutscene-fairy-interact5.png".
+Figure of fairy interact 6 is the file "NPCs/Forest/Fairy/cutscene-fairy-interact6.png".
+Figure of fairy interact 7 is the file "NPCs/Forest/Fairy/cutscene-fairy-interact7.png".
+Figure of fairy interact 8 is the file "NPCs/Forest/Fairy/cutscene-fairy-interact8.png".
+Figure of fairy interact 9 is the file "NPCs/Forest/Fairy/cutscene-fairy-interact9.png".
+Figure of fairy interact 10 is the file "NPCs/Forest/Fairy/cutscene-fairy-interact10.png".
+Figure of fairy interact 11 is the file "NPCs/Forest/Fairy/cutscene-fairy-interact11.png".
+Figure of fairy interact 12 is the file "NPCs/Forest/Fairy/cutscene-fairy-interact12.png".
+Figure of fairy interact 13 is the file "NPCs/Forest/Fairy/cutscene-fairy-interact13.png".
 
 To decide which figure-name is the monster-image of (M - a fairy):
 	if diaper quest is 1, decide on the figure of diaper fairy;
@@ -167,8 +167,8 @@ To say GroundPeeReaction of (M - a fairy):
 	say "[speech style of M]'Teehee, you're such a naughty minx!'[roman type][line break]".
 
 To compute enema floor reaction of (M - a fairy):
-	humiliate 200;
-	if voluntarySquatting is 1, humiliate 500;
+	severeHumiliate;
+	if voluntarySquatting is 1, obsceneHumiliate;
 	say "[EnemaFloorReactionFlav of M]".
 
 To say EnemaFloorReactionFlav of (M - a fairy):
@@ -184,6 +184,9 @@ To say LewdTrapReactFlav of (M - a fairy):
 	say "[BigNameDesc of M] squeals with delight.[line break][speech style of M]'[one of]Is it playtime already?'[or]You really do love playtime!'[or]Oh, what fun!'[in random order][roman type][line break]";
 	moderateHumiliate;
 	FavourDown M with consequences.
+
+To compute disgusting spit reaction of (M - a fairy):
+	say "[BigNameDesc of M] giggles.[line break][speech style of M]'You're so nasty!'[roman type][line break][slightHumiliateReflect]".
 
 Part 3 - Protection
 
@@ -648,6 +651,7 @@ To compute failed damage of (M - a fairy):
 	anger M.
 
 To compute loot dropping of (P - pink-hair) by (M - a fairy):
+	unless M is dying, now the owner of P is M;
 	say "[speech style of M]'You want some of my special hair, don't you?'[roman type][line break][BigNameDesc of M] winces as [he of M] pulls out a small clump of [his of M] [P].[line break][speech style of M]'That hurt!'[roman type][line break]".
 
 To say BanishForceFlav of (M - a fairy):

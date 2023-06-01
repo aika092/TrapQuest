@@ -20,10 +20,10 @@ To compute periodic expansion effect of (C - ben wa balls):
 		if the toy-charge of C > 100 and C is not blessed and busy is not 1 and the player is not in danger:
 			if the humiliation of the player < 20000 and the intelligence of the player < 10:
 				say "One of your Ben wa balls seems to have popped out of your [variable F] and you didn't even notice. How embarrassing! You quickly tuck it back inside.";
-				humiliate 100;
+				strongHumiliate;
 			otherwise:
 				say "One of your Ben wa balls pops out of your [variable F]. You quickly push it back inside.";
-			humiliate 100;
+			strongHumiliate;
 		otherwise:
 			say "The Ben wa balls in your [variable F] jiggle when you move, slowly increasing your arousal.";
 		passively stimulate F from C;

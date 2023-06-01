@@ -8,11 +8,11 @@ Handles the player being pissed on by an unknown entity. The flavour is kept neu
 +!]
 To FacePiss from (M - an object):
 	if the player is upright, try kneeling;
-	if the player is not forced to drink urine and the player is not gagged:
+	if the player is not forced to drink urine and the player is not mouthblocked:
 		say PissDrinkThreat of M;
-		say "Do you drink the [urine]? ";
+		say "Do you drink the [urine][if the total volume of face > 0] (you'll have to swallow your [MouthfulDesc])[end if]? ";
 	let vm be a random video-monitor in the location of the player;
-	if the player is gagged:
+	if the player is mouthblocked:
 		compute urine hitting face;
 		if vm is video-monitor and the video-caller of vm is not the throne and vm is not recording-disgrace:
 			now vm is recording-disgrace;[since sex is probably over by now, we need to set up the recorded event right away.]
@@ -41,7 +41,7 @@ To FacePiss from (M - an object):
 				now V is boring-origin;
 			otherwise:
 				say "Your face is blasted by a stream of [urine]. ";
-				SmellGrossOut 5;
+				if the player is air breathing vulnerable, SmellGrossOut 5;
 			compute urine hitting face;
 			if M is nothing: [currently only wrestler urinal scene]
 				say "[first custom style]'[one of]Ungrateful brat[or]You can't even be a urinal properly[or]Useless whore[or]Disrespectful bitch[or]Oh my, you disobedient wench[or]Gross, you let some get on my shoes you [cunt][in random order]!'[roman type][line break]The anonymous man [one of]slaps you in the face[or]kicks you in the belly[or]painfully twists your nipples[at random] as punishment.";
@@ -180,7 +180,8 @@ Handles the player receiving a golden shower and choosing to drink it
 @param <Object>:<M> Whomever is trying to peeing in the player's mouth
 +!]
 To DrinkPiss from (M - an object):
-	Humiliate 1050 - (the urine taste addiction of the player * 50);
+	if the total volume of face > 0, compute swallowing;
+	Humiliate ULTRA-HUMILIATION - (the urine taste addiction of the player * 50);
 	say "[one of]You have never experienced anything close to the humiliation of voluntarily drinking another person's [urine]. A small voice inside you is warning you that you can never go back to a time before you were literally used as a human toilet.[or]You once again [if there is a worn ringagged clothing]have no choice but to[otherwise]voluntarily[end if] gulp down the [urine], taking your place as a human toilet.[stopping][if the urine taste addiction of the player > 15][line break][second custom style][one of]Mmm, this tastes amazing![or]Delicious![or]Yummy![or]Scrumptious.[or]Tasty![then at random][roman type][line break][otherwise if the urine taste addiction of the player > 12][one of]You are really starting to enjoy the taste![or][stopping][otherwise if the urine taste addiction of the player > 6][one of]You are starting to get used to the taste, and don't find it as awful as you used to.[or][stopping][end if]";
 	StomachUrineUp 3;
 	compute unique piss drink effect of M;
@@ -232,6 +233,7 @@ To say AnilingusSubmissionResponse of (M - a monster):
 To compute lick end of (M - a monster):
 	if M is getting-asslicked, say AnilingusEndFlav of M;
 	otherwise say LickEndFlav of M;
+	let MSatisfied be true;
 	if the favour of M < the aggro limit of M: [unfriendly from favour by more than 1 point]
 		let F be the favour of M;
 		if F < 4, now F is 4;
@@ -240,17 +242,29 @@ To compute lick end of (M - a monster):
 		if R <= 0:
 			dislodge M;
 			now M is not-getting-licked;
-			let CM be current-monster;
-			now current-monster is M;
-			if the number of actual target body parts > 1:
-				now targeted-body-part is thighs;
-				while targeted-body-part is thighs:
-					choose a sex method;
-				now the chosen-orifice of M is targeted-body-part;
-				say "[if M is intelligent][speech style of M]'I'm not satisfied yet!'[roman type][line break][end if]It looks like [NameDesc of M] intends to keep using you...";
-				if newbie tips is 1, say "[one of][newbie style]Newbie Tip: It's not straightforward to satisfy an NPC with just licking. And the more you resist, you'll avoid some gross tastes, but the more likely it is that they won't be satisfied.[roman type][line break][or][stopping]";
-				set up sex length of M in targeted-body-part;
-			now current-monster is CM.
+			if M is actually-lick-unsatisfied, now MSatisfied is false;
+	if MSatisfied is true and (ritual-beads is worn or runic headband is worn) and runic headband is purity, compute priestessBlessing of M.
+
+[We have already decided that the player's licking wasn't good enough. This checks whether the NPC has found a suitable thing to do because they're not satisfied.]
+Definition: a monster (called M) is actually-lick-unsatisfied:
+	if M is default-actually-lick-unsatisfied, decide yes;
+	decide no.
+
+Definition: a monster (called M) is default-actually-lick-unsatisfied:
+	let CM be current-monster;
+	now current-monster is M;
+	if the number of actual target body parts > 1:
+		now current-monster is CM;
+		now targeted-body-part is thighs;
+		while targeted-body-part is thighs:
+			choose a sex method;
+		now the chosen-orifice of M is targeted-body-part;
+		say "[if M is intelligent][speech style of M]'I'm not satisfied yet!'[roman type][line break][end if]It looks like [NameDesc of M] intends to keep using you...";
+		if newbie tips is 1, say "[one of][newbie style]Newbie Tip: It's not straightforward to satisfy an NPC with just licking. And the more you resist, you'll avoid some gross tastes, but the more likely it is that they won't be satisfied.[roman type][line break][or][stopping]";
+		set up sex length of M in targeted-body-part;
+		decide yes;
+	decide no.
+
 
 To say AnilingusEndFlav of (M - a monster):
 	if M is intelligent, say "[speech style of M]'[one of]That's enough[or]Okay asslicker, enough of that[in random order].'[roman type][line break]";
@@ -992,7 +1006,7 @@ To compute happy reward of (M - a monster):
 
 To compute default happy reward of (M - a monster):
 	FavourUp M by 1;
-	if M is friendly-fucking:
+	if M is friendly-fucking or diaper quest is 1:
 		compute gifting reward of M;
 		if the loot dropped of M is 0 and M is gift giving:
 			say RewardEncouragementFlav of M;
@@ -1121,9 +1135,9 @@ Displays some text when the player is penetrated orally by a male monster
 @param <Monster>:<M> The monster entering face
 +!]
 To say NormalMouthPenetrationFlav of (M - a monster):
-	if the oral sex addiction of the player < 8:
+	if the oral sex addiction of the player < 3:
 		say "[one of][BigFuckerDesc of M] pinches your nose, shoving [his of M] [DickDesc of M] in your mouth as soon as you try to breathe. You glare up at [him of M] as [he of M] begins to thrust.[or][BigFuckerDesc of M] puts one hand on the back of your head, grinning. You open your mouth to insult [him of M], but [he of M] immediately inserts [his of M] [DickDesc of M] and begins to thrust.[or][BigFuckerDesc of M] points to your mouth, slowly stroking [his of M] [DickDesc of M]. You snarl.[line break][first custom style]'Not on your life bud-'[roman type][line break][he of M] cuts you off by immediately shoving [himself of M] into your mouth. You stare at [him of M] lividly as [he of M] begins to thrust.[or][if the delicateness of the player < 7][BigFuckerDesc of M] points to your mouth, grinning. You spit at [his of M] feet.[line break][first custom style]'Go fuck yourself assh-'[roman type][line break][he of M] cuts you off by immediately shoving [his of M] [DickDesc of M] in your mouth. You glare at [him of M] as [he of M] begins to thrust.[otherwise][BigFuckerDesc of M] points to your mouth, grinning. You slowly and fearfully open it, shuddering as [his of M] [DickDesc of M] slides past your lips.[end if][in random order]";
-	otherwise if the oral sex addiction of the player < 12:
+	otherwise if the oral sex addiction of the player < 7:
 		say "[one of][BigFuckerDesc of M] points to your mouth, slowly stroking [his of M] [DickDesc of M]. You obediently open it, emitting a slow sigh through your nose as it slides through your lips.[or][BigFuckerDesc of M] puts one hand on the back of your head. Knowing what's to come, you slowly open your mouth and accept [his of M] invading shaft.[or][BigFuckerDesc of M] points to your mouth, grinning. You open and loll out your tongue, avoiding eye contact with [him of M] as [his of M] [DickDesc of M] slides through your lips.[or][BigFuckerDesc of M] places [his of M] hand on your shoulder, guiding [his of M] [DickDesc of M] to your lips with the other. You obediently open your mouth to allow [him of M] inside.[in random order]";
 	otherwise:
 		say "[one of][BigFuckerDesc of M] positions [his of M] [DickDesc of M] between your lips. You immediately open them, sighing contentedly as [he of M] enters your mouth.[or][BigFuckerDesc of M] points to your mouth, grinning. You obediently loll out your tongue, gazing at [him of M] reverently as [his of M] [DickDesc of M] slides through your lips.[or][BigFuckerDesc of M] places one hand on your shoulder. You greedily lean forward and take [his of M] [DickDesc of M] into your mouth.[or][BigFuckerDesc of M] puts [his of M] hand on the back of your head. You submissively part your lips and accept [his of M] [DickDesc of M] into your mouth.[in random order]".
@@ -1340,6 +1354,7 @@ To compute labour to (M - a monster):[Should never appear]
 To compute fatherhood to (M - a monster): [no reason to check for successful pregnancy here, since we already know pregnancy was not delayed at this point.]
 	if M is not alive:
 		if debugmode > 0, say "The father was [M], but [he of M] was off-stage.";
+		say DefaultBirthScene;
 	otherwise:
 		now M is mating;
 		if M is intelligent or M is uninterested or M is friendly:
@@ -1425,28 +1440,22 @@ To compute (M - a monster) buttplugging with (P - a sex toy):
 	now P is identified;
 	now P is penetrating asshole;
 	ruin asshole;
+	if P is anal beads, now the notch-taken of P is the notches of P;
 	if P is cursed and the quest of P is no-clothing-quest, compute summoned quest of P.
 
 To say ButtplugFlav of (M - a monster) with (P - a sex toy):
 	say "[BigFuckerDesc of M] [if P is off-stage]produces a[otherwise]takes the[end if] [P] and pushes it into your [asshole]!".
 
-[!<ComputeGhostFleeingOfMonster>+
-
-Handles a monster running away from a ghost as it charges its ectoplasm attack
-
-@param <Monster>:<M> The monster trying to leave the room
-+!]
-To compute ghost fleeing of (M - a monster):
-	say "[BigFuckerDesc of M] immediately begins to look for a way out of the room.";
-	now the scared of M is 10.
 
 To compute (M - a monster) sleeping (N - a number) after sex:
 	now the sleep of M is N;
 	if newbie tips is 1, say sleeping tip;
-	repeat with T running through temporarily-removed clothing held by M:
-		now T is in the location of the player;
-		now T is not temporarily-removed;
-		say "[BigNameDesc of M] is no longer holding onto your [T]!".
+	repeat with T running through clothing held by M:
+		if T is temporarily-unlocked, now T is not temporarily-unlocked;
+		if T is temporarily-removed:
+			now T is in the location of the player;
+			now T is not temporarily-removed;
+			say "[BigNameDesc of M] is no longer holding onto your [T]!".
 
 
 [!<SayGangAnnounce>+
@@ -1499,6 +1508,8 @@ To compute strength (pain-factor - a number) spanking:
 				say "[if K is jelldo]The soft jelly material[otherwise]It[end if] feels good!";
 				if K is vagina plugging, stimulate vagina from K;
 				stimulate asshole from K.
+
+The player has a number called expulsion-weakness. The expulsion-weakness of the player is 1. [How much the player struggles to hold onto stuff when in pain or fear. It needs to be at least 1.]
 
 [Does the player let out a little squirt, or perhaps even a full enema?]
 To check sudden squirt with reason (T - a text):

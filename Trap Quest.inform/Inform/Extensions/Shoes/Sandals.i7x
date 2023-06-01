@@ -12,8 +12,10 @@ To decide which figure-name is the clothing-image of (C - wooden-sandals):
 	decide on figure of wooden sandals.
 
 To decide which number is the stealth-influence of (C - wooden-sandals):
-	if the class of the player is vixen, decide on 1;
-	decide on 0.
+	if C is sneaking, decide on 4;
+	if the class of the player is vixen, decide on 2;
+	decide on 1.
+Definition: wooden-sandals is stealthy: decide no. [On their own, sandals can't make NPCs fail to spot you]
 
 To say ClothingDesc of (C - wooden-sandals):
 	say "A pair of simple wooden sandals. [if C is worn]They make your steps feel very light[otherwise]You get the impression that a skilled wearer could use these to tread even lighter than if they were barefoot[end if].".

@@ -9,6 +9,8 @@ To say waitingflav of (M - a robot):
 	do nothing.
 
 Definition: a robot is hotel dwelling: decide yes.
+Definition: a robot is a urinater: decide no.
+Definition: a robot is a scarable: decide no.
 
 To say royal-subject of (M - a robot):
 	say "automaton".
@@ -50,15 +52,11 @@ To compute friendly boredom of (M - a robot):
 
 Definition: a robot is virginity taking: decide no.
 
-To IdentifiablePosterReaction of (M - a robot):
-	say "[BigNameDesc of M] looks at the banner, and then at you.[line break][first custom style]'SLUT IDENTIFIED. MOCKING ROUTINE INITIATED. HA HA HA.'[roman type][line break]";
-	say "You turn bright red with shame.";
-	humiliate the lewdness of a random poster in the location of the player * 2.
+To say IdentifiablePosterReactionFlav of (M - a robot):
+	say "[BigNameDesc of M] looks at the banner, and then at you.[line break][first custom style]'SLUT IDENTIFIED. MOCKING ROUTINE INITIATED. HA HA HA.'[roman type][line break]".
 
-To UnidentifiablePosterReaction of (M - a robot) with (P - a poster):
-	say "[BigNameDesc of M] looks at the banner.[line break][first custom style]'SLUT UNIDENTIFIABLE. UNFORTUNATE, SINCE [caps he of P] IS CLEARLY IN NEED OF FURTHER PUBLIC SHAMING.'[roman type][line break]";
-	say "You turn slightly red but don't say a word.";
-	humiliate the lewdness of a random poster in the location of the player / 2.
+To say UnidentifiablePosterReactionFlav of (M - a robot) with (P - a poster):
+	say "[BigNameDesc of M] looks at the banner.[line break][first custom style]'SLUT UNIDENTIFIABLE. UNFORTUNATE, SINCE [caps he of P] IS CLEARLY IN NEED OF FURTHER PUBLIC SHAMING.'[roman type][line break]".
 
 To compute BabyChairReaction of (M - a robot):
 	say "[BigNameDesc of M] looks at you.[line break][speech style of M]'[one of]GOOD BABY. [caps please] CONTINUE TO EXHIBIT OPTIMAL BEHAVIOUR.'[or]YOUR ACHIEVEMENTS HAVE BEEN RECOGNISED AND RECORDED. CONGRATULATIONS.'[or]YOU ARE AN EXEMPLARY MODEL FOR ALL OUR OTHER BABIES. I WILL SPREAD THE NEWS OF YOUR DEEDS.'[in random order][roman type][line break]";
@@ -127,7 +125,7 @@ To compute diaper mess reaction of (M - a robot):
 		anger M;
 	otherwise:
 		say "[BigNameDesc of M] looks at you with its unchanging expression.[line break][speech style of M]'MESSING DETECTED. [if M is unfriendly and M is interested]CHECKING IF PUNISHMENT ROUTINE CAN CONTINUE. [caps please] WAIT...[otherwise][caps please] PROCEED TO NEAREST LAUNDRY ROOM IMMEDIATELY[end if].'[roman type][line break]";
-	humiliate 200.
+	severeHumiliate.
 
 To compute (M - a robot) protecting against (X - a monster):
 	say "[one of][BigNameDesc of M] watches, seemingly not caring about your situation.[or][or][or][cycling]".

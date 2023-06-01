@@ -64,6 +64,7 @@ To say ShortDesc of (C - an accessory):
 	say "accessory".
 
 To set shortcut of (A - an accessory):
+	now the tradability of A is the price of A;
 	now the text-shortcut of A is "[metal-shortcut of A][jewellery-shortcut of A]".
 
 To check shortcut of (A - an accessory):
@@ -89,5 +90,19 @@ To decide which text is jewellery-shortcut of (A - an accessory):
 	if A is necklace, decide on "n";
 	if A is bracelet, decide on "b";
 	decide on "r".
+
+To accessoryUpgrade (A - an accessory):
+	if A is plentiful:
+		if A is pure diamond:
+			now A is solid gold;
+		otherwise if A is pink diamond:
+			now A is pure diamond;
+		otherwise if A is ruby:
+			now A is pink diamond;
+		otherwise if A is emerald:
+			now A is ruby;
+		otherwise if A is sapphire:
+			now A is emerald;
+		set shortcut of A.
 
 Accessories Framework ends here.

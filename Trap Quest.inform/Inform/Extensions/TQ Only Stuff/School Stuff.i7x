@@ -571,9 +571,8 @@ To compute teaching of (L - tits-lesson):
 			repeat with C running through worn actually breast covering clothing:
 				say "Your [ShortDesc of C] disintegrates in a burst of black flame!";
 				destroy C;
-			if topless temporary fetish is 0:
-				say "You suddenly feel very comfortable with having your [BreastDesc] on full display. In fact, the idea of wearing something that covers you up now feels just objectively... wrong. Your magnificent mammaries and proudly erect nipples are destined to be gazed upon! It would be wrong of you to deprive anyone of that wonderful privilege.";
-				now topless temporary fetish is 20;
+			if topless temporary fetish is 0, say "You suddenly feel very comfortable with having your [BreastDesc] on full display. In fact, the idea of wearing something that covers you up now feels just objectively... wrong. Your magnificent mammaries and proudly erect nipples are destined to be gazed upon! It would be wrong of you to deprive anyone of that wonderful privilege.";
+			if topless temporary fetish < 20,	now topless temporary fetish is 20;
 			say "[speech style of M]'That's better! Now we can clearly see that these ta-tas definitely deserve a promotion.'[roman type][line break]";
 			now armband is ruby;
 			say "You watch as the ID card inside your armband transforms!";
@@ -585,6 +584,7 @@ To compute teaching of (L - tits-lesson):
 		let S be random student in the location of the player;
 		say "[big he of M] opens a desk drawer and retrieves several black marker pens.[line break][speech style of M]'Today we will be helping each other learn to be proud of displaying their [if lady fetish is 2]flat chests[otherwise]cleavage[end if]. Firstly, let's split into groups.'[roman type][line break][NameDesc of M] assigns people into pairs. You are partnered with [NameDesc of S].[line break][speech style of M]'You will each be writing a phrase on your partner's [if lady fetish is 2]cleavage[otherwise]chest[end if]. I want you to come up with something cheeky that will make the wearer's titty-meat nice and eye catching. Don't worry, it's not permanent.'[roman type][line break]Each pair is handed a pen. You are given the pen for your pair, so you go first. [if the player is a nympho]A naughty thought comes to your mind, and you write 'stick your dick here'[otherwise if the player is a pervert]After thinking for a few moments you write 'one for the wank bank'[otherwise]You struggle to think of anything inventive, and end up just writing 'hot stuff'[end if] on [NameDesc of S][']s cleavage.[line break]But then it's [his of S] turn. [big he of S] takes the pen off you and ";
 		compute tits marker choice of S;
+		now the text-shortcut of marker chest tattoo is the substituted form of "[tattoo-title of marker chest tattoo]";
 		if the initial outrage of marker chest tattoo - 2 is too humiliating:
 			say "[variable custom style]There's just NO WAY I could let myself be seen like this outside of this room, surely?![roman type][line break]";
 		otherwise if the initial outrage of marker chest tattoo is too humiliating:
@@ -762,6 +762,8 @@ To compute labour to (M - teacher-rochelle):
 		say "[PregFlav]A human head pushes its way out of your cunt, agonisingly slowly and painfully. Finally the head has passed through, and after a final push at the shoulders, the birthing is complete. You pick your child up off the floor and start to cradle it in your arms. [BigNameDesc of the father] appears almost as if on cue! [PregFlav of the father]Severing the umbilical cord, [he of M] pulls the baby from your hands, wraps it in a soft blanket and then carries it away.[line break][variable custom style][if the bimbo of the player < 8]That is definitely for the best.[otherwise if the bimbo of the player < 14]I guess I don't really have anywhere to raise a baby in here, anyway.[otherwise]Oh good, that means I can busy myself with finding a new stud to breed me again![end if][roman type][line break]";
 	otherwise:
 		say DefaultBirthScene.
+To compute fatherhood to (M - an ultimate-lesson-actor):
+	dislodge M.
 
 To say EnslavedDominationFlav of (M - teacher-rochelle):
 	say "You grab [NameDesc of M] by the [manly-penis] and pull [him of M] into you. [if the player is able to speak][variable custom style]'Not so tough now, are you? Wimp.'[roman type][line break][otherwise]You stare into [his of M] eyes to let [him of M] know who's in charge. [end if][big he of M] just whimpers timidly and makes sure not to move lest [his of M] member accidentally get pulled so hard it hurts.".
@@ -774,6 +776,7 @@ To compute teaching of (L - practical-lesson):
 	allocate 6 seconds;
 	let TL be the lesson-teacher of L;
 	let DL be teacher-rochelle;
+	if the monstersetup of DL is 0, set up DL;
 	now DL is in the location of the player;
 	say "[if TL is not DL][speech style of TL]'For this lesson, I am going to need some help from Teacher [teacher-name of DL].'[roman type][line break]You watch as [NameDesc of DL] enters the room, joining [NameDesc of TL] at the front.[line break][end if][speech style of TL]'Today we will be learning about how by being especially filthy, you can better service cocks and win the hearts of your Masters.'[roman type][line break]";
 	say "[BigNameDesc of DL] gently strokes [his of DL] [DickDesc of DL], and you all watch as it slowly hardens, growing even larger in size.[line break][speech style of TL]'The rules are simple: each of you need to get in line and one by one you will do your best to pleasure the [manly-penis]. Up to [bold type]three people[speech style of TL] can get promoted: the person that makes it cum, the slut who I think acted the filthiest, and the person who used the most different parts of their body. EXCEPT hand-jobs, which are for prudes. [if a2m fetish is 0]The special rule for today is that no anal sex is allowed[otherwise]And remember, no ass-to-vag, okay? That's unhealthy[end if]. Finally, [bold type]each time you perform a sexual act but fail to convince me that you're enjoying it, you'll get a punishment. [speech style of TL]Your Masters aren't going to be [please]d if they can tell you heart isn't really in it.'[roman type][line break]And with that, [he of TL] sorts you into a random order, which ends up having you at the front. You're going to have to go first, it would seem...";
@@ -849,7 +852,7 @@ To compute teaching of (L - practical-lesson):
 					TasteGrossOut pussy-count;
 				otherwise if slobber-owner is a student:
 					say "You can taste [NameDesc of slobber-owner][']s slobbery saliva all over the shaft. It's a bit humiliating to be slurping someone else's spit off of a [DickDesc of DL]!";
-				humiliate (300 * ass-count) + (100 * pussy-count);
+				humiliate (30 * HUMILIATION-BASE * ass-count) + (10 * HUMILIATION-BASE * pussy-count);
 				OralSexAddictUp 1;
 				say "By the time [NameDesc of DL] tells you to stop, the only thing coating [his of DL] [DickDesc of DL] is your own saliva[unless pussy-count is 0 and ass-count is 0 and slobber-owner is the player]. Everything else is in your stomach and on your tongue[end if].";
 				now pussy-count is 0;
@@ -869,7 +872,7 @@ To compute teaching of (L - practical-lesson):
 				otherwise:
 					say "You ride [him of DL] gently and passionately, softly kneading [his of DL] chest with one hand as you do.";
 					ruin vagina;
-				humiliate 25;
+				slightHumiliate;
 				if pussy-count > 0, say "Your pussy juices mix in with the [if pussy-count is 1]stuff that's already there[otherwise]others[end if], thickening the film of girl-slime around [NameDesc of DL][']s [DickDesc of DL].";
 				otherwise say "Your [vagina] slowly coats [NameDesc of DL][']s [DickDesc of DL] in its juices.";
 				increase pussy-count by 1;
@@ -888,7 +891,7 @@ To compute teaching of (L - practical-lesson):
 				otherwise:
 					say "You ride [him of DL] delicately, using your hands to balance yourself around [his of DL] loins and avoid accidentally falling and putting your full weight on [his of DL] [DickDesc of DL] and your [asshole].";
 					ruin asshole;
-				humiliate 25;
+				slightHumiliate;
 				if ass-count > 0, say "Your ass sweat mixes in with the [if ass-count > 0 and pussy-count > 0]ass and pussy juice that's already there[otherwise if pussy-count > 1]recent helpings of pussy juice[otherwise if pussy-count > 0]pussy juice[otherwise if ass-count > 1][ass-count] traces already there[otherwise]small amounts that are already there from someone else[end if], to create an even nastier concoction for whoever next puts this [DickDesc of DL] in their mouth.";
 				otherwise say "Whoever next puts this [DickDesc of DL] in their mouth is going to be able to taste your ass on it.";
 				increase ass-count by 1;
@@ -904,7 +907,7 @@ To compute teaching of (L - practical-lesson):
 				otherwise:
 					say "You move your body up and down, gently stroking the shaft with your soft flesh. ";
 				increase stimulation-level by (the largeness of breasts + a random number between 1 and 4) / 6;
-				humiliate 25;
+				slightHumiliate;
 				stimulate breasts;
 				repeat with ST running through nasty students in the location of the player:
 					HappinessDown ST by 1;
@@ -2470,13 +2473,15 @@ To say CondomPinFlav of (M - an ultimate-lesson-actor) on (C - a clothing):
 	otherwise say "Completely of its own accord, the used condom suddenly zips from [NameDesc of M] and flies through the air until it hits your [ShortDesc of C].".
 To compute labour to (M - an ultimate-lesson-actor):
 	say DefaultBirthScene.
+To compute fatherhood to (M - an ultimate-lesson-actor):
+	dislodge M.
 
 To compute tongue demand of (M - an ultimate-lesson-actor):
 	say "[BigNameDesc of M] in front of you gives you an order.[line break][speech style of M]'Hold out your tongue.'[roman type][line break]Do you obey?";
 	if the player is bimbo consenting:
 		let P be a random off-stage tongue piercing;
 		if a random number between 1 and (8 - (piercing-fetish * 6)) is 1 and P is actually summonable:
-			summon P cursed;
+			summon P cursed with quest;
 			say "You suddenly scream in pain as [he of M] uses a red hot needle to give you a tongue piercing!!!";
 			PainUp 10;
 			say "[big he of M] chuckles with a booming voice.[line break][speech style of M]'Surprise, bitch!'[roman type][line break]";
@@ -3136,7 +3141,7 @@ To update name of (M - student-nell):
 		now the student-name of M is "Narcissa".
 
 To say StoryAnswer of (M - student-nell):
-	say "[speech style of M]'My neighbour and best friend is such a tool... [he of shopkeeper] only ever sees me as [']one of the guys['], just because I'm cool and act like a tomboy. But... I love [him of shopkeeper], and to capture [his of shopkeeper] attention and prove that I can be [his of shopkeeper] [man of M], I need to learn how to act and dress like the slutty girls do.'[roman type][line break]".
+	say "[speech style of M]'My neighbour and best friend is such a tool... [he of male-m] only ever sees me as [']one of the guys['], just because I'm cool and act like a tomboy. But... I love [him of male-m], and to capture [his of male-m] attention and prove that I can be [his of male-m] [man of M], I need to learn how to act and dress like the slutty girls do.'[roman type][line break]".
 
 To say EscapeAnswer of (M - student-nell):
 	say "[speech style of M]'I don't know. The rumour about the secret sex dungeon can't be true, surely?'[roman type][line break]".
@@ -3231,7 +3236,7 @@ student-katya is a nasty student.
 [Katya is a real bitch from rank 1 - 3 and then suddenly turns into a submissive doll at rank 4.]
 [TODO: her ruby promotion scene can involve her breaking from brat into Stepford wife]
 
-Definition: student-katya is unfriendly rather than friendly:
+Definition: student-katya is calculated unfriendly:
 	if it is not pacified and the current-rank of it < 4, decide yes;
 	decide no.
 

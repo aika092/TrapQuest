@@ -73,7 +73,7 @@ whore-exposing-quest has an object called latest-exposee.
 whore-exposing-quest has a number called expose-count.
 
 To compute unique recycling of (C - fishbowl-hat):
-	now the latest-exposee of C is nothing;
+	now the latest-exposee of whore-exposing-quest is nothing;
 	now the expose-count of whore-exposing-quest is 0.
 
 To uniquely set up (C - fishbowl-hat):

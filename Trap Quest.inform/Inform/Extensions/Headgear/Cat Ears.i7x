@@ -73,8 +73,8 @@ To say QuestTitle of (Q - follow-me-quest):
 	say " (NPC leading quest)".
 
 Report going:
-	let H be a random headgear;
-	if H is headgear and the quest of H is follow-me-quest:
+	let H be a random worn headgear;
+	if H is headgear and the quest of H is follow-me-quest and H is not blessed:
 		let N be 0;
 		repeat with M running through interested alive monsters:
 			if (M is unleashed or M is unconcerned) and M is regional, increase N by 1;

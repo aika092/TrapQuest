@@ -4,10 +4,10 @@ Mamba by Sex Toys begins here.
 
 A mamba is a kind of dong. There is 1 rare mamba. The size of a mamba is usually 8. The printed name of a mamba is usually "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if]mamba[clothing-title-after]". The text-shortcut of mamba is "ma".
 
-Definition: A mamba is interracial themed: decide yes.
+Definition: a mamba is interracial themed: decide yes.
 Definition: a mamba is penis themed: decide yes.
 Definition: a mamba is brown themed: decide yes.
-Definition: A mamba is fetish appropriate:
+Definition: a mamba is fetish appropriate:
 	if interracial fetish is 1, decide yes;
 	decide no.
 

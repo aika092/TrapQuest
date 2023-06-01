@@ -19,7 +19,7 @@ A time based rule (this is the first aid cooldown rule):
 			let B be a random unowned bandage;
 			if B is nothing:
 				now B is a random bandage;
-				now B is unowned;
+				now the owner of B is nothing;
 			now B is carried by the player.
 
 bandaging is an action applying to one thing.

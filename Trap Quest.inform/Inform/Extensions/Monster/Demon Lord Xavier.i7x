@@ -202,6 +202,13 @@ To compute monstermotion of (M - demon lord):
 		otherwise:
 			compute room leaving of M.
 
+To compute the default taunting of (M - demon lord):
+	if nursery crib is grabbing the player and player-currently-resting is 0:
+		say "[speech style of M]'NAPTIME IS OVER, SLUT!'[roman type][line break][BigNameDesc of M] unlocks the crib and roughly yanks you out.";
+		dislodge nursery crib;
+	otherwise:
+		say "[BigNameDesc of M] growls with impatience.".
+
 Part 1 - Perception
 
 To compute perception of (M - demon lord):
@@ -586,10 +593,10 @@ To say DiaperReaction of (M - demon lord):
 To compute diaper mess reaction of (M - demon lord):
 	if diaper quest is 1:
 		say "[BigNameDesc of M] watches you with glee.[line break][speech style of M]'BWAHAHAHAHA! I HAVE SEEN WEAK MORTALS IN MY TIME, BUT YOU ARE TRULY THE MOST PATHETIC LIVING CREATURE TO EVER ENTER THESE HALLS[one of]! TO BE UNABLE TO CONTROL SOMETHING SO BASIC... THIS IS A FATE WORSE THAN DEATH[or][stopping].'[roman type][line break]";
-		humiliate 200;
+		obsceneHumiliate;
 	otherwise:
 		say "[BigNameDesc of M] looks at you with pure disgust in [his of M] eyes.[line break][speech style of M]'I DID NOT THINK THAT EVEN HUMANS WOULD DEBASE THEMSELVES TO SUCH DISGUSTING LEVELS[if M is uninterested]. GET OUT OF MY SIGHT[end if].'[roman type][line break]";
-	humiliate 200.
+	obsceneHumiliate.
 
 Section 3 - Nightmares
 
@@ -882,12 +889,14 @@ To execute (F - final-battle-pit):
 			say "[BigNameDesc of demon lord] laughs at you.[line break][speech style of demon lord]'[one of]IS THIS REALLY YOUR LAST HOPE, PRINCESS? THIS WEAKLING?!'[or]FOOL, YOUR STRENGTH IS NO MATCH FOR MINE!'[or]YOUR SIDEKICK IS A TENACIOUS ONE, I'LL GIVE [caps him of the player] THAT!'[or]PITIFUL!'[stopping][roman type][line break]";
 		now another-turn is 1;
 	otherwise if player-numerical-response is 2:
-		say "You close your eyes, pinch your nose, and leap.[line break][speech style of demon lord]'NO! WHAT A WASTE OF A POWERFUL SPELL!'[roman type][line break]The hotel's floor, or rather the pit's ceiling, closes up behind you. You plunge into the impossibly large mass of [if diaper quest is 0][semen][otherwise]diapers[end if] and are immediately engulfed. There's nothing but [if diaper quest is 0][semen][otherwise if diaper messing >= 7]shit-filled diapers[otherwise][urine]-soaked plastic[end if] in every direction. Your senses are overwhelmed, and you feel yourself begin to suffocate.";
-		let G be 2; [room stinks of cum]
-		if diaper quest is 1:
-			if diaper messing >= 7, now G is messyDiaperFacesitGrossnessLevel;
-			otherwise now G is wetDiaperFacesitGrossnessLevel;
-		SmellGrossOut G;
+		say "You close your eyes, pinch your nose, and leap.[line break][speech style of demon lord]'NO! WHAT A WASTE OF A POWERFUL SPELL!'[roman type][line break]The hotel's floor, or rather the pit's ceiling, closes up behind you. You plunge into the impossibly large mass of [if diaper quest is 0][semen][otherwise]diapers[end if] and are immediately engulfed. There's nothing but [if diaper quest is 0][semen][otherwise if diaper messing >= 7]shit-filled diapers[otherwise][urine]-soaked plastic[end if] in every direction. ";
+		if the player is air breathing vulnerable:
+			say "Your senses are overwhelmed, and you feel yourself begin to suffocate.";
+			let G be 2; [room stinks of cum]
+			if diaper quest is 1:
+				if diaper messing >= 7, now G is messyDiaperFacesitGrossnessLevel;
+				otherwise now G is wetDiaperFacesitGrossnessLevel;
+			SmellGrossOut G;
 		if diaper quest is 1:
 			DelicateUp 1;
 		otherwise:
@@ -1106,7 +1115,7 @@ Definition: final-battle-sword is appropriate:
 	if diaper lover is 0, decide yes;
 	decide no.
 To commence (F - final-battle-sword):
-	say "[speech style of demon lord]'TIME TO GET SERIOUS. WITH MY SWORD OF POWER, NO MORTAL CAN HOPE TO BEST ME. COME FORTH, MY HYPER WEAPON!'[roman type][line break][BigNameDesc of demon lord] raises a hand out in front of him, as if expecting a sword to appear. But instead, a sword hilt begins to emerge from in front of [NameDesc of ex-princess].[line break][speech style of demon lord]'WAIT, NO!'[roman type][line break][big he of demon lord] yells in panic, and out of instinct, seeing [his of ex-princess] opportunity, [NameDesc of ex-princess] grabs at it, and [']unsheaths['] it from the portal from which it is emerging.[paragraph break][BigNameDesc of demon lord][']s expression immediately changes to one of triumphant glee.[line break][speech style of demon lord]'MY MY, PRINCESS, I DIDN'T KNOW YOU WANTED TO HANDLE MY SWORD!'[roman type][line break][BigNameDesc of ex-princess] curses.[line break][speech style of ex-princess]'It was a trap?'[line break][speech style of demon lord]'OF COURSE!'[roman type][line break][big he of demon lord] cackles, as the answer is confirmed anyway by one look at the [']sword[']. which is actually a sword hilt with a portal at the end, out of which has emerged a huge throbbing red [manly-penis]. A matching portal is visible at [NameDesc of demon lord][']s groin, where [his of demon lord] genitals should be.[roman type][line break][BigNameDesc of ex-princess] begins to speak.[line break][speech style of ex-princess]'What foul magic is thi-'[roman type][line break]But before [he of ex-princess] can finish, the red monster-cock has taken on a life of its own, and moving like a tentacle, started to force itsself in between [NameDesc of ex-princess][']s lips.[line break][speech style of demon lord]'YES, YES, IN A MOMENT YOU'LL BE CHOKING ON MY COCK, YOU WORTHLESS WHORE! I'M GOING TO PUMP YOUR STOMACH FULL OF CUM UNTIL YOU BURST!'[roman type][paragraph break]It seems unlikely, but possible, that [NameDesc of ex-princess] will manage to save [himself of ex-princess] from the fate of being pumped painfully full of [NameDesc of demon lord][']s [semen]. [bold type]If you have a free dominant hand, you could try and take the penis-sword from [him of ex-princess], but then you'd probably be left dealing with the giant magic demon [manly-penis] yourself.[roman type][line break]";
+	say "[speech style of demon lord]'TIME TO GET SERIOUS. WITH MY SWORD OF POWER, NO MORTAL CAN HOPE TO BEST ME. COME FORTH, MY HYPER WEAPON!'[roman type][line break][BigNameDesc of demon lord] raises a hand out in front of him, as if expecting a sword to appear. But instead, a sword hilt begins to emerge from in front of [NameDesc of ex-princess].[line break][speech style of demon lord]'WAIT, NO!'[roman type][line break][big he of demon lord] yells in panic, and out of instinct, seeing [his of ex-princess] opportunity, [NameDesc of ex-princess] grabs at it, and [']unsheaths['] it from the portal from which it is emerging.[paragraph break][BigNameDesc of demon lord][']s expression immediately changes to one of triumphant glee.[line break][speech style of demon lord]'MY MY, PRINCESS, I DIDN'T KNOW YOU WANTED TO HANDLE MY SWORD!'[roman type][line break][BigNameDesc of ex-princess] curses.[line break][speech style of ex-princess]'It was a trap?'[line break][speech style of demon lord]'OF COURSE!'[roman type][line break][big he of demon lord] cackles, as the answer is confirmed anyway by one look at the [']sword[']. which is actually a sword hilt with a portal at the end, out of which has emerged a huge throbbing red [manly-penis]. A matching portal is visible at [NameDesc of demon lord][']s groin, where [his of demon lord] genitals should be.[roman type][line break][BigNameDesc of ex-princess] begins to speak.[line break][speech style of ex-princess]'What foul magic is thi-'[roman type][line break]But before [he of ex-princess] can finish, the red monster-cock has taken on a life of its own, and moving like a tentacle, started to force itself in between [NameDesc of ex-princess][']s lips.[line break][speech style of demon lord]'YES, YES, IN A MOMENT YOU'LL BE CHOKING ON MY COCK, YOU WORTHLESS WHORE! I'M GOING TO PUMP YOUR STOMACH FULL OF CUM UNTIL YOU BURST!'[roman type][paragraph break]It seems unlikely, but possible, that [NameDesc of ex-princess] will manage to save [himself of ex-princess] from the fate of being pumped painfully full of [NameDesc of demon lord][']s [semen]. [bold type]If you have a free dominant hand, you could try and take the penis-sword from [him of ex-princess], but then you'd probably be left dealing with the giant magic demon [manly-penis] yourself.[roman type][line break]";
 	blandify and reveal demon broadsword;
 	now demon broadsword is in the location of the player;
 	now demon broadsword is dildoed;
@@ -1115,7 +1124,7 @@ To commence (F - final-battle-sword):
 To execute (F - final-battle-sword):
 	if demon broadsword is on-stage and demon broadsword is not held:
 		if the uses of F is 2 and the player is getting lucky: [only possible on the second turn (no execute function called on the first turn)]
-			say "With an incredible display of strength, [NameDesc of ex-princess] rips [NameDesc of demon broadsword] from [his of ex-princess] mouth, and slam it into the ground. [GotLuckyFlav][line break][BigNameDesc of demon lord] roars with pain, and a moment later, [his of demon lord] [DickDesc of demon lord] is back where you expect it, at [his of demon lord] crotch. The sword is nowhere to be seen.";
+			say "With an incredible display of strength, [NameDesc of ex-princess] rips [NameDesc of demon broadsword] from [his of ex-princess] mouth, and slams it into the ground. [GotLuckyFlav][line break][BigNameDesc of demon lord] roars with pain, and a moment later, [his of demon lord] [DickDesc of demon lord] is back where you expect it, at [his of demon lord] crotch. The sword is nowhere to be seen.";
 			destroy demon broadsword;
 			decrease the health of demon lord by the maxhealth of demon lord / 6;
 			now current-final-battle-object is final-battle-magic-clash; [this object has concluded]
@@ -1381,6 +1390,10 @@ To compute unique banishment of (M - demon lord):
 		say "The defeated [ShortDesc of M] [if the loot dropped of M > 0]also [end if]dropped a [printed name of X]!";
 		increase the loot dropped of M by 1;
 		compute autotaking X;
+	unless infernal gem is held:
+		now infernal gem is in the location of the player;
+		increase the loot dropped of M by 1;
+		compute autotaking infernal gem;
 	now M is bossdefeated.
 
 To say PenisFuckDesc of (M - demon lord):
@@ -1474,7 +1487,7 @@ To ride dominate (M - demon lord):
 		orgasm;
 		now player-fucking is DOMINANT-SUPER;
 	otherwise:[failed]
-		say "The sheer confidence in [his of M] voice shakes you more than you care to admit, and you[if the player is able to speak] shout.[line break][variable custom style]'S-Shut up!'[roman type][line break][otherwise]throw [him of M] a sharp look. [end if][big he of M] responds with a hearty laugh, which crumbles your composure even further. You will yourself to keep going, but... [he of M]'s right. You can't win. You will never win. Not against the mighty Demon [if lady fetish is 1]Queen[otherwise]King[end if].[line break][speech style of M]'DESTROY THE CONDOM.'[roman type][line break]No longer deluded enough to disobey, you climb off [him of M] and tear away the one thing keeping him in check. [big his of M] unbound energy washes over you as he grabs you by the waist and impales you on [his of M] [DickDesc of M]. In a fraction of the time [if diff <= -6]it took you to barely take a centimetre by yourself, [he of M] buries half a dozen thick, throbbing inches of[otherwise if diff <= -3]it took you to take a few centimetres by yourself, [he of M] buries nearly a dozen thick, throbbing inches of[otherwise if diff <= 0]it took you to take two inches by yourself, [he of M] buries more than a foot of thick, throbbing[otherwise]it took you take a few inches by yourself, [he of M] buries [his of M] entire thick, throbbing[end if] [DickDesc of M] up your [variable F]. With [his of M] assistance... erm, leadership... erm, complete and utter dominion without any room to resist, you are allowed to enjoy the unique feeling of being used like [his of M] own personal cocksleeve, right up until the moment your [if F is asshole]belly[otherwise]womb[end if] is flooded with [his of M] [semen].";
+		say "The sheer confidence in [his of M] voice shakes you more than you care to admit, and you[if the player is able to speak] shout.[line break][variable custom style]'S-Shut up!'[roman type][line break][otherwise]throw [him of M] a sharp look. [end if][big he of M] responds with a hearty laugh, which crumbles your composure even further. You will yourself to keep going, but... [he of M]'s right. You can't win. You will never win. Not against the mighty Demon [if lady fetish is 1]Queen[otherwise]King[end if].[line break][speech style of M]'DESTROY THE CONDOM.'[roman type][line break]No longer deluded enough to disobey, you climb off [him of M] and tear away the one thing keeping him in check. [big his of M] unbound energy washes over you as he grabs you by the waist and impales you on [his of M] [DickDesc of M]. In a fraction of the time [if diff <= -6]it took you to barely take a centimetre by yourself, [he of M] buries half a dozen thick, throbbing inches of[otherwise if diff <= -3]it took you to take a few centimetres by yourself, [he of M] buries nearly a dozen thick, throbbing inches of[otherwise if diff <= 0]it took you to take two inches by yourself, [he of M] buries more than a foot of thick, throbbing[otherwise]it took you to take a few inches by yourself, [he of M] buries [his of M] entire thick, throbbing[end if] [DickDesc of M] up your [variable F]. With [his of M] assistance... erm, leadership... erm, complete and utter dominion without any room to resist, you are allowed to enjoy the unique feeling of being used like [his of M] own personal cocksleeve, right up until the moment your [if F is asshole]belly[otherwise]womb[end if] is flooded with [his of M] [semen].";
 		strongHumiliate;
 		if F is vagina, vaginally orgasm shamefully;
 		otherwise anally orgasm shamefully;
@@ -1526,15 +1539,11 @@ To say AfterDominationComment (N - a number) of (M - demon lord):
 
 Part 4 - Conversation
 
-To IdentifiablePosterReaction of (M - demon lord):
-	say "[BigNameDesc of M] looks at you, then at the banner, then back to you. Upon realising that it is you, [he of M] puts [his of M] hands on [his of M] hips and laughs loudly.";
-	say "You turn bright red with shame.";
-	humiliate the lewdness of a random poster in the location of the player * 2.
+To say IdentifiablePosterReactionFlav of (M - demon lord):
+	say "[BigNameDesc of M] looks at you, then at the banner, then back to you. Upon realising that it is you, [he of M] puts [his of M] hands on [his of M] hips and laughs loudly it shakes the pictures on the walls!".
 
-To UnidentifiablePosterReaction of (M - demon lord) with (P - a poster):
-	say "[BigNameDesc of M] looks at the banner with a big grin on [his of M] face. [big he of M] doesn't seem to realise it is you, but is clearly enjoying looking at it.";
-	say "You turn slightly red but don't say a word.";
-	humiliate the lewdness of a random poster in the location of the player / 2.
+To say UnidentifiablePosterReactionFlav of (M - demon lord) with (P - a poster):
+	say "[BigNameDesc of M] looks at the banner with a big grin on [his of M] face. [big he of M] doesn't seem to realise it is you, but is clearly enjoying looking at it.".
 
 Section 1 - Greeting
 

@@ -5,18 +5,16 @@ Volume - Explorers
 Figure of gymnast explorer 1 is the file "NPCs/MultiFloor/Explorers/gymnast1.jpg".
 Figure of gymnast explorer 2 is the file "NPCs/MultiFloor/Explorers/gymnast2.jpg".
 Figure of gymnast explorer 3 is the file "NPCs/MultiFloor/Explorers/gymnast3.jpg".
-To decide which figure-name is the monster-image of (M - gymnast-explorer):
-	if the explorer-bimbo of M >= 2, decide on figure of gymnast explorer 3;
-	if the explorer-bimbo of M is 1, decide on figure of gymnast explorer 2;
-	decide on figure of gymnast explorer 1.
 To say UniqueMonsterDesc of (M - gymnast-explorer):
 	say "[big he of M] is wearing a tight shiny blue swimsuit and [if the explorer-bimbo of M is 0]nothing else[otherwise if the explorer-bimbo of M is 1]is prancing around like a ballerina on tip-toes[otherwise]is lying on the bed playfully, patiently waiting for [his of M] next client[end if].".
 Figure of gymnast explorer 1 cutscene 1 is the file "NPCs/MultiFloor/Explorers/gymnast1-cutscene1.png".
+Figure of gymnast explorer 1 cutscene 3 is the file "NPCs/MultiFloor/Explorers/gymnast1-cutscene3.jpg".
 
 
 Figure of blonde explorer 1 is the file "NPCs/MultiFloor/Explorers/blonde1.jpg".
 Figure of blonde explorer 2 is the file "NPCs/MultiFloor/Explorers/blonde2.jpg".
 Figure of blonde explorer 3 is the file "NPCs/MultiFloor/Explorers/blonde3.jpg".
+Figure of blonde explorer 1 cutscene 1 is the file "NPCs/MultiFloor/Explorers/blonde1-cutscene1.jpg".
 To say UniqueMonsterDesc of (M - blonde-explorer):
 	say "[big he of M] is wearing [if the explorer-bimbo of M is 0]a set of clothing which is a fashionable but provocative mixture of blue latex and black leather. It would be somewhat acceptable for this place if it wasn't for the lack of a bottom half - her sizeable rump is covered by nothing except a flimsy blue thong. In one hand [he of M] has a stylish white bag of holding[otherwise if the explorer-bimbo of M is 1][his of M] stylish blue and black thigh-highs and shoulder-length gloves but has ditched the top, leaving her B cup breasts completely exposed. [big he of M] still has the skimpy thong and white bag of holding[otherwise]is now wearing a latex black negligee which consists of a spider's web of black strips across [his of M] skin, still leaving most of it uncovered, including [his of M] privates. While [his of M] nipples and crotch are technically somewhat covered by the matching skimpy black bikini set [he of M] is wearing, the ensemble as a whole still screams 'prostitute'[end if].".
 
@@ -26,6 +24,7 @@ Figure of exposed explorer 2a is the file "NPCs/MultiFloor/Explorers/exposed2a.j
 Figure of exposed explorer 2b is the file "NPCs/MultiFloor/Explorers/exposed2b.jpg".
 Figure of exposed explorer 3a is the file "NPCs/MultiFloor/Explorers/exposed3a.jpg".
 Figure of exposed explorer 3b is the file "NPCs/MultiFloor/Explorers/exposed3b.jpg".
+Figure of exposed explorer 1 cutscene 1 is the file "NPCs/MultiFloor/Explorers/exposed1-cutscene1.jpg".
 To decide which figure-name is the monster-image of (M - exposed-explorer):
 	if weight gain fetish is 1:
 		if the explorer-bimbo of M >= 2, decide on figure of exposed explorer 3b;

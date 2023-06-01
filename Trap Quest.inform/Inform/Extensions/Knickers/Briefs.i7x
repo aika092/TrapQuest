@@ -127,7 +127,7 @@ To uniquely set up (T - a white-diagram briefs):
 Report wearing a white-diagram briefs:
 	compute early pregnancy eagerness.
 
-pink-hole-briefs is a briefs. The text-shortcut of pink-hole-briefs is "phlb". pink-hole-briefs has a number called charge. Understand "pink", "pink hole" as pink-hole-briefs.
+pink-hole-briefs is a briefs. The text-shortcut of pink-hole-briefs is "phlb". pink-hole-briefs has a number called charge. Understand "pink", "pink hole" as pink-hole-briefs. The DQFigure of pink-hole-briefs is DQPinkPants.
 To say selfexamineuniquetitle of (G - pink-hole-briefs):
 	say "pair of pink [']Hole['] briefs".
 To say UniqueClothingDesc of (G - pink-hole-briefs):
@@ -151,8 +151,13 @@ To compute post transformation effect of (C - pink-hole-briefs):
 	if the player is ready for common event TG:
 		say DefaultSexChangeFlav;
 		SexChange the player.
+Report wearing pink-hole-briefs:
+	if the player is ready for event TG:
+		say DefaultSexChangeFlav;
+		SexChange the player.
 
-pink briefs is a briefs. The text-shortcut of pink briefs is "pib".
+
+pink briefs is a briefs. The text-shortcut of pink briefs is "pib". The DQFigure of pink briefs is DQPinkPants.
 To say selfexamineuniquetitle of (G - pink briefs):
 	say "pair of pink briefs".
 To say UniqueClothingDesc of (G - pink briefs):
@@ -179,7 +184,7 @@ To decide which number is the unique outrage of (C - red briefs):
 	decide on 2.
 Definition: red briefs is red themed: decide yes.
 
-black briefs is a briefs. The text-shortcut of black briefs is "blb".
+black briefs is a briefs. The text-shortcut of black briefs is "blb". The DQFigure of black briefs is DQBlackPants.
 To say selfexamineuniquetitle of (G - black briefs):
 	say "pair of black briefs".
 To say UniqueClothingDesc of (G - black briefs):
@@ -200,7 +205,7 @@ To decide which number is the unique outrage of (C - black room briefs):
 Definition: black room briefs is black themed: decide yes.
 Definition: black room briefs is gem themed: decide yes.
 
-blue-briefs is a briefs. The text-shortcut of blue-briefs is "bbr". Understand "blue", "briefs" as blue-briefs.
+blue-briefs is a briefs. The text-shortcut of blue-briefs is "bbr". Understand "blue", "briefs" as blue-briefs. The DQFigure of blue-briefs is DQBluePants.
 To say selfexamineuniquetitle of (G - blue-briefs):
 	say "pair of blue briefs".
 To say UniqueClothingDesc of (G - blue-briefs):
@@ -233,7 +238,7 @@ To decide which number is the unique price of (C - green-briefs):
 	decide on 1.
 Definition: green-briefs is green themed: decide yes.
 
-grey-briefs is a briefs. The text-shortcut of grey-briefs is "grb".
+grey-briefs is a briefs. The text-shortcut of grey-briefs is "grb". The DQFigure of grey-briefs is DQBlackPants.
 To say selfexamineuniquetitle of (G - grey-briefs):
 	say "pair of grey 'UP ALL NIGHT' briefs".
 To say UniqueClothingDesc of (G - grey-briefs):
@@ -255,7 +260,7 @@ To say UniqueClothingDesc of (G - pale briefs):
 Definition: pale briefs is sissifying: decide yes.
 Definition: pale briefs is pink themed: decide yes.
 
-blue-cameltoe briefs is a briefs. The text-shortcut of blue-cameltoe briefs is "bcb". Understand "blue", "cameltoe" as blue-cameltoe briefs.
+blue-cameltoe briefs is a briefs. The text-shortcut of blue-cameltoe briefs is "bcb". Understand "blue", "cameltoe" as blue-cameltoe briefs. The DQFigure of blue-cameltoe briefs is DQBluePants.
 To say selfexamineuniquetitle of (G - blue-cameltoe briefs):
 	say "pair of blue cameltoe briefs".
 To say UniqueClothingDesc of (G - blue-cameltoe briefs):
@@ -269,7 +274,7 @@ To decide which object is the potential-upgrade-target of (H - blue-cameltoe bri
 	if the player is possessing a vagina, decide on a random off-stage sheer g-string;
 	decide on nothing.
 
-pink-kitty-briefs is a briefs. pink-kitty-briefs is silk. Understand "frilly", "kitty" as pink-kitty-briefs. The text-shortcut of pink-kitty-briefs is "fkb".
+pink-kitty-briefs is a briefs. pink-kitty-briefs is silk. Understand "frilly", "kitty" as pink-kitty-briefs. The text-shortcut of pink-kitty-briefs is "fkb". The DQFigure of pink-kitty-briefs is DQPinkPants.
 To say selfexamineuniquetitle of (G - pink-kitty-briefs):
 	say "pair of frilly kitty briefs".
 To say UniqueClothingDesc of (G - pink-kitty-briefs):
@@ -339,32 +344,37 @@ Figure of briefs special 2 is the file "Items/Clothes/Lower/Underwear/Briefs/bri
 
 [Below are from Lucas]
 
-pale blue-briefs is a briefs. The text-shortcut of pale blue-briefs is "pbbr". pale blue-briefs has a number called charge.
+pale blue-briefs is a briefs. The text-shortcut of pale blue-briefs is "pbbr". pale blue-briefs has a number called charge. The DQFigure of pale blue-briefs is DQBluePants.
 Understand "I want", "it all", "blue", "briefs" as pale blue-briefs.
 To say selfexamineuniquetitle of (G - pale blue-briefs):
 	say "pair of pale blue 'I WANT IT ALL' briefs".
 To say UniqueClothingDesc of (G - pale blue-briefs):
-	say "A comfortable pair of blue briefs with silvery words on the pack suggesting that the wearer loves taking every inch of a [manly-penis].".
+	say "A comfortable pair of blue briefs with silvery words on the pack suggesting that the wearer is a greedy brat[if diaper quest is 0] who loves taking every inch of a [manly-penis][end if].".
 To decide which number is the anal-sex-addiction-influence of (G - pale blue-briefs):
+	if diaper quest is 1, decide on 0;
 	if G is blessed, decide on 1;
 	decide on 2.
 To decide which number is the vaginal-sex-addiction-influence of (G - pale blue-briefs):
+	if diaper quest is 1, decide on 0;
 	if the player is not possessing a vagina, decide on 0;
 	if G is blessed, decide on 1;
 	decide on 2.
 To compute periodic effect of (G - pale blue-briefs):
-	increase the charge of G by 1;
-	if the charge of G > 53:
-		now the charge of G is 0;
-		if the player is not possessing a vagina:
-			if the openness of asshole < 8:
-				say "[bold type]You feel your [G] magically make your [asshole] stretch [if the openness of asshole > 4]even [end if]wider![roman type][line break]";
-				gape asshole times 1;
-		otherwise:
-			if the openness of vagina < 8:
-				say "[bold type]You feel your [G] magically make your [vagina] stretch [if the openness of vagina > 4]even [end if]wider![roman type][line break]";
-				gape vagina times 1.
+	if diaper quest is 0:
+		increase the charge of G by 1;
+		if the charge of G > 53:
+			now the charge of G is 0;
+			if the player is not possessing a vagina:
+				if the openness of asshole < 8:
+					say "[bold type]You feel your [G] magically make your [asshole] stretch [if the openness of asshole > 4]even [end if]wider![roman type][line break]";
+					gape asshole times 1;
+			otherwise:
+				if the openness of vagina < 8:
+					say "[bold type]You feel your [G] magically make your [vagina] stretch [if the openness of vagina > 4]even [end if]wider![roman type][line break]";
+					gape vagina times 1.
 Definition: pale blue-briefs is blue themed: decide yes.
+Check dropping when pale blue-briefs is worn:
+	if the noun is non-empty bottle or the noun is squeezy-bottle or the noun is TQedible or the noun is tincture or the noun is elixir or the noun is potion or (the noun is clothing and the used condoms of the noun > 0), say "You try, but your hands stops itself! It feels like your [noun] is preventing you from dropping anything you could [if the noun is TQedible]eat[otherwise]drink[end if]!" instead.
 
 red-orange briefs is a briefs. The text-shortcut of red-orange briefs is "rob".
 Understand "trick", "trick me" as red-orange briefs.
@@ -386,7 +396,7 @@ To say UniqueClothingDesc of (G - grey-hi-cut briefs):
 	say "A pair of grey hi-cut briefs with the words [']I woke up like this['] over the right thigh, drawing attention and proclaiming that the wearer is quite the hot mess.".
 Definition: grey-hi-cut briefs is grey themed: decide yes.
 
-blue-polka-dot briefs is a briefs. The text-shortcut of blue-polka-dot briefs is "bpb".
+blue-polka-dot briefs is a briefs. The text-shortcut of blue-polka-dot briefs is "bpb". The DQFigure of blue-polka-dot briefs is DQBluePants.
 To say selfexamineuniquetitle of (G - blue-polka-dot briefs):
 	say "pair of blue polka-dot 'I heart boys' briefs".
 Understand "I heart", "heart", "boys" as blue-polka-dot briefs.
@@ -401,7 +411,7 @@ Definition: blue-polka-dot briefs is blue themed: decide yes.
 To decide which number is the unique outrage of (C - blue-polka-dot briefs):
 	decide on 3.
 
-turquoise briefs is a briefs. The text-shortcut of turquoise briefs is "tqb".
+turquoise briefs is a briefs. The text-shortcut of turquoise briefs is "tqb". The DQFigure of turquoise briefs is DQBluePants.
 To say selfexamineuniquetitle of (G - turquoise briefs):
 	say "pair of turquoise briefs".
 To say UniqueClothingDesc of (G - turquoise briefs):

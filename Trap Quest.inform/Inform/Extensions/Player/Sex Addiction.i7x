@@ -287,10 +287,7 @@ To decide which number is the vaginal-sex-addiction-influence of (C - a wearthin
 	decide on 0.
 
 To decide which number is the vaginal-sex-addiction-influence of (C - a clothing):
-	if C is vaginal-sex-addiction-influencing:
-		let S be 0;
-		decrease S by the magic-modifier of C; [Positive magic = subtracted sex addiction]
-		decide on S;
+	if C is vaginal-sex-addiction-influencing, decide on 0 - the magic-modifier of C; [Positive magic = subtracted sex addiction]
 	decide on 0.
 
 Part 2 - Modify Vaginal Sex Addiction
@@ -505,6 +502,7 @@ To decide which number is the sensitivity of (B - breasts):
 	if there is a worn nipple chain, increase S by 2;
 	if true love tattoo is worn, increase S by 2;
 	increase S by 6 * the trophy-mode of bust-trophy;
+	if onahole-bra is worn and there is a thing penetrating breasts, now S is S / 3;
 	if S > 30, decide on 30;
 	decide on S.
 
@@ -555,7 +553,7 @@ To TitfuckAddictDown (X - a number):
 	let S be the raw titfuck addiction of the player;
 	SilentlyTitfuckAddictDown X;
 	decrease S by the raw titfuck addiction of the player;
-	if S > 0, say "Your breasts feel [if S > 2]much [otherwise if S is 2]significantly [end if]less [if the titfuck addiction of the player > 6]eager to pleasure [men of shopkeeper][otherwise]interested in being touched[end if].".
+	if S > 0, say "Your breasts feel [if S > 2]much [otherwise if S is 2]significantly [end if]less [if the titfuck addiction of the player > 6]eager to pleasure [men of male-m][otherwise]interested in being touched[end if].".
 
 To SilentlyTitfuckAddictDown (X - a number):
 	if diaper quest is 1:

@@ -1,6 +1,6 @@
 Explorer by Monster begins here.
 
-An explorer is a kind of monster. an explorer is female. an explorer is intelligent. an explorer has a number called explorer-bimbo. Understand "adventurer" as an explorer. Understand "bimbo" as an explorer when the explorer-bimbo of item described is 1. Understand "whore" as an explorer when the explorer-bimbo of item described > 1. an explorer has a text called explorer-type. Understand the explorer-type property as describing an explorer.
+An explorer is a kind of monster. an explorer is female. an explorer is intelligent. an explorer has a number called explorer-bimbo. Understand "adventurer" as an explorer. Understand "struggling" as an explorer when the explorer-bimbo of item described is 1. Understand "retired" as an explorer when the explorer-bimbo of item described > 1. an explorer has a text called explorer-type. Understand the explorer-type property as describing an explorer.
 
 Definition: an explorer is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 
@@ -8,7 +8,7 @@ To say ShortDesc of (M - an explorer):
 	say "adventurer".
 
 To say MediumDesc of (M - an explorer):
-	say "[explorer-type of M] [if the explorer-bimbo of M >= 2]whore [otherwise if the explorer-bimbo of M is 1]bimbo [end if]adventurer".
+	say "[explorer-type of M] [if the explorer-bimbo of M >= 2]retired [otherwise if the explorer-bimbo of M is 1]struggling [end if]adventurer".
 
 To say MonsterDesc of (M - an explorer):
 	say "This [man of M] appears to be struggling with [his of M] adventure. [big he of M] doesn't appear to be very strong, or have many possessions. [UniqueMonsterDesc of M]".
@@ -19,6 +19,10 @@ To say UniqueMonsterDesc of (M - an explorer):
 Definition: an explorer is willing to fluff: decide yes.
 
 gymnast-explorer is an explorer. The explorer-type of gymnast-explorer is "gymnast". The text-shortcut of gymnast-explorer is "gyma".
+To decide which figure-name is the monster-image of (M - gymnast-explorer):
+	if the explorer-bimbo of M >= 2, decide on figure of gymnast explorer 3;
+	if the explorer-bimbo of M is 1, decide on figure of gymnast explorer 2;
+	decide on figure of gymnast explorer 1.
 
 blonde-explorer is an explorer. The explorer-type of blonde-explorer is "blonde". The text-shortcut of blonde-explorer is "bnda".
 To decide which figure-name is the monster-image of (M - blonde-explorer):
@@ -31,6 +35,7 @@ Report going:
 		now blonde-explorer is in the location of the player;
 		say "Suddenly, from your right, the Iron Maiden opens, and a skimpily dressed [man of blonde-explorer] stumbles out. [if diaper quest is 0][big he of blonde-explorer] looks up at you, seems to think for a minute, and then takes a big gulp, swallowing whatever was in [his of blonde-explorer] mouth[otherwise]A strong stench of piss emanates from both the maiden and [his of blonde-explorer] panties - [he of blonde-explorer] must have pissed [himself of blonde-explorer] into the in-built padding while [he of blonde-explorer] was in there[end if].[line break][speech style of blonde-explorer]'Hello. Um... Don't look at the mirror. That's all I'm going to say. See you around.'[roman type][line break]It looks like [he of blonde-explorer] isn't one for long conversations. Or maybe [he of blonde-explorer] just wants to get out of this creepy place as soon as possible.";
 		bore blonde-explorer for 150 seconds;
+		if diaper quest is 0, cutshow Figure of blonde explorer 1 cutscene 1 for blonde-explorer;
 		now blonde-explorer is moved.
 
 exposed-explorer is an explorer. The explorer-type of exposed-explorer is "exposed". The text-shortcut of exposed-explorer is "expa".
@@ -130,6 +135,13 @@ To compute eek reaction of (M - an explorer):
 	now the boredom of M is 0;
 	permanently anger M.
 
+To MonsterHeal (M - an explorer) by (N - a number):
+	now N is N / 4; [heals at 25% rate, making it easier to chase down and defeat]
+	if N < 1, now N is 1;
+	if the health of M < the maxhealth of M:
+		increase the health of M by N;
+		if the health of M > the maxhealth of M, now the health of M is the maxhealth of M.[Overhealing is not allowed]
+
 [An easy way for them to get booted from their starting regions]
 Definition: an explorer (called M) is distracted:
 	if M is in the location of the player:
@@ -184,6 +196,7 @@ To compute standard damage of (M - an explorer):
 		compute defeat of M.
 
 To compute banishment of (M - an explorer):
+	if M is in the location of the player, cutshow the examine-image of M;
 	increase the explorer-bimbo of M by 1;
 	calm M;
 	repeated set up M.

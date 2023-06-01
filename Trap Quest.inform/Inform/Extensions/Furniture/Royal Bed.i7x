@@ -67,7 +67,7 @@ To compute furniture resting on (F - the royal bed):
 		otherwise if the sex addiction of the player < the humiliation of the player / 2000:
 			SexAddictUp 1;
 		otherwise:
-			humiliate 200;
+			severeHumiliate;
 		say "[line break][bold type]You are now standing.[roman type][line break]";
 	now the body soreness of the player is 0;
 	now the stance of the player is 0;

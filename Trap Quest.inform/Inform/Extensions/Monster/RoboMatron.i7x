@@ -4,6 +4,7 @@ robomatron is a robot. robomatron is intelligent. Understand "matron", "matronbo
 
 Definition: robomatron is hotel dwelling: decide no. [Stops it spawning via spawning trap]
 Definition: robomatron is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
+Definition: robomatron is ready to entice: decide no. [Never entices]
 
 To say ShortDesc of (M - robomatron):
 	say "MatronBot".
@@ -24,6 +25,7 @@ To set up (M - robomatron):
 	now the monstersetup of M is 1;
 	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M;
+	now M is guarding;
 	now M is in Hotel36.
 
 To decide which number is the starting difficulty of (M - robomatron):
@@ -160,8 +162,8 @@ To say EnemaAfterFlav of (M - robomatron):
 	say "[speech style of M]'PUNISHMENT CONCLUDED[unless there is a worn total protection diaper]. TOILET QUEST IS NOW ACTIVE. WARNING: EXPULSION IN THIS ROOM IS FORBIDDEN[end if].'[roman type][line break][BigNameDesc of M] now seems to be allowing you to leave.".
 
 To compute enema floor reaction of (M - robomatron):
-	humiliate 200;
-	if voluntarySquatting is 1, humiliate 500;
+	severeHumiliate;
+	if voluntarySquatting is 1, obsceneHumiliate;
 	say "[BigNameDesc of M][']s eyes turn red.[line break][speech style of M]BAD [caps boy of the player]. BAD [caps boy of the player].'[if M is grabbing the player]'[otherwise]FORBIDDEN ACTIVITY DETECTED. SELECTING PUNISHMENT ROUTINE.'[end if][roman type][line break]";
 	anger M;
 	interest M.
@@ -183,6 +185,7 @@ To compute automatic banishment of (M - robomatron):
 To compute banishment of (M - robomatron):
 	say "[speech style of M]'CRITICAL ERROR...'[roman type][line break][BigNameDesc of M][']s eyes lose their colour, and [he of M] seems to... shut down?";
 	now the health of M is 1;
+	dislodge M;
 	calm M.
 
 RoboMatron ends here.
