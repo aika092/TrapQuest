@@ -137,7 +137,7 @@ To MurkwaterPuddleUp (X - a number) in (R - a room):
 A time based rule (this is the puddles disappearing rule):
 	repeat with H running through placed haunted rooms:
 		if the slime-puddle of H > 0, decrease the slime-puddle of H by 1;
-	repeat with R running through placed rooms:
+	repeat with R running through placed jungle rooms:
 		if R is smoky:
 			decrease the smoke of wild gladiator by 1;
 			if the smoke of wild gladiator < 0, now R is not smoky;

@@ -124,7 +124,7 @@ Report going up:
 	update player region;
 	if map images > 0, display entire map;
 	compute bladder cleanup;
-	compute puddle cleanup;
+	if playerRegion is not school, compute puddle cleanup;
 	compute clothing cleanup.
 
 Report going down:
