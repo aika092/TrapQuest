@@ -144,7 +144,7 @@ To compute painting entrance of (P - goblin-painting):
 	if player-numerical-response is 1:
 		say "You stick with your original choice.";
 	otherwise:
-		say "You think for a minute, and then switch. Some instict you have tells you that you'll have better odds this way.";
+		say "You think for a minute, and then switch. Some instinct you have tells you that you'll have better odds this way.";
 		now TG is OG;
 	say "A drum roll plays from somewhere unseen. [BigNameDesc of TG] reaches for [his of TG] dress, and reveals...[paragraph break]";
 	if TG is male:
@@ -169,7 +169,7 @@ Check poking a goblin:
 			say "You press your finger to the ring. ";
 			if J is actually summonable:
 				summon J;
-				say "Just like magic, it appears on your finger![line break][speech style of the noun]'CUMMING!'[roman type][line break]For whatever reason, the teleportation of the ring has sent [NameDesc of the noun] into orgasmic throes.[line break][speech style of the noun]'THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU! And please join us next week for the next episode of FIND THE RIIIIIIIII-'[roman type][line break]You realise that the scene is fading, and that you are now appearing back in the [location of goblin-painting].";
+				say "Just like magic, it appears on your finger![line break][speech style of the noun]'CUMMING!'[roman type][line break]For whatever reason, the teleportation of the ring has sent [NameDesc of the noun] into orgasmic throes.[line break][speech style of the noun]'THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU! And please join us next week for the next episode of FIND THE RIIIIIIIII-'[roman type][line break]You realise the scene is fading, and that you are now appearing back in the [location of goblin-painting].";
 				teleport to the location of goblin-painting;
 				now playerRegion is mansion;
 			otherwise:

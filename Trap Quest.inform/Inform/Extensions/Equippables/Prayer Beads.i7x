@@ -46,10 +46,13 @@ To compute attack of (E - prayer-beads) at (M - a monster):
 	if the zap damage improvement of E > 0:
 		say "You point your beads at [NameDesc of M], and reaching behind you, you rip your [ShortDesc of ritual-beads] out of your [variable (random body part penetrated by ritual-beads)]! A blast of power shoots out of your [ShortDesc of prayer-beads] - a direct hit!";
 	otherwise:
-		say "You try to use your [ShortDesc of E] to cast a spell at [NameDesc of M]. Nothing happens!".
+		say "You try to use your [ShortDesc of E] to cast a spell at [NameDesc of M]. [if ritual-beads is worn]You feel your other hand instinctively reach to pull out your [ShortDesc of ritual-beads], but there is other clothing in the way. So, the spell fizzles[otherwise]Nothing happens[end if]!".
 
 To decide which number is the zap damage improvement of (E - prayer-beads):
 	if ritual-beads is worn and ritual-beads is autoremovable, decide on MagicPowerDamage + the magic-modifier of E + (the notch-taken of ritual-beads * 2);
+	decide on 0.
+To decide which number is the nolinebreaks zap damage improvement of (E - prayer-beads): [autoremovable check causes a newline]
+	if ritual-beads is worn, decide on MagicPowerDamage + the magic-modifier of E + (the notch-taken of ritual-beads * 2);
 	decide on 0.
 
 To compute attack effect of (E - prayer-beads):

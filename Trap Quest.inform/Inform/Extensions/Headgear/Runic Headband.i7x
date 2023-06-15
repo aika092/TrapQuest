@@ -139,7 +139,7 @@ To compute persistent reward of (Q - priestess-service-quest) on (C - a clothing
 priestess-vaginal-service-quest is a headgear-clothing-quest.
 
 To say QuestFlav of (Q - priestess-vaginal-service-quest):
-	say "You sense that it wants you to have vaginal sex with men while your [']ritual beads['] are FULLY inserted inside you[if condom fetish >= 2], OR while the men are wearing condoms, then present the beads or your condom-pinned headband at the dungeon altar[end if].".
+	say "You sense that it wants you to have **VAGINAL** sex with men while your [']ritual beads['] are FULLY inserted inside you[if condom fetish >= 2], OR while the men are wearing condoms, then present the beads or your condom-pinned headband at the dungeon altar[end if].".
 
 To say QuestTitle of (Q - priestess-vaginal-service-quest):
 	say " (vaginal sex quest)".

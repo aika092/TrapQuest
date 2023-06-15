@@ -152,14 +152,14 @@ To say DiaperCheckResultsFlav of (M - a monster):
 To say DiaperCheckResultsNoChangeFlav of (M - a monster):
 	let D be a random worn knickers;
 	if the player is stacked-but-outerly-dry:
-		say "[speech style of M]'[if D is messed knickers]Well, while I can smell you from here, the fact of the matter is that your diapers can still hold a whole lot more. This outer one is still completely dry!'[otherwise]Hmm, well this outer diaper is dry at least, so even if you are wet somewhere in there, it'll be a long time before you leak.'[end if][roman type][line break]";
+		say "[speech style of M]'[if D is messed knickers]Well, while I can smell you from here, the fact of the matter is that your diapers can hold a whole lot more. This outer one is still completely dry!'[otherwise]Hmm, well this outer diaper is dry at least, so even if you are wet somewhere in there, it'll be a long time before you leak.'[end if][roman type][line break]";
 	otherwise if D is diaper and D is not easy to remove:
 		if D is glued:
-			say "[speech style of M]'[if D is messed]Wow, you've made a real stinker in there[otherwise]Yep, this is one well-used diaper[end if]! But... It's also been glued to you, hasn't it? Well then, you're going to have to wait until the glue is gone before you can get a change, aren't, you, haha!'[roman type][line break]";
+			say "[speech style of M]'[if D is messed]Wow, you've made a real stinker in there[otherwise]Yep, this is one well-used diaper[end if]! But... It's also been glued to you, hasn't it? Well then, you're going to have to wait until the glue is gone before you can get a change, aren't you, haha!'[roman type][line break]";
 		otherwise:
 			say "[speech style of M]'[if D is messed]Uh-oh, it seems that you're locked in a nasty, stinky diaper! And I'm afraid I don't have the key, so you're going to have to stay that way until your keyholder decides you've earned a change[otherwise]You've really done a good job filling this padding, but looks like there's only one person who can change you - whoever holds the key to that lock[end if]!'[roman type][line break]";
 	otherwise:
-		say "[speech style of M]'[if D is messed knickers]Look at you, stinky pants! Still, for some reason, I don't feel like letting you have a clean one yet. Why don't you stew in that thing for a while longer, haha!'[otherwise if D is diaper]Oh, that feels nice. Don't you think it feels nice? I do. In fact, I think you should stay like this.'[otherwise]How... disappointing.'[end if][roman type][line break]".
+		say "[speech style of M]'[if D is messed knickers]Look at you, stinky pants! Still, for some reason, I don't feel like letting you have a clean one yet. Why don't you stew in that thing for a while longer, haha!'[otherwise if D is diaper]Oh, that feels nice. Don't you think it feels nice? I do. In fact, I think you should stay like this a while.'[otherwise]How... disappointing.'[end if][roman type][line break]".
 
 To say DiaperCheckResultsMessedFlav of (M - a monster):
 	let D be a random worn knickers;
@@ -1168,7 +1168,7 @@ To compute MessyDiaperFacesitStart of (T - an object):
 	compute MessyDiaperFacesitExpulsion of T.
 
 To say MessyDiaperFacesitStartFlav of (T - an object):
-	say "[one of]A sudden rasping sound[or]An abrupt low, wet, rumbling fart sound[or]A quick set of gassy farts[in random order] [if the diaper addiction of the player < 9][one of]heralds the start of something truly awful[or]lets you know that you're about to experience something unthinkable happening right against your face[in random order][otherwise if the player is not tolerating messy diapers][one of]is the calm but foreboding thunder heralding the incoming shitstorm[or]is a bleak signal of what is imminently to follow[or]serves as a pointless warning for what is instantly to follow it[in random order][otherwise][one of]prepares you for what is coming next[or]rudely interrupts your final breath before it begins[in random order][end if].".
+	say "[one of]A sudden rasping sound[or]An abrupt low, wet, rumbling fart sound[or]A quick set of gassy farts[in random order] [if the diaper addiction of the player < 9][one of]heralds the start of something truly awful[or]lets you know you're about to experience something unthinkable happening right against your face[in random order][otherwise if the player is not tolerating messy diapers][one of]is the calm but foreboding thunder heralding the incoming shitstorm[or]is a bleak signal of what is imminent[or]serves as a pointless warning for what is instantly to follow it[in random order][otherwise][one of]prepares you for what is coming next[or]rudely interrupts your final breath before it begins[in random order][end if].".
 
 To compute MessyDiaperFacesitExpulsion of (T - an object):
 	say MessyDiaperFacesitExpulsionFlav of T;
@@ -1176,18 +1176,18 @@ To compute MessyDiaperFacesitExpulsion of (T - an object):
 	SlowDelicateUp 1.
 
 To say MessyDiaperFacesitExpulsionFlav of (T - an object):
-	say "[one of]The asshole less than an inch away from your nose opens wide[or]A centimetre a way, on the other side of the padding, the floodgates open[or]Smushed into you nose and mouth as tightly as can be, the sphincter opens once more[in random order][one of] and delivers[or] to unleash[or], ushering down[or], forcing out[in random order] [one of]its unholy payload[or]a long, stinky snake[or]an ungodly amount[or]a litre or two[in random order] of [one of]foul fecal matter[or]mushy mess[or]sloppy, slimy shit[or]putrid poop[then at random] [one of]directly into the padding[or]right[purely at random] on top of your face.";
+	say "[one of]The asshole less than an inch from your nose opens wide[or]A centimetre away, on the other side of the padding, the floodgates open[or]Smushed into you nose and mouth as tightly as can be, the sphincter opens once more[in random order][one of] and delivers[or] to unleash[or], ushering forth[or], forcing out[in random order] [one of]its unholy payload[or]a long, stinky snake[or]an ungodly amount[or]a litre or two[in random order] of [one of]foul fecal matter[or]mushy mess[or]sloppy, slimy shit[or]putrid poop[then at random] [one of]directly into the padding[or]right[purely at random] on top of your face.";
 	say "[variable custom style][if the player is enjoying messy facesits][one of]Oh fuck, I'm actually enjoying this[or]It's so gross... I love it[stopping][otherwise if the player is not tolerating messy facesits][one of]Noooo! How vile[or]BLEEEERGH[or]Eeeurgh, not again[or]EWWWW[or]BLEEEERGH[stopping][otherwise][one of]So stinky and naughty[or]Gross, haha[purely at random][end if]![roman type][line break]".
 
 To compute WetDiaperFacesitStart of (T - an object):
 	say WetDiaperFacesitStartFlav of T;
 	if the player is not tolerating wet facesits:
-		let TXT be substituted form of "As you flinch with surprise,";
+		let TXT be substituted form of "As you flinch in surprise,";
 		FearUp (wetDiaperFacesitGrossnessLevel - the grossness addiction of the player) with reason TXT;
 	compute WetDiaperFacesitExpulsion of T.
 
 To say WetDiaperFacesitStartFlav of (T - an object):
-	say "You [one of]hear the wet hissing noise[or]hear the tell-tale pitter-patter sound[cycling] [one of]a brief moment[or]a split second[or]half a heartbeat[at random] before you feel the [one of]building density in the padding[or]rising warmth in front of your face[or]heat of the [urine] on your nose[in random order].".
+	say "You [one of]hear the wet hissing noise[or]hear the telltale pitter-patter sound[cycling] [one of]a brief moment[or]a split second[or]half a heartbeat[at random] before you feel the [one of]building density in the padding[or]rising warmth in front of your face[or]heat of the [urine] on your nose[in random order].".
 
 To compute WetDiaperFacesitExpulsion of (T - an object):
 	say WetDiaperFacesitExpulsionFlav of T;
@@ -1195,7 +1195,7 @@ To compute WetDiaperFacesitExpulsion of (T - an object):
 	SlowDelicateUp 1.
 
 To say WetDiaperFacesitExpulsionFlav of (T - an object):
-	say "[one of]Within moments, [or]It's not long before [or]It's less than a couple of seconds until [in random order][one of]there's a steady, high pressure stream of [urine][or]it reaches full throttle and there is a strong jet of [urine][in random order] [one of]soaking[or]flowing[purely at random] [one of]directly into the padding on top of your face.[or]down above your face like heavy rain hitting an umbrella[purely at random]. You can feel [one of]its incredible radiant heat against your skin[or]the liquid smacking against your face almost as if the plastic barrier wasn't there[or]it spread throughout the thick padding, engulfing your face in the rapdily saturating padding, and impeding your ability to breathe[in random order].";
+	say "[one of]Within moments, [or]It's not long before [or]It's less than a couple of seconds until [in random order][one of]there's a steady, high pressure stream of [urine][or]it reaches full throttle and there is a strong jet of [urine][in random order] [one of]soaking[or]flowing[purely at random] [one of]directly into the padding on top of your face.[or]down above your face like heavy rain hitting an umbrella[purely at random]. You can feel [one of]its incredible radiant heat against your skin[or]the liquid smacking against your face almost as if the plastic barrier wasn't there[or]it spread throughout the thick padding, engulfing your face in the rapidly saturating padding, and impeding your ability to breathe[in random order].";
 	say "[variable custom style][if the player is not tolerating wet facesits][one of]This is an outrage![or]Yuck yuck yuck![stopping][otherwise if the player is not enjoying wet facesits][one of]How rude.[or]Again?![stopping][otherwise][one of]Mmmmm, lovely.[or]It's nice and warm![purely at random][end if][roman type][line break]".
 
 
@@ -1325,13 +1325,13 @@ To compute diaper urinal peeing of (M - a monster):
 	GrossOut 4 with reason "The sensation of being used as a diaper urinal makes you shudder," and sensation "feeling".
 
 To say DiaperUrinalPeeFlav of (M - a monster):
-	say "[BigNameDesc of M] [one of]lets loose[or]releases [his of M] hold on [his of M] bladder[or]squeezes [his of M] bladder muscles[at random] and promptly begins to [one of]spray[or]soak[or]fill[at random] your padding with [his of M] hot wet [urine]. [one of]Most of [his of M] [urine] lands on your mons pubis, before trickling down into your diaper, leaving your skin soaked in [his of M] golden gift.[or][big he of M][']s essentially pissing directly onto your [genitals]![or]The sensation of [his of M] warm [urine] spreading throughout your padding feels [if the diaper addiction of the player >= 14]delighfully[otherwise]degrading and[end if] invasive.[then at random]".
+	say "[BigNameDesc of M] [one of]lets loose[or]releases [his of M] hold on [his of M] bladder[or]squeezes [his of M] bladder muscles[at random] and promptly begins to [one of]spray[or]soak[or]fill[at random] your padding with [his of M] hot wet [urine]. [one of]Most of [his of M] [urine] lands on your mons pubis, before trickling down into your diaper, leaving your skin soaked in [his of M] golden gift.[or][big he of M][']s essentially pissing directly onto your [genitals]![or]The sensation of [his of M] warm [urine] spreading throughout your padding feels [if the diaper addiction of the player >= 14]delightfully[otherwise]degrading and[end if] invasive.[then at random]".
 
 To compute diaper urinal resistance punishment check of (M - a monster):
 	if the player is getting unlucky:
 		compute diaper urinal resistance punishment of M;
 	otherwise:
-		say "[speech style of M]'[one of]I hope by next time, that you will have learned your place, and will accept your role as a diaper urinal obediently.'[or]You'd better learn your place soon, or there will be consequences...'[stopping][roman type][line break]";
+		say "[speech style of M]'[one of]I hope by next time, you will have learned your place, and will accept your role as a diaper urinal obediently.'[or]You'd better learn your place soon, or there will be consequences...'[stopping][roman type][line break]";
 		bore M;
 	if M is not interested and M is in the location of the player:
 		say "[BigNameDesc of M] turns and leaves you alone.".

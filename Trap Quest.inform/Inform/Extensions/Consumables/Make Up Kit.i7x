@@ -65,7 +65,7 @@ Carry out brushing something with:
 		allocate 6 seconds;
 		say "You use the mirror to help you apply a[if the make-up of face > 0]nother[end if] layer of make up. ";
 		FaceUp player-numerical-response - MU;
-		say "When you are finished, your face [MakeUpDesc]. You feel more [if diaper quest is 1]grown up[otherwise]charismatic[end if][if the make-up of face > 1], but also less dignified[end if]. [if the make-up of face is 2 and the makeupskill of the player is 1]In fact, thanks to how skilled you are at applying make up, you now feel SUPER charismatic! You get the feeling that this will last for a decent long while, or until your make up level changes. [end if]";
+		say "When you are finished, your face [MakeUpDesc]. You feel more [if diaper quest is 1]grown up[otherwise]charismatic[end if][if the make-up of face > 1], but also less dignified[end if]. [if the make-up of face is 2 and the makeupskill of the player is 1]In fact, thanks to how skilled you are at applying make up, you now feel SUPER charismatic! You get the feeling that this will last for a decent length of time, or until your make up level changes. [end if]";
 		check stealing of the noun;
 		now make up time is earnings.
 

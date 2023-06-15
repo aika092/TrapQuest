@@ -69,7 +69,7 @@ Check resisting:
 		let H be a random worn headgear;
 		let M be a random virginity taking monster penetrating a body part;
 		now forced submit is 1;
-		say "Now that you have already started submitting, your [ShortDesc of H] refuses to let you start resisting. It fills you with feelings of guilt for not trying harder to prevent [NameDesc of M] from using you!";
+		say "Now that you have already started submitting, your [ShortDesc of H] refuses to let you start resisting. Instead the attempt just fills you with feelings of guilt for not trying harder to prevent [NameDesc of M] from using you!";
 		try submitting instead;
 	otherwise if there is a live thing penetrating asshole and a random number between 14 and 19 < the the anal sex addiction of the player * 2:
 		say "You love anal sex too much, you can't will yourself to even [i]pretend[/i] to resist right now!";
@@ -141,7 +141,7 @@ Report resisting:
 	if M is nothing, now M is a random live thing penetrating a body part;[next, prioritize anyone inside the player]
 	if M is nothing, now M is a random thing wrangling a body part;[Lastly, we take a look at any holders on.]
 	if the implant of pledge-lesson-resist is 1 and the raw intelligence of the player > 1:
-		say "[second custom style]Only a dumb useless slut resists the will of [his of the player] masters.[roman type][line break][bold type]The magic pledge you've just broken activates![roman type] [one of]You blink, feeling a wave of confusion wash through your thoughts.[or]Once again your thoughts swim, getting all muddled.[or]You feel more stupid [second custom style]like a dumb useless slut.[roman type][line break][stopping]";
+		say "[second custom style]Only a dumb useless slut resists the will of [his of the player] masters.[roman type][line break][bold type]The magic pledge you've just broken activates![roman type] [one of]You blink, feeling a wave of confusion wash through your thoughts.[or]Once again your thoughts swim, getting all muddled.[or]You feel more stupid, [second custom style]like a dumb useless slut.[roman type][line break][stopping]";
 		IntDown 1;
 	unless M is nothing:
 		if the player is friendly fucked:

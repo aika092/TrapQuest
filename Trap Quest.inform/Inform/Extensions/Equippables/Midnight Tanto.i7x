@@ -15,7 +15,7 @@ To say MediumDesc of (W - midnight tanto):
 	say "Japanese-style knife".
 
 To decide which number is the slap damage improvement of (W - midnight tanto):
-	decide on 4.
+	decide on 3 + ((1 + the magic-modifier of W) / 2).
 
 To compute attack of (W - midnight tanto) at (M - a monster):
 	say "You slash [NameDesc of M] with the tanto!";

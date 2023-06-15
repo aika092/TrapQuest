@@ -178,7 +178,7 @@ To decide which figure-name is clothing-image of (C - BBC collar):
 	decide on figure of BBC collar.
 
 To say ClothingDesc of (C - a BBC collar):
-	say "This white leather collar has the letters 'BBC' printed on the front in metal letters.".
+	say "This white leather collar has the letters 'BBC' printed on the front in shiny metal letters.".
 
 To say ShortDesc of (C - a BBC collar):
 	say "BBC collar".

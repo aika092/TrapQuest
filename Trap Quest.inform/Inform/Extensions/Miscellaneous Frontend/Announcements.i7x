@@ -11,7 +11,7 @@ To compute announcements:
 	if tutorial is 0:
 		[if halloween content is 0:
 			clear the screen;
-			say "Happy Halloween! This is the Halloween release, but Halloween mode (where you start in the mansion as a trick-or-treater and have to explore, find and eat some candy before you can leave) is currently disabled. Would you like to enable it now? [if quick start > 0](This will cause you do perform a full [']Normal Start['] - Quick Start and Random Start are not compatible with the halloween setup.) [end if]";
+			say "Happy Halloween! This is the Halloween release, but Halloween mode (where you start in the mansion as a trick-or-treater and have to explore, find and eat some candy before you can leave) is currently disabled. Would you like to enable it now? [if quick start > 0](This will cause you to perform a full [']Normal Start['] - Quick Start and Random Start are not compatible with the halloween setup.) [end if]";
 			if the player is consenting:
 				now choice in row 80 of the Table of Player Options is 3;
 				now quick start is 0;

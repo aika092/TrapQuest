@@ -361,13 +361,13 @@ To compute pregnancy annoyance:
 			say "The weight of your unborn baby is making your feet and back ache. [bold type]You need to sit down and rest soon.[roman type][line break]";
 			now the fatigue of the player is the very tired threshold of the player;
 		otherwise if the womb volume of vagina > 15:
-			say "Your unborn baby [one of]kicks vigorously[or]punches, kicks and wriggles[or]knees and elbows you from[at random] inside your womb.[if fatimod > 1][line break][variable custom style]It's... Ugh... So difficult to build my energy back up when I can't even rest properly...[roman type][line break][end if]";
+			say "Your unborn baby [one of]kicks vigorously[or]punches, kicks and wriggles[or]knees and elbows you from[at random] inside your womb.[if fatimod > 1][line break][variable custom style]It's... ugh... so difficult to build my energy back up when I can't even rest properly...[roman type][line break][end if]";
 			FatigueUp the womb volume of vagina;
 		otherwise:
 			say "[one of]You feel a flutter in your belly. Was that your baby moving?[or][or][or][in random order]";
 	otherwise if the womb volume of vagina > 15:
 		say "Your unborn baby [one of]kicks vigorously[or]punches, kicks and wriggles[or]knees and elbows you from[at random] inside your womb, but your magically protected womb prevents you from suffering any negative effects.";
 	otherwise:
-		say "[one of]You feel a flutter in your belly. Was that your baby moving?[or][or][or][in random order]".[####Selkie: Just wondering if these various sometimes-empty 'say-expressions' might be the source of the large spans of blank lines that sometimes appear during play?]
+		say "[one of]You feel a flutter in your belly. Was that your baby moving?[or][or][or][in random order]".
 
 Pregnancy ends here.

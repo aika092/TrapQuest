@@ -377,7 +377,7 @@ To decide which figure-name is clothing-image of (C - bunny-maid-outfit):
 	decide on figure of maid outfit 14.
 
 To say ClothingDesc of (M - bunny-maid-outfit):
-	say "This pink plastic outfit is really just a micro swimsuit with a small frilly, shiny apron at the belly.".
+	say "This pink plastic outfit is really just a micro swimsuit with a shiny, small frilly apron at the belly.".
 
 To decide which number is the initial outrage of (C - bunny-maid-outfit):
 	decide on 6.

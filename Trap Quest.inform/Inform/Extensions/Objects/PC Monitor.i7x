@@ -332,7 +332,7 @@ To decide which figure-name is the examine-image of (C - security interface):
 	decide on figure of security interface.
 
 To say ExamineDesc of (C - security interface):
-	say "Four TV monitors are fixed to the wall of the security room. Your eyes are currently being drawn to [if the currentSlide of C <= 0]security footage of [one of]a woman stripping off her clothes in the middle of a street[or]an outdoor pool, where a woman is shamelessly sunbathing nude[or]some kind of confectionary store, where a woman is performing some rather erotic tongue manouveurs on her favourite lollipop[or]two women performing stretches either side of a glass wall in a gym. For unclear reasons, one of the women is completely naked[then at random].[otherwise][SlideDesc (currentSlide of C)][end if][paragraph break]To the side of the monitors is a high-tech metal security door, and in between the door and the monitors are some panels for ID authentication, including a key card slot, and some kind of biometric authentication, activated by a big round power button.".
+	say "Four TV monitors are fixed to the wall of the security room. Your eyes are currently being drawn to [if the currentSlide of C <= 0]security footage of [one of]a woman stripping off her clothes in the middle of a street[or]an outdoor pool, where a woman is shamelessly sunbathing nude[or]some kind of confectionery store, where a woman is performing some rather erotic tongue manoeuvres on her favourite lollipop[or]two women performing stretches either side of a glass wall in a gym. For unclear reasons, one of the women is completely naked[then at random].[otherwise][SlideDesc (currentSlide of C)][end if][paragraph break]To the side of the monitors is a high-tech metal security door, and in between the door and the monitors are some panels for ID authentication, including a key card slot, and some kind of biometric authentication, activated by a big round power button.".
 
 Check pushing security interface:
 	repeat with M running through combative monsters:
@@ -617,7 +617,7 @@ To say DPTitle of (DP - public-disgrace-punishment-butt-slut):
 	say "[he of the player] looks like a butt slut".
 To compute disgrace punishment effect of (DP - public-disgrace-punishment-butt-slut):
 	AnalSexAddictUp 6; [outputs anal sex addiction increase text]
-	say "...And not just a little. You can feel your [asshole] suddenly desperately begging... ACHING to be penetrated, stretched, and [']bred['][if the raw anal sex addiction of the player > 7]. Deep down in your core, it now feels like being on the receiving end of anal sex is an extremely base fulfilment need of your life[end if].".
+	say "...And not just a little. You can feel your [asshole] suddenly desperately begging... ACHING to be penetrated, stretched, and [']bred['][if the raw anal sex addiction of the player > 7]. Deep down in your core, it now feels like being on the receiving end of anal sex is an extremely fundamental fulfilment need of your life[end if].".
 
 
 public-disgrace-punishment-fetishes is a disgrace-punishment.

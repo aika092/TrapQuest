@@ -152,7 +152,7 @@ To compute quest completion of (Q - podium-quest) on (C - princess bride dress):
 		say "Your [C] becomes a ";
 		now the raw-magic-modifier of C is 2;
 		now C is elasticity;
-		say "[C]![line break][variable custom style]Oh wow... I feel STRONG! Ssuddenly it seems like it might not be a bad idea to keep wearing this after all![line break]";
+		say "[C]![line break][variable custom style]Oh wow... I feel STRONG! Suddenly it seems like it might not be a bad idea to keep wearing this after all![line break]";
 	say "[bold type]";
 	let disappearTime be 0;
 	let QC be questNothingHappens;
@@ -218,7 +218,7 @@ To say MediumDesc of (C - housewife dress):
 	say "blue housewife dress".
 
 To say ClothingDesc of (C - housewife dress):
-	say "This long [MediumDesc of C] has a long skirt, high neckline, and giant bow at the back. Anyone who wears this is surely rather well domesticated and subserviant.".
+	say "This long [MediumDesc of C] has a long skirt, high neckline, and giant bow at the back. Anyone who wears this must surely be rather well domesticated and subservient.".
 
 To decide which number is the initial outrage of (C - housewife dress):
 	decide on 1.

@@ -2,7 +2,7 @@ Acolyte Cultist by Monster begins here.
 
 An acolyte is a kind of monster. An acolyte is usually intelligent. An acolyte is usually female. Understand "cultist" as acolyte.
 
-A monster can be previously-cultist. [They were already a culist once]
+A monster can be previously-cultist. [They were already a cultist once]
 
 Definition: an acolyte is wenchy: decide yes.
 
@@ -649,7 +649,7 @@ To compute standard damage of (M - a mindless acolyte):
 			interest M;
 			anger M;
 		otherwise if M is egged and the health of M < (the maxhealth of M / 4) and there is an off-stage slimeball:
-			say "[BigNameDesc of M][']s belly undusaltes and wobbles... [bold type]And then [he of M] lets out [one of]a gutteral groan[or]a soft moan[or]a mindless cooing sound[at random] as [one of]a ball of slime exits [his of M] vagina, suddenly and perhaps prematurely born into this world. [roman type]It begins to hop around, as if it's somehow alive[or]just like before, a living slimeball is birthed from [his of M] vagina[stopping]![roman type][line break]";
+			say "[BigNameDesc of M][']s belly undulates and wobbles... [bold type]And then [he of M] lets out [one of]a guttural groan[or]a soft moan[or]a mindless cooing sound[at random] as [one of]a ball of slime exits [his of M] vagina, suddenly and perhaps prematurely born into this world. [roman type]It begins to hop around, as if it's somehow alive[or]just like before, a living slimeball is birthed from [his of M] vagina[stopping]![roman type][line break]";
 			now M is not egged;
 			let S be a random off-stage slimeball;
 			set up S;
@@ -738,6 +738,7 @@ To compute unique banishment of (M - an acolyte):
 		let B be a random off-stage space mead;
 		if B is a thing:
 			say "[BigNameDesc of M] left behind a [ShortDesc of B]!";
+			now B is in the location of the player;
 			compute autotaking B.
 
 To say TaxReturnDismay of (M - an acolyte):
@@ -885,7 +886,7 @@ To say RepeatResponse of (M - an acolyte):
 	otherwise if the pregnancy of the player > 0 or xavier-diaper-link > 0:
 		say "[speech style of M]'[one of]The blessed are better seen than heard. Do remember that.'[or]Remember, the blessed are to open themselves to the void and be nothing. Which means no talking.'[or]You do know you shouldn't even be thinking, much less talking?'[in random order][roman type][line break]";
 	otherwise:
-		say "[speech style of M]'[one of]Us acolytes carry spare veils for those that might prove worthy of joining us.'[or]Remember, existence is pointless.'[or]You are an insignificant spek of dirt the [great ones]['] eternal domain.'[then at random][roman type][line break]".
+		say "[speech style of M]'[one of]Us acolytes carry spare veils for those that might prove worthy of joining us.'[or]Remember, existence is pointless.'[or]You are an insignificant speck of dirt the [great ones]['] eternal domain.'[then at random][roman type][line break]".
 
 To say TauntAccepted of (M - an acolyte):
 	say "[speech style of M]'Hm. You are still of use to the [great ones]. I will quarrel with you no further.'[roman type][line break][BigNameDesc of M] turns to leave.".

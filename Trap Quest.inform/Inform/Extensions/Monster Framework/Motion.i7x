@@ -43,9 +43,10 @@ To compute default motion actions of (M - a monster):
 			now the boredom of M is 0;
 	if M is intelligent and M is uninterested:
 		repeat with D running through unlock-key in the location of M:
-			if M is in the location of the player, say "[BigNameDesc of M] picks up [NameDesc of D] with an intrigued look on [his of M] face.";
-			now D is carried by M;
-			now the boredom of M is 0;
+			unless M is royal guard and D is skeleton key:
+				if M is in the location of the player, say "[BigNameDesc of M] picks up [NameDesc of D] with an intrigued look on [his of M] face.";
+				now D is carried by M;
+				now the boredom of M is 0;
 	if players-detached-dick is in the location of M: [#LXorDD]
 		let X be 0;
 		if M is aeromancer:

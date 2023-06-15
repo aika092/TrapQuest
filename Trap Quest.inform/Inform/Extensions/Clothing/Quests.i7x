@@ -1461,6 +1461,7 @@ orgasm-wisp-trigger is a wisp trigger. The printed name of orgasm-wisp-trigger i
 conception-wisp-trigger is a wisp trigger. The printed name of conception-wisp-trigger is "conceive a child".
 Definition: conception-wisp-trigger is appropriate:
 	if pregnancy fetish is 0, decide no;
+	if the player is not possessing a vagina, decide no;
 	decide yes.
 Definition: conception-wisp-trigger is eligible:
 	if the pregnancy of the player is 0, decide yes;
@@ -1495,7 +1496,7 @@ spill-wisp-trigger is a wisp trigger. The printed name of spill-wisp-trigger is 
 
 dp-wisp-trigger is a wisp trigger. The printed name of dp-wisp-trigger is "have two holes penetrated or used at the same time".
 Definition: dp-wisp-trigger is eligible:
-	if diaper quest is 1 or the number of actually occupied fuckholes > 1, decide no;
+	if diaper quest is 1 or the number of actually occupied orifices > 1, decide no;
 	decide yes.
 
 cum-panties-wisp-trigger is a wisp trigger. The printed name of cum-panties-wisp-trigger is "get cum in your undies".
@@ -1555,14 +1556,19 @@ An all time based rule (this is the time-based wisp triggers rule):
 	unless the player is in a predicament room:
 		if the number of worn cursed headgear is 0, trigger class-wisp-quest;
 		if the number of worn glued clothing is 0, trigger unglue-wisp-quest;
-		if the number of actually occupied fuckholes > 1, trigger dp-wisp-trigger;
+		if the number of actually occupied orifices > 1, trigger dp-wisp-trigger;
 		if the player is hungry, trigger hunger-wisp-trigger;
-		if the number of worn knickers is 0, trigger lose-panties-wisp-trigger;
+		let K be a random worn knickers;
+		if K is knickers:
+			if the known-semen-soak of K > 0, trigger cum-panties-wisp-trigger;
+		otherwise:
+			trigger lose-panties-wisp-trigger;
 		if the number of held non-empty vessels is 0, trigger drink-wisp-quest.
 
 An all later time based rule (this is the later time-based wisp triggers rule):
 	unless the player is in a predicament room:
-		if the player is not able to breathe, trigger hold-breath-wisp-trigger.
+		if the player is not able to breathe, trigger hold-breath-wisp-trigger;
+		follow the time-based wisp triggers rule. [gotta check them all again after NPCs have their turns]
 
 
 
@@ -1605,7 +1611,7 @@ To compute punishment of (W - dexterity-wisp-punishment):
 	say "You feel less agile.";
 	DexDown 1.
 
-intelligence-wisp-punishment is a wisp stat punishment. The printed name of intelligence-wisp-punishment is "lose some intellgence".
+intelligence-wisp-punishment is a wisp stat punishment. The printed name of intelligence-wisp-punishment is "lose some intelligence".
 To decide which number is the wisp-colour of (W - intelligence-wisp-punishment):
 	decide on TQDarkishGreen.
 Definition: intelligence-wisp-punishment is appropriate:

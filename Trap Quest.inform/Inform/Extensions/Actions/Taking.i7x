@@ -67,6 +67,8 @@ Check stealing:
 	if the player is prone and the noun is awake and the noun is not easy-steal, say "You should probably be standing to try that." instead;
 	if the player is not able to manually use their hands, do nothing instead;
 	if the noun is not easy-steal and the noun is awake and the player is not able to manually use manual dexterity, do nothing instead;
+	[Note: The check if the player is not able to use their hands is silent and requires you to add your own flavour if you want.
+The check if the player is not  able to MANUALLY use their hands comes with its own flavour explaining exactly why you can't use your hands. The same applies for "able to use manual dexterity" versus "able to manually use manual dexterity"!]
 	if the number of entries in the tradableItems of the noun is 0 and the number of things carried by the noun is 0, say "[BigNameDesc of the noun] has nothing for you to steal." instead;
 	if the noun is interested and the noun is not easy-steal and the noun is awake, say "[BigNameDesc of the noun] is looking right at you." instead.
 Carry out stealing:
@@ -81,30 +83,41 @@ Carry out stealing:
 	say "What do you want to try and steal?";
 	repeat with T running through LT:
 		set next numerical response to "The [ShortDesc of T]";
-	set next numerical response to "cancel";
+	set numerical response 0 to "cancel";
 	compute multiple choice question;
 	if player-numerical-response > 0:
 		let T be entry player-numerical-response in LT;
-		allocate 5 seconds;
-		if the noun is not easy-steal and the noun is awake:
-			say "You attempt to snatch the [ShortDesc of T] from [NameDesc of the noun] without [him of the noun] noticing.";
-			let D be (a random number between 1 and the dexterity of the player) + (a random number between 1 and the dexterity of the player);
-			let MD be the steal-difficulty of the noun for T;
-			let S be the stealth of the player;
-			if debuginfo > 0, say "[input-style]Steal attempt check: Dexterity 2d[dexterity of the player] ([D]) + Stealth ([S]) = [D + S] | [MD].5 Perfect steal difficulty / [(MD * 2) / 3].5 Partial success difficulty[roman type][line break]";
-			if D + S > MD: [full success]
-				compute full stealing success of T from the noun;
-			otherwise if D > (MD * 2) / 3: [partial success]
-				compute partial stealing success of T from the noun;
+		if T is plentiful ring and the number of worn rings >= 8:
+			say "You can't do that, as you are already wearing 8 rings.";
+			now player-numerical-response is 0;
+		otherwise if T is plentiful bracelet and the number of worn bracelets >= 2:
+			say "You can't do that, as you are already wearing 2 bracelets.";
+			now player-numerical-response is 0;
+		otherwise if T is plentiful necklace and there is a worn necklace:
+			say "You can't do that, as you are already wearing a necklace.";
+			now player-numerical-response is 0;
+		if player-numerical-response > 0:
+			allocate 5 seconds;
+			if the noun is not easy-steal and the noun is awake:
+				say "You attempt to snatch the [ShortDesc of T] from [NameDesc of the noun] without [him of the noun] noticing.";
+				let D be (a random number between 1 and the dexterity of the player) + (a random number between 1 and the dexterity of the player);
+				let MD be the steal-difficulty of the noun for T;
+				let S be the stealth of the player;
+				if debuginfo > 0, say "[input-style]Steal attempt check: Dexterity 2d[dexterity of the player] ([D]) + Stealth ([S]) = [D + S] | [MD].5 Perfect steal difficulty / [(MD * 2) / 3].5 Partial success difficulty[roman type][line break]";
+				if D + S > MD: [full success]
+					compute full stealing success of T from the noun;
+				otherwise if D > (MD * 2) / 3: [partial success]
+					compute partial stealing success of T from the noun;
+				otherwise:
+					compute stealing fail of T from the noun;
+			otherwise if the noun is not easy-steal and the player is getting very unlucky:
+				compute sleep stealing fail of T from the noun;
 			otherwise:
-				compute stealing fail of T from the noun;
-		otherwise if the noun is not easy-steal and the player is getting very unlucky:
-			compute sleep stealing fail of T from the noun;
-		otherwise:
-			say "You easily take [NameDesc of T].";
-			now T is carried by the player;
-			now the owner of T is the noun;
-			if T is listed in the tradableItems of the noun, remove T from the tradableItems of the noun.
+				say "You easily take [NameDesc of T].";
+				now T is carried by the player;
+				now the owner of T is the noun;
+				if T is listed in the tradableItems of the noun, remove T from the tradableItems of the noun;
+			if T is plentiful accessory and T is carried, now T is worn by the player.
 
 To compute full stealing success of (T - a thing) from (M - a monster):
 	say "You swipe [NameDesc of T] away without [him of M] having a clue!";
@@ -145,11 +158,11 @@ To compute sleep stealing fail of (T - a thing) from (M - a monster):
 	progress quest of stealing-quest.
 
 To say StealProvokedReaction of (M - a monster):
-	if M is intelligent, say "[speech style of M]'[one of]You would steal from me?!'[or]This will not go unpunished...'[or]How DARE you!'[or]What do you think you're doing?!'[in random order][roman type][line break]";
+	if M is intelligent, say "[speech style of M]'[one of]You would steal from me?!'[or]This will not go unpunished...'[or]How DARE you!'[or]What do you think you're doing?!'[or]You really shouldn't have tried that...'[or]You just made a serious mistake.'[in random order][roman type][line break]";
 	otherwise say "Uh-oh...".
 
 To say PartialSuccessStealProvokedReaction of (M - a monster):
-	if M is intelligent, say "[speech style of M]'[one of]You would steal from me?!'[or]This will not go unpunished...'[or]How DARE you!'[or]What do you think you're doing?!'[in random order][roman type][line break]";
+	if M is intelligent, say "[speech style of M]'[one of]You would steal from me?!'[or]This will not go unpunished...'[or]How DARE you!'[or]What do you think you're doing?!'[or]You're going to wish you hadn't tried that...'[or]You just made a serious error.'[in random order][roman type][line break]";
 	otherwise say "Uh-oh...".
 
 To decide which number is the steal-difficulty of (M - a monster) for (T - a thing):

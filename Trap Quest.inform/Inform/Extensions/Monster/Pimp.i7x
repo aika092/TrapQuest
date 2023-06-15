@@ -120,8 +120,7 @@ To compute perception of (M - pimp):
 		if M is buddy:
 			say "[speech style of M]'Your debt is paid. I guess it's time to release you.'[roman type][line break]";
 			release pimp portals;
-			if the current-errand of M is completed:
-				compute errand completion of M;
+			if the current-errand of M is portal-clothes-errand, now the current-errand of M is no-errand;
 		otherwise if the current-errand of M is completed:
 			compute errand completion of M;
 		otherwise:
@@ -352,7 +351,7 @@ To compute unique banishment of (M - pimp):
 To release pimp portals:
 	if portal-hotpants is worn or portal-hotpants is in the location of the player, say "[BigNameDesc of portal-hotpants] disappears!";
 	destroy portal-hotpants;
-	if portal-bra is worn or portal-bra is in the location of the player, say "[BigNameDesc of portal-hotpants] disappears!";
+	if portal-bra is worn or portal-bra is in the location of the player, say "[BigNameDesc of portal-bra] disappears!";
 	destroy portal-bra;
 
 To standard loot (M - pimp):

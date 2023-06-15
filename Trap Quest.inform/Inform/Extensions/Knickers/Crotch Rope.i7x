@@ -45,7 +45,9 @@ vaginal seal is a knickers. vaginal seal is unique. vaginal seal is silk. The pr
 To decide which number is the penis-capacity of (K - vaginal seal):
 	decide on 0.
 To decide which number is the soak-limit of (K - vaginal seal):
-	decide on 3.
+	decide on 1.
+To decide which number is the assModesty of (C - vaginal seal):
+	decide on 0.
 To decide which number is the initial armour of (C - vaginal seal):
 	decide on 99.
 To decide which number is the crotch-tightness of (C - vaginal seal):

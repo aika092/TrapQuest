@@ -57,30 +57,33 @@ Check jumping when nursery crib is grabbing the player:
 	if there is a worn ankle locking clothing, say "You won't be able to manage that while your ankles are bound!" instead;
 	allocate 6 seconds;
 	say "You reach for the top of the cage and try to vault over it.";
-	if matron is in the location of the player and matron is undefeated:
-		say "[speech style of matron]'What in the world do you think you are doing?!'[roman type][line break][BigNameDesc of matron] steps up and shoves you back in, before you can escape.[line break][speech style of matron]'Naptime isn't over yet.'[roman type][line break][big he of matron] looks rather irritated with you.";
-		FavourDown matron;
-		deinterest matron;
-		compute mandatory room leaving of matron;
-		regionally place matron;
+	if a random number between 6 and 20 < the delicateness of the player:
+		say "[one of]Except, as your little hands grip the rail and you see just how high you are, you're suddenly overcome with fear, your hands releasing the rail without your conscious thought.[or]Once again, your eyes fall to the floor all the way down there, and you cringe back from the railing, thinking [line break][if the player is feeling submissive][second custom style][big boy of the player]s like me should just do what matron says.[otherwise][variable custom style]Maybe it's safer to just wait until I'm let out...[end if][roman type][line break][or][second custom style]Come on, you can do this [boy of the player]![roman type][line break]Except you find you're back in the middle of the crib once again.[or]But once again your nerve fails, and you abort the attempt.[stopping]";
 	otherwise:
-		say "As your weight is pressed down on top of the gate, the lock clicks open, causing the gate to suddenly drop to the ground. ";
-		let D be a random number between 1 and the dexterity of the player;
-		if debuginfo > 0, say "[input-style]Avoid injury roll: Dexterity d[dexterity of the player] = [D] | 7.5[roman type][line break]";
-		if D > 7:
-			say "You manage to land on your feet, and avoid injury!";
-			now the stance of the player is 0;
+		if matron is in the location of the player and matron is undefeated:
+			say "[speech style of matron]'What in the world do you think you are doing?!'[roman type][line break][BigNameDesc of matron] steps up and shoves you back in, before you can escape.[line break][speech style of matron]'Naptime isn't over yet.'[roman type][line break][big he of matron] looks rather irritated with you.";
+			FavourDown matron;
+			deinterest matron;
+			compute mandatory room leaving of matron;
+			regionally place matron;
 		otherwise:
-			say "You land on your side, bruising your arm and shoulder. Ouch!";
-			BodyRuin 2;
-			PainUp 10;
-		dislodge nursery crib;
-		if matron is alive and matron is undefeated and the player is getting unlucky:
-			say "Suddenly, [NameDesc of matron] arrives from the west! [GotUnluckyFlav]";
-			say "[speech style of matron]'What in the world do you think you are doing?!'[roman type][line break][BigNameDesc of matron] storms towards you. Uh-oh...";
-			anger matron;
-			now matron is interested;
-			now matron is moved;
+			say "As your weight is pressed down on top of the gate, the lock clicks open, causing the gate to suddenly drop to the ground. ";
+			let D be a random number between 1 and the dexterity of the player;
+			if debuginfo > 0, say "[input-style]Avoid injury roll: Dexterity d[dexterity of the player] = [D] | 7.5[roman type][line break]";
+			if D > 7:
+				say "You manage to land on your feet, and avoid injury!";
+				now the stance of the player is 0;
+			otherwise:
+				say "You land on your side, bruising your arm and shoulder. Ouch!";
+				BodyRuin 2;
+				PainUp 10;
+			dislodge nursery crib;
+			if matron is alive and matron is undefeated and the player is getting unlucky:
+				say "Suddenly, [NameDesc of matron] arrives from the west! [GotUnluckyFlav]";
+				say "[speech style of matron]'What in the world do you think you are doing?!'[roman type][line break][BigNameDesc of matron] storms towards you. Uh-oh...";
+				anger matron;
+				now matron is interested;
+				now matron is moved;
 	do nothing instead.
 
 Nursery Crib ends here.

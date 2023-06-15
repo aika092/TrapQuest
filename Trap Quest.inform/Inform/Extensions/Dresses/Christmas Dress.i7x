@@ -134,7 +134,7 @@ To decide which figure-name is clothing-image of (C - a gingerbread house baby d
 	decide on figure of gingerbread house baby dress.
 
 To say ClothingDesc of (C - a gingerbread house baby dress):
-	say "An extremely short red dress sewn on top of a red and white striped longsleeved shirt. At the bottom a drawing of a cute gingerbread house is surrounded by two Christmas trees.".
+	say "An extremely short red dress sewn on top of a red and white striped long-sleeved shirt. At the bottom a drawing of a cute gingerbread house is surrounded by two Christmas trees.".
 
 To say ShortDesc of (C - a gingerbread house baby dress):
 	say "gingerbread dress".

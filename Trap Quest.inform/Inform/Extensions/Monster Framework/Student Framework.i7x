@@ -944,8 +944,8 @@ To execute (A - bully-plug):
 	otherwise:
 		now P is a random off-stage plentiful dong;
 		let F be asshole;
-		if the player is possessing a vagina and vagina is exposed and the number of embodied things penetrating vagina is 0:
-			if a random number between 1 and 3 > 1 or there is an embodied thing penetrating asshole, now F is vagina;
+		if the player is possessing a vagina and vagina is exposed and vagina is not actually occupied:
+			if a random number between 1 and 3 > 1 or asshole is actually occupied, now F is vagina;
 		let pN be the openness of F - size of P;
 		say "[speech style of current-monster]'You look like you need something hard to work on for a little while.'[roman type][line break][BigNameDesc of current-monster] pulls out a [ShortDesc of P], and then takes a small tube of some kind of glue and coats the shaft. [big he of current-monster] [if pN < 0]laughs cruelly at your whimper of pain as [he of current-monster] roughly forces it into your [variable F][otherwise if pN < 3]slams it into your [variable F][end if] and harshly swats your ass. [big his of current-monster] palm makes full contact with the bottom of the [ShortDesc of P], making you feel it all the way inside.";
 		if F is vagina, summon P uncursed vaginally;
@@ -1082,6 +1082,7 @@ To execute (A - bully-sharpie):
 		now the tattoo-title of marker chest tattoo is the substituted form of "[if diaper lover > 0 or lactation fetish is 1]Mommy's Milkers[otherwise]I HAVE NO TITS[end if]";
 		now the tattoo-outrage of marker chest tattoo is 7;
 	now the text-shortcut of marker chest tattoo is the substituted form of "[tattoo-title of marker chest tattoo]";
+	try examining marker chest tattoo;
 	say "[speech style of current-monster]'There you go, now you look like the trashy [if diaper quest is 0]whore[otherwise]submissive[end if] you're destined to be!'[roman type][line break]".
 
 To say angry punishment insult of (M - a student):
@@ -1255,7 +1256,7 @@ Definition: prank-nails is eligible:
 	if artificial enhancements fetish is 1 and the current-rank of current-monster > 2 and fake-nails is off-stage, decide yes;
 	decide no.
 To execute (A - prank-nails):
-	say "[speech style of current-monster]'Gotcha!'[roman type][line break][BigNameDesc of current-monster] has taken advantage of a moment you weren't looking to sneak up to you grab both of your hands! When [he of current-monster] lets go of your fists, they now have a brand new set of apparently unremovable fake nails![line break][variable custom style]Oh my gosh! These are so unwieldy, and they make me look like a total whore![roman type][line break]";
+	say "[speech style of current-monster]'Gotcha!'[roman type][line break][BigNameDesc of current-monster] has taken advantage of a moment you weren't looking to sneak up to you and grab both of your hands! When [he of current-monster] lets go of your fists, they now have a brand new set of apparently unremovable fake nails![line break][variable custom style]Oh my gosh! These are so unwieldy, and they make me look like a total whore![roman type][line break]";
 	summon fake-nails uncursed.
 
 

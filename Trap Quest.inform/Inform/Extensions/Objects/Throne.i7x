@@ -100,7 +100,7 @@ Check entering the throne:
 		otherwise if diaper quest is 0 and the class of the player is "bride" and bride-consort is throne and (mechanic is alive or Hotel01 is not placed) and princess bride dress is unclash summonable:
 			now R is 1;
 			now R-old is R;
-			if debuginfo > 0, say "; PRINECSS BRIDE OVERRIDE ([R]) ";
+			if debuginfo > 0, say "; PRINCESS BRIDE OVERRIDE ([R]) ";
 		otherwise if diaper quest is 0 and the class of the player is "silicone queen" and rubber-royal-dress is unclash summonable:
 			now R is 1;
 			now R-old is R;
@@ -244,6 +244,9 @@ Check entering the throne:
 		otherwise if R is 8:
 			dignify 2500;
 			say "[if the humiliation of the player < 40000]This makes you feel more dignified[otherwise]Nothing happens[end if]." instead;
+	otherwise if silver-tiara is off-stage and silver-tiara is actually summonable:
+		summon silver-tiara cursed;
+		say "A silver tiara appears on your head. You feel important.[line break][variable custom style][line break]Is this game taunting me for sitting on this throne so eagerly? What awaits me now that I'm... [']The Princess[']?[roman type][line break]" instead;
 	otherwise:
 		say "Nothing happens." instead.
 Understand "mount [something]" as entering.

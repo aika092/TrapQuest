@@ -52,7 +52,7 @@ To say LockFlav of (M - a monster) for (C - a clothing):
 To say LockAfterFlav of (M - a monster) for (C - a clothing):
 	say "[BigNameDesc of M] keeps the key!".
 To say LockCommentFlav of (M - a monster) for (C - a clothing):
-	say "[speech style of M]'[one of]I guess you're at my mercy now, aren't you?'[or]If you ever want to be let out, you'd better start acting right.'[in random order][roman type][line break]".
+	say "[speech style of M]'[one of]I guess you're at my mercy now, aren't you?'[or]If you ever want to be let out, you'd better start acting right.'[or]If you ever want that removed, you'd better start behaving yourself.'[in random order][roman type][line break]".
 
 skeleton key is an unlock-key. The printed name of skeleton key is "[TQlink of item described]skeleton key[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of skeleton key is "skey". The tradability of a skeleton key is 17. [ally]
 
@@ -79,7 +79,7 @@ Check unlocking:
 	repeat with K running through held unlock-keys:
 		if K is covering the noun, now chosen-key is K;
 	if chosen-key is not held, say "You don't have a key that fits that lock[if chosen-key is in the location of the player] (you need to pick it up first)[end if]." instead;
-	if bondage protection is 0 and chosen-key is skeleton key and there is an unlock-key covering the noun, say "Despite this key being able to fit into many locks, it's too big to fit into the lock on your [ShortDesc of the noun]. [BigNameDesc of the noun] must require a very specific key, probably in the possession of whoever locked it on you in the first place...[line break][variable custom style]I knew I should have spent at least 2 points on that [']bondage protection['] option...[roman type][line break]" instead;
+	if bondage protection is 0 and chosen-key is skeleton key and there is an unlock-key covering the noun, say "Despite this key being able to fit into many locks, it's too big to fit into the lock on your [ShortDesc of the noun]. [BigNameDesc of the noun] must require a very specific key, probably in the possession of whoever locked it on you in the first place...[line break][variable custom style]I knew I should have spent at least two points on that [']bondage protection['] option...[roman type][line break]" instead;
 	if the player is in danger, say "You can't do that in the middle of combat!" instead.
 Carry out unlocking:
 	allocate 6 seconds;

@@ -102,7 +102,7 @@ DungeonScenery02 is a thing. DungeonScenery02 is scenery. DungeonScenery02 is in
 To say ExamineDesc of (C - DungeonScenery02):
 	say "There is a large ditch here, which looks like it once held water for people to swim in. [one of]It's completely empty now though.[or]There's no point going in there.[stopping]".
 
-DungeonScenery03 is a water-body-scenery. DungeonScenery03 is in Dungeon35. The printed name of DungeonScenery03 is "Lake". Understand "lake", "underground", "underground lake", "pool", "sea" as DungeonScenery03. The text-shortcut of DungeonScenery03 is "lake".
+DungeonScenery03 is a water-body-scenery. DungeonScenery03 is in Dungeon35. The printed name of DungeonScenery03 is "Underground Lake". Understand "lake", "underground", "underground lake", "pool", "sea" as DungeonScenery03. The text-shortcut of DungeonScenery03 is "lake".
 Figure of DungeonScenery03 is the file "Env/Dungeon/lake1.png".
 
 To decide which figure-name is the examine-image of (C - DungeonScenery03):

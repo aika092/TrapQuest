@@ -69,7 +69,7 @@ To say MonsterDesc of (M - woman-player):
 			if the woman-bimbo of M is 0, say "A slim, brown-haired [man of M] wearing a dark grey shirt under a black leather jacket and a matching pair of figure-hugging leather pants. [big his of M] strong jawline is darkened with stubble, and although most of [his of M] skin is covered up, you can tell [he of M]'s fairly athletic. [big he of M] is wearing a pair of square-rimmed glasses and carrying a modern-looking pistol.";[Barney]
 			if the woman-bimbo of M is 1, say "A [man of M] with ear-length brown hair and a soft cast to [his of M] facial features that makes [him of M] look very feminine. [big he of M] is wearing a black fishnet shirt under a cropped leather jacket, and a matching pair of fishnet leggings underneath a pair of form-hugging leather shorts. The glasses resting on the bridge of [his of M] nose are slightly askew, and [he of M] is carrying a modern-looking pistol.";[Barry]
 			if the woman-bimbo of M is 2, say "A long haired brunette wearing a black fishnet shirt underneath a tight black leather corset. Below that, [he of M]'s wearing a pair of torn fishnet leggings and a tiny pair of black hotpants, which provides the bare minimum of modesty for [his of M] crotch. [big he of M] is wearing glasses over a decent amount of makeup, and carrying a modern looking pistol.";
-			if the woman-bimbo of M is 3, say "A long haired brunette wearing a tight black latex top which is too small and has too large of a cleavage window to cover [his of M] nipples. A pair of fishnet leggings and a super short black latex skirt are too exposing to hide the fact that [his of M] [manly-penis] has been locked into chastity. [big he of M] is wearing glasses over a decent amount of makeup.";
+			if the woman-bimbo of M is 3, say "A long haired brunette wearing a tight black latex top which is too small and has too large a cleavage window to cover [his of M] nipples. A pair of fishnet leggings and a super short black latex skirt are too exposing to hide the fact that [his of M] [manly-penis] has been locked into chastity. [big he of M] is wearing glasses over a decent amount of makeup.";
 			if the woman-bimbo of M is 4, say "A long haired brunette wearing nothing on [his of M] top half but a sheer lace bra that leaves [his of M] nipples very visible. [big he of M] is wearing black suspenders and stockings but no underwear, leaving [his of M] [manly-penis], which is locked in chastity, fully exposed. [big he of M] is wearing heavily done make up. You can tell by [his of M] facial expressions that [he of M]'s having more trouble than usual thinking straight.";
 			if the woman-bimbo of M is 5, say "A [man of M] wearing nothing on [his of M] top half at all except a tight black latex choker around [his of M] neck. [big he of M] is wearing a pair of fake kitty cat ears with the headband well hidden under [his of M] long brown hair, which is in a ponytail. [big he of M] is also wearing a pair of black latex crotchless panties, which fully expose [his of M] chastity cage, along with a pair of very shiny black latex thigh-high boots with long stiletto heels. [big he of M] is wearing a very heavy amount of make up. You can tell by [his of M] facial expressions [he of M]'s having huge amounts of trouble thinking straight.";
 			if the woman-bimbo of M is 6:
@@ -226,7 +226,7 @@ To compute (M - demon lord) stomping (N - woman-player):
 		if diaper quest is 1:
 			say "[BigNameDesc of M] makes an intricate gesture with [his of M] hands. A red portal appears underneath [NameDesc of N]! [big he of N] shrieks as [he of N] is slowly pulled into the demon realm.[line break][speech style of M]'HAHAHA! TELL MY FAMILY I SAID HELLO, AND THAT YOU ARE TO BE THEIR NEW DOLL PLAYTHING! BAHAHAHA!'[line break][speech style of N]'Nooo! I don't want to be a diapered plaything for demons! Somebody save me!'[roman type][line break]Just it's too late. The portal closes behind [him of N], and just like that, [NameDesc of N] is gone.";
 		otherwise:
-			say "[BigNameDesc of M] grabs [NameDesc of N] by the ankles. [big he of N] shrieks as [he of N] is slowly impaled onto the waiting [LongDickDesc of M]. It takes only a few thrusts for [him of M] to start cumming - you can tell because [his of N] belly expands at an alarming rate. An impossible amount of [semen] fills [him of N] up and with one last wail you see [his of N] sounds cut off by the [semen] flying out of [his of N] mouth. [big he of N] soon loses consciousness and [NameDesc of M] discards [his of N] body. [big he of N] lands on [his of N] back with [his of N] belly covering most of [his of N] body.";
+			say "[BigNameDesc of M] grabs [NameDesc of N] by the ankles. [big he of N] shrieks as [he of N] is slowly impaled on the waiting [LongDickDesc of M]. It takes only a few thrusts for [him of M] to start cumming - you can tell because [his of N] belly expands at an alarming rate. An impossible amount of [semen] fills [him of N] up and with one last wail you see [his of N] sounds cut off by the [semen] flying out of [his of N] mouth. [big he of N] soon loses consciousness and [NameDesc of M] discards [his of N] body. [big he of N] lands on [his of N] back with [his of N] belly covering most of [his of N] body.";
 			let L be a random off-stage leftover;
 			now L is in the location of M;
 			now the leftover-type of L is the leftover-type of N;
@@ -704,6 +704,8 @@ To compute patron scene of (W - woman-player):
 			set up M;
 			now M is in the location of the player;
 			decrease C by 1;
+			interest M;
+			increase the times-met of M by 1;
 			make M expectant;
 	now neighbour finder is the location of the player;
 	now the woman-status of W is 96;
@@ -908,6 +910,7 @@ To compute PlayerWomanStoolFuck:
 		stop the action;
 	let PF be vagina;
 	let S be a random worn strapon-panties;
+	if S is nothing, now S is penis;
 	if S is demon codpiece, say CodTightenFlav of S;
 	if sexual-penis-length > 0:
 		say "Do you want to [if S is clothing]use your [SexDesc of penis] on[otherwise]fuck[end if] [his of woman-player] [asshole]?";
@@ -1109,7 +1112,7 @@ Report going when the player is in School20 and first-time-swimming-pool is true
 			now autowear is false;
 			repeat with C running through LC:
 				now C is worn by the player;
-			say "As you arrive here you see [NameDesc of woman-player] holding a stretchy blue swimsuit. [big he of woman-player] spots you immediately.[line break][speech style of woman-player]'Hey, [NameBimbo]! I didn't know you went to this academy. I'm just visiting on a provisional basis - I'm not sure I really want to join somewhere designed to make you sluttier, even if there are allegedly excellent rewards available once you get to the higher ranks. But still, while I'm here, I might as well, take a dip in this pool, right? Come on, fancy joining me? There's loads of spare swimsuits over there. Although I'm afraid I've nabbed the only one that isn't weirdly slutty, haha.'[roman type][line break]";
+			say "As you arrive here you see [NameDesc of woman-player] holding a stretchy blue swimsuit. [big he of woman-player] spots you immediately.[line break][speech style of woman-player]'Hey, [NameBimbo]! I didn't know you went to this academy. I'm just visiting on a provisional basis - I'm not sure I really want to join somewhere designed to make you sluttier, even if there are allegedly excellent rewards available once you get to the higher ranks. But still, while I'm here, I might as well take a dip in this pool, right? Come on, fancy joining me? There's loads of spare swimsuits over there. Although I'm afraid I've nabbed the only one that isn't weirdly slutty, haha.'[roman type][line break]";
 			reset multiple choice questions;
 			set numerical response 0 to "Decline to go in the pool with [him of woman-player]";
 			if able-to-wear-swimsuit is true and the player is silently able to manually speak, set numerical response 1 to "Say you'll only join [him of woman-player] if you can have the modest swimsuit";
@@ -1121,7 +1124,7 @@ Report going when the player is in School20 and first-time-swimming-pool is true
 				otherwise say "[BigNameDesc of woman-player] shrugs.[line break][speech style of woman-player]'Suit yourself.'[roman type][line break]";
 				say "[BigNameDesc of woman-player] changes into the blue swimsuit and then jumps into the pool.[line break][speech style of woman-player]'The water's great!'[roman type][line break][big he of woman-player] calls to you, splashing around joyfully, before heading back to the ladder. [big he of woman-player] sighs with delight as [he of woman-player] pulls [himself of woman-player] up out of the water using the handrails.[paragraph break]You instantly notice that something is wrong.";
 				cutshow Figure of Barbara Cutscene 12 for woman-player;
-				say "[BigNameDesc of woman-player][']s belly is big. REALLY big. Putting a hand to your mouth, you point at [his of woman-player] belly. [big he of woman-player] looks down and shrieks with panic. As [he of woman-player] strips off the swimsuit to get a closer look at [his of woman-player] new ballooned midriff, an illusion that had been cast over the pool begins to fade. You both become aware that it's not full of normal pool water, but in fact full to the brim of warm creamy [semen]!!![line break][speech style of woman-player]'What the fuck?!'[roman type][line break]You can now see that [NameDesc of woman-player] is not covered with water, but with [semen]! It's dripping off [his of woman-player] hair, [his of woman-player] body, and out of [his of woman-player] holes. [BigNameDesc of woman-player] lets out a half-surprised, half-humiliated moan as a torrent of [semen] shoots out of [his of woman-player] asshole.[paragraph break]";
+				say "[BigNameDesc of woman-player][']s belly is big. REALLY big. Putting a hand to your mouth, you point at [his of woman-player] belly. [big he of woman-player] looks down and shrieks with panic. As [he of woman-player] strips off the swimsuit to get a closer look at [his of woman-player] new ballooned midriff, an illusion that had been cast over the pool begins to fade. You both become aware that it's not full of normal pool water, but in fact full to the brim with warm creamy [semen]!!![line break][speech style of woman-player]'What the fuck?!'[roman type][line break]You can now see that [NameDesc of woman-player] is not covered with water, but with [semen]! It's dripping from [his of woman-player] hair, [his of woman-player] body, and out of [his of woman-player] holes. [BigNameDesc of woman-player] lets out a half-surprised, half-humiliated moan as a torrent of [semen] shoots out of [his of woman-player] asshole.[paragraph break]";
 				if pregnancy fetish > 0:
 					say "But [his of woman-player] belly is hardly deflating![line break][speech style of woman-player]'Huh?!'[roman type][line break][BigNameDesc of woman-player] holds [his of woman-player] new bloated, round belly.[line break][speech style of woman-player]'Wait, am I... Am I PREGNANT?! WHAT THE FUCK?!'[roman type][line break]In visible distress, [NameDesc of woman-player] sprints from the room, not even remembering to take [his of woman-player] clothes with [him of woman-player].";
 					now the woman-pregnancy of woman-player is 2;
@@ -1179,9 +1182,9 @@ This is the woman trips a glue trap rule:
 		let GT be a random revealed glue trap in the location of the player;
 		if (G is glue and G is not grabbing the player) or (G is nothing and GT is a glue trap):
 			interest woman-player;
-			say "[BigNameDesc of woman-player] slips, and collapses to the ground.[line break][speech style of woman-player]'Oh shit!'[roman type][line break][big he of woman-player] tries to pull [himself of woman-player] up, but [his of woman-player] hands are stuck in a puddle glue![line break][speech style of woman-player]'Uh-oh...'[roman type][line break][BigNameDesc of woman-player] flails helplessly as the glue begins to surge up [his of woman-player] legs, and start attacking [his of woman-player] clothes. Before you can say [']magic clothes dissolving glue trap['], [his of woman-player] hotpants are gone.";
+			say "[BigNameDesc of woman-player] slips, and collapses to the ground.[line break][speech style of woman-player]'Oh shit!'[roman type][line break][big he of woman-player] tries to pull [himself of woman-player] up, but [his of woman-player] hands are stuck in a puddle of glue![line break][speech style of woman-player]'Uh-oh...'[roman type][line break][BigNameDesc of woman-player] flails helplessly as the glue begins to surge up [his of woman-player] legs, and start attacking [his of woman-player] clothes. Before you can say [']magic clothes-dissolving glue trap['], [his of woman-player] hotpants are gone.";
 			cutshow figure of barbara cutscene 16 for woman-player;
-			say "[speech style of woman-player]'Help! Quickly [NameBimbo], help me!'[roman type][line break]Oh dear. [big he of woman-player][']s flailing so much that you suspect that there's probably a small but not insignificant chance that helping just gets you stuck as well.";
+			say "[speech style of woman-player]'Help! Quickly [NameBimbo], help me!'[roman type][line break]Oh dear. [big he of woman-player][']s flailing so much that you suspect there's probably a small but not insignificant chance that trying to help [him of woman-player] will just get you stuck as well.";
 			ImmediatewomanSluttify;
 			reset multiple choice questions;
 			set numerical response 1 to "Pretend you can't reach [him of woman-player].";
@@ -1196,10 +1199,10 @@ This is the woman trips a glue trap rule:
 				otherwise:
 					say "[BigNameDesc of woman-player] hesitates with a frown, but then relents.[line break][speech style of woman-player]'Fine. Just get me out of here!'[roman type][line break][big he of woman-player] reaches out [his of woman-player] hand towards you.";
 			if player-numerical-response is 1:
-				say "You shrug, and watch with feigned pity as the glue works its way up [NameDesc of woman-player][']s torso, dissolving [his of woman-player] top... and [his of woman-player] prized magic pistol.[line break][speech style of woman-player]'Noooo!'[roman type][line break]In the end, the glue covers [his of woman-player] whole body from head to toe, before suddenly disappearing, leaving the poor [man of woman-player] looking rather different. [big he of woman-player] is wearing nothing but a slutty lacy black bra, suspenders and stockings, and slutty fishnet gloves. [big his of woman-player] face looks somewhat different, with heavier make up, and noticeably thicker lips. [big his of woman-player] expression looks less stressed, and more chilled out.";
+				say "You shrug, and watch with feigned pity as the glue works its way up [NameDesc of woman-player][']s torso, dissolving [his of woman-player] top... and [his of woman-player] prized magic pistol.[line break][speech style of woman-player]'Noooo!'[roman type][line break]In the end, the glue covers [his of woman-player] whole body from head to toe, before suddenly disappearing, leaving the poor [man of woman-player] looking rather different. [big he of woman-player] is wearing nothing but a raunchy lacy black bra, suspenders and stockings, and slutty fishnet gloves. [big his of woman-player] face looks somewhat different too, with heavier make up, and noticeably thicker lips. [big his of woman-player] expression looks less stressed, and more chilled out.";
 				zero focus stuff;
 				cutshow figure of barbara cutscene 17 for woman-player;
-				say "[speech style of woman-player]'You know what, I actually feel a bit better now! Maybe that wasn't such a bad thing after all!'[roman type][line break][big he of woman-player] chirps. [big he of woman-player] tugs at [his of woman-player] clothes, and discovers that they are all stuck fast with glue. [big he of woman-player] just shrugs, as if it's no big deal.";
+				say "[speech style of woman-player]'You know what, I actually feel a bit better now! Maybe that wasn't such a bad thing after all!'[roman type][line break][big he of woman-player] chirps. [big he of woman-player] tugs at [his of woman-player] clothes, and discovers they're all stuck fast with glue. [big he of woman-player] just shrugs, as if it's no big deal.";
 				ImmediatewomanSluttify;
 				say "[speech style of woman-player]'See you round, sweet-cheeks!'[roman type][line break][BigNameDesc of woman-player] struts out of the [location of the player].";
 				vanish woman-player;
@@ -1209,14 +1212,14 @@ This is the woman trips a glue trap rule:
 					let E be a random worn hand ready clothing;
 					say "But just as your hand touches [hers of woman-player], the glue springs to life again! [GotUnluckyFlav]This time, it gets you both! The glue works its way up [NameDesc of woman-player][']s torso, dissolving [his of woman-player] top... and [his of woman-player] prized magic pistol.[line break][speech style of woman-player]'Noooo!'[roman type][line break]It also crosses from [his of woman-player] hand to yours. ";
 					if E is clothing:
-						say "It engulfs your [NameDesc of E], coating it with glue and embuing it with negative magic.";
+						say "It engulfs your [NameDesc of E], coating it with glue and imbuing it with negative magic.";
 						decrease the raw-magic-modifier of E by 1;
 						gluify E;
 					otherwise:
 						say "It engulfs your [NameDesc of E], before forming into the shape of a giant dildo.";
 						summon dildo sword uncursed;
 						gluify dildo sword;
-					say "In the end, the glue covers [NameDesc of woman-player][']s whole body from head to toe, before suddenly disappearing, leaving the poor [man of woman-player] looking rather different. [big he of woman-player] is wearing nothing but a slutty lacy black bra, suspenders and stockings, and slutty fishnet gloves. [big his of woman-player] face looks somewhat different, with heavier make up, and noticeably thicker lips. [big his of woman-player] expression looks less stressed, and more chilled out.";
+					say "In the end, the glue covers [NameDesc of woman-player][']s whole body from head to toe, before suddenly disappearing, leaving the poor [man of woman-player] looking rather different. [big he of woman-player] is wearing nothing but a raunchy lacy black bra, suspenders and stockings, and slutty fishnet gloves. [big his of woman-player] face looks somewhat different, with heavier make up, and noticeably thicker lips. [big his of woman-player] expression looks less stressed, and more chilled out.";
 					zero focus stuff;
 					cutshow figure of barbara cutscene 17 for woman-player;
 					say "[speech style of woman-player]'You know what, I actually feel a bit better now! Maybe that wasn't such a bad thing after all!'[roman type][line break][big he of woman-player] chirps. [big he of woman-player] tugs at [his of woman-player] clothes, and discovers that they are all stuck fast with glue. [big he of woman-player] just shrugs, as if it's no big deal.";
@@ -1224,13 +1227,13 @@ This is the woman trips a glue trap rule:
 					say "[speech style of woman-player]'See you round, sweet-cheeks!'[roman type][line break][BigNameDesc of woman-player] struts out of the [location of the player].";
 					vanish woman-player;
 				otherwise:
-					say "Success! You are able to rip [him of woman-player] out of the stick stuff and out to safety.";
+					say "Success! You are able to rip [him of woman-player] out of the sticky stuff and out to safety.";
 					if player-numerical-response is 3:
 						now magic pistol is in the location of the player;
 						say "[BigNameDesc of woman-player] wrinkles [his of woman-player] nose.[line break][speech style of woman-player]'I guess I should be grateful. Fair's fair.'[roman type][line break][big he of woman-player] drops [his of woman-player] [magic pistol] onto the ground.";
 						compute autotaking magic pistol;
 					otherwise:
-						say "[BigNameDesc of woman-player] embraces you with immense gratitude.[line break][speech style of woman-player]'Thank you so much, [NameBimbo]. Who knows what that stuff would have done to me if I'd been stuck for any longer...'[roman type][line break]";
+						say "[BigNameDesc of woman-player] embraces you with immense gratitude.[line break][speech style of woman-player]'Thank you so much, [NameBimbo]. Who knows what that stuff would have done to me if I'd been stuck there any longer...'[roman type][line break]";
 						FavourUp woman-player by 2;
 			rule succeeds.
 The woman trips a glue trap rule is listed last in the woman wandering rules.
@@ -1289,7 +1292,7 @@ To compute (M - woman-player) protecting against (X - a monster):
 			if prev-health is the maxhealth of X and the health of X < the maxhealth of X, say AllyInstigated of X.
 
 To compute pregnancy swap of (M - woman-player):
-	say "[speech style of woman-player]'I'm really sorry about this, but if I don't take this opportunity now, I know it'll never come again. I've got to do what's right for myself.'[roman type][line break][BigNameDesc of woman-player] advances on you, in your compromised position.[line break][variable custom style][if the player is able to speak]'[womanName], what are you...'[otherwise]Wait, what is [he of woman-player]...[end if][roman type][line break][big he of woman-player] presses a palm to your belly, and whispers into your ear.[line break][speech style of woman-player]'[one of]The witch taught me a special way... To get someone to share my burden[or]How was it last time? Are you excited to give birth again? I'm almost jealous[stopping].'[roman type][line break]Looking down with [horror the sex addiction of the player], you realise that [his of woman-player] belly has shrunk back to normal, and yours has expanded to that huge, full term pregnant size.[line break][variable custom style]Holy shit...[roman type][line break]";
+	say "[speech style of woman-player]'I'm really sorry about this, but if I don't take this opportunity now, I know it'll never come again. I've got to do what's right for myself.'[roman type][line break][BigNameDesc of woman-player] advances on you, in your compromised position.[line break][variable custom style][if the player is able to speak]'[womanName], what are you...'[otherwise]Wait, what is [he of woman-player]...[end if][roman type][line break][big he of woman-player] presses a palm to your belly, and whispers into your ear.[line break][speech style of woman-player]'[one of]The witch taught me a special way... To get someone to share my burden[or]How was it last time? Are you excited to give birth again? I'm almost jealous[stopping].'[roman type][line break]Looking down with [horror the sex addiction of the player], you realise that [his of woman-player] belly has shrunk back to normal, while yours has expanded to that huge, full term pregnant size.[line break][variable custom style]Holy shit...[roman type][line break]";
 	if the player is ready for event TG:
 		say "[BigNameDesc of woman-player]'s magic surges down from your belly to your loins. [if the player is possessing a penis]Your [player-penis] feels... Absent![end if] The logical conclusion of what has just happened to you is clear, and it only takes a moment for you to check and confirm... You're no longer biologically male. You have a real, fully functional vagina and womb![line break][variable custom style]And I'm already 9 months pregnant... This is insane![roman type][line break]";
 		SexChange the player;

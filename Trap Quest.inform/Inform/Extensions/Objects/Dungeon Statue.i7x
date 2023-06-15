@@ -70,18 +70,21 @@ To compute dungeon statue interaction:
 		set next numerical response to "[if diaper quest is 0]suck[otherwise]spank[end if] the [N][if N is 1]st[otherwise if N is 2]nd[otherwise if N is 3]rd[otherwise]th[end if] [if diaper quest is 0]dick[otherwise]butt[end if] ([T])";
 		set numerical response 0 to "cancel";
 	compute multiple choice question;
-	if player-numerical-response > 0:
+	let PNR be player-numerical-response; [it could change when player is offered to swallow]
+	if PNR > 0:
 		allocate 6 seconds;
-		let X be entry player-numerical-response in the dungeon statue effect list;
+		let X be entry PNR in the dungeon statue effect list;
 		if diaper quest is 0:
-			say "[one of]You put your lips around the statue's penis, and suck. [if the semen taste addiction of the player < 8][line break][first custom style]What the hell am I doing?[roman type][line break]Your thoughts are interrupted by the penis ejaculating [semen] into your mouth, with quite some force.[otherwise if the semen taste addiction of the player > 11]The penis ejaculates [semen] onto your tongue, with quite some force.[line break][second custom style]Yippee![roman type][line break][otherwise]The penis ejaculates [semen] straight onto your tongue, with quite some force.[end if][or]You pretend the stone penis belongs to a real, living stud, and curl your tongue around it while you suck avidly - after all, no one can see what your tongue is doing, right, so what's the harm in making it extra fun by a little imagining? Your finely-tuned BJ skills warn you, and you pull back to ease it out of your throat so you can taste it properly! You thrill as you feel it spurt its [semen][if the semen taste addiction of the player > 11]. Yummy! You swirl it around for a while, savouring the taste properly[end if].[or]You give the penis another blowjob, and once again it ejaculates [semen] into your mouth. You [if the semen taste addiction of the player > 11]greedily [end if]hold it on your tongue.[stopping]";
+			say "[one of]You put your lips around the statue's penis, and suck. [if the semen taste addiction of the player < 8][line break][first custom style]What the hell am I doing?[roman type][line break]Your thoughts are interrupted by the penis ejaculating [semen] into your mouth, with quite some force.[otherwise if the semen taste addiction of the player > 11]The penis ejaculates [semen] onto your tongue, with quite some force.[line break][second custom style]Yippee![roman type][line break][otherwise]The penis ejaculates [semen] straight onto your tongue, with quite some force.[end if][or][if the oral sex addiction of the player > 6]You pretend the stone penis belongs to a real, living stud, and curl your tongue around it while you suck avidly - after all, no one can see what your tongue is doing, right, so what's the harm in making it extra fun by a little imagining? Your finely-tuned BJ skills warn you, and you pull back to ease it out of your throat so you can taste it properly! You thrill[otherwise]You scrunch up your eyes and try not to think about what it looks like as you fellate the stone penis, and you cringe[end if] as you feel it spurt its [semen][if the semen taste addiction of the player > 11]. Yummy! You swirl it around for a while, savouring the taste properly[end if].[or]You give the penis another blowjob, and once again it ejaculates [semen] into your mouth. You [if the semen taste addiction of the player > 11]greedily [end if]hold it on your tongue.[stopping]";
+			now DungeonScenery01 is penetrating face;
 			if X is 4:
-				say "But wait - there's even more [semen] than you're expecting!";
+				say "But wait - there's even more [semen] than you were expecting!";
 				if the player is getting unlucky, FaceFill semen by 12;
 				otherwise FaceFill semen by 8;
-				say "[variable custom style]Bleurgh! Well, now I know what happens if I suck this cock...[roman type][line break]";
+				say "[variable custom style]Bleurgh! Well, now I know what can happen if I suck this cock...[roman type][line break]";
 			otherwise:
 				FaceFill semen by 4;
+			dislodge DungeonScenery01;
 		otherwise:
 			say "You thwack the butt of one of the ladies[one of] with all your might[or][stopping].[line break][variable custom style]Ow!!![roman type][line break]You feel the spank on your own [buttcheeks]!";
 			if X is 4:
@@ -105,7 +108,7 @@ To compute dungeon statue interaction:
 				if the raw diaper addiction of the player > 5:
 					DiaperAddictDown 1;
 				otherwise:
-					say "You sense that the statue tries to use some psychic magic to help reduce your love of diapers, but you don't really love diapers at all, so it can't do anything meaningful right now.[if entry player-numerical-response in the dungeon statue knowledge list is 0][line break][variable custom style]Still, that's useful knowledge for the future...[roman type][line break][end if]";
+					say "You sense that the statue tries to use some psychic magic to help reduce your love of diapers, but you don't really love diapers at all, so it can't do anything meaningful right now.[if entry PNR in the dungeon statue knowledge list is 0][line break][variable custom style]Still, that's useful knowledge for the future...[roman type][line break][end if]";
 		if X is 3:
 			if diaper quest is 0:
 				if the soreness of vagina > 1:
@@ -113,13 +116,13 @@ To compute dungeon statue interaction:
 				otherwise if the player is possessing a vagina:
 					say "You feel some magic tingling on your [vagina], as if it's trying to heal it! But it's already in perfect health.";
 				otherwise:
-					say "You feel some magic tingling on your groin, as if it's trying to heal a vagina that you don't have!";
+					say "You feel some magic tingling on your groin, as if it's trying to heal a vagina you don't have!";
 			otherwise:
 				say "Nothing else seems to happen.";
 		if X is 5:
 			let P be a random off-stage fetish appropriate pacifier;
 			if P is actually summonable:
-				say "As you pull your [if diaper quest is 0]mouth away from the statue's penis, whilst your mouth is still in its submissive 'O' shape[otherwise]hand away from the statue's butt, whilst your mouth is in a pained 'O' shape[end if], you feel a new [if P is cock pacifier]phallic[end if] object slip into the vacant space. Even though you can't see anything, you feel the small squishy intrusion as it slides along your tongue, and you can feel that it's definitely shaped like a [if P is cock pacifier]penis, but it's not quite as hard as an actual manly [manly-penis] would be[otherwise]teat[end if]. Raising your hands to your mouth, you feel a little handle in front of a large flat circular section. It's a pacifier! A [if the bimbo of the player < 8]hopeful[otherwise]half-hearted[end if] tug on the handle [if the bimbo of the player < 8]reveals[otherwise]confirms[end if] what you had already started to suspect - you can't remove it...[if diaper quest is 0][line break][variable custom style]Maybe this is the game's way of telling me I'm getting an oral fixation...?[roman type][line break][end if]";
+				say "As you pull your [if diaper quest is 0]mouth away from the statue's penis, whilst your mouth is still in its submissive 'O' shape[otherwise]hand away from the statue's butt, whilst your mouth is in a pained 'O' shape[end if], you feel a new [if P is cock pacifier]phallic[end if] object slip into the vacant space. Even though you can't see anything, you feel the small squishy intrusion as it slides along your tongue, and you can feel that it's definitely shaped like a [if P is cock pacifier]penis, although not quite as hard as an actual manly [manly-penis] would be[otherwise]teat[end if]. Raising your hands to your mouth, you feel a little handle in front of a large flat circular section. It's a pacifier! A [if the bimbo of the player < 8]hopeful[otherwise]half-hearted[end if] tug on the handle [if the bimbo of the player < 8]reveals[otherwise]confirms[end if] what you had already started to suspect - you can't remove it...[if diaper quest is 0][line break][variable custom style]Maybe this is the game's way of telling me I'm getting an oral fixation...?[roman type][line break][end if]";
 				summon P cursed with quest;
 			otherwise:
 				say "You watch as some sort of pacifier gag begins to materialise in front of your mouth, but when it finds your lips already occupied, the magic fizzles.";
@@ -140,7 +143,18 @@ To compute dungeon statue interaction:
 				say "[bold type]A [ColourDesc of W] curse wisp appears, and begins hovering behind you! [roman type]You can sense that you must [bold type][wisp-quest of W][roman type] before you next [bold type][wisp-trigger of W][roman type], or else you will [bold type][wisp-punishment of W][roman type].";
 			otherwise:
 				say "You sense that a wisp tries to start following you, but can't because you already have too many wisps...";
-		now entry player-numerical-response in the dungeon statue knowledge list is 1;
+		if debugmode > 1, say "Knowledge list: [dungeon statue knowledge list].";
+		now entry PNR in the dungeon statue knowledge list is 1; [if this doesn't work, more complicated way of doing it below]
+		[if entry PNR in the dungeon statue knowledge list is 0:
+			let DSKL be a list of numbers;
+			add the dungeon statue knowledge list to DSKL;
+			truncate the dungeon statue knowledge list to 0 entries;
+			repeat with N running from 1 to 6:
+				if N is PNR:
+					add 1 to the dungeon statue knowledge list;
+				otherwise:
+					add (entry N in DSKL) to the dungeon statue knowledge list;]
+		if debugmode > 1, say "Knowledge list: [dungeon statue knowledge list].";
 		if wisp-success is false and the semen volume of face > 0, suggest swallowing with semen consequences. [You can't avoid the taste addiction by not swallowing]
 
 

@@ -190,7 +190,7 @@ Definition: black-lace-thong is whore themed:
 To say selfexamineuniquetitle of (G - black-lace-thong):
 	say "black lace thong".
 To say UniqueClothingDesc of (G - black-lace-thong):
-	say "A sexy black thong with a waistband that's low at the front and high at the back to excentuate the wearer's hips[if G is monified]. Several paper bills are sewn into the crotch section in a manner that makes it look like they have been tucked in[end if]. You can sense that it makes your hip-based seductive acts more stimulating, but only when it is completely visible.".
+	say "A sexy black thong with a waistband that's low at the front and high at the back to accentuate the wearer's hips[if G is monified]. Several paper bills are sewn into the crotch section in a manner that makes it look like they have been tucked in[end if]. You can sense that it makes your hip-based seductive acts more stimulating, but only when it is completely visible.".
 Definition: black-lace-thong is black themed: decide yes.
 Definition: black-lace-thong is fetish appropriate:
 	if diaper quest is 0, decide yes;
@@ -355,7 +355,7 @@ pink-lace-thong is a thong. The text-shortcut of pink-lace-thong is "plt". Under
 To say selfexamineuniquetitle of (G - pink-lace-thong):
 	say "pink lace thong".
 To say UniqueClothingDesc of (G - pink-lace-thong):
-	say "A small lace thong that lets everyone know the wearer is a pretty girl and isn't afraid to show it. It says 'PRETTY PRITTIER PRITTIEST' on the front.".
+	say "A small lace thong that lets everyone know the wearer is a pretty girl and isn't afraid to show it. It says 'PRETTY PRETTIER PRETTIEST' on the front.".
 Definition: pink-lace-thong is pink themed: decide yes.
 
 light-pink-lace-thong is a thong. The text-shortcut of light-pink-lace-thong is "llt". Understand "light", "pink", "lace" as light-pink-lace-thong.

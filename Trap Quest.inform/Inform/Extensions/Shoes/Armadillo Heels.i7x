@@ -19,7 +19,7 @@ To say UniqueShortDesc of (C - armadillo heels):
 	say "armadillo heels".
 
 To say ClothingDesc of (C - armadillo heels):
-	say "A unique pair of multicoloured [heel-height of C] inch stiletto heels, with a unique [']armadillo shaped['] curve, that properly forces you onto the points of your toes. Walking in them is [if C is not worn]going to be [end if]very difficult, but you sense that they'll also improve your defenses in combat.";
+	say "A unique pair of multicoloured [heel-height of C] inch stiletto heels, with a unique [']armadillo shaped['] curve, that properly forces you onto the points of your toes. Walking in them is [if C is not worn]going to be [end if]very difficult, but you sense that they'll also improve your defences in combat.";
 	say "[SteadinessDesc of C]".
 
 To set up influence of (C - armadillo heels):

@@ -63,7 +63,8 @@ This is the living sex doll can't use hands rule:
 					say "[one of]Your [LatexFlav]mitts didn't get a grip on it.[or]It's hard to feel in your [LatexFlav]hands.[or]It's hard to do when you can't feel from your fingers, even though you [i]do[/i] feel the [LatexFlav]hands gripping it, like someone else's.[or]It's weird that you can feel a pair of [LatexFlav]hands gripping it, but you can't feel [i]it[/i] with your own your [LatexFlav]fingers.[or]As you fail yet again, you realise they must have specially made it so your [']sensitive bits['] still feel pleasure - even more than normal - while the rest of you is numb.[or]You want to grind your teeth as you fail once again, but you can't even close your mouth from this stupid gaping [']Please fuck my mouth['] expression![or]For a moment, you thought you had a good grip on it: then it slips.[or]You thought you almost had it that time.[or]It escapes your grip again.[stopping]";
 					allocate 2 seconds;
 					rule fails;
-			[###Selkie: Should we add a check to see if they're vines you're trying to pull Barbara free of, when she calls for your help?]
+			[Selkie: Should we add a check to see if they're vines you're trying to pull Barbara free of, when she calls for your help?
+			###Aika: ...What? Why would we do that here?]
 			say "You only have inflatable latex stumps for hands, so you can't do that!";
 			rule fails.
 The living sex doll can't use hands rule is listed first in the hands restriction rules.

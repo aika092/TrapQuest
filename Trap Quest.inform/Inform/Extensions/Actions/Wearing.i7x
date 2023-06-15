@@ -13,6 +13,7 @@ Does the player mean wearing a clothing:
 Does the player mean taking a worn clothing: it is very unlikely.
 
 Check taking a plentiful accessory:
+	if there is a monster holding the noun, say "That's in someone else's possession." instead;
 	if the noun is held by the player or the noun is worn by the player:
 		repeat with C running through open containers in the location of the player:
 			repeat with A running through accessories in C:

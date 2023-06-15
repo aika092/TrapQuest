@@ -977,7 +977,7 @@ To DevilPray (P - a person):
 			decrease X by 1;
 			interest I;
 	otherwise:
-		say "A firey circle appears. ";
+		say "A fiery circle appears. ";
 		let C be a random off-stage rare fetish appropriate clothing;
 		if C is clothing:
 			blandify and reveal C;

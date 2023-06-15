@@ -415,7 +415,7 @@ Check dominating:
 	if vm is a video-monitor and the video-caller of vm is not the throne, say "You decide against it. You don't want to give your audience the wrong idea." instead;
 	if the noun is woman-player and the woman-status of woman-player is 80, compute PlayerWomanStoolFuck instead;
 	[#LXorDD Selkie: actually, doing this while a latex doll can cause dick-detachment; and if the player is female, then there's a sex doll usage, too.
-	##MG: Actually, this can't really cause detachment. Domination happens by defeating monsters, and while this function used to lead into domination, these days its only useful for bullying monsters that are already beaten.]
+	##MG: Actually, this can't really cause detachment. Domination happens by defeating monsters, and while this function used to lead into domination, these days it's only useful for bullying monsters that are already beaten.]
 	[if the latex-transformation of the player >= 6, say "You wouldn't feel anything from it, so you don't see the point." instead;]
 	if the player is prone, say "That would be a little hard to do from your knees." instead;
 	if the player is the donator:
@@ -452,7 +452,7 @@ Check dominating:
 	if player-fucker is penis:[Now that the part we want to use is selected, validate]
 		if there is a worn condom of kings, say "You wouldn't feel anything from it, so you don't see the point." instead;
 		if S is clothing:[dildo-usage determines whether the player's dick is sticking out of the strapon]
-			[####Selkie: here too, I'd like a possibility of the monster engulfing the player's dick, detaching it, and then removing the cage and chuckling. But that's not possible I feel if it's a vagina in chastity? I think...?]
+			[Selkie: here too, I'd like a possibility of the monster engulfing the player's dick, detaching it, and then removing the cage and chuckling. But that's not possible I feel if it's a vagina in chastity? I think...?]
 			if there is a worn chastity bond or there is a worn restricting research airhancer:
 				say "Your [if there is a worn chastity bond][printed name of a random worn chastity bond] pulses[otherwise][printed name of a random research airhancer] flashes several times[end if], and your [SexDesc of penis] ";
 				if the noun is a-non-detacher: [#LXorDD]

@@ -1039,6 +1039,7 @@ To compute gifting reward of (M - a monster):
 				now X is sure;
 			now X is in the location of the player;
 			compute loot dropping of X by M;
+			now the owner of X is nothing;
 			increase the loot dropped of M by 1;
 			if M is intelligent, say GiftRewardFlav of X from M;
 			compute autotaking X;
@@ -1180,7 +1181,7 @@ To say FriendlyLickInitiationFlav of (M - a monster):
 
 To say LickInitiationFlav of (M - a monster):
 	if the grossness addiction of the player < 4:
-		say "[if M is not friendly-fucking][BigFuckerDesc of M] grabs you by the hair and pushes your face down onto one of [his of M] feet. [end if][one of]You gingerly start licking [FuckerDesc of M][']s feet, trying not to wretch as your tongue touches the sweaty skin.[or]You let the tip of your tongue touch [FuckerDesc of M][']s toes, forcing yourself not to pull back as your olfactory senses struggle with the gross taste and aroma.[or]You force yourself to lower your head to the ground, and plant a kiss on top of [FuckerDesc of M][']s foot, just above the toes.[or]You give [FuckerDesc of M][']s foot an experimental lick, and are dismayed to find that it tastes just as bad as you expected.[in random order]";
+		say "[if M is not friendly-fucking][BigFuckerDesc of M] grabs you by the hair and pushes your face down onto one of [his of M] feet. [end if][one of]You gingerly start licking [FuckerDesc of M][']s feet, trying not to retch as your tongue touches the sweaty skin.[or]You let the tip of your tongue touch [FuckerDesc of M][']s toes, forcing yourself not to pull back as your olfactory senses struggle with the gross taste and aroma.[or]You force yourself to lower your head to the ground, and plant a kiss on top of [FuckerDesc of M][']s foot, just above the toes.[or]You give [FuckerDesc of M][']s foot an experimental lick, and are dismayed to find that it tastes just as bad as you expected.[in random order]";
 	otherwise if the grossness addiction of the player < 11:
 		say "[if M is not friendly-fucking]with understanding, and lower your face to meet it. [end if][one of]You obediently start licking [FuckerDesc of M][']s feet, ignoring the sweaty taste.[or]You lick all five of [FuckerDesc of M][']s toes, one after another, as if greeting them [']hello['].[or]You plant several kisses on top of [FuckerDesc of M][']s foot, before giving it a quick long lick along its length to greet it.[in random order]";
 	otherwise:
@@ -1192,13 +1193,13 @@ To say FriendlyAnilingusInitiationFlav of (M - a monster):
 To say AnilingusInitiationFlav of (M - a monster):
 	say "[BigFuckerDesc of M] grabs you by the hair, and turning around, plants [his of M] asshole directly onto your mouth. ";
 	if the grossness addiction of the player <= 2:
-		say "Despite your disgust and desperate attempts to make it stop, it's undeniable that this moment, you are technically kissing a gross, sweaty butthole.";
+		say "Despite your disgust and desperate attempts to make it stop, it's undeniable that at this moment, you are technically kissing a gross, sweaty butthole.";
 	otherwise if the grossness addiction of the player < 7:
 		say "It's just as sweaty and gross as you expect. You baulk at the thought of the task ahead of you.";
 	otherwise if the grossness addiction of the player < 14:
-		say "You know what [he of M] wants, and almost unthinkinly, your lips start to part...";
+		say "You know what [he of M] wants, and almost unthinkingly, your lips part...";
 	otherwise:
-		say "You excitedly part your lips and let your tongue flick out to enjoy that first delighfully disgusting taste of sweaty butthole.".
+		say "You excitedly part your lips and let your tongue flick out to enjoy that first delightfully disgusting taste of sweaty butthole.".
 
 [!<SayTitfuckResistFlavOfMonster>+
 
@@ -1493,7 +1494,7 @@ To compute strength (pain-factor - a number) spanking:
 			PainUp 10;
 		otherwise:
 			if there is ass covering clothing, say "Thanks to your [if diaper-stack is worn or the DQBulk of the player > 3]extra-thick padding[otherwise if D is diaper]layer of padding[otherwise][random top level ass protection clothing][end if], you manage to tolerate the [one of]pain[or]punishment[cycling].";
-			otherwise say "You suffer through the pain silently.";
+			otherwise say "You suffer silently through the pain.";
 		if pain-factor < 0 and there is a worn diaper and the diaper addiction of the player < the delicateness of the player:
 			say "You find yourself feeling [if the player is feeling submissive]extremely [otherwise if the player is feeling dominant]a tad [end if][one of]grateful[or]thankful[or]relieved[in random order] that you [one of]are padded[or]wearing a padded diaper[or]so well-padded down there[or]diapered[in random order]!";
 			SilentlyDiaperAddictUp 1;

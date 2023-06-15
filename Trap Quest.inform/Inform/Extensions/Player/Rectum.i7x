@@ -205,6 +205,18 @@ To decide which number is the max-rectum-incontinence of the player:
 
 The player has a number called raw-rectum-incontinence.
 
+To RandomIncontinenceUp (N - number):
+	if diaper messing >= 3 and the raw-rectum-incontinence of the player < the max-rectum-incontinence of the player and a random number between 1 and 2 is 1:
+		RectumIncontinenceUp N;
+	otherwise:
+		BladderIncontinenceUp N.
+To SilentlyRandomIncontinenceUp (N - number):
+	if diaper messing >= 3 and the raw-rectum-incontinence of the player < the max-rectum-incontinence of the player and a random number between 1 and 2 is 1:
+		SilentlyRectumIncontinenceUp N;
+	otherwise:
+		SilentlyBladderIncontinenceUp N.
+
+
 To RectumIncontinenceUp (N - number):
 	if diaper messing >= 3 and the raw-rectum-incontinence of the player < the max-rectum-incontinence of the player:
 		say "You feel your ability to hold onto your bowels weakening.";

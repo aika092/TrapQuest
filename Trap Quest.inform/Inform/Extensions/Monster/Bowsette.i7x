@@ -293,7 +293,7 @@ To compute kneeling reaction of (M - bowsette):
 	strongHumiliate.
 
 To compute (M - a monster) stomping (N - bowsette):
-	if M is in the location of the player, say "[BigNameDesc of N] squeals as [NameDesc of M] grabs [him of N] by the arms and lifts [him of N] into the air.[line break][speech style of N]'What?! No, wait! You can't do this! I'M supposed to be the Big Bad Boss! AIIIIEEEEE!'[roman type][line break][BigNameDesc of M] completely ignores [NameDesc of N][']s pleas, and lowers [NameDesc of N][']s exposed asshole onto [his of M] giant shaft.[line break][speech style of N]'You're going to break me! Awoooooo!'[roman type][line break]That's the last coherent thing [NameDesc of N] says. Before long, [he of N] is a wailing mess of sexual disgrace as [NameDesc of M] does [his of M] best to turn [NameDesc of N] inside-out with [his of M] [manly-penis]. By the time [NameDesc of M] has pumped [his of N] sorry guts full of [ShortDesc of M] spunk, [NameDesc of N] is completely delerious, and no longer the confident Queen Turtle that [he of N] once was. [big he of N] is left, defeated and exhausted, trapped upside down on [his of N] shell, shooting huge spurts of [semen] out of [his of N] backside.";
+	if M is in the location of the player, say "[BigNameDesc of N] squeals as [NameDesc of M] grabs [him of N] by the arms and lifts [him of N] into the air.[line break][speech style of N]'What?! No, wait! You can't do this! I'M supposed to be the Big Bad Boss! AIIIIEEEEE!'[roman type][line break][BigNameDesc of M] completely ignores [NameDesc of N][']s pleas, and lowers [NameDesc of N][']s exposed asshole onto [his of M] giant shaft.[line break][speech style of N]'You're going to break me! Awoooooo!'[roman type][line break]That's the last coherent thing [NameDesc of N] says. Before long, [he of N] is a wailing mess of sexual disgrace as [NameDesc of M] does [his of M] best to turn [NameDesc of N] inside-out with [his of M] [manly-penis]. By the time [NameDesc of M] has pumped [his of N] sorry guts full of [ShortDesc of M] spunk, [NameDesc of N] is completely delirious, and no longer the confident Queen Turtle that [he of N] once was. [big he of N] is left, defeated and exhausted, trapped upside down on [his of N] shell, shooting huge spurts of [semen] out of [his of N] backside.";
 	otherwise say "You hear the sound of [NameDesc of N] shouting[line break][speech style of N]'You can't do this! I'M supposed to be the Big Bad Boss! AIIIIEEEEE!'[roman type][line break]from [if N is nearby]nearby![otherwise]somewhere in the [playerRegion]![end if]";
 	now N is fucked-silly.
 
@@ -309,7 +309,7 @@ Section 1 - Protect and Attack
 
 To compute tripping attack of (M - bowsette):
 	if egg laying fetish is 1 and the total fill of belly <= belly limit - 4 and a random number between 0 and 2 < the temperament of M:
-		say "[speech style of M]'[one of]Get egged[or]Have another turtle egg[stopping]!'[roman type][line break][BigNameDesc of M] suddenly cups [his of M] hands together and shoots a blast of magic towards your belly. Your innards experience excruciating cramping as they are forced to painfully stretch, thanks to the suddenly introduction of a giant egg, directly into your poor colon!";
+		say "[speech style of M]'[one of]Get egged[or]Have another turtle egg[stopping]!'[roman type][line break][BigNameDesc of M] suddenly cups [his of M] hands together and shoots a blast of magic towards your belly. Your innards experience excruciating cramping as they are forced to painfully stretch, thanks to the sudden introduction of a giant egg, directly into your poor colon!";
 		increase the large egg count of belly by 1;
 		add M to the large-egg-origins of belly;
 		PainUp 25;
@@ -431,7 +431,7 @@ Definition: bowsette-dq-punishments (called P) is appropriate:
 	decide no.
 
 To compute punishment of (P - bowsette-dq-punishments):
-	say "[BigNameDesc of bowsette] punches the air, and an invisible cube, hovering in mid-air, suddenly becomes visible where [he of bowsette] punched. There is a question mark icon on each side. Next, a giant purple mushroom appears from the top, and begins to somehow glide along the upper surface as if dragged by an invisible force, and then drops to the ground once it is progressed to the edge of the cube. From here, it begins to travel in a straight line towards you.[line break][speech style of bowsette]'Hold still now...'[roman type][line break][BigNameDesc of bowsette] holds you in place and prevents you from moving as the mushroom approaches you. When it finally touches you, there's a weird digital sound effect, and it just disappears. What has it done to you?!";
+	say "[BigNameDesc of bowsette] punches the air, and an invisible cube, hovering in mid-air, suddenly becomes visible where [he of bowsette] punched. There is a question mark icon on each side. Next, a giant purple mushroom appears from the top, and begins to somehow glide along the upper surface as if dragged by an invisible force, and then drops to the ground once it has progressed to the edge of the cube. From there, it begins to travel in a straight line towards you.[line break][speech style of bowsette]'Hold still now...'[roman type][line break][BigNameDesc of bowsette] holds you in place and prevents you from moving as the mushroom approaches you. When it finally touches you, there's a weird digital sound effect, and it just disappears. What has it done to you?!";
 	let R be a random number between 1 and 2;
 	if R is 1:
 		say "You realise that you can no longer feel your [if diaper messing >= 3]bowels[otherwise]bladder[end if].[line break][variable custom style][if the player is able to speak]'How long is this going to last?!'[line break][speech style of bowsette]'Oh for a good few accidents...'[otherwise]How long is this going to last?![end if][roman type][line break]";
@@ -494,7 +494,7 @@ To compute teaching of (M - bowsette):
 To say WhereAnswer of (M - bowsette):
 	say "[speech style of M]'This is a kingdom that is ruled over by a long-forgotten princess. Strange, I have a weird urge to... take it over.'[roman type][line break]".
 
-To say WhoAnswer of (M - bowsette): [###Selkie: I failed to think of a lewd teenage mutant ninja nephew joke for here]
+To say WhoAnswer of (M - bowsette):
 	say "[speech style of M]'I'm a Turtle Princess, [if the bowsette-origin of M is bowsette]as you've seen, a little slow and a little green, but on the whole I'd say, super-duper[otherwise]but as you know, I wasn't always this way[end if].'[roman type][line break]";
 
 To say StoryAnswer of (M - bowsette):

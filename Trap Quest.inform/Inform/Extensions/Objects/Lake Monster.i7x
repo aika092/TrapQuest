@@ -118,7 +118,7 @@ To compute lakeUnimpressed of (L - a lake monster) to (F - a fuckhole):
 		let C be a random thing penetrating F;
 		say "It rips your [printed name of C] out and discards it into the lake.";
 		destroy C;
-	say "It seems unimpressed that your [variable F] has yet to be filled, and wastes no time in forcing its way into your [if the openness of F < 5]tight [end if][variable F][unless the openness of vagina > 8], stretching it painfully as the tentacle's girth increases with depth[end if]. It starts fucking you with a slow rhythm.[if the number of fuckholes penetrated by L > 1]Now you're being double penetrated![end if]"; [###Selkie: this seems a more robust check than a-state or p-state of L > 1?]
+	say "It seems unimpressed that your [variable F] has yet to be filled, and wastes no time in forcing its way into your [if the openness of F < 5]tight [end if][variable F][unless the openness of vagina > 8], stretching it painfully as the tentacle's girth increases with depth[end if]. It starts fucking you with a slow rhythm.[if the number of fuckholes penetrated by L > 1]Now you're being double penetrated![end if]";
 	now L is penetrating F;
 	if F is vagina, increase the p-state of L by 2;
 	otherwise increase the a-state of L by 2.

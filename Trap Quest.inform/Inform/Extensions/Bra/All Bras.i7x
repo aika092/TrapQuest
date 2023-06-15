@@ -488,7 +488,7 @@ To set up influence of (C - a pasties):
 To decide which number is the initial outrage of (C - a pasties):
 	decide on 6.
 
-To decide which number is the chasrima-influence of (C - a pasties):
+To decide which number is the charisma-influence of (C - a pasties):
 	decide on 1 + the magic-modifier of C.
 
 To compute bra strain of (C - a pasties):

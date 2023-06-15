@@ -5,7 +5,7 @@ The printed name of mansion statue is "[TQlink of item described]statue[TQxlink 
 mansion statue has a number called charge.
 The text-shortcut of mansion statue is "sta".
 
-Definition: a mansion statue is immunie to change: decide yes.
+Definition: a mansion statue is immune to change: decide yes.
 
 MansionScenery01 is a mansion statue. MansionScenery01 is in Mansion36. Understand "statue", "woman", "statue's", "back", "butt", "leg", "legs" as MansionScenery01.
 Figure of MansionScenery01 is the file "Env/Mansion/statue1.jpg".

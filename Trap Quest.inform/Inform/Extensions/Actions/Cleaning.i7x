@@ -59,7 +59,8 @@ Check cleaning it with:[TODO: wiping into an open vessel]
 	if the player is not able to manually use their hands, do nothing instead;
 	if the player is immobile:
 		if the noun is glue:
-			[###Selkie: Hmm. This seems to cause a P47 "Phrase applied to an incompatible kind of value" when I tried "rub glue" which lead to cleaning the puddle of glue (Via "Rule for supplying a missing second noun while cleaning", above) with some denim jeans, and the game then said "You can only clean a body part".]
+			[Selkie: Hmm. This seems to cause a P47 "Phrase applied to an incompatible kind of value" when I tried "rub glue" which lead to cleaning the puddle of glue (Via "Rule for supplying a missing second noun while cleaning", above) with some denim jeans, and the game then said "You can only clean a body part".
+			Aika: Hopefully fixed maybe]
 			try GlueRubbing the noun on the second noun instead;
 		otherwise:
 			say "You're a bit busy at the moment." instead;

@@ -67,7 +67,7 @@ The stuck stuff prevents standing rule is listed in the ability to stand rules.
 
 To decide which number is the standing strength of the player:
 	[This is what the player uses to try and stand up. It is the strength of the player times 13, scaled down by body soreness 10% each time.]
-	decide on ((the strength of the player * 13) * (10 - the body soreness of the player)) / 10. [If you change this you need to change the debuginfo output in the main function below]
+	decide on ((10 + (the strength of the player * 10)) * (10 - the body soreness of the player)) / 10. [If you change this you need to change the debuginfo output in the main function below]
 
 To decide which number is the standing capability of the player: [If you change this you need to change the debuginfo output in the main function below]
 	if water-fountain is penetrating asshole, decide on 100; [always success]
@@ -143,7 +143,7 @@ Check standing:
 	Unless your weight count is greater than your strength plus 5, you will be able to try and crawl.
 	]
 	let R be a random number between 1 + (the standing capability of the player / 2) and the standing capability of the player;
-	if debuginfo > 0, say "[input-style]Stand up viability check: strength ([strength of the player]) * 13 = [the strength of the player * 13]; scaled by health ([10 - the body soreness of the player]0%) = [standing strength of the player][if the player is tired]; reduced by current fatigue ([fatigue of the player]) = [standing capability of the player][end if] | [standing challenge of the player] = ([the weight of the player]) weight [if ball-and-chain is worn]- (the heaviness of ball-and-chain) ignoring ball and chain weight [end if][if there are worn heels]+ ([3 + (the heel-height of a random worn heels * 2)]) heel penalty [end if][if the player is wrist bound]+ (3) wrist bondage penalty [end if][if the player is wrist bound behind]+ (7) wrists bound behind additional penalty[end if][roman type][line break]";
+	if debuginfo > 0, say "[input-style]Stand up viability check: strength ([strength of the player + 1]) * 10	= [10 + (the strength of the player * 10)]; scaled by health ([10 - the body soreness of the player]0%) = [standing strength of the player][if the player is tired]; reduced by current fatigue ([fatigue of the player]) = [standing capability of the player][end if] | [standing challenge of the player] = ([the weight of the player]) weight [if ball-and-chain is worn]- (the heaviness of ball-and-chain) ignoring ball and chain weight [end if][if there are worn heels]+ ([3 + (the heel-height of a random worn heels * 2)]) heel penalty [end if][if the player is wrist bound]+ (3) wrist bondage penalty [end if][if the player is wrist bound behind]+ (7) wrists bound behind additional penalty[end if][roman type][line break]";
 	if the standing capability of the player >= the standing challenge of the player:
 	[if this isn't true, then the player will never be able to stand up like this]
 		if debuginfo > 0, say "[input-style]Stand up check: d[standing capability of the player / 2]+[standing capability of the player / 2] ([R]) | [standing challenge of the player][roman type][line break]";

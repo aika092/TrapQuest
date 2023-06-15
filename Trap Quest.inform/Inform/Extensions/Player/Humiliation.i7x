@@ -413,6 +413,7 @@ To decide which number is DisgracePostImpact (N - a number):
 	decide on the square root of (ET * severity entry); [reputation damage]
 
 To decide which number is the public disgrace of the player:
+	if the number of filled rows in the Table of Published Disgraces is 0, decide on 0;
 	let PD be 0;
 	repeat with N running from 1 to the number of filled rows in the Table of Published Disgraces:
 		if there is a severity in row N of the Table of Published Disgraces, increase PD by DisgracePostImpact N;

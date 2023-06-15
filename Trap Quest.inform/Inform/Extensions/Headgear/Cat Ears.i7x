@@ -106,7 +106,7 @@ To compute hair growth of (H - stripper-ears):
 		if H is cursed, now X is -25;
 		if H is blessed, now X is 50;
 		if the largeness of hair < max hair length and a random number between 1 and (100 + X + (the fake largeness of hair * 7) - (the outrage of H * 3)) is 1 and the fake largeness of hair > 0 and the fake largeness of hair < 10:
-			say "Your [printed name of H] feels warm. You feel the fake hair extensions in your hair grow in length!";
+			say "Your [printed name of H] feels warm. You feel a slithering growth of your fake hair extensions!";
 			FakeHairUp 1.
 
 To set up influence of (C - stripper-ears):

@@ -123,16 +123,18 @@ To compute time out of (M - a monster):
 Report going up:
 	update player region;
 	if map images > 0, display entire map;
-	compute bladder cleanup;
-	if playerRegion is not school, compute puddle cleanup;
-	compute clothing cleanup.
+	if playerRegion is not school:
+		compute bladder cleanup;
+		compute puddle cleanup;
+		compute clothing cleanup.
 
 Report going down:
 	update player region;
 	if map images > 0, display entire map;
-	compute bladder cleanup;
-	if playerRegion is not school, compute puddle cleanup;
-	compute clothing cleanup.
+	if playerRegion is not school:
+		compute bladder cleanup;
+		compute puddle cleanup;
+		compute clothing cleanup.
 
 last-puddle-cleanup is a number that varies. last-puddle-cleanup is 999999.
 To compute puddle cleanup:
@@ -261,7 +263,7 @@ To decide which number is the movement reduction of the player:
 			if movement-reduction-flav-said is false and D > 0:
 				now movement-reduction-flav-said is true;
 				if WW is diaper, now T is the substituted form of "[if D > 6]Your comically exaggerated waddling caused by your extremely bloated [ShortDesc of WW] makes it almost impossible[otherwise if D > 4]Your extremely awkward waddling caused by your bloated [ShortDesc of WW] makes it extremely difficult[otherwise if D > 2]Your very awkward waddling caused by your bulky [ShortDesc of WW] makes it extremely difficult[otherwise]Your awkward walking caused by your [ShortDesc of WW] makes it difficult[end if] to move quickly!";
-				otherwise now T is the substituted form of "Your extremely awkward waddling caused by the magic effect of your [WW] makes it extremely difficult to move quickly!";
+				otherwise now T is the substituted form of "Your extremely awkward waddling caused by the magic effect of your [WW] makes it impossible to move quickly!";
 		if the player is squirming:
 			repeat with F running through insertable objects penetrating a fuckhole:
 				increase X by the girth of F / 3;

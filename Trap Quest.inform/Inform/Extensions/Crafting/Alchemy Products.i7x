@@ -1305,7 +1305,7 @@ To oil (B - a tattoo) with (S - erasure-salve):
 			try examining T;
 			now focused-thing is T;
 		otherwise:
-			say "You shudder with trepidation... But then nothing happens. Apparently the cursed magic just had no effect.[line break][variable custom style]Perhaps there's no room on my skin for any more tattoos.[roman type][line break]";
+			say "You shudder with trepidation... But then nothing happens. Apparently the cursed magic just had no effect.[line break][variable custom style]Perhaps there's no room on my skin for any more tattoos?[roman type][line break]";
 		now the noun is S; [try and avoid bugs with the noun switching mid-action]
 	otherwise:
 		say "[BigNameDesc of B] begins to fade away! It's working![paragraph break]Within a few seconds, it's completely gone!";

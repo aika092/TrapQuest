@@ -112,7 +112,7 @@ To SexChange (J - demon codpiece):
 		say "The [ShortDesc of J] disappears in a flash of scarlet flames!";
 		destroy J;
 	otherwise if the player is not possessing a penis and cumlust tattoo is actually summonable and there is a worn tattoo:
-		say "The [ShortDesc of J] disappears in a flash of scarlet flames, leaving behind a red symbol that lights up as it draws a pair of puckered lips where your penis used to be!"; [###Selkie: ooh, nice! I'd *love* to see an Icarus cut scene for *that*!]
+		say "The [ShortDesc of J] disappears in a flash of scarlet flames, leaving behind a red symbol that lights up as it draws a pair of puckered lips where your penis used to be!";
 		summon cumlust tattoo;
 		destroy J;
 	otherwise:

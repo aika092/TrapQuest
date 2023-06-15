@@ -351,7 +351,7 @@ To compute periodic effect of (I - living belt of sturdiness):
 							say "The tentacle, unable to enter your occupied [vagina], spanks your butt in frustration![line break][variable custom style][one of]Owwwww[or]Ouch[or]Fuck[or]Owiee[purely at random]![roman type][line break]";
 							BodyRuin 1;
 						otherwise:
-							say "[if A is diaper]It slides in past the leghole of [NameDesc of A]. [end if][if the openness of vagina < 8]With a moderate amount of effort and force, it manages to make its way in![otherwise]The tentacle slides into your loose hole with ease![end if]";
+							say "[if A is diaper]It slides in past the leghole of [NameDesc of A]. [end if][if the openness of vagina < 8]With a moderate amount of effort and force, it manages to squirm its way in![otherwise]The tentacle slides into your loose hole with ease![end if]";
 							now the living belt of sturdiness is penetrating vagina;
 							appropriate-cutscene-display figure of living belt of sturdiness cutscene 1;
 	otherwise:

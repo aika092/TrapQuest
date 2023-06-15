@@ -12,6 +12,7 @@ Understand "crotch", "groin" as penis when the player is not possessing a vagina
 
 penis has a number called size. The size of penis is usually 0.
 To decide which number is the effective size of (P - penis):
+	if the player is not possessing a penis, decide on 0;
 	if players-dick-is-detached > 0, decide on 0;
 	let C be a random worn chastity bond;
 	if C is a thing, decide on the penis-size-cap of C;
@@ -631,7 +632,7 @@ To OnlyPenisUp (X - a number):
 
 penis-flav is initially true.
 
-[This function is to be used when we don't want text output, it could be because we're in the middle of outputing some text. So this turns off the text output when the sexchange happens.
+[This function is to be used when we don't want text output, it could be because we're in the middle of outputting some text. So this turns off the text output when the sexchange happens.
 NB: that means if you use this function and it reduces the penis size below the minimum at which sexchange should normally occur, then sexchange won't happen unless the player somehow increases it so there's a chance the penis will cross that borderline a second time.]
 To SilentlyPenisDown (X - a number):
 	now penis-flav is false;
@@ -645,7 +646,6 @@ To PenisDown (X - a number):
 [X is not how much the penis shrinks, but how many times it does so]
 To OnlyPenisDown (X - a number):
 	now previous penis length is the size of penis;
-	[let flav-said be 0; [###Selkie: flav-said is not used here]]
 	if X > 0:
 		if the player is sexed male and the size of penis <= min penis size:
 			if penis-flav is true, say "You feel a strange pang in your crotch... you feel that your penis[if players-dick-is-detached > 0 and players-detached-dick is not in the location of the player], wherever it may be,[end if] tried to shrink even further, but [if the player is not possessing a penis]since you have nothing left, it can't[otherwise if the size of penis < 4]it's so tiny that it can't get any smaller[otherwise]something prevents it[end if]!";

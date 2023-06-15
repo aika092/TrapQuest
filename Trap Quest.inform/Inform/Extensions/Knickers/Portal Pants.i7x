@@ -190,7 +190,7 @@ To decide which figure-name is clothing-image of (C - giant-teddy):
 	decide on figure of giant teddy diapered.
 
 To say ClothingDesc of (K - giant-teddy):
-	say "This giant teddy bear has an in-built fleshlight where its bottom should be, and a pacifier with a large bulbous teat stuck to the back of its head. It's so heavy that you can only hold it up properly by keeping your arms arms under its armpits, holding the large teat in your mouth, and keeping your [player-penis] in the hole at the bottom. If any of it comes out, not only will you be exposed to the world, but you won't be able to get it back in place.";
+	say "This giant teddy bear has an in-built fleshlight where its bottom should be, and a pacifier with a large bulbous teat stuck to the back of its head. It's so heavy that you can only hold it up properly by keeping your arms under its armpits, holding the large teat in your mouth, and keeping your [player-penis] in the hole at the bottom. If any of it comes out, not only will you be exposed to the world, but you won't be able to get it back in place.";
 	if K is worn:
 		if watersports fetish is 0 or diaper quest is 0, say "The battery powered fleshlight is fervently masturbating you. ";
 		if watersports fetish is 1, say "The bear also has a hidden internal mechanism that pumps anything that comes out of your [player-penis] into your mouth...";

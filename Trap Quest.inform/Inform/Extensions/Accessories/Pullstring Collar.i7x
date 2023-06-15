@@ -53,7 +53,7 @@ Check pulling pullstring collar:
 				OralSexAddictUp 1;
 			otherwise if the semen taste addiction of the player > the semen addiction of the player:
 				if bukkake fetish is 1, say "'[if the semen addiction of the player < 6]Getting coated in jizz might be gross, but it's what sluts like me deserve!'[otherwise if the semen addiction of the player < 11]The next time a stud cums on my face, I'm going to wear it with pride!'[otherwise]Cum in my holes, cum in my hair! I want [his of male-m] cum everywhere!'[end if][roman type][line break]";
-				otherwise say "'[if the semen addiction of the player < 6]That gross sticky feeling after sex helps remind sluts like me what disgusting sluts we are!'[otherwise if the semen addiction of the player < 11]I say NO to condoms! Raw sex is the best!'[otherwise]You want to use a condom? Sure, I'll be your condom! Fill me up to the brim with your spunk, captain! I'll keep it safe! Tee-hee.'[end if][roman type][line break]";
+				otherwise say "'[if the semen addiction of the player < 6]That gross sticky feeling after sex helps remind bitches like me what disgusting sluts we are!'[otherwise if the semen addiction of the player < 11]I say NO to condoms! Raw sex is the best!'[otherwise]You want to use a condom? Sure, I'll be your condom! Fill me to the brim with your spunk, captain! I'll keep it safe! Tee-hee.'[end if][roman type][line break]";
 				say "You feel more [if the semen addiction of the player < 13]comfortable with the idea of getting[otherwise]eager to get[end if] [if bukkake fetish is 1]covered and filled with [semen][otherwise]creampied[end if].";
 				SemenAddictUp 1;
 			otherwise:

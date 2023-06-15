@@ -48,7 +48,7 @@ To decide which number is cumulative-outrage-level:
 	let N be -1; [How many items are at least half as lewd as A?]
 	[let maxSimilarItems be 4;] [optimized by just hardcoding the number 4 in everywhere]
 	repeat with X running from A2 to A:
-		if N < 4, increase N by entry X in outrage-level-counts; [if it's over 4, we don't need to keep doing this]
+		if X > 0 and N < 4, increase N by entry X in outrage-level-counts; [if it's over 4, we don't need to keep doing this]
 	if N > 4, now N is 4;
 	decrease A by (A3 * (4 - N)) / 4; [The more items there are within 50% of A, the less we subtract from A. And if there are lots of lewd items within 50% of A, appearance hits its max value for this item, i.e. its raw outrage rating. If N is 0 then we decrease A by A3. If N is 4 we decrease A by 0.]
 	if appearance-explained is 1, say "(cumulative outrage level is [A]) ";

@@ -66,7 +66,7 @@ To say ClothingDesc of (W - rubber mittens):
 
 To say ClothingDesc of (W - black rubber mittens):
 	say "A pair of large black latex mittens. You lose some manual dexterity and some slapping power from wearing them.";
-	if the player is an adult baby and W is worn, say "You feel much, much better at running away from monsters whilst on your knees.".
+	if the player is an adult baby and W is worn, say "You feel much, much better at scooting away from monsters whilst on your knees.". [Or: crawling away?]
 
 To say ClothingDesc of (W - blue rubber mittens):
 	say "A pair of large blue latex mittens. You lose some manual dexterity and some slapping power from wearing them.";

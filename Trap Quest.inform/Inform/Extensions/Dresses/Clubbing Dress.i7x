@@ -83,7 +83,7 @@ A black clubbing dress is a kind of clubbing dress. There is 1 black clubbing dr
 
 Definition: a black clubbing dress is fluid immune: decide yes.
 Definition: a black clubbing dress is black themed: decide yes.
-Definition: a black clubbing dress is layer-concealing: decide no. [partially exposes clothing undearneath]
+Definition: a black clubbing dress is layer-concealing: decide no. [partially exposes clothing underneath]
 Definition: a black clubbing dress is partially-layer-concealing: decide yes.
 
 The printed name of black clubbing dress is usually "[clothing-title-before]black clubbing dress[clothing-title-after]".

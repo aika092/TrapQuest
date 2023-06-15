@@ -191,6 +191,7 @@ To compute ghost hatch of (E - an egg):
 		decrease totalSlimes by 1;
 		let L be a random off-stage slimeball;
 		if L is slimeball:
+			set up L;
 			if flav-said is 0:
 				if E is held or E is in the location of the player, say "[BigNameDesc of E] [if E is small egg]shudders and morphs into an animated blob of slime[otherwise if E is medium egg]cracks open, revealing two animated blobs of slime, that begin to hop about[otherwise]cracks open, revealing four animated blobs of slime, that begin to hop about.[one of][line break][variable custom style]What in the world?[roman type][line break][or][stopping]";
 				now flav-said is 1;

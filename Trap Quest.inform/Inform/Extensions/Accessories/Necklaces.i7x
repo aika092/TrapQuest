@@ -70,7 +70,7 @@ To decide which figure-name is clothing-image of (C - anchor collar):
 	decide on figure of anchor collar.
 
 To say ClothingDesc of (C - anchor collar):
-	say "This shiny golden collar has a golden ornament in the shape of an anchor dangling from it. You feel like you are more steady on your feet, and therefore half as likely to trip over.".
+	say "This shiny golden collar has a golden ornament in the shape of an anchor dangling from it. You feel like you are more steady on your feet, and therefore half as likely to trip.".
 To say ShortDesc of (C - anchor collar):
 	say "anchor collar".
 

@@ -552,7 +552,7 @@ To decide which number is the sex-addiction-influence of (T - brain tattoo):
 A magic consequences rule (this is the brain tattoo consequences rule):
 	if brain tattoo is worn:
 		if the tattoo-state of brain tattoo is 0 and the player is getting lucky:
-			say "[bold type]The magic fizzles against your brain tattoo, and it transforms! [roman type]It now has a [']toggle on['] icon next to it, and you can feel it singificantly improving your intelligence! Wow! [GotLuckyFlav]";
+			say "[bold type]The magic fizzles against your brain tattoo, and it transforms! [roman type]It now has a [']toggle on['] icon next to it, and you can feel it significantly improving your intelligence! Wow! [GotLuckyFlav]";
 			increase the tattoo-state of brain tattoo by 1;
 			cutshow examine-image of brain tattoo for brain tattoo;
 		otherwise if the tattoo-state of brain tattoo is 1 and the player is getting very unlucky:

@@ -36,7 +36,8 @@ To say DisplaceFlav of (C - milking harness):
 	say "You remove the plug of the [ShortDesc of C] from your [asshole].".
 
 To say ReplaceFlav of (C - milking harness):
-	say "You push the plug of the [ShortDesc of C] back into your [asshole].";[###Selkie: I wonder if there should be some varying-text function for extra humiliation for when the player is self-inserting objects; especially when they're being observed?]
+	say "You push the plug of the [ShortDesc of C] back into your [asshole].";[Selkie: I wonder if there should be some varying-text function for extra humiliation for when the player is self-inserting objects; especially when they're being observed?
+	Aika: Absolutely that is something on my TODO list.]
 	ruin asshole.
 
 outrageous-milking-harness is a humiliating situation.

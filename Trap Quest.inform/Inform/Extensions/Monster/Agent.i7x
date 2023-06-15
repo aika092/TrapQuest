@@ -77,7 +77,7 @@ To compute labour to (M - agent):
 	if M is regional and M is alive:
 		compute pregnancy clothing displacement;
 		let MD be a random maternity dress;
-		say "[PregFlav][if the father is in the location of the player]The [father][otherwise]The [father] appears almost as if on cue! [big he of M][end if] kneels down on one knee and [if mythical creatures fetish is 1]you both watch as a disgusting pig's head begins to emerge from your vagina. This baby is just as much an agent as its father! You groan in despair as the half-pig baby slowly emerges from your womb[otherwise]delivers the beautiful mixed race human baby[end if]. [big he of M] takes it into [his of M] arms and begins to cradle it.[line break][first custom style]'A baby boy! [if the father is mating]A wonderful addition to our growing horde[otherwise]My first child. I will train him in the ways of agent culture, and when he comes of age, perhaps he will be a great enough leader lead an assault on a human settlement and kidnap all their women. We can dream[end if][if MD is not held]. Here, take this[end if].'[roman type][line break]";
+		say "[PregFlav][if the father is in the location of the player]The [father][otherwise]The [father] appears almost as if on cue! [big he of M][end if] kneels down on one knee and [if mythical creatures fetish is 1]you both watch as a disgusting pig's head begins to emerge from your vagina. This baby is just as much an agent as its father! You groan in despair as the half-pig baby slowly emerges from your womb[otherwise]delivers the beautiful mixed race human baby[end if]. [big he of M] takes it into [his of M] arms and begins to cradle it.[line break][first custom style]'A baby boy! [if the father is mating]A wonderful addition to our growing horde[otherwise]My first child. I will train him in the ways of agent culture, and when he comes of age, perhaps he will be a great enough warrior to lead an assault on a human settlement and kidnap all their women. We can dream[end if][if MD is not held]. Here, take this[end if].'[roman type][line break]";
 		if MD is not held:
 			blandify and reveal MD;
 			now MD is in the location of the player;
@@ -301,7 +301,7 @@ To compute title of (P - second-agent-poster):
 	otherwise now the title of P is "HYPNOTIZED AND FILLED".
 
 To say ShortDesc of (P - second-agent-poster):
-	say "A grainy photo of the [MediumDesc of agent] standing over you, and [if diaper quest is 0]plowing you[otherwise]filling you to the brim with giant enema syringes[end if] from behind. You're completely naked, and your face looks blank and expressionless. ".
+	say "A grainy photo of the [MediumDesc of agent] standing over you, and [if diaper quest is 0]plowing you[otherwise]filling you to the brim with giant enema syringes[end if] from behind. You're completely naked, your face blank and expressionless. ".
 
 To say ExamineDesc of (C - second-agent-poster):
 	say ShortDesc of C;
@@ -354,13 +354,13 @@ To compute agent anal:
 		if the soreness of asshole < 10:
 			increase the soreness of asshole by 4;
 			if the soreness of asshole > 10, now the soreness of asshole is 10;
-			if the agent-scene of agent is 2, say "[bold type]You feel like you suddenly notice that your [asshole] is more sore [if the openness of asshole < the girth of agent]and more gaped [end if]than it was before. And as your belly gurlges, you realise that your rectum feels like it's been filled with an anal creampie...[line break][variable custom style]What in the world?![roman type][line break]";
+			if the agent-scene of agent is 2, say "[bold type]You feel like you suddenly notice that your [asshole] is more sore [if the openness of asshole < the girth of agent]and more gaped [end if]than it was before. And as your belly gurgles, you realise that your rectum feels like it's been filled with an anal creampie...[line break][variable custom style]What in the world?![roman type][line break]";
 		if the openness of asshole < the girth of agent, now the openness of asshole is the girth of agent;
 		if the agent-scene of agent > 2, say "[bold type]It's with mild horror that you notice that your [asshole] is once again suddenly sore, gaped and filled with [semen]. [roman type][if agent is agent-identified][BigNameDesc of agent] must have mind controlled you, assfucked you, and wiped your memory again!!![line break][variable custom style]I've got to find that bitch, and slap [his of agent] sunglasses off![otherwise][variable custom style]Why?! How?![end if][roman type][line break]";
 	otherwise:
 		let N be belly limit - the total squirtable fill of belly;
 		AssFill N water;
-		if the agent-scene of agent is 2, say "[bold type]Your belly gurlges, and you realise that your belly is huge and round, inflated to the brim with an enema![line break][variable custom style]What in the world?![roman type][line break]";
+		if the agent-scene of agent is 2, say "[bold type]Your belly gurgles, and you realise that your belly is huge and round, inflated to the brim with an enema![line break][variable custom style]What in the world?![roman type][line break]";
 		otherwise say "[bold type]It's with mild horror that you notice that your belly has once again been inflated to maximum size by a giant enema. [roman type][if agent is agent-identified][BigNameDesc of agent] must have mind controlled you, assfucked you, and wiped your memory again!!![line break][variable custom style]I've got to find that bitch, and slap [his of agent] sunglasses off![otherwise][variable custom style]Why?! How?![end if][roman type][line break]";
 	increase the agent-scene of agent by 1; [this minus 2 is the number of times it's happened already]
 	compute refractoryReset of agent.

@@ -312,7 +312,7 @@ Are breasts going to fail to grow any further?
 
 +!]
 Definition: yourself is top heavy:
-	if the largeness of breasts >= max breast size or there is worn breast hiding clothing, decide yes;
+	if diaper quest is 1 or the largeness of breasts >= max breast size or there is worn breast hiding clothing, decide yes;
 	decide no.
 
 To decide which number is max breast size:

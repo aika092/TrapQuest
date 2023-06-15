@@ -465,7 +465,7 @@ To compute GlueMorphingInto of (G - a glue) to (C - a clothing):
 	if C is headgear:
 		summon C cursed;
 	otherwise:
-		summon C;
+		summon C uncursed;
 		gluify C;
 	say "The [active-colour of G] glue suddenly starts spreading out across you, rippling as a change runs through it. Before your eyes it transforms into a [printed name of C], tightly wrapping you!";
 	decrease the stickiness of the player by 1;
@@ -577,15 +577,14 @@ To compute the mutation effects of (G - a glue):
 			otherwise:
 				say "You see the black goo shimmer, trying to take some kind of shape![line break]";
 				let C be nothing;
-				now X is 0;
+				[now X is 0;]
 				while X < 8:
-					increase X by 1;
 					if X is 1:
-						now C is a random off-stage black rubber stockings;
+						now C is a random off-stage vibrating plug panties;
 					otherwise if X is 2:
-						now C is a random off-stage rubber vest top;
+						now C is a random off-stage black rubber stockings;
 					otherwise if X is 3:
-						now C is a random off-stage black rubber skirt;
+						now C is a random off-stage rubber vest top;
 					otherwise if X is 4:
 						if ballet heels is off-stage, now C is ballet heels;
 					otherwise if X is 5 and black-catsuit is off-stage:
@@ -597,15 +596,53 @@ To compute the mutation effects of (G - a glue):
 					otherwise if X is 8 and black hood is off-stage:
 						now C is black hood;
 					if C is actually summonable, break;
+					increase X by 1;
 				if C is actually summonable:
 					compute GlueMorphingInto of G to C;
 				otherwise:
 					say "... but then the blackish shape fuzzes out into decoherence.";
 					now X is 0; [flag that the effect failed]
-					[###Selkie: Yeah, after a few successes, this starts failing, and keeps failing from then on: it's used up the 2 or 3 of the above items that actually exist in the game, perhaps? In which case, maybe detect that via a global variable and do some other effect from then on, instead.
+					[Selkie: Yeah, after a few successes, this starts failing, and keeps failing from then on: it's used up the 2 or 3 of the above items that actually exist in the game, perhaps? In which case, maybe detect that via a global variable and do some other effect from then on, instead.
 					I wonder if the glue trap should also have the possibility to start the latex-transformation, if certain rare conditions are met?]
 			if X is 0:
-				do nothing; [Could add more effects here]
+				let P be a random worn plug panties;
+				if P is plug panties: [plugs grow and vibrate]
+					if the size of P < 10:
+						say "The in-built plug[if the player is possessing a vagina]s of [NameDesc of P] simultaneously vibrate and swell[otherwise] of [NameDesc of P] simultaneously vibrates and swells[end if] in size!";
+						increase the size of P by 1;
+					otherwise:
+						say "The in-built plug[if the player is possessing a vagina]s of [NameDesc of P] fuck[otherwise] of [NameDesc of P] fucks[end if] you like some sort of living tentacle!";
+						ruin asshole times 1;
+						if the player is possessing a vagina, ruin vagina;
+					ruin asshole times 1;
+					if the player is possessing a vagina, ruin vagina;
+				otherwise: [black tentacles]
+					let F be asshole;
+					if the player is possessing a vagina and a random number between 1 and 2 is 1, now F is vagina;
+						let K be a random worn top level ass protection clothing;
+						if F is vagina, let K be a random top level protection clothing;
+						say "A thick black tentacle forms out of the black goop, and the tip surges towards your [variable F]! ";
+						if K is clothing:
+							if K is rippable:
+								if the armour of K < the damage of K or K is crotch-zipped:
+									say "[if K is crotch-zipped]The tentacle finds the zipper and easily forces its way through![otherwise]The tentacle pushes straight through your [ShortDesc of K], it's now permanently ripped![end if]";
+									ZipOrRip K;
+								otherwise:
+									say "The [clothing-material of K] is weakening!";
+									damage K;
+							otherwise if K is displacable:
+								say "The tentacle pulls your [if K is hobble-skirted]skirt up, exposing your crotch[otherwise if K is trousers]waistband down to your knees[otherwise]crotch section to one side[end if]!";
+								displace K;
+							otherwise:
+								say "The tentacle prods with frustration against [NameDesc of K], unable to get it off!";
+						otherwise if F is actually occupied:
+							let T be a random thing penetrating F;
+							say "It slams against [NameDesc of T], sending powerful reverberations down your body!";
+						otherwise:
+							say "It slides inside, punching high up inside you before pulling straight back out!";
+							now G is penetrating F;
+							ruin F;
+							now G is not penetrating F;
 		otherwise if the active-colour of G is whiteish:
 			now X is a random number between 1 and 3;
 			if lactation fetish is 0 and X is 1, increase X by a random number between 1 and 2;
@@ -728,7 +765,7 @@ When rubbed on clothes, they become "glued".
 When "glued" clothes are worn, they can only be removed by tearing them off.
 +!]
 
-Check GlueRubbing:
+Check GlueRubbing it on:
 	[if the noun is not glue and the noun is not ectoplasm, say "I understood the verb as you wanting to apply glue, but then the noun was not glue." instead;]
 	if the noun is glue and the second noun is not glue, try GlueRubbing the second noun on the noun instead;
 	if the second noun is not glue, say "This verb is for rubbing glue on things." instead;
@@ -786,7 +823,7 @@ Check GlueRubbing:
 ]
 	if glue-strength of the second noun is 0, destroy the second noun.
 
-Report GlueRubbing:
+Report GlueRubbing it on:
 	allocate 6 seconds.
 
 [Monsters smelling glue is handled in the compute action of (... - a monster) function]

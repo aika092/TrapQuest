@@ -59,7 +59,7 @@ To decide which figure-name is the clothing-image of (F - purple-pom-pom):
 	decide on figure of pom poms.
 
 To say ClothingDesc of (C - purple-pom-pom):
-	say "A pair of purple pom-poms. You lose some manual dexterity from wearing them, and your slaps don't do anything. But you feel like you could [bold type]jump[roman type] and [bold type]kick[roman type] for hours! They are making you feel extra-lucky. Furthermore, you can sense that the more slutty you look, the more they will enhance your agility.".
+	say "A pair of purple pom-poms. You lose some manual dexterity from wearing them, and your slaps don't do anything. But you feel like you could [bold type]jump[roman type] and [bold type]kick[roman type] for hours! They are making you feel extra-lucky. Furthermore, you can sense that the sluttier you look, the more they will enhance your agility.".
 
 To say MediumDesc of (C - purple-pom-pom):
 	say "pair of purple pom-poms".
@@ -93,7 +93,7 @@ To decide which figure-name is the clothing-image of (F - condom-pom-pom):
 	decide on figure of condom pom poms.
 
 To say ClothingDesc of (C - condom-pom-pom):
-	say "A pair of pom-poms made entirely out of used condoms. You lose some manual dexterity from wearing them, and your slaps don't do anything. But you feel like you could [bold type]jump[roman type] and [bold type]kick[roman type] for hours! They are making you feel extra-lucky. Furthermore, you can sense that the more slutty you look, the more they will enhance your agility.".
+	say "A pair of pom-poms made entirely out of used condoms. You lose some manual dexterity from wearing them, and your slaps don't do anything. But you feel like you could [bold type]jump[roman type] and [bold type]kick[roman type] for hours! They are making you feel extra-lucky. Furthermore, you can sense that the more you look like a slut, the more they will enhance your agility.".
 
 To say MediumDesc of (C - condom-pom-pom):
 	say "pair of condom pom-poms".

@@ -44,7 +44,7 @@ To compute generic class reward of (Q - asshole-presenting-quest) on (C - a clot
 			heal F times 5;
 		now the fatigue of the player is 0;
 	otherwise:
-		say "shrinking the length of your hair!";
+		say "shrinking the length of your hair! Is this game treating you like a Barbie doll?";
 		HairDown 1.
 
 Part - Pink Sissy Bow

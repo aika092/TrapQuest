@@ -225,13 +225,13 @@ A time based rule (this is the patron encountering rule):
 			if debuginfo > 1, say "[input-style]Patron wandering check: ([patronTime] turns) --> d[patronTime] ([R]) | 15.5[roman type][line break]";
 			now patronTime is 0;
 			let H be a random hotel bed in the location of the player;
-			if the player is the donator and a2m fetish >= 2 and H is a thing and the number of monsters in the location of the player is 0 and woman-player is in the hotel and the patron-scene-done of woman-player is 0 and woman-player is friendly and the woman-status of woman-player < 10 and the player is getting unlucky:
+			if a2m fetish >= 2 and H is a thing and the number of monsters in the location of the player is 0 and woman-player is in the hotel and the patron-scene-done of woman-player is 0 and woman-player is friendly and the woman-status of woman-player < 10 and the player is getting unlucky:
 				now woman-player is in the location of the player;
 				say "[BigNameDesc of woman-player] wanders into the room. [if woman-player is uninterested][big he of woman-player] seems happy to see you![line break][speech style of woman-player]'Oh [NameBimbo], fancy bumping into you here! I was just checking out the... wait, what's that sound?'[roman type][end if][line break][GotUnluckyFlav]";
 			if H is a thing and the number of monsters in the location of the player is 0:
 				compute PatronSpawning of H;[sometimes beds will just activate]
 				now the alert of the player is 1;
-			otherwise if the player is the donator and a2m fetish >= 2 and H is a thing and the number of monsters in the location of the player is 1 and woman-player is in the location of the player and the patron-scene-done of woman-player is 0 and woman-player is friendly:
+			otherwise if a2m fetish >= 2 and H is a thing and the number of monsters in the location of the player is 1 and woman-player is in the location of the player and the patron-scene-done of woman-player is 0 and woman-player is friendly:
 				compute patron scene of woman-player;
 			otherwise if diaper quest is 1 and the player is in Hotel38 and the human-toilet-scene of woman-player is 2:
 				let P be a random off-stage generic-appropriate patron;
@@ -259,7 +259,7 @@ A time based rule (this is the patron encountering rule):
 					otherwise:
 						if trashcan is worn and trashcan is trash-ready:
 							if the tissue-fill of trashcan < 2:
-								say "[BigNameDesc of P] enters the room! [big he of P] spots [NameDesc of trashcan].[line break][speech style of P]'[one of]Ah, just what I needed. My pockets were overflowing[or]Looks like you've got a bit of spare room[stopping]!'[roman type][line break][big he of P] produces a frankly horrific number of slimy [semen]-soaked tissues, which [he of P] desposits in [NameDesc of trashcan].";
+								say "[BigNameDesc of P] enters the room! [big he of P] spots [NameDesc of trashcan].[line break][speech style of P]'[one of]Ah, just what I needed. My pockets were overflowing[or]Looks like you've got a bit of spare room[stopping]!'[roman type][line break][big he of P] produces a frankly horrific number of slimy [semen]-soaked tissues, which [he of P] deposits in [NameDesc of trashcan].";
 								increase the tissue-fill of trashcan by 1;
 							otherwise:
 								say "[BigNameDesc of P] enters the room! [big he of P] drops a used condom on top of [NameDesc of trashcan], without even bothering to look you in the eyes.";
@@ -320,6 +320,7 @@ To compute patronMeeting of (M - toilet) with (P - a patron):
 	if human-toilet-key is in Holding Pen and the human-toilet-scene of woman-player > 1 and the player is able to speak:
 		say "[BigNameDesc of P] wanders into the room! You see [him of P] toying with the key for the toilet bondage in one of [his of P] hands. Do you beg [him of P] for the key? ";
 		if the player is consenting:
+			now P is not pissed off;
 			now patronBarter is 1;
 			if the player is upright:
 				say "You drop to your knees.";
@@ -344,7 +345,7 @@ To compute patronMeeting of (M - toilet) with (P - a patron):
 				if the player is bimbo consenting:
 					say "[BigNameDesc of P] smiles widely as you press the powerful vibrator against your crotch.[line break][speech style of P]'Wow, calm down you pervert, you didn't have to grab it off me quite so eagerly, you know! Masturbating in front of strangers is nothing to be proud of.'[roman type][line break]You burn red with shame as you pleasure yourself in front of [him of P]. But no matter how humiliated you feel, that doesn't stop what happens next.";
 					vaginally orgasm shamefully;
-					say "[speech style of P]'Hahaha, what a show! As promised, here's the key[if freedom tattoo is drawable]... but here's a little secret. If you put this in the chute in the inspiration room, it'll give you a magic tattoo that will make you much faster. And if you choose to do that, instead of rescuing [him of woman-player]... nobody except me and Potty-Face over there will ever know. I'll leave the decision up to you[end if].'[roman type][line break]"; [###Selkie: this would be a fun place for a random chance of a camera snapshot followed by a further taunt.]
+					say "[speech style of P]'Hahaha, what a show! As promised, here's the key[if freedom tattoo is drawable]... but here's a little secret. If you put this in the chute in the inspiration room, it'll give you a magic tattoo that will make you much faster. And if you choose to do that, instead of rescuing [him of woman-player]... nobody except me and Potty-Face over there will ever know. I'll leave the decision up to you[end if].'[roman type][line break]";
 					now human-toilet-key is in the location of the player;
 					compute autotaking human-toilet-key;
 				otherwise:
@@ -1778,7 +1779,7 @@ To say (M - a patron) sex reaction:
 
 Section 2 - DQ
 
-[we need to change how satify and bore work so that the patrons compute their payment functions at the end of diaper quest punishments, with satisfy meaning payment, and bore meaning no payment.]
+[we need to change how satisfy and bore work so that the patrons compute their payment functions at the end of diaper quest punishments, with satisfy meaning payment, and bore meaning no payment.]
 To satisfy (M - a patron) for (N - a number) seconds:
 	dislodge M;
 	compute common boredom of M for N seconds;
@@ -1865,7 +1866,7 @@ To say SpankingMercyRejectionFlav of (M - a patron):
 	say "[speech style of M]'[if M is pissed off]There's no chance of that, you little brat!'[otherwise if M is dickhead patron]Do I look like the sort of [man of M] who goes easy on whiny little bitches like you?'[otherwise]No no baby, I'm determined to get my money's worth today. You'll take what you're given.'[end if][roman type][line break][BigNameDesc of M] has an evil smile on [his of M] face.".
 
 To say SoftSpankingFlav of (M - a patron):
-	say "[BigNameDesc of M] hesitates, and then [he of M] delivers just weak, playful blows to your [buttcheeks] with [his of M] hand. [if there is a worn diaper]Your [random worn diaper] softens the blows even further, so that they just feel like gentle pats. [end if][line break][speech style of M]'I guess we are supposed to just be roleplaying, after all.'[roman type][line break][BigNameDesc of M] soon grows bored, and then lets you go.";
+	say "[BigNameDesc of M] hesitates, and then [he of M] delivers just weak, playful blows to your [buttcheeks] with [his of M] hand. [if there is a worn diaper]Your [random worn diaper] softens the blows even further, so that they just feel like gentle pats. [end if][line break][speech style of M]'I guess we are supposed to just be role-playing, after all.'[roman type][line break][BigNameDesc of M] soon grows bored, and then lets you go.";
 	compute payment of M.
 
 To say SpankingFlav of (M - a patron):
@@ -2072,7 +2073,7 @@ To penetration dominate (M - an inexperienced patron):
 			say AfterDominationComment 10 of M;
 			FuckGet;
 		otherwise:
-			say "You [if C is clothing]pull out your [sexual-player-penis][otherwise]poke your [sexual-player-penis] to hardness[end if] as you push [NameDesc of M] onto the bed.[line break][speech style of M]'Wait. Isn't that too small? Why don't I just pay you and then we'll call it even.'[roman type][line break][big he of M] reaches into [his of M] shirt pocket and tosses a jewel your way."; [###Selkie: I think this deserves a humiliation increase]
+			say "You [if C is clothing]pull out your [sexual-player-penis][otherwise]poke your [sexual-player-penis] to hardness[end if] as you push [NameDesc of M] onto the bed.[line break][speech style of M]'Wait. Isn't that too small? Why don't I just pay you and then we'll call it even.'[roman type][line break][big he of M] reaches into [his of M] shirt pocket and tosses a jewel your way. [moderateHumiliateReflect]";
 			loot M;
 			now player-fucking is DOMINANT-NEUTRAL;
 			say AfterDominationComment 9 of M;
@@ -2094,7 +2095,7 @@ To penetration dominate (M - a patron):[dickhead patron]
 			FuckGet;
 		otherwise:
 			say "You make [NameDesc of M] kneel down on the bed, excitedly grinding your [SexDesc of penis] between [his of M] cheeks.[line break][speech style of M]'OK, OK, you're going to punish me if I don't pay. I read the brochure, I know all about it. Greedy bitch...'[roman type][line break][big he of M] reaches into [his of M] shirt pocket and tosses a jewel your way. You were actually serious about fucking [him of M], but you decide to just cut your losses and roll with it.";
-			loot M;[###Selkie: Note to self - there are some obvious fun humiliation scene ideas I'd like to add here.]
+			loot M; [Selkie: Note to self - there are some obvious fun humiliation scene ideas I'd like to add here.]
 			say AfterDominationComment 9 of M;
 		store M after tricks;
 	otherwise:

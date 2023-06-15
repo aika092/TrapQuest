@@ -277,9 +277,12 @@ To check dungeon release of (M - a monster):
 	if dungeon-favour >= 3 or dungeon-events >= 5:
 		say "[speech style of M]'I guess you have served your time.'[roman type][line break][BigNameDesc of M] releases you from the ankle chains!";
 		now dungeon chains is in the location of the player;
-		repeat with C running through worn locked clothing:
-			say "[big he of M] unlocks your [ShortDesc of C]!";
-			unlock C;
+		if bondage protection > 0:
+			repeat with C running through worn locked clothing:
+				let K be a random unlock-key covering C;
+				unless K is a thing and K is not held by current-monster and bondage protection < 2:
+					say "[big he of M] unlocks your [ShortDesc of C]!";
+					unlock C;
 		only summon armband;
 		say "Your [ShortDesc of armband] reappears on your arm!";
 		repeat with N running through fucked-silly staff members:

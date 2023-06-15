@@ -277,8 +277,9 @@ A monster can be unleashed, caged, guarding, unconcerned, fucked-silly, sex-ensl
 Definition: a monster is threatening rather than non-threatening:
 	if it is unleashed or it is guarding, decide yes;
 	decide no. [non-threatening can't attack the player (but might be unfriendly and caged)]
-Definition: a monster is attack-threatening: [monsters that are NOT attack-threatening skip the 'compute attack' function.]
-	if it is threatening and it is unfriendly and it is not submission-assisting, decide yes;
+Definition: a monster (called M) is attack-threatening: [monsters that are NOT attack-threatening skip the 'compute attack' function.]
+	if debugmode > 1, say "[M] is [if M is unfriendly]un[end if]friendly.";
+	if M is threatening and M is unfriendly and M is not submission-assisting, decide yes;
 	decide no.
 Definition: a monster is pacified rather than unpacified:
 	if it is non-threatening and it is not caged, decide yes;

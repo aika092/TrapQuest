@@ -26,7 +26,7 @@ To decide which figure-name is clothing-image of (C - crotchless-fishnet-dress):
 	decide on figure of crotchless fishnet dress.
 
 To say ClothingDesc of (C - crotchless-fishnet-dress):
-	say "A black fishnet dress that [if C is worn]does[otherwise]would do[end if] nothing to keep your modesty. The dress splits into two around the belly area and wraps around each thigh next to the crotch, leaving [if C is worn]your [end if]orifices completely undefended.[if the bimbo of the player > 13]It's a great way to show off all your naughty bits whilst pretending to be making an effort to conceal them![otherwise if saved-flat-intelligence > 5]The only reason you could think to wear this is to help a keep bra or corset under control.[end if]".
+	say "A black fishnet dress that [if C is worn]does[otherwise]would do[end if] nothing to keep your modesty. The dress splits into two around the belly area and wraps around each thigh next to the crotch, leaving [if C is worn]your [end if]orifices completely undefended.[if the bimbo of the player > 13]It's a great way to show off all your naughty bits whilst pretending to be making an effort to conceal them![otherwise if saved-flat-intelligence > 5]The only reason you could think to wear this is to help keep a bra or corset under control.[end if]".
 
 To decide which number is the initial outrage of (C - crotchless-fishnet-dress):
 	decide on 7.

@@ -35,9 +35,9 @@ To say EnticeFlav of (M - a monster) for (P - a diaper punishment):
 	if M is student:
 		say "[line break][speech style of M]'[one of]Get on your knees NOW, twerp.'[or]What's the big deal? You must get bullied all the time! Just get on your knees already!'[in random order][roman type][line break]";
 	if M is intelligent:
-		say "[line break][speech style of M]'[one of]Come on, get on your knees and we can have some fun.'[or]I can't wait to do something extra-special with you, as soon as you get on your knees!'[in random order][roman type][line break]";
+		say "[line break][speech style of M]'[one of]Right, down on your knees so we can have some fun.'[or]I can't wait to do something extra-special with you, as soon as you get on your knees!'[in random order][roman type][line break]";
 	otherwise:
-		say "[big he of M] makes an aggressive posture, demanding that you submit immediately.".
+		say "[big he of M] adopts an aggressive posture, demanding that you submit immediately.".
 
 To decide which number is the relevant addiction of (P - a diaper punishment):
 	decide on 0.
@@ -340,7 +340,7 @@ Section 7 Babywear Donation
 donate babywear is a diaper punishment. The priority of donate babywear is 2.
 
 To say EnticeFlav of (M - a monster) for (P - donate babywear):
-	if M is intelligent, say "[line break][speech style of M]'Get on your knees right now, and I'll just put you in something pretty, and then let you go, okay?'[roman type][line break]";
+	if M is intelligent, say "[line break][speech style of M]'Get on your knees right now, and I'll just put you in something pretty and then let you go, okay?'[roman type][line break]";
 	otherwise say "[big he of M] gestures that [he of M] wants to dress you in something childish.".
 
 To decide which number is the relevant addiction of (P - donate babywear):
@@ -379,7 +379,7 @@ untidy-session is a diaper punishment. The priority of untidy-session is 5.
 
 To say EnticeFlav of (M - a monster) for (P - untidy-session):
 	if diaper messing >= 7:
-		if M is intelligent, say "[line break][speech style of M]'[one of]There's no use, I'm going to make you smell the stench of your own litter, whether you like it or not! Get on your knees, now!'[or]Surrender now, and submit to the stench of your nasty discarded nappies at once!'[in random order][roman type][line break]";
+		if M is intelligent, say "[line break][speech style of M]'[one of]There's no use, I'm going to make you smell the stench of your own litter, whether you like it or not! Down on your knees, now!'[or]Surrender now, and submit to the stench of your nasty discarded nappies at once!'[in random order][roman type][line break]";
 		otherwise say "[big he of M] gestures that [he of M] wants to smush your face into the soiled diaper [he of M] found.";
 	otherwise:
 		if M is intelligent, say "[line break][speech style of M]'[one of]There's no use, I'm going to make punish you for littering, whether you like it or not! Get on your knees, now!'[or]Surrender now, and submit to the punishment for carelessly discarding your dirty nappies!'[in random order][roman type][line break]";

@@ -30,7 +30,7 @@ To compute climax effect of (E - royal scepter): [copy of the effect from the go
 	if E is blacked, check tiara-of-spades transformation.
 
 To say ClothingDesc of (W - royal scepter):
-	if W is blacked, say "A white and black wand vibrator with a gem-encrused spade shape set into the top underneath a crown. [if tiara-of-spades is worn]Thanks to its synergy with your [tiara-of-spades], you can sense that whenever you satisfy a [BlackCock], it will gain significant magic power. [otherwise if there is a worn tiara][bold type]Perhaps if you had a more appropriate tiara, your wand would unlock some even more powerful abilities. [roman type]You have a picture in your head, of you pleasuring [NameDesc of shopkeeper] while a poor jealous guard watches. Or you could just use it to masturbate... [end if]";
+	if W is blacked, say "A white and black wand vibrator with a gem-encrusted spade shape set into the top underneath a crown. [if tiara-of-spades is worn]Thanks to its synergy with your [tiara-of-spades], you can sense that whenever you satisfy a [BlackCock], it will gain significant magic power. [otherwise if there is a worn tiara][bold type]Perhaps if you had a more appropriate tiara, your wand would unlock some even more powerful abilities. [roman type]You have a picture in your head, of you pleasuring [NameDesc of shopkeeper] while a poor jealous guard watches. Or you could just use it to masturbate... [end if]";
 	otherwise say "A gold and pink wand vibrator, with opaque crystal ball set into the top underneath a golden crown. ";
 	let H be a random worn headgear;
 	if diaper quest is 0:
@@ -189,7 +189,7 @@ To compute betrothal of (M - a monster):[This only triggers when the player is f
 			if F is -1:[the consort isn't around. Adultery!]
 				let T be a random worn interracial themed wearthing;
 				if bride-consort is human and interracial fetish is 1 and bride-consort is pale skinned and M is dark skinned and T is a wearthing:
-					say "Your [C] pulses, and the image of [NameDesc of bride-consort] shatters as its replaced by [NameDesc of M], or more specifically, [his of M] big, black [DickDesc of M].";
+					say "Your [C] pulses, and the image of [NameDesc of bride-consort] shatters as it's replaced by [NameDesc of M], or more specifically, [his of M] big, black [DickDesc of M].";
 					compute unique recycling of floral bridal veil;
 					now bride-consort is M;
 					say "[line break][bold type]Your [ShortDesc of C] has acknowledged the superiority of your new, better beloved![roman type][line break]";

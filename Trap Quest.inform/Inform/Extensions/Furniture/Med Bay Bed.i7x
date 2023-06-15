@@ -10,7 +10,7 @@ To decide which figure-name is the examine-image of (C - med bay bed):
 	decide on figure of med bay bed.
 
 To say ExamineDesc of (C - med bay bed):
-	say "A pink hospital bed with a comfy, flexible mattress. It would look almost inviting if it wasn't for the tough leather restraints, and the forboding looking medical items... and sex toys... hanging on the nearby hooks.".
+	say "A pink hospital bed with a comfy, flexible mattress. It would look almost inviting if it wasn't for the tough leather restraints, and the foreboding looking medical items... and sex toys... hanging on the nearby hooks.".
 
 To compute furniture resting on (F - med bay bed):
 	say "You lie down on the bed. ";
@@ -36,7 +36,7 @@ To compute furniture resting on (F - med bay bed):
 			now the fatigue of the player is 0;
 			let R be a random number between 1 and 2;
 			if lactation fetish is 1 and (the milk volume of breasts > the flesh volume of breasts / 2 or (the ready-for-milking of milking-quest is 1 and the class of the player is cowgirl)):
-				say "[line break][speech style of nurse]'Oh and darling, while you're resting there, let's relieve your udders of some of this pressure, don't you think?'[roman type][line break][big he of nurse] doesn't bother to wait for you to respond! [big he of nurse] latches two suckers to your nipples, and turns a large milking machine on!";
+				say "[line break][speech style of nurse]'Oh and darling, while you're resting there, let's relieve your udders of some of this pressure, don't you think?'[roman type][line break][big he of nurse] doesn't bother to wait for you to respond! [big he of nurse] latches two suckers to your nipples, and turns a large milking machine on! [one of]A strong suction immediately starts, distending your nipples obscenely, drawing them out in a delicious tension that's almost painful, it's so intense.[or]Once again, your nipples are suctioned up into obscene and thrilling erection.[stopping]";
 				let MV be 50 - the milk volume of breasts;
 				if MV < 4, now MV is 4;
 				now MV is the square root of MV;

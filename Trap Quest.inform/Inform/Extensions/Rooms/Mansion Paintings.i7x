@@ -19,7 +19,7 @@ Check entering a painting:
 	if the player is in danger, say "You need to deal with the [random dangerous monster in the location of the player] first!" instead;
 	if the player is clothing stuck, say "You can't because your [a random worn stuck clothing] is stuck in place!" instead;
 	allocate 5 seconds;
-	if the noun is dress-painting and there is a worn unremovable dress, say "You try, but when your [random worn unremovable dress] tries to cross the threshold, you are forced away by an invisible force!" instead;
+	if the noun is dress-painting and there is a worn unremovable dress, say "You try, but when your [random worn unremovable dress] tries to cross the threshold, you are pushed away by an invisible force!" instead;
 	let LM be the list of monsters in the location of the player;
 	compute painting entrance of the noun;
 	now the noun is not rippling;
@@ -67,7 +67,7 @@ To decide which figure-name is the examine-image of (P - dress-painting):
 To say MediumDesc of (P - dress-painting):
 	say "dress painting".
 To say UniqueExamineDesc of (P - dress-painting):
-	say "A frilly pink latex dress with matching pink gloves apears to be reaching out towards you.".
+	say "A frilly pink latex dress with matching pink gloves appears to be reaching out towards you.".
 
 To decide which number is the girth of (P - dress-painting):
 	decide on 2.
@@ -215,7 +215,7 @@ An all time based rule (this is the toilet monster rule):
 		if the times-terrorized of toilet-monster is 2 and diaper lover > 0:
 			say "This horrific encounter is leaving a lasting impression on your psyche. [bold type]From now on, you won't be able to bring yourself to use a toilet unless there's someone friendly there with you.[roman type][line break]";
 		otherwise:
-			say "This horrific encounter is leaving a lasting impression on your psyche. You can tell that [bold type]from now on, you'll be more susceptable to losing hold of liquid in your mouth or butt, when you are surprised, or in pain.[roman type][line break]";
+			say "This horrific encounter is leaving a lasting impression on your psyche. You can tell that [bold type]from now on, you'll be more susceptible to losing hold of liquid in your mouth or butt, when you are surprised, or in pain.[roman type][line break]";
 			increase the expulsion-weakness of the player by 1;
 		if the times-terrorized of toilet-monster > 2:
 			let TPR be a random toilet-painting-room-exit toilet-painting-room;

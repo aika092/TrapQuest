@@ -375,7 +375,7 @@ To compute failed transform of (C - a clothing):
 			otherwise:
 				if a random number between 0 and 4 < game difficulty:
 					now C is draining;
-					say "Instead, it has gained a new magical effect...  You can sense that it is now [']draining['], and slowly sap your stats over time.[line break][variable custom style]Oh no![roman type][line break]";
+					say "Instead, it has gained a new magical effect...  You can sense that it is now [']draining['], and slowly sapping your stats over time.[line break][variable custom style]Oh no![roman type][line break]";
 				otherwise if diaper quest is 0 and the largeness of breasts > 3:
 					now C is audible jiggles;
 					say "Instead, it has gained a new magical effect...  You can sense that it is now [']audible jiggles['], and is going to make your breasts make loud cartoonish jiggling sounds as you move![line break][variable custom style]Uh-oh![roman type][line break]";

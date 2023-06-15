@@ -220,7 +220,7 @@ To uniquely set up (C - milkmaid headdress):
 To compute class outfit of (H - milkmaid headdress):
 	class summon milkmaid-outfit;
 	class summon milkmaid-apron-skirt;
-	if milkmaid-apron-skirt is not worn and milkmaid-apron-skirt is actually summonable, summon milkmaid-apron-skirt uncursed; [if the player is already wearing the milkmaid bikini bottoms, this will fail to clsas summon because of an uncovered theme clash]
+	if milkmaid-apron-skirt is not worn and milkmaid-apron-skirt is actually summonable, summon milkmaid-apron-skirt uncursed; [if the player is already wearing the milkmaid bikini bottoms, this will fail to class summon because of an uncovered theme clash]
 	class summon milkmaid bikini bottoms;
 	class summon milkmaid stockings;
 	class summon leather-peep-toe-heels.

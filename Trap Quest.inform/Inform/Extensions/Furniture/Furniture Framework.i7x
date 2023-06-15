@@ -376,7 +376,7 @@ To release changing station diapers on the player:
 		say "A cascade of foul, stinky, messy diapers falls to the ground right beside you.";
 		if the player is air breathing vulnerable, SmellGrossOut messyDiaperSmellGrossnessLevel;
 	otherwise:
-		say "You are half-buried in a cascade of [if diaper messing > 6]foul, stinky, messy[otherwise]soggy used[end if] diapers.";
+		say "You are half-buried [one of]in a cascade[or]under an avalanche[or]by a deluge[in random order] of [if diaper messing > 6]foul, stinky, messy[otherwise]soggy used[end if] diapers.";
 		if the player is air breathing vulnerable:
 			if diaper messing >= 7, SmellGrossOut messyDiaperFacesitGrossnessLevel;
 			otherwise SmellGrossOut wetDiaperFacesitGrossnessLevel.

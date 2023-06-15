@@ -148,6 +148,9 @@ To ZipUp (C - clothing):
 
 To ZipOrRip (C - a clothing):
 	ZipDown C;
+	Rip C. [won't succeed if the item is crotch-unzipped]
+
+To Rip (C - a clothing):
 	if C is rippable and (C is crotch-intact or C is crotch-skirted):
 		now C is crotch-ripped;
 		update appearance level.

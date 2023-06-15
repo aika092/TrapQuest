@@ -165,7 +165,7 @@ To decide which figure-name is the clothing-image of (C - cumdump-headband):
 	decide on figure of cumdump headband.
 
 To say ClothingDesc of (H - cumdump-headband):
-	say "This white headband has the word 'CUMDUMP' on it in large pink letters, styled to making it look like they're oozing and dripping down the headband. [bold type]You can sense that it has changed the way your anal sphincter works[roman type] - expelling things from your butthole will now happen automatically, though never when you're plugged, and it will no longer hurt to hold things in.".
+	say "This white headband has the word 'CUMDUMP' on it in large creamy pink letters, styled to making it look like they're oozing and dripping down the headband. [bold type]You can sense that it has changed the way your anal sphincter works[roman type] - expelling things from your butthole will now happen automatically, though never when you're plugged, and it will no longer hurt to hold things in.".
 
 To compute SelfExamineDesc of (H - cumdump-headband):
 	say "You are wearing a headband that reads 'CUMDUMP' on top of your [ShortDesc of hair]. ".

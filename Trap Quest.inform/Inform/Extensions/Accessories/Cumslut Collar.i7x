@@ -62,7 +62,7 @@ To decide which figure-name is clothing-image of (C - WC collar):
 	decide on figure of WC collar.
 
 To say ClothingDesc of (C - WC collar):
-	say "This pink leather collar has a metal tag dangling from it with the symbol of a male toilets on both sides, and the letters [']WC['].".
+	say "This pink leather collar has a metal tag dangling from it with the symbol of a male toilet on both sides, and the letters [']WC['].".
 
 To say ShortDesc of (C - WC collar):
 	say "WC collar".

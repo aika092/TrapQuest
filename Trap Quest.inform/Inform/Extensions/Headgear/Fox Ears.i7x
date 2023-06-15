@@ -81,7 +81,7 @@ To compute generic class reward of (Q - stealing-quest) on (C - a clothing):
 			heal F times 5;
 		now the fatigue of the player is 0;
 	otherwise:
-		say "shrinking the length of your hair!";
+		say "shrinking the length of your hair, like a Barbie doll's hair being retracted!";
 		HairDown 1;
 
 

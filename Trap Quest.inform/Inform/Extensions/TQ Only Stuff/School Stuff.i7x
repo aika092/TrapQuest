@@ -2150,7 +2150,8 @@ To compute chess loss taunting of (M - a nasty student):
 	otherwise:
 		compute piercing taunt of M.
 
-[###Selkie: this might be better moved out into a piercing-taunt function that could be used in multiple places?]
+[Selkie: this might be better moved out into a piercing-taunt function that could be used in multiple places?
+Aika: ...It IS a piercing taunt function, isn't it?]
 To compute piercing taunt of (M - a monster):
 	if piercing-fetish is 1 and a random number between 1 and 2 is 1:
 		let N be a random worn nipple piercing;

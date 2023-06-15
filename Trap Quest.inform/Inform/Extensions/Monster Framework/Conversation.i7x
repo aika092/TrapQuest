@@ -723,7 +723,7 @@ To say VanityGreeting to (M - a monster):
 	if M is teacher and locked-toilets is true and academy-toilet-key is held:
 		say "'[if the player is proud]I can't believe I'm saying this, but would you please accompany me so that I can use the toilet?'[otherwise if the diaper addiction of the player < 5]Please could you supervise me while I use the toilet?'[otherwise]Please can you help me use the potty?'[end if]";
 	otherwise if the player is toilet traumatized bursting:
-		say "'I need the toilet, but [if academy-toilet-key is held and M is teacher]academy rules say that I need supervision[otherwise]I'm too scared to go alone[end if]. Would you please come with me?'";
+		say "'I need the toilet, but [if academy-toilet-key is held and M is teacher]academy rules say I need supervision[otherwise]I'm too scared to go alone[end if]. Would you please come with me?'";
 	otherwise if the player is a masochist:
 		say "'[one of]Are you getting used to seeing the back of my head?'[or]Maybe you and I should head somewhere more private, hmm?'[or]Where am I taking you, I wonder?'[at random]";
 	otherwise:
@@ -1943,7 +1943,7 @@ To decide which number is the errand-value of (E - giant-pencil) for (P - a pers
 To set up (E - giant-pencil-errand):
 	now giant-pencil is in WoodsBoss01.
 To say ErrandFlav of (E - giant-pencil-errand) for (P - a person):
-	say "I dropped my favourite pencil down a big hole in the woods, and. well, I didn't fancy risking getting knocked up by tentacle eggs so I decided not to go down and get it. But you look like you are a bit of a risk-taker... So yeah. Get my pencil for me. That's my price. ".
+	say "I dropped my favourite pencil down a big hole in the woods and, well, I didn't fancy risking getting knocked up by tentacle eggs so I decided not to go down and get it. But you look like you are a bit of a risk-taker... So yeah. Get my pencil for me. That's my price. ".
 To compute unique completion of (E - giant-pencil-errand) for (P - a person):
 	say "You hand [NameDesc of giant-pencil] to [NameDesc of P]. [BigNameDesc of P] squeals with delight.[line break][speech style of P]'Mr. Squiggles! You're all right!!!'[roman type][line break]You watch a grown [man of P] cuddle an inanimate pencil as it if was a pet.";
 	now giant-pencil is carried by P.
@@ -2034,7 +2034,7 @@ To say ErrandFlav of (E - royal-sigil-errand) for (P - a person):
 	say "The Princess named me an honorary guard of these woods, but [he of ex-princess] never gave me a royal sigil. And I really want one. I know each of the guards down in [his of ex-princess] dungeon has one. I want you to demand items from one until [he of a random royal guard] is forced to give you it, and then bring it to me. ".
 To compute unique completion of (E - royal-sigil-errand) for (P - a person):
 	let RS be a random carried royal sigil;
-	say "You hand [NameDesc of RS] to [NameDesc of P].[line break][speech style of P]'Yes! Finally, people will believe me when I tell them that I am the princess's knight!'[roman type][line break]";
+	say "You hand [NameDesc of RS] to [NameDesc of P].[line break][speech style of P]'Yes! Finally, people will believe me when I tell them I am the princess's knight!'[roman type][line break]";
 	now RS is carried by P.
 
 adventurer-attack-errand is an errand. adventurer-attack-errand has a number called old-bimbo-count.
@@ -2061,7 +2061,7 @@ To say ErrandFlav of (E - adventurer-attack-errand) for (P - a person):
 	say "There are these other cheeky adventurers running around this place at the same time as you. You might have bumped into some of them? [if P is pimp]Well, I think you should show them who's boss. Kick and slap them around a bit, until they give up on their goals and settle for some... 'gainful employment' up here with me[otherwise]Well, they are weak and pathetic, and pissing me off. I want you to kick and slap one of them around until they conclude that a life of adventuring isn't for them[end if]. ".
 To compute unique completion of (E - adventurer-attack-errand) for (P - a person):
 	now the old-bimbo-count of adventurer-attack-errand is 0;
-	say "[speech style of P]'I heard that another of those dumb bitches has given up [his of a random explorer] dreams of being adventurer and decided that a life as a [if diaper quest is 1]diaper slut[otherwise]whore[end if] is more appropriate for a slut like [him of a random explorer]. I assume that was your doing? Anyway, I'm happy!'[roman type][line break]".
+	say "[speech style of P]'I heard that another of those dumb bitches has given up [his of a random explorer] dreams of being an adventurer and decided that a life as a [if diaper quest is 1]diaper slut[otherwise]whore[end if] is more appropriate for a slut like [him of a random explorer]. I assume that was your doing? Anyway, I'm happy!'[roman type][line break]".
 
 satisfy-pimp-errand is an errand. satisfy-pimp-errand has an object called the satisfy-target.
 Definition: satisfy-pimp-errand is appropriate:
@@ -2293,7 +2293,7 @@ To decide which number is the errand-value of (E - cock candle) for (P - a perso
 	if the current-errand of P is cock-candle-errand, decide on 1;
 	decide on 0.
 To say ErrandFlav of (E - cock-candle-errand) for (P - a person):
-	say "I've heard legends of magic candles that never extinguish. Such an artifact would be excellent for my wax play. Think you can find one for me? ".
+	say "I've heard legends of magic candles that never extinguish. Such an artefact would be excellent for my wax play. Think you can find one for me? ".
 To compute completion of (E - cock-candle-errand) for (P - a person):
 	say "[speech style of P]'Unbelievable, you actually found one!'[roman type][line break][BigNameDesc of P] happily takes [NameDesc of cock candle] from you.";
 	now cock candle is carried by P.
@@ -2312,7 +2312,7 @@ To decide which number is the errand-value of (E - golden-phallus) for (P - a pe
 	if the current-errand of P is special-delivery-errand, decide on 1;
 	decide on 0.
 To say ErrandFlav of (E - special-delivery-errand) for (P - a person):
-	say "Sure, I'd be more than happy to. But first, I have something to ask of you... I ordered a special delivery to be delivered to the shop, for me to collect, but I'm currently in some minor legal disputes with the shopkeeper and I'm not supposed to talk to [him of shopkeeper] without our lawyers present. Could you be a doll and go collect it for me? It should be, erm, [bold type]long, hard, and made of gold, and on the floor of the Dungeon Shop.[speech style of P] ".
+	say "Sure, I'd be more than happy to. But first, I have something to ask of you... I ordered a special item to be delivered to the shop, for me to collect, but I'm currently in some minor legal disputes with the shopkeeper and I'm not supposed to talk to [him of shopkeeper] without our lawyers present. Could you be a doll and go collect it for me? It should be, erm, [bold type]long, hard, and made of gold, and on the floor of the Dungeon Shop.[speech style of P] ".
 To set up (E - special-delivery-errand):
 	now golden-phallus is in Dungeon41;
 	now the size of golden-phallus is 3;
@@ -2441,7 +2441,7 @@ To decide which number is the errand-value of (E - slave collar) for (P - a pers
 	if P is pimp and the current-errand of shopkeeper is pimp-delivery-errand, decide on 1;
 	decide on 0.
 To say ErrandFlav of (E - pimp-delivery-errand) for (P - a person):
-	say "Hey yeah, the pimp in the hotel wants this delivered to [him of pimp], but obviously I can't leave my shop alone. Could you please take care of the delivery? ".
+	say "Hey yeah, the pimp in the hotel wants this delivered to [him of pimp], but obviously I can't leave my shop. Could you please take care of the delivery? ".
 To compute instant effect of (E - pimp-delivery-errand) for (P - a person):
 	now slave collar is carried by the player;
 	now slave collar is cursed;
@@ -2510,7 +2510,7 @@ To compute unique completion of (E - wench-cup-errand) for (P - a person):
 	let BO be a random carried bottle;
 	repeat with B running through carried non-empty bottles:
 		if the fill-colour of B is creamy and there is a wench inseminating B, now BO is B;
-	say "You present [NameDesc of BO] to [NameDesc of P].[line break][speech style of P]'Don't tell me... You got some?!'[roman type][line break][BigNameDesc of P] brings [NameDesc of BO] to [his of P] lips, and has a taste.[line break][speech style of P]'This is it! This is that delicious cum that I've dreamed of tasting again!'[roman type][line break][big he of P] swings [NameDesc of BO] back and downs the rest of the thick creamy [']drink['], ";
+	say "You present [NameDesc of BO] to [NameDesc of P].[line break][speech style of P]'Don't tell me... You got some?!'[roman type][line break][BigNameDesc of P] brings [NameDesc of BO] to [his of P] lips, and has a taste.[line break][speech style of P]'This is it! This is that delicious cum I've dreamed of tasting again!'[roman type][line break][big he of P] swings [NameDesc of BO] back and downs the rest of the thick creamy [']drink['], ";
 	DoseEmpty BO;
 	say "and then hands [NameDesc of BO] back to you.".
 
@@ -2624,7 +2624,8 @@ To say ErrandFlav of (E - milk-cup-errand) for (P - a person):
 To say ErrandFlav of (E - milk-cup-errand) for (P - a royal guard):
 	say "Mother always told me that milk is good for my muscles and bones... And having been stuck down here for so long, I've really struggled to keep it in my diet. So what I want is a drink of milk. Is that something you think you could get for me? ".
 To compute unique completion of (E - milk-cup-errand) for (P - a person):
-	let BO be a random carried bottle;
+	let BO be a random carried bottle; [Selkie thinks: it would be very hot, and maybe humilaiting, that if your breasts currently contain a lot of milk, and aren't locked away, you could offer to let them suckle from you directly here, instead. Perhaps with a joke about "straight from the source, eh?" and going above and beyond the call of duty?
+	Aika: Maybe, but it'd be a little more complicated than it sounds, because most NPCs are supposed to not actually be into breast feeding, but rather just want some milk. And then not know where the player got it from. So it'd have to be specific NPCs only that could do this.]
 	repeat with B running through carried non-empty bottles:
 		if the fill-colour of B is white, now BO is B;
 	say "You present [NameDesc of BO] to [NameDesc of P].[line break][speech style of P]'[if P is royal guard]Oh, excellent. Just what the doctor ordered[otherwise]Excellent[end if]!'[roman type][line break][BigNameDesc of P] brings [NameDesc of BO] to [his of P] lips, and takes a sip.[line break][speech style of P]'[if P is royal guard]Hmm, this tastes... unique! Sweeter than I'm used to. What sort of special diet was this cow on, I wonder[otherwise]Nothing else tastes quite like human breast milk[end if].'[roman type][line break][big he of P] swings [NameDesc of BO] back and downs the rest of your thick creamy drink, ";
@@ -2720,11 +2721,11 @@ To decide which number is the errand-weight of (E - wisp-errand) for (P - a pers
 	if P is robot or P is student, decide on 0;
 	decide on 1.
 To say ErrandFlav of (E - wisp-errand) for (P - a person):
-	say "[if the errand-weight of E for P > 1]You have debts to other entities that are as of yet unpaid. Fulfill your promises to them, and then return to me, and I will consider your price paid. [otherwise]Some freaky-ass ghosts came to me in a vision just a minute ago, and told me you were going to ask that! They also said that I have to do as you ask, after you've played their [']game[']. I don't know what that means, but I'm not going to argue with an evil spirit! Come back to me when you've not got any evil spirits floating around you. [end if]".
+	say "[if the errand-weight of E for P > 1]You have debts to other entities that are as of yet unpaid. Fulfill your promises to them, and then return to me, and I will consider your price paid. [otherwise]Some freaky-ass ghosts came to me in a vision just a minute ago, and told me you were going to ask that! They also said I have to do as you ask, after you've played their [']game[']. I don't know what that means, but I'm not going to argue with an evil spirit! Come back to me when you've not got any evil spirits floating around you. [end if]".
 To say ErrandFlav of (E - wisp-errand) for (P - a wench):
 	say "Um, there's some spooky things following you around... Please make them go away... ".
 To say ErrandFlav of (E - wisp-errand) for (P - an adult baby slave):
-	say "Um, there's some spooky things following you around... Please make them go away... ".
+	say "Um, dere's some spooky fings followin['] you aroun[']... Please make dem go away... ".
 To compute instant effect of (E - wisp-errand) for (P - a person):
 	while the number of stalking wisps < 2:
 		notice a wisp.
@@ -2733,7 +2734,7 @@ To compute unique completion of (E - wisp-errand) for (P - a person):
 To compute unique completion of (E - wisp-errand) for (P - a wench):
 	say "[BigNameDesc of P] sigh with relief.[line break][speech style of P]'Those spooky things don't seem to be flying around your head any more. Thank goodness.'[roman type][line break]".
 To compute unique completion of (E - wisp-errand) for (P - an adult baby slave):
-	say "[BigNameDesc of P] sigh with relief.[line break][speech style of P]'Those spooky things don't seem to be flying around your head any more. Thank goodness.'[roman type][line break]".
+	say "[BigNameDesc of P] sighs with relief.[line break][speech style of P]'Dose spooky fings don't seem to be flying aroun['] your head no more. Fank goodness!'[roman type][line break]".
 
 soiled-diaper-errand is an errand.
 Definition: soiled-diaper-errand is appropriate:
@@ -2835,7 +2836,7 @@ To say RequestFlav of (C - sword-removal-request):
 To say RewardFlav of (C - sword-removal-request):
 	say "get the sword to release you".
 To compute errand rewarding of (T - sword-removal-request) from (P - a person):
-	say "[speech style of P]'Hold your sword hand out to me.'[roman type][line break][BigNameDesc of P] clasps the sword hilt from the other side, so now both your hands are holding it together.[line break][speech style of P]'I accept the burden.'[roman type][line break]You watch with marvel as the magic chain unwraps from around your wrist, and wraps around [NameDesc of P][']s instead! [big he of P] is now the one stuck wielding the sword.[line break][speech style of P]'Perhaps when you are a more seasoned warrior, you will want to accept the burden yourself again.'[roman type][line break]";
+	say "[speech style of P]'Hold your sword hand out to me.'[roman type][line break][BigNameDesc of P] clasps the sword hilt from the other side, so now both your hands are holding it together.[line break][speech style of P]'I accept the burden.'[roman type][line break]You watch with marvel as the magic chain unwraps from around your wrist, and coils around [NameDesc of P][']s instead! [big he of P] is now the one stuck wielding the sword.[line break][speech style of P]'Perhaps when you are a more seasoned warrior, you will want to accept the burden yourself again.'[roman type][line break]";
 	now gladiator-sword is carried by P;
 	now the burden of gladiator-sword is 0.
 
@@ -2886,7 +2887,7 @@ To compute errand rewarding of (T - be-my-diaper) from (P - a person):
 		if C is clothing:
 			say "You shake your head. You actually can't get [NameDesc of C] out of the way. All that for no reward!";
 		otherwise if the player is consenting:
-			say "You nod your head, and [NameDesc of P] exposes [his of P] diaper and then pulls the front of the waistband forward, prompting you to guide your [genitals] so that your pee will go straight into [his of P] diaper. Which when you release, it does.[line break][speech style of P]'Hehe, that feels funny... And warm...'[roman type][line break]";
+			say "You nod your head, and [NameDesc of P] exposes [his of P] diaper and then pulls the front of the waistband forward, prompting you to guide your [genitals] so your pee will go straight into [his of P] diaper. Which, when you release, it does.[line break][speech style of P]'Hehe, that feels funny... And warm...'[roman type][line break]";
 			moderateDignify;
 			now the bladder of the player is 0;
 		otherwise:
@@ -2986,6 +2987,7 @@ To execute (T - talk-request) for (M - a monster):
 				compute errand rewarding of R from M;
 				if R is listed in the tradableItems of M, remove R from the tradableItems of M;
 				say "[one of]Wow! Being extra-charismatic has really paid off[or]Once again, your high charisma score has scored you a freebie[stopping]!";
+				now the current-reward of M is no-reward;
 			otherwise:
 				choose an errand for M;
 				if the current-errand of M is no-errand:
@@ -2995,7 +2997,7 @@ To execute (T - talk-request) for (M - a monster):
 					compute instant effect of the current-errand of M for M;
 		otherwise:
 			if the current-errand of M is rejected-errand:
-				say "[speech style of M]'No thank you. I tried making you an offer before, and you disappointed me. I'm done playing such games with you.'[roman type][line break]";
+				say "[speech style of M]'No thank you. I tried making you an offer before, but you disappointed me. I'm done playing such games with you.'[roman type][line break]";
 			otherwise if the current-errand of M is completed and the current-reward of M is R:
 				compute errand completion of M;
 			otherwise:

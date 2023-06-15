@@ -308,7 +308,7 @@ To compute CagedMinotaurGrabbing of (M - minotaur):
 To compute CagedMinotaurMolesting of (M - minotaur):
 	if the blue-balls of M > a random number between 4 and 9:[NUT]
 		if asshole is undefended:[If you fit into the cage, you faint, since the cum bloating would mean you couldn't get out.]
-			say "[if the reaction of the player is 0][BigFuckerDesc of M] shrugs off your attempts to struggle[otherwise][BigFuckerDesc of M] breathes heavily[end if] as [he of M] exchanges [his of M] grip on your arms for a grip on your thighs. [big he of M] yanks your legs up against the cage, forcing the back of your body up agains a gap between two vertical bars. [big his of M] 'smallest' limb is rock-hard, throbbing, and drooling precum as [he of M] aligns [his of M] [cockhead of M] through the bars, and towards your exposed asshole. Knowing there's nothing more you can do at this point, you [if the reaction of the player is 0]stop struggling, [end if]grab the bars to keep yourself steady and grit your teeth as [he of M] slams right in.";
+			say "[if the reaction of the player is 0][BigFuckerDesc of M] shrugs off your attempts to struggle[otherwise][BigFuckerDesc of M] breathes heavily[end if] as [he of M] exchanges [his of M] grip on your arms for a grip on your thighs. [big he of M] yanks your legs up against the cage, forcing the back of your body up against a gap between two vertical bars. [big his of M] [']smallest['] limb is rock-hard, throbbing, and drooling precum as [he of M] lines up [his of M] [cockhead of M] through the bars, aiming it at your exposed asshole. Knowing there's nothing more you can do at this point, you [if the reaction of the player is 0]stop struggling, [end if]grab the bars to keep yourself steady and grit your teeth as [he of M] slams right in.";
 			now M is penetrating asshole; [This allows orgasm function to work properly]
 			ruin asshole times 2;
 			say "[Big he of M] has clearly been pent-up and gotten excited, because [he of M] starts ejaculating almost immediately. It starts coming... and it keeps coming.";
@@ -320,7 +320,7 @@ To compute CagedMinotaurMolesting of (M - minotaur):
 				if the player is possessing a penis, cutshow Figure of Minotaur Cutscene 8b for M;
 				otherwise cutshow Figure of Minotaur Cutscene 8a for M;
 			dislodge M;
-			say "Even [he of M] isn't prepared for the pressure that has build up inside you, because you're suddenly flung forward back out of the cage the cage as a fountain of cum shoots back out of your [asshole].";
+			say "Even [he of M] isn't prepared for the pressure that has build up inside you, because you're suddenly flung forward, right out of the cage as a fountain of cum shoots from your [asshole].";
 			if the player is upright, try kneeling;
 			AssSquirt;
 		otherwise:

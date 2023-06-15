@@ -513,7 +513,7 @@ To decide which figure-name is clothing-image of (C - tight-green-romper):
 	decide on figure of tight-green-romper.
 
 To say ClothingDesc of (C - tight-green-romper):
-	say "This longsleeved green romper is so figure-hugging that it can't even hide the contours of [if C is worn]your[otherwise]the wearer's[end if] nipples or crotch.".
+	say "This long-sleeved green romper is so figure-hugging it can't even hide the contours of [if C is worn]your[otherwise]the wearer's[end if] nipples or crotch.".
 
 To say ShortDesc of (C - tight-green-romper):
 	say "tight green romper".

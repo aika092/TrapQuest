@@ -185,7 +185,7 @@ To compute periodic effect of (C - tubesuit):
 		let D be a random worn diaper;
 		compute automatic state check of D;
 		if D is messed:
-			say "You are forced to [one of]breathe in every single last disgusting vapour of stink emitted by[or]get a whiff of the full pungent stink of[or]smell the horrid concentrated aroma created by[or]sniff the intense foul scent of[at random] your messy [ShortDesc of D]!";
+			say "You are forced to [one of]breathe in every single last disgusting wisp of stink emitted by[or]inhale a whiff of the full pungent stink of[or]smell the horrid concentrated aroma created by[or]sniff the intense foul scent of[at random] your messy [ShortDesc of D]!";
 			SlowGrossOut messyDiaperSmellGrossnessLevel + (the mess of D / 10);
 		otherwise if the urine-soak of D > 0:
 			say "[one of]Your olfactory senses are flooded by[or]You are forced to smell[or]You can't help but breathe in[in random order] the [one of]strong[or]powerful[purely at random] [one of]smell[or]scent[purely at random] of [urine] from your [ShortDesc of D]!";
@@ -194,7 +194,7 @@ To compute periodic effect of (C - tubesuit):
 			say "It [one of]smells like[or]stinks of[or]smells strongly of[at random] [semen].";
 			SlowGrossOut 2;
 		otherwise:
-			say "It smells a [one of]bit[or]tad[or]little[at random] [one of]sweaty[or]clammy[or]stuffy[or]musty[in random order].".
+			say "It smells a [one of]bit[or]tad[or]little[at random] [one of]sweaty[or]clammy[or]stuffy[or]musky[in random order].".
 
 To compute school periodic effect of (C - tubesuit):
 	compute periodic effect of C.

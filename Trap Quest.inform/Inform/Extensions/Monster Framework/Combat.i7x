@@ -1152,13 +1152,13 @@ To check enticing of (M - a monster) with temptation level (S - a number):
 	if debuginfo > 0, say "[input-style]Enticement stats: Arousal value ([A]) + Addiction level ([S])[if G > 0] - Grossness level ([G])[end if] = Enticement level [N][roman type][line break]";
 	if N > 28:
 		if debuginfo > 0, say "[input-style]Above 28 = maximum enticement level![roman type][line break]";
-		say "The combination of your arousal and [if diaper quest is 1]predilections[otherwise]addiciton[end if] makes it impossible for you to resist![line break][variable custom style][one of]I'm supposed to be fighting... But my body is acting of its own accord... I can't stop myself[or]I need it so badly[stopping]![roman type][line break]";
+		say "The combination of your arousal and [if diaper quest is 1]predilections[otherwise]addiction[end if] makes it impossible for you to resist![line break][variable custom style][one of]I'm supposed to be fighting... But my body is acting of its own accord... I can't stop myself[or]I need it so badly[stopping]![roman type][line break]";
 		now auto is 1;
 		try kneeling;
 		now auto is 0;
 	otherwise if N > 22:
 		if debuginfo > 0, say "[input-style]Above 22 = enticement level 3[roman type][line break]";
-		say "[if the player is a bit horny]The combination of your arousal and[otherwise]Your[end if] [if diaper quest is 1]predilections[otherwise]addiciton[end if] makes it extremely difficult for you to resist! The damage of your attacks against [NameDesc of M] will be seriously reduced.[paragraph break]Get on your knees and consent to what [he of M][']s asking for?[roman type][line break]";
+		say "[if the player is a bit horny]The combination of your arousal and[otherwise]Your[end if] [if diaper quest is 1]predilections[otherwise]addiction[end if] makes it extremely difficult for you to resist! The damage of your attacks against [NameDesc of M] will be seriously reduced.[paragraph break]Get on your knees and consent to what [he of M][']s asking for?[roman type][line break]";
 		increase the temporary-damage-reduction of M by 3;
 		if the player is consenting:
 			say "[variable custom style][one of][big he of M] is so convincing[or]I want it! I need it[cycling]![roman type][line break]";
@@ -1194,7 +1194,7 @@ To say EnticeFlav of (M - a monster) with (B - face):
 		otherwise say "[big he of M] gestures it towards your face.";
 	otherwise:
 		say "[BigNameDesc of M] twirls and shows you [his of M] rear end. ";
-		if M is intelligent, say "[line break][speech style of M]'[one of]Come on, you know you want your face in here.'[or]I bet you can't wait for me to sit on your face...'[or]My pussy and your face are late for their date!'[in random order][roman type][line break]";
+		if M is intelligent, say "[line break][speech style of M]'[one of]Come on, you know you want your face in here.'[or]I bet you can't wait for me to sit on your face...'[or]My pussy and your face are late for their date!'[or]Your face is late for its date with my pussy!'[in random order][roman type][line break]";
 		otherwise say "[big he of M] gestures it towards your face.".
 
 To say EnticeFlav of (M - a monster) with (B - breasts):
@@ -1208,7 +1208,7 @@ To say EnticeFlav of (M - a monster) with (B - breasts):
 To say EnticeFlav of (M - a monster) with (B - belly):
 	if M is male, say "[BigNameDesc of M] brandishes [his of M] [LongDickDesc of M]. ";
 	otherwise say "[BigNameDesc of M] spreads [his of M] pussy lips. ";
-	if M is intelligent, say "[line break][speech style of M]'[one of]Do you really want to fight me? Or do you just want to be a good little urinal?'[or]Do you want to drink some piss?'[or]Give up now, get on your knees, and drink my piss like a good little urinal.'[in random order][roman type][line break]";
+	if M is intelligent, say "[line break][speech style of M]'[one of]Do you really want to fight me? Or do you just want to be a good little urinal?'[or]Do you want to drink some piss?'[or]Give up now, get on your knees, and drink my piss like a good little urinal.'[or]Kneel for my piss, my thirsty little urinal!'[in random order][roman type][line break]";
 	otherwise say "It seems clear that [he of M] wants to piss on you.".
 
 To say EnticeFlav of (M - a monster) with (B - thighs):
@@ -1222,7 +1222,7 @@ To say EnticeFlav of (M - a monster) with (F - a fuckhole):
 	if M is intelligent:
 		let T be "[one of]asshole[or]butthole[or]backdoor[as decreasingly likely outcomes]";
 		if F is vagina, now T is "[one of][pussy][or][cunt][or]slit[as decreasingly likely outcomes]";
-		say "[line break][speech style of M]'[one of]Just think how good you'll feel if you let me inside your [T]...'[or]Get on your knees, and let me ruin your [T] already...'[or]Calm yourself, sweetheart. All I want to do is fuck your [T].'[or]When I get you on your kness, this is going inside your [T]...'[or]Surrender now, and perhaps I'll be merciful on your [T].'[or]I'm going to make your [T] feel so good...'[in random order][roman type][line break]";
+		say "[line break][speech style of M]'[one of]Just think how good you'll feel if you let me inside your [T]...'[or]Get on your knees, and let me ruin your [T] already...'[or]Calm yourself, sweetheart. All I want to do is fuck your [T].'[or]When I get you on your knees, this is going inside your [T]...'[or]Surrender now, and perhaps I'll be merciful on your [T].'[or]I'm going to make your [T] feel so good...'[in random order][roman type][line break]";
 	otherwise:
 		say "It seems clear that [he of M] wants to fuck your [variable F].".
 
@@ -1303,7 +1303,7 @@ To compute (M - a monster) removing (C - a chastity bond):
 
 To compute (M - a monster) removing (C - vaginal seal):
 	if M is intelligent:
-		say "[BigNameDesc of M] touches your [ShortDesc of C].[line break][speech style of M]'Oh no, a magic seal! I see your goddess[']s magic is protecting your womb from being defiled. I guess I can't fuck you here after all...'[roman type][line break][big he of M] smirks.[line break][speech style of M]'Just kidding. There's no way a basic runic seal like this can stop me.'[roman type][line break]You hear a sound like glass breaking as [NameDesc of M] defeats [NameDesc of C][']s magic, and destroys the seal! You gasp with [horror the vaginal sex addiction of the player * 2] at your [vagina] suddenly being vulnerable to being defiled!";
+		say "[BigNameDesc of M] touches your [ShortDesc of C].[line break][speech style of M]'Oh no, a magic seal! I see your goddess[']s magic is protecting your womb from being defiled. I guess I can't fuck you here after all...'[roman type][line break][big he of M] smirks.[line break][speech style of M]'Just kidding. There's no way a basic runic seal like this can stop me.'[roman type][line break]You hear a sound like glass breaking as [NameDesc of M] defeats [NameDesc of C][']s magic, and destroys the seal! You gasp with [horror the vaginal sex addiction of the player * 2] at your [vagina] suddenly becoming vulnerable to being defiled!";
 		destroy C;
 	otherwise:
 		say "[BigNameDesc of M] tears off your [ShortDesc of C]!";
@@ -1341,10 +1341,10 @@ To compute (M - a monster) unlocking (C - a clothing):
 	unlock C.
 
 To say KeyUnlocksFlav of (C - a clothing):
-	say "produces the key for your [ShortDesc of C], puts it in to the lock, and twists. [BigNameDesc of C] is now unlocked!".
+	say "produces the key for your [ShortDesc of C], puts it into the lock, and twists. [BigNameDesc of C] is now unlocked!".
 
 To say SkeletonKeyUnlocksFlav of (C - a clothing):
-	say "produces a key, puts it in to the lock of your [ShortDesc of C], and twists. It works! [BigNameDesc of C] is now unlocked!".
+	say "produces a key, inserts it into the lock of your [ShortDesc of C], and twists. It works! [BigNameDesc of C] is now unlocked!".
 
 To say MagicUnlocksFlav of (C - a clothing):
 	say "touches the lock on your [ShortDesc of C], and to your surprise, it suddenly clicks open! Was that luck, or magic, or what?! In any case, [NameDesc of C] is now unlocked!".
@@ -1602,10 +1602,10 @@ The monster licking insertion rules is a rulebook.
 
 The monster removing gag rule is listed last in the monster licking insertion rules.
 
-This is the monster initiaing lick rule:
+This is the monster initiating lick rule:
 	compute current-monster initiating licking;
 	rule succeeds.
-The monster initiaing lick rule is listed last in the monster licking insertion rules.
+The monster initiating lick rule is listed last in the monster licking insertion rules.
 
 To get licking initiation image for (M - a monster):
 	do nothing.

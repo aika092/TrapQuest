@@ -116,6 +116,8 @@ Carry out slapping:
 	if the noun is student, reset staff boredom.
 Understand "slap [something]", "hit [something]", "punch [something]", "slash [something]", "slash at [something]", "swipe [something]", "swipe at [something]", "scratch [something]", "thrust at [something]", "swing at [something]", "sa [something]", "sl [something]", "pu [something]" as slapping.
 
+noLineBreaksZapDamage is initially false.
+
 To decide which number is the zap damage of (P - a person):
 	if damage-explained > 1, say "[input-style]Base zap damage calculation: [bracket]0 (base damage) ";
 	let A be 0;
@@ -129,11 +131,22 @@ To decide which number is the zap damage of (P - a person):
 		if the magic power of the player <= 0 and the magic-cost of currentZapper > 0:
 			if damage-explained > 1, say "Override to 0 (insufficient magic power) ";
 			decide on 0;
-		let N be the zap damage improvement of currentZapper;
+		let N be 0;
+		if noLineBreaksZapDamage is true, now N is the nolinebreaks zap damage improvement of currentZapper;
+		otherwise now N is the zap damage improvement of currentZapper;
 		increase A by N;
 		if damage-explained > 1, say "[if N >= 0]+[end if][N] ([ShortDesc of currentZapper] bonus) ";
 	if A < 0, decide on 0;
 	decide on A.
+
+To decide which number is the nolinebreaks zap damage of (P - a person):
+	now noLineBreaksZapDamage is true;
+	let N be the zap damage of P;
+	now noLineBreaksZapDamage is false;
+	decide on N.
+
+To decide which number is the nolinebreaks zap damage improvement of (Z - a thing):
+	decide on the zap damage improvement of Z.
 
 Zapping it with is an action applying to two things.
 

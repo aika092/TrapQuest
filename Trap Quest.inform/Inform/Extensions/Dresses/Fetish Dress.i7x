@@ -319,7 +319,7 @@ To decide which figure-name is clothing-image of (C - pink-and-blue translucent 
 	decide on figure of latex dress 11.
 
 To say ClothingDesc of (O - pink-and-blue translucent fetish dress):
-	say "A translucent pink latex dress with blue bows and frills that give it a 'babydoll' feel. While the cleavage line is rather modest, this is a bit of a moot point since it's partially transparent[if O is hand ready]. It comes with matching gloves that you can't seem to remove without also removing the dress[end if].".
+	say "A translucent pink latex dress with blue bows and frills that give it a 'babydoll' feel. While the cleavage line is rather modest, this is a bit of a moot point since it's translucent[if O is hand ready]. It comes with matching gloves that you can't seem to remove without also removing the dress[end if].".
 
 To decide which number is the initial outrage of (C - pink-and-blue translucent fetish dress):
 	decide on 6.

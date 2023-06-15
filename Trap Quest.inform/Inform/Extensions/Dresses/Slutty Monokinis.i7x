@@ -321,7 +321,7 @@ To decide which figure-name is clothing-image of (C - a blue mostly-sheer monoki
 	decide on figure of blue mostly-sheer monokini.
 
 To say ClothingDesc of (C - a blue mostly-sheer monokini):
-	say "This blue swimsuit should just be high-waisted and sexy, not slutty, but 90% of the nylon, including the crotch section, is almost entirely see-through.".
+	say "This blue swimsuit would just be high-waisted and sexy, not slutty, if 90% of the nylon, including the crotch section, wasn't almost entirely see-through.".
 
 To say ShortDesc of (C - a blue mostly-sheer monokini):
 	say "blue swimsuit".
@@ -352,6 +352,7 @@ This is the anal-beads-blue-swimsuit prevents hand use rule:
 		rule fails.
 The anal-beads-blue-swimsuit prevents hand use rule is listed in the hands restriction rules.
 
+To decide which number is the crotch-tightness of (C - anal-beads-blue-swimsuit): decide on 5.
 To decide which number is the wornArmsRequired of (C - anal-beads-blue-swimsuit):
 	if C is top-placed, decide on 2;
 	decide on 0.
@@ -383,7 +384,7 @@ To say TopReplaceFlav of (C - anal-beads-blue-swimsuit):
 	say "You insert your fingers in the collar-holes, and by raising your hands up to behind your neck, pull the [ShortDesc of C] back into its proper position over your [BreastDesc].".
 
 To say DisplaceFlav of (C - anal-beads-blue-swimsuit):
-	say "You reach [if the player is prone]behind you[otherwise]down[end if] and pull your [C] [if C is penetrating asshole]out of your [asshole][otherwise]to the side[end if], freeing [if the bimbo of the player > 6]up access to [end if]your crotch. [bold type]The dangling anal beads means that your appearance is now extremely lewd.[roman type][line break]".
+	say "You reach [if the player is prone]behind you[otherwise]down[end if] and pull your [C] [if C is penetrating asshole]out of your [asshole][otherwise]to the side[end if], freeing [if the bimbo of the player > 6]up access to [end if]your crotch. [bold type]The dangling anal beads means your appearance is now extremely lewd.[roman type][line break]".
 
 To say ReplaceFlav of (C - anal-beads-blue-swimsuit):
 	say "You reach [if the player is prone]behind you[otherwise]down[end if] and push it back into your [asshole].".

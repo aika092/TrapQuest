@@ -27,7 +27,7 @@ To compute mass collectible reward of (T - a defiance token):
 	if NM > 0:
 		if the player is possessing a penis:
 			SpecialPenisUp NM;
-		otherwise if the player is a top donator and choice in row 68 of the Table of Player Options < 0 and NM > 1:
+		otherwise if the player is a top donator and choice in row 68 of the Table of Player Options > 0 and NM > 1:
 			SpecialPenisUp NM * 3; [#LXorDD]
 		otherwise if strapon-dildo is held:
 			if the strap-length of strapon-dildo < 12:
@@ -46,6 +46,8 @@ To compute mass collectible reward of (T - a defiance token):
 			now the strap-length of strapon-dildo is NM * 3;
 			if the strap-length of strapon-dildo >= 12, now the strap-length of strapon-dildo is 12;
 			say "A [strapon-dildo] appears before you! You sense that if you wear it, you might feel even more dominant.";
+			[Selkie: what do you think of the idea that if you still have a dick, a rare few strap-ons are cursed. Wearing one secretly replaces your real dick, so that when it's removed, you find you've actually detached your dick and it's now a latex toy that you can feel? I.e. a new method of triggering the dick-detachment event?
+			Aika: That sounds pretty cool to me!]
 			compute autotaking strapon-dildo;
 	repeat with X running through held defiance tokens:
 		destroy X;

@@ -26,7 +26,7 @@ To say ProstateOrgasmFlav:
 	if M is monster:
 		compute masturbation climax of M;
 	otherwise if A is monster:
-		compute anal orgasm hijack of A;
+		compute prostate orgasm hijack of A;
 	otherwise:
 		say DefaultProstateOrgasmFlav.
 
@@ -79,7 +79,7 @@ Default text that displays when a female player has a shameful anal orgasm
 
 +!]
 To say DefaultAnalOrgasmFlav:
-	say "[one of][if there is a worn asshole-tattoo]You feel your [random asshole-tattoo worn by the player] spark with delight as your extremely sensitive[otherwise]Your[end if] [asshole] [if soreness of asshole > 8]can't take the extreme stimulation any more[otherwise]feels incredible[end if]! [if the player is unable to orgasm so soon]Despite your lack of arousal you[otherwise]You[end if] feel a wave of pleasure and your [if the player is upright]knees buckle[otherwise]muscles tense then relax[end if] as your [vagina] [if the openness of vagina < 6]dribbles a small amount of girlcum[otherwise]squirts out girlcum[end if]. [bold type]You've just had your first anal orgasm[if tg fetish >= 1] as a girl[end if]![roman type][line break][or][bold type]Your [asshole] feels overly sensitive as that familiar wave of pleasure rushes through you and you have another anal orgasm. [roman type]You feel a wave of pleasure and your muscles tense then relax as your [vagina] [if the openness of vagina < 6]dribbles a small amount of girlcum[otherwise]squirts out girlcum[end if].[stopping]".
+	say "[one of][if there is a worn asshole-tattoo]You feel your [random worn asshole-tattoo] spark with delight as your extremely sensitive[otherwise]Your[end if] [asshole] [if soreness of asshole > 8]can't take the extreme stimulation any more[otherwise]feels incredible[end if]! [if the player is unable to orgasm so soon]Despite your lack of arousal you[otherwise]You[end if] feel a wave of pleasure and your [if the player is upright]knees buckle[otherwise]muscles tense then relax[end if] as your [vagina] [if the openness of vagina < 6]dribbles a small amount of girlcum[otherwise]squirts out girlcum[end if]. [bold type]You've just had your first anal orgasm[if tg fetish >= 1] as a girl[end if]![roman type][line break][or][bold type]Your [asshole] feels overly sensitive as that familiar wave of pleasure rushes through you and you have another anal orgasm. [roman type]You feel a wave of pleasure and your muscles tense then relax as your [vagina] [if the openness of vagina < 6]dribbles a small amount of girlcum[otherwise]squirts out girlcum[end if].[stopping]".
 
 To anally orgasm shamefully:
 	if the player is not able to orgasm:

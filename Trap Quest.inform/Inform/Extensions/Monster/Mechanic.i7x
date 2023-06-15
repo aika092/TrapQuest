@@ -350,7 +350,7 @@ This is the mechanic claims amulet rule:
 			now S is in the location of the player;
 		increase the xavier-power of mechanic by 4;
 		if the power-stolen of mechanic is 1:
-			say "[big he of mechanic] puts the amulet on, and you feel pulses of energy flowing throughout the room. However, its clear that [he of mechanic] was expecting more.[line break][speech style of mechanic]'The seal isn't breaking? But how? HOW?!'[roman type][line break][big he of mechanic] looks distracted, but for some reason, you get the feeling [he of mechanic][']ll be very angry next time [he of mechanic] sees you.";
+			say "[big he of mechanic] puts the amulet on, and you feel pulses of energy flowing throughout the room. However, it's clear that [he of mechanic] was expecting more.[line break][speech style of mechanic]'The seal isn't breaking? But how? HOW?!'[roman type][line break][big he of mechanic] looks distracted, but for some reason, you get the feeling [he of mechanic][']ll be very angry next time [he of mechanic] sees you.";
 			anger mechanic;
 			bore mechanic for 500 seconds;
 		otherwise if diaper quest is 0 and ((a random number between 1 and 2 is 1 and the class of the player is not succubus) or the class of the player is priestess or there is a worn pure totem):[the mechanic will always transform if you are a demon, or if you've ever successfully stolen anything from him]
@@ -401,7 +401,7 @@ This is the mechanic strips princess rule:
 		now bride-consort is mechanic;
 		PinkWardrobeUnclash princess bride dress;
 		compute class outfit of tiara-veil;
-		say "[speech style of current-monster]'Now all that remains is for you to join me on the wedding stage in the Dungeons of Bimbacia. Until you do, you will find this new dress of yours to be rather.. restricting.'[roman type][line break]";
+		say "[speech style of current-monster]'Now all that remains is for you to join me on the wedding stage in the Dungeons of Bimbacia. Until you do, you will find this new dress of yours to be rather... restricting.'[roman type][line break]";
 		satisfy current-monster;
 		rule succeeds;
 	otherwise if the class of the player is princess:
@@ -710,7 +710,7 @@ To say BanishFleeFlav of (M - a mechanic):
 
 To compute unique banishment of (M - a mechanic):
 	if there is worn demonic wearthing:
-		say "What happens next it looks like neither of you were expecting - a red pentagram appears on the floor underneath [him of M], and it sort of looks like the floor is melting where the pentagram sits. [BigNameDesc of M] begins to sink down through the pentagram.[line break][speech style of M]'Wait what? How?!'[roman type][line break][big he of M] tries to resist but there's nothing [he of M] can do to stop [himself of M] from being dragged into what looks like hell.[line break][speech style of M]'N-no, so... close... Curse you[if the class of the player is succubus]r... betrayal[end if]...'[roman type][line break]";
+		say "What happens next is something neither of you were expecting - a red pentagram appears on the floor underneath [him of M], and it sort of looks like the floor is melting where the pentagram sits. [BigNameDesc of M] begins to sink down through the pentagram.[line break][speech style of M]'Wait what? How?!'[roman type][line break][big he of M] tries to resist but there's nothing [he of M] can do to stop [himself of M] from being dragged into what looks like hell.[line break][speech style of M]'N-no, so... close... Curse you[if the class of the player is succubus]r... betrayal[end if]...'[roman type][line break]";
 		if gladiatorcurse is 1, uncurse gladiators;[You don't have to unleash the mechanic to purify the gladiators]
 		now M is permanently banished.
 

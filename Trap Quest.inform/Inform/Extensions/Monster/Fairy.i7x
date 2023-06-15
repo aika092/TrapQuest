@@ -409,7 +409,7 @@ To compute fairySuckling of (M - a fairy):
 	now decideToSuckle is 0;
 	increase FairySuckled by 1;
 	if fM > 7, now fM is 7;
-	say "[BigNameDesc of M][']s eyes light up, and [he of M] smacks [his of M] little lips. [one of][big his of M] tiny nose sniffs deeply, and [he of M] shuts [his of M] eyes for a moment in pleasure.[or]'Mmm, I smell milky goodness!'[or]'Ooh, a pretty cow for me to play with.'[or]'Yum, milk!'[or]'Mmm, milk!'[or]'Yum, milky goodness!'[at random]";
+	say "[BigNameDesc of M][']s eyes light up, and [he of M] smacks [his of M] little lips. [one of][big his of M] tiny nose sniffs deeply, and [he of M] shuts [his of M] eyes for a moment in pleasure.[or][speech style of M]'Mmm, I smell milky goodness!'[or][speech style of M]'Ooh, a pretty cow for me to play with.'[or][speech style of M]'Yum, milk!'[or][speech style of M]'Mmm, milk!'[or][speech style of M]'Yum, milky goodness!'[in random order][roman type][line break]";
 	cutshow figure of fairy cutscene 8 for M;
 	[Let's say the fairy is about size 7, so she can't drink more than that]
 	let NipsWereNkd be 0; [This will be set to 1 if the player had their nipples already sluttily exposed. Not really used, but could be for some humiliating text.]
@@ -501,7 +501,7 @@ To compute fairySuckling of (M - a fairy):
 			say "You know it will feel so good that you don't really even [italic type]try[roman type] to stop [his of M] swooping in.";
 		otherwise if delicateness of the player > 10 :
 			say "You find yourself biting your lip, and holding it up slightly to [him of M], offering yourself.";
-		say "[big his of M] grin widens as [he of M] darts to your other nipple, which shivers in eager anticipation of its imminent fate. The knowing look in [his of M] eyes tells you how much [he of M] enjoys having you under [his of M] tiny thumb. [big his of M] eyes burn into yours: [italic type][one of]'Yes, putty in my hands.'[or]'That's my pretty cow-dolly.'[or]'Hello, Mommy.'[or]'Go on, be a good milk dispenser.'[or]'I should call you Buttercup!'[or]'Ooh, who's getting to be well-trained?'[or]'That's a good milk-cow.'[or]'I know you want me to suck on you.'[or]'Look how eager you are!'[or]'I know you love this![or]'Oh, look who can't wait?'[or]'Oh, my, look at them, standing up proud and glistening with milk for me!'[or]'Are your nipples getting bigger?' [big he of M] licks [his of M] lips.[at random][roman type] Your eyes roll back in your head again as [one of][he of M] fastens onto you![or][his of M] mouth engulfs you![or] [he of M] starts suckling![at random]";
+		say "[big his of M] grin widens as [he of M] darts to your other nipple, which shivers in eager anticipation of its imminent fate. The knowing look in [his of M] eyes tells you how much [he of M] enjoys having you under [his of M] tiny thumb. [big his of M] eyes burn into yours:[line break][speech style of M][one of]'Yes, putty in my hands.'[or]'That's my pretty cow-dolly.'[or]'Hello, Mommy.'[or]'Go on, be a good milk dispenser.'[or]'I should call you Buttercup!'[or]'Ooh, who's getting to be well-trained?'[or]'That's a good milk-cow.'[or]'I know you want me to suck on you.'[or]'Look how eager you are!'[or]'I know you love this![or]'Oh, look who can't wait?'[or]'Oh, my, look at them, standing up proud and glistening with milk for me!'[or]'Are your nipples getting bigger?' [big he of M] licks [his of M] lips.[at random][roman type][line break]Your eyes roll back in your head again as [one of][he of M] fastens onto you![or][his of M] mouth engulfs you![or] [he of M] starts suckling![at random]";
 	if there is a worn cow piercing or there is a worn nipple chain:
 		say "[big his of M] tiny hands are jerking at [italic type]this[roman type] nipple's piercing, even as [his of M] mouth stretches over your rosebud, and [his of M] lips press down right to the edge of the heavy metal as [he of M] begins sucking vigorously. Between [his of M] suckling at your tit, and [his of M] tugging at the piercing, small lightning bolts of pleasure jolt and judder through you. You have the feeling that something a little magical just happened: your [BreastDesc] feel... [italic type]milkier[roman type]. Ooh - sexy!";
 		passively stimulate breasts from M;
@@ -559,12 +559,12 @@ To compute fairy meddling on (XXX - belly):
 	otherwise cutshow figure of fairy cutscene 3 for current-monster.
 Definition: face (called XXX) is fairy targetable:
 	if the make-up of face < 3, decide yes;
-	if the lips of face < max lip size and current-monster is blue-fairy, decide yes;
+	if the lips of face < max lip size and (current-monster is blue-fairy or current-monster is fairy-witch), decide yes;
 	decide no.
 
 To compute fairy meddling on (XXX - face):
-	say "[BigNameDesc of current-monster] whizzes over your head, tossing a handful of glittering dust at your face. [big he of current-monster] giggles as it settles on your cheeks, adding a new layer of makeup. [if current-monster is blue-fairy and the lips of face < max lip size]Your face tingles as your lips grow thicker.[end if]";
-	if current-monster is blue-fairy, LipsUp 1;
+	say "[BigNameDesc of current-monster] whizzes over your head, tossing a handful of glittering dust at your face. [big he of current-monster] giggles as it settles on your cheeks, adding a new layer of makeup. [if (current-monster is blue-fairy or current-monster is fairy-witch) and the lips of face < max lip size]Your face tingles as your lips grow thicker.[end if]";
+	if current-monster is blue-fairy or current-monster is fairy-witch, LipsUp 1;
 	FaceUp 1.
 
 Definition: hair (called XXX) is fairy targetable:

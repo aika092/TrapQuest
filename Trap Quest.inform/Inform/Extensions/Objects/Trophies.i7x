@@ -290,7 +290,7 @@ Definition: fat-trophy is fetish appropriate:
 	decide no.
 
 To say ExamineDesc of (T - fat-trophy):
-	say "This trophy is made in the shape of a chubby woman lifting up a dumbell.";
+	say "This trophy is made in the shape of a chubby woman lifting up a dumbbell.";
 	if the trophy-mode of T is 1, say "green glow, and you can feel that exercise will no longer burn fat, but instead all go straight to building muscle!";
 	otherwise say "red glow, which allows you to sense that exercising will currently burn fat over building muscle unless you're very skinny.".
 

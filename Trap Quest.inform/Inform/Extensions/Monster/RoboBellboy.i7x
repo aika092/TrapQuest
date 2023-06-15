@@ -137,7 +137,7 @@ To compute perception of (M - senior robobellboy):
 	otherwise if the class of the player is not catgirl and the class of the player is not puppygirl and (the number of worn crotch covering clothing is 0 or the number of worn breast covering clothing is 0):
 		say "[big his of M] eyes turn red.[line break][speech style of M]'ERROR LINE 34, PATRON UNSUITABLE. INITIALISING EJECTION PROTOCOL... ERROR... ERROR... HELLO NEW TRAINEE. [caps please] SUBMIT IMMEDIATELY FOR PERFORMANCE OPTIMISATION.";
 	otherwise if a random number between 1 and (3 - diaper quest) is 1 and (the charge of modification machine <= 0 or (artificial enhancements fetish is 1 and there is an off-stage fetish appropriate module)):
-		say "[big his of M] eyes turn red.[line break][speech style of M]'HELLO TREASURED CUSTOMER. YOU HAVE BEEN SELECTED FOR COMPLIMENTAY MODIFICIATION. [caps please] ALLOW ME TO ESCORT YOU TO THE MODIFICATION MACHINE.'[roman type][line break]";
+		say "[big his of M] eyes turn red.[line break][speech style of M]'HELLO TREASURED CUSTOMER. YOU HAVE BEEN SELECTED FOR COMPLIMENTARY MODIFICATION. [caps please] ALLOW ME TO ESCORT YOU TO THE MODIFICATION MACHINE.'[roman type][line break]";
 		now M is modification-intending;
 	otherwise:
 		say "[speech style of M]'HELLO TREASURED CUSTOMER. [caps please] ALLOW THE BUTLER TO ASSIST YOU.'[roman type][line break][big he of M] appears to lose interest and continues on [his of M] way.";
@@ -310,7 +310,7 @@ To compute knickers forcing of (M - a robobellboy):
 		if the bimbo of the player > 5 and the player is possessing a penis or the player is a sissy:
 			let H be a random off-stage fetish appropriate chastity cage;
 			if H is a chastity cage:
-				say "[BigNameDesc of M] digital interface flashes red as it notices your exposed [sissy-penis].[line break][first custom style]'EXPOSED CLITTY DETECTED. ENTERING CAGING SUBROUTINE.'[roman type][line break][big he of M] deploys a long black tube that vaccums down your exposed [penis] to the hilt. The sucking feels amazing, and you feel yourself getting close to orgasm, before you feel something cold and hard force your erection down. [BigNameDesc of M] stops the suction and removes the tube to reveal your [sissy-penis] is now locked away in a [ShortDesc of H]![roman type][line break]";
+				say "[BigNameDesc of M] digital interface flashes red as it notices your exposed [sissy-penis].[line break][first custom style]'EXPOSED CLITTY DETECTED. ENTERING CAGING SUBROUTINE.'[roman type][line break][big he of M] deploys a long black tube that vacuums down your exposed [penis] to the hilt. The sucking feels amazing, and you relish the approaching orgasm... until you feel something cold and hard suddenly force your erection down. [BigNameDesc of M] stops the suction and removes the tube to reveal your [sissy-penis] is now locked away in a [ShortDesc of H]![roman type][line break]";
 				summon H locked;
 				say "[first custom style]'PLEASE REMEMBER THAT CLIENT SATISFACTION SHOULD BE YOUR ONLY CONCERN. PLEASE STAND BY FOR APPROPRIATE CLOTHING.'[roman type][line break]";
 				say FullExamineDesc of H;

@@ -267,7 +267,7 @@ To teleport via (W - a warp portal):
 					now P is a random eligible appropriate team-predicament;
 					if debugmode > 0, say "After reconsidering joint predicament options and seeing [ST] in the reception area, selected [P].";
 		if P is nothing:
-			say "BUG: tried to set up an extra credit lesson but suddenly none were avaiable. Oopsie. Please report a bug with the following info:[line break]Receptionist: [unless receptionist is in the location of the player]not [end if]available.[line break]nearby students: [list of students in the location of the player].[line break]Chosen predicament partner: [team-predicament-partner].[line break]List of appropriate predicaments before receptionist check: [L].[line break]List of appropriate predicaments after receptionist check: [the list of eligible appropriate predicaments].";
+			say "BUG: tried to set up an extra credit lesson but suddenly none were available. Oopsie. Please report a bug with the following info:[line break]Receptionist: [unless receptionist is in the location of the player]not [end if]available.[line break]nearby students: [list of students in the location of the player].[line break]Chosen predicament partner: [team-predicament-partner].[line break]List of appropriate predicaments before receptionist check: [L].[line break]List of appropriate predicaments after receptionist check: [the list of eligible appropriate predicaments].";
 		otherwise:
 			set up predicament status;
 			if P is team-predicament:
@@ -334,6 +334,6 @@ To teleport via (W - a warp portal):
 			DoseDown MT by 2;
 		display entire map;
 		say "As you go through the portal, you appear in the [location of the player][one of]! There is an identical green portal in this room too, to allow you to go back and forth[or][stopping]!";
-	compute clothing cleanup.
+	if playerRegion is not school, compute clothing cleanup. [otherwise extra credit zone causes jewellery to get cleaned up]
 
 Warp Portal ends here.

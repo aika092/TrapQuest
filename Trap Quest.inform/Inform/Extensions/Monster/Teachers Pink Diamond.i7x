@@ -230,6 +230,7 @@ To compute teaching of (L - enema-tag-lesson):
 								say "[bold type]The [man of male-m] in black seems satisfied by this, and turns away from you.[roman type][line break]";
 								remove yourself from LSZ;
 								now zentaiDistance is 0;
+								now refractoryperiod is 0;
 						otherwise:
 							increase lessonInt2 of TGT by 1;
 							if zentaiDistance < a random number between -2 and -3:

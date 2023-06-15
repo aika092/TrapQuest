@@ -187,7 +187,7 @@ Check going when there is a triggered cage trap in the location of the player:
 		if the number of stuck body parts is 0 and inflation fetish is 1 and max ass size >= 10 and the player is getting unlucky:
 			now the stance of the player is 1;
 			now hips is stuck;
-			say "You begin to squeeze through the cage, but after the rest of your body except your [AssDesc] is out, you feel a magical curse get triggered! Your ass cheeks inflate with air until they're a comical size - much too big to fit between the bars! You're completely stuck! [GotUnluckyFlav][bold type]You'll have to wait for the cage to somehow release you.[roman type][line break]";
+			say "You begin to squeeze through the cage, but after the rest of your body except your [AssDesc] is out, you feel a magical curse  trigger! Your ass cheeks inflate with air until they're a comical size - much too big to fit between the bars! You're completely stuck! [GotUnluckyFlav][bold type]You'll have to wait for the cage to somehow release you.[roman type][line break]";
 			AssInflate 10;
 		if there is a stuck body part, say "[bold type]You are now stuck, halfway out of the cage, on your knees.[roman type][line break]" instead;
 	let D be a random worn diaper;

@@ -6,7 +6,7 @@ milking bench is a kind of furniture. A milking bench has a number called units 
 A milking bench lever is a kind of thing. A milking bench lever can be lever-pulled. A milking bench lever is not portable. The printed name of a milking bench lever is "[TQlink of item described]lever on the wall[TQxlink of item described][shortcut-desc][verb-desc of item described]". The text-shortcut of milking bench lever is "mbl". Understand "lever", "on the wall" as milking bench lever.
 Definition: a milking bench lever is immune to change: decide yes.
 To say ExamineDesc of (C - a milking bench lever):
-	say "There's a lever sticking out of the wall, with a large green plus sign and a large red minus sign as the two settings painted onto the wall next to it. It is currently pointing [if C is lever-pulled]upwards, towards the green plus sign[otherwise]downwards, towards the red minus sign[end if].";
+	say "There's a lever sticking out of the wall, with a large green plus sign and a large red minus sign as the two settings painted on the wall next to it. It is currently pointing [if C is lever-pulled]upwards, towards the green plus sign[otherwise]downwards, towards the red minus sign[end if].";
 	if newbie tips is 1, say "[newbie style]When this lever is set to the green plus sign, resting on the milking bench with your nipples exposed will cause you to gain very large amounts of lactation and breast size.[roman type][line break]".
 Check pulling a milking bench lever:
 	if the player is immobile or the player is in danger, say "You're a bit busy, aren't you?" instead;
@@ -16,9 +16,13 @@ Check pulling a milking bench lever:
 	if the noun is lever-pulled:
 		say "You pull the lever down, so it is now pointing to the large red minus sign.";
 		now the noun is not lever-pulled;
-		repeat with M running through reactive gladiators:
-			say "[speech style of M]'Coward! A brave adventurer wouldn't be afraid of a little breast enhancement.'[roman type][line break][BigNameDesc of M] says haughtily.";
-			FavourDown M with consequences;
+		if the player is not top heavy:
+			repeat with M running through reactive gladiators:
+				say "[speech style of M]'[one of]Coward! A brave adventurer wouldn't be afraid of a little breast enhancement.'[or]Weakling! A bold explorer would have no fear of developing their [BreastDesc] further!'[or]Hah! Such [BreastDesc] are clearly in need of improvement!'[in random order][roman type][line break][BigNameDesc of M] says haughtily.";
+				FavourDown M with consequences;
+		otherwise:
+			repeat with M running through reactive gladiators:
+				say "[speech style of M]'[one of]Your [BreastDesc] are impressive! I doubt they could grow any further. Yet all the same... Let us see what might happen if we try anyway, o brave adventurer!'[or]I must confess your [BreastDesc] are impressive. Yet perhaps the magic of this device might yet have some interesting effect upon a bold adventurer such as yourself, eh?'[or]I have always wished to see what effect this strange apparatus might have on one blessed with [BreastDesc] sucah as yours.'[or]Hmm, I'm sure you're eager to see whether even your [BreastDesc] might be [']enhanced['] somehow if we do this...'[in random order][roman type][line break][BigNameDesc of M] says with a [one of]dangerous[or]concerning[or]ominous[or]crazed[in random order] [one of]smirk[or]gleam in their eye[or]expression[in random order]."; [Selkie: might be fun one day to add a chance for something to happen here in some circumstances?]
 		if the class of the player is not cultist:
 			repeat with M running through reactive acolytes:
 				say "[speech style of M]'Unbeliever, that is not yours to meddle with!'[roman type][line break][BigNameDesc of M] snarls.";

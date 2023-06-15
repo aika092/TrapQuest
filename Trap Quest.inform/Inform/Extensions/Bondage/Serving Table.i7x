@@ -95,7 +95,7 @@ Definition: trashcan is condom pinnable:
 	if the tissue-fill of trashcan >= 2, decide yes;
 	decide no.
 Definition: trashcan is drinkable condom pinned: decide no.
-Definition: trashcan is remvoable: decide no.
+Definition: trashcan is removable: decide no.
 Definition: trashcan is class-relevant:
 	if the class of the player is human toilet or the class of the player is condom collector or the class of the player is latex fetish model, decide yes;
 	decide no.

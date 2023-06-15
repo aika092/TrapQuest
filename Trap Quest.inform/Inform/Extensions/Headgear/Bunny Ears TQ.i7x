@@ -424,7 +424,7 @@ To decide which figure-name is the clothing-image of (C - frilly bunny ears):
 	decide on figure of frilly bunny ears.
 
 To say ClothingDesc of (H - frilly bunny ears):
-	say "A pink frilly pvc maid headress with attached bunny ears.".
+	say "A pink frilly pvc maid headdress with attached bunny ears.".
 
 To say ShortDesc of (H - frilly bunny ears):
 	say "bunny ears".

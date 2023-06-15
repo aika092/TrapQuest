@@ -1661,7 +1661,7 @@ To say DiaperChangeComment of (M - demoness):
 	otherwise say "[speech style of M]'[one of]That was far too easy - you're nothing but a baby[or]And another [man of the player] falls to the crinkly grip of a diaper~[or]Mmm yes, how adorable. I picked the right diaper for sure[in random order].'[roman type][line break]".
 
 To say DiaperDonateComment of (M - demoness):
-	say "[speech style of M]'And you'll wear diapers until I say that you have permission to wear grown-up panties again, or there'll be hell to pay! Literally! Hahaha...'[roman type][line break]".
+	say "[speech style of M]'And you'll wear diapers until I give you permission to wear grown-up panties again, or there'll be hell to pay! Literally! Hahaha...'[roman type][line break]".
 
 Definition: a demoness is willing to masturbate:
 	if there is a sex toy penetrating asshole or the player is possessing a penis or the player is very horny, decide yes;

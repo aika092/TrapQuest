@@ -191,6 +191,7 @@ Definition: golden warrior priestess outfit is class-relevant:
 Definition: golden warrior priestess outfit is displacable: decide yes.
 Definition: golden warrior priestess outfit is yellow themed: decide yes.
 Definition: golden warrior priestess outfit is layer-concealing: decide no.
+Definition: golden warrior priestess outfit is rippable: decide yes.
 
 To decide which number is the initial armour of golden warrior priestess outfit: decide on 5.
 

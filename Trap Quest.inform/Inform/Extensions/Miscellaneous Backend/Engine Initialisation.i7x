@@ -186,7 +186,7 @@ To fill in legacy table blanks:
 	unless there is a choice in row 65 of the Table of Player Options, now choice in row 65 of Table of Player Options is 0;
 	unless there is a choice in row 66 of the Table of Player Options, now choice in row 66 of Table of Player Options is 0;
 	unless there is a choice in row 67 of the Table of Player Options, now choice in row 67 of Table of Player Options is 0;
-	unless there is a choice in row 68 of the Table of Player Options, now choice in row 68 of Table of Player Options is 1;
+	unless there is a choice in row 68 of the Table of Player Options, now choice in row 68 of Table of Player Options is 0;
 	unless there is a choice in row 69 of the Table of Player Options, now choice in row 69 of Table of Player Options is 0;
 	unless there is a choice in row 70 of the Table of Player Options, now choice in row 70 of Table of Player Options is 0;
 	unless there is a choice in row 71 of the Table of Player Options, now choice in row 71 of Table of Player Options is 0;

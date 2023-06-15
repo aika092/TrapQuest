@@ -237,7 +237,7 @@ To decide which figure-name is clothing-image of (C - bimbo monokini):
 	decide on figure of bimbo monokini.
 
 To say ClothingDesc of (C - bimbo monokini):
-	say "This tight fitting onepiece swimsuit is extremely low cut, allowing for extra large amounts of cleavage to be shown, and at the same time very high-waisted, to expose a huge amount of your hips. The words 'Bimbo' are written on the front.".
+	say "This tight fitting one piece swimsuit is extremely low cut, allowing for extra large amounts of cleavage to be shown, and at the same time very high-waisted, to expose a huge amount of your hips. The word 'Bimbo' is written on the front.".
 
 To say ShortDesc of (C - bimbo monokini):
 	say "pink swimsuit".
@@ -269,7 +269,7 @@ To decide which figure-name is clothing-image of (C - gris monokini):
 	decide on figure of gris monokini.
 
 To say ClothingDesc of (C - gris monokini):
-	say "This tight fitting onepiece strapless swimsuit is almost entirely see-through, except for strips of opaque fabric over the centre of the chest, and the crotch, starting right at the bottom of the mons pubis. So despite it covering the same amount of area as many strapless swimsuits, it is in practice much, much sluttier.".
+	say "This tight fitting one piece strapless swimsuit is almost entirely see-through, except for strips of opaque fabric over the centre of the chest, and the crotch, starting right at the bottom of the mons pubis. So despite it covering the same amount of area as many strapless swimsuits, it is in practice much, much sluttier.".
 
 To say ShortDesc of (C - gris monokini):
 	say "mostly transparent swimsuit".

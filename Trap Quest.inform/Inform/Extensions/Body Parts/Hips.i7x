@@ -13,7 +13,7 @@ hips is a flesh. hips is everywhere. Understand "ass", "butt", "bottom", "rear",
 
 
 [
-Ass modesty is how much of the ass it covers. It usually is in line with armour which is usually in line with penis capacity (which defaults to 10). Here are some guidlines:
+Ass modesty is how much of the ass it covers. It usually is in line with armour which is usually in line with penis capacity (which defaults to 10). Here are some guidelines:
 Thongs and G-strings: 1
 Hotpants: 3
 Briefs: 6

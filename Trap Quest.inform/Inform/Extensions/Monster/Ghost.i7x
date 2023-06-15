@@ -7,7 +7,7 @@ Definition: a ghost is willing to do titfucks: decide no.
 Definition: a ghost is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 
 Definition: a ghost is father material: decide yes.
-Definition: a ghost is a urianter: decide no.
+Definition: a ghost is a urinater: decide no.
 
 Definition: a ghost is delayed:
 	if the last-interaction of it is 2 and diaper quest is 0, decide yes;

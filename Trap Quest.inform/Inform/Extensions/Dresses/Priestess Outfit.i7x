@@ -268,7 +268,7 @@ To say ShortDesc of (C - heart-pussy-hobble-skirt):
 To say MediumDesc of (C - heart-pussy-hobble-skirt):
 	say "pussy exposing hobble skirt".
 To say ClothingDesc of (C - heart-pussy-hobble-skirt):
-	say "This skirt is made from two long pieces of white cloth that dangle vertically in front and behind your legs. They are bound to your body at the thighs and ankles to keep them in place and to force you to walk with an awkward hobble at all times. At the front of the front piece of fabric is a large heart-shaped hole which exposes everything[if pregnancy fetish is 1]. [bold type]You can sense that it somehow magically protects your womb from getting pregnant quite so easily[end if][if pregnancy fetish is 1 and the pregnancy resistance of the player > 0][roman type] - you're safe unless a particularly large amount of [semen] makes it into your womb[end if].[roman type][line break]".
+	say "This skirt is made from two long pieces of white cloth that dangle vertically in front and behind your legs. They are bound to your body at the thighs and ankles to keep them in place and to force you to walk with an awkward hobble at all times. At the front of the front piece of fabric is a large heart-shaped hole which exposes everything[if pregnancy fetish is 1]. [bold type]You can sense that it somehow magically protects your womb from getting pregnant quite so easily[end if][if pregnancy fetish is 1 and the pregnancy resistance of the player > 0][roman type] - you're safe unless a particularly large amount of [semen] reaches your womb[end if].[roman type][line break]".
 
 Definition: heart-pussy-hobble-skirt is white themed: decide yes.
 Definition: heart-pussy-hobble-skirt is class-relevant:

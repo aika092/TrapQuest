@@ -271,7 +271,7 @@ To compute action (N - a number) of (M - a slimeball):
 		otherwise if debuginfo > 0:
 			say "[input-style]Slimeball evasion check: dexterity roll (d[dexterity of the player]) = [D] [if the player is prone]- kneeling penalty (8) = [X] [end if]| (6.5) Facehugger evasion difficulty[roman type][line break]";
 		if X > 6:
-			say "You manage to move yourself out of the way, and [NameDesc of M] goes flying past. But it's still wobbling, preparing to try again...";
+			say "You manage to move yourself out of the way, and [NameDesc of M] goes flying past. But it's still wobbling, apparently preparing to try again...";
 		otherwise:
 			say "[if the player is not immobile]You don't move out of the way in time! [end if]It splashes against you, coating you in its slime!";
 			now M is wrangling arms;

@@ -371,7 +371,7 @@ Pink Diamond classes will take sex to the next level - sex is just the foreplay 
 Pure diamond classes (the final level) - I imagine there won't be many of these at all. One would just be some unholy mix of the above, a gangbang (or orgy) with all the worst stuff - felching anal creampies, lots of watersports if enabled, bondage, attempted mass insemination, maybe it's blindfolded, etc.
 And the other pure diamond class would be fucking an inhuman beast, or tentacle monster, if enabled.
 
-###Selkie wonders about the possibility of a less extreme option, in which the extreme angle is something like a gangbang that's also viewed via cam of the player's friends and family members? Or streamed live to social media in the real world?
+Selkie wonders about the possibility of a less extreme option, in which the extreme angle is something like a gangbang that's also viewed via cam of the player's friends and family members? Or streamed live to social media in the real world?
 ]
 
 An all later time based rule (this is the class-time cooldown rule):
@@ -954,7 +954,7 @@ To say AssemblyStartFlav of (A - tattoo-assembly):
 	say "[BigNameDesc of headmistress] casts [his of headmistress] eyes over the crowd of students.".
 
 To execute (A - tattoo-assembly):
-	say "[speech style of headmistress]'I have decided that all students of emerald rank and above should get matching tattoos of our academy's logo! They will go below your chest, and be imbued with a magic effect that increases your balance... and docility... when wearing high heels. Anyone who refuses will be demoted one rank.'[roman type][line break]";
+	say "[speech style of headmistress]'I have decided that all students of emerald rank and above should get matching tattoos of our academy's logo! They will go below your chest, and be imbued with a magical effect that increases your balance... and docility... when wearing high heels. Anyone who refuses will be demoted one rank.'[roman type][line break]";
 	let LST be the list of students in the location of the player;
 	let N be 0;
 	let T be 0;
@@ -1028,7 +1028,7 @@ To execute (A - drink-assembly):
 	repeat with ST running through students in the location of the player:
 		if the favour of ST < the aggro limit of ST - 4, now M is ST;
 	if M is a student:
-		say "When the chalice makes its way to [M], [he of M] just makes a gagging sound.[line break][speech style of M]'Sorry, but no way. I'm out of here.'[roman type][line break][big he of M] moves to leave, but before [he of M] can make it even a couple of steps, [NameDesc of headmistress] interrupts.[line break][speech style of headmistress]'Fine then, so be it. But here, take this parting gift.'[roman type][line break][BigNameDesc of M]'s armband disappears, and at the same time, a pink collar appears around [his of M] neck. It has a metal heart at the front. [BigNameDesc of M] squeaks in surprise, and immediately tries to remove it, but can't find a latch.[line break][speech style of headmistress]'This of this as your final assignment. You won't be able to remove the collar until you put that mouth to good use. And until then, you're going to find yourself getting thirsty much faster than normal.'[roman type][line break][BigNameDesc of M] runs from the room, sobbing.";
+		say "When the chalice makes its way to [M], [he of M] just makes a gagging sound.[line break][speech style of M]'Sorry, but no way. I'm out of here.'[roman type][line break][big he of M] moves to leave, but before [he of M] can make it even a couple of steps, [NameDesc of headmistress] interrupts.[line break][speech style of headmistress]'Fine then, so be it. But here, take this parting gift.'[roman type][line break][BigNameDesc of M]'s armband disappears, and at the same time, a pink collar appears around [his of M] neck. It has a metal heart at the front. [BigNameDesc of M] squeaks in surprise, and immediately tries to remove it, but can't find a latch.[line break][speech style of headmistress]'Think of this as your final assignment. You won't be able to remove the collar until you put that mouth to good use. And until then, you're going to find yourself getting thirsty much faster than normal.'[roman type][line break][BigNameDesc of M] runs from the room, sobbing.";
 		destroy M;
 	say "Finally the chalice is passed to you. Can you really bring yourself to drink an entire mouthful of this [if a2m fetish >= 2]water that came out of [his of headmistress] asshole[otherwise if watersports fetish is 1][urine][otherwise][milk][end if]? ";
 	if the player is bimbo consenting:

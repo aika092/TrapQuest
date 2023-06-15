@@ -240,7 +240,7 @@ A game universe initialisation rule (this is the incantation initialisation rule
 			now the phrase entry is "love the taste of cum";
 			now the naughtiness entry is 7;
 			choose a blank row in the Table of Possible Incantations;
-			now the phrase entry is "can't rememeber how many [manly-penis]s I've sucked today";
+			now the phrase entry is "can't remember how many [manly-penis]s I've sucked today";
 			now the naughtiness entry is 8;
 			choose a blank row in the Table of Possible Incantations;
 			now the phrase entry is "will spread my legs for anyone";

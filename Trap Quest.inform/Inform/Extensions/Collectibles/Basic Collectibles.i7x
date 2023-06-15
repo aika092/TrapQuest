@@ -43,7 +43,7 @@ To say ShortDesc of (C - fertility idol):
 
 Carry out taking fertility idol:
 	if the player is ready for common event TG:
-		say "[BigNameDesc of woman-player]'s magic surges down from your belly to your loins. [if the player is possessing a penis]Your [player-penis] feels... Absent![end if] The logical conclusion of what has just happened to you is clear, and it only takes a moment for you to check and confirm... You're no longer biologically male. You have a real, fully functional vagina and womb![line break][variable custom style]And I'm already 9 months pregnant... This is insane![roman type][line break]";
+		say "[BigNameDesc of woman-player]'s magic surges down from your belly to your loins. [if the player is possessing a penis]Your [player-penis] feels suddenly... absent![end if] The logical conclusion of what has just happened to you is clear, and it only takes a moment for you to check and confirm... You're no longer biologically male. You blink in shock. You now have a real, fully functional vagina and womb![line break][variable custom style]And I'm already nine months pregnant... This is insane![roman type][line break]";
 		SexChange the player;
 	if fertility idol is cursed:
 		now fertility idol is bland;

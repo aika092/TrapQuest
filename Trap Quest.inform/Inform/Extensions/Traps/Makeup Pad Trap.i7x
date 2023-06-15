@@ -323,7 +323,7 @@ To trigger (Y - a choice trap):
 	now Y is expired;
 	let LC be the list of appropriate choice-trap-choices;
 	sort LC in random order;
-	say "A tablet inside the cointainer comes to life - since you're right in front of it, you can see that it has two options on it. It seems that it wants you to press one...";
+	say "A tablet inside the container comes to life - since you're right in front of it, you can see that it has two options on it. It seems that it wants you to press one...";
 	reset multiple choice questions;
 	set numerical response 1 to the substituted form of "[ChoiceFlav of entry 1 in LC]";
 	set numerical response 2 to the substituted form of "[ChoiceFlav of entry 2 in LC]";

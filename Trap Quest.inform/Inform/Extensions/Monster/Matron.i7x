@@ -113,7 +113,7 @@ Definition: matron (called M) is distracted:
 		if N is adult baby slave and (N is defeated or N is uninterested or N is friendly):
 			say "[BigNameDesc of M][']s eyes are drawn [if M is interested]away from you [end if]to [NameDesc of N]. [big he of M] grabs [him of N] by the arm.[line break][speech style of M]'Good goddess! You need a change.'[line break][speech style of N]'Nu-uh, I don't need a change, I'm totally fine as I- HEY!'[roman type][line break]";
 			if M is in Hotel22:
-				say "Forcing [NameDesc of N] onto [his of N] back, [NameDesc of M] sets about untaping [NameDesc of N][']s diaper, wiping [him of N] down, and changing [him of N] out of [his of N] messy nappy, despite [his of N] protests.";
+				say "Forcing [NameDesc of N] onto [his of N] back, [NameDesc of M] sets about un-taping [NameDesc of N][']s diaper, wiping [him of N] down, and changing [him of N] out of [his of N] messy nappy, despite [his of N] protests.";
 				let SD be a random off-stage soiled-diaper;
 				if SD is soiled-diaper and diaper messing >= 6:
 					now SD is in the location of the player;
@@ -125,7 +125,7 @@ Definition: matron (called M) is distracted:
 				DifficultyUp M by 1;
 				compute mandatory room leaving of M;
 				if SD is soiled-diaper:
-					say "[BigNameDesc of N] begins to ease [himself of N] back to [his of N] feet. [big he of N] looks at [NameDesc of SD] and wrinkles [his of N] nose.[line break][speech style of N]'I'll leave you to get rid of that. Don't worry, I'll make sure to tell anyone that I see that it was yours!'[roman type][line break][big he of N] pulls one of [his of N] eyes wide open with [his of N] fingers and sticks [his of N] tongue out at you as [he of N] leaves.";
+					say "[BigNameDesc of N] begins to ease [himself of N] back to [his of N] feet. [big he of N] looks at [NameDesc of SD] and wrinkles [his of N] nose.[line break][speech style of N]'I'll leave you to get rid of that. Don't worry, I'll make sure to tell anyone I see that it was yours!'[roman type][line break][big he of N] pulls one of [his of N] eyes wide open with [his of N] fingers and sticks [his of N] tongue out at you as [he of N] leaves.";
 					bore N;
 					compute mandatory room leaving of N;
 				otherwise if N is interested:
@@ -384,7 +384,7 @@ Definition: matron is diaper change during cummies rewarding:
 	decide no.
 
 To compute diaper change during cummies reward of (M - matron):
-	say "[speech style of M]'This guy is so cute, standing to attention like this.'[roman type][line break][BigNameDesc of M] toys with your [player-penis], first tickling the underside of the tip, and then taking it between two fingers and gently stroking your head with two finger tips with a quick twisting motion. [big his of M] technique is incredible - [he of M] seems to know the exact places to touch you to send your body into fits of ecstacy. Despite how humiliating it is for this to happen in the middle of a diaper change, there's nothing you can do but hold your breath and wait for the sparks to fly.";
+	say "[speech style of M]'This guy is so cute, standing at attention like this.'[roman type][line break][BigNameDesc of M] toys with your [player-penis], first tickling the underside of the tip, and then taking it between two fingers and gently stroking your head with two fingertips with a quick twisting motion. [big his of M] technique is incredible - [he of M] seems to know the exact places to touch you to send your body into fits of ecstasy. Despite how humiliating it is for this to happen in the middle of a diaper change, there's nothing you can do but hold your breath and wait for the [']sparks['] to fly.";
 	penis orgasm shamefully;
 	say "[speech style of M]'Oh deary me. Little [boy of the player]s aren't supposed to be able to have squirties like this. How indecent!'[roman type][line break][big he of M] chides you, as if [he of M] wasn't responsible for it happening in the first place.";
 	let C be nothing;
@@ -392,7 +392,7 @@ To compute diaper change during cummies reward of (M - matron):
 	let K be a random off-stage specific-key;
 	if C is clothing and K is specific-key:
 		summon C uncursed;
-		say "[speech style of M]'Don't worry, I have jut the thing, to make sure this never happens again!'[roman type][line break][BigNameDesc of M] places a [C] over your [player-penis]!";
+		say "[speech style of M]'Don't worry, I have just the thing to make sure this never happens again!'[roman type][line break][BigNameDesc of M] places a [C] over your [player-penis]!";
 		compute M locking C with K.
 
 
@@ -448,14 +448,14 @@ To compute diaper change during special of (M - matron):
 	if diaper messing >= 3 and (the player is feeling full or a random number between 1 and 2 is 1):
 		say "[speech style of M]'While we're here, I think you need a special something to keep your bowels nice and healthy.'[roman type][line break][GotUnluckyFlav]It turns out that [NameDesc of M][']s idea of such a special something... Is a giant enema syringe.";
 		if the player is able to speak, say "[variable custom style]'[if the player is feeling dominant]Don't you fucking dare!'[otherwise if the player is feeling submissive]If... If you say so...'[otherwise]Is that really necessary?!'[end if][roman type][line break]";
-		otherwise say "[variable custom style][if the player is feeling dominant]You've got to be fucking kidding me! No way![otherwise if the player is feeling submissive]I'd better do as I'm told...[otherwise]Is that really necessary?![end if][roman type][line break]";
+		otherwise say "[variable custom style][if the player is feeling dominant]You've got to be fucking kidding me! No way![otherwise if the player is feeling submissive]I'd better do as I'm told...[otherwise]Is this really necessary?![end if][roman type][line break]";
 		say "Locked in place, there's nothing you can do but lie there [if the player is feeling submissive]anyway [end if]as [NameDesc of matron] inserts the narrow end into your [asshole] and pushes the plunger, filling you up nearly to the brim with room temperature water. You can hear and feel it gurgling around inside your intestines.";
 		Assfill ((belly limit * 3) / 4) water;
-		say "With a [']pop['], the enema syringe leaves your [asshole], and you can immediately feel the pressure beginning to build from within.";
+		say "With a [']pop['], the enema syringe leaves your [asshole], and you immediately feel the pressure building within.";
 	otherwise:
 		let P be a random off-stage metal basic plug;
 		if P is nothing, now P is small-jewelled-plug;
-		say "[speech style of M]'While we're here, I think you deserve something special. Something to remember me by.'[roman type][line break][GotUnluckyFlav]It turns out that [NameDesc of M][']s idea of such a special something... Is a metal butt plug with a glittering gem at the end. You watch [him of M] as [he of M] applies a special lubricant to the bulb, and then pops it inside of you. It's only when you try to push it out that you realise it's not lube that [he of M][']s put on it... It's glue.";
+		say "[speech style of M]'While we're here, I think you deserve something special. Something to remember me by.'[roman type][line break][GotUnluckyFlav]It turns out that [NameDesc of M][']s idea of such a special something... Is a metal butt plug with a glittering gem at the end. You watch [him of M] as [he of M] applies a special lubricant to the bulb, and then pops it inside of you. It's only when you try to push it out that you realise it wasn't lube that [he of M] put on it... It was glue!";
 		if the player is able to speak, say "[variable custom style]'[if the player is a nympho]That's so mean... I love it!'[otherwise if the player is a pervert]I can't believe you really just did that to me. This is insane!'[otherwise]How fucking dare you! Take it out right now!'[end if][roman type][line break]";
 		otherwise say "[variable custom style][if the player is a nympho]That's so mean... I love it![otherwise if the player is a pervert]Is [he of M] mad?![otherwise]How fucking dare [he of M]![end if][roman type][line break]";
 		summon P uncursed;
@@ -593,7 +593,7 @@ To say MasturbationStartFlav of (M - matron):
 	say "[BigNameDesc of M] tsks as [he of M] hoists you up by your armpits.[line break][speech style of M]'Coming to [daddytitle of M] with such lust in your eyes, I can't have you playing with the others like this!'[roman type][line break]Before asking for your input, [he of M] whisks you off to the changing table and lays you back on it. After binding your wrists and ankles with tight pink fur covered cuffs, [he of M] begins to shuffle through an unfamiliar cabinet opposite the table.[line break][speech style of M]'We'll get you nice and tuckered out sweetie, don't you worry!'[roman type][line break][big he of M] purrs before producing a large vibrating wand, one even bigger than those you are familiar with.[line break][speech style of M]'Just know there's no shame in making creamy accidents, my changing table is no stranger to all matter of wetness.'[roman type][line break]Before you can utter a syllable[if the player is not feeling submissive] of defiance[end if], the wand presses into the thick folds of your diaper and sends a sharp shock of pleasure that echoes throughout your [genitals] and then your body! Loud hums drown out your squeals as the wand travels all sections of your diaper region... from your [genitals] all the way to your [asshole]!".
 
 To say BabywearDonationDeclarationFlav of (M - matron) on (C - a clothing):
-	say "[speech style of M]'I've got just the thing for a cutie like you.'[roman type][line break]".
+	say "[speech style of M]'I've got just the thing for a cutie pie like you.'[roman type][line break]".
 
 To compute (M - a monster) babywear donating (C - a clothing):
 	say BabywearDonationFlav of M on C;
@@ -625,7 +625,7 @@ To consider farewell routine for (M - matron):
 		unless the player is in Hotel22, drag to Hotel22 by M;
 		say "[BigNameDesc of M] carries you over to [NameDesc of nursery crib], and plonks you inside.";
 		compute crib locking of nursery crib;
-		say "[if the player is feeling dominant]Despite being forced, you[otherwise]You[end if] realise [he of M]'s right - you could really use a quick rest.";
+		say "[if the player is feeling dominant]Despite being forced, you[otherwise]You[end if] realise [he of M]'s right - you really could use a quick rest.";
 		compute normal rest of nursery crib.
 
 To say SatisfiedFlav of (M - matron):

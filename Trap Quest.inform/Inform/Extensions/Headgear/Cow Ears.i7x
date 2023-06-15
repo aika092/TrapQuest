@@ -70,7 +70,7 @@ To compute unique periodic effect of (C - cow-ears):
 		if T is actually summonable, summon T;
 	if the temporary-milked-bonus of C > 0:
 		decrease temporary-milked-bonus of C by 1;
-		if temporary-milked-bonus of C <= 0, say "[bold type]The temporary dexterity boost you had from recently getting milked has ended.[roman type][line break]".
+		if temporary-milked-bonus of C <= 0, say "[bold type]The temporary dexterity boost you had from your recent milking has ended.[roman type][line break]".
 
 Chapter - Quest
 

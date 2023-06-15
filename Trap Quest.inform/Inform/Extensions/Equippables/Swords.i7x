@@ -100,7 +100,7 @@ sword-of-purity is a sword. sword-of-purity is purity.
 The printed name of sword-of-purity is "[clothing-title-before]sword of purity[clothing-title-after]". Understand "of purity", "purity" as sword-of-purity.
 
 To say ClothingDesc of (S - sword-of-purity):
-	say "A gleaming silver sword, instilled with the power of purity. Holy energy emanates from the blade, as if the sword itself were comprised of pure, holy power. [bold type]The power seems to become stronger the more different parts of your body are exposed. [roman type][if S is worn]Just holding it in your hand makes you feel incredibly powerful, but no matter the angle, the light reflecting off the blade seems to cast a spotlight on your [vagina], as if to remind enemies where the power comes from... and how to defeat it.[otherwise]It's clearly quite powerful, but something tells you that if you ever lose while wielding this sword...[end if]";
+	say "A gleaming silver sword, instilled with the power of purity. Holy energy emanates from the blade, as if the sword itself were comprised of pure, holy power. [bold type]The power seems to become stronger the more that different parts of your body are exposed. [roman type][if S is worn]Just holding it in your hand makes you feel incredibly powerful, but no matter the angle, the light reflecting off the blade seems to cast a spotlight on your [vagina], as if to remind enemies where the power comes from... and how to defeat it.[otherwise]It's clearly quite powerful, but something tells you that if you ever lose while wielding this sword...[end if]";
 	if S is worn:
 		say "Your current body part exposure status is:[line break]";
 		repeat with BP running through body parts:
@@ -281,7 +281,7 @@ To decide which number is the slap damage improvement of (W - dildo sword):
 To compute attack of (W - dildo sword) at (M - a monster):
 	if W is penetrating a fuckhole:
 		let F be a random fuckhole penetrated by W;
-		say "The dildo sword rapdily slides out of your [variable F]! ";
+		say "The dildo sword rapidly slides out of your [variable F]! ";
 		ruin F;
 		now the raw-magic-modifier of W is 5;
 		dislodge W;
@@ -323,7 +323,7 @@ Report plugging something with dildo sword:
 			finally arouse;
 			ruin F;
 	if the second noun is cursed:
-		say "You tug, but the dildo won't come back out. [one of]Oh crap - [or]Once again, [stopping]the curse is now keeping the sword stuck inside you! Perhaps if you were to try and [bold type]slap[roman type] someone with it, it would forget that it's supposed to be stuck inside you for a moment...?";
+		say "You tug, but the dildo won't come back out. [one of]Oh crap - [or]Once again, [stopping]the curse is now keeping the sword stuck inside you! Perhaps if you were to try and [bold type]slap[roman type] someone with it, it would forget for a moment it's supposed to be stuck inside you...?";
 	otherwise:
 		say "[if the second noun is cursed]Since you can't let go of the handle,[otherwise]Since the large dildo is so heavy, it can't stay inside on its own and[end if] you are forced to pull it back out. [if the raw-magic-modifier of the second noun < 5]As it comes out, you find that it is glistening with newly recharged magic power![end if]";
 		now the raw-magic-modifier of the second noun is 5;

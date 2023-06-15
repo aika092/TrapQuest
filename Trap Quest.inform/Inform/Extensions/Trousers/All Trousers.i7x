@@ -179,7 +179,7 @@ Figure of tight blue exercise shorts is the file "Items/Clothes/Lower/Pants/exer
 To decide which figure-name is clothing-image of (H - tight-blue-exercise-shorts):
 	decide on figure of tight blue exercise shorts.
 To say UniqueClothingDesc of (Y - tight-blue-exercise-shorts):
-	say "A pair of supertight blue exercise shorts. It [if Y is worn]rides[otherwise]will ride[end if] high on your hips, but [if Y is worn]also digs[otherwise]will also dig[end if] into your crotch.".
+	say "A pair of super-tight blue exercise shorts. It [if Y is worn]rides[otherwise]will ride[end if] high on your hips, but [if Y is worn]also digs[otherwise]will also dig[end if] into your crotch.".
 To say MediumDesc of (Y - tight-blue-exercise-shorts):
 	say "pair of tight blue exercise shorts".
 To decide which number is the crotch-tightness of (C - tight-blue-exercise-shorts):

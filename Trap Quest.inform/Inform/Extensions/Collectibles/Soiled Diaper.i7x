@@ -94,7 +94,7 @@ Check inserting something into a diaper pail:
 		allocate 3 seconds;
 		say "You open the lid of the diaper pail[if the diaper addiction of the player < 12], holding your nose[end if], and push [NameDesc of the noun] into it. You quickly close the lid again.";
 		if the noun is wet diaper:
-			say "You feel some self-repect returning to you at properly disposing of your wet diaper.";
+			say "You feel some self-respect returning to you at properly disposing of your wet diaper.";
 			dignify 400;
 		only destroy the noun;
 		if the noun is soiled-diaper, add the noun to the pailed-diapers of the second noun, if absent;

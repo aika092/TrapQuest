@@ -847,7 +847,7 @@ To uniquely destroy (C - black-lace-stockings):
 
 
 
-white-fishnet-stockings is a stockings. white-fishnet-stockings is mesh. white-fishnet-stockings is transformation-rare. white-fishnet-stockings is see-through. The printed name of white-fishnet-stockings is "[clothing-title-before]white fishet stockings[clothing-title-after]". The text-shortcut of white-fishnet-stockings is "wfsk". Understand "white", "fishnet", "stockings" as white-fishnet-stockings.
+white-fishnet-stockings is a stockings. white-fishnet-stockings is mesh. white-fishnet-stockings is transformation-rare. white-fishnet-stockings is see-through. The printed name of white-fishnet-stockings is "[clothing-title-before]white fishnet stockings[clothing-title-after]". The text-shortcut of white-fishnet-stockings is "wfsk". Understand "white", "fishnet", "stockings" as white-fishnet-stockings.
 Definition: white-fishnet-stockings is class-relevant:
 	if the class of the player is stripper or the class of the player is maid, decide yes;
 	decide no.

@@ -228,7 +228,7 @@ Report examining worn hostility clothing:
 	say "Its magical enhancement empowers your attacks!".
 
 Report examining worn elasticity clothing:
-	say "Its magical enhancement makes you much better at accomodating large insertions without suffering from too much discomfort!".
+	say "Its magical enhancement makes you much better at accommodating large insertions without suffering from too much discomfort!".
 
 Report examining worn audible jiggles clothing:
 	say "Some sort of in-built magic effect is making this item emphasize the sounds your [BreastDesc] make as they move, making them loud and somewhat comical. It makes you feel like you're in some kind of bizarre cartoon!".
