@@ -140,15 +140,25 @@ To evade trigger (C - dress-trap-choice):
 		trigger C.
 
 slime-trap-choice is a choice-trap-choice.
-Definition: slime-trap-choice is appropriate:
-	if diaper quest is 0, decide yes;
-	decide no.
 To say ChoiceFlav of (C - slime-trap-choice):
 	say "SLIMED".
 To trigger (SC - slime-trap-choice):
 	if a random number between 1 and 2 is bukkake fetish:
 		say "A hidden compartment inside the container opens, and a rubber dildo starts to blast you with [semen]! There's a crazy amount of the stuff!";
 		AnnouncedSquirt semen on face by 20;
+	otherwise if diaper quest is 1:
+		if face is actually occupied:
+			let SB be a random off-stage slimeball;
+			if SB is a thing:
+				say "A hidden compartment inside the container opens, and a large blob of slime shoots out some sort of tiny cannon, landing right next to where you were a moment ago! And then... It wobbles, and begins to hop! It's alive!";
+				set up SB;
+				now SB is in the location of the player;
+				now SB is stalled;
+			otherwise:
+				say "The ['][ChoiceFlav of SC]['] punishment seems to miss, or fizzle, or something! [GotLuckyFlav]";
+		otherwise:
+			say "A hidden compartment inside the container opens, and a large blob of slime shoots out some sort of tiny cannon, hitting you right in the face! ";
+			compute slimeball forcefeed;
 	otherwise:
 		say "A hidden compartment inside the container opens, and a large blob of slime shoots out some sort of tiny cannon, hitting you right in the chest!";
 		let C be a random worn breast covering clothing;
@@ -216,6 +226,57 @@ To evade trigger (C - brothel-trap-choice):
 		say "The tablet shows a new message: [']Unable to take advertisement photo. Only one customer available for Blind Date...[']";
 		compute PatronSpawning of F with 1 men.
 
+incontinence-trap-choice is a choice-trap-choice.
+Definition: incontinence-trap-choice is appropriate:
+	if diaper lover > 0, decide yes;
+	decide no.
+To say ChoiceFlav of (C - incontinence-trap-choice):
+	say "BLADDER MODIFICATION".
+To trigger (C - incontinence-trap-choice):
+	say "A tiny [needle] shoots out of [if playerRegion is Dungeon]the stone wall[otherwise if playerRegion is Woods]a tree[otherwise]a tiny hole in the wall[end if] and towards your stomach. You can't dodge it in time! It injects you with some kind of... numbing agent?!";
+	BladderIncontinenceUp 1.
+To evade trigger (C - incontinence-trap-choice):
+	let D be a random number between 1 and 30;
+	if debuginfo > 0, say "[input-style]Evade needle check: Dexterity ([dexterity of the player]) | ([D].5) Dodge Difficulty[roman type][line break]";
+	if the dexterity of the player > D:
+		say "A tiny [needle] shoots out of [if playerRegion is Dungeon]the stone wall[otherwise if playerRegion is Woods]a tree[otherwise]a tiny hole in the wall[end if] and towards your stomach. You manage to swivel out of the way just in time![line break][variable custom style]That was close![roman type][line break]";
+	otherwise:
+		trigger C.
+
+shrink-trap-choice is a choice-trap-choice.
+Definition: shrink-trap-choice is appropriate:
+	if the size of penis > min penis size, decide yes;
+	decide no.
+To say ChoiceFlav of (C - shrink-trap-choice):
+	say "PENIS SIZE REDUCTION".
+To trigger (C - shrink-trap-choice):
+	say "Two tiny sharp probes connected to wires shoot out of a hidden compartment in the container, just like a tazer![line break][italic type]BZZZZZT[roman type][line break]Having planted into your mons pubis, the electrified device gives you a little shock!";
+	PenisDown 1;
+	PainUp 8.
+To evade trigger (C - shrink-trap-choice):
+	say "Two tiny sharp probes connected to wires shoot out of a hidden compartment in the container, just like a tazer![line break][italic type]BZZZZZT[roman type][line break]Having planted into your size, the electrified device gives you a little shock!";
+	PainUp 8;
+	say "Well... At least the probes missed your [player-penis]...".
+
+forcefeed-trap-choice is a choice-trap-choice.
+Definition: forcefeed-trap-choice is appropriate:
+	if (diaper messing >= 3 or weight gain fetish is 1) and the stomach of the player < stomach-max - 2 and face is not actually occupied, decide yes;
+	decide no.
+To say ChoiceFlav of (C - forcefeed-trap-choice):
+	say "FORCED FEEDING".
+To trigger (C - forcefeed-trap-choice):
+	say "A huge robotic facehugging arm shoots out of the container, and latches onto your face before you can stop it![line break][variable custom style]'MMMMMMPH!'[roman type][line break]You feel some sort of feeding nozzle being forced into your mouth, and then in the next moment, some sort of thick oatmeal-like substance is being pumped into your mouth. Unable to breathe through this thing which has latched onto your face, you have no choice but to gulp down mouthful after heavy mouthful of the bland tasting, fibre-rich food.[paragraph break]";
+	while the player is not overly full:
+		StomachFoodUp 1;
+	say "By the time the device has stopped forcefeeding you oatmeal, and finally releases you, you feel so very uncomfortably full![line break][variable custom style]Ugh... I can barely move...[roman type][line break]".
+To evade trigger (C - forcefeed-trap-choice):
+	let D be a random number between 1 and 30;
+	if debuginfo > 0, say "[input-style]Evade needle check: Dexterity ([dexterity of the player]) | ([D].5) Dodge Difficulty[roman type][line break]";
+	if the dexterity of the player > D:
+		say "A huge robotic facehugging arm shoots out of the container, heading straight for your face and mouth. You manage to swivel out of the way just in time![line break][variable custom style]Phew. That was too close.[roman type][line break]";
+	otherwise:
+		trigger C.
+
 diaper-trap-choice is a choice-trap-choice.
 Definition: diaper-trap-choice is appropriate:
 	if there is a currently uncovered diaper and there is an off-stage DQBulkier plentiful disposable diaper, decide yes;
@@ -274,36 +335,19 @@ teleport-trap-choice is a choice-trap-choice.
 To say ChoiceFlav of (C - teleport-trap-choice):
 	say "TELEPORTATION".
 To trigger (C - teleport-trap-choice):
-	if playerRegion is hotel:
-		if the player is getting unlucky:
-			let LR be a list of rooms;
-			add Dungeon31 to LR;
-			if Hotel37 is placed, add Hotel37 to LR;
-			if Hotel02 is placed, add Hotel02 to LR;
-			if Dungeon36 is placed and minotaur is caged and minotaur is in Dungeon36, add Dungeon36 to LR;
-			if Woods16 is placed, add Woods16 to LR;
-			if Mansion23 is placed, add Mansion23 to LR;
-			let L be the location of iron-maiden;
-			if L is a placed room, add L to LR;
-			let L be the location of hole-in-wall;
-			if L is a placed room and hole-in-wall is revealed, add L to LR;
-			if diaper messing >= 7:
-				repeat with DPL running through placed rooms:
-					if there is a diaper pail in DPL, add DPL to LR;
-			sort LR in random order;
-			let R be entry 1 in LR;
-			say "A beam of blue light appears around you. You can sense it has a very specific target in mind for you, and it's not going to be a nice place! [GotUnluckyFlav]";
-			teleport to R;
-		otherwise:
-			let R be a random placed roomstandard room;
-			while R is an academic room or R is a predicament room or R is a painting-room or R is an introductory room:
-				now R is a random placed roomstandard room;
-			say "A beam of blue light appears around you, teleporting you to who knows where!";
-			teleport to R.
+	if the player is getting unlucky:
+		say "A beam of blue light appears around you. You can sense it has a very specific target in mind for you, and it's not going to be a nice place! [GotUnluckyFlav]";
+		compute bad teleport;
+	otherwise:
+		let R be a random placed roomstandard room;
+		while R is an academic room or R is a predicament room or R is a painting-room or R is an introductory room:
+			now R is a random placed roomstandard room;
+		say "A beam of blue light appears around you, teleporting you to who-knows-where!";
+		teleport to R.
 To evade trigger (C - teleport-trap-choice):
 	say "A beam of blue light appears where you were standing a split second ago. It fails to teleport you where it wanted to!";
 	if the player is getting unlucky:
-		if diaper messing >= 7:
+		if diaper messing >= 6:
 			say "As the portal briefly opens, several soiled diapers spill out into the ground around you! [GotUnluckyFlav][line break][variable custom style]Was... Was it going to teleport me into a diaper pail?!?!?!?![roman type][line break]";
 			repeat with N running from 1 to 5:
 				let SD be a random off-stage soiled-diaper;

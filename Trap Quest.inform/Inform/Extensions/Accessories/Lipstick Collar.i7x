@@ -1,6 +1,6 @@
 Lipstick Collar by Accessories begins here.
 
-lipstick collar is a submissive collar. lipstick collar is unique. lipstick collar is in Mansion16. The printed name of lipstick collar is "[clothing-title-before]lipstick collar[clothing-title-after]". The text-shortcut of lipstick collar is "lsc". lipstick collar is leather. Understand "thief", "lip", "stick", "thieves" as lipstick collar.
+lipstick collar is a submissive collar. lipstick collar is unique. lipstick collar can be lipstick-setup. The printed name of lipstick collar is "[clothing-title-before]lipstick collar[clothing-title-after]". The text-shortcut of lipstick collar is "lsc". lipstick collar is leather. Understand "thief", "lip", "stick", "thieves" as lipstick collar.
 
 Figure of lipstick collar is the file "Items/Accessories/Neck/lipstickcollar1.png".
 
@@ -25,7 +25,11 @@ Definition: lipstick collar is red themed: decide yes.
 Definition: lipstick collar is black themed: decide yes.
 
 To set up (C - lipstick collar):
-	now C is temptation.
+	if C is not lipstick-setup: [we have to do it this way, since if it started in Mansion16, it would be immune to change, and this set up function would never run.]
+		now C is in Mansion16;
+		now C is lipstick-setup;
+	if diaper quest is 1, now C is respiration;
+	otherwise now C is temptation.
 
 Report wearing lipstick collar:
 	now lipstick collar is cursed;

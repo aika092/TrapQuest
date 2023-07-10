@@ -75,9 +75,11 @@ To decide which figure-name is Figure of cutscene-xavier-nightmare-belt-clean:
 To decide which figure-name is Figure of cutscene-xavier-nightmare-belt-messy:
 	decide on figure of small image.
 
-To decide which figure-name is Figure of caged pail princess:
-	decide on figure of small image.
+[To decide which figure-name is Figure of caged pail princess:
+	decide on figure of small image.]
 To decide which figure-name is Figure of caged pail princess messy:
+	decide on figure of small image.
+To decide which figure-name is Figure of caged pail princess facedown:
 	decide on figure of small image.
 
 Unnecessary Figures ends here.

@@ -2294,7 +2294,7 @@ To decide which number is the errand-value of (E - cock candle) for (P - a perso
 	decide on 0.
 To say ErrandFlav of (E - cock-candle-errand) for (P - a person):
 	say "I've heard legends of magic candles that never extinguish. Such an artefact would be excellent for my wax play. Think you can find one for me? ".
-To compute completion of (E - cock-candle-errand) for (P - a person):
+To compute unique completion of (E - cock-candle-errand) for (P - a person):
 	say "[speech style of P]'Unbelievable, you actually found one!'[roman type][line break][BigNameDesc of P] happily takes [NameDesc of cock candle] from you.";
 	now cock candle is carried by P.
 

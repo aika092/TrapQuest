@@ -30,6 +30,7 @@ To say MonsterDesc of (M - nurse):
 		say "Even the nurse of this institution is not immune from its theme: [his of M] tight purple latex dress hugs [his of M] slim figure and emphasises the curves of [his of M] [if lady fetish is 2]ass[otherwise]tits and ass[end if]. White rubber gloves, a white rubber nurse headband and a matching rubber nurse apron complete the look, which screams 'fetish'. [big his of M] long black hair rests alluringly on [his of M] shoulders. Black lipstick and a naughty grin gives [him of M] a slight air of... evil. You feel like [he of M] definitely doesn't see you as an equal.";
 
 Definition: nurse is willing to do oral: decide yes.
+Definition: nurse is diaper disciplining: decide yes.
 
 To regionally place (M - nurse):
 	now M is in School11.
@@ -133,6 +134,9 @@ To compute student perception of (M - nurse):
 	otherwise:
 		if there is a worn diaper, compute diaper check of M; [She can check and then if you don't need a change she'll just continue normally]
 		if M is interested and M is friendly and M is not changing the player:
+			if the diaper-duration of M > 0 and the number of worn diaper is 0:
+				say "[big he of M] swiftly walks up to you and holds [if diaper messing < 3]a hand to the front[otherwise]hands to the front and back[end if] of your crotch, pushing firmly to get a good feel.[line break][speech style of M]'EXCUSE ME, LITTLE MISS! I'm pretty sure I SPECIFICALLY INSTRUCTED YOU to remain in diapers until I gave you permission to wear big [boy of the player] undies again, did I not?! This calls for detention! Get on your knees right now!'[roman type][line break]";
+				anger M;
 			if the breast-enhancement of M > 0:
 				say "[speech style of M]'Ah yes, I've been expecting you, [NameBimbo]. You're here for your breast enhancement, right? If so, [please] hop on the table in the med bay and I'll make sure you get what you need.'[roman type][line break]";
 			otherwise if the body soreness of the player > 0:
@@ -229,13 +233,13 @@ To compute facial climax of (M - nurse):
 Chapter - DQ
 
 To compute diaper mess reaction of (M - nurse):
-	obsceneHumiliate;
-	if voluntarySquatting is 1, obsceneHumiliate;
 	if M is interested:
-		if M is doing nothing special and diaperChecking is 0:
+		if M is doing nothing special and diaperChecking is false:
 			compute diaper check of M;
 		otherwise:
 			say "[BigNameDesc of M] looks at you with [one of]a smug expression[or]a judging expression[or]a caring expression[in random order].[line break][speech style of M]'[one of][if voluntarySquatting is 1]Pooping yourself on purpose in front of me? You really are a naughty little baby aren't you?'[otherwise]Having problems controlling your poopies, little baby? Aww, how adorable!'[end if][or]Uh-oh. Did you mean to do that, little one?'[or]Ooh how wonderful, your potty untraining seems to be going smoothly!'[in random order][roman type][line break]";
+		severeHumiliate;
+		if voluntarySquatting is 1, obsceneHumiliate;
 	otherwise:
 		say "[BigNameDesc of M][']s eyes suddenly perk up!";
 		check guaranteed perception of M.

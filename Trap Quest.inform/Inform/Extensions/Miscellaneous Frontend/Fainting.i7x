@@ -282,6 +282,7 @@ To Recover Rooms:
 	repeat with R running through jungle rooms: [Every room in the woods is reset]
 		now Neighbour Finder is R;
 		now R is not discovered;
+		now R is not seen;
 		unless R is the location of the player, totally clean R;
 		now the grid position of R is <0,0,0>;
 		repeat with D running through N-viable directions:
@@ -289,6 +290,7 @@ To Recover Rooms:
 	repeat with R running through modern rooms:
 		now Neighbour Finder is R;
 		now R is not discovered;
+		now R is not seen;
 		unless R is the location of the player, totally clean R;
 		now the grid position of R is <0,0,0>;
 		repeat with D running through N-viable directions:
@@ -296,6 +298,7 @@ To Recover Rooms:
 	repeat with R running through haunted rooms:
 		now Neighbour Finder is R;
 		now R is not discovered;
+		now R is not seen;
 		unless R is the location of the player, totally clean R;
 		[if R is Mansion00:
 			if the location of the player is R, now the player is in Mansion01;]

@@ -269,10 +269,11 @@ This is the bra necklace clash rule:
 The bra necklace clash rule is listed in the bra wearability rules.
 
 This is the bra dress clash rule:
-	if summoning is 0:
+	if summoning is 0: [pasties can be put on as long as you have access to your nipples]
 		repeat with B running through worn breast covering clothing:
-			if autowear is false, say "You can't wear that over your [ShortDesc of B][if B is not bra], it should go underneath[end if].";
-			rule fails.
+			unless B is fully exposing or (wearing-target is not pasties or B is actually nipple covering):
+				if autowear is false, say "You can't wear that over your [ShortDesc of B][if B is not bra], it should go underneath[end if].";
+				rule fails.
 The bra dress clash rule is listed in the bra wearability rules.
 
 Report wearing a bra:

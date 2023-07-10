@@ -34,13 +34,13 @@ the face presentable rules is a rulebook.
 the presentable rules of face is usually the face presentable rules.
 
 This is the face occupied rule:
-	if face is actually occupied:
+	if the player is mouthblocked:
 		if auto is 0, say "Your mouth is a bit full already, don't you think?";
 		rule fails.
 The face occupied rule is listed in the face presentable rules.
 
 This is the too horny to present face rule:
-	if the orifice soreness of the player < 7 and the analvirgin of the player is 0 and the player is horny and (the vaginalvirgin of the player is 0 or the player is not possessing a vagina): [This way females can always present mouth to avoid virginity loss, and all players can present mouth to avoid anal virginity loss]
+	if diaper quest is 0 and the orifice soreness of the player < 7 and the analvirgin of the player is 0 and the player is horny and (the vaginalvirgin of the player is 0 or the player is not possessing a vagina): [This way females can always present mouth to avoid virginity loss, and all players can present mouth to avoid anal virginity loss]
 		if auto is 0 or there is an actually presentable fuckhole: [The automatic action rule does not care if you are horny, unless a fuckhole is actually presentable as well.]
 			if the player is very horny:
 				if auto is 0, say "You are too aroused and your [if the player is not possessing a vagina][asshole] is[otherwise][vagina] and [asshole] are[end if] begging to be fucked; you can't bring yourself to do that!";
@@ -48,7 +48,7 @@ This is the too horny to present face rule:
 The too horny to present face rule is listed in the face presentable rules.
 
 This is the monster doesn't do oral rule:
-	if auto > 0 and ((presenting-receiver is monster and presenting-receiver is not willing to do oral) or the number of willing to do oral monsters in the location of the player is 0), rule fails.
+	if diaper quest is 0 and auto > 0 and ((presenting-receiver is monster and presenting-receiver is not willing to do oral) or the number of willing to do oral monsters in the location of the player is 0), rule fails.
 The monster doesn't do oral rule is listed in the face presentable rules.
 
 Definition: face is usable without penetration:

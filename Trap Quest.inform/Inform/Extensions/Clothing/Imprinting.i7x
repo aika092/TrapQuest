@@ -18,7 +18,7 @@ To imprint (C - a clothing):
 	now imprint-flav is 0;
 	now imprint-target is C;
 	follow the imprinting rules;
-	say "[ImprintEndFlav]".
+	say ImprintEndFlav.
 
 To resolve delayed imprints:
 	repeat with C running through clothing in soon-to-imprint:
@@ -108,6 +108,15 @@ This is the vaginal sex addiction imprinting rule:
 		if the raw vaginal sex addiction of the player < 1, now the raw vaginal sex addiction of the player is 1.
 The vaginal sex addiction imprinting rule is listed in the imprinting rules.
 
+This is the bbc addiction imprinting rule:
+	if the bbc-addiction-influence of imprint-target is not 0:
+		say "[ImprintStartFlav][BlackCock] addiction [if the bbc-addiction-influence of imprint-target < 0]suppressing[otherwise]increasing[end if] effect [run paragraph on]";
+		if the bbc-addiction-influence of imprint-target > 0, increase the raw bbc addiction of the player by 1;
+		otherwise decrease the raw bbc addiction of the player by 1;
+		if the raw bbc addiction of the player > 10, now the raw bbc addiction of the player is 10;
+		if the raw bbc addiction of the player < 1, now the raw bbc addiction of the player is 1.
+The bbc addiction imprinting rule is listed in the imprinting rules.
+
 This is the semen addiction imprinting rule:
 	if the semen-addiction-influence of imprint-target is not 0:
 		say "[ImprintStartFlav]creampie[if bukkake fetish is 1] & bukkake[end if] addiction [if the semen-addiction-influence of imprint-target < 0]suppressing[otherwise]increasing[end if] effect [run paragraph on]";
@@ -192,5 +201,16 @@ This is the diaper addiction imprinting rule:
 		if the raw diaper addiction of the player > 20, now the raw diaper addiction of the player is 20;
 		if the raw diaper addiction of the player < 1, now the raw diaper addiction of the player is 1.
 The diaper addiction imprinting rule is listed in the imprinting rules.
+
+This is the incontinence imprinting rule:
+	if the bladder-incontinence-influence of imprint-target is not 0:
+		say "[ImprintStartFlav]bladder [if the bladder-incontinence-influence of imprint-target < 0]strengthening[otherwise]weakening[end if] effect [run paragraph on]";
+		if the bladder-incontinence-influence of imprint-target > 0, SilentlyBladderIncontinenceUp 1;
+		otherwise SilentlyBladderIncontinenceDown 1;
+	if the rectum-incontinence-influence of imprint-target is not 0:
+		say "[ImprintStartFlav]rectal [if the rectum-incontinence-influence of imprint-target < 0]continence improving[otherwise]incontinence[end if] effect [run paragraph on]";
+		if the rectum-incontinence-influence of imprint-target > 0, SilentlyRectumIncontinenceUp 1;
+		otherwise SilentlyRectumIncontinenceDown 1.
+The incontinence imprinting rule is listed in the imprinting rules.
 
 Imprinting ends here.

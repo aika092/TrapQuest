@@ -24,7 +24,7 @@ To decide which object is the at least partial concealer of (T - thighs):
 
 Definition: thighs (called B) is spread:
 	if diaper lover <= 0, decide no;
-	if there is worn thigh-spreading clothing and the number of worn thighs-spread-blocking clothing is 0, decide yes;
+	if there is worn thigh-spreading clothing and the number of worn thigh-spread-blocking clothing is 0, decide yes;
 	decide no.
 
 Part 2 - Description

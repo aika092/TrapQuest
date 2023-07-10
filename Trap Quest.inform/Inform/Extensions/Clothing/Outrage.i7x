@@ -4,7 +4,7 @@ To decide which number is the outrage of (C - an object):
 	decide on 0.
 
 To decide which number is the partially visible outrage (N - a number) of (C - a thing):
-	decide on (N * 7) / 10.
+	decide on (N * 15) / 20.
 To decide which number is the partially visible outrage (N - a number) of (C - a dress):
 	decide on (N * 17) / 20. [it's difficult to conceal much about a dress]
 To decide which number is the partially visible outrage (N - a number) of (C - an equippable):

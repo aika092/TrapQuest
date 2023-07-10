@@ -4,7 +4,7 @@ The description of yourself is "".
 
 To say FullExamineDesc of (C - yourself):
 	update player region;
-	say "[PlayerDescription][ClothesDescription][OptionalDescription]".
+	say "[PlayerDescription][ClothesDescription][OptionalDescription][line break][bold type]To find out in more detail about how you feel about various things, type [bold type][TQlink]attitudes[TQdlink][roman type].".
 
 To say RealDesc:
 	say "inside a metal chamber filled with a transparent liquid. You are motionless and have your eyes closed. You have straight black [RealHairDesc], [RealBreastDesc] and what look like [RealHipDesc]. [RealGapeDesc].".
@@ -72,6 +72,29 @@ To say PregDescription:
 	otherwise:
 		say "an unknown[if inhuman pregnancy > 0] (and hopefully human)[end if] child".
 
+To say IncontinenceDescription:
+	say "[if the player is bladder incontinent]You are totally unable to control when you urinate[otherwise if the bladder-incontinence of the player >= 6]You have serious difficulties holding onto your bladder, and often don't notice that you need to pee until it's almost too late[otherwise if the bladder-incontinence of the player >= 4]You have significant problems with accidental wetting, and sometimes don't notice that you need to pee until it's almost too late[otherwise if the bladder-incontinence of the player >= 1]You are starting to have some very unusual problems with holding onto your bladder, something that usually only happens to the very old, very young, and some women after they've given birth[otherwise if diaper messing >= 3 and the rectum-incontinence of the player < 1]Your control of your bladder is mostly normal[otherwise]Your control of your bladder is mostly normal. But something tells you that even though nothing specific has weakened your bladder, in this universe, it's still a bit more tricky to avoid wetting yourself than in the real world[end if][if the player is not bladder diaper aware and (diaper messing < 3 or the player is rectum diaper aware)]. Furthermore, you don't automatically notice when you have wet a diaper - you will have to remember to [bold type]examine[roman type] it manually to check[end if].";
+	if diaper messing >= 3, say "[if the player is rectum incontinent]You are totally unable to control when you poop[otherwise if the rectum-incontinence of the player >= 6]You have serious difficulties holding onto your poop, and often don't notice that you need to make pushies until it's almost too late[otherwise if the rectum-incontinence of the player >= 4]You have significant problems with accidentally letting go of your bowels, and sometimes don't notice that you need to need to go number two until it's almost too late[otherwise if the rectum-incontinence of the player >= 1]Your rectal muscles are slightly weakened, making it somewhat more challenging to hold onto your bowels than it should be[otherwise]Your ability to hold in your number twos until you make it to the toilet is pretty normal. But something tells you that even though nothing specific has weakened your continence, in this universe, it's still a bit more tricky to avoid soiling yourself than in the real world[end if][if the player is not bladder diaper aware and the player is not rectum diaper aware]. Furthermore, you don't automatically notice when you have wet or messed a diaper - you will have to remember to [bold type]examine[roman type] it manually to check[otherwise if the player is not rectum diaper aware]. Furthermore, you don't automatically notice when you have messed a diaper - you will have to remember to [bold type]examine[roman type] it manually to check[end if].";
+	if debuginfo > 0:
+		say "[input-style]Bladder Incontinence [bladder-incontinence of the player] / 10[if the max-bladder-incontinence of the player < 10] [bracket]capped at [the max-bladder-incontinence of the player][close bracket][end if][run paragraph on]";
+		if diaper messing >= 3, say "; Bowel Incontinence [rectum-incontinence of the player] / 10[if the max-rectum-incontinence of the player < 10] [bracket]capped at [max-rectum-incontinence of the player][close bracket][end if][run paragraph on]";
+		say ")[roman type][line break]".
+
+To say PublicDisgraceDescription:
+	let PD be the public disgrace of the player;
+	if PD > 0:
+		if PD < 20:
+			say "There's likely a small amount of embarrassing footage of you on the Internet, but nothing too bad or too widespread.";
+		otherwise if PD < 500:
+			say "There's footage of you on the Internet, and it's likely pretty devastating. Who knows exactly how many people have seen your shame? It's quite possible that somebody will recognise you. If you can't find a way to find it and get it taken down soon, you'll likely never be able to live it down.";
+		otherwise if PD < 2000:
+			say "There's certainly some pretty damning explicit footage of you on the Internet. It seems quite likely that someone will have recognised you by now. If they decide to share it further you'll never be able to live it down.";
+		otherwise if PD < 5000:
+			say "Footage of you in extremely shameful situations exists across the Internet, probably with you easily identifiable in most if not all of it. Irreparable damage has been done to your reputation - you'll be the laughing stock of your home town from now until the end of time. Unless you can somehow find a way to do some damage control and get it all taken down, you'll probably never be able to get a proper job again.";
+		otherwise:
+			say "You are acutely aware that by now you are likely infamous on the Internet. Everyone knows your name, age, where you come from, and [if diaper quest is 1]they all believe you're some attention seeking, exhibitionist, humiliation craving, diaper loving pervert[otherwise]what the inside of your [asshole] looks like[end if]. You know what you'll see the next time you check your Twitter profile: hundreds of thousands if not millions of new followers, and countless mentions discussing how brave and/or disgusting you are, not to mention endless unsolicited explicit DMs. You'll never get a real job again, but perhaps you could now make a living selling certain 'premium snapchat' services to discerning degenerates...[line break][variable custom style][if the player is shameless]So much attention... all for me... how humiliating! It makes me horny just thinking about it[otherwise if the player is modest]No... I couldn't! I couldn't ever bring myself to put even more of myself out there...![otherwise]Could I really bring myself to become a camgirl? Debasing myself perverted men around the world... Surely not...?[end if][roman type][line break]";
+		if debuginfo > 0, say "[input-style](Public Disgrace: [PD] / 5000)[roman type][line break]".
+
 To say OptionalDescription:
 	if the pregnancy of the player > 0, say "You are currently carrying [PregDescription].[if the latex-transformation of the player > 0 or the pregnancy of the player is 2]The pregnancy doesn't seem to be growing any bigger.[end if]";
 	if the player is glue stuck:
@@ -113,6 +136,8 @@ To say OptionalDescription:
 	if the player is stealthy:
 		let S be the stealth of the player;
 		say "[bold type]You are currently able to act stealthy[roman type] [if S < 2]but you are currently wearing things that make you very visible, so everyone will probably notice you anyway[otherwise if S < 4]so there is a reasonable chance that you can slip past unnoticed[otherwise]and you are very well concealed, so there is a high chance that you can slip past wherever you like unnoticed[end if].";
+	if diaper lover >= 1, say IncontinenceDescription;
+	say PublicDisgraceDescription.
 
 To say GrabStatus of (M - a monster):
 	say "is restraining you".

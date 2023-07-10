@@ -421,8 +421,15 @@ To compute post climax effect of (M - bowsette) in (F - a body part):
 Section 2 - DQ
 
 Definition: bowsette is willing to forcefeed:
-	if watersports fetish is 1, decide yes;
-	decide no
+	decide yes.
+
+To decide which number is the forcefeed-length of (M - bowsette):
+	decide on 1.
+
+To compute forcefeed round (N - a number) of (M - bowsette):
+	say "[BigNameDesc of M] produces a peculiar-looking mushroom, which reminds you of the green and pink fae mushrooms in the forest, but larger and somehow more foreboding.[line break][speech style of M]'Open wide!'[roman type][line break][BigNameDesc of M] start shoving it down your throat, and as soon as you gulp it down, you feel something hooking into your bellybutton from the inside, and then pulling you through time and space, to somewhere you're confident you *don't* want to go...";
+	dislodge M;
+	compute bad teleport.
 
 bowsette-dq-punishments is a diaper punishment. The priority of bowsette-dq-punishments is 2.
 
@@ -431,16 +438,18 @@ Definition: bowsette-dq-punishments (called P) is appropriate:
 	decide no.
 
 To compute punishment of (P - bowsette-dq-punishments):
-	say "[BigNameDesc of bowsette] punches the air, and an invisible cube, hovering in mid-air, suddenly becomes visible where [he of bowsette] punched. There is a question mark icon on each side. Next, a giant purple mushroom appears from the top, and begins to somehow glide along the upper surface as if dragged by an invisible force, and then drops to the ground once it has progressed to the edge of the cube. From there, it begins to travel in a straight line towards you.[line break][speech style of bowsette]'Hold still now...'[roman type][line break][BigNameDesc of bowsette] holds you in place and prevents you from moving as the mushroom approaches you. When it finally touches you, there's a weird digital sound effect, and it just disappears. What has it done to you?!";
-	let R be a random number between 1 and 2;
-	if R is 1:
-		say "You realise that you can no longer feel your [if diaper messing >= 3]bowels[otherwise]bladder[end if].[line break][variable custom style][if the player is able to speak]'How long is this going to last?!'[line break][speech style of bowsette]'Oh for a good few accidents...'[otherwise]How long is this going to last?![end if][roman type][line break]";
-		if diaper messing >= 3, increase temporary-rectum-incontinence by 3;
-		otherwise increase temporary-bladder-incontinence by 3;
+	if the player is not in BowsettePainting01 and watersports fetish is 1 and current-monster is willing to urinate and the bladder of current-monster >= 600:
+		compute current-monster urinating;
 	otherwise:
-		say "You feel less strong...";
-		StrengthDown 1;
-	satisfy bowsette.
+		say "[BigNameDesc of bowsette] punches the air, and an invisible cube, hovering in mid-air, suddenly becomes visible where [he of bowsette] punched. There is a question mark icon on each side. Next, a giant purple mushroom appears from the top, and begins to somehow glide along the upper surface as if dragged by an invisible force, and then drops to the ground once it has progressed to the edge of the cube. From there, it begins to travel in a straight line towards you.[line break][speech style of bowsette]'Hold still now...'[roman type][line break][BigNameDesc of bowsette] holds you in place and prevents you from moving as the mushroom approaches you. When it finally touches you, there's a weird digital sound effect, and it just disappears. What has it done to you?!";
+		if the player is in BowsettePainting01:
+			say "You realise that you can no longer feel your [if diaper messing >= 3]bowels[otherwise]bladder[end if].[line break][variable custom style][if the player is able to speak]'How long is this going to last?!'[line break][speech style of bowsette]'Oh for a good few accidents...'[otherwise]How long is this going to last?![end if][roman type][line break]";
+			if diaper messing >= 3, increase temporary-rectum-incontinence by 3;
+			otherwise increase temporary-bladder-incontinence by 3;
+		otherwise:
+			say "You feel less strong...";
+			StrengthDown 2;
+		satisfy bowsette.
 
 Section 3 - Damage
 

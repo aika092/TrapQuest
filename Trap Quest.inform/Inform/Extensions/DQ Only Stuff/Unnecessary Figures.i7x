@@ -360,6 +360,9 @@ To decide which figure-name is Figure of Lips Cutscene 2b:
 To decide which figure-name is Figure of Lips Cutscene 3:
 	decide on figure of small image.
 
+To decide which figure-name is Figure of milking bench cutscene 6:
+	decide on figure of small image.
+
 To decide which figure-name is Figure of Modmachine Cutscene 1:
 	decide on figure of small image.
 

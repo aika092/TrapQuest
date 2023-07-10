@@ -1510,7 +1510,12 @@ To compute strength (pain-factor - a number) spanking:
 				if K is vagina plugging, stimulate vagina from K;
 				stimulate asshole from K.
 
-The player has a number called expulsion-weakness. The expulsion-weakness of the player is 1. [How much the player struggles to hold onto stuff when in pain or fear. It needs to be at least 1.]
+The player has a number called raw-expulsion-weakness. The raw-expulsion-weakness of the player is 1. [This goes up as the player encounters things that permanently affect their expulsion weakeness.]
+temp-expulsion-weakness is a number that varies. [This is used to represent when it's extra-difficult for the player to hold on in a specific scenario. Lasts until the end of the round unless reset to 0 manually.]
+To decide which number is the expulsion weakness of the player: [How much the player struggles to hold onto stuff when in pain or fear. It needs to be at least 1.]
+	let X be the raw-expulsion-weakness of the player + temp-expulsion-weakness;
+	if X < 1, decide on 1;
+	decide on X.
 
 [Does the player let out a little squirt, or perhaps even a full enema?]
 To check sudden squirt with reason (T - a text):

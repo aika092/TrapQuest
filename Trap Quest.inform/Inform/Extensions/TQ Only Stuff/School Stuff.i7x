@@ -1723,7 +1723,7 @@ To compute chess time:
 				compute bladder growth;
 				if the bladder of the player > 6:
 					increase player-bladder-penalty of chess-lesson by 1;
-					say "[bold type][if the player-bladder-penalty of chess-lesson is 1]You are beginning to feel the need to pee, which is making it more difficult for you to concentrate[otherwise]Holding in your pee is making it increasingly difficult to concentrate[end if].[roman type][line break]";
+					if the player-bladder-penalty of chess-lesson >= 5, say "[bold type][if the player-bladder-penalty of chess-lesson is 5]You are beginning to feel a strong urge to pee, which is making it more difficult for you to concentrate[otherwise]Holding in your pee is making it increasingly difficult to concentrate[end if].[roman type][line break]";
 				otherwise:
 					now player-bladder-penalty of chess-lesson is 0;
 		if delayed urination > 0, compute chess urination;
@@ -1869,8 +1869,9 @@ To reset chess opponent trap planning:
 
 To compute chess players thinking:
 	let I be 0;
-	let I2 be saved-flat-intelligence - player-bladder-penalty of chess-lesson;
-	if I2 > I, now I is I2; [got to make sure we're not going to square root a negative]
+	if player-bladder-penalty of chess-lesson >= 5:
+		let I2 be saved-flat-intelligence + 4 - player-bladder-penalty of chess-lesson;
+		if I2 > I, now I is I2; [got to make sure we're not going to square root a negative]
 	let STI be 3 - ((a random number between 0 and (the student-orgasm of chess-lesson + 2)) / 3);
 	if the defensive-move of chess-lesson > 0 and the chess-turn of chess-lesson is 0: [It takes a couple of turns before the player is allowed to make a normal defensive move.]
 		if debugmode is 1, say "Player defensive move [defensive-move of chess-lesson] - 1 > [defensive-move of chess-lesson - 1][line break]";

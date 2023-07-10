@@ -42,7 +42,7 @@ To decide which number is the dexterity-influence of (C - glittering rose):
 Chapter - Class Outfit
 
 To compute class outfit of (H - glittering rose):
-	if diaper quest is 0, class summon red-pasties;
+	class summon red-pasties;
 	class summon butterfly wings;
 	class summon fairy-wand.
 

@@ -266,7 +266,7 @@ To say VagueAppearance:
 	if the class of the player is succubus:
 		say "Succubus";
 	otherwise if B <= 3:
-		say "[if the player is presenting as male]Man[otherwise if the player is male and transGender is 0 and the largeness of breasts < 3]Trap[otherwise]Woman[end if]";
+		say "[if the player is presenting as male]Man[otherwise if the player is male and transGender is 0 and the largeness of breasts < 3]Femboy[otherwise]Woman[end if]";
 	otherwise if B < 12 and B > 4 and (there is glazed lewdly exposed body part or breasts is glazed showing cleavage body part):
 		say "Cumslut";
 	otherwise if the player is naked and B < 10:
@@ -314,7 +314,9 @@ To say VagueCringeHumiliation:
 To say VagueCringeAppearance:
 	let B be the saved cringe appearance of the player;
 	if B <= 3:
-		say "[if the player is presenting as male]Man[otherwise if the player is possessing a penis and transGender is 0 and the largeness of breasts < 3]Trap[otherwise]Woman[end if]";
+		say "[if the player is presenting as male]Man[otherwise if the player is possessing a penis and transGender is 0 and the largeness of breasts < 3]Femboy[otherwise]Woman[end if]";
+	otherwise if B <= 5 and there is a currently visible diaper:
+		say "Weirdo";
 	otherwise if the player is naked and B < 10:
 		say "Nudist";
 	otherwise if B < 6 and the player is presenting as male and (the number of worn clothing - the number of worn manly clothing > 0) and the diaper addiction of the player < 3:

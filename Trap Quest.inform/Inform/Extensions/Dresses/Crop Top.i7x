@@ -350,6 +350,7 @@ To say ClothingDesc of (C - nipples-crop-top):
 Definition: nipples-crop-top is white themed: decide yes.
 
 To decide which number is the initial outrage of (C - nipples-crop-top):
+	if the largeness of breasts <= 1, decide on 11; [to make it actually lewd enough to cause problems]
 	decide on 7.
 
 A gropability rule:

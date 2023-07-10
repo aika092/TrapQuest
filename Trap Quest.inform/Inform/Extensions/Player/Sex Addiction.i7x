@@ -104,7 +104,7 @@ To SexAddictUp (X - a number):
 		decrease X by 1;
 		if a random number between 1 and 8 > K: [Sometimes confidence clothing stops sex addiction increases]
 			if the raw sex addiction of the player < 20:
-				if (highest sex addiction < the sex addiction of the player and X is 0 or the sex addiction of the player is 19) and diaper quest is 0: [We only want to output 1 thing from this list even if sex addiction goes up multiple times]
+				if (highest sex addiction < the sex addiction of the player and (X is 0 or the sex addiction of the player is 19)) and diaper quest is 0: [We only want to output 1 thing from this list even if sex addiction goes up multiple times]
 					if the sex addiction of the player is 1, say "[first custom style][if the player is totalvirgin]Am I really going to have to take part in such perverted things in this game?![otherwise]I can't believe I've only been here a short while and I've already had sex...[end if][roman type][line break]";
 					if the sex addiction of the player is 2, say "[first custom style][if the player is totalvirgin]The sex is all avoidable, right?[otherwise]If I can't avoid getting fucked, my situation is only going to get worse and worse. I've got to keep level headed.[end if][roman type][line break]";
 					if the sex addiction of the player is 3, say "[first custom style]Oh no, I can feel my resistance fading... every time something sexual happens I'm going to enjoy this world a little bit more. I have a to find a way out![roman type][line break]";
@@ -126,6 +126,8 @@ To SexAddictUp (X - a number):
 					if the sex addiction of the player is 19, say "[second custom style][NameBimbo] wants more cummies! [NameBimbo] needs more [manly-penis]s...[roman type][line break]";
 				[otherwise if X is 1:
 					say "You feel slightly light-headed, but in a good way.";]
+				otherwise if X is 0:
+					say "[one of]Perverted thoughts fill your mind[or]You feel yourself becoming more... [']sexual['][or]A little voice in your head is reminding you just how nice it feels to have an orgasm[in random order].";
 				increase the raw sex addiction of the player by 1;
 				[if there is a live thing penetrating asshole, AnalSexAddictUp 1;
 				if there is a live thing penetrating vagina, VaginalSexAddictUp 1;] [this is done in the orgasm function now]
@@ -134,6 +136,8 @@ To SexAddictUp (X - a number):
 				IntDown 1;
 			otherwise:
 				say "[one of]You feel slightly light-headed, but then it passes.[or][or][or][cycling]";
+		otherwise:
+			say "You feel your [random worn confidence clothing] helping you stay a bit more sane than you would have otherwise.";
 	if highest sex addiction < the sex addiction of the player, now highest sex addiction is the sex addiction of the player.
 
 To SexAddictDown (X - a number):

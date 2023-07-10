@@ -175,13 +175,24 @@ To decide which figure-name is Figure of Train Predicament Player:
 	if plain-largish-diaper is messed or plain-largish-diaper is dry, decide on Figure of Train Predicament Player Green;
 	otherwise decide on Figure of Train Predicament Player White.
 
+Figure of trashcan empty is the file "Items/Accessories/Other/trashcan1.png".
+Figure of trashcan 1 wet diaper is the file "Items/Accessories/Other/trashcan4a.png".
+Figure of trashcan 2 wet diapers is the file "Items/Accessories/Other/trashcan4b.png".
+Figure of trashcan 1 messy diaper is the file "Items/Accessories/Other/trashcan5a.png".
+Figure of trashcan 2 messy diapers is the file "Items/Accessories/Other/trashcan5b.png".
+
+To decide which figure-name is clothing-image of (C - trashcan):
+	if the diaper-fill of C > 1:
+		if diaper messing >= 6, decide on Figure of trashcan 2 messy diapers;
+		otherwise decide on Figure of trashcan 2 wet diapers;
+	otherwise if the diaper-fill of C > 0:
+		if diaper messing >= 6, decide on Figure of trashcan 1 messy diaper;
+		otherwise decide on Figure of trashcan 1 wet diaper;
+	decide on Figure of trashcan empty.
+
 Figure of urinal is the file "Env/MultiFloor/urinal2.png".
-Figure of Berri Wrestler Urinal is the file "Env/MultiFloor/urinal3a.jpg".
-Figure of Berri Urinal is the file "Env/MultiFloor/urinal3b.jpg".
 To decide which figure-name is the examine-image of (T - urinal):
-	if the hotel-urinal-scene of woman-player > 0 and the woman-status of woman-player is 93 and the player is in Hotel31:
-		if there is a wrestler in Holding Pen, decide on Figure of Berri Wrestler Urinal;
-		decide on Figure of Berri Urinal;
+	if the player is in School27, decide on figure of staff room urinal;
 	decide on figure of urinal.
 
 Figure of Vibe Pose Predicament 1 is the file "Special/Cutscene/cutscene-vibe-pose3.jpg".
@@ -207,8 +218,9 @@ To decide which figure-name is the pacified-image of (M - a royal guard):
 	if the refractory-period of M <= 0 and diaper messing >= 6, decide on figure of Babified Royal Guard 2;
 	decide on figure of Babified Royal Guard 1.
 
-Figure of caged pail princess is the file "NPCs/MultiFloor/Princess/cage7.jpg".
+[Figure of caged pail princess is the file "NPCs/MultiFloor/Princess/cage7.jpg".]
 Figure of caged pail princess messy is the file "NPCs/MultiFloor/Princess/cage6.jpg".
+Figure of caged pail princess facedown is the file "NPCs/MultiFloor/Princess/cage8.jpg".
 Figure of dark princess 1 is the file "NPCs/MultiFloor/Princess/darkprincess3.jpg".
 Figure of dark princess 2 is the file "NPCs/MultiFloor/Princess/darkprincess4.jpg".
 Figure of dark princess 3 is the file "NPCs/MultiFloor/Princess/darkprincess5.jpg".
@@ -318,7 +330,7 @@ To decide which figure-name is the examine-image of (T - face):
 		otherwise:
 			decide on Figure of Face135.
 
-Figure of BreastsObject3 is the file "CharWins/FocusWin/Breasts/breasts3.jpg".
+Figure of BreastsObject3 is the file "CharWins/FocusWin/Breasts/03.jpg".
 
 To decide which figure-name is the examine-image of (T - breasts):
 	decide on figure of BreastsObject3.

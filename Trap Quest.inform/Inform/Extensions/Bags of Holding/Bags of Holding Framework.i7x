@@ -655,6 +655,16 @@ To execute (E - bag-feeding-bunny-theme):
 		say "temporarily reducing your dexterity!";
 		increase temp_dex_dam by 2.
 
+bag-feeding-baby-theme is a bag-feeding-effect.
+Definition: bag-feeding-baby-theme is appropriate:
+	if the player is not at least somewhat continent, decide no;
+	if the noun is baby themed, decide yes;
+	if the noun is clothing and the initial cringe of the noun >= 12, decide yes;
+	decide no.
+To execute (E - bag-feeding-baby-theme):
+	say "Your bag reacts to the childish nature of the [MediumDesc of noun]! ";
+	RandomIncontinenceUp 1.
+
 bag-feeding-heart-theme is a bag-feeding-effect.
 Definition: bag-feeding-heart-theme is appropriate:
 	if the noun is heart themed and the player is able to get horny, decide yes;
@@ -791,7 +801,7 @@ To compute school periodic effect of (B - enema-backpack):
 		AssFill 20 with water;
 		now entry 1 in the armUses of arms is the player;
 		now entry 2 in the armUses of arms is the player;
-	otherwise if B is not enema-released and the player is not in a park room:
+	otherwise if B is not enema-released and the player is in a predicament room and the player is not in Predicament20:
 		appropriate-cutscene-display figure of diaper grope predicament cutscene.
 
 Bags of Holding Framework ends here.

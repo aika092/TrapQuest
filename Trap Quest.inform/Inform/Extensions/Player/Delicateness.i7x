@@ -106,8 +106,8 @@ To PainUp (X - a number): [This function is anticipated to output some kind of f
 			if the delicateness of the player is 19, say "[second custom style][if the bimbo of the player > 17][NameBimbo] deserves[otherwise]I deserve[end if][if there is a worn diaper] to be punished, I'm a very naughty nappied baby![otherwise if diaper lover >= 1] to be kept in nappies for ever and ever after this, I'm so naughty![otherwise] to be punished, I'm a bad [boy of the player].[end if][roman type][line break]";
 			if the delicateness of the player is 20, say "[second custom style]I love it! I love how much it hurts! I deserve this![roman type][line break]";
 	if no-flinching is false:
-		let R be a random number between 11 and 20;
-		if debuginfo > 0, say "[input-style]Avoid flinch check: d10+9 ([R]) | [timesTicked + the delicateness of the player].5 = ([delicateness of the player]) delicateness + ([timesTicked].5) pain rating[roman type][line break]";
+		let R be a random number between 1 and 30;
+		if debuginfo > 0, say "[input-style]Avoid flinch check: d30 ([R]) | [timesTicked + the delicateness of the player].5 = ([delicateness of the player]) delicateness + ([timesTicked].5) pain rating[roman type][line break]";
 		if timesTicked + the delicateness of the player >= R:
 			let T be the substituted form of "As you [one of]recoil[or]flinch[or]tense up[in random order] with pain,";
 			check sudden spit and expulsion with reason T;
@@ -185,8 +185,8 @@ To FearUp (X - a number) with reason (T - a text): [This function is anticipated
 		say "[variable custom style][if the player is feeling dominant][one of]Holy shit[or]Spooky[or]Woah[in random order].[otherwise if the player is not feeling submissive][one of]Woah[or]Fuck[or]Shit[or]Holy shit[in random order]![otherwise][one of]Aaaah[or]Eeeek[or]Waaah[in random order]![end if][roman type][line break]";
 	otherwise:
 		say "[variable custom style][one of]Oh[or]Oh my[or]Gosh[or]Jeez, that made me jump[or]I was not expecting that[in random order]![roman type][line break]";
-	let R be a random number between 11 and 20;
-	if debuginfo > 0, say "[input-style]Avoid flinch check: d10+9 ([R]) | [X + the delicateness of the player].5 = ([delicateness of the player]) delicateness + ([X].5) fear rating[roman type][line break]";
+	let R be a random number between 1 and 30;
+	if debuginfo > 0, say "[input-style]Avoid flinch check: d30 ([R]) | [X + the delicateness of the player].5 = ([delicateness of the player]) delicateness + ([X].5) fear rating[roman type][line break]";
 	if X + the delicateness of the player >= R:
 		if T is "", now T is the substituted form of "As you [one of]recoil[or]flinch[or]tense up[in random order] with [if X > 5]fear[otherwise][one of]surprise[or]shock[cycling][end if],";
 		check sudden spit and expulsion with reason T.
@@ -231,9 +231,9 @@ To say GrossOut (X - a number):
 	GrossOut X with reason "" and sensation "feeling".
 
 To SmellGrossOut (X - a number):
-	say GrossOut X.
+	say SmellGrossOut X.
 To say SmellGrossOut (X - a number):
-	GrossOut X with reason "" and sensation "[one of]smell[or]stench[as decreasingly likely outcomes]".
+	GrossOut X with reason "" and sensation "[one of]smell[or]stench[or]stink[as decreasingly likely outcomes]".
 
 To TasteGrossOut (X - a number):
 	say TasteGrossOut X.

@@ -15,18 +15,25 @@ Definition: yourself is friendly fucked:
 
 To check consensual submissive sex of (M - a monster):
 	now current-monster is M;
-	if presented-orifice is vagina and M is bride-consort and the consummation of betrothal-quest is false:
-		say "[speech style of M]'This isn't the right place or time.'[roman type][line break]";
-	otherwise:
-		follow the monster friendly convinced rule of M;
-		if the rule succeeded:
-			now the chosen-orifice of M is presented-orifice;
-			if the chosen-orifice of M is face, now M is not-getting-licked;
-			now M is friendly-fucking;
-			FavourUp M by the sex desire of M;
-			follow the insertion rules of M;
+	if diaper quest is 1: [This should only happen with requested urination]
+		if M is willing to urinate and M is not a diaper wetter and the bladder of M >= 600:
+			compute M urinating;
 		otherwise:
-			if presented-orifice is nothing, say "[BigNameDesc of M] can't seem to understand what you want from [him of M].".
+			if M is intelligent, say "[BigNameDesc of M] shrugs.[line break][speech style of M]'[if M is a diaper wetter]I just use my diaper when I need to pee[otherwise if M is willing to urinate]I don't need to go right now[otherwise]I'm not into that sort of thing[end if].'[roman type][line break]";
+			otherwise say "It doesn't look like [NameDesc of M] understood that at all.";
+	otherwise:
+		if presented-orifice is vagina and M is bride-consort and the consummation of betrothal-quest is false:
+			say "[speech style of M]'This isn't the right place or time.'[roman type][line break]";
+		otherwise:
+			follow the monster friendly convinced rule of M;
+			if the rule succeeded:
+				now the chosen-orifice of M is presented-orifice;
+				if the chosen-orifice of M is face, now M is not-getting-licked;
+				now M is friendly-fucking;
+				FavourUp M by the sex desire of M;
+				follow the insertion rules of M;
+			otherwise:
+				if presented-orifice is nothing, say "[BigNameDesc of M] can't seem to understand what you want from [him of M].".
 
 To decide which number is the sex desire of (M - a monster):
 	decide on 1.[How much favour does the player gain from fucking them?]

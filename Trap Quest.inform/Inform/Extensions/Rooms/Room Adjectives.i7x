@@ -28,6 +28,8 @@ Definition: a room is bathroom:
 	if it is urinals or it is toilets, decide yes;
 	decide no.
 
+Definition: a room is foody: decide no. [Does this room remind the player that they're feeling hungry?]
+
 [!<Room>@<IsUnspawnable>+
 
 An unspawnable room cannot have the player stay there upon a map reset, they get moved to a default other location in the region.

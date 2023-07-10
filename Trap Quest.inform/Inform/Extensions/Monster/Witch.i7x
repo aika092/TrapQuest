@@ -725,4 +725,8 @@ Part 7 - Trading
 To decide which number is the bartering value of (T - a thing) for (M - witch):
 	decide on 0.
 
+To compute offer reward of (M - witch) for (T - a thing):
+	say "[speech style of M]'Go on, I'll give you an extra use of the altar for that.'[roman type][line break]";
+	increase the altar-uses of M by 1.
+
 Witch ends here.

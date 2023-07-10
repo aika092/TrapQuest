@@ -94,6 +94,13 @@ To compute automatic state check of (C - a clothing):
 			say "[bold type]Looking down, you discover you've wet your diaper [if the known-urine-soak of C > 0]even more [end if]without even realising it![roman type][line break]";
 		process state perception of C.
 
+To compute combat diaper squish:
+	let D be a random messed diaper;
+	if D is diaper:
+		say "As you thrust your leg, your butt squelches against the mush in your [ShortDesc of D].";
+		SlowGrossOut 7;
+		compute automatic state check of D;
+
 To decide which number is the known-total-soak of (D - a clothing):
 	decide on the total-soak of D.
 
@@ -278,16 +285,16 @@ To compute periodic effect of (D - a diaper):
 			now xavier-diaper-link is 1;
 			say "All of a sudden you feel your butthole open wide to start letting out a massive ooze of poop... but it's not you. The Demon Queen must be messing herself [one of][or]once [stopping]again! In any case it feels, sounds, and appears as if it's you, which is all that really matters. ";
 			now rectum is 35;
-			compute messing;
+			compute inhuman partial messing;
 	if (doomed >= 5 or D is demon-diaper) and altar-diaper-link > 0 and D is total protection:
 		increase altar-diaper-link by 1;
-		if ((D is demon-diaper and altar-diaper-link >= 53) or altar-diaper-link >= 117) and (diaper messing < 3 or asshole is not actually occupied):
+		if ((D is demon-diaper and altar-diaper-link >= 73) or altar-diaper-link >= 147) and (diaper messing < 3 or asshole is not actually occupied):
 			now altar-diaper-link is 1;
 			say "You hear a rumbling, like thunder in the distance, but much closer by. [one of]It takes you a few moments to[or]This time you quickly[stopping] realise that it's coming from your own belly! Your belly begins to expand as you feel some pressure building inside. It grows and grows and grows, until you look 9 months pregnant, and then continues to grow even further, ballooning to an impossibly unrealistic size, as if you were a cartoon person who'd just swallowed a wrecking ball whole. The rumbling grows worse. And then as soon as it stops growing, the pressure immediately becomes impossible to hold. ";
 			if diaper messing >= 3:
 				say "All of a sudden you feel your butthole open wider than should be physically possible to become a human sewage pipe, and begin spewing out what feels like a metric tonne of sludge every second. ";
-				now rectum is 200;
-				compute messing;
+				now rectum is 50;
+				compute inhuman partial messing;
 			otherwise:
 				say "";
 				now the bladder of the player is 70;
@@ -304,7 +311,7 @@ Definition: a diaper is fetish appropriate:
 	decide no.
 
 To decide which number is the weight of (D - a knickers):
-	let X be the DQBulk of D;
+	let X be (the DQBulk of D + 3) / 3;
 	if diaper lover > 0:
 		if D is diaper:
 			increase X by (the total-soak of D + 9) / 10;
@@ -316,6 +323,16 @@ To decide which number is the weight of (D - a knickers):
 		if D is worn and DC is diaper cover and DC is not waddle-walking, now X is X / 2;] [diaper covers used to be good]
 	if X > 0, decide on X / 2;
 	decide on 0.
+
+[How much does it make the player waddle?]
+To decide which number is the waddle-weight of (D - a knickers):
+	let X be (the DQBulk of D + 2) / 3;
+	if D is diaper:
+		increase X by the total-soak of D / 8;
+		increase X by the mess of D / 5;
+	otherwise:
+		increase X by the mess of D / 2;
+	decide on X.
 
 Definition: a diaper (called D) is eligible: [This allows us to pull diapers that have been left around the game universe and re-use them]
 	if D is store, decide no;
@@ -739,6 +756,9 @@ To update diaper stack:
 		otherwise:
 			now entry N in the list of stacked diapers is unlocked;
 		if debugmode > 1, say "[input-style]Before diaper stack update: Glue level of diaper stack is [glue timer of diaper-stack].[roman type][line break]";
+		[same with stuck]
+		if diaper-stack is stuck, now entry N in the list of stacked diapers is stuck;
+		otherwise now entry N in the list of stacked diapers is not stuck;
 		compute diaper-stack inheriting from entry N in the list of stacked diapers;
 		[if diaper-stack object is locked, let's make sure specific-keys are pointing to the diaper-stack object and not the outer diaper that's being held off-stage]
 		if diaper-stack is locked:

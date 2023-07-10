@@ -172,4 +172,30 @@ This is the diaper focus butt slut rule:
 	if the player is diaper focused, decrease the desirability of asshole by 5.
 The diaper focus butt slut rule is listed first in the butt slut eligibility rules.
 
+
+
+Part 6 - Hungry Messer
+
+[In Diaper Quest, with messing enabled, usually the player doesn't get hungry, and is supposed to play to avoid food, and therefore avoid messing. But another challenge might be if the player DOES get hungry...]
+
+To decide which number is hungry messer:
+	if diaper quest is 0 or the player is not a may 2023 diaper donator, decide on 0;
+	if weight gain fetish is 1, decide on 1;
+	if diaper messing < 3, decide on 0;
+	decide on choice in row 86 of the Table of Player Options.
+
+Table of Hungry Messer Options
+title	subtable	description	toggle
+"My character doesn't get hungry (unless there's a temporary magical effect making it so). The game needs to pressure or force me into eating if it wants to make me poop."	--	--	food avoidance messer rule
+"When my stomach is empty, I get hungry and start to slowly lose strength. Since I need to eat to survive, I'm inevitably going to find myself frequently needing to poop. (+3 points)"	--	--	hungry messer rule
+
+This is the food avoidance messer rule:
+	now choice in row 86 of the Table of Player Options is 0;
+	follow quit rule.
+
+This is the hungry messer rule:
+	now choice in row 86 of the Table of Player Options is 1;
+	follow quit rule.
+
+
 Diaper Lover Options ends here.

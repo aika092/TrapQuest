@@ -937,6 +937,40 @@ Carry out quaffing magic-potion:
 				say "[bold type]New arcane knowledge appears in your mind! You've learned a new spell![NewbieSpellFlav]";
 				compute learning of S.
 
+Section 8 Potion of Magic
+
+continence-potion is a potion. The text-shortcut of continence-potion is "pcnt". Understand "continence" as continence-potion.
+The backgroundColour of continence-potion is 6111039.
+
+To decide which number is the alchemy key of (A - continence-potion):
+	decide on 39.
+
+Definition: continence-potion is fetish appropriate:
+	if diaper lover > 0, decide yes;
+	decide no.
+
+To say MediumDesc of (B - continence-potion):
+	say "potion of continence".
+
+To say ExamineDesc of (B - continence-potion):
+	say "A round clear hip flask filled with a dose of bright glowing murky liquid. The label claims that drinking it will help solve any issues one is having with incontinence. ";
+	if B is sure and B is cursed, say "Since it is cursed, drinking it would probably make you more incontinenct instead. Perhaps you could find some other use for it, for example gifting.";
+	otherwise say "[if B is sure and B is blessed]The blessing will somehow enhance the effect of the potion.[otherwise][line break][end if]".
+
+Carry out quaffing continence-potion:
+	say "You pull out the stopper and down the murky liquid.";
+	if the noun is cursed:
+		say "[bold type]You feel a curse flow through your veins![roman type][line break]";
+		RandomIncontinenceUp 4;
+	otherwise:
+		say "You can feel it working to improve your continence!";
+		BladderIncontinenceDown 2;
+		RectumIncontinenceDown 2;
+		if the noun is blessed:
+			BladderIncontinenceDown 8;
+			RectumIncontinenceDown 8.
+
+
 A powder is a kind of alchemy product. Understand "powder", "powder of" as a powder.
 
 To say ShortDesc of (P - a powder):

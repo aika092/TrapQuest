@@ -167,7 +167,11 @@ Check toileting:
 			otherwise if watersports mechanics is 1 and P is not a thing and AC is not a clothing:
 				say "If you sit on the toilet and push, you might accidentally wet your [ShortDesc of PC] at the same time. Do you want to risk it?";
 				if the player is not consenting, say "Action cancelled." instead;
-		if the player is toilet traumatized and the number of intelligent friendly monsters in the location of the player is 0, say "After your traumatizing experience with [NameDesc of toilet-monster], you're too scared to use the toilet all by yourself!" instead.
+		if the player is toilet traumatized:
+			if the number of intelligent awake friendly monsters in the location of the player is 0, say "After your traumatizing experience with [NameDesc of toilet-monster], you're too scared to use the toilet all by yourself!" instead;
+		otherwise if the player is proud:
+			let M be a random intelligent awake monster in the location of the player;
+			if M is monster, say "I can't [if PC is clothing]pull my [ShortDesc of PC] down and [end if]sit on the toilet and use it with [NameDesc of M] right there!!!" instead.
 
 Definition: yourself is toilet traumatized:
 	if diaper lover > 0 and the times-terrorized of toilet-monster > 1, decide yes;
@@ -374,8 +378,9 @@ To compute toilet use:
 				DiaperAddictUp 1;
 				say "Your mind suddenly clouds for a second... As you shake it off, you suddenly feel more comfortable wearing and using diapers!";
 		otherwise if R is 3 and the raw-bladder-incontinence of the player > 0:
-			decrease the raw-bladder-incontinence of the player by 1;
-			say "You suddenly feel a rush of energy from the throne to your crotch. It seems the training potty has helped you regain even more control over your bladder[if diaper messing >= 3] and bowels[end if]!";
+			decrease the raw-bladder-incontinence of the player by 5;
+			say "You suddenly feel a rush of energy from the throne to your crotch. ";
+			BladderIncontinenceDown 5;
 		otherwise if (R is 3 or R is 4) and the diaper addiction of the player > 0:
 			SilentlyDiaperAddictDown 1;
 			say "You suddenly feel a rush of energy to your head, and your mind suddenly feels a little clearer. It seems the training potty has helped reduce your addiction to wearing and using diapers!";
@@ -802,7 +807,7 @@ To check pee leaking with reason (T - a text):
 	now player-just-leaked is false;
 	if diaper lover > 0 and the player is not incontinent:
 		let B be the bladder of the player;
-		if B > 0 and T is not "", increase B by the expulsion-weakness of the player;
+		if B > 0 and T is not "", increase B by the expulsion weakness of the player;
 		let I be bladder-squirty-level;
 		if B > I:
 			decrease B by I;
@@ -817,9 +822,10 @@ To compute pee leaking with reason (T - a text):
 		let KSK be -1;
 		let K be a random bottom level pee protection clothing;
 		let CK be nothing;
-		if K is clothing, now CK is the concealer of K;
-		if CK is clothing and K is not currently visible, now K is CK;
-		if K is clothing, now KSK is the total-soak of K;
+		if K is clothing:
+			now KSK is the total-soak of K;
+			now CK is the concealer of K; [this is the thing that could have a pee stain]
+			if CK is clothing, now KSK is the total-soak of CK;
 		say bold type;
 		if T is "", say "[one of]You spontaneously leak a little pee[or]All of a sudden, your bladder spasms and you squirt out a little wee[or]Completely beyond your control, your [if the player is possessing a penis][player-penis][otherwise]bladder[end if] lets out a squirt of pee[in random order]. ";
 		otherwise say "[T] [one of]you squirt out a little bit of pee[or]you leak a little squirt of pee[or]your bladder muscles tense and accidentally let out a little pee[in random order]. ";
@@ -827,7 +833,9 @@ To compute pee leaking with reason (T - a text):
 		if K is clothing, AnnouncedExpel urine on K by 1;
 		otherwise AnnouncedExpel urine on thighs by 1;
 		decrease the bladder of the player by 1;
-		if KSK is 0 and the total-soak of K > 0, say "There is now a visible [if K is diaper]yellow patch[otherwise]stain[end if] in the front of your [ShortDesc of K].";
+		let SK be K; [this is the thing that could have a pee stain]
+		if CK is clothing and K is not currently visible, now SK is CK;
+		if KSK is 0 and the total-soak of SK > 0, say "There is now a visible [if SK is diaper]yellow patch[otherwise]stain[end if] in the front of your [ShortDesc of SK].";
 		compute sudden squirt into K disapproval.
 
 To check full wetting:
@@ -840,7 +848,7 @@ To check full wetting with reason (T - a text):
 		let I be bladder-risky-level;
 		let B be bladder-bursting-level; [difference between bladder and risky level]
 		let resting-wetter be 0;
-		if T is not "", now resting-wetter is the expulsion-weakness of the player;
+		if T is not "", now resting-wetter is the expulsion weakness of the player;
 		if player-currently-resting is 1 and (there is a worn bed wetting clothing or bed-wetter tattoo is worn) and the bladder of the player > 2, now resting-wetter is 3;
 		if the player is in Iron Maiden, now resting-wetter is 5;
 		if B >= 0 or resting-wetter > 0:
@@ -1032,16 +1040,16 @@ To say PeeReaction (N - 3):
 				if M is monster:
 					say ClothesPeeDeclaration of M;
 					repeat with Z running through reactive monsters:
-						severeHumiliate;
 						say ClothesPeeReaction of Z;
+						say severeHumiliateReflect;
 				otherwise:
 					unless K is WC-plug-panties, say "[one of][line break][variable custom style]Yuck.[or][variable custom style]Eww![or][if the bimbo of the player > 9][line break][second custom style]Uh-oh, I'm a bad girl![otherwise][line break][first custom style]Err, whoops.[end if][purely at random][roman type][line break]";
 			otherwise: [Accidental urination]
 				if M is monster:
 					say ClothesPeeDeclaration of M;
 					repeat with Z running through reactive monsters:
-						obsceneHumiliate;
 						say ClothesPeeReaction of Z;
+						say strongHumiliateReflect;
 				otherwise:
 					unless K is WC-plug-panties, say "[one of][line break][variable custom style]Err, whoops![or][if saved-flat-intelligence < 6][line break][second custom style]Uh-oh, I had a little accident![otherwise][line break][first custom style]I can't believe I just let that happen...[end if][or][variable custom style]I guess I should try and find a toilet next time...[purely at random][roman type][line break]";
 					severeHumiliate;

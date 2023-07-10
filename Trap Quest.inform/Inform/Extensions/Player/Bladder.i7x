@@ -57,6 +57,15 @@ To SilentlyBladderIncontinenceUp (N - number):
 		increase the raw-bladder-incontinence of the player by N;
 		if the raw-bladder-incontinence of the player > the max-bladder-incontinence of the player, now the raw-bladder-incontinence of the player is the max-bladder-incontinence of the player.
 
+To BladderIncontinenceDown (N - number):
+	if the raw-bladder-incontinence of the player > 0:
+		say "You feel your ability to hold onto your bladder [if N is 1 and the raw-bladder-incontinence of the player > 1]slightly [otherwise if the raw-bladder-incontinence of the player > N + 2]somewhat [end if]returning.";
+		SilentlyBladderIncontinenceDown N.
+To SilentlyBladderIncontinenceDown (N - number):
+	decrease the raw-bladder-incontinence of the player by N;
+	if the raw-bladder-incontinence of the player < 0, now the raw-bladder-incontinence of the player is 0.
+
+
 temporary-bladder-incontinence is a number that varies.
 To progress temporary incontinence:
 	if temporary-bladder-incontinence > 0:
@@ -81,13 +90,18 @@ To TemporaryIncontinenceUp (N - a number):
 	if diaper messing >= 3 and a random number between 0 and 1 is 1, increase temporary-rectum-incontinence by N;
 	increase temporary-bladder-incontinence by N.
 
+To decide which number is the bladder-incontinence-influence of (C - a wearthing):
+	if C is diaper or C is bladder-incontinence-influencing clothing:
+		let N be -1 * the magic-modifier of C;
+		if C is bed wetting clothing, decrease N by 1;
+		decide on N;
+	decide on 0.
+
 To decide which number is the bladder-incontinence of the player:
 	if temporary-bladder-incontinence > 0, decide on the max-bladder-incontinence of the player;
 	let I be the raw-bladder-incontinence of the player;
-	increase I by the number of worn bed wetting clothing;
-	if diaper lover > 0:
-		repeat with K running through worn knickers:
-			decrease I by the magic-modifier of K;
+	repeat with C running through worn wearthings:
+		increase I by the bladder-incontinence-influence of C;
 	if I > the max-bladder-incontinence of the player, decide on the max-bladder-incontinence of the player;
 	decide on I.
 
@@ -104,6 +118,14 @@ Definition: yourself is incontinent:
 	decide no.
 Definition: yourself is totally incontinent:
 	if the player is bladder incontinent and (diaper messing < 3 or the player is rectum incontinent), decide yes;
+	decide no.
+
+
+Definition: yourself is at least somewhat bladder continent: [we use this to check whether there's any point in applying more bladder continence reducing effects to the player.]
+	if the raw-bladder-incontinence of the player < the max-bladder-incontinence of the player, decide yes;
+	decide no.
+Definition: yourself is at least somewhat continent: [we use this to check whether there's any point in applying more continence reducing effects to the player.]
+	if the player is at least somewhat bladder continent or (diaper messing >= 3 and the player is at least somewhat rectum continent), decide yes;
 	decide no.
 
 Definition: yourself is potentially diaper aware: [Do they always know the state of their diaper?]

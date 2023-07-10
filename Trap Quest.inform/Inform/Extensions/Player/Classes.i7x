@@ -730,7 +730,7 @@ vixenExplained is initially false.
 a later time based rule (this is the explaining vixen rule):
 	if vixenExplained is false and the class of the player is vixen:
 		now vixenExplained is true;
-		say "[bold type]Now that you have become the [']vixen['] class, you can sense that your 'presence' has been lowered, and sometimes you might be able to sneak by unnoticed.[roman type][line break]";
+		say "[bold type]Now that you have become the [']vixen['] class, you can sense that your 'presence' has been lowered, and sometimes you might be able to sneak by unnoticed. But also, many people will know you for your reputation as a thief and a scoundrel.[roman type][line break]";
 	otherwise if vixenExplained is true and the class of the player is not vixen:
 		now vixenExplained is false;
 		say "[bold type]Now that you are no longer the [']vixen['] class, you can sense that your 'presence' has returned to normal.[roman type][line break]".

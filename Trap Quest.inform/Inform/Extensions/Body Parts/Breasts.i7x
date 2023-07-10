@@ -78,7 +78,7 @@ To decide which object is the at least partial concealer of (B - breasts):
 	let chosenThing be the throne;
 	repeat with C running through worn at least partially nipple covering clothing:
 		let CC be the cleavageCover of C;
-		if the cleavageCover of C > N:
+		if N is 0 or CC > N:
 			now chosenThing is C;
 			now N is CC;
 	if realisticArms is 1 and ((N > 0 and N <= the cleavageCover of arms) or (N is 0 and the cleavageCover of arms > 0)), decide on arms;

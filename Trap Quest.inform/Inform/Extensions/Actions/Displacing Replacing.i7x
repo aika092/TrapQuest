@@ -42,12 +42,11 @@ This is the can't displace what isn't displacable rule:
 The can't displace what isn't displacable rule is listed first in the displacing rules.
 
 This is the can't displace what's covered up rule:
-	if the noun is clothing:
-		unless the noun is skirted:
-			repeat with C running through worn top level protection unskirted clothing:
-				if the bottom-layer of C > the bottom-layer of the noun:
-					if auto is 0, say "You would need to displace or remove your [C] first.";
-					rule fails.
+	if the noun is clothing and the noun is unskirted:
+		repeat with C running through worn top level protection clothing:
+			if the bottom-layer of C > the bottom-layer of the noun:
+				if auto is 0, say "You would need to displace or remove your [C] first.";
+				rule fails.
 The can't displace what's covered up rule is listed last in the displacing rules.
 
 Definition: yourself is able to displace:

@@ -37,7 +37,11 @@ To check guaranteed perception of (M - a monster):
 
 To check perception of (M - a monster):
 	if M is aware:
-		if M is defeated:
+		if hotel changing station is grabbing the player:
+			say PerceptionFail of M;
+			if the blind-status of M > 0, decrease the blind-status of M by 1;
+			deinterest M;
+		otherwise if M is defeated:
 			compute defeated perception of M;
 		otherwise if M is interested:
 			if M is friendly:
@@ -85,6 +89,7 @@ To check perception of (M - a monster):
 						passively stimulate asshole from herald;
 						if diaper quest is 1, now the babification of M is 1;
 						otherwise now the objectification of M is 1;
+						now M is recently-unknown; [check for friendliness again]
 						if M is uniquely unfriendly, check sudden objectification of M;
 					otherwise:
 						now the previous-babification of M is the babification of M;

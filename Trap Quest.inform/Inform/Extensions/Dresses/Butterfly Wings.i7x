@@ -23,11 +23,18 @@ To say ShortDesc of (C - butterfly wings):
 To say ClassSummonFlav of (C - butterfly wings):
 	say "A giant pair of wings appear on your back. You feel lighter!".
 
+To compute periodic effect of (C - butterfly wings):
+	if the class of the player is not faerie, destroy C.
+To compute school periodic effect of (C - butterfly wings):
+	if the player is not in a predicament room, compute periodic effect of C.
+
 To decide which number is the initial cringe of (C - butterfly wings):
 	decide on 6.
 
 To decide which number is the luck-influence of (C - butterfly wings):
 	decide on 10.
+To decide which number is the bladder-incontinence-influence of (C - butterfly wings):
+	decide on 2.
 
 This is the carefree fairy rule:
 	if there is a worn butterfly wings:
@@ -65,5 +72,6 @@ Definition: butterfly wings is butterfly themed: decide yes.
 Definition: butterfly wings is pink themed: decide yes.
 Definition: butterfly wings is layer-blocking: decide no. [It can be removed whenever, and it doesn't block other things being worn or removed underneath it.]
 Definition: butterfly wings is condom pinnable: decide no.
+Definition: butterfly wings is removable: decide no.
 
 Butterfly Wings ends here.

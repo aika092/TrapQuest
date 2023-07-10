@@ -419,6 +419,7 @@ To compute damage reaction of (M - bulging-slutty-sister):
 
 To compute defeat of (M - bulging-slutty-sister):
 	say "[speech style of M]'Aack! [if bulging-slutty-sister is combative]I'm done for. Show [him of the player] who's boss, partner...'[otherwise]I can't believe this, you actually won...'[end if][roman type][line break][BigNameDesc of M] falls unconscious[if nintendolls-wand is not held and nintendolls-wand is not in the location of the player], [his of M] wand falling out of [his of M] hand[end if].";
+	dislodge M; [might be wrangling arms]
 	now the sleep of M is 300;
 	now the health of M is 1;
 	if nintendolls-wand is not held:
@@ -426,6 +427,7 @@ To compute defeat of (M - bulging-slutty-sister):
 
 To compute defeat of (M - futanari-slutty-sister):
 	say "[speech style of M]'Unf! [if bulging-slutty-sister is combative]Fuck [him of the player] up, partner...'[otherwise]Fine, you win. Well done...'[end if][roman type][line break][BigNameDesc of M] falls unconscious.";
+	dislodge M; [might be wrangling arms]
 	now the health of M is 1;
 	now the sleep of M is 300.
 

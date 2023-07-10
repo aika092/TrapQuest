@@ -130,6 +130,12 @@ This is the default check for enema rule:
 		rule succeeds.
 The default check for enema rule is listed last in the default continue sex rules.
 
+This is the default check for diaper facesit rule:
+	if current-monster is diaper-facesitting the player:
+		compute diaper facesit of current-monster;
+		rule succeeds.
+The default check for diaper facesit rule is listed last in the default continue sex rules.
+
 This is the default check for feeding rule:
 	if current-monster is feeding the player:
 		compute forcefeed of current-monster;
@@ -257,7 +263,11 @@ To compute replacement of (T - a thing) in (O - an orifice):
 		now T is worn by the player;
 		now T is penetrating O;
 		now T is not temporarily-removed;
-		if O is fuckhole, ruin O.
+		if O is fuckhole, ruin O;
+		if T is pacifier and O is face and the stolen-intelligence of T > 0:
+			increase the raw intelligence of the player by the stolen-intelligence of T;
+			now the stolen-intelligence of T is 0;
+			say "[bold type]As [NameDesc of T][bold type] is pushed back in your mouth, you feel it return your stolen intelligence![roman type][line break]".
 
 [!<DominateUpMonster>+
 
@@ -1123,7 +1133,7 @@ To compute enticing of (M - a monster):
 		otherwise if chosen diaper punishment is dq-student-flee:
 			if debugmode > 0, say "Tried to entice but student just wants to flee.";
 		otherwise:
-			if debugmode > 0, say "Tried to entice and selected [chosen diaper punishment].";
+			if debugmode > 0, say "Tried to entice and successfully selected something.";
 			say EnticeFlav of M for chosen diaper punishment;
 			let S be the relevant addiction of chosen diaper punishment;
 			if S > 5: [at 5 or less addiction, this can't happen]
@@ -1261,6 +1271,22 @@ To compute (M - a monster) attacking (C - a clothing): [This should change for a
 			say WeakenFlav of M on C;
 			damage C.
 
+To compute (M - a monster) pulling off (C - a clothing): [For when it's unacceptable to leave the item partially worn]
+	if C is locked and M is not a clothes-destroyer:
+		compute M unlocking C;
+		now C is temporarily-unlocked;
+	otherwise:
+		say PullAttempt of M at C;
+		let R be (a random number between the difficulty of M and 6) + (a random number between the difficulty of M and 6);
+		if debuginfo > 0, say ClothingAttackDebug of M on C with R;
+		if M is intelligent and C is tearable and R > the defence of C + 2:
+			compute M removing C;
+		otherwise if R > the defence of C and (C is tearable or the damage of C >= 5):
+			compute M destroying C;
+		otherwise:
+			say WeakenFlav of M on C;
+			damage C.
+
 To compute (M - a monster) attacking (C - a diaper):
 	say PullAttempt of M at C;
 	if C is crotch-zipped and M is intelligent:
@@ -1284,12 +1310,17 @@ To compute (M - a monster) attacking (C - a diaper):
 
 To compute (M - a monster) removing (C - a thing): [This is used for removing insertables]
 	if M is intelligent:
-		say "[BigNameDesc of M] [if C is penetrating an orifice]effortlessly pulls out[otherwise][one of]removes[or]relieves you of[or]confiscates[then at random][end if] your [ShortDesc of C].";
+		say "[BigNameDesc of M] [if C is locked]unlocks, and then [end if][if C is penetrating an orifice]effortlessly pulls out[otherwise][one of]removes[or]relieves you of[or]confiscates[then at random][end if] your [ShortDesc of C].";
 		now M is carrying C;
-		now C is temporarily-removed;
 	otherwise:
-		say "[BigNameDesc of M] [if C is penetrating an orifice]effortlessly pulls out[otherwise]removes[end if] your [ShortDesc of C] and discards it onto the floor.";
+		say "[BigNameDesc of M] [if C is locked]unlocks, and then [end if][if C is penetrating an orifice]effortlessly pulls out[otherwise]removes[end if] your [ShortDesc of C] and discards it onto the floor.";
 		now C is in the location of the player;
+		now C is temporarily-removed;
+	if C is cursed pacifier and the raw intelligence of the player > 1:
+		let I be the raw intelligence of the player / 2;
+		increase the stolen-intelligence of C by I;
+		say "[bold type]You feel [NameDesc of C] [bold type]steal [if I < 3]some[otherwise]a huge amount[end if] of your intelligence as you remove it! [roman type]It's probably trying to ensure that it gets replaced after this is over...";
+		decrease the raw intelligence of the player by I;
 	dislodge C.
 
 To compute (M - a monster) removing (C - a chastity bond):

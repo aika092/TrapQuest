@@ -162,8 +162,6 @@ To say EnemaAfterFlav of (M - robomatron):
 	say "[speech style of M]'PUNISHMENT CONCLUDED[unless there is a worn total protection diaper]. TOILET QUEST IS NOW ACTIVE. WARNING: EXPULSION IN THIS ROOM IS FORBIDDEN[end if].'[roman type][line break][BigNameDesc of M] now seems to be allowing you to leave.".
 
 To compute enema floor reaction of (M - robomatron):
-	severeHumiliate;
-	if voluntarySquatting is 1, obsceneHumiliate;
 	say "[BigNameDesc of M][']s eyes turn red.[line break][speech style of M]BAD [caps boy of the player]. BAD [caps boy of the player].'[if M is grabbing the player]'[otherwise]FORBIDDEN ACTIVITY DETECTED. SELECTING PUNISHMENT ROUTINE.'[end if][roman type][line break]";
 	anger M;
 	interest M.

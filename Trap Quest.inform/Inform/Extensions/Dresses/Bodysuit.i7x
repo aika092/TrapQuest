@@ -686,6 +686,7 @@ Report wearing superheroine outfit when there is a worn diaper:
 Definition: superheroine outfit is titfuck protection: decide no.
 Definition: superheroine outfit is blue themed: decide yes.
 Definition: superheroine outfit is boob themed: decide yes.
+Definition: superheroine outfit is unskirted themed: decide yes.
 Definition: superheroine outfit is disintegration-protected: decide yes.
 Definition: superheroine outfit is displacable: decide no.
 

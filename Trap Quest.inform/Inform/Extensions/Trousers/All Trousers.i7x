@@ -179,13 +179,16 @@ Figure of tight blue exercise shorts is the file "Items/Clothes/Lower/Pants/exer
 To decide which figure-name is clothing-image of (H - tight-blue-exercise-shorts):
 	decide on figure of tight blue exercise shorts.
 To say UniqueClothingDesc of (Y - tight-blue-exercise-shorts):
-	say "A pair of super-tight blue exercise shorts. It [if Y is worn]rides[otherwise]will ride[end if] high on your hips, but [if Y is worn]also digs[otherwise]will also dig[end if] into your crotch.".
+	say "A pair of super-tight blue exercise shorts. It [if Y is worn]rides[otherwise]will ride[end if] high on your hips, but ";
+	if the player is possessing a penis, say "is purposefully shaped in a manner that makes it look like the wearer has a cameltoe.";
+	otherwise say "[if Y is worn]also digs[otherwise]will also dig[end if] into your crotch.".
 To say MediumDesc of (Y - tight-blue-exercise-shorts):
 	say "pair of tight blue exercise shorts".
 To decide which number is the crotch-tightness of (C - tight-blue-exercise-shorts):
 	decide on 5.
 To decide which number is the initial outrage of (C - tight-blue-exercise-shorts):
-	decide on 2.
+	if the player is possessing a penis, decide on 5; [manually adding the cameltoe outrage]
+	otherwise decide on 2.
 
 jeans is a kind of trousers. A jeans is usually manly. A jeans is denim. Understand "jeans" as jeans.
 

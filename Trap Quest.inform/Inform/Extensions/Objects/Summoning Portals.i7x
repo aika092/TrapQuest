@@ -431,7 +431,7 @@ To say PortalHint of (S - giant-statue):
 	otherwise if M is aeromancer or M is unicorn:
 		say "You can make out a faint noise every so often, almost like a slurp.";
 	otherwise if M is fairy:
-		say "You can faintly someone giggling inside her. It's almost too quiet for you to hear, but it's definitely there.";
+		say "You can faintly hear someone giggling inside her. It's almost too quiet for you to hear, but it's definitely there.";
 	otherwise if M is mannequin:
 		say "[if the charge of S > 50]It's eerily silent[otherwise]You can hear a really distinct creaking noise coming from inside of her[end if].";
 	otherwise:

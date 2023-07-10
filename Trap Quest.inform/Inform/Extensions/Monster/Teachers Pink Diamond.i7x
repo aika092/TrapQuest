@@ -432,9 +432,9 @@ To compute teaching of (L - enema-tag-lesson):
 									add yourself to LSE;
 								otherwise if M1 > 3:
 									say "You grit your teeth and hold [one of]your butthole tight[or]the enema[or]the [LQ] in[purely at random]. The painful cramps [one of]bring tears to your eyes[or]get worse and worse[stopping]!";
-									if the raw-rectum-incontinence of the player > 0 and the player is getting lucky:
-										say "[one of]But you're proud of how well you're[or]You're amazed that you're still[stopping] managing to hold it all in[one of]. Your sphincter control must not be as bad as you thought! [or]. [stopping][GotLuckyFlav]";
-										decrease the raw-rectum-incontinence of the player by 1;
+									if the raw-rectum-incontinence of the player > a random number between 0 and 5:
+										say "[one of]But you're proud of how well you're[or]You're amazed that you're still[stopping] managing to hold it all in[one of]. Your sphincter control must not be as bad as you thought! [or]. [stopping]";
+										RectumIncontinenceDown 1;
 									PainUp 10;
 								otherwise if M1 is 3:
 									say "[bold type]Your belly begins to cramp. Holding the enema in for any longer will hurt.[line break][newbie style](To expel it, you must stand still for a turn.)[roman type][line break]";
@@ -516,7 +516,7 @@ Definition: pledge-lesson-toilet is eligible:
 	if the implant of it is 0 and diaper lover > 0, decide yes;
 	decide no.
 To execute (E - pledge-lesson-toilet):
-	say "[second custom style]I'll never use the big [boy of the player] potty again. If I ever try to use a toilet, I will be dragged down into the punishment realm.[roman type][line break]A large white rune in the air flies down into your chest, right where your heart is. You can feel its magic begin to take hold...";
+	say "[second custom style]I'll never use the big [boy of the player] potty again. If I ever try to use a toilet, I will [if diaper swapping >= 4]be dragged down into the punishment realm[otherwise]start to forget how to hold in my tinkles[end if].[roman type][line break]A large white rune in the air flies down into your chest, right where your heart is. You can feel its magic begin to take hold...";
 	now toiletJustUsed is false.
 
 An all later time based rule (this is the toilet punishment rule):
@@ -525,7 +525,7 @@ An all later time based rule (this is the toilet punishment rule):
 		now toiletJustUsed is false.
 
 To compute toilet predicament punishment:
-	if diaper messing >= 3:
+	if diaper swapping >= 4:
 		say "Suddenly, the magic curse you got from [NameDesc of lesson-teacher of pledge-lesson] activates! Demonic hands shoot out of the floor and drag you down through the floor, to underneath the toilet. Before you know what's happened, you're on your knees in the thickest diaper you've ever seen, with legs and mittened hands bound behind you by ropes, a ballgag in your mouth, and some kind of tubing stuck down the back of your diaper.";
 		unless plain-massive-diaper is worn:
 			only destroy plain-massive-diaper;
@@ -548,6 +548,9 @@ To compute toilet predicament punishment:
 		MessSet plain-massive-diaper to 36;
 		now the foreign-mess of plain-massive-diaper is 36;
 		say "[variable custom style][one of]Oh god... is that really going to happen every time I try to use a toilet from now on?![or]I think maybe I need to stick to diapers[if the diaper addiction of the player < 15]. This is just too gross[end if]...[stopping][roman type][line break]";
+	otherwise if diaper messing >= 3:
+		say "Suddenly, the magic curse you got from [NameDesc of lesson-teacher of pledge-lesson] activates!";
+		RandomIncontinenceUp 2;
 	otherwise:
 		say "Suddenly, the magic curse you got from [NameDesc of lesson-teacher of pledge-lesson] activates! You feel like your bladder is much weaker than before. Uh-oh...";
 		SilentlyBladderIncontinenceUp 2.

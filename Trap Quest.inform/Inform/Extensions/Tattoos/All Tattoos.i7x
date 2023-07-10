@@ -1638,7 +1638,7 @@ A speech penalties rule (this is the spontaneous incontinence rule):
 	if incontinent-when-speaking tattoo is worn:
 		if rectum > 1 and the player is not rectum incontinent and there is worn soilable knickers:
 			say "You immediately lose control of your bowels!";
-			compute messing;
+			compute partial messing;
 		if the bladder of the player > 1 and the player is not bladder incontinent and player-urinating is 0:
 			say "You immediately lose control of your bladder!";
 			now delayed urination is 1;

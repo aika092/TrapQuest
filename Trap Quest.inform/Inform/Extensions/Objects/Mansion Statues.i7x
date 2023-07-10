@@ -45,6 +45,11 @@ Check touching MansionScenery01:
 				compute autotaking D;
 			otherwise:
 				say "nothing is different. Strange...";
+		otherwise if there is worn soiled knickers and the player is not getting unlucky:
+			let K be a random worn knickers;
+			clean K;
+			WaterEmpty K;
+			say "your [ShortDesc of K] is completely clean and dry!";
 		otherwise if the number of nonstalking wisps is 0 or the player is getting unlucky:
 			let D be tongue-panties;
 			if diaper quest is 1, now D is a random eligible diaper;
@@ -160,10 +165,15 @@ Check touching MansionScenery02:
 		if H is headgear:
 			say "[BigNameDesc of H] fizzles from existence!";
 			destroy H;
-		otherwise if diaper quest is 0:
+		otherwise:
 			let LH be a list of things;
-			if gold-tiara is off-stage, add gold-tiara to LH;
-			if spiked-tiara is off-stage, add spiked-tiara to LH;
+			if diaper quest is 0:
+				if gold-tiara is off-stage, add gold-tiara to LH;
+				if spiked-tiara is off-stage, add spiked-tiara to LH;
+			otherwise:
+				if clown mask is off-stage, add clown mask to LH;
+				if rubber-baby-bonnet is off-stage, add rubber-baby-bonnet to LH;
+			if watersports fetish is 1 and WC hood is off-stage, add WC hood to LH;
 			if domino-mask is off-stage, add domino-mask to LH;
 			if the number of entries in LH > 0:
 				sort LH in random order;

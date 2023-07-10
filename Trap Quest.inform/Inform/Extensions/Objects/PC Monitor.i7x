@@ -6,7 +6,30 @@ A video-monitor has a text called video-event. The video-event of a video-monito
 A video-monitor has a thing called video-caller. The video-caller of a video-monitor is usually the throne.
 A video-monitor can be recording-disgrace or not recording-disgrace. A video-monitor is usually not recording-disgrace.
 A video-monitor has a number called call-cooldown.
-A video-monitor has a number called currentlyOn. [Aika's note to self: As far as I can tell, this is pretty much always set to 1? Is it completely pointless, or do some screens start at 0 and then spring to life? Worth checking.]
+A video-monitor has a number called currentlyOn.
+
+The printed name of a video-monitor is "[TQlink of item described][MediumDesc of item described][TQxlink of item described][shortcut-desc][verb-desc of item described]". The text-shortcut of a video-monitor is "mon".
+
+There is a video-monitor in Dungeon39.
+There is a video-monitor in Mansion02.
+
+To say ShortDesc of (C - a video-monitor):
+	say "monitor".
+To say MediumDesc of (C - a video-monitor):
+	say "mirror monitor".
+To say ExamineDesc of (C - a video-monitor):
+	say "This looks like an ornately framed mirror, but the fact that it's mounted with what looks like a modern TV wall-mount arm suggests that it has a somewhat different purpose...? [if the currentlyOn of C is 0]Right now, it seems to be completely inert[otherwise]You can feel it brimming with magical energy, as if it is fully prepared to do... something... whenever the time is right[end if].";
+	let V be the video-caller of C;
+	if the video-caller of C is not the throne, say "In fact, that time seems to be right now! [if V is slutty sister]You are currently in a video call with a Nintendoll and several executives.[otherwise]You are currently in a video call with [MediumDesc of V], your [RelationDesc of V].[end if]".
+
+Definition: a video-monitor is immune to change: decide yes.
+
+Figure of mirror monitor is the file "Env/MultiFloor/monitor1.jpg".
+Figure of mirror monitor on is the file "Env/MultiFloor/monitor2.jpg".
+To decide which figure-name is the examine-image of (C - a video-monitor):
+	if the video-caller of C is not the throne, decide on Figure of mirror monitor on;
+	decide on figure of mirror monitor.
+
 
 A later time based rule:
 	let V be a random video-monitor regionally in playerRegion;
@@ -28,13 +51,13 @@ A later time based rule:
 				if P is a real-life patron, increase the times-called of P by 1;
 				beginCall of V;
 				if the number of barriers in the location of the player < 1:
-					if V is in the Hotel:
+					if playerRegion is Hotel:
 						say "[bold type]A modesty shutter clatters down over each of the doors, trapping you in!";
 						now a random modesty shutter is in the location of the player;
-					otherwise if V is in the Dungeon:
+					otherwise if playerRegion is the Dungeon:
 						say "[bold type]A heavy wooden door swings shut over each of the entrances, trapping you in the room!";
 						now reinforced-door is in the location of the player;
-					otherwise if V is in the Woods:
+					otherwise if playerRegion is the Woods:
 						say "[bold type]Vines rapidly grow up in the spaces between the trees, trapping you in the room!";
 						now vine-wall is in the location of the player;
 					otherwise: [failsafe]
@@ -59,19 +82,19 @@ To CheckActivation of (C - a video-monitor):
 	if the currentlyOn of C < 1:
 		if debugmode > 0 and debuginfo > 1, say "[input style]Checking activation of [C].[roman type][line break]";
 		if the call-cooldown of C <= 0:
-			if C is a crystal-monitor:
+			[if C is a crystal-monitor:
 				if doomed is 5 or there is an active summoning portal regionally in playerRegion:
 					if C is in the location of the player, say "The [printed name of C] flickers and spits out several tiny pink sparks as a blurry image appears on the surface.";
 					now the currentlyOn of C is 1;
-			otherwise:
-				if C is in the location of the player, say "The [printed name of C] turns on.";
-				now the currentlyOn of C is 1.
+			otherwise:]
+			if C is in the location of the player, say "[BigNameDesc of C] [if C is pc-monitor]seems to be booting up from standby mode[otherwise]seems to hum with magical energy[end if]... But nothing else happens... Yet.";
+			now the currentlyOn of C is 1.
 
 [Activates the monitor]
 To beginCall of (C - a video-monitor):
 	let M be the video-caller of C;
 	now the currentlyOn of C is 1;
-	say "[bold type]Suddenly, you hear the sound of your computer making a video call. [roman type]You look up with a start and see that yes indeed, your PC monitor is now wide awake, and with that green calling symbol over a blue background. Moments later, the video call is answered, and [if M is slutty sister]the face of one of the Nintendolls who put you in this game, along with the faces of several unfamiliar people in suits.[otherwise][FriendStatus of M][end if][if currentlyPublicDisgracing is false][NewAppearanceReaction of M][NewCircumstanceReaction of M][FriendRespond to M][end if]".
+	say "[bold type]Suddenly, you hear the sound of a common digital video call ringtone. [roman type]You look up with a start and see that the mirror attached to a TV wall mount is now sparkling with magic ripples. Inside the mirror, you can see the face of [if M is slutty sister]one of the Nintendolls who put you in this game, along with the faces of several unfamiliar people in suits.[otherwise][FriendStatus of M][end if][if currentlyPublicDisgracing is false][NewAppearanceReaction of M][NewCircumstanceReaction of M][FriendRespond to M][end if]".
 
 To say FriendStatus of (M - a monster):[The status of your friend could potentially change]
 	say "the face of your [RelationDesc of M] [MediumDesc of M] is staring back at you.";
@@ -212,6 +235,7 @@ To compute endCall of (C - a video-monitor):
 
 To compute reset of (C - a video-monitor):
 	now the video-caller of C is the throne;
+	now the currentlyOn of C is 0;
 	now the call-cooldown of C is 300.
 
 To compute HangUpDisgraced of (C - a video-monitor) with (M - a slutty sister):
@@ -249,14 +273,11 @@ Section - PC Monitor
 To say ShortDesc of (C - video-monitor):
 	say "monitor".
 
-pc-monitor is a video-monitor. pc-monitor is in Hotel33. The printed name of a pc-monitor is "[TQlink of item described]PC monitor[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "PC", "monitor" as pc-monitor. pc-monitor has a number called currentSlide. pc-monitor has a number called currentlyOn. The currentlyOn of pc-monitor is 1.
+pc-monitor is a video-monitor. pc-monitor is in Hotel33. The printed name of a pc-monitor is "[TQlink of item described]PC monitor[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "PC", "monitor" as pc-monitor. pc-monitor has a number called currentSlide.
 
-To say ShortDesc of (C - pc-monitor):
-	say "monitor".
 To say MediumDesc of (C - pc-monitor):
 	say "PC monitor".
 
-Definition: pc-monitor is immune to change: decide yes.
 
 Figure of pc-monitor is the file "Env/Hotel/monitor1.jpg".
 To decide which figure-name is the examine-image of (C - pc-monitor):
@@ -282,32 +303,18 @@ To beginCall of (C - pc-monitor):
 	now the currentlyOn of C is 1;
 	say "[bold type]Suddenly, you hear the sound of your computer making a video call. [roman type]You look up with a start and see that yes indeed, your PC monitor is now wide awake, and with that green calling symbol over a blue background. Moments later, the video call is answered, and [if M is slutty sister]the face of one of the Nintendolls who put you in this game, along with several unfamiliar people in suits appear.[otherwise][FriendStatus of M][end if][if currentlyPublicDisgracing is false][NewAppearanceReaction of M][NewCircumstanceReaction of M][FriendRespond to M][end if]".
 
-[There is a pc-monitor in Mansion02. ]
 
 Section - Ancient Monitor
 
 A crystal-monitor is a kind of video-monitor. The printed name of a crystal-monitor is "[TQlink of item described]crystal monitor[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "monitor", "crystal" as crystal-monitor.
 
-There is a crystal-monitor in Dungeon39.
 There is a crystal-monitor in Woods31.
-
-[when does monitor activate:
-
-Crystal monitors activate whenever a summoning portal is activated, or if the doom quest reaches its failure state.
-
-summoning circle activate
-doom quest failed
-
-]
+Figure of crystal monitor is the file "Env/Forest/monitor1.jpg".
+To decide which figure-name is the examine-image of (C - a crystal-monitor):
+	decide on figure of crystal monitor.
 
 To say ExamineDesc of (C - a crystal-monitor):
 	say "A flat sheet of magic crystal, which reminds you of a computer monitor. [if the video-caller of C is a slutty sister]It is currently hosting a video call with one of the Nintendolls who put you in this game.[otherwise if the video-caller of C is not the throne]It is currently hosting a video call with your [RelationDesc of the video-caller of C] [MediumDesc of the video-caller of C].[otherwise if the currentlyOn of C > 0]It has come to life, emitting tiny pink and white sparks as a blurry image flickers on the surface. It's too unfocused for you to make anything out.[otherwise]It looks inert, but maybe it will respond to a powerful source of magic?[end if]".
-
-[The ancient monitor is only on if ]
-
-Definition: a crystal-monitor is video-callable:
-	if the currentlyOn of it > 0, decide yes;
-	decide no.
 
 To beginCall of (C - crystal-monitor):
 	let M be the video-caller of C;
@@ -574,14 +581,14 @@ To compute disgrace punishment effect of (DP - public-disgrace-punishment-clothe
 
 public-disgrace-punishment-incontinence is a disgrace-punishment.
 Definition: public-disgrace-punishment-incontinence is appropriate:
-	if punished public disgrace < 500 and diaper lover > 0 and the player is not incontinent, decide yes;
+	if punished public disgrace < 500 and diaper lover > 0 and the player is at least somewhat continent, decide yes;
 	decide no.
 To say DPTitle of (DP - public-disgrace-punishment-incontinence):
-	say "[he of the player] looks like a big dumb baby".
+	say "[he of the player] looks like she needs diapers".
 To compute disgrace punishment effect of (DP - public-disgrace-punishment-incontinence):
 	say "Suddenly, you feel a horrible twinge behind your crotch! ";
-	BladderIncontinenceUp 1;
-	RectumIncontinenceUp 1.
+	BladderIncontinenceUp 2;
+	RectumIncontinenceUp 2.
 
 
 public-disgrace-punishment-teleport is a disgrace-punishment.
@@ -821,6 +828,7 @@ To CheckDisgracePunishemnt of (V - a video-monitor):
 		increase the times-called of the video-caller of V by 1;
 		now currentlyPublicDisgracing is false;
 		now the video-caller of V is the throne;
+		cutshow figure of mirror monitor on for V;
 		now punished public disgrace is NPDT.
 
 A divination-space is a kind of thing. A divination-space is not portable. A divination-space has a number called charge. The charge of a divination-space is usually -200. The printed name of a divination-space is "[TQlink of item described]altar[shortcut-desc] [GlowDesc of the item described][TQxlink of item described][verb-desc of item described]". The text-shortcut of a divination-space is "dvs". [Figure of dungeon altar is the file "Env/Dungeon/altar1.jpg". Figure of dungeon altar cutscene is the file "Special/Cutscene/cutscene-altar-pray1.jpg".]

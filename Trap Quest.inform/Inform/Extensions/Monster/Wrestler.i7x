@@ -820,6 +820,7 @@ To say DiaperReaction of (M - a wrestler):
 		say "[BigNameDesc of M] is either completely oblivious or doesn't care about what you've just done.".
 
 Definition: a wrestler is willing to masturbate: decide yes.
+Definition: a wrestler is willing to diaper facesit: decide yes.
 
 Definition: a wrestler is only willing to masturbate horny players: decide no.
 

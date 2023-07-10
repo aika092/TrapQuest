@@ -25,9 +25,22 @@ To decide which figure-name is clothing-image of (C - a pink satchel of holding)
 	decide on figure of pink satchel of holding.
 
 To say ClothingDesc of (C - a pink satchel of holding):
-	say "A cheap looking leather satchel in a vibrant shade of pink that holds all your spare items and negates their weight. Whilst it could be worse, it's very eye-catching and you'd expect it to be worn be someone of a school age rather than an adult. A warning on the label says '[BagHoldingWarning] satchel'.".
+	say "A cheap looking leather satchel in a vibrant shade of pink that holds all your spare items and negates their weight. Whilst it could be worse, it's very eye-catching and you'd expect it to be worn by someone of a school age rather than an adult. A warning on the label says '[BagHoldingWarning] satchel'.".
 
 To say ShortDesc of (C - a pink satchel of holding):
 	say "pink leather satchel".
+
+A frilly satchel of holding is a kind of satchel of holding. A frilly satchel of holding is usually cotton. There is 1 frilly satchel of holding. The printed name of frilly satchel of holding is usually "[clothing-title-before]frilly satchel of holding[clothing-title-after]".
+
+Figure of frilly satchel of holding is the file "Items/Accessories/Bags/bag25.png".
+
+To decide which figure-name is clothing-image of (C - a frilly satchel of holding):
+	decide on figure of frilly satchel of holding.
+
+To say ClothingDesc of (C - a frilly satchel of holding):
+	say "A cute girly pink satchel that holds all your spare items and negates their weight. Whilst it could be worse, it's very eye-catching and frilly. You'd expect it to be used by someone to hold their ballet practice outfit, not adventuring gear. A warning on the label says '[BagHoldingWarning] satchel'.".
+
+To say ShortDesc of (C - a frilly satchel of holding):
+	say "frilly pink satchel".
 
 Satchels of Holding ends here.

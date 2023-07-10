@@ -79,20 +79,17 @@ Carry out kicking:
 		increase the heel time of the player by HH;
 		if HH > 1, say "You kick [the noun] with your [printed name of H][if H is dildo-heels], and you can feel the glass dildo heels magically strengthen your kick![otherwise], connecting with the toe as if you were kicking a ball![end if]";
 		otherwise say "You kick [the noun] with your [printed name of H][if H is dildo-heels], and you can feel the glass dildo heels magically strengthen your kick![otherwise if H is stiletto heels], trying to get the spike of your heel to do some real damage![otherwise], hoping the heel will do some damage.[end if]";
-		damage A on the noun;
 	otherwise:
 		if the player is zeroG and flight-attendant-skirt is not worn:
 			say "Your body is weightless, meaning you can hardly get any force into your knee without sending yourself backwards.";
-			damage A on the noun;
 		otherwise if the player is on tiptoes and flight-attendant-skirt is not worn:
 			say "Your body is so light that you don't have the grounding to put your full strength into the attack.";
-			damage A on the noun;
 		otherwise if the player is diaper kicking:
 			say "Your displeasure at wearing a soggy diaper slightly hampers the power of your kick.";
-			damage A on the noun;
 		otherwise:
 			say "You kick [NameDesc of the noun] with all your might.";
-			damage A on the noun;
+	compute combat diaper squish;
+	damage A on the noun;
 	compute upright fatigue gain;
 	if there is a worn hostility clothing, compute hostileDamage;
 	reset submitted monsters. [Otherwise kneeling makes them delayed]

@@ -44,7 +44,7 @@ To trigger (Y - a magic dust trap):
 				otherwise:
 					say "You give into the magic suggestion, [if the player is upright]crouch down into a squatting position [end if]and push.";
 					now voluntarySquatting is 1;
-					compute messing;
+					compute partial messing;
 			otherwise:
 				say "[variable custom style][maturity]...[roman type][line break]";
 		otherwise if diaper quest is 1 and the make-up of face >= 3 and permanent makeup is 0 and a random number between 1 and 5 > 3: [Selkie: I love this! I wish it was available outside DQ!]

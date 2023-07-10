@@ -54,19 +54,20 @@ To LabiaUp (X - a number):
 
 [ LabiaUp, and make a comment about them swelling up.]
 To LabiaUp (X - a number) with comment:
-	let increased be 0;
-	while X > 0:
-		decrease X by 1;
-		if the labia plumpness of vagina < max labia plumpness:
-			increase the labia plumpness of vagina by 1;
-			increase increased by 1;
-			if X is 0:
-				[display labia cutscene;[Could have some nice cameltoes here.]]
-				say "You feel your [one of]labia[or]pussy lips[or]lady bits[or]coochie's lips[or][']flower petals['][at random] [one of]swell up[or]plump up[or]puff up[at random][if increased > 1] - a whole lot! - now[otherwise],[end if] tingling.";
-				update appearance level;
-				try examining vagina;
-	if increased is 0:
-		say "You feel your [vagina] tingle, but apparently you've already attained maximum cameltoe.".
+	if diaper quest is 0:
+		let increased be 0;
+		while X > 0:
+			decrease X by 1;
+			if the labia plumpness of vagina < max labia plumpness:
+				increase the labia plumpness of vagina by 1;
+				increase increased by 1;
+				if X is 0:
+					[display labia cutscene;[Could have some nice cameltoes here.]]
+					say "You feel your [one of]labia[or]pussy lips[or]lady bits[or]coochie's lips[or][']flower petals['][at random] [one of]swell up[or]plump up[or]puff up[at random][if increased > 1] - a whole lot! - now[otherwise],[end if] tingling.";
+					update appearance level;
+					try examining vagina;
+		if increased is 0:
+			say "You feel your [vagina] tingle, but apparently you've already attained maximum cameltoe.".
 
 To LabiaDown (X - a number):
 	while X > 0:
@@ -77,18 +78,19 @@ To LabiaDown (X - a number):
 
 [ LabiaDown, and make a comment about them shrinking.]
 To LabiaDown (X - a number) with comment:
-	let decreased be 0;
-	while X > 0:
-		decrease X by 1;
-		if the labia plumpness of vagina > 0:
-			decrease the labia plumpness of vagina by 1;
-			increase decreased by 1;
-			if X is 0:
-				say "You feel your [one of]labia[or]pussy lips[or]lady bits[or]coochie's lips[or][']flower petals['][at random] shrink back[if decreased > 1] - a whole lot! - now[otherwise],[end if] towards a more normal size.";
-				update appearance level;
-				try examining vagina;
-	if decreased is 0:
-		say "You feel your [vagina] tingle, but nothing else happens.".
+	if diaper quest is 0:
+		let decreased be 0;
+		while X > 0:
+			decrease X by 1;
+			if the labia plumpness of vagina > 0:
+				decrease the labia plumpness of vagina by 1;
+				increase decreased by 1;
+				if X is 0:
+					say "You feel your [one of]labia[or]pussy lips[or]lady bits[or]coochie's lips[or][']flower petals['][at random] shrink back[if decreased > 1] - a whole lot! - now[otherwise],[end if] towards a more normal size.";
+					update appearance level;
+					try examining vagina;
+		if decreased is 0:
+			say "You feel your [vagina] tingle, but nothing else happens.".
 
 [Can it be accessed right now with nothing blocking it?]
 Definition: vagina is undefended:

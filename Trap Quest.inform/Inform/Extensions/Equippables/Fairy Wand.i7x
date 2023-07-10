@@ -11,16 +11,16 @@ Definition: fairy-wand is class-relevant:
 	decide no.
 
 To decide which number is the initial outrage of (E - fairy-wand):
-	decide on 3.
+	decide on 2.
 To decide which number is the initial cringe of (E - fairy-wand):
-	decide on 5.
+	decide on 3.
 
 Figure of fairy-wand is the file "Items/Accessories/Equippables/fairywand1.png".
 To decide which figure-name is the clothing-image of (W - fairy-wand):
 	decide on figure of fairy-wand.
 
 To say ClothingDesc of (W - fairy-wand):
-	say "A hot pink wand vibrator with a yellow crescent moon at one end, which leaves behind a trail of glittering fairy dust wherever it goes. You sense that it's more powerful the less intelligent you are[if the class of the player is faerie], and the more perverted your thoughts are[end if].".
+	say "A hot pink wand vibrator with a yellow crescent moon at one end, which leaves behind a trail of glittering fairy dust wherever it goes. You sense that it's more powerful the less intelligent you are[if the class of the player is faerie], and the more perverted your thoughts are[end if]. It's pretty subtle - most people probably won't realise it's a sex toy[if the player is modest], thankfully[end if].".
 
 To say ShortDesc of (W - fairy-wand):
 	say "hot pink wand".

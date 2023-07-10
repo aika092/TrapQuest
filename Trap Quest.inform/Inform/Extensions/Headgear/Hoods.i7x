@@ -229,7 +229,7 @@ This is the WC hood piss slut rule:
 The WC hood piss slut rule is listed in the piss slut eligibility rules.
 
 To compute unique periodic effect of (C - WC hood):
-	if the player is gagged and trashcan is not worn, class summon trashcan.
+	if (the player is gagged or (diaper quest is 1 and there is a soiled-diaper in the location of the player)) and trashcan is not worn, class summon trashcan.
 
 
 Chapter - Class Outfit
@@ -250,7 +250,7 @@ To compute class outfit of (H - WC hood):
 				UsedCondomWipe C;
 	class summon WC catsuit;
 	class summon WC thigh high boots;
-	class summon WC-plug-panties. [will be blocked by meat-toilet-panties being class-relevant]
+	unless diaper focus is 1 and there is a worn diaper, class summon WC-plug-panties. [will be blocked by meat-toilet-panties being class-relevant]
 
 Chapter - Quest
 

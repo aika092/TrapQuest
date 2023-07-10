@@ -157,6 +157,7 @@ To ActualStomachMilkUp (X - a number):
 		if X is 0:
 			StomachFoodUp 1;
 			SlowMilkTasteAddictUp 1;
+			trigger drink-milk-wisp-quest;
 			now cold turkey of milk is 0;
 			progress quest of milk-drinking-quest.
 

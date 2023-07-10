@@ -47,9 +47,8 @@ To decide which number is the EnslavedDominationThreshold of (M - teacher-sereni
 
 heel-lesson is a lesson. The lesson-teacher of heel-lesson is teacher-serenity.
 
-Definition: heel-lesson is lesson-appropriate:
-	if the number of alive rank1 students < 2, decide no;
-	decide yes.
+To decide which number is the min-students of (L - heel-lesson):
+	decide on 2.
 
 To compute teaching of (L - heel-lesson):
 	allocate 65 seconds;
@@ -444,5 +443,113 @@ To compute make-up-lesson-application of (M - a tryhard student):
 To compute make-up-lesson-application of (M - an innocent student):
 	say "When it's [his of M] job to return the favour, [he of M] looks very uncertain. [big he of M] ends up hardly applying anything at all, probably too nervous that [he of M] would accidentally make you look ridiculous!";
 	FaceDown 3.]
+
+patience-lesson is a lesson. The lesson-teacher of patience-lesson is teacher-angela.
+
+To decide which number is the min-students of (L - patience-lesson):
+	decide on 2.
+
+Definition: patience-lesson is lesson-appropriate:
+	if diaper lover is 0, decide no;
+	if face is actually occupied, decide no;
+	if locked-toilets is true, decide no;
+	let K be a random worn knickers;
+	if K is dry clean clothing:
+		if diaper messing >= 3:
+			if rectum is 0, decide no;
+			if K is not soilable, decide no;
+			if asshole is actually occupied or there is ass covering actually unavoidable clothing, decide no;
+		otherwise:
+			if there is pee covering actually unavoidable clothing, decide no;
+		decide yes;
+	decide no.
+
+To compute teaching of (L - patience-lesson):
+	let M be the lesson-teacher of L;
+	let P be a random student in the location of the player;
+	say "[speech style of M]'Today[']z lezzon is in patienze... and also... zenzibility.'[roman type][line break]As [NameDesc of M] addresses you all, [he of M] places a mug of coffee down in front of each of you.[line break][speech style of M]'Drink.'[roman type][line break][big he of M] instructs the class calmly, but with such cold authority and presence, that you each start unquestioningly sipping your new beverage.[line break][speech style of M]'Zere comez a point, ven you must admit zat you are not as big and strong and perfect as you might dream. Failing to recognize this moment is a key failing of zapphire ranked ztudentz, and one vich I vill be condizioning avay.'[roman type][paragraph break]As you finish your warm drink, [if diaper messing >= 3]your belly gurgles loudly... And you can hear that everyone else's belly is doing the same[otherwise]you feel a desperate need to go to the toilet... And judging by the panicked squeaks and clenched shut legs around you, it would appear that everyone else feels the same thing you do[end if].[line break][variable custom style]Uh-oh...[roman type][paragraph break][BigNameDesc of M] smirks knowingly.[line break][speech style of M]'You may leave zis room to uze ze toilet vhenever you like. But if you do zo, you vill not pazz ze clazz. To paz ze clazz, you muzt ztay in zis clazzroom for... five minutez.'[roman type][line break][big he of M] places a large egg timer on the front desk, and the sand starts trickling.[line break][speech style of M]'HOWEVER. If you zoil yourzelf in zis room, rather zan uzing ze toilet, zen you vill have proven yourzelf to have a zeriouz caze of hubriz. You vill ztill be promoted to emerald rank, but ze headmistrezz and I vill arrange for... [']zpecial meazures['] for the rest of your stay here, to enzure zat your hubriz doez not go unpunished.'[roman type][line break]That sounds ominous...";
+	let TM be 5; [minutes]
+	if diaper messing >= 3:
+		now suppository is 4;
+		if rectum < 4, now rectum is 4;
+	otherwise:
+		now the bladder of the player is bladder-risky-level;
+	while TM > 0:
+		say "[bold type]There are about [TM] minute[if TM is not 1]s[end if] left of the lesson.[roman type][line break]";
+		decrease TM by 1;
+		repeat with ST running through students in the location of the player:
+			if the dedication of ST <= a random number between -1 and 1:
+				say "[speech style of ST]'[one of]F-fuck!'[or]Hnnng!'[or]No...'[or]Aaah!'[in random order][roman type][line break][BigNameDesc of ST] exclaims as [he of ST] leaps up and sprints from the room[one of], desperate to avoid an accident[or][stopping].";
+				now ST is in School10;
+		if diaper messing >= 3, say "[one of]Your stomach gurgles loudly, and you can feel the pressure building[or]Your belly cramps painfully[or]The pressure mounting in your rectum is now seriously painful[or]You feel something trying to push its way out, and you do your best to hold the exit closed[or]You feel your body absolutely desperate to push. It would feel so good, so relieving, if you'd just let go[cycling]...";
+		otherwise say "[one of]You can feel the pressure building inside your very full bladder[or]Your bladder cramps painfully[or]The pressure mounting in your bladder is now seriously painful[or]You feel the urine pressing strongly against that barrier in your urethra, desperately begging for release[or]You feel your body absolutely desperate to let it out. It would feel so good, so relieving, if you'd just let go[cycling]...";
+		reset multiple choice questions;
+		set numerical response 1 to "Run for the toilet!";
+		set numerical response 2 to "Hold onto your [if diaper messing >= 3]poop[otherwise]pee[end if]!";
+		set numerical response 3 to "Dig extra-deep (guaranteed success, but harms long-term continence...)";
+		compute multiple choice question;
+		if player-numerical-response is 1:
+			if the player is able to speak, say "[variable custom style]'[if the player is feeling dominant]Screw this[otherwise]I'm sorry, I can't[end if]!'[roman type][line break]You bolt out of the door and to the toilets, doing an awkward potty-dance wobble as you go.";
+			teleport to School10;
+			compute toilet use;
+			now TM is -100;
+		otherwise if player-numerical-response is 3:
+			say "You clench your legs together and dig deep!";
+			if diaper messing >= 3, RectumIncontinenceUp 1;
+			otherwise BladderIncontinenceUp 1;
+		otherwise:
+			if diaper messing >= 3:
+				if the player is rectum incontinent:
+					say "With an ashamed squeak, you realise that you can't hold on! You stand up to run for the toilet, but all that does is provide everyone with an unobstructed view of you messing yourself![if the player is able to speak][line break][variable custom style]'No... Don't watch!'[roman type][line break][end if]But there's nothing you can do to stop everyone staying as you soil yourself in front of them.";
+					compute messing;
+					now TM is -10;
+				otherwise:
+					let hold-strength be (a random number between 9 and 11) + (a random number between 1 and 3);
+					let I be hold-strength - (rectum-incontinence of the player + suppository);
+					if debuginfo > 0, say "[input-style]Mess self-control check: 2d3+8 ([hold-strength]) - bowel incontinence ([rectum-incontinence of the player]) - laxative effects ([suppository]) = [I + 0] | ([rectum].5) rectum volume[roman type][line break]";
+					if rectum < I:
+						say "You manage to hold on for now! Phew!";
+						increase suppository by 1;
+					otherwise:
+						say "With an ashamed squeak, you realise that you can't hold on! You stand up to run for the toilet, but all that does is provide everyone with an unobstructed view of you messing yourself![if the player is able to speak][line break][variable custom style]'No... Don't watch!'[roman type][line break][end if]But there's nothing you can do to stop everyone staying as you soil yourself in front of them.";
+						compute messing;
+						now TM is -10;
+			otherwise:
+				check full wetting;
+				if delayed urination is 0:
+					say "You manage to hold on for now! Phew!";
+					increase the bladder of the player by a random number between 1 and 2;
+				otherwise:
+					say "With an ashamed squeak, you realise that you can't hold on! You stand up to run for the toilet, but all that does is provide everyone with an unobstructed view of you wetting yourself![if the player is able to speak][line break][variable custom style]'No... Don't watch!'[roman type][line break][end if]But there's nothing you can do to stop everyone staying as you soil yourself in front of them.";
+					compute pee protected urination;
+					now TM is -10;
+	if TM > -100:
+		if TM is -10, say "[BigNameDesc of M]'s eyes have narrowed, but you can also see that [he of M] is smiling.[line break][speech style of M]'Hubriz.'[roman type][line break]";
+		say "[BigNameDesc of M] snaps [his of M] fingers.";
+		repeat with ST running through students in the location of the player:
+			promote ST;
+		now armband is emerald;
+		if TM is -10:
+			now the armband-title of armband is "Toni";
+			now the armband-print of armband is "toilet troubled";
+		otherwise:
+			now the armband-title of armband is "Patty";
+			now the armband-print of armband is "patient potty user";
+		say "Your armband transforms!";
+		say ClothingDesc of armband;
+		update students;
+		if TM is -10:
+			say "As you study your new [']title['], [NameDesc of M] walks over to you, and flicks you on the head.";
+			now the implant of pledge-lesson-toilet is 1;
+			execute pledge-lesson-toilet;
+			say "[variable custom style]I can't use the toilet any more?! But... But... Then... How will I... Oh god...[roman type][paragraph break]";
+		say "[BigNameDesc of M] claps [his of M] hands.[line break][speech style of M]'Clazz dizmizzed!'[roman type][line break]";
+		if nurse is alive and nurse is undefeated:
+			let D be a random worn messed knickers;
+			if D is clothing and D is not diaper:
+				now nurse is in the location of the player;
+				say "[speech style of M]'Oh nurse!'[roman type][line break][BigNameDesc of M] calls loudly down the hall.[paragraph break][BigNameDesc of nurse] arrives from the south.";
+				check guaranteed perception of nurse.
+
 
 Teachers Sapphire ends here.

@@ -164,8 +164,8 @@ Part 1 - Movement Hindrance Definitions
 Definition: yourself is waddling:
 	if there is worn waddle-walking clothing, decide yes;
 	[if there is a worn diaper cover, decide no;] [diaper covers used to be a good thing]
-	let D be a random worn diaper;
-	if D is diaper and the weight of D > 2, decide yes;
+	let D be a random worn knickers;
+	if D is knickers and the waddle-weight of D >= 3, decide yes; [DQBulk of 7, which causes thighs to be spread, gets us exactly to 3 waddle weight when unsoiled]
 	decide no.
 
 Definition: yourself is crawling:
@@ -254,16 +254,28 @@ To decide which number is the movement reduction of the player:
 			if movement-reduction-flav-said is false:
 				now movement-reduction-flav-said is true;
 				now T is the substituted form of "Having your body carefully pressed against [NameDesc of team-predicament-partner] makes you move significantly less quickly!";
-		if there is a worn diaper or there is worn waddle-walking clothing:
+		if the player is waddling:
 			let WW be a random worn waddle-walking clothing;
-			let D be 6;
-			if WW is nothing, now WW is a random worn diaper;
-			if WW is diaper and the weight of WW > D, now D is the weight of WW;
+			let K be a random worn knickers;
+			let D be 0;
+			if WW is clothing:
+				if the waddle-weight of K > 6:
+					now D is the waddle-weight of K;
+					now WW is K;
+				otherwise:
+					now D is 6;
+			otherwise:
+				now WW is K;
+				now D is the waddle-weight of K;
 			increase X by D;
 			if movement-reduction-flav-said is false and D > 0:
 				now movement-reduction-flav-said is true;
-				if WW is diaper, now T is the substituted form of "[if D > 6]Your comically exaggerated waddling caused by your extremely bloated [ShortDesc of WW] makes it almost impossible[otherwise if D > 4]Your extremely awkward waddling caused by your bloated [ShortDesc of WW] makes it extremely difficult[otherwise if D > 2]Your very awkward waddling caused by your bulky [ShortDesc of WW] makes it extremely difficult[otherwise]Your awkward walking caused by your [ShortDesc of WW] makes it difficult[end if] to move quickly!";
-				otherwise now T is the substituted form of "Your extremely awkward waddling caused by the magic effect of your [WW] makes it impossible to move quickly!";
+				if WW is diaper and the waddle-weight of WW is D:
+					now T is the substituted form of "[if D > 8]Your comically exaggerated waddling caused by your extremely bloated [ShortDesc of WW] makes it almost impossible[otherwise if D > 6]Your extremely awkward waddling caused by your bloated [ShortDesc of WW] makes it extremely difficult[otherwise if D > 4]Your very awkward waddling caused by your bulky [ShortDesc of WW] makes it extremely difficult[otherwise]Your awkward walking caused by your [ShortDesc of WW] makes it difficult[end if] to move quickly!";
+				otherwise if WW is waddle-walking:
+					now T is the substituted form of "Your extremely awkward waddling caused by the magic effect of your [WW] makes it impossible to move quickly!";
+				otherwise: [messed knickers]
+					now T is the substituted form of "Your awkward waddling caused by the [if D > 6]giant lumps of[otherwise if D > 4]huge amount of[otherwise]uncomfortable[end if] mess in the back of your [ShortDesc of WW] makes it very difficult to move quickly!";
 		if the player is squirming:
 			repeat with F running through insertable objects penetrating a fuckhole:
 				increase X by the girth of F / 3;
@@ -599,16 +611,31 @@ This is the player trips on lever rule:
 			rule succeeds.
 The player trips on lever rule is listed in the clumsiness rules.
 
+slow-move-this-turn is a number that varies. [0: Moving normally; 1: Moving hindered but not forced to move slowly; 2: Moved slowly]
+
 Carry Out Going (this is the monsters-go-next rule):
 	if seconds is 3 or seconds is 6:
-		if the player is upright or a random number between 1 and 5 is 1, compute bsound; [putting this here to make sure it always happens before NPCs move]
+		now slow-move-this-turn is 0;
+		if the noun is not up and the noun is not down:
+			compute slow movement;
+			if the player is upright or a random number between 1 and 5 is 1, compute bsound; [putting this here to make sure it always happens before NPCs move]
+			if slow-move-this-turn is 0 and the player is upright:
+				let speed-demon-clothing be nothing;
+				repeat with C running through worn speed clothing:
+					if a random number between -5 and 50 < the magic-modifier of C, now speed-demon-clothing is C;
+				if speed-demon-clothing is clothing:
+					now seconds is 1;
+					say "You feel extra-speedy thanks to your [speed-demon-clothing]!";
+					if newbie tips is 1, say "[one of][newbie style]On extra-speedy turns, NPCs don't get to move.[roman type][line break][or][stopping]";
+					repeat with M running through alive simulated monsters:
+						now M is moved;
+	if seconds is 3 or seconds is 6:
 		if the player is in a predicament room:
 			repeat with M running through alive bystanders:
 				compute movement of M;
 		let R be the room noun from the location of the player; [NPCs in the room that the player is entering don't move yet]
 		repeat with M running through alive simulated monsters:
 			unless M is vine boss or M is in R or M is moved, compute turn 2 of M; [if the player used a smoke bomb, we may have flagged monsters in the room as 'moved', and we need to catch that here]
-		if the noun is not up and the noun is not down, compute slow movement.
 
 previous-slow-movement-flavour is a text that varies.
 
@@ -619,6 +646,7 @@ To compute slow movement:
 	if the player-motion of the player is 1 and another-turn is 0:
 		if the player is moving slowly:
 			now another-turn is 1;
+			now slow-move-this-turn is 2;
 			if previous-slow-movement-flavour is another-turn-flavour:
 				now another-turn-flavour is LongerToMove;
 			otherwise:
@@ -628,12 +656,14 @@ To compute slow movement:
 				now M is stalled; [This prevents NPCs who are just about to notice the player in turn 1 from getting an extra action before the player can react in turn 2.]
 		otherwise if the player is upright:
 			if the player is wobbling or the player is hobbling or the player is swaying or the player is staggering:
+				now slow-move-this-turn is 1;
 				let R be a random number from 1 to 7;
 				if R is 1, say "You shuffle along as fast as your [if there is a worn ball-and-chain][ShortDesc of a random worn ball-and-chain][otherwise if the player is ankle bound][ShortDesc of random worn ankle-bound clothing][otherwise if there is worn crotch-displaced trousers][random worn crotch-displaced trousers][otherwise if there is a worn hobble-skirted clothing]hobble skirt[otherwise if there is an insertable object penetrating a fuckhole][ShortDesc of random insertable object penetrating a fuckhole][otherwise if the player is staggering][ShortDesc of belly][otherwise if the player is swaying][HipDesc][otherwise if the player is wobbling]inexperience at walking in high heels[otherwise]nervous legs[end if] [if there is a worn diaper]and [ShortDesc of random diaper worn by the player] [end if][if there are worn heels]and [ShortDesc of random heels worn by the player] [end if]will let you.";
 				if the strut of the player is 1:
 					now the strut of the player is 0;
 					say "[bold type]The awkwardness of it forces you to stop strutting.[roman type][line break]";
 			otherwise if the player is waddling:
+				now slow-move-this-turn is 1;
 				if the strut of the player is 1:
 					now the strut of the player is 0;
 					say "[bold type]The awkwardness of wearing a diaper forces you to stop strutting.[roman type][line break]";

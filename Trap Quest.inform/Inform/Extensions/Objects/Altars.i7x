@@ -496,9 +496,14 @@ To WoodsOffer (T - an accessory):
 	let LC be the list of worn cursed blessable clothing;
 	sort LC in random order;
 	while bless-count > 0:
-		decrease bless-count by 1;
 		if the number of entries in LC is 0:
-			if the raw strength of the player >= 20 and the raw dexterity of the player >= 20 and the raw intelligence of the player >= 20:
+			if the raw-bladder-incontinence of the player > 0 or the raw-rectum-incontinence of the player > 0:
+				let X be the raw-bladder-incontinence of the player;
+				if the raw-rectum-incontinence of the player > the raw-bladder-incontinence of the player, now X is the raw-rectum-incontinence of the player;
+				BladderIncontinenceDown X;
+				RectumIncontinenceDown X;
+				decrease bless-count by X - 1; [1 takes taken off each time automatically, and we account for that here]
+			otherwise if the raw strength of the player >= 20 and the raw dexterity of the player >= 20 and the raw intelligence of the player >= 20:
 				say "You feel magic energy flow through you but fizzle out without making a difference. Maybe you're too powerful already for the altar to be able to help you any more?";
 			otherwise if the raw intelligence of the player < the raw strength of the player and the raw intelligence of the player < the raw dexterity of the player:
 				say "You feel yourself getting [smarter]!";
@@ -523,7 +528,8 @@ To WoodsOffer (T - an accessory):
 			otherwise:
 				say "The [printed name of C] shines brightly and loses its curse!";
 				bless C;
-		if bless-count is 0:
+		decrease bless-count by 1;
+		if bless-count <= 0:
 			say "The [ShortDesc of T] disappears into nothingness.";
 			remove T from play;
 	if witch is in the location of the player, WitchCheck witch.
@@ -929,13 +935,13 @@ To DevilPray (P - a person):
 		if the raw-rectum-incontinence of the player > 0:
 			let X be LN;
 			if the raw-rectum-incontinence of the player < X, now X is the raw-rectum-incontinence of the player;
-			decrease the raw-rectum-incontinence of the player by X;
+			RectumIncontinenceDown X;
 			increase TN by X;
 			decrease LN by X;
-		if LN > 0 and the raw-rectum-incontinence of the player > 0:
+		if LN > 0 and the raw-bladder-incontinence of the player > 0:
 			let X be LN;
-			if the raw-rectum-incontinence of the player < X, now X is the raw-rectum-incontinence of the player;
-			decrease the raw-rectum-incontinence of the player by X;
+			if the raw-bladder-incontinence of the player < X, now X is the raw-bladder-incontinence of the player;
+			BladderIncontinenceDown X;
 			increase TN by X;
 			decrease LN by X;
 		if LN > 0 and the raw diaper addiction of the player > 0:

@@ -47,6 +47,7 @@ To decide which number is the entry-rank of (R - School15):
 	decide on 2.
 School16 is an academic room. The printed name of School16 is "Assembly Hall". "A raised podium with a microphone at the front of the room makes it clear that this is an assembly hall, but the lack of other furniture makes it seem rather eerie and... clinical.". The shape of School16 is L5/0-0-0-0-1-0. The grid position of School16 is <5,13,7>. School16 is north of School05.
 School17 is an academic room. The printed name of School17 is "Food Hall". "This room has large machine taking up most of the room with [ExamineDesc of food machine]". The shape of School17 is L5/0-0-1-0-1-0. The grid position of School17 is <5,12,7>. School17 is north of School02.
+Definition: School17 is foody: decide yes. [Does this room remind the player that they're feeling hungry?]
 School18 is a lecture academic room. The printed name of School18 is "Emerald Classroom". "This 'classroom' has rows of desks but no chairs. The walls are adorned with motifs of spanking equipment, bondage and fetishwear.". The shape of School18 is L5/0-0-0-0-1-0. The grid position of School18 is <5,11,7>. School18 is north of School03.
 To decide which number is the entry-rank of (R - School18):
 	decide on 2.
@@ -80,7 +81,7 @@ To decide which number is the entry-rank of (R - School26):
 	decide on 3.
 
 [Rooms Adjacent to Upper Hallway]
-School27 is an academic room. The printed name of School27 is "Staff Room". "This doesn't look like any staff room you've ever seen before. [if diaper quest is 1]There's nothing here...[otherwise]Instead of any furniture there's just video cameras, piercing and tattoo needles held on giant robotic arms all poised and ready, pointing at... a gloryhole?![end if]". The shape of School27 is L5/0-0-0-1-0-0. The grid position of School27 is <5,10,8>. School27 is west of School26.
+School27 is an academic room. The printed name of School27 is "Staff Room". "This doesn't look like any staff room you've ever seen before. [if retiredStudents > 0]A number of pieces of diapered human furniture can be found here. It truly is a unique sight to behold.[otherwise if diaper quest is 1]There's nothing here...[otherwise]Instead of any furniture there's just video cameras, piercing and tattoo needles held on giant robotic arms all poised and ready, pointing at... a gloryhole?![end if]". The shape of School27 is L5/0-0-0-1-0-0. The grid position of School27 is <5,10,8>. School27 is west of School26.
 To decide which number is the entry-rank of (R - School27):
 	decide on 6.
 Definition: School27 (called R) is within vision:

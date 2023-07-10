@@ -19,7 +19,7 @@ To compute persistent reward of (Q - stealth-diaper-quest) on (C - a clothing):
 To compute periodic effect of (C - royal scepter):
 	if the charge of C > 0:
 		decrease the charge of C by 1;
-	if the charge of C is 0 and player-urinating is 0:
+	if the charge of C is 0 and player-urinating is 0 and mess-phase is 0:
 		let D be a random worn diaper;
 		if D is diaper and (D is messed or the total-soak of D >= the soak-limit of D / 2):
 			say "[bold type]The shining light of your [ShortDesc of C] goes out. [roman type]As it does, your [D] [if D is not messed or diaper messing < 6]disappears[otherwise]is removed from your body and falls to the ground[end if]! Your loins are magically wiped clean.";
@@ -34,6 +34,7 @@ To compute periodic effect of (C - royal scepter):
 
 To compute slime expansion:
 	do nothing.
+
 
 Chapter - DQ Specific Figures
 
@@ -97,7 +98,7 @@ minotaur is a monster.
 To compute (M - a monster) stomping (N - a monster):
 	do nothing.
 
-giant wasp is a kind of monster.
+giant wasp is a kind of monster. buzzing giant wasp is a giant wasp.
 newborn-wasp is an object that varies.
 wasp-honey-timer is a number that varies. wasp-poison-timer is a number that varies.
 aeromancer is a kind of monster. an aeromancer has a number called balloon. an aeromancer has a number called current-balloon. an aeromancer has a number called previously-ballooned. an aeromancer can be wand-empowered. an aeromancer can be ballooned.
@@ -108,7 +109,6 @@ To compute tentacle birth:
 	do nothing.
 
 robomaid is a kind of monster.
-golem is a monster.
 gargoyle is a monster.
 unicorn is a monster.
 A slutty sister is a kind of monster. bulging-slutty-sister is a slutty sister. futanari-slutty-sister is a slutty sister.
@@ -118,6 +118,7 @@ An ultimate-lesson-actor is a kind of monster.
 student-katya is a monster.
 centaur is a monster.
 confident aeromancer is a monster.
+a goblin is a kind of monster.
 
 Include RoboMatron by Monster.
 Include Boogeymonster by Monster.

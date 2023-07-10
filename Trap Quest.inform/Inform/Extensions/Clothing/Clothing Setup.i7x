@@ -75,6 +75,9 @@ To set up default magic state of (C - a clothing):
 			increase the raw-magic-modifier of C by a random number between -1 and 1;
 			increase the raw-magic-modifier of C by a random number between -1 and 1;
 		set up BUC of C;
+		if diaper lover > 0 and the magic-modifier of C < 0 and a random number between 1 and 6 is 1: [more incontinence influencing clothing ahoy!]
+			now C is bladder-incontinence-influencing;
+			if diaper messing >= 3 and a random number between 1 and 2 is 1, now C is bladder-incontinence-influencing;
 		now C is blandness;
 		set up magic attribute of C.
 

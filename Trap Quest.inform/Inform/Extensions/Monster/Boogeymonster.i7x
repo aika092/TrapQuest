@@ -2,7 +2,7 @@ Boogeymonster by Monster begins here.
 
 boogeymonster is a dungeon boss. boogeymonster is neuter. boogeymonster is caged. The leftover-type of boogeymonster is usually 107.
 
-boogeymonster is in Dungeon36. Figure of boogeymonster is the file "NPCs/Bosses/boogeymonster1.png". The text-shortcut of boogeymonster is "boo". Understand "boogey" as boogeymonster.
+boogeymonster is in Dungeon36. Figure of boogeymonster is the file "NPCs/Bosses/TentacleMonster/boogeymonster1.png". The text-shortcut of boogeymonster is "boo". Understand "boogey" as boogeymonster.
 
 To say ShortDesc of (M - boogeymonster):
 	say "boogeymonster".
@@ -427,7 +427,7 @@ To compute punishment of (N - boogeymonster-nightmare-comicon):
 	regionally place M;
 	distract M;
 	ultraHumiliate;
-	compute messing.
+	compute partial messing.
 
 Section - Hot Buns Nightmare
 
@@ -477,6 +477,8 @@ To compute punishment of (N - boogeymonster-nightmare-mahjong):[todo: replace Sa
 	say "[italic type]Art by Wishberri[roman type][line break]";
 	say "[second custom style]'Ron.'[roman type][line break]Saki's calm voice echoes through your ears. You must have misheard? Winning on the first turn essentially never ever ever happens in Riichi Mahjong. But there she is, revealing her entire hand. What is this? It must be a fix! But you watched the tiles being shuffled yourself![paragraph break]Your heart stops when you see her tiles. Three south winds, three north winds, and three west winds, and two east winds to make a three-of-a-kind with yours. She's made Big Four Winds, one of the most difficult hands to complete in mahjong, and worth a Double Yakuman. You feel paralysed in a mixture of shock and awe.[line break][variable custom style]'I... I lost...'[roman type][line break]The next several minutes passes in a blur as you are stripped of your sailor uniform and clothed in a ridiculously embarrassing baby onesie and then given a pacifier to wear. You are not given a diaper change but instead just forced to drink even more laxative and prune juice.[line break][variable custom style]'I... I have to walk home like this for a week?!'[roman type][line break]You are still in a state of shock.[line break][first custom style]'I'm afraid not just this week.'[roman type][line break]Hisa's grave tone sends another chill down your back. What is she talking about? They've given you all the punishments, haven't they?";
 	say "[first custom style]'Saki won on the first turn, a Blessing of Man. That scores a yakuman. And that means...'[line break][variable custom style]'She scored a triple yakuman?'[roman type][line break]The realisation hits you. A triple yakuman. Probably the first ever in the history of mahjong. But you don't remember a rule for a triple yakuman? You look at the board behind you to see a rule you don't remember having been written there before. But it's definitely written there, as plain as day.[paragraph break][italic type]'TRIPLE YAKUMAN: OPPONENT MUST BE LOCKED IN ONESIES AND DIAPERS OUTSIDE OF COLLEGE HOURS UNTIL GRADUATION.'[paragraph break][first custom style]'Your onesie will be locked at all times. It has a zipper so you will be able to change your own diapers, but if we catch you not wearing Pampies at any time except class-time then we will rethink the zipper. You will have to report to Saki every morning to have your onesie unlocked so you can change into your uniform for class. You will have to report to us all straight after classes every day so that we can make sure you are locked back in your onesie with a nice thick diaper and a belly full of laxative. This is your life from now on.'[roman type][line break]There is no hint of joking in her voice. You plead with your peers.[line break][variable custom style]'This is too far! Please, I can't be forced to live like a baby for the next two years!'[line break][first custom style]'You have no choice. Now I suggest you act like a good baby and waddle off home before you fill that diaper with even more filth and risk it bursting at the seams!'[roman type][line break]Blood rushes to your head and you feel faint. Everything turns black.";
+	now predicamentSavedBladder is the bladder of the player;
+	now predicamentSavedRectum is rectum;
 	repeat with C running through held things:
 		if C is worn clothing:
 			if (C is removable or C is diaper-stack) and C is not headgear and C is not combat visor and C is not armband:

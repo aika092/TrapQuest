@@ -760,7 +760,7 @@ To say ClothingDesc of (C - grope-me-skirt):
 	say "This short purple tartan skirt has a sign pinned to the front that reads 'Please Grope My Tits'...".
 
 To decide which number is the initial outrage of (C - grope-me-skirt):
-	decide on 6.
+	decide on 9.
 
 open-front-skirt is a skirt. open-front-skirt is unique. The printed name of open-front-skirt is "[clothing-title-before]open front skirt[clothing-title-after]". The text-shortcut of open-front-skirt is "ofs". Understand "open", "front" as open-front-skirt.
 Figure of open-front-skirt female is the file "Items/Clothes/Lower/Skirts/openfrontskirt1.jpg".

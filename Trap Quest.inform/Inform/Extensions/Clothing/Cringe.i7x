@@ -5,11 +5,19 @@ Cringe by Clothing begins here.
 To decide which number is the cringe of (C - an object):
 	decide on 0.
 
+To decide which number is the partially visible cringe (N - a number) of (C - a thing):
+	decide on (N * 15) / 20.
+To decide which number is the partially visible cringe (N - a number) of (C - a diaper): [diapers are just as humiliating even when partially covered up]
+	decide on N.
+To decide which number is the partially visible cringe (N - a number) of (C - a dress):
+	decide on (N * 17) / 20. [it's difficult to conceal much about a dress]
+To decide which number is the partially visible cringe (N - a number) of (C - an equippable):
+	decide on N / 2. [You can hide it behind your back]
+
 To decide which number is the cringe of (C - a wearthing):
-	if C is worn:
-		if C is not currently at least partially visible, decide on 0;
+	if C is currently concealed, decide on 0;
 	let O be the unworn cringe of C;
-	if C is worn and C is not currently visible, now O is (O * 8) / 10; [this means it is partially visible]
+	if C is worn and C is not currently visible, decide on the partially visible cringe O of C;
 	decide on O.
 
 To decide which number is the outrage of (C - a diaper):

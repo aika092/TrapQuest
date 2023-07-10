@@ -357,7 +357,7 @@ To compute punishment of (P - hole-plug):
 				displace D;
 			otherwise:
 				now D is in the location of hole-in-wall;
-		summon C cursed;
+		summon C uncursed;
 		gluify C;
 		ruin asshole;
 		say FullExamineDesc of C.

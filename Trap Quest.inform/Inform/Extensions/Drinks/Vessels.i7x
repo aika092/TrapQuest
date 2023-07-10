@@ -316,6 +316,27 @@ To say VesselDesc of (V - gold chalice):
 To say ShortVesselDesc of (V - gold chalice):
 	say "golden chalice".
 Definition: gold chalice is yellow themed: decide yes.
+Definition: gold chalice is immune to change:
+	if gold chalice is in Mansion07, decide yes;
+	decide no.
+A time based rule:
+	if the player is in Mansion07 and gold chalice is held and gold chalice is bland and gold chalice is empty and there is a nonstalking wisp and (diaper quest is 1 or watersports fetish is 1):
+		if diaper quest is 1, now the fill-colour of gold chalice is white;
+		otherwise now the fill-colour of gold chalice is golden;
+		DoseFill gold chalice;
+		say "[bold type]Suddenly, your [ShortVesselDesc of gold chalice] glows brightly and fills itself with a small mouthful of [if diaper quest is 1][milk][otherwise][urine][end if]![roman type][line break]";
+		repeat with W running through nonstalking wisps:
+			silently set up W;
+			now the wisp-quest of W is drink-milk-wisp-quest;
+			now the wisp-trigger of W is a random eligible appropriate wisp trigger;
+			now the wisp-punishment of W is bimbo-wisp-punishment;
+			if (a random number between 0 and 1) + (a random number between 0 and 1) < game difficulty, now the wisp-punishment of W is a random appropriate wisp punishment;
+			now W is everywhere;
+			update backdrop positions;
+			now the text-shortcut of W is the substituted form of "[ColourDesc of W]";
+			say "[bold type]A [ColourDesc of W] curse wisp appears, and begins hovering behind you! [roman type]You can sense that you must [bold type][wisp-quest of W][roman type] before you next [bold type][wisp-trigger of W][roman type], or else you will [bold type][wisp-punishment of W][roman type].";
+		say "[variable custom style]What a freaky room! Curse these spirits![roman type][line break]".
+
 
 novelty mug is a vessel. novelty mug is open topped. The max-doses of a novelty mug is usually 2. The printed name of novelty mug is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]novelty mug[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of novelty mug is "nm".
 Figure of boob mug is the file "Items/Accessories/Vessels/mug1.png".

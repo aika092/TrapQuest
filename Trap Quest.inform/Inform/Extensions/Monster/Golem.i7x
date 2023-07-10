@@ -233,7 +233,7 @@ To say MediumDesc of (M - slimeball):
 	say "slimeball".
 
 To say MonsterDesc of (M - slimeball):
-	say "This weird blue blob of slime appears to be able to wobble around, and even hop and leap. If you look at it the right way, it looks a lot like a boob.".
+	say "This weird blue blob of slime appears to be able to wobble around, and even hop and leap. [if diaper quest is 0]If you look at it the right way, it looks a lot like a boob[otherwise]It would seem that its single desire in [']life['] is to be eaten, and it is happy to help you perform this sacred task[end if].".
 
 To set up (M - slimeball):
 	reset M;
@@ -259,10 +259,10 @@ To compute (M - a slimeball) seeking (D - a direction):
 	do nothing.]
 
 To compute action (N - a number) of (M - a slimeball):
-	if M is in the location of the player and N is not 2:
+	if M is in the location of the player and N is not 2 and (diaper quest is 0 or face is not actually occupied):
 		anger M;
 		interest M;
-		say "[BigNameDesc of M] leaps at you, trying to latch onto your body!";
+		say "[BigNameDesc of M] leaps at [if diaper quest is 1]your face[otherwise]you, trying to latch onto your body[end if]!";
 		let D be a random number between 1 and the dexterity of the player;
 		let X be D;
 		if the player is prone, decrease X by 8;
@@ -272,6 +272,10 @@ To compute action (N - a number) of (M - a slimeball):
 			say "[input-style]Slimeball evasion check: dexterity roll (d[dexterity of the player]) = [D] [if the player is prone]- kneeling penalty (8) = [X] [end if]| (6.5) Facehugger evasion difficulty[roman type][line break]";
 		if X > 6:
 			say "You manage to move yourself out of the way, and [NameDesc of M] goes flying past. But it's still wobbling, apparently preparing to try again...";
+		otherwise if diaper quest is 1:
+			say "[if the player is not immobile]You don't move out of the way in time! [end if]";
+			compute slimeball forcefeed;
+			destroy M;
 		otherwise:
 			say "[if the player is not immobile]You don't move out of the way in time! [end if]It splashes against you, coating you in its slime!";
 			now M is wrangling arms;
@@ -340,6 +344,19 @@ To compute slime expansion:
 	otherwise:
 		AnalSexAddictUp 1.
 
+To compute slimeball forcefeed:
+	say "It surges towards your mouth, forcing its way past your lips! ...And a moment later, it has forced you to swallow it! With an embarrassingly loud burp, you feel it sinking into your stomach, where it is happily(?!) being digested.[line break][variable custom style]Oh god, I feel so full[one of]. Why do I get the feeling that slimeballs are [if diaper messing >= 3]incredibly rich in fibre[otherwise]the perfect mix of dieuretics, electrolytes, and water[end if]...[or]. Why can't this world have more sensible ways of encouraging me to [if diaper messing >= 3]eat[otherwise]drink[end if]?![or] again...[stopping][roman type][line break]";
+	if diaper messing >= 3, StomachFoodUp 5;
+	otherwise StomachUp 4.
+
+To deploy a slimeball:
+	let SB be a random off-stage slimeball;
+	if SB is a thing:
+		set up SB;
+		let R be a random placed unbossed jungle room;
+		if playerRegion is woods, now R is a random placed unbossed labyrinth room;
+		now SB is in R.
+
 To compute (M - a monster) stomping (N - a slimeball):
 	if M is in the location of the player, say "[BigNameDesc of M] stomps on the [N].";
 	destroy N;
@@ -373,8 +390,6 @@ To loot (M - a slimeball):
 	if D is ectoplasm:
 		now D is in the location of the player;
 		compute autotaking D.
-
-
 
 
 

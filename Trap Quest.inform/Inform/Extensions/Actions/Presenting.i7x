@@ -58,7 +58,7 @@ This is the gape gloves present rule:
 The gape gloves present rule is listed in the global presentable rules.
 
 Check presenting:
-	if diaper quest is 1, say "I think you're playing the wrong game." instead;
+	if diaper quest is 1 and (watersports fetish is 0 or the noun is not face or the second noun is not friendly monster), say "I think you're playing the wrong game." instead;
 	if the noun is hips, try presenting asshole instead;
 	if the noun is not body part:
 		if the number of intelligent interested monsters in the location of the player is 1:
@@ -75,7 +75,7 @@ Check presenting:
 	[Highest priority is anything unfriendly that will use that body part]
 	if the noun is face:
 		now M is a random threatening interested unfriendly willing to do oral monster in the location of the player;
-		if M is nothing, now M is a random threatening interested unfriendly willing to urinate monster in the location of the player;
+		if M is nothing or diaper quest is 1, now M is a random threatening interested unfriendly willing to urinate monster in the location of the player;
 	if the noun is breasts, now M is a random threatening interested unfriendly willing to do titfucks monster in the location of the player;
 	if the noun is vagina, now M is a random threatening interested unfriendly willing to do vaginal monster in the location of the player;
 	if the noun is asshole, now M is a random threatening interested unfriendly willing to do anal monster in the location of the player;
@@ -114,12 +114,14 @@ Check presenting:
 	if M is nothing, now M is a random monster in the location of the player;
 	if M is monster:
 		if M is caged, say "[BigNameDesc of M] wouldn't be able to do that from inside the cage!" instead;
+		if diaper quest is 1 and (M is grabbing the player or M is not doing nothing special), say "But the [ShortDesc of M] is already dominating you!" instead;
 		if M is not penetrating a body part, try direct-presenting the noun to M instead;
 		otherwise say "But the [ShortDesc of M] is already inside you!" instead;
 	say "ERROR: couldn't find a monster to present to." instead. [Should never happen.]
 
 Check direct-presenting something to:
 	if tutorial is 1, say "You haven't been told to do that! Please follow the tutorial instructions." instead;
+	if diaper quest is 1 and (watersports fetish is 0 or the noun is not face or the second noun is not friendly monster), say "I think you're playing the wrong game." instead;
 	if the noun is hips, try direct-presenting asshole to the second noun instead;
 	if the second noun is summoning portal:
 		try appeasing the noun with the second noun instead;
@@ -142,6 +144,7 @@ Check direct-presenting something to:
 	if the player is upright and the second noun is unfriendly, say "You should kneel first." instead.
 
 Carry out direct-presenting something to:
+	if debugmode > 0, say "Direct presenting: noun is [noun]; second noun is [second noun].";
 	if the player is upright, try kneeling;
 	if the player is prone:
 		allocate 4 seconds;
@@ -162,15 +165,15 @@ Carry out direct-presenting something to:
 			if the second noun is willing to do anilingus and (the grossness addiction of the player >= 7 or the player is disgraced or debugmode > 0):
 				increase player-numerical-response by 1;
 				set next numerical response to "Ask to lick [his of the second noun] asshole";
-			if player-numerical-response > 1, compute multiple choice question;
-			if chosen numerical response matches the text "pissed":
+			if diaper quest is 0 and player-numerical-response > 1, compute multiple choice question;
+			if diaper quest is 1 or chosen numerical response matches the text "pissed":
 				if the player is able to speak and auto is not 1 and (the player is not broken or the second noun is friendly):
 					if the second noun is a dangerous intelligent monster:
 						say UnfriendlyPissRequest of the second noun;
 					otherwise if the second noun is friendly intelligent monster:
 						say FriendlyPissRequest of the second noun;
 				say PissRequestFlav of the second noun;
-				if the humiliation of the player < HUMILIATION-MODEST - 3500, say "[one of][first custom style]I can hardly believe what I'm doing! How degrading...[roman type][line break][or][stopping]";
+				if player is modest, say "[one of][first custom style]I can hardly believe what I'm doing! How degrading...[roman type][line break][or][stopping]";
 				now presented-orifice is belly;
 			otherwise if chosen numerical response matches the text "tongue":
 				if the player is able to speak and auto is not 1 and (the player is not broken or the second noun is friendly):
@@ -301,7 +304,7 @@ Carry out direct-presenting something to:
 		if there is a worn demon codpiece, follow the demon junk punishment rule;
 		if the second noun is friendly:
 			check consensual submissive sex of the second noun;
-			if there is a worn tiara and tiara-of-spades is not worn and the second noun is a dark skinned male intelligent monster and the second noun is penetrating a body part:
+			if interracial fetish is 1 and there is a worn tiara and tiara-of-spades is not worn and the second noun is a dark skinned male intelligent monster and the second noun is penetrating a body part:
 				let M be a random royal guard in the location of the player;
 				if M is a monster and M is not penetrating a body part:
 					say "Suddenly, [NameDesc of M] actually notices what's going on.[line break][speech style of M]'Princess! You... I... I thought we... I mean... This is... This is totally inappropriate! For a woman of your standing... and complexion... to be doing that with a black [man of the second noun]! I must demand that you stop this at once!'[roman type][paragraph break][BigNameDesc of second noun] responds with a chuckle.[line break][speech style of second noun]'Come off it, you little beta cuck. Watch what your princess can do with a proper sized [manly-penis].'[roman type][line break][BigNameDesc of M] looks like [he of M] wants to make a move to break you and [NameDesc of the second noun] apart, but some sort of pain or discomfort in [his of M] crotch is distracting [him of M]. With a twisted expression on [his of M] face, [big he of M] clutches desperately at [his of M] genitals.[line break][speech style of M]'My Princess... My love... She is being violated by a disgusting [BlackCock]! I must save her! I must stop this! I must... Hnnngaah!'[roman type][line break]Not one of the three of you can really believe it's actually happening, but [NameDesc of M] is very clearly filling [his of M] pants with [his of M] load, having just suffered an extremely humiliating premature ejaculation.[line break][speech style of M]'No! This is... Unthinkable! Unjustifiable! Inconceivable! I...'[roman type][paragraph break][BigNameDesc of second noun] smirks.[line break][speech style of second noun]'I [one of][or]still [stopping]don't think that word means what you think it does... Tell me, Princess, is that the sort of [manly-penis] you love? The type that cums before [he of M] even pulls it out of [his of M] pants? Or do you prefer ten inches of rock hard black meat?'[roman type][line break]You don't even get a chance to consider how to respond before your clothing answers for you.";

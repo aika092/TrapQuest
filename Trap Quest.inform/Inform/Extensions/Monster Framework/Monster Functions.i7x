@@ -48,6 +48,7 @@ To compute common boredom of (M - a monster) for (N - a number) seconds:
 	if diaper quest is 1, now the latest-cringe of M is the cringe appearance of the player;]
 	now M is not diaper-committed;
 	now M is not double-diaper-committed;
+	now M is not diaperMessReacted;
 	now the dismissRefused of M is 0;
 	reset orifice selection of M; [Otherwise they would be biased towards doing the same thing again, which is lame.]
 	repeat with K running through things rejected by M:

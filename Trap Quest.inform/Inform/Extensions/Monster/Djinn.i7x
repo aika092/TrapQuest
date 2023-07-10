@@ -77,7 +77,8 @@ To say DiaperReaction of (M - djinn):
 
 To compute diaper mess reaction of (M - djinn):
 	say "[BigNameDesc of M] frowns.[line break][speech style of M]'[if M is friendly]Fortunately for you, I have no sense of smell in this ascended form. If I did, I would struggle to think of a horrible enough punishment for assailing my nostrils with the scent of your bowels.'[otherwise]Incredible. You are more pathetic than any other mortal I have ever met, in 4000 years of existence. That's quite a remarkable feat.'[end if][roman type][line break]";
-	obsceneHumiliate.
+	if voluntarySquatting is 1, say obsceneHumiliateReflect;
+	otherwise say severeHumiliateReflect.
 
 To compute (M - a monster) stomping (N - djinn):
 	if M is in the location of the player, say "[BigNameDesc of M] kills the [N].";

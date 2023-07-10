@@ -11,12 +11,19 @@ Definition: an adult baby slave is willing to do anilingus: decide no. [TODO: cr
 
 Definition: an adult baby slave is a diaper wetter: decide yes.
 
-Figure of angelic adult baby slave is the file "NPCs/MultiFloor/BabySlave/abs1.jpg". Figure of bratty adult baby slave is the file "NPCs/MultiFloor/BabySlave/abs2.jpg".
+Figure of angelic adult baby slave is the file "NPCs/MultiFloor/BabySlave/abs1.jpg".
+Figure of bratty adult baby slave is the file "NPCs/MultiFloor/BabySlave/abs2.jpg".
+[Figure of bratty adult baby slave facesit clean is the file "NPCs/MultiFloor/BabySlave/abs2-cutscene1a.jpg".]
+Figure of bratty adult baby slave facesit wet is the file "NPCs/MultiFloor/BabySlave/abs2-cutscene1b.jpg".
+Figure of bratty adult baby slave facesit messy is the file "NPCs/MultiFloor/BabySlave/abs2-cutscene1c.jpg".
 
 To decide which figure-name is the monster-image of (M - angelic adult baby slave):
 	decide on Figure of angelic adult baby slave.
 
 To decide which figure-name is the monster-image of (M - bratty adult baby slave):
+	if M is penetrating face:
+		if M is messy, decide on Figure of bratty adult baby slave facesit messy;
+		decide on Figure of bratty adult baby slave facesit wet;
 	decide on the figure of bratty adult baby slave.
 
 To say ShortDesc of (M - an adult baby slave):
@@ -122,12 +129,12 @@ To compute diaper mess reaction of (M - an adult baby slave):
 	if M is unfriendly:
 		if M is bratty adult baby slave, say "[BigNameDesc of M] slaps your diapered ass as you mess yourself, spreading your mess around while it's still coming out of you.[line break][speech style of M]'[if M is penetrating a body part][one of]You made all that fuss and you still went in your pants? Guess you're just drooling and babbling away, from being like the other babies around here. You were all just talk!'[or]Watching you make such a big, mushy mess in your Huggies is making me really horny!'[or]Ohhh, I know you could only feel it, but watching your dignity drain out of you to swell your diaper was just a sight! You know what I'm going to do now right? It's OK, you'll learn to love it!'[roman type][line break]As the musk of soiled diaper furrows into your nostrils, the slave's unnecessarily evil giggle fills the room, [his of M] victory punctuated by [his of M] childish bouncing and mocking tune, the song of your helpless subservience to [his of M] infantile wants![line break][speech style of M]'Just let it happen cutie, your smelly load tells me how badly you want this!'[roman type][line break]You panic as the reality of the situation sets in. Your body grows heavy as you struggle desperately for just one gasp of fresh air as the adult baby's filthy diaper takes dominion of your senses.[at random][otherwise if the player is upright]Awww, you know how long it's been since I had a 69 diaper soiling? You say you're a big girl but you're a selfish one!'[otherwise]How does it feel being dominated by a dirty diaper slave, are you embarrassed?'[end if][roman type][line break]";
 		otherwise say "[BigNameDesc of M] slaps your diapered ass as you mess yourself, spreading your mess around while it's still coming out of you.[line break][speech style of M]'[if M is penetrating a body part][one of]Once I'm done playing with you, you should probably go to [daddytitle of matron] for a change unless you like sitting in your dirty diapers... I do, but [daddytitle of matron] says that only the biggest babies like playing in their own messes...'[or]Watching you make such a big, mushy mess in your Huggies is making me really horny!'[or]That's not fair! If you told me you had to mess, we could have gone at the same time! Still... Is it weird that I think your dirty diaper smells really good?'[roman type][line break]The adult baby slave shoves [his of M] face in your messy diaper, adopting a 69 position.[line break][speech style of M]'But better late than never, right?'[roman type][line break]You panic at [his of M] insinuation as [he of M] fills [his of M] diaper with a load of warm mush on your face, causing you to gag at the scent of [his of M] mess as [he of M] continues to nuzzle and caress your own.[at random][otherwise if the player is upright]Hey! You should have told me you needed to mess yourself! I might have let you sit on my face...'[otherwise]'How does it feel knowing that you're as big a baby as I am?[end if][roman type][line break]";
-		obsceneHumiliate;
 	otherwise:
 		if M is bratty adult baby slave, say "[BigNameDesc of M] smiles gently and pats your back.[line break][speech style of M]'[one of]Ewww, did you just soil your diaper? I thought you were a big girl! Maybe if you beg I'll change you... in exchange for some playtime!'[or]How did you manage to stinky your diaper before me? I'd be back in big girl panties WAY before you... if I wanted them anyway!'[or][NameBimbo] made a stiiinky~! [NameBimbo] made a stiiinky~! Wait until I tell mama what you did!'[or]Ohhhh, so THAT's what it means to be a big girl, you make even bigger dirty diapers!'[or]sniff sniff PU! I think I found the dirty diaper culprit!'[at random][roman type][line break]";
 		otherwise say "[BigNameDesc of M] smiles gently and pats your back.[line break][speech style of M]'[one of]Don't feel too bad about messing your diaper. You might just be a big baby but at least we can be big babies together!'[or]Doesn't it feel really good to fill your diaper with hot mush? I love feeling the warm, squishy feeling spread around my diaper...'[or]If we go ask [daddytitle of matron], maybe [he of matron][']ll change us into each others['] diapers... Would you want to wear my messy diaper?'[at random][roman type][line break]";
-		obsceneHumiliate;
-	if the humiliation of the player < 15000, say "[variable custom style][if the player is able to speak]'Wait! This isn't normal for me! I'm not a baby!'[otherwise]I'm stuck in a loaded diaper and I can't even try to explain myself... What could I even say?[end if][roman type][line break]";
+	if voluntarySquatting is 1, obsceneHumiliate;
+	otherwise severeHumiliate;
+	if the player is modest, say "[variable custom style][if the player is able to speak]'Wait! This isn't normal for me! I'm not a baby!'[otherwise]I'm stuck in a loaded diaper and I can't even try to explain myself... What could I even say?[end if][roman type][line break]";
 	otherwise say "You blush fiercely and avert your eyes, hearing [him of M] giggle as you do so.".
 
 To compute MasturbationReaction of (M - an adult baby slave):
@@ -545,26 +552,26 @@ This is the adult baby slave extra continue sex check rule:
 	follow the check normal continue sex stuff rule;
 	if the rule succeeded, rule succeeds;
 	if current-monster is penetrating face:
-		compute punishment of diaper-facesit;
+		compute punishment of ab-diaper-facesit;
 		rule succeeds.
 The adult baby slave extra continue sex check rule is listed in the adult baby slave continue sex rules.
 
-diaper-facesit is a diaper punishment. The priority of diaper-facesit is 2.
-Definition: diaper-facesit is appropriate:
+ab-diaper-facesit is a diaper punishment. The priority of ab-diaper-facesit is 2.
+Definition: ab-diaper-facesit is appropriate:
 	if current-monster is not adult baby slave and (current-monster is not ex-princess or ex-princess is not unleashed), decide no;
 	if current-monster is penetrating face, decide yes;
 	if the player is immobile, decide no;
 	decide yes.
 
-To say EnticeFlav of (M - a monster) for (P - diaper-facesit):
+To say EnticeFlav of (M - a monster) for (P - ab-diaper-facesit):
 	if M is intelligent, say "[line break][speech style of M]'[one of]You WANT me to sit this diaper on your face, don't try to deny it! Just get on your back and let it happen...'[or]Why fight me when you can just get on the ground and let me sit on your face?'[in random order][roman type][line break]";
 	otherwise say "[big he of M] gestures that [he of M] wants to sit on your face.".
 
-To decide which number is the relevant addiction of (P - diaper-facesit):
+To decide which number is the relevant addiction of (P - ab-diaper-facesit):
 	if current-monster is messy, decide on the grossness addiction of the player - 6;
 	decide on the grossness addiction of the player.
 
-To compute punishment of (P - diaper-facesit):
+To compute punishment of (P - ab-diaper-facesit):
 	let M be current-monster;
 	if M is penetrating face:
 		if the rounds of sex left of M <= 0:

@@ -167,6 +167,14 @@ Carry out wearing clothing:
 
 Report wearing something (this is the identify-magic-state rule):
 	if the noun is wearthing:
+		if the noun is knickers:
+			if the noun is cursed and the noun is unsure:
+				if the player is sexed male and the size of penis > min penis size:
+					say "[bold type]You feel a hidden curse emerging from [NameDesc of the noun][bold type]! [roman type]";
+					PenisDown 1;
+				otherwise if diaper lover > 0 and the player is at least somewhat continent:
+					say "[bold type]You feel a hidden curse emerging from [NameDesc of the noun][bold type]! [roman type]";
+					RandomIncontinenceUp 1;
 		unless the noun is portal-cock-ring: [#LXorDD: its magic effect doesn't usually trigger upon first wearing.]
 			now the magic-ID of the noun is identified;
 			now the curse-ID of the noun is sure;

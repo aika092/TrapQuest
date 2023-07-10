@@ -370,8 +370,8 @@ This is the diaper addiction description rule:
 			say "You get extremely turned on by wearing and using [if there is a worn diaper]your diaper[otherwise]diapers[end if]. It's one of your favourite things to do, and you start to crave it if you haven't done it in a while. Wearing normal underwear feels wrong and uncomfortable.";
 		otherwise:
 			say "You are completely addicted to wearing and using [if there is a worn diaper]your diaper[otherwise]diapers[end if], the bigger and puffier the better. The act of soiling one makes you extremely aroused[if the diaper addiction of the player >= 20], and you love staying in a used diaper for as long as you're allowed, because it feels incredible[end if]. You get great comfort and bliss from [CurrentWearingDiaperState] and so you hate not being in one.";
-		if debuginfo > 0, say "[input-style](Diaper addiction [diaper addiction of the player] / 20)[roman type][line break]";
-	if diaper lover > 0:
+		if debuginfo > 0, say "[input-style](Diaper addiction [diaper addiction of the player] / 20)[roman type][line break]".
+	[if diaper lover > 0:
 		if the bladder-incontinence of the player >= 10:
 			say "You have no control over your [if the rectum-incontinence of the player >= 10]bodily functions[otherwise]bladder[end if]; you can't even feel when you're full, and your body just goes as soon as it is ready.";
 		otherwise if the bladder-incontinence of the player >= 8:
@@ -417,7 +417,7 @@ This is the diaper addiction description rule:
 		if debuginfo > 0:
 			say "[input-style]Bladder Incontinence [bladder-incontinence of the player] / 10[if the max-bladder-incontinence of the player < 10] [bracket]capped at [the max-bladder-incontinence of the player][close bracket][end if][run paragraph on]";
 			if diaper messing >= 3, say "; Bowel Incontinence [rectum-incontinence of the player] / 10[if the max-rectum-incontinence of the player < 10] [bracket]capped at [max-rectum-incontinence of the player][close bracket][end if][run paragraph on]";
-			say ")[roman type][line break]".
+			say ")[roman type][line break]".]
 The diaper addiction description rule is listed in the addiction listing rules.
 
 [!<TheShortSkirtAddictionDescriptionRule>+
@@ -455,20 +455,5 @@ This is the humiliation description rule:
 	if debuginfo > 0, say "[input-style]([if the humiliation of the player >= 40000]Sex addiction [sex addiction of the player] / 20; Delicateness [delicateness of the player] / 20; [end if]Humiliation: [humiliation of the player] / 40000)[roman type][line break]".
 The humiliation description rule is listed in the addiction listing rules.
 
-This is the public disgrace description rule:
-	let PD be the public disgrace of the player;
-	if PD > 0:
-		if PD < 20:
-			say "There's likely a small amount of embarrassing footage of you on the Internet, but nothing too bad or too widespread.";
-		otherwise if PD < 500:
-			say "There's footage of you on the Internet, and it's likely pretty devastating. Who knows exactly how many people have seen your shame? It's quite possible that somebody will recognise you. If you can't find a way to find it and get it taken down soon, you'll likely never be able to live it down.";
-		otherwise if PD < 2000:
-			say "There's certainly some pretty damning explicit footage of you on the Internet. It seems quite likely that someone will have recognised you by now. If they decide to share it further you'll never be able to live it down.";
-		otherwise if PD < 5000:
-			say "Footage of you in extremely shameful situations exists across the Internet, probably with you easily identifiable in most if not all of it. Irreparable damage has been done to your reputation - you'll be the laughing stock of your home town from now until the end of time. Unless you can somehow find a way to do some damage control and get it all taken down, you'll probably never be able to get a proper job again.";
-		otherwise:
-			say "You are acutely aware that by now you are likely infamous on the Internet. Everyone knows your name, age, where you come from, and [if diaper quest is 1]they all believe you're some attention seeking, exhibitionist, humiliation craving, diaper loving pervert[otherwise]what the inside of your [asshole] looks like[end if]. You know what you'll see the next time you check your Twitter profile: hundreds of thousands if not millions of new followers, and countless mentions discussing how brave and/or disgusting you are, not to mention endless unsolicited explicit DMs. You'll never get a real job again, but perhaps you could now make a living selling certain 'premium snapchat' services to discerning degenerates...[line break][variable custom style][if the player is shameless]So much attention... all for me... how humiliating! It makes me horny just thinking about it[otherwise if the player is modest]No... I couldn't! I couldn't ever bring myself to put even more of myself out there...![otherwise]Could I really bring myself to become a camgirl? Debasing myself perverted men around the world... Surely not...?[end if][roman type][line break]";
-		if debuginfo > 0, say "[input-style](Public Disgrace: [PD] / 5000)[roman type][line break]".
-The public disgrace description rule is listed in the addiction listing rules.
 
 Addictions ends here.

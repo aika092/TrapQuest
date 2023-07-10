@@ -100,7 +100,10 @@ To set up (P - a poster):
 	distribute P;
 	if P is identifiable and (the player is not the donator or tough-shit is 1) and the number of blank rows in the Table of Published Disgraces > 0:
 		choose a blank row in Table of Published Disgraces;
-		let T be the substituted form of "a high resolution photo - [ShortDesc of P] It has been posted on [sluttyWebsite]";
+		let T be the substituted form of "a high resolution photo - [ShortDesc of P] It ";
+		let TP be the substituted form of "has been posted on [sluttyWebsite]";
+		now the content entry is T;
+		now the published entry is TP;
 		now the severity entry is the lewdness of P / 50;
 		now the popularity entry is 5;
 		now the timestamp entry is earnings;

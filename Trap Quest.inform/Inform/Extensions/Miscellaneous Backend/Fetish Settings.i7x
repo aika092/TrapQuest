@@ -96,6 +96,7 @@ choice
 0 [grossness fetish]
 1 [silicone milk clash]
 0 [diaper cumrag]
+0 [hungry messer]
 
 [!<DecideWhichNumberIsOriginalPlayerGender>+
 
@@ -325,6 +326,7 @@ To decide which number is positive points count:
 	if diaper lover >= 1 and diaper quest is 0, increase X by diaper points;
 	if egg laying fetish is 1, increase X by 3;
 	if weight gain fetish is 1, increase X by 3;
+	if hungry messer >= 1, increase X by 3;
 	if inflation fetish is 1, increase X by 4;
 	if artificial enhancements fetish is 1, increase X by 2;
 	if interracial fetish is 1, increase X by 2;

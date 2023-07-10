@@ -120,6 +120,21 @@ To compute toilet reaction of (M - a staff member):
 			say "[BigNameDesc of M] watches you almost unblinkingly, as if supervising you![line break][speech style of M]'[one of]Good [boy of the player]s don't need privacy[or]Good, your exhibitionism is coming along nicely[then at random]!'";
 		say "[roman type][line break][strongHumiliateReflect]".
 
+To compute diaper mess reaction of (M - a staff member):
+	say "[BigNameDesc of M] [one of]smiles[or]bites [his of M] lip[or]smirks knowingly[then at random] while watching you silently.[roman type][line break][strongHumiliateReflect]".
+
+To say ClothesPeeReaction of (M - a staff member):
+	if M is interested:
+		if diaper quest is 1:
+			if M is friendly:
+				say "[BigNameDesc of M] [one of]shakes [his of M] head[or]tuts disappointedly[at random].[line break][speech style of M]'[one of]Should have worn a diaper[or]Learning your lesson the hard way, I see[or]Well, that must be pretty embarrassing. You could have saved yourself the humiliation if you'd just worn a diaper[in random order].'[roman type][line break]";
+			otherwise:
+				say "[BigNameDesc of M] smirks as [he of M] watches you.";
+		otherwise:
+			say "[BigNameDesc of M] [one of]smirks[or]grins[or]smiles[at random], as if [he of M] finds it [one of]hot[or]endearing[or]cute[at random].";
+	otherwise:
+		say "[BigNameDesc of M] doesn't look at you directly or say anything, so it's hard to gauge [his of M] reaction.".
+
 To say NastyTrapReactFlav of (M - a staff member):
 	say "[BigNameDesc of M] [one of]looks very pleased[or]cackles to [himself of M][or]grins widely[in random order].[line break][speech style of M]'[one of]And thus, progress is made.'[or]I have to give you an A+ for effort.'[in random order][roman type][line break]".
 
@@ -447,7 +462,16 @@ totalLessonCount is a number that varies.
 
 To compute potential lesson:
 	if lesson-room is a lecture academic room and armband is worn and armband is not solid gold and the armband-print of armband is not "new recruit":
-		if debugmode > 0, say "Class time tracker is at [class-time]; less than [lessonFrequency * -4] = detention.";
+		if debugmode > 0:
+			say "Class time tracker is at [class-time]; less than [lessonFrequency * -4] = detention.";
+			if class-time >= lessonFrequency * -4:
+				let LL be the list of correctly-ranked appropriate lessons;
+				if the number of entries in LL > 0:
+					say "There are [number of entries in LL] available lessons: [line break]";
+					let N be 1;
+					repeat with L running through LL:
+						say "[N]) Lesson with [lesson-teacher of L].";
+						increase N by 1;
 		[if class-time is 1000 or class-time <= 0:]
 		now chosen-lesson is a random correctly-ranked appropriate lesson;
 		if class-time < (lessonFrequency * -4): [arrived too late for class]
@@ -760,7 +784,6 @@ Check replacing when egg-assembly is currently-in-progress:
 	say "This doesn't seem like a sensible time to antagonise [NameDesc of headmistress] by doing that." instead.
 
 student-furious-assembly is an assembly.
-most-recent-furious is an object that varies.
 Definition: student-furious-assembly is eligible:
 	if headmistress is alive and headmistress is undefeated:
 		repeat with ST running through alive students:
@@ -774,13 +797,13 @@ To say AssemblyStartFlav of (A - student-furious-assembly):
 	repeat with STT running through alive students:
 		if the favour of STT < the aggro limit of STT - 6, now ST is STT;
 	say "[ST] is at the front, talking to [NameDesc of M] with a furious look on [his of ST] face.";
-	now most-recent-furious is ST.
+	now most-recent-leaver is ST.
 
 To execute (A - student-furious-assembly):
 	let M be headmistress;
-	let ST be most-recent-furious;
-	say "[BigNameDesc of ST] spits on the ground when [he of ST] sees you.[line break][speech style of ST]'There [he of the player] is. I'm sorry but I just can't take it any more. Every moment of my time here, [NameBimbo] has been trying to make my life miserable. I can't be around [him of the player] any more. If [he of the player] stays, I walk.'[roman type][line break][BigNameDesc of M] has an equally furious frown, and looks from [NameDesc of ST] to you, then back to [him of ST].[line break][speech style of M]'[NameBimbo] is clearly guilty of disturbing the peace in my school. This is a severe crime, on par with inciting a rebellion. I will punish [him of the player] dearly, with a nice long stay in my dungeons.'[roman type][line break]With a snap of [his of M] fingers, you are on your knees and somehow unable to move! You try to protest but you find yourself unable to make any noise![line break][speech style of M]'As for you, [student-name of ST], don't think I have been blind. I am aware of your part in this rivalry; you are not guilt-free. You can have your wish - you are henceforth expelled from this school. ";
-	if diaper quest is 1 or gloryhole is off-stage, say "For your crimes, I place this curse on you. It shall be active whenever you are within ten miles of my school.'[roman type][line break]With another snap of [his of M] fingers, you watch [NameDesc of ST][']s belly bulge to an insanely huge size! As you watch, [if diaper quest is 1 and diaper messing < 3]a fountain of [urine] spurts from [his of ST] crotch, soiling [his of ST] clothes and quickly leaking to the floor. The [urine] keeps going until [his of ST] belly has completely deflated[otherwise if diaper quest is 1]an insane amount of poop starts to slither its way out of [his of ST] backdoor and into [his of ST] underwear. The giant mess just keeps and keeps coming, blarting and spurting until [his of ST] belly has returned to a normal size[otherwise]fountains of [semen] spurts from [his of ST] mouth and asshole, soiling [his of ST] clothes and quickly leaking to the floor. The [semen] keeps going until [his of ST] belly has completely deflated[end if]! Then in the next instant, [his of ST] belly explodes out to maximum size and it all starts again![line break][speech style of M]'I would find a way to leave my zone of influence, and quickly.'[roman type][line break][BigNameDesc of ST] shrieks, gags, and then waddles from the room as fast as [his of ST] wobbling legs can carry [him of ST], [his of ST] belly emptying and refilling itself repeatedly as [he of ST] does!";
+	let ST be most-recent-leaver;
+	say "[BigNameDesc of ST] spits on the ground when [he of ST] sees you.[line break][speech style of ST]'There [he of the player] is. I'm sorry but I just can't take it any more. Every moment of my time here, [NameBimbo] has been trying to make my life miserable. I can't be around [him of the player] any more. If [he of the player] stays, I walk.'[roman type][line break][BigNameDesc of M] has an equally furious frown, and looks from [NameDesc of ST] to you, then back to [him of ST].[line break][speech style of M]'[NameBimbo] is clearly guilty of disturbing the peace in my academy. This is a severe crime, on par with inciting a rebellion. I will punish [him of the player] dearly, with a nice long stay in my dungeons.'[roman type][line break]With a snap of [his of M] fingers, you are on your knees and somehow unable to move! You try to protest but you find yourself unable to make any noise![line break][speech style of M]'As for you, [student-name of ST], don't think I have been blind. I am aware of your part in this rivalry; you are not guilt-free. You can have your wish - you are henceforth expelled from this academy. ";
+	if diaper quest is 1 or gloryhole is off-stage, say "For your crimes, I place this curse on you. It shall be active whenever you are within ten miles of my academy.'[roman type][line break]With another snap of [his of M] fingers, you watch [NameDesc of ST][']s belly bulge to an insanely huge size! As you watch, [if diaper quest is 1 and diaper messing < 3]a fountain of [urine] spurts from [his of ST] crotch, soiling [his of ST] clothes and quickly leaking to the floor. The [urine] keeps going until [his of ST] belly has completely deflated[otherwise if diaper quest is 1]an insane amount of poop starts to slither its way out of [his of ST] backdoor and into [his of ST] underwear. The giant mess just keeps and keeps coming, blarting and spurting until [his of ST] belly has returned to a normal size[otherwise]fountains of [semen] spurts from [his of ST] mouth and asshole, soiling [his of ST] clothes and quickly leaking to the floor. The [semen] keeps going until [his of ST] belly has completely deflated[end if]! Then in the next instant, [his of ST] belly explodes out to maximum size and it all starts again![line break][speech style of M]'I would find a way to leave my zone of influence, and quickly.'[roman type][line break][BigNameDesc of ST] shrieks, gags, and then waddles from the room as fast as [his of ST] wobbling legs can carry [him of ST], [his of ST] belly emptying and refilling itself repeatedly as [he of ST] does!";
 	otherwise say "Go, leave now.'[roman type][line break][BigNameDesc of ST] looks panicked for a moment, like [he of ST] is expecting further retribution from [NameDesc of headmistress], but nothing comes.[line break][speech style of ST]'I'm just... free to leave? Okay...'[roman type][line break][BigNameDesc of ST] very slowly inches out of the room, as if with every step [he of ST] is entirely sure that [NameDesc of headmistress] is going to change [his of headmistress] mind and do something horrible to [him of ST] the moment [his of ST] foot touches the floor. But nothing happens.";
 	say "Once [he of ST] has cleared the room, all eyes return to you.";
 	destroy ST;
@@ -788,7 +811,7 @@ To execute (A - student-furious-assembly):
 
 new-fuckhole-assembly is an assembly.
 Definition: new-fuckhole-assembly is eligible:
-	if diaper quest is 0 and headmistress is alive and headmistress is undefeated and most-recent-furious is a student and gloryhole is on-stage and the player is possessing a penis, decide yes;
+	if diaper quest is 0 and headmistress is alive and headmistress is undefeated and most-recent-leaver is a student and gloryhole is on-stage and the player is possessing a penis, decide yes;
 	decide no.
 
 To say AssemblyStartFlav of (A - new-fuckhole-assembly):
@@ -796,8 +819,9 @@ To say AssemblyStartFlav of (A - new-fuckhole-assembly):
 
 To execute (A - new-fuckhole-assembly):
 	now school-fuckhole is in the location of gloryhole;
-	now the fuckhole-person of school-fuckhole is most-recent-furious;
-	now most-recent-furious is nothing;
+	now the fuckhole-person of school-fuckhole is most-recent-leaver;
+	if most-recent-leaver is listed in recent-leavers, remove most-recent-leaver from recent-leavers;
+	now most-recent-leaver is nothing;
 	destroy gloryhole;
 	now the fuckhole-rule of school-fuckhole is a random number between 1 and 5;
 	if bukkake fetish is 1 and (the fuckhole-rule of school-fuckhole is 2 or the fuckhole-rule of school-fuckhole is 3), now the fuckhole-rule of school-fuckhole is 0;
@@ -826,7 +850,7 @@ To execute (A - locked-toilets-assembly):
 	let L be School01;
 	repeat with R running through academic rooms:
 		if the urine-puddle of R > 0, now L is R;
-	say "[speech style of headmistress]'It has come to my attention that a puddle of urine was found in the [L]. It would appear that the pupils in this school are in need of some serious bladder training. Therefore, henceforth, until we determine once and for all which of you can hold in your pee and which of you are naughty wetters, using the toilet is a privilege. The toilets will be locked, and you will have to come to me to ask for the key to use them. Furthermore, you must bring a teacher with you when you use the toilet, to act as a witness and to retrieve the toilet key when you are finished. Is that clear?'[roman type][line break]Everyone murmurs assent.[line break][speech style of headmistress]'To be clear, [bold type]you are not allowed to use any other toilet or urinal either[speech style of headmistress], and if we catch you, you best believe you'll be in for a world of trouble.'[roman type][line break]Twirling the solitary toilet key on its key ring around [his of headmistress] index finger, [NameDesc of headmistress] marches from the hall.".
+	say "[speech style of headmistress]'It has come to my attention that a puddle of urine was found in the [L]. It would appear that the pupils in this school are in need of some serious bladder training. Therefore, henceforth, until we determine once and for all which of you can hold in your pee and which of you are naughty wetters, using the toilet is a privilege. The toilets will be locked, and you will have to come to me to ask for the key to use them. Furthermore, you must bring a teacher with you when you use the toilet, to act as a witness and to retrieve the toilet key when you are finished. Is that clear?'[roman type][line break]Everyone murmurs assent.[line break][speech style of headmistress]'To be clear, [bold type]you are not allowed to use any other toilet or urinal either - even ones outside of this Academy[speech style of headmistress], and if we catch you, you best believe you'll be in for a world of trouble.'[roman type][line break]Twirling the solitary toilet key on its key ring around [his of headmistress] index finger, [NameDesc of headmistress] marches from the hall.".
 
 Report going when the player is in School10:
 	if locked-toilets is false and watersports mechanics is 1: [this is how we get a urine puddle in the first place]
@@ -1053,7 +1077,7 @@ To execute (A - drink-assembly):
 				now the quest of heart-collar is cum-swallowing-quest;
 			otherwise:
 				now the quest of heart-collar is candy-eating-quest;
-				DigestionTimerUp 360;
+				DigestionTimerUp 600;
 			now heart-collar is respiration;
 			say QuestFlav of heart-collar;
 		say "The world in front of you begins to fade, and then you realise you are being teleported away.";

@@ -59,12 +59,12 @@ To trigger (Y - a baby bouncer):
 		say "They suddenly change their mind, apparently realising that your [ShortDesc of C] makes them unable to place you in the bouncer as they had clearly intended. [if the bimbo of the player < 14]Phew![otherwise]Aww...[end if]";
 	otherwise if a random number between 5 and 25 > the dexterity of the player or the bimbo of the player >= 16:
 		if there is a worn diaper, compute automatic state check of a random worn diaper;
-		say "The arms grab you under your armpits and pull you up, placing you into the overgrown baby toy, causing you to bounce wildly upward.[if there is a worn messed knickers]Immediately the mess in your undergarments begins shifting around and around, rubbing against you in ways you couldn't possibly have imagined before finding yourself in this situation.[otherwise if there is a worn diaper]The padding of your diaper pushes against your crotch, stimulating you [one of]in ways you couldn't have imagined before finding yourself in this situation[or]again[stopping].[end if]As you fall back down in the seat of the bouncer, [if asshole is actually occupied]the [printed name of random thing filling asshole] inside your [asshole] is roughly forced further inside of you, stimulating your hole as [end if]your toes manage to touch the floor for a brief moment before you are propelled back into the air.";
+		say "The arms grab you under your armpits and pull you up, placing you into the overgrown baby toy, causing you to bounce wildly upward.[if there is a worn perceived messed knickers]Immediately the mess in your undergarments begins shifting around and around, rubbing against you in ways you couldn't possibly have imagined before finding yourself in this situation.[otherwise if there is a worn diaper]The padding of your diaper pushes against your crotch, stimulating you [one of]in ways you couldn't have imagined before finding yourself in this situation[or]again[stopping].[end if]As you fall back down in the seat of the bouncer, [if asshole is actually occupied]the [printed name of random thing filling asshole] inside your [asshole] is roughly forced further inside of you, stimulating your hole as [end if]your toes manage to touch the floor for a brief moment before you are propelled back into the air.";
 		if there is a worn diaper:
 			ruin vagina;
 		if asshole is actually occupied and the anal sex addiction of the player > 5:
 			ruin vagina;
-		if there is a worn messed knickers, obsceneHumiliate;
+		if there is a worn perceived messed knickers, obsceneHumiliate;
 		now Y is grabbing the player;
 		repeat with M running through reactive monsters:
 			say BouncerTrapReactFlav of M;
@@ -80,7 +80,7 @@ To say SexSubmissionFlav of (Y - a baby bouncer):
 	check bounce release of Y.
 
 To say SexResistFlav of (Y - a baby bouncer):
-	say "You struggle to get out without bouncing! The trap [one of]responds by shaking[or]once again shakes[stopping] itself in retaliation. The rough treatment of the contraption [one of]sends pleasurable stimulation through to[or]puts stimulating pressure against[or]rubs the crotch of the bouncer against[in random order] your [genitals]!";
+	say "You struggle to get out without bouncing! Almost as if sounding an alarm in response to your resistance, the seat of the bouncer [one of]begins vibrating[or]once again vibrates[stopping]  loudly and violently! It's like you're sitting on a Sybian - the extremely high-powered vibrations [one of]send surges of pleasurable stimulation through to[or]puts stimulating pressure against[or]powerfully buzz away against[cycling] your [genitals]!";
 	increase the bounces of Y by 1;
 	ruin vagina times 2;
 	now the willingbounce of Y is 0;
@@ -88,9 +88,16 @@ To say SexResistFlav of (Y - a baby bouncer):
 
 To check bounce release of (Y - a baby bouncer):
 	if the bounces of Y >= a random number between 2 and 3:
-		if diaper messing >= 3 and the player is full and asshole is not actually occupied and there is worn total protection soilable knickers and the willingbounce of Y is 0:
-			say "As its final act to attempt to babify you, the top of the baby bouncer suddenly clamps down on your midriff! You wheeze with discomfort as your rectal muscles spasm uncontrollably. ";
-			compute messing;
+		if the willingbounce of Y is 0:
+			increase temp-expulsion-weakness by 1;
+			let T be "The bouncer's constricting squeeze is so strong -";
+			if diaper messing >= 3:
+				if the player is full and asshole is not actually occupied and there is worn total protection soilable knickers:
+					say "As its final act to attempt to babify you, the top of the baby bouncer suddenly clamps down on your midriff! ";
+					check sudden expulsion with reason T;
+			otherwise:
+				say "As its final act to attempt to babify you, the top of the baby bouncer suddenly clamps down on your midriff! ";
+				check pee pressure with reason T;
 		say "The baby bouncer, seemingly out of power, lowers you to the ground and releases you.";
 		if the willingbounce of Y is 1:
 			let D be a random off-stage eligible disposable diaper;

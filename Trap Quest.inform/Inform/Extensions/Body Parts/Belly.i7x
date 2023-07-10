@@ -1179,7 +1179,9 @@ To compute enema reactions:
 	repeat with M running through reactive people:
 		unless M is reacted-already:
 			if C is diaper:
-				compute diaper mess reaction of M;
+				if M is not diaperMessReacted:
+					compute diaper mess reaction of M;
+					now M is diaperMessReacted;
 			otherwise if C is clothing:
 				say EnemaReactionFlav of M into C;
 				compute enema reaction of M into C;

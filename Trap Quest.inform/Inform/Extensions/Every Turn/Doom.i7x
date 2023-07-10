@@ -92,12 +92,21 @@ To compute cultist conversion cutscene of (M - a monster):
 	now M is permanently banished.
 
 Report going when the player is in School01:
-	if Mansion01 is placed and most-recent-furious is student and doomed < 5 and doomed >= 0:
-		let M be most-recent-furious;
+	if retiredStudents > 0:
+		if most-recent-leaver is a monster:
+			let M be most-recent-leaver;
+			say "[bold type]As you enter the reception, you notice [M] [bold type]handing [his of M] armband back to [if receptionist is in School01][NameDesc of receptionist][otherwise]the reception desk[end if].[roman type][line break][speech style of receptionist]'Okay sweetie, now we just have to pop to the Staff Room for your final processing.'[roman type][line break][if receptionist is in School01][BigNameDesc of receptionist][otherwise][BigNameDesc of a random alive undefeated staff member][end if] takes [NameDesc of M][']s hand and leads them north, through to the Staff Room.";
+			increase retiredStudents by 1;
+			focus-consider most-recent-leaver;
+			if most-recent-leaver is listed in recent-leavers, remove most-recent-leaver from recent-leavers;
+			now most-recent-leaver is nothing;
+	otherwise if Mansion01 is placed and most-recent-leaver is student and doomed < 5 and doomed >= 0 and a random number between 1 and 3 is 1:
+		let M be most-recent-leaver;
 		let N be a random alive intelligent acolyte;
 		if N is nothing, now N is a random intelligent acolyte;
 		say "[bold type]As you enter the reception, you notice [M] [bold type]just leaving via the portal.[roman type][line break]But as [he of M] goes through it, the image on the other side glitches, and changes from a very normal looking house to the haunted mansion![line break][speech style of M]'Wait, this isn't where I wanted to go!'[roman type][line break]Suddenly, [NameDesc of N] appears behind [him of M]! [BigNameDesc of N] pulls a black sack down over [NameDesc of M][']s head.[line break][speech style of M]'Hey, what's the big ide-MMMPH!'[roman type][line break][BigNameDesc of N] announces in a loud, proud voice.[line break][speech style of N]'Come, young one, and join our [brother of N]hood. We shall bless you in the name of [Azathot].'[roman type][line break]You watch with [horror the bimbo of the player] as [NameDesc of M] is dragged away.";
-		now most-recent-furious is nothing;
+		if most-recent-leaver is listed in recent-leavers, remove most-recent-leaver from recent-leavers;
+		now most-recent-leaver is nothing;
 		let X be a random off-stage mindless acolyte;
 		if X is acolyte:
 			set up X;
@@ -107,10 +116,11 @@ Report going when the player is in School01:
 		focus-consider N;
 		focus-consider M;
 		force commence doom;
-	otherwise if most-recent-furious is a monster:
-		say "[bold type]As you enter the reception, you notice [most-recent-furious] [bold type]just leaving via the portal.[roman type][line break]Looks like [he of most-recent-furious] is gone for good, and doesn't intend to come back.";
-		focus-consider most-recent-furious;
-		now most-recent-furious is nothing.
+	otherwise if most-recent-leaver is a monster:
+		say "[bold type]As you enter the reception, you notice [most-recent-leaver] [bold type]just leaving via the portal.[roman type][line break]Looks like [he of most-recent-leaver] is gone for good, and doesn't intend to come back.";
+		focus-consider most-recent-leaver;
+		if most-recent-leaver is listed in recent-leavers, remove most-recent-leaver from recent-leavers;
+		now most-recent-leaver is nothing.
 
 
 A later time based rule (this is the compute doom rule):
@@ -206,6 +216,7 @@ A later time based rule (this is the compute doom rule):
 				DifficultyUp A by 1;
 			progress quest of doom-quest;
 			deploy a wisp;
+			deploy a slimeball;
 		otherwise if doom counter > 300 and doomed is 1:
 			say "[bold type]You feel a strange sense of being watched, and the atmosphere begins to feel oddly humid. It is almost like something horrible is breathing down your neck.[roman type][line break]";
 			now doomed is 2;
@@ -217,6 +228,7 @@ A later time based rule (this is the compute doom rule):
 				DifficultyUp A by 1;
 			progress quest of doom-quest;
 			deploy a wisp;
+			deploy a slimeball;
 		otherwise if doom counter > 450 and doomed is 2:
 			say "[bold type]The air feels positively moist and somehow everything seems more unwholesome, an impressive feat given the content of the game normally.[roman type][line break]";
 			now doomed is 3;
@@ -225,6 +237,7 @@ A later time based rule (this is the compute doom rule):
 				DifficultyUp A by 1;
 			progress quest of doom-quest;
 			deploy a wisp;
+			deploy a slimeball;
 		otherwise if doom counter > 600 and doomed is 3:
 			if the location of the player is not Mansion23:
 				say "[bold type]A horrible noise like a thousand screams of pure bliss echoes through the world itself, and the world itself takes on a soft pink cast for a moment. Something is drawing close to this world![roman type][line break]";
@@ -236,6 +249,7 @@ A later time based rule (this is the compute doom rule):
 				DifficultyUp A by 1;
 			progress quest of doom-quest;
 			deploy a wisp;
+			deploy a slimeball;
 		otherwise if doom counter > 800 and doomed is 4:
 			if the location of the player is Mansion23:
 				if the class of the player is cultist:
@@ -303,6 +317,10 @@ To resolve doom:
 	deploy a wisp;
 	deploy a wisp;
 	deploy a wisp;
+	deploy a slimeball;
+	deploy a slimeball;
+	deploy a slimeball;
+	deploy a slimeball;
 	progress quest of ritual-quest;
 	progress quest of doom-quest.
 

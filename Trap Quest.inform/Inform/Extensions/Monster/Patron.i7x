@@ -208,7 +208,7 @@ To compute diaper mess reaction of (M - a patron):
 		say "[BigNameDesc of M] [one of]visibly recoils[or]cries out with shock[or]steps back in horror[or]yells with surprise[in random order]. [if there is a barrier in the location of the player][line break][speech style of M]'[one of]Woah, this is not what I wanted!!! Too far!'[or]What the hell? This isn't what I'm paying for! Oh god, that smell!'[or]What the fuck are you doing?! Yuck, stop!!!'[or]Is this some kind of prank? That stinks!'[or]Nope, sorry, way too far for me. I'm out.'[or]Nope, nope nope nope. This is not my scene. No thank you!'[in random order][roman type][line break][end if][line break]";
 		say "[BigNameDesc of M] [if M is penetrating an orifice]pulls out and [end if]leaves in a hurry.";
 		destroy M;
-	obsceneHumiliate.
+	say severeHumiliateReflect.
 
 To compute (M - a demon lord) stomping (N - a patron):
 	if M is in the location of the player, say "[M] roars at the [N].[line break][speech style of M]'GET OUT OF MY WAY[one of], MORTAL[or][stopping]!'[roman type][line break]The [N] doesn't need telling twice - [he of N] runs out the room as fast as [his of N] legs can carry [him of N]!";
@@ -541,7 +541,8 @@ To say EnemaFloorReactionFlav of (M - a patron):
 	say "[BigNameDesc of M] [if M is interested][one of]smirks[or]chuckles[or]cackles[or]pretends to gag in disgust[or]laughs[or]tuts[or]exhales through [his of M] nose[or]guffaws[or]grins[then at random][otherwise]turns to look at you[end if].[line break][speech style of M]'[one of]How lewd[or]Disgusting[or]So gross[or]What a tramp[or]How foul[or]Oh my god[or]There it goes[or]An utter disgrace[or]Eww[or]What a dirty slut[or]You filthy skank[in random order].'[roman type][line break][slightHumiliateReflect]".
 
 To compute enema floor reaction of (M - a patron): [Doesn't lose favour]
-	if voluntarySquatting is 1, obsceneHumiliate.
+	if voluntarySquatting is 1, obsceneHumiliate;
+	otherwise severeHumiliate.
 
 Part 2 - Perception
 

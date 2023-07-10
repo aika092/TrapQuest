@@ -183,7 +183,7 @@ To compute (M - a modification machine) stretching (F - a fuckhole):
 	now M is not penetrating F.
 
 To compute (M - a modification machine) babifying:
-	if diaper messing >= 4 and a random number between 1 and 2 is 1 and the number of ass covering unremovable clothing is 0:
+	if diaper messing >= 4 and a random number between 1 and 3 is 1 and the number of ass covering unremovable clothing is 0:
 		compute M removing all protection from asshole;
 		if the player is not ass protected:
 			say "A robotic arm pushes a small rubber pellet into your [asshole].[line break][variable custom style]Was that a[one of][or]nother[stopping] suppository?![roman type][line break]";
@@ -199,6 +199,9 @@ To compute (M - a modification machine) babifying:
 		while the player is not really bursting and the player is not bladder incontinent and the raw-bladder-incontinence of the player < the max-bladder-incontinence of the player:
 			SilentlyBladderIncontinenceUp 1;
 		say "[if the player is really bursting]You feel your bladder weaken to the point where you're really desperate to pee![line break][variable custom style]Uh-oh, I feel permanently weaker down there...[otherwise]You suddenly don't feel like you need to pee.[line break][variable custom style][one of]I don't need to pee any more? How... suspiciously convenient...[or]Uh-oh, I think it's made me incontinent again...[stopping][end if][roman type][line break]";
+	otherwise if diaper messing >= 3 and the raw-rectum-incontinence of the player < the max-rectum-incontinence of the player:
+		say "A robotic arm injects you in the side with a needle. ";
+		RectumIncontinenceUp 1;
 	otherwise:
 		let B be 0;
 		if the player is really bursting, now B is 1;

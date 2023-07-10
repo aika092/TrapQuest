@@ -386,12 +386,12 @@ Carry out TQeating creme egg:
 	say "[DevourFlav of the noun] As your tongue hits the centre, you ";
 	if (diaper quest is 0 or diaper messing < 3) and the player is getting unlucky:
 		if diaper quest is 1 or (diaper lover > 0 and a random number between 1 and 2 is 1):
-			if the raw-bladder-incontinence of the player < the max-bladder-incontinence of the player and a random number between 1 and 2 is 1:
+			if the raw-bladder-incontinence of the player < the max-bladder-incontinence of the player and a random number between 1 and 3 is 1:
 				say "taste something bubbling with cursed magic.[line break][variable custom style]What was that?! And why can I suddenly I feel my bladder?![roman type][line break]A cursed effect seems to be making you temporarily incontinent!";
 				increase temporary-bladder-incontinence by 3;
 			otherwise if diaper messing >= 4 and a random number between 1 and 2 is 1:
 				say "taste something extremely sour.[line break][variable custom style]Castor oil[one of][or] again[stopping]?![roman type][line break]Almost immediately you feel a growing pressure in your bowels...";
-				increase suppository by 1;
+				increase suppository by 2;
 			otherwise:
 				say "taste something bitter. Moments later, you feel a slight twinge in your bladder as your control over it weakens.";
 				SilentlyBladderIncontinenceUp 1;
@@ -448,6 +448,7 @@ Carry out TQeating fudge:
 	bodyheal 4;
 	if (diaper quest is 0 or diaper messing < 3) and the player is getting unlucky:
 		say "[if fudge-poison-timer > 0]You feel more of the dexterity draining poison enter your veins.[otherwise]But your limbs suddenly feel much heavier. The fudge was poisoned![end if][line break][GotUnluckyFlav]";
+		if diaper lover > 0, RandomIncontinenceUp 1;
 		increase fudge-poison-timer by default-candy-duration / 2.
 
 a time based rule (this is the fudge poison decay rule):
@@ -633,6 +634,7 @@ Carry out TQeating toffee:
 	bodyheal 2;
 	if tutorial is 1 or ((diaper quest is 0 or diaper messing < 3) and the player is getting unlucky):
 		say "But [if toffee-poison-timer > 0]you also feel more of the intelligence draining poison enter your veins[otherwise]your brain suddenly clouds over and it's much more difficult to think. The toffee was poisoned[end if]![line break][GotUnluckyFlav]";
+		if diaper lover > 0, RandomIncontinenceUp 1;
 		increase toffee-poison-timer by default-candy-duration / 2.
 
 a time based rule (this is the toffee poison decay rule):

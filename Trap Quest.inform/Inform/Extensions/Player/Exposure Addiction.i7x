@@ -8,10 +8,11 @@ To decide which number is no-panties-fetish:
 
 Definition: a knickers (called C) is no-panties-disallowed:
 	if no-panties-fetish is 1 or the implant of pledge-lesson-panties is 1 or the class of the player is faerie:
-		unless C is diaper or C is no protection, decide yes;
+		unless C is diaper or C is training pants or C is no protection, decide yes;
 	decide no.
 
 Definition: yourself is fighting against no-panties:
+	if the player is in a predicament room, decide no;
 	if no-panties-fetish is 1 or the implant of pledge-lesson-panties is 1 or the class of the player is faerie:
 		if there is a worn no-panties-disallowed knickers, decide yes;
 	decide no.
@@ -27,7 +28,7 @@ An all later time based rule (this is the fighting against no-panties fetish rul
 		decrease no panties reminder by 1.
 
 Report wearing no-panties-disallowed knickers:
-	if the player is fighting against no-panties, say "[bold type]You immediately feel extremely uncomfortable in these,[roman type] thanks to your [if the class of the player is faerie]faerie instinct[otherwise if the implant of pledge-lesson-panties is 1]magic pledge you've just broken[otherwise if diaper lover >= 1]diaper fetish[otherwise]fetish for not wearing panties[end if].".
+	if the player is fighting against no-panties, say "[bold type]You immediately feel extremely uncomfortable in these,[roman type] thanks to your [if the class of the player is faerie]faerie instinct[otherwise if the implant of pledge-lesson-panties is 1]magic pledge you've just broken[otherwise if diaper lover >= 1]diaper fetish[otherwise]fetish for not wearing panties[end if]. Your focus, and therefore your intelligence, will be significantly reduced while you're wearing them.".
 
 This is the knickers can't be summoned with no panties fetish rule:
 	if summoning is 1 and (no-panties permanent fetish is 1 or the class of the player is faerie):
@@ -46,10 +47,12 @@ To decide which number is topless-fetish:
 
 Definition: a clothing (called C) is topless-fetish-disallowed:
 	if topless-fetish is 1:
+		if C is pasties and the class of the player is faerie, decide no;
 		if C is nipple covering clothing, decide yes;
 	decide no.
 
 Definition: yourself is fighting against topless:
+	if the player is in a predicament room, decide no;
 	if topless-fetish is 1:
 		if there is worn topless-fetish-disallowed clothing, decide yes;
 	decide no.

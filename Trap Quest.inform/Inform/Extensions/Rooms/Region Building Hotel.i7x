@@ -94,6 +94,7 @@ To Set Up The Hotel:
 		set up receptionist;
 		now receptionist is in Hotel40;
 		now the destination of hotel portal is the school;
+	deploy a slimeball;
 	if debugmode is 0 and loading scenes is 1, clear the screen;
 	progress quest of new-region-quest.
 

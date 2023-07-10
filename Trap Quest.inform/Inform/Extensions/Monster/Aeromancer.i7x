@@ -180,7 +180,8 @@ To say DiaperReaction of (M - an aeromancer):
 
 To compute diaper mess reaction of (M - an aeromancer):
 	say "[BigNameDesc of M] recoils with shock.[line break][speech style of M]'Are you shitting me?! Pun not intended!!! [if M is uninterested]I'm getting out of here.'[otherwise]I'm not going anywhere near that.'[end if][roman type][line break]";
-	obsceneHumiliate;
+	if voluntarySquatting is 1, say obsceneHumiliateReflect;
+	otherwise say severeHumiliateReflect;
 	if M is uninterested:
 		bore M;
 		if M is in the location of the player, compute mandatory room leaving of M.

@@ -216,7 +216,7 @@ An all time based rule (this is the toilet monster rule):
 			say "This horrific encounter is leaving a lasting impression on your psyche. [bold type]From now on, you won't be able to bring yourself to use a toilet unless there's someone friendly there with you.[roman type][line break]";
 		otherwise:
 			say "This horrific encounter is leaving a lasting impression on your psyche. You can tell that [bold type]from now on, you'll be more susceptible to losing hold of liquid in your mouth or butt, when you are surprised, or in pain.[roman type][line break]";
-			increase the expulsion-weakness of the player by 1;
+			increase the raw-expulsion-weakness of the player by 1;
 		if the times-terrorized of toilet-monster > 2:
 			let TPR be a random toilet-painting-room-exit toilet-painting-room;
 			if the player is not in TPR:
@@ -228,7 +228,7 @@ An all time based rule (this is the toilet monster rule):
 
 To compute painting entrance of (P - toilet-painting):
 	now playerRegion is school; [any time based events that don't happen in the school should also not happen here]
-	let R be a random number between 1 and 9;
+	let R be a random number between 3 and 8;
 	repeat with TPR running through toilet-painting-rooms:
 		decrease R by 1;
 		if R is 0:

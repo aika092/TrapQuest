@@ -540,7 +540,7 @@ To compute angry punishment of (M - demon lord):
 			bore M;
 			if the player is rectum incontinent and asshole is not actually occupied:
 				say "A moment later, your sphincter loosens and it begins. ";
-				compute messing;
+				compute partial messing;
 		otherwise:
 			say "bladder swelling rapidly, quickly to breaking point, and then past it, as you begin [one of]to wet yourself more than you ever have before, and ever thought possible[or]another impossibly long urination[stopping]! ";
 			increase the bladder of the player by 28;
@@ -593,10 +593,10 @@ To say DiaperReaction of (M - demon lord):
 To compute diaper mess reaction of (M - demon lord):
 	if diaper quest is 1:
 		say "[BigNameDesc of M] watches you with glee.[line break][speech style of M]'BWAHAHAHAHA! I HAVE SEEN WEAK MORTALS IN MY TIME, BUT YOU ARE TRULY THE MOST PATHETIC LIVING CREATURE TO EVER ENTER THESE HALLS[one of]! TO BE UNABLE TO CONTROL SOMETHING SO BASIC... THIS IS A FATE WORSE THAN DEATH[or][stopping].'[roman type][line break]";
-		obsceneHumiliate;
 	otherwise:
 		say "[BigNameDesc of M] looks at you with pure disgust in [his of M] eyes.[line break][speech style of M]'I DID NOT THINK THAT EVEN HUMANS WOULD DEBASE THEMSELVES TO SUCH DISGUSTING LEVELS[if M is uninterested]. GET OUT OF MY SIGHT[end if].'[roman type][line break]";
-	obsceneHumiliate.
+	if voluntarySquatting is 1, say obsceneHumiliateReflect;
+	otherwise say severeHumiliateReflect.
 
 Section 3 - Nightmares
 
@@ -743,7 +743,7 @@ To compute punishment of (P - xavier-nightmare-belt):
 	now the bladder of the player is 40;
 	say "You find yourself on the ground back in front of [NameDesc of M]. You feel just as exhausted as you did in the moment of your defeat, but you are now also impossibly full of [if diaper messing >= 3]food and [end if]drink. You look up at [NameDesc of M] and lock eyes just as it begins.";
 	if diaper messing >= 3 and asshole is not actually occupied:
-		compute messing;
+		compute partial messing;
 	otherwise:
 		now delayed urination is 1;
 		try urinating;

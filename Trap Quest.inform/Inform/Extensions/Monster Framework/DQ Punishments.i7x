@@ -286,8 +286,11 @@ Definition: a monster (called M) is able to forcefeed:
 		repeat with C running through things penetrating face:
 			if C is not clothing, decide no;
 			if C is not ringagged:
-				if C is locked, decide no;
-				if C is cursed and M is not able to remove cursed plugs, decide no;
+				if C is locked:
+					let K be a random unlock-key covering C;
+					if K is a thing and K is not held by current-monster and bondage protection is 0, decide no;
+					if current-monster is not a generic-unlocker, decide no;
+				if C is cursed and C is not pacifier and M is not able to remove cursed plugs, decide no;
 	decide yes.
 
 Definition: a monster is willing to forcefeed: decide no.
@@ -479,6 +482,34 @@ Definition: diaper-cumrag (called P) is appropriate:
 
 To compute punishment of (P - diaper-cumrag):
 	compute diaper cumrag use of current-monster.
+
+Section 11 Diaper Facesit
+
+diaper-facesit is a diaper punishment. The priority of diaper-facesit is 2.
+
+To say EnticeFlav of (M - a monster) for (P - diaper-facesit):
+	if M is intelligent, say "[line break][speech style of M]'Why don't you lie down on your back, and let me sit my big padded bum-bum right down on that cute little face of yours...'[roman type][line break]";
+	otherwise say "[big he of M] gestures that [he of M] wants to sit on your face and go potty.".
+
+To decide which number is the relevant addiction of (P - diaper-facesit):
+	decide on the grossness addiction of the player - 3.
+
+Definition: a monster is eager to diaper facesit:
+	if it is able to diaper facesit, decide yes;
+	decide no.
+
+Definition: a monster is able to diaper facesit:
+	if there is a monster penetrating face, decide no;
+	decide yes.
+
+Definition: a monster is willing to diaper facesit: decide no. [Needs to be enabled individually.]
+
+Definition: diaper-facesit (called P) is appropriate:
+	if current-monster is willing to diaper facesit and current-monster is eager to diaper facesit, decide yes;
+	decide no.
+
+To compute punishment of (P - diaper-facesit):
+	compute diaper facesit of current-monster.
 
 
 DQ Punishments ends here.

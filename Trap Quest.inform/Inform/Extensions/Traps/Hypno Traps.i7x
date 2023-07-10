@@ -174,7 +174,7 @@ To compute specific hypno effect of (Y - a diaper-hypno-trap):
 	otherwise if diaper messing >= 3 and the player is full and asshole is not actually occupied and there is a worn total protection soilable knickers:
 		say "Beyond your control, you feel your body bare down as you grunt.";
 		now voluntarySquatting is 1;
-		compute messing;
+		compute partial messing;
 	otherwise if the bladder of the player > 6:
 		say "You feel yourself relax.";
 		now delayed urination is 2;

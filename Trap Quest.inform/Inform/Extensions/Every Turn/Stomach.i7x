@@ -60,10 +60,6 @@ Definition: a wearthing is respiration-enhancing:
 	if it is respiration clothing, decide yes;
 	decide no. [Done so that we can include tattoos]
 
-To decide which number is food-period:
-	decide on stomach-period.
-	[decide on stomach-period * (2 - diaper quest).] [Food is digested faster in diaper quest]
-
 Definition: yourself is digesting: [sometimes we don't want digestion to happen]
 	if the player is in a predicament room:
 		if the player is in Predicament20 or the player is in Predicament19 or the player is in Toilet01 or the player is in Toilet02, decide no; [The Safe Rooms of the predicament world should not let you stall out your bodily functions]
@@ -99,16 +95,17 @@ An all time based rule (this is the compute stomach rule):
 
 To compute hunger and thirst:
 	let T be the thirst of the player;
-	let N be (the stomach-food of the player / 4) + 1;
-	if the stomach-food of the player > 0:
+	let SF be the stomach-food of the player;
+	let N be (SF / 4) + 1;
+	[if the stomach-food of the player > 0:
 		if the stomach-food of the player < N, now N is the stomach-food of the player;
 	otherwise:
-		now N is 1;
+		now N is 1;]
 	now hunger-flav-said is 0;
 	repeat with N2 running from 1 to N:
 		compute food;
-	if diaper messing >= 3:
-		if N is 0 and the remainder after dividing time-earnings by stomach-period * 2 < time-seconds, increase rectum by 1; [builds up slowly even if nothing eaten]
+	if diaper messing >= 3 and rectum > 0:
+		if SF is 0 and the remainder after dividing time-earnings by stomach-period * 2 < time-seconds, increase rectum by 1; [builds up slowly even if nothing eaten]
 		compute soiling;
 	let SL be ((the stomach-liquid of the player + 3) / 3);
 	StomachDown SL;
@@ -172,7 +169,9 @@ To compute food:
 		if weight gain fetish is 1:
 			FatDown 1;
 		otherwise if diaper quest is 0:
-			BustDown 2;
+			BustDown 1;
+			FatAssDown 1;
+		now hunger-flav-said is 1;
 	otherwise if the stomach-food of the player > 0:
 		now player-hunger is 0;
 		StomachFoodDown 1;
@@ -180,8 +179,9 @@ To compute food:
 		if the stomach-food of the player > 5, FatUp 1;
 		if (xavier-throat-link is 0 or chess table is grabbing the player) and (rectum > 0 or diaper messing >= 4 or (diaper messing >= 3 and diaper focus is 1)), increase rectum by 1; [With scenes & no diaper focus, it only starts going after the matron triggers it.]
 		if diaper messing < 3, now rectum is 0; [Just to make double triple sure]
-		if the player is hungry and hunger-flav-said is 0, say "[bold type]You are beginning to feel quite hungry[if there is a worn cursed ballgag].[roman type] Your [random worn ballgag] loosens slightly, as if it's temporarily allowing you to eat around it.[otherwise].[roman type][line break][end if]";
-	now hunger-flav-said is 1.
+		if the player is hungry and hunger-flav-said is 0:
+			say "[bold type]You are beginning to feel quite hungry[if there is a worn cursed ballgag].[roman type] Your [random worn ballgag] loosens slightly, as if it's temporarily allowing you to eat around it.[otherwise].[roman type][line break][end if]";
+			now hunger-flav-said is 1.
 
 Definition: yourself is diapered:
 	if there is a worn diaper, decide yes;
@@ -213,17 +213,13 @@ Definition: yourself is diaper kicking:
 
 previous-horny is a number that varies.
 
-To decide which number is hunger mechanics:
-	decide on 1;
-	if diaper messing >= 3 or active hunger mechanics is 1, decide on 1;
-	decide on 0.
-
 DQMessingHunger is initially false.
 
 To decide which number is active hunger mechanics:
 	if the latex-transformation of the player > 4, decide on 0;
-	if DQMessingHunger is true or digestion-timer > 0, decide on 1;
-	if diaper quest is 1 and diaper messing >= 3, decide on 0;
+	if diaper quest is 1 and hungry messer is 0 and diaper messing >= 3:
+		if DQMessingHunger is true or digestion-timer > 0 or there is a worn respiration-enhancing wearthing, decide on 1;
+		decide on 0;
 	decide on 1.
 
 To compute DQ hunger:
@@ -233,7 +229,22 @@ To compute DQ hunger:
 			now the stomach-food of the player is 0;
 			say "[bold type]You suddenly feel very hungry. [roman type]You will have lowered strength until you eat some food.";
 		otherwise:
+			now hunger-flav-said is 0;
 			compute food.
+
+Report going:
+	if diaper quest is 1 and diaper messing >= 3 and the player is not hungry and (hungry messer is 1 or the stomach-food of the player is 0) and the player is in a foody room:
+		let R be a random number between 1 and 3;
+		if debuginfo > 0, say "[input-style]Sudden hunger check: d3 ([R]) | 2.5 Threshold[roman type][line break]";
+		if R is 3:
+			if hungry messer is 0:
+				say "[bold type]The nature of the [location of the player] seems to remind your body that you are supposed to eat food to, you know, stay alive.[roman type][line break]";
+				compute DQ hunger;
+			otherwise:
+				now hunger-flav-said is 0;
+				compute food;
+				if hunger-flav-said is 0, say "[bold type]The nature of the [location of the player] seems to make your body more hungry.[roman type][line break]";
+				otherwise say "[variable custom style]My body must be reacting to the fact I've just entered a [location of the player]...[roman type][line break]";
 
 To DigestionTimerUp (N - a number):
 	let AHM be active hunger mechanics;

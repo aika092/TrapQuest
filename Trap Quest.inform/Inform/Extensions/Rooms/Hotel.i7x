@@ -44,8 +44,10 @@ Hotel16 is a mandatory important untrappable modern room. The printed name of Ho
 Hotel17 is an important modern room. The printed name of Hotel17 is "Lounge Area". "This open space has extremely low tables and ornate rugs, giving it an Eastern Asian feel. [NoChairs]". The shape of Hotel17 is L3/0-0-1-1-1-1.
 
 Hotel18 is a mandatory important modern room. The printed name of Hotel18 is "Feeding Area". "The extremely fetishistic nature of the hotel becomes even more apparent in this 'dining' room. Rather than crockery and cutlery, the room simply has dog bowls on the floor filled with various shades of dark red, grey and brown mush. [NoChairs]". The shape of Hotel18 is L3/0-0-1-1-1-1.
+Definition: Hotel18 is foody: decide yes. [Does this room remind the player that they're feeling hungry?]
 
 Hotel19 is a mandatory important modern room. The printed name of Hotel19 is "Kitchen". "The kitchen has several spotlessly clean silver basins with modern silver taps. They're much too small for you to get in yourself, but you could probably wash dirty clothing in here.". The shape of Hotel19 is L3/0-0-1-1-1-1.
+Definition: Hotel19 is foody: decide yes. [Does this room remind the player that they're feeling hungry?]
 
 Hotel20 is a mandatory important modern room. The printed name of Hotel20 is "Laundry Room". "This room has a large sign saying 'LAUNDRY ROOM' on one wall. [if hotel changing station is in Hotel20]A large capsule, about the size and shape of a shower cubicle, sits against one wall. It appears to be dedicated to giving adults diaper changes[otherwise]Metal robotic hands hang extend out of walls in the ceiling and walls, and there is a large vat of soapy water on one side of the room[end if].". The shape of Hotel20 is L3/0-0-1-1-1-1.
 
@@ -94,6 +96,7 @@ To decide which number is the obstacle-hindrance of (R - Hotel39):
 	decide on 3.
 To decide which text is ObstacledDesc of (R - Hotel39):
 	decide on "It takes a bit of extra time to move in between the tables.".
+Definition: Hotel39 is foody: decide yes. [Does this room remind the player that they're feeling hungry?]
 
 Hotel40 is a mandatory modern room. The printed name of Hotel40 is "[if there is a warp portal in Hotel40]Hotel Portal Room[otherwise]Empty Room[end if]". "[if there is a warp portal in Hotel40]This room has a swirling green portal in the north wall.[otherwise]This room has very little in it.[end if]". The shape of Hotel40 is L3/0-0-0-1-1-1.
 

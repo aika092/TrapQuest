@@ -43,6 +43,9 @@ To set up (M - matron):
 	now M is unmotherly; [At the start she doesn't consider you her charge.]
 	let B be a random unowned bandage;
 	add B to the tradableItems of M, if absent;
+	add continence-potion to the tradableItems of M, if absent;
+	add continence-potion to the taxableItems of M, if absent;
+	add continence-potion to the banishItems of M, if absent;
 	calm M.
 
 This is the spawn initial matron rule:
@@ -198,13 +201,13 @@ To say DiaperReaction of (M - matron):
 	check guaranteed perception of M.
 
 To compute diaper mess reaction of (M - matron):
-	obsceneHumiliate;
-	if voluntarySquatting is 1, obsceneHumiliate;
 	if M is interested:
-		if M is doing nothing special and diaperChecking is 0:
+		if M is doing nothing special and diaperChecking is false:
 			compute diaper check of M;
 		otherwise:
 			say "[BigNameDesc of M] looks at you with [one of]a smug expression[or]a judging expression[or]a caring expression[in random order].[line break][speech style of M]'[one of][if voluntarySquatting is 1]Pooping yourself on purpose in front of me? You really are a naughty little baby aren't you?'[otherwise]Having problems controlling your poopies, little baby? Aww, how adorable!'[end if][or]Uh-oh. Did you mean to do that, little one?'[or]Ooh how wonderful, your potty untraining seems to be going smoothly!'[or]What a good little baby you are, making a big mess in front of your Nanny!'[in random order][roman type][line break]";
+		if voluntarySquatting is 1, say obsceneHumiliateReflect;
+		otherwise say severeHumiliateReflect;
 	otherwise:
 		say DiaperReaction of M.
 

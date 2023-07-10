@@ -200,8 +200,8 @@ To compute drinking effect (N - 4):
 		if diaper quest is 1:
 			if the raw-bladder-incontinence of the player > 0 or the raw-rectum-incontinence of the player > 0:
 				say "You feel the blessed potion of control improving your ability to hold onto your [if the raw-rectum-incontinence of the player > 0]bowels and [end if]bladder!";
-				if the raw-rectum-incontinence of the player > 0, decrease the raw-rectum-incontinence of the player by 1;
-				if the raw-bladder-incontinence of the player > 0, decrease the raw-bladder-incontinence of the player by 1;
+				RectumIncontinenceDown 3;
+				BladderIncontinenceDown 3;
 		otherwise:
 			if the thickness of hips > the largeness of breasts, HipDown 1;
 			otherwise BustDown 1.

@@ -63,6 +63,7 @@ A monster can be notebook-studied.
 A monster can be bossdefeated.
 A monster can be diaper-committed.
 A monster can be double-diaper-committed. [Going to double diaper you now]
+A monster can be diaperMessReacted. [Have they already recently reacted to the player messing themselves?]
 A monster has a number called dismissRefused. [Have they refused to be dismissed?]
 A monster can be summon-available or permanently banished. A monster is usually summon-available. [Can it come back?]
 Definition: a monster is summon appropriate:
@@ -177,7 +178,7 @@ Definition: a monster is musky: decide no.
 Definition: a monster is a generic-unlocker: decide no. [Does it have access to keys to unlock clothing?]
 Definition: a monster is a clothes-destroyer: decide no. [Does it have enough strength to easily rip clothes apart, even ones with a metal chain and lock?]
 
-A monster can be doing nothing special, spanking the player, changing the player, feeding the player, whipping the player, masturbating the player, enema-filling the player (this is the punishment-attack-state property).
+A monster can be doing nothing special, spanking the player, changing the player, feeding the player, whipping the player, masturbating the player, enema-filling the player, diaper-facesitting the player (this is the punishment-attack-state property).
 A monster has a number called paralyse-status. [paralyse status of -1 makes you immune]
 Definition: A monster is paralysed rather than not-paralysed:
 	if the paralyse-status of it > 0, decide yes;
@@ -292,6 +293,7 @@ Definition: a monster is messy:
 	if it is diaper-enslaved and the refractory-period of it <= (the messRefractoryLimit of it) and diaper messing >= 6 and playerRegion is not school, decide yes;
 	if it is caged and it is in the location of dominatrix-cage and the mess of dominatrix-cage > 0, decide yes;
 	decide no.
+Definition: a monster is messy-seeker: decide yes. [Does this NPC follow the player around like a fly when messy?]
 
 Definition: a monster is scarable: decide yes. [Can this monster be made to flee? Mostly just overridden for bosses.]
 

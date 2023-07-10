@@ -5,6 +5,7 @@ A student is a kind of monster. A student is intelligent. A student is usually f
 To decide which number is the aggro limit of (M - a student): [The number at which they turn unfriendly]
 	decide on 10.
 
+
 A student has a number called lessonInt1. [Can be used to track various things in a lesson]
 A student has a number called lessonInt2. [Can be used to track various things in a lesson]
 A student can be kissPunished. [Used in kissing lesson to track punishments]
@@ -23,6 +24,7 @@ To LessonReset (M - a student):
 	now the student-diaper-mess of M is 0;
 	now the student-extra-diapers of M is 0.
 
+Definition: a student is messy-seeker: decide no. [Doesn't stalk the player when messy]
 Definition: a student is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 Definition: a student is controlling: decide no. [Will they grab onto subduing clothing e.g. a clitoris lead?]
 
@@ -87,6 +89,8 @@ To say FuckerDesc of (M - a student):
 	say "[student-name of M]".
 To say BigFuckerDesc of (M - a student):
 	say "[student-name of M]".
+
+retiredStudents is a number that varies. [How many students have been 'retired' and imprisoned in the staff room?]
 
 Part - Rank, Name and Print
 
@@ -578,6 +582,34 @@ To compute toilet reaction of (M - a student):
 		otherwise say "[BigNameDesc of M] stares directly at you, smirking.";
 		say strongHumiliateReflect.
 
+To say ClothesPeeReaction of (M - a student):
+	if M is interested:
+		if diaper quest is 1:
+			if M is friendly:
+				say "[BigNameDesc of M] [one of]cringes[or]frowns[or]looks unimpressed[in random order].[line break][speech style of M]'[if the current-rank of M > 1][one of]Gross! Put on a diaper like the rest of us[or]You're supposed to be wearing a diaper[or]You seem to have forgotten your diaper[at random][otherwise]I [one of]guess that's why they want us to wear diapers[or]think you might need diapers[at random][end if].'[roman type][line break]";
+				FavourDown M with consequences;
+			otherwise:
+				say "[BigNameDesc of M] makes a disgusted face.";
+		otherwise if the current-rank of M > 3:
+			say "[BigNameDesc of M] [one of]smirks[or]grins[or]smiles[at random], as if [he of M] finds it [one of]hot[or]fun[or]cute[at random].";
+		otherwise:
+			say "[BigNameDesc of M] frowns, but doesn't say anything.";
+	otherwise:
+		say "[BigNameDesc of M] doesn't look at you directly or say anything, so it's hard to gauge [his of M] reaction.".
+
+To compute diaper mess reaction of (M - a student):
+	if diaper quest is 1:
+		let D be the dedication of M + the current-rank of M;
+		say "[BigNameDesc of M] looks at you with a [if M is nasty student][one of]smug expression[or]sneer[cycling][otherwise if M is a tryhard student][one of]frown[or]pout[cycling][otherwise if M is an amicable student][one of]caring expression[or]smile[cycling][otherwise if M is a ditzy student][one of]smirk[or]grin[cycling][otherwise][one of]grimace[or]hesitant expression[cycling][end if].[line break][speech style of M]'[if D >= 6][one of]You're getting good at this.'[or]That was impressive, but my next one's gonna be even louder than that.'[or]Save some attention for the rest of us!'[in random order][otherwise if D is 5][one of]You like being watched, don't you?'[or]Is it weird that I found that really hot?'[in random order][otherwise if D is 4][one of]Wow, what did you eat?'[or]You are a bold one.'[in random order][otherwise if D is 3][one of]You filthy fucking baby.'[or]Jeez! Warn me next time...'[or]I was not mentally prepared for that.'[in random order][otherwise if D is 2][one of]Haha, that was fucking gross.'[or]I'm going to try and pretend that didn't just happen in front of me!'[or]That reeks!'[in random order][otherwise][one of]Oh my god! Do you have NO self-respect?!'[or]Get away from me!'[or]I'm gonna hurl...'[or]PLEASE tell me that what I think just happened isn't what happened.'[or]No way, no way, NO WAY! That's so fucked up!'[in random order][end if][roman type][line break][strongHumiliateReflect]";
+	otherwise:
+		say "[BigNameDesc of M] looks at you with [one of]disgust[or]shock[or]horror[or]disbelief[or]distress in [his of M] eyes[or]a wide open mouth[as decreasingly likely outcomes].[line break][speech style of M]'[one of]I'm trying to learn to be kinky, but that's just way too far.'[or][big please] [please] [caps please] tell me you did not just crap yourself in front of me?!'[or]What the fuck are you doing?! Yuck, stop!!!'[or]What is wrong with you?!'[or]Did the teachers make you do that, or are you just fucked up in the head all on your own?'[or]This can't be real. Gross!'[cycling][roman type][line break]";
+		if voluntarySquatting is 1, say obsceneHumiliateReflect;
+		otherwise say severeHumiliateReflect;
+		if M is monster and (M is friendly or M is uninterested):
+			if M is friendly, say "Unable to stomach what [he of M][']s seeing, [NameDesc of M] abandons you.";
+			bore M;
+			compute mandatory room leaving of M.
+
 To say NastyTrapReactFlav of (M - a student):
 	if the current-rank of M >= 3:
 		say "[BigNameDesc of M] [one of]cringes[or]makes a pitying sound[at random].[line break][speech style of M]'[one of]Rather you than me.'[or]I wondered if that might happen.'[or]That's just how things are around here.'[in random order][roman type][line break]";
@@ -585,11 +617,17 @@ To say NastyTrapReactFlav of (M - a student):
 		say "[BigNameDesc of M] [one of]makes a disgusted sound[or]almost chokes in surprise[or]grimaces[at random].[line break][speech style of M]'[one of]Yuck.'[or]How could you let that happen to you? Do you have no shame?'[or]Oh my lord! What a disgrace.'[in random order][roman type][line break]";
 		FavourDown M with consequences.
 
+To compute disgusting spit reaction of (M - a student):
+	say "[BigNameDesc of M] [one of]frowns[or]wrinkles [his of M] nose[or]winces[in random order].[line break][speech style of M]'Eww!'[roman type][line break][slightHumiliateReflect]";
+	if M is monster, FavourDown M with consequences.
+
 To check attack of (M - a student):
 	if the player is not in a predicament room:
-		let ST be a random friendly staff member in the location of the player;
-		if ST is monster and the number of interested unfriendly staff members in the location of the player is 0, say "[BigNameDesc of M] wants to attack you, but [he of M] is waiting until [NameDesc of ST] [if ST is interested]loses interest and [end if]leaves the room...";
-		otherwise check default attack of M.
+		let ST be a random undefeated friendly staff member in the location of the player;
+		if ST is monster and the number of interested unfriendly staff members in the location of the player is 0:
+			check sneaky bullying of M;
+		otherwise:
+			check default attack of M.
 
 Part - Protection
 
@@ -970,7 +1008,7 @@ To execute (A - bully-forcefeed):
 	if the current-rank of current-monster > a random number between 2 and 3:
 		say "you to drink a glowing pink potion.";
 		if diaper lover >= 0:
-			increase digestion-timer by 300;
+			increase digestion-timer by 900;
 			say "You can feel that your body is now digesting food and drink twice as fast as before![line break][variable custom style]Uh-oh...[roman type][line break]";
 		if the lips of face < max lip size:
 			BustUp 1;
@@ -1119,8 +1157,8 @@ To execute (A - a prank-action):
 To compute default prank of (M - a student):
 	now current-monster is M;
 	let A be a random eligible prank-action;
-	if A is nothing or there is a staff member in the location of M:
-		if debuginfo > 0, say "[input-style]Prank action fails ([if there is a staff member in the location of M]nearby staff member[otherwise]no eligible prank action could be found[end if]!)[roman type][line break]";
+	if A is nothing or there is an undefeated staff member in the location of M:
+		if debuginfo > 0, say "[input-style]Prank action fails ([if there is an undefeated staff member in the location of M]nearby staff member[otherwise]no eligible prank action could be found[end if]!)[roman type][line break]";
 	otherwise:
 		execute A;
 		CheerUp M.
@@ -1224,6 +1262,7 @@ To execute (A - prank-skirt):
 		if M is not current-monster:
 			if M is uninterested or M is friendly:
 				check guaranteed perception of M;
+	FearUp 10;
 	say "[BigNameDesc of current-monster]'Oh my god, look, everybody's looking at you!'[roman type][line break][big he of current-monster] points behind you[if the number of students in the location of the player is 1], but when you look that way, there's nobody there[end if]. [big he of current-monster] was just distracting you!";
 	if prank-wedgie is eligible:
 		execute prank-wedgie;
@@ -1242,6 +1281,7 @@ To execute (A - prank-pants):
 		if M is not current-monster:
 			if M is uninterested or M is friendly:
 				check guaranteed perception of M;
+	FearUp 10;
 	say "[BigNameDesc of current-monster]'Oh my god, look, everybody's looking at you!'[roman type][line break][big he of current-monster] points behind you[if the number of students in the location of the player is 1], but when you look that way, there's nobody there[end if]. [big he of current-monster] was just distracting you!";
 	update appearance level;
 	if prank-photo is eligible:
@@ -1258,6 +1298,50 @@ Definition: prank-nails is eligible:
 To execute (A - prank-nails):
 	say "[speech style of current-monster]'Gotcha!'[roman type][line break][BigNameDesc of current-monster] has taken advantage of a moment you weren't looking to sneak up to you and grab both of your hands! When [he of current-monster] lets go of your fists, they now have a brand new set of apparently unremovable fake nails![line break][variable custom style]Oh my gosh! These are so unwieldy, and they make me look like a total whore![roman type][line break]";
 	summon fake-nails uncursed.
+
+prank-tickle is a prank-action.
+Definition: prank-tickle is eligible:
+	if diaper quest is 1, decide yes;
+	decide no.
+To execute (A - prank-tickle):
+	say "[speech style of current-monster]'TICKLE ATTACK!'[roman type][line break][BigNameDesc of current-monster] has taken advantage of a moment you weren't looking to sneak up behind you and grip your midriff with both hands! [big he of current-monster] begins to tickle your sides mercilessly, at least for the few seconds it takes until you can wrestle yourself away!";
+	increase temp-expulsion-weakness by 1;
+	let T be "The tickle torture makes your muscles spasm, and";
+	check sudden spit and expulsion with reason T.
+
+
+To check sneaky bullying of (M - a student):
+	let SN be the number of undefeated friendly staff members in the location of the player;
+	let S be a random undefeated interested friendly staff member in the location of the player;
+	if S is nothing, now S is a random undefeated friendly staff member in the location of the player;
+	if a random number between 1 and (SN * 5) is 1:
+		let R be a random number between 1 and 5;
+		if R is 1:
+			say "[BigNameDesc of M] finds a moment when [if SN > 1]the teachers aren't[otherwise][NameDesc of S] isn't[end if] looking to punch you in the arm!";
+			compute M striking arms;
+			check sneaky bullying caught of M by S;
+		otherwise if R is 2:
+			say "[BigNameDesc of M] finds a moment when [if SN > 1]the teachers aren't[otherwise][NameDesc of S] isn't[end if] looking to kick you in the shin!";
+			compute M striking thighs;
+		otherwise if the dedication of M >= 2 and there is an undefended fuckhole:
+			let F be a random undefended fuckhole;
+			if F is asshole, say "[BigNameDesc of M] roughly shoves a finger up inside your [asshole], before quickly yanking it back out!";
+			otherwise say "[BigNameDesc of M] sneakily reaches a finger between your legs, and painfully pinches your clit!";
+			PainUp 5;
+			stimulate F from M;
+		otherwise:
+			say "[BigNameDesc of M] sneakily pinches you!";
+			PainUp a random number between 5 and 10;
+	otherwise:
+		say "[BigNameDesc of M] wants to attack you, but [he of M] is waiting until [NameDesc of S] [if S is interested]loses interest and [end if]leaves the room...".
+
+To check sneaky bullying caught of (M - a monster) by (S - a monster):
+	if the player is getting very lucky:
+		say "[BigNameDesc of S] gasps.[line break][speech style of S]'[student-name of M], I saw that! It's detention for you!'[roman type][paragraph break][speech style of M]'No, wait, I'm sorry-!'[roman type][line break]But no matter what [he of M] says it doesn't stop [NameDesc of S] from grabbing [him of M] by the ear and marching [him of M] from the room.";
+		bore S;
+		bore M;
+		regionally place S;
+		regionally place M.
 
 
 Part - Damage
@@ -1356,8 +1440,17 @@ To say DismissalResponseBursting of (M - a student):
 	otherwise:
 		say "[speech style of M]'[if M is interested]Uh-oh, [NameBimbo][']s gonna wet [himself of the player]! Come and see[otherwise]Don't let the teachers catch you having an accident[end if]!'[roman type][line break]".
 
+
+most-recent-leaver is an object that varies.
+
+recent-leavers is a list of people that varies.
+
+An all time based rule (this is the cycle leavers rule):
+	if most-recent-leaver is nothing and the remainder after dividing time-earnings by 739 < time-seconds and the number of entries in recent-leavers > 0, now most-recent-leaver is entry 1 in recent-leavers.
+
 To uniquely destroy (M - a student):
-	now most-recent-furious is M.
+	add M to recent-leavers, if absent;
+	now most-recent-leaver is M.
 
 [This is the object used for the team predicament where the student is bound behind the player]
 

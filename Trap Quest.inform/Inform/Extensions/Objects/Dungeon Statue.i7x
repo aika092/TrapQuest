@@ -47,7 +47,7 @@ To say dungeon statue effect (N - a number):
 	otherwise if N is 5:
 		say "[if diaper quest is 0]cock [end if]pacifier summoning";
 	otherwise if N is 6:
-		say "mouthful wisp".
+		say "[if diaper quest is 0]mouthful [end if]wisp".
 
 Carry out drinking DungeonScenery01:
 	compute dungeon statue interaction.

@@ -18,10 +18,10 @@ To say ClothingDesc of (C - a rubber duck gag):
 
 To decide which number is the initial outrage of (C - a rubber duck gag):
 	if diaper quest is 1, decide on 0;
-	decide on 3.
+	decide on 4.
 
 To decide which number is the initial cringe of (C - a rubber duck gag):
-	decide on 4.
+	decide on 6.
 
 To decide which number is the delicateness-influence of (C - a rubber duck gag):
 	let S be -1;

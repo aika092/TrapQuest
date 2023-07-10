@@ -39,13 +39,16 @@ messySmellSource is an object that varies.
 This is the soiled diapers smell gross rule:
 	now messySmellSource is a random carried messed knickers;
 	if messySmellSource is nothing and diaper messing >= 6, now messySmellSource is a random carried soiled-diaper;
+	if messySmellSource is nothing and diaper messing >= 6 and trashcan is worn and the diaper-fill of trashcan > 1, now messySmellSource is trashcan;
 	if messySmellSource is nothing, now messySmellSource is a random messy monster in the location of the player;
 	if messySmellSource is nothing, now messySmellSource is a random messed knickers in the location of the player;
 	if messySmellSource is nothing and diaper messing >= 6, now messySmellSource is a random soiled-diaper in the location of the player;
 	if messySmellSource is nothing and woman-player is in the location of the player and the woman-status of woman-player is 81, now messySmellSource is woman-player;
 	if messySmellSource is nothing and the hole-in-wall-scene of woman-player > 0 and woman-player is in HoleInWall and hole-in-wall is in the location of the player, now messySmellSource is hole-in-wall;
 	if messySmellSource is a thing and the player is air breathing vulnerable:
-		if turnsWithSoiledDiaper < 100, increase turnsWithSoiledDiaper by 1;
+		if turnsWithSoiledDiaper < 100:
+			increase turnsWithSoiledDiaper by 1;
+			if the remainder after dividing turnsWithSoiledDiaper by 8 is 1, SmellGrossOut messyDiaperSmellGrossnessLevel;
 		if turnsWithSoiledDiaper is 1 and the player is perturbed and the player is not grossed out, say "The gross smell of [NameDesc of messySmellSource] is gradually filling your nostrils.";
 	otherwise if turnsWithSoiledDiaper > 0 and the number of worn messed knickers is 0:
 		now turnsWithSoiledDiaper is (turnsWithSoiledDiaper * 3) / 4;
@@ -82,22 +85,28 @@ To decide which figure-name is the examine-image of (C - a diaper pail):
 most-recent-pail is an object that varies.
 
 dungeon-diaper-pail is a diaper pail. dungeon-diaper-pail is in Dungeon30.
-hotel-diaper-pail is a diaper pail. hotel-diaper-pail is in Hotel20.
+hotel-diaper-pail is a diaper pail. hotel-diaper-pail is in Hotel31.
 school-diaper-pail is a diaper pail. school-diaper-pail is in School07.
 mansion-diaper-pail is a diaper pail. mansion-diaper-pail is in Mansion13.
 
 a diaper pail has a list of soiled-diaper called the pailed-diapers.
 
+diaper-pail-dispose-count is a number that varies.
+
 Check inserting something into a diaper pail:
 	if the noun is soiled-diaper or the noun is carried diaper:
 		if the player is immobile or the player is in danger, say "You're a bit busy!" instead;
 		allocate 3 seconds;
-		say "You open the lid of the diaper pail[if the diaper addiction of the player < 12], holding your nose[end if], and push [NameDesc of the noun] into it. You quickly close the lid again.";
+		if the noun is school-diaper-pail:
+			say "You push the diaper down the pneumatic tube system, and it is whoosed away, [if the times-met of ex-princess > 0 and ex-princess is caged]as you now know, directly onto [NameDesc of ex-princess][']s face[otherwise if the times-met of ex-princess > 0]to [NameDesc of ex-princess][']s old dungeon cell[otherwise]to who-knows-where[end if].";
+		otherwise:
+			say "You open the lid of the diaper pail[if the diaper addiction of the player < 12], holding your nose[end if], and push [NameDesc of the noun] into it. You quickly close the lid again.";
 		if the noun is wet diaper:
 			say "You feel some self-respect returning to you at properly disposing of your wet diaper.";
 			dignify 400;
 		only destroy the noun;
 		if the noun is soiled-diaper, add the noun to the pailed-diapers of the second noun, if absent;
+		increase diaper-pail-dispose-count by 1;
 	otherwise:
 		say "That doesn't go in there." instead;
 	do nothing instead.
@@ -108,7 +117,8 @@ To compute diaper pail entrance:
 	repeat with SD running through the pailed-diapers of most-recent-pail:
 		remove SD from the pailed-diapers of most-recent-pail;
 		if SD is off-stage, now SD is in DiaperPail;
-	now the source-room of DiaperPail is the location of the player;
+	if most-recent-pail is in a placed room, now the source-room of DiaperPail is the location of most-recent-pail;
+	otherwise now the source-room of DiaperPail is the location of the player;
 	now the player is in DiaperPail;
 	now diaperPailStruggleAttempts is 0;
 	let N be the number of soiled-diaper in DiaperPail;

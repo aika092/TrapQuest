@@ -506,11 +506,19 @@ To decide which number is the bartering value of (T - a pasties) for (M - a mech
 
 red-pasties is a pasties. Understand "red", "pasties" as red-pasties.
 
+Definition: a pasties is class-relevant:
+	if the class of the player is faerie, decide yes;
+	decide no.
+
 To compute class set up of (C - red-pasties):
-	now C is cursed;
-	now the quest of C is vaginal-creampie-quest;
-	now vaginal-creampie-quest is persistent;
-	now C is vaginal-sex-addiction-influencing.
+	if diaper quest is 0:
+		now C is cursed;
+		now the quest of C is vaginal-creampie-quest;
+		now vaginal-creampie-quest is persistent;
+		now C is vaginal-sex-addiction-influencing;
+	otherwise:
+		now C is sex-addiction-influencing;
+		now the raw-magic-modifier of C is -2.
 
 To say ClassSummonFlav of (C - red-pasties):
 	say "A pair of red pasties appears on your nipples!".

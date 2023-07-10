@@ -167,9 +167,9 @@ To say GroundPeeReaction of (M - a fairy):
 	say "[speech style of M]'Teehee, you're such a naughty minx!'[roman type][line break]".
 
 To compute enema floor reaction of (M - a fairy):
-	severeHumiliate;
 	if voluntarySquatting is 1, obsceneHumiliate;
-	say "[EnemaFloorReactionFlav of M]".
+	otherwise severeHumiliate;
+	say EnemaFloorReactionFlav of M.
 
 To say EnemaFloorReactionFlav of (M - a fairy):
 	say "[BigNameDesc of M] [if M is interested]seems to by entertained by the noises your [asshole] is making[otherwise]turns and laughs at you[end if].[line break][speech style of M]'O-M-G, you are so naughty!!!'[roman type][line break][if the humiliation of the player < 25000][one of]You turn a bright shade of red[or]You blush brightly with shame[or]You shiver with self-consciousness[or]You turn red-faced with shame[in random order].[end if]".
@@ -885,7 +885,7 @@ To compute friendly drink of (M - a fairy):
 		say "[if M is mating][line break][speech style of M]'You just want me to get you pregnant again, don't you? Maybe you're becoming as addicted to pregnancy as a real fairy!'[otherwise][BigNameDesc of M] has an evil look in [his of M] eye. [speech style of M]'Oh don't worry, I'll fill you up!'[end if][roman type][line break]";
 		alwayscutshow figure of fairy interact 13 for M;
 		say "With a wave of [his of M] hands, your belly starts to expand. It keeps on growing until you feel very, very full. [if the largeness of belly < max belly size]It's not just your stomach that [he of M] has filled up...[end if]";
-		if hunger mechanics is 1, StomachFoodUp 1 + diaper quest;
+		StomachFoodUp 1 + diaper quest;
 		increase the stomach-water of the player by 3;
 		while the stomach of the player < stomach-max:
 			increase the stomach-water of the player by 1;

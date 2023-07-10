@@ -163,6 +163,7 @@ Definition: a clothing (called C) is actually displacable rather than actually u
 		repeat with D running through worn top level protection unskirted clothing:
 			if the bottom-layer of D > the bottom-layer of C, decide no;
 	decide yes.
+
 [!<ClothingIsActuallyAvoidable>+
 
 Can this be somehow made to expose the crotch if it's the top level protection?

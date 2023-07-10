@@ -83,6 +83,7 @@ Carry out kneeing:
 			say "Your displeasure at wearing a soggy diaper slightly hampers the power of your knee.";
 		otherwise:
 			say "You knee [NameDesc of the noun] with all your might.";
+		compute combat diaper squish;
 		damage A on the noun;
 		compute upright fatigue gain;
 		if there is a worn hostility clothing, compute hostileDamage;

@@ -153,14 +153,15 @@ Check entering the throne:
 					say "[if the player is bursting and K is clothing]You suddenly feel a desperate need to use your [K]![otherwise if the player is bursting]You suddenly feel a desperate need to pee![otherwise]Nothing seems to happen. Strange...[end if]";
 			otherwise:
 				say "The shape of the throne twists and morphs beneath you! You gasp as you realise it has now transformed into a throne shaped potty![line break][variable custom style][if the diaper addiction of the player < 4]What the FUCK is going on in this sick game?![otherwise if the diaper addiction of the player < 10]I don't know what would be worse, using a diaper or using this thing...[otherwise if the diaper addiction of the player < 15]Why would I use this when I have my diaper?[end if][roman type][line break]";
+				RectumIncontinenceUp 1;
 			now Dungeon11 is toilets;
 			now the noun is transformed instead;
 		otherwise if R is not 4 and R is not 5 and R is not 6 and the noun is transformed and (the bladder of the player > 0 or rectum > 1):
 			say "Suddenly, you feel the magic of throne working on your crotch! You suddenly realise that you desperately need the loo! [if the raw-rectum-incontinence of the player > 0 or the raw-bladder-incontinence of the player > 0]Maybe the throne is counteracting your incontinence? [end if]";
 			say "You let go of the hold on your bladder[if rectum > 1] and sphincter[end if], using the potty for its intended purpose. After a few [if rectum > 1]embarrassing noises coming from your rear end[otherwise]awkward moments listening to yourself tinkle[end if], you're done. The potty makes a weird gurgling sound, and then is suddenly completely empty and clean again!";
 			reset rectum;
-			if the raw-rectum-incontinence of the player > 0, decrease the raw-rectum-incontinence of the player by 1;
-			if the raw-bladder-incontinence of the player > 0, decrease the raw-bladder-incontinence of the player by 1;
+			BladderIncontinenceDown 5;
+			RectumIncontinenceDown 5;
 			now the bladder of the player is 0 instead;
 		otherwise if R is 2:
 			now the throne is untriggered;

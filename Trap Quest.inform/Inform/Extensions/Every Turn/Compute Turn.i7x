@@ -531,6 +531,14 @@ Carry out ManuallyBreathing:
 		now player-breathing is false.
 Understand "breath", "breathe", "hold breath", "hold my breath", "hold breathe", "hold my breathe" as ManuallyBreathing.
 
+To suggest breathing:
+	if the player is needing to breathe:
+		say "[if player-breathing is false]Start breathing normally again[otherwise]Start holding your breath[end if]?";
+		if the player is consenting, try ManuallyBreathing;
+	otherwise:
+		now player-breathing is true.
+
+
 Definition: yourself is air breathing vulnerable:
 	if the player is not needing to breathe, decide no;
 	if tubesuit is worn, decide no;
@@ -816,8 +824,7 @@ This is the autopush hypno rule:
 	if hypno-trigger is "maturity" and hypno-trigger-maturity is 1 and asshole is not actually occupied and there are worn soilable knickers:
 		say "[bold type]Having heard the word 'maturity', you find you automatically start [if the player is upright]squatting, grunting,[otherwise]grunting[end if] and pushing.[roman type][line break]";
 		now voluntarySquatting is 1;
-		compute messing;
-		now another-turn is 1.
+		compute partial messing.
 The autopush hypno rule is listed in the hypno triggers rules.
 
 This is the autospread hypno rule:
@@ -976,6 +983,7 @@ To Reset Flags:
 	now semen-encountered is 0;
 	now attack-type is 0;
 	now mirror-triggered is 0;
+	now temp-expulsion-weakness is 0;
 	if currently-squirting is 0, now voluntarySquatting is 0;
 	if presented-orifice is nothing and the player is not live fucked, now the player-reaction of the player is unprepared; [This is how we tell the game that the player is no longer submitting or resisting.]
 	now presented-orifice is nothing;
@@ -992,6 +1000,7 @@ To Reset Flags:
 		now M is not stalled;
 		if M is wrangling arms and M is pacified, now M is not wrangling arms;
 	vary stickman counters;
+	now target-poster is nothing;
 	now feeding bowls is in Hotel18; [The inbuilt shit within I6 means all edible items must be portable to work. This way, even if the player picks it up, it goes back down on the floor immediately.]
 	now food machine is in School17; [same for the school food machine]
 	if surrendered is 1 and the player is not in danger, now surrendered is 0;

@@ -63,6 +63,8 @@ To compute perception of (M - a robobutler):
 			serve alcohol from M;
 		otherwise if a random number between 0 and watersports fetish is 1:
 			serve urine from M;
+		otherwise if a random number between 0 and 1 is 1:
+			serve goop from M;
 		otherwise:
 			say "[big he of M] glides towards you, bowing deeply as [he of M] addresses you in a monotone.[line break][speech style of M]'GREETINGS. I AM [if M is polite robobutler]SERVICE UNIT 1.57[otherwise]ASSISTOTRON 38[end if]. ARE YOU ENJOYING YOUR HOTEL STAY?'[roman type][line break][if M is buddy][line break][otherwise]One of [his of M] 'hands' is politely placed upturned towards you, as if [he of M] is subtly asking for a tip.[end if]";
 	otherwise if (vagina is exposed and the semen volume of vagina > 0 and the number of things penetrating vagina is 0) or (asshole is exposed and belly liquid types > 0 and the number of things penetrating asshole is 0) :
@@ -132,6 +134,21 @@ To serve urine from (M - a robobutler):
 	otherwise:
 		say "[big his of M] eyes turn yellow as [he of M] looks at you.[line break][first custom style]'GREETINGS VISITOR.'[roman type][line break]";
 		calm M.
+
+To serve goop from (M - a robobutler):
+	now autodrink is 1;
+	if the player is able to drink:
+		say "[big his of M] eyes turn yellow as [he of M] looks at you.[line break][first custom style]'[caps please] ACCEPT THIS FREE DRINK ON BEHALF OF THE MANAGEMENT.'[roman type][line break][BigNameDesc of M] produces a shot glass filled with a thick pink liquid. It's almost certainly not going to be something that *helps* you retain your dignity and sanity, not in this world. But [he of M] doesn't seem like [he of M]'s looking for 'no' as an answer. Do you drink the shot? ";
+		if the player is bimbo consenting:
+			StomachUp 1;
+			say "You [unless the player is feeling dominant]obediently [end if]swallow down the pink goop, feeling the effects almost instantly. ";
+			satisfy M;
+			if diaper lover > 0 and the player is at least somewhat continent, RandomIncontinenceUp 1;
+			otherwise SexAddictUp 1;
+		otherwise:
+			say "[big his of M] eyes flash red for a brief moment.[line break][first custom style]'CUSTOMER ID HAS BEEN ADDED TO THE LIST OF POTENTIALLY TROUBLESOME GUESTS.'[roman type][line break][big he of M] turns to leave you alone, for now.";
+			FavourDown M;
+			bore M.
 
 Report going in the presence of a robobutler:
 	repeat with M running through unconcerned robobutlers in the location of the player:

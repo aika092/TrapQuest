@@ -47,7 +47,7 @@ To decide which number is the initial outrage of (C - a baby-dress):
 	decide on 8.
 
 To decide which number is the initial cringe of (C - a baby-dress):
-	if C is super-short, decide on 11;
+	if C is super-short, decide on 8;
 	decide on 5.
 
 Definition: a baby-dress is fetish appropriate:
@@ -139,7 +139,7 @@ To say MediumDesc of (C - a waddle outfit):
 	say "latex baby waddle outfit".
 
 To decide which number is the initial cringe of (C - a waddle outfit):
-	decide on 16.
+	decide on 9.
 
 To decide which number is the initial armour of (C - a waddle outfit):
 	decide on 15.

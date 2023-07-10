@@ -201,11 +201,11 @@ To compute (Y - a needle trap) injecting into (X - face): [Lips, actually.]
 	if diaper quest is 1:
 		if a random number between 1 and 2 is 1 and tutorial is 0:
 			say "Owww, that really hurt! The large balloon at the back end of the dart suddenly pumps a lot of liquid straight down your throat[one of]. That can't be good...[or].[stopping]";
-			BladderUp 5;
+			StomachUp 5;
 			NeedleDelicateUp;
 		otherwise:
 			say "It jabs you right in the cheek. Owww, that really hurt! And yet you can [one of]feel whatever it injected into you making you feel hotter and more flustered...[or]still feel the injected aphrodisiac making you hornier![stopping]";
-			Arouse 2500;
+			Arouse 3000;
 			NeedleDelicateUp;
 	otherwise:
 		say "At the last minute the needle splits into two, to jab both your upper and lower lips. Both empty their contents at the same time. Ye-ow, that really stung!";
@@ -307,9 +307,8 @@ To say RuneTrapReactFlav of (M - a monster):
 expansion-rune-trap is a rune trap.
 
 Definition: expansion-rune-trap is fetish appropriate:
-	if max breast size is 1 and max ass size is 1, decide no;
-	if diaper quest is 0 or lactation fetish is 1, decide yes;
-	decide no.
+	if diaper quest is 0 and max breast size is 1 and max ass size is 1, decide no;
+	decide yes.
 
 Figure of breasts rune trap is the file "Env/Dungeon/rune2a.jpg".
 Figure of breasts rune trap triggered is the file "Env/Dungeon/rune2b.jpg".
@@ -320,19 +319,22 @@ To decide which figure-name is the triggered-image of (T - expansion-rune-trap):
 	decide on Figure of breasts rune trap triggered.
 
 To compute unique trigger of (Y - expansion-rune-trap):
-	if the player is not top heavy:
-		say "The magic surges to your breasts, causing them to swell!";
-		BustUp 3;
-	if lactation fetish is 1:
-		if the milk volume of breasts < the milk capacity of breasts and the milk volume of breasts >= the milk capacity of breasts / 2 and the latex-transformation of the player <= 5:
-			say "Your [BreastDesc] suddenly feel very heavy. You can tell they're absolutely full to the brim with milk!";
-			MilkUp the milk capacity of breasts - the milk volume of breasts;
-		otherwise:
-			say "They feel more active: you can tell that your [if the lactation rate of breasts > 0][BreastDesc] will produce milk faster now[otherwise]have started to produce milk over time[end if]!";
-			increase the lactation rate of breasts by 1;
-	if the player is not bottom heavy:
-		say "The magic rushes through your hips, making them widen!";
-		HipUp 1.
+	if diaper quest is 1:
+		RandomIncontinenceUp 1;
+	otherwise:
+		if the player is not top heavy:
+			say "The magic surges to your breasts, causing them to swell!";
+			BustUp 3;
+		if lactation fetish is 1:
+			if the milk volume of breasts < the milk capacity of breasts and the milk volume of breasts >= the milk capacity of breasts / 2 and the latex-transformation of the player <= 5:
+				say "Your [BreastDesc] suddenly feel very heavy. You can tell they're absolutely full to the brim with milk!";
+				MilkUp the milk capacity of breasts - the milk volume of breasts;
+			otherwise:
+				say "They feel more active: you can tell that your [if the lactation rate of breasts > 0][BreastDesc] will produce milk faster now[otherwise]have started to produce milk over time[end if]!";
+				increase the lactation rate of breasts by 1;
+		if the player is not bottom heavy:
+			say "The magic rushes through your hips, making them widen!";
+			HipUp 1.
 
 balloon-rune-trap is a rune trap.
 

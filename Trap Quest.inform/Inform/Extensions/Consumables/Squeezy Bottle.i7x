@@ -20,6 +20,7 @@ Check drinking squeezy-bottle:
 	if current-predicament is business-briefcase-predicament and the player is in a predicament room:
 		if business-briefcase-predicament is squeezy-bottle-drunk, say "It's already empty." instead;
 		allocate 6 seconds;
+		now business-briefcase-predicament is squeezy-bottle-drunk;
 		say "You bring the tip of the bottle to your lips and squeeze it, allowing some of the strange tasting liquid to enter your mouth. You obediently swallow gulp after gulp until it's all gone.";
 		if diaper messing >= 4:
 			say "Your stomach almost immediately starts rumbling, and a pressure builds in your belly... Oh no. You've just drunk an entire bottle of laxative...";

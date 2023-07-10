@@ -67,4 +67,94 @@ To say MonsterOfferAcceptFlav of (M - a dominatrix) to (T - a bondage):
 To say ShortDesc of (T - a bondage):
 	say "bondage".
 
+Part - Trashcan
+
+trashcan is an overdress. trashcan is metal. trashcan is unique. The printed name of trashcan is "[clothing-title-before]trashcan[clothing-title-after]". The text-shortcut of trashcan is "tsh".
+trashcan is chestless. trashcan is not-top-displacable. trashcan is normally-nipple-exposing. trashcan is unskirted.
+
+trashcan has a number called tissue-fill.
+trashcan has a number called diaper-fill.
+
+Definition: trashcan is condom pinnable:
+	if the tissue-fill of trashcan >= 2, decide yes;
+	decide no.
+Definition: trashcan is drinkable condom pinned: decide no.
+Definition: trashcan is removable: decide no.
+Definition: trashcan is class-relevant:
+	if the class of the player is human toilet or the class of the player is condom collector or the class of the player is latex fetish model, decide yes;
+	decide no.
+Definition: trashcan is trash-ready:
+	if diaper quest is 1:
+		if the diaper-fill of trashcan < 2, decide yes;
+		decide no;
+	otherwise:
+		if the tissue-fill of trashcan < 2, decide yes;
+		if condom fetish >= 2 and the used condoms of trashcan < a random number between 1 and 25, decide yes;
+		decide no.
+
+To compute class set up of (C - trashcan):
+	if diaper quest is 0, now the tissue-fill of trashcan is 2;
+	otherwise now the diaper-fill of trashcan is 0.
+
+To say ClassSummonFlav of (C - trashcan):
+	say "A [C] appears strapped around your [body area of C]! [bold type]You can sense that [NameDesc of C] [bold type]cannot be removed other than by changing your class...[roman type][line break]".
+
+To say ShortDesc of (C - trashcan):
+	say "trashcan".
+
+To say ClothingDesc of (C - trashcan):
+	say "A small metal wastepaper basket that is strapped tightly to your midriff. [if the player is not in a predicament room][bold type]It appears to have some powerful magical effect that is preventing you from unstrapping it, or even touching it, meaning that you can't do anything about anything that anyone drops inside it. [roman type][end if]";
+	if diaper quest is 0, say "[if the tissue-fill of trashcan is 0]It is completely empty, so people can see your belly and crotch straight through the mesh frame[otherwise if the tissue-fill of trashcan is 1]It is half-full of discarded [semen]-filled tissues, so people can see your belly straight through the mesh frame, but your crotch is hidden from view[otherwise]It is full of discarded [semen]-filled tissues, which is very humiliating, but is at least hiding your belly and crotch from view[end if].";
+	otherwise say "[if the diaper-fill of trashcan is 0]It is completely empty, so people can see your belly and crotch straight through the mesh frame[otherwise if the diaper-fill of trashcan is 1]It holds a single large soiled diaper, so people can see your belly straight through the mesh frame, but your crotch is hidden from view[otherwise]It currently contains two large soiled diapers, which is very humiliating, but is at least hiding your belly and crotch from view[end if].";
+	say "[bold type]You can sense that [NameDesc of C] [bold type]cannot be removed other than by changing your class...[roman type][line break]";
+
+To say CondomsPinnedDesc of (C - trashcan):
+	if the used condoms of C >= 20, say "[BigNameDesc of C] has an almost countless number of used condoms in it.";
+	otherwise say "[BigNameDesc of C] has [if the used condoms of C > 1][used condoms of C] very visible cum-filled condoms discarded on top of the tissues[otherwise if the used condoms of C is 1]a large cum-filled condom very visibly discarded on top of the tissues[end if][if the used condoms of C > 0 and the empty condoms of C > 0], and [end if][if the empty condoms of C > 1][empty condoms of C] used condoms that have been torn and sucked dry[otherwise if the empty condoms of C is 1]one used condom that has been torn and sucked dry[end if].".
+
+trashcan has a number called smellCycle.
+
+To compute periodic effect of (C - trashcan):
+	if diaper quest is 0:
+		if the tissue-fill of trashcan < 2, now C is see-through;
+		otherwise now C is dense;
+	otherwise:
+		if the diaper-fill of trashcan < 2, now C is see-through;
+		otherwise now C is dense;
+	if the diaper-fill of trashcan > 0 and diaper messing < 6:
+		if the remainder after dividing turnsWithSoiledDiaper by 8 is 0, GrossOut wetDiaperSmellGrossnessLevel with reason "" and sensation "[one of]scent[or]aroma[cycling]";
+		increase the smellCycle of trashcan by 1;
+		if the smellCycle of trashcan is 8, now the smellCycle of trashcan is 0;
+	if C is not class-relevant:
+		say "[BigNameDesc of C] fizzles from existence!";
+		destroy C.
+To compute school periodic effect of (C - trashcan):
+	compute periodic effect of C.
+
+Definition: trashcan is potentially vagina covering:
+	if diaper quest is 0 and the tissue-fill of trashcan > 0 and the player is upright, decide yes;
+	if diaper quest is 1 and the diaper-fill of trashcan > 0 and the player is upright, decide yes;
+	decide no.
+Definition: trashcan is potentially penis covering:
+	if trashcan is potentially vagina covering, decide yes;
+	decide no.
+Definition: trashcan is potentially at least partially vagina covering:
+	if trashcan is potentially vagina covering, decide yes;
+	decide no.
+Definition: trashcan is potentially at least partially penis covering:
+	if trashcan is potentially at least partially vagina covering, decide yes;
+	decide no.
+
+To decide which number is the soak-limit of (C - trashcan):
+	decide on the tissue-fill of trashcan * 10.
+
+To decide which number is the initial outrage of (C - trashcan):
+	if diaper quest is 0 and the tissue-fill of trashcan > 0, decide on 14;
+	if diaper quest is 1 and the diaper-fill of trashcan > 0, decide on 14;
+	decide on 3.
+To decide which number is the initial cringe of (C - trashcan):
+	decide on the initial outrage of C.
+
+Definition: trashcan is acceptableCumRag: decide no.
+
 Bondage Framework ends here.

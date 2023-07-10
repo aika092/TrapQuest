@@ -317,7 +317,7 @@ To say BrokenFlav:
 	say "[one of]Your broken mind can't help but become [if the player is horny]even[otherwise]a bit[end if] more aroused.[or][or][or][cycling]";
 
 To delayed humiliate (X - a number):
-	increase the delayed humiliation of the player by X * (1 + diaper quest).
+	increase the delayed humiliation of the player by X [* (1 + diaper quest)].
 
 To finally humiliate (X - a number):
 	if X < 0, now X is 0;

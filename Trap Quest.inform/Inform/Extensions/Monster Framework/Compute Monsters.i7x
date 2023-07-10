@@ -2,8 +2,12 @@ Compute Monsters by Monster Framework begins here.
 
 [We only compute monsters in the region of the player, to reduce the lag in between turns.]
 Definition: a monster is simulated:
-	if it is interested or it is in the location of the player or it is regional, decide yes;
-	decide no.
+	if the player is in a predicament room and the player is not in Predicament20:
+		if it is in a predicament room, decide yes;
+		decide no;
+	otherwise:
+		if it is interested or it is in the location of the player or it is regional, decide yes;
+		decide no.
 
 friendly-guys is a list of monsters that varies.
 
@@ -145,7 +149,7 @@ To compute action (N - a number) of (M - a monster):
 		if lagdebug is true:
 			say "[M] is NOT interested.";
 			wait 200 ms before continuing;
-		if (the boredom of M is 0 and M is unleashed and M is location-attracted) or M is messy, check seeking N of M;
+		if (the boredom of M is 0 and M is unleashed and M is location-attracted) or (M is messy and M is messy-seeker), check seeking N of M;
 		otherwise check motion of M;
 	if M is submission-assisting:[TODO: handle problem where assisters randomly lose interest]
 		if M is not interested or M is not in the location of the player or the number of combative monsters in the location of the player is 0:

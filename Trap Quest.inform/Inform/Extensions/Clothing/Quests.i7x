@@ -149,7 +149,7 @@ To compute consequence of (Q - questTired):
 
 questHungry is a questConsequence.
 Definition: questHungry is eligible:
-	if hunger mechanics is 1 and the stomach-food of the player > 0, decide yes;
+	if active hunger mechanics is 1 and the stomach-food of the player > 0, decide yes;
 	decide no.
 To compute consequence of (Q - questHungry):
 	say "The effort of concentrating so hard on your [ShortDesc of quest-target] has made you a bit more hungry.";
@@ -179,6 +179,14 @@ Definition: questMagic is eligible:
 To compute consequence of (Q - questMagic):
 	say "You feel the curse drain magic from your veins as it leaves!";
 	increase the magic-fatigue of the player by 3.
+
+questIncontinence is a questConsequence.
+Definition: questIncontinence is eligible:
+	if diaper lover > 0 and the player is at least somewhat continent, decide yes;
+	decide no.
+To compute consequence of (Q - questIncontinence):
+	say "You feel the curse sending tingling sensations to your loins as it leaves!";
+	RandomIncontinenceUp 1.
 
 questGape is a questConsequence.
 Definition: questGape is eligible:
@@ -779,7 +787,7 @@ To say QuestTitle of (Q - careful-peeing-quest):
 
 To compute persistent reward of (Q - careful-peeing-quest) on (C - a clothing):
 	say "temporarily speeding up the digestion [if diaper messing < 3]of fluids [end if]in your stomach!";
-	DigestionTimerUp 60.
+	DigestionTimerUp 600.
 
 Part - Swimming Quest
 
@@ -997,9 +1005,13 @@ To say QuestPersistFlav of (Q - mess-quest) on (C - a clothing):
 	say "[if C is cursed]The magic sealing your [MediumDesc of C] is lifted! It rewards your bowel movement[otherwise if C is bland]You sense a blessing being laid upon your [MediumDesc of C]! It rewards your continued bowel movements[otherwise]Your [MediumDesc of C] rewards your continued bowel movements[end if] by ".
 
 To compute persistent reward of (Q - mess-quest) on (C - a clothing):
-	now fullness-time is 0;
-	now rectum is 4;
-	say "[']refilling your chambers['][if the player is feeling full], making you start to feel the need mess again[end if]!".
+	if mess-phase <= 0 or mess-phase >= 100:
+		now fullness-time is 0;
+		now rectum is 4;
+		say "[']refilling your chambers['][if the player is feeling full], making you start to feel the need mess again[end if]!";
+	otherwise:
+		say "Improving your control over your bowels!";
+		RectumIncontinenceDown 1.
 
 Part - Oversatiated Quest
 
@@ -1014,7 +1026,7 @@ To decide what number is the quest-weighting of (Q - oversatiated-quest) for (C 
 	if diaper messing >= 3:
 		if C is diaper:
 			if strongCurses is 1, decide on 2;
-			decide on 50; [95% of diapers should spawn with this or similar]
+			decide on 100; [95% of diapers should spawn with this or similar]
 	decide on 1 + weight gain fetish.
 
 To say QuestFlav of (Q - oversatiated-quest):
@@ -1383,12 +1395,17 @@ Definition: gold-candy-wisp-quest is appropriate:
 	if Hotel01 is placed and Mansion01 is placed, decide yes;
 	decide no.
 
+drink-milk-wisp-quest is a wisp quest. The printed name of drink-milk-wisp-quest is "drink some human breast milk".
+Definition: drink-milk-wisp-quest is appropriate:
+	if diaper quest is 1, decide yes;
+	decide no.
+
 drink-urine-wisp-quest is a wisp quest. The printed name of drink-urine-wisp-quest is "swallow [urine]".
 Definition: drink-urine-wisp-quest is appropriate:
 	if watersports fetish is 1, decide yes;
 	decide no.
 
-brothel-wisp-quest is a wisp quest. The printed name of brothel-wisp-quest is "work as a prostitute".
+brothel-wisp-quest is a wisp quest. The printed name of brothel-wisp-quest is "work as a [if diaper quest is 1]submissive fetish sex worker[otherwise]prostitute[end if] in the Hotel region".
 Definition: brothel-wisp-quest is appropriate:
 	if Hotel01 is placed, decide yes;
 	decide no.
@@ -1585,8 +1602,11 @@ To compute punishment of (W - a wisp punishment):
 
 bimbo-wisp-punishment is a wisp punishment. The printed name of bimbo-wisp-punishment is "become more [if diaper quest is 1]babified[otherwise]sluttified[end if]".
 To compute punishment of (W - bimbo-wisp-punishment): [TODO: expand]
-	say "You feel significantly more deviant.";
-	RandomAddictUp 2.
+	if diaper quest is 0 or the player is totally incontinent:
+		say "You feel significantly more deviant.";
+		RandomAddictUp 2;
+	otherwise:
+		RandomIncontinenceUp 2.
 
 A wisp stat punishment is a kind of wisp punishment.
 Definition: a wisp stat punishment is appropriate: decide yes.

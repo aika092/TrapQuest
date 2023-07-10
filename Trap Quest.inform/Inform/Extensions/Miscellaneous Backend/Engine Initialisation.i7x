@@ -203,7 +203,8 @@ To fill in legacy table blanks:
 	unless there is a choice in row 82 of the Table of Player Options, now choice in row 82 of Table of Player Options is 0;
 	unless there is a choice in row 83 of the Table of Player Options, now choice in row 83 of Table of Player Options is 0;
 	unless there is a choice in row 84 of the Table of Player Options, now choice in row 84 of Table of Player Options is 1;
-	unless there is a choice in row 85 of the Table of Player Options, now choice in row 85 of Table of Player Options is 0.
+	unless there is a choice in row 85 of the Table of Player Options, now choice in row 85 of Table of Player Options is 0;
+	unless there is a choice in row 86 of the Table of Player Options, now choice in row 86 of Table of Player Options is 0.
 
 To fill in custom flavour blanks:
 	unless there is a name in row 10 of the Table of Info Options:
@@ -348,6 +349,10 @@ To retrieve diaper options:
 	if diaper lover >= 1:
 		if choice in row 50 of the Table of Player Options > -2:
 			now the current menu is the Table of Diaper Options;
+			carry out the displaying activity;
+			clear the screen;
+		if diaper quest is 1 and the player is a may 2023 diaper donator and diaper messing >= 3 and weight gain fetish is 0:
+			now the current menu is the Table of Hungry Messer Options;
 			carry out the displaying activity;
 			clear the screen;
 		if the player is a december 2022 diaper donator:

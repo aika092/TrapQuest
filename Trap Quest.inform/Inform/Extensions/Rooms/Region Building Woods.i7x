@@ -58,6 +58,7 @@ To Set Up The Woods:
 		if M is monster:
 			set up M;
 			if M is not in a placed dodgy jungle room, now M is in a random placed unbossed dodgy jungle room;
+	deploy a slimeball;
 	if debugmode is 0 and loading scenes is 1, clear the screen;
 	progress quest of new-region-quest.
 

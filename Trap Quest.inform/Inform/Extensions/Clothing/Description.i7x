@@ -111,7 +111,7 @@ Report examining a wearthing:
 		let U be the unworn outrage of the noun;
 		if the noun is worn, now U is the outrage of the noun;
 		let O be the initial outrage of the noun;
-		say "[input-style]Outrageousness[if the noun is not worn] when worn[otherwise if the noun is not currently at least partially visible] (when visible)[end if]: [if O is not U and the noun is not tattoo]Raw value: [O]/20; After context & bonus modifiers[one of] (e.g. fluids, degrading attachments, or being displaced)[or][stopping]: [end if][U]/20[roman type][line break]";
+		say "[input-style]Outrageousness[if the noun is not worn] when worn[otherwise if the noun is not currently at least partially visible] (when visible)[end if]: [if O is not U and the noun is not tattoo]Raw value: [O]/20; After context & bonus modifiers[one of] (e.g. fluids, degrading attachments, being displaced, or being partially covered up)[or][stopping]: [end if][U]/20[roman type][line break]";
 		if diaper quest is 1:
 			let U be the unworn cringe of the noun;
 			if the noun is worn, now U is the cringe of the noun;
@@ -176,8 +176,14 @@ To say InfluenceDesc of (C - a wearthing):
 		if the soreness-influence of C > 0, say "You can sense that this [item of C] is helping you get sore [if the soreness-influence of C > 2]much [end if]more slowly.";
 	if the fatigue-influence of C < 0, say "You can sense that this [item of C] is [if the fatigue-influence of C < -2]greatly [end if]improving your stamina.";
 	if the fatigue-influence of C > 0, say "You can sense that this [item of C] is [if the fatigue-influence of C < -2]greatly [end if]reducing your stamina.";
-	if the diaper-addiction-influence of C < 0 and diaper lover > 0, say "You can sense that this [item of C] is [if the diaper-addiction-influence of C < -1]significantly [end if][if the diaper addiction of the player < 5 and there is a worn diaper]suppressing any thoughts of you enjoying wearing your diaper[otherwise if the diaper addiction of the player < 5]helping you avoid any weird temptations to wear a diaper[otherwise if the diaper addiction of the player < 8]reducing the amount you enjoy wearing and using diapers[otherwise]helping to curb your addiction to wearing and using diapers[end if].";
-	if the diaper-addiction-influence of C > 0 and diaper lover > 0, say "You can sense that this [item of C] is making you enjoy [unless there is a worn diaper or the diaper addiction of the player > 6]the idea of [end if]wearing and using diapers [if the diaper-addiction-influence of C > 1]a lot [end if]more.";
+	if diaper lover > 0:
+		if the diaper-addiction-influence of C < 0, say "You can sense that this [item of C] is [if the diaper-addiction-influence of C < -1]significantly [end if][if the diaper addiction of the player < 5 and there is a worn diaper]suppressing any thoughts of you enjoying wearing your diaper[otherwise if the diaper addiction of the player < 5]helping you avoid any weird temptations to wear a diaper[otherwise if the diaper addiction of the player < 8]reducing the amount you enjoy wearing and using diapers[otherwise]helping to curb your addiction to wearing and using diapers[end if].";
+		if the diaper-addiction-influence of C > 0, say "You can sense that this [item of C] is making you enjoy [unless there is a worn diaper or the diaper addiction of the player > 6]the idea of [end if]wearing and using diapers [if the diaper-addiction-influence of C > 1]a lot [end if]more.";
+		if the bladder-incontinence-influence of C > 0, say "You can sense that this [item of C] is making it [if the bladder-incontinence-influence of C > 1]much [end if]more difficult for you to hold onto your bladder.";
+		if the bladder-incontinence-influence of C < 0, say "You can sense that this [item of C] is making you [if the bladder-incontinence-influence of C < 1]significantly [end if]better at avoiding wetting yourself.";
+		if diaper messing >= 3:
+			if the rectum-incontinence-influence of C > 0, say "You can sense that this [item of C] is making it [if the rectum-incontinence-influence of C > 1]much [end if]more difficult for you to hold it when you need to poop.";
+			if the rectum-incontinence-influence of C < 0, say "You can sense that this [item of C] is making you [if the rectum-incontinence-influence of C < 1]significantly [end if]better at avoiding messing yourself.";
 	if the knee-modifier of C < 0 and there are worn stockings, say "You can sense that this [item of C] is making your knee attacks [if the knee-modifier of C < -1]much [end if]weaker.";
 	if the knee-modifier of C > 0 and there are worn stockings, say "You can sense that this [item of C] is making your knee attacks [if the knee-modifier of C > 1]much [end if]stronger.";
 	if the anal sensitivity influence of C > 0 and diaper quest is 0, say "You feel like this [item of C] is making your [asshole] [if the anal sensitivity influence of C > 1]much [end if]more receptive to pleasurable stimulation.";

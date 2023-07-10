@@ -909,7 +909,7 @@ To compute poker minigame:
 					otherwise:
 						say "[speech style of orc]'The [poker card of PC] doubles the rate of your digestion for a while.'[roman type][line break]";
 						say "You can feel that your stomach is [if digestion-timer > 0]going to keep churning away for a long time[otherwise]suddenly churning away[end if]!";
-						increase digestion-timer by 300;
+						increase digestion-timer by 900;
 			otherwise if PV is 4: [Jack]
 				unless PV is listed in numbersExplained, say "[speech style of orc]'Jacks affect your current state in various inconvenient ways, the cheeky buggers.'[roman type][paragraph break]";
 				if PS is 0 and there is worn actually cursable clothing:

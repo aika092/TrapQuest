@@ -17,7 +17,7 @@ Definition: a person is presenting as female:
 	decide no.
 
 Definition: yourself is gendered female:
-	if the player is originally female, decide yes;
+	if the player is sexed female, decide yes;
 	if the player is originally male and transGender is 1, decide yes;
 	decide no.
 Definition: yourself is gendered male:

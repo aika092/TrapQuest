@@ -102,7 +102,7 @@ To decide what number is the price of (C - a clothing):
 		if C is solid gold, now X is X * 6;
 	otherwise:
 		increase X by the magic-modifier of C;
-		if C is not blandness, increase X by 1;
+		if C is not blandness, increase X by 2;
 		if discount > 0, decrease X by 5;
 		if the blue-balls of shopkeeper < 0, decrease X by 1;
 		if X < 1, now X is 1;

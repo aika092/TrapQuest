@@ -1422,11 +1422,11 @@ A time based rule (this is the dominatrix cage timer rule):
 				if M is woman-player, increase the delayed sluttification of M by 1;
 				if the player is in the location of M, say "[BigNameDesc of dominatrix] unlocks the door to the cage.[line break][speech style of dominatrix]'Go on, get out of here, before I change my mind.'[roman type][line break][BigNameDesc of M] is free!";
 			if M is not caged:
-				say "[BigNameDesc of M] squeaks in fear and quickly scampers out of the room!";
+				if M is in the location of the player, say "[BigNameDesc of M] squeaks in fear and quickly scampers out of the room!";
 				if M is woman-player:
 					vanish M;
 				otherwise:
-					regionally place M;
+					if M is regional, regionally place M;
 					distract M;
 		if dominatrix-cage is grabbing the player:
 			now dominatrix-cage is not grabbing the player;

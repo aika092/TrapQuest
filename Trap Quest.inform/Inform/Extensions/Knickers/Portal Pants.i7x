@@ -176,6 +176,9 @@ Definition: giant-teddy is displacable: decide no.
 Definition: giant-teddy is top-layer-blocking: decide no.
 Definition: giant-teddy is mid-layer-blocking: decide no.
 Definition: giant-teddy is bottom-layer-blocking: decide no.
+Definition: giant-teddy is potentially erection concealing: decide yes.
+To decide which number is the penis-capacity of (C - giant-teddy):
+	decide on 20.
 
 To compute SelfExamineDesc of (K - giant-teddy):
 	say "A giant teddy bear with a hole at the back for your [player-penis] is pressed against the front of your body. ";

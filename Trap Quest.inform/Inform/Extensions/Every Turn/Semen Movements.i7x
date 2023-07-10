@@ -179,7 +179,7 @@ To check enema holding with reason (T - a text):
 					say "[one of]Your belly growls as the [enema] swirls around inside[or][if the player is upright]You stagger slightly[otherwise]Your arms and legs shake slightly[end if] as the [enema] sloshes around inside you[or]Your stomach makes a gurgling sound as your [enema] bubbles away inside[or]Your [enema] puts more and more pressure on your rectum[or]The [enema] eddies and whirls inside your belly[in random order], [one of]making you feel uneasy[or]and you feel quite uncomfortable[or]making you a bit queasy[or]causing your intestines to cramp a bit[in random order].";
 			otherwise: [pain etc. ignores block above and goes straight here]
 				let R be (a random number between 6 and 40) - the rectum-incontinence of the player;
-				if T is not "", now R is R / the expulsion-weakness of the player;
+				if T is not "", now R is R / the expulsion weakness of the player;
 				if the player is in an unbossed predicament room and the small egg count of belly <= 0, now R is a random number between 2 and 8; [you pop very quickly when running through that neighbourhood with an enema]
 				if expelling-allowed is true and R < strain factor and (T is not "" or the player is able to automatically expel or (there is a worn crotch-in-place milking basque and the total fill of belly >= belly limit - 5)):
 					if T is "":

@@ -42,8 +42,9 @@ To decide which figure-name is the monster-image of (M - ex-princess):
 			decide on figure of dark princess 3;
 	if M is caged:
 		if diaper quest is 1:
-			if diaper messing >= 7, decide on figure of caged pail princess messy;
-			otherwise decide on figure of caged pail princess;
+			if the current-torment of M > 0, decide on figure of caged pail princess facedown;
+			decide on figure of caged pail princess messy; [if diaper messing >= 7, ]
+			[otherwise decide on figure of caged pail princess;]
 		if watersports fetish is 0, decide on figure of temporary caged princess;
 		if the current-torment of M > 0, decide on figure of caged urinal princess piss;
 		decide on figure of caged urinal princess;
@@ -307,7 +308,7 @@ This is the princess extra continue sex check rule:
 	follow the check normal continue sex stuff rule;
 	if the rule succeeded, rule succeeds;
 	if current-monster is penetrating face:
-		compute punishment of diaper-facesit;
+		compute punishment of ab-diaper-facesit;
 		rule succeeds.
 The princess extra continue sex check rule is listed in the princess continue sex rules.
 
@@ -627,10 +628,16 @@ An all later time based rule (this is the school rescue fight rule):
 								StrengthDown 4; [Deliberately harsh.]
 								DexDown 4;
 							otherwise if T matches the text "worthless":
-								say "You feel your body fully heal[if the player is prone], and are raised back to your feet[end if]! But, oh, bad luck: the magic ricochets off of all of your clothing, surrounding it with negative energy!";
-								BodyHeal 10;
-								repeat with C running through worn cursable clothing:
-									decrease the raw-magic-modifier of C by 1;
+								say "You feel your body fully heal[if the player is prone], and are raised back to your feet[end if]! ";
+								if the player is at least somewhat continent:
+									say "But, oh, you can feel the magic surging down to your loins, making you fully incontinent...";
+									BladderIncontinenceUp 10;
+									if diaper messing >= 3, RectumIncontinenceUp 10;
+								otherwise:
+									say "But, oh, bad luck: the magic ricochets off of all of your clothing, surrounding it with negative energy!";
+									BodyHeal 10;
+									repeat with C running through worn cursable clothing:
+										decrease the raw-magic-modifier of C by 1;
 							otherwise if T matches the text "guzzling":
 								say "You feel your body mostly heal[if the player is prone], and are raised back to your feet[end if]! But the magic ricochets off of all of your clothing!";
 								BodyHeal 8;
@@ -857,6 +864,7 @@ Check pushing ex-princess when ex-princess is caged:
 	say "You push the button. ";
 	if the current-torment of ex-princess <= 0:
 		now the current-torment of ex-princess is 60;
+		if diaper quest is 1, now the current-torment of ex-princess is 999999;
 		increase the torment-count of ex-princess by 1;
 		say "[BigNameDesc of ex-princess] wails in despair as mechanical winches clunk into motion, forcing [his of ex-princess] arms up and [his of ex-princess] neck and head down, and down, and down until [his of ex-princess] face is pressed into the soiled diapers on the ground. The diapers queued up in the tube roll out, falling down on top of [his of ex-princess] head, half-burying [his of ex-princess] face in gross used nappies.[line break][speech style of ex-princess]'Nooooo! You fucking [cunt]!'[roman type][line break]That's all [he of ex-princess] has time to say before a loud vibrating sound can be heard through the intercom. A frustrated groan escapes [NameDesc of ex-princess][']s lips, which soon turns into a sexual moan[unless the player is broken]. You feel more dominant, and less ashamed of yourself[end if]!";
 		DelicateDown 1;
@@ -886,9 +894,9 @@ An all later time based rule (this is the caged princess torture continues rule)
 		if M is in the location of the player:
 			if diaper quest is 1:
 				say "You watch [NameDesc of M] continue trying to nudge the soiled diapers away from [his of M] face and head [one of]without success[or]in vain[or]but to no avail[at random]. [big his of M] vibrator powerfully and loudly buzzes away from within [his of M] padding.[line break][speech style of M]'[one of]Uhnnnnn[or]Aaaaaah[or]MMMMMMmmmmph[or]Mmmmmmm[at random]...'[roman type][line break]";
-				if the current-torment of ex-princess <= 0:
+				if the remainder after dividing the current-torment of ex-princess by 60 < time-seconds:
 					let N be a random threatening monster in the location of the player;
-					say "You watch with [horror the bimbo of the player] as [NameDesc of M][']s thighs begin to shake uncontrollably, and moments later [he of M] is screaming into the gross padding in front of [his of M] mouth as [he of M] cums hard. Now out of breath, [he of M] is forced to take in several desperate gasps of pungent diaper air just to stay conscious. Finally, after [he of M] comes down from [his of M] high, the ropes re-activate, pulling [him of M] back up so that [his of M] face is pressed against the exit of the diaper pail tube[if N is monster]. [big he of M] looks at you and seems to be about to say something, but then looks nervously at [NameDesc of N] and seems to change [his of M] mind about what to say.[line break][speech style of M]'Thank you for making me cum over your fragrant diapers, I hope to smell your diapers again soon[otherwise].[line break][speech style of M]'Please, please, [please], I beg you, help me escape this torment. I'll forever be in your debt[end if]...'[roman type][line break]";
+					say "You watch with [horror the bimbo of the player] as [NameDesc of M][']s thighs begin to shake uncontrollably, and moments later [he of M] is screaming into the gross padding in front of [his of M] mouth as [he of M] cums hard. Now out of breath, [he of M] is forced to take in several desperate gasps of pungent diaper air just to stay conscious[if N is monster]. [big he of M] tries to look up towards you and seems to be about to say something, but then looks nervously at [NameDesc of N] and seems to change [his of M] mind about what to say.[line break][speech style of M]'Thank you for making me cum over your fragrant diapers, I hope to smell your diapers again soon[otherwise].[line break][speech style of M]'Please, please, [please], I beg you, help me escape this torment. I'll forever be in your debt[end if]...'[roman type][line break]";
 				otherwise if the player is feeling dominant or the player is a nympho:
 					say "[one of]You can't help but find the sight rather arousing.[or][or][or][or][or][cycling]";
 					arouse 300;
@@ -904,13 +912,14 @@ An all later time based rule (this is the caged princess torture continues rule)
 An all time based rule (this is the caged princess tortured rule):
 	if ex-princess is caged and the current-torment of ex-princess <= 0 and ex-princess is in the location of the player:
 		let N be a random threatening friendly monster in the location of ex-princess;
-		if N is monster:
+		if N is monster and a random number between 1 and 8 is 1:
 			let M be ex-princess;
 			say "[if N is student][one of][speech style of N]'Hmm, this looks fun!'[roman type][line break][or][stopping][end if][if watersports fetish is 1 and diaper quest is 0][BigNameDesc of N] waltzes up to the urinal and lets loose a stream of [urine] into the bowl. [BigNameDesc of M] watches on with a mixture of despair and anger.[end if]";
 			increase the torment-count of M by 1;
 			increase the current-torment of M by 60;
 			say "[BigNameDesc of N] pushes the button and you watch with [horror the sex addiction of the player] as ";
 			if diaper quest is 1:
+				now the current-torment of M is 999999;
 				say "mechanical winches clunk into motion, forcing [his of ex-princess] arms up and [his of ex-princess] neck and head down, and down, and down until [his of ex-princess] face is pressed into the soiled diapers on the ground. The diapers queued up in the tube roll out, falling down on top of [his of ex-princess] head, half-burying [his of ex-princess] face in gross used nappies. A loud vibrating sound can be heard through the intercom.[line break][speech style of N]'[one of]Oooh, are you enjoying smelling our nasty used diapers?'[or]That's right bitch, get a good sniff of our diapers while you cum!'[in random order][roman type][line break]A frustrated groan escapes [NameDesc of ex-princess][']s lips, which soon turns into a sexual moan.";
 			otherwise:
 				now the bladder of N is 0;

@@ -10,6 +10,7 @@ Definition: a clothing (called C) is short-skirt-disallowed:
 
 short skirts permanent fetish is a number that varies. short skirts permanent fetish is 0.
 Definition: a person is fighting against short skirts:
+	if the player is in a predicament room, decide no;
 	if short skirts permanent fetish > 0:
 		if there is worn short-skirt-disallowed clothing, decide yes;
 	decide no.
