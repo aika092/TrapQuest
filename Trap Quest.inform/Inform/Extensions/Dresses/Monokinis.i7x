@@ -54,12 +54,11 @@ Definition: white-monokini is white themed: decide yes.
 
 Part 2 - Green Monokini
 
-green monokini is a normal-monokini. green monokini is very low cut. The text-shortcut of green monokini is "gmk". Understand "onepiece", "swimsuit" as green monokini.
+green monokini is a normal-monokini. green monokini is very low cut. The text-shortcut of green monokini is "ylmk". Understand "onepiece", "swimsuit" as green monokini.
 
 Figure of green monokini is the file "Items/Clothes/Upper/Swimming/Monokinis/monokini1.png".
 
 Definition: green monokini is yellow themed: decide yes.
-Definition: green monokini is green themed: decide yes.
 
 To decide which figure-name is clothing-image of (C - green monokini):
 	decide on figure of green monokini.
@@ -68,9 +67,9 @@ To say ClothingDesc of (C - green monokini):
 	say "This tight fitting onepiece swimsuit is rather low cut, allowing for extra large amounts of cleavage to be shown[if C is crotch-ripped], and at the crotch to allow entrance to anything that desires so[end if].".
 
 To say ShortDesc of (C - green monokini):
-	say "green swimsuit".
+	say "yellow swimsuit".
 To say MediumDesc of (C - green monokini):
-	say "green onepiece swimsuit".
+	say "yellow onepiece swimsuit".
 
 Part 3 - Navy Monokini
 
@@ -249,6 +248,9 @@ To decide which number is the initial outrage of (C - bimbo monokini):
 
 To decide which number is the assModesty of (C - bimbo monokini):
 	decide on 3.
+
+Definition: bimbo monokini is brat themed: decide yes. [schoolgirl + silicone queen]
+
 
 Part 9 - Gris Monokini
 

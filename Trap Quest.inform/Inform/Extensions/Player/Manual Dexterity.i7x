@@ -17,7 +17,7 @@ Definition: yourself is able to use their hands:
 	decide yes.
 
 An all later time based rule (this is the harsh inventory rule):
-	if the player is not able to use their hands:
+	if the player is not able to use their hands and the number of fuckhole-mode glue penetrating face is 0:
 		if not-in-bag-things > 1 or (the number of worn bag of holding is 0 and the number of carried things > 1):
 			let N be 0;
 			if there is a worn bag of holding:

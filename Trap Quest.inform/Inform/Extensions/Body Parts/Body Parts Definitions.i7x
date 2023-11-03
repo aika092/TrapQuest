@@ -66,6 +66,7 @@ REQUIRES COMMENTING
 a fuckhole is a kind of orifice. [Crotch orifices are called fuckholes, obviously]
 
 a fuckhole has a number called soreness.
+a fuckhole has a number called raw sensitivity.
 
 [!<Fuckhole>@<tolerated:Integer>*
 

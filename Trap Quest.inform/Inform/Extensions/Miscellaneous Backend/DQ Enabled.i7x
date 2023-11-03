@@ -119,6 +119,7 @@ student-katya is a monster.
 centaur is a monster.
 confident aeromancer is a monster.
 a goblin is a kind of monster.
+student-calamity is a monster.
 
 Include RoboMatron by Monster.
 Include Boogeymonster by Monster.

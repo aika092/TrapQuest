@@ -103,7 +103,7 @@ To uniquely destroy skeleton-playsuit:
 
 Part - Tongue Suit
 
-tongue-suit is an bodysuit. tongue-suit is unique. tongue-suit is biological. The printed name of tongue-suit is "[clothing-title-before]tongue suit[clothing-title-after]". The text-shortcut of tongue-suit is "tgst". Understand "tongue", "suit" as tongue-suit.
+tongue-suit is a bodysuit. tongue-suit is unique. tongue-suit is biological. The printed name of tongue-suit is "[clothing-title-before]tongue suit[clothing-title-after]". The text-shortcut of tongue-suit is "tgst". Understand "tongue", "suit" as tongue-suit.
 
 tongue-suit is very low cut. tongue-suit is not-displacable-always-fuckable.
 
@@ -346,6 +346,41 @@ To decide which object is the unique-upgrade-target of (C - a busy patterned rom
 
 Definition: a busy patterned romper is black themed: decide yes.
 Definition: a busy patterned romper is white themed: decide yes.
+
+Part - Police Uniform
+
+police uniform is a romper. police uniform is unique. police uniform is low cut. police uniform is top-exclusive. police uniform is not-displacable-always-fuckable. The text-shortcut of police uniform is "pu". The printed name of police uniform is "[clothing-title-before]police uniform[clothing-title-after]".
+
+Definition: police uniform is class-relevant:
+	if the class of the player is barbarian or the class of the player is stripper, decide yes;
+	decide no.
+
+Figure of police uniform is the file "Items/Clothes/Upper/Rompers/police1.png".
+
+To decide which figure-name is clothing-image of (C - police uniform):
+	decide on figure of police uniform.
+
+To say ClothingDesc of (C - police uniform):
+	say "This black combat outfit has sections cut out at the waist and cleavage, making it look much more sexy than a policewoman should ever be trying to look. It has a walkie talkie attached to the waist, which instinct tells you might help you keep customers entertained while you're grinding on them.".
+
+To say ShortDesc of (C - police uniform):
+	say "uniform".
+To say MediumDesc of (C - police uniform):
+	say "police stripper uniform".
+
+To decide which number is the initial outrage of (C - police uniform):
+	decide on 4.
+To decide which number is the crotch-tightness of (C - police uniform):
+	decide on 1.
+
+Definition: police uniform is black themed: decide yes.
+Definition: police uniform is usually ankle covering: decide yes.
+Definition: police uniform is potentially-mid-layer-concealing: decide no. [only partially conceals midsection]
+
+To compute class set up of (C - police uniform):
+	now C is cursed;
+	now the quest of C is heel-walking-quest;
+	now C is audible jiggles.
 
 Part - Pink Baby Romper
 
@@ -796,7 +831,7 @@ Definition: black-catsuit is black themed: decide yes.
 
 Part 3 - WC Catsuit
 
-WC catsuit is a catsuit. WC catsuit is arm exposing. The printed name of WC catsuit is "[clothing-title-before]latex human toilet catsuit[clothing-title-after]". Understand "human", "human toilet" as WC catsuit. WC catsuit is unique. The text-shortcut of WC catsuit is "wcs". WC catsuit is oral-sex-addiction-influencing.
+WC catsuit is a catsuit. WC catsuit is arm exposing. The printed name of WC catsuit is "[clothing-title-before]latex [if watersports fetish is 1]human[otherwise]meat[end if] toilet catsuit[clothing-title-after]". Understand "meat", "meat toilet", "human", "human toilet" as WC catsuit. WC catsuit is unique. The text-shortcut of WC catsuit is "wcs". WC catsuit is oral-sex-addiction-influencing.
 
 Definition: WC catsuit is class-relevant:
 	if the class of the player is human toilet, decide yes;
@@ -807,7 +842,7 @@ To compute class set up of (C - WC catsuit):
 	now C is speed.
 
 To say ClassSummonFlav of (C - WC catsuit):
-	say "A white catsuit materialises over your body![line break][variable custom style][if the player is not disgraced]Holy crap, is this icon on the front what I think it is?![otherwise]Oh, I get what this icon on the front means. I'm a human toilet now![end if][roman type][line break]".
+	say "A white catsuit materialises over your body![line break][variable custom style][if watersports fetish is 0]This icon on the front is labelling me as a [']meat toilet['], Free Use for anyone to come and dump their [semen] inside...[otherwise if the player is not disgraced]Holy crap, is this icon on the front what I think it is?![otherwise]Oh, I get what this icon on the front means. I'm a human toilet now![end if][roman type][line break]".
 
 Figure of WC catsuit is the file "Items/Clothes/Upper/Special/WcLatexCat.png".
 

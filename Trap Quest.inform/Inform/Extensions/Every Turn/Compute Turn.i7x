@@ -112,9 +112,12 @@ To run the engine:
 				if the player is broken:
 					try submitting;
 				otherwise if (M is not minotaur or M is awake monster) and M is not ghostly tentacle: [If it's an asleep minotaur we don't ask this]
-					say "[if the player-reaction of the player is resisting]Keep resisting[otherwise]Do you want to resist[end if]? ";
-					if the player is consenting, try resisting;
-					otherwise try submitting;
+					if there is a fuckhole-mode glue penetrating face:
+						try submitting;
+					otherwise:
+						say "[if the player-reaction of the player is resisting]Keep resisting[otherwise]Do you want to resist[end if]? ";
+						if the player is consenting, try resisting;
+						otherwise try submitting;
 			if player-breathing is false:
 				say "Keep holding your breath? ";
 				if the player is not consenting, try ManuallyBreathing;
@@ -721,11 +724,12 @@ To Compute Compulsions:
 			summon cultist veil;
 			now another-turn is 1;
 		if the traitor-hypno of hypno-lesson > 0:
-			if ex-princess is in the location of the player and ex-princess is caged and diaper quest is 0 and watersports fetish is 1 and the player is not incontinent and the player is desperate to pee and the player is able to use a urinal:
-				decrease the traitor-hypno of hypno-lesson by 1;
-				say "Something inside you urges you to [second custom style]help your friend[roman type].";
-				compute urinal use;
-				now another-turn is 1.
+			if diaper quest is 0 and watersports fetish is 1 and the player is not incontinent and the player is desperate to pee and the player is able to use a urinal:
+				if (ex-princess is in the location of the player and ex-princess is caged) or (woman-player is in the location of the player and the woman-status of woman-player is 98):
+					decrease the traitor-hypno of hypno-lesson by 1;
+					say "Something inside you urges you to [second custom style]help your friend[roman type].";
+					compute urinal use;
+					now another-turn is 1.
 
 Report TQEating candy:
 	now another-turn-stored-action is waiting. [This is a little hacky but allows the player to automatically eat the same candy twice in a row in super unusual circumstances, rather than falsely triggering the failsafe that stops the game getting into a loop with the player trying to eat the same candy every turn but being actually unable to.]

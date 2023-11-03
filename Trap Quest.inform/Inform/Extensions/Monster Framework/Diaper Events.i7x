@@ -25,7 +25,7 @@ To compute (M - a monster) removing all ass protection:
 				now more-to-go is 0.
 
 To say DiaperQuestRemovalFlav of (M - a monster) on (C - a clothing):
-	say "[BigNameDesc of M] rips off your [C].".
+	say "[BigNameDesc of M] removes your [C].".
 
 To say DiaperQuestRemovalFlav of (M - a monster) on (C - a sex toy):
 	say "[BigNameDesc of M] pulls out your [C].".
@@ -61,7 +61,7 @@ To compute diaper check of (M - a monster):
 		calm M;
 		say "[DiaperCheckFlav of M][DiaperCheckReactionFlav of M]";
 		strongHumiliate;
-		if D is total protection and D is soilable unmessed knickers and rectum > 1 and asshole is not actually occupied and rectum + the rectum-incontinence of the player + suppository > the instant mess influence of M:
+		if M is willing to change diapers and D is total protection and D is soilable unmessed knickers and rectum > 1 and asshole is not actually occupied and rectum + the rectum-incontinence of the player + suppository > the instant mess influence of M:
 			say InstantMessFlav of M;
 			compute messing;
 		say DiaperCheckResultsFlav of M;
@@ -433,20 +433,23 @@ To compute diaper change of (M - a monster):
 			now C is locked;
 			now C is not temporarily-unlocked;
 		validate layers; [just in case anything fucky happened with clothing layers]
-		satisfy M;
-		let vm be a random video-monitor in the location of the player;
-		if vm is video-monitor and the video-caller of vm is not the throne and vm is not recording-disgrace:
-			now vm is recording-disgrace; [since diaper event is over by now, we need to set up the recorded event right away.]
-			let T be the substituted form of "having your diaper changed."; [note that the video-event always needs to be a present participle]
-			now the video-event of vm is T;
 		increase the times-changed of M by 1;
 		increase diaperChangeCount by 1;
-		compute unique diaper change effect of M;
-		dislodge M;
 		repeat with C running through diapers carried by M:
 			only destroy C;
-		if debugmode > 0, say "[speech style of M]'I have changed you [times-changed of M] time[if times-changed of M is not 1]s[end if].'[roman type][line break]";
-		if diaper quest is 1, progress quest of naughty-quest;
+		if M is diaper change after special ready: [the monster does something unique after a diaper change and replacing other clothes]
+			compute diaper change after special of M;
+		if M is changing the player: [the above function may have hijacked what's going on]
+			satisfy M;
+			let vm be a random video-monitor in the location of the player;
+			if vm is video-monitor and the video-caller of vm is not the throne and vm is not recording-disgrace:
+				now vm is recording-disgrace; [since diaper event is over by now, we need to set up the recorded event right away.]
+				let T be the substituted form of "having your diaper changed."; [note that the video-event always needs to be a present participle]
+				now the video-event of vm is T;
+			compute unique diaper change effect of M;
+			dislodge M;
+			if debugmode > 0, say "[speech style of M]'I have changed you [times-changed of M] time[if times-changed of M is not 1]s[end if].'[roman type][line break]";
+			if diaper quest is 1, progress quest of naughty-quest;
 		rule succeeds;
 	otherwise:
 		say DiaperChangeStart of M;
@@ -468,6 +471,9 @@ To compute diaper change during cummies reward of (M - a monster):
 
 To compute diaper change during special of (M - a monster):
 	say "BUG - [NameDesc of M] has not had a scene coded for giving the player a mid-diaper-change special interaction.".
+
+To compute diaper change after special of (M - a monster):
+	say "BUG - [NameDesc of M] has not had a scene coded for giving the player a post-diaper-change special interaction.".
 
 To compute diaper change complete cummies reward of (M - a monster):
 	say "[speech style of M]'[one of]You've been such a good baby recently, I think you need a little reward.'[or]Time for your squirt squirt, for being such a good baby!'[stopping][roman type][line break][BigNameDesc of M] starts to rub you through the front of your diaper. You soon feel a certain warmth rising, and you [if the sex addiction of the player > 12]sigh in glee and [otherwise]can't help but[end if] explode an orgasm into your new nappy.";
@@ -1361,6 +1367,7 @@ To compute diaper urinal use of (M - a monster):
 		say DiaperUrinalSubmission of M;
 		say DiaperUrinalSubmissionFlav of M;
 		if the diaper addiction of the player < 14, say strongHumiliateReflect;
+		progress quest of human-toilet-quest;
 	otherwise:
 		say DiaperUrinalResistance of M;
 		say DiaperUrinalResistanceFlav of M;
@@ -1445,12 +1452,14 @@ To compute diaper cumrag use of (M - a monster):
 		say DiaperCumragSubmissionFlav of M;
 		say strongHumiliateReflect;
 		compute diaper cumrag ejaculating of M;
+		if watersports fetish is 0 and (diaper cumrag < 2 or the player is not a pervert), progress quest of human-toilet-quest;
 		satisfy M;
 	otherwise if the chosen numerical response matches the text "dirty":
 		say DiaperCumragAssistance of M;
 		say DiaperCumragAssistanceFlav of M;
 		say severeHumiliateReflect;
 		compute diaper cumrag ejaculating of M;
+		if watersports fetish is 0, progress quest of human-toilet-quest;
 		FavourUp M;
 		if the player is getting lucky, compute default happy reward of M;
 		satisfy M;

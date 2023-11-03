@@ -31,7 +31,7 @@ To decide which number is fuckhole pain:
 To say ResistSubduedFlav of (C - a clothing):
 	say "You don't dare resist whilst your [ShortDesc of C] is in the hands of a malicious enemy!".
 
-forced submit is a number that varies. forced submit is usually 0.
+forced submit is a number that varies. [0: not forced to submit; 1: forced to submit, still output submission flavour; 2: forced to submit, no flavour & no humiliation gain; 3: automatically chose to submit, no flavour but yes to humiliation gain]
 
 Resisting is an action applying to nothing.
 
@@ -44,17 +44,21 @@ Check resisting:
 	let P be fuckhole pain;
 	let M be a random monster penetrating an orifice;
 	if vampiress is penetrating an orifice, now M is vampiress;[she always gets resisted first, since she has mind control stuff to talk about]
-	if there is a fucking daddy's hole monster:
+	if there is a fuckhole-mode glue penetrating face:
+		say "The glue prevents you from moving an inch, making it impossible to resist!";
+		now forced submit is 2;[This tells the submission function not to display any flavour text.]
+		try submitting instead;
+	otherwise if there is a fucking daddy's hole monster:
 		say "[one of][if the player is able to speak]You find yourself resisting the act.[line break][variable custom style]'That's not your hole!'[roman type][line break][otherwise]You have a deep down, uncontrollable feeling that the person doesn't deserve to enjoy your body.[end if][or][stopping]";
 	otherwise if there is a wrong race fucking monster:
 		say "[one of][if the player is able to speak]You find yourself resisting the act.[line break][variable custom style]'I only serve black [manly-penis]!'[roman type][line break][otherwise]You have a deep down, uncontrollable feeling that the person doesn't deserve to enjoy your body.[end if][or][stopping]";
 	otherwise if the latex-transformation of the player > 2 and there is a live thing penetrating a fuckhole:
 		say "Your gaping [if the player is not possessing a vagina][asshole] makes[otherwise]orifices make[end if] it impossible to resist!";
-		now forced submit is 1;[This tells the submission function not to display any flavour text.]
+		now forced submit is 2;[This tells the submission function not to display any flavour text.]
 		try submitting instead;
 	otherwise if the player is subdued:
 		say "[ResistSubduedFlav of a random worn subduing clothing] You have no choice but to lie there and accept the invasion.";
-		now forced submit is 1;
+		now forced submit is 2;
 		try submitting instead;
 	otherwise if there is a baby bouncer grabbing the player and the player is upset about sitting in mess:
 		say "You can't bring yourself to do that while sitting in your own mess!" instead;
@@ -63,12 +67,12 @@ Check resisting:
 		try submitting instead;
 	otherwise if there is a live thing penetrating asshole and gape-gloves is worn and gape-gloves is wrist-bound-behind:
 		say "It's hardly a resisting move to literally use your fingers to spread your [asshole] to allow [NameDesc of a random live thing penetrating asshole] inside, is it? You can only present yourself for anal while wearing these gape gloves!";
-		now forced submit is 1;
+		now forced submit is 2;
 		try submitting instead;
 	otherwise if the class of the player is bride and the player-reaction of the player is submitting and there is a virginity taking monster penetrating a body part and bride-consort is not the throne and bride-consort is not in the location of the player: [adultery!]
 		let H be a random worn headgear;
 		let M be a random virginity taking monster penetrating a body part;
-		now forced submit is 1;
+		now forced submit is 3; [no flavour, but still process humiliation gain]
 		say "Now that you have already started submitting, your [ShortDesc of H] refuses to let you start resisting. Instead the attempt just fills you with feelings of guilt for not trying harder to prevent [NameDesc of M] from using you!";
 		try submitting instead;
 	otherwise if there is a live thing penetrating asshole and a random number between 14 and 19 < the the anal sex addiction of the player * 2:
@@ -82,7 +86,7 @@ Check resisting:
 	otherwise if M is monster and (a random number between 10 and 15) + (a random number between 0 and 4) < the delicateness of the player + P:
 		if P > 1, say PainResRefusalFlav of M;
 		otherwise say DelicateResRefusalFlav of M;
-		now forced submit is 1;
+		now forced submit is 3;
 		try submitting instead;
 	otherwise if there is a live thing penetrating face and diaper quest is 0:
 		now M is ex-princess;
@@ -90,18 +94,18 @@ Check resisting:
 		if M2 is monster and M2 is not not-getting-licked: [not conventional oral sex]
 			if M2 is getting-asslicked and a random number between 14 and 20 < the grossness addiction of the player:
 				say OralAddResRefusalFlav of M2;
-				now forced submit is 2;
+				now forced submit is 3;
 			otherwise if M2 is getting-licked and a random number between 11 and 20 < the grossness addiction of the player:
 				say OralAddResRefusalFlav of M2;
-				now forced submit is 2;
+				now forced submit is 3;
 		otherwise if there is a male monster penetrating face and (a random number between 14 and 20 < the semen taste addiction of the player or semen is craved):
 			now M is a random monster penetrating face;
 			say OralAddResRefusalFlav of M;
-			now forced submit is 2;
+			now forced submit is 3;
 		otherwise if a random number between 5 and 9 < the oral sex addiction of the player:
 			now M is a random live thing penetrating face;
 			if M is monster, say OralSlutResRefusalFlav of M;
-			now forced submit is 2;
+			now forced submit is 3;
 		otherwise if the thirst of the player is 5 or (the thirst of the player is 4 and a random number between 1 and 2 is 2):
 			now M is a random live thing penetrating face;
 			if M is male monster:

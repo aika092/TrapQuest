@@ -268,7 +268,6 @@ To compute unique banishment of (M - deep one):
 
 
 To bore (M - deep one) for (N - a number) seconds:
-	dislodge M;
 	compute common boredom of M for N seconds;
 	now M is uninterested;
 	now the boredom of M is N;

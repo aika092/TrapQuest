@@ -421,7 +421,9 @@ A pedestal can be fertile, parched, chilled, or erect (this is the pedestal-lock
 
 A pedestal can be wood, clay, terracotta, granite, quartz, sandstone or marble(this is the pedestal-variant property). A pedestal is usually sandstone. Understand the pedestal-variant property as describing a pedestal. [Pedestals have names so you can refer to them individually.]
 
-There are 7 pedestals.
+There are 11 pedestals.
+
+Definition: a pedestal is immune to change: decide yes.
 
 To say ExamineDesc of (P - a pedestal):
 	say "A [pedestal-variant of P] pedestal[if there is a thing in P] bearing a [ShortDesc of a random thing in P][end if], which is protected by a glass case. [if P is fertile]Vines are carved into the base, twisting together just underneath the lip of the case to form a circular basin.[otherwise if P is chilled]Mist flows from small openings in the base, which are decorated with carvings of androgynous people. A [pedestal-variant of P] basin protrudes from one side.[otherwise if P is erect and diaper lover > 0]A[one of]...[or] [stopping]sippy cup protrudes from one side of the pedestal.[otherwise if P is erect]A [pedestal-variant of P][one of]...[or] [stopping]penis protrudes from one side of the pedestal[one of]. Drinking from it will in all likelihood unlock the case, but at what cost?[or].[stopping][otherwise]The base has been carved to resemble a nude woman. Her mouth is open, and her tongue is hanging out, as if begging for a drink.[end if][line break]You can make out the number [paid of P] on the inside of case, written in roman numerals.";
@@ -434,27 +436,50 @@ Report examining a pedestal: [Specifically with examining we want it to appear i
 To lock pedestals:
 	let V be 1;[if V is 1, the pedestal is sandstone]
 	repeat with P running through pedestals:
+		[set up text shortcuts]
 		now the text-shortcut of P is the substituted form of "pe[V]";
+		[set up material (and location and unlock, if heist)]
 		if V is 2, now P is wood;
 		if V is 3, now P is marble;
-		if diaper quest is 1 and V > 3:
-			destroy P; [Not enough different rare items to allow them all to be found in this room]
+		if V is 8:
+			now P is in HeistPainting02;
+			now P is chilled;
+			now P is marble;
+		otherwise if V is 9:
+			now P is in HeistPainting03;
+			now P is chilled;
+			now P is marble;
+		otherwise if V is 10:
+			now P is in HeistPainting04;
+			now P is erect;
+			now P is marble;
+		otherwise if V is 11:
+			now P is in HeistPainting11;
+			now P is chilled;
+			now P is marble;
 		otherwise:
-			if V is 4, now P is clay;
-			if V is 5, now P is terracotta;
-			if V is 6, now P is granite;
-			if V is 7, now P is quartz;
-			increase V by 1;
-		let L be a random number between 1 and 5;
-		if L is 1 and diaper quest is 0, now P is fertile;
-		if (L is 2 or L is 3):
-			if watersports fetish is 1 and (diaper quest is 1 or a random number between 1 and 2 is 1):
-				now P is parched;
-			otherwise if diaper quest is 0:
-				now P is fertile;
-		if L is 4 and lactation fetish is 1, now P is chilled.
+			if diaper quest is 1 and V > 3:
+				destroy P; [Not enough different rare items to allow them all to be found in this room]
+			otherwise:
+				if V is 4, now P is clay;
+				if V is 5, now P is terracotta;
+				if V is 6, now P is granite;
+				if V is 7, now P is quartz;
+		[if not heist, set up unlock and add treasure]
+		if V < 8:
+			let L be a random number between 1 and 5;
+			if L is 1 and diaper quest is 0, now P is fertile;
+			if (L is 2 or L is 3):
+				if watersports fetish is 1 and (diaper quest is 1 or a random number between 1 and 2 is 1):
+					now P is parched;
+				otherwise if diaper quest is 0:
+					now P is fertile;
+			if L is 4 and lactation fetish is 1, now P is chilled;
+			now P is in Mansion28;
+			add treasure to P;
+		increase V by 1.
 
-To add treasure to (X - a pedestal):[This function should happen when the mansion is generated, not when the pedestal is opened.]
+To add treasure to (X - a pedestal): [This function should happen when the mansion is generated, not when the pedestal is opened.]
 	if pocket necronomicon is off-stage:
 		now pocket necronomicon is in X;
 		now the owner of pocket necronomicon is vampiress;
@@ -464,10 +489,15 @@ To add treasure to (X - a pedestal):[This function should happen when the mansio
 		now P is in X;
 		now the owner of P is vampiress;
 		now the paid of X is 2;
-	otherwise if diaper quest is 0 and wood-dong is off-stage:[if this is found in the mansion shop, it's ridiculously expensive]
+	otherwise if diaper quest is 0 and wood-dong is off-stage: [if this is found in the mansion shop, it's ridiculously expensive]
 		now wood-dong is in X;
 		now the owner of wood-dong is vampiress;
-		now the paid of X is 10;
+		now the paid of X is 6;
+	otherwise if (diaper quest is 0 and the player is an october 2023 top donator) or (diaper quest is 1 and the player is an october 2023 diaper donator) and cat-hood is off-stage:
+		set up cat-hood;
+		now cat-hood is in X;
+		now the owner of cat-hood is vampiress;
+		now the paid of X is 2;
 	otherwise:
 		let P be a random off-stage rare fetish appropriate clothing;
 		if P is a thing:
@@ -546,9 +576,9 @@ Carry out drinking a pedestal:
 		get oral creampie image for the noun;
 	now the paid of the noun is 0;
 	say "You hear a distinctive *shunk* as the glass dome splits and slowly opens.";
-	now the paid of the noun is 0;
 	now the noun is open;
 	repeat with X running through things in the noun:
+		if X is jewelled-tiara, now heist-painting is heist-stolen;
 		now the owner of X is nothing;
 		compute autotaking X.
 

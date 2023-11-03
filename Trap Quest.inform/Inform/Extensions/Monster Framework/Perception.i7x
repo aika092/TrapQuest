@@ -14,6 +14,33 @@ To FavourReset (M - a monster):
 To decide which number is the default favour of (M - a monster):
 	decide on 16 - game difficulty.
 
+[Sometimes we want to skip perception entirely and get straight to the good stuff]
+To compute sudden interested appearance of (M - a monster):
+	if M is not in the location of the player:
+		say "[BigNameDesc of M] appears in front of you!";
+		now M is in the location of the player;
+		if M is uninterested:
+			interest M;
+			compute just-became-interested of M;
+	if M is uninterested:
+		say "[BigNameDesc of M][']s eyes perk up!";
+		interest M;
+		compute just-became-interested of M.
+
+To compute just-became-interested of (M - a monster):
+	if latest-top-malfunction is not 0 and M is intelligent and M is friendly, now latest-top-malfunction is earnings; [If an intelligent NPC has noticed the player for whatever reason that probably means they would have seen a nip slip if one existed. So we'll say one didn't exist.]
+	progress quest of whore-exposing-quest for M;
+	if M is intelligent:
+		progress quest of show-and-tell-quest for M;
+		if topless temporary fetish > 0 and breasts is lewdly exposed:
+			decrease topless temporary fetish by 1;
+			if topless temporary fetish is 0, say "[bold type]Your brain finally seems satisfied that you've exposed your breasts to enough people. You will no longer lose intelligence from concealing your nipples.[roman type][line break]";
+			otherwise say "You [one of]can tell you have made progress towards removing the curse that makes you desperate to keep your breasts exposed[or]have made more progress towards removing your topless fetish curse[cycling].";
+	if the times-met of M < 0, now the times-met of M is 0;
+	increase the times-met of M by 1;
+	if M is friendly human monster and breasts is exposed:
+		progress quest of chest-exposing-quest from M.
+
 Chapter 1 - Check Perception
 
 hypno-curtsey-trigger is a number that varies.
@@ -67,18 +94,7 @@ To check perception of (M - a monster):
 				otherwise:
 					compute correct perception of M;
 					[if M is interested and M is unleashed and the difficulty of M > a random number between 5 and 10 and M is unfriendly, FearUp the difficulty of M;] [not sure about this]
-					if latest-top-malfunction is not 0 and M is intelligent and M is friendly, now latest-top-malfunction is earnings; [If an intelligent NPC has noticed the player for whatever reason that probably means they would have seen a nip slip if one existed. So we'll say one didn't exist.]
-					progress quest of whore-exposing-quest for M;
-					if M is intelligent:
-						progress quest of show-and-tell-quest for M;
-						if topless temporary fetish > 0 and breasts is lewdly exposed:
-							decrease topless temporary fetish by 1;
-							if topless temporary fetish is 0, say "[bold type]Your brain finally seems satisfied that you've exposed your breasts to enough people. You will no longer lose intelligence from concealing your nipples.[roman type][line break]";
-							otherwise say "You [one of]can tell you have made progress towards removing the curse that makes you desperate to keep your breasts exposed[or]have made more progress towards removing your topless fetish curse[cycling].";
-					if the times-met of M < 0, now the times-met of M is 0;
-					increase the times-met of M by 1;
-					if M is friendly human monster and breasts is exposed:
-						progress quest of chest-exposing-quest from M;
+					compute just-became-interested of M;
 					if M is unfriendly:
 						now the previous-babification of M is 1;
 						now the previous-objectification of M is 1;
@@ -119,7 +135,7 @@ To check perception of (M - a monster):
 			add M to friendly-guys, if absent. [List of NPCs that are friendly and interested this turn - used to check whether we should inform the player if this NPC suddenly turns unfriendly]
 
 To compute defeated perception of (M - a monster):
-	do nothing.
+	if M is bride-consort and key garter is worn, interest M.
 
 To compute correct perception of (M - a monster):
 	now the latest-appearance of M is the appearance of the player;
@@ -218,8 +234,13 @@ Definition: a person is reactive:
 	decide no. [Can it react to things it sees the player do?]
 Definition: yourself is reactive: decide no.
 Definition: a monster is reactive:
+	if it is uniquely unreactive, decide no;
+	if it is uniquely reactive, decide yes;
 	if it is awake and it is intelligent and it is undefeated and the player is not in a predicament room and it is in the location of the player and (it is interested or the player is not stealthy), decide yes;
 	decide no. [Can it react to things it sees the player do?]
+
+Definition: a monster is uniquely reactive: decide no.
+Definition: a monster is uniquely unreactive: decide no.
 
 To decide which number is the aggro limit of (M - a monster): [The number at which they turn unfriendly]
 	decide on 10.

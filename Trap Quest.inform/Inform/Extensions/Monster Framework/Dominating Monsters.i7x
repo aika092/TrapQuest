@@ -575,10 +575,14 @@ To compute dominating (M - a monster):
 			follow the demon junk reward rule;
 		let H be rugged-headband;
 		progress quest of domination-quest;
-		if the times-dominated of M >= 2:
-			if H is off-stage and H is actually summonable:
+		if H is off-stage and H is actually summonable:
+			if the times-dominated of M >= 2 or the player is getting lucky:
 				say "You feel your hair being tousled as a [MediumDesc of H] materialises on your head.";
 				summon H cursed with quest;
+				if the times-dominated of M < 2, say GotLuckyFlav;
+		otherwise if stripper-ears is worn and police-hat is off-stage:
+			transform stripper-ears into police-hat;
+			if police uniform is not worn and police uniform is unclash summonable, unclash class summon police uniform;
 		unless M is interested:[if a monster is still interested, it means we want them to stay around after they are dominated. ]
 			replace M after domination;
 		repeat with N running through monsters in the location of the player:
@@ -1116,7 +1120,8 @@ To compute enslaved domination of (M - a monster):
 	otherwise:
 		allocate 6 seconds;
 		now the teaseTimer of M is 50;
-		compute default enslaved domination of M.
+		if M is bride-consort and key garter is worn, compute cuck domination of M;
+		otherwise compute default enslaved domination of M.
 
 To compute caged domination of (M - a monster):
 	if the teaseTimer of M > 0:
@@ -1130,6 +1135,14 @@ To compute caged domination of (M - a monster):
 
 To compute default enslaved domination of (M - a monster):
 	say EnslavedDominationFlav of M;
+	if the humiliation of the player < the EnslavedDominationThreshold of M:
+		say "You feel vaguely better about yourself, but mostly just a bit ambivalent.";
+	otherwise:
+		Dignify 1000.
+
+To compute cuck domination of (M - a monster):
+	if the player is able to speak, say "[speech style of M]'There you are, my little cucky. Are you getting nice and blue-balled inside that cage?'[roman type][line break]";
+	say "You giggle and tickle [NameDesc of M][']s straining ballsac, which makes [him of M] whimper submissively and nod [his of M] head.";
 	if the humiliation of the player < the EnslavedDominationThreshold of M:
 		say "You feel vaguely better about yourself, but mostly just a bit ambivalent.";
 	otherwise:

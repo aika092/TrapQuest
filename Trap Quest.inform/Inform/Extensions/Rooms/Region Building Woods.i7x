@@ -71,8 +71,10 @@ This is the spawn initial woods buckets rule:
 The spawn initial woods buckets rule is listed in the set up woods traps rules.
 
 To Scramble Woods:
-	let E be the easting part of the grid position of Stairwell01;
-	let N be the northing part of the grid position of Stairwell01;
+	[let E be the easting part of the grid position of Stairwell01;
+	let N be the northing part of the grid position of Stairwell01;]
+	let N be 12;
+	let E be 12;
 	let the sum be the spatial coordinate with maze level part 2 easting part E northing part N;[Maze level part 2 corresponds to the L part of a room's shape. Woods rooms have the shape L2.]
 	now the grid position of Woods01 is the sum; [this changes the grid position of Woods01 from <0,0,0> to <2,0,0>]
 	now target-floor is Woods01;[this is an example of a room that satisfies the condition "in the woods". Any will work.]

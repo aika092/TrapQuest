@@ -330,26 +330,26 @@ To check upgrade target of (C - scrunchie): [we don't validate that scrunchie up
 
 Chapter 6 - Condom Pigtails
 
-A condom pigtails is a pigtail-scrunchie. A condom pigtails is latex. The text-shortcut of a condom pigtails is "cndp".
+condom pigtails is a pigtail-scrunchie. condom pigtails is latex. The text-shortcut of a condom pigtails is "cndp".
 
-To decide which figure-name is the clothing-image of (C - a condom pigtails):
+To decide which figure-name is the clothing-image of (C - condom pigtails):
 	decide on figure of condom pigtails.
 
 The printed name of a condom pigtails is "[clothing-title-before]condom pigtails[clothing-title-after]".
 
-To decide which number is the initial outrage of (H - a condom pigtails):
+To decide which number is the initial outrage of (H - condom pigtails):
 	decide on 15.
 
-To say ShortDesc of (H - a condom pigtails):
+To say ShortDesc of (H - condom pigtails):
 	say "condom hairties".
-To say MediumDesc of (H - a condom pigtails):
+To say MediumDesc of (H - condom pigtails):
 	say "used condom pigtail hairties".
 
-To say ClothingDesc of (H - a condom pigtails):
+To say ClothingDesc of (H - condom pigtails):
 	say "Two used condoms [if H is worn]have been[otherwise]could be[end if] used to tie your hair into naughty-looking pigtails.".
 
-Definition: a condom pigtails is transformation-protected: decide yes.
+Definition: condom pigtails is transformation-protected: decide yes.
 
-Definition: a condom pigtails is semen themed: decide yes.
+Definition: condom pigtails is semen themed: decide yes.
 
 Scrunchies ends here.

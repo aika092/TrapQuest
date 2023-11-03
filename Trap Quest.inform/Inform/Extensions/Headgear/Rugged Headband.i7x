@@ -1,19 +1,23 @@
 Rugged Headband by Headgear begins here.
 
-rugged-headband is a headgear. rugged-headband is redness-positive. rugged-headband is manly. Understand "rugged", "headband" as rugged-headband.
+A barbarian-headgear is a kind of headgear. A barbarian-headgear is redness-positive.
+The printed name of a barbarian-headgear is "[clothing-title-before][MediumDesc of item described][clothing-title-after]".
+
+
+rugged-headband is a barbarian-headgear. rugged-headband is manly. Understand "rugged", "headband" as rugged-headband. The text-shortcut of rugged-headband is "rghb".
 
 Definition: rugged-headband is roleplay: decide yes. [Extension not included in DQ]
-
-The printed name of rugged-headband is usually "[clothing-title-before]rugged headband[clothing-title-after]". The text-shortcut of rugged-headband is "rghb".
 
 Figure of rugged-headband is the file "Items/Accessories/Head/ruggedheadband1.png".
 To decide which figure-name is the clothing-image of (C - rugged-headband):
 	decide on figure of rugged-headband.
 
 To say ClothingDesc of (H - rugged-headband):
-	say "This [MediumDesc of H] looks like pretty primitive.".
+	say "This [MediumDesc of H] looks pretty primitive.".
 
 To say ShortDesc of (H - rugged-headband):
+	say "headband".
+To say MediumDesc of (H - rugged-headband):
 	say "rugged headband".
 
 Definition: rugged-headband is condom pinnable: decide yes.
@@ -37,6 +41,41 @@ To decide which number is the arousal-influence of (C - rugged-headband):
 	if C is blessed, increase X by 2;
 	increase X by the magic-modifier of C;
 	decide on X.
+
+
+police-hat is a barbarian-headgear. Understand "police", "hat" as police-hat. The text-shortcut of police-hat is "plch".
+police-hat can be pinkified.
+
+Figure of police hat is the file "Items/Accessories/Head/policehat1.png".
+Figure of pink police hat is the file "Items/Accessories/Head/policehat2.png".
+To decide which figure-name is the clothing-image of (C - police-hat):
+	decide on figure of police hat.
+
+To say ClothingDesc of (H - police-hat):
+	say "This [MediumDesc of H] looks pretty official... Until you take a closer look, and notice that instead of a normal symbol at the front, it has... an eggplant[if H is pinkified]. Oh yeah, and now it's pink[end if].".
+
+To say ShortDesc of (H - police-hat):
+	say "headband".
+To say MediumDesc of (H - police-hat):
+	say "rugged headband".
+
+Definition: police-hat is black themed:
+	if it is pinkified, decide no;
+	decide yes.
+Definition: police-hat is pink themed:
+	if it is pinkified, decide yes;
+	decide no.
+
+To compute class outfit of (H - police-hat):
+	class summon combat-gloves;
+	class summon combat-boots;
+	class summon police uniform.
+
+To decide which number is the initial outrage of (H - police-hat):
+	if H is pinkified, decide on 4;
+	decide on 2.
+
+
 
 domination-quest is a headgear-clothing-quest.
 
@@ -64,7 +103,7 @@ To progress quest of (Q - domination-quest):
 				now domination-quest-tries is 0;
 				only destroy C.
 
-To uniquely set up (C - rugged-headband):
+To uniquely set up (C - a barbarian-headgear):
 	now the quest of C is domination-quest.
 
 To say QuestFlav of (Q - domination-quest):

@@ -302,7 +302,7 @@ Definition: a monster is seduce-satisfiable:
 	if it is intelligent and it is not robot, decide yes;
 	decide no. [Can the player bring it closer to orgasm? If not, seduction will mainly be about condoms]
 Definition: a monster is seducable:
-	if it is willing to do oral or it is willing to do anal or it is willing to do vaginal or it is willing to charm snakes, decide yes;
+	if it is willing to do oral or it is willing to do anal or it is willing to do vaginal or (it is willing to charm snakes and the player is possessing a penis), decide yes;
 	decide no.
 Definition: a monster is actually seducable:
 	if diaper quest is 0 and it is seducable and it is reactive and it is interested and it is unseduced and it is not penetrating a body part, decide yes;

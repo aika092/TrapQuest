@@ -542,7 +542,7 @@ previous penis length is a number that varies.
 #LXorDD:
 For the detached dick case, since it can be grown or shrunk while detached, and since these functions are quite involved, rather than copying and modifying them, I'm trying to reuse them: I temporarily set the penis and scrotum sizes back to those of the detached dick before calling these, and back to zero immediately after, and adding some code in here to handle the special case of the detached dick.]
 To PenisUp (X - a number):
-	if the player is not possessing a vagina or (the player is possessing a vagina and futanari fetish > 0):
+	if the player is not possessing a vagina or (the player is possessing a vagina and player futanari fetish > 0):
 		OnlyPenisUp X;
 		let N be the remainder after dividing X by 2;
 		if N is 1:
@@ -568,7 +568,7 @@ As of Sept 2021 there's a new TG situation here:
 To OnlyPenisUp (X - a number):
 	now previous penis length is the size of penis;
 	[row 68 of the Table of Player Options = futanari fetish: 0, 1, or 2]
-	if the player is not possessing a penis and (choice in row 68 of the Table of Player Options is 0 or the player is not a top donator), now X is 0;
+	if the player is not possessing a penis and player futanari fetish is 0, now X is 0;
 	if cumlust tattoo is worn:
 		SemenTasteAddictUp X;
 		now X is 0;

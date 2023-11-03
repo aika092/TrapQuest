@@ -206,9 +206,15 @@ Part - White (WC) Hood
 WC hood is a hood. The printed name of WC hood is "[clothing-title-before]white latex hood[clothing-title-after]". The text-shortcut of WC hood is "wlh". Understand "white" as WC hood.
 
 Figure of WC hood is the file "Items/Accessories/Head/WcLatexHood.png".
+Figure of Free Use Hood is the file "Items/Accessories/Head/latexhood4a.jpg".
+Figure of Free Use Hood Worn is the file "Items/Accessories/Head/latexhood4b.jpg".
 
 To decide which figure-name is the clothing-image of (C - WC hood):
-	decide on figure of WC hood.
+	if watersports fetish is 1:
+		decide on figure of WC hood;
+	otherwise:
+		if C is worn, decide on figure of Free Use Hood Worn;
+		otherwise decide on figure of Free Use Hood.
 
 To say ClothingDesc of (H - WC hood):
 	say "This white latex hood completely covers your head, and only has holes for your eyes, your nostrils, [if the player is pigtailed or the player is ponytailed]your hair, [end if]and your mouth. The mouth hole is fitted with an O-ring tube gag, which keeps your mouth wide open and prevents you from speaking properly. Anyone could put anything into your mouth that they wanted, even a penis or another gag[if H is worn and H is cursed and black-catsuit is worn and black-catsuit is cursed]. The bottom of the hood has merged with your catsuit.[end if]".
@@ -237,10 +243,15 @@ Chapter - Class Outfit
 To compute unique recycling of (C - WC hood):
 	now the gulp-count of human-toilet-quest is 0.
 
+Definition: WC hood (called C) is removal-blocking:
+	if wearing-target is diaper, decide yes;
+	decide no.
+
 To compute class outfit of (H - WC hood):
-	if total pinned condoms > 0:
-		class summon meat-toilet-panties;
-		follow the player class rules;
+	if total pinned condoms > 0 or watersports fetish is 0:
+		if diaper quest is 0:
+			class summon meat-toilet-panties;
+			follow the player class rules;
 	if meat-toilet-panties is worn:
 		repeat with C running through worn clothing:
 			if the used condoms of C > 0 and C is not meat-toilet-panties:
@@ -248,9 +259,12 @@ To compute class outfit of (H - WC hood):
 				UsedCondomUp meat-toilet-panties by the used condoms of C;
 				add the condom history of C to the condom history of meat-toilet-panties;
 				UsedCondomWipe C;
-	class summon WC catsuit;
-	class summon WC thigh high boots;
-	unless diaper focus is 1 and there is a worn diaper, class summon WC-plug-panties. [will be blocked by meat-toilet-panties being class-relevant]
+	if diaper quest is 0 or watersports fetish is 1:
+		class summon WC catsuit;
+		class summon WC thigh high boots;
+		unless (diaper focus is 1 and there is a worn diaper) or (diaper quest is 0 and watersports fetish is 0), class summon WC-plug-panties; [will be blocked by meat-toilet-panties being class-relevant]
+	otherwise:
+		if the number of worn diaper is 0, class summon plain-massive-diaper.
 
 Chapter - Quest
 
@@ -260,10 +274,10 @@ To uniquely set up (C - WC hood):
 	now the quest of C is human-toilet-quest.
 
 To say QuestFlav of (Q - human-toilet-quest):
-	say "You sense that it wants you to take your place as a human toilet.".
+	say "You sense that it wants you to take your place as a [if watersports fetish is 1]human[otherwise if diaper quest is 1]diaper[otherwise]meat[end if] toilet.".
 
 To say QuestTitle of (Q - human-toilet-quest):
-	say " (human toilet quest)".
+	say " ([if watersports fetish is 1]human[otherwise if diaper quest is 1]diaper[otherwise]meat[end if] toilet quest)".
 
 To progress quest of (Q - human-toilet-quest):
 	repeat with C running through worn clothing:
@@ -273,6 +287,8 @@ To progress quest of (Q - human-toilet-quest):
 				if the gulp-count of Q >= 3:
 					now the gulp-count of Q is 0;
 					compute quest completion of Q on C;
+				otherwise:
+					say "[BigNameDesc of C] pulses gently, encouraging you to keep it up!";
 			otherwise:
 				compute quest completion of Q on C.
 
@@ -280,7 +296,7 @@ To compute persistent reward of (Q - human-toilet-quest) on (C - a clothing):
 	if C is cursed:
 		compute generic first time class reward of Q on C;
 	otherwise:
-		say "infusing itself with [one of]powerful magic! You feel that something good will happen when you finally decide to stop being a human toilet.[or]even more blessed magic![stopping]".
+		say "infusing itself with [one of]powerful magic! You feel that something good will happen when you finally decide to stop being a [if watersports fetish is 1]human[otherwise if diaper quest is 1]diaper[otherwise]meat[end if] toilet.[or]even more blessed magic![stopping]".
 
 To uniquely destroy (C - WC hood):
 	if the gulp-count of human-toilet-quest > 0 and the quest of C is human-toilet-quest:
@@ -475,6 +491,59 @@ To compute school periodic effect of (H - diaper-box):
 				say "You continue to breathe in the stench of all the used diapers.";
 			SlowGrossOut wetDiaperFacesitGrossnessLevel.
 
+
+Part - Cat Hood
+
+cat-hood is a hood. The printed name of cat-hood is "[clothing-title-before]white latex cat hood[clothing-title-after]". The text-shortcut of cat-hood is "chd". Understand "white", "cat", "hood" as cat-hood.
+
+Figure of cat-hood is the file "Items/Accessories/Head/latexhood3.png".
+
+To decide which figure-name is the clothing-image of (C - cat-hood):
+	decide on figure of cat-hood.
+
+To say ClothingDesc of (H - cat-hood):
+	say "This off-white latex hood completely covers your head, and only has holes for your eyes, nostrils and mouth. The mouth hole is shaped like a creepy smile. Pink latex cat ears sprout out of the top.".
+
+To say ShortDesc of (H - cat-hood):
+	say "latex cat hood".
+
+Definition: cat-hood is roleplay:	decide no.
+Definition: cat-hood is white themed: decide yes.
+
+To decide which number is the initial outrage of (C - cat-hood):
+	decide on 4.
+
+Definition: cat-hood is ringagged: decide no.
+
+Report wearing cat-hood:
+	if the player is an october 2023 top donator:
+		now heist-painting is rippling;
+		if the player is in the location of heist-painting, say "[bold type]The painting in this room starts rippling. Almost as if you could now enter it...[roman type][line break]".
+
+
+Chapter - Quest
+
+heist-quest is a headgear-clothing-quest.
+
+To uniquely set up (C - cat-hood):
+	now the quest of C is heist-quest.
+
+To say QuestFlav of (Q - heist-quest):
+	say "You sense that it wants you to steal a legendary ancient artifact from a magical museum.".
+
+To say QuestTitle of (Q - heist-quest):
+	say " (artifact heist quest)".
+
+To progress quest of (Q - heist-quest):
+	repeat with C running through worn clothing:
+		if the quest of C is Q:
+			if jewelled-tiara is held:
+				compute quest completion of Q on C;
+			otherwise:
+				say "[BigNameDesc of C] seems disappointed at your failure!";
+				if C is headgear:
+					now the quest of C is human-toilet-quest;
+					transform C into WC hood.
 
 
 

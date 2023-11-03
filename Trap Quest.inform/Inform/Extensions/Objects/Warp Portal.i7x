@@ -290,7 +290,7 @@ To teleport via (W - a warp portal):
 			repeat with R running through predicament rooms:
 				totally clean R;
 			now executing-predicament is true;
-			execute P;
+			maybe execute P;
 			set up predicament clothing for P;
 			increase the times-completed of P by 1;
 			now temporaryYesNoBackground is Figure of small image;
@@ -340,5 +340,19 @@ To teleport via (W - a warp portal):
 		display entire map;
 		say "As you go through the portal, you appear in the [location of the player][one of]! There is an identical green portal in this room too, to allow you to go back and forth[or][stopping]!";
 	if playerRegion is not school, compute clothing cleanup. [otherwise extra credit zone causes jewellery to get cleaned up]
+
+To maybe execute (P - a predicament):
+	if cheatsdisabled is true:
+		say "Cheating mode enabled - you can skip your least favourite Extra Credit Zone predicaments if you want. The predicament chosen is known as [bold type]['][P]['].[roman type][line break]";
+		reset multiple choice questions;
+		set numerical response 1 to "Play this predicament as normal.";
+		set numerical response 2 to "Skip to the final room.";
+		compute multiple choice question;
+		if player-numerical-response is 1:
+			execute P;
+		otherwise:
+			now the player is in Predicament20;
+	otherwise:
+		execute P.
 
 Warp Portal ends here.

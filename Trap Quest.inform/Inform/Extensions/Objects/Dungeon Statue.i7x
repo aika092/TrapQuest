@@ -137,9 +137,7 @@ To compute dungeon statue interaction:
 				otherwise now the wisp-trigger of W is lose-panties-wisp-trigger;
 				now the wisp-punishment of W is bimbo-wisp-punishment;
 				if (a random number between 0 and 1) + (a random number between 0 and 1) < game difficulty, now the wisp-punishment of W is a random appropriate wisp punishment;
-				now W is everywhere;
-				update backdrop positions;
-				now the text-shortcut of W is the substituted form of "[ColourDesc of W]";
+				update background colour of W;
 				say "[bold type]A [ColourDesc of W] curse wisp appears, and begins hovering behind you! [roman type]You can sense that you must [bold type][wisp-quest of W][roman type] before you next [bold type][wisp-trigger of W][roman type], or else you will [bold type][wisp-punishment of W][roman type].";
 			otherwise:
 				say "You sense that a wisp tries to start following you, but can't because you already have too many wisps...";

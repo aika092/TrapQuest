@@ -122,6 +122,7 @@ Check presenting:
 Check direct-presenting something to:
 	if tutorial is 1, say "You haven't been told to do that! Please follow the tutorial instructions." instead;
 	if diaper quest is 1 and (watersports fetish is 0 or the noun is not face or the second noun is not friendly monster), say "I think you're playing the wrong game." instead;
+	if there is a fuckhole-mode glue penetrating face, say "You can't move a muscle or speak right now, so there's no way you can do that." instead;
 	if the noun is hips, try direct-presenting asshole to the second noun instead;
 	if the second noun is summoning portal:
 		try appeasing the noun with the second noun instead;
@@ -302,6 +303,7 @@ Carry out direct-presenting something to:
 					say "Your skin stings as a tattoo is suddenly seared into your butt cheek! It says 'Just the Tip'.";
 				unless just the tip tattoo is worn, severeHumiliate;
 		if there is a worn demon codpiece, follow the demon junk punishment rule;
+		if the noun is fuckhole and the second noun is dark skinned male monster, progress quest of interracial-sex-quest; [needs to be before the block below, because that can summon the hotwife dress with this exact quest]
 		if the second noun is friendly:
 			check consensual submissive sex of the second noun;
 			if interracial fetish is 1 and there is a worn tiara and tiara-of-spades is not worn and the second noun is a dark skinned male intelligent monster and the second noun is penetrating a body part:
@@ -316,9 +318,29 @@ Carry out direct-presenting something to:
 					if queen-of-spades-dress is worn:
 						say "As a reward for cucking [NameDesc of M], you feel the power of [NameDesc of queen-of-spades-dress] significantly enhanced!";
 						now the raw-magic-modifier of queen-of-spades-dress is 5;
-		if the noun is fuckhole and the second noun is dark skinned male monster:
-			progress quest of interracial-sex-quest;
-			if the bbc addiction of the player >= 6, check tiara-of-spades transformation;
+			otherwise if interracial fetish is 1 and there is a worn bridal veil and the ceremony of betrothal-quest is true and bride-consort is a pale skinned monster and the second noun is a male dark skinned intelligent monster:
+				if hotwife dress is not worn and not-cheating T-shirt is not worn:
+					if debugmode > 0, say "[input-style]Checking if hotwife dress can be summoned.[roman type][line break]";
+					if hotwife dress is unclash summonable:
+						unclash class summon hotwife dress;
+						if hotwife dress is worn, say "[variable custom style]I guess this is my punishment for cheating on my fiance with a black [man of the second noun]...[roman type][line break]";
+				otherwise if the number of carried chastity cage is 0 and the consummation of betrothal-quest is false:
+					let CC be a random off-stage chastity cage;
+					if CC is a thing and CC is not nub-cage and a random number between 3 and 8 < the bbc addiction of the player:
+						say "[bold type]A [MediumDesc of CC] appears on the ground in front of you! [roman type]It seems that your [ShortDesc of hotwife dress] has decided you are ready for the next stage. Perhaps you should try going to the Kama Sutra Penthouse Suite for your wedding night now. Make sure to bring the chastity cage...";
+						now CC is in the location of the player;
+				otherwise if key garter is worn and bride-consort is sex-enslaved monster and bride-consort is regional:
+					if bride-consort is in the location of the player or the player is getting lucky:
+						say "[if bride-consort is in the location of the player]You smirk and glance at [NameDesc of bride-consort], who remains submissively silent in the corner of the room.[otherwise]Just as you finish saying this, you spot [NameDesc of bride-consort] skulking around in the corner of the room! [big he of bride-consort] saw and heard everything! [GotLuckyFlav][end if][line break][variable custom style]That's right, bitch, I want you to watch[one of][or] again[stopping].[roman type][line break]";
+						now bride-consort is in the location of the player;
+						if hotwife neckerchief is worn:
+							if qos-gloves is not worn and qos-gloves is unclash summonable:
+								unclash class summon qos-gloves;
+							otherwise if hotwife dress is worn:
+								transform hotwife dress into not-cheating T-shirt;
+						otherwise if hotwife neckerchief is unclash summonable:
+							unclash class summon hotwife neckerchief;
+		if the noun is fuckhole and the second noun is dark skinned male monster and the bbc addiction of the player >= 6, check tiara-of-spades transformation;
 		if the noun is asshole and the second noun is male monster, progress quest of asshole-presenting-quest;
 		check immobility;
 		if the player is not in danger and the player is not immobile and the player is able to use their hands:

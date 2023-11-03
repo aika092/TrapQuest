@@ -42,6 +42,8 @@ To compute class set up of (C - demon tail plug):
 	if the class of the player is princess:
 		now C is expansion;
 		now C is cursed;
+		if vaginal-virginity-quest is appropriate, now the quest of C is vaginal-virginity-quest;
+		otherwise now the quest of C is vaginal-creampie-quest;
 	otherwise:
 		now C is dominance;
 		now C is bland.

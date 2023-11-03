@@ -31,6 +31,10 @@ Check squatting:
 			if there is an intelligent awake monster in the location of the player and the diaper addiction of the player < 17 and portal-hotpants is not worn:
 				if debugmode > 0, say "If debug mode was disabled, the player would refuse.";
 				otherwise say "[variable custom style]I can't bring myself to do that with people watching.[roman type][line break]" instead;
+			otherwise if portal-hotpants is worn:
+				unless Hotel44 is within vision and the number of awake intelligent monsters in Hotel44 is 0:
+					if debugmode > 0, say "If debug mode was disabled, the player would refuse.";
+					otherwise say "[variable custom style]I can't bring myself to do that! The pimp [if Hotel44 is not within vision]and who knows how many other people [end if]will be watching![roman type][line break]" instead;
 			otherwise if the player is in HoleInWall or the player is in a blindroom:
 				if debugmode > 0, say "If debug mode was disabled, the player would refuse.";
 				otherwise say "[variable custom style]I can't bring myself to do that when I don't know who could be watching![roman type][line break]" instead;

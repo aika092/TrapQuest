@@ -57,9 +57,23 @@ To compute landing:
 	now last-turn-flight is 0;
 	say "You slowly start to descend towards the ground. ";
 	if the player is in Sky01:
-		say "You have no idea where you are going to land.";
-		now the player is in a random placed jungle room;
+		let R be a random placed no-roof jungle room;
 		now playerRegion is Woods;
+		if (tough-shit is 1 or Mansion01 is placed) and the player is getting unlucky:
+			say "Oh no - you're heading for [if Mansion01 is unplaced]a creepy looking old[otherwise]the haunted[end if] mansion! [GotUnluckyFlav]";
+			compute single choice question "Do your best to aim for some sort of courtyard!";
+			if Mansion01 is unplaced:
+				Set Up The Mansion;
+				follow the setting up mansion monsters rules;
+				repeat with M running through alive nonexistent monsters:
+					set up M;
+			let X be a random placed no-roof haunted room;
+			if X is a room:
+				now R is X;
+				now playerRegion is Mansion;
+		otherwise:
+			say "You have no idea where you are going to land.";
+		now the player is in R;
 		repeat with M running through monsters in the location of the player:
 			check guaranteed perception of M;
 	let monster-flav be 0;

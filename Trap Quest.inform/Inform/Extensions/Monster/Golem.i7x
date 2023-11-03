@@ -220,6 +220,7 @@ To slimeballShortcutAssign (C - a slimeball):
 Figure of slimeball is the file "NPCs/MultiFloor/Slimeball/slimeball1.png".
 Figure of slimeball cutscene 1 is the file "NPCs/MultiFloor/Slimeball/cutscene-slimeball-attack1.png".
 Figure of slimeball cutscene 2 is the file "NPCs/MultiFloor/Slimeball/cutscene-slimeball-attack2.jpg".
+Figure of slimeball cutscene 3 is the file "NPCs/MultiFloor/Slimeball/cutscene-slimeball-leap1.jpg".
 
 To decide which figure-name is the monster-image of (M - slimeball):
 	[if M is wrangling breasts, decide on figure of slimeball cutscene 2;]
@@ -272,6 +273,7 @@ To compute action (N - a number) of (M - a slimeball):
 			say "[input-style]Slimeball evasion check: dexterity roll (d[dexterity of the player]) = [D] [if the player is prone]- kneeling penalty (8) = [X] [end if]| (6.5) Facehugger evasion difficulty[roman type][line break]";
 		if X > 6:
 			say "You manage to move yourself out of the way, and [NameDesc of M] goes flying past. But it's still wobbling, apparently preparing to try again...";
+			cutshow Figure of slimeball cutscene 3 for M;
 		otherwise if diaper quest is 1:
 			say "[if the player is not immobile]You don't move out of the way in time! [end if]";
 			compute slimeball forcefeed;
@@ -300,7 +302,7 @@ To compute action (N - a number) of (M - a slimeball):
 						say "The slime expands and hardens, creating an impression of larger breasts over your existing [BreastDesc]. Your breasts can't actually grow any more, but you can feel them becoming more sensitive and... sexual.";
 					otherwise:
 						say "The slime expands and hardens, creating an impression of larger breasts over your existing [BreastDesc]. And then, it somehow shivers and merges with the body underneath, drastically enhancing your bust size[if artificial enhancements fetish is 1] with silicone implants[end if].";
-						cutshow figure of slimeball cutscene 2 for M;
+						mapcutshow figure of slimeball cutscene 2 for M;
 						say GotUnluckyFlav;
 						BustImplantsUp 4;
 						focus-consider breasts;

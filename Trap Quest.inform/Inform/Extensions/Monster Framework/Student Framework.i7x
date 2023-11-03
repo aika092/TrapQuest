@@ -280,7 +280,7 @@ To compute monstermotion of (M - a student):
 		if KM is off-stage or KM is defeated:
 			if nurse is alive and nurse is undefeated, now KM is receptionist;
 			if receptionist is alive and receptionist is undefeated, now KM is receptionist;
-		if KM is alive and KM is undefeated, now A is the the best route from the location of M to the location of headmistress through unbossed rooms;
+		if KM is alive and KM is undefeated and headmistress is in an academic room, now A is the the best route from the location of M to the location of headmistress through unbossed rooms;
 		otherwise now A is the the best route from the location of M to School08 through unbossed rooms;
 		let P be the room A from the location of M;
 		if the entry-rank of P > the entry-rank of the location of M and the entry-rank of P > the current-rank of M, now A is down;
@@ -345,7 +345,7 @@ To compute fleeing of (M - a student):
 		now the scared of M is 0;
 		calm M.
 
-Definition: a student (called M) is distracted:
+Definition: a student (called M) is uniquely distracted:
 	if headmistress is in the location of M:
 		if M is a urinater and the bladder of M >= 1000 and academy-toilet-key is held by headmistress and (M is not interested or M is friendly) and (headmistress is not interested or headmistress is friendly):
 			if M is in the location of the player, say "[BigNameDesc of M] awkwardly presents [himself of M] to [NameDesc of headmistress][if diaper lover > 0], while doing a little [']potty dance['][end if].[line break][speech style of M]'Please could I have the key to the toilets, Ma[']am?'[roman type][line break]";
@@ -1142,13 +1142,6 @@ To compute food hall bullying of (M - a student):
 
 Part - Pranks
 
-To compute unique interaction of (M - a ditzy student):
-	let F be the aggro limit of M - the favour of M; [gets larger the more she is angry with the player]
-	let R be a random number between 1 and 20;
-	if debuginfo > 0, say "[input-style][MediumDesc of M] prank check: [student-name of M] anger ([F]) | ([R].5) d20[roman type][line break]";
-	if F > R:
-		compute default prank of M.
-
 a prank-action is a kind of object.
 Definition: a prank-action is eligible: decide yes.
 To execute (A - a prank-action):
@@ -1342,6 +1335,323 @@ To check sneaky bullying caught of (M - a monster) by (S - a monster):
 		bore M;
 		regionally place S;
 		regionally place M.
+
+
+Part - Student Interactions
+
+student-interaction-time is initially 4. [the closer this gets to 0, the higher the chance of there being an interaction]
+
+A student-interaction is a kind of object.
+A student-interaction can be one-off or repeatable.
+
+recent-student-interactions is a list of student-interactions that varies.
+
+Definition: a student-interaction is student-eligible: decide yes. [Usually restricted to one student or one type of student.]
+Definition: a student-interaction is appropriate: decide yes. [Fetish settings]
+Definition: a student-interaction is eligible: decide yes. [Situational requirements]
+
+Definition: a student-interaction is selectable:
+	if it is listed in recent-student-interactions, decide no;
+	if it is appropriate and it is student-eligible and it is eligible, decide yes;
+	decide no.
+
+To resolve (SI - a student-interaction):
+	do nothing.
+
+To compute unique interaction of (M - a student):
+	let prank-happened be false;
+	if student-interaction-time > 0:
+		if a random number between 1 and student-interaction-time is 1:
+			let SI be a random selectable student-interaction;
+			if SI is student-interaction:
+				add SI to recent-student-interactions, if absent;
+				while the number of entries in recent-student-interactions > 2:
+					let C be entry 1 in recent-student-interactions;
+					remove C from recent-student-interactions;
+				resolve SI;
+				now student-interaction-time is a random number between 30 and 60;
+				now prank-happened is true;
+	if prank-happened is false:
+		if student-interaction-time > 1, decrease student-interaction-time by 1;
+		if M is a ditzy student:
+			let F be the aggro limit of M - the favour of M; [gets larger the more she is angry with the player]
+			let R be a random number between 1 and 20;
+			if debuginfo > 0, say "[input-style][MediumDesc of M] prank check: [student-name of M] anger ([F]) | ([R].5) d20[roman type][line break]";
+			if F > R:
+				compute default prank of M.
+
+
+student-interaction-genitals-inspection is a student-interaction. student-interaction-genitals-inspection is repeatable.
+
+Definition: student-interaction-genitals-inspection is student-eligible:
+	if current-monster is tryhard student and the current-rank of current-monster > the rank of the player, decide yes;
+	decide no.
+Definition: student-interaction-genitals-inspection is appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
+Definition: student-interaction-genitals-inspection is eligible:
+	if there is pussy covering actually unavoidable clothing, decide no;
+	if the player is possessing a penis:
+		if penis is not exposed, decide yes;
+	otherwise if the player is possessing a vagina:
+		if vagina is not exposed, decide yes;
+	decide no.
+
+To resolve (SI - student-interaction-genitals-inspection):
+	let M be current-monster;
+	say "[BigNameDesc of M] snaps [his of M] finger in front of your face, and then points down to your crotch.[line break][speech style of M]'Genitals inspection. Teachers have given me permission to inspect the genitals of all lower ranked students. Come on, show me what you've got.'[roman type][line break]Do you get your [genitals] out for [NameDesc of M] to inspect?";
+	if the player is bimbo consenting:
+		say "You obediently expose your [genitals] to [NameDesc of M]. [big he of M] gives it a little pinch as [he of M] pulls [his of M] face close to inspect it. [if the number of students in the location of the player > 2]The other students snicker. [otherwise if the number of interested students in the location of the player is 2]The other student snickers. [end if][strongHumiliateReflect][line break][speech style of M]'Everything seems to be in order here.'[roman type][line break][BigNameDesc of M] nods, and allows you to put your [genitals] away again.[if the player is not shameless][line break][variable custom style]That was really humiliating...[roman type][line break][end if]";
+	otherwise:
+		say "[if the player is able to speak][variable custom style]'No way.'[roman type][line break][end if]You shake your head with refusal.[line break][speech style of M]'Ugh! You need a lesson in respecting your superiors.'[roman type][line break][BigNameDesc of M] looks outraged, in a prissy, haughty sort of way.";
+		FavourDown M with consequences.
+
+student-interaction-diaper-inspection is a student-interaction. student-interaction-diaper-inspection is repeatable.
+
+Definition: student-interaction-diaper-inspection is student-eligible:
+	if current-monster is tryhard student and the current-rank of current-monster > the rank of the player, decide yes;
+	decide no.
+Definition: student-interaction-diaper-inspection is appropriate:
+	if diaper quest is 1, decide yes;
+	decide no.
+Definition: student-interaction-diaper-inspection is eligible:
+	let K be a random worn knickers;
+	if K is not knickers, decide no;
+	if K is currently visible, decide no;
+	repeat with C running through pussy covering actually unavoidable clothing:
+		if C is not knickers, decide no;
+	decide no.
+
+Definition: a student is eager to change diapers: decide no.
+
+To resolve (SI - student-interaction-diaper-inspection):
+	let M be current-monster;
+	let K be a random worn knickers;
+	say "[BigNameDesc of M] snaps [his of M] finger in front of your face, and then points down to your crotch.[line break][speech style of M]'Underwear inspection. Teachers have given me permission to inspect the underwear of all lower ranked students. Come on, show me what you've got on.'[roman type][line break]Do you expose your [K] for [NameDesc of M] to inspect?";
+	if the player is bimbo consenting:
+		say "You obediently expose your [MediumDesc of K] to [NameDesc of M]. ";
+		if K is diaper:
+			compute diaper check of K;
+		otherwise if K is messed or K is wet:
+			say "[BigNameDesc of M] recoils.[line break][speech style of M]'You dirty, filthy [boy of M]! This is EXACTLY why the teachers want us to wear diapers! You better believe that I'm reporting you to the headmistress.'[roman type][line break]";
+		otherwise:
+			say "[big he of M] gives it a little pinch as [he of M] pulls [his of M] face close to inspect it. [if the number of students in the location of the player > 2]The other students snicker. [otherwise if the number of interested students in the location of the player is 2]The other student snickers. [end if][strongHumiliateReflect][line break][speech style of M]'Everything seems to be in order here.'[roman type][line break][BigNameDesc of M] nods, and allows you to put your undies away again.[if the player is not shameless][line break][variable custom style]That was really humiliating...[roman type][line break][end if]";
+	otherwise:
+		say "[if the player is able to speak][variable custom style]'No way.'[roman type][line break][end if]You shake your head with refusal.[line break][speech style of M]'Ugh! You need a lesson in respecting your superiors.'[roman type][line break][BigNameDesc of M] looks outraged, in a prissy, haughty sort of way.";
+		FavourDown M with consequences.
+
+
+student-interaction-kiss is a student-interaction. student-interaction-kiss is repeatable.
+
+Definition: student-interaction-kiss is student-eligible:
+	if current-monster is ditzy student and the current-rank of current-monster >= 2, decide yes;
+	decide no.
+Definition: student-interaction-kiss is eligible:
+	if face is actually occupied or the total volume of face > 0, decide no;
+	if the lips of face > 0 or diaper quest is 1, decide yes;
+	decide no.
+
+To resolve (SI - student-interaction-kiss):
+	let M be current-monster;
+	say "[BigNameDesc of M] stares at your face.[line break][speech style of M]'I love your lips. Could I... Please...'[roman type][line break][big he of M] puts one hand on your chin, and, closing [his of M] eyes, moves in to kiss you. Do you let the kiss happen?";
+	if the player is bimbo consenting:
+		say "You close your eyes and accept [NameDesc of M][']s lips on yours.[speech style of M]'Mmmmm...'[roman type][line break][big he of M] gives a gentle moan of pleasure as [he of M] licks your [LipDesc] with [his of M] tongue.[line break][if the number of students in the location of the player > 2]The other students giggle. [otherwise if the number of interested students in the location of the player is 2]The other student whistles at you. [end if][moderateHumiliateReflect]";
+		passively stimulate face from M;
+		if a random number between 4 and 6 <= the current-rank of M:
+			let LQ be semen;
+			if diaper quest is 1, now LQ is milk;
+			say "What nobody else can see, but you immediately can taste, is that [NameDesc of M][']s mouth is full of [variable LQ]!";
+			TasteGrossOut 3;
+			say "Do you pull away?";
+			if the player is reverse bimbo consenting:
+				say "You quickly pull away. [BigNameDesc of M] sticks [his of M] tongue out at you.[line break][speech style of M]'You're no fun.'[roman type][line break][big he of M] says, through a mouthful of [variable LQ].";
+				FavourDown M with consequences;
+			otherwise:
+				say "As you relax into the creamy, slimy kiss, you feel [NameDesc of M] pushing some of the [variable LQ] into your own mouth.[line break][variable custom style]Gross, I don't even know whose [if diaper quest is 1]breasts[otherwise]cock[end if] this is from![roman type][line break]By the time [he of M] has finished kissing you, you have a reasonable mouthful of a stranger's [variable LQ] in your mouth.";
+				FaceFill LQ by 2;
+		otherwise if a random number between 3 and 6 <= the current-rank of M:
+			say "[BigNameDesc of M] puts a hand on your [genitals] and begins to massage it with [his of M] fingers! Do you pull away?";
+			if the player is reverse bimbo consenting:
+				say "You quickly pull away. [BigNameDesc of M] frowns.[line break][speech style of M]'Prude.'[roman type][line break]";
+				FavourDown M with consequences;
+			otherwise:
+				say "You let it happen.[line break][variable custom style]Fuck, that feels good...[roman type][line break]";
+				stimulate vagina from M;
+		otherwise if a random number between 2 and 5 <= the current-rank of M:
+			say "[BigNameDesc of M] puts a hand on the back of your head, and begins to shove [his of M] tongue down your throat! This is suddenly a very sloppy kiss. Do you pull away?";
+			if the player is reverse bimbo consenting:
+				say "You quickly pull away. [BigNameDesc of M] pouts.[line break][speech style of M]'Ugh, you're such a tease. I was just getting into that...'[roman type][line break]";
+				FavourDown M with consequences;
+			otherwise:
+				say "You let it happen.[line break][variable custom style]Aaah![roman type][line break]";
+				passively stimulate face from M;
+				GrossOut 3;
+		say "[BigNameDesc of M] steps back, and lets you go, licking [his of M] lips as [he of M] does.";
+	otherwise:
+		say "[if the player is able to speak][variable custom style]'No thank you.'[roman type][line break][end if]You pull away before [his of M] lips can meet yours.[line break][speech style of M]'Oh... I thought...'[roman type][line break][BigNameDesc of M] looks embarrassed, rejected and downtrodden by you.[line break][variable custom style]I may have done some damage there...[roman type][line break]";
+		FavourDown M with consequences.
+
+
+student-interaction-sweat is a student-interaction.
+
+Definition: student-interaction-sweat is student-eligible:
+	if current-monster is nasty student, decide yes;
+	decide no.
+Definition: student-interaction-sweat is appropriate:
+	if grossness fetish > 0, decide yes;
+	decide no.
+Definition: student-interaction-sweat is eligible:
+	if the player is in School19 or the player is in School20 or the player is in School23, decide yes;
+	decide no.
+
+To resolve (SI - student-interaction-sweat):
+	let M be current-monster;
+	say "[BigNameDesc of M] is breathing heavily, and stretching [his of M] muscles. Apparently, [he of M] has just finished a workout.[line break][speech style of M]'You. Wimp. Come lick my armpits clean.'[roman type][line break]Obey [his of M] gross demand?";
+	if the player is bimbo consenting:
+		say "You srunch your eyes shut and lick [his of M] sweaty armpit.";
+		TasteGrossOut 4;
+		say "[speech style of M]'Now the other one.'[roman type][line break]You obey meekly. [severeHumiliateReflect]";
+	otherwise:
+		say "[if the player is able to speak][variable custom style]'Fuck off, you nasty bitch.'[roman type][line break][end if]You make a disgusted face.[line break][speech style of M]'Oh, I'll make you regret that... Soon.'[roman type][line break][BigNameDesc of M] snarls at you.";
+		FavourDown M with consequences.
+
+
+
+student-interaction-kick is a student-interaction. student-interaction-kick is repeatable.
+
+Definition: student-interaction-kick is student-eligible:
+	if current-monster is nasty student, decide yes;
+	decide no.
+Definition: student-interaction-kick is eligible:
+	if the player is prone and the number of staff members in the location of the player is 0, decide yes;
+	decide no.
+
+To resolve (SI - student-interaction-kick):
+	let M be current-monster;
+	say "[BigNameDesc of M] suddenly steps up behind you and kicks you hard on your [AssDesc]!";
+	PainUp 15;
+	say "[speech style of M]'Why are you crawling on the ground, little pig?!'[roman type][line break]".
+
+
+
+student-interaction-mass-collectible is a student-interaction. student-interaction-mass-collectible is repeatable.
+
+Definition: student-interaction-mass-collectible is student-eligible:
+	if current-monster is a ditzy student, decide yes;
+	decide no.
+Definition: student-interaction-mass-collectible is eligible:
+	if there is an off-stage mass collectible, decide yes;
+	decide no.
+
+To resolve (SI - student-interaction-mass-collectible):
+	let M be current-monster;
+	let MC be a random off-stage mass collectible;
+	say "[BigNameDesc of M] offers you a [MC].[line break][speech style of M]'Would you like this? I'm not really sure what I'm supposed to do with it. I feel like someone smarter should have it.'[roman type][line break]";
+	now MC is in the location of the player;
+	compute autotaking MC;
+	say "[variable custom style][one of]Score[or]Nice[at random]![roman type][line break]".
+
+
+student-interaction-id-card is a student-interaction.
+
+Definition: student-interaction-id-card is student-eligible:
+	if the current-rank of current-monster >= 6 and the rank of the player >= 4, decide yes;
+	decide no.
+Definition: student-interaction-id-card is eligible:
+	if id-card is off-stage, decide yes;
+	decide no.
+
+To resolve (SI - student-interaction-id-card):
+	let M be current-monster;
+	say "[BigNameDesc of M] offers you a [id-card].[line break][speech style of M]'I went snooping around the staff room earlier, and found this. Since you're always sneaking off to the hotel, I thought you might find a use for it...'[roman type][line break]";
+	now id-card is in the location of the player;
+	compute autotaking id-card;
+	say "[variable custom style]Holy crap... This might turn out to be REALLY useful![roman type][line break]".
+
+
+student-interaction-plug-swap is a student-interaction.
+
+Definition: student-interaction-plug-swap is student-eligible:
+	let C be a random plug penetrating asshole;
+	if C is not plug or C is not actually unavoidable, decide no;
+	if current-monster is not innocent student and current-monster is not nasty student and the current-rank of current-monster >= 3:
+		let P be the next-plug-up of C;
+		if P is an off-stage plug, decide yes;
+	decide no.
+
+To resolve (SI - student-interaction-plug-swap):
+	let M be current-monster;
+	say "[BigNameDesc of M] gives you a friendly wink.[line break][speech style of M]'My homework is to swap butt plugs with someone. Want to swap butt plugs with me?'[roman type][line break]";
+	if the player is consenting:
+		let C be a random plug penetrating asshole;
+		let P be the next-plug-up of C;
+		increase the raw-magic-modifier of C by 1;
+		silently transform C into P;
+		say "As you remove [NameDesc of C] and offer it to [NameDesc of M], [he of M] reaches back and pulls a [P] out of [his of M] asshole.[line break][variable custom style]Oh wow, that's bigger than mine...[line break][speech style of M]'Well? What are you waiting for? This is an important part of my homework.'[roman type][line break][BigNameDesc of M] has already inserted your [MediumDesc of C] into [his of M] butthole, and isn't tolerating your hesitation. You sigh, and get to work easing [NameDesc of P] into your [asshole].";
+		ruin asshole;
+		if grossness fetish > 0:
+			say "You can't get the fact that this plug has just been inside [NameDesc of M][']s warm, sweaty asshole out of your head.";
+			GrossOut 4;
+		otherwise if diaper quest is 1:
+			say "You can't get the fact that this plug has just been inside [NameDesc of M][']s warm, sweaty asshole out of your head.";
+			SexAddictUp 1;
+		say "Once it's in, [NameDesc of M] nods with satisfaction.[line break][speech style of M]'Thanks for helping me out. I hope it's nice and warm for you. I've been wearing it all day.'[roman type][line break]";
+	otherwise:
+		say "[BigNameDesc of M] shrugs.[line break][speech style of M]'Fair enough.'[roman type][line break]".
+
+student-interaction-plug-drop is a student-interaction.
+
+Definition: student-interaction-plug-drop is student-eligible:
+	if diaper quest is 0 and current-monster is innocent student and the player is in School15, decide yes;
+	decide no.
+
+To resolve (SI - student-interaction-plug-swap):
+	let M be current-monster;
+	let P be a random off-stage fetish appropriate basic plug;
+	if P is plug:
+		blandify and reveal P;
+		now P is anal-sex-addiction-influencing;
+		now P is refreshment;
+		say "[BigNameDesc of M] grunts as [he of M] removes a [P] from [his of M] asshole![line break][speech style of M]'Too... much... lube!'[roman type][line break][big he of M] tosses [NameDesc of P] onto the ground. A moment later, [he of M] grunts as a loud dollop of lube bubbles out of [his of M] asshole and oozes down [his of M] thighs.[line break][speech style of M]'Definitely not worth it. Who would be crazy enough to need a permanently lubed butthole anyway?!'[roman type][line break]";
+		increase the donations of School15 by 1;
+		say "The magic runes around the ceiling and doorway pulse and vibrate brilliantly [if the donations of School15 is 1]once[otherwise][donations of School15] times[end if] before [if the donations of School15 < 5]returning to their previous slower rhythm[otherwise if the donations of School15 is 5]becoming grey and inactive[otherwise]returning to being grey and inactive[end if].".
+
+
+
+
+student-interaction-kraken-bell is a student-interaction.
+
+Definition: student-interaction-kraken-bell is student-eligible:
+	if current-monster is student-calamity or current-monster is student-rachel, decide yes;
+	decide no.
+
+To resolve (SI - student-interaction-kraken-bell):
+	let M be current-monster;
+	say "[BigNameDesc of M] taps you on the shoulder.[line break][speech style of M]'So, um, some of the other students felt like they needed to [']teach me a lesson['] by helping me [']go for a swim[']... Anyway I ended up finding this at the bottom of the swimming pool.'[roman type][line break][big he of M] holds up a very old looking handheld metal bell.[line break][speech style of M]'I was going to keep it, but it's actually creeping me out a bit. And then I was going to give it to a teacher, but I didn't want to find out that I wasn't supposed to have it, and get into trouble. So, um, I guess what I'm asking, is do you want it?'[roman type][line break]";
+	now temporaryYesNoBackground is the examine-image of kraken bell;
+	if the player is consenting:
+		say "[BigNameDesc of M] hands over [NameDesc of kraken bell].[line break][speech style of M]'Thanks. I feel like a weight has lifted already.'[roman type][line break]";
+		now kraken bell is carried by the player;
+		commence doom;
+	otherwise:
+		HappinessDown M by 1.
+
+
+
+[student-interaction-dominate-me is a student-interaction.
+
+Definition: student-interaction-dominate-me is student-eligible:
+	if current-monster is a nasty student and the current-rank of current-monster > 1, decide yes;
+	decide no.
+Definition: student-interaction-dominate-me is eligible:
+	if the player is feeling submissive, decide no;
+	decide yes.
+
+To resolve (SI - student-interaction-dominate-me):
+	let M be current-monster;
+	say "[BigNameDesc of M] storms up to you angrily.[line break][speech style of M]'You! You took my key, didn't you?'[roman type][line break]";]
+
+
 
 
 Part - Damage

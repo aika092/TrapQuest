@@ -192,7 +192,7 @@ To compute (M - a monster) stomping (N - an aeromancer):
 	now N is fucked-silly;
 	now the fountain-target of N is M.
 
-Definition: an aeromancer (called M) is distracted:
+Definition: an aeromancer (called M) is uniquely distracted:
 	if inflation fetish is 1 and M is reactive and (M is uninterested or M is friendly):
 		let N be a random undefeated fairy in the location of M;
 		if N is monster and (N is not grabbing the player and N is not penetrating a body part):
@@ -617,7 +617,7 @@ This is the aeromancer tries to curse the player rule:
 		rule succeeds;
 	otherwise:
 		let T be desired science tier of current-monster; [#LXorDD]
-		if debugmode > 0, say "[input style]Computed desired science tier of [Printed name of current-monster] as [T] in aeromancer curses check.[line break]";
+		if debugmode > 0, say "[input style]Computed desired science tier of [MediumDesc of current-monster] as [T] in aeromancer curses check.[line break]";
 		if T > 2:
 			say DefaultSpecialScienceFlavour;
 			compute aeromancer science tier T of current-monster;
@@ -660,7 +660,7 @@ The aeromancer unique punishment rules is a rulebook. The unique punishment rule
 
 This is the aeromancer special science experiments rule: [#LXorDD]
 	let T be desired science tier of current-monster;
-	if debugmode > 0, say "[input style]Computed desired science tier of [Printed name of current-monster] as [T] in aeromancer special science experiments rule.[line break]";
+	if debugmode > 0, say "[input style]Computed desired science tier of [MediumDesc of current-monster] as [T] in aeromancer special science experiments rule.[line break]";
 	if T > 2:
 		say DefaultSpecialScienceFlavour;
 		compute aeromancer science tier T of current-monster;

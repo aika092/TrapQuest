@@ -183,11 +183,12 @@ To compute betrothal of (M - a monster):[This only triggers when the player is f
 		let C be a random worn bouquet;
 		if bride-consort is not the throne:
 			let F be 0;
-			if bride-consort is in the location of the player, now F is 1;
-			otherwise now F is -1;
+			unless the class of the player matches the text "traitor":
+				if bride-consort is in the location of the player, now F is 1;
+				otherwise now F is -1;
 			if bride-consort is M, now F is 2;
 			if F is -1:[the consort isn't around. Adultery!]
-				let T be a random worn interracial themed wearthing;
+				let T be a random worn interracial themed wearthing; [TODO: Change this bit]
 				if bride-consort is human and interracial fetish is 1 and bride-consort is pale skinned and M is dark skinned and T is a wearthing:
 					say "Your [C] pulses, and the image of [NameDesc of bride-consort] shatters as it's replaced by [NameDesc of M], or more specifically, [his of M] big, black [DickDesc of M].";
 					compute unique recycling of floral bridal veil;
@@ -288,31 +289,55 @@ To compute wedding night:
 	let L be the location of bride-consort;
 	now bride-consort is in Hotel06;
 	now bride-consort is interested;
-	say "[if L is not Hotel06][BigNameDesc of bride-consort] appears from the east![line break][end if][speech style of bride-consort]'I have been looking forward to this all day.'[roman type][line break][if there is a worn bouquet]Suddenly, your [random worn bouquet] takes on a life of its own, and throws itself towards the bed. Since you're holding it, you go with it, tumbling down onto the bed on your front. [end if]";
-	repeat with C running through pussy covering clothing:
-		if C is crotch-zipped:
-			say UnzipFlav of bride-consort at C;
-			ZipDown C;
-		otherwise if C is displacable:
-			compute bride-consort displacing C;
-		otherwise:
-			say "[BigNameDesc of bride-consort] removes your [ShortDesc of C]. ";
-			now C is in the location of the player;
-	say "A split second later, [NameDesc of bride-consort] is behind you, lining up [his of bride-consort] [manly-penis] with your [vagina].[line break][speech style of bride-consort]'With this, our bond is truly sealed.'[roman type][line break]In one strong motion, [he of bride-consort] pushes inside you.";
-	now bride-consort is penetrating vagina;
-	if bride-consort is mechanic and the class of the player is "princess bride":
-		say "[speech style of bride-consort]'Your royal energy... I feel it flowing through me... releasing ME!'[roman type][line break]";
-		unseal xavier from bride-consort; [don't worry this automatically changes who bride-consort is and who is penetrating]
-	now the consummation of betrothal-quest is true;
-	ruin vagina times 1;
-	if bride-consort is demon lord: [xavier gives the player a good seeing to]
-		if demon lord is friendly, now demon lord is friendly-fucking;
+	say "[if L is not Hotel06][BigNameDesc of bride-consort] appears from the east![line break][end if][speech style of bride-consort]'I have been looking forward to this all day.'[roman type][line break]";
+	let cuckSceneOverride be false;
+	let CC be a random carried chastity cage;
+	if the class of the player matches the text "traitor" and CC is chastity cage and the player is able to speak:
+		say "[BigNameDesc of CC] pulses in your [if CC is currently-in-bag]bag[otherwise]hand[end if]... You can sense that an opportunity has arisen to completely take ownership of this pathetic little [man of bride-consort]...";
+		reset multiple choice questions;
+		set numerical response 1 to "Make the [MediumDesc of bride-consort] your cuck";
+		set numerical response 2 to "Have normal wedding night sex with the [MediumDesc of bride-consort]";
+		compute multiple choice question;
+		if player-numerical-response is 1, now cuckSceneOverride is true;
+		if player-numerical-response is 2, say "You decide that this [man of bride-consort] deserves at least a little joy in his life. You obediently lie down on the luxurious bed, and let [him of bride-consort] take control.";
 	otherwise:
-		say "[speech style of bride-consort]'C-cumming!'[roman type][line break][BigNameDesc of bride-consort] begins unleashing [himself of bride-consort] inside of you.[line break][variable custom style]Already?![roman type][line break]";
-		PussyFill the semen load of bride-consort;
-		focus-consider bride-consort;
-		orgasm bore bride-consort;
-		say "[speech style of bride-consort]'Being inside you... is the best feeling of my life! We must do this again soon. Until then, I trust you will be faithful to me.'[roman type][line break][if L is not Hotel06][BigNameDesc of bride-consort] leaves the way [he of bride-consort] came.[end if]";
-		now bride-consort is in L.
+		say "[if there is a worn bouquet]Suddenly, your [random worn bouquet] takes on a life of its own, and throws itself towards the bed. Since you're holding it, you go with it, tumbling down onto the bed on your front. [end if]";
+		if the class of the player matches the text "traitor" and CC is chastity cage, say "[variable custom style]Oh no... I was going to make [him of bride-consort] my cuck... But I can't do that if I can't speak right now![roman type][line break]";
+	if cuckSceneOverride is true:
+		say "You sit down on the bed, cross your legs, and dangle [NameDesc of CC] in front of [him of bride-consort].[line break][variable custom style]'I[']ve got a surprise for you, sweetie...'[roman type][line break]It's clear that [NameDesc of bride-consort] can't wait to fuck you, but [he of bride-consort] is also paralysed by your beauty and seductive powers.[line break][speech style of bride-consort]'W-what is it, darling?'[roman type][line break]You beckon [him of bride-consort] over, and gently run your fingers along the shaft of [his of bride-consort] [manly-penis].[line break][variable custom style]'Wouldn[']t it be, like, so hot, if we made ourselves wait for a while before we did it? Imagine how wonderful, how EXPLOSIVE it would feel, if our first fantastic fuck came after a long, teasing, frustrating dry spell.'[paragraph break][speech style of bride-consort]'That's... Um... I guess...'[paragraph break][variable custom style]'But I know naughty [boy of bride-consort]s like you can't be trusted not to touch your little dickies when you get the urge... So I have a solution, to make sure that we both keep our part of the bargain.'[roman type][line break]While speaking, you were slipping the base ring down [his of bride-consort] shaft and behind [his of bride-consort] balls. And now, before [he of bride-consort] knows what's happened, you've slipped the cage down on top, and clicked the lock in place.";
+		class summon key garter;
+		now CC is worn by bride-consort;
+		say "[speech style of bride-consort]'I... Um...'[roman type][line break]You wave a hand dismissively at your locked-away cuck.[line break][variable custom style]'Run along now, sweetie.'[roman type][line break][if L is not Hotel06][BigNameDesc of bride-consort] bows [his of bride-consort] head submissively, and leaves the way [he of bride-consort] came.[end if]";
+		now bride-consort is sex-enslaved;
+		now bride-consort is in L;
+		now the consummation of betrothal-quest is true;
+		DelicateDown 1;
+		Dignify 1000;
+	otherwise:
+		repeat with C running through pussy covering clothing:
+			if C is crotch-zipped:
+				say UnzipFlav of bride-consort at C;
+				ZipDown C;
+			otherwise if C is displacable:
+				compute bride-consort displacing C;
+			otherwise:
+				say "[BigNameDesc of bride-consort] removes your [ShortDesc of C]. ";
+				now C is in the location of the player;
+		say "A split second later, [NameDesc of bride-consort] is behind you, lining up [his of bride-consort] [manly-penis] with your [vagina].[line break][speech style of bride-consort]'With this, our bond is truly sealed.'[roman type][line break]In one strong motion, [he of bride-consort] pushes inside you.";
+		now bride-consort is penetrating vagina;
+		if bride-consort is mechanic and the class of the player is "princess bride":
+			say "[speech style of bride-consort]'Your royal energy... I feel it flowing through me... releasing ME!'[roman type][line break]";
+			unseal xavier from bride-consort; [don't worry this automatically changes who bride-consort is and who is penetrating]
+		now the consummation of betrothal-quest is true;
+		ruin vagina times 1;
+		if bride-consort is demon lord: [xavier gives the player a good seeing to]
+			if demon lord is friendly, now demon lord is friendly-fucking;
+		otherwise:
+			say "[speech style of bride-consort]'C-cumming!'[roman type][line break][BigNameDesc of bride-consort] begins unleashing [himself of bride-consort] inside of you.[line break][variable custom style]Already?![roman type][line break]";
+			PussyFill the semen load of bride-consort;
+			focus-consider bride-consort;
+			orgasm bore bride-consort;
+			say "[speech style of bride-consort]'Being inside you... is the best feeling of my life! We must do this again soon. Until then, I trust you will be faithful to me.'[roman type][line break][if L is not Hotel06][BigNameDesc of bride-consort] leaves the way [he of bride-consort] came.[end if]";
+			now bride-consort is in L.
 
 Royal Scepter ends here.

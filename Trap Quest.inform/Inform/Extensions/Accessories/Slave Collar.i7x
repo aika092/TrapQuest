@@ -49,9 +49,6 @@ To compute slave collar wisp of (C - a clothing):
 					silently set up W;
 					now the wisp-quest of W is brothel-wisp-quest;
 					now the wisp-trigger of W is speak-wisp-trigger;
-					now W is everywhere;
-					update backdrop positions;
-					now the text-shortcut of W is the substituted form of "[ColourDesc of W]";
 					say "[bold type][BigNameDesc of C] [bold type]shudders, and a [ColourDesc of W] curse wisp appears, and begins hovering behind you! [roman type]You can sense that you must [bold type][wisp-quest of W][roman type] before you next [bold type][wisp-trigger of W][roman type], or else you will [bold type][wisp-punishment of W][roman type].";
 				otherwise:
 					increase slave-collar-wisp-charge by 1.

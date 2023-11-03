@@ -347,6 +347,11 @@ To set numerical response (N - a number) to (T - a text):
 		unless T is "", increase N by 1;
 	decide on N.]
 
+To compute single choice question (T - a text):
+	reset multiple choice questions;
+	set numerical response 1 to T;
+	compute multiple choice question.
+
 To compute multiple choice question:
 	let inputNumber be 0;
 	let validAnswer be 0;
@@ -580,7 +585,7 @@ To say unique-verb-desc of (T - candy machine):
 To say unique-verb-desc of (T - magic lamp):
 	if inline hyperlinks >= 2, say "[if T is held] [link][bracket]dr[close bracket][as]drop [text-shortcut of T][end link][otherwise] [link][bracket]ta[close bracket][as]ta [text-shortcut of T][end link][end if][if the wishes of T > 0] [link][bracket]rub[close bracket][as]rub lamp[end link][end if]".
 
-To say unique-verb-desc of (T - stop button):
+To say unique-verb-desc of (T - stop-button):
 	if inline hyperlinks >= 2, say " [link][bracket]push[close bracket][as]push stop button[end link]".
 
 To say unique-verb-desc of (T - a make up kit):

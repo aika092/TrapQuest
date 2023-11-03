@@ -356,7 +356,7 @@ To consider (T - talk-princess-question) for (M - a monster):
 		set next numerical response to the substituted form of "[printed name of T]";
 
 To execute (T - talk-princess-question) for (M - a monster):
-	if the number of monsters in the location of the player is 1:
+	if the number of threatening monsters in the location of the player >= 1:
 		say "[speech style of M]'[if the question-sequence of M is 0]I'm Princess Annie! [big please] help me!'[otherwise if the question-sequence of M is 1]I conjured up this entire pocket dimension and the people inside it... but I was sloppy and got overpowered by my own creation! Now hurry up and get me out of here!'[otherwise if the question-sequence of M is 2]I'm going to get my revenge on that fucking [ShortDesc of headmistress] and [his of headmistress] pawns. [big he of headmistress][']ll wish [he of headmistress][']d never been created...'[otherwise if the question-sequence of M is 3]I'm going to need you to unlock this cell. For that, you'll need a magical skeleton key. My prison guard has one, but [he of prison guard] might need... [']persuading['] to part with it. I happen to know that [he of prison guard] loves digestive biscuits. I'm also going to need something to fight with. Any magical wand will do, but my royal scepter would be our best chance. For that you'll need to first find my tiara. It should present itself to anyone worthy who sits on my throne.'[otherwise][Azathot] above... is this really the best chance I have? I need you to help me escape!'[end if][roman type][line break]";
 		increase the question-sequence of M by 1;
 	otherwise: [She's not alone so she can't talk sincerely]
@@ -536,7 +536,7 @@ To compute final resolution of (M - ex-princess) taking (T - a thing):
 	otherwise now M is carrying T.
 
 To decide which number is the bartering value of (T - a thing) for (M - ex-princess):
-	if M is caged and the number of monsters in the location of M is 1:
+	if M is caged and the number of threatening monsters in the location of M is 0:
 		if T is vibe-wand, decide on 99;
 		if T is skeleton key and there is a vibe-wand carried by M, decide on 99;
 	decide on 0.
@@ -927,7 +927,7 @@ An all time based rule (this is the caged princess tortured rule):
 
 
 [We can make this resolve to 'yes' and also output some text about what they get up to instead of taking their action.]
-Definition: ex-princess (called M) is distracted:
+Definition: ex-princess (called M) is uniquely distracted:
 	if M is unconcerned and headmistress is in the location of M and M is in the location of the player and the teaseTimer of headmistress <= 0:
 		let E be a random vibe-wand held by M;
 		if E is nothing, now E is royal scepter;

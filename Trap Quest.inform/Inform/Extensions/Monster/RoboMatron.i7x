@@ -26,7 +26,7 @@ To set up (M - robomatron):
 	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M;
 	now M is guarding;
-	now M is in Hotel36.
+	now M is in FinalBoss01.
 
 To decide which number is the starting difficulty of (M - robomatron):
 	decide on 18.

@@ -40,7 +40,7 @@ To construct normal buttons for (T - a milking bench lever):
 		if the player is prone, now the ButtonColour entry is lightModeFullYellow; [turn yellow - player needs to stand]
 		if the player is immobile or the player is in danger or the player is not able to use their hands, now the ButtonColour entry is lightModeFullRed. [turn red - player unable to reach]
 To say verb-desc of (T - a milking bench lever):
-	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say "[unique-verb-desc of T][link][bracket]pull[close bracket][as]pull [text-shortcut of T][end link]".
+	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say " [unique-verb-desc of T][link][bracket]pull[close bracket][as]pull [text-shortcut of T][end link]".
 
 
 mansion-milking-bench is a milking bench.

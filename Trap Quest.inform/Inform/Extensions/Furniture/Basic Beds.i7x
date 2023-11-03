@@ -8,7 +8,7 @@ To say ExamineDesc of (C - prison guard's bed):
 	say "The prison guard has a comfortable but bland looking double bed. You have no idea if you would get in trouble for resting on it or not[if the intelligence of the player > 7], but knowing this game, the odds aren't in your favour[end if].".
 
 To decide which figure-name is the examine-image of (F - a prison guard's bed):
-	decide on figure of hotel bed. [TODO: unique image]
+	decide on figure of guest bed. [TODO: unique image]
 
 To compute furniture resting on (F - prison guard's bed):
 	now player-currently-resting is 1;

@@ -77,7 +77,7 @@ To compute generic first time class reward of (Q - milk-serve-quest) on (C - a c
 	let D be a random off-stage ring;
 	if D is ring:
 		if C is royal circlet, now D is pure diamond;
-		otherwise now C is emerald;
+		otherwise now D is emerald;
 		set shortcut of D;
 		if D is actually summonable:
 			summon D;

@@ -254,7 +254,7 @@ This is the fairy attacks then gets bored rule:
 	if the rule succeeded: [Should always happen with the current code]
 		if M is not grabbing the player:
 			say "[BigNameDesc of M] seems satisfied and loses interest in messing with you.";
-			if the health of M >= the maxhealth of M, calm M;
+			if the health of M >= the maxhealth of M, calm M; [this means that fairies that you retaliated against will just keep messing with you]
 			bore M for 120 seconds;
 		rule succeeds.
 The fairy attacks then gets bored rule is listed in the fairy attacks then gets bored rules.
@@ -692,11 +692,19 @@ To compute basic greeting to (M - a fairy):
 	now M is interested.
 
 To say FirstResponse of (M - a fairy):
-	say "[speech style of M]'[one of]Hi there!'[or]Hello!'[or]Hi hi!'[or]Hello hello hello!'[or]Hiya!'[or]Nice to meet you!'[or]Hello!'[at random][roman type][line break]";
-	alwayscutshow figure of fairy interact 2 for M.
+	if the health of M >= the maxhealth of M:
+		say "[speech style of M]'[one of]Hi there!'[or]Hello!'[or]Hi hi!'[or]Hello hello hello!'[or]Hiya!'[or]Nice to meet you!'[or]Hello!'[at random][roman type][line break]";
+		alwayscutshow figure of fairy interact 2 for M;
+	otherwise:
+		say HurtResponse of M.
+
+To say HurtResponse of (M - a fairy):
+	say "[speech style of M]'[one of]I don't want to talk to you, you played too rough[or]You hurt me, meanie! Take this[stopping]!'[roman type][line break]".
 
 To say RepeatResponse of (M - a fairy):
-	if the boredom of M > 100:
+	if the health of M < the maxhealth of M:
+		say HurtResponse of M;
+	otherwise if the boredom of M > 100:
 		if the pregnancy of the player is 1:
 			say "[speech style of M]'[one of]Congratulations![or]Hi! You're going to be a mommy soon!'[or]Hello miss mommy! You're pretty!'[at random][roman type][line break]";
 		if the class of the player is fertility goddess:
@@ -1050,7 +1058,7 @@ Definition: fairy-witch is blocker:
 	if it is not airborne, decide yes;
 	decide no.
 
-Definition: fairy-witch is distracted:
+Definition: fairy-witch is uniquely distracted:
 	if fairy-witch is in the location of the player:
 		let LM be the list of monsters in the location of the player;
 		repeat with M running through LM:

@@ -21,7 +21,7 @@ possibly: maybe go the Japanese bathing route and have sections.
 To compute swimming in (H - hot-tub):
 	let swimming be 1;
 	let swim-turns be 0;
-	let fondling-teacher be headmistress;
+	let fondling-teacher be receptionist;
 	allocate 6 seconds;
 	let M be a random alive teacher;
 	let K be a random worn messed knickers;
@@ -53,7 +53,7 @@ To compute swimming in (H - hot-tub):
 					say "[BigNameDesc of M] turns up at the door![line break][speech style of M]'I thought I might find you here. Don't mind if I join you!'[roman type][line break][big he of M] is soon seated next to you in the tub, [his of M] wandering hands and fingers soon probing and groping you.";
 				now fondling-teacher is M;
 		if diaper quest is 1 or there is a worn diaper:
-			if fondling-teacher is teacher and fondling-teacher is interested and fondling-teacher is in the location of the player and fondling-teacher is friendly and the player is horny: [headmistress isn't a teacher, so if this is still set to headmistress then nothing will happen]
+			if fondling-teacher is teacher and fondling-teacher is interested and fondling-teacher is in the location of the player and fondling-teacher is friendly and the player is horny: [receptionist isn't a teacher, so if this is still set to receptionist then nothing will happen]
 				cutshow Figure of hot tub cutscene 1 for fondling-teacher;
 				if there is a worn diaper, say "[line break][speech style of fondling-teacher]'Wearing a diaper in the tub? What a kinky [boy of the player] you are. Do you like the feeling of all that soggy squishy padding against your no-no?'[roman type][line break][BigNameDesc of fondling-teacher] starts to move [his of fondling-teacher] hand towards your crotch.";
 				otherwise say "[line break][speech style of fondling-teacher]'Not wearing a diaper? What a shame. But on the other hand, if there's no padding in the way... What's to stop me from doing this?'[roman type][line break][BigNameDesc of fondling-teacher] starts to move [his of fondling-teacher] hand towards your crotch.";
@@ -61,9 +61,9 @@ To compute swimming in (H - hot-tub):
 				compute masturbation of fondling-teacher;
 				now swimming is 0;
 		otherwise:
-			if fondling-teacher is teacher and fondling-teacher is interested and fondling-teacher is in the location of the player and fondling-teacher is friendly and the player is horny: [headmistress isn't a teacher, so if this is still set to headmistress then nothing will happen]
+			if fondling-teacher is teacher and fondling-teacher is interested and fondling-teacher is male and fondling-teacher is in the location of the player and fondling-teacher is friendly and the player is horny: [receptionist isn't a teacher, so if this is still set to receptionist then nothing will happen]
 				cutshow Figure of hot tub cutscene 1 for fondling-teacher;
-				say "[line break][speech style of fondling-teacher]'While we're both here, let's see how your blowjob skills are coming along, eh?'[roman type][line break]";
+				say "[line break][speech style of fondling-teacher]'Ooh, I can tell you're horny too! While we're both here, and in the mood, let's see how your blowjob skills are coming along, eh?'[roman type][line break]";
 				now presented-orifice is face;
 				now the chosen-orifice of fondling-teacher is presented-orifice;
 				now fondling-teacher is friendly-fucking;
@@ -73,7 +73,7 @@ To compute swimming in (H - hot-tub):
 				now swimming is 0;
 		say line break;
 		if swimming is 1:
-			if fondling-teacher is teacher and fondling-teacher is interested and fondling-teacher is in the location of the player and fondling-teacher is friendly: [headmistress isn't a teacher, so if this is still set to headmistress then nothing will happen]
+			if fondling-teacher is teacher and fondling-teacher is interested and fondling-teacher is in the location of the player and fondling-teacher is friendly: [receptionist isn't a teacher, so if this is still set to receptionist then nothing will happen]
 				cutshow Figure of hot tub cutscene 1 for fondling-teacher;
 				let RB be a random number between 1 and 3;
 				let BP be thighs;
@@ -83,7 +83,8 @@ To compute swimming in (H - hot-tub):
 					if the player is possessing a vagina, now BP is vagina;
 					if the player is possessing a penis, now BP is penis;
 				say "[BigNameDesc of fondling-teacher] [one of]gently[or]softly[or]tenderly[in random order] [one of]fondles[or]strokes[or]gropes[or]molests[in random order] your [variable BP].";
-				passively stimulate BP from fondling-teacher;
+				if (BP is vagina or BP is penis) and the player is very horny, stimulate BP from fondling-teacher;
+				otherwise passively stimulate BP from fondling-teacher;
 				check for arousal change;
 				let S be turtle-swimsuit;
 				if diaper quest is 0, now S is a random off-stage fetish appropriate normal-monokini;
@@ -99,36 +100,39 @@ To compute swimming in (H - hot-tub):
 						say "[BigNameDesc of fondling-teacher] is holding a handful of your [ShortDesc of D].[line break][speech style of fondling-teacher]'[one of]This isn't really appropriate swimwear, now, is it?'[or][speech style of fondling-teacher]'Let's get your non-swimming clothes off, you silly [if diaper lover > 0]little [boy of the player][otherwise]minx[end if].'[stopping][roman type][line break]";
 						compute fondling-teacher pulling off D;
 			otherwise:
-				now fondling-teacher is headmistress;
+				now fondling-teacher is receptionist;
 			increase swim-turns by 1;
 			if fondling-teacher is teacher:
 				reset multiple choice questions;
 				set numerical response 1 to "Keep relaxing in the hot tub";
-				set numerical response 2 to "[if fondling-teacher is teacher]Try to ease yourself away from [NameDesc of fondling-teacher] and get[otherwise]Get[end if] out of the hot tub";
-				if fondling-teacher is teacher, set numerical response 3 to "Forcefully pull away from [NameDesc of fondling-teacher] and get out of the hot tub ([he of fondling-teacher] may be unimpressed by your reluctance...)";
+				set numerical response 2 to "Try to ease yourself away from [NameDesc of fondling-teacher] and get out of the hot tub";
+				set numerical response 3 to "Forcefully pull away from [NameDesc of fondling-teacher] and get out of the hot tub ([he of fondling-teacher] may be unimpressed by your reluctance...)";
 				compute multiple choice question;
-				if player-numerical-response > 1:
-					if fondling-teacher is teacher:
-						if player-numerical-response is 2:
-							let INT be a random number between 1 and the intelligence of the player;
-							let D be INT + swim-turns;
-							if debuginfo > 0, say "[input-style]Escape check: Intelligence roll (d[intelligence of the player]) = [INT] + Turns spent in tub ([swim-turns]) = [D] | [difficulty of fondling-teacher * 2].5 [MediumDesc of fondling-teacher] difficulty rating[roman type][line break]";
-							say "You give [NameDesc of fondling-teacher] your best kind and polite smile, as you shift yourself away. ";
-							if D > the difficulty of fondling-teacher * 2:
-								say "[BigNameDesc of fondling-teacher] pouts, but relents, and releases you.";
-								now swimming is 0;
-							otherwise:
-								say "[BigNameDesc of fondling-teacher] [one of]seems to decide to pretend[or]pretends[stopping] that [he of fondling-teacher] hasn't noticed you trying to separate from [him of fondling-teacher], and continues to hold you in place!";
-						otherwise:
-							say "You yank yourself away, and [NameDesc of fondling-teacher] scowls, visibly unimpressed.";
-							consider angry punishment of fondling-teacher;
-							say "You get out of the hot tub.";
-							now swimming is 0;
-					otherwise:
-						say "You get out of the hot tub.";
+				if player-numerical-response is 2:
+					let INT be a random number between 1 and the intelligence of the player;
+					let D be INT + swim-turns;
+					if debuginfo > 0, say "[input-style]Escape check: Intelligence roll (d[intelligence of the player]) = [INT] + Turns spent in tub ([swim-turns]) = [D] | [difficulty of fondling-teacher * 2].5 [MediumDesc of fondling-teacher] difficulty rating[roman type][line break]";
+					say "You give [NameDesc of fondling-teacher] your best kind and polite smile, as you shift yourself away. ";
+					if D > the difficulty of fondling-teacher * 2:
+						say "[BigNameDesc of fondling-teacher] pouts, but relents, and releases you.";
 						now swimming is 0;
+					otherwise:
+						say "[BigNameDesc of fondling-teacher] [one of]seems to decide to pretend[or]pretends[stopping] that [he of fondling-teacher] hasn't noticed you trying to separate from [him of fondling-teacher], and continues to hold you in place!";
+				otherwise if player-numerical-response is 3:
+					say "You yank yourself away, and [NameDesc of fondling-teacher] scowls, visibly unimpressed.";
+					consider angry punishment of fondling-teacher;
+					say "You get out of the hot tub.";
+					now swimming is 0;
 			otherwise:
-				say "You keep relaxing in the tub.";
+				reset multiple choice questions;
+				set numerical response 1 to "Keep relaxing in the hot tub";
+				set numerical response 2 to "Get out of the hot tub";
+				compute multiple choice question;
+				if player-numerical-response is 1:
+					say "You keep relaxing in the tub.";
+				otherwise:
+					say "You get out of the hot tub.";
+					now swimming is 0;
 	if seconds > 0, increase seconds by swim-turns * 3;
 	display entire map.
 

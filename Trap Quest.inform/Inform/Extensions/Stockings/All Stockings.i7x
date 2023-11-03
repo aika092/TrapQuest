@@ -389,6 +389,36 @@ Definition: a frilly green socks is transformation-protected:
 Definition: a frilly green socks is green themed: decide yes.
 Definition: a frilly green socks is christmas themed: decide yes.
 
+halloween socks is a socks. The text-shortcut of halloween socks is "hws".
+
+Figure of halloween socks is the file "Items/Clothes/Lower/Legs/socks5.png".
+
+To decide which figure-name is clothing-image of (C - halloween socks):
+	decide on figure of halloween socks.
+
+To say ClothingDesc of (C - halloween socks):
+	say "These Halloween themed orange, black and purple striped knee-high socks are opaque and snug. They have frills above the ankles, giving them a cute and playful feel.".
+
+To say ShortDesc of (C - halloween socks):
+	say "pair of stripy socks".
+To say MediumDesc of (C - halloween socks):
+	say "pair of black, purple and orange halloween socks".
+
+To decide which number is the initial outrage of (C - halloween socks):
+	if diaper quest is 1, decide on 0;
+	decide on 2.
+
+To decide which number is the initial cringe of (C - halloween socks):
+	decide on 4.
+
+Definition: halloween socks is class-relevant:
+	if the class of the player is trick-or-treater, decide yes;
+	decide no.
+Definition: halloween socks is orange themed: decide yes.
+Definition: halloween socks is purple themed: decide yes.
+Definition: halloween socks is black themed: decide yes.
+Definition: halloween socks is halloween themed: decide yes.
+
 frilly stockings is a stockings. frilly stockings is cotton. frilly stockings is sheer-when-wet. The text-shortcut of frilly stockings is "fst".
 
 Definition: frilly stockings is class-relevant:

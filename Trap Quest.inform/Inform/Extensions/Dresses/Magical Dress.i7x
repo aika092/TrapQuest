@@ -151,4 +151,90 @@ Definition: anime superheroine top is boob themed: decide yes.
 Definition: anime superheroine top is disintegration-protected: decide yes.
 Definition: anime superheroine top is displacable: decide no.
 
+A dark magician girl dress is a kind of magical dress. Understand "dark", "magician", "magician girl" as a dark magician girl dress. A dark magician girl dress is pvc. A dark magician girl dress is unskirted. A dark magician girl dress is crotch-intact. A dark magician girl dress is totally-exclusive. A dark magician girl dress is not-top-displacable.
+
+To decide which number is the crotch-tightness of (C - a dark magician girl dress):
+	decide on 3.
+Definition: a dark magician girl dress is blue themed: decide yes.
+Definition: a dark magician girl dress is interracial themed: decide yes.
+
+To say DarkMagicianGirlDesc:
+	say "You can sense that now you are a [']Dark Magician Girl['], and will be able to regain magical energy by pleasuring black [manly-penis]s, but also your spells may now be ineffective against black people.".
+
+To compute post transformation effect of (C - a dark magician girl dress):
+	now C is bbc-addiction-influencing;
+	now C is cursed;
+	now the quest of C is interracial-sex-quest;
+	say "[BigNameDesc of C] is surrounded by a dark glow. [bold type][QuestFlav of C][roman type][line break]".
+
+To compute class set up of (C - a dark magician girl dress):
+	compute post transformation effect of C.
+
+Carry out taking off a dark magician girl dress:
+	say "[BigNameDesc of the noun], seemingly offended by your decision, drains away all of your magic power as it leaves!";
+	increase the magic-fatigue of the player by the magic power of the player.
+
+dark-magician-girl-costume is a dark magician girl dress. dark-magician-girl-costume is high cut. The printed name of dark-magician-girl-costume is "[clothing-title-before]dark magician girl costume[clothing-title-after]". Understand "costume" as dark-magician-girl-costume.
+
+Figure of dark-magician-girl-costume is the file "Items/Clothes/Upper/Special/MahouShoujo/magicaldress4.png".
+
+To decide which figure-name is the clothing-image of (C - dark-magician-girl-costume):
+	decide on figure of dark-magician-girl-costume.
+
+To decide which number is the initial outrage of (H - dark-magician-girl-costume):
+	decide on 4.
+
+To say ShortDesc of (C - dark-magician-girl-costume):
+	say "cosplay costume".
+To say MediumDesc of (C - dark-magician-girl-costume):
+	say "dark magician girl costume".
+
+To say ClothingDesc of (C - dark-magician-girl-costume):
+	say "This blue and pink and gold onepiece outfit is reminiscent of a popular card game character. [DarkMagicianGirlDesc]".
+
+dark-magician-girl-cameltoe-costume is a dark magician girl dress. dark-magician-girl-cameltoe-costume is very low cut. The printed name of dark-magician-girl-cameltoe-costume is "[clothing-title-before]dark magician girl cameltoe costume[clothing-title-after]". Understand "cameltoe", "costume" as dark-magician-girl-cameltoe-costume.
+
+Figure of dark-magician-girl-cameltoe-costume is the file "Items/Clothes/Upper/Special/MahouShoujo/magicaldress5.png".
+
+To decide which figure-name is the clothing-image of (C - dark-magician-girl-cameltoe-costume):
+	decide on figure of dark-magician-girl-cameltoe-costume.
+
+To decide which number is the crotch-tightness of (C - dark-magician-girl-cameltoe-costume):
+	decide on 5.
+
+To decide which number is the initial outrage of (H - dark-magician-girl-cameltoe-costume):
+	decide on 6.
+
+To say ShortDesc of (C - dark-magician-girl-cameltoe-costume):
+	say "cosplay costume".
+To say MediumDesc of (C - dark-magician-girl-cameltoe-costume):
+	say "dark magician girl costume".
+
+To say ClothingDesc of (C - dark-magician-girl-cameltoe-costume):
+	say "This blue and pink onepiece outfit is reminiscent of a popular card game character. It exposes [if C is worn]your[otherwise]the wearer's[end if] belly button, cleavage, top of the areolae, and is extremely tight at the V-shaped crotch. It's closer to a slutty swimsuit than a costume. [DarkMagicianGirlDesc]".
+
+dark-magician-girl-swimsuit is a dark magician girl dress. dark-magician-girl-swimsuit is very low cut. The printed name of dark-magician-girl-swimsuit is "[clothing-title-before]dark magician girl swimsuit[clothing-title-after]". Understand "swimsuit" as dark-magician-girl-swimsuit.
+
+Figure of dark-magician-girl-swimsuit is the file "Items/Clothes/Upper/Special/MahouShoujo/magicaldress6.png".
+
+To decide which figure-name is the clothing-image of (C - dark-magician-girl-swimsuit):
+	decide on figure of dark-magician-girl-swimsuit.
+
+To decide which number is the crotch-tightness of (C - dark-magician-girl-swimsuit):
+	decide on 5.
+
+To decide which number is the initial outrage of (H - dark-magician-girl-swimsuit):
+	decide on 7.
+
+To say ShortDesc of (C - dark-magician-girl-swimsuit):
+	say "cosplay swimsuit".
+To say MediumDesc of (C - dark-magician-girl-swimsuit):
+	say "dark magician girl swimsuit".
+
+To say ClothingDesc of (C - dark-magician-girl-swimsuit):
+	say "This blue and pink onepiece swimsuit is reminiscent of a popular card game character. It exposes [if C is worn]your[otherwise]the wearer's[end if] belly button, cleavage, top of the areolae, and is extremely tight at the ludicrously high V-shaped crotch. [DarkMagicianGirlDesc]".
+
+Definition: dark-magician-girl-swimsuit is swimming themed: decide yes.
+
+
 Magical Dress ends here.

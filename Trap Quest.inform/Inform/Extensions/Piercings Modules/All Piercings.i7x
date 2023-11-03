@@ -470,6 +470,8 @@ To decide which figure-name is the clothing-image of (C - a cow piercing):
 To say ClothingDesc of (C - a cow piercing):
 	say "A high gauge ring pierces each of your nipples.".
 To say ShortDesc of (C - a cow piercing):
+	say "nipple rings".
+To say MediumDesc of (C - a cow piercing):
 	say "pair of high gauge nipple rings".
 
 Definition: a cow piercing is eligible: decide no.
@@ -511,6 +513,29 @@ The overdress cow rings clash rule is listed in the overdress wearability rules.
 				if summoning is 0 and autowear is false, say "Your [ShortDesc of N] is magically preventing you from wearing any kind of bra! Maybe if you blessed it?";
 				rule fails.
 The bra cow rings clash rule is listed in the bra wearability rules.]
+
+
+dick-nipple-piercings is nipple piercing. The printed name of dick-nipple-piercings is "[clothing-title-before]dick nipple piercings[clothing-title-after]". The text-shortcut of dick-nipple-piercings is "dnp". Understand "dick nipple", "nipple", "piercings" as dick-nipple-piercings. dick-nipple-piercings is titfuck-addiction-influencing. Figure of dick nipple piercing is the file "Items/Accessories/Piercings/nipplepiercing2.png".
+
+To decide which figure-name is the clothing-image of (C - dick-nipple-piercings):
+	decide on figure of dick nipple piercing.
+
+To say ClothingDesc of (C - dick-nipple-piercings):
+	say "A gold ring pierces each of your nipples. Dangling from each ring is a veiny golden [manly-penis].".
+To say ShortDesc of (C - dick-nipple-piercings):
+	say "dick nipple rings".
+To say MediumDesc of (C - dick-nipple-piercings):
+	say "pair of gold penis-shaped nipple rings".
+
+Definition: dick-nipple-piercings is eligible: decide no.
+
+Definition: dick-nipple-piercings is penis themed: decide yes.
+
+To decide which number is the initial outrage of (C - dick-nipple-piercings):
+	decide on 18.
+
+The wearability rules of dick-nipple-piercings is the cow piercing wearability rules.
+
 
 A pair of earrings is a kind of piercing. The printed name of pair of earrings is "[TQlink of item described][item style]pair of [if item described is cursed]ultra slutty[otherwise if item described is blessed]heart shaped[otherwise]penis shaped[end if] earrings[clothing-title-after]". The text-shortcut of pair of earrings is "ea". Understand "penis shaped" as pair of earrings when item described is bland. Understand "heart", "shaped" as pair of earrings when item described is blessed. Understand "ultra", "slutty" as pair of earrings when item described is cursed. There is 1 pair of earrings. A pair of earrings has a number called variation. A pair of earrings is womanly.
 The transform-resistance of a pair of earrings is usually 0.

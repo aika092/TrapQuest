@@ -472,8 +472,8 @@ Table of Game Settings
 title	subtable	description	toggle
 "Restore a Save File (to guarantee windows are the right size or if this crashes, try Quick Start followed by 'restore')"	--	--	load game rule
 "[if earnings is starting-earnings and the player is in Start]Normal Start (choose all your options, read prologue)[otherwise]Confirm Settings[end if] (shortcut: Q)"	--	--	quit rule
-"Quick Start [if halloween content is 1]- disabled because Halloween content is enabled (disable this in Normal Start > Seasonal Content)[otherwise](use same player choices as last time, skip prologue)[end if]"	--	--	quick start rule
-"Quick RANDOM Start [if halloween content is 1]- disabled because Halloween content is enabled[otherwise](randomise everything that isn't set to [']never['] or [']always['], skip prologue)[end if]"	--	--	random start rule
+"[if halloween content is 1]UNAVAILABLE DURING HALLOWEEN MODE Quick Start (disable this in Normal Start > Seasonal Content)[otherwise]Quick Start (use same player choices as last time, skip prologue)[end if]"	--	--	quick start rule
+"[if halloween content is 1]UNAVAILABLE DURING HALLOWEEN MODE Quick Random Start (disable this in Normal Start > Seasonal Content)[otherwise]Quick RANDOM Start (randomise everything that isn't set to [']never['] or [']always['], skip prologue)[end if]"	--	--	random start rule
 "Tutorial (learn how to play the game)"	--	--	tutorial start rule
 "Maximum menu rows: [maximumMenuSize + 1]"	--	--	maximumMenuSize toggle rule
 "GAME FLOW SETTINGS"	Table of Game Flow Settings	--	--
@@ -499,12 +499,11 @@ To prune settings menu:
 		now the toggle entry is the setup custom female name rule;
 	otherwise:
 		blank out the whole row;
-	choose the row with a toggle of game difficulty rule in the Table of Game Settings;
+	choose the row with a subtable of Table of Game Flow Settings in the Table of Game Settings;
+	blank out the whole row;
 	if the player is the donator:
 		now the title entry is "Customise flavour";
 		now the toggle entry is the setup custom flavour rule;
-	otherwise:
-		blank out the whole row;
 	sort the Table of Game Settings in description order. [Move blank rows to the bottom]
 
 This is the quick start rule:
@@ -983,12 +982,12 @@ To decide which number is max game save counter: decide on 6 - game difficulty.
 To decide which number is remaining game saves: decide on (max game save counter * (4 - the extra lives of the player)) - save game counter.
 The check game save counter rules are a rulebook. The check game save counter rules have default success.
 Check game save counter:
-	if (remaining game saves <= 0) and (the player is not in Hotel36) and save game limit is 1:
+	if (remaining game saves <= 0) and (the player is not in FinalBoss01) and save game limit is 1:
 		say "You don't have a permission to save the game. Nintendolls, with love.";
 		rule fails.
 The increase game save counter rules are a rulebook. The increase game save counter rules have default success.
 Increase game save counter:
-	if save game limit is 1 and (the player is not in Capsule) and (the player is not in Hotel36) and debugmode is 0:
+	if save game limit is 1 and (the player is not in Capsule) and (the player is not in FinalBoss01) and debugmode is 0:
 		increase save game counter by 1;
 		say "You now have [remaining game saves] saves remaining.".]
 

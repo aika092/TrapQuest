@@ -127,6 +127,29 @@ Definition: cupcake onesie is food themed: decide yes.
 Definition: cupcake onesie is white themed: decide yes.
 Definition: cupcake onesie is displacable: decide yes.
 
+trick-or-treat onesie is a onesie. trick-or-treat onesie is leg exposing. The text-shortcut of trick-or-treat onesie is "tton". Understand "trick", "trick or", "treat" as trick-or-treat onesie.
+
+The printed name of trick-or-treat onesie is "[clothing-title-before]trick or treat onesie[clothing-title-after]".
+
+Figure of trick-or-treat onesie is the file "Items/Clothes/Upper/Special/Onesies/onesie6.png".
+
+To decide which figure-name is clothing-image of (C - trick-or-treat onesie):
+	decide on figure of trick-or-treat onesie.
+
+To say MediumDesc of (C - trick-or-treat onesie):
+	say "trick or treat onesie".
+
+To say ClothingDesc of (C - trick-or-treat onesie):
+	say "A purple onesie with [']Trick or Treat['] on the front in orange letters, and an orange arrow pointing down at [if C is worn]your[otherwise]the wearer's[end if] crotch.".
+
+Definition: trick-or-treat onesie is food themed: decide yes.
+Definition: trick-or-treat onesie is purple themed: decide yes.
+
+Definition: trick-or-treat onesie is class-relevant:
+	if the class of the player is trick-or-treater, decide yes;
+	decide no.
+Definition: trick-or-treat onesie is halloween themed: decide yes.
+
 
 tubesuit is a onesie. tubesuit is unique. tubesuit is latex. tubesuit is manly. tubesuit is totally-exclusive. The text-shortcut of tubesuit is "ts".
 

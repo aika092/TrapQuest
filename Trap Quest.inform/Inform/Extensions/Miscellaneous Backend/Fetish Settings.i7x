@@ -78,7 +78,7 @@ choice
 0 [christmas content]
 0 [easter content] [currently does nothing]
 0 [april fools content]
-1 [futanari fetish]
+1 [futanari fetish (NPCs)]
 -1 [alcohol fetish]
 0 [lady fetish (what biological sex are NPCs)]
 0 [incontinence protection]
@@ -97,6 +97,8 @@ choice
 1 [silicone milk clash]
 0 [diaper cumrag]
 0 [hungry messer]
+1 [slower timers]
+0 [player futanari fetish]
 
 [!<DecideWhichNumberIsOriginalPlayerGender>+
 
@@ -239,13 +241,32 @@ To decide which number is april fools content:
 	decide on 0.
 
 To decide which number is halloween content:
-	if the player is not a top donator, decide on 0;
-	if choice in row 80 of the Table of Player Options < 4, decide on 0;
-	decide on 1.
+	[if the player is not a top donator, decide on 0;]
+	if choice in row 80 of the Table of Player Options < 6, decide on 1;
+	decide on 0.
 
+[This determines whether NPCs can be futas. But if gender preference is set to all MALE, there is no futa possible]
 To decide which number is futanari fetish:
 	if lady fetish is 2, decide on 0;
 	decide on the choice in row 68 of the Table of Player Options.
+
+This is the futanari fetish rule:
+	if lady fetish < 2 and choice in row 68 of the Table of Player Options < 2:
+		increase choice in row 68 of the Table of Player Options by 1;
+	otherwise:
+		now choice in row 68 of the Table of Player Options is 0.
+
+[This determines whether the PLAYER can become a futa. 1: with balls, 2: without balls.]
+To decide which number is player futanari fetish:
+	if the player is not the donator, decide on 0;
+	if choice in row 88 of the Table of Player Options <= 0, decide on 0;
+	decide on choice in row 88 of the Table of Player Options.
+
+This is the player futanari fetish rule:
+	if choice in row 88 of the Table of Player Options < 2:
+		increase choice in row 88 of the Table of Player Options by 1;
+	otherwise:
+		now choice in row 88 of the Table of Player Options is 0.
 
 To decide which number is incontinence protection:
 	if diaper quest is 0, decide on 0;
@@ -386,6 +407,7 @@ To decide which number is points count:
 	decrease X by roleplay fetish;
 	decrease X by (bonus liquid * (1 + bonus liquid)) / 2;
 	decrease X by combatvisor;
+	if slower timers is 2, decrease X by 2;
 	if diaper quest is 0:
 		if supportersEnabled is 0, decrease X by 1;
 		if super gag reflex is 1, decrease X by 3;

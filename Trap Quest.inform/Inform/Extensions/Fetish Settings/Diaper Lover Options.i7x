@@ -73,8 +73,8 @@ To decide which number is diaper swapping:
 Table of Wet Diaper Swapping Options
 title	subtable	description	toggle
 "I would like absolutely minimal scenes where I am put in an already used diaper."	--	--	diaper swap hater rule
-"I don't mind being put in used diapers, but only if they're unmessed."	--	--	diaper swap liker rule
-"In addition to the above, I'm also happy for people to pee in my diaper while I'm wearing it."	--	--	diaper swap lover rule
+"I don't mind being put in used diapers, but only if they're unmessed."	--	--	diaper swap liker rule [1]
+"In addition to the above, I'm also happy for people to pee in my diaper while I'm wearing it."	--	--	diaper swap lover rule [2]
 
 Table of Messy Diaper Swapping Options
 title	subtable	description	toggle

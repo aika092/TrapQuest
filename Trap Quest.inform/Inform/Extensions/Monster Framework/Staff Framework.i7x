@@ -455,7 +455,7 @@ Report going north:
 	compute potential lesson.
 
 To decide which number is lessonFrequency:
-	decide on 225.
+	decide on 225 * slower timers.
 
 lessonJustDone is initially false.
 totalLessonCount is a number that varies.
@@ -513,7 +513,8 @@ To compute early lesson progression stuff:
 
 To compute late lesson progression stuff:
 	increase totalLessonCount by 1;
-	now class-time is lessonFrequency;
+	now class-time is lessonFrequency / slower timers;
+	if student-interaction-time > 10, now student-interaction-time is 10; [soon, a student might want something from you]
 	[let B be (the rank of the player * 3) - the bimbo of the player;
 	if B > 0, increase class-time by B * 60;] [Lessons are spaced further apart if the player isn't slutty enough for them]
 	if the breast-enhancement of nurse is not 0:
@@ -1194,7 +1195,7 @@ To compute detention joint predicament of (M - a monster) with (ST - a student):
 		totally clean R;
 	if the body soreness of the player > 4, now the body soreness of the player is 4;
 	now executing-predicament is true;
-	execute P;
+	maybe execute P;
 	set up predicament clothing for P;
 	increase the times-completed of P by 1;
 	now temporaryYesNoBackground is Figure of small image;
@@ -1332,6 +1333,20 @@ This is the detention orgasm announcement rule:
 						moderateHumiliate;
 		rule succeeds.
 The detention orgasm announcement rule is listed last in the orgasm resolution rules.
+
+To compute detention internet publish:
+	if the number of blank rows in the Table of Published Disgraces > 0:
+		choose a blank row in Table of Published Disgraces;
+		now the content entry is the substituted form of "a high quality video of you sat on a chair with a wand vibrator, announcing that you are orgasming during detention,";
+		now the published entry is the substituted form of "has been posted on the website disciplinedundergrads.xxx";
+		now the severity entry is 3;
+		now the popularity entry is 4;
+		now the timestamp entry is earnings;
+		now the lastwitnessed entry is 0;
+		now the deletedtime entry is -1;
+		now the viewsfuzz entry is a random number between 1 and 4;
+		say "[variable custom style][one of]I really hope this video doesn't find its way[or]Why do I get the feeling that these orgasm declarations are getting uploaded[stopping] to the internet...[roman type][line break]".
+
 
 To say detention orgasm reaction of (M - a monster):
 	say "[speech style of M]'[one of]Wow, so you're really enjoying your punishment THAT much?'[or]What kind of desperate slut actually has an orgasm from something like that?'[or]Is that why you earned yourself a detention? So everyone could watch you cum?'[or]So, you got in trouble on purpose then?'[or]I hope I don't get detention after you.'[in random order][roman type][line break][BigNameDesc of M] can't help but watch you.";

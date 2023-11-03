@@ -130,7 +130,9 @@ REQUIRES COMMENTING
 
 +!]
 Definition: yourself is possessing a scrotum:
-	if the player is possessing a penis and the size of scrotum is not 0, decide yes;
+	if the player is possessing a penis:
+		if the player is possessing a vagina and futanari fetish is not 1, now the size of scrotum is 0;
+		if the size of scrotum > 0, decide yes;
 	decide no.
 
 To say ScrotumModesty:

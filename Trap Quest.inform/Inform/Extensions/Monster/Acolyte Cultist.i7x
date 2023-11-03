@@ -378,7 +378,7 @@ Definition: clairvoyant acolyte is calculated unfriendly:
 	if it is not pacified and it is not friendly-fucking and (it is not normally annoyed or it is uniquely unfriendly), decide yes; ["annoyed" is the final level of relationship before unfriendly]
 	decide no.
 
-Definition: an acolyte (called M) is distracted:
+Definition: an acolyte (called M) is uniquely distracted:
 	if M is awake and M is intelligent:
 		let L be a random milking bench lever in the location of M;
 		if L is a thing and L is not lever-pulled and ((player-currently-resting is 1 and M is in the location of the player) or a random number between 1 and 3 is 1):

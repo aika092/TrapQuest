@@ -34,11 +34,12 @@ To FacePiss from (M - an object):
 			let V be nothing;[We check if the player wants to collect some in a vessel, and output some unique flavour text.]
 			if the player is not flying and the player is not at least partially monster stuck, now V is the juice-collector of urine;
 			if V is bottle:
-				dump V;
+				unless the fill-colour of V is golden, dump V;
 				say "You position the [printed name of V] below your chin just in time, as your hair, face and mouth are blasted by a stream of [urine]. [one of]As your [printed name of V] quickly fills up you realise that the only thing more humiliating than being used as a toilet is being witnessed saving some for later! [or][stopping]";[But no extra humiliation hit?]
+				if the doses of V is 0, now V is boring-origin;
 				now the doses of V is max-doses of V;
 				now the fill-colour of V is golden;
-				now V is boring-origin;
+				now M is inseminating V;
 			otherwise:
 				say "Your face is blasted by a stream of [urine]. ";
 				if the player is air breathing vulnerable, SmellGrossOut 5;
@@ -94,13 +95,13 @@ To decide which object is the juice-collector of (L - a liquid-object):
 		let LV be a list of things;
 		repeat with V running through carried vessels:
 			if V is not tight topped:
-				unless the doses of V >= the max-doses of V and ((L is urine and the fill-colour of V is golden) or (L is milk and the fill-colour of V is white) or (L is murkwater and the fill-colour of V is murky)), add V to LV; [vessels that satisfy these conditions, there would be no point in refilling with new stuff]
+				unless the doses of V >= the max-doses of V and (L is milk and the fill-colour of V is white), add V to LV; [vessels that satisfy these conditions, there would be no point in refilling with new stuff. But with semen and urine and murkwater, there's a chance we want to collect the new stuff for the DNA.]
 		if the number of entries in LV > 0:
 			reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 			truncate LV to 9 entries;
 			say "Where do you want to collect the [variable L]?[line break]";
 			repeat with V running through LV:
-				if V is bottle, set next numerical response to "The [ShortDesc of V][if the doses of V > 0] (You'll lose its current contents of [PotionType of V])[end if]";
+				if V is bottle, set next numerical response to "The [ShortDesc of V][unless the doses of V is 0 or (L is urine and the fill-colour of V is golden) or (L is milk and the fill-colour of V is white) or (L is murkwater and the fill-colour of V is murky)] (You'll lose its current contents of [PotionType of V])[end if]";
 				otherwise set next numerical response to "[BigNameDesc of V]";
 			set numerical response 0 to "don't collect";
 			compute multiple choice question;
@@ -340,7 +341,7 @@ Displays some text when a condom successfully catches a monster's load during or
 
 +!]
 To say OralCondomPieFlav of (M - a monster):
-	say "[one of][BigFuckerDesc of M] tightens [his of M] grip, hissing through [his of M] teeth as [his of M] condom fills with warmth.[or][BigFuckerDesc of M][']s [DickDesc of M] throbs powerfully, firing off load after load of warm [semen] into the condom.[or][BigFuckerDesc of M] forces you all the way down, groaning as [he of M] fills the condom with [his of M] load.[or][silentThroat M][BigFuckerDesc of M] pulls you down as [he of M] begins to ejaculate, [his of M] [if M is a balls-haver]balls slapping your chin[otherwise]thighs gripping your face[end if] as the condom swells to contain [his of M] big load.[or][silentThroat M][BigFuckerDesc of M] buries [his of M] [DickDesc of M] as far into your mouth as it will go, jet after jet of [semen] rushing into the increasingly bloated condom[or][silentThroat M][BigFuckerDesc of M] forces [his of M] length down your throat, groaning as the condom fills with [his of M] load.[or][silentThroat M][BigFuckerDesc of M] forces you to take [his of M] [DickDesc of M] all the way to the hilt. You can do nothing but wait helplessly as [he of M] thoroughly empties [his of M] load into the condom.[or][BigFuckerDesc of M] forces you down as [his of M] [DickDesc of M] spasms, slightly stretching the condom with [his of M] load.[in random order]".
+	say "[one of][BigFuckerDesc of M] tightens [his of M] grip, hissing through [his of M] teeth as [his of M] condom fills with warmth.[or][BigFuckerDesc of M][']s [DickDesc of M] throbs powerfully, firing off load after load of warm [semen] into the condom.[or][BigFuckerDesc of M] forces you all the way down, groaning as [he of M] fills the condom with [his of M] load.[or][silentThroat M][BigFuckerDesc of M] pulls you down as [he of M] begins to ejaculate, [his of M] [if M is a balls-haver]balls slapping your chin[otherwise]thighs gripping your face[end if] as the condom swells to contain [his of M] big load.[or][silentThroat M][BigFuckerDesc of M] buries [his of M] [DickDesc of M] as far into your mouth as it will go, jet after jet of [semen] rushing into the increasingly bloated condom.[or][silentThroat M][BigFuckerDesc of M] forces [his of M] length down your throat, groaning as the condom fills with [his of M] load.[or][silentThroat M][BigFuckerDesc of M] forces you to take [his of M] [DickDesc of M] all the way to the hilt. You can do nothing but wait helplessly as [he of M] thoroughly empties [his of M] load into the condom.[or][BigFuckerDesc of M] forces you down as [his of M] [DickDesc of M] spasms, slightly stretching the condom with [his of M] load.[in random order]".
 
 [!<ComputeFacialDodgingOfMonster>+
 
@@ -589,7 +590,7 @@ To compute spit choice of (M - a monster):
 	let V be nothing;
 	if the player is not flying and the number of worn wrist bonds is 0, now V is the juice-collector of semen;
 	if V is a bottle:[if the juice-collector isn't nothing, catch it!]
-		dump V;
+		unless the fill-colour of V is creamy, dump V;
 		compute semen catching from M in V;
 		check forgiveness of M;
 	otherwise:[TODO: depending on player semen addiction, and breast size they catch it on their boobs instead]
@@ -614,6 +615,7 @@ To compute semen catching from (M - a monster) in (V - a bottle):
 	say strongHumiliateReflect;
 	SetDose V to (the total volume of face + 1) / 2;
 	now V is boring-origin;
+	compute father material of face into V;
 	MouthEmpty.
 
 

@@ -1,5 +1,34 @@
 All Shoes by Shoes begins here.
 
+pom-pom-shoes is a shoes. pom-pom-shoes is unique. Understand "pom", "pom pom", "shoes" as pom-pom-shoes. The text-shortcut of pom-pom-shoes is "pps".
+
+Figure of pom pom shoes is the file "Items/Clothes/Lower/Feet/pompom1.png".
+
+To decide which figure-name is the clothing-image of (C - pom-pom-shoes):
+	decide on figure of pom pom shoes.
+
+To say ShoeType of (S - pom-pom-shoes):
+	say "shoes".
+
+To say UniqueShortDesc of (C - pom-pom-shoes):
+	say "pom pom shoes".
+
+Definition: pom-pom-shoes is white themed: decide yes.
+Definition: pom-pom-shoes is orange themed: decide yes.
+Definition: pom-pom-shoes is halloween themed: decide yes.
+Definition: pom-pom-shoes is class-relevant:
+	if the class of the player is trick-or-treater, decide yes;
+	decide no.
+
+To decide which number is the initial outrage of (C - pom-pom-shoes):
+	decide on 0.
+To decide which number is the initial cringe of (C - pom-pom-shoes):
+	decide on 3.
+
+To say ClothingDesc of (C - pom-pom-shoes):
+	say "These white girly shoes have big black bows tying them up, and big orange pom poms above the toes.".
+
+
 sneakers is a kind of shoes. A sneakers is manly. A sneakers is rare. Understand "sneakers" as sneakers.
 
 Figure of sneakers is the file "Items/Clothes/Lower/Feet/sneakers2.png".

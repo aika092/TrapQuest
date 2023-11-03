@@ -29,7 +29,7 @@ To say RoomTrapDesc:
 
 To say RoomMonsterDesc:
 	now neighbour finder is the location of the player;
-	if the location of the player is nearby:
+	if the location of the player is monster-nearby:
 		say "[if a revealed trap is in the location of the player][line break][end if][line break]";
 		repeat with D running through N-viable directions:
 			if D is nearby:

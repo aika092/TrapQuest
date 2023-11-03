@@ -64,7 +64,7 @@ To decide which number is the TQcolour of (D - a drink-colour):
 	if D is scarlet, decide on 16720896;
 	if D is blue, decide on 255;
 	if D is bronze, decide on 13467442;
-	if D is green, decide on 32768;
+	if D is green, decide on 47872;
 	if D is grey, decide on 13882323;
 	if D is clear, decide on 16777215;
 	if D is indigo, decide on 4915330;

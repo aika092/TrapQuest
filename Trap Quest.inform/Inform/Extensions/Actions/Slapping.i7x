@@ -81,6 +81,7 @@ Check slapping:
 	if the noun is not monster, say "Err, why would you do that?" instead;
 	if the player is in a predicament room, say "This is neither the time nor the place for violence." instead;
 	if the noun is woman-player and woman-player is not angered:
+		if the woman-status of woman-player >= 90, say "That's not very practical right now." instead;
 		say "Are you sure? You probably won't be able to make [him of the noun] friendly ever again, if you were to do that. ";
 		unless the player is consenting, say "You change your mind." instead;
 	if the player is not able to slap, do nothing instead;
@@ -127,7 +128,7 @@ To decide which number is the zap damage of (P - a person):
 	if the zapskill of the player is 1:
 		increase A by 1;
 		if damage-explained > 1, say "+1 (expert wand flicking technique) ";
-	if currentZapper is not yourself:
+	unless currentZapper is yourself or currentZapper is eye-mask or currentZapper is jewelled-tiara:
 		if the magic power of the player <= 0 and the magic-cost of currentZapper > 0:
 			if damage-explained > 1, say "Override to 0 (insufficient magic power) ";
 			decide on 0;
@@ -162,6 +163,7 @@ Check zapping it with:
 	if the noun is not zappable, say "That can't be used to cast spells." instead;
 	if the player is in a predicament room, say "This is neither the time nor the place for violence." instead;
 	if the second noun is woman-player and woman-player is not angered:
+		if the woman-status of woman-player >= 90, say "That's not very practical right now." instead;
 		say "Are you sure? You probably won't be able to make [him of the second noun] friendly ever again, if you were to do that. ";
 		unless the player is consenting, say "You change your mind." instead;
 	if the second noun is ex-princess, say "Something tells you that would be a very bad idea." instead;

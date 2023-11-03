@@ -6,7 +6,7 @@ To say ExamineDesc of (C - a master bed):
 	say "A huge bed with black sheets and a heavy scarlet comforter, which is stencilled with a strangely mesmerising pattern. The pillows are large, embroidered with the same pattern on the blankets, and purposefully arranged around the headboard. It looks impossibly comfortable, and a weird twinge in the back of your mind tells you it's just as sturdy.".
 
 To decide which figure-name is the examine-image of (C - a master bed):
-	decide on figure of hotel bed.
+	decide on figure of guest bed.
 
 Definition: yourself is bed-stuck:
 	if there is a furniture grabbing the player, decide yes;

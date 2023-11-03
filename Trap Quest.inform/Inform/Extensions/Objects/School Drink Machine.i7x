@@ -17,7 +17,7 @@ To say ExamineDesc of (C - drink-machine):
 
 To compute standard decanting of (D - drink-machine):
 	allocate 6 seconds;
-	compute drink-machine decanting of the noun;
+	compute drink-machine decanting of the noun.
 
 To compute drink-machine decanting of (V - a vessel):
 	say "You place the [ShortDesc of V] underneath the nozzle. ";

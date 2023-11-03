@@ -9,9 +9,14 @@ Definition: a thing (called M) is nearby:
 		if the room D from the location of the player is L, decide yes;
 	decide no.
 
-Definition: a room (called R) is nearby:
+Definition: a room (called R) is monster-nearby:
 	repeat with M running through nearby monsters:
 		decide yes;
+	decide no.
+Definition: a room (called R) is nearby:
+	now neighbour finder is the location of the player;
+	repeat with D running through N-viable directions:
+		if the room D from the location of the player is R, decide yes;
 	decide no.
 
 Definition: a room (called R) is within vision:
@@ -24,13 +29,13 @@ Definition: a room (called R) is next door:
 		if the room D from the location of the player is R, decide yes;
 	decide no.
 
-To decide which direction is the nearby-direction of (M - a monster):
+To decide which direction is the nearby-direction of (M - a thing):
 	let L be the location of M;
 	now neighbour finder is the location of the player;
 	repeat with D running through N-viable directions:
 		if the room D from the location of the player is L, decide on D.
 
-Definition: a direction (called D) is nearby:
+Definition: a direction (called D) is monster-nearby: [currently unused, I think]
 	repeat with M running through nearby monsters:
 		if the nearby-direction of M is D, decide yes;
 	decide no.

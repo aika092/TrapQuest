@@ -14,6 +14,9 @@ Definition: witch is willing to fluff:
 
 Definition: witch is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 
+To decide which number is the freebie-reluctance of (M - witch):
+	decide on 10.
+
 To say ShortDesc of (M - witch):
 	say "witch".
 

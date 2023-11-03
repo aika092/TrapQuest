@@ -273,7 +273,8 @@ Definition: bsoundingHS is applicable:
 	decide no.
 To reflect on (A - bsoundingHS):
 	let C be a random worn bsounding clothing;
-	say "[first custom style][one of]Who had the bright idea to make clothing that announced every wobble of these damned orbs?![or]I've got to get rid of this [ShortDesc of C]. It's impossible to get any long lasting privacy with these stupid boings and twangs![or]Does this [ShortDesc of C] ever run out of magical energy? These sounds are so humiliating![stopping][roman type][line break]".
+	if diaper quest is 0, say "[first custom style][one of]Who had the bright idea to make clothing that announced every wobble of these damned orbs?![or]I've got to get rid of this [ShortDesc of C]. It's impossible to get any long lasting privacy with these stupid boings and twangs![or]Does this [ShortDesc of C] ever run out of magical energy? These sounds are so humiliating![stopping][roman type][line break]";
+	otherwise say "[first custom style][one of]Who had the bright idea to make clothing that amplifies every little wet sound it makes?![or]I've got to get rid of this [ShortDesc of C]. It's impossible to get any long lasting privacy with these stupidly loud squelches and scrunches![or]Does this [ShortDesc of C] ever run out of magical energy? These sounds are so humiliating![stopping][roman type][line break]".
 
 low-addiction is a humiliating situation.
 Definition: low-addiction is applicable: decide yes.

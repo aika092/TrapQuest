@@ -13,6 +13,8 @@ Figure of bianca defeated is the file "NPCs/School/Teacher/teacher3c.png".
 Figure of demoness cutscene 15 is the file "NPCs/Forest/Demoness/cutscene-demoness-dq-facesit1.jpg".
 Figure of detention chair is the file "Env/School/detentionchair2.jpg".
 
+Figure of djinn is the file "NPCs/Forest/Djinn/djinn2.jpg".
+
 Figure of dominatrix 1 is the file "NPCs/Hotel/Dominatrix/diapernatrix1.jpg".
 Figure of diapernatrix cutscene 1 is the file "NPCs/Hotel/Dominatrix/cutscene-dominatrix-bottle1.jpg".
 To decide which figure-name is the monster-image of (M - dominatrix):
@@ -73,6 +75,9 @@ To decide which figure-name is figure of maths predicament:
 		decide on figure of maths predicament 2;
 	otherwise:
 		decide on figure of maths predicament 1.
+
+Figure of milk fountain is the file "Env/Mansion/fountain2a.jpg".
+Figure of milk fountain touched is the file "Env/Mansion/fountain2b.jpg".
 
 Figure of Mimic Cutscene 1 is the file "Special/Cutscene/cutscene-mimic1.jpg".
 Figure of Mimic Cutscene 2 is the file "Special/Cutscene/cutscene-mimic2.jpg".
@@ -159,6 +164,10 @@ Figure of babified shopkeeper is the file "NPCs/Dungeon/Shopkeeper/shopkeeper6b.
 To decide which figure-name is the pacified-image of (M - shopkeeper):
 	if M is diaper-enslaved, decide on figure of babified shopkeeper;
 	decide on figure of Missing NPC.
+
+Figure of Surgery Trapped Bored is the file "Special/Cutscene/cutscene-elevator-surgery4a.jpg".
+Figure of Surgery Trapped Revealed is the file "Special/Cutscene/cutscene-elevator-surgery4b.jpg".
+Figure of Surgery Trapped Sensed is the file "Special/Cutscene/cutscene-elevator-surgery4c.jpg".
 
 Figure of swirlie knickers clean is the file "Special/Cutscene/cutscene-swirlie3.jpg".
 Figure of swirlie knickers wet is the file "Special/Cutscene/cutscene-swirlie4.jpg".

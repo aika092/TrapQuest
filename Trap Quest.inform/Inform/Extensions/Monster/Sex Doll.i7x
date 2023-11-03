@@ -11,9 +11,9 @@ Definition: a sex doll is a urinater: decide no.
 Figure of Male Sex Doll is the file "NPCs/Dungeon/SexDoll/sexdoll1.png".
 Figure of Female Sex Doll is the file "NPCs/Dungeon/SexDoll/sexdoll2.png".
 
-Figure of Sexdoll Cutscene 1 is the file "Special/Cutscene/cutscene-sexdoll-climax1.jpg".
-Figure of Sexdoll Cutscene 2 is the file "Special/Cutscene/cutscene-sexdoll-climax2.jpg".
-Figure of Sexdoll Cutscene 3 is the file "Special/Cutscene/cutscene-sexdoll-explode1.png".
+Figure of Sexdoll Cutscene 1 is the file "NPCs/Dungeon/SexDoll/cutscene-sexdoll-climax1.jpg".
+Figure of Sexdoll Cutscene 2 is the file "NPCs/Dungeon/SexDoll/cutscene-sexdoll-climax2.jpg".
+Figure of Sexdoll Cutscene 3 is the file "NPCs/Dungeon/SexDoll/cutscene-sexdoll-explode1.png".
 The text-shortcut of sex doll is "sd".
 
 To say ShortDesc of (M - a sex doll):

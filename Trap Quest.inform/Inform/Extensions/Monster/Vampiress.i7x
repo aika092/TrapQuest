@@ -171,6 +171,12 @@ Definition: vampiress (called M) is objectifying the player:
 		decide yes;
 	decide no.
 
+Definition: vampiress (called M) is uniquely unfriendly: [We can use this to easily specify when a monster is pissed off regardless of usual stats.]
+	if M is friendly-fucking, decide no;
+	if halloween rubber diaper cover is worn, decide yes;
+	if M is default uniquely unfriendly, decide yes;
+	decide no.
+
 To compute perception of (M - vampiress):
 	say "[BigNameDesc of M] notices you!";
 	if the player is not able to get horny or the player is barbie:[covers living sex doll]
@@ -362,7 +368,7 @@ To say SexSubmissionFlav of (M - vampiress):
 To say VampResistRefusalFlav:
 	say "[if the bimbo of the player > a random number between 8 and 13][one of]You consider resisting, but it's even easier than normal to just give in and let it happen.[or]You tell your body to resist, but it ignores you completely, just like you hoped it would.[or]Your body refuses to resist, but it doesn't bother you as much as it should...[at random][otherwise][one of]You try to resist, but your body ignores you completely. It's like it's not even on your side here![or]You can feel the vampiress's influence like a heavy weight on your mind, twisting every rebellious idea into fervent submission.[or]Your body refuses to obey your commands, moving in a way not unlike you'd expect [NameDesc of vampiress] to move [himself of vampiress].[or][BigNameDesc of vampiress] has an ironclad grip on your mind, nullifying every thought of resistance and replacing them with unconditional submission.[or]You try to resist the vampiress, but your body fights you at every turn. [big he of vampiress]'s keeping you from controlling your own actions![or]Instead of fighting the way you tell it to, your body emits a sharp moan instead, as if to tell you to stop resisting and give in.[in random order][end if]";
 	if the player is able to speak:
-		say "[variable custom style]'[one of][if the bimbo of the player > 11]I'm yours, mistress...'[otherwise]Thank you, mistress...'[end if][or][if the bimbo of the player > 10]I don't deserve your time, mistress.'[otherwise if the bimbo of the player > 5]Thank you for letting me please you, mistress'[otherwise]'Do whatever you want with me, mistress'[end if][or][if the bimbo of the player > 13]I just want to be yours forever!'[otherwise if the bimbo of the player > 7]Please don't stop, mistress!'[otherwise]Oh my god! Yes!'[end if][purely at random][roman type][line break]";
+		say "[variable custom style]'[one of][if the bimbo of the player > 11]I'm yours, mistress...'[otherwise]Thank you, mistress...'[end if][or][if the bimbo of the player > 10]I don't deserve your time, mistress.'[otherwise if the bimbo of the player > 5]Thank you for letting me please you, mistress.'[otherwise]'Do whatever you want with me, mistress.'[end if][or][if the bimbo of the player > 13]I just want to be yours forever!'[otherwise if the bimbo of the player > 7]Please don't stop, mistress!'[otherwise]Oh my god! Yes!'[end if][in random order][roman type][line break]";
 	otherwise:
 		say "[variable custom style][muffled sounds][roman type][line break]".
 
@@ -848,7 +854,8 @@ To say WaddleDiaperCheckFlav of (M - vampiress):
 
 To say DiaperCheckFlav of (M - vampiress):
 	let D be a random worn knickers;
-	say "You blink once, and in the time that your eyes are closed [NameDesc of M] has silently crossed the entire length of room, as if [he of M] somehow teleported, and [his of M] eyes are locked with yours. You freeze and scream in shock, and [he of M] takes this opportunity to press [his of M] hands into the front and back of your [MediumDesc of D], and check whether you're dry.".
+	say "You blink once, and in the time that your eyes are closed [NameDesc of M] has silently crossed the entire length of room, as if [he of M] somehow teleported, and [his of M] eyes are locked with yours. You freeze and scream in shock, as [he of M] takes this opportunity to press [his of M] hands into the front and back of your [MediumDesc of D], and check whether you're dry.";
+	FearUp 10.
 
 To say DiaperCheckReactionFlav of (M - vampiress):
 	say "[if the diaper addiction of the player < 11]For some reason, even though you want to recoil away from [him of M], your blood pumps in your ears and you find yourself lacking any will to resist at all.[otherwise]The sound of your own heartbeat fills your ears, and almost instinctively you push your hips forward so that [NameDesc of M] can get a good feel.[end if]".
@@ -903,6 +910,24 @@ To say DiaperDonateComment of (M - vampiress):
 To say DQChangeResistReactionFlav of (M - vampiress):
 	say "[BigNameDesc of M] [one of]grins[or]looks bemused[at random].[line break][speech style of M]'[one of]Oh do go on, it gets my blood going seeing my prey squirm in vain!'[or]Do I need to bite you to keep you still? [big please] tell me I need to bite you to keep you still!'[or]You know, this is good. I know to keep you in a bouncer for later... when I get hungry!'[then at random][roman type][line break]".
 
+Definition: vampiress is diaper change during special ready:
+	if there is a diaper cover carried by vampiress, decide no;
+	if there is worn halloween themed clothing, decide yes;
+	repeat with C running through clothing carried by vampiress:
+		if the quest of C is desperation-quest, decide yes;
+	decide no.
+
+To compute diaper change during special of (M - vampiress):
+	blandify and reveal orange rubber diaper cover;
+	now orange rubber diaper cover is temporarily-removed;
+	now orange rubber diaper cover is temporarily-unlocked;
+	let K be a random off-stage specific-key;
+	if K is a thing:
+		now K is carried by M;
+		now K is covering orange rubber diaper cover;
+	now orange rubber diaper cover is carried by M;
+	say "[speech style of M]'Let me just summon something I'll need in a moment...'[roman type][line break][BigNameDesc of M] waves [his of M] hands, and summons a [orange rubber diaper cover] in mid-air![line break][variable custom style]Uh-oh...[roman type][line break]".
+
 To say MasturbationDeclarationFlav of (M - vampiress):
 	say "[speech style of M]'[one of]You should know... I can sense when people are turned on.'[or]It's funny, you often seem to wander into my domain when you're desperately horny...'[stopping][roman type][line break]".
 
@@ -956,7 +981,7 @@ To compute damage reaction of (M - vampiress):
 
 To say DamageReactHealthy of (M - vampiress):
 	if M is chain-tethering, say "[BigNameDesc of M] [one of]holds onto the chain tightly, ignoring the hit.[or]maintains [his of M] grip on the chain, ignoring the hit.[then at random]";
-	otherwise say "[one of][BigNameDesc of M] laughs playfully, ignoring the hit.[or][BigNameDesc of M] continues to ignore your hits[then at random]".
+	otherwise say "[one of][BigNameDesc of M] laughs playfully, ignoring the hit[or][BigNameDesc of M] continues to ignore your hits[then at random].".
 
 To say DamageReactDamaged of (M - vampiress):
 	if M is chain-tethering, say "[BigNameDesc of M] [one of]adjusts [his of M] grip on the chain as [he of M] takes the hit![or]fumbles with the chain as [he of M] takes the hit.[then at random]";
@@ -1039,20 +1064,17 @@ To say UniqueFuckDesc of (M - vampiress):
 	say "'Pierce' [him of M] with a stake.".
 
 To decide which number is the dominationtype of (M - vampiress) using (F - face):
+	let LS be a list of things;
 	repeat with S running through held sex toys:
-		if S is carried or S is usually autoremovable:
-			say "Use your [MediumDesc of S] as the stake?";
-			if the player is consenting:
-				dislodge S;
-				now S is carried by the player;
-				now the stake of M is S;
-				decide on FUCK-UNIQUE;
-	unless the stake of M is a sex toy:
-		let T be a random carried sex toy;
-		if T is nothing, let T be a random held usually autoremovable sex toy;
-		now the stake of M is T;
-		dislodge T;
-		now T is carried by the player;
+		if S is carried or S is usually autoremovable, add S to LS;
+	reset multiple choice questions;
+	repeat with S running through LS:
+		set next numerical response to "Use your [MediumDesc of S] as the stake[if S is worn] (you'll have to remove it from your [random body part penetrated by S] first)[end if]";
+	compute multiple choice question;
+	let S be entry player-numerical-response in LS;
+	dislodge S;
+	now S is carried by the player;
+	now the stake of M is S;
 	decide on FUCK-UNIQUE.
 
 To decide which number is the submissiveness base of (M - vampiress):

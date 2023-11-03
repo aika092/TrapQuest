@@ -60,7 +60,7 @@ To decide which number is the unique outrage of (C - cow print bikini bottoms):
 [cow print crotchless bikini bottoms]
 
 cow print crotchless bikini bottoms is a bikini bottoms. cow print crotchless bikini bottoms is unique. cow print crotchless bikini bottoms is crotch-exposing.
-The printed name of cow print crotchless bikini bottoms is "[clothing-title-before]pair of cow print crotchless bikini bottoms[clothing-title-after]". The text-shortcut of cow print crotchless bikini bottoms is "cbb".
+The printed name of cow print crotchless bikini bottoms is "[clothing-title-before]pair of cow print crotchless bikini bottoms[clothing-title-after]". The text-shortcut of cow print crotchless bikini bottoms is "ccbb".
 
 Definition: cow print crotchless bikini bottoms is class-relevant:
 	if the class of the player is cowgirl or the class of the player is catgirl, decide yes;

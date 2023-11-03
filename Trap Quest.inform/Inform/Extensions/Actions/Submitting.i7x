@@ -10,42 +10,47 @@ Submitting is an action applying to nothing.
 
 Check submitting:
 	if the number of live things penetrating a body part + the number of things grabbing the player + the number of things wrangling a body part is 0, say "You are not being held in place, so there is nothing to submit to!" instead;
-	if there is a fucking daddy's hole monster or there is a wrong race fucking monster:
-		try resisting instead; [See resisting for more info on these mechanics]
+	unless there is a fuckhole-mode glue penetrating face:
+		if there is a fucking daddy's hole monster or there is a wrong race fucking monster:
+			try resisting instead; [See resisting for more info on these mechanics]
 
 Carry out submitting:
+	allocate 6 seconds;
 	now the player-reaction of the player is submitting;
-	if diaper quest is 1 and there is a live thing grabbing the player:
-		moderateHumiliate;
-	otherwise if the player is live fucked:
-		if (the player is shameless or the player is feeling submissive) and the player is not having marital sex:
-			do nothing; [shameless players don't find submissive sex to be embarrassing]
-		otherwise if the relevant sex addiction of the player < 7:
-			if the player is having marital sex, trivialDignify;[princesses are humiliated less by sex with consorts.]
-			otherwise slightHumiliate;
-		otherwise if the relevant sex addiction of the player < 14:
-			if the player is having marital sex, slightDignify;
-			otherwise slightHumiliate;
-		otherwise:
-			if the player is having marital sex, dignify 20;[princesses who accept their role fully are more confident after sex with their consorts]
-	allocate 6 seconds.
+	unless forced submit is 2 or there is a fuckhole-mode glue penetrating face:
+		if diaper quest is 1 and there is a live thing grabbing the player:
+			moderateHumiliate;
+		otherwise if the player is live fucked:
+			if (the player is shameless or the player is feeling submissive) and the player is not having marital sex:
+				do nothing; [shameless players don't find submissive sex to be embarrassing]
+			otherwise if the relevant sex addiction of the player < 7:
+				if the player is having marital sex, trivialDignify;[princesses are humiliated less by sex with consorts.]
+				otherwise slightHumiliate;
+			otherwise if the relevant sex addiction of the player < 14:
+				if the player is having marital sex, slightDignify;
+				otherwise slightHumiliate;
+			otherwise:
+				if the player is having marital sex, dignify 20.[princesses who accept their role fully are more confident after sex with their consorts]
 
 Report submitting:
 	let M be a random thing grabbing the player;[prioritize anyone holding the player down]
 	if M is nothing, now M is a random live thing penetrating a body part;[next, prioritize anyone inside the player]
 	if M is nothing, now M is a random thing wrangling a body part;[Lastly, we take a look at any holders on.]
 	unless M is nothing or (diaper quest is 1 and M is live) or (M is monster and M is not doing nothing special):
-		if forced submit > 0:
-			if forced submit > 1, do nothing instead;[handled by the resisting function, since we don't know the reason why the player can't resist unless we do it there]
-			now forced submit is 0;
-		unless M is penetrating face and M is monster and M is not not-getting-licked: [no flavour for this here]
-			if the player is friendly fucked:
-				say FriendlySexSubmissionFlav of M;
-			otherwise:
-				if M is penetrating a body part or M is grabbing the player:
-					say SexSubmissionFlav of M;
+		if forced submit > 1:
+			do nothing; [flavour was handled by the resisting function]
+		otherwise:
+			unless M is penetrating face and M is monster and M is not not-getting-licked: [no flavour for this here]
+				if the player is friendly fucked:
+					say FriendlySexSubmissionFlav of M;
 				otherwise:
-					compute wrangled submitting of M.
+					if there is a fuckhole-mode glue penetrating face:
+						say "You [one of]remain held completely still[or]mewl quietly into the glue[or]contintue lying there[or]let a moan out through your nose[or]stay rigid and unmoving[or]close your eyes, defeated[or]curl your toes tightly[or]surrender to your helplessness[cycling][if there is a monster penetrating a body part], [one of]completely unable to resist[or]powerless to prevent yourself from being used as a living fleshlight[or]defenceless and degraded[or]unable to even beg for mercy thanks to the glue gripping your mouth[or]as your lower half is treated like a faceless fuckhole[or]feeling more and more like you're nothing but a sex object[or]with absolutely zero agency[or]with no way to stop what's happening[or]the incredibly strong glue preventing you from budging even an inch[in random order][end if].";
+					otherwise if M is penetrating a body part or M is grabbing the player:
+						say SexSubmissionFlav of M;
+					otherwise:
+						compute wrangled submitting of M;
+	now forced submit is 0.
 
 To compute wrangled submitting of (T - a thing):
 	say SexSubmissionFlav of T.

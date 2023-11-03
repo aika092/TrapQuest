@@ -2,7 +2,7 @@ Woman Framework by Monster Framework begins here.
 
 woman-player is a monster.
 
-woman-player is intelligent. woman-player has a number called delayed sluttification. woman-player can be stranger or introduced. woman-player is stranger. The leftover-type of woman-player is 131. woman-player can be angered. the favour of woman-player is 10. woman-player can be truly-female or truly-male. woman-player is truly-female.
+woman-player is intelligent. woman-player has a number called delayed sluttification. woman-player can be stranger or introduced. woman-player is stranger. The leftover-type of woman-player is 131. woman-player can be angered. the favour of woman-player is 10. woman-player can be truly-female or truly-male. woman-player is truly-female. woman-player can be partially-enslaved.
 
 Definition: woman-player is normally ally:
 	if the favour of it >= 10, decide yes;
@@ -162,13 +162,18 @@ STATES:
 95: Released from the toilet
 96: Scene with hotel beds & patrons
 97: Appeared by sitting on the throne
-98: DQ: Diaper pail
+98: DQ: Diaper pail; TQ: Buried
 99: DQ: Ass hook
 100: Matron / Senior bellboy fight scene
 101: DQ: Appeared by being in the hotel urinal scene with the wrestler.
 102: DQ: Appeared holding up the lid for the changing station tank.
 103: DQ: Appeared in Christmas box.
 ]
+
+Definition: woman-player is uniquely unreactive:
+	if the woman-status of woman-player is 80, decide yes; [anal only stool]
+	if the woman-status of woman-player >= 90, decide yes;
+	decide no.
 
 Definition: woman-player is easy-steal:
 	if the woman-status of woman-player is 80, decide yes; [anal only stool]
@@ -177,11 +182,11 @@ Definition: woman-player is easy-steal:
 
 Definition: woman-player is summon appropriate: decide no. [Can she be randomly selected to be summoned?]
 Definition: woman-player is redeploy appropriate:
-	if it is not angered and it is summon-available and it is introduced and the woman-pregnancy of it < 2 and (it is off-stage or (the woman-status of it < 10 and it is not in the location of the player and it is not nearby and it is not caged)):
+	if it is not angered and it is summon-available and it is introduced and it is not partially-enslaved and the woman-pregnancy of it < 2 and (it is off-stage or (the woman-status of it < 10 and it is not in the location of the player and it is not nearby and it is not caged)):
 		if the number of interested regional monsters is 0, decide yes;
 	decide no.
 Definition: woman-player is relaxed redeploy appropriate: [Allows for interested NPCs]
-	if it is not angered and it is summon-available and it is introduced and the woman-pregnancy of it < 2 and (it is off-stage or (the woman-status of it < 10 and it is not in the location of the player and it is not nearby and it is not caged)), decide yes;
+	if it is not angered and it is summon-available and it is introduced and it is not partially-enslaved and the woman-pregnancy of it < 2 and (it is off-stage or (the woman-status of it < 10 and it is not in the location of the player and it is not nearby and it is not caged)), decide yes;
 	decide no.
 Definition: woman-player is deploy appropriate: [currently unused]
 	if it is not angered and it is angry deploy appropriate, decide yes;
@@ -256,6 +261,14 @@ To construct unique buttons for (M - woman-player):
 		let CL be lightModeFullGreen;
 		if the player is in danger, now CL is lightModeFullYellow;
 		if the player is immobile, now CL is lightModeFullRed;
+		now the ButtonColour entry is CL;
+	otherwise if diaper quest is 0 and the woman-status of M is 98 and ButtonTableFull is 0: [buried urinal]
+		choose a blank row in the Table of Buttons;
+		now the ButtonImage entry is Figure of ToiletButton;
+		now the ButtonCommand entry is "use urinal";
+		let CL be lightModeFullGreen;
+		if the player is not able to use a urinal, now CL is lightModeFullYellow;
+		if the player is immobile, now CL is lightModeFullRed;
 		now the ButtonColour entry is CL.
 
 The womanspawning rules is a rulebook.
@@ -263,7 +276,7 @@ The womanspawning rules is a rulebook.
 A time based rule (this is the woman spawning rule):
 	if woman-player is angry deploy appropriate:
 		follow the womanspawning rules;
-	if woman-player is off-stage:
+	if woman-player is off-stage and woman-player is not partially-enslaved:
 		while the delayed sluttification of woman-player > 0:
 			ImmediatewomanSluttify;
 			decrease the delayed sluttification of woman-player by 1;
@@ -313,6 +326,7 @@ The woman spawning to release the boss rule is listed last in the womanspawning 
 This is the woman spawning in the region of the player rule:
 	if barbsummoned is true or a random number between 1 and 80 is 1:
 		if playerRegion is Dungeon:
+			if the player is an october 2023 top donator and portal-bra is off-stage and woman-player is not partially-enslaved and the times-met of pimp > 0 and Hotel44 is discovered and the woman-bimbo of woman-player is 2, now woman-player is partially-enslaved;
 			deploy woman-player with woman-status 1;
 			rule succeeds;
 		otherwise if playerRegion is Woods:

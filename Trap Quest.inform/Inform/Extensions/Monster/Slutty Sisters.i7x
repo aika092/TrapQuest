@@ -74,7 +74,7 @@ To set up (M - a slutty sister):
 	now the raw difficulty of M is the starting difficulty of M;
 	if M is bulging-slutty-sister, now the belly contents of M is 20;
 	now the health of M is the maxhealth of M;
-	now M is in Hotel36.
+	now M is in FinalBoss01.
 
 To decide which number is the starting difficulty of (M - a slutty sister):
 	decide on 11.
@@ -151,9 +151,9 @@ To compute friendly boredom of (M - a slutty sister):
 Part 2 - Motion
 
 To compute monstermotion of (M - a slutty sister):
-	if M is not in Hotel36 and M is alive:
+	if M is not in FinalBoss01 and M is alive:
 		say "BUG: Nintendoll appeared outside of boss room. Please report this to Aika with the following information:[line break]Current monster's turn: [current-monster][line break]Player's location: [location of the player][line break]NPC state: in [location of M]; [unless M is interested]not [end if]interested; [unless M is asleep]not [end if]asleep[paragraph break]";
-		now M is in Hotel36.
+		now M is in FinalBoss01.
 
 To compute (M - a slutty sister) seeking (D - a direction):
 	do nothing.
@@ -161,11 +161,11 @@ To compute (M - a slutty sister) seeking (D - a direction):
 Definition: a slutty sister is scarable: decide no.
 
 To compute room leaving of (M - a slutty sister): [This CANNOT be replaced with a function that potentially doesn't make them leave the room, for any NPC. Some while loops rely on this to eventually succeed or the game will freeze.]
-	if M is in Hotel36:
+	if M is in FinalBoss01:
 		finally destroy M;
 		say "BUG: Nintendoll forced to leave room. Please report this to Aika with the following information:[line break]Current monster's turn: [current-monster][line break]Player's location: [location of the player][line break]NPC state: [unless M is interested]not [end if]interested; [unless M is asleep]not [end if]asleep[paragraph break]";
 	otherwise:
-		now M is in Hotel36.
+		now M is in FinalBoss01.
 
 To compute sleep reduction of (M - a slutty sister):
 	if M is asleep:

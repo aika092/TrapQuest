@@ -271,9 +271,9 @@ Carry Out Spitting:
 			add V to LV;
 		if the player is upright:
 			if there is a monster in the location of the player, add yourself to LV;
-			repeat with P running through closed pedestals in the location of the player:
-				if P is fertile or P is chilled or P is parched, add P to LV;
 			if HotelScenery04 is in the location of the player, add HotelScenery04 to LV;
+		repeat with P running through closed pedestals in the location of the player:
+			if P is fertile or P is chilled or P is parched, add P to LV;
 		if the location of the player is not use-the-floor:
 			if water-body is in the location of the player:
 				let T be a random water-body-scenery in the location of the player;
@@ -290,9 +290,10 @@ Carry Out Spitting:
 			reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 			truncate LV to 9 entries;
 			say "Where do you want to spit the liquid?[line break]";
+			let L be mouthful-liquid;
 			repeat with V running through LV:
 				if V is bottle:
-					set next numerical response to "Into the [ShortDesc of V][if the doses of V > 0] (You'll lose its current contents of [PotionType of V])[end if]";
+					set next numerical response to "Into the [ShortDesc of V][unless the doses of V is 0 or (L is semen and the fill-colour of V is creamy) or (L is urine and the fill-colour of V is golden) or (L is milk and the fill-colour of V is white) or (L is murkwater and the fill-colour of V is murky)] (You'll lose its current contents of [PotionType of V])[end if]";
 				otherwise if V is pedestal:
 					set next numerical response to "Into the [V] (which contains [a list of things in V])";
 				otherwise if V is yourself:
@@ -366,11 +367,12 @@ Carry Out Spitting:
 					otherwise:
 						say "The screen says 'ERROR: Canvas already full. No appropriate templates found.' The arms let go of you and recede into the ceiling.";
 			otherwise if collecting is bottle:
-				dump collecting;
-				if L is semen, now the fill-colour of collecting is creamy;
-				if L is urine, now the fill-colour of collecting is golden;
-				if L is milk, now the fill-colour of collecting is white;
-				if L is murkwater, now the fill-colour of collecting is murky;
+				unless (L is semen and the fill-colour of collecting is creamy) or (L is urine and the fill-colour of collecting is golden) or (L is milk and the fill-colour of collecting is white) or (L is murkwater and the fill-colour of collecting is murky):
+					dump collecting;
+					if L is semen, now the fill-colour of collecting is creamy;
+					if L is urine, now the fill-colour of collecting is golden;
+					if L is milk, now the fill-colour of collecting is white;
+					if L is murkwater, now the fill-colour of collecting is murky;
 				SetDose collecting to (the total volume of face + 1) / 2;
 				now the drink-origin of collecting is the drink-origin of face;
 				compute father material of face into collecting;

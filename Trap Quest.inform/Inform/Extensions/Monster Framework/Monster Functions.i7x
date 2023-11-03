@@ -20,7 +20,6 @@ To bore (M - a monster):
 	bore M for 500 seconds.
 
 To bore (M - a monster) for (N - a number) seconds:
-	dislodge M;
 	compute common boredom of M for N seconds;
 	compute unique boredom of M;
 	now M is uninterested;
@@ -31,7 +30,7 @@ To compute unique boredom of (M - a monster):
 	do nothing.
 
 To compute common boredom of (M - a monster) for (N - a number) seconds:
-	now M is unseduced;
+	dislodge M;
 	now M is not enticed;
 	now the throating of M is 0;
 	now the objectification of M is 0;
@@ -105,6 +104,7 @@ To finally destroy (M - a monster):
 	if M is bride-consort:
 		now the ceremony of betrothal-quest is true;
 		progress quest of betrothal-quest;
+	compute pedestal interruption of M;
 	remove M from play;
 	if debugmode > 1, say "[BigNameDesc of M] is now in [location of M].";
 	now the monstersetup of M is 0;

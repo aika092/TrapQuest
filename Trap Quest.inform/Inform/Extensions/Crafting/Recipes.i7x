@@ -71,8 +71,9 @@ To say ShortRecipeDesc of (C - a thing):
 [Not actually a recipe but this seems like a sensible place to put this code]
 
 Recipe for latex curse reversal is a kind of thing. A recipe for latex curse reversal is usually portable. The printed name of recipe for latex curse reversal is "[TQlink of item described]recipe for latex curse reversal[shortcut-desc][TQxlink of item described][verb-desc of item described]". There is 1 recipe for latex curse reversal. The text-shortcut of recipe for latex curse reversal is "rlc".
+Figure of latex curse reversal recipe is the file "Items/Collectibles/recipe1.png".
 To decide which figure-name is the examine-image of (C - Recipe for latex curse reversal):
-	decide on figure of recipe.
+	decide on figure of latex curse reversal recipe.
 To say ExamineDesc of (B - a recipe for latex curse reversal):
 	say "This recipe isn't written in any alphabet you've ever seen before. There's absolutely no way you'll have any chance of understanding it on your own.".
 Definition: a recipe for latex curse reversal is immune to change: decide yes.

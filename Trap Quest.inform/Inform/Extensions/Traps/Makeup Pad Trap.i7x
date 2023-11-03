@@ -59,6 +59,8 @@ A choice trap is a kind of trap. There are 5 click choice traps.
 To say ExamineDesc of (C - a choice trap):
 	say "A tablet - the screen has now turned off.".
 
+Figure of choice trap is the file "Env/MultiFloor/choicetrap1.png".
+
 This is the spawn initial woods choice traps rule:
 	if the player is a december 2022 top donator or (diaper quest is 1 and the player is a december 2022 diaper donator):
 		repeat with N running from 1 to 2:
@@ -372,7 +374,9 @@ To trigger (Y - a choice trap):
 	set numerical response 1 to the substituted form of "[ChoiceFlav of entry 1 in LC]";
 	set numerical response 2 to the substituted form of "[ChoiceFlav of entry 2 in LC]";
 	set numerical response 0 to the substituted form of "See what happens if you just step away from the tablet as quickly as you can.";
+	now temporaryYesNoBackground is figure of choice trap;
 	compute multiple choice question;
+	now temporaryYesNoBackground is figure of small image;
 	if player-numerical-response is 1:
 		say "You touch the first option.";
 		trigger entry 1 in LC;

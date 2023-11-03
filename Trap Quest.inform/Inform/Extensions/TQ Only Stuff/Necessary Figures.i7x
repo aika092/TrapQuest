@@ -50,6 +50,7 @@ Figure of aeromancer cutscene 7 is the file "NPCs/MultiFloor/Aeromancer/cutscene
 
 Figure of agent camera cutscene 1 is the file "NPCs/MultiFloor/Agent/cutscene-agent2.jpg".
 Figure of agent camera cutscene 2 is the file "NPCs/MultiFloor/Agent/cutscene-agent1.jpg".
+Figure of agent camera cutscene 3 is the file "NPCs/MultiFloor/Agent/cutscene-agent6.jpg".
 Figure of agent angry is the file "NPCs/MultiFloor/Agent/agent2a.png".
 Figure of agent doggy angry is the file "NPCs/MultiFloor/Agent/cutscene-agent3.jpg".
 To decide which figure-name is the anal-sex-monster-image of (M - agent):
@@ -76,6 +77,8 @@ Figure of demoness cutscene 11 is the file "NPCs/Forest/Demoness/cutscene-demone
 Figure of demoness cutscene 12 is the file "NPCs/Forest/Demoness/cutscene-demoness-vaginalcreampie1.png".
 Figure of demoness cutscene 13 is the file "NPCs/Forest/Demoness/cutscene-demoness-vaginal1.png".
 
+Figure of djinn is the file "NPCs/Forest/Djinn/djinn1.jpg".
+Figure of djinn uninterested is the file "NPCs/Forest/Djinn/djinn4.png".
 Figure of Djinn Cutscene 1 is the file "NPCs/Forest/Djinn/cutscene-djinn-fuck1.png".
 Figure of Djinn Cutscene 2 is the file "NPCs/Forest/Djinn/cutscene-djinn-conception1.png".
 
@@ -203,6 +206,8 @@ Figure of Wild Gladiator Cutscene 2 is the file "NPCs/MultiFloor/Gladiator/Cutsc
 Figure of Wild Gladiator Cutscene 3 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-wild-fuck3.jpg". [male anal woods]
 Figure of Wild Gladiator Cutscene 4 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-wild-fuck4.jpg". [female anal woods]
 Figure of Wild Gladiator Cutscene 5 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-wild-delay1.png". [delay]
+
+Figure of milk fountain is the file "Env/Mansion/fountain1.jpg".
 
 [unnecessary in DQ]
 Figure of white inexperienced patron is the file "NPCs/Hotel/Patron/patron1.png".
@@ -344,6 +349,10 @@ Figure of rank 2 big lips rosie is the file "NPCs/School/Student/student1bL.png"
 To decide which figure-name is Figure of rank 2 rosie:
 	if student-rosie is kissPunished, decide on figure of rank 2 big lips rosie;
 	otherwise decide on figure of rank 2 small lips rosie.
+
+Figure of Surgery Trapped Bored is the file "Special/Cutscene/cutscene-elevator-surgery3a.jpg".
+Figure of Surgery Trapped Revealed is the file "Special/Cutscene/cutscene-elevator-surgery3b.jpg".
+Figure of Surgery Trapped Sensed is the file "Special/Cutscene/cutscene-elevator-surgery3c.jpg".
 
 Figure of throne is the file "Env/Dungeon/throne1a.jpg".
 Figure of transformed throne is the file "Env/Dungeon/throne2a.jpg".

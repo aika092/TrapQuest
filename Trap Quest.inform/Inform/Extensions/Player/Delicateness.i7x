@@ -189,7 +189,11 @@ To FearUp (X - a number) with reason (T - a text): [This function is anticipated
 	if debuginfo > 0, say "[input-style]Avoid flinch check: d30 ([R]) | [X + the delicateness of the player].5 = ([delicateness of the player]) delicateness + ([X].5) fear rating[roman type][line break]";
 	if X + the delicateness of the player >= R:
 		if T is "", now T is the substituted form of "As you [one of]recoil[or]flinch[or]tense up[in random order] with [if X > 5]fear[otherwise][one of]surprise[or]shock[cycling][end if],";
-		check sudden spit and expulsion with reason T.
+		check sudden spit and expulsion with reason T;
+	otherwise if X + the delicateness of the player >= R - 4:
+		say "You BARELY manage to prevent yourself from seriously flinching.";
+	otherwise:
+		say "Despite the shock, you manage to maintain external control, and [if X + the delicateness of the player >= R - 8]flinch only the tiniest[otherwise]not flinch even a little[end if] bit.".
 
 gross-sensation is a text that varies.
 silent-gross-out is initially false.

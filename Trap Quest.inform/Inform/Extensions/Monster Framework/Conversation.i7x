@@ -143,7 +143,8 @@ To say DefeatedGreet of (M - a monster):
 	if M is diaper-enslaved:
 		say DiaperEnslavedGreet of M;
 	otherwise if M is sex-enslaved:
-		say SexEnslavedGreet of M;
+		if M is bride-consort and key garter is worn, say CuckEnslavedGreet of M;
+		otherwise say SexEnslavedGreet of M;
 	otherwise:
 		say FuckedSillyGreet of M.
 
@@ -155,7 +156,10 @@ Displayed when the player greets a monster that has been fucked silly.
 
 +!]
 To say FuckedSillyGreet of (M - a monster):
-	say "'[one of]Anybody still in there?'[or]Gosh, you've seen better days, haven't you?'[or]Talk about a fall from grace.'[in random order]";
+	say "'[one of]Anybody still in there?'[or]Gosh, you've seen better days, haven't you?'[or]Talk about a fall from grace.'[in random order]".
+
+To say CuckEnslavedGreet of (M - a monster):
+	say "'Well, if it isn't my little locked-up hubby.'".
 
 [!<SaySexEnslavedGreetOfMonster>+
 
@@ -178,7 +182,11 @@ To say DiaperEnslavedGreet of (M - a monster):
 	say FuckedSillyGreet of M.
 
 To say DefeatedGreetResponse of (M - a monster):
-	if M is intelligent, say "[speech style of M]'[one of]MMMMMmmmnng!'[or]Mmmmmph'[or]Awoooo...'[or]Haaaah!'[in random order][roman type][line break]".
+	if M is intelligent:
+		if M is bride-consort and key garter is worn:
+			say "[speech style of M]'Hello sweetheart... Please, is it time for you to unlock me yet?'[roman type][line break]";
+		otherwise:
+			say "[speech style of M]'[one of]MMMMMmmmnng!'[or]Mmmmmph'[or]Awoooo...'[or]Haaaah!'[in random order][roman type][line break]".
 
 [!<SayMuteGreetingToMonster>+
 
@@ -220,6 +228,8 @@ To say BimboSeduce of (M - a monster):
 		say "[second custom style]'Santa baby, slip a [if M is male][one of]hard[or]big[or]thick[in random order] cock[otherwise]finger[end if] [if there is a worn christmas dress]under the tree, in me[otherwise]inside of me, or three[end if]...'[roman type][line break]";
 	otherwise if the class of the player is cheerleader:
 		say CheerSeduce of M;
+	otherwise if the class of the player matches the text "the law":
+		say "[second custom style]'[one of]Someone's been a very naughty [boy of M]. I might have to punish you... With my butt...'[or]They don't call me the ['][player-class]['] for nothing...'[or]You're under arrest for being a big bad [boy of M]. I'm going to have to punish your [if M is male][DickDesc of M][otherwise]beautiful body[end if] directly... Using my body.'[cycling][roman type][line break]";
 	otherwise if M is neuter:
 		say "[second custom style]'[one of]Ooh, I'm a bad [boy of the player], punish me!'[or]Please fuck me!'[at random][roman type][line break]";
 	otherwise if M is male:
@@ -1259,7 +1269,8 @@ To say DiaperEnslavedDrinkRequest of (M - a monster):
 	say FuckedSillyDrinkRequest of M.
 
 To say DefeatedDrinkResponse of (M - a monster):
-	say DefeatedGreetResponse of M.
+	if M is bride-consort and key garter is worn, say "[BigNameDesc of M] shakes [his of M] sadly.[line break][speech style of M]'I'm sorry for being such a useless husband...'[roman type][line break]";
+	otherwise say DefeatedGreetResponse of M.
 
 Chapter 4 Food Requesting
 
@@ -1363,7 +1374,7 @@ To say DiaperEnslavedFoodRequest of (M - a monster):
 	say FuckedSillyFoodRequest of M.
 
 To say DefeatedFoodResponse of (M - a monster):
-	say DefeatedGreetResponse of M.
+	say DefeatedDrinkResponse of M.
 
 Chapter 5 Dismissal
 
@@ -2063,13 +2074,14 @@ To compute unique completion of (E - adventurer-attack-errand) for (P - a person
 	now the old-bimbo-count of adventurer-attack-errand is 0;
 	say "[speech style of P]'I heard that another of those dumb bitches has given up [his of a random explorer] dreams of being an adventurer and decided that a life as a [if diaper quest is 1]diaper slut[otherwise]whore[end if] is more appropriate for a slut like [him of a random explorer]. I assume that was your doing? Anyway, I'm happy!'[roman type][line break]".
 
-satisfy-pimp-errand is an errand. satisfy-pimp-errand has an object called the satisfy-target.
+satisfy-pimp-errand is an errand. satisfy-pimp-errand has an object called the satisfy-target. satisfy-pimp-errand can be woman-freed.
 Definition: satisfy-pimp-errand is appropriate:
 	repeat with M running through alive explorers:
 		if the satisfy-target of satisfy-pimp-errand is M, decide no;
 	if pimp is alive, decide yes;
 	decide no.
 Definition: satisfy-pimp-errand is completed:
+	if satisfy-pimp-errand is woman-freed, decide yes; [TODO: fix exploit where you could gain both quest from barbara and quest from explorer, free only barbara, and then get reward from explorer and barbara in that order]
 	if the satisfy-target of satisfy-pimp-errand is the pimp, decide yes;
 	decide no.
 To decide which number is the errand-weight of (E - satisfy-pimp-errand) for (P - an explorer):
@@ -2079,8 +2091,11 @@ To say ErrandFlav of (E - satisfy-pimp-errand) for (P - a person):
 To compute instant effect of (E - satisfy-pimp-errand) for (P - a person):
 	now the satisfy-target of E is P.
 To compute unique completion of (E - satisfy-pimp-errand) for (P - a person):
-	now the satisfy-target of satisfy-pimp-errand is nothing;
-	say "[speech style of P]'The pimp said we're all square now. Thanks a bunch!'[roman type][line break]".
+	if P is an explorer:
+		now the satisfy-target of satisfy-pimp-errand is nothing;
+		say "[speech style of P]'The pimp said we're all square now. Thanks a bunch!'[roman type][line break]";
+	otherwise:
+		now E is not woman-freed.
 
 portal-clothes-errand is an errand. portal-clothes-errand has an object called the satisfy-target.
 Definition: portal-clothes-errand is appropriate:
@@ -2091,7 +2106,7 @@ Definition: portal-clothes-errand is completed:
 	if portal-hotpants is worn or portal-bra is worn, decide no;
 	decide yes.
 To decide which number is the errand-weight of (E - portal-clothes-errand) for (P - pimp):
-	decide on 10.
+	decide on 40.
 To say ErrandFlav of (E - portal-clothes-errand) for (P - a person):
 	say "Sure, I'll just add you to the list of bitches in debt to me. I have a special way of helping you pay it off over time. You don't even need to be in the hotel. It's that simple... ".
 To compute instant effect of (E - portal-clothes-errand) for (P - a person):
@@ -2811,19 +2826,32 @@ To say ErrandThanksFlav of (T - a thing) from (P - a person):
 
 transfer-debt-request is a requestable.
 To decide which number is the requestability of (C - transfer-debt-request):
-	decide on 7.
+	decide on 15.
 Definition: transfer-debt-request is appropriate:
 	if the noun is pimp and the satisfy-target of satisfy-pimp-errand is an explorer, decide yes;
+	if the noun is pimp and woman-player is partially-enslaved, decide yes;
 	decide no.
 To say RequestFlav of (C - transfer-debt-request):
 	let M be the satisfy-target of satisfy-pimp-errand;
-	say "'The [MediumDesc of M] said that [he of M][']s in debt to you... Can we make a deal and have you cancel [his of M] debt?'".
+	if M is explorer:
+		say "'The [MediumDesc of M] said that [he of M][']s in debt to you... Can we make a deal and have you cancel [his of M] debt?'";
+	otherwise:
+		say "'[WomanName] appears to be in your debt... Can we make a deal and have you cancel [his of woman-player] debt and remove the portal bra?'".
 To say RewardFlav of (C - transfer-debt-request):
 	say "cancel the slut's debt".
 To compute errand rewarding of (T - transfer-debt-request) from (P - a person):
-	say "[speech style of P]'Okay, it's done. I've transferred the slut's debt to you, and you'll be paying it off with your body for the next while. Enjoy it if you can, haha!'[roman type][line break][BigNameDesc of P] loses interest in you for now.";
+	say "[speech style of P]'Okay, it's done. That slut is no longer in debt to me.'[roman type][line break][BigNameDesc of P] loses interest in you for now.";
 	bore P;
-	now the satisfy-target of satisfy-pimp-errand is pimp.
+	if the satisfy-target of satisfy-pimp-errand is an explorer:
+		now the satisfy-target of satisfy-pimp-errand is pimp;
+	otherwise:
+		now satisfy-pimp-errand is woman-freed;
+		now woman-player is not partially-enslaved;
+		if woman-player is in the location of the player:
+			say "[BigNameDesc of woman-player][']s portal bra disappears from [his of woman-player] body[if the player is in Hotel44], and [his of woman-player] breasts disappear from the pedestal[end if]!";
+		otherwise if the player is in Hotel44:
+			say "[BigNameDesc of woman-player][']s breasts disappear from the pedestal!";
+			FavourUp woman-player.
 
 sword-removal-request is a requestable.
 To decide which number is the requestability of (C - sword-removal-request):
@@ -2941,6 +2969,18 @@ To compute errand rewarding of (T - use-your-key) from (P - a person):
 		now K is in the location of the player;
 		compute autotaking K.
 
+alliance-reward is a requestable.
+To decide which number is the requestability of (C - alliance-reward):
+	decide on 5.
+Definition: alliance-reward is appropriate: decide no.
+To say RequestFlav of (C - alliance-reward):
+	say "'BUG, should never appear!'".
+To say RewardFlav of (C - alliance-reward):
+	say "forever be in your debt".
+To compute errand rewarding of (T - alliance-reward) from (P - a person):
+	say "[speech style of P]'Oh [NameBimbo], thank you so much, how can I ever repay you?!'[roman type][line break]You feel like you just earned yourself a place in [NameDesc of P][']s good books.";
+	if P is a monster, FavourUp P by 3.
+
 To consider (T - talk-request) for (M - a monster):
 	if M is intelligent and M is interested and M is undefeated and M is not caged and the player is not in a predicament room and M is friendly:
 		now the printed name of T is the substituted form of "Request something from [him of M]...";
@@ -2979,9 +3019,10 @@ To execute (T - talk-request) for (M - a monster):
 		otherwise if the current-errand of M is no-errand:
 			now the current-reward of M is R;
 			let CH be the charisma of the player;
-			let RR be a random number between 1 and the requestability of R;
-			if CH * 5 < the requestability of R, now RR is 9999;
-			if debuginfo > 0, say "[input-style]Errand needed check: [if RR is 9999]Request level ([the requestability of R]) too high for player with a charisma score of [CH]; automatic success. Errand is required.[otherwise]Request level d[the requestability of R] ([RR]) | [CH].5 player charisma[end if][roman type][line break]";
+			let RQ be the requestability of R + the freebie-reluctance of M;
+			let RR be a random number between 1 and RQ;
+			if CH * 5 < RQ, now RR is 9999;
+			if debuginfo > 0, say "[input-style]Errand needed check: [if RR is 9999]Request level ([RQ]) too high for player with a charisma score of [CH]; automatic success. Errand is required.[otherwise]Request level d[RQ] ([RR]) | [CH].5 player charisma[end if][roman type][line break]";
 			if CH >= RR:
 				say RequestAcceptanceForFree of M;
 				compute errand rewarding of R from M;
@@ -3002,6 +3043,12 @@ To execute (T - talk-request) for (M - a monster):
 				compute errand completion of M;
 			otherwise:
 				say RequestDuplicationRejection of M.
+
+[The higher this is, the less likely a monster is to give you a freebie]
+To decide which number is the freebie-reluctance of (M - a monster):
+	if the favour of M < 0, decide on 99;
+	if the difficulty of M < 0, decide on 1 - the square root of the favour of M;
+	decide on the square root of the difficulty of M - the square root of the favour of M.
 
 To say RequestAcceptance of (M - a monster):
 	say RequestAssign of M.

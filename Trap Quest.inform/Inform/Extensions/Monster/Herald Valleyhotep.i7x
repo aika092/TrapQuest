@@ -131,7 +131,7 @@ To compute punishment of (P - herald-blessing):
 			UrineSoakUp K by 9;
 	satisfy M.
 
-Definition: herald is distracted:
+Definition: herald is uniquely distracted:
 	if herald is in the location of the player:
 		let M be a random explorer in the location of the player;
 		if M is explorer:

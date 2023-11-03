@@ -179,7 +179,7 @@ To say DiaperReaction of (M - shopkeeper):
 	otherwise:
 		say "[BigNameDesc of M] doesn't look at you directly or say anything, so it's hard to gauge [if the player is not shameless]if [he of M] saw[otherwise][his of M] reaction[end if].".
 
-Definition: shopkeeper (called M) is distracted:
+Definition: shopkeeper (called M) is uniquely distracted:
 	if the refractory-period of M < 0 and M is reactive:
 		let N be a random undefeated wench in the location of M;
 		if N is monster and (N is uninterested or N is friendly):
@@ -283,7 +283,6 @@ To say BecomesAggressive of (M - shopkeeper):
 	say "[big he of M] takes an offensive stance![line break][speech style of M]'[one of]I can't take you seriously at all! We should be [if diaper quest is 1]disciplining you[otherwise]fucking[end if], not doing business.'[or]There's no time for shopping now, there's something much more important we must do first...'[in random order][roman type][line break]".
 
 To bore (M - shopkeeper) for (N - a number) seconds:
-	dislodge M;
 	compute common boredom of M for N seconds;
 	now M is uninterested;
 	now the stolen-aware of M is 0;
@@ -600,7 +599,6 @@ To satisfy (M - shopkeeper) for (N - a number) seconds:
 				bore M for N seconds; [got to give the player a chance to leave if the shopkeeper is permanently unfriendly for some edge case reason]
 			otherwise:
 				say SatisfiedFlav of M;
-				dislodge M;
 				compute common boredom of M for N seconds;
 			progress quest of nice-quest;
 	otherwise:
@@ -877,7 +875,7 @@ To compute diaper donating of (M - shopkeeper):
 		now D is a random carried stolen diaper;
 		if D is diaper:
 			say "[speech style of M]'Did you really think you could just get away with stealing my shit? You're going to regret this. Here, if you are so desperate to be in diapers, let me help you out!'[roman type][line break]";
-			repeat with P running through worn pee covering clothing:
+			repeat with P running through pee covering clothing:
 				if P is removable:
 					say "[BigNameDesc of M] brutally rips off your [P]!";
 					destroy P;

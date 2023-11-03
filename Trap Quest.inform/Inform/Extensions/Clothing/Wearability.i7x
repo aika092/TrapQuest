@@ -286,17 +286,25 @@ The wrist collar bar unwearable rule is listed in the global wearability rules.
 
 This is the clothes can't interrupt anal sex rule:
 	if wearing-target is total protection:
-		repeat with T running through things penetrating asshole:
-			unless T is disembodied or (T is clothing and (wearing-target is trousers or wearing-target is knickers or wearing-target is overdress)):
-				if summoning is 0 and autowear is false, say "You can't wear this because the [T] is in the way!";
+		repeat with T running through embodied things penetrating asshole:
+			if T is clothing:
+				if T is not knickers:
+					if summoning is 0 and autowear is false, say "You can't wear this because the [T] is in the way!";
+					rule fails;
+			otherwise if wearing-target is not displacable or summoning is 0:
+				if autowear is false, say "You can't wear this because the [T] is in the way!";
 				rule fails.
 The clothes can't interrupt anal sex rule is listed in the global wearability rules.
 
 This is the clothes can't interrupt vaginal sex rule:
 	if wearing-target is not no protection:
-		repeat with T running through things penetrating vagina:
-			unless T is disembodied or (T is clothing and (wearing-target is trousers or wearing-target is knickers or wearing-target is overdress)):
-				if summoning is 0 and autowear is false, say "You can't wear this because the [T] is in the way!";
+		repeat with T running through embodied things penetrating vagina:
+			if T is clothing:
+				if T is not knickers:
+					if summoning is 0 and autowear is false, say "You can't wear this because the [T] is in the way!";
+					rule fails;
+			otherwise if wearing-target is not displacable or summoning is 0: [displacable things can still be summoned]
+				if autowear is false, say "You can't wear this because the [T] is in the way!";
 				rule fails.
 The clothes can't interrupt vaginal sex rule is listed in the global wearability rules.
 

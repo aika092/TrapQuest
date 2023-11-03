@@ -231,7 +231,6 @@ To say SatisfiedFlav of (M - orc):
 		say "[BigNameDesc of M] seems [if U is 1]satisfied, and loses[otherwise]to lose[end if] interest.".
 
 To bore (M - orc) for (N - a number) seconds:
-	dislodge M;
 	compute common boredom of M for N seconds;
 	if the player is in Dungeon07 and M is in Dungeon07:
 		calm M; [The orc never gets distracted from you while you're there]
@@ -425,12 +424,18 @@ To compute SeductionGrind of (M - orc):
 			say "Suddenly, two glittery feline ears appear in your hair!";
 			summon stripper-ears cursed;
 			say "[variable custom style]The game is telling me I'm a professional stripper now?![roman type][line break]";
+		otherwise if rugged-headband is worn and police-hat is off-stage:
+			transform rugged-headband into police-hat;
+			compute class outfit of police-hat;
+			let C be a random worn overdress;
+			if C is leopard themed clothing, unclash class summon police uniform;
+			say "[variable custom style]The game is telling me I'm a professional stripper now?![roman type][line break]";
 		otherwise if there is a worn maid headdress:
 			let H be a random worn headgear;
 			transform H into stripper maid headdress;
 			compute class outfit of stripper maid headdress;
 			say "[variable custom style]The game is telling me I'm a professional stripper now?![roman type][line break]";
-		otherwise if cumdump-headband is worn:
+		otherwise if cumdump-headband is worn and stripper-ears is off-stage:
 			if bitch top is worn, WardrobeVanish bitch top;
 			class summon porn star tube top;
 			if bitch bottoms is worn, WardrobeVanish bitch top;
@@ -1082,7 +1087,7 @@ To compute poker minigame:
 						if max breast size >= 5 and portal-bra is actually summonable:
 							summon portal-bra;
 							say "The hotpants are immediately followed by a matching chestplate!";
-						say "[variable custom style]No way... surely this doesn't meanthat... my body parts are... mounted on the statuettes in [NameDesc of pimp][speech style of orc][']s room?![roman type][line break]";
+						say "[variable custom style]No way... surely this doesn't mean that... my body parts are... mounted on the statuettes in [NameDesc of pimp][speech style of orc][']s room?![roman type][line break]";
 					otherwise:
 						say "[speech style of orc]'The [poker card of PC] summons a new, err, [']friend['] for you.'[roman type][line break]";
 						let M be a random horny-wench;

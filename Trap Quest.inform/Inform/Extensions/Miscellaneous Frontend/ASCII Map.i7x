@@ -59,7 +59,7 @@ To MapDraw:
 						say "{S}";
 					otherwise if R is discovered and R is Dungeon37 or R is Hotel16:
 						say "{&}";
-					otherwise if R is discovered and R is Dungeon36 or R is Hotel36:
+					otherwise if R is discovered and R is Dungeon36 or R is FinalBoss01:
 						say "{!}";
 					otherwise if R is discovered and R is toilets or R is urinals:
 						say "{t}";

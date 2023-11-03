@@ -251,7 +251,7 @@ To say CurtseyReactionFlav of (M - a royal guard):
 	otherwise:
 		say "[BigNameDesc of M] frowns but doesn't say anything.".
 
-Definition: a royal guard (called M) is distracted:
+Definition: a royal guard (called M) is uniquely distracted:
 	if the refractory-period of M < 0 and the class of the player is not princess and M is reactive:
 		let N be a random undefeated awake explorer in the location of M;
 		if N is nothing, let N be a random undefeated awake wench in the location of M;
@@ -825,6 +825,9 @@ To compute DQ delay of (M - a royal guard):
 To compute delay of (M - a royal guard):
 	say "[one of]A bead of precum rolls down the side of [NameDesc of M][']s gently twitching shaft. Looks like [he of M][']s waiting for you to make the first move.[or][BigNameDesc of M][']s free hand hovers over your head, as if to let you know that [he of M] could jump on you at any time. [big he of M][']s merely waiting for you to make the first move.[or][BigNameDesc of M] watches you, poised to stop you if you try to run away, but still waiting to see what you do next.[or]You realise [NameDesc of M] is waiting to see what you do next.[in random order][line break][one of][line break][speech style of M]'Because you have been obedient, I have decided to allow you to choose how you will be punished.'[roman type][line break][or][line break][speech style of M]'Your obedience is commendable. Present yourself.'[roman type][line break][or][line break][speech style of M]'Because I am an honourable [man of M], I allow you to choose how you will be punished.'[roman type][line break][or][line break][speech style of M]'Because I am honourable, I allow you to make known your preferences.'[roman type][line break][in random order]".
 
+To compute delay of (M - prison guard):
+	say "[speech style of M]'Perhaps you need to spend a stint of time in a cell, to repent for your misdeeds.'[roman type][line break]".
+
 To say waitingflav of (M - a royal guard):
 	if the player is not able to speak:
 		say "[if the player is able to make sounds][line break][variable custom style][muffled sounds][roman type][line break][otherwise]You look up at [NameDesc of M] silently.[end if]";
@@ -1112,7 +1115,7 @@ This is the royal guard incarcerating a criminal rule:
 							say "There is a [man of gymnast-explorer] sleeping on the ground here. [UniqueMonsterDesc of gymnast-explorer][big he of gymnast-explorer] is locked in two sets of wooden stocks, which have been positioned in such a way that [he of gymnast-explorer] is lying on [his of gymnast-explorer] back with [his of gymnast-explorer] knees positioned next to [his of gymnast-explorer] head, essentially in a sort of piledriver position. [big he of gymnast-explorer] is grunting and moaning and whining, and a few moments later, it's clear why, when [he of gymnast-explorer] wails, and a geyser of [semen] bursts out of [his of gymnast-explorer] asshole, squirting first up and then down like a foul fountain onto [his of gymnast-explorer] face, coating [his of gymnast-explorer] visage with [his of gymnast-explorer] own anal creampies.[paragraph break]A few seconds of coughing and spluttering later, [NameDesc of M] is unlocking [NameDesc of gymnast-explorer][']s restraints.[line break][speech style of M]'And with that, your sentence is over. You are a citizen once more... Until I see you behaving badly again, that is. Now go clean yourself up - you look disgusting.'[roman type][line break][BigNameDesc of M] spanks [NameDesc of gymnast-explorer], who yelps, and quickly crawls out of the cell.";
 							compute mandatory room leaving of gymnast-explorer;
 							now gymnast-explorer is moved;
-							cutshow Figure of gymnast explorer 1 cutscene 3 for gymnast-explorer;
+							cutshow Figure of gymnast explorer 1 cutscene 3[ for gymnast-explorer];
 						otherwise:
 							now the sleep of gymnast-explorer is 250;
 							say "There is a [man of gymnast-explorer] sleeping on the ground here. [UniqueMonsterDesc of gymnast-explorer]It's unclear if [he of gymnast-explorer] was being kept prisoner here or if [he of gymnast-explorer] just chose a rather controversial place to take a nap.";

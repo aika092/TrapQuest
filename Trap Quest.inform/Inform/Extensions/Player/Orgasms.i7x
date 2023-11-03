@@ -245,6 +245,7 @@ To orgasm:
 	follow the ejaculation rules;
 	follow the orgasm fatigue effects rules;
 	follow the orgasm resolution rules;
+	if wanktype is not NO-WANK, progress quest of enemy-orgasm-quest;
 	increase totalOrgasmCount by 1;
 	now the delayed arousal of the player is 0.
 
@@ -497,7 +498,28 @@ This is the BBC orgasm resolution rule:
 	if interracial fetish is 1:
 		repeat with M running through monsters penetrating a body part:
 			if M is dark skinned:
-				if there is a worn tattoo:
+				let DarkMagicianGirl be false;
+				if dark-magician-girl-cameltoe-costume is worn or dark-magician-girl-swimsuit is worn:
+					now DarkMagicianGirl is true;
+				otherwise:
+					if the class of the player exactly matches the text "magical girl" or the class of the player exactly matches the text "magical boy":
+						if the number of worn dress is 1: [one overdress or underdress, not both]
+							let D be a random worn dress;
+							if D is removable and D is not dark-magician-girl-swimsuit, now DarkMagicianGirl is true;
+						otherwise:
+							if dark-magician-girl-costume is class summonable, now DarkMagicianGirl is true;
+				if DarkMagicianGirl is true:
+					let D be a random worn dress;
+					if D is a dress:
+						if D is dark-magician-girl-costume:
+							transform D into dark-magician-girl-cameltoe-costume;
+						otherwise if D is dark-magician-girl-cameltoe-costume:
+							transform D into dark-magician-girl-swimsuit;
+						otherwise:
+							transform D into dark-magician-girl-costume;
+					otherwise:
+						unclash class summon dark-magician-girl-costume;
+				otherwise if there is a worn tattoo:
 					let T be a random interracial themed drawable tattoo;
 					if T is a tattoo:
 						let O be 100;
@@ -594,7 +616,7 @@ To decide which number is the anal sensitivity influence of (C - a wearthing):
 	decide on 0.
 
 To decide which number is the sensitivity of (F - asshole):
-	let S be 0;
+	let S be the raw sensitivity of F;
 	repeat with T running through worn wearthings:
 		increase S by the anal sensitivity influence of T;
 	if the player is a sissy, increase S by 2;
@@ -609,7 +631,7 @@ To decide which number is the sensitivity of (F - a body part):
 	decide on 0.
 
 To decide which number is the sensitivity of (F - vagina):
-	let S be 0;
+	let S be the raw sensitivity of F;
 	repeat with C running through worn wearthings:
 		increase S by the vaginal sensitivity influence of C;
 	if the soreness of vagina > 5, increase S by 1;

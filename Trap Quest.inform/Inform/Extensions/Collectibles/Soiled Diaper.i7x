@@ -131,7 +131,8 @@ To compute diaper pail exit:
 	repeat with SD running through soiled-diapers in DiaperPail:
 		add SD to the pailed-diapers of most-recent-pail, if absent;
 		remove SD from play;
-	now the player is in the location of the source-room of DiaperPail.
+	now the player is in the location of the source-room of DiaperPail;
+	update player region.
 
 Check standing when the player is in DiaperPail:
 	try jumping instead.

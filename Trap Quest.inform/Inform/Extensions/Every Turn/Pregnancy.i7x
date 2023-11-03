@@ -219,7 +219,7 @@ To compute pregnancy:
 			compute pregnancy annoyance.
 
 To compute pregnancy clothing displacement:
-	repeat with P running through worn pee covering clothing:
+	repeat with P running through pee covering clothing:
 		if P is displacable:
 			say "You can't help but instinctively pull your [ShortDesc of P] out of the way!";
 			displace P;

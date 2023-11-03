@@ -42,16 +42,23 @@ Check going north:
 Report going south:
 	let P be a random painting in the location of the player;
 	if P is painting:
-		repeat with R running through painting-rooms:
-			repeat with T running through things in R:
-				if T is bowsette:
-					try bowsette going south;
-					now bowsette is moved;
-				otherwise:
-					only destroy T;
-		if the number of on-stage rippling paintings is 0 and bowsette is off-stage and bowsette is not permanently banished:
-			now bowsette-painting is rippling;
+		compute painting completion of P;
 		update player region.
+
+To compute painting completion of (P - a painting):
+	compute unique painting completion of P;
+	repeat with R running through painting-rooms:
+		repeat with T running through things in R:
+			if T is bowsette:
+				try bowsette going south;
+				now bowsette is moved;
+			otherwise:
+				only destroy T;
+	if the number of on-stage rippling paintings is 0 and bowsette is off-stage and bowsette is not permanently banished, now bowsette-painting is rippling.
+
+To compute unique painting completion of (P - a painting):
+	do nothing.
+
 
 
 dress-painting is a painting. dress-painting is rippling. dress-painting can be spookified. The text-shortcut of dress-painting is "dptg".
@@ -484,6 +491,484 @@ Report wearing:
 
 
 
+heist-painting is a painting. heist-painting can be heist-stolen. heist-painting can be key-stolen. The text-shortcut of heist-painting is "hptg".
+
+Figure of heist painting is the file "Env/Mansion/painting6c.png".
+Figure of heist painting stolen is the file "Env/Mansion/painting6b.png".
+Figure of heist hypno is the file "Special/Cutscene/cutscene-heist-hypno1.jpg".
+
+To decide which figure-name is the examine-image of (P - heist-painting):
+	if P is heist-stolen, decide on figure of heist painting stolen;
+	decide on figure of heist painting.
+
+Definition: heist-painting is fetish appropriate: decide no. [it spawns by its own means]
+
+To say MediumDesc of (P - heist-painting):
+	say "pedestal painting".
+To say UniqueExamineDesc of (P - heist-painting):
+	say "A painting of a pedestal, that looks similar to the others in the room[unless P is heist-stolen]. A priceless jewel-encrusted tiara can be seen within the (painted) glass display case[end if].".
+
+To compute unique painting completion of (P - heist-painting):
+	progress quest of heist-quest.
+
+A heist-painting-room is a kind of painting-room. The printed name of a heist-painting-room is "Museum Room".
+The description of a heist-painting-room is "This looks and feels like a small room in a museum, complete with expensive-looking artworks on the walls and red rope protecting the exhibits.".
+[A heist-painting-room is usually not discovered.]
+
+To decide which number is the concealment of (R - a heist-painting-room):
+	decide on 0.
+
+HeistPainting01 is a heist-painting-room. The grid position of HeistPainting01 is <14,8,8>. The shape of HeistPainting01 is L14/0-0-0-1-1-0.
+HeistPainting02 is a heist-painting-room. The grid position of HeistPainting02 is <14,9,8>. The printed name of HeistPainting02 is "Vault Entrance". The shape of HeistPainting02 is L14/0-0-0-1-1-1.
+HeistPainting02 is east of HeistPainting01. HeistPainting02 can be vault-opened.
+HeistPainting03 is a heist-painting-room. The grid position of HeistPainting03 is <14,10,8>. The shape of HeistPainting03 is L14/0-0-0-0-1-1.
+HeistPainting03 is east of HeistPainting02.
+HeistPainting04 is a heist-painting-room. The grid position of HeistPainting04 is <14,8,7>. The shape of HeistPainting04 is L14/0-0-1-1-1-0.
+HeistPainting04 is south of HeistPainting01. HeistPainting04 has a number called scariness.
+[HeistPainting05 is a heist-painting-room. The grid position of HeistPainting05 is <14,9,7>.  The shape of HeistPainting05 is L14/0-0-1-1-1-1.
+HeistPainting05 is east of HeistPainting04. HeistPainting05 is south of HeistPainting02.]
+HeistPainting06 is a heist-painting-room. The printed name of HeistPainting06 is "Cluttered Museum Room". The grid position of HeistPainting06 is <14,10,7>. The shape of HeistPainting06 is L14/0-0-1-0-0-1.
+[HeistPainting06 is east of HeistPainting05.] HeistPainting06 is south of HeistPainting03.
+The description of a HeistPainting06 is "This looks and feels like a small room in a museum, complete with expensive-looking artworks on the walls and red rope protecting the exhibits. [bold type]There are a lot of pedestals, pillars and cabinets in this room, which makes it excellent for hiding in, but also makes it take a lot longer to get to the other side.[roman type][line break]".
+To decide which number is the concealment of (R - HeistPainting06):
+	decide on 6.
+To decide which number is the obstacle-hindrance of (R - HeistPainting06):
+	decide on 6.
+HeistPainting07 is a heist-painting-room. The printed name of HeistPainting07 is "Icy Museum Room". The grid position of HeistPainting07 is <14,8,6>. The shape of HeistPainting07 is L14/0-0-1-1-0-0. HeistPainting07 has a direction called arrival-direction.
+The description of a HeistPainting07 is "This looks and feels like a small room in a museum, complete with expensive-looking artworks on the walls and red rope protecting the exhibits. But the floor of this room is completely made of ice! A sign indicates that visitors should collect and wear ice skates to experience this immersive Arctic Experience room, but there are none to be seen.".
+HeistPainting07 is south of HeistPainting04.
+HeistPainting08 is a heist-painting-room. The grid position of HeistPainting08 is <14,9,6>. The shape of HeistPainting08 is L14/0-0-1-1-0-1.
+HeistPainting08 is east of HeistPainting07. [HeistPainting08 is south of HeistPainting05.]
+HeistPainting09 is a heist-painting-room. The grid position of HeistPainting09 is <14,10,6>. The shape of HeistPainting09 is L14/0-0-1-0-0-1.
+HeistPainting09 is east of HeistPainting08. The printed name of HeistPainting09 is "Laser Room". HeistPainting09 is south of HeistPainting06. HeistPainting09 has a direction called arrival-direction.
+The description of HeistPainting09 is "This room is guarded by a 3D mesh of red lasers. Blocking the path of a laser would probably be bad.".
+
+HeistPainting10 is a heist-painting-room. The grid position of HeistPainting10 is <14,9,9>. The printed name of HeistPainting10 is "Vault Lobby". The description of HeistPainting10 is "This room is lined with motion sensor activated turrets that look somewhat like blow darts. How many needles you get hit by will probably depend on your dexterity and skill as a cat burglar.". The shape of HeistPainting10 is L14/0-0-1-0-1-0.
+HeistPainting10 is north of HeistPainting02. HeistPainting10 has a direction called arrival-direction.
+HeistPainting11 is a heist-painting-room. The grid position of HeistPainting11 is <14,9,10>. The printed name of HeistPainting11 is "Vault". The shape of HeistPainting11 is L14/0-0-0-0-1-0.
+HeistPainting11 is north of HeistPainting10.
+
+[To decide which number is the obstacle-hindrance of (R - a heist-painting-room):
+	decide on 2.
+To decide which text is ObstacledDesc of (R - a heist-painting-room):
+	decide on "It's so dark and dingy that it takes a little longer than normal to navigate your way through the doorway.".]
+
+milk-fountain is a thing. milk-fountain is not portable. The printed name of milk-fountain is "[TQlink of item described]milk fountain[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of milk-fountain is "mf". Understand "milk", "fountain" as milk-fountain.
+
+To say ShortDesc of (M - milk-fountain):
+	say "milk fountain".
+To say MediumDesc of (M - milk-fountain):
+	say "milk fountain".
+To say ExamineDesc of (M - milk-fountain):
+	say "A [if diaper quest is 0]small phallic fountain spurting fresh milk. ...You could probably fit the tip in your butt, or mouth[otherwise]life-sized statue of a pregnant woman, with nipples that are spurting fresh milk. You could probably drink from a nipple, or try touching the statue elsewhere and see if anything happens[end if].".
+
+To decide which figure-name is the examine-image of (M - milk-fountain):
+	decide on Figure of milk fountain.
+
+To compute standard decanting of (D - milk-fountain):
+	allocate 6 seconds;
+	compute milk-fountain decanting of the noun.
+
+To compute milk-fountain decanting of (V - a vessel):
+	say "You place the [ShortDesc of V] underneath the falling milk. ";
+	compute milk-fountain filling of V.
+
+To compute milk-fountain filling of (V - a vessel):
+	now the fill-colour of V is white;
+	now V is boring-origin;
+	DoseFill V;
+	say "The [ShortDesc of V] is filled with [milk].";
+	force inventory-focus redraw.
+
+To compute milk-fountain enema:
+	allocate 6 seconds;
+	say "You press your [asshole] up against the tip of [NameDesc of milk-fountain], and it only takes a short few moments of gurgling and gushing for your belly to be filled with a large helping of [milk].";
+	AssFill 10 milk.
+
+To compute milk-fountain mouthful:
+	allocate 6 seconds;
+	say "You move your [if diaper quest is 0]face up to the froth[otherwise]lips up to one nipple[end if] of the [NameDesc of milk-fountain], and suck up a large mouthful of [milk].";
+	FaceFill milk by 4.
+
+Check plugging asshole with milk-fountain:
+	if diaper quest is 1, say "How in the world would you get your butthole up there?" instead;
+	if asshole is actually occupied, say "You'd need to remove [NameDesc of random thing filling asshole] first." instead;
+	if the player is ass protected, say "Your [random top level ass protection clothing] is in the way." instead;
+	if the player is prone, say "You would need to be standing to do this successfully." instead;
+	compute milk-fountain enema instead.
+
+Check drinking milk-fountain:
+	if face is actually occupied, say "You'd need to remove [NameDesc of random thing filling face] first." instead;
+	if diaper quest is 0 and the player is upright, say "You would need to be on your knees to do this successfully." instead;
+	if diaper quest is 1 and the player is prone, say "You would need to be standing up to do this successfully." instead;
+	compute milk-fountain mouthful instead.
+
+Check poking milk-fountain:
+	allocate 2 seconds;
+	if diaper quest is 0, say "Nothing happens." instead;
+	say "As you touch the statue's belly, you feel a rumbling from inside your own! ";
+	if the total squirtable fill of belly >= belly limit:
+		cutshow Figure of milk fountain touched for milk-fountain;
+		say "But nothing happens, because your belly is already full to the brim!" instead;
+	otherwise if cat burglar outfit is worn:
+		cutshow Figure of milk fountain touched for milk-fountain;
+		let BL be belly limit - the total squirtable fill of belly;
+		AssFill BL with milk;
+		say "As if by magic, your own belly bulges outwards, as if it were pregnant! But no... You understand that it's not got a baby in it... your bowels have just been filled to the brim with [milk]!" instead;
+	otherwise:
+		say "But then, whatever magic that was fizzles out. You sense that you may have more luck if you could somehow become a more [']full['] cat burglar." instead.
+
+Check entering milk-fountain:
+	reset multiple choice questions;
+	set numerical response 1 to "Fill your mouth with milk";
+	set numerical response 2 to "[if diaper quest is 1]Touch the belly[otherwise]Fill your ass with milk[end if]";
+	set numerical response 0 to "Cancel";
+	compute multiple choice question;
+	if player-numerical-response is 1:
+		try drinking milk-fountain instead;
+	otherwise if player-numerical-response is 2:
+		if diaper quest is 1, try poking milk-fountain instead;
+		otherwise try plugging asshole with milk-fountain instead;
+	otherwise:
+		say "Action cancelled." instead.
+
+To construct normal buttons for (T - milk-fountain):
+	if ButtonTableFull is 0:
+		choose a blank row in the Table of Buttons;
+		now the ButtonImage entry is Figure of MouthButton;
+		now the ButtonCommand entry is "drink [text-shortcut of T]";
+		now the ButtonColour entry is lightModeFullGreen;
+		if the total volume of face > 0, now the ButtonColour entry is lightModeFullYellow; [turn yellow - player has full mouth]
+		if face is actually occupied, now the ButtonColour entry is lightModeFullRed; [turn red - player can't drink]
+	if ButtonTableFull is 0:
+		choose a blank row in the Table of Buttons;
+		if diaper quest is 0:
+			now the ButtonImage entry is Figure of AssholeButton;
+			now the ButtonCommand entry is "plug butthole with [text-shortcut of T]";
+			now the ButtonColour entry is lightModeFullGreen;
+			if the player is ass protected, now the ButtonColour entry is lightModeFullYellow; [turn yellow - clothing in way]
+			if asshole is actually occupied, now the ButtonColour entry is lightModeFullRed; [turn red - player can't anally insert]
+		otherwise:
+			now the ButtonImage entry is Figure of PokeButton;
+			now the ButtonCommand entry is "poke [text-shortcut of T]";
+			now the ButtonColour entry is lightModeFullGreen.
+To say verb-desc of (T - milk-fountain):
+	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say "[unique-verb-desc of T] [link][bracket][if diaper quest is 0]mouth[otherwise]drink[end if][close bracket][as]drink [text-shortcut of T][end link][if diaper quest is 0][link][bracket]asshole[close bracket][as]plug butthole with [text-shortcut of T][end link][otherwise][link][bracket]touch[close bracket][as]poke [text-shortcut of T][end link][end if]".
+
+
+zap-bot is a person. zap-bot can be uninterested or interested. zap-bot can be moved. zap-bot can be zapping. The printed name of zap-bot is "[TQlink of item described]security bot[TQxlink of item described][shortcut-desc][verb-desc of item described]". The text-shortcut of zap-bot is "scbt".
+
+Figure of zap bot is the file "Env/Mansion/ghostbot1.jpg".
+To decide which figure-name is the examine-image of (M - zap-bot):
+	decide on Figure of zap bot.
+
+Definition: zap-bot is reactive:
+	if it is in the location of the player, decide yes;
+	decide no.
+
+To decide which figure-name is the NPC-icon of (Z - zap-bot):
+	if Z is interested, decide on Figure of Red NPC;
+	decide on Figure of Black NPC.
+
+To compute boring spit reaction of (M - zap-bot):
+	if M is uninterested:
+		now M is interested;
+		say "[first custom style]'INTRUDER ALERT. PREPARE TO BE INCAPACITATED...'[roman type][line break][BigNameDesc of zap-bot][']s eyes light up red as it announces that it has noticed you!".
+
+To compute painting entrance of (P - heist-painting):
+	now playerRegion is school; [any time based events that don't happen in the school should also not happen here]
+	now P is not rippling;
+	let LP be the location of P;
+	change the south exit of HeistPainting08 to LP;
+	say "You step through the painting, and find yourself in a different, secret part of the mansion's museum. It's like a fancy private gallery, with expensive artpieces adorning the well-maintained walls and floors. You can return through the painting frame to the south, but you get the feeling that once you leave this area, you won't be able to return.
+
+	Some sort of cat burglar sixth-sense provided by your new hood is warning you that [bold type]this place has moisture sensors on the floors[roman type] - you'll need to be careful not to spill any liquid on the ground here.
+
+	Suddenly you notice... All the things that [if there is a worn bag of holding]weren't in your bag of holding[otherwise]you were holding[end if] have remained in the [LP], on the other side of the painting.[line break][variable custom style]I guess I'll have to get them back after I leave.[roman type][line break]";
+	now milk-fountain is in HeistPainting08;
+	now zap-bot is in a random heist-painting-room;
+	if zap-bot is in HeistPainting08 or zap-bot is in HeistPainting10 or zap-bot is in HeistPainting11, now zap-bot is in HeistPainting02;
+	repeat with T running through held things:
+		if T is currently-not-in-bag or T is bottle or T is skeleton key:
+			now T is in LP;
+			dislodge T;
+			if T is skeleton key, now P is key-stolen;
+	let PD be a random pedestal in HeistPainting02;
+	if PD is a thing:
+		if diaper quest is 1:
+			let D be plain-massive-diaper;
+			if plain-massive-diaper is worn, now D is blue-massive-diaper;
+			blandify and reveal D;
+			now D is cursed;
+			now D is audible squelches;
+			now the quest of D is enemy-orgasm-quest;
+			now the raw-magic-modifier of D is 3;
+			now D is dexterity-influencing;
+			now D is in PD;
+			now the paid of PD is 1;
+		otherwise:
+			blandify and reveal white-cat-tail-plug;
+			compute class set up of white-cat-tail-plug;
+			now white-cat-tail-plug is in PD;
+			now the paid of PD is 4;
+	let PD be a random pedestal in HeistPainting03;
+	if PD is a thing:
+		now skeleton key is in PD;
+		now the paid of PD is 2;
+	let PD be a random pedestal in HeistPainting04;
+	if PD is a thing:
+		blandify and reveal cat burglar outfit;
+		compute class set up of cat burglar outfit;
+		now cat burglar outfit is in PD;
+		now the paid of PD is 2;
+	let PD be a random pedestal in HeistPainting11;
+	if PD is a thing:
+		set up jewelled-tiara;
+		now jewelled-tiara is in PD;
+		now the paid of PD is 6;
+	[now witch's goblet is in HeistPainting03;]
+	now the player is in HeistPainting08.
+
+An all time based rule (this is the heist painting rule):
+	if playerRegion is school and the player is in a heist-painting-room:
+		if the player is in HeistPainting01:
+			say "[one of][bold type]All four walls of this room are giant screens, which have hypnotic sex loops playing on repeat![roman type][line break][HeistHypnoOrgasm][or][if the player is prone]You keep your eyes downcast, avoiding looking at the screens.[otherwise]The giant screens continue to play hypnotic porn.[line break][HeistHypnoOrgasm][end if][stopping]";
+		if zap-bot is not in the location of the player or (zap-bot is uninterested and a random number between 1 and 2 is 1):
+			now zap-bot is not zapping;
+			let L be the location of zap-bot;
+			let LDE be the number of entries in the Nviables of L;
+			let LDER be a random number between 1 and LDE;
+			let D be entry LDER in the Nviables of L;
+			if zap-bot is interested:
+				now zap-bot is uninterested;
+				repeat with LD running through the Nviables of L:
+					let LDR be the room LD from L;
+					if the player is in LDR, now D is LD;
+			unless HeistPainting02 is not vault-opened and D is north and L is HeistPainting02, try zap-bot going D;
+		if zap-bot is in the location of the player:
+			if zap-bot is uninterested:
+				let R be a random number between 1 and 11;
+				let C be the concealment of the location of the player;
+				let P be the stealth of the player;
+				if debuginfo > 0, say "[input-style]Zapbot perception check: awareness roll (d11) = [R] | [C + P].5 = ([C].5) [location of the player] concealment rating + ([P]) player [if the player is upright]standing[otherwise]kneeling[end if] stealth rating[roman type][line break]";
+				if C + P >= R:
+					say "[BigNameDesc of zap-bot] fails to notice you.";
+				otherwise:
+					now zap-bot is interested;
+					say "[first custom style]'INTRUDER ALERT. PREPARE TO BE INCAPACITATED...'[roman type][line break][BigNameDesc of zap-bot][']s eyes light up red as it announces that it has noticed you!";
+			otherwise:
+				if zap-bot is zapping:
+					say "[BigNameDesc of zap-bot] presses its second hand on the other side of your torso. You are completely fried with electricity, and momentarily pass out. When you open your eyes what feels like a split-second later, you are back in the [location of heist-painting].";
+					now the player is in the location of heist-painting;
+					compute painting completion of heist-painting;
+					update player region;
+					PainUp 40;
+				otherwise:
+					say "[BigNameDesc of zap-bot] presses one hand against you, and releases a strong electric current into your torso!";
+					now zap-bot is zapping;
+					PainUp 25.
+
+To say HeistHypnoOrgasm:
+	let A be minimum arousal + 1000;
+	if the arousal of the player < A, now the arousal of the player is A; [if arousal is too low, the check below will return false]
+	if the player is able to orgasm so soon:
+		if the player is able to orgasm:
+			say "The hypnotic swirls are incredibly powerful, and just like that, you feel something building inside your [genitals]...";
+			now another-turn is 1;
+			now another-turn-flavour is "It takes you a few moments to recover from the shock of your spontaneous orgasm.";
+			if the player is possessing a penis, cutshow Figure of heist hypno;
+			vaginally orgasm shamefully;
+	otherwise:
+		say "Fortunately, you have literally just orgasmed, so it has no significant effect.";
+
+Check going north when the player is in HeistPainting02:
+	if HeistPainting02 is not vault-opened:
+		if skeleton key is held:
+			say "Unlock the door to the vault with the skeleton key?";
+			if the player is consenting:
+				say "The skeleton key morphs itself to perfectly fit into the lock. After you turn and unlock the door, the key crumbles to dust.";
+				if heist-painting is key-stolen, now skeleton key is in the location of heist-painting;
+				otherwise destroy skeleton key;
+				now HeistPainting02 is vault-opened;
+			otherwise:
+				say "Action cancelled." instead;
+		otherwise:
+			say "There's no way you're opening this vault door without a key." instead.
+
+Report going when the player is in HeistPainting04:
+	if the scariness of HeistPainting04 is 0, now the scariness of HeistPainting04 is a random number between 15 and 50;
+	say "Suddenly, with a terrifying scream, a disfigured spectre rushes at you from the portrait on the far wall!";
+	FearUp the scariness of HeistPainting04;
+	say "[one of][or]Despite it having happened just a short while before, you still weren't expecting that.[or]At least you knew it was coming that time.[or]It's nowhere near as scary now that you know it's coming.[stopping]";
+	if the scariness of HeistPainting04 >= 2, now the scariness of HeistPainting04 is the scariness of HeistPainting04 / 2.
+
+Report going when the player is in HeistPainting07:
+	now the arrival-direction of HeistPainting07 is the opposite-direction of the noun.
+
+Check going when the player is in HeistPainting07:
+	if the noun is not the arrival-direction of HeistPainting07:
+		say "You will have to [if the player is upright]try to keep your balance[otherwise]crawl very slowly[end if] across the ice, is that okay?";
+		if the player is not consenting, say "Action cancelled." instead.
+
+Carry out going when the player is in HeistPainting07:
+	if the noun is not the arrival-direction of HeistPainting07:
+		if the player is upright:
+			say "You try to keep your balance as you slip and slide your way across the room!";
+			let D be a random number between 1 and the dexterity of the player;
+			let Z be 13;
+			if debuginfo > 0, say "[input-style]Laser avoidance check: Dexterity d[dexterity of the player] = D | [Z].5[roman type][line break]";
+			if D > Z:
+				say "You manage to stay upright!";
+			otherwise:
+				say "When you're almost there, you slip and slam to the ground with a painful smack!";
+				try kneeling;
+				let T be the substituted form of "As you faceplant,";
+				check sudden spit and expulsion with reason T;
+				compute single choice question "Proceed into the next room";
+		otherwise:
+			if zap-bot is in the location of the player, say "You can't crawl slowly across the ice [if zap-bot is interested]while you've got [NameDesc of zap-bot] on your tail[otherwise]without [NameDesc of zap-bot] easily spotting you and catching you[end if]!" instead;
+			now another-turn is 1;
+			now another-turn-flavour is "It takes you a decent while to carefully crawl across the ice.".
+
+Report going when the player is in HeistPainting09:
+	now the arrival-direction of HeistPainting09 is the opposite-direction of the noun.
+
+Check going when the player is in HeistPainting09:
+	if the noun is not the arrival-direction of HeistPainting09:
+		if zap-bot is in the location of the player, say "You can't navigate your way through the 3D maze of lasers [if zap-bot is interested]while you've got [NameDesc of zap-bot] on your tail[otherwise]without [NameDesc of zap-bot] spotting you and catching you[end if]!" instead;
+		say "You will have to navigate your way through the 3D maze of lasers, is that okay?";
+		if the player is not consenting, say "Action cancelled." instead.
+
+Carry out going when the player is in HeistPainting09:
+	if the noun is not the arrival-direction of HeistPainting09:
+		say "You do your best to avoid the mesh of lasers.";
+		let LN be a list of numbers;
+		add 1 to LN;
+		add 2 to LN;
+		add 3 to LN;
+		sort LN in random order;
+		say "You try to avoid your [BreastDesc] hitting a laser [if the player is prone]beneath[otherwise]in front of you[end if].";
+		let D be a random number between 1 and the dexterity of the player;
+		let Z be 4 + (the largeness of breasts / 2);
+		if debuginfo > 0, say "[input-style]Laser avoidance check: Dexterity d[dexterity of the player] = D | [Z].5 = 4.5 + ([the largeness of breasts / 2]) breast size[roman type][line break]";
+		if D > Z:
+			say "You manage to dodge it!";
+		otherwise:
+			say "Oh crap - the laser hits you in the boob!";
+			let R be entry 1 in LN;
+			remove R from LN;
+			if R is 1:
+				let TBP be a random top level breasts protection clothing;
+				if TBP is a thing and TBP is transformable:
+					say "The laser hits [NameDesc of TBP]! ";
+					potentially transform TBP;
+				otherwise:
+					say "The laser hits your [BreastDesc][unless the player is top heavy], causing them to swell[end if]!";
+					BustUp 2;
+			otherwise if R is 2:
+				say "The laser hits your skin, causing an immediate white-hot burning sensation!";
+				PainUp 20;
+			otherwise:
+				say "The laser triggers an alarm[if zap-bot is not in the location of the player], causing a security droid to come racing into the room[end if]!";
+				now zap-bot is in the location of the player;
+				if zap-bot is uninterested:
+					now zap-bot is interested;
+					say "[first custom style]'INTRUDER ALERT. PREPARE TO BE INCAPACITATED...'[roman type][line break]";
+		say "You try to avoid your [AssDesc] hitting a laser [if the player is prone]above[otherwise]to the side[end if].";
+		let D be a random number between 1 and the dexterity of the player;
+		let Z be 4 + (the total volume of hips / 2);
+		if debuginfo > 0, say "[input-style]Laser avoidance check: Dexterity d[dexterity of the player] = D | [Z].5 = 4.5 + ([the total volume of hips / 2]) ass size[roman type][line break]";
+		if D > Z:
+			say "You manage to dodge it!";
+		otherwise:
+			say "Oh crap - the laser hits you in the butt!";
+			let R be entry 1 in LN;
+			remove R from LN;
+			if R is 1:
+				let TBP be the at least partial concealer of hips;
+				if TBP is transformable clothing:
+					say "The laser hits [NameDesc of TBP]! ";
+					potentially transform TBP;
+				otherwise:
+					say "The laser hits your [BreastDesc][unless the player is top heavy], causing them to swell[end if]!";
+					BustUp 2;
+			otherwise if R is 2:
+				say "The laser hits your skin, causing an immediate white-hot burning sensation!";
+				PainUp 20;
+			otherwise:
+				say "The laser triggers an alarm[if zap-bot is not in the location of the player], causing a security droid to come racing into the room[end if]!";
+				now zap-bot is in the location of the player;
+		say "You try to hop over a low moving laser.";
+		let D be a random number between 1 and the dexterity of the player;
+		let Z be 10;
+		if debuginfo > 0, say "[input-style]Laser avoidance check: Dexterity d[dexterity of the player] = D | [Z].5[roman type][line break]";
+		if D > Z:
+			say "You manage to dodge it!";
+		otherwise:
+			say "Oh crap - the laser hits you in the [if the player is upright]crotch[otherwise]face[end if]!";
+			let R be entry 1 in LN;
+			remove R from LN;
+			if R is 1:
+				if the player is upright:
+					if the size of penis > min penis size:
+						PenisDown 1;
+					otherwise if the player is possessing a vagina and the labia plumpness of vagina < max labia plumpness:
+						LabiaUp 1 with comment;
+					otherwise:
+						say "You feel your libido rising.";
+						SexAddictUp 1;
+				otherwise:
+					if the lips of face < max lip size:
+						say "Your lips swell.";
+						LipsUp 1;
+					otherwise:
+						say "You feel some IQ points slipping away.";
+						IntDown 1;
+			otherwise if R is 2:
+				say "The laser hits your skin, causing an immediate white-hot burning sensation!";
+				PainUp 20;
+			otherwise:
+				say "The laser triggers an alarm[if zap-bot is not in the location of the player], causing a security droid to come racing into the room[end if]!";
+				now zap-bot is in the location of the player;
+		compute single choice question "Proceed into the next room".
+
+To SemenPuddleUp (X - a number) in (R - a heist-painting-room):
+	if the total puddle of R is 0:
+		say "As the [semen] hits the floor, an alarm blares out![line break][first custom style]'SPILLAGE HAZARD DETECTED. SPILLAGE HAZARD DETECTED.'[roman type][line break][if zap-bot is not in the location of the player]The alert causes a security droid to come racing into the room![end if]";
+		now zap-bot is in the location of the player;
+	increase the semen-puddle of R by X.
+
+To UrinePuddleUp (X - a number) in (R - a heist-painting-room):
+	if the total puddle of R is 0:
+		say "As the [urine] hits the floor, an alarm blares out![line break][first custom style]'SPILLAGE HAZARD DETECTED. SPILLAGE HAZARD DETECTED.'[roman type][line break][if zap-bot is not in the location of the player]The alert causes a security droid to come racing into the room![end if]";
+		now zap-bot is in the location of the player;
+	increase the urine-puddle of R by X.
+
+To MilkPuddleUp (X - a number) in (R - a heist-painting-room):
+	if the total puddle of R is 0:
+		say "As the [milk] hits the floor, an alarm blares out![line break][first custom style]'SPILLAGE HAZARD DETECTED. SPILLAGE HAZARD DETECTED.'[roman type][line break][if zap-bot is not in the location of the player]The alert causes a security droid to come racing into the room![end if]";
+		now zap-bot is in the location of the player;
+	increase the milk-puddle of R by X.
+
+Report going when the player is in HeistPainting10:
+	now the arrival-direction of HeistPainting10 is the opposite-direction of the noun.
+
+Check going when the player is in HeistPainting10:
+	if the noun is not the arrival-direction of HeistPainting10:
+		if the player is prone, say "You'll need to go through this lobby on two feet as fast as you can to avoid being peppered by countless needles." instead;
+		say "You will have to run through the middle of the needle turrets, is that okay?";
+		if the player is not consenting, say "Action cancelled." instead.
+
+Carry out going when the player is in HeistPainting10:
+	if the noun is not the arrival-direction of HeistPainting10:
+		say "You run as fast as you can, ducking and weaving as several needles come flying towards you!";
+		let T be a random needle trap;
+		let NS be the number of worn sneaking clothing;
+		repeat with N running from 1 to 4:
+			if a random number between 1 and NS > 1:
+				say "Your [random worn sneaking clothing] manages to prevent a turret from detecting you!";
+			otherwise:
+				trigger T.
 
 bowsette-painting is a painting. The text-shortcut of bowsette-painting is "bptg".
 

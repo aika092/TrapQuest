@@ -113,7 +113,7 @@ Carry out stealing:
 			otherwise if the noun is not easy-steal and the player is getting very unlucky:
 				compute sleep stealing fail of T from the noun;
 			otherwise:
-				say "You easily take [NameDesc of T].";
+				say "You easily take [NameDesc of T].[if the noun is bride-consort][line break][variable custom style]What's yours is mine, after all...[roman type][line break]";
 				now T is carried by the player;
 				now the owner of T is the noun;
 				if T is listed in the tradableItems of the noun, remove T from the tradableItems of the noun;

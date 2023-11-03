@@ -323,7 +323,7 @@ To compute delay of (M - a gladiator):
 	otherwise:
 		say "[BigNameDesc of M] [if the player is prone]stands over you, one foot either side of your face[otherwise]holds back from [his of M] next attack[end if].[line break][speech style of M]'[if the health of M < the maxhealth of M]You have been defeated. [end if]Now submit to your superior.'[roman type][line break]".
 
-Definition: a gladiator (called M) is distracted:
+Definition: a gladiator (called M) is uniquely distracted:
 	if the refractory-period of M < 0 and M is reactive:
 		let N be a random undefeated awake wench in the location of M;
 		if N is nothing, let N be a random undefeated awake aeromancer in the location of M;
@@ -481,6 +481,7 @@ Part 2 - Perception
 Definition: a gladiator (called M) is uniquely unfriendly:
 	if M is friendly-fucking or M is purified, decide no;
 	if diaper quest is 1:
+		if halloween rubber diaper cover is worn, decide yes;
 		if M is default uniquely unfriendly, decide yes;
 	otherwise:
 		if the player is a flatchested trap:

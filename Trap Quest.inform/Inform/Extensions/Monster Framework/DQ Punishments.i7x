@@ -425,7 +425,7 @@ To decide which number is the relevant addiction of (P - diaper-urinal):
 	decide on the grossness addiction of the player.
 
 Definition: a monster (called M) is eager to use a diaper urinal:
-	if M is able to use a diaper urinal and the bladder of M >= 800, decide yes;
+	if M is able to use a diaper urinal and (the bladder of M >= 800 or (watersports fetish is 0 and the bladder of M >= 200 and the class of the player is human toilet)), decide yes;
 	decide no.
 
 Definition: a clothing (called C) is diaper urinal blocking:

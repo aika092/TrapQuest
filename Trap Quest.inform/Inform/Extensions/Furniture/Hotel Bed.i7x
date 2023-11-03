@@ -8,7 +8,7 @@ To decide which figure-name is the examine-image of (C - a hotel bed):
 To say ExamineDesc of (C - a hotel bed):
 	say "A standard small hotel bed.".
 
-Figure of hotel bed is the file "Env/Hotel/hotelbed1.png".
+Figure of hotel bed is the file "Env/Hotel/hotelbed1.jpg".
 
 To destroy (F - a hotel bed):
 	remove F from play;

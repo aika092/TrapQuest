@@ -288,10 +288,44 @@ To say ClothingDesc of (C - necktie):
 	say "A tiny apricot tartan necktie, the perfect completion to any slutty schoolgirl outfit.".
 
 To say ShortDesc of (C - necktie):
+	say "necktie".
+To say MediumDesc of (C - necktie):
 	say "tiny apricot tartan necktie".
 
 Definition: necktie is tartan themed: decide yes.
 Definition: necktie is pink themed: decide yes.
+
+hotwife neckerchief is a neckwear. The printed name of hotwife neckerchief is "[clothing-title-before]hotwife neckerchief[clothing-title-after]". The text-shortcut of hotwife neckerchief is "hwn". hotwife neckerchief is unique. hotwife neckerchief is cotton.
+
+Definition: hotwife neckerchief is class-relevant:
+	if the class of the player is bride, decide yes;
+	decide no.
+
+To compute class set up of (C - hotwife neckerchief):
+	now C is confidence.
+
+To decide which number is the initial outrage of (C - hotwife neckerchief):
+	decide on 4.
+
+To set up influence of (C - hotwife neckerchief):
+	set up taste-based influence of C.
+
+To decide which number is the delicateness-influence of (C - hotwife neckerchief):
+	decide on -1.
+
+Figure of hotwife neckerchief is the file "Items/Accessories/Neck/necktie2.png".
+
+To decide which figure-name is clothing-image of (C - hotwife neckerchief):
+	decide on figure of hotwife neckerchief.
+
+To say ClothingDesc of (C - hotwife neckerchief):
+	say "A small white neckerchief, with the word [']HOTWIFE['] printed in large black characters.".
+
+To say ShortDesc of (C - hotwife neckerchief):
+	say "neckerchief".
+
+Definition: hotwife neckerchief is interracial themed: decide yes.
+Definition: hotwife neckerchief is white themed: decide yes.
 
 
 soulstone is a neckwear. soulstone is unique. Printed name of soulstone is "[clothing-title-before]soulstone[clothing-title-after]". The text-shortcut of soulstone is "so". Understand "swirling", "gem", "amulet", "soul", "stone" as soulstone. soulstone can be soul-embedded or not soul-embedded. soulstone is soul-embedded.

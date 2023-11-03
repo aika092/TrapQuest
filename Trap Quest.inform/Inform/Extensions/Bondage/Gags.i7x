@@ -99,11 +99,11 @@ To say ClothingDesc of (C - a huge ballgag):
 
 To decide which object is the unique-upgrade-target of (C - a small ballgag):
 	if there is worn swimming themed wearthing and there is an off-stage rubber duck gag, decide on a random off-stage rubber duck gag;
-	if diaper quest is 1, decide on a random off-stage baby pacifier;
+	if diaper quest is 1, decide on a random off-stage fetish appropriate baby pacifier;
 	decide on nothing.
 
 To decide which object is the unique-upgrade-target of (C - a large ballgag):
-	if diaper quest is 1, decide on a random off-stage baby pacifier;
+	if diaper quest is 1, decide on a random off-stage fetish appropriate baby pacifier;
 	decide on nothing.
 
 Definition: A ballgag is fetish appropriate:

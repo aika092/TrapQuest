@@ -160,9 +160,6 @@ To compute phaseout of (M - a ghost):
 		now M is phased;
 		if M is in the location of the player, say "[BigNameDesc of M] [bold type]shimmers as it shifts out of the corporeal world.[roman type][line break]".
 
-To compute unique final action of (M - ghostly tentacle):
-	if diaper quest is 1, compute phaseout of M.[in TQ, the tentacle only phases in and out under specific circumstances]
-
 To say SummoningFlav of (M - a ghost):
 	if M is in the location of the player, say "You hear far away laughter as the glow surrounding the mummy intensifies and simultaneously converges [if futanari fetish > 0]on [his of M] crotch, [otherwise]in front of [his of M] face, [end if] coalescing into a [MediumDesc of M] and immediately [if bukkake fetish is 1 and futanari fetish is 0]ejaculates all over [his of M] face[otherwise if futanari fetish is 0]phases through [his of M] face, causing a very audible gagging noise as it comes out the other side[otherwise]ejaculates[end if]. The mummy slowly climbs to its feet, spit and [if diaper quest is 1][urine][otherwise][semen][end if] absorbing into the frayed cloth without another trace.";
 	otherwise say "You hear distant laughter somewhere else in the mansion.".
@@ -739,6 +736,7 @@ To compute unique automatic banishment of (M - a ghost):
 	if there is a nonstalking wisp and the player is getting unlucky:
 		deploy a wisp;
 		say GotUnluckyFlav;
+	if M is ghostly tentacle, progress quest of exorcism-quest;
 	now creepiness is 0. [Having defeated a ghost shouldn't cause a new one to appear immediately]
 
 Part 4 - Ghostly Tentacle
@@ -782,7 +780,7 @@ To compute perception of (M - ghostly tentacle):
 		say "The light cast by [NameDesc of M] seems to change, and it begins to follow you around.".
 
 To compute DQ perception of (M - ghostly tentacle):
-	if M is unfriendly:
+	if the class of the player is trick-or-treater or M is unfriendly:
 		say "[BigNameDesc of M] giggles, the unearthly sound echoing around the walls. You feel a little colder, and [he of M] stares daggers into your eyes as [he of M] descends towards you! Uh-oh.";
 		anger M;
 		say GhostTip;
@@ -829,7 +827,7 @@ Check kicking ghostly tentacle:
 
 Section - DQ
 
-ghostly-diaper-use is a diaper punishment. The priority of ghostly-diaper-use is 4.
+[ghostly-diaper-use is a diaper punishment. The priority of ghostly-diaper-use is 4.
 Definition: ghostly-diaper-use (called P) is appropriate:
 	if current-monster is not ghostly tentacle, decide no;
 	if there is worn fluid vulnerable knickers, decide yes;
@@ -841,13 +839,13 @@ To compute punishment of (P - ghostly-diaper-use):
 	say "[BigNameDesc of M] giggles in an extremely high-pitched voice and phases through you. But [he of M] doesn't come out the other side?! You feel a weird chill but nothing more as [NameDesc of M] inhabits the same space as you. And then... [he of M] starts urinating?! [big his of M] [urine] doesn't go into [his of M] ghostly diaper but becomes completely real!";
 	PissSoak 30 on K;
 	say "[variable custom style]Oh come on![roman type][line break]";
-	satisfy M.
+	satisfy M.]
 
-ghost-using is a diaper punishment. The priority of ghost-using is 5.
+ghost-using is a diaper punishment. The priority of ghost-using is 4.
 Definition: ghost-using (called P) is appropriate:
-	if diaper swapping is 0, decide no;
 	if current-monster is not ghostly tentacle, decide no;
-	if there is worn knickers, decide yes;
+	if diaper swapping >= 2 and there is a worn diaper, decide yes;
+	if there is worn clean fluid vulnerable knickers, decide yes;
 	decide no.
 
 To compute punishment of (P - ghost-using):
@@ -861,23 +859,104 @@ To compute punishment of (P - ghost-using):
 			MessUp D by 7;
 			increase the foreign-mess of D by 7;
 		GrossOut 5 with reason "The gross sensation of your diaper being filled by the ghost makes you shudder," and sensation "feeling";
+		satisfy M;
+		repeat with C running through worn clothing:
+			if the quest of C is exorcism-quest, compute exorcism punishment of C;
 	otherwise:
-		say "[BigNameDesc of M] floats down to you until [his of M] is occupying the same space as you. All you can feel is a freezing coldness. Moments later you hear an ethereal [second custom style]sigh[roman type] and then what sounds like a [if diaper swapping >= 4]distant farting[otherwise]faint tinkling[end if]. [one of]Suddenly,[or]Once again[stopping] you can feel pressure building inside of you. [BigNameDesc of M] is somehow using you as [his of M] own personal toilet, filling your bladder with [his of M] pee[if diaper swapping >= 4] and your bowels with [his of M] poop[end if]![line break][variable custom style][if the grossness addiction of the player < 7]What the fuck, get out of me! This is so gross and weird!!![otherwise if the grossness addiction of the player < 10]Hnngh... Oh gosh this feels really uncomfortable, please stop![otherwise]So I guess I'm the diaper now! That's what I get for not wearing nappies like a good [boy of the player], haha![end if][roman type][line break]";
-		GrossOut 9 with reason "The gross sensation of your bladder [if diaper swapping >= 4]and bowels [end if] being filled by the ghost makes you shudder," and sensation "feeling";
+		if diaper swapping >= 2, say "[BigNameDesc of M] floats down to you until [his of M] is occupying the same space as you. All you can feel is a freezing coldness. Moments later you hear an ethereal [second custom style]sigh[roman type] and then what sounds like a [if diaper swapping >= 4]distant farting[otherwise]faint tinkling[end if]. [one of]Suddenly,[or]Once again[stopping] you can feel pressure building inside of you. [BigNameDesc of M] is somehow using you as [his of M] own personal toilet, filling your bladder with [his of M] pee[if diaper swapping >= 4] and your bowels with [his of M] poop[end if]![line break][variable custom style][if the grossness addiction of the player < 7]What the fuck, get out of me! This is so gross and weird!!![otherwise if the grossness addiction of the player < 10]Hnngh... Oh gosh this feels really uncomfortable, please stop![otherwise]So I guess I'm the diaper now! That's what I get for not wearing nappies like a good [boy of the player], haha![end if][roman type][line break]";
+		otherwise say "[BigNameDesc of M] focuses [his of M] eyes on your belly. [one of][line break][variable custom style]What now?![roman type][line break][or][stopping][big he of M] points [his of M] fingers towards you, and then shudders slightly. [one of]Suddenly,[or]Once again[stopping] you can feel pressure building inside of you. [BigNameDesc of M] is somehow magically filling your bladder with pee!";
 		increase the bladder of the player by 9;
 		if diaper swapping >= 4, increase rectum by 7;
-	satisfy M.
+		GrossOut 9 with reason "The gross sensation of your bladder [if diaper swapping >= 4]and bowels [end if] being filled by the ghost makes you shudder," and sensation "feeling";
+		if red-orange briefs is worn or the player is getting unlucky, compute punishment of ghost-spook;
+		otherwise satisfy M.
 
+
+ghost-pacifier is a diaper punishment. The priority of ghost-pacifier is 5.
+Definition: ghost-pacifier (called P) is appropriate:
+	if current-monster is not ghostly tentacle, decide no;
+	let GP be a random off-stage ghost pacifier;
+	if GP is not actually summonable pacifier, decide no;
+	decide yes.
+
+To compute punishment of (P - ghost-pacifier):
+	let M be current-monster;
+	let GP be a random off-stage ghost pacifier;
+	say "[BigNameDesc of M] floats down so that [his of M] face is directly in front of yours... And then [he of M] plants a cheeky kiss, right on your lips! From the place where your real lips touch [NameDesc of M][']s ethereal ones, a [MediumDesc of GP] suddenly materialises out of thin air![variable custom style][gag sounds][roman type][line break]";
+	summon GP cursed with quest;
+	say "And it seems like [NameDesc of M] isn't finshed with you yet...". [Purposefully doesn't satisfy her]
+
+
+ghost-spook is a diaper punishment. The priority of ghost-spook is 1.
+Definition: ghost-spook (called P) is appropriate:
+	if current-monster is ghostly tentacle, decide yes;
+	decide no.
+
+To compute punishment of (P - ghost-spook):
+	let M be current-monster;
+	say "[BigNameDesc of M] seems satisfied, and begins to float away.[paragraph break]...And then just as [he of M] is disappearing out of sight, suddenly [he of M] appears again, directly in front of your face![line break][speech style of M]'AWOOOOO!'[roman type][line break]With a cruel, vindictive expression, [NameDesc of M] has sent a serious shiver of shock and fear down your spine!";
+	FearUp the difficulty of M * 2;
+	decrease the raw difficulty of M by 1;
+	unless diaper-donate is appropriate, satisfy M;
+	if there is a worn diaper:
+		repeat with C running through worn clothing:
+			if the quest of C is exorcism-quest, compute exorcism punishment of C.
 
 Definition: ghostly tentacle is willing to donate diapers:
-	if the number of worn knickers is 0, decide yes;
+	let K be a random worn knickers;
+	if K is diaper, decide no;
+	if K is knickers:
+		if K is removable and K is dirty, decide yes; [super special knickers shouldn't be removed]
+	otherwise:
+		decide yes;
 	decide no.
 
 To compute diaper change of (M - ghostly tentacle):
-	say "[BigNameDesc of M] giggles in an extremely high-pitched voice and phases through you. But [he of M] doesn't come out the other side?! You feel a weird chill but nothing more as [NameDesc of M] inhabits the same space as you. And then... you feel part of [him of M] become corporeal around your waist. [big he of M] sails away, but now you have a diaper where before you had nothing!";
-	let D be a random eligible diaper;
-	summon D cursed with quest;
+	let K be a random worn knickers;
+	if K is knickers:
+		say "[BigNameDesc of M] giggles in an extremely high-pitched voice and phases through you. But [he of M] doesn't come out the other side?! You feel a weird chill but nothing more as [NameDesc of M] inhabits the same space as you. And then... you feel your [ShortDesc of K] begin to rumble and swell...";
+		let D be a random eligible diaper;
+		now K is cursed;
+		now K is audible squelches;
+		transform K into D;
+		compute summoned quest of D;
+		say "[BigNameDesc of M] sails away, clearly satisfied with [his of M] work!";
+	otherwise:
+		say "[BigNameDesc of M] giggles in an extremely high-pitched voice and phases through you. But [he of M] doesn't come out the other side?! You feel a weird chill but nothing more as [NameDesc of M] inhabits the same space as you. And then... you feel part of [him of M] become corporeal around your waist. [big he of M] sails away, but now you have a diaper where before you had nothing!";
+		let D be a random eligible diaper;
+		summon D cursed with quest;
+		now D is audible squelches;
+	repeat with C running through worn clothing:
+		if the quest of C is exorcism-quest, compute exorcism punishment of C;
 	bore M.
+
+To compute exorcism punishment of (C - a clothing):
+	say "[bold type][BigNameDesc of C] [bold type]seems deeply disappointed in how poorly you are doing in your quest to exorcise [NameDesc of ghostly tentacle][bold type]![roman type] ";
+	if halloween rubber diaper cover is off-stage and halloween rubber diaper cover is actually summonable:
+		summon halloween rubber diaper cover cursed with quest;
+	say "[BigNameDesc of C] fizzles away into nothingness.";
+	destroy C.
+
+To compute unique final action of (M - ghostly tentacle):
+	if diaper quest is 1:
+		compute phaseout of M; [in TQ, the tentacle only phases in and out under specific circumstances]
+		if M is uninterested and M is not in the location of the player and red-orange briefs is worn and the location of M is not within vision:
+			if the player is in Mansion25 and asshole is not actually occupied and the total squirtable fill of belly is 0:
+				say "[bold type]Suddenly, you feel something forced up inside your [asshole]! [roman type]You swivel your upper torso to discover that [BigNameDesc of M] has reeled some sort of ethereal fire hose out from the base of the pool, and has jammed the tip - which is shaped like an enema nozzle - up inside you! Before you can react, [big he of M] has pulled a trigger, and begun to fill you to the brim with ice cold water![line break][variable custom style]Eeeeek![roman type][line break]And then, just as quickly as it all began, the hose and [NameDesc of M] vanish, leaving no evidence of them ever being here except for your now very full belly.[line break][variable custom style]Why do I feel like I just got pranked?[roman type][line break]";
+				AssFill 15 water;
+				cutshow monster-image of M;
+			otherwise if the player is in Mansion04 and pumpkin bib is off-stage and pumpkin bib is actually summonable:
+				say "As you are inspecting the broken dishes, [bold type]suddenly, you feel something wrapped around your neck! [roman type]You turn around just in time to see [NameDesc of M] floating away around a corner, cackling. And feeling at your neck, you find that you are now the proud wearer of a humiliating [ShortDesc of pumpkin bib].[line break][variable custom style]Why do I feel like I just got pranked?[roman type][line break]";
+				summon pumpkin bib uncursed;
+				now pumpkin bib is respiration;
+				gluify pumpkin bib;
+				cutshow monster-image of M;
+			otherwise if the player is in Mansion14 and red-orange briefs is crotch-intact:
+				say "[bold type]All of a sudden, someone yanks the back of your [ShortDesc of red-orange briefs] up into your bum crack! [roman type]It doesn't stop until your poor briefs are ripped!";
+				now red-orange briefs is crotch-ripped;
+				PainUp 15;
+				say "You turn around just in time to see [NameDesc of M] floating out from the mannequin [he of M] had just possessed, fleeing away into the distance.[line break][variable custom style]Why do I feel like I just got pranked?[roman type][line break]";
+				cutshow monster-image of M;
 
 Section 2 - Tripping
 

@@ -99,16 +99,12 @@ To Set Up The Hotel:
 	progress quest of new-region-quest.
 
 To Scramble Hotel:
-	if diaper quest is 1:
-		let E be the easting part of the grid position of Stairwell01;
-		let N be the northing part of the grid position of Stairwell01;
-		let the sum be the spatial coordinate with maze level part 3 easting part E northing part N;
-		now the grid position of Hotel01 is the sum;
-	otherwise:
-		let E be the easting part of the grid position of Stairwell02;
-		let N be the northing part of the grid position of Stairwell02;
-		let the sum be the spatial coordinate with maze level part 3 easting part E northing part N;
-		now the grid position of Hotel01 is the sum;
+	[let E be the easting part of the grid position of Stairwell02;
+	let N be the northing part of the grid position of Stairwell02;]
+	let N be 12;
+	let E be 12;
+	let the sum be the spatial coordinate with maze level part 3 easting part E northing part N;
+	now the grid position of Hotel01 is the sum;
 	now target-floor is Hotel01;
 	solve the puzzle;
 	make all modern exits lead to Solid Rock.

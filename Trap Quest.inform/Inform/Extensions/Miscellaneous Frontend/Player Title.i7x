@@ -118,7 +118,7 @@ To say TitleBimbo:
 			say " balloon";
 		if the player is broken or the bimbo of the player > 17:
 			say " [if highest body part sex addiction > the semen addiction of the player / 2][one of]collection of meat-holes[or]walking selection of fuckholes[or]cock sleeve[or]fuck toy[sticky random][otherwise][one of]cum dumpster[or]semen receptacle[or]human vacuum[sticky random][end if]";
-		otherwise if the player is queen of spades and the bimbo of the player > 7:
+		otherwise if the player is queen of spades and the bimbo of the player > 7 and the number of worn dark magician girl dress is 0:
 			say " [if the player is presenting as male]jack[otherwise]queen[end if] of spades";
 		if the player is a sissy:
 			say "[if the class of the player is not sissyclass] sissy[end if][if the player is an adult baby] baby[end if]";

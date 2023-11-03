@@ -51,8 +51,26 @@ Definition: a sparkly princess pacifier is gem themed: decide yes.
 Definition: a sparkly princess pacifier is pink themed: decide yes.
 A ghost pacifier is a kind of baby pacifier. There is 1 ghost pacifier. The printed name of ghost pacifier is "[clothing-title-before]ghost pacifier[clothing-title-after]". The text-shortcut of ghost pacifier is "gpa".
 Definition: a ghost pacifier is orange themed: decide yes.
-Definition: a ghost pacifier is transformation-protected:
+Definition: a ghost pacifier is fetish appropriate:
+	if halloween content is 1 and diaper lover > 0, decide yes;
+	decide no.
+Definition: a ghost pacifier is class-relevant:
 	if the class of the player is trick-or-treater, decide yes;
+	decide no.
+Definition: a ghost pacifier is halloween themed: decide yes.
+A spider pacifier is a kind of baby pacifier. There is 1 spider pacifier. The printed name of spider pacifier is "[clothing-title-before]spider pacifier[clothing-title-after]". The text-shortcut of spider pacifier is "sdpa".
+Definition: a spider pacifier is black themed: decide yes.
+Definition: a spider pacifier is green themed: decide yes.
+Definition: a spider pacifier is fetish appropriate:
+	if halloween content is 1 and diaper lover > 0, decide yes;
+	decide no.
+Definition: a spider pacifier is class-relevant:
+	if the class of the player is trick-or-treater, decide yes;
+	decide no.
+Definition: a spider pacifier is halloween themed: decide yes.
+
+Definition: a baby pacifier is same-type:
+	if theme-share-target is baby pacifier, decide yes;
 	decide no.
 
 To say ShortDesc of (P - a pacifier):
@@ -94,6 +112,9 @@ To set up unique shop state of (C - a pink pacifier):
 To decide which number is the initial cringe of (C - a ghost pacifier):
 	decide on 10.
 
+To decide which number is the initial cringe of (C - a spider pacifier):
+	decide on 9.
+
 To decide which number is the initial cringe of (C - a sparkly princess pacifier):
 	decide on 13.
 
@@ -121,6 +142,7 @@ Figure of tiger pacifier is the file "Items/Accessories/Head/pacifier2.png".
 Figure of yellow pacifier is the file "Items/Accessories/Head/pacifier3.png".
 Figure of sparkly princess pacifier is the file "Items/Accessories/Head/pacifier4.png".
 Figure of ghost pacifier is the file "Items/Accessories/Head/pacifier5.png".
+Figure of spider pacifier is the file "Items/Accessories/Head/pacifier6.png".
 
 To decide which figure-name is clothing-image of (C - cock pacifier):
 	decide on figure of cock pacifier.
@@ -134,6 +156,8 @@ To decide which figure-name is clothing-image of (C - a sparkly princess pacifie
 	decide on figure of sparkly princess pacifier.
 To decide which figure-name is clothing-image of (C - a ghost pacifier):
 	decide on figure of ghost pacifier.
+To decide which figure-name is clothing-image of (C - a spider pacifier):
+	decide on figure of spider pacifier.
 
 To say ClothingDesc of (C - cock pacifier):
 	say "This pacifier has a penis shaped sucker, [if the oral sex addiction of the player < 7]to further humiliate the wearer[otherwise]to keep you happy by letting you practise sucking [manly-penis] all the time.[end if]".
@@ -152,6 +176,9 @@ To say ClothingDesc of (C - a sparkly princess pacifier):
 
 To say ClothingDesc of (C - a ghost pacifier):
 	say "This large orange pacifier has a spooky ghost on the front!".
+
+To say ClothingDesc of (C - a spider pacifier):
+	say "This large black pacifier has a smiling green spider on the front!".
 
 To decide which number is the strength-influence of (C - a tiger pacifier):
 	let S be 2;

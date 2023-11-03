@@ -511,6 +511,62 @@ To decide which object is the at least partial concealer of (C - bridal garter):
 		unless S is crotch-displaced, decide on S;
 	decide on nothing.
 
+key garter is a clothing. [No clashes.] The printed name of key garter is "[clothing-title-before]key garter[clothing-title-after]". The text-shortcut of key garter is "kgtr". key garter is unique. key garter is metal.
+
+Definition: key garter is class-relevant:
+	if the class of the player is bride, decide yes;
+	decide no.
+
+Figure of key garter is the file "Items/Clothes/Lower/Waist/Belts/garter2.png".
+
+To decide which figure-name is the clothing-image of (C - key garter):
+	decide on figure of key garter.
+
+To say ClothingDesc of (C - key garter):
+	say "This garter sits on your left thigh. Danging from one of the metal loops of chain is a small key to a chastity cage.".
+
+To say ShortDesc of (C - key garter):
+	say "garter".
+To say MediumDesc of (C - key garter):
+	say "key garter".
+
+Definition: key garter is nudism-enabling: decide yes.
+To compute class set up of (C - key garter):
+	now C is dominance.
+To compute periodic effect of (C - key garter):
+	if the class of the player is bride and C is not dominance:
+		say "[bold type]You suddenly feel your [MediumDesc of C] filling you up with pride![roman type][line break]";
+		now C is dominance;
+	otherwise if the class of the player is not bride and C is dominance:
+		say "[bold type]You suddenly feel your [MediumDesc of C] filling you with a deep sense of shame from no longer owning a cuck! [roman type]";
+		now C is locked;
+		now C is dominance;
+
+To decide which object is the concealer of (C - key garter):
+	repeat with D running through thigh covering actually dense clothing:
+		decide on D;
+	repeat with S running through worn actually dense knee-length or longer clothing:
+		unless S is crotch-displaced or S is crotch-unzipped, decide on S;
+	decide on nothing.
+
+To decide which object is the at least partial concealer of (C - key garter):
+	repeat with D running through thigh covering not-see-through clothing:
+		decide on D;
+	repeat with S running through worn not-see-through knee-length or longer clothing:
+		unless S is crotch-displaced, decide on S;
+	decide on nothing.
+
+An all time based rule (this is the key garter release rule):
+	if bride-consort is sex-enslaved monster:
+		if key garter is not worn and bride-consort is alive and the player is not in a predicament room:
+			if key garter is in the location of the player, say "[bold type]Suddenly, the key from your garter shakes and disappears! You instinctively can tell that [NameDesc of bride-consort] has now been unlocked, and will be expecting you to fully consummate your love...[roman type][line break]";
+			destroy key garter;
+			now bride-consort is unleashed;
+			if bride-consort is in the location of the player:
+				interest bride-consort;
+				anger bride-consort;
+				make bride-consort expectant;
+				say "[speech style of bride-consort]'Oh [NameBimbo], thank you so much! I've been waiting for this day for so long...'[roman type][line break]".
 
 
 

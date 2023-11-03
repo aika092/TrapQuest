@@ -172,16 +172,16 @@ A later time based rule (this is the compute doom rule):
 		let oldDC be doom counter;
 		increase doom counter by MA;
 		if debuginfo > 1, say "+ cultists currently performing ritual ([MA]) ";
-		if doom counter < 150 and doomed > 0:
+		if doom counter < 150 * slower timers and doomed > 0:
 			increase doom counter by 1;
 			if debuginfo > 1, say "+ level 1 doom bonus catch-up rate (1) ";
-		if doom counter < 300 and doomed > 1:
+		if doom counter < 300 * slower timers and doomed > 1:
 			increase doom counter by 1;
 			if debuginfo > 1, say "+ level 2 doom bonus catch-up rate (1) ";
-		if doom counter < 450 and doomed > 2:
+		if doom counter < 450 * slower timers and doomed > 2:
 			increase doom counter by 1;
 			if debuginfo > 1, say "+ level 3 doom bonus catch-up rate (1) ";
-		if doom counter < 600 and doomed > 3:
+		if doom counter < 600 * slower timers and doomed > 3:
 			increase doom counter by 4;
 			if debuginfo > 1, say "+ level 4 doom bonus catch-up rate (4) ";
 		if vampiric fangs is worn:
@@ -208,7 +208,7 @@ A later time based rule (this is the compute doom rule):
 				summon MC in the mansion;
 				now MC is in Mansion23;
 				if debuginfo > 1, say "[input-style]NEW RITUAL CULTIST SPAWNED.[roman type][line break]";]
-		if doom counter > 150 and doomed is 0:
+		if doom counter > 150 * slower timers and doomed is 0:
 			say "[bold type]You feel a sense of impending doom, as though something terrible is in motion. Perhaps you should consult with an expert in magic?[roman type][line break]";
 			now doomed is 1;
 			if a random number between 1 and 2 is 1 and wild gladiator is summon-available and wild gladiator is off-stage and wild gladiator is woods dwelling, now the next-summon of giant-statue is wild gladiator;
@@ -217,7 +217,7 @@ A later time based rule (this is the compute doom rule):
 			progress quest of doom-quest;
 			deploy a wisp;
 			deploy a slimeball;
-		otherwise if doom counter > 300 and doomed is 1:
+		otherwise if doom counter > 300 * slower timers and doomed is 1:
 			say "[bold type]You feel a strange sense of being watched, and the atmosphere begins to feel oddly humid. It is almost like something horrible is breathing down your neck.[roman type][line break]";
 			now doomed is 2;
 			if ghostly tentacle is off-stage and ghostly tentacle is not permanently banished:
@@ -229,7 +229,7 @@ A later time based rule (this is the compute doom rule):
 			progress quest of doom-quest;
 			deploy a wisp;
 			deploy a slimeball;
-		otherwise if doom counter > 450 and doomed is 2:
+		otherwise if doom counter > 450 * slower timers and doomed is 2:
 			say "[bold type]The air feels positively moist and somehow everything seems more unwholesome, an impressive feat given the content of the game normally.[roman type][line break]";
 			now doomed is 3;
 			if flower hairclip is worn, transform flower hairclip into spiked-tiara;
@@ -238,7 +238,7 @@ A later time based rule (this is the compute doom rule):
 			progress quest of doom-quest;
 			deploy a wisp;
 			deploy a slimeball;
-		otherwise if doom counter > 600 and doomed is 3:
+		otherwise if doom counter > 600 * slower timers and doomed is 3:
 			if the location of the player is not Mansion23:
 				say "[bold type]A horrible noise like a thousand screams of pure bliss echoes through the world itself, and the world itself takes on a soft pink cast for a moment. Something is drawing close to this world![roman type][line break]";
 			otherwise:
@@ -250,7 +250,7 @@ A later time based rule (this is the compute doom rule):
 			progress quest of doom-quest;
 			deploy a wisp;
 			deploy a slimeball;
-		otherwise if doom counter > 800 and doomed is 4:
+		otherwise if doom counter > 800 * slower timers and doomed is 4:
 			if the location of the player is Mansion23:
 				if the class of the player is cultist:
 					say "[bold type]The world begins to shake and pink lightning begins to arc off the floating pink bubble and into the world! The bubble twists and resolves into an increasingly humanoid shape, finally becoming an extremely feminine figure composed of shocking pink light. In spite of being faceless, you can somehow tell it is looking at you.[line break][second custom style]'You have totally done well, minions! Now go and, like, spread the word of Valleyhotep, herald of [Azathot]!'[roman type][line break]";
@@ -262,7 +262,7 @@ A later time based rule (this is the compute doom rule):
 				otherwise:
 					say "[bold type]The world begins to shake and pink lightning crackles over every surface! You desperately try to avoid them, but you feel the energy wash over you before the effect settles down. Even still, there is a strange pink energy hanging in the air. One thing is certain: You have failed.[roman type][line break]";
 			resolve doom;
-		otherwise if a random number between 1 and (40 + (10 * MA)) is 1:
+		otherwise if a random number between 1 and ((40 + (10 * MA)) * slower timers) is 1:
 			if debuginfo > 1:
 				update new acolytes;
 				say "[input-style]ATTEMPTING TO SPAWN A NEW RITUAL CULTIST (new acolytes list is: [new-acolytes]).[roman type][line break]";
@@ -354,7 +354,7 @@ To compute creepiness: [first implementation of "creeping" of ghosts in non-garl
 	if the location of the player is garlic or playerRegion is not mansion:
 		if creepiness > 0, decrease creepiness by 20; [The player will have to hide for a couple turns to completely shake off the ghosts, but it shouldn't take too long]
 		if creepiness < 0, now creepiness is 0;
-	otherwise if (creepiness > a random number between (G * 30) and (G * 60)) and there is an off-stage ghost and the player is not in a nonstandard room: [player has to be in the mansion for a while before multiple ghosts start messing with them]
+	otherwise if (creepiness / slower timers > a random number between (G * 30) and (G * 60)) and there is an off-stage ghost and the player is not in a nonstandard room: [player has to be in the mansion for a while before multiple ghosts start messing with them]
 		let LM be the list of off-stage ghosts;
 		if ghostly tentacle is listed in LM, remove ghostly tentacle from LM;
 		if the number of entries in LM > 0:
@@ -363,6 +363,8 @@ To compute creepiness: [first implementation of "creeping" of ghosts in non-garl
 			set up M;
 			now M is in the location of the player;
 			say "Something in the air changes, and you look over your shoulder to see a pinprick of light in the doorway, slowly growing into [NameDesc of M].";
+			if the times-met of M is 0, FearUp 20;
+			otherwise FearUp 10;
 			decrease creepiness by ((6 - game difficulty) * the number of on-stage ghosts) + 30; [it's almost certain you'll see one if something catches you, but it's very unlikely to get more than 2 at a time.]
 	otherwise if the player is not soulless: [The ghosts are attracted to your soul]
 		say "[one of][if creepiness > 9]Tension seems to linger in the air around you, and you can't help but feel something will burst out at you at any moment.[end if][or][or][or][if creepiness > 6]You can't shake the feeling that you are being watched.[end if][or][or][cycling]";

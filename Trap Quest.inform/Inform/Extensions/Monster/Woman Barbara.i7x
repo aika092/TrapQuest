@@ -17,6 +17,8 @@ Figure of woman 5a is the file "NPCs/MultiFloor/barbara/woman5a.png".
 Figure of woman 5b is the file "NPCs/MultiFloor/barbara/woman5b.png".
 Figure of woman pregnant is the file "NPCs/MultiFloor/barbara/woman6.jpg".
 Figure of woman stool is the file "NPCs/MultiFloor/barbara/woman7.jpg".
+Figure of woman buried is the file "NPCs/MultiFloor/barbara/woman8.jpg".
+Figure of woman partial slavery is the file "NPCs/MultiFloor/barbara/woman9.png".
 
 Figure of Barbara Cutscene 1 is the file "NPCs/MultiFloor/barbara/cutscene-barbara-throne1.jpg".
 Figure of Barbara Cutscene 2 is the file "NPCs/MultiFloor/barbara/cutscene-barbara-throne2.jpg".
@@ -36,16 +38,20 @@ Figure of Barbara Cutscene 15 is the file "NPCs/MultiFloor/barbara/cutscene-barb
 Figure of Barbara Cutscene 16 is the file "NPCs/MultiFloor/barbara/cutscene-barbara-glue1.jpg".
 Figure of Barbara Cutscene 17 is the file "NPCs/MultiFloor/barbara/cutscene-barbara-glue2.jpg".
 Figure of Barbara Cutscene 18 is the file "NPCs/MultiFloor/barbara/cutscene-barbara-shopkeeper1.jpg".
+Figure of Barbara Cutscene 19 is the file "NPCs/MultiFloor/barbara/cutscene-barbara-gangbang1.jpg".
+Figure of Barbara Cutscene 20 is the file "NPCs/MultiFloor/barbara/cutscene-barbara-cum-kiss1.jpg".
 
 To decide which figure-name is the monster-image of (M - woman-player):
 	if the woman-status of M is 97:
 		if the throne-scene of woman-player >= 3, decide on figure of barbara cutscene 3;
 		if the throne-scene of woman-player is 2, decide on figure of barbara cutscene 2;
 		decide on figure of barbara cutscene 1;
+	if the woman-status of M is 98, decide on Figure of woman buried;
 	if the woman-status of M is 93 and the number of interested unfriendly dominatrix in the location of the player is 0, decide on figure of barbara cutscene 5;
 	if the woman-status of M is 80, decide on figure of woman stool;
 	if the vine-scene of M > 0 and the vine-scene of M < 5, decide on figure of barbara cutscene 8;
 	if the woman-pregnancy of M > 1, decide on figure of woman pregnant;
+	if M is partially-enslaved, decide on Figure of woman partial slavery;
 	if the woman-bimbo of M < 3:
 		if M is interested, decide on figure of woman 1 interested;
 		decide on figure of woman 1 uninterested;
@@ -82,6 +88,7 @@ To say MonsterDesc of (M - woman-player):
 			if the woman-bimbo of M is 4, say "A long haired, huge breasted brunette wearing nothing on [his of M] top half but a sheer lace bra that leaves [his of M] boobs and nipples very visible. [big he of M] is wearing black suspenders and stockings but no underwear, leaving [his of M] pussy fully exposed. [big he of M] is wearing heavily done make up. You can tell by [his of M] facial expressions that [he of M]'s having more trouble than usual thinking straight.";[nipples exposed, crotch exposed]
 			if the woman-bimbo of M is 5, say "A huge breasted [man of M] wearing nothing on [his of M] top half at all except a tight black latex choker around [his of M] neck. [big he of M] is wearing a pair of fake kitty cat ears with the headband well hidden under [his of M] long brown hair, which is in a ponytail. [big he of M] is also wearing a pair of black latex crotchless panties which has a line of pearls running along [his of M] pussy, and some very shiny black latex thigh-high boots with long stiletto heels. [big he of M] is wearing a very heavy amount of make up. You can tell by [his of M] facial expressions that [he of M]'s having huge amounts of trouble thinking straight.";[basically naked]
 			if the woman-bimbo of M is 6, say "A long haired, huge breasted brunette wearing nothing at all[if bukkake fetish is 0] except a pair of white latex fetish boots with chunky heels[end if]. [big his of M] facial expression is one of empty-headed bliss.[if bukkake fetish is 1] [big he of M] is thoroughly covered in [semen] from head to toe, and has yet more [semen] dripping out of [his of M] two lower fuckholes. [end if][big his of M] hips and buttcheeks must have doubled if not tripled in size since you first met [him of M].";[actually naked]
+	if M is partially-enslaved, say "[big his of M] breasts are trapped behind some sort of [']portal bra['] which is teleporting [his of M] breasts to a different location, where others can use them for their personal entertainment whenever they like.";
 	if the human-toilet-scene of M is 1, say "[big he of M] is wearing oversized nipple rings and has the words 'TOILET SLUT' and 'URINAL [caps boy of M]' permanently written onto [his of M] flesh.";
 	if the woman-status of M is 80, say "[big he of M] is bound bent over a bar-stool on wheels, with a blindfold over [his of M] eyes and a ballgag in [his of M] mouth. [big his of M] asshole is pulled wide open by duct tape, and more rainbow covered tape with the words 'ANAL ONLY' printed on it is plastered chaotically over [his of M] [if lady fetish is 2]taint[otherwise]pussy[end if]. You could probably [if the player is possessing a penis or there is worn strapon-panties]fuck [him of M] or [end if]free [him of M] by [bold type]pull[roman type]ing at [his of M] bondage if you like.";
 	if the woman-status of M is 97, say "[big he of M] is sat on the throne, with a bulging belly[if the throne-scene of M >= 3] and a river of [semen] flowing from [his of M] mouth. [big he of M] seems barely conscious[end if].".
@@ -125,7 +132,10 @@ To compute friendly boredom of (M - woman-player):
 
 To vanish (M - a monster):
 	if M is woman-player and M is introduced:
-		remove M from play;
+		if M is partially-enslaved:
+			regionally place M;
+		otherwise:
+			remove M from play;
 	if the woman-pregnancy of M is 1, now the woman-pregnancy of M is 2;
 	if the woman-status of M is 90 and the vine-scene of M is 5:
 		FavourDown M;
@@ -254,6 +264,8 @@ STATES:
 7: Just freed the player from bondage (or told them no)
 ==Anything below 10 can be interpreted as normal wandering and hijacked for a scene==
 
+27: Partial slavery
+28: Cum kiss
 29: Just rescued from the vine boss hole
 ==Anything below 30 implies that a scene has just ended so a new one shouldn't start, but she's able to move around as normal==
 
@@ -269,6 +281,7 @@ STATES:
 95: Released from the toilet
 96: Scene with hotel beds & patrons
 97: Appeared by sitting on the throne
+98: Buried in the woods
 99: Dead
 ]
 
@@ -714,6 +727,7 @@ To compute patron scene of (W - woman-player):
 	interest W;
 	say "[first custom style]'Hey everyone, get in here!'[roman type][line break]A hidden door opens from the opposite wall, and you watch [the number of patrons in the location of the player] patrons stride in, each with a bottle of beer in one hand and a party hat on their head. [if the number of N-viable directions is 1]A modesty barrier comes[otherwise]Modesty barriers come[end if] down, preventing either of you from leaving[if W is asleep]. [BigNameDesc of W] wakes up with a start[end if].[line break][first custom style]'We've paid a lot of money to be allowed to have two of you at once, so you'd better follow everything we say.'[roman type][line break]A look of [if the bimbo of the player < 5]horror[otherwise if the bimbo of the player < 10]uncertainty[otherwise]understanding[end if] passes between you and [NameDesc of W]. Whether you fight or fuck them, this is going to be a great challenge. One of the older patrons speaks first.[line break][first custom style]'Okay, let's get this party started[if the player is upright]. On your knees, bitches[end if].'[roman type][line break]";
 	now the sleep of W is 0;
+	mapcutshow Figure of Barbara Cutscene 19 for W;
 	now a random modesty shutter is in the location of the player.
 
 Report slapping patron when woman-player is in the location and the woman-status of woman-player is 96:
@@ -1027,6 +1041,79 @@ To say WomanCraftSceneFlav:
 	say "Before you can say anything, [he of woman-player] stands up triumphantly, holding a small vial full of a brightly glowing pink liquid.[line break][speech style of woman-player]'Oh hey [NameBimbo], I almost didn't notice you there! I think this one is gonna be good! Do you want to try it? If you don't, I'll be the guinea pig myself!'[roman type][line break][big he of woman-player] hands you the pink vial.";
 	appropriate-cutscene-display Figure of Barbara Cutscene 7.
 
+
+Chapter - Cum Kiss Scene
+
+woman-player can be cum-kissed.
+
+Report going when the player is an october 2023 top donator and the woman-bimbo of woman-player is 3 and woman-player is not cum-kissed and playerRegion is Mansion:
+	if debugmode is 1, say "Checking if [WomanName] can appear.";
+	if woman-player is relaxed redeploy appropriate and the player is upright and face is not actually occupied and the location of the player is not mandatory room and the location of the player is not important room and the location of the player is not pinned room and the number of monsters in the location of the player is 0:
+		now woman-player is cum-kissed;
+		deploy woman-player with woman-status 28;
+		now woman-player is in the location of the player;
+		interest woman-player;
+		say "As you arrive you see [NameDesc of woman-player] is here. [big he of woman-player] looks a bit stressed, or perhaps spooked - you see that [bold type]a pink wisp is following [him of woman-player] from behind. [roman type]You also note that [his of woman-player] cheeks appear to be... bulging... and an unmistakable creamy substance is dripping down [his of woman-player] chin.[line break][speech style of woman-player]'Mmmm Mmmm Mm Mm Mmmmm!'[roman type][line break][BigNameDesc of woman-player] urgently mumbles, whilst trying to make sure not to open [his of woman-player] mouth wide enough to cause any more of the [semen] to spill out. And then... [he of woman-player] steps towards you, and moves [his of woman-player] lips towards yours. It seems like [he of woman-player] is desperate to lock those big pink lips, bursting with [semen], directly to yours, and give you a big messy kiss...[paragraph break]Do you accept the sloppy snowball kiss?";
+		cutshow Figure of Barbara Cutscene 20 for woman-player;
+		if the player is bimbo consenting:
+			say "You close your eyes and let it happen. As soon as [NameDesc of woman-player][']s lips are locked with yours, [he of woman-player] begins to use [his of woman-player] tongue to shovel heaps of [semen] from [his of woman-player] mouth into yours.";
+			TasteGrossOut 3;
+			FaceFill semen by 3;
+			now face is vaginal-origin;
+			say "As [he of woman-player] finishes filling your cheeks with this [semen] from god-knows-who[']s-balls, you watch [him of woman-player] breathe a sigh of relief as the pink wisp behind [his of woman-player] head fades away into nothingness.[line break][speech style of woman-player]'Thanks so much, [NameBimbo]. If it wasn't for me stumbling into you, and you letting me do that, the wisp would have transformed me into a slut!'[roman type][line break]You are tempted to point out that with those massive tits pretty much fully on show, [he of woman-player] looks pretty damn slutty already, but mercifully, your mouth full of [semen] prevents that from being an option in the first place.";
+			FavourUp woman-player;
+			if there is a nonstalking wisp and the player is getting unlucky:
+				let W be a random nonstalking wisp;
+				silently set up W;
+				now the wisp-quest of W is brothel-wisp-quest;
+				now the wisp-trigger of W is lose-mouthful-wisp-trigger;
+				now the wisp-punishment of W is bimbo-wisp-punishment;
+				if (a random number between 0 and 1) + (a random number between 0 and 1) < game difficulty, now the wisp-punishment of W is a random appropriate wisp punishment;
+				now W is everywhere;
+				update backdrop positions;
+				now the text-shortcut of W is the substituted form of "[ColourDesc of W]";
+				say "And then suddenly, [bold type]a [ColourDesc of W] curse wisp appears, and begins hovering behind you! [roman type]You can sense that you must [bold type][wisp-quest of W][roman type] before you next [bold type][wisp-trigger of W][roman type], or else you will [bold type][wisp-punishment of W][roman type]. [GotUnluckyFlav][line break][speech style of woman-player]'Oh no... I didn't know that the wisp would just transfer over to you! I'm so sorry, [NameBimbo]! And so ashamed!'[roman type][line break]Before you can stop [him of woman-player], [NameDesc of woman-player] has run away, holding [his of woman-player] hands over [his of woman-player] face in shame.";
+				vanish woman-player;
+		otherwise:
+			say "You shake your head and back away. [BigNameDesc of woman-player] whines in panic... And then you hear [his of woman-player] belly rumble. [big he of woman-player] groans in dismay as the pink wisp pulses with energy, and then a shower of pink magic sparkles surrounds [NameDesc of woman-player]. A moment later, the pink wisp is gone, but [NameDesc of woman-player] looks a bit different.";
+			ImmediateWomanSluttify;
+			try examining woman-player;
+			say "[speech style of woman-player]'BLEAURGH!'[roman type][line break][BigNameDesc of woman-player] spits [his of woman-player] mouthful of semen out onto the ground.";
+			SemenPuddleUp 3;
+			say "[speech style of woman-player]'I can't believe you wouldn't let me kiss you, [NameBimbo]! I know it's gross, but I thought we had each others['] backs. Now look at me... And I can feel... I can feel that I can't brain too good any more... I have the dumb.'[roman type][line break]".
+
+
+Chapter - Barbara Buried
+
+woman-player can be already-buried.
+
+Report going when the player is the donator and the woman-bimbo of woman-player < 6 and woman-player is not already-buried and playerRegion is Woods:
+	if debugmode is 1, say "Checking if [WomanName] can appear.";
+	if woman-player is relaxed redeploy appropriate and the player is upright and the player is bursting and the player is desperate to pee and the location of the player is not mandatory room and the location of the player is not important room and the location of the player is not pinned room and there is a nonstalking wisp and the number of pee covering actually unavoidable clothing is 0 and the number of monsters in the location of the player is 0:
+		now woman-player is already-buried;
+		deploy woman-player with woman-status 98;
+		now woman-player is in the location of the player;
+		interest woman-player;
+		now the location of the player is urinals;
+		say "As you arrive you see [NameDesc of woman-player] is here - well, down there. [big he of woman-player] has been buried up to [his of woman-player] neck![line break][speech style of woman-player]'Hey [NameBimbo]... I'm afraid I can't help you out right now, for obvious reasons! Don't worry, I think the vines will let me go eventually, and unless you have a shovel, I don't think there's anything you can do to help me right now! So maybe just, you know, see you around?'[roman type][line break]";
+		while there is a nonstalking wisp:
+			let W be a random nonstalking wisp;
+			silently set up W;
+			now the wisp-quest of W is use-urinal-wisp-quest;
+			say "Suddenly, [bold type]a [ColourDesc of W] curse wisp appears, and begins hovering behind you! [roman type]You can sense that you must [bold type][wisp-quest of W][roman type] before you next [bold type][wisp-trigger of W][roman type], or else you will [bold type][wisp-punishment of W][roman type]. ";
+		say "[paragraph break]You understand all too clearly that [bold type][WomanName][']s face currently counts as a urinal.[roman type][line break]";
+		say "[speech style of woman-player]'...Why are you looking at me like that...?!'[roman type][line break]".
+
+Report going up:
+	if the woman-status of woman-player is 98 and woman-player is alive:
+		if the location of the player is urinals, now the location of woman-player is use-the-floor;
+		vanish woman-player;
+	let R be a random urinals jungle room;
+	if R is room:
+		say "BUG - [R] should have had its urinal flag removed, but it didn't. This is probably because [NameDesc of woman-player] was unintentionally moved somehow. Please report this bug!";
+		now R is use-the-floor.
+
+
 Chapter - Bellboy Fight Scene
 
 woman-player has a number called bellboy-fight-scene.
@@ -1271,7 +1358,9 @@ To compute (M - woman-player) protecting against (X - a monster):
 			otherwise:
 				say "[BigNameDesc of M] [one of]makes [himself of M] useful by licking [NameDesc of X][']s taint[or]makes lewd slurping sounds as [he of M] massages [NameDesc of X][']s taint with [his of M] tongue[or]stands upright and begins to worship [NameDesc of X][']s tongue in a long, loud French kiss[or][BigNameDesc of M] is still passionately kissing [NameDesc of X][stopping].";
 	otherwise if the woman-status of M >= 80:
-		do nothing;[Barbara was spawned to get fucked, not fight.]
+		do nothing; [Barbara was spawned to get fucked, not fight.]
+	otherwise if M is partially-enslaved and the pedestal-user of pimp-pedestal-2 is a monster:
+		say "[BigNameDesc of M] is too busy getting [his of M] breasts molested through the portal to help you fight!"; [Barbara is getting molested]
 	otherwise if the player is monster fucked:
 		if the woman-bimbo of M > 4:
 			say "[BigNameDesc of M] giggles.[line break][speech style of M]'Have fun, I won't get in your way!'[roman type][line break]";
@@ -1399,10 +1488,10 @@ To say StrikingSuccessFlav of (M - woman-player) on (B - a body part):
 Definition: woman-player is penis-fuckable: decide yes. [Can this NPC be fucked with a penis when defeated?]
 
 To decide which number is the submissiveness of (M - woman-player):
-	decide on DOMINANT-DOMINANT
+	decide on DOMINANT-DOMINANT.
 
 To compute unique dominance reward of (M - woman-player):
-	WomanSluttify;
+	WomanSluttify.
 
 To penetration dominate (M - woman-player):
 	let C be a random bottom level protection clothing;
@@ -1446,6 +1535,10 @@ To compute basic greeting to (M - woman-player):
 		say "[speech style of M]'MMMMPH!'[roman type][line break]";
 	otherwise if M is angered:
 		say "[speech style of M]'Why yes I would like to [if the woman-bimbo of the M < 5]fight[otherwise]fuck[end if].'[roman type][line break]";
+	otherwise if M is partially-enslaved and the current-errand of M is no-errand:
+		now the current-errand of M is satisfy-pimp-errand;
+		now the current-reward of M is alliance-reward;
+		say "[speech style of M]'Oh [NameBimbo], I've got myself in a terrible pickle! That nasty pimp [unless playerRegion is hotel]up in the hotel [end if]has attached this portal thing to my breasts, and has said that I'm in so much debt with [him of pimp] that [he of pimp][']ll be letting [men of male-m] play with my tits for the rest of my days... I don't know what to do! [big he of pimp] clearly doesn't trust me... Is there any way you could negotiate something with [him of pimp]? I'd be forever in your debt...'[roman type][line break]";
 	otherwise if the woman-status of M is 0:
 		if M is interested:
 			say "[speech style of M]'I hate being alone in these woods...'[roman type][line break]";
@@ -1523,6 +1616,8 @@ To compute basic greeting to (M - woman-player):
 			say "[speech style of M]'Those TV screens are so difficult to stop watching...'[roman type][line break]";
 	otherwise if the woman-status of M is 95:
 		say "[speech style of M]'Thank you so much for saving me from that toilet prison. It was on a timer and if nobody saved me within the next few minutes, it would have locked permanently!'[roman type][line break]";
+	otherwise if the woman-status of M is 98:
+		say "[speech style of M]'I think maybe we should chat properly after I get out of here.'[roman type][line break]";
 	otherwise:
 		say "[speech style of M]'I'm not sure I want to talk right now.'[roman type][line break]";
 	interest M;
@@ -1577,6 +1672,8 @@ To execute (T - talk-barbara-question) for (M - a monster):
 			say "[speech style of M]'Can you keep a secret? I may have pulled the lever for the [ShortDesc of minotaur]! Teehee!'[roman type][line break]";
 		otherwise:
 			say "[speech style of M]'To [']fight['] the [ShortDesc of minotaur], of course, silly!'[roman type][line break]";
+	otherwise if the woman-status of M is 98:
+		say "[speech style of M]'I think maybe we should chat properly after I get out of here.'[roman type][line break]";
 	otherwise if playerRegion is Dungeon:
 		if the woman-bimbo of M < 3:
 			say "[speech style of M]'Well the shop and altar are often useful, and until the royal guards turn aggressive it's a bit safer than anywhere else.'[roman type][line break]";
@@ -1630,7 +1727,13 @@ To compute woman cum drink offer:
 			say "You create a seal around [NameDesc of woman-player][']s [if a2m fetish > 2]asshole[otherwise]love tunnel[end if] with your [LipDesc] and suck and slurp as [he of woman-player] pushes multiple thick loads of warm [semen] into your mouth. [strongHumiliateReflect]";
 			if a2m fetish > 2, OralSexAddictUp 1;
 			FaceFill semen by 4;
-			suggest swallowing with semen consequences;
+			suggest swallowing with semen consequences.
+
+To compute disgusting spit reaction of (M - woman-player):
+	compute boring spit reaction of M.
+
+To compute boring spit reaction of (M - woman-player):
+	say "[BigNameDesc of M] [one of]wrinkles [his of M] nose[or]frowns[or]pouts[in random order].[line break][speech style of M]'[one of]Really? Right in front of my salad[or]Do you mind[stopping]?'[roman type][line break][slightHumiliateReflect]".
 
 Part - Unused Functions
 

@@ -26,6 +26,7 @@ agent has a number called agent-scene.
 agent has a number called agent-scene-spotted.
 
 Figure of agent is the file "NPCs/MultiFloor/Agent/agent1.png".
+Figure of fleeing agent is the file "NPCs/MultiFloor/Agent/agent3.jpg".
 
 To say ShortDesc of (M - agent):
 	say "[if M is agent-identified]agent[otherwise]lady[end if]".
@@ -34,6 +35,7 @@ To say MediumDesc of (M - agent):
 	say "suited [ShortDesc of M]".
 
 To decide which figure-name is the monster-image of (M - agent):
+	if the scared of M > 0, decide on figure of fleeing agent;
 	if M is agent-deglassed, decide on figure of agent angry;
 	decide on figure of agent.
 
@@ -308,9 +310,32 @@ To say ExamineDesc of (C - second-agent-poster):
 	say "You have absolutely no memory of this ever occurring... ";
 	say TitleDesc of C.
 
+
+third-agent-poster is an agent poster. third-agent-poster is identifiable.
+
+To distribute (P - third-agent-poster):
+	now P is in Hotel19;
+	compute title of P.
+
+To decide which figure-name is the examine-image of (C - third-agent-poster):
+	decide on Figure of agent camera cutscene 3.
+
+To compute title of (P - third-agent-poster):
+	now the title of P is "BRAINWASHED BIMBO FUCKDOLLS".
+
+To say ShortDesc of (P - third-agent-poster):
+	say "A high quality photo of a threesome between you, [womanName] and the [MediumDesc of agent]. You are on your back while [womanName] straddles your face in a 69 position. The [MediumDesc of agent] has pulled [his of agent] [manly-penis] out of [womanName][']s freshly creampied pussy and is cleaning it off in your mouth. You and [womanName] are both completely naked, with blank expressionless faces. ".
+
+To say ExamineDesc of (C - third-agent-poster):
+	say ShortDesc of C;
+	say "You have absolutely no memory of this ever occurring... ";
+	say TitleDesc of C.
+
 Definition: agent is ready for next agent scene:
-	if diaper quest is 0 and the player is the donator and the times-met of agent > 0 and agent is not permanently banished and the agent-scene of agent < 2 and the agent-scene of agent is the agent-scene-spotted of agent:
-		if the number of worn unremovable nudism-disabling clothing is 0, decide yes;
+	if diaper quest is 0 and the player is the donator and the times-met of agent > 0 and agent is not permanently banished:
+		if the number of worn unremovable nudism-disabling clothing is 0:
+			if the agent-scene of agent < 2 and the agent-scene of agent is the agent-scene-spotted of agent, decide yes;
+			if the agent-scene of agent is 2 and the woman-bimbo of woman-player <= 4 and woman-player is in the location of the player and the total volume of face is 0, decide yes;
 	if diaper quest is 1 and diaper swapping > 1 and there is a worn diaper and the times-met of agent > 0 and agent is not permanently banished and the agent-scene of agent < 2 and the agent-scene of agent is the agent-scene-spotted of agent:
 		let URC be the number of worn unremovable nudism-disabling clothing;
 		if diaper quest is 1, decrease URC by the number of worn unremovable nudism-enabling diapers;
@@ -338,10 +363,24 @@ To compute next agent scene:
 		compute agent anal;
 		if the number of blank rows in the Table of Published Disgraces > 0:
 			choose a blank row in Table of Published Disgraces;
-			if diaper quest is 0, now the content entry is "a high quality video showing you, naked, on your hands and knees, as the [MediumDesc of agent] holds some kind of small silver device in front of your face. You have a blank expression and are staring at the device while [he of agent] gives you some instructions.";
-			otherwise now the content entry is "a high quality video showing you, naked, bent over, your belly full of a giant enema, as the [MediumDesc of agent] holds some kind of small silver device in front of your face. You have a blank expression and are staring at the device while [he of agent] gives you some instructions.";
+			if diaper quest is 0, now the content entry is "a high quality video showing you, naked, on your hands and knees, as the [MediumDesc of agent] holds some kind of small silver device in front of your face. You have a blank expression and are staring at the device while [he of agent] gives you some instructions,  ";
+			otherwise now the content entry is "a high quality video showing you, naked, bent over, your belly full of a giant enema, as the [MediumDesc of agent] holds some kind of small silver device in front of your face. You have a blank expression and are staring at the device while [he of agent] gives you some instructions, ";
 			now the published entry is the substituted form of "is live on www.hypnoheaven.xxx";
 			now the severity entry is 2;
+			now the popularity entry is 5;
+			now the timestamp entry is earnings;
+			now the lastwitnessed entry is 0;
+			now the deletedtime entry is 0;
+			now the viewsfuzz entry is a random number between -100 and 100;
+	otherwise if the agent-scene of agent is 2:
+		now the agent-scene of agent is 3;
+		set up third-agent-poster;
+		compute agent threesome;
+		if the number of blank rows in the Table of Published Disgraces > 0:
+			choose a blank row in Table of Published Disgraces;
+			now the content entry is "a high quality video showing you, naked, on your back, with [womanName] on [his of woman-player] hands and knees above you, as the [MediumDesc of agent] takes turns inserting [his of agent] huge [manly-penis] into [womanName][']s pussy, and then your mouth. [big he of agent] is holding some kind of small silver device in front of your and [womanName][']s faces. You have a blank expression, as if you have been hypnotized, ";
+			now the published entry is the substituted form of "is live on www.hypnoheaven.xxx";
+			now the severity entry is 4;
 			now the popularity entry is 5;
 			now the timestamp entry is earnings;
 			now the lastwitnessed entry is 0;
@@ -351,23 +390,27 @@ To compute next agent scene:
 To compute agent anal:
 	if diaper quest is 0:
 		AssFill the semen load of agent;
-		if the soreness of asshole < 10:
-			increase the soreness of asshole by 4;
-			if the soreness of asshole > 10, now the soreness of asshole is 10;
-			if the agent-scene of agent is 2, say "[bold type]You feel like you suddenly notice that your [asshole] is more sore [if the openness of asshole < the girth of agent]and more gaped [end if]than it was before. And as your belly gurgles, you realise that your rectum feels like it's been filled with an anal creampie...[line break][variable custom style]What in the world?![roman type][line break]";
+		increase the soreness of asshole by 4;
+		if the soreness of asshole > 10, now the soreness of asshole is 10;
+		say "[one of][bold type]You feel like you suddenly notice that your [asshole] is more sore [if the openness of asshole < the girth of agent]and more gaped [end if]than it was before. And as your belly gurgles, you realise that your rectum feels like it's been filled with an anal creampie...[line break][variable custom style]What in the world?![roman type][line break][or][stopping]";
 		if the openness of asshole < the girth of agent, now the openness of asshole is the girth of agent;
-		if the agent-scene of agent > 2, say "[bold type]It's with mild horror that you notice that your [asshole] is once again suddenly sore, gaped and filled with [semen]. [roman type][if agent is agent-identified][BigNameDesc of agent] must have mind controlled you, assfucked you, and wiped your memory again!!![line break][variable custom style]I've got to find that bitch, and slap [his of agent] sunglasses off![otherwise][variable custom style]Why?! How?![end if][roman type][line break]";
+		say "[one of][or][bold type]It's with mild horror that you notice that your [asshole] is once again suddenly sore, gaped and filled with [semen]. [roman type][if agent is agent-identified][BigNameDesc of agent] must have mind controlled you, assfucked you, and wiped your memory again!!![line break][variable custom style]I've got to find that bitch, and slap [his of agent] sunglasses off![otherwise][variable custom style]Why?! How?![end if][roman type][line break][stopping]";
 	otherwise:
 		let N be belly limit - the total squirtable fill of belly;
 		AssFill N water;
-		if the agent-scene of agent is 2, say "[bold type]Your belly gurgles, and you realise that your belly is huge and round, inflated to the brim with an enema![line break][variable custom style]What in the world?![roman type][line break]";
-		otherwise say "[bold type]It's with mild horror that you notice that your belly has once again been inflated to maximum size by a giant enema. [roman type][if agent is agent-identified][BigNameDesc of agent] must have mind controlled you, assfucked you, and wiped your memory again!!![line break][variable custom style]I've got to find that bitch, and slap [his of agent] sunglasses off![otherwise][variable custom style]Why?! How?![end if][roman type][line break]";
-	increase the agent-scene of agent by 1; [this minus 2 is the number of times it's happened already]
+		say "[bold type][one of]Your belly gurgles, and you realise that your belly is huge and round, inflated to the brim with an enema![line break][variable custom style]What in the world?![or]It's with mild horror that you notice that your belly has once again been inflated to maximum size by a giant enema. [roman type][if agent is agent-identified][BigNameDesc of agent] must have mind controlled you, assfucked you, and wiped your memory again!!![line break][variable custom style]I've got to find that bitch, and slap [his of agent] sunglasses off![otherwise][variable custom style]Why?! How?![end if][stopping][roman type][line break]";
+	compute refractoryReset of agent.
+
+To compute agent threesome:
+	say "[bold type]You blink, and notice with confusion that [womanName] is now naked, and has thick, sticky [semen] oozing out of [his of woman-player] pussy?![roman type][line break]";
+	cutshow figure of woman 5b for woman-player;
+	FaceFill semen by 1;
+	say "[BigNameDesc of woman-player] doesn't seem to be fazed at all - in fact, [he of woman-player] is just silently putting [his of woman-player] clothes back on, as if nothing was amiss.[line break][variable custom style]Um, [womanName], what's going on?![roman type][line break]That's what you try to say, and what you would say, if it wasn't at this moment that you realise that you have a [MouthfulDesc].[paragraph break]A moment later, [NameDesc of woman-player] finishes getting [his of woman-player] clothes back on, and, after rapidly blinking for a second, seems to [']wake up['] from whatever haze [he of woman-player] was in.[line break][speech style of woman-player]'Did... Did something happen? I feel weird... Down there... HUH?!'[roman type][line break][BigNameDesc of woman-player] seems to notice for the first time that [his of woman-player] pussy is full to the brim with [semen].[line break][speech style of woman-player]'Did... Did some kind of magic trap do this? What the fuck! I didn't even notice!'[roman type][line break]";
 	compute refractoryReset of agent.
 
 To compute agent reveal:
 	now agent is agent-identified;
-	say "You hear the [NameDesc of agent][']s voice reverberate in your mind, as if they were a distant memory that's being awoken.[line break][speech style of agent]'That's right, stay there and [if diaper quest is 0]take my cock up your ass, like a good little slut[otherwise]let me fill your belly up all the way to the brim[end if]. And of course, I want you to forget about this entire thing afterwards.'[line break][variable custom style]Holy shit, has [he of agent] been mind-controlling and fucking me, and wiping my memories of it?![roman type][line break]The speech continues.[line break][speech style of agent]'And take care not to knock my sunglasses off. I don't want to actually get caught by my own control signal.'[line break][variable custom style]So... I need some sort of eye protection to avoid being controlled by [him of agent]... Or I need to slap those sunglasses off of [him of agent] before [he of agent] has a chance to react.[roman type][line break]".
+	say "You hear the [NameDesc of agent][']s voice reverberate in your mind, as if they were a distant memory that's being awoken.[line break][speech style of agent]'That's right, stay there and [if agent-scene of agent >= 3]clean your whore friend's pussy juices off my [manly-penis], you slut[otherwise if diaper quest is 0]take my cock up your ass, like a good little slut[otherwise]let me fill your belly up all the way to the brim[end if]. And of course, I want you to forget about this entire thing afterwards.'[line break][variable custom style]Holy shit, has [he of agent] been mind-controlling and fucking me, and wiping my memories of it?![roman type][line break]The speech continues.[line break][speech style of agent]'And take care not to knock my sunglasses off. I don't want to actually get caught by my own control signal.'[line break][variable custom style]So... I need some sort of eye protection to avoid being controlled by [him of agent]... Or I need to slap those sunglasses off of [him of agent] before [he of agent] has a chance to react.[roman type][line break]".
 
 A later time based rule (this is the agent surprise sex rule):
 	if playerRegion is hotel and agent is not agent-deglassed and the refractory-period of agent < 0 and the agent-scene of agent > 1 and agent is not permanently banished and asshole is not actually occupied and a random number between 1 and 25 is 1:

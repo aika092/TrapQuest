@@ -370,7 +370,7 @@ To compute failed transform of (C - a clothing):
 	if the transform-attempts of C > the disintegrate-resistance of C + ((the used condoms of C + the empty condoms of C) * 2) + the transform-resistance of C:
 		if C is cursed and C is removable:
 			say "[bold type]The [C] [bold type]seems to resist being transformed once again, but its curse prevents it from being destroyed. [roman type]";
-			if C is dressup or C is audible jiggles or C is desperation or C is waddle-walking or C is draining:
+			if C is dressup or C is audible jiggles or C is audible squelches or C is desperation or C is waddle-walking or C is draining:
 				say line break;
 			otherwise:
 				if a random number between 0 and 4 < game difficulty:
@@ -379,6 +379,9 @@ To compute failed transform of (C - a clothing):
 				otherwise if diaper quest is 0 and the largeness of breasts > 3:
 					now C is audible jiggles;
 					say "Instead, it has gained a new magical effect...  You can sense that it is now [']audible jiggles['], and is going to make your breasts make loud cartoonish jiggling sounds as you move![line break][variable custom style]Uh-oh![roman type][line break]";
+				otherwise if diaper quest is 1 and C is somewhat fluid vulnerable knickers:
+					now C is audible squelches;
+					say "Instead, it has gained a new magical effect...  You can sense that it is now [']audible squelches['], and is going amplify any wet squelching sounds it makes a hundredfold![line break][variable custom style]Oh dear...[roman type][line break]";
 				otherwise if diaper quest is 0:
 					now C is dressup;
 					say "Instead, it has gained a new magical effect...  You can sense that it is now [']dressup['], and is going to summon more outrageous and slutty clothing on you over time![line break][variable custom style]Oh no![roman type][line break]";

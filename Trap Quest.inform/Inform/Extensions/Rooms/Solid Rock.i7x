@@ -79,6 +79,7 @@ To make all haunted exits lead to Solid Rock:
 			change the west exit of blank room to Solid Rock;
 			if debugmode is 1, say "[line break]changing the west exit of [blank room] to Solid Rock[line break]".
 
+[TODO: Probably super laggy]
 To decide which room is the room at (grid ref - a spatial coordinate):
 	if grid ref is <0,0,0>, decide on Solid Rock;
 	if the player is in Toilet01 and the grid position of Toilet01 is grid ref, decide on Toilet01;
@@ -100,6 +101,7 @@ To decide which room is the room at (grid ref - a spatial coordinate):
 [Used for drawing maps, which should only happen when you're in that region]
 To decide which room is the regional room at (grid ref - a spatial coordinate):
 	if grid ref is <0,0,0>, decide on Solid Rock;
+	if the player is in FinalBoss01 and the grid position of FinalBoss01 is grid ref, decide on FinalBoss01;
 	if the player is in Toilet01 and the grid position of Toilet01 is grid ref, decide on Toilet01;
 	if the player is in Toilet02 and the grid position of Toilet02 is grid ref, decide on Toilet02;
 	if tutorial is 1:

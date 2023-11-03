@@ -42,6 +42,36 @@ To say ClothingDesc of (H - black-leather-boots):
 To say UniqueShortDesc of (H - black-leather-boots):
 	say "black leather high heeled boots".
 
+combat-boots is a boots. combat-boots is leather. combat-boots is unique. The printed name of combat-boots is "[clothing-title-before]pair of black leather [heel-height of the item described] inch combat boots[clothing-title-after]". The text-shortcut of combat-boots is "cmbb". Understand "black", "combat" as combat-boots.
+
+Definition: combat-boots is class-relevant:
+	if the class of the player is barbarian or the class of the player is stripper, decide yes;
+	decide no.
+
+To compute class set up of (C - combat-boots):
+	now the heel-height of C is 3;
+	now C is cursed;
+	now the quest of C is kicking-quest;
+	now C is temptation.
+
+Figure of combat boots is the file "Items/Clothes/Lower/Feet/Boots/leatherboots3.png".
+
+To decide which figure-name is the clothing-image of (H - combat-boots):
+	decide on figure of combat boots.
+
+Definition: combat-boots is black themed: decide yes.
+
+To decide which number is the unique outrage of (C - combat-boots):
+	decide on 1.
+To decide which number is the kick-bonus of (S - combat-boots):
+	decide on 1.
+
+To say ClothingDesc of (H - combat-boots):
+	say "This pair of black leather boots laces up at the front and has a [heel-height of H] inch platform heel. It feels half combat oriented, half stripper. Like a silly sexy female fighting game character might wear. [SteadinessDesc of H]".
+
+To say UniqueShortDesc of (H - combat-boots):
+	say "black leather high heeled boots".
+
 black-fetish-boots is a boots. black-fetish-boots is latex. The printed name of black-fetish-boots is "[clothing-title-before]pair of black latex [heel-height of the item described] inch boots[clothing-title-after]". The text-shortcut of black-fetish-boots is "blfb". Understand "black", "fetish" as black-fetish-boots.
 
 A diaper quest fix rule:
@@ -116,12 +146,16 @@ To decide which figure-name is the clothing-image of (H - WC thigh high boots):
 To say ClothingDesc of (H - WC thigh high boots):
 	say "A pair of [heel-height of H] inch white latex thigh high boots with a strong stiletto heel[if H is worn and H is cursed and black-catsuit is worn and black-catsuit is cursed]. The upper part of your heels have completely merged with the rest of your catsuit[end if]. [SteadinessDesc of H]".
 
-To uniquely set up (C - WC thigh high boots):
+To compute class set up of (C - WC thigh high boots):
+	if watersports fetish is 0:
+		now C is cursed;
+		now the quest of C is anal-orgasm-quest;
 	now C is stumbling;
 	set up heel length of C.
 
 To set up influence of (C - WC thigh high boots):
-	now C is urine-taste-addiction-influencing.
+	if watersports fetish is 1, now C is urine-taste-addiction-influencing;
+	otherwise now C is anal-sex-addiction-influencing.
 
 Definition: WC thigh high boots is white themed: decide yes.
 

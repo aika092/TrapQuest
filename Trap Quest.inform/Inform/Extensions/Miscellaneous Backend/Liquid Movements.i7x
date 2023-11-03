@@ -466,6 +466,18 @@ To UniqueSquirt (L - a liquid-object) On (C - Thighs) by (N - a number):
 			if TC is fluid vulnerable, say "[announced L] lands on your [ShortDesc of TC].";
 			ContinuedSquirt L on TC by N;
 			now N is 0;
+	otherwise if diaper quest is 1 and playerRegion is mansion and the class of the player is trick-or-treater and ghostly tentacle is alive:
+		if the slime-puddle of the location of the player > 0:
+			say "The water oozing down your thighs adds to the magic slimy glue trapping you to the ground!";
+			increase the slime-puddle of the location of the player by (N + 1) / 2;
+		otherwise:
+			say "As the water trickles down your thighs, you realise that it is becoming thicker, and slimier, and stickier![line break][variable custom style]What the hell?![roman type][line break]";
+			now the slime-puddle of the location of the player is (N + 1) / 2;
+			if the player is upright:
+				say "You weren't expecting this, and as you try to complete your step forward, you completely lose your balance!";
+				try kneeling;
+			anger ghostly tentacle;
+			compute sudden interested appearance of ghostly tentacle;
 	if N > 0:
 		if L is semen:
 			while the semen coating of C < 10 and N > 0:

@@ -362,6 +362,7 @@ Chapter 2 - Plugs
 
 A plug is a kind of sex toy. A basic plug is a kind of plug. The size of plug is usually 4. Understand "butt", "plug" as plug. Understand "small" as plug when the size of item described < 4. Understand "medium", "sized" as plug when the size of item described is 4. Understand "large" as plug when the size of item described < 7 and the size of item described >= 5. Understand "huge" as plug when the size of item described < 9 and the size of item described >= 7. Understand "monstrous" as plug when the size of item described >= 9. The text-shortcut of a plug is "plu".
 
+
 black-plug is a basic plug. The size of black-plug is 1. The text-shortcut of black-plug is "plu1". Understand "black" as black-plug.
 To say MediumDesc of (P - black-plug):
 	say "small black plug".
@@ -424,6 +425,18 @@ Definition: brown-plug is brown themed: decide yes.
 tiered-plug is a basic plug. The size of tiered-plug is 10. The text-shortcut of tiered-plug is "plu10". Understand "beige" as tiered-plug.
 To say MediumDesc of (P - tiered-plug):
 	say "monstrous beige plug".
+
+To decide which object is the next-plug-up of (P - a plug):
+	if the size of P is 1, decide on pink-plug;
+	if the size of P is 2, decide on small-jewelled-plug;
+	if the size of P is 3, decide on medium-jewelled-plug;
+	if the size of P is 4, decide on round-plug;
+	if the size of P is 5, decide on flared-plug;
+	if the size of P is 6, decide on beige-plug;
+	if the size of P is 7, decide on fish-plug;
+	if the size of P is 8, decide on brown-plug;
+	if the size of P is 9, decide on tiered-plug;
+	decide on nothing.
 
 To assign size (X - a number) to (C - a basic plug):
 	if C is worn: [if we try to do this when it's not worn, horrible horrible things happen when we do the transform function]

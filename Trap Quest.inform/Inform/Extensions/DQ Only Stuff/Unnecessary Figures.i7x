@@ -5,6 +5,9 @@ Part - Monsters
 To decide which figure-name is Figure of aeromancer cutscene 7:
 	decide on figure of small image.
 
+To decide which figure-name is Figure of agent camera cutscene 3:
+	decide on figure of small image.
+
 To decide which figure-name is Figure of white birth:
 	decide on figure of small image.
 To decide which figure-name is Figure of black birth:
@@ -41,6 +44,8 @@ To decide which figure-name is Figure of demoness cutscene 12:
 To decide which figure-name is Figure of demoness cutscene 13:
 	decide on figure of small image.
 
+To decide which figure-name is Figure of Djinn Uninterested:
+	decide on figure of small image.
 To decide which figure-name is Figure of Djinn Cutscene 1:
 	decide on figure of small image.
 To decide which figure-name is Figure of Djinn Cutscene 2:

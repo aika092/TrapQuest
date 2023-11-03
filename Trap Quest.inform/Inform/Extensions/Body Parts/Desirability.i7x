@@ -528,6 +528,7 @@ Carry out seducing:
 	let BB be the aggro limit of the noun - the favour of the noun;
 	if BB > 0 and BB > the blue-balls of the noun, now the blue-balls of the noun is BB; [The more unfriendly the NPC, the more difficult to placate with seduction]
 	now turns-spent-seducing is 0;
+	if police uniform is worn, say "[bold type]Your police uniform starts playing sexy stripper music![roman type] If you're lucky, perhaps that will help to keep [NameDesc of the noun] entertained for longer.";
 	follow the core seduction rule.
 Understand "seduce [a monster]", "appease [a monster]", "placate [a monster]" as seducing.
 
@@ -741,26 +742,30 @@ To compute default seduction choice of (M - a monster):
 			GrossOut 5 with reason "" and sensation "thing";
 	if M is seduced:
 		if the blue-balls of M >= the blue-balls-limit of M:
-			if the blue-balls of M < the blue-balls-limit of M + 5:
-				say BlueBallsTooFarFlav of M;
-				now the blue-balls of M is the blue-balls-limit of M + 5;
+			if police uniform is worn and the player is not getting unlucky:
+				say "[BigNameDesc of M] seems to be getting very close to taking matters into [his of M] own hands... But the music playing from the walkie talkie on your waist seems to keep [him of M] placated for now.";
+				now the blue-balls of M is the blue-balls-limit of M - 1;
 			otherwise:
-				say BlueBallsImpatientFlav of M;
-			if the player is prone:
-				if M is unfriendly:
-					follow the sex attempt rules;
+				if the blue-balls of M < the blue-balls-limit of M + 5:
+					say BlueBallsTooFarFlav of M;
+					now the blue-balls of M is the blue-balls-limit of M + 5;
 				otherwise:
-					while M is interested and M is not penetrating a body part and the blue-balls of M >= the blue-balls-limit of M and M is seduced and M is friendly and the number of actual target body parts > 0:
+					say BlueBallsImpatientFlav of M;
+				if the player is prone:
+					if M is unfriendly:
 						follow the sex attempt rules;
-			otherwise:
-				anger M;
-			if M is interested:
-				if M is penetrating a body part:
-					if M is friendly, now M is friendly-fucking;
-					now M is stalled;
-					now M is seduction-refused;
-				otherwise if M is unfriendly:
-					now M is seduction-refused;
+					otherwise:
+						while M is interested and M is not penetrating a body part and the blue-balls of M >= the blue-balls-limit of M and M is seduced and M is friendly and the number of actual target body parts > 0:
+							follow the sex attempt rules;
+				otherwise:
+					anger M;
+				if M is interested:
+					if M is penetrating a body part:
+						if M is friendly, now M is friendly-fucking;
+						now M is stalled;
+						now M is seduction-refused;
+					otherwise if M is unfriendly:
+						now M is seduction-refused;
 		otherwise:
 			now M is stalled;
 			let BB be (a random number between -1 and 1) + the blue-balls-limit of M - the blue-balls of M;

@@ -38,6 +38,8 @@ To say ExamineDesc of (T - toilet):
 To say ExamineDesc of (T - urinal):
 	if the hotel-urinal-scene of woman-player > 0 and the player is in Hotel31:
 		say "[if there is a wrestler in Holding Pen][BigNameDesc of random wrestler in Holding Pen] and [NameDesc of woman-player] are here, bound in latex bodysuits as diapered human urinals[otherwise][BigNameDesc of woman-player] is here, bound in a latex bodysuit as a diapered human urinal[end if].";
+	otherwise if woman-status of woman-player is 98 and playerRegion is woods and woman-player is in the location of the player:
+		say "[BigNameDesc of woman-player] is buried up to [his of woman-player] neck here. You could probably use [him of woman-player] as a urinal.";
 	otherwise if diaper quest is 1 and the player is in Dungeon41:
 		say "This poor black [man of shopkeeper] has been encased in a red latex catsuit, complete with matching ring-gagged hood. A stupidly thick diaper sits between [his of shopkeeper] legs underneath the catsuit, keeping [his of shopkeeper] thighs far apart. [big his of shopkeeper] wrists and neck are trapped inside holes inside one of the shelves attached to the wall of [his of shopkeeper] own shop, preventing [him of shopkeeper] from standing up or moving away. [big he of shopkeeper] can't speak, can't move, can't do anything but sit there, moan, and fill [his of shopkeeper] huge diaper over time, relying on visitors to feed [him of shopkeeper] food or drink through [his of shopkeeper] permanently open mouth. A men's toilets sign on [his of shopkeeper] bib encourages people to serve [him of shopkeeper] drinks directly from their bladders.";
 	otherwise:
@@ -59,7 +61,7 @@ This is the toilet gets focused rule:
 	if watersports mechanics is 1 and the location of the player is toilets and the the player is not in Dungeon11, focus-consider toilet.
 The toilet gets focused rule is listed in the focus finding rules.
 This is the urinal gets focused rule:
-	if watersports mechanics is 1 and the location of the player is urinals and (ex-princess is not in the location of the player or ex-princess is not caged), focus-consider urinal.
+	if watersports mechanics is 1 and the location of the player is urinals and (ex-princess is not in the location of the player or ex-princess is not caged) and (woman-player is not in the location of the player or the woman-status of woman-player is not 98), focus-consider urinal.
 The urinal gets focused rule is listed in the focus finding rules.
 
 To construct normal buttons for (T - toilet):
@@ -104,7 +106,7 @@ To construct normal buttons for (T - urinal):
 Definition: yourself is able to use a urinal:
 	if the player is potentially able to use a urinal:
 		if delayed urination is 1 or the player is immobile or the player is in danger or the player is flying, decide no;
-		if watersports mechanics is 0 or there is worn pee covering actually unavoidable clothing, decide no;
+		if watersports mechanics is 0 or there is pee covering actually unavoidable clothing, decide no;
 		decide yes;
 	decide no.
 
@@ -131,7 +133,7 @@ Definition: yourself is able to use the toilet past their diaper:
 	decide no.
 
 Report going when the player is able to use the toilet past their diaper:
-	let PC be a random worn pee covering actually unavoidable clothing;
+	let PC be a random pee covering actually unavoidable clothing;
 	let AC be a random ass covering actually unavoidable clothing;
 	if (AC is clothing and the player is feeling full) or (PC is clothing and the player is bursting):
 		if PC is a clothing, now AC is PC;
@@ -143,7 +145,7 @@ Check toileting:
 	if the player is prone, say "You can only do that while on two feet." instead;
 	if the player is immobile or the player is in danger or the player is flying, say "Aren't you a bit busy?" instead;
 	if locked-toilets is true and the player is in School10 and academy-toilet-key is not held, say "You don't have the key!" instead;
-	let PC be a random worn pee covering actually unavoidable clothing;
+	let PC be a random pee covering actually unavoidable clothing;
 	let AC be a random ass covering actually unavoidable clothing;
 	if the player is able to use the toilet past their diaper:
 		now PC is the player;
@@ -170,7 +172,7 @@ Check toileting:
 		if the player is toilet traumatized:
 			if the number of intelligent awake friendly monsters in the location of the player is 0, say "After your traumatizing experience with [NameDesc of toilet-monster], you're too scared to use the toilet all by yourself!" instead;
 		otherwise if the player is proud:
-			let M be a random intelligent awake monster in the location of the player;
+			let M be a random reactive monster;
 			if M is monster, say "I can't [if PC is clothing]pull my [ShortDesc of PC] down and [end if]sit on the toilet and use it with [NameDesc of M] right there!!!" instead.
 
 Definition: yourself is toilet traumatized:
@@ -248,7 +250,7 @@ Check urinating:
 				if the player is able to displace:
 					say "Do you want to get your clothes out of the way first? ";
 					if the player is bimbo consenting:
-						repeat with C running through worn pee covering clothing:
+						repeat with C running through pee covering clothing:
 							if C is crotch-zipped:
 								try unzipping C;
 								if C is crotch-unzipped, now C is temporarily-displaced;
@@ -456,6 +458,12 @@ To compute urinal use:
 				otherwise:
 					say "[BigNameDesc of M] groans in frustration as the [urine] trickles down [his of M] latex bodysuit into the drain.";
 					FavourDown woman-player;
+		otherwise if diaper quest is 0 and the woman-status of woman-player is 98 and woman-player is in the location of the player:
+			say "[speech style of woman-player]'[one of]What are you doing?! No no no wait-'[or]Not again?! Eeeek!'[stopping][roman type][line break][BigNameDesc of woman-player] shrieks with panic, before [his of woman-player] words are replaced with a strained gargle as your [urine] hits [his of woman-player] face and mouth.";
+			DelicateDown 1;
+			FavourDown woman-player;
+			womanSluttify;
+			say "[speech style of woman-player]'[NameBimbo], you bitch! I thought we were friends!'[roman type][line break][BigNameDesc of woman-player] cries angrily as [he of woman-player] spits out a mouthful of [urine].[line break][speech style of woman-player]'Gross gross gross!'[roman type][line break]";
 		otherwise if the player is in Dungeon41:
 			say "[BigNameDesc of shopkeeper] groans in frustration as the [urine] floods [his of shopkeeper] mouth, and [he of shopkeeper] is forced to swallow. But there's absolutely nothing [he of shopkeeper] can do about it but drink it down, and wait until it comes out [his of shopkeeper] own bladder a bit later and joins the rest of the [urine] soaking [his of shopkeeper] extra-thick padding.";
 		now the bladder of the player is 0;
@@ -463,6 +471,7 @@ To compute urinal use:
 			repeat with M running through reactive monsters:
 				compute toilet reaction of M;
 		progress quest of careful-peeing-quest;
+		trigger use-urinal-wisp-quest;
 		trigger pee-wisp-trigger;
 	otherwise:
 		say "Nothing comes out!".
@@ -536,7 +545,7 @@ To start urination:
 				UrinePuddleUp 6;
 			otherwise:
 				UrinePuddleUp the bladder of the player;
-				check urine maidification;
+				punish puddle pissing;
 	otherwise:
 		let K be a random bottom level pee protection clothing;
 		if the player is potentially able to use a toilet and delayed urination is 0 and the player is not immobile and the player is not in danger and the player is not flying:
@@ -690,7 +699,7 @@ To compute urination:
 				UrinePuddleUp 6;
 			otherwise:
 				UrinePuddleUp the bladder of the player;
-				check urine maidification;
+				punish puddle pissing;
 	otherwise:
 		let old-overflow be overflowed;
 		compute pee protected urination;
@@ -774,6 +783,14 @@ To say urinationoverflow of (K - a clothing):
 
 To say urinationoverflow of (K - a diaper):
 	say "But your poor diaper is so completely full for your [urine] that it can't hold any more! You feel the diaper overflow through the leg holes.".
+
+To punish puddle pissing:
+	if playerRegion is Woods and the player is prone:
+		let H be a random off-stage puppy ears;
+		if H is actually summonable:
+			summon H cursed;
+			say "[bold type]Suddenly, a [H][bold type] appear on your head![if the bimbo of the player < 9][line break][variable custom style]Oh no... I this because I was peeing like a dog?[end if][roman type][line break]";
+	check urine maidification.
 
 To check (L - a liquid-object) maidification:
 	unless the player is in a predicament room:
@@ -1142,6 +1159,7 @@ This is the compulsory urination rule:
 			if the bladder of the player < old-bladder, now another-turn is 1; [Urination successful. We can force a delayed turn without risking a loop.]
 		otherwise:
 			progress temporary incontinence;
+		trigger wet-yourself-wisp-trigger;
 		if debugmode > 1, say "resetting accidental urination flag.";
 		now delayed urination flav is "";
 		now delayed urination is 0.

@@ -347,6 +347,7 @@ To decide which number is the trip hazard of the player:
 	if H is shoes, increase X by the hindrance of H;
 	increase X by the slipperiness of the location of the player;
 	increase X by the number of currently-wrangled body parts * 4;
+	increase X by the number of worn stumbling clothing * 2;
 	let Q be the largeness of hair - 14;
 	if the player is ponytailed, decrease Q by 3;
 	if the player is pigtailed, decrease Q by 6;
@@ -390,11 +391,11 @@ This is the slipped on puddle rule:
 		rule succeeds.
 The slipped on puddle rule is listed last in the trip reasons rules.
 
-This is the tripped on stumbling heels rule:
-	if there is a worn stumbling heels:
-		say "Your [printed name of a random worn heels] cause you to lose your footing!";
+This is the tripped on stumbling clothing rule:
+	if there is a worn stumbling clothing:
+		say "Your [printed name of a random worn stumbling clothing] cause you to lose your footing!";
 		rule succeeds.
-The tripped on stumbling heels rule is listed last in the trip reasons rules.
+The tripped on stumbling clothing rule is listed last in the trip reasons rules.
 
 This is the tripped from cursed yoga pants rule:
 	if there is a worn cursed yoga pants:

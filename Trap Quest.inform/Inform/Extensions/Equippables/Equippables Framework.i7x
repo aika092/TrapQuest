@@ -227,6 +227,51 @@ To compute school periodic effect of (C - football-gloves):
 		say "[BigNameDesc of football-gloves] fizzles from existence!";
 		only destroy football-gloves.
 
+qos-gloves is a gloves. qos-gloves is latex.
+The printed name of qos-gloves is "[clothing-title-before]queen of spades gloves[clothing-title-after]". The text-shortcut of qos-gloves is "qosg". Figure of qos-gloves is the file "Items/Accessories/Equippables/gloves5.png". Understand "queen", "spades", "queen of spades", "gloves" as qos-gloves.
+Definition: qos-gloves is class-relevant:
+	if the class of the player is bride, decide yes;
+	decide no.
+Definition: qos-gloves is discovered varied: decide no.
+To compute class set up of (G - qos-gloves):
+	now the raw-magic-modifier of G is the square root of the bbc addiction of the player;
+	now G is dominance.
+To decide which figure-name is clothing-image of (H - qos-gloves):
+	decide on figure of qos-gloves.
+To say ClothingDesc of (Y - qos-gloves):
+	say "These fingerless white rubber gloves have black spade symbols on their backs.".
+To say ShortDesc of (Y - qos-gloves):
+	say "fingerless gloves".
+To say MediumDesc of (Y - qos-gloves):
+	say "white queen of spades gloves".
+To decide which number is the initial outrage of (C - qos-gloves):
+	decide on 3.
+To decide which number is the slap damage improvement of (G - qos-gloves):
+	decide on the raw-magic-modifier of G.
+Definition: qos-gloves is white themed: decide yes.
+Definition: qos-gloves is interracial themed: decide yes.
+Definition: qos-gloves is playing card themed: decide yes.
+
+combat-gloves is a gloves. combat-gloves is leather.
+The printed name of combat-gloves is "[clothing-title-before]combat gloves[clothing-title-after]". The text-shortcut of combat-gloves is "cbg". Figure of combat-gloves is the file "Items/Accessories/Equippables/gloves6.png". Understand "combat", "gloves" as combat-gloves.
+Definition: combat-gloves is class-relevant:
+	if the class of the player is barbarian, decide yes;
+	decide no.
+Definition: combat-gloves is discovered varied: decide no.
+To decide which figure-name is clothing-image of (H - combat-gloves):
+	decide on figure of combat-gloves.
+To say ClothingDesc of (Y - combat-gloves):
+	say "These fingerless black leather gloves will help you pack a punch.".
+To say ShortDesc of (Y - combat-gloves):
+	say "fingerless gloves".
+To say MediumDesc of (Y - combat-gloves):
+	say "black fingerless combat gloves".
+To decide which number is the initial outrage of (C - combat-gloves):
+	decide on 0.
+To decide which number is the slap damage improvement of (G - combat-gloves):
+	decide on 3.
+Definition: combat-gloves is black themed: decide yes.
+
 briefcase is an equippable. briefcase has a number called charge.
 The printed name of briefcase is "[clothing-title-before]briefcase[clothing-title-after]". The text-shortcut of briefcase is "bfc". Figure of briefcase is the file "Items/Accessories/Equippables/briefcase1.jpg".
 Definition: briefcase is transformation-protected: decide yes.

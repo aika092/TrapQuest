@@ -21,14 +21,24 @@ To only summon (C - a clothing):
 	now C is identified;
 	now C is sure;
 	compute unique summoning of C;
-	if C is ass plugging or (C is vagina plugging and the player is not possessing a vagina), now C is penetrating asshole;
-	if C is vagina plugging and the player is possessing a vagina, now C is penetrating vagina;
-	if C is ballgag, now C is penetrating face; [a ballgag is any gag that occupies the player's face. I.e. most gags]
 	if C is total protection and C is not-butt-windowed and there is a worn tail plug:
 		if C is displacable:
 			now C is crotch-displaced;
 		otherwise:
-			say "BUG - undisplacable item [C] was summoned even though player was wearing a tail plug. Please report.".
+			say "BUG - undisplacable item [C] was summoned even though player was wearing a tail plug. Please report.";
+	if C is total protection and there is an embodied thing penetrating a fuckhole:
+		if C is displacable:
+			now C is crotch-displaced;
+		otherwise:
+			say "BUG - undisplacable item [C] was summoned even though player is currently penetrated. Please report.";
+	if C is pussy protection and there is an embodied thing penetrating vagina:
+		if C is displacable:
+			now C is crotch-displaced;
+		otherwise:
+			say "BUG - undisplacable item [C] was summoned even though player is currently vaginally penetrated. Please report.";
+	if C is ass plugging or (C is vagina plugging and the player is not possessing a vagina), now C is penetrating asshole;
+	if C is vagina plugging and the player is possessing a vagina, now C is penetrating vagina;
+	if C is ballgag, now C is penetrating face; [a ballgag is any gag that occupies the player's face. I.e. most gags]
 
 To compute unique summoning of (C - a thing):
 	do nothing.

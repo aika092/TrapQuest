@@ -57,7 +57,6 @@ To compute friendly boredom of (M - nurse):
 	if the player is not in the location of M and the player is not in School11 and the player is not in School12, now M is uninterested.
 
 To bore (M - nurse) for (N - a number) seconds:
-	dislodge M;
 	compute common boredom of M for N seconds;
 	if armband is worn:
 		calm M; [The nurse never gets distracted from her job, instead she just turns friendly after dealing with you]

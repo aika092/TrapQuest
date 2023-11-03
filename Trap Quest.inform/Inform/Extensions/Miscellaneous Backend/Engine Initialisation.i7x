@@ -204,7 +204,9 @@ To fill in legacy table blanks:
 	unless there is a choice in row 83 of the Table of Player Options, now choice in row 83 of Table of Player Options is 0;
 	unless there is a choice in row 84 of the Table of Player Options, now choice in row 84 of Table of Player Options is 1;
 	unless there is a choice in row 85 of the Table of Player Options, now choice in row 85 of Table of Player Options is 0;
-	unless there is a choice in row 86 of the Table of Player Options, now choice in row 86 of Table of Player Options is 0.
+	unless there is a choice in row 86 of the Table of Player Options, now choice in row 86 of Table of Player Options is 0;
+	unless there is a choice in row 87 of the Table of Player Options, now choice in row 87 of Table of Player Options is 1;
+	unless there is a choice in row 88 of the Table of Player Options, now choice in row 88 of Table of Player Options is 0;
 
 To fill in custom flavour blanks:
 	unless there is a name in row 10 of the Table of Info Options:

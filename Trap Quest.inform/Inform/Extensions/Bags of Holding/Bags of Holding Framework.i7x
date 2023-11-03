@@ -253,8 +253,8 @@ To execute (E - bag-feeding-semen):
 	if squirt dildo is held:
 		say "What's more, your [printed name of squirt dildo] fills up to the brim with [semen]!";
 	otherwise:
-		say "What's more, a [printed name of squirt dildo] appears on the ground in front of you! Something tells you that you can guess what's inside...";
-		now squirt dildo is in the location of the player;
+		say "What's more, a [printed name of squirt dildo] appears in your hand! Something tells you that you can guess what's inside...";
+		now squirt dildo is carried by the player;
 	let W be a random nonstalking wisp;
 	if W is wisp:
 		silently set up W;
@@ -262,9 +262,7 @@ To execute (E - bag-feeding-semen):
 		now the wisp-trigger of W is spill-wisp-trigger;
 		now the wisp-punishment of W is bimbo-wisp-punishment;
 		if (a random number between 0 and 1) + (a random number between 0 and 1) < game difficulty, now the wisp-punishment of W is a random appropriate wisp punishment;
-		now W is everywhere;
-		update backdrop positions;
-		now the text-shortcut of W is the substituted form of "[ColourDesc of W]";
+		update background colour of W;
 		say "[bold type]A [ColourDesc of W] curse wisp appears, and begins hovering behind you! [roman type]You can sense that you must [bold type][wisp-quest of W][roman type] before you next [bold type][wisp-trigger of W][roman type], or else you will [bold type][wisp-punishment of W][roman type].".
 
 bag-feeding-urine is a bag-feeding-effect.
@@ -291,9 +289,7 @@ To execute (E - bag-feeding-urine):
 		now the wisp-trigger of W is spill-wisp-trigger;
 		now the wisp-punishment of W is bimbo-wisp-punishment;
 		if (a random number between 0 and 1) + (a random number between 0 and 1) < game difficulty, now the wisp-punishment of W is a random appropriate wisp punishment;
-		now W is everywhere;
-		update backdrop positions;
-		now the text-shortcut of W is the substituted form of "[ColourDesc of W]";
+		update background colour of W;
 		say "[bold type]A [ColourDesc of W] curse wisp appears, and begins hovering behind you! [roman type]You can sense that you must [bold type][wisp-quest of W][roman type] before you next [bold type][wisp-trigger of W][roman type], or else you will [bold type][wisp-punishment of W][roman type].".
 
 bag-feeding-swimming is a bag-feeding-effect.
@@ -356,9 +352,7 @@ To execute (E - bag-feeding-whore):
 	now the wisp-trigger of W is a random eligible appropriate wisp trigger;
 	now the wisp-punishment of W is bimbo-wisp-punishment;
 	if (a random number between 0 and 1) + (a random number between 0 and 1) < game difficulty, now the wisp-punishment of W is a random appropriate wisp punishment;
-	now W is everywhere;
-	update backdrop positions;
-	now the text-shortcut of W is the substituted form of "[ColourDesc of W]";
+	update background colour of W;
 	say "[bold type]A [ColourDesc of W] curse wisp appears, and begins hovering behind you! [roman type]You can sense that you must [bold type][wisp-quest of W][roman type] before you next [bold type][wisp-trigger of W][roman type], or else you will [bold type][wisp-punishment of W][roman type].".
 
 bag-feeding-food is a bag-feeding-effect.

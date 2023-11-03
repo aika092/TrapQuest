@@ -32,7 +32,7 @@ To compute class outfit of (H - cat-ears):
 	otherwise:
 		if exposing-magical-dress is not worn, class summon kitty claws;
 		class summon catbell;
-		if diaper quest is 0, class summon cat tail plug.
+		if diaper quest is 0, class summon black-cat-tail-plug.
 
 To compute meowcowification:
 	if lactation fetish is 1:

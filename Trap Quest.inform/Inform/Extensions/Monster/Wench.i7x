@@ -262,7 +262,7 @@ To compute appearance assessment of (M - a wench):
 	otherwise if the appearance of the player > the outrage tolerance of M or M is unfriendly:
 		FavourDown M;
 		if M is unfriendly:
-			say "[speech style of M][one of]'I think it's time to remind you [if M is QoS wench]that you're the property of [BlackCock]![otherwise]that you're my bitch.[end if]'[or]'You again! You want some more, huh?'[in random order][roman type][line break]";
+			say "[speech style of M][one of]'I think it's time to remind you [if M is QoS wench]that you're the property of [BlackCock]!'[otherwise]that you're my bitch.'[end if][or]'You again! You want some more, huh?'[in random order][roman type][line break]";
 			alwayscutshow figure of wench interact 9 for M;
 		otherwise if M is groping:
 			compute grope of M;
@@ -571,9 +571,7 @@ This is the wench asscum cup punishment rule:
 		now the wisp-trigger of W is spill-wisp-trigger;
 		now the wisp-punishment of W is bimbo-wisp-punishment;
 		if (a random number between 0 and 1) + (a random number between 0 and 1) < game difficulty, now the wisp-punishment of W is a random appropriate wisp punishment;
-		now W is everywhere;
-		update backdrop positions;
-		now the text-shortcut of W is the substituted form of "[ColourDesc of W]";
+		update background colour of W;
 		say "[bold type]A [ColourDesc of W] curse wisp appears, and begins hovering behind you! [roman type]You can sense that you must [bold type][wisp-quest of W][roman type] before you next [bold type][wisp-trigger of W][roman type], or else you will [bold type][wisp-punishment of W][roman type].[line break][speech style of M]'That was weird! I don't know what came over me. Now where was I...'[roman type][line break]";
 		rule succeeds.
 The unique punishment rule of a wench is the wench asscum cup punishment rule.

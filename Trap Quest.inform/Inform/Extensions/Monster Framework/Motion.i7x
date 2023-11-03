@@ -270,7 +270,7 @@ To compute fleeing of (M - a monster): [Default Compute Fleeing if not specified
 		let A be a random N-viable direction;
 		if A is a direction and a random number between 1 and 100 > 40:
 			let P be the room A from the location of M;
-			if P is unbossed and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
+			if P is unbossed and the number of barriers in P is 0 and the number of barriers in the location of M is 0 and the player is not in P:
 				blockable move M to A.
 
 The motion reaction rules is a rulebook.
@@ -283,9 +283,9 @@ To compute monstermotion reactions of (M - a monster): [If the NPC stumbles acro
 This is the monster notices the player urinating rule:
 	if player-urinating is 1:
 		severeHumiliate;
-		if there is a worn pee covering diaper:
+		if there is a pee covering diaper:
 			say DiaperDeclaration of current-monster;
-		otherwise if there is a worn pee covering clothing:
+		otherwise if there is a pee covering clothing:
 			say ClothesPeeDeclaration of current-monster;
 		otherwise:
 			say GroundPeeDeclaration of current-monster;

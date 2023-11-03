@@ -55,7 +55,11 @@ To progress quest of (Q - trick-or-treat-quest):
 			if the number of regional candy > 1:
 				say "Your [ShortDesc of C] pulses happily. Keep it up!";
 			otherwise:
-				compute quest completion of Q on C.
+				compute quest completion of Q on C;
+			let D be a random worn diaper;
+			if D is diaper:
+				now the transform-attempts of D is 99;
+				potentially transform D.
 
 nun cowl is a halloween headgear. The text-shortcut of nun cowl is "nnc".
 Figure of nun cowl is the file "Items/Accessories/Head/nuncowl2.png".
@@ -66,7 +70,7 @@ To decide which figure-name is the clothing-image of (C - nun cowl):
 	decide on figure of nun cowl.
 
 To say ClothingDesc of (H - nun cowl):
-	say "This black and white cowl look rather normal and modest.".
+	say "This black and white cowl looks rather normal and modest.".
 
 To say ShortDesc of (H - nun cowl):
 	say "nun cowl".
@@ -322,6 +326,7 @@ Definition: doll hairbow is orange themed: decide yes.
 Definition: doll hairbow is fetish appropriate:
 	if diaper quest is 1, decide yes;
 	decide no.
+Definition: doll hairbow is halloween themed: decide yes.
 
 To decide which number is the initial cringe of (C - doll hairbow):
 	decide on 3.
@@ -333,34 +338,117 @@ Definition: doll hairbow (called C) is removal-blocking: [Some items (mainly hea
 	decide no.
 
 To compute full outfit summon of (H - doll hairbow):
-	summon H cursed;
+	blandify and reveal H;
+	now H is cursed;
 	say "You are wearing a [H], ";
-	[if doll-dress is actually summonable:
+	if doll-dress is actually summonable:
 		summon doll-dress;
-		say "a [doll-dress], ";]
+		say "a [doll-dress], ";
 	if black-and-orange rubber stockings is actually summonable:
 		summon black-and-orange rubber stockings uncursed;
 		say "a [black-and-orange rubber stockings], ";
 	if red-orange briefs is actually summonable:
 		summon red-orange briefs uncursed;
 		say "a [red-orange briefs], ";
-	let P be a random ghost pacifier;
+	[let P be a random ghost pacifier;
 	if P is actually summonable:
 		summon P;
 		now P is strength stealing;
-		say "a [P], ";
+		say "a [P], ";]
 	let S be black girly bow court heels;
 	if S is actually summonable:
 		summon S uncursed;
 		now the heel-height of S is 1;
 		say "and a [S]!";
-	blandify and reveal doll-dress;
+	summon H cursed.
+	[blandify and reveal doll-dress;
 	now doll-dress is in the location of the player;
-	say "A [doll-dress] is on the ground in front of you almost as if you forgot to put it on[if the largeness of breasts > 1], leaving you completely topless. Eek[end if]!".
+	say "A [doll-dress] is on the ground in front of you almost as if you forgot to put it on[if the largeness of breasts > 1], leaving you completely topless. Eek[end if]!".]
 
 To compute class outfit of (H - doll hairbow):
 	class summon doll-dress;
 	class summon black girly bow court heels;
 	class summon red-orange briefs.
+
+Chapter - Quest
+
+exorcism-quest is a headgear-clothing-quest.
+
+To uniquely set up (C - doll hairbow):
+	now the quest of C is exorcism-quest.
+
+To say QuestFlav of (Q - exorcism-quest):
+	say "You sense it wants you to exorcise a humanoid ghost from the mansion.".
+
+To say QuestTitle of (Q - exorcism-quest):
+	say " (exorcism quest)".
+
+
+bat wings is a halloween headgear. bat wings is latex. Figure of bat wings is the file "Items/Accessories/Head/batwings1.png". bat wings is blondeness-negative. bat wings is brightness-negative. bat wings is redness-negative. The text-shortcut of bat wings is "batw".
+
+The printed name of bat wings is "[clothing-title-before]bat wings[clothing-title-after]".
+
+To decide which figure-name is the clothing-image of (C - bat wings):
+	decide on figure of bat wings.
+
+To say ClothingDesc of (H - bat wings):
+	say "A discreet headband makes it look like you have bat wings sprouting out of your head.".
+
+To say ShortDesc of (H - bat wings):
+	say "pair of bat wings".
+To say MediumDesc of (H - bat wings):
+	say "pair of purple bat wings".
+
+To compute SelfExamineDesc of (H - bat wings):
+	say "You are wearing a headband with purple bat wings in your [ShortDesc of hair]. ".
+
+Definition: bat wings is purple hemed: decide yes.
+Definition: bat wings is fetish appropriate:
+	if diaper quest is 1, decide yes;
+	decide no.
+Definition: bat wings is halloween themed: decide yes.
+
+To decide which number is the initial cringe of (C - bat wings):
+	decide on 2.
+
+Chapter - Class Outfit
+
+Definition: bat wings (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
+	if wearing-target is halloween rubber diaper cover, decide yes;
+	if wearing-target is purple themed and wearing-target is not C and wearing-target is not pacifier, decide yes;
+	decide no.
+
+To compute full outfit summon of (H - bat wings):
+	blandify and reveal H;
+	now H is cursed;
+	say "You are wearing a [H], ";
+	if purple-velcro-diaper is actually summonable:
+		summon purple-velcro-diaper uncursed;
+		say "a [purple-velcro-diaper], ";
+	if halloween rubber diaper cover is actually summonable:
+		summon halloween rubber diaper cover uncursed;
+		say "a [halloween rubber diaper cover], ";
+	if pumpkin bib is actually summonable:
+		summon pumpkin bib cursed;
+		now the quest of pumpkin bib is oversatiated-quest;
+		say "a [pumpkin bib], ";
+	if halloween socks is actually summonable:
+		summon halloween socks uncursed;
+		say "a [halloween socks], ";
+	if pom-pom-shoes is actually summonable:
+		summon pom-pom-shoes uncursed;
+		say "and a [pom-pom-shoes]!";
+	now bat-shape-corset is in Mansion01;
+	if a random number between 1 and 3 is 1:
+		now bat-shape-corset is cursed;
+		now bat-shape-corset is provocation;
+	say "A [bat-shape-corset] is on the ground in front of you almost as if you forgot to put it on[if the largeness of breasts > 1], leaving you completely topless. Eek[end if]!";
+	summon H cursed.
+
+To compute class outfit of (H - bat wings):
+	class summon halloween rubber diaper cover;
+	class summon pumpkin bib;
+	class summon halloween socks;
+	class summon pom-pom-shoes.
 
 Halloween Headgear ends here.

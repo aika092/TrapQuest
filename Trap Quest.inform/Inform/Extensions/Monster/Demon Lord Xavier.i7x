@@ -1394,6 +1394,7 @@ To compute unique banishment of (M - demon lord):
 		now infernal gem is in the location of the player;
 		increase the loot dropped of M by 1;
 		compute autotaking infernal gem;
+	if security interface is not authenticated, say "[variable custom style]I wonder if this gem contains any traces of the DNA that the security interface needs to authenticate its control panel...[roman type][line break]";
 	now M is bossdefeated.
 
 To say PenisFuckDesc of (M - demon lord):

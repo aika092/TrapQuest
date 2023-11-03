@@ -61,6 +61,7 @@ A time based rule (this is the iron-maiden-punishment rule):
 				unless T is the player or T is backdrop, now T is in the location of M;
 			now the player is in the location of M;
 			dislodge M;
+			update player region;
 			refresh the map-window;
 			force inventory-focus redraw; [Forces redraw of inventory window, some buttons might be the wrong colour]
 			repeat with R running through reactive monsters:

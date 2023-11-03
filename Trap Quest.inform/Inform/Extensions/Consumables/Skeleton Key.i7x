@@ -15,6 +15,20 @@ When play begins:
 		now the text-shortcut of K is the substituted form of "key[V]";
 		increase V by 1.
 
+Figure of chastity key is the file "Items/Collectibles/key5.jpg".
+Figure of collar key is the file "Items/Collectibles/key6.jpg".
+Figure of bondage key is the file "Items/Collectibles/key7.jpg".
+Figure of gag key is the file "Items/Collectibles/key8.png".
+Figure of clothing key is the file "Items/Collectibles/key9.jpg".
+
+To decide which figure-name is the examine-image of (K - a specific-key):
+	let C be a random thing covered by K;
+	if C is chastity bond, decide on Figure of chastity key;
+	if C is neckwear, decide on Figure of collar key;
+	if C is gag, decide on Figure of gag key;
+	if C is bondage, decide on Figure of bondage key;
+	decide on Figure of clothing key.
+
 To say ExamineDesc of (K - a specific-key):
 	let K be item described;
 	let C be a random thing covered by K;
@@ -58,7 +72,7 @@ skeleton key is an unlock-key. The printed name of skeleton key is "[TQlink of i
 
 Figure of skeleton key is the file "Items/Collectibles/key1.jpg".
 
-To decide which figure-name is the examine-image of (K - an unlock-key):
+To decide which figure-name is the examine-image of (K - skeleton key):
 	decide on figure of skeleton key.
 
 To say ExamineDesc of (B - skeleton key):

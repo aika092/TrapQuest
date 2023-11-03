@@ -62,6 +62,9 @@ To teleport to (R - a room):
 		now the player is in R;
 	zero focus stuff; [Location has changed so we need to empty the location window]
 	now the location of the player is discovered;
+	if playerRegion is school: [if we were inside a painting, this will have been set to school]
+		let P be a random painting in the location of the player;
+		if P is painting, compute painting completion of P;
 	update player region;
 	compute bladder cleanup;
 	if map images > 0, display entire map;

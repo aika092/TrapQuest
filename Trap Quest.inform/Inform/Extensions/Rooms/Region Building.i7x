@@ -87,7 +87,7 @@ To solve the puzzle:
 			repeat with R running through puzzle piece rooms:
 				make all directions possible for R;
 			now P is a random solvable room;
-		if debugmode > 0, say "P is [P]. ";
+		if debugmode > 0, say "P is [P] ([grid position of P]). ";
 		if P is room:
 			increase solvableRoomAttempts by 1;
 			now target-puzzle-piece is P;

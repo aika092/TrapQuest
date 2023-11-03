@@ -145,9 +145,10 @@ To say ShortDesc of (C - doll-dress):
 To say MediumDesc of (C - doll-dress):
 	say "rubber doll dress".
 
-Definition: doll-dress is transformation-protected:
+Definition: doll-dress is class-relevant:
 	if the class of the player is trick-or-treater, decide yes;
 	decide no.
 Definition: doll-dress is orange themed: decide yes.
+Definition: doll-dress is halloween themed: decide yes.
 
 Halloween Dresses ends here.

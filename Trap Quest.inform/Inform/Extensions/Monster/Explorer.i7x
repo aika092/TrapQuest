@@ -118,8 +118,8 @@ To compute perception of (M - an explorer):
 	otherwise if the explorer-bimbo of M >= 2:
 		say WhorePerceptionFlav of M;
 	otherwise:
-		if the explorer-bimbo of M is 1, say "[big he of M] [one of]winks cheekily[or]smiles warmly at[or]licks [his of M] lips while looking at you[in random order] you then continues to focus on [his of M] own adventure.";
-		otherwise say "[big he of M] [one of]nods towards[or]smiles awkwardly at[or]raises [his of M] eyebrows politely towards[in random order] you then continues to focus on [his of M] own adventure.".
+		if the explorer-bimbo of M is 1, say "[big he of M] [one of]winks cheekily[or]smiles warmly at[or]licks [his of M] lips while looking at you[in random order] you.";
+		otherwise say "[big he of M] [one of]nods towards[or]smiles awkwardly at[or]raises [his of M] eyebrows politely towards[in random order] you.".
 
 To say WhorePerceptionFlav of (M - an explorer):
 	say "[speech style of M]'Hi, fancy seeing you here.'[roman type][line break]".
@@ -143,7 +143,7 @@ To MonsterHeal (M - an explorer) by (N - a number):
 		if the health of M > the maxhealth of M, now the health of M is the maxhealth of M.[Overhealing is not allowed]
 
 [An easy way for them to get booted from their starting regions]
-Definition: an explorer (called M) is distracted:
+Definition: an explorer (called M) is uniquely distracted:
 	if M is in the location of the player:
 		let V be a random vines in the location of M;
 		if V is vines and V is aggressive and V is not penetrating a body part and V is not wrangling the player:

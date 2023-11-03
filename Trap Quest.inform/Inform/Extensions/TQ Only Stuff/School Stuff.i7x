@@ -762,7 +762,7 @@ To compute labour to (M - teacher-rochelle):
 		say "[PregFlav]A human head pushes its way out of your cunt, agonisingly slowly and painfully. Finally the head has passed through, and after a final push at the shoulders, the birthing is complete. You pick your child up off the floor and start to cradle it in your arms. [BigNameDesc of the father] appears almost as if on cue! [PregFlav of the father]Severing the umbilical cord, [he of M] pulls the baby from your hands, wraps it in a soft blanket and then carries it away.[line break][variable custom style][if the bimbo of the player < 8]That is definitely for the best.[otherwise if the bimbo of the player < 14]I guess I don't really have anywhere to raise a baby in here, anyway.[otherwise]Oh good, that means I can busy myself with finding a new stud to breed me again![end if][roman type][line break]";
 	otherwise:
 		say DefaultBirthScene.
-To compute fatherhood to (M - an ultimate-lesson-actor):
+To compute fatherhood to (M - teacher-rochelle):
 	dislodge M.
 
 To say EnslavedDominationFlav of (M - teacher-rochelle):
@@ -1705,7 +1705,7 @@ To compute chess time:
 			stimulate F from chess table;
 		if refractoryperiod > 0, compute chess loss;
 		if the student-bowl-fill of chess-lesson >= 12 and the chess-victor of chess-lesson is 0:
-			say "[bold type]The dildo machine in [student-name of ST][']s [variable F] [if the student-machine of chess-lesson is 1]keeps destroying [his of ST] [F][otherwise]begins to piston in and out of [his of ST] [F] with brutal speed and force[end if]![roman type][line break]";
+			say "[bold type]The dildo machine in [student-name of ST][']s [F] [if the student-machine of chess-lesson is 1]keeps destroying [his of ST] [F][otherwise]begins to piston in and out of [his of ST] [F] with brutal speed and force[end if]![roman type][line break]";
 			now the student-machine of chess-lesson is 1;
 			increase the student-orgasm of chess-lesson by 8;
 			decrease the the student-drink-tolerance of chess-lesson by 2;
@@ -2378,10 +2378,11 @@ To compute action (N - a number) of (M - an ultimate-lesson-actor):
 				otherwise:
 					say "With [one of]an ashamed[or]a satisfied[or]a giddy[purely at random] noise, [NameDesc of M] pulls [his of M] [manly-penis] back through the hole and quickly [one of]leaves[or]makes [himself of M] scarce[or]flees the scene[in random order].[if current-predicament is nun-walk-predicament and the semen volume of face < 4 and the semen volume of face > 0][line break][variable custom style]I've got some cum now... but is it enough to make sure I still have some left if I accidentally lose some on the way home?[roman type][line break][end if]";
 				destroy M;
-		otherwise if M is penetrating a fuckhole: [currently only gloryhole-key-predicament]
+		otherwise if M is penetrating a fuckhole: [currently only gloryhole-key-predicament and free-use-fuckhole-predicament]
 			let F be a random fuckhole penetrated by M;
 			if the sex-length of M > 0:
-				say "[one of]You slowly move your hips back and forward, [if the humiliation of the player < 10000]eyes screwed shut in shame[otherwise]looking down at the ground[end if] as you ride [FuckerDesc of M][']s [manly-penis][or]You breathe heavily as you pleasure [FuckerDesc of M][']s [manly-penis] with your [variable F][or][BigFuckerDesc of M] thrusts back and forth through the gloryhole to complement the [if the relevant sex addiction of the player > 5]enthusiastic [otherwise if the relevant sex addiction of the player < 4]slow [end if] movement of your [variable F][or][BigFuckerDesc of M] holds [himself of M] completely still, [if the sex addiction of the player < 7]forcing[otherwise if the relevant sex addiction of the player < 6]encouraging[otherwise]allowing[end if] you to do all the work with your [variable F][or][BigFuckerDesc of M] sighs with delight at the feeling of your [variable F] around [his of M] [manly-penis][or][BigFuckerDesc of M] is not holding back [his of M] sexual groans and grunts as [he of M] enjoys the feeling of [his of M] [manly-penis] moving in and out of your [variable F][in random order].";
+				if current-predicament is free-use-fuckhole-predicament, say "[one of]You [if the player is proud]screw your eyes shut in shame[otherwise]look down at the ground[end if] as [FuckerDesc of M][']s [manly-penis] thrusts in and out of your [variable F][or]You breathe heavily as [FuckerDesc of M] pleasures [his of M] [manly-penis] with your defenseless [variable F][or][BigFuckerDesc of M] thrusts back and forth, enjoying the [if the openness of F <= the girth of M]tight[otherwise]gentle[end if] grip of your [variable F][or][BigFuckerDesc of M] buries [himself of M] deep inside your [variable F] with a set of long, hard thrusts[or][BigFuckerDesc of M] sighs with delight at the feeling of your [variable F] around [his of M] [manly-penis][or][BigFuckerDesc of M] is not holding back [his of M] sexual groans and grunts as [he of M] enjoys the feeling of [his of M] [manly-penis] moving in and out of your [variable F][or][BigFuckerDesc of M] grabs your [AssDesc] as [he of M] slams in and out of your [variable F][or][BigFuckerDesc of M] treats your [variable F] as [his of M] own personal faceless onahole, pumping in and out of your [variable F] without regards for your feelings[in random order].";
+				otherwise say "[one of]You slowly move your hips back and forward, [if the humiliation of the player < 10000]eyes screwed shut in shame[otherwise]looking down at the ground[end if] as you ride [FuckerDesc of M][']s [manly-penis][or]You breathe heavily as you pleasure [FuckerDesc of M][']s [manly-penis] with your [variable F][or][BigFuckerDesc of M] thrusts back and forth through the gloryhole to complement the [if the relevant sex addiction of the player > 5]enthusiastic [otherwise if the relevant sex addiction of the player < 4]slow [end if] movement of your [variable F][or][BigFuckerDesc of M] holds [himself of M] completely still, [if the sex addiction of the player < 7]forcing[otherwise if the relevant sex addiction of the player < 6]encouraging[otherwise]allowing[end if] you to do all the work with your [variable F][or][BigFuckerDesc of M] sighs with delight at the feeling of your [variable F] around [his of M] [manly-penis][or][BigFuckerDesc of M] is not holding back [his of M] sexual groans and grunts as [he of M] enjoys the feeling of [his of M] [manly-penis] moving in and out of your [variable F][in random order].";
 				ruin F;
 				decrease the sex-length of M by 1;
 			otherwise:
@@ -2389,10 +2390,11 @@ To compute action (N - a number) of (M - an ultimate-lesson-actor):
 				otherwise AnalCount;
 				say CreampieFlav of M in F;
 				compute M finishing in F;
-				if gloryhole-key-predicament is ass-to-mouth-agreed:
-					OralSexAddictUp 1;
-					now gloryhole-key-predicament is not ass-to-mouth-agreed;
-				compute gloryhole key resolution of M;
+				if current-predicament is gloryhole-key-predicament:
+					if gloryhole-key-predicament is ass-to-mouth-agreed:
+						OralSexAddictUp 1;
+						now gloryhole-key-predicament is not ass-to-mouth-agreed;
+					compute gloryhole key resolution of M;
 				destroy M.
 To say FriendlySexResistFlav of (M - an ultimate-lesson-actor):
 	say "[if M is not penetrating face][variable custom style]'[one of]I can't take any more[or]Screw this[stopping]!'[roman type][line break][otherwise if the player is able to make sounds][variable custom style][muffled sounds][roman type][line break][end if]";
@@ -2409,6 +2411,9 @@ To check perception of (M - an ultimate-lesson-actor):
 	do nothing.
 To compute perception of (M - an ultimate-lesson-actor):
 	do nothing.
+Definition: an ultimate-lesson-actor is uniquely reactive:
+	if current-predicament is free-use-fuckhole-predicament and it is in Toilet02 and the player is in Toilet02, decide yes;
+	decide no.
 Definition: an ultimate-lesson-actor is anticipating-climax: decide no.
 Figure of unseen actor is the file "NPCs/School/unseen1.png".
 To decide which figure-name is the monster-image of (M - an ultimate-lesson-actor):
@@ -2421,6 +2426,8 @@ To compute sex resist punishment of (M - an ultimate-lesson-actor):
 	now the lesson-completed of ultimate-lesson is -1.
 To compute angry punishment of (M - an ultimate-lesson-actor):
 	compute lesson veto.
+To compute sudden floor squirt disapproval of (M - an ultimate-lesson-actor):
+	if M is in Toilet02 and current-predicament is free-use-fuckhole-predicament, say "[speech style of M]'[one of]Holy shit, was that someone else's cum?!'[or]You're fucking gross.'[or]I guess I'm not the first guy to fuck this Free Use whore today, then...'[or]Woah!'[or]Holy shit, that nearly hit me!'[or]Fucking ASSCUM?!'[cycling][roman type][line break]".
 To compute SelectionFailure of (M - an ultimate-lesson-actor):
 	say "You feel a [LongDickDesc of M] shoved [one of]up against your torso[or]into your hand's grip[or]against your cheek[in random order] and moved around as [NameDesc of M] waits for an available hole.".
 To say AnalDefloweringFlav of (M - an ultimate-lesson-actor):
@@ -2866,6 +2873,27 @@ To say StoryAnswer of (M - student-tiana):
 
 To say AdviceAnswer of (M - student-tiana):
 	say "[speech style of M]'[one of]It's really hard to get around on your knees when you have tits as big as these puppies. Try to stay on your feet!'[or]You don't always have to wear a bra that fits. Sometimes it only matters that you're close enough.'[at random][roman type][line break]".
+
+student-interaction-boobs-please is a student-interaction.
+
+Definition: student-interaction-boobs-please is student-eligible:
+	if current-monster is student-tiana and the current-rank of current-monster >= 3, decide yes;
+	decide no.
+Definition: student-interaction-boobs-please is eligible:
+	if the flesh volume of breasts >= the real flesh volume of breasts + 3, decide yes;
+	decide no.
+
+To resolve (SI - student-interaction-boobs-please):
+	let M be current-monster;
+	say "[BigNameDesc of M] stares at your [BreastDesc], looking somewhat dizzy.[line break][speech style of M]'Your boobs... Could I have some of your boobs please?'[roman type][line break]";
+	if the player is consenting:
+		say "[if the player is able to speak][variable custom style]'Umm... Sure?'[roman type][line break][end if]You shrug, a bit confused.[line break][speech style of M]'Yay! Thankies!'[roman type][line break][BigNameDesc of M] places [his of M] hands on your bust, and mutters a few magic chants. You can barely believe it as you watch your own boobs shrink, and [NameDesc of M][']s boobs grow by the same amount!";
+		BustDown 3;
+		say "[speech style of M]'I'll totes pass Miss Seraphina's lessons now!'[roman type][line break][BigNameDesc of M] giggles as [he of M] examines [his of M] new massive mammaries, while you stare down at your [BreastDesc].";
+	otherwise:
+		say "[if the player is able to speak][variable custom style]'Err, what? No.'[roman type][line break][end if]You shake your head with confused frown.[line break][speech style of M]'Aww, okay...'[roman type][line break][BigNameDesc of M] shrugs and wanders off, still looking somewhat dazed.".
+
+
 
 Book - Minnie
 
@@ -3428,6 +3456,19 @@ To say AdviceAnswer of (M - student-hiroko):
 
 To compute teaching of (M - student-hiroko):
 	say "[speech style of M]'You can't teach looks. You're always going to be ugly, too bad.'[roman type][line break]".
+
+student-interaction-asscumfart is a student-interaction.
+
+Definition: student-interaction-asscumfart is student-eligible:
+	if current-monster is student-hiroko and the current-rank of current-monster >= 5, decide yes;
+	decide no.
+
+To resolve (SI - student-interaction-asscumfart):
+	let M be current-monster;
+	say "[BigNameDesc of M] grunts.[line break][speech style of M]'Oh, fuck...'[roman type][line break]With a nasty rasping sound, [NameDesc of M] farts a huge load of [semen] out of [his of M] asshole and onto the ground.";
+	SemenPuddleUp 4;
+	say "[BigNameDesc of M] turns red in the face.[line break][speech style of M]'Don't you dare say a word.'[roman type][line break]You just smirk, feeling somewhat better about yourself from having seen someone humiliate themselves in front of you like that.";
+	dignify 1000.
 
 Part - TRYHARD STUDENTS
 

@@ -5,6 +5,7 @@ To dislodge (C - a thing):
 	if C is monster:
 		now C is doing nothing special;
 		now C is unwrapped;
+		now C is unseduced;
 	repeat with B running through body parts penetrated by C:
 		now C is not penetrating B;
 	repeat with B running through things grabbed by C:

@@ -135,11 +135,23 @@ Check entering podium:
 				let A be a random pair of anklecuffs;
 				if A is actually summonable:
 					summon A locked;
+					let K be a random off-stage specific-key;
+					if K is a thing:
+						now K is covering A;
+						now K is carried by M;
 				if tough-shit is 1 and pair of wristcuffs is actually summonable:
 					summon pair of wristcuffs locked;
 					now pair of wristcuffs is wrist-bound-in-front;
+					let K be a random off-stage specific-key;
+					if K is a thing:
+						now K is covering pair of wristcuffs;
+						now K is carried by M;
 				if slave collar is actually summonable:
 					summon slave collar locked;
+					let K be a random off-stage specific-key;
+					if K is a thing:
+						now K is covering slave collar;
+						now K is carried by M;
 				say "Opening your eyes you move forward to step off the stage only to be brought up short by chains binding you. Blinking your eyes you gasp in surprise and stare in shock at actual chains binding you, very real chains. [if A is worn and pair of wristcuffs is worn]You are now wearing a [A] and a [pair of wristcuffs]! [otherwise if A is worn]You are now wearing a [A]! [otherwise if pair of wristcuffs is worn]You are now wearing a [pair of wristcuffs]! [end if][if slave collar is worn]You have a [printed name of slave collar] around your neck! [end if][line break][first custom style]'SOLD!'[roman type][line break]yells the Auctioneer as [he of male-m] slams [his of male-m] gavel down on the podium. Swallowing, you shiver as [he of male-m] yanks at your chains, hauling you forward to meet the winning bidder, your new Master... [NameDesc of M]![line break][first custom style]'Get on your knees, slave.'[roman type][line break][big he of M] pulls you by [if the largeness of hair > 2]your hair[otherwise]the neck[end if] and you trip over your bondage, landing on your knees. The magical scene behind you disappears, leaving you with an empty stage, [NameDesc of M], and [if the sex addiction of the player < 13]a decision to be made - fight, flight or fuck?[otherwise][his of M] waiting [manly-penis].[end if]";
 			now the stance of the player is 1;
 		otherwise if the class of the player is adventurer and bondage protection < 2 and slave-dress is unclash summonable:

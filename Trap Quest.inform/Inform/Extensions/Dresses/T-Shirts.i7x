@@ -405,4 +405,31 @@ To compute periodic effect of (C - no-bra-no-panties T-Shirt):
 			say "Your [C] shudders, and you feel your [K] shimmer and disappear!";
 			destroy K.
 
+Part 15 - Not Cheating T-shirt
+
+not-cheating T-Shirt is a T-shirt. not-cheating T-Shirt is unique. The printed name of not-cheating T-Shirt is "[clothing-title-before]it's not cheating T-Shirt[clothing-title-after]". The text-shortcut of not-cheating T-Shirt is "ntct". Understand "it's not cheating", "its not cheating", "not cheating", "cheating" as not-cheating T-Shirt.
+
+Figure of not-cheating T-Shirt is the file "Items/Clothes/Upper/Shirts/tshirt14.png".
+
+To decide which figure-name is clothing-image of (C - not-cheating T-Shirt):
+	decide on figure of not-cheating T-Shirt.
+
+To say ClothingDesc of (C - not-cheating T-Shirt):
+	say "This unisex T-shirt has the words 'it's not CHEATING if my husband watches' in large blue letters on the front.".
+
+To say ShortDesc of (C - not-cheating T-Shirt):
+	say "it's not cheating T-Shirt".
+
+Definition: not-cheating T-Shirt is white themed: decide yes.
+Definition: not-cheating T-Shirt is class-relevant:
+	if the class of the player is bride, decide yes;
+	decide no.
+
+To decide which number is the initial outrage of (C - not-cheating T-Shirt):
+	decide on 5.
+
+To compute (C - not-cheating T-Shirt) unique inheriting from (D - hotwife dress):
+	if the raw-magic-modifier of C < 0, now the raw-magic-modifier of C is 0;
+	now C is dominance.
+
 T-Shirts ends here.

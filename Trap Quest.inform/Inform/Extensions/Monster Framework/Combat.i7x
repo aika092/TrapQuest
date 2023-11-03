@@ -168,7 +168,9 @@ This function runs any code that needs to be executed whenever the player finish
 To orgasm (M - a monster):
 	if M is penetrating face and M is male, progress quest of naughty-quest;
 	if M is dark skinned:
-		if M is penetrating a fuckhole, BBCAddictUp 1;
+		if M is penetrating a fuckhole:
+			if there is a worn dark magician girl dress, MagicPowerRefresh the girth of M;
+			BBCAddictUp 1;
 		if royal scepter is worn:
 			if royal scepter is not blacked:
 				say "Your [royal scepter] transforms ";
@@ -182,6 +184,7 @@ To orgasm (M - a monster):
 	if the class of the player is worshipper and M is infernal, compute demonBoon of M;
 	if the class of the player is succubus, FavourUp M by 1;
 	if ghost-strapon is worn, compute ghostGrowth of M;
+	if M is male and watersports fetish is 0 and M is penetrating a fuckhole, progress quest of human-toilet-quest;
 	if M is male and M is intelligent and M is in the location of the player and M is not dying, compute betrothal of M;
 	if M is royal guard and the class of the player is princess:
 		increase the duties-performed of royal-quest by 1; [making guards cum completes the quest twice as fast]
@@ -194,6 +197,11 @@ To orgasm (M - a monster):
 		let T be the substituted form of "making [NameDesc of M] cum";
 		now the video-event of vm is T;[note that the video-event always needs to be a present participle]
 	if notebook is worn or (the class of the player is schoolgirl and notebook is in the location of the player), compute studying 0 of M; [magical schoolgirls can have the notebook temporarily disarmed by tentacle monsters. the intention is that they should still get to study it]
+	let G be a random fuckhole-mode glue penetrating face;
+	if G is glue:
+		say "[BigNameDesc of M][']s acts seem to have slightly weakened the glue's hold on you!";
+		decrease the stickiness of the player by 1;
+		if the stickiness of the player <= 0, compute raw glue escaping a random glue in the location of the player with 0;
 	if there is a summoning portal in the location of the player:
 		let S be a random summoning portal in the location of the player;
 		unless S is tentacle-breeder:
@@ -770,8 +778,9 @@ To compute the dq cage trap stuck punishment of (M - a monster):
 
 This is the trap stuck player taunting rule:
 	if the player is trap stuck:
-		compute the default taunting of current-monster;
-		rule succeeds.
+		unless current-monster is patron and there is a fuckhole-mode glue penetrating face:
+			compute the default taunting of current-monster;
+			rule succeeds.
 The trap stuck player taunting rule is listed last in the default taunting rules.
 
 To compute the default taunting of (M - a monster):
@@ -1145,8 +1154,12 @@ To compute enticing of (M - a monster):
 		if B is an actual target body part:
 			say EnticeFlav of M with B;
 			let S be the relevant sex addiction of B;
-			if B is thighs, now S is the grossness addiction of the player;
-			if B is belly, now S is the urine taste addiction of the player;
+			if B is thighs:
+				now S is the grossness addiction of the player;
+			otherwise if B is belly:
+				now S is the urine taste addiction of the player;
+			otherwise:
+				if watersports fetish is 0 and the class of the player is human toilet, increase S by 10;
 			if S > 5: [at 5 or less addiction, this can't happen]
 				check enticing of M with temptation level S;
 				if the player is prone:
@@ -1312,10 +1325,10 @@ To compute (M - a monster) removing (C - a thing): [This is used for removing in
 	if M is intelligent:
 		say "[BigNameDesc of M] [if C is locked]unlocks, and then [end if][if C is penetrating an orifice]effortlessly pulls out[otherwise][one of]removes[or]relieves you of[or]confiscates[then at random][end if] your [ShortDesc of C].";
 		now M is carrying C;
+		now C is temporarily-removed;
 	otherwise:
 		say "[BigNameDesc of M] [if C is locked]unlocks, and then [end if][if C is penetrating an orifice]effortlessly pulls out[otherwise]removes[end if] your [ShortDesc of C] and discards it onto the floor.";
 		now C is in the location of the player;
-		now C is temporarily-removed;
 	if C is cursed pacifier and the raw intelligence of the player > 1:
 		let I be the raw intelligence of the player / 2;
 		increase the stolen-intelligence of C by I;
@@ -1927,7 +1940,6 @@ To decide which number is the entice rarity of (M - a monster):
 To decide which number is the raw entice rarity of (M - a monster):
 	decide on 3 * combatSpeed. [The higher this is, the less often they do their entice move]
 Definition: a monster (called M) is ready to entice:
-	if diaper quest is 0 and the player is not a december 2022 top donator, decide no;
 	if diaper quest is 1 and the player is not a december 2022 diaper donator, decide no;
 	if M is enticed, decide no;
 	if M is uniquely ready to entice, decide yes;

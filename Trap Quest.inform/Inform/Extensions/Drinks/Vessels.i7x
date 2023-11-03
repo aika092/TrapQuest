@@ -327,13 +327,12 @@ A time based rule:
 		say "[bold type]Suddenly, your [ShortVesselDesc of gold chalice] glows brightly and fills itself with a small mouthful of [if diaper quest is 1][milk][otherwise][urine][end if]![roman type][line break]";
 		repeat with W running through nonstalking wisps:
 			silently set up W;
-			now the wisp-quest of W is drink-milk-wisp-quest;
+			if diaper quest is 1, now the wisp-quest of W is drink-milk-wisp-quest;
+			otherwise now the wisp-quest of W is drink-urine-wisp-quest;
 			now the wisp-trigger of W is a random eligible appropriate wisp trigger;
 			now the wisp-punishment of W is bimbo-wisp-punishment;
 			if (a random number between 0 and 1) + (a random number between 0 and 1) < game difficulty, now the wisp-punishment of W is a random appropriate wisp punishment;
-			now W is everywhere;
-			update backdrop positions;
-			now the text-shortcut of W is the substituted form of "[ColourDesc of W]";
+			update background colour of W;
 			say "[bold type]A [ColourDesc of W] curse wisp appears, and begins hovering behind you! [roman type]You can sense that you must [bold type][wisp-quest of W][roman type] before you next [bold type][wisp-trigger of W][roman type], or else you will [bold type][wisp-punishment of W][roman type].";
 		say "[variable custom style]What a freaky room! Curse these spirits![roman type][line break]".
 

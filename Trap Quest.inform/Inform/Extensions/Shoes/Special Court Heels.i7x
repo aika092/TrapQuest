@@ -33,6 +33,7 @@ The printed name of black girly bow court heels is "[clothing-title-before]pair 
 
 Definition: black girly bow court heels is black themed: decide yes.
 Definition: black girly bow court heels is orange themed: decide yes.
+Definition: black girly bow court heels is halloween themed: decide yes.
 
 Figure of black girly bow court heels is the file "Items/Clothes/Lower/Feet/Heels/Court/court7.png".
 
@@ -144,5 +145,30 @@ To say ClothingDesc of (C - queen-of-spades heels):
 
 To decide which object is the unique-upgrade-target of (C - queen-of-hearts heels):
 	decide on queen-of-spades heels.
+
+savior's heels is a stiletto heels. savior's heels is leather. savior's heels is unique. The heel-height of savior's heels is 1. Understand "savior" as savior's heels.
+
+The printed name of savior's heels is "[clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch queen of spades heels[clothing-title-after]". The text-shortcut of savior's heels is "svh".
+
+To decide which figure-name is the clothing-image of (H - savior's heels):
+	decide on the figure of savior heels.
+
+Figure of savior heels is the file "Items/Clothes/Lower/Feet/Heels/Special/savior1.png".
+
+Definition: savior's heels is pink themed: decide yes.
+Definition: savior's heels is strut enabling: decide yes.
+Definition: savior's heels is transformation-protected: decide yes.
+Definition: savior's heels is class-relevant:
+	if the class of the player is princess, decide yes;
+	decide no.
+
+To decide which number is the hindrance-modifier of (C - savior's heels):
+	decide on 0.
+
+To say UniqueShortDesc of (C - savior's heels):
+	say "savior's heels".
+
+To say ClothingDesc of (C - savior's heels):
+	say "A unique pair of pink leather [heel-height of C] inch heels that have a triple-teardrop indent on the front, which matches the three gems on the jewelled tiara. You can sense that it empowers your laser attacks. [SteadinessDesc of C]".
 
 Special Court Heels ends here.

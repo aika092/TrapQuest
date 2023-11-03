@@ -207,7 +207,7 @@ Check climbing male-gloryhole:
 Check entering male-gloryhole:
 	if the player is not possessing a penis, say "You don't have a penis." instead;
 	if the player is prone, say "You would need to be standing up." instead;
-	if the player is pee protected, say "You would need to remove your [random worn pee covering clothing] first." instead;
+	if the player is pee protected, say "You would need to remove your [random pee covering clothing] first." instead;
 	allocate 1 seconds;
 	say "You insert your [player-penis] but nothing happens. There must be nobody on the other side, or at least nobody interested in your [player-penis]." instead.
 
@@ -226,7 +226,7 @@ Check climbing female-gloryhole:
 Check entering female-gloryhole:
 	if the player is not possessing a penis, say "You don't have a penis." instead;
 	if the player is prone, say "You would need to be standing up." instead;
-	if the player is pee protected, say "You would need to remove your [random worn pee covering clothing] first." instead;
+	if the player is pee protected, say "You would need to remove your [random pee covering clothing] first." instead;
 	allocate 1 seconds;
 	say "You insert your [player-penis] but nothing happens. There must be nobody on the other side, or at least nobody interested in your [player-penis]." instead.
 To construct normal buttons for (D - female-gloryhole):
@@ -246,7 +246,7 @@ Check attacking female-gloryhole:
 	say "You knock on the wall next to the gloryhole.";
 	let M be a random ultimate-lesson-actor in the location of the player;
 	if M is monster:
-		now the sex-length of M is a random number between 3 and 6;
+		now the sex-length of M is a random number between 2 and 6;
 		let OT be a random number between 1 and 5;
 		if the total volume of face > 0, now OT is a random number between 0 and 3; [higher chance of finding someone who is willing to accept just a noise]
 		let T be OT;
@@ -5180,7 +5180,7 @@ To check team blowjob race predicament orgasm:
 		say "The bound [man of male-m] [one of]coos[or]moans[or]groans[then at random] into [his of male-m] gag. Is [he of male-m] getting close?".
 
 To construct unique buttons for (T - team-blowjob-race-predicament):
-	if T is penetrating a body part:
+	[if T is penetrating a body part:
 		if ButtonTableFull is 0:
 			choose a blank row in the Table of Buttons;
 			now the ButtonImage entry is Figure of SubmitButton;
@@ -5190,8 +5190,8 @@ To construct unique buttons for (T - team-blowjob-race-predicament):
 			choose a blank row in the Table of Buttons;
 			now the ButtonColour entry is lightModeFullGreen;
 			now the ButtonImage entry is Figure of ResistButton;
-			now the ButtonCommand entry is "resist";
-	otherwise:
+			now the ButtonCommand entry is "resist";]
+	if T is not penetrating a body part:
 		if ButtonTableFull is 0 and T is reeled-out:
 			choose a blank row in the Table of Buttons;
 			now the ButtonImage entry is Figure of MouthButton;
@@ -8113,6 +8113,198 @@ To decide which figure-name is the kart-icon of (P - a person):
 
 
 
+free-use-fuckhole-predicament is a predicament. free-use-fuckhole-predicament can be key-trapped.
+Definition: free-use-fuckhole-predicament is appropriate:
+	if diaper quest is 0 and the player is an october 2023 top donator and the rank of the player > 4, decide yes;
+	decide no.
+Figure of free use fuckhole predicament is the file "Special/Cutscene/cutscene-predicament-freeuse1.jpg".
+Figure of free use fuckhole predicament pulled is the file "Special/Cutscene/cutscene-predicament-freeuse2.jpg".
+
+To execute (FFP - free-use-fuckhole-predicament):
+	now the player is in Toilet02;
+	now the stance of the player is 1;
+	summon wrist collar bar locked;
+	now wrist collar bar is predicament-fixed;
+	let K be a random off-stage specific-key;
+	if K is specific-key:
+		now K is covering wrist collar bar;
+		now K is in Predicament01;
+	say "Suddenly you find yourself fully naked, stuck halfway through hole in a wall in a toilet cubicle! Your arms and neck are locked in a strict metal wrist collar bar, and some sort of string has been tightly tied to your nipples. A television screen has been placed in front of you, and shows a live feed of a butt in a wall, with a sign dangling from the same sort of red string, which says [']FREE USE['] on it.[paragraph break]A robotic voice issues from a speaker in the wall above you.[line break][first custom style]'WELCOME TO THE [']EXTRA CREDIT['] CLASS. [PredicamentRewardExplanation]TO EARN THIS TROPHY, YOU MUST SIMPLY RETURN HOME. BUT IN ORDER TO EARN RELEASE, YOU MUST WAIT UNTIL THE ICE HOLDING YOUR BONDAGE ROPE IN PLACE HAS MELTED. THE WALL HOLDING YOU IS LARGELY SOUNDPROOF, BUT THE TELEVISION SCREEN IN FRONT OF YOU WILL ALLOW YOU TO SEE AND HEAR EVERYTHING HAPPENING TO YOUR REAR END. RAISING YOUR TORSO MAY HELP THE ICE MELT FASTER.[paragraph break]'THE KEY TO YOUR WRIST COLLAR BAR IS IN THE ABANDONED WAREHOUSE TO THE WEST.'[roman type][line break][PredicamentRewardExplanationReaction][roman type][paragraph break]You don't see how raising your torso could possibly do anything to the ice block, but you suppose it's worth experimenting with.";
+	now temporaryYesNoBackground is Figure of free use fuckhole predicament;
+	compute single choice question "Test pulling your torso up";
+	say "Pain shoots through your nipples as they are stretched painfully by the motion. But you now see what is possible with this action - the sign that says [']Free Use['] has been pulled upwards, revealing a second sign that says [']Please! HELP ME MELT THE ICE CUBE!['][roman type][line break]But also, it really fucking hurts.";
+	UnflinchingPainUp 4;
+	now temporaryYesNoBackground is Figure of free use fuckhole predicament pulled;
+	compute single choice question "Lower your torso";
+	say "By lowering your body again, you relieve the pressure on your nipples and give your abdominal muscles some rest.";
+	now temporaryYesNoBackground is Figure of free use fuckhole predicament;
+	let ice-start be a random number between 1100 and 1300;
+	let ice-left be ice-start;
+	let current-stance be 0; [0 is leaning down, 1 is pulling up]
+	let nipple-pain be 5;
+	let man-friendliness be 0;
+	let man-seen-sign be false;
+	let sign-notice-state be 0; [0: might see sign; -1: won't see sign; X: failed to see sign X times]
+	let man-helping be false;
+	let not-bothering be false;
+	let originally-said-no be false;
+	let only-just-seen-sign be false;
+	let soreness-tick be 0;
+	let nipple-tick be 0;
+	while ice-left > 0:
+		say "The ice looks [if ice-left > ice-start / 2]still rather solid[otherwise if ice-left > ice-start / 3]somewhat melted[otherwise if ice-left > ice-start / 4]partially melted[otherwise]mostly melted[end if].";
+		reset multiple choice questions;
+		if the fatigue of the player >= the buckle threshold of the player, say "[bold type]Your abs are burning - you are too tired to hold yourself up [if current-stance is 0]right now[otherwise]any more[end if].[roman type][line break]";
+		set numerical response 1 to "[if current-stance is 0]Remain[otherwise]Lower yourself back[end if] facedown";
+		if the fatigue of the player < the buckle threshold of the player, set numerical response 2 to "[if current-stance is 0]Pull yourself up[otherwise]Keep holding your torso up[end if]";
+		compute multiple choice question;
+		if player-numerical-response is 1:
+			say "You lay [if current-stance is 1]back [end if]down, giving your nipples and abs a rest.";
+			now current-stance is 0;
+			now temporaryYesNoBackground is Figure of free use fuckhole predicament;
+			decrease the fatigue of the player by the buckle threshold of the player / 10;
+			if the fatigue of the player < 0, now the fatigue of the player is 0;
+		otherwise:
+			say "You heave your torso upwards, pulling on the ropes with your nipples.";
+			if nipple-tick > a random number between 1 and 3:
+				PainUp nipple-pain;
+				increase nipple-pain by 1;
+				say "Your nipples get more [one of][or]and more [stopping]sore[one of] - [bold type]Every time you allow your nipples to experience pain like this, it will hurt a bit more than the time before.[roman type][line break][or].[stopping]";
+				now nipple-tick is 0;
+			otherwise:
+				increase nipple-tick by 1;
+			now current-stance is 1;
+			now temporaryYesNoBackground is Figure of free use fuckhole predicament pulled;
+			increase the fatigue of the player by 20;
+		let M be a random ultimate-lesson-actor in the location of the player;
+		if M is a monster:
+			let gonna-penetrate be false;
+			if M is penetrating a fuckhole:
+				compute action 1 of M;
+				if M is dying, finally destroy M;
+				if M is not in the location of the player, say "You watch [NameDesc of M] zip up [his of M] [manly-penis] and [one of]take [his of M] leave[or]walk away[or]leave[or]exit the cubicle[in random order].";
+			otherwise:
+				if man-seen-sign is false and man-helping is false and the player is getting lucky:
+					say "[BigNameDesc of M] notices the sign just in time! [GotLuckyFlav]";
+					now man-seen-sign is true;
+					now only-just-seen-sign is true;
+				if man-seen-sign is false and man-helping is false:
+					if current-stance is 1, say "[BigNameDesc of M] doesn't see the sign in time!";
+					if man-friendliness >= a random number between 4 and 5:
+						say "[speech style of M]'Something seems off. I'm going to leave [him of the player] alone.'[roman type][line break][BigNameDesc of M] turns around and leaves!";
+						finally destroy M;
+					otherwise:
+						now gonna-penetrate is true;
+				otherwise if man-helping is false:
+					if man-friendliness is 0:
+						now gonna-penetrate is true;
+						say "[speech style of M]'Haha, as if I was ever going to help you escape.'[roman type][line break]";
+					otherwise:
+						say "[BigNameDesc of M] seems to consider [his of M] options.";
+						if only-just-seen-sign is false and current-stance is 1, increase man-friendliness by a random number between 0 and 1;
+						if a random number between 1 and 4 <= man-friendliness, now man-helping is true;
+						otherwise now originally-said-no is true;
+						if a random number between 1 and 4 >= man-friendliness, now gonna-penetrate is true;
+						if man-helping is true and gonna-penetrate is false:
+							say "[speech style of M]'Fine, I'll give this poor [one of][boy of the player][or]soul[cycling] a helping hand.'[roman type][line break]";
+						otherwise if man-helping is true:
+							say "[speech style of M]'Fine, I'll help you escape, but I'm assuming the [']Free Use['] sign still stands!'[roman type][line break]";
+						otherwise if gonna-penetrate is true:
+							say "[speech style of M]'Free Use means Free Use. I don't care about helping this slut escape.'[roman type][line break]";
+						otherwise:
+							say "[speech style of M]'This is all too weird.'[roman type][line break][BigNameDesc of M] turns around and leaves!";
+							finally destroy M;
+			if gonna-penetrate is true:
+				let F be asshole;
+				if the player is possessing a vagina and a random number between 0 and 4 <= man-friendliness, now F is vagina;
+				say "[BigNameDesc of M] [one of]pulls your [AssDesc] apart[or]grabs your [AssDesc][or]spreads your [AssDesc][or]peels apart your [AssDesc][in random order] and [one of]works [his of M] half-erect [manly-penis] into your [variable F], where it quickly expands to full mast[or]stuffs [his of M] rapidly hardening [manly-penis] into your [if F is asshole]poor defenseless [asshole][otherwise]awaiting [vagina][end if][or]spits on your [variable F] before sliding [his of M] rock hard [manly-penis] inside[or]pushes [his of M] [manly-penis] into the entrance to your [variable F][or]eases [his of M] hot, throbbing [manly-penis] into your [variable F][in random order].";
+				now M is penetrating F;
+				now the sex-length of M is a random number between 2 and 6;
+			if M is in the location of the player:
+				if current-stance is 1 and M is penetrating a fuckhole:
+					if man-seen-sign is false:
+						if sign-notice-state < 0:
+							do nothing;
+						otherwise if a random number between 1 and 3 > 1:
+							if sign-notice-state is 0, say "[BigNameDesc of M] is too busy fucking you, and doesn't notice the new sign!";
+							if sign-notice-state is 0 and a random number between 1 and 2 is 1:
+								now sign-notice-state is -1;
+								say "[variable custom style]It's no good, [he of M][']s not looking up at all - [he of M][']s just staring at my ass![roman type][line break]";
+							otherwise:
+								increase sign-notice-state by 1;
+						otherwise:
+							if a random number between 1 and 4 <= man-friendliness, now man-helping is true;
+							say "[speech style of M]'[one of]Oh... There's a second sign[or]Huh? Oh, another sign[in random order]! [if man-friendliness is 0]...Why would I give a fuck about helping you get free?'[otherwise if man-friendliness is 1 and man-helping is false]Hmm... Nah, I don't see how I could help with that.'[otherwise if man-helping is false][one of]...I'm sorry, I don't know what I could do to help.'[or]But I don't really have anything that could heat up ice...? Oh well.'[or]Well... I'm sorry, but that would just make my hands all cold. I don't want to do that.'[in random order][otherwise]Well I guess... Fine... But I'm not pulling out.'[end if][roman type][line break]";
+							now man-seen-sign is true;
+					otherwise if not-bothering is true:
+						if the player is getting unlucky:
+							say "[speech style of M]'[one of]Hmm, I can see the sign again now, but I'm not convinced your heart's really in it.'[or]Oh there's the sign again. But if [he of the player][']s only holding it up some of the time, is [he of the player] really that fussed whether I help [him of the player] out or not?[in random order][roman type][line break][GotUnluckyFlav]";
+						otherwise:
+							say "[speech style of M]'Fine, fine, [one of]I'll help[or]I get it[cycling].'[roman type][line break]";
+							now not-bothering is false;
+					otherwise if originally-said-no is true and man-helping is false and man-friendliness > 0:
+						increase man-friendliness by 1;
+						if man-friendliness >= a random number between 3 and 5:
+							say "[speech style of M]'Ugh, [one of]fine, I guess I could help a little bit[or]I can't look at that sign withing feeling guilty. I'll help you melt your damn ice cube[cycling].'[roman type][line break]";
+							now man-helping is true;
+				if man-helping is true and not-bothering is false:
+					if M is penetrating a fuckhole and current-stance is 0 and the player is getting unlucky:
+						say "[speech style of M]'[one of]You can't want to escape that badly if you've put the sign away!'[or]Oh? Just [']Free Use['] again?'[or]Where did that other sign go? Do you want me to stop helping?'[in random order][roman type][line break][BigNameDesc of M] seems to decide against bothering with the ice cube right now. [GotUnluckyFlav]";
+						now not-bothering is true;
+					otherwise:
+						say "[BigNameDesc of M] [one of]places [his of M] hands over the ice cube, helping warm it up[or]rubs the ice cube with [his of M] hands[or]cups the ice cube with [his of M] hands and breathes warm air on it[cycling].";
+						decrease ice-left by 50;
+						if M is not penetrating a fuckhole:
+							if the player is getting lucky:
+								say "It looks like [BigNameDesc of M] is going to stick around for a bit longer and continue to help out! [GotLuckyFlav]";
+							otherwise:
+								say "[BigNameDesc of M] seems satisfied that [he of M][']s helped you enough, and takes [his of M] leave.";
+								finally destroy M;
+		otherwise:
+			if a random number between 1 and 3 is 1:
+				let M be a random ultimate-lesson-actor;
+				now M is in the location of the player;
+				now man-seen-sign is false;
+				now man-helping is false;
+				now not-bothering is false;
+				now originally-said-no is false;
+				now only-just-seen-sign is true;
+				now sign-notice-state is 0;
+				now man-friendliness is a random number between 0 and 4;
+				say "Suddenly, [NameDesc of M] appears behind you!";
+				let MF be man-friendliness + a random number between 0 and 1;
+				if current-stance is 0:
+					say "[speech style of M]'[if MF is 0][one of]Oh I am going to ruin you[or]What sort of nasty skank would let people fuck [him of the player] in a toilet[in random order]...'[otherwise if MF is 1][one of]Sweet, free [cunt][or]Free use? Fuck yes[in random order]!'[otherwise if MF is 2][one of]This is going to be fun[or]Holy shit, this is so fucking hot[in random order].'[otherwise if MF is 3][one of]Oh wow, is this real[or]Am I dreaming[in random order]?'[otherwise][one of]I'm not sure I can morally do this without talking to [him of the player] first[or]This is certainly an ethical grey area[in random order]...'[end if][roman type][line break]";
+				otherwise:
+					now man-seen-sign is true;
+					now only-just-seen-sign is false;
+					say "[speech style of M]'[if MF is 0]I do not give a fuck about the ice, but I definitely like the idea of free use.'[otherwise if MF is 1][one of]Hmm...'[or]Hmm, I guess I could do both...'[purely at random][otherwise if MF is 2]Hmm, does this mean that [he of the player] really is [']Free Use['] or not?'[otherwise if MF is 3][one of]Hmm[or]Okay, this is weird[purely at random]...'[otherwise]I don't like this at all.'[end if][roman type][line break]";
+		decrease ice-left by 20;
+		if ice-left <= 0 and there is a monster penetrating a fuckhole, now ice-left is 1;
+		if the number of monsters penetrating a fuckhole is 0:
+			increase soreness-tick by 1;
+			if soreness-tick > a random number between 1 and 3:
+				let F be asshole;
+				if the player is possessing a vagina and the soreness of vagina > the soreness of asshole, now F is vagina;
+				heal F times 1;
+				now soreness-tick is 0;
+	say "You pull forward, and the rope slips away. You're free! You quickly clamber forwards out of the hole.[line break][variable custom style]That was insane! And now I still need to decide whether to go to the abandoned warehouse to get the key, or just accept that I'm going to be locked in this wrist collar bar for some time...[roman type][line break]";
+	if a random number between 1 and 2 is bukkake fetish, now FFP is key-trapped;
+	set up 13 bystanders.
+
+Report going when current-predicament is free-use-fuckhole-predicament:
+	if free-use-fuckhole-predicament is key-trapped and the player is in Predicament01:
+		say "You arrive in the warehouse and find the key! Unfortunately, the key has been placed in its own dastardly device. The key is dangling from a string, inside a perspex box specifically designed to ruin your day - to get the key, you'll need to put your head up inside the box, and pull the key out with your teeth. But when you do, the string connected to the key will pull a latch, and cause the tank above to open, which will cause a gallon of [semen] to spill down onto your face!";
+
+Check taking specific-key when current-predicament is free-use-fuckhole-predicament:
+	if free-use-fuckhole-predicament is key-trapped and the player is in Predicament01:
+		say "This will cover you in [semen]. Are you sure you want to do that?";
+		if the player is not consenting, say "You decide against it." instead.
+
+Report taking specific-key when current-predicament is free-use-fuckhole-predicament:
+	if free-use-fuckhole-predicament is key-trapped and the player is in Predicament01:
+		say "As you pull the string, the tank opens!";
+		UnannouncedSquirt semen on face by 100.
 
 
 Predicament World ends here.

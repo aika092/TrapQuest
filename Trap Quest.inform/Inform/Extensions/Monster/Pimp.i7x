@@ -31,6 +31,9 @@ Definition: pimp (called M) is willing to shag:
 
 Definition: pimp is willing to let go: decide no.
 
+To decide which number is the freebie-reluctance of (M - pimp):
+	decide on 10.
+
 The text-shortcut of pimp is "pmp".
 Figure of pimp is the file "NPCs/Hotel/pimp1.png".
 Figure of pimp vag for sale is the file "NPCs/Hotel/pimp2.jpg".
@@ -40,7 +43,7 @@ Figure of pimp portal cutscene is the file "Special/Cutscene/cutscene-pimp-porta
 
 To decide which figure-name is the monster-image of (M - pimp):
 	if lady fetish is 1, decide on figure of pimp femme;
-	if M is in Hotel44 and (portal-bra is worn or portal-hotpants is worn):
+	if M is in Hotel44 and (portal-bra is worn or portal-hotpants is worn or woman-player is partially-enslaved):
 		if the player is possessing a vagina, decide on figure of pimp vag for sale;
 		otherwise decide on figure of pimp ass for sale;
 	decide on figure of pimp.
@@ -177,7 +180,7 @@ To say SatisfiedFlav of (M - pimp):
 
 Part 2 - Misc Flavour
 
-Definition: pimp is distracted:
+Definition: pimp is uniquely distracted:
 	if pimp is in the location of the player:
 		if composed-explorer is in the location of the player and the explorer-bimbo of composed-explorer < 2:
 			let D be the best route from the location of the player to Hotel01 through modern rooms;
@@ -674,20 +677,37 @@ Part 6 - pimp-pedestal
 
 A pimp-pedestal is a kind of thing. A pimp-pedestal is not portable. The printed name of a pimp-pedestal is "[TQlink of item described]stone pedestal[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "stone", "pedestal" as a pimp-pedestal.
 
+A pimp-pedestal has an object called the pedestal-user.
+A pimp-pedestal can be user-identified. [does the player know who is using the pedestal?]
+A pimp-pedestal has a number called charge. [Charges up to next assault]
+
+To reset (P - a pimp-pedestal):
+	now P is not user-identified;
+	now the charge of P is 0;
+	if the pedestal-user of P is a monster:
+		now the pedestal-user of P is unleashed;
+		if the pedestal-user of P is a patron, destroy P;
+		now the pedestal-user of P is nothing.
+
 Figure of pimp-pedestal 1 is the file "Env/Hotel/pedestal1.jpg".
 Figure of pimp-pedestal 2 is the file "Env/Hotel/pedestal2.jpg".
 Figure of pimp-pedestal 3 is the file "Env/Hotel/pedestal3.jpg".
 Figure of pimp-pedestal 4 is the file "Env/Hotel/pedestal4.jpg".
 
-pimp-pedestal-1 is a pimp-pedestal. The text-shortcut of pimp-pedestal-1 is "pp1".
-pimp-pedestal-2 is a pimp-pedestal. The text-shortcut of pimp-pedestal-2 is "pp2".
+pimp-pedestal-1 is a pimp-pedestal. The text-shortcut of pimp-pedestal-1 is "pp1". [crotch]
+pimp-pedestal-2 is a pimp-pedestal. The text-shortcut of pimp-pedestal-2 is "pp2". [breasts]
+
+Definition: a monster (called M) is pedestal-fucking rather than not-pedestal-fucking:
+	repeat with P running through pimp-pedestals:
+		if M is the pedestal-user of P, decide yes;
+	decide no.
 
 To decide which figure-name is the examine-image of (P - pimp-pedestal-1):
 	if portal-hotpants is worn, decide on figure of pimp-pedestal 2;
 	otherwise decide on figure of pimp-pedestal 4.
 
 To decide which figure-name is the examine-image of (P - pimp-pedestal-2):
-	if portal-bra is worn, decide on figure of pimp-pedestal 3;
+	if portal-bra is worn or woman-player is partially-enslaved, decide on figure of pimp-pedestal 3;
 	otherwise decide on figure of pimp-pedestal 1.
 
 To say ExamineDesc of (P - pimp-pedestal-1):
@@ -698,6 +718,153 @@ To say ExamineDesc of (P - pimp-pedestal-1):
 To say ExamineDesc of (P - pimp-pedestal-2):
 	say "A stone pedestal with a concrete bust, from neck to thighs, presented face-on at waist height.";
 	if portal-bra is worn:
-		say "Your naked breasts are here thanks to [NameDesc of portal-bra], fully accessible and molestable by whoever pays [NameDesc of pimp].".
+		say "Your naked breasts are here thanks to [NameDesc of portal-bra], fully accessible and molestable by whoever pays [NameDesc of pimp].";
+	otherwise if woman-player is partially-enslaved:
+		say "[BigNameDesc of woman-player][']s breasts are here, fully accessible and molestable by whoever pays [NameDesc of pimp].".
+
+To compute pedestal fuck of (M - a monster):
+	say "[BigNameDesc of M] is using the genitals mounted on [NameDesc of pimp-pedestal-1] as [his of M] personal faceless fuckhole!".
+
+To compute pedestal titfuck of (M - a monster):
+	say "[BigNameDesc of M] is pumping [his of M] [manly-penis] between the breasts mounted on [NameDesc of pimp-pedestal-2]!".
+
+This is the pedestal management rule:
+	let pedestalUsed be false;
+	repeat with P running through pimp-pedestals:
+		if the pedestal-user of P is a monster, now pedestalUsed is true;
+	if pedestalUsed is true:
+		let nearbyPedestal be false;
+		if Hotel44 is within vision, now nearbyPedestal is true;
+		let F be a random body part penetrated by portal-hotpants;
+		repeat with P running through pimp-pedestals:
+			if the pedestal-user of P is a monster:
+				let PU be the pedestal-user of P;
+				if PU is ultimate-lesson-actor, now PU is suited patron;
+				now PU is in Hotel44;
+				now PU is guarding;
+				let M be a random ultimate-lesson-actor;
+				if nearbyPedestal is true or P is user-identified:
+					if P is not user-identified:
+						if P is pimp-pedestal-1, say "[bold type]You can see exactly who is fucking [if F is a fuckhole]your [variable F][otherwise]you[end if] [if the player is not in Hotel44]in the [Hotel44] - [end if]it's [NameDesc of PU]![roman type][line break]";
+						otherwise say "[bold type]You can see exactly who is molesting [if portal-bra is worn]your[otherwise][WomanName][']s[end if] breasts [if the player is not in Hotel44]in the [Hotel44] - [end if]it's [NameDesc of PU]![roman type][line break]";
+						now P is user-identified;
+					now M is PU;
+				if P is pimp-pedestal-1:
+					cutshow figure of pimp portal cutscene;
+					now M is penetrating F;
+					dislodge portal-hotpants;
+					say "[BigFuckerDesc of M] is using your [variable F] as [his of M] personal [one of]onahole[or]cocksleeve[or]fuckhole[in random order]!";
+					ruin F;
+					if playerRegion is school or the charge of P > a random number between 102 and 103:
+						TimesSubmittedUp M by 1;
+						now the sex-length of M is 0;
+						now M is not interested; [to prevent orgasm satisfy function]
+						if the player is in Hotel44, say "[BigNameDesc of M] roars with pleasure!";
+						compute climax of M in F;
+						say "You [if the player is in Hotel44]watch and [end if]feel the [DickDesc of M] being quickly pulled out of your [variable F], leaving you empty once again.";
+						reset P;
+						compute pedestal payment of M;
+					otherwise:
+						say StealthPortalSexFlav;
+				otherwise if P is pimp-pedestal-2:
+					if portal-bra is worn:
+						cutshow figure of pimp portal cutscene;
+						now M is penetrating breasts;
+						dislodge portal-bra;
+						say "[BigFuckerDesc of M] is [one of]massaging [his of M] [manly-penis] with your breasts[or]sliding [his of M] [manly-penis] in and out of your cleavage[or]roughly groping your breasts and fucking your cleavage[cycling]!";
+						stimulate breasts from M;
+						if playerRegion is school or the charge of P > a random number between 102 and 103:
+							TimesSubmittedUp M by 1;
+							say "[if the player is in Hotel44]With a satisfied grunt, [FuckerDesc of M] lets[otherwise]Suddenly you feel [FuckerDesc of M] let[end if] several ropes of [semen] loose from [his of M] tip, coating your breasts in a layer of glaze.";
+							BreastsSensitivityUp 1;
+							orgasm dislodge M;
+							progress quest of titfuck-quest;
+							now the semen coating of breasts is 0;
+							if the player is in Hotel44, say "You watch and feel [if pimp is in Hotel44][NameDesc of pimp][otherwise][NameDesc of M][end if] wiping your breasts clean.";
+							otherwise say "You feel someone wiping your breasts clean.";
+							compute pedestal payment of M;
+							reset P;
+						otherwise:
+							now portal-bra is penetrating breasts;
+							say StealthPortalSexFlav;
+					otherwise:
+						if the player is in Hotel44, say "You watch [FuckerDesc of M] [one of]continue to massage [his of M] [manly-penis] with [WomanName][']s breasts[or]sliding [his of M] [manly-penis] in and out of [WomanName][']s cleavage[or]roughly groping [WomanName][']s breasts and fucking [his of woman-player] cleavage[cycling] mounted on the pedestal.";
+						if woman-player is in the location of the player, say "[BigNameDesc of woman-player] [one of]whines with shame and discomfort[or]mewls sheepishly[or]whimpers with self-pity[cycling] and [one of]doubles over[or]grips [his of woman-player] chest tightly[or]visibly shudders[cycling] as [if P is user-identified][FuckerDesc of PU][otherwise][one of]an unknown [man of male-m][or]the [man of male-m] on the other end of the portal[or][his of woman-player] mystery assailant[or]the [man of male-m] in the [Hotel44][cycling][end if] [if the player is in Hotel44]fucks[otherwise]does something to[end if] [his of woman-player] tits.";
+						if playerRegion is school or the charge of P > a random number between 102 and 103:
+							if the player is in Hotel44, say "With a satisfied grunt, [FuckerDesc of M] lets several ropes of [semen] loose from [his of M] tip, coating [WomanName][']s breasts in a layer of glaze. [if pimp is in Hotel44][BigFuckerDesc of pimp][otherwise][BigFuckerDesc of M][end if] then wipes them clean, ready for the next customer.";
+							if woman-player is in the location of the player:
+								if the player is getting unlucky:
+									say "[speech style of woman-player]'I can't believe it, I'm... I'm...!'[roman type][line break][BigNameDesc of woman-player] squeals at an extremely high pitch, and then a jet of clear liquid bursts out of [his of M] crotch with incredible pressure, blasting out the legholes of [his of woman-player] hotpants and coating [his of woman-player] thighs.[line break][speech style of woman-player]'Oh my god, I'm so embarrassed! I... I have to go!'[roman type][line break][big he of woman-player] runs off without another word.";
+									womanSluttify;
+									vanish woman-player;
+								otherwise:
+									say "A few moments later, [NameDesc of woman-player], panting, stands upright once again. [big his of woman-player] face may be flushed, and [he of woman-player] may be out of breath, but at least what[if the player is not in Hotel44]ever[end if] was happening to [him of woman-player] has finished... for now.";
+							[otherwise if the player is getting very unlucky:
+								womanSluttify;] [orgasmed while we weren't there]
+							if portal-bra is worn:
+								compute pedestal payment of M;
+							otherwise if M is not pimp and the player is in Hotel44:
+								say "[speech style of M]'[one of]Not bad[or]I enjoyed that[or]Rather delightful funbags, if I say so myself[in random order].'[roman type][line break][BigNameDesc of M] hands [NameDesc of pimp] a sapphire ring.";
+							reset P;
+	repeat with P running through pimp-pedestals:
+		if the pedestal-user of P is nothing:
+			if P is pimp-pedestal-1:
+				if portal-hotpants is worn, increase the charge of P by 1;
+				otherwise now the charge of P is 0;
+			otherwise if P is pimp-pedestal-2:
+				if woman-player is partially-enslaved or portal-bra is worn, increase the charge of P by 1;
+				otherwise now the charge of P is 0;
+		otherwise:
+			increase the charge of P by 1;
+		if P is pimp-pedestal-2 and portal-bra is not worn and woman-player is partially-enslaved and the charge of P > a random number between 10 and 30, now the charge of P is 80; [if barbara has the portal bra on, it happens more regularly]
+		if the charge of P < 100 and the charge of P > (a random number between 40 and 60):
+			now the charge of P is 100;
+			let M be a random male human unleashed uninterested not-pedestal-fucking monster in the hotel;
+			if M is pimp and a random number between 1 and 2 is 1, now M is yourself;
+			if M is monster:
+				now pedestal-user of P is M;
+				now M is in Hotel44;
+				now M is guarding;
+			otherwise:
+				now M is a random ultimate-lesson-actor;
+				now pedestal-user of P is M;
+				now suited patron is in Hotel44;
+				now suited patron is guarding;
+			if P is pimp-pedestal-1:
+				let F be asshole;
+				if the player is possessing a vagina and (asshole is actually occupied or a random number between 1 and 2 is 1), now F is vagina;
+				if Hotel44 is within vision:
+					say "You watch [NameDesc of M] [if the player is not in Hotel44]in the [Hotel44] [end if]approach [NameDesc of P] with your defenceless [fuckholes] mounted on it. [big he of M] pulls out [his of M] [LongDickDesc of M] and aligns the tip with the entrance to your [variable F].";
+					now P is user-identified;
+				repeat with T running through disembodied things penetrating F:
+					say "You [if the player is in Hotel44]watch and [end if]feel [NameDesc of T] being removed from your [variable F]!";
+					now T is in Hotel44;
+					dislodge T;
+				if F is not actually occupied:
+					if the player is in Hotel44, say "[BigFuckerDesc of M] thrusts forward. ";
+					say "[bold type]Suddenly, you feel something long and hard push into your [variable F]![line break][variable custom style][if the player is in Hotel44]Unf... So unceremoniously...[otherwise][one of]Aaaah! So sudden![or]Oh god, I'm being used right now?![or]That pimp is selling my [F] again![then at random][end if][roman type][line break]";
+					now portal-hotpants is penetrating F;
+			otherwise if P is pimp-pedestal-2:
+				if Hotel44 is within vision:
+					say "You watch [NameDesc of M] [if the player is not in Hotel44]in the [Hotel44] [end if]approach [NameDesc of P] with [if portal-bra is worn]your[otherwise][WomanName][']s[end if] exposed breasts jutting out of it. [big he of M] grabs the breasts with both hands, and slides [his of M] [DickDesc of M] up in between them.";
+					now P is user-identified;
+				if portal-bra is worn:
+					say "[bold type]Suddenly, you feel your breasts being grabbed by two rough hands, and squeezed around a hard [manly-penis]![line break][variable custom style][if the player is in Hotel44]Aaah! This is so freaky![otherwise][one of]Oh god, I'm being titfucked right now?![or]That pimp is selling my breasts for sex again![then at random][end if][roman type][line break]";
+					now portal-bra is penetrating breasts;
+					progress quest of titfuck-desirability-quest;
+				otherwise if woman-player is in the location of the player:
+					say "[bold type][BigNameDesc of woman-player] [bold type]suddenly squeaks with strained panic in [his of woman-player] voice![line break][speech style of woman-player]'N-not again!'[roman type][line break][big he of woman-player] doubles over and cradles the spot where [his of woman-player] breasts should be, and starts panting heavily.".
+The pedestal management rule is listed first in the all time based rules.
+
+To compute pedestal payment of (M - a monster):
+	if pimp is in Hotel44:
+		if M is not pimp and the player is in Hotel44, say "[speech style of M]'[one of]Worth every penny[or]Keep the change[or]Pleasure doing business with you[in random order].'[roman type][line break][BigNameDesc of M] hands [NameDesc of pimp] a sapphire ring.";
+		if pimp is not normally ally, FavourUp pimp.
+
+To compute pedestal interruption of (M - a monster):
+	repeat with P running through pimp-pedestals:
+		if the pedestal-user of P is M:
+			say "[if P is user-identified][BigNameDesc of M][otherwise]The [man of male-m] assaulting you through the portal suddenly[end if] [if P is pimp-pedestal-1]pulls out[otherwise]lets go of your chest[end if]!";
+			reset P.
 
 Pimp ends here.

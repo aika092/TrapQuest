@@ -82,7 +82,7 @@ To CheckActivation of (C - a video-monitor):
 	if the currentlyOn of C < 1:
 		if debugmode > 0 and debuginfo > 1, say "[input style]Checking activation of [C].[roman type][line break]";
 		if the call-cooldown of C <= 0:
-			[if C is a crystal-monitor:
+			[if C is a stone-shrine:
 				if doomed is 5 or there is an active summoning portal regionally in playerRegion:
 					if C is in the location of the player, say "The [printed name of C] flickers and spits out several tiny pink sparks as a blurry image appears on the surface.";
 					now the currentlyOn of C is 1;
@@ -306,23 +306,29 @@ To beginCall of (C - pc-monitor):
 
 Section - Ancient Monitor
 
-A crystal-monitor is a kind of video-monitor. The printed name of a crystal-monitor is "[TQlink of item described]crystal monitor[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "monitor", "crystal" as crystal-monitor.
+stone-shrine is a video-monitor. The printed name of stone-shrine is "[TQlink of item described]stone shrine[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "stone", "shrine" as stone-shrine.
 
-There is a crystal-monitor in Woods31.
-Figure of crystal monitor is the file "Env/Forest/monitor1.jpg".
-To decide which figure-name is the examine-image of (C - a crystal-monitor):
-	decide on figure of crystal monitor.
+stone-shrine is in Woods31.
+Figure of stone shrine is the file "Env/Forest/shrine1.jpg".
+Figure of stone shrine active is the file "Env/Forest/shrine2.jpg".
+Figure of stone shrine live is the file "Env/Forest/shrine3.jpg".
+To decide which figure-name is the examine-image of (C - stone-shrine):
+	if the currentlyOn of C > 0:
+		if the video-caller of C is the throne, decide on Figure of stone shrine active;
+		otherwise decide on Figure of stone shrine live;
+	decide on figure of stone shrine.
 
-To say ExamineDesc of (C - a crystal-monitor):
-	say "A flat sheet of magic crystal, which reminds you of a computer monitor. [if the video-caller of C is a slutty sister]It is currently hosting a video call with one of the Nintendolls who put you in this game.[otherwise if the video-caller of C is not the throne]It is currently hosting a video call with your [RelationDesc of the video-caller of C] [MediumDesc of the video-caller of C].[otherwise if the currentlyOn of C > 0]It has come to life, emitting tiny pink and white sparks as a blurry image flickers on the surface. It's too unfocused for you to make anything out.[otherwise]It looks inert, but maybe it will respond to a powerful source of magic?[end if]".
+To say ExamineDesc of (C - stone-shrine):
+	say "A small square stone slab with a circular engraving on the top is embedded within a small recess at the back of the cave. Candles are dotted around. [if the currentlyOn of C > 0]The candles are lit, and a mystical blue flame is flickering above the shrine.[otherwise]It looks inert, but maybe it will respond to a powerful source of magic?[end if]";
+	if the currentlyOn of C > 0 and the video-caller of C is not the throne, say "[if the video-caller of C is a slutty sister]It is currently magically connecting you with with one of the Nintendolls who put you in this game[otherwise]It is currently magically connecting you with your [RelationDesc of the video-caller of C] [MediumDesc of the video-caller of C][end if].".
 
-To beginCall of (C - crystal-monitor):
+To beginCall of (C - stone-shrine):
 	let M be the video-caller of C;
-	say "[bold type]Suddenly, you hear the sound of a video call coming from the magical computer. [roman type]You look over at the monitor, and see the flickering image on the screen has changed to a green calling symbol over a blue background. Moments later, the video call is answered, and [if M is slutty sister]the face of one of the Nintendolls who put you in this game, along with several unfamiliar people in suits appear. [otherwise][FriendStatus of M][end if][if currentlyPublicDisgracing is false][NewAppearanceReaction of M][NewCircumstanceReaction of M][FriendRespond to M][end if]".
+	say "[bold type]Suddenly, you hear a roar of flame as the blue fire above the shrine gets brighter and stronger. [roman type]You look over at the fire, expectantly. Moments later, [if M is slutty sister]the face of one of the Nintendolls who put you in this game, along with several unfamiliar people in suits appear inside the flame. [otherwise][FriendStatus of M][end if][if currentlyPublicDisgracing is false][NewAppearanceReaction of M][NewCircumstanceReaction of M][FriendRespond to M][end if]".
 
 Section - Security Interface
 
-security interface is a thing. security interface is in Hotel30. security interface is not portable. The printed name of security interface is "[TQlink of item described]security interface[TQxlink of item described][shortcut-desc][verb-desc of item described]". The text-shortcut of security interface is "scs". security interface has a number called currentSlide. security interface can be unauthenticated, authenticating, or authenticated.
+security interface is a thing. security interface is in Hotel30. security interface is not portable. The printed name of security interface is "[TQlink of item described]security interface[TQxlink of item described][shortcut-desc][verb-desc of item described]". The text-shortcut of security interface is "scs". security interface has a number called currentSlide. security interface can be unauthenticated, authenticating, or authenticated. security interface has a number called charge.
 
 To say ShortDesc of (C - security interface):
 	say "security interface".
@@ -334,12 +340,14 @@ Definition: security interface is immune to change: decide yes.
 Figure of security interface is the file "Env/Hotel/securityroom1.jpg".
 Figure of security interface authenticating is the file "Env/Hotel/securityroom2.jpg".
 Figure of security interface authentication pole is the file "Env/Hotel/securityroom3.jpg".
+Figure of security interface authenticated is the file "Env/Hotel/securityroom4.jpg".
 To decide which figure-name is the examine-image of (C - security interface):
+	if C is authenticated and the charge of C <= 0, decide on figure of security interface authenticated;
 	if C is authenticating, decide on figure of security interface authenticating;
 	decide on figure of security interface.
 
 To say ExamineDesc of (C - security interface):
-	say "Four TV monitors are fixed to the wall of the security room. Your eyes are currently being drawn to [if the currentSlide of C <= 0]security footage of [one of]a woman stripping off her clothes in the middle of a street[or]an outdoor pool, where a woman is shamelessly sunbathing nude[or]some kind of confectionery store, where a woman is performing some rather erotic tongue manoeuvres on her favourite lollipop[or]two women performing stretches either side of a glass wall in a gym. For unclear reasons, one of the women is completely naked[then at random].[otherwise][SlideDesc (currentSlide of C)][end if][paragraph break]To the side of the monitors is a high-tech metal security door, and in between the door and the monitors are some panels for ID authentication, including a key card slot, and some kind of biometric authentication, activated by a big round power button.".
+	say "Four TV monitors are fixed to the wall of the security room. Your eyes are currently being drawn to [if the currentSlide of C <= 0]security footage of [one of]a woman stripping off her clothes in the middle of a street[or]an outdoor pool, where a woman is shamelessly sunbathing nude[or]some kind of confectionery store, where a woman is performing some rather erotic tongue manoeuvres on her favourite lollipop[or]two women performing stretches either side of a glass wall in a gym. For unclear reasons, one of the women is completely naked[then at random].[otherwise][SlideDesc (currentSlide of C)][end if][paragraph break]To the side of the monitors is a high-tech metal security door, and in between the door and the monitors are some panels for ID authentication, including a key card slot, and some kind of biometric authentication, activated by a big round power button[if C is authenticated and the charge of C <= 0]. The large panel has opened, revealing that it was an elevator door. You can probably travel somewhere from here[otherwise if C is authenticated]. It looks like you need to wait for the elevator door to open again[end if].".
 
 Check pushing security interface:
 	repeat with M running through combative monsters:
@@ -348,7 +356,7 @@ Check pushing security interface:
 	if security interface is authenticated:
 		say "A feminine robotic voice speaks:[line break][second custom style]'ERROR: IDENTITY HAS ALREADY BEEN CONFIRMED.'[roman type][line break]";
 	otherwise if security interface is unauthenticated:
-		say "Two things happen when you push the button - a small metal chute opens up, as if expecting you to deposit an item in it. Secondly, a long thin metal pole with a bulbous sphere at the top emerges from the ground in front of you. Next, a feminine robotic voice speaks:[line break][second custom style]'PLEASE PROCEED WITH [if diaper quest is 0]ORIFICE-BASED OR [end if]ITEM-BASED DNA VERIFICATION.'[roman type][line break]It seems like you [if diaper quest is 0]either need to [']mount['] the pole in front of you, or[otherwise]need to[end if] drop an item down the chute.";
+		say "[if diaper quest is 0]Two things happen when you push the button - a small metal chute opens up, as if expecting you to deposit an item in it. Secondly, a long thin metal pole with a bulbous sphere at the top emerges from the ground in front of you[otherwise]A small metal chute opens up, as if expecting you to deposit an item in it[end if]. Next, a feminine robotic voice speaks:[line break][second custom style]'PLEASE PROCEED WITH [if diaper quest is 0]ORIFICE-BASED OR [end if]ITEM-BASED DNA VERIFICATION.'[roman type][line break]It seems like you [if diaper quest is 0]either need to [']mount['] the pole in front of you, or[otherwise]need to[end if] drop an item down the chute.";
 		now security interface is authenticating;
 	otherwise:
 		say "You push the button, but nothing more happens.".
@@ -356,6 +364,8 @@ Check pushing security interface:
 
 [Happens after monsters, so if a monster drags you here it happens in the same turn.]
 A later time based rule:
+	if security interface is authenticated and the charge of security interface > 0:
+		decrease the charge of security interface by time-seconds;
 	if the player is in Hotel30:
 		let N be the number of filled rows in the Table of Published Disgraces;
 		if N > 0:
@@ -390,7 +400,9 @@ To decide which number is the girth of (C - security interface):
 	decide on 4.
 
 Check entering security interface:
-	if the noun is authenticated, say "Sorry, this subregion hasn't been created yet!" instead;
+	if the noun is authenticated:
+		if the charge of security interface > 0, say "You'll need to wait until the elevator door opens up again." instead;
+		compute elevator use instead;
 	if the noun is unauthenticated or diaper quest is 1, say "How would you do that?" instead;
 	let F be asshole;
 	reset multiple choice questions;
@@ -451,6 +463,7 @@ Check inserting it into while the second noun is security interface:
 		if the noun is clothing:
 			repeat with M running through the condom history of the noun:
 				now M is inseminating the noun; [this will be reset in the only destroy function anyway]
+		if the noun is infernal gem and demon lord is permanently banished, now authentication-success is true;
 		if mechanic is inseminating the noun or pimp is inseminating the noun or demon lord is inseminating the noun, now authentication-success is true;
 		only destroy the noun;
 	if authentication-success is true:
@@ -785,7 +798,10 @@ To CheckDisgracePunishemnt of (V - a video-monitor):
 			let M be platonic-friend;
 			now the video-caller of V is M;
 			beginCall of V;
-			say "[speech style of M]'[OriginalNameBimbo]? [GenericSituationReaction of the video-caller of V]I was browsing Redlit and right near the top was this link, and I clicked on it... and I saw [T]... [if the times-called of M is 0]And then there was this button inviting me to click it if I knew you in real life. And so I clicked that, and it got me to verify I really knew you by entering some of your details... And now I'm here[otherwise]And then you started calling me again[end if]? And now I've got a whole load of really weird-looking options in front of me? What are these about?!'[roman type][line break][BigNameDesc of M] frowns, studying [his of M] screen.[paragraph break][variable custom style][if the player is able to speak]'[MediumDesc of M], wait, please, I can explain!'[roman type][line break]But [NameDesc of M] is acting like [he of M] can't hear you.[otherwise]Huh? What options can [he of M] be looking at?![roman type][paragraph break][end if][speech style of M]'I can choose between ";
+			say "[speech style of M]'[OriginalNameBimbo]? [GenericSituationReaction of the video-caller of V]I was browsing Redlit and right near the top was this link, and I clicked on it... and I saw [T]... [if the times-called of M is 0]And then there was this button inviting me to click it if I knew you in real life. And so I clicked that, and it got me to verify I really knew you by entering some of your details... And now I'm here[otherwise]And then you started calling me again[end if]? And now I've got a whole load of really weird-looking options in front of me? What are these about?!'[roman type][line break][BigNameDesc of M] frowns, studying [his of M] screen.[paragraph break][variable custom style]";
+			if the player is able to speak, compute single choice question "'[MediumDesc of M], wait, please, I can explain!'";
+			otherwise compute single choice question "Make urgent pleading sounds";
+			say "[BigNameDesc of M] is acting like [he of M] can't hear you.[roman type][paragraph break][speech style of M]'I can choose between ";
 			let LDPE be the number of entries in LDP;
 			repeat with DP running through LDP:
 				say "['][DPTitle of DP]['][if LDPE > 2], [otherwise if LDPE is 2] or [otherwise]...'[roman type][paragraph break][end if]";
@@ -806,7 +822,10 @@ To CheckDisgracePunishemnt of (V - a video-monitor):
 			if DP is nothing:
 				sort LDP in random order;
 				now DP is entry 1 in LDP;
-			say "[speech style of M]'[OriginalNameBimbo]? [if the times-called of M is 0]Oh gosh, it really is you! [end if][GenericSituationReaction of the video-caller of V]My brother sent me [T]... [if the times-called of M is 0]I couldn't believe it could really be you, but obviously I was mistaken about you. Otherwise why would have you called me while looking like that?! [otherwise]And then you called me again, looking like that. That's so inappropriate! [end if]You want me to choose one of these options, huh? Fine - I'm choosing the one that says ['][DPTitle of DP][']. Now, I never want to hear from you again.'[paragraph break][variable custom style][if the player is able to speak]'Wait, no, please [MediumDesc of M], listen!-'[roman type][line break]But [NameDesc of M] has already hung up...";
+			say "[speech style of M]'[OriginalNameBimbo]? [if the times-called of M is 0]Oh gosh, it really is you! [end if][GenericSituationReaction of the video-caller of V]My brother sent me [T]... [if the times-called of M is 0]I couldn't believe it could really be you, but obviously I was mistaken about you. Otherwise why would have you called me while looking like that?! [otherwise]And then you called me again, looking like that. That's so inappropriate! [end if]You want me to choose one of these options, huh? Fine - I'm choosing the one that says ['][DPTitle of DP][']. Now, I never want to hear from you again.'[roman type][paragraph break]";
+			if the player is able to speak, compute single choice question "Wait, no, please [MediumDesc of M], listen!-'";
+			otherwise compute single choice question "Make urgent pleading sounds";
+			say "But [NameDesc of M] has already hung up...";
 			compute disgrace punishment effect of DP;
 			now DP is disgrace-punishment-done;
 		otherwise:
@@ -822,7 +841,10 @@ To CheckDisgracePunishemnt of (V - a video-monitor):
 			if DP is nothing:
 				sort LDP in random order;
 				now DP is entry 1 in LDP;
-			say "I think I'm gonna choose this one. Enjoy whatever exactly ['][DPTitle of DP]['] does to you. Hopefully they'll let me watch...'[roman type][line break]But as soon as [MediumDesc of M] makes [his of M] selection, the call goes dead.";
+			say "I think I'm gonna choose this one. Enjoy whatever exactly ['][DPTitle of DP]['] does to you. Hopefully they'll let me watch...'[roman type][line break]";
+			if the player is able to speak, compute single choice question "Wait, no, please [MediumDesc of M], I'll do anything!-'";
+			otherwise compute single choice question "Make urgent pleading sounds";
+			say "But it's too late, [he of M][']s already pressed the button. And as soon as [MediumDesc of M] has made [his of M] selection, the call goes dead.";
 			compute disgrace punishment effect of DP;
 			now DP is disgrace-punishment-done;
 		increase the times-called of the video-caller of V by 1;
@@ -830,6 +852,7 @@ To CheckDisgracePunishemnt of (V - a video-monitor):
 		now the video-caller of V is the throne;
 		cutshow figure of mirror monitor on for V;
 		now punished public disgrace is NPDT.
+
 
 A divination-space is a kind of thing. A divination-space is not portable. A divination-space has a number called charge. The charge of a divination-space is usually -200. The printed name of a divination-space is "[TQlink of item described]altar[shortcut-desc] [GlowDesc of the item described][TQxlink of item described][verb-desc of item described]". The text-shortcut of a divination-space is "dvs". [Figure of dungeon altar is the file "Env/Dungeon/altar1.jpg". Figure of dungeon altar cutscene is the file "Special/Cutscene/cutscene-altar-pray1.jpg".]
 

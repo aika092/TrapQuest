@@ -27,6 +27,7 @@ Definition: a clothing is thigh-spread-blocking: decide no.
 
 robomatron is a monster.
 boogeymonster is a monster.
+student-rachel is a monster.
 
 Include Wench by Monster.
 Include Sex Doll by Monster.

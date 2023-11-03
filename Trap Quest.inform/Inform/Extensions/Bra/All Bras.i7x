@@ -788,14 +788,8 @@ Figure of Portal Bra is the file "Items/Clothes/Upper/Bras/portalbra1.png".
 To decide which figure-name is clothing-image of (C - portal-bra):
 	decide on figure of Portal Bra.
 
-To compute periodic effect of (C - portal-bra):
-	increase the charge of C by 1;
-	if the charge of C < 100 and the charge of C > (a random number between 30 and 50) and the player is not in Hotel44 and Hotel44 is not nearby:
-		now the charge of C is 100;
-		say "[bold type]Suddenly, you feel your breasts being grabbed by two rough hands, and squeezed around a hard [manly-penis]![line break][variable custom style][one of]Oh god, I'm being titfucked right now?![or]That pimp is selling my breasts for sex again![then at random][roman type][line break]";
-		now C is penetrating breasts;
-		progress quest of titfuck-desirability-quest;
-	compute school periodic effect of C.
+To compute unique summoning of (C - portal-bra):
+	now woman-player is not partially-enslaved.
 
 To SilentSquirt (L - a liquid-object) On (C - portal-bra) by (N - a number):
 	if N > 0:
@@ -805,28 +799,6 @@ To SilentSquirt (L - a liquid-object) On (C - portal-bra) by (N - a number):
 		otherwise:
 			if belly is unsoaked, say "[announced L] drips down onto your belly.";
 			ContinuedSquirt L on Belly by N;
-
-To compute school periodic effect of (C - portal-bra):
-	if C is penetrating breasts:
-		cutshow figure of pimp portal cutscene;
-		let M be a random ultimate-lesson-actor;
-		now M is penetrating breasts;
-		dislodge C;
-		say "[BigFuckerDesc of M] is [one of]massaging [his of M] [manly-penis] with your breasts[or]sliding [his of M] [manly-penis] in and out of your cleavage[or]roughly groping your breasts and fucking your cleavage[cycling]!";
-		stimulate breasts from M;
-		if playerRegion is school or the player is in Hotel44 or Hotel44 is nearby or the charge of C > a random number between 102 and 103:
-			TimesSubmittedUp M by 1;
-			say CleavageClimaxFlav of M;
-			BreastsSensitivityUp 1;
-			orgasm dislodge M;
-			progress quest of titfuck-quest;
-			if the semen coating of breasts is 0, say "You feel someone wiping your breasts clean.";
-			now the charge of C is 0;
-			if pimp is not normally ally, FavourUp pimp;
-		otherwise:
-			now C is penetrating breasts;
-			say StealthPortalSexFlav;
-		dislodge M.
 
 To say StealthPortalSexFlav:
 	let P be a random reactive person;

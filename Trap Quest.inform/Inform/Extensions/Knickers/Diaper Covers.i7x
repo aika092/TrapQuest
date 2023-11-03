@@ -114,7 +114,7 @@ To say selfexamineuniquetitle of (K - teddy-bear-diaper-cover):
 Definition: teddy-bear-diaper-cover is bear themed: decide yes.
 Definition: teddy-bear-diaper-cover is pink themed: decide yes.]
 
-orange rubber diaper cover is a diaper cover. orange rubber diaper cover is latex.
+orange rubber diaper cover is a diaper cover. orange rubber diaper cover is latex. The text-shortcut of orange rubber diaper cover is "ordc".
 
 Figure of orange rubber diaper cover is the file "Items/Clothes/Lower/Underwear/Diapers/Covers/diapercover3.png".
 
@@ -131,6 +131,27 @@ To say selfexamineuniquetitle of (K - orange rubber diaper cover):
 	say "orange rubber diaper cover".
 
 Definition: orange rubber diaper cover is orange themed: decide yes.
+Definition: orange rubber diaper cover is halloween themed: decide yes.
+
+halloween rubber diaper cover is a diaper cover. halloween rubber diaper cover is pvc. Understand "themed" as halloween rubber diaper cover.  The text-shortcut of halloween rubber diaper cover is "htdc".
+
+Figure of halloween rubber diaper cover is the file "Items/Clothes/Lower/Underwear/Diapers/Covers/diapercover4.png".
+
+To decide which figure-name is clothing-image of (C - halloween rubber diaper cover):
+	decide on figure of halloween rubber diaper cover.
+
+To say ClothingDesc of (C - halloween rubber diaper cover):
+	say "An orange pvc diaper cover with the words [']I DRIVE MOMMY BATTY['] on the front in colourful letters. It [if C is worn]completely covers[otherwise]could completely cover[end if] your [if there is a worn diaper][random worn diaper][otherwise][ShortDesc of hips][end if]. You can sense that it makes women who identify as your [']mommy['] always angry with you.".
+
+To compute SelfExamineDesc of (K - halloween rubber diaper cover):
+	say "A large [selfexamineuniquetitle of K] completely covers your [if there is a worn diaper][random worn diaper][otherwise][ShortDesc of hips][end if]. ".
+
+To say selfexamineuniquetitle of (K - halloween rubber diaper cover):
+	say "halloween themed diaper cover".
+
+Definition: halloween rubber diaper cover is orange themed: decide yes.
+Definition: halloween rubber diaper cover is halloween themed: decide yes.
+Definition: halloween rubber diaper cover is fetish appropriate: decide no. [only spawns from failed quests]
 
 Chapter 1 Wearability
 

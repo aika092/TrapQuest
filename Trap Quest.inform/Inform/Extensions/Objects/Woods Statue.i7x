@@ -100,7 +100,7 @@ Check touching WoodsScenery02:
 
 A magic consequences rule (this is the woods statue magic consequence rule):
 	if woodsMagicHunger is true:
-		say "[bold type]The magic ripples through your arms, activating the curse you got from the statue in the Woods.[roman type][line break]";
+		say "[bold type]The magic ripples through your arms, activating the curse you got from the statue in the Woods. [roman type]You feel a bit more hungry.";
 		if diaper quest is 1 and diaper messing >= 3, compute DQ hunger;
 		otherwise compute food.
 

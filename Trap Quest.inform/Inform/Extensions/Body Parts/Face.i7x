@@ -24,6 +24,16 @@ To decide which number is the total volume of face:
 	decide on the semen volume of face + the urine volume of face + the milk volume of face.
 To decide which number is face-limit:
 	decide on 4.
+To decide which object is mouthful-liquid:
+	let L be water;
+	if the semen volume of face > 0, now L is semen;
+	if the urine volume of face > 0:
+		if L is water, now L is urine;
+		otherwise now L is murkwater;
+	if the milk volume of face > 0:
+		if L is water, now L is milk;
+		otherwise now L is murkwater;
+	decide on L.
 
 [Can it be accessed right now with nothing blocking it?]
 Definition: face is undefended:
@@ -342,7 +352,7 @@ This is the swallowing rule:
 
 Definition: yourself is refusing to swallow:
 	if the player is very thirsty, decide no;
-	if (the semen volume of face > 0 and the semen taste addiction of the player is 1) or (the urine volume of face > 0 and the urine taste addiction of the player is 1) or (the milk volume of face > 0 and the milk taste addiction of the player is 1), decide yes;
+	if (the semen volume of face > 0 and the semen taste addiction of the player is 1) or (the urine volume of face > 0 and the urine taste addiction of the player is 1) or (the milk volume of face > 0 and (diaper quest is 1 or lactation fetish > 0) and the milk taste addiction of the player is 1), decide yes;
 	decide no.
 
 Definition: yourself is always automatically swallowing:

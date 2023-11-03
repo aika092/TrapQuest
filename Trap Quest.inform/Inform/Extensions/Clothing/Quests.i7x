@@ -78,10 +78,12 @@ To compute new quest of (C - a clothing): [sometimes we want to give the clothin
 
 To assign quest to (C - a clothing): [this is how we give an item a quest and set up any necessary variables]
 	now the quest of C is the random-quest of C;
+	if the class of the player is trick-or-treater, now the quest of C is crawling-quest; [only safe quest that can always be completed, no matter region or limitations]
 	set up the quest of C.
 
 To assign persistent quest to (C - a clothing): [this is how we give an item a persistent quest and set up any necessary variables]
 	now the quest of C is the random-persistent-quest of C;
+	if the class of the player is trick-or-treater, now the quest of C is crawling-quest; [only safe quest that can always be completed, no matter region or limitations]
 	set up the quest of C.
 
 To set up (Q - a clothing-quest): [by default a quest doesn't need any extra setup. NB anything you put here will trigger each time a new item is assigned this quest, which might include when the player is already halfway through doing this quest for another clothing item.]
@@ -237,7 +239,11 @@ To progress quest of (Q - a clothing-quest):
 						if the quest of D is Q:
 							if D is cursed or the quest of D is persistent, compute quest completion of Q on D;
 				otherwise if the quest of C is Q:
-					if C is cursed or the quest of C is persistent, compute quest completion of Q on C. [disappearing quests only trigger once]
+					if C is cursed or the quest of C is persistent, compute quest completion of Q on C; [disappearing quests only trigger once]
+			compute unique quest progress of Q.
+
+To compute unique quest progress of (Q - a clothing-quest):
+	do nothing.
 
 [Persistent quests have an added effect each time they are completed]
 To say QuestPersistFlav of (Q - a clothing-quest) on (C - a clothing):
@@ -376,6 +382,15 @@ To say QuestFlav of (Q - anal-orgasm-quest):
 
 To say QuestTitle of (Q - anal-orgasm-quest):
 	say " (anal orgasm quest)".
+
+To compute unique quest progress of (Q - anal-orgasm-quest):
+	if watersports fetish is 0 and WC thigh high boots is worn:
+		say "[bold type]Your [ShortDesc of WC thigh high boots] pulse and glow! ";
+		if the class of the player is human toilet, increase the powerup of WC thigh high boots by a random number between 10 and 15;
+		otherwise increase the powerup of WC thigh high boots by a random number between 7 and 10;
+		if the powerup of WC thigh high boots > 15 and WC thigh high boots is stumbling:
+			say "You feel the stumbling enchantment being suppressed, and replaced by one that strengthens your kicks! Wow!";
+			now WC thigh high boots is kicking;
 
 Part - Anal Virginity Quest
 
@@ -1340,6 +1355,29 @@ To say QuestFlav of (Q - vaginal-addict-quest):
 To say QuestTitle of (Q - vaginal-addict-quest):
 	say " (vaginal sex quest)".
 
+Part - Enemy Orgasm Quest
+
+enemy-orgasm-quest is a clothing-quest. enemy-orgasm-quest is persistent.
+
+Definition: enemy-orgasm-quest is appropriate:
+	if diaper quest is 1, decide yes;
+	decide no.
+
+To decide what number is the quest-weighting of (Q - enemy-orgasm-quest) for (C - a clothing):
+	if Q is not appropriate, decide on 0;
+	if C is diaper, decide on 5;
+	decide on 1.
+
+To say QuestFlav of (Q - enemy-orgasm-quest):
+	say "You sense that it wants you to be made to orgasm - specifically NOT by masturbating yourself.".
+
+To say QuestTitle of (Q - enemy-orgasm-quest):
+	say " (forced orgasm quest)".
+
+To compute persistent reward of (Q - enemy-orgasm-quest) on (C - a diaper):
+	say "Cleaning and drying your [ShortDesc of C]!";
+	fully clean C.
+
 Part - Cursed Orgasm Quest
 
 cursed-orgasm-quest is a clothing-quest.
@@ -1352,6 +1390,18 @@ To say QuestFlav of (Q - cursed-orgasm-quest):
 To say QuestTitle of (Q - cursed-orgasm-quest):
 	say " (cursed orgasm quest)".
 
+Part - Desperation Quest
+
+desperation-quest is a clothing-quest.
+
+Definition: desperation-quest is appropriate: decide no. [only appears in halloween mode]
+
+To say QuestFlav of (Q - desperation-quest):
+	say "You sense that it wants you to have an empty bladder[if diaper messing >= 3] and bowels[end if].".
+
+To say QuestTitle of (Q - desperation-quest):
+	say " (desperate for the potty quest)".
+
 Part - Birth Quest
 
 birth-quest is a clothing-quest.
@@ -1363,6 +1413,8 @@ Definition: birth-quest is appropriate:
 To decide what number is the quest-weighting of (Q - birth-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
 	if C is crotch-intact and C is not displacable, decide on 0;
+	if the player is not possessing a vagina or the vaginalvirgin of the player is 1, decide on 0;
+	if the pregnancy of the player is 1, decide on 4;
 	decide on 1.
 
 To say QuestFlav of (Q - birth-quest):
@@ -1370,7 +1422,6 @@ To say QuestFlav of (Q - birth-quest):
 
 To say QuestTitle of (Q - birth-quest):
 	say " (birth quest)".
-
 
 
 
@@ -1384,11 +1435,12 @@ Definition: a wisp quest is appropriate: decide yes.
 Definition: a wisp quest is eligible: decide yes.
 
 To trigger (WQ - a wisp quest):
-	repeat with W running through stalking wisps:
-		if the wisp-quest of W is WQ:
-			say bold type;
-			destroy W;
-			say "[roman type][line break]".
+	unless the player is in a predicament room:
+		repeat with W running through stalking wisps:
+			if the wisp-quest of W is WQ:
+				say bold type;
+				destroy W;
+				say "[roman type][line break]".
 
 gold-candy-wisp-quest is a wisp quest. The printed name of gold-candy-wisp-quest is "find a golden candy".
 Definition: gold-candy-wisp-quest is appropriate:
@@ -1450,6 +1502,11 @@ Definition: class-wisp-quest is appropriate:
 learn-spell-wisp-quest is a wisp quest. The printed name of learn-spell-wisp-quest is "learn a new spell".
 Definition: learn-spell-wisp-quest is eligible:
 	if there is a castable magic-spell and there is an uncastable fetish appropriate magic-spell, decide yes;
+	decide no.
+
+use-urinal-wisp-quest is a wisp quest. The printed name of use-urinal-wisp-quest is "urinate in a urinal".
+Definition: use-urinal-wisp-quest is appropriate:
+	if watersports mechanics is 1, decide yes;
 	decide no.
 
 bowl-wisp-quest is a wisp quest. The printed name of bowl-wisp-quest is "eat food from a bowl".
@@ -1548,6 +1605,11 @@ Definition: hold-breath-wisp-trigger is eligible:
 	if the player is able to breathe, decide yes;
 	decide no.
 
+wet-yourself-wisp-trigger is a wisp trigger. The printed name of wet-yourself-wisp-trigger is "wet yourself (i.e. accidentally release your bladder)".
+Definition: wet-yourself-wisp-trigger is appropriate:
+	if watersports mechanics is 1, decide yes;
+	decide no.
+
 
 speak-wisp-trigger is a wisp trigger. The printed name of speak-wisp-trigger is "speak".
 Definition: speak-wisp-trigger is eligible:
@@ -1566,8 +1628,9 @@ A speech penalties rule (this is the speech wisp trigger rule):
 	trigger speak-wisp-trigger.
 
 To trigger (WT - a wisp trigger):
-	repeat with W running through stalking wisps:
-		if the wisp-trigger of W is WT, compute punishment of W.
+	unless the player is in a predicament room:
+		repeat with W running through stalking wisps:
+			if the wisp-trigger of W is WT, compute punishment of W.
 
 An all time based rule (this is the time-based wisp triggers rule):
 	unless the player is in a predicament room:
@@ -1660,7 +1723,8 @@ To update background colour of (W - a wisp):
 	let WP be the wisp-punishment of W;
 	if debugmode > 1, say "WP of [W] is [WP].";
 	if WP is a wisp stat punishment, now the backgroundColour of W is the wisp-colour of WP;
-	otherwise now the backgroundColour of W is TQMagenta.
+	otherwise now the backgroundColour of W is TQMagenta;
+	now the text-shortcut of W is the substituted form of "[ColourDesc of W]".
 
 To say ColourDesc of (W - a wisp):
 	if the backgroundColour of W is 255:
@@ -1682,8 +1746,7 @@ To silently set up (W - a wisp):
 	if (a random number between 0 and 2) + (a random number between 0 and 2) < game difficulty, now the wisp-punishment of W is a random appropriate wisp punishment;
 	now W is everywhere;
 	update backdrop positions;
-	update background colour of W;
-	now the text-shortcut of W is the substituted form of "[ColourDesc of W]".
+	update background colour of W.
 
 To set up (W - a wisp):
 	silently set up W;

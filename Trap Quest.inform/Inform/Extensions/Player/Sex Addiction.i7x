@@ -866,7 +866,7 @@ To SlowMilkTasteAddictUp (X - a number):
 			MilkTasteAddictUp 1.
 
 To MilkTasteAddictUp (X - a number):
-	if the raw milk taste addiction of the player < 20 and X > 0:
+	if the raw milk taste addiction of the player < 20 and X > 0 and (diaper quest is 1 or lactation fetish > 0):
 		if the milk taste addiction of the player < 4:
 			say "[if the first-swallow of milk is earnings]Despite this, you[otherwise]You[end if] are reminded of how much you love the taste of milk.";
 		otherwise:

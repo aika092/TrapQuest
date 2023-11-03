@@ -5,8 +5,10 @@ A guest bed is a kind of furniture. There is 1 guest bed in Mansion02. The print
 To say ExamineDesc of (C - a guest bed):
 	say "A comfortable looking bed with shale grey pillows and a solid black comforter. It looks surprisingly mundane[if there is a clairvoyant acolyte in the location of the player and bukkake fetish is 1], but [NameDesc of clairvoyant acolyte] has obviously been 'leaking' on the sheets[end if].".
 
+Figure of guest bed is the file "Env/Hotel/hotelbed1.png".
+
 To decide which figure-name is the examine-image of (C - a guest bed):
-	decide on figure of hotel bed.
+	decide on figure of guest bed.
 
 To compute rest ending of (F - a guest bed):
 	if the holeCount of F > 0:

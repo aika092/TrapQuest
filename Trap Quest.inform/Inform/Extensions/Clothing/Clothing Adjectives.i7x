@@ -272,7 +272,7 @@ Clothing can be vagina plugging. Clothing is usually not vagina plugging.
 Clothing has a number called plug size. The plug size of clothing is usually 0.
 Clothing can be purity. Clothing is usually not purity. [Means they care about your virginity.]
 
-A Magic-type is a kind of value. The magic-types are blandness, dressup, milk production, absorption, temptation, suppression, bed wetting, confidence, endurance, dominance, constriction, speed, kicking, protection, posture training, expansion, refreshment, rejuvenation, possession, maturity, respiration, durability, stumbling, provocation, exposure, audible jiggles, desperation, augmentation, elasticity, waddle-walking, draining, strength stealing, impermanence, autobinding, sneaking and hostility. Clothing has a magic-type. The magic-type of clothing is usually blandness.
+A Magic-type is a kind of value. The magic-types are blandness, dressup, milk production, absorption, temptation, suppression, bed wetting, confidence, endurance, dominance, constriction, speed, kicking, protection, posture training, expansion, refreshment, rejuvenation, possession, maturity, respiration, durability, stumbling, provocation, exposure, audible jiggles, audible squelches, desperation, augmentation, elasticity, waddle-walking, draining, strength stealing, impermanence, autobinding, sneaking and hostility. Clothing has a magic-type. The magic-type of clothing is usually blandness.
 A clothing has a number called impermanence-counter.
 
 Magic-ID is a kind of value. The magic-IDs are unidentified and identified. Clothing has a Magic-ID. The Magic-ID of clothing is usually unidentified.
@@ -283,6 +283,7 @@ To decide which number is the penis-capacity of (C - a clothing):[what's the lar
 		otherwise decide on the skirtLength of C - 2;
 	decide on 10.
 To decide which number is the crotch-tightness of (C - a clothing): [the higher the number, the more tight, which gets closer to cameltoe. labia plumpness is added to this. 4+ increases outrage in certain circumstances. 5 is cameltoe city, and counts as partially exposed.]
+	if C is skirted, decide on 0;
 	if C is potentially pussy covering:
 		if C is rigid, decide on 0;
 		if C is denim, decide on 1;
@@ -405,7 +406,6 @@ Is this something that should be able to appear as a generic item?
 
 +!]
 Definition: a clothing (called C) is basic loot:
-	if C is diaper, decide no;
 	if C is off-stage and C is plentiful and C is fetish appropriate, decide yes;
 	decide no.
 

@@ -307,6 +307,8 @@ To say harden:
 To say milk:
 	if the class of the player is santa's little helper:
 		say "brandy butter";
+	otherwise if diaper quest is 0 and lactation fetish is 0:
+		say "milk";
 	otherwise:
 		say "[if a random number between 10 and 20 < the milk taste addiction of the player][one of]tasty[or]yummy[purely at random] [end if][if diaper lover >= 1][one of]milk[or]breast milk[or]momma's milk[or]boob juice[as decreasingly likely outcomes][otherwise if lactation fetish is 1 and a random number between 1 and the bimbo of the player > 8][one of]cow juice[or]udder milk[or]breast milk[at random][otherwise]milk[end if]".
 

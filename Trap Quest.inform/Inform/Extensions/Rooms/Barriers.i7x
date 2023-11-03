@@ -12,7 +12,13 @@ A barrier is a kind of thing. A barrier is not portable. Understand "barrier" as
 Check going when there is a barrier in the location of the player:
 	follow the barriers raising rule;
 	let B be a random barrier in the location of the player;
-	if B is barrier, say "You can't go that way, there is a [B] blocking the exit!" instead.
+	if B is barrier, say "You can't go that way, there is a [printed name of B] blocking the exit!" instead.
+
+Check going when there is an on-stage barrier:
+	follow the barriers raising rule;
+	let L be the room the noun from the location of the player;
+	let B be a random barrier in L;
+	if B is a barrier, say "You can't go that way, there is a [printed name of B] blocking the way!" instead.
 
 An all later time based rule (this is the barriers raising rule):
 	repeat with B running through on-stage barriers:
@@ -40,30 +46,31 @@ A modesty shutter is a kind of barrier. There is 1 modesty shutter.
 To check raising of (B - a modesty shutter):
 	if (the number of patrons in the location of B is 0 and dominatrix is not in the location of the player) or the player is not in the location of B:
 		now neighbour finder is the location of B;
-		if the location of the player is neighbour finder or the location of the player is next door, say "[bold type]The metal modesty shutter noisily opens, allowing you [if the player is in neighbour finder]to leave[otherwise]to enter[end if] the room.[roman type][line break]";
-		destroy B;
-		if there is a hotel bed in the location of the player:
-			now patronTime is 0; [Player should now be able to rest easy]
-			if pimp is alive:
-				if patronbed uses is 1:
-					now pimp is in the location of the player;
-					let D be a random N-viable direction;
-					say "A tall black [man of pimp] dressed as a pimp arrive froms the [D]!";
-					if the times-met of pimp is 0:
-						if the class of the player is princess, say "[speech style of pimp]'Listen up, princess. I don't work for you anymore. In fact, starting now you're gonna be ";
-						otherwise say "[speech style of pimp]'Listen up[if diaper quest is 0], bitch[end if]. Nobody works in Bimbacia without reporting to me first, which means you're ";
-					otherwise:
-						say "[speech style of pimp]'Well done, [if diaper quest is 1]little one[otherwise]slut[end if]. I'm so glad you've decided to become ";
-					say "one of my [if diaper quest is 1]baby slaves for hire[otherwise]whores[end if]. That means every time you [if diaper quest is 1]let one of these patrons babify you[otherwise]fuck a [brotha of pimp][end if], you owe me a cut. Once you've turned a few tricks, it's best if you come find me rather than make me find you.'[roman type][line break]";
-					increase the times-met of pimp by 1;
-					interest pimp;
-				otherwise:
-					if game difficulty > a random number between 0 and 3, FavourDown pimp;
-					if pimp is unfriendly and the player is getting unlucky:
+		unless there is a hotel bed in the location of B and the location of the player is next door and the number of entries in the Nviables of the location of the player > 1: [sometimes the modesty barrier remains shut when you're in the NEXT room]
+			if the location of the player is neighbour finder or the location of the player is next door, say "[bold type]The metal modesty shutter noisily opens, allowing you [if the player is in neighbour finder]to leave[otherwise]to enter[end if] the room.[roman type][line break]";
+			destroy B;
+			if there is a hotel bed in the location of the player:
+				now patronTime is 0; [Player should now be able to rest easy]
+				if pimp is alive:
+					if patronbed uses is 1:
 						now pimp is in the location of the player;
 						let D be a random N-viable direction;
-						say "[BigNameDesc of pimp] arrives from the [D]! [GotUnluckyFlav]";
-						check guaranteed perception of pimp.
+						say "A tall black [man of pimp] dressed as a pimp arrive froms the [D]!";
+						if the times-met of pimp is 0:
+							if the class of the player is princess, say "[speech style of pimp]'Listen up, princess. I don't work for you anymore. In fact, starting now you're gonna be ";
+							otherwise say "[speech style of pimp]'Listen up[if diaper quest is 0], bitch[end if]. Nobody works in Bimbacia without reporting to me first, which means you're ";
+						otherwise:
+							say "[speech style of pimp]'Well done, [if diaper quest is 1]little one[otherwise]slut[end if]. I'm so glad you've decided to become ";
+						say "one of my [if diaper quest is 1]baby slaves for hire[otherwise]whores[end if]. That means every time you [if diaper quest is 1]let one of these patrons babify you[otherwise]fuck a [brotha of pimp][end if], you owe me a cut. Once you've turned a few tricks, it's best if you come find me rather than make me find you.'[roman type][line break]";
+						increase the times-met of pimp by 1;
+						interest pimp;
+					otherwise:
+						if game difficulty > a random number between 0 and 3, FavourDown pimp;
+						if pimp is unfriendly and the player is getting unlucky:
+							now pimp is in the location of the player;
+							let D be a random N-viable direction;
+							say "[BigNameDesc of pimp] arrives from the [D]! [GotUnluckyFlav]";
+							check guaranteed perception of pimp.
 
 vine-wall is a barrier. The printed name of a vine-wall is "vine wall".
 

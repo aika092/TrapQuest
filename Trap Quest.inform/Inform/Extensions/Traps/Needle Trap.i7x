@@ -28,7 +28,7 @@ To trigger (Y - a needle trap):
 	now the reset-timer of Y is 250;
 	let C be a random worn drinkable condom pinned clothing;
 	if bukkake fetish is 1 and C is clothing and the player is getting unlucky:
-		say "A tiny [needle] shoots out of [if playerRegion is Dungeon]the stone wall[otherwise if playerRegion is Woods]a tree[otherwise]a tiny hole in the wall[end if] and towards your [ShortDesc of C]! By sheer bad luck, the dart strikes [if the used condoms of C > 1]one of the condoms[otherwise]the condom[end if] pinned to it. It ruptures and bursts!";
+		say "A tiny [needle] shoots out of [if playerRegion is Dungeon]the stone wall[otherwise if playerRegion is Woods]a tree[otherwise if the player is in a heist-painting-room]a miniature turret[otherwise]a tiny hole in the wall[end if] and towards your [ShortDesc of C]! By sheer bad luck, the dart strikes [if the used condoms of C > 1]one of the condoms[otherwise]the condom[end if] pinned to it. It ruptures and bursts!";
 		if the used condoms of C > 0:
 			increase the empty condoms of C by 1;
 			let M be the condomPop of C;
@@ -52,10 +52,14 @@ To trigger (Y - a needle trap):
 			otherwise: [We'll PenisDown, so no need to check if players-dick-is-detached is 0]
 				now target-body-part is penis;
 		if the player is a flatchested trap or the player is prone or diaper quest is 1 or tutorial is 1, now target-body-part is hips;
-		say "A tiny [needle] shoots out of [if playerRegion is Dungeon]the stone wall[otherwise if playerRegion is Woods]a tree[otherwise]a tiny hole in the wall[end if] and towards your [if target-body-part is breasts][BreastDesc][otherwise if target-body-part is belly]side[otherwise if the player is prone]butt cheek[otherwise if target-body-part is hips]hip[otherwise if target-body-part is face][LipDesc][otherwise if target-body-part is vagina][vagina][otherwise][penis][end if]. ";
-		if game difficulty > a random number between 0 and 5:
+		say "A tiny [needle] shoots out of [if playerRegion is Dungeon]the stone wall[otherwise if playerRegion is Woods]a tree[otherwise if the player is in a heist-painting-room]a miniature turret[otherwise]a tiny hole in the wall[end if] and towards your [if target-body-part is breasts][BreastDesc][otherwise if target-body-part is belly]side[otherwise if the player is prone]butt cheek[otherwise if target-body-part is hips]hip[otherwise if target-body-part is face][LipDesc][otherwise if target-body-part is vagina][vagina][otherwise][penis][end if]. ";
+		let NS be the number of worn speed clothing;
+		if a random number between 0 and NS > 0:
+			say "Your [random worn speed clothing] slows down time! You are able to twist and bend and dodge the needle at the last moment!";
+		otherwise if game difficulty > a random number between 0 and 5:
 			say "It contained some kind of ability reducing poison!";
 			RandomStatDown 1;
+			NeedleDelicateUp;
 		otherwise:
 			compute Y injecting into target-body-part;
 		repeat with M running through reactive monsters:
@@ -258,7 +262,8 @@ To compute (Y - a needle trap) injecting into (X - body part):
 
 
 To NeedleDelicateUp:
-	if a random number between the delicateness of the player and 10 < 9, PainUp 10.
+	if a random number between the delicateness of the player and 10 < 9, PainUp 10;
+	otherwise PainUp 4.
 
 To say NeedleTrapReactFlav of (M - a monster):
 	say TriggeredTrapReactFlav of M.
@@ -440,13 +445,19 @@ To compute unique trigger of (Y - polymorph-rune-trap):
 			decrease the raw-magic-modifier of C by 2;
 			if the raw-magic-modifier of C > 0, now the raw-magic-modifier of C is 0;
 			if C is not cursed, now C is cursed;
-			if C is blandness and diaper quest is 0:
-				if C is breast covering:
-					now C is audible jiggles;
-				otherwise if C is sex toy:
-					now C is expansion;
+			if C is blandness:
+				if diaper quest is 0:
+					if C is breast covering:
+						now C is audible jiggles;
+					otherwise if C is sex toy:
+						now C is expansion;
+					otherwise:
+						now C is temptation;
 				otherwise:
-					now C is temptation;
+					if C is knickers:
+						now C is audible squelches;
+					otherwise if C is crotch covering:
+						now C is waddle-walking;
 			say "And suddenly, it is now a [C]![line break][variable custom style]Noooo![roman type][line break]";
 			if C is not-influencing, set up stat-based influence of C;
 			compute summoned quest of C;

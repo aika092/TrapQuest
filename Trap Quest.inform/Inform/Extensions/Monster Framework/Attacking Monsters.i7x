@@ -386,6 +386,7 @@ When the player attacks a monster, determines whether the player will automatica
 
 +!]
 Definition: a monster (called M) is too intimidating:
+	if playerRegion is school, decide no;
 	if the class of the player is worshipper:
 		if M is infernal:
 			let G be a random worn headgear;
@@ -393,8 +394,14 @@ Definition: a monster (called M) is too intimidating:
 			otherwise say "[BigNameDesc of M] turns toward you as soon as the thought of harming [him of M] enters your mind, and your [printed name of G] sends a horrible shiver down your spine.";
 			decide yes;
 	if the health of M < the maxhealth of M, decide no;
-	if the player is not feeling submissive or mindbreak protection is 1, decide no;
+	if M is pedestal-fucking:
+		if the pedestal-user of pimp-pedestal-1 is M, say "Upon seeing you considering attacking [him of M], [NameDesc of M] grabs your [if the player is possessing a scrotum]defenceless [ShortDesc of scrotum][otherwise if the player is possessing a penis]defenceless [player-penis][otherwise if the player is possessing a vagina]delicate clitoris[otherwise]sensitive perineum[end if] and begins to dig [his of M] sharps nails painfully into it.";
+		otherwise say "Upon seeing you considering attacking [him of M], [NameDesc of M] grabs your sensitive, delicate nipples, and begins to painfully twist them further and further.";
+		UnflinchingPainUp 10;
+		say "The threat is clear - if you take another step towards [him of M], [he of M][']ll make you suffer unimaginable pain.";
+		decide yes;
 	if M is uninterested or M is friendly, decide no;
+	if the player is not feeling submissive or mindbreak protection is 1, decide no;
 	let R be a random number between 1 and the delicateness of the player;
 	if debuginfo > 0, say "[input-style]automatic surrender check: player submission (delicateness) roll d[delicateness of the player] ([R]) + [ShortDesc of M] scariness ([the difficulty of M / 4]) = [R + (the difficulty of M / 4)] | (15.5) surrender threshold[roman type][line break]";
 	if R + (the difficulty of M / 4) > 15, decide yes;
@@ -403,8 +410,8 @@ Definition: a monster (called M) is too intimidating:
 surrendered is a number that varies.
 
 To compute surrender to (M - a monster):
-	let N be a random intelligent dangerous monster in the location of the player;
-	say "You consider attacking [NameDesc of M], but then your [if the humiliation of the player >= 40000]desire to be used as an object[otherwise]fear of pain[end if] gets the better of you. You find yourself dropping to your knees. [if N is monster and M is unintelligent][SurrenderFlav of N][otherwise][SurrenderFlav of M][end if]";
+	let N be a random intelligent combative monster;
+	say "You consider attacking [NameDesc of M], but then your [if the player is broken]desire to be used as an object[otherwise]fear of pain[end if] gets the better of you. You find yourself dropping to your knees. [if N is monster and M is unintelligent][SurrenderFlav of N][otherwise][SurrenderFlav of M][end if]";
 	compute silent surrender to M.
 
 To compute silent surrender to (M - a monster):
@@ -566,6 +573,9 @@ To damage (A - a number) on (M - a monster):
 	if M is not damageable:
 		now attack-damage is 0;
 		if damage-explained > 0, say "CANCELLED - ENEMY IS INVULNERABLE!";
+	if attack-type is 5 and M is dark skinned and there is a worn dark magician girl dress:
+		now attack-damage is 0;
+		if damage-explained > 0, say "CANCELLED - DARK MAGICIAN GIRL CAN'T ZAP BLACK PEOPLE!";
 	[Damage calculation over, deal damage now.]
 	if damage-explained > 0, say "[line break][health of M] HP - [attack-damage] damage -> ";
 	decrease the health of M by attack-damage;
@@ -604,6 +614,8 @@ To damage (A - a number) on (M - a monster):
 		if the player is not in danger and side images > 0 and character-version is 0:
 			now danaume-arms-victory is 1;
 			[display character window.]
+	otherwise: [Check for successful interruptions]
+		compute pedestal interruption of M;
 	if debugmode > 1, say "At end of attack function, [MediumDesc of M] is in [location of M].".
 
 Attacking Monsters ends here.

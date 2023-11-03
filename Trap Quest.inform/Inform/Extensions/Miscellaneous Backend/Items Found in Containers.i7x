@@ -190,7 +190,7 @@ To compute autotaking (I - a thing):
 			say "[one of][bold type]You won't automatically pick stuff up when you have a risk of tripping over because of your heels and wrist bondage.[roman type][line break][or][stopping]";
 		otherwise:
 			let autotakeYes be 1;
-			if (I is never-in-bag or the number of worn bag of holding is 0) and (((diaper quest is 0 or the appearance of the player >= the cringe appearance of the player)and the outrage of I >= the appearance of the player) or (diaper quest is 1 and the cringe of I >= the cringe appearance of the player and the cringe appearance of the player >= the appearance of the player)):
+			if (I is never-in-bag or the number of worn bag of holding is 0) and the outrage of I > 2 and (((diaper quest is 0 or the appearance of the player >= the cringe appearance of the player) and the outrage of I >= the appearance of the player) or (diaper quest is 1 and the cringe of I >= the cringe appearance of the player and the cringe appearance of the player >= the appearance of the player)):
 				say "[if there is a worn bag of holding][BigNameDesc of I] can't go in your bag, so it[otherwise]Picking up [NameDesc of I][end if] will negatively affect your appearance. Do you want to pick it up?";
 				if the player is not consenting, now autotakeYes is 0;
 			if autotakeYes is 1:

@@ -776,6 +776,7 @@ To say MediumDesc of (C - open-front-skirt):
 To say ClothingDesc of (C - open-front-skirt):
 	say "This denim skirt has a large chunk missing from the front. The only way to cover it up would be to push the front of your body into another person's...".
 
+Definition: open-front-skirt is slitted: decide yes.
 Definition: open-front-skirt is layer-concealing:
 	if girlfriend-partner is snogged, decide yes;
 	decide no.

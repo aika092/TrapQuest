@@ -23,6 +23,9 @@ Definition: domino-mask is hand ready: decide no. [usually zap ready things are 
 To decide which number is the zap damage improvement of (W - domino-mask):
 	decide on 5 + the charge of domino-mask + the magic-modifier of domino-mask.
 
+To decide which number is the magic-cost of (Z - domino-mask):
+	decide on 0.
+
 To compute attack of (W - domino-mask) at (M - a monster):
 	say "[one of]Using your new superpower, you feel energy surging to your pupils! In the next moment, everything turns red as two beams of concentrated light travel directly along your line of vision, hitting [NameDesc of M] and visibly burning [him of M]! Wow!!![or]You send twin laser rays from your eyes to [NameDesc of M], burning [him of M][if the charge of W <= 2]. [bold type]But since you used your laser eyes so recently, it's significantly weaker than usual.[roman type][line break][otherwise]![end if][stopping]".
 

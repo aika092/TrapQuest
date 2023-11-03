@@ -996,6 +996,11 @@ To BustImplantsUp (X - a number):
 						transform O into rubber-royal-dress;
 					otherwise:
 						unclash class summon rubber-royal-dress;
+				if police-hat is worn and police-hat is not pinkified and the largeness of breasts > 6:
+					now police-hat is pinkified;
+					say "Suddenly, your police hat turns pink!";
+					follow the player class rules;
+					say "[variable custom style]Why does my brain now think that my class title is ['][player-class][']?! That's not even a play on words, it's just dumb![roman type][line break]";
 		compute bra strain;
 		update appearance level;
 		progress quest of bust-up-quest;

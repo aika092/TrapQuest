@@ -122,8 +122,9 @@ To compute action (N - a number) of (M - a monster):
 		if M is in the location of the player or M is grabbing the player or M is penetrating a body part:
 			if N is 1:
 				if M is penetrating a body part or M is grabbing the player or M is attack-threatening:
-					check aggression change of M; [Is this NPC aggressive this turn, when they weren't at the start of the turn?]
-					check attack of M;
+					unless M is not penetrating a body part and M is not grabbing the player and M is very distracted:
+						check aggression change of M; [Is this NPC aggressive this turn, when they weren't at the start of the turn?]
+						check attack of M;
 				otherwise if M is not distracted:
 					if M is undefeated and M is friendly:
 						compute friendly boredom of M; [Potentially make them bored]
@@ -191,6 +192,16 @@ To say BecomesBoredFlav of (M - a monster):
 	say "[BigNameDesc of M] seems to get bored of following you around.".
 
 [We can make this resolve to 'yes' and also output some text about what they get up to instead of taking their action.]
-Definition: a monster is distracted: decide no.
+Definition: a monster (called M) is distracted:
+	if M is the pedestal-user of pimp-pedestal-1:
+		compute pedestal fuck of M;
+		decide yes;
+	otherwise if M is the pedestal-user of pimp-pedestal-2:
+		compute pedestal titfuck of M;
+		decide yes;
+	if M is uniquely distracted, decide yes;
+	decide no.
+[We can make this resolve to 'yes' and also output some text about what they get up to instead of taking their action INCLUDING ATTACKING.]
+Definition: a monster is very distracted: decide no.
 
 Compute Monsters ends here.

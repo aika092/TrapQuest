@@ -166,10 +166,11 @@ To compute hair growth of (H - a headgear):
 To summon (H - a headgear):
 	only destroy H; [This cleans up all potentially incorrect flags except ripped and various effects]
 	only summon H;
-	follow the player class rules;
-	compute hair growth of H;
-	compute hair colour change of H;
-	compute class outfit of H.
+	if the player is not in a predicament room:
+		follow the player class rules;
+		compute hair growth of H;
+		compute hair colour change of H;
+		compute class outfit of H.
 
 To compute post transformation effect of (H - a headgear):
 	let PC1 be the substituted form of "[player-class]";
@@ -323,6 +324,8 @@ To PinkWardrobeUnclash (C - a clothing):
 			WardrobeVanish O;
 	if C is stockings:
 		repeat with O running through worn stockings:
+			WardrobeVanish O;
+		repeat with O running through worn usually ankle covering clothing:
 			WardrobeVanish O;
 	if C is shoes:
 		repeat with O running through worn shoes:
@@ -492,6 +495,8 @@ Definition: a clothing (called C) is class summonable:
 			if O is unremovable or O is locked or O is currently-class-relevant, decide no;
 	if C is stockings:
 		repeat with O running through worn stockings:
+			if O is unremovable or O is locked or O is currently-class-relevant, decide no;
+		repeat with O running through worn usually ankle covering clothing:
 			if O is unremovable or O is locked or O is currently-class-relevant, decide no;
 	if C is shoes:
 		repeat with O running through worn shoes:

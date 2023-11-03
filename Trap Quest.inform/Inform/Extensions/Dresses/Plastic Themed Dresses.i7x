@@ -129,6 +129,9 @@ Definition: daddy issues dress is class-relevant:
 	if the class of the player is silicone queen or the class of the player is schoolgirl, decide yes;
 	decide no.
 
+Definition: a clothing is brat themed: decide no.
+Definition: daddy issues dress is brat themed: decide yes. [schoolgirl + silicone queen]
+
 The printed name of daddy issues dress is "[clothing-title-before]pink rubber 'Daddy Issues' dress[clothing-title-after]". The text-shortcut of daddy issues dress is "ddid".
 
 Figure of daddy issues dress is the file "Items/Clothes/Upper/Latex/rubberdress5.png".

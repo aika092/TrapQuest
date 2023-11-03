@@ -77,7 +77,11 @@ Carry out TQeating candy corn:
 	compute CandyCornEat.
 
 To compute CandyCornEat:
-	if the number of stalking wisps is 0:
+	let SP be a random off-stage spider pacifier;
+	if halloween content is 1 and SP is actually summonable pacifier:
+		say "You feel the sweets fizzing in your stomach, and then, a split second later, you are stuck with a [MediumDesc of SP] in your mouth!";
+		summon SP cursed with quest;
+	otherwise if the number of stalking wisps is 0:
 		deploy a wisp;
 	otherwise if diaper quest is 1:
 		say "[second custom style]TASTY... TASTY... TASTY![roman type][line break]The word reverberates in your head over and over again. ";

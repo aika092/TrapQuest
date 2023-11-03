@@ -608,12 +608,12 @@ To compute restoration of dick by (M - a monster):
 			passively stimulate vagina from players-detached-dick;
 			say "[speech style of M]'Here goes nothing...!'[roman type][line break][big he of M] slides the [DetachedPenis] into your [vagina] making you shudder in pleasure. Even as [he of M] concentrates on [his of M] spell, you notice [his of M] shaking [his of M] head at your slutty display. The feelings from the normal-sized dildo [']handle['] diffuse out, like everything in there is melting back together. Then [he of M]'s seating your dick and balls down solidly between your thighs[again-DD], still frowning in concentration.";
 			devagina the player;
-		otherwise if futanari fetish is 0:
+		otherwise if player futanari fetish is 0:
 			say "[speech style of M]'Brace yourself, this may smart...'[roman type][line break]You feel the [italic type]weirdest[roman type] pulling sensation as things inside you close in and tighten, and finally your pussy lips fuse together. Then [he of M]'s planting your dick and balls down solidly[YetAgain-DD] on the Barbie doll-like mound momentarily visible.";
 			devagina the player;
 		otherwise:
 			say "[big he of M] plants your dick and balls down directly above your [vagina]![line break][speech style of M]'Looks like you're about to become a futa!'[roman type][line break]";
-			if futanari fetish is 2: [No balls: penis + vagina only]
+			if player futanari fetish is 2: [No balls: penis + vagina only]
 				say "As it touches you, there's a weird fizzing and sparking, and your [ShortDesc of scrotum] quiver and shrink, and shrink, and finally vanish altogether!";
 				now the size of scrotum is 0;
 	otherwise:

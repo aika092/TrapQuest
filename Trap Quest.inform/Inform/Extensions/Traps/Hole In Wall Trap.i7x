@@ -152,7 +152,11 @@ Check resisting when the location of the player is HoleInWall:
 			allocate 6 seconds;
 			say "All of a sudden, your body seems to manage to find the perfect orientation, and you begin to make progress. Within a few moments, you've escaped![line break][variable custom style]I'm free![roman type][line break]";
 			dislodge hole-in-wall;
+			if composed-explorer is off-stage and composed-explorer is summon-available:
+				set up composed-explorer;
+				now composed-explorer is in the source-room of the location of the player;
 			now the player is in the source-room of the location of the player;
+			update player region;
 			refresh the map-window;
 			check immobility;
 		otherwise:
@@ -453,11 +457,12 @@ To compute punishment of (P - hole-gatling-fuck):
 				otherwise FuckCount;
 				if condom fetish >= 2:
 					let C be a random worn condom pinnable stockings;
-					if there is a worn belt, now C is a random worn belt;
+					if there is a worn condom pinnable belt, now C is a random worn condom pinnable belt;
 					if C is nothing:
-						summon string-belt uncursed;
-						gluify string-belt;
-						say "You feel someone sticking a string belt to your waist with glue!";
+						if string-belt is not worn:
+							summon string-belt uncursed;
+							gluify string-belt;
+							say "You feel someone sticking a string belt to your waist with glue!";
 						now C is string-belt;
 					compute M condom pinning on C;
 				otherwise:

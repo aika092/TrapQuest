@@ -53,6 +53,21 @@ To compute class outfit of (H - a bridal veil):
 		otherwise class summon slutty bridal dress;
 	if the ceremony of betrothal-quest is true, class summon floral bouquet.
 
+Definition: a bridal veil (called C) is removal-blocking:
+	if wearing-target is sacrificial maiden dress, decide yes;
+	decide no.
+
+To compute unique periodic effect of (H - a bridal veil):
+	if bride-consort is the throne and the player is in the location of hotel altar and sacrificial maiden dress is not worn:
+		let C be a random worn overdress;
+		if C is removable overdress or C is nothing:
+			say "The eyes on the golden statue light up a bright red.[line break][first custom style]'YOU WILL SERVE NICELY.'[roman type][line break]";
+			if C is clothing, transform C into sacrificial maiden dress;
+			otherwise class summon sacrificial maiden dress;
+		if sacrificial maiden dress is worn:
+			now bride-consort is hotel altar;
+			say "[variable custom style]I'm a VIRGIN SACRIFICE?! This seem extremely ominous...[roman type][line break]".
+
 Chapter - Quest
 
 betrothal-quest is a headgear-clothing-quest. betrothal-quest has a truth state called ceremony. the ceremony of betrothal-quest is false. betrothal-quest has a truth state called consummation. the consummation of betrothal-quest is false.
@@ -70,7 +85,7 @@ To compute unique recycling of (C - a bridal veil):
 			only destroy F.
 
 To say QuestFlav of (Q - betrothal-quest):
-	say "You sense it wants you to [if bride-consort is the throne]find a husband to please (but the more you say no, the more appealing the offers may become!).[otherwise]keep your husband ([FuckerDesc of bride-consort]) pleased (or banish [him of bride-consort]).[end if]".
+	say "You sense it wants you to [if bride-consort is the throne]become a human sacrifice?! Maybe you should try to lose your virginity instead...[otherwise if bride-consort is the throne]find a husband to please (but the more you say no, the more appealing the offers may become!).[otherwise]keep your husband ([FuckerDesc of bride-consort]) pleased (or banish [him of bride-consort]).[end if]".
 
 To say QuestTitle of (Q - betrothal-quest):
 	say " (marriage quest)".

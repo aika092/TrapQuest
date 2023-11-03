@@ -619,6 +619,21 @@ To compute perception of (M - a patron):
 		now the chosen-orifice of M is nothing; [We will allow the patrons to choose depending on what's available at the time]
 	otherwise:
 		compute appearance assessment of M;
+		if the player is not monster fucked:
+			let B be the chosen-orifice of M;
+			if B is an actual target body part:
+				let S be the relevant sex addiction of B;
+				if B is thighs:
+					now S is the grossness addiction of the player;
+				otherwise if B is belly:
+					now S is the urine taste addiction of the player;
+				otherwise:
+					if watersports fetish is 0 and the class of the player is human toilet, increase S by 10;
+				if S > 5: [at 5 or less addiction, this can't happen]
+					now M is enticed;
+					check enticing of M with temptation level S;
+					if the player is prone:
+						follow the insertion rules of M;
 	if the player is upright, make M expectant.
 
 To compute group assessment of (M - a patron): [currently displayed for special patrons e.g. slutty patron]
@@ -655,7 +670,7 @@ To compute group assessment of (M - a dickhead patron):
 		say "[speech style of M]'[one of]We're going to RUIN you!'[or][if the number of patrons in the location of the player is 2]Ever been double penetrated, slut?'[otherwise]Ever been made [']airtight['] before, slut?'[end if][or]I wonder if [he of the player]'ll faint before we're satisfied?'[in random order][roman type][line break]".
 
 To compute appearance assessment of (M - a patron):[shouldn't display]
-	say "[speech style of M]'[if the chosen-orifice of M is vagina]Get on your knees [slut], I wanna fuck your [pussy]!'[otherwise if the chosen-orifice of M is a fuckhole]Get on your knees [slut], I wanna fuck!'[otherwise]Get over here and suck my [DickDesc of M], [slut]!'[end if][roman type][line break]";
+	say "[speech style of M]'[if the chosen-orifice of M is vagina]Get on your knees [slut], I wanna fuck your [pussy]!'[otherwise if the chosen-orifice of M is a fuckhole]Get on your knees [slut], I wanna fuck!'[otherwise]Get over here and suck my [DickDesc of M], [slut]!'[end if][roman type][line break]".
 
 To compute appearance assessment of (M - an inexperienced patron):
 	if the class of the player is princess:
@@ -742,7 +757,7 @@ To compute kneeling reaction of (M - a patron):
 	moderateHumiliate.
 
 To compute delay of (M - a patron):
-	compute attack of M. [Patrons do not wait.]
+	unless there is a fuckhole-mode glue penetrating face, compute attack of M. [Patrons do not wait.]
 
 To compute damaging attack of (M - a patron):
 	if woman-player is in the location of the player and a random number between 1 and 2 is 1 and patron-scene-fighting of woman-player >= 2 and the woman-bimbo of woman-player <= 4:
@@ -1782,20 +1797,18 @@ Section 2 - DQ
 
 [we need to change how satisfy and bore work so that the patrons compute their payment functions at the end of diaper quest punishments, with satisfy meaning payment, and bore meaning no payment.]
 To satisfy (M - a patron) for (N - a number) seconds:
-	dislodge M;
 	compute common boredom of M for N seconds;
 	compute unique boredom of M;
 	now M is uninterested;
 	now the boredom of M is N;
 	unless M is dying:
-		if there is a hotel bed in the location of M:
+		if there is a hotel bed in the location of M and the player is not trap stuck:
 			compute payment of M;
 		otherwise:
-			if M is in the location of the player, say "[BigNameDesc of M] seems satisfied, and leaves the we [he of M] came.";
+			if M is in the location of the player, say "[BigNameDesc of M] seems satisfied, and leaves the way [he of M] came.";
 			destroy M. [sets M to dying, meaning it will be cleaned up at end of turn]
 
 To bore (M - a patron) for (N - a number) seconds:
-	dislodge M;
 	compute common boredom of M for N seconds;
 	compute unique boredom of M;
 	now M is uninterested;
@@ -1805,7 +1818,7 @@ To bore (M - a patron) for (N - a number) seconds:
 			now M is pissed off;
 			compute payment of M;
 		otherwise:
-			if M is in the location of the player, say "[BigNameDesc of M] leaves the we [he of M] came.";
+			if M is in the location of the player, say "[BigNameDesc of M] leaves the way [he of M] came.";
 			destroy M. [sets M to dying, meaning it will be cleaned up at end of turn]
 
 Definition: a patron is willing to donate diapers:
@@ -2537,7 +2550,7 @@ Definition: crimson patron is dark skinned: decide no.[He's red skinned!]
 Definition: crimson patron is infernal: decide yes.
 Definition: crimson patron is generic-appropriate:
 	unless the player is the donator, decide no;
-	if the altar-intensity of hotel altar > 0 or demon lord is alive, decide yes;
+	if the altar-intensity of hotel altar > 3 or demon lord is alive, decide yes;
 	decide no.
 
 Definition: crimson patron is father material: decide yes.

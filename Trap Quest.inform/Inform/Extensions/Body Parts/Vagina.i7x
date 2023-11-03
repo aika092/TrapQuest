@@ -171,6 +171,12 @@ This is the virginity is important rule:
 		rule fails.
 The virginity is important rule is listed in the vagina presentable rules.
 
+This is the sacrificial virginity is important rule:
+	if sacrificial maiden dress is worn and there is a virginity taking monster in the location of the player and the number of virginity taking infernal monsters in the location of the player is 0:
+		if auto is 0, say "[variable custom style]I... I can't... Something deep inside won't let me lose my virginity, unless it's to the right type of person.[roman type][line break]";
+		rule fails.
+The sacrificial virginity is important rule is listed in the vagina presentable rules.
+
 [This is the too much dignity to present vagina rule:
 	if the humiliation of the player < HUMILIATION-PROUD + 2000 and the player is not horny and debugmode < 1:
 		if auto is 0, say "You have too much self respect to do that!";
@@ -567,7 +573,8 @@ To compute father material of (T - a thing):
 
 To compute father material of (F - a body part):
 	repeat with M running through things penetrating F:
-		now M is inseminating F;
+		if F is fuckhole and portal-pants is worn and M is ultimate-lesson-actor, now the pedestal-user of pimp-pedestal-1 is inseminating F;
+		otherwise now M is inseminating F;
 	if the number of things inseminating F >= 2, compute cumdumpsterification.
 
 To say inseminators of (T - a thing):
@@ -582,10 +589,12 @@ To compute father material of (F - vagina):
 	if the pregnancy of the player is 0: [Once pregnant you don't get any more potential fathers!]
 		if pregnancy fetish is 1:
 			repeat with M running through father material things penetrating F:
-				now M is inseminating F;
+				if portal-pants is worn and M is ultimate-lesson-actor, now the pedestal-user of pimp-pedestal-1 is inseminating F;
+				otherwise now M is inseminating F;
 		otherwise:
 			repeat with M running through things penetrating F:
-				now M is inseminating F;
+				if portal-pants is worn and M is ultimate-lesson-actor, now the pedestal-user of pimp-pedestal-1 is inseminating F;
+				otherwise now M is inseminating F;
 	let N be the number of things inseminating F;
 	if N >= 2:
 		compute cumdumpsterification;

@@ -18,14 +18,12 @@ To say ShortDesc of (M - djinn):
 To say MediumDesc of (M - djinn):
 	say "nubian djinn".
 
-Figure of djinn is the file "NPCs/Forest/Djinn/djinn1.png".
-Figure of censored djinn is the file "NPCs/Forest/Djinn/djinn2.png".
 Figure of djinn femme is the file "NPCs/Forest/Djinn/djinn3.jpg".
 
 To decide which figure-name is the monster-image of (M - djinn):
 	if lady fetish is 1, decide on figure of djinn femme;
-	if diaper quest is 0, decide on figure of djinn;
-	otherwise decide on figure of censored djinn.
+	if diaper quest is 0 and M is uninterested, decide on figure of djinn uninterested;
+	decide on figure of djinn.
 
 To decide which figure-name is the vaginal-sex-monster-image of (M - djinn):
 	[if lady fetish is 1, decide on figure of missing NPC;]
@@ -123,8 +121,7 @@ To compute appearance assessment of (M - djinn):
 			say "[speech style of M]'[one of]I am bound by the law of Djinni to grant you three wishes. You must tell me your first wish now[or]You must tell me your second wish now[or]You must tell me your third and final wish now[stopping].'[roman type][line break]";
 			now the alert of the player is 1;
 			compute djinn wishing of M;
-			if diaper quest is 0, alwayscutshow the figure of djinn for M;
-			otherwise alwayscutshow the figure of censored djinn for M;
+			alwayscutshow the figure of djinn for M;
 		otherwise:
 			say "[speech style of M]'Hmm, looks like you can't speak at the moment. I'll come back later.'[roman type][line break]";
 			bore M.
@@ -318,7 +315,7 @@ To compute djinn wishing of (M - a monster):
 	otherwise:
 		say "ERROR: unable to properly process that wish. Please report this as a bug!".
 
-Definition: djinn is distracted:
+Definition: djinn is uniquely distracted:
 	if djinn is in the location of the player:
 		let M be a random explorer in the location of the player;
 		if M is explorer:

@@ -230,7 +230,7 @@ To decide which number is the initial outrage of (C - a ghost-strapon):
 To uniquely set up (C - a ghost-strapon):
 	now the strap-length of C is 3.[should these be possessed? Not sure, but probably not]
 
-Definition: A ghost-strapon (called P) is dildo-usage:
+Definition: ghost-strapon is dildo-usage:
 	if the player is not possessing a penis and futanari fetish is 0, decide yes;
 	decide no.
 

@@ -267,6 +267,11 @@ To cutshow (F - a figure-name) for (M - a thing):
 		otherwise if the focus-window is g-present and image cutscenes > 0: [The player has requested cutscenes show up in the main body of the text instead.]
 			display F.
 
+[Display it on the map too - it's a big deal!]
+To mapcutshow (F - a figure-name) for (M - a thing):
+	cutshow F for M;
+	maybe-map-display F.
+
 To cutshow (F - a figure-name):
 	cutshow F for yourself.
 

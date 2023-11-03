@@ -120,52 +120,13 @@ To SilentSquirt (L - a liquid-object) On (C - portal-hotpants) by (N - a number)
 			if thighs is unsoaked, say "[announced L] flows down to your thighs.";
 			ContinuedDribble L on Thighs by N.
 
-
-To compute periodic effect of (C - portal-hotpants):
-	increase the charge of C by 1;
-	if the charge of C < 100 and the charge of C > (a random number between 40 and 60) and the player is not in Hotel44 and Hotel44 is not nearby:
-		let F be asshole;
-		if the player is possessing a vagina and (asshole is actually occupied or a random number between 1 and 2 is 1), now F is vagina;
-		repeat with T running through disembodied things penetrating F:
-			say "You feel [NameDesc of T] being removed from your [variable F]!";
-			now T is in Hotel44;
-			dislodge T;
-		if F is not actually occupied:
-			say "[bold type]Suddenly, you feel something long and hard push into your [variable F]![line break][variable custom style][one of]Aaaah! So sudden![or]Oh god, I'm being used right now?![or]That pimp is selling my [F] again![then at random][roman type][line break]";
-			now C is penetrating F;
-			now the charge of C is 100;
-	compute school periodic effect of C.
-
-To compute school periodic effect of (C - portal-hotpants):
-	let F be a random fuckhole penetrated by C;
-	if F is a fuckhole:
-		cutshow figure of pimp portal cutscene;
-		let M be a random ultimate-lesson-actor;
-		now M is penetrating F;
-		dislodge C;
-		say "[BigFuckerDesc of M] is using your [variable F] as [his of M] personal [one of]onahole[or]cocksleeve[or]fuckhole[in random order]!";
-		ruin F;
-		if playerRegion is school or the player is in Hotel44 or Hotel44 is nearby or the charge of C > a random number between 101 and 103:
-			now the sex-length of M is 0;
-			now M is not interested; [to prevent orgasm satisfy function]
-			compute climax of M in F;
-			say "You feel the [DickDesc of M] being quickly pulled out of your [variable F], leaving you empty once again.";
-			now the charge of C is 0;
-			if pimp is not normally ally, FavourUp pimp;
-		otherwise:
-			now C is penetrating F;
-			say StealthPortalSexFlav;
-		dislodge M;
-	otherwise if the charge of C > 100:
-		now the charge of C is 0.
-
 Definition: portal-hotpants is pants pee refusal inducing:
 	if the player is proud:
 		if debugmode > 0:
 			say "If debugmode was disabled, the player would refuse to pee.";
 		otherwise:
-			now Neighbour Finder is the location of the player;
-			say "[first custom style]I can't bring myself to do that! The pimp [if Hotel44 is not nearby]and who knows how many other people [end if]will be watching![roman type][line break]";
+			if Hotel44 is within vision and the number of awake intelligent monsters in Hotel44 is 0, decide no;
+			say "[first custom style]I can't bring myself to do that! The pimp [if Hotel44 is not within vision]and who knows how many other people [end if]will be watching![roman type][line break]";
 		decide yes;
 	decide no.
 

@@ -92,9 +92,7 @@ To compute perception of (M - a robobutler):
 		now the wisp-trigger of W is speak-wisp-trigger;
 		now the wisp-punishment of W is bimbo-wisp-punishment;
 		if (a random number between 0 and 1) + (a random number between 0 and 1) < game difficulty, now the wisp-punishment of W is a random appropriate wisp punishment;
-		now W is everywhere;
-		update backdrop positions;
-		now the text-shortcut of W is the substituted form of "[ColourDesc of W]";
+		update background colour of W;
 		say "[bold type]A [ColourDesc of W] curse wisp appears, and begins hovering behind you! [roman type]You can sense that you must [bold type][wisp-quest of W][roman type] before you next [bold type][wisp-trigger of W][roman type], or else you will [bold type][wisp-punishment of W][roman type].";
 	otherwise:
 		say "[big he of M] glides towards you, bowing deeply as [he of M] addresses you in a monotone.[line break][first custom style]'IT IS CUSTOMARY TO TIP THE SERVICE STAFF, MA[']AM.'[roman type][line break]One of [his of M] 'hands' is unsubtly placed upturned towards you.";

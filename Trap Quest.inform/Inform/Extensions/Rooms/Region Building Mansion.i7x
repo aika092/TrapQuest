@@ -87,15 +87,16 @@ To Set Up The Mansion:
 	if debugmode > 1:
 		say "Setting up blessed areas complete.";
 		wait 1000 ms before continuing;
-	repeat with P running through pedestals:
-		now P is in Mansion28;
-		add treasure to P;
+	lock pedestals;
 	if debugmode > 1:
 		say "Setting up pedestals complete.";
 		wait 1000 ms before continuing;
 	now a random master bed is in Mansion16;
 	let MR be the list of placed haunted rooms;
 	if Mansion32 is listed in MR, remove Mansion32 from MR; [no painting in warp portal room]
+	if Mansion28 is listed in MR, remove Mansion28 from MR; [no painting except heist painting in pedestal room]
+	if diaper quest is 0 and the player is an october 2023 top donator and heist-painting is off-stage, now heist-painting is in Mansion28;
+	if diaper quest is 1 and the player is an october 2023 diaper donator and heist-painting is off-stage, now heist-painting is in Mansion28;
 	let PT be the list of fetish appropriate paintings;
 	if debugmode > 1:
 		say "placed haunted rooms: [MR]. fetish appropriate paintings: [PT].";
@@ -107,7 +108,6 @@ To Set Up The Mansion:
 				let P be entry 1 in PT;
 				now P is in R;
 				remove P from PT;
-	lock pedestals;
 	now gold chalice is in Mansion07;
 	if lactation fetish is 1:
 		now mansion-milking-bench is in Mansion06;
@@ -119,8 +119,10 @@ To Set Up The Mansion:
 	progress quest of new-region-quest.
 
 To Scramble Mansion:
-	let E be the easting part of the grid position of Stairwell03;
-	let N be the northing part of the grid position of Stairwell03;
+	[let E be the easting part of the grid position of Stairwell03;
+	let N be the northing part of the grid position of Stairwell03;]
+	let N be 12;
+	let E be 12;
 	let the sum be the spatial coordinate with maze level part 4 easting part E northing part N;
 	now the grid position of Mansion01 is the sum;
 	now target-floor is Mansion01;

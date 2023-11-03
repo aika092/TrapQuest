@@ -390,6 +390,7 @@ Definition: yourself is getting unlucky:
 		decide no;
 	otherwise:
 		let GL be 75 + the luck of the player;
+		if the class of the player matches the text "race traitor", now GL is (GL * 2) / 3;
 		let R be a random number between 1 and 100;
 		if debuginfo > 0, say "[input-style]Bad Luck Roll: d100([R]) | ([GL].5) bad luck threshold[roman type][line break]";
 		if R > GL:

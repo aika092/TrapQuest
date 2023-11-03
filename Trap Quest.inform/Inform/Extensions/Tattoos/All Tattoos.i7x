@@ -1428,7 +1428,7 @@ To decide which number is the initial outrage of (T - free ride tattoo):
 freedom tattoo is a body tattoo. The tattoo-title of freedom tattoo is "freedom".
 Figure of freedom tattoo is the file "Items/Tats/tattoo2.jpg".
 Definition: freedom tattoo is eligible:
-	if the noun is bondage or the noun is submissive collar or the noun is an unlock-key or the noun is bird themed or the noun is slave-dress or the noun is shoes, decide yes;
+	if the noun is bondage or the noun is submissive collar or the noun is an unlock-key or the noun is key garter or the noun is bird themed or the noun is slave-dress or the noun is shoes, decide yes;
 	decide no.
 To decide which figure-name is the examine-image of (T - freedom tattoo):
 	decide on figure of freedom tattoo.
@@ -3206,7 +3206,12 @@ Definition: true love tattoo is boob themed: decide yes.
 Book - U Tattoos
 
 unfaithful tattoo is a chest tattoo. The tattoo-title of unfaithful tattoo is "unfaithful".
-Definition: unfaithful tattoo is drawable: decide no.
+Definition: unfaithful tattoo is drawable:
+	if the noun is hotwife dress, decide yes;
+	decide no.
+Definition: unfaithful tattoo is eligible:
+	if the noun is hotwife dress, decide yes;
+	decide no.
 To say tattoo-desc of (T - unfaithful tattoo):
 	say "The word 'UNFAITHFUL' is emblazoned just below your collarbone in big red letters, identifying you as the worst kind of slut.".
 To decide which number is the intelligence-influence of (T - unfaithful tattoo):

@@ -30,6 +30,9 @@ Definition: a demoness is willing to charm snakes:
 
 Definition: a demoness is willing to urinate: decide yes.
 
+To decide which number is the freebie-reluctance of (M - a demoness):
+	decide on 10.
+
 Understand "demon" as demoness.
 
 To say ShortDesc of (M - a demoness):
@@ -62,11 +65,11 @@ To decide which figure-name is the anal-sex-monster-image of (M - a demoness):
 	decide on figure of demoness cutscene 2.
 
 To decide which figure-name is the vaginal-sex-monster-image of (M - a demoness):
-	if futanari fetish is 1, decide on figure of demoness cutscene 13;
+	if futanari fetish is 1, decide on figure of demoness cutscene 13; [futa with balls]
 	decide on figure of Missing NPC.
 
 To decide which figure-name is the oral-sex-monster-image of (M - a demoness):
-	if futanari fetish is 1, decide on figure of demoness cutscene 8;
+	if futanari fetish > 0, decide on figure of demoness cutscene 8; [futa with or without balls]
 	decide on figure of demoness cutscene 7.
 
 infernaler demoness is a demoness. The text-shortcut of infernaler demoness is "ide". Understand "infernal" as infernaler demoness.
@@ -1042,12 +1045,12 @@ To say FriendlySexReleaseRefusalSpeech of (M - a demoness):
 	unless M is penetrating asshole:
 		if futanari fetish > 0:
 			say "[speech style of M]'[one of]Yes! Fight me! I love it when you fight!'[or]Ooh! Yeah! Fight me! Fucking fight me!'[or]You can't keep resisting forever! Hahaha!'[or]I always get what I want!'[or]Resist me, slut! Show me how pure you are!'[or]Ooh... you are going to taste so good!'[in random order][roman type][line break]";
-			if M is penetrating face, cutshow figure of demoness cutscene 5 for M;
+			if M is penetrating face and futanari fetish is 1, cutshow figure of demoness cutscene 5 for M; [futa with balls]
 		otherwise:
 			say "[speech style of M]'[one of]Shhh...'[or]That's right, get all that fight out of your system...'[or]Sh-sh-shhh...'[or]That's right sweetie, keep fighting. [big he of a random tentacle monster] loves that.'[or]No running away now sweetheart...'[in random order][roman type][line break]";
 	otherwise:
 		say "[speech style of M]'[one of]I'm not stopping until you're in tears!'[or]Stop? No! I want to make you suffer!'[or]Yes! Suffer for me! Tell me how much you hate it!'[or]Oooh! Yes! Hate me! Tell me you hate me!'[or]Struggle harder! I want it to HURT!'[or]Why stop when I have so much pain to give?'[or]Never! HAHAHAHA!'[in random order][roman type][line break]";
-		cutshow figure of demoness cutscene 6 for M.
+		if futanari fetish is 1, cutshow figure of demoness cutscene 6 for M. [futa with balls]
 
 Definition: a demoness is willing to let go: decide no.
 
@@ -1162,7 +1165,7 @@ To decide which number is the condom resistance of (M - a demoness):
 	decide on 99.
 
 To get oral creampie image for (M - a demoness):
-	cutshow figure of demoness cutscene 11 for M.
+	if futanari fetish > 0, cutshow figure of demoness cutscene 11 for M. [Futa with or without balls]
 
 To compute failed facial dodging of (M - a demoness):
 	say FacialBrokenFree of M;

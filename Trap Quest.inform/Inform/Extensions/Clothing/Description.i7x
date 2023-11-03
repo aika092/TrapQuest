@@ -184,6 +184,9 @@ To say InfluenceDesc of (C - a wearthing):
 		if diaper messing >= 3:
 			if the rectum-incontinence-influence of C > 0, say "You can sense that this [item of C] is making it [if the rectum-incontinence-influence of C > 1]much [end if]more difficult for you to hold it when you need to poop.";
 			if the rectum-incontinence-influence of C < 0, say "You can sense that this [item of C] is making you [if the rectum-incontinence-influence of C < 1]significantly [end if]better at avoiding messing yourself.";
+	let SDI be the slap damage improvement of C;
+	if SDI < 0, say "You can sense that this [item of C] is making your slap attacks [if SDI < -1]much [end if]weaker[if C is not slap ready and there is a worn slap ready clothing]... Or rather, it would be, if you weren't wielding [NameDesc of a random worn slap ready clothing][end if].";
+	if SDI > 0, say "You can sense that this [item of C] is making your slap attacks [if SDI > 1]much [end if]stronger[if C is not slap ready and there is a worn slap ready clothing]... Or rather, it would be, if you weren't wielding [NameDesc of a random worn slap ready clothing][end if].";
 	if the knee-modifier of C < 0 and there are worn stockings, say "You can sense that this [item of C] is making your knee attacks [if the knee-modifier of C < -1]much [end if]weaker.";
 	if the knee-modifier of C > 0 and there are worn stockings, say "You can sense that this [item of C] is making your knee attacks [if the knee-modifier of C > 1]much [end if]stronger.";
 	if the anal sensitivity influence of C > 0 and diaper quest is 0, say "You feel like this [item of C] is making your [asshole] [if the anal sensitivity influence of C > 1]much [end if]more receptive to pleasurable stimulation.";
@@ -238,6 +241,9 @@ Report examining worn elasticity clothing:
 
 Report examining worn audible jiggles clothing:
 	say "Some sort of in-built magic effect is making this item emphasize the sounds your [BreastDesc] make as they move, making them loud and somewhat comical. It makes you feel like you're in some kind of bizarre cartoon!".
+
+Report examining worn audible squelches clothing:
+	say "Some sort of in-built magic effect is making this item emphasize the sounds it makes when wet[if the noun is knickers and diaper messing >= 4] or messy[end if], making them loud and somewhat comical[if the noun is audibly squelching]. It makes you feel like you're in some kind of bizarre cartoon[end if]!".
 
 Report examining crotch covering clothing:
 	if the noun is crotch-ripped, say "It has a large tear at the crotch.";

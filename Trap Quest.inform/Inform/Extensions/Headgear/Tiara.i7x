@@ -23,7 +23,7 @@ To decide which figure-name is the clothing-image of (C - silver-tiara):
 	decide on figure of silver tiara.
 
 To say ClothingDesc of (H - silver-tiara):
-	say "This silver [MediumDesc of H] looks like something a very important princess would wear. [one of]You can feel a small amount of magical energy coming from it.[or]It glitters brilliantly even with no nearby bright light source.[or]It feels completely weightless.[sticky random]".
+	say "This silver [MediumDesc of H] looks like something a very important princess would wear. [one of]You can feel a small amount of magical energy coming from it[or]It glitters brilliantly even with no nearby bright light source[or]It feels completely weightless[sticky random].".
 
 To say MediumDesc of (H - silver-tiara):
 	say "silver royal tiara".
@@ -34,7 +34,7 @@ Definition: silver-tiara is grey themed: decide yes.
 
 Chapter - Class Outfit
 
-To compute class outfit of (H - silver-tiara):
+To compute class outfit of (H - a tiara):
 	if the quest of H is virginity-retention-quest:
 		class summon virgin princess outfit;
 	otherwise:
@@ -57,11 +57,11 @@ royal-quest is a headgear-clothing-quest. royal-quest has a number called duties
 stealth-diaper-quest is a headgear-clothing-quest.
 unlock-quest is a headgear-clothing-quest.
 
-To compute unique recycling of (C - silver-tiara):
+To compute unique recycling of (C - a tiara):
 	now the minotaur-checked of royal-quest is false;
 	now the duties-performed of royal-quest is 0.
 
-To uniquely set up (C - silver-tiara):
+To uniquely set up (C - a tiara):
 	if diaper quest is 1, now the quest of C is stealth-diaper-quest;
 	otherwise now the quest of C is royal-quest.
 
@@ -137,6 +137,66 @@ Chapter - Class Outfit
 
 To compute class outfit of (H - trashy-tiara):
 	class summon rubber-royal-dress;
+	class summon royal scepter.
+
+
+
+jewelled-tiara is a tiara.
+
+The printed name of jewelled-tiara is "[clothing-title-before]jewelled tiara[clothing-title-after]". The text-shortcut of jewelled-tiara is "jti". Understand "jewelled" as jewelled-tiara.
+
+Figure of priceless jewelled tiara is the file "Items/Accessories/Head/royaltiara6.png".
+Figure of jewelled tiara is the file "Items/Accessories/Head/royaltiara7.png".
+
+To decide which figure-name is the clothing-image of (C - jewelled-tiara):
+	if C is worn, decide on figure of jewelled tiara;
+	otherwise decide on figure of priceless jewelled tiara.
+
+To say ClothingDesc of (H - jewelled-tiara):
+	say "This silver [MediumDesc of H] is made of the most expensive, high-quality of metals. It has countless small diamonds and one giant ruby embedded in the frame.".
+
+To say MediumDesc of (H - jewelled-tiara):
+	say "priceless jewelled tiara".
+
+Definition: jewelled-tiara is gem themed: decide yes.
+Definition: jewelled-tiara is grey themed: decide yes.
+Definition: jewelled-tiara is magic themed: decide no. [usually zappable things are magic themed]
+Definition: jewelled-tiara is hand ready: decide no. [usually zap ready things are flagged as hand ready]
+
+To decide which number is the magic-cost of (Z - jewelled-tiara):
+	decide on 0.
+
+jewelled-tiara is zap ready. jewelled-tiara is redness-positive. jewelled-tiara has a number called charge.
+To decide which number is the zap damage improvement of (W - jewelled-tiara):
+	let X be 4;
+	if savior's heels is worn, now X is 8;
+	decide on 5 + the charge of jewelled-tiara + the magic-modifier of jewelled-tiara.
+
+To compute attack of (W - jewelled-tiara) at (M - a monster):
+	say "[one of]You channel your thoughts into the gems in your headgear, and three beams of searing red energy burst out, hitting [NameDesc of M] and visibly burning [him of M]! Wow!!![or]You send three laser rays from your tiara to [NameDesc of M], burning [him of M][if the charge of W <= 2]. [bold type]But since you used your laser attack so recently, it's significantly weaker than usual.[roman type][line break][otherwise]![end if][stopping]".
+
+To compute spell consequences of (W - jewelled-tiara):
+	now the charge of jewelled-tiara is 0.
+
+To compute unique periodic effect of (H - jewelled-tiara):
+	if the charge of jewelled-tiara < 6, increase the charge of jewelled-tiara by 1.
+
+Report wearing jewelled-tiara:
+	say "As the tiara hits your head, it morphs into a slightly less extravagant, but still jewelled, tiara. Still, you feel like the term [']KING['] fits you better than [']princess['].[line break][variable custom style]Fuck a princess, I'm a king[line break]Bow down and kiss on my ring[roman type][line break]";
+	let D be a random off-stage ring;
+	if D is ring:
+		now D is pink diamond;
+		set shortcut of D;
+		if D is actually summonable:
+			summon D;
+		otherwise:
+			now D is in the location of the player;
+		say "A [MediumDesc of D] materialises [if D is worn]straight onto your finger[otherwise]right in front of you[end if]!";
+		unless D is worn, compute autotaking D.
+
+To compute class outfit of (H - jewelled-tiara):
+	class summon ballgown royal dress;
+	class summon savior's heels;
 	class summon royal scepter.
 
 

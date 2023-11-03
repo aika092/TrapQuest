@@ -224,4 +224,103 @@ To decide which number is the initial outrage of (C - housewife dress):
 	decide on 1.
 
 
+hotwife dress is a bridal dress. hotwife dress is very low cut. hotwife dress is hobble-skirted. hotwife dress is arm exposing. hotwife dress is crotch-skirted. hotwife dress is totally-exclusive. The text-shortcut of hotwife dress is "hwfd".
+
+Figure of hotwife dress is the file "Items/Clothes/Upper/Special/Bridal/bridaldress7.png".
+
+To decide which figure-name is the clothing-image of (C - hotwife dress):
+	decide on figure of hotwife dress.
+
+Definition: hotwife dress is class-relevant:
+	if the class of the player is bride, decide yes;
+	decide no.
+
+To compute class set up of (C - hotwife dress):
+	now C is delicateness-influencing;
+	now C is cursed;
+	now the quest of C is interracial-sex-quest;
+	now C is audible jiggles.
+
+Definition: hotwife dress is skirt-covering-crotch: decide no.
+Definition: hotwife dress is slitted: decide yes.
+Definition: hotwife dress is heart themed: decide yes.
+Definition: hotwife dress is flower themed: decide yes.
+To decide which number is the crotch-tightness of (C - hotwife dress):
+	decide on 4.
+Definition: hotwife dress is potentially cameltoe blocking: decide no.
+Definition: hotwife dress is potentially at least slightly cameltoe blocking: decide no.
+To decide which number is the penis-capacity of (C - hotwife dress):
+	decide on 1.
+
+To say ShortDesc of (C - hotwife dress):
+	say "hotwife dress".
+To say MediumDesc of (C - hotwife dress):
+	say "hotwife dress".
+
+To say ClothingDesc of (C - hotwife dress):
+	say "This long slutty [MediumDesc of C] is made of two strips of tight white fabric that go from your breasts to your crotch in a V pattern, leaving very little to the imagination. There is also a sheer silky gown that flows behind, decorated with artificial white roses at the hips.".
+
+To decide which number is the initial outrage of (C - hotwife dress):
+	decide on 7.
+
+
+
+sacrificial maiden dress is a bridal dress. sacrificial maiden dress is fully covering. sacrificial maiden dress is knee-length. sacrificial maiden dress is arm exposing. sacrificial maiden dress is sheer. The text-shortcut of sacrificial maiden dress is "scmd".
+
+Figure of sacrificial maiden dress is the file "Items/Clothes/Upper/Special/Bridal/bridaldress6.png".
+
+To decide which figure-name is the clothing-image of (C - sacrificial maiden dress):
+	decide on figure of sacrificial maiden dress.
+
+Definition: sacrificial maiden dress is class-relevant:
+	if the class of the player is bride or the class of the player is worshipper, decide yes;
+	decide no.
+
+To compute class set up of (C - sacrificial maiden dress):
+	now C is blessed;
+	now C is vaginal-sex-addiction-influencing;
+	now C is draining.
+
+Definition: sacrificial maiden dress is slitted: decide yes.
+Definition: sacrificial maiden dress is removable: decide no.
+Definition: sacrificial maiden dress is destructible: decide no.
+
+To say ShortDesc of (C - sacrificial maiden dress):
+	say "bridal dress".
+To say MediumDesc of (C - sacrificial maiden dress):
+	say "sheer sacrificial maiden dress".
+
+To say ClothingDesc of (C - sacrificial maiden dress):
+	say "This long slitted [MediumDesc of C] is largely sheer, meaning that your naughty bits are obscured, but only partially. You can sense that it does NOT want you to lose your virginity. ...But is what it wants good for you?!".
+
+To decide which number is the initial outrage of (C - sacrificial maiden dress):
+	decide on 5.
+
+To compute periodic effect of (C - sacrificial maiden dress):
+	let K be a random worn knickers;
+	if K is removable knickers:
+		say "[BigNameDesc of K] bursts into infernal flames and disappears!";
+		destroy K.
+
+To compute virginity-loss of (C - sacrificial maiden dress):
+	let H be a random worn bridal veil;
+	if H is headgear:
+		say "[BigNameDesc of H] bursts into infernal flames and disappears!";
+		destroy H;
+	say "[BigNameDesc of C] bursts into infernal flames and disappears!";
+	let D be a random off-stage necklace;
+	if D is necklace:
+		now D is pink diamond;
+		set shortcut of D;
+		if D is actually summonable:
+			summon D;
+		otherwise:
+			now D is in the location of the player;
+		say "A [MediumDesc of D] appears [if D is worn]straight onto your neck[otherwise]right in front of you[end if]!".
+
+This is the sacrificial maiden pussy slut rule:
+	if sacrificial maiden dress is worn, decrease the desirability of vagina by 10.
+The sacrificial maiden pussy slut rule is listed in the pussy slut eligibility rules.
+
+
 Bridal Outfits ends here.

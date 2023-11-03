@@ -27,6 +27,10 @@ The big red button is a thing. The big red button is in Capsule. The big red but
 To say ExamineDesc of (C - big red button):
 	say "It says 'Power On' above this button. I guess there's only one thing to do...".
 
+Figure of big red button is the file "Env/button1.png".
+To decide which figure-name is the examine-image of (C - big red button):
+	decide on Figure of big red button.
+
 Check pushing when the player is in capsule:
 	unless the noun is big red button, try pushing the big red button instead.
 

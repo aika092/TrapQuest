@@ -149,6 +149,7 @@ To set up (M - dominatrix):
 		let L be a random lubricant;
 		add L to the tradableItems of M;
 	add restriction-salve to the tradableItems of M, if absent;
+	add metal-cage to the tradableItems of M, if absent;
 	add focus band to the taxableItems of M, if absent;
 	calm M;
 	now the boredom of M is 1000.
@@ -272,9 +273,9 @@ To compute perception of (M - dominatrix):
 				say "[BigNameDesc of M] stares at you with intimidating eyes.[line break][speech style of M]'Yes, you'll do fine. [if the player is upright]Get on your knees[otherwise]I can tell by your crawling that you are a natural submissive[end if].'[roman type][line break]";
 		otherwise:
 			say "[BigNameDesc of M] glances at you.[line break][speech style of M]'You're not my type. I'm looking for a proper submissive.'[roman type][line break]";
-			if M is not in Hotel37:
+			[if M is not in Hotel37:
 				say "[big he of M] seems to immediately lose interest.";
-				bore M for 300 seconds;
+				bore M for 300 seconds;] [removed since she now wanders around a lot more]
 		if the disappointment of M > 1, now the disappointment of M is 0.
 
 To compute dq perception of (M - dominatrix):
@@ -1378,7 +1379,7 @@ To focus-consider (T - dominatrix-cage):
 
 Definition: dominatrix-cage is immune to change: decide yes.
 
-Definition: dominatrix is distracted:
+Definition: dominatrix is uniquely distracted:
 	let M be a random unleashed wrestler in Hotel37;
 	if M is monster:
 		if the player is in Hotel37 and dominatrix is in Hotel37 and dominatrix-cage is in Hotel37 and the number of caged monsters in Hotel37 is 0 and dominatrix-cage is not grabbing the player and the player is the donator:

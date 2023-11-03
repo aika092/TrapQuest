@@ -219,7 +219,7 @@ Definition: a clothing (called C) is top level breasts protection:
 	decide yes.
 
 Definition: a clothing (called C) is titfuck protection: [This cares about whether it prevents titfucks.]
-	if C is breast covering and C is top-placed and C is not optional-top-displacable and C is not fully exposing, decide yes;
+	if C is breast covering and C is top-placed and C is not optional-top-displacable and C is not not-displacable-always-fuckable and C is not fully exposing, decide yes;
 	decide no.
 
 Definition: a clothing (called C) is top level titfuck protection:
@@ -246,7 +246,7 @@ Is this item the lowest layered crotch slot item that is blocking an orifice tha
 +!]
 Definition: a clothing (called C) is bottom level pee protection:
 	if C is not pee covering, decide no;
-	repeat with O running through worn pee covering clothing:
+	repeat with O running through pee covering clothing:
 		if the bottom-layer of O < the bottom-layer of C, decide no;
 	decide yes.
 

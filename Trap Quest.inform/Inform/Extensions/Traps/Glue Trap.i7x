@@ -12,15 +12,17 @@ Strength is used to pull free: but if you pull free with too much strength, you 
 glu-colour is a kind of value. The glu-colours are pinkish, yellowish, blackish, whiteish.
 
 [Limit how many glue traps, you want, in total, here. 3 means at most 1 in dungeon, at most 1 in hotel, the rest in the jungle: provided that code isn't commented out.]
-A glue is a kind of thing. There are 3 glues. A glue has a number called glue-strength. A glue has a glu-colour called the active-colour. A glue has a number called smell-duration. A glue has a number called times-stuck. Understand the active-colour property as describing a glue. The active-colour of a glue is normally pinkish. The glue-strength of a glue is normally 14. The smell-duration of a glue is normally 4. [4 rounds] A glue can be full-strength or weakened. The printed name of glue is "[TQlink of item described]puddle of glue[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of glue is "glu". Understand "glu", "sticky", "blob", "adhesive" as glue. A glue is not portable.
+A glue is a kind of thing. There are 3 glues. A glue has a number called glue-strength. A glue has a glu-colour called the active-colour. A glue has a number called smell-duration. A glue has a number called times-stuck. Understand the active-colour property as describing a glue. The active-colour of a glue is normally pinkish. The glue-strength of a glue is normally 14. The smell-duration of a glue is normally 4. [4 rounds] A glue can be full-strength or weakened. The printed name of glue is "[TQlink of item described]puddle of glue[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of glue is "glu". Understand "glu", "sticky", "blob", "adhesive" as glue. A glue is not portable. A glue can be fuckhole-mode.
 
 Figure of Glue Cutscene 1 is the file "Special/Cutscene/cutscene-glue1.jpg".
 Figure of Glue Cutscene 2 is the file "Special/Cutscene/cutscene-glue2.jpg".
+Figure of Glue Cutscene 3 is the file "Special/Cutscene/cutscene-glue3.jpg".
 Figure of Glue Trap is the file "Env/MultiFloor/glue1.jpg".
 Figure of Glue Pool is the file "Env/MultiFloor/glue2.jpg".
 
 To decide which figure-name is the examine-image of (G - a glue):
 	if G is not grabbing the player, decide on figure of glue pool;
+	if G is fuckhole-mode, decide on Figure of Glue Cutscene 3;
 	if the stickiness of the player < 3, decide on Figure of Glue Cutscene 2;
 	decide on Figure of Glue Cutscene 1.
 
@@ -44,7 +46,7 @@ Tearing off is an action applying to one thing.
 
 [They can rub clothing in glue to soak up glue and weaken the bond. But if they later wear it, it will get stuck!]
 
-A glue trap is a kind of trap. A glue trap can be industrial or organic. A glue trap is usually organic. There are 4 potentially click glue traps.
+A glue trap is a kind of trap. A glue trap can be industrial or organic. There are 3 potentially click glue traps.
 
 [!<GlueTrap>@<SayEnvironmentDesc>+
 
@@ -67,7 +69,7 @@ Definition: yourself is glue stuck:
 		if G is in the location of the player:
 			decide yes;
 		otherwise:
-			now G is not grabbing the player;
+			dislodge G;
 			now the stickiness of the player is 0;
 	decide no.
 This is the glue stuck immobility rule:
@@ -104,13 +106,15 @@ Definition: a glue is stealable: decide no.
 This is the spawn initial dungeon glue traps rule:
 	let R be a random trappable placed click untrapped unfurnished labyrinth room;
 	let T be a random off-stage glue trap;
-	deploy T in R.
+	deploy T in R;
+	now T is organic.
 The spawn initial dungeon glue traps rule is listed in the set up dungeon traps rules.
 
 This is the spawn initial hotel glue traps rule:
 	let R be a random trappable placed click untrapped unfurnished modern room;
 	let T be a random off-stage glue trap;
-	deploy T in R.
+	deploy T in R;
+	now T is industrial.
 The spawn initial hotel glue traps rule is listed in the set up hotel traps rules.
 
 [There are no glue traps in the jungle, with this commented out, naturally.]
@@ -137,6 +141,7 @@ Definition: a bondage is gluable: decide no.
 To trigger (Y - a glue trap):
 	let G be a random off-stage glue;
 	if G is glue:
+		now G is not fuckhole-mode;
 		let R be a random number between 1 and (10 + diaper quest);
 		if R <= 4 and diaper quest is 0:
 			now the active-colour of G is pinkish;
@@ -146,8 +151,11 @@ To trigger (Y - a glue trap):
 			now the active-colour of G is blackish;
 		otherwise:
 			now the active-colour of G is whiteish;
+		if diaper quest is 0 and the player is the donator and playerRegion is hotel and the player is not ass protected and asshole is not actually occupied and the player is not in danger:
+			now the active-colour of G is blackish;
+			now G is fuckhole-mode;
 		say "As if sensing your proximity, [if Y is organic]a nearby squishy-looking rock splits down the middle with a wet ripping sound and a [active-colour of G] mass explodes from it all over you![otherwise]there's a click and a brief humming sound as a nozzle overhead spins open, instantly spraying a thick mass of sticky [active-colour of G] glue at you![end if]";
-		if tough-shit is 0, cutshow Figure of Glue Cutscene 1;
+		if tough-shit is 0 and G is not fuckhole-mode, cutshow Figure of Glue Cutscene 1;
 		let C be a random worn removable cursable gluable wearthings;
 		if C is clothing and C is not glued clothing:
 			say "Your [C] is now stuck to you with glue!";
@@ -155,26 +163,95 @@ To trigger (Y - a glue trap):
 			force clothing-focus redraw;
 		now Y is revealed;
 		now Y is not untriggered;
-		if tough-shit is 1:
+		if tough-shit is 1 or G is fuckhole-mode:
 			now G is in the location of the player;
 			now the times-stuck of G is 0;
 			now Y is triggered;
 			[Sometimes the glue is stronger than normal.]
 			now R is a random number between 12 and 18;
-			if R > the glue-strength of G:
-				now the glue-strength of G is R;
+			if R > the glue-strength of G, now the glue-strength of G is R;
+			if the glue-strength of G >= 16:
 				if the number of triggered glue traps > 1:
 					say "This glue seems extra thick and sticky! Hopefully that doesn't mean its other effects are stronger, too!";
 				otherwise:
 					say "The glue is thick and heavy.";
 			update backdrop positions;
-			check glue tripping;
+			if G is fuckhole-mode:
+				say "The thick black glue comes to life, and grabs all of your limbs! You are wrestled into a sort-of reverse-piledriver position, with your ankles by your ears, but with your head still above your [AssDesc]. The glue makes sure to restrain your arms, hands, legs and lips, but leaves your [fuckholes] completely undefended and on show![line break][variable custom style]Uh-oh...[roman type][line break]";
+				now the stance of the player is 1;
+				now G is penetrating face;
+				now G is grabbing the player;
+				now the stickiness of the player is 4 + a random number between 1 and (the glue-strength of G / 4);
+				mapcutshow Figure of Glue Cutscene 3 for G;
+			otherwise:
+				check glue tripping;
 			force clothing-focus redraw; [This forces the clothing window to redraw]
 			force inventory-focus redraw; [This forces the inventory window to redraw]
 		repeat with M running through reactive monsters:
 			say GlueTrapReactFlav of M;
 	otherwise:
 		if debugmode is 1, say "### DEBUG: the glue trap failed to trigger.[line break]".
+
+This is the glued fuckholes can't use hands rule:
+	if there is a fuckhole-mode glue penetrating face:
+		if manual hands attempt is 1, say "The black glue has your hands firmly locked inside its sticky embrace!";
+		rule fails.
+The glued fuckholes can't use hands rule is listed first in the hands restriction rules.
+
+An all time based rule (this is the glue fuckhole rule):
+	if there is a fuckhole-mode glue penetrating face:
+		let M be a random patron in the location of the player;
+		if M is nothing and a random number between 1 and 2 is 1:
+			now M is a random off-stage generic-appropriate patron;
+			set up M;
+			now M is in the location of the player;
+			let L be the location of the player;
+			let LN be a random number between 1 and the number of entries in the Nviables of L;
+			let D be entry LN in the Nviables of L;
+			anger M;
+			interest M;
+			now the last-interaction of M is 2; [delays him from acting this turn]
+			say "[bold type][BigNameDesc of M] [bold type]arrives from the [D]![roman type][line break][speech style of M]'[if M is inexperienced patron]Oh wow! You're just set up there like that, are you? I assume that means I'm allowed to do this for free...'[otherwise if M is experienced patron]Excellent, I see they've set up another free use whore for us today, too.'[otherwise if M is dickhead patron]Uh-oh, looks like another slut got stuck here. Well, sucks to be you!'[otherwise]Oh nice, I assume this means I don't have to pay.'[end if][roman type][line break]";
+		otherwise if M is patron and M is not penetrating a body part:
+			let CM be current-monster;
+			now current-monster is M;
+			let F be asshole;
+			if the player is possessing a vagina and vagina is an actual target and the player is not pussy protected and (a random number between 1 and 2 is 1 or asshole is not an actual target), now F is vagina;
+			let glueGiveUp be false;
+			while glueGiveUp is false and F is not available:
+				let C be a random top level protection clothing;
+				if F is asshole, now C is a random top level ass protection clothing;
+				if C is clothing:
+					if C is displacable:
+						compute M displacing C;
+					otherwise if C is tearable and C is actually strippable:
+						say "[BigNameDesc of M] effortlessly pulls off your [ShortDesc of C]!";
+						now C is in the location of the player;
+						dislodge C;
+					if C is top level protection clothing or C is top level ass protection clothing, now glueGiveUp is true;
+				otherwise if there is clothing penetrating F:
+					let P be a random clothing penetrating F;
+					if P is actually strippable clothing:
+						compute M removing P;
+						if M is carrying P:
+							now P is in the location of the player;
+							now P is not temporarily-removed;
+						if P is penetrating F, now glueGiveUp is true;
+				otherwise:
+					now glueGiveUp is true;
+			if glueGiveUp is true:
+				say "Just as [NameDesc of M] is about to prepare to find a way to fuck you, the glue begins to melt away![line break][speech style of M]'Dammit! I missed my chance!'[roman type][line break][BigNameDesc of M] leaves the way [he of M] came.";
+				destroy M;
+				now the stickiness of the player is 0;
+				compute raw glue escaping a random glue in the location of the player with 0;
+			otherwise:
+				say "[big he of M] lines up [his of M] [LongDickDesc of M] with your [one of]exposed[or]defenseless[stopping] [variable F]. [one of]The glue covering your mouth muffles your groans[or]There's absolutely nothing you can do but quietly mewl through your nostrils[cycling] as [NameDesc of M][if M is dickhead patron], chuckling sadistically,[end if] [one of]buries[or]slides[or]thrusts[or]sheathes[in random order] [his of M] [manly-penis] inside you.[unless the player is broken][line break][variable custom style][one of]This is insane - I'm literally being treated as nothing but a warm fuckhole![or]Oh fuck, not again![or]I'm not just a cocksleeve![or]I didn't ask for this![or]I'm just a hole for [his of M] amusement...[or]Aah! So rough![or][one of]My poor [variable F][or]Not again[or]So full[at random]...[stopping][roman type][line break][end if]";
+				set up sex length of M in F;
+				now M is penetrating F;
+				compute unique penetration effect of M in F;
+				ruin F;
+			now current-monster is CM.
+
 
 To say GlueTrapReactFlav of (M - a monster):
 	say HarshTrapReactFlav of M.
@@ -247,7 +324,7 @@ To check glue tripping:
 				otherwise:
 					say "[one of]In a display of poor dexterity, you stumble into the glue. It reacts instantly to being stretched, contracting strongly to [bold type]drag you to your knees![roman type][or]Once again you clumsily stumble into the glue, which shrinks and [bold type]drags you to your knees.[roman type][or]You stumble and fall into the glue again. [bold type]You're on your knees.[roman type] In the glue.[stopping][line break]";
 				[Let's be kind, and say they might be only partly stuck]
-				now the stickiness of the player is 4 + a random number between 1 and S / 4;
+				now the stickiness of the player is 4 + a random number between 1 and (S / 4);
 				now the smell-duration of G is 4;
 				if debugmode is 1, say "###debug: the stickiness of the player is now [the stickiness of the player].";
 			otherwise:
@@ -311,8 +388,9 @@ An all time based rule (this is the glue-stuck-mutation rule):
 				stop;]
 		[monsters smelling glue is handled in the compute actions (of M - a monster). Do I need to trigger that here, or is it automatic?]
 		let G be a random glue in the location of the player;
-		decrease the smell-duration of G by 1;
-		if the remainder after dividing the smell-duration of G by 1 is 0, compute the mutation effects of G.
+		if G is not fuckhole-mode:
+			decrease the smell-duration of G by 1;
+			if the remainder after dividing the smell-duration of G by 1 is 0, compute the mutation effects of G.
 
 [!<RawGlueEscapingWith>+
 
@@ -338,8 +416,7 @@ To compute raw glue escaping (G - an object) with (consequences - a number):
 				say "It [i]really[/i] hurts!";
 				PainUp 20;
 		now the stickiness of the player is 0;
-		now G is not grabbing the player;
-		allocate 6 seconds;
+		dislodge G;
 		if the player is prone [and autostand is 1]:
 			say "You quickly try to stand!";
 			try standing.
@@ -356,11 +433,12 @@ To compute glue escaping:
 	let DexChk be a random number between 1 and the dexterity of the player;
 	if debugmode is 1, say "DEBUG: glue str =[glue-strength of G], DexChk=[DexChk], player stickiness=[stickiness of the player] (Initially chosen variables).";
 	[monsters smelling glue is handled in the compute actions (of M - a monster).]
-	if the stickiness of the player is 0:
+	if the stickiness of the player <= 0:
 		say "The glue touching you seems a bit dry and crumbly. You're free![line break]";
 		compute raw glue escaping G with 0;
 		[###If they stumble and fall or if they're weak and kneel back down, we should probably test for re-gluing; but maybe not here; danger of recursion... ###Aika I don't think we should do that test at all in the name of keeping the game actually fun.]
 	otherwise:
+		allocate 6 seconds;
 		[The mutation effects are handled by compute glue trap]
 		say "You tug harder at the glue, trying desperately to get free.";
 		[Okay, now the stickiness is basically a countdown timer. The bond-strength represents the surface area of the player stuck in the glue, so the idea is that the more area stuck, the harder it is to escape. And vice versa. So as stickiness decreases, this naturally represents you tearing more of you free. So: we divide the glue strength by the "weakness" (the opposite of the stickiness).]
@@ -436,7 +514,6 @@ To compute glue escaping:
 				if G is grabbing the player:
 					say "But as you squirm in the glue's grip, you notice it's crumbled!";
 				compute raw glue escaping G with 0;
-		allocate 6 seconds;
 	force clothing-focus redraw; [This forces the clothing window to redraw]
 	force inventory-focus redraw. [This forces the inventory window to redraw]
 
