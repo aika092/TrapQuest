@@ -368,6 +368,7 @@ To set up (M - a supporter):
 	reset M;
 	now the monstersetup of M is 1;
 	now the raw difficulty of M is 4; [combat skill can be increased]
+	if the number of entries in the tradableItems of M < 2, compute generic item gain of M;
 	now the health of M is the maxhealth of M.
 
 To decide which number is the girth of (M - a supporter):

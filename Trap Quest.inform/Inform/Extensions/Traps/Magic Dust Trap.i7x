@@ -74,7 +74,7 @@ To trigger (Y - a magic dust trap):
 			if C is worn:
 				if diaper messing >= 4 and C is blandness and C is cursable:
 					now C is desperation;
-					say "But it has gained a new magical effect...  You can sense that it is slowly secreting a laxative, quickening the rate at which you feel desperate to have a bowel movement. Uh-oh...";
+					say "But it has gained a new magical effect... You can sense that it is slowly secreting a laxative, quickening the rate at which you feel desperate to have a bowel movement. Uh-oh...";
 				otherwise:
 					now C is strength stealing;
 					say "But it has gained a new magical effect...  You can sense that it is now [']strength stealing['], and will take some of your strength away if you remove it normally.";

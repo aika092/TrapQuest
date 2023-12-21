@@ -24,8 +24,12 @@ Definition: a soiled-diaper is never-in-bag: decide yes.
 To decide which number is the heaviness of (H - a soiled-diaper):
 	decide on 2.
 
-To DiaperPrint (SD - a soiled-diaper) from (C - a diaper):
-	now the diaper-origin of SD is the substituted form of "[ShortDesc of C]".
+To compute (SD - a soiled-diaper) imprinting from (D - a thing):
+	repeat with T running through things inseminating D:
+		now T is inseminating SD.
+To DiaperPrint (SD - a soiled-diaper) from (D - a diaper):
+	now the diaper-origin of SD is the substituted form of "[ShortDesc of D]";
+	compute SD imprinting from D.
 
 A game universe initialisation rule:
 	let DSC be 1;

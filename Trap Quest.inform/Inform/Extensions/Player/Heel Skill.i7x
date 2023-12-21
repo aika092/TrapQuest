@@ -22,14 +22,14 @@ To decide which number is the heel skill of the player:
 
 Part 2 - Modify Heel Skill
 
-The player has a number called raw heel skill. The raw heel skill of the player is usually 0. [Min 0 Max 10]
+The player has a number called raw heel skill. [Min 0 Max 10]
 
 [!<Player>@<heelTime:Integer>*
 
 Experience
 
 *@!]
-The player has a number called heel time. The heel time of the player is usually 0.
+The player has a number called heel time.
 
 To decide which number is minHeelXP: [How much experience does it take to go up one level of heel skill]
 	decide on 220.

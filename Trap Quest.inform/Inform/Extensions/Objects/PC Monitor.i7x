@@ -40,7 +40,7 @@ A later time based rule:
 				if diaper quest is 1 or a random number between 1 and 5 > 1:
 					now P is a random real-life patron;[Friend from outside the game]
 					if domino-mask is off-stage and domino-mask is actually summonable and there is a male human intelligent combative monster:
-						say "An [domino-mask] appears on your face!";
+						say "A [domino-mask] appears on your face!";
 						summon domino-mask cursed;
 						say "[variable custom style]I'm... I'm a superhero[if the player is gendered female]ine[end if]?[roman type][line break]";
 						repeat with M running through male human intelligent combative monsters:
@@ -515,7 +515,7 @@ To construct unique buttons for (T - security interface):
 		choose a blank row in the Table of Buttons;
 		now the ButtonImage entry is Figure of map stairs down;
 		now the ButtonCommand entry is "enter [text-shortcut of T]";
-		now the ButtonColour entry is lightModeFullRed.
+		now the ButtonColour entry is lightModeFullGreen.
 
 
 

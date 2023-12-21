@@ -3,6 +3,7 @@ Searching by Actions begins here.
 Check searching a container:
 	if the noun is open, say "Why would you search an open container?" instead;
 	if the player is not able to manually use their hands, do nothing instead;
+	if the player is in BellyRoom01, say "I can't see any traps, but something tells me... Every single container in this room is likely trapped." instead;
 	if the delicateness of the player is 1, say "[if debuginfo > 0]delicateness (1) | (1.5) search delicateness requirement[line break][end if][variable custom style]Searching for traps is a waste of time. What's the worst they could do? Bring it on![roman type][line break]" instead;
 	if the player is breasts blinded, say "You can't see clearly enough to search while your [ShortDesc of breasts] are floating in front of your face!" instead;
 	if the player is blinded, say "You can't see clearly enough to search while your face is so thoroughly plastered with [semen]!" instead;

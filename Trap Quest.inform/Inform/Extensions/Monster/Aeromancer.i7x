@@ -862,14 +862,17 @@ To say DamageReactSubmissive of (M - an aeromancer):
 	say "[BigNameDesc of M] staggers, [if M is confident aeromancer]angrily shaking [his of M] wand as it spits out blue sparks[otherwise]whimpering as [his of M] wand spits out blue sparks[end if].".
 
 To compute tax return of (M - an aeromancer):
-	if a random number between 1 and 2 is 1 and golden-phallus is off-stage:
-		say "[BigNameDesc of M] points to [his of M] wand.[line break][speech style of M]'You want one of these?'[roman type][line break][BigNameDesc of M] manifests one out of thin air and tosses it to you.";
-		now golden-phallus is in the location of the player;
-		compute autotaking golden-phallus;
-		say "You can tell it's just a replica, with no magic power. Perhaps you can still find a use for it though.";
+	if M is choice-taxable:
+		compute choice tax return of M;
 	otherwise:
-		loot M;
-		say "[speech style of M]'This is better than cash - it doesn't devalue with INFLATION. Oh, forget it. You're no fun at all.'[roman type][line break]".
+		if a random number between 1 and 2 is 1 and golden-phallus is off-stage:
+			say "[BigNameDesc of M] points to [his of M] wand.[line break][speech style of M]'You want one of these?'[roman type][line break][BigNameDesc of M] manifests one out of thin air and tosses it to you.";
+			now golden-phallus is in the location of the player;
+			compute autotaking golden-phallus;
+			say "You can tell it's just a replica, with no magic power. Perhaps you can still find a use for it though.";
+		otherwise:
+			loot M;
+			say "[speech style of M]'This is better than cash - it doesn't devalue with INFLATION. Oh, forget it. You're no fun at all.'[roman type][line break]".
 
 To compute unique banishment of (M - an aeromancer):
 	add M to new-acolytes.
@@ -976,7 +979,7 @@ To penetration dominate (M - an aeromancer):
 	otherwise vaginal penetration dominate M.
 
 To vaginal penetration dominate (M - an aeromancer):
-	if sexual-penis-length >= 4, say "You force [NameDesc of M] onto [his of M] back, knocking the wand out of [his of M] hand. It seems to react to your touch, crackling with energy as solid gold chains appear all over the aeromancer's body, binding [him of M] up like a thanksgiving turkey. You smile from ear to ear, smacking [if M is ballooned][his of M] over-sized tits with your brand new magic stick[otherwise]the wand against your hand like your very own night-stick[end if].[line break][speech style of M]'What are you going to do with me?'[roman type][line break]You offer a silent answer, lining up your [sexual-player-penis] with [his of M] slit.";
+	if sexual-penis-length >= 4, say "You force [NameDesc of M] onto [his of M] back, knocking the wand out of [his of M] hand. It seems to react to your touch, crackling with energy as solid gold chains appear all over the aeromancer's body, binding [him of M] up like a Thanksgiving turkey. You smile from ear to ear, smacking [if M is ballooned][his of M] over-sized tits with your brand new magic stick[otherwise]the wand against your hand like your very own night-stick[end if].[line break][speech style of M]'What are you going to do with me?'[roman type][line break]You offer a silent answer, lining up your [sexual-player-penis] with [his of M] slit.";
 	if sexual-penis-length >= 9:
 		say "[line break][speech style of M]'[one of]But that's way too big... [or]Aren't you satisfied after last time?! [stopping] C-couldn't you just use my ass? I'll even let you keep my wand.'[roman type][line break]Go for [his of M] ass instead?";
 		if the player is consenting:
@@ -1031,7 +1034,7 @@ To vaginal penetration dominate (M - an aeromancer):
 				slightDignify;
 			FuckGet;
 	otherwise:
-		say "You force [NameDesc of M] onto [his of M] back, knocking the wand out of [his of M] hand. It seems to react to your touch, crackling with energy as solid gold chains appear all over the aeromancer's body and bind [his of M] up like a thanksgiving turkey. You smile from ear to ear, smacking the wand against your hand like your very own night-stick.[line break][speech style of M]'Uh... what exactly are you planning to do?'[roman type][line break][big he of M] asks, a noticeable hint of mirth in [his of M] voice. You offer a silent answer, lining up your [sexual-player-penis] with [his of M] slit.[line break][speech style of M]'Look. There's no way you're getting out of here with my wand. So why don't you just give it back, and then I'll let you fuck my ass. Sound good?'[roman type][line break]Go for [his of M] ass instead?";
+		say "You force [NameDesc of M] onto [his of M] back, knocking the wand out of [his of M] hand. It seems to react to your touch, crackling with energy as solid gold chains appear all over the aeromancer's body and bind [him of M] up like a Thanksgiving turkey. You smile from ear to ear, smacking the wand against your hand like your very own night-stick.[line break][speech style of M]'Uh... what exactly are you planning to do?'[roman type][line break][big he of M] asks, a noticeable hint of mirth in [his of M] voice. You offer a silent answer, lining up your [sexual-player-penis] with [his of M] slit.[line break][speech style of M]'Look. There's no way you're getting out of here with my wand. So why don't you just give it back, and then I'll let you fuck my ass. Sound good?'[roman type][line break]Go for [his of M] ass instead?";
 		if the player is consenting:
 			anal penetration dominate M;
 		otherwise:
@@ -1044,21 +1047,21 @@ To vaginal penetration dominate (M - an aeromancer):
 
 To anal penetration dominate (M - an aeromancer):
 	if sexual-penis-length >= 9:
-		if lady fetish is 2, say "You throw [NameDesc of M] to the ground, ripping off [his of M] shorts and [his of M] panties in one motion. [big his of M] eyes widen as the catches a glimpse of your [if penis is penis-erect]rock hard[otherwise]hardening [sexual-player-penis][end if], and suddenly [his of M] wand begins to crackle with energy. [big his of M] face sinks as it flies through the air and lands in your hands. Solid gold chains materialise all over [his of M] body, binding [him of M] up like a thanksgiving turkey.[line break][speech style of M]'W-what?! You're betraying me?! But I was only looking!'[roman type][line break]";
+		if lady fetish is 2, say "You throw [NameDesc of M] to the ground, ripping off [his of M] shorts and [his of M] panties in one motion. [big his of M] eyes widen as the catches a glimpse of your [if penis is penis-erect]rock hard[otherwise]hardening [sexual-player-penis][end if], and suddenly [his of M] wand begins to crackle with energy. [big his of M] face sinks as it flies through the air and lands in your hands. Solid gold chains materialise all over [his of M] body, binding [him of M] up like a Thanksgiving turkey.[line break][speech style of M]'W-what?! You're betraying me?! But I was only looking!'[roman type][line break]";
 		otherwise say "[line break][speech style of M]'Phew...'[roman type][line break]";
 		say "[big he of M] takes a deep breath as you flip [him of M] onto [his of M] stomach and spit on your [SexDesc of penis], throwing a complicated look over [his of M] shoulder as your [SexShaft] slides into [his of M] ass. You're a little rough with [him of M], but [if lady fetish is 2]you took the time to lube yourself up first[otherwise]you're doing [him of M] a favour here[end if], so it's no surprise to you that [he of M] doesn't complain. In fact, [he of M] seems to love the treatment, arching [his of M] back and moaning with pleasure as you furiously drill [his of M] ass. [big his of M] enthusiasm is pleasurable all by itself, and before you realise you've lost control, your [sexual-player-penis] is throbbing as it fills [his of M] belly with your [load].";
 		say AfterDominationComment 7 of M;
 		moderateDignify;
 		now player-fucking is DOMINANT-SUPER;
 	otherwise if sexual-penis-length >= 7:
-		if lady fetish is 2, say "You throw [NameDesc of M] to the ground, ripping off [his of M] shorts and [his of M] panties in one motion. [big his of M] wand crackles with energy as [he of M] points it at you, and [his of M] face visibly sinks as it flies through the air and lands in your hands. Solid gold chains materialise all over [his of M] body, binding [him of M] up like a thanksgiving turkey.[line break][speech style of M]'I can't really do anything now that my wand betrayed me... Wanna fuck my brains out?'[roman type][line break]";
+		if lady fetish is 2, say "You throw [NameDesc of M] to the ground, ripping off [his of M] shorts and [his of M] panties in one motion. [big his of M] wand crackles with energy as [he of M] points it at you, and [his of M] face visibly sinks as it flies through the air and lands in your hands. Solid gold chains materialise all over [his of M] body, binding [him of M] up like a Thanksgiving turkey.[line break][speech style of M]'I can't really do anything now that my wand betrayed me... Wanna fuck my brains out?'[roman type][line break]";
 		otherwise say "[line break][speech style of M]'Yes! Now fuck my brains out!'[roman type][line break]";
 		say "[big he of M] does [his of M] best to wiggle [his of M] ass enticingly as you roll [him of M] onto [his of M] stomach, giving [him of M] a quick spank as you slide your [SexDesc of penis] into [his of M] asshole. You aren't rough with [him of M] at first, but [his of M] enthusiasm catches you off guard, and you start getting carried away before you realise it. [big he of M] spends the entire time looking over [his of M] shoulder, making sure you can see exactly how much [he of M]'s enjoying [himself of M] as you furiously drill [his of M] ass. It's impossible to keep going for too long, and you groan powerfully as you fill [his of M] ass with your [load].";
 		say AfterDominationComment 7 of M;
 		moderateDignify;
 		now player-fucking is DOMINANT-SUPER;
 	otherwise if sexual-penis-length >= 4:
-		if lady fetish is 2, say "You throw [NameDesc of M] to the ground, ripping off [his of M] shorts and [his of M] panties in one motion. [big his of M] wand crackles with energy as [he of M] points it at you, and [his of M] face visibly sinks as it flies through the air and lands in your hands. Solid gold chains materialise all over [his of M] body, binding [him of M] up like a thanksgiving turkey.[line break][speech style of M]'This blows. Oh well. At least do me a favour and fuck me, alright?'[roman type][line break]";
+		if lady fetish is 2, say "You throw [NameDesc of M] to the ground, ripping off [his of M] shorts and [his of M] panties in one motion. [big his of M] wand crackles with energy as [he of M] points it at you, and [his of M] face visibly sinks as it flies through the air and lands in your hands. Solid gold chains materialise all over [his of M] body, binding [him of M] up like a Thanksgiving turkey.[line break][speech style of M]'This blows. Oh well. At least do me a favour and fuck me, alright?'[roman type][line break]";
 		otherwise say "[line break][speech style of M]'Don't worry about me, I can handle a bit of intense weather.'[roman type][line break]";
 		say "[big he of M] does [his of M] best to wiggle [his of M] ass enticingly as you roll [him of M] onto [his of M] stomach, palming [his of M] ass as you slide your [SexDesc of penis] into [his of M] asshole. You have no intention of being rough at first, but [his of M] enthusiasm catches you off guard, and you're speeding up before you've even realised it. [big he of M] spends the entire time looking over [his of M] shoulder, egging you on with hungry moans as you furiously drill [his of M] ass. There's no way you could keep it up for long, and you groan with pleasure as you pull out and cover [his of M] back with your [load].";
 		say AfterDominationComment 7 of M;

@@ -297,7 +297,7 @@ To decide which figure-name is the examine-image of (G - hotel changing station)
 			decide on Figure of automated changing station boxed full;
 	otherwise:
 		if the changing-station-tank-scene of woman-player > 0, decide on figure of automated changing station;
-		if the changing-station-tank-scene of woman-player < 0, decide on figure of automated changing station tank empty;
+		if the changing-station-tank-scene of woman-player < -1, decide on figure of automated changing station tank empty;
 		if diaper messing >= 6, decide on figure of automated changing station tank messy;
 		decide on figure of automated changing station tank full.
 
@@ -336,13 +336,13 @@ To compute furniture resting on (G - an automated changing station):
 			say "When the wristcuffs release you and the door opens, you are now wearing a [diaper-stack].";
 		otherwise:
 			let D be plain-largish-diaper;
+			say "The wristcuffs constrict themselves until you are locked in place. Robotic arms immediately get to work [if K is knickers]removing your [ShortDesc of K] [end if][if K is dirty knickers]and wiping you down [end if]";
 			if K is knickers:
 				fully clean K;
 				if D is not K, silently transform K into D;
 			otherwise:
 				summon D uncursed;
 			if the player is in a predicament room, now D is predicament-temporary;
-			say "The wristcuffs constrict themselves until you are locked in place. Robotic arms immediately get to work [if K is knickers]removing your [ShortDesc of K] [end if][if K is dirty knickers]and wiping you down [end if]";
 			if the player is not in a predicament room and the player is getting unlucky:
 				say "and... huh?! It seems the robotic arms have decided to do something else before putting a new diaper on you!";
 				let R be a random number between 1 and 3;
@@ -365,7 +365,7 @@ To compute furniture resting on (G - an automated changing station):
 
 Check pulling hotel changing station:
 	if the changing-station-tank-scene of woman-player > 0, try pulling woman-player instead;
-	if the changing-station-tank-scene of woman-player < 0, say "It's already empty." instead;
+	if the changing-station-tank-scene of woman-player < -1, say "It's already empty." instead;
 	if the player is immobile or the player is in danger, say "You're a bit busy!" instead;
 	if the player is prone, say "You can't do that while on your knees." instead;
 	say "Are you sure you want to loosen the rope and open the container?";
@@ -382,7 +382,7 @@ To release changing station diapers:
 			increase soiled-diapers-saved by 1;
 		otherwise:
 			now SD is in the location of hotel changing station;
-			now the diaper-origin of SD is "disposable diaper".
+			now the diaper-origin of SD is the substituted form of "[if mechanic is female][one of]The mechanic's [or][or][or][then at random][end if]disposable diaper".
 
 To release changing station diapers on the player:
 	release changing station diapers;
@@ -401,7 +401,7 @@ To compute unique teleportation to (R - Hotel20):
 		now changing-station-tank-stuck-scene is 0;
 		if diaper messing < 7 and the changing-station-tank-scene of woman-player is 0, now the changing-station-tank-scene of woman-player is -9999; [remove the diapers from the tank]
 		now hotel changing station is grabbing the player;
-		if the changing-station-tank-scene of woman-player is 0, say "You suddenly find countless soft but heavy items pushing in against you from all directions! [if the player is air breathing vulnerable]One whiff with your nose and one[otherwise]One[end if] quick glance with your eyes reveals the truth of your situation - you have teleported into the used diaper storage tank of [NameDesc of hotel changing station]! There's no way you can open the latch from in here - [bold type]you'll have to wait in this cramped container for someone to spot you and rescue you![roman type][line break]";
+		if the changing-station-tank-scene of woman-player >= -1, say "You suddenly find countless soft but heavy items pushing in against you from all directions! [if the player is air breathing vulnerable]One whiff with your nose and one[otherwise]One[end if] quick glance with your eyes reveals the truth of your situation - you have teleported into the used diaper storage tank of [NameDesc of hotel changing station]! There's no way you can open the latch from in here - [bold type]you'll have to wait in this cramped container for someone to spot you and rescue you![roman type][line break]";
 		otherwise say "You suddenly find yourself surrounded by strong glass walls on every side - you have teleported into the used diaper storage tank of [NameDesc of hotel changing station]! There's no way you can open the latch from in here - [bold type]you'll have to wait in this cramped container for someone to spot you and rescue you![roman type][line break]".
 
 Before doing something to a monster when the current action is not examining the noun and hotel changing station is grabbing the player:
@@ -437,7 +437,7 @@ A time based rule (this is the stuck in diaper tank rule):
 				now M is guarding; [this triggers the graphics to show the wrestler getting a change]
 			otherwise if changing-station-tank-stuck-scene is 6:
 				say "[big his of M] suit unpoppered, [NameDesc of M] relaxes as [his of M] heavy, [if the changing-station-tank-scene of woman-player is 0]mess-filled[otherwise]piss-filled[end if] diaper is swapped out for a fresh, dry one.[line break][variable custom style]Wait a minute... That means that the used one is about to...[italic type][line break]SQUELCH[roman type][line break]Understanding smacks you in the face at the same time as [if the changing-station-tank-scene of woman-player is 0]another big stinky nappy is squashed into your cramped container, pushing all those vile used diapers even more strongly into your body. The smell, somehow, grows even worse[otherwise][NameDesc of M][']s soaked diaper is pneumatically projected out of the transfer pipe and right into your face[end if].";
-				if the changing-station-tank-scene of woman-player is not 0:
+				if the changing-station-tank-scene of woman-player < -1:
 					PainUp 15;
 					GrossOut wetDiaperFacesitGrossnessLevel;
 				say "[variable custom style]EEEK! I need to get out of here RIGHT NOW!!![roman type][line break]";
@@ -447,7 +447,7 @@ A time based rule (this is the stuck in diaper tank rule):
 				PainUp 20;
 				BodyRuin 4;
 				now M is unleashed;
-				if the changing-station-tank-scene of woman-player is 0:
+				if the changing-station-tank-scene of woman-player >= -1:
 					release changing station diapers on the player;
 					now the changing-station-tank-scene of woman-player is -10000;
 				otherwise:

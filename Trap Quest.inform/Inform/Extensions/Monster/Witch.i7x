@@ -433,13 +433,16 @@ To compute forced banishment of (M - witch):
 	check mindflayerquest.
 
 To compute tax return of (M - witch):
-	let P be a random off-stage pure totem;
-	if P is a thing:
-		say "[BigNameDesc of M] conjures a [printed name of P]![line break][speech style of M]'A fair demand deserves a fair gift. If you wield this, your mind will be protected, for now.'[roman type][line break]";
-		now P is in the location of the player;
-		compute autotaking P;
+	if M is choice-taxable:
+		compute choice tax return of M;
 	otherwise:
-		compute default tax return of M.
+		let P be a random off-stage pure totem;
+		if P is a thing:
+			say "[BigNameDesc of M] conjures a [printed name of P]![line break][speech style of M]'A fair demand deserves a fair gift. If you wield this, your mind will be protected, for now.'[roman type][line break]";
+			now P is in the location of the player;
+			compute autotaking P;
+		otherwise:
+			compute default tax return of M.
 To say TaxReturnDismay of (M - witch):
 	say "[speech style of M]'There are few who could overpower me so impressively. I guess I should be thankful that you decided to claim this as your prize and not something more... intimate.'[roman type][line break]".
 

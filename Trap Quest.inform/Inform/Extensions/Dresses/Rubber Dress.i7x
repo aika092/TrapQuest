@@ -31,6 +31,29 @@ Definition: a white rubber giant bow dress is white themed: decide yes.
 Definition: a white rubber giant bow dress is bow themed: decide yes.
 Definition: a white rubber giant bow dress is potentially erection concealing: decide yes. [non-tight skirts conceal erections]
 
+Part 2 - Ornate Dress
+
+ornate-dress is a rubber dress. ornate-dress is neck covering. ornate-dress is arm exposing. The text-shortcut of white rubber giant bow dress is "olxd". The printed name of ornate-dress is "[clothing-title-before]ornate latex dress[clothing-title-after]". Understand "ornate", "dress" as ornate-dress.
+
+Figure of ornate dress is the file "Items/Clothes/Upper/Latex/rubberdress9.png".
+
+To decide which figure-name is clothing-image of (C - ornate-dress):
+	decide on figure of ornate dress.
+
+To say ClothingDesc of (C - ornate-dress):
+	say "This black and peach dress has shoulder straps and no sleeves. It has an ornate pattern at the seams, cleavage and collar.".
+
+To say ShortDesc of (C - ornate-dress):
+	say "latex dress".
+To say MediumDesc of (C - ornate-dress):
+	say "ornate latex dress".
+
+To decide which number is the initial outrage of (C - ornate-dress):
+	decide on 3.
+
+Definition: ornate-dress is black themed: decide yes.
+Definition: ornate-dress is potentially erection concealing: decide yes. [non-tight skirts conceal erections]
+
 
 Part 3 - Superheroine Fetish Dress
 

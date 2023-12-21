@@ -391,8 +391,8 @@ To trigger (Y - a drill pole trap):
 
 To compute orgasm resolution of (R - a drill pole trap):
 	if a random number between 1 and 4 - unlucky < 2:
-		let D be a random off-stage plentiful dong;
-		if D is nothing, now D is a random off-stage plentiful plug;
+		let D be a random off-stage fetish appropriate plentiful dong;
+		if D is nothing, now D is a random off-stage fetish appropriate plentiful plug;
 		say "The pole clicks as your knees buckle, [bold type]detaching from the dildo, which remains inside of you[roman type] as you fall to the floor.";
 		if R is penetrating vagina, summon D cursed vaginally with quest;
 		otherwise summon D cursed with quest;
@@ -500,8 +500,8 @@ To trigger (Y - a creampie pole trap):
 
 To compute orgasm resolution of (R - a creampie pole trap):
 	if a random number between 1 and 2 - unlucky < 2:
-		let D be a random off-stage plentiful dong;
-		if D is nothing or D is throbbing-tentacle, let D be a random off-stage plug;
+		let D be a random off-stage fetish appropriate plentiful dong;
+		if D is nothing or D is throbbing-tentacle, let D be a random off-stage fetish appropriate plentiful plug;
 		say "The pole clicks as your knees buckle, [bold type]detaching from the dildo, which remains inside of you[roman type] as you fall to the floor.";
 		if R is penetrating vagina, summon D cursed vaginally with quest;
 		otherwise summon D cursed with quest;

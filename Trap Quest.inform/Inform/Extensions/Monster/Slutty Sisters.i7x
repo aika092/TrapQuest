@@ -25,7 +25,8 @@ Definition: futanari-slutty-sister is willing to do oral: decide no.
 Definition: futanari-slutty-sister is willing to do titfucks: decide no.
 
 To say DickDesc of (M - futanari-slutty-sister):
-	say "[if futanari fetish is 0]strap-on[otherwise if mythical creature fetish is 1]horsecock[otherwise][manly-penis][end if]".
+	[say "[if futanari fetish is 0 and lady fetish < 2]dildo sword[otherwise if mythical creature fetish is 1]horsecock[otherwise][manly-penis][end if]".]
+	say "[if lady fetish is 2][manly-penis][otherwise]dildo sword[end if]".
 
 To say LongDickDesc of (M - futanari-slutty-sister):
 	say "massive [DickDesc of M]".
@@ -34,13 +35,15 @@ To say ShortDesc of (M - bulging-slutty-sister):
 	say "[if the belly contents of M > 14]bulging[otherwise if the belly contents of M > 7]bloated[otherwise if the belly contents of M > 0]cumfilled[otherwise]empty[end if] Nintendoll".
 
 To say ShortDesc of (M - futanari-slutty-sister):
-	say "[if lady fetish is 2]hung[otherwise if futanari fetish is 0]strapon[otherwise]futanari[end if] Nintendoll".
+	[say "[if lady fetish is 2]hung[otherwise if futanari fetish is 0]sword-wielding[otherwise]futanari[end if] Nintendoll".]
+	say "[if lady fetish is 2]hung[otherwise if futanari fetish is 0]sword-wielding[end if] Nintendoll".
 
 To say MediumDesc of (M - a slutty sister):
 	say ShortDesc of M.
 
+Figure of dildo sword slutty sister is the file "NPCs/Bosses/SluttySister/sluttysister1a.png".
 Figure of futanari slutty sister is the file "NPCs/Bosses/SluttySister/sluttysister1.jpg".
-Figure of bulging slutty sister is the file "NPCs/Bosses/SluttySister/sluttysister2.jpg".
+Figure of bulging slutty sister is the file "NPCs/Bosses/SluttySister/sluttysister2.png".
 Figure of male slutty sister is the file "NPCs/Bosses/SluttySister/sluttysister3.png".
 Figure of male bulging slutty sister is the file "NPCs/Bosses/SluttySister/sluttysister4.png".
 Figure of Slutty Sisters Cutscene 1 is the file "NPCs/Bosses/SluttySister/sluttysister-start1.jpg".
@@ -48,6 +51,7 @@ Figure of Slutty Sisters Cutscene 2 is the file "NPCs/Bosses/SluttySister/slutty
 
 To decide which figure-name is the monster-image of (M - futanari-slutty-sister):
 	if lady fetish is 2, decide on figure of male slutty sister;
+	[if futanari fetish is 0, ]decide on figure of dildo sword slutty sister;
 	decide on figure of futanari slutty sister.
 
 To decide which figure-name is the monster-image of (M - bulging-slutty-sister):
@@ -57,7 +61,7 @@ To decide which figure-name is the monster-image of (M - bulging-slutty-sister):
 To say MonsterDesc of (M - a slutty sister):
 	say "This is one of the two [boy of M]s who [if the bimbo of the player < 8]tricked[otherwise if the bimbo of the player < 13][']helped['][otherwise]helped[end if] you into the game. [big he of M] is dressed exactly how you remember - a tiny white latex microskirt with a blue line at the waist, and a small white latex bra with blue straps. ";
 	if M is futanari-slutty-sister:
-		say "However, [if futanari fetish is 0]you're pretty sure the foot long, mega thick strapon dildo dangling between [his of M] legs wasn't there before[otherwise]you're pretty sure that in real life [he of M] didn't have a foot long, mega thick [DickDesc of M] dangling between [his of M] legs[end if].";
+		say "However, [if futanari fetish is 0]you're pretty sure the foot long, mega thick dildo sword is new[otherwise]you're pretty sure that in real life [he of M] didn't have a foot long, mega thick [DickDesc of M] dangling between [his of M] legs[end if].";
 	otherwise if M is bulging-slutty-sister:
 		if a2m fetish < 2 and lady fetish is 2, say "[big he of M] currently has a wand vibrator with the word 'Nintendolls' printed down the side, and a [if the belly contents of M > 14]giant bulging ballsack[otherwise if the belly contents of M > 7]large, bloated ballsack[otherwise if the belly contents of M > 0]visibly swollen ballsack[otherwise]small, normal-sized ballsack[end if].";
 		otherwise say "[big he of M] currently has a wand vibrator with the word 'Nintendolls' printed down the side, and a [if the belly contents of M > 14]giant bulging belly[otherwise if the belly contents of M > 7]large, bloated belly[otherwise if the belly contents of M > 0]visibly distended belly[otherwise]flat, empty belly[end if].".
@@ -79,7 +83,7 @@ To set up (M - a slutty sister):
 To decide which number is the starting difficulty of (M - a slutty sister):
 	decide on 11.
 
-To compute unique periodic effect of (M - bulging-slutty-sister): [futa pumps bulging up with more cum]
+To compute unique unsimulated periodic effect of (M - bulging-slutty-sister): [futa pumps bulging up with more cum]
 	if the belly contents of M < 20:
 		if futanari-slutty-sister is in the location of M and M is awake and futanari-slutty-sister is awake and M is uninterested and futanari-slutty-sister is uninterested and M is not in the location of the player, increase the belly contents of M by 1.
 
@@ -132,7 +136,8 @@ To compute perception of (M - a slutty sister):
 			teleport to Hotel01;
 		bore M;
 	otherwise if M is objectifying the player:
-		say "[speech style of M]'[if M is futanari-slutty-sister][one of]About fucking time, I was getting tired of just fucking Little Miss Cum Balloon here over and over.'[or]Yum, let's go again.'[stopping][otherwise][one of]Ooh, yay, you made it at last! Yep, we're the final boss! Surprise! Get past us and press that STOP button to end the game. But we won't make it easy!'[or]Do your best, sweetie!'[stopping][end if][roman type][line break]";
+		if M is futanari-slutty-sister, say "[speech style of M]'[one of]About fucking time, I was getting tired of [if lady fetish is 2 or futanari fetish > 0]just fucking Little Miss Cum Balloon here over and over[otherwise]toying with this airheaded bimbo over and over[end if].'[or]Yum, let's go again.'[stopping][roman type][line break]";
+		otherwise say "[one of]Ooh, yay, you made it at last! Yep, we're the final boss! Surprise! Get past us and press that STOP button to end the game. But we won't make it easy!'[or]Do your best, sweetie!'[stopping][roman type][line break]";
 		if the times-met of M is 0 and M is futanari-slutty-sister:
 			if lady fetish is 2:
 				alwayscutshow figure of slutty sisters cutscene 2 for M;
@@ -379,15 +384,21 @@ To compute vaginal sex of (M - futanari-slutty-sister):
 To compute unique climax of (M - futanari-slutty-sister) in (F - asshole):
 	compute creampie of M in F;
 	now the sleep of M is 300;
-	if delayed fainting is 0, say "[speech style of M]'Ugh, you win... I'm done. Phew...'[roman type][line break][BigNameDesc of M] collapses onto [his of M] ass, [his of M] [DickDesc of M] quickly going limp as [he of M] pulls out.".
+	if delayed fainting is 0:
+		if lady fetish < 2 and futanari fetish is 0, say "[speech style of M]'Ah fuck, that drained the last of my magic and energy...'[roman type][line break][BigNameDesc of M] collapses onto [his of M] ass, [his of M] [DickDesc of M] shrinking and going soft as [he of M] pulls out.";
+		otherwise say "[speech style of M]'Ugh, you win... I'm done. Phew...'[roman type][line break][BigNameDesc of M] collapses onto [his of M] ass, [his of M] [DickDesc of M] quickly going limp as [he of M] pulls out.".
 
 To compute unique climax of (M - futanari-slutty-sister) in (F - vagina):
 	compute creampie of M in F;
 	now the sleep of M is 300;
-	if delayed fainting is 0, say "[speech style of M]'Ugh, you win... I'm done. Phew...'[roman type][line break][BigNameDesc of M] collapses onto [his of M] ass, [his of M] [DickDesc of M] quickly going limp as [he of M] pulls out.".
+	if delayed fainting is 0:
+		if lady fetish < 2 and futanari fetish is 0, say "[speech style of M]'Ah fuck, that drained the last of my magic and energy...'[roman type][line break][BigNameDesc of M] collapses onto [his of M] ass, [his of M] [DickDesc of M] shrinking and going soft as [he of M] pulls out.";
+		otherwise say "[speech style of M]'Ugh, you win... I'm done. Phew...'[roman type][line break][BigNameDesc of M] collapses onto [his of M] ass, [his of M] [DickDesc of M] quickly going limp as [he of M] pulls out.".
 
 To say CreampieFlav of (M - futanari-slutty-sister) in (F - a fuckhole):
-	say "[speech style of M]'Unf... So [if the openness of F < 8]tight, so [end if]good! Aaah!'[roman type][line break][BigNameDesc of M][if futanari fetish is 0][']s strapon starts pumping synthetic [semen][otherwise] starts to ejaculate[end if] deep inside your [variable F]! It feels like there's a powerful hosepipe shoved inside your belly!";
+	if lady fetish < 2 and futanari fetish is 0, say "[speech style of M]'This sword has one final trick for you... Coming right up!'[roman type][line break]";
+	otherwise say "[speech style of M]'Unf... So [if the openness of F < 8]tight, so [end if]good! Aaah!'[roman type][line break]";
+	say "[BigNameDesc of M][if futanari fetish is 0][']s magic sword starts pumping synthetic [semen][otherwise] starts to ejaculate[end if] deep inside your [variable F]! It feels like there's a powerful hosepipe shoved inside your belly!";
 
 Section 2 - Damage
 

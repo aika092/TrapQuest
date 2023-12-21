@@ -1,6 +1,7 @@
 Orc by Monster begins here.
 
 orc is a monster. orc is male. orc is intelligent. The leftover-type of orc is 148.
+orc can be shooed. [has he been made to leave at least once?]
 
 Definition: orc is dungeon dwelling:
 	if pack of playing cards is in Dungeon07, decide yes;
@@ -71,20 +72,6 @@ This is the spawn initial orc rule:
 	if orc is alive, now orc is in Dungeon07.
 The spawn initial orc rule is listed in the setting up dungeon monsters rules.
 
-Check taking pack of playing cards when the player is in Dungeon07:
-	if pack of playing cards is not held:
-		allocate 1 seconds;
-		if orc is in Dungeon07:
-			if orc is not interested, check perception of orc;
-			if orc is interested, say "[speech style of orc]'Hey! Hands off!'[roman type][line break]It looks like [NameDesc of orc] won't let you take those while [he of orc][']s here." instead;
-		otherwise if orc is alive or orc is not permanently banished:
-			if orc is alive, now orc is in Dungeon07;
-			otherwise set up orc;
-			say "[BigNameDesc of orc] appears in the doorway.";
-			check guaranteed perception of orc;
-			say "[speech style of orc]'You weren't thinking of taking my playing cards without asking, were you?'[roman type][line break][big he of orc] quickly steps over to prevent you from collecting up the playing cards.";
-			do nothing instead.
-
 To decide which number is the girth of (M - orc):
 	decide on 6.
 To decide which number is the grossness of (M - orc): [grossness addiction needed to tolerate it]
@@ -154,6 +141,20 @@ To compute seduction choice of (M - orc):
 	if M is seduced:
 		if the player is possessing a penis and the largeness of breasts < 3, cutshow figure of orc lapdance male for M;
 		otherwise cutshow figure of orc lapdance female for M.
+
+To compute stealing fail reaction of (T - a thing) from (M - orc):
+	say "[BigNameDesc of M] grabs a random set of 5 cards and throws them down on the table![line break][speech style of M]'My table and I are going to make you regret that.'[roman type][line break]The cards start to glow!";
+	let deckOfCards be a list of numbers;
+	repeat with PC running from 0 to 31:
+		unless PC is listed in stolenCards, add PC to deckOfCards;
+	sort deckOfCards in random order;
+	truncate deckOfCards to 5 entries;
+	truncate numbersExplained to 0 entries;
+	repeat with PC running through deckOfCards:
+		compute poker punishment of PC.
+
+To compute partial stealing reaction of (T - a thing) from (M - orc):
+	compute stealing fail reaction of T from M.
 
 Part 2 - Perception
 
@@ -281,6 +282,7 @@ This is the orc trolls then leaves rule:
 	compute pink smoke;
 	say "[line break]By the time the smoke has settled at the bottom half of the room, [NameDesc of orc] has gone!";
 	finally destroy orc;
+	now orc is shooed; [won't come back if you take the playing cards]
 	rule succeeds.
 The orc trolls then leaves rule is listed in the orc priority attack rules.
 
@@ -379,8 +381,18 @@ To execute (T - talk-orc-poker) for (M - a monster):
 	otherwise if the poker-timer of M > 0:
 		say "[speech style of M]'Ah, we still need to wait until the magic of the table recharges. No point playing if there's nothing at stake!'[roman type][line break]";
 	otherwise:
-		say "[speech style of M]'Certainly! I shall deal.'[roman type][line break]";
-		compute poker minigame.
+		say "[speech style of M]'Certainly! But first, Aika wants me to tell you that there's currently some rare but devastating bug with the poker minigame which infrequently causes the game to completely lock up after the poker game ends, and prevents you from continuing[if save game limit > 0]. Even worse, with roguelike saving enabled, the game manages to save itself in this state, completely ending your run[end if].'[roman type][line break]";
+		reset multiple choice questions;
+		set numerical response 1 to "[if save game limit > 0]I'm willing to[otherwise]I've saved the game and so am ready to[end if] risk that.";
+		set numerical response 2 to "Oh dear - let me cancel that and [if save game limit > 0]avoid the poker game until this bug is fixed[otherwise]save the game before playing poker with you[end if].";
+		if save game limit > 0 and the player is the donator, set numerical response 3 to "Oh dear - let me cheat and [bold type]disable roguelike saving mode[roman type] so I can save the game before playing poker with you.";
+		compute multiple choice question;
+		if player-numerical-response is 1:
+			say "[speech style of M]'I shall deal.'[roman type][line break]";
+			compute poker minigame;
+		otherwise if player-numerical-response is 3:
+			now choice in row 36 of Table of Settings is 0;
+			say "Roguelike saving disabled for the rest of this run. Please note that this has not changed your saved preferences; when you start your next fresh game it will still be enabled by default.[line break][bold type]Please now save your game.[roman type][line break]".
 
 talk-orc-easy is a talk-object.
 
@@ -505,6 +517,8 @@ When play begins:
 playerHand is a list of numbers that varies.
 orcHand is a list of numbers that varies.
 cardsToBurn is a list of numbers that varies.
+stolenCards is a list of numbers that varies.
+numbersExplained is a list of numbers that varies.
 
 To compute poker minigame:
 	now temporaryYesNoBackground is Figure of PokerCardDraw;
@@ -514,7 +528,7 @@ To compute poker minigame:
 	truncate playerHand to 0 entries;
 	truncate orcHand to 0 entries;
 	repeat with PC running from 0 to 31:
-		add PC to deckOfCards;
+		unless PC is listed in stolenCards, add PC to deckOfCards;
 	sort deckOfCards in random order;
 	let suitedJoy be false;
 	if the player is getting lucky, now suitedJoy is true;
@@ -734,407 +748,425 @@ To compute poker minigame:
 		say "[BigNameDesc of orc] wins! Uh-oh...[line break]Press any key to continue.";
 		wait for a key before continuing;
 		say "[line break][speech style of orc]'[one of]My condolences[or]Commiserations[in random order], [if the player is presenting as female]my lady[otherwise]young sir[end if]. [if orc is playing-poker-badly]I hope you understand, this was a complete accident. I discarded my entire hand, as you saw! [end if]Unfortunately, there is no stopping what happens next.'[roman type][paragraph break]";
-		let numbersExplained be a list of numbers;
+		truncate numbersExplained to 0 entries;
 		repeat with PC running through orcHand:
-			say "[line break][one of][BigNameDesc of orc] points at [poker card of PC], which is softly glowing. Its punishment effect is about to happen. [BigNameDesc of orc] explains what this particular card will do.[or][stopping]";
-			let PV be PC / 4;
-			let PS be the remainder after dividing PC by 4;
-			if PV is 0: [7]
-				unless PV is listed in numbersExplained, say "[speech style of orc]'Sevens are to do with spirits and the fates.'[roman type][paragraph break]";
-				if PS is 0:
-					say "[speech style of orc]'The [poker card of PC] makes the fates hate you. The next several times you need a lucky break, there will be a lower chance of you getting the outcome you want.'[roman type][line break]";
-					decrease the raw luck of the player by 20;
-				otherwise if PS is 1 and there is a nonstalking wisp:
-					say "[speech style of orc]'The [poker card of PC] summons a spirit to curse you... Unless you meet its demands.'[roman type][line break]";
-					deploy a wisp;
-				otherwise if PS is 3 and there is a worn tattoo and spade leaves tattoo is not worn:
-					say "[speech style of orc]'The [poker card of PC] gives you a special tattoo.'[roman type][line break]";
-					summon spade leaves tattoo;
-					say "A new tattoo appears, inked onto your skin!";
-					try examining spade leaves tattoo;
-				otherwise if diaper quest is 0 and PS is 4 and queen-of-spades monokini is off-stage and queen-of-spades monokini is class summonable:
-					say "[speech style of orc]'The [poker card of PC] gives you a special item of clothing.'[roman type][line break]";
-					class summon queen-of-spades monokini;
-					now queen-of-spades monokini is cursed;
-					now queen-of-spades monokini is luck-influencing;
-					now the raw-magic-modifier of queen-of-spades monokini is -4;
-					compute summoned quest of queen-of-spades monokini;
-				otherwise if PS is 4 and spoiled crop top is off-stage and spoiled crop top is class summonable:
-					say "[speech style of orc]'The [poker card of PC] gives you a special item of clothing.'[roman type][line break]";
-					class summon spoiled crop top;
-					now spoiled crop top is cursed;
-					now spoiled crop top is luck-influencing;
-					now the raw-magic-modifier of spoiled crop top is -4;
-					compute summoned quest of spoiled crop top;
-				otherwise:
-					say "[speech style of orc]'The [poker card of PC] makes you permanently slightly more unlucky. Sorry.'[roman type][line break]";
-					decrease permanent-luck-modifier by 2;
-					say "Everything suddenly seems just a tiny bit... darker, like there's a permanent but gentle shadow covering you at all times.";
-			otherwise if PV is 1: [8]
-				if diaper quest is 0:
-					unless PV is listed in numbersExplained, say "[speech style of orc]'Eights are to do with body shape.'[roman type][paragraph break]";
-					if PS is 0 and the player is not a flatchested trap:
-						say "[speech style of orc]'The [poker card of PC] tries to grow your breasts.'[roman type][line break]";
-						say "You feel a swelling sensation in your chest!";
-						BustUp 1;
-					otherwise if PS is 1:
-						say "[speech style of orc]'The [poker card of PC] tries to widen your hips.'[roman type][line break]";
-						say "You feel a stretching sensation in your hips!";
-						HipUp 1;
-					otherwise if PS is 2:
-						if the player is possessing a penis:
-							if the player is ready for common event TG:
-								say "[speech style of orc]'The [poker card of PC] replaces your genitals.'[roman type][line break]";
-								say DefaultSexChangeFlav;
-								SexChange the player;
-								say "[BigNameDesc of orc] smiles.[line break][speech style of orc]'I know what you're thinking, and yes, that change is permanent. What did you expect from a poker table decorated with female genitalia?'[roman type][line break]";
-							otherwise:
-								say "[speech style of orc]'The [poker card of PC] tries to shrink your genitals.'[roman type][line break]";
-								PenisDown 1;
-						otherwise:
-							say "[speech style of orc]'The [poker card of PC] tries to puff up your genitals.'[roman type][line break]";
-							LabiaUp 1 with comment;
-					otherwise:
-						say "[speech style of orc]'The [poker card of PC] tries to fatten your buttocks.'[roman type][line break]";
-						say "You feel a swelling sensation in your ass cheeks!";
-						AssSwell 2;
-				otherwise: [cursed diaper, transformed, locked diaper cover, glue (and diaper if there is no underwear)]
-					unless PV is listed in numbersExplained, say "[speech style of orc]'Eights affect your underwear.'[roman type][paragraph break]";
-					let RDC be a random [off-stage] diaper cover;
-					if PS is 1 and there is worn upgradable knickers:
-						say "[speech style of orc]'The [poker card of PC] tries to transform your underwear into something more humiliating.'[roman type][line break]";
-						let K be a random worn upgradable knickers;
-						potentially transform K;
-					otherwise if PS is 2 and RDC is actually summonable diaper cover:
-						say "[speech style of orc]'The [poker card of PC] gives you a locked diaper cover.'[roman type][line break]";
-						summon RDC locked;
-						now RDC is waddle-walking;
-						say "A [RDC] appears around your loins!";
-					otherwise if there is a worn diaper or the number of worn unremovable knickers is 0:
-						say "[speech style of orc]'The [poker card of PC] [if PS is not 3 or the number of worn diaper is 0]gives you a cursed diaper[end if][if PS is 3 and the number of worn knickers is 0] and [end if][if PS is 3]glues your underwear to your body[end if].'[roman type][line break]";
-						if PS is not 3 or the number of worn knickers is 0:
-							let K be a random worn knickers;
-							if K is diaper:
-								let D be K;
-								repeat with E running through eligible diapers:
-									if D is K and the DQBulk of E >= the DQBulk of K, now D is E;
-								if D is K:
-									say "[speech style of orc]'Hmm, that's very unusual, it can't find a single eligible diaper to add to what you're wearing.'[roman type][line break]";
-								otherwise:
-									say "A split second later, a [MediumDesc of D] appears over the top of your [MediumDesc of K]!";
-									blandify and reveal D;
-									now D is cursed;
-									compute summoned quest of D;
-									diaperAdd D;
-							otherwise:
-								let D be a random eligible diaper;
-								if D is diaper:
-									if K is knickers:
-										transform K into D;
-										if D is not cursed, now D is cursed;
-										if the quest of D is no-clothing-quest, compute summoned quest of D;
-									otherwise:
-										say "A split second later, a [MediumDesc of D] appears on you!";
-										summon D cursed with quest;
-								otherwise:
-									say "[speech style of orc]'Hmm, that's very unusual, it can't find a single eligible diaper to make you wear.'[roman type][line break]";
-						if PS is 3:
-							let K be a random worn knickers;
-							if K is knickers:
-								say "You feel [if the glue timer of K > 0]the glue inside your [ShortDesc of K] become a lot stronger[otherwise]your [ShortDesc of K] suddenly becoming filled with a strong, sticky glue[end if]![line break][variable custom style]Uh-oh... Now I won't be able to take these off until the glue dries out...[roman type][line break]";
-								gluify K;
-			otherwise if PV is 2: [9]
-				if diaper quest is 0:
-					unless PV is listed in numbersExplained, say "[speech style of orc]'Nines are to do with your preferences for various sexual acts.'[roman type][paragraph break]";
-					if PS is 0 and (interracial fetish is 1 or max breast size >= 5):
-						if interracial fetish is 1:
-							say "[speech style of orc]'The [poker card of PC] influences your attraction to black cock.'[roman type][line break]";
-							BBCAddictUp 1;
-						otherwise:
-							say "[speech style of orc]'The [poker card of PC] influences your desire to have your tits fucked.'[roman type][line break]";
-							TitfuckAddictUp 1;
-					otherwise if PS is 1:
-						say "[speech style of orc]'The [poker card of PC] influences your desire to be sodomized.'[roman type][line break]";
-						AnalSexAddictUp 1;
-					otherwise if PS is 2 and (the player is possessing a vagina or TG fetish is 1):
-						say "[speech style of orc]'The [poker card of PC] influences your desire for vaginal sex.'[roman type][line break]";
-						VaginalSexAddictUp 1;
-					otherwise if PS is 3:
-						say "[speech style of orc]'The [poker card of PC] influences your desire to suck dick.'[roman type][line break]";
-						OralSexAddictUp 1;
-					otherwise:
-						say "[speech style of orc]'The [poker card of PC] influences your general desire to have kinky sex.'[roman type][line break]";
-						SexAddictUp 1;
-				otherwise:
-					unless PV is listed in numbersExplained, say "[speech style of orc]'Nines are to do with your preferences and attitudes.'[roman type][paragraph break]";
-					if PS is 0 and watersports fetish is 1:
-						say "[speech style of orc]'The [poker card of PC] increases your desire to drink urine.'[roman type][line break]";
-						UrineTasteAddictUp 1;
-					otherwise if PS is 1:
-						say "[speech style of orc]'The [poker card of PC] increases your desire to drink human breast milk.'[roman type][line break]";
-						MilkTasteAddictUp 1;
-					otherwise if PS is 2:
-						say "[speech style of orc]'The [poker card of PC] influences your desire to be diapered.'[roman type][line break]";
-						DiaperAddictUp 1;
-					otherwise:
-						say "[speech style of orc]'The [poker card of PC] increase your desire to experience lots of orgasms.'[roman type][line break]";
-						SexAddictUp 1;
-			otherwise if PV is 3: [10]
-				if diaper quest is 0:
-					unless PV is listed in numbersExplained, say "[speech style of orc]'Tens affect your head in various ways.'[roman type][paragraph break]";
-					if PS is 0:
-						say "[speech style of orc]'The [poker card of PC] elongates your hair.'[roman type][line break]";
-						HairUp 1;
-					otherwise if PS is 1:
-						say "[speech style of orc]'The [poker card of PC] enhances your make up.'[roman type][line break]";
-						FaceUp 1;
-						say "Your face [MakeUpDesc]!";
-					otherwise if PS is 2:
-						say "[speech style of orc]'The [poker card of PC] colourizes your hair.'[roman type][line break]";
-						ColourUp 1;
-						say "Your hair is now [HairColour]!";
-					otherwise:
-						say "[speech style of orc]'The [poker card of PC] plumps up your lips.'[roman type][line break]";
-						LipsUp 1;
-						say "You feel a swelling sensation in your lips!";
-				otherwise:
-					unless PV is listed in numbersExplained, say "[speech style of orc]'Tens affect how soon you'll need to use the toilet.'[roman type][paragraph break]";
-					if PS is 0 and the bladder of the player < 12:
-						say "[speech style of orc]'The [poker card of PC] fills up your bladder to the brim.'[roman type][line break]";
-						now the bladder of the player is 12;
-						say "[if the player is bursting]You feel DESPERATE to pee!!![otherwise]Nothing feels any different? Strange...[end if]";
-					otherwise if PS is 1 and diaper messing >= 3 and rectum < 12:
-						say "[speech style of orc]'The [poker card of PC] fills up your bowels to the brim.'[roman type][line break]";
-						now rectum is 12;
-						say "[if the player is feeling full]You feel DESPERATE to do a poo!!![otherwise]Nothing feels any different? Strange...[end if]";
-					otherwise if PS is 2 and diaper messing >= 3:
-						say "[speech style of orc]'The [poker card of PC] teleports a suppository up inside your rectum.'[roman type][line break]";
-						increase suppository by 3;
-						say "Your bowels make a loud growing sound... and you can feel an urgent pressure, begging you to let it rip!";
-					otherwise:
-						say "[speech style of orc]'The [poker card of PC] doubles the rate of your digestion for a while.'[roman type][line break]";
-						say "You can feel that your stomach is [if digestion-timer > 0]going to keep churning away for a long time[otherwise]suddenly churning away[end if]!";
-						increase digestion-timer by 900;
-			otherwise if PV is 4: [Jack]
-				unless PV is listed in numbersExplained, say "[speech style of orc]'Jacks affect your current state in various inconvenient ways, the cheeky buggers.'[roman type][paragraph break]";
-				if PS is 0 and there is worn actually cursable clothing:
-					say "[speech style of orc]'The [poker card of PC] curses your clothing.'[roman type][line break]";
-					let C be a random worn actually cursable clothing;
-					say "Your [C] glows dark as it [if C is blessed]loses its blessing[otherwise]becomes cursed[end if]!";
-					curse C;
-					compute summoned quest of C;
-				otherwise if PS is 1:
-					say "[speech style of orc]'The [poker card of PC] batters your body.'[roman type][line break]As soon as [he of orc] finishes speaking, an invisible hand swats you on the ass!";
-					PainUp 10;
-					say "It doesn't stop until you feel sore, and somewhat injured.";
-					BodyRuin 3;
-				otherwise if PS is 2 and there is worn upgradable clothing:
-					say "[speech style of orc]'The [poker card of PC] transforms your clothing.'[roman type][line break]";
-					let C be a random worn upgradable clothing;
-					potentially transform C;
-				otherwise:
-					say "[speech style of orc]'The [poker card of PC] will make you feel uncontrollably horny.'[roman type][line break]";
-					Arouse 10000;
-					check for arousal change;
-			otherwise if PV is 5: [Queen]
-				unless PV is listed in numbersExplained, say "[speech style of orc]'Queens give you new clothes.'[roman type][paragraph break]";
-				if diaper quest is 0:
-					let C1 be a random off-stage clubbing dress;
-					let C2 be sequins bodysuit;
-					if sequins bodysuit is not off-stage or sequins bodysuit is not class summonable:
-						now C2 is pink sequins dress;
-						if pink sequins dress is not off-stage or pink sequins dress is not class summonable:
-							now C2 is a random off-stage sequins belt;
-							if C2 is not class summonable, now C2 is slave collar;
-					let C3 be a random off-stage my ass vest top;
-					if C3 is not class summonable:
-						now C3 is heart-strap-thong;
-						if heart-strap-thong is not off-stage or heart-strap-thong is not class summonable, now C3 is a random off-stage heart stockings;
-					if PS is 0 and spades-strap-bra is off-stage and spades-strap-thong is off-stage and spades-strap-bra is class summonable and spades-strap-thong is class summonable:
-						say "[speech style of orc]'The [poker card of PC] gives you spade-themed clothing.'[roman type][line break]";
-						class summon spades-strap-bra;
-						now spades-strap-bra is cursed;
-						now the raw-magic-modifier of spades-strap-bra is -1;
-						if interracial fetish is 1, now spades-strap-bra is bbc-addiction-influencing;
-						otherwise set up submissiveness-based influence of spades-strap-bra;
-						compute summoned quest of spades-strap-bra;
-						class summon spades-strap-thong;
-						now spades-strap-thong is cursed;
-						now the raw-magic-modifier of spades-strap-thong is -1;
-						if interracial fetish is 1, now spades-strap-thong is bbc-addiction-influencing;
-						otherwise set up submissiveness-based influence of spades-strap-thong;
-						compute summoned quest of spades-strap-thong;
-					otherwise if PS is 1 and C1 is class summonable:
-						say "[speech style of orc]'The [poker card of PC] gives you partywear.'[roman type][line break]";
-						class summon C1;
-						now C1 is cursed;
-						now the raw-magic-modifier of C1 is -1;
-						set up sex-based influence of C1;
-						compute summoned quest of C1;
-					otherwise if PS is 2 and C2 is class summonable:
-						say "[speech style of orc]'The [poker card of PC] gives you sparkly clothing.'[roman type][line break]";
-						class summon C2;
-						now C2 is cursed;
-						now the raw-magic-modifier of C2 is -1;
-						set up sex-based influence of C2;
-						compute summoned quest of C2;
-					otherwise if PS is 3 and C3 is class summonable:
-						say "[speech style of orc]'The [poker card of PC] gives you clothing with hearts on it.'[roman type][line break]";
-						class summon C3;
-						now C3 is cursed;
-						now the raw-magic-modifier of C3 is -1;
-						set up taste-based influence of C3;
-						compute summoned quest of C3;
-					otherwise:
-						say "[BigNameDesc of orc] waits a moment, and then hums with intrigue.[line break][speech style of orc]'It would seem that the [poker card of PC] can't find anything appropriate to make you wear right now.'[roman type][line break]";
-				otherwise:
-					let C1 be ballet heels;
-					if leather-thigh-high-boots is off-stage and the heel skill of the player < 4, now C1 is leather-thigh-high-boots;
-					let C2 be a random off-stage jacket;
-					let C3 be naughty-skirt;
-					let C4 be pinafore-dress;
-					if C4 is not off-stage or C2 is worn or C3 is worn or C4 is not class summonable:
-						now C4 is a random off-stage heart stockings;
-						if C4 is not off-stage or C4 is not actually summonable, now C4 is heart-collar;
-					if PS is 0 and C1 is class summonable:
-						say "[speech style of orc]'The [poker card of PC] gives you slutty black heels.'[roman type][line break]";
-						class summon C1;
-						now C1 is cursed;
-						compute summoned quest of C1;
-					otherwise if PS is 1 and C2 is class summonable:
-						say "[speech style of orc]'The [poker card of PC] gives you a slutty jacket.'[roman type][line break]";
-						class summon C2;
-						now C2 is cursed;
-						now the raw-magic-modifier of C2 is -1;
-						set up sex-based influence of C2;
-						compute summoned quest of C2;
-					otherwise if PS is 2 and C3 is off-stage and C3 is class summonable:
-						say "[speech style of orc]'The [poker card of PC] gives you a naughty skirt.'[roman type][line break]";
-						class summon C3;
-						now C3 is cursed;
-						now the raw-magic-modifier of C3 is -1;
-						set up submissiveness-based influence of C3;
-						compute summoned quest of C3;
-					otherwise if PS is 3 and (C4 is pinafore-dress or C4 is actually summonable):
-						say "[speech style of orc]'The [poker card of PC] gives you clothing with hearts on it.'[roman type][line break]";
-						class summon C4;
-						now C4 is cursed;
-						now the raw-magic-modifier of C4 is -1;
-						set up taste-based influence of C4;
-						compute summoned quest of C4;
-					otherwise:
-						say "[BigNameDesc of orc] waits a moment, and then hums with intrigue.[line break][speech style of orc]'It would seem that the [poker card of PC] can't find anything appropriate to make you wear right now.'[roman type][line break]";
-			otherwise if PV is 6: [King]
-				if game difficulty > 3:
-					unless PV is listed in numbersExplained, say "[speech style of orc]'Kings drain your stats.'[roman type][paragraph break]";
-					if PS is 0:
-						say "[speech style of orc]'The [poker card of PC] slightly drains your strength, dexterity and intelligence.'[roman type][line break]";
-						StrengthDown 1;
-						DexDown 1;
-						IntDown 1;
-					otherwise if PS is 1:
-						say "[speech style of orc]'The [poker card of PC] heavily drains your strength.'[roman type][line break]";
-						StrengthDown 3;
-					otherwise if PS is 2:
-						say "[speech style of orc]'The [poker card of PC] heavily drains your dexterity.'[roman type][line break]";
-						DexDown 3;
-					otherwise:
-						say "[speech style of orc]'The [poker card of PC] heavily drains your intelligence.'[roman type][line break]";
-						IntDown 3;
-				otherwise if diaper quest is 0 and (bondage protection is 1 or piercing-fetish is 1):
-					unless PV is listed in numbersExplained, say "[speech style of orc]'Kings give you new piercings.'[roman type][paragraph break]";
-					let P be a random eligible piercing;
-					if P is piercing:
-						now P is cursed; [some piercings (i.e. earrings) have different appearances depending on BUC status, so we do this to ensure that that the line below says the right thing]
-						say "A [P] appears on you!";
-						summon P cursed with quest;
-					otherwise:
-						say "[BigNameDesc of orc] waits a moment, and then hums with intrigue.[line break][speech style of orc]'It would seem that the [poker card of PC] can't find any appropriate piercings.'[roman type][line break]";
-				otherwise:
-					unless PV is listed in numbersExplained, say "[speech style of orc]'Kings give you locked-on bondage.'[roman type][line break]";
-					let C be chastity-belt;
-					if the player is not possessing a vagina, now C is a random off-stage fetish appropriate chastity cage;
-					let A be a random pair of anklecuffs;
-					let DG be a random rubber duck gag;
-					if PS is 0 and pair of handcuffs is actually summonable:
-						say "[speech style of orc]'The [poker card of PC] locks your wrists together.'[roman type][line break]";
-						summon pair of handcuffs locked;
-						say "A [pair of handcuffs] appears on your wrists!";
-					otherwise if PS is 1 and A is actually summonable:
-						say "[speech style of orc]'The [poker card of PC] locks your ankles together.'[roman type][line break]";
-						summon A locked;
-						say "A [A] appears on your ankles!";
-					otherwise if diaper quest is 1 and PS is 2 and DG is actually summonable:
-						say "[speech style of orc]'The [poker card of PC] gives you a locked gag.'[roman type][line break]";
-						summon DG locked;
-						say "A [DG] appears in your mouth!";
-					otherwise if PS is 2 and heart-collar is actually summonable:
-						say "[speech style of orc]'The [poker card of PC] gives you a locked collar.'[roman type][line break]";
-						summon heart-collar locked;
-						say "A [heart-collar] appears on your neck!";
-					otherwise if PS is 3 and C is actually summonable:
-						say "[speech style of orc]'The [poker card of PC] locks away your own access to your genitals.'[roman type][line break]";
-						summon C locked;
-						say "A [C] appears over your [genitals]!";
-					otherwise:
-						say "[BigNameDesc of orc] waits a moment, and then hums with intrigue.[line break][speech style of orc]'It would seem that the [poker card of PC] can't find anything appropriate to lock you up with right now.'[roman type][line break]";
-			otherwise: [Ace]
-				unless PV is listed in numbersExplained, say "[speech style of orc]'Aces have unique, rather troublesome effects, I'm afraid.'[roman type][paragraph break]";
-				if PS is 0:
-					if diaper quest is 0 and pimp is alive and the times-met of pimp > 0 and portal-hotpants is class summonable:
-						say "[speech style of orc]'The [poker card of PC] makes [NameDesc of pimp] [speech style of orc]think that you owe [him of pimp] lots of money. And... it gives [him of pimp] a unique way to sell your body for sex, without even asking your permission.'[roman type][line break]";
-						class summon portal-hotpants;
-						if max breast size >= 5 and portal-bra is actually summonable:
-							summon portal-bra;
-							say "The hotpants are immediately followed by a matching chestplate!";
-						say "[variable custom style]No way... surely this doesn't mean that... my body parts are... mounted on the statuettes in [NameDesc of pimp][speech style of orc][']s room?![roman type][line break]";
-					otherwise:
-						say "[speech style of orc]'The [poker card of PC] summons a new, err, [']friend['] for you.'[roman type][line break]";
-						let M be a random horny-wench;
-						if interracial fetish is 1, now M is QoS wench;
-						if diaper quest is 1, now M is a random dungeon dwelling adult baby slave;
-						if M is off-stage, set up M;
-						now M is in the location of the player;
-						say "[BigNameDesc of orc] points to behind you, and as you turn around, you see that [NameDesc of M] is standing there, also turning around, and noticing you!";
-						anger M;
-						check guaranteed perception of M;
-				otherwise if PS is 1:
-					say "[speech style of orc]'The [poker card of PC] unleashes a powerful foe into this Dungeon.'[roman type][line break]";
-					let M be a random alive caged dungeon boss;
-					if M is nothing:
-						if diaper quest is 0, now M is a random off-stage tentacle monster;
-						otherwise now M is bowsette;
-					if M is dungeon boss:
-						now M is unleashed;
-						say "You hear the sound of a cage crashing and swinging open from elsewhere in the Dungeon![line break][variable custom style][if Dungeon36 is visited]Oh... Oh no... The [ShortDesc of M]...[otherwise]What was that?![end if][roman type][line break]";
-					otherwise if M is monster:
-						now M is massive;
-						summon M in the dungeon;
-						say "You hear the sound of [if diaper quest is 0]slithering tentacles[otherwise]evil laughter and videogame music[end if] from elsewhere in the Dungeon![line break][variable custom style]Uh-oh...[roman type][line break]";
-					otherwise:
-						say "[BigNameDesc of orc] waits a moment, and then hums with intrigue.[line break][speech style of orc]'It would seem that the [poker card of PC] can't find anything appropriate to summon right now.'[roman type][line break]";
-				otherwise if PS is 2:
-					say "[speech style of orc]'The [poker card of PC] curses you with a troublesome burden.'[roman type][line break]";
-					let ULO be the list of eligible pledge-lesson-objects;
-					sort ULO in random order;
-					repeat with LO running through ULO:
-						if the implant of LO is 1, remove LO from ULO;
-					let E be entry 1 in ULO;
-					if E is a pledge-lesson-object:
-						execute E;
-						now the implant of E is 1;
-						say "And you can feel that for the rest of your time here, if you disobey the pledge that was just made for you, there will be serious consequences.";
-					otherwise:
-						StrengthDown 4;
-						say "You feel significant amounts of physical strength leaving you![line break][variable custom style]No!!![roman type][line break]";
-				otherwise if PS is 3:
-					say "[speech style of orc]'The [poker card of PC] teleports you to a troublesome location. Err, I guess this is goodbye for now.'[roman type][line break]";
-					compute bad teleport;
-			add PV to numbersExplained;
+			compute poker punishment of PC;
 	if orc is in the location of the player, say "[line break][speech style of orc]'Well, that's that, for now. [one of]The poker table will need time to replenish its energy, so come back later for another round[or]I eagerly await our next match[stopping].'[roman type][line break]";
+	if 23 is listed in playerHand and the player is in Dungeon07 and the recipe of (alchemy key of queen-of-hearts heels) is memorised:
+		say "If you wanted to, you could probably steal the queen of hearts card right now. You know from the recipe you learned that it can be used to craft a [UniqueShortDesc of queen-of-hearts heels].";
+		reset multiple choice questions;
+		set numerical response 1 to "Steal the queen of hearts";
+		set numerical response 2 to "Don't steal - return all 5 of your cards";
+		compute multiple choice question;
+		if player-numerical-response is 1:
+			say "You throw your hand of cards back face-down on top of the messy pile of cards in front of you... But secretly keep the queen of hearts for yourself.";
+			now queen-of-hearts is carried by the player;
+			now the owner of queen-of-hearts is orc;
+			progress quest of stealing-quest;
+			compute poker theft of queen-of-hearts;
 	now orc is not playing-poker-badly;
 	now temporaryYesNoBackground is Figure of small image.
 
+To compute poker punishment of (PC - a number):
+	say "[line break][one of][BigNameDesc of orc] points at [poker card of PC], which is softly glowing. Its punishment effect is about to happen. [BigNameDesc of orc] explains what this particular card will do.[or][stopping]";
+	let PV be PC / 4;
+	let PS be the remainder after dividing PC by 4;
+	if PV is 0: [7]
+		unless PV is listed in numbersExplained, say "[speech style of orc]'Sevens are to do with spirits and the fates.'[roman type][paragraph break]";
+		if PS is 0:
+			say "[speech style of orc]'The [poker card of PC] makes the fates hate you. The next several times you need a lucky break, there will be a lower chance of you getting the outcome you want.'[roman type][line break]";
+			decrease the raw luck of the player by 20;
+		otherwise if PS is 1 and there is a nonstalking wisp:
+			say "[speech style of orc]'The [poker card of PC] summons a spirit to curse you... Unless you meet its demands.'[roman type][line break]";
+			deploy a wisp;
+		otherwise if PS is 3 and there is a worn tattoo and spade leaves tattoo is not worn:
+			say "[speech style of orc]'The [poker card of PC] gives you a special tattoo.'[roman type][line break]";
+			summon spade leaves tattoo;
+			say "A new tattoo appears, inked onto your skin!";
+			try examining spade leaves tattoo;
+		otherwise if diaper quest is 0 and PS is 4 and queen-of-spades monokini is off-stage and queen-of-spades monokini is class summonable:
+			say "[speech style of orc]'The [poker card of PC] gives you a special item of clothing.'[roman type][line break]";
+			class summon queen-of-spades monokini;
+			now queen-of-spades monokini is cursed;
+			now queen-of-spades monokini is luck-influencing;
+			now the raw-magic-modifier of queen-of-spades monokini is -4;
+			compute summoned quest of queen-of-spades monokini;
+		otherwise if PS is 4 and spoiled crop top is off-stage and spoiled crop top is class summonable:
+			say "[speech style of orc]'The [poker card of PC] gives you a special item of clothing.'[roman type][line break]";
+			class summon spoiled crop top;
+			now spoiled crop top is cursed;
+			now spoiled crop top is luck-influencing;
+			now the raw-magic-modifier of spoiled crop top is -4;
+			compute summoned quest of spoiled crop top;
+		otherwise:
+			say "[speech style of orc]'The [poker card of PC] makes you permanently slightly more unlucky. Sorry.'[roman type][line break]";
+			decrease permanent-luck-modifier by 2;
+			say "Everything suddenly seems just a tiny bit... darker, like there's a permanent but gentle shadow covering you at all times.";
+	otherwise if PV is 1: [8]
+		if diaper quest is 0:
+			unless PV is listed in numbersExplained, say "[speech style of orc]'Eights are to do with body shape.'[roman type][paragraph break]";
+			if PS is 0 and the player is not a flatchested trap:
+				say "[speech style of orc]'The [poker card of PC] tries to grow your breasts.'[roman type][line break]";
+				say "You feel a swelling sensation in your chest!";
+				BustUp 1;
+			otherwise if PS is 1:
+				say "[speech style of orc]'The [poker card of PC] tries to widen your hips.'[roman type][line break]";
+				say "You feel a stretching sensation in your hips!";
+				HipUp 1;
+			otherwise if PS is 2:
+				if the player is possessing a penis:
+					if the player is ready for common event TG:
+						say "[speech style of orc]'The [poker card of PC] replaces your genitals.'[roman type][line break]";
+						say DefaultSexChangeFlav;
+						SexChange the player;
+						say "[BigNameDesc of orc] smiles.[line break][speech style of orc]'I know what you're thinking, and yes, that change is permanent. What did you expect from a poker table decorated with female genitalia?'[roman type][line break]";
+					otherwise:
+						say "[speech style of orc]'The [poker card of PC] tries to shrink your genitals.'[roman type][line break]";
+						PenisDown 1;
+				otherwise:
+					say "[speech style of orc]'The [poker card of PC] tries to puff up your genitals.'[roman type][line break]";
+					LabiaUp 1 with comment;
+			otherwise:
+				say "[speech style of orc]'The [poker card of PC] tries to fatten your buttocks.'[roman type][line break]";
+				say "You feel a swelling sensation in your ass cheeks!";
+				AssSwell 2;
+		otherwise: [cursed diaper, transformed, locked diaper cover, glue (and diaper if there is no underwear)]
+			unless PV is listed in numbersExplained, say "[speech style of orc]'Eights affect your underwear.'[roman type][paragraph break]";
+			let RDC be a random [off-stage] diaper cover;
+			if PS is 1 and there is worn upgradable knickers:
+				say "[speech style of orc]'The [poker card of PC] tries to transform your underwear into something more humiliating.'[roman type][line break]";
+				let K be a random worn upgradable knickers;
+				potentially transform K;
+			otherwise if PS is 2 and RDC is actually summonable diaper cover:
+				say "[speech style of orc]'The [poker card of PC] gives you a locked diaper cover.'[roman type][line break]";
+				summon RDC locked;
+				now RDC is waddle-walking;
+				say "A [RDC] appears around your loins!";
+			otherwise if there is a worn diaper or the number of worn unremovable knickers is 0:
+				say "[speech style of orc]'The [poker card of PC] [if PS is not 3 or the number of worn diaper is 0]gives you a cursed diaper[end if][if PS is 3 and the number of worn knickers is 0] and [end if][if PS is 3]glues your underwear to your body[end if].'[roman type][line break]";
+				if PS is not 3 or the number of worn knickers is 0:
+					let K be a random worn knickers;
+					if K is diaper:
+						let D be K;
+						repeat with E running through eligible diapers:
+							if D is K and the DQBulk of E >= the DQBulk of K, now D is E;
+						if D is K:
+							say "[speech style of orc]'Hmm, that's very unusual, it can't find a single eligible diaper to add to what you're wearing.'[roman type][line break]";
+						otherwise:
+							say "A split second later, a [MediumDesc of D] appears over the top of your [MediumDesc of K]!";
+							blandify and reveal D;
+							now D is cursed;
+							compute summoned quest of D;
+							diaperAdd D;
+					otherwise:
+						let D be a random eligible diaper;
+						if D is diaper:
+							if K is knickers:
+								transform K into D;
+								if D is not cursed, now D is cursed;
+								if the quest of D is no-clothing-quest, compute summoned quest of D;
+							otherwise:
+								say "A split second later, a [MediumDesc of D] appears on you!";
+								summon D cursed with quest;
+						otherwise:
+							say "[speech style of orc]'Hmm, that's very unusual, it can't find a single eligible diaper to make you wear.'[roman type][line break]";
+				if PS is 3:
+					let K be a random worn knickers;
+					if K is knickers:
+						say "You feel [if the glue timer of K > 0]the glue inside your [ShortDesc of K] become a lot stronger[otherwise]your [ShortDesc of K] suddenly becoming filled with a strong, sticky glue[end if]![line break][variable custom style]Uh-oh... Now I won't be able to take these off until the glue dries out...[roman type][line break]";
+						gluify K;
+	otherwise if PV is 2: [9]
+		if diaper quest is 0:
+			unless PV is listed in numbersExplained, say "[speech style of orc]'Nines are to do with your preferences for various sexual acts.'[roman type][paragraph break]";
+			if PS is 0 and (interracial fetish is 1 or max breast size >= 5):
+				if interracial fetish is 1:
+					say "[speech style of orc]'The [poker card of PC] influences your attraction to black cock.'[roman type][line break]";
+					BBCAddictUp 1;
+				otherwise:
+					say "[speech style of orc]'The [poker card of PC] influences your desire to have your tits fucked.'[roman type][line break]";
+					TitfuckAddictUp 1;
+			otherwise if PS is 1:
+				say "[speech style of orc]'The [poker card of PC] influences your desire to be sodomized.'[roman type][line break]";
+				AnalSexAddictUp 1;
+			otherwise if PS is 2 and (the player is possessing a vagina or TG fetish is 1):
+				say "[speech style of orc]'The [poker card of PC] influences your desire for vaginal sex.'[roman type][line break]";
+				VaginalSexAddictUp 1;
+			otherwise if PS is 3:
+				say "[speech style of orc]'The [poker card of PC] influences your desire to suck dick.'[roman type][line break]";
+				OralSexAddictUp 1;
+			otherwise:
+				say "[speech style of orc]'The [poker card of PC] influences your general desire to have kinky sex.'[roman type][line break]";
+				SexAddictUp 1;
+		otherwise:
+			unless PV is listed in numbersExplained, say "[speech style of orc]'Nines are to do with your preferences and attitudes.'[roman type][paragraph break]";
+			if PS is 0 and watersports fetish is 1:
+				say "[speech style of orc]'The [poker card of PC] increases your desire to drink urine.'[roman type][line break]";
+				UrineTasteAddictUp 1;
+			otherwise if PS is 1:
+				say "[speech style of orc]'The [poker card of PC] increases your desire to drink human breast milk.'[roman type][line break]";
+				MilkTasteAddictUp 1;
+			otherwise if PS is 2:
+				say "[speech style of orc]'The [poker card of PC] influences your desire to be diapered.'[roman type][line break]";
+				DiaperAddictUp 1;
+			otherwise:
+				say "[speech style of orc]'The [poker card of PC] increase your desire to experience lots of orgasms.'[roman type][line break]";
+				SexAddictUp 1;
+	otherwise if PV is 3: [10]
+		if diaper quest is 0:
+			unless PV is listed in numbersExplained, say "[speech style of orc]'Tens affect your head in various ways.'[roman type][paragraph break]";
+			if PS is 0:
+				say "[speech style of orc]'The [poker card of PC] elongates your hair.'[roman type][line break]";
+				HairUp 1;
+			otherwise if PS is 1:
+				say "[speech style of orc]'The [poker card of PC] enhances your make up.'[roman type][line break]";
+				FaceUp 1;
+				say "Your face [MakeUpDesc]!";
+			otherwise if PS is 2:
+				say "[speech style of orc]'The [poker card of PC] colourizes your hair.'[roman type][line break]";
+				ColourUp 1;
+				say "Your hair is now [HairColour]!";
+			otherwise:
+				say "[speech style of orc]'The [poker card of PC] plumps up your lips.'[roman type][line break]";
+				LipsUp 1;
+				say "You feel a swelling sensation in your lips!";
+		otherwise:
+			unless PV is listed in numbersExplained, say "[speech style of orc]'Tens affect how soon you'll need to use the toilet.'[roman type][paragraph break]";
+			if PS is 0 and the bladder of the player < 12:
+				say "[speech style of orc]'The [poker card of PC] fills up your bladder to the brim.'[roman type][line break]";
+				now the bladder of the player is 12;
+				say "[if the player is bursting]You feel DESPERATE to pee!!![otherwise]Nothing feels any different? Strange...[end if]";
+			otherwise if PS is 1 and diaper messing >= 3 and rectum < 12:
+				say "[speech style of orc]'The [poker card of PC] fills up your bowels to the brim.'[roman type][line break]";
+				now rectum is 12;
+				say "[if the player is feeling full]You feel DESPERATE to do a poo!!![otherwise]Nothing feels any different? Strange...[end if]";
+			otherwise if PS is 2 and diaper messing >= 3:
+				say "[speech style of orc]'The [poker card of PC] teleports a suppository up inside your rectum.'[roman type][line break]";
+				increase suppository by 3;
+				say "Your bowels make a loud growing sound... and you can feel an urgent pressure, begging you to let it rip!";
+			otherwise:
+				say "[speech style of orc]'The [poker card of PC] doubles the rate of your digestion for a while.'[roman type][line break]";
+				say "You can feel that your stomach is [if digestion-timer > 0]going to keep churning away for a long time[otherwise]suddenly churning away[end if]!";
+				increase digestion-timer by 900;
+	otherwise if PV is 4: [Jack]
+		unless PV is listed in numbersExplained, say "[speech style of orc]'Jacks affect your current state in various inconvenient ways, the cheeky buggers.'[roman type][paragraph break]";
+		if PS is 0 and there is worn actually cursable clothing:
+			say "[speech style of orc]'The [poker card of PC] curses your clothing.'[roman type][line break]";
+			let C be a random worn actually cursable clothing;
+			say "Your [C] glows dark as it [if C is blessed]loses its blessing[otherwise]becomes cursed[end if]!";
+			curse C;
+			compute summoned quest of C;
+		otherwise if PS is 1:
+			say "[speech style of orc]'The [poker card of PC] batters your body.'[roman type][line break]As soon as [he of orc] finishes speaking, an invisible hand swats you on the ass!";
+			PainUp 10;
+			say "It doesn't stop until you feel sore, and somewhat injured.";
+			BodyRuin 3;
+		otherwise if PS is 2 and there is worn upgradable clothing:
+			say "[speech style of orc]'The [poker card of PC] transforms your clothing.'[roman type][line break]";
+			let C be a random worn upgradable clothing;
+			potentially transform C;
+		otherwise:
+			say "[speech style of orc]'The [poker card of PC] will make you feel uncontrollably horny.'[roman type][line break]";
+			Arouse 10000;
+			check for arousal change;
+	otherwise if PV is 5: [Queen]
+		unless PV is listed in numbersExplained, say "[speech style of orc]'Queens give you new clothes.'[roman type][paragraph break]";
+		if diaper quest is 0:
+			let C1 be a random off-stage clubbing dress;
+			let C2 be sequins bodysuit;
+			if sequins bodysuit is not off-stage or sequins bodysuit is not class summonable:
+				now C2 is pink sequins dress;
+				if pink sequins dress is not off-stage or pink sequins dress is not class summonable:
+					now C2 is a random off-stage sequins belt;
+					if C2 is not class summonable, now C2 is slave collar;
+			let C3 be a random off-stage my ass vest top;
+			if C3 is not class summonable:
+				now C3 is heart-strap-thong;
+				if heart-strap-thong is not off-stage or heart-strap-thong is not class summonable, now C3 is a random off-stage heart stockings;
+			if PS is 0 and spades-strap-bra is off-stage and spades-strap-thong is off-stage and spades-strap-bra is class summonable and spades-strap-thong is class summonable:
+				say "[speech style of orc]'The [poker card of PC] gives you spade-themed clothing.'[roman type][line break]";
+				class summon spades-strap-bra;
+				now spades-strap-bra is cursed;
+				now the raw-magic-modifier of spades-strap-bra is -1;
+				if interracial fetish is 1, now spades-strap-bra is bbc-addiction-influencing;
+				otherwise set up submissiveness-based influence of spades-strap-bra;
+				compute summoned quest of spades-strap-bra;
+				class summon spades-strap-thong;
+				now spades-strap-thong is cursed;
+				now the raw-magic-modifier of spades-strap-thong is -1;
+				if interracial fetish is 1, now spades-strap-thong is bbc-addiction-influencing;
+				otherwise set up submissiveness-based influence of spades-strap-thong;
+				compute summoned quest of spades-strap-thong;
+			otherwise if PS is 1 and C1 is class summonable:
+				say "[speech style of orc]'The [poker card of PC] gives you partywear.'[roman type][line break]";
+				class summon C1;
+				now C1 is cursed;
+				now the raw-magic-modifier of C1 is -1;
+				set up sex-based influence of C1;
+				compute summoned quest of C1;
+			otherwise if PS is 2 and C2 is class summonable:
+				say "[speech style of orc]'The [poker card of PC] gives you sparkly clothing.'[roman type][line break]";
+				class summon C2;
+				now C2 is cursed;
+				now the raw-magic-modifier of C2 is -1;
+				set up sex-based influence of C2;
+				compute summoned quest of C2;
+			otherwise if PS is 3 and C3 is class summonable:
+				say "[speech style of orc]'The [poker card of PC] gives you clothing with hearts on it.'[roman type][line break]";
+				class summon C3;
+				now C3 is cursed;
+				now the raw-magic-modifier of C3 is -1;
+				set up taste-based influence of C3;
+				compute summoned quest of C3;
+			otherwise:
+				say "[BigNameDesc of orc] waits a moment, and then hums with intrigue.[line break][speech style of orc]'It would seem that the [poker card of PC] can't find anything appropriate to make you wear right now.'[roman type][line break]";
+		otherwise:
+			let C1 be ballet heels;
+			if leather-thigh-high-boots is off-stage and the heel skill of the player < 4, now C1 is leather-thigh-high-boots;
+			let C2 be a random off-stage jacket;
+			let C3 be naughty-skirt;
+			let C4 be pinafore-dress;
+			if C4 is not off-stage or C2 is worn or C3 is worn or C4 is not class summonable:
+				now C4 is a random off-stage heart stockings;
+				if C4 is not off-stage or C4 is not actually summonable, now C4 is heart-collar;
+			if PS is 0 and C1 is class summonable:
+				say "[speech style of orc]'The [poker card of PC] gives you slutty black heels.'[roman type][line break]";
+				class summon C1;
+				now C1 is cursed;
+				compute summoned quest of C1;
+			otherwise if PS is 1 and C2 is class summonable:
+				say "[speech style of orc]'The [poker card of PC] gives you a slutty jacket.'[roman type][line break]";
+				class summon C2;
+				now C2 is cursed;
+				now the raw-magic-modifier of C2 is -1;
+				set up sex-based influence of C2;
+				compute summoned quest of C2;
+			otherwise if PS is 2 and C3 is off-stage and C3 is class summonable:
+				say "[speech style of orc]'The [poker card of PC] gives you a naughty skirt.'[roman type][line break]";
+				class summon C3;
+				now C3 is cursed;
+				now the raw-magic-modifier of C3 is -1;
+				set up submissiveness-based influence of C3;
+				compute summoned quest of C3;
+			otherwise if PS is 3 and (C4 is pinafore-dress or C4 is actually summonable):
+				say "[speech style of orc]'The [poker card of PC] gives you clothing with hearts on it.'[roman type][line break]";
+				class summon C4;
+				now C4 is cursed;
+				now the raw-magic-modifier of C4 is -1;
+				set up taste-based influence of C4;
+				compute summoned quest of C4;
+			otherwise:
+				say "[BigNameDesc of orc] waits a moment, and then hums with intrigue.[line break][speech style of orc]'It would seem that the [poker card of PC] can't find anything appropriate to make you wear right now.'[roman type][line break]";
+	otherwise if PV is 6: [King]
+		if game difficulty > 3:
+			unless PV is listed in numbersExplained, say "[speech style of orc]'Kings drain your stats.'[roman type][paragraph break]";
+			if PS is 0:
+				say "[speech style of orc]'The [poker card of PC] slightly drains your strength, dexterity and intelligence.'[roman type][line break]";
+				StrengthDown 1;
+				DexDown 1;
+				IntDown 1;
+			otherwise if PS is 1:
+				say "[speech style of orc]'The [poker card of PC] heavily drains your strength.'[roman type][line break]";
+				StrengthDown 3;
+			otherwise if PS is 2:
+				say "[speech style of orc]'The [poker card of PC] heavily drains your dexterity.'[roman type][line break]";
+				DexDown 3;
+			otherwise:
+				say "[speech style of orc]'The [poker card of PC] heavily drains your intelligence.'[roman type][line break]";
+				IntDown 3;
+		otherwise if diaper quest is 0 and (bondage protection is 1 or piercing-fetish is 1):
+			unless PV is listed in numbersExplained, say "[speech style of orc]'Kings give you new piercings.'[roman type][paragraph break]";
+			let P be a random eligible piercing;
+			if P is piercing:
+				now P is cursed; [some piercings (i.e. earrings) have different appearances depending on BUC status, so we do this to ensure that that the line below says the right thing]
+				say "A [P] appears on you!";
+				summon P cursed with quest;
+			otherwise:
+				say "[BigNameDesc of orc] waits a moment, and then hums with intrigue.[line break][speech style of orc]'It would seem that the [poker card of PC] can't find any appropriate piercings.'[roman type][line break]";
+		otherwise:
+			unless PV is listed in numbersExplained, say "[speech style of orc]'Kings give you locked-on bondage.'[roman type][line break]";
+			let C be chastity-belt;
+			if the player is not possessing a vagina, now C is a random off-stage fetish appropriate chastity cage;
+			let A be a random pair of anklecuffs;
+			let DG be a random rubber duck gag;
+			if PS is 0 and pair of handcuffs is actually summonable:
+				say "[speech style of orc]'The [poker card of PC] locks your wrists together.'[roman type][line break]";
+				summon pair of handcuffs locked;
+				say "A [pair of handcuffs] appears on your wrists!";
+			otherwise if PS is 1 and A is actually summonable:
+				say "[speech style of orc]'The [poker card of PC] locks your ankles together.'[roman type][line break]";
+				summon A locked;
+				say "A [A] appears on your ankles!";
+			otherwise if diaper quest is 1 and PS is 2 and DG is actually summonable:
+				say "[speech style of orc]'The [poker card of PC] gives you a locked gag.'[roman type][line break]";
+				summon DG locked;
+				say "A [DG] appears in your mouth!";
+			otherwise if PS is 2 and heart-collar is actually summonable:
+				say "[speech style of orc]'The [poker card of PC] gives you a locked collar.'[roman type][line break]";
+				summon heart-collar locked;
+				say "A [heart-collar] appears on your neck!";
+			otherwise if PS is 3 and C is actually summonable:
+				say "[speech style of orc]'The [poker card of PC] locks away your own access to your genitals.'[roman type][line break]";
+				summon C locked;
+				say "A [C] appears over your [genitals]!";
+			otherwise:
+				say "[BigNameDesc of orc] waits a moment, and then hums with intrigue.[line break][speech style of orc]'It would seem that the [poker card of PC] can't find anything appropriate to lock you up with right now.'[roman type][line break]";
+	otherwise: [Ace]
+		unless PV is listed in numbersExplained, say "[speech style of orc]'Aces have unique, rather troublesome effects, I'm afraid.'[roman type][paragraph break]";
+		if PS is 0:
+			if diaper quest is 0 and pimp is alive and the times-met of pimp > 0 and portal-hotpants is unclash summonable:
+				say "[speech style of orc]'The [poker card of PC] makes [NameDesc of pimp] [speech style of orc]think that you owe [him of pimp] lots of money. And... it gives [him of pimp] a unique way to sell your body for sex, without even asking your permission.'[roman type][line break]";
+				unclash class summon portal-hotpants;
+				if max breast size >= 5 and portal-bra is actually summonable:
+					summon portal-bra;
+					say "The hotpants are immediately followed by a matching chestplate!";
+				say "[variable custom style]No way... surely this doesn't mean that... my body parts are... mounted on the statuettes in [NameDesc of pimp][speech style of orc][']s room?![roman type][line break]";
+			otherwise if diaper quest is 1 and pimp is alive and the times-met of pimp > 0 and diaper swapping >= 2 and the player is a december 2023 diaper donator and portal-diaper is unclash summonable:
+				say "[speech style of orc]'The [poker card of PC] makes [NameDesc of pimp] [speech style of orc]think that you owe [him of pimp] lots of money. And... it gives [him of pimp] a unique way to sell your diaper for use, without even asking your permission.'[roman type][line break]";
+				unclash class summon portal-diaper;
+				say "[variable custom style]No way... surely this doesn't mean that... my diaper padding is... connected to some other place via a portal?![roman type][line break]";
+			otherwise:
+				say "[speech style of orc]'The [poker card of PC] summons a new, err, [']friend['] for you.'[roman type][line break]";
+				let M be a random horny-wench;
+				if interracial fetish is 1, now M is QoS wench;
+				if diaper quest is 1, now M is a random dungeon dwelling adult baby slave;
+				if M is off-stage, set up M;
+				now M is in the location of the player;
+				say "[BigNameDesc of orc] points to behind you, and as you turn around, you see that [NameDesc of M] is standing there, also turning around, and noticing you!";
+				anger M;
+				check guaranteed perception of M;
+		otherwise if PS is 1:
+			say "[speech style of orc]'The [poker card of PC] unleashes a powerful foe into this Dungeon.'[roman type][line break]";
+			let M be a random alive caged dungeon boss;
+			if M is nothing:
+				if diaper quest is 0, now M is a random off-stage tentacle monster;
+				otherwise now M is bowsette;
+			if M is dungeon boss:
+				now M is unleashed;
+				say "You hear the sound of a cage crashing and swinging open from elsewhere in the Dungeon![line break][variable custom style][if Dungeon36 is visited]Oh... Oh no... The [ShortDesc of M]...[otherwise]What was that?![end if][roman type][line break]";
+			otherwise if M is monster:
+				now M is massive;
+				summon M in the dungeon;
+				say "You hear the sound of [if diaper quest is 0]slithering tentacles[otherwise]evil laughter and videogame music[end if] from elsewhere in the Dungeon![line break][variable custom style]Uh-oh...[roman type][line break]";
+			otherwise:
+				say "[BigNameDesc of orc] waits a moment, and then hums with intrigue.[line break][speech style of orc]'It would seem that the [poker card of PC] can't find anything appropriate to summon right now.'[roman type][line break]";
+		otherwise if PS is 2:
+			say "[speech style of orc]'The [poker card of PC] curses you with a troublesome burden.'[roman type][line break]";
+			let ULO be the list of eligible pledge-lesson-objects;
+			sort ULO in random order;
+			repeat with LO running through ULO:
+				if the implant of LO is 1, remove LO from ULO;
+			let E be entry 1 in ULO;
+			if E is a pledge-lesson-object:
+				execute E;
+				now the implant of E is 1;
+				say "And you can feel that for the rest of your time here, if you disobey the pledge that was just made for you, there will be serious consequences.";
+			otherwise:
+				StrengthDown 4;
+				say "You feel significant amounts of physical strength leaving you![line break][variable custom style]No!!![roman type][line break]";
+		otherwise if PS is 3:
+			say "[speech style of orc]'The [poker card of PC] teleports you to a troublesome location. Err, I guess this is goodbye for now.'[roman type][line break]";
+			compute bad teleport;
+	add PV to numbersExplained.
 
 To player hand print (PH - a list of numbers):
 	say "Your hand currently contains:[line break]";

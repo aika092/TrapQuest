@@ -132,8 +132,8 @@ To DildoWait:
 		allocate 6 seconds;
 		compute extra turn;
 	if the player is pole stuck:
-		if the weight of the player < prev-weight, say "You've lost a bit of weight, you should check if that changes anything!";
-		if the dexterity of the player > prev-dex, say "You've gained back a bit of dexterity, better check if that changes anything!".
+		if the weight of the player < prev-weight, say "You've lost a bit of weight; you should check if that changes anything!";
+		if the dexterity of the player > prev-dex, say "You've gained back a bit of dexterity; better check if that changes anything!".
 
 To HookWait:
 	let X be a random ass hook penetrating asshole;

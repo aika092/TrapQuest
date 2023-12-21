@@ -9,7 +9,6 @@ title	subtable	description	toggle
 "Pregnancy[if tg fetish is 0 and the player is not possessing a vagina] related flavour[end if] - [pregnancy points] points ([if choice in row 5 of the Table of Player Options is -1]never[otherwise if choice in row 5 of the Table of Player Options is 0]not now[otherwise if choice in row 5 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	pregnancy fetish toggle rule
 "Lactation - 5 points ([if choice in row 6 of the Table of Player Options is -1]never[otherwise if choice in row 6 of the Table of Player Options is 0]not now[otherwise if choice in row 6 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	lactation fetish toggle rule
 "Watersports (urine drinking) - 3 points ([if choice in row 7 of the Table of Player Options is -1]never[otherwise if choice in row 7 of the Table of Player Options is 0]not now[otherwise if choice in row 7 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	watersports fetish toggle rule
-"Diapers - [diaper points] points ([if choice in row 19 of the Table of Player Options is -1]never[otherwise if choice in row 19 of the Table of Player Options is 0]not now[otherwise if choice in row 19 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	diaper lover toggle rule
 "Egg Laying - 3 points ([if choice in row 8 of the Table of Player Options is -1]never[otherwise if choice in row 8 of the Table of Player Options is 0]not now[otherwise if choice in row 8 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	egg laying fetish toggle rule
 "Air inflation - 4 points ([if choice in row 11 of the Table of Player Options is -1]never[otherwise if choice in row 11 of the Table of Player Options is 0]not now[otherwise if choice in row 11 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	inflation fetish toggle rule
 "Weight gain - 3 points ([if choice in row 12 of the Table of Player Options is -1]never[otherwise if choice in row 12 of the Table of Player Options is 0]not now[otherwise if choice in row 12 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	weight gain fetish toggle rule
@@ -23,7 +22,7 @@ title	subtable	description	toggle
 "NPC gender preference (changes the description of some NPCs - but most alternate images don't exist yet!): ([if lady fetish is 0]No preference[otherwise if lady fetish is 1]Feminine NPCs only[otherwise]Masculine NPCs only[end if] [if the remainder after dividing choice in row 70 of the Table of Player Options by 2 is 0]never randomise[otherwise]for now, but can be randomised[end if] - [if the player is the donator]free[otherwise]beta testers only for now[end if])"	--	--	lady fetish toggle rule
 "Alcohol - 2 points ([if the player is not the donator]beta testers only for now![otherwise if choice in row 69 of the Table of Player Options is -1]never[otherwise if choice in row 69 of the Table of Player Options is 0]not now[otherwise if choice in row 69 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	alcohol fetish toggle rule
 "Male-To-Female Sex Change - 2 points ([if choice in row 10 of the Table of Player Options is -1]never[otherwise if choice in row 10 of the Table of Player Options is 0]not now[otherwise if choice in row 10 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	TG fetish toggle rule
-[DO NOT PUT ANY FETISHES BELOW THE TG FETISH ROW - they will not appear for female characters. But them above this row instead.]
+[DO NOT PUT ANY FETISHES BELOW THE TG FETISH ROW - they will not appear for female characters. Put them above this row instead.]
 
 Table of Diaper Fetish Options
 title	subtable	description	toggle
@@ -39,7 +38,7 @@ title	subtable	description	toggle
 "Watersports (urine drinking) - 3 points ([if choice in row 7 of the Table of Player Options is -1]never[otherwise if choice in row 7 of the Table of Player Options is 0]not now[otherwise if choice in row 7 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	watersports fetish toggle rule
 "Alcohol - 2 points ([if the player is not a top donator]bab testers only for now![otherwise if choice in row 69 of the Table of Player Options is -1]never[otherwise if choice in row 69 of the Table of Player Options is 0]not now[otherwise if choice in row 69 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	alcohol fetish toggle rule
 "NPC gender preference (changes the description of some NPCs - but most alternate images don't exist yet!): ([if lady fetish is 0]No preference[otherwise if lady fetish is 1]Feminine NPCs only[otherwise]Masculine NPCs only[end if] [if the remainder after dividing choice in row 70 of the Table of Player Options by 2 is 0]never randomise[otherwise]for now, but can be randomised[end if] - [if the player is a top donator]free[otherwise]bab testers only for now[end if])"	--	--	lady fetish toggle rule
-"Can the player become a futanari? [if the player is the donator]bab testers only for now[otherwise if player futanari fetish is 2][bold type]enabled[roman type] (without balls)[otherwise if player futanari fetish > 0][bold type]enabled[roman type] (with balls)[otherwise]disabled[end if]"	--	--	player futanari fetish rule
+"Can the player become a futanari? [if the player is not the donator]bab testers only for now[otherwise if player futanari fetish is 2][bold type]enabled[roman type] (without balls)[otherwise if player futanari fetish > 0][bold type]enabled[roman type] (with balls)[otherwise]disabled[end if]"	--	--	player futanari fetish rule
 "Male-to-female sex change - 2 points ([if choice in row 1 of the Table of Player Options is 1]Disabled since the player is female[otherwise if choice in row 10 of the Table of Player Options is -1]never[otherwise if choice in row 10 of the Table of Player Options is 0]not now[otherwise if choice in row 10 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	TG fetish toggle rule
 "Increase Minimum Penis Size ([if the player is female]Disabled since player is female[otherwise if min penis size is 0]No penis - 0 points used. [bonus penis cost][otherwise if min penis size is 1]Less than 1 inch - 1 point used. [bonus penis cost][otherwise if min penis size is 2]1 inch - 1 point used. [bonus penis cost][otherwise][min penis size] inch - [min penis size points] points used. [bonus penis cost][end if][if the player is male and tg fetish >= 1]When this size is reached, TG can occur.[end if])"	--	--	min penis size rule
 "ENABLE SEASONAL CONTENT"	Table of Festive Options	--	--
@@ -197,7 +196,7 @@ To decide which number is diaper lover:
 	if diaper quest is 1, decide on 1;
 	if choice in row 19 of the Table of Player Options <= 0, decide on 0;
 	otherwise decide on 1.
-This is the diaper lover toggle rule:
+[This is the diaper lover toggle rule:
 	if choice in row 19 of the Table of Player Options < 2, increase choice in row 19 of the Table of Player Options by 1;
 	otherwise now choice in row 19 of the Table of Player Options is -1.
 This is the diaper lover nightmare rule:
@@ -205,7 +204,7 @@ This is the diaper lover nightmare rule:
 The diaper lover nightmare rule is listed in the nightmare mode rules.
 This is the diaper lover random rule:
 	if choice in row 19 of the Table of Player Options is 0 or choice in row 19 of the Table of Player Options is 1, now choice in row 19 of the Table of Player Options is a random number between 0 and 1.
-The diaper lover random rule is listed in the random mode rules.
+The diaper lover random rule is listed in the random mode rules.]
 
 [!<DecideWhichNumberIsWatersportsMechanics>+
 

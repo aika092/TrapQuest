@@ -206,6 +206,9 @@ To decide which figure-name is Figure of hellhound:
 To decide which figure-name is Figure of hotel bed cutscene 1:
 	decide on figure of small image.
 
+To decide which figure-name is Figure of Wench Cutscene 9:
+	decide on figure of small image.
+
 To decide which figure-name is Figure of Witch Cutscene 1:
 	decide on figure of small image.
 To decide which figure-name is Figure of Witch Cutscene 2:
@@ -225,6 +228,8 @@ To decide which figure-name is Figure of Wrestler Fingers 6:
 	decide on figure of small image.
 
 To decide which figure-name is Figure of Xavier Cutscene 2:
+	decide on figure of small image.
+To decide which figure-name is Figure of Xavier Cutscene 3:
 	decide on figure of small image.
 
 Part - Other

@@ -62,7 +62,7 @@ To say MonsterComment of (M - demon lord):
 				otherwise say "A worried voice sounds in your head.[second custom style]'Heroic Sister, [one of]you must defeat [him of M]. [big he of M] must not be allowed to walk this plane!'[or]you must use your holy power to banish [him of M] once and for all!'[or][if the player is able to get pregnant and M is not mating]you must not let [him of M] capture you. [big he of M] cannot be allowed to make an heir!'[otherwise]you must not let [him of M] capture you. Your holy power will protect you from many things, but not the demon king.'[end if][or][he of M] cannot be allowed to regain [his of M] former power! You must stop [him of M] NOW!'[in random order]";
 		otherwise if the bimbo of the player < 7:
 			if the player is gendered male, say "[first custom style][one of][big his of M] [DickDesc of M] is wider than my arm... [if M is penetrating asshole]I'm getting stretched out, dude![otherwise]this is BULLSHIT![end if][or][big he of M] looks really tough.[or]Huge [DickDesc of M], insane muscles... does [he of M] have any weaknesses?[in random order]";
-			otherwise say "[first custom style][one of]Those muscles don't seem to be for show. Well, at least not completely.[or][if M is penetrating a body part][big he of M]'s splitting me in half![otherwise]What IS that?! It couldn't be a [DickDesc of M], could it? I-it’s far too big![end if][or]Can I even harm [him of M]?[or][big he of M] must have a weakness.[in random order]";
+			otherwise say "[first custom style][one of]Those muscles don't seem to be for show. Well, at least not completely.[or][if M is penetrating a body part][big he of M]'s splitting me in half![otherwise]What IS that?! It couldn't be a [DickDesc of M], could it? I-it's far too big![end if][or]Can I even harm [him of M]?[or][big he of M] must have a weakness.[in random order]";
 		otherwise if the bimbo of the player < 12:
 			say "[variable custom style][one of][if M is penetrating a body part]So. BIG.[otherwise]I'm not staring at [his of M] huge [DickDesc of M]. I'm definitely not curious...'[end if][or]So this is a demon lord...[or]Even if I do find [his of M] weakness, it's not like [he of M]'d lose.[in random order]";
 		otherwise:
@@ -119,14 +119,15 @@ To unseal xavier from (M - a monster):
 	let O be a random body part penetrated by M;
 	if M is in the location of the player:
 		say "You feel a burst of heat as the figure of [NameDesc of M] morphs and shifts, clothes bursting at the seams and falling apart as [he of M] doubles in size. [big his of M] skin turns red, and [he of M] grows wings and horns.[line break][first custom style]'I AM DEMON LORD XAVIER! MY POWERS ONCE SEALED AWAY BY THE PRINCESS, I AM WHOLE ONCE AGAIN, DESTINED TO RULE THESE LANDS!'[roman type][line break]";
-		cutshow figure of xavier cutscene 1 for demon lord;
 		FearUp 15;
 		if O is body part:
+			cutshow figure of xavier cutscene 3 for demon lord;
 			say "[big his of M] [DickDesc of M] grows most of all, utterly filling your [variable O] with its huge girth as [he of M] fucks you with renewed enthusiasm.";
 			now demon lord is penetrating O;
 			now the sex-length of demon lord is 5;
 			now demon lord is interested;
 		otherwise:
+			cutshow figure of xavier cutscene 1 for demon lord;
 			say "[big he of M] is looking upwards, and doesn't seem to be talking to anyone in particular. You realise this might be a sensible moment to try and make a quick exit...";
 		progress quest of insanity-quest;
 	otherwise:

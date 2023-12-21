@@ -382,7 +382,7 @@ To compute publicity stunt of (M - a robomilkmaid):
 			StomachSemenUp 4;
 			humiliate R * MODERATE-HUMILIATION;
 		otherwise:
-			say "Your mouth rapidly fills as you hold your throat closed, sparing your stomach from [his of M]'s huge load. With nowhere else to go, [semen] explodes out the edges of your mouth, coating your cheeks, chin, and neck as the flow steadily dies down, and [NameDesc of M] slowly pulls out. You spit out the rest of it, gasping for air as [he of M] rolls off you and lets [his of M] apron fall back into place.";
+			say "Your mouth rapidly fills as you hold your throat closed, sparing your stomach from [his of M] huge load. With nowhere else to go, [semen] explodes out the edges of your mouth, coating your cheeks, chin, and neck as the flow steadily dies down, and [NameDesc of M] slowly pulls out. You spit out the rest of it, gasping for air as [he of M] rolls off you and lets [his of M] apron fall back into place.";
 			CumFaceUp 3;
 			SemenPuddleUp 1;
 			humiliate R * SLIGHT-HUMILIATION;

@@ -308,6 +308,7 @@ To say PlayerFantasy:
 	let Fn be fancied-friend;
 	let Dn be distant-friend;
 	let Nn be nemesis-friend;
+	let Pn be platonic-friend;
 	if T is not expired and T is fucktoy hypno trap:
 		say "[second custom style][one of][if pregnancy fetish is 1]GETTING PREGNANT[otherwise]GETTING FUCKED[end if][or]BIG COCKS[or]HORNY GUYS[or]HARD COCKS[or]SITTING ON COCKS[or]FUCKING GUYS[or][if the player is sexed male]PROSTATE ORGASMS[otherwise]DOUBLE PENETRATION[end if][or]ASS TO MOUTH[or][if pregnancy fetish is 1]CREAMPIES[otherwise]FORCED CUMDUMPS[end if][or]GANGBANGS[in random order][roman type]";[the player is masturbating because of the trap, more often than not, so it's affecting their ability to not think about slutty things.]
 	otherwise if T is not expired and T is diaper-hypno-trap:
@@ -317,7 +318,7 @@ To say PlayerFantasy:
 	otherwise if diaper focus is 1 and the diaper addiction of the player > 14:
 		say "[one of]sitting on your mommy's lap as she rubs the front of your leaking diaper and degrades you for being such a baby[or]laying down as your daddy sticks his [manly-penis] into the leg-hole of your diaper and cums inside[or]bouncing on your daddy's knee in a [if diaper messing >= 4]messy diaper[otherwise]wet diaper[end if][or]drinking milk from your mommy's breasts while she lovingly rubs your [if diaper messing >= 4]messy diaper[otherwise]wet diaper[end if][or]being used and punished by an especially mean babysitter[in random order]";
 	otherwise if diaper focus is 1 and the diaper addiction of the player > 9:
-		say "[one of][if the player is gendered male]having a girlfriend force you into diapers before making you wet yourself[otherwise]having a boyfriend force you into diapers before making you wet yourself[end if][or]a dominatrix turning you into a baby against your will and parading you around town for everyone to see your humiliation[or]being blackmailed by your best friend to become her personal diaper slave[or]losing control of your bladder and having to wear diapers as people mock you for being a big baby[in random order]";
+		say "[one of][if the player is gendered male]having a girlfriend force you into diapers before making you wet yourself[otherwise]having a boyfriend force you into diapers before making you wet yourself[end if][or]a dominatrix turning you into a baby against your will and parading you around town for everyone to see your humiliation[or]being blackmailed by your [RelationDesc of Pn] to become [his of Pn] personal diaper slave[or]losing control of your bladder and having to wear diapers as people mock you for being a big baby[in random order]";
 	otherwise if diaper focus is 1 and the diaper addiction of the player > 4:
 		say "[one of][if the player is possessing a penis]a cute diapered slut sucking your [manly-penis][otherwise if the player is possessing a vagina]a cute [boy of male-m] in a diaper eating your [vagina][otherwise]diapered sex[end if][or]forcing those bitches who put you in here into diapers[or]someone being forcibly diapered before shamefully cumming into their padding[or]a girl being diapered and pulled over a mommy-domme's knee for a spanking[in random order]";
 	otherwise if the bimbo of the player < 4 and the player is gendered male and wanktype is not ASS-WANK:[dominating women]
@@ -703,7 +704,7 @@ To say (present - a text) or (absent - a text) action on penis:
 
 [!<SayInstantMasturbationFlavOfObjectWithThingInObject>+
 
-Displays the flavor for the player masturbating and immediately reaching a climax. The flavour for the climax itself is left to another function.
+Displays the flavour for the player masturbating and immediately reaching a climax. The flavour for the climax itself is left to another function.
 
 @param <Object>:<O> The sex toy the player is using to masturbate, if any.
 @param <Thing>:<M> The living thing penetrating a body part, if any.
@@ -732,7 +733,7 @@ To say InstantMasturbationFlav of (O - an object) with (M - a thing) in (C - an 
 
 [!<SayInstantAnalMasturbationFlavOfObjectWithThingInObject>+
 
-Displays the flavor for the player masturbating and immediately reaching a climax while masturbating anally. The flavour for the climax itself is left to another function.
+Displays the flavour for the player masturbating and immediately reaching a climax while masturbating anally. The flavour for the climax itself is left to another function.
 
 @param <Object>:<O> The sex toy the player is using to masturbate, if any.
 @param <Thing>:<M> The living thing penetrating a body part, if any.
@@ -754,7 +755,7 @@ To say InstantAnalMasturbationFlav of (O - an object) with (M - a thing) in (C -
 
 [!<SayStartMasturbationFlavOfObjectWithThingInObject>+
 
-Displays the flavor for the player beginning a masturbation session.
+Displays the flavour for the player beginning a masturbation session.
 
 @param <Object>:<O> The sex toy the player is using to masturbate, if any.
 @param <Thing>:<M> The living thing penetrating a body part, if any.
@@ -808,7 +809,7 @@ To say StartMasturbationFlav of (O - an object) with (M - a thing) in (C - an ob
 
 [!<SayStartAnalMasturbationFlavOfObjectWithThingInObject>+
 
-Displays the flavor for the player beginning an anal masturbation session.
+Displays the flavour for the player beginning an anal masturbation session.
 
 @param <Object>:<O> The sex toy the player is using to masturbate, if any.
 @param <Thing>:<M> The living thing penetrating a body part, if any.
@@ -833,7 +834,7 @@ To say SquirtDesc:
 
 [!<SayClimaxMasturbationFlavOfObjectWithThingInObject>+
 
-Displays the flavor for the player climaxing from masturbation.
+Displays the flavour for the player climaxing from masturbation.
 
 @param <Object>:<O> The sex toy the player is using to masturbate, if any.
 @param <Thing>:<M> The living thing penetrating a body part, if any.
@@ -859,7 +860,7 @@ To say ClimaxMasturbationFlav of (O - an object) with (M - a thing) in (C - an o
 
 [!<SayClimaxAnalMasturbationFlavOfObjectWithThingInObject>+
 
-Displays the flavor for the player climaxing from anal masturbation.
+Displays the flavour for the player climaxing from anal masturbation.
 
 @param <Object>:<O> The sex toy the player is using to masturbate, if any.
 @param <Thing>:<M> The living thing penetrating a body part, if any.
@@ -887,7 +888,7 @@ To say ClimaxAnalMasturbationFlav of (O - an object) with (M - a thing) in (C - 
 
 [!<SayOngoingMasturbationFlavOfObjectWithThingInObject>+
 
-Displays the flavor for an ongoing masturbation session.
+Displays the flavour for an ongoing masturbation session.
 
 @param <Object>:<O> The sex toy the player is using to masturbate, if any.
 @param <Thing>:<M> The living thing penetrating a body part, if any.
@@ -957,7 +958,7 @@ To say DirtyThoughtsMasturbation of (C - a clothing):
 
 [!<SayOngoingAnalMasturbationFlavOfObjectWithThingInObject>+
 
-Displays the flavor for an ongoing anal masturbation session.
+Displays the flavour for an ongoing anal masturbation session.
 
 @param <Object>:<O> The sex toy the player is using to masturbate, if any.
 @param <Thing>:<M> The living thing penetrating a body part, if any.

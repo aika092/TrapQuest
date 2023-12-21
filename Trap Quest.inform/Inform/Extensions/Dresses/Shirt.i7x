@@ -131,7 +131,7 @@ To decide which figure-name is clothing-image of (C - torn-shirt):
 	decide on figure of torn shirt.
 
 To say ClothingDesc of (C - torn-shirt):
-	say "This longsleeved dark shirt would be very modest if it wasn't for the torn strips over the breasts, leaving a lot of cleavage to be shown.".
+	say "This long-sleeved dark shirt would be very modest if it wasn't for the torn strips over the breasts, leaving a lot of cleavage to be shown.".
 
 To say ShortDesc of (C - torn-shirt):
 	say "torn shirt".

@@ -156,7 +156,7 @@ Check entering podium:
 			now the stance of the player is 1;
 		otherwise if the class of the player is adventurer and bondage protection < 2 and slave-dress is unclash summonable:
 			if debuginfo > 0 and (B is not bracelet or there is an on-stage solid gold bracelet), say "[input-style]Stage roll: bracelet scene not possible ([if B is bracelet]solid gold bracelet is already in game universe[otherwise]no bracelets left off-stage[end if]); slave stuff selected automatically.[roman type][line break]";
-			if christmas content is 1 and diaper quest is 0 and bondage-ribbons is unclash summonable:
+			if christmas content is 1 and bondage-ribbons is unclash summonable:
 				PinkWardrobeUnclash bondage-ribbons;
 				summon bondage-ribbons locked;
 				now bondage-ribbons is wrist-bound-behind;

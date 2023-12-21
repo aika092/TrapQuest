@@ -25,6 +25,7 @@ To destroy (T - a thing):
 	remove T from play;
 	repeat with M running through monsters:
 		now M is not rejecting T;
+		now M is not inseminating T;
 	dislodge T.
 
 To uniquely destroy (T - a thing): [Are there any special rules we need to follow?]

@@ -99,6 +99,8 @@ To decide which number is the flat strength of the player:
 	decrease S by ((liquorice-timer + default-candy-duration - 1) / default-candy-duration) * 1;
 	if the the boost-cooldown of nurse > 0, increase S by 2;
 	if cookie-poison-timer > 0, now S is S / 2;
+	if irritated-bladder is true, now S is S / 2;
+	if irritated-rectum is true, now S is S / 2;
 	if wasp-poison-timer > 0, decrease S by wasp-poison-timer / 30;
 	increase S by the number of worn piercings;
 	decrease S by the suffocation of the player;
@@ -195,6 +197,8 @@ To decide which number is the flat dexterity of the player:
 		if the silicone volume of breasts > 18, increase D by 3;
 	if fudge-poison-timer > 0, now D is D / 2;
 	if cookie-poison-timer > 0, decrease D by 2;
+	if irritated-bladder is true, now D is D / 2;
+	if irritated-rectum is true, now D is D / 2;
 	if wasp-honey-timer > 0, decrease D by wasp-honey-timer / 10;
 	if the player is grossed out and D > 5:
 		now D is 5;
@@ -279,6 +283,8 @@ To decide which number is the flat intelligence of the player:
 	if temp_int_dam > 0, decrease I by temp_int_dam;
 	if the the boost-cooldown of nurse > 0 and the boost-int-drain of nurse > 0, now I is I / 2;
 	if toffee-poison-timer > 0, now I is I / 2;
+	if irritated-bladder is true, now I is I / 2;
+	if irritated-rectum is true, now I is I / 2;
 	if (the bimbo of the player is 19 or hungover > 0) and I > 5, now I is 5;
 	if I > 2 and the bimbo of the player is 20 or the soreness of asshole is 10 or the soreness of vagina is 10 or the player is extremely horny:
 		now I is 2;

@@ -198,6 +198,21 @@ To say PuddleDesc:
 		otherwise:
 			say "Every surface in this room is coated in a thick film of glowing green slime.".
 
+To say ShortPuddleDesc of (R - a room):
+	let TV be the total puddle of R;
+	if bukkake fetish > 0 and the slime-puddle of R > 0:
+		say "slimed floor[if TV > 0] and [end if]";
+	otherwise if TV <= 0:
+		say "dry floor";
+	if TV > 0:
+		let LL be a list of liquid-objects;
+		if the semen-puddle of R > 0, add semen to LL;
+		if the urine-puddle of R > 0, add urine to LL;
+		if the milk-puddle of R > 0, add milk to LL;
+		let E be the number of entries in LL;
+		say "[if TV >= 30]flood[otherwise if TV > 20]giant puddle[otherwise if TV > 12]very large puddle[otherwise if TV > 7]large puddle[otherwise if TV > 3]puddle[otherwise]small puddle[end if] of ";
+		say "[variable entry 1 of LL][if E is 2] and [variable entry 2 of LL][otherwise if E is 3], [variable entry 2 of LL] and [variable entry 3 of LL][end if]".
+
 puddle-object is focus-thing. The text-shortcut of a puddle-object is "puddle".
 
 To decide which figure-name is the examine-image of (T - puddle-object):

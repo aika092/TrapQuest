@@ -2192,7 +2192,7 @@ Figure of portal tattoo is the file "Items/Tats/tattoo141.jpg".
 To decide which figure-name is the examine-image of (T - portal tattoo):
 	decide on figure of portal tattoo.
 Definition: portal tattoo is eligible:
-	if the noun is portal-pants or the noun is portal gag or the noun is fae mushroom or the noun is armband, decide yes;
+	if the noun is portal-pants or the noun is portal gag or the noun is portal-hotpants or the noun is portal-bra or the noun is portal-diaper or the noun is fae mushroom or the noun is armband, decide yes;
 	decide no.
 To decide which object is the concealer of (T - portal tattoo):
 	decide on a random worn actually dense belly covering clothing.
@@ -3516,7 +3516,7 @@ Definition: womb heart tattoo is pregnancy themed:
 	decide no.
 Definition: womb heart tattoo is heart themed: decide yes.
 Definition: womb heart tattoo is IcarusScienceAppropriate:
-	if the player is possessing a vagina and there is a worn tattoo and the number of worn crotch tattoo is 0, decide yes;
+	if diaper quest is 0 and the player is possessing a vagina and there is a worn tattoo and the number of worn crotch tattoo is 0, decide yes;
 	decide no.
 To decide which number is the vaginal sensitivity influence of (T - womb heart tattoo):
 	decide on 4.

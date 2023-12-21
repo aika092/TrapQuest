@@ -6,10 +6,11 @@ To say ExamineDesc of (C - laundry robots):
 	say "Several extremely agile metal robotic arms with threatening looking grippers at the end. They are constantly zipping about the place with unclear purpose.".
 
 Report going when the player is in Hotel20:
-	if the player is upright:
-		compute LaundryRobots;
-	otherwise if the number of worn washable clothing > 0:
-		say "Having entered this room on your knees, it would appear that the mechanical arms above you have not detected you.".
+	if laundry robots is in Hotel20:
+		if the player is upright:
+			compute LaundryRobots;
+		otherwise if the number of worn washable clothing > 0:
+			say "Having entered this room on your knees, it would appear that the mechanical arms above you have not detected you.".
 
 To compute LaundryRobots:
 	let C be a random worn washable clothing;

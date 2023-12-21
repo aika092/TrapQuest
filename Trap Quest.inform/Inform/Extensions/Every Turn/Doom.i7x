@@ -270,40 +270,45 @@ A later time based rule (this is the compute doom rule):
 	otherwise:
 		if the gifted of herald > 0, decrease the gifted of herald by 1.
 
+rain-timer is a number that varies.
+
 Definition: a room (called R) is raining:
-	if doomed < 4 and R is no-roof and (playerRegion is Mansion or doomed > 1), decide yes;
+	if R is no-roof:
+		if rain-timer > 0, decide yes;
+		if doomed < 4 and (playerRegion is Mansion or doomed > 1), decide yes;
 	decide no.
 
 latestAnnouncedWeather is a number that varies.
-latestAnnouncedRaining is a number that varies.
+latestAnnouncedRaining is initially false.
 A time based rule (this is the doom weather rule):
+	if rain-timer > 0, decrease rain-timer by time-seconds;
 	if doomed > 0 and doomed < 5:
 		if doomed > latestAnnouncedWeather:
 			if doomed is 1:
 				say "[bold type]You hear a loud thunderclap, and then [if the location of the player is no-roof and playerRegion is Mansion]it starts to rain![otherwise if playerRegion is Woods]you can see that it has started to rain, but only directly above the mansion.[otherwise]the sound of heavy rain.[end if][roman type][line break]";
-				if the location of the player is raining, now latestAnnouncedRaining is 1;
+				if the location of the player is raining, now latestAnnouncedRaining is true;
 			otherwise if doomed is 2:
 				say "[bold type]Several flashes of brilliant light are followed by deafeningly loud thunderclaps, and the [unless the location of the player is no-roof]sound of the [end if]rain seems to intensify even further.[roman type][line break]";
 				if the location of the player is raining:
 					unless playerRegion is Mansion, say "[bold type]It's now raining in [playerRegion].[roman type][line break]";
-					now latestAnnouncedRaining is 1;
+					now latestAnnouncedRaining is true;
 			otherwise if doomed is 3:
 				say "[bold type][if the location of the player is no-roof]Dark clouds now cover the entire sky, with the clouds over the mansion seeming to reflect a pink glow. [end if]A low humming sound can be heard through the rain, coming from [if playerRegion is Mansion]deep within [end if]the mansion.[roman type][line break]";
 			otherwise if doomed is 4:
 				say "[bold type]The [unless the location of the player is no-roof]sound of [end if] heavy rain stops, but the humming coming from [if playerRegion is Mansion]deep within [end if]the mansion is still there.[roman type][line break]";
-				now latestAnnouncedRaining is 0;
+				now latestAnnouncedRaining is false;
 			now latestAnnouncedWeather is doomed;
-		if the location of the player is raining:
-			if latestAnnouncedRaining is 0:
-				say "[bold type]You have just stepped out into the rain.[roman type][line break]";
-				now latestAnnouncedRaining is 1;
-			repeat with C running through worn currently uncovered fluid vulnerable clothing:
-				if the total-soak of C < the soak-limit of C, WaterSoak C;
-			if doomed is 3 and playerRegion is Mansion:
-				HairUp 1;
-		otherwise if latestAnnouncedRaining is 1:
-			say "[bold type]You have just stepped inside, out of the rain.[roman type][line break]";
-			now latestAnnouncedRaining is 0.
+	if the location of the player is raining:
+		if latestAnnouncedRaining is false:
+			say "[bold type]You have just stepped out into the rain.[roman type][line break]";
+			now latestAnnouncedRaining is true;
+		repeat with C running through worn currently uncovered fluid vulnerable clothing:
+			if the total-soak of C < the soak-limit of C, WaterSoak C;
+		if doomed is 3 and playerRegion is Mansion:
+			HairUp 1;
+	otherwise if latestAnnouncedRaining is true:
+		say "[bold type]You have just stepped inside, out of the rain.[roman type][line break]";
+		now latestAnnouncedRaining is false.
 
 To resolve doom:
 	now doomed is 5;

@@ -397,6 +397,7 @@ To compute condom biting of (C - a clothing):
 		now M is inseminating face;
 		say "You are confident that this [semen] was from [NameDesc of M].";
 	suggest swallowing with semen consequences; [You can't avoid the taste addiction increase by not swallowing]
+	if the total volume of face is 0, progress quest of condom-drinking-quest;
 	get oral creampie image for the player;
 	update appearance level;
 	if C is worn:

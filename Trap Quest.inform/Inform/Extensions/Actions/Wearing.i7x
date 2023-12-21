@@ -244,7 +244,7 @@ Report wearing speed clothing:
 	say "A rush of energy flows through you. Your legs feel great[if the noun is unidentified]. This must be a magic [ShortDesc of the noun][end if]!".
 
 Report wearing audible jiggles clothing:
-	say "A twang escapes your [ShortDesc of the noun] as you finish putting it on. Startling, your [BreastDesc] let out shaky wibbles as you step back. Since when were your breasts audible?!".
+	say "A twang escapes your [ShortDesc of the noun] as you finish putting it on. Startled, you step back, causing your [BreastDesc] let out shaky wibbles and wobbles. [one of]Since when were your breasts CARTOONISHLY AUDIBLE?!?!?!?!?![or]Your breasts are cartoonishly audible again![stopping]".
 
 Report wearing audible squelches clothing:
 	if the noun is audibly squelching, say "A loud cartoonish squelching sound escapes your [ShortDesc of the noun] as you finish putting it on. Startling, your [ShortDesc of the noun] lets out wet slurps and sloshes as you step back. Gross - this item is amplifying each little wet sound it makes a hundredfold!".

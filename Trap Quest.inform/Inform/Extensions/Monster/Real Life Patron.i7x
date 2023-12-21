@@ -28,6 +28,10 @@ Definition: a real-life patron (called P) is generic-appropriate:
 Definition: a real-life patron is uniquely unfriendly:
 	if it is friend-shocked, decide yes;
 	decide no.
+To decide which number is the bimbo tolerance of (M - a real-life patron):
+	decide on 100. [If we don't make this prohibitively high, there can be some weird difficult-to-debug outcomes surrounding the overriding of uniquely unfriendly above, where the NPC is objectifying but friendly, and somehow attacking while friendly.]
+To decide which number is the bab tolerance of (M - a real-life patron):
+	decide on 100.
 
 To say NameDesc of (C - a real-life patron):
 	say "[input-style][MediumDesc of C][roman type]".

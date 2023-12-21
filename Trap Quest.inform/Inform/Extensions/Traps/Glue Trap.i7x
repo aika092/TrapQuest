@@ -769,11 +769,11 @@ To carry out PartialLatexing:
 		now O is the player;
 	otherwise if O is an overdress:
 		let N be a random off-stage latex overdress;
-	otherwise if O is an knickers:
+	otherwise if O is knickers:
 		let N be a random off-stage latex knickers;
-	otherwise if O is an bra:
+	otherwise if O is bra:
 		let N be a random off-stage latex bra;
-	otherwise if O is an heels:
+	otherwise if O is heels:
 		let N be a random off-stage latex thigh high boots;
 	otherwise if O is an stockings:
 		let N be a random off-stage latex stockings;
@@ -973,6 +973,31 @@ A time based rule (this is the glue time tick rule):
 			now the glue timer of C is 0;
 			if C is held or C is in the location of the player:
 				say "[bold type]The glue [if C is worn]holding [NameDesc of C] to you has degraded and disappeared. It's no longer stuck to you![otherwise]that was on [NameDesc of C] has dried up.[end if][roman type][line break]".
+
+To compute enema vs glue pressure of (ST - a clothing):
+	decrease the glue timer of ST by a random number between 100 and 200;
+	if the glue timer of ST > 0:
+		say "[bold type]As your [asshole] tries to let loose, the glue holding your [ShortDesc of ST] stretches and weakens! But doesn't rip yet...[roman type][line break]";
+	otherwise:
+		say "As the glue finally gives out, [NameDesc of ST] bursts out of your [asshole]";
+		if diaper quest is 1:
+			let BL be a random bottom level ass protection clothing;
+			if BL is clothing, say ", shoots out of the leghole of your [BL]";
+		otherwise:
+			repeat with BL running through bottom level ass protection clothing:
+				if BL is possession:
+					say ", passing seamlessly through your [BL]";
+				otherwise if BL is rippable and BL is crotch-intact:
+					say ", rips through your [BL]";
+					now BL is crotch-ripped;
+				otherwise:
+					say ", destroys your [BL]";
+					delayed imprint destroy BL;
+		say " and falls to the ground.";
+		resolve delayed imprints;
+		ruin asshole;
+		now ST is in the location of the player;
+		dislodge ST.
 
 Carry out tearing off worn clothing:
 	let C be the noun;

@@ -152,9 +152,8 @@ To initialise christmas gifts:
 		add nail-bomb to christmas-gift-list;
 	add luck-tincture to christmas-gift-list; [2 tincture buffs]
 	add acceleration-tincture to christmas-gift-list;
-	if diaper quest is 0:
-		repeat with N running from 1 to 3: [3 times as likely to appear]
-			add Icarus to christmas-gift-list; [And a brand new festive NPC]
+	repeat with N running from 1 to 3: [3 times as likely to appear]
+		add Icarus to christmas-gift-list; [And a brand new festive NPC]
 	[and some actual gifts]
 	repeat with T running through trinkets:
 		add T to christmas-gift-list.
@@ -173,7 +172,7 @@ To compute christmas gifting of (M - a staff member):
 	do nothing.
 
 To say ChristmasGiftingFlav of (M - a monster):
-	say "[speech style of M]'[one of]Well anyway, Merry Christmas[or]Oh yeah, this is for you[or]Seasons Greetings, [honey of M][or]Well, in the spirit of the season, I got you this[or]Joy to the world and all that. Here's a thing[or]This is from me, I hope you like it[or]Well as it's Christmas, I should probably give you this[in random order].'[roman type][line break]";
+	say "[speech style of M]'[one of]Well anyway, merry Christmas[or]Oh yeah, this is for you[or]Seasons' greetings, [honey of M][or]Well, in the spirit of the season, I got you this[or]Joy to the world and all that. Here's a thing[or]This is from me; I hope you like it[or]Well as it's Christmas, I should probably give you this[in random order].'[roman type][line break]";
 	say "[BigNameDesc of M] hands you a [random held christmas gift].".
 
 To say ChristmasGiftingFlav of (M - a royal guard):

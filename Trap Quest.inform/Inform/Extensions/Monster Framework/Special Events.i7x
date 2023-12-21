@@ -1,5 +1,13 @@
 Special Events by Monster Framework begins here.
 
+piss-demanding is initially true.
+
+[No demand to swallow]
+To idly FacePiss from (M - an object):
+	now piss-demanding is false;
+	FacePiss from M;
+	now piss-demanding is true.
+
 [!<FacePiss>+
 
 Handles the player being pissed on by an unknown entity. The flavour is kept neutral so it shouldn't matter.
@@ -9,7 +17,7 @@ Handles the player being pissed on by an unknown entity. The flavour is kept neu
 To FacePiss from (M - an object):
 	if the player is upright, try kneeling;
 	if the player is not forced to drink urine and the player is not mouthblocked:
-		say PissDrinkThreat of M;
+		if piss-demanding is true, say PissDrinkThreat of M;
 		say "Do you drink the [urine][if the total volume of face > 0] (you'll have to swallow your [MouthfulDesc])[end if]? ";
 	let vm be a random video-monitor in the location of the player;
 	if the player is mouthblocked:
@@ -47,7 +55,7 @@ To FacePiss from (M - an object):
 			if M is nothing: [currently only wrestler urinal scene]
 				say "[first custom style]'[one of]Ungrateful brat[or]You can't even be a urinal properly[or]Useless whore[or]Disrespectful bitch[or]Oh my, you disobedient wench[or]Gross, you let some get on my shoes you [cunt][in random order]!'[roman type][line break]The anonymous man [one of]slaps you in the face[or]kicks you in the belly[or]painfully twists your nipples[at random] as punishment.";
 				PainUp 10;
-			otherwise if M is intelligent monster:
+			otherwise if piss-demanding is true and M is intelligent monster:
 				consider angry punishment of M;
 			if vm is video-monitor and the video-caller of vm is not the throne and vm is not recording-disgrace:
 				now vm is recording-disgrace;[since sex is probably over by now, we need to set up the recorded event right away.]
@@ -155,17 +163,20 @@ Definition: a person is forced to drink urine:
 	if the player is desperate to drink urine, decide yes;
 	decide no.
 
+To compute urine hitting face:
+	compute 40 urine hitting face.
+
 [!<ComputeUrineHittingFace>+
 
 Handles the player receiving a golden shower and choosing not to drink any
 
 +!]
-To compute urine hitting face:
+To compute (N - a number) urine hitting face:
 	say "[one of]It's even hotter than you were expecting and the unmistakable smell clings to your nostrils. [or]The heat and feeling of the stream is familiar to you now, and you [if the humiliation of the player > 27500]obediently [end if]sit there silently holding your breath until the flow begins to die. [stopping]";
 	if WC catsuit is worn and the player is deserving of more intelligence:
 		say "You feel weirdly enlightened.";
 		IntUp 1;
-	AnnouncedSquirt urine on face by 40;
+	AnnouncedSquirt urine on face by N;
 	if the make-up of face > 0 and permanent makeup is 0 and a random number between 1 and 2 is 1:
 		say "[if the make-up of face > 1]Some of your[otherwise]Your[end if] make up is washed away.";
 		FaceDown 1.

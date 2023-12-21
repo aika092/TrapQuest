@@ -170,7 +170,7 @@ To poolpurify (N - a number):
 Deep end:
 	Token (uncommon)
 	Jewellery (rare)
-	ectoplasm(depends on corruption level)
+	Ectoplasm (depends on corruption level)
 
 ]
 To compute treasure diving in (WB - sacred-pool) at (L - a number):

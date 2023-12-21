@@ -576,7 +576,7 @@ To decide which figure-name is clothing-image of (C - tight-grey-romper):
 	decide on figure of tight-grey-romper.
 
 To say ClothingDesc of (C - tight-grey-romper):
-	say "This longsleeved grey romper is so figure-hugging that it can't even hide the contours of [if C is worn]your[otherwise]the wearer's[end if] nipples or crotch.".
+	say "This long-sleeved grey romper is so figure-hugging that it can't even hide the contours of [if C is worn]your[otherwise]the wearer's[end if] nipples or crotch.".
 
 To say ShortDesc of (C - tight-grey-romper):
 	say "tight grey romper".
@@ -864,7 +864,7 @@ This is the WC catsuit piss slut rule:
 The WC catsuit piss slut rule is listed in the piss slut eligibility rules.
 
 To say ClothingDesc of (C - WC catsuit):
-	say "A white, skin-tight suit that goes up to the neck and down to the knees. The suit clings to the body to make sure it hides none of its curves, and it has a massive gap at the crotch, leaving the wearer completely exposed! Even worse, the catsuit has stick figures of a man and a woman printed on the chest, much like you would see at the entrance to a public toilet. You can sense that it has the magic power to enhance the wearer's mind if they allow themselves to get pissed on[if C is not worn]. The rubbery nature of the suit and the long arms ending in latex gloves mean it would take a long time to take on and off...[otherwise].[end if][line break]".
+	say "A white, skin-tight suit that goes up to the neck and down to the knees. The suit clings to the body to make sure it hides none of its curves, and it has a massive gap at the crotch, leaving the wearer completely exposed! Even worse, the catsuit has stick figures of a man and a woman printed on the chest, much like you would see at the entrance to a public toilet[if watersports fetish is 1]. You can sense that it has the magic power to enhance the wearer's mind if they allow themselves to get pissed on[end if][if C is not worn]. The rubbery nature of the suit and the long arms ending in latex gloves mean it would take a long time to take on and off...[otherwise].[end if][line break]".
 
 To compute SelfExamineDesc of (C - WC catsuit):
 	say "Your neck to your knees (except your crotch) is covered by a [MediumDesc of C]. ".
@@ -873,7 +873,7 @@ To say MediumDesc of (O - WC catsuit):
 	say "white [']human toilet['] catsuit".
 
 To decide which number is the initial outrage of (C - WC catsuit):
-	decide on 16.
+	decide on 14.
 
 Part - Lycra Bodysuit
 

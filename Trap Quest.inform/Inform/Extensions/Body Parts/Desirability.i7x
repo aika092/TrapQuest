@@ -943,7 +943,16 @@ To compute SeductionMasturbate of (M - a monster):
 	if the player is upright:
 		say "Your upright position makes this act a bit more awkward and fumbling.";
 		if R is 0 and a random number between 1 and 2 is 1, now R is a random number between 3 and 4;
-	if a random number between 1 and the sex-length of M > R, compute StrongSexProgress of M;
+	if there is a worn handmaiden-gloves:
+		decrease R by a random number between 0 and 1;
+		if the class of the player is stripper:
+			increase handjob-power by 1;
+			say "Your gloves [one of][or]continue to [stopping][one of]send magic pulses of encouragement down your arms[or]make you feel great[cycling].";
+		otherwise:
+			say "[one of][bold type]Now that you are no longer a stripper, your gloves seem to no longer gain power from handjobs.[roman type][line break][or][stopping]";
+	let RSL be a random number between 1 and the sex-length of M;
+	if debuginfo > 0, say "[input-style]Handjob pleasure check: Countdown to climax [sex-length of M] -> d[sex-length of M] ([RSL]) | [R].5 handjob sloppiness[roman type][line break]";
+	if RSL > R, compute StrongSexProgress of M;
 	otherwise compute StrongSexFalter of M.
 
 To compute SeductionMasturbateClimax of (M - a monster):
@@ -957,6 +966,14 @@ To compute SeductionMasturbateClimax of (M - a monster):
 			SemenPuddleUp the semen load of M;
 			if M is pale skinned and the bbc addiction of the player > 11, say "[variable custom style]Hmph! White [men of pimp].[roman type][line break]";
 	orgasm satisfy M;
+	if handmaiden-headdress is off-stage:
+		if handmaiden-headdress is actually summonable:
+			say "You yelp with surprise as a purple headdress appears in your hair! You recognise that you are now a [']handmaiden[']!";
+			summon handmaiden-headdress cursed;
+		otherwise if the class of the player is "stripper": [base class only]
+			let H be a random worn headgear;
+			if H is headgear, transform H into handmaiden-headdress;
+		if handmaiden-headdress is worn, say "[if the bimbo of the player < 11][variable custom style]This game has a class that specializes in giving HANDJOBS?![otherwise][second custom style]More like handJOBmaiden, hee-hee![end if][roman type][line break]";
 	progress quest of greet-quest.
 
 To compute FirstTurnSeduceGrindAnnounce of (M - a monster):

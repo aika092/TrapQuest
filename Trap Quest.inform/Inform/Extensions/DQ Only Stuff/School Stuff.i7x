@@ -22,7 +22,7 @@ To decide which figure-name is the monster-image of (M - teacher-brooke):
 	decide on figure of brooke.
 
 To say MonsterDesc of (M - teacher-brooke):
-	say "This saucy young dark skinned [man of M] short brown hair. A striped black and white referee's top adorns [his of M] upper half and everything looks normal until you reach the black latex pants clinging to [his of M] hips and legs. There is a huge gap at the buttocks which expose the back of [his of M] thighs and a large white adult diaper. [big he of M] looks very [if M is defeated]ashamed of [his of M] very well-soiled[otherwise]proud of [his of M] dry padding[end if].".
+	say "This saucy young dark skinned [man of M] has short brown hair. A striped black and white referee's top adorns [his of M] upper half and everything looks normal until you reach the black latex pants clinging to [his of M] hips and legs. There is a huge gap at the buttocks which expose the back of [his of M] thighs and a large white adult diaper. [big he of M] looks very [if M is defeated]ashamed of [his of M] very well-soiled[otherwise]proud of [his of M] dry[end if] padding.".
 
 The teacher-name of teacher-brooke is "Brooke".
 
@@ -169,7 +169,7 @@ To decide which figure-name is the monster-image of (M - student-rachel):
 
 To say MonsterDesc of (M - student-rachel):
 	if the current-rank of M <= 2:
-		say "This [man of M] is in [his of M] late twenties or early thirties. [big he of M] is wearing a smart white blouse and red skirt. [big his of M] brunette hair is kept short and neat. [big he of M] looks like a respectable businesswoman... or at least [he of M] would, if it wasn't for the huge double-diaper [he of M]'s sporting under [his of M] skirt. [big he of M] keeps pulling up [his of M] skirt to look at the already-damp padding underneath, and then blushing furiously, as if [he of M] couldn't really believe it was there until [he of M] checked again with [his of M] own two eyes.";
+		say "This [man of M] is in [his of M] late twenties or early thirties. [big he of M] is wearing a smart white blouse and red skirt. [big his of M] brunette hair is kept short and neat. [big he of M] looks like a respectable business[man of M]... or at least [he of M] would, if it wasn't for the huge double-diaper [he of M]'s sporting under [his of M] skirt. [big he of M] keeps pulling up [his of M] skirt to look at the already-damp padding underneath, and then blushing furiously, as if [he of M] couldn't really believe it was there until [he of M] checked again with [his of M] own two eyes.";
 	otherwise if the current-rank of M is 3:
 		say "This [man of M] is in [his of M] late twenties or early thirties. [big he of M] was wearing a smart white blouse but that has been replaced by a pink tighter-fitting one that exposes the curvature of [his of M] chest. [big his of M] smart red skirt has been replaced by a very short purple miniskirt that can't do anything to hide the massive double-diaper that [he of M]'s got on underneath, which if anything is even thicker than before. [big his of M] short brunette hair has been put in little pigtails. [big he of M] still constantly blushes wherever [he of M] goes.";
 	otherwise:
@@ -219,7 +219,7 @@ To decide which figure-name is the monster-image of (M - student-tanya):
 	decide on figure of tanya.
 
 To say MonsterDesc of (M - student-tanya):
-	say "This skinny [man of M] has purple hair with red highlights. [big he of M] is wearing a pink shirt that says 'love' and has a rainbow on it. It clashes with [his of M] 'teenage rebel' hair and pierced nose[if the current-rank of M is 1] and [he of M] looks rather uncomfortable in it[end if]. All [he of M] is wearing on [his of m] bottom half is a small white diaper[if the current-rank of M is 1] and [he of M] doesn't look happy about it[end if].".
+	say "This skinny [man of M] has purple hair with red highlights. [big he of M] is wearing a pink shirt that says 'love' and has a rainbow on it. It clashes with [his of M] 'teenage rebel' hair and pierced nose[if the current-rank of M is 1] and [he of M] looks rather uncomfortable in it[end if]. All [he of M] is wearing on [his of M] bottom half is a small white diaper[if the current-rank of M is 1] and [he of M] doesn't look happy about it[end if].".
 
 The max-rank of student-tanya is 2.
 
@@ -1017,7 +1017,7 @@ To compute chess win reward:
 	update students; [an important line which makes boring old students disappear and new cool ones appear]
 	appropriate-cutscene-display chess-table-image with priority 3;
 	now chess piece is carried by the player;
-	say "[BigNameDesc of M] speaks again.[line break][speech style of M]'Now, let's allow [student-name of ST] to sit and... [']stew['] on [his of ST] failings! Nobody is allowed to release [him of ST], understand? Okay, assembly is over!'[roman type][line break]The students and staff begin to disperse, leaving nothing to prove that the event even happened except the [chess piece] in your hand and the poor girl still locked in [his of ST] chair on the stage.";
+	say "[BigNameDesc of M] speaks again.[line break][speech style of M]'Now, let's allow [student-name of ST] to sit and... [']stew['] on [his of ST] failings! Nobody is allowed to release [him of ST], understand? Okay, assembly is over!'[roman type][line break]The students and staff begin to disperse, leaving nothing to prove that the event even happened except the [chess piece] in your hand and the poor [boy of ST] still locked in [his of ST] chair on the stage.";
 	repeat with X running through monsters in the location of the player:
 		distract X;
 		compute mandatory room leaving of X;

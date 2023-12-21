@@ -108,13 +108,14 @@ tentacle monster is a kind of monster. durable-tentacle-monster is a tentacle mo
 To compute tentacle birth:
 	do nothing.
 
+a hugger-panties is a kind of knickers. a hugger-panties is unique.
+crotch-hugger is a hugger-panties. ass-hugger is a hugger-panties.
+
 robomaid is a kind of monster.
 gargoyle is a monster.
 unicorn is a monster.
 A slutty sister is a kind of monster. bulging-slutty-sister is a slutty sister. futanari-slutty-sister is a slutty sister.
-Icarus is a monster.
 A facehugger is a kind of monster.
-An ultimate-lesson-actor is a kind of monster.
 student-katya is a monster.
 centaur is a monster.
 confident aeromancer is a monster.
@@ -156,7 +157,6 @@ an ultra slutty bag of holding is a kind of bag of holding.
 dirty little whore sack of holding is a bag of holding.
 
 gape-gloves is a gloves. The printed name of gape-gloves is "gape gloves".
-bondage-ribbons is a dress. bondage-ribbons is unique.
 
 A bridal veil is a kind of headgear. floral bridal veil is a bridal veil.
 betrothal-quest is a headgear-clothing-quest. betrothal-quest has a truth state called ceremony. betrothal-quest has a truth state called consummation.

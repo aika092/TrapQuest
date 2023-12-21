@@ -1,44 +1,65 @@
 Nearby Simulated Danger by Miscellaneous Backend begins here.
 
+['nearby' does not care about monsters, it's finding all rooms. If it is checking a monster, then it does not include pacified monsters.]
 Definition: a thing (called M) is nearby:
-	if M is monster:
-		if M is not alive or M is pacified, decide no;
+	if M is monster and (M is not alive or M is pacified or M is dying), decide no;
 	let L be the location of M;
-	now neighbour finder is the location of the player;
-	repeat with D running through N-viable directions:
+	repeat with D running through the Nviables of the location of the player:
 		if the room D from the location of the player is L, decide yes;
 	decide no.
-
-Definition: a room (called R) is monster-nearby:
-	repeat with M running through nearby monsters:
-		decide yes;
+Definition: a room (called R) is nearby: [Synonymous with 'next door' which is more linguistically intuitive]
+	if R is next door, decide yes;
 	decide no.
-Definition: a room (called R) is nearby:
-	now neighbour finder is the location of the player;
-	repeat with D running through N-viable directions:
-		if the room D from the location of the player is R, decide yes;
-	decide no.
-
-Definition: a room (called R) is within vision:
-	now neighbour finder is the location of the player;
-	if R is neighbour finder or R is next door, decide yes;
-	decide no.
-
 Definition: a room (called R) is next door:
-	repeat with D running through N-viable directions:
-		if the room D from the location of the player is R, decide yes;
+	let L be the location of the player;
+	repeat with D running through the Nviables of R:
+		if the room D from R is L:
+			if R is School33: [Gotta hack this because it's an unrevealed pathway until later]
+				let DD be the opposite-direction of D;
+				if the room DD from L is R, decide yes;
+				decide no;
+			otherwise:
+				decide yes;
+	decide no.
+Definition: a room (called R) is within vision: [next door or right here]
+	if R is the location of the player or R is next door, decide yes;
+	decide no.
+Definition: a thing (called M) is within vision: [next door or right here]
+	if M is in the location of the player or M is nearby, decide yes;
 	decide no.
 
-To decide which direction is the nearby-direction of (M - a thing):
+Definition: a monster is not-dying:
+	if it is dying, decide no;
+	decide yes.
+
+[This only cares about places with monsters, but it does allow for monsters that are pacified]
+Definition: a monster (called M) is monster-nearby:
+	if M is off-stage or M is dying, decide no;
 	let L be the location of M;
-	now neighbour finder is the location of the player;
-	repeat with D running through N-viable directions:
-		if the room D from the location of the player is L, decide on D.
-
-Definition: a direction (called D) is monster-nearby: [currently unused, I think]
-	repeat with M running through nearby monsters:
-		if the nearby-direction of M is D, decide yes;
+	repeat with D running through the Nviables of L:
+		if the room D from the location of the player is L, decide yes;
 	decide no.
+Definition: a room (called R) is monster-present:
+	if there is a not-dying monster in R, decide yes;
+	decide no.
+Definition: a room (called R) is monster-nearby:
+	repeat with M running through monsters in R:
+		if M is not dying:
+			if R is nearby, decide yes;
+			decide no;
+	decide no.
+Definition: a direction (called D) is monster-nearby:
+	if D is listed in the Nviables of the location of the player:
+		let L be the room D from the location of the player;
+		repeat with M running through monsters in L:
+			if M is not dying, decide yes;
+	decide no.
+
+Definition: a room (called R) is room-monster-nearby:
+	repeat with D running through the Nviables of R:
+		if the room D from R is monster-present, decide yes;
+	decide no.
+
 
 [!<AMonsterIsDangerous>+
 
@@ -50,6 +71,11 @@ Definition: a monster (called M) is dangerous:
 		if the scared of M is 0 or M is not scarable or M is penetrating a body part:
 			decide yes;
 	decide no.
+
+[unused]
+[Definition: a monster (called M) is not-dangerous:
+	if M is dangerous, decide no;
+	decide yes.]
 
 [!<AMonsterIsCombative>+
 

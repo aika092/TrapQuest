@@ -35,10 +35,10 @@ To decide which number is the freebie-reluctance of (M - pimp):
 	decide on 10.
 
 The text-shortcut of pimp is "pmp".
-Figure of pimp is the file "NPCs/Hotel/pimp1.png".
-Figure of pimp vag for sale is the file "NPCs/Hotel/pimp2.jpg".
-Figure of pimp ass for sale is the file "NPCs/Hotel/pimp3.jpg".
-Figure of pimp femme is the file "NPCs/Hotel/pimp4.jpg".
+Figure of pimp is the file "NPCs/Hotel/Pimp/pimp1.png".
+Figure of pimp vag for sale is the file "NPCs/Hotel/Pimp/pimp2.jpg".
+Figure of pimp ass for sale is the file "NPCs/Hotel/Pimp/pimp3.jpg".
+Figure of pimp femme is the file "NPCs/Hotel/Pimp/pimp4.jpg".
 Figure of pimp portal cutscene is the file "Special/Cutscene/cutscene-pimp-portals1.jpg".
 
 To decide which figure-name is the monster-image of (M - pimp):
@@ -129,6 +129,22 @@ To compute perception of (M - pimp):
 		otherwise:
 			say "[speech style of M]'Your debt isn't paid off yet. Come see me after a few more [brotha of male-m]s have had their fun with you.'[roman type][line break][BigNameDesc of M] purposefully stops paying attention to you.";
 		distract M;
+	otherwise if portal-diaper is worn:
+		say "[speech style of M]'Sales are going well, slut, which I guess is good news for both of us.'[roman type][line break]";
+		if the total-soak of portal-diaper >= the soak-limit of portal-diaper:
+			if the water-soak of portal-diaper > 0:
+				fully clean portal-diaper;
+				say "[speech style of M]'But what's this?! I can sense that this thing is filled with more water than it should be. That's cheating! For that, I'm going to make you start again.'[roman type][line break][BigNameDesc of M] snaps [his of M] fingers, and your [portal-diaper] is dry again!";
+			otherwise:
+				say "[speech style of M]'Wow, that diaper is soaked to the brim. I guess it's time to release you.'[roman type][line break]";
+				release pimp portals;
+				if the current-errand of M is portal-clothes-errand, now the current-errand of M is no-errand;
+				calm M;
+		otherwise if the current-errand of M is completed:
+			compute errand completion of M;
+		otherwise:
+			say "[speech style of M]'But I can sense that the diaper can still hold more. Come back to me when it's fully saturated.'[roman type][line break][BigNameDesc of M] purposefully stops paying attention to you.";
+		distract M;
 	otherwise if the current-errand of M is completed and M is not uniquely unfriendly:
 		compute errand completion of M;
 	otherwise if M is unfriendly:
@@ -142,11 +158,13 @@ To compute perception of (M - pimp):
 
 To send (M - pimp) home:
 	if M is alive:
-		if M is not in Hotel44:
+		let R be Hotel44;
+		if portal-diaper is worn, now R is Hotel31;
+		if M is not in R:
 			if M is in the location of the player:
-				let D be the best route from the location of M to Hotel44 through modern rooms;
+				let D be the best route from the location of M to R through modern rooms;
 				if D is a direction, say "[BigNameDesc of M] leaves to the [D].";
-			now M is in Hotel44;
+			now M is in R;
 		if M is interested and M is not in the location of the player, deinterest M.
 
 To compute monstermotion of (M - pimp): [This is default wandering when nothing interesting is happening]
@@ -223,7 +241,7 @@ Section 1 - Protect and Attack
 The latex punishment rule of pimp is usually the no latex punishment rule.
 
 This is the pimp uses portals rule:
-	if diaper quest is 0 and patronbed uses > 0 and the health of pimp <= the maxhealth of pimp:
+	if patronbed uses > 0 and the health of pimp <= the maxhealth of pimp:
 		if portal-hotpants is worn: [player has tried to fight the pimp again when the player is already portaled]
 			if the player is in Hotel44 and asshole is not actually occupied:
 				say "[speech style of pimp]'BIG mistake, [cunt]!'[roman type][line break][BigNameDesc of pimp] turns to the statue which currently hosts your genitalia, and takes the largest butt plug you've ever seen. Before you can stop [him of pimp], [he of pimp] shoves it into your [asshole]!";
@@ -239,17 +257,23 @@ This is the pimp uses portals rule:
 			otherwise:
 				compute SelectionFailure of pimp;
 			rule succeeds;
-		otherwise if there is a worn tattoo and the number of worn left-asscheek tattoo is 0 and the number of worn both-asscheeks tattoo is 0 and portal-hotpants is actually summonable:
+		otherwise if diaper quest is 0 and there is a worn tattoo and the number of worn left-asscheek tattoo is 0 and the number of worn both-asscheeks tattoo is 0 and portal-hotpants is actually summonable:
 			say "[speech style of pimp]'It seems you've forgotten who owns this ass. Let me help you remember!'[roman type][line break][BigNameDesc of pimp] spanks you hard on the [AssDesc]. When [his of pimp] hand pulls away, you have a new tattoo underneath it.";
 			summon spade owned tattoo;
 			try examining spade owned tattoo;
 			rule succeeds; [this ends his turn but doesn't satisfy him yet]
-		otherwise if there is a worn tattoo and the number of worn left-breast tattoo is 0 and the number of worn both-breasts tattoo is 0 and portal-hotpants is actually summonable:
+		otherwise if diaper quest is 0 and there is a worn tattoo and the number of worn left-breast tattoo is 0 and the number of worn both-breasts tattoo is 0 and portal-hotpants is actually summonable:
 			say "[speech style of pimp]'Never forget who owns you, slut!'[roman type][line break][BigNameDesc of pimp] spanks you hard on the [BreastDesc]. When [his of pimp] hand pulls away, you have a new tattoo underneath it.";
 			summon spade owned breast tattoo;
 			try examining spade owned breast tattoo;
 			rule succeeds; [this ends his turn but doesn't satisfy him yet]
-		otherwise:
+		otherwise if diaper quest is 1 and diaper swapping >= 2 and the player is a december 2023 diaper donator and portal-diaper is unclash summonable:
+			say "[speech style of pimp]'I have ways of dealing with disobedient whores. I own your body, and sometimes this is the only way to make sure someone like you understands that.'[roman type][line break][BigNameDesc of pimp] produces a giant white diaper with a faintly glowing blue hue at the crotch.";
+			unclash class summon portal-diaper;
+			say "[if the player is in Hotel31]A matching portal appears at the entrance to the drainage of the urinal![line break][end if][speech style of pimp]'Now I can sell your diaper for use as a urinal at any time, and take ALL the profits for myself[if the player is not in Hotel31]. You'll see what I mean soon enough[end if].'[roman type][line break]";
+			satisfy pimp;
+			rule succeeds;
+		otherwise if diaper quest is 0:
 			if portal-hotpants is actually summonable, summon portal-hotpants;
 			if the largeness of breasts > 3 and portal-bra is actually summonable, summon portal-bra;
 			if portal-hotpants is worn or portal-bra is worn:
@@ -356,6 +380,8 @@ To release pimp portals:
 	destroy portal-hotpants;
 	if portal-bra is worn or portal-bra is in the location of the player, say "[BigNameDesc of portal-bra] disappears!";
 	destroy portal-bra;
+	if portal-diaper is worn or portal-diaper is in the location of the player, say "[BigNameDesc of portal-diaper] disappears!";
+	destroy portal-diaper.
 
 To standard loot (M - pimp):
 	let X be a random off-stage plentiful bracelet;
@@ -653,7 +679,7 @@ To say MonsterOfferAcceptFlav of (M - pimp) to (T - a thing):
 To compute resolution of (M - pimp) taking (T - a thing):
 	let BV be the bartering value of T for M;
 	FavourUp M by BV;
-	if portal-bra is worn or portal-hotpants is worn:
+	if portal-bra is worn or portal-hotpants is worn or portal-diaper is worn:
 		if M is buddy:
 			say "[speech style of M]'Your debt is paid. I guess it's time to release you.'[roman type][line break]";
 			release pimp portals;
@@ -667,7 +693,7 @@ To compute resolution of (M - pimp) taking (T - a thing):
 		otherwise if M is buddy:
 			say "[speech style of M]'You're ahead in your payments to me, by the way. You can slow it down a bit.'[roman type][line break]";
 	if M is unfriendly, say "[BigNameDesc of M] seems happy for now.";
-	if M is not in Hotel44:
+	if (portal-diaper is not worn and M is not in Hotel44) or (portal-diaper is worn and M is not in Hotel31):
 		send M home.
 
 To say MonsterOfferRejectFlav of (M - pimp) to (T - a thing):
@@ -766,6 +792,8 @@ This is the pedestal management rule:
 						compute pedestal payment of M;
 					otherwise:
 						say StealthPortalSexFlav;
+						dislodge M;
+						now portal-hotpants is penetrating F;
 				otherwise if P is pimp-pedestal-2:
 					if portal-bra is worn:
 						cutshow figure of pimp portal cutscene;
@@ -785,8 +813,9 @@ This is the pedestal management rule:
 							compute pedestal payment of M;
 							reset P;
 						otherwise:
-							now portal-bra is penetrating breasts;
 							say StealthPortalSexFlav;
+							dislodge M;
+							now portal-bra is penetrating breasts;
 					otherwise:
 						if the player is in Hotel44, say "You watch [FuckerDesc of M] [one of]continue to massage [his of M] [manly-penis] with [WomanName][']s breasts[or]sliding [his of M] [manly-penis] in and out of [WomanName][']s cleavage[or]roughly groping [WomanName][']s breasts and fucking [his of woman-player] cleavage[cycling] mounted on the pedestal.";
 						if woman-player is in the location of the player, say "[BigNameDesc of woman-player] [one of]whines with shame and discomfort[or]mewls sheepishly[or]whimpers with self-pity[cycling] and [one of]doubles over[or]grips [his of woman-player] chest tightly[or]visibly shudders[cycling] as [if P is user-identified][FuckerDesc of PU][otherwise][one of]an unknown [man of male-m][or]the [man of male-m] on the other end of the portal[or][his of woman-player] mystery assailant[or]the [man of male-m] in the [Hotel44][cycling][end if] [if the player is in Hotel44]fucks[otherwise]does something to[end if] [his of woman-player] tits.";
@@ -828,6 +857,7 @@ This is the pedestal management rule:
 			otherwise:
 				now M is a random ultimate-lesson-actor;
 				now pedestal-user of P is M;
+				set up suited patron;
 				now suited patron is in Hotel44;
 				now suited patron is guarding;
 			if P is pimp-pedestal-1:
@@ -844,6 +874,9 @@ This is the pedestal management rule:
 					if the player is in Hotel44, say "[BigFuckerDesc of M] thrusts forward. ";
 					say "[bold type]Suddenly, you feel something long and hard push into your [variable F]![line break][variable custom style][if the player is in Hotel44]Unf... So unceremoniously...[otherwise][one of]Aaaah! So sudden![or]Oh god, I'm being used right now?![or]That pimp is selling my [F] again![then at random][end if][roman type][line break]";
 					now portal-hotpants is penetrating F;
+				otherwise:
+					say "POTENTIAL BUG - the game was unable to have the [pedestal-user of P] start fucking the player's [F] through the portal hotpants because it was apparently already occupied by something unremovable?! Please report this bug, explaining that the game didn't plan for the player's [F] to already be occupied by the [random thing penetrating F].";
+					reset P;
 			otherwise if P is pimp-pedestal-2:
 				if Hotel44 is within vision:
 					say "You watch [NameDesc of M] [if the player is not in Hotel44]in the [Hotel44] [end if]approach [NameDesc of P] with [if portal-bra is worn]your[otherwise][WomanName][']s[end if] exposed breasts jutting out of it. [big he of M] grabs the breasts with both hands, and slides [his of M] [DickDesc of M] up in between them.";

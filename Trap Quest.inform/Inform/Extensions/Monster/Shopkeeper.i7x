@@ -326,7 +326,7 @@ To compute perception of (M - shopkeeper):
 		say "[speech style of M]'How dare you taunt me with the stuff you stole from me?! Give it back at once, or pay the price!'[roman type][line break]";
 		anger M;
 		increase the stolen-aware of M by 1;
-	otherwise if player is stealthy:
+	otherwise if the class of the player is vixen:
 		say "[speech style of M]'[one of]Hey, what are you doing in here! Don't think I'm going to just let you steal from my shop!'[or]Who do you think you're fooling coming into my shop like that? Get out of my shop, thief!'[or]Hey! I can tell you're a thief just by looking at you, so leave my shop right now or face the consequences!'[at random][roman type][line break]";
 		anger M;
 	otherwise if the class of the player is princess:
@@ -996,11 +996,14 @@ To say TaxDesc of (M - shopkeeper):
 	say "Demand all [his of M] money. This is a [if the player is a pervert]dick-up. I mean [end if]stick-up!".
 
 To compute tax return of (M - shopkeeper):
-	if the loot dropped of M < 4:
-		loot M;
-		say "[speech style of M]'This is all I have. Thief.'[roman type][line break]";
+	if M is choice-taxable:
+		compute choice tax return of M;
 	otherwise:
-		say "[speech style of M]'You cleaned me out last time.'[roman type][line break]".
+		if the loot dropped of M < 4:
+			loot M;
+			say "[speech style of M]'This is all I have. Thief.'[roman type][line break]";
+		otherwise:
+			say "[speech style of M]'You cleaned me out last time.'[roman type][line break]".
 
 To loot (M - shopkeeper):
 	while the loot dropped of M < 4:

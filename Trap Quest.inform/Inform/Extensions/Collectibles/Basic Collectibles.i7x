@@ -270,7 +270,7 @@ Figure of playing cards is the file "Items/Collectibles/playingcards1.jpg".
 To decide which figure-name is the examine-image of (C - pack of playing cards):
 	decide on figure of playing cards.
 
-To say ExamineDesc of (P - a pack of playing cards):
+To say ExamineDesc of (P - pack of playing cards):
 	say "[if P is not held and P is in Dungeon07]A pack of playing cards sitting on the table, ready for a game to be played. Each of the cards has a different cartoon face on it[otherwise if born to lose tattoo is worn]The pack of playing cards you took from the poker table. Half of them are missing, but you notice that the queen of hearts is still there[otherwise]The pack of playing cards you took from the poker table. Each of the cards has a different cartoon face on it[end if].".
 
 To decide which number is the outrage of (C - pack of playing cards):
@@ -293,10 +293,99 @@ Report taking pack of playing cards when the player is in Dungeon07:
 	say "You collect up the cards. ";
 	compute poker table hypno.
 
+Check taking pack of playing cards:
+	reset multiple choice questions;
+	set numerical response 0 to "Cancel";
+	if pack of playing cards is not held, set next numerical response to "Take all the cards";
+	if 23 is not listed in stolenCards and the recipe of (alchemy key of queen-of-hearts heels) is memorised, set next numerical response to "Take the queen of hearts";
+	compute multiple choice question;
+	if player-numerical-response is 0, do nothing instead;
+	unless chosen numerical response matches the text "all":
+		let T be queen-of-hearts;
+		[if chosen numerical response matches the text "queen of hearts":]
+		if pack of playing cards is not held and orc is in Dungeon07:
+			if orc is not easy-steal and orc is awake:
+				if orc is interested, say "[BigNameDesc of orc] is looking right at you. [big he of orc] would definitely stop you." instead;
+				allocate 5 seconds;
+				say "You attempt to snatch the [ShortDesc of T] from the table without [NameDesc of orc] noticing.";
+				let D be (a random number between 1 and the dexterity of the player) + (a random number between 1 and the dexterity of the player);
+				let MD be the steal-difficulty of orc for T;
+				let S be the stealth of the player;
+				if debuginfo > 0, say "[input-style]Steal attempt check: Dexterity 2d[dexterity of the player] ([D]) + Stealth ([S]) = [D + S] | [MD].5 Perfect steal difficulty / [(MD * 2) / 3].5 Partial success difficulty[roman type][line break]";
+				if D + S > MD: [full success]
+					compute full stealing success of T from orc;
+				otherwise if D > (MD * 2) / 3: [partial success]
+					compute partial stealing success of T from orc;
+				otherwise:
+					compute stealing fail of T from orc;
+			otherwise if orc is not easy-steal and the player is getting very unlucky:
+				compute sleep stealing fail of T from orc;
+			otherwise:
+				say "You easily take [NameDesc of T].[if orc is bride-consort][line break][variable custom style]What's yours is mine, after all...[roman type][line break]";
+				now T is carried by the player;
+				now the owner of T is orc;
+		otherwise:
+			allocate 5 seconds;
+			if pack of playing cards is held, say "You search through the cards and separate out the queen of hearts.";
+			otherwise say "You take the queen of hearts.";
+			now T is carried by the player;
+		if T is held:
+			compute poker theft of T;
+			if pack of playing cards is not held and the player is in Dungeon07 and orc is not in Dungeon07, compute poker table hypno;
+		do nothing instead;
+	if pack of playing cards is not held and the player is in Dungeon07:
+		allocate 1 seconds;
+		if orc is in Dungeon07:
+			if orc is not interested, check perception of orc;
+			if orc is interested, say "[speech style of orc]'Hey! Hands off!'[roman type][line break]It looks like [NameDesc of orc] won't let you take those while [he of orc][']s here." instead;
+		otherwise if orc is alive or (orc is not permanently banished and orc is not shooed):
+			if orc is alive, now orc is in Dungeon07;
+			otherwise set up orc;
+			say "[BigNameDesc of orc] appears in the doorway.";
+			check guaranteed perception of orc;
+			say "[speech style of orc]'You weren't thinking of taking my playing cards without asking, were you?'[roman type][line break][big he of orc] quickly steps over to prevent you from collecting up the playing cards.";
+			do nothing instead.
+
+To construct unique buttons for (T - pack of playing cards):
+	if T is held and 23 is not listed in stolenCards and the recipe of (alchemy key of queen-of-hearts heels) is memorised and ButtonTableFull is 0:
+		choose a blank row in the Table of Buttons;
+		now the ButtonImage entry is examine-image of queen-of-hearts;
+		now the ButtonCommand entry is "take [text-shortcut of T]";
+		now the ButtonColour entry is lightModeFullGreen.
+
+
+
 To compute poker table hypno:
 	if diaper quest is 0 and hypno-trigger-pussy is 0 and (the player is possessing a vagina or tg fetish > 0):
 		now hypno-trigger-pussy is 1;
-		say "Your eyes continuously drawn to the drawings of the lewdly exposed vaginas that circle the table. As your gaze shifts around the table, the pussies flick in and out of your peripheral vision. You feel almost entranced by the way they're so... daringly on display, open and inviting! The words [second custom style]'pussy'[roman type] and [second custom style]'cunt'[roman type] consume your inner thoughts...".
+		say "Your eyes continuously drawn to the drawings of the lewdly exposed vaginas that circle the table. As your gaze shifts around the table, the pussies flick in and out of your peripheral vision. You feel almost entranced by the way they're so... daringly on display, open and inviting! The words [second custom style][']pussy['][roman type] and [second custom style][']cunt['][roman type] consume your inner thoughts...".
+
+queen-of-hearts is a collectible. The printed name of queen-of-hearts is "[TQlink of item described]queen of hearts[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of queen-of-hearts is "qoh". Understand "queen", "of hearts", "hearts" as queen-of-hearts.
+
+To decide which figure-name is the examine-image of (C - queen-of-hearts):
+	decide on Figure of PokerCard23.
+
+To say ExamineDesc of (P - queen-of-hearts):
+	say "The queen of hearts playing card you took from the poker deck.".
+
+To decide which number is the crafting key of (C - queen-of-hearts):
+	decide on 31.
+
+[To decide which number is the bartering value of (T - queen-of-hearts) for (M - orc):
+	decide on 10.]
+
+Definition: queen-of-hearts is immune to change: decide yes.
+Definition: queen-of-hearts is party themed: decide yes.
+Definition: queen-of-hearts is playing card themed: decide yes.
+Definition: queen-of-hearts is heart themed: decide yes.
+Definition: queen-of-hearts is royalty themed: decide yes.
+
+To say ShortDesc of (C - queen-of-hearts):
+	say "queen of hearts playing card".
+
+To compute poker theft of (C - queen-of-hearts):
+	add 23 to stolenCards, if absent.
+
 
 Section - Poker Table
 

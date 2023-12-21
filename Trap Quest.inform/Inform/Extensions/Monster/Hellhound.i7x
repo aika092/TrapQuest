@@ -37,7 +37,7 @@ To say MonsterDesc of (M - hellhound):
 	if mythical creature fetish is 1:
 		say "This huge black canine is as tall as you even when [he of M]'s on all fours. [big his of M] spiked tail, sharp fangs and elongated claws are dead give-aways that [he of M] is from another plane. [if pet collar is off-stage][big he of M] holds a collar and leash in [his of M] mouth, as if [he of M]'s looking for someone to take [him of M] on a walk, or more likely, a pet of [his of M] own to lead around! [end if][big he of M] stares at you with glowing red eyes, letting you know that a keen intelligence lies hidden behind the bestial mask.";
 	otherwise:
-		say "This [man of M] has black bondage items keeping [his of M] arms and legs fully bent, forcing [him of M] to crawl along on [his of M] elbows and knees. [big he of M] seems pretty happy though, and you can make out a joyous and playful expression behind [his of M] fetish hood. [if diaper quest is 1]A thick black diaper covers [his of M] rear[otherwise]Naked just like a real animal, [he of M][']s completely naked and [his of M] and average sized [DickDesc of M] are completely visible. A black cock ring is situated near the base of [his of M] shaft.[end if].".
+		say "This [man of M] has black bondage items keeping [his of M] arms and legs fully bent, forcing [him of M] to crawl along on [his of M] elbows and knees. [big he of M] seems pretty happy though, and you can make out a joyous and playful expression behind [his of M] fetish hood. [if diaper quest is 1]A thick black diaper covers [his of M] rear[otherwise]Naked just like a real animal, [he of M][']s completely naked and [his of M] average sized [DickDesc of M] are completely visible. A black cock ring is situated near the base of [his of M] shaft.[end if].".
 
 To say MonsterComment of (M - hellhound):
 	if diaper quest is 1:
@@ -478,6 +478,7 @@ To compute knotting of (M - hellhound) in (F - a fuckhole):
 			let player-moved be 0;
 			if delayed stand is 0: [This prevents a glitch with autostanding and the gladiator dragging]
 				drag to Mansion08 by M;
+				now M is penetrating F; [above line can dislodge]
 		ruin F;
 		say "[BigNameDesc of M][']s [semen] continues to slowly flow into you.";
 		if M is penetrating asshole, Assfill 1;

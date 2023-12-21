@@ -1,6 +1,6 @@
 Snacks by Food begins here.
 
-A snack is a kind of food.
+A snack is a kind of food. The tradability of a snack is 8.
 The printed name of a snack is "[TQlink of item described][ShortDesc of item described][shortcut-desc][TQxlink of item described][verb-desc of item described]".
 
 To say ShortDesc of (C - a snack):

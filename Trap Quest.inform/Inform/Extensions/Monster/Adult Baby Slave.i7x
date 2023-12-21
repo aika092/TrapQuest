@@ -12,12 +12,15 @@ Definition: an adult baby slave is willing to do anilingus: decide no. [TODO: cr
 Definition: an adult baby slave is a diaper wetter: decide yes.
 
 Figure of angelic adult baby slave is the file "NPCs/MultiFloor/BabySlave/abs1.jpg".
+Figure of angelic adult baby slave facesit messy is the file "NPCs/MultiFloor/BabySlave/abs1-cutscene1a.jpg".
 Figure of bratty adult baby slave is the file "NPCs/MultiFloor/BabySlave/abs2.jpg".
 [Figure of bratty adult baby slave facesit clean is the file "NPCs/MultiFloor/BabySlave/abs2-cutscene1a.jpg".]
 Figure of bratty adult baby slave facesit wet is the file "NPCs/MultiFloor/BabySlave/abs2-cutscene1b.jpg".
 Figure of bratty adult baby slave facesit messy is the file "NPCs/MultiFloor/BabySlave/abs2-cutscene1c.jpg".
 
 To decide which figure-name is the monster-image of (M - angelic adult baby slave):
+	if M is penetrating face:
+		if M is messy, decide on Figure of angelic adult baby slave facesit messy;
 	decide on Figure of angelic adult baby slave.
 
 To decide which figure-name is the monster-image of (M - bratty adult baby slave):
@@ -752,18 +755,21 @@ To compute unique banishment of (M - an adult baby slave):
 	add M to new-acolytes.
 
 To compute tax return of (M - an adult baby slave):
-	let D be a random off-stage eligible diaper;
-	if D is a thing and the number of in-play identified confidence diapers is 0:
-		say "[speech style of M]'Okay... You can have my most favourite diaper.'[roman type][line break][BigNameDesc of M] drops a clean diaper in front of you.";
-		blandify and reveal D;
-		now D is blessed;
-		now the raw-magic-modifier of D is 0;
-		now D is confidence;
-		now D is in the location of the player;
-		compute autotaking D;
-		say "[speech style of M]'Meanie.'[roman type][line break]";
+	if M is choice-taxable:
+		compute choice tax return of M;
 	otherwise:
-		compute default tax return of M.
+		let D be a random off-stage eligible diaper;
+		if D is a thing and the number of in-play identified confidence diapers is 0:
+			say "[speech style of M]'Okay... You can have my most favourite diaper.'[roman type][line break][BigNameDesc of M] drops a clean diaper in front of you.";
+			blandify and reveal D;
+			now D is blessed;
+			now the raw-magic-modifier of D is 0;
+			now D is confidence;
+			now D is in the location of the player;
+			compute autotaking D;
+			say "[speech style of M]'Meanie.'[roman type][line break]";
+		otherwise:
+			compute default tax return of M.
 
 Part 4 - Conversation
 

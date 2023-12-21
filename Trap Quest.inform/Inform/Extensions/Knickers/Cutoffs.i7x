@@ -2,6 +2,8 @@ Cutoffs by Knickers begins here.
 
 cutoffs is a kind of knickers. cutoffs is usually denim. cutoffs is usually totally-exclusive. Understand "pair", "of" as cutoffs.
 
+The DQFigure of a cutoffs is usually DQBluePants.
+
 Definition: a cutoffs is blue themed: decide yes.
 Definition: a cutoffs is rippable:
 	if it is destructible, decide yes;
@@ -27,12 +29,20 @@ Part 1 - Neat Cutoffs
 
 neat cutoffs is a cutoffs. The printed name of neat cutoffs is "[TQlink of item described][item style][cumdesc]pair of [unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]neat denim cutoffs[clothing-title-after]". The text-shortcut of neat cutoffs is "ndc".
 
+Figure of neat cutoffs is the file "Items/Clothes/Lower/Underwear/Skimpy/Cutoffs/cutoffs1.png".
+Figure of Icarus neat cutoffs is the file "Items/Clothes/Lower/Underwear/Skimpy/Cutoffs/cutoffs1.jpg".
+
 To decide which figure-name is clothing-image of (C - neat cutoffs):
 	decide on figure of neat cutoffs.
+To decide which figure-name is icarus-clothing-image of (C - neat cutoffs):
+	decide on figure of Icarus neat cutoffs.
+
+Definition: neat cutoffs is IcarusScienceAppropriate:
+	if it is actually summonable, decide yes;
+	decide no.
 
 To say ClothingDesc of (K - neat cutoffs):
 	say "Extremely tiny denim shorts, these are skimpier than most common underwear. They are so tight that they [if K is worn]are[otherwise]would be[end if] impossible to displace without completely removing them.".
-Figure of neat cutoffs is the file "Items/Clothes/Lower/Underwear/Skimpy/Cutoffs/cutoffs1.png".
 
 Part 2 - Torn Cutoffs
 

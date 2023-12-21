@@ -527,7 +527,7 @@ Report going when the player is in Hotel21 and Hotel21 is not discovered:
 
 Chapter - Mechanic Scene
 
-Report going when there is an uninterested mechanic in the location and the mechanic-scene of woman-player is 0:
+Report going when mechanic is in the location and the mechanic-scene of woman-player is 0 and mechanic is male and mechanic is uninterested:
 	if debugmode is 1, say "Checking if berri can appear.";
 	if the number of monsters in the location of the player is 1 and woman-player is redeploy appropriate:
 		deploy woman-player with woman-status 91;
@@ -1050,7 +1050,7 @@ Report going when the woman-bimbo of woman-player is 5 and the changing-station-
 		deploy woman-player with woman-status 102;
 		now woman-player is in the location of the player;
 		interest woman-player;
-		say "As you arrive here you see [NameDesc of woman-player] holding the rope for the automated changing station's container lid. The transparent container is full of used diapers, and if [he of woman-player] gives the rope any slack at all, the lid will open and the diapers will tumble out of the container and onto [his of woman-player] head.[line break][speech style of woman-player]'Oh gosh [NameBimbo], please help me! I need to tie this back to the hook over there, but the lid is so heavy... if I stop pulling down on it with all my strength, it'll open up! And my arms are getting so tired! Please, quickly, help me [bold type]pull[speech style of woman-player] this thing over to the hook and tie the knot!'[roman type][line break]";
+		say "As you arrive here you see [NameDesc of woman-player] holding the rope for the automated changing station's container lid. The transparent container is full of used diapers, and if [he of woman-player] gives the rope any slack at all, the lid will open and the diapers will tumble out of the container and onto [his of woman-player] head.[line break][speech style of woman-player]'Oh gosh [NameBimbo], please help me! I need to tie this back to the hook over there, but the lid is so heavy... if I stop pulling down on it with all my strength, it'll open up! And my arms are getting so tired! [big please], quickly, help me [bold type]pull[speech style of woman-player] this thing over to the hook and tie the knot!'[roman type][line break]";
 		now the changing-station-tank-scene of woman-player is 1.
 
 A time based rule (this is the berri-changing-station-tank rule):
@@ -1070,7 +1070,7 @@ A time based rule (this is the berri-changing-station-tank rule):
 			if the player is not in the location of hotel changing station, release changing station diapers; [we're trying to catch weird edge cases here, but we still can't have the tank spontaneously open if the player's there]
 			now the changing-station-tank-scene of woman-player is -60;
 	otherwise if the changing-station-tank-scene of woman-player < 0 and the changing-station-tank-scene of woman-player > -10:
-		if the player is in the location of hotel changing station and woman-player is in the location of the player, say "[BigNameDesc of woman-player] [one of]coughs in digust[or]retches[or]coughs and splutters[or]gags with nausea[cycling].[line break][speech style of woman-player]'[one of]Gross[or]Yuck[or]Eurgh[in random order]!'[roman type][line break]";
+		if the player is in the location of hotel changing station and woman-player is in the location of the player, say "[BigNameDesc of woman-player] [one of]coughs in disgust[or]retches[or]coughs and splutters[or]gags with nausea[cycling].[line break][speech style of woman-player]'[one of]Gross[or]Yuck[or]Eurgh[in random order]!'[roman type][line break]";
 		decrease the changing-station-tank-scene of woman-player by 1.
 
 Check pulling woman-player when the changing-station-tank-scene of woman-player > 0:

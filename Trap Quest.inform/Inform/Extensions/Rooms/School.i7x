@@ -235,6 +235,7 @@ To compute pink smoke challenge of (M - a monster):
 	now School34 is smoky;
 	if diaper lover > 0, compute dungeon diaper setup of M;
 	say DungeonSmokeDeclarationFlav of M;
+	update backdrop positions;
 	compute dungeon wand donation of M.
 
 To say DungeonSmokeDeclarationFlav of (M - a monster):

@@ -31,7 +31,7 @@ To compute kneeling reaction of (M - a robot):
 Definition: a robot is a wrangler: decide yes.
 
 To WrangleUp (M - a robot):
-	if the wrangle-bonus of M is 0, say "[speech style of M]'[one of]WRIST GRAPPLING ROUTINE INITIALIZING[or]PRIORITY TARGET: ARMS[or]ARM RESTRAINT SUBROUTINE IS LOADING, PLEASE WAIT[then at random].'[roman type][line break]";
+	if the wrangle-bonus of M is 0, say "[speech style of M]'[one of]WRIST GRAPPLING ROUTINE INITIALISING[or]PRIORITY TARGET: ARMS[or]ARM RESTRAINT SUBROUTINE IS LOADING, PLEASE WAIT[then at random].'[roman type][line break]";
 	increase the wrangle-bonus of M by (4 - combatSpeed) * 2.
 
 To say ArmWrangleSuccess of (M - a robot):
@@ -221,7 +221,7 @@ To say DiaperDonateComment of (M - a robot):
 	say "[speech style of M]'DIAPER TRAINING ROUTINE INITIATED. SUBJECT MUST WEAR DIAPERS UNTIL TRAINING ROUTINE ENDS OR FACE CONSEQUENCES.'[roman type][line break]".
 
 To say DQSpankResistReactionFlav of (M - a robot):
-	say "[speech style of M]'[one of]RESISTANCE DETECTED. SPANKING UNIMPEDED.'[or]STATEMENT: YOUR RESISTANCE IS ENDEARING BUT UNHELPFUL.'[or]CONDESCENDING STATEMENT:AWWW, LITTLE BABY WANT OUT, SO ADORABLE.'[in random order][roman type][line break]".
+	say "[speech style of M]'[one of]RESISTANCE DETECTED. SPANKING UNIMPEDED.'[or]STATEMENT: YOUR RESISTANCE IS ENDEARING BUT UNHELPFUL.'[or]CONDESCENDING STATEMENT: AWWW, LITTLE BABY WANT OUT, SO ADORABLE.'[in random order][roman type][line break]".
 
 To say DQSpankResistExtensionFlav of (M - a robot):
 	if M is intelligent, say "[speech style of M]'[one of]REBELLION DETECTED. SPANKING LIMIT OF 15 INCREASED TO 20.'[or]RESISTANCE UNACCEPTABLE. SPANKING DURATION INCREASED.'[or]FUNCTION VOID SPANK RESISTANCE CALLED: DURATION++.'[in random order][roman type][line break]". [Can be customised for specific NPCs]

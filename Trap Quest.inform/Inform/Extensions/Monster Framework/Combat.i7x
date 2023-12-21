@@ -185,6 +185,20 @@ To orgasm (M - a monster):
 	if the class of the player is succubus, FavourUp M by 1;
 	if ghost-strapon is worn, compute ghostGrowth of M;
 	if M is male and watersports fetish is 0 and M is penetrating a fuckhole, progress quest of human-toilet-quest;
+	if M is male and M is human and M is penetrating breasts and cock-handmaiden-negligee is worn and piercing-fetish is 1 and the number of worn nipple piercing is 0:
+		say "Your [cock-handmaiden-negligee] suddenly vanishes!";
+		destroy cock-handmaiden-negligee;
+		say "It is replaced by a pair of dick nipple piercings!";
+		summon dick-nipple-piercings cursed with quest;
+	if M is male and M is human and M is penetrating a fuckhole and handmaiden-headdress is worn:
+		transform handmaiden-headdress into handmaiden-circlet;
+		compute class outfit of handmaiden-circlet;
+		if purple-handmaiden-gloves is worn, transform purple-handmaiden-gloves into pink-handmaiden-gloves;
+		if heart-handmaiden-negligee is worn:
+			transform heart-handmaiden-negligee into cock-handmaiden-negligee;
+			compute class set up of cock-handmaiden-negligee;
+	otherwise if M is seduced:
+		progress quest of seduction-climax-quest;
 	if M is male and M is intelligent and M is in the location of the player and M is not dying, compute betrothal of M;
 	if M is royal guard and the class of the player is princess:
 		increase the duties-performed of royal-quest by 1; [making guards cum completes the quest twice as fast]
@@ -1164,6 +1178,9 @@ To compute enticing of (M - a monster):
 				check enticing of M with temptation level S;
 				if the player is prone:
 					follow the insertion rules of M;
+					if watersports fetish is 0 and B is a fuckhole and wc hood is off-stage and wc hood is actually summonable:
+						say "All of a sudden, your head is encased in a white latex hood! You can now sense that you have gained [']meat toilet['] class![line break][variable custom style][one of]Oh COME ON! In what universe is that a real class?![or]Uh-oh, I became a meat toilet again...[stopping][roman type][line break]";
+						summon wc hood cursed;
 	now current-monster is CM.
 
 
@@ -1405,7 +1422,7 @@ To say TopDisplacesFlav of (C - a clothing):
 	say "pulls your [ShortDesc of C] away".
 
 To say WeakenFlav of (M - a monster) on (C - a clothing):
-	say "The [clothing-material of C] is weakening.".
+	say "[if C is destructible]The [clothing-material of C][otherwise]Its grip on your body[end if] is weakening.".
 
 [!<SetUpSexLengthOfMonsterInBodypart>+
 
@@ -2243,9 +2260,11 @@ To compute (P - a clothing) protecting (B - belly) from (M - a monster):
 		say "The [P] causes the attack to phase through you completely!";
 	otherwise:
 		compute M hurting B;
-		if the player is able to expel and a random number between -4 and the total squirtable fill of belly > 0 and the latex-transformation of the player < 5 and currently-squirting is 0:
+		if the player is able to eventually expel and a random number between -4 and the total squirtable fill of belly > 0 and the latex-transformation of the player < 5 and currently-squirting is 0:
 			say "The hit puts pressure on the contents of your belly, and causes you to momentarily lose control of your sphincter!";
-			AssSquirt.
+			let C be a random glued sex toy penetrating asshole;
+			if C is a thing, compute enema vs glue pressure of C;
+			if the player is able to expel, AssSquirt.
 
 [!<ToComputeClothingDamagingMonster>
 

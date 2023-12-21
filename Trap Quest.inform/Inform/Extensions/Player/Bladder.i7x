@@ -42,6 +42,34 @@ To BladderDown (X - a number):
 	if the bladder of the player < 0:
 		now the bladder of the player is 0.
 
+The player has a number called raw-irritable-bladder.
+To IrritableBladderUp (N - number):
+	if diaper lover > 0 and the raw-irritable-bladder of the player < 1000:
+		say "You sense that your bladder will be more irritable in the future.";
+		SilentlyIrritableBladderUp N.
+To SilentlyIrritableBladderUp (N - number):
+	if diaper lover > 0 and the raw-irritable-bladder of the player < 1000:
+		increase the raw-irritable-bladder of the player by N;
+		if the raw-irritable-bladder of the player > 1000, now the raw-irritable-bladder of the player is 1000.
+
+To decide which number is the irritable-bladder of the player:
+	let I be the raw-irritable-bladder of the player;
+	if I > 1000, decide on 1000;
+	decide on I.
+
+irritated-bladder is initially false.
+
+An all time based rule (this is the irritable bladder rule):
+	if the player is bursting:
+		if irritated-bladder is false:
+			let R be a random number between 1 and 1000;
+			if R <= the irritable-bladder of the player:
+				now irritated-bladder is true;
+				say "[bold type]Your irritable bladder is starting to send urgent messages of extreme discomfort to your brain. Until you no longer feel like you need to pee, your strength, dexterity and intelligence will all be significantly reduced.[roman type][line break]";
+	otherwise if irritated-bladder is true:
+		now irritated-bladder is false;
+		say "The pressure in your bladder has gone, and your strength, dexterity and intelligence are no longer being dampened.".
+
 [How high will the game allow bladder incontinence to go?]
 To decide which number is the max-bladder-incontinence of the player:
 	decide on 10 - (incontinence protection * 2).

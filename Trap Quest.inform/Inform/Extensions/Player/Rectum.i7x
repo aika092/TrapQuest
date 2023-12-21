@@ -200,6 +200,35 @@ To compute wallowing:
 			say "You continue to wallow in your wet diaper.";
 			SlowGrossOut 3.
 
+
+The player has a number called raw-irritable-rectum.
+To IrritableRectumUp (N - number):
+	if diaper messing >= 3 and the raw-irritable-rectum of the player < 1000:
+		say "You sense that your bowels will be more irritable in the future.";
+		SilentlyIrritableRectumUp N.
+To SilentlyIrritableRectumUp (N - number):
+	if diaper messing >= 3 and the raw-irritable-rectum of the player < 1000:
+		increase the raw-irritable-rectum of the player by N;
+		if the raw-irritable-rectum of the player > 1000, now the raw-irritable-rectum of the player is 1000.
+
+To decide which number is the irritable-rectum of the player:
+	let I be the raw-irritable-rectum of the player;
+	if I > 1000, decide on 1000;
+	decide on I.
+
+irritated-rectum is initially false.
+
+An all time based rule (this is the irritable rectum rule):
+	if the player is feeling full:
+		if irritated-rectum is false:
+			let R be a random number between 1 and 1000;
+			if R <= the irritable-rectum of the player:
+				now irritated-rectum is true;
+				say "[bold type]Your irritable bowels are starting to send urgent messages of extreme discomfort to your brain. Until you no longer feel like you need to pee, your strength, dexterity and intelligence will all be significantly reduced.[roman type][line break]";
+	otherwise if irritated-rectum is true:
+		now irritated-rectum is false;
+		say "The pressure in your bowels has gone, and your strength, dexterity and intelligence are no longer being dampened.".
+
 [How high will the game allow rectum incontinence to go?]
 To decide which number is the max-rectum-incontinence of the player:
 	decide on 10 - (incontinence protection * 2).
@@ -248,7 +277,7 @@ To decide which number is the rectum-incontinence of the player:
 	if temporary-rectum-incontinence > 0, decide on the max-rectum-incontinence of the player;
 	let I be the raw-rectum-incontinence of the player;
 	repeat with C running through worn wearthings:
-		increase I by the bladder-incontinence-influence of C;
+		increase I by the rectum-incontinence-influence of C;
 	if I > the max-rectum-incontinence of the player, decide on the max-rectum-incontinence of the player;
 	decide on I.
 
@@ -502,7 +531,7 @@ To compute messing of (D - a knickers):
 		otherwise if mess-amount < 15:
 			say "Your [asshole] gapes wide as two huge bulky logs force their way out of your rear. You can feel your [ShortDesc of D] stretching and straining as the massive pieces of excrement snake out, emptying your gut, but filling your pants. There's so much that part of the mush has to force its way between your thighs and squelch its way into the front of your nappy. Your [ShortDesc of D] is somehow able to contain your mega bowel movement[if the known-mess of D > 0] adding even more mess to your already soiled padding[end if]. It ";
 		otherwise if mess-amount < 34: [anything mortal!]
-			say "With the least dignified noise you've ever heard, you overly full guts begin to excavate themselves. Your [ShortDesc of D] rapidly expands outwards, forced to in every direction by the veritable truckloads of smelly goop that is forcing its way out of your [asshole]. You are unable to stop the flow as log after log pushes its way out of your rectum, each one finding it more difficult than the one before to find a resting place. Soon your [ShortDesc of D] is almost twice its previous size, straining under the pressure as your poop forces itself between your legs and into the front of your nappy, filling that side too. Completely stunned, you can do nothing but shudder, moan and press your hands against your padding as the biggest shit of your life continues, warm foamy sludge following swiftly behind your uncountable number of solid chunks, filling up the small amounts of gaps left for it to find. ";
+			say "With the least dignified noise you've ever heard, your overly full guts begin to excavate themselves. Your [ShortDesc of D] rapidly expands outwards, forced to in every direction by the veritable truckloads of smelly goop that is forcing its way out of your [asshole]. You are unable to stop the flow as log after log pushes its way out of your rectum, each one finding it more difficult than the one before to find a resting place. Soon your [ShortDesc of D] is almost twice its previous size, straining under the pressure as your poop forces itself between your legs and into the front of your nappy, filling that side too. Completely stunned, you can do nothing but shudder, moan and press your hands against your padding as the biggest shit of your life continues, warm foamy sludge following swiftly behind your uncountable number of solid chunks, filling up the small amounts of gaps left for it to find. ";
 		otherwise: [should generally only happen from magical diaper links]
 			say "A monstrous snake of mush brutally pushes its way out of your butthole. Your [ShortDesc of D] crinkles and groans as it stretches and stretches to attempt to contain the impossibly bulky beast, as thick as your forearm and seemingly unending, like a train coming out of a tunnel with no end in sight. The front of your underwear is soon required to contain the log, filling every spare inch of space with soft yet substantial poop. By the time the craptastic boatload of muck has finished its journey into your pants, your [ShortDesc of D] has visibly doubled in size, now a weird balloon of brown around your midriff. You stay absolutely still, whimpering in shame. You can't move a muscle without making a sickening squelch as it rubs against you. ";
 		let PSQ be false;
@@ -558,7 +587,7 @@ To compute partial messing of (D - a knickers):
 				reset multiple choice questions;
 				set numerical response 1 to "Don't hold back";
 				set numerical response 2 to "Try to stop messing";
-				set numerical response 3 to "URGENTLY clench it all inside (this almost always succeeds, but may negatively affect your overall bowel continence)";
+				set numerical response 3 to "URGENTLY clench it all inside (this almost always succeeds, but your bowels permanently become a bit more irritable)";
 				compute multiple choice question;
 				if player-numerical-response > 1:
 					let R be a random number between 7 and 12;
@@ -569,10 +598,8 @@ To compute partial messing of (D - a knickers):
 						now mess-phase is 100;
 					otherwise if player-numerical-response is 3:
 						say "You dig deep and clench hard, trying to fight against the painful cramps.";
-						if a random number between 1 and 2 is 1, UnflinchingPainUp 7;
-						if a random number between 1 and 2 is 1:
-							say "You feel your rectal muscles weakening as you overexert them!";
-							RectumIncontinenceUp 1;
+						if a random number between 1 and 2 is 1, UnflinchingPainUp 5;
+						IrritableRectumUp a random number between 1 and 5;
 						if the player is getting unlucky:
 							say "And despite all this effort, you still can't quite clench tight enough to stop yourself from messing! [GotUnluckyFlav]";
 						otherwise:

@@ -894,7 +894,7 @@ To Test A Wire Trap:
 		if the largeness of breasts < 16 or playerRegion is Mansion:
 			say "[bold type]You crawl [if playerRegion is Mansion]over a protruding floorboard.[otherwise]under a tripwire.[end if][roman type][line break]";
 		otherwise:
-			say "[bold type]You try to crawl under a tripwire. but your [BreastDesc] stop you lowering your body enough. The wire gets caught on your [if the class of the player is princess]tiara[otherwise]shoulders[end if]![roman type][line break]";
+			say "[bold type]You try to crawl under a tripwire, but your [BreastDesc] stop you lowering your body enough. The wire gets caught on your [if the class of the player is princess]tiara[otherwise]shoulders[end if]![roman type][line break]";
 			trigger a wire trap;
 	if T is nothing, place permanent triggered wire.
 

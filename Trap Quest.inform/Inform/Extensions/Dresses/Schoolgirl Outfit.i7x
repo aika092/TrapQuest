@@ -89,7 +89,7 @@ Part 3 - Halloween Schoolgirl Outfit
 
 halloween schoolgirl outfit is a schoolgirl outfit.
 
-The printed name of halloween schoolgirl outfit is "[clothing-title-before]halloween schoolgirl outfit[clothing-title-after]". The text-shortcut of halloween schoolgirl outfit is "hso".
+The printed name of halloween schoolgirl outfit is "[clothing-title-before]Halloween schoolgirl outfit[clothing-title-after]". The text-shortcut of halloween schoolgirl outfit is "hso".
 
 To say MediumDesc of (C - halloween schoolgirl outfit):
 	say "Halloween-style slutty schoolgirl outfit".

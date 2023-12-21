@@ -68,7 +68,7 @@ To say MonsterComment of (M - vampiress):
 		otherwise:
 			say "[second custom style]So I have no choice but to drink [semen] from now on? Perfect.";
 	otherwise if the bimbo of the player < 7:
-		if the player is gendered male, say "[first custom style][one of]So if [he of M]'s an ancient vampire, doesn't that make [him of M] a [if M is presenting as male]dilf[otherwise]milf[end if]?[or][big he of M] can suck on me anytime![or][if M is famished]That look in [his of M] eyes is actually pretty scary... maybe I should get out of here.[otherwise][big he of M] seems hungry. Heh, wonder if [he of M] likes sausage?[end if][in random order]";
+		if the player is gendered male, say "[first custom style][one of]So if [he of M]'s an ancient vampire, doesn't that make [him of M] a [if M is presenting as male]DILF[otherwise]MILF[end if]?[or][big he of M] can suck on me anytime![or][if M is famished]That look in [his of M] eyes is actually pretty scary... maybe I should get out of here.[otherwise][big he of M] seems hungry. Heh, wonder if [he of M] likes sausage?[end if][in random order]";
 		otherwise say "[first custom style][one of]The way [he of M] looks at me... makes me feel like food...[or][if the stake of M is clothing]I knew [he of M] had a weakness! I just wish it were less lewd...[otherwise]Vampires in literature have so many weaknesses. I wonder if [he of M]'s the same?[end if][or][big he of M]'s clearly insane, but [he of M] doesn't seem violent.[in random order]";
 	otherwise if the bimbo of the player < 12:
 		say "[variable custom style][one of][big he of M] looks at me like I'm food, but... that's kind of flattering, isn't it?[or][big he of M] has really good skin.[or][big he of M] seems horny, but aren't all vampires that way?[in random order]";
@@ -1011,18 +1011,21 @@ To say BanishFleeFlav of (M - vampiress):
 Definition: vampiress is permanently banishable: decide no. [Can be summoned again once banished]
 
 To compute tax return of (M - vampiress):
-	let P be a random on-stage closed pedestals;
-	if P is a pedestal:
-		let T be a random thing in P;
-		say "[BigNameDesc of M] clicks [his of M] fingers and you hear the sound of glass grating against stone.";
-		if T is a thing:
-			say "[speech style of M]'Fine, my [ShortDesc of T] is yours. It is in the [location of P]. You can't miss it. But mark my words, if I catch you in my house again, you WILL become my next meal.'[roman type][line break]";
-			now P is open;
-			now the paid of P is 0;
-		otherwise:
-			say "[speech style of M]'Weird, I opened a pedestal with nothing in it. Perhaps consider reporting this as a game bug.'[roman type][line break]";
+	if M is choice-taxable:
+		compute choice tax return of M;
 	otherwise:
-		compute default tax return of M.
+		let P be a random on-stage closed pedestals;
+		if P is a pedestal:
+			let T be a random thing in P;
+			say "[BigNameDesc of M] clicks [his of M] fingers and you hear the sound of glass grating against stone.";
+			if T is a thing:
+				say "[speech style of M]'Fine, my [ShortDesc of T] is yours. It is in the [location of P]. You can't miss it. But mark my words, if I catch you in my house again, you WILL become my next meal.'[roman type][line break]";
+				now P is open;
+				now the paid of P is 0;
+			otherwise:
+				say "[speech style of M]'Weird, I opened a pedestal with nothing in it. Perhaps consider reporting this as a game bug.'[roman type][line break]";
+		otherwise:
+			compute default tax return of M.
 
 To compute unique banishment of (M - vampiress):
 	let X be nothing;

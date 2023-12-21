@@ -38,7 +38,7 @@ To trigger (Y - a camera trap):
 		say "It was in a perfect position to capture a full shot [if the number of worn trousers is 0 and the number of worn skirted clothing > 0]right up your skirt[otherwise]of your [HipDesc][end if].";
 		say "[one of][line break][variable custom style][if the humiliation of the player < 20000]Oh my god, how embarrassing! I hope I never see that photo.[otherwise if the humiliation of the player < 30000]Whatever. Not the worst situation I've been caught in with this game.[otherwise]Fine by me.[end if][or][if the bimbo of the player < 14][variable custom style]Again?![otherwise][line break][second custom style][one of]I bet I looked sexy[or]Whatever makes me popular with the boys[stopping]![end if][stopping][roman type][line break]";
 		set up P;
-		if there is worn skirted clothing and there is a currently uncovered diaper, cutshow figure of camera trap diaper upskirt for Y;
+		if there is worn skirted clothing and there is a currently uncovered diaper, cutshow figure of camera trap diaper upskirt;
 	otherwise:
 		say "You hear a weird whirring, a bit like an old camera film being wound forwards, but nothing else happens.".
 

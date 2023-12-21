@@ -503,6 +503,9 @@ This is the overdress cow rings clash rule:
 	if wearing-target is normally-nipple-covering or wearing-target is ridiculously low cut or higher:
 		repeat with N running through worn cursed cow piercings:
 			if summoning is 0 and autowear is false, say "Your [ShortDesc of N] is somehow preventing you from wearing the [ShortDesc of wearing-target]! Maybe if you uncursed it?";
+			rule fails;
+		if dick-nipple-piercings is worn:
+			if summoning is 0 and autowear is false, say "Your [ShortDesc of dick-nipple-piercings] are somehow preventing you from wearing the [ShortDesc of wearing-target]! Maybe if you uncursed them?";
 			rule fails.
 The overdress cow rings clash rule is listed in the overdress wearability rules.
 

@@ -88,5 +88,64 @@ To decide which figure-name is clothing-image of (C - floral negligee):
 To say ClothingDesc of (C - floral negligee):
 	say "This sexy item of high-waisted lingerie has a floral pattern. It feels rather delicate.".
 
+Part 4 - Handmaiden Negligee
+
+A handmaiden-negligee is a kind of negligee. A handmaiden-negligee is transformation-rare. A handmaiden-negligee is totally-exclusive. A handmaiden-negligee is crotch-intact. A handmaiden-negligee is unskirted. A handmaiden-negligee is silk. A handmaiden-negligee is very low cut.
+Definition: a handmaiden-negligee is layer-concealing: decide no.
+Definition: a handmaiden-negligee is partially-layer-concealing: decide yes.
+To decide which number is the crotch-tightness of (C - a handmaiden-negligee):
+	decide on 4.
+To say MediumDesc of (C - a handmaiden-negligee):
+	say "extra-lewd negligee".
+
+Definition: a handmaiden-negligee is class-relevant:
+	if the class of the player is stripper, decide yes;
+	decide no.
+Definition: a handmaiden-negligee is heart themed: decide yes.
+Definition: a handmaiden-negligee is pink themed: decide yes.
+Definition: a handmaiden-negligee is penis themed: decide yes.
+
+To compute class set up of (C - a handmaiden-negligee):
+	now C is cursed;
+	now C is audible jiggles;
+	if the player is possessing a vagina:
+		now the quest of C is vaginal-creampie-quest;
+	otherwise:
+		now the quest of C is anal-orgasm-quest.
+
+heart-handmaiden-negligee is a handmaiden-negligee. heart-handmaiden-negligee is sheer.
+The printed name of heart-handmaiden-negligee is "[clothing-title-before]heart hole negligee[clothing-title-after]". Understand "heart", "hole", "negligee" as heart-handmaiden-negligee. The text-shortcut of heart-handmaiden-negligee is "hhn".
+
+Figure of heart-handmaiden-negligee is the file "Items/Clothes/Upper/Exposing/Negligees/handmaiden1.png".
+
+To decide which figure-name is clothing-image of (C - heart-handmaiden-negligee):
+	decide on figure of heart-handmaiden-negligee.
+
+To say ClothingDesc of (C - heart-handmaiden-negligee):
+	say "This erotic high-waisted pink-and-purple lingerie has heart holes cut in tactical places to expose ALMOST everything, without actually exposing the rude bits. The bottom heart hole also looks like a [manly-penis]. It also has a pointless tiny frilly tutu trailing from the tie-strings.".
+
+To decide which number is the initial outrage of (C - heart-handmaiden-negligee):
+	decide on 8.
+
+Definition: heart-handmaiden-negligee is purple themed: decide yes.
+
+cock-handmaiden-negligee is a handmaiden-negligee. cock-handmaiden-negligee is low cut. cock-handmaiden-negligee is crotch-exposing.
+The printed name of cock-handmaiden-negligee is "[clothing-title-before]exposing cock negligee[clothing-title-after]". Understand "exposing", "cock negligee", "negligee" as cock-handmaiden-negligee. The text-shortcut of cock-handmaiden-negligee is "ecn".
+
+Definition: cock-handmaiden-negligee is class-relevant:
+	if the class of the player is stripper or the class of the player is cumdumpster, decide yes;
+	decide no.
+
+Figure of cock-handmaiden-negligee is the file "Items/Clothes/Upper/Exposing/Negligees/handmaiden2.png".
+
+To decide which figure-name is clothing-image of (C - cock-handmaiden-negligee):
+	decide on figure of cock-handmaiden-negligee.
+
+To say ClothingDesc of (C - cock-handmaiden-negligee):
+	say "This extremely erotic high-waisted pink lingerie has a heart-shaped hole cut out of the bottom to expose your [player-crotch]. It also has two gold [manly-penis]s dangling from the tie-strings.".
+
+To decide which number is the initial outrage of (C - cock-handmaiden-negligee):
+	decide on 10.
+
 
 Negligee ends here.

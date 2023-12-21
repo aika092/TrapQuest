@@ -51,6 +51,7 @@ Definition: black candle is ingredient: decide no.
 Definition: black candle is immune to change: decide yes.
 Definition: black candle is black themed: decide yes.
 Definition: black candle is candle themed: decide yes.
+Definition: black candle is never-in-bag: decide yes.
 
 To decide which number is the bartering value of (T - black candle) for (M - a gladiator):
 	decide on 3.
@@ -114,6 +115,22 @@ To decide which number is the bartering value of (T - cock candle) for (M - vamp
 	decide on 4.
 To say MonsterOfferAcceptFlav of (M - vampiress) to (T - cock candle):
 	say "[speech style of M]'Ah yes, this looks beautiful. I'll put it right next to my coff... I mean, my bed.'[roman type][line break]".
+
+white candle is a collectible. white candle is in Woods31. The printed name of white candle is "[TQlink of item described]white candle[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of white candle is "wcdl".
+
+Figure of white candle is the file "Items/Collectibles/candle3.jpg".
+
+To decide which figure-name is the examine-image of (B - white candle):
+	decide on figure of white candle.
+
+Definition: white candle is ingredient: decide no.
+Definition: white candle is immune to change: decide yes.
+Definition: white candle is white themed: decide yes.
+Definition: white candle is candle themed: decide yes.
+Definition: white candle is never-in-bag: decide yes.
+
+To say ShortDesc of (C - white candle):
+	say "white candle".
 
 doom notes is a collectible. The printed name of doom notes is "[TQlink of item described]doom notes[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of doom notes is "dmn".
 

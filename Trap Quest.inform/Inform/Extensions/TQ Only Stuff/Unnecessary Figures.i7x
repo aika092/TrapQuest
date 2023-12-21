@@ -11,6 +11,11 @@ To decide which figure-name is Figure of ghost 6:
 To decide which figure-name is Figure of ghost 7:
 	decide on figure of small image.
 
+To decide which figure-name is Figure of hotel urinal portal piss:
+	decide on figure of small image.
+To decide which figure-name is Figure of hotel urinal portal cum:
+	decide on figure of small image.
+
 To decide which figure-name is Figure of milk fountain touched:
 	decide on figure of small image.
 

@@ -133,6 +133,14 @@ Definition: a direction (called D) is N-viable:
 	otherwise: [we can use saved variables]
 		if D is listed in the Nviables of Neighbour Finder, decide yes.
 
+Definition: a direction (called D) is A-viable: [for airborne NPCs, who can fly over foliage]
+	if D is listed in the Nviables of Neighbour Finder, decide yes;
+	if D is north or D is east or D is south or D is west:
+		let GS be the vector sum of the grid position of Neighbour Finder and the vector of D;
+		let R be the room at GS;
+		if R is not solid rock and R is no-roof, decide yes;
+	decide no.
+
 Definition: a direction (called D) is wanted:
 	if D is north:
 		if N part of the shape of Neighbour Finder is 0, decide no;

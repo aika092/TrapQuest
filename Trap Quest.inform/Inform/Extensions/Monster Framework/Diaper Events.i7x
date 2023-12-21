@@ -511,7 +511,7 @@ To say DoubleDiaperGlueFlav of (M - a monster):
 	say "[BigNameDesc of M] pulls out a tube of glue, and uses it to seal [if N is 0]the two diapers[otherwise]each of your [N + 1] diapers[end if] together.".
 
 To say DoubleDiaperAfterFlav of (M - a monster):
-	if M is intelligent, say "[speech style of M]'[one of]Hahaha, that's perfect[or]Oh my, it fits even better than I imagined[or]I'm afraid you may be left with a bit of a waddle, haha[or]haha, I wonder if you'll even be able to walk now[in random order]!'[roman type][line break]".
+	if M is intelligent, say "[speech style of M]'[one of]Hahaha, that's perfect[or]Oh my, it fits even better than I imagined[or]I'm afraid you may be left with a bit of a waddle, haha[or]Haha, I wonder if you'll even be able to walk now[in random order]!'[roman type][line break]".
 
 To say DiaperChangeComment of (M - a monster):
 	if M is intelligent:
@@ -1354,30 +1354,137 @@ To say DiaperFacesitFinishFlav of (M - a monster):
 
 Part - Diaper Urinal Use
 
+Figure of diaper selfpull hold urinal angry is the file "Special/Cutscene/cutscene-diaper-urinal-1aiA.jpg".
+Figure of diaper selfpull hold urinal shy is the file "Special/Cutscene/cutscene-diaper-urinal-1aiB.jpg".
+Figure of diaper selfpull hold urinal excited is the file "Special/Cutscene/cutscene-diaper-urinal-1aiC.jpg".
+Figure of diaper selfpull hold cumrag angry is the file "Special/Cutscene/cutscene-diaper-urinal-1aiiA.jpg".
+Figure of diaper selfpull hold cumrag shy is the file "Special/Cutscene/cutscene-diaper-urinal-1aiiB.jpg".
+Figure of diaper selfpull hold cumrag excited is the file "Special/Cutscene/cutscene-diaper-urinal-1aiiC.jpg".
+Figure of diaper selfpull grip urinal angry is the file "Special/Cutscene/cutscene-diaper-urinal-1biA.jpg".
+Figure of diaper selfpull grip urinal shy is the file "Special/Cutscene/cutscene-diaper-urinal-1biB.jpg".
+Figure of diaper selfpull grip urinal excited is the file "Special/Cutscene/cutscene-diaper-urinal-1biC.jpg".
+Figure of diaper selfpull grip cumrag angry is the file "Special/Cutscene/cutscene-diaper-urinal-1biiA.jpg".
+Figure of diaper selfpull grip cumrag shy is the file "Special/Cutscene/cutscene-diaper-urinal-1biiB.jpg".
+Figure of diaper selfpull grip cumrag excited is the file "Special/Cutscene/cutscene-diaper-urinal-1biiC.jpg".
+Figure of diaper selfpull no touch urinal angry is the file "Special/Cutscene/cutscene-diaper-urinal-1ciA.jpg".
+Figure of diaper selfpull no touch urinal shy is the file "Special/Cutscene/cutscene-diaper-urinal-1ciB.jpg".
+Figure of diaper selfpull no touch urinal excited is the file "Special/Cutscene/cutscene-diaper-urinal-1ciC.jpg".
+Figure of diaper selfpull no touch cumrag angry is the file "Special/Cutscene/cutscene-diaper-urinal-1ciiA.jpg".
+Figure of diaper selfpull no touch cumrag shy is the file "Special/Cutscene/cutscene-diaper-urinal-1ciiB.jpg".
+Figure of diaper selfpull no touch cumrag excited is the file "Special/Cutscene/cutscene-diaper-urinal-1ciiC.jpg".
+Figure of diaper himpull hold urinal angry is the file "Special/Cutscene/cutscene-diaper-urinal-2aiA.jpg".
+Figure of diaper himpull hold urinal shy is the file "Special/Cutscene/cutscene-diaper-urinal-2aiB.jpg".
+Figure of diaper himpull hold urinal excited is the file "Special/Cutscene/cutscene-diaper-urinal-2aiC.jpg".
+Figure of diaper himpull hold cumrag angry is the file "Special/Cutscene/cutscene-diaper-urinal-2aiiA.jpg".
+Figure of diaper himpull hold cumrag shy is the file "Special/Cutscene/cutscene-diaper-urinal-2aiiB.jpg".
+Figure of diaper himpull hold cumrag excited is the file "Special/Cutscene/cutscene-diaper-urinal-2aiiC.jpg".
+Figure of diaper himpull grip urinal angry is the file "Special/Cutscene/cutscene-diaper-urinal-2biA.jpg".
+Figure of diaper himpull grip urinal shy is the file "Special/Cutscene/cutscene-diaper-urinal-2biB.jpg".
+Figure of diaper himpull grip urinal excited is the file "Special/Cutscene/cutscene-diaper-urinal-2biC.jpg".
+Figure of diaper himpull grip cumrag angry is the file "Special/Cutscene/cutscene-diaper-urinal-2biiA.jpg".
+Figure of diaper himpull grip cumrag shy is the file "Special/Cutscene/cutscene-diaper-urinal-2biiB.jpg".
+Figure of diaper himpull grip cumrag excited is the file "Special/Cutscene/cutscene-diaper-urinal-2biiC.jpg".
+Figure of diaper himpull no touch urinal angry is the file "Special/Cutscene/cutscene-diaper-urinal-2ciA.jpg".
+Figure of diaper himpull no touch urinal shy is the file "Special/Cutscene/cutscene-diaper-urinal-2ciB.jpg".
+Figure of diaper himpull no touch urinal excited is the file "Special/Cutscene/cutscene-diaper-urinal-2ciC.jpg".
+Figure of diaper himpull no touch cumrag angry is the file "Special/Cutscene/cutscene-diaper-urinal-2ciiA.jpg".
+Figure of diaper himpull no touch cumrag shy is the file "Special/Cutscene/cutscene-diaper-urinal-2ciiB.jpg".
+Figure of diaper himpull no touch cumrag excited is the file "Special/Cutscene/cutscene-diaper-urinal-2ciiC.jpg".
+
+diaper-invasion-waistband is initially false. [Is the player pulling their waistband forward?]
+diaper-invasion-hold is initially false. [Is the player touching the invading penis?]
+
+To compute diaper urinal image of (M - a monster):
+	if diaper-invasion-waistband is false:
+		if diaper-invasion-hold is false:
+			if the grossness addiction of the player >= 11:
+				cutshow Figure of diaper himpull no touch urinal excited for M;
+			otherwise if the grossness addiction of the player > 4:
+				cutshow Figure of diaper himpull no touch urinal shy for M;
+			otherwise:
+				cutshow Figure of diaper himpull no touch urinal angry for M;
+		otherwise if the player is a nympho and diaper cumrag >= 2:
+			if the grossness addiction of the player >= 11:
+				cutshow Figure of diaper himpull grip urinal excited for M;
+			otherwise if the grossness addiction of the player > 4:
+				cutshow Figure of diaper himpull grip urinal shy for M;
+			otherwise:
+				cutshow Figure of diaper himpull grip urinal angry for M;
+		otherwise:
+			if the grossness addiction of the player >= 11:
+				cutshow Figure of diaper himpull hold urinal excited for M;
+			otherwise if the grossness addiction of the player > 4:
+				cutshow Figure of diaper himpull hold urinal shy for M;
+			otherwise:
+				cutshow Figure of diaper himpull hold urinal angry for M;
+	otherwise:
+		if diaper-invasion-hold is false:
+			if the grossness addiction of the player >= 11:
+				cutshow Figure of diaper selfpull no touch urinal excited for M;
+			otherwise if the grossness addiction of the player > 4:
+				cutshow Figure of diaper selfpull no touch urinal shy for M;
+			otherwise:
+				cutshow Figure of diaper selfpull no touch urinal angry for M;
+		otherwise if the player is a nympho and diaper cumrag >= 2:
+			if the grossness addiction of the player >= 11:
+				cutshow Figure of diaper selfpull grip urinal excited for M;
+			otherwise if the grossness addiction of the player > 4:
+				cutshow Figure of diaper selfpull grip urinal shy for M;
+			otherwise:
+				cutshow Figure of diaper selfpull grip urinal angry for M;
+		otherwise:
+			if the grossness addiction of the player >= 11:
+				cutshow Figure of diaper selfpull hold urinal excited for M;
+			otherwise if the grossness addiction of the player > 4:
+				cutshow Figure of diaper selfpull hold urinal shy for M;
+			otherwise:
+				cutshow Figure of diaper selfpull hold urinal angry for M.
+
 To compute diaper urinal use of (M - a monster):
 	say DiaperUrinalDeclarationFlav of M;
 	say DiaperUrinalDeclaration of M;
-	now player-numerical-response is 2;
-	if the grossness addiction of the player < 11:
+	now player-numerical-response is 4;
+	if the class of the player is not human toilet and (the grossness addiction of the player < 11 or the player is not a nympho):
 		reset multiple choice questions;
-		set numerical response 1 to "Try in vain to stop the inevitable.";
+		set numerical response 1 to "Completely refuse to help [him of M] degrade you like this.";
 		set numerical response 2 to "Pull the waistband of your diaper forward for [NameDesc of M], to make it easier for [him of M] to piss inside it.";
+		set numerical response 3 to "Hold [NameDesc of M][']s [manly-penis] for [him of M].";
+		set numerical response 4 to "Hold [NameDesc of M][']s [manly-penis] AND pull the waistband of your diaper forward for [him of M].";
 		compute multiple choice question;
-	if player-numerical-response is 2:
-		say DiaperUrinalSubmission of M;
-		say DiaperUrinalSubmissionFlav of M;
-		if the diaper addiction of the player < 14, say strongHumiliateReflect;
-		progress quest of human-toilet-quest;
-	otherwise:
+	if player-numerical-response is 1:
+		now diaper-invasion-waistband is false;
+		now diaper-invasion-hold is false;
 		say DiaperUrinalResistance of M;
 		say DiaperUrinalResistanceFlav of M;
+	otherwise if player-numerical-response is 2:
+		now diaper-invasion-waistband is true;
+		now diaper-invasion-hold is false;
+		say DiaperUrinalWaistbandSubmission of M;
+		say DiaperUrinalWaistbandSubmissionFlav of M;
+		if grossness addiction of the player < 11, say strongHumiliateReflect;
+	otherwise if player-numerical-response is 3:
+		now diaper-invasion-waistband is false;
+		now diaper-invasion-hold is true;
+		say DiaperUrinalHoldSubmission of M;
+		say DiaperUrinalHoldSubmissionFlav of M;
+		if the player is not a nympho, say strongHumiliateReflect;
+		SlowSexAddictUp 1;
+	otherwise:
+		now diaper-invasion-waistband is true;
+		now diaper-invasion-hold is true;
+		say DiaperUrinalFullSubmission of M;
+		say DiaperUrinalFullSubmissionFlav of M;
+		if grossness addiction of the player < 11 or the player is not a nympho, say severeHumiliateReflect;
+		SexAddictUp 1;
+		progress quest of human-toilet-quest;
 	compute diaper urinal peeing of M; [this should fill diaper and reset bladder!]
+	compute diaper urinal image of M;
 	let D be a random worn diaper;
 	if D is diaper and the total-soak of D >= the soak-limit of D and M is willing to double diapers:
 		if M is intelligent, say "[speech style of M]'It would seem to me, that your padding clearly isn't thick enough to hold all the pee coming its way.'[roman type][line break]";
 		now M is double-diaper-committed;
 		compute diaper change of M;
-	otherwise if player-numerical-response is 1:
+	otherwise if player-numerical-response < 4:
 		compute diaper urinal resistance punishment check of M;
 	otherwise:
 		satisfy M.
@@ -1389,42 +1496,67 @@ To say DiaperUrinalDeclarationFlav of (M - a monster):
 To say DiaperUrinalDeclaration of (M - a monster):
 	say "[BigNameDesc of M] moves [his of M] genitals to the front of your diaper, clearly intent on using it as [his of M] personal urinal.".
 
-To say DiaperUrinalSubmission of (M - a monster):
+To say DiaperUrinalFullSubmission of (M - a monster):
 	let D be a random worn knickers;
-	say "You [if the diaper addiction of the player >= 14]automatically [end if]pull forward the waistband of your [MediumDesc of D], willingly giving [NameDesc of M] easy access.".
+	say "You [if the grossness addiction of the player >= 11 or the class of the player is human toilet]automatically [end if]pull forward the waistband of your [MediumDesc of D], willingly giving [NameDesc of M] easy access, and then [if the player is a nympho or the class of the player is human toilet]without hesitation [end if]take hold of [his of M] [manly-penis] with your other hand and gently point the tip towards its target.";
+	if the player is a nympho and diaper cumrag >= 2, say "You can't resist gripping [his of M] [manly-penis] tight and giving it a few playful strokes as you hold it.";
+	if the grossness addiction of the player < 11 or the player is not a nympho, say "[variable custom style][one of]Did I really just do that?![or]Hnng... It's like this hood is controlling my actions![or]I can't stop my hands![stopping][roman type][line break]".
 
-To say DiaperUrinalSubmissionFlav of (M - a monster):
-	if M is intelligent, say "[speech style of M]'[one of]There's a good diaper urinal.'[or]I'm glad to see you know your place.'[or]Good [boy of the player].'[cycling][roman type][line break]".
+To say DiaperUrinalFullSubmissionFlav of (M - a monster):
+	if M is intelligent, say "[speech style of M]'[if the player is a nympho][one of]My my, you are an eager one, aren't you?!'[or]Hmm, perhaps my piss isn't the only thing you're hoping I'll squirt in your diaper, hmm?'[or]What a [one of]good[or]naughty[or]filthy[at random] little diaper [boy of the player] you are.'[stopping][otherwise][one of]There's a good diaper urinal.'[or]I'm glad to see you know your place.'[or]Good [boy of the player].'[cycling][end if][roman type][line break]".
+
+To say DiaperUrinalWaistbandSubmission of (M - a monster):
+	let D be a random worn knickers;
+	say "You pull forward the waistband of your [MediumDesc of D], willingly giving [NameDesc of M] easy access.".
+
+To say DiaperUrinalWaistbandSubmissionFlav of (M - a monster):
+	if M is intelligent, say "[speech style of M]'[one of]Not bad, but a proper diaper urinal would be holding my [manly-penis] for me as well[or]You aren't holding my [manly-penis] for me? You clearly still need more training[stopping].'[roman type][line break]".
+
+To say DiaperUrinalHoldSubmission of (M - a monster):
+	say "You take hold of [NameDesc of M][']s [manly-penis] and gently point the tip towards its target. [BigNameDesc of M] uses one hand to pull forward the waistband of your diaper.";
+	if the player is a nympho, say "You can't resist gripping [his of M] [manly-penis] tight and giving it a few playful strokes as you hold it.".
+
+To say DiaperUrinalHoldSubmissionFlav of (M - a monster):
+	if M is intelligent, say "[speech style of M]'[one of]You have two hands, you know. You could be holding your diaper open for me too[or]You aren't holding your diaper open for me as well? You clearly still need more training[stopping].'[roman type][line break]".
 
 To say DiaperUrinalResistance of (M - a monster):
 	let D be a random worn diaper;
-	say "You make it as difficult as possible for [NameDesc of M], but of course in the end there's nothing you can do to stop [him of M] holding you still and using your diaper as a urinal.".
+	say "You keep your arms by your side, refusing to be a part of this. [BigNameDesc of M] uses [his of M] own hand to pull the waistband of your [ShortDesc of D] forward to accept [his of M] [urine].".
 
 To say DiaperUrinalResistanceFlav of (M - a monster):
-	if M is intelligent, say "[speech style of M]'[one of]Aww, does my little diapered bitch[or]Poor thing, do you[or]What's wrong, sweetheart? Do you[or]Oh dear, I think this silly baby[or]If I didn't know any better, I'd guess that this diaper slave does[in random order] [one of]not like[or]not want[or]not enjoy[at random] [one of][his of the player] pamps being used as my toilet[or]the idea of another [man of M] using [his of M] diaper[or]having [his of M] diaper become my urinal[or]becoming a [']diaper urinal['][in random order]? [one of]And yet it's happening anyway! How degrading... You must be feeling pretty fucking pathetic right about now.'[or]Tough shit.'[or]Your little attempts at resistance are so adorable, and so futile.'[or][one of]Too bad!'[or]Tough shit.'[cycling][stopping][roman type][line break]".
+	if M is intelligent, say "[speech style of M]'[one of]Aww, does my little diapered bitch[or]Poor thing, do you[or]What's wrong, sweetheart? Do you[or]Oh dear, I think this silly baby[or]If I didn't know any better, I'd guess that this diaper slave does[in random order] [one of]not like[or]not want[or]not enjoy[at random] [one of][his of the player] pamps being used as my toilet[or]the idea of a [man of M] using [his of M] diaper[or]having [his of M] diaper become my urinal[or]becoming a [']diaper urinal['][in random order]? [one of]And yet it's happening anyway! How degrading... You must be feeling pretty fucking pathetic right about now.'[or]Tough shit.'[or]Your little show of resistance is so adorable, and so futile.'[or][one of]Too bad!'[or]Tough shit.'[cycling][stopping][roman type][line break]".
 
 To compute diaper urinal peeing of (M - a monster):
 	let D be a random worn knickers;
 	say DiaperUrinalPeeFlav of M;
 	AnnouncedExpel urine on D by (the bladder of M / 100);
 	now the bladder of M is 0;
+	now M is inseminating D;
 	GrossOut 4 with reason "The sensation of being used as a diaper urinal makes you shudder," and sensation "feeling".
 
 To say DiaperUrinalPeeFlav of (M - a monster):
-	say "[BigNameDesc of M] [one of]lets loose[or]releases [his of M] hold on [his of M] bladder[or]squeezes [his of M] bladder muscles[at random] and promptly begins to [one of]spray[or]soak[or]fill[at random] your padding with [his of M] hot wet [urine]. [one of]Most of [his of M] [urine] lands on your mons pubis, before trickling down into your diaper, leaving your skin soaked in [his of M] golden gift.[or][big he of M][']s essentially pissing directly onto your [genitals]![or]The sensation of [his of M] warm [urine] spreading throughout your padding feels [if the diaper addiction of the player >= 14]delightfully[otherwise]degrading and[end if] invasive.[then at random]".
+	say "[BigNameDesc of M] [one of]lets loose[or]releases [his of M] hold on [his of M] bladder[or]squeezes [his of M] bladder muscles[at random] and promptly begins to [one of]spray[or]soak[or]fill[at random] your padding with [his of M] hot wet [urine]. [one of]Most of [his of M] [urine] lands on your mons pubis, before trickling down into your diaper, leaving your skin soaked in [his of M] golden gift.[or][big he of M][']s essentially pissing directly onto your [genitals]![or]The sensation of [his of M] warm [urine] spreading throughout your padding feels [if the grossness addiction of the player >= 11]delightfully[otherwise]degrading and[end if] invasive.[then at random]".
 
 To compute diaper urinal resistance punishment check of (M - a monster):
-	if the player is getting unlucky:
-		compute diaper urinal resistance punishment of M;
+	if diaper-invasion-waistband is false and diaper-invasion-hold is false:
+		if the player is not getting lucky:
+			compute diaper urinal resistance punishment of M;
+		otherwise:
+			say "[speech style of M]'[one of]I hope by next time, you will have learned your place, and will accept your role as a diaper urinal obediently.'[or]You'd better learn your place soon, or there will be consequences...'[stopping][roman type][line break]";
+			say "You feel like you got particularly lucky to get away without any further punishment![line break][variable custom style]Phew.[roman type][line break]";
+			bore M;
 	otherwise:
-		say "[speech style of M]'[one of]I hope by next time, you will have learned your place, and will accept your role as a diaper urinal obediently.'[or]You'd better learn your place soon, or there will be consequences...'[stopping][roman type][line break]";
-		bore M;
+		if the player is getting unlucky:
+			compute diaper urinal resistance punishment of M;
+		otherwise:
+			say "[speech style of M]'[one of]I hope by next time, you will have improved on your skills.'[or]You'd better learn how to be a perfect diaper urinal soon, or there will be consequences...'[stopping][roman type][line break]";
+			bore M;
 	if M is not interested and M is in the location of the player:
 		say "[BigNameDesc of M] turns and leaves you alone.".
 
 To compute diaper urinal resistance punishment of (M - a monster):
 	let D be a random worn knickers;
-	if a random number between 1 and 2 is 1 and M is intelligent:
+	if a random number between 1 and 2 is 1 and M is intelligent and D is not glued: [failsafe - shouldn't have been glued in the first place, since you can't pee in a glued diaper]
 		say "[speech style of M]'Since you're clearly not used to being a diaper urinal yet, I think you need to enjoy this feeling for some time.'[roman type][line break][BigNameDesc of M] pulls out a large tube of glue! [GotUnluckyFlav]";
 		say "You try to pull away, but it's no use. Before you can do anything to stop [him of M], [NameDesc of M] has filled the inside of your [ShortDesc of D] with glue! You're not going to be able to remove it until the glue has degraded... At least, not without it really hurting!";
 		gluify D;
@@ -1436,41 +1568,94 @@ To compute diaper urinal resistance punishment of (M - a monster):
 
 Part - Diaper Cumrag Use
 
+To compute diaper cumrag image of (M - a monster):
+	if diaper-invasion-waistband is false:
+		if diaper-invasion-hold is false:
+			if the grossness addiction of the player >= 11:
+				cutshow Figure of diaper himpull no touch cumrag excited for M;
+			otherwise if the grossness addiction of the player > 5:
+				cutshow Figure of diaper himpull no touch cumrag shy for M;
+			otherwise:
+				cutshow Figure of diaper himpull no touch cumrag angry for M;
+		otherwise if the player is a nympho:
+			if the grossness addiction of the player >= 11:
+				cutshow Figure of diaper himpull grip cumrag excited for M;
+			otherwise if the grossness addiction of the player > 5:
+				cutshow Figure of diaper himpull grip cumrag shy for M;
+			otherwise:
+				cutshow Figure of diaper himpull grip cumrag angry for M;
+		otherwise:
+			if the grossness addiction of the player >= 11:
+				cutshow Figure of diaper himpull hold cumrag excited for M;
+			otherwise if the grossness addiction of the player > 5:
+				cutshow Figure of diaper himpull hold cumrag shy for M;
+			otherwise:
+				cutshow Figure of diaper himpull hold cumrag angry for M;
+	otherwise:
+		if diaper-invasion-hold is false:
+			if the grossness addiction of the player >= 11:
+				cutshow Figure of diaper selfpull no touch cumrag excited for M;
+			otherwise if the grossness addiction of the player > 5:
+				cutshow Figure of diaper selfpull no touch cumrag shy for M;
+			otherwise:
+				cutshow Figure of diaper selfpull no touch cumrag angry for M;
+		otherwise if the player is a nympho:
+			if the grossness addiction of the player >= 11:
+				cutshow Figure of diaper selfpull grip cumrag excited for M;
+			otherwise if the grossness addiction of the player > 5:
+				cutshow Figure of diaper selfpull grip cumrag shy for M;
+			otherwise:
+				cutshow Figure of diaper selfpull grip cumrag angry for M;
+		otherwise:
+			if the grossness addiction of the player >= 11:
+				cutshow Figure of diaper selfpull hold cumrag excited for M;
+			otherwise if the grossness addiction of the player > 5:
+				cutshow Figure of diaper selfpull hold cumrag shy for M;
+			otherwise:
+				cutshow Figure of diaper selfpull hold cumrag angry for M.
+
 To compute diaper cumrag use of (M - a monster):
 	say DiaperCumragDeclarationFlav of M;
 	say DiaperCumragDeclaration of M;
-	now player-numerical-response is 2;
-	if the grossness addiction of the player < 11 or (diaper cumrag >= 2 and the player is a pervert):
+	now player-numerical-response is 4;
+	if the grossness addiction of the player < 11 or the player is not a nympho:
 		reset multiple choice questions;
-		if the grossness addiction of the player < 11, set next numerical response to "Try your best to stop [him of M] from getting [his of M] [semen] inside your diaper.";
-		otherwise say "[one of][bold type]You now enjoy the sensation of [men of male-m] ejaculating in your diaper, so you can no longer choose to fight against it.[roman type][line break][or][stopping]";
-		set next numerical response to "Pull the waistband of your diaper forward for [NameDesc of M], to make it easier for [him of M] to cum inside it.";
-		if diaper cumrag >= 2 and the player is a pervert, set next numerical response to "Do the dirty work for [NameDesc of M], masturbating [him of M] with your hands until [he of M] empties [his of M] balls into your diaper.";
+		set numerical response 1 to "Completely refuse to help [him of M] get [his of M] [semen] inside your diaper.";
+		set numerical response 2 to "Pull the waistband of your diaper forward for [NameDesc of M], to make it easier for [him of M] to cum inside it.";
+		if diaper cumrag >= 2 and the player is a pervert:
+			set numerical response 3 to "Do the dirty work for [NameDesc of M], masturbating [him of M] with your hands until [he of M] empties [his of M] balls into your diaper.";
+			set numerical response 4 to "Masturbate [NameDesc of M] AND pull the waistband of your diaper forward for [him of M].";
 		compute multiple choice question;
-	if the chosen numerical response matches the text "waistband":
-		say DiaperCumragSubmission of M;
-		say DiaperCumragSubmissionFlav of M;
-		say strongHumiliateReflect;
-		compute diaper cumrag ejaculating of M;
-		if watersports fetish is 0 and (diaper cumrag < 2 or the player is not a pervert), progress quest of human-toilet-quest;
-		satisfy M;
-	otherwise if the chosen numerical response matches the text "dirty":
-		say DiaperCumragAssistance of M;
-		say DiaperCumragAssistanceFlav of M;
-		say severeHumiliateReflect;
-		compute diaper cumrag ejaculating of M;
-		if watersports fetish is 0, progress quest of human-toilet-quest;
-		FavourUp M;
-		if the player is getting lucky, compute default happy reward of M;
-		satisfy M;
-	otherwise if the player is getting lucky:
-		say DiaperCumragResistanceSuccess of M;
-		say DiaperCumragResistanceSuccessFlav of M;
-		bore M;
+	if player-numerical-response is 4 and diaper cumrag >= 2:
+		now diaper-invasion-waistband is true;
+		now diaper-invasion-hold is true;
+		say DiaperCumragFullSubmission of M;
+		say DiaperCumragFullSubmissionFlav of M;
+		if grossness addiction of the player < 11 or the player is not a nympho, say severeHumiliateReflect;
+		SexAddictUp 1;
+		progress quest of human-toilet-quest;
+	otherwise if player-numerical-response is 3:
+		now diaper-invasion-waistband is false;
+		now diaper-invasion-hold is true;
+		say DiaperCumragHoldSubmission of M;
+		say DiaperCumragHoldSubmissionFlav of M;
+		if the player is not a nympho, say strongHumiliateReflect;
+		SlowSexAddictUp 1;
+	otherwise if player-numerical-response >= 2:
+		now diaper-invasion-waistband is true;
+		now diaper-invasion-hold is false;
+		say DiaperCumragWaistbandSubmission of M;
+		say DiaperCumragWaistbandSubmissionFlav of M;
+		if grossness addiction of the player < 11, say strongHumiliateReflect;
 	otherwise:
 		say DiaperCumragResistance of M;
 		say DiaperCumragResistanceFlav of M;
-		compute diaper cumrag ejaculating of M;
+	say DiaperCumragEjaculationFlav of M;
+	compute diaper cumrag ejaculating of M;
+	compute diaper cumrag image of M;
+	if (diaper cumrag >= 2 and player-numerical-response < 4) or player-numerical-response < 2:
+		compute diaper cumrag resistance punishment check of M;
+	otherwise:
 		satisfy M.
 
 
@@ -1480,43 +1665,73 @@ To say DiaperCumragDeclarationFlav of (M - a monster):
 To say DiaperCumragDeclaration of (M - a monster):
 	say "[BigNameDesc of M] begins masturbating [his of M] [manly-penis], clearly intent on [one of]asserting [his of M] dominance by cumming inside your diaper[or]using your diaper's padding as [his of M] cumrag[cycling]!".
 
-To say DiaperCumragSubmission of (M - a monster):
+To say DiaperCumragFullSubmission of (M - a monster):
 	let D be a random worn knickers;
-	say "You [if the grossness addiction of the player >= 11]automatically [end if]pull forward the waistband of your [MediumDesc of D], willingly giving [NameDesc of M] easy access.".
+	say "You [if the grossness addiction of the player >= 11 or the class of the player is human toilet]automatically [end if]pull forward the waistband of your [MediumDesc of D], willingly giving [NameDesc of M] easy access, and then [if the player is a nympho or the class of the player is human toilet]without hesitation [end if]take hold of [his of M] [manly-penis] with your other hand and masturbate it [if the player is a nympho]fervently[otherwise]tenderly[end if].".
 
-To say DiaperCumragSubmissionFlav of (M - a monster):
+To say DiaperCumragFullSubmissionFlav of (M - a monster):
 	if M is intelligent, say "[speech style of M]'[one of]There's a good diaper cumrag.'[or]Good [boy of the player].'[cycling][roman type][line break]".
 
-To say DiaperCumragAssistance of (M - a monster):
-	let D be a random worn knickers;
-	say "You [if the grossness addiction of the player >= 11]automatically [end if]pull forward the waistband of your [MediumDesc of D], willingly giving [NameDesc of M] easy access. You then offer [NameDesc of M] your hand, and [he of M] allows you to finish the job for [him of M], pumping [his of M] meat for [him of M] while positioning it so that the tip is pointing down into your diaper.".
+To say DiaperCumragHoldSubmission of (M - a monster):
+	say "You take hold of [NameDesc of M][']s [manly-penis] and masturbate it [if the player is a nympho]fervently[otherwise]tenderly[end if]. [BigNameDesc of M] uses one hand to pull forward the waistband of your diaper.".
 
-To say DiaperCumragAssistanceFlav of (M - a monster):
-	if M is intelligent, say "[speech style of M]'[one of]Haha, you're that eager for me to blow my load into your Pampies, are you? You're looking forward to feeling my sticky seed against your skin as you waddle around, are you?'[or]Yes, yes, just like that!'[cycling][roman type][line break]".
+To say DiaperCumragHoldSubmissionFlav of (M - a monster):
+	say DiaperUrinalHoldSubmissionFlav of M.
 
-To say DiaperCumragResistanceSuccess of (M - a monster):
-	let D be a random worn diaper;
-	say "You make it as difficult as possible for [NameDesc of M]. And, fortunately, just as [he of M] starts orgasming and trying to shove [his of M] [manly-penis] inside the front of your [ShortDesc of D], you manage to throw your hips to the side, and [his of M] spills onto the ground instead. [GotLuckyFlav]".
+To say DiaperCumragWaistbandSubmission of (M - a monster):
+	say DiaperUrinalWaistbandSubmission of M.
 
-To say DiaperCumragResistanceSuccessFlav of (M - a monster):
-	say "[speech style of M]'Useless bitch! Cumrags aren't supposed to move! Ugh!'[roman type][line break]Fortunately, [he of M] seems too tired from [his of M] orgasm to decide to punish you further right now. [big he of M] just begins to stomp off in a huff.".
+To say DiaperCumragWaistbandSubmissionFlav of (M - a monster):
+	if M is intelligent and diaper cumrag >= 2, say "[speech style of M]'[one of]Too scared to touch it, slut?'[or]You won't touch it? You clearly still need more training.'[stopping][roman type][line break]";
+	otherwise say DiaperCumragFullSubmissionFlav of M.
 
 To say DiaperCumragResistance of (M - a monster):
 	let D be a random worn diaper;
-	say "You make it as difficult as possible for [NameDesc of M], but in the end there's nothing you can do to stop [him of M] holding you in place and shoving [his of M] [manly-penis] inside the front of your [ShortDesc of D].".
+	say "You keep your arms by your side, refusing to be a part of this. [BigNameDesc of M] uses [his of M] own hand to pull the waistband of your [ShortDesc of D] forward and masturbates quickly, until [he of M] spurts [his of M] thick, warm [semen] onto your mons pubis and into your padding.".
 
 To say DiaperCumragResistanceFlav of (M - a monster):
-	say "".
+	if M is intelligent, say "[speech style of M]'[one of]Aww, does my little diapered bitch[or]Poor thing, do you[or]What's wrong, sweetheart? Do you[or]Oh dear, I think this silly baby[or]If I didn't know any better, I'd guess that this diaper slave does[in random order] [one of]not like[or]not want[or]not enjoy[at random] [one of]the idea of a [man of M] using [his of M] diaper as a cumrag[or]having [his of M] diaper become my cumrag[or]letting me masturbate into [his of M] diaper[in random order]? [one of]And yet it's happening anyway! How degrading... You must be feeling pretty fucking pathetic right about now.'[or]Tough shit.'[or]Your little show of resistance is so adorable, and so futile.'[or][one of]Too bad!'[or]Tough shit.'[cycling][stopping][roman type][line break]".
 
 To compute diaper cumrag ejaculating of (M - a monster):
 	let D be a random worn knickers;
 	say DiaperCumragEjaculationFlav of M;
 	AnnouncedExpel semen on D by the semen load of M;
+	now M is inseminating D;
 	GrossOut 5 with reason "The sensation of being used as a diaper cumrag makes you shudder," and sensation "[one of]sticky[or]slimy[cycling] feeling".
 
 To say DiaperCumragEjaculationFlav of (M - a monster):
 	if M is intelligent, say "[speech style of M]'[one of]Yes! Cumming! I'm cumming in your diaper, you filthy fucking cumdump!'[or]Uhn, yes, get ready to get your diaper filled with my cum, my little padded pet!'[cycling][roman type][line break]";
 	say "[BigNameDesc of M][']s ropes of hot sticky [semen] splash against your mons pubis and paint your [genitals], and more of it shoots directly into your padding, leaving you with a gross sticky sensation. You're now crawling around with [if the player is sexed male and transGender is 0]another[otherwise]this[end if] [man of M][']s [semen] oozing against your [genitals].".
+
+
+To compute diaper cumrag resistance punishment check of (M - a monster):
+	if diaper-invasion-waistband is false and diaper-invasion-hold is false:
+		if the player is not getting lucky:
+			compute diaper cumrag resistance punishment of M;
+		otherwise:
+			say "[speech style of M]'[one of]I hope by next time, you will have learned your place, and will accept your role as a diaper cumrag obediently.'[or]You'd better learn your place soon, or there will be consequences...'[stopping][roman type][line break]";
+			say "You feel like you got particularly lucky to get away without any further punishment![line break][variable custom style]Phew.[roman type][line break]";
+			bore M;
+	otherwise:
+		if the player is getting unlucky:
+			compute diaper cumrag resistance punishment of M;
+		otherwise:
+			say "[speech style of M]'[one of]I hope by next time, you will have improved on your skills.'[or]You'd better learn how to be a perfect diaper cumrag soon, or there will be consequences...'[stopping][roman type][line break]";
+			bore M;
+	if M is not interested and M is in the location of the player:
+		say "[BigNameDesc of M] turns and leaves you alone.".
+
+To compute diaper cumrag resistance punishment of (M - a monster):
+	let D be a random worn knickers;
+	if a random number between 1 and 2 is 1 and M is intelligent and D is not glued: [failsafe - shouldn't have been glued in the first place, since you can't pee in a glued diaper]
+		say "[speech style of M]'Since you're clearly not used to being a diaper cumrag yet, I think you need to enjoy this feeling for some time.'[roman type][line break][BigNameDesc of M] pulls out a large tube of glue! [GotUnluckyFlav]";
+		say "You try to pull away, but it's no use. Before you can do anything to stop [him of M], [NameDesc of M] has filled the inside of your [ShortDesc of D] with glue! You're not going to be able to remove it until the glue has degraded... At least, not without it really hurting!";
+		gluify D;
+		satisfy M;
+	otherwise:
+		say "Since you didn't let [him of M] use you obediently, it seems like [NameDesc of M] has decided [he of M] isn't done with you yet! [GotUnluckyFlav]";
+		now M is double-diaper-committed; [if they go for a diaper change, it'll be an extra diaper]
+		anger M.
 
 
 Diaper Events ends here.

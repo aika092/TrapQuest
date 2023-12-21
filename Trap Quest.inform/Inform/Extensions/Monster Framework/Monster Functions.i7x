@@ -145,6 +145,52 @@ To reset (M - a monster): [We do this when the player faints to all monsters, ev
 To unique reset (M - a monster):
 	now the blue-balls of M is 0.
 
+To compute generic item gain of (M - a monster):
+	let itemSelection be a list of things;
+	let itemOwned be false;
+	if diaper lover > 0 or bukkake fetish > 0:
+		repeat with C running through the tradableItems of M:
+			if C is pocketwipes, now itemOwned is true;
+		if itemOwned is false:
+			let T be a random off-stage pocketwipes;
+			if T is a thing, add T to itemSelection;
+	now itemOwned is false;
+	if diaper quest is 0:
+		repeat with C running through the tradableItems of M:
+			if C is lubricant, now itemOwned is true;
+		if itemOwned is false:
+			let T be a random off-stage lubricant;
+			if T is a thing, add T to itemSelection;
+	now itemOwned is false;
+	repeat with C running through the tradableItems of M:
+		if C is electric fan, now itemOwned is true;
+	if itemOwned is false:
+		let T be a random off-stage electric fan;
+		if T is a thing, add T to itemSelection;
+	now itemOwned is false;
+	repeat with C running through the tradableItems of M:
+		if C is bandage, now itemOwned is true;
+	if itemOwned is false:
+		let T be a random off-stage bandage;
+		if T is a thing, add T to itemSelection;
+	now itemOwned is false;
+	repeat with C running through the tradableItems of M:
+		if C is alchemy product, now itemOwned is true;
+	if itemOwned is false:
+		let T be a random off-stage shop-eligible alchemy product;
+		if T is a thing, add T to itemSelection;
+	now itemOwned is false;
+	repeat with C running through the tradableItems of M:
+		if C is snack, now itemOwned is true;
+	if itemOwned is false:
+		let T be a random off-stage snack;
+		if T is a thing, add T to itemSelection;
+	let T be a random off-stage eligible trinket;
+	if T is a thing, add T to itemSelection;
+	if the number of entries in itemSelection > 0:
+		sort itemSelection in random order;
+		add entry 1 of itemSelection to the tradableItems of M, if absent.
+
 To loot (M - a monster):
 	let X be nothing;
 	sort the taxableItems of M in random order;

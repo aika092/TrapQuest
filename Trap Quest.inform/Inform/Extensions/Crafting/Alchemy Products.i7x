@@ -152,7 +152,7 @@ To decide what number is the original price of (C - a smoke bomb):
 
 Section 2 - Water Bomb
 
-water-bomb is a bomb. water-bomb has a number called cum-known. The text-shortcut of water-bomb is "wbmb". Understand "water" as water-bomb when the cum-known of water-bomb is 0 and the number of water-body-scenery in the location of the player is 0. Understand "cum" as water-bomb when the cum-known of water-bomb is not 0.
+water-bomb is a bomb. water-bomb has a number called cum-known. The text-shortcut of water-bomb is "wbmb". Understand "water" as water-bomb when the cum-known of water-bomb is 0 and the number of water-body-scenery in the location of the player is 0. Understand "cum" as water-bomb when the cum-known of water-bomb is 1. Understand "piss" as water-bomb when the cum-known of water-bomb is 2.
 
 Definition: water-bomb is semen themed:
 	if the cum-known of water-bomb is 1, decide yes;
@@ -163,10 +163,10 @@ Definition: water-bomb is fetish appropriate:
 Definition: water-bomb is combat-bomb: decide yes.
 
 To say MediumDesc of (B - water-bomb):
-	say "[if the cum-known of water-bomb is 0]water[otherwise]cum[end if] bomb".
+	say "[if the cum-known of water-bomb is 0]water[otherwise if the cum-known of water-bomb is 2]piss[otherwise]cum[end if] bomb".
 
 To say ExamineDesc of (B - water-bomb):
-	say "A large thin balloon containing a large, heavy amount of [if the cum-known of water-bomb is 0]a cloudy liquid[otherwise][semen][end if]. ";
+	say "A large thin balloon containing a large, heavy amount of [if the cum-known of water-bomb is 0]a cloudy liquid[otherwise if the cum-known of water-bomb is 2][urine][otherwise][semen][end if]. ";
 	if B is sure and B is cursed, say "Since it is cursed, throwing it at an enemy will probably do something bad. Perhaps you could find some other use for it, for example gifting.";
 	otherwise say "Throwing it at an enemy should hopefully blind or otherwise incapacitate them.".
 
@@ -174,7 +174,8 @@ To decide which number is the alchemy key of (A - water-bomb):
 	decide on 30.
 
 To decide which number is the outrage of (A - water-bomb):
-	decide on 20 * the cum-known of water-bomb.
+	if the cum-known of water-bomb is 0, decide on 0;
+	decide on 20.
 
 To decide which figure-name is the examine-image of (V - water-bomb):
 	decide on the figure of water bomb.
@@ -187,12 +188,13 @@ Check throwing water-bomb at a monster:
 		if the cum-known of water-bomb is 0, say "[variable custom style]Wait a minute, this isn't water, it's [semen]![roman type][line break]";
 		if water-bomb is cursed, appropriate-cutscene-display figure of water bomb cutscene 2;
 		otherwise appropriate-cutscene-display figure of water bomb cutscene 1;
-		CumFaceUp 20;
+		if the cum-known of water-bomb is 2, AnnouncedSquirt urine on face by 20;
+		otherwise AnnouncedSquirt semen on face by 20;
 	otherwise:
 		if fire theme bonus > a random number between 0 and 1, now the noun is blessed;
 		say "You launch the [water-bomb] at [NameDesc of the second noun], which hits [him of the second noun] right in [his of the second noun] [MonsterFaceDesc of the second noun]! The creamy viscous liquid goes everywhere, blinding [him of the second noun][if the cum-known of water-bomb is 0]. That's not water... it's definitely [semen][end if]!";
 		if the blind-status of the second noun is -1:
-			say "[big he of the second noun] doesn't seem to have any problems detecting where you are through the [semen]. [big he of the second noun] must be immune to being blinded!";
+			say "[big he of the second noun] doesn't seem to have any problems detecting where you are through the [if the cum-known of water-bomb is 2][urine][otherwise][semen][end if]. [big he of the second noun] must be immune to being blinded!";
 		otherwise if the blind-status of the second noun > 0:
 			say "[big he of the second noun] seems to be even more blinded than [he of the second noun] was before you threw it!";
 		if the blind-status of the second noun is not -1:
@@ -204,7 +206,7 @@ Check throwing water-bomb at a monster:
 	now the cum-known of water-bomb is 1 instead;
 	do nothing instead.
 
-Check TQEating water-bomb when the cum-known of water-bomb > 0:
+Check TQEating water-bomb when the cum-known of water-bomb is 1:
 	let BL be a random off-stage bag lunch;
 	if BL is bag lunch:
 		now BL is in Holding Pen;
@@ -1401,25 +1403,23 @@ Check SalveRubbing:
 		if the player is wrist bound behind, say "You can't reach your chest to apply the salve whilst your wrists are bound behind you." instead;
 		if there is a worn bra:
 			if the support of a random worn bra > 0 and a random worn bra is actually breast covering, say "You would need to remove your [printed name of random worn bra] first." instead; [A support of 0 means the bra is cupless]
-		if there is a worn actually breast covering overdress, say "You would need to remove your [printed name of random worn overdress] first." instead;
+		if there is a worn actually breast covering potentially-partially-top-layer-concealing overdress, say "You would need to remove your [printed name of random worn overdress] first." instead;
 	otherwise if the second noun is belly:
 		if there is a worn true salve covering belly:
 			say "You already have the [printed name of random worn true salve covering belly] covering your belly!" instead;
 		if the player is wrist bound behind, say "You can't reach your belly to apply the salve whilst your wrists are bound behind you." instead;
-		if there is a worn corset:
-			say "You would need to remove your [printed name of random worn corset] first." instead;
-		if there is a worn overdress:
-			if a random worn overdress is belly covering, say "You would need to remove your [printed name of random worn overdress] first." instead;
+		if there is a worn potentially-partially-mid-layer-concealing corset, say "You would need to remove your [printed name of random worn corset] first." instead;
+		if there is a worn potentially-partially-mid-layer-concealing overdress, say "You would need to remove your [printed name of random worn overdress] first." instead;
 	otherwise if the second noun is hips:
-		let O be a random worn crotch covering overdress;
+		let O be a random worn crotch covering potentially-partially-bottom-layer-concealing overdress;
 		let K be a random worn knickers;
 		if there is a worn true salve covering hips:
 			say "You already have the [printed name of random worn true salve covering hips] covering your ass!" instead;
 		if the player is wrist bound in front, say "You can't really reach your butt properly to apply the salve whilst your wrists are bound in front of you." instead;
 		if K is clothing:
-			if the armour of K > 6, say "Your [printed name of K] are covering too much of your butt, you would need to remove them first." instead;
+			if the assModesty of K > 6, say "Your [printed name of K] is covering too much of your butt, you would need to remove them first." instead;
 		if O is clothing:
-			unless O is no protection, say "Your [printed name of O] is covering too much of your butt, you would need to [if O is displacable]displace[otherwise]remove[end if] it first." instead;
+			if the assModesty of O > 6, say "Your [printed name of O] is covering too much of your butt, you would need to [if O is displacable]displace[otherwise]remove[end if] it first." instead;
 	otherwise if the second noun is asshole:
 		if there is a worn true salve covering asshole:
 			say "You already have the [printed name of random worn true salve covering asshole] covering your [asshole]!" instead;

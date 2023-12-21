@@ -193,9 +193,10 @@ To compute ghost hatch of (E - an egg):
 		if L is slimeball:
 			set up L;
 			if flav-said is 0:
-				if E is held or E is in the location of the player, say "[BigNameDesc of E] [if E is small egg]shudders and morphs into an animated blob of slime[otherwise if E is medium egg]cracks open, revealing two animated blobs of slime, that begin to hop about[otherwise]cracks open, revealing four animated blobs of slime, that begin to hop about.[one of][line break][variable custom style]What in the world?[roman type][line break][or][stopping]";
+				if E is held or E is in the location of the player, say "[BigNameDesc of E] [if E is small egg]shudders and morphs into an animated blob of slime that begins to hop about[otherwise if E is medium egg]cracks open, revealing two animated blobs of slime, that begin to hop about[otherwise]cracks open, revealing four animated blobs of slime, that begin to hop about[end if].[one of][line break][variable custom style]What in the world?[roman type][line break][or][stopping]";
 				now flav-said is 1;
 			now L is in the location of E;
+			if E is small egg, destroy E; [prevents flavour below]
 	if E is held or E is in the location of the player, say "[BigNameDesc of E] fizzles into nothingness.";
 	destroy E.
 

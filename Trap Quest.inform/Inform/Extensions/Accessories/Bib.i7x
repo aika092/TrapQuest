@@ -50,7 +50,7 @@ pumpkin bib is a bib. pumpkin bib is plastic. pumpkin bib is unique. The printed
 
 Figure of pumpkin bib is the file "Items/Accessories/Neck/bib2.png".
 
-To decide which figure-name is clothing-image of (C - a bib):
+To decide which figure-name is clothing-image of (C - a pumpkin bib):
 	decide on figure of pumpkin bib.
 
 Definition: pumpkin bib is orange themed: decide yes.

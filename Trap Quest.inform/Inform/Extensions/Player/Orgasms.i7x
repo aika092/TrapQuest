@@ -297,7 +297,7 @@ The condom of kings ejaculation rule is listed last in the ejaculation rules.
 This is the chastity cage ejaculation rule:
 	if there is a worn chastity cage:
 		let P be a random bottom level pee protection clothing worn by the player;
-		say "[one of]Your [player-penis] quivers pitifully as a stream of white [semen] dribbles out of your plastic chastity cage[or]Your [player-penis] twitches as hot [semen] leaks out of the hole in your plastic chastity cage[or]You can feel your [player-penis] twitching as warm [semen] streams out of your little plastic cage[in random order], [if P is clothing]and into your [printed name of P].[otherwise if the player is possessing a scrotum]You shiver as your load trickles down your balls and over your skin.[otherwise]and into a shameful pool on the ground.[end if]";[this only happens from anal orgasms, so we can call it shameful!]
+		say "[one of]Your [player-penis] quivers pitifully as a stream of white [semen] dribbles out of your plastic chastity cage[or]Your [player-penis] twitches as hot [semen] leaks out of the hole in your plastic chastity cage[or]You can feel your [player-penis] twitching as warm [semen] streams out of your little plastic cage[in random order], [if P is clothing]and into your [printed name of P].[otherwise if the player is possessing a scrotum]causing you to shiver as your load trickles down your balls and over your skin.[otherwise]and into a shameful pool on the ground.[end if]";[this only happens from anal orgasms, so we can call it shameful!]
 		compute ejaculation;
 		rule succeeds.
 The chastity cage ejaculation rule is listed last in the ejaculation rules.
@@ -381,17 +381,19 @@ To decide which number is the semen load of (Y - yourself):
 	decide on N.
 
 To compute ejaculation:
-	let P be a random bottom level pee protection clothing worn by the player;
-	if P is clothing:
-		let A be the semen load of the player;
-		if penis is exposed and A > 1:
-			UnannouncedSquirt semen on belly by 1;
-			AnnouncedExpel semen on P by (A - 1);
-		otherwise:
-			AnnouncedExpel semen on P by A;
+	if players-dick-is-detached > 0:
+		compute maybe detached dick ejaculation; [#LXorDD]
 	otherwise:
-		SemenPuddleUp the size of penis;
-	compute maybe detached dick ejaculation. [#LXorDD]
+		let P be a random bottom level pee protection clothing worn by the player;
+		if P is clothing:
+			let A be the semen load of the player;
+			if penis is exposed and A > 1:
+				UnannouncedSquirt semen on belly by 1;
+				AnnouncedExpel semen on P by (A - 1);
+			otherwise:
+				AnnouncedExpel semen on P by A;
+		otherwise:
+			SemenPuddleUp the size of penis.
 
 This is the penis softens after ejaculation rule:
 	if penis is penis-erect:
@@ -418,24 +420,22 @@ This is the orgasm stops masturbation resolution rule:
 The orgasm stops masturbation resolution rule is listed last in the orgasm resolution rules.
 
 This is the living belt of sturdiness orgasm resolution rule:
-	if the living belt of sturdiness is thrusting and the buildup of the living belt of sturdiness > 0:
+	if the living belt of sturdiness is penetrating a fuckhole and the player is upright and the buildup of the living belt of sturdiness > 0:
 		if the living belt of sturdiness is not penetrating vagina: [must be penetrating something if it's thrusting, so it must be in the butt!]
 			say "The metallic tentacle in your [asshole] [one of]seems to react[or]reacts[stopping] to your orgasm, pulsing rhythmically as it thrusts with ever increasing intensity. You can feel it [if the player is sexed male]kneading your prostate, milking you for every last drop of cum[otherwise]twisting around inside you, eking out every last bit of pleasure[end if] as the tendril begins to bulge, and the loop around your waist grows progressively tighter and hotter against your skin. [one of][if the raw sex addiction of the player < 7][line break][first custom style]Wait, what's happen-[otherwise if the raw sex addiction of the player < 14][line break][variable custom style]Why does it feel like it's going to-[otherwise][line break][second custom style]Mmm, the only thing missing is a big fat load right up my-[end if][or][if the raw sex addiction of the player < 7][first custom style]Oh no! It's going to-[otherwise if the raw sex addiction of the player < 14][variable custom style]It's going to cum insi-[otherwise][second custom style]I can feel it! It's gonna cum insi-[end if][stopping][roman type][line break]The tentacle jams itself in as far as it can go, throbbing violently as it [if the buildup of the living belt of sturdiness < 3]fills your [asshole] with several spurts of alien [semen][otherwise if the buildup of the living belt of sturdiness < 6]unleashes several powerful spurts of alien [semen] directly into your [asshole][otherwise]torrents an obscene amount of alien [semen] directly into your [asshole][end if]!";
 		otherwise if the living belt of sturdiness is not penetrating asshole:
 			say "The metallic tentacle in your [vagina] [one of]seems to react[or]reacts[stopping] to your orgasm, pulsing rhythmically as it thrusts with ever increasing intensity. You can feel it twisting around inside you, massaging your G-spot and jostling your clit as the tentacle begins to bulge, and the loop around your waist grows progressively tighter, and hotter, against your skin. [one of][if the raw sex addiction of the player < 7][line break][first custom style]Wait, what's happen-[otherwise if the raw sex addiction of the player < 14][line break][variable custom style]Why does it feel like it's going to-[otherwise][line break][second custom style]Mmm, the only thing missing is a fat wad in my-[end if][or][if the raw sex addiction of the player < 7][first custom style]Oh no! It's going to-[otherwise if the raw sex addiction of the player < 14][variable custom style]It's going to cum insi-[otherwise][second custom style]I can feel it! It's gonna creampie-[end if][stopping][roman type][line break]The tentacle jams itself in as far as it can go, throbbing violently as it [if the buildup of the living belt of sturdiness < 3]fills your [vagina] with several spurts of alien [semen][otherwise if the buildup of the living belt of sturdiness < 6]unleashes several powerful spurts of alien [semen] directly into your [vagina][otherwise]torrents an obscene amount of alien [semen] directly into your [vagina][end if]!";[could probably be differentiated a bit more.]
 		otherwise:
 			say "The metallic tentacles in your holes [one of]seem to react[or]react[stopping] to your orgasm, pulsing rhythmically as begin picking up speed. You can feel them twisting around inside you, elongating and intensifying your orgasm as a fast moving wave of warmth spreads from the loop around your waist and travels toward the tentacles buried in your [vagina] and [asshole]. [one of][if the raw sex addiction of the player < 7][line break][first custom style]Wait, what's happen-[otherwise if the raw sex addiction of the player < 14][line break][variable custom style]Why does it feel like they're about to-[otherwise][line break][second custom style]Mmm, the only thing missing is a double-[end if][or][if the raw sex addiction of the player < 7][first custom style]Oh no! They're about to-[otherwise if the raw sex addiction of the player < 14][variable custom style]They're going to cum insi-[otherwise][second custom style]I can feel it! They're gonna cum insi-[end if][stopping][roman type][line break]Your eyes go wide as they jam themselves in as far as they can go, throbbing violently as [if the buildup of the living belt of sturdiness < 3]they take turns filling your holes with several spurts of alien [semen][otherwise if the buildup of the living belt of sturdiness < 6]take turns filling your [vagina] and [asshole] with torrents of creamy alien [semen][otherwise]take turns flooding your holes with obscene amounts of alien [semen][end if]!";[On women, the first half of the semen prioritises assholes and the second half priorities vagina. But if the belt is only penetrating one hole (the other was occupied at the moment of penetration) then it gets the full amount. Could probably be coded simpler than this.]
-		let S be the buildup of the living belt of sturdiness / 2;
+		let S be (the buildup of the living belt of sturdiness + 1) / 2;
 		now the buildup of the living belt of sturdiness is 0; [stops infinite loops in rare circumstances where PussyFill causes ruin vagina times causes another orgasm]
 		if the living belt of sturdiness is penetrating asshole, AssFill S;
 		otherwise PussyFill S;
 		now S is the buildup of the living belt of sturdiness - S;
-		if the player is not possessing a vagina:
+		if the player is not possessing a vagina or the living belt of sturdiness is not penetrating vagina:
 			AssFill S;
-		otherwise if the living belt of sturdiness is penetrating vagina:
-			PussyFill S;
 		otherwise:
-			AssFill S;
+			PussyFill S;
 		say "The [printed name of the living belt of sturdiness], apparently satisfied, stops thrusting but remains inside you.";
 	now the buildup of the living belt of sturdiness is 0. [This should always happen even if for some reason the belt didn't ejaculate]
 The living belt of sturdiness orgasm resolution rule is listed first in the orgasm resolution rules.
@@ -446,8 +446,7 @@ This is the monster orgasm cutscene rule:
 The monster orgasm cutscene rule is listed last in the orgasm resolution rules.
 
 This is the orgasm quest rule:
-	trigger orgasm-wisp-trigger;
-	progress quest of anal-orgasm-quest.
+	trigger orgasm-wisp-trigger.
 The orgasm quest rule is listed last in the orgasm resolution rules.
 
 This is the drill orgasm cutscene rule:
@@ -499,15 +498,15 @@ This is the BBC orgasm resolution rule:
 		repeat with M running through monsters penetrating a body part:
 			if M is dark skinned:
 				let DarkMagicianGirl be false;
-				if dark-magician-girl-cameltoe-costume is worn or dark-magician-girl-swimsuit is worn:
-					now DarkMagicianGirl is true;
+				if dark-magician-girl-cameltoe-costume is worn or dark-magician-girl-costume is worn:
+					now DarkMagicianGirl is true; [transform into next one]
 				otherwise:
 					if the class of the player exactly matches the text "magical girl" or the class of the player exactly matches the text "magical boy":
 						if the number of worn dress is 1: [one overdress or underdress, not both]
 							let D be a random worn dress;
-							if D is removable and D is not dark-magician-girl-swimsuit, now DarkMagicianGirl is true;
+							if D is removable and D is not dark-magician-girl-swimsuit, now DarkMagicianGirl is true; [transform into dark magician girl costume]
 						otherwise:
-							if dark-magician-girl-costume is class summonable, now DarkMagicianGirl is true;
+							if dark-magician-girl-costume is class summonable, now DarkMagicianGirl is true; [summon dark magician girl costume]
 				if DarkMagicianGirl is true:
 					let D be a random worn dress;
 					if D is a dress:

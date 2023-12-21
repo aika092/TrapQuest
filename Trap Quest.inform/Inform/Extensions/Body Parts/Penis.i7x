@@ -605,7 +605,7 @@ To OnlyPenisUp (X - a number):
 							now the size of scrotum is 0;
 			otherwise: [They're at or over max penis size, but not elastic enough to grow]
 				if the latex-transformation of the player > 0:
-					say "Your monster of a [manly-penis] tries to swell even larger, but it can't. [one of]It's just not stretchy enough.[or]It'd have to be more rubbery for that to be possible.[or]It'd need to be more elastic.[or]Your [LatexFlav]skin does make you wonder whether it's completely out of the question. Hmm...[or]You  [sense] its [LatexFlav]skin try to stretch, but it's just not elastic enough.[in random order]";
+					say "Your monster of a [manly-penis] tries to swell even larger, but it can't. [one of]It's just not stretchy enough.[or]It'd have to be more rubbery for that to be possible.[or]It'd need to be more elastic.[or]Your [LatexFlav]skin does make you wonder whether it's completely out of the question. Hmm...[or]You [sense] its [LatexFlav]skin try to stretch, but it's just not elastic enough.[in random order]";
 				otherwise:
 					say "Your monster of a [manly-penis] can't seem to grow any larger! You feel like a stud!";
 				dignify 50;

@@ -134,15 +134,15 @@ resist-target is an object that varies.
 
 [!<ReportResisting>+
 
-At this point, resisting will actually take an effect. Flavour prioritizes anything holding the player down, then anything fucking the player, and finally anything that's holding onto the player. If the player is resisting a monster, then the monster can potentially punish them.
+At this point, resisting will actually take an effect. Flavour prioritises anything holding the player down, then anything fucking the player, and finally anything that's holding onto the player. If the player is resisting a monster, then the monster can potentially punish them.
 
 +!]
 Report resisting:
 	if weight gain fetish is 1 and the player is at least partially living stuck:[resisting is a form of exercise]
 		increase the fat-burning of hips by 20;
 		compute hip fat burning;
-	let M be a random thing grabbing the player;[prioritize anyone holding the player down]
-	if M is nothing, now M is a random live thing penetrating a body part;[next, prioritize anyone inside the player]
+	let M be a random thing grabbing the player;[prioritise anyone holding the player down]
+	if M is nothing, now M is a random live thing penetrating a body part;[next, prioritise anyone inside the player]
 	if M is nothing, now M is a random thing wrangling a body part;[Lastly, we take a look at any holders on.]
 	if the implant of pledge-lesson-resist is 1 and the raw intelligence of the player > 1:
 		say "[second custom style]Only a dumb useless slut resists the will of [his of the player] masters.[roman type][line break][bold type]The magic pledge you've just broken activates![roman type] [one of]You blink, feeling a wave of confusion wash through your thoughts.[or]Once again your thoughts swim, getting all muddled.[or]You feel more stupid, [second custom style]like a dumb useless slut.[roman type][line break][stopping]";

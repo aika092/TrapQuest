@@ -40,7 +40,6 @@ Include RoboMaid by Monster.
 Include Gargoyle by Monster.
 Include Unicorn by Monster.
 Include Slutty Sisters by Monster.
-Include Icarus by Monster.
 Include Centaur by Monster.
 Include Goblin by Monster.
 Include Woman Barbara by Monster.
@@ -67,7 +66,6 @@ Include Bunny Ears TQ by Headgear.
 Include Bridal Veils by Headgear.
 
 Include Dildo Pole Trap by Traps.
-Include Bukkake Traps by Traps.
 Include Wooden Horse Traps by Traps.
 
 Include Gape Gloves by Equippables.

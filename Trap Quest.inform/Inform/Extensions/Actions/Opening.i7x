@@ -24,7 +24,7 @@ Check opening a container:
 				summon bunny glasses cursed;
 		otherwise:
 			say "You decide against it." instead;
-	if the prevsearch of the noun is 0 and the noun is not pink wardrobe and the bimbo of the player <= 12 and autosearch is 1 and the player is upright and autoopen is 0 and the player is able to use manual dexterity and the player is not blinded and tutorial is 0:
+	if the prevsearch of the noun is 0 and the noun is not pink wardrobe and the bimbo of the player <= 12 and autosearch is 1 and the player is upright and autoopen is 0 and the player is able to use manual dexterity and the player is not blinded and tutorial is 0 and the player is not in BellyRoom01:
 		if the delicateness of the player > 1:
 			say "You search the [ShortDesc of noun] for traps first[one of][if the bimbo of the player < 10].[line break][variable custom style]This game is mental. I need to be careful.[roman type][line break][otherwise].[end if][or].[stopping]";
 			try searching the noun;
@@ -71,7 +71,7 @@ Report opening a container:
 		otherwise if the number of objects in the noun is 0:
 			say "How lame, it's empty.";
 		otherwise:
-			say "The [noun] still contains [ShortDesc of list of things in the noun].";
+			say "The [noun] [unless the noun is BellyRoom01]still [end if]contains [ShortDesc of list of things in the noun].";
 		if the noun is trapped:
 			say "CLICK! Opening this container has triggered a trap!";
 			repeat with T running through untriggered click traps in the location of the player:

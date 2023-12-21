@@ -464,7 +464,7 @@ To say QuestTitle of (Q - egg-laying-quest):
 
 Part - Interracial Presenting Quest
 
-interracial-sex-quest is a clothing-quest.
+interracial-sex-quest is a clothing-quest. interracial-sex-quest is persistent.
 
 Definition: interracial-sex-quest is appropriate:
 	if interracial fetish is 1, decide yes;
@@ -542,6 +542,26 @@ To say QuestFlav of (Q - creampie-drinking-quest):
 
 To say QuestTitle of (Q - creampie-drinking-quest):
 	say " (creampie drinking quest)".
+
+Part - Condom Drinking Quest
+
+condom-drinking-quest is a clothing-quest. condom-drinking-quest is persistent.
+
+Definition: condom-drinking-quest is appropriate:
+	if condom fetish > 0, decide yes;
+	decide no.
+
+To decide what number is the quest-weighting of (Q - condom-drinking-quest) for (C - a clothing):
+	if Q is not appropriate, decide on 0;
+	if the semen-taste-addiction-influence of C < 0, decide on 0;
+	if C is ballgag, decide on 0;
+	decide on 3.
+
+To say QuestFlav of (Q - condom-drinking-quest):
+	say "You sense that it wants you to drink (and swallow!) [semen] out of a used condom.".
+
+To say QuestTitle of (Q - condom-drinking-quest):
+	say " (condom drinking quest)".
 
 Part - Milk Drinking Quest
 
@@ -759,10 +779,6 @@ To compute persistent reward of (Q - kicking-quest) on (C - a clothing):
 Part - Heel Walking Quest
 
 heel-walking-quest is a clothing-quest. heel-walking-quest is persistent.
-
-Definition: heel-walking-quest is appropriate:
-	if diaper quest is 0, decide yes;
-	decide no.
 
 To decide what number is the quest-weighting of (Q - heel-walking-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;

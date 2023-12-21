@@ -144,8 +144,12 @@ Definition: ex-princess is butt slut immune: decide yes.
 Definition: ex-princess is uniquely unfriendly:
 	if it is unleashed, decide yes; [dark princess]
 	decide no.
+To decide which number is the bimbo tolerance of (M - ex-princess):
+	decide on 100. [If we don't make this prohibitively high, there can be some weird difficult-to-debug outcomes surrounding the overriding of uniquely unfriendly above, where the NPC is objectifying but friendly, and somehow attacking while friendly.]
+To decide which number is the bab tolerance of (M - ex-princess):
+	decide on 100.
 
-To decide which number is the aggro limit of (M - an ex-princess): [The number at which they turn unfriendly]
+To decide which number is the aggro limit of (M - ex-princess): [The number at which they turn unfriendly]
 	decide on -999999.
 
 Definition: ex-princess is motionless-when-defeated: decide yes.
@@ -215,7 +219,7 @@ To compute interaction of (M - ex-princess):
 				if the quest of C is tentacle-research-quest:
 					compute quest completion of tentacle-research-quest on C;
 		otherwise if M is messy and M is in Dungeon11:
-			say "[BigNameDesc of M] continues to press [his of M] vibrating wand into the front of [his of M] soiled diaper.[line break][speech style of M]'Please... [one of]you stupid curse... just let me cum...'[or]just once...'[or]I really need to cum... and get a change!'[or]I hate this smell!'[cycling][roman type][line break]";
+			say "[BigNameDesc of M] continues to press [his of M] vibrating wand into the front of [his of M] soiled diaper.[line break][speech style of M]'[big please]... [one of]you stupid curse... just let me cum...'[or]just once...'[or]I really need to cum... and get a change!'[or]I hate this smell!'[cycling][roman type][line break]";
 			compute ChangeRequestDecision of M;
 		otherwise if the current-errand of M is completed:
 			compute errand completion of M.

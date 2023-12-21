@@ -6,6 +6,21 @@ To decide which number is diaper messing:
 	if (the player is not a top donator or diaper quest is 0) and choice in row 50 of the Table of Player Options >= 6, decide on 5;
 	decide on choice in row 50 of the Table of Player Options.
 
+Part 0 - Secret Diaper Option
+
+Table of Secret Diaper Options
+title	subtable	description	toggle
+"Yes, I want diapers included in this game too."	--	--	secret diaper liker rule
+"No thanks, keep the diaper play to Diaper Quest."	--	--	secret diaper disliker rule
+
+This is the secret diaper liker rule:
+	now choice in row 19 of the Table of Player Options is 1;
+	follow quit rule.
+
+This is the secret diaper disliker rule:
+	now choice in row 19 of the Table of Player Options is 0;
+	follow quit rule.
+
 Part 1 - Diaper Lover
 
 Table of Diaper Options

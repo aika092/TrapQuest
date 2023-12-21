@@ -20,6 +20,9 @@ Check entering a painting:
 	if the player is clothing stuck, say "You can't because your [a random worn stuck clothing] is stuck in place!" instead;
 	allocate 5 seconds;
 	if the noun is dress-painting and there is a worn unremovable dress, say "You try, but when your [random worn unremovable dress] tries to cross the threshold, you are pushed away by an invisible force!" instead;
+	if the noun is heist-painting:
+		repeat with C running through worn usually unautoremovable clothing:
+			unless C is headgear or C is nudism-enabling, say "You try, but when your [C] tries to cross the threshold, you are pushed away by your headgear! It's like it's saying that it would be a mistake to enter this region with clothing that you can't easily remove..." instead;
 	let LM be the list of monsters in the location of the player;
 	compute painting entrance of the noun;
 	now the noun is not rippling;
@@ -88,7 +91,7 @@ DressPainting03 is a dress-painting-room. The grid position of DressPainting03 i
 DressPainting03 is east of DressPainting02.
 DressPainting04 is a dress-painting-room. The grid position of DressPainting04 is <10,8,7>. The shape of DressPainting04 is L10/0-0-1-1-1-0.
 DressPainting04 is south of DressPainting01.
-[DressPainting05 is a dress-painting-room. The grid position of DressPainting05 is <10,9,7>.  The shape of DressPainting05 is L10/0-0-1-1-1-1.
+[DressPainting05 is a dress-painting-room. The grid position of DressPainting05 is <10,9,7>. The shape of DressPainting05 is L10/0-0-1-1-1-1.
 DressPainting05 is east of DressPainting04. DressPainting05 is south of DressPainting02.]
 DressPainting06 is a dress-painting-room. The grid position of DressPainting06 is <10,10,7>. The shape of DressPainting06 is L10/0-0-1-0-0-1.
 [DressPainting06 is east of DressPainting05.] DressPainting06 is south of DressPainting03.
@@ -187,7 +190,7 @@ ToiletPainting03 is a toilet-painting-room. The grid position of ToiletPainting0
 ToiletPainting03 is east of ToiletPainting02.
 ToiletPainting04 is a toilet-painting-room. The grid position of ToiletPainting04 is <12,8,7>. The shape of ToiletPainting04 is L12/0-0-1-1-1-0.
 ToiletPainting04 is south of ToiletPainting01.
-ToiletPainting05 is a toilet-painting-room. The grid position of ToiletPainting05 is <12,9,7>.  The shape of ToiletPainting05 is L12/0-0-1-1-1-1.
+ToiletPainting05 is a toilet-painting-room. The grid position of ToiletPainting05 is <12,9,7>. The shape of ToiletPainting05 is L12/0-0-1-1-1-1.
 ToiletPainting05 is east of ToiletPainting04. ToiletPainting05 is south of ToiletPainting02.
 ToiletPainting06 is a toilet-painting-room. The grid position of ToiletPainting06 is <12,10,7>. The shape of ToiletPainting06 is L12/0-0-1-0-0-1.
 ToiletPainting06 is east of ToiletPainting05. ToiletPainting06 is south of ToiletPainting03.
@@ -199,6 +202,9 @@ ToiletPainting09 is a toilet-painting-room. The grid position of ToiletPainting0
 ToiletPainting09 is east of ToiletPainting08. ToiletPainting09 is south of ToiletPainting06.
 
 toilet-monster is a person. toilet-monster is neuter. toilet-monster is not portable. The printed name of toilet-monster is "[TQlink of item described]toilet monster[TQxlink of item described][verb-desc of item described]". The text-shortcut of toilet-monster is "tltm". toilet-monster has a number called times-terrorized. Understand "toilet", "monster" as toilet-monster.
+
+To decide which figure-name is the NPC-icon of (P - toilet-monster):
+	decide on Figure of Red NPC.
 
 To decide which figure-name is the examine-image of (C - toilet-monster):
 	decide on figure of toilet painting monster.
@@ -521,8 +527,12 @@ To decide which number is the concealment of (R - a heist-painting-room):
 HeistPainting01 is a heist-painting-room. The grid position of HeistPainting01 is <14,8,8>. The shape of HeistPainting01 is L14/0-0-0-1-1-0.
 HeistPainting02 is a heist-painting-room. The grid position of HeistPainting02 is <14,9,8>. The printed name of HeistPainting02 is "Vault Entrance". The shape of HeistPainting02 is L14/0-0-0-1-1-1.
 HeistPainting02 is east of HeistPainting01. HeistPainting02 can be vault-opened.
+To decide which number is the concealment of (R - HeistPainting02):
+	decide on 1.
 HeistPainting03 is a heist-painting-room. The grid position of HeistPainting03 is <14,10,8>. The shape of HeistPainting03 is L14/0-0-0-0-1-1.
 HeistPainting03 is east of HeistPainting02.
+To decide which number is the concealment of (R - HeistPainting03):
+	decide on 1.
 HeistPainting04 is a heist-painting-room. The grid position of HeistPainting04 is <14,8,7>. The shape of HeistPainting04 is L14/0-0-1-1-1-0.
 HeistPainting04 is south of HeistPainting01. HeistPainting04 has a number called scariness.
 [HeistPainting05 is a heist-painting-room. The grid position of HeistPainting05 is <14,9,7>.  The shape of HeistPainting05 is L14/0-0-1-1-1-1.
@@ -599,8 +609,7 @@ Check plugging asshole with milk-fountain:
 
 Check drinking milk-fountain:
 	if face is actually occupied, say "You'd need to remove [NameDesc of random thing filling face] first." instead;
-	if diaper quest is 0 and the player is upright, say "You would need to be on your knees to do this successfully." instead;
-	if diaper quest is 1 and the player is prone, say "You would need to be standing up to do this successfully." instead;
+	if the player is prone, say "You would need to be standing up to do this successfully." instead;
 	compute milk-fountain mouthful instead.
 
 Check poking milk-fountain:
@@ -666,6 +675,9 @@ Definition: zap-bot is reactive:
 	if it is in the location of the player, decide yes;
 	decide no.
 
+To check disapproval of (M - zap-bot): [Should be rare. Perhaps sometimes the slimegirl seeing you leak pee]
+	say "[one of][first custom style]'INTRUDER PRIMARY CHARACTERISTIC IDENTIFIED: [if diaper quest is 1]PATHETIC BABY[otherwise]DISGUSTING WHORE[end if]. SECONDARY CHARACTERISTIC IDENTIFIED: CAT BURGLAR.'[roman type][line break][or][stopping]".
+
 To decide which figure-name is the NPC-icon of (Z - zap-bot):
 	if Z is interested, decide on Figure of Red NPC;
 	decide on Figure of Black NPC.
@@ -726,6 +738,10 @@ To compute painting entrance of (P - heist-painting):
 		set up jewelled-tiara;
 		now jewelled-tiara is in PD;
 		now the paid of PD is 6;
+	otherwise:
+		say "MAJOR BUG: The pedestals that should have been in this region are missing. Please submit a bug report to Aika including the output of the following command: [']showme all pedestals[']. I will now give you the jewelled tiara so that you can compelete this quest even though the subregion is borked.";
+		set up jewelled-tiara;
+		now jewelled-tiara is carried by the player;
 	[now witch's goblet is in HeistPainting03;]
 	now the player is in HeistPainting08.
 

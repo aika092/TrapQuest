@@ -107,7 +107,14 @@ The queen specific recipe rule is listed in the specific recipe rules.
 To compute recipe specific cursing of (T - queen-of-hearts heels):
 	now the heel-height of T is the heel skill of the player + 1;
 	if the heel skill of the player > 5, now the heel-height of T is 6;
+	if the noun is pack of playing cards:
+		if 23 is not listed in stolenCards, now T is provocation;
+		if the recipe of (alchemy key of queen-of-hearts heels) is not memorised and the player is getting unlucky, now T is provocation;
 	now T is bland.
+
+To decide which object is the unique-upgrade-target of (C - queen-of-hearts heels):
+	if (interracial fetish is 1 and the bbc addiction of the player > 4) or C is cursed, decide on queen-of-spades heels;
+	decide on nothing.
 
 queen-of-spades heels is a stiletto heels. queen-of-spades heels is leather. queen-of-spades heels is unique. The heel-height of queen-of-spades heels is 5. Understand "queen", "queen of", "spades" as queen-of-spades heels.
 
@@ -132,8 +139,8 @@ To decide which number is the hindrance-modifier of (C - queen-of-spades heels):
 	decide on 0.
 
 To decide which number is the luck-influence of (C - queen-of-spades heels):
-	if interracial fetish is 1, decide on 0;
 	if C is cursed, decide on -3;
+	if interracial fetish is 1, decide on 0;
 	if C is blessed, decide on 1;
 	decide on -1.
 

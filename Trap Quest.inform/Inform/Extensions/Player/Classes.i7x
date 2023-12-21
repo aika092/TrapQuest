@@ -940,7 +940,7 @@ Thanks to the walking condom multi-class, we have multiple different texts that 
 
 +!]
 Definition: a text (called T) is cumdumpster:
-	if T matches the text "cumdump" or T is "sinful priestess" or T matches the text "fucktoy" or T is "fraternity's bicycle" or T matches the text "meat" or T is "cum collector" or T is "porn star", decide yes;
+	if T matches the text "cumdump" or T is "sinful priestess" or T matches the text "fucktoy" or T is "fraternity's bicycle" or T matches the text "meat" or T is "cum collector" or T is "porn star" or T matches the text "holemaiden", decide yes;
 	decide no.
 
 cumdumpsterExplained is initially false.
@@ -1096,13 +1096,18 @@ a class explaining rule (this is the explaining barbarian rule):
 		say "[bold type]Now that you are no longer the [']barbarian['] class, you can sense that you no longer have a chance to avoid damage at low health.[roman type][line break]".
 
 This is the stripper class rule:
-	if stripper-ears is worn:
-		now player-class is "stripper";
-		if porn-star-suspenders is worn or porn star tube top is worn, now player-class is "porn star";
+	if there is worn stripper-headgear:
+		let T be "stripper";
+		if handmaiden-circlet is worn:
+			now T is "holemaiden";
+		otherwise if there is worn handmaiden-headgear:
+			now T is "handmaiden";
+		if porn-star-suspenders is worn or porn star tube top is worn, now T is the substituted form of "porn star [T]";
+		now player-class is the substituted form of "[T]";
 		rule succeeds.
 The stripper class rule is listed first in the player class rules.
 Definition: a text (called T) is stripper:
-	if T matches the text "stripper" or T is "porn star" or T matches the text "the law", decide yes;
+	if T matches the text "stripper" or T matches the text "porn star" or T matches the text "maiden" or T matches the text "the law", decide yes;
 	decide no.
 
 stripperExplained is initially false.

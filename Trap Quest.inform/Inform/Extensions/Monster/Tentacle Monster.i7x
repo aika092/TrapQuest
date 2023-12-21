@@ -331,6 +331,8 @@ Part 1 - Perception
 Definition: a tentacle monster is uniquely unfriendly:
 	if playerRegion is School, decide yes;
 	decide no. [The player looking ultra-slutty doesn't override the fact that the tentacle monster defends them when pregnant. However, the tentacle monster in the school dungeon must always be an enemy]
+To decide which number is the bimbo tolerance of (M - a tentacle monster):
+	decide on 100. [If we don't make this prohibitively high, there can be some weird difficult-to-debug outcomes surrounding the overriding of uniquely unfriendly above, where the NPC is objectifying but friendly, and somehow attacking while friendly.]
 
 To compute perception of (M - a tentacle monster):
 	if kraken bell is worn and the class of the player is not magical girl:

@@ -86,17 +86,22 @@ Definition: supporter-aika is presenting as male:
 Definition: supporter-aika is father material: decide yes.
 
 To say MonsterDesc of (M - supporter-aika):
-	say "A terrifying blonde [man of M] stands before you. [big he of M]'s wearing medieval metal bracers on [his of M] arms and legs, and wields a barbaric-looking shortsword[if lady fetish < 2]. [big his of M] huge H-cup breasts are completely bare and sit heavily on [his of M] chest, hanging away from each other in a way that lets you know they're almost certainly natural[end if]. [big his of M] tiny grey loincloth does nothing to hide the [LongDickDesc of M][if M is a balls-haver] and balls[end if] hanging from [his of M] crotch, swaying gently as [he of M] moves. A metal warlord's mask covers [his of M] face, preventing you from seeing [his of M] features or expression.".
+	say "A tall blonde [man of M] stands before you. [big he of M]'s wearing medieval metal bracers on [his of M] arms and legs, and wields a barbaric-looking shortsword[if lady fetish < 2]. [big his of M] huge H-cup breasts are completely bare and sit heavily on [his of M] chest, gently sagging in a way that lets you know they're almost certainly natural[end if]. [big his of M] tiny grey loincloth ";
+	if M is combative, say "does nothing to hide the [LongDickDesc of M][if M is a balls-haver] and balls[end if] hanging from [his of M] crotch, swaying gently as [he of M] moves. ";
+	otherwise say "conceals [his of M] genitalia. ";
+	say "A metal warlord's mask covers [his of M] face, preventing you from seeing [his of M] features or expression.".
 
-Figure of Aika is the file "NPCs/MultiFloor/Supporter/aika2.png".
+Figure of Aika is the file "NPCs/MultiFloor/Supporter/aika2a.png".
+Figure of Aika Erect is the file "NPCs/MultiFloor/Supporter/aika2b.png".
 
 The supporter-name of supporter-aika is "Aika".
 
 To decide which figure-name is the monster-image of (M - supporter-aika):
+	if M is combative, decide on figure of Aika Erect;
 	decide on figure of Aika.
 
 To say LeftoverDesc (N - 203):
-	say "The bloated, cumfilled and unconscious body of Aika is on the ground here, cum still leaking out of [his of supporter-aika] mouth, asshole, and [LongDickDesc of supporter-aika].[line break]".
+	say "The bloated, cumfilled, and unconscious body of Aika is on the ground here, cum still leaking out of [his of supporter-aika] mouth, asshole, and [LongDickDesc of supporter-aika].[line break]".
 
 To set up (M - supporter-aika):
 	reset M;
@@ -127,16 +132,19 @@ To say CurtseyReactionFlav of (M - supporter-aika):
 	say "[BigNameDesc of M] folds [his of M] arms in satisfaction.[line break][speech style of M]'[if K is nothing]I guess that means you've met Bianca[otherwise]Nice [ShortDesc of K][end if].'[roman type][line break]".
 
 To say BecomesAggressive of (M - supporter-aika):
-	say "[speech style of M]'You know I wasn't planning on doing anything but watching, but I forgot how hot it is to watch a silly [boy of the player] like you become more and more of a desperate whore. I don't think I could forgive myself if I didn't sample you at least once myself!'[roman type][line break][big he of M] twirls [his of M] shortsword in [his of M] hand and begins stroking [his of M] [DickDesc of M] with the other!".
+	say "[speech style of M]'You know I wasn't planning on doing anything but watching, but I forgot how hot it is to watch a silly [boy of the player] like you become more and more of a desperate whore. I don't think I could forgive myself if I didn't sample you at least once myself!'[roman type][line break][PenisReveal of M]".
+
+To say PenisReveal of (M - supporter-aika):
+	say "[one of]You watch with [horror the sex addiction of the player] as[or]Once again,[stopping] a rapidly hardening [LongDickDesc of M] reveals itself from underneath [his of M] loincloth!".
 
 To say AlreadyUnfriendlyPerception of (M - supporter-aika):
-	say "[speech style of M]'[one of]You still haven't finished playing? Well then, I guess that means you want more from me too!'[or]I'm surprised you're still going, [NameBimbo]! Not that I'm complaining that I can get another fuck out of you first.'[or]You're back for more are you? I guess I didn't leave enough of an impression last time, then!'[in random order][roman type][line break]".
+	say "[speech style of M]'[one of]You still haven't finished playing? Well then, I guess that means you want more from me too!'[or]I'm surprised you're still going, [NameBimbo]! Not that I'm complaining that I can get another fuck out of you first.'[or]You're back for more are you? I guess I didn't leave enough of an impression last time, then!'[in random order][roman type][line break][PenisReveal of M]".
 
 to say FriendlySluttyPerception of (M - supporter-aika):
 	say "[speech style of M]'[one of]Oh my, don't you look tragic. Why do I find that so hot?'[or]Dammit you look so fuckable right now! I have to keep reminding myself, don't fuck the customers... don't fuck the customers...'[or]You look like the perfect submissive fuckpuppet right now. I wonder if I'll get in trouble with the shareholders if I decide to give you a ride on this bad boy down here...'[in random order][roman type][line break]".
 
 To say UnfriendlySluttyPerception of (M - supporter-aika):
-	say "[speech style of M]'[one of]Okay sorry, I've seen that ass waltzing in front of me one too many times. Nobody can blame me for this.'[or]Argh, this is too much! I don't care what company policy says, there's no way I can stand watching you like this without getting in on the action myself. I'm going for it!'[in random order][roman type][line break]".
+	say "[speech style of M]'[one of]Okay sorry, I've seen that ass waltzing in front of me one too many times. Nobody can blame me for this.'[or]Argh, this is too much! I don't care what company policy says, there's no way I can stand watching you like this without getting in on the action myself. I'm going for it!'[in random order][roman type][line break][PenisReveal of M]".
 
 To say BoringPerception of (M - supporter-aika):
 	say "[speech style of M]'[one of]How are you enjoying the game, challenger? [big please]d to meet you, I'm the original creator. I drop in here every now and then to check up on how things are looking, and to enjoy the sights. I'm going to stay out of your way though, it's not my place to interrupt your play-through[or]Hey. Sorry, but really we shouldn't talk, it would be unfair for me to have an impact upon your game experience[stopping].'[roman type][line break]".
@@ -222,7 +230,7 @@ To say MonsterOfferRejectFlav of (M - supporter-aika) to (T - a thing):
 	say "[BigNameDesc of M] refuses.[line break][speech style of M]'If I want any particular item, I just use debug commands.'[roman type][line break]".
 
 To compute sudden objectification of (M - supporter-aika):
-	say "Something seems to change in the way [NameDesc of M] is looking at you.[line break][speech style of M]'[if M is penetrating a body part]I'm saving a screenshot of this image for my wank bank later...'[otherwise if the player is monster fucked]You're clearly not going to win anyway... So as long as I act just like another NPC, it shouldn't matter if I join in more actively, should it...?'[otherwise]Oh, look at this, you must be one of the wenches from the Dungeon, right? There's no way this is the player I saw earlier. So it'll be totally fine if I just bang you now, right? Hehehe...'[end if][roman type][line break]".
+	say "Something seems to change in the way [NameDesc of M] is looking at you.[line break][speech style of M]'[if M is penetrating a body part]I'm saving a screenshot of this image for my wank bank later...'[otherwise if the player is monster fucked]You're clearly not going to win anyway... So as long as I act just like another NPC, it shouldn't matter if I join in more actively, should it...?'[otherwise]Oh, look at this, you must be one of the wenches from the Dungeon, right? There's no way this is the player I saw earlier. So it'll be totally fine if I just bang you now, right? Hehehe...'[end if][roman type][line break][PenisReveal of M]".
 
 To say EnemaFloorReactionFlav of (M - supporter-aika):
 	say "[BigNameDesc of M] tilts [his of M] head to the side.[line break][speech style of M]'Was that on purpose? Are you trying to tell me something?'[roman type][line break][moderateHumiliateReflect]".
@@ -1310,7 +1318,7 @@ To say LeftoverDesc (N - 208):
 	say "The bloated, cumfilled and unconscious body of [supporter-name of supporter-serena] is on the ground here.[line break]".
 
 To say MonsterDesc of (M - supporter-serena):
-	say "This tall warrior [man of M] seems cut from the same cloth as the gladiators, however, there's certainly something different about [him of M]. Unlike the dark-skinned Amazons, [he of M] is of a much fairer complexion, with pure white hair flowing from [his of M] head. Much of [his of M] upper body is uncovered, exposing lithe, yet rippling musculature that looks like it could break stone, from [his of M] rock hard abs to [his of M] well trained arms. That which is hidden lays behind dark brown leather armour that covers [his of M] breasts and shoulders, modest yet protective. Sturdy adventuring boots protect [his of M] carefully positioned feet and a strong belt holds [his of M] long bladed weapons by [his of M] off-hand. The belt seems to purposefully expose the crotch of [his of M] tight blue pants, holding a tell-tale bulge in place between [his of M] thighs. Tall canine ears and two sharp fangs hint that [he of M]'s probably not 100% human[if M is interested]. [big he of M] looks at you with what could be a friendly smile, a mocking smirk, or a predatory sneer. It's difficult to tell[end if].".
+	say "This tall warrior [man of M] seems cut from the same cloth as the gladiators; however, there's certainly something different about [him of M]. Unlike the dark-skinned Amazons, [he of M] is of a much fairer complexion, with pure white hair flowing from [his of M] head. Much of [his of M] upper body is uncovered, exposing lithe, yet rippling musculature that looks like it could break stone, from [his of M] rock hard abs to [his of M] well trained arms. That which is hidden lays behind dark brown leather armour that covers [his of M] breasts and shoulders, modest yet protective. Sturdy adventuring boots protect [his of M] carefully positioned feet and a strong belt holds [his of M] long bladed weapons by [his of M] off-hand. The belt seems to purposefully expose the crotch of [his of M] tight blue pants, holding a tell-tale bulge in place between [his of M] thighs. Tall canine ears and two sharp fangs hint that [he of M]'s probably not 100% human[if M is interested]. [big he of M] looks at you with what could be a friendly smile, a mocking smirk, or a predatory sneer. It's difficult to tell[end if].".
 
 Section - Incremental Changes
 
@@ -1751,7 +1759,7 @@ To compute facial climax of (M - supporter-elluria):
 		if EF is asshole, assfill (the girth of M) medium eggs;
 		otherwise wombfill (the girth of M) medium eggs;
 		now M is not penetrating EF;
-		say "Just as [he of M] is finally done filling you with eggs, [his of M] balls reach their bursting point.";
+		say "Just as [he of M] is finally done filling you with eggs, [if M is balls-haver][his of M] balls reach their[otherwise][he of M] reaches [his of M][end if] bursting point.";
 	compute default facial climax for M;
 
 [Titfucks]
@@ -1796,7 +1804,6 @@ To say UrinationFlav of (M - supporter-elluria):
 
 To say PissDrinkThreat of (M - supporter-elluria):
 	say "[speech style of M]'If you're a good [boy of the player] and drink it all down, I won't have to punish you.'[roman type][line break][big he of M] warns.".
-
 
 
 Supporters ends here.

@@ -103,5 +103,4 @@ This is the silicone milk clash rule:
 	now choice in row 84 of the Table of Player Options is 1;
 	follow quit rule.
 
-
 Body Limit Options ends here.

@@ -50,7 +50,7 @@ To Set Up The Hotel:
 		let R be a random off-stage appropriate recipe;
 		if R is recipe, now R is in Hotel25;
 	if diaper quest is 1:
-		destroy laundry robots;
+		remove laundry robots from play;
 		now hotel changing station is in Hotel20;
 	if matron is hotel dwelling, now nursery crib is in Hotel22;
 	[if diaper quest is 0:

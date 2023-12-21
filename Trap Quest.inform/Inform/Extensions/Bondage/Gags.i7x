@@ -59,7 +59,7 @@ To decide which number is the intelligence-influence of (C - a huge ballgag):
 A small ballgag is a kind of ballgag. There is 1 small ballgag. The printed name of small ballgag is "[clothing-title-before]small ballgag[clothing-title-after]". The text-shortcut of small ballgag is "sga".
 Definition: a small ballgag is red themed: decide yes.
 Definition: a small ballgag is IcarusScienceAppropriate:
-	if it is actually summonable, decide yes;
+	if diaper quest is 0 and it is actually summonable, decide yes;
 	decide no.
 A large ballgag is a kind of ballgag. There is 1 large ballgag. The printed name of large ballgag is "[clothing-title-before]large ballgag[clothing-title-after]". The text-shortcut of large ballgag is "lga".
 Definition: a large ballgag is white themed: decide yes.

@@ -86,6 +86,8 @@ To decide which number is the initial outrage of (C - dainty dress):
 	decide on 0.
 To decide which number is the initial cringe of (C - dainty dress):
 	decide on 3.
+To decide which number is the skirtLength of (C - dainty dress):
+	decide on 5. [Decided because this is the DQBulk at beyond which it exposes diapers in DQ]
 
 Definition: dainty dress is pink themed: decide yes.
 

@@ -2,7 +2,12 @@ Mechanic by Monster begins here.
 
 mechanic is a monster. mechanic is intelligent. mechanic is male.
 
-Definition: mechanic is willing to urinate: decide yes.
+Definition: mechanic is willing to urinate:
+	if mechanic is male, decide yes;
+	decide no.
+Definition: mechanic is a diaper wetter: [Does this NPC use a diaper rather than a toilet to urinate?]
+	if mechanic is female and diaper quest is 1, decide yes;
+	decide no.
 
 Definition: mechanic is father material: decide yes.
 Definition: mechanic is condom prepared: decide yes. [Does he have condoms on him?]
@@ -15,7 +20,7 @@ Definition: mechanic is permanently banishable: decide no.
 
 Definition: mechanic is willing to have time out: decide no.
 
-Definition:mechanic is a generic-unlocker: decide yes.
+Definition: mechanic is a generic-unlocker: decide yes.
 
 Definition: mechanic is blocker:
 	if the woman-status of woman-player is 91 and the mechanic-scene of woman-player <= 3 and woman-player is in the location of the player, decide no; [Barbara BJ scene]
@@ -38,15 +43,17 @@ To say MediumDesc of (M - mechanic):
 
 The text-shortcut of mechanic is "mc".
 
-Figure of mechanic is the file "NPCs/Hotel/mechanic1.png".
-Figure of female mechanic is the file "NPCs/Hotel/mechanic2.png".
+Figure of mechanic is the file "NPCs/Hotel/Mechanic/mechanic1.png".
+Figure of female mechanic is the file "NPCs/Hotel/Mechanic/mechanic2.png".
+Figure of female diapered mechanic is the file "NPCs/Hotel/Mechanic/mechanic3.png".
 
 To decide which figure-name is the monster-image of (M - mechanic):
+	if M is female and diaper quest is 1, decide on Figure of female diapered mechanic;
 	if lady fetish is 1, decide on figure of female mechanic;
 	decide on figure of mechanic.
 
 To say MonsterDesc of (M - mechanic):
-	say "A tall, [if lady fetish is 0]good looking [man of M] wearing a denim vest that exposes [his of M] tattoos[otherwise]slim but busty [man of M] wearing a tight grey vest with nothing under it[end if]. A [if the intelligence of the player > 14]vanity[otherwise]utility[end if] belt of sorts is wrapped around [his of M] waist, equipped with all manner of strange gadgets and tools, but you get the feeling they're meant to distract you from the faint outline of the [DickDesc of M] in [his of M] pants. [if the item described is aggressive and the wrench-timer of M <= 0]Clutched in [his of M] hand is an over-sized steel wrench, which is remarkably simple in comparison to some of the things on [his of M] belt.[otherwise if the wrench-timer of M <= 0]Peeking out of [his of M] front pocket is an over-sized steel wrench, which is remarkably simple in comparison to some of the things on [his of M] belt.[end if][if item described is carrying mystical amulet][big he of M] is wearing the mystical amulet around [his of M] neck, and there is a very strange glint in [his of M] eye. You can't shake the feeling that [he of M] is now incredibly powerful.[end if]".
+	say "A tall, [if lady fetish is 0]good looking [man of M] wearing a denim vest that exposes [his of M] tattoos[otherwise]slim but busty [man of M] wearing a tight grey vest with nothing under it[end if]. A [if the intelligence of the player > 14]vanity[otherwise]utility[end if] belt of sorts is wrapped around [his of M] waist, equipped with all manner of strange gadgets and tools, but you get the feeling they're meant to distract you from the [if M is female and diaper quest is 1]disposable diaper peeking out of the waistband of[otherwise]faint outline of the [DickDesc of M] in[end if] [his of M] pants. [if the item described is aggressive and the wrench-timer of M <= 0]Clutched in [his of M] hand is an over-sized steel wrench, which is remarkably simple in comparison to some of the things on [his of M] belt.[otherwise if the wrench-timer of M <= 0]Peeking out of [his of M] front pocket is an over-sized steel wrench, which is remarkably simple in comparison to some of the things on [his of M] belt.[end if][if item described is carrying mystical amulet][big he of M] is wearing the mystical amulet around [his of M] neck, and there is a very strange glint in [his of M] eye. You can't shake the feeling that [he of M] is now incredibly powerful.[end if]".
 
 To say MonsterComment of (M - mechanic):
 	if diaper quest is 1:
@@ -98,7 +105,7 @@ To set up (M - mechanic):
 	add id-card to the banishItems of M, if absent;
 	add id-card to the taxableItems of M, if absent;
 	now the raw difficulty of M is the starting difficulty of M;
-	now M is soul-stolen;[he doesn't have a soul to steal]
+	now M is soul-stolen; [he doesn't have a soul to steal]
 	now the health of M is the maxhealth of M.
 
 To decide which number is the starting difficulty of (M - mechanic): decide on 12.
@@ -262,11 +269,31 @@ To compute perception of (M - mechanic):
 		if M is friendly and M is groping:
 			compute grope of M;
 		otherwise:
-			say "[speech style of M]'[if diaper quest is 0][one of]Dayum girl, you're making it difficult for me to keep my hands off of the merchandise, you know? Unless you're one of those 'free use' fetishists... Maybe you want me to fuck you[or]Your appearance still screams 'free use', you know[stopping][otherwise]Wow, you look pretty hot, babe! But you know this is an ADULT BABY fetish hotel, right? You're supposed to look like a pathetic baby, not a glamour model[end if].'[roman type][line break]";
+			say "[speech style of M]'[if diaper quest is 0][one of]Dayum [boy of the player], you're making it difficult for me to keep my hands off of the merchandise, you know? Unless you're one of those 'free use' fetishists... Maybe you want me to fuck you[or]Your appearance still screams 'free use', you know[stopping][otherwise]Wow, you look pretty hot, babe! But you know this is an ADULT BABY fetish hotel, right? You're supposed to look like a pathetic baby, not a glamour model[end if].'[roman type][line break]";
 			if M is unfriendly, say BecomesAggressive of M;
 	otherwise:
 		say "[speech style of M]'Hey there. [if M is carrying mystical amulet]Thanks again for the amulet.'[otherwise]Enjoying your stay?'[end if][roman type][line break]";
 		calm M.
+
+Definition: mechanic is distracted:
+	if mechanic is male and diaper quest is 1 and hotel changing station is in the location of mechanic and mechanic is not dangerous and mystical amulet is not held by mechanic:
+		say "[BigNameDesc of mechanic] kneels down in front of [NameDesc of hotel changing station].[line break][speech style of mechanic]'Time for a quick maintenance checkup...'[roman type][line break][big he of mechanic] gets to work checking the gears and circuitboards and everything in between. Soon [he of mechanic] reaches the wristcuffs.[line break][speech style of mechanic]'Ah, I see the problem, the auto-latch trigger has got a little worn, if I just...'[roman type][line break]Suddenly, the wristcuffs spring to life, and latch themselves around [NameDEsc of mechanic][']s wrists![line break][speech style of mechanic]'..Shit.'[roman type][line break]That's all [he of mechanic] can say before the changing station yanks [him of mechanic] inside, and whips the door shut behind [him of mechanic].[line break][speech style of mechanic]'No, wait! Don't do that... Part of my curse means that if I ever get diapered, I'll be [if mechanic is presenting as male]transformed into[otherwise]made totally incontinent[end if]...'[roman type][line break]But it's too late. You see the robotic arms working on pulling something up [his of mechanic] legs, and then a moment later you are watching with [if mechanic is presenting as male][horror the sex addiction of the player] as [his of mechanic] face and chest twists and morphs, turning into a woman[otherwise][horror the diaper addiction of the player] as [his of mechanic] face twists in discomfort as [he of mechanic] loses control of [his of mechanic] bladder[end if]!";
+		now mechanic is female;
+		say "[speech style of mechanic]'Aww fuck... Now I REALLY need to get my hands on that amulet.'[roman type][line break][big he of mechanic] moans, and you can tell that [his of mechanic] new diaper is immediately being soaked with [urine].[paragraph break]When [NameDesc of mechanic] is finally released, and stumbles out of the machine, [he of mechanic] looks very visibly diapered, and very visibly pissed off. You realize that you have a slight grin on your face, and try to wipe it off, but it's too late.[line break][speech style of mechanic]'You! You think this is funny?!'[roman type][line break]It looks like [NameDesc of mechanic] plans to take out [his of mechanic] frustration on you...";
+		now the bladder of mechanic is 0;
+		interest mechanic;
+		anger mechanic;
+		if the changing-station-tank-scene of woman-player < -1, now the changing-station-tank-scene of woman-player is -1;
+		decide yes;
+	otherwise if mechanic is female and mechanic is uninterested and the bladder of mechanic > 500 and there is an off-stage soiled-diaper:
+		let SD be a random off-stage soiled-diaper;
+		now the diaper-origin of SD is "disposable diaper discarded by the mechanic";
+		say "You watch as [NameDesc of mechanic], who doesn't seem to think you are watching, [']subtly['] discard a used diaper onto the ground behind [him of mechanic].[if diaper messing >= 6][line break][variable custom style]Gross. I hope nobody thinks that's mine...[roman type][line break]";
+		now SD is in the location of the player;
+		now the bladder of mechanic is 0;
+		decide yes;
+	decide no.
+
 
 Part 2 - Misc Flavour
 
@@ -632,7 +659,13 @@ Definition: mechanic is willing to donate diapers: decide yes.
 
 Definition: mechanic is willing to double diapers: decide yes.
 
-Definition: mechanic is willing to use a diaper urinal: decide yes.
+Definition: mechanic is willing to use a diaper urinal:
+	if mechanic is female, decide no;
+	decide yes.
+
+Definition: mechanic is willing to diaper facesit:
+	if mechanic is female, decide yes;
+	decide no.
 
 To say DoubleDiaperAnnounceFlav of (M - mechanic):
 	say "[BigNameDesc of M] starts fishing in [his of M] toolbox for ANOTHER diaper.[line break][speech style of M]'[one of]You see this load, little one? It's that full on purpose, isn't it? It's because you wanted two of [']em, right?'[or]I don't get paid enough to double diaper you... but you've made it completely necessary.'[in random order][roman type][line break]".
@@ -640,7 +673,9 @@ To say DoubleDiaperAnnounceFlav of (M - mechanic):
 To say DoubleDiaperAfterFlav of (M - mechanic):
 	say "[speech style of M]'See? Now I've rubbed all the oil smudges off the first diaper... looks clean as a whistle!'[roman type][line break]".
 
-Definition: mechanic is willing to punish untidiness: decide yes.
+Definition: mechanic is willing to punish untidiness:
+	if mechanic is female, decide no;
+	decide yes.
 
 To say DQSpankResistReactionFlav of (M - mechanic):
 	say "[BigNameDesc of M] harrumphs.[line break][speech style of M]'[one of]I just bent a pipe back into place not 10 minutes ago, what chance do you have, brat?'[or]I'm not one for cute, but dammit if your pathetic display ain't that!'[or]That's okay, I don't mind a slave with a little fire in them!'[or]It's brats like you that are the reason I have a dozen things to do in this dump and not just half a dozen. Hold still!'[in random order][roman type][line break]".
@@ -718,26 +753,29 @@ To say TaxDesc of (M - mechanic):
 	say "Demand [if there is a worn steel collar]you remove the steel collar[otherwise]an item[end if] in return for mercy.".
 
 To compute tax return of (M - mechanic):
-	let S be a random worn steel collar;
-	if S is steel collar:
-		say "With a snap of [his of M] fingers, the steel collar unlatches itself and drops from your neck.[line break][speech style of M]'You're going to pay for making me waste such an expensive gadget.'[roman type][line break]";
-		now S is in the location of the player;
+	if M is choice-taxable:
+		compute choice tax return of M;
 	otherwise:
-		let X be nothing;
-		repeat with B running through off-stage cans:
-			if the fill-type of B is 3:
-				now X is B;
-				now X is blessed;
-				break;
-		if strapon-dildo is off-stage and a random number between 1 and 3 is 1:
-			now X is strapon-dildo;
-			now the strap-length of strapon-dildo is 8;
-		if X is a thing:
-			say "[BigNameDesc of M] drops a [printed name of X] at your feet.[line break][speech style of M]'I hope you find it useful... because you're going to suffer for it greatly the next time I get my hands on you.'[roman type][line break]";
-			now X is in the location of the player;
-			compute autotaking X;
+		let S be a random worn steel collar;
+		if S is steel collar:
+			say "With a snap of [his of M] fingers, the steel collar unlatches itself and drops from your neck.[line break][speech style of M]'You're going to pay for making me waste such an expensive gadget.'[roman type][line break]";
+			now S is in the location of the player;
 		otherwise:
-			compute default tax return of M.
+			let X be nothing;
+			repeat with B running through off-stage cans:
+				if the fill-type of B is 3:
+					now X is B;
+					now X is blessed;
+					break;
+			if strapon-dildo is off-stage and a random number between 1 and 3 is 1:
+				now X is strapon-dildo;
+				now the strap-length of strapon-dildo is 8;
+			if X is a thing:
+				say "[BigNameDesc of M] drops a [printed name of X] at your feet.[line break][speech style of M]'I hope you find it useful... because you're going to suffer for it greatly the next time I get my hands on you.'[roman type][line break]";
+				now X is in the location of the player;
+				compute autotaking X;
+			otherwise:
+				compute default tax return of M.
 
 To standard loot (M - mechanic):
 	let X be a random off-stage plentiful bracelet;
@@ -818,7 +856,7 @@ To say WhoAnswer of (M - mechanic):
 	say "[speech style of M]'[if the class of the player is virgin warrior][one of]You'll know who I am soon enough. Just you wait.'[or]You really don't know? I guess any idiot can become a warrior as long as they're a prude.'[or]Who am I? Like you don't already know.'[or]If you want to know who I am, you should give me a go at that cherry of yours first.'[or]I'll tell you who I am... if you let me pop that cherry of yours.'[at random][otherwise]I'm the mechanic, I designed and made all those lovely robots you see wandering around. That's right, I'm not just a pretty face!'[end if][roman type][line break]".
 
 To say StoryAnswer of (M - mechanic):
-	say "[speech style of M]'[one of]I'm an extra planar demon, cursed to forever walk this mortal plane as a shadow of my true self[if the class of the player is not succubus]. Just kidding, I'm just looking for a pay check more than anything[end if].'[or]Well, I love kinky sex and I love making robots, so when Nintendolls gave me this opportunity, how could I turn it down?'[or]I entered an internet sweepstake to get my robot design featured in the kinkiest game of all time. Naturally, I blew all the other entrants out of the water, but just to make sure I won, I hacked into the design database and sabotaged all the other contestants. Nintendolls found out, but the company was so impressed they gave me a permanent job creating and maintaining every robot on this level.'[or]This will probably go over your head, but this is a virtual reality game. I'm simply a programming construct meant to resemble an actual human man.'[as decreasingly likely outcomes][roman type][line break]".
+	say "[speech style of M]'[one of]I'm an extra planar demon, cursed to forever walk this mortal plane as a shadow of my true self[if the class of the player is not succubus]. Just kidding, I'm just looking for a pay check more than anything[end if].'[or]Well, I love kinky sex and I love making robots, so when Nintendolls gave me this opportunity, how could I turn it down?'[or]I entered an internet sweepstake to get my robot design featured in the kinkiest game of all time. Naturally, I blew all the other entrants out of the water, but just to make sure I won, I hacked into the design database and sabotaged all the other contestants. Nintendolls found out, but the company was so impressed they gave me a permanent job creating and maintaining every robot on this level.'[or]This will probably go over your head, but this is a virtual reality game. I'm simply a programming construct meant to resemble an actual human [man of M].'[as decreasingly likely outcomes][roman type][line break]".
 
 To say EscapeAnswer of (M - mechanic):
 	if the class of the player is maid:
@@ -841,7 +879,7 @@ Section 3 - Drink Requesting
 
 To compute friendly drink of (M - mechanic):
 	if M is interested:
-		say "[BigNameDesc of M][']s smile fades slightly.[line break][speech style of M]'Sorry, we're not allowed to give out free drinks, it is pretty much the only way we make money after all!'[roman type][line break]";
+		say "[BigNameDesc of M][']s smile fades slightly.[line break][speech style of M]'Sorry, we're not allowed to give out free drinks; it is pretty much the only way we make money after all!'[roman type][line break]";
 	otherwise:
 		say "[BigNameDesc of M] acts as if [he of M] didn't even hear you.".
 

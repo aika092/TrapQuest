@@ -30,6 +30,9 @@ To trigger (Y - a discombobulator laser trap):
 	now Y is not untriggered;
 	now Y is revealed;
 	now Y is expired;
+	compute discombobulation.
+
+To compute discombobulation:
 	let X be a random number between 8 and 30;
 	say "A laser ray gun appears from within a hidden compartment in [if item described is in The Woods]a tree[otherwise]the wall[end if], and fires a shot right at you! ";
 	if debuginfo > 0, say "[line break][input-style]Laser dodge check: [if the player is prone]Player on knees = automatic fail[otherwise]Dexterity ([dexterity of the player]) | ([X].5) d23+7 difficulty roll[end if][roman type][line break]";

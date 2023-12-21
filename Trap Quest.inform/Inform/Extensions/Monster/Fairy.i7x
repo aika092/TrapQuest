@@ -410,7 +410,7 @@ To compute fairySuckling of (M - a fairy):
 	increase FairySuckled by 1;
 	if fM > 7, now fM is 7;
 	say "[BigNameDesc of M][']s eyes light up, and [he of M] smacks [his of M] little lips. [one of][big his of M] tiny nose sniffs deeply, and [he of M] shuts [his of M] eyes for a moment in pleasure.[or][speech style of M]'Mmm, I smell milky goodness!'[or][speech style of M]'Ooh, a pretty cow for me to play with.'[or][speech style of M]'Yum, milk!'[or][speech style of M]'Mmm, milk!'[or][speech style of M]'Yum, milky goodness!'[in random order][roman type][line break]";
-	cutshow figure of fairy cutscene 8 for M;
+	unless M is fairy-witch, cutshow figure of fairy cutscene 8 for M;
 	[Let's say the fairy is about size 7, so she can't drink more than that]
 	let NipsWereNkd be 0; [This will be set to 1 if the player had their nipples already sluttily exposed. Not really used, but could be for some humiliating text.]
 	let slashedSomething be 0;
@@ -694,7 +694,7 @@ To compute basic greeting to (M - a fairy):
 To say FirstResponse of (M - a fairy):
 	if the health of M >= the maxhealth of M:
 		say "[speech style of M]'[one of]Hi there!'[or]Hello!'[or]Hi hi!'[or]Hello hello hello!'[or]Hiya!'[or]Nice to meet you!'[or]Hello!'[at random][roman type][line break]";
-		alwayscutshow figure of fairy interact 2 for M;
+		unless M is fairy-witch, alwayscutshow figure of fairy interact 2 for M;
 	otherwise:
 		say HurtResponse of M.
 
@@ -709,7 +709,7 @@ To say RepeatResponse of (M - a fairy):
 			say "[speech style of M]'[one of]Congratulations![or]Hi! You're going to be a mommy soon!'[or]Hello miss mommy! You're pretty!'[at random][roman type][line break]";
 		if the class of the player is fertility goddess:
 			say "[speech style of M]'[one of]Hello! You look nice, miss goddess!'[or]Hi miss goddess!'[or]Hi! You look beautiful today, miss goddess!'[at random][roman type][line break]";
-			alwayscutshow figure of fairy interact 2 for M;
+			unless M is fairy-witch, alwayscutshow figure of fairy interact 2 for M;
 		otherwise:
 			say FirstResponse of M;
 	otherwise:
@@ -718,7 +718,7 @@ To say RepeatResponse of (M - a fairy):
 			say "[speech style of M]'[one of]Hush! It's playtime!'[or]I'm going to catch you!'[or]Tag! You're it!'[or]It's playtime, shh!'[or]I'm going to get you~!'[at random][roman type][line break]";
 		otherwise:
 			say "[speech style of M]'Oh, is it playtime already?'[roman type][line break]";
-		alwayscutshow figure of fairy interact 3 for M.
+		unless M is fairy-witch, alwayscutshow figure of fairy interact 3 for M.
 
 To say InvitationAccepted of (M - a fairy) with (N - a monster):
 	say "[speech style of M]'Teehee, this will be fun!'[roman type][line break]";
@@ -813,85 +813,70 @@ To say PregnancyAssessment of (M - fairy-witch):
 	say "[BigNameDesc of M] puts [his of M] face up against your belly, listening intently.";
 	if M is the father:
 		say "[speech style of M]'It's definitely mine, heehee!'[roman type][line break]";
-		alwayscutshow figure of fairy interact 7 for M;
 	otherwise if the father is tentacle monster or the father is lake monster or the father is vines or the father is living belt of sturdiness or the father is sex doll or the father is deep one:
 		say "[speech style of M]'Well, the daddy definitely isn't a human. Does that help?'[roman type][line break]";
-		alwayscutshow figure of fairy interact 7 for M;
 	otherwise if the father is a creampie pole trap:
 		say "[speech style of M]'I don't know, could be anything! How fun!'[roman type][line break]";
-		alwayscutshow figure of fairy interact 7 for M;
 	otherwise if the father is royal guard or the father is gladiator or the father is centaur:
 		say "[speech style of M]'Um, I think the daddy definitely likes weapons. Does that help?'[roman type][line break]";
-		alwayscutshow figure of fairy interact 7 for M;
 	otherwise if the father is unicorn:
 		say "[speech style of M]'The daddy definitely wasn't a demon. I think. Is that helpful?'[roman type][line break]";
-		alwayscutshow figure of fairy interact 7 for M;
 	otherwise if the father is minotaur:
 		say "[big he of M] recoils, as if [he of M] just got hit in the face.[line break][speech style of M]'The daddy is definitely big and tough. Is that helpful?'[roman type][line break]";
-		alwayscutshow figure of fairy interact 6 for M;
 	otherwise if the father is infernal:
 		say "[big he of M] recoils and starts, rubbing [his of M] cheek.[line break][speech style of M]'Whoever the daddy is, [he of mechanic]'s really really mean!'[roman type][line break]";
-		alwayscutshow figure of fairy interact 6 for M;
 	otherwise if the father is fairy:
 		say "[line break][speech style of M]'Teehee. It's obviously a fairy!'[roman type][line break]";
-		alwayscutshow figure of fairy interact 7 for M;
 	otherwise:
 		say "[speech style of M]'Well, it was definitely a human. Does that help?'[roman type][line break]";
-		alwayscutshow figure of fairy interact 7 for M;
 	say "[line break]".
 
 To say PregnancyAssessment of (M - blue-fairy):
 	say "[BigNameDesc of M] puts [his of M] face up against your belly, listening intently.";
 	if the father is fairy:
 		say "[speech style of M]'Uuuuummm, I think it's a fairy?'[roman type][line break]";
-		alwayscutshow figure of fairy interact 11 for M;
 	otherwise if the father is mansion dwelling:
 		say "[big he of M] shivers.[speech style of M]It sounds like the daddy lives somewhere really spooky!'[roman type][line break]";
-		alwayscutshow figure of fairy interact 7 for M;
 	otherwise if the father is hotel dwelling or the father is demon lord or the father is patron:
 		say "[speech style of M]'The daddy sounds really rich. Have you slept with any piggy-banks recently?'[roman type][line break]";
-		alwayscutshow figure of fairy interact 7 for M;
 	otherwise if the father is woods dwelling:
 		say "[speech style of M]'The daddy carries the forest lord's blessing! Or maybe it IS the forest lord.'[roman type][line break]";
-		alwayscutshow figure of fairy interact 7 for M;
 	otherwise if the father is lake monster or the father is dungeon dwelling:
 		say "[speech style of M]'Hmm, the daddy must live somewhere underground. I think.'[roman type][line break]";
-		alwayscutshow figure of fairy interact 7 for M;
 	otherwise:
 		say "[speech style of M]'Uhhhh... mmmmm... I think it's, uhmm. I... don't know. Sorry.";
-		alwayscutshow figure of fairy interact 7 for M;
 	say "[line break]".
 
 To say WhereAnswer of (M - a fairy):
 	say "[speech style of M]'[if the class of the player is faerie][one of]What? I thought you knew![or]We're in our home, silly![at random][otherwise]I don't know what you'd call it, but I call this place my home[end if].'[roman type][line break]";
-	alwayscutshow figure of fairy interact 11 for M.
+	unless M is fairy-witch, alwayscutshow figure of fairy interact 11 for M.
 
 To say WhoAnswer of (M - a fairy):
 	say "[speech style of M]'[if M is fist sized fairy]Tinkerbell[otherwise if M is mischievous fairy]Jasmine[otherwise if M is cheeky fairy]Trixxy[otherwise if M is giggling fairy]Ditzi[otherwise if M is playful fairy]Ninona[otherwise]I don't know! Teehee!'[end if][if M is not blue-fairy] the fairy! [big please]d to meet you.'[end if][roman type][line break]";
-	alwayscutshow figure of fairy interact 10 for M.
+	unless M is fairy-witch, alwayscutshow figure of fairy interact 10 for M.
 
 To say StoryAnswer of (M - a fairy):
 	say "[speech style of M]'[if pregnancy fetish is 1]Us fairies are blessed with the task of spreading the joy of pregnancy to everyone we meet. And if we find a boy, we can just turn them into a girl! And that's not all we can do. It's so fun messing with people!'[otherwise]Us fairies are blessed with a desire to play with anyone we meet, and we have the magic to do it! It's so fun messing with people!'[end if][roman type][line break]";
-	alwayscutshow figure of fairy interact 8 for M.
+	unless M is fairy-witch, alwayscutshow figure of fairy interact 8 for M.
 
 To say EscapeAnswer of (M - a fairy):
 	if the class of the player is faerie:
 		say "[speech style of M]'[one of]I don't think us faeries are supposed to leave...'[or]Ask the witch! [big he of witch] knows everything!'[or]Fly out! *giggle*'[at random][roman type][line break]";
 	otherwise:
 		say "[speech style of M]'[one of]This is a magic forest, there's no way out. Teehee!'[or]There's no way of getting out of here, this forest expands for miles and miles in every direction!'[or][if diaper quest is 1]There's a big scary metal robot you have to fight, but apparently it's less scary if you're wearing a full diaper!'[otherwise]Well, if you really want to know, there's this big hole somewhere nearby. If you jump in there, you might find a way out!'[end if][or]I don't know! Teehee!'[or]There's a set of doors somewhere, but behind them everything is all scary and metal.'[as decreasingly likely outcomes][roman type][line break]";[Who exactly expects useful information from a fairy?]
-	alwayscutshow figure of fairy interact 11 for M.
+	unless M is fairy-witch, alwayscutshow figure of fairy interact 11 for M.
 
 To say AdviceAnswer of (M - a fairy):
 	if diaper quest is 1, say "[speech style of M]'[one of]Wearing heels can help your kicks and make you look more like a grown up, but they sure are difficult to walk in if you're wearing a diaper!'[or]Cumming while in a diaper isn't just humiliating, it's likely to get you addicted to diapers if you do it too much! Which kinda sounds fun, hehe!'[or]Many years ago, the princess used a mystical amulet to seal away a super mean demon's power. [big he of ex-princess] trusted us fairies to take care of it, but we lost it! It's probably around here somewhere, you should go find it, teehee!'[or]All demons are evil, but that means they all share weaknesses to the same types of magic. There are some out there that are impervious to all physical attack, but there's no such thing as impervious to magic. That's cheating!'[in random order][roman type][line break].";
 	otherwise say "[speech style of M]'[one of]Those horny vines you find around here sure can be tough, but they're so clumsy! If you don't want them to [if the player is possessing a vagina]do fun stuff to your [pussy][otherwise]do fun stuff with your butthole[end if], try and find a pair of underwear that they'll have lots of trouble with!'[or][if egg laying fetish is 1]Have you ever noticed how all underground creatures seem to lay eggs? If you know there's a real monster around, you should stay away from its lair unless your belly is ready to take lots and lots of eggs!'[otherwise if pregnancy fetish is 1]Have you ever noticed how people treat you differently when you're pregnant. Well, monsters do too, so try to stick near them if there's someone trying to take advantage of your big belly to get something from you! And if you can[']t find a monster, come find me, I[']ll protect you!'[otherwise]Have you ever noticed how vines don[']t bother you once they[']ve had their fun? If you don[']t want to fight with them, just let them fuck you! They can't tell where you are until you get up afterwards, so you can rest all you want before you're ready for more semen![end if][or]Many years ago, the princess used a mystical amulet to seal away a super mean demon's power. [big he of ex-princess] trusted us fairies to take care of it, but we lost it! It's probably around here somewhere, you should go find it, teehee!'[or]All demons are evil, but that means they all share weaknesses to the same types of magic. There are some out there that are impervious to all physical attack, but there[']s no such thing as impervious to magic. That[']s cheating!'[in random order][roman type][line break].";
-	alwayscutshow figure of fairy interact 12 for M.
+	unless M is fairy-witch, alwayscutshow figure of fairy interact 12 for M.
 
 Section 3 - Drink Requesting
 
 To compute friendly drink of (M - a fairy):
 	if slimegirl is not worn:
 		say "[if M is mating][line break][speech style of M]'You just want me to get you pregnant again, don't you? Maybe you're becoming as addicted to pregnancy as a real fairy!'[otherwise][BigNameDesc of M] has an evil look in [his of M] eye. [speech style of M]'Oh don't worry, I'll fill you up!'[end if][roman type][line break]";
-		alwayscutshow figure of fairy interact 13 for M;
+		unless M is fairy-witch, alwayscutshow figure of fairy interact 13 for M;
 		say "With a wave of [his of M] hands, your belly starts to expand. It keeps on growing until you feel very, very full. [if the largeness of belly < max belly size]It's not just your stomach that [he of M] has filled up...[end if]";
 		StomachFoodUp 1 + diaper quest;
 		increase the stomach-water of the player by 3;
@@ -900,12 +885,13 @@ To compute friendly drink of (M - a fairy):
 		if diaper quest is 1:
 			if the water volume of belly < belly limit - the total fill of belly, now the water volume of belly is belly limit - the total fill of belly;
 		otherwise if the player is not possessing a vagina:
-			while the largeness of belly < 8 and the largeness of belly < max belly size:
-				assfill 1;
+			let X be 19 - the largeness fill of belly;
+			if X > 0, assfill X;
 		otherwise:
-			while the largeness of belly < 8 and the largeness of belly < max belly size:
-				if the semen volume of belly < 20, assfill 1;
-				if the semen volume of vagina < 15, PussyFill 1;
+			let X be 19 - the largeness fill of belly;
+			if X > 0:
+				assfill (X + 1) / 2;
+				PussyFill X / 2;
 		distract M;
 		say "[BigNameDesc of M] seems satisfied and looks to leave you alone.";
 	otherwise:

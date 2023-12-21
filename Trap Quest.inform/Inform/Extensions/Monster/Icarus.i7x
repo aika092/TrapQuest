@@ -19,8 +19,8 @@ To say FuckerDesc of (M - Icarus):
 To say BigFuckerDesc of (M - Icarus):
 	say "Icarus".
 
-Definition: Icarus is dungeon dwelling:
-	if diaper quest is 0 and christmas content is 0, decide yes;
+Definition: Icarus is woods dwelling:
+	if christmas content is 0, decide yes;
 	decide no.
 
 Figure of Icarus 1 is the file "NPCs/Dungeon/Icarus/Icarus1.png".
@@ -57,7 +57,16 @@ To set up (M - Icarus):
 	add wing leotard to the taxableItems of M, if absent;
 	add wing leotard to the tradableItems of M, if absent;
 	now the raw difficulty of M is 9;
-	now the health of M is the maxhealth of M;
+	now the health of M is the maxhealth of M.
+
+Carry out taking white candle:
+	if the player is in Woods31 and Woods01 is not raining:
+		say "As you pick up the candle, thunder loudly rumbles from outside the cave, and then it starts chucking it down.";
+		now rain-timer is 300;
+		if Icarus is not interested and Icarus is not permanently banished:
+			if Icarus is off-stage, set up Icarus;
+			now Icarus is in the location of the player;
+			say "Suddenly, [if the times-met of Icarus is 0]a [man of Icarus] with great white wings[end if] soars into the cave. [big he of Icarus] shakes the water off [his of Icarus] wings, and shivers.".
 
 To decide which number is the girth of (M - Icarus):
 	decide on 3.
@@ -72,17 +81,25 @@ Part 1 - Misc Flavour
 
 To say DiaperReaction of (M - Icarus):
 	if there is a currently visible diaper or the player is shameless:
-		say "[BigNameDesc of M] frowns and looks directly at your dampening crotch.[line break][speech style of M]'[one of]I've never understood you perverts who get off on wearing those things. If that wasn't bad enough, you have the audacity to use it in front of me? Disgusting.'[or][big please] stop doing such disgusting things in front of me.'[stopping][roman type][line break]";
-		if the player is modest, say "[one of]You are so ashamed you wish the ground would just open up and swallow you. [or][stopping]You turn bright red and refuse to look at [NameDesc of M] in the eye.";
+		if diaper quest is 1:
+			say "[BigNameDesc of M] bites [his of M] lip with arousal[if M is doing nothing special], and you see a tent forming in [his of M] pants[end if].";
+			FavourDown M with consequences;
+		otherwise:
+			say "[BigNameDesc of M] frowns and looks directly at your dampening crotch.[line break][speech style of M]'[one of]I've never understood you perverts who get off on wearing those things. If that wasn't bad enough, you have the audacity to use it in front of me? Disgusting.'[or][big please] stop doing such disgusting things in front of me.'[stopping][roman type][line break]";
+			if the player is modest, say "[one of]You are so ashamed you wish the ground would just open up and swallow you. [or][stopping]You turn bright red and refuse to look at [NameDesc of M] in the eye.";
 	otherwise:
 		say "It seems [he of M] hasn't sensed anything, so you've gotten away with it this time.".
 
 To compute diaper mess reaction of (M - Icarus):
-	say "[BigNameDesc of M] recoils with shock and disgust.[line break][speech style of M]'No. Just no! What the fuck! [if M is uninterested]I'm getting out of here.'[otherwise]I'm not going anywhere near that.'[end if][roman type][line break]";
-	obsceneHumiliate;
-	if M is uninterested:
-		bore M;
-		if M is in the location of the player, compute mandatory room leaving of M.
+	if diaper quest is 1:
+		say "[BigNameDesc of M] bites [his of M] lip with arousal[if M is doing nothing special], and you see a tent forming in [his of M] pants[end if].";
+		FavourDown M with consequences;
+	otherwise:
+		say "[BigNameDesc of M] recoils with shock and disgust.[line break][speech style of M]'No. Just no! What the fuck! [if M is uninterested]I'm getting out of here.'[otherwise]I'm not going anywhere near that.'[end if][roman type][line break]";
+		obsceneHumiliate;
+		if M is uninterested:
+			bore M;
+			if M is in the location of the player, compute mandatory room leaving of M.
 
 To compute (M - a monster) stomping (N - Icarus):
 	if M is in the location of the player, say "[BigNameDesc of M] hits [NameDesc of N] with a brutal uppercut, which causes [NameDesc of N][']s corporeal body to shudder and then fizzle away, leaving nothing but a few feathers behind.";
@@ -109,12 +126,19 @@ To decide which number is the bimbo tolerance of (M - Icarus): [What number of o
 To decide which number is the outrage tolerance of (M - Icarus): [What number of outrage they are unimpressed and lose favour.]
 	decide on 10.
 
+To decide which number is the bab tolerance of (M - Icarus): [What number of cringe they become immediately unfriendly.]
+	decide on 16.
+
+To decide which number is the cringe tolerance of (M - Icarus): [What number of cringe they are unimpressed and lose favour.]
+	decide on 9.
+
+
 To say DisapprovalFlav of (M - Icarus):
 	say "You can see [NameDesc of M]['] [DickDesc of M] twitch underneath [his of M] tight pants.[line break][speech style of M]'[one of]It's so difficult to do my job without getting... distracted...'[or]You look mighty [tasty] right now.'[stopping][roman type][line break]";
 	if lady fetish is 0, alwayscutshow figure of Icarus interact 5 for M.
 
 To say BecomesAggressive of (M - Icarus):
-	say "You watch [him of M] spread [his of M] wings to their full span![line break][speech style of M]'[one of]Okay, let's have a quick shag, then I'll get back to work...'[or]Time to have a quick sex break, I think!'[in random order][roman type][line break]Looks like [his of M] intentions have become less than pure...".
+	say "You watch [him of M] spread [his of M] wings to their full span![line break][speech style of M]'[if diaper quest is 1]Okay, there's something I've just GOT to do with you before I get back to work...'[otherwise][one of]Okay, let's have a quick shag, then I'll get back to work...'[or]Time to have a quick sex break, I think!'[in random order][end if][roman type][line break]Looks like [his of M] intentions have become less than pure...".
 
 To compute sudden objectification of (M - Icarus):
 	say "Something seems to change in the way [NameDesc of M] is looking at you.[line break][speech style of M]'[one of]I can probably get away with a quick bang before the boss notices[or]Well now you just look too hot to leave alone[or]Damn, you look ready for fucking, don't you? Even if I get disciplined for this, I think it'll be worth it[in random order]...'[roman type][line break]".
@@ -142,7 +166,8 @@ To compute appearance assessment of (M - Icarus):
 			compute Icarus science of M;
 		otherwise:
 			say "[speech style of M]'[one of]Disappointing...'[or]Fair enough.'[or]Maybe next time then.'[at random][roman type][line break]";
-			if lady fetish is 0, alwayscutshow figure of Icarus interact 1 for M.
+			if lady fetish is 0, alwayscutshow figure of Icarus interact 1 for M;
+			if M is acquaintance, FavourDown M.
 
 To compute perception of (M - Icarus):
 	if the class of the player is living sex doll:
@@ -166,6 +191,43 @@ To compute perception of (M - Icarus):
 		say "[BigNameDesc of M] looks you up and down[if the player is sluttily dressed].[otherwise]![end if][line break]";
 		compute appearance assessment of M.
 
+To compute DQ perception of (M - Icarus):
+	if M is babifying the player:
+		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of]You look like your game's pretty much over anyway, right? So it shouldn't make any difference if I have some fun with you too!'[or]I really shouldn't, but I can't help myself!'[stopping][roman type][line break]";
+		anger M;
+		if lady fetish is 0, alwayscutshow figure of Icarus interact 5 for M;
+	otherwise if the current-errand of M is completed and M is not uniquely unfriendly:
+		compute errand completion of M;
+	otherwise if M is unfriendly:
+		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of]Look who's still lurking around nearby! Clearly you haven't had enough of me, huh?'[or]I've been wondering when you'd show your face here again. I'll make you wish you hadn't, haha!'[or]Lovely to see you again! Let's have some fun.'[in random order][roman type][line break][if the player is upright][big he of M] takes an aggressive stance.[end if]";
+		if lady fetish is 0, alwayscutshow figure of Icarus interact 5 for M;
+	otherwise if the player is in danger or there is a live thing grabbing the player:
+		say "[BigNameDesc of M] notices you[if the player is sluttily dressed]! [otherwise]. [end if][line break][speech style of M]'[one of]Don't worry, I won't interrupt[or]Best of luck[in random order]!'[roman type][line break][big he of M] turns to leave you alone.";
+		distract M;
+		if lady fetish is 0, alwayscutshow figure of Icarus interact 4 for M;
+	otherwise:
+		say "[BigNameDesc of M] looks you up and down[if the player is sluttily dressed].[otherwise]![end if][line break]";
+		compute DQ appearance assessment of M.
+
+To compute DQ appearance assessment of (M - Icarus):
+	if M is cringe disapproving:
+		FavourDown M by 1;
+		if M is friendly, say CringeDisapprovalFlav of M;
+	if M is unfriendly:
+		say "[speech style of M]'[one of]Well well well, don't you look deliciously cute? [or]Sweetheart, you've got that [']play with me['] look. [or]You're so adorable, you look like an angel! [in random order][one of]I really shouldn't, but I can't help myself! [or]It's technically against the rules, but what nobody finds out about won't hurt them... [in random order]Let's have a bit of naughty fun.'[roman type][line break][one of]Uh-oh, [he of M] seems unfriendly...[or][stopping]";
+		anger M;
+		if lady fetish is 0, alwayscutshow figure of Icarus interact 5 for M;
+	otherwise:
+		if lady fetish is 0, alwayscutshow figure of Icarus interact 6 for M;
+		say "[speech style of M]'Hey there. [if christmas content is 1]Merry Christmas! [end if][one of]Are you willing to let me test out some new 3D designs on you? If you agree, there's a gift in it for you, courtesy of the big guy upstairs[or]I'm still looking to test my graphics in return for gifts[stopping].'[roman type][line break]Agree to [his of M] request? ";
+		if the player is bimbo consenting:
+			FavourUp M;
+			compute Icarus science of M;
+		otherwise:
+			say "[speech style of M]'[one of]Disappointing...'[or]Fair enough.'[or]Maybe next time then.'[at random][roman type][line break]";
+			if lady fetish is 0, alwayscutshow figure of Icarus interact 1 for M;
+			if M is acquaintance, FavourDown M.
+
 Part 3 - Icarus Science
 
 Definition: a wearthing is IcarusScienceAppropriate: decide no.
@@ -183,11 +245,11 @@ To decide which figure-name is icarus-clothing-image of (C - a wearthing):
 
 To say IcarusSummonFlav of (C - a wearthing):
 	say ExamineDesc of C;
-	cutshow the icarus-clothing-image of C for C.
+	cutshow icarus-clothing-image of C.
 
 To say IcarusSummonFlav of (C - a clothing):
-	say "A [ShortDesc of C] appears on you!";
-	cutshow the icarus-clothing-image of C for C.
+	say "A [MediumDesc of C] appears on you!";
+	cutshow icarus-clothing-image of C.
 
 To compute Icarus science of (M - Icarus):
 	let C be a random off-stage IcarusScienceAppropriate wearthing;
@@ -228,6 +290,16 @@ Definition: bondage-ribbons is end of transformation chain: decide yes.
 Definition: bondage-ribbons (called C) is IcarusScienceAppropriate:
 	if the player is not wrist bound and C is actually summonable, decide yes;
 	decide no.
+
+To compute class set up of (C - bondage-ribbons):
+	now C is cursed;
+	compute quest of C;
+	if diaper quest is 0, now C is audible jiggles;
+	otherwise now C is bed wetting;
+	unless the player is wrist bound, now C is wrist-bound-behind.
+
+To say ClassSummonFlav of (C - bondage-ribbons):
+	say "Suddenly, red ribbons appear, wrapping around your body - including your arms! Your arms are tightly pinned to your sides![line break][variable custom style]Fuck![roman type][line break]And then, as you try to move, a twang escapes your [ShortDesc of C]. Startled, you step back, causing your [BreastDesc] let out shaky wibbles and wobbles. Since when were your breasts CARTOONISHLY AUDIBLE?!?!?!?!?!".
 
 Figure of bondage ribbons is the file "Items/Clothes/Upper/Dresses/Christmas/bondageribbons1.png".
 Figure of bondage ribbons full is the file "Items/Clothes/Upper/Dresses/Christmas/bondageribbons2.jpg".
@@ -277,7 +349,7 @@ To decide which number is the initial outrage of (C - chain-collar):
 leather-jacket is a jacket. leather-jacket is not-exclusive. leather-jacket is leather. leather-jacket is only arm covering. leather-jacket is ridiculously low cut. leather-jacket is belly exposing.
 The printed name of leather-jacket is "[clothing-title-before]leather jacket[clothing-title-after]". The text-shortcut of leather-jacket is "lja". Understand "jacket" as leather-jacket.
 Definition: leather-jacket is IcarusScienceAppropriate:
-	if it is actually summonable, decide yes;
+	if diaper quest is 0 and it is actually summonable, decide yes;
 	decide no.
 
 Figure of leather-jacket is the file "Items/Clothes/Upper/TubeTops/leatherjacket1.png".
@@ -300,7 +372,7 @@ To decide which figure-name is icarus-clothing-image of (C - a pink rubber shirt
 
 icarus-butt is a wearthing.
 Definition: icarus-butt is IcarusScienceAppropriate:
-	if the total weighty volume of hips >= 8 and the total volume of hips < 16 and max ass size >= 16, decide yes;
+	if diaper quest is 0 and the total weighty volume of hips >= 8 and the total volume of hips < 16 and max ass size >= 16, decide yes;
 	decide no.
 Figure of icarus-butt is the file "NPCs/Dungeon/Icarus/cutscene-icarus-ball1.jpg".
 To compute IcarusSummon of (C - icarus-butt):
@@ -312,7 +384,7 @@ To compute IcarusSummon of (C - icarus-butt):
 
 icarus-hips is a wearthing.
 Definition: icarus-hips is IcarusScienceAppropriate:
-	if the thickness of hips < max hip size and the thickness of hips <= 6 + the flesh volume of thighs and the thickness of hips > 3 + the flesh volume of thighs, decide yes;
+	if diaper quest is 0 and the thickness of hips < max hip size and the thickness of hips <= 6 + the flesh volume of thighs and the thickness of hips > 3 + the flesh volume of thighs, decide yes;
 	decide no.
 To compute IcarusSummon of (C - icarus-hips):
 	say "[BigNameDesc of Icarus] pulls [his of Icarus] hands apart slowly, and you can feel your hips try to widen at the same time!";
@@ -321,7 +393,7 @@ To compute IcarusSummon of (C - icarus-hips):
 
 icarus-lips is a wearthing.
 Definition: icarus-lips is IcarusScienceAppropriate:
-	if the lips of face < 2, decide yes;
+	if diaper quest is 0 and the lips of face < 2, decide yes;
 	decide no.
 Figure of icarus-lips is the file "NPCs/Dungeon/Icarus/cutscene-icarus-lips1.jpg".
 To compute IcarusSummon of (C - icarus-lips):
@@ -333,7 +405,7 @@ To compute IcarusSummon of (C - icarus-lips):
 
 icarus-hair is a wearthing.
 Definition: icarus-hair is IcarusScienceAppropriate:
-	if the largeness of hair < 9 and frozen hair is 0, decide yes;
+	if diaper quest is 0 and the largeness of hair < 9 and frozen hair is 0, decide yes;
 	decide no.
 Figure of icarus-hair is the file "NPCs/Dungeon/Icarus/cutscene-icarus-hair1.jpg".
 To compute IcarusSummon of (C - icarus-hair):
@@ -352,12 +424,23 @@ To compute IcarusSummon of (C - icarus-hair):
 
 icarus-belly is a wearthing.
 Definition: icarus-belly is IcarusScienceAppropriate:
-	if the pregnancy of the player is 0 and (inflation fetish is 1 or (pregnancy fetish is 1 and the player is possessing a vagina)), decide yes;
+	if diaper quest is 1 or (the pregnancy of the player is 0 and (inflation fetish is 1 or (pregnancy fetish is 1 and the player is possessing a vagina))), decide yes;
 	decide no.
 Figure of icarus-belly is the file "NPCs/Dungeon/Icarus/cutscene-icarus-belly1.jpg".
 To compute IcarusSummon of (C - icarus-belly):
 	say "[BigNameDesc of Icarus] forms [his of Icarus] hands into a ball and slowly pulls them apart. Your belly expands at the same time as [his of Icarus] hands!";
-	if the player is able to get pregnant:
+	if diaper quest is 1:
+		say "As you clutch your belly with discomfort, you can feel that it has been filled to bursting with ";
+		if diaper swapping >= 4 and the player is getting unlucky:
+			say "insane amounts of poop![line break][variable custom style]Oh god...[roman type][line break]";
+			now rectum is 30;
+		otherwise if watersports fetish is 1:
+			say "[urine]!";
+			increase the urine volume of belly by belly limit - the total fill of belly;
+		otherwise:
+			say "warm water!";
+			increase the water volume of belly by belly limit - the total fill of belly;
+	otherwise if the player is able to get pregnant:
 		now the pregnancy of the player is 1;
 		cancel father material of vagina;
 		now forcedFertility is true;
@@ -366,7 +449,7 @@ To compute IcarusSummon of (C - icarus-belly):
 	otherwise:
 		increase the air volume of belly by belly limit - the total fill of belly;
 	cutshow figure of icarus-belly for belly;
-	say TotalDesc of belly.
+	if diaper quest is 0, say TotalDesc of belly.
 
 icarus-pasties is a pasties. icarus-pasties is unique. icarus-pasties is sheer. The text-shortcut of icarus-pasties is "psti".
 Figure of icarus-pasties is the file "Items/Clothes/Upper/Bras/pasties2a.jpg".
@@ -482,10 +565,33 @@ To decide which number is the tripping max of (M - Icarus): [Giving the Icarus h
 	if D < 1, decide on 1;
 	decide on D.
 
-Section 2 - Damage
+Section 2 - DQ
+
+Definition: Icarus is willing to masturbate: decide yes.
+
+Definition: Icarus is willing to use a diaper urinal: decide yes.
+
+Definition: Icarus is willing to urinate: decide yes.
+
+icarus-summon is a diaper punishment. The priority of icarus-summon is 1.
+
+Definition: icarus-summon is appropriate:
+	if current-monster is Icarus and there is an off-stage IcarusScienceAppropriate wearthing, decide yes;
+	decide no.
+
+To compute punishment of (P - icarus-summon):
+	let C be a random off-stage IcarusScienceAppropriate wearthing;
+	if C is wearthing:
+		say "[speech style of current-monster]'[one of]You can be a guinea pig for my latest graphics.'[or]I've been waiting to try this render out...'[stopping][roman type][line break]Pointing [his of current-monster] hands towards you, [NameDesc of current-monster] concentrates. ";
+		compute IcarusSummon of C;
+	satisfy current-monster.
+
+Section 3 - Damage
 
 To say CombatProvokedReaction of (M - Icarus):
-		say "[BigNameDesc of M] notices you and takes an aggressive stance![if M is friendly][line break][speech style of M]'Fuck you, bitch, I was going to leave you alone! Maybe you are looking for a fuck after all.'[roman type][line break][end if]".
+	say "[BigNameDesc of M] notices you and takes an aggressive stance!";
+	if M is friendly, say "[speech style of M]'Fuck you, bitch, I was going to leave you alone! Maybe you are looking [if diaper quest is 1]to be messed with[otherwise]for a fuck[end if] after all.'[roman type][line break]";
+	otherwise say "[speech style of M]'That was a mistake.'[roman type][line break]".
 
 To say DamageReactHealthy of (M - Icarus):
 	say "[BigNameDesc of M] takes the hit, frowning.".
@@ -500,7 +606,7 @@ To say DamageReactWeak of (M - Icarus):
 	say "[BigNameDesc of M] takes the hit, angrily fighting to maintain [his of M] balance!".
 
 To say TaxReturnDismay of (M - Icarus):
-	say "[speech style of M]'[one of]If you're going to make me pay you like a whore, then I'm going to keep treating you like a whore.'[or]Whore.'[stopping][roman type][line break]".
+	say "[speech style of M]'[if diaper quest is 1]The Big Bosses upstairs are going to hear about this, mark my words. Huh? God? No, I mean the Nintendolls.'[otherwise][one of]If you're going to make me pay you like a whore, then I'm going to keep treating you like a whore.'[or]Whore.'[stopping][end if][roman type][line break]".
 
 To say BanishForceFlav of (M - Icarus):
 	say "[BigNameDesc of M] bows. [speech style of M]'So be it.'[roman type][line break][big he of M] spreads [his of M] wings wide and takes off. A ray of light appears from the ceiling, acting as a guide towards some sort of invisible portal, which [he of M] quickly disappears through.";

@@ -70,6 +70,10 @@ Definition: woman-player is calculated unfriendly:
 	if it is angered and it is not pacified, decide yes;
 	decide no.
 Definition: woman-player is uniquely unfriendly: decide no.
+To decide which number is the bimbo tolerance of (M - woman-player):
+	decide on 100. [If we don't make this prohibitively high, there can be some weird difficult-to-debug outcomes surrounding the overriding of uniquely unfriendly above, where the NPC is objectifying but friendly, and somehow attacking while friendly.]
+To decide which number is the bab tolerance of (M - woman-player):
+	decide on 100.
 Definition: woman-player is objectifying the player: decide no.
 Definition: woman-player is babifying the player: decide no.
 
@@ -326,7 +330,7 @@ The woman spawning to release the boss rule is listed last in the womanspawning 
 This is the woman spawning in the region of the player rule:
 	if barbsummoned is true or a random number between 1 and 80 is 1:
 		if playerRegion is Dungeon:
-			if the player is an october 2023 top donator and portal-bra is off-stage and woman-player is not partially-enslaved and the times-met of pimp > 0 and Hotel44 is discovered and the woman-bimbo of woman-player is 2, now woman-player is partially-enslaved;
+			if diaper quest is 0 and the player is an october 2023 top donator and portal-bra is off-stage and woman-player is not partially-enslaved and the times-met of pimp > 0 and Hotel44 is discovered and the woman-bimbo of woman-player is 2, now woman-player is partially-enslaved;
 			deploy woman-player with woman-status 1;
 			rule succeeds;
 		otherwise if playerRegion is Woods:

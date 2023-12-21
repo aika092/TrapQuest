@@ -82,4 +82,33 @@ This is the WC collar piss slut rule:
 	if WC collar is worn, increase the desirability of belly by 15.
 The WC collar piss slut rule is listed in the piss slut eligibility rules.
 
+cock collar is a submissive collar. cock collar is latex. cock collar is sheer. The printed name of cock collar is "[clothing-title-before]cock collar[clothing-title-after]". The text-shortcut of cock collar is "ccl".
+
+Definition: cock collar is class-relevant:
+	if the class of the player is stripper or the class of the player is cumdumpster, decide yes;
+	decide no.
+
+To compute class set up of (C - cock collar):
+	now C is charisma-influencing;
+	now the raw-magic-modifier of C is 1;
+	now C is temptation.
+
+To decide which number is the initial outrage of (C - cock collar):
+	decide on 8.
+
+Figure of cock collar is the file "Items/Accessories/Neck/collar12.png".
+
+To decide which figure-name is clothing-image of (C - cock collar):
+	decide on figure of cock collar.
+
+To say ClothingDesc of (C - cock collar):
+	say "This pink latex collar has a gold [manly-penis] dangling from it.".
+
+To say ShortDesc of (C - cock collar):
+	say "cock collar".
+
+Definition: cock collar is pink themed: decide yes.
+Definition: cock collar is penis themed: decide yes.
+
+
 Cumslut Collar ends here.

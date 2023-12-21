@@ -393,7 +393,7 @@ To decide which figure-name is clothing-image of (C - underboob sweater):
 	decide on figure of underboob sweater.
 
 To say ClothingDesc of (C - underboob sweater):
-	say "This longsleeved white sweater would be very modest if it wasn't for the fact that it stops just below your nipples.".
+	say "This long-sleeved white sweater would be very modest if it wasn't for the fact that it stops just below your nipples.".
 
 To say ShortDesc of (C - underboob sweater):
 	say "underboob sweater".
@@ -422,7 +422,7 @@ To decide which figure-name is clothing-image of (C - bitch top):
 	decide on figure of bitch top.
 
 To say ClothingDesc of (C - bitch top):
-	say "This short longsleeved pink sweater has a zip stuck halfway down, to expose a bit of cleavage. The pattern has the word 'Bitch' repeating along with pink love hearts.".
+	say "This short long-sleeved pink sweater has a zip stuck halfway down, to expose a bit of cleavage. The pattern has the word 'Bitch' repeating along with pink love hearts.".
 
 To say ShortDesc of (C - bitch top):
 	say "bitch top".

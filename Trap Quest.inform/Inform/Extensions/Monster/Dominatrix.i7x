@@ -46,6 +46,10 @@ Definition: dominatrix is willing to do anal: decide yes.
 
 Definition: dominatrix is a generic-unlocker: decide yes.
 
+Definition: dominatrix is a diaper wetter:
+	if diaper quest is 1, decide yes;
+	decide no.
+
 Definition: a dominatrix is willing to charm snakes:
 	if diaper quest is 0, decide yes;
 	if there is a worn chastity bond, decide no;
@@ -328,7 +332,7 @@ To compute unique periodic effect of (M - dominatrix):
 	if M is in Hotel37:
 		if diaper quest is 1 and M is friendly:
 			repeat with SD running through on-stage soiled-diaper:
-				if SD is in a modern room and SD is not carried:
+				if SD is in a modern room and SD is not carried and SD is not in the location of the player and SD is not nearby:
 					now SD is carried by M;
 		if M is dominatrix-equipped and (M is not unfriendly or M is uninterested):[after combat is over, she puts the toys away]
 			if the player is in Hotel37, say "[BigFuckerDesc of M] [if M is carrying whip-of-domination]returns the whip and the large riding crop[otherwise]returns the large riding crop[end if] to the rack on the wall.";

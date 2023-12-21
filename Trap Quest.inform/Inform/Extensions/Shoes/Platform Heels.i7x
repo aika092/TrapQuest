@@ -150,7 +150,7 @@ To uniquely set up (C - a tall platform heels):
 Definition: a tall platform heels is end of transformation chain: decide yes. [It's the end of the transformation chain. This will make some things avoid bothering to attempt to transform it.]
 
 Definition: a tall platform heels (called C) is IcarusScienceAppropriate:
-	if the heel skill of the player > 4 and C is actually summonable, decide yes;
+	if diaper quest is 0 and the heel skill of the player > 4 and C is actually summonable, decide yes;
 	decide no.
 
 To say TransformReaction of (C - a tall platform heels):

@@ -25,6 +25,38 @@ Definition: plain-massive-diaper is white themed: decide yes.
 To decide which number is the unique outrage of (C - plain-massive-diaper):
 	decide on -2.
 
+portal-diaper is a massive diaper. portal-diaper is unique. The text-shortcut of portal-diaper is "ptd". Understand "portal" as portal-diaper.
+portal-diaper has a number called portal-charge.
+Figure of portal diaper cutscene is the file "Special/Cutscene/cutscene-portal-diaper1.jpg".
+To decide which figure-name is clothing-image of (C - portal-diaper):
+	decide on figure of plain massive diaper.
+To say selfexamineuniquetitle of (K - portal-diaper):
+	say "massive plain diaper".
+To say ClothingDesc of (C - portal-diaper):
+	say "An extremely large white adult diaper, with huge amounts of extra puffy padding. It doesn't have any kind of humiliating pattern on it. It does, however, have a magic portal on the inside, which is connected to the urinal in the Hotel. It seems to be somehow magically adhered to your body! Apparently nobody can remove it except [NameDesc of pimp].".
+Definition: portal-diaper is white themed: decide yes.
+Definition: portal-diaper is removable: decide no.
+To decide which number is the unique outrage of (C - portal-diaper):
+	decide on -2.
+To compute periodic effect of (C - portal-diaper):
+	increase the portal-charge of C by 1;
+	if the portal-charge of C > a random number between 20 and 250 and Hotel31 is not within vision:
+		now the portal-charge of C is 0;
+		if a random number between 0 and diaper cumrag is 0:
+			say "[bold type]All of a sudden, [urine] starts flowing into your [C]! [roman type]Someone must be pissing in the hotel urinal!";
+			AnnouncedExpel urine on C by a random number between 7 and 11;
+			GrossOut 4 with reason "The sensation of being used as a diaper urinal makes you shudder," and sensation "feeling";
+			cutshow Figure of hotel urinal portal piss;
+		otherwise:
+			say "[bold type]All of a sudden, warm and sticky [semen] spurts into your [C]! [roman type]Someone must be MASTURABTING into the hotel urinal!";
+			AnnouncedExpel semen on C by a random number between 3 and 5;
+			GrossOut 5 with reason "The sensation of being used as a diaper cumrag makes you shudder," and sensation "[one of]sticky[or]slimy[cycling] feeling";
+			cutshow Figure of hotel urinal portal cum;
+		mapcutshow Figure of portal diaper cutscene for C;
+		if mechanic is alive and a random number between 1 and 5 is 1, now mechanic is inseminating C.
+Check wearing portal-diaper:
+	if the player is not a december 2023 diaper donator, say "Sorry, this is only for recent Shame Games subscribers." instead.
+
 blue-massive-diaper is a massive diaper. The text-shortcut of blue-massive-diaper is "bmd". Understand "blue" as blue-massive-diaper.
 Figure of blue massive diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper1b.png".
 To decide which figure-name is clothing-image of (C - blue-massive-diaper):
@@ -130,7 +162,7 @@ Definition: demon-diaper is pink themed: decide yes.
 
 Chapter 3 Waddle Diaper
 
-waddle diaper is a kind of pullup diaper. A waddle diaper is pvc. A waddle diaper is zippable. A waddle diaper is crotch-zipped. A waddle diaper is totally-exclusive. A waddle diaper is transformation-rare. A waddle diaper is womanly.
+waddle diaper is a kind of pullup diaper. A waddle diaper is pvc. A waddle diaper is zippable. A waddle diaper is crotch-zipped. A waddle diaper is totally-exclusive. A waddle diaper is transformation-rare. A waddle diaper is womanly. A waddle diaper has a number called clean-timer.
 The DQFigure of waddle diaper is DQWaddle.
 Understand "waddle" as waddle diaper.
 To decide which number is the weight of (C - a waddle diaper):
@@ -151,22 +183,25 @@ To say BlessBlandFlav of (D - a waddle diaper):
 	if D is worn, say "Your [ShortDesc of D] shrinks a noticeably, allowing you to close the gap between your thighs a bit more! The thick padding in between your legs no longer quite reaches below your knees.".
 
 To compute unique periodic effect of (D - a waddle diaper):
-	if the total-soak of D > the soak-limit of D / 2 or D is messed:
-		if D is perceived wet or D is perceived messed:
-			say "[bold type]You feel the padding of your [ShortDesc of D] suddenly becoming dry[one of][or] again[stopping]![roman type] ";
-			if D is cursed:
-				if there is a worn heels:
-					if the raw heel skill of the player < 10:
-						increase the heel time of the player by 1000;
-					otherwise:
-						DexUp 1;
-					say "You see your [ShortDesc of a random worn heels] glow softly.";
-			otherwise:
-				say "You feel it [if D is blessed]lose its blessing[otherwise]become cursed[end if] as it significantly increases in size!";
-				curse D;
-				say "[variable custom style]I can't believe it... It got even bigger![roman type][line break]";
-		clean D;
-		now the water-soak of D is 0.
+	if the total-soak of D > (the soak-limit of D * 3) / 4 or D is messed:
+		increase the clean-timer of D by 1;
+		if the clean-timer of D > a random number between 10 and 200:
+			now the clean-timer of D is 0;
+			if D is perceived wet or D is perceived messed:
+				say "[bold type]You feel the padding of your [ShortDesc of D] suddenly becoming dry[one of][or] again[stopping]![roman type] ";
+				if D is cursed:
+					if there is a worn heels:
+						if the raw heel skill of the player < 10:
+							increase the heel time of the player by 1000;
+						otherwise:
+							DexUp 1;
+						say "You see your [ShortDesc of a random worn heels] glow softly.";
+				otherwise:
+					say "You feel it [if D is blessed]lose its blessing[otherwise]become cursed[end if] as it significantly increases in size!";
+					curse D;
+					say "[variable custom style]I can't believe it... It got even bigger![roman type][line break]";
+			clean D;
+			now the water-soak of D is 0.
 
 Definition: a waddle diaper is transformation-protected:
 	if it is cursed, decide yes;

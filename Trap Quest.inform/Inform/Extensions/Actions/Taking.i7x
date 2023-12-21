@@ -132,14 +132,20 @@ To compute partial stealing success of (T - a thing) from (M - a monster):
 	now the owner of T is M;
 	if T is listed in the tradableItems of M, remove T from the tradableItems of M;
 	interest M;
+	compute partial stealing reaction of T from M;
+	progress quest of stealing-quest.
+
+To compute partial stealing reaction of (T - a thing) from (M - a monster):
 	anger M;
 	let N be the bartering value of T for M;
-	FavourDown M by N;
-	progress quest of stealing-quest.
+	FavourDown M by N.
 
 To compute stealing fail of (T - a thing) from (M - a monster):
 	say "[big he of M] whirls round as soon as your hand touches the [ShortDesc of T][if M is human], and grabs you by the wrist[end if]. [StealProvokedReaction of M]";
 	interest M;
+	compute stealing fail reaction of T from M;
+
+To compute stealing fail reaction of (T - a thing) from (M - a monster):
 	anger M;
 	let N be (2 * the bartering value of T for M) / 3;
 	FavourDown M by N;

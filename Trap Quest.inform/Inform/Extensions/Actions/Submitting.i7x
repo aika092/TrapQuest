@@ -33,8 +33,8 @@ Carry out submitting:
 				if the player is having marital sex, dignify 20.[princesses who accept their role fully are more confident after sex with their consorts]
 
 Report submitting:
-	let M be a random thing grabbing the player;[prioritize anyone holding the player down]
-	if M is nothing, now M is a random live thing penetrating a body part;[next, prioritize anyone inside the player]
+	let M be a random thing grabbing the player;[prioritise anyone holding the player down]
+	if M is nothing, now M is a random live thing penetrating a body part;[next, prioritise anyone inside the player]
 	if M is nothing, now M is a random thing wrangling a body part;[Lastly, we take a look at any holders on.]
 	unless M is nothing or (diaper quest is 1 and M is live) or (M is monster and M is not doing nothing special):
 		if forced submit > 1:

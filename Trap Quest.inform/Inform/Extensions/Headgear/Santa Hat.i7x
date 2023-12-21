@@ -217,7 +217,7 @@ To set up (Q - nice-quest):
 	now the nice-count of Q is 0.
 
 To say QuestFlav of (Q - nice-quest):
-	say "You sense that it wants you to prove you are nice by [bold type]not attacking[if diaper quest is 0] or resisting[end if][roman type] during your first several encounters.".
+	say "You sense that it wants you to prove you are nice by [bold type]not attacking[if diaper quest is 0] or resisting[end if][roman type] until you have sexually satisfied a few people (does not progress while you're in the academy region).".
 
 To say QuestTitle of (Q - nice-quest):
 	say " (naughty or nice quest)".
@@ -226,7 +226,7 @@ To progress quest of (Q - nice-quest):
 	repeat with C running through worn clothing:
 		if the quest of C is Q:
 			if playerRegion is not school, increase nice-count of Q by 1;
-			if nice-count of Q > a random number between 5 and 8:
+			if nice-count of Q > a random number between 1 and 2:
 				compute quest completion of Q on C.
 
 To compute generic first time class reward of (Q - nice-quest) on (C - a clothing):

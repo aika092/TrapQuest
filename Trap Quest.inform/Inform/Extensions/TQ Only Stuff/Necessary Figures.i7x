@@ -393,6 +393,7 @@ To decide which figure-name is the pacified-image of (M - a wrestler):
 	decide on figure of Missing NPC.
 
 Figure of Xavier Cutscene 2 is the file "NPCs/Bosses/Xavier/cutscene-xavier-fuck1.png".
+Figure of Xavier Cutscene 3 is the file "NPCs/Bosses/Xavier/cutscene-xavier-event2.jpg".
 
 Part - Clothing
 

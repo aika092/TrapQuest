@@ -129,7 +129,7 @@ The minotaur's cage.
 *!]
 DungeonScenery04 is a thing. DungeonScenery04 is scenery. DungeonScenery04 is in Dungeon36. The printed name of DungeonScenery04 is "Cage". Understand "cage", "prison" as DungeonScenery04.
 To say ExamineDesc of (C - DungeonScenery04):
-	say "A large metal cage. [if there is an alive caged dungeon boss]The entrance to the cage is locked, and appears to be opened by an automatic mechanism. Inside there is an angry looking monster. He snarls at you.[otherwise]The cage is open and empty.[end if]".
+	say "A large metal cage. [if there is an alive caged dungeon boss]The entrance to the cage is locked, and appears to be opened by an automatic mechanism. Inside there is an angry looking monster. [big he of a random alive caged dungeon boss] snarls at you.[otherwise]The cage is open and empty.[end if]".
 
 DungeonScenery05 is a thing. DungeonScenery05 is scenery. DungeonScenery05 is in Dungeon12. The printed name of DungeonScenery05 is "Photo". Understand "photo", "picture", "frame" as DungeonScenery05.
 To say ExamineDesc of (C - DungeonScenery05):

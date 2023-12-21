@@ -8,7 +8,7 @@ Definition: cow-ears is roleplay:
 	if lactation fetish is 1, decide yes;
 	decide no.
 Definition: cow-ears is IcarusScienceAppropriate:
-	if it is actually summonable and lactation fetish is 1, decide yes;
+	if diaper quest is 0 and it is actually summonable and lactation fetish is 1, decide yes;
 	decide no.
 
 cow-ears has a number called temporary-milked-bonus.
@@ -23,7 +23,7 @@ The printed name of cow-ears is "[clothing-title-before]pair of cow ears[clothin
 
 To decide which figure-name is the clothing-image of (C - cow-ears):
 	decide on figure of cow ears.
-To decide which figure-name is the icarus-clothing-image of (C - cow-ears):
+To decide which figure-name is icarus-clothing-image of (C - cow-ears):
 	decide on figure of cow ears full.
 
 To say ClothingDesc of (H - cow-ears):

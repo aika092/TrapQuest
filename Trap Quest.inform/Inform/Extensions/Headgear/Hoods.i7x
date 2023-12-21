@@ -230,6 +230,10 @@ Definition: WC hood is roleplay:
 	decide no.
 Definition: WC hood is white themed: decide yes.
 
+Definition: WC hood is ringagged:
+	if watersports fetish is 1, decide yes;
+	decide no.
+
 This is the WC hood piss slut rule:
 	if WC hood is worn, increase the desirability of belly by 10.
 The WC hood piss slut rule is listed in the piss slut eligibility rules.
@@ -244,7 +248,7 @@ To compute unique recycling of (C - WC hood):
 	now the gulp-count of human-toilet-quest is 0.
 
 Definition: WC hood (called C) is removal-blocking:
-	if wearing-target is diaper, decide yes;
+	if diaper quest is 1 and wearing-target is diaper, decide yes;
 	decide no.
 
 To compute class outfit of (H - WC hood):
@@ -516,7 +520,7 @@ To decide which number is the initial outrage of (C - cat-hood):
 Definition: cat-hood is ringagged: decide no.
 
 Report wearing cat-hood:
-	if the player is an october 2023 top donator:
+	if (diaper quest is 0 and the player is an october 2023 top donator) or (diaper quest is 1 and the player is an october 2023 diaper donator):
 		now heist-painting is rippling;
 		if the player is in the location of heist-painting, say "[bold type]The painting in this room starts rippling. Almost as if you could now enter it...[roman type][line break]".
 

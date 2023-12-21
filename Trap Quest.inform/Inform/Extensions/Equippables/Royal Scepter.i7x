@@ -155,7 +155,7 @@ To compute proposal of (M - a monster):
 		if the player is consenting:
 			if the number of worn rings < 8, summon R;
 			otherwise now R is in the location of the player;
-			say "[BigNameDesc of M] looks jubilant.[line break][speech style of M]'It is settled! Please meet me at the stage for the ceremony.'[roman type][line break]";
+			say "[BigNameDesc of M] looks jubilant.[line break][speech style of M]'It is settled! [big please] meet me at the stage for the ceremony.'[roman type][line break]";
 			now bride-consort is M;
 		otherwise:
 			say "[speech style of M]'I will not stop asking until you [one of]are mine[or]say yes[or]accept[in random order]!'[roman type][line break]";

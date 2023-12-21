@@ -593,7 +593,7 @@ To say ErectionClimaxFlav of (M - an acolyte):
 	if penis is not penis-erect:
 		say ErectionLostFlav of M;
 	otherwise:
-		say "Glowing purple symbols suddenly appear all over [FuckerDesc of M]'s body, and you faintly feel tentacles wrapping around your limbs. It only takes a moment for them to completely immobilize you![line break][speech style of M]'[one of]It is time[or]The ritual is nearly complete[or]The time has come[in random order], [if the class of the player is cultist][brother of the player][otherwise]non-believer[end if]! [one of]Cum! Now!'[or]Release it all!'[or]Cum for the [great ones]!'[or]Ejaculate, now!'[in random order][roman type][line break]Without any way to move, your only choice is to [if the reaction of the player is 0]try to hold on[otherwise]hope you're able to finish[end if] as [FuckerDesc of M] speeds up!";
+		say "Glowing purple symbols suddenly appear all over [FuckerDesc of M]'s body, and you faintly feel tentacles wrapping around your limbs. It only takes a moment for them to completely immobilise you![line break][speech style of M]'[one of]It is time[or]The ritual is nearly complete[or]The time has come[in random order], [if the class of the player is cultist][brother of the player][otherwise]non-believer[end if]! [one of]Cum! Now!'[or]Release it all!'[or]Cum for the [great ones]!'[or]Ejaculate, now!'[in random order][roman type][line break]Without any way to move, your only choice is to [if the reaction of the player is 0]try to hold on[otherwise]hope you're able to finish[end if] as [FuckerDesc of M] speeds up!";
 		let N be doomed;
 		if N < 0, now N is 1;
 		stimulate penis times N;[If the player orgasms, the ejaculation has its own flavour.]
@@ -666,6 +666,7 @@ To compute standard damage of (M - a mindless acolyte):
 			now deep one is unleashed;
 			anger deep one;
 	otherwise if the times-encountered of deep one is 0:
+		set up deep one;
 		now deep one is unleashed;
 		now deep one is interested;
 		anger deep one;

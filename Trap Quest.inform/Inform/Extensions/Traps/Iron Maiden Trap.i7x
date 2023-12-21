@@ -190,7 +190,15 @@ Check going when there is a triggered cage trap in the location of the player:
 			now hips is stuck;
 			say "You begin to squeeze through the cage, but after the rest of your body except your [AssDesc] is out, you feel a magical curse  trigger! Your ass cheeks inflate with air until they're a comical size - much too big to fit between the bars! You're completely stuck! [GotUnluckyFlav][bold type]You'll have to wait for the cage to somehow release you.[roman type][line break]";
 			AssInflate 10;
-		if there is a stuck body part, say "[bold type]You are now stuck, halfway out of the cage, on your knees.[roman type][line break]" instead;
+		if there is a stuck body part:
+			say "[bold type]You are now stuck, halfway out of the cage, on your knees.[roman type][line break]";
+			if buzzing giant wasp is woods dwelling and buzzing giant wasp is not permanently banished and buzzing giant wasp is not within vision:
+				if the monstersetup of buzzing giant wasp is 0, set up buzzing giant wasp;
+				now buzzing giant wasp is in the location of the player;
+				now buzzing giant wasp is moved;
+				say "[bold type]You hear a loud buzzing, and then over the trees you see [NameDesc of buzzing giant wasp] soaring and descending down towards your clearing![roman type] Uh-oh...";
+				check guaranteed perception of buzzing giant wasp;
+			do nothing instead;
 	let D be a random worn diaper;
 	if D is diaper:
 		let BK be the DQBulk of the player;

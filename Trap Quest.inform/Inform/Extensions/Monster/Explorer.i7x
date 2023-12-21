@@ -75,6 +75,7 @@ To repeated set up (M - an explorer):
 		now M is permanently banished;
 	otherwise:
 		now M is unconcerned;
+		if the explorer-bimbo of M > 0, compute generic item gain of M;
 		if the explorer-bimbo of M is 2:
 			let L be Hotel44; [pimp room]
 			let LR be a list of rooms;
@@ -91,6 +92,9 @@ To repeated set up (M - an explorer):
 			now M is in Hotel01;
 		otherwise:
 			now M is in Woods01.
+
+
+
 
 To decide which number is the difficulty of (M - an explorer):
 	decide on the raw difficulty of M.
@@ -118,8 +122,8 @@ To compute perception of (M - an explorer):
 	otherwise if the explorer-bimbo of M >= 2:
 		say WhorePerceptionFlav of M;
 	otherwise:
-		if the explorer-bimbo of M is 1, say "[big he of M] [one of]winks cheekily[or]smiles warmly at[or]licks [his of M] lips while looking at you[in random order] you.";
-		otherwise say "[big he of M] [one of]nods towards[or]smiles awkwardly at[or]raises [his of M] eyebrows politely towards[in random order] you.".
+		if the explorer-bimbo of M is 1, say "[big he of M] [one of]bites [him of M] lip and blushes, looking away from[or]smiles awkwardly at[in random order] you.";
+		otherwise say "[big he of M] [one of]nods towards[or]smiles warmly at[or]raises [his of M] eyebrows politely towards[in random order] you.".
 
 To say WhorePerceptionFlav of (M - an explorer):
 	say "[speech style of M]'Hi, fancy seeing you here.'[roman type][line break]".

@@ -311,7 +311,7 @@ Definition: a royal guard (called M) is uniquely distracted:
 			otherwise if N is gymnast-explorer: [which it should be 100% of the time AFAIK]
 				say "[BigNameDesc of M] notices a red marker pen tucked behind [NameDesc of N][']s ear.[line break][speech style of M]'I recognise this pen... It has special powers when people other than yourself use it to write on your skin, does it not? Well, in that case...'[roman type][line break][BigNameDesc of N] yelps as the pen is snatched away from [him of N].[line break][speech style of N]'W-wait, what exactly are you planning to write with that...'[roman type][line break]But [NameDesc of M] does not reply, [his of M] attention fully on what [he of M] is scribbling onto [NameDesc of N][']s legs.[line break][speech style of M]'There we go. Now go, in a manner befitting a diapered diva such as yourself.'[roman type][line break][BigNameDesc of M] takes [NameDesc of N][']s hands and pulls [him of N] to [his of N] feet. Immediately, [NameDesc of N] springs onto [his of N] tiptoes, [his of N] arms adopting a ballerina-style pose![line break][speech style of N]'W-what have you done to me?! Ooooooooh...'[roman type][line break]That last word is spoken because [if diaper messing >= 3][his of N] tummy rumbles, and then suddenly loudly unleashes a flood of poop out of [his of N] butthole and fills[otherwise][he of N] has suddenly let go of [his of N] bladder, and [his of N] [urine] is filling[end if] [his of N] bulky diaper to the brim.[line break][speech style of N]'Oh my god!'[roman type][line break]But despite clearly wanting to change how [he of N] is standing, [NameDesc of N] seems powerless to change from [his of N] ballerina pose. [big he of N] reads the words on [his of N] legs, and whimpers.[line break][speech style of M]'Perfect. Now go from here with both grace and disgrace.'[roman type][line break][BigNameDesc of N] groans as another surge of [if diaper messing >= 3]shit[otherwise][urine][end if] exits [his of N] body, and, panicking, forces a smile onto [his of N] face.[line break][speech style of N]'F-fine, have it your way, meanie!'[roman type][line break][BigNameDesc of N] does [his of N] best to hold [his of N] smile as [he of N] prances off towards the staircase, just like a ballerina.";
 			otherwise:
-				say "[BigNameDesc of M] points to [his of N] white panties.[line break][speech style of M]'First we shall strip you of your pride. Remove your undergarments.'[roman type][line break][BigNameDesc of N] scowls, and looks between you and [NameDesc of M] a few times before growling with frustration and complying, awkwardly pulling [his of M] underwear off, exposing [his of N] shaved genitals. [BigNameDesc of M] holds out an expectant hand, and [NameDesc of N] is forced to submissively hand over [his of N] only pair of panties. [BigNameDesc of M] bunches them up and pockets them.[line break][speech style of M]'Now then. You have a choice. You can either go outside wearing no underwear at all, or you can wear these.'[roman type][line break][BigNameDesc of M] produces a small pair of purple pull-ups, with a floral pattern. [BigNameDesc of N] can't help but complain.[line break][speech style of N]'Oh come on, seriously?!'[roman type][line break][BigNameDesc of M] ignores [him of N], and just waits for [him of N] to make [his of N] inevitable choice.[line break][speech style of N]'FINE. But I'm going to surprise you all by ROCKING in them. By the time I'm done, they'll be the latest stylish fashion trend.'[roman type][line break][BigNameDesc of N] rudely snatches the pull-up diaper out of [NameDesc of M][']s hand and pulls it up [his of N] legs. [BigNameDesc of M] just smiles.[line break][speech style of M]'Perhaps elsewhere you may manage to do that. But down here, diapered citizens are treated as a lower class. They are frequently checked, changed, and most importantly, trained. As long as you continue to flout my order and remain down here, you will now find that the members of this community will continuously make sure you are kept full of breast milk and baby food, and given good hard maintenance spankings to encourage discipline. It's not only the law, but the culture.'[roman type][line break][BigNameDesc of N][']s frown grows more and more frustrated as [NameDesc of M] speaks.[line break][speech style of N]'F-fuck this! The lower difficulty level doesn't make up for how creepy you all are down here. I'm out. Wish me luck upstairs.'[roman type][line break][big he of N] huffs and strides away towards the [if D is direction][D][otherwise]exit[end if].";
+				say "[BigNameDesc of M] points to [his of N] white panties.[line break][speech style of M]'First we shall strip you of your pride. Remove your undergarments.'[roman type][line break][BigNameDesc of N] scowls, and looks between you and [NameDesc of M] a few times before growling with frustration and complying, awkwardly pulling [his of N] underwear off, exposing [his of N] shaved genitals. [BigNameDesc of M] holds out an expectant hand, and [NameDesc of N] is forced to submissively hand over [his of N] only pair of panties. [BigNameDesc of M] bunches them up and pockets them.[line break][speech style of M]'Now then. You have a choice. You can either go outside wearing no underwear at all, or you can wear these.'[roman type][line break][BigNameDesc of M] produces a small pair of purple pull-ups, with a floral pattern. [BigNameDesc of N] can't help but complain.[line break][speech style of N]'Oh come on, seriously?!'[roman type][line break][BigNameDesc of M] ignores [him of N], and just waits for [him of N] to make [his of N] inevitable choice.[line break][speech style of N]'FINE. But I'm going to surprise you all by ROCKING in them. By the time I'm done, they'll be the latest stylish fashion trend.'[roman type][line break][BigNameDesc of N] rudely snatches the pull-up diaper out of [NameDesc of M][']s hand and pulls it up [his of N] legs. [BigNameDesc of M] just smiles.[line break][speech style of M]'Perhaps elsewhere you may manage to do that. But down here, diapered citizens are treated as a lower class. They are frequently checked, changed, and most importantly, trained. As long as you continue to flout my order and remain down here, you will now find that the members of this community will continuously make sure you are kept full of breast milk and baby food, and given good hard maintenance spankings to encourage discipline. It's not only the law, but the culture.'[roman type][line break][BigNameDesc of N][']s frown grows more and more frustrated as [NameDesc of M] speaks.[line break][speech style of N]'F-fuck this! The lower difficulty level doesn't make up for how creepy you all are down here. I'm out. Wish me luck upstairs.'[roman type][line break][big he of N] huffs and strides away towards the [if D is direction][D][otherwise]exit[end if].";
 			now the refractory-period of M is the refractory-time of M;
 			satisfy M;
 			DifficultyUp M by 1;
@@ -1493,14 +1493,17 @@ To say DamageReactSubmissive of (M - a royal guard):
 	say "[BigNameDesc of M] grunts as [he of M] fights to keep [his of M] balance, staring at your crotch with a crest-fallen look in [his of M] eyes.".[He was so sure he was going to get to punish you. :(]
 
 To compute tax return of (M - a royal guard):
-	if M is prison guard and skeleton key is not held:
-		now skeleton key is in the location of the player;
-		compute loot dropping of skeleton key by M;
-		increase the loot dropped of M by 1;
-		compute autotaking skeleton key;
-		say TaxReturnDismay of M;
+	if M is choice-taxable:
+		compute choice tax return of M;
 	otherwise:
-		compute default tax return of M;
+		if M is prison guard and skeleton key is not held:
+			now skeleton key is in the location of the player;
+			compute loot dropping of skeleton key by M;
+			increase the loot dropped of M by 1;
+			compute autotaking skeleton key;
+			say TaxReturnDismay of M;
+		otherwise:
+			compute default tax return of M;
 	if the class of the player is princess:
 		calm M;
 		FavourUp M.
@@ -1983,7 +1986,7 @@ To vaginal ride dominate (M - a royal guard):[with times-submitted we'll assume 
 			PussyFill the semen load of M;
 			orgasm M;
 			say AfterDominationComment 1 of M;
-	if the refractory-period of M > 0 and the class of the player is Princess, FavourUp M by 1;
+	if the refractory-period of M > 0 and the class of the player is princess, FavourUp M by 1;
 	FuckCount;
 	now M is not penetrating vagina.
 
@@ -2051,7 +2054,7 @@ To anal ride dominate (M - a royal guard):
 			orgasm M;
 			say AfterDominationComment 1 of M;
 		now M is not penetrating asshole;
-	if the refractory-period of M > 0 and the class of the player is Princess, FavourUp M by 1;
+	if the refractory-period of M > 0 and the class of the player is princess, FavourUp M by 1;
 	AnalCount.
 
 To say AfterDominationComment (N - a number) of (M - a royal guard):

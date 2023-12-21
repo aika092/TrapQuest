@@ -143,7 +143,7 @@ Section - School Nightmare
 
 boogeymonster-nightmare-school is boogeymonster-nightmare.
 
-The priority of boogeymonster-nightmare-school is 3. [This is super harsh so doesn't ever happen first. It happens after all the other eligible ones have happened.]
+The priority of boogeymonster-nightmare-school is 2. [This is super harsh so doesn't ever happen first. It happens after all the other eligible ones have happened.]
 
 Figure of boogeymonster school cutscene is the file "Special/Cutscene/cutscene-boogeymonster1.jpg".
 
@@ -189,7 +189,7 @@ Section - Aeroplane Nightmare
 
 boogeymonster-nightmare-aeroplane is boogeymonster-nightmare.
 
-The priority of boogeymonster-nightmare-aeroplane is 4.
+The priority of boogeymonster-nightmare-aeroplane is 3.
 
 Figure of boogeymonster aeroplane cutscene is the file "Special/Cutscene/cutscene-boogeymonster2.jpg".
 
@@ -253,7 +253,7 @@ boogeymonster-nightmare-tv is boogeymonster-nightmare.
 
 Figure of boogeymonster tv cutscene is the file "Special/Cutscene/cutscene-boogeymonster3.jpg".
 
-The priority of boogeymonster-nightmare-tv is 4.
+The priority of boogeymonster-nightmare-tv is 3.
 
 To compute punishment of (N - boogeymonster-nightmare-tv):
 	now the priority of N is 1;
@@ -338,7 +338,7 @@ Definition: boogeymonster-nightmare-courtroom (called P) is appropriate:
 	if diaper messing < 3, decide no;
 	decide yes.
 
-The priority of boogeymonster-nightmare-courtroom is 4.
+The priority of boogeymonster-nightmare-courtroom is 3.
 
 Figure of boogeymonster courtroom cutscene is the file "Special/Cutscene/cutscene-boogeymonster5.jpg".
 
@@ -387,7 +387,7 @@ Definition: boogeymonster-nightmare-comicon (called P) is appropriate:
 	if diaper messing < 3, decide no;
 	decide yes.
 
-The priority of boogeymonster-nightmare-comicon is 4.
+The priority of boogeymonster-nightmare-comicon is 3.
 
 Figure of boogeymonster comicon cutscene is the file "Special/Cutscene/cutscene-boogeymonster6.jpg".
 
@@ -437,7 +437,7 @@ Definition: boogeymonster-nightmare-hotbuns (called P) is appropriate:
 	if current-monster is not boogeymonster, decide no;
 	decide yes.
 
-The priority of boogeymonster-nightmare-hotbuns is 4.
+The priority of boogeymonster-nightmare-hotbuns is 3.
 
 Figure of boogeymonster hotbuns cutscene is the file "Special/Cutscene/cutscene-boogeymonster9.jpg".
 
@@ -450,6 +450,59 @@ To compute punishment of (N - boogeymonster-nightmare-hotbuns):
 	say "[italic type]Art by Rosie-BRS[line break][second custom style]'Food's here!'[roman type][line break]Your deliver customer jogs out of her house and down to where you've parked by the side of the road, and retrieves the food from the rear. She looks at you and giggles.[line break][second custom style]'Nice buns!'[roman type][line break]You pout, but say the line you're supposed to, as instructed.[line break][variable custom style]'If you tip me $10, it'll treat me five times as hard on the ride back.'[line break][second custom style]'Hahahaha! DEAL!'[roman type][line break]The woman presses her phone to the contactless payment portal on the side of the bike, and there's an audible beep. Immediately, the spanking machine gains a life of its own, and starts spanking you several times faster than before.[line break][variable custom style]'OW OW OW! THANK YOU! OW OW OW!'[roman type][line break]You pedal away as fast as you can, which just makes the wedgie contraption floss your crack raw with even greater speed and intensity. You surge down the streets, people pointing and laughing as you sail past them, your ass torture in plain view for everyone to see. The perfect mobile advertisement for Jerry's Hot Red Buns.[paragraph break]And then... the scene is disappearing, your vision fading to black... but the pain, the searing pain in your [AssDesc] remains.";
 	PainUp 40;
 	say "And when you open your eyes, back in the Dungeon, [NameDesc of M] is nowhere to be seen.";
+	regionally place M;
+	distract M.
+
+Section - Clubbing Nightmare
+
+boogeymonster-nightmare-clubbing is boogeymonster-nightmare.
+
+Definition: boogeymonster-nightmare-clubbing (called P) is appropriate:
+	if current-monster is not boogeymonster or the player is shameless, decide no;
+	let BC be a random off-stage clubbing dress;
+	if BC is not actually summonable, decide no;
+	[if the player is possessing a vagina, ]decide yes;
+	decide no.
+
+The priority of boogeymonster-nightmare-clubbing is 5. [If the player can have the clubbing dress summoned, then now is the time]
+
+Figure of boogeymonster clubbing cutscene 1 is the file "Special/Cutscene/cutscene-boogeymonster10.jpg".
+Figure of boogeymonster clubbing cutscene 2 is the file "Special/Cutscene/cutscene-boogeymonster11.jpg".
+
+To compute punishment of (N - boogeymonster-nightmare-clubbing):
+	now the priority of N is 1;
+	let M be current-monster;
+	say "[NightmareStartFlav][line break]";
+	say "[second custom style]'Oh my gosh [NameBimbo], you look so [beautiful]!'[roman type][paragraph break]Your [PlatonicRole] would say that, but still, it makes you blush and smile.[line break][variable custom style]'Thanks. I wasn't sure if it was a bit extra.'[roman type][paragraph break]Your cute blue dress has a rather short skirt, and you're exposing a lot of leg. Combine that with your high heels, luscious hair, and big hooped earrings... You've been turning a lot of heads tonight.[line break][italic type]TISS TISS BAM BAM BAM[roman type][line break]The loud, heavy music echoes throughout the nightclub, as you shake your stuff on the dance floor. You're on cloud nine, on top of the world. You're a majestic bird, swinging and strutting your stuff, the hottest babe at the club.[paragraph break]And then the next thing you know, the huge, muscly bouncer is marching up to you and your [PlatonicRole], with a serious expression on his face. He squares up to you, and then points down at the ground beneath your feet. You follow his gaze, and see that you've accidentally spilled the vast majority of your drink, and it's created a big puddle between your feet. You raise one eyebrow at him and shrug - it's hardly the first time, that a drink has ever been spilled on a dancefloor. It's no big deal, right? But then he points to the sign on the wall nearby:[line break][italic type]DRUNK WETTERS[line break]WILL BE DIAPERED[roman type][line break]With an icon of a woman wetting herself and leaving a puddle of piss at her feet.";
+	appropriate-cutscene-display Figure of boogeymonster clubbing cutscene 1;
+	compute single choice question "'But I didn't wet myself!'";
+	say "You shout in protest over the din of the music, but the bouncer isn't convinced.[line break][first custom style]'Go on then, show me your dry panties.'[roman type][paragraph break]Oh shit - that's a problem. Feeling especially frisky, you decided to go commando tonight. You have no dry undergarments to present as evidence.[paragraph break]Seeing your hesitation and panic, the bouncer rolls his eyes and effortlessly lifts you over his shoulder in a fireman's hold. He carries you through to the staff room, where an adult-sized changing table awaits you. You struggle and protest, but the bouncer ignores you as he quickly and efficiently forces you into the thickest, bulkiest diaper you've ever seen - larger than anything you could ever have imagined. And not just a normal plain one either - it has this embarrassing baby pattern all over.[paragraph break]It also has a feature that you've never seen on a diaper before - a chain running through the waistband, which the bouncer locks shut with a small sturdy padlock.[paragraph break]As quickly as it began, it's over, and the massive man is carrying you back to the dancefloor, where your [PlatonicRole] is waiting for you, mouth agape. As you are plopped back down onto the ground in front of her, your face turns red with embarrassment. Everyone can see as clear as day that you're wearing the most giant, humiliating diaper that has ever existed. Your tiny little clubbing dress does nothing to hide its massive bulk.[line break][first custom style]'You can collect this from me at the end of the night.'[roman type][line break]He warns you sternly, before returning to the edge of the dancefloor.";
+	appropriate-cutscene-display Figure of nintendolls gameshow diaper game 1;
+	say "[italic type]Art by HofBondage[line break]";
+	compute single choice question "'I'm going to go hide in the toilets until this nightmare is over...'";
+	say "Every second that you spend here in this thing is making you burn up with new levels of humiliation you didn't even know were possible. You just plan to run and hide. But then... Your [PlatonicRole] awkwardly points to the sign on the toilet door.";
+	appropriate-cutscene-display Figure of boogeymonster clubbing cutscene 2;
+	say "The sign is abundantly clear - no diapers are allowed in the bathrooms. And since you can't remove your diaper, you can't go in the bathrooms either. This stark realization is accompanied by another - a heavy throb coming from your bladder makes you realize that you actually need to pee pretty badly right now.[line break][variable custom style]This can't be happening...[roman type][paragraph break]There's nowhere to run, nowhere to hide, and you desperately need to use the big [boy of the player] potty. But you're not allowed. For the next several hours, you'll be wearing nothing but this oversized incontinence aid that forces you to walk with a humiliating waddle. There's nothing to do... But let it go.";
+	compute single choice question "Wet yourself";
+	say "You release your hold on your bladder, and pray that nobody can tell.[line break][variable custom style]Is everybody looking? Why is everybody looking?![roman type][paragraph break]Probably because you're the only person there in a giant blue nappy, that's why. Your face goes red as you try to hide the fact that you're currently urinating right in front of everyone.[paragraph break]As the warmth spreads throughout your loins, you try to shake your oversized booty to the beat, pretending that you're just a normal clubber, dancing as normal.[line break][italic type]SQUELCH SQUELCH SQUELCH[roman type][line break]Wait... Why is the beat *squelching*? And then you notice... Asolutely EVERYONE is looking at you. The music has paused for a moment in between songs, and the noise you can hear isn't the beat, it's your own soggy diaper squelching loudly as you shake your hips. You stop shaking, but it's too late. Everybody has heard your super-loud, squelching diaper. Everybody knows you wet yourself. EVERYBODY IS LOOKING. You shut your eyes, wishing for the ground to open up and swallow you whole.";
+	let KN be random worn knickers;
+	if KN is knickers, only destroy KN;
+	summon blue-waddle-diaper locked;
+	now blue-waddle-diaper is audible squelches;
+	UrineSoakUp blue-waddle-diaper by 10;
+	let K be a random off-stage specific-key;
+	if K is a thing:
+		now K is covering blue-waddle-diaper;
+		now K is in Hotel21;
+	let BC be a random off-stage actually summonable clubbing dress;
+	summon BC cursed;
+	now the quest of BC is heel-walking-quest;
+	now BC is posture training;
+	let H be a random off-stage actually summonable court heels;
+	if H is heels:
+		summon H cursed;
+		now the quest of H is kicking-quest;
+	say "And when you open your eyes, back in the Dungeon, [NameDesc of M] is nowhere to be seen. But you are now wearing a [blue-waddle-diaper][if H is heels], a [H][end if] and a [BC].[line break][variable custom style]But wait... If the bouncer had the key to my diaper in the nightmare... Who has it here?![roman type][line break]";
 	regionally place M;
 	distract M.
 

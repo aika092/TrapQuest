@@ -79,7 +79,22 @@ To blockable move (M - a monster) to (D - a direction):
 		if debugmode > 1, say "player is moving (currently counts as being in [location of the player]) and [M] is trying to move [D], so [if D is the travel-opposite of the player]MOVEMENT IS BLOCKED[otherwise]movement is still allowed[end if].";
 		if D is not the travel-opposite of the player, try M going D;
 	otherwise:
-		try M going D.
+		if D is not listed in the Nviables of the location of M:
+			now Neighbour Finder is the location of M;
+			if M is airborne and Neighbour Finder is a no-roof jungle room:
+				let GS be the vector sum of the grid position of Neighbour Finder and the vector of D;
+				let R be the room at GS;
+				if R is not solid rock and R is no-roof:
+					if the player is in Neighbour Finder:
+						say "[BigNameDesc of M] takes flight, and soars over the foliage to the [D].";
+					now M is in R;
+					if the player is in R:
+						say "[BigNameDesc of M] soars over the foliage from the [opposite-direction of D].";
+						if M is not interested and the boredom of M <= 0, check perception of M; [the NPC gets the jump on the player]
+				otherwise:
+					say "BUG - [M] tried to move [D] from [Neighbour Finder] to [R] but that should not be possible.";
+		otherwise:
+			try M going D.
 
 To compute room leaving of (M - a monster): [This CANNOT be replaced with a function that potentially doesn't make them leave the room, for any NPC. Some while loops rely on this to eventually succeed or the game will freeze. 'blockable move' function is acceptable because when we compute mandatory room leaving we set travel-opposite to down]
 	if lagdebug is true:
@@ -95,6 +110,7 @@ To compute room leaving of (M - a monster): [This CANNOT be replaced with a func
 			say "Choosing direction...";
 			wait 200 ms before continuing;
 		let A be a random N-viable direction;
+		if M is airborne and neighbour finder is a no-roof jungle room, now A is a random A-viable direction;
 		if lagdebug is true:
 			say "Chosen [A]...";
 			wait 200 ms before continuing;
@@ -238,7 +254,7 @@ To check default seeking (N - a number) of (M - a monster):
 		if M is regional:
 			let L be the location of M;
 			let P be the location of the player;
-			let D be the best route from L to P through placed rooms;
+			let D be the best route from L to P through placed regional rooms;
 			if D is a direction:
 				now neighbour finder is L;
 				let L2 be the room D from the location of M;

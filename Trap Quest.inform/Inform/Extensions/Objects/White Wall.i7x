@@ -38,7 +38,7 @@ Carry out climbing WoodsScenery03:
 		say "You see nothing but more forest stretching forward in front of you. And then... From above, zooms [NameDesc of fairy-witch]![line break][speech style of fairy-witch]'[if lactation fetish is 1]Ooh, a cute cow has made herself ready for milking? So submissive[otherwise]You look fun to play with... Stay right there[end if]!'[roman type][line break][BigNameDesc of fairy-witch] zooms straight up to you before you can pull away! [GotUnluckyFlav]";
 		if lactation fetish is 1 and the player is not a flatchested trap:
 			say "[BigNameDesc of fairy-witch] brushes up against your [BreastDesc], which balloon outwards as they are filled with enormous amounts of milk!";
-			BustUp 3;
+			BustUp 8;
 			say "Now that your breasts are bigger, you can't fit back through the hole - you're stuck!!!";
 			Milkup the milk capacity of breasts - the milk volume of breasts;
 			if face is fairy targetable, compute fairy meddling on face;
@@ -51,7 +51,7 @@ Carry out climbing WoodsScenery03:
 		otherwise:
 			if the player is not top heavy:
 				say "[BigNameDesc of fairy-witch] brushes up against your [BreastDesc], which magically balloon outwards!";
-				BustUp 3;
+				BustUp 8;
 				say "Now that your breasts are bigger, you can't fit back through the hole - you're stuck!!!";
 			if face is fairy targetable, compute fairy meddling on face;
 			if hair is fairy targetable, compute fairy meddling on hair;

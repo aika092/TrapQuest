@@ -210,6 +210,21 @@ To evade trigger (C - hypno-trap-choice):
 	compute hypno effect of T; [chance of avoiding eye contact]
 	say "The tablet then turns off.".
 
+aphrodesiac-trap-choice is a choice-trap-choice.
+Definition: aphrodesiac-trap-choice is appropriate:
+	if the player is not horny and the player is able to get horny, decide yes;
+	decide no.
+To say ChoiceFlav of (C - aphrodesiac-trap-choice):
+	say "APHRODESIAC GAS".
+To trigger (C - aphrodesiac-trap-choice):
+	say "A blast of pink gas shoots out of the device and engulfs your face. You try holding your breath, but it doesn't matter. It would appear that this is some sort of nerve gas!";
+	arouse 5000.
+To evade trigger (C - aphrodesiac-trap-choice):
+	say "Pink gas spills out of the device, filling the area. Soon the gas is up to waist height!";
+	now the location of the player is smoky;
+	update backdrop positions.
+
+
 brothel-trap-choice is a choice-trap-choice.
 Definition: brothel-trap-choice is appropriate:
 	if there is a hotel bed in the location of the player and the number of monsters in the location of the player is 0, decide yes;
@@ -390,6 +405,10 @@ To trigger (Y - a choice trap):
 
 To say ChoiceTrapReactFlav of (M - a monster):
 	say TriggeredTrapReactFlav of M.
+
+
+
+
 
 
 Makeup Pad Trap ends here.

@@ -200,8 +200,17 @@ To decide which figure-name is clothing-image of (C - trashcan):
 	decide on Figure of trashcan empty.
 
 Figure of urinal is the file "Env/MultiFloor/urinal2.png".
+Figure of hotel urinal is the file "Env/MultiFloor/urinal3a.jpg".
+Figure of hotel urinal portal is the file "Env/MultiFloor/urinal3b.jpg".
+Figure of hotel urinal portal piss is the file "Env/MultiFloor/urinal3c.jpg".
+Figure of hotel urinal portal cum is the file "Env/MultiFloor/urinal3d.jpg".
 To decide which figure-name is the examine-image of (T - urinal):
 	if the player is in School27, decide on figure of staff room urinal;
+	if the player is in Hotel31:
+		if portal-diaper is worn:
+			decide on Figure of hotel urinal portal;
+		otherwise:
+			decide on Figure of hotel urinal;
 	decide on figure of urinal.
 
 Figure of Vibe Pose Predicament 1 is the file "Special/Cutscene/cutscene-vibe-pose3.jpg".

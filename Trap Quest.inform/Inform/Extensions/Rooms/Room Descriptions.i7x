@@ -28,14 +28,15 @@ To say RoomTrapDesc:
 	say RoomMonsterDesc.
 
 To say RoomMonsterDesc:
-	now neighbour finder is the location of the player;
-	if the location of the player is monster-nearby:
+	let L be the location of the player;
+	if L is room-monster-nearby:
 		say "[if a revealed trap is in the location of the player][line break][end if][line break]";
-		repeat with D running through N-viable directions:
-			if D is nearby:
+		repeat with D running through the Nviables of L:
+			if D is monster-nearby:
 				say "To the [D] you can see:[line break]";
-				repeat with M running through nearby alive monsters:
-					if the nearby-direction of M is D, say "	[M][line break]";
+				let R be the room D from L;
+				repeat with M running through monsters in R:
+					if M is not dying, say "	[M][line break]";
 				say "[line break]".
 
 To say DoorDesc:

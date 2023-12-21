@@ -53,7 +53,7 @@ To decide which figure-name is clothing-image of (C - longsleeved cheerleader ou
 	decide on figure of longsleeved cheerleader outfit.
 
 To say ClothingDesc of (C - longsleeved cheerleader outfit):
-	say "This red cheerleader outfit is made of a short flowing red skirt, a white longsleeved top and a red sweater, all subtly sewn together into one piece of clothing.".
+	say "This red cheerleader outfit is made of a short flowing red skirt, a white long-sleeved top and a red sweater, all subtly sewn together into one piece of clothing.".
 
 To decide which object is the unique-upgrade-target of (C - longsleeved cheerleader outfit):
 	decide on vest-top cheerleader outfit.

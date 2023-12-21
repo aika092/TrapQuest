@@ -540,6 +540,8 @@ Report going when the player is in Predicament20:
 	let T be a random trophy in Predicament20;
 	if T is trophy, say "[bold type]There is a [T][bold type] in this room![roman type] [one of]You feel [bold type]permanently more lucky[roman type][or]Once again you feel more lucky[stopping] for having completed this Extra Credit Assignment.[one of][line break][variable custom style]Why do I get the feeling that if I rub the trophy, something interesting might happen?[roman type][line break][or][stopping]";
 	say EndGameFlav of current-predicament;
+	[repeat with M running through ultimate-lesson-actors:
+		now M is not specific-man;]
 	now the fatigue of the player is 0;
 	if the number of entries in predicamentWornList > 0:
 		if abnormalClothingSituation is 1:
@@ -2338,12 +2340,12 @@ An all time based rule (this is the team quiz predicament time rule):
 				if diaper quest is 1 and diaper messing is 7 and asshole is not actually occupied:
 					check real messing;
 				otherwise if QFL is 2 or QFL >= 4:
-					say "You feel your [if diaper quest is 1]bladder[otherwise]sphincter[end if] beg to allow itself to be loosened. You know if you resist, [if diaper quest is 1]you'll end up a little more incontinent[otherwise]it'll really hurt[end if]. Do you hold it in?";
+					say "You feel your [if diaper quest is 1]bladder[otherwise]sphincter[end if] beg to allow itself to be loosened. You know if you resist, [if diaper quest is 1]your bladder will become a bit more irritable[otherwise]it'll really hurt[end if]. Do you hold it in?";
 					now temporaryYesNoBackground is figure of quiz predicament room;
 					if the player is consenting:
 						say "You hold on with everything you've got.";
 						if diaper quest is 1:
-							SilentlyBladderIncontinenceUp 1;
+							SilentlyIrritableBladderUp 5;
 							if the raw-bladder-incontinence of the player >= the max-bladder-incontinence of the player:
 								say "But it's no use! ";
 								now questionExpelled of L is 1;
@@ -2681,7 +2683,7 @@ smoothie-predicament has a number called smoothies-served.
 To set up bystanders for (P - smoothie-predicament):
 	set up 24 bystanders.
 To say PredicamentDescription of (P - smoothie-predicament):
-	say "I'm currently in an Extra Credit lesson where I need to [if smoothie gag is worn]serve smoothies as fast as possible so I can escape this van, while trying to minimize how much they force me to drink myself, and then I need to [end if]get back to my home while avoiding as many bystanders from noticing me as possible.".
+	say "I'm currently in an Extra Credit lesson where I need to [if smoothie gag is worn]serve smoothies as fast as possible so I can escape this van, while trying to minimise how much they force me to drink myself, and then I need to [end if]get back to my home while avoiding as many bystanders from noticing me as possible.".
 
 Definition: smoothie-predicament is always-perceiving:
 	if smoothie gag is stuck, decide yes; [when you are serving smoothies, people can't fail to notice you]
@@ -3115,16 +3117,15 @@ To execute (L - team-face-crotch-predicament):
 	while PredicamentMinutes > 0:
 		say "[line break]There [if PredicamentMinutes > 1]are [PredicamentMinutes] minutes remaining[otherwise]is one minute remaining[end if].";
 		if the bladder of the player >= bladder-risky-level:
-			say "Your bladder [if the bladder of the player < 12]twinges with significant discomfort. [bold type]Holding on will have a small chance of hurting[otherwise if the bladder of the player < 14]strains with its fullness, begging you to release. [bold type]Holding on has a decent chance of hurting[otherwise]is on fire, desperate to release! [bold type]Holding on will definitely hurt, and negatively affect your long-term continence[end if].[roman type][line break]Do you hold on? ";
+			say "Your bladder [if the bladder of the player < 12]twinges with significant discomfort. [bold type]Holding on will have a small chance of hurting[otherwise if the bladder of the player < 14]strains with its fullness, begging you to release. [bold type]Holding on has a decent chance of hurting[otherwise]is on fire, desperate to release! [bold type]Holding on will definitely hurt, and negatively affect your bladder's long-term irritability[end if].[roman type][line break]Do you hold on? ";
 			if the player is consenting:
 				say "You hold on tight!";
 				let R be a random number between bladder-risky-level and (bladder-risky-level + 4);
 				if R <= the bladder of the player:
 					say "It hurts! ";
-					UnflinchingPainUp 10;
+					UnflinchingPainUp 5;
 					if the bladder of the player >= bladder-risky-level + 4:
-						say "Your overall control over your bladder feels permanently weakened.";
-						SilentlyBladderIncontinenceUp 1;
+						IrritableBladderUp 5;
 				FavourUp ST;
 			otherwise:
 				say "You whine and squirm as you release your warm [urine] into your [ShortDesc of K][if playerAbove is 1 and K is diaper], [NameDesc of ST][']s nose still pressed firmly into your crotch through the thick padding. You're sure [he of ST] can feel that warmth spreading throughout your diaper[otherwise if playerAbove is 1], [NameDesc of ST][']s nose still pressed firmly into your crotch through the thin nylon of your bikini briefs. You're sure [he of ST] must be getting a full face-worth of warm piss-soaked cloth. Yuck[end if].";
@@ -4394,18 +4395,14 @@ To execute (TSLP - team-scissor-lift-predicament):
 							if rectum >= I:
 								now nowMessing is true;
 								say "During the hour, you find that you can't hold it any longer - you have to poop right now!";
-								if the raw-rectum-incontinence of the player < the max-bladder-incontinence of the player and the player is getting unlucky:
-									RectumIncontinenceUp 1;
-									say "Your control over your anal sphincter feels permanently weakened. [GotUnluckyFlav]";
+								IrritableRectumUp 5;
 						if B >= 0 and nowUrinating is false:
 							let R be (a random number between bladder-difficulty and B) + (a random number between bladder-difficulty and B);
 							if debuginfo > 0, say "[input-style]Automatic wetting check: bladder ([bladder of the player]) - continence rating ([BRL]) = [B] ---> RNG([bladder-difficulty] ~ [B]) + RNG([bladder-difficulty] ~ [B]) = [R] | positive number[roman type][line break]";
 							if R > 0 and the bladder of the player > 0:
 								now nowUrinating is true;
 								say "During the hour, you find that you can't hold it any longer - you have to pee right now!";
-								if diaper lover > 0 and the raw-bladder-incontinence of the player < the max-bladder-incontinence of the player and the player is getting unlucky:
-									SilentlyBladderIncontinenceUp 1;
-									say "Your control over your bladder feels permanently weakened. [GotUnluckyFlav]";
+								IrritableBladderUp 5;
 				if mins < 0:
 					increase mins by 60;
 					decrease T by 1;
@@ -4554,7 +4551,7 @@ To execute (TSLP - team-scissor-lift-predicament):
 									now STBladder is 0;
 									now STEnema is 0;
 								otherwise:
-									say "[speech style of M]'I can't hold it any longer, it's going to come out! Please, do your best...!'[roman type][line break]";
+									say "[speech style of M]'I can't hold it any longer, it's going to come out! [big please], do your best...!'[roman type][line break]";
 									while STEnema > 0:
 										say "[one of]Do you let [him of M] push [his of M] asshole up against your mouth[or]Keep holding your lips around [his of M] asshole[stopping]?";
 										if the player is consenting:
@@ -4587,7 +4584,7 @@ To execute (TSLP - team-scissor-lift-predicament):
 								increase STDiaper by STBladder;
 								now STBladder is 0;
 							otherwise:
-								say "[BigNameDesc of M] crosses [his of M] legs.[line break][speech style of M]'I'm sorry [NameBimbo], I really need to pee[one of][or] again[stopping]! Please, can I pee in your mouth? It's the only way!'[roman type][line break]";
+								say "[BigNameDesc of M] crosses [his of M] legs.[line break][speech style of M]'I'm sorry [NameBimbo], I really need to pee[one of][or] again[stopping]! [big please], can I pee in your mouth? It's the only way!'[roman type][line break]";
 								while STBladder > 0:
 									say "[one of]Do you let [him of M] pee in your mouth[or]Keep holding your mouth under [his of M] stream[stopping]?";
 									if the player is consenting:
@@ -4630,7 +4627,7 @@ To execute (TSLP - team-scissor-lift-predicament):
 								MouthEmpty;
 							if player-numerical-response is 1, compute swallowing;
 						if STDiaperMess > 0:
-							say "[speech style of M]'[one of]I'm going to need you to change me.'[or]I think I need a change.'[or]Come on, please, I can't change out of this thing properly without you.'[or]Please change my diaper for me.'[or]Please [NameBimbo], I need a change.'[or]Come on, I really could use a change.'[or]I really need a change now...'[or]Please help me out of this thing...'[or]Please change me [NameBimbo], I'm begging you!'[stopping][roman type][line break][BigNameDesc of M] [one of]whimpers[or]whines[or]says[cycling].";
+							say "[speech style of M]'[one of]I'm going to need you to change me.'[or]I think I need a change.'[or]Come on, [please], I can't change out of this thing properly without you.'[or][big please] change my diaper for me.'[or][big please] [NameBimbo], I need a change.'[or]Come on, I really could use a change.'[or]I really need a change now...'[or][big please] help me out of this thing...'[or][big please] change me [NameBimbo], I'm begging you!'[stopping][roman type][line break][BigNameDesc of M] [one of]whimpers[or]whines[or]says[cycling].";
 							reset multiple choice questions;
 							set numerical response 1 to "change [his of M] diaper";
 							set numerical response 2 to "refuse";
@@ -5264,7 +5261,7 @@ To execute (DDP - ddr-diaper-predicament):
 	now the fatigue of the player is 0;
 	let fatigue-rating be 1;
 	let BT be the buckle threshold of the player;
-	now the printed name of Predicament01 is "Arcade Center";
+	now the printed name of Predicament01 is "Arcade Centre";
 	let DP be a random eligible huge diaper;
 	if DP is nothing, now DP is a random huge diaper;
 	only destroy DP;
@@ -8305,6 +8302,1045 @@ Report taking specific-key when current-predicament is free-use-fuckhole-predica
 	if free-use-fuckhole-predicament is key-trapped and the player is in Predicament01:
 		say "As you pull the string, the tank opens!";
 		UnannouncedSquirt semen on face by 100.
+
+
+porno-predicament is a team-predicament. porno-predicament has a number called player-points. porno-predicament has a number called rival-points.
+
+Definition: porno-predicament is appropriate:
+	if the rank of the player > 2:
+		if diaper quest is 0 and the player is a december 2023 top donator, decide yes;
+		if diaper quest is 1 and the player is a december 2023 diaper donator, decide yes;
+	decide no.
+
+To execute (P - porno-predicament):
+	let ST be team-predicament-partner;
+	now ST is in Predicament01;
+	now the printed name of Predicament01 is "Porn Set";
+	let LPVT be a list of texts; [List of content entries for the three porn videos]
+	let LPVW be a list of texts; [List of website entries for the three porn videos]
+	let LPVS be a list of numbers; [List of severity entries for the three porn videos]
+	let LPVP be a list of numbers; [List of popularity entries for the three porn videos]
+	let LC be a list of clothing;
+	if diaper quest is 0:
+		blandify and reveal ornate-dress;
+		now ornate-dress is in Predicament01;
+		add ornate-dress to LC;
+		blandify and reveal bunny-maid-outfit;
+		now bunny-maid-outfit is in Predicament01;
+		add bunny-maid-outfit to LC;
+		blandify and reveal blue-polka-dot briefs;
+		now blue-polka-dot briefs is in Predicament01;
+		add blue-polka-dot briefs to LC;
+		blandify and reveal cock-handmaiden-negligee;
+		now cock-handmaiden-negligee is in Predicament01;
+		add cock-handmaiden-negligee to LC;
+	otherwise:
+		now the bladder of the player is bladder-risky-level + 1;
+		if diaper messing >= 4, now rectum is 12 - the rectum-incontinence of the player;
+		summon baby-medium-diaper uncursed;
+		blandify and reveal lollipop-dress;
+		now lollipop-dress is in Predicament01;
+		add lollipop-dress to LC;
+		blandify and reveal supershort cheerleader outfit;
+		now supershort cheerleader outfit is in Predicament01;
+		add supershort cheerleader outfit to LC;
+		blandify and reveal pink-hooded-romper;
+		now pink-hooded-romper is in Predicament01;
+		add pink-hooded-romper to LC;
+	blandify and reveal pet collar;
+	now pet collar is in Predicament01;
+	add pet collar to LC;
+	if diaper quest is 1:
+		blandify and reveal slave-dress;
+		now slave-dress is in Predicament01;
+		add slave-dress to LC;
+	now the player is in Predicament01;
+	say "You find yourself naked [if diaper quest is 1]except for a [baby-medium-diaper] [end if]in a small room with a bed, a wardrobe and one door. Expensive-looking cameras point at you from almost every direction. One wall is made of glass, and on the other side is [NameDesc of ST], in an identical room. You look at each other, and try to speak, but you can't hear each other - the glass must be soundproof. You both try the doors, but unsurprisingly, they are locked. Soon enough, a robotic voice appears from a speaker.[paragraph break][first custom style]'WELCOME, BOTH, TO THE ['][if diaper quest is 1]DIAPER [end if]PORN CHICKEN['] EXTRA CREDIT CLASS. [PredicamentRewardExplanation]TO EARN THIS TROPHY, YOU MUST SIMPLY RETURN HOME. BUT TO EARN RELEASE FROM THESE ROOMS, YOU WILL FIRST BOTH BE SPENDING SOME TIME EARNING [']PORN POINTS['] BY CHOOSING HOW EXTREME YOUR PORN SHOOT WILL BE. AT THE END OF YOUR THREE PORN VIDEO SEGMENTS, THE STAR WITH THE MOST POINTS WILL BE OFFERED A SHOWER AND A CHANGE OF CLOTHES BEFORE THEY RETURN HOME. THE STAR WITH THE LEAST POINTS WILL BE EJECTED ONTO THE STREETS IMMEDIATELY FOLLOWING THE END OF THEIR SHOOT.[paragraph break]'FURTHERMORE, IF ONE STAR EARNS 5 OR MORE POINTS ABOVE THE OTHER, THAT STAR'S VIDEOS WILL NOT BE PUBLISHED ONLINE. THAT'S RIGHT - IF YOU GO EXTREME ENOUGH, YOU MIGHT BE ABLE TO AVOID PUBLIC EXPOSURE... UNLESS THE OTHER WANNABE PORNSTAR DOES TOO...'[roman type][line break][PredicamentRewardExplanationReaction]";
+	say "[paragraph break][first custom style]'WARMUP ROUND: CHOOSE AN OUTFIT FOR YOUR [if diaper quest is 1]DIAPER[otherwise]PORN[end if] VIDEO. PLEASE BE AWARE THIS WILL ALSO BE THE OUTFIT YOU WALK HOME IN.'[roman type][line break]The wardrobes automatically swing open, and you and [student-name of ST] can see that there are various outfits for you to choose from, and each one will earn you a different number of points, from 1 to 5. It's up to you to decide how far you're going to go for points...";
+	reset multiple choice questions;
+	repeat with C running through LC:
+		set next numerical response to "Choose the [MediumDesc of C][if C is pet collar or C is slave-dress] (Warning: this will be locked, and you have no idea how you will able to remove it afterwards)[end if].";
+	compute multiple choice question;
+	increase player-points of P by player-numerical-response;
+	let C be entry player-numerical-response in LC;
+	repeat with CC running through LC:
+		if CC is not C, only destroy CC;
+	summon C uncursed;
+	if C is pet collar or C is slave-dress:
+		now C is locked;
+		if C is slave-dress, now C is wrist-bound-behind;
+		now C is predicament-fixed;
+	update appearance level;
+	say "You blush as you put on [NameDesc of C][if C is pet collar or C is slave-dress], the lock audibly clicking shut as you do[end if]. You've earned [player-numerical-response] [']Porn Point[if player-numerical-response > 1]s[end if]['].";
+	let DED be the dedication of ST; [we only roll this once]
+	let STD be DED + a random number between -2 and 2;
+	if STD < 1, now STD is 1;
+	if STD > 5, now STD is 5;
+	increase rival-points of P by STD;
+	if diaper quest is 0, say "[BigNameDesc of ST] chose to wear [if STD is 1]a sexy cheerleader's uniform[otherwise if STD is 2]a skimpy bikini[otherwise if STD is 3]nothing but a paid of hotpants that says [']WHORE['] on it[otherwise if STD is 4]nothing but a pair of suspenders that says [']PORN STAR['] on them[otherwise]a pair of anklecuffs[end if], earning [STD] Porn Point[if STD > 1]s.";
+	otherwise say "[BigNameDesc of ST] chose to wear [if STD is 1]a frilly dress[otherwise if STD is 2]a sexy schoolgirl outfit[otherwise if STD is 3]nothing but a latex diaper cover[otherwise if STD is 4]nothing but a collar that says [']BABY['] on it[otherwise]nothing but a pair of anklecuffs[end if], earning [STD] Porn Point[if STD > 1]s.";
+	if diaper quest is 0:
+		blandify and reveal flesh-johnson;
+		now flesh-johnson is in Predicament01;
+		blandify and reveal beige-plug;
+		now beige-plug is in Predicament01;
+	otherwise:
+		blandify and reveal nintendolls-wand;
+		now nintendolls-wand is in Predicament01;
+	if diaper quest is 0, say "[first custom style]'VIDEO ONE. SOLO PERFORMANCE. EARN UP TO FIVE PORNO POINTS DEPENDING ON LEWDNESS.'[roman type][line break]Two sex toys drop from the ceiling - a [MediumDesc of flesh-johnson] and a [MediumDesc of beige-plug].";
+	otherwise say "[first custom style]'VIDEO ONE. PREPARATION PERFORMANCE. EARN UP TO FIVE PORNO POINTS DEPENDING ON ITEMS USED.'[roman type][line break]The nature of exactly what they intend you to do becomes clear when three items drop from the ceiling - a miniature douche bag, for giving yourself a small enema, a [if diaper messing >= 4]laxative[otherwise]diuretic[end if] drink, and a [MediumDesc of nintendolls-wand].";
+	reset multiple choice questions;
+	set numerical response 0 to "Do nothing.";
+	if diaper quest is 0:
+		set numerical response 1 to "Do a sexy dance.";
+		set numerical response 2 to "Masturbate[if the player is pussy protected] over your clothes[end if].";
+		set numerical response 3 to "Use the dildo.";
+		set numerical response 4 to "Use the butt plug.";
+		set numerical response 5 to "Use both toys at the same time.";
+		if a2m fetish >= 1, set next numerical response to "Use both toys, then lick them clean.";
+	otherwise:
+		set numerical response 1 to "Drink the drink.";
+		set numerical response 2 to "Give yourself an enema.";
+		set numerical response 3 to "Masturbate with the vibrating wand.";
+		set numerical response 4 to "Give yourself an enema and drink the drink.";
+		set numerical response 5 to "Give yourself an enema, drink the drink, and then masturbate with the vibrating wand.";
+	compute multiple choice question;
+	[TODO: perhaps have a second question about dirty talk]
+	let X be 0;
+	if player-numerical-response > 0, now X is (player-numerical-response + a random number between 0 and 3) / 2;
+	if player-numerical-response is 0:
+		say "You refuse to entertain this [']game[']. The cameras film you standing there, looking unamused. A small display on one wall shows that your Porn Points have not increased from [player-points of P].";
+		add "a high quality video of you standing in a room wearing nothing but a [if diaper quest is 1]diaper and a [end if][MediumDesc of C], silently looking unamused" to LPVT;
+		add "has been uploaded to www.sexybitches.xxx" to LPVW;
+		if diaper quest is 0, add (the appearance of the player / 2) to LPVS;
+		otherwise add (the cringe appearance of the player / 2) to LPVS;
+		add 1 to LPVP;
+	otherwise if diaper quest is 1:
+		if player-numerical-response is 1 or player-numerical-response is 4 or player-numerical-response is 5:
+			say "You face the cameras and give them a show of you gulping down the entire drink. [slightHumiliateReflect]";
+			if diaper messing >= 4, increase suppository by 3;
+			otherwise increase the bladder of the player by 3;
+			if player-numerical-response is 1:
+				add "a high quality video of you drinking an entire bottle of [if diaper messing >= 4]laxative[otherwise]diuretic[end if] while wearing nothing but a [MediumDesc of baby-medium-diaper] and a [MediumDesc of C]" to LPVT;
+				add "has been uploaded to www.diaperbabes.xxx" to LPVW;
+				add (the cringe appearance of the player / 2) + 1 to LPVS;
+				add 4 to LPVP;
+		if player-numerical-response is 2 or player-numerical-response is 4 or player-numerical-response is 5:
+			say "You give them a show of you giving yourself a small enema. [moderateHumiliateReflect]";
+			AssFill 4 with water;
+			if player-numerical-response is 2 or player-numerical-response is 4:
+				add "a high quality video of you giving yourself a small enema while wearing nothing but a [MediumDesc of baby-medium-diaper] and a [MediumDesc of C]" to LPVT;
+				add "has been uploaded to www.diaperbabes.xxx" to LPVW;
+				add (the cringe appearance of the player / 2) + player-numerical-response to LPVS;
+				add 4 to LPVP;
+		if player-numerical-response is 3 or player-numerical-response is 5:
+			say "You give them a good show of masturbating with the wand through your padding. [strongHumiliateReflect]";
+			passively stimulate vagina times 2;
+			add "a high quality video of you spreading your legs and masturbating with a [ShortDesc of nintendolls-wand] while wearing nothing but a [MediumDesc of baby-medium-diaper] and a [MediumDesc of C]" to LPVT;
+			add "has been uploaded to www.dirtybitches.xxx" to LPVW;
+			add (the cringe appearance of the player / 2) + player-numerical-response to LPVS;
+			add 4 to LPVP;
+	otherwise if player-numerical-response is 1:
+		say "You do your best to seduce the camera by shaking your [HipDesc] and pushing your [AssDesc] towards the cameras.";
+		add "a high quality video of you seductively shaking your hips while wearing nothing but a [MediumDesc of C]" to LPVT;
+		add "has been uploaded to www.sexybitches.xxx" to LPVW;
+		add (the appearance of the player / 2) + 3 to LPVS;
+		add 3 to LPVP;
+	otherwise if player-numerical-response is 2:
+		say "You face the cameras and spread your legs, and give them a good show of playing with yourself.";
+		passively stimulate vagina;
+		add "a high quality video of you spreading your legs and masturbating while wearing nothing but a [MediumDesc of C]" to LPVT;
+		add "has been uploaded to www.sexybitches.xxx" to LPVW;
+		add (the appearance of the player / 2) + 5 to LPVS;
+		add 4 to LPVP;
+	otherwise if player-numerical-response is 3:
+		say "You [if the player is pussy protected]pull your clothes to the side and [end if]push [NameDesc of flesh-johnson] inside of you. You slowly and seductively pump it in and out. ";
+		passively stimulate vagina from flesh-johnson;
+		passively stimulate vagina from flesh-johnson;
+		add "a high quality video of you masturbating with a [MediumDesc of flesh-johnson]" to LPVT;
+		add "has been uploaded to www.dirtysluts.com" to LPVW;
+		add 10 to LPVS;
+		add 5 to LPVP;
+	otherwise if player-numerical-response is 4:
+		say "You [if the player is pussy protected]pull your clothes to the side and [end if]slowly work [NameDesc of beige-plug] inside your [asshole]. ";
+		now beige-plug is penetrating asshole;
+		ruin asshole;
+		say "You work it in and out a few times, making a good seductive show of it for the cameras.";
+		ruin asshole;
+		add "a high quality video of you anally masturbating with a [MediumDesc of beige-plug] while wearing nothing but a [MediumDesc of C]" to LPVT;
+		add "has been uploaded to www.dirtysluts.com" to LPVW;
+		add 12 to LPVS;
+		add 5 to LPVP;
+	otherwise if player-numerical-response is 5 or chosen numerical response matches the text "lick":
+		if the player is not possessing a vagina:
+			say "First, You push [NameDesc of flesh-johnson] inside of your [asshole], preparing it for the bigger toy that's coming next. ";
+			passively stimulate vagina from flesh-johnson;
+			passively stimulate vagina from flesh-johnson;
+		say "You [if the player is pussy protected]pull your clothes to the side and [end if]slowly work [NameDesc of beige-plug] inside your [asshole]. ";
+		now beige-plug is penetrating asshole;
+		ruin asshole;
+		say "You work it in and out a few times, making a good seductive show of it for the cameras.";
+		ruin asshole;
+		if the player is possessing a vagina:
+			say "Next, You push [NameDesc of flesh-johnson] inside of your [vagina]. You slowly and seductively pump it in and out, stretching both holes at the same time. ";
+			passively stimulate vagina from flesh-johnson;
+			passively stimulate vagina from flesh-johnson;
+		if chosen numerical response matches the text "lick":
+			say "Then, you lick both toys clean, while staring directly into the camera.";
+			TasteGrossOut 7;
+			add "a high quality video of you licking a [MediumDesc of beige-plug] clean after anally masturbating with it" to LPVT;
+			add 16 to LPVS;
+		otherwise:
+			add "a high quality video of you masturbating with a [MediumDesc of beige-plug] AND a [MediumDesc of flesh-johnson]" to LPVT;
+			add 13 to LPVS;
+		add 5 to LPVP;
+		add "has been uploaded to www.dirtysluts.com" to LPVW;
+	if player-numerical-response > 0:
+		say HumiliateReflect (50 * player-numerical-response);
+		if X < 0, now X is 0;
+		if X > 5, now X is 5;
+		increase the player-points of P by X;
+		if X is 0:
+			say "However, despite your efforts, the small screen in the corner showing your Porn Points doesn't increase from [player-points of P]![line break][variable custom style]'Are you kidding me?! Not a single measly point?!'[roman type][line break]";
+		otherwise:
+			say "You see the small screen in the corner that shows your Porn Points increase by [X] to [player-points of P].";
+	let STD be DED + a random number between -2 and the current-rank of ST;
+	if STD < 0, now STD is 0;
+	if STD > 5, now STD is 5;
+	increase rival-points of P by STD;
+	if diaper quest is 0, say "Meanwhile, [NameDesc of ST] has chosen to [if STD is 0]fold [his of ST] arms and refuse to do anything[otherwise if STD is 1]twerk for the cameras[otherwise if STD is 2]rub [his of ST] clit for the cameras[otherwise if STD is 3]grind on a big black dildo[otherwise if STD is 4]stretch [his of ST] asshole with a big black dildo[otherwise]stretch both [his of ST] holes at the same time with a double-ended dildo[end if], earning [STD] Porn Point[if STD is not 1]s[end if]. [big he of ST] now has [rival-points of P] point[if the rival-points of P is not 1]s[end if].";
+	otherwise say "Meanwhile, [NameDesc of ST] has chosen to [if STD is 0]fold [his of ST] arms and refuse to do anything[otherwise if STD is 1]drink [his of ST] drink[otherwise if STD is 2]give [himself of ST] an enema[otherwise if STD is 3]masturbate through [his of ST] diaper[otherwise if STD is 4]drink the drink and give [himself of ST] an enema, but not masturbate[otherwise]drink the drink and give [himself of ST] an enema and masturbate[end if], earning [STD] Porn Point[if STD is not 1]s[end if]. [big he of ST] now has [rival-points of P] point[if the rival-points of P is not 1]s[end if].";
+	repeat with STY running through sex toys in Predicament01:
+		only destroy STY;
+	repeat with STY running through vibe-wands in Predicament01:
+		only destroy STY;
+	check for arousal change;
+	say "[paragraph break]Moments later, the voice returns.[line break][first custom style]'VIDEO TWO: [if diaper quest is 0]BOY-GIRL FOREPLAY[otherwise]PLAYTIME[end if]. EARN UP TO EIGHT PORNO POINTS DEPENDING ON [if diaper quest is 0]EXTREMITY AND LEWDNESS[otherwise]CHOSEN SCENE AND DEDICATION TO THE ROLE[end if]. IF YOU REFUSE TO PICK AN OPTION, THE MOST EXTREME ONE WILL BE CHOSEN FOR YOU.'[roman type][line break]The screen showing your points changes to display a list of options.";
+	reset multiple choice questions;
+	if diaper quest is 0:
+		set numerical response 1 to "MF scene";
+		set numerical response 2 to "MMF scene";
+		set numerical response 3 to "MF BDSM scene";
+		set next numerical response to "MMMMF GANGBANG";
+		if interracial fetish >= 1, set next numerical response to "MMMMF INTERRACIAL GANGBANG";
+		if watersports fetish >= 1, set next numerical response to "MMMMF GANGBANG WITH WATERSPORTS";
+	otherwise:
+		set numerical response 1 to "Diapered Girlfriend scene";
+		set numerical response 2 to "Dirty Daddy scene";
+		set numerical response 3 to "Bullying scene";
+	compute multiple choice question;
+	let scene-type be player-numerical-response;
+	let interracial-scene be false;
+	let watersports-scene be false;
+	let gangbang-scene be false;
+	if scene-type >= 4:
+		now gangbang-scene is true;
+		if chosen numerical response matches the text "INTERRACIAL", now interracial-scene is true;
+		if chosen numerical response matches the text "WATERSPORTS", now watersports-scene is true;
+	let M be a random off-stage ultimate-lesson-actor;
+	if diaper quest is 0:
+		say "As soon as you touch the option, the door at the other end of the room opens, and [if player-numerical-response is 1 or player-numerical-response is 3]a [man of M][otherwise if player-numerical-response is 2]two [men of M][otherwise if interracial fetish is 1 and player-numerical-response is 4]two black [men of M][otherwise]four [men of M][end if] enter the room, closing the door behind them.";
+	otherwise:
+		if player-numerical-response is 1:
+			now M is angelic adult baby slave;
+		otherwise if player-numerical-response is 2:
+			now the specific-man-title of M is "dominant";
+			now the specific-man-image of M is Figure of white experienced patron;
+		otherwise:
+			now M is bratty adult baby slave;
+		say "As soon as you touch the option, the door at the other end of the room opens, and [NameDesc of M] enters the room, closing the door behind [him of M].";
+		if player-numerical-response is 1:
+			say "[speech style of M]'Hey [boy of the player]friend! I've missed you much!'[roman type][line break][big he of M] chirps, already in character.[line break][speech style of M]'Let's have some fun together...'[roman type][line break]";
+		otherwise if player-numerical-response is 2:
+			say "[speech style of M]'There's my sweet little kitten!'[roman type][line break][big he of M] coos, already in character.[line break][speech style of M]'Let's have some fun together...'[roman type][line break]";
+		otherwise:
+			say "[speech style of M]'What are you looking at, twerp?'[roman type][line break][big he of M] snaps at you, already in character.[line break][speech style of M]'Why the fuck are you wearing a diaper too?! Is this some fucked up way of taking the piss out of me?! I'll show you why you shouldn't mess with me!'[roman type][line break]";
+	let ML be the location of M;
+	if scene-type >= 4, now scene-type is 4;
+	let STD be DED + a random number between -2 and the current-rank of ST;
+	if STD < 1, now STD is 1;
+	if STD > 4, now STD is 4;
+	if diaper quest is 0, say "At the same time, [NameDesc of ST] chooses [his of ST] option, and [if STD is 1]one [man of male-m] enters[otherwise][STD] [men of male-m] enter[end if] [his of ST] room on the other side of the soundproofed glass wall.";
+	otherwise say "At the same time, [NameDesc of ST] chooses [his of ST] option, and [if STD is 1]a cute diapered chick[otherwise if STD is 2]a [man of male-m] in a suit[otherwise]a mean-looking diapered chick[end if] [his of ST] room on the other side of the soundproofed glass wall.";
+	now M is in Predicament01;
+	if diaper quest is 0:
+		if interracial-scene is true, now the specific-man-title of M is "black";
+		otherwise now the specific-man-title of M is "sneering";
+	let MMMT be "a [if diaper quest is 1][ShortDesc of M][otherwise if M is presenting as male]male pornstar[otherwise]chick with a dick[end if]";
+	if scene-type is 2 or scene-type >= 4:
+		let M be a random off-stage ultimate-lesson-actor;
+		now M is in Predicament01;
+		if interracial-scene is true, now the specific-man-title of M is "dark";
+		otherwise now the specific-man-title of M is "leering";
+		now MMMT is "two [men of M]";
+		if gangbang-scene is true:
+			let M be a random off-stage ultimate-lesson-actor;
+			now M is in Predicament01;
+			if interracial-scene is true, now the specific-man-title of M is "ebony";
+			otherwise now the specific-man-title of M is "smirking";
+			let M be a random off-stage ultimate-lesson-actor;
+			now M is in Predicament01;
+			if interracial-scene is true, now the specific-man-title of M is "African";
+			otherwise now the specific-man-title of M is "snickering";
+			now MMMT is "four [if interracial-scene is true]massive black [end if][men of M]";
+	repeat with MX running through monsters in Predicament01:
+		if M is ultimate-lesson-actor and diaper quest is 0:
+			if interracial-scene is true, now the specific-man-image of MX is Figure of black dickhead patron;
+			otherwise now the specific-man-image of MX is Figure of white dickhead patron;
+		interest MX;
+	reset multiple choice questions;
+	set numerical response 0 to "Fight back and try to escape";
+	set numerical response 1 to "Make it clear you're not happy about this";
+	set numerical response 2 to "Enthusiastically allow them to molest you";
+	set numerical response 3 to "Take an active role in the [if diaper quest is 1]roleplay[otherwise]foreplay[end if]";
+	set numerical response 4 to "Verbally degrade yourself for the cameras as they molest you";
+	set numerical response 5 to "Verbally degrade yourself AND take an active role in the [if diaper quest is 1]roleplay[otherwise]foreplay[end if]";
+	compute multiple choice question;
+	let MN be the number of ultimate-lesson-actors in the location of the player;
+	let player-escaped be false;
+	add 10 to LPVP; [video 2]
+	add "has been uploaded to www.youpron.com" to LPVW;
+	add 15 to LPVP; [video 3]
+	add "has been uploaded to www.youpron.com" to LPVW;
+	if player-numerical-response is 0:
+		if the number of worn locked clothing is 0 and a random number between -30 and 5 > MN:
+			now player-escaped is true;
+			say "You try to force your way past the [if MN is 1][man of M][otherwise][men of M][end if] and get to the now-unlocked door... And holy shit, you've managed it![line break][speech style of M]'Wait, shit get back here!'[roman type][line break]But it's too late, you are out the door and GONE! Sprinting down an alleyway and then out into public where they dare not follow you. [GotLuckyFlav]";
+			now the player is in Predicament02;
+			try going east;
+		otherwise:
+			if pet collar is worn:
+				say "You try to force your way past the [if MN is 1][man of M][otherwise][men of M][end if] and get to the now-unlocked door, but suddenly find yourself painfully choked as you are yanked back by your neck, by a hand holding your locked leash.[paragraph break][variable custom style]'You bastard[if MN > 1]s[end if], let me go!'[roman type][line break]You yell, but this is just met with derisive laughter and an even sharper tug, forcing you to your knees.";
+			otherwise if diaper quest is 0:
+				say "You try to force your way past the [if MN is 1][man of M][otherwise][men of M][end if] and get to the now-unlocked door, but [if MN is 1][he of M] just laughs and tackles you mid-sprint, easily overpowering you and pinning you to the ground[otherwise]they just laugh and grab you mid-sprint, easily lifting you up off the ground between them, leaving your legs flailing pathetically beneath you[end if]. Soon you are furious to find yourself being manhandled and degraded, with spit in your face and hands slapping your ass and face, and your [BreastDesc] and [genitals] being molested as you struggle in vain.[paragraph break][variable custom style]'You bastard[if MN > 1]s[end if], let me go!'[roman type][line break]You yell, but this is just met with derisive laughter and a hand around your throat.";
+			otherwise:
+				say "You try to force your way past [NameDesc of M] and get to the now-unlocked door, but [he of M] just laughs and tackles you mid-sprint, easily overpowering you and pinning you to the ground. Soon you are furious to find yourself being manhandled and your [BreastDesc] and [genitals] being molested as you struggle in vain.[paragraph break][variable custom style]'You bastard[if MN > 1]s[end if], let me go!'[roman type][line break]You yell, but this is just met with derisive laughter[if M is angelic adult baby slave], as if it's obvious that you're joking, and a [']playful['][otherwise] and a[end if] hand around your throat.";
+			PainUp 10;
+			say "Over the next couple of minutes, the cameras capture several high-definition angles of you being thrown onto the bed, [if diaper quest is 0]slapped in the face with a [manly-penis], your hair being pulled, your nipples being bitten, and fingers being forced inside your [fuckholes][otherwise]groped, spanked and even bitten[end if] while you writhe and snarl in fury.[paragraph break]Despite the degrading nature of the experience, you actually feel your self-esteem improving, as you are proud of yourself for refusing to play along with this outrageous scenario.";
+			dignify 2000;
+			add "a high quality video of you being [if diaper quest is 1]dickslapped and [end if]cruelly molested against your will by [MMMT]" to LPVT;
+			add 4 to LPVS;
+	otherwise if player-numerical-response is 1:
+		say "[variable custom style]'You [if MN > 1]bastards [end if] will pay for this!'[roman type][line break]You snarl, as hands begin groping your skin and soon finding your [BreastDesc] and [if diaper quest is 0][fuckholes][otherwise][genitals] through your padding[end if].[paragraph break][BigNameDesc of M] chuckles.[line break][speech style of M]'[if diaper quest is 0]Nope, we're GETTING paid. Unlike you, you pathetic little slut[otherwise if M is angelic adult baby slave]You are so cute when you're playing hard to get[otherwise]Bad baby[end if]. Now get on your knees.'[roman type][line break]When you refuse to comply, you are picked up and thrown onto the bed. Over the next couple of minutes, the cameras capture several high-definition angles of you being [if diaper quest is 0]slapped in the face with a [manly-penis], your hair being pulled, your nipples being bitten, and fingers being forced inside your [fuckholes][otherwise]groped, spanked and even bitten[end if] while you writhe and snarl and pout.";
+		add "a high quality video of you being angry at being [if diaper quest is 1]dickslapped and [end if]molested by [MMMT]" to LPVT;
+		add 6 to LPVS;
+	otherwise if player-numerical-response is 2:
+		say "[variable custom style]'Come and get it, [if MN > 1][boy of M]s[otherwise if M is angelic adult baby slave]babe[otherwise if diaper quest is 1]if you dare[otherwise]stud[end if]!'[roman type][line break]You elegantly raise your arms into the air, and allow your [BreastDesc] and [if diaper quest is 0][fuckholes][otherwise][genitals][end if] to be fondled by [if MN > 1]strangers['][otherwise]this stranger's[end if] hands.[paragraph break][BigNameDesc of M] clicks [his of M] tongue and responds in kind.[line break][speech style of M]'This [if diaper quest is 0]is one fine piece of meat[otherwise]seems dry for now... But I wonder for how much longer[end if].'[roman type][line break][big he of M] gives your [if diaper quest is 0][AssDesc][otherwise]padded tushie[end if] a hard slap.[line break]You squeal, but make sure it's a playful squeal rather than an offended one.[line break][variable custom style]'Are you [if diaper quest is 0]ready to see me get fucked up[otherwise]trying to suggest I'm a big pathetic baby[end if]?'[roman type][line break]You ask loudly, while looking straight into the central camera[if the player is modest], and trying to hide how humiliated this is all making you feel[end if].";
+		strongHumiliate;
+		add "a high quality video of you allowing yourself to be molested and degraded by [MMMT]" to LPVT;
+		add 8 to LPVS;
+	otherwise:
+		if player-numerical-response is 4 or player-numerical-response is 5:
+			say "[variable custom style]'[if interracial-scene is true]Hi, I'm [NameBimbo], a dumb little white bitch[otherwise if watersports-scene is true]Hi, I'm [NameBimbo], and I'm a dirty little meat toilet[otherwise if M is bratty adult baby slave]Uh-oh, it looks like I'm going to be made into a little baby bitch[otherwise if M is angelic adult baby slave]Ooh, I've been waiting to do dirty diaper stuff with you all day[otherwise if diaper quest is 1]Ooh, I can't wait to be a good little baby bitch for you, Daddy[otherwise]I'm going to be such a dirty little whore for you[end if]~'[roman type][line break]You coo [if diaper quest is 0]to the cameras [end if]as the [if MN > 1][men of M] surround you[otherwise][man of M] approaches[end if].";
+		if player-numerical-response is 4:
+			say "You allow the [if MN > 1]strangers['][otherwise]this stranger's[end if] hands to explore your body, and soon have hands and fingers all over your [BreastDesc] and [if diaper quest is 0][fuckholes][otherwise][genitals] through your padding[end if].";
+			add "a high quality video of you gleefully degrading yourself and allowing yourself to be molested by [MMMT]" to LPVT;
+			add 10 to LPVS;
+		otherwise:
+			if diaper quest is 0, say "You quickly drop to your knees and take [if MN > 2]a [manly-penis] in each hand. You begin masturbating them both, and alternating sucking on the tip of each of the other two[otherwise if MN > 1]a [manly-penis] in each hand. You begin masturbating them both, and alternating sucking on the tip of each[otherwise][his of M] [manly-penis] in both hands. You guide the tip into your mouth and work the shaft with both hands[end if].";
+			otherwise say "You quickly drop to your knees push your diapered butt towards [NameDesc of M], to let [him of M] get a few spanks in before the action gets going properly.";
+			add "a high quality video of you gleefully degrading yourself and [if diaper quest is 0]masturbating[otherwise]presenting your diapered butt to get spanked by[end if] [MMMT]" to LPVT;
+			add 12 to LPVS;
+		if interracial-scene is true, say "[if player-numerical-response is 4]Soon, all four [men of M] have pulled their pants down, and you shudder as you discover[otherwise]It's only at this moment that you realise[end if] just how massive all four of these [manly-penis]s are - they're by far the biggest human penises you've ever seen![line break][variable custom style]Holy shit... Are these even going to fit inside me?![roman type][line break]";
+		if player-numerical-response is 4 or player-numerical-response is 5:
+			if diaper quest is 0, say "[variable custom style]'[if interracial-scene is true]Err, ah... oh god... I'm about to get fucked up by four giant black cocks[otherwise if watersports-scene is true]Yeah, I'm going to be such a nasty piss slut for you all[otherwise if gangbang-scene is true]A greedy slut like me loves four big cocks at a time, baby[otherwise]Mmm, get out your cock and stroke it while you watch me get treated like I deserve, baby[end if]!'[roman type][line break]";
+			otherwise say "[variable custom style]'Uh-oh... I think I might need to go potty...'[roman type][line break]";
+		say severeHumiliateReflect;
+	check for arousal change;
+	if player-escaped is false:
+		now the stance of the player is 1;
+		let PP be scene-type + player-numerical-response - a random number between 0 and 1;
+		if PP < 0, now PP is 0;
+		if PP > 8, now PP is 8;
+		increase the player-points of P by PP;
+		let STD2 be DED + a random number between -2 and the current-rank of ST;
+		if STD2 < 0, now STD2 is 0;
+		if STD2 > 4, now STD2 is 4;
+		increase rival-points of P by STD + STD2;
+		say "You glance at the screen in the corner, and see that your points have increased by [PP] to [the player-points of P]. You can't see [NameDesc of ST][']s points from here, but you can see that [he of ST] [if STD2 < 2]is acting very reluctant about what's happening to [him of ST] right now[otherwise if STD2 >= 3]seems fully and enthusiastically engaged in what's happening to [him of ST] right now[otherwise]looks like a rather passive participant in what's happening to [him of ST] right now[end if].";
+		let F be asshole;
+		let PP be 10;
+		if the player is possessing a vagina and scene-type is not 3, now F is vagina;
+		say "[paragraph break]Then you hear the robotic voice one more time.[line break][first custom style]'VIDEO THREE: [if diaper quest is 0]BOY-GIRL[otherwise if M is angelic baby slave]DIAPER SEX[otherwise if M is bratty baby slave]DIAPER FACESITTING[otherwise]DIAPER DISCIPLINE[end if] SCENE. EARN UP TO TEN PORNO POINTS DEPENDING ON YOUR OBEDIENCE AND LEWDNESS.'[roman type][line break]And before you know it, [if diaper quest is 0]there's a [manly-penis] lining up with your [variable F][otherwise if M is angelic baby slave][NameDesc of M] is climbing on top of you, and beginning to hump your diaper with [hers of M][otherwise if M is bratty baby slave][NameDesc of M] is climbing on top of you, and preparing to plonk [his of M] diaper on your face[otherwise]there's an arm wrapping around your neck to hold you still, and fingers pressing into your [genitals] through your padding[end if].";
+		[Part 1a - Start of Sex]
+		if M is angelic baby slave:
+			say "[speech style of M]'Let's make each other feel good...'[roman type][line break]";
+			reset multiple choice questions;
+			set numerical response 0 to "Stay still";
+			set numerical response 1 to "Hump your diaper into [hers of M]";
+			set numerical response 2 to "Hump your diaper into [hers of M] and kiss [him of M]";
+			compute multiple choice question;
+			if player-numerical-response is 0:
+				say "You refuse to play along. Of course, this doesn't actually stop [him of M] - [he of M] humps [his of M] diaper into your padded [genitals] anyway.";
+				decrease PP by 2;
+				passively stimulate vagina from M;
+			otherwise if player-numerical-response is 1:
+				say "You obediently hump your diaper into [hers of M].";
+				decrease PP by a random number between 0 and 2;
+				passively stimulate vagina from M times 2;
+			otherwise:
+				say "You passionately hump your diaper into [hers of M].[line break][variable custom style]'[if the player is a nympho]Ooh yes baby, I love the way your padding feels on mine[otherwise if the player is a pervert]Ooh yes baby, that feels good... Kiss me quick[otherwise]Kiss me already[end if]!'[roman type][line break]And then your lips touch, and a moment later, your tongues are even more interlocked than your diapers. [moderateHumiliateReflect]";
+				if the player is not a nympho, decrease PP by a random number between 0 and 1;
+				passively stimulate vagina from M times 2;
+				passively stimulate face from M times 2;
+		otherwise if M is bratty baby slave:
+			say "[speech style of M]'Give it a kiss. Since you clearly love diapers so much.'[roman type][line break]";
+			reset multiple choice questions;
+			set numerical response 0 to "Don't kiss [his of M] diaper";
+			set numerical response 1 to "Give [his of M] diaper a quick peck";
+			set numerical response 2 to "Passionately kiss [his of M] diaper";
+			compute multiple choice question;
+			if player-numerical-response is 0:
+				say "You refuse to play along. Of course, this doesn't actually stop [him of M] dropping [his of M] diaper onto your face anyway.[line break][variable custom style]MMMMPH![roman type][line break]";
+				decrease PP by 2;
+			otherwise if player-numerical-response is 1:
+				say "You obediently raise your head and give [his of M] diaper a delicate peck. It feels weirdly perverse. [moderateHumiliateReflect]";
+				decrease PP by a random number between 0 and 2;
+				say "Chuckling derisively, [NameDesc of M] chooses this moment to drop down all the way, engulfing your face in [his of M] diaper.";
+			otherwise:
+				say "[variable custom style]'[if the player is a nympho]Please madam, I know I am much more lowly and inferior than you, but I am enraptured by your beauty and scent... Would you do me the honour of granting me a kiss?'[otherwise if the player is a pervert]Ooh yes cutie, you're looking fine today... Kiss me quick!'[otherwise]Kiss me already, darling!'[end if][roman type][line break]You talk to [his of M] diaper as if it was a person, before starting to passionately snog the crotch of [his of M] diaper.[severeHumiliateReflect]";
+				if the player is not a nympho, decrease PP by a random number between 0 and 1;
+				say "Chuckling derisively, [NameDesc of M] chooses this moment to drop down all the way, engulfing your face in [his of M] diaper.";
+		otherwise if diaper quest is 1:
+			say "[speech style of M]'Be a good [boy of the player] and tell Daddy how much you love your diapers.'[roman type][line break][BigNameDesc of M] begins seriously masturbating you through your diaper.";
+			passively stimulate vagina from M times 2;
+			check for arousal change;
+			reset multiple choice questions;
+			set numerical response 0 to "Stay silent";
+			set numerical response 1 to "'I love my diapers...'";
+			set numerical response 2 to "'Ooh Daddy, I love it when you touch me through my Pampies... But there's something missing, don't you agree?'";
+			compute multiple choice question;
+			if player-numerical-response is 0:
+				say "You refuse to play along. Of course, this doesn't actually stop [him of M] - [he of M] rubs your padded [genitals] anyway.";
+				passively stimulate vagina from M;
+				decrease PP by 2;
+			otherwise if player-numerical-response is 1:
+				say moderateHumiliateReflect;
+				say "[BigNameDesc of M] seems to approve, and rubs even more passionately.";
+				decrease PP by a random number between 0 and 2;
+				passively stimulate vagina from M times 2;
+			otherwise:
+				say strongHumiliateReflect;
+				say "[BigNameDesc of M] seems delighted by that, and rubs even more passionately.";
+				passively stimulate vagina from M times 2;
+		otherwise:
+			say "[speech style of M]'[if the player is possessing a vagina and scene-type is 3]That's right, no mercy for you today. You're only getting fucked in the ass, slut. Now spread[otherwise]Spread[end if] your legs like a good little whore.'[roman type][line break]";
+			reset multiple choice questions;
+			set numerical response 0 to "Don't spread your legs";
+			set numerical response 1 to "Spread your legs";
+			set numerical response 2 to "Spread your legs and beg for it";
+			compute multiple choice question;
+			if player-numerical-response is 0:
+				say "You refuse to play along. Of course, this doesn't actually stop [him of M] - [he of M] spreads your cheeks and shoves [his of M] [manly-penis] in your [variable F] anyway.";
+			otherwise if player-numerical-response is 1:
+				say "You obediently spread your legs.";
+				decrease PP by a random number between 0 and 2;
+			otherwise:
+				say "You obediently spread your legs.[line break][variable custom style]'[if the player is a nympho]Ooh yes Daddy, fill my greedy, slutty hole with your big juicy meat rod[otherwise if the player is a pervert]Yes, fuck me, big [boy of M][otherwise]Go on, do it already[end if]!'[roman type][line break][moderateHumiliateReflect]";
+				if the player is not a nympho, decrease PP by a random number between 0 and 1;
+			say "[big his of M] [if interracial-scene is true]giant, oversized [manly-penis] stretches your poor [variable F] to new limits as it forces its way inside[otherwise]sizeable [manly-penis] makes you feel nice and full as it pushes its way deep inside[end if].";
+			now M is penetrating F;
+			ruin F;
+			if scene-type is 3:
+				say "[first custom style]'I'm your Master, and you're my little anal slave bitch, got it?'[roman type][line break][BigNameDesc of M] growls into your ear as [he of M] sodomizes you.";
+				set numerical response 1 to "'You'll never break me, motherfucker!'";
+				set numerical response 2 to "'You're the boss, I get it!'";
+				set numerical response 3 to "'You're my Master, and I'm your pathetic little anal s-slave b-bitch!'";
+				set numerical response 0 to "Don't respond";
+				compute multiple choice question;
+				if player-numerical-response is 0:
+					decrease PP by 1;
+					say "[first custom style]'You clearly need further TRAINING!'[roman type][line break]Seemingly angered by your lack of response, [NameDesc of M] grabs your hair, yanking your head back into a painful position.";
+					PainUp 10;
+				otherwise if player-numerical-response is 1:
+					decrease PP by 1;
+					say "[first custom style]'Hahaha, a feisty one, my favourite! Let's see if you still feel the same after I'm done with your ass!'[roman type][line break]Your resistance seems to have spurred [him of M] to be even rougher with your [asshole].";
+					ruin asshole;
+				otherwise if player-numerical-response is 2:
+					decrease PP by a random number between 0 and 1;
+					say moderateHumiliateReflect;
+					say "[BigNameDesc of M] growls. It seems like [he of M] decides to accept that response, for now.";
+				otherwise:
+					say severeHumiliateReflect;
+					say "[BigNameDesc of M] seems happy with that, and focuses on fucking your [asshole].";
+		check for arousal change;
+		[Part 1b - Sex with multiple men / diaper urinal]
+		if diaper quest is 0:
+			repeat with MM running through ultimate-lesson-actors:
+				if face is not actually occupied:
+					say "[BigNameDesc of MM] [one of]rubs[or]joins in rubbing[stopping] [his of MM] [manly-penis] up against your [LipDesc].";
+					reset multiple choice questions;
+					set numerical response 0 to "Keep your lips shut";
+					set numerical response 1 to "Lick it";
+					set numerical response 2 to "Suck it";
+					compute multiple choice question;
+					if player-numerical-response is 0:
+						say "You purse your lips and focus on being fucked.";
+						decrease PP by a random number between 0 and 1;
+					otherwise if player-numerical-response is 1:
+						say "You give it a loving lick. [moderateHumiliateReflect]";
+						if a random number between 0 and 1 is 1, decrease PP by a random number between 0 and 1;
+					otherwise:
+						say "You smile, open your mouth, and accept [his of MM] [manly-penis] inside. You make a happy moaning noise as you begin to suck, all while still being bounced on [NameDesc of M][']s [manly-penis]. [strongHumiliateReflect]";
+						now MM is penetrating face;
+				otherwise if a random number between 0 and 1 is 1:
+					say "[BigNameDesc of MM] pushes [his of MM] [manly-penis] into your hand.";
+					reset multiple choice questions;
+					set numerical response 0 to "Let go";
+					set numerical response 1 to "Let [him of MM] fuck your fist";
+					set numerical response 2 to "Jack [him of MM] off";
+					compute multiple choice question;
+					if player-numerical-response is 0:
+						say "You purse your lips and focus on being fucked.";
+						decrease PP by 1;
+					otherwise if player-numerical-response is 1:
+						say "You let [him of MM] pump [his of MM] [manly-penis] using your hand. [slightHumiliateReflect]";
+						decrease PP by a random number between 0 and 1;
+					otherwise:
+						say "You do your best to masturbate [him of MM] while getting fucked. [moderateHumiliateReflect]";
+		otherwise if M is ultimate-lesson-actor and diaper swapping >= 2:
+			now the bladder of M is 1000;
+			say "[BigNameDesc of M] takes out [his of M] [manly-penis] and prepares to urinate inside your diaper.";
+			reset multiple choice questions;
+			set numerical response 1 to "Completely refuse to help [him of M] degrade you like this.";
+			set numerical response 2 to "Pull the waistband of your diaper forward for [NameDesc of M], to make it easier for [him of M] to piss inside it.";
+			set numerical response 3 to "Hold [NameDesc of M][']s [manly-penis] for [him of M].";
+			set numerical response 4 to "Hold [NameDesc of M][']s [manly-penis] AND pull the waistband of your diaper forward for [him of M].";
+			compute multiple choice question;
+			if player-numerical-response is 1:
+				now diaper-invasion-waistband is false;
+				now diaper-invasion-hold is false;
+				say DiaperUrinalResistance of M;
+				say DiaperUrinalResistanceFlav of M;
+				decrease PP by 2;
+			otherwise if player-numerical-response is 2:
+				now diaper-invasion-waistband is true;
+				now diaper-invasion-hold is false;
+				say DiaperUrinalWaistbandSubmission of M;
+				say DiaperUrinalWaistbandSubmissionFlav of M;
+				if grossness addiction of the player < 11, say strongHumiliateReflect;
+				decrease PP by 1;
+			otherwise if player-numerical-response is 3:
+				now diaper-invasion-waistband is false;
+				now diaper-invasion-hold is true;
+				say DiaperUrinalHoldSubmission of M;
+				say DiaperUrinalHoldSubmissionFlav of M;
+				if the player is not a nympho, say strongHumiliateReflect;
+				SlowSexAddictUp 1;
+				decrease PP by 1;
+			otherwise:
+				now diaper-invasion-waistband is true;
+				now diaper-invasion-hold is true;
+				say DiaperUrinalFullSubmission of M;
+				say DiaperUrinalFullSubmissionFlav of M;
+				if grossness addiction of the player < 11 or the player is not a nympho, say severeHumiliateReflect;
+				SexAddictUp 1;
+			compute diaper urinal peeing of M;
+			compute diaper urinal image of M;
+		check for arousal change;
+		[Part 2 - Escalation]
+		if diaper quest is 0:
+			if scene-type is 3:
+				say "Suddenly, [NameDesc of M] grabs you by the hair and throws you onto the ground. [big his of M] [manly-penis] is ripped from your [asshole] with a sudden POP.";
+				ruin asshole;
+				say "[big he of M] sits on the side of the bed and looks down at you darkly.";
+				say "[speech style of M]'Clean my [if grossness fetish > 0]feet[otherwise]balls[end if], slave.'[roman type][line break]";
+				reset multiple choice questions;
+				set numerical response 0 to "'Fuck you, clean them yourself.'";
+				set numerical response 1 to "Kiss [his of M] [if grossness fetish > 0]feet[otherwise]balls[end if]";
+				set numerical response 2 to "Passionately lick and suck [his of M] [if grossness fetish > 0]feet[otherwise]balls[end if] clean";
+				compute multiple choice question;
+				if player-numerical-response is 0:
+					decrease PP by 2;
+					say "[BigNameDesc of M] shrugs.[line break][speech style of M]'Fine. It's your asshole's funeral.'[roman type][line break][big he of M] lifts you back onto the bed and shoves [his of M] [manly-penis] back deep down into where the sun doesn't shine.";
+					ruin asshole;
+				otherwise if player-numerical-response is 1:
+					say "You crawl over to [NameDesc of M] and give [his of M] [if grossness fetish > 0]dirty feet[otherwise]wrinkly nutsack[end if] a plastering of polite kisses and even a couple of gentle [if grossness fetish > 0]toe [end if]sucks. [BigNameDesc of M] watches silently and masturbates. [strongHumiliateReflect]";
+					decrease PP by a random number between 0 and 1;
+				otherwise:
+					say "You crawl over to [NameDesc of M] and give [his of M] [if grossness fetish > 0]dirty feet[otherwise]wrinkly nutsack[end if] a wet session of sloppy tongue worship. [BigNameDesc of M] orders you to keep your hands behind your back at at all times, which you obey. [if grossness fetish > 0][big he of M] even raises [his of M] feet into the air to allow you to lick the soles, which you obediently do. [end if][severeHumiliateReflect]";
+					if grossness fetish is 1, TasteGrossOut 6;
+			otherwise:
+				repeat with MM running through ultimate-lesson-actors:
+					if MM is penetrating F:
+						say "[BigNameDesc of MM] fucks your [variable F] as hard as [he of MM] can!";
+						ruin F;
+						reset multiple choice questions;
+						set numerical response 1 to "'Stop it, you're being too rough!'";
+						set numerical response 2 to "'Fuck, yes, fuck!'";
+						set numerical response 3 to "'Ooh yes, fuck me harder Daddy!'";
+						compute multiple choice question;
+						if player-numerical-response is 1:
+							decrease PP by 2;
+							say "[BigNameDesc of MM] just chuckles.[line break][speech style of MM]'We're just getting started!'[roman type][line break]";
+						otherwise if player-numerical-response is 2:
+							say slightHumiliateReflect;
+							decrease PP by a random number between 0 and 1;
+						otherwise:
+							say moderateHumiliateReflect;
+							say "[BigNameDesc of MM] is spurred on, and tries [his of MM] best to increase the pace even more!";
+							ruin F;
+					otherwise:
+						if MM is M and (F is vagina or a2m fetish > 0): [the first to penetrate]
+							say "[BigNameDesc of M] brings [his of M] [manly-penis] round to your face.[line break][speech style of M]'Suck it.'[roman type][paragraph break][variable custom style]That's just been in my [F]...[roman type][line break]";
+							reset multiple choice questions;
+							set numerical response 1 to "Don't suck it";
+							set numerical response 2 to "Suck it";
+							compute multiple choice question;
+							if player-numerical-response is 1:
+								decrease PP by 1;
+								say "[BigNameDesc of M] tuts, and settles for slapping you in the face with it.";
+							otherwise if player-numerical-response is 2:
+								say "You open wide and accept [his of M] [manly-penis], covered in your [if F is asshole]ass[otherwise]pussy[end if] juices, into your mouth.";
+								say severeHumiliateReflect;
+								if F is asshole, TasteGrossOut 7;
+								otherwise TasteGrossOut 3;
+						otherwise if a random number between 1 and 2 is 1:
+							let PM be a random monster penetrating F;
+							say "[BigNameDesc of MM] taps [NameDesc of PM] on the shoulder, and takes [his of MM] place fucking your [variable F]! Your poor hole is now being pumped with renewed vigour.";
+							dislodge PM;
+							now MM is penetrating F;
+							ruin F;
+						otherwise if watersports-scene is true and a random number between 1 and 2 is 1:
+							say "[BigNameDesc of MM] points [his of MM] [manly-penis] at your face and lets out a stream of [urine].";
+							reset multiple choice questions;
+							set numerical response 1 to "Keep your mouth closed";
+							set numerical response 2 to "Open your mouth but let it run out";
+							set numerical response 3 to "Drink it all down";
+							compute multiple choice question;
+							if player-numerical-response is 1:
+								decrease PP by a random number between 0 and 1;
+								say "[BigNameDesc of M] chuckles as your face gets completely drenched in [his of M] [urine].";
+								compute urine hitting face;
+								GrossOut 3;
+							otherwise if player-numerical-response is 2:
+								if a random number between 0 and 1 is 1, decrease PP by a random number between 0 and 1;
+								say "You hold your mouth open and let the [urine] splash against it like a water feature. [strongHumiliateReflect]";
+								compute slightly addictive tasting of urine;
+							otherwise:
+								say "You obediently gulp it all down. [severeHumiliateReflect]";
+								DrinkPiss from M;
+						otherwise:
+							say "[BigNameDesc of MM] [one of]gropes[or]molests[or]fondles[cycling] your [one of][BreastDesc][or][AssDesc][cycling] as [he of MM] masturbates.";
+		otherwise:
+			say "Suddenly, [NameDesc of M] puts a lot of pressure on your belly, trying to make you soil yourself!";
+			check sudden expulsion with reason "The pressure is too much,";
+		check for arousal change;
+		[Part 3 - Intense]
+		if diaper quest is 0:
+			if scene-type is 3:
+				say "Next, [NameDesc of M] drags you over to one edge of the bed, where you can now see some wristcuffs await you. There's nothing you can do to stop yourself being bound to the bed, facedown.[line break][speech style of M]'I'm going to spank you now. Make sure to count and thank me after each spank.'[roman type][line break]";
+				reset multiple choice questions;
+				set numerical response 1 to "Refuse";
+				set numerical response 2 to "Obey";
+				compute multiple choice question;
+				if player-numerical-response is 1:
+					decrease PP by 2;
+					say "[BigNameDesc of M] spanks you, and when [he of M] discovers that you don't intend to respond, [he of M] begins spanking you even harder.[line break][italic type]SMACK SMACK SMACK[roman type][line break]";
+					PainUp 25;
+					say "[big he of M][']s still going!";
+					reset multiple choice questions;
+					set numerical response 1 to "Beg for mercy";
+					set numerical response 2 to "Stay resolute";
+					compute multiple choice question;
+					if player-numerical-response is 1:
+						say "[variable custom style]'MERCY! MERCY! I'm sorry, I'm sorry!'[paragraph break][speech style of M]'THANK ME FOR PUNISHING YOUR ASS!'[paragraph break][variable custom style]'THANK YOU FOR PUNISHING MY ASS!'[roman type][line break]You squeal, struggling to hold back tears. [strongHumiliateReflect]";
+					otherwise:
+						say "[italic type]SMACK SMACK SMACK[roman type][line break]";
+						PainUp 25;
+						BodyRuin 3;
+						say "Tears well up in your eyes, and [NameDesc of M] knows that [he of M] has left [his of M] mark. But despite how battered and bruised you are, and how much pain you're in, you still feel proud of yourself for not caving.";
+						dignify 3000;
+				otherwise:
+					say "[italic type]SMACK SMACK SMACK[line break][variable custom style]'One! Thank you! Two! Thank you! Three! Thank you!'[roman type][line break]In the end [he of M] gives you ten hard spanks, leaving your [AssDesc] red and you feeling fully humiliated.";
+					PainUp 15;
+					say severeHumiliateReflect;
+			otherwise:
+				if scene-type is 1:
+					say "[italic type]PLAP PLAP PLAP[roman type][line break][BigNameDesc of M] keeps fucking your [variable F] with impressive stamina and energy.";
+					ruin F times 2;
+				otherwise:
+					repeat with MM running through ultimate-lesson-actors:
+						if MM is not penetrating F:
+							if asshole is not actually occupied:
+								say "[BigNameDesc of MM] pushes [his of MM] [manly-penis] into your [asshole]! You're getting double-stuffed![line break][variable custom style]Aaaah![roman type][line break]";
+								dislodge MM;
+								now MM is penetrating asshole;
+								ruin asshole;
+							otherwise if the player is possessing a vagina and vagina is not actually occupied:
+								say "[BigNameDesc of MM] pushes [his of MM] [manly-penis] into your [vagina]! You're getting double-stuffed![line break][variable custom style]Aaaah![roman type][line break]";
+								dislodge MM;
+								now MM is penetrating vagina;
+								ruin vagina;
+							otherwise if face is not actually occupied:
+								say "[BigNameDesc of MM] pushes [his of MM] [manly-penis] into your gasping mouth[if vagina is actually occupied]! You're getting TP'd[end if]![line break][variable custom style]Aaaah![roman type][line break]";
+								dislodge MM;
+								now MM is penetrating face;
+							otherwise if the largeness of breasts > 3:
+								say "[BigNameDesc of MM] decides to fuck your [BreastDesc] as well!";
+								dislodge MM;
+								now MM is penetrating breasts;
+				say "[speech style of M]'Tell [if MN > 1]us[otherwise]me[end if] how much you love it, bitch!'[roman type][line break]";
+				reset multiple choice questions;
+				set numerical response 1 to "'Fuck you!'";
+				set numerical response 2 to "'It feels so good!'";
+				set numerical response 3 to "'Fuck fuck fuck I love your thick [manly-penis][if MN > 1]s[end if] so much! Yes yes yes!'";
+				set numerical response 4 to "'[if interracial-scene is true]I'M A DIRTY FUCKING WHITE BITCH WHO'S ADDICTED TO YOUR [BlackCock in upper case]! Fuck me up so hard that my stretched-out holes are ruined. Those inferior little white [manly-penis]s will never be able to satisfy me again[otherwise]Oh fuck, I'm such a dirty fucking slut, I can't get enough of your [manly-penis]! Fuck me harder, fuck me up, claim me as your pathetic cock-addicted fuckdoll[end if]!'";
+				compute multiple choice question;
+				if player-numerical-response is 1:
+					decrease PP by 1;
+					say "[BigNameDesc of M] just chuckles.[line break][speech style of M]'As you wish.'[roman type][line break]";
+				otherwise if player-numerical-response is 2:
+					decrease PP by a random number between 0 and 1;
+					say slightHumiliateReflect;
+				otherwise if player-numerical-response is 3:
+					if a random number between 0 and 1 is 1, decrease PP by a random number between 0 and 1;
+					say moderateHumiliateReflect;
+				otherwise:
+					say strongHumiliateReflect;
+		otherwise:
+			if M is bratty adult baby slave:
+				say "[speech style of M]'Say, wouldn't this be more fun if I [if diaper messing >= 7]messed[otherwise]wet[end if] my diaper?'[roman type][line break]";
+				reset multiple choice questions;
+				set numerical response 1 to "Furiously shake your head no";
+				set numerical response 2 to "Mumble uncertainly";
+				set numerical response 3 to "Nod in eager agreement";
+				compute multiple choice question;
+				if player-numerical-response is 1:
+					say "[speech style of M]'Too bad!'[roman type][line break]";
+					decrease PP by 2;
+				otherwise if player-numerical-response is 2:
+					say "[speech style of M]'Sorry what's that? I can't hear you! I'm going to have to assume that was a yes.'[roman type][line break][moderateHumiliateReflect]";
+					decrease PP by 1;
+				otherwise:
+					say "[BigNameDesc of M] cackles.[line break][speech style of M]'Holy shit, you're such a gross, nasty bitch.'[roman type][line break][severeHumiliateReflect]";
+				if diaper messing >= 7:
+					if the player is not enjoying messy facesits:
+						let TXT be substituted form of "As you scrunch up with [if the grossness addiction of the player < messyDiaperFacesitGrossnessLevel]horror[otherwise]trepidation[end if],";
+						FearUp (messyDiaperFacesitEnjoymentLevel - the grossness addiction of the player) with reason TXT;
+					otherwise:
+						say "[if the player is a nympho]You[otherwise]Despite your better judgement, you[end if] feel yourself getting turned on.";
+					compute MessyDiaperFacesitExpulsion of M;
+				otherwise:
+					if the player is not tolerating wet facesits:
+						let TXT be substituted form of "As you flinch with trepidation,";
+						FearUp (wetDiaperFacesitGrossnessLevel - the grossness addiction of the player) with reason TXT;
+					compute WetDiaperFacesitExpulsion of M;
+			otherwise:
+				say "[BigNameDesc of M] does [his of M] best to make you cum!";
+				reset multiple choice questions;
+				set numerical response 1 to "Do your best to avoid cumming";
+				set numerical response 2 to "Let what happens happen";
+				compute multiple choice question;
+				if player-numerical-response is 1:
+					passively stimulate vagina from M;
+					decrease PP by 1;
+				otherwise:
+					stimulate vagina from M;
+					if refractoryperiod > 0, say severeHumiliateReflect;
+		check for arousal change;
+		[Part 4 - Cumshot]
+		if diaper quest is 0:
+			if a random number between 1 and 2 is bukkake fetish:
+				say "Finally finished fucking you, [if MN > 1]the [MN] [men of M][otherwise][NameDesc of M][end if] [if MN > 1]pull out of your various orifices and [otherwise if scene-type is not 3]pulls out and [end if][if MN > 1]gather around[otherwise]goes around to[end if] your face.";
+				reset multiple choice questions;
+				set numerical response 0 to "Turn away";
+				set numerical response 1 to "Hold your face steady";
+				set numerical response 2 to "Open your mouth";
+				set numerical response 3 to "Open your mouth, loll out your tongue, hold up peace signs, and keep your eyes open";
+				compute multiple choice question;
+				if player-numerical-response is 0:
+					decrease PP by a random number between 1 and 2;
+					say "You do your best to turn away and prevent as much [semen] as possible from getting near your eyes, nose or lips. You mostly succeed, but it still gets all in your hair and on your cheeks.";
+					AnnouncedSquirt semen on hair by (MN * the girth of M);
+				otherwise if player-numerical-response is 1:
+					decrease PP by a random number between 0 and 1;
+					say "You close your eyes and allow [if MN > 1]the [men of M][otherwise][NameDesc of M][end if] to paint your face with their [semen].";
+					AnnouncedSquirt semen on face by (MN * the girth of M);
+					say strongHumiliateReflect;
+				otherwise if player-numerical-response is 2:
+					if a random number between 0 and 1 is 1, decrease PP by a random number between 0 and 1;
+					say "You close your eyes, open your mouth, and allow [if MN > 1]the [men of M][otherwise][NameDesc of M][end if] to paint your face with their [semen]. ";
+					AnnouncedSquirt semen on face by (MN * the girth of M);
+					FaceFill semen by 2;
+					say "Not only do you have a face plastered with jizz, but you also have a [MouthfulDesc].";
+					say severeHumiliateReflect;
+				otherwise:
+					say "You perform the perfect duty of the ultimate bukkake queen, allowing yourself to be plastered while striking a degrading pose.";
+					FaceFill semen by 2;
+					AnnouncedSquirt semen on face by (MN * the girth of M);
+					say "As you do your best to keep your eyes open even as ropes of [semen] surge towards your face, you inevitably get some in your eye, which stings painfully. All in a day's work for a dedicated porn star, you suppose.";
+					PainUp 10;
+					say obsceneHumiliateReflect;
+			otherwise:
+				repeat with MM running through ultimate-lesson-actors:
+					let O be a random orifice penetrated by MM;
+					if O is an orifice:
+						say "[speech style of MM]'[one of]Take this, you whore[or]Get ready bitch, it's coming[or]Fuck yes, I'm cumming, you slut[or]Take my cum, you nasty skank[in random order]!'[roman type][line break][BigNameDesc of M] ejaculates inside your [variable O]!";
+						if O is asshole:
+							AssFill (semen load of MM);
+						otherwise if O is vagina:
+							PussyFill (semen load of MM);
+						otherwise:
+							FaceFill semen by (semen load of MM);
+					otherwise:
+						let MMA be a random ultimate-lesson-actor penetrating asshole;
+						say "[speech style of MM]'[one of]Fuck, I'm about to cum[or]Let me fill this bitch up[in random order]!'[roman type][line break][BigNameDesc of MM] [if MMA is monster]taps on [NameDesc of MMA][']s shoulder and gets [him of MMA] to pull out, so that [he of MM] can take [his of MM] place. And just in time - because as soon as [he of MM] gets it inside, [he of MM] is filling your [asshole] with [his of MM] [semen]!";
+						dislodge MMA;
+						now MM is penetrating asshole;
+						AssFill (semen load of MM);
+		otherwise:
+			if M is bratty adult baby slave:
+				compute ContinuedDiaperFacesit of M;
+				if diaper messing >= 7, cutshow Figure of bratty adult baby slave facesit messy;
+				otherwise cutshow Figure of bratty adult baby slave facesit wet;
+			otherwise if baby-medium-diaper is clean:
+				say "[speech style of M]'I can't believe you're still dry!'[roman type][line break]";
+				reset multiple choice questions;
+				set numerical response 1 to "Shrug";
+				set numerical response 2 to "Purposefully wet yourself";
+				if diaper messing >= 4, set numerical response 3 to "Purposefully wet and mess yourself";
+				compute multiple choice question;
+				if player-numerical-response is 1:
+					decrease PP by a random number between 1 and 2;
+				otherwise if player-numerical-response is 2:
+					say "You release your hold on your bladder, and soil your diaper for the cameras.[line break][speech style of M]'Oopsie, looks like I spoke too soon!'[roman type][line break][BigNameDesc of M] laughs, as [he of M] strokes your warm, swelling padding.";
+					AnnouncedExpel urine on baby-medium-diaper by the bladder of the player;
+					now the bladder of the player is 0;
+					say strongHumiliateReflect;
+					if diaper messing >= 4, decrease PP by a random number between 0 and 1;
+				otherwise if player-numerical-response is 2:
+					say "You release your hold on your bladder and bowels, and mess your diaper for the cameras.[line break][speech style of M]'Oopsie, looks like I spoke too soon!'[roman type][line break][BigNameDesc of M] laughs, as [he of M] strokes your warm, swelling padding.";
+					AnnouncedExpel urine on baby-medium-diaper by the bladder of the player;
+					now the bladder of the player is 0;
+					MessUp baby-medium-diaper by rectum;
+					reset rectum;
+					say severeHumiliateReflect;
+		check for arousal change;
+		[Part 5 - Final Humiliation]
+		if diaper quest is 0:
+			if watersports-scene is true:
+				if a2m fetish >= 2:
+					let MM be a random monster penetrating asshole;
+					if MM is nothing: [just in case something's gone weird]
+						now MM is M;
+						now MM is penetrating asshole;
+					say "[BigNameDesc of MM] positions just the tip of [his of MM] [manly-penis] inside your [asshole], and then a warm, heavy feeling begins to flood inside you.[line break][variable custom style][he of MM][']s pissing in my ass![roman type][line break]Within a few short moments, the pressure has become too much, and you desperately need it to stop, and begin to exit rather than enter you![paragraph break][BigNameDesc of MM] suddenly pulls out, and instantly a rush of [urine] floods out of your [asshole] in a big gush.[line break][variable custom style]'Aaaaaah!'[roman type][paragraph break]What you didn't know, but find out immediately after, is that the group were holding a large wine glass in front of your [asshole] as you expelled your [urine] enema. And now a glass of ass-piss is being brought towards your lips...[line break][speech style of MM]'Here, have a nice refreshing drink, straight from the tap...'[roman type][line break]";
+					reset multiple choice questions;
+					set numerical response 0 to "Turn away";
+					set numerical response 1 to "Sip from the glass and spit it out";
+					set numerical response 2 to "Drink one mouthful";
+					set numerical response 3 to "Down the whole glass";
+					compute multiple choice question;
+					if player-numerical-response is 0:
+						decrease PP by a random number between 1 and 2;
+						say "You clench your mouth shut and turn away, refusing to even smell the foul concoction.[paragraph break][speech style of MM]'Spoilsport!'[roman type][line break]The disappointed [man of MM] takes the glass and pours it over your head in retribution. All you can do is try not to let them see how much this has [if the player is not a nympho]disgusted you and [end if]pissed you off.";
+						AnnouncedSquirt urine on hair by 15;
+					otherwise if player-numerical-response is 1:
+						decrease PP by 1;
+						say "You try taking a sip. It tastes just as foul as you expected.";
+						TasteGrossOut 10;
+						say "You quickly spit it out, [if the grossness addiction of the player >= 17]hoping that anyone who watches the video won't be able to tell that you're a depraved degenerate that actually loves the taste[otherwise]desperately hoping that the taste won't linger on your tongue[end if]. [strongHumiliateReflect]";
+						UrinePuddleUp 2;
+					otherwise if player-numerical-response is 2:
+						if a random number between 0 and 1 is 1, decrease PP by a random number between 0 and 1;
+						say "You try sipping a mouthful. It tastes just as foul as you expected. But you still [if the grossness addiction of the player >= 19]happily[otherwise]force yourself to[end if] gulp it down.";
+						TasteGrossOut 12;
+						StomachUrineUp 4;
+						say severeHumiliateReflect;
+					otherwise:
+						say "You face the cameras, raise the glass as if you're toasting, and then start pouring it down the hatch. The [men of M] all cheer and clap.";
+						TasteGrossOut 12;
+						StomachUrineUp 12;
+						say obsceneHumiliateReflect;
+				otherwise:
+					say "The four [men of M] gather round your face... And what comes next is truly sordid. Four powerfut, hot streams of [urine] surge towards your face.";
+					reset multiple choice questions;
+					set numerical response 0 to "Turn away";
+					set numerical response 1 to "Hold your face steady";
+					set numerical response 2 to "Open your mouth";
+					set numerical response 3 to "Open your mouth and drink as much as possible";
+					compute multiple choice question;
+					if player-numerical-response is 0:
+						decrease PP by a random number between 1 and 2;
+						say "You do your best to turn away and prevent as much [urine] as possible from getting near your eyes, nose or lips. But it's hopeless - your hair and face and body still get drenched in the stuff.";
+						AnnouncedSquirt urine on hair by 50;
+					otherwise if player-numerical-response is 1:
+						decrease PP by a random number between 0 and 1;
+						say "You close your eyes and allow [if MN > 1]the [men of M][otherwise][NameDesc of M][end if] to desecrate your face with their [urine].";
+						AnnouncedSquirt urine on face by 50;
+						say severeHumiliateReflect;
+					otherwise if player-numerical-response is 2:
+						if a random number between 0 and 1 is 1, decrease PP by a random number between 0 and 1;
+						say "You close your eyes, open your mouth, and allow [if MN > 1]the [men of M][otherwise][NameDesc of M][end if] to use your mouth as a urinal. ";
+						AnnouncedSquirt urine on face by 50;
+						FaceFill urine by 2;
+						say "Not only are you drenched in piss, but you also have a [MouthfulDesc].";
+						say obsceneHumiliateReflect;
+					otherwise:
+						say "You glug and chug mouthful after mouthful of [urine]. But it's coming so thick and fast, that for every mouthful you swallow, several more coat your face and body.";
+						AnnouncedSquirt urine on face by 40;
+						StomachUrineUp 15;
+						say obsceneHumiliateReflect;
+						say "By the end of your sordid display, you feel extremely bloated, stomach full up to the brim with these guys['] [urine].";
+			otherwise if a2m fetish >= 2 and the semen volume of belly > 0:
+				say "[BigNameDesc of M] grabs your hair and guides you to squat over a champagne flute.[line break][speech style of M]'Push that anal creampie out, slut.'[roman type][paragraph break][big he of M] spreads your sphincter open wide, removing any choice you have in the matter - the [semen] in your ass comes oozing back out, collecting in the cup like some sort of sordid cum and ass-juice cocktail. And you know what's coming next. The champagne flute is brought round to your lips...";
+				now the semen volume of belly is 0;
+				now temporaryYesNoBackground is figure of wench cutscene 9;
+				reset multiple choice questions;
+				set numerical response 0 to "Turn away";
+				set numerical response 1 to "Sip from the glass and spit it out";
+				set numerical response 2 to "Drink one mouthful";
+				set numerical response 3 to "Down the whole glass";
+				compute multiple choice question;
+				now temporaryYesNoBackground is figure of small image;
+				if player-numerical-response is 0:
+					decrease PP by a random number between 1 and 2;
+					say "You clench your mouth shut and turn away, refusing to even smell the foul concoction.[paragraph break][speech style of M]'Spoilsport!'[roman type][line break]The disappointed [man of M] takes the glass and pours it over your head in retribution. All you can do is try not to let them see how much this has [if the player is not a nympho]disgusted you and [end if]pissed you off.";
+					AnnouncedSquirt semen on hair by 4;
+				otherwise if player-numerical-response is 1:
+					decrease PP by 1;
+					say "You try taking a sip. It tastes just as foul as you expected.";
+					TasteGrossOut 8;
+					say "You quickly spit it out, [if the grossness addiction of the player >= 15]hoping that anyone who watches the video won't be able to tell that you're a depraved degenerate that actually loves the taste[otherwise]desperately hoping that the taste won't linger on your tongue[end if]. [strongHumiliateReflect]";
+					SemenPuddleUp 2;
+				otherwise if player-numerical-response is 2:
+					if a random number between 0 and 1 is 1, decrease PP by a random number between 0 and 1;
+					say "You try sipping a mouthful. It tastes just as foul as you expected. But you still [if the grossness addiction of the player >= 17]happily[otherwise]force yourself to[end if] gulp it down.";
+					TasteGrossOut 10;
+					StomachSemenUp 2;
+					say severeHumiliateReflect;
+				otherwise:
+					say "You face the cameras, raise the glass as if you're toasting, and then start pouring it down the hatch. The [men of M] all cheer and clap.";
+					TasteGrossOut 12;
+					StomachSemenUp 4;
+					say obsceneHumiliateReflect;
+			otherwise if the semen volume of vagina > 0 and a random number between 1 and 2 is 1:
+				say "[BigNameDesc of M] grabs your hair and guides you to squat over a champagne flute.[line break][speech style of M]'Push that creampie out, slut.'[roman type][paragraph break][big he of M] spreads your [vagina] open wide, removing any choice you have in the matter - the [semen] inside comes oozing back out, collecting in the cup like some sort of sordid cum and pussy-juice cocktail. And you know what's coming next. The champagne flute is brought round to your lips...";
+				now the semen volume of vagina is 0;
+				now temporaryYesNoBackground is figure of wench cutscene 9;
+				reset multiple choice questions;
+				set numerical response 0 to "Turn away";
+				set numerical response 1 to "Sip from the glass and spit it out";
+				set numerical response 2 to "Drink one mouthful";
+				set numerical response 3 to "Down the whole glass";
+				compute multiple choice question;
+				now temporaryYesNoBackground is figure of small image;
+				if player-numerical-response is 0:
+					decrease PP by a random number between 1 and 2;
+					say "You clench your mouth shut and turn away, refusing to even smell the gross creampie.[paragraph break][speech style of M]'Spoilsport!'[roman type][line break]The disappointed [man of M] takes the glass and pours it over your head in retribution. All you can do is try not to let them see how much this has [if the player is not a nympho]disgusted you and [end if]pissed you off.";
+					AnnouncedSquirt semen on hair by 4;
+				otherwise if player-numerical-response is 1:
+					decrease PP by 1;
+					say "You try taking a sip. It tastes just as cringeworthy as you expected.";
+					TasteGrossOut 3;
+					say "You quickly spit it out, [if the grossness addiction of the player >= 10]hoping that anyone who watches the video won't be able to tell that you're a depraved degenerate that actually loves the taste[otherwise]desperately hoping that the taste won't linger on your tongue[end if]. [moderateHumiliateReflect]";
+					SemenPuddleUp 2;
+				otherwise if player-numerical-response is 2:
+					if a random number between 0 and 1 is 1, decrease PP by a random number between 0 and 1;
+					say "You try sipping a mouthful. It tastes just as weird as you expected - a gross mix of [semen] and your own pussy juices. But you still [if the grossness addiction of the player >= 11]happily[otherwise]force yourself to[end if] gulp it down.";
+					TasteGrossOut 4;
+					StomachSemenUp 2;
+					say strongHumiliateReflect;
+				otherwise:
+					say "You face the cameras, raise the glass as if you're toasting, and then start pouring it down the hatch. The [men of M] all cheer and clap.";
+					TasteGrossOut 4;
+					StomachSemenUp 4;
+					say severeHumiliateReflect;
+			otherwise:
+				say "[BigNameDesc of M] grabs your hair and pushes your face towards the [ShortPuddleDesc of Predicament01][if the total puddle of Predicament01 is 0], where you can see that a small amount of [semen] has dripped down[end if].[line break][speech style of M]'Clean up your mess, slut.'[roman type][line break]";
+				reset multiple choice questions;
+				set numerical response 0 to "Refuse";
+				set numerical response 1 to "Try to wipe it away with your hand";
+				set numerical response 2 to "Lick it up";
+				compute multiple choice question;
+				if player-numerical-response is 0:
+					decrease PP by a random number between 1 and 2;
+					say "[variable custom style]'Do it yourself. Fucking assholes.'[roman type][paragraph break][speech style of M]'You're the one with the fucked asshole, haha.'[roman type][line break][BigNameDesc of M] quickly retorts.";
+				otherwise if player-numerical-response is 1:
+					decrease PP by 1;
+					say "You awkwardly wipe the floor with your hand, but everyone knows that isn't what [NameDesc of M] meant. But apparently [NameDesc of M] decides that complaining would just make the video worse, so [he of M] releases [his of M] grip on your hair and pretends to be satisfied.[line break][speech style of M]'That's right, you dirty bitch.'[roman type][line break][slightHumiliateReflect]";
+				otherwise:
+					decrease PP by 1;
+					say "You get your lips down to the floor and lick and suck.[line break][speech style of M]'That's right, you dirty bitch.'[roman type][line break][severeHumiliateReflect]";
+					if the total puddle of Predicament01 is 0:
+						FaceFill semen by 1;
+					otherwise:
+						if the semen-puddle of Predicament01 > 0:
+							decrease the semen-puddle of Predicament01 by 1;
+							FaceFill semen by 1;
+						if the semen-puddle of Predicament01 > 0:
+							decrease the semen-puddle of Predicament01 by 1;
+							FaceFill semen by 1;
+						if the urine-puddle of Predicament01 > 0:
+							decrease the urine-puddle of Predicament01 by 1;
+							FaceFill urine by 1;
+						if the urine-puddle of Predicament01 > 0:
+							decrease the urine-puddle of Predicament01 by 1;
+							FaceFill urine by 1;
+		check for arousal change;
+		if PP < 0, now PP is 0;
+		if PP > 10, now PP is 10;
+		increase the player-points of P by PP;
+		add PP * 2 to LPVS;
+		if PP >= 9:
+			add "a high quality porn video of you willfully doing the most disgusting [if diaper quest is 1]diaper sex[otherwise]acts[end if] imaginable with [MMMT]" to LPVT;
+		otherwise if PP >= 7:
+			add "a high quality porn video of you willfully doing some truly horrendous [if diaper quest is 1]diaper sex[otherwise]sexual acts[end if] with [MMMT]" to LPVT;
+		otherwise if PP >= 5:
+			add "a high quality porn video of you doing some really naughty [if diaper quest is 1]diaper stuff[otherwise]sexual acts[end if] with [MMMT]" to LPVT;
+		otherwise if PP >= 3:
+			add "a high quality porn video of you acting a bit reluctant in a [if diaper quest is 1]diaper fetish [end if]scene with [MMMT]" to LPVT;
+		otherwise if PP >= 1:
+			add "a high quality porn video of you acting very reluctant in a [if diaper quest is 1]diaper fetish [end if]scene with [MMMT]" to LPVT;
+		otherwise:
+			add "a high quality [if diaper quest is 1]diaper fetish[otherwise]porn[end if] video of you continually refusing to do what [MMMT] tell[if MN is 1]s[end if] you to do" to LPVT;
+		let STD3 be DED + a random number between -3 and the current-rank of ST;
+		if STD3 < 0, now STD3 is 0;
+		if STD3 > 10, now STD3 is 10;
+		increase rival-points of P by STD3;
+		say "And then just like that, it's all over. The cameras turn off, and [if MN > 1]the [men of M] head[otherwise][NameDesc of M][end if] heads for the door. It's only now that you have finished going through your ordeal that you remember to take a look through the big glass wall at [NameDesc of ST]. [big his of ST] own porn shoot has just ended too, and as [he of ST] lies there on [his of ST] bed looking exhausted, [if diaper quest is 0][semen] leaking out of more than one hole[otherwise]with a bloated, soiled diaper[end if], you see [his of ST] Porn Points have settled on [rival-points of P]. You look at your own, and see that you apparently just earned [PP] more Porn Point[if PP is not 1]s[end if], bringing your own total to [player-points of P].";
+		if player-points of P >= rival-points of P:
+			if player-points of P is rival-points of P:
+				say "[first custom style]'CONGRATULATIONS BOTH OF YOU - YOU TIED, WHICH MEANS YOU BOTH EARN A SHOWER AND A CLEAN SET OF CLOTHES.'[roman type][line break]";
+			otherwise:
+				say "[first custom style]'CONGRATULATIONS [NameBimbo in upper case] - YOU WON, WHICH MEANS THAT YOU HAVE EARNED A SHOWER AND A CLEAN SET OF CLOTHES.'[roman type][line break]As the robotic voice says this, you see [NameDesc of ST][']s room start to fill with some sort of gas, or perhaps steam. You see [him of ST] immediately panic, and sprint for the door to the outside, with no chance to clean [himself of ST] up first. How cruel![paragraph break]";
+			if the player-points of P >= rival-points of P + 5, say "[first custom style]'AS YOU WON BY AT LEAST 5 PORN POINTS, ONLY YOUR OPPONENT'S VIDEOS HAVE BEEN UPLOADED ONLINE. CONGRATULATIONS AGAIN ON AN EXCELLENT PERFORMANCE.'[roman type][line break]";
+			otherwise say "[first custom style]'AS YOU FAILED TO WIN BY AT LEAST 5 PORN POINTS, WE ARE CURRENTLY PUBLISHING THE VIDEOS ONLINE ON YOUR BEHALF. WE HOPE YOU ENJOY THE WORLDWIDE EXPOSURE.'[line break][variable custom style]Holy shit... I can't believe it... I'm officially a real life hardcore porn star. Will I ever be able to look my family and friends in the eye again?[roman type][line break]";
+			say "A hidden door opens in one wall, revealing a walk-in shower[if C is dirty] and a clean [ShortDesc of C][end if]. You waste no time in cleaning yourself up.";
+			repeat with BD running through body parts:
+				fully clean BD;
+			repeat with BC running through worn clothing:
+				fully clean BC;
+			if player-points of P is rival-points of P, say "By the time you leave the shower, [student-name of ST] has gone.";
+		otherwise:
+			say "[first custom style]'COMISERATIONS [NameBimbo in upper case] - YOU LOST, WHICH MEANS THAT YOU MUST IMMEDIATELY LEAVE THE PREMISES. FURTHERMORE, WE ARE CURRENTLY PUBLISHING THE VIDEOS ONLINE ON YOUR BEHALF. WE HOPE YOU ENJOY THE WORLDWIDE EXPOSURE.'[roman type][line break]As the robotic voice says this, you see the room start to fill with steam. You immediately panic, and sprint for the door to the outside, with no chance to clean yourself up first. How cruel!";
+			now the player is in Predicament02;
+		now the stance of the player is 0;
+	now ST is in School02;
+	repeat with MM running through ultimate-lesson-actors:
+		dislodge MM;
+		remove MM from play;
+	repeat with MM running through adult baby slaves in Predicament01:
+		deinterest M;
+		if ML is a room, now M is in ML;
+		otherwise remove M from play;
+	repeat with PV running from 1 to 3:
+		if (player-escaped is false and the player-points of P < rival-points of P + 5) or (player-escaped is true and PV is 1):
+			if the number of blank rows in the Table of Published Disgraces > 0:
+				choose a blank row in Table of Published Disgraces;
+				now the content entry is entry PV in LPVT;
+				now the published entry is entry PV in LPVW;
+				now the severity entry is entry PV in LPVS;
+				now the popularity entry is entry PV in LPVP;
+				now the timestamp entry is time-earnings;
+				now the lastwitnessed entry is 0;
+				now the deletedtime entry is 0;
+				now the viewsfuzz entry is a random number between -100 and 100;
+
+Check going south when the player is in Predicament02:
+	if current-predicament is porno-predicament, say "The door is locked." instead.
+
 
 
 Predicament World ends here.

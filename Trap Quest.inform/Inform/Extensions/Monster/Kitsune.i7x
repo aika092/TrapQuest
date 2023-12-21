@@ -20,6 +20,14 @@ To decide which figure-name is the monster-image of (M - kitsune):
 		if the target-disguise of M is a thing, decide on examine-image of target-disguise of M;
 	decide on figure of kitsune.
 
+Definition: kitsune is presenting as male:
+	if target-disguise of kitsune is not kitsune:
+		if the target-disguise of kitsune is presenting as male, decide yes;
+		decide no;
+	otherwise:
+		if lady fetish is 2, decide yes;
+		decide no.
+
 To say ShortDesc of (M - kitsune):
 	say "[if target-disguise of M is not M][ShortDesc of target-disguise of M][otherwise]kitsune[end if]".
 

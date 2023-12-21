@@ -1,6 +1,6 @@
 Vibrator by Sex Toys begins here.
 
-A vibrator is a kind of dong. The size of a vibrator is usually 3. The printed name of a vibrator is usually "[clothing-title-before]vibrator[clothing-title-after]". The text-shortcut of a vibrator is "vi". Understand "vibe", "vibrator" as a vibrator.
+A vibrator is a kind of dong. The size of a vibrator is usually 3. The printed name of a vibrator is usually "[clothing-title-before][ShortDesc of item described][clothing-title-after]". The text-shortcut of a vibrator is "vi". Understand "vibe", "vibrator" as a vibrator.
 
 Figure of vibrator is the file "Items/Accessories/Toys/vibrator1.png".
 To decide which figure-name is clothing-image of (C - a vibrator):
@@ -22,12 +22,14 @@ To compute periodic effect of (P - a vibrator):
 	if the toy-charge of P > 10:
 		now the toy-charge of P is 0;
 		let F be a random fuckhole penetrated by P;
+		if P is clit-taped wired-vibe, now F is vagina;
 		if P is blessed:
 			say "[one of]Your [ShortDesc of P] is vibrating just slowly enough to stimulate you without getting you any closer to an orgasm. It's maddening![or][or]Your [ShortDesc of P] continues to stimulate you.[or][cycling]";
 			passively stimulate F from P;
 		otherwise:
-			if the soreness of F > 7 or (the soreness of F > 2 and F is vagina):
-				say "[one of]Your [ShortDesc of P] is stimulating the deepest parts of your [variable F]! Every [if P is cursed]moment[otherwise]minute[end if] it stays inside of you is making you more aroused![or]Your [ShortDesc of P] continues to buzz away inside your [variable F]![or]Your [ShortDesc of P] is still vibrating strongly inside your [variable F].[cycling]";
+			if P is clit-taped wired-vibe or the soreness of F > 7 or (the soreness of F > 2 and F is vagina):
+				if P is clit-taped wired-vibe, say "Your [ShortDesc of P] is [one of]stimulating[or]buzzing against[or]vibrating on[cycling] your clit!";
+				otherwise say "[one of]Your [ShortDesc of P] is stimulating the deepest parts of your [variable F]! Every [if P is cursed]moment[otherwise]minute[end if] it stays inside of you is making you more aroused![or]Your [ShortDesc of P] continues to buzz away inside your [variable F]![or]Your [ShortDesc of P] is still vibrating strongly inside your [variable F].[cycling]";
 				stimulate F from P;
 			otherwise:
 				if diaper quest is 0, say "[one of]Your [ShortDesc of P] is stimulating the deepest parts of your [variable F]! Every [if P is cursed]moment[otherwise]minute[end if] it stays inside of you is making you more sore![or]Your [ShortDesc of P] continues to ruin your [variable F]![or]Your [ShortDesc of P] is still making you sore.[cycling]";
@@ -127,5 +129,42 @@ Check wearing remote-controlled-vibrator when the player is possessing a penis:
 	say "You can't work out how to put this back on." instead.
 Check plugging asshole with remote-controlled-vibrator:
 	say "That doesn't fit that way round." instead.
+
+
+
+wireless-vibe is a vibrator. Understand "wireless" as wireless-vibe. The text-shortcut of wireless-vibe is "wlv".
+To say ShortDesc of (C - wireless-vibe):
+	say "wireless vibrator".
+Definition: wireless-vibe is pink themed: decide yes.
+Definition: wireless-vibe is fetish appropriate: decide no. [Stops it spawning randomly]
+To say ClothingDesc of (C - wireless-vibe):
+	say "A pink vibrating toy made of soft silicone. It has a bulb that is inserted into the vagina, and an aerial that sticks out[if C is worn]. Its vibrations are slowly driving you insane![otherwise].[end if]".
+
+Check plugging something with wireless-vibe when the player is not possessing a vagina:
+	say "This only really works properly with vaginas." instead.
+Check wearing wireless-vibe when the player is not possessing a vagina:
+	say "This only really works properly with vaginas." instead.
+Check plugging asshole with wireless-vibe:
+	say "That doesn't fit that way round." instead.
+
+Figure of remote controlled vibrator 4 is the file "Items/Accessories/Toys/vibrator4.png".
+To decide which figure-name is clothing-image of (C - wireless-vibe):
+	decide on figure of remote controlled vibrator 4.
+
+
+wired-vibe is a vibrator. wired-vibe can be clit-taped. Understand "egg" as wired-vibe. The text-shortcut of wired-vibe is "egv".
+To say ShortDesc of (C - wireless-vibe):
+	say "egg vibrator".
+Definition: wired-vibe is pink themed: decide yes.
+Definition: wired-vibe is fetish appropriate: decide no. [Stops it spawning randomly]
+To say ClothingDesc of (C - wired-vibe):
+	say "A pink vibrating egg made of hard plastic, connected to a control unit via a wire[if C is worn and C is clit-taped]. The egg is taped to your clit[end if][if C is worn]. The control unit is taped to your thigh, and is stuck in the ON position. Its vibrations are slowly driving you insane![otherwise].[end if]".
+
+Carry out plugging something with wired-vibe:
+	now wired-vibe is not clit-taped.
+
+Figure of remote controlled vibrator 5 is the file "Items/Accessories/Toys/vibrator5.png".
+To decide which figure-name is clothing-image of (C - wired-vibe):
+	decide on figure of remote controlled vibrator 5.
 
 Vibrator ends here.

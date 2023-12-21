@@ -24,6 +24,9 @@ To compute (C - a wrist bond) unique inheriting from (D - a wrist bond):
 
 pair of handcuffs is a wrist bond. The printed name of pair of handcuffs is "[clothing-title-before]pair of handcuffs[clothing-title-after]". The text-shortcut of pair of handcuffs is "hc".
 Definition: a pair of handcuffs is grey themed: decide yes.
+Definition: pair of handcuffs is IcarusScienceAppropriate:
+	if bondage protection < 2 and it is actually summonable, decide yes;
+	decide no.
 
 pair of pink handcuffs is a wrist bond. The printed name of pair of pink handcuffs is "[clothing-title-before]pair of pink handcuffs[clothing-title-after]". The text-shortcut of pair of pink handcuffs is "phc".
 Definition: pair of pink handcuffs is pink themed:
@@ -53,6 +56,7 @@ To decide which number is the initial outrage of (W - pair of wristcuffs):
 	decide on 3.
 
 Figure of handcuffs is the file "Items/Accessories/Arm/handcuffs1.png".
+Figure of Icarus handcuffs is the file "Items/Accessories/Arm/handcuffs1.jpg".
 Figure of pink handcuffs is the file "Items/Accessories/Arm/handcuffs2.png".
 Figure of furry handcuffs is the file "Items/Accessories/Arm/handcuffs3.png".
 Figure of trashy handcuffs is the file "Items/Accessories/Arm/handcuffs4.png".
@@ -63,6 +67,8 @@ Definition: pair of trashy handcuffs is gem themed: decide yes.
 
 To decide which figure-name is clothing-image of (C - pair of handcuffs):
 	decide on figure of handcuffs.
+To decide which figure-name is icarus-clothing-image of (C - pair of handcuffs):
+	decide on figure of Icarus handcuffs.
 To decide which figure-name is clothing-image of (C - pair of pink handcuffs):
 	decide on figure of pink handcuffs.
 To decide which figure-name is clothing-image of (C - pair of furry handcuffs):
@@ -80,10 +86,14 @@ To say WristBondDesc:
 	if the item described is pair of wristcuffs, say "A luxury pair of leather wristcuffs connected by a golden chain, for [if the bimbo of the player < 8]comfortable use[otherwise][line break][second custom style]fun times[roman type][line break][end if] in the bedroom.".
 
 To say ShortDesc of (W - pair of handcuffs):
-	say "a medieval pair of handcuffs".
+	say "pair of handcuffs".
+To say MediumDesc of (W - pair of handcuffs):
+	say "medieval pair of handcuffs".
 
 To say ShortDesc of (W - pair of wristcuffs):
-	say "a comfortable pair of leather wristcuffs".
+	say "pair of leather wristcuffs".
+To say MediumDesc of (W - pair of wristcuffs):
+	say "comfortable pair of leather wristcuffs".
 
 This is the wrist bondage behind prevents hand use rule:
 	if the player is wrist bound behind:

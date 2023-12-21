@@ -110,14 +110,21 @@ To say ConceptionFlav:
 
 Definition: yourself is able to automatically expel:
 	if there is a worn crotch-in-place milking basque, decide no;
-	if the player is not able to expel, decide no;
+	if the player is not able to eventually expel, decide no;
 	if (the trophy-mode of expel-trophy is 1 or cumdump-headband is worn) and asshole is actually occupied, decide no;
+	decide yes.
+
+Definition: yourself is able to eventually expel:
+	if asshole is actually occupied:
+		let C be a random thing penetrating asshole;
+		if C is not sex toy, decide no;
 	decide yes.
 
 Definition: yourself is able to expel:
 	if asshole is actually occupied:
-		if a random thing penetrating asshole is sex toy, decide yes;
-		decide no;
+		let C be a random thing penetrating asshole;
+		if C is not sex toy, decide no;
+		if C is glued, decide no;
 	decide yes.
 
 To decide which number is belly strain balance: [tweak this number to balance this mechanic]
@@ -141,13 +148,16 @@ To compute enema holding:
 
 To compute enema holding failure:
 	now the squirt timer of belly is 0;
-	if currently-squirting is 0, AssSquirt;
-	if rubber bunny ears is worn and the class of the player is bunny and the number of laid medium eggs in the location of the player > 1 and carrot daggers is off-stage:
-		say "[bold type]Suddenly, [if the number of medium eggs in the location of the player is 2]the two[otherwise]two of the[end if] eggs beneath you shine a bright orange and change shape![roman type][line break]In their place are now a pair of latex carrots.[line break][variable custom style]What in the world?![roman type][line break]";
-		destroy a random laid medium egg in the location of the player;
-		destroy a random laid medium egg in the location of the player;
-		now carrot daggers is in the location of the player;
-		compute autotaking carrot daggers.
+	let C be a random glued sex toy penetrating asshole;
+	if C is a thing, compute enema vs glue pressure of C;
+	if the player is able to expel: [will return false if there's still a glued sex toy]
+		if currently-squirting is 0, AssSquirt;
+		if rubber bunny ears is worn and the class of the player is bunny and the number of laid medium eggs in the location of the player > 1 and carrot daggers is off-stage:
+			say "[bold type]Suddenly, [if the number of medium eggs in the location of the player is 2]the two[otherwise]two of the[end if] eggs beneath you shine a bright orange and change shape![roman type][line break]In their place are now a pair of latex carrots.[line break][variable custom style]What in the world?![roman type][line break]";
+			destroy a random laid medium egg in the location of the player;
+			destroy a random laid medium egg in the location of the player;
+			now carrot daggers is in the location of the player;
+			compute autotaking carrot daggers.
 
 player-just-enema-leaked is initially false.
 To check enema holding:
@@ -199,80 +209,89 @@ To check enema holding with reason (T - a text):
 					compute effect of E.
 
 To compute enema leaking with reason (T - a text):
-	if the player is able to expel:
-		now milk-count is 0;
-		now urine-count is 0;
-		now semen-count is 0;
-		now water-count is 0;
-		now small-egg-count is 0;
-		[total-count is the total count of all elements currently inside.]
-		let total-count be 0;
-		if the milk volume of belly > 0, now milk-count is 1;
-		if the urine volume of belly > 0, now urine-count is 1;
-		if the semen volume of belly > 0, now semen-count is 1;
-		if the water volume of belly > 0, now water-count is 1;
-		if the small egg count of belly > 0, now small-egg-count is 1;
-		now total-count is milk-count + urine-count + semen-count + water-count + small-egg-count;
-		if total-count > 0:
-			now player-just-enema-leaked is true;
-			let C be a random worn bottom level ass protection clothing;
-			let K be C;
-			let KSK be -1;
-			let CK be nothing;
-			if K is clothing, now CK is the concealer of K;
-			if CK is clothing and K is not currently visible, now K is CK;
-			if K is clothing, now KSK is the total-soak of K;
-			let P be a random thing penetrating asshole;
-			if cumdump-headband is worn and T is "", say "[one of]your sphincter momentarily relaxes[or]your asshole briefly opens[or]your sphincter spasms on its own[in random order] and ";
-			otherwise say "[T] [one of]your sphincter momentarily spasms[or]you lose control of your sphincter for a split second[or]your sphincter spasms on its own[in random order] and ";
-			if small-egg-count is 1:
-				lay 1 small eggs;
-				progress quest of egg-laying-quest;
-				if voluntarySquatting is 0, progress quest of egg-holding-quest;
-				let Y be a random camera trap in the location of the player;
-				if Y is not a thing, now Y is a random camera-bystander in the location of the player;
-				if target-poster is an expulsion poster and target-poster is off-stage and Y is a thing and (Y is not a camera trap or the reset-timer of Y < 99900):
-					say "[FlashFlav of Y][if Y is camera trap][ExpulsionFlashFlav of Y][end if]";
-					set up target-poster;
-				if total-count > 1, say "The [if the player is in a predicament room]ball[otherwise]egg[end if] is followed by ";
-			if milk-count + urine-count + semen-count + water-count > 0:
-				say "[one of]a little bit of[or]a small squirt of[in random order] ";
-				if urine-count is 0 and semen-count is 0 and milk-count is 0 and water-count is 1:
-					say "[if diaper messing >= 3]enema water[otherwise]clear water[end if] ";
-				otherwise if urine-count is 0 and semen-count is 0 and milk-count is 0 and water-count is 0:
-					say "[if diaper messing >= 3]enema water[otherwise]clear water[end if] ";
-				otherwise:
-					say "[if urine-count > 0 and semen-count > 0 and milk-count > 0]what must be a disgraceful mix of [urine], [milk] and [semen][otherwise if urine-count > 0 and semen-count > 0]what seems like a mix of [urine] and [semen][otherwise if urine-count > 0 and milk-count > 0]what seems like a mix of [urine] and [milk][otherwise if milk-count > 0 and semen-count > 0]what seems like a mix of [milk] and [semen][otherwise if urine-count > 0][urine][otherwise if semen-count > 0][semen][otherwise if milk-count > 0][milk][otherwise]BUG - can't find any liquid. Report this bug please[end if] ";
-				say "[one of]escapes[or]spills out[or]comes out[at random][if P is a thing] around the sides of [NameDesc of P][end if]";
-				if C is clothing:
-					say " into [NameDesc of C]. ";
-				otherwise:
-					say ". ";
-					now C is thighs;
-				if current-predicament is joint-fuckhole-predicament and the player is in Predicament01:
-					say "It drops down onto [NameDesc of torn-shirt].";
-					SemenSoakUp torn-shirt by total-count;
-				otherwise if milk-count + urine-count + semen-count > 1:
-					AnnouncedExpel murkwater on C by total-count;
-				otherwise: [water gets converted into other liquids for simplicity]
-					if semen-count > 0:
-						AnnouncedExpel semen on C by total-count;
-					otherwise if milk-count > 0:
-						AnnouncedExpel milk on C by total-count;
-					otherwise if urine-count > 0:
-						AnnouncedExpel urine on C by total-count;
+	if the player is able to eventually expel:
+		let C be a random glued sex toy penetrating asshole;
+		if C is a thing, compute enema vs glue pressure of C;
+		if the player is able to expel:
+			now milk-count is 0;
+			now urine-count is 0;
+			now semen-count is 0;
+			now water-count is 0;
+			now small-egg-count is 0;
+			[total-count is the total count of all elements currently inside.]
+			let total-count be 0;
+			if the milk volume of belly > 0, now milk-count is 1;
+			if the urine volume of belly > 0, now urine-count is 1;
+			if the semen volume of belly > 0, now semen-count is 1;
+			if the water volume of belly > 0, now water-count is 1;
+			if the small egg count of belly > 0, now small-egg-count is 1;
+			now total-count is milk-count + urine-count + semen-count + water-count + small-egg-count;
+			if total-count > 0:
+				now currently-squirting is 1;
+				now player-just-enema-leaked is true;
+				let C be a random worn bottom level ass protection clothing;
+				let K be C;
+				let KSK be -1;
+				let CK be nothing;
+				if K is clothing, now CK is the concealer of K;
+				if CK is clothing and K is not currently visible, now K is CK;
+				if K is clothing, now KSK is the total-soak of K;
+				let P be a random thing penetrating asshole;
+				if cumdump-headband is worn and T is "", say "[one of]your sphincter momentarily relaxes[or]your asshole briefly opens[or]your sphincter spasms on its own[in random order] and ";
+				otherwise say "[T] [one of]your sphincter momentarily spasms[or]you lose control of your sphincter for a split second[or]your sphincter spasms on its own[in random order] and ";
+				if P is a thing: [we know this is a sex toy from the 'player is able to expel' check]
+					say "[BigNameDesc of P] bursts out of your [asshole]! Then, ";
+					now P is in the location of the player;
+					dislodge P;
+				if small-egg-count is 1:
+					lay 1 small eggs;
+					progress quest of egg-laying-quest;
+					if voluntarySquatting is 0, progress quest of egg-holding-quest;
+					let Y be a random camera trap in the location of the player;
+					if Y is not a thing, now Y is a random camera-bystander in the location of the player;
+					if target-poster is an expulsion poster and target-poster is off-stage and Y is a thing and (Y is not a camera trap or the reset-timer of Y < 99900):
+						say "[FlashFlav of Y][if Y is camera trap][ExpulsionFlashFlav of Y][end if]";
+						set up target-poster;
+					if total-count > 1, say "The [if the player is in a predicament room]ball[otherwise]egg[end if] is followed by ";
+				if milk-count + urine-count + semen-count + water-count > 0:
+					say "[one of]a little bit of[or]a small squirt of[in random order] ";
+					if urine-count is 0 and semen-count is 0 and milk-count is 0 and water-count is 1:
+						say "[if diaper messing >= 3]enema water[otherwise]clear water[end if] ";
+					otherwise if urine-count is 0 and semen-count is 0 and milk-count is 0 and water-count is 0:
+						say "[if diaper messing >= 3]enema water[otherwise]clear water[end if] ";
 					otherwise:
-						AnnouncedExpel water on C by total-count;
-				decrease the milk volume of belly by milk-count;
-				decrease the urine volume of belly by urine-count;
-				decrease the semen volume of belly by semen-count;
-				decrease the water volume of belly by water-count;
-			if the total squirtable fill of belly is 0 and the holding strain of belly > 0:
-				if rectum < 2, say "Your belly is now empty.";
-				reset all enema effects;
-				now the holding strain of belly is 0;
-			if KSK is 0 and the total-soak of K > 0, say "There is now a visible [if K is diaper]yellow patch[otherwise]stain[end if] in the front of your [ShortDesc of K].";
-			compute sudden squirt into K disapproval.
+						say "[if urine-count > 0 and semen-count > 0 and milk-count > 0]what must be a disgraceful mix of [urine], [milk] and [semen][otherwise if urine-count > 0 and semen-count > 0]what seems like a mix of [urine] and [semen][otherwise if urine-count > 0 and milk-count > 0]what seems like a mix of [urine] and [milk][otherwise if milk-count > 0 and semen-count > 0]what seems like a mix of [milk] and [semen][otherwise if urine-count > 0][urine][otherwise if semen-count > 0][semen][otherwise if milk-count > 0][milk][otherwise]BUG - can't find any liquid. Report this bug please[end if] ";
+					say "[one of]escapes[or]spills out[or]comes out[at random][if P is a thing] around the sides of [NameDesc of P][end if]";
+					if C is clothing:
+						say " into [NameDesc of C]. ";
+					otherwise:
+						say ". ";
+						now C is thighs;
+					if current-predicament is joint-fuckhole-predicament and the player is in Predicament01:
+						say "It drops down onto [NameDesc of torn-shirt].";
+						SemenSoakUp torn-shirt by total-count;
+					otherwise if milk-count + urine-count + semen-count > 1:
+						AnnouncedExpel murkwater on C by total-count;
+					otherwise: [water gets converted into other liquids for simplicity]
+						if semen-count > 0:
+							AnnouncedExpel semen on C by total-count;
+						otherwise if milk-count > 0:
+							AnnouncedExpel milk on C by total-count;
+						otherwise if urine-count > 0:
+							AnnouncedExpel urine on C by total-count;
+						otherwise:
+							AnnouncedExpel water on C by total-count;
+					decrease the milk volume of belly by milk-count;
+					decrease the urine volume of belly by urine-count;
+					decrease the semen volume of belly by semen-count;
+					decrease the water volume of belly by water-count;
+				if the total squirtable fill of belly is 0 and the holding strain of belly > 0:
+					if rectum < 2, say "Your belly is now empty.";
+					reset all enema effects;
+					now the holding strain of belly is 0;
+				if KSK is 0 and the total-soak of K > 0, say "There is now a visible [if K is diaper]yellow patch[otherwise]stain[end if] in the front of your [ShortDesc of K].";
+				compute sudden squirt into K disapproval;
+				now currently-squirting is 0.
 
 
 [!<EnemaEffect>@
@@ -338,18 +357,17 @@ To decide which number is the max-incidents of (E - enema-int-loss):
 To execute (E - enema-int-loss):
 	say "The uncomfortable nature of your [enema] clouds your mind. You [if the incidents of E > 0]will have an even cloudier mind[otherwise]won't be able to think as clearly[end if] until you [italic type]expel[bold type] it out.".
 
-enema-incontinence is an enema-effect.
+enema-irritability is an enema-effect.
 
-Definition: enema-incontinence is viable:
+Definition: enema-irritability is viable:
 	if diaper lover is 0 or the player is in a predicament room, decide no;
 	if the player is rectum incontinent or the raw-rectum-incontinence of the player >= the max-rectum-incontinence of the player, decide no;
-	if the incidents of enema-incontinence + 2 < the incidents of enema-cramping, decide yes;
+	if the incidents of enema-irritability + 2 < the incidents of enema-cramping, decide yes;
 	decide no.
 
-To execute (E - enema-incontinence):
-	say "You've been holding onto your [enema] for so long that feel your sphincter weaken[if the raw-rectum-incontinence of the player > 0] even further[end if]. ";
-	SilentlyRectumIncontinenceUp 1;
-	say "[if the player is not rectum incontinent]You'll now find it even more difficult to hold things in and tell when you need the toilet[otherwise]You can somehow tell that you are now completely incontinent[end if].".
+To execute (E - enema-irritability):
+	say "You've been holding onto your [enema] for so long that feel your bowels becoming more irritable. ";
+	SilentlyRectumIncontinenceUp 5.
 
 To compute absorption:
 	let NC be the number of worn absorption clothing;

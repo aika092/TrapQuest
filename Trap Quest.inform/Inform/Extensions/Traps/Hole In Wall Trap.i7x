@@ -26,15 +26,15 @@ To say ShortDesc of (T - hole-in-wall):
 	say "hole in the wall".
 
 To say SuddenPregTitle of (M - hole-in-wall):
-	say "anonymous man".
+	say "anonymous [man of male-m]".
 
 To say PregGrowth of (T - hole-in-wall):
-	say "the unknown man's [child]".
+	say "the unknown [man of male-m][']s [child]".
 
 To say FuckerDesc of (T - hole-in-wall):
-	say "the anonymous [man of mechanic]".
+	say "the anonymous [man of male-m]".
 To say BigFuckerDesc of (T - hole-in-wall):
-	say "The anonymous [man of mechanic]".
+	say "The anonymous [man of male-m]".
 
 Definition: hole-in-wall is live: decide yes.
 
@@ -91,12 +91,13 @@ Understand "climb through [something]", "climb into [something]", "crawl into [s
 
 To say StickyTriggerFlav of (T - hole-in-wall):
 	now T is revealed;
-	say "You find yourself sliding straight for the hole in the opposite wall at an alarming speed!";
-	if diaper quest is 1 and hole-in-wall-scene of woman-player is 0 and the woman-bimbo of woman-player is 5 and the player is a june 2022 diaper donator and woman-player is relaxed redeploy appropriate:
-		now woman-player is in HoleInWall;
-		now the woman-status of woman-player is 25;
-		now the hole-in-wall-scene of woman-player is 1;
-		say "[bold type]In the hole in the wall in front of you, someone is stuck. You can't see their head, but their lower half consists of pink frilly socks and an absolutely massive diaper with a childish pattern[if diaper messing > 6]. At their feet, two empty enema syringes make it clear that their belly is full of water[end if].".
+	if playerRegion is Hotel: [could have just been portaled to the academy by the receptionist]
+		say "You find yourself sliding straight for the hole in the opposite wall at an alarming speed!";
+		if diaper quest is 1 and hole-in-wall-scene of woman-player is 0 and the woman-bimbo of woman-player is 5 and the player is a june 2022 diaper donator and woman-player is relaxed redeploy appropriate:
+			now woman-player is in HoleInWall;
+			now the woman-status of woman-player is 25;
+			now the hole-in-wall-scene of woman-player is 1;
+			say "[bold type]In the hole in the wall in front of you, someone is stuck. You can't see their head, but their lower half consists of pink frilly socks and an absolutely massive diaper with a childish pattern[if diaper messing > 6]. At their feet, two empty enema syringes make it clear that their belly is full of water[end if].".
 
 To say StickyTriggerFail of (T - hole-in-wall):
 	say ". You manage to avoid falling over!";
@@ -108,26 +109,27 @@ To say StickyTriggerFail of (T - hole-in-wall):
 		say "[bold type]In the hole in the wall in front of you, someone is stuck. [roman type]You can't see their head, but their lower half consists of pink frilly socks and an absolutely massive diaper with a childish pattern[if diaper messing >= 7]. At their feet, two empty enema syringes make it clear that their belly is full of water[end if].".
 
 To trigger (Y - hole-in-wall):
-	if the hole-in-wall-scene of woman-player >= 1 and woman-player is in HoleInWall:
-		say "And you're heading straight for them! Your face smashes straight into the back of that ultra-thick padding. Fortunately it's dry. For now.";
-		let H be a random worn headgear;
-		if H is headgear and the player is getting unlucky:
-			say "[bold type][BigNameDesc of H] [bold type]has somehow got stuck on some tough stray fibres on the diaper! [roman type]It won't budge! Until you remove [NameDesc of H] or manage to pry it loose, your face is stuck smushed into the seat of the diaper in front of you! [GotUnluckyFlav][line break]To make things worse, the person stuck in the wall starts shaking their butt in panic, repeatedly smushing their padding into your face, and making it impossible for you to carefully disentangle [NameDesc of H] from the diaper. [bold type]Until the person gets rescued from being stuck in the wall, you won't able to disentangle [NameDesc of H][bold type]![roman type][line break]";
-			now H is stuck;
-		if the player is getting unlucky:
-			say "[if there is worn stuck headgear]Double [end if]Uh-oh - before you can steady yourself and pull yourself away from the diaper, a lot happens! [GotUnluckyFlav]";
-			compute DiaperFacesitStart of Y;
-			now the hole-in-wall-scene of woman-player is 2;
-		say "You can [bold type]pull[roman type] on the person in the wall to try and help them get out, if you like.";
-	otherwise:
-		let R be a random number between 2 and (50 - (the times-stuck of Y * 20));
-		if the largeness of breasts > 15:
-			say "Fortunately your breasts are just too big to fit through the hole and act as airbags as they cushion your collision with the wall.";
-		otherwise if R > the dexterity of the player:
-			say "Your front half crashes through the hole before you can stop yourself! You try to pull backward, but your [if the largeness of breasts > 3][BreastDesc][otherwise]shoulders[end if] are just too wide, you can't get back out! You try to go forward but your [if the thickness of hips > 4 and the total volume of hips > 4][MediumDesc of hips] are[otherwise]butt is[end if] too big. [HoleTrappedFlav]";
-			compute HoleInWallEntrance;
+	if playerRegion is Hotel: [could have just been portaled to the academy by the receptionist]
+		if the hole-in-wall-scene of woman-player >= 1 and woman-player is in HoleInWall:
+			say "And you're heading straight for them! Your face smashes straight into the back of that ultra-thick padding. Fortunately it's dry. For now.";
+			let H be a random worn headgear;
+			if H is headgear and the player is getting unlucky:
+				say "[bold type][BigNameDesc of H] [bold type]has somehow got stuck on some tough stray fibres on the diaper! [roman type]It won't budge! Until you remove [NameDesc of H] or manage to pry it loose, your face is stuck smushed into the seat of the diaper in front of you! [GotUnluckyFlav][line break]To make things worse, the person stuck in the wall starts shaking their butt in panic, repeatedly smushing their padding into your face, and making it impossible for you to carefully disentangle [NameDesc of H] from the diaper. [bold type]Until the person gets rescued from being stuck in the wall, you won't able to disentangle [NameDesc of H][bold type]![roman type][line break]";
+				now H is stuck;
+			if the player is getting unlucky:
+				say "[if there is worn stuck headgear]Double [end if]Uh-oh - before you can steady yourself and pull yourself away from the diaper, a lot happens! [GotUnluckyFlav]";
+				compute DiaperFacesitStart of Y;
+				now the hole-in-wall-scene of woman-player is 2;
+			say "You can [bold type]pull[roman type] on the person in the wall to try and help them get out, if you like.";
 		otherwise:
-			say "You [if the times-stuck of Y > 0]are ready for it this time and [end if]manage to raise your hands in a way that prevents you from falling through the hole. Phew!".
+			let R be a random number between 2 and (50 - (the times-stuck of Y * 20));
+			if the largeness of breasts > 15:
+				say "Fortunately your breasts are just too big to fit through the hole and act as airbags as they cushion your collision with the wall.";
+			otherwise if R > the dexterity of the player:
+				say "Your front half crashes through the hole before you can stop yourself! You try to pull backward, but your [if the largeness of breasts > 3][BreastDesc][otherwise]shoulders[end if] are just too wide, you can't get back out! You try to go forward but your [if the thickness of hips > 4 and the total volume of hips > 4][MediumDesc of hips] are[otherwise]butt is[end if] too big. [HoleTrappedFlav]";
+				compute HoleInWallEntrance;
+			otherwise:
+				say "You [if the times-stuck of Y > 0]are ready for it this time and [end if]manage to raise your hands in a way that prevents you from falling through the hole. Phew!".
 
 To say HoleTrappedFlav:
 	say "[one of]You're trapped like this[or]You're once again trapped[stopping] until someone comes and helps you out! You could try to escape by using [bold type][TQlink]resist[TQdlink][roman type] but if you make too much noise you'll probably just attract even more attention to yourself! Except for that, all you can do is [bold type][TQlink]wait[TQdlink][roman type] and hope that whoever does walk by next decides to rescue you.".
@@ -437,7 +439,7 @@ To compute punishment of (P - hole-gatling-fuck):
 				now C is in the location of the player;
 				dislodge C;
 				now C is a random thing filling F;
-	if (F is vagina and the player is not pussy protected) or (F is asshole and the player is not ass protected):
+	if (diaper quest is 1 and there is a worn diaper) or (F is vagina and the player is not pussy protected) or (F is asshole and the player is not ass protected):
 		let men-fucked be 0;
 		if diaper quest is 1, now hole-in-wall is penetrating F;
 		otherwise now M is penetrating F;
@@ -472,7 +474,7 @@ To compute punishment of (P - hole-gatling-fuck):
 			increase men-fucked by 1;
 			increase hole-in-wall-turns by 1;
 			compute extra turn;
-		while hole-in-wall-turns < (HIWT + 3) and the player is in HoleInWall and delayed fainting is 0:
+		while diaper quest is 0 and hole-in-wall-turns < (HIWT + 3) and the player is in HoleInWall and delayed fainting is 0:
 			if gatling-girth of hole-in-wall < 5:
 				dislodge M;
 				now hole-in-wall is penetrating F;

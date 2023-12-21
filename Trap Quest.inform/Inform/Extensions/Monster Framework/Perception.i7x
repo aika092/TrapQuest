@@ -291,8 +291,8 @@ Definition: a monster (called M) is unfriendly rather than friendly:
 		now M is recently-friendly;
 		decide no.
 
-Definition: a monster is calculated unfriendly:
-	if it is not pacified and (it is not normally annoyed or it is uniquely unfriendly), decide yes;
+Definition: a monster (called M) is calculated unfriendly:
+	if M is not pacified and (M is not normally annoyed or M is uniquely unfriendly), decide yes;
 	decide no.
 
 [Selkie: it might be easier to remember, if this was termed temporarily unfriendly?]
@@ -339,7 +339,7 @@ Definition: a monster (called M) is objectifying the player:
 
 [!<DecideWhichNumberIsTheBimboToleranceOfMonster>+
 
-Determines the number of outrage at which a monster will immediately become unfriendly. Sluttiness focused
+Determines the number of outrage at which a monster will immediately become unfriendly, through the 'objectifying' framework. Sluttiness focused
 
 @param <Monster>:<M> The monster noticing the player
 @return <Integer> integer indicating the appearance level the monster is willing to tolerate
@@ -382,7 +382,7 @@ Definition: a monster (called M) is babifying the player:
 
 [!<DecideWhichNumberIsTheBimboToleranceOfMonster>+
 
-Determines the number of cringe at which a monster will immediately become unfriendly. Diaper Quest only
+Determines the number of cringe at which a monster will immediately become unfriendly, through the 'babifying' framework. Diaper Quest only
 
 @param <Monster>:<M> The monster noticing the player
 @return <Integer> integer indicating the appearance level the monster is willing to tolerate

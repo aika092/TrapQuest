@@ -1722,10 +1722,10 @@ To say WhoQuestion of (M - a monster):
 	if the bimbo of the player < 11:
 		say "'Who are you?'";
 	otherwise:
-		say "'Got a name, [if M is male]big boy?'[otherwise]sexy?'[end if]".
+		say "'Got a name, [if M is male]big [boy of M]?'[otherwise]sexy?'[end if]".
 
 To say WhoAnswer of (M - a monster):
-	say "[speech style of M]'Why, I'm Generic the npc!'[roman type][line break]".
+	say "[speech style of M]'Why, I'm Generic the NPC!'[roman type][line break]".
 
 talk-story-question is a talk-object.
 
@@ -2099,11 +2099,13 @@ To compute unique completion of (E - satisfy-pimp-errand) for (P - a person):
 
 portal-clothes-errand is an errand. portal-clothes-errand has an object called the satisfy-target.
 Definition: portal-clothes-errand is appropriate:
-	if diaper quest is 1, decide no;
+	if diaper quest is 1:
+		if diaper swapping >= 2 and the player is a december 2023 diaper donator and portal-diaper is unclash summonable, decide yes;
+		decide no;
 	if portal-hotpants is unclash summonable or (the largeness of breasts > 3 and portal-bra is unclash summonable), decide yes;
 	decide no.
 Definition: portal-clothes-errand is completed:
-	if portal-hotpants is worn or portal-bra is worn, decide no;
+	if portal-hotpants is worn or portal-bra is worn or portal-diaper is worn, decide no;
 	decide yes.
 To decide which number is the errand-weight of (E - portal-clothes-errand) for (P - pimp):
 	decide on 40.
@@ -2112,12 +2114,16 @@ To say ErrandFlav of (E - portal-clothes-errand) for (P - a person):
 To compute instant effect of (E - portal-clothes-errand) for (P - a person):
 	say "Agree to go into debt with [NameDesc of P]?";
 	if the player is bimbo consenting:
-		say "You nod, and then [NameDesc of pimp] produces [if portal-hotpants is worn and portal-bra is worn]two bizarre items[otherwise]a bizarre item[end if] of clothing made out of concrete and gold. [BigNameDesc of pimp] snaps [his of pimp] fingers.";
-		if portal-hotpants is unclash summonable, unclash class summon portal-hotpants;
-		if the largeness of breasts > 3 and portal-bra is unclash summonable, unclash class summon portal-bra;
-		if portal-bra is worn, say "[BigNameDesc of portal-bra] appears against your chest. Your breasts disappear through the portal on the inside[if the player is in Hotel44], and appear on the right-hand mannequin beside you[end if]. ";
-		if portal-hotpants is worn, say "[BigNameDesc of portal-hotpants] appears against your crotch. [if the player is in Hotel44]Your [player-crotch] appear on the left-hand mannequin beside you. [end if]";
-		say "[line break][speech style of pimp]'Now I can sell you for sex at any time, and take ALL the profits for myself[if the player is not in Hotel44]. You'll see what I mean soon enough[end if].'[roman type][line break]";
+		if diaper quest is 1:
+			unclash class summon portal-diaper;
+			say "[line break][speech style of pimp]'Now I can sell your [']diaper space['] at any time, and take ALL the profits for myself[if the player is not in Hotel31]. You'll see what I mean soon enough[end if].'[roman type][line break]";
+		otherwise:
+			say "You nod, and then [NameDesc of pimp] produces [if portal-hotpants is worn and portal-bra is worn]two bizarre items[otherwise]a bizarre item[end if] of clothing made out of concrete and gold. [BigNameDesc of pimp] snaps [his of pimp] fingers.";
+			if portal-hotpants is unclash summonable, unclash class summon portal-hotpants;
+			if the largeness of breasts > 3 and portal-bra is unclash summonable, unclash class summon portal-bra;
+			if portal-bra is worn, say "[BigNameDesc of portal-bra] appears against your chest. Your breasts disappear through the portal on the inside[if the player is in Hotel44], and appear on the right-hand mannequin beside you[end if]. ";
+			if portal-hotpants is worn, say "[BigNameDesc of portal-hotpants] appears against your crotch. [if the player is in Hotel44]Your [player-crotch] appear on the left-hand mannequin beside you. [end if]";
+			say "[line break][speech style of pimp]'Now I can sell you for sex at any time, and take ALL the profits for myself[if the player is not in Hotel44]. You'll see what I mean soon enough[end if].'[roman type][line break]";
 		FavourSet pimp to the aggro limit of pimp - 7;
 		compute errand reward of E for P;
 		if P is interested monster, satisfy P;
@@ -2186,7 +2192,7 @@ To say ErrandFlav of (E - dungeon-altar-errand) for (P - a person):
 	say "To be honest, I don't want much. The Goddess provides everything I need. But... It would be nice if you could put in a good word for me. Perhaps by going to the dungeon altar and placing yourself upon it while thinking of me. ".
 To compute unique completion of (E - dungeon-altar-errand) for (P - a person):
 	now the altar-used of E is 0;
-	say "[BigNameDesc of P] gives you a friendly rub on your head.[line break][speech style of P]'Thanks so much for your prayer. [one of]I'm getting a bigger room when I get back upstairs, and also the big G has agreed that once you arrive in the afterlife, you'll spend the first hundred thousand years in my room as my live-in fuckpuppet! How generous is that?! Huh? What's that face for?'[or]The big G has extended your afterlife fuckpuppet duty by an additional million years, and now I'm going to be allowed to invite friends to use you too! How awesome is that?!'[or]The big G has added another [one of]billion[or]trillion[or]quadrillion[or]googol[or]googleplex[stopping] years to your time with me in the afterlife as my fuckpuppet. We're going to have such a great time together!'[stopping][roman type][line break]".
+	say "[BigNameDesc of P] gives you a friendly rub on your head.[line break][speech style of P]'Thanks so much for your prayer. [one of]I'm getting a bigger room when I get back upstairs, and also the big G has agreed that once you arrive in the afterlife, you'll spend the first hundred thousand years in my room as my live-in [if diaper quest is 1]baby slave[otherwise]fuckpuppet[end if]! How generous is that?! Huh? What's that face for?'[or]The big G has extended your afterlife [if diaper quest is 1]baby slave[otherwise]fuckpuppet[end if] duty by an additional million years, and now I'm going to be allowed to invite friends to play with you too! How awesome is that?!'[or]The big G has added another [one of]billion[or]trillion[or]quadrillion[or]googol[or]googleplex[stopping] years to your time with me in the afterlife as my [if diaper quest is 1]baby slave[otherwise]fuckpuppet[end if]. We're going to have such a great time together!'[stopping][roman type][line break]".
 
 theft-errand is an errand.
 Definition: theft-errand is appropriate:

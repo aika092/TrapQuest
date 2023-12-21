@@ -19,7 +19,7 @@ To say SexAddictionDesc:
 	otherwise:
 		say "Your one track mind thinks of nothing but how much better you'd feel if you had more [manly-penis]s inside you right now. ";
 	if the latex-transformation of the player > 3 and the player is horny:
-		say "You are desperate to orgasm but since your [if the player is possessing a penis][asshole] and [ShortDesc of penis] are[otherwise if the player is not possessing a vagina][asshole] is[otherwise]holes are[end if] numb you know deep down that there's no way it can happen. [if the bimbo of the player > 10]But that's not going to stop you from getting fucked by anything that moves, just in case.[end if]";
+		say "You are desperate to orgasm but since your [if the player is herm]holes and [ShortDesc of penis] are[otherwise if the player is possessing a penis][asshole] and [ShortDesc of penis] are[otherwise if the player is not possessing a vagina][asshole] is[otherwise]holes are[end if] numb you know deep down that there's no way it can happen. [if the bimbo of the player > 10]But that's not going to stop you from getting fucked by anything that moves, just in case.[end if]";
 	otherwise if the player is very horny:
 		say "You are currently so horny that your mind is foggy. It's [if the player is extremely horny]impossible[otherwise]difficult[end if] to think straight about anything non-sexual.";
 	otherwise if the player is horny:

@@ -421,7 +421,7 @@ A pedestal can be fertile, parched, chilled, or erect (this is the pedestal-lock
 
 A pedestal can be wood, clay, terracotta, granite, quartz, sandstone or marble(this is the pedestal-variant property). A pedestal is usually sandstone. Understand the pedestal-variant property as describing a pedestal. [Pedestals have names so you can refer to them individually.]
 
-There are 11 pedestals.
+There are 12 pedestals.
 
 Definition: a pedestal is immune to change: decide yes.
 
@@ -457,6 +457,10 @@ To lock pedestals:
 			now P is in HeistPainting11;
 			now P is chilled;
 			now P is marble;
+		otherwise if V is 12:
+			now P is in BellyRoom01;
+			now P is erect;
+			now P is marble;
 		otherwise:
 			if diaper quest is 1 and V > 3:
 				destroy P; [Not enough different rare items to allow them all to be found in this room]
@@ -470,13 +474,13 @@ To lock pedestals:
 			let L be a random number between 1 and 5;
 			if L is 1 and diaper quest is 0, now P is fertile;
 			if (L is 2 or L is 3):
-				if watersports fetish is 1 and (diaper quest is 1 or a random number between 1 and 2 is 1):
+				if watersports fetish is 1:
 					now P is parched;
 				otherwise if diaper quest is 0:
 					now P is fertile;
 			if L is 4 and lactation fetish is 1, now P is chilled;
 			now P is in Mansion28;
-			add treasure to P;
+			if P is closed and the number of things in P is 0, add treasure to P;
 		increase V by 1.
 
 To add treasure to (X - a pedestal): [This function should happen when the mansion is generated, not when the pedestal is opened.]
@@ -493,7 +497,7 @@ To add treasure to (X - a pedestal): [This function should happen when the mansi
 		now wood-dong is in X;
 		now the owner of wood-dong is vampiress;
 		now the paid of X is 6;
-	otherwise if (diaper quest is 0 and the player is an october 2023 top donator) or (diaper quest is 1 and the player is an october 2023 diaper donator) and cat-hood is off-stage:
+	otherwise if ((diaper quest is 0 and the player is an october 2023 top donator) or (diaper quest is 1 and the player is an october 2023 diaper donator)) and cat-hood is off-stage:
 		set up cat-hood;
 		now cat-hood is in X;
 		now the owner of cat-hood is vampiress;

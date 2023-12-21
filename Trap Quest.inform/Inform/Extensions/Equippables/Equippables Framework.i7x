@@ -272,6 +272,55 @@ To decide which number is the slap damage improvement of (G - combat-gloves):
 	decide on 3.
 Definition: combat-gloves is black themed: decide yes.
 
+A handmaiden-gloves is a kind of gloves.
+The printed name of a handmaiden-gloves is "[clothing-title-before][clothing-material of item described] handmaiden gloves[clothing-title-after]". Understand "handmaiden", "gloves" as a handmaiden-gloves.
+Definition: a handmaiden-gloves is class-relevant:
+	if the class of the player is stripper, decide yes;
+	decide no.
+Definition: a handmaiden-gloves is discovered varied: decide no.
+To compute class set up of (C - a handmaiden-gloves):
+	now C is blandness;
+	now C is bland;
+	now the raw-magic-modifier of C is 0.
+handjob-power is a number that varies. [not tied to the object, for seamless transmission between the two gloves]
+To decide which number is the slap damage improvement of (G - a handmaiden-gloves):
+	if handjob-power > 0, decide on 4;
+	decide on 0.
+To compute attack effect of (G - a handmaiden-gloves):
+	if attack-type is 1 and handjob-power > 0:
+		decrease handjob-power by 1;
+		if handjob-power is 0, say "You feel [NameDesc of G] lose their magical strength.[line break][variable custom style]I guess I need to give some more handjobs...[roman type][line break]".
+To say ShortDesc of (Y - a handmaiden-gloves):
+	say "fingerless gloves".
+To say ClothingDesc of (Y - a handmaiden-gloves):
+	say "These fingerless gloves seem more suited to intimate acts than combat! But [if handjob-power > 0]now that you have used them for the former... They do feel weirdly... Powerful... Perhaps[otherwise]something tells you that perhaps[end if] they charge up combat power by giving handjobs?".
+
+purple-handmaiden-gloves is a handmaiden-gloves. purple-handmaiden-gloves is lycra.
+The text-shortcut of purple-handmaiden-gloves is "hmg".
+Figure of purple-handmaiden-gloves is the file "Items/Accessories/Equippables/gloves7.png".
+To decide which figure-name is clothing-image of (H - purple-handmaiden-gloves):
+	decide on figure of purple-handmaiden-gloves.
+To say MediumDesc of (Y - purple-handmaiden-gloves):
+	say "purple fingerless handjob gloves".
+To decide which number is the initial outrage of (C - purple-handmaiden-gloves):
+	decide on 3.
+Definition: purple-handmaiden-gloves is purple themed: decide yes.
+
+pink-handmaiden-gloves is a handmaiden-gloves. pink-handmaiden-gloves is latex.
+The text-shortcut of pink-handmaiden-gloves is "lhmg".
+Figure of pink-handmaiden-gloves is the file "Items/Accessories/Equippables/gloves8.png".
+Definition: pink-handmaiden-gloves is class-relevant:
+	if the class of the player is stripper or the class of the player is cumdumpster, decide yes;
+	decide no.
+To decide which figure-name is clothing-image of (H - pink-handmaiden-gloves):
+	decide on figure of pink-handmaiden-gloves.
+To say MediumDesc of (Y - pink-handmaiden-gloves):
+	say "pink fingerless handjob gloves".
+To decide which number is the initial outrage of (C - pink-handmaiden-gloves):
+	decide on 4.
+Definition: pink-handmaiden-gloves is pink themed: decide yes.
+
+
 briefcase is an equippable. briefcase has a number called charge.
 The printed name of briefcase is "[clothing-title-before]briefcase[clothing-title-after]". The text-shortcut of briefcase is "bfc". Figure of briefcase is the file "Items/Accessories/Equippables/briefcase1.jpg".
 Definition: briefcase is transformation-protected: decide yes.

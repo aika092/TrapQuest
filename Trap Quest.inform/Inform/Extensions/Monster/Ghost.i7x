@@ -937,26 +937,40 @@ To compute exorcism punishment of (C - a clothing):
 	say "[BigNameDesc of C] fizzles away into nothingness.";
 	destroy C.
 
+ghostly tentacle has a number called prank-count.
+
 To compute unique final action of (M - ghostly tentacle):
 	if diaper quest is 1:
 		compute phaseout of M; [in TQ, the tentacle only phases in and out under specific circumstances]
 		if M is uninterested and M is not in the location of the player and red-orange briefs is worn and the location of M is not within vision:
 			if the player is in Mansion25 and asshole is not actually occupied and the total squirtable fill of belly is 0:
-				say "[bold type]Suddenly, you feel something forced up inside your [asshole]! [roman type]You swivel your upper torso to discover that [BigNameDesc of M] has reeled some sort of ethereal fire hose out from the base of the pool, and has jammed the tip - which is shaped like an enema nozzle - up inside you! Before you can react, [big he of M] has pulled a trigger, and begun to fill you to the brim with ice cold water![line break][variable custom style]Eeeeek![roman type][line break]And then, just as quickly as it all began, the hose and [NameDesc of M] vanish, leaving no evidence of them ever being here except for your now very full belly.[line break][variable custom style]Why do I feel like I just got pranked?[roman type][line break]";
+				say "[bold type]Suddenly, you feel something forced up inside your [asshole]! [roman type]You swivel your upper torso to discover that [BigNameDesc of M] has reeled some sort of ethereal fire hose out from the base of the pool, and has jammed the tip - which is shaped like an enema nozzle - up inside you! Before you can react, [big he of M] has pulled a trigger, and begun to fill you to the brim with ice cold water![line break][variable custom style]Eeeeek![roman type][line break]And then, just as quickly as it all began, the hose vanishes, leaving no evidence of it ever being here except for your now very full belly. You hear a high-pitched giggle coming from [NameDesc of M], ";
 				AssFill 15 water;
-				cutshow monster-image of M;
+				compute prank conclusion of M;
 			otherwise if the player is in Mansion04 and pumpkin bib is off-stage and pumpkin bib is actually summonable:
-				say "As you are inspecting the broken dishes, [bold type]suddenly, you feel something wrapped around your neck! [roman type]You turn around just in time to see [NameDesc of M] floating away around a corner, cackling. And feeling at your neck, you find that you are now the proud wearer of a humiliating [ShortDesc of pumpkin bib].[line break][variable custom style]Why do I feel like I just got pranked?[roman type][line break]";
+				say "As you are inspecting the broken dishes, [bold type]suddenly, you feel something wrapped around your neck! [roman type] Feeling at your neck, you find that you are now the proud wearer of a humiliating [ShortDesc of pumpkin bib]. And you turn around just in time to see [NameDesc of M], ";
 				summon pumpkin bib uncursed;
 				now pumpkin bib is respiration;
 				gluify pumpkin bib;
-				cutshow monster-image of M;
+				compute prank conclusion of M;
 			otherwise if the player is in Mansion14 and red-orange briefs is crotch-intact:
 				say "[bold type]All of a sudden, someone yanks the back of your [ShortDesc of red-orange briefs] up into your bum crack! [roman type]It doesn't stop until your poor briefs are ripped!";
 				now red-orange briefs is crotch-ripped;
 				PainUp 15;
-				say "You turn around just in time to see [NameDesc of M] floating out from the mannequin [he of M] had just possessed, fleeing away into the distance.[line break][variable custom style]Why do I feel like I just got pranked?[roman type][line break]";
-				cutshow monster-image of M;
+				say "You turn around just in time to see [NameDesc of M] floating out from the mannequin [he of M] had just possessed, ";
+				compute prank conclusion of M.
+
+To compute prank conclusion of (M - ghostly tentacle):
+	increase the prank-count of M by 1;
+	if the prank-count of M < 3:
+		say "fleeing away into the distance.[line break][variable custom style][one of]Why do I feel like I just got pranked?[or]Is this damned ghost really going to keep on pranking me in horrible ways like this?! I've got to catch [him of M]![stopping][roman type][line break]";
+		cutshow monster-image of M;
+	otherwise:
+		now M is in the location of the player;
+		interest M;
+		make M expectant;
+		say "but [bold type][NameDesc of M] [bold type]doesn't run away this time - [he of M] stays around! [roman type]It looks like [he of M] wants to fight!".
+
 
 Section 2 - Tripping
 

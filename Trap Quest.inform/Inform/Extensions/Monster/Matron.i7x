@@ -222,6 +222,10 @@ Definition: matron (called M) is uniquely unfriendly:
 	if halloween rubber diaper cover is worn, decide yes;
 	if diaper quest is 1 and M is motherly and the boredom of M <= -500, decide yes;
 	decide no.
+To decide which number is the bimbo tolerance of (M - matron):
+	decide on 100. [If we don't make this prohibitively high, there can be some weird difficult-to-debug outcomes surrounding the overriding of uniquely unfriendly above, where the NPC is objectifying but friendly, and somehow attacking while friendly.]
+To decide which number is the bab tolerance of (M - matron):
+	decide on 100.
 
 To compute diaper check of (M - matron):
 	if there is a worn waddle diaper:
@@ -745,15 +749,18 @@ To say DamageReactWeak of (M - matron):
 	say "[big he of M] keeps [his of M] eyes trained on you, never wavering as [he of M] fights to maintain [his of M] balance.".
 
 To compute tax return of (M - matron):
-	let B be a random off-stage baby's bottle;
-	if B is a thing:
-		now B is blessed;
-		now B is in the location of the player;
-		now B is sure;
-		say "[BigNameDesc of M] pulls out a [printed name of B].[line break][speech style of M]'I usually save these special bottles for rewarding my most obedient of babies, but you've left me with no choice. Mark my words, I'll make you regret defying my care the next time we meet...'[roman type][line break]";
-		compute autotaking B;
+	if M is choice-taxable:
+		compute choice tax return of M;
 	otherwise:
-		compute default tax return of M.
+		let B be a random off-stage baby's bottle;
+		if B is a thing:
+			now B is blessed;
+			now B is in the location of the player;
+			now B is sure;
+			say "[BigNameDesc of M] pulls out a [printed name of B].[line break][speech style of M]'I usually save these special bottles for rewarding my most obedient of babies, but you've left me with no choice. Mark my words, I'll make you regret defying my care the next time we meet...'[roman type][line break]";
+			compute autotaking B;
+		otherwise:
+			compute default tax return of M.
 
 Chapter 2 Conversation
 

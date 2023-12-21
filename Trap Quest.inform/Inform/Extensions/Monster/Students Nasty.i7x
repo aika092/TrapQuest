@@ -37,7 +37,7 @@ To decide which figure-name is the monster-image of (M - student-lucy):
 	decide on figure of lucy.
 
 To say MonsterDesc of (M - student-lucy):
-	say "This tall blonde is wearing a tartan miniskirt and [if the current-rank of M is 3]slightly sheer [end if]crop top. Knee-high white cotton stockings sit snug under [his of M] neat black court shoes. [if the current-rank of M is 3 and diaper quest is 1]You think you can detect that [his of M] skirt is bulging slightly - you reckon [he of M] might be wearing a diaper now! [end if][big he of M] looks down at you with a [if the current-rank of M is 1]furious[otherwise]mocking[end if] sneer.".
+	say "This tall blonde is wearing a tartan miniskirt and a [if the current-rank of M is 3]slightly sheer [end if]crop top. Knee-high white cotton stockings sit snug under [his of M] neat black court shoes. [if the current-rank of M is 3 and diaper quest is 1]You think you can detect that [his of M] skirt is bulging slightly - you reckon [he of M] might be wearing a diaper now! [end if][big he of M] looks down at you with a [if the current-rank of M is 1]furious[otherwise]mocking[end if] sneer.".
 
 The max-rank of student-lucy is 3.
 The current-rank of student-lucy is 2.

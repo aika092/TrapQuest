@@ -119,6 +119,7 @@ To initialise variables:
 	if new-seed is 1:
 		now choice in row 17 of Table of Settings is a random number between 1 and 1000; [This should only happen once and is used to validate against cheaters.]
 	check donators status with 0; [check for a donators file]
+	if diaper quest is 1 and choice in row 19 of the Table of Player Options is -1, now choice in row 19 of the Table of Player Options is 0; [player will now be asked about diapers in Trap Quest]
 	now random slow pregnancy is a random number between 0 and 3;
 	now random slow birth is a random number between -1 and 3.
 
@@ -348,6 +349,10 @@ To retrieve diaper focus options:
 		clear the screen.
 
 To retrieve diaper options:
+	if diaper quest is 0 and choice in row 19 of the Table of Player Options >= 0:
+		now the current menu is the Table of Secret Diaper Options;
+		carry out the displaying activity;
+		clear the screen;
 	if diaper lover >= 1:
 		if choice in row 50 of the Table of Player Options > -2:
 			now the current menu is the Table of Diaper Options;

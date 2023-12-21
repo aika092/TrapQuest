@@ -293,7 +293,9 @@ Definition: a monster (called M) is able to forcefeed:
 				if C is cursed and C is not pacifier and M is not able to remove cursed plugs, decide no;
 	decide yes.
 
-Definition: a monster is willing to forcefeed: decide no.
+Definition: a monster (called M) is willing to forcefeed:
+	if M is male and M is prepared to DQ urinate, decide yes;
+	decide no.
 
 Definition: a monster is willing to forcefeed pills: decide no.
 
@@ -301,8 +303,13 @@ Definition: forcefeed (called P) is appropriate:
 	if current-monster is willing to forcefeed and current-monster is eager to forcefeed, decide yes;
 	decide no.
 
+Definition: a monster (called M) is prepared to DQ urinate:
+	if watersports fetish is 1 and M is willing to urinate and the bladder of M >= 600, decide yes;
+	decide no.
+
+
 To compute punishment of (P - forcefeed):
-	if watersports fetish is 1 and current-monster is willing to urinate and the bladder of current-monster >= 600, compute current-monster urinating;
+	if current-monster is prepared to DQ urinate, compute current-monster urinating;
 	otherwise compute forcefeed of current-monster.
 
 Section 6 Confiscation
@@ -458,7 +465,7 @@ To say EnticeFlav of (M - a monster) for (P - diaper-cumrag):
 	otherwise say "[big he of M] gestures that [he of M] wants to ejaculate in your diaper.".
 
 To decide which number is the relevant addiction of (P - diaper-cumrag):
-	decide on the grossness addiction of the player.
+	decide on (the grossness addiction of the player + the sex addiction of the player) / 2.
 
 Definition: a monster is eager to use a diaper cumrag:
 	if it is able to use a diaper cumrag, decide yes;

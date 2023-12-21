@@ -99,8 +99,44 @@ To compute taxing of (M - a monster):
 	compute tax return of M;
 	SilentlyDifficultyUp M by 1;
 	compute M slinking away.
+
 To compute tax return of (M - a monster):
-	compute default tax return of M.
+	if M is choice-taxable, compute choice tax return of M;
+	otherwise compute default tax return of M.
+
+Definition: a monster (called M) is choice-taxable:
+	if there is a thing carried by M, decide yes;
+	repeat with T running through the taxableItems of M:
+		if T is off-stage, decide yes;
+	decide no.
+
+[There MUST be at least one item carried by M or this will go badly]
+To compute choice tax return of (M - a monster):
+	let LT be the list of things carried by M;
+	repeat with T running through the taxableItems of M:
+		if T is off-stage:
+			add T to LT, if absent;
+	repeat with T running through the tradableItems of M:
+		if T is off-stage:
+			add T to LT, if absent;
+	say "What do you want to take?";
+	reset multiple choice questions;
+	repeat with T running through LT:
+		set next numerical response to the substituted form of "[NameDesc of T]";
+	compute multiple choice question;
+	let X be entry player-numerical-response in LT;
+	if X is a thing:
+		if X is clothing, blandify and reveal X;
+		if X is alchemy product:
+			now X is bland;
+			now X is sure;
+		now X is in the location of the player;
+		compute loot dropping of X by M;
+		compute autotaking X;
+		say TaxReturnDismay of M;
+	otherwise:
+		say TaxReturnFail of M.
+
 To compute default tax return of (M - a monster):
 	loot M;
 	if the loot dropped of M > 0, say TaxReturnDismay of M;

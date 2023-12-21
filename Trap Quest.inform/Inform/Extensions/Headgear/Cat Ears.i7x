@@ -81,10 +81,23 @@ Report going:
 		if N >= 4:
 			if H is cursed or (H is uncursed and N >= 5), progress quest of follow-me-quest.
 
+stripper-headgear is a kind of headgear.
 
-stripper-ears is a headgear. stripper-ears is pvc. stripper-ears is womanly. Figure of stripper-ears is the file "Items/Accessories/Head/catears2.png". stripper-ears is blondeness-positive. stripper-ears is brightness-positive. stripper-ears is redness-negative. stripper-ears is hair growing. The text-shortcut of stripper-ears is "stes".
+Definition: a stripper-headgear is roleplay: decide no.
 
-Definition: stripper-ears is roleplay: decide no.
+To set up influence of (C - a stripper-headgear):
+	set up sex-based influence of C.
+
+To compute hair growth of (H - a stripper-headgear):
+	if artificial enhancements fetish is 1:
+		let X be 0;
+		if H is cursed, now X is -25;
+		if H is blessed, now X is 50;
+		if the largeness of hair < max hair length and a random number between 1 and (100 + X + (the fake largeness of hair * 7) - (the outrage of H * 3)) is 1 and the fake largeness of hair > 0 and the fake largeness of hair < 10:
+			say "Your [printed name of H] feels warm. You feel a slithering growth of your fake hair extensions!";
+			FakeHairUp 1.
+
+stripper-ears is a stripper-headgear. stripper-ears is pvc. stripper-ears is womanly. Figure of stripper-ears is the file "Items/Accessories/Head/catears2.png". stripper-ears is blondeness-positive. stripper-ears is brightness-positive. stripper-ears is redness-negative. stripper-ears is hair growing. The text-shortcut of stripper-ears is "stes".
 
 The printed name of stripper-ears is "[clothing-title-before]stripper ears[clothing-title-after]".
 
@@ -99,18 +112,6 @@ To say ShortDesc of (H - stripper-ears):
 
 To compute SelfExamineDesc of (H - stripper-ears):
 	say "You are wearing a pair of sexy black feline ears in your [ShortDesc of hair]. ".
-
-To compute hair growth of (H - stripper-ears):
-	if artificial enhancements fetish is 1:
-		let X be 0;
-		if H is cursed, now X is -25;
-		if H is blessed, now X is 50;
-		if the largeness of hair < max hair length and a random number between 1 and (100 + X + (the fake largeness of hair * 7) - (the outrage of H * 3)) is 1 and the fake largeness of hair > 0 and the fake largeness of hair < 10:
-			say "Your [printed name of H] feels warm. You feel a slithering growth of your fake hair extensions!";
-			FakeHairUp 1.
-
-To set up influence of (C - stripper-ears):
-	set up sex-based influence of C.
 
 Definition: stripper-ears is black themed: decide yes.
 
@@ -159,6 +160,90 @@ To compute generic first time class reward of (Q - dance-quest) on (C - a clothi
 		say "summoning a [MediumDesc of D] [if D is worn]straight onto your finger[otherwise]right in front of you[end if]!";
 	otherwise:
 		compute generic second time class reward of Q on C.
+
+
+handmaiden-headgear is a kind of stripper-headgear.
+
+handmaiden-headdress is a handmaiden-headgear. handmaiden-headdress is pvc. handmaiden-headdress is womanly. Figure of handmaiden-headdress is the file "Items/Accessories/Head/handmaidenheaddress1.png". handmaiden-headdress is blondeness-positive. handmaiden-headdress is brightness-positive. handmaiden-headdress is redness-negative. handmaiden-headdress is hair growing. The text-shortcut of handmaiden-headdress is "hmhd". Understand "handmaiden", "headdress" as handmaiden-headdress.
+
+The printed name of handmaiden-headdress is "[clothing-title-before]handmaiden headdress[clothing-title-after]".
+
+To decide which figure-name is the clothing-image of (C - handmaiden-headdress):
+	decide on figure of handmaiden-headdress.
+
+To say ClothingDesc of (H - handmaiden-headdress):
+	say "This purple headdress has two sparkling jewels dangling on either side, and... what almost looks like a nurse symbol in the middle, but what is at closer inspection a penis.".
+
+To say ShortDesc of (H - handmaiden-headdress):
+	say "handmaiden headdress".
+
+To compute SelfExamineDesc of (H - handmaiden-headdress):
+	say "You are wearing a purple headdress with a penis logo in your [ShortDesc of hair]. ".
+
+Definition: handmaiden-headdress is purple themed: decide yes.
+Definition: handmaiden-headdress is penis themed: decide yes.
+Definition: handmaiden-headdress is gem themed: decide yes.
+
+To decide which number is the initial outrage of (C - handmaiden-headdress):
+	decide on 5.
+
+To compute class outfit of (H - handmaiden-headdress):
+	class summon heart-handmaiden-negligee;
+	class summon purple-handmaiden-gloves.
+
+
+handmaiden-circlet is a handmaiden-headgear. handmaiden-circlet is pvc. handmaiden-circlet is womanly. Figure of handmaiden-circlet is the file "Items/Accessories/Head/handmaidenheaddress2.png". handmaiden-circlet is blondeness-positive. handmaiden-circlet is brightness-positive. handmaiden-circlet is redness-negative. handmaiden-circlet is hair growing. The text-shortcut of handmaiden-circlet is "hmct". Understand "handmaiden", "circlet" as handmaiden-circlet.
+
+The printed name of handmaiden-circlet is "[clothing-title-before]handmaiden circlet[clothing-title-after]".
+
+To decide which figure-name is the clothing-image of (C - handmaiden-circlet):
+	decide on figure of handmaiden-circlet.
+
+To say ClothingDesc of (H - handmaiden-circlet):
+	say "This golden circlet has a sparkling pink heart in the center, and... big gold [manly-penis]s dangling down each side.".
+
+To say ShortDesc of (H - handmaiden-circlet):
+	say "handmaiden circlet".
+
+To compute SelfExamineDesc of (H - handmaiden-circlet):
+	say "You are wearing a golden circlet with dangling [manly-penis]s in your [ShortDesc of hair]. ".
+
+Definition: handmaiden-circlet is yellow themed: decide yes.
+Definition: handmaiden-circlet is penis themed: decide yes.
+Definition: handmaiden-circlet is gem themed: decide yes.
+Definition: handmaiden-circlet is heart themed: decide yes.
+
+To decide which number is the initial outrage of (C - handmaiden-circlet):
+	decide on 8.
+
+To compute class outfit of (H - handmaiden-circlet):
+	class summon cock-handmaiden-negligee;
+	class summon cock collar;
+	class summon pink-handmaiden-gloves.
+
+Chapter - Quest
+
+seduction-climax-quest is a headgear-clothing-quest. seduction-climax-quest has a number called happy-endings.
+
+To uniquely set up (C - handmaiden-headgear):
+	now the happy-endings of seduction-climax-quest is 0;
+	now the quest of C is seduction-climax-quest.
+
+To say QuestFlav of (Q - seduction-climax-quest):
+	say "You sense it wants you to make people climax while you're seducing them / dancing for them / masturbating them.".
+
+To say QuestTitle of (Q - seduction-climax-quest):
+	say " (happy ending quest)".
+
+To progress quest of (Q - seduction-climax-quest):
+	repeat with C running through worn clothing:
+		if the quest of C is Q:
+			increase happy-endings of Q by 1;
+			if happy-endings of Q >= a random number between 2 and 5:
+				now the happy-endings of Q is 0;
+				compute quest completion of Q on C;
+			otherwise:
+				say "[BigNameDesc of C] wiggle happily! [one of]If you keep this up, surely you'll be rewarded eventually.[or]Keep it up![stopping]".
 
 
 Cat Ears ends here.

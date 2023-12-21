@@ -31,11 +31,132 @@ To compute interaction of (M - a monster):
 		compute protection of M;
 	otherwise if the current-errand of M is completed:
 		compute errand completion of M;
+	otherwise if christmas content is 1 and M is intelligent and M is male and M is human and M is a urinater and M is not a diaper wetter and M is undefeated and M is not caged and M is eager to use a diaper urinal and M is able to use a diaper urinal and the player is not in danger:
+		compute merry diaperurinalmass of M;
+	otherwise if christmas content is 1 and watersports fetish is 1 and M is intelligent and M is a urinater and M is not a diaper wetter and the bladder of M >= 1000 and the player is prone and M is undefeated and M is not caged and the player is not in danger:
+		compute merry pissmass of M;
+	otherwise if christmas content is 1 and M is intelligent and M is a diaper wetter and M is human and the player is prone and face is not actually occupied and M is undefeated and M is not caged and the friendly boredom of M >= 15 and (M is not messy or diaper messing >= 7) and the player is not in danger:
+		compute merry diaperkissmass of M;
+	otherwise if christmas content is 1 and a2m fetish >= 1 and M is intelligent and M is human and the player is prone and face is not actually occupied and M is undefeated and M is not caged and the friendly boredom of M >= 15 and the player is not in danger:
+		compute merry kissmass of M;
+	otherwise if christmas content is 1 and M is intelligent and M is human and (there is a worn wet diaper or there is a worn messy diaper) and M is undefeated and M is not caged and (the player is possessing a vagina or the player is possessing a penis) and the player is not in danger and the friendly boredom of M >= 15:
+		compute merry squishmass of M;
+	otherwise if christmas content is 1 and M is intelligent and M is human and the player is prone and M is undefeated and M is not caged and (the player is possessing a vagina or the player is possessing a penis) and the player is not in danger and the friendly boredom of M >= 15:
+		compute merry flickmass of M;
 	otherwise:
 		compute unique interaction of M.
 
 To compute unique interaction of (M - a monster):
 	do nothing.
+
+To compute merry diaperurinalmass of (M - a monster):
+	say "[BigNameDesc of M] taps you on the shoulder, making you look round. You see that [he of M] has slipped [his of M] [manly-penis] down the waistband of your diaper![line break][speech style of M]'Merry Pissmas!'[roman type][line break][big he of M] says cheerfully, and then a moment later, [he of M] is unleashing a river of piss into your padding, as if it's the most normal thing in the world.";
+	now diaper-invasion-waistband is false;
+	now diaper-invasion-hold is false;
+	compute diaper urinal peeing of M; [this should fill diaper and reset bladder!]
+	compute diaper urinal image of M;
+	say "[variable custom style][one of]What the fuck just happened?! Is that how they wish people Merry Christmas around here?!?!?![or]This really is going to keep happening, isn't it. What a crazy local tradition...[or][if the grossness addiction of the player >= 12 and the player is able to speak]'Merry Pissmass to you too!'[roman type][line break]You chirp happily.[otherwise if the grossness addiction of the player >= 12]I love this tradition![otherwise if the grossness addiction of the player >= 5 and the player is able to speak]'Merry Pissmass.'[roman type][line break]You respond diplomatically.[otherwise if the grossness addiction of the player >= 5]What a silly local tradition.[otherwise if the player is able to speak]'Merry Pissmass, I guess.'[roman type][line break]You respond begrudingly.[otherwise]What a disgusting local tradition.[end if][stopping][roman type][line break]".
+
+To compute merry pissmass of (M - a monster):
+	say "[BigNameDesc of M] taps you on the shoulder, making you look up. You see that [he of M] has [his of M] [if M is male][manly-penis][otherwise]pussy[end if] held right in front of you face.[line break][speech style of M]'Merry Pissmas!'[roman type][line break][big he of M] says cheerfully, and then a moment later, [he of M] is unleashing a river of piss towards your face, as if it's the most normal thing in the world.";
+	idly FacePiss from M;
+	say "[variable custom style][one of]What the fuck just happened?! Is that how they wish people Merry Christmas around here?!?!?![or]This really is going to keep happening, isn't it. What a crazy local tradition...[or][if the urine taste addiction of the player >= 14 and the player is able to speak]'Merry Pissmass to you too!'[roman type][line break]You chirp happily.[otherwise if the urine taste addiction of the player >= 14]I love this tradition![otherwise if the urine taste addiction of the player >= 7 and the player is able to speak]'Merry Pissmass.'[roman type][line break]You respond diplomatically.[otherwise if the urine taste addiction of the player >= 7]What a silly local tradition.[otherwise if the player is able to speak]'Merry Pissmass, I guess.'[roman type][line break]You respond begrudingly.[otherwise]What a disgusting local tradition.[end if][stopping][roman type][line break]".
+
+To compute merry diaperkissmass of (M - a monster):
+	say "[BigNameDesc of M] taps you on the shoulder, making you look up. You see that [he of M] is standing in front of you, facing away and, before you can react, has shoved the seat of [his of M] diaper against your mouth.[line break][speech style of M]'Merry Kissmas!'[roman type][line break][big he of M] says cheerfully, as if it's the most normal thing in the world.[paragraph break]";
+	cutshow figure of anilingus 1 for M;
+	say "A moment later, it's over, but you essentially just got kissed on the lips by a [if M is messy]messy[otherwise]soggy[end if] diaper.";
+	let GO be 6;
+	if M is messy, now GO is 10;
+	SmellGrossOut GO;
+	if the player is able to speak:
+		reset multiple choice questions;
+		set numerical response 1 to "Make [if the grossness addiction of the player < GO]an offended[otherwise if the grossness addiction of the player >= GO + 7]an amused[otherwise]a surprised[end if] sound";
+		set numerical response 2 to "'[if the grossness addiction of the player < GO]Merry Kissmas, I guess.'[otherwise if the grossness addiction of the player >= GO + 7]Merry Kissmas!'[otherwise]Merry Kissmas.'[end if]";
+		compute multiple choice question;
+		if player-numerical-response is 1:
+			say "[BigNameDesc of M] just smiles wryly and turns to leave you alone.";
+			bore M for 150 seconds;
+		otherwise:
+			say "Responding positively to this act of degradation is pretty humiliating, but you hope it'll improve your relationship with [NameDesc of M].[strongHumiliateReflect]";
+			satisfy M for 150 seconds;
+	otherwise:
+		bore M for 150 seconds;
+		if M is in the location of the player, say BecomesBoredFlav of M.
+
+To compute merry kissmass of (M - a monster):
+	say "[BigNameDesc of M] taps you on the shoulder, making you look up. You see that [he of M] has spread [his of M] ass cheeks and, before you can react, has shoved [his of M] asshole against your mouth.[line break][speech style of M]'Merry Kissmas!'[roman type][line break][big he of M] says cheerfully, as if it's the most normal thing in the world.[paragraph break]";
+	cutshow figure of anilingus 1 for M;
+	say "A moment later, it's over, but you essentially just got kissed on the lips by a butthole.";
+	TasteGrossOut 7;
+	if the player is able to speak:
+		reset multiple choice questions;
+		set numerical response 1 to "Make [if the player is not a pervert]an offended[otherwise if the player is a nympho]an amused[otherwise]a surprised[end if] sound";
+		set numerical response 2 to "'[if the player is not a pervert]Merry Kissmas, I guess.'[otherwise if the player is a nympho]Merry Kissmas!'[otherwise]Merry Kissmas.'[end if]";
+		compute multiple choice question;
+		if player-numerical-response is 1:
+			say "[BigNameDesc of M] just smiles wryly and turns to leave you alone.";
+			bore M for 150 seconds;
+		otherwise:
+			say "Responding positively to this act of degradation is pretty humiliating, but you hope it'll improve your relationship with [NameDesc of M].[strongHumiliateReflect]";
+			satisfy M for 150 seconds;
+	otherwise:
+		bore M for 150 seconds;
+		if M is in the location of the player, say BecomesBoredFlav of M.
+
+To compute merry squishmass of (M - a monster):
+	let D be a random worn diaper;
+	say "Suddenly, without warning, [NameDesc of M] grabs you by the [if the player is possessing a penis][player-penis][otherwise][vagina][end if] through the [if D is messed]slimy [otherwise if D is wet]soggy [end if]padding of your [ShortDesc of D].[line break][speech style of M]'Merry Squishmas!'[roman type][line break][big he of M] says cheerfully, as if it's the most normal thing in the world.[paragraph break]";
+	passively stimulate vagina from M;
+	let GO be 5;
+	if D is messed, now GO is 9;
+	GrossOut GO;
+	if the player is able to speak:
+		reset multiple choice questions;
+		set numerical response 1 to "Make [if the grossness addiction of the player < GO]an offended[otherwise if the grossness addiction of the player >= GO]an amused[otherwise]a surprised[end if] sound";
+		set numerical response 2 to "'[if the grossness addiction of the player < GO]Merry Squishmas, I guess.'[otherwise if the grossness addiction of the player >= GO]Merry Squishmas!'[otherwise]Merry Squishmas.'[end if]";
+		compute multiple choice question;
+		if player-numerical-response is 1:
+			say "[BigNameDesc of M] just smiles wryly and turns to leave you alone.";
+			bore M for 150 seconds;
+		otherwise:
+			say "Responding positively to this act of degradation is pretty humiliating, but you hope it'll improve your relationship with [NameDesc of M].[strongHumiliateReflect]";
+			satisfy M for 150 seconds;
+	otherwise:
+		bore M for 150 seconds;
+		if M is in the location of the player, say BecomesBoredFlav of M.
+
+To compute merry flickmass of (M - a monster):
+	say "Suddenly, without warning, [NameDesc of M] flicks you on the [if the player is possessing a vagina]clit[otherwise][player-penis][end if] as hard as [he of M] can.[line break][speech style of M]'Merry Flickmas!'[roman type][line break][big he of M] says cheerfully, as if it's the most normal thing in the world.[paragraph break]";
+	let PP be 0; [pussy protection]
+	let PC be nothing;
+	repeat with C running through pussy covering clothing:
+		if C is metal:
+			increase PP by 6;
+			now PC is C;
+		if C is diaper:
+			increase PP by 3;
+			now PC is C;
+		otherwise:
+			increase PP by 1;
+			if PC is nothing, now PC is C;
+	let PU be 6 - PP;
+	if PU > 0, PainUp PU;
+	otherwise say "That would have hurt, if it wasn't for your [MediumDesc of PC].";
+	if the player is able to speak:
+		reset multiple choice questions;
+		set numerical response 1 to "Make [if the player is not a pervert]an offended[otherwise if the player is a nympho]an amused[otherwise]a surprised[end if] sound";
+		set numerical response 2 to "'[if the player is not a pervert]Merry Flickmas, I guess.'[otherwise if the player is a nympho]Merry Flickmas!'[otherwise]Merry Flickmas.'[end if]";
+		compute multiple choice question;
+		if player-numerical-response is 1:
+			say "[BigNameDesc of M] just smiles wryly and turns to leave you alone.";
+			bore M for 150 seconds;
+		otherwise:
+			say "Responding positively to this act of degradation is pretty humiliating, but you hope it'll improve your relationship with [NameDesc of M].[strongHumiliateReflect]";
+			satisfy M for 150 seconds;
+	otherwise:
+		bore M for 150 seconds;
+		if M is in the location of the player, say BecomesBoredFlav of M.
 
 To compute protection of (M - a monster): [You can define this for your monster if you want it to act hugely differently]
 	let X be M;

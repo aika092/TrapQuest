@@ -398,7 +398,7 @@ To compute DQ perception of (M - a demoness):
 	otherwise if (there is a worn diaper or the diaper-duration of M > 0) and the player is immobile:
 		say "[big he of M] seems to decide to leave you alone for now.";
 		distract M;
-	otherwise if M is aware that the player needs a change: [Unless she's diaper training you, he demoness only checks diapers she knows are going to need a change]
+	otherwise if M is aware that the player needs a change: [Unless she's diaper training you, the demoness only checks diapers she knows are going to need a change]
 		compute diaper check of M;
 	otherwise if the diaper-duration of M > 0:
 		if there is a worn diaper:
@@ -1438,7 +1438,7 @@ To compute unprotected climax of (M - a demoness) in (F - fuckhole):
 To compute soul creampie of (M - a demoness) in (F - vagina):
 	if futanari fetish > 0 or lady fetish is 2:
 		say "[BigNameDesc of M] speeds up, attacking your clit with two ominously glowing fingertips. Impossibly strong waves of pleasure overwhelm your senses, and a climax hits you like a wall of bricks as [semen] floods your [vagina] for the first time in your life.";
-		vaginally orgasm shamefully;[This is repeated below, but the flavor output looks better this way.]
+		vaginally orgasm shamefully;[This is repeated below, but the flavour output looks better this way.]
 		compute M finishing in vagina;
 		say "[line break][speech style of M]'Could you feel that, baby? I just fucked that juicy soul straight out of your body, and you just let it happen! HAHAHA! I HOPE IT WAS WORTH IT!'[roman type][line break][big he of M] pulls out, [his of M] [DickDesc of M] softening as [he of M] holds up a bright blue gemstone. The waves of pleasure slowly begin to fade, and [if the virgin bonus of the player < 0]a feeling of unimaginable shame[otherwise]a strong feeling of emptiness[end if] settles heavily in your chest.";
 	otherwise:
@@ -2087,7 +2087,7 @@ To compute perception of (M - abyssal demoness):
 				allocate 1 seconds;
 				try kneeling;
 	otherwise if the player is prone:
-		say "[speech style of M]'[if the class of the player is cultist]Servant.'[otherwise if the class of the player is succubus]Good practise, sister. Glad to see some of [his of demon lord] servants aren't idiots.'[otherwise]Get used to crawling, [boy of the player], all will be servants eventually.'[end if][roman type][line break]";
+		say "[speech style of M]'[if the class of the player is cultist]Servant.'[otherwise if the class of the player is succubus]Good practise, sister. Glad to see some of [his of demon lord] servants aren't idiots.'[otherwise]Get used to crawling, [boy of the player]; all will be servants eventually.'[end if][roman type][line break]";
 		distract M;
 	otherwise: [We know by know that the player must be upright.]
 		if the class of the player is succubus:

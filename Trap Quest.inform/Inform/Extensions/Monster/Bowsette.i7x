@@ -102,8 +102,8 @@ Bowsettificating is an action applying to one thing.
 Check bowsettificating:
 	if debugmode is 0, say "This command only works in debug mode." instead;
 	if playerRegion is school, say "You can't do this to someone in the school." instead;
-	if the noun is not intelligent interested undefeated awake monster, say "Your target must be intelligent, interested, undefeated and awake." instead;
-	if the noun is fairy-witch, say "You can't target the fairy witch with this as she is the one who does the transforming." instead.
+	if the noun is not intelligent interested undefeated awake monster, say "Your target must be intelligent, interested, undefeated, and awake." instead;
+	if the noun is fairy-witch, say "You can't target the fairy witch with this as [he of fairy-witch] is the one who does the transforming." instead.
 Carry out bowsettificating:
 	allocate 3 seconds;
 	check bowsettification of the noun.

@@ -55,7 +55,7 @@ To trigger (Y - a needle trap):
 		say "A tiny [needle] shoots out of [if playerRegion is Dungeon]the stone wall[otherwise if playerRegion is Woods]a tree[otherwise if the player is in a heist-painting-room]a miniature turret[otherwise]a tiny hole in the wall[end if] and towards your [if target-body-part is breasts][BreastDesc][otherwise if target-body-part is belly]side[otherwise if the player is prone]butt cheek[otherwise if target-body-part is hips]hip[otherwise if target-body-part is face][LipDesc][otherwise if target-body-part is vagina][vagina][otherwise][penis][end if]. ";
 		let NS be the number of worn speed clothing;
 		if a random number between 0 and NS > 0:
-			say "Your [random worn speed clothing] slows down time! You are able to twist and bend and dodge the needle at the last moment!";
+			say "Your [random worn speed clothing] slows down time! You are able to twist and bend and dodge the needle at the last moment![paragraph break]";
 		otherwise if game difficulty > a random number between 0 and 5:
 			say "It contained some kind of ability reducing poison!";
 			RandomStatDown 1;
@@ -419,14 +419,20 @@ To compute unique trigger of (Y - genitals-rune-trap):
 	if the size of penis > min penis size:
 		PenisDown 1;
 	otherwise if the player is possessing a vagina:
-		LabiaUp 1 with comment;
+		if the player is a december 2023 top donator and wired-vibe is off-stage:
+			summon wired-vibe uncursed;
+			now wired-vibe is clit-taped;
+			gluify wired-vibe;
+			say "A [MediumDesc of wired-vibe] appears, taped to your clit! It immediately starts buzzing away![line break][variable custom style]Haaaaah! Oh my god... That feels... Amazing...[roman type][line break]";
+		otherwise:
+			LabiaUp 1 with comment;
 	otherwise if TG fetish is 1 or TG fetish is 3:
 		SexChange the player.
 
 polymorph-rune-trap is a rune trap.
 
 Definition: polymorph-rune-trap is fetish appropriate:
-	if unlucky is 1 or tough-shit is 1, decide yes;
+	if unlucky is 1 or tough-shit is 1 or christmas content is 1, decide yes;
 	decide no.
 
 Figure of polymorph rune trap is the file "Env/Dungeon/rune5a.jpg".
@@ -438,7 +444,9 @@ To decide which figure-name is the triggered-image of (T - polymorph-rune-trap):
 	decide on Figure of polymorph rune trap triggered.
 
 To compute unique trigger of (Y - polymorph-rune-trap):
-	if tough-shit is 1:
+	if christmas content is 1 and bondage-ribbons is unclash summonable and the player is getting unlucky:
+		unclash class summon bondage-ribbons;
+	otherwise if tough-shit is 1:
 		let C be a random worn cursable clothing;
 		if C is clothing:
 			say "Your [C] glows darkly... ";

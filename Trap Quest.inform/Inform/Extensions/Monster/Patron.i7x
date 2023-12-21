@@ -549,6 +549,10 @@ Part 2 - Perception
 Definition: a patron is uniquely unfriendly:
 	if it is not the father, decide yes;
 	decide no.
+To decide which number is the bimbo tolerance of (M - a patron):
+	decide on 100. [If we don't make this prohibitively high, there can be some weird difficult-to-debug outcomes surrounding the overriding of uniquely unfriendly above, where the NPC is objectifying but friendly, and somehow attacking while friendly.]
+To decide which number is the bab tolerance of (M - a patron):
+	decide on 100.
 
 To check perception of (M - a patron):
 	if M is uninterested and M is aware and there is a hotel bed in the location of M:
@@ -2508,7 +2512,7 @@ To decide which figure-name is the monster-image of (M - furry patron):
 
 To say PatronDesc of (M - furry patron):
 	if mythical creatures fetish is 1:
-		say "The [man of M] in particular barely even looks human, coarse black hair covering [his of M] entire frame from head to toe, even [his of M] face. What's more, [his of M] 'more than average' endowment is 14 inches long, hanging heavily between [his of M] legs like some perverted club.[line break]";
+		say "The [man of M] in particular barely even looks human, with coarse black hair covering [his of M] entire frame from head to toe, even [his of M] face. What's more, [his of M] 'more than average' endowment is 14 inches long, hanging heavily between [his of M] legs like some perverted club.[line break]";
 	otherwise:
 		say "This [man of M] in particular is wearing a huge foam dog head. [big his of M] [LongDickDesc of M] is proportionally big, 14 inches long, and accompanied by a pair of big, fat[if full-lady fetish is 0], hairy[end if] nuts.[line break]".
 

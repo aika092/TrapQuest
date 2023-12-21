@@ -58,7 +58,7 @@ To compute perception of (M - herald):
 		say "[speech style of M]'Are you like some kind of demon or some junk? I guess I could bless your flesh if you want.'[roman type][line break]";
 		calm M;
 	otherwise if the player-class is vampire spawn:
-		say "[speech style of M]'Oh man you are like a vampire or something huh? How is that working out for you? No offence but I have nothing for you.'[roman type][line break]";
+		say "[speech style of M]'Oh man, you are, like, a vampire or something huh? How is that working out for you? No offence but I have nothing for you.'[roman type][line break]";
 		calm M;
 	otherwise:
 		say "[speech style of M]'Your [if diaper quest is 0]flesh[otherwise if diaper messing >= 3]bowels[otherwise]bladder[end if] will, like, totally bend to the will of [Azathot].'[roman type][line break]";

@@ -80,6 +80,10 @@ To regionally place (M - a student):
 Definition: a student is human: decide yes.
 
 Definition: a student is uniquely unfriendly: decide no.
+To decide which number is the bimbo tolerance of (M - a student):
+	decide on 100. [If we don't make this prohibitively high, there can be some weird difficult-to-debug outcomes surrounding the overriding of uniquely unfriendly above, where the NPC is objectifying but friendly, and somehow attacking while friendly.]
+To decide which number is the bab tolerance of (M - a student):
+	decide on 100.
 
 To say NameDesc of (M - a student):
 	say "[input-style][student-name of M][roman type]".
@@ -1605,7 +1609,7 @@ Definition: student-interaction-plug-drop is student-eligible:
 	if diaper quest is 0 and current-monster is innocent student and the player is in School15, decide yes;
 	decide no.
 
-To resolve (SI - student-interaction-plug-swap):
+To resolve (SI - student-interaction-plug-drop):
 	let M be current-monster;
 	let P be a random off-stage fetish appropriate basic plug;
 	if P is plug:

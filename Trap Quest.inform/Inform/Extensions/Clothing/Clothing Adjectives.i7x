@@ -430,8 +430,9 @@ To decide which number is the stealth-influence of (C - a clothing):
 	if C is sneaking, increase N by 3;
 	if C is nudism-disabling and C is actually dense, decrease N by 1;
 	if C is gem themed, decrease N by 1;
-	if C is bsounding, decrease N by 6;
-	if C is messed knickers, decrease N by 5;
+	if the player is not in a heist-painting-room:
+		if C is bsounding, decrease N by 6;
+		if C is messed knickers, decrease N by 5;
 	decide on N.
 Definition: a clothing is stealthy:
 	if the stealth-influence of it > 0, decide yes;

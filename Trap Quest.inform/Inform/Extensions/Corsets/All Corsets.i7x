@@ -178,7 +178,7 @@ Definition: skirted-bondage-corset is black themed: decide yes.
 Definition: skirted-bondage-corset is red themed: decide yes.
 
 To say ClothingDesc of (C - skirted-bondage-corset):
-	say "A black underbust corset with several tight buckle straps, connected to a long tight red latex skirt. The outfit also wraps round the back to finish up at the neck, while leaving your [BreastDesc] entirely exposed.".
+	say "A black underbust corset with several tight buckle straps, connected to a long tight red latex skirt. The outfit also wraps round the back to finish up at the neck, while leaving your [BreastDesc] entirely exposed. [bold type]You can sense that it has the power to prevent you from needing to expel enemas.[roman type][line break]".
 
 To say ShortDesc of (C - skirted-bondage-corset):
 	say "bondage corset".
