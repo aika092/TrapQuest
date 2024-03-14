@@ -142,7 +142,7 @@ To set up predicament status:
 	MouthEmpty;
 	now the stance of the player is 0;
 	display inventory-focus stuff; [can't force immediate inventory-focus redraw because the empty list would actually be correct and then it wouldn't redraw]
-	refresh the inventory-focus-window. [just to be sure]
+	[refresh the inventory-focus-window.] [GUITODOMAYBE] [just to be sure]
 
 To set up predicament clothing for (P - a predicament):
 	repeat with C running through on-stage wearthings:
@@ -290,10 +290,11 @@ To teleport via (W - a warp portal):
 			repeat with R running through predicament rooms:
 				totally clean R;
 			now executing-predicament is true;
+			now temporaryYesNoResetNeeded is false;
 			maybe execute P;
 			set up predicament clothing for P;
 			increase the times-completed of P by 1;
-			now temporaryYesNoBackground is Figure of small image;
+			temporaryYesNoBackgroundReset;
 			now predicamentJustDone is true;
 	otherwise if D is school portal:
 		if receptionist is alive and receptionist is not in School01, now receptionist is in School01;

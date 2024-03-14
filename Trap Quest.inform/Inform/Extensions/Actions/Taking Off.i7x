@@ -13,7 +13,12 @@ Check taking off worn arm covering clothing:
 Check taking off worn leg covering clothing:
 	if the player is ankle bound, say "You won't be able to successfully get this off whilst your ankles are bound..." instead.
 
-Definition: a clothing is curse-sticky: decide yes. [If it's cursed, it can't be taken off]
+Definition: a clothing is curse-sticky: [If it's cursed, it can't be taken off]
+	if the class of the player is cultist, decide no;
+	if the player is in Predicament20, decide no;
+	decide yes.
+
+Definition: a headgear is curse-sticky: decide yes.
 
 Check taking off clothing:
 	unless the noun is bag of holding: [these checks are already performed once in the bag of holding's own 'check taking off' block]

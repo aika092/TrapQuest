@@ -97,7 +97,7 @@ To decide which number is the flat strength of the player:
 	increase S by ((pink-nougat-timer + default-candy-duration - 1) / default-candy-duration) * 6;
 	increase S by ((magic-strength-timer + default-candy-duration - 1) / default-candy-duration) * 6;
 	decrease S by ((liquorice-timer + default-candy-duration - 1) / default-candy-duration) * 1;
-	if the the boost-cooldown of nurse > 0, increase S by 2;
+	if the boost-cooldown of nurse > 0, increase S by 2;
 	if cookie-poison-timer > 0, now S is S / 2;
 	if irritated-bladder is true, now S is S / 2;
 	if irritated-rectum is true, now S is S / 2;
@@ -190,7 +190,7 @@ To decide which number is the flat dexterity of the player:
 		increase D by acceleration-bonus of acceleration-tincture;
 	increase D by ((creme-egg-timer + default-candy-duration - 1) / default-candy-duration) * 6;
 	increase D by ((magic-speed-timer + default-candy-duration - 1) / default-candy-duration) * 6;
-	if the the boost-cooldown of nurse > 0, increase D by 2;
+	if the boost-cooldown of nurse > 0, increase D by 2;
 	if the size of penis > 3 and penis is penis-erect, decrease D by the size of penis / 3;
 	if the silicone volume of breasts > 10 and the class of the player is silicone queen:
 		increase D by 1;
@@ -281,7 +281,7 @@ To decide which number is the flat intelligence of the player:
 	decrease I by the suffocation of the player;
 	if tattoo-fetish is 1, increase I by (1 + the number of worn tattoos) / 3;
 	if temp_int_dam > 0, decrease I by temp_int_dam;
-	if the the boost-cooldown of nurse > 0 and the boost-int-drain of nurse > 0, now I is I / 2;
+	if the boost-cooldown of nurse > 0 and the boost-int-drain of nurse > 0, now I is I / 2;
 	if toffee-poison-timer > 0, now I is I / 2;
 	if irritated-bladder is true, now I is I / 2;
 	if irritated-rectum is true, now I is I / 2;

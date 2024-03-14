@@ -71,6 +71,7 @@ To satisfy (M - a monster) for (N - a number) seconds:
 		if M is in the location of the player:
 			if M is awake, say SatisfiedFlav of M;
 			progress quest of nice-quest;
+		if the health of M <= the maxhealth of M / 2, progress quest of chosen-one-quest;
 	otherwise:
 		bore M for N seconds. [We still want to dislodge etc. even if they weren't interested for some reason.]
 

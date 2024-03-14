@@ -1420,11 +1420,11 @@ A time based rule (this is the dominatrix cage timer rule):
 		if M is monster:
 			if dominatrix is off-stage or dominatrix is defeated:
 				now M is unleashed;
-				if M is woman-player, increase the delayed sluttification of M by 1;
+				if M is woman-player, WomanSluttify;
 				if the player is in the location of M, say "[bold type]The cage door lock somehow clicks open of its own accord. [roman type][BigNameDesc of M] is free!";
 			otherwise if dominatrix is in the location of M:
 				now M is unleashed;
-				if M is woman-player, increase the delayed sluttification of M by 1;
+				if M is woman-player, WomanSluttify;
 				if the player is in the location of M, say "[BigNameDesc of dominatrix] unlocks the door to the cage.[line break][speech style of dominatrix]'Go on, get out of here, before I change my mind.'[roman type][line break][BigNameDesc of M] is free!";
 			if M is not caged:
 				if M is in the location of the player, say "[BigNameDesc of M] squeaks in fear and quickly scampers out of the room!";

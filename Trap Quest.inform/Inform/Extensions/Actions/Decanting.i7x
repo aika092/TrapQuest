@@ -58,7 +58,8 @@ Carry out decanting something with:
 			curse the noun;
 			pollute 50;
 		increase the charge of the second noun by 300;]
-	compute standard decanting of the second noun.
+	compute standard decanting of the second noun;
+	now focused-thing is the noun.
 
 To compute standard decanting of (D - a dispenser):
 	allocate 6 seconds;

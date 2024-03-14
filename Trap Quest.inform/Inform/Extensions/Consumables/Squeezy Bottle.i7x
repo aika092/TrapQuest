@@ -2,6 +2,8 @@ Squeezy Bottle by Consumables begins here.
 
 squeezy-bottle is a thing. squeezy-bottle is in Hotel19. The printed name of squeezy-bottle is "[TQlink of item described]squeezy bottle[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of squeezy-bottle is "sq". Understand "squeezy", "bottle" as squeezy-bottle.
 
+The inventoryFocusPriority of a squeezy-bottle is -30.
+
 Figure of squeezy bottle is the file "Items/Collectibles/squeezybottle1.png".
 
 To decide which figure-name is the examine-image of (C - squeezy-bottle):

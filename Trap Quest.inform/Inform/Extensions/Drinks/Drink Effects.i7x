@@ -134,7 +134,7 @@ To compute drinking effect (N - a number):
 	do nothing.
 
 To compute drinking effect (N - 1):
-	say "[if the the Known corresponding to an Magic of N in the Table of Drinks is 0]Mmm, a sweet sugary taste. You feel your self-respect returning as you drink it![otherwise]More self-respect restoring potion. Delicious![end if]";
+	say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0]Mmm, a sweet sugary taste. You feel your self-respect returning as you drink it![otherwise]More self-respect restoring potion. Delicious![end if]";
 	dignify 800;
 	if the noun is blessed, dignify 700.
 

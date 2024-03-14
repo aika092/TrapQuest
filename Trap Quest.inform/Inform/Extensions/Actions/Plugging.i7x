@@ -83,7 +83,7 @@ To compute insertionRuin of (S - a thing) into (F - a fuckhole):
 			say "Of course you can't insert the penis decal, so you reverse it and instead use the normal-sized dildo it's stuck to the base of.";
 		otherwise:
 			say "You can't actually insert the penis decal, but you press the thin disc down just below your [variable F], where it sticks nicely, sending little tingles through you in a kind of ghostly echo of penetration.";
-	if the girth of S > the openness of F + 2:
+	if the girth of S > the openness of F + 2 and the number of worn elasticity clothing is 0:
 		say "The [MediumDesc of S] [if the girth of S > the openness of F + 4]is so large compared to the openness of your [variable F] that it hurts a bit just to put[otherwise]stretches you as you put[end if] it in.";
 		ruin F;
 		if the girth of S > the openness of F + 4, ruin F;
@@ -112,6 +112,7 @@ Understand "unplug [something]", "pull [something]" as unplugging.
 Check unplugging something:
 	if the noun is not worn and the noun is sword, try taking the noun instead;
 	if the noun is not an insertable object, say "I didn't understand what you wanted to do with [NameDesc of noun], since it's not an insertable object." instead;
+	if the noun is clit-taped wired-vibe, try taking off the noun instead;
 	if the noun is not penetrating a body part, say "[if the noun is worn]That is not removed like this, try [bold type]removing[roman type] it instead[otherwise]That is not inside of you[end if]." instead;
 	if the noun is penetrating a fuckhole and portal-hotpants is worn:
 		unless the player is in Hotel44 and pimp is not in Hotel44, say "[if the player is in Hotel44][BigNameDesc of the pimp] won't let you do that[otherwise]You can't get to your [random fuckhole penetrated by the noun] right now, since it is in the [Hotel44][end if]!" instead;

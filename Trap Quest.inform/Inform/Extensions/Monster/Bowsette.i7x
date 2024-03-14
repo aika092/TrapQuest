@@ -177,9 +177,9 @@ To decide which figure-name is the unfriendly-monster-image of (M - bowsette):
 	if the temperament of M > 0, decide on the monster-image of M;
 	decide on figure of angry bowsette interested.
 
-To decide which figure-name is the oral-sex-monster-image of of (M - bowsette):
+To decide which figure-name is the oral-sex-monster-image of (M - bowsette):
 	decide on figure of happy bowsette oral.
-To decide which figure-name is the titfuck-monster-image of of (M - bowsette):
+To decide which figure-name is the titfuck-monster-image of (M - bowsette):
 	decide on figure of happy bowsette titfuck.
 To decide which figure-name is the anal-sex-monster-image of (M - bowsette):
 	if the temperament of M > 0, decide on figure of happy bowsette fuck;
@@ -414,6 +414,7 @@ To compute post climax effect of (M - bowsette) in (F - a body part):
 	if there is a worn tattoo and the number of worn left-asscheek tattoo is 0 and the number of worn both-asscheeks tattoo is 0:
 		summon brainless bimbo tattoo;
 		say "You yelp as a red mark of a Turtle King appears on your ass cheek!";
+		cutshow brainless bimbo tattoo;
 	if brainless bimbo tattoo is worn:
 		increase the stolen-intelligence of brainless bimbo tattoo by 1;
 		say "You feel the [brainless bimbo tattoo] reducing your intelligence[one of][or] even more[stopping]!".

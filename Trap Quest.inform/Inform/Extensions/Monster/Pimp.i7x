@@ -189,6 +189,7 @@ To satisfy (M - pimp) for (N - a number) seconds:
 		if M is in the location of the player and M is awake:
 			say SatisfiedFlav of M;
 			progress quest of nice-quest;
+		if the health of M <= the maxhealth of M / 2, progress quest of chosen-one-quest;
 	otherwise:
 		bore M for N seconds;
 	send M home. [This makes sure the pimp always makes it back to his room.]
@@ -776,12 +777,12 @@ This is the pedestal management rule:
 						now P is user-identified;
 					now M is PU;
 				if P is pimp-pedestal-1:
-					cutshow figure of pimp portal cutscene;
+					onlycutshow figure of pimp portal cutscene;
 					now M is penetrating F;
 					dislodge portal-hotpants;
 					say "[BigFuckerDesc of M] is using your [variable F] as [his of M] personal [one of]onahole[or]cocksleeve[or]fuckhole[in random order]!";
 					ruin F;
-					if playerRegion is school or the charge of P > a random number between 102 and 103:
+					if playerRegion is school or the charge of P > (a random number between 102 and 103) or (M is combative and the player is prone):
 						TimesSubmittedUp M by 1;
 						now the sex-length of M is 0;
 						now M is not interested; [to prevent orgasm satisfy function]
@@ -796,12 +797,12 @@ This is the pedestal management rule:
 						now portal-hotpants is penetrating F;
 				otherwise if P is pimp-pedestal-2:
 					if portal-bra is worn:
-						cutshow figure of pimp portal cutscene;
+						onlycutshow figure of pimp portal cutscene;
 						now M is penetrating breasts;
 						dislodge portal-bra;
 						say "[BigFuckerDesc of M] is [one of]massaging [his of M] [manly-penis] with your breasts[or]sliding [his of M] [manly-penis] in and out of your cleavage[or]roughly groping your breasts and fucking your cleavage[cycling]!";
 						stimulate breasts from M;
-						if playerRegion is school or the charge of P > a random number between 102 and 103:
+						if playerRegion is school or the charge of P > (a random number between 102 and 103) or (M is combative and the player is prone):
 							TimesSubmittedUp M by 1;
 							say "[if the player is in Hotel44]With a satisfied grunt, [FuckerDesc of M] lets[otherwise]Suddenly you feel [FuckerDesc of M] let[end if] several ropes of [semen] loose from [his of M] tip, coating your breasts in a layer of glaze.";
 							BreastsSensitivityUp 1;
@@ -819,7 +820,7 @@ This is the pedestal management rule:
 					otherwise:
 						if the player is in Hotel44, say "You watch [FuckerDesc of M] [one of]continue to massage [his of M] [manly-penis] with [WomanName][']s breasts[or]sliding [his of M] [manly-penis] in and out of [WomanName][']s cleavage[or]roughly groping [WomanName][']s breasts and fucking [his of woman-player] cleavage[cycling] mounted on the pedestal.";
 						if woman-player is in the location of the player, say "[BigNameDesc of woman-player] [one of]whines with shame and discomfort[or]mewls sheepishly[or]whimpers with self-pity[cycling] and [one of]doubles over[or]grips [his of woman-player] chest tightly[or]visibly shudders[cycling] as [if P is user-identified][FuckerDesc of PU][otherwise][one of]an unknown [man of male-m][or]the [man of male-m] on the other end of the portal[or][his of woman-player] mystery assailant[or]the [man of male-m] in the [Hotel44][cycling][end if] [if the player is in Hotel44]fucks[otherwise]does something to[end if] [his of woman-player] tits.";
-						if playerRegion is school or the charge of P > a random number between 102 and 103:
+						if playerRegion is school or (the charge of P > a random number between 102 and 103) or M is combative:
 							if the player is in Hotel44, say "With a satisfied grunt, [FuckerDesc of M] lets several ropes of [semen] loose from [his of M] tip, coating [WomanName][']s breasts in a layer of glaze. [if pimp is in Hotel44][BigFuckerDesc of pimp][otherwise][BigFuckerDesc of M][end if] then wipes them clean, ready for the next customer.";
 							if woman-player is in the location of the player:
 								if the player is getting unlucky:
@@ -849,7 +850,7 @@ This is the pedestal management rule:
 		if the charge of P < 100 and the charge of P > (a random number between 40 and 60):
 			now the charge of P is 100;
 			let M be a random male human unleashed uninterested not-pedestal-fucking monster in the hotel;
-			if M is pimp and a random number between 1 and 2 is 1, now M is yourself;
+			if M is not a monster or the refractory-period of M > 0, now M is yourself;
 			if M is monster:
 				now pedestal-user of P is M;
 				now M is in Hotel44;
@@ -874,6 +875,7 @@ This is the pedestal management rule:
 					if the player is in Hotel44, say "[BigFuckerDesc of M] thrusts forward. ";
 					say "[bold type]Suddenly, you feel something long and hard push into your [variable F]![line break][variable custom style][if the player is in Hotel44]Unf... So unceremoniously...[otherwise][one of]Aaaah! So sudden![or]Oh god, I'm being used right now?![or]That pimp is selling my [F] again![then at random][end if][roman type][line break]";
 					now portal-hotpants is penetrating F;
+					cutshow figure of pimp portal cutscene;
 				otherwise:
 					say "POTENTIAL BUG - the game was unable to have the [pedestal-user of P] start fucking the player's [F] through the portal hotpants because it was apparently already occupied by something unremovable?! Please report this bug, explaining that the game didn't plan for the player's [F] to already be occupied by the [random thing penetrating F].";
 					reset P;
@@ -884,6 +886,7 @@ This is the pedestal management rule:
 				if portal-bra is worn:
 					say "[bold type]Suddenly, you feel your breasts being grabbed by two rough hands, and squeezed around a hard [manly-penis]![line break][variable custom style][if the player is in Hotel44]Aaah! This is so freaky![otherwise][one of]Oh god, I'm being titfucked right now?![or]That pimp is selling my breasts for sex again![then at random][end if][roman type][line break]";
 					now portal-bra is penetrating breasts;
+					cutshow figure of pimp portal cutscene;
 					progress quest of titfuck-desirability-quest;
 				otherwise if woman-player is in the location of the player:
 					say "[bold type][BigNameDesc of woman-player] [bold type]suddenly squeaks with strained panic in [his of woman-player] voice![line break][speech style of woman-player]'N-not again!'[roman type][line break][big he of woman-player] doubles over and cradles the spot where [his of woman-player] breasts should be, and starts panting heavily.".

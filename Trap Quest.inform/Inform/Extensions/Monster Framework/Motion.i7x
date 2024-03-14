@@ -75,12 +75,14 @@ To compute mandatory room leaving of (M - a monster):
 		regionally place M.
 
 To blockable move (M - a monster) to (D - a direction):
+	if debugmode > 1, say "[M] blockable moving [D].";
 	if M is in the location of the player:
 		if debugmode > 1, say "player is moving (currently counts as being in [location of the player]) and [M] is trying to move [D], so [if D is the travel-opposite of the player]MOVEMENT IS BLOCKED[otherwise]movement is still allowed[end if].";
 		if D is not the travel-opposite of the player, try M going D;
 	otherwise:
 		if D is not listed in the Nviables of the location of M:
 			now Neighbour Finder is the location of M;
+			if debugmode > 1, say "[M] failed to move [D] because it is not in the Nviables of [the location of M] - [Nviables of the location of M].";
 			if M is airborne and Neighbour Finder is a no-roof jungle room:
 				let GS be the vector sum of the grid position of Neighbour Finder and the vector of D;
 				let R be the room at GS;
@@ -94,6 +96,7 @@ To blockable move (M - a monster) to (D - a direction):
 				otherwise:
 					say "BUG - [M] tried to move [D] from [Neighbour Finder] to [R] but that should not be possible.";
 		otherwise:
+			if debugmode > 1, say "Trying [M] going [D].";
 			try M going D.
 
 To compute room leaving of (M - a monster): [This CANNOT be replaced with a function that potentially doesn't make them leave the room, for any NPC. Some while loops rely on this to eventually succeed or the game will freeze. 'blockable move' function is acceptable because when we compute mandatory room leaving we set travel-opposite to down]
@@ -181,9 +184,11 @@ To compute default toilet seeking of (M - a monster):
 				if KM is a monster:
 					now X is the location of KM;
 					now ATKM is KM;
-				now A is the the best route from L to X through unbossed rooms;
+				let XD be the best route from L to X through unbossed rooms;
+				if XD is a direction, now A is XD;
 			otherwise:
-				now A is the the best route from L to TR through unbossed rooms;
+				let AD be the best route from L to TR through unbossed rooms;
+				if AD is a direction, now A is AD;
 			if M is student: [students can't go where they can't go]
 				let P be the room A from L;
 				if the entry-rank of P > the entry-rank of L and the entry-rank of P > the current-rank of M, now A is down;
@@ -254,20 +259,39 @@ To check default seeking (N - a number) of (M - a monster):
 		if M is regional:
 			let L be the location of M;
 			let P be the location of the player;
-			let D be the best route from L to P through placed regional rooms;
-			if D is a direction:
-				now neighbour finder is L;
-				let L2 be the room D from the location of M;
-				if D is N-viable:
-					if the player is glued seductively and P is unbossed and the number of barriers in L2 is 0 and the number of barriers in L is 0:
-						compute M seeking D;
-						say AttractionWorry of M;
-					otherwise if the seek roll of M > 0 and P is unbossed and the number of barriers in L2 is 0 and the number of barriers in L is 0:
-						compute M seeking D;
+			let direction-searching be true;
+			if M is airborne and L is a no-roof jungle room:
+				repeat with D running through directions:
+					if direction-searching is true and (D is north or D is east or D is west or D is south):
+						let GS be the vector sum of the grid position of L and the vector of D;
+						let R be the room at GS;
+						if R is not solid rock and R is no-roof and the player is in R:
+							now M is in R;
+							say "[BigNameDesc of M] soars over the foliage from the [opposite-direction of D].";
+							if M is not interested and the boredom of M <= 0, check perception of M; [the NPC gets the jump on the player]
+							now direction-searching is false;
+			if direction-searching is true:
+				let D be the best route from L to P through placed regional rooms;
+				if debugmode > 0, say "[BigNameDesc of M] has worked out that [he of M] should go [D].";
+				if D is a direction:
+					now neighbour finder is L;
+					let L2 be the room D from the location of M;
+					if D is N-viable:
+						if the player is glued seductively and P is unbossed and the number of barriers in L2 is 0 and the number of barriers in L is 0:
+							compute M seeking D;
+							say AttractionWorry of M;
+						otherwise if the seek roll of M > 0 and P is unbossed and the number of barriers in L2 is 0 and the number of barriers in L is 0:
+							compute M seeking D;
 			if N is 2, now M is moved;
 		otherwise:
-			if M is in Stairwell01 or M is in Stairwell02 or M is in Stairwell03 or M is in Hotel29 or M is in Woods01 or M is in Hotel01 or M is in Mansion01 or there is a warp portal in the location of M, compute mandatory room leaving of M; [Move them away from the entrance]
-			deinterest M.
+			compute non-regional seeking of M.
+
+To compute non-regional seeking of (M - a monster):
+	compute default non-regional seeking of M.
+
+To compute default non-regional seeking of (M - a monster):
+	if M is in Stairwell01 or M is in Stairwell02 or M is in Stairwell03 or M is in Hotel29 or M is in Woods01 or M is in Hotel01 or M is in Mansion01 or there is a warp portal in the location of M, compute mandatory room leaving of M; [Move them away from the entrance]
+	deinterest M.
 
 To decide which number is the seek roll of (M - a monster):
 	if the friendly boredom of M < 0 and M is friendly, decide on 1;

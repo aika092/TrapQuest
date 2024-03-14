@@ -109,7 +109,7 @@ Check taking off tattoo:
 	say "That's permanently inked into your skin!" instead.
 
 This is the tattoos get focused rule:
-	if tattoo vision is 1 and the focus-window is g-present:
+	if tattoo vision is 1 and the graphics-window is g-present:
 		repeat with T running through currently at least partially visible tattoos:
 			if diaper quest is 0 or the appearance of the player > the cringe appearance of the player:
 				let A be calculated-appearance-outrage-level - (calculated-appearance-outrage-level / 2);

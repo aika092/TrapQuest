@@ -361,6 +361,7 @@ To compute swimming in (WB - DungeonScenery03):
 		if M is in the location of the player:
 			say "You are currently being pursued by some huge aquatic monster, which is trying to capture you with its four thick, octopus-like tentacles.";
 			compute LakeChase at S;
+			now temporaryYesNoResetNeeded is true;
 			now temporaryYesNoBackground is figure of lake monster swimming;
 			if M is not lake-stalking:
 				now swimming is 0;[you got fucked.]
@@ -451,7 +452,7 @@ To compute swimming in (WB - DungeonScenery03):
 				compute swimming fatigue check in WB;
 				if delayed fainting is 1, now swimming is 0;
 	if seconds > 0, increase seconds by swim-turns * 3;
-	now temporaryYesNoBackground is figure of small image;
+	temporaryYesNoBackgroundReset;
 	display entire map.
 
 [

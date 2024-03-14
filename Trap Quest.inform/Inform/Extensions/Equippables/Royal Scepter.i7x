@@ -150,7 +150,7 @@ To compute proposal of (M - a monster):
 		otherwise:
 			now R is sapphire;
 		set shortcut of R;
-		increase total-proposals by 1;
+		unless M is shopkeeper, increase total-proposals by 1; [it's too easy to drop in and out of his attention to allow him to influence this]
 		say "[BigNameDesc of M] notices you! [big he of M] gets down on one knee.[line break][ProposalFlav of M][big he of M] offers you a [R]. Do you accept it?";
 		if the player is consenting:
 			if the number of worn rings < 8, summon R;
@@ -259,9 +259,10 @@ Figure of floral bouquet is the file "Items/Accessories/Equippables/bouquet1.png
 To decide which figure-name is the clothing-image of (R - floral bouquet):
 	decide on figure of floral bouquet.
 
-condoms bouquet is a bouquet. condoms bouquet is latex.
+condoms bouquet is a bouquet. condoms bouquet is latex. The text-shortcut of condoms bouquet is "cbqt".
 
-Definition: condoms bouquet is semen themed: decide yes. The text-shortcut of condoms bouquet is "cbqt".
+Definition: condoms bouquet is semen themed: decide yes.
+Definition: condoms bouquet is never-in-bag: decide yes.
 
 To say MediumDesc of (C - condoms bouquet):
 	say "condoms bouquet".

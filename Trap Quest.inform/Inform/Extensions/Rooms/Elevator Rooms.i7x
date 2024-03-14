@@ -52,12 +52,13 @@ To compute elevator use:
 				now player-numerical-response is 0;
 			otherwise:
 				say "You press the button, and feel the elevator begin to descend.";
+				now the charge of security interface is 300;
 				compute elevator entrance of E;
 				now player-numerical-response is 0. [Just a failsafe, as it could change inside the compute elevator entrance function]
 
 To compute elevator return:
 	now playerRegion is hotel;
-	now temporaryYesNoBackground is Figure of small image;
+	temporaryYesNoBackgroundReset;
 	now the player is in Hotel30;
 	let all-completed be true;
 	repeat with E running through elevator-buttons:
@@ -90,6 +91,7 @@ Figure of Surgery Injection Revealed is the file "Special/Cutscene/cutscene-elev
 Figure of Surgery Injection Sensed is the file "Special/Cutscene/cutscene-elevator-surgery2c.jpg".
 
 To compute elevator entrance of (ER - SurgeryRoom01):
+	now temporaryYesNoResetNeeded is false;
 	now the player is in SurgeryRoom01;
 	say "As the elevator door opens, you see a futuristic-looking room. [FurutisticRoomSentence]But most notably, in the middle of the room, is a large metal cuboid structure that looks like you could climb inside the top. There are two buttons on the top - a green one with a sign that says 'TOGGLE COMFORT FEATURES', and a red one with a sign that says 'ABORT PROCEDURE'.[paragraph break]A robotic voice speaks to you from concealed speakers.[line break][first custom style]'WELCOME TO THE SURGERY ROOM. PLEASE REMOVE ALL CLOTHING PLACE YOUR LEGS AND TORSO IN THE SURGERY MACHINE TO RECEIVE A FREE UPGRADE. THE UPGRADE WOULD BE PAINFUL AND DISTRESSING TO WITNESS, SO PLEASE ENSURE THAT THE SENSATION BLOCKING COMFORT FEATURES REMAIN ENABLED UNTIL THE PROCEDURE IS OVER.'[line break][variable custom style]So I get in the machine and then it does something to me? And I don't get to SEE, or even FEEL what it's doing until the procedure is over? It's PROBABLY beneficial, but knowing this game, there's a chance it's actually a trap...[roman type][line break]";
 	let able-to-strip-naked be true;
@@ -451,7 +453,6 @@ To compute gloryhole urination of (M - belly-room-gloryhole):
 
 To compute elevator entrance of (ER - BellyRoom01):
 	if diaper quest is 1, destroy belly-room-gloryhole;
-	now the player is in BellyRoom01;
 	now BellyRoom01 is elevator-completed;
 	say "The elevator door opens, and you step out into a futuristic-looking room. [FurutisticRoomSentence][paragraph break]As you begin to step into the room, a robotic voice speaks to you from concealed speakers.";
 	let room-version be 0; [standard oromashi gameplay]
@@ -463,6 +464,7 @@ To compute elevator entrance of (ER - BellyRoom01):
 		if pregnancy fetish is 1 and the player is possessing a vagina and the pregnancy of the player <= 2, now room-version is 1;
 		otherwise now room-version is 2;
 	if room-version > 0:
+		now the player is in BellyRoom01;
 		if room-version is 1:
 			if the pregnancy of the player > 0:
 				say "[first custom style]'WELCOME TO THE PREGNANCY ACCELERATION ROOM. YOUR PREGNANCY IS NOW COMPLETE.'[roman type][paragraph break][variable custom style]What the hell does it mean by that?[roman type][line break]But all it takes is looking down to discover the answer. Your belly has exploded outwards, and you suddenly feel very, very, late term pregnant.";
@@ -508,7 +510,6 @@ To compute elevator entrance of (ER - BellyRoom01):
 		compute single choice question "Return to the hotel";
 		compute elevator return;
 	otherwise:
-		say "[first custom style]'WELCOME TO THE DESPERATION EXPERIENCE ROOM. PLEASE OPEN AS MANY CONTAINERS AS YOU LIKE. BUT PLEASE BE AWARE THAT ANY MOISTURE DETECTED ON THE FLOOR WILL TRIGGER THE FLUID RECOVERY SYSTEM.'[roman type][paragraph break][variable custom style]What the hell does it mean by that? And what does it mean by [']desperation[']?[roman type][line break]But in the next moment, you can feel a sudden downward pressure in your rectum. All it takes is looking down to discover that your belly has exploded outwards, and you can tell that you've been filled to the brim with a mystery liquid.";
 		compute maximum belly liquid fill;
 		now the squirt timer of belly is a random number between 6 and 30;
 		if the number of on-stage pedestals <= 1, lock pedestals; [this should mean we haven't set up the pedestals yet, probably because the mansion isn't placed yet]
@@ -576,6 +577,8 @@ To compute elevator entrance of (ER - BellyRoom01):
 				let E be a random off-stage electric fan;
 				if E is a thing, now E is in C;
 			increase RT by 1;
+		now the player is in BellyRoom01;
+		say "[first custom style]'WELCOME TO THE DESPERATION EXPERIENCE ROOM. PLEASE OPEN AS MANY CONTAINERS AS YOU LIKE. BUT PLEASE BE AWARE THAT ANY MOISTURE DETECTED ON THE FLOOR WILL TRIGGER THE FLUID RECOVERY SYSTEM.'[roman type][paragraph break][variable custom style]What the hell does it mean by that? And what does it mean by [']desperation[']?[roman type][line break]But in the next moment, you can feel a sudden downward pressure in your rectum. All it takes is looking down to discover that your belly has exploded outwards, and you can tell that you've been filled to the brim with a mystery liquid.";
 		mapcutshow Figure of Belly Room for belly.
 
 To compute maximum belly liquid fill:

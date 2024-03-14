@@ -218,7 +218,7 @@ This is the autotaking continues rule:
 					say "[bold type]Suddenly, [NameDesc of I] disappears from your hands![roman type][line break]";
 					autobind I;
 				otherwise:
-					if I is not food and I is not bottle and I is not plentiful accessory, say "You add the [FullTitle of I] to your bag.";
+					if I is not never-in-bag, say "You add the [FullTitle of I] to your bag.";
 					otherwise say "You are now carrying the [FullTitle of I].";
 					if I is clothing and the bimbo of the player > a random number between 11 and 18, compute automatic wearing of I.
 				[now another-turn is 1.]

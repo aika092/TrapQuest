@@ -277,7 +277,7 @@ To compute teaching of (L - toy-lesson):
 						say "[link][N]) [MediumDesc of P][as][N][end link][line break]";
 						increase N by 1;
 					say "[link]0) refuse[as]0[end link][line break]";
-					if the focus-window is g-present, display focus stuff;
+					display focus stuff;
 					let CLTR be the chosen letter - 48;
 					now CP is yourself;
 					if CLTR is 0:
@@ -290,7 +290,6 @@ To compute teaching of (L - toy-lesson):
 						now temporaryYesNoBackground is the examine-image of P;
 						if the player is consenting, now CP is P;
 						otherwise now CP is nothing;
-						now temporaryYesNoBackground is figure of small image;
 					if CP is yourself:
 						say "Input not understood. Please enter a number that corresponds to one of the toys.";
 						now CP is nothing;
@@ -561,7 +560,7 @@ To compute teaching of (L - dress-lesson):
 			now the raw-magic-modifier of D is 0;
 			now D is blandness;
 			now C is D;
-			refresh the clothing-focus-window;
+			[refresh the clothing-focus-window;] [GUITODOMAYBE]
 		say "[speech style of M]'Let's begin. A skirt is a tool that we can use not only to keep our [if diaper quest is 1]underwear[otherwise]privates[end if] easily accessible at all times, but also it allows us to make them visible to onlookers at a moment's notice, should we so choose. Now, firstly everyone please stand up straight.'[roman type][line break]You all do so obediently.[line break][speech style of M]'Right now, your private area is hidden under your skirt. But what happens if you do this?'[roman type][line break][BigNameDesc of M] bends over at the waist, keeping [his of M] legs perfectly straight.[line break][speech style of M]'Come on everyone, give it a go!'[roman type][line break]As everyone mimics the teacher's actions, flashes of panties and bare bottoms become visible all over the room.[line break][speech style of M]'So you see, just by keeping your knees unbent and bending over, we can send signals to whomever we like. Now, who wants to be today's volunteer? If you do well, you might even get promoted.'[roman type][line break]";
 		DexUp 1;
 		if the number of students in the location of the player > 0, say "Do you want to volunteer? ";

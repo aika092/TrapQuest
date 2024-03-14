@@ -24,6 +24,10 @@ To decide which number is background-rich:
 	if choice in row 52 of the Table of Player Options is 6, decide on 1;
 	decide on 0.
 
+To decide which number is background-exhibitionist:
+	if choice in row 52 of the Table of Player Options is 7, decide on 1;
+	decide on 0.
+
 To decide which number is background-selected:
 	if choice in row 52 of the Table of Player Options > 0 and (choice in row 52 of the Table of Player options is not 4 or diaper quest is 1 or the player is originally female), decide on 1;
 	decide on 0.
@@ -37,6 +41,7 @@ title	subtable	description	toggle
 "Background (only one): [if the player is presenting as female]Waitress[otherwise]Waiter[end if] (slightly higher dexterity, your work uniform's shoes are slightly impractical, so you start with 3/10 skill points walking in heels and your chances of spilling drinks when falling over is halved) - 5 points ([if background-waitress is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	waitress background toggle rule
 "Background (only one): D&D Nerd (you start out with slightly higher base intelligence, slightly lower base strength, some starting magic power and a random spell) - 5 points ([if background-magic is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	magic background toggle rule
 "Background (only one): Rich[if the player is presenting as female] Bitch[end if] (you start out with lots of extra sapphire jewellery inside the pink wardrobe) - 5 points ([if background-rich is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	rich background toggle rule
+"Background (only one): Exhibitionist (you won't find underwear in containers, but you don't lose self-respect from slutty outfits / appearance) - 5 points ([if background-exhibitionist is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	exhibitionist background toggle rule
 "Background (only one): [if diaper quest is 0]Pure (you start out really caring about your virginity: virgin warrior quest is mandatory unless you lose your virginity early, but gives you positive stats over time once started[otherwise]Teen Bedwetter (you have horrible memories of wetting the bed in your teens, and now really care about your continence: you start with +1 strength & dexterity and this number grows over time but if you ever accidentally wet yourself you suffer serious penalties[end if]) - 5 points ([if background-pure is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	pure background toggle rule
 [MAKE SURE PURE BACKGROUND REMAINS THE BOTTOM ROW WHEN ADDING OTHERS]
 
@@ -79,6 +84,12 @@ This is the rich background toggle rule:
 		now choice in row 52 of the Table of Player Options is 0;
 	otherwise if points count >= 5 or choice in row 52 of the Table of Player Options > 0:
 		now choice in row 52 of the Table of Player Options is 6.
+
+This is the exhibitionist background toggle rule:
+	if choice in row 52 of the Table of Player Options is 7:
+		now choice in row 52 of the Table of Player Options is 0;
+	otherwise if points count >= 5 or choice in row 52 of the Table of Player Options > 0:
+		now choice in row 52 of the Table of Player Options is 7.
 
 This is the background initialisation rule:
 	if background-waitress is 1:

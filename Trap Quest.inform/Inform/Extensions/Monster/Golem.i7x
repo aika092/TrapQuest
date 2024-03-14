@@ -286,8 +286,9 @@ To compute action (N - a number) of (M - a slimeball):
 			set numerical response 1 to "Try to rip it off";
 			set numerical response 2 to "Wait to see what happens next";
 			now player-numerical-response is 2;
-			now temporaryYesNoBackground is figure of slimeball cutscene 1;
-			if the player is able to use their hands, compute multiple choice question;
+			if the player is able to use their hands:
+				now temporaryYesNoBackground is figure of slimeball cutscene 1;
+				compute multiple choice question;
 			if player-numerical-response is 1:
 				if the player is getting unlucky:
 					say "Your hands slip as you struggle to grasp at the slime. You can't get a good enough grip! ";
@@ -316,7 +317,6 @@ To compute action (N - a number) of (M - a slimeball):
 			otherwise:
 				compute slime expansion;
 				destroy M;
-			now temporaryYesNoBackground is figure of small image.
 
 To compute slime expansion:
 	say "The slime gently oozes into your skin. ";

@@ -3,13 +3,15 @@ Priestess Outfit by Dresses begins here.
 A priestess outfit is a kind of overdress. A priestess outfit is unique. A priestess outfit is purity. A priestess outfit is low cut. A priestess outfit is sheer-when-wet. Understand "gown", "white" as priestess outfit.
 
 Definition: a priestess outfit is class-relevant:
-	if the class of the player is priestess, decide yes;
+	if the class of the player is priestess or the class of the player is chosen one, decide yes;
 	decide no.
 
 To compute SelfExamineDesc of (C - a priestess outfit):
 	say "You are wearing a [ShortDesc of C]. ".
 
 To say ShortDesc of (C - a priestess outfit):
+	say "white gown".
+To say MediumDesc of (C - a priestess outfit):
 	say "priestess's white gown".
 
 To decide which number is the intelligence-influence of (O - a priestess outfit):
@@ -18,8 +20,15 @@ To decide which number is the intelligence-influence of (O - a priestess outfit)
 	decide on I.
 
 To compute class set up of (C - a priestess outfit):
-	now C is suppression;
-	now the raw-magic-modifier of C is 1.
+	if chain-tiara is worn:
+		now C is cursed;
+		now the quest of C is attack-quest;
+		now C is protection;
+		now C is charisma-influencing;
+	otherwise:
+		now C is suppression;
+		now the raw-magic-modifier of C is 1;
+	if C is cameltoe-priestess-outfit, LabiaUp 1.
 
 To set up influence of (C - a priestess outfit):
 	now C is charisma-influencing.
@@ -158,6 +167,8 @@ To decide which figure-name is clothing-image of (C - cameltoe-priestess-outfit)
 
 To say ClothingDesc of (C - cameltoe-priestess-outfit):
 	say "This light, figure-hugging gown also has a cape that connects to wrist gloves. The extremely tight crotch means that your pussy lips are very easy to make out.".
+To say MediumDesc of (C - cameltoe-priestess-outfit):
+	say "sinful white gown".
 
 To decide which number is the initial outrage of (C - cameltoe-priestess-outfit):
 	decide on 3.

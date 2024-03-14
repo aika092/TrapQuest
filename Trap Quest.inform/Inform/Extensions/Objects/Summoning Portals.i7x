@@ -439,7 +439,7 @@ To say PortalHint of (S - giant-statue):
 
 To decide which object is the summonChoice of (G - giant-statue):
 	let M be a random woods prioritised monster;
-	if M is nothing or a random number between 1 and 4 is 1, let M be a random off-stage summon appropriate woods dwelling monster;
+	if M is nothing or a random number between 1 and 4 is 1, let M be a random off-stage woods dwelling summon appropriate monster;
 	if debugmode > 0, say "Next summon choice of [G] selected to be [M].";
 	decide on M.
 
@@ -705,7 +705,7 @@ Understand "winged", "crawling", "unsettling", "glowing", "decorated", "busty", 
 
 To decide which object is the summonChoice of (S - mysterious-mummy):
 	let M be a random mansion prioritised monster;
-	if M is nothing or a random number between 1 and 4 is 1, let M be a random off-stage summon appropriate mansion dwelling monster;
+	if M is nothing or a random number between 1 and 4 is 1, let M be a random off-stage mansion dwelling summon appropriate monster;
 	if debugmode > 0, say "Next summon choice of [S] selected to be [M].";
 	decide on M.
 

@@ -180,31 +180,25 @@ To say ImageDesc of (C - a thing):
 	maybe-map-display C.
 
 To maybe-map-display (C - a thing):
-	if images visible is 1:
-		let F be the examine-image of C;
-		if previous-temporary-image of C is not figure of no-image-yet, now F is previous-temporary-image of C;
-		if the focus-window is g-present: [We're not going to display in the main window. So instead let's display a zoomed in version in the map window.]
-			if the map-window is g-present:
-				update background colour of C;
-				MapShow F with background (backgroundColour of C);
-				if seconds is 0, display entire map; [This isn't going to happen automatically because time hasn't moved forward. So we prompt it ourselves.]
-				otherwise now map-turn-stall is 1; [If we didn't do this, the temporary-map-figure would be reset before it has a chance to be shown properly, when the time progression is calculated (towards the bottom of "to run the engine once" in Compute Turn.i7x.]
-			otherwise:
-				cutshow F for C;
+	if image cutscenes > 0:
+		if the graphics-window is g-present: [We're not going to display in the main window. So instead let's display a zoomed in version in the map window.]
+			update background colour of C;
+			MapShow C;
+			if seconds is 0, display entire map; [This isn't going to happen automatically because time hasn't moved forward. So we prompt it ourselves.]
+			otherwise now map-turn-stall is 1; [If we didn't do this, the temporary-map-figure would be reset before it has a chance to be shown properly, when the time progression is calculated (towards the bottom of "to run the engine once" in Compute Turn.i7x.]
 		otherwise:
-			display F.
+			let F be the examine-image of C;
+			if previous-temporary-image of C is not figure of no-image-yet, now F is previous-temporary-image of C;
+			if images visible is 1, display F.
 
 To maybe-map-display (F - a figure-name):
-	if images visible is 1:
-		if the focus-window is g-present: [We're not going to display in the main window. So instead let's display a zoomed in version in the map window.]
-			if the map-window is g-present:
-				MapShow F;
-				if seconds is 0, display entire map; [This isn't going to happen automatically because time hasn't moved forward. So we prompt it ourselves.]
-				otherwise now map-turn-stall is 1; [If we didn't do this, the temporary-map-figure would be reset before it has a chance to be shown properly, when the time progression is calculated (towards the bottom of "to run the engine once" in Compute Turn.i7x.]
-			otherwise:
-				cutshow F;
+	if image cutscenes > 0:
+		if the graphics-window is g-present: [We're not going to display in the main window. So instead let's display a zoomed in version in the map window.]
+			MapShow F;
+			if seconds is 0, display entire map; [This isn't going to happen automatically because time hasn't moved forward. So we prompt it ourselves.]
+			otherwise now map-turn-stall is 1; [If we didn't do this, the temporary-map-figure would be reset before it has a chance to be shown properly, when the time progression is calculated (towards the bottom of "to run the engine once" in Compute Turn.i7x.]
 		otherwise:
-			display F.
+			if images visible is 1, display F.
 
 The examine undescribed things rule is not listed in the carry out examining rulebook.
 
@@ -259,36 +253,45 @@ To say NameDesc of (C - a person):
 To say BigNameDesc of (C - a person):
 	say "The [input-style][MediumDesc of C][roman type]".
 
-[Show the image in the main window if the player has requested so]
-To cutshow (F - a figure-name) for (M - a thing):
-	unless F is figure of no-image-yet:
-		if image cutscenes > 1:
-			alwayscutshow F for M;
-		otherwise if the focus-window is g-present and image cutscenes > 0: [The player has requested cutscenes show up in the main body of the text instead.]
-			display F.
-
 [Display it on the map too - it's a big deal!]
 To mapcutshow (F - a figure-name) for (M - a thing):
-	cutshow F for M;
-	maybe-map-display F.
+	alwayscutshow F for M.
 
-To cutshow (F - a figure-name):
-	cutshow F for yourself.
-
-[Always show the image in the focus window if it's open. Use this one if we know it's going to be a good replacement for the thing's bust]
+[Same as mapcutshow]
 To alwayscutshow (F - a figure-name) for (M - a thing):
 	unless F is figure of no-image-yet:
-		if the focus-window is g-present:
-			if the temporary-image of M is figure of no-image-yet and M is not yourself:
-				now the temporary-image of M is F;
-			otherwise if the temporary-image of M is not F: [We don't do this if the image is just a duplicate of what we've set up as the temporary image]
-				appropriate-cutscene-display F; [We already had something to show we haven't shown yet! So let's put this new image straight into the main window.]
-		otherwise if image cutscenes > 0: [The player has requested cutscenes and has the focus window disabled.]
-			display F.
+		temporaryImageSwitch F for M;
+		maybe-map-display F.
 
-[If the focus window isn't present, don't show it at all. It's only worth showing if the focus window is around.]
+To temporaryImageSwitch (F - a figure-name) for (M - a thing):
+	if the graphics-window is g-present:
+		if the temporary-image of M is figure of no-image-yet and M is not yourself:
+			now the temporary-image of M is F;
+		otherwise if the temporary-image of M is not F: [We don't do this if the image is just a duplicate of what we've set up as the temporary image]
+			appropriate-cutscene-display F; [We already had something to show we haven't shown yet! So let's put this new image straight into the a cutscene object.]
+
+To cutshow (T - a thing):
+	maybe-map-display the examine-image of T.
+
+To cutshow (F - a figure-name):
+	if image cutscenes > 0, cutshow F for yourself.
+
+To cutshow (F - a figure-name) for (M - a thing):
+	unless F is figure of no-image-yet:
+		if image cutscenes is 1:
+			alwayscutshow F for M;
+		otherwise if image cutscenes > 0:
+			onlycutshow F for M.
+
+To onlycutshow (F - a figure-name):
+	temporaryImageSwitch F for yourself.
+
+To onlycutshow (T - a thing):
+	onlycutshow the examine-image of T.
+
+[This used to be for if the focus window isn't present, otherwise we don't show it at all. It's only worth showing if the focus window is around.]
 To onlycutshow (F - a figure-name) for (M - a thing):
-	if the focus-window is g-present and image cutscenes > 1, alwayscutshow F for M.
+	temporaryImageSwitch F for M.
 
 Part - Other
 

@@ -23,7 +23,7 @@ Check going when there is a crafting-table in the location of the player:
 	force inventory-focus redraw. [This forces the inventory window to redraw]
 
 Report going when there is a crafting-table in the location of the player:
-	if the inventory-window is g-unpresent and there is a ready for alchemy crafting-table in the location of the player and there is a carried mass collectible, say "[bold type]You instinctively check your [if there is a worn bag of holding]bag[otherwise]inventory[end if][roman type] and see that you have collected [MassCollectiblesList].";
+	if there is a ready for alchemy crafting-table in the location of the player and there is a carried mass collectible, say "[bold type]You instinctively check your [if there is a worn bag of holding]bag[otherwise]inventory[end if][roman type] and see that you have collected [MassCollectiblesList].";
 	force inventory-focus redraw. [This forces the inventory window to redraw]
 
 To reset alchemy charge:

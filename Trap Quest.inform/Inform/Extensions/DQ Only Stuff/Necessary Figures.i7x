@@ -60,6 +60,8 @@ To decide which figure-name is the monster-image of (M - a ghost):
 To decide which figure-name is the monster-image of (M - jismbodied ghost):
 	decide on figure of ghost 7.
 
+Figure of horizontal pole predicament is the file "Special/Cutscene/cutscene-predicament-horizontal-pole2.jpg".
+
 Figure of hotel toilet room 2 is the file "Map/Hotel/HotelBath3.png".
 
 Figure of IronMaidenBackground is the file "Map/maiden2.png".

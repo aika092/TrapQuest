@@ -129,13 +129,13 @@ Carry out unplugging anal beads:
 			if F is not Figure of no-image-yet:
 				zero map-link-table;
 				zero map-button-table;
-				let H be the height of the map-window;
-				let W be the width of the map-window;
+				let H be map-window-height;
+				let W be map-window-width;
 				[Calculate background image size]
 				let XRatio be (W * 1.0) / the pixel-width of F;
 				let FY be the pixel-height of F * XRatio;
 				let FYi be FY to the nearest whole number;
-				display the image F in the map-window at 0 by 0 with dimensions W by FYi;
+				display the image F in the graphics-window at map-window-x-root by 0 with dimensions W by FYi;
 			now N is the chosen letter;
 			decrease N by 48; [convert key ID to integer]
 			say line break;

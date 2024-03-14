@@ -737,7 +737,7 @@ To ElderSacrifice (T - ritual-beads):
 
 [!<ComputeDarkRewardOfRitualBeads>+
 
-Provides a reward from the dark altar, influenced by how much the ritual beads have been charged. Rewards here should generally be better than the the dungeon altar, but with the drawback of being humiliating.
+Provides a reward from the dark altar, influenced by how much the ritual beads have been charged. Rewards here should generally be better than the dungeon altar, but with the drawback of being humiliating.
 
 @param <Ritual-Beads>:<T> The ritual beads
 

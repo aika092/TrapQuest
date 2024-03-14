@@ -63,6 +63,13 @@ Definition: an accessory is transformation-protected: decide yes.
 To say ShortDesc of (C - an accessory):
 	say "accessory".
 
+To BackgroundRender (T - an accessory) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
+	update background colour of T;
+	if the backgroundColour of T >= 0:
+		draw a rectangle backgroundColour of T in the graphics-window at X1 by Y1 with size DX by DY;
+	otherwise if T is plentiful:
+		draw a rectangle 16357356 in the graphics-window at X1 by Y1 with size DX by DY.
+
 To set shortcut of (A - an accessory):
 	now the tradability of A is the price of A;
 	now the text-shortcut of A is "[metal-shortcut of A][jewellery-shortcut of A]".

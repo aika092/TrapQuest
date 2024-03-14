@@ -10,7 +10,13 @@ Understand "prick", "willy", "pecker", "clitty", "noodle", "dickie", "winky", "w
 Understand "crotch", "groin" as vagina when the player is possessing a vagina.
 Understand "crotch", "groin" as penis when the player is not possessing a vagina.
 
-penis has a number called size. The size of penis is usually 0.
+penis has a number called size. penis has a number called previous visible size.
+
+To decide which number is the visible size of (P - penis):
+	if the player is not possessing a penis, decide on 0;
+	if players-dick-is-detached > 0, decide on 0;
+	decide on the size of penis.
+
 To decide which number is the effective size of (P - penis):
 	if the player is not possessing a penis, decide on 0;
 	if players-dick-is-detached > 0, decide on 0;
@@ -567,7 +573,6 @@ As of Sept 2021 there's a new TG situation here:
 ]
 To OnlyPenisUp (X - a number):
 	now previous penis length is the size of penis;
-	[row 68 of the Table of Player Options = futanari fetish: 0, 1, or 2]
 	if the player is not possessing a penis and player futanari fetish is 0, now X is 0;
 	if cumlust tattoo is worn:
 		SemenTasteAddictUp X;
@@ -576,8 +581,7 @@ To OnlyPenisUp (X - a number):
 	if metal-cage is worn:
 		now X is 0;
 		say "Your [ShortDesc of metal-cage] is preventing your [player-penis] from getting any larger!";
-	if X > 0:
-		[We're now allowing penis size to increase above the max of 10, a 12" cock, if they're latex-TFed enough, but if they try to grow over 12 they'll burst. This used to happen only if their penis was detached AND they were latex TFed.]
+	if X > 0: [We're now allowing penis size to increase above the max of 10, a 12 inch cock, if they're latex-TFed enough, but if they try to grow over 12 they'll burst. This used to happen only if their penis was detached AND they were latex TFed.]
 		let sense be "feel";
 		if players-dick-is-detached > 0:
 			if players-detached-dick is in the location of the player, now sense is "see";
@@ -609,7 +613,7 @@ To OnlyPenisUp (X - a number):
 				otherwise:
 					say "Your monster of a [manly-penis] can't seem to grow any larger! You feel like a stud!";
 				dignify 50;
-		otherwise:[dick is <= 9, which is 10"]
+		otherwise:[dick is <= 9, which is 10 inch]
 			if players-dick-is-detached > 0:
 				say "You feel your detached penis grow into "; [#LXorDD This is mainly to cover the possibility of it being detached and a flat disc, i.e. zero sized. I'm just being defensive]
 			otherwise if the player is possessing a penis:
@@ -655,7 +659,7 @@ To OnlyPenisDown (X - a number):
 			let R be a random number from 1 to (the pregnancy rate of the player + TG fetish);
 			decrease the size of penis by a random number from 1 to R;
 		if the size of penis < min penis size, now the size of penis is min penis size;
-		if penis-flav is true or image cutscenes > 1:
+		if penis-flav is true[ or image cutscenes > 1]:
 			if the size of penis <= 4 and the size of penis > 1 and previous penis length > 4:
 				cutshow figure of body reaction 5 for penis;
 			otherwise if the player is not possessing a penis and previous penis length > 0:

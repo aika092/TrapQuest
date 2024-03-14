@@ -49,6 +49,14 @@ To compute rest ending of (F - HotelBedCreamy):
 		say "[if F is unencountered]It is only as you start to get up you realise that underneath the covers, the entire bed is soaked in [semen]! [otherwise]Once again the [semen] from the thoroughly soaked bed has gotten all over you. [end if]Your body [if the number of worn fluid vulnerable clothing > 0]and clothes are[otherwise]is[end if] covered in a layer of [semen].";
 		say "[if the semen addiction of the player < 6][line break][first custom style]Ewww! How fucking gross. I need to clean up now![otherwise if the semen addiction of the player < 10][line break][variable custom style]I feel all slippery and weird![otherwise if the semen addiction of the player < 15][variable custom style]Ooh, it's all so sticky and thick! I wonder whose it is...[otherwise if the semen taste addiction of the player < the semen addiction of the player][line break][second custom style]Oh yay, stranger's cum all over me, I couldn't have wished for a better treat![otherwise][second custom style]Oh yay, stranger's cum all over me, I couldn't have wished for a better treat! I can't wait to taste it.[end if][roman type][line break]";
 		UnannouncedSquirt semen on thighs by 5;
+		repeat with C running through worn able to take more liquid clothing:
+			if the coverer of C is nothing:
+				let SM be the soak-limit of C - the total-soak of C;
+				if SM > 10, now SM is 10;
+				CumSoak SM on C;
+		let SM be the largeness of hair - (the semen coating of hair + the urine coating of hair + the water-drench of hair);
+		if SM > 5, now SM is 5;
+		if SM > 0, AnnouncedSquirt semen on hair by SM;
 		cutshow Figure of hotel bed cutscene 1 for F;
 	otherwise:
 		say "[if F is unencountered]It is only as you start to get up, you wrinkle your nose at a weird smell. Suddenly you realise that underneath the covers, the entire bed was recently soaked in [semen]! The [otherwise]Once again the [end if]strong fumes of the rapidly drying moist baby butter assaults your senses and makes you feel funny.";

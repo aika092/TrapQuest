@@ -30,20 +30,25 @@ Oh, so this is how time works! So "seconds" represents how many seconds of the c
 	if the player is virtual, display stuff.
 +!]
 Every turn:
+	compute full engine loop.
+
+To compute full engine loop:
 	[repeat with IAT running through g-animated icon animation tracks:
 		cease animation of IAT;] [might be necessary to avoid bugs, we'll see]
 	if seconds > 0, run the engine;
 	compute options;
 	if the player is virtual or (tutorial is 1 and the graphics-window is g-present):
-		display stuff;
-		if inventory-visible > 0, display inventory stuff;
-		display inventory-focus stuff;
-		display regular focus stuff;
-		if bubble-needs-overwriting is 1:
-			display entire map;
-			now bubble-needs-overwriting is 0;
-		[render map buttons;]
-	now focused-thing is nothing;
+		if cancel-next-turn-graphic-display is false: [Sometimes we skip this, if we don't want to refresh the windows because we've done something special like expand a button frame]
+			if body-outdated is 1, now body-now-outdated is true;
+			display stuff;
+			[if bubble-needs-overwriting is true:
+				now bubble-needs-overwriting is false;
+				refresh the graphics-window;
+			otherwise:
+				display non-focus stuff;
+				display regular focus stuff;]
+		otherwise:
+			now cancel-next-turn-graphic-display is false; [next turn we want to be back to normal]
 	if seconds > 0, allocate 0 seconds; [Reset the tracker of how many seconds should pass the next time we accept user input]
 	if global timer interval > 50:
 		say "[bold type]BUG: The interpreter's timer just got stuck at [global timer interval]ms, when it is supposed to be at 50ms. Please report this to Aika along with as much detail as possible on what the last thing you did was.[roman type][line break]";
@@ -55,6 +60,7 @@ To allocate (N - a number) seconds:
 		purge NPC icons;
 		if acceleration-timer of acceleration-tincture > 0, now N is 1; [everything happens fast]
 		if seconds is 0:
+			store previous sizes;
 			truncate friendly-guys to 0 entries;
 			repeat with M running through interested monsters in the location of the player:
 				if M is friendly, add M to friendly-guys;
@@ -131,7 +137,6 @@ To run the engine once:
 		wait 200 ms before continuing;
 	if seconds is 0, allocate 1 seconds; [We are having another turn even if seconds wasn't set!]
 	increase time-turns by 1;
-	Store Previous Sizes;
 	if lagdebug is true:
 		say "Before virtual.";
 		wait 200 ms before continuing;
@@ -167,11 +172,11 @@ To run the engine once:
 			decrease map-turn-stall by 1;
 		otherwise if temporary-map-figure is not figure of no-image-yet: [see Timer Stuff.i7x 'To commence animation of (T - a cutscene animation track)' to see how animations can trigger this block]
 			MapShowReset;
-			unless there is g-animated g-unpaused g-looping cutscene animation track, display entire map; [If there is an animation and we allow the map to redraw underneath, we lose the 'skip' hyperlink.]
+			[unless there is g-animated g-unpaused g-looping cutscene animation track, display entire map;] [If there is an animation and we allow the map to redraw underneath, we lose the 'skip' hyperlink.]
 		otherwise if there is g-animated g-looping cutscene animation track:
 			repeat with G running through g-animated g-looping cutscene animation tracks:
 				cease animation of G;
-			display entire map;
+			[display entire map;]
 	update saved stats;
 	fix status bar.
 
@@ -189,14 +194,22 @@ To compute cleanup:
 			now B is not penetrating face.
 
 To store previous sizes:
+	now danaume-arms-victory is 0;
 	now autozap is 0;
 	now autoslap is 0;
 	now autokick is 0;
 	now autoknee is 0;
+	now body-now-outdated is false;
 	now the previous largeness of breasts is the largeness of breasts;
+	now the previous weight of breasts is the weight of breasts;
 	now the previous largeness of belly is the largeness of belly;
+	now the previous largeness of hair is the largeness of hair;
 	now the previous thickness of hips is the thickness of hips;
-	now the previous total volume of hips is the total volume of hips.
+	now the previous total volume of hips is the total volume of hips;
+	now the previous visible size of penis is the visible size of penis;
+	repeat with B running through body parts:
+		now the previous urine coating of B is the urine coating of B;
+		now the previous semen coating of B is the semen coating of B;
 
 [!<timeBased:Rulebook>*
 

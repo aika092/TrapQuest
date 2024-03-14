@@ -62,12 +62,16 @@ To say UniqueMonsterDesc of (M - composed-explorer):
 To compute unique interaction of (M - composed-explorer):
 	if pregnancy fetish is 1 and the explorer-bimbo of M is 0 and playerRegion is hotel:
 		let L be the location of the player;
-		let nearby-bedroom be up;
+		let nearby-bedroom-direction be up;
+		let nearby-bedroom be the location of the player;
 		repeat with D running through the Nviables of L:
 			let R be the room D from L;
-			if there is a hotel bed in R, now nearby-bedroom is D;
-		if nearby-bedroom is not up:
-			say "[BigNameDesc of M] looks through the doorway to the [nearby-bedroom].[line break][speech style of M]'I wonder if there's anything useful in this room.'[roman type][line break][big he of M] takes a step inside, looking around carefully for traps.[line break][speech style of M]'Come on, [NameBimbo], it seems safe enough.'[roman type][line break]But just as [he of M] says that, several things happen. Two [if interracial fetish is 1]black [end if][men of male-m] come out of a hidden doorway, flexing their fingers and pulling out their [manly-penis]s.[line break][speech style of male-m]'Hey look, bro, this whore's already pregnant.'[roman type][line break][BigNameDesc of M] tries to turn around and leave the room, but a strong metal shutter has risen out of the floor, and is rapidly rising, blocking the way.[line break][speech style of M]'[NameBimbo], help!'[roman type][line break]But there's nothing you can do, in the few brief moments you have before the barrier seals [him of M] in the room with those [men of male-m].[line break][speech style of male-m]'Sweet, if [he of M][']s already pregnant, then I don't need to use a rubber.'[roman type][line break]That's the last thing you hear before the soundproof [']MODESTY SHUTTER['] slams shut at the top of the doorframe.";
+			if there is a hotel bed in R:
+				now nearby-bedroom-direction is D;
+				now nearby-bedroom is R;
+		if nearby-bedroom-direction is not up:
+			say "[BigNameDesc of M] looks through the doorway to the [nearby-bedroom-direction].[line break][speech style of M]'I wonder if there's anything useful in this room.'[roman type][line break][big he of M] takes a step inside, looking around carefully for traps.[line break][speech style of M]'Come on, [NameBimbo], it seems safe enough.'[roman type][line break]But just as [he of M] says that, several things happen. Two [if interracial fetish is 1]black [end if][men of male-m] come out of a hidden doorway, flexing their fingers and pulling out their [manly-penis]s.[line break][speech style of male-m]'Hey look, bro, this whore's already pregnant.'[roman type][line break][BigNameDesc of M] tries to turn around and leave the room, but a strong metal shutter has risen out of the floor, and is rapidly rising, blocking the way.[line break][speech style of M]'[NameBimbo], help!'[roman type][line break]But there's nothing you can do, in the few brief moments you have before the barrier seals [him of M] in the room with those [men of male-m].[line break][speech style of male-m]'Sweet, if [he of M][']s already pregnant, then I don't need to use a rubber.'[roman type][line break]That's the last thing you hear before the soundproof [']MODESTY SHUTTER['] slams shut at the top of the doorframe.";
+			now a random modesty shutter is in nearby-bedroom;
 			cutshow Figure of composed explorer 1b cutscene 1;
 			increase the explorer-bimbo of M by 1;
 			calm M;

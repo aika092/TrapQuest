@@ -33,7 +33,7 @@ Definition: a white rubber giant bow dress is potentially erection concealing: d
 
 Part 2 - Ornate Dress
 
-ornate-dress is a rubber dress. ornate-dress is neck covering. ornate-dress is arm exposing. The text-shortcut of white rubber giant bow dress is "olxd". The printed name of ornate-dress is "[clothing-title-before]ornate latex dress[clothing-title-after]". Understand "ornate", "dress" as ornate-dress.
+ornate-dress is a rubber dress. ornate-dress is neck covering. ornate-dress is arm exposing. The text-shortcut of ornate-dress is "olxd". The printed name of ornate-dress is "[clothing-title-before]ornate latex dress[clothing-title-after]". Understand "ornate", "dress" as ornate-dress.
 
 Figure of ornate dress is the file "Items/Clothes/Upper/Latex/rubberdress9.png".
 

@@ -175,10 +175,10 @@ To decide which number is the leniency of (B - a bra): [the higher F the bigger 
 
 To restock (C - a bra):
 	let B be a random basic loot bra;
-	if B is bra:
+	if B is bra or background-exhibitionist is 1:
 		repeat with L running through Standard Item Pen:
 			if L is bra, remove L from Standard Item Pen;
-		add B to Standard Item Pen.
+		if background-exhibitionist is 0, add B to Standard Item Pen.
 
 This is the setup starting bras rule:
 	let C be a random bra;

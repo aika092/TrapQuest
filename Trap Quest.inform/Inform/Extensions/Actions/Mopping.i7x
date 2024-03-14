@@ -1,6 +1,6 @@
 Mopping by Actions begins here.
 
-Mopping is an action applying to one thing. [TODO mopping with clothing]
+Mopping is an action applying to one thing.
 
 Rule for supplying a missing noun while mopping:
 	if pink-spraybottle is worn and (diaper quest is 1 or (semen is not craved and the player is not thirsty)), now the noun is pink-spraybottle;
@@ -113,6 +113,11 @@ Carry out mopping clothing:[TODO: breasts largeness 10+ will touch the ground an
 		otherwise if the noun is spray:
 			say "Your [ShortDesc of the noun] pulses as it slowly fills up with darkly coloured liquid.";
 			if the charge of the noun < 5, increase the charge of the noun by 1;
+			increase the turns-mopped of the noun by 1;
+			if the turns-mopped of the noun > the magic-power of the player:
+				say "You can feel yourself becoming more magical! Wow!";
+				MagicPowerUp 1;
+				now the turns-mopped of the noun is 0;
 	otherwise if E > SL:
 		now E is SL;
 	if the urine-puddle of the location of the player > 0 and E > 0:[Clean up is in order of thickness. urine is thinnest, followed by milk, followed by semen.]
@@ -190,6 +195,7 @@ Report Mopping:
 					compute class outfit of stripper maid headdress;
 				otherwise:
 					summon stripper maid headdress cursed;
+				unless H is stripper-ears, say "[variable custom style]Oh my god, did this happen because I mopped the ground like this in front of [him of M]?![roman type][line break][GotUnluckyFlav]";
 	if housewife dress is worn and maid apron is off-stage:
 		class summon maid apron;
 		say "[variable custom style]Cooking, child-rearing and cleaning... I guess that's my life from now on.[roman type][line break]";

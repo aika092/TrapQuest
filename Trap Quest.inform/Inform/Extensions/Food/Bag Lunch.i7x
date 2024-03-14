@@ -30,7 +30,8 @@ Carry out TQeating bag lunch:
 	StomachFoodUp 1;
 	StomachSemenUp X;
 	humiliate MODERATE-HUMILIATION - the semen taste addiction of the player;
-	destroy the noun.
+	destroy the noun;
+	progress quest of condom-drinking-quest.
 
 To say unique-verb-desc of (T - a bag lunch):
 	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say " [link][bracket]dri[close bracket][as]dr [text-shortcut of T][end link][if T is held] [link][bracket]dr[close bracket][as]drop [text-shortcut of T][end link][otherwise] [link][bracket]ta[close bracket][as]ta [text-shortcut of T][end link][end if]".

@@ -4,6 +4,8 @@ A wearthing can be predicament-normal, predicament-temporary or predicament-fixe
 
 We also use predicament-fixed to set clothing in the junk room to be immune to change.]
 
+The inventoryFocusPriority of a wearthing is usually 25. [At the end of the clothing list]
+
 Definition: a wearthing is unworn:
 	if it is worn, decide no;
 	decide yes.
@@ -16,6 +18,13 @@ REQUIRES COMMENTING
 
 @!]
 A clothing is a kind of wearthing. A clothing is wearable. Understand "worn" as clothing when item described is worn. Understand "unworn", "not worn" as clothing when item described is unworn. Understand "held", "carried", "taken" as a thing when item described is carried. Understand "unheld", "uncarried", "not held", "not carried", "untaken", "not taken" as a thing when item described is not held.
+
+[for the character window labels]
+A clothing has a number called previous-labels.
+A clothing has a number called total-labels.
+A clothing has a number called label-width.
+
+The inventoryFocusPriority of a clothing is usually 10. [This is the order in which they should be displayed in inventory menu slots. I'm leaving gaps in the numbers for more items I haven't thought of yet.]
 
 Clothing can be cotton, latex, glass, leather, pvc, satin, mesh, wool, nylon, metal, biological, hemp, silk, velvet, denim, lycra, plastic, polyester (this is the clothing-material property). Clothing is usually cotton. Understand the clothing-material property as describing a clothing.
 
@@ -427,7 +436,8 @@ To decide which number is the stealth-influence of (C - a wearthing):
 	decide on 0.
 To decide which number is the stealth-influence of (C - a clothing):
 	let N be 0;
-	if C is sneaking, increase N by 3;
+	if C is sneaking, increase N by 4;
+	if C is leopard themed, increase N by 2;
 	if C is nudism-disabling and C is actually dense, decrease N by 1;
 	if C is gem themed, decrease N by 1;
 	if the player is not in a heist-painting-room:

@@ -53,7 +53,7 @@ choice
 3 [Pubic Hair Images Visible]
 3 [New status line]
 1 [Newbie tips]
-0 [GUI Layout]
+0 [focusedBodyParts]
 1 [Character Stats Text]
 0 [Character Stats]
 2 [Keriax Mirror]
@@ -61,7 +61,7 @@ choice
 0 [Save Cheat Seed]
 3 [Inline Hyperlinks]
 1 [Inventory Hyperlinks]
-2 [Image Cutscenes]
+1 [Image Cutscenes]
 1 [Tattoo Vision]
 2 [Auto Take]
 1 [Game Difficulty]
@@ -71,10 +71,10 @@ choice
 0 [Save Game Limit]
 0 [Wonderfuller Clothing]
 0 [Previous supporter ID]
-1 [Inventory Focus Window]
-1 [Clothing Focus Window]
-0 [Inventory Window]
-1 [Focus Window]
+1 [auto body window]
+1 [auto clothing window]
+0 [body outdated preference]
+1 [auto body animations]
 0 [Disclaimer Version]
 0 [Undo Counter]
 1 [School Names]
@@ -93,6 +93,11 @@ choice
 2 [combatSpeed]
 0 [simulatedInternet]
 0 [extreme images visible]
+1 [visibilityVisible]
+1 [cursesVisible]
+0 [blessingsVisible]
+0 [wetnessVisible]
+0 [miscellaneousVisible]
 
 To decide which number is YesNoPreference:
 	decide on choice in row 1 of the Table of Settings.
@@ -207,7 +212,7 @@ Is the map window enabled?
 
 +!]
 To decide which number is map images:
-	decide on choice in row 15 of the Table of Settings.
+	decide on 1.
 
 [!<DecideWhichNumberIsHalfSideImages>+
 
@@ -241,12 +246,7 @@ Are newbie tips enabled?
 To decide which number is newbie tips:
 	decide on choice in row 20 of the Table of Settings.
 
-[!<DecideWhichNumberIsCharacterLarger>+
-
-Various layouts for the different windows.
-
-+!]
-To decide which number is GUI layout:
+To decide which number is focusedBodyParts:
 	decide on choice in row 21 of the Table of Settings.
 
 [!<DecideWhichNumberIsCharacterStatsText>+
@@ -391,37 +391,35 @@ To record supporter ID as (N - a number):
 	now choice in row 38 of the Table of Settings is N;
 	write File of Preferences from the Table of Settings.
 
-[!<DecideWhichNumberIsInventoryFocusWindowEnabled>+
-
-Should the inventory focus window be open?
-
-+!]
-To decide which number is inventory focus window enabled:
+To decide which number is auto body window:
 	decide on choice in row 39 of the Table of Settings.
 
-[!<DecideWhichNumberIsClothingFocusWindowEnabled>+
+This is the auto body window toggle rule:
+	if auto body window is 0, now choice in row 39 of the Table of Settings is 1;
+	otherwise now choice in row 39 of the Table of Settings is 0.
 
-Should the clothing focus window be open?
-
-+!]
-To decide which number is clothing focus window enabled:
+To decide which number is auto clothing window:
 	decide on choice in row 40 of the Table of Settings.
 
-[!<DecideWhichNumberIsInventoryWindowEnabled>+
+This is the auto clothing window toggle rule:
+	if auto clothing window < 2, increase choice in row 40 of the Table of Settings by 1;
+	otherwise now choice in row 40 of the Table of Settings is 0.
 
-Should the inventory window be open?
-
-+!]
-To decide which number is inventory window enabled:
+To decide which number is body outdated preference:
 	decide on choice in row 41 of the Table of Settings.
 
-[!<DecideWhichNumberIsFocusWindowEnabled>+
+This is the body outdated preference toggle rule:
+	if body outdated preference < 1, increase choice in row 41 of the Table of Settings by 1;
+	otherwise now choice in row 41 of the Table of Settings is 0.
 
-Should the focus window be open?
-
-+!]
-To decide which number is focus window enabled:
+To decide which number is auto body animations:
+	if the player is not a march 2024 top donator, decide on 0;
 	decide on choice in row 42 of the Table of Settings.
+
+This is the auto body animations toggle rule:
+	if auto body animations is 0, now choice in row 42 of the Table of Settings is 1;
+	otherwise now choice in row 42 of the Table of Settings is 0.
+
 
 [!<DecideWhichNumberIsDisclaimerVersion>+
 
@@ -652,36 +650,17 @@ Part - GUI Settings
 Table of GUI Settings
 title	subtable	description	toggle
 "Previous Menu (Shortcut: Q)"	--	--	quit rule
-"[InterfaceStyleOptions]"	--	--	GUI layout toggle rule
-"[WindowButtonsOptions]"	--	--	flexible focus windows toggle rule
-"[focusWindowHeightOptions]"	--	--	focus window height toggle rule
-"[PopupOptions]"	--	--	popup buttons toggle rule
-"[InventoryFocusLimitOptions]"	--	--	inventoryFocusLimit toggle rule
-"Character Window: [if side images is 0]OFF[otherwise if GUI layout is 0]ON[otherwise if side images is 1]SMALLEST[otherwise if side images is 2]SMALL[otherwise if side images is 3]MEDIUM[otherwise if side images is 4]LARGE[otherwise]LARGEST[end if]"	--	--	side images toggle rule
-"Map Window: [if map images is 0]OFF[otherwise if GUI layout is 0]ON[otherwise if map images is 1]SMALLEST[otherwise if map images is 2]SMALL[otherwise if map images is 3]MEDIUM[otherwise if map images is 4]LARGE[otherwise]LARGEST[end if]"	--	--	map images toggle rule
-"Icons for nearby NPCs on Map Window (causes a bit of lag): [if map-figures is 1]ENABLED[otherwise if the player is not the donator]BETA TESTERS ONLY FOR NOW[otherwise]DISABLED[end if]"	--	--	map-figures toggle rule
-"Save and Restore buttons[if SaveLoadPreference is 1] (these still won't show if you've chosen roguelike saving): ON[otherwise]: OFF[end if]"	--	--	SaveLoadPreference toggle rule
-"[if GUI layout is 1]Inline Image Cutscenes[otherwise]Keep all cutscene images in Location Window[end if]: [if image cutscenes is 0]NO CUTSCENES[otherwise if GUI layout is 0 and image cutscenes is 1]NO[otherwise]YES[end if]"	--	--	image cutscenes toggle rule
+"Graphics Window: [if side images is 0]OFF[otherwise]ON[end if]"	--	--	side images toggle rule
+"Automatically show clothing window when clothing changes: [if auto clothing window is 0]OFF[otherwise if auto clothing window is 1]ON (lower priority than automatically showing body window)[otherwise]ON (higher priority than automatically showing body window)[end if]"	--	--	auto clothing window toggle rule
+"Automatically show body window when body transformation visibly progresses: [if auto body window is 0]OFF[otherwise]ON[end if]"	--	--	auto body window toggle rule
+"What counts as body transformation visibly progressing? [if body outdated preference is 0]ALL VISIBLE CHANGES, GOOD & BAD[otherwise]ONLY WHEN BODY GETS SLUTTIER[end if]"	--	--	body outdated preference toggle rule
 "Animated graphical elements: [if animationsEnabled is 1]ON[otherwise]OFF[end if]"	--	--	animationsEnabled toggle rule
+"Automatically animate body transformations (recent alpha testers only): [if auto body animations is 0]OFF[otherwise]ON[end if]"	--	--	auto body animations toggle rule
+"Icons for nearby NPCs in Map Window: [if map-figures is 1]ENABLED[otherwise if the player is not the donator]BETA TESTERS ONLY FOR NOW[otherwise]DISABLED[end if]"	--	--	map-figures toggle rule
+"Save and Restore buttons[if SaveLoadPreference is 1] (these still won't show if you've chosen roguelike saving): ON[otherwise]: OFF[end if]"	--	--	SaveLoadPreference toggle rule
+"Cutscene images: [if image cutscenes is 0]NO CUTSCENE IMAGES AT ALL[otherwise if image cutscenes is 1]PUSH LOTS TO THE MAP WINDOW (recommended)[otherwise]KEEP MOST IN THE LOCATION WINDOW[end if]"	--	--	image cutscenes toggle rule
 "Visible humiliating tattoos shown in Location Window: [if tattoo vision is 1]ON[otherwise]OFF[end if]"	--	--	tattoo vision toggle rule
-"Dark mode (Compatible with WinGit; you just need to go into Git>Options and invert the colours for the main window manually; the exact brown RGB value is 24,13,1): [if darkMode is 1]ON[otherwise if darkMode is 2]GRAPHICAL WINDOWS ONLY[otherwise]OFF[end if]"	--	--	darkMode toggle rule
 
-To say InterfaceStyleOptions:
-	if diaper quest is 0, say "Interface Style: [if GUI layout is 1]CLASSIC COCKSUCKER[otherwise if GUI layout is 2]TIGHT TWAT[otherwise]NEWEST NYMPHO[end if]";
-	otherwise say "Interface Style: [if GUI layout is 1]CLASSIC CRYBABY[otherwise if GUI layout is 2]CRAMPED CRIB[otherwise]NEWEST NAPPY[end if]".
-
-To say WindowButtonsOptions:
-	if diaper quest is 0, say "Open/Close Window Buttons: [if GUI layout is 1]NOT COMPATIBLE WITH CLASSIC COCKSUCKER[otherwise if flexible focus windows is 2]ALL[otherwise if flexible focus windows is 1]INVENTORY ONLY[otherwise]NONE[end if]";
-	otherwise say "Open/Close Window Buttons: [if GUI layout is 1]NOT COMPATIBLE WITH CLASSIC CRYBABY[otherwise if flexible focus windows is 2]ALL[otherwise if flexible focus windows is 1]INVENTORY ONLY[otherwise]NONE[end if]".
-
-To say InventoryFocusLimitOptions:
-	say "Slots per inventory page: [if GUI layout is 1 and diaper quest is 0]NOT COMPATIBLE WITH CLASSIC COCKSUCKER[otherwise if GUI layout is 1]NOT COMPATIBLE WITH CLASSIC CRYBABY[otherwise][inventoryFocusLimit][end if]".
-
-To say PopupOptions:
-	say "Button Layout: [if GUI layout is 1 and diaper quest is 0]NOT COMPATIBLE WITH CLASSIC COCKSUCKER[otherwise if GUI layout is 1]NOT COMPATIBLE WITH CLASSIC CRYBABY[otherwise if PopupButtons is 0]Always visible (but looks very cluttered and increases lag)[otherwise if PopupButtons is 2]Popup menus restricted to the item[otherwise]Popup menus[end if]".
-
-To say focusWindowHeightOptions:
-	say "Location window size: [if GUI layout is 1 and diaper quest is 0]NOT COMPATIBLE WITH CLASSIC COCKSUCKER[otherwise if GUI layout is 1]NOT COMPATIBLE WITH CLASSIC CRYBABY[otherwise][focusWindowHeight]% of total window height[end if]".
 
 Part - Image Toggle Rules
 
@@ -704,12 +683,12 @@ This is the images visible toggle rule:
 This is the side images toggle rule:
 	if choice in row 14 of the Table of Settings is 0, now choice in row 2 of the Table of Settings is 1; [re-enable images]
 	increase choice in row 14 of the Table of Settings by 1;
-	if choice in row 14 of the Table of Settings > 5 or (choice in row 14 of the Table of Settings > 1 and GUI layout is 0), now choice in row 14 of the Table of Settings is 0.
+	if choice in row 14 of the Table of Settings > 1, now choice in row 14 of the Table of Settings is 0.
 
 This is the map images toggle rule:
 	if map images is 0, now the choice in row 2 of the Table of Settings is 1; [re-enable images]
 	increase choice in row 15 of the Table of Settings by 1;
-	if choice in row 15 of the Table of Settings > 5 or (choice in row 15 of the Table of Settings > 1 and GUI layout is 0), now choice in row 15 of the Table of Settings is 0.
+	if choice in row 15 of the Table of Settings > 1, now choice in row 15 of the Table of Settings is 0.
 
 This is the inventory-visible toggle rule:
 	if inventory-visible > 0:
@@ -799,7 +778,7 @@ This is the keriax mirror toggle rule:
 	otherwise now choice in row 24 of Table of Settings is 2.
 
 This is the image cutscenes toggle rule:
-	if choice in row 29 of the Table of Settings is 0 or (GUI layout is 0 and choice in row 29 of Table of Settings < 2), increase choice in row 29 of Table of Settings by 1;
+	if choice in row 29 of Table of Settings < 2, increase choice in row 29 of Table of Settings by 1;
 	otherwise now choice in row 29 of Table of Settings is 0.
 
 This is the tattoo vision toggle rule:
@@ -863,6 +842,7 @@ This is the darkMode toggle rule:
 		now choice in row 50 of Table of Settings is 0.
 
 To decide which number is darkMode:
+	decide on 1;
 	[if the player is not the donator and choice in row 50 of Table of Settings is 1, decide on 2;]
 	decide on choice in row 50 of Table of Settings.
 
@@ -873,7 +853,8 @@ This is the popup buttons toggle rule:
 		now choice in row 51 of Table of Settings is 0.
 
 To decide which number is PopupButtons:
-	decide on choice in row 51 of Table of Settings.
+	decide on 1.
+	[decide on choice in row 51 of Table of Settings.]
 
 This is the focus window height toggle rule:
 	if focusWindowHeight < 39:
@@ -956,6 +937,21 @@ This is the extreme images visible toggle rule:
 		now the choice in row 60 of Table of Settings is 1;
 	otherwise:
 		now choice in row 60 of Table of Settings is 0.
+
+To decide which number is visibilityVisible:
+	decide on choice in row 61 of Table of Settings.
+
+To decide which number is cursesVisible:
+	decide on choice in row 62 of Table of Settings.
+
+To decide which number is blessingsVisible:
+	decide on choice in row 63 of Table of Settings.
+
+To decide which number is wetnessVisible:
+	decide on choice in row 64 of Table of Settings.
+
+To decide which number is miscellaneousVisible:
+	decide on choice in row 65 of Table of Settings.
 
 Part - Settings
 

@@ -15,11 +15,14 @@ To decide which number is the slap damage of (P - a person):
 	now punch is 1;
 	if there is worn slap ready clothing, now punch is 0;
 	repeat with C running through worn clothing:
-		if (punch is 1 or C is slap ready) and the slap damage improvement of C is not 0:
+		if (punch is 1 or C is slap ready or the class of the player is chosen one) and the slap damage improvement of C is not 0:
 			let N be the slap damage improvement of C;
 			increase A by N;
 			if C is sword and the swordskill of the player is 1, increase A by 1;
 			if damage-explained > 1, say "[if N >= 0]+[end if][N] ([ShortDesc of C] bonus) ";
+	if there is a worn sword and the class of the player is chosen one:
+		increase A by 2;
+		if damage-explained > 1, say "+2 (chosen one wielding a sword) ";
 	if punch is 1:
 		if the player is feeling dominant:
 			increase A by 1;

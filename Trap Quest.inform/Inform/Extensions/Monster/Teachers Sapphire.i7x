@@ -64,7 +64,7 @@ To compute teaching of (L - heel-lesson):
 	now the heel-height of PH is 4;
 	let X be the hindrance of PH;
 	say "[speech style of M]'Okay, now follow my lead: put your hands out to the side like a delicate lady and step, then step, then step, always putting one foot directly in front of the other.'[roman type][line break]You join the other students in doing your best to mimic [his of M] perfect walk.";
-	refresh the clothing-focus-window;
+	[refresh the clothing-focus-window;] [GUITODOMAYBE]
 	repeat with ST running through students in the location of the player:
 		let R be (a random number between 1 and 3) - the heel-skill of ST;
 		say "[BigNameDesc of ST] [if R < -1]manages to walk perfectly, [one of]and even adds in a cheeky skip! [or]adding a cheeky curtsey at the end. [purely at random][otherwise if R <= 0][one of]struts around almost as well as miss [teacher-name of M][or]seems to have no problems learning and perfecting the walk[purely at random]. [otherwise if R is 1]wobbles [one of]as [he of ST] tries to practise the steps[or]once or twice[or]only a little as [he of ST] tries [his of ST] best to copy [teacher-name of M][in random order]. [otherwise if R is 2][one of]wobbles dangerously and very nearly falls over[or]has to frantically wave [his of ST] arms to steady [himself of ST] as [he of ST] almost topples over[in random order]! [otherwise if R is 3][one of]slips and falls onto [his of ST] bum! Ouch[or]suddenly stumbles and has to grab a desk to avoid falling over[in random order]! [otherwise]can hardly move! [big he of ST] tries to take a single step forward and immediately slips up, clattering to the ground. [end if]";
@@ -165,6 +165,7 @@ To compute teaching of (L - roulette-lesson):
 		add yourself to LST;
 		say "You stand up and raise your hand [if the delicateness of the player > 11]nervously[otherwise if the delicateness of the player < 5]confidently[end if]. You feel several stares boring into the back of your head, but you keep your own gaze fixed firmly on the teacher. [big he of M] nods and smiles.[line break][speech style of M]'[one of]Fine. Good luck[or]Better luck this time[stopping]!'[roman type][line break]You are both taken to one end of the front of the room. You feel proud of being brave enough to put yourself out there.";
 		now temporaryYesNoBackground is figure of roulette;
+		now temporaryYesNoResetNeeded is false;
 	otherwise:
 		while ST is entry 1 in LST and the number of students in the location of the player > 1:
 			let ST be a random student in the location of the player;
@@ -260,7 +261,7 @@ To compute teaching of (L - roulette-lesson):
 				promote P;
 	otherwise:
 		say "With only one volunteer, the roulette game can't go ahead.";
-	now temporaryYesNoBackground is figure of small image;
+	temporaryYesNoBackgroundReset;
 	now bigGameLoop is 0;
 	say "[speech style of M]'Well I guess that's my fun over with for today. Class dismissed.'[roman type][line break]".
 

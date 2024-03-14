@@ -91,7 +91,6 @@ To Start The Machine:
 			set numerical response 4 to "Don't touch anything, and let the dark forces choose randomly for you...";
 		compute multiple choice question;
 		if player-numerical-response is 4, now player-numerical-response is a random number between 1 and 3;
-		now temporaryYesNoBackground is Figure of small image;
 		if diaper quest is 0:
 			if player-numerical-response is 1:
 				compute full outfit summon of rubber nun cowl;
@@ -202,12 +201,13 @@ To Start The Machine:
 	initialise wardrobe;
 	set up debug stuff;
 	follow the game universe initialisation rules;
-	display stuff;
-	display focus stuff;
-	display inventory-focus stuff;
-	display clothing-focus stuff;
+	update appearance level;
+	[zero focus stuff;
+	display stuff;]
 	if the player is able to automatically slap and the player is able to automatically knee and the player is able to automatically kick, do nothing; [For some reason the first time these queries are called, it causes newlines we don't want. So let's make that happen here.]
-	update status line.
+	update status line;
+	allocate 1 seconds;
+	compute full engine loop.
 
 previousGUILayout is a number that varies. previousGUILayout is -1.
 
@@ -217,146 +217,12 @@ To resolve graphics windows mayhem:
 		if style name entry is normal-style[ or style name entry is bold-style or style name entry is italic-style], now colour entry is lightModeTextHex;
 		if style name entry is special-style-1, now colour entry is lightModeSpecial1Hex;
 	follow the set generic text styles rule;
+	now the position of the graphics-window is g-placeleft;
+	now the measurement of the graphics-window is 64;
 	repeat with W running through g-window:
 		if W is graphics g-window, now the background colour of W is lightModeWhiteGraphicsHex;
-		otherwise now the background colour of W is lightModeWhiteTextHex;
-	if GUI layout is 0: [NEWEST NYMPHO layout, i.e. the new shiny one]
-		if previousGUILayout is not 0:
-			repeat with W running through g-window:
-				if W is g-present and W is not the main window and W is not status window, close W;
-			now the inventory-focus-window is spawned by the main window;
-			now the position of the inventory-focus-window is g-placeabove;
-			now the measurement of the inventory-focus-window is 13;
-			now the clothing-focus-window is spawned by the main window;
-			now the position of the clothing-focus-window is g-placeleft;
-			now the measurement of the clothing-focus-window is 8;
-			now the map-window is spawned by the main window;
-			now the position of the map-window is g-placeleft;
-			now the measurement of the map-window is 40;
-			now the focus-window is spawned by the map-window;
-			now the position of the focus-window is g-placebelow;
-			now the measurement of the focus-window is focusWindowHeight;
-			now the graphics-window is spawned by the map-window;
-			now the position of the graphics-window is g-placeleft;
-			now the measurement of the graphics-window is 50;
-			now the inventory-window is spawned by the main window;
-			now the position of the inventory-window is g-placeright;
-			now the measurement of the inventory-window is 30;
-			if inventory window enabled is 0:
-				let N be (the measurement of the inventory-window * the measurement of the map-window) / 100; [This keeps the main window in the same proportion by making sure that we're taking the same amount away]
-				increase the measurement of the map-window by the measurement of the inventory-window - N;
-		now previousGUILayout is 0;
-		resolve newest nympho inventory focus window opening;
-	otherwise: [CLASSIC COCKSUCKER Layout, i.e. the old one]
-		if previousGUILayout is not 1:
-			repeat with W running through g-window:
-				if W is g-present and W is not the main window and W is not status window, close W;
-			now the map-window is spawned by the main window;
-			now the position of the map-window is g-placeleft;
-			now the measurement of the map-window is 10 + (10 * map images); [map images ranges from 1 to 5]
-			now the graphics-window is spawned by the main window;
-			now the position of the graphics-window is g-placeright;
-			now the measurement of the graphics-window is 25 + (5 * (side images + map images)); [side images ranges from 1 to 5]
-			now the hyper-window is spawned by the map-window;
-			now the position of the hyper-window is g-placebelow;
-			now the measurement of the hyper-window is 25;
-		now previousGUILayout is 1;
-		resolve classic cocksucker map window opening.
+		otherwise now the background colour of W is lightModeWhiteTextHex.
 
-To resolve newest nympho inventory focus window opening:
-	if images visible is 1 and flexible focus windows is 2, open the inventory-focus-open-window;
-	if inventory focus window enabled is 1 and images visible is 1, open the inventory-focus-window;
-	resolve newest nympho clothing focus window opening;
-	refresh the inventory-focus-open-window;
-	display inventory-focus stuff.
-
-To resolve newest nympho clothing focus window opening:
-	if images visible is 1 and flexible focus windows is 2, open the clothing-focus-open-window;
-	if clothing focus window enabled is 1 and images visible is 1, open the clothing-focus-window;
-	refresh the clothing-focus-open-window;
-	resolve newest nympho map window opening;
-	display clothing-focus stuff.
-
-To resolve newest nympho map window opening:
-	if map images > 0:
-		now the graphics-window is spawned by the map-window;
-		now the focus-window is spawned by the map-window;
-		now the focus-open-window is spawned by the map-window;
-		open the map-window;
-		resolve newest nympho focus window opening;
-		refresh the map-window;
-	otherwise:
-		now the graphics-window is spawned by the main window;
-		now the focus-window is spawned by the graphics-window;
-		now the focus-open-window is spawned by the graphics-window;
-		resolve newest nympho graphics-window opening;
-		resolve newest nympho focus window opening.
-
-To resolve newest nympho focus window opening:
-	if images visible is 1 and flexible focus windows is 2, open the focus-open-window;
-	if focus window enabled is 1 and images visible is 1, open the focus-window;
-	resolve newest nympho graphics-window opening;
-	refresh the focus-open-window;
-	display focus stuff.
-
-To resolve newest nympho graphics-window opening:
-	if side images > 0:
-		open the graphics-window;
-		resolve newest nympho inventory-window opening;
-		display stuff;
-	otherwise if the focus-window is g-unpresent:
-		now the focus-window is spawned by the main window;
-		now the focus-open-window is spawned by the main window;
-		resolve newest nympho inventory-window opening.
-
-To resolve newest nympho inventory-window opening:
-	if images visible is 1 and flexible focus windows > 0, open the inventory-open-window;
-	if inventory window enabled is 1, open the inventory-window;
-	refresh the inventory-open-window;
-	refresh the inventory-window.
-
-To resolve newest nympho inventory-window closing:
-	close the inventory-window;
-	close the inventory-open-window.
-
-To resolve newest nympho graphics-window closing:
-	resolve newest nympho inventory-window closing;
-	close the graphics-window.
-
-To resolve newest nympho focus window closing:
-	resolve newest nympho graphics-window closing;
-	close the focus-window;
-	close the focus-open-window.
-
-To resolve newest nympho map window closing:
-	resolve newest nympho focus window closing;
-	close the map-window.
-
-To resolve newest nympho clothing focus window closing:
-	resolve newest nympho map window closing;
-	close the clothing-focus-window;
-	close the clothing-focus-open-window.
-
-To resolve newest nympho inventory focus window closing:
-	resolve newest nympho clothing focus window closing;
-	close the inventory-focus-window.
-
-To resolve classic cocksucker map window opening:
-	if map images > 0:
-		open the map-window;
-		refresh the map-window;
-	resolve classic cocksucker graphics-window opening.
-
-To resolve classic cocksucker graphics-window opening:
-	if side images > 0:
-		open the graphics-window;
-		refresh the graphics-window;
-	resolve classic cocksucker hyper window opening.
-
-To resolve classic cocksucker hyper window opening:
-	if actual inline hyperlinks > 0:
-		open the hyper-window;
-		refresh the hyper-window.
 
 [!<InitialiseLatexPrisoner>+
 
@@ -450,13 +316,15 @@ To initialise bondage protection:
 		now C is in holding pen.
 
 Definition: a clothing is pinkWardrobeAppropriate:
-	if it is basic loot and the unworn outrage of it <= 3 + the notManlyFactor of it and (diaper quest is 0 or the unworn cringe of it <= 3 + the notManlyFactor of it), decide yes;
+	if tough-shit is 0 and it is basic loot and the unworn outrage of it <= 3 + the notManlyFactor of it and (diaper quest is 0 or the unworn cringe of it <= 3 + the notManlyFactor of it), decide yes;
+	if tough-shit is 1 and it is not unique and (diaper quest is 1 or the unworn outrage of it > 4 + the notManlyFactor of it) and the unworn outrage of it <= 10 + the notManlyFactor of it and (diaper quest is 0 or the unworn cringe of it > 4 + the notManlyFactor of it) and (diaper quest is 0 or the unworn cringe of it <= 10 + the notManlyFactor of it), decide yes;
 	decide no.
 Definition: a bra is pinkWardrobeAppropriate:
-	if it is fetish appropriate and it is not in pink wardrobe and it is not unique and (the player is male or the min size of it <= the largeness of breasts) and the max size of it >= the largeness of breasts + 2 and it is actually dense and it is not product and the support of it > 0 and the unworn outrage of it <= 3 + the notManlyFactor of it and (diaper quest is 0 or the unworn cringe of it <= 4 + the notManlyFactor of it), decide yes;
+	if it is fetish appropriate and it is not in pink wardrobe and it is not unique and (the player is male or the min size of it <= the largeness of breasts) and the max size of it >= the largeness of breasts + 2 and it is actually dense and it is not product and the support of it > 0 and the unworn outrage of it <= 3 + the notManlyFactor of it and (diaper quest is 1 or the unworn outrage of it > 4 + the notManlyFactor of it) and the unworn outrage of it <= 10 + the notManlyFactor of it and (diaper quest is 0 or the unworn cringe of it > 4 + the notManlyFactor of it) and (diaper quest is 0 or the unworn cringe of it <= 10 + the notManlyFactor of it), decide yes;
 	decide no. [We allow rare bras]
 Definition: a knickers is pinkWardrobeAppropriate:
-	if it is basic loot and the unworn outrage of it <= 6 + the notManlyFactor of it and (diaper quest is 0 or the unworn cringe of it <= 3 + the notManlyFactor of it), decide yes;
+	if tough-shit is 0 and it is basic loot and the unworn outrage of it <= 6 + the notManlyFactor of it and (diaper quest is 0 or the unworn cringe of it <= 3 + the notManlyFactor of it), decide yes;
+	if tough-shit is 1 and it is not unique and (diaper quest is 1 or the unworn outrage of it > 6 + the notManlyFactor of it) and the unworn outrage of it <= 12 + the notManlyFactor of it and (diaper quest is 0 or the unworn cringe of it > 4 + the notManlyFactor of it) and (diaper quest is 0 or the unworn cringe of it <= 12 + the notManlyFactor of it), decide yes;
 	decide no.
 
 [!<InitialiseWardrobe>+
@@ -469,11 +337,11 @@ To initialise wardrobe:
 	let C be a random pinkWardrobeAppropriate undies;
 	if roleplay fetish is 1, compute starting headgear;
 	if pregnancy fetish is 1, now C is white-diagram briefs;
-	if diaper lover >= 1:
-		now C is a random training pants;
-		if tough-shit is 1:
-			now the bladder of the player is 9;
-			say "[bold type]You are bursting to pee![line break][variable custom style]Crap, how unfair! I've got to find a toilet right away or I'm going to piss myself![roman type][line break]";
+	if tough-shit is 1, now C is a random pinkWardrobeAppropriate thong;
+	if diaper focus >= 1, now C is a random training pants;
+	if diaper lover >= 1 and tough-shit is 1:
+		now the bladder of the player is 9;
+		say "[bold type]You are bursting to pee![line break][variable custom style]Crap, how unfair! I've got to find a toilet right away or I'm going to piss myself![roman type][line break]";
 	if C is clothing, add C to L;
 	now C is a random pinkWardrobeAppropriate bikini top;
 	if C is bikini top:
@@ -486,10 +354,11 @@ To initialise wardrobe:
 	let C be a random Boobies T-shirt;
 	if the player is male and a random number between trap fetish and 1 is 1, now C is a random Gender Bender T-shirt;
 	if diaper lover >= 1 and a random number between 1 and 2 is 1, now C is a random I love my wet nappies T-shirt;
-	if a random number between 1 and 2 is 1, now C is a random unskirted pinkWardrobeAppropriate underdress;
-	if a random number between 1 and 2 is 1 or C is nothing, now C is a random unskirted pinkWardrobeAppropriate overdress;
+	if a random number between 1 and 2 <= 1 + tough-shit, now C is a random unskirted pinkWardrobeAppropriate underdress;
+	if a random number between 1 and 2 <= 1 + tough-shit or C is nothing, now C is a random unskirted pinkWardrobeAppropriate overdress;
 	if C is clothing, add C to L;
-	now C is a random basic loot short or longer not-butt-windowed actually dense pinkWardrobeAppropriate skirt;
+	now C is a random short or longer not-butt-windowed actually dense pinkWardrobeAppropriate skirt;
+	if tough-shit is 1, now C is a random short or longer pinkWardrobeAppropriate skirt;
 	if C is clothing, add C to L;
 	if diaper focus >= 1:
 		let C be a random eligible diaper;

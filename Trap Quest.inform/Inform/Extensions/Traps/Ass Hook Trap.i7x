@@ -9,9 +9,12 @@ REQUIRES COMMENTING
 @!]
 An ass hook is a kind of trap. The printed name of ass hook is "[TQlink of item described][if item described is penetrating asshole]ass [end if]hook[TQxlink of item described][verb-desc of item described]". There are 5 wire ass hooks. Understand "rope" as ass hook. The text-shortcut of an ass hook is "aho". An ass hook has an object called the wedgie-target.
 
-Figure of ass hook is the file "Env/Dungeon/asshook1.png".
-Figure of ass hook wedgie is the file "Env/School/asshook1.jpg".
-Figure of ass hook wedgie pissed is the file "Env/School/asshook2.jpg".
+Figure of ass hook is the file "Env/Dungeon/asshook1.jpg".
+Figure of ass hook dungeon wedgie is the file "Env/Dungeon/asshook2.jpg".
+Figure of ass hook collar is the file "Env/Dungeon/asshook3a.jpg".
+Figure of ass hook collar zoom is the file "Env/Dungeon/asshook3b.jpg".
+Figure of ass hook academy wedgie is the file "Env/School/asshook1.jpg".
+Figure of ass hook academy wedgie pissed is the file "Env/School/asshook2.jpg".
 
 To say ExamineDesc of (C - an ass hook):
 	say "[if playerRegion is school]A strong hook that is usually used to hang gym clothes.[otherwise]An ass hook is connected to a rope that goes through a small hole in the ceiling. Maybe you could manage to [bold type]pull[roman type] it out of your [asshole]?[end if]".
@@ -19,12 +22,15 @@ To say ExamineDesc of (C - an ass hook):
 To decide which figure-name is the examine-image of (C - an ass hook):
 	if playerRegion is school:
 		let K be a random worn knickers;
-		if K is knickers and the urine-soak of K > 0, decide on figure of ass hook wedgie pissed;
-		decide on figure of ass hook wedgie;
+		if K is knickers and the urine-soak of K > 0, decide on figure of ass hook academy wedgie pissed;
+		decide on figure of ass hook academy wedgie;
 	if C is penetrating asshole:
 		if the player is not possessing a vagina, decide on figure of hook cutscene 1;
 		otherwise decide on figure of hook cutscene 2;
-	decide on figure of ass hook.
+	otherwise if diaper quest is 0 and C is grabbing the player and the wedgie-target of C is knickers:
+		decide on figure of ass hook dungeon wedgie;
+	otherwise:
+		decide on figure of ass hook.
 
 This is the spawn initial dungeon asshook traps rule:
 	repeat with N running from 1 to 2:
@@ -160,7 +166,15 @@ To HookPull:
 			if S < 9, now S is 9;
 			let R be a random number from 1 to S;
 			if debuginfo > 0, say "[input-style]Escape check: Dexterity-based roll d[S] ([R]) | (6.5) ass hook difficulty check[roman type][line break]";
-			if R > 3:
+			let C be a random worn collar;
+			if C is collar and the player is getting unlucky:
+				say "As you try to pull down on the hook, the rope detaches from the ceiling! It whips down, somehow shrinking as it does, and then somehow manages to fasten itself to the back of your [C]! [GotUnluckyFlav]";
+				dislodge H;
+				now H is unrevealed;
+				summon ass-hook-plug uncursed;
+				now the size of ass-hook-plug is the openness of asshole;
+				cutshow figure of ass hook collar;
+			otherwise if R > 3:
 				if R > 6:
 					if H is grabbing the player, say "You manage to slowly pull down on the hook until it releases your [ShortDesc of K], ";
 					otherwise say "You manage to slowly pull down on the ass hook until it comes out of your [asshole], ";

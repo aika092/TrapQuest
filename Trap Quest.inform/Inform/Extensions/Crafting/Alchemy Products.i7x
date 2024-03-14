@@ -56,7 +56,6 @@ Check quaffing:
 	if face is actually occupied, say "Your mouth is currently occupied!" instead.
 
 Carry out quaffing:
-	allocate 3 seconds;
 	StomachUp 1;
 	if the noun is cursed and the noun is not blessing-potion, say "That tasted really awful - you're pretty sure it was cursed![line break][variable custom style]Uh-oh. That probably hasn't done what it was supposed to do...[roman type][line break]";
 	check stealing of the noun;
@@ -503,6 +502,7 @@ To decide which number is the alchemy key of (A - magnetism-elixir):
 magnetism-timer is a number that varies. magnetism-timer is 0.
 
 Carry out quaffing magnetism-elixir:
+	allocate 3 seconds;
 	say "You pull out the tiny stopper and down the purple liquid. You feel more... present, as if [bold type]people are now being drawn towards you.[roman type][line break]";
 	let R be a random number between 20 and 25;
 	if the noun is blessed, increase R by 6;
@@ -544,6 +544,7 @@ To decide which number is the alchemy key of (A - life-elixir):
 	decide on 4.
 
 Carry out quaffing life-elixir:
+	allocate 3 seconds;
 	say "You pull out the tiny stopper and down the glowing liquid. [if the body soreness of the player > 0 or the soreness of asshole > 0 or the soreness of vagina > 0 and the noun is not cursed]You start to feel... healthier, as if some kind of magic particle is running around your body, healing your wounds. The particle gets to your belly. ";
 	if the latex-transformation of the player > 0:
 		say "[LatexCurseRemoval]But the elixir hasn't finished yet! ";
@@ -611,6 +612,7 @@ To decide which number is the alchemy key of (A - invigoration-elixir):
 	decide on 5.
 
 Carry out quaffing invigoration-elixir:
+	allocate 3 seconds;
 	say "You pull out the small stopper and drink the creamy liquid. It tastes like [semen]. You feel your [fuckholes] pulse gently.";
 	compute slightly addictive tasting of semen;
 	let R be a random number between 300 and 450;
@@ -659,14 +661,18 @@ To decide which number is the alchemy key of (A - balance-potion):
 	decide on 6.
 
 Carry out quaffing balance-potion:
+	allocate 3 seconds;
 	say "You pull out the stopper and down the smoky liquid.";
 	let flav-said be 0;
-	if the noun is not cursed and the heel skill of the player < 10:
-		say "You feel [unless there are worn heels]like you'll be [end if]more steady standing in heels! ";
-		increase the raw heel skill of the player by 1;
-		if the noun is blessed, increase the raw heel skill of the player by 1;
+	if the noun is not cursed:
+		if the heel skill of the player < 10:
+			say "You feel [unless there are worn heels]like you'll be [end if]more steady standing in heels! ";
+			increase the raw heel skill of the player by 1;
+			if the noun is blessed, increase the raw heel skill of the player by 1;
+		otherwise:
+			say "Nothing seems to happen to your feet. Perhaps you're already too much of an expert at walking in heels for this to help...";
 	otherwise if the noun is cursed:
-		if there are worn heels and the player is upright, say "You feel [unless there are worn heels]like you'll be [end if][bold type]less[roman type] steady walking in heels!";
+		say "You feel [unless there are worn heels]like you'll be [end if][bold type]less[roman type] steady walking in heels! This potion of balance was cursed!";
 		decrease the raw heel skill of the player by 2;
 	if diaper quest is 0 and the noun is not cursed:
 		while the largeness of breasts > the flesh volume of hips + 1 and the player is not bottom heavy:
@@ -712,6 +718,7 @@ To decide which number is the alchemy key of (A - womb-potion):
 	decide on 7.
 
 Carry out quaffing womb-potion:
+	allocate 3 seconds;
 	say "You pull out the stopper and down the smoky liquid.";
 	if the latex-transformation of the player > 3:
 		say "Nothing seems to happen. Probably because of the latex curse...";
@@ -762,6 +769,7 @@ To say ExamineDesc of (B - blessing-potion):
 	otherwise say "[if B is sure and B is blessed]The blessed magic will likely allow the potion to work even from outside of the Dungeon.[otherwise][line break][end if]".
 
 Carry out quaffing blessing-potion:
+	allocate 3 seconds;
 	say "You pull out the stopper and down the brightly glowing liquid.";
 	if (the noun is not blessed and playerRegion is not Dungeon) or ((the player is trap stuck or the noun is cursed) and the player is not in Dungeon28):
 		say "Nothing seems to happen.";
@@ -827,6 +835,7 @@ To compute recipe specific cursing of (T - bull-strength-potion):
 		now T is cursed.
 
 Carry out quaffing bull-strength-potion:
+	allocate 3 seconds;
 	say "You pull out the stopper and down the murky white liquid.";
 	if the noun is not cursed:
 		say "You feel incredibly strong! Wow!";
@@ -866,6 +875,7 @@ To say ExamineDesc of (B - a space mead):
 	otherwise say "[if B is sure and B is blessed]But the blessed magic will likely negate the bad side-effects of the potion.[otherwise][line break][end if]".
 
 Carry out quaffing space mead:
+	allocate 3 seconds;
 	say "You drink the golden liquid.";
 	if the noun is not cursed:
 		if the player is deserving of more strength:
@@ -899,6 +909,7 @@ To say ExamineDesc of (B - luck-potion):
 	otherwise say "[if B is sure and B is blessed]The blessing will enhance the effect of the potion.[otherwise][line break][end if]".
 
 Carry out quaffing luck-potion:
+	allocate 3 seconds;
 	say "You pull out the stopper and down the green liquid.";
 	if the noun is cursed:
 		say "[bold type]You feel a curse take its hold on your soul![line break][variable custom style]Something tells me that I just made myself much more UNLUCKY...[roman type][line break]";
@@ -925,6 +936,7 @@ To say ExamineDesc of (B - magic-potion):
 	otherwise say "[if B is sure and B is blessed]The blessing will somehow enhance the effect of the potion.[otherwise][line break][end if]".
 
 Carry out quaffing magic-potion:
+	allocate 3 seconds;
 	say "You pull out the stopper and down the murky liquid.";
 	if the noun is cursed:
 		say "[bold type]You feel a curse flow through your veins!";
@@ -960,6 +972,7 @@ To say ExamineDesc of (B - continence-potion):
 	otherwise say "[if B is sure and B is blessed]The blessing will somehow enhance the effect of the potion.[otherwise][line break][end if]".
 
 Carry out quaffing continence-potion:
+	allocate 3 seconds;
 	say "You pull out the stopper and down the murky liquid.";
 	if the noun is cursed:
 		say "[bold type]You feel a curse flow through your veins![roman type][line break]";
@@ -1483,6 +1496,7 @@ To decide which number is the alchemy key of (A - strength-tincture):
 	decide on 1.
 
 Carry out quaffing strength-tincture:
+	allocate 3 seconds;
 	say "You pull out the tiny stopper and down the glowing liquid.[unless saved-flat-strength > 26]You feel much, much stronger! [one of][line break][variable custom style]Wooow![roman type][line break][or][stopping]Time to go kick some ass![end if]";
 	let T be a random number between 10 and 15;
 	now strength-timer of strength-tincture is T * 6;
@@ -1529,6 +1543,7 @@ To decide which number is the alchemy key of (A - acceleration-tincture):
 	decide on 2.
 
 Carry out quaffing acceleration-tincture:
+	allocate 3 seconds;
 	say "You pull out the tiny stopper and down the glowing liquid. [unless saved-flat-dexterity > 26 or the noun is cursed]Time seems to noticeably slow down around you, giving you loads of time to react to things. [one of][line break][variable custom style]Wooow![roman type][line break][or][stopping]You feel like running a marathon![end if][line break]Your [BellyDesc] rumbles worryingly...";
 	let T be a random number between 10 and 15;
 	now acceleration-timer of acceleration-tincture is T * 6;
@@ -1579,6 +1594,7 @@ To decide which number is the alchemy key of (A - luck-tincture):
 	decide on 35.
 
 Carry out quaffing luck-tincture:
+	allocate 3 seconds;
 	say "You pull out the tiny stopper and down the golden liquid. A golden aura begins to shimmer around you.[line break][variable custom style][one of]I feel amazing! Maybe I should look for things that would usually require me to get lucky...[or]I feel lucky![stopping][roman type][line break]";
 	let T be a random number between 10 and 15;
 	now luck-timer of luck-tincture is T * 6;

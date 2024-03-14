@@ -18,6 +18,7 @@ Definition: a thing is necessary-in-bag: decide yes. [Things that are not necess
 Definition: a thing is never-in-bag: decide no.
 Definition: a bag of holding is never-in-bag: decide yes.
 Definition: a bottle is never-in-bag:
+	decide yes; [experimental]
 	if it is empty, decide no;
 	decide yes.
 Definition: squeezy-bottle is never-in-bag: decide yes.
@@ -50,11 +51,14 @@ Definition: a thing is currently-not-in-bag:
 To decide which number is not-in-bag-things:
 	decide on the number of currently-not-in-bag necessary-in-bag things.
 
+To decide which number is carried-limit:
+	decide on 18.
+
 Check taking something:
 	if the noun is held by a monster:
 		let M be a random monster holding the noun;
 		say "[BigNameDesc of M] is holding [NameDesc of the noun]." instead;
-	if the noun is not bag of holding and not-in-bag-things >= 15:
+	if the noun is not bag of holding and not-in-bag-things >= carried-limit:
 		if there is a worn bag of holding:
 			if the noun is never-in-bag, say "You are at your limit for carrying [if diaper messing >= 6]messy diapers, [end if]food and drink, and other items that can't go in your bag of holding. You'll have to drop some if you want to pick up more." instead;
 		otherwise:
@@ -103,6 +107,10 @@ Check taking off bag of holding:
 		say "Action cancelled." instead.
 
 Carry out taking bag of holding:
+	if takingStuff is false:
+		allocate 2 seconds;
+		allocate arm use to the noun;
+	now takingStuff is true; [The player can take several items in the same turn without penalty with "take all"]
 	let H be a random worn bag of holding;
 	if H is a thing and the noun is not H:
 		say "You transfer all the items from your [ShortDesc of H], which you then discard onto the ground. (You can only hold one bag of holding at a time).";
@@ -119,7 +127,7 @@ Check inserting bag of holding into something:
 	try taking off the noun instead.
 
 To say BagHoldingWarning:
-	say "Food, drink and valuable jewellery cannot be placed in this".
+	say "Food, liquids (including empty containers) and valuable jewellery cannot be placed in this".
 
 To compute failed transform of (C - a bag of holding):
 	increase the transform-attempts of C by 1;
@@ -684,6 +692,14 @@ To execute (E - bag-feeding-negative):
 	say "Your bag reacts to the negative magic modifier of the [noun]. You feel like some of the good luck you've saved up has faded away...";
 	increase the raw luck of the player by the raw-magic-modifier of the noun * 3.
 
+bag-feeding-big-bra is a bag-feeding-effect.
+Definition: bag-feeding-big-bra is appropriate:
+	if the noun is bra and the size of the noun <= 15 and the size of the noun > the largeness of breasts and the player is not top heavy, decide yes;
+	decide no.
+To execute (E - bag-feeding-big-bra):
+	say "Your bag reacts to the large cup size of the [noun] compared to your [BreastDesc]. You feel it sending some magic to your chest, to attempt to grow your breasts!";
+	BustUp 1.
+
 bag-feeding-cards is a bag-feeding-effect.
 Definition: bag-feeding-cards is appropriate:
 	if the noun is playing card themed, decide yes;
@@ -708,6 +724,17 @@ Definition: bag-feeding-pee-time is appropriate:
 To execute (E - bag-feeding-pee-time):
 	say "Your bag reacts to the yellow colour of the [ShortDesc of noun]. You feel a bit more desperate to go to the loo...";
 	BladderUp 2.
+
+bag-feeding-heels is a bag-feeding-effect.
+Definition: bag-feeding-heels is appropriate:
+	if the noun is heels:
+		let C be a random worn heels;
+		if the heel-height of C > 0 and the heel-height of C < 8, decide yes;
+	decide no.
+To execute (E - bag-feeding-heels):
+	let C be a random worn heels;
+	increase the heel-height of C by 1;
+	say "Your bag reacts to the high heels of the [ShortDesc of noun]. You feel [if the player is upright]yourself raised another inch off of the ground as [end if]your [ShortDesc of C] grow from [heel-height of C - 1] to [heel-height of C] inch heels!";
 
 bag-feeding-pink-theme is a bag-feeding-effect.
 Definition: bag-feeding-pink-theme is appropriate:

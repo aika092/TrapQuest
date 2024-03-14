@@ -76,7 +76,8 @@ A later time based rule (this is the robo vacuum cleaner rule):
 		let F be vagina;
 		if the player is possessing a penis or the player is not possessing a vagina, now F is asshole;
 		if the player is upright and robo vacuum cleaner is not penetrating a fuckhole:
-			if black hood is worn and black hood is not blessed:
+			let H be a random worn hood;
+			if H is a thing and (H is trainee hood or H is not blessed):
 				now availableForBagDuty is true;
 			otherwise if black hood is off-stage and black hood is actually summonable and the number of pussy covering clothing is 0 and F is not actually occupied and the number of worn unremovable shoes is 0 and skirted-maid-corset is unclash summonable:
 				now availableForBagDuty is true;
@@ -93,7 +94,7 @@ A later time based rule (this is the robo vacuum cleaner rule):
 			if there is pussy covering clothing or F is actually occupied or (there is worn unremovable shoes and the number of worn heels is 0) or skirted-maid-corset is not unclash summonable:
 				say "But then it suddenly stops, seeming to realise it is unable to do what it was intending to. That's... probably a good thing.";
 			otherwise:
-				if black hood is not worn:
+				if the number of worn hoods is 0:
 					say "A black hood appears over your head![line break][variable custom style]Eek![roman type][line break]";
 					summon black hood cursed;
 				unclash class summon skirted-maid-corset;
@@ -108,7 +109,7 @@ A later time based rule (this is the robo vacuum cleaner rule):
 		otherwise if fluidRemaining > 0:
 			let collecting be nothing;
 			say "[BigNameDesc of robo vacuum cleaner] hums loudly as it hovers over the puddle of [if the semen-puddle of (the location of robo vacuum cleaner) > 0][semen] [end if][if the semen-puddle of (the location of robo vacuum cleaner) > 0 and (the urine-puddle of (the location of robo vacuum cleaner) > 0 or the milk-puddle of (the location of robo vacuum cleaner) > 0)]and [end if][if the urine-puddle of (the location of robo vacuum cleaner) > 0][urine] [end if][if the urine-puddle of (the location of robo vacuum cleaner) > 0 and the milk-puddle of (the location of robo vacuum cleaner) > 0]and [end if][if the milk-puddle of (the location of robo vacuum cleaner) > 0][milk] [end if]in this room, sucking [if fluidRemaining > 6]some[otherwise]all[end if] of it up into the clear tube.";
-			if robo vacuum cleaner is not penetrating face or black hood is not worn or black hood is blessed:
+			if robo vacuum cleaner is not penetrating face or (trainee hood is not worn and the number of worn unblessed hoods is 0):
 				if robo vacuum cleaner is penetrating a fuckhole: [if there's something penetrating face that's not going to leave willingly, we are going to get into an infinite loop]
 					let C be a random clothing penetrating face;
 					if C is clothing and C is not autoremovable:
@@ -125,7 +126,8 @@ A later time based rule (this is the robo vacuum cleaner rule):
 				truncate LV to 8 entries;
 				repeat with V running through LV:
 					set next numerical response to "direct the tube into the [ShortDesc of V][if the doses of V > 0] (You'll lose its current contents of [PotionType of V])[end if]";
-				compute multiple choice question;
+				if robo vacuum cleaner is not penetrating face and the player is in danger, now player-numerical-response is 0;
+				otherwise compute multiple choice question;
 				if player-numerical-response is 0:
 					now robo vacuum cleaner is not penetrating face;
 				otherwise if the chosen numerical response matches the text "other end of the tube in your mouth":
@@ -220,6 +222,10 @@ A later time based rule (this is the robo vacuum cleaner rule):
 					if robo vacuum cleaner is penetrating face:
 						now robo vacuum cleaner is not penetrating face;
 						say "Now that your hood is blessed, [bold type]you feel the tube's seal with your ring gag released, [roman type]and it slips out of your mouth to the ground!";
+						if H is trainee hood:
+							now the charge of H is 100;
+							now the training-progress of H is 3;
+							compute unique periodic effect of H;
 			otherwise:
 				if the patrol of robo vacuum cleaner > the number of entries in LR, now the patrol of robo vacuum cleaner is 1;
 				let R1 be entry (patrol of robo vacuum cleaner) in LR;

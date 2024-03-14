@@ -1491,7 +1491,7 @@ Figure of chess cutscene 4 is the file "Special/TQChess/playerlosspiss.jpg".
 
 To decide which figure-name is the examine-image of (C - chess table):
 	if the chess-victor of chess-lesson is 0, decide on figure of chess table;
-	if C is grabbing the player and the map-window is g-present and the focus-window is g-present, decide on figure of no-image-yet; [In this situation we put the image in the map window]
+	if C is grabbing the player and the graphics-window is g-present, decide on figure of no-image-yet; [In this situation we put the image in the map window]
 	decide on chess-table-image.
 
 To decide which figure-name is chess-table-image:
@@ -1591,6 +1591,7 @@ To compute teaching of (L - chess-lesson):
 	if ST is nothing, now ST is a random student in the location of the player;
 	say "After a couple of moments [NameDesc of ST] rises to [his of ST] feet, audibly gulping but with a serious and determined expression on [his of ST] face. But nobody else seems willing to join [him of ST]. It looks like this 'high-stakes speed chess' game is only going to happen if you volunteer to be [NameDesc of ST][']s opponent. Do you take up the challenge? ";
 	if the player is bimbo consenting:
+		now temporaryYesNoResetNeeded is false;
 		now temporaryYesNoBackground is Figure of no-image-yet; [forces normal map to be drawn during multiple choice, which in turn forces chess state render to be drawn instead]
 		say "You stand.";
 		repeat with FST running through students in the location of the player:
@@ -1679,7 +1680,7 @@ To compute chess time:
 		if the student-bowl-fill of chess-lesson is 3, now the student-bowl-fill of chess-lesson is 2;
 		otherwise decrease the student-bowl-fill of chess-lesson by 2;
 		if watersports fetish is 1, increase the student-urine of chess-lesson by 1;
-		increase the the student-drink-tolerance of chess-lesson by 1;
+		increase the student-drink-tolerance of chess-lesson by 1;
 	if the chess-victor of chess-lesson is 0:
 		if chess-turn of chess-lesson is 0: [Who's getting filled?]
 			increase the player-bowl-fill of chess-lesson by 2;
@@ -1708,7 +1709,7 @@ To compute chess time:
 			say "[bold type]The dildo machine in [student-name of ST][']s [F] [if the student-machine of chess-lesson is 1]keeps destroying [his of ST] [F][otherwise]begins to piston in and out of [his of ST] [F] with brutal speed and force[end if]![roman type][line break]";
 			now the student-machine of chess-lesson is 1;
 			increase the student-orgasm of chess-lesson by 8;
-			decrease the the student-drink-tolerance of chess-lesson by 2;
+			decrease the student-drink-tolerance of chess-lesson by 2;
 			if the student-orgasm of chess-lesson > a random number between 30 and 60, compute chess win;
 		otherwise if the student-machine of chess-lesson is 1:
 			now the student-machine of chess-lesson is 0;
@@ -2078,7 +2079,7 @@ To compute chess win reward:
 	now nurse is in School11;
 	now receptionist is in School01;
 	now headmistress is in School08;
-	now temporaryYesNoBackground is figure of small image.
+	temporaryYesNoBackgroundReset.
 
 To compute chess loss punishment:
 	let F be a random fuckhole penetrated by chess table;
@@ -2102,7 +2103,7 @@ To compute chess loss punishment:
 	now nurse is in School11;
 	now receptionist is in School01;
 	now headmistress is in School08;
-	now temporaryYesNoBackground is figure of small image.
+	temporaryYesNoBackgroundReset.
 
 An all time based rule (this is the chess table taunting rule):
 	if chess table is grabbing the player and the chess-victor of chess-lesson is 2:
@@ -2268,7 +2269,7 @@ A game universe initialisation rule:
 
 This is the other ultimate students get focused rule:
 	if the player is in DiamondLessonBlindfolded:
-		repeat with T running through people in the the location of (the lesson-teacher of ultimate-lesson):
+		repeat with T running through people in the location of (the lesson-teacher of ultimate-lesson):
 			focus-consider T.
 The other ultimate students get focused rule is listed in the focus finding rules.
 
@@ -3024,13 +3025,15 @@ student-abbi is a nasty student.
 
 The text-shortcut of student-abbi is "stab".
 
-Figure of abbi is the file "NPCs/School/Student/student11a.jpg".
+Figure of abriana is the file "NPCs/School/Student/student11a.jpg".
+Figure of abbi is the file "NPCs/School/Student/student11b.jpg".
 
 To decide which figure-name is the monster-image of (M - student-abbi):
-	decide on figure of abbi.
+	if the current-rank of M > 2, decide on figure of abbi;
+	decide on figure of abriana.
 
 To say MonsterDesc of (M - student-abbi):
-	say "This thicc [man of M] has light brown hair and is wearing a sexy sheer top with matching tartan miniskirt and tie. [big his of M] giant K-cup breasts hang down in front of [him of M] like giant udders, [his of M] sheer black top lewdly exposing 80% of [his of M] titty meat and hardly supporting the rest. [big he of M] always seems to be idly sucking on a lollipop, and never seems to look happy.".
+	say "This thicc [man of M] has light brown hair and is wearing a sexy sheer top with matching tartan miniskirt and tie. [big his of M] giant K-cup breasts hang down in front of [him of M] like giant udders, [his of M] sheer black top lewdly exposing 80% of [his of M] titty meat and hardly supporting the rest. [big he of M] [if the current-rank of M is 2]always seems to be idly sucking on a lollipop, and never seems to look happy[otherwise if a2m fetish > 0]seems to have taken to keeping [his of M] lollipop in [his of M] asshole whenever [he of M][']s not sucking on it[otherwise]seems to now wear [his of M] lollipop as some kind of lewd makeshift butt plug[end if].".
 
 The min-rank of student-abbi is 2.
 The max-rank of student-abbi is 4.
@@ -3048,11 +3051,11 @@ To update name of (M - student-abbi):
 	otherwise if the current-rank of M is 3:
 		now the student-name of M is "Abbi";
 		if weight gain fetish is 1, now the student-print of M is "gluttonous guzzler";
-		otherwise now the student-print of M is "massive moocow";
+		otherwise now the student-print of M is "luscious [if a2m fetish > 0]ass[end if]licker";
 	otherwise:
 		now the student-name of M is "Absinthe";
 		if weight gain fetish is 1, now the student-print of M is "gluttonous gobbler";
-		otherwise now the student-print of M is "greedy gobbler".
+		otherwise now the student-print of M is "greedy [if a2m fetish > 0]ass [end if]gobbler".
 
 To say FirstResponse of (M - student-abbi):
 	say "[speech style of M]'Fuck off.'[roman type][line break]".
@@ -3069,13 +3072,13 @@ To say WhereAnswer of (M - student-abbi):
 student-interaction-abbi-lollipop is a student-interaction. student-interaction-abbi-lollipop is repeatable.
 
 Definition: student-interaction-abbi-lollipop is student-eligible:
-	if diaper quest is 0 and current-monster is student-abbi and face is not actually occupied, decide yes;
+	if diaper quest is 0 and current-monster is student-abbi and grossness fetish > 0 and (the current-rank of student-abbi is 2 or a2m fetish > 0) and face is not actually occupied, decide yes;
 	decide no.
 
 To resolve (SI - student-interaction-abbi-lollipop):
 	let M be current-monster;
 	let trap-lollipop be false;
-	if a random number between 1 and 4 < the current-rank of M, now trap-lollipop is true;
+	if a random number between 1 and 2 < the current-rank of M, now trap-lollipop is true;
 	say "[BigNameDesc of M] offers you a lollipop.[line break][speech style of M]'Have a lick!'[roman type][line break]Do you have a lick?";
 	if the player is bimbo consenting:
 		if trap-lollipop is true:
@@ -3207,13 +3210,13 @@ student-darla is a nasty student.
 
 The text-shortcut of student-darla is "stda".
 
-Figure of darla is the file "NPCs/School/Student/student14.png".
+Figure of darla is the file "NPCs/School/Student/student14.jpg".
 
 To decide which figure-name is the monster-image of (M - student-darla):
 	decide on figure of darla.
 
 To say MonsterDesc of (M - student-darla):
-	say "This tall babe looks like the pinnacle of traditional western beauty. [big his of M] perfect skinny body is covered only by a lovely pink negligee with criss-crossing straps down the front which leave [if lady fetish is 2][his of M] toned belly on display, and the tiny bulge of [his of M] [DickDesc of M] just shy of popping out[otherwise]most of [his of M] toned belly and C-cup breasts on show[end if]. [big he of M] is holding up [his of M] thick flowing locks of golden hair and looking at you with meanness in [his of M] eyes.".
+	say "This tall babe looks like the pinnacle of traditional western beauty. [big his of M] perfect skinny body is covered only by a lovely pink negligee thin spaghetti straps down the front which leave [if lady fetish is 2][his of M] toned belly on display, and the tiny bulge of [his of M] [DickDesc of M] just shy of popping out[otherwise]all of [his of M] thighs and a lot of cleavage of [his of M] incredible F-cup breasts on show[end if]. [big he of M] is holding up [his of M] thick flowing locks of golden hair and looking at you with meanness in [his of M] eyes.".
 
 The min-rank of student-darla is 2.
 The max-rank of student-darla is 3.
@@ -3232,19 +3235,17 @@ To say StoryAnswer of (M - student-darla):
 
 Book - Belinda
 
-student-belinda is a nasty student.
+student-belinda is a nasty student. student-belinda has a number called scrunchies-donated.
 
 The text-shortcut of student-belinda is "stbe".
 
-Figure of belinda is the file "NPCs/School/Student/student15a.png".
-Figure of belle is the file "NPCs/School/Student/student15b.png".
+Figure of belinda is the file "NPCs/School/Student/student15.jpg".
 
 To decide which figure-name is the monster-image of (M - student-belinda):
-	if the current-rank of M is 1, decide on figure of belinda;
-	otherwise decide on figure of belle.
+	decide on figure of belinda.
 
 To say MonsterDesc of (M - student-belinda):
-	say "This skinny [man of M] has blonde pigtails and an unfriendly frown. [big he of M] is wearing a tight purple belly-exposing latex top with a cleavage window and purple latex pants[if the current-rank of M > 1]. [big he of M] has a tattoo that reads 'Daddy's [big boy of M]' on [his of M] left arm, and you could swear [his of M] top is a little more translucent than before[end if].".
+	say "This skinny [man of M] has blonde pigtails and an unfriendly scowl. [big he of M] is wearing a tight indigo belly-exposing latex top with a diamond-shaped cleavage window and matching latex pants and long fingerless gloves[if the current-rank of M > 1]. [big he of M] has a tattoo that reads 'Daddy's [big boy of M]' on [his of M] left arm, and you could swear [his of M] top is a tiny bit more translucent than before[end if][if the scrunchies-donated of M is 0]. [big he of M] has two spare scrunchies on [his of M] wrist[otherwise]. [big he of M] has one spare scrunchie left on [his of M] wrist[end if].".
 
 The max-rank of student-belinda is 2.
 
@@ -3258,6 +3259,33 @@ To update name of (M - student-belinda):
 
 To say StoryAnswer of (M - student-belinda):
 	say "[speech style of M]'My boyfriend wants me to call him 'Daddy' [if the current-rank of M is 1]but I'm not too sure. Apparently this place is going to convince me it's fun to act like a bratty [sissy-girl]. We'll see...'[otherwise]and I'm training to be his bratty babygirl. I think I've got the attitude for this role already, hah!'[end if][roman type][line break]".
+
+student-interaction-belinda-scrunchie is a student-interaction. student-interaction-belinda-scrunchie is repeatable.
+
+Definition: student-interaction-belinda-scrunchie is student-eligible:
+	if current-monster is student-belinda and the scrunchies-donated of student-belinda < 2:
+		let C be a random off-stage pink scrunchie;
+		if C is a thing:
+			if the number of worn pink scrunchies is 1, decide yes;
+			if C is actually summonable, decide yes;
+	decide no.
+
+To resolve (SI - student-interaction-belinda-scrunchie):
+	let M be current-monster;
+	say "[BigNameDesc of M] takes a pink scrunchie off of [his of M] wrist.[line break][speech style of M]'You look so cringe! Here, please wear this. It'll make you so much less of a dork!'[roman type][line break]Do you wear the scrunchie?";
+	if the player is bimbo consenting:
+		say "You let [NameDesc of M] style your hair with the scrunchie.";
+		let C be a random off-stage pink scrunchie;
+		summon C cursed;
+		say "[speech style of M]'Hahaha! Yes! That is MUCH better! You're still a fucking weirdo on the inside, but at least you can look stylish and cool on the outside.'[roman type][line break]";
+		increase the scrunchies-donated of M by 1;
+		satisfy M;
+	otherwise:
+		say "You shake your head and pull away. That is not your idea of an appealing addition to your outfit. [BigNameDesc of M] frowns.[line break][speech style of M]'Goddamn, and there I was trying to be nice for once. You really are a stone cold bitch.'[roman type][line break][BigNameDesc of M] sticks [his of M] middle finger up towards you, and stalks away.";
+		HappinessDown M by 1;
+		say BecomesBoredFlav of M;
+		bore M.
+
 
 Book - Hiroko
 

@@ -220,6 +220,6 @@ To compute resolution of (M - mirror-maiden):
 	now the source-room of Iron Maiden is the location of the player;[In case the player faints]
 	now the player is in Iron Maiden;
 	cutshow the examine-image of iron-maiden;
-	refresh the map-window.
+	refresh map zone.
 
 Haunted Mirror Trap ends here.

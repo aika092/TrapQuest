@@ -171,7 +171,7 @@ The gropability rules is a rulebook.
 To decide which number is total gropability:
 	let N be 0;
 	repeat with B running through body parts:
-		let G be the the gropability of B;
+		let G be the gropability of B;
 		if G > 0, increase N by G;
 	decide on N.
 
@@ -973,7 +973,7 @@ To compute SeductionMasturbateClimax of (M - a monster):
 		otherwise if the class of the player is "stripper": [base class only]
 			let H be a random worn headgear;
 			if H is headgear, transform H into handmaiden-headdress;
-		if handmaiden-headdress is worn, say "[if the bimbo of the player < 11][variable custom style]This game has a class that specializes in giving HANDJOBS?![otherwise][second custom style]More like handJOBmaiden, hee-hee![end if][roman type][line break]";
+		if handmaiden-headdress is worn, say "[if the bimbo of the player < 11][variable custom style]This game has a class that specialises in giving HANDJOBS?![otherwise][second custom style]More like handJOBmaiden, hee-hee![end if][roman type][line break]";
 	progress quest of greet-quest.
 
 To compute FirstTurnSeduceGrindAnnounce of (M - a monster):

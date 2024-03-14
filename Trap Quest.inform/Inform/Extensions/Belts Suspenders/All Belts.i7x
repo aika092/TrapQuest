@@ -99,7 +99,7 @@ To decide which object is the coverer of (C - a suspenders):
 	decide on nothing.
 
 To decide which object is the concealer of (C - a suspenders):
-	repeat with R running through worn actually dense knee-length or longer clothing:
+	repeat with R running through worn actually dense short or longer clothing:
 		if R is crotch-in-place, decide on R;
 	repeat with R running through worn actually dense leg covering clothing:
 		if (R is trousers or R is overdress) and R is crotch-in-place, decide on R;

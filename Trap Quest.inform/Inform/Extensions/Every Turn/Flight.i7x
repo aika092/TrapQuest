@@ -50,7 +50,7 @@ To compute takeoff:
 		otherwise:
 			class summon flight-attendant-top;
 		class summon flight-attendant-skirt;
-	refresh the map-window;
+	refresh map zone;
 	now the alert of the player is 1. [You stop resting]
 
 To compute landing:

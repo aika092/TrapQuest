@@ -209,7 +209,7 @@ Definition: bunny socks is transformation-protected:
 	if the class of the player is bunny, decide yes;
 	decide no.
 
-bunny stockings is a stockings. bunny stockings is leather. bunny stockings is dense. The text-shortcut of bunny stockings is "bnns".
+bunny stockings is a stockings. bunny stockings is leather. bunny stockings is unique. bunny stockings is dense. The text-shortcut of bunny stockings is "bnns".
 
 Figure of bunny stockings is the file "Items/Clothes/Lower/Legs/bunnystockings1.png".
 
@@ -873,6 +873,10 @@ To uniquely destroy (C - black-lace-stockings):
 	now C is not monified.
 
 [Carry out taking black-lace-stockings:
+	if takingStuff is false:
+		allocate 2 seconds;
+		allocate arm use to the noun;
+	now takingStuff is true; [The player can take several items in the same turn without penalty with "take all"]
 	if the noun is in Hotel20 and the player is getting unlucky, now the noun is provocation.]
 
 

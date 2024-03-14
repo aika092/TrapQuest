@@ -45,6 +45,13 @@ Report pushing the big red button:
 Understand "press [something]" or "prod [something]" as touching.
 The report pushing rule is not listed in the report pushing rulebook.
 
+To construct unique buttons for (T - big red button):
+	if ButtonTableFull is 0:
+		choose a blank row in the Table of Buttons;
+		now the ButtonImage entry is Figure of PokeButton;
+		now the ButtonCommand entry is "push [text-shortcut of T]";
+		now the ButtonColour entry is lightModeFullGreen.
+
 [!<holdingPen:Room>*
 
 Put stuff here that's in stasis, maybe it's held by an NPC or something

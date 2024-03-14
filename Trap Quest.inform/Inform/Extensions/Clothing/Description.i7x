@@ -9,9 +9,6 @@ To decide which figure-name is the examine-image of (C - a clothing):
 To say ExamineDesc of (C - a clothing):
 	say ClothingDesc of C.
 
-[To say ImageDesc of (C - a clothing):
-	if images visible is 1, appropriate-display examine-image of C for C with priority 3.]
-
 To say MediumDesc of (C - a clothing):
 	say AppearanceDesc of C;
 	say ShortDesc of C.
@@ -185,8 +182,8 @@ To say InfluenceDesc of (C - a wearthing):
 			if the rectum-incontinence-influence of C > 0, say "You can sense that this [item of C] is making it [if the rectum-incontinence-influence of C > 1]much [end if]more difficult for you to hold it when you need to poop.";
 			if the rectum-incontinence-influence of C < 0, say "You can sense that this [item of C] is making you [if the rectum-incontinence-influence of C < 1]significantly [end if]better at avoiding messing yourself.";
 	let SDI be the slap damage improvement of C;
-	if SDI < 0, say "You can sense that this [item of C] is making your slap attacks [if SDI < -1]much [end if]weaker[if C is not slap ready and there is a worn slap ready clothing]... Or rather, it would be, if you weren't wielding [NameDesc of a random worn slap ready clothing][end if].";
-	if SDI > 0, say "You can sense that this [item of C] is making your slap attacks [if SDI > 1]much [end if]stronger[if C is not slap ready and there is a worn slap ready clothing]... Or rather, it would be, if you weren't wielding [NameDesc of a random worn slap ready clothing][end if].";
+	if SDI < 0, say "You can sense that this [item of C] is making your slap attacks [if SDI < -1]much [end if]weaker[if C is not slap ready and there is a worn slap ready clothing and the class of the player is not chosen one]... Or rather, it would be, if you weren't wielding [NameDesc of a random worn slap ready clothing][end if].";
+	if SDI > 0, say "You can sense that this [item of C] is making your slap attacks [if SDI > 1]much [end if]stronger[if C is not slap ready and there is a worn slap ready clothing and the class of the player is not chosen one]... Or rather, it would be, if you weren't wielding [NameDesc of a random worn slap ready clothing][end if].";
 	if the knee-modifier of C < 0 and there are worn stockings, say "You can sense that this [item of C] is making your knee attacks [if the knee-modifier of C < -1]much [end if]weaker.";
 	if the knee-modifier of C > 0 and there are worn stockings, say "You can sense that this [item of C] is making your knee attacks [if the knee-modifier of C > 1]much [end if]stronger.";
 	if the anal sensitivity influence of C > 0 and diaper quest is 0, say "You feel like this [item of C] is making your [asshole] [if the anal sensitivity influence of C > 1]much [end if]more receptive to pleasurable stimulation.";

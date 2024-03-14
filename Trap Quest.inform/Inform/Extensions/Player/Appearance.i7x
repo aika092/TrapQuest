@@ -13,6 +13,7 @@ To explain appearance:
 To decide which number is the appearance of the player: [Update values first. Forces a new line if triggered in the middle of a sentence; consider just using saved appearance and fingers crossed it's not horribly inaccurate.]
 	[potentially update appearance and cringe levels;]
 	if lagdebug is true, say "CHECKING APPEARANCE. ";
+	if lake-swimming is true, decide on 3;
 	decide on the saved appearance of the player.
 
 To decide which number is the saved appearance of the player: [When an NPC looks at the player, how slutty do they look?]

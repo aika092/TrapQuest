@@ -265,7 +265,7 @@ Definition: assless fetish hobble dress is end of transformation chain: decide y
 
 Part 9 - Assless Fetish Dress
 
-assless-fetish-dress is a fetish dress. assless-fetish-dress is crotch-skirted. assless-fetish-dress is fully covering. assless-fetish-dress is butt-windowed. assless-fetish-dress is transformation-rare. The text-shortcut of assless-fetish-dress is "ald".
+assless-fetish-dress is a fetish dress. assless-fetish-dress is crotch-skirted. assless-fetish-dress is neck covering. assless-fetish-dress is only arm covering. assless-fetish-dress is fully covering. assless-fetish-dress is butt-windowed. assless-fetish-dress is transformation-rare. The text-shortcut of assless-fetish-dress is "ald".
 
 To say MediumDesc of (C - assless-fetish-dress):
 	say "assless latex fetish dress".
@@ -331,7 +331,7 @@ Definition: pink-and-blue translucent fetish dress is class-relevant: decide yes
 
 Part 100 - Fetish Baby Dress
 
-fetish baby dress is a fetish dress. fetish baby dress is short. fetish baby dress is transformation-rare. The text-shortcut of fetish baby dress is "fbbd".
+fetish baby dress is a fetish dress. fetish baby dress is short. fetish baby dress is not-top-displacable. fetish baby dress is transformation-rare. The text-shortcut of fetish baby dress is "fbbd".
 
 To say MediumDesc of (C - fetish baby dress):
 	say "cream latex fetish [if diaper lover > 0]baby [end if]dress".

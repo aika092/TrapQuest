@@ -1501,10 +1501,10 @@ To compute strength (pain-factor - a number) spanking:
 				moderateHumiliate;
 				decrease pain-factor by 1;
 			if diaper-stack is worn, now pain-factor is 0;
-			decrease pain-factor by (the DQBulk of D + 2) / 2;
+			decrease pain-factor by (the DQBulk of D + 3) / 3;
 		if a random number between 0 and 2 < pain-factor:
 			say "The spanks [if the number of ass covering clothing is 0]collide painfully with your bare ass cheeks[otherwise]still [one of]hurt[or]make you squeal[or]cause you to whimper[at random], even through your clothing[end if]. ";
-			PainUp 10;
+			PainUp pain-factor * 5;
 		otherwise:
 			if there is ass covering clothing, say "Thanks to your [if diaper-stack is worn or the DQBulk of the player > 3]extra-thick padding[otherwise if D is diaper]layer of padding[otherwise][random top level ass protection clothing][end if], you manage to tolerate the [one of]pain[or]punishment[cycling].";
 			otherwise say "You suffer silently through the pain.";

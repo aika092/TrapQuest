@@ -384,6 +384,10 @@ To say NewbieMagicSpells:
 Section - Pedestals
 
 Carry out taking museum-store thing:
+	if takingStuff is false:
+		allocate 2 seconds;
+		allocate arm use to the noun;
+	now takingStuff is true; [The player can take several items in the same turn without penalty with "take all"]
 	if the location of the player is mansion28 and lipstick collar is worn and the player is getting unlucky:
 		let V be vampiress;
 		now the collar-ready of V is -15;[she'll chase a long time]
@@ -515,7 +519,7 @@ To add treasure to (X - a pedestal): [This function should happen when the mansi
 To BackgroundRender (T - a pedestal) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
 	let C be a random thing in T;
 	if C is a thing: [We have some fixed values here because there's a specific area we want to render inside, from (149,40) to (251,160)]
-		[let W be the current focus window;
+		[let W be the graphics-window;
 		focus the main window;
 		say "Area to render in is [X1] by [Y1] with dimensions [DX] by [DY].";]
 		let X1R be X1 + ((DX * 149.0) / 400.0);
@@ -543,7 +547,7 @@ To BackgroundRender (T - a pedestal) at (X1 - a number) by (Y1 - a number) with 
 		now DY is DYR to the nearest whole number;
 		[say "Rendering the figure of [C] at [X1] by [Y1] with dimensions [DX] by [DY].";
 		focus W;]
-		display the image F in the current focus window at X1 by Y1 with dimensions DX by DY.
+		display the image F in the graphics-window at X1 by Y1 with dimensions DX by DY.
 
 Check drinking a pedestal:
 	unless the noun is erect, say "How would you drink that?" instead;

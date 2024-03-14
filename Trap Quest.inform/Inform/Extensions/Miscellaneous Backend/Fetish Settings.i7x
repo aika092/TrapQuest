@@ -99,6 +99,7 @@ choice
 0 [hungry messer]
 1 [slower timers]
 0 [player futanari fetish]
+0 [fantastic elastic]
 
 [!<DecideWhichNumberIsOriginalPlayerGender>+
 
@@ -228,9 +229,9 @@ To decide which number is bondage protection:
 	decide on the choice in row 64 of the Table of Player Options.
 
 To decide which number is christmas content:
-	[if the player is not a top donator, decide on 0;]
-	if choice in row 65 of the Table of Player Options < 6, decide on 1;
-	decide on 0.
+	if the player is not a top donator, decide on 0;
+	if choice in row 65 of the Table of Player Options < 7, decide on 0;
+	decide on 1.
 
 To decide which number is easter content:
 	if the player is not a top donator or diaper quest is 0, decide on 0;
@@ -292,6 +293,10 @@ To decide which number is super gag reflex:
 	if diaper quest is 1, decide on 0;
 	if choice in row 82 of the Table of Player Options <= 0, decide on 0;
 	otherwise decide on choice in row 82 of the Table of Player Options.
+
+To decide which number is fantastic elastic:
+	if choice in row 89 of the Table of Player Options <= 0, decide on 0;
+	decide on choice in row 89 of the Table of Player Options.
 
 [
 0: Minimal grossness
@@ -408,6 +413,7 @@ To decide which number is points count:
 	decrease X by roleplay fetish;
 	decrease X by (bonus liquid * (1 + bonus liquid)) / 2;
 	decrease X by combatvisor;
+	decrease X by fantastic elastic;
 	if slower timers is 2, decrease X by 2;
 	if diaper quest is 0:
 		if supportersEnabled is 0, decrease X by 1;

@@ -42,7 +42,7 @@ A graphlink processing rule for a g-element (called the link) (this is the Aika 
 		if PopupButtons > 0 and the candidate replacement command exactly matches the regular expression "x .*": [When we would normally examine something, we want to instead pull up the popup buttons. Unless they're already pulled up and the player has clicked on the examine button, in which case we want to actually do the action.]
 			[do nothing;]
 			if debugmode > 1, say "[bold type]Doing nothing, expecting buttons.[roman type][line break]";
-		otherwise if waitingForChar is false:
+		otherwise if waitingForChar is false: [output the replacement command as normal]
 			cancel input in main window;
 			now the glulx replacement command is the candidate replacement command;
 			follow the command-showing rules;
@@ -67,7 +67,7 @@ A graphlink processing rule for a g-element (called the link) (this is the Aika 
 				now the glk event value 1 is 110;
 				say "[bold type]No[roman type][line break]";
 				now waitingForChar is false;
-		now the the glk event window ref is the ref number of the acting main window;
+		now the glk event window ref is the ref number of the acting main window;
 		now the candidate replacement command is "";
 		rule succeeds.
 
@@ -98,7 +98,7 @@ First for processing hyperlinks (This is the Aika char-inject with hyperlinks ru
 Part 1 - Basic Links
 
 To decide which number is linksCurrentlyEnabled:
-	if (links-disabled is true and inventory hyperlinks is 0) or (excessiveHyperlinks is 0 and inventory-busy is 0 and the focus-window is g-present and the clothing-focus-window is g-present and (the inventory-focus-window is g-present or the inventory-window is g-present) and the map-window is g-present), decide on 0;
+	if (links-disabled is true and inventory hyperlinks is 0) or (excessiveHyperlinks is 0 and the graphics-window is g-present), decide on 0;
 	decide on 1.
 
 disambiguation-busy is initially false.
@@ -185,7 +185,7 @@ To say yesnolink:
 Figure of YesButton is the file "Special/Buttons/yes.png".
 Figure of NoButton is the file "Special/Buttons/no.png".
 
-currentlyConsenting is initially false.
+currentlyConsenting is a number that varies. [0: Not asking the player a question; 1: Asking the player a yes/no question; 2: Asking the player a multiple choice question]
 
 Definition: a text (called T) is consent-responsive:
 	if T exactly matches the text "yes", case insensitively:
@@ -208,13 +208,12 @@ Definition: a number (called N) is consent-responsive:
 	decide no.
 
 Definition: yourself is consenting:
-	now currentlyConsenting is true;
-	refresh the map-window;
+	now currentlyConsenting is 1;
+	refresh map zone;
 	force immediate inventory-focus redraw;
 	let inputNumber be 0;
 	while inputNumber is not consent-responsive:
 		say yesnolink;
-		display focus stuff;
 		if the player is virtual, display stuff;
 		now inputNumber is the chosen letter;
 		say line break;
@@ -233,16 +232,26 @@ bigGameLoop is a number that varies. [If this is above 0, we are flagging that a
 ]
 
 To conclude consenting:
-	now currentlyConsenting is false;
+	now currentlyConsenting is 0;
 	if gameover-flag is 0:
+		[say "temporaryYesNoBackground is [temporaryYesNoBackground]. temporaryYesNoResetNeeded is [if temporaryYesNoResetNeeded is false]not [end if]true.";]
+		if temporaryYesNoResetNeeded is true and temporaryYesNoBackground is not figure of no-image-yet, now temporaryYesNoBackground is figure of small image;
 		zero focus stuff; [We empty the focus window to make sure it is rebuilt properly. By being forced to pause and choose an option, the player has seen any cutscenes, NPCs that left, etc.]
 		repeat with G running through g-paused animation tracks:
 			now G is g-unpaused;
 		if bigGameLoop is 0 or (bigGameLoop is not 2 and bigGameLoop is not 4 and temporary-map-figure is not figure of no-image-yet):
-			refresh the map-window;
+			refresh map zone;
 		otherwise:
-			clear the map-window; [if we don't do this, and we use both Yes/No questions and multiple choice questions in the same big game loop, we get some ugly overlaps in the map window]
+			clear the map zone; [if we don't do this, and we use both Yes/No questions and multiple choice questions in the same big game loop, we get some ugly overlaps in the map window]
 		if bigGameLoop < 3, render buffered stuff.
+
+To temporaryYesNoBackgroundReset:
+	let W be current focus window;
+	focus main window;
+	[say "temporaryYesNoBackgroundReset.";]
+	focus W;
+	now temporaryYesNoBackground is figure of small image;
+	now temporaryYesNoResetNeeded is true.
 
 [Works the same as normal consenting, but the player can be forced to say yes. Some things it'll be fun if the player can't say no after a while.]
 Definition: yourself is bimbo consenting:
@@ -264,55 +273,60 @@ Definition: yourself is reverse bimbo consenting:
 	otherwise:
 		decide no.
 
+temporaryYesNoResetNeeded is initially true.
+
 To render YesNoBackground:
 	let F be YesNoBackground;
 	if F is Figure of PokerCardDraw:
 		display poker interface;
 	otherwise if F is not Figure of no-image-yet:
-		let H be the height of the map-window;
-		let W be the width of the map-window;
+		let H be map-window-height;
+		let W be map-window-width;
 		repeat with G running through g-animated animation tracks:
-			now G is g-paused; [stops things like the need-to-use-toilet animations from animating on top]
+			now G is g-paused; [stops things like the need-to-use-toilet animations from animating on top] [GUITODO - might no longer be necessary]
 		let XRatio be (W * 1.0) / the pixel-width of F;
 		let FY be the pixel-height of F * XRatio;
 		let FYi be FY to the nearest whole number;
 		let FXi be W;
-		let X1 be 0;
+		let X1 be map-window-x-root;
 		let Y1 be 0;
 		if FYi > H:
 			let YRatio be (H * 1.0) / the pixel-height of F;
 			let FX be the pixel-width of F * YRatio;
 			now FXi is FX to the nearest whole number;
 			now FYi is H;
-			now X1 is (W - FXi) / 2; [centred horizontally]
+			increase X1 by (W - FXi) / 2; [centred horizontally]
 		otherwise:
-			now Y1 is (H - FYi) / 2; [centred vertically]
-		display the image F in the map-window at X1 by Y1 with dimensions FXi by FYi.
+			increase Y1 by (H - FYi) / 2; [centred vertically]
+		clear the map zone; [GUITODOMAYBE a bad idea?]
+		display the image F in the graphics-window at X1 by Y1 with dimensions FXi by FYi.
 
 To render YesNoButtons:
 	let F be YesNoBackground;
 	if F is Figure of no-image-yet, display entire map; [We have flagged that we still want to show the player the map in the background]
+	otherwise clear the map zone;
 	zero map-link-table;
 	zero map-button-table;
 	if F is Figure of PokerCardDraw:
 		display poker interface;
 	otherwise:
-		let H be the height of the map-window;
-		let W be the width of the map-window;
+		let H be map-window-height;
+		let W be map-window-width;
 		render YesNoBackground;
 		[Calculate button image sizes and locations]
 		let buttonSize be H / 3;
 		if W < H, now buttonSize is W / 3;
-		let X be (W - (buttonSize * 2)) / 3;
+		let Z be (W - (buttonSize * 2)) / 3;
+		let X be Z + map-window-x-root;
 		let Y be (H / 2) - (buttonSize / 2);
 		if actual inline hyperlinks >= 1 and YesNoPreference > 0:
-			display the image Figure of YesButton in the map-window at X by Y with dimensions buttonSize by buttonSize;
-			set a graphlink in the map-window identified as hypermapyes from X by Y to (X + buttonSize) by (Y + buttonSize) as "yes";
-			draw a box lightModeFullGreen in the map-window from X by Y to (X + buttonSize) by (Y + buttonSize) with 1 pixel line-weight, inset;
-			increase X by buttonSize + X;
-			display the image Figure of NoButton in the map-window at X by Y with dimensions buttonSize by buttonSize;
-			set a graphlink in the map-window identified as hypermapno from X by Y to (X + buttonSize) by (Y + buttonSize) as "no";
-			draw a box lightModeFullRed in the map-window from X by Y to (X + buttonSize) by (Y + buttonSize) with 1 pixel line-weight, inset;
+			display the image Figure of YesButton in the graphics-window at X by Y with dimensions buttonSize by buttonSize;
+			set a graphlink in the graphics-window identified as hypermapyes from X by Y to (X + buttonSize) by (Y + buttonSize) as "yes";
+			draw a box lightModeFullGreen in the graphics-window from X by Y to (X + buttonSize) by (Y + buttonSize) with 1 pixel line-weight, inset;
+			increase X by buttonSize + Z;
+			display the image Figure of NoButton in the graphics-window at X by Y with dimensions buttonSize by buttonSize;
+			set a graphlink in the graphics-window identified as hypermapno from X by Y to (X + buttonSize) by (Y + buttonSize) as "no";
+			draw a box lightModeFullRed in the graphics-window from X by Y to (X + buttonSize) by (Y + buttonSize) with 1 pixel line-weight, inset;
 			repeat through the Table of Graphlink Glulx Replacement Commands: [if there's a big skip hyperlink taking up the whole area, remove it]
 				if linkid entry is hypermapskip, blank out the whole row.
 
@@ -356,8 +370,8 @@ To compute multiple choice question:
 	let inputNumber be 0;
 	let validAnswer be 0;
 	while validAnswer is 0:
-		now currentlyConsenting is true;
-		unless YesNoBackground is Figure of PokerCardDraw and map-window is g-present: [no need for the text options if we also have the graphical option]
+		now currentlyConsenting is 2;
+		unless YesNoBackground is Figure of PokerCardDraw and graphics-window is g-present: [no need for the text options if we also have the graphical option]
 			repeat with E running from 1 to 10:
 				let N be E;
 				if N is 10, now N is 0;

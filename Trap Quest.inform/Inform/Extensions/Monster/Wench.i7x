@@ -700,11 +700,13 @@ To compute damaging attack of (M - a wench):
 
 [First damage, then stimulation.]
 To compute makeout attack of (M - a wench):
-	if the accuracy roll of M >= the dexterity of the player:[Is she accurate enough to grab you?]
-		say "[BigNameDesc of M] grabs your wrists before you can stop [him of M].[line break][speech style of M]'[one of]Kiss me, you fucking bitch!'[or]Get your fucking tongue in my mouth, whore!'[or]Wanna find out how [NameDesc of a random royal guard] tastes?'[or]If I get a mouthful of sex doll, so do you!'[or]Wanna taste my discount, skank?'[in random order][roman type][line break]";
+	if M is wrangling arms or the accuracy roll of M >= the dexterity of the player:[Is she accurate enough to grab you?]
+		say "[BigNameDesc of M] [if M is not wrangling arms]grabs your wrists and [end if]pulls you in close before you can stop [him of M].[line break][speech style of M]'[one of]Kiss me, you fucking bitch!'[or]Get your fucking tongue in my mouth, whore!'[or]Wanna find out how [NameDesc of shopkeeper] tastes?'[or]If I get a mouthful of sex doll, so do you!'[or]Wanna taste my discount, skank?'[in random order][roman type][line break]";
+		now M is wrangling arms;
 		if the strength roll of M >= the strength of the player:
-			say "[BigNameDesc of M]'s grip isn't strong, but you aren't strong either, so [he of M] locks lips with you before you can break free. [big his of M] tongue immediately enters your mouth, forcing you to taste remnants of [NameDesc of M]'s last blowjob.";
-			StomachSemenUp 1;
+			say "[BigNameDesc of M]'s grip isn't strong, but you aren't strong either, so [he of M] locks lips with you before you can wrestle your mouth away. [big his of M] tongue immediately penetrates your [LipDesc], forcing you to taste remnants of [NameDesc of M]'s last blowjob.";
+			TasteGrossOut 3;
+			compute addictive tasting of semen;
 			stimulate face from M;
 		otherwise:
 			say "[BigNameDesc of M]'s grip isn't very strong, and you wrench yourself free before [he of M] can kiss you.";
@@ -854,7 +856,7 @@ The monster convinced rule of a wench is usually the wench monster convinced rul
 
 To decide if (M - a wench) is flipping the player:
 	if the player is subdued, decide yes;
-	if presented-orifice is face or the player is live fucked or the reaction of the player > 0, decide yes;
+	if presented-orifice is face or the player is live fucked or the reaction of the player > 0 or M is friendly-fucking, decide yes;
 	let R be a random number between the difficulty of M * 3 and 27;
 	let B be the weight of the player + (the strength of the player / 3);
 	if debuginfo > 0, say "[input-style]Wench flip check: [if presented-orifice is face]player presented mouth = automatic success[otherwise if the player is subdued]player subdued by held clothing = automatic success[otherwise if M is friendly-fucking]player initiated sex = automatic success[otherwise]flip skill ([difficulty of M * 3]) ==> RNG([difficulty of M * 3]~27) = [R] | [B * 1].5 = ([weight of the player].5) player weight rating + ([strength of the player / 3]) player strength rating[end if][roman type][line break]";
@@ -866,9 +868,11 @@ To compute (M - a wench) entering mouth:
 	if milking is 1 or there is a monster wrangling a body part:
 		do nothing;
 	otherwise:
-		if presented-orifice is penis:
+		if M is friendly-fucking or presented-orifice is face or the reaction of the player > 0:
+			say "[BigNameDesc of M] guides you to roll over onto your back.";
+		otherwise if presented-orifice is penis:
 			say "[BigNameDesc of M] tries to shove you flat on your back!";
-		if the player is clit stuck:
+		otherwise if the player is clit stuck:
 			say "[BigNameDesc of M] yanks on your clit lead and forces you to roll over onto your back!";
 		otherwise:
 			say "[BigNameDesc of M] tries to roll you over onto your back!";
@@ -884,7 +888,7 @@ To compute (M - a wench) entering mouth:
 			let B be the weight of the player + (the strength of the player / 3);
 			say "[big he of M] doesn't manage it this time.";
 			if B > 22:
-				say "[big he of M] gives up, [if the the weight of the player >= the strength of the player / 3]your body is too heavy[otherwise]you are too strong[end if] for [him of M] to push over. [big he of M] leaves you lying on the ground[if the body soreness of the player > 6] panting heavily,[end if] and loses interest.";
+				say "[big he of M] gives up, [if the weight of the player >= the strength of the player / 3]your body is too heavy[otherwise]you are too strong[end if] for [him of M] to push over. [big he of M] leaves you lying on the ground[if the body soreness of the player > 6] panting heavily,[end if] and loses interest.";
 				bore M for 600 seconds.
 
 To say CommencingFacesitFlav of (M - a wench):

@@ -82,21 +82,22 @@ To decide which number is the health-colour of (M - a monster):
 	decide on (green-component * 256) + (red-component * 65536).
 
 To ForegroundRender (M - a monster) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
-	if M is alive and M is not dying:
-		now DX is DX / 20;
-		if DX < 4, now DX is 4;
-		increase X1 by 4;
-		increase Y1 by 4;
-		decrease DY by 8;
-		draw a rectangle 0 in the current focus window at X1 by Y1 with size DX by DY;
+	if M is alive and M is not dying[ and M is dangerous]:
+		increase Y1 by DY - (DY / 10);
+		now DY is DY / 20;
+		if DY < 4, now DY is 4;
+		increase X1 by DX / 10;
+		decrease Y1 by DY;
+		now DX is (DX * 4) / 5;
+		draw a rectangle 0 in the graphics-window at X1 by Y1 with size DX by DY;
 		let HP be the health of M;
 		if HP > the maxhealth of M, now HP is the maxhealth of M;
 		if HP < 0 or M is defeated, now HP is 0;
-		let HPR be (DY * HP) / the maxhealth of M;
+		let HPR be (DX * HP) / the maxhealth of M;
 		if HPR < 0, now HPR is 0;
-		increase Y1 by DY - HPR;
-		now DY is HPR;
-		draw a rectangle health-colour of M in the current focus window at (X1 + 1) by (Y1 + 1) with size (DX - 2) by (DY - 2).
+		[increase X1 by DX - HPR;]
+		now DX is HPR;
+		if DX > 0, draw a rectangle health-colour of M in the graphics-window at (X1 + 1) by (Y1 + 1) with size (DX - 2) by (DY - 2).
 
 [This is their main profile image, or 'bust'.]
 To decide which figure-name is the monster-image of (M - a monster):
@@ -104,13 +105,13 @@ To decide which figure-name is the monster-image of (M - a monster):
 
 To decide which figure-name is the sex-profile of (M - a monster):
 	if diaper quest is 0 and M is penetrating a body part:
-		if M is penetrating asshole, decide on anal-sex-monster-image of M;
-		if M is penetrating vagina, decide on vaginal-sex-monster-image of M;
-		if M is penetrating breasts, decide on titfuck-monster-image of M;
+		if M is penetrating asshole, decide on the anal-sex-monster-image of M;
+		if M is penetrating vagina, decide on the vaginal-sex-monster-image of M;
+		if M is penetrating breasts, decide on the titfuck-monster-image of M;
 		if M is penetrating face:
-			if M is getting-licked, decide on lick-monster-image of M;
-			if M is getting-asslicked, decide on asslick-monster-image of M;
-			decide on oral-sex-monster-image of M;
+			if M is getting-licked, decide on the lick-monster-image of M;
+			if M is getting-asslicked, decide on the asslick-monster-image of M;
+			decide on the oral-sex-monster-image of M;
 	decide on figure of Missing NPC. [Defaults back to the non-sex stuff.]
 
 Figure of anilingus 1 is the file "Special/Cutscene/cutscene-anilingus1.jpg".

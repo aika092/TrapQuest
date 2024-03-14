@@ -704,56 +704,56 @@ To compute monstermotion of (M - a royal guard):
 		check seeking 1 of M;
 	otherwise if a random number from 1 to 2 is 1 or M is in the location of the player:
 		if patrol of M is 0:
-			let D be the the best route from the location of M to Dungeon03 through labyrinth rooms;
+			let D be the best route from the location of M to Dungeon03 through labyrinth rooms;
 			if D is nothing:
 				now the patrol of M is 1;
 			otherwise if D is not the travel-opposite of the player or the room D from (the location of M) is not (the location of the player):
 				blockable move M to D;
 				if the location of M is Dungeon03, now patrol of M is 1;
 		otherwise if patrol of M is 1:
-			let D be the the best route from the location of M to Dungeon06 through labyrinth rooms;
+			let D be the best route from the location of M to Dungeon06 through labyrinth rooms;
 			if D is nothing:
 				now the patrol of M is 2;
 			otherwise if D is not the travel-opposite of the player or the room D from (the location of M) is not (the location of the player):
 				blockable move M to D;
 				if the location of M is Dungeon06, now patrol of M is 2;
 		otherwise if patrol of M is 2:
-			let D be the the best route from the location of M to Dungeon22 through labyrinth rooms;
+			let D be the best route from the location of M to Dungeon22 through labyrinth rooms;
 			if D is nothing:
 				now the patrol of M is 3;
 			otherwise if D is not the travel-opposite of the player or the room D from (the location of M) is not (the location of the player):
 				blockable move M to D;
 				if the location of M is Dungeon22, now patrol of M is 3;
 		otherwise if patrol of M is 3:
-			let D be the the best route from the location of M to Dungeon23 through labyrinth rooms;
+			let D be the best route from the location of M to Dungeon23 through labyrinth rooms;
 			if D is nothing:
 				now the patrol of M is 4;
 			otherwise if D is not the travel-opposite of the player or the room D from (the location of M) is not (the location of the player):
 				blockable move M to D;
 				if the location of M is Dungeon23, now patrol of M is 4;
 		otherwise if patrol of M is 4:
-			let D be the the best route from the location of M to Dungeon24 through labyrinth rooms;
+			let D be the best route from the location of M to Dungeon24 through labyrinth rooms;
 			if D is nothing:
 				now the patrol of M is 5;
 			otherwise if D is not the travel-opposite of the player or the room D from (the location of M) is not (the location of the player):
 				blockable move M to D;
 				if the location of M is Dungeon24, now patrol of M is 5;
 		otherwise if patrol of M is 5:
-			let D be the the best route from the location of M to Dungeon25 through labyrinth rooms;
+			let D be the best route from the location of M to Dungeon25 through labyrinth rooms;
 			if D is nothing:
 				now the patrol of M is 6;
 			otherwise if D is not the travel-opposite of the player or the room D from (the location of M) is not (the location of the player):
 				blockable move M to D;
 				if the location of M is Dungeon25, now patrol of M is 6;
 		otherwise if patrol of M is 6:
-			let D be the the best route from the location of M to Dungeon28 through labyrinth rooms;
+			let D be the best route from the location of M to Dungeon28 through labyrinth rooms;
 			if D is nothing:
 				now the patrol of M is 7;
 			otherwise if D is not the travel-opposite of the player or the room D from (the location of M) is not (the location of the player):
 				blockable move M to D;
 				if the location of M is Dungeon28, now patrol of M is 7;
 		otherwise:
-			let D be the the best route from the location of M to Dungeon10 through labyrinth rooms;
+			let D be the best route from the location of M to Dungeon10 through labyrinth rooms;
 			if D is nothing:
 				now the patrol of M is 0;
 			otherwise if D is not the travel-opposite of the player or the room D from (the location of M) is not (the location of the player):
@@ -934,6 +934,7 @@ To satisfy (M - a royal guard) for (N - a number) seconds:
 		if M is in the location of the player and M is awake:
 			say SatisfiedFlav of M;
 			progress quest of nice-quest;
+		if the health of M <= the maxhealth of M / 2, progress quest of chosen-one-quest;
 	otherwise:
 		bore M for N seconds. [We still want to dislodge etc. even if they weren't interested for some reason.]
 

@@ -24,6 +24,7 @@ Figure of facehugger cutscene 1 is the file "NPCs/MultiFloor/Facehugger/cutscene
 Figure of facehugger cutscene 2 is the file "NPCs/MultiFloor/Facehugger/cutscene-facehugger-attack2.jpg".
 Figure of facehugger cutscene 3 is the file "NPCs/MultiFloor/Facehugger/cutscene-facehugger-panties1.jpg".
 Figure of facehugger cutscene 4 is the file "NPCs/MultiFloor/Facehugger/cutscene-facehugger-panties2.jpg".
+Figure of facehugger cutscene 5 is the file "NPCs/MultiFloor/Facehugger/cutscene-facehugger-gag1.jpg".
 
 To decide which figure-name is the monster-image of (M - facehugger):
 	if M is wrangling thighs, decide on figure of facehugger cutscene 2;
@@ -191,6 +192,7 @@ To compute action (N - a number) of (M - a facehugger):
 				summon hugger-gag;
 				gluify hugger-gag;
 				destroy M;
+				cutshow Figure of facehugger cutscene 5 for hugger-gag;
 				compute grossness of hugger-gag;
 		otherwise:
 			say "[BigNameDesc of M] leaps at you, trying to latch onto your thigh!";
@@ -291,6 +293,7 @@ To compute periodic effect of (P - hugger-gag):
 			if the player is getting lucky, now F is 1;
 			let SL be a random number between 3 and 5;
 			say "It pumps your stomach full of inhuman [semen]!";
+			cutshow Figure of facehugger cutscene 5 for P;
 			StomachSemenUp a random number between 3 and 5;
 			now the charge of P is 0;
 			if F is 1:

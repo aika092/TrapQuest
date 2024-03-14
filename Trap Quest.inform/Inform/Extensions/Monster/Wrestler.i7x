@@ -360,7 +360,7 @@ To compute (M - a wrestler) releasing the player:
 	increase the urine-puddle of the source-room of U by the urine-puddle of U;
 	now the urine-puddle of U is 0;
 	now the player is in the source-room of U;
-	refresh the map-window.
+	refresh map zone.
 
 This is the wrestler feeds you to master rule:
 	let M be current-monster;

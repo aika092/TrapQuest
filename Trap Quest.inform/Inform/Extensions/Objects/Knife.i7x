@@ -1,6 +1,6 @@
 Knife by Objects begins here.
 
-A knife is a kind of thing. A knife is usually not portable. 1 knife is in Hotel19. The printed name of knife is "[TQlink of item described]sharp knife ([if the charge of item described > 0]not [end if]glowing)[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of a knife is "kn". Understand "sharp" as knife. A knife has a number called charge.
+A knife is a kind of thing. A knife is usually not portable. 1 knife is in Hotel19. There is 1 knife. The printed name of knife is "[TQlink of item described]sharp knife[if the charge of item described > 0 and the player is not in a predicament room] (not glowing)[otherwise if the charge of item described <= 0 and the player is not in a predicament room] (glowing)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of a knife is "kn". Understand "sharp" as knife. A knife has a number called charge.
 
 Figure of knife is the file "Env/Hotel/knife1.png".
 
@@ -101,16 +101,18 @@ Carry out knifing:
 				now V is wrangling arms;
 				now the stance of the player is 1;
 	otherwise:
-		if the second noun is equippable and the second noun is not midnight tanto and the noun is cursed:
+		let predicRoom be false;
+		if the location of the player is a predicament room, now predicRoom is true;
+		if the noun is cursed and the noun is not headgear and the second noun is equippable and the second noun is not midnight tanto:
 			say "Your [ShortDesc of the second noun] refuses to cut through the [clothing-material of the noun]. Maybe you need to cut it with something more specialised to cut through a curse...";
-		otherwise if the second noun is equippable and the second noun is not blessed:
-			say "Your [ShortDesc of the second noun] refuses to cut through the [clothing-material of the noun]. Maybe [if the second noun is midnight tanto]if it was blessed[otherwise]you need to cut it with something more specialised[end if]...";
-		otherwise if (the noun is bondage and the noun is not ballgag and the noun is not blessed) or (the noun is unremovable and the noun is not blessed piercing):
+		otherwise if the noun is cursed and the second noun is equippable and the second noun is not blessed:
+			say "Your [ShortDesc of the second noun] refuses to cut through the [clothing-material of the noun]. Maybe if it was blessed...";
+		otherwise if (the noun is bondage and the noun is not ballgag and the noun is not blessed and predicRoom is false) or (the noun is unremovable and the noun is not blessed piercing):
 			say "The [clothing-material of the noun] material is too tough, the blade can't cut through it![if the noun is not unremovable or the noun is piercing][line break][variable custom style]Perhaps if it was blessed?[roman type][line break][end if]";
 		otherwise if the noun is cursed and strongCurses is 1 and the noun is not headgear:
 			say "The blade can't seem to cut through the curse! You'll need to [if the quest of the noun is no-clothing-quest]find an altar to give it a quest[otherwise]complete its quest first[end if].";
 		otherwise if second noun is knife:
-			if the charge of the second noun > 0:
+			if the charge of the second noun > 0 and predicRoom is false:
 				say "The knife seems to be completely dull at the moment! You give up.";
 			otherwise if the noun is diaper-stack:
 				let OutsideDiaper be entry (the number of entries in the list of stacked diapers) in the list of stacked diapers;
@@ -130,7 +132,7 @@ Carry out knifing:
 			destroy the noun;
 			now the noun is in Holding Pen. [stop it spawning again]
 Report knifing:
-	if robochef is in the location of the player and robochef is awake and robochef is undefeated and robochef is friendly:
+	if the second noun is knife and robochef is in the location of the player and robochef is awake and robochef is undefeated and robochef is friendly:
 		say "[speech style of robochef]'[one of]HAZARDOUS ACTIVITIES DETECTED! PACIFICATION PROTOCOL REQUIRED... PROTOCOL FOUND. RELEASE THE CHOPPING DEVICE AND PREPARE FOR [if diaper quest is 1]BABIFICATION[otherwise]ANAL INFUSION[end if] ROUTINE!'[or]UNAUTHORISED COOKING DETECTED! RELEASE THE SHARP WEAPON AND PREPARE FOR [if diaper quest is 1]APPROPRIATE[otherwise]ANAL BREWING[end if] PUNISHMENT ROUTINE.'[at random][roman type][line break]Uh-oh, looks like you've angered [NameDesc of robochef]!";
 		anger robochef;
 		interest robochef.

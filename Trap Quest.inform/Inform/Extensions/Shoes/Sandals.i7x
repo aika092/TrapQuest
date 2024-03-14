@@ -4,6 +4,9 @@ A sandals is a kind of heels. A sandals is usually biological. A sandals is manl
 
 Definition: a sandals is transformation-protected: decide yes.
 
+To set up heel length of (C - a sandals):
+	now the heel-height of C is 1.
+
 wooden-sandals is a sandals. Understand "wooden" as wooden-sandals.
 
 Figure of wooden sandals is the file "Items/Clothes/Lower/Feet/sandals1.png".
@@ -22,9 +25,6 @@ To say ClothingDesc of (C - wooden-sandals):
 
 To say UniqueShortDesc of (C - wooden-sandals):
 	say "wooden sandals".
-
-To set up heel length of (C - wooden-sandals):
-	now the heel-height of C is 1.
 
 Definition: wooden-sandals is rigid: decide yes.
 Definition: wooden-sandals is brown themed: decide yes.
@@ -53,6 +53,34 @@ To say UniqueShortDesc of (C - queen-of-spades-sandals):
 
 To say ClothingDesc of (C - queen-of-spades-sandals):
 	say "A unique pair of white leather [heel-height of C] inch heeled sandals that have a spades symbol on the straps. [SteadinessDesc of C]".
+
+
+sandals-of-destiny is a sandals. sandals-of-destiny is leather. sandals-of-destiny is not manly. Understand "sandals of", "destiny" as sandals-of-destiny.
+
+The printed name of sandals-of-destiny is "[clothing-title-before]sandals of destiny[clothing-title-after]". The text-shortcut of sandals-of-destiny is "sod".
+
+To decide which figure-name is the clothing-image of (H - sandals-of-destiny):
+	decide on the figure of sandals of destiny.
+
+Figure of sandals of destiny is the file "Items/Clothes/Lower/Feet/sandals2.png".
+
+Definition: sandals-of-destiny is silver themed: decide yes.
+Definition: sandals-of-destiny is class-relevant:
+	if the class of the player is chosen one, decide yes;
+	decide no.
+
+To decide which number is the unique outrage of (C - sandals-of-destiny):
+	decide on 1.
+
+To say UniqueShortDesc of (C - sandals-of-destiny):
+	say "sandals of destiny".
+
+To say ClothingDesc of (C - sandals-of-destiny):
+	say "A unique pair of silver leather [heel-height of C] inch heeled sandals that give off an aura of feminine grace. [if the slap damage improvement of C is 0]You can sense that they would empower your [']slap['] attacks if you were wielding a sword. [end if][SteadinessDesc of C]".
+
+To decide which number is the slap damage improvement of (C - sandals-of-destiny):
+	if there is a worn sword, decide on 1;
+	decide on 0.
 
 
 Sandals ends here.

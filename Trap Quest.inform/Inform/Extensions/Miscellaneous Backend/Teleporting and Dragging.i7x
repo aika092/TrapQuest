@@ -67,8 +67,8 @@ To teleport to (R - a room):
 		if P is painting, compute painting completion of P;
 	update player region;
 	compute bladder cleanup;
-	if map images > 0, display entire map;
-	if player-dragger is yourself and the player is in R, compute unique teleportation to R.
+	if player-dragger is yourself and the player is in R, compute unique teleportation to R;
+	display stuff.
 
 To drag to (R - a room) by (M - a thing):[TODO: player can't be dragged when stuck unless the circumstances are special.]
 	compute glue-freeing by M;
@@ -84,7 +84,7 @@ To drag to (R - a room) by (M - a thing):[TODO: player can't be dragged when stu
 To fix map-drag to (R - a room):
 	let L be the location of the player;
 	while L is a placed room:
-		let D be the the best route from L to R through placed rooms;
+		let D be the best route from L to R through placed rooms;
 		if D is direction:
 			now L is the room D from L;
 			now L is discovered;

@@ -180,6 +180,9 @@ To decide which figure-name is Figure of Wild Gladiator Cutscene 4:
 To decide which figure-name is Figure of Wild Gladiator Cutscene 5:
 	decide on figure of small image.
 
+To decide which figure-name is Figure of lecture 2:
+	decide on figure of small image.
+
 To decide which figure-name is Figure of caged urinal princess:
 	decide on figure of small image.
 To decide which figure-name is Figure of caged urinal princess piss:

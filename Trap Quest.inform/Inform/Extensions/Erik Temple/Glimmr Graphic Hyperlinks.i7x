@@ -99,7 +99,7 @@ The clicking graphlink rules are a rulebook.
 To decide whether the click hit a hot link:
 	let win be the current focus window;
 	focus the main window;
-	if debugmode > 1, say "Checking if the click hit a hotlink.";
+	if debugmode > 1, say "Checking if the click hit a hotlink.[roman type][line break]";
 	focus win;
 	repeat through the Table of Graphlink Glulx Replacement Commands in reverse order:
 		if the current graphlink window is g-win entry:
@@ -188,7 +188,7 @@ A graphlink processing rule (this is the default graphlink processing rule):
 		follow the command-showing rules;
 		change the text of the player's command to the Glulx replacement command;
 		now the glk event type is line-event;
-		now the the glk event window ref is the ref number of the acting main window;
+		now the glk event window ref is the ref number of the acting main window;
 		now the glk event value 1 is the number of characters in the glulx replacement command;
 		now the candidate replacement command is "";
 		rule succeeds.
@@ -204,7 +204,7 @@ A graphlink processing rule for a g-element (called the link) (this is the defau
 		follow the command-showing rules;
 		change the text of the player's command to the Glulx replacement command;
 		now the glk event type is line-event;
-		now the the glk event window ref is the ref number of the acting main window;
+		now the glk event window ref is the ref number of the acting main window;
 		now the glk event value 1 is the number of characters in the glulx replacement command;
 		now the candidate replacement command is "";
 		rule succeeds.

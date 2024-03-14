@@ -239,7 +239,7 @@ A time based rule (this is the patron encountering rule):
 			otherwise if diaper quest is 0 and dominatrix-cage is grabbing the player:
 				let P be a random off-stage generic-appropriate patron;
 				compute patronMeeting of dominatrix-cage with P;
-			otherwise if diaper quest is 0 and player-currently-resting is 0 and the number of on-stage patrons is 0:
+			otherwise if diaper quest is 0 and player-currently-resting is 0 and the number of on-stage patrons is 0 and the player is in an unbossed room:
 				let P be a random off-stage generic-appropriate patron;
 				let M be a random off-stage alive thing; [initialise M as nothing non-object]
 				let M be a random monster in the location of the player;
@@ -635,7 +635,7 @@ To compute perception of (M - a patron):
 					if watersports fetish is 0 and the class of the player is human toilet, increase S by 10;
 				if S > 5: [at 5 or less addiction, this can't happen]
 					now M is enticed;
-					check enticing of M with temptation level S;
+					check enticing of M for B with temptation level S;
 					if the player is prone:
 						follow the insertion rules of M;
 	if the player is upright, make M expectant.
@@ -755,6 +755,9 @@ To decide which number is the condom resistance of (M - a patron):
 	if fishbowl is in the location of the player or woman-player is in the location of the player, decide on 20;
 	if M is dickhead patron, decide on 1;
 	decide on 0.
+
+To decide which number is the raw entice rarity of (M - a patron):
+	decide on 1. [They always do their entice move first]
 
 To compute kneeling reaction of (M - a patron):
 	if the number of patrons in the location of the player is 1, say "[BigNameDesc of M] grins.[line break][speech style of M]'[one of]That's more like it.'[or]That's what I thought.'[or]Now you're going to get it.'[or]Time to get what I came here for.'[or]Where you belong.'[in random order][roman type][line break]";
@@ -1810,7 +1813,8 @@ To satisfy (M - a patron) for (N - a number) seconds:
 			compute payment of M;
 		otherwise:
 			if M is in the location of the player, say "[BigNameDesc of M] seems satisfied, and leaves the way [he of M] came.";
-			destroy M. [sets M to dying, meaning it will be cleaned up at end of turn]
+			destroy M; [sets M to dying, meaning it will be cleaned up at end of turn]
+		if the health of M <= the maxhealth of M / 2, progress quest of chosen-one-quest.
 
 To bore (M - a patron) for (N - a number) seconds:
 	compute common boredom of M for N seconds;
@@ -1868,7 +1872,7 @@ To say MasturbationStartFlav of (M - a patron):
 
 To say DiaperMasturbationFlav of (M - a patron):
 	let D be a random worn diaper;
-	say "[BigNameDesc of M] [one of]pushes [his of M] fist into the front of your [D], letting you feel the bumps of [his of M] knuckles through the padding[or]swirls two fingers around the the front of your [D], as if it was a vagina[or]lightly spanks your [genitals] through the padding of your [D][or]rubs [his of M] entire hand in circles over the front of your [D][at random]. [if the player is able to get horny][one of]It feels amazing[or]You can feel yourself getting more and more aroused[or]You shiver with shameful pleasure[in random order].".
+	say "[BigNameDesc of M] [one of]pushes [his of M] fist into the front of your [D], letting you feel the bumps of [his of M] knuckles through the padding[or]swirls two fingers around the front of your [D], as if it was a vagina[or]lightly spanks your [genitals] through the padding of your [D][or]rubs [his of M] entire hand in circles over the front of your [D][at random]. [if the player is able to get horny][one of]It feels amazing[or]You can feel yourself getting more and more aroused[or]You shiver with shameful pleasure[in random order].".
 
 To say MasturbationAfterFlav of (M - a patron):
 	say "[BigNameDesc of M] seems [if refractoryperiod > 0]satisfied[otherwise]to grow tired[end if] and pulls away.[line break][speech style of M]'[if refractoryperiod > 0][one of]Watching you cum like that was just as hot as I'd hoped it would be[or]Making little brats like you cream themselves is just such a delight[stopping].'[otherwise][one of]Haha, okay, that's enough fun for now.'[or]That's enough for now I think. And no touching yourself while I'm gone either! Be a good baby for [daddytitle of M].'[or]This is taking too long. Don't touch yourself until I return, then maybe next time I'll have more luck.'[in random order][end if][roman type][line break]";

@@ -139,6 +139,7 @@ To compute pregnancy:
 				increase the womb volume of vagina by 1; [1 or more, +1]
 				if the womb volume of vagina > 30, now the womb volume of vagina is 30; [Important so that this doesn't get confused with a super-pregnancy]
 			otherwise:
+				if the womb volume of vagina < 25, now breastsEngorged is false;
 				compute pregnancy annoyance;
 			if the largeness of belly > B or the womb volume of vagina is 30:
 				say PregGrowth;
@@ -302,12 +303,16 @@ To Delay Labour:
 		say "A sudden contraction sends a small, manageable amount of pain shooting from your womb to the rest of your body.[line break][if the semen addiction of the player < 7 and the father is alive monster and the father is not regional alive monster][one of][line break][first custom style]Okay, by staying away from [the father] I can prevent myself from having to give birth again...[or][stopping][otherwise if the semen addiction of the player < 7][one of][first custom style]Okay, by keeping my [vagina] covered I think can prevent myself from having to give birth again...[or][stopping][otherwise][one of][line break][second custom style]I just love being massive and pregnant, why would I want to give birth and have to start the process all over again?[or][stopping][end if][roman type][line break]";
 	otherwise:
 		say "A sudden contraction sends pain shooting from your womb to the rest of your body. [if the player is upright and contractionTracker > (slow pregnancy * 2)]The contraction is so intense that you are forced to your knees. [end if][if the father is alive monster and the father is not regional alive monster]You are filled with a desire to find [NameDesc of the father].[otherwise][NonAliveFatherBirthFlav of the father][end if]";
-		cutshow figure of full term contraction for belly;
 		if contractionTracker > slow pregnancy * 2:
-			if the player is upright, try kneeling;
+			if the player is upright:
+				try kneeling;
+				cutshow figure of full term contraction for belly;
+			otherwise:
+				onlycutshow figure of full term contraction for belly;
 			now contractionTracker is 0;
 		otherwise:
 			increase contractionTracker by 1;
+			onlycutshow figure of full term contraction for belly;
 	now successful-pregnancy is 0.
 
 To say NonAliveFatherBirthFlav of (M - a thing):
@@ -329,6 +334,8 @@ To check for extreme pregnancies:
 	if the womb volume of vagina is 30:
 		cutshow figure of full term pregnancy for belly.
 
+breastsEngorged is initially false.
+
 [Being pregnant is no walk in the park]
 To compute pregnancy annoyance:
 	if the class of the player is not fertility goddess:
@@ -349,11 +356,12 @@ To compute pregnancy annoyance:
 		otherwise if the womb volume of vagina >= 20 and watersports mechanics is 1 and the player is not incontinent and the player is not bursting and a random number between 1 and 10 is 1:
 			if the bladder of the player < 6, now the bladder of the player is 6;
 			if the player is bursting, say "[bold type]Your unborn baby kicks hard down on your bladder.[line break][variable custom style]Oof![roman type][line break]You're suddenly desperate for the loo!";
-		otherwise if the womb volume of vagina >= 25 and a random number between 1 and 8 is 1:
+		otherwise if breastsEngorged is false and the womb volume of vagina >= 25 and a random number between 1 and 8 is 1:
 			say "You feel your pregnancy making your [BreastDesc] become more engorged and [if lactation fetish is 1]their lactation rate increasing[otherwise]sensitive[end if]!";
-			BustUp 1;
-			if lactation fetish is 1, increase the lactation rate of breasts by 1;
-			otherwise BreastsSensitivityUp 1;
+			BustUp 2;
+			if lactation fetish is 1, increase the lactation rate of breasts by 3;
+			otherwise BreastsSensitivityUp 2;
+			now breastsEngorged is true;
 		otherwise if a random number between 1 and 5 is 1 and the player is not very horny:
 			say "[bold type]Your pregnancy-hormone-addled brain randomly and spontaneously flares up with arousal.[one of][or][line break][variable custom style]This is crazy, it feels like I want sex all the time at the moment...[or][stopping][roman type][line break]";
 			arouse 3000;

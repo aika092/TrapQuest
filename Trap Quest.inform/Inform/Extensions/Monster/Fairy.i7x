@@ -374,7 +374,9 @@ To compute fairy meddling on (XXX - breasts):
 		compute fairySuckling of current-monster;
 	otherwise if B is a bra:
 		say "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your chest as [he of current-monster] does. [big he of current-monster] turns and smirks as you see your bra grow.";
-		unless B is cursed, now B is cursed;
+		unless B is cursed:
+			now B is cursed;
+			compute summoned quest of B;
 		increase the size of B by a random number from 1 to 2;
 		if the size of B > max breast size, now the size of B is max breast size;
 	otherwise:

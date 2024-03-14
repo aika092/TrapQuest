@@ -58,6 +58,19 @@ To say ExamineDesc of (C - a tentacle-breeder):
 	otherwise:
 		say "A messy dome of grey flesh is stuck to one wall, with rapidly pulsating holes, kind of like spasming assholes. There is a translucent barrier covering it, which seems to vibrate in time with [magic-cost of C] eldritch seals etched into the ground below it. [if the magic power of the player >= magic-cost of C]For some reason, you feel like you might be able to [bold type]purify[roman type] the corrupt substance and halt the spawning of tentacle monsters into this region[otherwise if there is a held pure totem or ritual-beads is held and the size of ritual-beads >= 7]For some reason, you feel like you have a magical item you can use to [bold type]purify[roman type] the corrupt substance and halt the spawning of tentacle monsters into this region[otherwise]You feel like you won't be able to halt the spawning of tentacle monsters here until you have enough power to overcome all the seals[end if].".
 
+A later time based rule (this is the tentacle breeder makes you horny rule):
+	if inhuman pregnancy >= 2:
+		let TB be a random tentacle-breeder in the location of the player;
+		if TB is a thing and the player is not a bit horny and the player is able to get horny:
+			say "As you watch the tentacles rhythmically plunging into [NameDesc of TB][']s holes, you feel your own [fuckholes] tingling, and [if the player is not a pervert]despite yourself, [end if]you can feel your body becoming more aroused.";
+			now the arousal of the player is 3100;
+			if the player is not a pervert:
+				say "[variable custom style]No, no, I don't want that to happen to me![roman type][line break]";
+			otherwise if the player is not nympho:
+				say "[variable custom style]I don't want that to happen to me... Do I?[roman type][line break]";
+			otherwise:
+				say "[variable custom style]I [one of]kind of wish that was me up there... I must be crazy, haha![or]totally wish that was me up there...[stopping][roman type][line break]".
+
 Purifying is an action applying to one thing.
 
 Check purifying:

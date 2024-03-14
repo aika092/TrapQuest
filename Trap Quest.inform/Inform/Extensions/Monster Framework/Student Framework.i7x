@@ -284,8 +284,10 @@ To compute monstermotion of (M - a student):
 		if KM is off-stage or KM is defeated:
 			if nurse is alive and nurse is undefeated, now KM is receptionist;
 			if receptionist is alive and receptionist is undefeated, now KM is receptionist;
-		if KM is alive and KM is undefeated and headmistress is in an academic room, now A is the the best route from the location of M to the location of headmistress through unbossed rooms;
-		otherwise now A is the the best route from the location of M to School08 through unbossed rooms;
+		let AD be nothing;
+		if KM is alive and KM is undefeated and headmistress is in an academic room, now AD is the best route from the location of M to the location of headmistress through unbossed rooms;
+		otherwise now AD is the best route from the location of M to School08 through unbossed rooms;
+		if AD is a direction, now A is AD;
 		let P be the room A from the location of M;
 		if the entry-rank of P > the entry-rank of the location of M and the entry-rank of P > the current-rank of M, now A is down;
 		if A is not down and the number of barriers in P is 0 and the number of barriers in the location of M is 0:

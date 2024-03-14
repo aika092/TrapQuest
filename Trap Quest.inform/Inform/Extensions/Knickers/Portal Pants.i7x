@@ -115,6 +115,8 @@ To SilentSquirt (L - a liquid-object) On (C - portal-hotpants) by (N - a number)
 	if N > 0:
 		if inside-out is true:
 			say "[announced L] disappears through the portal.";
+			if the player is in Hotel44 or Hotel44 is nearby:
+				say "You watch [if the player is not in Hotel44]in the [Hotel44] [end if]as the liquid exits your hole mounted on the pedestal and creates a puddle on the floor."; [TODO: pimp gets angry at urination?]
 			PuddleUp L by N in Hotel44;
 		otherwise:
 			if thighs is unsoaked, say "[announced L] flows down to your thighs.";

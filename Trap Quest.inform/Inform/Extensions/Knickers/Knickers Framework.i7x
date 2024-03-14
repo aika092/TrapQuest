@@ -97,10 +97,10 @@ To set up influence of (C - a knickers):
 
 To restock (C - a knickers):
 	let B be a random basic loot knickers;
-	if B is knickers:
+	if B is knickers or background-exhibitionist is 1:
 		repeat with L running through Standard Item Pen:
 			if L is knickers, remove L from Standard Item Pen;
-		add B to Standard Item Pen.
+		if background-exhibitionist is 0, add B to Standard Item Pen.
 
 This is the setup starting knickers rule:
 	let C be a random basic loot knickers;

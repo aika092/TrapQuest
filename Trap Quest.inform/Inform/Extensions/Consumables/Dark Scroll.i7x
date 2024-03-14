@@ -4,6 +4,8 @@ A dark scroll is a kind of thing. There is 1 dark scroll. The printed name of da
 To say ExamineDesc of (B - a dark scroll):
 	say "A scroll given to you by the Herald. It isn't in any language you know, but for some reason you know what it says.".
 
+The inventoryFocusPriority of a dark scroll is -20.
+
 casting is an action applying to one thing. Understand "cast [something]" as casting.
 
 Check examining dark scroll:

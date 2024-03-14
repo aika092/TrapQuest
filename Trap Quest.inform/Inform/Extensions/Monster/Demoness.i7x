@@ -1,6 +1,6 @@
 Demoness by Monster begins here.
 
-A demoness is a kind of monster. A demoness is intelligent. The favour of a demoness is usually 8. The leftover-type of a demoness is usually 105. A demoness can be soul-seeking. A demoness is usually not soul-seeking. A demoness has a number called channelling. A demoness can be penis-mode or heel-mode. A demoness is usually heel-mode.
+A demoness is a kind of monster. A demoness is intelligent. The favour of a demoness is usually 8. The leftover-type of a demoness is usually 105. A demoness can be soul-seeking. A demoness can be soul-interested. A demoness has a number called channelling. A demoness can be penis-mode or heel-mode. A demoness is usually heel-mode.
 
 Definition: a demoness is woods dwelling: decide yes.
 
@@ -16,7 +16,7 @@ Definition: a demoness is willing to do anal: decide yes.
 
 Definition: a demoness (called M) is willing to do vaginal:
 	if diaper quest is 1, decide no;
-	if M is soul-seeking or the vaginalvirgin of the player is 0, decide yes;[she can't fuck virgins unless they specifically ask for it]
+	if M is soul-seeking or M is soul-interested or the vaginalvirgin of the player is 0, decide yes;[she can't fuck virgins unless they specifically ask for it]
 	if presented-orifice is vagina, decide yes;
 	decide no.
 
@@ -359,6 +359,7 @@ To compute appearance assessment of (M - a demoness):
 		let R be a random number between 1 and 6;
 		if the player is possessing a vagina and the vaginalvirgin of the player is 1:
 			say ", unabashedly licking [his of M] lips as [his of M] eyes pass over your [vagina]. [one of][line break][speech style of M]'[if R < 3]You know, that cherry of yours... it's worth a lot. I'll buy if you're selling, baby.'[otherwise if R is 3]Hey. I know a virgin when I see one, baby. Let me break you in and... let's say I can make it worth your while.'[otherwise if R is 4]You're still pure, aren't you, baby. Must be stressful. Tell you what. I'll help you relax. I'll even pay you. Sound good?'[otherwise]Wow, that's a pretty cute cherry you've got there. Ever think about selling it? I'd buy...'[end if][or][speech style of M]Deal is still open. Never too early...'[stopping][roman type][line break]";
+			now M is soul-interested;
 			alwayscutshow figure of demoness interact 1 for M;
 		otherwise if the pregnancy of the player is 1 and M is willing to do vaginal:
 			say ", smoothly stepping toward you as [he of M] clicks [his of M] tongue.[line break][speech style of M]'[one of][if R < 3]Wow, knocked up, huh? You know, I could fix that if you let me fuck you.'[otherwise if R < 5]I bet that belly of yours is a burden. If you let me fuck you, I can make it go away.'[otherwise]Wow, I bet you're regretting all that unprotected sex now, right? Lucky for you, when I fuck without a condom I can make pregnant bellies... go away. Deal?'[end if][or]Deal is still open. I know that belly must be heavy.'[stopping][roman type][line break]";
@@ -366,6 +367,7 @@ To compute appearance assessment of (M - a demoness):
 		otherwise if the player is possessing a penis and the penetrativevirgin of the player is 1:
 			if virgincursed is 0:
 				say ", unabashedly licking [his of M] lips as [his of M] eyes pass over your [player-penis]. [one of][line break][speech style of M]'[if R < 3]Hey. Wanna have your first time with a demoness? I'll pay you.'[otherwise if R is 3]That cock... it's virgin, isn't it. Ooh, I WANT it! Let me buy it from you!'[otherwise]That's a virgin cock, isn't it. Ever think about selling it? I'd buy...'[end if][or][speech style of M]Mmm, whenever I see that virgin cock I just wanna GOBBLE IT UP! Take the deal already!'[stopping][roman type][line break]";
+				now M is soul-interested;
 			otherwise:
 				say ", frowning sympathetically as [his of M] eyes pass over your [player-penis]. [one of][line break][speech style of M]'[if R < 3]You're a virgin, aren't you. Don't worry, I'm not judging you. After all, you must feel so pitiful.'[otherwise if R is 3]It must be so hard to lose your virginity. Keep trying, ok?'[otherwise]You poor thing. It must have been so shocking when [he of analvirginity-taker] deflowered you like that.'[end if][or][speech style of M]Normally I'd offer you a deal where I'd take your virginity for a small price, but... Your suffering is just too delicious to stop. HAHAHAHA!'[stopping][roman type][line break]";
 		otherwise:

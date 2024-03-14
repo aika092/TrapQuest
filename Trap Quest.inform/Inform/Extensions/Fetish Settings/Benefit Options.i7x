@@ -17,6 +17,7 @@ title	subtable	description	toggle
 "Slower timers (Things like the academy class bell and doom quest ritual are more forgiving.) - ([if slower timers is 1]Not enabled - costs 2 points to enable[otherwise][bold type]Enabled[roman type] - 2 points used[end if])"	--	--	slower timers toggle rule
 "Minimum tank liquid: [if bonus liquid is 0]nearly empty[end if][if bonus liquid is 1]mostly empty[end if][if bonus liquid is 2]half full[end if][if bonus liquid is 3]over halfway full[end if][if bonus liquid is 4]mostly full[end if][if bonus liquid is 5]nearly full[end if][if bonus liquid is 6]completely full[end if] ([(bonus liquid * (1 + bonus liquid)) / 2] points used. [bonus liquid cost].)"	--	--	bonus liquid toggle rule
 "No Gag Reflex - ([if super gag reflex is 0]Not enabled - costs 3 points to enable[otherwise if super gag reflex is 1][bold type]Partially enabled[roman type] (player never has problems deepthroating, never pukes the cum back up afterwards, but some rare situations can still cause puking) - 3 points used; costs 1 more point to fully enable[otherwise][bold type]Fully enabled[roman type] (player never has problems deepthroating, never pukes ever) - 4 points used[end if])"	--	--	super gag reflex toggle rule
+"Fantastic Elastic (You can always insert any size sex toy) - ([if fantastic elastic is 0]Not enabled - costs 1 point to enable[otherwise if fantastic elastic is 1][bold type]Enabled[roman type] - 1 point used[end if])"	--	--	fantastic elastic toggle rule
 "Remove Guest NPC (lets you get rid of the random patron-designed NPC that spawns each game): [if the player is not the donator]Beta testers only, sorry![otherwise if supportersEnabled is 0][bold type]Removed[roman type] (1 point used)[otherwise]Not removed (costs 1 point to enable)[end if]"	--	--	supporters enabled toggle rule
 "Combat visor (lets you see some of the behind-the-scenes numbers being calculated. Can be removed but then can't be worn again): [if combatvisor is 1][bold type]Enabled[roman type] - 1 point used[otherwise]Disabled - costs 1 point to enable[end if]"	--	--	combat visor toggle rule
 [ALL NON-DONATOR BENEFIT OPTIONS MUST GO ABOVE THE COMBAT VISOR LINE, WHICH IS REMOVED WHEN THE PLAYER IS THE DONATOR]
@@ -238,6 +239,10 @@ This is the super gag reflex toggle rule:
 	otherwise:
 		now choice in row 82 of the Table of Player Options is 0.
 
+This is the super gag reflex reset rule:
+	now choice in row 82 of the Table of Player Options is 0.
+The super gag reflex reset rule is listed in the reset rules.
+
 To decide which number is slower timers:
 	if choice in row 87 of the Table of Player Options <= 1, decide on 1;
 	decide on 2.
@@ -247,5 +252,19 @@ This is the slower timers toggle rule:
 		increase choice in row 87 of the Table of Player Options by 1;
 	otherwise:
 		now choice in row 87 of the Table of Player Options is 1.
+
+This is the slower timers reset rule:
+	now choice in row 87 of the Table of Player Options is 0.
+The slower timers reset rule is listed in the reset rules.
+
+This is the fantastic elastic toggle rule:
+	if choice in row 89 of the Table of Player Options < 1 and points count >= 1:
+		increase choice in row 89 of the Table of Player Options by 1;
+	otherwise:
+		now choice in row 89 of the Table of Player Options is 0.
+
+This is the fantastic elastic reset rule:
+	now choice in row 89 of the Table of Player Options is 0.
+The fantastic elastic reset rule is listed in the reset rules.
 
 Benefit Options ends here.

@@ -86,7 +86,7 @@ Definition: supporter-aika is presenting as male:
 Definition: supporter-aika is father material: decide yes.
 
 To say MonsterDesc of (M - supporter-aika):
-	say "A tall blonde [man of M] stands before you. [big he of M]'s wearing medieval metal bracers on [his of M] arms and legs, and wields a barbaric-looking shortsword[if lady fetish < 2]. [big his of M] huge H-cup breasts are completely bare and sit heavily on [his of M] chest, gently sagging in a way that lets you know they're almost certainly natural[end if]. [big his of M] tiny grey loincloth ";
+	say "A tall blonde [man of M] stands before you. [big he of M]'s wearing medieval metal bracers on [his of M] arms and legs[if lady fetish < 2]. [big his of M] huge H-cup breasts are completely bare and sit heavily on [his of M] chest, gently sagging in a way that lets you know they're almost certainly natural[end if]. [big his of M] tiny grey loincloth ";
 	if M is combative, say "does nothing to hide the [LongDickDesc of M][if M is a balls-haver] and balls[end if] hanging from [his of M] crotch, swaying gently as [he of M] moves. ";
 	otherwise say "conceals [his of M] genitalia. ";
 	say "A metal warlord's mask covers [his of M] face, preventing you from seeing [his of M] features or expression.".

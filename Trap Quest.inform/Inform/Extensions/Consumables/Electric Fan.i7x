@@ -1,6 +1,9 @@
 Electric Fan by Consumables begins here.
 
 An electric fan is a kind of thing. There are 4 electric fans. The printed name of electric fan is "[TQlink of item described][if item described is sure and item described is blessed]blessed [otherwise if item described is sure and item described is cursed]cursed [end if]electric fan[TQxlink of item described][verb-desc of item described]". The printed plural name of electric fan is "[TQlink of item described][if item described is blessed]blessed [end if]electric fans[TQxlink of item described][verb-desc of item described]". The text-shortcut of electric fan is "ef".
+
+The inventoryFocusPriority of an electric fan is -20.
+
 When play begins:
 	let fanShortcutCount be 1;
 	repeat with E running through electric fan:

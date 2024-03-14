@@ -352,11 +352,11 @@ To say AssFillDesc:
 To say AssImplantsDesc:
 	if the silicone volume of hips is 0:
 		say "";
-	otherwise if the the silicone volume of hips < 4:
+	otherwise if the silicone volume of hips < 4:
 		say "They contain small ass implants. ";
-	otherwise if the the silicone volume of hips < 8:
+	otherwise if the silicone volume of hips < 8:
 		say "They contain medium sized ass implants. ";
-	otherwise if the the silicone volume of hips < 12:
+	otherwise if the silicone volume of hips < 12:
 		say "They contain huge ass implants. ";
 	otherwise:
 		say "The vast majority of your ass can be attributed to your stupidly giant ass implants. ".

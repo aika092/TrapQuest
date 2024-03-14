@@ -351,8 +351,7 @@ Report going when the vine-hole-scene of woman-player is 0 and the woman-bimbo o
 			otherwise:
 				compute striking success effect of woman-player on face;
 				FavourDown woman-player by 10;
-				VineSceneTransition;
-		now temporaryYesNoBackground is figure of small image.
+				VineSceneTransition.
 
 To VineSceneTransition:
 	now woman-player is in the location of the player;

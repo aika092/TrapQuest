@@ -47,7 +47,7 @@ To compute periodic effect of (C - portal gag):
 					say "[bold type]All of a sudden, you feel [NameDesc of M][bold type] push [his of M] [manly-penis] through the portal and into your mouth![roman type][line break][big he of M] begins thrusting in and out, threatening to make you gag![line break][variable custom style]'Mmmmmph! Glk glk glk glk glk...'[roman type][line break]";
 				otherwise:
 					now the charge of C is 0;
-					if the player is thirsty:
+					if the player is thirsty or (the player is not hungry and a random number between 1 and 3 is 1):
 						if watersports fetish is 1 and a random number between 1 and 2 is 1:
 							say "[bold type]All of a sudden, you feel [NameDesc of M][bold type] push [his of M] [if M is male][manly-penis][otherwise]pussy[end if] up against your mouth![roman type][line break][big he of M] begins urinating... and there's nowhere for it to go except into your mouth!";
 							DrinkPiss from M;
@@ -58,7 +58,7 @@ To compute periodic effect of (C - portal gag):
 								say "It's some kind of strong [one of]fruity wine[or]alcoholic spirit[or]beer[in random order], which is going straight to your head!";
 								increase alcohol level;
 						if the player is hungry, now the charge of C is 25; [next turn you get fed]
-					otherwise if diaper messing >= 3 or the player is hungry:
+					otherwise if diaper messing >= 3 or the player is hungry or a random number between 1 and 2 is 1:
 						say "[bold type]All of a sudden, you feel [NameDesc of M][bold type] push something into your mouth![roman type] It seems [he of M][']s forcefeeding you candy! [one of]It's[or]This time it's[stopping] a ";
 						if a random number between 1 and 2 is 1:
 							say "nasty sour piece of liquorice!";

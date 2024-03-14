@@ -4,12 +4,12 @@ A robomaid is a kind of robot. A robomaid is intelligent. Understand "maid", "ro
 
 dainty robomaid is a robomaid. The text-shortcut of dainty robomaid is "drm".
 prissy robomaid is a robomaid. The text-shortcut of prissy robomaid is "psrm".
-robomilkmaid is a robomaid. The text-shortcut of robomilkmaid is "cmm". Understand "mal", "malfunc", "malfunctioning", "malfunction" as robomilkmaid.
+robomilkmaid is a robomaid. The text-shortcut of robomilkmaid is "cmm". Understand "mal", "malfunc", "malfunctioning", "malfunction" as robomilkmaid. robomilkmaid has a number called milk volume. robomilkmaid has a number called milk charge.
 
 Figure of robomaid is the file "NPCs/Hotel/Robot/robomaid1.png".
 To decide which figure-name is the monster-image of (M - a robomaid):
 	decide on figure of robomaid.
-Figure of robomilkmaid is the file "NPCs/Hotel/Robot/robomaid2.png".
+Figure of robomilkmaid is the file "NPCs/Hotel/Robot/robomaid3.jpg".
 To decide which figure-name is the monster-image of (M - robomilkmaid):
 	decide on figure of robomilkmaid.
 
@@ -20,7 +20,7 @@ To say MonsterDesc of (M - a robomaid):
 	say "A tall robot with a voluptuous figure that makes [him of M] look more sex doll than machine. [big he of M] is wearing a frilly black dress with a plunging neckline and scandalously short skirt, which show off [his of M] surprisingly soft-looking assets as [big he of M] glides around silently on wheeled feet. [big his of M] eyes cast a slight glow over [his of M] hyper feminine features.".
 
 To say MonsterDesc of (M - robomilkmaid):
-	say "A tall robot with a voluptuous figure that makes [him of M] look more sex doll than machine. [big he of M] is topless, leaving [his of M] expansive metal chest and surprisingly soft-looking nipples on full display. A white apron covers [his of M] crotch, but given the obvious tent in the fabric, it's not really clear why. [big his of M] eyes glow brightly as [big he of M] glides around silently on wheeled feet.".
+	say "A tall robot with a voluptuous figure that makes [him of M] look more sex doll than machine. A white apron covers [his of M] front, but its skimpy design leaves almost the entirety of [his of M] soft, transparent robot breasts on display, revealing that they are filled with some white liquid - presumably [milk]. [big his of M] eyes glow brightly as [big he of M] glides around silently on wheeled feet.".
 
 To say speech style of (M - a robomaid):
 	say second custom style.
@@ -42,6 +42,7 @@ To set up (M - a robomaid):
 	add erasure-salve to the tradableItems of M, if absent;
 	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M;
+	if M is robomilkmaid, now the milk volume of M is 8;
 	now M is unconcerned.
 
 To decide which number is the starting difficulty of (M - robomaid):
@@ -92,13 +93,22 @@ Part 1 - Misc Flavour
 		[TODO: cleanup.]]
 
 To compute unique periodic effect of (M - a robomilkmaid):
-	if a random number between 1 and 30 is 1:
-		if lactation fetish is 1 and a random number between 1 and 2 is 1:
-			if M is in the location of the player, say "[BigNameDesc of M] reaches up and squeezes [his of M] rubber nipples, forcing several droplets of milk out onto the floor.";
-			PuddleUp milk by (a random number between 2 and 3) in (the location of M);
+	if M is not combative:
+		if lactation fetish is 1 and M is in Hotel19 and the milk volume of M < 12:
+			if M is in the location of the player, say "[BigNameDesc of M] attaches [himself of M] to the kichten fridge by some kind of cable, and you hear a pumping sound. You watch [his of M] transparent [']jugs['] fill close to the brim with [milk].";
+			now the milk volume of M is 12;
 		otherwise:
-			if M is in the location of the player, say "[BigNameDesc of M] starts jacking off, moaning in a grating monotone as [his of M] [LongDickDesc of M] blows [his of M] load on the floor.";
-			PuddleUp semen by (a random number between 2 and 3) in (the location of M).
+			increase the milk charge of M by a random number between 1 and 2;
+			if the milk charge of M > 45:
+				now the milk charge of M is 0;
+				if lactation fetish is 1 and a random number between 8 and 15 < the milk volume of M:
+					if M is in the location of the player, say "[BigNameDesc of M] reaches up and squeezes [his of M] rubber nipples, forcing several droplets of milk out onto the floor.";
+					let MV be a random number between 2 and 3;
+					PuddleUp milk by MV in (the location of M);
+					decrease the milk volume of M by MV;
+				otherwise:
+					if M is in the location of the player, say "[BigNameDesc of M] pulls up [his of M] apron, revealing a large robotic [DickDesc of M]. [big he of M] starts jacking off, moaning in a grating monotone as [his of M] [LongDickDesc of M] blows [his of M] load on the floor.";
+					PuddleUp semen by (a random number between 2 and 3) in (the location of M).
 
 Part 2 - Perception
 
@@ -146,7 +156,10 @@ To compute perception of (M - a robomaid):
 
 To compute perception of (M - a robomilkmaid):
 	say "[BigNameDesc of M] notices you!";
-	if the player is hotel employed:
+	if the ready-for-milking of milking-quest is 1:
+		say "[big his of M] eyes turn red and [he of M] spins toward you.[line break][speech style of M]'HIGH VOLUME OF MILK DETECTED. DAIRY FARM SIMULATION PROGRAM INITIATED.'[roman type][line break]";
+		anger M;
+	otherwise if the player is hotel employed:
 		if breasts is lewdly exposed or there is a worn trainee bra:
 			say "[big he of M] glides towards you, addressing you in a monotone.[line break][speech style of M]HEY [caps boy of the player]FRIEND. YOU HAVE SOMETHING ON YOUR CHEST. TITS. TEEHEE. TEEHEE.[roman type][line break][big he of M] seems to abruptly lose interest.";
 			calm M;
@@ -158,6 +171,9 @@ To compute perception of (M - a robomilkmaid):
 			anger M;
 	otherwise if the class of the player is vixen:
 		say "[big his of M] eyes turn red and [he of M] spins toward you.[line break][speech style of M]'BURGLAR DETECTED! PUBLICITY STUNT PROGRAM INITIATED!'[roman type][line break]";
+		anger M;
+	otherwise if lactation fetish is 1 and the milk volume of M >= 12:
+		say "[big his of M] eyes turn red and [he of M] spins toward you.[line break][speech style of M]'ELIGIBLE CUSTOMER DETECTED! MILK STOARAGE IS NEARING MAXIMUM CAPACITY. REQUESTING JOINT PERFORMANCE ROUTINE...'[roman type][line break]";
 		anger M;
 	otherwise if M is friendly:
 		say "[big he of M] glides toward you, pushing out [his of M] chest as [he of M] addresses you in a monotone.[line break][speech style of M]'FLIRTATION PROGRAM INITIATED...[one of]YOU ARE SEXY.[or]OBSERVE MY TITS, HOT STUFF.[or]BEEP BOOP, I LIKE MAN SOUP.[at random] [caps please] TIP ME.[roman type][line break][big he of M] points to [one of]a[or]the[stopping] slot between [his of M] breasts, labelled [']PAYMENT['].";
@@ -201,8 +217,7 @@ To compute molesting attack of (M - a robomaid):
 
 [The robomilkmaid sprays out an aphrodisiac, avoided with dexterity]
 To compute molesting attack of (M - robomilkmaid):
-	if diaper quest is 0 or (lactation fetish is 1 and a random number between 1 and 2 is 1), say "[BigNameDesc of M] pushes [his of M] breasts together, forcing out twin streamers of pink liquid. [run paragraph on]";
-	otherwise say "[BigNameDesc of M] lifts [his of M] apron, aiming [his of M] [LongDickDesc of M] at you as it shoots out a spurt of pink liquid. [run paragraph on]";
+	say "[BigNameDesc of M] lifts [his of M] apron, aiming [his of M] [LongDickDesc of M] at you as it shoots out a spurt of pink liquid. [run paragraph on]";
 	let B be the painful-part of M;
 	if the latex-transformation of the player > 6:
 		say "Some of it lands on you, but it doesn't seem to have any effect.";
@@ -327,7 +342,43 @@ This is the robomilkmaid punishment rule:
 		say "[one of][BigNameDesc of current-monster] waits beside you patiently.[or][cycling]";
 		[compute maidFluff of M;]
 		rule succeeds;
-	if the player is hotel employed:
+	otherwise if the ready-for-milking of milking-quest is 1:
+		let C be a random top level breasts protection clothing;
+		if there is worn actually nipple covering clothing and C is clothing:
+			if C is trainee bra or (C is not-top-displacable and C is not stealable):
+				say "[BigNameDesc of current-monster] cocks [his of current-monster] head sideways, staring at your [ShortDesc of C]![line break][speech style of current-monster]'ERROR: UNREMOVABLE CLOTHING. MILKING ROUTINE TERMINATED EARLY. THIS INCIDENT HAS BEEN LOGGED.'[roman type][line break][BigNameDesc of current-monster] turns to leave you alone.";
+				bore M;
+			otherwise if C is currently not-top-displacable:
+				if the number of worn breast covering top-placed clothing is 1:
+					say "[BigNameDesc of current-monster] rips open your [ShortDesc of C] at the nipples!";
+					now C is top-ripped;
+				otherwise:
+					say "[BigNameDesc of current-monster] yanks off your [ShortDesc of C] and drops it on the ground!";
+					dislodge C;
+					now C is in the location of the player;
+			otherwise:
+				say "[BigNameDesc of current-monster] yanks open your [printed name of C], exposing your [ShortDesc of breasts]!";
+				TopDisplace C;
+			rule succeeds;
+		otherwise:
+			say "[line break][speech style of current-monster]'OOH OOH OOH. YOU ARE ONE CUTE DAIRY COW.'[roman type][line break][BigNameDesc of current-monster][']s robotic hands latch onto your [BreastDesc]! Moments later, some kind of ports open up inside [his of current-monster] palms, and suck your nipples inside! By squeezing [his of current-monster] hands in a rhythmic motion, [NameDesc of current-monster] milks your breasts! Your fresh [milk] disappears up into [his of current-monster] arms, and you can see it being collected inside the transparent milk tanks that are [his of current-monster] own [']breasts['].";
+			let N be 0;
+			now milking is 1;
+			while ready-for-milking of milking-quest is 1:
+				if N > 0, say "Your breasts are so full, that the suction keeps going!";
+				let MV be the milk volume of breasts;
+				if MV > 8, now MV is 8;
+				increase the milk volume of current-monster by MV;
+				decrease the milk volume of breasts by MV;
+				stimulate breasts from current-monster;
+				increase N by 1;
+				check milking unreadiness;
+				check for arousal change;
+			now milking is 0;
+			satisfy M;
+			BreastsSensitivityUp 1;
+			rule succeeds;
+	otherwise if the player is hotel employed:
 		let C be a random stealable top level breasts protection clothing;
 		if C is clothing and C is not trainee bra:
 			if C is currently not-top-displacable:
@@ -352,7 +403,7 @@ This is the robomilkmaid punishment rule:
 			let P be a random off-stage generic-appropriate patron;
 			now P is in R;
 			decrease X by 1;
-		drag to R by M;
+		if the player is not in R, drag to R by M;
 		compute publicity stunt of M;
 		bore M;
 		rule succeeds;
@@ -366,32 +417,33 @@ This is the robomilkmaid punishment rule:
 		rule succeeds.
 
 To compute publicity stunt of (M - a robomilkmaid):
-	let R be a random number between 1 and 3;
 	let P be a random patron in the location of the player;
 	say "[if the number of patrons in the location of the player > 1]The patrons watch[otherwise][BigNameDesc of P] watches[end if] [run paragraph on]";
-	if face is not actually occupied and lactation fetish is 1 and R is 1:[breast feeding]
-		say "as [NameDesc of M] forces a rubber teat into your mouth.[line break][speech style of current-monster]'OOH. OOH. MY NIPPLES ARE. SO TENDER.'[roman type][line break]Suction kicks in, and you have no choice but to swallow several gulps of ice cold milk before [he of M] releases you.";
-		increase the fat-burning of the player by 250;
-		StomachMilkUp 3;
-		humiliate R * MODERATE-HUMILIATION;
+	if face is not actually occupied and lactation fetish is 1 and the latex-transformation of the player <= 4 and milk volume of M >= 8: [breast feeding]
+		say "as [NameDesc of M] pushes one of its [']nipples['] into your mouth. Its impossibly strong, vice-like grip prevents you from freeing your [LipDesc] from the seal they have around the [']teat['] of this soft, silicone [']boob['].[line break][speech style of current-monster]'OOH. OOH. MY NIPPLES ARE. SO TENDER.'[roman type][line break]Some kind of pump kicks in, and with a whirring sound, it begins to express what is unmistakably human breast milk into your mouth.";
+		let MV be the milk volume of M;
+		if MV > 12, now MV is 12;
+		FaceFill milk by MV;
+		decrease the milk volume of M by MV;
+		say moderateHumiliateReflect;
 	otherwise if face is not actually occupied:
 		say "as [NameDesc of M] lifts up [his of M] apron, pushing [his of M] [LongDickDesc of M] in your face as [his of M] eyes rapidly flash red and pink.[line break][speech style of current-monster]'OOH. OOH. [caps please] SUCK ME.'[roman type][line break] [big he of M] shoves [his of M] [DickDesc of M] into your open mouth and ejaculates with incredible force. Do you try to swallow it?";
 		now M is penetrating face;[TODO: possibly update]
 		if the player is bimbo consenting:
-			say "You desperately gulp, just barely able to keep up as [NameDesc of M] thoroughly empties [his of M] stored [semen] straight down your throat. Eventually, the flow dies down, and [he of M] pulls out, rolling off of you as [his of M] apron falls back into place.";
-			StomachSemenUp 4;
-			humiliate R * MODERATE-HUMILIATION;
+			say "You desperately gulp, just barely able to keep up as [NameDesc of M] thoroughly empties [his of M] stored [semen] into your mouth. Eventually, the flow dies down, and [he of M] pulls out, rolling off of you as [his of M] apron falls back into place.";
+			FaceFill semen by 8;
+			say moderateHumiliateReflect;
 		otherwise:
 			say "Your mouth rapidly fills as you hold your throat closed, sparing your stomach from [his of M] huge load. With nowhere else to go, [semen] explodes out the edges of your mouth, coating your cheeks, chin, and neck as the flow steadily dies down, and [NameDesc of M] slowly pulls out. You spit out the rest of it, gasping for air as [he of M] rolls off you and lets [his of M] apron fall back into place.";
 			CumFaceUp 3;
 			SemenPuddleUp 1;
-			humiliate R * SLIGHT-HUMILIATION;
+			say slightHumiliateReflect;
 		BlowCount;
-	otherwise if bukkake fetish is 1 and R is 2:[bukkake]
+	otherwise if bukkake fetish is 1 and a random number between 1 and 2 is 1:[bukkake]
 		say "as [NameDesc of M] lifts up [his of M] apron, pushing [his of M] [LongDickDesc of M] in your face as [his of M] eyes rapidly flash red and green.[line break][speech style of M]'OOH. OOH. I AM SHOOTING IT.'[roman type][line break] [big his of M] [DickDesc of M] throbs visibly as it blasts your face with several bursts of makeup powder, followed by several ropes of thick, sticky [semen]. You can feel it clinging to your eyelids and rolling slowly down your cheeks as [he of M] rolls off of you.";
 		FaceUp 1;
 		CumFaceUp 2;
-		humiliate R * MODERATE-HUMILIATION;
+		say moderateHumiliateReflect;
 	otherwise:
 		let D be nothing;
 		repeat with C running through worn clothing:
@@ -406,17 +458,30 @@ To compute publicity stunt of (M - a robomilkmaid):
 			if D is top-displacable and D is top-placed, now D is top-displaced;
 			otherwise now D is crotch-displaced;
 			PainUp 10;
-			humiliate R * SLIGHT-HUMILIATION;
+			say slightHumiliateReflect;
 		otherwise:[aphrodisiac]
 			say "as [NameDesc of M][']s [LongDickDesc of M] pushes out from underneath [his of M] apron and [one of]spurts warm, pink liquid across your [ShortDesc of breasts][or]shoots several [']ropes['] of warm, pink fluid onto your [BellyDesc][or]splatters your [ShortDesc of face] with warm, pink liquid[at random].[line break][speech style of M]'OOH. SO HOT. SO HOT.'[roman type][line break]You can feel the fluid absorbing into your skin as [NameDesc of M] rolls off of you. You feel incredibly turned on!";
 			Arouse 1000;
-			humiliate R * SLIGHT-HUMILIATION;
-	Bore M;
+			say slightHumiliateReflect;
+	satisfy M;
 	increase the employee-record of senior robobellboy by 1;
 	if the number of patrons in the location of the player > 1, say "The patrons take turns high fiving each other as they file out of the room.";
 	otherwise say "[NameDesc of P] smirks at you as [he of P] leaves the room.";
 	repeat with N running through patrons in the location of the player:
 		destroy N.
+
+[Milking only for now]
+Definition: robomilkmaid is uniquely ready to entice:
+	if the ready-for-milking of milking-quest is 1, decide yes;
+	decide no.
+
+To compute enticing of (M - robomilkmaid):
+	let CM be current-monster;
+	now current-monster is M;
+	let S be the sensitivity of breasts;
+	say "[speech style of M]'PLEASE ADOPT THE DAIRY MILKING SUBMISSION POSITION. I PROMISE I WILL MAKE IT FEEL REAAAAAAAAALY GOOD.'[roman type][line break][BigNameDesc of M] makes squeezing motions towards you with [his of M] robotic hands.";
+	check enticing of M for breasts with temptation level S;
+	now current-monster is CM.
 
 Part 4 - Conversation
 

@@ -138,6 +138,7 @@ To compute teaching of (L - enema-tag-lesson):
 	now the stance of the player is 0;
 	say "You are made to bend over and enema kits are used to slowly but surely fill your bellies with [LQ]. Your bellies start to visibly expand until you all look nine months pregnant. [one of]While the enemas are going in, [NameDesc of M] gives a briefing. [big he of M] points to a [man of male-m] wearing a full black zentai bodysuit that covers even [his of male-m] face.[line break][speech style of M]'The rules are as follows. In order to get a promotion, all you have to do is make it [lapsToWin] times around this racetrack. But that [man of male-m] there has been instructed to hunt down and hump the student who [bold type]most recently expelled their enema[speech style of M] and [bold type]has not yet refilled their belly to the brim[if diaper quest is 1] or is not wearing a clean diaper[end if]. [speech style of M]Moreover, [he of male-m][']s allowed to run through the middle of the track, so there's no escaping [him of male-m] for too long. What this means is that it's very dangerous to try and run the race without a full belly[if diaper quest is 1] and a diaper[end if]. You'll find enema refilling kits at the finish line, so you can decide to have a [']pit stop['] at the end of any lap you choose. You are not allowed to run backwards, so either stop at the line or don't, it's up to you! You can also abandon the race at any time by stepping off the track, but then you won't be promoted[if a2m fetish is 2 and watersports fetish is 1]. Also, as long as there's at least one winner, the first person to abandon gets a punishment[end if].'[roman type][line break][or][stopping]You are all led to the starting line, and then with a bang the race begins.";
 	now bigGameLoop is 3; [tells the game not to refresh any windows]
+	now temporaryYesNoResetNeeded is false;
 	let LST be the list of people in the location of the player; [turn order]
 	repeat with ST running through students in the location of the player:
 		now the lessonInt1 of ST is 0; [distance travelled]
@@ -307,8 +308,8 @@ To compute teaching of (L - enema-tag-lesson):
 						if ST is yourself:
 							say "How fast do you run, on a scale from 0 to 9[one of]? [bold type](choosing 0 will allow you to choose to retire, expel your enema, or just stand still)[roman type][line break][or]?[stopping]";
 							let CL be 10;
-							if the map-window is g-present:
-								clear the map-window;
+							if the graphics-window is g-present:
+								clear the map zone;
 								render YesNoBackground;
 							while CL < 0 or CL > 9:
 								now CL is the chosen letter - 48;
@@ -490,7 +491,7 @@ To compute teaching of (L - enema-tag-lesson):
 	DexUp 2;
 	say "[speech style of M]'All right, we're all done here. What fun! Class dismissed.'[roman type][line break]";
 	now bigGameLoop is 0;
-	now temporaryYesNoBackground is figure of small image;
+	temporaryYesNoBackgroundReset;
 	conclude consenting.
 
 

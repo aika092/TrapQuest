@@ -296,4 +296,64 @@ To compute princess guard tease of (M - a royal guard):
 		orgasm M;
 		compute M slinking away.
 
+
+chain-tiara is a headgear. chain-tiara is metal. chain-tiara is blondeness-positive. chain-tiara is brightness-positive. chain-tiara is redness-positive. chain-tiara is hair growing. chain-tiara is strength-influencing. chain-tiara is womanly. Understand "chain", "tiara" as a chain-tiara.
+
+Definition: chain-tiara is condom pinnable: decide yes.
+
+To say ShortDesc of (H - chain-tiara):
+	say "chain tiara".
+
+To compute SelfExamineDesc of (H - chain-tiara):
+	say "You are wearing a metal [ShortDesc of H] on top of your [ShortDesc of hair]. ".
+
+The printed name of chain-tiara is "[clothing-title-before]chain tiara[clothing-title-after]". The text-shortcut of chain-tiara is "cti".
+
+Figure of chain tiara is the file "Items/Accessories/Head/chaintiara1.png".
+
+To decide which figure-name is the clothing-image of (C - chain-tiara):
+	decide on figure of chain tiara.
+
+To say ClothingDesc of (H - chain-tiara):
+	say "This delicate set of silver chains has three purple gems that dangle in front of your cheeks and forehead. Above the central gem is a pentagram...".
+
+To say MediumDesc of (H - chain-tiara):
+	say "chain tiara".
+
+Definition: chain-tiara is gem themed: decide yes.
+Definition: chain-tiara is grey themed: decide yes.
+
+Chapter - Class Outfit
+
+To compute class outfit of (H - chain-tiara):
+	if the player is possessing a penis, class summon exposing-priestess-outfit;
+	otherwise class summon cameltoe-priestess-outfit;
+	class summon sandals-of-destiny.
+
+Chapter - Quest
+
+chosen-one-quest is a headgear-clothing-quest. chosen-one-quest has a number called battles-performed.
+
+To compute unique recycling of (C - chain-tiara):
+	now the battles-performed of chosen-one-quest is 0.
+
+To uniquely set up (C - chain-tiara):
+	now the quest of C is chosen-one-quest.
+
+To say QuestFlav of (Q - chosen-one-quest):
+	say "You sense it wants you to end battles [']honorably['], with enemies injured (less than half HP), but also happy (either by your surrender / defeat and obedient submission, or your offering a hand of friendship after defeating them).".
+
+To say QuestTitle of (Q - chosen-one-quest):
+	say " (honorable battles quest)".
+
+To progress quest of (Q - chosen-one-quest):
+	repeat with C running through worn clothing:
+		if the quest of C is Q:
+			increase battles-performed of Q by 1;
+			if battles-performed of Q > a random number between 2 and 4:
+				compute quest completion of Q on C;
+				now the battles-performed of Q is 0;
+			otherwise:
+				say "Your [ShortDesc of C] shudders with pride. But there's more battles to be fought with honor before you are fully rewarded!".
+
 Tiara ends here.

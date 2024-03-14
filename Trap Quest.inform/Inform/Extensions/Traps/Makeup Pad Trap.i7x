@@ -391,7 +391,6 @@ To trigger (Y - a choice trap):
 	set numerical response 0 to the substituted form of "See what happens if you just step away from the tablet as quickly as you can.";
 	now temporaryYesNoBackground is figure of choice trap;
 	compute multiple choice question;
-	now temporaryYesNoBackground is figure of small image;
 	if player-numerical-response is 1:
 		say "You touch the first option.";
 		trigger entry 1 in LC;

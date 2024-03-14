@@ -24,10 +24,6 @@ keriaxfuck is a number that varies.
 keriaxshopblow is a number that varies.
 
 tile finder is a room that varies.
-To initialise map stuff:
-	do nothing.
-To terminate map stuff:
-	do nothing.
 To display entire map:
 	do nothing.
 To map-draw (R - a room):
@@ -44,9 +40,6 @@ To display stuff:
 To display character window:
 	do nothing.
 To terminate display stuff:
-	do nothing.
-
-To initialise hyperlink stuff:
 	do nothing.
 
 To vary stickman counters:

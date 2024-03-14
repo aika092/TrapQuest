@@ -148,7 +148,12 @@ To fill in fake table blanks:
 		unless there is a choice in row 57 of the Table of Settings, now choice in row 57 of Table of Settings is 1;
 		unless there is a choice in row 58 of the Table of Settings, now choice in row 58 of Table of Settings is 2;
 		unless there is a choice in row 59 of the Table of Settings, now choice in row 59 of Table of Settings is 0;
-		unless there is a choice in row 60 of the Table of Settings, now choice in row 60 of Table of Settings is 0.
+		unless there is a choice in row 60 of the Table of Settings, now choice in row 60 of Table of Settings is 0;
+		unless there is a choice in row 61 of the Table of Settings, now choice in row 61 of Table of Settings is 1;
+		unless there is a choice in row 62 of the Table of Settings, now choice in row 62 of Table of Settings is 1;
+		unless there is a choice in row 63 of the Table of Settings, now choice in row 63 of Table of Settings is 0;
+		unless there is a choice in row 64 of the Table of Settings, now choice in row 64 of Table of Settings is 0;
+		unless there is a choice in row 65 of the Table of Settings, now choice in row 65 of Table of Settings is 0;
 
 To fill in legacy table blanks:
 	unless there is a choice in row 32 of the Table of Player Options, now choice in row 32 of Table of Player Options is 0;
@@ -208,6 +213,7 @@ To fill in legacy table blanks:
 	unless there is a choice in row 86 of the Table of Player Options, now choice in row 86 of Table of Player Options is 0;
 	unless there is a choice in row 87 of the Table of Player Options, now choice in row 87 of Table of Player Options is 1;
 	unless there is a choice in row 88 of the Table of Player Options, now choice in row 88 of Table of Player Options is 0;
+	unless there is a choice in row 89 of the Table of Player Options, now choice in row 89 of Table of Player Options is 0;
 
 To fill in custom flavour blanks:
 	unless there is a name in row 10 of the Table of Info Options:

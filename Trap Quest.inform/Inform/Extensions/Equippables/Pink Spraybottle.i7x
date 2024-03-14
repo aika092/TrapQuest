@@ -4,6 +4,8 @@ pink-spraybottle is an equippable. pink-spraybottle is in Dungeon30. The printed
 
 pink-spraybottle is zap ready. pink-spraybottle has a number called charge. pink-spraybottle has a number called work ethic. pink-spraybottle is unique. pink-spraybottle can be spray or cloth. pink-spraybottle is spray. pink-spraybottle is projectile. pink-spraybottle is cotton.
 
+pink-spraybottle has a number called turns-mopped.
+
 Definition: pink-spraybottle is class-relevant:
 	if the class of the player is maid, decide yes;
 	decide no.
@@ -22,7 +24,7 @@ To decide which figure-name is the clothing-image of (W - pink-spraybottle):
 	decide on figure of spraybottle.
 
 To BackgroundRender (W - pink-spraybottle) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
-	if W is spray, display the image figure of washcloth in the current focus window at X1 by Y1 with dimensions DX by DY.
+	if W is spray, display the image figure of washcloth in the graphics-window at X1 by Y1 with dimensions DX by DY.
 
 [The maid must periodically find messes to clean up, otherwise she risks a punishment. The spraybottle has a value, charge, but this represents units of cleaning fluid. Its other value, work ethic is the one to really worry about.]
 

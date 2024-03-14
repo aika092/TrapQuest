@@ -1,7 +1,7 @@
 Serving Table by Bondage begins here.
 
 serving-bondage is a kind of bondage. The text-shortcut of serving-bondage is "svt".
-The clothingFocusPriority of serving-bondage is -2.
+The inventoryFocusPriority of serving-bondage is -2.
 
 Definition: serving-bondage is waitress-enabling: decide yes.
 

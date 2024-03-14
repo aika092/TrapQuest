@@ -401,7 +401,7 @@ To render chess state:
 
 To decide which figure-name is the examine-image of (C - chess table):
 	if the chess-victor of chess-lesson is 0, decide on figure of chess table;
-	if C is grabbing the player and the map-window is g-present and the focus-window is g-present, decide on figure of no-image-yet; [In this situation we put the image in the map window]
+	if C is grabbing the player and the graphics-window is g-present, decide on figure of no-image-yet; [In this situation we put the image in the map window]
 	decide on chess-table-image.
 
 To decide which figure-name is chess-table-image:
@@ -1232,7 +1232,7 @@ To compute teaching of (L - enema-race-lesson):
 					otherwise:
 						now silentMess is 1;
 					if S2 is tryhard student:
-						if D1 <= 0, say "You see it takes less time for [him of S2] to recover than you'd hoped. It looks like [he of S2][']s extremely dedicated the the cause!";
+						if D1 <= 0, say "You see it takes less time for [him of S2] to recover than you'd hoped. It looks like [he of S2][']s extremely dedicated the cause!";
 						decrease D1 by 2;
 					increase D1 by 5;
 			otherwise if M2 >= 0:
@@ -1444,7 +1444,9 @@ To compute teaching of (L - dodgeball-lesson):
 		if ballHit > 0:[hit]
 			if ballTarget is student:
 				say "[BigNameDesc of ballTarget] [one of]is way too slow[or]deflects the ball with [his of ballTarget] hands but it isn't good enough[or][if bodyTarget is thighs]tries to duck[otherwise]tries to jump[end if] in vain[at random] and the ball hits [him of ballTarget] [if bodyTarget is thighs]on the legs[otherwise]right in the [one of]face[or]chin[purely at random][end if]! [big his of ballTarget] [one of]belly[or]stomach[or]tummy[at random] rapidly expands to the size of a [if the lessonInt1 of ballTarget is not 1 and the lessonInt1 of ballTarget is not 4]large basketball[otherwise]beach ball[end if] as [his of ballTarget] [one of]bowels are[or]rectum is[or]intestines are[at random] magically filled with an [one of]inhuman load[or]insane amount of mess[or]gigantic helping of poop[at random].";
-				if the lessonInt1 of ballTarget > 2, now temporaryYesNoBackground is figure of teacher brooke cutscene 2;
+				if the lessonInt1 of ballTarget > 2:
+					now temporaryYesNoBackground is figure of teacher brooke cutscene 2;
+					now temporaryYesNoResetNeeded is false;
 				if bodyTarget is face, HappinessDown ballTarget;
 				if dodgeChoice > 0, say BadDodgeChoice dodgeChoice;
 				say "[BigNameDesc of ballTarget] [one of]groans[or]winces[at random] with discomfort as [he of ballTarget] picks up the ball.";
@@ -1570,7 +1572,7 @@ To compute teaching of (L - dodgeball-lesson):
 	say "[speech style of M]'Alright I'm bored of you all now. Get out of my sight. Class dismissed!'[roman type][line break]";
 	DexUp 2;
 	now bigGameLoop is 0;
-	now temporaryYesNoBackground is figure of small image;
+	temporaryYesNoBackgroundReset;
 	conclude consenting.
 
 To say BadDodgeChoice (dodgeChoice - a number):

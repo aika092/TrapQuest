@@ -61,6 +61,7 @@ Report taking:
 Stealing is an action applying to one thing.
 Check stealing:
 	if the noun is not monster, say "This verb is used for stealing items from NPCs." instead;
+	if tutorial is 1, say "Please only follow the instructions given for the tutorial." instead;
 	if the noun is caged, say "You can't reach." instead;
 	if the noun is explorer, say "[big he of the noun][']s literally holding it in [his of the noun] hand." instead;
 	if the player is immobile or the player is in danger, say "Aren't you a bit busy?" instead;

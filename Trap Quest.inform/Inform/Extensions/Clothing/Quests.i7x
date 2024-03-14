@@ -1680,8 +1680,12 @@ To compute punishment of (W - a wisp punishment):
 	say "BUG - This wisp punishment ([W]) has no execution function.".
 
 bimbo-wisp-punishment is a wisp punishment. The printed name of bimbo-wisp-punishment is "become more [if diaper quest is 1]babified[otherwise]sluttified[end if]".
-To compute punishment of (W - bimbo-wisp-punishment): [TODO: expand]
-	if diaper quest is 0 or the player is totally incontinent:
+To compute punishment of (W - bimbo-wisp-punishment):
+	let C be most-transformable-clothing;
+	if C is transformable clothing and a random number between 1 and 5 > 2:
+		say "You feel the wisp's curse try to transform your [MediumDesc of C]!";
+		potentially transform C;
+	otherwise if diaper quest is 0 or the player is totally incontinent:
 		say "You feel significantly more deviant.";
 		RandomAddictUp 2;
 	otherwise:

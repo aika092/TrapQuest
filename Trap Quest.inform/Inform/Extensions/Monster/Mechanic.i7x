@@ -466,7 +466,7 @@ This is the mechanic dark ritual rule:
 		let M be current-monster;
 		say "[BigNameDesc of M] seems to consider you for a second, then pulls out a swirling black and red gem.[line break][speech style of M]'You cannot imagine how difficult it was to come by this, you should be honoured to play host to one of my servants...'[roman type][line break]";
 		say "You have no idea what the hell [he of M][']s talking about, but before you can react [he of M] plunges the stone into your chest. Agony overflows your body, and you briefly black out. When you come to, [he of M][']s still glancing down at you.[line break]";
-		say "[speech style of M]'All better? Good. You serve me now. [unless mystical amulet is carried by M]You don't need to know the details, all you need to know is that you will have a place in my service for eternity if you can only recover the mystical amulet guarded by [NameDesc of minotaur] in the dungeon. Fail, and of course your spirit will fall to oblivion forever...'[otherwise]This is really all a formality since I already have the amulet I need, but you'll need to get to collecting souls. Slack off and your soul will fall to oblivion forever. Hop to it slut!'[end if][roman type][line break]";
+		say "[speech style of M]'All better? Good. You serve me now. [unless mystical amulet is carried by M]You don't need to know the details, all you need to know is that you will have a place in my service for eternity if you can only recover the mystical amulet guarded by [MediumDesc of minotaur] in the dungeon. Fail, and of course your spirit will fall to oblivion forever...'[otherwise]This is really all a formality since I already have the amulet I need, but you'll need to get to collecting souls. Slack off and your soul will fall to oblivion forever. Hop to it slut!'[end if][roman type][line break]";
 		compute succubus transformation;
 		bore M;
 		rule succeeds.
@@ -703,7 +703,7 @@ To compute damage reaction of (M - mechanic):
 					say "It doesn't look like [he of woman-player][']s going to be much help...";
 					now the mechanic-scene of woman-player is 6;
 				otherwise if the health of M < the maxhealth of M / 3:
-					if the health of M <= 0 and the power-stolen of M is 0 and (the xavier-power of M >= 4 or M is carrying mystical amulet):[gives the player a chance to steal the amulet]
+					if the power-stolen of M is 0 and (the xavier-power of M >= 4 or M is carrying mystical amulet):
 						say "[BigNameDesc of M] [if M is carrying mystical amulet]grips the amulet[otherwise]clenches [his of M] fists[end if].[line break][speech style of M]'Fine, have it your way!'[roman type][line break]";
 						unseal xavier from M;
 					if demon lord is in the location of the player:

@@ -306,7 +306,7 @@ To compute drunken adventure:
 		notice a wisp;
 		update player region;
 		compute bladder cleanup;
-		refresh the map-window.
+		refresh map zone.
 
 gold chalice is a vessel. the curse-ID of gold chalice is sure. gold chalice is open topped. The max-doses of a gold chalice is 3. The printed name of gold chalice is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]gold chalice[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of gold chalice is "gc". Figure of gold chalice is the file "Items/Accessories/Vessels/goldenchalice1.png".
 To decide which figure-name is the examine-image of (V - gold chalice):

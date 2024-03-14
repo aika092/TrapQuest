@@ -483,7 +483,7 @@ To compute unique periodic effect of (M - an aeromancer):
 				now the fountain-target of M is inseminating collecting;
 			otherwise:
 				SemenPuddleUp 1;
-		otherwise:
+		otherwise if the semen-puddle of L < 75:
 			SemenPuddleUp 1 in L.
 
 To compute unique unsimulated periodic effect of (M - an aeromancer):

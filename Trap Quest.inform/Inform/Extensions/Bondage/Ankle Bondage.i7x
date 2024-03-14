@@ -26,6 +26,19 @@ To say ClothingDesc of (C - a pair of anklecuffs):
 To say ShortDesc of (A - a pair of anklecuffs):
 	say "pair of medieval anklecuffs".
 
+ankle-ropes is an ankle bond. ankle-ropes is hemp. The printed name of ankle-ropes is "[clothing-title-before]ankle ropes[clothing-title-after]". The text-shortcut of ankle-ropes is "arps". Understand "ankle", "ropes" as ankle-ropes.
+
+Figure of ankle ropes is the file "Items/Accessories/Leg/ankleropes1.jpg".
+
+To decide which figure-name is clothing-image of (C - ankle-ropes):
+	decide on figure of ankle ropes.
+
+To say ClothingDesc of (C - ankle-ropes):
+	say "Your ankles are cinched tightly together with rope, forcing you to hobble with the tiniest of steps.".
+
+To say ShortDesc of (A - ankle-ropes):
+	say "ankle ropes".
+
 Chapter - Wearability
 
 ankle bond wearability rules is a rulebook. The wearability rules of ankle bond is usually ankle bond wearability rules.

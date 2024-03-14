@@ -2393,7 +2393,7 @@ Definition: chef-cookie-errand is completed:
 	decide no.
 To decide which number is the errand-weight of (E - chef-cookie-errand) for (P - robochef):
 	decide on 25.
-To decide which number is the bartering value of of (E - cookie) for (P - vampiress):
+To decide which number is the bartering value of (E - cookie) for (P - vampiress):
 	if the quality of E <= -3 and the current-errand of robochef is chef-cookie-errand, decide on 10;
 	decide on 0.
 To say MonsterOfferAcceptFlav of (M - vampiress) to (T - cookie):
@@ -2730,8 +2730,8 @@ To decide which number is the errand-weight of (E - wisp-errand) for (P - an aco
 	decide on 8.
 To decide which number is the errand-weight of (E - wisp-errand) for (P - witch):
 	decide on 4.
-To decide which number is the errand-weight of (E - wisp-errand) for (P - a wench):
-	decide on 4.
+[To decide which number is the errand-weight of (E - wisp-errand) for (P - a wench):
+	decide on 4.]
 To decide which number is the errand-weight of (E - wisp-errand) for (P - djinn):
 	decide on 6.
 To decide which number is the errand-weight of (E - wisp-errand) for (P - a gladiator):
@@ -2740,6 +2740,7 @@ To decide which number is the errand-weight of (E - wisp-errand) for (P - a roya
 	decide on 2.
 To decide which number is the errand-weight of (E - wisp-errand) for (P - a person):
 	if P is robot or P is student, decide on 0;
+	if P is infernal monster, decide on 5;
 	decide on 1.
 To say ErrandFlav of (E - wisp-errand) for (P - a person):
 	say "[if the errand-weight of E for P > 1]You have debts to other entities that are as of yet unpaid. Fulfill your promises to them, and then return to me, and I will consider your price paid. [otherwise]Some freaky-ass ghosts came to me in a vision just a minute ago, and told me you were going to ask that! They also said I have to do as you ask, after you've played their [']game[']. I don't know what that means, but I'm not going to argue with an evil spirit! Come back to me when you've not got any evil spirits floating around you. [end if]".

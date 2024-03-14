@@ -182,7 +182,10 @@ To construct unique buttons for (T - a goblin):
 		now the ButtonImage entry is Figure of PokeButton;
 		now the ButtonCommand entry is "poke [the text-shortcut of T]";
 		now the ButtonColour entry is lightModeFullGreen;
-		if the player is in danger, now the ButtonColour entry is lightModeFullYellow.
+		if the player is in danger:
+			now the ButtonColour entry is lightModeFullYellow;
+		otherwise:
+			now the ButtonPriority entry is 1.
 
 Part 3 - Combat
 

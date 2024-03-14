@@ -84,6 +84,7 @@ To compute furniture resting on (F - modification machine):
 		otherwise if diaper quest is 0 and R <= 2 and P is actually summonable:
 			say PiercingFlav of P;
 			summon P cursed with quest;
+			cutshow P;
 		otherwise if R is 3 and the player is possessing a vagina and diaper quest is 0:
 			compute F widening vagina;
 		otherwise if (R >= 4 and R <= 9) or R is diaper quest: [So it replaces R=1 in diaper quest]

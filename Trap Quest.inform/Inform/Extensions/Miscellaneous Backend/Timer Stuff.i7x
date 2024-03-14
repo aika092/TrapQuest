@@ -158,10 +158,10 @@ Glulx input handling rule for a timer-event:
 
 To compute animations:
 	repeat with T running through g-animated g-unpaused animation tracks:
-		if buttonsLatest is not the target-window of T and (PopupButtons > 0 or the target-window of T is map-window or the target-window of T is graphics-window): [Don't want animations to draw over buttons, which they would do without these checks]
-			if the target-window of T is main window, say "BUG - animation track targeted at main window.";
-			[if debugmode > 1, say "Target window of this track is [target-window of T].";]
-			if the number of blank rows in the Table of Graphlink Glulx Replacement Commands is greater than 20 or the target-window of T is map-window or the target-window of T is graphics-window, compute animation of T. [If the graphlink table is almost full, that probably means that this animation has been going for some time, re-adding hyperlinks each time. Let's stop animating, to leave 20 hyperlinks spare for the popup buttons or similar.]
+		[if latestZoneClicked is not the target-window of T and (PopupButtons > 0 or the target-window of T is graphics-window):] [Don't want animations to draw over buttons, which they would do without these checks] [GUITODO - latestZoneClicked is now an interger]
+		if the target-window of T is main window, say "BUG - animation track targeted at main window.";
+		if debugmode > 1, say "Target window of this track is [target-window of T].";
+		if the number of blank rows in the Table of Graphlink Glulx Replacement Commands is greater than 20 or the target-window of T is graphics-window, compute animation of T. [If the graphlink table is almost full, that probably means that this animation has been going for some time, re-adding hyperlinks each time. Let's stop animating, to leave 20 hyperlinks spare for the popup buttons or similar.]
 
 To kill all animations:
 	repeat with T running through g-animated animation tracks:
@@ -256,15 +256,15 @@ To check speed change of (T - an animation track):
 
 To compute animation of (T - an animation track):
 	if the target-window of T is a g-present graphics g-window:
-		unless the target-window of T is map-window and currentlyConsenting is true and YesNoPreference > 0 and YesNoPreference < 1000 and T is frameOverriding: [Don't draw animations on a blank map window]
+		unless [the target-window of T is map-window and] currentlyConsenting is 1 and YesNoPreference > 0 and YesNoPreference < 1000 and T is frameOverriding: [Don't draw animations on a blank map window]
 			if the frame-tick of T >= the frameSlowness of T:
 				now the frame-tick of T is 1;
 				let X be the current-frame of T;
 				let img be entry X of the image-reel of T;
 				if debugmode > 2:
-					let CW be the current focus window;
+					let CW be the graphics-window;
 					focus the main window;
-					say "Current focus window is [CW]. Animation target window is [target-window of T].";
+					say "graphics-window is [CW]. Animation target window is [target-window of T].";
 					focus CW;
 				if T is frameOverriding: [This means it's an image that needs a flat colour drawn behind it each time]
 					if T is imageRedrawing: [This means it's an image in a focus window so we need to redraw the box and the item and icons each time]
@@ -280,7 +280,7 @@ To compute animation of (T - an animation track):
 						display the image img in the target-window of T at animX of T by animY of T with dimensions animW of T by animH of T;
 				otherwise:
 					display the image img in the target-window of T at animX of T by animY of T with dimensions animW of T by animH of T;
-				if the target-window of T is map-window, draw a box backgroundC of T in the map-window from animX of T by animY of T to (animX of T + animW of T) by (animY of T + animH of T) with 1 pixel line-weight, inset;
+				if the target-window of T is graphics-window, draw a box backgroundC of T in the graphics-window from animX of T by animY of T to (animX of T + animW of T) by (animY of T + animH of T) with 1 pixel line-weight, inset;
 				if X >= the number of entries in the image-reel of T:
 					if T is g-boomerang and X > 1: [would glitch horribly if an animation with 1 frame was interpreted as a boomerang]
 						now T is g-reversing;
@@ -297,6 +297,8 @@ To compute animation of (T - an animation track):
 					increase the current-frame of T by the animation-speed of T;
 				if T is loading animation track:
 					if the current-frame of T is (the number of entries in the image-reel of T - the pause-frame of T), now T is g-paused;
+				otherwise if T is g-looping cutscene animation track:
+					if the player is not YesNoButtonReady, set a graphlink in the graphics-window identified as hypermapskip from map-window-x-root by 0 to (map-window-x-root + map-window-width) by map-window-height as "map"; [we don't want to block the YesNoButtons]
 			otherwise:
 				increase the frame-tick of T by 1;
 	otherwise:
@@ -322,9 +324,7 @@ To uniquely set up (T - skirtDisplacedAnimation):
 	add Figure of RaiseSkirtButton to the image-reel of T.
 
 pantsUnzippedAnimation is an icon animation track. pantsUnzippedAnimation is g-looping.
-To decide which object is the TQAnimTrack of (F - Figure of UnzipButtonLight):
-	decide on pantsUnzippedAnimation.
-To decide which object is the TQAnimTrack of (F - Figure of UnzipButtonDark):
+To decide which object is the TQAnimTrack of (F - Figure of UnzipButton):
 	decide on pantsUnzippedAnimation.
 To uniquely set up (T - pantsUnzippedAnimation):
 	truncate the image-reel of T to 0 entries;
@@ -346,9 +346,7 @@ Figure of AnimatedAlarmIconLight3 is the file "Special/Buttons/lightMode/alarm3.
 Figure of AnimatedAlarmIconDark2 is the file "Special/Buttons/darkMode/alarm2.png".
 Figure of AnimatedAlarmIconDark3 is the file "Special/Buttons/darkMode/alarm3.png".
 alarmAnimation is an icon animation track. alarmAnimation is g-looping.
-To decide which object is the TQAnimTrack of (F - Figure of AlarmIconLight):
-	decide on alarmAnimation.
-To decide which object is the TQAnimTrack of (F - Figure of AlarmIconDark):
+To decide which object is the TQAnimTrack of (F - Figure of AlarmIcon):
 	decide on alarmAnimation.
 To uniquely set up (T - alarmAnimation):
 	truncate the image-reel of T to 0 entries;
@@ -368,7 +366,7 @@ Figure of AnimatedSirenIcon4 is the file "Special/Animations/Siren/frame4.png".
 sirenAnimation is an icon animation track. sirenAnimation is g-looping. The image-reel of sirenAnimation is {Figure of AnimatedSirenIcon1, Figure of AnimatedSirenIcon2, Figure of AnimatedSirenIcon3, Figure of AnimatedSirenIcon4}.
 To decide which object is the TQAnimTrack of (F - Figure of EatButtonLight):
 	decide on sirenAnimation.
-To decide which object is the TQAnimTrack of (F - Figure of EatButtonDark):
+To decide which object is the TQAnimTrack of (F - Figure of EatButton):
 	decide on sirenAnimation.
 To decide which number is the frameSlowness of (T - sirenAnimation):
 	decide on 1.
@@ -423,26 +421,26 @@ To compute unique setup of (T - a cutscene animation track):
 	now the animationColour of T is lightModeWhite.
 
 To commence animation of (T - a cutscene animation track):
-	if animationsEnabled is 1 and the map-window is g-present and T is not g-animated:
+	if animationsEnabled is 1 and the graphics-window is g-present and T is not g-animated:
 		compute unique setup of T;
 		now the frame-tick of T is 1;
-		now the target-window of T is the map-window;
+		now the target-window of T is the graphics-window;
 		let F be entry 1 of the image-reel of T;
 		MapShow figure of small image; [This is a cheeky way of flagging that we've set up the animation for this time period. This will mean that we see the animation looping even though time has moved forward this time, but next time it'll be overridden.]
-		let mapH be the height of the map-window;
-		let mapW be the width of the map-window;
+		let mapH be map-window-height;
+		let mapW be map-window-width;
 		now the animW of T is the pixel-width of F;
 		now the animH of T is the pixel-height of F;
-		now the animX of T is (the width of the map-window - the animW of T) / 2;
-		now the animY of T is (the height of the map-window - the animH of T) / 2;
-		draw a rectangle animationColour of T in the map-window at 0 by 0 with size (mapW + 1) by (mapH + 1);
-		if the player is not YesNoButtonReady, set a graphlink in the map-window identified as hypermapskip from 0 by 0 to mapW by mapH as "skip"; [we don't want to block the YesNoButtons]
+		now the animX of T is map-window-x-root + ((mapW - the animW of T) / 2);
+		now the animY of T is (mapH - the animH of T) / 2;
+		draw a rectangle animationColour of T in the graphics-window at map-window-x-root by 0 with size (mapW + 1) by (mapH + 1);
+		if the player is not YesNoButtonReady, set a graphlink in the graphics-window identified as hypermapskip from map-window-x-root by 0 to (map-window-x-root + mapW) by mapH as "skip"; [we don't want to block the YesNoButtons]
 		now T is g-animated.
 
 Check jumping when there is g-animated cutscene animation track:
 	repeat with G running through g-animated cutscene animation tracks:
 		cease animation of G;
-	refresh the map-window;
+	refresh map zone;
 	do nothing instead.
 
 To decide which number is the frameSlowness of (T - a cutscene animation track):
@@ -470,7 +468,7 @@ To compute unique setup of (T - a solo animation track):
 To cease animation of (T - a solo animation track):
 	now T is not g-animated;
 	now T is g-unpaused;
-	close the map-window.
+	close the graphics-window.
 
 An initial animation track is a kind of solo animation track.
 
@@ -478,19 +476,22 @@ To commence animation of (T - an initial animation track):
 	compute unique setup of T;
 	now the current-frame of T is 1;
 	now the frame-tick of T is 1;
-	now the target-window of T is the map-window;
-	let F be entry 1 of the image-reel of T;
-	now the position of the map-window is g-placeabove;
-	now the measurement of the map-window is 99;
-	open the map-window;
-	let mapH be the height of the map-window;
-	let mapW be the width of the map-window;
+	now the target-window of T is the graphics-window;
+	now the position of the graphics-window is g-placeabove;
+	now the measurement of the graphics-window is 99;
+	open the graphics-window;
+	compute framing of T.
+
+To compute framing of (T - an initial animation track):
+	let F be entry (current-frame of T) of the image-reel of T;
+	let mapH be the height of the graphics-window;
+	let mapW be the width of the graphics-window;
 	now the animW of T is the pixel-width of F;
 	now the animH of T is the pixel-height of F;
-	now the animX of T is (the width of the map-window - the animW of T) / 2;
-	now the animY of T is (the height of the map-window - the animH of T) / 2;
-	draw a rectangle animationColour of T in the map-window at 0 by 0 with size (mapW + 1) by (mapH + 1);
-	set a graphlink in the map-window identified as hyperobject from 0 by 0 to mapW by mapH as "skip", ignoring redundant links;
+	now the animX of T is (the width of the graphics-window - the animW of T) / 2;
+	now the animY of T is (the height of the graphics-window - the animH of T) / 2;
+	draw a rectangle animationColour of T in the graphics-window at 0 by 0 with size (mapW + 1) by (mapH + 1);
+	set a graphlink in the graphics-window identified as hypermapskip from 0 by 0 to mapW by mapH as "skip";
 	unless the bannerImage of T is figure of no-image-yet:
 		let BI be the bannerImage of T;
 		let BIW be the pixel-width of BI;
@@ -506,7 +507,7 @@ To commence animation of (T - an initial animation track):
 			now the animY of T is (mapH - the animH of T) / 2;
 		let BIX be animX of T - ((BIW - animW of T) / 2);
 		let BIY be animY of T - ((BIH - animH of T) / 2);
-		draw the image bannerImage of T in the map-window at BIX by BIY with dimensions BIW by BIH;
+		draw the image bannerImage of T in the graphics-window at BIX by BIY with dimensions BIW by BIH;
 	now T is g-unpaused;
 	now T is g-animated.
 
@@ -516,23 +517,30 @@ To decide which figure-name is the bannerImage of (T - an initial animation trac
 To decide which number is the frameSlowness of (T - an initial animation track):
 	decide on 3.
 
+To cease animation of (T - an initial animation track):
+	now T is g-unpaused;
+	now T is not g-animated;
+	close the graphics-window;
+	now the position of the graphics-window is g-placeleft;
+	now the measurement of the graphics-window is 64.
+
 An epilogue animation track is a kind of solo animation track. An epilogue animation track is g-looping.
 
 To commence animation of (T - an epilogue animation track):
 	compute unique setup of T;
 	now the current-frame of T is 1;
 	now the frame-tick of T is 1;
-	now the target-window of T is the map-window;
+	now the target-window of T is the graphics-window;
 	let F be entry 1 of the image-reel of T;
-	open the map-window;
-	let mapH be the height of the map-window;
-	let mapW be the width of the map-window;
+	open the graphics-window;
+	let mapH be the height of the graphics-window;
+	let mapW be the width of the graphics-window;
 	now the animW of T is the pixel-width of F;
 	now the animH of T is the pixel-height of F;
 	now the animX of T is (mapW - the animW of T) / 2;
 	now the animY of T is (mapH - the animH of T) / 2;
-	draw a rectangle animationColour of T in the map-window at 0 by 0 with size (mapW + 1) by (mapH + 1);
-	set a graphlink in the map-window identified as hyperobject from 0 by 0 to mapW by mapH as "skip", ignoring redundant links;
+	draw a rectangle animationColour of T in the graphics-window at 0 by 0 with size (mapW + 1) by (mapH + 1);
+	set a graphlink in the graphics-window identified as hypermapskip from 0 by 0 to mapW by mapH as "skip";
 	now T is g-unpaused;
 	now T is g-animated.
 
@@ -553,13 +561,16 @@ To commence animation of (T - a loading animation track):
 	compute unique setup of T;
 	now the current-frame of T is 1;
 	now the frame-tick of T is 1;
-	now the target-window of T is the map-window;
-	let F be entry 1 of the image-reel of T;
-	now the position of the map-window is g-placeabove;
-	now the measurement of the map-window is 99;
-	open the map-window;
-	let mapH be the height of the map-window;
-	let mapW be the width of the map-window;
+	now the target-window of T is the graphics-window;
+	now the position of the graphics-window is g-placeabove;
+	now the measurement of the graphics-window is 99;
+	open the graphics-window;
+	compute framing of T.
+
+To compute framing of (T - a loading animation track):
+	let F be entry (current-frame of T) of the image-reel of T;
+	let mapH be the height of the graphics-window;
+	let mapW be the width of the graphics-window;
 	now the animW of T is the pixel-width of F;
 	now the animH of T is the pixel-height of F;
 	now the animX of T is (mapW - the animW of T) / 2;
@@ -570,9 +581,9 @@ To commence animation of (T - a loading animation track):
 	let bannerYdiff be bannerH - the animH of T;
 	let bannerX be the animX of T - (bannerXdiff / 2);
 	let bannerY be the animY of T - (bannerYdiff / 2);
-	draw a rectangle lightModeWhite in the map-window at 0 by 0 with size (mapW + 1) by (mapH + 1);
-	set a graphlink in the map-window identified as hyperobject from 0 by 0 to mapW by mapH as "skip", ignoring redundant links;
-	draw the image bannerImage of T in the map-window at bannerX by bannerY with dimensions bannerW by bannerH;
+	draw a rectangle lightModeWhite in the graphics-window at 0 by 0 with size (mapW + 1) by (mapH + 1);
+	set a graphlink in the graphics-window identified as hypermapskip from 0 by 0 to mapW by mapH as "skip";
+	draw the image bannerImage of T in the graphics-window at bannerX by bannerY with dimensions bannerW by bannerH;
 	now T is g-unpaused;
 	now T is g-animated.
 
@@ -582,9 +593,39 @@ To decide which number is the frameSlowness of (T - a loading animation track):
 To cease animation of (T - a loading animation track):
 	now T is g-unpaused;
 	now T is not g-animated;
-	close the map-window;
-	now the position of the map-window is g-placeleft;
-	now the measurement of the map-window is 40.
+	close the graphics-window;
+	now the position of the graphics-window is g-placeleft;
+	now the measurement of the graphics-window is 64.
+
+previous-body-flip is an animation track. previous-body-flip can be pause-button-rendered.
+body-animation-page is a number that varies. [0: current; 1: previous]
+
+To commence animation of (T - previous-body-flip):
+	now the frame-tick of T is 1;
+	now T is g-unpaused;
+	now T is g-animated.
+
+To decide which number is the frameSlowness of (T - previous-body-flip):
+	decide on 12. [this multiplied by 50 is the number of milliseconds between each frame transition.]
+
+To compute animation of (T - previous-body-flip):
+	if the graphics-window is g-present:
+		[if debugmode > 0, say "animating body flip.";]
+		if current-inventory-menu is not 0 or character-page is not 1:
+			cease animation of T;
+			[if debugmode > 0, say "wrong page. ceasing body flip.";]
+		otherwise:
+			if the frame-tick of T >= the frameSlowness of T:
+				now the frame-tick of T is 1;
+				if body-animation-page is 0, now body-animation-page is 1;
+				otherwise now body-animation-page is 0;
+				[if debugmode > 0, say "body animation page is now [body-animation-page].";]
+				display inventory menus;
+			otherwise:
+				increase the frame-tick of T by 1;
+	otherwise:
+		say "BUG: [target-window of T] was not present to render the animation [T] inside.";
+		cease animation of T.
 
 
 Figure of HypnoPissAnimation00 is the file "Special/Animations/HypnoPiss/frame00.jpg".

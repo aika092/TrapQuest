@@ -7,6 +7,11 @@ Definition: djinn is father material: decide yes.
 Definition: djinn is dark skinned: decide yes.
 
 Definition: djinn is woods dwelling: decide yes.
+Definition: djinn is mansion dwelling: decide yes.
+Definition: djinn is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
+Definition: djinn is summon appropriate: [He can be randomly selected to be summoned, even though he doesn't count towards summon limits.]
+	if it is summon-available, decide yes;
+	decide no.
 
 Definition: djinn is raunchy: decide yes.
 
@@ -318,7 +323,20 @@ To compute djinn wishing of (M - a monster):
 Definition: djinn is uniquely distracted:
 	if djinn is in the location of the player:
 		let M be a random explorer in the location of the player;
-		if M is explorer:
+		if diaper quest is 0 and the woman-status of woman-player < 30 and woman-player is in the location of the player and the woman-pregnancy of woman-player is 0 and the sword-stone-scene of woman-player is 0 and woman-player is introduced and woman-player is awake:
+			now M is woman-player;
+			say "[BigNameDesc of djinn] spots [NameDesc of M].[line break][speech style of djinn]'Your third and final wish. I will hear it now.'[roman type][line break][BigNameDesc of M] looks nervous as [he of M] tries to decide what [he of M] wants to wish for. The time pressure seems to get to [him of M], and [he of M] panics.[line break][speech style of M]'I, um I wish for... [if the woman-bimbo of M <= 4]A legendary sword, which curses anyone who tries to steal it from me[otherwise]an asshole that never gets sore, no matter how long it is stretched and filled by even a giant cock[end if]!'[roman type][line break][BigNameDesc of djinn] nods.[line break][speech style of djinn]'It is done. You will be the new [']custodian['] of the Dildo Sword of Valleyhotep. No man or woman will be able to pull it from the stone, until a destined warrior arrives, one who is willing to accept the heavy, humiliating burden of the Chosen One.'[roman type][line break]As [he of djinn] says that last bit, [he of djinn] glances in your direction meaningfully.[paragraph break][speech style of M]'Custodian? STONE?! What on earth are you talking about? I wanted-'[roman type][line break][BigNameDesc of M] squeaks as [his of M] angry retort is interrupted by the realisation that [his of M] fingers and then hands are turning to stone.[line break][speech style of M]'No no no what have you done to me you bastard?! I wanted-'[roman type][line break]But the petrification is spreading rapidly now, and [NameDesc of M] is cut off as [his of M] lungs start to turn to stone.[paragraph break][speech style of djinn]'Don't worry, you shall remain fully conscious in your new role as the Stone Sword Custodian. Don't worry, despite it being kept stretched and filled at all times, your asshole will never grow sore.'[roman type][line break]You watch with [horror the bimbo of the player] as [NameDesc of M][']s completely stone body is bent over double, until [his of M] feet are near [his of M] head... And then a huge dildo sword appears, half-embedded inside [his of M] asshole.";
+			now M is permanently banished;
+			while woman-player is introduced and the woman-bimbo of woman-player + the delayed sluttification of woman-player < 4:
+				WomanSluttify;
+			now the sword-stone-scene of M is 1;
+			remove M from play;
+			now which-sword is in Woods26;
+			if M is not in Woods26:
+				say "And then, a moment later, [NameDesc of M] vanishes. Almost purposefully not looking at you, [NameDesc of djinn] says:[line break][speech style of djinn]'It is up to the Chosen One now, the one destined to pull the sword from the stone, and accept its heavy burden. Until then, [womanName] will remain an unmoving, unsleeping, fully conscious statue who can experience no sensations except touch... And the sensation of being stretched and filled.'[roman type][line break]";
+				cutshow which-sword;
+			decide yes;
+		otherwise if M is explorer:
 			let D be the best route from the location of the player to Stairwell02 through jungle rooms;
 			say "[BigNameDesc of djinn] spots [NameDesc of M].[line break][speech style of djinn]'Your third and final wish. I will hear it now.'[roman type][line break][BigNameDesc of M] looks nervous as [he of M] tries to decide what [he of M] wants to wish for. The time pressure seems to get to [him of M], and [he of M] panics.[line break][speech style of M]'I, um I wish for... ";
 			if the explorer-bimbo of M > 0, say "I wish for endless riches!'[roman type][line break][BigNameDesc of djinn] nods.[line break][speech style of djinn]'It is done. You now have access to endless riches. You must merely touch your new bed to summon one of an endless number of [men of male-m] who will give you jewellery in exchange for your... [']services[']. Just make sure to give the pimp [his of pimp] cut.'[line break][speech style of M]'New bed? [']Services[']? PIMP?! What are you on about?!'[roman type][line break][BigNameDesc of M] squeaks.[line break][speech style of djinn]'Don't worry, I shall give you an attitude adjustment to match your new role as a [if diaper quest is 1]Professional Baby Slave[otherwise]Hotel Whore[end if].'[roman type][line break]You watch with [horror the bimbo of the player] as [NameDesc of M][']s eyes glaze over and then a vacant, happy smile grows upon [his of M] face.[line break][speech style of M]'Ooh, goodie! I'm gonna so rich!'[roman type][line break][big he of M] starts almost mindlessly walking away from you, but clearly with a fixed destination in mind.";
@@ -330,7 +348,46 @@ Definition: djinn is uniquely distracted:
 			decide yes;
 	decide no.
 
-Part 4 - Djinn Messing
+Part 4 - Motion
+
+To compute non-regional seeking of (M - djinn):
+	if M is in Stairwell03 and the player is in Mansion01:
+		let L be a random placed no-roof haunted room;
+		if L is a room:
+			now M is in L;
+			say "As you close the door behind you, you hear a [']whoosh['] outside, as if [NameDesc of djinn] has flown up to find another entrance into the Mansion...";
+		otherwise:
+			compute default non-regional seeking of M;
+	otherwise if M is in a haunted room and the player is in a no-roof unbossed jungle room:
+		if the location of M is no-roof:
+			now M is in the location of the player;
+			say "With a [']whoosh['], [NameDesc of M] appears from the sky![line break][speech style of M]'You didn't think you'd gotten rid of me that easily, did you?'[roman type][line break]";
+		otherwise:
+			compute room leaving of M;
+	otherwise:
+		compute default non-regional seeking of M.
+
+djinn has a number called regionSwapCharge.
+
+To compute unique unsimulated periodic effect of (M - djinn):
+	if Mansion01 is placed and M is not interested and M is unleashed and M is in a placed room:
+		increase the regionSwapCharge of M by 1;
+		if the regionSwapCharge of M > a random number between 50 and 100 and the location of M is no-roof:
+			now the regionSwapCharge of M is 0;
+			if M is in the location of the player or M is nearby, say "You see [NameDesc of M] take flight up into the sky, leaving the [playerRegion] for some other region.";
+			if M is in a jungle room:
+				let L be a random no-roof unbossed placed haunted room;
+				if L is nothing, now L is a random unbossed placed haunted room;
+				now M is in L;
+			otherwise:
+				let L be a random no-roof unbossed placed jungle room;
+				if L is nothing, now L is a random unbossed placed jungle room;
+				now M is in L;
+			if M is in the location of the player, say "You see [NameDesc of M] descend from the sky, arriving in the [playerRegion] from some other region.".
+
+
+
+Part 5 - Djinn Messing
 
 To compute djinn messing of (M - djinn):
 	let R be a random number between 1 and 10;
@@ -355,7 +412,7 @@ To compute (M - djinn) transforming (C - a clothing):
 	otherwise:
 		compute failed transform of C.
 
-Part 5 - Combat
+Part 6 - Combat
 
 To compute (M - djinn) protecting against (X - a monster):
 	if X is unicorn:

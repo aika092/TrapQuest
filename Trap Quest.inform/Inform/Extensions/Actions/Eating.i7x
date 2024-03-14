@@ -42,6 +42,7 @@ Definition: yourself is able to eat:
 	repeat with T running through things penetrating face:
 		if T is pacifier, decide no;
 		if T is not gag, decide no;
+		if T is portal gag, decide no;
 	if the total volume of face > 0, decide no;
 	if the class of the player is living sex doll and the noun is pink pill, decide yes;
 	if the latex-transformation of the player > 4, decide no;

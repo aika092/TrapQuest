@@ -846,7 +846,7 @@ To compute punishment of (P - vampiress-maiden):
 	say DQIronMaidenFlav;
 	now the source-room of Iron Maiden is the location of the player;[In case the player faints]
 	now the player is in Iron Maiden;
-	refresh the map-window;
+	refresh map zone;
 	satisfy M.
 
 To say WaddleDiaperCheckFlav of (M - vampiress):

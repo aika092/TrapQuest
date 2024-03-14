@@ -71,7 +71,7 @@ To decide which figure-name is clothing-image of (C - fetish business dress):
 	decide on figure of fetish business dress.
 
 To say ClothingDesc of (M - fetish business dress):
-	say "This beige and black latex dress is styled like smart businesswoman attire but has a plunging gap in the middle that goes all the way down to the bellybutton, and a window at the back of the skirt to expose the wearer's butt.".
+	say "This beige and black latex dress is styled like smart businesswoman attire but has a plunging gap in the middle that goes all the way down to the bellybutton, and a window at the back of the skirt to expose the wearer's butt and genitals.".
 
 To say ShortDesc of (C - fetish business dress):
 	say "latex business dress".
@@ -80,6 +80,10 @@ To say MediumDesc of (C - fetish business dress):
 
 To decide which number is the initial outrage of (C - fetish business dress):
 	decide on 10.
+
+Definition: fetish business dress is potentially vagina covering: decide no. [pussy partially exposed]
+Definition: fetish business dress is potentially asshole covering: decide no. [asshole partially exposed]
+Definition: fetish business dress is potentially at least partially asshole covering: decide no. [asshole fully exposed]
 
 To decide which object is the unique-upgrade-target of (C - fetish business dress):
 	if the number of worn neck covering clothing is 0, decide on a random off-stage minimalist schoolgirl outfit.

@@ -90,7 +90,7 @@ To decide which number is the insertableGirthAcceptance of (F - a body part):
 
 To decide which number is the insertableGirthAcceptance of (F - a fuckhole):
 	if diaper quest is 0 and F is actually occupied, decide on the openness of F; [When the item is already inside, we just want to check how much the orifice is being stretched. For example, in the sex toy insertedToleranceDesc function.]
-	if there is worn elasticity clothing, decide on 99;
+	if fantastic elastic is 1 or there is worn elasticity clothing, decide on 99;
 	let T be 2 + diaper quest + ungape;
 	if measurement tattoo is worn, increase T by 3;
 	if diaper quest is 1:
@@ -248,9 +248,8 @@ To heal (F - a fuckhole) times (X - a number):
 
 [A body part has a rule called weight-rule. body-part-weight is a number that varies. The weight-rule of body part is usually the default weight rule.]
 
-a body part has a number called semen coating.
-
-a body part has a number called urine coating.
+a body part has a number called semen coating. a body part has a number called previous semen coating.
+a body part has a number called urine coating. a body part has a number called previous urine coating.
 
 [!<DecideWhichNumberIsTheDesireOfBodyPart>+
 
@@ -433,7 +432,8 @@ Definition: yourself is crotch covered:
 Section - Image for graphics window
 
 This is the body parts get focused rule:
-	if debugmode > 1, say "list of body parts to be focused...";
+	let LB be a list of things;
+	[if debugmode > 1, say "list of body parts to be focused...";
 	let LB be the list of overglazed body parts;
 	if debugmode > 1, say "Semen covered parts: [LB].";
 	repeat with B running through body parts:
@@ -461,11 +461,11 @@ This is the body parts get focused rule:
 				let C be calculated-cringe-level - (calculated-cringe-level / 2);
 				if C > 1 and the cringe of B >= C:
 					if debugmode > 1, say "[printed name of B] has high cringe.";
-					add B to LB, if absent;
+					add B to LB, if absent;]
 	if the total volume of face > 0:
 		if debugmode > 1, say "mouth has [MouthfulDesc].";
 		add face to LB, if absent;
-	if there is carried pocketwipes:
+	[if there is carried pocketwipes:
 		if the make-up of face > 0 and permanent makeup is 0:
 			if debugmode > 1, say "face has make up.";
 			add face to LB, if absent;
@@ -474,7 +474,7 @@ This is the body parts get focused rule:
 			add hair to LB, if absent;
 	if the largeness of belly > 5:
 		if debugmode > 1, say "belly size is [largeness of belly].";
-		add belly to LB, if absent;
+		add belly to LB, if absent;]
 	if debugmode > 1, say "List of body parts to focus is [LB].";
 	repeat with B running through LB:
 		focus-consider B.
@@ -513,12 +513,15 @@ To construct unique buttons for (T - face):
 		now the ButtonImage entry is Figure of SpitButton;
 		now the ButtonCommand entry is "spit";
 		now the ButtonColour entry is lightModeFullGreen;
-		if there is a thing penetrating face, now the ButtonColour entry is lightModeFullRed; [turn red - player can't spit]
+		if there is a thing penetrating face:
+			now the ButtonColour entry is lightModeFullRed; [turn red - player can't spit]
+			now the ButtonPriority entry is 1;
 		if ButtonTableFull is 0:
 			choose a blank row in the Table of Buttons;
 			now the ButtonImage entry is Figure of DrinkButton;
 			now the ButtonCommand entry is "swallow";
 			now the ButtonColour entry is lightModeFullGreen;
+			now the ButtonPriority entry is 1;
 			if there is an actual throater thing penetrating face, now the ButtonColour entry is lightModeFullRed. [turn red - player can't swallow]
 
 Body Parts Definitions ends here.

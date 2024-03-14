@@ -405,6 +405,7 @@ Report going when the vine-hole-scene of woman-player is 0 and the woman-bimbo o
 		say "As you arrive here you see that [NameDesc of woman-player] is here, completely naked and trying to climb out of the pit, with a strong green vine wrapped around one of [his of woman-player] wrists, trying to pull [him of woman-player] back down into the underground cavern. [big his of woman-player] pistol has fallen out of [his of woman-player] hand, lying just inches away out of [his of woman-player] reach. [if the player is upright][bold type]As you are distracted by the gun, you stumble on a rock and fall to your knees.[roman type][line break][line break][BigNameDesc of woman-player] spots you and [his of woman-player] eyes widen with a look of urgency.[line break][speech style of woman-player]'[NameBimbo]! Thank the stars! Quick, my gun!'[roman type][line break]What do you do?";
 		now the stance of the player is 1; [Important to avoid the clumsy fall-in-the-hole cutscene happening in the same turn]
 		cutshow figure of barbara cutscene 9 for woman-player;
+		now temporaryYesNoBackground is Figure of Barbara Cutscene 9;
 		reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 		set numerical response 1 to "hand [his of woman-player] pistol to [him of woman-player]";
 		if magic pistol is actually summonable, set numerical response 2 to "try to use [his of woman-player] pistol yourself to save [him of woman-player]";
@@ -891,9 +892,10 @@ A later time based rule (this is the barbara stool gets noticed rule):
 			now the stool-scene of W is 1;
 		let M be W;
 		repeat with N running through reactive male monsters:
-			if N is uninterested or N is friendly, now M is N;
+			if the refractory-period of N <= 0 and (N is uninterested or N is friendly), now M is N;
 		if M is not W:
 			compute barbara stool fuck of M;
+			if the refractory-period of M <= 0, now the refractory-period of M is 150. [Even if the NPC doesn't usually have a refractory period, we need to give them one here or they will fuck Barbara every single turn]
 
 To say BecomesDistractedFlav of (M - a monster) to (W - a monster):
 	say "[BigNameDesc of M][']s gaze shifts from you to [NameDesc of W].".
@@ -905,7 +907,7 @@ To compute barbara stool fuck of (M - a monster):
 	say WomanStoolFuckClimaxFlav of M;
 	now the refractory-period of M is the refractory-time of M;
 	satisfy M;
-	compute mandatory room leaving of M.
+	unless M is shopkeeper or M is guarding, compute mandatory room leaving of M.
 
 To say WomanStoolFuckStartFlav of (M - a monster):
 	let W be woman-player;
@@ -995,12 +997,15 @@ An all time based rule (this is the barbara throne rule):
 			increase the throne-scene of W by 1;
 			if the throne-scene of W is 1:
 				say "[speech style of W]'Oh wow, [NameBimbo], fancy seeing you here at a time like this. Not that there's anything going on here. Nothing's going on here. Would you mind, um, leaving me alone for a moment?'[roman type][line break]";
+				cutshow W;
 			otherwise if the throne-scene of W is 2:
 				say "You can see [NameDesc of W][']s belly growing larger with each moment that passes. Is [he of W] getting filled up from behind?[line break][speech style of W]'Seriously, there's nothing going on here, so if you could please just leave me alone for a brief second I'll... ergh...'[roman type][line break]";
+				cutshow W;
 			otherwise:
 				if the throne-scene of W is 3:
 					say "[BigNameDesc of W] now [if pregnancy fetish is 1]looks nine months pregnant[otherwise]looks like [his of W] belly is about to burst[end if]![line break][speech style of W]'Oh god... can't hold it...'[roman type][line break]";
 					womanSluttify;
+					cutshow W;
 				otherwise:
 					say "[one of]Mouthfuls of [semen] start to erupt from [NameDesc of W][']s mouth. [big he of W] can no longer speak, and [his of W] eyes have rolled into the back of [his of W] head. You're not sure [he of W] is even fully conscious any more.[or]Mouthfuls of [semen] continue to spew from [NameDesc of W][']s mouth.[stopping]";
 					decrease the throne-scene of W by 1; [Keeps the scene going indefinitely]
@@ -1341,7 +1346,7 @@ To compute protection of (M - woman-player):
 To compute unique interaction of (M - woman-player):
 	if the woman-status of M is 96 and the patron-scene-done of M is 1 and M is in the location of the player:
 		compute patron scene climax of M;
-	otherwise if the woman-status of M is 82 and pregnancy fetish is 1 and the pregnancy of the player is 0 and the player is immobile and (the player is possessing a vagina or the player is ready for event TG):
+	otherwise if the woman-status of M is 82 and pregnancy fetish is 1 and the pregnancy of the player is 0 and (the player is immobile or milking is 1) and (the player is possessing a vagina or the player is ready for event TG):
 		compute pregnancy swap of M;
 	otherwise if the woman-bimbo of M < 4 and the woman-status of M < 10 and the player is possessing a penis and the size of penis > 7:
 		compute penis siphoning of M;

@@ -416,17 +416,24 @@ To decide which figure-name is the triggered-image of (T - genitals-rune-trap):
 	decide on Figure of shrink rune trap triggered.
 
 To compute unique trigger of (Y - genitals-rune-trap):
-	if the size of penis > min penis size:
+	if the player is possessing a penis and bondage protection < 2 and (the size of penis <= min penis size or the player is getting unlucky):
+		let CC be a random off-stage fetish appropriate chastity cage;
+		if CC is actually summonable:
+			summon CC locked;
+			say "A [MediumDesc of CC] appears, locked around your [ShortDesc of penis]![line break][variable custom style]What?! You've got to be kidding! How am I supposed to survive in this world without being able to masturbate?![roman type][line break]";
+			if the size of penis > min penis size, say GotUnluckyFlav;
+	otherwise if the size of penis > min penis size:
 		PenisDown 1;
 	otherwise if the player is possessing a vagina:
 		if the player is a december 2023 top donator and wired-vibe is off-stage:
 			summon wired-vibe uncursed;
+			dislodge wired-vibe;
 			now wired-vibe is clit-taped;
 			gluify wired-vibe;
 			say "A [MediumDesc of wired-vibe] appears, taped to your clit! It immediately starts buzzing away![line break][variable custom style]Haaaaah! Oh my god... That feels... Amazing...[roman type][line break]";
 		otherwise:
 			LabiaUp 1 with comment;
-	otherwise if TG fetish is 1 or TG fetish is 3:
+	otherwise if the player is ready for common event TG:
 		SexChange the player.
 
 polymorph-rune-trap is a rune trap.

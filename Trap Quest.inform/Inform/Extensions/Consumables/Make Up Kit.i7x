@@ -1,6 +1,9 @@
 Make Up Kit by Consumables begins here.
 
 A make up kit is a kind of collectible. There are 3 make up kits. The printed name of make up kit is "[TQlink of item described]make up kit[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of make up kit is "[TQlink of item described]make up kits[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of make up kit is "mk". Understand "makeup", "makeup kit" as make up kit.
+
+The inventoryFocusPriority of a make up kit is -20.
+
 Figure of make up kit is the file "Items/Collectibles/makeup1.png".
 
 make up time is a number that varies.

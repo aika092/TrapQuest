@@ -66,7 +66,7 @@ To say FriendlyOfferFlav of (T - a thing):
 Part - Monsters Reaction
 
 To decide which number is the bartering value of (T - a thing) for (M - a monster):
-	if M is student or M is staff member or M is robomatron or M is slutty sister or M is orc, decide on 0;
+	if M is student or M is staff member or M is robomatron or M is slutty sister or M is orc or M is goblin, decide on 0;
 	if T is plentiful accessory and M is intelligent, decide on the price of T;
 	decide on 0.
 

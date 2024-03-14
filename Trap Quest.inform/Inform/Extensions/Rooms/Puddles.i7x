@@ -253,7 +253,7 @@ To construct normal buttons for (T - puddle-object):
 		now the ButtonColour entry is lightModeFullGreen;
 		if the player is upright, now the ButtonColour entry is lightModeFullYellow; [turn yellow - player needs to kneel]
 	repeat with C running through carried fluid vulnerable clothing:
-		if the semen-soak of C + the urine-soak of C + the milk-soak of C < the soak-limit of the noun and ButtonTableFull is 0:
+		if the semen-soak of C + the urine-soak of C + the milk-soak of C < the soak-limit of C and ButtonTableFull is 0:
 			choose a blank row in the Table of Buttons;
 			now the ButtonImage entry is examine-image of C;
 			now the ButtonCommand entry is "clean puddle with [text-shortcut of C]";

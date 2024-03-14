@@ -2,6 +2,8 @@ Swords by Equippables begins here.
 
 A sword is a kind of equippable. A sword is usually slap ready. A sword is usually metal. A sword is usually unique. Understand "sword" as sword. The text-shortcut of a sword is "sw". [There should only ever be one sword in the game universe at a time]
 
+A sword has a number called charge. [Used for cutting other items of clothing off. Sword must be blessed]
+
 To say ShortDesc of (S - a sword):
 	say "sword".
 
@@ -56,15 +58,17 @@ Section 0 - Sword In The Stone
 which-sword is a thing. which-sword is in Woods26. The printed name of which-sword is "[TQlink of item described]sword in the stone[TQxlink of item described][shortcut-desc][verb-desc of item described]". The text-shortcut of which-sword is "sw". Understand "sword", "stone", "in the stone" as which-sword.
 
 Figure of sword is the file "Items/Accessories/Equippables/sword1.jpg".
+Figure of barbara sword is the file "Env/Forest/sword2.jpg".
 
 To decide which figure-name is examine-image of (C - which-sword):
+	if the sword-stone-scene of woman-player is 1, decide on figure of barbara sword;
 	decide on figure of sword.
 
 To say ShortDesc of (S - which-sword):
 	say "sword".
 
 To say ExamineDesc of (S - which-sword):
-	say "A sword stuck in a stone, just like in the fairy tales you've heard. If you [bold type]take[roman type] it out, perhaps your destiny will become clear."
+	say "A sword stuck in a stone, just like in the fairy tales you've heard. [if the sword-stone-scene of woman-player is 1]Except in those fairy tales, the sword usually isn't a giant floppy dildo, and it's usually not embedded in the asshole of your petrified ally, who you know from what [NameDesc of djinn] said, is fully conscious and fully feeling inside [his of woman-player] stone shell. If you [bold type]take[roman type] it out, it sounds like some heavy [']burden['] will become yours. But if you don't, [womanName] will be stuck like that for eternity[otherwise]If you [bold type]take[roman type] it out, perhaps your destiny will become clear[end if].".
 
 Definition: which-sword is immune to change: decide yes.
 
@@ -79,11 +83,18 @@ Definition: an equippable is destiny-prioritised: decide no.
 
 Report taking which-sword:
 	let S be dildo sword;
-	if diaper quest is 1, now S is rattle;
-	let R be a random fetish appropriate destiny-prioritised equippable;
-	if R is nothing, now R is a random fetish appropriate destiny-appropriate equippable;
-	if R is not nothing, now S is R;
-	say "You're surprised by how easily the [ShortDesc of which-sword] slips out of the stone! ";
+	if the sword-stone-scene of woman-player is 1:
+		now woman-player is summon-available;
+		now the sword-stone-scene of woman-player is 2;
+		now woman-player is in the location of the player;
+		say "As soon as you grab the hilt and start to pull, [NameDesc of woman-player][']s curse is undone, and [his of woman-player] body rapidly begins to return to normal. So whilst you started by pulling the dildo sword out of a statue, by the time you're pulling the tip out, you're pulling it out of your friends very real, very alive asshole, which makes a lewd wet slurping sound as the sword departs from it.[line break][speech style of woman-player]'Oh my goooooooood!'[roman type][line break][BigNameDesc of woman-player] squeals as the intense sensations shake [him of woman-player] to [his of woman-player] core, and a jet of [if watersports fetish is 1]piss[otherwise]squirt[end if] shoots out of [his of woman-player] pussy.";
+		compute woman bimbo changes;
+	otherwise:
+		if diaper quest is 1, now S is rattle;
+		let R be a random fetish appropriate destiny-prioritised equippable;
+		if R is nothing, now R is a random fetish appropriate destiny-appropriate equippable;
+		if R is not nothing, now S is R;
+		say "You're surprised by how easily the [ShortDesc of which-sword] slips out of the stone! ";
 	now S is worn by the player;
 	now S is identified;
 	now S is sure;
@@ -267,6 +278,11 @@ Figure of dildo sword is the file "Items/Accessories/Equippables/sword2.png".
 To decide which figure-name is clothing-image of (C - dildo sword):
 	decide on figure of dildo sword.
 
+To say ShortDesc of (S - dildo sword):
+	say "dildo sword".
+To say MediumDesc of (S - dildo sword):
+	say "big floppy dildo sword".
+
 To say ClothingDesc of (S - dildo sword):
 	say "[if S is worn]You are wielding[otherwise]This is[end if] [if the girth of S < 7]a large[otherwise if the girth of S < 9]a giant[otherwise]an absolutely massive[end if] floppy dildo[if the raw-magic-modifier of S is 0], which is currently absolutely useless for real combat! But you wonder what would happen if you put it inside of you...[otherwise], which has some slight power in combat thanks to its magic glow.[end if][line break][variable custom style][if the vaginalvirgin of the player is 0 and the player is possessing a vagina]It serves as a permanent reminder of the shameful way I lost my cherry.[otherwise if the raw-magic-modifier of S <= 0]I could barely win a cat-fight using a weapon like this![otherwise]A weapon that gains its power from fucking me. How appropriate.[end if][roman type][line break]".
 
@@ -295,7 +311,7 @@ To decide which number is the girth of (S - dildo sword):
 To compute periodic effect of (D - dildo sword):
 	if the raw-magic-modifier of D > 0:
 		increase the decay-tracker of D by 1;
-		if the decay-tracker of D > 20:
+		if the decay-tracker of D > a random number between 4 and 20:
 			say "[BigNameDesc of D] loses some of its magic charge.";
 			now the decay-tracker of D is 0;
 			decrease the raw-magic-modifier of D by 1;
@@ -338,10 +354,21 @@ Carry out taking dildo sword:
 	now the noun is identified.
 
 To compute sword destiny of (S - dildo sword):
-	say "As it does, it transforms into a [printed name of S]!";
-	try examining S;
-	say "You have clearly not been deemed worthy of a proper weapon. Unless, perhaps, there is a trick to increasing this sword's power?";
-	curse S.
+	if the sword-stone-scene of woman-player is 0:
+		say "As it does, it transforms into a [printed name of S]!";
+		try examining S;
+		say "You have clearly not been deemed worthy of a proper weapon. Unless, perhaps, there is a trick to increasing this sword's power?";
+		curse S;
+		compute summoned quest of S;
+	otherwise:
+		curse S;
+		say "Your new [printed name of S] pulses with pride!";
+		compute summoned quest of S;
+		let H be a random worn headgear;
+		if H is removable, destroy H;
+		if chain-tiara is actually summonable, summon chain-tiara cursed.
+
+
 
 Section 3 - Blade of Womanhood
 
@@ -682,7 +709,7 @@ Section 6 - Sissy Slut's Longsword
 
 [gets stronger whenever you have a prostate orgasm]
 
-sissy-sword is a sword. sissy-sword has a number called charge.
+sissy-sword is a sword. sissy-sword has a number called sissy-sword-charge.
 
 The printed name of sissy-sword is "[clothing-title-before][if the item described is not held and the item described is in Woods26]sword in the stone[otherwise]sissy slut's longsword[end if][clothing-title-after]". The text-shortcut of sissy-sword is "ssl". Understand "sissy", "slut", "slut's", "longsword", "long" as sissy-sword.
 
@@ -711,22 +738,22 @@ To decide which number is the delicateness-influence of (C - a sissy-sword):
 	decide on X + 2.
 
 To compute periodical effect of (S - sissy-sword):
-	if the charge of S > 0 and the player is not live fucked:[Your sword won't lose charge while you're having sex]
-		decrease the charge of S by 2;
-		if the charge of S > 0, say "[one of]Your [ShortDesc of S] grows slightly cooler[or][or][or][or][cycling]";
+	if the sissy-sword-charge of S > 0 and the player is not live fucked:[Your sword won't lose sissy-sword-charge while you're having sex]
+		decrease the sissy-sword-charge of S by 2;
+		if the sissy-sword-charge of S > 0, say "[one of]Your [ShortDesc of S] grows slightly cooler[or][or][or][or][cycling]";
 		otherwise say "The [ShortDesc of S] cools off completely.".
 
 To say ClothingDesc of (S - a sissy-sword):[I always use pink, so I described it as blue. It can always be changed]
 	let C be the number of worn chastity bond + the number of worn clothing penetrating asshole;
-	say "A sword that's really more of a dagger. The blade is four inches long, with [if the charge of S > 50]a powder blue[otherwise if the charge of S > 25]a light blue[otherwise if C <= 0]an angry red[otherwise]a dark, crystalline blue[end if] gemstone set into the hilt, which is [if the charge of S > 50]rather warm[otherwise if the charge of S > 0]slightly warm[otherwise]strangely cool[end if] to the touch. [unless C > 0]For some reason, it seems like it doesn't accept you.[line break][variable custom style]For some reason, I can sense that it wants me to either wear a chastity cage or... *gulp*... something in my butt...[roman type][line break][end if]".
+	say "A sword that's really more of a dagger. The blade is four inches long, with [if the sissy-sword-charge of S > 50]a powder blue[otherwise if the sissy-sword-charge of S > 25]a light blue[otherwise if C <= 0]an angry red[otherwise]a dark, crystalline blue[end if] gemstone set into the hilt, which is [if the sissy-sword-charge of S > 50]rather warm[otherwise if the sissy-sword-charge of S > 0]slightly warm[otherwise]strangely cool[end if] to the touch. [unless C > 0]For some reason, it seems like it doesn't accept you.[line break][variable custom style]For some reason, I can sense that it wants me to either wear a chastity cage or... *gulp*... something in my butt...[roman type][line break][end if]".
 
 To decide which number is the slap damage improvement of (W - sissy-sword):
 	let X be the number of worn chastity bond + the number of worn ass plugging clothing;
 	if X is 0, decide on -3;
 	increase X by the magic-modifier of W;
 	if the player is a sissy, increase X by 1;
-	if the charge of W > 50, increase X by 2;
-	if the charge of W > 0, increase X by 1;
+	if the sissy-sword-charge of W > 50, increase X by 2;
+	if the sissy-sword-charge of W > 0, increase X by 1;
 	increase X by (the semen volume of belly + 3) / 4;[can get strong quickly, but is high risk]
 	decide on X.
 
@@ -740,7 +767,7 @@ The sissy-swords butt slut rule is listed in the butt slut eligibility rules.
 This is the sissy-swords resolution rule:
 	if sissy-sword is worn and the player is gendered male and (there is a worn chastity bond or asshole is actually occupied):
 		say "Your [ShortDesc of sissy-sword] emits a burst of warmth as the gemstone in the hilt turns a shade of bright blue.";
-		increase the charge of sissy-sword by a random number between 60 and 70.
+		increase the sissy-sword-charge of sissy-sword by a random number between 60 and 70.
 The sissy-swords resolution rule is listed in the orgasm resolution rules.
 
 Section 7 - Sword of the Void

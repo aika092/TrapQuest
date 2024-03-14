@@ -265,7 +265,7 @@ To decide which number is the initial outrage of (C - hotwife dress):
 
 
 
-sacrificial maiden dress is a bridal dress. sacrificial maiden dress is fully covering. sacrificial maiden dress is knee-length. sacrificial maiden dress is arm exposing. sacrificial maiden dress is sheer. The text-shortcut of sacrificial maiden dress is "scmd".
+sacrificial maiden dress is a bridal dress. sacrificial maiden dress is fully covering. sacrificial maiden dress is knee-length. sacrificial maiden dress is arm exposing. sacrificial maiden dress is not-top-displacable. sacrificial maiden dress is sheer. The text-shortcut of sacrificial maiden dress is "scmd".
 
 Figure of sacrificial maiden dress is the file "Items/Clothes/Upper/Special/Bridal/bridaldress6.png".
 
@@ -282,7 +282,9 @@ To compute class set up of (C - sacrificial maiden dress):
 	now C is draining.
 
 Definition: sacrificial maiden dress is slitted: decide yes.
-Definition: sacrificial maiden dress is removable: decide no.
+Definition: sacrificial maiden dress is removable:
+	if the class of the player is bride, decide no;
+	decide yes.
 Definition: sacrificial maiden dress is destructible: decide no.
 
 To say ShortDesc of (C - sacrificial maiden dress):
@@ -308,6 +310,7 @@ To compute virginity-loss of (C - sacrificial maiden dress):
 		say "[BigNameDesc of H] bursts into infernal flames and disappears!";
 		destroy H;
 	say "[BigNameDesc of C] bursts into infernal flames and disappears!";
+	destroy C;
 	let D be a random off-stage necklace;
 	if D is necklace:
 		now D is pink diamond;

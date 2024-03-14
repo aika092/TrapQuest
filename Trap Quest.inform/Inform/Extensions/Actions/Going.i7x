@@ -215,6 +215,11 @@ To decide which number is the movement reduction of the player:
 		if movement-reduction-flav-said is false:
 			now movement-reduction-flav-said is true;
 			now T is ObstacledDesc of the location of the player;
+	if ankle-ropes is worn:
+		increase X by 50;
+		if movement-reduction-flav-said is false:
+			now movement-reduction-flav-said is true;
+			now T is the substituted form of "Your tightly bound ankles are making you hobble about with tiny steps, severely hindering your movement!";
 	if there is a worn ball-and-chain:
 		increase X by 6;
 		if movement-reduction-flav-said is false:

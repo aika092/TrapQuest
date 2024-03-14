@@ -1,6 +1,6 @@
 Lactation by Every Turn begins here.
 
-A time based rule (this is the lactation rule):
+A later time based rule (this is the lactation rule):
 	if lactation fetish > 0:
 		let R be the actual lactation rate of breasts;
 		if the latex-transformation of the player > 5 or there is a worn pasties, now R is 0;
@@ -46,22 +46,29 @@ A time based rule (this is the lactation rule):
 					say "[one of]Your [BreastDesc] feel active.[or]Your breasts feel strangely warm.[or]Your [BreastDesc] feel kind of tight, or intense... kind of... busy?[or]There's a funny tingling in your boobs.[or]A funny sort of quiver, deep inside your breasts, makes you stop and stare at your [BreastDesc].[or]You stare at your breasts, certain that - just for a moment - you felt liquid moving inside them![at random] ";
 					if FairySuckled > 3 and a random number between 1 and 2 is 1 :
 						say "[one of]They've felt weird ever since those darned fairies started fixating on your boobs![or]Surely, all that fairy-suckling... are they turning you into a brood mare?[or]You hope it's not a side-effect of all that fairy attention to your milky boobs![or]You worry it's a side-effect of all those milk-hungry fairies![at random][line break]";
-			let M be the milk volume of breasts;
+			let MV be the milk volume of breasts;
 			let L be 120;
 			if the class of the player is cowgirl, now L is 240;
-			decrease L by M * 2; [The more milk there is, the higher chance of lactation]
-			if the milk volume of breasts >= 8 and (the class of the player is not cowgirl or the player is top heavy or (the class of the player is royal slave and there is a worn crotch-in-place top-placed milking basque)) and last-lactated-time - earnings >= 60 and a random number between 0 and L <= 0 and the number of worn pasties is 0: [We want to allow the cow slave class to still regularly lactate when the milking basque is in place] [lactation shouldn't happen when the player is wearing pasties] [once the player is top heavy, they can't cause lactation by their boobs growing big from having so much milk, so it happens here instead] [minimum 8 units of milk for leaking in this way]
+			decrease L by MV * 2; [The more milk there is, the higher chance of lactation]
+			if MV >= 8 and (the class of the player is not cowgirl or the player is top heavy or (the class of the player is royal slave and there is a worn crotch-in-place top-placed milking basque)) and last-lactated-time - earnings >= 60 and a random number between 0 and L <= 0 and the number of worn pasties is 0: [We want to allow the cow slave class to still regularly lactate when the milking basque is in place] [lactation shouldn't happen when the player is wearing pasties] [once the player is top heavy, they can't cause lactation by their boobs growing big from having so much milk, so it happens here instead] [minimum 8 units of milk for leaking in this way]
 				trigger lactation;
-			otherwise if M >= the milk capacity of breasts:
-				if the ready-for-milking of milking-quest is 0:
-					let quest-2b-milked be nothing;
-					repeat with C running through worn clothing:
-						if the quest of C is milking-quest, now quest-2b-milked is C;
-					say "[bold type]Your breasts are now completely full of milk[if quest-2b-milked is clothing]. Your [ShortDesc of quest-2b-milked] fills you with a desire to find somewhere to get milked[end if][if the milk volume of breasts > 10]. Until you do, your heavy breasts will make you become fatigued much faster while standing[end if][if the milk volume of breasts > 10 and there is worn cowbelled clothing] - or rather they would if it weren't for the magic effect of your cowbell[end if].[roman type][line break]";
-				now the ready-for-milking of milking-quest is 1;
-		if the ready-for-milking of milking-quest is 1 and the milk volume of breasts < (the milk capacity of breasts * 2) / 3: [In some random happenstances where milk leaves a cowgirl's breasts, this might be necessary]
-			say "[bold type]Your breasts are no longer completely full of milk[if the milk volume of breasts > 10 and the number of worn cowbelled clothing is 0] - you will no longer become fatigued much faster while standing[end if].[roman type][line break]";
-			now the ready-for-milking of milking-quest is 0.
+			otherwise:
+				check milking readiness;
+		check milking unreadiness.
+
+To check milking readiness:
+	if the milk volume of breasts >= the milk capacity of breasts:
+		if the ready-for-milking of milking-quest is 0:
+			let quest-2b-milked be nothing;
+			repeat with C running through worn clothing:
+				if the quest of C is milking-quest, now quest-2b-milked is C;
+			say "[bold type]Your breasts are now completely full of milk[if quest-2b-milked is clothing]. Your [ShortDesc of quest-2b-milked] fills you with a desire to find somewhere to get milked[end if][if the milk volume of breasts > 10]. Until you do, your heavy breasts will make you become fatigued much faster while standing[end if][if the milk volume of breasts > 10 and there is worn cowbelled clothing] - or rather they would if it weren't for the magic effect of your cowbell[end if].[roman type][line break]";
+		now the ready-for-milking of milking-quest is 1.
+
+To check milking unreadiness:
+	if the ready-for-milking of milking-quest is 1 and the milk volume of breasts < (the milk capacity of breasts * 2) / 3: [In some random happenstances where milk leaves a cowgirl's breasts, this might be necessary]
+		say "[bold type]Your breasts are no longer completely full of milk[if the milk volume of breasts > 10 and the number of worn cowbelled clothing is 0] - you will no longer become fatigued much faster while standing[end if].[roman type][line break]";
+		now the ready-for-milking of milking-quest is 0.
 
 To decide which number is milkingColour:
 	let R-component be 255;
@@ -88,7 +95,7 @@ To trigger lactation:
 		let M be a random number from 1 to (the milk volume of breasts / 2);
 		if M < 2, now M is 2;
 		if the milk volume of breasts is 2, now M is 1;
-		let CGM be the the milk volume of breasts - the flesh volume of breasts;
+		let CGM be the milk volume of breasts - the flesh volume of breasts;
 		if the class of the player is cowgirl and CGM < M, now M is CGM; [cowgirls stay at maximum fill and only expel the excess]
 		increase the lactation count of breasts by 1;
 		if lactation count of breasts is 1:

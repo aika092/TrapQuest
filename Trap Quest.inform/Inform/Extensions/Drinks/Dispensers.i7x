@@ -81,7 +81,7 @@ To BackgroundRender (T - a tank) at (X1 - a number) by (Y1 - a number) with dime
 		let blockReduction be ((142 - liquidHeight) * DY) / 200;
 		increase Y1 by blockReduction;
 		decrease DY by blockReduction;
-		draw a rectangle TQcolour of fill-colour of T in the current focus window at X1 by Y1 with size DX by DY.
+		draw a rectangle TQcolour of fill-colour of T in the graphics-window at X1 by Y1 with size DX by DY.
 
 To say ShortDesc of (T - a tank):
 	say "[if the doses of T > 0][fill-colour of T][otherwise]empty[end if] tank".
@@ -112,7 +112,7 @@ To BackgroundRender (T - a milk-tank) at (X1 - a number) by (Y1 - a number) with
 		let blockReduction be ((142 - liquidHeight) * DY) / 200;
 		increase Y1 by blockReduction;
 		decrease DY by blockReduction;
-		draw a rectangle TQcolour of fill-colour of T in the current focus window at X1 by Y1 with size DX by DY.
+		draw a rectangle TQcolour of fill-colour of T in the graphics-window at X1 by Y1 with size DX by DY.
 
 To say ShortDesc of (T - a milk-tank):
 	say "milk tank".

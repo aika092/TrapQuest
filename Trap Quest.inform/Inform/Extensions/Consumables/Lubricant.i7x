@@ -2,6 +2,8 @@ Lubricant by Consumables begins here.
 
 A lubricant is a kind of collectible. There are 4 lubricants. Understand "lube" or "baby oil" or "oil" as lubricant. The printed name of lubricant is "[TQlink of item described][item style][lubricant][TQxlink of item described][verb-desc of the item described][shortcut-desc][roman type]". The printed plural name of lubricant is "[TQlink of item described][item style][lubricant]s[TQxlink of item described][verb-desc of the item described][shortcut-desc][roman type]". The text-shortcut of lubricant is "lu".
 
+The inventoryFocusPriority of a lubricant is -20.
+
 Definition: a lubricant is shop-eligible:
 	if diaper quest is 0, decide yes;
 	decide no.

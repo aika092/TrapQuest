@@ -320,7 +320,7 @@ To decide which number is the bartering value of (T - a sex toy) for (M - a mann
 	decide on 1 + (the size of T - the size of a random sex toy carried by M).
 
 Check taking off sex toy:
-	try unplugging the noun instead.
+	unless the noun is clit-taped wired-vibe, try unplugging the noun instead.
 
 Chapter 1 - Dongs
 

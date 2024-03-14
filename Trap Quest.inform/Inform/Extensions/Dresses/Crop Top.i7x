@@ -57,6 +57,12 @@ To say ShortDesc of (C - milk crop top):
 To say MediumDesc of (C - milk crop top):
 	say "milk themed crop top".
 
+To compute post transformation effect of (C - milk crop top):
+	BustUp 3;
+	if lactation fetish is 1 and the milk volume of breasts < the milk capacity of breasts:
+		say "You feel your [BreastDesc] being filled up to the brink with milk!";
+		now the milk volume of breasts is the milk capacity of breasts.
+
 Definition: milk crop top is drink themed: decide yes.
 Definition: milk crop top is white themed: decide yes.
 
@@ -86,6 +92,11 @@ To say ClothingDesc of (C - size does matter crop top):
 
 To say ShortDesc of (C - size does matter crop top):
 	say "[']size does matter['] crop top".
+
+To compute post transformation effect of (C - size does matter crop top):
+	BustUp 3;
+	if the mystical size of penis < 10 and the player is somehow possessing a penis:
+		SpecialPenisUp 1.
 
 To compute periodic effect of (C - size does matter crop top):
 	increase the charge of C by 1;

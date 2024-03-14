@@ -120,7 +120,7 @@ To compute hunger and thirst:
 			say "[bold type]Your throat is feeling pretty dry, you should really drink [if there is a desperately craved liquid-object]some [variable random desperately craved liquid-object][otherwise if there is a craved liquid-object]some [variable random craved liquid-object][otherwise if the player is taste obsessed]some [variable random highest addicted liquid liquid-object][otherwise]something[end if]![roman type][line break]";
 		otherwise if the thirst of the player is 5:
 			say "[bold type]You are dying to drink [if the player is taste engulfed]some [variable random highest addicted liquid liquid-object][otherwise]something, anything[end if]![roman type][line break]";
-		if cock pacifier is worn and the thirst of the player > 2:
+		if cock pacifier is worn and the thirst of the player > 2 and the total volume of face is 0:
 			let C be a random worn cock pacifier;
 			say "[one of]As if it can tell you're getting thirsty[or]Right on cue[stopping], you feel your [printed name of C] twitching, like it's about to ejaculate!";
 			let X be 6;
@@ -129,8 +129,9 @@ To compute hunger and thirst:
 			let R be a random number between 1 and 10;
 			if debuginfo > 0, say "[input-style]Cock pacifier roll d10 ([R]): 1-[X])Normal water; [X + 1]-10)Semen[roman type][line break]";
 			if R > X:
-				say "It shoots warm [semen] into your mouth, which you have no choice but to swallow. [if the semen taste addiction of the player > 11][line break][variable custom style]Mmm, delicious cum![otherwise if the semen taste addiction of the player > 7][variable custom style]It's making me drink [semen] again![otherwise][line break][first custom style]Oh my god, that was [semen] it just made me swallow! Gross![end if][roman type][line break]";
-				StomachSemenUp 1;
+				say "It shoots warm [semen] into your mouth. [if the semen taste addiction of the player > 11][line break][variable custom style]Mmm, delicious cum![otherwise if the semen taste addiction of the player > 7][variable custom style]It's making me drink [semen] again![otherwise][line break][first custom style]Oh my god, there's [semen] in my mouth! Gross![end if][roman type][line break]";
+				FaceFill semen by 1;
+				suggest swallowing;
 			otherwise:
 				say "Cool water squirts into your mouth, which you have no choice but to swallow. [if the semen taste addiction of the player > 13][line break][variable custom style]Aww, it was just water. I was hoping for [semen]![otherwise if the semen taste addiction of the player > 7][variable custom style]It's hard not to imagine that it just came in my mouth.[otherwise][line break][first custom style]Phew, just water. That feels much better![end if][roman type][line break]";
 				StomachUp 1.
@@ -181,7 +182,9 @@ To compute food:
 		if diaper messing < 3, now rectum is 0; [Just to make double triple sure]
 		if the player is hungry and hunger-flav-said is 0:
 			say "[bold type]You are beginning to feel quite hungry[if there is a worn cursed ballgag].[roman type] Your [random worn ballgag] loosens slightly, as if it's temporarily allowing you to eat around it.[otherwise].[roman type][line break][end if]";
-			now hunger-flav-said is 1.
+			now hunger-flav-said is 1;
+			let C be a random worn cursed cock pacifier;
+			if C is a thing, say "[BigNameDesc of C] loosens slightly in your mouth. It seems like you're being allowed to remove it in order to eat something...";
 
 Definition: yourself is diapered:
 	if there is a worn diaper, decide yes;

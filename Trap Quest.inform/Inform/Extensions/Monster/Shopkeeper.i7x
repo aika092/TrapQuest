@@ -601,6 +601,7 @@ To satisfy (M - shopkeeper) for (N - a number) seconds:
 				say SatisfiedFlav of M;
 				compute common boredom of M for N seconds;
 			progress quest of nice-quest;
+			if the health of M <= the maxhealth of M / 2, progress quest of chosen-one-quest;
 	otherwise:
 		bore M for N seconds;
 	send M home. [This makes sure the shopkeeper always makes it back to the shop.]
@@ -923,7 +924,7 @@ Definition: shopkeeper-retrieves-stolen (called P) is appropriate:
 
 To compute punishment of (P - shopkeeper-retrieves-stolen):
 	if there is a held stolen diaper, compute diaper donating of current-monster;
-	otherwise follow the the shopkeeper reclaiming stolen stuff rule.
+	otherwise follow the shopkeeper reclaiming stolen stuff rule.
 
 Definition: shopkeeper is willing to spank: decide yes.
 

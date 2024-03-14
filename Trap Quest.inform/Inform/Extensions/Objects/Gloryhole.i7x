@@ -469,19 +469,19 @@ To decide which figure-name is the examine-image of (G - school-fuckhole):
 
 To ForegroundRender (G - school-fuckhole) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
 	if the buttcum of G > 0:
-		display the image Figure of school-fuckhole buttcum in the current focus window at X1 by Y1 with dimensions DX by DY;
+		display the image Figure of school-fuckhole buttcum in the graphics-window at X1 by Y1 with dimensions DX by DY;
 	if the pussycum of G > 0:
-		display the image Figure of school-fuckhole pussycum in the current focus window at X1 by Y1 with dimensions DX by DY;
+		display the image Figure of school-fuckhole pussycum in the graphics-window at X1 by Y1 with dimensions DX by DY;
 	if the buttcondoms of G > 0:
-		display the image Figure of school-fuckhole condoms in the current focus window at X1 by Y1 with dimensions DX by DY;
+		display the image Figure of school-fuckhole condoms in the graphics-window at X1 by Y1 with dimensions DX by DY;
 	if the bracum of G is 1:
-		display the image Figure of school-fuckhole bra in the current focus window at X1 by Y1 with dimensions DX by DY;
+		display the image Figure of school-fuckhole bra in the graphics-window at X1 by Y1 with dimensions DX by DY;
 	otherwise if the bracum of G > 0:
-		display the image Figure of school-fuckhole bracum in the current focus window at X1 by Y1 with dimensions DX by DY;
+		display the image Figure of school-fuckhole bracum in the graphics-window at X1 by Y1 with dimensions DX by DY;
 	if the asscum of G is 1:
-		display the image Figure of school-fuckhole asscum in the current focus window at X1 by Y1 with dimensions DX by DY;
+		display the image Figure of school-fuckhole asscum in the graphics-window at X1 by Y1 with dimensions DX by DY;
 	otherwise if the asscum of G > 1:
-		display the image Figure of school-fuckhole asscum jet in the current focus window at X1 by Y1 with dimensions DX by DY;
+		display the image Figure of school-fuckhole asscum jet in the graphics-window at X1 by Y1 with dimensions DX by DY;
 
 An all time based rule (this is the fuckhole asscum rule):
 	if the asscum of school-fuckhole > 1:

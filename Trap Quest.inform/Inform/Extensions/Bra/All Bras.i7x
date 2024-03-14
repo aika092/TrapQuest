@@ -867,6 +867,10 @@ To uniquely destroy (C - black-lace-bra):
 	now C is not monified.
 
 [Carry out taking black-lace-bra:
+	if takingStuff is false:
+		allocate 2 seconds;
+		allocate arm use to the noun;
+	now takingStuff is true; [The player can take several items in the same turn without penalty with "take all"]
 	if the noun is in Hotel20 and the player is getting unlucky, now the noun is provocation.]
 
 

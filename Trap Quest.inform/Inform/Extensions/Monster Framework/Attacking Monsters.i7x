@@ -218,7 +218,7 @@ The player can't attack when bound behind rule is listed in the ability to slap 
 This is the player can't slap while arm wrangled rule:
 	let M be a random thing wrangling arms;
 	if M is a thing:
-		say "You can't do that while [NameDesc of M] is holding you by the wrist!";
+		if autoattack is 0, say "You can't do that while [NameDesc of M] is holding you by the wrist!";
 		rule fails.
 The player can't slap while arm wrangled rule is listed in the ability to slap rules.
 
@@ -611,9 +611,7 @@ To damage (A - a number) on (M - a monster):
 		if there are worn heels, increase the heel time of the player by the difficulty of M * 5;
 		compute slaying bonus of M;
 		finally destroy M;
-		if the player is not in danger and side images > 0 and character-version is 0:
-			now danaume-arms-victory is 1;
-			[display character window.]
+		if the player is not in danger, now danaume-arms-victory is 1;
 	otherwise: [Check for successful interruptions]
 		compute pedestal interruption of M;
 	if debugmode > 1, say "At end of attack function, [MediumDesc of M] is in [location of M].".

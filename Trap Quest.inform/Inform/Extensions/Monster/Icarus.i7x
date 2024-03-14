@@ -60,6 +60,10 @@ To set up (M - Icarus):
 	now the health of M is the maxhealth of M.
 
 Carry out taking white candle:
+	if takingStuff is false:
+		allocate 2 seconds;
+		allocate arm use to the noun;
+	now takingStuff is true; [The player can take several items in the same turn without penalty with "take all"]
 	if the player is in Woods31 and Woods01 is not raining:
 		say "As you pick up the candle, thunder loudly rumbles from outside the cave, and then it starts chucking it down.";
 		now rain-timer is 300;

@@ -233,15 +233,18 @@ To construct unique buttons for (M - woman-player):
 			now the ButtonImage entry is Figure of AddictionsButton;
 			now the ButtonCommand entry is "search [text-shortcut of M]";
 			now the ButtonColour entry is lightModeFullGreen;
+			now the ButtonPriority entry is 1;
 			if ButtonTableFull is 0 and the dominatrix-contraption-scene of M <= 2 and diaper quest is 0:
 				choose a blank row in the Table of Buttons;
 				now the ButtonImage entry is Figure of TakeAllButton;
 				now the ButtonCommand entry is "pull [text-shortcut of M]";
 				now the ButtonColour entry is lightModeFullGreen;
+				now the ButtonPriority entry is 1;
 	otherwise if the woman-status of M is 80 and the stool-scene of M < 2 and ButtonTableFull is 0:
 		choose a blank row in the Table of Buttons;
 		now the ButtonImage entry is Figure of TakeAllButton;
 		now the ButtonCommand entry is "pull [text-shortcut of M]";
+		now the ButtonPriority entry is 1;
 		let CL be lightModeFullGreen;
 		if the player is in danger, now CL is lightModeFullYellow;
 		if the player is immobile, now CL is lightModeFullRed;
@@ -249,6 +252,7 @@ To construct unique buttons for (M - woman-player):
 		if ButtonTableFull is 0 and the player is possessing a penis or there is a worn strapon-panties:
 			choose a blank row in the Table of Buttons;
 			now the ButtonImage entry is Figure of TakeAllButton;
+			now the ButtonPriority entry is 1;
 			now the ButtonCommand entry is "fuck [text-shortcut of M]";
 			now the ButtonColour entry is CL;
 	otherwise if the changing-station-tank-scene of M > 0 and ButtonTableFull is 0:
@@ -256,12 +260,14 @@ To construct unique buttons for (M - woman-player):
 		now the ButtonImage entry is Figure of TakeAllButton;
 		now the ButtonCommand entry is "pull rope";
 		now the ButtonColour entry is lightModeFullGreen;
+		now the ButtonPriority entry is 1;
 		if the player is prone or the player is in danger, now the ButtonColour entry is lightModeFullYellow;
 		if the player is immobile, now the ButtonColour entry is lightModeFullRed;
 	otherwise if the woman-status of M is 103 and ButtonTableFull is 0: [diapered christmas gift]
 		choose a blank row in the Table of Buttons;
 		now the ButtonImage entry is Figure of TakeAllButton;
 		now the ButtonCommand entry is "pull [text-shortcut of M]";
+		now the ButtonPriority entry is 1;
 		let CL be lightModeFullGreen;
 		if the player is in danger, now CL is lightModeFullYellow;
 		if the player is immobile, now CL is lightModeFullRed;
@@ -270,6 +276,7 @@ To construct unique buttons for (M - woman-player):
 		choose a blank row in the Table of Buttons;
 		now the ButtonImage entry is Figure of ToiletButton;
 		now the ButtonCommand entry is "use urinal";
+		now the ButtonPriority entry is 1;
 		let CL be lightModeFullGreen;
 		if the player is not able to use a urinal, now CL is lightModeFullYellow;
 		if the player is immobile, now CL is lightModeFullRed;
@@ -280,20 +287,23 @@ The womanspawning rules is a rulebook.
 A time based rule (this is the woman spawning rule):
 	if woman-player is angry deploy appropriate:
 		follow the womanspawning rules;
-	if woman-player is off-stage and woman-player is not partially-enslaved:
-		while the delayed sluttification of woman-player > 0:
-			ImmediatewomanSluttify;
-			decrease the delayed sluttification of woman-player by 1;
-			if pregnancy fetish is 1 and the woman-pregnancy of woman-player is 0 and the player is getting unlucky, now the woman-pregnancy of woman-player is 1;
-		while the delayed sluttification of woman-player < 0:
-			ImmediatewomanUnsluttify;
-			increase the delayed sluttification of woman-player by 1;
-		update woman name and bimbo;
+	if woman-player is off-stage and woman-player is not partially-enslaved and woman-player is not permanently banished:
+		compute woman bimbo changes;
 	otherwise if woman-player is not caged and woman-player is not in HoleInWall:
 		if woman-player is not regional and (woman-player is not in WoodsBoss01 or playerRegion is not woods):
 			vanish woman-player;
 		otherwise if a random number between 1 and 40 is 1 or woman-player is asleep:
 			unless woman-player is in the location of the player or woman-player is nearby or woman-player is stranger or (the woman-status of woman-player >= 80 and the woman-status of woman-player is not 98), vanish woman-player.
+
+To compute woman bimbo changes:
+	while the delayed sluttification of woman-player > 0:
+		ImmediatewomanSluttify;
+		decrease the delayed sluttification of woman-player by 1;
+		if pregnancy fetish is 1 and the woman-pregnancy of woman-player is 0 and a random number between 2 and 12 < the woman-bimbo of woman-player, now the woman-pregnancy of woman-player is 1;
+	while the delayed sluttification of woman-player < 0:
+		ImmediatewomanUnsluttify;
+		increase the delayed sluttification of woman-player by 1;
+	update woman name and bimbo.
 
 [These TQ-only rules need to go here so that they are in the correct order in the rulebook.]
 
@@ -355,6 +365,7 @@ woman-player has a number called throne-scene.
 woman-player has a number called crafting-scene.
 woman-player has a number called changing-station-tank-scene.
 woman-player has a number called hole-in-wall-scene.
+woman-player has a number called sword-stone-scene.
 
 woman-player has a number called patron-scene-done.
 [

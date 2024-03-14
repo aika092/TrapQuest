@@ -1,6 +1,9 @@
 Wipes by Consumables begins here.
 
 A pocketwipes is a kind of collectible. There are 5 pocketwipes. The printed name of pocketwipes is "[TQlink of item described]pack of pocketwipes[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of pocketwipes is "[TQlink of item described]packs of pocketwipes[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of pocketwipes is "pkw". Understand "pack", "pack of", "wipes" as pocketwipes.
+
+The inventoryFocusPriority of a pockwipes is -20.
+
 Figure of pocketwipes is the file "Items/Collectibles/pocketwipes1.png".
 
 To decide which figure-name is the examine-image of (C - a pocketwipes):

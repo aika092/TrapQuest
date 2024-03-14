@@ -30,6 +30,9 @@ cock pacifier is a pacifier. cock pacifier is unique. The printed name of cock p
 Definition: cock pacifier is fetish appropriate:
 	if diaper quest is 0, decide yes;
 	decide no.
+Definition: cock pacifier is curse-sticky:
+	if the player is hungry, decide no;
+	decide yes.
 Definition: cock pacifier is drink themed: decide yes.
 Definition: cock pacifier is oral sex themed: decide yes.
 Definition: cock pacifier is penis themed: decide yes.
@@ -195,11 +198,12 @@ Report examining pacifier when diaper quest is 1:
 
 To compute periodic effect of (P - a pacifier):
 	if diaper quest is 0 and the thirst of the player >= 5 and cock pacifier is off-stage:
-		say "[bold type]Your [ShortDesc of P] [bold type]morphs in your mouth, turning into a [ShortDesc of cock pacifier]! As the cock forms in your mouth, it squirts a shot of [semen] down your throat.";
+		say "[bold type]Your [ShortDesc of P] [bold type]morphs in your mouth, turning into a [ShortDesc of cock pacifier]! As the cock forms in your mouth, it squirts a shot of [semen] into your mouth.";
 		only destroy P;
 		summon cock pacifier cursed with quest;
 		now drinking-target is cock pacifier;
-		StomachSemenUp 1.
+		FaceFill semen by 1;
+		suggest swallowing.
 
 A diaper quest fix rule:
 	now yellow-pacifier is plentiful.

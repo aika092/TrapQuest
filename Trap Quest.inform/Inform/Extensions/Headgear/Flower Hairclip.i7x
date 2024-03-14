@@ -1,6 +1,6 @@
 Flower Hairclip by Headgear begins here.
 
-flower hairclip is a headgear. flower hairclip is satin. flower hairclip is womanly. flower hairclip is purity. Figure of flower hairclip is the file "Items/Accessories/Head/flowerhairclip1.png". flower hairclip is hair growing. flower hairclip is anal-sex-addiction-influencing. Understand "white", "rose", "clip", "hair" as flower hairclip.
+flower hairclip is a headgear. flower hairclip is satin. flower hairclip is womanly. flower hairclip is purity. Figure of flower hairclip is the file "Items/Accessories/Head/flowerhairclip1.png". flower hairclip is hair growing. flower hairclip is anal-sex-addiction-influencing. Understand "white", "rose", "clip" as flower hairclip.
 
 Definition: flower hairclip is fluid immune: decide yes.
 

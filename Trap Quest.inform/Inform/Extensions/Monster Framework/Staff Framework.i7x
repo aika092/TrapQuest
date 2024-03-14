@@ -500,7 +500,7 @@ To compute potential lesson:
 				otherwise:
 					if chosen-lesson is correctly-situated:
 						set up chosen-lesson;
-						refresh the clothing-focus-window;
+						[refresh the clothing-focus-window;] [GUITODOMAYBE]
 						try looking;
 						display focus stuff;
 						render buffered stuff;
@@ -1199,10 +1199,11 @@ To compute detention joint predicament of (M - a monster) with (ST - a student):
 		totally clean R;
 	if the body soreness of the player > 4, now the body soreness of the player is 4;
 	now executing-predicament is true;
+	now temporaryYesNoResetNeeded is false;
 	maybe execute P;
 	set up predicament clothing for P;
 	increase the times-completed of P by 1;
-	now temporaryYesNoBackground is Figure of small image;
+	temporaryYesNoBackgroundReset;
 	[now predicamentJustDone is true;] [We should probably still let the player jump back in for a trophy if they want to]
 
 Section - Chair Detention
@@ -1257,7 +1258,7 @@ An all time based rule (this is the detention chair rule):
 			compute wand chair detention;
 		otherwise:
 			compute rem chair detention;
-		if detention chair is not grabbing the player, refresh map-window.
+		if detention chair is not grabbing the player, refresh the graphics-window.
 
 To compute wand chair detention:
 	repeat with M running through uninterested alive students:

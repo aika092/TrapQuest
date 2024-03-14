@@ -616,6 +616,9 @@ To say ShortDesc of (O - rubber-jumpsuit):
 To say MediumDesc of (O - rubber-jumpsuit):
 	say "skin hugging cream latex bodysuit".
 
+To decide which number is the initial outrage of (O - rubber-jumpsuit):
+	decide on 7.
+
 Part - Full Body Baby Romper
 
 full body babyromper is a jumpsuit. full body babyromper is transformation-rare. The text-shortcut of full body babyromper is "fbbr". Understand "baby", "romper" as full body babyromper.

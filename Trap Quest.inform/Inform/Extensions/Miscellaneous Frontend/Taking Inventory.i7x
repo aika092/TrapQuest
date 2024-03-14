@@ -25,8 +25,8 @@ inventory-busy is a number that varies.
 inventory-window-busy is a number that varies.
 
 To say inventory style:
-	if the current focus window is the inventory-window and darkMode is 1, say italic type;
-	otherwise say roman type.
+	[if the current focus window is the inventory-window and darkMode is 1, say italic type;]
+	say roman type.
 
 [!<CarryOutItemListing>+
 

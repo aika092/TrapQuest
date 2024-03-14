@@ -1,6 +1,9 @@
 Christmas Gift by Consumables begins here.
 
 A christmas gift is a kind of thing. There are 25 christmas gifts. Understand "present", "wrapping" as christmas gift. The printed name of christmas gift is "[TQlink of item described]Christmas gift[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of christmas gift is "chg".
+
+The inventoryFocusPriority of a christmas gift is -21.
+
 To say ExamineDesc of (B - a christmas gift):
 	say "A beautifully wrapped Christmas present. Open it and find what's inside!".
 

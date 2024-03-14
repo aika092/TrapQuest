@@ -82,6 +82,8 @@ To compute virginity loss:
 		say "Your holy aura seems to diminish with the loss of your purity, enhancing the shame you are feeling. A strange new feeling of purpose passes through you, and you groan as your [vagina] loosens painfully.[line break][variable custom style]I guess all I'm good for is sex now...[roman type][line break]";
 		if the openness of vagina < 10, increase the openness of vagina by 1;
 		decrease the virgin bonus of the player by 1;
+	if dildo sword is worn and chain-tiara is off-stage and chain-tiara is actually summonable:
+		summon chain-tiara cursed;
 	progress quest of vaginal-virginity-quest;
 	if the openness of vagina < 10, increase the openness of vagina by 1.
 

@@ -557,7 +557,7 @@ The players expel things when they orgasm rule is listed last in the orgasm reso
 milk-squirt-orgasms is initially false.
 
 This is the hentai orgasm resolution rule:
-	if milk-squirt-orgasms is true and the milk volume of breasts > 4 and the player is not in a predicament room and the class of the player is not cowgirl and the class of the player is not royal slave:
+	if milk-squirt-orgasms is true and milking is 0 and the milk volume of breasts > 4 and the player is not in a predicament room and the class of the player is not cowgirl and the class of the player is not royal slave:
 		let N be bottom level lactation cover;
 		let M be the milk volume of breasts / 5;
 		say "Your nipples start to spontaneously squirt milk into [if N is clothing]your [printed name of N][otherwise]a puddle on the floor[end if].[line break][variable custom style][if the bimbo of the player < 8]Gross![otherwise]Uh-oh![end if][roman type]";

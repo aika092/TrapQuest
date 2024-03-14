@@ -10,7 +10,7 @@ To say FullExamineDesc of (B - arms):
 arms has a number called fat-burning.
 
 arms has a number called flesh volume. the flesh volume of arms is 0.
-Understand "finger", "fingers", "hand", "hands", "arm" as arms.
+Understand "finger", "fingers", "hand", "hands", "arm" as arms. The text-shortcut of arms is "arms".
 
 To decide which number is the weight of (XXX - arms):
 	let S be the flesh volume of arms;

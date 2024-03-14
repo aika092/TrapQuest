@@ -68,7 +68,7 @@ To compute HoleInWallEntrance:
 	now the source-room of HoleInWall is the location of the player;
 	now the player is in HoleInWall;
 	check immobility;
-	refresh the map-window.
+	refresh map zone.
 
 Check entering hole-in-wall:
 	try HoleEntering the noun instead.
@@ -159,7 +159,7 @@ Check resisting when the location of the player is HoleInWall:
 				now composed-explorer is in the source-room of the location of the player;
 			now the player is in the source-room of the location of the player;
 			update player region;
-			refresh the map-window;
+			refresh map zone;
 			check immobility;
 		otherwise:
 			increase hole-in-wall-resists by 1;
@@ -197,7 +197,7 @@ To HoleWait:
 			say "[speech style of M]'[caps please] REMAIN CALM, YOU ARE BEING RESCUED.'[roman type][line break]You are powerfully yet carefully extracted from your embarrassing prison.";
 			now the player is in the source-room of the location of the player;
 			say "You look around and see [NameDesc of M], having already lost interest with you after rescuing you, is busying itself with other things.";
-		refresh the map-window;
+		refresh map zone;
 		check immobility.
 
 hole-in-wall punishment is a kind of object. hole-in-wall punishment has a number called priority. The priority of hole-in-wall punishment is usually 2.

@@ -981,14 +981,14 @@ Section - Retrieving the length of a reel
 
 To decide what number is the reel-length appropriate to (track - an animation track) and (T - a text):
 	if T is "image-ID" or T is "background image", decide on the number of entries in the image-reel of the track;
-	if T is "tint" or T is "background tint", decide on the the number of entries in the colour-reel of the track;
-	if T is "origin" or T is "endpoint", decide on the the number of entries in the coordinates-reel of the track;
-	if T is "scaling factor" or T is "x-scaling factor" or T is "y-scaling factor" or T is "arbitrary scaling factor", decide on the the number of entries in the scaling-reel of the track;
-	if T is "text-string" or T is "linked replacement-command", decide on the the number of entries in the indexed-text-reel of the track;
-	if T is "cursor" or T is "line-weight" or T is "bit-size", decide on the the number of entries in the numerical-reel of the track;
-	if T is "associated font" or T is "associated canvas" or T is "associated tileset", decide on the the number of entries in the associated-objects-reel of the track;
-	if T is "bitmap-array" or T is "tile-array", decide on the the number of entries in the numerical-array-reel of the track;
-	if T is "figure-array", decide on the the number of entries in the image-array-reel of the track.
+	if T is "tint" or T is "background tint", decide on the number of entries in the colour-reel of the track;
+	if T is "origin" or T is "endpoint", decide on the number of entries in the coordinates-reel of the track;
+	if T is "scaling factor" or T is "x-scaling factor" or T is "y-scaling factor" or T is "arbitrary scaling factor", decide on the number of entries in the scaling-reel of the track;
+	if T is "text-string" or T is "linked replacement-command", decide on the number of entries in the indexed-text-reel of the track;
+	if T is "cursor" or T is "line-weight" or T is "bit-size", decide on the number of entries in the numerical-reel of the track;
+	if T is "associated font" or T is "associated canvas" or T is "associated tileset", decide on the number of entries in the associated-objects-reel of the track;
+	if T is "bitmap-array" or T is "tile-array", decide on the number of entries in the numerical-array-reel of the track;
+	if T is "figure-array", decide on the number of entries in the image-array-reel of the track.
 
 Chapter - Parametrised motion tracks
 

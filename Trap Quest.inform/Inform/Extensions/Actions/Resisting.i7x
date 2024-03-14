@@ -75,11 +75,11 @@ Check resisting:
 		now forced submit is 3; [no flavour, but still process humiliation gain]
 		say "Now that you have already started submitting, your [ShortDesc of H] refuses to let you start resisting. Instead the attempt just fills you with feelings of guilt for not trying harder to prevent [NameDesc of M] from using you!";
 		try submitting instead;
-	otherwise if there is a live thing penetrating asshole and a random number between 14 and 19 < the the anal sex addiction of the player * 2:
+	otherwise if there is a live thing penetrating asshole and a random number between 14 and 19 < the anal sex addiction of the player * 2:
 		say "You love anal sex too much, you can't will yourself to even [i]pretend[/i] to resist right now!";
 		now forced submit is 1;
 		try submitting instead;
-	otherwise if there is a live thing penetrating vagina and a random number between 14 and 19 < the the vaginal sex addiction of the player * 2:
+	otherwise if there is a live thing penetrating vagina and a random number between 14 and 19 < the vaginal sex addiction of the player * 2:
 		say "You love sex too much, you can't will yourself to even [i]pretend[/i] to resist right now!";
 		now forced submit is 1;
 		try submitting instead;

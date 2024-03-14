@@ -14,6 +14,7 @@ hair has a number called blondeness. The blondeness of hair is usually 0. [Min 0
 hair has a number called brightness. The brightness of hair is usually 0. [Min 0 Max 3 - A low number means very dark.]
 hair has a number called redness. The redness of hair is usually 0. [Min 0 Max 3 - A high number means very red.]
 hair has a number called raw largeness. The raw largeness of hair is usually 1. [Min 1 Max 20]
+hair has a number called previous largeness. The previous largeness of hair is usually 1. [Min 1 Max 20]
 hair has a number called fake largeness. The fake largeness of hair is usually 0. [Min 0 Max 10]
 hair has a number called real largeness. The real largeness of hair is usually 1. [Min 1 Max 20]
 

@@ -25,6 +25,8 @@ Breasts has a number called silicone volume.
 
 Breasts has a number called previous largeness.
 
+Breasts has a number called previous weight.
+
 Breasts has a number called real largeness.
 
 Breasts has a number called lactation rate.

@@ -152,10 +152,13 @@ To say PityDesc of (M - a monster):
 	say "[if M is intelligent]Show mercy and offer a hand of friendship[otherwise]Leave [him of M] alone[end if].".
 To compute pitying of (M - a monster):
 	say PityOfferFlav of M;
+	now the objectification of M is 0;
+	now the babification of M is 0;
 	if M is not uniquely unfriendly:
 		calm M;
-		FavourUp M;
+		FavourUp M by 3;
 	if M is intelligent, say PityOfferResponse of M;
+	progress quest of chosen-one-quest;
 	compute M slinking away.
 
 To say PityOfferFlav of (M - a monster):
@@ -163,8 +166,14 @@ To say PityOfferFlav of (M - a monster):
 		say "You lower a hand to help [NameDesc of M] to [his of M] feet.";
 		if the player is able to speak, say "[variable custom style]'[one of]Well fought, but I am the victor.'[or]I trust you will treat me with more respect from now on?'[or]If you promise not to do that again, we can still be friends...'[in random order][roman type][line break]".
 To say PityOfferResponse of (M - a monster):
-	if M is friendly, say "[speech style of M]'[one of]You've proven your point. Let's not do this again.'[or]Haha, you got me. How humiliating.'[or][if the appearance of the player >= the outrage tolerance of M]Maybe if you stop dressing like a whore[otherwise]Fair is fair[end if].'[in random order][roman type][line break]";
-	otherwise say "[speech style of M]'[one of]Fuck you. Next time won't go like this again.'[or]What a waste of your final victory over me.'[or]Listen closely. We are not friends.'[in random order][roman type][line break]".
+	if M is friendly:
+		say "[speech style of M]'[one of]You've proven your point. Let's not do this again.'[or]Haha, you got me. How humiliating.'[or][if the appearance of the player >= the outrage tolerance of M]Maybe if you stop dressing like a whore[otherwise]Fair is fair[end if].'[in random order][roman type][line break]";
+	otherwise if M is objectifying the player:
+		say "[speech style of M]'[one of]I could never be friends with someone who dresses like you.'[or]I'm not big on making allies of people who look like shameless sluts.'[in random order][roman type][line break]";
+	otherwise if M is babifying the player:
+		say "[speech style of M]'[one of]I could never be friends with someone who dresses like you.'[or]I'm not big on making allies of pathetic little babies.'[in random order][roman type][line break]";
+	otherwise:
+		say "[speech style of M]'[one of]Fuck you. Next time won't go like this again.'[or]What a waste of your final victory over me.'[or]Listen closely. We are not friends.'[in random order][roman type][line break]".
 
 Definition: a monster is penis-fuckable:
 	if it is wenchy, decide yes;

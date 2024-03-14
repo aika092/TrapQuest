@@ -2,6 +2,7 @@ Cringe Appearance by Player begins here.
 
 To decide which number is the cringe appearance of the player:
 	[potentially update appearance and cringe levels;]
+	if lake-swimming is true, decide on 4;
 	decide on the saved cringe appearance of the player.
 
 To decide which number is the saved cringe appearance of the player:

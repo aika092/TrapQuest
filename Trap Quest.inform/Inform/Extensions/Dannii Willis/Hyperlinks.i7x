@@ -41,7 +41,7 @@ A glulx input handling rule for a hyperlink-event (this is the default hyperlink
 		follow the command-showing rules;
 		change the text of the player's command to the Glulx replacement command;
 		now the glk event type is line-event;
-		now the the glk event window ref is the ref number of the acting main window;
+		now the glk event window ref is the ref number of the acting main window;
 		now the glk event value 1 is the number of characters in the glulx replacement command;
 
 Before processing hyperlinks (this is the prepare for processing hyperlinks rule):

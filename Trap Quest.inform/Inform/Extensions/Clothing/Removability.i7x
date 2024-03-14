@@ -142,13 +142,13 @@ This is the unremovable rule:
 The unremovable rule is listed in the global removability rules.
 
 This is the cursed unremovable rule:
-	if wearing-target is cursed curse-sticky clothing and summoning is 0 and the class of the player is not cultist and (wearing-target is headgear or the player is not in Predicament20):
+	if wearing-target is cursed curse-sticky clothing and summoning is 0:
 		if autoremove is false:
 			now the curse-ID of the noun is sure;
 			if the noun is hand ready:
-				say "The [ShortDesc of wearing-target] is welded to your [if there is worn gloves and the noun is not gloves][random worn gloves][otherwise]hand[end if]!";
+				say "The [ShortDesc of wearing-target] is welded to your [if there is worn gloves and the noun is not gloves][random worn gloves][otherwise]hand[end if] by the curse!";
 			otherwise:
-				say "It won't budge! It's magically forcing you to keep [if wearing-target is equippable]wielding[otherwise]wearing[end if] it.";
+				say "It won't budge! The curse is magically forcing you to keep [if wearing-target is equippable]wielding[otherwise]wearing[end if] it.";
 		rule fails.
 The cursed unremovable rule is listed in the global removability rules.
 

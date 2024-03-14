@@ -522,6 +522,7 @@ numbersExplained is a list of numbers that varies.
 
 To compute poker minigame:
 	now temporaryYesNoBackground is Figure of PokerCardDraw;
+	now temporaryYesNoResetNeeded is false;
 	now the poker-timer of orc is 100;
 	say "[one of][speech style of orc]'We're playing 32 card poker - that means the cards from 2 to 6 have been removed. Full houses are easier to get than normal, so they're now worth less than flushes, and your Ace can count as a 6 for the purposes of making a straight.'[roman type][line break][or][stopping]";
 	let deckOfCards be a list of numbers;
@@ -630,7 +631,7 @@ To compute poker minigame:
 			let PC be entry N in playerHand;
 			set numerical response N to the substituted form of "[poker card of PC]";
 		while pickingCards is true:
-			clear the map-window;
+			clear the map zone;
 			compute multiple choice question;
 			if player-numerical-response is 0:
 				now pickingCards is false;
@@ -765,7 +766,7 @@ To compute poker minigame:
 			progress quest of stealing-quest;
 			compute poker theft of queen-of-hearts;
 	now orc is not playing-poker-badly;
-	now temporaryYesNoBackground is Figure of small image.
+	temporaryYesNoBackgroundReset.
 
 To compute poker punishment of (PC - a number):
 	say "[line break][one of][BigNameDesc of orc] points at [poker card of PC], which is softly glowing. Its punishment effect is about to happen. [BigNameDesc of orc] explains what this particular card will do.[or][stopping]";
@@ -1277,9 +1278,9 @@ To decide which number is the poker hand strength of (CH - a list of numbers):
 	decide on "nothing special".]
 
 To display poker interface:
-	if the map-window is g-present:
-		let H be the height of the map-window;
-		let W be the width of the map-window;
+	if the graphics-window is g-present:
+		let H be map-window-height;
+		let W be map-window-width;
 		let cardHeight be H / 3;
 		let cardWidth be (cardHeight * 100) / 144;
 		if cardWidth * 6 > W - 2: [cards at this size too wide for map window width]
@@ -1287,22 +1288,22 @@ To display poker interface:
 			now cardHeight is (cardWidth * 144) / 100;
 		let orcHandRenderY be H - (cardHeight * 3);
 		repeat with N running from 0 to 4:
-			let orcCardRenderX be 1 + (N * cardWidth);
+			let orcCardRenderX be map-window-x-root + (N * cardWidth);
 			let FP be entry (N + 1) in orcHand;
 			let F be entry (FP + 1) in pokerCardList;
-			display the image F in the map-window at orcCardRenderX by orcHandRenderY with dimensions cardWidth by cardHeight;
+			display the image F in the graphics-window at orcCardRenderX by orcHandRenderY with dimensions cardWidth by cardHeight;
 		let playerHandRenderY be H - cardHeight;
 		repeat with N running from 0 to 4:
-			let playerCardRenderX be 1 + (N * cardWidth);
+			let playerCardRenderX be map-window-x-root + (N * cardWidth);
 			let FP be entry (N + 1) in playerHand;
 			let F be entry (FP + 1) in pokerCardList;
 			if N + 1 is listed in cardsToBurn, now F is Figure of PokerCardDiscard;
-			display the image F in the map-window at playerCardRenderX by playerHandRenderY with dimensions cardWidth by cardHeight;
-			set a graphlink in the map-window identified as hypermapyes from playerCardRenderX by playerHandRenderY to (playerCardRenderX + cardWidth) by (playerHandRenderY + cardHeight) as "[N + 1]", ignoring redundant links;
-		let playerCardRenderX be 1 + (5 * cardWidth);
+			display the image F in the graphics-window at playerCardRenderX by playerHandRenderY with dimensions cardWidth by cardHeight;
+			set a graphlink in the graphics-window identified as hypermapyes from playerCardRenderX by playerHandRenderY to (playerCardRenderX + cardWidth) by (playerHandRenderY + cardHeight) as "[N + 1]", ignoring redundant links;
+		let playerCardRenderX be map-window-x-root + (5 * cardWidth);
 		let deckRenderY be playerHandRenderY - cardHeight;
-		display the image Figure of PokerCardDraw in the map-window at playerCardRenderX by deckRenderY with dimensions cardWidth by cardHeight;
-		set a graphlink in the map-window identified as hypermapyes from playerCardRenderX by deckRenderY to (playerCardRenderX + cardWidth) by (deckRenderY + cardHeight) as "0", ignoring redundant links.
+		display the image Figure of PokerCardDraw in the graphics-window at playerCardRenderX by deckRenderY with dimensions cardWidth by cardHeight;
+		set a graphlink in the graphics-window identified as hypermapyes from playerCardRenderX by deckRenderY to (playerCardRenderX + cardWidth) by (deckRenderY + cardHeight) as "0", ignoring redundant links.
 
 
 

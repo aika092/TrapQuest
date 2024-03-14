@@ -1160,10 +1160,10 @@ To compute enticing of (M - a monster):
 			say EnticeFlav of M for chosen diaper punishment;
 			let S be the relevant addiction of chosen diaper punishment;
 			if S > 5: [at 5 or less addiction, this can't happen]
-				check enticing of M with temptation level S;
+				check enticing of M for yourself with temptation level S;
 				if the player is prone, compute punishment of chosen diaper punishment;
 	otherwise:
-		compute the orifice choosing of M;
+		unless M is patron and the chosen-orifice of M is an actual target body part, compute the orifice choosing of M; [hotel patrons have usually already chosen what type of sex they intend to perform]
 		let B be the chosen-orifice of M;
 		if B is an actual target body part:
 			say EnticeFlav of M with B;
@@ -1175,7 +1175,7 @@ To compute enticing of (M - a monster):
 			otherwise:
 				if watersports fetish is 0 and the class of the player is human toilet, increase S by 10;
 			if S > 5: [at 5 or less addiction, this can't happen]
-				check enticing of M with temptation level S;
+				check enticing of M for B with temptation level S;
 				if the player is prone:
 					follow the insertion rules of M;
 					if watersports fetish is 0 and B is a fuckhole and wc hood is off-stage and wc hood is actually summonable:
@@ -1184,12 +1184,18 @@ To compute enticing of (M - a monster):
 	now current-monster is CM.
 
 
-To check enticing of (M - a monster) with temptation level (S - a number):
+To check enticing of (M - a monster) for (B - a thing) with temptation level (S - a number):
 	let A be the arousal of the player / 500;
 	let G be the grossness of M  - the grossness addiction of the player;
 	let N be A + S;
 	if G > 0, decrease N by G;
+	if the class of the player is chosen one:
+		let H be a random worn headgear;
+		say "[bold type][BigNameDesc of H] [bold type]pulses gently on your forehead.[roman type][line break]";
+		increase N by 10;
+		if N < 15, now N is 15;
 	if debuginfo > 0, say "[input-style]Enticement stats: Arousal value ([A]) + Addiction level ([S])[if G > 0] - Grossness level ([G])[end if] = Enticement level [N][roman type][line break]";
+	if N > 11, say EnticedFlav of M for B with enticement level N; [This way, there's some flavour if we got close but not quite close enough for the first level of enticement]
 	if N > 28:
 		if debuginfo > 0, say "[input-style]Above 28 = maximum enticement level![roman type][line break]";
 		say "The combination of your arousal and [if diaper quest is 1]predilections[otherwise]addiction[end if] makes it impossible for you to resist![line break][variable custom style][one of]I'm supposed to be fighting... But my body is acting of its own accord... I can't stop myself[or]I need it so badly[stopping]![roman type][line break]";
@@ -1265,6 +1271,73 @@ To say EnticeFlav of (M - a monster) with (F - a fuckhole):
 		say "[line break][speech style of M]'[one of]Just think how good you'll feel if you let me inside your [T]...'[or]Get on your knees, and let me ruin your [T] already...'[or]Calm yourself, sweetheart. All I want to do is fuck your [T].'[or]When I get you on your knees, this is going inside your [T]...'[or]Surrender now, and perhaps I'll be merciful on your [T].'[or]I'm going to make your [T] feel so good...'[in random order][roman type][line break]";
 	otherwise:
 		say "It seems clear that [he of M] wants to fuck your [variable F].".
+
+To say EnticedFlav of (M - a monster) for (B - a thing) with enticement level (N - a number):
+	say "".
+
+To say EnticedFlav of (M - a monster) for (B - breasts) with enticement level (N - a number):
+	if N > 28:
+		say "You feel your [BreastDesc] pulsing with urgent need, almost pulling you towards [NameDesc of M] with a mind of their own!";
+	otherwise if N > 22:
+		say "You feel your [BreastDesc] light up with aches of desire, as your mind races with excited thoughts of what [NameDesc of M] might do to them.";
+	otherwise if N > 18:
+		say "You feel your [BreastDesc] tingle with longing, as invasive thoughts of how good it would feel to just let [NameDesc of M] [if M is male]fuck[otherwise]do what [he of M] wants with[end if] them cloud your mind.";
+	otherwise if N > 14:
+		say "A not-so-small corner of your mind agrees with [NameDesc of M]... Why not just submit to [him of M] and enjoy the feeling of [him of M] [if M is male]fucking[otherwise]using[end if] your breasts?";
+	otherwise:
+		say "Your [BreastDesc] tingle, clearly not compeletely opposed to just doing exactly that.".
+
+To say EnticedFlav of (M - a monster) for (B - thighs) with enticement level (N - a number):
+	if M is eager to do anilingus:
+		if N > 28:
+			say "You feel your tongue exit your mouth without you making a conscious decision to have it do so, and start pulling itself towards [NameDesc of M][']s disgusting unwashed asshole. It desperately pleads with the rest of your body to follow suit...";
+		otherwise if N > 22:
+			say "You can't bring yourself to look away from [NameDesc of M][']s puckered brown star. You feel your tongue aching with a desperate desire to dive deep inside that disgusting hole...";
+		otherwise if N > 18:
+			say "As you stare at [NameDesc of M][']s tight little sphincter, your mouth begins to salivate with a weird, twisted sexual hunger.";
+		otherwise:
+			say "You find yourself rubbing your tongue against the inside of your front teeth, trying to imagine what [NameDesc of M][']s gross puckered asshole tastes like.";
+		say "[variable custom style][one of]What the fuck is wrong with me?![or]It's going to taste so bad... But... Still...[stopping][roman type][line break]";
+
+To say EnticedFlav of (M - a monster) for (B - belly) with enticement level (N - a number):
+	if M is male:
+		if N > 28:
+			say "Your mouth obediently opens wide without a second thought, as a large part of your body and soul clearly feels that things would be a lot simpler and happier if you just obediently accepted your place as a human urinal.";
+		otherwise if N > 22:
+			say "Your heartbeat quickens, and you suddenly feel a desperate craving to drink this [man of M][']s delicious [urine]!";
+		otherwise if N > 18:
+			say "Your mouth salivates as you look at [NameDesc of M][']s [LongDickDesc of M], and you can't help but lick your lips with anticipation. What would be so bad about just indulging in a drink of [his of M] [urine] like [he of M] wants?";
+		otherwise if N > 14:
+			say "You bite your bottom lip as your tongue yearns for a sample of the taste of [his of M] [urine].";
+		otherwise:
+			say "[second custom style]It would be simpler and less stressful to just drink [his of M] [urine] rather than fight [him of M]... And probably more fun, too.[paragraph break][variable custom style]...Did I really just think that?![roman type][line break]".
+
+To say EnticedFlav of (M - a monster) for (B - face) with enticement level (N - a number):
+	if M is male:
+		if N > 28:
+			say "Your mouth obediently opens wide without a second thought, and you feel your legs begin to wobble as your mind starts to shut down and your body urges you to swallow that delicious shaft as soon as humanly possible!";
+		otherwise if N > 22:
+			say "Your heartbeat quickens, and you stare at [NameDesc of M][']s majestic [LongDickDesc of M] as if hypnotised. You feel your tongue throbbing with a desperate need to taste it.";
+		otherwise if N > 18:
+			say "Your mouth salivates as you look at [NameDesc of M][']s [LongDickDesc of M], and you can't help but lick your lips with anticipation. What would be so bad about just sucking [his of M] [manly-penis] like [he of M] wants?";
+		otherwise if N > 14:
+			say "Seeing [NameDesc of M][']s [LongDickDesc of M] out and swinging like that is more than just distracting... It's downright *enticing*. It probably tastes really good.";
+		otherwise:
+			say "A small part of your brain agrees that [his of M] proposition does indeed sound pretty appealing...".
+
+To say EnticedFlav of (M - a monster) for (F - a fuckhole) with enticement level (N - a number):
+	if M is male:
+		if N > 28:
+			say "Your [variable F] burns with a desperate need to be filled by [NameDesc of M][']s glorious [LongDickDesc of M] right fucking now!!! You feel your legs shaking... Willing you to stop, drop, turn, spread and present.";
+		otherwise if N > 22:
+			say "Your hands shoot down to your [variable F] and clench it tightly, trying to suppress the aching desire and the sudden physical pulsing with need that [NameDesc of M] has elicited from it.";
+		otherwise if N > 18:
+			say "In response, your [variable F] tingles with anticipatory delight, and your legs feel a little wobbly, like they'd prefer you to just drop to your knees and give [NameDesc of M] what [he of M][']s asking for.";
+		otherwise if N > 14:
+			say "You shudder with arousal, and your [variable F] twitches, apparently rather keen to submit to [NameDesc of M][']s wishes.";
+		otherwise:
+			say "You clench your thighs together, trying to suppress the ripples of desire that just flowed through your [variable F].";
+			say "[variable custom style]That [if M is presenting as female]bitch[otherwise]bastard[end if]! I can't believe my body is reacting to [if M is intelligent][his of M] words[otherwise][him of M][end if] like this![roman type][line break]".
 
 
 Section 2 Clothing Removal and Insertion
@@ -1958,6 +2031,7 @@ To decide which number is the raw entice rarity of (M - a monster):
 	decide on 3 * combatSpeed. [The higher this is, the less often they do their entice move]
 Definition: a monster (called M) is ready to entice:
 	if diaper quest is 1 and the player is not a december 2022 diaper donator, decide no;
+	if the player is prone, decide no;
 	if M is enticed, decide no;
 	if M is uniquely ready to entice, decide yes;
 	decide no.
@@ -1982,7 +2056,9 @@ To compute attack choice of (M - a monster):
 	if M is a tripper and the last-tripped of M >= the trip threshold of M:
 		now the last-tripped of M is 0;
 		if tutorial is 1 or (the wrangle-bonus of M < 3 and a random number between 1 and TC is 1), now TC is 0;
-	if M is ready to entice and a random number between 1 and the raw entice rarity of M is 1:
+	let entice-threshold be 1;
+	if the class of the player is chosen one, now entice-threshold is 2; [enticing is twice as likely]
+	if M is ready to entice and a random number between 1 and the raw entice rarity of M <= entice-threshold:
 		now M is enticed;
 		compute enticing of M;
 	otherwise if TC <= 0:

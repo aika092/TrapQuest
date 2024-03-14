@@ -62,7 +62,7 @@ A time based rule (this is the iron-maiden-punishment rule):
 			now the player is in the location of M;
 			dislodge M;
 			update player region;
-			refresh the map-window;
+			refresh map zone;
 			force inventory-focus redraw; [Forces redraw of inventory window, some buttons might be the wrong colour]
 			repeat with R running through reactive monsters:
 				say IronMaidenTrapReactFlav of R;

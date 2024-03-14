@@ -992,6 +992,37 @@ a class explaining rule (this is the explaining condom collector rule):
 			now condomCollectorExplained is false;
 			say "[bold type]Now that you are no longer the [']condom collector['] class, you can sense that the bonus intelligence you were receiving from having condoms pinned to your clothes has gone.[roman type][line break]".
 
+
+[!<TheChosenOneClassRule>+
+
+The chosen one class comes from the dildo sword.
+
++!]
+This is the chosen one class rule:
+	if there is a worn chain-tiara:
+		now player-class is "chosen one";
+		rule succeeds.
+The chosen one class rule is listed in the player class rules.
+
+[!<TextIsChosenOne>+
+
+The chosen one class is good at swordplay but bad at getting enticed.
+
++!]
+Definition: a text (called T) is chosen one:
+	if T matches the text "chosen", decide yes;
+	decide no.
+
+chosenOneExplained is initially false.
+a class explaining rule (this is the explaining chosen one rule):
+	if chosenOneExplained is false and the class of the player is chosen one:
+		now chosenOneExplained is true;
+		say "[bold type]Now that you have become the [']chosen one['] class, you can sense that your attacks with a sword are more powerful, but that you are extremely vulnerable to being [']enticed['] into sex by whoever you're fighting.[roman type][line break]";
+	otherwise if chosenOneExplained is true and the class of the player is not chosen one:
+		now chosenOneExplained is false;
+		say "[bold type]Now that you are no longer the [']chosen one['] class, you can sense that you are no longer stronger with a sword, but also no longer exceptionally vulnerable to being [']enticed['] during combat.[roman type][line break]".
+
+
 [!<TheMagicalGirlClassRule>+
 
 The magical girl class (revolving around destroying tentacle breeders) only requires the hairpin.

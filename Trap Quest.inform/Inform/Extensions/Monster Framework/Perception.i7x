@@ -115,6 +115,11 @@ To check perception of (M - a monster):
 						if newbie tips is 1 and tutorial is 0:
 							if M is friendly, say "[one of][newbie style]Newbie tip: You have been noticed by an NPC! Looks like this one is friendly, which means you could try using the 'talk' verb to find out more from them. If thirsty, you'll even be able to ask [him of M] for a drink.[roman type][line break][or][stopping]";
 							otherwise say "[one of][newbie style]Newbie tip: You have been noticed by an NPC! Looks like this one is unfriendly, which usually always means [he of M] wants to [if diaper quest is 1]babify[otherwise]fuck[end if] you, or at the very least make your life more miserable in some way. You can either fight back with 'slap', 'knee' or 'kick' (you'll need to be standing), or you can run away! If your delicateness is high enough, there's also a third option, just get on your knees and let it happen... Anyway, if you want to fight back, experiment with the different attacks. At the start of the game, kicking is usually the worst option as you risk falling over and do less damage.[roman type][line break][or][stopping]";
+						if the class of the player is chosen one and M is intelligent and M is threatening and M is combative:
+							let C be a random worn sword;
+							if C is a sword and C is not dildo sword and the player is getting unlucky:
+								transform C into dildo sword;
+								say GotUnluckyFlav;
 						if hypno-curtsey-trigger > 0 and the player is upright and M is intelligent friendly monster and the player is not wrist bound and the player is able to use manual dexterity and there is a worn knee-length or longer crotch-in-place clothing:
 							let R be a random number between 1 and hypno-curtsey-trigger;
 							let HR be 2 + the square root of (the humiliation of the player / 2000);
@@ -619,6 +624,7 @@ shocked-monsters is a number that varies. [The number of monsters that have noti
 aroused-monsters is a number that varies. [The number of monsters that have noticed the player right now, if the player is aroused]
 
 Definition: a number (called N) is too humiliating:
+	if background-exhibitionist is 1, decide no;
 	if N * 2000 > the humiliation of the player + 6000, decide yes;
 	decide no.
 
@@ -628,6 +634,7 @@ Is the player wearing something too embarrassing for their tolerance level?
 
 +!]
 Definition: a person is outraged:
+	if background-exhibitionist is 1, decide no;
 	if calculated-appearance-outrage-level is too humiliating, decide yes;
 	if diaper quest is 1 and calculated-cringe-level is too humiliating, decide yes;
 	decide no.

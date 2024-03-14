@@ -66,7 +66,7 @@ To mimicReplace (M - a memic):
 To compute mimic:[The mimic is special in that it has no treasure in it, and will always do something inconvenient for the player. However, all the things the mimic does should have some silver lining]
 	if diaper quest is 1:
 		say "As you go to open it, the lid springs open and the resulting gap shapeshifts into a giant mouth! You have no time to react before this monster has begun to swallow you whole!";
-		if the map-window is g-unpresent, appropriate-cutscene-display figure of mimic cutscene 1;
+		if the graphics-window is g-unpresent, appropriate-cutscene-display figure of mimic cutscene 1;
 		now the source-room of MimicCrib is the location of the player;
 		now the player is in MimicCrib;
 		display entire map;

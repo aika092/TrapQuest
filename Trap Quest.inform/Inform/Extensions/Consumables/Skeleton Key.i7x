@@ -2,6 +2,8 @@ Skeleton Key by Consumables begins here.
 
 An unlock-key is a kind of collectible. Understand "key" as an unlock-key. The tradability of an unlock-key is usually 13.
 
+The inventoryFocusPriority of an unlock-key is -15.
+
 Figure of key is the file "Items/Collectibles/key3.png".
 To decide which figure-name is the examine-image of (K - an unlock-key):
 	decide on Figure of key.

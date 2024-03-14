@@ -207,6 +207,8 @@ Figure of Wild Gladiator Cutscene 3 is the file "NPCs/MultiFloor/Gladiator/Cutsc
 Figure of Wild Gladiator Cutscene 4 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-wild-fuck4.jpg". [female anal woods]
 Figure of Wild Gladiator Cutscene 5 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-wild-delay1.png". [delay]
 
+Figure of horizontal pole predicament is the file "Special/Cutscene/cutscene-predicament-horizontal-pole1.jpg".
+
 Figure of milk fountain is the file "Env/Mansion/fountain1.jpg".
 
 [unnecessary in DQ]
@@ -315,6 +317,8 @@ Figure of rank 5 laci pierced is the file "NPCs/School/Student/student3ep.png".
 To decide which figure-name is Figure of rank 5 laci:
 	if student-laci is clitLeaded, decide on figure of rank 5 laci pierced;
 	otherwise decide on figure of rank 5 laci normal.
+
+Figure of lecture 2 is the file "Special/Cutscene/cutscene-lecture2.jpg".
 
 Figure of rank 2 misty normal is the file "NPCs/School/Student/student4b.png".
 To decide which figure-name is Figure of rank 2 misty:

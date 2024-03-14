@@ -2,6 +2,8 @@ ASCII Map by Miscellaneous Frontend begins here.
 
 To MapDraw:
 	if map images > 0:
+		repeat with G running through g-animated animation tracks:
+			cease animation of G; [GUITODO: only the ones in the map window]
 		display entire map;
 	otherwise:
 		let Z be 1;

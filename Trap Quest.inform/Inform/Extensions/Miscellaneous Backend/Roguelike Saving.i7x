@@ -64,11 +64,9 @@ Every turn:
 			now saveCheatDetected is -1.
 
 To fix window overhang:
-	say "One more moment, fixing windows...";
+	say "One more moment, loading GUI...";
 	render buffered stuff;
 	clear the screen;
-	force inventory-focus redraw; [Forces redraw of inventory window]
-	force clothing-focus redraw; [Forces redraw of clothing inventory window]
 	fix status bar;
 	refresh windows;
 	if setting-instruction is "":

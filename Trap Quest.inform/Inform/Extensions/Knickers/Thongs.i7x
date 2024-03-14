@@ -230,6 +230,10 @@ To uniquely destroy (C - black-lace-thong):
 	now C is not monified.
 
 [Carry out taking black-lace-thong:
+	if takingStuff is false:
+		allocate 2 seconds;
+		allocate arm use to the noun;
+	now takingStuff is true; [The player can take several items in the same turn without penalty with "take all"]
 	if the noun is in Hotel20 and the player is getting unlucky, now the noun is provocation.]
 
 heart-strap-thong is a thong. heart-strap-thong is transformation-rare. heart-strap-thong is leather. The text-shortcut of heart-strap-thong is "hsth". Understand "heart", "strap" as heart-strap-thong.

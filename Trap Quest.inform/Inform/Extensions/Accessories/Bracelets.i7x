@@ -32,6 +32,8 @@ The bracelets limited to two rule is listed in the bracelet wearability rules.
 
 focus band is a bracelet. focus band is latex. focus band is unique. The printed name of focus band is "[clothing-title-before]focus band[clothing-title-after]". The text-shortcut of focus band is "fcb". The tradability of focus band is 6.
 
+The inventoryFocusPriority of focus band is -1.
+
 Figure of focus band is the file "Items/Accessories/Arm/focusband1.png".
 
 To decide which figure-name is clothing-image of (C - focus band):

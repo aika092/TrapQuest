@@ -424,7 +424,7 @@ To compute (L - a milking bench lever) pull of (M - an acolyte):
 				say "[speech style of M]'You can thank me later.'[roman type][line break]";
 				satisfy M;
 				compute mandatory room leaving of M;
-				cutshow monster-image of M;
+				cutshow examine-image of M;
 				cutshow figure of milking bench cutscene 6 for L;
 		otherwise:
 			if M is in the location of the player, say "[BigNameDesc of M] eyes up the lever on the wall.[line break][speech style of M]'[Azathot] wills that this bench remains on the [']enhancement['] setting.'[roman type][line break][big he of M] steps over to the lever, and pushes it up so that it is pointing to the green plus sign.";
@@ -732,7 +732,7 @@ To say BanishFleeFlav of (M - an acolyte):
 				otherwise:
 					summon N in the woods;
 				now the monstersetup of N is 0;
-			cutshow monster-image of N for M;
+			cutshow examine-image of N for M;
 
 To compute unique banishment of (M - an acolyte):
 	if M is intelligent:
@@ -1335,7 +1335,7 @@ To compute (M - clairvoyant acolyte) entering mouth:
 		otherwise:
 			say "[big he of M] doesn't manage it this time.";
 			if B > 22:
-				say "[big he of M] gives up, [if the the weight of the player >= the strength of the player / 3]your body is too heavy[otherwise]you are too strong[end if] for [him of M] to push over. [big he of M] leaves you lying on the ground[if the body soreness of the player > 6] panting heavily,[end if] and loses interest.";
+				say "[big he of M] gives up, [if the weight of the player >= the strength of the player / 3]your body is too heavy[otherwise]you are too strong[end if] for [him of M] to push over. [big he of M] leaves you lying on the ground[if the body soreness of the player > 6] panting heavily,[end if] and loses interest.";
 				Bore M.
 
 To say MouthPenetrationFlav of (M - clairvoyant acolyte):
