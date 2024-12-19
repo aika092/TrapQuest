@@ -131,6 +131,7 @@ To compute action (N - a number) of (M - a monster):
 						if M is not interested and playerRegion is not school and M is threatening and M is regional:
 							progress quest of nice-quest;
 					if M is interested, compute interaction of M; [If still interested, check if there's anything for them to do]
+					if M is toilet desiring and M is able to use the toilet and M is not combative, compute toilet use of M;
 		otherwise:
 			if M is unfriendly:
 				check seeking N of M;

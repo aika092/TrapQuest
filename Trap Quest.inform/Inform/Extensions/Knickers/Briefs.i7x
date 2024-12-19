@@ -315,7 +315,7 @@ To decide which number is the unique outrage of (C - sheer-briefs):
 To decide which number is the dexterity-influence of (G - sheer-briefs):
 	if G is currently uncovered, decide on 3;
 	decide on 0.
-Definition: sheer-briefs is no-panties-disallowed: decide no.
+Definition: sheer-briefs is skimpy-underwear-disallowed: decide no.
 
 Figure of briefs 1 is the file "Items/Clothes/Lower/Underwear/Briefs/briefs1.png".
 Figure of briefs special 1 is the file "Items/Clothes/Lower/Underwear/Briefs/briefsspecial1.png".

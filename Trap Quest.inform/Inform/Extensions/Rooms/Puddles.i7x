@@ -77,7 +77,7 @@ To SemenPuddleUp (X - a number) in (R - School34):
 		unless C is worn:
 			summon C cursed;
 			say "Suddenly, a [printed name of C] appears around your waist!";
-		UsedCondomUp C by 1;
+		UsedCondomUp C from ex-princess by 1;
 		say "The condom whizzes onto and attaches itself to your [MediumDesc of C]!";
 		say CondomNewbieTip;
 		force immediate clothing-focus redraw;
@@ -138,9 +138,9 @@ A time based rule (this is the puddles disappearing rule):
 	repeat with H running through placed haunted rooms:
 		if the slime-puddle of H > 0, decrease the slime-puddle of H by 1;
 	repeat with R running through placed jungle rooms:
-		if R is smoky:
+		if R is pink-smoky:
 			decrease the smoke of wild gladiator by 1;
-			if the smoke of wild gladiator < 0, now R is not smoky;
+			if the smoke of wild gladiator < 0, now R is not pink-smoky;
 		if the semen-puddle of R > 0:
 			decrease the semen-puddle of R by 1;
 			if R is Woods30, ChargeUp giant-statue by 7;

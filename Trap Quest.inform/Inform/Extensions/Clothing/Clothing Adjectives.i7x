@@ -8,6 +8,7 @@ The inventoryFocusPriority of a wearthing is usually 25. [At the end of the clot
 
 Definition: a wearthing is unworn:
 	if it is worn, decide no;
+	if it is clothing and it is listed in the list of stacked diapers, decide no;
 	decide yes.
 
 [!<Clothing>@
@@ -51,30 +52,249 @@ Definition: a clothing is actually dense:
 	if it is not actually sheer, decide yes;
 	decide no.
 
-[!<Clothing>@<skirtLength:SkirtLengthEnum>*
+[Short clothing (usually skirts) expose the crotch when the player is on their knees. Super short clothing never covers the crotch. hobble clothing hinders walking but also makes it crotch covering. NB hobble-skirted clothing also needs to be flagged as crotch-intact.
 
-Short clothing (usually skirts) expose the crotch when the player is on their knees. Super short clothing never covers the crotch. hobble clothing hinders walking but also makes it crotch covering. NB hobble-skirted clothing also needs to be flagged as crotch-intact.
+NEW SYSTEM: skirt-length is an integer.
+0: unskirted
+1: ultra-short (always exposes everything)
+2: super-short (semi-exposes always & BACK exposes while prone)
+3: very-short (BACK exposes while prone)
+4: short (BACK semi-exposes while prone, FRONT starts to hamper kicks when unslitted)
+5: thigh-length (semi-exposes thighs)
+6: knee-length (conceals thighs, FRONT starts to hamper knees when unslitted)
+7: shin-length (semi-exposes calves, FRONT prevents kicks when unslitted)
+8: calf-length (conceals calves, FRONT protects crotch when unslitted)
+9: ankle-length (hobble skirt, FRONT prevents knees when unslitted)
+10: floor-length (hobble skirt, slows down further)
 
 *@!]
-Clothing can be unskirted, knee-length, short, super-short, hobble-skirted (this is the skirt-length property). Understand the skirt-length property as describing a clothing. Clothing is usually unskirted.
+To say SkirtLength (N - a number):
+	if N <= 0:
+		say "non-existent";
+	otherwise if N is 1:
+		say "so short it[']s just a belt";
+	otherwise if N is 2:
+		say "crotch-height";
+	otherwise if N is 3:
+		say "upper-thigh-height";
+	otherwise if N is 4:
+		say "mid-thigh-height";
+	otherwise if N is 5:
+		say "thigh-length";
+	otherwise if N is 6:
+		say "knee-length";
+	otherwise if N is 7:
+		say "upper-shin-length";
+	otherwise if N is 8:
+		say "calf-length";
+	otherwise if N is 9:
+		say "ankle-length";
+	otherwise:
+		say "floor-length".
 
-Definition: a clothing is difficult to don: decide no. [Does it take 2 turns to wear]
-Definition: a clothing is difficult to remove:
+[Clothing can be unskirted, knee-length, short, super-short, hobble-skirted (this is the skirt-length property). Understand the skirt-length property as describing a clothing.]
+A clothing has a number called skirt-length.
+To decide which number is the front-skirt-length of (C - a clothing):
+	decide on the skirt-length of C.
+To decide which number is the back-skirt-length of (C - a clothing):
+	decide on the skirt-length of C.
+[To decide which number is the shortest-skirt-length of (C - a clothing):
+	if the the front-skirt-length of C <= the back-skirt-length of C, decide on the front-skirt-length of C;
+	otherwise decide on the back-skirt-length of C.]
+Definition: a clothing (called C) is unskirted rather than skirted:
+	if the front-skirt-length of C <= 0 and the back-skirt-length of C <= 0, decide yes;
+	decide no.
+Definition: a clothing (called C) is ultra-short:
+	if the front-skirt-length of C is 1 and the back-skirt-length of C is 1, decide yes;
+	decide no.
+Definition: a clothing (called C) is front-ultra-short:
+	if the front-skirt-length of C is 1, decide yes;
+	decide no.
+Definition: a clothing (called C) is back-ultra-short:
+	if the back-skirt-length of C is 1, decide yes;
+	decide no.
+Definition: a clothing (called C) is super-short:
+	if the front-skirt-length of C is 2 and the back-skirt-length of C is 2, decide yes;
+	decide no.
+Definition: a clothing (called C) is front-super-short:
+	if the front-skirt-length of C is 2, decide yes;
+	decide no.
+Definition: a clothing (called C) is back-super-short:
+	if the back-skirt-length of C is 2, decide yes;
+	decide no.
+Definition: a clothing (called C) is super-short-or-shorter:
+	if the front-skirt-length of C <= 2 and the back-skirt-length of C <= 2, decide yes;
+	decide no.
+[Definition: a clothing (called C) is super-short-or-longer:
+	if the front-skirt-length of C >= 2 and the back-skirt-length of C >= 2, decide yes;
+	decide no.]
+Definition: a clothing (called C) is very-short:
+	if the front-skirt-length of C is 3 and the back-skirt-length of C is 3, decide yes;
+	decide no.
+Definition: a clothing (called C) is front-very-short:
+	if the front-skirt-length of C is 3, decide yes;
+	decide no.
+Definition: a clothing (called C) is back-very-short:
+	if the back-skirt-length of C is 3, decide yes;
+	decide no.
+Definition: a clothing (called C) is very-short-or-shorter:
+	if the front-skirt-length of C <= 3 and the back-skirt-length of C <= 3, decide yes;
+	decide no.
+Definition: a clothing (called C) is very-short-or-longer:
+	if the front-skirt-length of C >= 3 and the back-skirt-length of C >= 3, decide yes;
+	decide no.
+Definition: a clothing (called C) is short:
+	if the front-skirt-length of C is 4 and the back-skirt-length of C is 4, decide yes;
+	decide no.
+Definition: a clothing (called C) is front-short:
+	if the front-skirt-length of C is 4, decide yes;
+	decide no.
+Definition: a clothing (called C) is back-short:
+	if the back-skirt-length of C is 4, decide yes;
+	decide no.
+Definition: a clothing (called C) is short-or-shorter:
+	if C is skirted and the front-skirt-length of C <= 4 and the back-skirt-length of C <= 4, decide yes;
+	decide no.
+Definition: a clothing (called C) is short-or-longer:
+	if the front-skirt-length of C >= 4 and the back-skirt-length of C >= 4, decide yes;
+	decide no.
+Definition: a clothing (called C) is thigh-length:
+	if the front-skirt-length of C is 5 and the back-skirt-length of C is 5, decide yes;
+	decide no.
+Definition: a clothing (called C) is front-thigh-length:
+	if the front-skirt-length of C is 5, decide yes;
+	decide no.
+Definition: a clothing (called C) is back-thigh-length:
+	if the back-skirt-length of C is 5, decide yes;
+	decide no.
+Definition: a clothing (called C) is thigh-length-or-longer:
+	if the front-skirt-length of C >= 5 and the back-skirt-length of C >= 5, decide yes;
+	decide no.
+Definition: a clothing (called C) is knee-length:
+	if the front-skirt-length of C is 6 and the back-skirt-length of C is 6, decide yes;
+	decide no.
+Definition: a clothing (called C) is front-knee-length:
+	if the front-skirt-length of C is 6, decide yes;
+	decide no.
+Definition: a clothing (called C) is back-knee-length:
+	if the back-skirt-length of C is 6, decide yes;
+	decide no.
+Definition: a clothing (called C) is knee-length-or-shorter:
+	if C is skirted and the front-skirt-length of C <= 6 and the back-skirt-length of C <= 6, decide yes;
+	decide no.
+Definition: a clothing (called C) is knee-length-or-longer:
+	if the front-skirt-length of C >= 6 and the back-skirt-length of C >= 6, decide yes;
+	decide no.
+Definition: a clothing (called C) is shin-length:
+	if the front-skirt-length of C is 7 and the back-skirt-length of C is 7, decide yes;
+	decide no.
+Definition: a clothing (called C) is front-shin-length:
+	if the front-skirt-length of C is 7, decide yes;
+	decide no.
+Definition: a clothing (called C) is back-shin-length:
+	if the back-skirt-length of C is 7, decide yes;
+	decide no.
+Definition: a clothing (called C) is shin-length-or-longer:
+	if the front-skirt-length of C >= 7 and the back-skirt-length of C >= 7, decide yes;
+	decide no.
+Definition: a clothing (called C) is calf-length:
+	if the front-skirt-length of C is 8 and the back-skirt-length of C is 8, decide yes;
+	decide no.
+Definition: a clothing (called C) is front-calf-length:
+	if the front-skirt-length of C is 8, decide yes;
+	decide no.
+Definition: a clothing (called C) is back-calf-length:
+	if the back-skirt-length of C is 8, decide yes;
+	decide no.
+Definition: a clothing (called C) is calf-length-or-longer:
+	if the front-skirt-length of C >= 8 and the back-skirt-length of C >= 8, decide yes;
+	decide no.
+Definition: a clothing (called C) is ankle-length:
+	if the front-skirt-length of C is 9 and the back-skirt-length of C is 9, decide yes;
+	decide no.
+Definition: a clothing (called C) is front-ankle-length:
+	if the front-skirt-length of C is 9, decide yes;
+	decide no.
+Definition: a clothing (called C) is back-ankle-length:
+	if the back-skirt-length of C is 9, decide yes;
+	decide no.
+Definition: a clothing (called C) is ankle-length-or-longer:
+	if the front-skirt-length of C >= 9 and the back-skirt-length of C >= 9, decide yes;
+	decide no.
+Definition: a clothing (called C) is floor-length:
+	if the front-skirt-length of C >= 10 and the back-skirt-length of C >= 10, decide yes;
+	decide no.
+Definition: a clothing (called C) is front-floor-length:
+	if the front-skirt-length of C >= 10, decide yes;
+	decide no.
+Definition: a clothing (called C) is back-floor-length:
+	if the back-skirt-length of C >= 10, decide yes;
+	decide no.
+Definition: a clothing (called C) is crotch-skirt-eligible: [does it need to get set to 'crotch-skirted' so that we know it protects the player from crotch attacks]
+	if (the front-skirt-length of C >= 8 or C is hobble-skirted) and C is not slitted and C is not crotch-ripped, decide yes;
+	decide no.
+Definition: a clothing (called C) is hobble-skirted:
+	if C is ankle-length-or-longer and C is not slitted, decide yes;
+	decide no.
+Definition: a clothing (called C) is super-hobble-skirted:
+	if C is floor-length and C is not slitted, decide yes;
+	decide no.
+Definition: a clothing (called C) is skirt-partially-covering-crotch: [does it (potentially if not see-through) at least partially protect the visibility of vagina]
+	if C is worn and the player is prone: [when on hands and knees, it's the back of the skirt you need to protect your modesty]
+		if C is skirt-partially-covering-ass, decide yes;
+	otherwise if the front-skirt-length of C > 0:
+		if C is front-ultra-short, decide no; [tiny skirts don't protect anything]
+		if C is worn: [We only care about these checks if it's already worn; a kneeling player should still be happy to wear a short skirt because it CAN protected them once they stand back up]
+			if the player is prone and the back-skirt-length of C <= 3, decide no; [short skirts don't protect you unless you're standing.]
+			if C is crotch-displaced or C is crotch-unzipped, decide no; [if it's raised up it is currently not covering stuff]
+		decide yes;
+	decide no.
+Definition: a clothing (called C) is skirt-covering-crotch: [does it (potentially if dense) protect the visibility of vagina]
+	if C is worn and the player is prone: [when on hands and knees, it's the back of the skirt you need to protect your modesty]
+		if C is skirt-covering-ass, decide yes;
+	otherwise if the front-skirt-length of C > 0:
+		if C is front-ultra-short or C is front-super-short, decide no; [tiny skirts don't protect anything]
+		if C is worn: [We only care about these checks if it's already worn; a kneeling player should still be happy to wear a short skirt because it CAN protected them once they stand back up]
+			if the player is prone and the back-skirt-length of C <= 4, decide no; [short skirts don't protect you unless you're standing.]
+			if C is crotch-displaced or C is crotch-unzipped, decide no; [if it's raised up it is currently not covering stuff]
+		if C is crotch covering and C is no protection, decide no; [ripped hobble skirt]
+		decide yes;
+	decide no.
+Definition: a clothing (called C) is skirt-partially-covering-ass: [does it (potentially if not see-through) at least partially protect the visibility of asshole]
+	if the back-skirt-length of C > 0:
+		if C is back-ultra-short or C is crotch-assless, decide no; [tiny skirts don't protect anything]
+		if C is worn: [We only care about these checks if it's already worn; a kneeling player should still be happy to wear a short skirt because it CAN protected them once they stand back up]
+			if the player is prone and the back-skirt-length of C <= 3, decide no; [short skirts don't protect you unless you're standing.]
+			if C is crotch-displaced or C is crotch-unzipped, decide no; [if it's raised up it is currently not covering stuff]
+		if C is crotch covering and C is pussy protection, decide no; [it only covers the front, not the back]
+		decide yes;
+	decide no.
+Definition: a clothing (called C) is skirt-covering-ass: [does it (potentially if dense) protect the visibility of asshole]
+	if the back-skirt-length of C > 0:
+		if C is back-ultra-short or C is back-super-short or C is crotch-assless, decide no; [tiny skirts don't protect anything]
+		if C is worn: [We only care about these checks if it's already worn; a kneeling player should still be happy to wear a short skirt because it CAN protected them once they stand back up]
+			if the player is prone and the back-skirt-length of C <= 4, decide no; [short skirts don't protect you unless you're standing.]
+			if C is crotch-displaced or C is crotch-unzipped, decide no; [if it's raised up it is currently not covering stuff]
+		if C is crotch covering and (C is no protection or C is pussy protection), decide no; [ripped hobble skirt, or only covers front]
+		decide yes;
+	decide no.
+
+Definition: a clothing is difficult to don: [Does it take 2 turns to wear]
+	if it is super-hobble-skirted, decide yes;
+	decide no.
+Definition: a clothing is difficult to remove: [Does it take 2 turns to remove]
 	if it is difficult to don, decide yes;
-	decide no. [Does it take 2 turns to remove]
+	decide no.
 
 the default wearability rules is a rulebook.
 Clothing has a rulebook called wearability rules. The wearability rules of clothing is usually the default wearability rules.
 Clothing has a rulebook called removability rules. The removability rules of clothing is usually the default wearability rules.
 
-Definition: a clothing is skirted:
-	if it is not unskirted, decide yes;
-	decide no.
 
 Understand "glued" as clothing when item described is glued.
 
 Definition: a clothing (called C) is rigid:
-	if C is glass or [C is denim or] C is metal or C is plastic, decide yes;
+	if C is glass or C is metal or C is plastic, decide yes;
 	decide no.
 
 Clothing can be unlocked or locked. Clothing is usually unlocked.
@@ -107,21 +327,21 @@ To compute drying of (C - a clothing):
 			clean C;
 		otherwise:
 			if the water-soak of C > 0:
-				if a random number between 1 and 10 is 1:
+				if a random number between 1 and 20 is 1:
 					decrease the water-soak of C by 1;
 			if the milk-soak of C > 0:
-				if a random number between 1 and 16 is 1:
+				if a random number between 1 and 32 is 1:
 					decrease the milk-soak of C by 1;
 			if the urine-soak of C > 0:
-				if a random number between 1 and 14 is 1:
+				if a random number between 1 and 28 is 1:
 					decrease the urine-soak of C by 1;
 			if the semen-soak of C > 0:
-				if a random number between 1 and 20 is 1:
+				if a random number between 1 and 40 is 1:
 					decrease the semen-soak of C by 1;
-			if the total-soak of C is 0 and C is in the location of the player or C is held:
+			if the total-soak of C is 0 and (C is in the location of the player or C is held):
 				if C is worn, force clothing-focus redraw;
 				otherwise force inventory-focus redraw;
-				say "[if C is held]Your[otherwise]The[end if] [ShortDesc of C] is now completely dry.".
+				say "[BigNameDesc of C] is now completely dry.".
 Clothing has a number called top-layer. The top-layer of clothing is usually 0.
 Clothing has a number called mid-layer. The mid-layer of clothing is usually 0.
 Clothing has a number called bottom-layer. The bottom-layer of clothing is usually 0.
@@ -129,7 +349,7 @@ Clothing has a number called bottom-layer. The bottom-layer of clothing is usual
 
 Explanation:
 crotch-intact takes the crotch "slot", covers the crotch, isn't ripped, and isn't unzipped.
-crotch-skirted takes the crotch "slot" and covers the crotch with a hobble skirt.
+crotch-skirted takes the crotch "slot" and covers the crotch with the skirt.
 crotch-zipped and crotch-unzipped take the crotch "slot" and cover the crotch with a closed zipper or expose the crotch with an open zipper, respectively.
 crotch-ripped and crotch-exposing take the crotch "slot" and expose the crotch as a permanent state that either happened unnaturally or is the default for the clothing, respectively.
 no-crotch exposes the crotch but does NOT take up the crotch "slot."
@@ -210,24 +430,32 @@ Clothing can be neck exposing or neck covering. Clothing is usually neck exposin
 Clothing can be leg exposing or leg covering. Clothing is usually leg exposing. [Does it take up the leg slot?]
 [Trousers are all defined individually]
 Definition: a clothing (called C) is usually at least partially thigh covering:
-	if C is usually thigh covering or C is short or longer, decide yes;
+	if C is thigh-length-or-longer or C is usually thigh covering, decide yes;
 	decide no.
 Definition: a clothing (called C) is at least partially thigh covering:
 	if C is worn and C is crotch-in-place and C is usually at least partially thigh covering, decide yes;
 	decide no.
 Definition: a clothing (called C) is usually thigh covering:
-	if C is usually calf covering or C is knee-length or longer, decide yes;
+	if C is knee-length-or-longer or C is usually calf covering, decide yes;
 	decide no.
 Definition: a clothing (called C) is thigh covering:
 	if C is worn and C is crotch-in-place and C is usually thigh covering, decide yes;
 	decide no.
+Definition: a clothing (called C) is usually at least partially calf covering:
+	if C is shin-length-or-longer or C is usually calf covering, decide yes;
+	decide no.
+Definition: a clothing (called C) is at least partially calf covering:
+	if C is worn and C is crotch-in-place and C is usually at least partially calf covering, decide yes;
+	decide no.
 Definition: a clothing (called C) is usually calf covering:
-	if C is hobble-skirted or C is usually ankle covering, decide yes;
+	if C is calf-length-or-longer or C is usually ankle covering, decide yes;
 	decide no.
 Definition: a clothing (called C) is calf covering:
 	if C is crotch-in-place and C is usually calf covering, decide yes;
 	decide no.
-Definition: a clothing is usually ankle covering: decide no.
+Definition: a clothing (called C) is usually ankle covering:
+	if C is ankle-length-or-longer, decide yes;
+	decide no.
 Definition: a clothing (called C) is ankle covering:
 	if C is crotch-in-place and C is usually ankle covering, decide yes;
 	decide no.
@@ -281,15 +509,15 @@ Clothing can be vagina plugging. Clothing is usually not vagina plugging.
 Clothing has a number called plug size. The plug size of clothing is usually 0.
 Clothing can be purity. Clothing is usually not purity. [Means they care about your virginity.]
 
-A Magic-type is a kind of value. The magic-types are blandness, dressup, milk production, absorption, temptation, suppression, bed wetting, confidence, endurance, dominance, constriction, speed, kicking, protection, posture training, expansion, refreshment, rejuvenation, possession, maturity, respiration, durability, stumbling, provocation, exposure, audible jiggles, audible squelches, desperation, augmentation, elasticity, waddle-walking, draining, strength stealing, impermanence, autobinding, sneaking and hostility. Clothing has a magic-type. The magic-type of clothing is usually blandness.
+A Magic-type is a kind of value. The magic-types are blandness, dressup, milk production, absorption, temptation, suppression, bed wetting, confidence, endurance, dominance, constriction, speed, kicking, protection, posture training, expansion, refreshment, rejuvenation, possession, maturity, respiration, durability, stumbling, provocation, exposure, audible jiggles, audible squelches, desperation, augmentation, elasticity, waddle-walking, draining, strength stealing, impermanence, autobinding, sneaking, wizardry and hostility. Clothing has a magic-type. The magic-type of clothing is usually blandness.
 A clothing has a number called impermanence-counter.
 
 Magic-ID is a kind of value. The magic-IDs are unidentified and identified. Clothing has a Magic-ID. The Magic-ID of clothing is usually unidentified.
 Clothing has a number called raw-magic-modifier. The raw-magic-modifier of clothing is usually 0.
 To decide which number is the penis-capacity of (C - a clothing):[what's the largest size of penis it can cover?]
 	if C is skirted:
-		if the player is upright or C is not worn, decide on 1 + the skirtLength of C * 2;
-		otherwise decide on the skirtLength of C - 2;
+		if the player is upright or C is not worn, decide on 1 + (the front-skirt-length of C * 2);
+		otherwise decide on the back-skirt-length of C - 2;
 	decide on 10.
 To decide which number is the crotch-tightness of (C - a clothing): [the higher the number, the more tight, which gets closer to cameltoe. labia plumpness is added to this. 4+ increases outrage in certain circumstances. 5 is cameltoe city, and counts as partially exposed.]
 	if C is skirted, decide on 0;
@@ -303,16 +531,19 @@ To decide which number is the crotch-tightness of (C - a knickers):
 	decide on 3.
 Definition: a clothing is at least slightly cameltoe creating:
 	if it is vagina plugging, decide no;
+	if it is crotch-displaced or it is crotch-unzipped or it is crotch-ripped, decide no;
 	if the crotch-tightness of it + the labia plumpness of vagina >= 4, decide yes;
 	decide no.
 Definition: a clothing is cameltoe creating:
 	if it is vagina plugging, decide no;
+	if it is crotch-displaced or it is crotch-unzipped or it is crotch-ripped, decide no;
 	if the crotch-tightness of it + the labia plumpness of vagina >= 5, decide yes;
 	decide no.
-Definition: a clothing is always cameltoe creating:
+[Definition: a clothing is always cameltoe creating:
 	if it is vagina plugging, decide no;
+	if it is crotch-displaced or it is crotch-unzipped or it is crotch-ripped, decide no;
 	if the crotch-tightness of it >= 5, decide yes;
-	decide no.
+	decide no.]
 Definition: a clothing is potentially cameltoe blocking:
 	if it is vagina plugging, decide yes;
 	if it is actually dense potentially pussy covering clothing and it is not at least slightly cameltoe creating, decide yes;

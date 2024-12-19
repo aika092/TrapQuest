@@ -31,10 +31,10 @@ Check entering furniture:
 		unless the player is in agreement, say "You change your mind." instead;
 	if the noun is milking bench:
 		if the fatigue of the player is 0 and the body soreness of the player is 0 and the milk volume of breasts is 0, say "You feel completely fine and there is no [milk] in your breasts.";
-		say "Kneel on the bench [if the fatigue of the player is 0 and the body soreness of the player is 0 and the milk volume of breasts > 0]to get your udders milked[otherwise]until you feel completely better[end if]?[if the location of the player is smoky][bold type]Remember, there is pink smoke in this room, which you will inevitably have to breathe for several rounds.[roman type][line break][end if]";
+		say "Kneel on the bench [if the fatigue of the player is 0 and the body soreness of the player is 0 and the milk volume of breasts > 0]to get your udders milked[otherwise]until you feel completely better[end if]?[if the location of the player is pink-smoky][bold type]Remember, there is pink smoke in this room, which you will inevitably have to breathe for several rounds.[roman type][line break][end if]";
 		unless the player is in agreement, say "You change your mind." instead;
 	if the noun is kneeling stool:
-		say "Kneel on the stool until you feel completely better?[if the location of the player is smoky][bold type]Remember, there is pink smoke in this room, which you will inevitably have to breathe for several rounds.[roman type][end if] ";
+		say "Kneel on the stool until you feel completely better?[if the location of the player is pink-smoky][bold type]Remember, there is pink smoke in this room, which you will inevitably have to breathe for several rounds.[roman type][end if] ";
 		unless the player is in agreement, say "You change your mind." instead;
 	if the noun is dildo rocking stool:
 		let F be asshole;
@@ -45,7 +45,7 @@ Check entering furniture:
 		if the player is possessing a vagina and the player is pussy protected, say "You'd need to get your [ShortDesc of random top level protection clothing] out of the way first." instead;
 		if the player is not possessing a vagina and the player is ass protected, say "You'd need to get your [ShortDesc of random top level ass protection clothing] out of the way first." instead;
 		if F is actually occupied, say "You'd need to get the [ShortDesc of random thing filling F] out of your [variable F] first." instead;
-		say "Lower your [variable F] onto the large dildo and kneel on the stool until you feel completely better?[if the location of the player is smoky][bold type]Remember, there is pink smoke in this room, which you will inevitably have to breathe for several rounds.[roman type][end if] ";
+		say "Lower your [variable F] onto the large dildo and kneel on the stool until you feel completely better?[if the location of the player is pink-smoky][bold type]Remember, there is pink smoke in this room, which you will inevitably have to breathe for several rounds.[roman type][end if] ";
 		unless the player is in agreement, say "You change your mind." instead;
 	if the noun is royal bed:
 		if the body soreness of the player is 0 and the fatigue of the player is 0, say "You are uninjured, so this would do nothing." instead;
@@ -54,10 +54,10 @@ Check entering furniture:
 			if the explorer-bimbo of M >= 2:
 				allocate 3 seconds;
 				say "[BigNameDesc of M] blocks you.[line break][speech style of M]'Hey, this is my turf! Find your own room!'[roman type][line break]Looks like you won't be able to rest (or work) in [the location of M] while [he of M][']s stationed here." instead;
-		say "Rest on the bed until you feel completely better?[if the location of the player is smoky][bold type]Remember, there is pink smoke in this room, which you will inevitably have to breathe for several rounds.[roman type][end if] ";
+		say "Rest on the bed until you feel completely better?[if the location of the player is pink-smoky][bold type]Remember, there is pink smoke in this room, which you will inevitably have to breathe for several rounds.[roman type][end if] ";
 		unless the player is in agreement, say "You change your mind." instead;
 	if the noun is hotel chairs and diaper focus is 0:
-		if the insertableGirthAcceptance of asshole < the girth of the noun, say "The dildos are just too large, there's no way you'd be able to get it in your [asshole]." instead;
+		if the insertableGirthAcceptance of asshole < the girth of the noun - 2, say "The dildos are just too large, there's no way you'd be able to get it in your [asshole]." instead;
 		if asshole is actually occupied, say "You can't sit on this chair properly because the [random thing penetrating asshole] would be in the way of the golden dildo." instead;
 		if the player is ass protected, say "You would need to get the [random worn top level protection clothing] out of the way first." instead;
 	if the noun is lecture chair:
@@ -327,7 +327,7 @@ To compute furniture resting on (G - an automated changing station):
 				now diaperChangeAllowed is 0;
 				say "Nothing happens. Perhaps the robots don't have a way to deal with the glue.";
 	if diaperChangeAllowed is 1:
-		if there is a worn currently uncovered diaper and plain-largish-diaper is off-stage and plain-largish-diaper is DQBulkier and the player is getting unlucky:
+		if there is a currently uncovered diaper and plain-largish-diaper is off-stage and plain-largish-diaper is DQBulkier and the player is getting unlucky:
 			say "Instead of first removing your old diaper, the robotic arms just immediately begin to add the new diaper on top.[line break][second custom style]'ERROR, ERROR, ERROR. DIAPER MISALIGNED. APPLYING SEALANT.'[roman type][line break]A polite female robotic voice speaks loudly and calmly from a speaker above you. Then robotic arms ending in nozzles descend, forcing their way underneath your layers of padding, to apply glue to each layer.";
 			DiaperAdd plain-largish-diaper;
 			gluify diaper-stack;
@@ -346,7 +346,7 @@ To compute furniture resting on (G - an automated changing station):
 			if the player is not in a predicament room and the player is getting unlucky:
 				say "and... huh?! It seems the robotic arms have decided to do something else before putting a new diaper on you!";
 				let R be a random number between 1 and 3;
-				if R is 1 and asshole is not actually occupied:
+				if R is 1 and enema fetish is 1 and asshole is not actually occupied:
 					say "You feel your [asshole] being invaded by an enema nozzle![line break][variable custom style]Uh-oh.[roman type][line break]There's absolutely nothing you can do as your belly is turned into a container for a pint of ice-cold water!";
 					AssFill 10 water;
 				otherwise if R is 2 and the player is able to orgasm:
@@ -447,6 +447,7 @@ A time based rule (this is the stuck in diaper tank rule):
 				PainUp 20;
 				BodyRuin 4;
 				now M is unleashed;
+				dislodge hotel changing station;
 				if the changing-station-tank-scene of woman-player >= -1:
 					release changing station diapers on the player;
 					now the changing-station-tank-scene of woman-player is -10000;

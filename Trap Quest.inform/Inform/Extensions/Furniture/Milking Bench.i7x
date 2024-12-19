@@ -34,7 +34,7 @@ Check pulling a milking bench lever:
 To construct normal buttons for (T - a milking bench lever):
 	if ButtonTableFull is 0:
 		choose a blank row in the Table of Buttons;
-		now the ButtonImage entry is Figure of TakeAllButton;
+		now the ButtonImage entry is Figure of HandsButton;
 		now the ButtonCommand entry is "pull [text-shortcut of T]";
 		now the ButtonColour entry is lightModeFullGreen;
 		if the player is prone, now the ButtonColour entry is lightModeFullYellow; [turn yellow - player needs to stand]
@@ -42,6 +42,9 @@ To construct normal buttons for (T - a milking bench lever):
 To say verb-desc of (T - a milking bench lever):
 	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say " [unique-verb-desc of T][link][bracket]pull[close bracket][as]pull [text-shortcut of T][end link]".
 
+
+Report going when there is a milking bench in the location:
+	if lactation fetish is 1, compute addiction reflection on "milk".
 
 mansion-milking-bench is a milking bench.
 mansion-milking-bench-lever is a milking bench lever.
@@ -190,6 +193,8 @@ To compute furniture resting on (M - a milking bench):
 			compute rest completion of M;
 	let C be a random worn temporarily-displaced actually top-replacable clothing;
 	while C is temporarily-displaced clothing:
+		repeat with CC running through worn temporarily-displaced actually top-replacable clothing:
+			if the top-layer of CC > the top-layer of C, now C is CC;
 		say "You replace your [ShortDesc of C].";
 		TopReplace C;
 		now C is not temporarily-displaced;

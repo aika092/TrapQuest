@@ -51,12 +51,13 @@ Report going south:
 To compute painting completion of (P - a painting):
 	compute unique painting completion of P;
 	repeat with R running through painting-rooms:
-		repeat with T running through things in R:
-			if T is bowsette:
-				try bowsette going south;
-				now bowsette is moved;
-			otherwise:
-				only destroy T;
+		unless R is a heist-painting-room:
+			repeat with T running through things in R:
+				if T is bowsette:
+					try bowsette going south;
+					now bowsette is moved;
+				otherwise:
+					only destroy T;
 	if the number of on-stage rippling paintings is 0 and bowsette is off-stage and bowsette is not permanently banished, now bowsette-painting is rippling.
 
 To compute unique painting completion of (P - a painting):
@@ -614,7 +615,7 @@ Check drinking milk-fountain:
 
 Check poking milk-fountain:
 	allocate 2 seconds;
-	if diaper quest is 0, say "Nothing happens." instead;
+	if diaper quest is 0 or enema fetish is 0, say "Nothing happens." instead;
 	say "As you touch the statue's belly, you feel a rumbling from inside your own! ";
 	if the total squirtable fill of belly >= belly limit:
 		cutshow Figure of milk fountain touched for milk-fountain;
@@ -628,6 +629,7 @@ Check poking milk-fountain:
 		say "But then, whatever magic that was fizzles out. You sense that you may have more luck if you could somehow become a more [']full['] cat burglar." instead.
 
 Check entering milk-fountain:
+	if enema fetish is 0, try drinking milk-fountain instead;
 	reset multiple choice questions;
 	set numerical response 1 to "Fill your mouth with milk";
 	set numerical response 2 to "[if diaper quest is 1]Touch the belly[otherwise]Fill your ass with milk[end if]";
@@ -649,7 +651,7 @@ To construct normal buttons for (T - milk-fountain):
 		now the ButtonColour entry is lightModeFullGreen;
 		if the total volume of face > 0, now the ButtonColour entry is lightModeFullYellow; [turn yellow - player has full mouth]
 		if face is actually occupied, now the ButtonColour entry is lightModeFullRed; [turn red - player can't drink]
-	if ButtonTableFull is 0:
+	if ButtonTableFull is 0 and enema fetish is 1:
 		choose a blank row in the Table of Buttons;
 		if diaper quest is 0:
 			now the ButtonImage entry is Figure of AssholeButton;
@@ -723,26 +725,29 @@ To compute painting entrance of (P - heist-painting):
 			compute class set up of white-cat-tail-plug;
 			now white-cat-tail-plug is in PD;
 			now the paid of PD is 4;
+			if enema fetish is 0, now the paid of PD is 2;
 	let PD be a random pedestal in HeistPainting03;
 	if PD is a thing:
 		now skeleton key is in PD;
 		now the paid of PD is 2;
+		if enema fetish is 0, now the paid of PD is 1;
 	let PD be a random pedestal in HeistPainting04;
 	if PD is a thing:
 		blandify and reveal cat burglar outfit;
 		compute class set up of cat burglar outfit;
 		now cat burglar outfit is in PD;
 		now the paid of PD is 2;
+		if enema fetish is 0, now the paid of PD is 1;
 	let PD be a random pedestal in HeistPainting11;
 	if PD is a thing:
 		set up jewelled-tiara;
 		now jewelled-tiara is in PD;
 		now the paid of PD is 6;
+		if enema fetish is 0, now the paid of PD is 3;
 	otherwise:
 		say "MAJOR BUG: The pedestals that should have been in this region are missing. Please submit a bug report to Aika including the output of the following command: [']showme all pedestals[']. I will now give you the jewelled tiara so that you can compelete this quest even though the subregion is borked.";
 		set up jewelled-tiara;
 		now jewelled-tiara is carried by the player;
-	[now witch's goblet is in HeistPainting03;]
 	now the player is in HeistPainting08.
 
 An all time based rule (this is the heist painting rule):

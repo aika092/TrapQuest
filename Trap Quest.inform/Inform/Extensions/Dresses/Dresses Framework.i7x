@@ -52,6 +52,13 @@ To decide which number is the default-soak-limit of (C - a dress):
 		increase X by 12;
 	decide on X.
 
+Definition: a dress is overshoe:	[Does this outfit go over the shoes]
+	if it is leg covering, decide no;
+	decide yes.
+Definition: a dress is undershoe:
+	if it is overshoe, decide no;
+	decide yes.
+
 An underdress is a kind of dress.
 Definition: an underdress is same-type:
 	if theme-share-target is underdress, decide yes;
@@ -93,7 +100,7 @@ To say ShortDesc of (C - a dress):
 
 Part 1 - Underdresses
 
-An underdress is usually knee-length. An underdress is usually average cut. An underdress is usually normally-nipple-covering. An underdress is usually belly covering. The armour of an underdress is usually 4. An underdress is usually top-displacable.
+The skirt-length of an underdress is 6. An underdress is usually average cut. An underdress is usually normally-nipple-covering. An underdress is usually belly covering. The armour of an underdress is usually 4. An underdress is usually top-displacable.
 
 Definition: an underdress is displacable:
 	if it is no-crotch, decide no;
@@ -140,10 +147,10 @@ The underdress removed over head rule is listed in the underdress removability r
 
 Part 2 - Overdresses
 
-An overdress is usually knee-length. An overdress is usually average cut. An overdress is usually normally-nipple-covering. An overdress is usually belly covering. An overdress is usually top-displacable.
+The skirt-length of an overdress is 6. An overdress is usually average cut. An overdress is usually normally-nipple-covering. An overdress is usually belly covering. An overdress is usually top-displacable.
 
 Definition: an overdress is displacable:
-	if it is short or longer, decide yes;
+	if the front-skirt-length of it >= 2 or the back-skirt-length of it >= 2, decide yes;
 	if it is crotch-intact and it is not rigid and it is not biological, decide yes; [These materials tend to be too tight to displace]
 	decide no.
 

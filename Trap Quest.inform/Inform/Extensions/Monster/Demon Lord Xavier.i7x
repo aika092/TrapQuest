@@ -634,7 +634,8 @@ To compute punishment of (P - xavier-nightmare-diaper):
 		otherwise:
 			destroy K;
 	say "[second custom style]'Okay now here, put this on.'[roman type][line break]Again before you can really choose whether to accept, it's just happening. A big thick pink diaper is rocketing across the room towards your nether regions, and before you can say 'Hmm I'm not sure if I'm completely comfortable with where this is going' it is forcing your feet through its leg-holes. You look down and see it too has a big pentagram etched in the front. You start to feel rather nervous, and this feeling is exacerbated by her next words.[line break][second custom style]'Let us begin the ritual.'[roman type][line break]Words of trepidation choke up in your throat due to the size and sheer aura of dominance surrounding the demoness. She guides you gently but firmly over to a pentagram on the floor in the centre of her bedroom. As she takes both your hands in hers the pentagram's lines immediately start shining with a brilliant purple glow.[line break][second custom style]'Repeat after me. [']I, [NameBimbo]['],'[line break][variable custom style]'I, [NameBimbo]...'[roman type][line break]Something inside you is entranced by her magnificence and anyway you can't see any other reasonable course of action. It feels like she could probably crush you with a small flick of her tail.[line break][second custom style]'Consent to serve...'[line break][variable custom style]'Consent to serve...'[line break][second custom style]'My body and padding shall be hers...'[line break][variable custom style]'My body and padding shall be hers...' Wait, what am I getting myself into?[line break][second custom style]'In her time of need...'[line break][variable custom style]'In her time of need...'[line break][second custom style]'Wherever I may be.'[line break][variable custom style]'Wherever I may be.'[roman type][line break]The glowing begins to fade.";
-	summon demon-diaper;
+	summon demon-diaper uncursed;
+	now demon lord is inseminating demon-diaper;
 	if there is a worn tattoo and the number of worn crotch tattoos is 0:
 		summon demon link mark;
 		say "A sharp sting over your crotch lets you know you suddenly have a new tattoo! You can't see it but you can sense you have a pentagram permanently marked above your crotch. ";
@@ -646,7 +647,8 @@ To compute punishment of (P - xavier-nightmare-diaper):
 	say "[second custom style]'Really now, how disgusting!'[roman type][line break]Your Mistress chides you in a fake offended tone.[line break][second custom style]'Using your diaper at the dinner table. Really now! Get out of here [if diaper messing >= 3]before you stink the whole room up[otherwise]now[end if]! Get a change and then return to my chambers. I'll punish you later.'[roman type][line break]With face and ears as red as hers and a full [if diaper messing >= 3]and [end if]soggy nappy you sulkily waddle your way out of the room, studying the ground intensely as you do. You are halfway through the castle back to the waterfall when you hear a gurgling sound coming from below. Moments later your diaper is completely dry and clean![line break][variable custom style]Wow, that's... magic.[roman type][line break]You wait for the Queen to return to her bedroom, which takes hours. During this time you end up testing your diaper yourself, and find that after a [if diaper messing is 3]few moments[otherwise]minute or so[end if] it cleans itself in the same way. Finally, your Mistress returns.[line break][second custom style]'Excellent job, pet. You'll make a good potty servant. It's a shame you'll have to do it from afar for now though. I can feel that Xavier's magic is fading. Soon you will return to the mortal realm... for now. However, you are now eternally bonded to me, until the day I sever the connection or you die. So I'm sure you'll never forget me.'[roman type][line break]She and her world start to fade away.[line break][second custom style]'If I were you, I would try and keep hold of that diaper for as long as possible...'[roman type][line break]";
 	say "You find yourself on the ground back in front of [NameDesc of M]. You feel just as exhausted as you did in the moment of your defeat.";
 	say "[speech style of M]'YOU ARE FORTUNATE I AM RECOVERING MY STRENGTH AND CAN ONLY KEEP YOU THERE FOR A SHORT WHILE AT A TIME... IN THE FUTURE IT WILL BE LONGER! HA HA HA! UNTIL NEXT TIME, CHILD.'[roman type][line break]";
-	satisfy M.
+	satisfy M;
+	if Hotel30 is visited, say "[variable custom style]That security interface in the [Hotel30]... It said something about DNA based verification. Now, assuming that Xavier is able to authenticate [himself of M], I wonder if [his of M] family are also able to. And if so... I wonder if any of their DNA got on this diaper...[roman type][line break]".
 
 xavier-nightmare-gag is a xavier-nightmare.
 
@@ -681,7 +683,9 @@ To compute punishment of (P - xavier-nightmare-gag):
 	UrineSoakUp K by the soak-limit of K;
 	now xavier-throat-link is 1;
 	say "Your mouth is forced open and a metal ring gag is worked inside. You [if the player is feeling submissive]remain obediently silent and allow it to happen[otherwise]try to complain but your words are now unintelligible.[line break][variable custom style][muffled sounds][roman type][line break][end if]";
-	if ring gag is actually summonable, summon ring gag locked;
+	if ring gag is actually summonable:
+		summon ring gag locked;
+		now demon lord is inseminating ring gag;
 	say "You feel a weird pang in your throat, like the gag is performing some kind of magical redesign of your gullet. You squirm nervously.[line break][second custom style]'Yay, I think it's working! My brother is a genius.'[roman type][line break]That does little to settle your stomach, but it doesn't matter what you think. The muscular girl-demon leads you to a place where a thin stone slab sits on the ground, like there's something missing that is supposed to be on top of it. You realise that's probably supposed to be you. Your new owner confirms your suspicions.[line break][second custom style]'Go on then, get up there, slave!'[roman type][line break]After a moment of hesitation you stand in place, and turn to face her. Nothing happens.[line break][second custom style]'Hold your arms out to the side, obviously!'[roman type][line break]That was hardly obvious, but now that you've been given the instruction, you quickly do as you are told. And as your arms reach horizontal, the ground begins to shake. Two stone pillars begin to emerge from the ground either side of you, underneath your hands. You expect your hands to be knocked out of the way but instead the pillars phase straight through them. Your immediate reaction is to pull your hands back but they're now completely stuck, sealed inside the concrete! As you struggle to move your arms, a thin plank of stone emerges from each pillar at neck height, connecting around your neck and welding themselves together perfectly. You now can't move your arms or your neck!";
 	say "[second custom style]'Oopsie! Looks like you're stuck!'[roman type][line break]Your captor teases you as she turns to adjust something behind her. As she walks away from it you can see what it is - some kind of water jet! And now she appears to be turning a valve...![line break][second custom style]'Ready, aim fire!'[roman type][line break]A powerful blast of water shoots in an arc from the jet, right into your open mouth. You have no choice but to begin drinking, to avoid choking![line break][second custom style]'Congratulations, you are now a water feature! I'll come and change you whenever I remember.'[roman type][line break]And just like that, you are left alone.";
 	appropriate-cutscene-display figure of cutscene-xavier-nightmare-gag-clean;
@@ -728,6 +732,7 @@ To compute punishment of (P - xavier-nightmare-belt):
 	say "a belt comes whizzing at you from one corner of the room and locks itself around your waist[if BL is belt], destroying your [ShortDesc of BL] as it does[end if]. It has a strange symbol made out of hexagons on the front, and you feel something magic radiate inside of you. You watch in [horror the diaper addiction of the player] as you feel the contents of your bladder [if diaper messing >= 3]and rectum [end if]multiply rapidly in size, making your belly expand and round out. You look like you're six or seven months pregnant.";
 	if BL is belt, destroy BL;
 	summon demon belt;
+	now demon lord is inseminating demon belt;
 	now xavier-belt-link is 2;
 	if there is a worn tattoo and the number of worn belly-tattoos is 0:
 		summon demon belly mark;
@@ -754,6 +759,10 @@ Section 4 - Final Battle
 
 Check seducing demon lord when ex-princess is guarding and ex-princess is in the location:
 	say "[big he of demon lord] is a bit preoccupied with battling [NameDesc of ex-princess]!" instead.
+
+To check chase boredom of (M - demon lord):
+	unless ex-princess is guarding and ex-princess is alive and ex-princess is in the location of demon lord:
+		check default chase boredom of M.
 
 A final-battle-object is a kind of object. A final-battle-object has a number called uses.
 Definition: a final-battle-object is eligible:
@@ -1641,7 +1650,7 @@ To say EscapeAnswer of (M - demon lord):
 To say AdviceAnswer of (M - demon lord):
 	say "[first custom style]'STAY LOOSE AND LET IT HAPPEN!'[roman type][line break]".
 
-To compute teaching of (M - demon lord):
+To compute teaching offer of (M - demon lord):
 	say "[first custom style]'I CAN TEACH YOU HOW TO TAKE DEMON COCK.'[roman type][line break]".
 
 Section 3 - Drink Requesting

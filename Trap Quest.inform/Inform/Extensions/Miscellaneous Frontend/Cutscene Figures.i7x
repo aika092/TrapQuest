@@ -9,6 +9,8 @@ Figure of Body Reaction 6 is the file "Special/Cutscene/cutscene-body-reaction6.
 Figure of Body Reaction 8 is the file "Special/Cutscene/cutscene-body-reaction8.jpg".
 Figure of Body Reaction 9 is the file "Special/Cutscene/cutscene-body-reaction9.jpg".
 
+Figure of Diaper Engulfed is the file "Special/Cutscene/cutscene-diaper-engulfed1.jpg".
+
 Figure of Lecture 1 is the file "Special/Cutscene/cutscene-lecture1.jpg".
 
 Figure of Princess Diaper Cutscene 1 is the file "Special/Cutscene/cutscene-jamjar1.jpg".

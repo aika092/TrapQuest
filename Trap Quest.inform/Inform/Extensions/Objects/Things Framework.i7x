@@ -112,7 +112,9 @@ A thing has a number called tradability.
 
 A game universe initialisation rule:
 	repeat with T running through things:
-		if the tradability of T is 0, now the tradability of T is the price of T.
+		if the tradability of T is 0:
+			now the tradability of T is the price of T;
+			if T is an alchemy product, increase the tradability of T by a random number between 2 and 5.
 
 [!<discount:Integer>*
 

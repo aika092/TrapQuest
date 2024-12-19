@@ -1435,6 +1435,7 @@ A time based rule (this is the dominatrix cage timer rule):
 					distract M;
 		if dominatrix-cage is grabbing the player:
 			now dominatrix-cage is not grabbing the player;
+			now the alert of the player is 1;
 			if dominatrix is off-stage or dominatrix is defeated:
 				say "[bold type]The cage door lock somehow clicks open of its own accord. [roman type]You are free!";
 			otherwise:

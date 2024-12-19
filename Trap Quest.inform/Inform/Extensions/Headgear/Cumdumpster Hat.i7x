@@ -174,6 +174,9 @@ To compute SelfExamineDesc of (H - cumdump-headband):
 
 Chapter - Class Outfit
 
+To compute unique periodic effect of (H - cumdump-headband):
+	compute cumdumpsterification. [so we once again check how many things are inseminating each body part]
+
 To compute cumdumpsterification:
 	if the player is not in a predicament room:
 		let H be a random worn headgear;
@@ -222,7 +225,7 @@ To uniquely set up (C - cumdump-headband):
 	now the quest of C is cumdumpster-quest.
 
 To say QuestFlav of (Q - cumdumpster-quest):
-	say "You sense that it wants you to have your mouth[if the player is possessing a vagina], womb[end if] and guts filled with cum from several different sources at the same time[if the cumdump-record of Q > 0] (current record is [cumdump-record of Q] different sources)[end if].".
+	say "You sense that it wants you to have your guts[if the player is possessing a vagina], womb[end if] and mouth (literally your mouthful, not what's been swallowed) filled with semen from [if the cumdump-record of Q >= 3][the cumdump-record of Q + 1][otherwise]three[end if] different sources (people) at the same time[if the cumdump-record of Q > 0] (current record is [cumdump-record of Q] different sources)[end if].".
 
 To say QuestTitle of (Q - cumdumpster-quest):
 	say " (internal cum collection quest)".

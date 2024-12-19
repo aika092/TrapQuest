@@ -67,8 +67,8 @@ Definition: a clothing (called C) is reasonable when cringeworthy:
 	if C is crotch-intact knickers, decide yes;
 	if C is bondage, decide yes;
 	if the stolen-strength of C > 0, decide yes;
-	if ((C is short or C is super-short) and short skirts permanent fetish > 0) or (C is knickers and no-panties permanent fetish > 0), decide yes;
-	if C is short or longer and (penis is lewdly exposed or there is a lewdly exposed fuckhole or there is a worn almost too cringeworthy knickers), decide yes;
+	if (C is skirted and short skirts permanent fetish > 0 and C is not short-skirt-disallowed) or (C is knickers and skimpy underwear fetish >= 0 and C is not skimpy-underwear-disallowed), decide yes;
+	if (the front-skirt-length of C >= 2 or the back-skirt-length of C >= 2) and (penis is lewdly exposed or there is a lewdly exposed fuckhole or there is a worn almost too cringeworthy knickers), decide yes;
 	if C is uniquely reasonable, decide yes;
 	decide no.
 

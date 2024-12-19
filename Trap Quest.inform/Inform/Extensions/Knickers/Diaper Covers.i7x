@@ -1,6 +1,6 @@
 Diaper Covers by Knickers begins here.
 
-diaper cover is a kind of clothing. A diaper cover is usually manly. A diaper cover is usually crotch-intact. A diaper cover is usually polyester. A diaper cover is usually diaper-addiction-influencing.
+diaper cover is a kind of clothing. A diaper cover is usually manly. A diaper cover is usually crotch-intact. A diaper cover is usually polyester. A diaper cover is usually diaper-addiction-influencing. Understand "cover", "diaper cover" as a diaper cover.
 
 Definition: a diaper cover is baby themed: decide yes.
 Definition: a diaper cover is fetish appropriate:
@@ -10,6 +10,9 @@ Definition: a diaper cover is product:
 	if it is fetish appropriate, decide yes;
 	decide no.
 Definition: a diaper cover is recipe specific: decide yes.
+Definition: a diaper cover is same-type:
+	if theme-share-target is diaper cover, decide yes;
+	decide no.
 
 To decide which number is the alchemy key of (C - a diaper cover):
 	if C is product, decide on 18;
@@ -20,13 +23,17 @@ To decide which number is the initial outrage of (C - a diaper cover):
 	if diaper quest is 0, decide on the initial cringe of C / 2;
 	decide on 0.
 To decide which number is the initial cringe of (C - a diaper cover):
-	if C is waddle-walking and C is worn, decide on 14;
-	decide on 10.
+	if C is waddle-walking and C is worn, decide on 12;
+	decide on the unique cringe of C.
+To decide which number is the unique cringe of (C - a diaper cover):
+	decide on 6.
 To decide which number is the crotch-tightness of (C - a diaper cover):
 	decide on 0.
 
 To decide which text is the RecipeDesc of (B - a diaper cover):
 	decide on "The recipe just says 'Pee-soaked underwear'.".
+To decide which figure-name is the recipe-image of (C - a diaper cover):
+	decide on figure of teddy bear diaper cover.
 
 To compute recipe specific cursing of (T - a diaper cover):
 	if the noun is knickers:
@@ -47,6 +54,8 @@ To decide what number is the original price of (C - a diaper cover):
 The printed name of diaper cover is usually "[clothing-title-before][selfexamineuniquetitle of item described][clothing-title-after]". The text-shortcut of diaper cover is "dc".
 
 To say ShortDesc of (C - a diaper cover):
+	say "diaper cover".
+To say MediumDesc of (C - a diaper cover):
 	say selfexamineuniquetitle of C.
 
 To say ClothingDesc of (C - a diaper cover):
@@ -60,6 +69,15 @@ To say selfexamineuniquetitle of (K - a diaper cover):
 
 To uniquely set up (K - a diaper cover):
 	if diaper lover >= 1 and a random number between 1 and 8 is 1, now K is bed wetting.
+
+To compute diaper cover assignment of (M - a monster):
+	let DCN be true; [diaper cover needed]
+	repeat with C running through the tradableItems of M:
+		if C is diaper cover, now DCN is false;
+	if DCN is true:
+		let C be a random off-stage fetish appropriate diaper cover;
+		if C is nothing, now C is a random fetish appropriate diaper cover;
+		if C is a thing, add C to the tradableItems of M.
 
 [
 To restock (C - a diaper cover):
@@ -75,27 +93,29 @@ This is the setup starting diaper cover rule:
 		restock C.
 The setup starting diaper cover rule is listed in the setup starting items rules.]
 
-[frilly-white-diaper-cover is a diaper cover.
+frilly-pink-diaper-cover is a diaper cover. frilly-pink-diaper-cover is cotton. frilly-pink-diaper-cover is not manly. The text-shortcut of frilly-pink-diaper-cover is "fpdc". Understand "frilly", "pink" as frilly-pink-diaper-cover.
 
-Figure of frilly white diaper cover is the file "Items/Clothes/Lower/Underwear/Diapers/Covers/diapercover1.png".
+Figure of frilly pink diaper cover is the file "Items/Clothes/Lower/Underwear/Diapers/Covers/diapercover1.png".
 
-To decide which figure-name is clothing-image of (C - frilly-white-diaper-cover):
-	decide on figure of frilly white diaper cover.
-To decide which figure-name is the recipe-image of (C - frilly-white-diaper-cover):
-	decide on figure of frilly white diaper cover.
+To decide which figure-name is clothing-image of (C - frilly-pink-diaper-cover):
+	decide on figure of frilly pink diaper cover.
 
-To say ClothingDesc of (C - frilly-white-diaper-cover):
-	say "A large frilly white diaper cover, that [if C is worn]completely covers[otherwise]could completely cover[end if] your [if there is a worn diaper][random worn diaper][otherwise][ShortDesc of hips][end if].".
+To say ClothingDesc of (C - frilly-pink-diaper-cover):
+	say "A large frilly pink and blue diaper cover with a giant pink bow at the front, that [if C is worn]completely covers[otherwise]could completely cover[end if] your [if there is a worn diaper][random worn diaper][otherwise][ShortDesc of hips][end if].".
 
-To compute SelfExamineDesc of (K - frilly-white-diaper-cover):
+To compute SelfExamineDesc of (K - frilly-pink-diaper-cover):
 	say "A large [selfexamineuniquetitle of K] completely covers your [if there is a worn diaper][random worn diaper][otherwise][ShortDesc of hips][end if]. ".
 
-To say selfexamineuniquetitle of (K - frilly-white-diaper-cover):
-	say "frilly white diaper cover".
+To say selfexamineuniquetitle of (K - frilly-pink-diaper-cover):
+	say "frilly pink diaper cover".
 
-Definition: frilly-white-diaper-cover is white themed: decide yes.
+Definition: frilly-pink-diaper-cover is pink themed: decide yes.
+Definition: frilly-pink-diaper-cover is bow themed: decide yes.
 
-teddy-bear-diaper-cover is a diaper cover. teddy-bear-diaper-cover is cotton.
+To decide which number is the unique cringe of (C - frilly-pink-diaper-cover):
+	decide on 8.
+
+teddy-bear-diaper-cover is a diaper cover. teddy-bear-diaper-cover is cotton. teddy-bear-diaper-cover is not manly. The text-shortcut of teddy-bear-diaper-cover is "tbdc". Understand "teddy", "bear" as teddy-bear-diaper-cover.
 
 Figure of teddy bear diaper cover is the file "Items/Clothes/Lower/Underwear/Diapers/Covers/diapercover2.png".
 
@@ -103,7 +123,7 @@ To decide which figure-name is clothing-image of (C - teddy-bear-diaper-cover):
 	decide on figure of teddy bear diaper cover.
 
 To say ClothingDesc of (C - teddy-bear-diaper-cover):
-	say "A cosy pink cotton diaper cover with a teddy bear on the backside. It [if C is worn]completely covers[otherwise]could completely cover[end if] your [if there is a worn diaper][random worn diaper][otherwise][ShortDesc of hips][end if].".
+	say "A cosy pink cotton diaper cover with a teddy bear on the front. It [if C is worn]completely covers[otherwise]could completely cover[end if] your [if there is a worn diaper][random worn diaper][otherwise][ShortDesc of hips][end if].".
 
 To compute SelfExamineDesc of (K - teddy-bear-diaper-cover):
 	say "A large [selfexamineuniquetitle of K] completely covers your [if there is a worn diaper][random worn diaper][otherwise][ShortDesc of hips][end if]. ".
@@ -112,7 +132,7 @@ To say selfexamineuniquetitle of (K - teddy-bear-diaper-cover):
 	say "teddy bear diaper cover".
 
 Definition: teddy-bear-diaper-cover is bear themed: decide yes.
-Definition: teddy-bear-diaper-cover is pink themed: decide yes.]
+Definition: teddy-bear-diaper-cover is pink themed: decide yes.
 
 orange rubber diaper cover is a diaper cover. orange rubber diaper cover is latex. The text-shortcut of orange rubber diaper cover is "ordc".
 
@@ -132,6 +152,10 @@ To say selfexamineuniquetitle of (K - orange rubber diaper cover):
 
 Definition: orange rubber diaper cover is orange themed: decide yes.
 Definition: orange rubber diaper cover is halloween themed: decide yes.
+To decide which number is the unique cringe of (C - orange rubber diaper cover):
+	decide on 5.
+To decide which number is the initial outrage of (C - orange rubber diaper cover):
+	decide on 4.
 
 halloween rubber diaper cover is a diaper cover. halloween rubber diaper cover is pvc. Understand "themed" as halloween rubber diaper cover.  The text-shortcut of halloween rubber diaper cover is "htdc".
 
@@ -152,6 +176,9 @@ To say selfexamineuniquetitle of (K - halloween rubber diaper cover):
 Definition: halloween rubber diaper cover is orange themed: decide yes.
 Definition: halloween rubber diaper cover is halloween themed: decide yes.
 Definition: halloween rubber diaper cover is fetish appropriate: decide no. [only spawns from failed quests]
+
+To decide which number is the unique cringe of (C - halloween rubber diaper cover):
+	decide on 10.
 
 Chapter 1 Wearability
 

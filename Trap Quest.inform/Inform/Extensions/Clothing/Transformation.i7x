@@ -29,10 +29,10 @@ To decide which object is most-transformable-clothing:
 	decide on X.
 
 To decide which object is most-transformable-uncovered-clothing:
-	let LT be the list of worn currently uncovered upgradable clothing;
+	let LT be the list of currently uncovered upgradable clothing;
 	if the number of entries in LT is 0:
 		let C be a random worn transformation chain currently uncovered transformable clothing;
-		if C is nothing, let C be a random worn currently uncovered transformable clothing;
+		if C is nothing, let C be a random currently uncovered transformable clothing;
 		decide on C;
 	let LC be a list of clothing;
 	let X be a random worn clothing;
@@ -215,8 +215,12 @@ To compute (C - a clothing) inheriting from (D - a clothing):
 			now C is top-ripped;
 	if D is messed knickers and C is soilable knickers:
 		now the mess of C is the mess of D;
-		if D is diaper and C is diaper, now the perceived-mess of C is the perceived-mess of D;
-		otherwise now the perceived-mess of C is the mess of C;
+		if C is diaper:
+			if D is diaper, now the perceived-mess of C is the perceived-mess of D;
+			otherwise now the perceived-mess of C is the mess of C;
+	if C is sex toy and D is sex toy and C is not basic plug:
+		if the size of D is 10 or the player is getting lucky, now the size of C is the size of D;
+		otherwise now the size of C is the size of D + 1;
 	if C is fluid vulnerable and the soak-limit of D > 0:
 		now the semen-soak of C is (the semen-soak of D * the soak-limit of C) / the soak-limit of D;
 		now the milk-soak of C is (the milk-soak of D * the soak-limit of C) / the soak-limit of D;

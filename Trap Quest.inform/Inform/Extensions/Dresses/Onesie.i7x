@@ -1,6 +1,6 @@
 Onesie by Dresses begins here.
 
-A onesie is a kind of overdress. A onesie is usually transformation-rare. A onesie is usually crotch-intact. A onesie is usually unskirted. A onesie is fully covering. A onesie is usually only arm covering. A onesie is usually leg covering. A onesie is usually not-top-displacable. A onesie has a number called charge.
+A onesie is a kind of overdress. A onesie is usually transformation-rare. A onesie is usually crotch-intact. The skirt-length of A onesie is 0. A onesie is fully covering. A onesie is usually only arm covering. A onesie is usually leg covering. A onesie is usually not-top-displacable. A onesie has a number called charge.
 
 Definition: a onesie is class-relevant:
 	if the player is actually an adult baby, decide yes;
@@ -223,6 +223,6 @@ To compute school periodic effect of (C - tubesuit):
 	compute periodic effect of C.
 
 Check wearing tubesuit:
-	if the player is not a february 2023 diaper donator, say Latest Debug Needed instead.
+	if the player is not a top donator, say Latest Debug Needed instead.
 
 Onesie ends here.

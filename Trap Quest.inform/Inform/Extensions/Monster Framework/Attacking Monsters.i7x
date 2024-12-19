@@ -274,30 +274,32 @@ The player can't attack with displaced trousers rule is listed in the ability to
 This rule causes a knee to fail if the player is wearing a hobble-skirted clothing that has not been displaced. If the player is attacking manually, outputs a message explaining why the knee failed.
 
 +!]
-This is the player can't knee with hobble skirt rule:
-	repeat with C running through worn crotch-in-place hobble-skirted clothing:
-		unless C is crotch-unzipped or C is slitted:
+This is the player can't knee with long skirts rule:
+	repeat with C running through worn crotch-in-place clothing:
+		if the front-skirt-length of C >= 9 and C is not slitted and C is not crotch-unzipped:
 			if autoattack is 0:
-				say "You can't raise your knee whilst sporting a hobble skirt!";
-				now focused-thing is C;
-			if the player is upright and the player is in danger, now focused-thing is C; [This way the player can conveniently hike it]
+				say "You can't raise your knee whilst sporting a skirt this long with no slit!";
+				focus-consider C;
+			otherwise if the player is upright and the player is in danger:
+				focus-consider C; [This way the player can conveniently hike it]
 			rule fails.
-The player can't knee with hobble skirt rule is listed in the ability to knee rules.
+The player can't knee with long skirts rule is listed in the ability to knee rules.
 
-[!<ThePlayerCanNotKickWithKneesRule>+
+[!<ThePlayerCanNotKickWithLongSkirtsRule>+
 
 This rule causes a kick to fail if the player is wearing a knee-length or hobble-skirted clothing that has not been displaced. If the player is attacking manually, outputs a message explaining why the kick failed.
 
 +!]
-This is the player can't kick with knees rule:
-	repeat with C running through worn knee-length or longer clothing:
-		if C is crotch-in-place and C is not slitted and C is not crotch-unzipped:
+This is the player can't kick with long skirts rule:
+	repeat with C running through worn crotch-in-place clothing:
+		if the front-skirt-length of C >= 7 and C is not slitted and C is not crotch-unzipped:
 			if autoattack is 0:
-				say "You can't raise your feet high enough whilst sporting a [if C is knee-length]tight[otherwise]long[end if] skirt!";
-				now focused-thing is C;
-			if the player is upright and the player is in danger, now focused-thing is C; [This way the player can conveniently hike it]
+				say "You can't raise your feet high enough whilst sporting a long skirt with no slit!";
+				focus-consider C;
+			otherwise if the player is upright and the player is in danger:
+				focus-consider C; [This way the player can conveniently hike it]
 			rule fails.
-The player can't kick with knees rule is listed in the ability to kick rules.
+The player can't kick with long skirts rule is listed in the ability to kick rules.
 
 [!<ThePlayerCanNotAttackWithStuckShoesRule>+
 
@@ -544,6 +546,7 @@ Attack-damage is a number that varies.
 damage-explained is a number that varies. [We output debug info]
 
 To damage (A - a number) on (M - a monster):
+	if M is not combative, reset orifice selection of M;
 	[Roll for damage - essentially 2dX]
 	now attack-damage is (a random number between 1 and A) + (a random number between 1 and A);
 	if damage-explained > 0, say "[input-style]=> [if A < 1]RNG(A~1)[otherwise]2d[A][end if] = [attack-damage]; ";
@@ -585,7 +588,6 @@ To damage (A - a number) on (M - a monster):
 	otherwise if attack-damage > 0:
 		increase the fat-burning of the player by 20 * the difficulty of M; [Your exercise count is massively rewarded by defeating a monster. Not relevant to the other clause but putting it here because why not.]
 	[Just in case it doesn't happen in the monster's damage function - everything should be unfriendly after you attack it.]
-	reset orifice selection of M;
 	now the boredom of M is 0;
 	let attack-quest-eligible be false;
 	if M is interested and M is friendly, now attack-quest-eligible is true;

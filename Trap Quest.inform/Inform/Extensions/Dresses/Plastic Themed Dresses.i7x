@@ -1,6 +1,6 @@
 Plastic Themed Dresses by Dresses begins here.
 
-A silicone dress is a kind of overdress. A silicone dress is unique. A silicone dress is latex. A silicone dress is short. A silicone dress has a number called charge. A silicone dress is erect-nipple-exposing.
+A silicone dress is a kind of overdress. A silicone dress is unique. A silicone dress is latex. The skirt-length of A silicone dress is 4. A silicone dress has a number called charge. A silicone dress is erect-nipple-exposing.
 
 Definition: a silicone dress is pink themed: decide yes.
 
@@ -176,7 +176,7 @@ To decide which number is the initial outrage of (C - condoms dress):
 To decide which object is the unique-upgrade-target of (C - condoms dress):
 	decide on giant condom.
 
-giant condom is a growing silicone dress. giant condom is fully covering. giant condom is see-through. giant condom is not-top-displacable. giant condom is hobble-skirted. giant condom is crotch-intact.
+giant condom is a growing silicone dress. giant condom is fully covering. giant condom is see-through. giant condom is not-top-displacable. The skirt-length of giant condom is 9. giant condom is crotch-intact.
 
 The printed name of giant condom is "[clothing-title-before]giant condom[clothing-title-after]". The text-shortcut of giant condom is "gcdm".
 
@@ -206,7 +206,7 @@ To say MediumDesc of (C - giant condom):
 To decide which number is the initial outrage of (C - giant condom):
 	decide on 14.
 
-rubber-bunny-waitress-outfit is a growing silicone dress. rubber-bunny-waitress-outfit is unskirted. rubber-bunny-waitress-outfit is crotch-intact. rubber-bunny-waitress-outfit is totally-exclusive.
+rubber-bunny-waitress-outfit is a growing silicone dress. The skirt-length of rubber-bunny-waitress-outfit is 0. rubber-bunny-waitress-outfit is crotch-intact. rubber-bunny-waitress-outfit is totally-exclusive.
 
 The printed name of rubber-bunny-waitress-outfit is "[clothing-title-before]latex bunny waitress outfit[clothing-title-after]". The text-shortcut of rubber-bunny-waitress-outfit is "lbwo". Understand "bunny", "waitress", "outfit" as rubber-bunny-waitress-outfit.
 

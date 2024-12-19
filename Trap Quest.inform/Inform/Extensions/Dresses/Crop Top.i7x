@@ -1,6 +1,6 @@
 Crop Top by Dresses begins here.
 
-A crop top is a kind of overdress. A crop top is usually unskirted. A crop top is usually belly exposing. A crop top is usually sheer-when-wet. A crop top is usually erect-nipple-exposing. A crop top is usually optional-top-displacable. Understand "crop", "top" as crop top.
+A crop top is a kind of overdress. The skirt-length of A crop top is 0. A crop top is usually belly exposing. A crop top is usually sheer-when-wet. A crop top is usually erect-nipple-exposing. A crop top is usually optional-top-displacable. Understand "crop", "top" as crop top.
 
 The printed name of crop top is usually "[clothing-title-before]crop top[clothing-title-after]".
 
@@ -544,6 +544,31 @@ Definition: flight-attendant-top is inflation themed: decide yes.
 Definition: flight-attendant-top is blue themed: decide yes.
 
 To decide which number is the initial outrage of (C - flight-attendant-top):
+	decide on 3.
+
+To compute class set up of (C - flight-attendant-top):
+	now C is augmentation.
+
+Part 20 - Running Top
+
+running top is a crop top. running top is fully covering. running top is dense. running top is top-displacable.
+The printed name of running top is "[clothing-title-before]blue running top[clothing-title-after]". The text-shortcut of running top is "rnt". Understand "blue" as running top.
+
+Definition: running top is exercise themed: decide yes.
+Definition: running top is blue themed: decide yes.
+
+Figure of running top is the file "Items/Clothes/Upper/CropTops/croptop20.png".
+
+To decide which figure-name is clothing-image of (C - running top):
+	decide on figure of running top.
+
+To say ClothingDesc of (C - running top):
+	say "This blue crop top is made of a thin, tight, breathable material.".
+
+To say MediumDesc of (C - running top):
+	say "tight blue running top".
+
+To decide which number is the initial outrage of (C - running top):
 	decide on 3.
 
 Crop Top ends here.

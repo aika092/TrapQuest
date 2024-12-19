@@ -217,7 +217,7 @@ Report waiting when the player is in MimicCrib:
 	say "[one of]As you lean back into the cushioned floor of the crib, you feel your arms sinking, and too late find that[or]Once again your arms are pulled behind you until[stopping] they have become firmly stuck inside the walls of the living crib. ";
 	if R is 1 and face is not actually occupied and the player is able to orgasm:
 		say "Tentacles begin to emerge from the walls. One sneaks [if there is bottom level protection clothing]under your [ShortDesc of random bottom level protection clothing][otherwise]over[end if] to your [genitals] where it begins to toy with you, while others bring... servings of creamy cake to your mouth.[line break][variable custom style][one of]That is not what I expected.[or]Here we go again...[stopping][roman type][line break]You [if the player is feeling submissive]don't even consider resisting[otherwise]are left completely at their mercy[end if] as they proceed to masturbate and forcefeed you at the same time.";
-		appropriate-cutscene-display figure of mimic cutscene 3;
+		maybe-map-display figure of mimic cutscene 3;
 		say "Even when you are completely full, they don't seem to care. It soon becomes very clear that you aren't getting out until you've eaten the entire large and very rich cake. You [if the player is feeling dominant]scowl but[otherwise]whimper and[end if] obey, all the time being made hornier and hornier by the moment. By the time you get to near the end of the cake, you feel like you're going to burst, and in more ways than one. It almost seems like this is exactly what the crib has planned for you - as you begin to take your final bites the tentacle at your [genitals] speeds up, and reaches a furious crescendo as you swallow that final bite. You mewl softly as you are forced to cum.";
 		now the fatigue of the player is the buckle threshold of the player;
 		vaginally orgasm shamefully;
@@ -225,10 +225,10 @@ Report waiting when the player is in MimicCrib:
 		say "After this the crib spits you out, leaving you completely exhausted and your stomach painfully full of sugary food.";
 	otherwise if R is 2 and the player is able to get horny:
 		say "Tentacles begin to emerge from the walls. One sneaks [if there is bottom level protection clothing]under your [ShortDesc of random bottom level protection clothing][otherwise]over[end if] to your [genitals] where it begins to toy with you, while others attach themselves to your nipples and begin to gently suck.";
-		appropriate-cutscene-display figure of mimic cutscene 2;
+		maybe-map-display figure of mimic cutscene 2;
 		say "The air around you feels heavy and you begin to wonder if it's making you breathe in some sort of aphrodisiac gas, because you are definitely starting to feel VERY turned on. And then just as you have begun to resign yourself to the idea that these tentacles are going to bring you to orgasm, you are suddenly spat back out, dumped on the ground back in the mansion, left pent-up and horny, [if the diaper addiction of the player < 14 and the player is not a nympho]to reflect on how shameful it is to have allowed yourself to be turned on in such a fashion[otherwise]to decide how to deal with your crotch's desperate yearning throbs[end if].";
 		SexAddictUp 1;
-		ruin vagina times 2;
+		arouse 99999;
 	otherwise:
 		let G be wetDiaperFacesitGrossnessLevel;
 		if diaper messing >= 7, now G is messyDiaperFacesitGrossnessLevel;
@@ -236,7 +236,7 @@ Report waiting when the player is in MimicCrib:
 		if the player is air breathing vulnerable:
 			say "As more and more start to pile on top of each other on and around you, [if diaper messing >= 7]the disgusting smell of them[otherwise]the stench of piss[end if] soon fills your nostrils[if the grossness addiction of the player < G], making you gag[end if].";
 			SmellGrossOut G;
-			appropriate-cutscene-display figure of mimic cutscene 4;
+			maybe-map-display figure of mimic cutscene 4;
 			say "And still they continue to fall, threatening to bury you under their combined bulk and weight. You begin to struggle but it's no use - you feel like you're sinking in a quicksand made out of used nappies. Soon they are covering your entire body and you can't even breathe properly; you begin to cough and splutter as you try to suck a little oxygen through the thick rancid padding.";
 			SmellGrossOut G;
 			say "Just as you begin to feel light-headed [one of]and resign yourself to the reality of meeting your end,[or]once again[stopping] you are suddenly spat out of the crib back into the mansion, but now thoroughly exhausted and with tears in your eyes.";

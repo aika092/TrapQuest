@@ -26,13 +26,14 @@ To set up magic attribute of (H - a stockings):
 	let R be a random number between 1 and 9;
 	if R is 1, now H is sneaking;
 	if R is 2, now H is endurance;
-	if R is 3:
-		now H is posture training;
-		if diaper messing >= 4 and a random number between 1 and 2 is 1, now H is desperation;
-	if R is 4:
-		now H is stumbling;
-		if diaper lover > 0 and a random number between 1 and 2 is 1, now H is respiration;
-	if R is 3 or R is 4, curse H;
+	if H is discovered negative:
+		if R is 3:
+			now H is posture training;
+			if diaper messing >= 4 and a random number between 1 and 2 is 1, now H is desperation;
+		if R is 4:
+			now H is stumbling;
+			if diaper lover > 0 and a random number between 1 and 2 is 1, now H is respiration;
+		if R is 3 or R is 4, curse H;
 	set up rare magic attribute of H.
 
 To set up magic state of (C - a stockings): [Less variance than most items]
@@ -226,9 +227,7 @@ To compute class set up of (C - bunny stockings):
 	now the raw-magic-modifier of C is 1.
 
 Definition: bunny stockings is black themed: decide yes.
-Definition: bunny stockings is unskirted themed:
-	if reverse bunny outfit is worn, decide yes;
-	decide no.
+Definition: bunny stockings is unskirted themed: decide yes.
 
 Definition: bunny stockings is fetish appropriate:
 	if diaper quest is 0, decide yes;

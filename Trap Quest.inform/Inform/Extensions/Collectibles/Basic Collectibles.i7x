@@ -20,9 +20,7 @@ To say ShortDesc of (C - chess piece):
 
 Part - Fertility Idol
 
-fertility idol is a collectible. The printed name of fertility idol is "[TQlink of item described]fertility idol[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of fertility idol is "fti".
-
-fertility idol has a magic-curse.
+fertility idol is a collectible. The printed name of fertility idol is "[TQlink of item described]fertility idol[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of fertility idol is "fti". fertility idol can be fertility-cursed.
 
 Figure of fertility idol is the file "Items/Collectibles/fertility1.png".
 
@@ -36,7 +34,6 @@ Definition: fertility idol is ingredient: decide no.
 Definition: fertility idol is immune to change: decide yes.
 Definition: fertility idol is pregnancy themed: decide yes.
 Definition: fertility idol is boob themed: decide yes.
-Definition: fertility idol is cursable: decide yes.
 
 To say ShortDesc of (C - fertility idol):
 	say "fertility idol".
@@ -49,8 +46,8 @@ Carry out taking fertility idol:
 	if the player is ready for common event TG:
 		say "[BigNameDesc of woman-player]'s magic surges down from your belly to your loins. [if the player is possessing a penis]Your [player-penis] feels suddenly... absent![end if] The logical conclusion of what has just happened to you is clear, and it only takes a moment for you to check and confirm... You're no longer biologically male. You blink in shock. You now have a real, fully functional vagina and womb![line break][variable custom style]And I'm already nine months pregnant... This is insane![roman type][line break]";
 		SexChange the player;
-	if fertility idol is cursed:
-		now fertility idol is bland;
+	if fertility idol is fertility-cursed:
+		now fertility idol is not fertility-cursed;
 		if the pregnancy of the player is 0 and pregnancy fetish is 1 and the player is possessing a vagina:
 			say "[bold type]Suddenly, impossibly, your belly explodes in size, leaving you full-term pregnant![line break][variable custom style]What the fuck?! Oh... Oh my god...[roman type][line break]";
 			now the pregnancy of the player is 1;
@@ -617,12 +614,18 @@ To say ShortDesc of (T - spork):
 	say "spork".
 To decide which number is the bartering value of (T - spork) for (M - robobutler):
 	decide on 4.
-To say MonsterOfferAcceptFlav of (M - robobutler) to (T - spork):
+To decide which number is the bartering value of (T - spork) for (M - robochef):
+	decide on 4.
+To say MonsterOfferAcceptFlav of (M - a robot) to (T - spork):
 	say "[speech style of M]'THANK YOU FOR DISPOSING OF YOUR UTENSILS RESPONSIBLY.'[roman type][line break]".
 To decide which number is the bartering value of (T - spork) for (M - wench):
 	decide on 2.
 To say MonsterOfferAcceptFlav of (M - a wench) to (T - spork):
 	say "[speech style of M]'Nice! With this, I might actually be able to eat a meal like a human rather than an animal! For the first time in... too long.'[roman type][line break]".
+To decide which number is the bartering value of (T - spork) for (M - an adult baby slave):
+	decide on 4.
+To say MonsterOfferAcceptFlav of (M - an adult baby slave) to (T - spork):
+	say "[speech style of M]'Lol! Now I can be super random, by holding up a spork!'[roman type][line break]".
 Definition: spork is food themed: decide yes.
 
 Section - Horseshoe

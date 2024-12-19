@@ -47,6 +47,8 @@ To decide which number is the known-mess of (C - a diaper):
 
 Report examining worn diaper when seconds is 0 and the player is not diaper aware:
 	compute state check of the noun.
+Report wearing diaper when the player is not diaper aware:
+	compute state check of the noun.
 
 To process state perception of (C - a diaper):
 	if diaper-stack is worn:
@@ -81,6 +83,9 @@ To compute awakened state check of (C - a clothing): [If the player goes DOWN fr
 			say "Oh gosh! It turns out you've [if the known-total-soak of C < the total-soak of C]wet and [end if]messed yourself without even realising it!";
 		otherwise if the known-total-soak of C < the total-soak of C:
 			say "Oh my, it turns out you've wet your diaper [if the known-urine-soak of C > 0]even more [end if]without even realising it!";
+		otherwise if C is messed:
+			if the known-total-soak of C > 0, say "It's just as wet and messy as it was last time you checked[if the known-total-soak of C >= the soak-limit of C]. That is to say, it's still completely saturated[end if].";
+			otherwise say "It's still messy, just like before, but at least it's not any wetter.";
 		otherwise:
 			if the known-total-soak of C > 0, say "It's just as wet as it was last time you checked[if the known-total-soak of C >= the soak-limit of C]. That is to say, it's still completely saturated[end if].";
 			otherwise say "It's still completely dry. For now.";
@@ -279,12 +284,14 @@ To compute periodic effect of (D - a diaper):
 		if xavier-diaper-link is 57 or xavier-diaper-link is 113:
 			say "All of a sudden you get a wet feeling from your [genitals]... but it's not you. The Demon Queen must be urinating [one of][or]once [stopping]again! In any case it feels, sounds, and appears as if you are wetting yourself. ";
 			AnnouncedExpel urine on D by 12;
+			now demon lord is inseminating D;
 			say "[PeeReaction 2]";
 			if diaper messing < 3, now xavier-diaper-link is 1;
 		if xavier-diaper-link >= 163 and asshole is not actually occupied:
 			now xavier-diaper-link is 1;
 			say "All of a sudden you feel your butthole open wide to start letting out a massive ooze of poop... but it's not you. The Demon Queen must be messing herself [one of][or]once [stopping]again! In any case it feels, sounds, and appears as if it's you, which is all that really matters. ";
 			now rectum is 35;
+			now demon lord is inseminating D;
 			compute inhuman partial messing;
 	if (doomed >= 5 or D is demon-diaper) and altar-diaper-link > 0 and D is total protection:
 		increase altar-diaper-link by 1;

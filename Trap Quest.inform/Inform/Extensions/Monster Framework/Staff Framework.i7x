@@ -14,7 +14,7 @@ To compute monstermotion of (M - a staff member):
 	if playerRegion is not school and M is undefeated:
 		say "BUG: [BigNameDesc of M] has followed the player out of the school. Please report along with a description of what recently happened. Region: [playerRegion]; Location: [location of M]; Player location: [location of the player].";
 		now M is in School01;
-	otherwise if a random number between 1 and 4 is 1 or (the player is at least partially immobile and (a random number between 1 and 2 is 1 or there is a teacher in the location of M)):
+	otherwise if a random number between 1 and 4 < the number of staff member in the location of the player or (the player is at least partially immobile and (a random number between 1 and 2 is 1 or there is a teacher in the location of the player)):
 		compute room leaving of M.
 
 [Definition: a staff member is messy:
@@ -92,8 +92,9 @@ To compute perception of (M - a staff member):
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
 	if detention chair is grabbing the player:
 		compute detention chair tease of M;
-	otherwise if armband is worn and M is in the school:
-		unless there is a currently-in-progress assembly, compute student perception of M;
+	otherwise if armband is worn and playerRegion is school:
+		unless there is a currently-in-progress assembly:
+			compute student perception of M;
 	otherwise:
 		compute nonstudent perception of M.
 
@@ -102,7 +103,14 @@ To FavourDown (M - a staff member) by (N - a number):
 	if N > 0 and armband is not worn, decrease the favour of M by N.
 
 To compute student perception of (M - a staff member):
-	if M is male and M is groping:
+	if the diaper-duration of M > 0 and the number of worn diaper is 0:
+		say "[big he of M] swiftly walks up to you and holds [if diaper messing < 3]a hand to the front[otherwise]hands to the front and back[end if] of your crotch, pushing firmly to get a good feel.[line break][speech style of M]'HEY! Where is your diaper?! You're in big trouble, you naughty baby!'[roman type][line break]";
+		anger M;
+	otherwise if the bladder of M >= 1000 and M is able to use a free use urinal:
+		compute free use urinal perception of M;
+	otherwise if the diaper-duration of M > 0:
+		compute diaper check of M;
+	otherwise if M is male and M is groping:
 		compute grope of M.
 
 To compute nonstudent perception of (M - a staff member):
@@ -175,7 +183,7 @@ To compute (M - a staff member) protecting against (X - nurse): [The nurse assau
 	if armband is not worn, compute M protecting against headmistress. [There's a rebellion afoot!]
 
 To compute (M - a staff member) seeking (D - a direction): [Staff members don't stalk the player around the school in normal circumstances.]
-	if the friendly boredom of M >= 0 and M is friendly and the player is not in danger:
+	if the friendly boredom of M >= 0 and M is interested and M is friendly and the player is not in danger:
 		distract M;
 	otherwise:
 		blockable move M to D;
@@ -191,7 +199,10 @@ This is the staff member unique punishment rule:
 	if the player is at least partially immobile and current-monster is not wrangling a body part: [Otherwise the staff member just holds a defeated wrangled player forever]
 		do nothing;
 	otherwise if there is a worn armband: [No staff members have yet been attacked and no students killed]
-		compute detention of current-monster;
+		if the assemblyCount of locked-toilets-shame-assembly > 0 and diaper lover > 0 and the number of worn diapers is 0:
+			compute nurse diapering of current-monster;
+		otherwise:
+			compute detention of current-monster;
 		repeat with M running through unfriendly staff members:
 			calm M;
 	otherwise if ex-princess is not guarding: [If ex-princess is guarding we're in the rescue mission fight which has its own unique ending, see "the school rescue fight rule"]
@@ -276,6 +287,10 @@ To compute teaching of (M - a staff member):
 
 To compute friendly drink of (M - a staff member):
 	say "[speech style of M]'There is a drinks machine in the Food Hall.'[roman type][line break]".
+
+To decide which number is the freebie-reluctance of (M - a staff member):
+	decide on 99.
+
 
 Part - Teachers
 
@@ -369,6 +384,9 @@ Part - Lessons
 
 A lesson is a kind of object. A lesson has a teacher called lesson-teacher.
 
+To say LessonTitle of (L - a lesson):
+	say "Unnamed lesson with [NameDesc of lesson-teacher of L]".
+
 class-time is a number that varies. class-time is 1000.
 
 chosen-lesson is an object that varies.
@@ -450,6 +468,9 @@ Definition: a lesson (called L) is appropriate:
 	if the lesson-teacher of L is emerald-teacher and the breast-enhancement of nurse < 0 and the lesson-teacher of tits-lesson is alive: [If the player was recently instructed to get a breast enhancement and went through with it, it takes top priority]
 		if L is tits-lesson, decide yes;
 		otherwise decide no;
+	if condom-timer of condom-lesson > 0:
+		if L is condom-lesson, decide yes;
+		otherwise decide no;
 	if ((diaper quest is 1 and the lesson-teacher of L is emerald-teacher) or (diaper quest is 0 and the lesson-teacher of L is ruby-teacher)) and L is not pain-lesson and the lesson-teacher of pain-lesson is alive and (the player is wrist bound or the player is ankle bound or portal gag is worn), decide no; [Most if not all other emerald lessons should let releasing the bondage from the pain lesson take priority]
 	if the lesson-teacher of L is alive and the lesson-teacher of L is undefeated and the number of alive lesson-appropriate students >= the min-students of L and L is lesson-appropriate, decide yes;
 	decide no.
@@ -468,21 +489,25 @@ To compute potential lesson:
 	if lesson-room is a lecture academic room and armband is worn and armband is not solid gold and the armband-print of armband is not "new recruit":
 		if debugmode > 0:
 			say "Class time tracker is at [class-time]; less than [lessonFrequency * -4] = detention.";
+		now chosen-lesson is a random correctly-ranked appropriate lesson;
+		if cheatsenabled:
 			if class-time >= lessonFrequency * -4:
 				let LL be the list of correctly-ranked appropriate lessons;
-				if the number of entries in LL > 0:
-					say "There are [number of entries in LL] available lessons: [line break]";
+				if the number of entries in LL > 1:
+					say "There are [number of entries in LL] available lessons. Because you have enabled [if debugmode > 0]debug[otherwise]cheater[end if] mode, you have the option to choose a specific one.[line break]";
 					let N be 1;
+					reset multiple choice questions;
 					repeat with L running through LL:
-						say "[N]) Lesson with [lesson-teacher of L].";
+						set numerical response N to "[LessonTitle of L]";
 						increase N by 1;
-		[if class-time is 1000 or class-time <= 0:]
-		now chosen-lesson is a random correctly-ranked appropriate lesson;
+					set numerical response 0 to "randomise normally";
+					compute multiple choice question;
+					if player-numerical-response is not 0, now chosen-lesson is entry player-numerical-response in LL;
 		if class-time < (lessonFrequency * -4): [arrived too late for class]
 			compute detention of lesson-teacher of chosen-lesson;
 			now class-time is -1;
 		otherwise:
-			let genericAssemblyHappened be false;
+			now genericAssemblyHappened is false;
 			if lessonJustDone is true and a random number between 1 and 2 is 1: [player is trying to do several lessons in a row, which means they might get a random annoying assembly]
 				let A be a random appropriate assembly; [first let's look at the really cool and specific assemblies]
 				if A is not assembly: [if there are no cool specific assemblies, we look for a generic assembly]
@@ -500,13 +525,13 @@ To compute potential lesson:
 				otherwise:
 					if chosen-lesson is correctly-situated:
 						set up chosen-lesson;
-						[refresh the clothing-focus-window;] [GUITODOMAYBE]
 						try looking;
 						display focus stuff;
 						render buffered stuff;
 						compute early lesson progression stuff;
 						compute teaching of chosen-lesson;
 						compute late lesson progression stuff;
+						temporaryYesNoBackgroundReset;
 					otherwise:
 						say "Your rank is [accessory-colour of armband], so there's no lesson for you here.".
 
@@ -643,6 +668,7 @@ Definition: an assembly (called A) is appropriate:
 
 A generic-assembly is a kind of assembly.
 genericAssemblyTime is initially false. [Sometimes we want to just have any assembly happen]
+genericAssemblyHappened is initially false. [Sometimes we need to track this]
 Definition: an generic-assembly (called A) is appropriate:
 	if genericAssemblyTime is true and A is eligible and the assemblyCount of A is 0 and the assemblyAnnouncer of A is alive, decide yes;
 	decide no.
@@ -673,13 +699,13 @@ To compute start of (A - an assembly):
 	say AssemblyStartFlav of A;
 	now the assemblyTime of A is the assemblyTurns of A;
 	repeat with M running through monsters in the location of the player:
-		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]".
+		if M is not interested, say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]".
 
 To decide which number is the assemblyTurns of (A - an assembly):
 	decide on 1.
 
 To say AssemblyStartFlav of (A - an assembly):
-	say "[NameDesc of the assemblyAnnouncer of A] is at the front, ready to lead assembly.".
+	say "[NameDesc of the assemblyAnnouncer of A] steps up onto the podium at the front.".
 
 An all time based rule (this is the assembly computation rule):
 	let A be a random currently-in-progress assembly;
@@ -711,7 +737,9 @@ To conclude (A - an assembly):
 		otherwise distract ST;
 		now ST is unleashed;
 	now the assemblyTime of A is 0;
-	now lessonJustDone is false. [prevents a generic assembly from happening twice in a row]
+	if genericAssemblyHappened is true:
+		now genericAssemblyHappened is false;
+		now lessonJustDone is false. [prevents a generic assembly from happening twice in a row]
 
 soiled-diaper-assembly is an assembly.
 Definition: soiled-diaper-assembly is eligible:
@@ -840,7 +868,7 @@ To execute (A - new-fuckhole-assembly):
 locked-toilets is initially false.
 locked-toilets-assembly is an assembly.
 Definition: locked-toilets-assembly is eligible:
-	if locked-toilets is false and headmistress is alive and headmistress is undefeated and watersports mechanics is 1 and the player is the donator:
+	if locked-toilets is false and headmistress is alive and headmistress is undefeated and watersports mechanics is 1:
 		if genericAssemblyTime is true, decide yes;
 		repeat with R running through academic rooms:
 			if the urine-puddle of R > 0, decide yes;
@@ -854,7 +882,7 @@ To execute (A - locked-toilets-assembly):
 	now headmistress is carrying academy-toilet-key;
 	let L be School01;
 	repeat with R running through academic rooms:
-		if the urine-puddle of R > 0, now L is R;
+		if the urine-puddle of R > 0 and L is not School10, now L is R;
 	say "[speech style of headmistress]'It has come to my attention that a puddle of urine was found in the [L]. It would appear that the pupils in this school are in need of some serious bladder training. Therefore, henceforth, until we determine once and for all which of you can hold in your pee and which of you are naughty wetters, using the toilet is a privilege. The toilets will be locked, and you will have to come to me to ask for the key to use them. Furthermore, you must bring a teacher with you when you use the toilet, to act as a witness and to retrieve the toilet key when you are finished. Is that clear?'[roman type][line break]Everyone murmurs assent.[line break][speech style of headmistress]'To be clear, [bold type]you are not allowed to use any other toilet or urinal either - even ones outside of this Academy[speech style of headmistress], and if we catch you, you best believe you'll be in for a world of trouble.'[roman type][line break]Twirling the solitary toilet key on its key ring around [his of headmistress] index finger, [NameDesc of headmistress] marches from the hall.".
 
 Report going when the player is in School10:
@@ -972,6 +1000,59 @@ To execute (A - missing-key-assembly):
 	say "[speech style of headmistress]'There you are! Everyone, this is the [boy of the player] I gave the key to, and [he of the player] never returned it, and that's the reason we've all got bladders filled to bursting. I'm going to have to make new locks, and a new key, and find a way to remove the existing locks. Meanwhile, [NameBimbo] will be spending some time in the dungeon, reflecting on the consequences of [his of the player] negligence!'[roman type][line break]";
 	now academy-toilet-key is carried by headmistress;
 	compute headmistress dungeon locking.
+
+locked-toilets-shame-assembly is an assembly.
+Definition: locked-toilets-shame-assembly is eligible: decide no.
+
+To say AssemblyStartFlav of (A - locked-toilets-shame-assembly):
+	say "[BigNameDesc of headmistress] addresses you directly.".
+
+To execute (A - locked-toilets-shame-assembly):
+	say "[speech style of headmistress]'There you are! Everyone, this is the [boy of the player] who pissed all over the floor in the toilets. I know! Disgusting! So, here's a new rule: ";
+	if watersports fetish is 1:
+		say "[NameBimbo]'s mouth [if diaper swapping >= 2]and diaper are officially FREE USE URINALS[otherwise] is officially a FREE USE URINAL[end if]. Anyone who needs to piss, can come up to this nasty fucking tramp and demand to use [his of the player] face-hole[if diaper swapping >= 2] or diaper[end if] as their own personal toilet. Right there. Straight away. If [he of the player] refuses, you have my permission to tell a teacher and we will ensure that just punishment is served. Alternatively, feel free to beat the fucking disgusting [cunt] up yourself. I don't give a fuck. ";
+	if diaper lover > 0:
+		say "[NameBimbo] is now required to wear diapers at all times. Anyone who catches [him of the player] out of diapers has my permission to tackle [him of the player] to the ground, subdue [him of the player], and take [him of the player] to the nurse for punishment and forced diapering. ";
+		repeat with M running through staff members:
+			now the diaper-duration of M is 99999;
+	if watersports fetish is 1 and WC collar is actually summonable:
+		summon WC collar locked;
+		say "And one more thing...'[roman type][line break][BigNameDesc of headmistress] places a [MediumDesc of WC collar] around your neck!";
+		let K be a random off-stage specific-key;
+		if K is a thing, compute headmistress locking WC collar with K;
+		say severeHumiliateReflect;
+	otherwise:
+		say "You are all dismissed.'[roman type][line break][severeHumiliateReflect]".
+
+To compute free use urinal perception of (M - a monster):
+	if M is eager to use a diaper urinal:
+		say "[speech style of M]'[if the player is upright]Get on your knees, urinal[otherwise]Hey there, urinal[end if], I'm going to [one of]piss[or]go tinkles[or]go wee-wee[as decreasingly likely outcomes] in your diaper now!'[roman type][line break]";
+		if the player is upright:
+			say "Get on your knees and consent to being used as a diaper urinal by [NameDesc of M]?";
+			if the player is bimbo consenting:
+				now auto is 1;
+				try kneeling;
+				now auto is 0;
+			otherwise:
+				anger M;
+				if M is unfriendly, say "[speech style of M]'[if M is student]No! You're supposed to get[otherwise]Rebellious [bitch]! Get[end if] on your knees NOW!'[roman type][line break]";
+		if the player is prone:
+			compute diaper urinal use of M;
+	otherwise:
+		say "[speech style of M]'[if the player is upright]Get on your knees, urinal[otherwise]Hey there, urinal[end if], I'm going to [one of]piss[or]empty my bladder[or]go to the toilet[as decreasingly likely outcomes] over your face now!'[roman type][line break]";
+		if the player is upright:
+			say "Get on your knees and consent to being used as a urinal by [NameDesc of M]?";
+			if the player is bimbo consenting:
+				now auto is 1;
+				try kneeling;
+				now auto is 0;
+			otherwise:
+				anger M;
+				if M is unfriendly, say "[speech style of M]'[if M is student]No! You're supposed to get[otherwise]Rebellious [bitch]! Get[end if] on your knees NOW!'[roman type][line break]";
+		if the player is prone:
+			say "[BigNameDesc of M] happily stands over you and grabs you by the head, directing your face towards [his of M] crotch. A few moments later, [he of M] releases a torrent of piss over your hair and face.";
+			FacePiss from M;
+			satisfy M.
 
 
 tattoo-assembly is a generic-assembly.
@@ -1559,7 +1640,35 @@ To compute action (N - a number) of (M - an ultimate-lesson-actor):
 						OralSexAddictUp 1;
 						now gloryhole-key-predicament is not ass-to-mouth-agreed;
 					compute gloryhole key resolution of M;
-				destroy M.
+				destroy M;
+	otherwise if slimy-portal-creature is grabbing the player:
+		decrease the sex-length of M by 1;
+		if M is penetrating face:
+			if the sex-length of M > 0:
+				say "[one of]You [if the player is proud]screw your eyes shut in shame[otherwise]look down at the ground[end if] as [FuckerDesc of M][']s [manly-penis] thrusts in and out of your mouth[or]You breathe heavily as [FuckerDesc of M] pleasures [his of M] [manly-penis] with your face[or][BigFuckerDesc of M] thrusts back and forth, enjoying the tight grip of your [LipDesc][or][BigFuckerDesc of M] buries [himself of M] deep inside your throat with a set of long, hard thrusts[or][BigFuckerDesc of M] sighs with delight at the feeling of your [LipDesc] around [his of M] [manly-penis][or][BigFuckerDesc of M] is not holding back [his of M] sexual groans and grunts as [he of M] enjoys the feeling of [his of M] [manly-penis] moving in and out of your mouth[or]slams in and out of your mouth[or][BigFuckerDesc of M] treats your [LipDesc] and throat as [his of M] own personal faceless onahole, pumping in and out of your mouth without regards for your feelings[in random order].";
+			otherwise:
+				BlowCount;
+				if M is wrapped:
+					say "[one of][BigFuckerDesc of M] pushes forward as far as [he of M] can go, hissing through [his of M] teeth as [his of M] condom fills with warmth.[or][BigFuckerDesc of M][']s [DickDesc of M] throbs powerfully, firing off load after load of warm [semen] into the condom.[in random order]";
+					orgasm M;
+					dislodge M;
+				otherwise: [Deepthroat cumshot]
+					compute deepthroat creampie of M;
+		otherwise if M is penetrating a fuckhole:
+			let F be a random fuckhole penetrated by M;
+			if the sex-length of M > 0:
+				say "[one of]You [if the player is proud]screw your eyes shut in shame[otherwise]look down at the ground[end if] as [FuckerDesc of M][']s [manly-penis] thrusts in and out of your [variable F][or]You breathe heavily as [FuckerDesc of M] pleasures [his of M] [manly-penis] with your defenseless [variable F][or][BigFuckerDesc of M] thrusts back and forth, enjoying the [if the openness of F <= the girth of M]tight[otherwise]gentle[end if] grip of your [variable F][or][BigFuckerDesc of M] buries [himself of M] deep inside your [variable F] with a set of long, hard thrusts[or][BigFuckerDesc of M] sighs with delight at the feeling of your [variable F] around [his of M] [manly-penis][or][BigFuckerDesc of M] is not holding back [his of M] sexual groans and grunts as [he of M] enjoys the feeling of [his of M] [manly-penis] moving in and out of your [variable F][or][BigFuckerDesc of M] grabs your [AssDesc] as [he of M] slams in and out of your [variable F][or][BigFuckerDesc of M] treats your [variable F] as [his of M] own personal faceless onahole, pumping in and out of your [variable F] without regards for your feelings[in random order].";
+				ruin F;
+			otherwise:
+				if F is vagina, FuckCount;
+				otherwise AnalCount;
+				say CreampieFlav of M in F;
+				compute M finishing in F;
+		if the sex-length of M <= 0:
+			say "With [one of]a satisfied[or]a giddy[purely at random] noise, [NameDesc of M] pulls [his of M] [manly-penis] out of you and quickly [one of]leaves[or]makes [himself of M] scarce[or]flees the scene[in random order].";
+			now M is not wrapped;
+			destroy M.
+
 To say FriendlySexResistFlav of (M - an ultimate-lesson-actor):
 	say "[if M is not penetrating face][variable custom style]'[one of]I can't take any more[or]Screw this[stopping]!'[roman type][line break][otherwise if the player is able to make sounds][variable custom style][muffled sounds][roman type][line break][end if]";
 	say "Fed up, you pull away from [NameDesc of M][']s [manly-penis][if M is penetrating face], coughing and spluttering as you do[end if].".
@@ -1585,10 +1694,14 @@ To decide which figure-name is the monster-image of (M - an ultimate-lesson-acto
 	decide on figure of unseen actor.
 Definition: an ultimate-lesson-actor is human: decide yes.
 Definition: an ultimate-lesson-actor (called M) is dark skinned:
+	if M is penetrating a fuckhole and slimy-portal-creature is bbc-fuck and slimy-portal-creature is grabbing the player, decide yes;
+	if M is penetrating face and slimy-portal-creature is bbc-oral and slimy-portal-creature is grabbing the player, decide yes;
 	if M is specific-man:
 		if the specific-man-title of M matches the text "black" or the specific-man-title of M matches the text "dark" or the specific-man-title of M matches the text "ebony" or the specific-man-title of M matches the text "African", decide yes;
 	decide no.
 To decide which number is the girth of (M - an ultimate-lesson-actor):
+	if M is penetrating a fuckhole and slimy-portal-creature is demon-fuck and slimy-portal-creature is grabbing the player, decide on 6;
+	if M is penetrating face and slimy-portal-creature is demon-oral and slimy-portal-creature is grabbing the player, decide on 6;
 	if M is dark skinned, decide on 5;
 	decide on 2.
 Definition: an ultimate-lesson-actor is able to remove cursed plugs: decide yes. [Can the monster remove all plugs & gags?]

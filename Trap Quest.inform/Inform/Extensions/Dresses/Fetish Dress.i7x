@@ -89,7 +89,7 @@ To reflect on (A - outrageous-fetish-dress):
 
 Part 1 - Green Fetish Hobble Dress
 
-green fetish hobble dress is a fetish dress. green fetish hobble dress is hobble-skirted. A green fetish hobble dress is low cut. The text-shortcut of green fetish hobble dress is "gld".
+green fetish hobble dress is a fetish dress. The skirt-length of green fetish hobble dress is 9. A green fetish hobble dress is low cut. The text-shortcut of green fetish hobble dress is "gld".
 
 To say MediumDesc of (C - green fetish hobble dress):
 	say "green latex fetish hobble dress".
@@ -104,7 +104,7 @@ Definition: green fetish hobble dress is green themed: decide yes.
 
 Part 2 - Red Translucent Latex Dress
 
-red-translucent-fetish-dress is a fetish dress. red-translucent-fetish-dress is sheer. red-translucent-fetish-dress is short. red-translucent-fetish-dress is fully covering. red-translucent-fetish-dress is not-top-displacable. The text-shortcut of red-translucent-fetish-dress is "rtld".
+red-translucent-fetish-dress is a fetish dress. red-translucent-fetish-dress is sheer. The skirt-length of red-translucent-fetish-dress is 4. red-translucent-fetish-dress is fully covering. red-translucent-fetish-dress is not-top-displacable. The text-shortcut of red-translucent-fetish-dress is "rtld".
 
 To say MediumDesc of (C - red-translucent-fetish-dress):
 	say "red translucent latex fetish dress".
@@ -123,7 +123,7 @@ Definition: red-translucent-fetish-dress is red themed: decide yes.
 
 Part 3 - Pink Fetish Dress
 
-pink fetish dress is a fetish dress. pink fetish dress is short. The text-shortcut of pink fetish dress is "pfd".
+pink fetish dress is a fetish dress. The skirt-length of pink fetish dress is 4. The text-shortcut of pink fetish dress is "pfd".
 
 To say MediumDesc of (C - pink fetish dress):
 	say "pink latex fetish dress".
@@ -157,7 +157,7 @@ Definition: red fetish dress is red themed: decide yes.
 
 Part 5 - White Fetish Dress
 
-windowed fetish dress is a fetish dress. windowed fetish dress is sheer. windowed fetish dress is short. windowed fetish dress is fully covering. windowed fetish dress is neck covering. windowed fetish dress is not-top-displacable. The text-shortcut of windowed fetish dress is "wld".
+windowed fetish dress is a fetish dress. windowed fetish dress is sheer. The skirt-length of windowed fetish dress is 4. windowed fetish dress is fully covering. windowed fetish dress is neck covering. windowed fetish dress is not-top-displacable. The text-shortcut of windowed fetish dress is "wld".
 
 To say MediumDesc of (C - windowed fetish dress):
 	say "white latex fetish dress".
@@ -179,7 +179,7 @@ Definition: windowed fetish dress is white themed: decide yes.
 
 Part 6 - Black Fetish Hobble Dress
 
-black fetish hobble dress is a fetish dress. black fetish hobble dress is hobble-skirted. black fetish hobble dress is crotch-skirted. black fetish hobble dress is low cut. The text-shortcut of black fetish hobble dress is "bld".
+black fetish hobble dress is a fetish dress. The skirt-length of black fetish hobble dress is 9. black fetish hobble dress is crotch-skirted. black fetish hobble dress is very low cut. black fetish hobble dress is optional-top-displacable. The text-shortcut of black fetish hobble dress is "bld".
 
 Definition: black fetish hobble dress is class-relevant:
 	if the class of the player is maid or the class of the player is latex fetish model, decide yes;
@@ -221,7 +221,7 @@ Definition: black fetish hobble dress is black-and-white themed: decide yes.
 
 Part 7 - Purple Fetish Hobble Dress
 
-purple fetish hobble dress is a fetish dress. purple fetish hobble dress is hobble-skirted. purple fetish hobble dress is crotch-skirted. A purple fetish hobble dress is high cut. A purple fetish hobble dress is only arm covering. The text-shortcut of purple fetish hobble dress is "phd".
+purple fetish hobble dress is a fetish dress. The skirt-length of purple fetish hobble dress is 9. purple fetish hobble dress is crotch-skirted. A purple fetish hobble dress is high cut. A purple fetish hobble dress is only arm covering. The text-shortcut of purple fetish hobble dress is "phd".
 
 To say MediumDesc of (C - purple fetish hobble dress):
 	say "purple latex fetish hobble dress".
@@ -243,7 +243,7 @@ Definition: purple fetish hobble dress is purple themed: decide yes.
 
 Part 8 - Assless Fetish Hobble Dress
 
-assless fetish hobble dress is a fetish dress. assless fetish hobble dress is hobble-skirted. assless fetish hobble dress is crotch-skirted. assless fetish hobble dress is fully covering. assless fetish hobble dress is crotch-assless. assless fetish hobble dress is sheer. assless fetish hobble dress is finger covering. The text-shortcut of assless fetish hobble dress is "alhd".
+assless fetish hobble dress is a fetish dress. The skirt-length of assless fetish hobble dress is 9. assless fetish hobble dress is crotch-skirted. assless fetish hobble dress is fully covering. assless fetish hobble dress is crotch-assless. assless fetish hobble dress is sheer. assless fetish hobble dress is finger covering. The text-shortcut of assless fetish hobble dress is "alhd".
 
 To say MediumDesc of (C - assless fetish hobble dress):
 	say "assless latex fetish hobble dress".
@@ -308,7 +308,7 @@ Definition: pink translucent fetish dress is bow themed: decide yes.
 
 Part 11 - Pink and Blue Translucent Latex Dress
 
-pink-and-blue translucent fetish dress is a fetish dress. pink-and-blue translucent fetish dress is unique. pink-and-blue translucent fetish dress is short. pink-and-blue translucent fetish dress is slap ready. pink-and-blue translucent fetish dress is sheer. pink-and-blue translucent fetish dress is high cut. The text-shortcut of pink-and-blue translucent fetish dress is "pbld". Understand "pink", "and blue", "blue" as pink-and-blue translucent fetish dress.
+pink-and-blue translucent fetish dress is a fetish dress. pink-and-blue translucent fetish dress is unique. The skirt-length of pink-and-blue translucent fetish dress is 4. pink-and-blue translucent fetish dress is slap ready. pink-and-blue translucent fetish dress is sheer. pink-and-blue translucent fetish dress is high cut. The text-shortcut of pink-and-blue translucent fetish dress is "pbld". Understand "pink", "and blue", "blue" as pink-and-blue translucent fetish dress.
 
 To say MediumDesc of (C - pink-and-blue translucent fetish dress):
 	say "pink and blue translucent latex fetish dress".
@@ -331,7 +331,7 @@ Definition: pink-and-blue translucent fetish dress is class-relevant: decide yes
 
 Part 100 - Fetish Baby Dress
 
-fetish baby dress is a fetish dress. fetish baby dress is short. fetish baby dress is not-top-displacable. fetish baby dress is transformation-rare. The text-shortcut of fetish baby dress is "fbbd".
+fetish baby dress is a fetish dress. The skirt-length of fetish baby dress is 4. fetish baby dress is not-top-displacable. fetish baby dress is transformation-rare. The text-shortcut of fetish baby dress is "fbbd".
 
 To say MediumDesc of (C - fetish baby dress):
 	say "cream latex fetish [if diaper lover > 0]baby [end if]dress".
@@ -354,7 +354,7 @@ To say ClothingDesc of (O - fetish baby dress):
 	say "This cream and blue latex dress is covered in bows. It has a frilly[if diaper lover > 0], babyish[end if] theme, including what looks like a blue [if diaper lover > 0]baby [end if]rein harness around the middle.".
 
 To say ClassSummonFlav of (C - fetish baby dress):
-	say "Your mask emits a high pitched cackling sound, and then a creamy fetish dress materialises over your body![line break][variable custom style]I look so ridiculous! [if the player is shameless]How delicious[otherwise]This is crazy[end if]![roman type][line break]".
+	say "[if clown mask is worn]Your mask emits a high pitched cackling sound, and then a[otherwise]A[end if] creamy fetish dress materialises over your body![line break][variable custom style]I look so ridiculous! [if the player is shameless]How delicious[otherwise]This is crazy[end if]![roman type][line break]".
 
 To compute class set up of (C - fetish baby dress):
 	now C is dominance;

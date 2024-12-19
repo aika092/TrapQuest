@@ -48,6 +48,9 @@ To say ClothingDesc of (C - chastity-belt):
 To say ShortDesc of (C - chastity-belt):
 	say "chastity belt".
 
+To decide which number is the initial outrage of (C - chastity-belt):
+	decide on 12.
+
 To decide which figure-name is clothing-image of (C - chastity-belt):
 	decide on figure of female chastity cage.
 

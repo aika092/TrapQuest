@@ -7,6 +7,10 @@ Definition: a royal guard is father material: decide yes.
 Definition: a royal guard is raunchy: decide yes.
 Definition: a royal guard is condom prepared: decide yes. [Does he have condoms on him?]
 Definition: a royal guard is a generic-unlocker: decide yes.
+Definition: a royal guard (called M) is blocker:
+	if M is shieldblocked, decide no;
+	decide yes.
+
 
 Figure of Royal Guard is the file "NPCs/Dungeon/Guard/royalguard1.png".
 Figure of Female Royal Guard is the file "NPCs/Dungeon/Guard/royalguard2.png".
@@ -108,6 +112,7 @@ To set up (M - a royal guard):
 	if M is prison guard:
 		add skeleton key to the taxableItems of M, if absent;
 		add skeleton key to the tradableItems of M, if absent;
+		if diaper quest is 1, compute diaper cover assignment of M;
 	otherwise:
 		add royal sigil to the taxableItems of M, if absent;
 		repeat with B running through off-stage cans:
@@ -267,7 +272,7 @@ Definition: a royal guard (called M) is uniquely distracted:
 				compute mandatory room leaving of M;
 			otherwise:
 				say "[BigNameDesc of M][']s eyes are drawn [if M is interested]away from you [end if]to [NameDesc of N]. [big he of M] grabs [him of N] by the hair and pushes [him of N] onto [his of N] knees.[line break][speech style of M]'[one of]Back for more punishment, I see[or]If you still haven't left these halls, you must really want this[or]I do not approve of your appearance, wench[in random order].'[roman type][line break]Freeing [his of M] [LongDickDesc of M], [NameDesc of M] forces it into [NameDesc of N][']s [if N is penetrating face]mouth[otherwise][one of]mouth[or][HoleDesc of N][or]asshole[purely at random][end if] before [he of N] can even begin to protest. Several awkward moan-filled seconds later, [NameDesc of N] is discarded onto the stone floor, panting, with a fresh load of [semen] oozing out of [his of N] abused orifice.";
-				if a2m fetish > 1, now the creampieTimer of N is the semen load of M * 100;
+				now the creampieTimer of N is the semen load of M * 100;
 				now the refractory-period of M is the refractory-time of M;
 				satisfy M;
 				DifficultyUp M by 1;
@@ -319,7 +324,7 @@ Definition: a royal guard (called M) is uniquely distracted:
 			decide yes;
 		otherwise if N is gladiator and (N is uninterested or N is friendly):
 			compute M npcBattling N;
-		otherwise if N is aeromancer and the player is a may 2023 top donator and (N is uninterested or N is friendly):
+		otherwise if N is aeromancer and (N is uninterested or N is friendly):
 			compute M npcBattling N;
 	decide no.
 
@@ -405,8 +410,8 @@ To compute (M - a royal guard) npcBattling (N - an aeromancer):
 Part 2 - Perception
 
 To decide which number is the bab tolerance of (M - a royal guard):
-	if the class of the player is princess, decide on 13;
-	decide on 9.
+	if the class of the player is princess, decide on 18;
+	decide on 15.
 
 To decide which number is the cringe tolerance of (M - a royal guard):
 	if the class of the player is princess, decide on 20;
@@ -936,7 +941,8 @@ To satisfy (M - a royal guard) for (N - a number) seconds:
 			progress quest of nice-quest;
 		if the health of M <= the maxhealth of M / 2, progress quest of chosen-one-quest;
 	otherwise:
-		bore M for N seconds. [We still want to dislodge etc. even if they weren't interested for some reason.]
+		bore M for N seconds; [We still want to dislodge etc. even if they weren't interested for some reason.]
+	compute unlock satisfaction of M.
 
 To get creampie image of (M - a royal guard) in (F - a fuckhole):
 	if the reaction of the player is 0 or lady fetish is 1, cutshow figure of guard cutscene 5 for M;
@@ -1332,16 +1338,21 @@ Definition: a royal guard is willing to punish untidiness: decide yes.
 
 Definition: a royal guard is willing to use a diaper urinal: decide yes.
 
-Definition: a royal guard is eager to donate babywear:
+Definition: prison guard is eager to donate babywear:
 	if there is a worn diaper and purple-baby-reins is off-stage and purple-baby-reins is actually summonable, decide yes;
 	decide no.
 
-To compute babywear donation of (M - a royal guard):
+To compute babywear donation of (M - prison guard):
 	say "[speech style of M]'This will keep you under control until your sentence is over.'[roman type][line break]";
 	say "[BigNameDesc of M] straps a [MediumDesc of purple-baby-reins] over your body and diaper!";
-	summon purple-baby-reins locked;
+	summon purple-baby-reins uncursed;
 	say FullExamineDesc of purple-baby-reins;
 	say BabywearDonationReaction of M on purple-baby-reins;
+	let K be a random off-stage specific-key;
+	if K is a thing:
+		compute M locking purple-baby-reins with K;
+	otherwise:
+		now purple-baby-reins is locked;
 	say "[speech style of M]'Be a well-behaved convict for us, and we'll let you out soon enough.'[roman type][line break]";
 	satisfy M.
 

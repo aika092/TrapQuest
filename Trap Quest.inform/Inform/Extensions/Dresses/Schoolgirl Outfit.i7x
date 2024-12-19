@@ -1,9 +1,9 @@
 Schoolgirl Outfit by Dresses begins here.
 
-A schoolgirl outfit is a kind of overdress. A schoolgirl outfit is unique. A schoolgirl outfit is usually neck covering. A schoolgirl outfit is usually short. A schoolgirl outfit is usually belly exposing. A schoolgirl outfit is usually not-top-displacable.
+A schoolgirl outfit is a kind of overdress. A schoolgirl outfit is unique. A schoolgirl outfit is usually neck covering. The skirt-length of a schoolgirl outfit is 4. A schoolgirl outfit is usually belly exposing. A schoolgirl outfit is usually not-top-displacable.
 
 Definition: a schoolgirl outfit is class-relevant:
-	if the class of the player is schoolgirl and (diaper quest is 1 or the player is pigtailed), decide yes;
+	if the class of the player is schoolgirl and (diaper quest is 1 or the player is pigtailed or the class of the player is magical girl), decide yes;
 	decide no.
 
 To compute class set up of (C - a schoolgirl outfit):
@@ -36,7 +36,7 @@ Definition: a schoolgirl outfit is potentially erection concealing: decide yes. 
 
 Part 1 - Cheeky Schoolgirl Outfit
 
-cheeky schoolgirl outfit is a schoolgirl outfit. cheeky schoolgirl outfit is knee-length. cheeky schoolgirl outfit is fully covering.
+cheeky schoolgirl outfit is a schoolgirl outfit. The skirt-length of cheeky schoolgirl outfit is 6. cheeky schoolgirl outfit is fully covering.
 
 The printed name of cheeky schoolgirl outfit is usually "[clothing-title-before]cheeky schoolgirl outfit[clothing-title-after]". The text-shortcut of cheeky schoolgirl outfit is "cso". Understand "black", "tie", "fleece", "skirt" as cheeky schoolgirl outfit.
 
@@ -76,6 +76,8 @@ To say ClothingDesc of (C - provocative schoolgirl outfit):
 
 To decide which number is the initial outrage of (C - provocative schoolgirl outfit):
 	decide on 4.
+To decide which number is the front-skirt-length of (C - provocative schoolgirl outfit):
+	decide on 3.
 
 To decide which object is the unique-upgrade-target of (C - provocative schoolgirl outfit):
 	decide on minimalist schoolgirl outfit.
@@ -105,6 +107,8 @@ To say ClothingDesc of (C - halloween schoolgirl outfit):
 
 To decide which number is the initial outrage of (C - halloween schoolgirl outfit):
 	decide on 5.
+To decide which number is the front-skirt-length of (C - halloween schoolgirl outfit):
+	decide on 3.
 
 To decide which object is the unique-upgrade-target of (C - halloween schoolgirl outfit):
 	decide on a random off-stage provocative schoolgirl outfit.
@@ -115,7 +119,7 @@ Definition: halloween schoolgirl outfit is red themed: decide yes.
 
 Part 4 - Minimalist Schoolgirl Outfit
 
-minimalist schoolgirl outfit is a schoolgirl outfit. minimalist schoolgirl outfit is low cut. minimalist schoolgirl outfit is super-short. minimalist schoolgirl outfit is belly exposing. minimalist schoolgirl outfit is optional-top-displacable. minimalist schoolgirl outfit is erect-nipple-exposing.
+minimalist schoolgirl outfit is a schoolgirl outfit. minimalist schoolgirl outfit is low cut. The skirt-length of minimalist schoolgirl outfit is 1. minimalist schoolgirl outfit is belly exposing. minimalist schoolgirl outfit is optional-top-displacable. minimalist schoolgirl outfit is erect-nipple-exposing.
 
 The printed name of minimalist schoolgirl outfit is "[clothing-title-before]minimalist schoolgirl outfit[clothing-title-after]". The text-shortcut of minimalist schoolgirl outfit is "mso".
 

@@ -524,12 +524,45 @@ Check seducing:
 Carry out seducing:
 	allocate 5 seconds;
 	now the noun is seduced;
-	set up sex length of the noun in asshole;
-	let BB be the aggro limit of the noun - the favour of the noun;
-	if BB > 0 and BB > the blue-balls of the noun, now the blue-balls of the noun is BB; [The more unfriendly the NPC, the more difficult to placate with seduction]
-	now turns-spent-seducing is 0;
-	if police uniform is worn, say "[bold type]Your police uniform starts playing sexy stripper music![roman type] If you're lucky, perhaps that will help to keep [NameDesc of the noun] entertained for longer.";
-	follow the core seduction rule.
+	let S be a random worn sword;
+	if S is a metal sword and the noun is intelligent:
+		say "[BigNameDesc of the noun] eyes [NameDesc of S] nervously!";
+		if S is loveheart tanto and the class of the player is vixen:
+			say "But then seems to decide that it's not a threat.";
+		otherwise if S is autoremovable or (the class of the player is vixen and S is midnight tanto):
+			say "[speech style of the noun]'Drop the sword.'[roman type][line break]";
+			reset multiple choice questions;
+			set numerical response 1 to "Disarm yourself";
+			set numerical response 2 to "Keep your [ShortDesc of S] in your hand ([he of the noun] won't let you dance for [him of the noun])";
+			if the class of the player is vixen and S is midnight tanto, set numerical response 3 to "You sense that you could transform it into something deceptively harmless instead...";
+			compute multiple choice question;
+			if player-numerical-response is 1:
+				say "You drop [NameDesc of S] onto the ground a safe distance away, and now [NameDesc of the noun] seems happy to let you continue.";
+				now S is in the location of the player;
+			otherwise if player-numerical-response is 2:
+				say "When you refuse, [NameDesc of the noun] decides to keep [his of the noun] distance.";
+				now the noun is seduction-refused;
+			otherwise:
+				say "You flip the tanto in your hand, and as it does, it transforms!";
+				transform S into loveheart tanto;
+				let D be a random worn illusory kimono;
+				if (diaper quest is 1 or there is a worn diaper) and D is not kimono-of-deception:
+					if D is clothing, transform D into kimono-of-deception;
+					class summon kimono-of-deception;
+				otherwise if diaper quest is 0 and D is not kimono-of-distraction:
+					if D is clothing, transform D into kimono-of-distraction;
+					class summon kimono-of-distraction;
+				say "[BigNameDesc of the noun] now smiles as [he of the noun] look at you and your tanto, clearly satisfied that you're no longer a threat.";
+		otherwise:
+			say "[big he of the noun] shakes [his of the noun] head, deciding to keep [his of the noun] distance.";
+			now the noun is seduction-refused;
+	if the noun is seduced:
+		set up sex length of the noun in asshole;
+		let BB be the aggro limit of the noun - the favour of the noun;
+		if BB > 0 and BB > the blue-balls of the noun, now the blue-balls of the noun is BB; [The more unfriendly the NPC, the more difficult to placate with seduction]
+		now turns-spent-seducing is 0;
+		if police uniform is worn, say "[bold type]Your police uniform starts playing sexy stripper music![roman type] If you're lucky, perhaps that will help to keep [NameDesc of the noun] entertained for longer.";
+		follow the core seduction rule.
 Understand "seduce [a monster]", "appease [a monster]", "placate [a monster]" as seducing.
 
 A body part has a number called seductions-performed. [Most body parts can only perform one seduction a turn.]
@@ -541,7 +574,7 @@ This is the core seduction rule:
 			now M is seduced;
 			set up sex length of M in asshole;
 	repeat with M running through seduced monsters:
-		if M is seduced: [This can change if the player tries to escape]
+		if M is seduced: [This can change if the player tries to escape a previous monster in the list]
 			if M is in the location of the player:
 				now groping-person is M;
 				update gropability;
@@ -560,7 +593,15 @@ This is the core seduction rule:
 			if the boredom of M < 470, compute seduction witness reaction of M. [NPCs that just climaxed aren't going to be unimpressed with the player. This 30s window gives them a chance to wander away]
 
 To compute seduction choice of (M - a monster):
-	compute default seduction choice of M.
+	compute default seduction choice of M;
+	if M is intelligent and M is not seduced and M is not seduction-refused and M is not friendly-fucking and there is a worn metal sword and the number of seduced monsters is 0 and the player is not in danger:
+		say "Put your blade against [NameDesc of M][']s throat?";
+		if the player is consenting:
+			let S be a random worn metal sword;
+			say "As [NameDesc of M] is distracted, you slip your [ShortDesc of S] up against [his of M] neck.";
+			if the player is able to speak, say "[variable custom style]'Surprise, sweetie.'[roman type][line break]";
+			say "[BigNameDesc of M] snarls, suddenly completely at your mercy.";
+			compute defeat of M.
 
 To compute default seduction choice of (M - a monster):
 	let succsucc be 0;

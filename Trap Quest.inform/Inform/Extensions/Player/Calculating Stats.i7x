@@ -72,7 +72,6 @@ To decide which number is the flat strength of the player:
 		if N < 4, increase S by 4 - N;
 	if the player is thirsty, decrease S by the thirst of the player - 2;
 	if the player is hungry, decrease S by 2;
-	if the player is fighting against short skirts, decrease S by 4;
 	if the player is craving souls, decrease S by (the soul addiction of the player / 4) + 1;
 	decrease S by the incidents of enema-stat-loss;
 	if the class of the player is cowgirl:
@@ -195,10 +194,12 @@ To decide which number is the flat dexterity of the player:
 	if the silicone volume of breasts > 10 and the class of the player is silicone queen:
 		increase D by 1;
 		if the silicone volume of breasts > 18, increase D by 3;
+	if diaper quest is 1 and the class of the player is cheerleader, increase D by cheerleaderSkirtBonus;
 	if fudge-poison-timer > 0, now D is D / 2;
 	if cookie-poison-timer > 0, decrease D by 2;
 	if irritated-bladder is true, now D is D / 2;
 	if irritated-rectum is true, now D is D / 2;
+	if the player is fighting against short skirts or the player is fighting against skimpy underwear, now D is D / 2;
 	if wasp-honey-timer > 0, decrease D by wasp-honey-timer / 10;
 	if the player is grossed out and D > 5:
 		now D is 5;
@@ -259,7 +260,8 @@ To decide which number is the intelligence of the player:
 
 To decide which number is the flat intelligence of the player:
 	let I be the raw intelligence of the player;
-	if the player is fighting against no-panties, decrease I by 4;
+	if the player is fighting against skimpy underwear, decrease I by 4;
+	if the player is fighting against short skirts, decrease I by 4;
 	if the player is fighting against topless, decrease I by 4;
 	if the class of the player is cowgirl, decrease I by the sensitivity of breasts / 2;
 	if the class of the player is condom collector, increase I by the square root of total pinned condoms;

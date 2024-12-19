@@ -936,8 +936,6 @@ To decide which figure-name is clothing-image of (C - onahole-bra):
 
 Definition: onahole-bra is purple themed: decide yes.
 
-To compute periodic effect of (C - onahole-bra):
-	if the player is not a may 2023 top donator, only destroy C.
 To compute school periodic effect of (C - onahole-bra):
 	compute periodic effect of C.
 

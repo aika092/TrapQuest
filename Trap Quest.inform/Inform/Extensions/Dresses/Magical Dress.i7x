@@ -6,12 +6,18 @@ Definition: a magical dress is class-relevant:
 	if the class of the player is magical girl, decide yes;
 	decide no.
 
-To decide which number is the strength-influence of (O - a magical dress):
+To decide which number is the dexterity-influence of (O - a magical dress):
 	let M be the magic power of the player;
-	if M > 5, decide on 4;
+	if M > 5, decide on 3;
 	if M > 3, decide on 2;
 	if M > 0, decide on 1;
 	decide on 0.
+
+To uniquely set up (C - a magical dress):
+	now C is wizardry.
+
+Report examining a magical dress:
+	say "Magical dresses like this one tend to significantly increase [if the noun is worn]your[otherwise]the wearer's[end if] dexterity, as long as you have a decent amount of mana left available.".
 
 To compute periodic effect of (H - a magical dress): [tentacle monsters grow and pop out almost instantly]
 	if the pregnancy of the player is 1 and the father is tentacle monster, now maximum-pregnancy-delay-tracker is maximum-pregnancy-delay + 1.
@@ -21,7 +27,7 @@ Definition: a magical dress is magic themed: decide yes.
 To decide which number is the initial outrage of (H - a magical dress):
 	decide on 4.
 
-lolita magical dress is a magical dress. lolita magical dress is short. lolita magical dress is low cut. lolita magical dress is top-displacable.
+lolita magical dress is a magical dress. The skirt-length of lolita magical dress is 4. lolita magical dress is low cut. lolita magical dress is top-displacable.
 
 Figure of lolita magical dress is the file "Items/Clothes/Upper/Special/MahouShoujo/magicaldress1.png".
 
@@ -42,7 +48,7 @@ To say ClothingDesc of (O - lolita magical dress):
 Definition: lolita magical dress is white themed: decide yes.
 Definition: lolita magical dress is potentially erection concealing: decide yes. [non-tight skirts conceal erections]
 
-exposing-magical-dress is a magical dress. exposing-magical-dress is arm exposing. exposing-magical-dress is chestless. exposing-magical-dress is belly exposing. exposing-magical-dress is unskirted. Understand "exposing", "magical", "dress" as exposing-magical-dress.
+exposing-magical-dress is a magical dress. exposing-magical-dress is arm exposing. exposing-magical-dress is chestless. exposing-magical-dress is belly exposing. The skirt-length of exposing-magical-dress is 0. Understand "exposing", "magical", "dress" as exposing-magical-dress.
 
 Definition: exposing-magical-dress is class-relevant:
 	if the class of the player is magical girl or the class of the player is catgirl, decide yes;
@@ -78,7 +84,7 @@ To decide which number is the initial outrage of (H - exposing-magical-dress):
 Definition: exposing-magical-dress is nudism-enabling: decide yes.
 Definition: exposing-magical-dress is blue themed: decide yes.
 
-magical-maid-outfit is a magical dress. Understand "magical", "maid", "outfit" as magical-maid-outfit. magical-maid-outfit is fully exposing. magical-maid-outfit is arm exposing. magical-maid-outfit is crotch-intact. magical-maid-outfit is unskirted. magical-maid-outfit has a number called charge. magical-maid-outfit has an object called saved-item.
+magical-maid-outfit is a magical dress. Understand "magical", "maid", "outfit" as magical-maid-outfit. magical-maid-outfit is fully exposing. magical-maid-outfit is arm exposing. magical-maid-outfit is crotch-intact. The skirt-length of magical-maid-outfit is 0. magical-maid-outfit has a number called charge. magical-maid-outfit has an object called saved-item.
 
 Definition: magical-maid-outfit is white themed: decide yes.
 
@@ -115,7 +121,7 @@ To compute periodic effect of (O - magical-maid-outfit):
 				now the saved-item of O is in pink wardrobe;
 			now the saved-item of O is nothing.
 
-anime superheroine top is a magical dress. anime superheroine top is pvc. anime superheroine top is neck covering. anime superheroine top is belly exposing. anime superheroine top is unskirted. anime superheroine top is top-exclusive. anime superheroine top is low cut. anime superheroine top is not-displacable-always-fuckable. anime superheroine top is erect-nipple-exposing. The text-shortcut of anime superheroine top is "aso".
+anime superheroine top is a magical dress. anime superheroine top is pvc. anime superheroine top is neck covering. anime superheroine top is belly exposing. The skirt-length of anime superheroine top is 0. anime superheroine top is top-exclusive. anime superheroine top is low cut. anime superheroine top is not-displacable-always-fuckable. anime superheroine top is erect-nipple-exposing. The text-shortcut of anime superheroine top is "aso".
 
 The printed name of anime superheroine top is "[clothing-title-before]anime superheroine top[clothing-title-after]".
 
@@ -151,7 +157,7 @@ Definition: anime superheroine top is boob themed: decide yes.
 Definition: anime superheroine top is disintegration-protected: decide yes.
 Definition: anime superheroine top is displacable: decide no.
 
-A dark magician girl dress is a kind of magical dress. Understand "dark", "magician", "magician girl" as a dark magician girl dress. A dark magician girl dress is pvc. A dark magician girl dress is unskirted. A dark magician girl dress is crotch-intact. A dark magician girl dress is totally-exclusive. A dark magician girl dress is not-top-displacable.
+A dark magician girl dress is a kind of magical dress. Understand "dark", "magician", "magician girl" as a dark magician girl dress. A dark magician girl dress is pvc. The skirt-length of A dark magician girl dress is 0. A dark magician girl dress is crotch-intact. A dark magician girl dress is totally-exclusive. A dark magician girl dress is not-top-displacable.
 
 To decide which number is the crotch-tightness of (C - a dark magician girl dress):
 	decide on 3.
@@ -236,5 +242,27 @@ To say ClothingDesc of (C - dark-magician-girl-swimsuit):
 
 Definition: dark-magician-girl-swimsuit is swimming themed: decide yes.
 
+
+hex dress is a magical dress. The skirt-length of hex dress is 2. hex dress is top-displacable. hex dress is arm exposing. hex dress is latex.
+The printed name of hex dress is "[clothing-title-before]hex dress[clothing-title-after]".  The text-shortcut of hex dress is "hxd".
+
+Figure of hex dress is the file "Items/Clothes/Upper/Special/MahouShoujo/hexdress1.png".
+
+To decide which figure-name is the clothing-image of (O - hex dress):
+	decide on figure of hex dress.
+
+The printed name of hex dress is "[clothing-title-before]hex dress[clothing-title-after]".
+
+To compute SelfExamineDesc of (O - hex dress):
+	say "[if the top-layer of O > 1 or the mid-layer of O > 1]Over this you[otherwise]You[end if] are wearing a [ShortDesc of O]. ".
+
+To say ShortDesc of (O - hex dress):
+	say "hex dress".
+
+To say ClothingDesc of (O - hex dress):
+	say "A skin-tight purple and white latex dress that has a frilly skirt that is so short, you can barely call it a skirt. It sparkles with an almost magical air.".
+
+Definition: hex dress is white themed: decide yes.
+Definition: hex dress is purple themed: decide yes.
 
 Magical Dress ends here.

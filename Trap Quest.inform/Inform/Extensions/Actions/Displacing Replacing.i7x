@@ -35,7 +35,7 @@ This is the can't displace what isn't displacable rule:
 				otherwise if the noun is knickers:
 					say "The leg holes are much too tight for you to be able to pull this to the side.";
 				otherwise if the noun is skirted:
-					say "That's too [if the noun is short or shorter]short[otherwise]tight[end if] to pull up.";
+					say "That's too [if the noun is ultra-short]short[otherwise]tight[end if] to pull up.";
 				otherwise:
 					say "I'm not sure how you would displace that item of clothing.";
 			rule fails.

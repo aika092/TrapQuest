@@ -59,7 +59,7 @@ Does this completely block vision of asshole when worn?
 +!]
 Definition: a clothing (called C) is potentially asshole covering:
 	if C is actually dense total protection clothing, decide yes;
-	if C is actually dense skirt-covering-crotch clothing, decide yes;
+	if C is actually dense skirt-covering-ass clothing, decide yes;
 	decide no.
 
 [!<ClothingIsPotentiallyAssholeCovering>+
@@ -69,7 +69,7 @@ Does this at least partially block vision of asshole when worn?
 +!]
 Definition: a clothing (called C) is potentially at least partially asshole covering:
 	if C is see-through, decide no;
-	if C is skirt-covering-crotch or C is total protection, decide yes;
+	if C is skirt-partially-covering-ass or C is total protection, decide yes;
 	decide no.
 
 the asshole presentable rules is a rulebook.

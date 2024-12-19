@@ -36,6 +36,9 @@ To teleport to (R - a room):
 		now C is not stuck;
 	repeat with C running through held store things:
 		if vampiress is chain-tethering, end tethering;
+	if the player is in Iron Maiden:
+		repeat with T running through things in Iron Maiden:
+			unless T is the player or T is backdrop, now T is in the location of iron-maiden;
 	repeat with T running through on-stage trophies:
 		if T is held, say "[bold type][BigNameDesc of T] [bold type]is ripped from your hands by an invisible force, and in your mind's eye you can see that it has been taken to the 'Trophy Hall'![roman type][line break]";
 		now T is in School31;

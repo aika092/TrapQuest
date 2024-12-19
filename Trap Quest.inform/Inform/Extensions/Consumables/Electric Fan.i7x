@@ -48,7 +48,7 @@ Carry out fanning:
 	now Neighbour Finder is R;
 	let D be a random N-viable direction;
 	let OD be the opposite-direction of D;
-	if R is smoky:
+	if R is pink-smoky:
 		if the noun is cursed:
 			say "The smoke is blown violently, allowing it to envelop the entire room! Maybe the fan is cursed?";
 			if the player is able to breathe:
@@ -60,7 +60,7 @@ Carry out fanning:
 					arouse 3000;
 		otherwise:
 			say "The pink smoke in this room is dispersed by the fan! You can kneel here safely now.";
-			now R is not smoky;
+			now R is not pink-smoky;
 	check stealing of the noun;
 	let here-monsters be the list of monsters in R;
 	repeat with M running through the list of monsters in R:
@@ -136,7 +136,7 @@ Carry out fanning:
 					WaterEmpty C;
 	otherwise if there is a monster in R:
 		say "It doesn't affect the [list of monsters in the location of the player]!";
-	if the location of the player is R, say "Soon, it apparently runs out of battery and stops working. [if the location of the player is smoky and the noun is cursed]The smoke settles back down to waist height. [end if]You discard the expired fan.";
+	if the location of the player is R, say "Soon, it apparently runs out of battery and stops working. [if the location of the player is pink-smoky and the noun is cursed]The smoke settles back down to waist height. [end if]You discard the expired fan.";
 	destroy the noun.
 
 Understand "turn on [something]", "activate [something]" as fanning.

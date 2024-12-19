@@ -70,6 +70,9 @@ To Set Up The Mansion:
 		if M is monster:
 			set up M;
 			if M is not in a placed haunted room, now M is in a random placed unbossed haunted room;
+	if neuromancer is off-stage:
+		set up neuromancer;
+		now neuromancer is in a random placed unbossed haunted room;
 	if debugmode > 1:
 		say "Setting up monsters complete.";
 		wait 1000 ms before continuing;
@@ -95,8 +98,7 @@ To Set Up The Mansion:
 	let MR be the list of placed haunted rooms;
 	if Mansion32 is listed in MR, remove Mansion32 from MR; [no painting in warp portal room]
 	if Mansion28 is listed in MR, remove Mansion28 from MR; [no painting except heist painting in pedestal room]
-	if diaper quest is 0 and the player is an october 2023 top donator and heist-painting is off-stage, now heist-painting is in Mansion28;
-	if diaper quest is 1 and the player is an october 2023 diaper donator and heist-painting is off-stage, now heist-painting is in Mansion28;
+	if the player is the donator and heist-painting is off-stage, now heist-painting is in Mansion28;
 	let PT be the list of fetish appropriate paintings;
 	if debugmode > 1:
 		say "placed haunted rooms: [MR]. fetish appropriate paintings: [PT].";

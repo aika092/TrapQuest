@@ -9,7 +9,7 @@ To say ExamineDesc of (C - a dildo rocking stool):
 	say "A large wooden dildo is fixed atop a red velvety rocking stool. You put your bum on the stool, and your legs rest on the ground underneath. You could probably have a nice rest on one of these. but there's no way to sit on it without that dildo going up your [if the player is possessing a vagina][vagina][otherwise][asshole][end if].".
 
 The text-shortcut of dildo rocking stool is "drs".
-Figure of dildo rocking stool is the file "Env/Dungeon/stool2.png".
+Figure of dildo rocking stool is the file "Env/Dungeon/stool2.jpg".
 
 To decide which number is the girth of (K - a dildo rocking stool):
 	decide on 5.

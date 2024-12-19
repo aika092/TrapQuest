@@ -1,9 +1,18 @@
 Teachers Ruby by Monster begins here.
 
+condom-lesson is a lesson. condom-lesson has a number called condom-timer.
+Definition: condom-lesson is lesson-appropriate:
+	if the player is a september 2024 top donator and condom fetish >= 2, decide yes;
+	decide no.
+To say LessonTitle of (L - condom-lesson):
+	say "Wearing Used Condoms".
+
 To say MediumDesc of (M - a ruby-teacher):
 	say "ruby teacher [teacher-name of M]".
 
 chess-lesson is a lesson.
+To say LessonTitle of (L - chess-lesson):
+	say "Chess Match".
 chess-lesson has a number called chess-victor.
 chess-lesson has a monster called chess-opponent.
 chess-lesson has a number called lost-pieces.
@@ -27,6 +36,8 @@ eating-lesson is a lesson. The lesson-teacher of eating-lesson is teacher-hannah
 Definition: eating-lesson is lesson-appropriate:
 	if (diaper quest is 0 or diaper messing >= 3) and the player is able to eat, decide yes;
 	decide no.
+To say LessonTitle of (L - eating-lesson):
+	say "Eating Competition".
 
 To compute teaching of (L - eating-lesson):
 	allocate 40 seconds;

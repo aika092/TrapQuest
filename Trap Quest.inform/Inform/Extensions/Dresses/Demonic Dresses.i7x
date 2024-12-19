@@ -1,6 +1,6 @@
 Demonic Dresses by Dresses begins here.
 
-blazing dress is an overdress. blazing dress is unique. blazing dress is short. blazing dress is low cut. blazing dress is latex.
+blazing dress is an overdress. blazing dress is unique. The skirt-length of blazing dress is 4. blazing dress is low cut. blazing dress is latex.
 
 Figure of blazing dress is the file "Items/Clothes/Upper/Dresses/Demonic/blazingdress1.png".
 

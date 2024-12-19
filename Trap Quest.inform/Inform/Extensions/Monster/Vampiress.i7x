@@ -881,7 +881,7 @@ To say DiaperChangeStart of (M - vampiress):
 Definition: vampiress is diaper leaving: decide no.
 
 To say DiaperChangeRemovalFlav of (M - vampiress):
-	say "[BigNameDesc of M] uses [his of M] telekinesis to send the [ShortDesc of current-diaper] sailing away into the distance[if current-diaper is messed knickers]. After indulging [himself of M] with a couple of gleeful deep breaths, [NameDesc of M] snaps [his of M] fingers and your entire body becomes as clean and soft as... a baby's bottom[end if].".
+	say "[BigNameDesc of M] uses [his of M] telekinesis to send the [ShortDesc of current-diaper-change-top-level] sailing away into the distance[if current-diaper-change-top-level is messed knickers]. After indulging [himself of M] with a couple of gleeful deep breaths, [NameDesc of M] snaps [his of M] fingers and your entire body becomes as clean and soft as... a baby's bottom[end if].".
 
 To say DiaperChangeFlav of (M - vampiress):
 	say "Without [him of M] even moving a muscle, you watch as [if old-diaper is new-diaper]an identical (but clean) [ShortDesc of new-diaper][otherwise]a [ShortDesc of new-diaper][end if] appears out of thin air and sails onto your bum and then fixes itself in place.".

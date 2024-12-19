@@ -1,12 +1,12 @@
 All Skirts by Skirts begins here.
 
-A skirt is a kind of clothing. A skirt is usually knee-length. Understand "skirt" as skirt.
+A skirt is a kind of clothing. The skirt-length of a skirt is 5. Understand "skirt" as skirt.
 
 Definition: a skirt is same-type:
 	if theme-share-target is skirt, decide yes;
 	decide no.
 
-A miniskirt is a kind of skirt. A miniskirt is usually short.
+A miniskirt is a kind of skirt. The skirt-length of a miniskirt is 4.
 Definition: a miniskirt is potentially erection concealing: decide yes. [non-tight skirts conceal erections]
 
 To decide which number is the initial outrage of (C - a skirt):
@@ -18,12 +18,13 @@ To set up magic attribute of (S - a skirt):
 	let R be a random number between 1 and 7;
 	if R is 1, now the magic-type of S is confidence;
 	if R is 2, now the magic-type of S is endurance;
-	if R is 3:
-		now the magic-type of S is temptation;
-		if diaper quest is 1, now S is respiration;
-	if R is 4, now the magic-type of S is dressup;
+	if S is discovered negative:
+		if R is 3:
+			now the magic-type of S is temptation;
+			if diaper quest is 1, now S is respiration;
+		if R is 4, now the magic-type of S is dressup;
+		if R is 3, curse S;
 	if R >= 5 and S is super-short or S is actually sheer, now the magic-type of S is protection;
-	if R is 3, curse S;
 	set up rare magic attribute of S.
 
 To restock (C - a skirt):
@@ -45,7 +46,7 @@ Report examining skirts:
 	if newbie tips is 1, say "[one of][newbie style]Skirts [if the noun is super-short or the noun is unskirted](but not this one!) [end if]can sometimes help with your modesty.[roman type][line break][or][stopping]".
 
 Definition: a skirt is displacable:
-	if it is short or longer, decide yes;
+	if the front-skirt-length of it >= 2 or the back-skirt-length of it >= 2, decide yes;
 	decide no.
 
 This is the remove inappropriate skirts rule:
@@ -69,27 +70,13 @@ To say ShortDesc of (S - a skirt):
 To say ShortestDesc of (C - a skirt):
 	say "skirt".
 
-Definition: a clothing (called C) is skirt-covering-crotch: [does it (potentially if dense) protect the visibility of asshole]
-	if C is skirted:
-		if C is super-short or C is crotch-assless, decide no; [tiny skirts don't protect anything]
-		if C is worn: [We only care about these checks if it's already worn; a kneeling player should still be happy to wear a short skirt because it CAN protected them once they stand back up]
-			if the player is prone and C is short, decide no; [short skirts don't protect you unless you're standing.]
-			if C is crotch-displaced or C is crotch-unzipped, decide no; [if it's raised up it is currently not covering stuff]
-		if C is crotch covering and (C is no protection or C is pussy protection), decide no; [ripped hobble skirt, or crotch only]
-		decide yes;
-	decide no.
 
 Definition: a skirt is ingredient: decide yes.
 
 To decide which number is the crafting key of (C - a skirt):
 	decide on 54.
 
-[This is supposed to line up with DQBulk, i.e. if DQBulk is bigger than this, we can see the bottom of your diaper (defaultDiaperCoveringLength). Ideally it also lines up with how many inches of penis it can hide (penis-capacity is 1 + skirtLength*2).]
-To decide which number is the skirtLength of (C - a clothing):
-	if C is super-short or C is unskirted or C is crotch-displaced or C is crotch-unzipped or C is crotch-ripped, decide on -1;
-	if C is short, decide on 1;
-	[if C is knee-length, decide on 7;]
-	decide on 8.
+
 To decide which number is the default-soak-limit of (C - a skirt):
 	if C is super-short:
 		decide on 4;
@@ -173,6 +160,37 @@ Definition: chequered skirt is white themed: decide yes.
 
 To decide which number is the diaperCoveringLength of (C - chequered skirt): decide on 7. [DQBulk 8 or higher makes the skirt ride up too high, exposing the diaper]
 
+floral skirt is a skirt. Printed name of floral skirt is "[clothing-title-before]floral skirt[clothing-title-after]". The text-shortcut of floral skirt is "fls". The skirt-length of floral skirt is 9. floral skirt is crotch-skirted.
+
+Figure of floral skirt is the file "Items/Clothes/Lower/Skirts/skirt4.png".
+
+To decide which figure-name is clothing-image of (C - floral skirt):
+	decide on figure of floral skirt.
+
+To say ClothingDesc of (C - floral skirt):
+	say "This ankle length blue-and-white floral patterned skirt is clings tightly to your thighs, making it very challenging to move around freely.".
+
+To decide which number is the defaultDiaperCoveringLength of (C - floral skirt):
+	decide on 7.
+
+To say ShortDesc of (C - floral skirt):
+	say "floral skirt".
+
+Definition: floral skirt is blue themed: decide yes.
+Definition: floral skirt is flower themed: decide yes.
+
+To decide which number is the initial outrage of (C - floral skirt):
+	decide on 1.
+
+To decide which number is the adult-influence of (C - floral skirt):
+	decide on 2.
+
+To restock (C - floral skirt):
+	do nothing.
+
+To set up influence of (C - floral skirt):
+	do nothing.
+
 flowing skirt is a skirt. Figure of flowing skirt is the file "Items/Clothes/Lower/Skirts/skirt1.png". The printed name of flowing skirt is "[clothing-title-before]flowing white skirt[clothing-title-after]". The text-shortcut of flowing skirt is "fws". Understand "white" as flowing skirt.
 
 To decide which figure-name is clothing-image of (C - flowing skirt):
@@ -212,6 +230,7 @@ To say ShortDesc of (Y - full zip skirt):
 	say "full zip white skirt".
 
 Definition: full zip skirt is displacable: decide no.
+Definition: full zip skirt is hobble-skirted: decide yes.
 Definition: full zip skirt is white themed: decide yes.
 
 To decide which number is the initial outrage of (C - full zip skirt):
@@ -295,7 +314,7 @@ To decide which number is the humiliation-influence of (O - avatar-silks):
 	increase B by the magic-modifier of O;
 	decide on B.
 
-black-rubber-hobble-skirt is a skirt. Printed name of black-rubber-hobble-skirt is "[clothing-title-before]tight black latex skirt[clothing-title-after]". The text-shortcut of black-rubber-hobble-skirt is "tbls". black-rubber-hobble-skirt is latex. black-rubber-hobble-skirt is hobble-skirted. black-rubber-hobble-skirt is crotch-skirted. Understand "tight" as black-rubber-hobble-skirt.
+black-rubber-hobble-skirt is a skirt. Printed name of black-rubber-hobble-skirt is "[clothing-title-before]tight black latex skirt[clothing-title-after]". The text-shortcut of black-rubber-hobble-skirt is "tbls". black-rubber-hobble-skirt is latex. The skirt-length of black-rubber-hobble-skirt is 9. black-rubber-hobble-skirt is crotch-skirted. Understand "tight" as black-rubber-hobble-skirt.
 
 Figure of black-rubber-hobble-skirt is the file "Items/Clothes/Lower/Skirts/Latex/latexhobbleskirt2.png".
 
@@ -321,7 +340,7 @@ To restock (C - black-rubber-hobble-skirt):
 To set up influence of (C - black-rubber-hobble-skirt):
 	do nothing.
 
-blue rubber hobble skirt is a skirt. Printed name of blue rubber hobble skirt is "[clothing-title-before]blue latex hobble skirt[clothing-title-after]". The text-shortcut of blue rubber hobble skirt is "lxhs". blue rubber hobble skirt is latex. blue rubber hobble skirt is hobble-skirted. blue rubber hobble skirt is crotch-skirted.
+blue rubber hobble skirt is a skirt. Printed name of blue rubber hobble skirt is "[clothing-title-before]blue latex hobble skirt[clothing-title-after]". The text-shortcut of blue rubber hobble skirt is "lxhs". blue rubber hobble skirt is latex. The skirt-length of blue rubber hobble skirt is 9. blue rubber hobble skirt is crotch-skirted.
 
 Figure of blue rubber hobble skirt is the file "Items/Clothes/Lower/Skirts/Latex/latexhobbleskirt1.png".
 
@@ -371,7 +390,7 @@ To decide which object is the unique-upgrade-target of (C - a longer rubber skir
 
 Part 2 - Shorter Rubber Skirt
 
-A shorter-rubber-skirt is a kind of rubber-skirt. A shorter-rubber-skirt is usually short. A shorter-rubber-skirt is usually transformation-rare. Understand "short" as shorter-rubber-skirt.
+A shorter-rubber-skirt is a kind of rubber-skirt. The skirt-length of a shorter-rubber-skirt is 3. A shorter-rubber-skirt is usually transformation-rare. Understand "short" as shorter-rubber-skirt.
 
 To decide which number is the initial outrage of (C - a shorter-rubber-skirt):
 	decide on 4.
@@ -400,7 +419,7 @@ To say ShortDesc of (Y - a pink rubber miniskirt):
 Definition: a pink rubber miniskirt is pink themed: decide yes.
 Definition: a pink rubber miniskirt is black themed: decide no.
 
-A microskirt is a kind of skirt. A microskirt is usually super-short. A microskirt is usually transformation-rare.
+A microskirt is a kind of skirt. The skirt-length of a microskirt is 1.  A microskirt is usually transformation-rare.
 
 Understand "micro" as a microskirt.
 
@@ -541,7 +560,7 @@ Definition: naughty-skirt is potentially vagina covering: decide no. [ass window
 Definition: naughty-skirt is potentially asshole covering: decide no.
 Definition: naughty-skirt is potentially-bottom-layer-concealing: decide no. [partially exposing]
 
-office skirt is a skirt. Printed name of office skirt is "[clothing-title-before]office skirt[clothing-title-after]". The text-shortcut of office skirt is "os". office skirt is nylon. office skirt is hobble-skirted. office skirt is crotch-skirted.
+office skirt is a skirt. Printed name of office skirt is "[clothing-title-before]office skirt[clothing-title-after]". The text-shortcut of office skirt is "os". office skirt is nylon. The skirt-length of office skirt is 9. office skirt is crotch-skirted.
 
 Figure of office skirt is the file "Items/Clothes/Lower/Skirts/officeskirt1.png".
 
@@ -551,7 +570,7 @@ To decide which figure-name is clothing-image of (C - office skirt):
 To say ClothingDesc of (C - office skirt):
 	say "This ankle length skirt is made of form-fitting black fabric. It clings tightly to your thighs, making it very challenging to move around freely.".
 
-To decide which number is the skirtLength of (C - office skirt):
+To decide which number is the defaultDiaperCoveringLength of (C - office skirt):
 	decide on 7.
 
 To say ShortDesc of (C - office skirt):
@@ -571,7 +590,7 @@ To restock (C - office skirt):
 To set up influence of (C - office skirt):
 	do nothing.
 
-A punishment skirt is a kind of skirt. A punishment skirt is usually latex. A punishment skirt is usually hobble-skirted. A punishment skirt is usually crotch-skirted. A punishment skirt is transformation-rare. A punishment skirt is usually butt-windowed. A punishment skirt is usually crotch-assless.
+A punishment skirt is a kind of skirt. A punishment skirt is usually latex. The skirt-length of a punishment skirt is 9. A punishment skirt is usually crotch-skirted. A punishment skirt is transformation-rare. A punishment skirt is usually butt-windowed. A punishment skirt is usually crotch-assless.
 
 To say ShortDesc of (Y - a punishment skirt):
 	say "punishment skirt".
@@ -625,7 +644,7 @@ To say MediumDesc of (Y - assless skirt):
 	say "assless latex skirt".
 
 
-A sequins belt is a kind of skirt. A sequins belt is usually sheer. A sequins belt is short. Figure of sequins belt is the file "Items/Clothes/Lower/Waist/Belts/belt1.png". There is 1 transformation-rare plastic sequins belt. The printed name of sequins belt is "[clothing-title-before]sequins belt[clothing-title-after]". The text-shortcut of sequins belt is "seq".
+A sequins belt is a kind of skirt. A sequins belt is usually sheer. The skirt-length of A sequins belt is 4. Figure of sequins belt is the file "Items/Clothes/Lower/Waist/Belts/belt1.png". There is 1 transformation-rare plastic sequins belt. The printed name of sequins belt is "[clothing-title-before]sequins belt[clothing-title-after]". The text-shortcut of sequins belt is "seq".
 
 To decide which figure-name is clothing-image of (C - a sequins belt):
 	decide on figure of sequins belt.
@@ -752,7 +771,7 @@ The orgasm drops cupcakes rule is listed last in the orgasm fatigue effects rule
 To decide which object is the concealer of (C - skirt-tray-vibrator): decide on nothing.
 To decide which object is the at least partial concealer of (C - skirt-tray-vibrator): decide on nothing.
 
-grope-me-skirt is a skirt. grope-me-skirt is unique. grope-me-skirt is short. The printed name of grope-me-skirt is "[clothing-title-before]'PLEASE GROPE MY TITS' skirt[clothing-title-after]". The text-shortcut of grope-me-skirt is "gms". Figure of grope-me-skirt is the file "Items/Clothes/Lower/Skirts/gropemeskirt1.png". Understand "please", "grope", "my tits" as grope-me-skirt.
+grope-me-skirt is a skirt. grope-me-skirt is unique. The skirt-length of grope-me-skirt is 4. The printed name of grope-me-skirt is "[clothing-title-before]'PLEASE GROPE MY TITS' skirt[clothing-title-after]". The text-shortcut of grope-me-skirt is "gms". Figure of grope-me-skirt is the file "Items/Clothes/Lower/Skirts/gropemeskirt1.png". Understand "please", "grope", "my tits" as grope-me-skirt.
 To decide which figure-name is clothing-image of (H - grope-me-skirt):
 	decide on figure of grope-me-skirt.
 
@@ -763,6 +782,9 @@ To decide which number is the initial outrage of (C - grope-me-skirt):
 	decide on 9.
 
 open-front-skirt is a skirt. open-front-skirt is unique. The printed name of open-front-skirt is "[clothing-title-before]open front skirt[clothing-title-after]". The text-shortcut of open-front-skirt is "ofs". Understand "open", "front" as open-front-skirt.
+The skirt-length of open-front-skirt is 4.
+To decide which number is the front-skirt-length of (C - open-front-skirt):
+	decide on 1.
 Figure of open-front-skirt female is the file "Items/Clothes/Lower/Skirts/openfrontskirt1.jpg".
 Figure of open-front-skirt male is the file "Items/Clothes/Lower/Skirts/openfrontskirt2.jpg".
 Figure of open-front-skirt diaper is the file "Items/Clothes/Lower/Skirts/openfrontskirt3.jpg".
@@ -783,6 +805,9 @@ Definition: open-front-skirt is layer-concealing:
 Definition: open-front-skirt is skirt-covering-crotch:
 	if girlfriend-partner is snogged, decide yes;
 	decide no.
+Definition: open-front-skirt is skirt-partially-covering-crotch:
+	if girlfriend-partner is snogged, decide yes;
+	decide no.
 Definition: open-front-skirt is potentially penis covering:
 	if girlfriend-partner is snogged, decide yes;
 	decide no.
@@ -795,6 +820,9 @@ Definition: open-front-skirt is potentially erection concealing:
 
 sheer-open-front-skirt is a skirt. sheer-open-front-skirt is unique. sheer-open-front-skirt is sheer. The printed name of sheer-open-front-skirt is "[clothing-title-before]sheer open front skirt[clothing-title-after]". The text-shortcut of sheer-open-front-skirt is "sofs". Understand "sheer", "open", "front" as sheer-open-front-skirt.
 Figure of sheer-open-front-skirt is the file "Items/Clothes/Lower/Skirts/openfrontskirt4.png".
+The skirt-length of sheer-open-front-skirt is 8.
+To decide which number is the front-skirt-length of (C - sheer-open-front-skirt):
+	decide on 1.
 To decide which figure-name is clothing-image of (H - sheer-open-front-skirt):
 	decide on figure of sheer-open-front-skirt.
 
@@ -833,7 +861,7 @@ To say MediumDesc of (C - window-skirt):
 To say ClothingDesc of (C - window-skirt):
 	say "A black latex skirt, with a patterned sheer window section in the middle, to somewhat expose your crotch and butt.".
 
-flight-attendant-skirt is a skirt. flight-attendant-skirt is unique. flight-attendant-skirt is nylon. flight-attendant-skirt is short. The printed name of flight-attendant-skirt is "[clothing-title-before]flight attendant skirt[clothing-title-after]". The text-shortcut of flight-attendant-skirt is "fas". Understand "flight", "attendant" as flight-attendant-skirt.
+flight-attendant-skirt is a skirt. flight-attendant-skirt is unique. flight-attendant-skirt is nylon. The skirt-length of flight-attendant-skirt is 3. The printed name of flight-attendant-skirt is "[clothing-title-before]flight attendant skirt[clothing-title-after]". The text-shortcut of flight-attendant-skirt is "fas". Understand "flight", "attendant" as flight-attendant-skirt.
 Figure of flight-attendant-skirt is the file "Items/Clothes/Lower/Skirts/flightattendant1.png".
 To decide which figure-name is clothing-image of (H - flight-attendant-skirt):
 	decide on figure of flight-attendant-skirt.
@@ -852,8 +880,11 @@ To say MediumDesc of (C - flight-attendant-skirt):
 To say ClothingDesc of (C - flight-attendant-skirt):
 	say "A short blue flight attendant's skirt, with yellow laces all the way down at each side, exposing some hip. Its magical power will allow the wearer to knee and kick enemies without suffering any damage penalties from being almost weightless.".
 
+To compute class set up of (C - flight-attendant-skirt):
+	now C is augmentation.
 
-queen-of-spades-skirt is a skirt. queen-of-spades-skirt is unique. queen-of-spades-skirt is silk. queen-of-spades-skirt is short. The printed name of queen-of-spades-skirt is "[clothing-title-before]queen of spades skirt[clothing-title-after]". The text-shortcut of queen-of-spades-skirt is "qss". Understand "queen", "of spades", "spades" as queen-of-spades-skirt.
+
+queen-of-spades-skirt is a skirt. queen-of-spades-skirt is unique. queen-of-spades-skirt is silk. The skirt-length of queen-of-spades-skirt is 4. The printed name of queen-of-spades-skirt is "[clothing-title-before]queen of spades skirt[clothing-title-after]". The text-shortcut of queen-of-spades-skirt is "qss". Understand "queen", "of spades", "spades" as queen-of-spades-skirt.
 Figure of queen-of-spades-skirt is the file "Items/Clothes/Lower/Skirts/queenofspades1.png".
 To decide which figure-name is clothing-image of (H - queen-of-spades-skirt):
 	decide on figure of queen-of-spades-skirt.
@@ -882,7 +913,7 @@ To compute class set up of (C - queen-of-spades-skirt):
 	now C is luck-influencing;
 	now the raw-magic-modifier of C is 3.
 
-milkmaid-apron-skirt is a skirt. milkmaid-apron-skirt is unique. milkmaid-apron-skirt is polyester. milkmaid-apron-skirt is knee-length. The printed name of milkmaid-apron-skirt is "[clothing-title-before]milkmaid apron skirt[clothing-title-after]". The text-shortcut of milkmaid-apron-skirt is "mmas". Understand "milkmaid", "apron" as milkmaid-apron-skirt.
+milkmaid-apron-skirt is a skirt. milkmaid-apron-skirt is unique. milkmaid-apron-skirt is polyester. The skirt-length of milkmaid-apron-skirt is 6. The printed name of milkmaid-apron-skirt is "[clothing-title-before]milkmaid apron skirt[clothing-title-after]". The text-shortcut of milkmaid-apron-skirt is "mmas". Understand "milkmaid", "apron" as milkmaid-apron-skirt.
 Figure of milkmaid-apron-skirt is the file "Items/Clothes/Lower/Skirts/apron1.png".
 To decide which figure-name is clothing-image of (H - milkmaid-apron-skirt):
 	decide on figure of milkmaid-apron-skirt.
@@ -904,5 +935,28 @@ To compute class set up of (C - milkmaid-apron-skirt):
 	now C is absorption;
 	now C is titfuck-addiction-influencing;
 	now the raw-magic-modifier of C is 2.
+
+babydoll-skirt is a skirt. babydoll-skirt is transformation-rare. The skirt-length of babydoll-skirt is 4. The printed name of babydoll-skirt is "[clothing-title-before]babydoll skirt[clothing-title-after]". The text-shortcut of babydoll-skirt is "bbds". Understand "babydoll", "babydoll skirt" as babydoll-skirt.
+
+Figure of babydoll-skirt is the file "Items/Clothes/Lower/Skirts/babydoll1.png".
+To decide which figure-name is clothing-image of (H - babydoll-skirt):
+	decide on figure of babydoll-skirt.
+
+Definition: babydoll-skirt is pink themed: decide yes.
+Definition: babydoll-skirt is baby themed: decide yes.
+Definition: babydoll-skirt is fetish appropriate:
+	if diaper lover > 0, decide yes;
+	decide no.
+
+To decide which number is the defaultDiaperCoveringLength of (H - babydoll-skirt):
+	decide on 4.
+To decide which number is the initial cringe of (H - babydoll-skirt):
+	decide on 6.
+
+To say MediumDesc of (C - babydoll-skirt):
+	say "babydoll skirt".
+To say ClothingDesc of (C - babydoll-skirt):
+	say "A short pink skirt that sits high and wide at all times, with a humiliating pattern of teddy bears, sippy cups, bibs, pacifiers and more.".
+
 
 All Skirts ends here.

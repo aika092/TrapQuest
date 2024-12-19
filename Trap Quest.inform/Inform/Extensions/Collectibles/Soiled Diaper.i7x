@@ -42,6 +42,7 @@ turnsWithSoiledDiaper is a number that varies.
 messySmellSource is an object that varies.
 This is the soiled diapers smell gross rule:
 	now messySmellSource is a random carried messed knickers;
+	if messySmellSource is nothing and diaper messing >= 6 and diaper quest is 1 and the woman-status of woman-player is 98 and woman-player is in the location of the player, now messySmellSource is woman-player;
 	if messySmellSource is nothing and diaper messing >= 6, now messySmellSource is a random carried soiled-diaper;
 	if messySmellSource is nothing and diaper messing >= 6 and trashcan is worn and the diaper-fill of trashcan > 1, now messySmellSource is trashcan;
 	if messySmellSource is nothing, now messySmellSource is a random messy monster in the location of the player;
@@ -50,6 +51,7 @@ This is the soiled diapers smell gross rule:
 	if messySmellSource is nothing and woman-player is in the location of the player and the woman-status of woman-player is 81, now messySmellSource is woman-player;
 	if messySmellSource is nothing and the hole-in-wall-scene of woman-player > 0 and woman-player is in HoleInWall and hole-in-wall is in the location of the player, now messySmellSource is hole-in-wall;
 	if messySmellSource is a thing and the player is air breathing vulnerable:
+		focus-consider messySmellSource;
 		if turnsWithSoiledDiaper < 100:
 			increase turnsWithSoiledDiaper by 1;
 			if the remainder after dividing turnsWithSoiledDiaper by 8 is 1, SmellGrossOut messyDiaperSmellGrossnessLevel;

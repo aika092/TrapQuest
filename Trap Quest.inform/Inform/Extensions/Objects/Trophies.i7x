@@ -17,6 +17,11 @@ To update background colour of (T - a trophy):
 	if the trophy-mode of T > 0, now the backgroundColour of T is lightModeFullGreen; [normal green]
 	otherwise now the backgroundColour of T is 16720896. [scarlet - off]
 
+This is the trophies always get focused rule:
+	repeat with T running through held trophy:
+		focus-consider T.
+The trophies always get focused rule is listed in the focus finding rules.
+
 A trophy has a number called trophy-mode.
 
 Definition: a trophy is necessary-in-bag: decide no. [Things that are not necessary-in-bag don't take up an item slot when the player has no bag.]
@@ -222,7 +227,7 @@ To decide which figure-name is the examine-image of (C - magic-trophy):
 
 To say ExamineDesc of (T - magic-trophy):
 	say "This trophy is in the shape of a vibrating magic wand. It is surrounded by a mystical ";
-	if the trophy-mode of T is 1, say "green glow, and you can feel that casting magic spells depletes your magic power much more slowly, but also every time you cast a spell, your [if egg laying fetish is 1]womb[otherwise]belly[end if] will be filled with [if egg laying fetish is 1]eggs[otherwise if watersports fetish is 1][urine][otherwise if diaper quest is 1]water[otherwise][semen][end if]!";
+	if the trophy-mode of T is 1, say "green glow, and you can feel that casting magic spells depletes your magic power much more slowly, but also every time you cast a spell, your [if egg laying fetish is 1]womb[otherwise if enema fetish is 0]stomach[otherwise]belly[end if] will be filled with [if egg laying fetish is 1]eggs[otherwise if enema fetish is 0]water[otherwise if watersports fetish is 1][urine][otherwise if diaper quest is 1]water[otherwise][semen][end if]!";
 	otherwise say "red glow, which allows you to sense that its magical powers to make magic spells cost less magic power but summon stuff inside your belly are inactive.".
 A magic consequences rule (this is the trophy magic consequence rule):
 	if the trophy-mode of magic-trophy is 1:
@@ -240,6 +245,9 @@ A magic consequences rule (this is the trophy magic consequence rule):
 				if the number of egg-fathering things penetrating asshole is 0:
 					if mythical creatures fetish is 1 and buzzing giant wasp is not listed in the medium-egg-origins of vagina, add buzzing giant wasp to the medium-egg-origins of vagina;
 					otherwise add the throne to the medium-egg-origins of vagina;
+			otherwise if enema fetish is 0:
+				say "some water appear inside your stomach!";
+				StomachUp 1;
 			otherwise if a random number between 0 and watersports fetish is 1:
 				say "some [urine] appear inside your belly!";
 				AssFill 2 urine;

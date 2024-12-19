@@ -55,12 +55,12 @@ Understand "offer [something] to [something]", "trade [something] with [somethin
 
 To say OfferFlav of (T - a thing):
 	if the player is able to speak:
-		say "[variable custom style][if the owner of the noun is the second noun]'Here, you can have it back!'[otherwise if the second noun is unfriendly]'Please, take this instead!'[otherwise][FriendlyOfferFlav of T][end if][roman type][line break]";
+		say "[variable custom style][if the owner of the noun is the second noun]'Here, you can have it back!'[otherwise if the second noun is unfriendly]'Please, take this instead!'[otherwise][FriendlyOfferFlav of T to the second noun][end if][roman type][line break]";
 	otherwise if the player is able to make sounds:
 		say "[variable custom style][muffled sounds][roman type][line break]";
 	otherwise:
 		say "You hold the item up to the [second noun].".
-To say FriendlyOfferFlav of (T - a thing):
+To say FriendlyOfferFlav of (T - a thing) to (M - a monster):
 	say "'Would you be interested in this?'".
 
 Part - Monsters Reaction

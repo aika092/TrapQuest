@@ -257,6 +257,7 @@ Definition: yourself is magically horny: [Player gets horny even if grossed out]
 	if the player is in School34 or the player is in School13 or the player is in School21 or the player is in a nonstandard room, decide yes; [School dungeon room, school detention room, hot tub, iron maiden]
 	if there is a rocking horse grabbing the player, decide yes;
 	if diaper quest is 1:
+		if there is a dildo trap grabbing the player, decide yes;
 		if there is a vine grabbing the player, decide yes;
 		if the class of the player is priestess, decide yes;
 	decide no.

@@ -48,6 +48,8 @@ To say EnslavedDominationFlav of (M - teacher-hannah):
 	say "You hold [NameDesc of M][']s wrists and force them down to the ground in front of [him of M]. This causes [his of M] magic enchanted paddle to spring to life, attacking [him of M] with powerful spanks from every direction. You laugh as [he of M] squeals and screams through [his of M] gag. Once you are satisfied, you release [his of M] wrist and [he of M] immediately adopts the correct position to cause the paddle to once again peacefully drop to the ground in front of [him of M], watching and waiting patiently for the next transgression.".
 
 pain-lesson is a lesson. The lesson-teacher of pain-lesson is teacher-hannah.
+To say LessonTitle of (L - pain-lesson):
+	say "Pain and Submission".
 To decide which number is the min-students of (L - pain-lesson):
 	if the player is wrist bound or the player is ankle bound or portal gag is worn, decide on 0;
 	decide on 1.
@@ -213,6 +215,9 @@ To say ClitPiercingConcede of (M - an innocent student):
 	say "Moments later [NameDesc of M] steps forward, releasing you both from the clitoral torment. [big he of M] shakes [his of M] arms in a panicked fashion.[line break][speech style of M]'No no no, this is just too crazy!'[roman type][line break]".
 
 toy-lesson is a lesson. The lesson-teacher of toy-lesson is teacher-hannah.
+
+To say LessonTitle of (L - toy-lesson):
+	say "Butt Plugs".
 
 Definition: toy-lesson is lesson-appropriate:
 	let CM be current-monster;
@@ -441,6 +446,7 @@ teacher-bianca is an emerald-teacher.
 The text-shortcut of teacher-bianca is "tebi".
 
 Figure of bianca is the file "NPCs/School/Teacher/teacher3a.png".
+Figure of bianca goblet is the file "NPCs/School/Teacher/teacher3d.jpg".
 
 To decide which figure-name is the monster-image of (M - teacher-bianca):
 	if M is defeated, decide on figure of bianca defeated;
@@ -510,6 +516,9 @@ To decide which number is the EnslavedDominationThreshold of (M - teacher-bianca
 
 dress-lesson is a lesson. The lesson-teacher of dress-lesson is teacher-bianca.
 
+To say LessonTitle of (L - dress-lesson):
+	say "Upskirts".
+
 To decide which number is the min-students of (L - dress-lesson):
 	decide on 0.
 
@@ -570,10 +579,10 @@ To compute teaching of (L - dress-lesson):
 			if there is worn messed knickers, increase bendOverDifficulty by 8000;
 			if there is worn wet knickers, increase bendOverDifficulty by 4000;
 			if the number of worn dense total protection knickers is 0, increase bendOverDifficulty by 8000;
-			if short skirts permanent fetish is 0 and the humiliation of the player < bendOverDifficulty:
+			if (short skirts permanent fetish is 0 or short skirts permanent fetish > 4) and the humiliation of the player < bendOverDifficulty:
 				say "You try your best, but as your back goes down and your butt becomes exposed to the class, you lose your nerve. This is too weird and embarrassing, to have all this attention on you as your [if the number of worn dense total protection knickers is 0]private parts become[otherwise]underwear becomes[end if] exposed! You can't bring yourself to go through with it, and end up bending your knees and quickly picking up the chalk the 'normal' way. Your cheeks flush red in shame, but you're not even sure if you feel most ashamed about the fact that you didn't manage to complete the task, or the fact that you almost did.[line break][speech style of M]'Very disappointing. Why volunteer when you're CLEARLY not ready to go through with this yet?! Well, [boy of the player], if you're so desperate to be done with this class, then I can make that happen. You should just be careful what you've wished for...'[roman type][line break][big he of M] shoves a hand up your skirt and grips a butt cheek, beginning to knead it like dough. You yelp in surprise [if the player is feeling dominant]and then grind your teeth with anger[otherwise]but don't dare move away from [him of M][end if]. You feel a bizarre, almost magical warmth emitting from [his of M] hands, and then a weird shiver overcomes your entire body.";
 				MagicPowerUp 2;
-				increase short skirts permanent fetish by 1;
+				now short skirts permanent fetish is 4;
 				say "After it's finished, you blink a couple of times and look down at your skirt, realising that you do indeed now feel [if the player is fighting against short skirts]desperate to pull up or remove[otherwise]strangely at home in[end if] your [ShortDesc of C]. The idea of wearing a normal skirt suddenly feels just... wrong. You look at [NameDesc of M] quizzically, and [he of M] just smirks back.[line break][speech style of M]'Yes, I see your new [']preference['] has taken its proper hold. In that case, there is nothing more I need to teach you.'[roman type][line break]";
 				now armband is ruby;
 				say "You watch as the ID card inside your armband transforms!";
@@ -611,6 +620,9 @@ To compute teaching of (L - dress-lesson):
 
 drink-lesson is a lesson. The lesson-teacher of drink-lesson is teacher-bianca.
 
+To say LessonTitle of (L - drink-lesson):
+	say "Unique Tastes".
+
 To decide which number is the min-students of (L - drink-lesson):
 	decide on 0.
 
@@ -621,6 +633,8 @@ Definition: drink-lesson (called L) is lesson-appropriate:
 
 To compute teaching of (L - drink-lesson):
 	let M be the lesson-teacher of L;
+	now temporaryYesNoBackground is Figure of bianca goblet;
+	now temporaryYesNoResetNeeded is false;
 	say "[speech style of M]'Today's lesson is on becoming accustomed to unique tastes.'[roman type][line break][BigNameDesc of M] produces a large wooden goblet with intricate runes engraved into a golden rim. Inside the goblet is... ";
 	let LQ be semen;
 	if watersports fetish is 1 and a random number between 1 and 2 is 1:
@@ -652,7 +666,7 @@ To compute teaching of (L - drink-lesson):
 			say "Do you take a mouthful? ";
 			if the player is bimbo consenting:
 				FaceFill LQ by 4;
-				say "You take a big long sip of the strong-smelling [variable LQ], and now have a [MouthfulDesc]. [BigNameDesc of M] smiles and nodes at you.";
+				say "You take a big long sip of the strong-smelling [variable LQ], and now have a [MouthfulDesc]. [BigNameDesc of M] smiles and nods at you.";
 				now armband is ruby;
 				say "You watch as the ID card inside your armband transforms!";
 				now the armband-title of armband is the substituted form of "[if LQ is urine]Emilia[otherwise if LQ is milk]Bobbi[otherwise]Connie[end if]";
@@ -666,6 +680,8 @@ To compute teaching of (L - drink-lesson):
 			let W be a random nonstalking wisp;
 			silently set up W;
 			now the wisp-quest of W is a random appropriate eligible wisp quest;
+			while the wisp-quest of W is drink-milk-wisp-quest or the wisp-quest of W is drink-urine-wisp-quest:
+				now the wisp-quest of W is a random appropriate eligible wisp quest;
 			now the wisp-trigger of W is lose-mouthful-wisp-trigger;
 			now the wisp-punishment of W is bimbo-wisp-punishment;
 			if (a random number between 0 and 1) + (a random number between 0 and 1) < game difficulty, now the wisp-punishment of W is a random appropriate wisp punishment;

@@ -1,6 +1,6 @@
 Basque by Dresses begins here.
 
-A basque is a kind of overdress. A basque is usually crotch-intact. A basque is usually bottom-exclusive. A basque is usually unskirted. A basque is usually nylon. A basque is usually fully covering. A basque is usually top-displacable. Understand "basque" as a basque.
+A basque is a kind of overdress. A basque is usually crotch-intact. A basque is usually bottom-exclusive. The skirt-length of A basque is 0. A basque is usually nylon. A basque is usually fully covering. A basque is usually top-displacable. Understand "basque" as a basque.
 
 To decide which number is the initial outrage of (C - a basque):
 	decide on 2.

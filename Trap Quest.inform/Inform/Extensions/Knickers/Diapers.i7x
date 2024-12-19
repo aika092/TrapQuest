@@ -627,8 +627,9 @@ Chapter 26 Ghost Diaper
 
 ghost-diaper is a disposable diaper. ghost-diaper is top-exclusive. ghost-diaper is unique. Understand "ghost", "diaper" as ghost-diaper. The text-shortcut of ghost-diaper is "gstd".
 
+Figure of ghost diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper26.png".
 To decide which figure-name is clothing-image of (C - ghost-diaper):
-	decide on figure of ghost 6.
+	decide on figure of ghost diaper.
 
 To say ClothingDesc of (C - ghost-diaper):
 	say "This magical being attacked you in the mansion and decided to force you to wear [him of jismbodied ghost]. Or is [he of jismbodied ghost] wearing you?".
@@ -649,5 +650,35 @@ To compute unique periodic effect of (C - ghost-diaper):
 		only destroy C.
 
 The DQFigure of ghost-diaper is usually DQVelcro.
+
+Chapter 27 Slime Diaper
+
+slime-diaper is a disposable diaper. slime-diaper is top-exclusive. slime-diaper is unique. Understand "slime", "diaper" as slime-diaper. The text-shortcut of slime-diaper is "sld".
+
+Figure of slime diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper27.png".
+To decide which figure-name is clothing-image of (C - slime-diaper):
+	decide on figure of slime diaper.
+
+To say ClothingDesc of (C - slime-diaper):
+	say "This thick, waddle-forcing diaper has normal padding in the inside, but some sort of magical slime on the outside, preventing you from wearing other clothes on top, or removing it!".
+
+To say selfexamineuniquetitle of (K - slime-diaper):
+	say "slime diaper".
+To say ShortDesc of (K - slime-diaper):
+	say "slime diaper".
+
+Definition: slime-diaper is removal-blocking:
+	if wearing-target is slime-diaper, decide yes;
+	decide no. [It prevents itself from being removed]
+
+To compute unique periodic effect of (C - slime-diaper):
+	if the total-soak of C >= the soak-limit of C:
+		say "[BigNameDesc of C], now fully saturated, begins to melt away! Within moments, it has completely disappeared!";
+		only destroy C.
+
+The DQFigure of slime-diaper is usually DQMoosive.
+
+
+
 
 Diapers ends here.

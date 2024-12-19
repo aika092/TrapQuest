@@ -112,9 +112,13 @@ To compute unique recycling of (C - a pink scrunchie):
 	if the class of the player is not cheerleader, now the cheer-greets of greet-quest is 0.
 
 To compute class outfit of (H - a pink scrunchie):
-	class summon longsleeved cheerleader outfit;
-	if the class of the player is condom collector, class summon condom-pom-pom;
-	otherwise class summon purple-pom-pom.
+	if diaper quest is 1:
+		class summon nursery smock;
+		class summon bunny socks;
+	otherwise:
+		class summon longsleeved cheerleader outfit;
+		if the class of the player is condom collector, class summon condom-pom-pom;
+		otherwise class summon purple-pom-pom.
 
 Chapter - Quest
 
@@ -123,7 +127,8 @@ greet-quest is a headgear-clothing-quest. greet-quest has a number called cheer-
 To uniquely set up (C - a pink scrunchie):
 	let X be a random worn pink scrunchie;
 	if X is scrunchie, now the magic-curse of C is the magic-curse of X; [don't want them to be desynchronised]
-	now the quest of C is greet-quest.
+	if diaper quest is 1, now the quest of C is recipe-quest;
+	otherwise now the quest of C is greet-quest.
 
 To say QuestFlav of (Q - greet-quest):
 	say "You sense it wants you to talk to (intelligent) friendly people who *might* want to [if diaper quest is 1]punish[otherwise]fuck[end if] you[if diaper quest is 0], and/or to make some [men of male-m] climax from seduction routines (before they lose patience and fuck you normally)[end if].".

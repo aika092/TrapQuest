@@ -135,7 +135,7 @@ Check dropping egg:
 				repeat with E running through carried eggs:
 					unless E is the noun, compute flushing of E;
 			compute flushing of the noun instead; [beyond this let the drop action occur normally]
-		otherwise if player-numerical-response is 2:
+		otherwise if player-numerical-response is 3:
 			repeat with E running through carried eggs:
 				unless E is the noun, now E is in the location of the player.
 
@@ -358,7 +358,7 @@ When play begins:
 		now the text-shortcut of E is substituted form of "le[eggShortcutCount]";
 		increase eggShortcutCount by 1.
 
-A larva is a kind of person. A larva is neuter. The printed name of larva is "[TQlink of item described][OriginDesc of item described]larva[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of larva is "[TQlink of item described][OriginDesc of item described]larvae[shortcut-desc][TQxlink of item described][verb-desc of item described]". There are 15 larva. Figure of larva is the file "Items/Collectibles/larva1.png". Understand "tentacle", "larvae" as larva. The text-shortcut of a larva is "lva". A larva has a number called larva-growth. A larva has an object called the egg-origin.
+A larva is a kind of person. A larva is neuter. The printed name of larva is "[TQlink of item described][OriginDesc of item described]larva[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of larva is "[TQlink of item described][OriginDesc of item described]larvae[shortcut-desc][TQxlink of item described][verb-desc of item described]". There are 15 larva. Figure of larva is the file "Items/Collectibles/larva1.png". Understand "tentacle", "larvae" as larva. The text-shortcut of a larva is "lva". A larva has a number called larva-growth. A larva has an object called the egg-origin. A larva is not portable.
 To decide which figure-name is the examine-image of (C - a larva):
 	decide on figure of larva.
 To say ExamineDesc of (B - a larva):

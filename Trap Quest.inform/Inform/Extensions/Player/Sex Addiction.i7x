@@ -500,10 +500,9 @@ To decide which number is the sensitivity of (B - breasts):
 		if the milk volume of breasts > 25, increase S by 1;
 		if the milk volume of breasts > 30, increase S by 1;
 		if the milk volume of breasts > 34, increase S by (the milk volume of breasts - 32) / 3;
-	if there is a worn cow piercing:
+	if there is a worn nipple piercing:
 		increase S by 1;
 		if there is a worn nipple chain, increase S by 1;
-	if there is a worn nipple chain, increase S by 2;
 	if true love tattoo is worn, increase S by 2;
 	increase S by 6 * the trophy-mode of bust-trophy;
 	if onahole-bra is worn and there is a thing penetrating breasts, now S is S / 3;
@@ -661,7 +660,7 @@ Book - Grossness Addiction
 Part 1 - Calculate Grossness Addiction
 
 To decide which number is the grossness addiction of the player:
-	if the player is a december 2022 top donator or diaper quest is 1, decide on previous-grossness-addiction;
+	if grossness fetish > 0 or diaper quest is 1, decide on previous-grossness-addiction;
 	otherwise decide on the sex addiction of the player.
 
 To decide which number is the calculated grossness addiction of the player:
@@ -715,7 +714,7 @@ To SlowGrossnessAddictUp (X - a number):
 			GrossnessAddictUp 1.
 
 To GrossnessAddictUp (X - a number):
-	if the player is a december 2022 top donator or diaper quest is 1:
+	if grossness fetish > 0 or diaper quest is 1:
 		let S be the raw grossness addiction of the player;
 		SilentlyGrossnessAddictUp X;
 		now S is the raw grossness addiction of the player - S;

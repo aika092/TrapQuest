@@ -258,7 +258,7 @@ To Recover Rooms:
 	repeat with R running through labyrinth rooms:
 		now Neighbour Finder is R;
 		unless R is the location of the player, totally clean R;
-		unless R is the location of the player or R is Dungeon12, now R is not smoky; [All rooms except the royal chambers lose pink smoke]
+		unless R is the location of the player or R is Dungeon12, now R is not pink-smoky; [All rooms except the royal chambers lose pink smoke]
 		unless R is Dungeon10 or R is Dungeon11 or R is Dungeon12 or R is Dungeon32: [The first 4 rooms don't change location or configuration, everything else is reset]
 			now the grid position of R is <0,0,0>;
 			repeat with D running through N-viable directions:

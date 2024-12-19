@@ -287,6 +287,7 @@ To bore (M - shopkeeper) for (N - a number) seconds:
 	now M is uninterested;
 	now the stolen-aware of M is 0;
 	if the player is in Dungeon41:
+		if diaper quest is 1, now the refractory-period of M is the refractory-time of M; [otherwise the shopkeeper keeps punishing babified players infinitely]
 		calm M; [The shopkeeper never gets distracted from his job, instead he just turns friendly after dealing with you]
 	otherwise:
 		send M home.
@@ -604,6 +605,7 @@ To satisfy (M - shopkeeper) for (N - a number) seconds:
 			if the health of M <= the maxhealth of M / 2, progress quest of chosen-one-quest;
 	otherwise:
 		bore M for N seconds;
+	compute unlock satisfaction of M;
 	send M home. [This makes sure the shopkeeper always makes it back to the shop.]
 
 To say SatisfiedFlav of (M - shopkeeper):
@@ -1615,7 +1617,7 @@ To set up unique shop state of (C - a sex toy):
 		increase the raw-magic-modifier of C by a random number between 0 and 1.
 
 A time based rule (this is the shop cycling rule):[TODO: if the player is in the room, describe the shopkeeper restocking everything]
-	if the remainder after dividing time-earnings by 995 < time-seconds and Dungeon41 is guarded:
+	if the remainder after dividing time-earnings by 995 < time-seconds and shopkeeper is in Dungeon41 and shopkeeper is awake and shopkeeper is threatening:
 		compute shopcycling.
 
 To compute shopcycling:

@@ -166,13 +166,14 @@ To HookPull:
 			if S < 9, now S is 9;
 			let R be a random number from 1 to S;
 			if debuginfo > 0, say "[input-style]Escape check: Dexterity-based roll d[S] ([R]) | (6.5) ass hook difficulty check[roman type][line break]";
-			let C be a random worn collar;
-			if C is collar and the player is getting unlucky:
+			let C be a random worn submissive collar;
+			if C is submissive collar and the player is getting unlucky:
 				say "As you try to pull down on the hook, the rope detaches from the ceiling! It whips down, somehow shrinking as it does, and then somehow manages to fasten itself to the back of your [C]! [GotUnluckyFlav]";
 				dislodge H;
 				now H is unrevealed;
 				summon ass-hook-plug uncursed;
-				now the size of ass-hook-plug is the openness of asshole;
+				now the size of ass-hook-plug is the openness of asshole + (a random number between 1 and 2);
+				if the size of ass-hook-plug > 5, now the size of ass-hook-plug is 5;
 				cutshow figure of ass hook collar;
 			otherwise if R > 3:
 				if R > 6:

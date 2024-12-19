@@ -217,6 +217,8 @@ To set up (M - a gladiator):
 		add concealment-salve to the taxableItems of M, if absent;
 		add nail-bomb to the taxableItems of M, if absent;
 		add gladiator-sword to the banishItems of M, if absent;
+	otherwise:
+		compute diaper cover assignment of M;
 	now the raw difficulty of M is the starting difficulty of M;
 	now M is female;
 	if doomed is 5, SilentlyDifficultyUp M by 1;
@@ -397,10 +399,10 @@ To compute (M - a gladiator) npcBattling (N - a wench):
 	if M is male:
 		if N is QoS Wench:
 			say "[BigFuckerDesc of N] moans with anticipation as [BigFuckerDesc of M] unclips [his of M] loincloth, grabbing [FuckerDesc of N][']s waist as [he of M] slides [his of M] [LongDickDesc of M] into [FuckerDesc of N]'s [HoleDesc of N]. Several gasping and moaning filled seconds later, [FuckerDesc of M] pulls out and walks away, leaving [FuckerDesc of N] satisfied with fresh [semen] pooling between [his of N] legs.[line break][speech style of M]'[if lady fetish is 2]I thought [he of M] wasn't into that sort of thing!'[otherwise]Where did [he of M] even GET a [DickDesc of M]?'[end if][roman type][line break]";
-			if a2m fetish > 1, now the creampieTimer of N is the semen load of M * 100;
+			now the creampieTimer of N is the semen load of M * 100;
 		otherwise:
 			say "[BigFuckerDesc of N] isn't fast enough to avoid the strike, and [if M is swordless][FuckerDesc of M]'s fist hits [him of N] under the ribs[otherwise]the flat of [FuckerDesc of M]'s sword hits [him of N] across the chest[end if], sending [him of N] falling to the floor.[line break][speech style of M]'Hmph. You don't want to be trained, yet can't even dodge an attack of that level. What should I do instead, I wonder?'[roman type][line break][BigFuckerDesc of N] stares at [him of M] for a second before letting out a resigned sigh and spreading [his of N] legs. [BigFuckerDesc of M] unclips [his of M] loincloth, [if M is swordless]grabbing [FuckerDesc of N]'s waist[otherwise]tossing [his of M] weapon away[end if] as [he of M] slides [his of M] [LongDickDesc of M] into [FuckerDesc of N]'s [HoleDesc of N]. Several gasping and moaning filled seconds later, [FuckerDesc of M] pulls out and walks away, leaving [FuckerDesc of N] with fresh [semen] pooling between [his of N] legs.[line break][speech style of M]'[if lady fetish is 2]I thought [he of M] wasn't into that sort of thing!'[otherwise]Where did [he of M] even GET a [DickDesc of M]?!'[end if][roman type][line break]";
-			if a2m fetish > 1, now the creampieTimer of N is the semen load of M * 100;
+			now the creampieTimer of N is the semen load of M * 100;
 			bbc-trainingUp N by 1;
 		satisfy M;
 		DifficultyUp M by 1;
@@ -933,17 +935,17 @@ This is the gladiator smoke rule:
 		let nearest-room be nothing;
 		let closest-room be 100;
 		if M is wild gladiator:
-			repeat with S running through smoky jungle rooms:
+			repeat with S running through pink-smoky jungle rooms:
 				if the distance of S < closest-room:
 					now closest-room is the distance of S;
 					now nearest-room is S;
 		otherwise if M is enlightened gladiator and M is in the mansion:
-			repeat with S running through smoky haunted rooms:
+			repeat with S running through pink-smoky haunted rooms:
 				if the distance of S < closest-room:
 					now closest-room is the distance of S;
 					now nearest-room is S;
 		otherwise:
-			repeat with S running through smoky labyrinth rooms:
+			repeat with S running through pink-smoky labyrinth rooms:
 				unless S is Dungeon12:
 					if the distance of S < closest-room:
 						now closest-room is the distance of S;
@@ -956,7 +958,7 @@ This is the gladiator smoke rule:
 			[cutshow figure of gladiator cutscene 14 for M;]
 			say "[big he of M] throws it on the [if playerRegion is woods]ground, and the clearing starts to fill with thick pink smoke[otherwise]floor, and the room starts to fill with pink smoke[end if]!";
 			cutshow Figure of Gladiator Cutscene 21 for M;
-			now the location of M is smoky;
+			now the location of M is pink-smoky;
 			if M is wild gladiator, now the smoke of M is the difficulty of M - 2;
 		otherwise if nearest-room is the location of the player:
 			say "[BigNameDesc of M] holds your face in the pink smoke.";
@@ -1095,9 +1097,9 @@ To decide which number is (M - a gladiator) pierce success: [0 means failure, 2 
 			otherwise say "[BigNameDesc of M] uses [his of M] [SwordDesc of M] to slice up your [O]! It is completely destroyed.";
 			destroy O;
 		if N is actually summonable:
-			say "[BigNameDesc of M] closes [his of M] eyes and whistles a quick tune. [if there is a worn cow piercing]You can't believe your eyes as a gold chain appears to connect your nipple rings![otherwise]You can't believe your eyes as two piercings sear into existence through your nipples. You cry in pain as the feeling hits you, and it takes you a moment to notice that [NameDesc of M] has attached a chain between your two now extremely sensitive pierced nipples.[end if][line break]After admiring [his of M] handiwork, [NameDesc of M] seems happy and loses interest.";
+			say "[BigNameDesc of M] closes [his of M] eyes and whistles a quick tune. [if nipple-rings is worn]You can't believe your eyes as a gold chain appears to connect your nipple rings![otherwise]You can't believe your eyes as two piercings sear into existence through your nipples. You cry in pain as the feeling hits you, and it takes you a moment to notice that [NameDesc of M] has attached a chain between your two now extremely sensitive pierced nipples.[end if][line break]After admiring [his of M] handiwork, [NameDesc of M] seems happy and loses interest.";
 			PainUp 10;
-			repeat with P running through worn cow piercings:
+			repeat with P running through worn nipple piercings:
 				destroy P;
 			summon N cursed with persistent quest;
 			bore M;
@@ -1417,7 +1419,7 @@ Definition: a gladiator is diaper disciplining: decide yes.
 Definition: a gladiator is willing to use a diaper urinal: decide yes.
 
 To say DiaperChangeRemovalFlav of (M - a gladiator):
-	say "[speech style of M]'[one of]Hmmm, thicker or thinner diapers, which one should I choose?'[or]Come now, don't act like you're not enjoying my attention!'[in random order][roman type][line break][BigNameDesc of M] [if current-diaper is diaper]gets to work, ripping either side of your [MediumDesc of current-diaper] off and collecting it with one hand. [big he of M] holds the used diaper out to you and tuts[otherwise]rips off your [ShortDesc of current-diaper][end if][if current-diaper is messed knickers]. Taking out several baby wipes, [he of M] gently but efficiently wipes your bottom down until it is completely clean[end if].".
+	say "[speech style of M]'[one of]Hmmm, thicker or thinner diapers, which one should I choose?'[or]Come now, don't act like you're not enjoying my attention!'[in random order][roman type][line break][BigNameDesc of M] [if current-diaper-change-top-level is diaper]gets to work, ripping either side of your [MediumDesc of current-diaper-change-top-level] off and collecting it with one hand. [big he of M] holds the used diaper out to you and tuts[otherwise]rips off your [ShortDesc of current-diaper-change-top-level][end if][if current-diaper-change-top-level is messed knickers]. Taking out several baby wipes, [he of M] gently but efficiently wipes your bottom down until it is completely clean[end if].".
 
 To say DiaperPowderFlav of (M - a gladiator):
 	say "[speech style of M]'[one of]Is THIS how you think adults relieve themselves?!'[or]This had better be the last time you need me to do this.'[or]Take a good look at what you've done.'[stopping][roman type][line break]".
@@ -2082,6 +2084,10 @@ To say AttentionAccepted of (M - a gladiator) with (N - a monster):
 	say "[speech style of M]'Fine. I will watch you embarrass yourself.'[roman type][line break]".
 
 Section 2 - Questioning
+
+Definition: a gladiator is uniquely unable to teach:
+	if diaper quest is 1 and the player is gendered male, decide yes;
+	decide no.
 
 To compute teaching of (M - a gladiator):
 	if the player is a flatchested trap:

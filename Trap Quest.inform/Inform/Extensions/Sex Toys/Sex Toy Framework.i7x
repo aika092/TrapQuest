@@ -28,7 +28,7 @@ To decide which number is the initial outrage of (S - a sex toy):
 To decide which number is the unworn outrage of (S - a sex toy):
 	let O be (the initial outrage of S) + (the size of S);
 	if O > 20, decide on 20;
-	if O < 0, decide on 0;
+	if O < 16, decide on 6;
 	decide on O.
 
 To decide which number is the outrage of (S - a sex toy):
@@ -159,9 +159,9 @@ To compute periodic rejuvenation effect of (C - a sex toy):
 			AssFill N urine;
 			if C is blessed, heal asshole times 2;
 			otherwise heal asshole times 1;
-		otherwise if L > 1:
-			say "Your [ShortDesc of C] pulses as cool liquid streams into your [variable F].";
-			if F is asshole, AssFill N water;
+		otherwise if L > 1 or diaper quest is 1:
+			say "Your [ShortDesc of C] pulses[if enema fetish is 1] as cool liquid streams into your [variable F][end if].";
+			if F is asshole and enema fetish is 1, AssFill N water;
 			if C is blessed, heal F times 2;
 			otherwise heal F times 1;
 		otherwise:
@@ -226,7 +226,7 @@ To compute gripping of (I - a thing):
 	let pretence be "The";
 	if I is players-detached-dick and the size of I is 0, now pretence is "You pretend that your";
 	if the player is upright and I is not glued clothing and I is not cursed clothing and chastity-belt is not worn and (nun-dress is not worn or nun-dress is not wrist-bound-behind) and (current-predicament is not team-girlfriends-predicament or the player is not in a predicament room):
-		if debuginfo > 1 and ((I is penetrating asshole and the player is not ass protected) or (I is penetrating vagina and the player is not pussy protected)), say "[input-style][ShortDesc of I] gripping check: Grip value ([G]) squared * 3 = [G * G * 3]; RNG (0~[G * G * 3]) = [R] | 9.5 Required grip strength (and pretence text is '[pretence]')[roman type][line break]";
+		if debuginfo > 1 and ((I is penetrating asshole and the player is not ass protected) or (I is penetrating vagina and the player is not pussy protected)), say "[input-style][ShortDesc of I] gripping check: Grip value ([G]) squared * 3 = [G * G * 3]; RNG (0~[G * G * 3]) = [R] | 9.5 Required grip strength[roman type][line break]";
 		if I is players-detached-dick and the size of I is 0:
 			do nothing; [so, avoid the falls 'out' check]
 		otherwise if I is penetrating asshole and the player is not ass protected and G < 10 and R <= 0:
@@ -308,6 +308,24 @@ To compute gripping of (I - a thing):
 				ruin vagina;
 				if the openness of vagina > open, say "You feel permanently more loose.";
 			now vaginalGripCount is 0.
+
+To check plug holding with reason (T - a text):
+	let I be a random sex toy penetrating asshole;
+	if I is sex toy:
+		let G be the grip of I;
+		let R be a random number between 1 and G;
+		if I is not glued clothing and I is not cursed clothing and chastity-belt is not worn and (nun-dress is not worn or nun-dress is not wrist-bound-behind) and (current-predicament is not team-girlfriends-predicament or the player is not in a predicament room) and the player is not ass protected:
+			if debuginfo > 0, say "[input-style][ShortDesc of I] gripping check: Grip value ([G]); d[G] = [R] | 1.5 Required grip strength[roman type][line break]";
+			if R <= 1:
+				if T is not "", say "[T] you lose hold of [NameDesc of I].";
+				say "The [printed name of I] shoots of your [asshole] with an audible [']pop['] and drops to the ground.";
+				[Flavour and soreness]
+				if there is a reactive person, say "[variable custom style]Oh no, not now![roman type][line break]";
+				dislodge I;
+				now I is in the location of the player;
+				repeat with M running through reactive people:
+					compute toy expulsion reaction of M;
+				if G > 4, ruin asshole.
 
 To compute toy expulsion reaction of (M - a person):
 	do nothing.
@@ -548,12 +566,18 @@ To decide which object is the unique-upgrade-target of (C - a plug):
 Section 1 Visibility
 
 To decide which object is the at least partial concealer of (S - a sex toy):
+	if current-predicament is team-lake-predicament:
+		if the beachball-game of team-lake-predicament > 0, decide on park-lake;
+		if the player is in a predicament room, decide on nothing;
 	if S is penetrating vagina:
 		decide on the at least partial concealer of vagina;
 	otherwise:
 		decide on the at least partial concealer of asshole.
 
 To decide which object is the concealer of (S - a sex toy):
+	if current-predicament is team-lake-predicament:
+		if the beachball-game of team-lake-predicament > 0, decide on park-lake;
+		if the player is in a predicament room, decide on nothing;
 	if current-predicament is team-girlfriends-predicament and the player is in a predicament room, decide on nothing;
 	if S is penetrating vagina:
 		decide on the concealer of vagina;

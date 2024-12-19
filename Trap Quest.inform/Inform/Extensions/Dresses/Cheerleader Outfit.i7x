@@ -1,6 +1,6 @@
 Cheerleader Outfit by Dresses begins here.
 
-A cheerleader outfit is a kind of overdress. A cheerleader outfit is unique. A cheerleader outfit is usually short. Understand "cheer", "leader" as cheerleader outfit.
+A cheerleader outfit is a kind of overdress. A cheerleader outfit is unique. The skirt-length of a cheerleader outfit is 4. Understand "cheer", "leader" as cheerleader outfit.
 
 Definition: a cheerleader outfit is class-relevant:
 	if the class of the player is cheerleader, decide yes;
@@ -62,7 +62,7 @@ Definition: longsleeved cheerleader outfit is red themed: decide yes.
 
 Part 2 - Supershort Cheerleader Outfit
 
-supershort cheerleader outfit is a cheerleader outfit. supershort cheerleader outfit is super-short. supershort cheerleader outfit is belly exposing.
+supershort cheerleader outfit is a cheerleader outfit. The skirt-length of supershort cheerleader outfit is 1. supershort cheerleader outfit is belly exposing.
 
 The printed name of supershort cheerleader outfit is "[clothing-title-before]supershort cheerleader outfit[clothing-title-after]". The text-shortcut of supershort cheerleader outfit is "scho".
 
@@ -181,7 +181,7 @@ To say ClothingDesc of (C - black-fetish-cheerleader-outfit):
 Definition: black-fetish-cheerleader-outfit is black themed: decide yes.
 
 
-denim-overalls is a cheerleader outfit. Understand "overalls" as denim-overalls. denim-overalls is low cut. denim-overalls is denim. denim-overalls is unskirted. denim-overalls is crotch-intact. denim-overalls is leg covering. denim-overalls is arm exposing. denim-overalls is normally-partially-nipple-covering.
+denim-overalls is a cheerleader outfit. Understand "overalls" as denim-overalls. denim-overalls is low cut. denim-overalls is denim. The skirt-length of denim-overalls is 0. denim-overalls is crotch-intact. denim-overalls is leg covering. denim-overalls is arm exposing. denim-overalls is normally-partially-nipple-covering.
 
 Figure of denim overalls is the file "Items/Clothes/Upper/Special/Cheerleader/cheerleader9.png".
 

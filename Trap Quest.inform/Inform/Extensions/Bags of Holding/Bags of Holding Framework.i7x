@@ -729,7 +729,7 @@ bag-feeding-heels is a bag-feeding-effect.
 Definition: bag-feeding-heels is appropriate:
 	if the noun is heels:
 		let C be a random worn heels;
-		if the heel-height of C > 0 and the heel-height of C < 8, decide yes;
+		if C is heels and the heel-height of C > 0 and the heel-height of C < 8, decide yes;
 	decide no.
 To execute (E - bag-feeding-heels):
 	let C be a random worn heels;
@@ -824,5 +824,19 @@ To compute school periodic effect of (B - enema-backpack):
 		now entry 2 in the armUses of arms is the player;
 	otherwise if B is not enema-released and the player is in a predicament room and the player is not in Predicament20:
 		appropriate-cutscene-display figure of diaper grope predicament cutscene.
+
+breastfeeding-bag is a clothing. breastfeeding-bag is unique. The printed name of breastfeeding-bag is "[clothing-title-before]breastfeeding bag[clothing-title-after]". The text-shortcut of breastfeeding-bag is "bfb". Figure of breastfeeding-bag is the file "Items/Accessories/Bags/bag23.png".
+To decide which figure-name is clothing-image of (H - breastfeeding-bag):
+	decide on figure of breastfeeding-bag.
+
+Definition: breastfeeding-bag is nudism-enabling: decide yes.
+
+To say ShortDesc of (B - breastfeeding-bag):
+	say "bag".
+To say ClothingDesc of (B - breastfeeding-bag):
+	say "This baby pink satchel is looks like it should be filled with everything you need to care for a baby. But in fact it's actually just containing two large jars of clearly-labelled fluid...".
+
+To decide which number is the initial cringe of (B - breastfeeding-bag):
+	decide on 3.
 
 Bags of Holding Framework ends here.

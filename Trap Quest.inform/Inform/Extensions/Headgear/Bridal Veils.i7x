@@ -85,7 +85,7 @@ To compute unique recycling of (C - a bridal veil):
 			only destroy F.
 
 To say QuestFlav of (Q - betrothal-quest):
-	say "You sense it wants you to [if bride-consort is the throne]become a human sacrifice?! Maybe you should try to lose your virginity instead...[otherwise if bride-consort is the throne]find a husband to please (but the more you say no, the more appealing the offers may become!).[otherwise]keep your husband ([FuckerDesc of bride-consort]) pleased (or banish [him of bride-consort]).[end if]".
+	say "You sense it wants you to [if bride-consort is the hotel altar]become a human sacrifice?! Maybe you should try to lose your virginity instead...[otherwise if bride-consort is the throne]find a husband to please (but the more you say no, the more appealing the offers may become!).[otherwise]keep your husband ([FuckerDesc of bride-consort]) pleased (or banish [him of bride-consort]).[end if]".
 
 To say QuestTitle of (Q - betrothal-quest):
 	say " (marriage quest)".

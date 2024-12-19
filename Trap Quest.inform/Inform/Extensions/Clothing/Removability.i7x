@@ -58,6 +58,7 @@ This definition determines whether or not a given item can be destroyed by being
 Definition: a thing (called C) is tearable:
 	if C is indestructible, decide no;
 	if C is worn and C is unremovable, decide no;
+	if C is locked gag and diaper quest is 1 and C is not glued and (C is not cursed or C is not curse-sticky), decide yes;
 	if C is locked and current-monster is not a clothes-destroyer:
 		let K be a random unlock-key covering C;
 		if K is a thing and K is not held by current-monster and bondage protection is 0, decide no;

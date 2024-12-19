@@ -115,6 +115,7 @@ To decide which figure-name is the sex-profile of (M - a monster):
 	decide on figure of Missing NPC. [Defaults back to the non-sex stuff.]
 
 Figure of anilingus 1 is the file "Special/Cutscene/cutscene-anilingus1.jpg".
+Figure of anilingus 2 is the file "Special/Cutscene/cutscene-anilingus2.jpg".
 
 To decide which figure-name is the anal-sex-monster-image of (M - a monster):
 	decide on figure of Missing NPC.
@@ -126,7 +127,12 @@ To decide which figure-name is the oral-sex-monster-image of (M - a monster):
 To decide which figure-name is the lick-monster-image of (M - a monster):
 	decide on figure of Missing NPC.
 To decide which figure-name is the asslick-monster-image of (M - a monster):
-	if M is human and M is not dark skinned, decide on figure of anilingus 1;
+	if M is human:
+		if M is dark skinned:
+			if M is male, decide on figure of anilingus 2;
+			otherwise decide on figure of Missing NPC;
+		otherwise:
+			decide on figure of anilingus 1;
 	decide on figure of Missing NPC.
 To decide which figure-name is the titfuck-monster-image of (M - a monster):
 	decide on figure of Missing NPC.

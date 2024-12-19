@@ -1,6 +1,6 @@
 Shirt by Dresses begins here.
 
-A shirt is a kind of overdress. A shirt is usually unskirted. A shirt is usually fully covering. A shirt is usually manly. A shirt is usually only arm covering. A shirt is usually not-top-displacable. Understand "shirt" as a shirt.
+A shirt is a kind of overdress. The skirt-length of A shirt is 0. A shirt is usually fully covering. A shirt is usually manly. A shirt is usually only arm covering. A shirt is usually not-top-displacable. Understand "shirt" as a shirt.
 
 To decide which number is the initial outrage of (C - a shirt):
 	decide on 0.

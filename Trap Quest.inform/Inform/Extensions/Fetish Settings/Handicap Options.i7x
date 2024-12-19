@@ -24,7 +24,7 @@ title	subtable	description	toggle
 "Realistic orifice re-tightening (you don't stay gaped which means you'll get sore faster) - 2 points ([if choice in row 60 of the Table of Player Options is -1]never[otherwise if choice in row 60 of the Table of Player Options is 0]not now[otherwise if choice in row 60 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	ungape toggle rule
 "Stronger Curses (The knives and altars can't remove cursed clothing, instead, altars can re-roll uncurse quests) - 5 points ([if the player is not the donator]Beta Testers only for now[otherwise if choice in row 78 of the Table of Player Options is -1]never[otherwise if choice in row 78 of the Table of Player Options is 0]not now[otherwise if choice in row 78 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	strongCurses toggle rule
 "Game Hates You (the most horribly unfair traps and outcomes) - 8 points ([if choice in row 51 of the Table of Player Options is -1]never[otherwise if choice in row 51 of the Table of Player Options is 0]not now[otherwise if choice in row 51 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	tough-shit toggle rule
-"Roguelike Mode (Saving is automatic every turn, your save file automatically loads when you open the game, and save file is deleted after typing 'restart' & after losing; causes a bit more lag but protects against crashes) - [if save game limit is 0]4[otherwise][(save game limit * 2) + 2][end if] points ([if save game limit is 0]not [otherwise][bold type][end if]chosen[roman type][if the player is the donator and save game limit is not 0], max [max-undos] undos[end if])"	--	--	save game toggle rule
+"Roguelike Mode (Saving is automatic every turn, your save file automatically loads when you open the game, and save file is deleted after typing 'restart' & after losing; causes a bit more lag but protects against crashes) - [if max-undos is 999999]0[otherwise if save game limit is 0]4[otherwise][(save game limit * 2) + 2][end if] points ([if save game limit is 0]not [otherwise][bold type][end if]chosen[roman type][if the player is the donator and save game limit is not 0], max [max-undos] undos[end if])"	--	--	save game toggle rule
 
 To decide which number is fast breast expansion:
 	if diaper quest is 1, decide on 0;
@@ -115,10 +115,10 @@ Is there a limited number of times that the game can be saved?
 
 +!]
 To decide which number is save game limit:
-	if the player is not the donator and choice in row 36 of the Table of Settings > 0, decide on 1;
+	if the player is not the donator and choice in row 36 of the Table of Settings > 0, decide on 1; [non-donators can just toggle this on and off, so there's no value above 1]
 	decide on choice in row 36 of the Table of Settings.
 This is the save game toggle rule:
-	if choice in row 36 of Table of Settings is 0 or (the player is the donator and choice in row 36 of Table of Settings < 5), increase choice in row 36 of Table of Settings by 1;
+	if choice in row 36 of Table of Settings is 0 or (the player is the donator and choice in row 36 of Table of Settings < 6), increase choice in row 36 of Table of Settings by 1;
 	otherwise now choice in row 36 of Table of Settings is 0.
 
 To decide which number is map reset:

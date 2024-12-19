@@ -2,7 +2,7 @@ Nurse by Monster begins here.
 
 nurse is a staff member.
 
-nurse is in School11. The text-shortcut of nurse is "nrs". nurse has a number called boost-cooldown. nurse has a number called wont-change. nurse has a number called boost-int-drain. nurse has a number called breast-enhancement.
+nurse is in School11. The text-shortcut of nurse is "nrs". nurse has a number called boost-cooldown. nurse has a number called wont-change. nurse has a number called boost-int-drain. nurse has a number called breast-enhancement. nurse can be diaper-change-punishing.
 
 Figure of nurse is the file "NPCs/School/nurse1.png".
 Figure of enslaved diapered nurse is the file "NPCs/School/nurse3.png".
@@ -103,7 +103,7 @@ To compute (M - nurse) striking (B - a body part):
 To say CombatProvokedReaction of (M - nurse):
 	say "[big he of M] raises an eyebrow and pulls out a syringe full of pink liquid.[line break][speech style of M]'Don't fret dear, this will help you calm down some.'[roman type][line break]".
 
-To compute teaching of (M - nurse):
+To compute teaching offer of (M - nurse):
 	say "[speech style of M]'My skills are a bit more... [']hands-on['] than just transferring knowledge.'[roman type][line break]".
 
 Chapter - Perception
@@ -136,16 +136,22 @@ To compute student perception of (M - nurse):
 			if the diaper-duration of M > 0 and the number of worn diaper is 0:
 				say "[big he of M] swiftly walks up to you and holds [if diaper messing < 3]a hand to the front[otherwise]hands to the front and back[end if] of your crotch, pushing firmly to get a good feel.[line break][speech style of M]'EXCUSE ME, LITTLE MISS! I'm pretty sure I SPECIFICALLY INSTRUCTED YOU to remain in diapers until I gave you permission to wear big [boy of the player] undies again, did I not?! This calls for detention! Get on your knees right now!'[roman type][line break]";
 				anger M;
-			if the breast-enhancement of M > 0:
-				say "[speech style of M]'Ah yes, I've been expecting you, [NameBimbo]. You're here for your breast enhancement, right? If so, [please] hop on the table in the med bay and I'll make sure you get what you need.'[roman type][line break]";
-			otherwise if the body soreness of the player > 0:
-				say "[speech style of M]'Oh no [honey of M], you look [if the body soreness of the player > 8]like you've been through the wars[otherwise if the body soreness of the player > 4]sore all over[otherwise]a little hurt[end if]! Why don't you come through to the med bay [one of]with me? I'm sure we can... make you better...'[or]so we can get your body changed back to the way it should be...'[stopping][roman type][line break]";
-			otherwise if the player is tired:
-				say "[speech style of M]'You look [if the player is not very tired]a little [end if]tired, [honey of M]. Want to come through to the medbay for a quick rest?'[roman type][line break]";
-			otherwise if the boost-cooldown of M <= 0:
-				say "[speech style of M]'Are you looking for a [']boost['], [honey of M]? If so, [please] hop on the table in the med bay and I'll make sure you get what you need.'[roman type][line break]";
+			otherwise if the bladder of M >= 1000 and M is able to use a free use urinal:
+				compute free use urinal perception of M;
+			otherwise if M is in School11 or M is in School12:
+				if the breast-enhancement of M > 0:
+					say "[speech style of M]'Ah yes, I've been expecting you, [NameBimbo]. You're here for your breast enhancement, right? If so, [please] hop on the table in the med bay and I'll make sure you get what you need.'[roman type][line break]";
+				otherwise if the body soreness of the player > 0:
+					say "[speech style of M]'Oh no [honey of M], you look [if the body soreness of the player > 8]like you've been through the wars[otherwise if the body soreness of the player > 4]sore all over[otherwise]a little hurt[end if]! Why don't you come through to the med bay [one of]with me? I'm sure we can... make you better...'[or]so we can get your body changed back to the way it should be...'[stopping][roman type][line break]";
+				otherwise if the player is tired:
+					say "[speech style of M]'You look [if the player is not very tired]a little [end if]tired, [honey of M]. Want to come through to the medbay for a quick rest?'[roman type][line break]";
+				otherwise if the boost-cooldown of M <= 0:
+					say "[speech style of M]'Are you looking for a [']boost['], [honey of M]? If so, [please] hop on the table in the med bay and I'll make sure you get what you need.'[roman type][line break]";
+				otherwise:
+					say "[speech style of M]'Sorry [honey of M], but if I give you a [']boost['] too often then there'll be none left for anyone else. You'll have to come back [if the boost-cooldown of M < 50]soon[otherwise]later[end if].'[roman type][line break]";
 			otherwise:
-				say "[speech style of M]'Sorry [honey of M], but if I give you a [']boost['] too often then there'll be none left for anyone else. You'll have to come back [if the boost-cooldown of M < 50]soon[otherwise]later[end if].'[roman type][line break]".
+				distract M.
+
 
 To say FirstResponse of (M - a nurse):
 	say "[speech style of M]'[one of]Hello there. Have we met before, sweetie?'[or]Hey there sweetie. Are you a new student?'[or]Hello. You must be a new student.'[at random][roman type][line break]".
@@ -174,7 +180,7 @@ To say AdviceAnswer of (M - a nurse):
 
 Chapter - Motion
 
-[Nurse is never supposed to leave her little area]
+[Nurse is never supposed to leave her little area unless using the toilet or combative]
 
 To compute (M - nurse) seeking (D - a direction):
 	if the player is in School11 or the player is in School12 or M is unfriendly:
@@ -188,7 +194,8 @@ To compute monstermotion of (M - nurse):
 			now M is in School01;
 		otherwise if M is not in School11:
 			let D be the best route from the location of M to School11 through academic rooms;
-			if D is a direction, blockable move M to D.
+			if D is a direction, blockable move M to D;
+		if M is in School11 or M is in School12, now the boredom of M is 0.
 
 [Nurse always successfully follows the player]
 To decide which number is the seek roll of (M - nurse):
@@ -282,5 +289,39 @@ To say DiaperCheckNoChangeAllowedFlav of (M - nurse):
 To say DiaperChangeStart of (M - nurse):
 	unless M is in School12, drag to School12 by M;
 	say "[unless med bay bed is grabbing the player][BigNameDesc of M] lowers you onto the [med bay bed]. [big he of M] pins you down with one strong arm and uses the other to binds your wrists and ankles with the inbuilt straps.[end if]".
+
+To compute nurse diapering of (M - a monster):
+	if M is nurse:
+		interest M;
+		if M is not in School12, drag to School12 by M;
+		say "[speech style of M]'Right! Onto the bed you go, you naughty little minx!'[roman type][line break]";
+		now M is diaper-change-punishing;
+		if diaper quest is 1:
+			compute diaper change of M;
+		otherwise:
+			let failsafe be 10;
+			while failsafe > 0 and the number of worn diaper is 0:
+				compute diaper change of M;
+				decrease failsafe by 1;
+			if M is changing the player, satisfy M;
+	otherwise:
+		if nurse is off-stage, set up nurse;
+		if nurse is defeated, now nurse is unleashed; [shouldn't happen, but we should still have this failsafe]
+		unless nurse is in the location of the player:
+			now nurse is in School11;
+			drag to School11 by M;
+		say "[speech style of M]'Nurse, this naughty baby has been trapsing around the academy without a diaper!'[roman type][line break]";
+		bore M;
+		compute nurse diapering of nurse.
+
+To compute unique boredom of (M - nurse):
+	now M is not diaper-change-punishing.
+
+To compute diaper change after special of (M - nurse):
+	if M is diaper-change-punishing, compute spanking of M.
+
+To say SpankingStartFlav of (M - nurse):
+	say "[BigNameDesc of M] flips you round on the bed so that you're face down, before once again securing the bed straps!".
+
 
 Nurse ends here.

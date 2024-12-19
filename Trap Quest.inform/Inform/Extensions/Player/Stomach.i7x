@@ -28,21 +28,22 @@ To decide which number is potential-fullness-bonus:
 	decide on (the stomach-food of the player + 1) / 2.
 
 An all later time based rule (this is the satiated causes bonus strength rule):
-	let F be fullness-bonus;
-	if F > old-fullness-bonus:
-		if old-fullness-bonus is 0, say "[bold type]Now that you're full of food and drink, and [if there is a worn diaper]properly padded[otherwise]wearing underwear[end if], you feel the game [one of]making you feel incredible and[or]once again[stopping] rewarding you with [if F > 2]huge amounts of [otherwise if F > 1]large amounts of [end if]strength![roman type][line break]";
-		otherwise say "[bold type]As the amount of food digesting in your well-satisfied stomach increases, you feel your strength continue to improve[one of] as well[or][stopping]![roman type][line break]";
-		now old-fullness-bonus is F;
-	otherwise if F < old-fullness-bonus:
-		if F > 0:
-			say "As your stomach digests some of its food contents, your bonus strength decreases.";
-		otherwise if potential-fullness-bonus is 0:
-			say "Now that your stomach has digested most of its food contents, your bonus strength has disappeared.";
-		otherwise if the player is not almost too full:
-			say "Now that you feel less full, your bonus strength has disappeared.";
-		otherwise:
-			say "Now that you are not wearing [if diaper messing >= 5]underwear[otherwise]a diaper[end if], your bonus strength from feeling full has disappeared.";
-		now old-fullness-bonus is F.
+	unless the player is in a predicament room:
+		let F be fullness-bonus;
+		if F > old-fullness-bonus:
+			if old-fullness-bonus is 0, say "[bold type]Now that you're full of food and drink, and [if there is a worn diaper]properly padded[otherwise]wearing underwear[end if], you feel the game [one of]making you feel incredible and[or]once again[stopping] rewarding you with [if F > 2]huge amounts of [otherwise if F > 1]large amounts of [end if]strength![roman type][line break]";
+			otherwise say "[bold type]As the amount of food digesting in your well-satisfied stomach increases, you feel your strength continue to improve[one of] as well[or][stopping]![roman type][line break]";
+			now old-fullness-bonus is F;
+		otherwise if F < old-fullness-bonus:
+			if F > 0:
+				say "As your stomach digests some of its food contents, your bonus strength decreases.";
+			otherwise if potential-fullness-bonus is 0:
+				say "Now that your stomach has digested most of its food contents, your bonus strength has disappeared.";
+			otherwise if the player is not almost too full:
+				say "Now that you feel less full, your bonus strength has disappeared.";
+			otherwise:
+				say "Now that you are not wearing [if diaper messing >= 5]underwear[otherwise]a diaper[end if], your bonus strength from feeling full has disappeared.";
+			now old-fullness-bonus is F.
 
 To StomachUp (X - a number):
 	if the latex-transformation of the player > 4, now X is 0;

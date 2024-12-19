@@ -1,6 +1,6 @@
 Blouse by Dresses begins here.
 
-A bodice is a kind of overdress. A bodice is usually unskirted. A bodice is usually satin. Understand "blouse" as bodice. A bodice is usually high cut. A bodice is usually rare. The text-shortcut of bodice is "blo".
+A bodice is a kind of overdress. The skirt-length of A bodice is 0. A bodice is usually satin. Understand "blouse" as bodice. A bodice is usually high cut. A bodice is usually rare. The text-shortcut of bodice is "blo".
 
 To compute banish drop of (C - a bodice) from (M - a wench):
 	if C is off-stage:

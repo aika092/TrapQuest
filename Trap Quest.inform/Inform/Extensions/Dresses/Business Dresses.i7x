@@ -34,7 +34,7 @@ To decide which object is the unique-upgrade-target of (C - polka dot business d
 
 Part 2 - Pinstripe Business Dress
 
-pinstripe business dress is a business dress. pinstripe business dress is transformation-rare. pinstripe business dress is low cut. pinstripe business dress is only arm covering. pinstripe business dress is short. A pinstripe business dress is erect-nipple-exposing. The text-shortcut of pinstripe business dress is "pin". The printed name of pinstripe business dress is "[clothing-title-before]pinstripe business dress[clothing-title-after]".
+pinstripe business dress is a business dress. pinstripe business dress is transformation-rare. pinstripe business dress is low cut. pinstripe business dress is only arm covering. The skirt-length of pinstripe business dress is 4. A pinstripe business dress is erect-nipple-exposing. The text-shortcut of pinstripe business dress is "pin". The printed name of pinstripe business dress is "[clothing-title-before]pinstripe business dress[clothing-title-after]".
 
 Figure of pinstripe business dress is the file "Items/Clothes/Upper/Business/businessdress1.png".
 
@@ -90,7 +90,7 @@ To decide which object is the unique-upgrade-target of (C - fetish business dres
 
 Part 4 - Vest Business Dress
 
-vest-dress is a business dress. vest-dress is low cut. vest-dress is short. The text-shortcut of vest-dress is "vstd". The printed name of vest-dress is "[clothing-title-before]vest dress[clothing-title-after]". Understand "vest", "dress" as vest-dress.
+vest-dress is a business dress. vest-dress is low cut. The skirt-length of vest-dress is 4. The text-shortcut of vest-dress is "vstd". The printed name of vest-dress is "[clothing-title-before]vest dress[clothing-title-after]". Understand "vest", "dress" as vest-dress.
 
 Figure of vest-dress is the file "Items/Clothes/Upper/Business/businessdress4.png".
 
@@ -107,7 +107,7 @@ To say MediumDesc of (C - vest-dress):
 
 To decide which number is the initial outrage of (C - vest-dress):
 	decide on 3.
-To decide which number is the skirtLength of (C - vest-dress):
+To decide which number is the defaultDiaperCoveringLength of (C - vest-dress):
 	decide on 4.
 
 Definition: vest-dress is blue themed: decide yes.

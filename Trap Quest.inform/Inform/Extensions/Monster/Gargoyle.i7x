@@ -302,7 +302,7 @@ To compute damaging attack of (M - a gargoyle):
 	otherwise:
 		let X be the number of unfriendly monsters in the location of the player;
 		let A be the number of worn ankle-bound clothing;[she can't do her grab if your ankles are locked together.]
-		let S be the number of worn crotch-in-place short or longer clothing;[she also can't do her grab if you're wearing an undisplaced skirt.]
+		let S be the number of worn crotch-in-place very-short-or-longer clothing;[she also can't do her grab if you're wearing an undisplaced skirt.]
 		if X > 1 and the difficulty of M > (the starting difficulty of M + 1) and the health of M < (the maxhealth of M / 2) and A + S is 0 and a random number between 1 and 5 is 1:
 			compute grabbing attack of M;
 		otherwise:

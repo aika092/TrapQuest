@@ -111,7 +111,6 @@ To compute tentacle birth:
 a hugger-panties is a kind of knickers. a hugger-panties is unique.
 crotch-hugger is a hugger-panties. ass-hugger is a hugger-panties.
 
-robomaid is a kind of monster.
 gargoyle is a monster.
 unicorn is a monster.
 A slutty sister is a kind of monster. bulging-slutty-sister is a slutty sister. futanari-slutty-sister is a slutty sister.
@@ -127,7 +126,6 @@ Include Boogeymonster by Monster.
 Include Woman Berri by Monster.
 
 A bukkake trap door is a kind of trap. A bukkake hose is a kind of trap.
-A dildo trap is a kind of trap. A dildo pole trap is a kind of dildo trap. A drill pole trap is a kind of dildo trap. A creampie pole trap is a kind of dildo trap. A ghostly dildo pole trap is a kind of dildo trap.
 
 A milking bench is a kind of furniture. A milking bench lever is a kind of thing. A milking bench lever can be lever-pulled. dungeon-milking-bench is a milking bench. mansion-milking-bench is a milking bench. dungeon-milking-bench-lever is a milking bench lever. mansion-milking-bench-lever is a milking bench lever. A dildo rocking stool is a kind of furniture.
 
@@ -185,6 +183,7 @@ hugger-gag is a ballgag.
 Definition: hugger-gag is fetish appropriate: decide no.
 A hugger-panties is a kind of knickers.
 broomstick is a clothing.
+Definition: broomstick is fetish appropriate: decide no.
 
 Figure of Jammy Messy Loading Animation Frame 1 is the file "Special/Animations/JammyLoading/frame_000001.jpeg".
 Figure of Jammy Messy Loading Animation Frame 4 is the file "Special/Animations/JammyLoading/frame_000004.jpeg".

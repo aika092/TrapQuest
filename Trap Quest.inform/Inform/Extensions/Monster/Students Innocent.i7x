@@ -106,7 +106,7 @@ To say EscapeAnswer of (M - an innocent student):
 To say AdviceAnswer of (M - an innocent student):
 	say "[speech style of M]'I was kind of hoping you'd have advice for me!'[roman type][line break]".
 
-To compute teaching of (M - an innocent student):
+To compute teaching offer of (M - an innocent student):
 	say "[speech style of M]'Ha ha, no, I'm not a teacher!'[roman type][line break]".
 
 Students Innocent ends here.

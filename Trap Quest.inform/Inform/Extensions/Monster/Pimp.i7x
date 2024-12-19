@@ -75,10 +75,11 @@ To set up (M - pimp):
 		let E be a random off-stage electric fan;
 		if E is a thing, add E to the tradableItems of M;
 	if diaper quest is 0:
-		if the player is a may 2023 top donator:
-			add onahole-bra to the tradableItems of M, if absent;
+		add onahole-bra to the tradableItems of M, if absent;
 		repeat with P running through pimp-pedestals:
-			now P is in Hotel44.
+			now P is in Hotel44;
+	otherwise:
+		compute diaper cover assignment of M.
 
 This is the spawn initial pimp rule:
 	if pimp is off-stage:
@@ -192,6 +193,7 @@ To satisfy (M - pimp) for (N - a number) seconds:
 		if the health of M <= the maxhealth of M / 2, progress quest of chosen-one-quest;
 	otherwise:
 		bore M for N seconds;
+	compute unlock satisfaction of M;
 	send M home. [This makes sure the pimp always makes it back to his room.]
 
 To say SatisfiedFlav of (M - pimp):
@@ -661,8 +663,13 @@ To decide which number is the bartering value of (T - a thing) for (M - pimp):
 	if T is whore themed, decide on 1;
 	decide on 0.
 
+To say FriendlyOfferFlav of (T - a thing) to (M - pimp):
+	if T is plentiful accessory, say "'Here's your [']cut['].'";
+	otherwise say "'I found this, and thought you might have some use for it.'".
+
 To decide which number is the bartering value of (T - id-poster) for (M - pimp):
 	decide on 2.
+
 
 To say MonsterOfferAcceptFlav of (M - pimp) to (T - id-poster):
 	say "[BigNameDesc of M] smiles widely.[line break][speech style of M]'You made this? This is PERFECT! As soon as I get a gloryhole installed, I'll make sure you get the first shift. And the second!'[roman type][line break][severeHumiliateReflect]".
@@ -700,7 +707,7 @@ To compute resolution of (M - pimp) taking (T - a thing):
 To say MonsterOfferRejectFlav of (M - pimp) to (T - a thing):
 	say "[if M is unfriendly][BigNameDesc of M] smiles.[otherwise][BigNameDesc of M] looks a bit confused.[end if][line break][speech style of M]'[if T is plentiful accessory and the health of M < the maxhealth of M]It's too late for that, bitch.'[otherwise if T is plentiful accessory]You owe me more than that, bitch.'[otherwise]Why the hell would I want that?'[end if][roman type][line break]";
 
-Part 6 - pimp-pedestal
+Part 6 - Pimp Pedestal
 
 A pimp-pedestal is a kind of thing. A pimp-pedestal is not portable. The printed name of a pimp-pedestal is "[TQlink of item described]stone pedestal[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "stone", "pedestal" as a pimp-pedestal.
 

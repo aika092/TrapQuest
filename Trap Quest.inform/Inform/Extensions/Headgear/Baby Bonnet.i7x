@@ -37,6 +37,30 @@ To say QuestFlav of (Q - adult-baby-quest):
 To say QuestTitle of (Q - adult-baby-quest):
 	say " (incontinence quest)".
 
+matron-obey-quest is a headgear-clothing-quest.
+
+To say QuestFlav of (Q - matron-obey-quest):
+	say "You sense that it wants you to please the matron by always doing what [he of matron] says.".
+
+To say QuestTitle of (Q - matron-obey-quest):
+	say " (matron obedience quest)".
+
+To compute generic first time class reward of (Q - matron-obey-quest) on (C - a clothing):
+	if the player is getting lucky:
+		let D be a random off-stage ring;
+		if D is ring:
+			now D is pink diamond;
+			set shortcut of D;
+			if D is actually summonable:
+				summon D;
+			otherwise:
+				now D is in the location of the player;
+			say "summoning a [MediumDesc of D] [if D is worn]straight onto your finger[otherwise]right in front of you[end if]! [GotLuckyFlav]";
+		otherwise:
+			compute generic second time class reward of Q on C;
+	otherwise:
+		say "[BigNameDesc of C] pulses, but the curse does not lift! [GotUnluckyFlav]".
+
 Part - Variations
 
 victorian-baby-bonnet is a baby bonnet. The text-shortcut of victorian-baby-bonnet is "vbon".
@@ -75,5 +99,9 @@ The rubber baby bonnet prevents speech rule is listed in the player speech rules
 
 To decide which number is the initial cringe of (H - rubber-baby-bonnet):
 	decide on 8.
+
+To uniquely set up (C - rubber-baby-bonnet):
+	if matron is alive, now the quest of C is matron-obey-quest;
+	now the quest of C is adult-baby-quest.
 
 Baby Bonnet ends here.

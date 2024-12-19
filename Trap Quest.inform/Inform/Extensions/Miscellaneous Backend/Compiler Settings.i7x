@@ -24,4 +24,11 @@ Use MAX_LINK_DATA_SIZE of 20000.
 Use dynamic memory allocation of at least 1738400.
 Use maximum indexed text length of at least 200000.
 
+To decide which number is GreaterOf (X - a number) and (Y - a number):
+	if X > Y, decide on X;
+	decide on Y.
+To decide which number is LesserOf (X - a number) and (Y - a number):
+	if X < Y, decide on X;
+	decide on Y.
+
 Compiler Settings ends here.

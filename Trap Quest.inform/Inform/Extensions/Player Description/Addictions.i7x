@@ -319,7 +319,7 @@ We explain how much the player likes bad tastes and smells.
 
 +!]
 This is the grossness addiction description rule:
-	if the player is a december 2022 top donator or diaper quest is 1:
+	if grossness fetish > 0 or diaper quest is 1:
 		if the grossness addiction of the player < 3:
 			say "Bad tastes and smells disgust you and kill your arousal.";
 		otherwise if the grossness addiction of the player < 5:
@@ -426,10 +426,10 @@ If the player has a short skirt addiction, we'll explain it to them here.
 
 +!]
 This is the short skirt addiction description rule:
-	if short skirts permanent fetish is 2:
+	if short skirts permanent fetish is 1:
 		say "Your addiction to extreme short skirts makes you feel uncomfortable in anything but the tiniest dresses and skirts, and has given you a complete aversion to wearing trousers.";
-	otherwise if short skirts permanent fetish is 1:
-		say "Your body loves wearing short skirts so much that you feel uncomfortable wearing long ones. It also feels wrong to wear trousers.".
+	otherwise if short skirts permanent fetish > 0:
+		say "Your body now only feels comfortable in skirts that are [SkirtLength short skirts permanent fetish] or shorter. It also feels wrong to wear trousers.".
 The short skirt addiction description rule is listed in the addiction listing rules.
 
 [!<TheToplessExposureAddictionDescriptionRule>+
@@ -447,7 +447,7 @@ If the player has a bottomless exposure addiction, we'll explain it to them here
 
 +!]
 This is the bottomless exposure addiction description rule:
-	if no-panties-fetish is 1, say "You feel extremely uncomfortable wearing [if the diaper addiction of the player > 15]big girl panties, since you miss the comfort and security of diapers whenever you do[otherwise if diaper quest is 1]big girl panties, since deep down you know you don't deserve them[otherwise]panties, as you have an extremely powerful fetish for going commando[end if].".
+	if underwear-cover-limit is 1, say "You feel extremely uncomfortable wearing [if the diaper addiction of the player > 15]big girl panties, since you miss the comfort and security of diapers whenever you do[otherwise if diaper quest is 1]big girl panties, since deep down you know you don't deserve them[otherwise]panties, as you have an extremely powerful fetish for going commando[end if].".
 The bottomless exposure addiction description rule is listed in the addiction listing rules.
 
 This is the humiliation description rule:

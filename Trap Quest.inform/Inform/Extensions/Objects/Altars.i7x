@@ -470,6 +470,18 @@ To AltarReward (T - a bottle):
 		say "The [ShortDesc of T] is filled up to the brim with a [PotionType of T]!";
 	reset dungeon altar.
 
+To AltarReward (T - an alchemy product):
+	if the curse-ID of T is sure and T is not cursed:
+		say "Nothing happens.";
+	otherwise:
+		now the curse-ID of T is sure;
+		if T is cursed:
+			say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] I shall remove this curse for you!'[roman type][line break]";
+			now T is bland;
+		otherwise:
+			say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] never fear, this magical item is not cursed!'[roman type][line break]";
+		reset dungeon altar.
+
 To AltarReward (T - a clothing):
 	say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] [if T is cursed and strongCurses is 1]I shall help you with this curse[otherwise if T is cursed]I shall remove this curse for you[otherwise]I shall bless this item for you[end if]!'[roman type][line break]";
 	now T is sure;

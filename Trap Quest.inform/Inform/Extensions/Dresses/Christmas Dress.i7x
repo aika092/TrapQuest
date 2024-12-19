@@ -1,6 +1,6 @@
 Christmas Dress by Dresses begins here.
 
-A christmas dress is a kind of overdress. A christmas dress is usually unique. A christmas dress is usually high cut. A christmas dress is usually super-short. A christmas dress is usually top-exclusive.
+A christmas dress is a kind of overdress. A christmas dress is usually unique. A christmas dress is usually high cut. The skirt-length of a christmas dress is 1. A christmas dress is usually top-exclusive.
 
 Definition: a christmas dress is christmas themed: decide yes.
 
@@ -24,6 +24,8 @@ Definition: a christmas dress is end of transformation chain: decide yes.
 
 To set up influence of (C - a christmas dress):
 	set up stat-based influence of C.
+To compute class set up of (C - a christmas dress):
+	now C is strength stealing.
 
 A standard christmas dress is a kind of christmas dress.
 
@@ -72,7 +74,7 @@ Part 3 - Gingerbread Dresses
 
 [Gingerbread dress]
 
-A gingerbread dress is a kind of standard christmas dress. A gingerbread dress is short. A gingerbread dress is average cut. There is 1 gingerbread dress. The printed name of gingerbread dress is "[clothing-title-before]gingerbread dress[clothing-title-after]". The text-shortcut of gingerbread dress is "gbd".
+A gingerbread dress is a kind of standard christmas dress. The skirt-length of A gingerbread dress is 4. A gingerbread dress is average cut. There is 1 gingerbread dress. The printed name of gingerbread dress is "[clothing-title-before]gingerbread dress[clothing-title-after]". The text-shortcut of gingerbread dress is "gbd".
 
 Figure of gingerbread dress is the file "Items/Clothes/Upper/Dresses/Christmas/christmasdress11.png".
 
@@ -95,7 +97,7 @@ To decide which object is the unique-upgrade-target of (C - a gingerbread dress)
 
 [Gingerbread house dress]
 
-A gingerbread house dress is a kind of christmas dress. There is 1 gingerbread house dress. A gingerbread house dress is short. The printed name of gingerbread house dress is "[clothing-title-before]gingerbread house dress[clothing-title-after]". The text-shortcut of gingerbread house dress is "gbhd".
+A gingerbread house dress is a kind of christmas dress. There is 1 gingerbread house dress. The skirt-length of A gingerbread house dress is 4. The printed name of gingerbread house dress is "[clothing-title-before]gingerbread house dress[clothing-title-after]". The text-shortcut of gingerbread house dress is "gbhd".
 
 Figure of gingerbread house dress is the file "Items/Clothes/Upper/Dresses/Christmas/christmasdress6.png".
 
@@ -204,7 +206,7 @@ Definition: naughty-or-nice outfit is class-relevant:
 	if the class of the player is santa's little helper, decide yes;
 	decide no.
 
-naughty-or-nice outfit is arm exposing. naughty-or-nice outfit is very low cut. naughty-or-nice outfit is unskirted. naughty-or-nice outfit is crotch-intact.
+naughty-or-nice outfit is arm exposing. naughty-or-nice outfit is very low cut. The skirt-length of naughty-or-nice outfit is 0. naughty-or-nice outfit is crotch-intact.
 
 Figure of nice dress is the file "Items/Clothes/Upper/Dresses/Christmas/christmasdress7a.png".
 Figure of naughty dress is the file "Items/Clothes/Upper/Dresses/Christmas/christmasdress7b.png".
@@ -237,7 +239,7 @@ Part 8 - Golden Present Outfit
 
 present outfit is a christmas dress. present outfit is latex. The printed name of present outfit is "[clothing-title-before]golden present outfit[clothing-title-after]". The text-shortcut of present outfit is "gpro". Understand "golden" as present outfit.
 
-present outfit is arm exposing. present outfit is average cut. present outfit is neck covering. present outfit is unskirted. present outfit is crotch-intact.
+present outfit is arm exposing. present outfit is average cut. present outfit is neck covering. The skirt-length of present outfit is 0. present outfit is crotch-intact.
 
 Figure of present outfit is the file "Items/Clothes/Upper/Dresses/Christmas/christmasdress8.png".
 
@@ -270,7 +272,7 @@ Definition: candy cane outfit is class-relevant:
 	if the class of the player is santa's little helper, decide yes;
 	decide no.
 
-candy cane outfit is arm exposing. candy cane outfit is low cut. candy cane outfit is unskirted. candy cane outfit is crotch-intact.
+candy cane outfit is arm exposing. candy cane outfit is low cut. The skirt-length of candy cane outfit is 0. candy cane outfit is crotch-intact.
 
 Figure of candy cane outfit is the file "Items/Clothes/Upper/Dresses/Christmas/christmasdress9.png".
 
@@ -306,14 +308,14 @@ To decide which object is the unique-upgrade-target of (C - candy cane outfit):
 To compute periodic effect of (C - candy cane outfit):
 	if C is crotch-ripped:
 		now C is no-crotch;
-		now C is short;
+		now the skirt-length of C is 3;
 		update appearance level.
 To construct unique icons for (T - candy cane outfit):
 	if T is skirted, add Figure of TornIcon to the list of icons.
 
 Part 10 - Santa Baby Top
 
-santa-baby-top is a standard christmas dress. santa-baby-top is unskirted. The printed name of santa-baby-top is "[clothing-title-before]santa baby top[clothing-title-after]". The text-shortcut of santa-baby-top is "stbt". Understand "santa", "baby", "top" as santa-baby-top.
+santa-baby-top is a standard christmas dress. The skirt-length of santa-baby-top is 0. The printed name of santa-baby-top is "[clothing-title-before]santa baby top[clothing-title-after]". The text-shortcut of santa-baby-top is "stbt". Understand "santa", "baby", "top" as santa-baby-top.
 
 Figure of santa-baby-top is the file "Items/Clothes/Upper/Dresses/Christmas/christmasdress10.png".
 
@@ -344,7 +346,7 @@ A game universe initialisation rule:
 
 Part 11 - Reindeer Dress
 
-reindeer dress is a standard christmas dress. reindeer dress is short. reindeer dress is low cut. The printed name of reindeer dress is "[clothing-title-before]reindeer dress[clothing-title-after]". The text-shortcut of reindeer dress is "rndd".
+reindeer dress is a standard christmas dress. The skirt-length of reindeer dress is 4. reindeer dress is low cut. The printed name of reindeer dress is "[clothing-title-before]reindeer dress[clothing-title-after]". The text-shortcut of reindeer dress is "rndd".
 
 Figure of reindeer dress is the file "Items/Clothes/Upper/Dresses/Christmas/christmasdress12.png".
 
@@ -369,7 +371,7 @@ Definition: reindeer dress is fetish appropriate: decide yes.
 
 Part 12 - Candy Cane Dress
 
-candy cane dress is a standard christmas dress. candy cane dress is short. candy cane dress is low cut. The printed name of candy cane dress is "[clothing-title-before]candy cane dress[clothing-title-after]". The text-shortcut of candy cane dress is "ccd".
+candy cane dress is a standard christmas dress. The skirt-length of candy cane dress is 4. candy cane dress is low cut. The printed name of candy cane dress is "[clothing-title-before]candy cane dress[clothing-title-after]". The text-shortcut of candy cane dress is "ccd".
 
 Figure of candy cane dress is the file "Items/Clothes/Upper/Dresses/Christmas/christmasdress13.png".
 
@@ -396,7 +398,7 @@ Definition: candy cane dress is fetish appropriate:
 
 Part 13 - Reindeer Outfit
 
-reindeer outfit is a standard christmas dress. reindeer outfit is crotch-intact. reindeer outfit is unskirted. reindeer outfit is low cut. The printed name of reindeer outfit is "[clothing-title-before]reindeer outfit[clothing-title-after]". The text-shortcut of reindeer outfit is "ccd".
+reindeer outfit is a standard christmas dress. reindeer outfit is crotch-intact. The skirt-length of reindeer outfit is 0. reindeer outfit is low cut. The printed name of reindeer outfit is "[clothing-title-before]reindeer outfit[clothing-title-after]". The text-shortcut of reindeer outfit is "ccd".
 
 Figure of reindeer outfit is the file "Items/Clothes/Upper/Dresses/Christmas/christmasdress14.png".
 

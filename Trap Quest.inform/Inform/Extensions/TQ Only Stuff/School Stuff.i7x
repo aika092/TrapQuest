@@ -19,21 +19,25 @@ kissing-lesson is a lesson. The lesson-teacher of kissing-lesson is teacher-ange
 Definition: kissing-lesson is lesson-appropriate:
 	if face is not actually occupied, decide yes;
 	decide no.
+To say LessonTitle of (L - kissing-lesson):
+	say "Oral Skills 10[if the lesson-variant of L is 1]1[otherwise]2[end if]".
 
 To compute teaching of (L - kissing-lesson):
 	allocate 40 seconds;
 	now bigGameLoop is 3; [tells the game not to refresh any windows]
+	now temporaryYesNoBackground is Figure of kissing angela;
+	now temporaryYesNoResetNeeded is false;
 	let M be the lesson-teacher of L;
-	say "[speech style of M]'Oral skillz 10[lesson-variant of L + 1].'[roman type][line break][BigNameDesc of M] holds [his of M] hands behind [his of M] back as [he of M] addresses you all.[line break][speech style of M]'[one of]Your teeth, your lips, your tongue... all are incredibly important toolz at your dizpozal[or]It zeemz zat you all ztill require more vork in zis department[stopping].'[roman type][line break]";
+	say "[speech style of M]'Oral skillz 10[if the lesson-variant of L is 1]1[otherwise]2[end if].'[roman type][line break][BigNameDesc of M] holds [his of M] hands behind [his of M] back as [he of M] addresses you all.[line break][speech style of M]'[one of]Your teeth, your lips, your tongue... all are incredibly important toolz at your dizpozal[or]It zeemz zat you all ztill require more vork in zis department[stopping].'[roman type][line break]";
 	now the arousal of the player is minimum arousal;
 	now the delayed arousal of the player is 0;
 	check for arousal change;
-	if the number of students in the location of M > 2 and the lesson-variant of L is 1:
+	if the number of students in the location of M > 2 and the lesson-variant of L >= 1:
 		[now the lesson-variant of L is 0;]
 		compute group kissing lesson of M;
 	otherwise:
 		compute french kissing lesson of M;
-		if the player is the donator, now the lesson-variant of L is 1;
+		if the player is the donator, increase the lesson-variant of L by 1;
 	now bigGameLoop is 0;
 	conclude consenting;
 	set up rank one students. [lots of students can get promoted in this lesson and it would be good to introduce some new sapphire ones afterwards to make sure we aren't running out]
@@ -492,6 +496,7 @@ The text-shortcut of teacher-seraphina is "teas".
 
 Figure of seraphina is the file "NPCs/School/Teacher/teacher4a.png".
 Figure of enslaved seraphina is the file "NPCs/School/Teacher/teacher4b.png".
+Figure of lesson seraphina is the file "NPCs/School/Teacher/teacher4c.jpg".
 
 To decide which figure-name is the monster-image of (M - teacher-seraphina):
 	if M is defeated, decide on figure of enslaved seraphina;
@@ -532,9 +537,13 @@ tits-lesson is a lesson. The lesson-teacher of tits-lesson is teacher-seraphina.
 Definition: tits-lesson is lesson-appropriate:
 	if the player is top heavy and the largeness of breasts < 6, decide no;
 	decide yes.
+To say LessonTitle of (L - tits-lesson):
+	say "Tits".
 
 To compute teaching of (L - tits-lesson):
 	let M be the lesson-teacher of L;
+	now temporaryYesNoBackground is Figure of lesson seraphina;
+	now temporaryYesNoResetNeeded is false;
 	if lady fetish is 2, say "[speech style of M]'Nipples.'[roman type][line break][NameDesc of M] stands at the front of the room with [his of M] hands at [his of M] hips, [his of M] nipples chains waving back and forth in front of [him of M] as [he of M] breathes.[line break][speech style of M]'Sissies are better than women. Do you know why? Breasts. That's right. Women have it easy. Women are lazy. Sissies do not have it easy. Sissies work hard, and to beat women at their own game, sissies must make full use of what assets they have.'[roman type][line break]";
 	otherwise say "[speech style of M]'Breasts.'[roman type][line break][NameDesc of M] stands at the front of the room with [his of M] hands at [his of M] hips, [his of M] giant chest gently heaving up and down in front of [him of M] as [he of M] breathes.[line break][speech style of M]'A woman's most important seductive tool, and a great symbol of her power. Why is it then, that so many of you fools do not spend your lives seeking new ways to enhance and empower your primary assets?'[roman type][line break]";
 	allocate 35 seconds;
@@ -770,7 +779,224 @@ To say EnslavedDominationFlav of (M - teacher-rochelle):
 To decide which number is the EnslavedDominationThreshold of (M - teacher-rochelle):
 	decide on 18000.
 
+The lesson-teacher of condom-lesson is teacher-rochelle.
+
+A time based rule (this is the students get condoms rule):
+	if the condom-timer of condom-lesson > 0:
+		decrease the condom-timer of condom-lesson by time-seconds;
+		if the condom-timer of condom-lesson <= 0:
+			repeat with ST running through students:
+				if the current-rank of ST is 3:
+					if the dedication of ST > a random number between 0 and 4, increase the condom-count of ST by 1;
+			now the condom-timer of condom-lesson is a random number between 75 and 150.
+
+To compute teaching of (L - condom-lesson):
+	allocate 6 seconds;
+	let M be the lesson-teacher of L;
+	if the condom-timer of L > 0:
+		now the condom-timer of L is 0;
+		say "[speech style of M]'Condoms, condoms, condoms. Let's find out who's come to class wearing the most condoms!'[roman type][line break]You watch as [NameDesc of M] inspects you each one by one.[line break][speech style of M]'Okay... ";
+		let LST be the list of students in the location of the player;
+		let LLW be a list of people; [lowest condom holders]
+		let LC be 99; [lowest number of condoms]
+		let TC be 0; [total condoms]
+		repeat with ST running through LST:
+			say "[student-name of ST] has [if the condom-count of ST is 1]just one condom[otherwise][condom-count of ST] condoms[end if], ";
+			increase TC by the condom-count of ST;
+			if the condom-count of ST < LC:
+				now LC is the condom-count of ST;
+				truncate LLW to 0 entries;
+			if the condom-count of ST is LC, add ST to LLW;
+		let CC be 0;
+		repeat with C running through worn clothing:
+			increase CC by the used condoms of C;
+		say "and last but hopefully not least... [NameBimbo] has [if CC is 1]just one condom[otherwise][CC] condoms[end if] pinned to [his of the player] clothing.'[roman type][line break]";
+		if CC < LC:
+			now LC is CC;
+			truncate LLW to 0 entries;
+		if CC is LC, add the player to LLW;
+		if TC is 0:
+			say "[BigNameDesc of M] looks enraged.[line break][speech style of M]'None of you have any condoms?! What the hell! You all FAIL!'[roman type][line break][BigNameDesc of M] storms out the room, visibly frustrated.";
+		otherwise:
+			if the number of entries in LLW >= the number of entries in LST + 1:
+				say "[BigNameDesc of M] smirks.[line break][speech style of M]'You all collected the exact same number! What are the odds!'[roman type][line break]";
+			otherwise:
+				say "[BigNameDesc of M] smiles.[line break][speech style of M]'It looks like I have some promotions to hand out!'[roman type][line break]";
+				repeat with ST running through LST:
+					if ST is not listed in LLW, promote ST;
+					if yourself is not listed in LLW:
+						now armband is pink diamond;
+						say "You watch as the ID card inside your armband transforms!";
+						now the armband-title of armband is "Coco";
+						now the armband-print of armband is "condom covered cutie";
+						say ClothingDesc of armband;
+			let LLWE be the number of entries in LLW;
+			sort LLW in reverse order;
+			let LL be entry 1 in LLW;
+			if LLWE is 1:
+				say "[speech style of M]'As for [if LL is a student][student-name of LL][otherwise][NameBimbo][end if]... If you want a promotion, you're going to have to [if TC is 1]drink the contents of that condom[otherwise]endure a BIG FORFEIT! There's a total of [TC] condoms here, and you're going to have to drink ALL of them[end if] if you want to get promoted today!'[roman type][line break]";
+			otherwise:
+				say "[speech style of M]'As for ";
+				let E be LLWE;
+				repeat with LW running through LLW:
+					say "[if LW is a student][student-name of LW][otherwise][NameBimbo][end if][if E > 2], [otherwise if E is 2] and [end if]";
+					decrease E by 1;
+				say "... If you want a promotion, you're going to have to [if TC is 1]share the contents of that condom[otherwise]endure a BIG FORFEIT! There's a total of [TC] condoms here, and you're going to have to drink ALL of them[end if] between you if you want to get promoted today! Starting with... [if LL is a student][student-name of LL][otherwise][NameBimbo][end if].'[roman type][line break]";
+				let TTC be TC; [original total used condoms]
+				while TC > 0 and the number of entries in LLW > 0:
+					repeat with LW running through LLW:
+						if TC > 0:
+							if TC < TTC and the player is listed in LLW, say "[if TC is 1]There is one used condom[otherwise]There are [TC] used condoms[end if] left to eat. [if the number of entries in LLW > 1]There are [the number of entries in LLW] of you left trying to earn your promotions[otherwise]It's up to you to drink them all to earn your promotion[end if].";
+							if LW is the player:
+								say "[BigNameDesc of M] hands you a used condom of unknown origin...";
+								reset multiple choice questions;
+								set numerical response 1 to "drink the contents";
+								set numerical response 2 to "forfeit the promotion";
+								compute multiple choice question;
+								if player-numerical-response is 1:
+									if TTC is 1:
+										say "You bite it open with your teeth, before drinking your share of it down. The [if LLWE is 2][student-name of entry 2 in LLW] then drinks [his of entry 2 in LLW] half[otherwise]others then each drink their share[end if].";
+									otherwise:
+										say "You bite it open with your teeth, before drinking it all down.";
+									compute slightly addictive swallowing of semen;
+									SlowGrossOut 5;
+									decrease TC by 1;
+								otherwise:
+									remove yourself from LLW;
+									say "You baulk, and shake your head, stepping away. [BigNameDesc of M] shrugs with disappointment, and moves on.";
+							otherwise if the dedication of LW > a random number between -1 and 2:
+								say "[BigNameDesc of M] offers [NameDesc of LW] a used condom. [big he of LW] [one of]clenches [his of LW] eyes shut as [he of LW][or]grimaces, but then[or]breathes deeply and then[or]hesitates only for a moment before [he of LW][in random order] bites into it and swallows the load.";
+								decrease TC by 1;
+							otherwise:
+								say "[BigNameDesc of M] offers [NameDesc of LW] a used condom... But you can see that [NameDesc of LW] feels too nauseous to go near it. [big he of LW] steps back, forfeiting [his of LW] promotion.";
+								remove LW from LLW;
+				if TC > 0:
+					say "[BigNameDesc of M] shakes [his of M] head with disappointment.[line break][speech style of M]'[if TC is 1]There was only one condom left to eat, as well! How tragic![otherwise]There's still [TC] condoms left to go, but you've given up! What a shame.[end if] No more promotions today, then! Class dismissed!'[roman type][line break]";
+				otherwise:
+					say "[BigNameDesc of M] claps.[line break][speech style of M]'Great job, [if the number of entries in LLW is 1 and the player is listed in LLW][NameBimbo][otherwise if the number of entries in LLW is 1][student-name of entry 1 in LLW][otherwise if the number of entries in LLW is 2]you two[otherwise]everyone[end if]! You've definitely earned these promotions after all, haha!'[roman type][line break]";
+					repeat with LW running through LLW:
+						if LW is a student:
+							promote LW;
+						otherwise:
+							now armband is pink diamond;
+							say "You watch as the ID card inside your armband transforms!";
+							now the armband-title of armband is "Coco";
+							now the armband-print of armband is "used condom connoisseur";
+							say ClothingDesc of armband;
+					say "[speech style of M]'Class dismissed!'[roman type][line break]";
+		repeat with ST running through students:
+			now the condom-count of ST is 0;
+		let TUC be total used condoms;
+		repeat with C running through worn clothing:
+			while the used condoms of C > 0 and TC < TUC:
+				let N be the condomPop of C;
+				let X be the printed name of N;
+				now X is ""; [this does nothing, but it won't let us create a temporary variable and not use it]
+				increase the empty condoms of C by 1;
+				decrease TUC by 1;
+	otherwise:
+		now the condom-timer of L is 1;
+		say "[speech style of M]'Condoms, condoms, condoms. Obviously, items of great use to avoid pregnancy and a nasty mess. But also, of course, an excellent trophy that proudly displays your sexual prowess.'[roman type][line break]You watch as [NameDesc of M] takes out a condom, and begins to roll it down [his of M] long, hard [manly-penis].[line break][speech style of M]'The next time we have this lesson, I will be counting how many used condoms you each have pinned to your clothing. Everybody with at least one used condom pinned to their clothing will pass the test, and get promoted. But... The student or students with the least used condoms will have to bite open and drink all the condoms... Or forfeit their promotions.'[roman type][line break]As you all place your hands to your mouths with concern, [NameDesc of M] waggles [his of M] [manly-penis] towards you all.[line break][speech style of M]'Now... Who wants to earn their first condom right away?'[roman type][line break]Do you volunteer to pleasure [teacher-name of M] and earn that condom?";
+		let ST be yourself;
+		let LST be the list of students in the location of the player;
+		sort LST in random order;
+		repeat with S running through LST:
+			let D be the dedication of S;
+			if S is ditzy student, increase D by 2;
+			otherwise increase D by a random number between -2 and 2;
+			if D >= 6, now ST is S;
+		if face is not actually occupied and the player is bimbo consenting:
+			say "You raise your hand. ";
+			if ST is yourself:
+				say "You're the only one who does.";
+			otherwise:
+				say "[BigNameDesc of ST] raises [his of ST] hand at the same time.[paragraph break][speech style of M]'Ooh, both of you want it, hmm? That's a problem... But exciting problems require exciting solutions!'[roman type][line break][BigNameDesc of M] says with glee.[line break][speech style of M]'I've got an idea... The one of you who wants this the most must really like condoms, hmm? But I wonder if you like condoms enough to wear this?'[roman type][line break][BigNameDesc of M] holds up the most insane looking dress you've ever seen. [ClothingDesc of condoms dress]";
+				now temporaryYesNoBackground is the examine-image of condoms dress;
+				say "[speech style of M]'I'll let... [NameBimbo] decide if [he of the player][']s willing to wear it first.'[roman type][line break]";
+				let able-to-wear be true;
+				if condoms dress is not unclash summonable, now able-to-wear is false;
+				if there is a worn unblessed nipple piercing, now able-to-wear is false;
+				if able-to-wear is true:
+					repeat with D running through worn overdresses:
+						if D is not usually autoremovable, now able-to-wear is false;
+				if able-to-wear is true:
+					repeat with D running through worn underdresses:
+						if (D is top-exclusive or D is totally-exclusive) and D is not usually autoremovable, now able-to-wear is false;
+				if able-to-wear is true:
+					repeat with D running through worn skirts:
+						if D is not usually autoremovable, now able-to-wear is false;
+				if able-to-wear is true:
+					repeat with D running through worn corsets:
+						if (D is top-exclusive or D is totally-exclusive) and D is not usually autoremovable, now able-to-wear is false;
+				if able-to-wear is true:
+					repeat with D running through worn bras:
+						if (D is top-exclusive or D is totally-exclusive) and D is not usually autoremovable, now able-to-wear is false;
+				if able-to-wear is true:
+					say "Agree to wear the condoms dress?";
+					if the player is bimbo consenting:
+						now ST is yourself;
+						repeat with D running through worn overdresses:
+							say "You remove the [D].";
+							now D is in the location of the player;
+							dislodge D;
+						repeat with D running through worn underdresses:
+							if D is top-exclusive or D is totally-exclusive:
+								say "You remove the [D].";
+								now D is in the location of the player;
+								dislodge D;
+						repeat with D running through worn skirts:
+							say "You remove the [D].";
+							now D is in the location of the player;
+							dislodge D;
+						repeat with D running through worn corsets:
+							if D is top-exclusive or D is totally-exclusive:
+								say "You remove the [D].";
+								now D is in the location of the player;
+								dislodge D;
+						repeat with D running through worn bras:
+							if D is top-exclusive or D is totally-exclusive:
+								say "You remove the [D].";
+								now D is in the location of the player;
+								dislodge D;
+						say "You awkwardly shuffle into the condoms dress in front of your peers. [moderateHumiliateReflect]";
+						summon condoms dress cursed with quest;
+					otherwise:
+						say "You shake your head.";
+				otherwise:
+					say "Unfortunately, your current clothing prevents you from accepting that offer, and you are forced to shake your head.";
+				if ST is a student:
+					say "[BigNameDesc of ST] shakes [his of ST] head too, not brave enough to wear something so extreme.[paragraph break][speech style of M]'Fair enough, I guess nobody gets this condom after all, haha!'[roman type][line break][BigNameDesc of M] shrugs, and dismisses you all.";
+					now ST is M;
+		otherwise if ST is yourself:
+			say "There's silence as everybody looks around, but nobody volunteers.[paragraph break][speech style of M]'Fair enough, I guess nobody gets this headstart, haha!'[roman type][line break][BigNameDesc of M] shrugs, and dismisses you all.";
+			now ST is M;
+		if ST is not M:
+			say "[BigNameDesc of M] points at the floor in front of [him of M].[line break][speech style of M]'Get on your knees, slut.'[roman type][line break][if St is student][student-name of ST] quickly obeys[otherwise]You quickly obey[end if].[line break][speech style of M]'Open wide.'[roman type][line break]";
+		if ST is a student:
+			say "[BigNameDesc of ST] gets to work fellating [his of ST] teacher. It doesn't take long until [NameDesc of M] is grunting with pleasure, and filling the condom with [his of M] load. Peeling the used condom off, [NameDesc of M] ties the end, and then attaches it to [NameDesc of ST][']s outfit. [student-name of ST] looks very embarrassed to have it dangling there.[paragraph break][speech style of M]'Well, there you have it, everyone! [student-name of ST] earned [himself of ST] a valuable headstart! Now the rest of you better go find some willing cocks, and catch up!'[roman type][line break]With that, [NameDesc of M] dismisses the class.";
+			increase the condom-count of ST by 1;
+		otherwise if ST is yourself:
+			now M is wrapped;
+			now M is friendly-fucking;
+			interest M;
+			now M is penetrating face;
+			now the sex-length of M is a random number between 2 and 5;
+			repeat with S running through LST:
+				if S is friendly:
+					interest S;
+				otherwise:
+					say "[speech style of S]'[one of]Disgusting[or]You're a fucking disgrace[or]What a slut[in random order].'[roman type][line break][BigNameDesc of S] says, before turning to leave.";
+					FavourDown S;
+					bore S;
+					try S going south;
+					now S is moved;
+
+
+
+
 practical-lesson is a lesson. The lesson-teacher of practical-lesson is teacher-hyacinthe.
+To say LessonTitle of (L - practical-lesson):
+	say "Servicing Cocks".
 
 To compute teaching of (L - practical-lesson):
 	allocate 6 seconds;
@@ -1081,6 +1307,8 @@ swimming-lesson is a lesson. The lesson-teacher of swimming-lesson is teacher-hy
 Definition: swimming-lesson is lesson-appropriate:
 	if diaper quest is 0 and the number of alive lesson-appropriate students > 0, decide yes;
 	decide no. [There must be another student]
+To say LessonTitle of (L - swimming-lesson):
+	say "Swimming".
 
 To decide which number is the swimming-strength of (M - a student):
 	decide on the dedication of M.
@@ -1710,7 +1938,7 @@ To compute chess time:
 			now the student-machine of chess-lesson is 1;
 			increase the student-orgasm of chess-lesson by 8;
 			decrease the student-drink-tolerance of chess-lesson by 2;
-			if the student-orgasm of chess-lesson > a random number between 30 and 60, compute chess win;
+			if the student-orgasm of chess-lesson > a random number between 40 and 120, compute chess win;
 		otherwise if the student-machine of chess-lesson is 1:
 			now the student-machine of chess-lesson is 0;
 			say "[student-name of ST][']s dildo machine slows back down to a much more gentle pace.";
@@ -1724,15 +1952,14 @@ To compute chess time:
 				compute bladder growth;
 				if the bladder of the player > 6:
 					increase player-bladder-penalty of chess-lesson by 1;
-					if the player-bladder-penalty of chess-lesson >= 5, say "[bold type][if the player-bladder-penalty of chess-lesson is 5]You are beginning to feel a strong urge to pee, which is making it more difficult for you to concentrate[otherwise]Holding in your pee is making it increasingly difficult to concentrate[end if].[roman type][line break]";
+					if the player-bladder-penalty of chess-lesson >= 5, say "[bold type][if the player-bladder-penalty of chess-lesson is 5]You are beginning to feel a strong urge to pee, which is making it more difficult for you to concentrate[otherwise if the player-bladder-penalty of chess-lesson >= saved-flat-intelligence + 4]It is currently IMPOSSIBLE to think about chess moves because of how much you're holding onto your bladder[otherwise]You would find it significantly easier to think if you didn't have to focus on holding your bladder[end if].[roman type][line break]";
 				otherwise:
 					now player-bladder-penalty of chess-lesson is 0;
 		if delayed urination > 0, compute chess urination;
 		finally humiliate the delayed humiliation of the player;
-		decrease blush factor by 100;
-		if blush factor > 2000, now blush factor is 2000;
-		if blush factor < 0, now blush factor is 0;
+		blush-progress;
 		check for arousal change;
+		Reset Flags; [refractory period and humiliation]
 		update saved stats;
 		now focused-thing is ST;
 		render chess state;
@@ -1803,16 +2030,16 @@ To decide which number is chess-move-found:
 	decide on 0.
 
 To decide which number is chess-random-reset:
-	decide on (a random number between 1 and 6) + (a random number between 0 and 2).
+	decide on a random number between 1 and 4.
 
 To decide which number is chess-great-move-toughness:
-	decide on (a random number between 0 and 7) + (a random number between 0 and 1).
+	decide on (a random number between 1 and 5) + (a random number between 1 and 2).
 
 To decide which number is chess-safe-move-toughness:
-	decide on (a random number between 0 and 4) + (a random number between 0 and 1).
+	decide on a random number between 0 and 4.
 
 To decide which number is chess-trapping-move-toughness:
-	decide on (a random number between 0 and 6) + (a random number between 0 and 1).
+	decide on (a random number between 0 and 5) + (a random number between 0 and 1).
 
 To reset chess planning:
 	reset chess player planning;
@@ -1854,7 +2081,7 @@ To reset chess opponent great planning:
 	if the lost-pieces of chess-lesson > 12 or the student-lost-pieces of chess-lesson > 14, now student-great-move of chess-lesson is 999.
 
 To reset chess opponent safe planning:
-	if chess-move-found is 1, now student-safe-move of chess-lesson is chess-random-reset + chess-safe-move-toughness;
+	if chess-move-found is 1 or the player is getting unlucky, now student-safe-move of chess-lesson is chess-random-reset + chess-safe-move-toughness;
 	otherwise now student-safe-move of chess-lesson is 999;
 	if the lost-pieces of chess-lesson > 12 or the student-lost-pieces of chess-lesson > 14, now student-safe-move of chess-lesson is 999.
 
@@ -1870,9 +2097,9 @@ To reset chess opponent trap planning:
 
 To compute chess players thinking:
 	let I be 0;
-	if player-bladder-penalty of chess-lesson >= 5:
-		let I2 be saved-flat-intelligence + 4 - player-bladder-penalty of chess-lesson;
-		if I2 > I, now I is I2; [got to make sure we're not going to square root a negative]
+	let I2 be saved-flat-intelligence + 9;
+	if player-bladder-penalty of chess-lesson >= 5, decrease I2 by the player-bladder-penalty of chess-lesson;
+	if I2 > I, now I is I2; [got to make sure we're not going to square root a negative]
 	let STI be 3 - ((a random number between 0 and (the student-orgasm of chess-lesson + 2)) / 3);
 	if the defensive-move of chess-lesson > 0 and the chess-turn of chess-lesson is 0: [It takes a couple of turns before the player is allowed to make a normal defensive move.]
 		if debugmode is 1, say "Player defensive move [defensive-move of chess-lesson] - 1 > [defensive-move of chess-lesson - 1][line break]";
@@ -2238,6 +2465,8 @@ Definition: ultimate-lesson is lesson-appropriate:
 	decide no.
 To decide which number is the min-students of (L - ultimate-lesson):
 	decide on 0.
+To say LessonTitle of (L - ultimate-lesson):
+	say "Crazy Gangbang".
 
 ultimate-lesson has a number called lesson-completed.
 ultimate-lesson has a number called lesson-vetos.
@@ -2344,7 +2573,7 @@ To compute anal creampie expel demand of (M - an ultimate-lesson-actor):
 	if ST is student and a2m fetish >= 2 and a random number between 1 and 2 is 1 and face is actually occupied:
 		say "You hear a squeak from [NameDesc of ST] and then you feel [his of ST] lips pressed against your [asshole]. [BigNameDesc of M] that recently pulled out of your [asshole] gives you an order.[line break][speech style of M]'Feed [him of ST] my creampie.'[roman type][line break]Do you obey?";
 		if the player is bimbo consenting:
-			say "You screw your eyes shut even tighter and let it rip, filling [NameDesc of ST][']s mouth with your anal load. You hear [him of M] [one of]moan submissively[or]mewl in complaint[at random] and then gulp it all down.";
+			say "You screw your eyes shut even tighter and let it rip, filling [NameDesc of ST][']s mouth with your anal load. You hear [him of ST] [one of]moan submissively[or]mewl in complaint[at random] and then gulp it all down.";
 			empty belly liquids;
 		otherwise:
 			compute lesson veto;
@@ -2771,17 +3000,17 @@ Part - DITZY STUDENTS
 
 Book - Stacey
 
-student-stacey is a ditzy student.
+student-stacey is a ditzy student. student-stacey can be unthonged.
 
 The text-shortcut of student-stacey is "stst".
 
-Figure of stacey is the file "NPCs/School/Student/student17.png".
+Figure of stacey is the file "NPCs/School/Student/student17.jpg".
 
 To decide which figure-name is the monster-image of (M - student-stacey):
 	decide on figure of stacey.
 
 To say MonsterDesc of (M - student-stacey):
-	say "This sexy [sissy-girl] has a wide-eyed doll-like face with overdone whorish makeup and long wavy platinum blonde hair that curls at the bottom where it reaches [his of M] butt. [big he of M] is wearing a denim crop top on [his of M] top half and frilly pink briefs over [his of M] bubble butt. [big he of M] has a rather vacant expression[if the current-rank of M > 1] and can't stop putting a finger or two in between [his of M] puffed out lips[end if][if artificial enhancements fetish is 1]. [big he of M] has square fake-nails on each finger, completing the 'artificial bimbo' look[end if].".
+	say "This sexy [sissy-girl] has a wide-eyed doll-like face with overdone whorish makeup and long wavy platinum blonde hair that curls at the bottom where it reaches [his of M] butt. [big he of M] is wearing a tiny denim jacket around [his of M] top half, which does absolutely nothing to cover the pink [']BIMBO['] crop top stretched around [his of M] giant [if artificial enhancements fetish is 1]fake[otherwise]and unnaturally perky[end if] tits. On [his of M] bottom half, [he of M][']s got nothing other than a skimpy pair of frilly [']BOMBSHELL['] pink briefs covering [his of M] visibly enhanced bubble butt. [big he of M] has a rather vacant expression[if the current-rank of M > 1] and can't stop putting a finger or two in between [his of M] puffed out lips[end if][if artificial enhancements fetish is 1]. [big he of M] has square fake-nails on each finger, completing the 'artificial bimbo' look[end if].".
 
 The max-rank of student-stacey is 3.
 
@@ -2803,8 +3032,24 @@ To say WhoAnswer of (M - student-stacey):
 To say WhereAnswer of (M - student-stacey):
 	say "[speech style of M]'[if the rank of the player <= 1]We're back at school. This is where dumb girls like us end up!'[otherwise]Ooh, there are ranks? I just thought these arm-thingies were to help us remember our names!'[end if][roman type][line break]".
 
-To say AdviceAnswer of (M - an student-stacey):
+To say AdviceAnswer of (M - student-stacey):
 	say "[speech style of M]'[if the current-rank of M is 1]I've heard a rumour that the smarterest girls let guys stick it up their butt. But I'm a bit scared to try...'[otherwise]When you suck on a [manly-penis], if you do it for long enough then some [tasty] juice comes out! And the more of that you drink, the more smarterer you get! So I try to get as much of it as possible.'[end if][roman type][line break]".
+
+student-interaction-bombshell-thong is a student-interaction.
+
+Definition: student-interaction-bombshell-thong is student-eligible:
+	if current-monster is student-stacey and the current-rank of current-monster >= 2, decide yes;
+	decide no.
+Definition: student-interaction-bombshell-thong is eligible:
+	if student-stacey is not unthonged and light-pink-lace-thong is off-stage, decide yes;
+	decide no.
+
+To resolve (SI - student-interaction-bombshell-thong):
+	let M be current-monster;
+	say "[BigNameDesc of M] removes her panties and offers them to you.[line break][speech style of M]'Do you want these? I don't love them any more.'[roman type][line break][big he of M] happily discards them in front of you.";
+	now M is unthonged;
+	now light-pink-lace-thong is in the location of M;
+	compute autotaking light-pink-lace-thong.
 
 Book - Bree
 
@@ -3120,10 +3365,10 @@ Definition: student-katya is calculated unfriendly:
 
 The text-shortcut of student-katya is "stka".
 
-Figure of katherine is the file "NPCs/School/Student/student13a.png".
-Figure of kat is the file "NPCs/School/Student/student13b.png".
-Figure of katya is the file "NPCs/School/Student/student13c.png".
-Figure of kitty is the file "NPCs/School/Student/student13d.jpg".
+Figure of katherine is the file "NPCs/School/Student/student13a.jpg".
+Figure of kat is the file "NPCs/School/Student/student13b.jpg".
+Figure of katya is the file "NPCs/School/Student/student13c.jpg".
+[Figure of kitty is the file "NPCs/School/Student/student13d.jpg".]
 Figure of cuntwarmer is the file "NPCs/School/Student/student13e.png".
 
 To decide which figure-name is the monster-image of (M - student-katya):
@@ -3133,8 +3378,6 @@ To decide which figure-name is the monster-image of (M - student-katya):
 		decide on figure of kat;
 	otherwise if the current-rank of M is 3:
 		decide on figure of katya;
-	otherwise if the current-rank of M is 4:
-		decide on figure of kitty;
 	otherwise:
 		decide on figure of cuntwarmer.
 
@@ -3142,7 +3385,7 @@ To say MonsterDesc of (M - student-katya):
 	if lady fetish is 2:
 		say "This platinum blonde [man of M] has the perfect sissy body shape[if the current-rank of M > 2 and artificial enhancements fetish is 1] including visibly silicone-enhanced asscheeks and a flawless nose job[end if], and [he of M] seems very comfortable in [his of M] own skin. [if the current-rank of M < 4][big his of M] face doesn't match [his of M] fuckdoll body though - [he of M] looks rather rebellious and level-headed, not the vacant sex-addled look you might expect[otherwise][big his of M] face now displays a much more vacant expression - one of submission and humility[end if]. [if the current-rank of M is 1]A white schoolgirl blouse clings to [his of M] svelte upper torso and [his of M] pink tartan miniskirt is so short you can see a peek of [his of M] skimpy panties when you're on your knees. [big he of M] stands impeccably balanced on [his of M] tall black stiletto heels as if [he of M] was born in them[otherwise if the current-rank of M is 2][big his of M] long-sleeved white leather jacket is fully unbuttoned, exposing [his of M] tartan patterned bra. [big his of M] tiny white microshorts hug [his of M] figure so tightly they almost look like they're painted on[otherwise if the current-rank of M is 3][big he of M]'s wearing nothing except a pair of purple low-rise silk briefs and matching half-cup bra which leaves most of [his of M] body on display[otherwise if the current-rank of M is 4][big he of M][']s [one of]now [or][stopping]wearing a sheer pink negligee over [his of M] svelte chest, so see-through it covers nothing. It matches [his of M] skimpy g-string which is so tiny that even [his of M] tiny [DickDesc of M] is in danger of popping out when [he of M] isn't using [his of M] hands to hold it in. Through the negligee you can see that [his of M] nipples have been covered by crosses of black type that read 'FUCK ME!' in big white letters[otherwise][big he of M] is completely naked, aside from a tiny purple chastity cage, and has a completely vacant expression - it looks like [he of M][']s struggling to think clearly[end if].";
 	otherwise:
-		say "This platinum blonde [man of M] has the perfect bimbo body shape[if the current-rank of M > 2 and artificial enhancements fetish is 1] including visibly silicone-enhanced fuckballs and a flawless nose job[end if], and [he of M] seems very comfortable in [his of M] own skin. [if the current-rank of M < 4][big his of M] face doesn't match [his of M] fuckdoll body though - [he of M] looks rather rebellious and level-headed, not the vacant sex-addled look you might expect[otherwise][big his of M] face now displays a much more vacant expression - one of submission and humility[end if]. [if the current-rank of M is 1]A white schoolgirl blouse tightly stretches over [his of M] seemingly spherical C-cup tits, and [his of M] pink tartan miniskirt is so short you can see a peek of [his of M] skimpy panties when you're on your knees. [big he of M] stands impeccably balanced on [his of M] tall black stiletto heels as if [he of M] was born in them[otherwise if the current-rank of M is 2][big his of M] long-sleeved white leather jacket is fully unbuttoned, exposing [his of M] tartan patterned bra and round C-cup fuckballs. [big his of M] tiny white microshorts hug [his of M] figure so tightly they almost look like they're painted on[otherwise if the current-rank of M is 3][big he of M][']s wearing nothing except a pair of purple low-rise silk briefs and matching half-cup bra which leaves most of [his of M] D-cup titty flesh on display[otherwise if the current-rank of M is 4][big he of M][']s [one of]now [or][stopping]wearing a sheer pink negligee over [his of M] D-cup tits which is so see-through it covers nothing. It matches [his of M] skimpy g-string which is so tiny you can spy the edges of [his of M] pussy when [he of M] isn't covering it with [his of M] hands. Through the negligee you can see that [his of M] nipples have been covered by crosses of black type that read 'FUCK ME!' in big white letters[otherwise][big he of M] is completely naked and has a completely vacant expression - it looks like [he of M][']s struggling to think clearly[end if].".
+		say "This platinum blonde [man of M] has the perfect bimbo body shape[if artificial enhancements fetish is 1] including visibly silicone-enhanced fuckballs and a flawless nose job[end if], and [he of M] seems very comfortable in [his of M] own skin. [if the current-rank of M < 4][big his of M] face doesn't match [his of M] fuckdoll body though - [he of M] looks rather rebellious and level-headed, not the vacant sex-addled look you might expect[otherwise][big his of M] face now displays a much more vacant expression - one of submission and humility[end if]. [if the current-rank of M is 1]A white schoolgirl blouse tightly stretches over [his of M] seemingly spherical E-cup tits, and [his of M] pink tartan miniskirt is so short you can see a peek of [his of M] skimpy panties when you're on your knees. [big he of M] stands impeccably balanced on [his of M] tall black stiletto heels as if [he of M] was born in them[otherwise if the current-rank of M is 2][big his of M] white schoolgirl blouse only has one button done up, exposing huge amounts of cleavage from [his of M] round F-cup fuckballs, and the complete lack of a bra. [big his of M] tiny pink microskirt hugs [his of M] figure so tightly it almost looks like it's painted on, and [he of M] prances perfectly elegantly on [his of M] tall pink platform heels[otherwise if the current-rank of M is 3][big his of M] white tube top only has one button done up, exposing huge amounts of cleavage and underboob from [his of M] giant plastic N-cup fuckballs. [big his of M] tiny pink microskirt is somehow even smaller than before perhaps because of how massive [his of M] beachball buttocks are now. [big he of M] prances perfectly elegantly on [his of M] extra-tall pink platform heels[otherwise][big he of M] is completely naked and has a completely vacant expression - it looks like [he of M][']s struggling to think clearly[end if].".
 
 The max-rank of student-katya is 6.
 
@@ -3235,7 +3478,11 @@ To say StoryAnswer of (M - student-darla):
 
 Book - Belinda
 
-student-belinda is a nasty student. student-belinda has a number called scrunchies-donated.
+student-belinda is a nasty student.
+
+Definition: a student is scrunchie-giving:
+	if it is student-belinda, decide yes;
+	decide no.
 
 The text-shortcut of student-belinda is "stbe".
 
@@ -3260,31 +3507,6 @@ To update name of (M - student-belinda):
 To say StoryAnswer of (M - student-belinda):
 	say "[speech style of M]'My boyfriend wants me to call him 'Daddy' [if the current-rank of M is 1]but I'm not too sure. Apparently this place is going to convince me it's fun to act like a bratty [sissy-girl]. We'll see...'[otherwise]and I'm training to be his bratty babygirl. I think I've got the attitude for this role already, hah!'[end if][roman type][line break]".
 
-student-interaction-belinda-scrunchie is a student-interaction. student-interaction-belinda-scrunchie is repeatable.
-
-Definition: student-interaction-belinda-scrunchie is student-eligible:
-	if current-monster is student-belinda and the scrunchies-donated of student-belinda < 2:
-		let C be a random off-stage pink scrunchie;
-		if C is a thing:
-			if the number of worn pink scrunchies is 1, decide yes;
-			if C is actually summonable, decide yes;
-	decide no.
-
-To resolve (SI - student-interaction-belinda-scrunchie):
-	let M be current-monster;
-	say "[BigNameDesc of M] takes a pink scrunchie off of [his of M] wrist.[line break][speech style of M]'You look so cringe! Here, please wear this. It'll make you so much less of a dork!'[roman type][line break]Do you wear the scrunchie?";
-	if the player is bimbo consenting:
-		say "You let [NameDesc of M] style your hair with the scrunchie.";
-		let C be a random off-stage pink scrunchie;
-		summon C cursed;
-		say "[speech style of M]'Hahaha! Yes! That is MUCH better! You're still a fucking weirdo on the inside, but at least you can look stylish and cool on the outside.'[roman type][line break]";
-		increase the scrunchies-donated of M by 1;
-		satisfy M;
-	otherwise:
-		say "You shake your head and pull away. That is not your idea of an appealing addition to your outfit. [BigNameDesc of M] frowns.[line break][speech style of M]'Goddamn, and there I was trying to be nice for once. You really are a stone cold bitch.'[roman type][line break][BigNameDesc of M] sticks [his of M] middle finger up towards you, and stalks away.";
-		HappinessDown M by 1;
-		say BecomesBoredFlav of M;
-		bore M.
 
 
 Book - Hiroko

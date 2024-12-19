@@ -62,7 +62,7 @@ To Set Up The Dungeon:
 		if the number of unplaced rooms in The Dungeon > 5 or Stairwell01 is unplaced or Dungeon28 is unplaced or Dungeon41 is unplaced:
 			repeat with R running through labyrinth rooms:
 				now Neighbour Finder is R;
-				unless R is the location of the player or R is Dungeon12, now R is not smoky;
+				unless R is the location of the player or R is Dungeon12, now R is not pink-smoky;
 				unless R is Dungeon10 or R is Dungeon11 or R is Dungeon12 or R is Dungeon32:
 					now R is not discovered;
 					now the grid position of R is <0,0,0>;

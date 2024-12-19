@@ -377,7 +377,7 @@ To compute absorption:
 			let AC be a random worn absorption clothing;
 			let C be a random worn wet absorption clothing;
 			if C is nothing, now C is a random worn dirty clothing;
-			if C is nothing, now C is a random wet clothing;
+			if C is nothing, now C is a random worn wet clothing;
 			if C is clothing:
 				if C is perceived wet or C is perceived soiled:
 					if C is absorption, now AC is C;

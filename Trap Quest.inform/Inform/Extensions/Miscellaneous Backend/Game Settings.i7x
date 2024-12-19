@@ -98,6 +98,9 @@ choice
 0 [blessingsVisible]
 0 [wetnessVisible]
 0 [miscellaneousVisible]
+45 [map-window-portion]
+0 [oldStickFigure]
+1 [bondageIconVisible]
 
 To decide which number is YesNoPreference:
 	decide on choice in row 1 of the Table of Settings.
@@ -377,6 +380,7 @@ Are there clothes on the Wonderfuller model?
 
 +!]
 To decide which number is wonderfuller clothing:
+	decide on 0;
 	decide on choice in row 37 of the Table of Settings.
 
 [!<DecideWhichNumberIsPreviousSupporterID>+
@@ -651,6 +655,7 @@ Table of GUI Settings
 title	subtable	description	toggle
 "Previous Menu (Shortcut: Q)"	--	--	quit rule
 "Graphics Window: [if side images is 0]OFF[otherwise]ON[end if]"	--	--	side images toggle rule
+"Map Window Height: [map-window-portion]% of game window height"	--	--	map window portion toggle rule
 "Automatically show clothing window when clothing changes: [if auto clothing window is 0]OFF[otherwise if auto clothing window is 1]ON (lower priority than automatically showing body window)[otherwise]ON (higher priority than automatically showing body window)[end if]"	--	--	auto clothing window toggle rule
 "Automatically show body window when body transformation visibly progresses: [if auto body window is 0]OFF[otherwise]ON[end if]"	--	--	auto body window toggle rule
 "What counts as body transformation visibly progressing? [if body outdated preference is 0]ALL VISIBLE CHANGES, GOOD & BAD[otherwise]ONLY WHEN BODY GETS SLUTTIER[end if]"	--	--	body outdated preference toggle rule
@@ -660,6 +665,7 @@ title	subtable	description	toggle
 "Save and Restore buttons[if SaveLoadPreference is 1] (these still won't show if you've chosen roguelike saving): ON[otherwise]: OFF[end if]"	--	--	SaveLoadPreference toggle rule
 "Cutscene images: [if image cutscenes is 0]NO CUTSCENE IMAGES AT ALL[otherwise if image cutscenes is 1]PUSH LOTS TO THE MAP WINDOW (recommended)[otherwise]KEEP MOST IN THE LOCATION WINDOW[end if]"	--	--	image cutscenes toggle rule
 "Visible humiliating tattoos shown in Location Window: [if tattoo vision is 1]ON[otherwise]OFF[end if]"	--	--	tattoo vision toggle rule
+"Icon for stand / kneel button underneath map window: [if oldStickFigure is 1]Old classic stick figures[otherwise]New shiny bondage doll[end if]"	--	--	oldStickFiguretoggle rule
 
 
 Part - Image Toggle Rules
@@ -952,6 +958,27 @@ To decide which number is wetnessVisible:
 
 To decide which number is miscellaneousVisible:
 	decide on choice in row 65 of Table of Settings.
+
+To decide which number is map-window-portion:
+	decide on choice in row 66 of Table of Settings.
+
+This is the map window portion toggle rule:
+	if map-window-portion >= 65:
+		now the choice in row 66 of the Table of Settings is 20;
+	otherwise:
+		increase choice in row 66 of Table of Settings by 5.
+
+To decide which number is oldStickFigure:
+	decide on choice in row 67 of Table of Settings.
+
+This is the oldStickFiguretoggle rule:
+	if oldStickFigure is 0:
+		now the choice in row 67 of Table of Settings is 1;
+	otherwise:
+		now choice in row 67 of Table of Settings is 0.
+
+To decide which number is bondageIconVisible:
+	decide on choice in row 68 of Table of Settings.
 
 Part - Settings
 

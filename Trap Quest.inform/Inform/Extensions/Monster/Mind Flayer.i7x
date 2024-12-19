@@ -85,7 +85,7 @@ A time based rule (this is the mindflayer domination rule):
 			if (a random number between 1 and 3 < 3) and (the arousal of the player < maximum arousal / 2):
 				say "Swirling images of sex begin to fill your mind, and you hear a voice in your head![line break][first custom style]'Your holes burn to be filled.'[roman type][line break]You are so aroused you could burst!";
 				now the arousal of the player is maximum arousal;
-			otherwise if the location of the player is smoky and the largeness of breasts < max breast size:
+			otherwise if the location of the player is pink-smoky and the largeness of breasts < max breast size:
 				say "You see images of yourself with incredible breasts, and you hear a voice in your head![line break][first custom style]'Breathe deep and become the [whore] you know yourself to be.'[roman type][line break]You fall to your knees!";
 				try silently kneeling;
 			otherwise if (a random number between 1 and 3 < 3) and (the raw oral sex addiction of the player < 10):

@@ -118,7 +118,7 @@ Carry out kneeling:
 	if seconds is 0, allocate 2 seconds;
 	otherwise allocate 1 seconds. [seconds = 1 means monsters don't get delayed in "report kneeling when the player is in danger"]
 
-Check kneeling when the location of the player is smoky:
+Check kneeling when the location of the player is pink-smoky:
 	if areYouSure is 1 and the player is upright and seconds is 0 and auto is 0 and the player is air breathing vulnerable and the player is able to breathe:
 		say "There is [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room...";
 		reset multiple choice questions;

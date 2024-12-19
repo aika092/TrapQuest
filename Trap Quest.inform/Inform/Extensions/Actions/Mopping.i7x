@@ -78,7 +78,7 @@ Carry out mopping face:
 Carry out mopping clothing:[TODO: breasts largeness 10+ will touch the ground and become soaked.]
 	allocate 6 seconds;
 	let D be 0; [amount of puddle that was cleaned this turn - increases work ethic and fatigue]
-	let E be a random number between 1 and 2; [amount of puddle to be cleaned this turn]
+	let E be total puddle + a random number between 1 and 2; [amount of puddle to be cleaned this turn]
 	let SL be the soak-limit of the noun - (the semen-soak of the noun + the urine-soak of the noun + the milk-soak of the noun);
 	if the noun is pink-spraybottle:
 		increase E by 1;
@@ -153,6 +153,8 @@ Carry out mopping clothing:[TODO: breasts largeness 10+ will touch the ground an
 			decrease E by the semen-puddle of the location of the player;
 			SemenSoakUp the noun by the semen-puddle of the location of the player;
 			now the semen-puddle of the location of the player is 0;
+	let DD be D;
+	if DD > 5, now DD is 5;
 	if the noun is pink-spraybottle:
 		increase the work ethic of the noun by D * 30;
 		if the noun is cursed, now D is D * 3;
@@ -191,8 +193,9 @@ Report Mopping:
 			let H be a random worn headgear;
 			if H is stripper-ears or the player is getting very unlucky:
 				if H is headgear:
-					transform H into stripper maid headdress;
-					compute class outfit of stripper maid headdress;
+					unless H is stripper maid headdress:
+						transform H into stripper maid headdress;
+						compute class outfit of stripper maid headdress;
 				otherwise:
 					summon stripper maid headdress cursed;
 				unless H is stripper-ears, say "[variable custom style]Oh my god, did this happen because I mopped the ground like this in front of [him of M]?![roman type][line break][GotUnluckyFlav]";

@@ -25,6 +25,9 @@ Figure of fairy interact 11 is the file "NPCs/Forest/Fairy/cutscene-fairy-intera
 Figure of fairy interact 12 is the file "NPCs/Forest/Fairy/cutscene-fairy-interact12.png".
 Figure of fairy interact 13 is the file "NPCs/Forest/Fairy/cutscene-fairy-interact13.png".
 
+Figure of Fairy Cutscene 3 is the file "NPCs/Forest/Fairy/cutscene-fairy-belly1.png".
+Figure of Fairy Cutscene 7 is the file "NPCs/Forest/Fairy/cutscene-fairy-belly2.png".
+
 To decide which figure-name is the monster-image of (M - a fairy):
 	if diaper quest is 1, decide on the figure of diaper fairy;
 	otherwise decide on the figure of fairy.
@@ -484,7 +487,7 @@ To compute fairySuckling of (M - a fairy):
 				say "You're starting to think all this forced lactation and suckling is stimulating your breasts, making them produce even more [milk] than they would have.[line break][variable custom style]But that's fair enough - at least I'm being a *productive* member of this game. Teehee![roman type][line break]";
 		otherwise if the bimbo of the player > 10:
 			say "With a tremor of excited anticipation, you hold your [BreastDesc] up so the sexy little fairy knows you're ready for any attention [he of M] cares to give your swollen and eager nipples!";
-	if there is a worn cow piercing:
+	if nipple-rings is worn:
 		say "[variable custom style]'Ooh! I can smell yummy milk from the big, slow cow[boy of the player]. Does the sexy cow[boy of the player] need milking? Yes [he of the player] does, doesn't [he of the player]? I bet [he of the player]'s just dying to moo for me and let me milk [him of the player]!' [roman type][big he of M] gives your heavy nipple ring a sharp tug and a twist, and your poor, tender nub shoots a delicious mix of pain and thrilling pleasure right into your tummy, where it flares out in a shockingly intense sensation that surges into your groin. You blush at the way [he of M]'s taunting you, but can't help feeling even more aroused!";
 		stimulate breasts from M;
 	otherwise if there is a worn nipple chain:
@@ -504,7 +507,7 @@ To compute fairySuckling of (M - a fairy):
 		otherwise if delicateness of the player > 10 :
 			say "You find yourself biting your lip, and holding it up slightly to [him of M], offering yourself.";
 		say "[big his of M] grin widens as [he of M] darts to your other nipple, which shivers in eager anticipation of its imminent fate. The knowing look in [his of M] eyes tells you how much [he of M] enjoys having you under [his of M] tiny thumb. [big his of M] eyes burn into yours:[line break][speech style of M][one of]'Yes, putty in my hands.'[or]'That's my pretty cow-dolly.'[or]'Hello, Mommy.'[or]'Go on, be a good milk dispenser.'[or]'I should call you Buttercup!'[or]'Ooh, who's getting to be well-trained?'[or]'That's a good milk-cow.'[or]'I know you want me to suck on you.'[or]'Look how eager you are!'[or]'I know you love this![or]'Oh, look who can't wait?'[or]'Oh, my, look at them, standing up proud and glistening with milk for me!'[or]'Are your nipples getting bigger?' [big he of M] licks [his of M] lips.[at random][roman type][line break]Your eyes roll back in your head again as [one of][he of M] fastens onto you![or][his of M] mouth engulfs you![or] [he of M] starts suckling![at random]";
-	if there is a worn cow piercing or there is a worn nipple chain:
+	if nipple-rings is worn or there is a worn nipple chain:
 		say "[big his of M] tiny hands are jerking at [italic type]this[roman type] nipple's piercing, even as [his of M] mouth stretches over your rosebud, and [his of M] lips press down right to the edge of the heavy metal as [he of M] begins sucking vigorously. Between [his of M] suckling at your tit, and [his of M] tugging at the piercing, small lightning bolts of pleasure jolt and judder through you. You have the feeling that something a little magical just happened: your [BreastDesc] feel... [italic type]milkier[roman type]. Ooh - sexy!";
 		passively stimulate breasts from M;
 		increase the lactation rate of breasts by 2; [Cowgirls get even milkier!]
@@ -879,13 +882,13 @@ To compute friendly drink of (M - a fairy):
 	if slimegirl is not worn:
 		say "[if M is mating][line break][speech style of M]'You just want me to get you pregnant again, don't you? Maybe you're becoming as addicted to pregnancy as a real fairy!'[otherwise][BigNameDesc of M] has an evil look in [his of M] eye. [speech style of M]'Oh don't worry, I'll fill you up!'[end if][roman type][line break]";
 		unless M is fairy-witch, alwayscutshow figure of fairy interact 13 for M;
-		say "With a wave of [his of M] hands, your belly starts to expand. It keeps on growing until you feel very, very full. [if the largeness of belly < max belly size]It's not just your stomach that [he of M] has filled up...[end if]";
+		say "With a wave of [his of M] hands, your belly starts to expand. It keeps on growing until you feel very, very full. [if enema fetish is 1 and the largeness of belly < max belly size]It's not just your stomach that [he of M] has filled up...[end if]";
 		StomachFoodUp 1 + diaper quest;
 		increase the stomach-water of the player by 3;
 		while the stomach of the player < stomach-max:
 			increase the stomach-water of the player by 1;
 		if diaper quest is 1:
-			if the water volume of belly < belly limit - the total fill of belly, now the water volume of belly is belly limit - the total fill of belly;
+			if enema fetish is 1 and the water volume of belly < belly limit - the total fill of belly, now the water volume of belly is belly limit - the total fill of belly;
 		otherwise if the player is not possessing a vagina:
 			let X be 19 - the largeness fill of belly;
 			if X > 0, assfill X;

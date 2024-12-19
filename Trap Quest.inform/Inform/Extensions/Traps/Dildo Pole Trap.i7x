@@ -18,11 +18,14 @@ REQUIRES COMMENTING
 @!]
 A dildo trap is a kind of trap. A dildo trap is usually potentially wire. The text-shortcut of a dildo trap is "dt".
 Figure of dungeon dildo trap is the file "Env/Dungeon/dildopole1.jpg".
+Figure of dungeon dildo trap ballet is the file "Env/Dungeon/dildopole2.jpg".
 Figure of woods dildo trap is the file "Env/Forest/dildopole1.jpg".
 Figure of hotel dildo trap is the file "Env/Hotel/dildopole1.jpg".
 Figure of mansion dildo trap is the file "Env/Mansion/dildopole1.jpg".
 
 To decide which figure-name is the examine-image of (C - a dildo trap):
+	if diaper quest is 1, decide on figure of dildo pole DQ;
+	if C is penetrating a fuckhole and there is worn ballet related clothing, decide on Figure of dungeon dildo trap ballet;
 	decide on figure of dungeon dildo trap.
 
 [!<DildoTrap>@<SayEnvironmentDesc>+
@@ -31,12 +34,13 @@ This is what is put in the room description when the trap is visible (revealed).
 
 +@!]
 To say EnvironmentDesc of (T - a dildo trap):
-	say "A pole protrudes from a hole in the floor with a dildo on the end. ".
+	say "A pole protrudes from a hole in the floor with a [if diaper quest is 1]wand vibrator[otherwise]dildo[end if] on the end. ".
 
 To say ShortDesc of (T - a dildo trap):
 	say "pole-mounted dildo".
 
 To decide which number is the girth of (D - a dildo trap):
+	if diaper quest is 1, decide on 9; [this affects vibrator stimulation - set it to 3/6/9 depending on how strong we want the vibrations]
 	decide on 3.
 
 Check taking off dildo trap:
@@ -55,7 +59,7 @@ To compute orgasm resolution of (R - a dildo trap):
 	compute orgasm retraction of R.
 
 To compute orgasm retraction of (R - a dildo trap):
-	say "The dildo retracts as your knees buckle, pulling free as you fall to the floor.".
+	say "The [if diaper quest is 1]wand vibrator[otherwise]dildo[end if] retracts as your knees buckle, [if diaper quest is 1]releasing your ankles[otherwise]pulling free[end if] as you fall to the floor.".
 
 To compute pole cutscene image of (Y - a dildo trap):
 	if Y is penetrating asshole:
@@ -71,63 +75,68 @@ To trigger pole trap (Y - a dildo trap):
 	now the reset-timer of Y is 250;
 	if the player is prone:
 		if the class of the player is living sex doll:
-			say "A dildo on a pole shoots out of a trap door underneath you and hits you sharply on the forehead, knocking you onto your feet.";
+			say "A [if diaper quest is 1]wand vibrator[otherwise]dildo[end if] on a pole shoots out of a trap door underneath you and hits you sharply on the forehead, knocking you onto your feet.";
 			unless the player is immobile, now the stance of the player is 0;
 			now Y is not untriggered;
 			now Y is revealed;
 		otherwise if a random number between 1 and 12 > the dexterity of the player:
-			say "A dildo on a pole shoots out of a trap door underneath you and hits you sharply on the forehead, knocking you out cold.";
+			say "A [if diaper quest is 1]wand vibrator[otherwise]dildo[end if] on a pole shoots out of a trap door underneath you and hits you sharply on the forehead, knocking you out cold.";
 			[Note this can only happen with massive breasts when crawling]
 			now delayed fainting is 1;
 			now the fainting reason of the player is 5;
 		otherwise:
-			say "A dildo on a pole shoots out of a trap door underneath you and narrowly misses your face. Phew, that could have been quite ugly...";
+			say "A [if diaper quest is 1]wand vibrator[otherwise]dildo[end if] on a pole shoots out of a trap door underneath you and narrowly misses your face. Phew, that could have been quite ugly...";
 			now Y is not untriggered;
 			now Y is revealed;
 	otherwise:
 		now Y is not untriggered;
 		now Y is revealed;
-		say "[bold type]A dildo on a pole shoots out of a trap door underneath you and towards your crotch![roman type][line break]";
-		let target-BP be asshole;
-		if the player is possessing a vagina and a random number between 1 and 2 is 1, now target-BP is vagina;
-		let O be a random top level protection clothing;
-		if target-BP is asshole, now O is a random top level ass protection clothing;
-		[Having an the orifice already occupied overrides all other checks]
-		if target-BP is actually occupied:
-			let P be a random thing filling target-BP;
-			say "The dildo [one of]forcefully bashes[or]hammers[or]slams[at random] into your [ShortDesc of P], [if P is jelldo]which [one of]absorbs most of[or]cushions[or]softens[or]muffles[at random] the blow, protecting your sensitive hole[otherwise]sending powerful vibrations flying through your sensitive hole[end if]!";
-			if P is not jelldo:
-				ruin target-BP times 2;
-				if P is anal beads and the notch-taken of P < the notches of P:
-					increase the notch-taken of P by 1;
-					say "Another bead is forced inside!";
-		otherwise if O is clothing:
-			if (target-BP is asshole and O is bottom level ass protection) or (target-BP is vagina and O is bottom level protection):
-				let A be a random number between 5 and 12;
-				let D be the anal defence of the player;
-				if target-BP is vagina, now D is the vaginal defence of the player;
-				if debuginfo > 0, say "[input-style]Pole penetration check: accuracy roll d8+4 ([A]) | ([D].5) orifice defence[roman type][line break]";
-				if A > D and O is not diaper and O is not chastity-belt:
-					compute Y penetration of O into target-BP;
-				otherwise:
-					if O is diaper:
-						say "The dildo hits the thick padding of your [ShortDesc of O] with a dull thud, which converts the violent force into a gentle, [if the sex addiction of the player < 5]almost [end if]pleasurable nudging against your [genitals].";
-						passively stimulate vagina from Y;
+		say "[bold type]A [if diaper quest is 1]wand vibrator[otherwise]dildo[end if] on a pole shoots out of a trap door underneath you and towards your crotch![roman type][line break]";
+		if diaper quest is 0:
+			let target-BP be asshole;
+			if the player is possessing a vagina and a random number between 1 and 2 is 1, now target-BP is vagina;
+			let O be a random top level protection clothing;
+			if target-BP is asshole, now O is a random top level ass protection clothing;
+			[Having an the orifice already occupied overrides all other checks]
+			if target-BP is actually occupied:
+				let P be a random thing filling target-BP;
+				say "The dildo [one of]forcefully bashes[or]hammers[or]slams[at random] into your [ShortDesc of P], [if P is jelldo]which [one of]absorbs most of[or]cushions[or]softens[or]muffles[at random] the blow, protecting your sensitive hole[otherwise]sending powerful vibrations flying through your sensitive hole[end if]!";
+				if P is not jelldo:
+					ruin target-BP times 2;
+					if P is anal beads and the notch-taken of P < the notches of P:
+						increase the notch-taken of P by 1;
+						say "Another bead is forced inside!";
+			otherwise if O is clothing:
+				if (target-BP is asshole and O is bottom level ass protection) or (target-BP is vagina and O is bottom level protection):
+					let A be a random number between 5 and 12;
+					let D be the anal defence of the player;
+					if target-BP is vagina, now D is the vaginal defence of the player;
+					if debuginfo > 0, say "[input-style]Pole penetration check: accuracy roll d8+4 ([A]) | ([D].5) orifice defence[roman type][line break]";
+					if A > D and O is not diaper and O is not chastity-belt:
+						compute Y penetration of O into target-BP;
 					otherwise:
-						say "Your [ShortDesc of O] blocks the dildo which bounces off harmlessly. The [if O is rigid]material is damaged[otherwise][clothing-material of O] material of the clothing is stretched[end if] a little by the attack.";
-						damage O;
-						damage O;
+						if O is diaper:
+							say "The dildo hits the thick padding of your [ShortDesc of O] with a dull thud, which converts the violent force into a gentle, [if the sex addiction of the player < 5]almost [end if]pleasurable nudging against your [genitals].";
+							passively stimulate vagina from Y;
+						otherwise:
+							say "Your [ShortDesc of O] blocks the dildo which bounces off harmlessly. The [if O is rigid]material is damaged[otherwise][clothing-material of O] material of the clothing is stretched[end if] a little by the attack.";
+							damage O;
+							damage O;
+				otherwise:
+					[If there is more than one layer of clothing, then automatic failure]
+					say "It bounces off your [ShortDesc of O] harmlessly!";
 			otherwise:
-				[If there is more than one layer of clothing, then automatic failure]
-				say "It bounces off your [ShortDesc of O] harmlessly!";
-		otherwise:
-			[If there is nothing blocking, then there's a chance of it hitting the player's huge butt cheeks]
-			let A be a random number between 5 and 12;
-			if debuginfo > 0, say "[input-style]Pole penetration check: accuracy roll d8+4 ([A]) | ([defence of the player].5) butt cheek defence[roman type][line break]";
-			if A > the defence of the player:
-				compute Y penetration of nothing into target-BP;
-			otherwise:
-				say "The dildo bounces harmlessly off your [AssDesc].".
+				[If there is nothing blocking, then there's a chance of it hitting the player's huge butt cheeks]
+				let A be a random number between 5 and 12;
+				if debuginfo > 0, say "[input-style]Pole penetration check: accuracy roll d8+4 ([A]) | ([defence of the player].5) butt cheek defence[roman type][line break]";
+				if A > the defence of the player:
+					compute Y penetration of nothing into target-BP;
+				otherwise:
+					say "The dildo bounces harmlessly off your [AssDesc].";
+		otherwise: [diaper quest]
+			say "At the same time, metal anklecuffs emerge from either side, and grab at your ankles!";
+			say "[variable custom style][if the player is a nympho][one of]Ooh[or]Hee-hee[cycling][otherwise if the player is a pervert]Whoops[otherwise]Fuck[end if], I'm stuck[one of][or] again[stopping]![roman type][line break]";
+			now Y is grabbing the player.
 
 To compute (Y - a dildo trap) penetration of (C - an object) into (G - a fuckhole):
 	now Y is penetrating G;
@@ -146,6 +155,11 @@ To compute (Y - a dildo trap) penetration of (C - an object) into (G - a fuckhol
 		say DildoTrapReactFlav of M;
 	if Y is penetrating G and there is worn ballet related clothing:
 		say "[one of][bold type]But that's not all! [roman type]There's a padded flange at the base of the dildo, and you feel it press up against your [variable G]. It lifts your feet right off the floor! OMG! You won't be able to jump off this trap![or]Once again, you feel the padded rim squish your [variable G] and lift you bodily off the floor![stopping]";
+		if ballet corset is off-stage and ballet corset is unclash summonable:
+			unclash class summon ballet corset;
+		let BB be a random off-stage thigh high ballet boots;
+		if BB is unclash summonable:
+			unclash class summon BB;
 		now doll-stuck is "[one of]turn[or]rotate[or]twirl around[at random] like a [one of]pretty[or]dainty[or]delicate[at random] [one of]ballerina dolly[or]toy ballerina[at random] in a music box";
 		now doll-stuck-num is 1;
 		now doll-stuck-kind is 1; [ballerina]
@@ -245,6 +259,9 @@ To Jump From The Dildo:
 		say "How? Your feet aren't even touching the ground. You [doll-stuck].";
 		increase doll-stuck-num by 1;
 		allocate 6 seconds;
+		stop;
+	if diaper quest is 1:
+		say "How? Your feet are locked in anklecuffs that are attached to the ground.";
 		stop;
 	allocate 6 seconds;
 	compute upright fatigue gain;
@@ -349,15 +366,18 @@ REQUIRES COMMENTING
 @inherits <DildoTrap>
 
 @!]
-A dildo pole trap is a kind of dildo trap. There are 10 dildo pole traps. The printed name of dildo pole trap is "[TQlink of item described]dildo pole trap[TQxlink of item described][verb-desc of item described]".
+A dildo pole trap is a kind of dildo trap. There are 10 dildo pole traps. The printed name of dildo pole trap is "[TQlink of item described][if diaper quest is 1]wand vibrator[otherwise]dildo[end if] pole trap[TQxlink of item described][verb-desc of item described]".
 To say ExamineDesc of (C - a dildo pole trap):
-	say "A metal pole with a flesh coloured dildo on the end. [if doll-stuck-num is 0]It rises so high up off the ground that even on tip toes you[otherwise]It, and the bulging flange has lifted you right off the ground so you[end if] [if C is penetrating a body part]can't[otherwise]wouldn't be able to[end if] get it out of your [if C is penetrating vagina][vagina]! [otherwise][asshole]! [end if][if doll-stuck-num is not 0]Tinkling, chiming music plays as you sedately turn, seeming to whisper to you to [bold type]submit[roman type] like an obedient little toy if you want to be released.[otherwise]Maybe if you [bold type]jump[roman type] high enough you can get off it?[end if]".
+	say "A metal pole with a [if diaper quest is 1]wand vibrator[otherwise]flesh coloured dildo[end if] on the end. ";
+	if diaper quest is 0, say "[if doll-stuck-num is 0]It rises so high up off the ground that even on tip toes you[otherwise]It, and the bulging flange has lifted you right off the ground so you[end if] [if C is penetrating a body part]can't[otherwise]wouldn't be able to[end if] get it out of your [if C is penetrating vagina][vagina]! [otherwise][asshole]! [end if][if doll-stuck-num is not 0]Tinkling, chiming music plays as you sedately turn, seeming to whisper to you to [bold type]submit[roman type] like an obedient little toy if you want to be released.[otherwise]Maybe if you [bold type]jump[roman type] high enough you can get off it?[end if]";
+	otherwise say "It grabs at your ankles and tries to force an orgasm out of you.".
 
 This is the spawn initial dildo pole traps rule:
 	repeat with N running from 1 to 4:
-		let R be a random untrapped trappable placed labyrinth room;
-		let T be a random off-stage dildo pole trap;
-		unless there is a dildo trap in R, deploy T in R.
+		if diaper quest is 0 or N is 1:
+			let R be a random untrapped trappable placed labyrinth room;
+			let T be a random off-stage dildo pole trap;
+			unless there is a dildo trap in R, deploy T in R.
 The spawn initial dildo pole traps rule is listed in the set up dungeon traps rules.
 
 Part 2 - Drill Pole Trap
@@ -377,9 +397,14 @@ To decide which figure-name is the examine-image of (C - a drill pole trap):
 	decide on figure of woods dildo trap.
 
 This is the spawn initial drill pole traps rule:
-	repeat with N running from 1 to 4:
+	if diaper quest is 0:
+		repeat with N running from 1 to 4:
+			let R be a random untrapped trappable placed jungle room;
+			let T be a random off-stage drill pole trap;
+			unless there is a dildo trap in R, deploy T in R;
+	otherwise:
 		let R be a random untrapped trappable placed jungle room;
-		let T be a random off-stage drill pole trap;
+		let T be a random off-stage dildo pole trap;
 		unless there is a dildo trap in R, deploy T in R.
 The spawn initial drill pole traps rule is listed in the set up woods traps rules.
 
@@ -451,9 +476,14 @@ To decide which figure-name is the examine-image of (C - a creampie pole trap):
 Definition: a creampie pole trap is father material: decide yes.
 
 This is the spawn initial creampie pole traps rule:
-	repeat with N running from 1 to 2:
+	if diaper quest is 0:
+		repeat with N running from 1 to 2:
+			let R be a random untrapped trappable placed modern room;
+			let T be a random off-stage creampie pole trap;
+			unless there is a dildo trap in R, deploy T in R;
+	otherwise:
 		let R be a random untrapped trappable placed modern room;
-		let T be a random off-stage creampie pole trap;
+		let T be a random off-stage dildo pole trap;
 		unless there is a dildo trap in R, deploy T in R.
 The spawn initial creampie pole traps rule is listed in the set up hotel traps rules.
 
@@ -527,9 +557,14 @@ To decide which figure-name is the examine-image of (C - a ghostly dildo pole tr
 Definition: a ghostly dildo pole trap is egg-fathering: decide yes.
 
 This is the spawn initial ghostly dildo pole traps rule:
-	repeat with N running from 1 to 3:
+	if diaper quest is 0:
+		repeat with N running from 1 to 3:
+			let R be a random untrapped trappable placed haunted room;
+			let T be a random off-stage ghostly dildo pole trap;
+			unless there is a dildo trap in R, deploy T in R;
+	otherwise:
 		let R be a random untrapped trappable placed haunted room;
-		let T be a random off-stage ghostly dildo pole trap;
+		let T be a random off-stage dildo pole trap;
 		unless there is a dildo trap in R, deploy T in R.
 The spawn initial ghostly dildo pole traps rule is listed in the set up mansion traps rules.
 

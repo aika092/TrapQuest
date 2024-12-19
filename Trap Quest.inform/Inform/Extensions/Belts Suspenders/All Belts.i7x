@@ -1,6 +1,6 @@
 All Belts by Belts Suspenders begins here.
 
-A belt is a kind of clothing. A belt is unskirted. A belt is manly.
+A belt is a kind of clothing. The skirt-length of A belt is 0. A belt is manly.
 Definition: a belt is nudism-enabling: decide yes.
 Definition: a belt is same-type:
 	if theme-share-target is belt, decide yes;
@@ -37,7 +37,7 @@ To set up magic attribute of (H - a suspenders):
 		if a random number between 0 and diaper quest is 1, now H is maturity;
 	if R is 2, now H is dominance;
 	if R is 3, now H is sneaking;
-	if R is 4 and diaper lover > 0:
+	if R is 4 and diaper lover > 0 and H is discovered negative:
 		now H is bed wetting;
 		curse H;
 	set up rare magic attribute of H.
@@ -92,14 +92,14 @@ To decide which number is the knee-modifier of (C - a suspenders):
 	decide on N.
 
 To decide which object is the coverer of (C - a suspenders):
-	repeat with R running through worn knee-length or longer clothing:
+	repeat with R running through worn thigh-length-or-longer clothing:
 		if R is crotch-in-place, decide on R;
 	repeat with R running through worn leg covering clothing:
 		if (R is trousers or R is overdress) and R is crotch-in-place, decide on R;
 	decide on nothing.
 
 To decide which object is the concealer of (C - a suspenders):
-	repeat with R running through worn actually dense short or longer clothing:
+	repeat with R running through worn actually dense thigh-length-or-longer clothing:
 		if R is crotch-in-place, decide on R;
 	repeat with R running through worn actually dense leg covering clothing:
 		if (R is trousers or R is overdress) and R is crotch-in-place, decide on R;
@@ -107,7 +107,7 @@ To decide which object is the concealer of (C - a suspenders):
 
 To decide which object is the at least partial concealer of (C - a suspenders):
 	if C is listed in the armUses of arms, decide on arms;
-	repeat with R running through worn knee-length or longer clothing:
+	repeat with R running through worn very-short-or-longer clothing:
 		if R is crotch-in-place and R is not see-through, decide on R;
 	repeat with R running through worn leg covering clothing:
 		if (R is trousers or R is overdress) and R is crotch-in-place and R is not see-through, decide on R;
@@ -500,15 +500,11 @@ Definition: bridal garter is nudism-enabling: decide yes.
 To decide which object is the concealer of (C - bridal garter):
 	repeat with D running through thigh covering actually dense clothing:
 		decide on D;
-	repeat with S running through worn actually dense knee-length or longer clothing:
-		unless S is crotch-displaced or S is crotch-unzipped, decide on S;
 	decide on nothing.
 
 To decide which object is the at least partial concealer of (C - bridal garter):
-	repeat with D running through thigh covering not-see-through clothing:
+	repeat with D running through at least partially thigh covering not-see-through clothing:
 		decide on D;
-	repeat with S running through worn not-see-through knee-length or longer clothing:
-		unless S is crotch-displaced, decide on S;
 	decide on nothing.
 
 key garter is a clothing. [No clashes.] The printed name of key garter is "[clothing-title-before]key garter[clothing-title-after]". The text-shortcut of key garter is "kgtr". key garter is unique. key garter is metal.
@@ -545,15 +541,11 @@ To compute periodic effect of (C - key garter):
 To decide which object is the concealer of (C - key garter):
 	repeat with D running through thigh covering actually dense clothing:
 		decide on D;
-	repeat with S running through worn actually dense knee-length or longer clothing:
-		unless S is crotch-displaced or S is crotch-unzipped, decide on S;
 	decide on nothing.
 
 To decide which object is the at least partial concealer of (C - key garter):
-	repeat with D running through thigh covering not-see-through clothing:
+	repeat with D running through at least partially thigh covering not-see-through clothing:
 		decide on D;
-	repeat with S running through worn not-see-through knee-length or longer clothing:
-		unless S is crotch-displaced, decide on S;
 	decide on nothing.
 
 An all time based rule (this is the key garter release rule):

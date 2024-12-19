@@ -88,7 +88,10 @@ To say ClothingDesc of (C - smoothie-apron):
 Definition: smoothie-apron is layer-concealing:
 	if the player is in Predicament03, decide yes;
 	decide no. [While the player is in the smoothie van only]
-Definition: smoothie-apron is skirt-covering-crotch:
+Definition: smoothie-apron is skirt-covering-ass:
+	if the player is in Predicament03, decide yes;
+	decide no. [While the player is in the smoothie van only]
+Definition: smoothie-apron is skirt-partially-covering-ass:
 	if the player is in Predicament03, decide yes;
 	decide no. [While the player is in the smoothie van only]
 Definition: smoothie-apron is potentially penis covering:

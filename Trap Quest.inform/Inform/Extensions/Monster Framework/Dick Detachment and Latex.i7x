@@ -147,13 +147,13 @@ To DetachedPenisDown (X - a number):
 To SpecialPenisUp (X - a number):
 	if players-dick-is-detached > 0:
 		DetachedPenisUp X;
-	otherwise if the player is possessing a penis or (the player is a top donator and futanari fetish > 0):
+	otherwise if the player is possessing a penis or player futanari fetish > 0:
 		PenisUp X.
 
 To SpecialPenisDown (X - a number):
 	if players-dick-is-detached > 0:
 		DetachedPenisDown X;
-	otherwise if the player is possessing a penis or (the player is a top donator and futanari fetish > 0):
+	otherwise if the player is possessing a penis:
 		PenisDown X.
 
 [There is no SilentlyPenisUp function!]

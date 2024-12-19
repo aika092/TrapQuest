@@ -15,7 +15,7 @@ The can't push what's fixed in place rule is not listed in the check pushing rul
 To say RoomTrapDesc:
 	repeat with T running through revealed traps in the location of the player:
 		say EnvironmentDesc of T;
-	if the location of the player is smoky, say "[if playerRegion is Mansion]Blackish-green[otherwise]Pink[end if] smoke wafts around the lower portion of this room. ";
+	if the location of the player is pink-smoky, say "[if playerRegion is Mansion]Blackish-green[otherwise]Pink[end if] smoke wafts around the lower portion of this room. ";
 	say PuddleDesc;
 	repeat with D running through directions:
 		let X be 0;

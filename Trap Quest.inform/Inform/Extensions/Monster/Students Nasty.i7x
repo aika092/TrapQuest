@@ -4,6 +4,8 @@ A nasty student is a kind of student. Understand "mean" as a nasty student.
 
 To decide which number is the aggro limit of (M - a nasty student): [The number at which they turn unfriendly]
 	decide on 12.
+To decide which number is the freebie-reluctance of (M - a nasty student):
+	decide on 99.
 
 To say MediumDesc of (M - a nasty student):
 	say "mean [rank-colour of M] student [student-name of M]".
@@ -105,7 +107,7 @@ To say EscapeAnswer of (M - a nasty student):
 To say AdviceAnswer of (M - a nasty student):
 	say "[speech style of M]'Quit now before you end up in the School Dungeon.'[roman type][line break]".
 
-To compute teaching of (M - a nasty student):
+To compute teaching offer of (M - a nasty student):
 	say "[speech style of M]'Why would I? I don't owe you anything.'[roman type][line break]".
 
 To compute friendly drink of (M - a nasty student):

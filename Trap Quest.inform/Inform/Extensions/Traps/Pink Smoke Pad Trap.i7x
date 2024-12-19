@@ -31,7 +31,7 @@ The spawn initial mansion smoke traps rule is listed in the set up mansion traps
 pink smoke is a backdrop. The text-shortcut of pink smoke is "pink smoke".
 
 This is the pink smoke gets focused rule:
-	if the location of the player is smoky, focus-consider pink smoke.
+	if the location of the player is pink-smoky, focus-consider pink smoke.
 The pink smoke gets focused rule is listed in the focus finding rules.
 
 To say ExamineDesc of (C - pink smoke):
@@ -39,7 +39,7 @@ To say ExamineDesc of (C - pink smoke):
 
 To trigger (Y - a pink-smoke-pad):
 	say "You hear a click and a hiss, and [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke starts to fill the room from holes in the wall at about waist level.[if the player is upright][one of][line break]Luckily the gas is heavier than air, so it is just filling up the room from your waist downwards, but if you were kneeling you'd be forced to breathe it in![or][stopping][end if][if the room-entering of the player is 0][line break]You quickly leave the room![end if]";
-	now the location of Y is smoky;
+	now the location of Y is pink-smoky;
 	update backdrop positions;
 	now Y is not untriggered;
 	now Y is triggered;

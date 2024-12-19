@@ -15,27 +15,34 @@ To compute school periodic effect of (V - a vibrator):
 	compute periodic effect of V.
 
 To compute periodic effect of (P - a vibrator):
-	increase the toy-charge of P by 1;
-	if the player is in a predicament room and the player is not in Predicament20:
-		if the player is in a bossed predicament room, increase the toy-charge of P by 1; [double speed in toilets etc.]
-		otherwise increase the toy-charge of P by 5; [quintuple speed in main area]
-	if the toy-charge of P > 10:
-		now the toy-charge of P is 0;
-		let F be a random fuckhole penetrated by P;
-		if P is clit-taped wired-vibe, now F is vagina;
-		if P is blessed:
-			say "[one of]Your [ShortDesc of P] is vibrating just slowly enough to stimulate you without getting you any closer to an orgasm. It's maddening![or][or]Your [ShortDesc of P] continues to stimulate you.[or][cycling]";
-			passively stimulate F from P;
-		otherwise:
-			if P is clit-taped wired-vibe or the soreness of F > 7 or (the soreness of F > 2 and F is vagina):
-				if P is clit-taped wired-vibe, say "Your [ShortDesc of P] is [one of]stimulating[or]buzzing against[or]vibrating on[cycling] your clit!";
-				otherwise say "[one of]Your [ShortDesc of P] is stimulating the deepest parts of your [variable F]! Every [if P is cursed]moment[otherwise]minute[end if] it stays inside of you is making you more aroused![or]Your [ShortDesc of P] continues to buzz away inside your [variable F]![or]Your [ShortDesc of P] is still vibrating strongly inside your [variable F].[cycling]";
-				stimulate F from P;
+	if current-predicament is breastfeeding-predicament and the player is in a predicament room:
+		if fake-baby is not settled:
+			let F be vagina;
+			if the player is not possessing a vagina, now F is penis;
+			say "Your [ShortDesc of P] whirs away [if F is wired-vibe and F is clit-taped]on your clit[otherwise if F is vagina]inside you[otherwise]around your [player-penis][end if]!";
+			stimulate F from P;
+	otherwise:
+		increase the toy-charge of P by 1;
+		if the player is in a predicament room and the player is not in Predicament20:
+			if the player is in a bossed predicament room, increase the toy-charge of P by 1; [double speed in toilets etc.]
+			otherwise increase the toy-charge of P by 5; [quintuple speed in main area]
+		if the toy-charge of P > 10:
+			now the toy-charge of P is 0;
+			let F be a random fuckhole penetrated by P;
+			if P is clit-taped wired-vibe, now F is vagina;
+			if P is blessed:
+				say "[one of]Your [ShortDesc of P] is vibrating just slowly enough to stimulate you without getting you any closer to an orgasm. It's maddening![or][or]Your [ShortDesc of P] continues to stimulate you.[or][cycling]";
+				passively stimulate F from P;
 			otherwise:
-				if diaper quest is 0, say "[one of]Your [ShortDesc of P] is stimulating the deepest parts of your [variable F]! Every [if P is cursed]moment[otherwise]minute[end if] it stays inside of you is making you more sore![or]Your [ShortDesc of P] continues to ruin your [variable F]![or]Your [ShortDesc of P] is still making you sore.[cycling]";
-				otherwise say "[one of]Your [ShortDesc of P] is stimulating the deepest parts of your [variable F]! Every [if P is cursed]moment[otherwise]minute[end if] it stays inside of you is making you more aroused![or]Your [ShortDesc of P] continues to buzz away inside your [variable F]![or]Your [ShortDesc of P] is still vibrating strongly inside your [variable F].[cycling]";
-				ruin F;
-			if P is cursed, arouse 200.
+				if P is clit-taped wired-vibe or the soreness of F > 7 or (the soreness of F > 2 and F is vagina):
+					if P is clit-taped wired-vibe, say "Your [ShortDesc of P] is [one of]stimulating[or]buzzing against[or]vibrating on[cycling] your clit!";
+					otherwise say "[one of]Your [ShortDesc of P] is stimulating the deepest parts of your [variable F]! Every [if P is cursed]moment[otherwise]minute[end if] it stays inside of you is making you more aroused![or]Your [ShortDesc of P] continues to buzz away inside your [variable F]![or]Your [ShortDesc of P] is still vibrating strongly inside your [variable F].[cycling]";
+					stimulate F from P;
+				otherwise:
+					if diaper quest is 0, say "[one of]Your [ShortDesc of P] is stimulating the deepest parts of your [variable F]! Every [if P is cursed]moment[otherwise]minute[end if] it stays inside of you is making you more sore![or]Your [ShortDesc of P] continues to ruin your [variable F]![or]Your [ShortDesc of P] is still making you sore.[cycling]";
+					otherwise say "[one of]Your [ShortDesc of P] is stimulating the deepest parts of your [variable F]! Every [if P is cursed]moment[otherwise]minute[end if] it stays inside of you is making you more aroused![or]Your [ShortDesc of P] continues to buzz away inside your [variable F]![or]Your [ShortDesc of P] is still vibrating strongly inside your [variable F].[cycling]";
+					ruin F;
+				if P is cursed, arouse 200.
 
 To decide which number is the original price of (C - a vibrator):
 	decide on 2.
@@ -58,7 +65,7 @@ To say ClothingDesc of (C - purple-vibrator):
 
 remote-controlled-vibrator is a vibrator. remote-controlled-vibrator is unique. The text-shortcut of remote-controlled-vibrator is "fvi".
 To decide which number is the stimulation of (T - remote-controlled-vibrator) on (F - a body part):
-	if current-predicament is team-girlfriends-predicament, decide on 8;
+	if current-predicament is team-girlfriends-predicament or current-predicament is team-lake-predicament, decide on 8;
 	decide on 2.
 To decide which number is the initial outrage of (S - remote-controlled-vibrator):
 	decide on 8.
@@ -95,6 +102,22 @@ To compute periodic effect of (P - remote-controlled-vibrator):
 				say "Your [ShortDesc of P] whirs away [if F is vagina]inside you[otherwise]around your [player-penis][end if]!";
 				stimulate F from P;
 		if the player is not in a predicament room, increase the toy-charge of P by 1;
+	otherwise if current-predicament is breastfeeding-predicament:
+		if (the player is in a predicament room and fake-baby is not settled) or the toy-charge of P < 10:
+			let F be vagina;
+			if the player is not possessing a vagina, now F is penis;
+			say "Your [ShortDesc of P] whirs away [if F is vagina]inside you[otherwise]around your [player-penis][end if]!";
+			stimulate F from P;
+		otherwise if the player is not in a predicament room:
+			if the toy-charge of P is 10, say "[bold type][BigNameDesc of P] [bold type]seems to run out of battery, and stops vibrating.[roman type][line break]";
+			now the toy-charge of P is 11;
+		if the player is not in a predicament room, increase the toy-charge of P by 1;
+	otherwise if current-predicament is team-lake-predicament:
+		if the beachball-game of team-lake-predicament is -1:
+			let F be vagina;
+			if the player is not possessing a vagina, now F is penis;
+			say "Your [ShortDesc of P] whirs away [if F is vagina]inside you[otherwise]around your [player-penis][end if]!";
+			stimulate F from P;
 	otherwise if current-predicament is not team-football-predicament:
 		let F be vagina;
 		if the player is not possessing a vagina, now F is penis;
@@ -162,6 +185,12 @@ To say ClothingDesc of (C - wired-vibe):
 
 Carry out plugging something with wired-vibe:
 	now wired-vibe is not clit-taped.
+
+This is the sex toy chastity belt rule:
+	if chastity-belt is worn and (wearing-target is penetrating vagina or wearing-target is wired-vibe):
+		if summoning is 0 and autoremove is false, say "You can't get it past the chastity belt!";
+		rule fails.
+The not wearing rule is listed in the global removability rules.
 
 Figure of remote controlled vibrator 5 is the file "Items/Accessories/Toys/vibrator5.png".
 To decide which figure-name is clothing-image of (C - wired-vibe):

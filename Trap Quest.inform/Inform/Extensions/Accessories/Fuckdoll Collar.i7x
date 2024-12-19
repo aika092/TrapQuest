@@ -200,4 +200,43 @@ Definition: BBC collar is interracial themed: decide yes.
 Definition: BBC collar is white themed: decide yes.
 
 
+
+hex collar is a submissive collar. hex collar is latex. hex collar is unique. The printed name of hex collar is "[clothing-title-before]hex collar[clothing-title-after]". The text-shortcut of hex collar is "hxc".
+
+Figure of hex collar is the file "Items/Accessories/Neck/collar13.png".
+
+To decide which figure-name is clothing-image of (C - hex collar):
+	decide on figure of hex collar.
+
+To say ClothingDesc of (C - hex collar):
+	say "This purle and white latex collar has a metal hook at the front, which makes it look like BDSM equipment. But, it also has the magical power to increase your intelligence!".
+
+To say ShortDesc of (C - hex collar):
+	say "hex collar".
+
+To decide which number is the bartering value of (T - hex collar) for (M - witch):
+	decide on 11.
+To decide which number is the bartering value of (T - hex collar) for (M - aeromancer):
+	decide on 11.
+To decide which number is the bartering value of (T - hex collar) for (M - vampiress):
+	decide on 5.
+To decide which number is the bartering value of (T - hex collar) for (M - ex-princess):
+	decide on 11.
+
+Definition: hex collar is transformation-protected: decide no.
+Definition: hex collar is purple themed: decide yes.
+Definition: hex collar is white themed: decide yes.
+
+To decide which number is the initial outrage of (C - hex collar):
+	decide on 3.
+
+To decide which object is the unique-upgrade-target of (C - hex collar):
+	decide on heart-collar.
+
+To decide which number is the intelligence-influence of (C - hex collar):
+	decide on 2.
+
+To uniquely set up (C - hex collar):
+	now C is wizardry.
+
 Fuckdoll Collar ends here.

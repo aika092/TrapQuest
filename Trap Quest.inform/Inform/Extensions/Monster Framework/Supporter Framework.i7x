@@ -597,7 +597,8 @@ To say CondomPieFlav of (M - a supporter) in (F - a fuckhole):
 	say "[BigNameDesc of M] ejaculates [his of M] entire load into the condom! You can feel the tip bulging and ballooning inside of you. ".
 
 To say CondomPinFlav of (M - a supporter) on (C - a clothing):
-	say "Before you can stop [him of M], [NameDesc of M] presses the [one of]newly created and now used [or]strongly-smelling [or]wobbling, semen-swollen [or][or][cycling]condom to your [C]. After giving you a final mischievous grin, [he of M] yawns, lies back, and falls asleep.".
+	say GenericCondomPinFlav of M on C;
+	say "After giving you a final mischievous grin, [he of M] yawns, lies back, and falls asleep.".
 
 To say CreampieFlav of (M - a supporter) in (F - a fuckhole):
 	say "[BigNameDesc of M] moans with pleasure as [he of M] ejaculates [his of M] [if the girth of M < 5]smallish [otherwise if the girth of M > 8]gargantuan [otherwise if the girth of M > 6]huge [end if]load into your [variable F]! [big he of M] grips your hips tightly as [he of M] keeps his [DickDesc of M] firmly lodged as deep as it can go inside you and you can feel it constantly twitching as [he of M] cums. Having thoroughly drained [his of M] [if M is a balls-haver]balls[otherwise]load[end if] inside of you, [his of M] [DickDesc of M] pops out as [he of M] lies backwards and quickly falls into a well-earned sleep.".

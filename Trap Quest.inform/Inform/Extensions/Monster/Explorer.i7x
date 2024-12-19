@@ -86,6 +86,8 @@ To repeated set up (M - an explorer):
 			if the number of entries in LR > 0:
 				sort LR in random order;
 				now L is entry 1 in LR;
+			otherwise:
+				now M is in a random guest room;
 			now M is in L;
 			now M is guarding;
 		otherwise if M is in the Woods:
@@ -265,5 +267,13 @@ To consider (T - talk-explorer-whore) for (M - a monster):
 
 To execute (T - talk-explorer-whore) for (M - a monster):
 	say "[speech style of M]'[one of]Yep! [or][stopping]Just one sapphire ring and I'll make your dreams come true. But we don't give change here.'[roman type][line break]".
+
+To compute teaching of (M - an explorer):
+	if diaper quest is 0 and the explorer-bimbo of M >= 2:
+		say "[speech style of M]'Want me to show you how to properly deepthroat a cock? It's a useful skill to know in this business!'[roman type][line break]";
+		teach deepthroating;
+	otherwise:
+		say "[speech style of M]'There's some interesting little buttons I've noticed hidden in certain hallways. I was too scared to press them, but who knows, maybe they open the way to something hidden and awesome! Let me describe them for you...'[roman type][line break]";
+		teach stashfinding.
 
 Explorer ends here.

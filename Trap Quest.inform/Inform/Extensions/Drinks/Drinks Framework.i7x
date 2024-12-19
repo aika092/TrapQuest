@@ -37,6 +37,16 @@ To decide which number is lowest-cursed:
 To decide which number is highest-cursed:
 	decide on 15.
 
+magic-curse is a kind of value. The magic-curses are bland, blessed, and cursed.
+
+curse-ID is a kind of value. The curse-IDs are sure and unsure.
+
+To say magic curse of (C - a thing):
+	if C is bland, say "uncursed";
+	otherwise say "[magic-curse of C]".
+
+Drink-Colour is a kind of value. The drink-colours are white, scarlet, blue, golden, green, grey, clear, indigo, magenta, orange, lime, brownish, violet, smoky, turquoise, creamy, silver, bronze, murky.
+
 Table of Drinks
 Appearance	Magic	Known
 silver	0	0
@@ -52,7 +62,7 @@ orange	0	0
 lime	0	0
 brownish	0	0
 violet	0	0
-glittery	0	0
+smoky	0	0
 turquoise	0	0
 creamy	20	1
 golden	21	1
@@ -66,14 +76,14 @@ To decide which number is the TQcolour of (D - a drink-colour):
 	if D is bronze, decide on 13467442;
 	if D is green, decide on 47872;
 	if D is grey, decide on 13882323;
-	if D is clear, decide on 16777215;
+	if D is clear, decide on 14806512;
 	if D is indigo, decide on 4915330;
 	if D is magenta, decide on 16711935;
 	if D is orange, decide on 16753920;
 	if D is lime, decide on lightModeFullGreen;
 	if D is brownish, decide on 10824234;
 	if D is violet, decide on 15631086;
-	if D is glittery, decide on 16776960;
+	if D is smoky, decide on 1051656;
 	if D is turquoise, decide on 4251856;
 	if D is white, decide on 16382457;
 	if D is creamy, decide on 16776656;
@@ -90,16 +100,6 @@ Definition: A number is remembered:
 	let Z be the Known corresponding to an Magic of it in the Table of Drinks;
 	if Z is 1, decide yes;
 	decide no.
-
-magic-curse is a kind of value. The magic-curses are bland, blessed, and cursed.
-
-curse-ID is a kind of value. The curse-IDs are sure and unsure.
-
-To say magic curse of (C - a thing):
-	if C is bland, say "uncursed";
-	otherwise say "[magic-curse of C]".
-
-Drink-Colour is a kind of value. The drink-colours are white, scarlet, blue, golden, green, grey, clear, indigo, magenta, orange, lime, brownish, violet, glittery, turquoise, creamy, silver, bronze, murky.
 
 Understand "milk" as a can when the fill-colour of item described is white and the doses of item described > 0.
 Understand "urine", "piss", "pee", "wee" as a bottle when the fill-colour of item described is golden and the doses of item described > 0.

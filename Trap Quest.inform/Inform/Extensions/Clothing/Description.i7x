@@ -247,28 +247,69 @@ Report examining crotch covering clothing:
 	if the noun is crotch-zipped or the noun is crotch-unzipped, say "It has a large [if the noun is crotch-zipped]closed[otherwise]open[end if] zip at the crotch.".
 
 Report examining clothing:
-	if the noun is super-short:
+	if the front-skirt-length of the noun is not the back-skirt-length of the noun, say "The [if the front-skirt-length of the noun > the back-skirt-length of the noun]front of the skirt is [SkirtLength the front-skirt-length of the noun], but the back of the skirt is only [SkirtLength the back-skirt-length of the noun][otherwise]back of the skirt is [SkirtLength the back-skirt-length of the noun], but the front of the skirt is only [SkirtLength the front-skirt-length of the noun][end if].";
+	if the noun is ultra-short:
 		say "The skirt is so super short that you[unless the noun is worn][']ll still be completely exposed even when wearing it.[otherwise][']re still completely exposed.[end if] [if the humiliation of the player > HUMILIATION-DISGRACED + 3500 and the outrage of the noun is not too humiliating and diaper quest is 0][line break][second custom style]Which is exactly what I want![roman type][line break]";
-	otherwise if the noun is actually sheer:
-		[if the noun is sheer-when-wet, say "The [noun] is currently see-through because it is wet. ";]
-		if the noun is knickers or the noun is trousers or the noun is overdress or the noun is skirt or the noun is at least partially nipple covering, say "The [if the noun is actually sheer]sheer [end if]nature of the item means that you[unless the noun is worn][']ll still be exposing your naughty bits even when wearing it[otherwise]r naughty bits are still visible[end if].[if the humiliation of the player > HUMILIATION-DISGRACED + 3500 and the outrage of the noun is not too humiliating and diaper quest is 0][line break][second custom style]Which is exactly what I want![roman type][line break]";
-		otherwise say "The [if the noun is actually sheer]sheer [end if]nature of the item means that you[unless the noun is worn]r skin will still be visible even when wearing it[otherwise]r skin is still visible[end if].[if the humiliation of the player > HUMILIATION-DISGRACED + 3500 and the outrage of the noun is not too humiliating and diaper quest is 0][line break][second custom style]Which is exactly what I want![roman type][line break]";
-	otherwise if the noun is potentially pussy covering and the player is possessing a penis and the noun is not potentially penis covering:
-		say "Your [ShortDesc of penis] is too large and [if the noun is worn and penis is at least partially exposed]pokes out beyond the fabric[otherwise]can't be concealed by it[end if].";
-	otherwise if the noun is skirted and there is worn knickers and the noun is not-butt-windowed:
-		let K be a random worn knickers;
-		say "The skirt is [if the skirtLength of the noun < the DQBulk of K]not [end if]long enough to cover your [ShortDesc of K][if the noun is short]. It is only long enough to cover your naughty bits when you're standing[end if].";
-	otherwise if the noun is short and (the noun is not-butt-windowed or the size of penis < 4):
-		say "The skirt is just long enough to cover your [if the size of penis < 4]naughty bits[otherwise][asshole][end if] as long as you never bend over[if the size of penis > 3], but it can't do anything to hide your [ShortDesc of penis], even when you're standing![otherwise].[end if] [if the humiliation of the player > HUMILIATION-DISGRACED + 3500 and the outrage of the noun is not too humiliating and diaper quest is 0][line break][first custom style]So, good as long as I don't act like a whore.[roman type][line break][second custom style]I can pretend to be modest but put my bits on display at the same time![roman type][line break][end if]";
-	otherwise if the noun is crotch covering and the noun is not total protection:
-		if the noun is worn and the noun is crotch-displaced:
-			say "The item is currently pulled [if the noun is trousers]down[otherwise]aside[end if] and so is doing nothing to protect your [player-crotch].";
-		otherwise if the noun is no protection:
-			say "The item [if the noun is crotch-ripped]has been [bold type]ripped[roman type], which means it [end if][if the noun is worn]does[otherwise]will do[end if] nothing to protect your [player-crotch].";
-		otherwise if the noun is pussy protection and the noun is worn:
-			say "[if the player is herm]This item is currently protecting your [ShortDesc of penis] and [vagina] but[otherwise if the player is possessing a vagina]The item is currently protecting your [vagina] but[otherwise if the player is possessing a penis]The item is currently protecting your [ShortDesc of penis] but[otherwise]The item[end if] is not protecting your [asshole].";
-		otherwise if the noun is pussy protection:
-			say "[if the player is herm]The item will protect your [ShortDesc of penis] and [vagina] but not[otherwise if the player is possessing a vagina]The item will protect your [vagina] but not[otherwise if the player is possessing a penis]The item will protect your [ShortDesc of penis] but not[otherwise]The item will not protect[end if] your [asshole].";
+	otherwise:
+		if the noun is skirted and the front-skirt-length of the noun is the back-skirt-length of the noun, say "The skirt is [SkirtLength the front-skirt-length of the noun][if the noun is hobble-skirted and the player is upright]. The lack of a slit makes it much more difficult to walk quickly[end if][if the noun is hobble-skirted]. The lack of a slit makes it much more difficult to move your legs[end if].";
+		if the noun is not slitted:
+			if the front-skirt-length of the noun >= 9:
+				say "You won't be able to knee or kick while in such a tight skirt[run paragraph on]";
+				if the noun is zippable or the noun is displacable, say ", unless you [if the noun is zippable]unzip[otherwise]displace[end if] it first.";
+				otherwise say ".";
+			otherwise if the front-skirt-length of the noun >= 7:
+				say "You won't be able to kick while in such a tight skirt, and your knee attacks will be [if the front-skirt-length of the noun is 8]severely[otherwise]significantly[end if] weakened[run paragraph on]";
+				if the noun is zippable or the noun is displacable, say ", unless you [if the noun is zippable]unzip[otherwise]displace[end if] it first.";
+				otherwise say ".";
+			otherwise if the front-skirt-length of the noun is 6:
+				say "Your knee attacks will be weakened and your kick attacks will be significantly weakened[run paragraph on]";
+				if the noun is zippable or the noun is displacable, say ", unless you [if the noun is zippable]unzip[otherwise]displace[end if] it first.";
+				otherwise say ".";
+			otherwise if the front-skirt-length of the noun >= 4:
+				say "Your kick attacks will be [if the front-skirt-length of the noun is 5]significantly [end if]weakened[run paragraph on]";
+				if the noun is zippable or the noun is displacable, say ", unless you [if the noun is zippable]unzip[otherwise]displace[end if] it first.";
+				otherwise say ".";
+		if the noun is actually sheer:
+			[if the noun is sheer-when-wet, say "The [noun] is currently see-through because it is wet. ";]
+			if the noun is knickers or the noun is trousers or the noun is overdress or the noun is skirt or the noun is at least partially nipple covering, say "The [if the noun is actually sheer]sheer [end if]nature of the item means that you[unless the noun is worn][']ll still be exposing your naughty bits even when wearing it[otherwise]r naughty bits are still visible[end if].[if the humiliation of the player > HUMILIATION-DISGRACED + 3500 and the outrage of the noun is not too humiliating and diaper quest is 0][line break][second custom style]Which is exactly what I want![roman type][line break]";
+			otherwise say "The [if the noun is actually sheer]sheer [end if]nature of the item means that you[unless the noun is worn]r skin will still be visible even when wearing it[otherwise]r skin is still visible[end if].[if the humiliation of the player > HUMILIATION-DISGRACED + 3500 and the outrage of the noun is not too humiliating and diaper quest is 0][line break][second custom style]Which is exactly what I want![roman type][line break]";
+		otherwise:
+			if the noun is potentially pussy covering and the player is possessing a penis and the noun is not potentially penis covering:
+				say "Your [ShortDesc of penis] is too large and [if the noun is worn and penis is at least partially exposed]pokes out beyond the fabric[otherwise]can't be concealed by it[end if].";
+			otherwise if the front-skirt-length of the noun is 2:
+				say "The front of the skirt is so short that you [if the noun is worn and the player is upright]can't[otherwise]won't be able to[end if] help but constantly slightly flash glimpses of your crotch whilst standing[if the noun is not butt-windowed and the back-skirt-length of the noun >= 5]. You'll be better concealed when on your knees[end if].";
+			otherwise if the front-skirt-length of the noun is 1:
+				say "The front of the skirt is so short that your crotch [if the noun is worn and the player is upright]is[otherwise]will be[end if] fully exposed whilst you're standing[if the noun is not butt-windowed and the back-skirt-length of the noun >= 4]. You'll be better concealed when on your knees[end if].";
+			if the noun is butt-windowed:
+				say "The hole at the back means that your ass [if the noun is worn]is[otherwise]would be[end if] exposed at all times.";
+			otherwise:
+				if the noun is skirted and there is worn knickers:
+					let K be a random worn knickers;
+					if the defaultDiaperCoveringLength of the noun < the DQBulk of K:
+						say "The skirt is not long enough to cover your [ShortDesc of K].";
+					otherwise:
+						say "The skirt is long enough to cover your [ShortDesc of K][run paragraph on]";
+						if the back-skirt-length of the noun is 4:
+							say " when you're standing, but it will partially expose it when you're on your knees.";
+						otherwise if the back-skirt-length of the noun is 3:
+							say " when you're standing, but it will fully expose it when you're on your knees.";
+				otherwise if the back-skirt-length of the noun is 4:
+					say "The back of the skirt is long enough to cover your [MediumDesc of hips] when you're standing, but will partially expose you (potentially including your [asshole]!) when you're on your knees.";
+				otherwise if the back-skirt-length of the noun is 3:
+					say "The back of the skirt is long enough to cover your [MediumDesc of hips] when you're standing, but will fully expose you (potentially including your [asshole]!) when you're on your knees.";
+				otherwise if the back-skirt-length of the noun is 2:
+					say "The back of the skirt so short that it doesn't quite cover your [MediumDesc of hips] when you're standing, and will fully expose you (potentially including your [asshole]!) when you're on your knees.";
+				otherwise if the back-skirt-length of the noun is 1:
+					say "The back of the skirt is so ultra short that it fully exposes your [MediumDesc of hips] (potentially including your [asshole]!) at all times.";
+		if the noun is crotch covering and the noun is not total protection:
+			if the noun is worn and the noun is crotch-displaced:
+				say "The item is currently pulled [if the noun is trousers]down[otherwise]aside[end if] and so is doing nothing to protect your [player-crotch].";
+			otherwise if the noun is no protection:
+				say "The item [if the noun is crotch-ripped]has been [bold type]ripped[roman type], which means it [end if][if the noun is worn]does[otherwise]will do[end if] nothing to protect your [player-crotch].";
+			otherwise if the noun is pussy protection and the noun is worn:
+				say "[if the player is herm]This item is currently protecting your [ShortDesc of penis] and [vagina] but[otherwise if the player is possessing a vagina]The item is currently protecting your [vagina] but[otherwise if the player is possessing a penis]The item is currently protecting your [ShortDesc of penis] but[otherwise]The item[end if] is not protecting your [asshole].";
+			otherwise if the noun is pussy protection:
+				say "[if the player is herm]The item will protect your [ShortDesc of penis] and [vagina] but not[otherwise if the player is possessing a vagina]The item will protect your [vagina] but not[otherwise if the player is possessing a penis]The item will protect your [ShortDesc of penis] but not[otherwise]The item will not protect[end if] your [asshole].";
 	if the player is possessing a vagina:
 		let CT be the crotch-tightness of the noun;
 		if CT > 1:
@@ -284,7 +325,7 @@ Report examining clothing:
 					otherwise say "the fabric would dig deep inside your [vagina], and you would end up sporting a massive cameltoe!";
 	if the noun is top-ripped, say "The [if the noun is bra]cups have[otherwise]bust has[end if] been permanently ripped open.";
 	if the noun is not layer-concealing, say "The cut of the [ShortDesc of the noun] means that it [if the noun is partially-layer-concealing]only partially conceals[otherwise]completely fails to conceal[end if] items worn underneath it.";
-	if the assModesty of the noun > 0, say HipModestyFlav of the noun; [this item covers at least some of the player's butt. That makes it worth mentioning whether it covers the player's hips.]
+	if (the back-skirt-length of the noun is 0 or the back-skirt-length of the noun > 4) and the assModesty of the noun > 0, say HipModestyFlav of the noun; [this item covers at least some of the player's butt. That makes it worth mentioning whether it covers the player's hips.]
 	if the stolen-strength of the noun > 0, say "[bold type]It has stolen some of your strength, and you won't get it back until you wear it again.[roman type][line break]";
 	if debugmode > 0, say "[input-style]Liquid soak limit: [soak-limit of the noun][roman type][line break]";
 
@@ -315,6 +356,9 @@ Report examining protection clothing:
 Report examining sneaking clothing:
 	if the noun is identified, say "An aura of illusion magic surrounds this item, which means that while you're wearing it, people are less likely to notice you.".
 
+Report examining wizardry clothing:
+	if the noun is identified, say "It is imbued with magic power, which means that while you're wearing it, you will have access to more mana for casting spells and using magic items.".
+
 To say CurrentlyConcealedFlav of (C - a wearthing):
 	let X be the concealer of C;
 	say "It can't be seen thanks to your [ShortDesc of X].".
@@ -329,7 +373,7 @@ To say CurrentlyVisibleFlav of (C - a wearthing):
 To say CurrentlyVisibleFlav of (K - a knickers):
 	let C be a random worn skirted clothing;
 	say "It is currently visible to anyone who looks at you[if C is a clothing] because your [ShortDesc of C] fails to properly cover it[end if].";
-	if debugmode > 0, say "[input-style]DQBulk of [ShortDesc of K]: [DQBulk of K][if C is clothing]; Skirt length of [ShortDesc of C]: [skirtLength of C]; Diaper hiding skirt length of [ShortDesc of C]: [diaperHidingLength of C][end if][roman type][line break]";
+	if debugmode > 0, say "[input-style]DQBulk of [ShortDesc of K]: [DQBulk of K][if C is clothing]; Skirt length of [ShortDesc of C]: [defaultDiaperCoveringLength of C]; Diaper hiding skirt length of [ShortDesc of C]: [diaperHidingLength of C][end if][roman type][line break]";
 
 To say CurrentlyVisibleFlav of (C - a sex toy):
 	say "It is currently visible to anyone who looks at you from the right angle.".
@@ -351,7 +395,7 @@ To say PlayerThoughts of (C - a clothing):
 		say "[first custom style][one of][if the outrage of C - 9 is too humiliating]Heh, what sort of chick would be caught dead in this?[otherwise]I hope I find someone to wear this![end if][or]Wait a minute, is this supposed to be for ME to wear?!?![or]Surely this isn't meant for me, right?[stopping][roman type][line break]";
 	otherwise if C is short-skirt-disallowed:
 		say "[variable custom style]I feel [if C is worn]extremely uncomfortable in this, I can feel it sapping my intelligence[otherwise]like my body doesn't want me to wear this[end if]... I think it is because of my new fetish for short skirts![roman type][line break]";
-	otherwise if C is no-panties-disallowed knickers:
+	otherwise if C is skimpy-underwear-disallowed knickers:
 		say "[variable custom style]I feel [if C is worn]extremely uncomfortable in this, I can feel it sapping my intelligence[otherwise]instinctively like I don't want to wear this[end if]... I think it is because of my [if the class of the player is faerie]new role as a faerie[otherwise if diaper lover >= 1]new fetish for diapers[otherwise]new fetish for not wearing underwear[end if]![roman type][line break]";
 	otherwise if C is worn and C is nipple covering clothing and the player is fighting against topless:
 		say "[variable custom style]I feel extremely uncomfortable in this, I can feel it sapping my intelligence... I think it is because of my new fetish for being topless![roman type][line break]";

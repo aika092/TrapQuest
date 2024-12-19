@@ -155,7 +155,7 @@ To decide which object is the unique-upgrade-target of (C - queen-of-hearts heel
 
 savior's heels is a stiletto heels. savior's heels is leather. savior's heels is unique. The heel-height of savior's heels is 1. Understand "savior" as savior's heels.
 
-The printed name of savior's heels is "[clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch queen of spades heels[clothing-title-after]". The text-shortcut of savior's heels is "svh".
+The printed name of savior's heels is "[clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch savior's heels[clothing-title-after]". The text-shortcut of savior's heels is "svh".
 
 To decide which figure-name is the clothing-image of (H - savior's heels):
 	decide on the figure of savior heels.

@@ -58,8 +58,9 @@ To compute swimming in (H - hot-tub):
 				if there is a worn diaper, say "[line break][speech style of fondling-teacher]'Wearing a diaper in the tub? What a kinky [boy of the player] you are. Do you like the feeling of all that soggy squishy padding against your no-no?'[roman type][line break][BigNameDesc of fondling-teacher] starts to move [his of fondling-teacher] hand towards your crotch.";
 				otherwise say "[line break][speech style of fondling-teacher]'Not wearing a diaper? What a shame. But on the other hand, if there's no padding in the way... What's to stop me from doing this?'[roman type][line break][BigNameDesc of fondling-teacher] starts to move [his of fondling-teacher] hand towards your crotch.";
 				if the player is not a nympho, say "[variable custom style]I shouldn't let [him of fondling-teacher] do this... But also... It's kind of too late![roman type][line break]";
-				compute masturbation of fondling-teacher;
 				now swimming is 0;
+				now masturbation-swimming is true;
+				compute masturbation of fondling-teacher;
 		otherwise:
 			if fondling-teacher is teacher and fondling-teacher is interested and fondling-teacher is male and fondling-teacher is in the location of the player and fondling-teacher is friendly and the player is horny: [receptionist isn't a teacher, so if this is still set to receptionist then nothing will happen]
 				cutshow Figure of hot tub cutscene 1 for fondling-teacher;

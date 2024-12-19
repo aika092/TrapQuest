@@ -302,7 +302,7 @@ A time based rule (this is the doom weather rule):
 		if latestAnnouncedRaining is false:
 			say "[bold type]You have just stepped out into the rain.[roman type][line break]";
 			now latestAnnouncedRaining is true;
-		repeat with C running through worn currently uncovered fluid vulnerable clothing:
+		repeat with C running through currently uncovered fluid vulnerable clothing:
 			if the total-soak of C < the soak-limit of C, WaterSoak C;
 		if doomed is 3 and playerRegion is Mansion:
 			HairUp 1;
@@ -318,6 +318,7 @@ To resolve doom:
 	if goth mannequin is woods dwelling and goth mannequin is off-stage, summon goth mannequin in the woods;
 	if diaper quest is 0, compute chosen birth;
 	now herald is in Mansion23;
+	if diaper quest is 0, now neuromancer is sex-enslaved;
 	deploy a wisp;
 	deploy a wisp;
 	deploy a wisp;

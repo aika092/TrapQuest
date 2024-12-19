@@ -41,24 +41,24 @@ To compute periodic augmentation effect of (C - a clothing):
 		if C is breast covering:
 			if the player is not top heavy and the largeness of breasts < the max size of C:
 				say "[bold type]Your [C] [bold type]sends a wave of energy down into your chest. [roman type]";
-				if artificial enhancements fetish > 0:
+				if artificial enhancements fetish > 0 and C is not inflation themed and (inflation fetish is 0 or the silicone volume of breasts > 0):
 					say "You feel [if the silicone volume of breasts is 0]a weird, localised expansion in your [ShortDesc of breasts][otherwise]your [ShortDesc of breasts] swell up, distinctly rounder[end if]!";
 					BustImplantsUp 1;
 				otherwise if inflation fetish > 0:
-					say "Your [ShortDesc of breasts] inflate!";
-					BustInflate 1;
+					say "Your [ShortDesc of breasts] significantly inflate!";
+					BustInflate 5;
 				otherwise:
 					say "Your [ShortDesc of breasts] [one of]swell[or]expand[or]grow[at random]!";
 					BustUp 1;
 		otherwise if C is crotch covering: [ass covering would only check the ass]
 			if the player is not bottom heavy:
 				say "[bold type]Your [C] [bold type]sends a wave of energy down into your buttocks. [roman type]";
-				if artificial enhancements fetish > 0:
+				if artificial enhancements fetish > 0 and C is not inflation themed and (inflation fetish is 0 or the silicone volume of hips > 0):
 					say "You feel [if the silicone volume of hips is 0]parts of your [AssDesc] burn and swell, like something was just inserted in both cheeks[otherwise] your [AssDesc] swell larger as something inside there, [one of]expands[or]grows[at random][end if]!";
 					AssImplantsUp 1;
 				otherwise if inflation fetish > 0:
-					say "You feel your [AssDesc] inflate!";
-					AssInflate 1;
+					say "You feel your [AssDesc] significantly inflate!";
+					AssInflate 3;
 				otherwise:
 					say "You feel your [AssDesc] [one of]plump up[or]add a little mass[or]get a bit more junk in the trunk[at random]!";
 					AssSwell 1;
@@ -102,6 +102,9 @@ Part 1 - Main Procedure
 To compute periodic effects with earnings (local-earnings - a number) and seconds (local-seconds - a number):
 	[If enough experience has been gained, level up heel skill]
 	if the heel time of the player > minHeelXP and the player is upright, HeelUp 1;
+	if shrink TG >= 4 and the size of penis <= min penis size and the player is sexed male:
+		say DefaultSexChangeFlav;
+		sexchange the player;
 	[Real world changes]
 	if the remainder after dividing local-earnings by (750 / (fast breast expansion + 1)) < local-seconds:
 		if extreme proportions fetish is 1 or the remainder after dividing local-earnings by (1500 / (fast breast expansion + 1)) < local-seconds:
@@ -111,7 +114,7 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 				set real breast size;
 			if the thickness of hips > the real thickness of hips, increase the real thickness of hips by 1;
 		if shrink TG >= 3 and the size of penis <= min penis size and the player is sexed male:
-			if tg-tracking > 0 or shrink TG is 4:
+			if tg-tracking > 0 or shrink TG is 4: [shrink TG should never be 4 here, but just in case!]
 				say DefaultSexChangeFlav;
 				sexchange the player;
 			otherwise:
@@ -157,7 +160,7 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 		if the remainder after dividing local-earnings by 49 < local-seconds and temp_str_dam + temp_dex_dam + temp_int_dam > 0:
 			compute stat healing;
 	if playerRegion is not school or the player is flying:
-		let inflation-decay-rate be 29;
+		let inflation-decay-rate be 38;
 		if the player is flying, now inflation-decay-rate is 9;
 		if the remainder after dividing local-earnings by inflation-decay-rate < local-seconds:
 			compute inflation decay;
@@ -385,13 +388,13 @@ A time based rule (this is the dressup rule):
 			say "No dressup eligible clothing found.";
 	otherwise if there is a worn possession clothing and a random number between 1 and 40 < N + the number of worn possession clothing:
 		let H be a random worn possession clothing;
-		if there is a worn diaper and H is crotch-in-place and (H is short or longer or H is crotch covering):
+		if there is a worn diaper and H is crotch-in-place and (the front-skirt-length of H >= 3 or H is crotch covering):
 			let D be a random worn diaper;
 			say "[bold type]You [one of]yelp[or]let out a shuddering sigh[or]mewl[cycling] as your [ShortDesc of H] unnaturally distorts and constricts itself, pushing against the crotch of your diaper, groping, squeezing, rubbing at your [genitals] through your padding.[line break][variable custom style][one of]Aaaah![or]Haaaah...[or]Eeeeep![or]Oooooooh fuckkkkk...[then at random][roman type][line break]";
 			stimulate vagina from H;
 		otherwise:
 			let LB be a list of body parts;
-			if H is crotch-in-place and (H is short or longer or H is crotch covering):
+			if H is crotch-in-place and (the back-skirt-length of H >= 3 or H is crotch covering):
 				if asshole is not actually occupied, add asshole to LB;
 				if the player is possessing a vagina and vagina is not actually occupied, add vagina to LB;
 				if the player is possessing a penis, add penis to LB;
@@ -410,7 +413,7 @@ A time based rule (this is the dressup rule):
 					say "[bold type]You start and look over your shoulder as something cool and wet prods your sphincter. [roman type]Your [ShortDesc of H] distort unnaturally, casting an ominous glow over your inner thighs as a dexterous tongue pushes through your anal ring. It mercilessly probes your sensitive little hole, knowing you can only claw helplessly at the possessed [clothing-material of H] material until [italic type]it[roman type] decides to stop. Pleasure, [if the bimbo of the player < 14]terror[otherwise]exhilaration[end if], and humiliation at being tortured by your own clothing roil inside of you until it finally wiggles out of your [asshole].";
 					stimulate asshole from H;
 				otherwise if F is breasts:
-					say "[bold type]You yelp in surprise as you feel two hands groping at your [BreastDesc]. Looking down, you see that your chest is being squeezed by your own [ShortDesc of H]! [roman type]Two subtle handprints can be seen within the [clothing-material of H] material itself, first kneading your flesh, and then focusing in to roll and pinch your nipples. There's nothing you can do but endure it as your possessed garment turns your body into its personal plaything.";
+					say "[bold type]You yelp [one of]in surprise[or][one of]in dismay[or]with indignation[cycling][stopping] as you feel two hands groping at your [BreastDesc]. Looking down, you see that your chest is being squeezed by your own [ShortDesc of H]! [roman type]Two subtle handprints can be seen within the [clothing-material of H] material itself, first kneading your flesh, and then focusing in to roll and pinch your nipples. There's nothing you can do but endure it as your possessed garment turns your body into its personal plaything.";
 					stimulate breasts from H;
 			otherwise if H is equippable:
 				let R be a random number between 1 and 2;

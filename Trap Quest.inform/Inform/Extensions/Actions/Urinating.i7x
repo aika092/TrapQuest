@@ -33,6 +33,8 @@ water-peeing is initially false.
 toilet is a backdrop. Understand "potty", "throne", "bathroom" as toilet. The text-shortcut of toilet is "toilet". Figure of toilet is the file "Env/MultiFloor/toilet1.png". Figure of school toilets is the file "Env/School/toilets1.jpg". Figure of school toilets locked is the file "Env/School/toilets2.jpg".
 urinal is a backdrop. Understand "potty", "urinals", "bathroom" as urinal. The text-shortcut of urinal is "urinal".
 
+
+
 To say ExamineDesc of (T - toilet):
 	say "A toilet[if watersports mechanics is 1]. You can [bold type]use[roman type] this to relieve yourself[end if].".
 To say ExamineDesc of (T - urinal):
@@ -51,7 +53,6 @@ To decide which figure-name is the examine-image of (T - toilet):
 		if locked-toilets is true, decide on figure of school toilets locked;
 		otherwise decide on figure of school toilets;
 	if diaper quest is 1 and the player is in Hotel38 and the human-toilet-scene of woman-player is 2, decide on figure of human toilet;
-	if diaper quest is 1 and the player is in Dungeon41, decide on figure of babified shopkeeper urinal;
 	if diaper quest is 0 and the player is in Hotel38 and watersports fetish is 1 and a2m fetish >= 2 and the human-toilet-scene of woman-player is not 1, decide on figure of human toilet;
 	if diaper quest is 0 and the player is in Toilet01, decide on figure of male toilet;
 	if diaper quest is 0 and playerRegion is not Dungeon, decide on figure of female toilet;
@@ -373,8 +374,8 @@ To compute toilet use:
 			if H is actually summonable:
 				say "Before you know it, your head and mouth are encased in rubber. You're now wearing a pink latex baby's bonnet!";
 				summon H cursed;
-			otherwise if no-panties-fetish is 0:
-				now no-panties permanent fetish is 1;
+			otherwise if skimpy underwear fetish is not 0:
+				now skimpy underwear fetish is 0;
 				say "Your mind suddenly clouds for a second... As you shake it off, you suddenly feel a strange aversion to wearing underwear thinner than diapers!";
 			otherwise:
 				DiaperAddictUp 1;
@@ -465,14 +466,19 @@ To compute urinal use:
 			womanSluttify;
 			say "[speech style of woman-player]'[NameBimbo], you bitch! I thought we were friends!'[roman type][line break][BigNameDesc of woman-player] cries angrily as [he of woman-player] spits out a mouthful of [urine].[line break][speech style of woman-player]'Gross gross gross!'[roman type][line break]";
 		otherwise if the player is in Dungeon41:
-			say "[BigNameDesc of shopkeeper] groans in frustration as the [urine] floods [his of shopkeeper] mouth, and [he of shopkeeper] is forced to swallow. But there's absolutely nothing [he of shopkeeper] can do about it but drink it down, and wait until it comes out [his of shopkeeper] own bladder a bit later and joins the rest of the [urine] soaking [his of shopkeeper] extra-thick padding.";
+			say "[BigNameDesc of shopkeeper] groans in frustration as the [urine] floods [his of shopkeeper] mouth, and [he of shopkeeper] is forced to swallow. But there's absolutely nothing [he of shopkeeper] can do about it but drink it down, and wait until it comes out [his of shopkeeper] own bladder a bit later and joins the rest of the [urine] soaking [his of shopkeeper] extra-thick padding. You can't help but feel a bit better about yourself in comparison to this pathetic human toilet!";
+			Dignify 1000;
+			DelicateDown 1;
+		otherwise if the player is in School27:
+			say "The human urinal whimpers as the [urine] floods their mouth, and they are forced to swallow. But there's absolutely nothing they can do about it but drink it down, and wait until it comes out their own bladder a bit later and joins the rest of the [urine] soaking their extra-thick padding. You can't help but feel a bit better about yourself in comparison to this pathetic human toilet!";
+			Dignify 1000;
+			DelicateDown 1;
 		now the bladder of the player is 0;
 		unless the location of the player is School35: [princess urinal]
 			repeat with M running through reactive monsters:
 				compute toilet reaction of M;
 		progress quest of careful-peeing-quest;
 		trigger use-urinal-wisp-quest;
-		trigger pee-wisp-trigger;
 	otherwise:
 		say "Nothing comes out!".
 
@@ -1021,7 +1027,7 @@ To say DiaperDeclaration of (M - a monster):
 		if D is not currently visible or (D is diaper-stack and entry (number of entries in the list of stacked diapers) in the list of stacked diapers is dry diaper): [Player managed to stealth-pee]
 			now diaper-reaction-said is false;
 			if the player is not disgraced:
-				say "You [if delayed urination is 1]freeze in place and [end if]try as hard as possible to act casual, to prevent [NameDesc of M] from knowing what you are doing.[if the diaper addiction of the player < 7][line break][first custom style][one of]Next time, I'm NOT going this in front of anyone! It's way too scary.[or]Am I making any noise? Eek![or]Am I standing weirdly?[in random order][otherwise][line break][variable custom style][one of]I'm a diaper ninja![or]This is intense, but fun.[or]I wonder what I'd say if I got caught?[in random order][end if][roman type][line break]";
+				say "You [if delayed urination is 1]freeze in place and [end if]try as hard as possible to act casual, to prevent [NameDesc of M] from knowing what you are doing.[if the diaper addiction of the player < 7][line break][first custom style][one of]Next time, I'm NOT going this in front of anyone! It's way too scary.[or]Am I making any noise? Eek![or]Am I holding my body weirdly?[in random order][otherwise][line break][variable custom style][one of]I'm a diaper ninja![or]This is intense, but fun.[or]I wonder what I'd say if I got caught?[in random order][end if][roman type][line break]";
 			otherwise if the player is not shameless:
 				say "You [if delayed urination is 1]freeze in place and [end if]try to act casual, but you can't help but stare at [NameDesc of M] coyly, tempting fate to get you caught.[if the diaper addiction of the player < 9][line break][first custom style][one of]What am I doing?![or]Why can't I stop myself?![or]Oh my god, I need to get myself under control![in random order][otherwise][line break][variable custom style][one of]I'm a diaper ninja![or]Come on, say something![or]Next time, I'm going to make it even more obvious![in random order][end if][roman type][line break]";
 			otherwise if the player is able to speak:

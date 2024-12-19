@@ -125,21 +125,21 @@ noLineBreaksZapDamage is initially false.
 To decide which number is the zap damage of (P - a person):
 	if damage-explained > 1, say "[input-style]Base zap damage calculation: [bracket]0 (base damage) ";
 	let A be 0;
-	if fire palm tattoo is worn:
-		increase A by 1;
-		if damage-explained > 1, say "+1 (fire palm tattoo) ";
-	if the zapskill of the player is 1:
-		increase A by 1;
-		if damage-explained > 1, say "+1 (expert wand flicking technique) ";
 	unless currentZapper is yourself or currentZapper is eye-mask or currentZapper is jewelled-tiara:
 		if the magic power of the player <= 0 and the magic-cost of currentZapper > 0:
 			if damage-explained > 1, say "Override to 0 (insufficient magic power) ";
 			decide on 0;
-		let N be 0;
-		if noLineBreaksZapDamage is true, now N is the nolinebreaks zap damage improvement of currentZapper;
-		otherwise now N is the zap damage improvement of currentZapper;
-		increase A by N;
-		if damage-explained > 1, say "[if N >= 0]+[end if][N] ([ShortDesc of currentZapper] bonus) ";
+		if the zapskill of the player is 1:
+			increase A by 1;
+			if damage-explained > 1, say "+1 (expert wand flicking technique) ";
+	if fire palm tattoo is worn:
+		increase A by 1;
+		if damage-explained > 1, say "+1 (fire palm tattoo) ";
+	let N be 0;
+	if noLineBreaksZapDamage is true, now N is the nolinebreaks zap damage improvement of currentZapper;
+	otherwise now N is the zap damage improvement of currentZapper;
+	increase A by N;
+	if damage-explained > 1, say "[if N >= 0]+[end if][N] ([ShortDesc of currentZapper] bonus) ";
 	if A < 0, decide on 0;
 	decide on A.
 

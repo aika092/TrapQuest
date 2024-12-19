@@ -603,8 +603,7 @@ Definition: adult-baby-matron-drag is appropriate:
 To compute punishment of (P - adult-baby-matron-drag):
 	follow the adult baby slave shows you to mommy rule.
 
-
-
+Definition: an adult baby slave is willing to potion forcefeed: decide yes.
 
 adult-baby-diaper-swap is a diaper punishment. The priority of adult-baby-diaper-swap is 4.
 
@@ -627,7 +626,7 @@ Definition: adult-baby-diaper-swap is appropriate:
 	decide no.
 
 To compute punishment of (P - adult-baby-diaper-swap):
-	now current-diaper is nothing;
+	now current-diaper-change-top-level is nothing;
 	now new-diaper is a random off-stage huge diaper;
 	if new-diaper is nothing, now new-diaper is a random off-stage large diaper;
 	if new-diaper is nothing, now new-diaper is a random eligible diaper;
@@ -635,31 +634,31 @@ To compute punishment of (P - adult-baby-diaper-swap):
 	let M be current-monster;
 	now M is grabbing the player;
 	while M is grabbing the player:
-		now current-diaper is a random top level protection clothing; [Top level takes priority]
-		if current-diaper is nothing, now current-diaper is a random worn crotch covering clothing;
-		if current-diaper is worn no protection overdress, now current-diaper is nothing; [These are allowed to stay around!]
-		if (current-diaper is nothing or current-diaper is chastity bond) and there are worn knickers, now current-diaper is a random worn knickers; [All knickers MUST be removed]
-		if (current-diaper is nothing or current-diaper is chastity bond) and there is a worn tail plug, now current-diaper is a random worn tail plug;
-		if current-diaper is unremovable clothing:
-			say "[speech style of M]'I can't remove that [ShortDesc of current-diaper]. Damn, I guess I'll have to leave you like this, for now.'[roman type][line break]";
+		now current-diaper-change-top-level is a random top level protection clothing; [Top level takes priority]
+		if current-diaper-change-top-level is nothing, now current-diaper-change-top-level is a random worn crotch covering clothing;
+		if current-diaper-change-top-level is worn no protection overdress, now current-diaper-change-top-level is nothing; [These are allowed to stay around!]
+		if (current-diaper-change-top-level is nothing or current-diaper-change-top-level is chastity bond) and there are worn knickers, now current-diaper-change-top-level is a random worn knickers; [All knickers MUST be removed]
+		if (current-diaper-change-top-level is nothing or current-diaper-change-top-level is chastity bond) and there is a worn tail plug, now current-diaper-change-top-level is a random worn tail plug;
+		if current-diaper-change-top-level is unremovable clothing:
+			say "[speech style of M]'I can't remove that [ShortDesc of current-diaper-change-top-level]. Damn, I guess I'll have to leave you like this, for now.'[roman type][line break]";
 			dislodge M;
-		otherwise if current-diaper is clothing and current-diaper is not chastity bond:
-			now old-diaper is current-diaper;
-			if current-diaper is crotch-zipped clothing and current-diaper is not knickers and (there is a worn crotch-tie-up knickers or the number of worn knickers is 0):
-				say UnzipFlav of M at current-diaper;
-				ZipDown current-diaper;
-			otherwise if current-diaper is displacable and current-diaper is not knickers and current-diaper is not glued:
-				compute M displacing current-diaper;
-			otherwise if current-diaper is locked:
-				compute M unlocking current-diaper;
-			otherwise if current-diaper is not diaper:
+		otherwise if current-diaper-change-top-level is clothing and current-diaper-change-top-level is not chastity bond:
+			now old-diaper is current-diaper-change-top-level;
+			if current-diaper-change-top-level is crotch-zipped clothing and current-diaper-change-top-level is not knickers and (there is a worn crotch-tie-up knickers or the number of worn knickers is 0):
+				say UnzipFlav of M at current-diaper-change-top-level;
+				ZipDown current-diaper-change-top-level;
+			otherwise if current-diaper-change-top-level is displacable and current-diaper-change-top-level is not knickers and current-diaper-change-top-level is not glued:
+				compute M displacing current-diaper-change-top-level;
+			otherwise if current-diaper-change-top-level is locked:
+				compute M unlocking current-diaper-change-top-level;
+			otherwise if current-diaper-change-top-level is not diaper:
 				say DiaperChangeRemovalFlav of M;
-				now M is carrying current-diaper;
-				dislodge current-diaper;
-				now current-diaper is temporarily-removed; [NPC will try to put this back on afterwards]
+				now M is carrying current-diaper-change-top-level;
+				dislodge current-diaper-change-top-level;
+				now current-diaper-change-top-level is temporarily-removed; [NPC will try to put this back on afterwards]
 			otherwise:
-				say "[BigNameDesc of M] removes your [ShortDesc of current-diaper], and [his of M] own [new-diaper]. [big he of M] sets about [if current-diaper is disposable diaper]taping[otherwise]pulling[end if] [NameDesc of current-diaper] up onto [his of M] body, and then focuses on you, forcing [his of M] full, messy [ShortDesc of new-diaper] onto your own crotch. The thoroughly-soaked padding, not only saturated by [NameDesc of M][']s [urine] but also full to the brim with [his of M] foul mess, is pressed against your skin, where it oozes and squelches against it.";
-				now M is wearing current-diaper;
+				say "[BigNameDesc of M] removes your [ShortDesc of current-diaper-change-top-level], and [his of M] own [new-diaper]. [big he of M] sets about [if current-diaper-change-top-level is disposable diaper]taping[otherwise]pulling[end if] [NameDesc of current-diaper-change-top-level] up onto [his of M] body, and then focuses on you, forcing [his of M] full, messy [ShortDesc of new-diaper] onto your own crotch. The thoroughly-soaked padding, not only saturated by [NameDesc of M][']s [urine] but also full to the brim with [his of M] foul mess, is pressed against your skin, where it oozes and squelches against it.";
+				now M is wearing current-diaper-change-top-level;
 				summon new-diaper uncursed;
 				MessUp new-diaper by 20;
 				UrineSoakUp new-diaper by the soak-limit of new-diaper;

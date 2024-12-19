@@ -105,8 +105,9 @@ To compute dungeon statue interaction:
 				otherwise:
 					say "You feel some magic tingling on your [asshole], as if it's trying to heal it! But it's already in perfect health.";
 			otherwise:
-				if the raw diaper addiction of the player > 5:
-					DiaperAddictDown 1;
+				if the raw diaper addiction of the player > 1:
+					if the raw diaper addiction of the player > 9, DiaperAddictDown 2;
+					otherwise DiaperAddictDown 1;
 				otherwise:
 					say "You sense that the statue tries to use some psychic magic to help reduce your love of diapers, but you don't really love diapers at all, so it can't do anything meaningful right now.[if entry PNR in the dungeon statue knowledge list is 0][line break][variable custom style]Still, that's useful knowledge for the future...[roman type][line break][end if]";
 		if X is 3:

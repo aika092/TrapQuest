@@ -87,8 +87,10 @@ This is the princess class rule:
 		if rubber-royal-dress is worn, now T is the substituted form of "plastic [T]";
 		now player-class is "[T]";
 		if H is tiara-veil:
-			now player-class is "[T] bride";
-			if bridal garter is worn, now player-class is "condom collector [T] bride";
+			if the consummation of betrothal-quest is true and bride-consort is demon lord, now T is "[T] concubine";
+			otherwise now T is "[T] bride";
+			if bridal garter is worn, now T is "condom collector [T]";
+			now player-class is T;
 		otherwise if H is tiara-of-spades:
 			now player-class is "[T] of spades";
 		otherwise if the quest of H is virginity-retention-quest:
@@ -255,7 +257,7 @@ Thanks to the various schoolgirl multi-classes, we have multiple different texts
 
 +!]
 Definition: a text (called T) is schoolgirl:
-	if T matches the text "school" or T matches the text "class" or T matches the text "bully" or T matches the text "fraternity" or T is "walking talking condom" or T matches the text "mathlete", decide yes;
+	if T matches the text "school" or T matches the text "class" or T matches the text "bully" or T matches the text "fraternity" or T is "walking talking condom" or T matches the text "mathlete" or T matches the text "teacher", decide yes;
 	decide no.
 
 This is the pigtail class rule:
@@ -302,7 +304,9 @@ a class explaining rule (this is the explaining schoolgirl rule):
 
 This is the cheerleader class rule:
 	if there is a worn pink scrunchie:
-		if there is a worn rubber cheerleader outfit and the silicone volume of breasts > 0:
+		if diaper quest is 1:
+			now player-class is "teacher's pet";
+		otherwise if there is a worn rubber cheerleader outfit and the silicone volume of breasts > 0:
 			now player-class is "plastic cheerleader";
 		otherwise if deepthroat princess crop top is worn:
 			now player-class is "deepthroat princess";
@@ -313,17 +317,42 @@ This is the cheerleader class rule:
 		rule succeeds.
 The cheerleader class rule is listed in the player class rules.
 Definition: a text (called T) is cheerleader:
-	if T matches the text "cheer" or T matches the text "bully" or T matches the text "fraternity" or T matches the text "locker" or T is "deepthroat princess" or T matches the text "plastic cumdump" or T matches the text "country", decide yes;
+	if T matches the text "cheer" or T matches the text "bully" or T matches the text "fraternity" or T matches the text "locker" or T is "deepthroat princess" or T matches the text "plastic cumdump" or T matches the text "teacher" or T matches the text "country", decide yes;
 	decide no.
 
 cheerleaderExplained is initially false.
+cheerleaderLatestSkirtBonus is a number that varies.
+To decide which number is cheerleaderSkirtBonus:
+	let D be 0;
+	let C be a random worn skirted clothing;
+	if C is clothing:
+		if C is knee-length-or-shorter, increase D by 1;
+		if C is short-or-shorter, increase D by 1;
+		if C is very-short-or-shorter, increase D by 1;
+		if C is super-short-or-shorter, increase D by 1;
+		if C is ultra-short, increase D by 1;
+	decide on D.
+
 a class explaining rule (this is the explaining cheerleader rule):
 	if cheerleaderExplained is false and the class of the player is cheerleader:
 		now cheerleaderExplained is true;
-		say "[bold type]Now that you have become the [']cheerleader['] class, you can sense that the more blonde (or pink) your hair is, the more bonus dexterity you'll have. Also, you're less likely to [if pregnancy fetish is 1]get pregnant and less likely to [end if]upset others and sex addiction will increase much slower from you having lots of orgasms, so you can relax and live a little![roman type][line break]";
+		if diaper quest is 1, say "[bold type]Now that you have become the [']cheerleader['] class, you can sense that your dexterity will be improved the shorter your skirt is, and big thick waddle-forcing diapers give you no movement penalty![roman type][line break]";
+		otherwise say "[bold type]Now that you have become the [']cheerleader['] class, you can sense that the more blonde (or pink) your hair is, the more bonus dexterity you'll have. Also, you're less likely to [if pregnancy fetish is 1]get pregnant and less likely to [end if]upset others and sex addiction will increase much slower from you having lots of orgasms, so you can relax and live a little![roman type][line break]";
 	otherwise if cheerleaderExplained is true and the class of the player is not cheerleader:
 		now cheerleaderExplained is false;
-		say "[bold type]Now that you are no longer the [']cheerleader['] class, you can sense that the bonus dexterity you were receiving from having blonde or pink hair is gone.[roman type][line break]".
+		if diaper quest is 1, say "[bold type]Now that you have become the [']cheerleader['] class, you can sense that the bonus dexterity you were receiving from shorter skirts is gone, and thick diapers will once again give you movement penalties.[roman type][line break]";
+		otherwise say "[bold type]Now that you are no longer the [']cheerleader['] class, you can sense that the bonus dexterity you were receiving from having blonde or pink hair is gone.[roman type][line break]";
+	if cheerleaderExplained is true and diaper quest is 1 and cheerleaderSkirtBonus is not cheerleaderLatestSkirtBonus:
+		let C be a random worn skirted clothing;
+		say bold type;
+		if cheerleaderSkirtBonus > cheerleaderLatestSkirtBonus:
+			say "You feel your cheerleader legs becoming [if cheerleaderLatestSkirtBonus > 0]even [end if]more dextrous thanks to the short skirt of [NameDesc of C]!";
+		otherwise if C is clothing:
+			say "You feel your cheerleader legs losing [if cheerleaderSkirtBonus > 0]some[otherwise]all[end if] of their bonus dexterity due to the [SkirtLength skirt-length of C] [if C is not skirt]skirt of your [end if][ShortDesc of C].";
+		otherwise:
+			say "You feel your cheerleader legs losing all their bonus dexterity since you are no longer wearing a skirt.";
+		say "[roman type][line break]";
+		now cheerleaderLatestSkirtBonus is cheerleaderSkirtBonus;
 
 This is the fertility goddess class rule:
 	if laurel wreath is worn:
@@ -457,7 +486,7 @@ This is the human toilet class rule:
 				if trashcan is worn, now player-class is "trashcan";
 			otherwise:
 				now player-class is "meat toilet";
-				if the used condoms of meat-toilet-panties > 0 or trashcan is worn, now player-class is "meat toilet trashcan";
+				if (meat-toilet-panties is worn and the used condoms of meat-toilet-panties > 0) or trashcan is worn, now player-class is "meat toilet trashcan";
 		if trashcan is worn and watersports fetish is 1, now player-class is "toilet trashcan";
 		rule succeeds.
 The human toilet class rule is listed in the player class rules.
@@ -679,7 +708,7 @@ This is the bride class rule:
 The bride class rule is listed in the player class rules.
 
 Definition: a text (called T) is bride:
-	if T matches the text "bride" or T matches the text "wife" or T matches the text "sacrifice", decide yes;
+	if T matches the text "bride" or T matches the text "princess concubine" or T matches the text "wife" or T matches the text "sacrifice", decide yes;
 	decide no.
 
 brideExplained is initially false.
@@ -795,11 +824,15 @@ A time based rule (this is the compute whispers rule):
 
 This is the vixen class rule:
 	if fox ears is worn:
-		now player-class is "vixen";
+		if loveheart tanto is worn:
+			if diaper quest is 0, now player-class is "fox fatale";
+			otherwise now player-class is "fox cub";
+		otherwise:
+			now player-class is "vixen";
 		rule succeeds.
 The vixen class rule is listed in the player class rules.
 Definition: a text is vixen:
-	if it matches the text "vixen" or it matches the text "burglar", decide yes;
+	if it matches the text "vixen" or it matches the text "burglar" or it matches the text "fox", decide yes;
 	decide no.
 
 vixenExplained is initially false.
@@ -1138,7 +1171,7 @@ This is the stripper class rule:
 		rule succeeds.
 The stripper class rule is listed first in the player class rules.
 Definition: a text (called T) is stripper:
-	if T matches the text "stripper" or T matches the text "porn star" or T matches the text "maiden" or T matches the text "the law", decide yes;
+	if T matches the text "stripper" or T matches the text "porn star" or T matches the text "maiden" or T matches the text "the law" or T matches the text "fatale", decide yes;
 	decide no.
 
 stripperExplained is initially false.
@@ -1161,7 +1194,7 @@ This is the worshipper class rule:
 The worshipper class rule is listed first in the player class rules.
 
 Definition: a text (called T) is worshipper:
-	if T matches the text "demon" or T matches the text "sacrifice", decide yes;
+	if T matches the text "demon" or T matches the text "sacrifice" or T matches the text "concubine", decide yes;
 	decide no.
 
 worshipperExplained is initially false.
@@ -1194,7 +1227,7 @@ babyExplained is initially false.
 a class explaining rule (this is the explaining baby rule):
 	if babyExplained is false and the player is actually an adult baby:
 		now babyExplained is true;
-		say "[bold type]Now that you have become the [']adult baby['] class, you feel much less grossed out by, well, gross things, and you will be able to maintain your focus even when desperate to use the toilet. Also, you sense that wearing mittens might enable you to move really fast while on your knees.[roman type][line break]";
+		say "[bold type]Now that you have become the [']adult baby['] class[if the number of worn baby themed headgear is 0] (because you are wearing three or more baby items)[end if], you feel much less grossed out by, well, gross things, and you will be able to maintain your focus even when desperate to use the toilet. Also, you sense that wearing mittens might enable you to move really fast while on your knees.[roman type][line break]";
 	otherwise if babyExplained is true and the player is not actually an adult baby:
 		now babyExplained is false;
 		say "[bold type]Now that you are no longer the [']adult baby['] class, you feel your attitude to gross things and ability to focus while desperate for the loo returning to normal.[roman type][line break]".

@@ -165,7 +165,7 @@ To say PortalHint of (S - a summoning portal):
 
 To say DivinationHint of (S - a summoning portal):
 	let M be the next-summon of S;
-	say "Thanks to what [NameDesc of witch] taught you, you can sense that it will summon a [ShortDesc of M] next.".
+	if M is a thing, say "Thanks to what [NameDesc of witch] taught you, you can sense that it will summon a [ShortDesc of M] next.".
 
 [!<SayActiveWarningOfPortal>+
 
@@ -292,7 +292,7 @@ To say PortalHint of (S - summoning-circle):
 	if M is royal guard:
 		say "You can see a faint image of a cross floating behind it.";
 	otherwise if M is gladiator:
-		say "You can make out a smoky image of a sword inside it.";
+		say "You can make out a pink-smoky image of a sword inside it.";
 	otherwise if M is adult baby slave:
 		say "You can make out the figure of someone crawling around.";
 	otherwise if M is wench or M is aeromancer: [you're probably going to be most excited for a wench, so let's throw a curve ball]

@@ -416,6 +416,7 @@ assfilled is initially false. [has the player ever had cum in their butt?]
 
 To Assfill (X - a number):
 	if diaper quest is 1:
+		if enema fetish is 0, say "BUG - player's butt just got filled with water (via AssFill) even though enemas were disabled. Please report this bug!";
 		AssFill X water;
 	otherwise:
 		if lipstick collar is worn, increase X by 1;
@@ -481,6 +482,7 @@ To assfill (X - a number) large eggs:
 	overflow;
 
 To Assfill (X - a number) urine:
+	if enema fetish is 0 and X > 0, say "BUG - player's butt just got filled with urine even though enemas were disabled. Please report this bug!";
 	while X > 0:
 		decrease X by 1;
 		increase the urine volume of belly by 1;
@@ -490,6 +492,7 @@ To Assfill (X - a number) with (L - urine):
 	Assfill X urine.
 
 To Assfill (X - a number) milk:
+	if enema fetish is 0 and X > 0, say "BUG - player's butt just got filled with milk even though enemas were disabled. Please report this bug!";
 	while X > 0:
 		decrease X by 1;
 		increase the milk volume of belly by 1;
@@ -505,6 +508,7 @@ To Assfill (X - a number) air:
 		if the air volume of belly < 50, increase the air volume of belly by 1.
 
 To Assfill (X - a number) water:
+	if enema fetish is 0 and X > 0, say "BUG - player's butt just got filled with water even though enemas were disabled. Please report this bug!";
 	while X > 0:
 		decrease X by 1;
 		increase the water volume of belly by 1;

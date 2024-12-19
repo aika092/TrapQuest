@@ -22,7 +22,7 @@ Most bodysuits etc: 10
 Trousers: 99
 ]
 To decide which number is the usualAssModesty of (C - a clothing):
-	if C is skirt-covering-crotch, decide on 100;
+	if C is skirt-covering-ass, decide on 100;
 	if C is crotch covering:
 		if the armour of C > 0, decide on the armour of C;
 		decide on 6; [This is really just a best estimate; but most crotchless outfits e.g. catsuits still cover some butt cheeks. Can obviously be manually overridden.]

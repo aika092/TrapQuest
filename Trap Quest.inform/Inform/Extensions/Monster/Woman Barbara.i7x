@@ -1051,7 +1051,7 @@ Chapter - Cum Kiss Scene
 
 woman-player can be cum-kissed.
 
-Report going when the player is an october 2023 top donator and the woman-bimbo of woman-player is 3 and woman-player is not cum-kissed and playerRegion is Mansion:
+Report going when the player is the donator and the woman-bimbo of woman-player is 3 and woman-player is not cum-kissed and playerRegion is Mansion:
 	if debugmode is 1, say "Checking if [WomanName] can appear.";
 	if woman-player is relaxed redeploy appropriate and the player is upright and face is not actually occupied and the location of the player is not mandatory room and the location of the player is not important room and the location of the player is not pinned room and the number of monsters in the location of the player is 0:
 		now woman-player is cum-kissed;
@@ -1220,6 +1220,7 @@ Report going when the player is in School20 and first-time-swimming-pool is true
 				if pregnancy fetish > 0:
 					say "But [his of woman-player] belly is hardly deflating![line break][speech style of woman-player]'Huh?!'[roman type][line break][BigNameDesc of woman-player] holds [his of woman-player] new bloated, round belly.[line break][speech style of woman-player]'Wait, am I... Am I PREGNANT?! WHAT THE FUCK?!'[roman type][line break]In visible distress, [NameDesc of woman-player] sprints from the room, not even remembering to take [his of woman-player] clothes with [him of woman-player].";
 					now the woman-pregnancy of woman-player is 2;
+					compute addiction reflection on "pregnancy";
 				otherwise:
 					say "[speech style of woman-player]'What is this place?! What sort of evil person would arrange for such a [']prank['], or whatever this is! How disgusting! How humiliating! I can't stay here a moment longer!'[roman type][line break]In visible distress, [NameDesc of woman-player] quickly gathers up [his of woman-player] clothes and sprints from the room.";
 					ImmediatewomanSluttify;
@@ -1265,6 +1266,7 @@ This is the woman gives birth to a tentacle monster rule:
 			increase the delayed sluttification of woman-player by 1;
 			interest M;
 			anger M;
+			compute addiction reflection on "pregnancy";
 			rule succeeds.
 The woman gives birth to a tentacle monster rule is listed last in the woman wandering rules.
 

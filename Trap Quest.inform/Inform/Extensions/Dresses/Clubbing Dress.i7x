@@ -1,6 +1,6 @@
 Clubbing Dress by Dresses begins here.
 
-A clubbing dress is a kind of overdress. A clubbing dress is usually short. A clubbing dress is usually erect-nipple-exposing. A clubbing dress is usually very low cut. The text-shortcut of clubbing dress is "cd".
+A clubbing dress is a kind of overdress. The skirt-length of a clubbing dress is 4. A clubbing dress is usually erect-nipple-exposing. A clubbing dress is usually very low cut. The text-shortcut of clubbing dress is "cd".
 
 To decide which number is the dexterity-influence of (C - a clubbing dress):
 	if C is protection, decide on 0;
@@ -62,7 +62,7 @@ Definition: a pink clubbing dress is pink themed: decide yes.
 
 Part 2 - Long Pink Dress
 
-pink cocktail dress is a clubbing dress. pink cocktail dress is hobble-skirted. pink cocktail dress is crotch-skirted. Figure of pink cocktail dress is the file "Items/Clothes/Upper/Dresses/Clubbing/clubbingdress2.png". The text-shortcut of pink cocktail dress is "lpcd". Understand "long" as pink cocktail dress.
+pink cocktail dress is a clubbing dress. The skirt-length of pink cocktail dress is 9. pink cocktail dress is crotch-skirted. Figure of pink cocktail dress is the file "Items/Clothes/Upper/Dresses/Clubbing/clubbingdress2.png". The text-shortcut of pink cocktail dress is "lpcd". Understand "long" as pink cocktail dress.
 
 To decide which figure-name is clothing-image of (C - pink cocktail dress):
 	decide on figure of pink cocktail dress.
@@ -108,7 +108,7 @@ Report wearing a diaper when there is a worn black clubbing dress:
 
 Part 4 - White Slut Clubbing Dress
 
-A white slut clubbing dress is a kind of clubbing dress. There is 1 white slut clubbing dress. A white slut clubbing dress is usually cotton. A white slut clubbing dress is transformation-rare. A white slut clubbing dress is usually ridiculously low cut. A white slut clubbing dress is usually belly exposing. A white slut clubbing dress is usually knee-length. A white slut clubbing dress is usually only arm covering. Figure of white slut clubbing dress is the file "Items/Clothes/Upper/Dresses/Clubbing/clubbingdress4.png". The text-shortcut of white slut clubbing dress is "wscd". A white slut clubbing dress is usually sheer-when-wet.
+A white slut clubbing dress is a kind of clubbing dress. There is 1 white slut clubbing dress. A white slut clubbing dress is usually cotton. A white slut clubbing dress is transformation-rare. A white slut clubbing dress is usually ridiculously low cut. A white slut clubbing dress is usually belly exposing. The skirt-length of a white slut clubbing dress is 6. A white slut clubbing dress is usually only arm covering. Figure of white slut clubbing dress is the file "Items/Clothes/Upper/Dresses/Clubbing/clubbingdress4.png". The text-shortcut of white slut clubbing dress is "wscd". A white slut clubbing dress is usually sheer-when-wet.
 
 The printed name of white slut clubbing dress is usually "[clothing-title-before]white slut clubbing dress[clothing-title-after]".
 
@@ -134,7 +134,7 @@ To decide which number is the initial outrage of (C - a white slut clubbing dres
 
 Part 5 - Black Slut Clubbing Dress
 
-A black slut clubbing dress is a kind of clubbing dress. There is 1 black slut clubbing dress. A black slut clubbing dress is leather. A black slut clubbing dress is normally-partially-nipple-covering. A black slut clubbing dress is transformation-rare. A black slut clubbing dress is ridiculously low cut. A black slut clubbing dress is super-short. The text-shortcut of black slut clubbing dress is "bscd".
+A black slut clubbing dress is a kind of clubbing dress. There is 1 black slut clubbing dress. A black slut clubbing dress is leather. A black slut clubbing dress is normally-partially-nipple-covering. A black slut clubbing dress is transformation-rare. A black slut clubbing dress is ridiculously low cut. The skirt-length of A black slut clubbing dress is 1. The text-shortcut of black slut clubbing dress is "bscd".
 
 Definition: a black slut clubbing dress is fluid immune: decide yes.
 Definition: a black slut clubbing dress is black themed: decide yes.
@@ -182,7 +182,7 @@ Definition: a supertiny navy clubbing dress is blue themed: decide yes.
 
 Part 7 - White cocktail dress
 
-white cocktail dress is a clubbing dress. white cocktail dress is ridiculously low cut. white cocktail dress is hobble-skirted. white cocktail dress is crotch-skirted. Figure of white cocktail dress is the file "Items/Clothes/Upper/Dresses/Clubbing/clubbingdress7.png". The text-shortcut of white cocktail dress is "wcd". Understand "and black", "black" as white cocktail dress.
+white cocktail dress is a clubbing dress. white cocktail dress is ridiculously low cut. The skirt-length of white cocktail dress is 9. white cocktail dress is crotch-skirted. Figure of white cocktail dress is the file "Items/Clothes/Upper/Dresses/Clubbing/clubbingdress7.png". The text-shortcut of white cocktail dress is "wcd". Understand "and black", "black" as white cocktail dress.
 
 The printed name of white cocktail dress is usually "[clothing-title-before]white and black cocktail dress[clothing-title-after]".
 
@@ -256,7 +256,7 @@ Definition: an exposing pink clubbing dress is end of transformation chain: deci
 
 Part 10 - Blue Slut Clubbing Dress
 
-A blue slut clubbing dress is a kind of clubbing dress. There is 1 blue slut clubbing dress. A blue slut clubbing dress is usually cotton. A blue slut clubbing dress is transformation-rare. A blue slut clubbing dress is usually very low cut. A blue slut clubbing dress is usually belly exposing. A blue slut clubbing dress is usually knee-length. A blue slut clubbing dress is usually only arm covering. Figure of blue slut clubbing dress is the file "Items/Clothes/Upper/Dresses/Clubbing/clubbingdress10.png". The text-shortcut of blue slut clubbing dress is "uscd". A blue slut clubbing dress is usually sheer-when-wet.
+A blue slut clubbing dress is a kind of clubbing dress. There is 1 blue slut clubbing dress. A blue slut clubbing dress is usually cotton. A blue slut clubbing dress is transformation-rare. A blue slut clubbing dress is usually very low cut. A blue slut clubbing dress is usually belly exposing. The skirt-length of a blue slut clubbing dress is 6. A blue slut clubbing dress is usually only arm covering. Figure of blue slut clubbing dress is the file "Items/Clothes/Upper/Dresses/Clubbing/clubbingdress10.png". The text-shortcut of blue slut clubbing dress is "uscd". A blue slut clubbing dress is usually sheer-when-wet.
 
 The printed name of blue slut clubbing dress is usually "[clothing-title-before]blue slut clubbing dress[clothing-title-after]".
 
@@ -338,7 +338,7 @@ To say ClothingDesc of (C - an exposing blue clubbing dress):
 To say ShortDesc of (C - an exposing blue clubbing dress):
 	say "whorish clubbing dress".
 To say MediumDesc of (C - an exposing blue clubbing dress):
-	say "whorish apricot clubbing dress with an exposed chest".
+	say "whorish blue clubbing dress with an exposed chest".
 
 Definition: an exposing blue clubbing dress is blue themed: decide yes.
 Definition: an exposing blue clubbing dress is end of transformation chain: decide yes.

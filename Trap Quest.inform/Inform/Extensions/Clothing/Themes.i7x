@@ -749,26 +749,27 @@ A theme effect description rule:
 uncoveredReminder is a number that varies.
 
 An all later time based rule (this is the uncovered reminder rule):
-	increase uncoveredReminder by 1;
-	if uncoveredReminder > 20:
-		now uncoveredReminder is 0;
-		let L be the list of worn uncovered themed currently concealed clothing;
-		let N be the number of entries in L;
-		if N > 0:
-			say "[bold type]Your ";
-			while N > 0:
-				say "[MediumDesc of entry N of L][if N > 2], [otherwise if N is 2] and [otherwise] [end if]";
-				decrease N by 1;
-			say "[if the number of entries in L is 1]is [one of][or]still [stopping]dampening your intelligence because it has other items worn over it[otherwise]are still each dampening your intelligence because they have other items worn over them[end if]![roman type][line break]";
-		if there is worn skirted clothing:
-			let T be the list of worn unskirted themed clothing;
-			now N is the number of entries in T;
+	if the player is not in a predicament room:
+		increase uncoveredReminder by 1;
+		if uncoveredReminder > 20:
+			now uncoveredReminder is 0;
+			let L be the list of worn uncovered themed currently concealed clothing;
+			let N be the number of entries in L;
 			if N > 0:
 				say "[bold type]Your ";
 				while N > 0:
-					say "[MediumDesc of entry N of T][if N > 2], [otherwise if N is 2] and [otherwise] [end if]";
+					say "[MediumDesc of entry N of L][if N > 2], [otherwise if N is 2] and [otherwise] [end if]";
 					decrease N by 1;
-				say "[if the number of entries in T is 1]is [one of][or]still [stopping]dampening your strength and speed because you are wearing a skirt over it[otherwise]are still each dampening your strength and speed because you are wearing a skirt over them[end if]![roman type][line break]";
+				say "[if the number of entries in L is 1]is [one of][or]still [stopping]dampening your intelligence because it has other items worn over it[otherwise]are still each dampening your intelligence because they have other items worn over them[end if]![roman type][line break]";
+			if there is worn skirted clothing:
+				let T be the list of worn unskirted themed clothing;
+				now N is the number of entries in T;
+				if N > 0:
+					say "[bold type]Your ";
+					while N > 0:
+						say "[MediumDesc of entry N of T][if N > 2], [otherwise if N is 2] and [otherwise] [end if]";
+						decrease N by 1;
+					say "[if the number of entries in T is 1]is [one of][or]still [stopping]dampening your strength and speed because you are wearing a skirt over it[otherwise]are still each dampening your strength and speed because you are wearing a skirt over them[end if]![roman type][line break]";
 
 An intelligence theme rule:
 	if the player is not in a predicament room:

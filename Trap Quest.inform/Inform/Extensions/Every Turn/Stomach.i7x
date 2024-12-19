@@ -176,8 +176,9 @@ To compute food:
 	otherwise if the stomach-food of the player > 0:
 		now player-hunger is 0;
 		StomachFoodDown 1;
-		if the stomach-food of the player > 2, FatUp 1;
-		if the stomach-food of the player > 5, FatUp 1;
+		if chess table is not grabbing the player:
+			if the stomach-food of the player > 2, FatUp 1;
+			if the stomach-food of the player > 5, FatUp 1;
 		if (xavier-throat-link is 0 or chess table is grabbing the player) and (rectum > 0 or diaper messing >= 4 or (diaper messing >= 3 and diaper focus is 1)), increase rectum by 1; [With scenes & no diaper focus, it only starts going after the matron triggers it.]
 		if diaper messing < 3, now rectum is 0; [Just to make double triple sure]
 		if the player is hungry and hunger-flav-said is 0:

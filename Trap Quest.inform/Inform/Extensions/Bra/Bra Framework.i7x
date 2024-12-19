@@ -96,11 +96,6 @@ To decide which object is the unique-upgrade-target of (C - a bra):
 	if diaper quest is 1, decide on a random off-stage training bra;
 	decide on nothing.
 
-To Set Up Bras:
-	repeat with B running through bras:
-		unless B is immune to change:
-			Set up B.
-
 To set up influence of (C - a bra):
 	set up random-based influence of C.
 
@@ -112,20 +107,23 @@ To uniquely set up (B - a bra):
 	if the size of B < the min size of B, now the size of B is min size of B.
 
 To set up magic attribute of (B - a bra):
-	let R be a random number between 1 and 9;
-	if R is 1, now B is suppression;
-	if R is 2:
-		now B is absorption;
-		if diaper quest is 1, now B is maturity;
-	if R is 3:
-		now B is temptation;
-		if diaper quest is 1, now B is respiration;
-	if R is 4:
-		if diaper messing >= 4, now B is desperation;
-		if lactation fetish is 1, now B is milk production;
-	if R is 5 and the initial outrage of B < 5, now B is provocation;
-	if R > 6 and B is fully exposing, now B is protection;
-	if R is 3 or R is 4, now B is cursed;
+	if diaper quest is 1 and B is not discovered negative:
+		now B is maturity;
+	otherwise:
+		let R be a random number between 1 and 9;
+		if R is 1, now B is suppression;
+		if R is 2:
+			now B is absorption;
+			if diaper quest is 1, now B is maturity;
+		if R is 3:
+			now B is temptation;
+			if diaper quest is 1, now B is respiration;
+		if R is 4:
+			if diaper messing >= 4, now B is desperation;
+			if lactation fetish is 1, now B is milk production;
+		if R is 5 and the initial outrage of B < 5, now B is provocation;
+		if R > 6 and B is fully exposing, now B is protection;
+		if R is 3 or R is 4, now B is cursed;
 	if B is uncovered themed and a random number between 1 and 10 is 1:
 		now B is exposure;
 		now B is cursed;

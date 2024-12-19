@@ -44,7 +44,7 @@ Check entering podium:
 			let C be a random worn bridal dress;
 			if C is long bridal dress:
 				say "A large section of your [C][']s skirt detaches and falls to the ground, leaving you in what suddenly feels a lot more like a party dress!";
-				now C is short;
+				now the skirt-length of C is 4;
 			otherwise if C is sexy bridal dress:
 				if slutty bridal dress is unclash summonable, unclash class summon slutty bridal dress; [it's supposed to be bottom exclusive so this is more ideal]
 				otherwise transform sexy bridal dress into slutty bridal dress;

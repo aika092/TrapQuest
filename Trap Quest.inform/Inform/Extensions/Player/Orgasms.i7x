@@ -110,7 +110,7 @@ To anally orgasm shamefully:
 		progress quest of anal-orgasm-quest;
 		if diaper quest is 0 and (the raw anal sex addiction of the player < 4 or there is a live thing penetrating asshole), AnalSexAddictUp 1;
 		if newbie tips is 1, say shameful tip;
-		if the player is upright, check orgasm kneeling;
+		check orgasm delays;
 	otherwise:
 		now refractoryperiod is maxrefractoryperiod - 1.[The player couldn't cum, but we still increase it so the game does not immediately try again.]
 
@@ -166,7 +166,7 @@ To vaginally orgasm shamefully:
 		if diaper quest is 0 and (the raw vaginal sex addiction of the player < 4 or there is a live thing penetrating vagina), VaginalSexAddictUp 1;
 		[strongHumiliate;]
 		if newbie tips is 1, say shameful tip;
-		if the player is upright, check orgasm kneeling.
+		check orgasm delays.
 
 To breasts orgasm shamefully:
 	say "[bold type]You feel a wave of pleasure and your [if the player is upright]knees buckle. [otherwise if the player is not possessing a vagina]muscles tense then relax. [otherwise if the openness of vagina < 6]as your [vagina] dribbles a small amount of girlcum. [otherwise]as your [vagina] squirts out girlcum. [end if][one of]You've just had your first orgasm from your breasts! [or]Your orgasm triggered by your sensitive breasts leaves you panting. [stopping][roman type][line break]";
@@ -174,7 +174,7 @@ To breasts orgasm shamefully:
 	if the player is male, punish shameful male orgasm;
 	TitfuckAddictUp 1;
 	if newbie tips is 1, say shameful tip;
-	if the player is upright, check orgasm kneeling.
+	check orgasm delays.
 
 [Triggers from femdom/sissydom where the player is on the bottom.]
 To penis orgasm shamefully:
@@ -184,7 +184,7 @@ To penis orgasm shamefully:
 	if there is a live thing penetrating penis, PenisObedienceUp 1;
 	slowSexAddictUp 1 + the number of live things penetrating face;
 	[if newbie tips is 1, say shameful tip;]
-	if the player is upright, check orgasm kneeling.
+	check orgasm delays.
 
 To say PenisOrgasmFlav:
 	[let P be a random monster penetrating penis;]
@@ -245,7 +245,8 @@ To orgasm:
 	follow the ejaculation rules;
 	follow the orgasm fatigue effects rules;
 	follow the orgasm resolution rules;
-	if wanktype is not NO-WANK, progress quest of enemy-orgasm-quest;
+	if wanktype is NO-WANK, progress quest of enemy-orgasm-quest;
+	progress quest of orgasm-quest;
 	increase totalOrgasmCount by 1;
 	now the delayed arousal of the player is 0.
 
@@ -572,12 +573,12 @@ This is the hentai orgasm resolution rule:
 The hentai orgasm resolution rule is listed last in the orgasm resolution rules.
 
 This is the drilldo orgasm resolution rule:
-	if there is a dildo trap penetrating a fuckhole:
-		repeat with R running through dildo traps penetrating a fuckhole:
+	repeat with R running through dildo traps:
+		if R is penetrating a fuckhole or R is grabbing the player:
 			compute orgasm resolution of R;
 			dislodge R;
-		check immobility;
-		check orgasm kneeling.
+			check immobility;
+			check orgasm kneeling.
 The drilldo orgasm resolution rule is listed last in the orgasm resolution rules.
 
 This is the player is too delicate to not get submissive resolution rule:
@@ -754,14 +755,75 @@ Definition: a fuckhole (called F) is orgasming:
 		decide yes;
 	decide no.
 
+To check orgasm delays:
+	check orgasm kneeling;
+	check multi turn orgasm.
+
 To check orgasm kneeling:
-	if the player is upright:
+	if the player is able to buckle:
 		let T be the tired threshold of the player;
 		let R be a random number between (T + 1) and (T * 2);
 		if debuginfo > 0, say "[input-style]Remain standing while orgasming check: Random remain standing threshold (d[T - 1] + [T]) = [R] | [fatigue of the player].5 fatigue[roman type][line break]
 ";
 		if R <= the fatigue of the player, try kneeling;
 		otherwise say "You manage to stay on two feet.".
+
+Definition: yourself is able to buckle: [can the player's knees buckle right now?]
+	if the player is prone, decide no;
+	if tough-shit is 0 and the player is in a predicament room, decide no;
+	if the beachball-game of team-lake-predicament > 0, decide no;
+	decide yes.
+
+forced-multi-turn-orgasm is initially false.
+
+Definition: yourself is able to multi turn orgasm: [can the player be delayed with a long orgasm right now?]
+	if seconds > 6, decide no;
+	if another-turn > 0, decide no;
+	if the player is in a predicament room, decide no;
+	decide yes.
+
+Definition: yourself is having a multi turn orgasm:
+	if forced-multi-turn-orgasm is true:
+		now forced-multi-turn-orgasm is false;
+		decide yes;
+	if the player is not able to multi turn orgasm, decide no;
+	repeat with X running through things penetrating a fuckhole:
+		if the girth of X > 8, decide yes;
+		if the girth of X > 6 and the player is getting unlucky, decide yes;
+	if the player is extremely horny:
+		if the player is getting lucky, decide no;
+		decide yes;
+	if the player is very horny:
+		if the player is getting unlucky, decide yes;
+		decide no;
+	decide no.
+
+multi turn orgasm turns is a number that varies.
+
+To check multi turn orgasm:
+	if the player is having a multi turn orgasm:
+		now another-turn is 1;
+		add the multi turn orgasm rule to the another-turn-rules;
+		if multi turn orgasm turns < 1, now multi turn orgasm turns is 1;
+		now another-turn-flavour is "The orgasm is too strong - you can't stop cumming!";
+		repeat with X running through things penetrating a fuckhole:
+			if the girth of X > 6:
+				now another-turn-flavour is the substituted form of "[BigNameDesc of X] is so thick - [he of X][']s making you cum so hard!";
+
+This is the multi turn orgasm rule:
+	decrease multi turn orgasm turns by 1;
+	if multi turn orgasm turns < 1: [final turn of orgasm]
+		now multi turn orgasm turns is 0;
+		say "Your body finally slows down its shuddering as the extra-powerful orgasm begins to subside.";
+	otherwise:
+		now another-turn is 1;
+		add the multi turn orgasm rule to the another-turn-rules;
+		if multi turn orgasm turns is 1, say "You can't do anything but [if the player is upright]stand[otherwise]lay[end if] there as your body shakes and shudders, overwhelmed by this mind-blowing orgasm!";
+		otherwise say "[one of]You can't stop cumming super hard[or]The continuing orgasms prevents you from thinking straight[or]You can't concentrate enough to anything other than squeal as you continue to orgasm[at random]!";
+
+
+
+
 
 
 Orgasms ends here.

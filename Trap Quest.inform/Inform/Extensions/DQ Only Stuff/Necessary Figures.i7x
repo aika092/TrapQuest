@@ -10,8 +10,36 @@ Figure of agent camera cutscene 2 is the file "NPCs/MultiFloor/Agent/cutscene-ag
 
 Figure of bianca defeated is the file "NPCs/School/Teacher/teacher3c.png".
 
+Figure of breastfeeding predicament mead is the file "Special/Cutscene/cutscene-predicament-breastfeeding2.jpg".
+Figure of breastfeeding predicament lax is the file "Special/Cutscene/cutscene-predicament-breastfeeding3b.jpg".
+Figure of breastfeeding predicament piss is the file "Special/Cutscene/cutscene-predicament-breastfeeding4b.jpg".
+
 Figure of demoness cutscene 15 is the file "NPCs/Forest/Demoness/cutscene-demoness-dq-facesit1.jpg".
 Figure of detention chair is the file "Env/School/detentionchair2.jpg".
+
+Figure of dildo pole DQ ungrabbed is the file "Env/MultiFloor/dildopole2.jpg".
+Figure of dildo pole DQ nude is the file "Env/MultiFloor/dildopole2a.jpg".
+Figure of dildo pole DQ panties is the file "Env/MultiFloor/dildopole2b.jpg".
+Figure of dildo pole DQ diaper is the file "Env/MultiFloor/dildopole2c.jpg".
+Figure of dildo pole DQ diaper wet is the file "Env/MultiFloor/dildopole2d.jpg".
+Figure of dildo pole DQ diaper messy is the file "Env/MultiFloor/dildopole2e.jpg".
+To decide which figure-name is figure of dildo pole DQ:
+	let Y be a random dildo trap grabbing the player;
+	if Y is a thing:
+		let K be a random worn knickers;
+		if K is diaper:
+			if K is perceived messed:
+				decide on Figure of dildo pole DQ diaper messy;
+			otherwise if K is perceived wet:
+				decide on Figure of dildo pole DQ diaper wet;
+			otherwise:
+				decide on Figure of dildo pole DQ diaper;
+		otherwise if K is knickers:
+			decide on Figure of dildo pole DQ panties;
+		otherwise:
+			decide on Figure of dildo pole DQ nude;
+	otherwise:
+		decide on Figure of dildo pole DQ ungrabbed.
 
 Figure of djinn is the file "NPCs/Forest/Djinn/djinn2.jpg".
 
@@ -65,6 +93,11 @@ Figure of horizontal pole predicament is the file "Special/Cutscene/cutscene-pre
 Figure of hotel toilet room 2 is the file "Map/Hotel/HotelBath3.png".
 
 Figure of IronMaidenBackground is the file "Map/maiden2.png".
+
+Figure of lake predicament 2 is the file "Special/Cutscene/cutscene-lake-predicament4.jpg".
+Figure of lake predicament 3 is the file "Special/Cutscene/cutscene-lake-predicament5.jpg".
+
+Figure of lecture 2 is the file "Special/Cutscene/cutscene-lecture4.jpg".
 
 Figure of Maths Predicament Xray 1 is the file "Special/Cutscene/cutscene-maths-dq-xray1.jpg".
 Figure of Maths Predicament 1 is the file "Special/Cutscene/cutscene-maths-dq1.jpg".
@@ -176,6 +209,19 @@ Figure of swirlie knickers wet is the file "Special/Cutscene/cutscene-swirlie4.j
 
 Figure of Teacher Hannah is the file "NPCs/School/Teacher/teacher5a.png".
 
+Figure of three legged race nobody messy is the file "Special/Cutscene/cutscene-predicament-three-legged-race5.jpg".
+Figure of three legged race player messy is the file "Special/Cutscene/cutscene-predicament-three-legged-race6.jpg".
+Figure of three legged race rival messy is the file "Special/Cutscene/cutscene-predicament-three-legged-race7.jpg".
+Figure of three legged race both messy is the file "Special/Cutscene/cutscene-predicament-three-legged-race8.jpg".
+
+To decide which figure-name is Figure of three legged race:
+	if partner-arousal of team-three-leg-predicament >= 25:
+		if plain-massive-diaper is worn, decide on Figure of three legged race both messy;
+		otherwise decide on Figure of three legged race rival messy;
+	otherwise:
+		if plain-massive-diaper is worn, decide on Figure of three legged race player messy;
+		otherwise decide on Figure of three legged race nobody messy.
+
 Figure of throne is the file "Env/Dungeon/throne1b.jpg".
 Figure of transformed throne is the file "Env/Dungeon/throne2b.jpg".
 
@@ -201,12 +247,47 @@ To decide which figure-name is clothing-image of (C - trashcan):
 		otherwise decide on Figure of trashcan 1 wet diaper;
 	decide on Figure of trashcan empty.
 
+Figure of tug of war clean clean is the file "Special/Cutscene/cutscene-predicament-tug-of-war1.jpg".
+Figure of tug of war clean wet is the file "Special/Cutscene/cutscene-predicament-tug-of-war2.jpg".
+Figure of tug of war wet clean is the file "Special/Cutscene/cutscene-predicament-tug-of-war3.jpg".
+Figure of tug of war wet wet is the file "Special/Cutscene/cutscene-predicament-tug-of-war4.jpg".
+Figure of tug of war messy clean is the file "Special/Cutscene/cutscene-predicament-tug-of-war5.jpg".
+Figure of tug of war messy wet is the file "Special/Cutscene/cutscene-predicament-tug-of-war6.jpg".
+Figure of tug of war messy messy is the file "Special/Cutscene/cutscene-predicament-tug-of-war7.jpg".
+Figure of tug of war clean messy is the file "Special/Cutscene/cutscene-predicament-tug-of-war8.jpg".
+Figure of tug of war wet messy is the file "Special/Cutscene/cutscene-predicament-tug-of-war9.jpg".
+
+To decide which figure-name is Figure of tug of war predicament:
+	if the player-soil of tug-of-war-predicament is 0:
+		if the rival-soil of tug-of-war-predicament is 0:
+			decide on Figure of tug of war clean clean;
+		otherwise if the rival-soil of tug-of-war-predicament is 1:
+			decide on Figure of tug of war clean wet;
+		otherwise:
+			decide on Figure of tug of war clean messy;
+	otherwise if the player-soil of tug-of-war-predicament is 1:
+		if the rival-soil of tug-of-war-predicament is 0:
+			decide on Figure of tug of war wet clean;
+		otherwise if the rival-soil of tug-of-war-predicament is 1:
+			decide on Figure of tug of war wet wet;
+		otherwise:
+			decide on Figure of tug of war wet messy;
+	otherwise:
+		if the rival-soil of tug-of-war-predicament is 0:
+			decide on Figure of tug of war messy clean;
+		otherwise if the rival-soil of tug-of-war-predicament is 1:
+			decide on Figure of tug of war messy wet;
+		otherwise:
+			decide on Figure of tug of war messy messy.
+
+
 Figure of urinal is the file "Env/MultiFloor/urinal2.png".
 Figure of hotel urinal is the file "Env/MultiFloor/urinal3a.jpg".
 Figure of hotel urinal portal is the file "Env/MultiFloor/urinal3b.jpg".
 Figure of hotel urinal portal piss is the file "Env/MultiFloor/urinal3c.jpg".
 Figure of hotel urinal portal cum is the file "Env/MultiFloor/urinal3d.jpg".
 To decide which figure-name is the examine-image of (T - urinal):
+	if the player is in Dungeon41, decide on figure of babified shopkeeper urinal;
 	if the player is in School27, decide on figure of staff room urinal;
 	if the player is in Hotel31:
 		if portal-diaper is worn:
@@ -220,6 +301,9 @@ Figure of Vibe Pose Predicament 2 is the file "Special/Cutscene/cutscene-vibe-po
 
 Figure of Vines Cutscene 3a is the file "Special/Cutscene/cutscene-vines3a.jpg".
 Figure of Vines Cutscene 3b is the file "Special/Cutscene/cutscene-vines3b.jpg".
+
+Figure of walled creature is the file "NPCs/Mansion/WallCreature/slimy-portal-creature6a.png".
+Figure of walled creature slime diaper is the file "NPCs/Mansion/WallCreature/slimy-portal-creature22.png".
 
 Figure of WoodsStatueButtonHead is the file "Special/Buttons/statue3d.jpg".
 Figure of WoodsStatueButtonHand is the file "Special/Buttons/statue3e.jpg".
@@ -329,6 +413,15 @@ Figure of Face131 is the file "CharWins/FocusWin/Face/face131.jpg".
 Figure of Face135 is the file "CharWins/FocusWin/Face/face135.jpg".
 
 To decide which figure-name is the examine-image of (T - face):
+	if the total volume of face > 0:
+		if (the semen volume of face > 0 and the semen taste addiction of the player < 5) or (the urine volume of face > 0 and the urine taste addiction of the player < 5) or (the milk volume of face > 0 and the milk taste addiction of the player < 5):
+			decide on figure of Oral Creampie Cutscene 1;
+		otherwise if (the semen volume of face > 0 and the semen taste addiction of the player < 11) or (the urine volume of face > 0 and the urine taste addiction of the player < 11) or (the milk volume of face > 0 and the milk taste addiction of the player < 11):
+			decide on figure of Oral Creampie Cutscene 2;
+		otherwise if (the semen volume of face > 0 and the semen taste addiction of the player < 15) or (the urine volume of face > 0 and the urine taste addiction of the player < 15) or (the milk volume of face > 0 and the milk taste addiction of the player < 15):
+			decide on figure of Oral Creampie Cutscene 3;
+		otherwise:
+			decide on figure of Oral Creampie Cutscene 4;
 	if the make-up of face <= 0:
 		if alcohol-level <= 0:
 			decide on Figure of Face101;

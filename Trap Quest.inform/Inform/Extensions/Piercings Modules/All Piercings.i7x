@@ -462,21 +462,22 @@ This is the bra nipple chain clash rule:
 			rule fails.
 The bra nipple chain clash rule is listed in the bra wearability rules.
 
-A cow piercing is a kind of nipple piercing. The printed name of cow piercing is "[clothing-title-before]nipple rings[clothing-title-after]". The text-shortcut of cow piercing is "nr". There is 1 cow piercing. Understand "nipple", "rings" as cow piercing. A cow piercing is usually titfuck-addiction-influencing. A cow piercing is milk production. Figure of cow piercing is the file "Items/Accessories/Piercings/nipplepiercing1.png".
+nipple-rings is a nipple piercing. The printed name of nipple-rings is "[clothing-title-before]nipple rings[clothing-title-after]". The text-shortcut of nipple-rings is "nr". Understand "nipple", "rings" as nipple-rings. nipple-rings is titfuck-addiction-influencing. nipple-rings is milk production.
 
-To decide which figure-name is the clothing-image of (C - a cow piercing):
-	decide on figure of cow piercing.
+Figure of nipple rings is the file "Items/Accessories/Piercings/nipplepiercing1.png".
 
-To say ClothingDesc of (C - a cow piercing):
-	say "A high gauge ring pierces each of your nipples.".
-To say ShortDesc of (C - a cow piercing):
+To decide which figure-name is the clothing-image of (C - nipple-rings):
+	decide on figure of nipple rings.
+
+To say ClothingDesc of (C - nipple-rings):
+	say "A high gauge ring pierces each of your nipples. They make you feel a bit like a cow...".
+To say ShortDesc of (C - nipple-rings):
 	say "nipple rings".
-To say MediumDesc of (C - a cow piercing):
+To say MediumDesc of (C - nipple-rings):
 	say "pair of high gauge nipple rings".
 
-Definition: a cow piercing is eligible: decide no.
-
-Definition: a cow piercing is cow themed: decide yes.
+Definition: nipple-rings is eligible: decide no.
+Definition: nipple-rings is cow themed: decide yes.
 
 [!<TheCowRingsSlutRule>+
 
@@ -484,25 +485,25 @@ Worn cow piercings increases the chance of titfucks.
 
 +!]
 This is the cow rings slut rule:
-	if there is a worn cow piercing, increase the desirability of breasts by 10.
+	if nipple-rings is worn, increase the desirability of breasts by 10.
 The cow rings slut rule is listed in the tit slut eligibility rules.
 
 Section - Wearability
 
-cow piercing wearability rules is a rulebook. The wearability rules of cow piercing is usually cow piercing wearability rules.
+nipple-rings wearability rules is a rulebook. The wearability rules of nipple-rings is usually nipple-rings wearability rules.
 
 This is the cow rings breast covering clash rule:
 	if there is worn breast covering clothing, rule fails.
-The cow rings breast covering clash rule is listed in the cow piercing wearability rules.
+The cow rings breast covering clash rule is listed in the nipple-rings wearability rules.
 
 This is the cow rings already worn rule:
 	if there is a worn nipple piercing, rule fails.
-The cow rings already worn rule is listed in the cow piercing wearability rules.
+The cow rings already worn rule is listed in the nipple-rings wearability rules.
 
 This is the overdress cow rings clash rule:
 	if wearing-target is normally-nipple-covering or wearing-target is ridiculously low cut or higher:
-		repeat with N running through worn cursed cow piercings:
-			if summoning is 0 and autowear is false, say "Your [ShortDesc of N] is somehow preventing you from wearing the [ShortDesc of wearing-target]! Maybe if you uncursed it?";
+		if nipple-rings is worn and nipple-rings is cursed:
+			if summoning is 0 and autowear is false, say "Your [ShortDesc of nipple-rings] is somehow preventing you from wearing the [ShortDesc of wearing-target]! Maybe if you uncursed it?";
 			rule fails;
 		if dick-nipple-piercings is worn:
 			if summoning is 0 and autowear is false, say "Your [ShortDesc of dick-nipple-piercings] are somehow preventing you from wearing the [ShortDesc of wearing-target]! Maybe if you uncursed them?";
@@ -511,14 +512,13 @@ The overdress cow rings clash rule is listed in the overdress wearability rules.
 
 [This is the bra cow rings clash rule:
 	if wearing-target is normally-nipple-covering:
-		repeat with N running through worn cow piercings:
-			unless N is blessed:
-				if summoning is 0 and autowear is false, say "Your [ShortDesc of N] is magically preventing you from wearing any kind of bra! Maybe if you blessed it?";
-				rule fails.
+		if nipple-rings is worn and nipple-rings is not blessed:
+			if summoning is 0 and autowear is false, say "Your [ShortDesc of nipple-rings] is magically preventing you from wearing any kind of bra! Maybe if you blessed it?";
+			rule fails.
 The bra cow rings clash rule is listed in the bra wearability rules.]
 
 
-dick-nipple-piercings is nipple piercing. The printed name of dick-nipple-piercings is "[clothing-title-before]dick nipple piercings[clothing-title-after]". The text-shortcut of dick-nipple-piercings is "dnp". Understand "dick nipple", "nipple", "piercings" as dick-nipple-piercings. dick-nipple-piercings is titfuck-addiction-influencing. Figure of dick nipple piercing is the file "Items/Accessories/Piercings/nipplepiercing2.png".
+dick-nipple-piercings is a nipple piercing. The printed name of dick-nipple-piercings is "[clothing-title-before]dick nipple piercings[clothing-title-after]". The text-shortcut of dick-nipple-piercings is "dnp". Understand "dick nipple", "nipple", "piercings" as dick-nipple-piercings. dick-nipple-piercings is titfuck-addiction-influencing. Figure of dick nipple piercing is the file "Items/Accessories/Piercings/nipplepiercing2.png".
 
 To decide which figure-name is the clothing-image of (C - dick-nipple-piercings):
 	decide on figure of dick nipple piercing.
@@ -537,7 +537,7 @@ Definition: dick-nipple-piercings is penis themed: decide yes.
 To decide which number is the initial outrage of (C - dick-nipple-piercings):
 	decide on 18.
 
-The wearability rules of dick-nipple-piercings is the cow piercing wearability rules.
+The wearability rules of dick-nipple-piercings is the nipple-rings wearability rules.
 
 
 A pair of earrings is a kind of piercing. The printed name of pair of earrings is "[TQlink of item described][item style]pair of [if item described is cursed]ultra slutty[otherwise if item described is blessed]heart shaped[otherwise]penis shaped[end if] earrings[clothing-title-after]". The text-shortcut of pair of earrings is "ea". Understand "penis shaped" as pair of earrings when item described is bland. Understand "heart", "shaped" as pair of earrings when item described is blessed. Understand "ultra", "slutty" as pair of earrings when item described is cursed. There is 1 pair of earrings. A pair of earrings has a number called variation. A pair of earrings is womanly.
@@ -898,7 +898,7 @@ This is the nose piercing already worn rule:
 	if there is a worn nose piercing, rule fails.
 The nose piercing already worn rule is listed in the nose piercing wearability rules.
 
-A tongue piercing is a kind of piercing. The printed name of tongue piercing is "[TQlink of item described][item style]tongue piercing[clothing-title-after]". The printed plural name of tongue piercing is "[TQlink of item described][item style]tongue piercings[clothing-title-after]". The text-shortcut of tongue piercing is "tpi". There is 1 tongue piercing. A tongue piercing is usually oral-sex-addiction-influencing. A tongue piercing has a number called thirst-charge.
+A tongue piercing is a kind of piercing. The printed name of tongue piercing is "[TQlink of item described][item style]tongue piercing[clothing-title-after]". The text-shortcut of tongue piercing is "tpi". A tongue piercing is usually oral-sex-addiction-influencing. A tongue piercing has a number called thirst-charge.
 
 To decide which number is the initial outrage of (C - a tongue piercing):
 	decide on 7.
@@ -910,14 +910,6 @@ To decide which object is the concealer of (C - a tongue piercing):
 
 Check taking off tongue piercing:
 	say "That's permanently welded into your tongue!" instead.
-
-Figure of tongue piercing is the file "Items/Accessories/Piercings/tonguepiercing1.png".
-
-To decide which figure-name is the clothing-image of (C - a tongue piercing):
-	decide on figure of tongue piercing.
-
-To say ClothingDesc of (C - a tongue piercing):
-	say "A large stud fixed on the underside of your tongue. You're not used to its presence so it's difficult to take your mind off it[if C is cursed]. Its curse is preventing people from understanding what you're trying to say[end if].".
 
 To say ShortDesc of (C - a tongue piercing):
 	say "tongue piercing".
@@ -933,7 +925,6 @@ To compute periodic effect of (P - a tongue piercing):
 			if P is cursed, StomachDown 1.
 
 Definition: a tongue piercing is eligible: decide no.
-
 Definition: a tongue piercing is oral sex themed: decide yes.
 
 [!<TheTonguePiercingPreventsSpeechRule>+
@@ -952,5 +943,15 @@ tongue piercing wearability rules is a rulebook. The wearability rules of tongue
 This is the tongue piercing already worn rule:
 	if there is a worn tongue piercing, rule fails.
 The tongue piercing already worn rule is listed in the tongue piercing wearability rules.
+
+tongue-piercing is a tongue piercing.
+
+Figure of tongue piercing is the file "Items/Accessories/Piercings/tonguepiercing1.png".
+
+To decide which figure-name is the clothing-image of (C - tongue-piercing):
+	decide on figure of tongue piercing.
+
+To say ClothingDesc of (C - tongue-piercing):
+	say "A large stud fixed on the underside of your tongue. You're not used to its presence so it's difficult to take your mind off it[if C is cursed]. Its curse is preventing people from understanding what you're trying to say[end if].".
 
 All Piercings ends here.

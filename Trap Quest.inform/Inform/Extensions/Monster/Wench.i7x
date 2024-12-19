@@ -1,11 +1,18 @@
 Wench by Monster begins here.
 
-A wench is a kind of monster. A wench is intelligent. The wench has a number called guard-obedience. The leftover-type of a wench is 102. A wench has a number called creampieTimer.
+A wench is a kind of monster. A wench is intelligent. The wench has a number called guard-obedience. The leftover-type of a wench is 102.
+
+A wench has a number called creampieTimer. [As far as I can tell, this is essentially, there is extra cum inside her, and this is the countdown until it comes out]
+
+A wench has a number called the expulsionTimer. [Number of seconds until next expulsion]
+
+A wench has an object called feeding-hole. The feeding-hole of a wench is usually vagina.
 
 A horny-wench is a kind of wench.
 
 Definition: a wench is willing to do oral: decide yes.
 Definition: a wench is willing to do licking: decide no. [That's essentially what her oral routine is, after all!]
+Definition: a wench is willing to potion forcefeed: decide yes.
 
 Definition: a wench is raunchy: decide yes.
 
@@ -14,7 +21,8 @@ Definition: a wench is wenchy: decide yes.
 Definition: a wench is willing to fluff: decide yes.
 
 Definition: a wench is dungeon dwelling:
-	if diaper quest is 0 and a2m fetish >= 1, decide yes;
+	if diaper quest is 1, decide no;
+	if it is presenting as female or a2m fetish >= 1, decide yes;
 	decide no.
 
 Definition: a wench is willing to charm snakes:
@@ -33,6 +41,7 @@ Figure of lost wench is the file "NPCs/Dungeon/Wench/wench2.png".
 Figure of creampied wench is the file "NPCs/Dungeon/Wench/wench3.png".
 Figure of horny wench is the file "NPCs/Dungeon/Wench/wench4.png".
 Figure of male wench is the file "NPCs/Dungeon/Wench/wench5.png".
+Figure of fucked silly wench is the file "NPCs/Dungeon/Wench/wench6.jpg".
 
 Figure of Wench Interact 1 is the file "NPCs/Dungeon/Wench/cutscene-wench-interact1.png".
 Figure of Wench Interact 2 is the file "NPCs/Dungeon/Wench/cutscene-wench-interact2.png".
@@ -60,15 +69,22 @@ Figure of Wench Cutscene 8 is the file "NPCs/Dungeon/Wench/cutscene-wench-drink1
 Figure of Wench Cutscene 9 is the file "NPCs/Dungeon/Wench/cutscene-wench-cup1.jpg".
 
 To decide which figure-name is the monster-image of (M - a creampied wench):
+	if lady fetish is 2, decide on figure of male wench;
 	decide on figure of creampied wench.
 To decide which figure-name is the monster-image of (M - a lost wench):
+	if lady fetish is 2, decide on figure of male wench;
 	decide on figure of lost wench.
 To decide which figure-name is the monster-image of (M - a wench):
+	if lady fetish is 2, decide on figure of male wench;
 	decide on figure of kidnapped wench.
 To decide which figure-name is the monster-image of (M - a horny-wench):
+	if lady fetish is 2, decide on figure of male wench;
 	decide on figure of horny wench.
 To decide which figure-name is the oral-sex-monster-image of (M - a wench):
 	decide on figure of wench cutscene 7.
+To decide which figure-name is the pacified-image of (M - a wench):
+	if M is fucked-silly and lady fetish < 2, decide on figure of fucked silly wench;
+	decide on figure of Missing NPC.
 
 creampied wench is a wench. The text-shortcut of creampied wench is "cwe".
 To say MediumDesc of (M - creampied wench):
@@ -89,35 +105,30 @@ To say MonsterDesc of (M - a wench):
 	let C be the creampieTimer of M;
 	if M is horny-wench:
 		if bukkake fetish is 1:
-			say "This [man of M] has a glazed look in [his of M] eye, and from [his of M] [if lady fetish is 2]tiny caged penis and jizz-coated figure[otherwise]voluptuous, jizz-coated figure[end if], [he of M][']s definitely the type you'd expect to be passed around down here. [big he of M] is wearing a white blouse, which is unbuttoned and completely soaked in [if C > 0]the same pearly white stuff running out of [his of M] [HoleDesc of M]. With one hand constantly between [his of M] legs, vigorously working [his of M] [semen] loaded[otherwise]pearlier, whiter stuff. One of [his of M] hands is constantly between [his of M] legs, vigorously working [his of M][end if] [HoleDesc of M] as [he of M] wanders around with a bow-legged stride."; [not sure desperate wenches can steal, so left panty bits out]
+			say "This [man of M] has a glazed look in [his of M] eye, and from [his of M] [if lady fetish is 2]tiny caged penis and jizz-coated figure[otherwise]voluptuous, jizz-coated figure[end if], [he of M][']s definitely the type you'd expect to be passed around down here. [big he of M] is wearing a white blouse, which is unbuttoned and completely soaked in the [if C > 0]extra-large helping of the [end if] same pearly white stuff running out of [his of M] [HolesDesc of M]. [big he of M] has one hand constantly between [his of M] legs, vigorously working [his of M] [semen] loaded [HolesDesc of M] as [he of M] wanders around with a bow-legged stride."; [not sure desperate wenches can steal, so left panty bits out]
 		otherwise:
-			if C > 0, say "This [man of M] has a glazed look in [his of M] eye, a [if lady fetish is 2]tiny caged penis[otherwise]voluptuous figure[end if], and both hands buried in [his of M] crotch. [big his of M] beach blonde hair and white blouse, which appears to have been rather forcefully unbuttoned, are both soaked and plastered to [his of M] body. [if K is clothing]The [ShortDesc of K] [he of M] took from you (displaced for convenience) have a large dark spot where [semen] has drooled out of [his of M] [HoleDesc of M].[otherwise]The lower half of [his of M] body has nothing covering it at all, leaving [his of M] worn out, [semen]-drooling [HoleDesc of M] on full display.[end if]";
-			otherwise say "This [man of M] has a glazed look in [his of M] eye, a [if lady fetish is 2]tiny caged penis[otherwise]voluptuous figure[end if], and both hands buried in [his of M] crotch. [big his of M] beach blonde hair and white blouse, which appears to have been rather forcefully unbuttoned, are both soaked and plastered to [his of M] body. [if K is clothing]The [ShortDesc of K] [he of M] took from you (displaced for convenience) offer a small amount of modesty for [his of M] lower body.[otherwise]The lower half of [his of M] body has nothing covering it at all, leaving [his of M] worn out, [HoleDesc of M] on full display.[end if]";
+			say "This [man of M] has a glazed look in [his of M] eye, a [if lady fetish is 2]tiny caged penis[otherwise]voluptuous figure[end if], and both hands buried in [his of M] crotch. [big his of M] beach blonde hair and white blouse, which appears to have been rather forcefully unbuttoned, are both soaked and plastered to [his of M] body. [if K is clothing and C > 0]The [ShortDesc of K] [he of M] took from you (displaced for convenience) is completely soaked full of [semen] that has oozed out of [his of M] [HolesDesc of M].[otherwise if K is clothing]The [ShortDesc of K] [he of M] took from you (displaced for convenience) has a large dark spot where [semen] has drooled out of [his of M] [HoleDesc of M].[otherwise]The lower half of [his of M] body has nothing covering it at all, leaving [his of M] worn out, [semen]-drooling [HolesDesc of M] on full display.[end if]";
 	otherwise if M is kidnapped wench:
 		if bukkake fetish is 1:
 			if lady fetish is 2:
-				if C > 0, say "This twink is completely naked and plastered with [semen], [if K is clothing]aside from [his of M] stolen [ShortDesc of K][otherwise]and if the bright pink cage locked around [his of M] cock is any indication, [he of M] doesn't normally get to be on top[end if]. [big his of M] skin is [one of]pale[or]a pale brown[sticky random], and his beach blonde hair is unkempt and messy. [big he of M] wears a look on [his of M] face that says 'Please be gentle!', although the [semen] freely dribbling out of [his of M] asshole and [if K is clothing]soaking through [his of M] stolen [ShortDesc of K][otherwise]down [his of M] legs[end if] makes it pretty clear [he of M] tends to get it pretty rough. The words 'SISSY CUMDUMP' are tattooed across [his of M] left ass cheek.";
-				otherwise say "This twink is completely naked and plastered with [semen], [if K is clothing]aside from [his of M] stolen [ShortDesc of K][otherwise]and if the bright pink cage locked around [his of M] cock is any indication, [he of M] doesn't normally get to be on top[end if]. [big his of M] skin is [one of]pale[or]a pale brown[sticky random], and his beach blonde hair is unkempt and messy. [big he of M] wears a look on [his of M] face that says 'Please be gentle!', although [unless K is clothing][his of M] reddened sphincter[otherwise]the hand-shaped welt on [his of M] cheek[end if] makes it pretty clear [he of M] tends to get it pretty rough. The words 'SISSY CUMDUMP' are tattooed across [his of M] left ass cheek[if K is clothing], and [he of M] is wearing stolen [ShortDesc of K][end if].";
+				say "This twink is completely naked and plastered with [semen], [if K is clothing]aside from [his of M] stolen [ShortDesc of K][otherwise]and if the bright pink cage locked around [his of M] cock is any indication, [he of M] doesn't normally get to be on top[end if]. [big his of M] skin is [one of]pale[or]a pale brown[sticky random], and his beach blonde hair is unkempt and messy. [big he of M] wears a look on [his of M] face that says 'Please be gentle!', although the [semen] [if C > 0]freely dribbling out of [his of M] asshole[otherwise]that has caked [his of M] thighs[end if] and [if K is clothing]soaking through [his of M] stolen [ShortDesc of K][otherwise]down [his of M] legs[end if] makes it pretty clear [he of M] tends to get it pretty rough. The words 'SISSY CUMDUMP' are tattooed across [his of M] left ass cheek.";
 			otherwise:
-				if C > 0, say "This [man of M] is completely naked and plastered with [semen]. If the purple bruises on [his of M] wrists and ankles are any indication, [he of M]'s probably spent most of [his of M] time here cooped up in chains. [big his of M] skin is [one of]pale[or]a pale brown[sticky random], and [his of M] beach blonde hair is unkempt and messy. [big he of M] wears a look on [his of M] face that says 'Please be gentle!', although the [semen] freely dribbling out of both [his of M] holes and [if K is clothing]soaking through [his of M] stolen [ShortDesc of K][otherwise]down [his of M] legs[end if] makes it pretty clear [he of M] tends to get it rough. A small tattoo across the small of [his of M] back reads 'PROPERTY'.";
-				otherwise say "This [man of M] is completely naked and plastered with [semen]. If the purple bruises on [his of M] wrists and ankles are any indication, [he of M]'s probably spent most of [his of M] time here cooped up in chains. [big his of M] skin is [one of]pale[or]a pale brown[sticky random], and [his of M] beach blonde hair is unkempt and messy. [big he of M] wears a look on [his of M] face that says 'Please be gentle!', although the hand-shaped welt on [his of M] cheek makes it pretty clear [he of M] tends to get it rough. A small tattoo across the small of [his of M] back reads 'PROPERTY'[if K is clothing], and [he of M] is wearing stolen [ShortDesc of K][end if].";
+				say "This [man of M] is completely naked and plastered with [semen]. If the purple bruises on [his of M] wrists and ankles are any indication, [he of M]'s probably spent most of [his of M] time here cooped up in chains. [big his of M] skin is [one of]pale[or]a pale brown[sticky random], and [his of M] beach blonde hair is unkempt and messy. [big he of M] wears a look on [his of M] face that says 'Please be gentle!', although the [semen] [if C > 0]freely dribbling out of [his of M] [HolesDesc of M][otherwise]that has caked [his of M] thighs[end if] and [if K is clothing]soaking through [his of M] stolen [ShortDesc of K][otherwise]down [his of M] legs[end if] makes it pretty clear [he of M] tends to get it rough. A small tattoo across the small of [his of M] back reads 'PROPERTY'.";
 		otherwise:
 			if lady fetish is 2, say "This twink is completely naked, [if K is clothing]aside from [his of M] stolen [ShortDesc of K][otherwise]and if the bright pink cage locked around [his of M] cock is any indication, [he of M] doesn't normally get to be on top[end if]. [big he of M] has pale skin, long, beach blonde hair and a look on [his of M] face somewhere between excitement and total exhaustion. The words 'SISSY CUMDUMP' are tattooed across [his of M] left ass cheek, and [if C > 0][semen] is dribbling freely out of [his of M] asshole[otherwise][his of M] hole seems like it's recently taken a pounding.";
 			otherwise say "This [man of M] is [if K is clothing]almost [end if]completely naked, and if the purple bruises on [his of M] wrists and ankles are any indication, [he of M]'s probably spent most of [his of M] time here cooped up in chains. [big he of M] has pale skin, beach blonde hair and a look on [his of M] face somewhere between excitement and total exhaustion. [if K is clothing]There is a small tattoo across the small of [his of M] back, which is partially obscured by the [ShortDesc of K] [he of M] 'received' from you[otherwise]A small tattoo across the small of [his of M] back reads 'PROPERTY', and [his of M] fuckholes look like they've been subjected to repeated poundings[end if].";
 	otherwise if M is lost wench:
-		if bukkake fetish is 1, say "This [man of M] is plastered with cum from head to toe, [if K is clothing]wearing stolen [ShortDesc of K] and a white blouse, both of which are as soaked as [he of M] is[otherwise]completely naked except for a white blouse, which is just as soaked as [he of M] is[end if]. [big his of M] lips are caked with a mixture of smudged purple lipstick and [semen], and [his of M] eyes are framed by runny, streaked eye shadow. [big he of M] has pale white skin, a beach blonde ponytail, [if C > 0][semen] leaking out of [his of M] [HoleDesc of M] [end if]and a look of genuine defeat and exhaustion on [his of M] face.";
+		if bukkake fetish is 1, say "This [man of M] is plastered with cum from head to toe, [if K is clothing]wearing stolen [ShortDesc of K] and a white blouse, both of which are as soaked as [he of M] is[otherwise]completely naked except for a white blouse, which is just as soaked as [he of M] is[end if]. [big his of M] lips are caked with a mixture of smudged purple lipstick and [semen], and [his of M] eyes are framed by runny, streaked eye shadow. [big he of M] has pale white skin, a beach blonde ponytail, [semen] [if C > 0]steadily flowing[otherwise]leaking[end if] out of [his of M] [HoleDesc of M] and a look of genuine defeat and exhaustion on [his of M] face.";
 		otherwise say "This [man of M] is wearing [if K is clothing]a [ShortDesc of K] and [end if]a white blouse, which is totally soaked through. [big his of M] eyes are framed by runny, streaked eye shadow, and [his of M] purple lipstick is unevenly smudged around the corners of [his of M] mouth. [big he of M] has pale white skin, a beach blonde ponytail, [if C > 0][semen] leaking out of [his of M] [HoleDesc of M] [end if]and a look of genuine defeat and exhaustion on [his of M] face.";
 	otherwise:
 		if bukkake fetish is 1:
 			if lady fetish is 2:
-				if C > 0, say "This [man of M] is wearing a white blouse with a bra underneath it. [big he of M] is [if K is clothing]completely soaked with [semen], and although [he of M] is wearing a [ShortDesc of K], it appears to have been pulled aside rather roughly to expose [his of M] recently creampied[otherwise]otherwise completely naked, leaving you sure there isn't an inch of [his of M] body that's not plastered with pearly white [semen], including the inside of [his of M] exposed[end if] asshole. In fact, if there's a clean part of [his of M] body, it's [his of M] face, which is caked with heavy makeup that's been smudged in only a few places. [big his of M] hair has been drawn back into a beach blonde ponytail, leaving you an impression of a sissy slut on the way back from a night on the town.";
-				otherwise say "This [man of M] is wearing a white blouse with a bra underneath it. [big he of M] is [if K is clothing]completely soaked with [semen], and although [he of M] is wearing a [ShortDesc of K], it appears to have been pulled aside rather roughly to expose [his of M] asshole[otherwise]otherwise completely naked, leaving you sure there isn't an inch of [his of M] body that's not plastered with pearly white [semen][end if]. In fact, if there's a clean part of [his of M] body, it's [his of M] face, which is caked with heavy makeup that's been smudged in only a few places. [big his of M] hair has been drawn back into a beach blonde ponytail, leaving you an impression of a sissy slut on the way back from a night on the town.";
+				say "This [man of M] is wearing a white blouse with a bra underneath it. [big he of M] is [if K is clothing]completely soaked with [semen], and although [he of M] is wearing a [ShortDesc of K], it appears to have been pulled aside rather roughly to expose [his of M] recently creampied[otherwise]otherwise completely naked, leaving you sure there isn't an inch of [his of M] body that's not plastered with pearly white [semen], including the inside of [his of M] exposed[end if] asshole. In fact, if there's a clean part of [his of M] body, it's [his of M] face, which is caked with heavy makeup that's been smudged in only a few places. [big his of M] hair has been drawn back into a beach blonde ponytail, leaving you an impression of a sissy slut on the way back from a night on the town.";
 			otherwise:
-				if C > 0, say "This [man of M] is wearing a white blouse, which looks like it was pulled open rather roughly to expose [his of M] breasts. [big he of M] is completely naked, [if K is clothing]aside from a [ShortDesc of K] that have been pulled aside, [end if]leaving you sure that there isn't an inch of [his of M] body that isn't plastered with pearly white [semen]. [big his of M] crotch is no exception, and [his of M] most recent creampie is freely leaking from [his of M] pussy. The only clean part of [his of M] body is [his of M] face, which is caked with heavy makeup that's been smudged in only a few places. [big his of M] hair has been drawn back into a beach blonde ponytail, and the look on [his of M] face is somewhere between arousal and total exhaustion.";
-				otherwise say "This [man of M] is wearing a white blouse, which looks like it was pulled open rather roughly to expose [his of M] breasts. [big he of M] is completely naked, [if K is clothing]aside from a [ShortDesc of K] that have been pulled aside, [end if]leaving you sure that there isn't an inch of [his of M] body that isn't plastered with pearly white [semen]. The only clean part of [him of M] is [his of M] face, which is caked with heavy makeup that's been smudged in only a few places. [big his of M] hair has been drawn back into a beach blonde ponytail, and the look on [his of M] face is somewhere between arousal and total exhaustion.";
+				say "This [man of M] is wearing a white blouse, which looks like it was pulled open rather roughly to expose [his of M] breasts. [big he of M] is completely naked, [if K is clothing]aside from a [ShortDesc of K] that have been pulled aside, [end if]leaving you sure that there isn't an inch of [his of M] body that isn't plastered with pearly white [semen]. [big his of M] crotch is no exception, and [his of M] most recent creampies are [if C > 0]freely leaking[otherwise]gently oozing[end if] from [his of M] [HolesDesc of M]. The only clean part of [his of M] body is [his of M] face, which is caked with heavy makeup that's been smudged in only a few places. [big his of M] hair has been drawn back into a beach blonde ponytail, and the look on [his of M] face is somewhere between arousal and total exhaustion.";
 		otherwise:
 			if lady fetish is 2, say "This [man of M] is wearing a white blouse with a bra underneath it. [big he of M] is [if K is clothing]also wearing a [ShortDesc of K], pulled aside,[otherwise]otherwise completely naked,[end if][if C > 0] with [semen] dribbling freely from [his of M][otherwise]leaving [him of M] with an[end if] exposed asshole. [big he of M] has the words 'SISSY SLUT' tattooed across [his of M] cheek, and [his of M] long, beach blonde ponytail and heavily decorated face leave the impression that this 'sissy slut' is back from a night on the town.";
-			otherwise say "This [man of M] is wearing a white blouse, which looks like it was pulled open rather roughly to expose [his of M] breasts. [big he of M] is [if K is clothing]also wearing a [ShortDesc of K], pulled aside,[otherwise]otherwise completely naked,[end if][if C > 0] with [semen] dribbling freely from [his of M][otherwise]leaving [him of M] with an[end if] exposed [vagina] and [asshole]. [big his of M] hair has been drawn back into a beach blonde ponytail, and the look on [his of M] heavily decorated face is somewhere between arousal and total exhaustion.";
+			otherwise say "This [man of M] is wearing a white blouse, which looks like it was pulled open rather roughly to expose [his of M] breasts. [big he of M] is [if K is clothing]also wearing a [ShortDesc of K], pulled aside,[otherwise]otherwise completely naked,[end if][if C > 0] with [semen] dribbling freely from [his of M][otherwise]leaving [him of M] with an[end if] exposed creamfilled [HolesDesc of M]. [big his of M] hair has been drawn back into a beach blonde ponytail, and the look on [his of M] heavily decorated face is somewhere between arousal and total exhaustion.";
 	if bbc-training of M > 0:
 		if bbc-training of M is 1:
 			say "This [man of M] also has a small discreet [']Queen of Spades['] tattoo on [his of M] ankle.";
@@ -151,7 +162,9 @@ To set up (M - a wench):
 		if X is bag lunch, now baglunchlisted is true;
 	if baglunchlisted is false, add a random bag lunch to the tradableItems of M;
 	now the raw difficulty of M is the starting difficulty of M;
-	if a2m fetish > 1, now the creampieTimer of M is 300;
+	now the creampieTimer of M is 100;
+	now the expulsionTimer of M is 300;
+	if a2m fetish > 1, now the feeding-hole of M is asshole;
 	now the health of M is the maxhealth of M;
 	set up detachment of M. [#LXorDD]
 
@@ -159,7 +172,8 @@ To set up (M - a horny-wench):
 	reset M;
 	now the monstersetup of M is 1;
 	now the raw difficulty of M is the starting difficulty of M + 1;
-	if a2m fetish > 1, now the creampieTimer of M is 550;
+	now the creampieTimer of M is 500;
+	now the expulsionTimer of M is 150;
 	now the health of M is the maxhealth of M;
 	set up detachment of M. [#LXorDD]
 
@@ -172,16 +186,34 @@ Definition: a wench is human: decide yes.
 To say LeftoverDesc (N - 102):
 	say "An unconscious wench on the ground has a [if pregnancy fetish is 1]pregnant looking[otherwise]fully stretched[end if] belly and [semen] slowly flowing out of [his of a random wench] asshole.[line break]";
 
-To compute unique periodic effect of (M - wench):
-	decrease the creampieTimer of M by 1;
-	if a2m fetish > 1 and the creampieTimer of M <= 0:
+To compute unique periodic effect of (M - a wench):
+	decrease the expulsionTimer of M by time-seconds;
+	if the expulsionTimer of M <= 0:
+		let N be 1;
+		if the creampieTimer of M > 0:
+			let CT be the creampieTimer of M;
+			if CT > 100, now CT is the creampieTimer of M / 2;
+			increase N by 1 + (CT / 100);
+			decrease the creampieTimer of M by CT;
 		if M is in the location of the player and M is not penetrating a body part:
-			if M is asleep, say "[BigNameDesc of M] mumbles as a glob of [semen] rolls out of [his of M] [HoleDesc of M] and onto the floor.";
-			otherwise say "[BigNameDesc of M] shivers as a glob of [semen] drips out of [his of M] [HoleDesc of M] onto the floor.";
-		SemenPuddleUp 1 in (the location of M);
-		now the creampieTimer of M is 30;
-		if the class of the player is maid, now the creampieTimer of M is 20;
-		if M is horny-wench, now the creampieTimer of M is the creampieTimer of M / 2.
+			if M is combative and bukkake fetish > 0 and grossness fetish > 0:
+				say "Suddenly, [NameDesc of M] turns around and doubles over, [his of M] face close to the ground, and [his of M] ass high in the air. You think that [he of M] must have run out of energy to fight, but then suddenly...[paragraph break][italic type]SPLOOOORCH[paragraph break][roman type]A huge geyser of [semen] erupts from [his of M] asshole, hitting you right in the face!";
+				GrossOut 6;
+				AnnouncedSquirt semen on face by 10;
+				if the player is blinded, say "[variable custom style]Oh my god, I can't see anything! I've been blinded by cum![roman type][line break]";
+				now the creampieTimer of M is 0;
+				say "[speech style of M]'Haaah... Hahahaha... I never would have expected that cum in my belly to end up being so useful, hahaha![roman type][line break]";
+			otherwise if N > 1:
+				let T be "[if N > 5]giant[otherwise if N > 3]huge[otherwise if N > 2]big[end if]";
+				if M is asleep, say "[BigNameDesc of M] moans in [his of M] sleep as a [T] glob of [semen] rolls out of [his of M] [if the feeding-hole of M is asshole]asshole[otherwise]pussy[end if] and onto the floor.";
+				otherwise say "[speech style of M]'Oh [one of]god[or]fuck[or]shit[at random]...'[roman type][line break][BigNameDesc of M] grunts as a [T] gush of [semen] spurts out of [his of M] [if the feeding-hole of M is asshole]asshole[otherwise]pussy[end if] and loudly splatters onto the floor, creating a [T] puddle.";
+			otherwise:
+				if M is asleep, say "[BigNameDesc of M] mumbles as a glob of [semen] rolls out of [his of M] [if the feeding-hole of M is asshole]asshole[otherwise]pussy[end if] and onto the floor.";
+				otherwise say "[BigNameDesc of M] shivers as a glob of [semen] drips out of [his of M] [if the feeding-hole of M is asshole]asshole[otherwise]pussy[end if] and onto the floor.";
+		SemenPuddleUp N in (the location of M);
+		now the expulsionTimer of M is 300;
+		if the class of the player is maid, now the expulsionTimer of M is 200;
+		if M is horny-wench, now the expulsionTimer of M is the expulsionTimer of M / 2.
 
 Part 1 - Misc Flavour
 
@@ -198,7 +230,7 @@ To say DiaperReaction of (M - a wench):
 			say "[BigNameDesc of M] giggles manically.[line break][speech style of M]'[if M is penetrating a body part]Seriously?! How entirely absolutely pathetic.'[otherwise if the player is upright]Are you sure a disgusting baby like you can beat me?'[otherwise]Oh this is unreal! Did you just do what I think you did?!'[end if][roman type][line break]";
 		otherwise:
 			bore M;
-			say "[speech style of M]'Eew, gross!'[roman type][line break][BigNameDesc of M] does not look impressed.[line break][speech style of M]'[if M is interested]I'm sorry but you're on your own.'[otherwise if the number of interested friendly monsters is 0]No wonder nobody likes you.'[otherwise]Can't you find somewhere private to be a disgusting baby?'[end if][roman type][line break]";
+			say "[speech style of M]'Eww, gross!'[roman type][line break][BigNameDesc of M] does not look impressed.[line break][speech style of M]'[if M is interested]I'm sorry but you're on your own.'[otherwise if the number of interested friendly monsters is 0]No wonder nobody likes you.'[otherwise]Can't you find somewhere private to be a disgusting baby?'[end if][roman type][line break]";
 			FavourDown M by 1;
 		if the player is modest, say "[variable custom style][if the player is able to speak]'This doesn't usually happen, I swear!'[otherwise]I can't even tell [him of M] that this isn't what I usually wear![end if][roman type][line break]";
 		otherwise say "You turn bright red.";
@@ -230,7 +262,7 @@ To say LewdTrapReactFlav of (M - a wench):
 	FavourDown M with consequences.
 To say RuneTrapReactFlav of (M - a wench):
 	if M is unfriendly:
-		say "[BigNameDesc of M] giggles.[line break][speech style of M]'I stepped on that one earlier. It's much more funny when someone else does it!'p[roman type][line break]";
+		say "[BigNameDesc of M] giggles.[line break][speech style of M]'I stepped on that one earlier. It's much more funny when someone else does it!'[roman type][line break]";
 	otherwise:
 		say "[BigNameDesc of M] reaches a hand out.[line break][speech style of M]'WAIT! Don't step on tha... too late.'[roman type][line break]".
 
@@ -412,7 +444,7 @@ To compute kneeling reaction of (M - a wench):
 			if M is horny-wench:
 				say "[speech style of M][one of]Finally, a bigger slut than me...[or]Yes! Yes! I'm so horny![or]Fuck! Fuck yes, stay down there![or]Don't get up, I really need your mouth. I need it so fucking bad...[or]You're going to help me? Thanks so much...[at random][roman type]";
 			otherwise:
-				say "[speech style of M]'[if the class of the player is maid][one of]Hey maid, I'm dirty, come clean me up.'[or]Open your mouth baby, I need help cleaning up.'[in random order][otherwise if the player is possessing a penis and there is a worn chastity cage][one of]You're not going to fuck anybody when you're locked up like that. Now open up.'[or]Oooh, is poor widdle baby locked up in a cage? Don't worry, I've got milk for you right here.'[or]Hmm, I bet you'd like to fuck this [pussy]. Too bad you're all caged up! Now open wide.'[in random order][otherwise if the player is possessing a penis and the size of penis <= 3][one of]Hey baby dick, how'd you like to eat my [pussy]? That's probably the only action you'll ever get from a [man of M].'[or]With a [player-penis] that tiny, I bet you can't even cum. Luckily, you can still help ME cum if you lend me your mouth for a minute.'[or]Wow, what a tiny [player-penis]! You'll never satisfy anyone with that! I really hope your tongue isn't that small.'[or]If you open your mouth, I'll give you a taste of a real man's cum.'[in random order][otherwise if the size of penis > 5][one of]Wow, a [player-penis] that big and you're still on your knees? I'm going to enjoy having you eat my [pussy].'[or]I bet you thought you were going to fuck me. Wrong! Now open up, bitch.'[in random order][otherwise][one of]Open wide, bitch.'[or]Open up, bitch.'[or]You thirsty, bitch?'[or]I hope you're thirsty.'[or]I hope you're good at eating [pussy].'[in random order][end if][roman type][line break]";
+				say "[speech style of M]'[if the class of the player is maid][one of]Hey maid, I'm dirty, come clean me up.'[or]Open your mouth baby, I need help cleaning up.'[in random order][otherwise if the player is possessing a penis and there is a worn chastity cage][one of]You're not going to fuck anybody when you're locked up like that. Now open up.'[or]Oooh, is poor widdle baby locked up in a cage? Don't worry, I've got milk for you right here.'[or]Hmm, I bet you'd like to fuck this [cumhole of M]. Too bad you're all caged up! Now open wide.'[in random order][otherwise if the player is possessing a penis and the size of penis <= 3][one of]Hey baby dick, how'd you like to eat my [cumhole of M]? That's probably the only action you'll ever get from a [man of M].'[or]With a [player-penis] that tiny, I bet you can't even cum. Luckily, you can still help ME cum if you lend me your mouth for a minute.'[or]Wow, what a tiny [player-penis]! You'll never satisfy anyone with that! I really hope your tongue isn't that small.'[or]If you open your mouth, I'll give you a taste of a real man's cum.'[in random order][otherwise if the size of penis > 5][one of]Wow, a [player-penis] that big and you're still on your knees? I'm going to enjoy having you eat my [cumhole of M].'[or]I bet you thought you were going to fuck me. Wrong! Now open up, bitch.'[in random order][otherwise][one of]Open wide, bitch.'[or]Open up, bitch.'[or]You thirsty, bitch?'[or]I hope you're thirsty.'[or]I hope you're good at eating [cumhole of M].'[in random order][end if][roman type][line break]";
 		strongHumiliate.
 
 To say WaitingFlav of (M - a wench):
@@ -553,7 +585,7 @@ This is the wench steals clothing rule:
 The wench steals clothing rule is listed in the wench priority attack rules.
 
 This is the wench asscum cup punishment rule:
-	if a2m fetish >= 2 and champagne-glass is held and (champagne-glass is empty or the fill-colour of champagne-glass is not creamy) and doom counter > 0 and there is a nonstalking wisp:
+	if a2m fetish >= 2 and champagne-glass is held and (champagne-glass is empty or the fill-colour of champagne-glass is not creamy) and doom counter > 0 and there is a nonstalking wisp and the creampieTimer of current-monster > 0:
 		let M be current-monster;
 		say "[speech style of M]'Ahhh~ Something is telling me... I should do this...'[roman type][line break][BigNameDesc of M] snatches [NameDesc of champagne-glass].";
 		if champagne-glass is non-empty:
@@ -573,6 +605,8 @@ This is the wench asscum cup punishment rule:
 		if (a random number between 0 and 1) + (a random number between 0 and 1) < game difficulty, now the wisp-punishment of W is a random appropriate wisp punishment;
 		update background colour of W;
 		say "[bold type]A [ColourDesc of W] curse wisp appears, and begins hovering behind you! [roman type]You can sense that you must [bold type][wisp-quest of W][roman type] before you next [bold type][wisp-trigger of W][roman type], or else you will [bold type][wisp-punishment of W][roman type].[line break][speech style of M]'That was weird! I don't know what came over me. Now where was I...'[roman type][line break]";
+		decrease the creampieTimer of current-monster by 100;
+		if the creampieTimer of current-monster < 0, now the creampieTimer of current-monster is 0;
 		rule succeeds.
 The unique punishment rule of a wench is the wench asscum cup punishment rule.
 
@@ -741,8 +775,10 @@ To compute hug attack of (M - a wench):
 		say "You duck away from [him of M]!".
 
 To compute facial sex of (M - a wench):
-	if lady fetish < 2 and a2m fetish > 1:
-		say "[one of]A large glob of [semen] leaks out of [his of M] ass and onto your face.[or]Warm [semen] seeps out of [his of M] asshole and onto your face.[or]Thick [semen] slowly trickles out of [his of M] asshole, rolling down the side of your nose and over your cheeks.[or]A fat wad of [semen] leaks out of [his of M] butt and plops wetly onto your face.[or][semen] oozes out of [his of M] gaping butthole, pooling on your face.[or]Thick [semen] dribbles out of [his of M] butt, rolling down your cheeks.[in random order][if the grossness addiction of the player < 7][line break][first custom style]How disgusting![roman type][line break][end if][line break]";
+	if grossness fetish > 0 and the creampieTimer of M > 0:
+		say "[one of]A large glob of [semen] leaks out of [his of M] [if the feeding-hole of M is vagina]asshole[otherwise]pussy[end if] and onto your face.[or]Warm [semen] seeps out of [his of M] [if the feeding-hole of M is vagina]asshole[otherwise]pussy[end if] and onto your face.[or]Thick [semen] slowly trickles out of [his of M] [if the feeding-hole of M is vagina]asshole[otherwise]pussy[end if], rolling down the side of your nose and over your cheeks.[or]A fat wad of [semen] leaks out of [his of M] [if the feeding-hole of M is vagina]butt[otherwise]cunt[end if] and plops wetly onto your face.[or][semen] oozes out of [his of M] gaping [if the feeding-hole of M is vagina]butthole[otherwise]cunt[end if], pooling on your face.[or]Thick [semen] dribbles out of [his of M] [if the feeding-hole of M is vagina]asshole[otherwise]pussy[end if], rolling down your cheeks.[in random order][line break]";
+		if the feeding-hole of M is vagina, SlowGrossOut 6;
+		otherwise SlowGrossOut 3;
 		if bukkake fetish is 1, CumFaceUp 1;
 	compute facesit sex of M;
 	let D be a random worn messed knickers;
@@ -794,7 +830,19 @@ To say FacesitClimaxFlav of (M - a wench):
 		say "You hear a sigh and then a moan and then a screaming orgasm come from [NameDesc of M]. [big his of M] penis throbs as it shoots a rope of [semen] across your face, followed by several more as [he of M] continues shrieking in pleasure. After a few seconds, you feel [his of M] hold on your body weaken, and [he of M] rolls off your body, passed out from the pleasure.";
 		if bukkake fetish is 1, CumFaceUp 3;
 	otherwise:
-		say "You hear a sigh and then a moan and then a screaming orgasm come from [NameDesc of M]. [big his of M] own sex juices flood [if the reaction of the player > 0]into your mouth[otherwise]onto your face[end if].[if the semen taste addiction of the player > 12][line break][second custom style]Mmm, tasty! [roman type][line break][end if][big he of M] continues screaming in pleasure for a few seconds, then you feel [his of M] hold on your body weaken, and [he of M] rolls off your body, passed out from the pleasure.";
+		say "You hear a sigh and then a moan and then a screaming orgasm come from [NameDesc of M]. [big his of M] own sex juices flood [if the reaction of the player > 0 and feeding-hole of M is vagina]into your mouth[otherwise]onto your face[end if].[if the semen taste addiction of the player > 12 and the reaction of the player > 0][line break][second custom style]Mmm, tasty![roman type][line break][end if]";
+		if the creampieTimer of M > 100 and the feeding-hole of M is vagina and grossness fetish > 0:
+			say "Suddenly, [his of M] asshole explodes, coating your face with [his of M] an insanely huge anal creampie!";
+			GrossOut 6;
+			if bukkake fetish is 1, AnnouncedSquirt semen on face by the creampieTimer of M / 33;
+			otherwise SemenPuddleUp the creampieTimer of M / 33;
+			now the creampieTimer of M is 0;
+		otherwise if the creampieTimer of M > 100 and the feeding-hole of M is asshole:
+			say "Suddenly, [his of M] asshole explodes, and the entirety of the massive anal creampie [he of M] was holding inside [his of M] belly comes gushing out into your mouth!";
+			TasteGrossOut 7;
+			FaceFill semen by the creampieTimer of M / 50;
+			now the creampieTimer of M is 0;
+		say "[big he of M] continues screaming in pleasure for a few seconds, then you feel [his of M] hold on your body weaken, and [he of M] rolls off your body, passed out from the pleasure.";
 		cutshow figure of wench cutscene 1 for M;
 
 This is the wench facesitting prevents breathing rule:
@@ -865,6 +913,8 @@ To decide if (M - a wench) is flipping the player:
 
 To compute (M - a wench) entering mouth:
 	dislodge M; [in case she is wrangling a body part herself]
+	if lady fetish is 2 or a random number between 1 and 2 < a2m fetish, now the feeding-hole of M is asshole;
+	otherwise now the feeding-hole of M is vagina;
 	if milking is 1 or there is a monster wrangling a body part:
 		do nothing;
 	otherwise:
@@ -880,8 +930,9 @@ To compute (M - a wench) entering mouth:
 			set up sex length of M in face;
 			say CommencingFacesitFlav of M;
 			if lady fetish < 2 and a2m fetish > 1:
-				say "A large glob of [semen] leaks out of [his of M] ass and onto your face.[if the grossness addiction of the player < 8][line break][first custom style]How disgusting![roman type][line break][end if][line break]";
+				say "A large glob of [semen] leaks out of [his of M] [if the feeding-hole of M is asshole]cunt[otherwise]asshole[end if] and onto your face.";
 				if bukkake fetish is 1, CumFaceUp 1;
+				GrossOut 4;
 			say "[one of][big his of M] hold on your neck and head is too strong, you'll have to choose between either [bold type]resist[roman type]ing and risk it taking longer until you can breathe or [bold type]submit[roman type]ing by licking [him of M] out, [if the creampieTimer of M > 0]swallowing the [semen] dripping from [his of M] [HoleDesc of M] and [end if]hoping [he of M] [if the oral sex addiction of the player < 3]finishes[otherwise if the oral sex addiction of the player < 7]climaxes[otherwise]cums over your face[end if] quickly[or]Once again, you won't be able to breathe until [he of M]'s finished with you[stopping]!";
 			now M is penetrating face;
 		otherwise:
@@ -902,15 +953,19 @@ To say CommencingFacesitFlav of (M - a wench):
 	get facial penetration image for M;
 	say MouthPenetrationFlav of M.
 
+To say cumhole of (M - a wench):
+	if the feeding-hole of M is asshole, say "asshole";
+	otherwise say "[pussy]".
+
 To say MouthPenetrationFlav of (M - a wench):
 	if lady fetish is 2:
-		say "[big he of M] blocks your nose with [his of M] genitals, covering your mouth with [his of M] [if the creampieTimer of M > 0]cum-filled[end if] [asshole]. You can't breathe!";
+		say "[big he of M] blocks your nose with [his of M] genitals, covering your mouth with [his of M] [if the creampieTimer of M > 0]cum-filled[end if] asshole. You can't breathe!";
 	otherwise:
-		say "[big he of M] buries your nose into [his of M] [if a2m fetish is 2]cum-dripping [end if]asshole and covers your mouth with [his of M] [if the creampieTimer of M > 0]cum-filled [end if][vagina]. You can't breathe!";
+		say "[big he of M] buries your nose into [his of M] [if a2m fetish > 1]cum-dripping [end if][if the feeding-hole of M is asshole]cunt[otherwise]asshole[end if] and covers your mouth with [his of M] [if the creampieTimer of M > 0]cum-filled [end if][if the feeding-hole of M is asshole]asshole[otherwise]cunt[end if]. You can't breathe!";
 	if M is horny-wench or M is friendly-fucking:
 		say "[line break][line break][line break][speech style of M]'[if the creampieTimer of M > 0][one of][big please] lick it all out of me!'[or][big please], you have to drink it all.'[or]Don't worry, it tastes really good!'[purely at random][otherwise][one of]I really need to feel your tongue...'[or]Yes! Give me your tongue!'[or]Yes! [big please] make me cum!'[purely at random][end if][roman type][line break]";
 	otherwise:
-		say "[line break][line break][line break][speech style of M]'[if the creampieTimer of M > 0][one of]Drink bitch, drink!'[or]Clean it out, bitch!'[or]Lick my [pussy] clean you fucking whore!'[purely at random][otherwise][one of]Eat my [pussy] bitch!'[or]How do you like the taste of my [pussy], bitch?'[or]How do you like my [pussy], you fucking whore?'[purely at random][end if][roman type][line break]".
+		say "[line break][line break][line break][speech style of M]'[if the creampieTimer of M > 0][one of]Drink bitch, drink!'[or]Clean it out, bitch!'[or]Lick my [cumhole of M] clean you fucking whore!'[purely at random][otherwise][one of]Eat my [cumhole of M] bitch!'[or]How do you like the taste of my [cumhole of M], bitch?'[or]How do you like my [cumhole of M], you fucking whore?'[purely at random][end if][roman type][line break]".
 
 To say SpitroastPrep of (M - a monster) with (O - a wench) in (F - vagina):
 	if M is intelligent, say "[BigNameDesc of M] pushes your legs apart and kneels between them.";
@@ -1092,7 +1147,7 @@ To compute unique banishment of (M - a wench):
 Definition: a horny-wench is taxable: decide no. [Can this NPC have items demanded of them upon defeat?]
 
 To say TaxReturnDismay of (M - a wench):
-	say "[speech style of M]'My only ring... I can't believe you're making me give it to you. Maybe the shopkeeper will let me earn another one... *sniff*'[roman type][line break]".
+	say "[speech style of M]'My only one... I can't believe you're making me give it to you. Maybe the shopkeeper will let me earn another one... *sniff*'[roman type][line break]".
 
 To loot (M - a wench):
 	let X be a random off-stage plentiful ring;

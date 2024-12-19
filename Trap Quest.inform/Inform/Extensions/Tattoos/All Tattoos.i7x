@@ -2192,6 +2192,7 @@ Figure of portal tattoo is the file "Items/Tats/tattoo141.jpg".
 To decide which figure-name is the examine-image of (T - portal tattoo):
 	decide on figure of portal tattoo.
 Definition: portal tattoo is eligible:
+	if enema fetish is 0, decide no;
 	if the noun is portal-pants or the noun is portal gag or the noun is portal-hotpants or the noun is portal-bra or the noun is portal-diaper or the noun is fae mushroom or the noun is armband, decide yes;
 	decide no.
 To decide which object is the concealer of (T - portal tattoo):
@@ -2660,7 +2661,10 @@ To say tattoo-desc of (T - short skirt slut tattoo):
 To decide which number is the initial outrage of (T - short skirt slut tattoo):
 	decide on 8.
 To compute inking effect of (T - short skirt slut tattoo):
-	increase short skirts permanent fetish by 1.
+	if short skirts permanent fetish is 0 or short skirts permanent fetish > 5:
+		now short skirts permanent fetish is 5;
+	otherwise if short skirts permanent fetish > 1:
+		decrease short skirts permanent fetish by 1.
 
 showtime tattoo is a leg tattoo. The tattoo-title of showtime tattoo is "show time". Understand "show", "time" as showtime tattoo.
 Figure of showtime tattoo is the file "Items/Tats/tattoo25.jpg".
@@ -2786,6 +2790,9 @@ To decide which number is the initial outrage of (T - spade leaves tattoo):
 	decide on 2.
 To decide which number is the luck-influence of (T - spade leaves tattoo):
 	decide on -2.
+Figure of spade leaves tattoo is the file "Items/Tats/tattoo196.jpg".
+To decide which figure-name is the examine-image of (T - spade leaves tattoo):
+	decide on figure of spade leaves tattoo.
 
 spade owned tattoo is a left-asscheek tattoo. The tattoo-title of spade owned tattoo is "spade owned ass".
 Definition: spade owned tattoo is interracial themed: decide yes.

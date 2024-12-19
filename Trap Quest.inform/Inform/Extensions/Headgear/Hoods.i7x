@@ -77,7 +77,8 @@ To compute recipe specific cursing of (T - a headgear):
 		if R > 15:
 			now T is speed;
 		otherwise:
-			now T is blandness.
+			now T is blandness;
+	uniquely set up T.
 
 To decide which number is the strength-influence of (H - black hood):
 	let S be 0;
@@ -423,7 +424,6 @@ To compute unique periodic effect of (H - trainee hood):[TODO: improve]
 	if playerRegion is not school and the location of the player is not bossed:
 		increase the charge of H by 1;
 		if the charge of H > 40:
-			now the charge of H is 0;
 			if the training-progress of H is 3:
 				LipsUp 3;
 				say "The [printed name of H] emits four short tones, and falls off your face. You can still feel the heavy lips resting on your face, but when you move to peel them off, you realise they've merged fully with your skin! You now have [LipDesc]!";
@@ -431,10 +431,12 @@ To compute unique periodic effect of (H - trainee hood):[TODO: improve]
 				now the training-progress of H is 0;
 				only destroy H;
 				ProgressUp senior robobellboy;
+				now the charge of H is 0;
 			otherwise if face is not actually occupied:
 				say "The [printed name of H] emits a short tone and the metal ring collapses, forcing your lips shut as your mouth fills with thick, sweet smelling smoke. You [if the bimbo of the player > 13]breathe in happily, knowing that whatever it is, it'll do something fun! The silicone lips slowly open after a few seconds, hugging even tighter to the real ones underneath[otherwise if the bimbo of the player > 9]breathe in cautiously, knowing your airway is too restricted to have any choice. A funny feeling lingers at the back of your throat as the silicone lips slowly open again, subtly hugging tighter to the real ones underneath[otherwise]hold your breath desperately, but with your restricted airway you have no choice but to breathe in, coughing reflexively as the silicone lips slowly open again, subtly hugging tighter to the real ones underneath[end if].";
 				FaceUp 1;
 				OralSexAddictUp 1;
+				now the charge of H is 0;
 				increase the training-progress of H by 1.
 
 To demagnetise (C - a clothing):[Do not call this function unless you know it is a magnetic item.]
@@ -520,7 +522,7 @@ To decide which number is the initial outrage of (C - cat-hood):
 Definition: cat-hood is ringagged: decide no.
 
 Report wearing cat-hood:
-	if (diaper quest is 0 and the player is an october 2023 top donator) or (diaper quest is 1 and the player is an october 2023 diaper donator):
+	if the player is the donator:
 		now heist-painting is rippling;
 		if the player is in the location of heist-painting, say "[bold type]The painting in this room starts rippling. Almost as if you could now enter it...[roman type][line break]".
 

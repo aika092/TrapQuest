@@ -684,9 +684,9 @@ To compute the mutation effects of (G - a glue):
 			if X is 0:
 				let P be a random worn plug panties;
 				if P is plug panties: [plugs grow and vibrate]
-					if the size of P < 10:
+					if the plug size of P < 10:
 						say "The in-built plug[if the player is possessing a vagina]s of [NameDesc of P] simultaneously vibrate and swell[otherwise] of [NameDesc of P] simultaneously vibrates and swells[end if] in size!";
-						increase the size of P by 1;
+						increase the plug size of P by 1;
 					otherwise:
 						say "The in-built plug[if the player is possessing a vagina]s of [NameDesc of P] fuck[otherwise] of [NameDesc of P] fucks[end if] you like some sort of living tentacle!";
 						ruin asshole times 1;

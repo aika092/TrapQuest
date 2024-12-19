@@ -116,7 +116,10 @@ To compute perception of (M - robochef):
 
 To compute DQ perception of (M - robochef):
 	say "[BigNameDesc of M] notices you!";
-	if the number of worn diapers is 0 and (the player is full or bladder-bursting-level >= 0 or the water volume of belly > 0):
+	if there is soiled-diaper carried by M or there is a dirty diaper carried by M:
+		say "[first custom style]'DIRTY DIAPER LITTERING CULPRIT FOUND. PLEASE ADOPT THE DIRTY DIAPER LITTERING PUNISHMENT SUBMISSION POSITION.'[roman type][line break]";
+		anger M;
+	otherwise if the number of worn diapers is 0 and (the player is full or bladder-bursting-level >= 0 or the water volume of belly > 0):
 		say "[big his of M] eyes turn red.[line break][first custom style]'IMMINENT TOILET ACCIDENT DETECTED. HYGIENE SAFETY ASSESSMENT: UNACCEPTABLE. TOILET ACCIDENT AVERSION PROGRAM INITIATED.'[roman type][line break]";
 		anger M;
 	otherwise if the current-errand of M is completed and M is not uniquely unfriendly:
@@ -295,6 +298,7 @@ To compute (M - robochef) considering (T - a thing):
 		if D is chef food:
 			say "A grate opens up on [NameDesc of M][']s face as [he of M] takes the [printed name of T], allowing the chef to consume it whole. You hear a deep rumbling noise as [he of M] processes your food, and after a sharp ding, [his of M] chest compartment opens up and [NameDesc of M] hands you a fresh [printed name of D].[line break]";[TODO: improve]
 			now D is carried by the player;
+			focus-consider D;
 			say "[speech style of M]UPGRADE COMPLETE. PAYMENT HAS BEEN DEDUCTED FROM YOUR ACCOUNT.[roman type][line break]";
 			compute resolution of M taking T;
 			destroy T;

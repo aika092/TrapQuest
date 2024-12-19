@@ -26,9 +26,9 @@ To decide which figure-name is the monster-image of (M - minotaur):
 	if mythical creature fetish is 1:
 		if lady fetish is 1, decide on figure of female minotaur;
 		if M is penetrating a body part and M is asleep, decide on figure of minotaur cutscene 2b;
-		if the player is in danger and the number of body parts penetrated by M is 0 and the player is prone, decide on figure of minotaur cutscene 9;
 		if M is caged, decide on figure of minotaur caged;
-		otherwise decide on figure of minotaur;
+		if the player is in danger and the number of body parts penetrated by M is 0 and the player is prone, decide on figure of minotaur cutscene 9;
+		decide on figure of minotaur;
 	otherwise:
 		if lady fetish is 1, decide on figure of female hulk;
 		decide on figure of hulk;

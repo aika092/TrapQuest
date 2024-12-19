@@ -187,7 +187,7 @@ To compute spraybottle punishment:
 			say "You notice a shadow looming over you, and look up just in time to see a metal bucket tipping itself over in mid-air, splashing you with [if L is 1]ice cold water[otherwise if L is 2]at least a gallon of [semen][otherwise]at least a gallon of [urine][end if]!";
 			if L is 1:
 				say "You shriek as it cascades over you, soaking your clothes and stinging your skin.";
-				repeat with C running through worn currently uncovered fluid vulnerable clothing:
+				repeat with C running through currently uncovered fluid vulnerable clothing:
 					WaterSoak 1 on C;
 				if the fatigue of the player > the tired threshold of the player:
 					say "[if the player is not prone]It's so jarring you instantly fall to your knees.[end if]";

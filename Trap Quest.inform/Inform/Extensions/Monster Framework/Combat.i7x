@@ -289,7 +289,15 @@ To compute replacement of (T - a thing) in (O - an orifice):
 		if T is pacifier and O is face and the stolen-intelligence of T > 0:
 			increase the raw intelligence of the player by the stolen-intelligence of T;
 			now the stolen-intelligence of T is 0;
-			say "[bold type]As [NameDesc of T][bold type] is pushed back in your mouth, you feel it return your stolen intelligence![roman type][line break]".
+			say "[bold type]As [NameDesc of T][bold type] is pushed back in your mouth, you feel it return your stolen intelligence![roman type][line break]";
+		if T is temporarily-unlocked:
+			let K be a random off-stage specific-key;
+			if K is nothing or current-monster is unintelligent or there is a specific-key covering T:
+				say "[if current-monster is intelligent][BigNameDesc of current-monster] locks [NameDesc of T].[otherwise]With a click, it would appear that [NameDesc of T] is suddenly locked again![end if]";
+				now T is locked;
+				now T is not temporarily-unlocked;
+			otherwise:
+				compute current-monster locking T with K.
 
 [!<DominateUpMonster>+
 
@@ -320,9 +328,13 @@ To compute replacement of (D - a clothing):
 			now D is not temporarily-unlocked;
 			now D is in the location of the player;
 	if D is worn and D is temporarily-unlocked:
-		say "With a click, [if current-monster is intelligent][NameDesc of current-monster] locks [NameDesc of D][otherwise]the lock on [NameDesc of D] has somehow relocked itself[end if]!";
-		now D is locked;
-		now D is not temporarily-unlocked.
+		let K be a random off-stage specific-key;
+		if K is nothing or there is a specific-key covering D:
+			say "With a click, [if current-monster is intelligent][NameDesc of current-monster] locks [NameDesc of D][otherwise]the lock on [NameDesc of D] has somehow relocked itself[end if]!";
+			now D is locked;
+			now D is not temporarily-unlocked;
+		otherwise:
+			compute current-monster locking D with K.
 
 This is the default facial climax rule:
 	if current-monster is penetrating face:
@@ -483,6 +495,10 @@ To replace any diapers:
 
 To replace any clothes:
 	unless the woman-status of woman-player is 96 and woman-player is in the location of the player: [patron orgy scene]
+		repeat with C running through worn diaper covers:
+			compute replacement of C; [this only does something if it's displaced or unzipped]
+		repeat with C running through temporarily-removed diaper covers carried by current-monster:
+			compute replacement of C;
 		repeat with C running through worn clothing:
 			compute replacement of C; [this only does something if it's displaced or unzipped]
 		repeat with C running through temporarily-removed clothing carried by current-monster:
@@ -798,7 +814,7 @@ This is the trap stuck player taunting rule:
 The trap stuck player taunting rule is listed last in the default taunting rules.
 
 To compute the default taunting of (M - a monster):
-	say "[BigNameDesc of M] watches [if M is intelligent]with a facial expression of a mixture of incredulity and entertainment[otherwise]silently[end if].".
+	unless stripper cage is grabbing the player, say "[BigNameDesc of M] watches [if M is intelligent]with a facial expression of a mixture of incredulity and entertainment[otherwise]silently[end if].".
 
 This is the busy waiting rule:
 	if busy is 1:
@@ -925,6 +941,12 @@ To say ReclaimDeclaractionFlav of (M - a monster) for (C - a thing):
 	if M is intelligent, say "[speech style of M]'[one of]I'll be taking this back.'[or]Give it back, thief!'[or]I'm going to make you regret taking this.'[or]Did you really thing you'd get away with stealing this from me?'[in random order][roman type][line break]".
 To say ReclaimFlav of (M - a monster) for (C - a thing):
 	say "[BigNameDesc of M] [if C is worn][one of]pulls[or]yanks[or]wriggles[at random] [NameDesc of C] off of you[otherwise]takes [NameDesc of C] back[one of] into [his of M] possession[or] from you[or][stopping][end if].".
+
+This is the potion forcefeed punishment rule:
+	if diaper quest is 0 and potion-forcefeed is appropriate:
+		compute potion forcefeed of current-monster;
+		rule succeeds.
+The potion forcefeed punishment rule is listed last in the monster punishment rules.
 
 This is the unique punishment rule:
 	follow the unique punishment rule of current-monster;
@@ -1150,18 +1172,18 @@ To compute enticing of (M - a monster):
 	let CM be current-monster;
 	now current-monster is M;
 	if diaper quest is 1:
-		choose a diaper punishment;
-		if chosen diaper punishment is punishment-not-found:
+		if the chosen-diaper-punishment of M is punishment-not-found or the chosen-diaper-punishment of M is dq-student-flee, choose a diaper punishment;
+		if the chosen-diaper-punishment of M is punishment-not-found:
 			if debugmode > 0, say "Tried to entice but no acceptable diaper punishment found.";
-		otherwise if chosen diaper punishment is dq-student-flee:
+		otherwise if the chosen-diaper-punishment of M is dq-student-flee:
 			if debugmode > 0, say "Tried to entice but student just wants to flee.";
 		otherwise:
 			if debugmode > 0, say "Tried to entice and successfully selected something.";
-			say EnticeFlav of M for chosen diaper punishment;
-			let S be the relevant addiction of chosen diaper punishment;
+			say EnticeFlav of M for the chosen-diaper-punishment of M;
+			let S be the relevant addiction of the chosen-diaper-punishment of M;
 			if S > 5: [at 5 or less addiction, this can't happen]
 				check enticing of M for yourself with temptation level S;
-				if the player is prone, compute punishment of chosen diaper punishment;
+				if the player is prone, compute punishment of the chosen-diaper-punishment of M;
 	otherwise:
 		unless M is patron and the chosen-orifice of M is an actual target body part, compute the orifice choosing of M; [hotel patrons have usually already chosen what type of sex they intend to perform]
 		let B be the chosen-orifice of M;
@@ -1196,41 +1218,42 @@ To check enticing of (M - a monster) for (B - a thing) with temptation level (S 
 		if N < 15, now N is 15;
 	if debuginfo > 0, say "[input-style]Enticement stats: Arousal value ([A]) + Addiction level ([S])[if G > 0] - Grossness level ([G])[end if] = Enticement level [N][roman type][line break]";
 	if N > 11, say EnticedFlav of M for B with enticement level N; [This way, there's some flavour if we got close but not quite close enough for the first level of enticement]
-	if N > 28:
-		if debuginfo > 0, say "[input-style]Above 28 = maximum enticement level![roman type][line break]";
-		say "The combination of your arousal and [if diaper quest is 1]predilections[otherwise]addiction[end if] makes it impossible for you to resist![line break][variable custom style][one of]I'm supposed to be fighting... But my body is acting of its own accord... I can't stop myself[or]I need it so badly[stopping]![roman type][line break]";
-		now auto is 1;
-		try kneeling;
-		now auto is 0;
-	otherwise if N > 22:
-		if debuginfo > 0, say "[input-style]Above 22 = enticement level 3[roman type][line break]";
-		say "[if the player is a bit horny]The combination of your arousal and[otherwise]Your[end if] [if diaper quest is 1]predilections[otherwise]addiction[end if] makes it extremely difficult for you to resist! The damage of your attacks against [NameDesc of M] will be seriously reduced.[paragraph break]Get on your knees and consent to what [he of M][']s asking for?[roman type][line break]";
-		increase the temporary-damage-reduction of M by 3;
-		if the player is consenting:
-			say "[variable custom style][one of][big he of M] is so convincing[or]I want it! I need it[cycling]![roman type][line break]";
+	if the player is upright:
+		if N > 28:
+			if debuginfo > 0, say "[input-style]Above 28 = maximum enticement level![roman type][line break]";
+			say "The combination of your arousal and [if diaper quest is 1]predilections[otherwise]addiction[end if] makes it impossible for you to resist![line break][variable custom style][one of]I'm supposed to be fighting... But my body is acting of its own accord... I can't stop myself[or]I need it so badly[stopping]![roman type][line break]";
 			now auto is 1;
 			try kneeling;
 			now auto is 0;
-	otherwise if N > 18:
-		if debuginfo > 0, say "[input-style]Above 18 = enticement level 2[roman type][line break]";
-		say "[if the player is a bit horny]The combination of your arousal and[otherwise]Your[end if] attitude towards such acts makes it very difficult for you to resist! The damage of your attacks against [NameDesc of M] will be significantly reduced.[paragraph break]Get on your knees and consent to what [he of M][']s asking for?[roman type][line break]";
-		increase the temporary-damage-reduction of M by 2;
-		if the player is consenting:
-			say "[variable custom style][one of]Just this once[or]I'm not going to make a habit of this, but it makes sense this time[cycling]...[roman type][line break]";
-			now auto is 1;
-			try kneeling;
-			now auto is 0;
-	otherwise if N > 14:
-		if debuginfo > 0, say "[input-style]Above 14 = enticement level 1[roman type][line break]";
-		say "[if the player is a bit horny]The combination of your arousal and[otherwise]Your[end if] attitude towards such acts makes it very difficult for you to resist! The damage of your attacks against [NameDesc of M] will be slightly reduced.[paragraph break]Get on your knees and consent to what [he of M][']s asking for?[roman type][line break]";
-		increase the temporary-damage-reduction of M by 1;
-		if the player is consenting:
-			say "[variable custom style][one of]This is a tactical decision, nothing more[or]I'm not going to make a habit of this, but it makes sense this time[stopping]...[roman type][line break]";
-			now auto is 1;
-			try kneeling;
-			now auto is 0;
-	otherwise:
-		if debuginfo > 0, say "[input-style]Below 15 = enticement level 0[roman type][line break]".
+		otherwise if N > 22:
+			if debuginfo > 0, say "[input-style]Above 22 = enticement level 3[roman type][line break]";
+			say "[if the player is a bit horny]The combination of your arousal and[otherwise]Your[end if] [if diaper quest is 1]predilections[otherwise]addiction[end if] makes it extremely difficult for you to resist! The damage of your attacks against [NameDesc of M] will be seriously reduced.[paragraph break]Get on your knees and consent to what [he of M][']s asking for?[roman type][line break]";
+			increase the temporary-damage-reduction of M by 3;
+			if the player is consenting:
+				say "[variable custom style][one of][big he of M] is so convincing[or]I want it! I need it[cycling]![roman type][line break]";
+				now auto is 1;
+				try kneeling;
+				now auto is 0;
+		otherwise if N > 18:
+			if debuginfo > 0, say "[input-style]Above 18 = enticement level 2[roman type][line break]";
+			say "[if the player is a bit horny]The combination of your arousal and[otherwise]Your[end if] attitude towards such acts makes it very difficult for you to resist! The damage of your attacks against [NameDesc of M] will be significantly reduced.[paragraph break]Get on your knees and consent to what [he of M][']s asking for?[roman type][line break]";
+			increase the temporary-damage-reduction of M by 2;
+			if the player is consenting:
+				say "[variable custom style][one of]Just this once[or]I'm not going to make a habit of this, but it makes sense this time[cycling]...[roman type][line break]";
+				now auto is 1;
+				try kneeling;
+				now auto is 0;
+		otherwise if N > 14:
+			if debuginfo > 0, say "[input-style]Above 14 = enticement level 1[roman type][line break]";
+			say "[if the player is a bit horny]The combination of your arousal and[otherwise]Your[end if] attitude towards such acts makes it very difficult for you to resist! The damage of your attacks against [NameDesc of M] will be slightly reduced.[paragraph break]Get on your knees and consent to what [he of M][']s asking for?[roman type][line break]";
+			increase the temporary-damage-reduction of M by 1;
+			if the player is consenting:
+				say "[variable custom style][one of]This is a tactical decision, nothing more[or]I'm not going to make a habit of this, but it makes sense this time[stopping]...[roman type][line break]";
+				now auto is 1;
+				try kneeling;
+				now auto is 0;
+		otherwise:
+			if debuginfo > 0, say "[input-style]Below 15 = enticement level 0[roman type][line break]".
 
 
 To say EnticeFlav of (M - a monster) with (B - face):
@@ -1414,8 +1437,11 @@ To compute (M - a monster) attacking (C - a diaper):
 To compute (M - a monster) removing (C - a thing): [This is used for removing insertables]
 	if M is intelligent:
 		say "[BigNameDesc of M] [if C is locked]unlocks, and then [end if][if C is penetrating an orifice]effortlessly pulls out[otherwise][one of]removes[or]relieves you of[or]confiscates[then at random][end if] your [ShortDesc of C].";
-		now M is carrying C;
-		now C is temporarily-removed;
+		if C is clothing: [stuff like squirt dildo isn't clothing]
+			now C is temporarily-removed;
+			now M is carrying C;
+		otherwise:
+			now C is in the location of the player;
 	otherwise:
 		say "[BigNameDesc of M] [if C is locked]unlocks, and then [end if][if C is penetrating an orifice]effortlessly pulls out[otherwise]removes[end if] your [ShortDesc of C] and discards it onto the floor.";
 		now C is in the location of the player;
@@ -1467,11 +1493,11 @@ To say DisplacesFlav of (C - a clothing):
 To compute (M - a monster) unlocking (C - a clothing):
 	let K be a random unlock-key covering C;
 	if K is a thing and K is held by M:
-		say "[BigNameDesc of M] [KeyUnlocksFlav of C].";
+		say "[BigNameDesc of M] [KeyUnlocksFlav of C]";
 	otherwise if M is a generic-unlocker:
-		say "[BigNameDesc of M] [SkeletonKeyUnlocksFlav of C].";
+		say "[BigNameDesc of M] [SkeletonKeyUnlocksFlav of C]";
 	otherwise:
-		say "[BigNameDesc of M] [MagicUnlocksFlav of C].";
+		say "[BigNameDesc of M] [MagicUnlocksFlav of C]";
 	unlock C.
 
 To say KeyUnlocksFlav of (C - a clothing):
@@ -1698,7 +1724,14 @@ The monster mouth insertion rules is a rulebook.
 This is the monster removing gag rule:
 	let C be a random worn tearable clothing penetrating face;
 	if C is a thing:
+ 		if C is locked:
+			compute current-monster unlocking C;
+			now C is temporarily-unlocked;
 		compute current-monster removing C;
+		rule succeeds;
+	if current-monster is clothes-destroyer:
+		let C be a random worn destructible clothing penetrating face;
+		if C is a thing, compute current-monster destroying C;
 		rule succeeds.
 The monster removing gag rule is listed last in the monster mouth insertion rules.
 
@@ -2030,7 +2063,6 @@ To decide which number is the entice rarity of (M - a monster):
 To decide which number is the raw entice rarity of (M - a monster):
 	decide on 3 * combatSpeed. [The higher this is, the less often they do their entice move]
 Definition: a monster (called M) is ready to entice:
-	if diaper quest is 1 and the player is not a december 2022 diaper donator, decide no;
 	if the player is prone, decide no;
 	if M is enticed, decide no;
 	if M is uniquely ready to entice, decide yes;
@@ -2038,8 +2070,15 @@ Definition: a monster (called M) is ready to entice:
 Definition: a monster (called M) is uniquely ready to entice:
 	if diaper quest is 1:
 		if M is intelligent:
+			let CM be current-monster;
+			now current-monster is M;
 			choose a diaper punishment;
-			if chosen diaper punishment is not punishment-not-found and chosen diaper punishment is not dq-student-flee, decide yes;
+			if the chosen-diaper-punishment of current-monster is not punishment-not-found and the chosen-diaper-punishment of current-monster is not dq-student-flee:
+				now current-monster is CM;
+				decide yes;
+			otherwise:
+				now current-monster is CM;
+				decide no;
 	otherwise:
 		if M is male and M is raunchy and M is intelligent and there is an actual target body part, decide yes;
 	decide no.

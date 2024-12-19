@@ -61,7 +61,7 @@ Definition: receptionist (called M) is dangerous:
 To say rank-colour of (M - receptionist):
 	say "sapphire".
 
-To compute teaching of (M - receptionist):
+To compute teaching offer of (M - receptionist):
 	say "[speech style of M]'Oh, haha, no, I'm afraid I'm just the receptionist. The teachers are inside.'[roman type][line break]".
 
 Definition: receptionist is dismissable: decide no.

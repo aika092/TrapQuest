@@ -42,6 +42,9 @@ Definition: an alchemy product is container-eligible:
 To say MonsterOfferAcceptFlav of (M - witch) to (T - an alchemy product):
 	say "[BigNameDesc of M] gingerly takes it from you.[line break][speech style of M]'[if T is unsure]You couldn't even be bothered to identify it? Well, I guess I can pawn this off to some unsuspecting adventurer in the future. I'll take it[otherwise if T is cursed]Don't you think I have enough cursed [ShortDesc of T]s? No, no, I'll take it, just don't expect me to be over the moon or anything[otherwise if T is blessed]Wow, I haven't seen a blessed one of these in decades! I mean... not that I'm that old! Forget I said anything! Anyway, yes, thank you, I'll definitely take this off of your hands[otherwise]Nice, looks like it's in good condition too. Thanks[end if].'[roman type][line break]".
 
+To compute alchemy product effect of (T - an alchemy product):
+	do nothing.
+
 
 [Quaffing is the verb used to handle potions created via alchemy. It is called automatically by the drinking verb when appropriate.]
 Quaffing is an action applying to one thing.
@@ -49,17 +52,23 @@ Check quaffing:
 	if the noun is salve or the noun is true salve or the noun is powder, say "That cannot be drunk, try [bold type]rub[roman type]bing the [ShortDesc of the noun] on a [if the noun is salve]body part[otherwise]item of clothing[end if] instead." instead;
 	if the latex-transformation of the player > 4, say "You can no longer drink, you're too far into your transformation into a doll and your body doesn't need hydration any more." instead;
 	if the noun is not held and the player is flying, say "You can't reach!" instead;
-	if the player is overly full, say "Your stomach feels too full to drink any more right now, you should wait a while." instead;
+	if the player is overly full and the player is not thirsty, say "Your stomach feels too full to drink any more right now, you should wait a while." instead;
 	if the player is wrist bound behind, say "You won't be able to drink this with your hands bound behind you." instead;
 	if the player is wrist bound in front and there are worn heels and the player is upright and the noun is not held by the player, say "With your hands tied together you won't be able to balance well enough to pick that up without getting on your knees." instead;
 	if there is a worn ballgag, say "The glass container is too delicate, you can't get anything past your [ShortDesc of random worn ballgag] safely!" instead;
 	if face is actually occupied, say "Your mouth is currently occupied!" instead.
 
 Carry out quaffing:
+	allocate 3 seconds;
 	StomachUp 1;
+	say QuaffFlav of the noun;
+	compute alchemy product effect of the noun;
 	if the noun is cursed and the noun is not blessing-potion, say "That tasted really awful - you're pretty sure it was cursed![line break][variable custom style]Uh-oh. That probably hasn't done what it was supposed to do...[roman type][line break]";
 	check stealing of the noun;
 	destroy the noun.
+
+To say QuaffFlav of (A - an alchemy product):
+	say "You pull out the tiny stopper and down the liquid. ";
 
 A bomb is a kind of alchemy product. Understand "bomb" as a bomb.
 
@@ -122,8 +131,8 @@ Carry out SmokeBombing a smoke bomb to a direction:
 	allocate 3 seconds;
 	say "You cast the smoke bomb to the ground. ";
 	if the noun is cursed:
-		say "Suddenly the entire room is filled with [if the location of the player is smoky]even more [end if][if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke! ";
-		now the location of the player is smoky;
+		say "Suddenly the entire room is filled with [if the location of the player is pink-smoky]even more [end if][if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke! ";
+		now the location of the player is pink-smoky;
 		update backdrop positions;
 		if the player is upright and the player is air breathing vulnerable:
 			say "Before it settles down to below waist height, you are forced to breathe some in.";
@@ -496,20 +505,22 @@ To say ExamineDesc of (B - magnetism-elixir):
 	if B is sure and B is cursed, say "Since it is cursed, drinking it will probably do something bad. Perhaps you could find some other use for it, for example gifting.";
 	otherwise say "The label says that drinking it will encourage people in the region to wander towards you, but also [bold type]cause the enemies you are currently fighting to flee[if B is sure and B is blessed].[roman type] The blessed magic will make the effect last even longer than usual[end if].[roman type][line break]".
 
+To say QuaffFlav of (A - magnetism-elixir):
+	say "You pull out the tiny stopper and down the purple liquid. ".
+
 To decide which number is the alchemy key of (A - magnetism-elixir):
 	decide on 3.
 
 magnetism-timer is a number that varies. magnetism-timer is 0.
 
-Carry out quaffing magnetism-elixir:
-	allocate 3 seconds;
-	say "You pull out the tiny stopper and down the purple liquid. You feel more... present, as if [bold type]people are now being drawn towards you.[roman type][line break]";
+To compute alchemy product effect of (Q - magnetism-elixir):
+	say "You feel more... present, as if [bold type]people are now being drawn towards you.[roman type][line break]";
 	let R be a random number between 20 and 25;
-	if the noun is blessed, increase R by 6;
+	if Q is blessed, increase R by 6;
 	now magnetism-timer is R * 6;
 	repeat with M running through alive monsters:
 		now the scared of M is 0;
-	if the noun is not cursed and the player is in danger:
+	if Q is not cursed and the player is in danger:
 		repeat with M running through combative monsters:
 			if M is penetrating a body part or M is grabbing the player or M is not scarable:
 				say "[BigNameDesc of M][']s eyes open wide for a moment, but then it passes.";
@@ -540,12 +551,14 @@ To say ExamineDesc of (B - life-elixir):
 	if B is sure and B is cursed, say "Since it is cursed, drinking it will probably make you rapidly pregnant instead of healing you or something. Perhaps you could find some other use for it, for example gifting.[if the semen addiction of the player > 10][line break][second custom style]Or maybe I want to be pregnant...[roman type][line break][end if]";
 	otherwise say "[if B is sure and B is blessed]The blessed magic will make the effect last even longer than usual.[otherwise][line break][end if]".
 
+To say QuaffFlav of (A - life-elixir):
+	say "You pull out the tiny stopper and down the glowing liquid. ".
+
 To decide which number is the alchemy key of (A - life-elixir):
 	decide on 4.
 
-Carry out quaffing life-elixir:
-	allocate 3 seconds;
-	say "You pull out the tiny stopper and down the glowing liquid. [if the body soreness of the player > 0 or the soreness of asshole > 0 or the soreness of vagina > 0 and the noun is not cursed]You start to feel... healthier, as if some kind of magic particle is running around your body, healing your wounds. The particle gets to your belly. ";
+To compute alchemy product effect of (Q - life-elixir):
+	say "[if the body soreness of the player > 0 or the soreness of asshole > 0 or the soreness of vagina > 0 and Q is not cursed]You start to feel... healthier, as if some kind of magic particle is running around your body, healing your wounds. The particle gets to your belly. ";
 	if the latex-transformation of the player > 0:
 		say "[LatexCurseRemoval]But the elixir hasn't finished yet! ";
 	if the player is male:
@@ -564,9 +577,9 @@ Carry out quaffing life-elixir:
 		now M is in Woods10;
 		if the womb volume of vagina < 10, now the womb volume of vagina is 1;
 		check sudden pregnancy;
-	if the noun is not cursed:
+	if Q is not cursed:
 		let R be a random number between 20 and 35;
-		if the noun is blessed, increase R by 20;
+		if Q is blessed, increase R by 20;
 		now life-timer of life-elixir is R * 20.
 
 An all time based rule (this is the life elixir decay rule):
@@ -608,16 +621,18 @@ To say ExamineDesc of (B - invigoration-elixir):
 	if B is sure and B is cursed, say "Since it is cursed, drinking it will probably only last for a few seconds or something. Perhaps you could find some other use for it, for example gifting.";
 	otherwise say "[if B is sure and B is blessed]The blessed magic will make the effect last even longer than usual.[otherwise][line break][end if]".
 
+To say QuaffFlav of (A - invigoration-elixir):
+	say "You pull out the small stopper and drink the creamy liquid. ".
+
 To decide which number is the alchemy key of (A - invigoration-elixir):
 	decide on 5.
 
-Carry out quaffing invigoration-elixir:
-	allocate 3 seconds;
-	say "You pull out the small stopper and drink the creamy liquid. It tastes like [semen]. You feel your [fuckholes] pulse gently.";
+To compute alchemy product effect of (Q - invigoration-elixir):
+	say "It tastes like [semen]. You feel your [fuckholes] pulse gently.";
 	compute slightly addictive tasting of semen;
 	let R be a random number between 300 and 450;
-	if the noun is blessed, increase R by 300;
-	if the noun is cursed, decrease R by 290;
+	if Q is blessed, increase R by 300;
+	if Q is cursed, decrease R by 290;
 	increase invigoration-timer of invigoration-elixir by R.
 
 An all time based rule (this is the invigoration elixir decay rule):
@@ -649,9 +664,12 @@ To say MediumDesc of (B - balance-potion):
 	say "potion of balance".
 
 To say ExamineDesc of (B - balance-potion):
-	say "A round clear hip flask filled with a dose of smoky [appearance corresponding to an Magic of 4 in the Table of Drinks] liquid. The label says that drinking it will enhance your ability to walk in high heels[if diaper quest is 0], and bring the sizes of your chest and hips into balance[end if]. ";
+	say "A round clear hip flask filled with a dose of pink-smoky [appearance corresponding to an Magic of 4 in the Table of Drinks] liquid. The label says that drinking it will enhance your ability to walk in high heels[if diaper quest is 0], and bring the sizes of your chest and hips into balance[end if]. ";
 	if B is sure and B is cursed, say "Since it is cursed, drinking it will probably do the opposite. Perhaps you could find some other use for it, for example gifting.";
 	otherwise say "[if B is sure and B is blessed]The blessed magic will double the heel skill effect.[otherwise][line break][end if]".
+
+To say QuaffFlav of (A - balance-potion):
+	say "You pull out the stopper and down the pink-smoky liquid. ".
 
 To update background colour of (P - balance-potion):
 	let A be appearance corresponding to an Magic of 4 in the Table of Drinks;
@@ -660,21 +678,19 @@ To update background colour of (P - balance-potion):
 To decide which number is the alchemy key of (A - balance-potion):
 	decide on 6.
 
-Carry out quaffing balance-potion:
-	allocate 3 seconds;
-	say "You pull out the stopper and down the smoky liquid.";
+To compute alchemy product effect of (Q - balance-potion):
 	let flav-said be 0;
-	if the noun is not cursed:
+	if Q is not cursed:
 		if the heel skill of the player < 10:
 			say "You feel [unless there are worn heels]like you'll be [end if]more steady standing in heels! ";
 			increase the raw heel skill of the player by 1;
-			if the noun is blessed, increase the raw heel skill of the player by 1;
+			if Q is blessed, increase the raw heel skill of the player by 1;
 		otherwise:
 			say "Nothing seems to happen to your feet. Perhaps you're already too much of an expert at walking in heels for this to help...";
-	otherwise if the noun is cursed:
+	otherwise if Q is cursed:
 		say "You feel [unless there are worn heels]like you'll be [end if][bold type]less[roman type] steady walking in heels! This potion of balance was cursed!";
 		decrease the raw heel skill of the player by 2;
-	if diaper quest is 0 and the noun is not cursed:
+	if diaper quest is 0 and Q is not cursed:
 		while the largeness of breasts > the flesh volume of hips + 1 and the player is not bottom heavy:
 			let B be the flesh volume of breasts;
 			BustDown 3;
@@ -710,16 +726,17 @@ To say MediumDesc of (B - womb-potion):
 	say "potion of the womb".
 
 To say ExamineDesc of (B - womb-potion):
-	say "A round clear hip flask filled with a dose of smoky pink liquid. The label says that drinking it will help you get pregnant - or if you are already pregnant, it can pause or unpause the growth of your child. ";
+	say "A round clear hip flask filled with a dose of pink-smoky pink liquid. The label says that drinking it will help you get pregnant - or if you are already pregnant, it can pause or unpause the growth of your child. ";
 	if B is sure and B is cursed, say "Since it is cursed, drinking it would probably make the pregnancy as inconvenient as possible. Perhaps you could find some other use for it, for example gifting.";
 	otherwise say "[if B is sure and B is blessed]The blessed magic will likely try to choose a father who will be very appreciative that you gave [him of shopkeeper] a child.[otherwise][line break][end if]".
+
+To say QuaffFlav of (A - womb-potion):
+	say "You pull out the stopper and down the pink-smoky liquid. ".
 
 To decide which number is the alchemy key of (A - womb-potion):
 	decide on 7.
 
-Carry out quaffing womb-potion:
-	allocate 3 seconds;
-	say "You pull out the stopper and down the smoky liquid.";
+To compute alchemy product effect of (Q - womb-potion):
 	if the latex-transformation of the player > 3:
 		say "Nothing seems to happen. Probably because of the latex curse...";
 	otherwise if the player is possessing a vagina:
@@ -728,17 +745,17 @@ Carry out quaffing womb-potion:
 			say ConceptionFlav;
 			now the pregnancy of the player is 1;
 			if the womb volume of vagina < 5, now the womb volume of vagina is 5;
-			if the noun is blessed:
+			if Q is blessed:
 				now the father is shopkeeper;
-			otherwise if there is an alive fairy and inhuman pregnancy > 0 and the noun is not cursed:
+			otherwise if there is an alive fairy and inhuman pregnancy > 0 and Q is not cursed:
 				now the father is a random alive fairy;
 			otherwise:
 				now the father is random creampie pole trap; [Tentacles for players who have them enabled]
-				if the noun is cursed, compute sudden pregnancy;
+				if Q is cursed, compute sudden pregnancy;
 				say "Your [BellyDesc] seems suddenly... inactive. But you still feel movement coming from inside your womb.";
 				now the pregnancy of the player is 2;
-			if the noun is not cursed, check sudden pregnancy;
-		otherwise if the noun is cursed:
+			if Q is not cursed, check sudden pregnancy;
+		otherwise if Q is cursed:
 			say "The potion seems to have no effect.";
 		otherwise if the pregnancy of the player is 1:
 			[Pause the pregnancy]
@@ -768,10 +785,11 @@ To say ExamineDesc of (B - blessing-potion):
 	if B is sure and B is cursed, say "Since it is cursed, drinking it would probably somehow trick you into getting a curse. Perhaps you could find some other use for it, for example gifting.";
 	otherwise say "[if B is sure and B is blessed]The blessed magic will likely allow the potion to work even from outside of the Dungeon.[otherwise][line break][end if]".
 
-Carry out quaffing blessing-potion:
-	allocate 3 seconds;
-	say "You pull out the stopper and down the brightly glowing liquid.";
-	if (the noun is not blessed and playerRegion is not Dungeon) or ((the player is trap stuck or the noun is cursed) and the player is not in Dungeon28):
+To say QuaffFlav of (A - blessing-potion):
+	say "You pull out the stopper and down the pink-smoky liquid. ".
+
+To compute alchemy product effect of (Q - blessing-potion):
+	if (Q is not blessed and playerRegion is not Dungeon) or ((the player is trap stuck or Q is cursed) and the player is not in Dungeon28):
 		say "Nothing seems to happen.";
 	otherwise if the player is not in Dungeon28:
 		say "You feel yourself sucked through a portal. ";
@@ -779,9 +797,9 @@ Carry out quaffing blessing-potion:
 		say "The scenery around you slightly changes, and you are now in an altar room! ";
 		teleport to Dungeon28;
 		if map images > 0, display entire map;
-	if the player is in Dungeon28 and (the charge of the dungeon altar > 0 or the noun is cursed):
+	if the player is in Dungeon28 and (the charge of the dungeon altar > 0 or Q is cursed):
 		say "You feel that it is safe to pray at the altar.";
-		if the noun is cursed, now the charge of the dungeon altar is 99;
+		if Q is cursed, now the charge of the dungeon altar is 99;
 		otherwise now the charge of the dungeon altar is 0;
 		force inventory-focus redraw; [This forces the inventory window to redraw]
 		force clothing-focus redraw; [This forces the clothing window to redraw]
@@ -804,6 +822,9 @@ To say ExamineDesc of (B - bull-strength-potion):
 	say "A round clear hip flask filled with a dose of murky white liquid. The label says that drinking it will give you the strength and body of a mighty bull. ";
 	if B is sure and B is cursed, say "Since it is cursed, drinking it would probably only give you the body of a cow. Perhaps you could find some other use for it, for example gifting.";
 	otherwise say "[if B is sure and B is blessed]The blessed magic will likely negate the body shape altering side effects of the potion.[otherwise][line break][end if]".
+
+To say QuaffFlav of (A - bull-strength-potion):
+	say "You pull out the stopper and down the murky white liquid. ".
 
 To decide which number is the alchemy key of (A - bull-strength-potion):
 	decide on 12.
@@ -834,13 +855,11 @@ To compute recipe specific cursing of (T - bull-strength-potion):
 	otherwise:
 		now T is cursed.
 
-Carry out quaffing bull-strength-potion:
-	allocate 3 seconds;
-	say "You pull out the stopper and down the murky white liquid.";
-	if the noun is not cursed:
+To compute alchemy product effect of (Q - bull-strength-potion):
+	if Q is not cursed:
 		say "You feel incredibly strong! Wow!";
 		StrengthUp 10;
-	unless the noun is blessed or (the flesh volume of thighs > 6 and the flesh volume of arms > 6 and the flesh volume of belly > 6 and the flesh volume of hips > 6):
+	unless Q is blessed or (the flesh volume of thighs > 6 and the flesh volume of arms > 6 and the flesh volume of belly > 6 and the flesh volume of hips > 6):
 		say "Your body instantly spills out as you instantly put on huge amounts of weight!";
 		FatUp 20;
 	if lactation fetish is 1 and cow-ears is off-stage and cow-ears is actually summonable:
@@ -874,10 +893,11 @@ To say ExamineDesc of (B - a space mead):
 	if B is sure and B is cursed, say "But since it is cursed, drinking it would probably only give you the negative effects.";
 	otherwise say "[if B is sure and B is blessed]But the blessed magic will likely negate the bad side-effects of the potion.[otherwise][line break][end if]".
 
-Carry out quaffing space mead:
-	allocate 3 seconds;
-	say "You drink the golden liquid.";
-	if the noun is not cursed:
+To say QuaffFlav of (A - a space mead):
+	say "You drink the golden liquid. ".
+
+To compute alchemy product effect of (Q - space mead):
+	if Q is not cursed:
 		if the player is deserving of more strength:
 			say "Your muscles suddenly swell out for just an instant before returning with slightly more definition than previous!";
 			StrengthUp 1;
@@ -887,7 +907,7 @@ Carry out quaffing space mead:
 		if the player is deserving of more intelligence:
 			say "For an instant your mind opens up to an infinite vista of possibilities, and even after it fades you still feel somewhat [smarter].";
 			IntUp 1;
-	if the noun is not blessed:
+	if Q is not blessed:
 		obsceneHumiliate;
 		say "It feels as though a vast emptiness has eaten away at your sense of self.";
 	increase alcohol level.
@@ -908,15 +928,16 @@ To say ExamineDesc of (B - luck-potion):
 	if B is sure and B is cursed, say "Since it is cursed, drinking it would probably do the opposite. Perhaps you could find some other use for it, for example gifting.";
 	otherwise say "[if B is sure and B is blessed]The blessing will enhance the effect of the potion.[otherwise][line break][end if]".
 
-Carry out quaffing luck-potion:
-	allocate 3 seconds;
-	say "You pull out the stopper and down the green liquid.";
-	if the noun is cursed:
+To say QuaffFlav of (A - luck-potion):
+	say "You pull out the stopper and down the green liquid. ".
+
+To compute alchemy product effect of (Q - luck-potion):
+	if Q is cursed:
 		say "[bold type]You feel a curse take its hold on your soul![line break][variable custom style]Something tells me that I just made myself much more UNLUCKY...[roman type][line break]";
 		decrease the raw luck of the player by 10;
 	otherwise:
 		say "[bold type]You feel an incredible surge of positivity flow through your veins.[line break][variable custom style]I feel much more lucky![roman type][line break]";
-		if the noun is blessed, increase the raw luck of the player by 5;
+		if Q is blessed, increase the raw luck of the player by 5;
 		increase the raw luck of the player by 10.
 
 Section 7 Potion of Magic
@@ -935,16 +956,17 @@ To say ExamineDesc of (B - magic-potion):
 	if B is sure and B is cursed, say "Since it is cursed, drinking it would probably lower your magic power instead. Perhaps you could find some other use for it, for example gifting.";
 	otherwise say "[if B is sure and B is blessed]The blessing will somehow enhance the effect of the potion.[otherwise][line break][end if]".
 
-Carry out quaffing magic-potion:
-	allocate 3 seconds;
-	say "You pull out the stopper and down the murky liquid.";
-	if the noun is cursed:
+To say QuaffFlav of (A - magic-potion):
+	say "You pull out the stopper and down the murky liquid. ".
+
+To compute alchemy product effect of (Q - magic-potion):
+	if Q is cursed:
 		say "[bold type]You feel a curse flow through your veins!";
 		MagicPowerDown 1;
 	otherwise:
 		MagicPowerUp 1;
 		MagicPowerRefresh 10;
-		if the noun is blessed:
+		if Q is blessed:
 			let S be a random costable uncastable fetish appropriate magic-spell;
 			if S is nothing, let S be a random uncastable fetish appropriate magic-spell;
 			if S is magic-spell:
@@ -971,17 +993,18 @@ To say ExamineDesc of (B - continence-potion):
 	if B is sure and B is cursed, say "Since it is cursed, drinking it would probably make you more incontinenct instead. Perhaps you could find some other use for it, for example gifting.";
 	otherwise say "[if B is sure and B is blessed]The blessing will somehow enhance the effect of the potion.[otherwise][line break][end if]".
 
-Carry out quaffing continence-potion:
-	allocate 3 seconds;
-	say "You pull out the stopper and down the murky liquid.";
-	if the noun is cursed:
+To say QuaffFlav of (A - continence-potion):
+	say "You pull out the stopper and down the murky liquid. ".
+
+To compute alchemy product effect of (Q - continence-potion):
+	if Q is cursed:
 		say "[bold type]You feel a curse flow through your veins![roman type][line break]";
 		RandomIncontinenceUp 4;
 	otherwise:
 		say "You can feel it working to improve your continence!";
 		BladderIncontinenceDown 2;
 		RectumIncontinenceDown 2;
-		if the noun is blessed:
+		if Q is blessed:
 			BladderIncontinenceDown 8;
 			RectumIncontinenceDown 8.
 
@@ -1206,13 +1229,16 @@ To say ExamineDesc of (C - a buoyant salve):
 	say "You feel a salve making your [random backdrop covered by C] [if C is cursed]heavier[otherwise]lighter[end if].".
 
 To oil (B - a body part) with (S - buoyancy-salve):
-	if S is cursed, say "You somehow feel a bit heavier! Uh-oh...";
-	otherwise say "You somehow feel a [if the noun is blessed]bit[otherwise]lot[end if] lighter!";
 	let O be a random off-stage buoyant salve;
-	now O is worn by the player;
-	now the text-shortcut of O is the substituted form of "bysv[number of worn buoyant salves]";
-	now O is covering B;
-	now the magic-curse of O is the magic-curse of S.
+	if O is a thing and the number of buoyant salves covering B is 0:
+		if S is cursed, say "You somehow feel a bit heavier! Uh-oh...";
+		otherwise say "You somehow feel a [if the noun is blessed]bit[otherwise]lot[end if] lighter!";
+		now O is worn by the player;
+		now the text-shortcut of O is the substituted form of "bysv[number of worn buoyant salves]";
+		now O is covering B;
+		now the magic-curse of O is the magic-curse of S;
+	otherwise:
+		say "But the salve doesn't seem to have any effect[if there is a buoyant salve covering B]. Perhaps because there's already some salve of buoyancy rubbed on your [variable B][end if]!";
 
 Part 2 - Salve of Restriction
 
@@ -1264,13 +1290,16 @@ To oil (B - a body part) with (S - restriction-salve):
 			HipDown 2;
 		otherwise if B is belly:
 			FatBellyDown 4;
-	if S is cursed, say "Something feels wrong! Uh-oh...";
-	otherwise say "You feel a bit more... stable.";
 	let O be a random off-stage restricting salve;
-	now O is worn by the player;
-	now the text-shortcut of O is the substituted form of "rssv[number of worn restricting salves]";
-	now O is covering B;
-	now the magic-curse of O is the magic-curse of S.
+	if O is a thing and the number of restricting salves covering B is 0:
+		if S is cursed, say "Something feels wrong! Uh-oh...";
+		otherwise say "You feel a bit more... stable.";
+		now O is worn by the player;
+		now the text-shortcut of O is the substituted form of "rssv[number of worn restricting salves]";
+		now O is covering B;
+		now the magic-curse of O is the magic-curse of S;
+	otherwise:
+		say "But the salve doesn't seem to have much additional effect[if there is a restricting salve covering B]. Perhaps because there's already some salve of restriction rubbed on your [variable B][end if]!";
 
 Part 3 - Salve of Concealment
 
@@ -1300,12 +1329,15 @@ To say ExamineDesc of (C - a concealment salve):
 
 To oil (B - a body part) with (S - concealment-salve):
 	let O be a random off-stage concealment salve;
-	now O is worn by the player;
-	now the text-shortcut of O is the substituted form of "ccsv[number of worn concealment salves]";
-	now O is covering B;
-	now the magic-curse of O is the magic-curse of S;
-	say ExamineDesc of O;
-	if O is cursed, say "[variable custom style]Uh-oh...[roman type][line break]".
+	if O is a thing and the number of concealment salves covering B is 0:
+		now O is worn by the player;
+		now the text-shortcut of O is the substituted form of "ccsv[number of worn concealment salves]";
+		now O is covering B;
+		now the magic-curse of O is the magic-curse of S;
+		say ExamineDesc of O;
+		if O is cursed, say "[variable custom style]Uh-oh...[roman type][line break]";
+	otherwise:
+		say "But the salve doesn't seem to have much of an effect[if there is a concealment salve covering B]. Perhaps because there's already some salve of concealment rubbed on your [variable B][end if]!";
 
 This is the salve pussy slut rule:
 	if there is an uncursed concealment salve covering vagina, decrease the desirability of vagina by 10.
@@ -1362,7 +1394,7 @@ To oil (B - a tattoo) with (S - erasure-salve):
 
 Part 5 - Salve of Reduction
 
-reduction-salve is a salve. The text-shortcut of reduction-salve is "sor". Understand "reduction" as reduction-salve.
+reduction-salve is a salve. The text-shortcut of reduction-salve is "sord". Understand "reduction" as reduction-salve.
 The backgroundColour of reduction-salve is 11701760. [dark yellow]
 
 To say MediumDesc of (C - reduction-salve):
@@ -1488,6 +1520,9 @@ To say ExamineDesc of (C - strength-tincture):
 	if C is sure and C is cursed, say "Since it is cursed, using it would probably make the duration of your power disappointingly short. Perhaps you could find some other use for it, for example gifting.";
 	otherwise say "[if C is sure and C is blessed]The blessed magic will make the duration of the power significantly longer.[otherwise][line break][end if]".
 
+To say QuaffFlav of (A - strength-tincture):
+	say "You pull out the tiny stopper and down the glowing liquid. ".
+
 To update background colour of (T - strength-tincture):
 	let A be appearance corresponding to an Magic of 2 in the Table of Drinks;
 	now the backgroundColour of T is the TQcolour of A.
@@ -1495,17 +1530,16 @@ To update background colour of (T - strength-tincture):
 To decide which number is the alchemy key of (A - strength-tincture):
 	decide on 1.
 
-Carry out quaffing strength-tincture:
-	allocate 3 seconds;
-	say "You pull out the tiny stopper and down the glowing liquid.[unless saved-flat-strength > 26]You feel much, much stronger! [one of][line break][variable custom style]Wooow![roman type][line break][or][stopping]Time to go kick some ass![end if]";
+To compute alchemy product effect of (Q - strength-tincture):
+	say "[unless saved-flat-strength > 26]You feel much, much stronger! [one of][line break][variable custom style]Wooow![roman type][line break][or][stopping]Time to go kick some ass![end if]";
 	let T be a random number between 10 and 15;
 	now strength-timer of strength-tincture is T * 6;
 	while saved-flat-strength < 30 and T > 0:
 		decrease T by 1;
 		increase strength-bonus of strength-tincture by 1;
 		now saved-flat-strength is the flat strength of the player;
-	if the noun is cursed, now strength-timer of strength-tincture is 7;
-	if the noun is blessed, increase strength-timer of strength-tincture by 20.
+	if Q is cursed, now strength-timer of strength-tincture is 7;
+	if Q is blessed, increase strength-timer of strength-tincture by 20.
 
 An all time based rule (this is the strength tincture decay rule):
 	if strength-timer of strength-tincture > 0:
@@ -1535,6 +1569,9 @@ To say ExamineDesc of (C - acceleration-tincture):
 	if C is sure and C is cursed, say "Since it is cursed, using it would probably only give you the side-effects. Perhaps you could find some other use for it, for example gifting.";
 	otherwise say "[if C is sure and C is blessed]The blessed magic will make the duration of the acceleration significantly longer.[otherwise][line break][end if]".
 
+To say QuaffFlav of (A - acceleration-tincture):
+	say "You pull out the tiny stopper and down the glowing liquid. ".
+
 To update background colour of (T - acceleration-tincture):
 	let A be appearance corresponding to an Magic of 1 in the Table of Drinks;
 	now the backgroundColour of T is the TQcolour of A.
@@ -1542,16 +1579,15 @@ To update background colour of (T - acceleration-tincture):
 To decide which number is the alchemy key of (A - acceleration-tincture):
 	decide on 2.
 
-Carry out quaffing acceleration-tincture:
-	allocate 3 seconds;
-	say "You pull out the tiny stopper and down the glowing liquid. [unless saved-flat-dexterity > 26 or the noun is cursed]Time seems to noticeably slow down around you, giving you loads of time to react to things. [one of][line break][variable custom style]Wooow![roman type][line break][or][stopping]You feel like running a marathon![end if][line break]Your [BellyDesc] rumbles worryingly...";
+To compute alchemy product effect of (Q - acceleration-tincture):
+	say "[unless saved-flat-dexterity > 26 or Q is cursed]Time seems to noticeably slow down around you, giving you loads of time to react to things. [one of][line break][variable custom style]Wooow![roman type][line break][or][stopping]You feel like running a marathon![end if][line break]Your [BellyDesc] rumbles worryingly...";
 	let T be a random number between 10 and 15;
 	now acceleration-timer of acceleration-tincture is T * 6;
 	while saved-flat-dexterity < 30 and T > 0:
 		decrease T by 1;
 		increase acceleration-bonus of acceleration-tincture by 1;
-	if the noun is cursed, now acceleration-bonus of acceleration-tincture is 0;
-	if the noun is blessed, increase acceleration-timer of acceleration-tincture by 20.
+	if Q is cursed, now acceleration-bonus of acceleration-tincture is 0;
+	if Q is blessed, increase acceleration-timer of acceleration-tincture by 20.
 
 An all time based rule (this is the acceleration tincture decay rule):
 	if acceleration-timer of acceleration-tincture > 0:
@@ -1590,16 +1626,18 @@ To say ExamineDesc of (C - luck-tincture):
 	if C is sure and C is cursed, say "Since it is cursed, using it would probably only make you THINK you were lucky, and perhaps in fact leave you a lot less lucky than you are now. Perhaps you could find some other use for it, for example gifting.";
 	otherwise say "[if C is sure and C is blessed]The blessed magic will make the duration of the luck significantly longer.[otherwise][line break][end if]".
 
+To say QuaffFlav of (A - luck-tincture):
+	say "You pull out the tiny stopper and down the golden liquid. ".
+
 To decide which number is the alchemy key of (A - luck-tincture):
 	decide on 35.
 
-Carry out quaffing luck-tincture:
-	allocate 3 seconds;
-	say "You pull out the tiny stopper and down the golden liquid. A golden aura begins to shimmer around you.[line break][variable custom style][one of]I feel amazing! Maybe I should look for things that would usually require me to get lucky...[or]I feel lucky![stopping][roman type][line break]";
+To compute alchemy product effect of (Q - luck-tincture):
+	say "A golden aura begins to shimmer around you.[line break][variable custom style][one of]I feel amazing! Maybe I should look for things that would usually require me to get lucky...[or]I feel lucky![stopping][roman type][line break]";
 	let T be a random number between 10 and 15;
 	now luck-timer of luck-tincture is T * 6;
-	if the noun is cursed, decrease the raw luck of the player by 25;
-	if the noun is blessed, increase luck-timer of luck-tincture by 20.
+	if Q is cursed, decrease the raw luck of the player by 25;
+	if Q is blessed, increase luck-timer of luck-tincture by 20.
 
 An all time based rule (this is the luck tincture decay rule):
 	if luck-timer of luck-tincture > 0:

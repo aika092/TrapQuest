@@ -58,6 +58,9 @@ To say ExamineDesc of (C - a tentacle-breeder):
 	otherwise:
 		say "A messy dome of grey flesh is stuck to one wall, with rapidly pulsating holes, kind of like spasming assholes. There is a translucent barrier covering it, which seems to vibrate in time with [magic-cost of C] eldritch seals etched into the ground below it. [if the magic power of the player >= magic-cost of C]For some reason, you feel like you might be able to [bold type]purify[roman type] the corrupt substance and halt the spawning of tentacle monsters into this region[otherwise if there is a held pure totem or ritual-beads is held and the size of ritual-beads >= 7]For some reason, you feel like you have a magical item you can use to [bold type]purify[roman type] the corrupt substance and halt the spawning of tentacle monsters into this region[otherwise]You feel like you won't be able to halt the spawning of tentacle monsters here until you have enough power to overcome all the seals[end if].".
 
+Report going when there is a tentacle-breeder in the location:
+	if inhuman pregnancy >= 2, compute addiction reflection on "pregnancy".
+
 A later time based rule (this is the tentacle breeder makes you horny rule):
 	if inhuman pregnancy >= 2:
 		let TB be a random tentacle-breeder in the location of the player;

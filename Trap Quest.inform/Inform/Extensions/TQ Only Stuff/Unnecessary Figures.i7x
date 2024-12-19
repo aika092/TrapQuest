@@ -6,6 +6,9 @@ To decide which figure-name is Figure of acolyte 5:
 To decide which figure-name is Figure of demoness cutscene 15:
 	decide on figure of small image.
 
+To decide which figure-name is Figure of dildo pole dq:
+	decide on figure of small image.
+
 To decide which figure-name is Figure of ghost 6:
 	decide on figure of small image.
 To decide which figure-name is Figure of ghost 7:
@@ -62,12 +65,15 @@ To decide which figure-name is Figure of Dark Princess 4:
 To decide which figure-name is Figure of Dark Princess 5:
 	decide on figure of small image.
 
-To decide which figure-name is Figure of babified shopkeeper urinal:
+To decide which figure-name is Figure of tug of war predicament:
 	decide on figure of small image.
 
 To decide which figure-name is Figure of Vines Cutscene 3a:
 	decide on figure of small image.
 To decide which figure-name is Figure of Vines Cutscene 3b:
+	decide on figure of small image.
+
+To decide which figure-name is Figure of walled creature slime diaper:
 	decide on figure of small image.
 
 To decide which figure-name is Figure of cutscene-xavier-nightmare-diaper-clean:

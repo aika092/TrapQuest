@@ -136,14 +136,14 @@ To update arms:
 	let A2 be entry 2 in the armUses of arms;
 	truncate the armUses of arms to 0 entries; [Rebuild the arm uses list starting here]
 	repeat with TA running through the temporaryArmUses of arms: [Firstly anything compulsory]
+		if debugmode > 1, say "Adding [TA] to the uses of arms.";
 		add TA to the armUses of arms;
 	follow the update optional arm uses rule;
+	if debugmode > 1, say "After optional, uses of arms are [armUses of arms].";
 	truncate armUses of arms to 2 entries; [failsafe]
 	while the number of entries in the armUses of arms < 2:
 		add arms to the armUses of arms; [It MUST actually have 2 entries or bad things can happen]
 	let UAL be 0;
-	let UI be 0;
-	let UC be 0;
 	let A1R be A1;
 	let A2R be A2;
 	if the player is not possessing a vagina: [Redirect vagina to penis]
@@ -162,14 +162,7 @@ To update arms:
 		if A2 is body part and A2 is not arms and A2 is not listed in the armUses of arms:
 			if the number of reactive people > 0 and the lewdly exposed outrage of A2R > 0, say "[if the number of entries in temporaryArmUses of arms > 0]You have to briefly remove your arm from[otherwise]Your arm is no longer[end if] covering your [ShortDesc of A2R] in front of the [list of reactive people].";
 			now UAL is 1;
-	if A1 is not entry 1 of the armUses of arms:
-		if A1 is worn or entry 1 of the armUses of arms is worn, now UC is 1;
-		if A1 is carried or entry 1 of the armUses of arms is carried, now UI is 1;
-	if A2 is not entry 2 of the armUses of arms:
-		if A2 is worn or entry 2 of the armUses of arms is worn, now UC is 1;
-		if A2 is carried or entry 2 of the armUses of arms is carried, now UI is 1;
-	if UC is 1, force clothing-focus redraw;
-	if UI is 1, force inventory-focus redraw;
+	if A1 is fake-baby and A1 is not entry 1 in the armUses of arms, say "[if the number of entries in temporaryArmUses of arms > 0]You have to briefly remove your finger from[otherwise]Your finger is no longer[end if] touching the hidden button on the doll.";
 	if current-predicament is team-girlfriends-predicament and the player is in a predicament room:
 		if gSnogged is 0 and girlfriend-partner is snogged:
 			say "You push your body up against [NameDesc of team-predicament-partner][']s, pushing your ring gags together and connecting tongues. You move your free hand to the vibrator between [his of team-predicament-partner] legs, and [he of team-predicament-partner] does the same to you. Your crotch vibrators turn off, and your nipple vibrators turn on. It now looks to any on-lookers like two women engaged in a deep kiss with some light fingering.";
@@ -187,11 +180,14 @@ This is the update compulsory arm uses rule:
 			if the wornArmsRequired of C > 0:
 				if debugmode > 0, say "[BigNameDesc of C] requires the use of [if the wornArmsRequired of C is 1]one arm[otherwise]both arms[end if] next turn.";
 				repeat with N running from 1 to the wornArmsRequired of C:
-					add C to the temporaryArmUses of arms.
+					add C to the temporaryArmUses of arms;
+		if current-predicament is team-three-leg-predicament and girlfriend-partner is in the location of the player:
+			add girlfriend-partner to the temporaryArmUses of arms;
+			add girlfriend-partner to the temporaryArmUses of arms.
 
 This is the update optional arm uses rule:
 	if realisticArms is 1:
-		if the player is prone:
+		if the player is prone and the number of sat-on breastfeeding-bench is 0:
 			let N be 2 - the number of entries in armUses of arms;
 			if N > 0:
 				say "[one of][bold type]You [if the player is not shameless]can't shield your appearance with your arms because you [end if]have to use [if N is 1]your arm[otherwise]both of your arms[end if] to keep yourself on your hands and knees.[roman type][line break][or][stopping]";
@@ -267,7 +263,9 @@ To change default arm positions:
 		if enema-backpack is worn, set numerical response 5 to "behind your head";
 		if painted-vibrator-hands is worn, set numerical response 5 to "over the missing hand print to the left of your clit";
 		if broomstick is worn, set numerical response 5 to "holding down one of the buttons on your broomstick";
+		if fake-baby is worn, set numerical response 5 to "holding down one of the buttons on your fake baby";
 		if current-predicament is vibe-photo-predicament and the player is in Predicament01, set numerical response 5 to "making a peace sign to the side, blocking any green from the camera";
+		if current-predicament is team-three-leg-predicament and the player is in a predicament room, set numerical response 5 to "holding up a peace sign";
 		set numerical response 0 to "by your side";
 		compute multiple choice question;
 		if player-numerical-response is 0:
@@ -283,8 +281,12 @@ To change default arm positions:
 				now the defaultLeftTarget of arms is painted-vibrator-hands;
 			otherwise if broomstick is worn:
 				now the defaultLeftTarget of arms is broomstick;
+			otherwise if fake-baby is worn:
+				now the defaultLeftTarget of arms is fake-baby;
 			otherwise if current-predicament is vibe-photo-predicament:
 				now the defaultLeftTarget of arms is vibe-photo-predicament;
+			otherwise if current-predicament is team-three-leg-predicament:
+				now the defaultLeftTarget of arms is team-three-leg-predicament;
 			otherwise:
 				now the defaultLeftTarget of arms is hair;
 		otherwise:
@@ -298,6 +300,7 @@ To change default arm positions:
 		if enema-backpack is worn, set numerical response 5 to "behind your head";
 		if painted-vibrator-hands is worn, set numerical response 5 to "over the missing hand print to the right of your clit";
 		if broomstick is worn, set numerical response 5 to "holding down one of the buttons on your broomstick";
+		if fake-baby is worn, set numerical response 5 to "holding down one of the buttons on your fake baby";
 		if current-predicament is vibe-photo-predicament and the player is in Predicament01, set numerical response 5 to "making a peace sign to the side, blocking any green from the camera";
 		set numerical response 0 to "by your side";
 		compute multiple choice question;
@@ -314,8 +317,12 @@ To change default arm positions:
 				now the defaultRightTarget of arms is painted-vibrator-hands;
 			otherwise if broomstick is worn:
 				now the defaultRightTarget of arms is broomstick;
+			otherwise if fake-baby is worn:
+				now the defaultRightTarget of arms is fake-baby;
 			otherwise if current-predicament is vibe-photo-predicament:
 				now the defaultRightTarget of arms is vibe-photo-predicament;
+			otherwise if current-predicament is team-three-leg-predicament:
+				now the defaultRightTarget of arms is team-three-leg-predicament;
 			otherwise:
 				now the defaultRightTarget of arms is hair;
 		otherwise:
@@ -323,6 +330,7 @@ To change default arm positions:
 
 ArmDeciding is an action applying to one thing.
 Check ArmDeciding:
+	if current-predicament is team-three-leg-predicament and the player is in a predicament room and the player is not in Predicament20, say "[variable custom style]I can't do that - what if someone took a picture of me?! I'd receive a constant 5000 volts of pain to the most sensitive place in my body![roman type][line break]" instead;
 	if the player is shameless and (current-predicament is not vibe-photo-predicament or the player is not in Predicament01), say "You are too much of an exhibitionist to cover up your body parts with your arms!" instead.
 Carry Out ArmDeciding:
 	change default arm positions;

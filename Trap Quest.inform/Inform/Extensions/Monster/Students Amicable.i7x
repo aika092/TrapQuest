@@ -67,13 +67,14 @@ To say EscapeAnswer of (M - an amicable student):
 To say AdviceAnswer of (M - an amicable student):
 	say "[speech style of M]'You should try and pace yourself. Trying to jump in the deep end before you're ready probably won't go too well.'[roman type][line break]".]
 
-To compute teaching of (M - an amicable student):
+To compute teaching offer of (M - an amicable student):
 	say "[speech style of M]'Haha, no, I'm not a teacher!'[roman type][line break]".
 
 To say detention chair tease of (M - an amicable student):
 	say "[speech style of M]'[one of]Oh baby, it looks like you're struggling there. I hope they let you out soon. Oh also, you look pathetic, by the way. Sorry. But it's true.'[or]I've been told I'm supposed to tease you. So, here I am. You do look pretty ridiculous right now, I guess.'[in random order][roman type][line break]".
 
 To compute (M - an amicable student) protecting against (X - a monster):
+	unless X is nurse, say "[BigNameDesc of M] sees that you and [NameDesc of X] [if the health of X < the maxhealth of X]are in combat[otherwise]have adopted fighting stances[end if].";
 	if M is buddy and X is nasty student:
 		say "[speech style of M]'Leave [him of the player] alone!'[roman type][line break]";
 		compute X receiving 2 damage from M;
@@ -119,7 +120,7 @@ To say StoryAnswer of (M - student-rosie):
 To say AdviceAnswer of (M - student-rosie):
 	say "[speech style of M]'Just do as you're told! I ain't never disobeyed a word a teacher said an['] it never hurt me none!'[roman type][line break]".
 
-To compute teaching of (M - student-rosie):
+To compute teaching offer of (M - student-rosie):
 	say "[speech style of M]'I'm here to learn, not sell my daddy's hard won farmin['] secrets!'[roman type][line break]".
 
 To say kissPunishmentDesc of (ST - student-rosie):

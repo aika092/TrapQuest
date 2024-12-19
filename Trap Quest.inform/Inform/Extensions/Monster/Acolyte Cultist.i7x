@@ -5,6 +5,7 @@ An acolyte is a kind of monster. An acolyte is usually intelligent. An acolyte i
 A monster can be previously-cultist. [They were already a cultist once]
 
 Definition: an acolyte is wenchy: decide yes.
+Definition: an acolyte is willing to potion forcefeed: decide yes.
 
 Definition: an acolyte is mansion dwelling: decide yes.
 
@@ -89,7 +90,7 @@ To say MonsterDesc of (M - an acolyte):
 	if the chant-duration of M > 0, say "[big his of M] body is currently surrounded by a faint magenta glow.".
 
 To say MonsterComment of (M - an acolyte):
-	say "[if the class of the player is cultist and the bimbo of the player <= 8][line break][first custom style][one of]I'm just glad this outfit fools the cultists.[or]I need to blend in, it makes this place much safer.[in random order][otherwise if the class of the player is cultist][line break][second custom style][one of]Yay, another [brother of M] in service of the [great ones]! Wait, what?[or]I hope my [brother of M]'s not sad that the [great ones] haven't blessed [him of M] yet.[in random order][otherwise if the bimbo of the player <= 8][first custom style]This could be a problem[otherwise][second custom style][big he of M][']s sexy but seems kind of dangerous...[end if][roman type][line break]".
+	say "[if the class of the player is cultist and the bimbo of the player <= 8][line break][first custom style][one of]I'm just glad this outfit fools the cultists.[or]I need to blend in, it makes this place much safer.[in random order][otherwise if the class of the player is cultist][line break][second custom style][one of]Yay, another [brother of M] in service of the [great ones]! Wait, what?[or]I hope my [brother of M]'s not sad that the [great ones] haven't blessed [him of M] yet.[in random order][otherwise if the bimbo of the player <= 8][first custom style]This could be a problem.[otherwise][second custom style][big he of M][']s sexy but seems kind of dangerous...[end if][roman type][line break]".
 
 To say MonsterDesc of (M - a mindless acolyte):
 	if diaper quest is 1:
@@ -731,7 +732,7 @@ To say BanishFleeFlav of (M - an acolyte):
 					summon N in the dungeon;
 				otherwise:
 					summon N in the woods;
-				now the monstersetup of N is 0;
+				now the monstersetup of N is 1;
 			cutshow examine-image of N for M;
 
 To compute unique banishment of (M - an acolyte):

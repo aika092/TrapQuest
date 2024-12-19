@@ -33,20 +33,23 @@ To compute mass collectible reward of (T - a sanity token):
 			let E be the raw oral sex addiction of the player;
 			let F be the raw bbc addiction of the player / 2;
 			let G be the raw semen addiction of the player / 2;
-			if A > B and A > C and A > D and A > E and A > F and A > G:
+			let H be the raw grossness addiction of the player / 2;
+			if A > B and A > C and A > D and A > E and A > F and A > G and A > H:
 				SexAddictDown 1;
-			otherwise if B > C and B > D and B > E and B > F and B > G:
+			otherwise if B > C and B > D and B > E and B > F and B > G and B > H:
 				TitfuckAddictDown 1;
-			otherwise if C > D and C > E and C > F and C > G:
+			otherwise if C > D and C > E and C > F and C > G and C > H:
 				AnalSexAddictDown 1;
-			otherwise if D > E and D > F and D > G:
+			otherwise if D > E and D > F and D > G and D > H:
 				VaginalSexAddictDown 1;
-			otherwise if E > F and E > G:
+			otherwise if E > F and E > G and E > H:
 				OralSexAddictDown 1;
-			otherwise if F > G:
+			otherwise if F > G and F > H:
 				BBCAddictDown 1;
-			otherwise:
+			otherwise if G > H:
 				SemenAddictDown 1;
+			otherwise:
+				GrossnessAddictDown 1;
 	repeat with X running through held sanity tokens:
 		destroy X;
 	reset alchemy charge.

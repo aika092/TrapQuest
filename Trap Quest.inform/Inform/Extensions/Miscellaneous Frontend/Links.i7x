@@ -246,10 +246,10 @@ To conclude consenting:
 		if bigGameLoop < 3, render buffered stuff.
 
 To temporaryYesNoBackgroundReset:
-	let W be current focus window;
+	[let W be current focus window;
 	focus main window;
-	[say "temporaryYesNoBackgroundReset.";]
-	focus W;
+	say "temporaryYesNoBackgroundReset.";
+	focus W;]
 	now temporaryYesNoBackground is figure of small image;
 	now temporaryYesNoResetNeeded is true.
 
@@ -258,8 +258,8 @@ Definition: yourself is bimbo consenting:
 	if the player is consenting:
 		decide yes;
 	otherwise:
-		if the player is not in a predicament room and (the implant of pledge-lesson-yes is 1 or the bimbo of the player >= a random number between 16 and 20):
-			say "[if the implant of pledge-lesson-yes is 1]The magic pledge activates.[line break][second custom style][otherwise][second custom style]Huh? [end if]Good [boy of the player]s always say yes! I pick yes![roman type][line break]";
+		if the player is not in a predicament room and (pledge-lesson-yes is implanted or the bimbo of the player >= a random number between 16 and 20):
+			say "[if pledge-lesson-yes is implanted]The magic pledge activates.[line break][second custom style][otherwise][second custom style]Huh? [end if]Good [boy of the player]s always say yes! I pick yes![roman type][line break]";
 			decide yes;
 		decide no.
 

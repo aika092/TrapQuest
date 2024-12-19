@@ -9,7 +9,7 @@ To decide which figure-name is the examine-image of (C - wishing well):
 To say ExamineDesc of (C - wishing well):
 	say "A deep well. Traditionally, people would throw something valuable down here when making a wish.".
 
-Definition: A wishing well is immune to change: decide yes.
+Definition: wishing well is immune to change: decide yes.
 
 Check inserting something into wishing well:
 	try WellWishing the noun instead.
@@ -37,6 +37,7 @@ Carry out WellWishing:
 	set next numerical response to "wish for purification";
 	set next numerical response to "wish for healing";
 	set next numerical response to "wish for items";
+	if there is worn locked clothing, set next numerical response to "wish for unlocked clothing";
 	set next numerical response to "just donate";
 	set next numerical response to "don't make a wish";
 	compute multiple choice question;
@@ -49,6 +50,8 @@ Carry out WellWishing:
 		now wish-type is 2;
 	otherwise if MCQ matches the text "items":
 		now wish-type is 3;
+	otherwise if MCQ matches the text "unlocked":
+		now wish-type is 4;
 	[Next, we find out what the "offering" is and how much it's worth.]
 	if the noun is vessel:
 		say "You pour the [ShortDesc of the noun] into the well. A satisfying splash can be heard as its contents meet with the water at the bottom. An ephemeral voice speaks inside your head.";
@@ -67,7 +70,7 @@ Carry out WellWishing:
 	otherwise:
 		say "You toss the [ShortDesc of the noun] into the well. A satisfying plunk can be heard as it hits the water at the bottom. An ephemeral voice speaks inside your head.";
 		if the noun is plentiful accessory:
-			increase offer-value by the price of the noun;
+			increase offer-value by 2 + the price of the noun;
 		otherwise:[Infernal gem]
 			let A be a random off-stage plentiful accessory;
 			unless A is accessory:
@@ -126,6 +129,8 @@ Carry out WellWishing:
 				compute WellPurifying for offer (offer-value + the stored-offerings of wishing well) with roll 0;
 			otherwise if wish-type is 2:
 				compute WellHealing for offer (offer-value + the stored-offerings of wishing well) with roll 0;
+			otherwise if wish-type is 4:
+				compute WellUnlocking for offer (offer-value + the stored-offerings of wishing well);
 			otherwise:
 				compute WellItems for offer (offer-value + the stored-offerings of wishing well) with roll 0;
 	unless the noun is vessel, only destroy the noun.
@@ -271,6 +276,22 @@ To compute WellHealing for offer (N - a number) with roll (R - a number):
 	if wish-done is 0:
 		if N >= 100, compute WellHealing for offer 100 with roll 1;
 		otherwise increase the stored-offerings of wishing well by (N - the stored-offerings of wishing well);
+
+
+To compute WellUnlocking for offer (N - a number):
+	let wish-done be 0;
+	if N > a random number between 10 and 30:
+		say "Accepted... Metal... Turning...[roman type][line break]";
+		let C be a random worn locked clothing;
+		say "You hear a loud metal CLICK as [NameDesc of C] becomes unlocked!";
+		unlock C;
+		now the stored-offerings of wishing well is 0;
+		now wish-done is 1;
+	otherwise:
+		say "Rejected... Metal... Resistant...[roman type][line break]";
+	if wish-done is 0:
+		if N >= 100, compute WellHealing for offer 100 with roll 1;
+		otherwise increase the stored-offerings of wishing well by (N - the stored-offerings of wishing well).
 
 To compute WellItems for offer (N - a number) with roll (R - a number):
 	let wish-done be 0;

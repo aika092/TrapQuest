@@ -57,9 +57,7 @@ Definition: centaur is musky:
 Definition: centaur is a tripper: decide no.
 Definition: centaur is father material: decide yes.
 Definition: centaur is throater: decide yes.
-Definition: centaur is wenchy:
-	if the player is the donator, decide yes;
-	decide no.
+Definition: centaur is wenchy: decide yes.
 
 To say LongDickDesc of (M - centaur):
 	say "massive 2-foot equine [DickDesc of M]".

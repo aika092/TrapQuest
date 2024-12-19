@@ -2,38 +2,112 @@ Stealth Dresses by Dresses begins here.
 
 Part 1 - Kimono of Illusions
 
-illusory kimono is an overdress. illusory kimono is unique. illusory kimono is hobble-skirted. illusory kimono is crotch-skirted. illusory kimono is leg covering. illusory kimono is only arm covering. illusory kimono is fully covering. illusory kimono is silk.
-The printed name of illusory kimono is "[clothing-title-before]kimono of illusions[clothing-title-after]". Understand "illusions", "of illusions" as illusory kimono. The text-shortcut of illusory kimono is "koi".
+An illusory kimono is a kind of overdress. an illusory kimono is unique. an illusory kimono is only arm covering. an illusory kimono is fully covering. an illusory kimono is silk. Understand "kimono" as an illusory kimono.
 
-Definition: illusory kimono is fluid immune: decide yes.
-Definition: illusory kimono is red themed: decide yes.
-Definition: illusory kimono is slitted: decide yes.
+Definition: an illusory kimono is fluid immune: decide yes.
+Definition: an illusory kimono is flower themed: decide yes.
 
-To decide which number is the stealth-influence of (C - illusory kimono):
+To decide which number is the stealth-influence of (C - an illusory kimono):
 	decide on 3 + the magic-modifier of C.
 
-Definition: illusory kimono is class-transformation-protected:
+Definition: an illusory kimono is class-relevant:
 	if the class of the player is vixen, decide yes;
 	decide no.
-Definition: illusory kimono is potentially erection concealing: decide yes. [non-tight skirts conceal erections]
+Definition: an illusory kimono is potentially erection concealing: decide yes. [non-tight skirts conceal erections]
 
-To say ShortDesc of (C - illusory kimono):
+To say ShortDesc of (C - an illusory kimono):
+	say "kimono".
+To say MediumDesc of (C - an illusory kimono):
 	say "flower-patterned kimono".
 
-To decide which figure-name is clothing-image of (C - illusory kimono):
-	decide on figure of kimono.
+kimono-of-illusions is an illusory kimono. The skirt-length of kimono-of-illusions is 9. kimono-of-illusions is leg covering.
 
-Figure of kimono is the file "Items/Clothes/Upper/Special/kimono1.png".
+The printed name of kimono-of-illusions is "[clothing-title-before]kimono of illusions[clothing-title-after]". Understand "illusions", "of illusions" as kimono-of-illusions. The text-shortcut of kimono-of-illusions is "koi".
 
-To say ClothingDesc of (C - illusory kimono):
+Definition: kimono-of-illusions is red themed: decide yes.
+Definition: kimono-of-illusions is slitted: decide yes.
+
+To decide which figure-name is clothing-image of (C - kimono-of-illusions):
+	decide on figure of kimono-of-illusions.
+
+Figure of kimono-of-illusions is the file "Items/Clothes/Upper/Special/kimono1.png".
+
+To say ClothingDesc of (C - kimono-of-illusions):
 	say "A beautiful flower-patterned kimono, it shimmers in the light. It weighs so little, if you didn't know any better you would say it didn't exist at all. You get the feeling that a skilled wearer could move about very quietly and subtly in this magical garment.".
 
-To compute SelfExamineDesc of (C - illusory kimono):
+To compute SelfExamineDesc of (C - kimono-of-illusions):
 	say "You are wearing a shimmering kimono. While it covers you completely, somehow it feels extremely immodest, as though you're actually naked.".
+
+To decide which object is the unique-upgrade-target of (C - kimono-of-illusions):
+	if kimono-of-misdirection is off-stage, decide on kimono-of-misdirection;
+	decide on nothing.
+
+kimono-of-misdirection is an illusory kimono. The skirt-length of kimono-of-misdirection is 4.
+
+The printed name of kimono-of-misdirection is "[clothing-title-before]kimono of misdirection[clothing-title-after]". Understand "misdirection", "of misdirection" as kimono-of-misdirection. The text-shortcut of kimono-of-misdirection is "kom".
+
+Definition: kimono-of-misdirection is red themed: decide yes.
+
+To decide which figure-name is clothing-image of (C - kimono-of-misdirection):
+	decide on figure of kimono-of-misdirection.
+
+Figure of kimono-of-misdirection is the file "Items/Clothes/Upper/Special/kimono2.png".
+
+To say ClothingDesc of (C - kimono-of-misdirection):
+	say "A beautiful flower-patterned kimono, it shimmers in the light. It weighs so little, if you didn't know any better you would say it didn't exist at all. You get the feeling that a skilled wearer could move about very quietly and subtly in this magical garment. The skirt is a lot shorter than its sibling, the kimono of illusions.".
+
+To compute SelfExamineDesc of (C - kimono-of-misdirection):
+	say "You are wearing a shimmering kimono. While it covers you completely, except your thighs, somehow it feels extremely immodest, as though you're actually naked.".
+
+To decide which object is the unique-upgrade-target of (C - kimono-of-misdirection):
+	if (diaper quest is 1 or there is a worn diaper) and kimono-of-deception is off-stage, decide on kimono-of-deception;
+	if diaper quest is 0 and kimono-of-distraction is off-stage, decide on kimono-of-distraction;
+	decide on nothing.
+
+kimono-of-distraction is an illusory kimono. kimono-of-distraction is low cut. The skirt-length of kimono-of-distraction is 2.
+
+The printed name of kimono-of-distraction is "[clothing-title-before]kimono of distraction[clothing-title-after]". Understand "distraction", "of distraction" as kimono-of-distraction. The text-shortcut of kimono-of-distraction is "kods".
+
+Definition: kimono-of-distraction is yellow themed: decide yes.
+Definition: kimono-of-distraction is black themed: decide yes.
+
+To decide which figure-name is clothing-image of (C - kimono-of-distraction):
+	decide on figure of kimono-of-distraction.
+
+Figure of kimono-of-distraction is the file "Items/Clothes/Upper/Special/kimono3.png".
+
+To say ClothingDesc of (C - kimono-of-distraction):
+	say "A beautiful flower-patterned kimono, it shimmers in the light. It weighs so little, if you didn't know any better you would say it didn't exist at all. You get the feeling that a skilled wearer could move about very quietly and subtly in this magical garment. The cut is very exposing, revealing both a lot of cleavage, and most of the wearer's crotch.".
+
+To compute SelfExamineDesc of (C - kimono-of-distraction):
+	say "You are wearing a shimmering kimono. While it covers you completely, except your thighs, somehow it feels extremely immodest, as though you're actually naked.".
+
+kimono-of-deception is an illusory kimono. kimono-of-deception is high cut. The skirt-length of kimono-of-deception is 6.
+
+The printed name of kimono-of-deception is "[clothing-title-before]kimono of deception[clothing-title-after]". Understand "deception", "of deception" as kimono-of-deception. The text-shortcut of kimono-of-deception is "kodc".
+
+Definition: kimono-of-deception is pink themed: decide yes.
+Definition: kimono-of-deception is bear themed: decide yes.
+Definition: kimono-of-deception is bow themed: decide yes.
+Definition: kimono-of-deception is flower themed: decide no.
+
+To decide which figure-name is clothing-image of (C - kimono-of-deception):
+	decide on figure of kimono-of-deception.
+
+Figure of kimono-of-deception is the file "Items/Clothes/Upper/Special/kimono4.png".
+
+To say ClothingDesc of (C - kimono-of-deception):
+	say "A beautiful gingham-patterned kimono, it shimmers in the light. It weighs so little, if you didn't know any better you would say it didn't exist at all. You get the feeling that a skilled wearer could move about very quietly and subtly in this magical garment. It is covered in girly bows and teddy bears, clearly intended to make the wearer look like a harmless babygirl... Right up until the point that [he of the player] slits your throat.".
+
+To compute SelfExamineDesc of (C - kimono-of-deception):
+	say "You are wearing a shimmering kimono.".
+
+To decide which number is the initial cringe of (C - kimono-of-deception):
+	decide on 6.
 
 Part 2 - Commando Outfit
 
-commando outfit is an overdress. commando outfit is rare. commando outfit is unskirted. commando outfit is crotch-intact. commando outfit is only arm covering. commando outfit is high cut. commando outfit is lycra.
+commando outfit is an overdress. commando outfit is rare. The skirt-length of commando outfit is 0. commando outfit is crotch-intact. commando outfit is only arm covering. commando outfit is high cut. commando outfit is lycra.
 The printed name of commando outfit is "[clothing-title-before]commando outfit[clothing-title-after]". The text-shortcut of commando outfit is "cmnd".
 
 To decide which figure-name is clothing-image of (C - commando outfit):
@@ -100,7 +174,7 @@ To decide which object is the unique-upgrade-target of (C - cat burglar outfit):
 
 Part 4 - Cat Burglar Dress
 
-cat burglar dress is an overdress. cat burglar dress is unique. cat burglar dress is latex. cat burglar dress is only arm covering. cat burglar dress is leg covering. cat burglar dress is very low cut. cat burglar dress is short.
+cat burglar dress is an overdress. cat burglar dress is unique. cat burglar dress is latex. cat burglar dress is only arm covering. cat burglar dress is leg covering. cat burglar dress is very low cut. The skirt-length of cat burglar dress is 4.
 The printed name of cat burglar dress is "[clothing-title-before][MediumDesc of item described][clothing-title-after]". The text-shortcut of a cat burglar dress is "ssts". Understand "Snowball", "Snowball's", "slutsuit", "speed", "of speed" as cat burglar dress.
 
 To decide which figure-name is clothing-image of (C - cat burglar dress):

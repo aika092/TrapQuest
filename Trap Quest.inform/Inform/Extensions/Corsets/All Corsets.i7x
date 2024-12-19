@@ -1,6 +1,6 @@
 All Corsets by Corsets begins here.
 
-ballet corset is a corset. ballet corset is top-exclusive. ballet corset is pvc. ballet corset is transformation-rare. ballet corset is normally-nipple-covering. ballet corset is average cut. ballet corset is super-short.
+ballet corset is a corset. ballet corset is top-exclusive. ballet corset is pvc. ballet corset is transformation-rare. ballet corset is normally-nipple-covering. ballet corset is average cut. The skirt-length of ballet corset is 1.
 
 The text-shortcut of ballet corset is "bcst".
 
@@ -166,7 +166,7 @@ Understand "bondage" as bondage-corset.
 To decide which number is the initial outrage of (C - bondage-corset):
 	decide on 6.
 
-skirted-bondage-corset is a corset. skirted-bondage-corset is latex. skirted-bondage-corset is unique. skirted-bondage-corset is hobble-skirted. skirted-bondage-corset is crotch-skirted. skirted-bondage-corset is fully exposing. skirted-bondage-corset is neck covering. skirted-bondage-corset is enema-helping.
+skirted-bondage-corset is a corset. skirted-bondage-corset is latex. skirted-bondage-corset is unique. The skirt-length of skirted-bondage-corset is 9. skirted-bondage-corset is crotch-skirted. skirted-bondage-corset is fully exposing. skirted-bondage-corset is neck covering. skirted-bondage-corset is enema-helping.
 
 The text-shortcut of skirted-bondage-corset is "sbct".
 
@@ -189,7 +189,7 @@ Understand "skirted", "bondage" as skirted-bondage-corset.
 To decide which number is the initial outrage of (C - skirted-bondage-corset):
 	decide on 12.
 
-skirted-maid-corset is a corset. skirted-maid-corset is latex. skirted-maid-corset is unique. skirted-maid-corset is short. skirted-maid-corset is fully exposing. skirted-maid-corset is neck covering. skirted-maid-corset is only arm covering.
+skirted-maid-corset is a corset. skirted-maid-corset is latex. skirted-maid-corset is unique. The skirt-length of skirted-maid-corset is 4. skirted-maid-corset is fully exposing. skirted-maid-corset is neck covering. skirted-maid-corset is only arm covering.
 
 
 The text-shortcut of skirted-maid-corset is "smct".
@@ -287,6 +287,9 @@ The text-shortcut of santa corset is "san".
 
 Figure of santa corset is the file "Items/Clothes/Upper/Corsets/santacorset1.png".
 
+Definition: santa corset is class-relevant:
+	if the class of the player is santa's little helper, decide yes;
+	decide no.
 Definition: santa corset is christmas themed: decide yes.
 Definition: santa corset is red themed: decide yes.
 

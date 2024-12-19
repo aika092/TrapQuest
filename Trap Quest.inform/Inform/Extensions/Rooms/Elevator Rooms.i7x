@@ -66,7 +66,7 @@ To compute elevator return:
 	if all-completed is true, now FinalBoss01 is not elevator-completed.
 
 
-FinalBoss01 is an elevator-room. FinalBoss01 is elevator-completed. The grid position of FinalBoss01 is <20,1,1>.  The shape of FinalBoss01 is L20/0-0-0-0-0-0. The printed name of FinalBoss01 is "Capsule Chamber". "This is an exact replica of the room that you started in, complete with the capsule that you were put into. You can see that the capsule has a giant STOP button on one side. It also has a number on a screen above it, which you can easily read by examining the button more closely.".
+FinalBoss01 is an elevator-room. FinalBoss01 is elevator-completed. FinalBoss01 is bossed. The grid position of FinalBoss01 is <20,1,1>.  The shape of FinalBoss01 is L20/0-0-0-0-0-0. The printed name of FinalBoss01 is "Capsule Chamber". "This is an exact replica of the room that you started in, complete with the capsule that you were put into. You can see that the capsule has a giant STOP button on one side. It also has a number on a screen above it, which you can easily read by examining the button more closely.".
 
 Definition: FinalBoss01 is appropriate: decide no.
 
@@ -191,8 +191,11 @@ To compute elevator entrance of (ER - SurgeryRoom01):
 				otherwise:
 					say "Two needles are injecting a serum directly into your bladder.";
 				BladderIncontinenceUp surgery-turns;
-				AssFill (belly limit - the total squirtable fill of belly) water;
-				say "A tube has been inserted into your [asshole], and a liquid labelled as [']PLEASURE ENHANCEMENT GEL['] has been pumped inside, making your belly balloon and bloat outwards. It has made your body much more sensitive than normal... Which has meant that the vibrating wands on your nipples have been bringing your body to several orgasms per minute!";
+				if enema fetish is 1:
+					AssFill (belly limit - the total squirtable fill of belly) water;
+					say "A tube has been inserted into your [asshole], and a liquid labelled as [']PLEASURE ENHANCEMENT GEL['] has been pumped inside, making your belly balloon and bloat outwards. It has made your body much more sensitive than normal... Which has meant that the vibrating wands on your nipples have been bringing your body to several orgasms per minute!";
+				otherwise:
+					say "[']PLEASURE ENHANCEMENT GEL['] has been applied to your skin, making your body much more sensitive than normal... Which has meant that the vibrating wands on your nipples have been bringing your body to several orgasms per minute!";
 				say "And finally, it's impossible to ignore the sight of glue being squirted on the inside of a giant waddle diaper that is being pulled up your legs and pressed against your crotch!";
 				repeat with C running through worn clothing:
 					if C is nudism-disabling or C is penetrating a fuckhole:
@@ -226,6 +229,7 @@ To compute elevator entrance of (ER - SurgeryRoom01):
 BellyRoom01 is an elevator-room. The grid position of BellyRoom01 is <10,3,3>. The printed name of BellyRoom01 is "Futuristic Room".
 
 Definition: BellyRoom01 is appropriate:
+	if enema fetish is 0, decide no;
 	if diaper quest is 0 and the player is not a december 2023 top donator, decide no;
 	if diaper quest is 1 and the player is not a december 2023 diaper donator, decide no;
 	if pregnancy fetish is 1 and the player is possessing a vagina, decide yes;
@@ -362,7 +366,7 @@ Check slapping belly-room-gloryhole:
 
 
 A time based rule (this is the belly room gloryhole rule):
-	if the player is in BellyRoom01:
+	if the player is in BellyRoom01 and belly-room-gloryhole is in BellyRoom01:
 		if the gloryhole-state of belly-room-gloryhole is 0:
 			dislodge belly-room-gloryhole;
 			increase the cocks-appeared of belly-room-gloryhole by 1;

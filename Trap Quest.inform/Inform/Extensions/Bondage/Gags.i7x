@@ -127,6 +127,25 @@ Definition: a bit gag is dog themed: decide yes.
 Definition: a bit gag is orange themed: decide yes.
 Definition: a bit gag is fetish appropriate: decide no. [Never appears randomly]
 
+mask-gag is a ballgag. The printed name of mask-gag is "[clothing-title-before]gag behind face mask[clothing-title-after]". The text-shortcut of mask-gag is "mskg".
+
+To say ShortDesc of (C - mask-gag):
+	say "hidden gag".
+
+Figure of mask ballgag is the file "Items/Accessories/Head/maskgag1.jpg".
+Figure of mask pacifier gag is the file "Items/Accessories/Head/maskgag2.jpg".
+
+To decide which figure-name is clothing-image of (C - mask-gag):
+	if diaper quest is 1, decide on figure of mask pacifier gag;
+	decide on figure of mask ballgag.
+
+To say ClothingDesc of (C - mask-gag):
+	say "This [if diaper quest is 1]pacifier [otherwise]ball[end if]gag stops you from speaking. It is hidden behind a surgical mask. It has a small subtle plastic tube running through the centre, allowing you to suck from the drinks hidden in your bag.".
+
+Definition: mask-gag is fetish appropriate: decide no. [Never appears randomly]
+To decide which number is the initial outrage of (C - mask-gag):
+	decide on 1.
+
 outrageous-gag is a humiliating situation.
 Definition: outrageous-gag (called A) is applicable:
 	if diaper quest is 0 and the player is not disgraced and the bimbo of the player < 14 and there is a worn gag, decide yes;

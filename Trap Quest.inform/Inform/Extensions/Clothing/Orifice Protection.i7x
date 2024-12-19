@@ -17,7 +17,7 @@ Does this item cover the player's crotch but not ass?
 +!]
 Definition: a clothing (called C) is pussy protection:
 	if C is crotch-displaced, decide no;
-	if C is crotch-intact or C is crotch-zipped[ or C is crotch-skirted]:
+	if C is crotch-intact or C is crotch-zipped or C is crotch-skirted:
 		if C is crotch-assless, decide yes;
 	decide no.
 [!<ClothingIsNoProtection>+
@@ -205,11 +205,11 @@ Definition: a clothing (called C) is top level ass protection:
 	decide yes.
 
 [This cares about layers more than protection. A 'fully exposing' cupless bra could still be this. Currently unused.]
-[Definition: a clothing (called C) is top level breasts layer:
-	if C is not worn or C is not breast covering or C is not top-placed, decide no;
-	repeat with O running through breast covering top-placed clothing:
+Definition: a clothing (called C) is top level breasts layer:
+	if C is not worn or C is not breast covering, decide no;
+	repeat with O running through breast covering clothing:
 		if the top-layer of O > the top-layer of C, decide no;
-	decide yes.]
+	decide yes.
 
 [This cares about protection than layers. A 'fully exposing' cupless bra could not be this.]
 Definition: a clothing (called C) is top level breasts protection:

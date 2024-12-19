@@ -120,13 +120,13 @@ To check perception of (M - a monster):
 							if C is a sword and C is not dildo sword and the player is getting unlucky:
 								transform C into dildo sword;
 								say GotUnluckyFlav;
-						if hypno-curtsey-trigger > 0 and the player is upright and M is intelligent friendly monster and the player is not wrist bound and the player is able to use manual dexterity and there is a worn knee-length or longer crotch-in-place clothing:
+						if hypno-curtsey-trigger > 0 and the player is upright and M is intelligent friendly monster and the player is not wrist bound and the player is able to use manual dexterity and there is an actually displacable skirted clothing:
 							let R be a random number between 1 and hypno-curtsey-trigger;
 							let HR be 2 + the square root of (the humiliation of the player / 2000);
 							if debuginfo > 0, say "[input-style]Curtsey resistance check: Built-up resistance roll (d[hypno-curtsey-trigger]) = [R] | ([HR].5) Humiliation rating[roman type][line break]";
 							if R <= HR:
 								increase hypno-curtsey-trigger by 1;
-								let C be a random worn knee-length or longer crotch-in-place clothing;
+								let C be a random actually displacable skirted clothing;
 								say "[bold type]You instinctively grab the sides of your [ShortDesc of C] and begin to curtsey.[roman type][line break]";
 								now auto is 1;
 								try displacing C;
@@ -171,6 +171,7 @@ To compute thief perception of (M - a monster):
 
 To reset orifice selection of (M - a monster):
 	now the chosen-orifice of M is nothing;
+	now the chosen-diaper-punishment of M is punishment-not-found;
 	now the selection-frustration of M is 0.
 
 To compute DQ perception of (M - a monster):
@@ -570,13 +571,15 @@ Chapter 3 - Modifying Aggro
 
 To anger (M - a monster): [This should bring the monster just into unfriendly territory.]
 	if the diaper-duration of M > 0, now the diaper-duration of M is the diaper punishment length of M;
+	if M is recently-friendly, now M is recently-unknown; [reset what we know about the friendliness of the NPC]
 	if the favour of M > the aggro limit of M:
-		now M is recently-unknown; [reset what we know about the friendliness of the NPC]
+		now M is recently-unknown;
 		FavourSet M to the aggro limit of M.
 
 To calm (M - a monster): [This should bring the monster just into friendly territory.]
+	if M is recently-unfriendly, now M is recently-unknown; [reset what we know about the friendliness of the NPC]
 	if the favour of M <= the aggro limit of M:
-		now M is recently-unknown; [reset what we know about the friendliness of the NPC]
+		now M is recently-unknown;
 		FavourSet M to the aggro limit of M + 1.
 
 To permanently anger (M - a monster): [This should bring the monster far far into unfriendly territory.]

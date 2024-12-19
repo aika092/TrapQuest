@@ -1,6 +1,6 @@
 Bunny Outfit by Dresses begins here.
 
-A bunny outfit is a kind of overdress. A bunny outfit is usually crotch-intact. A bunny outfit is usually unique. A bunny outfit is usually totally-exclusive. A bunny outfit is usually unskirted. A bunny outfit is usually latex. A bunny outfit is usually low cut. A bunny outfit is usually top-displacable.
+A bunny outfit is a kind of overdress. A bunny outfit is usually crotch-intact. A bunny outfit is usually unique. A bunny outfit is usually totally-exclusive. The skirt-length of A bunny outfit is 0. A bunny outfit is usually latex. A bunny outfit is usually low cut. A bunny outfit is usually top-displacable.
 
 Definition: a bunny outfit is uncovered themed: decide yes.
 Definition: a bunny outfit is bunny themed: decide yes.
@@ -169,7 +169,7 @@ Definition: dq bunny outfit is potentially erection concealing: decide yes. [non
 
 Part 6 - Bunny Dress
 
-bunny dress is a bunny outfit. bunny dress is no-crotch. bunny dress is short. bunny dress is not-exclusive. bunny dress is high cut. bunny dress is rare.
+bunny dress is a bunny outfit. bunny dress is no-crotch. The skirt-length of bunny dress is 4. bunny dress is not-exclusive. bunny dress is high cut. bunny dress is rare.
 
 The printed name of bunny dress is "[clothing-title-before]bunny dress[clothing-title-after]". The text-shortcut of bunny dress is "bnyd".
 
@@ -196,6 +196,7 @@ To say ClothingDesc of (O - bunny dress):
 Definition: bunny dress is bow themed: decide yes.
 Definition: bunny dress is white themed: decide yes.
 Definition: bunny dress is pinkWardrobeAppropriate:
+	if it is worn, decide no;
 	if diaper quest is 0, decide yes;
 	decide no.
 

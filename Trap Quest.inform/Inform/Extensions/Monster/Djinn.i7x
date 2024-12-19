@@ -40,7 +40,7 @@ To decide which number is the default favour of (M - djinn):
 djinn has a number called cloudy.
 
 To say MonsterDesc of (M - djinn):
-	say "This [if lady fetish is 0]tall, dark-skinned [man of M][otherwise]muscular, dark-skinned [man of M][end if] has no legs but instead a billowing smoky pillar below [his of M] [if diaper quest is 1 or full-lady fetish is 1]waist[otherwise]thick, veiny cock[end if]. [big he of M] has four arms, two of which are kept folded in front of [his of M] chest whilst the other two are used to wildly gesticulate as [he of M] talks. [if full-lady fetish is 1 and diaper quest is 0]A patch of night sky in the shape of a penis hangs from [his of M] waist.[end if]";
+	say "This [if lady fetish is 0]tall, dark-skinned [man of M][otherwise]muscular, dark-skinned [man of M][end if] has no legs but instead a billowing pink-smoky pillar below [his of M] [if diaper quest is 1 or full-lady fetish is 1]waist[otherwise]thick, veiny cock[end if]. [big he of M] has four arms, two of which are kept folded in front of [his of M] chest whilst the other two are used to wildly gesticulate as [he of M] talks. [if full-lady fetish is 1 and diaper quest is 0]A patch of night sky in the shape of a penis hangs from [his of M] waist.[end if]";
 	if the cloudy of M > 0:
 		say "A thin barrier of clouds is floating around above [his of M] chest. You could probably *slap* [him of M] through it, but that's probably exactly what [he of M] wants.";
 
@@ -170,12 +170,13 @@ To compute djinn wishing of (M - a monster):
 	set next numerical response to "wish for safety";
 	if diaper quest is 0, set next numerical response to "wish to be bigger";
 	if diaper quest is 0:
-		let C be a random worn currently uncovered dress;
+		let C be a random currently uncovered dress;
 		if C is clothing and the outrage of C > 5 and purple rubber bodysuit is fetish appropriate and purple rubber bodysuit is unclash summonable, set next numerical response to "wish for a less humiliating outfit";
 	if M is in the location of the player:
 		if diaper quest is 0, set next numerical response to "wish for a suck of [his of M] cock";
 		otherwise set next numerical response to "wish for a spanking";
 	if diaper lover >= 1, set next numerical response to "wish for a diaper change";
+	if short skirts permanent fetish > 0 or skimpy underwear fetish > -1, set next numerical response to "wish for a normal preference to [if short skirts permanent fetish > 0]skirt length[end if][if short skirts permanent fetish > 0 and skimpy underwear fetish > -1] and [end if][if skimpy underwear fetish > -1 and diaper quest is 1]underwear type[otherwise if skimpy underwear fetish > -1]underwear skimpiness[end if]";
 	set next numerical response to "wish for nothing";
 	compute multiple choice question;
 	let CNR be the chosen numerical response;
@@ -216,6 +217,30 @@ To compute djinn wishing of (M - a monster):
 			bless C;
 			if C is transformable, potentially transform C;
 		if the number of entries in LC is 0, say "[speech style of M]'Hmm, looks like you didn't have anything I could actually bless. Not my problem though.'[roman type][line break]";
+	otherwise if CNR matches the text "preference":
+		say "[line break][speech style of M]'I shall make your preferences normal... But also give you what you now once again despise!'[roman type][line break][BigNameDesc of M] unfolds [his of M] folded arms and waves them at your head. You feel like your weird fetishy preference for [if short skirts permanent fetish > 0]short skirts[end if][if short skirts permanent fetish > 0 and skimpy underwear fetish > -1] and [end if][if skimpy underwear fetish > -1]slutty underwear[end if] has gone... ";
+		let something-summoned be false;
+		if short skirts permanent fetish > 0:
+			let C be a random off-stage transformation-rare fetish appropriate unclash summonable short-skirt-allowed skirt;
+			if C is nothing, let C be a random off-stage transformation-rare fetish appropriate unclash summonable short-skirt-allowed overdress;
+			if C is nothing, let C be a random off-stage plentiful fetish appropriate unclash summonable short-skirt-allowed skirt;
+			if C is nothing, let C be a random off-stage plentiful fetish appropriate unclash summonable short-skirt-allowed overdress;
+			if C is a thing:
+				now something-summoned is true;
+				PinkWardrobeUnclash C;
+				summon C cursed with quest;
+		if skimpy underwear fetish > -1:
+			let C be a random off-stage transformation-rare fetish appropriate unclash summonable skimpy-underwear-allowed knickers;
+			if C is nothing, let C be a random off-stage plentiful fetish appropriate unclash summonable skimpy-underwear-allowed knickers;
+			if C is a thing:
+				now something-summoned is true;
+				PinkWardrobeUnclash C;
+				summon C cursed with quest;
+		now short skirts permanent fetish is 0;
+		now skimpy underwear fetish is -1;
+		if something-summoned is false:
+			say "And nothing else happens?[line break][speech style of M]'Hmm, I could not find any appropriate items to summon upon you. How upsetting... and lucky, for you.'[roman type][line break][BigNameDesc of M] seems annoyed.";
+			FavourDown M;
 	otherwise if CNR is "wish for sanity":
 		say "[line break][speech style of M]'I shall fulfill your wish, but to remove memories like this may take some knowledge with it...'[roman type][line break][BigNameDesc of M] unfolds [his of M] folded arms and waves them at your head. You feel calmed, but also find it slightly more difficult to think.";
 		SexAddictDown 1;

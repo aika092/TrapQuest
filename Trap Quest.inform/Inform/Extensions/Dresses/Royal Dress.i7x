@@ -40,24 +40,23 @@ Definition: a royal dress is potentially erection concealing: decide yes. [non-t
 Part 1 - Ballgown Royal Dress
 
 ballgown royal dress is a royal dress. ballgown royal dress is optional-top-displacable. ballgown royal dress is arm exposing. The text-shortcut of ballgown royal dress is "rd1".
+The skirt-length of ballgown royal dress is 9.
+To decide which number is the front-skirt-length of (C - ballgown royal dress):
+	decide on 1.
 
 To decide which figure-name is clothing-image of (C - ballgown royal dress):
 	decide on figure of royal dress 1.
 
 To say ClothingDesc of (O - ballgown royal dress):
-	say "A pink, puffy silk dress with a deep plunging neckline that leaves a whole lot of [if O is worn]your[otherwise]the wearer's[end if] chest visible. A large open slit at the front of the dress leaves the front of your crotch entirely visible. The fine cut of the material is evidence that this dress is meant only for the most important of people.".
+	say "A pink, puffy silk dress with a deep plunging neckline that leaves a whole lot of [if O is worn]your[otherwise]the wearer's[end if] chest visible. A large open slit at the front of the dress leaves the front of your crotch entirely visible whilst you are standing. The fine cut of the material is evidence that this dress is meant only for the most important of people.".
 
 To decide which number is the initial outrage of (C - ballgown royal dress):
 	decide on 3.
 
 Definition: ballgown royal dress is slitted: decide yes.
 
-Definition: ballgown royal dress is potentially vagina covering:
+Definition: ballgown royal dress is potentially at least partially penis concealing:
 	if the player is prone and ballgown royal dress is skirt-covering-crotch, decide yes;
-	decide no.
-
-Definition: ballgown royal dress is potentially at least partially vagina covering:
-	if ballgown royal dress is potentially vagina covering, decide yes;
 	decide no.
 
 Definition: ballgown royal dress is potentially-bottom-layer-concealing:
@@ -85,7 +84,7 @@ To decide which number is the initial cringe of (C - lolita royal dress):
 
 Part 3 - Baby Royal Dress
 
-baby royal dress is a royal dress. baby royal dress is not-top-displacable. baby royal dress is short. baby royal dress is bed wetting. The text-shortcut of baby royal dress is "rd3". baby royal dress is diaper-addiction-influencing.
+baby royal dress is a royal dress. baby royal dress is not-top-displacable. The skirt-length of baby royal dress is 4. baby royal dress is bed wetting. The text-shortcut of baby royal dress is "rd3". baby royal dress is diaper-addiction-influencing.
 
 To decide which figure-name is clothing-image of (C - baby royal dress):
 	decide on figure of royal dress 3.
@@ -122,7 +121,7 @@ To transform (D - a clothing) into (C - baby royal dress):
 
 Part 4 - Queen of Spades Dress
 
-queen-of-spades-dress is a royal dress. queen-of-spades-dress is bottom-exclusive. queen-of-spades-dress is crotch-exposing. queen-of-spades-dress is unskirted. queen-of-spades-dress is low cut. queen-of-spades-dress is normally-nipple-exposing. The text-shortcut of queen-of-spades-dress is "qsd".
+queen-of-spades-dress is a royal dress. queen-of-spades-dress is bottom-exclusive. queen-of-spades-dress is crotch-exposing. The skirt-length of queen-of-spades-dress is 0. queen-of-spades-dress is low cut. queen-of-spades-dress is normally-nipple-exposing. The text-shortcut of queen-of-spades-dress is "qsd".
 
 The printed name of queen-of-spades-dress is "[clothing-title-before]queen of spades dress[clothing-title-after]". Understand "queen", "of spades", "spades", "dress" as queen-of-spades-dress.
 

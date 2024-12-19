@@ -1,6 +1,6 @@
 Chainmail Top by Dresses begins here.
 
-A chainmail top is a kind of overdress. A chainmail top is usually unskirted. A chainmail top is usually belly exposing. A chainmail top is usually metal. A chainmail top is usually rare. A chainmail top is usually sheer. A chainmail top is usually manly. There is 1 chainmail top. A chainmail top is not-displacable-always-fuckable.
+A chainmail top is a kind of overdress. The skirt-length of A chainmail top is 0. A chainmail top is usually belly exposing. A chainmail top is usually metal. A chainmail top is usually rare. A chainmail top is usually sheer. A chainmail top is usually manly. There is 1 chainmail top. A chainmail top is not-displacable-always-fuckable.
 
 Figure of chainmail top is the file "Items/Clothes/Upper/Exposing/chainmailtop1.png".
 

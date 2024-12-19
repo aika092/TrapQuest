@@ -17,10 +17,9 @@ To check default motion of (M - a monster):
 			say "Default motion actions...";
 			wait 200 ms before continuing;
 		compute default motion actions of M;
-		if M is a urinater and the bladder of M >= 1000:
-			if lagdebug is true:
-				say "Toilet seeking...";
-				wait 200 ms before continuing;
+		if M is toilet desiring:
+			if debugmode > 0 and verbose-debug > 0, say "[MediumDesc of M] is toilet seeking...";
+			if lagdebug is true, wait 200 ms before continuing;
 			compute toilet seeking of M;
 		otherwise:
 			if lagdebug is true:
@@ -30,6 +29,10 @@ To check default motion of (M - a monster):
 	otherwise:
 		compute monstermotion of M;
 	now M is moved.
+
+Definition: a monster (called M) is toilet desiring:
+	if M is a urinater and the bladder of M >= 1000, decide yes;
+	decide no.
 
 To compute default motion actions of (M - a monster):
 	if diaper messing >= 6 and M is willing to punish untidiness and the player is not in the location of M: [While the NPC idly wanders, it can pick up leftover soiled diapers]
@@ -61,6 +64,14 @@ To compute default motion actions of (M - a monster):
 
 To compute monstermotion of (M - a monster): [This is default wandering if function is left undefined for a specific monster]
 	compute room leaving of M.
+
+To compute dismissal room leaving of (M - a monster):
+	let L be the location of M;
+	let N be 30;
+	now the travel-opposite of the player is down;
+	while N > 0 and M is in L:
+		compute room leaving of M;
+		decrease N by 1;
 
 To compute mandatory room leaving of (M - a monster):
 	let L be the location of M;
@@ -134,10 +145,10 @@ Definition: a monster is closest-toilet-preferring: decide no.
 
 To set up toilet preference of (M - a monster):
 	let LR be a list of rooms;
+	let TR be Holding Pen;
 	if M is in an academic room:
-		repeat with R running through placed academic rooms:
-			if R is not use-the-floor:
-				unless R is School35 and (R is not seen or (M is student and the current-rank of M < 6)), add R to LR; [non-gold students are unaware of secret area even after it is revealed]
+		add School10 to LR;
+		if School35 is seen and (M is not student or the current-rank of M >= 6), add School35 to LR; [non-gold students are unaware of secret area even after it is revealed]
 	otherwise if M is in a modern room:
 		repeat with R running through placed modern rooms:
 			if R is not use-the-floor, add R to LR;
@@ -150,7 +161,6 @@ To set up toilet preference of (M - a monster):
 	otherwise if M is in a labyrinth room:
 		repeat with R running through labyrinth rooms:
 			if R is not use-the-floor, add R to LR;
-	let TR be Holding Pen;
 	let LRE be the number of entries in LR;
 	if LRE > 0:
 		if LRE > 1:
@@ -168,9 +178,18 @@ To set up toilet preference of (M - a monster):
 			now TR is entry 1 in LR;
 	now the target-toilet of M is TR.
 
+Definition: a monster (called M) is able to use the toilet:
+	if M is able to use a free use urinal, decide yes;
+	if the location of M is use-the-floor or (locked-toilets is true and M is in School10 and academy-toilet-key is not held by M), decide no;
+	decide yes.
+
+Definition: a monster (called M) is able to use a free use urinal:
+	if playerRegion is school and M is intelligent and M is in the location of the player and M is interested and the assemblyCount of locked-toilets-shame-assembly > 0 and (watersports fetish is 1 or M is eager to use a diaper urinal), decide yes;
+	decide no.
+
 To compute default toilet seeking of (M - a monster):
 	let L be the location of M;
-	unless L is use-the-floor or (locked-toilets is true and L is School10 and academy-toilet-key is not held by M):
+	if M is able to use the toilet:
 		compute toilet use of M;
 	otherwise:
 		let TR be the target-toilet of M;
@@ -178,8 +197,8 @@ To compute default toilet seeking of (M - a monster):
 		if TR is not regional and M is regional, set up toilet preference of M;
 		if TR is regional:
 			let A be down;
-			if (locked-toilets is true and TR is School10 and academy-toilet-key is not held by M):
-				let X be the location of academy-toilet-key;
+			let X be the location of academy-toilet-key;
+			if locked-toilets is true and TR is School10 and academy-toilet-key is not held by M:
 				let KM be a random monster carrying academy-toilet-key;
 				if KM is a monster:
 					now X is the location of KM;
@@ -195,6 +214,7 @@ To compute default toilet seeking of (M - a monster):
 			if A is not down:
 				let P be the room A from L;
 				if the number of barriers in P is 0 and the number of barriers in the location of M is 0:
+					if debugmode > 1, say "[BigNameDesc of M] is going [A] to try to use the toilet at [TR][if locked-toilets is true and TR is School10 and academy-toilet-key is not held by M] (needs to get key at [X])[end if][if locked-toilets is true and TR is School10 and academy-toilet-key is not held by M and there is a monster carrying academy-toilet-key] (key held by [random monster carrying academy-toilet-key])[end if][line break]";
 					blockable move M to A;
 					compute monstermotion reactions of M;
 					if ATKM is not M: [academy toilet key is held by another monster]
@@ -209,23 +229,40 @@ To compute default toilet seeking of (M - a monster):
 		otherwise: [Failed to find a legal toilet target]
 			compute room leaving of M.
 
-[Everybody is assumed to have instantly gone to the toilet when they reached 1000 bladder]
 To compute bladder cleanup:
 	repeat with M running through monsters:
 		if M is regional:
-			now the bladder of M is the remainder after dividing the bladder of M by 1000.
+			let unable-to-pee be false;
+			if playerRegion is school and locked-toilets is true:
+				if academy-toilet-key is held by the player:
+					now unable-to-pee is true;
+				otherwise:
+					let X be a random person carrying academy-toilet-key;
+					if X is a person:
+						if X is not regional, now unable-to-pee is true;
+					otherwise:
+						if academy-toilet-key is not regional, now unable-to-pee is true;
+			if unable-to-pee is true:
+				if a random number between 1 and 3 > 1, now M is in School10;
+			otherwise:
+				now the bladder of M is the remainder after dividing the bladder of M by 1060. [Everybody is assumed to have instantly gone to the toilet when they reached 1060 bladder]
 
-To compute toilet use of (M - a monster): [This MUST cause bladder to empty or NPCs might get stuck]
-	if M is in the location of the player or (debugmode > 0 and debuginfo > 1):
-		if M is not in the location of the player, say input-style;
-		if the location of M is toilets:
-			say "[BigNameDesc of M] uses the toilet to relieve [his of M] bladder.";
-		otherwise if the location of M is urinals:
-			say "[BigNameDesc of M] uses a urinal to relieve [his of M] bladder.";
-		otherwise:
-			say "[BigNameDesc of M] urinates into [NameDesc of water-body].";
-		if M is not in the location of the player, say roman type;
-	now the bladder of M is 0.
+To compute toilet use of (M - a monster): [If called during standard wandering motion, this MUST cause bladder to empty or NPCs might get stuck]
+	if M is able to use a free use urinal:
+		compute free use urinal perception of M;
+	otherwise:
+		if M is in the location of the player or (debugmode > 0 and verbose-debug > 0):
+			if M is not in the location of the player, say input-style;
+			if M is caged and the location of M is School35:
+				say "[BigNameDesc of M] uses the toilet at the back of [his of M] cell to relieve [his of M] bladder.";
+			otherwise if the location of M is toilets:
+				say "[BigNameDesc of M] uses the toilet to relieve [his of M] bladder.";
+			otherwise if the location of M is urinals:
+				say "[BigNameDesc of M] uses a urinal to relieve [his of M] bladder.";
+			otherwise:
+				say "[BigNameDesc of M] urinates into [NameDesc of water-body].";
+			if M is not in the location of the player, say roman type;
+		now the bladder of M is 0.
 
 To compute diaper wetting of (M - a monster): [This MUST cause bladder to empty or NPCs might get stuck]
 	if M is in the location of the player, say "[BigNameDesc of M] sighs pleasantly, and you're pretty sure [he of M] is wetting [his of M] diaper.";
@@ -253,38 +290,41 @@ To check seeking (N - a number) of (M - a monster):
 	check default seeking N of M.
 
 To check default seeking (N - a number) of (M - a monster):
+	if M is unleashed or M is unconcerned, check forced seeking N of M.
+
+To check forced seeking (N - a number) of (M - a monster):
 	[If N is 2, we need to flag that the monster has had its movement for the round and does not get to act again.]
-	if M is unleashed or M is unconcerned:
-		if debugmode > 0, say "[BigNameDesc of M] is following the player.";
-		if M is regional:
-			let L be the location of M;
-			let P be the location of the player;
-			let direction-searching be true;
-			if M is airborne and L is a no-roof jungle room:
-				repeat with D running through directions:
-					if direction-searching is true and (D is north or D is east or D is west or D is south):
-						let GS be the vector sum of the grid position of L and the vector of D;
-						let R be the room at GS;
-						if R is not solid rock and R is no-roof and the player is in R:
-							now M is in R;
-							say "[BigNameDesc of M] soars over the foliage from the [opposite-direction of D].";
-							if M is not interested and the boredom of M <= 0, check perception of M; [the NPC gets the jump on the player]
-							now direction-searching is false;
-			if direction-searching is true:
-				let D be the best route from L to P through placed regional rooms;
-				if debugmode > 0, say "[BigNameDesc of M] has worked out that [he of M] should go [D].";
-				if D is a direction:
-					now neighbour finder is L;
-					let L2 be the room D from the location of M;
-					if D is N-viable:
-						if the player is glued seductively and P is unbossed and the number of barriers in L2 is 0 and the number of barriers in L is 0:
-							compute M seeking D;
-							say AttractionWorry of M;
-						otherwise if the seek roll of M > 0 and P is unbossed and the number of barriers in L2 is 0 and the number of barriers in L is 0:
-							compute M seeking D;
-			if N is 2, now M is moved;
-		otherwise:
-			compute non-regional seeking of M.
+	if debugmode > 0, say "[BigNameDesc of M] is following the player.";
+	if M is regional:
+		let L be the location of M;
+		let P be the location of the player;
+		let direction-searching be true;
+		if M is airborne and L is a no-roof jungle room:
+			repeat with D running through directions:
+				if direction-searching is true and (D is north or D is east or D is west or D is south):
+					let GS be the vector sum of the grid position of L and the vector of D;
+					let R be the room at GS;
+					if R is not solid rock and R is no-roof and the player is in R:
+						now M is in R;
+						let DD be the best route from L to P through placed regional rooms;
+						unless D is DD, say "[BigNameDesc of M] soars over the foliage from the [opposite-direction of D].";
+						if M is not interested and the boredom of M <= 0, check perception of M; [the NPC gets the jump on the player]
+						now direction-searching is false;
+		if direction-searching is true:
+			let D be the best route from L to P through placed regional rooms;
+			if debugmode > 0, say "[BigNameDesc of M] has worked out that [he of M] should go [D].";
+			if D is a direction:
+				now neighbour finder is L;
+				let L2 be the room D from the location of M;
+				if D is N-viable:
+					if the player is glued seductively and P is unbossed and the number of barriers in L2 is 0 and the number of barriers in L is 0:
+						compute M seeking D;
+						say AttractionWorry of M;
+					otherwise if the seek roll of M > 0 and P is unbossed and the number of barriers in L2 is 0 and the number of barriers in L is 0:
+						compute M seeking D;
+		if N is 2, now M is moved;
+	otherwise:
+		compute non-regional seeking of M.
 
 To compute non-regional seeking of (M - a monster):
 	compute default non-regional seeking of M.
@@ -400,7 +440,9 @@ Definition: a monster (called M) is just messing:
 
 To compute periodic recovery of (M - a monster):
 	unless the class of the player is princess and M is asleep, decrease the refractory-period of M by 4;
-	if watersports mechanics is 1, increase the bladder of M by 4;
+	if watersports mechanics is 1:
+		increase the bladder of M by a random number between 5 and 15;
+		[if M is not simulated and M is a urinater and the bladder of M >= a random number between 1000 and 10000, now the bladder of M is 0;] [this is handled in 'compute bladder cleanup']
 	if M is just messing:
 		compute mess moment of M;
 	otherwise if the class of the player is princess and bride-consort is M:

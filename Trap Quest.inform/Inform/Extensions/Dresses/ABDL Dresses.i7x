@@ -2,7 +2,7 @@ ABDL Dresses by Dresses begins here.
 
 Part - Baby Reins
 
-A baby-reins is a kind of overdress. A baby-reins is unique. A baby-reins is usually low cut. A baby-reins is usually leather. A baby-reins is usually crotch-exposing. A baby-reins is usually belly exposing. A baby-reins is usually unskirted. A baby-reins is usually top-exclusive. Understand "baby reins", "reins" as baby-reins.
+A baby-reins is a kind of overdress. A baby-reins is unique. A baby-reins is usually low cut. A baby-reins is usually leather. A baby-reins is usually crotch-exposing. A baby-reins is usually belly exposing. The skirt-length of A baby-reins is 0. A baby-reins is usually top-exclusive. Understand "baby reins", "reins" as baby-reins.
 
 Definition: a baby-reins is fetish appropriate:
 	if diaper lover > 0, decide yes;
@@ -35,11 +35,37 @@ To say MediumDesc of (C - purple-baby-reins):
 
 Definition: purple-baby-reins is purple themed: decide yes.
 
+Part - Babydoll Top
+
+babydoll-top is an overdress. babydoll-top is fully covering. The skirt-length of babydoll-top is 0. babydoll-top is belly covering. Understand "babydoll", "babydoll top" as babydoll-top. The printed name of babydoll-top is "[clothing-title-before]babydoll top[clothing-title-after]". The text-shortcut of babydoll-top is "bbdt".
+
+Figure of babydoll top is the file "Items/Clothes/Upper/Dresses/Baby/babydolltop1.png".
+
+To decide which figure-name is clothing-image of (C - babydoll-top):
+	decide on figure of babydoll top.
+
+To say ClothingDesc of (C - babydoll-top):
+	say "A pink top with short puffy sleeves, a Peter Pan collar, and a humiliating pattern of teddy bears, sippy cups, bibs, pacifiers and more.".
+
+To say ShortDesc of (C - babydoll-top):
+	say "babydoll top".
+To say MediumDesc of (C - babydoll-top):
+	say "babydoll top".
+
+Definition: babydoll-top is fetish appropriate:
+	if diaper lover > 0, decide yes;
+	decide no.
+Definition: babydoll-top is baby themed: decide yes.
+Definition: babydoll-top is pink themed: decide yes.
+
+To decide which number is the initial cringe of (C - babydoll-top):
+	decide on 6.
+
 Part - Baby Dresses
 
-A baby-dress is a kind of overdress. A baby-dress is usually transformation-rare. A baby-dress is usually high cut. A baby-dress is usually short. A baby-dress is usually top-exclusive.
+A baby-dress is a kind of overdress. A baby-dress is usually transformation-rare. A baby-dress is usually high cut. The skirt-length of a baby-dress is 4. A baby-dress is usually top-exclusive.
 
-A baby-party-dress is a kind of baby-dress. A baby-party-dress is usually super-short. Understand "super", "short" as baby-party-dress.
+A baby-party-dress is a kind of baby-dress. The skirt-length of a baby-party-dress is 1. Understand "super", "short" as baby-party-dress.
 
 To decide which number is the initial outrage of (C - a baby-dress):
 	if diaper quest is 1, decide on 0; [In DQ, these are not considered provocative, just childish]
@@ -94,7 +120,7 @@ Definition: a floral purple sissy dress is purple themed: decide yes.
 
 Part 2 - Teddybear Playsuit
 
-A teddybear playsuit is a kind of baby-dress. There is 1 teddybear playsuit. The printed name of teddybear playsuit is "[clothing-title-before]teddybear playsuit[clothing-title-after]". The text-shortcut of teddybear playsuit is "tbp". A teddybear playsuit is usually unskirted. A teddybear playsuit is usually crotch-intact.
+A teddybear playsuit is a kind of baby-dress. There is 1 teddybear playsuit. The printed name of teddybear playsuit is "[clothing-title-before]teddybear playsuit[clothing-title-after]". The text-shortcut of teddybear playsuit is "tbp". The skirt-length of A teddybear playsuit is 0. A teddybear playsuit is usually crotch-intact.
 
 Figure of teddybear playsuit is the file "Items/Clothes/Upper/Dresses/Baby/babydress2.png".
 
@@ -123,7 +149,7 @@ Definition: a teddybear playsuit is pink themed: decide yes.
 
 Part 3 - Waddle Outfit
 
-A waddle outfit is a kind of baby-dress. A waddle outfit is usually latex. There is 1 waddle outfit. The printed name of waddle outfit is "[clothing-title-before]latex waddle outfit[clothing-title-after]". The text-shortcut of waddle outfit is "lwo". A waddle outfit is usually unskirted. A waddle outfit is usually crotch-intact.
+A waddle outfit is a kind of baby-dress. A waddle outfit is usually latex. There is 1 waddle outfit. The printed name of waddle outfit is "[clothing-title-before]latex waddle outfit[clothing-title-after]". The text-shortcut of waddle outfit is "lwo". The skirt-length of A waddle outfit is 0. A waddle outfit is usually crotch-intact.
 
 Figure of waddle outfit is the file "Items/Clothes/Upper/Dresses/Baby/babydress3.png".
 

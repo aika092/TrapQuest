@@ -2,11 +2,18 @@ RoboMaid by Monster begins here.
 
 A robomaid is a kind of robot. A robomaid is intelligent. Understand "maid", "robomaid" as robomaid. The leftover-type of a robomaid is usually 127.
 
+Definition: a robomaid is hotel dwelling:
+	if diaper quest is 0, decide yes;
+	decide no.
+
 dainty robomaid is a robomaid. The text-shortcut of dainty robomaid is "drm".
 prissy robomaid is a robomaid. The text-shortcut of prissy robomaid is "psrm".
 robomilkmaid is a robomaid. The text-shortcut of robomilkmaid is "cmm". Understand "mal", "malfunc", "malfunctioning", "malfunction" as robomilkmaid. robomilkmaid has a number called milk volume. robomilkmaid has a number called milk charge.
+Definition: robomilkmaid is hotel dwelling:
+	if lactation fetish is 1 or diaper quest is 1, decide yes;
+	decide no.
 
-Figure of robomaid is the file "NPCs/Hotel/Robot/robomaid1.png".
+Figure of robomaid is the file "NPCs/Hotel/Robot/robomaid1.jpg".
 To decide which figure-name is the monster-image of (M - a robomaid):
 	decide on figure of robomaid.
 Figure of robomilkmaid is the file "NPCs/Hotel/Robot/robomaid3.jpg".
@@ -106,6 +113,8 @@ To compute unique periodic effect of (M - a robomilkmaid):
 					let MV be a random number between 2 and 3;
 					PuddleUp milk by MV in (the location of M);
 					decrease the milk volume of M by MV;
+				otherwise if diaper quest is 1:
+					increase the milk volume of M by a random number between 4 and 6;
 				otherwise:
 					if M is in the location of the player, say "[BigNameDesc of M] pulls up [his of M] apron, revealing a large robotic [DickDesc of M]. [big he of M] starts jacking off, moaning in a grating monotone as [his of M] [LongDickDesc of M] blows [his of M] load on the floor.";
 					PuddleUp semen by (a random number between 2 and 3) in (the location of M).
@@ -114,7 +123,10 @@ Part 2 - Perception
 
 To compute perception of (M - a robomaid):
 	say "[BigNameDesc of M] notices you!";
-	if the current-errand of M is completed and M is friendly:
+	if there is soiled-diaper carried by M or there is a dirty diaper carried by M:
+		say "[first custom style]'DIRTY DIAPER LITTERING CULPRIT FOUND. PLEASE ADOPT THE DIRTY DIAPER LITTERING PUNISHMENT SUBMISSION POSITION.'[roman type][line break]";
+		anger M;
+	otherwise if the current-errand of M is completed and M is friendly:
 		compute errand completion of M;
 	otherwise if the number of worn dirty clothing > 0:
 		if M is unfriendly:
@@ -156,7 +168,10 @@ To compute perception of (M - a robomaid):
 
 To compute perception of (M - a robomilkmaid):
 	say "[BigNameDesc of M] notices you!";
-	if the ready-for-milking of milking-quest is 1:
+	if there is soiled-diaper carried by M or there is a dirty diaper carried by M:
+		say "[first custom style]'DIRTY DIAPER LITTERING CULPRIT FOUND. PLEASE ADOPT THE DIRTY DIAPER LITTERING PUNISHMENT SUBMISSION POSITION.'[roman type][line break]";
+		anger M;
+	otherwise if the ready-for-milking of milking-quest is 1:
 		say "[big his of M] eyes turn red and [he of M] spins toward you.[line break][speech style of M]'HIGH VOLUME OF MILK DETECTED. DAIRY FARM SIMULATION PROGRAM INITIATED.'[roman type][line break]";
 		anger M;
 	otherwise if the player is hotel employed:
@@ -172,11 +187,11 @@ To compute perception of (M - a robomilkmaid):
 	otherwise if the class of the player is vixen:
 		say "[big his of M] eyes turn red and [he of M] spins toward you.[line break][speech style of M]'BURGLAR DETECTED! PUBLICITY STUNT PROGRAM INITIATED!'[roman type][line break]";
 		anger M;
-	otherwise if lactation fetish is 1 and the milk volume of M >= 12:
+	otherwise if [lactation fetish is 1 and] the milk volume of M >= 12:
 		say "[big his of M] eyes turn red and [he of M] spins toward you.[line break][speech style of M]'ELIGIBLE CUSTOMER DETECTED! MILK STOARAGE IS NEARING MAXIMUM CAPACITY. REQUESTING JOINT PERFORMANCE ROUTINE...'[roman type][line break]";
 		anger M;
-	otherwise if M is friendly:
-		say "[big he of M] glides toward you, pushing out [his of M] chest as [he of M] addresses you in a monotone.[line break][speech style of M]'FLIRTATION PROGRAM INITIATED...[one of]YOU ARE SEXY.[or]OBSERVE MY TITS, HOT STUFF.[or]BEEP BOOP, I LIKE MAN SOUP.[at random] [caps please] TIP ME.[roman type][line break][big he of M] points to [one of]a[or]the[stopping] slot between [his of M] breasts, labelled [']PAYMENT['].";
+	otherwise if (diaper quest is 1 and the milk volume of M < 5) or M is friendly:
+		say "[big he of M] glides toward you, pushing out [his of M] chest as [he of M] addresses you in a monotone.[line break][speech style of M]'FLIRTATION PROGRAM INITIATED...[one of]YOU ARE SEXY.[or]OBSERVE MY TITS, HOT STUFF.[or][if diaper quest is 1]HELLO SEXY BABY. WOULD YOU LIKE SOME MILK[otherwise]BEEP BOOP, I LIKE MAN SOUP[end if].[in random order] [caps please] TIP ME.[roman type][line break][big he of M] points to [one of]a[or]the[stopping] slot between [his of M] breasts, labelled [']PAYMENT['].";
 		FavourDown M;
 	otherwise:
 		say "[big his of M] eyes turn red and [he of M] spins toward you.[line break][first custom style]'FREELANCE WHORE DETECTED. PUBLICITY STUNT PROGRAM INITIATED.'[roman type][line break]";
@@ -217,7 +232,7 @@ To compute molesting attack of (M - a robomaid):
 
 [The robomilkmaid sprays out an aphrodisiac, avoided with dexterity]
 To compute molesting attack of (M - robomilkmaid):
-	say "[BigNameDesc of M] lifts [his of M] apron, aiming [his of M] [LongDickDesc of M] at you as it shoots out a spurt of pink liquid. [run paragraph on]";
+	say "[BigNameDesc of M] [if diaper quest is 0]lifts [his of M] apron, aiming [his of M] [LongDickDesc of M][otherwise]squeezes a breast, aiming it[end if] at you as it shoots out a spurt of pink liquid. [run paragraph on]";
 	let B be the painful-part of M;
 	if the latex-transformation of the player > 6:
 		say "Some of it lands on you, but it doesn't seem to have any effect.";
@@ -265,9 +280,9 @@ This is the robomaid punishment rule:
 		say "[BigNameDesc of M][']s eyes turn purple as [he of M] sweeps you off the ground.[line break][speech style of M]'SEARCHING... SEARCHING... PATRON FOUND. EXECUTING TRANSPORT PROTOCOL.'[roman type][line break]";
 		let N be a random robobellboy in the location of the player;
 		unless N is monster:
-			let R be a random modern room;
-			while R is not placed and R is not Hotel20 and R is not bossed:
-				now R is a random modern room;
+			let R be a random placed unbossed modern room;
+			while R is Hotel20:
+				now R is a random placed unbossed modern room;
 			now N is a random alive robobellboy;
 			unless N is monster, now N is a random robobellboy;
 			now N is in R;
@@ -364,7 +379,7 @@ This is the robomilkmaid punishment rule:
 			say "[line break][speech style of current-monster]'OOH OOH OOH. YOU ARE ONE CUTE DAIRY COW.'[roman type][line break][BigNameDesc of current-monster][']s robotic hands latch onto your [BreastDesc]! Moments later, some kind of ports open up inside [his of current-monster] palms, and suck your nipples inside! By squeezing [his of current-monster] hands in a rhythmic motion, [NameDesc of current-monster] milks your breasts! Your fresh [milk] disappears up into [his of current-monster] arms, and you can see it being collected inside the transparent milk tanks that are [his of current-monster] own [']breasts['].";
 			let N be 0;
 			now milking is 1;
-			while ready-for-milking of milking-quest is 1:
+			while ready-for-milking of milking-quest is 1 and N < 25: [N check is just failsafe]
 				if N > 0, say "Your breasts are so full, that the suction keeps going!";
 				let MV be the milk volume of breasts;
 				if MV > 8, now MV is 8;
@@ -401,11 +416,10 @@ This is the robomilkmaid punishment rule:
 		let X be a random number between 1 and 3;
 		while X > 0:
 			let P be a random off-stage generic-appropriate patron;
-			now P is in R;
+			if P is a thing, now P is in R;
 			decrease X by 1;
 		if the player is not in R, drag to R by M;
 		compute publicity stunt of M;
-		bore M;
 		rule succeeds;
 	otherwise:
 		say "[BigNameDesc of M] pins you against a wall, grinding [his of M] surprisingly supple body against you as [he of M] [if face is not actually occupied]passionately kisses your lips[otherwise]peppers your face with kisses[end if].";
@@ -419,14 +433,14 @@ This is the robomilkmaid punishment rule:
 To compute publicity stunt of (M - a robomilkmaid):
 	let P be a random patron in the location of the player;
 	say "[if the number of patrons in the location of the player > 1]The patrons watch[otherwise][BigNameDesc of P] watches[end if] [run paragraph on]";
-	if face is not actually occupied and lactation fetish is 1 and the latex-transformation of the player <= 4 and milk volume of M >= 8: [breast feeding]
+	if face is not actually occupied and [lactation fetish is 1 and] the latex-transformation of the player <= 4 and milk volume of M >= 5: [breast feeding]
 		say "as [NameDesc of M] pushes one of its [']nipples['] into your mouth. Its impossibly strong, vice-like grip prevents you from freeing your [LipDesc] from the seal they have around the [']teat['] of this soft, silicone [']boob['].[line break][speech style of current-monster]'OOH. OOH. MY NIPPLES ARE. SO TENDER.'[roman type][line break]Some kind of pump kicks in, and with a whirring sound, it begins to express what is unmistakably human breast milk into your mouth.";
 		let MV be the milk volume of M;
 		if MV > 12, now MV is 12;
 		FaceFill milk by MV;
 		decrease the milk volume of M by MV;
 		say moderateHumiliateReflect;
-	otherwise if face is not actually occupied:
+	otherwise if diaper quest is 0 and face is not actually occupied:
 		say "as [NameDesc of M] lifts up [his of M] apron, pushing [his of M] [LongDickDesc of M] in your face as [his of M] eyes rapidly flash red and pink.[line break][speech style of current-monster]'OOH. OOH. [caps please] SUCK ME.'[roman type][line break] [big he of M] shoves [his of M] [DickDesc of M] into your open mouth and ejaculates with incredible force. Do you try to swallow it?";
 		now M is penetrating face;[TODO: possibly update]
 		if the player is bimbo consenting:
@@ -439,7 +453,7 @@ To compute publicity stunt of (M - a robomilkmaid):
 			SemenPuddleUp 1;
 			say slightHumiliateReflect;
 		BlowCount;
-	otherwise if bukkake fetish is 1 and a random number between 1 and 2 is 1:[bukkake]
+	otherwise if diaper quest is 0 and bukkake fetish is 1 and a random number between 1 and 2 is 1:[bukkake]
 		say "as [NameDesc of M] lifts up [his of M] apron, pushing [his of M] [LongDickDesc of M] in your face as [his of M] eyes rapidly flash red and green.[line break][speech style of M]'OOH. OOH. I AM SHOOTING IT.'[roman type][line break] [big his of M] [DickDesc of M] throbs visibly as it blasts your face with several bursts of makeup powder, followed by several ropes of thick, sticky [semen]. You can feel it clinging to your eyelids and rolling slowly down your cheeks as [he of M] rolls off of you.";
 		FaceUp 1;
 		CumFaceUp 2;
@@ -469,6 +483,14 @@ To compute publicity stunt of (M - a robomilkmaid):
 	otherwise say "[NameDesc of P] smirks at you as [he of P] leaves the room.";
 	repeat with N running through patrons in the location of the player:
 		destroy N.
+
+milkmaid-punish is a diaper punishment. The priority of milkmaid-punish is 5.
+Definition: milkmaid-punish (called P) is appropriate:
+	if current-monster is not robomaid, decide no;
+	decide yes.
+
+To compute punishment of (P - milkmaid-punish):
+	follow the robomilkmaid punishment rule.
 
 [Milking only for now]
 Definition: robomilkmaid is uniquely ready to entice:

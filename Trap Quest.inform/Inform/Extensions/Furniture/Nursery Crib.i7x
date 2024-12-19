@@ -80,6 +80,7 @@ Check jumping when nursery crib is grabbing the player:
 			dislodge nursery crib;
 			if matron is alive and matron is undefeated and the player is getting unlucky:
 				say "Suddenly, [NameDesc of matron] arrives from the west! [GotUnluckyFlav]";
+				now matron is in the location of the player;
 				say "[speech style of matron]'What in the world do you think you are doing?!'[roman type][line break][BigNameDesc of matron] storms towards you. Uh-oh...";
 				anger matron;
 				now matron is interested;

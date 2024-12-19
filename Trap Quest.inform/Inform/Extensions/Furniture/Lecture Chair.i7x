@@ -27,6 +27,7 @@ To compute furniture resting on (C - a lecture chair):
 			let H be a random worn blue scrunchie;
 			let HB be a random pair of helium balloons;
 			silently transform H into HB;
+			cutshow Figure of Lecture 3 for C;
 			say "The woman and the other [']students['] dressed as slutty schoolgirls disappear as quickly as they appeared. You're left alone, feeling substantially more self-conscious about your appearance than before.";
 			now schoolgirl-scene-1 of C is true;
 		[otherwise if schoolgirl-scene-2 of C is false and (the number of worn blue scrunchies is 2 or there is a worn pigtail-scrunchie) and the player is not getting lucky:
@@ -39,6 +40,28 @@ To compute furniture resting on (C - a lecture chair):
 			cutshow Figure of Lecture 1 for C;
 			say "[first custom style]'Hello everyone and welcome to this cram session. It seems like everyone is here, so we'll begin with a look at the previous year's exam paper...'[roman type][line break]It looks like you've somehow found yourself studying for some kind of mathematics exam. You don't really follow any of the complex stuff they're talking about, but you do feel a bit [smarter] for having heard it.";
 			IntUp 1;
+	otherwise if diaper quest is 1 and matron is undefeated and matron is not permanently banished and the times-met of matron > 0 and ((the class of the player is schoolgirl and the number of worn pink scrunchie is 0) or (the number of worn headgear is 0 and the number of scrunchies in Holding Pen is 0)):
+		now matron is in the location of the player;
+		interest matron;
+		calm matron;
+		say "Suddenly, before you have even realised what's happened, your arms have been bound to the back of the chair with rope! You swivel your head in shock to find [NameDesc of matron] standing there behind you, a cunning smile on [his of matron] face.[line break][speech style of matron]'It's time to get ready for school, [honey of matron]! And I have just the outfit to make sure that you're the perfect [']teacher[']s pet['].'[roman type][line break]";
+		PinkWardrobeUnclash nursery smock;
+		PinkWardrobeUnclash blue-massive-diaper;
+		PinkWardrobeUnclash bunny socks;
+		summon nursery smock cursed;
+		now the quest of nursery smock is skill-quest;
+		summon blue-massive-diaper cursed;
+		now the quest of blue-massive-diaper is skill-quest;
+		now blue-massive-diaper is audible squelches;
+		summon bunny socks cursed;
+		now bunny socks is bed wetting;
+		now the quest of bunny socks is skill-quest;
+		say "Twelve or so seconds of noisy clothes rustling later, and [NameDesc of matron] has you dressed quite differently than before! You have a humiliationg [blue-massive-diaper] that's being only partially covered by your outrageously embarrassing [nursery smock], and a childish [bunny socks] on your legs.[line break][variable custom style][if the player is able to speak]'Oh my god!'[otherwise]Oh my god![end if][roman type][line break]";
+		cutshow Figure of Lecture 2 for matron;
+		say "And then, to complete the look, [NameDesc of matron] busies [himself of matron] tying your hair into pigtails with beautiful pinky-purple scrunchies.[line break][speech style of matron]'One and... Two!'[roman type][line break]";
+		repeat with P running through pink scrunchies:
+			summon P cursed with quest;
+		say "[speech style of matron]'Now you look perfect for going and learn and play all day!'[roman type][line break][BigNameDesc of matron] sings as [he of matron] unties your binds.";
 	otherwise:
 		let L be a random number between 1 and 3;
 		if L is 1 and diaper quest is 0:
@@ -51,6 +74,7 @@ To compute furniture resting on (C - a lecture chair):
 			IntUp 1;
 		otherwise if alcohol fetish is 1 and face is not actually occupied:
 			say "[second custom style]'Hello everyone and welcome to this cocktail tasting class! Today we'll be learning about the different spirits in my favourite cocktail - the Long Island Iced Tea!'[roman type][line break]Before you can object, the woman has approached you and started to force-feed you a cold brown fizzy cocktail from a high ball glass. Your lecture chair seems to have trapped you in it, so you're powerless to resist![line break][second custom style]'Guess how many different spirits a Long Island Iced Tea has in it? That's right, five!'[roman type][line break]You are forced to gulp down mouthful after mouthful of the strong drink.[line break][second custom style]'Vodka, tequila, light rum, triple sec, gin, and a splash of cola! That should get the party started!'[roman type][line break]Finally the glass is empty, and the woman disappears as quickly as she appeared. You're left alone, feeling substantially worse for wear.";
+			StomachUp 1;
 			increase alcohol level;
 			increase alcohol level;
 			increase alcohol level;

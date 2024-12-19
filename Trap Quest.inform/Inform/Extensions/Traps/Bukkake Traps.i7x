@@ -115,6 +115,11 @@ To deploy (T - a prank trap) in (G - a room):
 	if debugmode is 1, say "Deploying a [printed name of T] in [printed name of G].".
 
 Figure of Hose Cutscene 1 is the file "Special/Cutscene/cutscene-hose1.png".
+Figure of Boxing Glove Cutscene 1 is the file "Special/Cutscene/cutscene-boxing-glove1.jpg".
+Figure of Boxing Glove Cutscene 2 is the file "Special/Cutscene/cutscene-boxing-glove2.jpg".
+Figure of Boxing Glove Cutscene 3 is the file "Special/Cutscene/cutscene-boxing-glove3.jpg".
+
+Figure of water bomb cutscene 1 is the file "Special/Cutscene/cutscene-water-bomb-explode1.png".
 
 To trigger (Y - a prank trap):
 	now the reset-timer of Y is 250;
@@ -155,11 +160,16 @@ To trigger (Y - a prank trap):
 				let C be a random glued sex toy penetrating asshole;
 				if C is a thing, compute enema vs glue pressure of C;
 				if the player is able to expel, compute messing;
+				cutshow Figure of Boxing Glove Cutscene 3;
 				UnflinchingPainUp 6;
 			otherwise:
 				PainUp 6;
+				if there is a worn diaper, cutshow Figure of Boxing Glove Cutscene 2;
+				otherwise cutshow Figure of Boxing Glove Cutscene 1;
 		otherwise:
 			PainUp 6;
+			if there is a worn diaper, cutshow Figure of Boxing Glove Cutscene 2;
+			otherwise cutshow Figure of Boxing Glove Cutscene 1;
 	otherwise:
 		say "Suddenly, a giant clown doll bursts out of the container, making an extremely loud noise as it does!";
 		FearUp 12 with reason "You gasp with surprise,".

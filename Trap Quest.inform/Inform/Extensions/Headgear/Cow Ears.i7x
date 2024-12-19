@@ -55,9 +55,8 @@ To compute class outfit of (H - a cow ears):
 	class summon cowbell.
 
 To compute unique periodic effect of (C - cow-ears):
-	let P be a random off-stage cow piercing;
 	let pierce be 0;
-	if P is cow piercing and the number of worn nipple piercing is 0, now pierce is 1;
+	if nipple-rings is off-stage and the number of worn nipple piercing is 0, now pierce is 1;
 	let T be nothing;
 	unless nintendolls-logo tattoo is on-stage, now T is nintendolls-logo tattoo;
 	if (the largeness of breasts > 15 or (the largeness of breasts > 8 and the largeness of breasts >= max breast size)) and (T is actually summonable or pierce is 1) and the class of the player is "cowgirl": [Not for multiclasses, since we probably can't destroy the dress]
@@ -65,8 +64,8 @@ To compute unique periodic effect of (C - cow-ears):
 		if pierce is 1:
 			repeat with D running through worn breast covering clothing:
 				now D is in pink wardrobe;
-		summon P cursed;
-		now P is milk production;
+		summon nipple-rings cursed;
+		now nipple-rings is milk production;
 		if T is actually summonable, summon T;
 	if the temporary-milked-bonus of C > 0:
 		decrease temporary-milked-bonus of C by 1;

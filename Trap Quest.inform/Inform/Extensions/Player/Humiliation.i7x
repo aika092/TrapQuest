@@ -346,7 +346,7 @@ To finally humiliate (X - a number):
 		2Humiliate X;
 		if the humiliation of the player >= HUMILIATION-BROKEN and the player-class is not avatar:
 			now the raw delicateness of the player is 20;
-			say "[bold type]You feel yourself shivering with a strange sense of adrenaline and pleasure. Your mind has finally snapped, and you no longer can see yourself as anything but an object to be acted upon by others, especially when you are on your knees. You get the feeling that this change in outlook is permanent, [if the bimbo of the player < 11]which makes you both very concerned and even more aroused[otherwise]which just makes you aroused and excited[end if]. From now on when on your knees, you will usually automatically submit to anyone you see[if no-panties-fetish is 1 and diaper quest is 0]. Furthermore you now find the idea of wearing panties disgusting - a worthless fucktoy like yourself should have [his of the player] holes visible and open for business at all times[end if].[roman type][line break]"; [Should only happen once when 40k is hit]
+			say "[bold type]You feel yourself shivering with a strange sense of adrenaline and pleasure. Your mind has finally snapped, and you no longer can see yourself as anything but an object to be acted upon by others, especially when you are on your knees. You get the feeling that this change in outlook is permanent, [if the bimbo of the player < 11]which makes you both very concerned and even more aroused[otherwise]which just makes you aroused and excited[end if]. From now on when on your knees, you will usually automatically submit to anyone you see[if underwear-cover-limit is 1 and diaper quest is 0]. Furthermore you now find the idea of wearing panties disgusting - a worthless fucktoy like yourself should have [his of the player] holes visible and open for business at all times[end if].[roman type][line break]"; [Should only happen once when 40k is hit]
 			if worthless cunt tattoo is drawable and there is a worn tattoo:
 				summon worthless cunt tattoo;
 				say "The words 'Worthless Cunt' suddenly appear in permanent ink, above your crotch!";
@@ -370,6 +370,15 @@ To 2Humiliate (X - a number):
 		if the humiliation of the player > HUMILIATION-SHAMELESS and the humiliation of the player < HUMILIATION-SHAMELESS + 1000, say "[one of]You once again feel a splitting pain in your temples, but this time, the intense stretching sensation is accompanied by an odd feeling of pleasure. You can't help but moan as the enormous *girth* of your master's presence rushes into you anew, and [his of male-m] powerful voice echoes inside your head.[line break][first custom style]'That's right, [NameBimbo]! Take. It. All! Yes, just a little more. Just a scintilla more space, and you'll take it all. We're so close...'[roman type][line break][or][stopping]".
 
 blush factor is a number that varies.
+previous blush factor is a number that varies.
+previous previous blush factor is a number that varies.
+
+To blush-progress:
+	now previous previous blush factor is previous blush factor;
+	now previous blush factor is blush factor;
+	decrease blush factor by 100;
+	if blush factor > 2000, now blush factor is 2000;
+	if blush factor < 0, now blush factor is 0.
 
 To graphical-blush (X - a number):
 	if the humiliation of the player >= 40000:

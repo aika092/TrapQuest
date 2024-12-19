@@ -16,12 +16,12 @@ long bridal dress is a bridal dress. Understand "short" as long bridal dress whe
 
 To compute class set up of (C - long bridal dress):
 	if the ceremony of betrothal-quest is false:
-		now C is knee-length;
+		now the skirt-length of C is 6;
 	otherwise:
 		if vaginal-virginity-quest is appropriate:
 			now the quest of C is vaginal-virginity-quest;
 			now C is cursed;
-		now C is short.
+		now the skirt-length of C is 4.
 
 Figure of long bridal dress is the file "Items/Clothes/Upper/Special/Bridal/bridaldress1a.png".
 Figure of short bridal dress is the file "Items/Clothes/Upper/Special/Bridal/bridaldress1b.png".
@@ -41,11 +41,11 @@ To say ClothingDesc of (C - long bridal dress):
 	say "This silk white [MediumDesc of C] isn't too bad, as far as clothing items in this game go. The long flowing skirt [if C is knee-length]goes down past your knees[otherwise]has been removed, transforming it into party dress mode[end if]. The belly section is sheer to expose a bit of sexy skin, and it has no arms, but except for that it's just on the sexy side of normal[if C is knee-length]. You can sense it somewhat reducing the chances of aggressors deciding to take your virginity[end if].".
 
 To decide which number is the initial outrage of (C - long bridal dress):
-	if C is knee-length, decide on 1;
+	if the skirt-length of C >= 6, decide on 1;
 	decide on 3.
 
 Definition: long bridal dress is party themed:
-	if it is knee-length, decide no;
+	if the skirt-length of it >= 6, decide no;
 	decide yes.
 
 To compute virginity-loss of (C - long bridal dress):
@@ -62,7 +62,7 @@ This is the bridal dress pussy slut rule:
 The bridal dress pussy slut rule is listed in the pussy slut eligibility rules.
 
 To decide which object is the unique-upgrade-target of (C - long bridal dress):
-	if C is knee-length, decide on sexy bridal dress;
+	if the skirt-length of C >= 6, decide on sexy bridal dress;
 	otherwise decide on slutty bridal dress.
 
 sexy bridal dress is a bridal dress. sexy bridal dress is finger covering. The text-shortcut of sexy bridal dress is "sbrd".
@@ -91,7 +91,7 @@ To say ClothingDesc of (C - sexy bridal dress):
 To decide which number is the initial outrage of (C - sexy bridal dress):
 	decide on 5.
 
-slutty bridal dress is a bridal dress. slutty bridal dress is unskirted. slutty bridal dress is crotch-intact. slutty bridal dress is bottom-exclusive. The text-shortcut of slutty bridal dress is "stbd".
+slutty bridal dress is a bridal dress. The skirt-length of slutty bridal dress is 0. slutty bridal dress is crotch-intact. slutty bridal dress is bottom-exclusive. The text-shortcut of slutty bridal dress is "stbd".
 
 Figure of slutty bridal dress is the file "Items/Clothes/Upper/Special/Bridal/bridaldress3.png".
 
@@ -125,6 +125,9 @@ To decide which number is the crotch-tightness of (C - slutty bridal dress):
 
 
 princess bride dress is a bridal dress. princess bride dress is finger covering. princess bride dress is fully covering. princess bride dress is neck covering. princess bride dress is not-displacable-always-fuckable. princess bride dress is totally-exclusive. princess bride dress is sheer. The text-shortcut of princess bride dress is "pbrd".
+The skirt-length of princess bride dress is 8.
+To decide which number is the front-skirt-length of (C - princess bride dress):
+	decide on 1.
 
 Figure of princess bride dress is the file "Items/Clothes/Upper/Special/Bridal/bridaldress4.png".
 
@@ -176,13 +179,6 @@ To compute quest completion of (Q - podium-quest) on (C - princess bride dress):
 Definition: princess bride dress is slitted: decide yes.
 Definition: princess bride dress is bow themed: decide yes.
 
-Definition: princess bride dress is skirt-covering-crotch: decide no.
-Definition: princess bride dress is potentially penis covering: decide no.
-Definition: princess bride dress is potentially at least partially penis concealing: decide no.
-Definition: princess bride dress is potentially erection concealing: decide no.
-Definition: princess bride dress is potentially at least partially asshole covering: [can't cover much but it does partially cover the butthole]
-	if it is crotch-displaced, decide no;
-	decide yes.
 
 To say MediumDesc of (C - princess bride dress):
 	say "princess bride dress".
@@ -194,7 +190,7 @@ To decide which number is the initial outrage of (C - princess bride dress):
 	decide on 6.
 
 
-housewife dress is a bridal dress. housewife dress is high cut. housewife dress is knee-length. housewife dress is arm exposing. The text-shortcut of housewife dress is "hwd".
+housewife dress is a bridal dress. housewife dress is high cut. The skirt-length of housewife dress is 6. housewife dress is arm exposing. The text-shortcut of housewife dress is "hwd".
 
 Figure of housewife dress is the file "Items/Clothes/Upper/Special/Bridal/bridaldress5.png".
 
@@ -224,7 +220,10 @@ To decide which number is the initial outrage of (C - housewife dress):
 	decide on 1.
 
 
-hotwife dress is a bridal dress. hotwife dress is very low cut. hotwife dress is hobble-skirted. hotwife dress is arm exposing. hotwife dress is crotch-skirted. hotwife dress is totally-exclusive. The text-shortcut of hotwife dress is "hwfd".
+hotwife dress is a bridal dress. hotwife dress is very low cut. hotwife dress is arm exposing. hotwife dress is totally-exclusive. The text-shortcut of hotwife dress is "hwfd".
+The skirt-length of hotwife dress is 10.
+To decide which number is the front-skirt-length of hotwife dress:
+	decide on 0.
 
 Figure of hotwife dress is the file "Items/Clothes/Upper/Special/Bridal/bridaldress7.png".
 
@@ -241,7 +240,6 @@ To compute class set up of (C - hotwife dress):
 	now the quest of C is interracial-sex-quest;
 	now C is audible jiggles.
 
-Definition: hotwife dress is skirt-covering-crotch: decide no.
 Definition: hotwife dress is slitted: decide yes.
 Definition: hotwife dress is heart themed: decide yes.
 Definition: hotwife dress is flower themed: decide yes.
@@ -265,7 +263,7 @@ To decide which number is the initial outrage of (C - hotwife dress):
 
 
 
-sacrificial maiden dress is a bridal dress. sacrificial maiden dress is fully covering. sacrificial maiden dress is knee-length. sacrificial maiden dress is arm exposing. sacrificial maiden dress is not-top-displacable. sacrificial maiden dress is sheer. The text-shortcut of sacrificial maiden dress is "scmd".
+sacrificial maiden dress is a bridal dress. sacrificial maiden dress is fully covering. The skirt-length of sacrificial maiden dress is 6. sacrificial maiden dress is arm exposing. sacrificial maiden dress is not-top-displacable. sacrificial maiden dress is sheer. The text-shortcut of sacrificial maiden dress is "scmd".
 
 Figure of sacrificial maiden dress is the file "Items/Clothes/Upper/Special/Bridal/bridaldress6.png".
 

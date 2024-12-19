@@ -70,7 +70,7 @@ To say ShortDesc of (T - a bondage):
 Part - Trashcan
 
 trashcan is an overdress. trashcan is metal. trashcan is unique. The printed name of trashcan is "[clothing-title-before]trashcan[clothing-title-after]". The text-shortcut of trashcan is "tsh".
-trashcan is chestless. trashcan is not-top-displacable. trashcan is normally-nipple-exposing. trashcan is unskirted.
+trashcan is chestless. trashcan is not-top-displacable. trashcan is normally-nipple-exposing. The skirt-length of trashcan is 0.
 
 trashcan has a number called tissue-fill.
 trashcan has a number called diaper-fill.
@@ -104,13 +104,16 @@ To say ShortDesc of (C - trashcan):
 
 To say ClothingDesc of (C - trashcan):
 	say "A small metal wastepaper basket that is strapped tightly to your midriff. [if the player is not in a predicament room][bold type]It appears to have some powerful magical effect that is preventing you from unstrapping it, or even touching it, meaning that you can't do anything about anything that anyone drops inside it. [roman type][end if]";
-	if diaper quest is 0, say "[if the tissue-fill of trashcan is 0]It is completely empty, so people can see your belly and crotch straight through the mesh frame[otherwise if the tissue-fill of trashcan is 1]It is half-full of discarded [semen]-filled tissues, so people can see your belly straight through the mesh frame, but your crotch is hidden from view[otherwise]It is full of discarded [semen]-filled tissues, which is very humiliating, but is at least hiding your belly and crotch from view[end if].";
-	otherwise say "[if the diaper-fill of trashcan is 0]It is completely empty, so people can see your belly and crotch straight through the mesh frame[otherwise if the diaper-fill of trashcan is 1]It holds a single large soiled diaper, so people can see your belly straight through the mesh frame, but your crotch is hidden from view[otherwise]It currently contains two large soiled diapers, which is very humiliating, but is at least hiding your belly and crotch from view[end if].";
+	if diaper quest is 0, say "[if the tissue-fill of trashcan is 0]It is completely empty, so people can see your belly and crotch straight through the mesh frame[otherwise if the tissue-fill of trashcan is 1]It is half-full of discarded [semen]-filled tissues, so people can see your belly straight through the mesh frame, but your crotch is hidden from view (when you're standing)[otherwise]It is full of discarded [semen]-filled tissues, which is very humiliating, but is at least hiding your belly and crotch from view (when you're standing)[end if].";
+	otherwise say "[if the diaper-fill of trashcan is 0]It is completely empty, so people can see your belly and crotch straight through the mesh frame[otherwise if the diaper-fill of trashcan is 1]It holds a single large soiled diaper, so people can see your belly straight through the mesh frame, but your crotch is hidden from view (when you're standing)[otherwise]It currently contains two large soiled diapers, which is very humiliating, but is at least hiding your belly and crotch from view (when you're standing)[end if].";
 	say "[bold type]You can sense that [NameDesc of C] [bold type]cannot be removed other than by changing your class...[roman type][line break]";
 
 To say CondomsPinnedDesc of (C - trashcan):
 	if the used condoms of C >= 20, say "[BigNameDesc of C] has an almost countless number of used condoms in it.";
 	otherwise say "[BigNameDesc of C] has [if the used condoms of C > 1][used condoms of C] very visible cum-filled condoms discarded on top of the tissues[otherwise if the used condoms of C is 1]a large cum-filled condom very visibly discarded on top of the tissues[end if][if the used condoms of C > 0 and the empty condoms of C > 0], and [end if][if the empty condoms of C > 1][empty condoms of C] used condoms that have been torn and sucked dry[otherwise if the empty condoms of C is 1]one used condom that has been torn and sucked dry[end if].".
+
+To say CondomPinnedFlav of (C - trashcan):
+	say "[one of]The condom appears to just be resting on top of the tissues, but you have a sneaking suspicion that you won't be able to remove it normally.[or][stopping]".
 
 trashcan has a number called smellCycle.
 

@@ -16,7 +16,6 @@ Definition: orc is able to see stolen goods: decide no. [He doesn't attack, so h
 
 [Definition: orc is raunchy: decide yes.]
 
-
 The printed name of orc is "[if item described is in the location of the player][TQlink of item described][end if][input-style][MediumDesc of item described][shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of orc is "orc". Understand "hairy" as orc.
 
 Figure of orc is the file "NPCs/Dungeon/Orc/orc1.jpg".
@@ -185,6 +184,7 @@ To compute perception of (M - orc):
 	otherwise:
 		say "[speech style of M]'Pleasant tidings, [if M is bride-consort]my blushing bride[otherwise]young one[end if][one of].'[roman type][line break][big he of M] speaks with a very posh and dignified accent, completely at odds with [his of M] rough exterior.[line break][speech style of M]'[or]. [stopping][if the poker-timer of M > 0]The table is still recharging, so come back some time soon[otherwise]Perhaps you'd like to play a game of poker with me? Just let me know[end if].'[roman type][line break]";
 		if the player is not able to speak, say "[speech style of M]'Oh, you can't speak right now, can you. Well in that case, perhaps just poke me to let me know you want to play.'[roman type][line break]";
+		calm M;
 		if newbie tips is 1, say "[one of][newbie style]Newbie tip: The orc won't fight you. [big he of M] just wants you to play at the magic poker table.[roman type][line break][or][stopping]".
 
 To compute friendly boredom of (M - orc):
@@ -223,6 +223,7 @@ To satisfy (M - orc) for (N - a number) seconds:
 			progress quest of nice-quest;
 	otherwise:
 		bore M for N seconds;
+	compute unlock satisfaction of M;
 	send M home. [This makes sure the orc always makes it back to the poker room.]
 
 To say SatisfiedFlav of (M - orc):
@@ -277,7 +278,7 @@ This is the orc cockslaps the player rule:
 The orc priority attack rules is a rulebook. The priority attack rules of orc is the orc priority attack rules.
 This is the orc trolls then leaves rule:
 	say "[speech style of orc]'How uncouth.'[roman type][line break][BigNameDesc of orc] calmly tosses a smoke bomb onto the ground. The entire place fills with smoke - pink smoke!";
-	now the location of orc is smoky;
+	now the location of orc is pink-smoky;
 	update backdrop positions;
 	compute pink smoke;
 	say "[line break]By the time the smoke has settled at the bottom half of the room, [NameDesc of orc] has gone!";
@@ -444,9 +445,10 @@ To compute SeductionGrind of (M - orc):
 			say "[variable custom style]The game is telling me I'm a professional stripper now?![roman type][line break]";
 		otherwise if there is a worn maid headdress:
 			let H be a random worn headgear;
-			transform H into stripper maid headdress;
-			compute class outfit of stripper maid headdress;
-			say "[variable custom style]The game is telling me I'm a professional stripper now?![roman type][line break]";
+			unless H is stripper maid headdress:
+				transform H into stripper maid headdress;
+				compute class outfit of stripper maid headdress;
+				say "[variable custom style]The game is telling me I'm a professional stripper now?![roman type][line break]";
 		otherwise if cumdump-headband is worn and stripper-ears is off-stage:
 			if bitch top is worn, WardrobeVanish bitch top;
 			class summon porn star tube top;
@@ -844,7 +846,7 @@ To compute poker punishment of (PC - a number):
 				now RDC is waddle-walking;
 				say "A [RDC] appears around your loins!";
 			otherwise if there is a worn diaper or the number of worn unremovable knickers is 0:
-				say "[speech style of orc]'The [poker card of PC] [if PS is not 3 or the number of worn diaper is 0]gives you a cursed diaper[end if][if PS is 3 and the number of worn knickers is 0] and [end if][if PS is 3]glues your underwear to your body[end if].'[roman type][line break]";
+				say "[speech style of orc]'The [poker card of PC] [if PS is not 3 or the number of worn knickers is 0]gives you a cursed diaper[end if][if PS is 3 and the number of worn knickers is 0] and [end if][if PS is 3]glues your underwear to your body[end if].'[roman type][line break]";
 				if PS is not 3 or the number of worn knickers is 0:
 					let K be a random worn knickers;
 					if K is diaper:
@@ -1117,6 +1119,7 @@ To compute poker punishment of (PC - a number):
 			if diaper quest is 0 and pimp is alive and the times-met of pimp > 0 and portal-hotpants is unclash summonable:
 				say "[speech style of orc]'The [poker card of PC] makes [NameDesc of pimp] [speech style of orc]think that you owe [him of pimp] lots of money. And... it gives [him of pimp] a unique way to sell your body for sex, without even asking your permission.'[roman type][line break]";
 				unclash class summon portal-hotpants;
+				now the favour of pimp is the aggro limit of pimp - 4;
 				if max breast size >= 5 and portal-bra is actually summonable:
 					summon portal-bra;
 					say "The hotpants are immediately followed by a matching chestplate!";
@@ -1145,7 +1148,7 @@ To compute poker punishment of (PC - a number):
 				now M is unleashed;
 				say "You hear the sound of a cage crashing and swinging open from elsewhere in the Dungeon![line break][variable custom style][if Dungeon36 is visited]Oh... Oh no... The [ShortDesc of M]...[otherwise]What was that?![end if][roman type][line break]";
 			otherwise if M is monster:
-				now M is massive;
+				if M is tentacle monster, now M is massive;
 				summon M in the dungeon;
 				say "You hear the sound of [if diaper quest is 0]slithering tentacles[otherwise]evil laughter and videogame music[end if] from elsewhere in the Dungeon![line break][variable custom style]Uh-oh...[roman type][line break]";
 			otherwise:
@@ -1155,11 +1158,11 @@ To compute poker punishment of (PC - a number):
 			let ULO be the list of eligible pledge-lesson-objects;
 			sort ULO in random order;
 			repeat with LO running through ULO:
-				if the implant of LO is 1, remove LO from ULO;
+				if LO is implanted, remove LO from ULO;
 			let E be entry 1 in ULO;
 			if E is a pledge-lesson-object:
-				execute E;
-				now the implant of E is 1;
+				pledge-execute E;
+				pledge-implant E;
 				say "And you can feel that for the rest of your time here, if you disobey the pledge that was just made for you, there will be serious consequences.";
 			otherwise:
 				StrengthDown 4;

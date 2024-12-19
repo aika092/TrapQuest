@@ -1,6 +1,6 @@
 Ribbon Dress by Dresses begins here.
 
-A ribbon dress is a kind of overdress. There is 1 transformation-rare ribbon dress. A ribbon dress is fully exposing. A ribbon dress is usually unskirted. A ribbon dress is silk. A ribbon dress is usually crotch-intact. The text-shortcut of ribbon dress is "rbd". A ribbon dress is usually totally-exclusive. The printed name of ribbon dress is usually "[clothing-title-before]ribbon dress[clothing-title-after]".
+A ribbon dress is a kind of overdress. There is 1 transformation-rare ribbon dress. A ribbon dress is fully exposing. The skirt-length of A ribbon dress is 0. A ribbon dress is silk. A ribbon dress is usually crotch-intact. The text-shortcut of ribbon dress is "rbd". A ribbon dress is usually totally-exclusive. The printed name of ribbon dress is usually "[clothing-title-before]ribbon dress[clothing-title-after]".
 
 Figure of ribbon dress is the file "Items/Clothes/Upper/Exposing/ribbondress1.png".
 

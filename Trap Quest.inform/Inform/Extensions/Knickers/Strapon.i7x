@@ -125,7 +125,7 @@ To uniquely set up (C - equine-strapon):
 To say PenisFlavour of (K - equine-strapon):
 	let N be the strap-length of K;
 	if the size of penis >= N, say ShortDesc of penis;
-	otherwise say "[PenisSizeFlav N] [if mythical creature fetish is 1]industrial[otherwise]equine[end if] strapon [PenisShaftFlav N]".
+	otherwise say "[PenisSizeFlav N] [if mythical creature fetish is 1]equine[otherwise]industrial[end if] strapon [PenisShaftFlav N]".
 
 To say ShortDesc of (H - equine-strapon):
 	say "[if mythical creature fetish is 1]equine[otherwise]industrial[end if] strap-on".

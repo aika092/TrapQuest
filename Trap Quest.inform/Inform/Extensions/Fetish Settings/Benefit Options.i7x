@@ -15,6 +15,7 @@ title	subtable	description	toggle
 "Spontaneous tattoos (If this is enabled, tattoos can spontaneously appear on their own in response to what you do in the game. Otherwise this only starts happening after you get your first tattoo voluntarily) ([if spontaneous tattoos is 0]Not enabled - free to enable[otherwise][bold type]Enabled[roman type] - free to disable[end if])"	--	--	spontaneous tattoos toggle rule
 "Starting headgear rule (If this is enabled, a class headgear will appear in the pink wardrobe and you can choose to start that class journey straight away. You won't get that headgear the normal way until you've worn it.) - ([if roleplay fetish is 0]Not enabled - costs 1 point to enable[otherwise][bold type]Enabled[roman type] - 1 point used[end if])"	--	--	roleplay fetish toggle rule
 "Slower timers (Things like the academy class bell and doom quest ritual are more forgiving.) - ([if slower timers is 1]Not enabled - costs 2 points to enable[otherwise][bold type]Enabled[roman type] - 2 points used[end if])"	--	--	slower timers toggle rule
+"Easy Teaching (NPCs won't ask for a favour before teaching you a skill) - ([if easy teaching is 0]Not enabled - costs 2 points to enable[otherwise if easy teaching is 1][bold type]Enabled[roman type] - 2 points used[end if])"	--	--	easy teaching toggle rule
 "Minimum tank liquid: [if bonus liquid is 0]nearly empty[end if][if bonus liquid is 1]mostly empty[end if][if bonus liquid is 2]half full[end if][if bonus liquid is 3]over halfway full[end if][if bonus liquid is 4]mostly full[end if][if bonus liquid is 5]nearly full[end if][if bonus liquid is 6]completely full[end if] ([(bonus liquid * (1 + bonus liquid)) / 2] points used. [bonus liquid cost].)"	--	--	bonus liquid toggle rule
 "No Gag Reflex - ([if super gag reflex is 0]Not enabled - costs 3 points to enable[otherwise if super gag reflex is 1][bold type]Partially enabled[roman type] (player never has problems deepthroating, never pukes the cum back up afterwards, but some rare situations can still cause puking) - 3 points used; costs 1 more point to fully enable[otherwise][bold type]Fully enabled[roman type] (player never has problems deepthroating, never pukes ever) - 4 points used[end if])"	--	--	super gag reflex toggle rule
 "Fantastic Elastic (You can always insert any size sex toy) - ([if fantastic elastic is 0]Not enabled - costs 1 point to enable[otherwise if fantastic elastic is 1][bold type]Enabled[roman type] - 1 point used[end if])"	--	--	fantastic elastic toggle rule
@@ -266,5 +267,19 @@ This is the fantastic elastic toggle rule:
 This is the fantastic elastic reset rule:
 	now choice in row 89 of the Table of Player Options is 0.
 The fantastic elastic reset rule is listed in the reset rules.
+
+
+To decide which number is easy teaching:
+	if choice in row 92 of the Table of Player Options <= 0, decide on 0;
+	decide on 1.
+This is the easy teaching toggle rule:
+	if choice in row 92 of the Table of Player Options < 2 and points count >= 2, increase choice in row 92 of the Table of Player Options by 1;
+	otherwise now choice in row 92 of the Table of Player Options is -1.
+This is the easy teaching nightmare rule:
+	if choice in row 92 of the Table of Player Options is 0, now choice in row 92 of the Table of Player Options is 1.
+The easy teaching nightmare rule is listed in the nightmare mode rules.
+This is the easy teaching random rule:
+	if choice in row 92 of the Table of Player Options is 0 or choice in row 92 of the Table of Player Options is 1, now choice in row 92 of the Table of Player Options is a random number between 0 and 1.
+The easy teaching random rule is listed in the random mode rules.
 
 Benefit Options ends here.

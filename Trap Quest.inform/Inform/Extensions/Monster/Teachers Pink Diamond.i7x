@@ -56,6 +56,8 @@ Definition: hypno-lesson (called L) is lesson-appropriate:
 	decide yes.
 To decide which number is the min-students of (L - hypno-lesson):
 	decide on 0.
+To say LessonTitle of (L - hypno-lesson):
+	say "Betray Your Friends Hypnosis".
 
 To compute teaching of (L - hypno-lesson):
 	allocate 6 seconds;
@@ -103,12 +105,14 @@ To compute teaching of (L - hypno-lesson):
 
 enema-tag-lesson is a lesson. The lesson-teacher of enema-tag-lesson is teacher-hyacinthe.
 Definition: enema-tag-lesson is lesson-appropriate:
-	if the player is not the donator, decide no;
+	if the player is not the donator or enema fetish is 0, decide no;
 	repeat with C running through worn clothing:
 		if C is penetrating asshole and (C is glued or C is cursed or C is locked), decide no;
 	[if diaper quest is 0 and (a2m fetish < 2 or watersports fetish is 0), decide no;]
 	if the number of alive lesson-appropriate students < 2, decide no;
 	decide yes.
+To say LessonTitle of (L - enema-tag-lesson):
+	say "Enema Run 2021".
 
 To compute teaching of (L - enema-tag-lesson):
 	let M be the lesson-teacher of L;
@@ -501,12 +505,13 @@ Definition: pledge-lesson is lesson-appropriate:
 	decide no.
 To decide which number is the min-students of (L - pledge-lesson):
 	decide on 0.
+To say LessonTitle of (L - pledge-lesson):
+	say "Magic Pledges".
 
-A pledge-lesson-object is a kind of object. A pledge-lesson-object has a number called implant.
+A pledge-lesson-object is a kind of object. A pledge-lesson-object can be unoffered or offered. A pledge-lesson-object is usually unoffered. A pledge-lesson-object can be implanted.
 Definition: a pledge-lesson-object is eligible:
-	if the implant of it is 0, decide yes;
-	decide no.
-To execute (E - a pledge-lesson-object):
+	decide yes.
+To pledge-execute (E - a pledge-lesson-object):
 	say "BUG - lesson object with no function.".
 
 Figure of pledge Lesson Toilet User Cutscene is the file "Special/Cutscene/cutscene-toilet-curse1.jpg".
@@ -514,14 +519,14 @@ Figure of pledge Lesson Toilet Player Cutscene is the file "Special/Cutscene/cut
 
 pledge-lesson-toilet is a pledge-lesson-object.
 Definition: pledge-lesson-toilet is eligible:
-	if the implant of it is 0 and diaper lover > 0, decide yes;
+	if diaper lover > 0, decide yes;
 	decide no.
-To execute (E - pledge-lesson-toilet):
+To pledge-execute (E - pledge-lesson-toilet):
 	say "[second custom style]I'll never use the big [boy of the player] potty again. If I ever try to use a toilet, I will [if diaper swapping >= 4]be dragged down into the punishment realm[otherwise]start to forget how to hold in my tinkles[end if].[roman type][line break]A large white rune in the air flies down into your chest, right where your heart is. You can feel its magic begin to take hold...";
 	now toiletJustUsed is false.
 
 An all later time based rule (this is the toilet punishment rule):
-	if the implant of pledge-lesson-toilet is 1 and toiletJustUsed is true:
+	if pledge-lesson-toilet is implanted and toiletJustUsed is true:
 		compute toilet predicament punishment;
 		now toiletJustUsed is false.
 
@@ -559,12 +564,11 @@ To compute toilet predicament punishment:
 pledge-lesson-magic is a pledge-lesson-object.
 Definition: pledge-lesson-magic is eligible:
 	if diaper quest is 0 and the player is not possessing a vagina and tg fetish is 0, decide no;
-	if the implant of it is 0, decide yes;
-	decide no.
-To execute (E - pledge-lesson-magic):
+	decide yes.
+To pledge-execute (E - pledge-lesson-magic):
 	say "[second custom style][if diaper quest is 1]Using magic is for grown-ups. Whenever I try to use magic, my body reminds me of how much I need to use my diaper instead[otherwise if the player is possessing a vagina]Using magic is for pussies. Whenever I use magic, my cunt will become more and more desperate for cock[otherwise]Using magic is for pussies. Whenever I use magic, I will become more and more desperate to get a pussy that I can use to serve cock[end if].[roman type][line break]Two smaller white runes in the air fly down into your arms. You can feel their magic begin to work their way towards your shoulders...".
 A magic consequences rule (this is the pledge-lesson magic consequence rule):
-	if the implant of pledge-lesson-magic is 1:
+	if pledge-lesson-magic is implanted:
 		if diaper quest is 0:
 			say "The magic ripples through your arms, activating the magic pledge you've just broken. [if the raw vaginal sex addiction of the player is 10]But your addiction to vaginal sex is already so extreme, that nothing more happens![end if]";
 			VaginalSexAddictUp 1;
@@ -579,32 +583,65 @@ pledge-lesson-resist is a pledge-lesson-object.
 Definition: pledge-lesson-resist is eligible:
 	if diaper quest is 0, decide yes;
 	decide no.
-To execute (E - pledge-lesson-resist):
+To pledge-execute (E - pledge-lesson-resist):
 	say "[second custom style]Only a dumb useless slut resists the will of [his of the player] masters. Whenever I [bold type]resist[second custom style] from now on, I will become more and more brainless and stupid.[roman type][line break]A large circular white rune approaches your neck and begins to phase inside you...".
+
+pledge-lesson-short-skirts is a pledge-lesson-object.
+Definition: pledge-lesson-short-skirts is eligible:
+	if short skirts permanent fetish is 0, decide yes;
+	decide no.
+To pledge-execute (E - pledge-lesson-short-skirts):
+	say "[second custom style]Sexy [if diaper quest is 1]cuties[otherwise]sluts[end if] don't wear long skirts. From now on, wearing any skirt longer than [SkirtLength 4] will give me a massive headache.[roman type][line break]A large X-shaped white rune approaches your [HipDesc] and begins to phase inside you...".
+To pledge-implant (E - pledge-lesson-short-skirts):
+	now E is implanted;
+	now short skirts permanent fetish is 4.
+
+pledge-lesson-shorter-skirts is a pledge-lesson-object.
+Definition: pledge-lesson-shorter-skirts is eligible:
+	if short skirts permanent fetish > 2, decide yes;
+	decide no.
+To pledge-execute (E - pledge-lesson-shorter-skirts):
+	say "[second custom style]The [if diaper quest is 1]cutest[otherwise]sexiest[end if] [boy of the player]s wear the shortest of skirts. From now on, wearing any skirt longer than [SkirtLength 2] will give me a massive headache.[roman type][line break]A large X-shaped white rune approaches your [HipDesc] and begins to phase inside you...".
+To pledge-implant (E - pledge-lesson-shorter-skirts):
+	now E is implanted;
+	now short skirts permanent fetish is 2.
 
 pledge-lesson-panties is a pledge-lesson-object.
 Definition: pledge-lesson-panties is eligible:
-	if no-panties-fetish is 0, decide yes;
+	if skimpy underwear fetish is -1, decide yes;
 	decide no.
-To execute (E - pledge-lesson-panties):
-	say "[second custom style]Naughty little minxes like me don't wear normal underwear. From now on, wearing anything except [if diaper lover > 0]diapers [end if][if diaper lover > 0 and diaper quest is 0]and [end if][if diaper quest is 0]crotchless panties [end if]will give me a massive headache.[roman type][line break]A large X-shaped white rune approaches your [AssDesc] and begins to phase inside you...".
+To pledge-execute (E - pledge-lesson-panties):
+	say "[second custom style]Naughty little minxes like me don't wear normal underwear. From now on, wearing anything except [if diaper lover > 0]diapers [end if][if diaper lover > 0 and diaper quest is 0]or [end if][if diaper quest is 0]thongs or g-strings [end if]will give me a massive headache.[roman type][line break]A large X-shaped white rune approaches your [AssDesc] and begins to phase inside you...".
+To pledge-implant (E - pledge-lesson-panties):
+	now E is implanted;
+	now skimpy underwear fetish is 1.
+
+pledge-lesson-no-panties is a pledge-lesson-object.
+Definition: pledge-lesson-no-panties is eligible:
+	if skimpy underwear fetish > 0, decide yes;
+	decide no.
+To pledge-execute (E - pledge-lesson-no-panties):
+	say "[second custom style]Naughty little minxes like me don't even wear thongs or g-strings. From now on, wearing anything except [if diaper lover > 0]diapers [end if][if diaper lover > 0 and diaper quest is 0]and [end if][if diaper quest is 0]crotchless panties [end if]will give me a massive headache.[roman type][line break]A large X-shaped white rune approaches your [AssDesc] and begins to phase inside you...".
+To pledge-implant (E - pledge-lesson-no-panties):
+	now E is implanted;
+	now skimpy underwear fetish is 0.
 
 pledge-lesson-spit is a pledge-lesson-object.
 Definition: pledge-lesson-spit is eligible:
 	if diaper quest is 0, decide yes;
 	decide no.
-To execute (E - pledge-lesson-spit):
+To pledge-execute (E - pledge-lesson-spit):
 	say "[second custom style]Only prudes spit! From now on, if I spit out any mouthfuls, I become desperately thirsty and exhausted.[roman type][line break]A large spherical white rune approaches your [LipDesc] and begins to phase inside you...".
 
 pledge-lesson-mess is a pledge-lesson-object.
 Definition: pledge-lesson-mess is eligible:
-	if the implant of it is 0 and diaper messing >= 3, decide yes;
+	if diaper messing >= 3, decide yes;
 	decide no.
-To execute (E - pledge-lesson-mess):
+To pledge-execute (E - pledge-lesson-mess):
 	say "[second custom style]When my body tells me to go poo, I should do as I'm told and do a number two![roman type][line break]A large circular white rune approaches your bottom and begins to phase inside you...".
 
 pledge-lesson-yes is a pledge-lesson-object.
-To execute (E - pledge-lesson-yes):
+To pledge-execute (E - pledge-lesson-yes):
 	say "[second custom style]A good [boy of the player] should always say yes! When 'yes' is the option that a good obedient [if diaper quest is 1]baby[otherwise]slut[end if] would make, I will never choose no![roman type][line break]A large white rune shaped a bit like a 'Y' approaches your forehead and begins to settle...".
 
 To compute teaching of (L - pledge-lesson):
@@ -613,16 +650,19 @@ To compute teaching of (L - pledge-lesson):
 	let M be the lesson-teacher of L;
 	let LST be the list of students in the location of M;
 	say "[BigNameDesc of M] guides you [if the number of entries in LST is 1]and [student-name of entry 1 of LST] [otherwise if the number of entries in LST > 1]all [end if]to kneel down[if the number of entries in LST > 0] in a circle[end if]. With a flourish of [his of M] arms, [NameDesc of M] fills the room with countless floating magic runes, in an unknown language, all glowing a brilliant white.[line break][speech style of M]'Try to think of this as less of a lesson and more of an initiation into our inner circle. All you have to do is remain still and allow me to conduct the [']celebrations['][if the number of entries in LST > 0]. If any of you get up and try to leave, you ALL fail[end if][if diaper quest is 0]. Furthermore, [bold type]this is your only chance to partake in this lesson[speech style of M] - if any of you interrupt it, then the alternate ceremony that you all will have to attend will be much, much more... physical[end if].'[roman type][line break]";
-	let ULO be the list of eligible pledge-lesson-objects;
-	sort ULO in random order;
 	let lessonResists be 1;
 	let lessonImplants be 0;
-	let maxLessonImplants be a random number between 2 and 3;
-	while the number of entries in ULO > 0 and lessonImplants < maxLessonImplants:
+	let maxLessonImplants be 3;
+	if the player is getting unlucky:
+		increase maxLessonImplants by 1;
+		if the player is getting unlucky, increase maxLessonImplants by 1;
+	otherwise if the player is getting lucky:
+		decrease maxLessonImplants by 1;
+	while lessonImplants < maxLessonImplants and there is an eligible pledge-lesson-object:
 		say "[BigNameDesc of M] [one of]begins to sing with a sweet innocent voice. The words are not in a language you've ever heard before, but somehow you can understand the words[or]continues to sing in the foreign language you can somehow understand[or]sings [his of M] magic spell, the meaning forming in your head[stopping].";
-		let E be entry 1 in ULO;
-		execute E;
-		remove E from ULO;
+		let E be a random unoffered eligible pledge-lesson-object;
+		now E is offered;
+		pledge-execute E;
 		if lessonImplants is 0, say "You understand that [NameDesc of M] is laying a curse on you, and it's pretty clear what the consequences of that will be if [he of M] is successful. You could [bold type]stand up and leave[roman type], [bold type]resist the curse[roman type] or [bold type]allow it to happen[roman type]. If you spend your energy resisting this curse, you probably won't have the mental strength to resist the next ones.";
 		otherwise say "[if lessonResists > 0]Since you haven't resisted a curse yet, you're still able to resist this one, if you choose[otherwise]Since you've already resisted a curse, you can't resist any more[end if].";
 		reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
@@ -630,6 +670,7 @@ To compute teaching of (L - pledge-lesson):
 		set numerical response 2 to "Accept the curse";
 		if lessonResists > 0, set numerical response 3 to "Resist the curse (you can only do this once)";
 		compute multiple choice question;
+		increase lessonImplants by 1;
 		if player-numerical-response is 1:
 			say "You rip yourself free of the trance and stand up to leave. [BigNameDesc of M] frowns.[line break][speech style of M]'Disappointing. [if the number of entries in LST > 0]Despite your best efforts, thanks to [NameBimbo], you all fail. I imagine you might have lost at least one friend today[otherwise]The other teachers thought you were ready. Clearly they were mistaken. I think you would do well to increase your tolerances before you return here[end if], [NameBimbo].'[roman type][line break]After one final look of derision, [NameDesc of M] leaves the room.";
 			repeat with ST running through LST:
@@ -641,13 +682,14 @@ To compute teaching of (L - pledge-lesson):
 		otherwise:
 			say "You feel the magic power from the curse settling inside you.";
 			MagicPowerUp 1;
-			increase lessonImplants by 1;
-			now the implant of E is 1;
+			pledge-implant E;
 			say "The curse ebbs and eddies in your body, spreading out to your extremities through your veins. It feels a part of you, now.";
 	if maxLessonImplants > 0:
 		if diaper quest is 1, now the armband-print of armband is "golden babygirl"; [needs to go before gold ceremony completion]
 		otherwise now the armband-print of armband is "golden girl";
 		say "[speech style of M]'That's enough!'[roman type][line break][BigNameDesc of M] claps [his of M] hands and you open your eyes.";
+		if maxLessonImplants is 2, say "[variable custom style]There were only two? I expected more.[roman type][line break][GotLuckyFlav]";
+		if maxLessonImplants >= 4, say "[variable custom style]There were so many pledges I had to make... I didn't expect there to be that many...[roman type][line break][GotUnluckyFlav]";
 		compute gold ceremony completion of M;
 		now armband is solid gold;
 		say "You watch as the ID card inside your armband transforms!";
@@ -656,6 +698,8 @@ To compute teaching of (L - pledge-lesson):
 		compute princess reveal of M;
 	now bigGameLoop is 0;
 	conclude consenting.
+To pledge-implant (E - a pledge-lesson-object):
+	now E is implanted.
 
 To compute gold ceremony completion of (M - a monster):
 	let LST be the list of students in the location of M;

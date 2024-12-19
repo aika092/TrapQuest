@@ -1,6 +1,6 @@
 Negligee by Dresses begins here.
 
-A negligee is a kind of overdress. A negligee is sheer. A negligee is short. A negligee is transformation-rare. A negligee is silk. A negligee is optional-top-displacable.
+A negligee is a kind of overdress. A negligee is sheer. The skirt-length of A negligee is 4. A negligee is transformation-rare. A negligee is silk. A negligee is optional-top-displacable.
 
 To say ShortDesc of (C - a negligee):
 	say "negligee".
@@ -48,7 +48,7 @@ Definition: backless negligee is purple themed: decide yes.
 
 Part 2 - Lacy Negligee
 
-lacy negligee is a negligee. lacy negligee is super-short. lacy negligee is ridiculously low cut. The text-shortcut of lacy negligee is "lng".
+lacy negligee is a negligee. The skirt-length of lacy negligee is 1. lacy negligee is ridiculously low cut. The text-shortcut of lacy negligee is "lng".
 
 The printed name of lacy negligee is "[clothing-title-before]lacy negligee[clothing-title-after]".
 
@@ -64,7 +64,7 @@ Definition: lacy negligee is black themed: decide yes.
 
 Part 3 - Floral Negligee
 
-floral negligee is an underdress. floral negligee is crotch-intact. floral negligee is bottom-exclusive. floral negligee is unskirted. floral negligee is silk. floral negligee is low cut. The text-shortcut of floral negligee is "fng".
+floral negligee is an underdress. floral negligee is crotch-intact. floral negligee is bottom-exclusive. The skirt-length of floral negligee is 0. floral negligee is silk. floral negligee is low cut. The text-shortcut of floral negligee is "fng".
 
 To decide which number is the initial outrage of (C - floral negligee):
 	decide on 3.
@@ -90,7 +90,7 @@ To say ClothingDesc of (C - floral negligee):
 
 Part 4 - Handmaiden Negligee
 
-A handmaiden-negligee is a kind of negligee. A handmaiden-negligee is transformation-rare. A handmaiden-negligee is totally-exclusive. A handmaiden-negligee is crotch-intact. A handmaiden-negligee is unskirted. A handmaiden-negligee is silk. A handmaiden-negligee is very low cut.
+A handmaiden-negligee is a kind of negligee. A handmaiden-negligee is transformation-rare. A handmaiden-negligee is totally-exclusive. A handmaiden-negligee is crotch-intact. The skirt-length of A handmaiden-negligee is 0. A handmaiden-negligee is silk. A handmaiden-negligee is very low cut.
 Definition: a handmaiden-negligee is layer-concealing: decide no.
 Definition: a handmaiden-negligee is partially-layer-concealing: decide yes.
 To decide which number is the crotch-tightness of (C - a handmaiden-negligee):

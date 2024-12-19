@@ -204,7 +204,7 @@ To say AdviceAnswer of (M - student-rachel):
 To say EscapeAnswer of (M - student-rachel):
 	say "[speech style of M]'[if the current-rank of M > the rank of the player]There's nothing I care about. It seems like this entire place is just designed to make you feel like a big baby.'[otherwise]Probably loads more nasty things designed to make us feel even more like submissive babygirls...'[end if][roman type][line break]".
 
-To compute teaching of (M - student-rachel):
+To compute teaching offer of (M - student-rachel):
 	say "[speech style of M]'No, sorry, I'm not any good at this yet. I'm the one who needs extra help...'[roman type][line break]".
 
 Part - Nasty Student Tanya
@@ -236,13 +236,17 @@ To update name of (M - student-tanya):
 To say StoryAnswer of (M - student-tanya):
 	say "[speech style of M]'My boyfriend wants me to wear diapers and call him 'Daddy' [if the current-rank of M is 1]but I'm not too sure. I think you're all freaks. Look at what a ridiculous shirt I've been forced to wear! And don't even get me started on this diaper...'[otherwise]and I'm training to be his bratty babygirl. I think I've got the attitude for this role already, hah!'[end if][roman type][line break]".
 
+Definition: a student is scrunchie-giving:
+	if it is student-tanya, decide yes;
+	decide no.
+
 Part - Nasty Student Emily
 
 student-emily is a nasty student.
 
 The text-shortcut of student-emily is "stem".
 
-Figure of emily is the file "NPCs/School/Student/student22.png".
+Figure of emily is the file "NPCs/School/Student/student22.jpg".
 
 To decide which figure-name is the monster-image of (M - student-emily):
 	decide on figure of emily.
@@ -276,7 +280,7 @@ To say StoryAnswer of (M - student-emily):
 To say AdviceAnswer of (M - student-emily):
 	say "[speech style of M]'Give up while you still have [if there is a worn dry knickers]dry underwear[otherwise]a shred of dignity remaining[end if]. It won't last long.'[roman type][line break]".
 
-To compute teaching of (M - student-emily):
+To compute teaching offer of (M - student-emily):
 	say "[speech style of M]'You can't teach looks. You're always going to be ugly, too bad.'[roman type][line break]".
 
 Part - Tryhard Student Raye
@@ -321,7 +325,7 @@ To say WhereAnswer of (M - student-raye):
 To say EscapeAnswer of (M - student-raye):
 	say "[speech style of M]'More people who you can show off your diaper to, of course!'[roman type][line break]".
 
-To compute teaching of (M - student-raye):
+To compute teaching offer of (M - student-raye):
 	say "[speech style of M]'This is a diaper. Babygirls like us wear them to look cute and because we can't control our tinkles.'[roman type][line break]".
 
 Part - Ditzy Student Minnie
@@ -364,7 +368,7 @@ To say AdviceAnswer of (M - student-minnie):
 To say EscapeAnswer of (M - student-minnie):
 	say "[speech style of M]'I bet there's more good feelings! Yay!'[roman type][line break]".
 
-To compute teaching of (M - student-minnie):
+To compute teaching offer of (M - student-minnie):
 	say "[speech style of M]'Peepee comes out of [if the current-rank of M is 4]your down-there[otherwise]the tinkle[end if] place.'[roman type][line break]".
 
 Part - Chess Stuff
@@ -531,7 +535,10 @@ To compute chess time:
 		if the lost-pieces of chess-lesson >= 13 or the student-lost-pieces of chess-lesson >= 13, now diffNeeded is 2;
 		if (the lost-pieces of chess-lesson > 12 and the lost-pieces of chess-lesson > the student-lost-pieces of chess-lesson) or (the lost-pieces of chess-lesson - student-lost-pieces of chess-lesson >= diffNeeded), compute opponent checkmate;
 		otherwise compute opponent chess turn;
-		if the chess-turn of chess-lesson is 0 and (the student-lost-pieces of chess-lesson > 12 or (the student-lost-pieces of chess-lesson - lost-pieces of chess-lesson >= diffNeeded)), compute checkmate;
+		if the lost-pieces of chess-lesson > 13 and the lost-pieces of chess-lesson > the student-lost-pieces of chess-lesson:
+			compute opponent checkmate;
+		otherwise if the chess-turn of chess-lesson is 0 and (the student-lost-pieces of chess-lesson > 12 or (the student-lost-pieces of chess-lesson - lost-pieces of chess-lesson >= diffNeeded)):
+			compute checkmate;
 		now the defensive-move of chess-lesson is 2; [player always takes a couple of turns to find the defensive move when it's their turn]
 	otherwise if chess-move-choice > 10:
 		now the chess-turn of chess-lesson is 1; [It was the player's turn, but they did their move]
@@ -547,21 +554,24 @@ To compute chess time:
 		otherwise:
 			say "[BigNameDesc of ST] is forced to drink more of the punishment [if diaper messing >= 3]NUTRI-LAX [end if]liquid.";
 			increase the student-rectum of chess-lesson by 2;
-		if currently-messing is 0:
+		if currently-messing of chess-lesson is 0:
 			compute wallowing;
 			compute hunger and thirst;
 			compute bladder growth;
 		if the player is bursting:
 			increase player-bladder-penalty of chess-lesson by 1;
-			say "[bold type][if the player-bladder-penalty of chess-lesson is 5]You are beginning to feel a strong urge to pee, which is making it more difficult for you to concentrate[otherwise if the player-bladder-penalty of chess-lesson > 5]You would find it slightly easier to think if you didn't have to focus on holding your bladder[otherwise]Holding in your pee is making it increasingly difficult to concentrate[end if].[roman type][line break]";
+			if the player-bladder-penalty of chess-lesson >= 5, say "[bold type][if the player-bladder-penalty of chess-lesson is 5]You are beginning to feel a strong urge to pee, which is making it more difficult for you to concentrate[otherwise if chess-thinking-penalty >= saved-flat-intelligence + 4]It is currently IMPOSSIBLE to think about chess moves because of how much you're holding onto your bladder[otherwise]You would find it significantly easier to think if you didn't have to focus on holding your bladder[end if].[roman type][line break]";
+			if the player is a bit horny and chess-thinking-penalty < saved-flat-dexterity + 4, say "[bold type]Also, you are [if the player is very horny]very horny[otherwise]rather turned on[end if], which is further hindering your ability to think.[roman type][line break]";
 		otherwise:
 			now player-bladder-penalty of chess-lesson is 0;
+			if the player is a bit horny:
+				if chess-thinking-penalty >= saved-flat-dexterity + 4, say "[bold type]It is currently IMPOSSIBLE to think about chess moves because of how horny you are.[roman type][line break]";
+				otherwise say "[bold type]You are [if the player is very horny]very horny[otherwise]rather turned on[end if], which is hindering your ability to think.[roman type][line break]";
 		if delayed urination > 0, compute chess urination;
 		finally humiliate the delayed humiliation of the player;
-		decrease blush factor by 100;
-		if blush factor > 2000, now blush factor is 2000;
-		if blush factor < 0, now blush factor is 0;
+		blush-progress;
 		check for arousal change;
+		Reset Flags; [refractory period and humiliation]
 		update saved stats;
 		now focused-thing is ST;
 		render chess state;
@@ -638,16 +648,16 @@ To decide which number is chess-move-found:
 	decide on 0.
 
 To decide which number is chess-random-reset:
-	decide on (a random number between 1 and 6) + (a random number between 0 and 2).
+	decide on a random number between 1 and 4.
 
 To decide which number is chess-great-move-toughness:
-	decide on (a random number between 0 and 7) + (a random number between 0 and 1).
+	decide on (a random number between 1 and 5) + (a random number between 1 and 2).
 
 To decide which number is chess-safe-move-toughness:
-	decide on (a random number between 0 and 4) + (a random number between 0 and 1).
+	decide on a random number between 0 and 4.
 
 To decide which number is chess-trapping-move-toughness:
-	decide on (a random number between 0 and 6) + (a random number between 0 and 1).
+	decide on (a random number between 0 and 5) + (a random number between 0 and 1).
 
 To reset chess planning:
 	reset chess player planning;
@@ -690,7 +700,7 @@ To reset chess opponent great planning:
 	if the lost-pieces of chess-lesson > 12 or the student-lost-pieces of chess-lesson > 14, now student-great-move of chess-lesson is 999.
 
 To reset chess opponent safe planning:
-	if chess-move-found is 1, now student-safe-move of chess-lesson is chess-random-reset + chess-safe-move-toughness;
+	if chess-move-found is 1 or the player is getting unlucky, now student-safe-move of chess-lesson is chess-random-reset + chess-safe-move-toughness;
 	otherwise now student-safe-move of chess-lesson is 999;
 	if the lost-pieces of chess-lesson > 12 or the student-lost-pieces of chess-lesson > 14, now student-safe-move of chess-lesson is 999.
 
@@ -704,52 +714,61 @@ To reset chess opponent trap planning:
 	otherwise now student-trapping-move of chess-lesson is 999;
 	if the lost-pieces of chess-lesson > 12 or the student-lost-pieces of chess-lesson > 14, now student-trapping-move of chess-lesson is 999.
 
+To decide which number is chess-thinking-penalty:
+	let X be 0;
+	if player-bladder-penalty of chess-lesson >= 5, increase X by the player-bladder-penalty of chess-lesson;
+	if the player is a bit horny, increase X by the arousal of the player * 1500;
+	decide on X.
+
 To compute chess players thinking:
 	if currently-messing of chess-lesson is 0:
-		let I be 0;
-		if player-bladder-penalty of chess-lesson >= 5:
-			let I2 be saved-flat-intelligence + 4 - player-bladder-penalty of chess-lesson;
+		if rectum > a random number between 5 and 30:
+			say "Your overly full bowels cramp painfully, making it briefly impossible to concentrate on the chess game!";
+			UnflinchingPainUp rectum;
+		otherwise:
+			let I be 0;
+			let I2 be saved-flat-intelligence + 9 - chess-thinking-penalty;
 			if I2 > I, now I is I2; [got to make sure we're not going to square root a negative]
-		if the defensive-move of chess-lesson > 0 and the chess-turn of chess-lesson is 0: [It takes a couple of turns before the player is allowed to make a normal defensive move.]
-			if debugmode is 1, say "Player defensive move [defensive-move of chess-lesson] - 1 > [defensive-move of chess-lesson - 1][line break]";
-			decrease the defensive-move of chess-lesson by 1;
-			if the defensive-move of chess-lesson <= 0:
-				say "You have now studied the board long enough to find a [one of]move that isn't too aggressive, and so is less likely to result in anyone losing any pieces[or]normal defensive move[stopping].";
-			otherwise if the chess-turn of chess-lesson is 0:
-				say "You know you can find a more passive move if you give yourself a little longer to think.";
-		if the safe-move of chess-lesson > 0:
-			let R be the square root of (a random number between 0 and I);
-			if debugmode is 1, say "Player safe move [safe-move of chess-lesson] - [R] > [safe-move of chess-lesson - R][line break]";
-			decrease the safe-move of chess-lesson by R;
-			if the safe-move of chess-lesson <= 0:
-				say "You notice a different move you could take, that would be safe for you and force your opponent to think hard again.";
-			otherwise if the chess-turn of chess-lesson is 0:
-				if the safe-move of chess-lesson > 900 and the safe-move of chess-lesson < 990:
-					say "You are confident there's no extremely safe move available for you to take this turn.";
-				otherwise:
-					say "There might be a much safer move you can make, but you haven't spotted it yet.";
-		if the trapping-move of chess-lesson > 0:
-			let R be the square root of (a random number between 0 and I);
-			if debugmode is 1, say "Player trapping move [trapping-move of chess-lesson] - [R] > [trapping-move of chess-lesson - R][line break]";
-			decrease the trapping-move of chess-lesson by R;
-			if the trapping-move of chess-lesson <= 0:
-				say "You realise that there's a certain move that you could make that would allow your opponent to make a huge mistake in their next turn if they're not careful.";
-			otherwise if the chess-turn of chess-lesson is 0:
-				if the trapping-move of chess-lesson > 900 and the trapping-move of chess-lesson < 990:
-					say "You are confident there's no clever trap available for you to set up this turn.";
-				otherwise:
-					say "There might be a way to try and trap [student-name of the chess-opponent of chess-lesson], but you haven't worked one out yet.";
-		if the great-move of chess-lesson > 0:
-			let R be the square root of (a random number between 0 and I);
-			if debugmode is 1, say "Player great move [great-move of chess-lesson] - [R] > [great-move of chess-lesson - R][line break]";
-			decrease the great-move of chess-lesson by R;
-			if the great-move of chess-lesson <= 0:
-				say "You notice a move that looks absolutely brilliant! It seems sure to net you a huge advantage.";
-			otherwise if the chess-turn of chess-lesson is 0:
-				if the great-move of chess-lesson > 900 and the great-move of chess-lesson < 990:
-					say "You are confident there's no particularly amazing move available for you to take this turn.";
-				otherwise:
-					say "If there is a significantly advantageous move for you to make, you haven't seen it yet.";
+			if the defensive-move of chess-lesson > 0 and the chess-turn of chess-lesson is 0: [It takes a couple of turns before the player is allowed to make a normal defensive move.]
+				if debugmode is 1, say "Player defensive move [defensive-move of chess-lesson] - 1 > [defensive-move of chess-lesson - 1][line break]";
+				decrease the defensive-move of chess-lesson by 1;
+				if the defensive-move of chess-lesson <= 0:
+					say "You have now studied the board long enough to find a [one of]move that isn't too aggressive, and so is less likely to result in anyone losing any pieces[or]normal defensive move[stopping].";
+				otherwise if the chess-turn of chess-lesson is 0:
+					say "You know you can find a more passive move if you give yourself a little longer to think.";
+			if the safe-move of chess-lesson > 0:
+				let R be the square root of (a random number between 0 and I);
+				if debugmode is 1, say "Player safe move [safe-move of chess-lesson] - [R] > [safe-move of chess-lesson - R][line break]";
+				decrease the safe-move of chess-lesson by R;
+				if the safe-move of chess-lesson <= 0:
+					say "You notice a different move you could take, that would be safe for you and force your opponent to think hard again.";
+				otherwise if the chess-turn of chess-lesson is 0:
+					if the safe-move of chess-lesson > 900 and the safe-move of chess-lesson < 990:
+						say "You are confident there's no extremely safe move available for you to take this turn.";
+					otherwise:
+						say "There might be a much safer move you can make, but you haven't spotted it yet.";
+			if the trapping-move of chess-lesson > 0:
+				let R be the square root of (a random number between 0 and I);
+				if debugmode is 1, say "Player trapping move [trapping-move of chess-lesson] - [R] > [trapping-move of chess-lesson - R][line break]";
+				decrease the trapping-move of chess-lesson by R;
+				if the trapping-move of chess-lesson <= 0:
+					say "You realise that there's a certain move that you could make that would allow your opponent to make a huge mistake in their next turn if they're not careful.";
+				otherwise if the chess-turn of chess-lesson is 0:
+					if the trapping-move of chess-lesson > 900 and the trapping-move of chess-lesson < 990:
+						say "You are confident there's no clever trap available for you to set up this turn.";
+					otherwise:
+						say "There might be a way to try and trap [student-name of the chess-opponent of chess-lesson], but you haven't worked one out yet.";
+			if the great-move of chess-lesson > 0:
+				let R be the square root of (a random number between 0 and I);
+				if debugmode is 1, say "Player great move [great-move of chess-lesson] - [R] > [great-move of chess-lesson - R][line break]";
+				decrease the great-move of chess-lesson by R;
+				if the great-move of chess-lesson <= 0:
+					say "You notice a move that looks absolutely brilliant! It seems sure to net you a huge advantage.";
+				otherwise if the chess-turn of chess-lesson is 0:
+					if the great-move of chess-lesson > 900 and the great-move of chess-lesson < 990:
+						say "You are confident there's no particularly amazing move available for you to take this turn.";
+					otherwise:
+						say "If there is a significantly advantageous move for you to make, you haven't seen it yet.";
 	let STI be 3 - ((a random number between 0 and the student-rectum of chess-lesson) / 5);
 	decrease the student-safe-move of chess-lesson by a random number between 1 and STI;
 	decrease the student-trapping-move of chess-lesson by a random number between 1 and STI;
@@ -762,10 +781,6 @@ To compute student chess soiling:
 	if the student-diaper of chess-lesson < 55:
 		now the student-latest-percent of chess-lesson is (student-diaper of chess-lesson * 10) / 55;
 		if the student-diaper of chess-lesson > 5, say "[big his of ST] diaper visibly bulges and expands until it is about [bold type][student-latest-percent of chess-lesson]0%[roman type] of the way to the pressure plate[one of] that triggers your victory and freedom[or][stopping].";
-		[if the student-diaper of chess-lesson > 37 and the chess-cutscene of chess-lesson is 0:
-			now the chess-cutscene of chess-lesson is 1;
-			if diaper messing < 3, now temporaryYesNoBackground is figure of chess cutscene 1;
-			otherwise now temporaryYesNoBackground is figure of chess cutscene 2;] [we use render chess state now]
 	otherwise:
 		compute chess win;
 	now the student-rectum of chess-lesson is 0;
@@ -812,20 +827,19 @@ To compute chess messing:
 		if PLP < the player-latest-percent of chess-lesson and the mess of D > 3, say "Your diaper stretches and expands to the point where it's about [bold type][the mess of D / 3]0%[roman type] of the way down to the pressure plate![if debuginfo > 0][line break][input-style]([mess of D] / 30)[roman type][line break][end if]";
 		force immediate clothing-focus redraw;
 		refresh the graphics-window;
-		[if the mess of D > 20 and the chess-cutscene of chess-lesson is 0:
-			now the chess-cutscene of chess-lesson is 1;
-			now temporaryYesNoBackground is figure of chess cutscene 2;] [we use render chess state now]
 	otherwise:
 		compute chess loss;
-	if bladder-bursting-level >= 0:
-		compute chess urination;
-	otherwise:
-		let M be a random monster in the location of the player;
-		unless M is the chess-opponent of chess-lesson or M is nothing, compute chess diaper reaction of M.
+	let M be a random student in the location of the player;
+	let failsafe be 20;
+	while M is the chess-opponent of chess-lesson and failsafe > 0:
+		decrease failsafe by 1;
+		now M is a random student in the location of the player;
+	unless M is the chess-opponent of chess-lesson or M is nothing, compute chess diaper reaction of M.
+	[if bladder-bursting-level >= 0, compute chess urination.]
 
 To compute chess urination:
 	let D be a random worn diaper;
-	say "You [if delayed urination is 1]involuntarily [end if]release your hold on your bladder, soaking your padding with [if the urine-soak of D > 0]even more [end if][urine], right in front of the entire school body. [strongHumiliateReflect]";
+	say "You [if delayed urination is 1]involuntarily [end if]release your hold on your bladder, soaking your padding with [if the urine-soak of D > 0]even more [end if][urine], right in front of the entire school body. [moderateHumiliateReflect]";
 	UrineSoakUp D by the bladder of the player;
 	now the bladder of the player is 0;
 	if the diaper addiction of the player > 14 and the player is able to get horny:
@@ -835,26 +849,23 @@ To compute chess urination:
 		if the total-soak of D < the soak-limit of D:
 			now the player-latest-percent of chess-lesson is (the urine-soak of D * 10) / the soak-limit of D;
 			if the total-soak of D > 5, say "Your diaper stretches and expands to the point where it's about [bold type][player-latest-percent of chess-lesson]0%[roman type] of the way down to the pressure plate!";
-		[	if the total-soak of D > (the soak-limit of D * 66) / 100 and the chess-cutscene of chess-lesson is 0:
-				now the chess-cutscene of chess-lesson is 1;
-				now temporaryYesNoBackground is figure of chess cutscene 1;] [we use render chess state now]
 		otherwise:
 			compute chess loss;
 	progress temporary incontinence;
 	now delayed urination is 0;
-	let M be a random monster in the location of the player;
-	unless M is the chess-opponent of chess-lesson or M is nothing, compute chess diaper reaction of M.
+	let M be a random staff member in the location of the player;
+	unless M is nothing, compute chess diaper reaction of M.
 
 To compute chess diaper reaction of (M - a monster):
 	do nothing.
 
 To compute chess diaper reaction of (M - a student):
 	say "[BigNameDesc of M] [one of]sniggers[or]cackles[or]guffaws[in random order].[line break][speech style of M]'[if the current-rank of M < 3][one of]Gross[or]Disgusting[or]How disgraceful[in random order]!'[otherwise][one of]Enjoying yourself, [NameBimbo]?'[or]No self control at all!'[or]Are you incontinent or something?'[or]I'm glad that's not me.'[in random order][end if][roman type][line break]You turn bright red.";
-	severeHumiliate.
+	say severeHumiliateReflect.
 
 To compute chess diaper reaction of (M - a staff member):
 	say "[BigNameDesc of M] [one of]harrumphs[or]tuts[or]shakes [his of M] head[in random order] in your direction.[line break][speech style of M]'[one of]You're not going to win like that[or]Schoolboy error[or]You should be holding it for longer than that[in random order].'[roman type][line break]You blush furiously.";
-	severeHumiliate.
+	say strongHumiliateReflect.
 
 To compute chess masturbation:
 	let D be a random worn diaper;
@@ -869,12 +880,12 @@ To compute chess masturbation:
 	unless M is the chess-opponent of chess-lesson, compute chess masturbation reaction of M.
 
 To compute chess masturbation reaction of (M - a monster):
-	say "[BigNameDesc of M] [one of]gasps.[line break][speech style of M]'[if the current-rank of M < 4]Do you have no shame?!'[otherwise]Uh-uh, babygirls aren't supposed to touch themselves there!'[end if][or]squeals.[line break][speech style of M]'[if the current-rank of M < 3]I did not need to see you do that!'[otherwise]What a naughty baby!'[end if][or][if the current-rank of M < 3]is trying to subtly touch [himself of M] as [he of M] watches. [big he of M] isn't doing a very good job of making sure nobody notices, though.[otherwise]seems to have gotten so hot and bothered [himself of M] that [he of M] begins to copy you, seemingly unabashed![end if][in random order][roman type][line break]You feel incredibly ashamed of yourself!";
-	obsceneHumiliate.
+	say "[BigNameDesc of M] [one of]gasps.[line break][speech style of M]'[if the current-rank of M < 4]Do you have no shame?!'[otherwise]Uh-uh, babygirls aren't supposed to touch themselves there!'[end if][or]squeals.[line break][speech style of M]'[if the current-rank of M < 3]I did not need to see you do that!'[otherwise]What a naughty baby!'[end if][or][if the current-rank of M < 3]is trying to subtly touch [himself of M] as [he of M] watches. [big he of M] isn't doing a very good job of making sure nobody notices, though.[otherwise]seems to have gotten so hot and bothered [himself of M] that [he of M] begins to copy you, seemingly unabashed![end if][in random order][roman type][line break]";
+	say obsceneHumiliateReflect.
 
 To compute chess masturbation reaction of (M - a staff member):
-	say "[BigNameDesc of M] [one of]claps.[line break][speech style of M]'That's what I like to see!'[or]chuckles.[line break][speech style of M]'How predictable.'[or]cups a breast and begins to fondle [himself of M] while [he of M] watches you.[in random order][roman type][line break]You feel incredibly ashamed of yourself!";
-	obsceneHumiliate.
+	say "[BigNameDesc of M] [one of]claps.[line break][speech style of M]'That's what I like to see!'[or]chuckles.[line break][speech style of M]'How predictable.'[or]cups a breast and begins to fondle [himself of M] while [he of M] watches you.[in random order][roman type][line break]";
+	say severeHumiliateReflect.
 
 To compute chess move input:
 	say "What do you want to do[one of][or] next[stopping]?";
@@ -992,6 +1003,8 @@ To compute checkmate:
 			now rectum is 100;
 			now the bladder of the player is 20;
 			compute chess messing;
+			let D be a random worn diaper;
+			if D is a thing, now demon lord is inseminating D;
 	otherwise:
 		let M be the lesson-teacher of chess-lesson;
 		if headmistress is alive, now M is headmistress;
@@ -1102,6 +1115,9 @@ To compute chess loss taunting of (M - a nasty student):
 Part - Enema Race
 
 enema-race-lesson is a lesson. The lesson-teacher of enema-race-lesson is teacher-brooke.
+
+To say LessonTitle of (L - enema-race-lesson):
+	say "Enema Run 2018".
 
 To set up gym lesson of (M - a monster):
 	say "[speech style of M]'[one of]I know what you're thinking. Why are you wearing a diaper? Aren't diapers for babies? Well yes [if diaper messing >= 3]MESSY[otherwise]USED[end if] diapers are for babies, since only a baby can't control their own bodily functions, but a DRY diaper can be used as a proud sign of your continence. Look at me, living proof! I carry this baby off with style and grace. And today, two of you lot will see who can do the same for longest[or]You know what time it is[stopping]. Follow me to the gym, little ones!'[roman type][line break]";
@@ -1318,6 +1334,9 @@ To compute teaching of (L - enema-race-lesson):
 Part - Dodgeball
 
 dodgeball-lesson is a lesson. The lesson-teacher of dodgeball-lesson is teacher-brooke.
+
+To say LessonTitle of (L - dodgeball-lesson):
+	say "Diaper Dodgeball".
 
 Definition: dodgeball-lesson is lesson-appropriate:
 	if diaper messing >= 3, decide yes;
@@ -1626,7 +1645,7 @@ To say StoryAnswer of (M - a teacher-kaylee):
 To say AdviceAnswer of (M - teacher-kaylee):
 	say "[speech style of M]'Don't trust toilets. Big [boy of M] potties are evil and mean and nasty. It is known.'[roman type][line break]".
 
-To compute teaching of (M - teacher-kaylee):
+To compute teaching offer of (M - teacher-kaylee):
 	say "[speech style of M]'I'm going to teach you to fully dedicate yourself to diapers, so that you can become the perfect sexy submissive.'[roman type][line break]".
 
 
@@ -1648,9 +1667,8 @@ Figure of staff room 11 is the file "Env/School/staffroom11.png". [urinal 1]
 Figure of staff room urinal is the file "Env/School/urinal1.png".
 
 A game universe initialisation rule:
-	if the player is a may 2023 diaper donator:
-		now retiredStudents is 2;
-		if watersports fetish is 1, now School27 is urinals.
+	now retiredStudents is 2;
+	if watersports fetish is 1, now School27 is urinals.
 
 previousStaffRoomStudents is a number that varies.
 

@@ -321,6 +321,24 @@ To decide which number is the initial outrage of (C - pink-handmaiden-gloves):
 Definition: pink-handmaiden-gloves is pink themed: decide yes.
 
 
+hex gloves is a gloves. hex gloves is latex. hex gloves is unique.
+The printed name of hex gloves is "[clothing-title-before]hex gloves[clothing-title-after]". The text-shortcut of hex gloves is "hxg".
+Figure of hex gloves is the file "Items/Accessories/Equippables/gloves9.png".
+To decide which figure-name is clothing-image of (H - hex gloves):
+	decide on figure of hex gloves.
+To say ClothingDesc of (Y - hex gloves):
+	say "These purple and white latex [']gloves['] don't actually cover your hands, but just your forearms. You feel them adding magic strength to what you hold in your hands!".
+To say ShortDesc of (Y - hex gloves):
+	say "hex gloves".
+To say MediumDesc of (Y - hex gloves):
+	say "hex gloves".
+To decide which number is the initial outrage of (C - hex gloves):
+	decide on 0.
+To decide which number is the zap damage improvement of (G - hex gloves):
+	decide on 2.
+Definition: hex gloves is purple themed: decide yes.
+Definition: hex gloves is white themed: decide yes.
+
 briefcase is an equippable. briefcase has a number called charge.
 The printed name of briefcase is "[clothing-title-before]briefcase[clothing-title-after]". The text-shortcut of briefcase is "bfc". Figure of briefcase is the file "Items/Accessories/Equippables/briefcase1.jpg".
 Definition: briefcase is transformation-protected: decide yes.
@@ -344,5 +362,41 @@ To compute school periodic effect of (C - briefcase):
 	if the player is in Predicament20 or the player is not in a predicament room:
 		say "[BigNameDesc of briefcase] fizzles from existence!";
 		only destroy briefcase.
+
+fake-baby is a clothing. fake-baby is plastic. fake-baby is unique. The printed name of fake-baby is "[clothing-title-before]fake baby[clothing-title-after]". The text-shortcut of fake-baby is "bbdl". Understand "baby", "doll" as fake-baby.
+fake-baby has a number called unsettled-time.
+
+Definition: fake-baby is settled:
+	if the unsettled-time of fake-baby > 0, decide no;
+	decide yes.
+
+To decide which figure-name is clothing-image of (C - fake-baby):
+	decide on figure of fake-baby.
+
+Figure of fake-baby is the file "Items/Accessories/Other/fakebaby1.png".
+
+To say ShortDesc of (C - fake-baby):
+	say "fake baby".
+
+To say ClothingDesc of (C - fake-baby):
+	say "This plastic doll looks like a real baby to anyone who isn't looking too closely. But anyone who does look too closely might notice the barcode, or the manufacturer's logo. Also, it has a little button on the neck, and another at the base of the spine. If you let go of either of these buttons, you'll get a nasty shock!";
+	if C is settled or there is a sat-on breastfeeding-bench, say "It is currently silent.";
+	otherwise say "It is currently playing an audio track of a loud crying baby!".
+
+To construct unique buttons for (T - fake-baby):
+	if T is not settled and the number of sat-on breastfeeding-bench is 0 and ButtonTableFull is 0:
+		choose a blank row in the Table of Buttons;
+		now the ButtonImage entry is Figure of RockButton;
+		now the ButtonCommand entry is "rock [text-shortcut of T]";
+		now the ButtonColour entry is lightModeFullGreen;
+		if the player is prone, now the ButtonColour entry is lightModeFullYellow;
+	if ButtonTableFull is 0 and the player is in a predicament room:
+		choose a blank row in the Table of Buttons;
+		now the ButtonImage entry is Figure of ArmBlockIcon;
+		now the ButtonCommand entry is "adjust arms";
+		now the ButtonColour entry is lightModeFullGreen.
+
+To construct unique icons for (T - fake-baby):
+	if T is not settled and the number of sat-on breastfeeding-bench is 0, add Figure of AlarmIcon to the list of icons.
 
 Equippables Framework ends here.

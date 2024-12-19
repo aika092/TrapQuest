@@ -1,6 +1,6 @@
 Halloween Dresses by Dresses begins here.
 
-nun-dress is an overdress. nun-dress is unique. nun-dress is fully covering. nun-dress is hobble-skirted. nun-dress is neck covering. nun-dress is finger covering. The text-shortcut of nun-dress is "nund". The printed name of nun-dress is "[clothing-title-before]nun dress[clothing-title-after]". Understand "nun", "dress" as nun-dress.
+nun-dress is an overdress. nun-dress is unique. nun-dress is fully covering. The skirt-length of nun-dress is 9. nun-dress is neck covering. nun-dress is finger covering. The text-shortcut of nun-dress is "nund". The printed name of nun-dress is "[clothing-title-before]nun dress[clothing-title-after]". Understand "nun", "dress" as nun-dress.
 
 To decide which number is the stealth-influence of (C - nun-dress):
 	if C is sneaking, decide on 4;
@@ -58,7 +58,7 @@ To decide which object is the unique-upgrade-target of (C - nun-dress):
 To compute (C - nun-top) unique inheriting from (D - a clothing):
 	now C is wristless.
 
-nun-top is an overdress. nun-top is unique. nun-top is fully covering. nun-top is unskirted. nun-top is lycra. nun-top is neck covering. nun-top is only arm covering. The text-shortcut of nun-top is "nunt". nun-top is totally-exclusive. The printed name of nun-top is "[clothing-title-before]nun top[clothing-title-after]". Understand "nun", "top" as nun-top.
+nun-top is an overdress. nun-top is unique. nun-top is fully covering. The skirt-length of nun-top is 0. nun-top is lycra. nun-top is neck covering. nun-top is only arm covering. The text-shortcut of nun-top is "nunt". nun-top is totally-exclusive. The printed name of nun-top is "[clothing-title-before]nun top[clothing-title-after]". Understand "nun", "top" as nun-top.
 
 Figure of nun-top is the file "Items/Clothes/Upper/Special/Halloween/nuntop1.png".
 
@@ -82,7 +82,7 @@ Definition: nun-top is transformation-protected:
 Definition: nun-top is black themed: decide yes.
 Definition: nun-top is white themed: decide yes.
 
-witch's top is an overdress. witch's top is unique. witch's top is low cut. witch's top is unskirted. witch's top is latex. witch's top is neck covering. witch's top is only arm covering. The text-shortcut of witch's top is "wtct". witch's top is totally-exclusive. The printed name of witch's top is "[clothing-title-before]witch's top[clothing-title-after]".
+witch's top is an overdress. witch's top is unique. witch's top is low cut. The skirt-length of witch's top is 0. witch's top is latex. witch's top is neck covering. witch's top is only arm covering. The text-shortcut of witch's top is "wtct". witch's top is totally-exclusive. The printed name of witch's top is "[clothing-title-before]witch's top[clothing-title-after]".
 
 Figure of witch's top is the file "Items/Clothes/Upper/Special/Halloween/witchtop1.png".
 
@@ -125,7 +125,7 @@ Definition: witch's trousers is transformation-protected:
 Definition: witch's trousers is black themed: decide yes.
 Definition: witch's trousers is magic themed: decide yes.
 
-doll-dress is an overdress. doll-dress is unique. doll-dress is average cut. doll-dress is super-short. doll-dress is latex. doll-dress is neck covering. The text-shortcut of doll-dress is "rbdd". The printed name of doll-dress is "[clothing-title-before]rubber doll dress[clothing-title-after]". Understand "rubber", "doll", "dress" as doll-dress.
+doll-dress is an overdress. doll-dress is unique. doll-dress is average cut. The skirt-length of doll-dress is 1. doll-dress is latex. doll-dress is neck covering. The text-shortcut of doll-dress is "rbdd". The printed name of doll-dress is "[clothing-title-before]rubber doll dress[clothing-title-after]". Understand "rubber", "doll", "dress" as doll-dress.
 
 Figure of doll-dress is the file "Items/Clothes/Upper/Special/Halloween/dolldress1.png".
 

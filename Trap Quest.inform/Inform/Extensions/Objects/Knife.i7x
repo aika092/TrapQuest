@@ -36,7 +36,7 @@ Check knifing:
 		say "You carefully cut the cookie into slices." instead;
 	otherwise if the second noun is knife:
 		if the noun is monster, say "Since it's on such a short chain, you really doubt that would work." instead;
-		if the class of the player is not santa's little helper and the noun is not wrist-bound-behind clothing:
+		if the class of the player is not santa's little helper and the noun is not wrist locked clothing:
 			if the player is not able to manually use manual dexterity, do nothing instead;
 		if the player is immobile, say "You are a bit tied up right now!" instead;
 	otherwise if the second noun is sword:
@@ -103,7 +103,7 @@ Carry out knifing:
 	otherwise:
 		let predicRoom be false;
 		if the location of the player is a predicament room, now predicRoom is true;
-		if the noun is cursed and the noun is not headgear and the second noun is equippable and the second noun is not midnight tanto:
+		if the noun is cursed and the noun is not headgear and the second noun is equippable and the second noun is not tanto:
 			say "Your [ShortDesc of the second noun] refuses to cut through the [clothing-material of the noun]. Maybe you need to cut it with something more specialised to cut through a curse...";
 		otherwise if the noun is cursed and the second noun is equippable and the second noun is not blessed:
 			say "Your [ShortDesc of the second noun] refuses to cut through the [clothing-material of the noun]. Maybe if it was blessed...";
@@ -122,13 +122,15 @@ Carry out knifing:
 				destroy the noun;
 				now the charge of the second noun is 500;
 			otherwise:
-				say "You force the knife under and through the [clothing-material of the noun] material of the [noun] and slice straight through it as if it were made of butter. It is completely destroyed! The knife loses its glow[if newbie tips is 1][one of]. Maybe it needs to recharge?[or].[stopping][otherwise].[end if]";
+				say "You force the knife under and through the [clothing-material of the noun] material of the [noun] and slice straight through it as if it were made of butter. It is completely destroyed!";
+				unless the player is in a predicament room:
+					say "The knife loses its glow[if newbie tips is 1][one of]. Maybe it needs to recharge?[or].[stopping][otherwise].[end if]";
+					now the charge of the second noun is 500;
 				destroy the noun;
-				now the charge of the second noun is 500;
 				unless the noun is diaper, now the noun is in Holding Pen; [stop it spawning again]
 		otherwise:
-			say "You force the blade under and through the [clothing-material of the noun] material of the [noun] and slice straight through it as if it were made of butter. It is completely destroyed! The blade loses its glow, and it is no longer blessed.";
-			now the second noun is bland;
+			say "You force the blade under and through the [clothing-material of the noun] material of the [noun] and slice straight through it as if it were made of butter. It is completely destroyed[if the noun is cursed and the second noun is blessed]! The blade loses its glow, and it is no longer blessed[end if].";
+			if the noun is cursed and the second noun is blessed, now the second noun is bland;
 			destroy the noun;
 			now the noun is in Holding Pen. [stop it spawning again]
 Report knifing:

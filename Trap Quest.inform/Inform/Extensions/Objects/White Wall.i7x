@@ -103,9 +103,14 @@ Carry out climbing WoodsScenery03:
 		say "The statue appears to continue on the other side of the wall - you can't see what's inside.[if the openness of asshole < 10][line break]While your head is in the statue's asshole, you feel your own sphincter suddenly stretch![end if]";
 		gape asshole times 5;
 	otherwise:
-		say "The statue appears to continue on the other side of the wall - the belly of the statue is filled with [if diaper quest is 0][semen][otherwise if diaper messing >= 4 and there are worn knickers]food[otherwise]water[end if]![if the largeness of belly < 10][line break]While your head is in there, you feel your own belly suddenly fill from the inside![end if]";
-		if diaper quest is 1:
-			if diaper messing >= 4 and there are worn knickers:
+		say "The statue appears to continue on the other side of the wall - the belly of the statue is filled with [if diaper quest is 0][semen][otherwise if diaper messing >= 4 and there are worn knickers]food[otherwise]water[end if]![if enema fetish is 0][line break]While your head is in there, you feel your own stomach suddenly fill from the inside![otherwise if the largeness of belly < 10][line break]While your head is in there, you feel your own belly suddenly fill from the inside![end if]";
+		if enema fetish is 0:
+			if diaper messing >= 3:
+				StomachFoodUp 8;
+			otherwise:
+				StomachUp 8;
+		otherwise if diaper quest is 1:
+			if diaper messing >= 3 and there are worn knickers:
 				increase rectum by 12;
 			otherwise:
 				increase the water volume of belly by belly limit - the total fill of belly;

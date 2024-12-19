@@ -1,6 +1,6 @@
 Bodysuit by Dresses begins here.
 
-A bodysuit is a kind of underdress. A bodysuit is fully covering. A bodysuit is usually unskirted. A bodysuit is usually crotch-intact. A bodysuit is usually not-top-displacable.
+A bodysuit is a kind of underdress. A bodysuit is fully covering. The skirt-length of A bodysuit is 0. A bodysuit is usually crotch-intact. A bodysuit is usually not-top-displacable.
 
 This is the remove inappropriate bodysuits rule:
 	repeat with B running through catsuits:
@@ -39,7 +39,7 @@ unicorn-playsuit is a bodysuit. unicorn-playsuit is bottom-exclusive. unicorn-pl
 Definition: unicorn-playsuit is displacable: decide no.
 Definition: unicorn-playsuit is pink themed: decide yes.
 Definition: unicorn-playsuit is horse themed: decide yes.
-Definition: unicorn-playsuit is floral themed: decide yes.
+Definition: unicorn-playsuit is flower themed: decide yes.
 
 Figure of unicorn playsuit is the file "Items/Clothes/Upper/Rompers/romper10.png".
 
@@ -442,6 +442,9 @@ To decide which object is the unique-upgrade-target of (C - a cupcake baby rompe
 Definition: a cupcake baby romper is food themed: decide yes.
 Definition: a cupcake baby romper is pink themed: decide yes.
 Definition: a cupcake baby romper is baby themed: decide yes.
+Definition: a cupcake baby romper is fetish appropriate:
+	if diaper lover > 0, decide yes;
+	decide no.
 
 Part - Yellow Baby Romper
 
@@ -472,6 +475,9 @@ Definition: a yellow baby romper is end of transformation chain: decide yes.
 Definition: a yellow baby romper is babywear: decide yes.
 Definition: a yellow baby romper is yellow themed: decide yes.
 Definition: a yellow baby romper is baby themed: decide yes.
+Definition: a yellow baby romper is fetish appropriate:
+	if diaper lover > 0, decide yes;
+	decide no.
 
 Part - Pink Hooded Romper
 
@@ -631,6 +637,7 @@ To decide which figure-name is clothing-image of (C - full body babyromper):
 	decide on figure of full body babyromper.
 
 Definition: full body babyromper is babywear: decide yes.
+Definition: full body babyromper is displacable: decide no.
 Definition: full body babyromper is bear themed: decide yes.
 Definition: full body babyromper is cat themed: decide yes.
 Definition: full body babyromper is bow themed: decide yes.
@@ -800,7 +807,7 @@ To say MediumDesc of (C - pink-catsuit):
 	say "skin hugging pink latex catsuit".
 
 To decide which number is the initial outrage of (C - pink-catsuit):
-	decide on 6.
+	decide on 7.
 
 Part 2 - Black Catsuit
 
@@ -880,7 +887,7 @@ To decide which number is the initial outrage of (C - WC catsuit):
 
 Part - Lycra Bodysuit
 
-lycra-bodysuit is a catsuit. lycra-bodysuit is transformation-rare. lycra-bodysuit is low cut. lycra-bodysuit is optional-top-displacable. lycra-bodysuit is unskirted. lycra-bodysuit is leg covering. lycra-bodysuit is only arm covering. lycra-bodysuit is lycra. The printed name of lycra-bodysuit is "[clothing-title-before]lycra bodysuit[clothing-title-after]". The text-shortcut of lycra-bodysuit is "lyb". lycra-bodysuit is see-through. Understand "bodysuit" as lycra-bodysuit.
+lycra-bodysuit is a catsuit. lycra-bodysuit is transformation-rare. lycra-bodysuit is low cut. lycra-bodysuit is optional-top-displacable. The skirt-length of lycra-bodysuit is 0. lycra-bodysuit is leg covering. lycra-bodysuit is only arm covering. lycra-bodysuit is lycra. The printed name of lycra-bodysuit is "[clothing-title-before]lycra bodysuit[clothing-title-after]". The text-shortcut of lycra-bodysuit is "lyb". lycra-bodysuit is see-through. Understand "bodysuit" as lycra-bodysuit.
 
 Definition: lycra-bodysuit is class-relevant:
 	if the class of the player is condom collector, decide yes;
@@ -932,6 +939,40 @@ To decide which number is the initial cringe of (C - ABC shortalls):
 Definition: ABC shortalls is blue themed: decide yes.
 Definition: ABC shortalls is yellow themed: decide yes.
 Definition: ABC shortalls is babywear: decide yes.
+Definition: ABC shortalls is displacable: decide no.
+
+Part - Blue Romper
+
+blue-romper is a bodysuit. blue-romper is top-exclusive. The printed name of blue-romper is "[clothing-title-before]blue romper[clothing-title-after]". The text-shortcut of blue-romper is "brpr".
+
+Figure of blue-romper is the file "Items/Clothes/Upper/Rompers/romper12.png".
+
+To decide which figure-name is clothing-image of (C - blue-romper):
+	decide on figure of blue-romper.
+
+To say ClothingDesc of (C - blue-romper):
+	say "The white blouse of this outfit almost looks normal, apart from its puffy sleeves and frilly collar... And the fact that it is sewn together with a spotty light blue diaper cover, turning it into a baby romper.".
+
+To say ShortDesc of (C - blue-romper):
+	say "romper".
+To say MediumDesc of (C - blue-romper):
+	say "blue romper".
+
+To decide which number is the initial outrage of (C - blue-romper):
+	if diaper quest is 0, decide on the initial cringe of C;
+	decide on 0.
+To decide which number is the initial cringe of (C - blue-romper):
+	decide on 3.
+To decide which number is the defaultDiaperHidingLength of (C - blue-romper):
+	decide on 4.
+
+Definition: blue-romper is displacable: decide no.
+Definition: blue-romper is blue themed: decide yes.
+Definition: blue-romper is white themed: decide yes.
+Definition: blue-romper is babywear: decide yes.
+Definition: blue-romper is fetish appropriate:
+	if diaper lover > 0, decide yes;
+	decide no.
 
 
 Volume - Leotard

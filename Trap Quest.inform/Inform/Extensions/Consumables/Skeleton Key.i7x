@@ -37,9 +37,16 @@ To say ExamineDesc of (K - a specific-key):
 	say "This small key looks like it is made to fit a specific lock[if C is a thing]. Indeed, you are pretty sure that it would fit the keyhole on [NameDesc of C][end if].".
 
 To say lock-desc:
-	let K be item described;
+	say locking-desc of item described.
+
+To say locking-desc of (K - a thing):
 	let C be a random thing covered by K;
 	if C is a thing, say " (for the [ShortDesc of C])".
+
+To say RequestFlav of (K - a specific-key):
+	let C be a random thing covered by K;
+	if C is a held thing, say "'Please, is there anything I could do for you to consider giving me the key to my [ShortDesc of C]?'";
+	otherwise say "'Please, is there anything I could do for you to consider giving me your [ShortDesc of K]?'".
 
 To compute (M - a monster) locking (C - a clothing) with (K - an object):
 	if C is worn:
@@ -51,12 +58,13 @@ To compute (M - a monster) locking (C - a clothing) with (K - an object):
 				now K is covering C;
 				now M is carrying K;
 				add K to the taxableItems of M;
-				add K to the tradableItems of M;
+				[if M is student or M is staff member or M is not threatening, add K to the tradableItems of M;]
 				say LockAfterFlav of M for C;
 			say LockCommentFlav of M for C;
 		otherwise if K is specific-key:
 			say "Then you can do nothing but watch as [NameDesc of K] surges back into the air, before flying off to another unknown part of this world. Where has it ended up? Will you be able to find it on the ground somewhere, or will someone else pick it up first?! You wish you had a way of knowing...";
 			now K is in a random placed visited roomstandard room;
+		now C is not temporarily-unlocked;
 	otherwise:
 		say "Bug: [C] is not worn when we tried to get [M] to lock it on you.".
 
@@ -68,7 +76,17 @@ To say LockFlav of (M - a monster) for (C - a clothing):
 To say LockAfterFlav of (M - a monster) for (C - a clothing):
 	say "[BigNameDesc of M] keeps the key!".
 To say LockCommentFlav of (M - a monster) for (C - a clothing):
-	say "[speech style of M]'[one of]I guess you're at my mercy now, aren't you?'[or]If you ever want to be let out, you'd better start acting right.'[or]If you ever want that removed, you'd better start behaving yourself.'[in random order][roman type][line break]".
+	if C is not temporarily-unlocked, say "[speech style of M]'[one of]I guess you're at my mercy now, aren't you?'[or]If you ever want to be let out, you'd better start acting right.'[or]If you ever want that removed, you'd better start behaving yourself.'[in random order][roman type][line break]".
+
+Definition: a monster (called M) is currently keyholding:
+	repeat with K running through specific-keys held by M:
+		if K is currently locking, decide yes;
+	decide no.
+
+Definition: a specific-key (called K) is currently locking:
+	repeat with C running through worn locked clothing:
+		if K is covering C, decide yes;
+	decide no.
 
 skeleton key is an unlock-key. The printed name of skeleton key is "[TQlink of item described]skeleton key[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of skeleton key is "skey". The tradability of a skeleton key is 17. [ally]
 
@@ -100,8 +118,19 @@ Check unlocking:
 Carry out unlocking:
 	allocate 6 seconds;
 	if the player is getting unlucky:
-		say "You fumble with the lock and end up dropping the key on the floor! Oops, better try again! [GotUnluckyFlav]";
+		say "You fumble with the lock and end up dropping the key on the floor! ";
 		now chosen-key is in the location of the player;
+		let M be a random threatening reactive monster;
+		if M is a monster:
+			say "[line break][BigNameDesc of M] snatches the key off of the floor before you can stop [him of M]!";
+			if M is friendly:
+				say "[speech style of M]'[one of]Yoink! If you want this back, you'll have to do something for me first!'[or]Oh, for me? Thank you! Hehehe...'[cycling][roman type][line break]";
+			otherwise:
+				say "[speech style of M]'[one of]Yoink! Finders keepers, hahaha!'[or]I'll take that! Hahaha!'[cycling][roman type][line break]";
+			now chosen-key is carried by M;
+			say GotUnluckyFlav;
+		otherwise:
+			say "Oops, better try again! [GotUnluckyFlav]";
 	otherwise:
 		say "[if the noun is wrist bond]With some careful finger work, you[otherwise]You[end if] slot the key into the lock and twist. The lock clicks open! The key dissolves into dust.";
 		unlock the noun;
@@ -134,8 +163,10 @@ To keyfree (C - a clothing):
 		if K is in the location of the player or K is held, say "[BigNameDesc of K] crumbles to dust.";
 		destroy K.
 
-
 To uniquely destroy (K - an unlock-key):
+	repeat with M running through monsters:
+		if K is listed in the taxableItems of M, remove K from the taxableItems of M;
+		if K is listed in the tradableItems of M, remove K from the tradableItems of M;
 	repeat with C running through things covered by K:
 		now K is not covering C.
 

@@ -158,7 +158,7 @@ REQUIRES COMMENTING
 @!]
 A chest of drawers is a kind of container. A chest of drawers is openable. A chest of drawers is closed. A chest of drawers is not portable. The printed name of a chest of drawers is "[TQlink of item described]chest of drawers[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of chest of drawers is "dra". 10 trappable chest of drawers are in Holding Pen.
 
-Figure of drawers is the file "Env/Hotel/chestofdrawers1.png".
+Figure of drawers is the file "Env/Hotel/chestofdrawers1.jpg".
 
 To decide which figure-name is the examine-image of (C - a chest of drawers):
 	decide on figure of drawers.
@@ -285,7 +285,7 @@ REQUIRES COMMENTING
 
 @!]
 A safe is a kind of container. A safe is openable. A safe is closed. A safe is not portable. The printed name of a safe is "[TQlink of item described]safe[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of safe is "saf". 10 trappable safes are in Holding Pen.
-Figure of safe is the file "Env/Hotel/safe1.png".
+Figure of safe is the file "Env/Hotel/safe1.jpg".
 
 To say ShortDesc of (C - a safe):
 	say "safe".
@@ -437,6 +437,13 @@ Report examining a pedestal: [Specifically with examining we want it to appear i
 	repeat with T running through things in the noun:
 		display the examine-image of T.
 
+heist-pedestals-set-up is initially false.
+An all later time based rule (this is the pedestals are breaking rule):
+	if heist-pedestals-set-up is true and the player is the donator:
+		unless there is a pedestal in HeistPainting11:
+			now heist-pedestals-set-up is false;
+			say "WEIRD BUG - the pedestals in the mansion heist mission part of the game just got deleted for some reason. Please let Aika know what just happened above, so that they can hopefully hunt down what is causing this.";
+
 To lock pedestals:
 	let V be 1;[if V is 1, the pedestal is sandstone]
 	repeat with P running through pedestals:
@@ -485,7 +492,8 @@ To lock pedestals:
 			if L is 4 and lactation fetish is 1, now P is chilled;
 			now P is in Mansion28;
 			if P is closed and the number of things in P is 0, add treasure to P;
-		increase V by 1.
+		increase V by 1;
+	if there is a pedestal in HeistPainting11, now heist-pedestals-set-up is true.
 
 To add treasure to (X - a pedestal): [This function should happen when the mansion is generated, not when the pedestal is opened.]
 	if pocket necronomicon is off-stage:
@@ -501,7 +509,7 @@ To add treasure to (X - a pedestal): [This function should happen when the mansi
 		now wood-dong is in X;
 		now the owner of wood-dong is vampiress;
 		now the paid of X is 6;
-	otherwise if ((diaper quest is 0 and the player is an october 2023 top donator) or (diaper quest is 1 and the player is an october 2023 diaper donator)) and cat-hood is off-stage:
+	otherwise if the player is the donator and cat-hood is off-stage:
 		set up cat-hood;
 		now cat-hood is in X;
 		now the owner of cat-hood is vampiress;

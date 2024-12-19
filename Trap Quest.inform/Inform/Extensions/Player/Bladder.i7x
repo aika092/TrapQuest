@@ -119,11 +119,14 @@ To TemporaryIncontinenceUp (N - a number):
 	increase temporary-bladder-incontinence by N.
 
 To decide which number is the bladder-incontinence-influence of (C - a wearthing):
-	if C is diaper or C is bladder-incontinence-influencing clothing:
-		let N be -1 * the magic-modifier of C;
-		if C is bed wetting clothing, decrease N by 1;
-		decide on N;
 	decide on 0.
+To decide which number is the bladder-incontinence-influence of (C - a clothing):
+	let N be 0;
+	if C is maturity, decrease N by 1;
+	if C is bed wetting, increase N by 1;
+	if C is diaper or C is bladder-incontinence-influencing:
+		decrease N by the magic-modifier of C;
+	decide on N.
 
 To decide which number is the bladder-incontinence of the player:
 	if temporary-bladder-incontinence > 0, decide on the max-bladder-incontinence of the player;

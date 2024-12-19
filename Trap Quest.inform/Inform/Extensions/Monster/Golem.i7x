@@ -195,7 +195,7 @@ To say BanishFleeFlav of (M - golem):
 	say "[BigNameDesc of M] [if artificial enhancements fetish is 1]dissolves into clear fluid and evaporates away[otherwise]collapses into a pile of limbs, which is a bit gross, you must admit[end if].".
 
 To say MuteGreetResponse of (M - golem):
-	say "The mannequin doesn't reply. It would appear to be magically animated rather than sentient.".
+	say "The golem doesn't reply. It would appear to be magically animated rather than sentient.".
 
 To say MuteQuestion of (M - golem):
 	say SexDollQuestion of M.
@@ -259,6 +259,8 @@ Definition: a slimeball is too intimidating: decide no.
 To compute (M - a slimeball) seeking (D - a direction):
 	do nothing.]
 
+gentle-ooze-count is a number that varies.
+
 To compute action (N - a number) of (M - a slimeball):
 	if M is in the location of the player and N is not 2 and (diaper quest is 0 or face is not actually occupied):
 		anger M;
@@ -284,7 +286,7 @@ To compute action (N - a number) of (M - a slimeball):
 			compute slow grossness of M;
 			reset multiple choice questions;
 			set numerical response 1 to "Try to rip it off";
-			set numerical response 2 to "Wait to see what happens next";
+			set numerical response 2 to "[if gentle-ooze-count is 0]Wait to see what happens next[otherwise]Let it ooze into your body[end if]";
 			now player-numerical-response is 2;
 			if the player is able to use their hands:
 				now temporaryYesNoBackground is figure of slimeball cutscene 1;
@@ -315,6 +317,7 @@ To compute action (N - a number) of (M - a slimeball):
 					say "You manage to grip enough of the slime that you can wrestle it away from your body, and it all seeps back together into one big blob, which you throw at the ground. ";
 					dislodge M;
 			otherwise:
+				increase gentle-ooze-count by 1;
 				compute slime expansion;
 				destroy M;
 
@@ -348,8 +351,11 @@ To compute slime expansion:
 
 To compute slimeball forcefeed:
 	say "It surges towards your mouth, forcing its way past your lips! ...And a moment later, it has forced you to swallow it! With an embarrassingly loud burp, you feel it sinking into your stomach, where it is happily(?!) being digested.[line break][variable custom style]Oh god, I feel so full[one of]. Why do I get the feeling that slimeballs are [if diaper messing >= 3]incredibly rich in fibre[otherwise]the perfect mix of dieuretics, electrolytes, and water[end if]...[or]. Why can't this world have more sensible ways of encouraging me to [if diaper messing >= 3]eat[otherwise]drink[end if]?![or] again...[stopping][roman type][line break]";
-	if diaper messing >= 3, StomachFoodUp 5;
-	otherwise StomachUp 4.
+	if diaper messing >= 3:
+		StomachFoodUp 3;
+		StomachUp 2;
+	otherwise:
+		StomachUp 4.
 
 To deploy a slimeball:
 	let SB be a random off-stage slimeball;

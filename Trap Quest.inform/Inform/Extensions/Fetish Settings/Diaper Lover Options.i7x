@@ -82,7 +82,6 @@ Part 3 - Diaper Swapper
 
 To decide which number is diaper swapping:
 	if diaper lover is 0, decide on 0;
-	if the player is not a december 2022 diaper donator, decide on 0;
 	decide on choice in row 46 of the Table of Player Options.
 
 Table of Wet Diaper Swapping Options
@@ -123,7 +122,7 @@ Part 4 - Diaper Cumrag
 
 To decide which number is diaper cumrag:
 	if diaper lover is 0, decide on 0;
-	if the player is not a december 2022 diaper donator, decide on 0;
+	if the player is not a top donator, decide on 0;
 	decide on choice in row 85 of the Table of Player Options.
 
 Table of Diaper Cumrag Options
@@ -194,7 +193,7 @@ Part 6 - Hungry Messer
 [In Diaper Quest, with messing enabled, usually the player doesn't get hungry, and is supposed to play to avoid food, and therefore avoid messing. But another challenge might be if the player DOES get hungry...]
 
 To decide which number is hungry messer:
-	if diaper quest is 0 or the player is not a may 2023 diaper donator, decide on 0;
+	if diaper quest is 0, decide on 0;
 	if weight gain fetish is 1, decide on 1;
 	if diaper messing < 3, decide on 0;
 	decide on choice in row 86 of the Table of Player Options.

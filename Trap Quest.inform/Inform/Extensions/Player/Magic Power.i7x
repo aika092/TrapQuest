@@ -5,7 +5,7 @@ The player has a number called magic-fatigue. [Recent magic drain]
 
 [Magic power as treated by spells and so on.]
 To decide which number is the total magic power of the player:
-	decide on the magic-power of the player + the trophy-mode of magic-trophy + (humiliation-fetish * the humiliation of the player / 4000).
+	decide on the magic-power of the player + the trophy-mode of magic-trophy + (humiliation-fetish * the humiliation of the player / 4000) + (the number of worn wizardry clothing * 3).
 
 To decide which number is the magic power of the player:
 	let M be the total magic power of the player - the magic-fatigue of the player;
@@ -401,7 +401,7 @@ Report Spellcasting wand-summoning:
 		summon W uncursed;
 		now W is impermanence;
 		say "With a flash of pink, [NameDesc of W] appears in your hand! Wow! [bold type]It has the [']impermanence['] property,[roman type] which means that it will disappear at some point in the near future.";
-		if the class of the player is adventurer and the player is a may 2023 top donator and the number of worn headgear is 0 and lolita magical dress is off-stage and the number of worn unremovable nudism-disabling clothing is 0 and a random number between 1 and 2 is 1:
+		if the class of the player is adventurer and the player is the donator and the number of worn headgear is 0 and lolita magical dress is off-stage and the number of worn unremovable nudism-disabling clothing is 0 and a random number between 1 and 2 is 1:
 			say "Looking down, you realise that the flash of pink did more than just summon a wand - it sent all of your clothing back to the pink wardrobe, and summoned a cursed but powerful [ShortDesc of lolita magical dress]! ...Is that a good thing, or a bad thing?";
 			repeat with C running through worn nudism-disabling clothing:
 				dislodge C;

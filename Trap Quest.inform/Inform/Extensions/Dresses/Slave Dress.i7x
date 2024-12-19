@@ -1,6 +1,6 @@
 Slave Dress by Dresses begins here.
 
-slave-dress is an overdress. slave-dress is unique. slave-dress is very low cut. slave-dress is not-displacable-always-fuckable. slave-dress is super-short. slave-dress is leather. slave-dress is neck covering. The text-shortcut of slave-dress is "slvd". slave-dress is totally-exclusive. The printed name of slave-dress is "[clothing-title-before]slave dress[clothing-title-after]". Understand "slave", "dress" as slave-dress.
+slave-dress is an overdress. slave-dress is unique. slave-dress is very low cut. slave-dress is not-displacable-always-fuckable. The skirt-length of slave-dress is 1. slave-dress is leather. slave-dress is neck covering. The text-shortcut of slave-dress is "slvd". slave-dress is totally-exclusive. The printed name of slave-dress is "[clothing-title-before]slave dress[clothing-title-after]". Understand "slave", "dress" as slave-dress.
 
 Figure of slave-dress is the file "Items/Clothes/Upper/Exposing/slavedress1.png".
 
@@ -21,7 +21,7 @@ To say MediumDesc of (C - slave-dress):
 Definition: slave-dress is end of transformation chain: decide yes.
 Definition: slave-dress is black themed: decide yes.
 
-slave-garb is an overdress. slave-garb is unique. slave-garb is very low cut. slave-garb is super-short. slave-garb is metal. slave-garb is neck covering. The text-shortcut of slave-garb is "slvg". slave-garb is belly exposing. slave-garb is totally-exclusive. The printed name of slave-garb is "[clothing-title-before]jewelled slave garb[clothing-title-after]". Understand "jewelled", "slave", "garb" as slave-garb.
+slave-garb is an overdress. slave-garb is unique. slave-garb is very low cut. The skirt-length of slave-garb is 1. slave-garb is metal. slave-garb is neck covering. The text-shortcut of slave-garb is "slvg". slave-garb is belly exposing. slave-garb is totally-exclusive. The printed name of slave-garb is "[clothing-title-before]jewelled slave garb[clothing-title-after]". Understand "jewelled", "slave", "garb" as slave-garb.
 
 Figure of slave-garb is the file "Items/Clothes/Upper/Exposing/slavedress2.png".
 

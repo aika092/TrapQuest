@@ -304,7 +304,7 @@ To say ShortDesc of (C - christmas strap monokini):
 Definition: christmas strap monokini is red themed: decide yes.
 Definition: christmas strap monokini is bow themed: decide yes.
 Definition: christmas strap monokini is christmas themed: decide yes.
-Definition: christmas strap monokini is transformation-protected:
+Definition: christmas strap monokini is class-relevant:
 	if the class of the player is santa's little helper, decide yes;
 	decide no.
 

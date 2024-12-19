@@ -1204,7 +1204,7 @@ To say FriendlyAnilingusInitiationFlav of (M - a monster):
 	say AnilingusInitiationFlav of M.
 
 To say AnilingusInitiationFlav of (M - a monster):
-	say "[BigFuckerDesc of M] grabs you by the hair, and turning around, plants [his of M] asshole directly onto your mouth. ";
+	say "[BigFuckerDesc of M] grabs you by the hair, and, [if M is dark skinned and M is male]lying on [his of M] back and [one of]lifting [his of M] legs up and out of the way[or]raising [his of M] feet into the air[or]moving [his of M] thighs upwards and outwards[at random], [one of]forces[or]pulls[cycling] your face forward until your [one of][LipDesc] are[or]mouth is[purely at random] [one of]pressed[or]squashed[or]smushed[in random order] up against [his of M] asshole[otherwise]turning around, plants [his of M] asshole directly onto your mouth[end if]. ";
 	if the grossness addiction of the player <= 2:
 		say "Despite your disgust and desperate attempts to make it stop, it's undeniable that at this moment, you are technically kissing a gross, sweaty butthole.";
 	otherwise if the grossness addiction of the player < 7:
@@ -1465,7 +1465,7 @@ To compute (M - a monster) sleeping (N - a number) after sex:
 	now the sleep of M is N;
 	if newbie tips is 1, say sleeping tip;
 	repeat with T running through clothing held by M:
-		if T is temporarily-unlocked, now T is not temporarily-unlocked;
+		now T is not temporarily-unlocked;
 		if T is temporarily-removed:
 			now T is in the location of the player;
 			now T is not temporarily-removed;
@@ -1542,6 +1542,7 @@ To check sudden spit and expulsion with reason (T - a text):
 
 [Does the player let out everything or maybe just a little squirt?]
 To check sudden expulsion with reason (T - a text):
+	check plug holding with reason T; [handles both full enema loss and little squirts]
 	check enema holding with reason T; [handles both full enema loss and little squirts]
 	if player-just-enema-leaked is false:
 		if T matches the text "orgasm", now hasMessedNow is false; [orgasms don't cause messing]

@@ -9,7 +9,7 @@ A room can be guest. [A guest room in the Hotel has a wardrobe / minibar / safe 
 A room can be corporate. [A corporate room in the Hotel has a cabinet / safe container.]
 A room can be important. [An important room can contain a key item.]
 A room can be significant. [A significant room can contain a key item. What does this do?]
-A room can be smoky. [A smoky room has pink smoke in it.]
+A room can be pink-smoky. [A pink-smoky room has pink smoke in it.]
 A room can be itemstatic. [An itemstatic room prevents items left in it from being destroyed when the player leaves the region.]
 
 A room can be gluey. [A gluey room has glue in it.]
@@ -23,6 +23,10 @@ A room has a direction called first forbidden direction. The first forbidden dir
 A room has a direction called second forbidden direction. The second forbidden direction of a room is usually up.
 
 A room can be use-the-floor, water-bodied, urinals or toilets (this is the toilet facilities property). A room is usually use-the-floor.
+Report going when the location is toilets:
+	if watersports fetish is 1, compute addiction reflection on "urine".
+Report going when the location is urinals:
+	if watersports fetish is 1, compute addiction reflection on "urine".
 
 Definition: a room is bathroom:
 	if it is urinals or it is toilets, decide yes;

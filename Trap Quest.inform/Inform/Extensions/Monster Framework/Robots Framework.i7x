@@ -209,7 +209,16 @@ To compute boring spit reaction of (M - a robot):
 To compute disgusting spit reaction of (M - a robot):
 	say "[BigNameDesc of M][']s eyes turn yellow.[line break][speech style of M]'UNSANITARY LEAKAGE DETECTED. THIS INCIDENT HAS BEEN LOGGED.'[roman type][line break]".
 
+To say LockDeclarationFlav of (M - a robot) for (C - a clothing):
+	say "".
+
+To say LockCommentFlav of (M - a robot) for (C - a clothing):
+	if C is gag, say "[speech style of M]'ORIFICE ISSUE RESOLVED.'[roman type][line break]";
+	otherwise say "[speech style of M]'CRIME TERMINATED.'[roman type][line break]".
+
 Part - DQ
+
+Definition: a robot is willing to punish untidiness: decide yes.
 
 To say DiaperChangeStart of (M - a robot):
 	say "[BigNameDesc of M] holds you still in mid-air with one strong arm.".
@@ -224,7 +233,22 @@ To say DQSpankResistReactionFlav of (M - a robot):
 	say "[speech style of M]'[one of]RESISTANCE DETECTED. SPANKING UNIMPEDED.'[or]STATEMENT: YOUR RESISTANCE IS ENDEARING BUT UNHELPFUL.'[or]CONDESCENDING STATEMENT: AWWW, LITTLE BABY WANT OUT, SO ADORABLE.'[in random order][roman type][line break]".
 
 To say DQSpankResistExtensionFlav of (M - a robot):
-	if M is intelligent, say "[speech style of M]'[one of]REBELLION DETECTED. SPANKING LIMIT OF 15 INCREASED TO 20.'[or]RESISTANCE UNACCEPTABLE. SPANKING DURATION INCREASED.'[or]FUNCTION VOID SPANK RESISTANCE CALLED: DURATION++.'[in random order][roman type][line break]". [Can be customised for specific NPCs]
+	say "[speech style of M]'[one of]REBELLION DETECTED. SPANKING LIMIT OF 15 INCREASED TO 20.'[or]RESISTANCE UNACCEPTABLE. SPANKING DURATION INCREASED.'[or]FUNCTION VOID SPANK RESISTANCE CALLED: DURATION++.'[in random order][roman type][line break]". [Can be customised for specific NPCs]
+
+To say DiaperPailCommenceFlav of (M - a robot):
+	say "[speech style of M]'PROPER DIRTY DIAPER LOCATION EDUCATION SESSION INITIATED.'[roman type][line break]".
+To say TrashcanSummonCommenceFlav of (M - a robot):
+	say "[speech style of M]'MORE TRASHCANS REQUIRED. REASSIGNING ROLE... TRASHCAN.'[roman type][line break]".
+To say TrashcanUseFlav of (M - a robot):
+	say "[speech style of M]'GOOD WORK, TRASHCAN. PLEASE CONTINUE TO PATROL.'[roman type][line break]".
+To say DiaperUntidyPunishCommenceFlav of (M - a robot):
+	say "[speech style of M]'DIAPER LITTERING IS UNACCEPTABLE. SEARCHING FOR APPROPRIATE PUNISHMENT ROUTINE...'[roman type][line break]".
+
+To say EnticeFlav of (M - a robot) for (P - untidy-session):
+	if diaper messing >= 7:
+		say "[line break][speech style of M]'FORCED STENCH SMELLING ROUTINE REQUIRED. PLEASE SUBMIT.'[roman type][line break]";
+	otherwise:
+		say "[line break][speech style of M]'LITTERBUG PUNISHMENT ROUTINE REQUIRED. PLEASE SUBMIT.'[roman type][line break]".
 
 Part - Conversation
 
@@ -285,5 +309,9 @@ To compute unique banishment of (M - a robot):
 
 To unique reset (M - a robot):
 	do nothing. [don't reset blue-balls]
+
+Definition: a robot is willing to potion forcefeed: decide yes.
+To say PotionForcefeedDeclarationFlav of (M - a robot) for (T - a thing):
+	say "[speech style of M]'ELIGIBLE CONSUMABLE ITEM DETECTED. ALLOW ME TO ASSIST YOU.'[roman type][line break]".
 
 Robots Framework ends here.

@@ -492,7 +492,7 @@ To compute treasure diving in (WB - DungeonScenery03) at (L - a number):
 		otherwise:
 			say "You find a rusted out piece of jewellery. You leave it behind as you swim back to the surface.";
 	otherwise if N is 20:[bra]
-		let B be a random off-stage plentiful bra;
+		let B be a random off-stage fetish appropriate plentiful bra;
 		if B is clothing:
 			compute found size of B;
 			say "[bold type]You find a [MediumDesc of B]![roman type] You take it with you as you swim back to the surface.";
@@ -501,7 +501,7 @@ To compute treasure diving in (WB - DungeonScenery03) at (L - a number):
 		otherwise:
 			say "You find a bra that has been torn in two pieces. You leave it behind as you swim back to the surface.";
 	otherwise if N is 19:[underwear]
-		let U be a random off-stage plentiful knickers;
+		let U be a random off-stage fetish appropriate plentiful knickers;
 		if U is clothing:
 			say "[bold type]You find a [selfexamineuniquetitle of U]![roman type] You take it with you as you swim back to the surface!";
 			now the water-soak of U is the soak-limit of U;
@@ -509,7 +509,7 @@ To compute treasure diving in (WB - DungeonScenery03) at (L - a number):
 		otherwise:
 			say "You find a pair of briefs with a huge hole in the crotch. You leave it behind as you swim back to the surface.";
 	otherwise if N is 18:[shoes]
-		let H be a random off-stage plentiful shoes;
+		let H be a random off-stage fetish appropriate plentiful shoes;
 		if H is clothing:
 			say "[bold type]You find a pair of [UniqueShortDesc of H]![roman type] You hold onto them as you swim back to the surface.";
 			now the water-soak of H is the soak-limit of H;
@@ -518,7 +518,7 @@ To compute treasure diving in (WB - DungeonScenery03) at (L - a number):
 			say "You find a single high-heel. You leave it behind as you swim back to the surface.";
 	otherwise if N is 17:[swimsuit]
 		let C be a random off-stage plentiful fetish appropriate swimming themed clothing;
-		if the player is a may 2023 top donator and gris monokini is not held:
+		if the player is the donator and gris monokini is not held:
 			now gris monokini is carried by the player;
 			if gris monokini is unclash summonable:
 				say "[bold type]You find a [gris monokini]![roman type] You take it with you as you swim back to the surface. As you surface... You realise that you're no longer holding it? But... Then... Where has it gone?";

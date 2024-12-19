@@ -190,6 +190,11 @@ To decide which number is the initial outrage of (C - tight-blue-exercise-shorts
 	if the player is possessing a penis, decide on 5; [manually adding the cameltoe outrage]
 	otherwise decide on 2.
 
+Report wearing tight-blue-exercise-shorts:
+	if the player is ready for common event TG:
+		say "You feel the fabric digging deep into your labia![line break][variable custom style]Wait, I don't have labia... Do I?![roman type][line break][if the player is able to use manual dexterity]You reach down to feel yourself[otherwise]You look down[end if] and discover that a brand new [variable custom style][vagina][roman type] has taken the place of your [ShortDesc of penis]! ";
+		SexChange the player.
+
 jeans is a kind of trousers. A jeans is usually manly. A jeans is denim. Understand "jeans" as jeans.
 
 Definition: a jeans is usually calf covering: decide yes.

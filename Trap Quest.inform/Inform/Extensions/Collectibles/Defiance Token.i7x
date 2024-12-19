@@ -27,7 +27,7 @@ To compute mass collectible reward of (T - a defiance token):
 	if NM > 0:
 		if the player is possessing a penis:
 			SpecialPenisUp NM;
-		otherwise if the player is the donator and player futanari fetish > 0 and NM > 1:
+		otherwise if player futanari fetish > 0 and NM > 1:
 			SpecialPenisUp NM * 3; [#LXorDD]
 		otherwise if strapon-dildo is held:
 			if the strap-length of strapon-dildo < 12:

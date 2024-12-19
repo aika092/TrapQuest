@@ -66,7 +66,9 @@ To check milking readiness:
 		now the ready-for-milking of milking-quest is 1.
 
 To check milking unreadiness:
-	if the ready-for-milking of milking-quest is 1 and the milk volume of breasts < (the milk capacity of breasts * 2) / 3: [In some random happenstances where milk leaves a cowgirl's breasts, this might be necessary]
+	let MC be (the milk capacity of breasts * 2) / 3;
+	if MC < 0, now MC is 0; [failsafe to avoid weird bugs where milk capacity is negative and therefore we can never empty them]
+	if the ready-for-milking of milking-quest is 1 and the milk volume of breasts <= MC: [In some random happenstances where milk leaves a cowgirl's breasts, this might be necessary]
 		say "[bold type]Your breasts are no longer completely full of milk[if the milk volume of breasts > 10 and the number of worn cowbelled clothing is 0] - you will no longer become fatigued much faster while standing[end if].[roman type][line break]";
 		now the ready-for-milking of milking-quest is 0.
 

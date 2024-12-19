@@ -20,7 +20,7 @@ To decide which figure-name is YesNoBackground:
 	decide on figure of YesNoBackground2.
 
 The story description is "Explore a dangerous world of transformation, penetration, and bimbofication. 18+ only!".
-The release number is 13.
+The release number is 15.
 
 Definition: a thing is thigh-spreading: decide no.
 Definition: a clothing is thigh-spread-blocking: decide no.
@@ -36,7 +36,6 @@ Include Giant Wasp by Monster.
 Include Aeromancer by Monster.
 Include Tentacle Monster by Monster.
 Include Facehugger by Monster.
-Include RoboMaid by Monster.
 Include Gargoyle by Monster.
 Include Unicorn by Monster.
 Include Slutty Sisters by Monster.
@@ -65,7 +64,6 @@ Include Serving Table by Bondage.
 Include Bunny Ears TQ by Headgear.
 Include Bridal Veils by Headgear.
 
-Include Dildo Pole Trap by Traps.
 Include Wooden Horse Traps by Traps.
 
 Include Gape Gloves by Equippables.

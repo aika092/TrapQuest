@@ -360,11 +360,11 @@ To consider (T - talk-princess-question) for (M - a monster):
 		set next numerical response to the substituted form of "[printed name of T]";
 
 To execute (T - talk-princess-question) for (M - a monster):
-	if the number of threatening monsters in the location of the player >= 1:
+	if there is a threatening monster in the location of the player: [She's not alone so she can't talk sincerely]
+		say "You see [him of M] notice you're not alone, and then [he of M] just squeaks and keeps [his of M] mouth shut.";
+	otherwise:
 		say "[speech style of M]'[if the question-sequence of M is 0]I'm Princess Annie! [big please] help me!'[otherwise if the question-sequence of M is 1]I conjured up this entire pocket dimension and the people inside it... but I was sloppy and got overpowered by my own creation! Now hurry up and get me out of here!'[otherwise if the question-sequence of M is 2]I'm going to get my revenge on that fucking [ShortDesc of headmistress] and [his of headmistress] pawns. [big he of headmistress][']ll wish [he of headmistress][']d never been created...'[otherwise if the question-sequence of M is 3]I'm going to need you to unlock this cell. For that, you'll need a magical skeleton key. My prison guard has one, but [he of prison guard] might need... [']persuading['] to part with it. I happen to know that [he of prison guard] loves digestive biscuits. I'm also going to need something to fight with. Any magical wand will do, but my royal scepter would be our best chance. For that you'll need to first find my tiara. It should present itself to anyone worthy who sits on my throne.'[otherwise][Azathot] above... is this really the best chance I have? I need you to help me escape!'[end if][roman type][line break]";
-		increase the question-sequence of M by 1;
-	otherwise: [She's not alone so she can't talk sincerely]
-		say "You see [him of M] notice you're not alone, and then [he of M] just squeaks and keeps [his of M] mouth shut.".
+		increase the question-sequence of M by 1.
 
 To say WhereAnswer of (M - ex-princess):
 	if playerRegion is dungeon:
@@ -858,7 +858,7 @@ To construct unique buttons for (T - ex-princess):
 				if the player is prone, now the ButtonColour entry is lightModeFullYellow; [turn yellow - player needs to stand]
 		if T is guarding and (current-final-battle-object is final-battle-wand-curse or current-final-battle-object is final-battle-facehugger):
 			choose a blank row in the Table of Buttons;
-			now the ButtonImage entry is Figure of TakeAllButton;
+			now the ButtonImage entry is Figure of WrangledIcon;
 			now the ButtonCommand entry is "pull [text-shortcut of ex-princess]";
 			now the ButtonColour entry is lightModeFullGreen;
 			if the player is immobile, now the ButtonColour entry is lightModeFullRed; [turn red - player immobile]

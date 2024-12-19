@@ -79,7 +79,7 @@ To decide which object is the potential-upgrade-target of (M - maid-waitress-out
 
 Part 1 - Sexy maid outfit
 
-sexy-maid-outfit is a maid outfit. sexy-maid-outfit is high cut. sexy-maid-outfit is short. The text-shortcut of sexy-maid-outfit is "mo1". The printed name of sexy-maid-outfit is "[clothing-title-before]sexy maid outfit[clothing-title-after]". Understand "sexy" as sexy-maid-outfit.
+sexy-maid-outfit is a maid outfit. sexy-maid-outfit is high cut. The skirt-length of sexy-maid-outfit is 4. The text-shortcut of sexy-maid-outfit is "mo1". The printed name of sexy-maid-outfit is "[clothing-title-before]sexy maid outfit[clothing-title-after]". Understand "sexy" as sexy-maid-outfit.
 
 To decide which figure-name is clothing-image of (C - sexy-maid-outfit):
 	decide on figure of maid outfit 1.
@@ -101,7 +101,7 @@ Definition: sexy-maid-outfit is bow themed: decide yes.
 
 Part 2 - Drooping Maid Outfit
 
-drooping-maid-outfit is a maid outfit. drooping-maid-outfit is low cut. drooping-maid-outfit is short. The text-shortcut of drooping-maid-outfit is "mo2". The printed name of drooping-maid-outfit is "[clothing-title-before]drooping maid outfit[clothing-title-after]". Understand "drooping" as drooping-maid-outfit.
+drooping-maid-outfit is a maid outfit. drooping-maid-outfit is low cut. The skirt-length of drooping-maid-outfit is 4. The text-shortcut of drooping-maid-outfit is "mo2". The printed name of drooping-maid-outfit is "[clothing-title-before]drooping maid outfit[clothing-title-after]". Understand "drooping" as drooping-maid-outfit.
 
 To decide which figure-name is clothing-image of (C - drooping-maid-outfit):
 	decide on figure of maid outfit 2.
@@ -121,7 +121,7 @@ Definition: drooping-maid-outfit is white themed: decide yes.
 
 Part 3 - Cheap Maid Outfit
 
-cheap-maid-outfit is a maid outfit. cheap-maid-outfit is pvc. cheap-maid-outfit is short. The text-shortcut of cheap-maid-outfit is "mo3". The printed name of cheap-maid-outfit is "[clothing-title-before]cheap maid outfit[clothing-title-after]". Understand "cheap" as cheap-maid-outfit.
+cheap-maid-outfit is a maid outfit. cheap-maid-outfit is pvc. The skirt-length of cheap-maid-outfit is 4. The text-shortcut of cheap-maid-outfit is "mo3". The printed name of cheap-maid-outfit is "[clothing-title-before]cheap maid outfit[clothing-title-after]". Understand "cheap" as cheap-maid-outfit.
 
 To decide which figure-name is clothing-image of (C - cheap-maid-outfit):
 	decide on figure of maid outfit 3.
@@ -141,7 +141,7 @@ Definition: cheap-maid-outfit is black-and-white themed: decide yes.
 
 Part 4 - Fetish Maid Outfit
 
-fetish-maid-outfit is a maid outfit. fetish-maid-outfit is latex. fetish-maid-outfit is unskirted. fetish-maid-outfit is crotch-intact. fetish-maid-outfit is crotch-intact. The text-shortcut of fetish-maid-outfit is "mo4". The printed name of fetish-maid-outfit is "[clothing-title-before]fetish maid outfit[clothing-title-after]". Understand "fetish" as fetish-maid-outfit.
+fetish-maid-outfit is a maid outfit. fetish-maid-outfit is latex. The skirt-length of fetish-maid-outfit is 0. fetish-maid-outfit is crotch-intact. fetish-maid-outfit is crotch-intact. The text-shortcut of fetish-maid-outfit is "mo4". The printed name of fetish-maid-outfit is "[clothing-title-before]fetish maid outfit[clothing-title-after]". Understand "fetish" as fetish-maid-outfit.
 
 To decide which figure-name is clothing-image of (C - fetish-maid-outfit):
 	decide on figure of maid outfit 4.
@@ -164,7 +164,7 @@ To decide which object is the potential-upgrade-target of (M - fetish-maid-outfi
 
 Part 5 - Pink Maid Outfit
 
-pink-maid-outfit is a maid outfit. pink-maid-outfit is sheer. pink-maid-outfit is belly exposing. pink-maid-outfit is short. pink-maid-outfit is fully covering. pink-maid-outfit is optional-top-displacable. The text-shortcut of pink-maid-outfit is "mo5". The printed name of pink-maid-outfit is "[clothing-title-before]pink maid outfit[clothing-title-after]". Understand "pink" as pink-maid-outfit.
+pink-maid-outfit is a maid outfit. pink-maid-outfit is sheer. pink-maid-outfit is belly exposing. The skirt-length of pink-maid-outfit is 4. pink-maid-outfit is fully covering. pink-maid-outfit is optional-top-displacable. The text-shortcut of pink-maid-outfit is "mo5". The printed name of pink-maid-outfit is "[clothing-title-before]pink maid outfit[clothing-title-after]". Understand "pink" as pink-maid-outfit.
 
 To decide which figure-name is clothing-image of (C - pink-maid-outfit):
 	decide on figure of maid outfit 5a.
@@ -186,7 +186,7 @@ Definition: pink-maid-outfit is pink themed: decide yes.
 
 Part 6 - Slutty Maid Outfit
 
-slutty-maid-outfit is a maid outfit. slutty-maid-outfit is nylon. slutty-maid-outfit is unskirted. slutty-maid-outfit is crotch-intact. slutty-maid-outfit is crotch-intact. slutty-maid-outfit is sheer. The text-shortcut of slutty-maid-outfit is "mo6". The printed name of slutty-maid-outfit is "[clothing-title-before]slutty maid outfit[clothing-title-after]". Understand "slutty" as slutty-maid-outfit.
+slutty-maid-outfit is a maid outfit. slutty-maid-outfit is nylon. The skirt-length of slutty-maid-outfit is 0. slutty-maid-outfit is crotch-intact. slutty-maid-outfit is crotch-intact. slutty-maid-outfit is sheer. The text-shortcut of slutty-maid-outfit is "mo6". The printed name of slutty-maid-outfit is "[clothing-title-before]slutty maid outfit[clothing-title-after]". Understand "slutty" as slutty-maid-outfit.
 
 To decide which figure-name is clothing-image of (C - slutty-maid-outfit):
 	decide on figure of maid outfit 6.
@@ -212,7 +212,7 @@ To decide which object is the potential-upgrade-target of (M - slutty-maid-outfi
 
 Part 7 - V-shape Maid Outfit
 
-V-shape-maid-outfit is a maid outfit. V-shape-maid-outfit is denim. V-shape-maid-outfit is unskirted. V-shape-maid-outfit is crotch-intact. V-shape-maid-outfit is ridiculously low cut. The text-shortcut of V-shape-maid-outfit is "mo7". The printed name of V-shape-maid-outfit is "[clothing-title-before]V-shape maid outfit[clothing-title-after]". Understand "V-shape" as V-shape-maid-outfit.
+V-shape-maid-outfit is a maid outfit. V-shape-maid-outfit is denim. The skirt-length of V-shape-maid-outfit is 0. V-shape-maid-outfit is crotch-intact. V-shape-maid-outfit is ridiculously low cut. The text-shortcut of V-shape-maid-outfit is "mo7". The printed name of V-shape-maid-outfit is "[clothing-title-before]V-shape maid outfit[clothing-title-after]". Understand "V-shape" as V-shape-maid-outfit.
 
 To decide which figure-name is clothing-image of (C - V-shape-maid-outfit):
 	decide on figure of maid outfit 7.
@@ -242,7 +242,7 @@ To decide which object is the potential-upgrade-target of (M - V-shape-maid-outf
 
 Part 8 - Fishnet Maid Outfit
 
-fishnet-maid-outfit is a maid outfit. fishnet-maid-outfit is fully covering. fishnet-maid-outfit is mesh. fishnet-maid-outfit is unskirted. fishnet-maid-outfit is crotch-intact. fishnet-maid-outfit is see-through. The text-shortcut of fishnet-maid-outfit is "mo8". The printed name of fishnet-maid-outfit is "[clothing-title-before]fishnet maid outfit[clothing-title-after]". Understand "fishnet" as fishnet-maid-outfit.
+fishnet-maid-outfit is a maid outfit. fishnet-maid-outfit is fully covering. fishnet-maid-outfit is mesh. The skirt-length of fishnet-maid-outfit is 0. fishnet-maid-outfit is crotch-intact. fishnet-maid-outfit is see-through. The text-shortcut of fishnet-maid-outfit is "mo8". The printed name of fishnet-maid-outfit is "[clothing-title-before]fishnet maid outfit[clothing-title-after]". Understand "fishnet" as fishnet-maid-outfit.
 
 To decide which figure-name is clothing-image of (C - fishnet-maid-outfit):
 	decide on figure of maid outfit 8.
@@ -273,7 +273,7 @@ To decide which object is the potential-upgrade-target of (M - fishnet-maid-outf
 
 Part 9 - Blue Sissy Maid Outfit
 
-blue-sissy-maid-outfit is a maid outfit. blue-sissy-maid-outfit is fully covering. blue-sissy-maid-outfit is polyester. The text-shortcut of blue-sissy-maid-outfit is "bmo". blue-sissy-maid-outfit is short. The printed name of blue-sissy-maid-outfit is "[clothing-title-before]blue sissy maid outfit[clothing-title-after]". Understand "blue", "sissy" as blue-sissy-maid-outfit.
+blue-sissy-maid-outfit is a maid outfit. blue-sissy-maid-outfit is fully covering. blue-sissy-maid-outfit is polyester. The text-shortcut of blue-sissy-maid-outfit is "bmo". The skirt-length of blue-sissy-maid-outfit is 4. The printed name of blue-sissy-maid-outfit is "[clothing-title-before]blue sissy maid outfit[clothing-title-after]". Understand "blue", "sissy" as blue-sissy-maid-outfit.
 
 To decide which figure-name is clothing-image of (C - blue-sissy-maid-outfit):
 	decide on figure of maid outfit 9.
@@ -296,7 +296,7 @@ Definition: blue-sissy-maid-outfit is transformation-protected:
 
 Part 10 - Cafe Maid Outfit
 
-cafe-maid-outfit is a maid outfit. cafe-maid-outfit is fully covering. cafe-maid-outfit is polyester. The text-shortcut of cafe-maid-outfit is "cmo". cafe-maid-outfit is short. The printed name of cafe-maid-outfit is "[clothing-title-before]cafe maid outfit[clothing-title-after]". Understand "cafe" as cafe-maid-outfit.
+cafe-maid-outfit is a maid outfit. cafe-maid-outfit is fully covering. cafe-maid-outfit is polyester. The text-shortcut of cafe-maid-outfit is "cmo". The skirt-length of cafe-maid-outfit is 4. The printed name of cafe-maid-outfit is "[clothing-title-before]cafe maid outfit[clothing-title-after]". Understand "cafe" as cafe-maid-outfit.
 
 To decide which figure-name is clothing-image of (C - cafe-maid-outfit):
 	decide on figure of maid outfit 10.
@@ -319,7 +319,7 @@ Definition: cafe-maid-outfit is transformation-protected:
 
 Part 12 - Black Latex Maid Outfit
 
-black-latex-maid-outfit is a maid outfit. black-latex-maid-outfit is fully exposing. black-latex-maid-outfit is neck covering. black-latex-maid-outfit is latex. The text-shortcut of black-latex-maid-outfit is "blmo". black-latex-maid-outfit is short. The printed name of black-latex-maid-outfit is "[clothing-title-before]black latex maid outfit[clothing-title-after]". Understand "black" as black-latex-maid-outfit.
+black-latex-maid-outfit is a maid outfit. black-latex-maid-outfit is fully exposing. black-latex-maid-outfit is neck covering. black-latex-maid-outfit is latex. The text-shortcut of black-latex-maid-outfit is "blmo". The skirt-length of black-latex-maid-outfit is 4. The printed name of black-latex-maid-outfit is "[clothing-title-before]black latex maid outfit[clothing-title-after]". Understand "black" as black-latex-maid-outfit.
 
 To decide which figure-name is clothing-image of (C - black-latex-maid-outfit):
 	decide on figure of maid outfit 12.
@@ -350,7 +350,7 @@ Definition: black-latex-maid-outfit is class-relevant:
 
 Part 13 - Milkmaid Outfit
 
-milkmaid-outfit is a maid outfit. milkmaid-outfit is very low cut. milkmaid-outfit is optional-top-displacable. milkmaid-outfit is neck covering. milkmaid-outfit is totally-exclusive. milkmaid-outfit is only arm covering. milkmaid-outfit is nylon. milkmaid-outfit is unskirted. milkmaid-outfit is belly exposing. The printed name of milkmaid-outfit is "[clothing-title-before]milkmaid outfit[clothing-title-after]". Understand "milkmaid" as milkmaid-outfit. The text-shortcut of milkmaid-outfit is "mmo".
+milkmaid-outfit is a maid outfit. milkmaid-outfit is very low cut. milkmaid-outfit is optional-top-displacable. milkmaid-outfit is neck covering. milkmaid-outfit is totally-exclusive. milkmaid-outfit is only arm covering. milkmaid-outfit is nylon. The skirt-length of milkmaid-outfit is 0. milkmaid-outfit is belly exposing. The printed name of milkmaid-outfit is "[clothing-title-before]milkmaid outfit[clothing-title-after]". Understand "milkmaid" as milkmaid-outfit. The text-shortcut of milkmaid-outfit is "mmo".
 
 To decide which figure-name is clothing-image of (C - milkmaid-outfit):
 	decide on figure of maid outfit 13.
@@ -371,7 +371,7 @@ Definition: milkmaid-outfit is class-relevant:
 
 Part 14 - Bunny Maid Outfit
 
-bunny-maid-outfit is a maid outfit. bunny-maid-outfit is very low cut. bunny-maid-outfit is totally-exclusive. bunny-maid-outfit is pvc. bunny-maid-outfit is unskirted. bunny-maid-outfit is crotch-intact. The printed name of bunny-maid-outfit is "[clothing-title-before]bunny maid outfit[clothing-title-after]". Understand "bunny" as bunny-maid-outfit. The text-shortcut of bunny-maid-outfit is "bnmo".
+bunny-maid-outfit is a maid outfit. bunny-maid-outfit is very low cut. bunny-maid-outfit is totally-exclusive. bunny-maid-outfit is pvc. The skirt-length of bunny-maid-outfit is 0. bunny-maid-outfit is crotch-intact. The printed name of bunny-maid-outfit is "[clothing-title-before]bunny maid outfit[clothing-title-after]". Understand "bunny" as bunny-maid-outfit. The text-shortcut of bunny-maid-outfit is "bnmo".
 
 To decide which figure-name is clothing-image of (C - bunny-maid-outfit):
 	decide on figure of maid outfit 14.

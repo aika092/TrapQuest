@@ -187,8 +187,8 @@ To refill (C - a dispenser) with (N - a number):
 		now the fill-colour of C is violet;
 		unless C is alchemical vat, now the text-shortcut of C is "vlt";
 	if N is 14:
-		now the fill-colour of C is glittery;
-		unless C is alchemical vat, now the text-shortcut of C is "glt";
+		now the fill-colour of C is smoky;
+		unless C is alchemical vat, now the text-shortcut of C is "smk";
 	if N is 15:
 		now the fill-colour of C is turquoise;
 		unless C is alchemical vat, now the text-shortcut of C is "trq".

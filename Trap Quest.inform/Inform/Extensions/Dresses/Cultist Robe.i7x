@@ -1,6 +1,6 @@
 Cultist Robe by Dresses begins here.
 
-cultist robe is an overdress. cultist robe is knee-length. cultist robe is sheer. cultist robe is silk. cultist robe is unique.
+cultist robe is an overdress. The skirt-length of cultist robe is 6. cultist robe is sheer. cultist robe is silk. cultist robe is unique.
 
 The printed name of cultist robe is "[clothing-title-before]cultist robe[clothing-title-after]". The text-shortcut of cultist robe is "cro".
 

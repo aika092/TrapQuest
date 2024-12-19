@@ -138,7 +138,9 @@ Report examining a condom pinned clothing:
 		if M is not the throne:
 			add M to LM, if absent;
 	let LME be the number of entries in LM;
-	if LME is 1:
+	if LME is 0:
+		say "The used [if the used condoms of the noun is 1]condom contains [semen] from an unknown source[otherwise]condoms contain [semen] from unknown sources[end if].";
+	otherwise if LME is 1:
 		say "The used [if the used condoms of the noun is 1]condom contains[otherwise]condoms contain[end if] [semen] from [NameDesc of entry 1 in LM].";
 	otherwise:
 		say "The used [if the used condoms of the noun is 1]condom contains[otherwise]condoms contain[end if] [semen] from ";
@@ -236,7 +238,7 @@ To compute (M - a monster) condom pinning on (C - a clothing):
 	say "[CondomPinFlav of M on C][CondomPinReactionFlav of M on C]";
 	say CondomNewbieTip;
 	UsedCondomUp C from M;
-	say "[one of]They seem to magically fuse, and you now have a used condom hanging from your [C]! [or]The condom fuses to your [C] just like before. [or]The condom fuses to your [C]. [stopping]";
+	say CondomPinnedFlav of C;
 	progress quest of condom-creampie-quest;
 	if a random number between 1 and 12 < the semen addiction of the player:
 		say "You feel [one of]a little[or]a bit[or]slightly[at random] [if the semen addiction of the player >= 14]less addicted to[otherwise if the semen addiction of the player > 7]less interested in[otherwise]more resilient against the idea of[end if] creampies[if bukkake fetish is 1] and facials[end if].";
@@ -260,6 +262,9 @@ To compute (M - a monster) condom pinning on (C - a clothing):
 		let H be a random worn headgear;
 		now the quest of H is condom-collecting-quest;
 		transform H into rubber condom hat.
+
+To say CondomPinnedFlav of (C - a clothing):
+	say "[one of]They seem to magically fuse, and you now have a used condom hanging from your [C]! [or]The condom fuses to your [C] just like before. [or]The condom fuses to your [C]. [stopping]".
 
 To say CondomNewbieTip:
 	if newbie tips is 1, say "[one of][newbie style]Newbie tip: You've got a condom on your clothes! That's right, NPCs will invariably pin the condoms they use to your clothing and this increases how humiliating the clothing is, and therefore your appearance rating. You can't remove the condoms from the clothing yourself - blame the makers of the game and their ability to manipulate the rules of this universe. You can however bite and drink them - this obviously makes you drink a humiliating dose of [semen], but it also negates the increased outrage of the item. Of course, the best solution is probably to eventually remove the piece of clothing when it gets too ridiculous.[roman type][line break][or][stopping]".
@@ -318,7 +323,10 @@ To say AutomaticCondomFlav of (M - a monster):
 		say "[BigNameDesc of M] produces a condom wrapper, which [he of M] opens, and quickly uses to protect [his of M] [manly-penis].".
 
 To say CondomPinFlav of (M - a monster) on (C - a clothing):
-	if M is awake and M is intelligent and M is interested, say "Before you can stop [him of M], [NameDesc of M] presses the [one of]newly created and now used [or]strongly-smelling [or]wobbling, semen-swollen [or][or][cycling]condom to your [ShortDesc of C].";
+	say GenericCondomPinFlav of M on C.
+
+To say GenericCondomPinFlav of (M - a monster) on (C - a clothing):
+	if M is awake and M is intelligent and M is interested, say "Before you can stop [him of M], [NameDesc of M] [if C is trashcan]drops[otherwise]presses[end if] the [one of]newly created and now used [or]strongly-smelling [or]wobbling, semen-swollen [or][or][cycling]condom [if C is trashcan]on top of[otherwise]to[end if] your [ShortDesc of C].";
 	otherwise say "Completely of its own accord, the used condom suddenly zips from [NameDesc of M] and flies through the air until it hits your [ShortDesc of C].".
 
 To say CondomPinReactionFlav of (M - a person) on (C - a clothing):
@@ -388,6 +396,9 @@ Understand "eat condom from [something]", "drink condom from [something]", "bite
 To compute condom biting of (C - a clothing):
 	allocate 5 seconds;
 	say "Stretching the cumfilled end of [if the used condoms of C is 1]the condom[otherwise]one of the condoms[end if] to your mouth, you gnaw on the middle with your teeth until it suddenly bursts, coating the inside of your mouth with salty goo[one of] like a water balloon exploding[or][stopping].";
+	compute condom eating of C.
+
+To compute condom eating of (C - a clothing):
 	let M be the condomPop of C;
 	increase the empty condoms of C by 1;
 	FaceFill semen by 1;

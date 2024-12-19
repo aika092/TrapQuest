@@ -35,7 +35,7 @@ Definition: a clothing (called C) is partially-mid-layer-concealing:
 	decide no.
 
 Definition: a clothing (called C) is potentially-bottom-layer-concealing:
-	if C is layer-concealing and C is not-butt-windowed and C is potentially-partially-bottom-layer-concealing: [crotch-assless clothing doesn't hide what's underneath]
+	if C is layer-concealing and C is not-butt-windowed and (C is total protection or C is skirt-covering-crotch): [crotch-assless clothing doesn't hide what's underneath]
 		[if (C is leg covering or C is skirted) and C is not usually thigh covering, decide no;] [skirts and trousers that expose the thighs do not fully conceal the bottom layer area] [Aika disagrees with my past self and has commented this out]
 		decide yes;
 	decide no.
@@ -43,7 +43,7 @@ Definition: a clothing (called C) is bottom-layer-concealing:
 	if C is worn and C is potentially-bottom-layer-concealing, decide yes;
 	decide no.
 Definition: a clothing (called C) is potentially-partially-bottom-layer-concealing:
-	if C is partially-layer-concealing and (C is total protection or C is skirt-covering-crotch), decide yes; [crotch-assless clothing doesn't hide what's underneath, but both 'total protection' and 'skirt-covering-crotch' already check for this]
+	if C is partially-layer-concealing and (C is total protection or C is skirt-partially-covering-crotch), decide yes; [crotch-assless clothing doesn't hide what's underneath, but both 'total protection' and 'skirt-covering-crotch' already check for this]
 	decide no.
 Definition: a clothing (called C) is partially-bottom-layer-concealing:
 	if C is worn and C is potentially-partially-bottom-layer-concealing, decide yes;
@@ -129,6 +129,7 @@ To decide which object is the concealer of (C - a wearthing):
 [We will prioritise a top layer thing over a bottom layer thing. We prioritise a bottom layer thing over a middle layer thing.]
 To decide which object is the concealer of (C - a clothing):
 	if appearance-explained is 1 and debugmode > 1, say "Checking concealer of [C].";
+	if current-predicament is team-lake-predicament and the beachball-game of team-lake-predicament > 0 and C is not bra, decide on park-lake;
 	if entry 1 in the armUses of arms is C and entry 2 in the armUses of arms is C, decide on arms;
 	let B be nothing;
 	let M be nothing;
@@ -163,6 +164,7 @@ To decide which object is the concealer of (C - a clothing):
 To decide which object is the at least partial concealer of (C - a wearthing):
 	if appearance-explained is 1 and debugmode > 1, say "Checking at least partial concealer of [C].";
 	if C is listed in the armUses of arms, decide on arms;
+	if current-predicament is team-lake-predicament and the beachball-game of team-lake-predicament > 0 and C is not bra, decide on park-lake;
 	if C is clothing and (the top-layer of C > 0 or the mid-layer of C > 0 or the bottom-layer of C > 0): [The main difference between this and the one above, is whether the item is layer concealing or just partially layer concealing]
 		let B be nothing;
 		let M be nothing;
@@ -199,8 +201,8 @@ To decide which object is the at least partial concealer of (C - a wearthing):
 To decide which number is the diaperHidingLength of (C - a clothing):
 	if C is crotch-displaced or C is crotch-unzipped or C is crotch-ripped, decide on -1;
 	if C is skirted and C is not hobble-skirted:
-		if the skirtLength of C > 6, decide on 6; [essentially, by default, as soon as a diaper forces your thighs apart, you can't hide the fact you're wearing it with a skirt]
-		decide on the skirtLength of C; [Hobble skirts are too tight to conceal thick diapers]
+		if the defaultDiaperCoveringLength of C > 6, decide on 6; [essentially, by default, as soon as a diaper forces your thighs apart, you can't hide the fact you're wearing it with a skirt]
+		decide on the defaultDiaperCoveringLength of C; [Hobble skirts are too tight to conceal thick diapers]
 	decide on the defaultDiaperHidingLength of C.
 
 To decide which number is the defaultDiaperHidingLength of (C - a clothing):
@@ -216,7 +218,12 @@ Definition: a clothing (called C) is diaper hiding:
 
 [Sometimes the diaper covering clothing breaks open at certain levels.]
 To decide which number is the defaultDiaperCoveringLength of (C - a clothing):
-	if C is skirted, decide on the skirtLength of C;
+	if C is skirted:[This is supposed to line up with DQBulk, i.e. if DQBulk is bigger than this, we can see the bottom of your diaper (defaultDiaperCoveringLength). Ideally it also lines up with how many inches of penis it can hide (penis-capacity is 1 + skirtLength*2).]
+		if C is super-short or C is crotch-displaced or C is crotch-unzipped or C is crotch-ripped, decide on -1;
+		if the front-skirt-length of C <= 4 or the back-skirt-length of C <= 4, decide on 1;
+		decide on 8;
+		[if the front-skirt-length of C < the back-skirt-length of C, decide on the front-skirt-length of C;
+		otherwise decide on the back-skirt-length of C;]
 	decide on 10. [nearly all trousers etc. will at least cover it up even if the shape is exposed]
 
 To decide which number is the diaperCoveringLength of (C - a clothing):

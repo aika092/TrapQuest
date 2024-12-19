@@ -263,7 +263,7 @@ To compute drinking effect (N - 22):
 	FaceFill milk by 1;
 	if the noun is blessed, increase the fat-burning of the player by 100;
 	if there is a milking bench in the location of the player:
-		if the class of the player is "cowgirl" or the class of the player matches the text "meow", compute meowcowification;
+		if the class of the player is "cowgirl" or the class of the player matches the text "catgirl", compute meowcowification;
 	suggest swallowing.
 
 To compute drinking effect (N - 23):

@@ -932,13 +932,14 @@ Part - Upskirt Quest
 upskirt-quest is a clothing-quest. upskirt-quest is persistent.
 
 Definition: upskirt-quest is appropriate:
-	if there is worn short or longer displacable clothing, decide yes;
+	if there is worn short-or-longer displacable clothing, decide yes;
 	decide no.
 Definition: upskirt-quest is school-disabled: decide yes.
 
 To decide what number is the quest-weighting of (Q - upskirt-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
-	decide on 1.
+	if C is knickers, decide on 2;
+	decide on 0.
 
 To say QuestFlav of (Q - upskirt-quest):
 	say "You sense that it wants you to pull up your skirt in front of people (while you have their attention).".
@@ -1439,6 +1440,23 @@ To say QuestFlav of (Q - birth-quest):
 To say QuestTitle of (Q - birth-quest):
 	say " (birth quest)".
 
+Part - Skill Quest
+
+skill-quest is a clothing-quest.
+
+Definition: skill-quest is appropriate:
+	if easy teaching is 0, decide yes;
+	decide no.
+
+To decide what number is the quest-weighting of (Q - skill-quest) for (C - a clothing):
+	decide on 1.
+
+To say QuestFlav of (Q - skill-quest):
+	say "You sense that it wants you to learn a new skill.".
+
+To say QuestTitle of (Q - skill-quest):
+	say " (skill learning quest)".
+
 
 
 
@@ -1465,7 +1483,7 @@ Definition: gold-candy-wisp-quest is appropriate:
 
 drink-milk-wisp-quest is a wisp quest. The printed name of drink-milk-wisp-quest is "drink some human breast milk".
 Definition: drink-milk-wisp-quest is appropriate:
-	if diaper quest is 1, decide yes;
+	if diaper quest is 1 or lactation fetish is 1, decide yes;
 	decide no.
 
 drink-urine-wisp-quest is a wisp quest. The printed name of drink-urine-wisp-quest is "swallow [urine]".
@@ -1522,7 +1540,7 @@ Definition: learn-spell-wisp-quest is eligible:
 
 use-urinal-wisp-quest is a wisp quest. The printed name of use-urinal-wisp-quest is "urinate in a urinal".
 Definition: use-urinal-wisp-quest is appropriate:
-	if watersports mechanics is 1, decide yes;
+	if diaper lover is 0 and watersports fetish is 1, decide yes;
 	decide no.
 
 bowl-wisp-quest is a wisp quest. The printed name of bowl-wisp-quest is "eat food from a bowl".
@@ -1562,7 +1580,7 @@ Definition: hunger-wisp-trigger is eligible:
 	if the player is hungry or the player is nearly hungry, decide no;
 	decide yes.
 
-pee-wisp-trigger is a wisp trigger. The printed name of pee-wisp-trigger is "use a toilet, use a urinal or leak through underwear".
+pee-wisp-trigger is a wisp trigger. The printed name of pee-wisp-trigger is "use a toilet, or leak through underwear".
 Definition: pee-wisp-trigger is eligible:
 	if diaper lover is 0, decide no;
 	decide yes.

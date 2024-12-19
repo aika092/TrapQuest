@@ -26,7 +26,7 @@ To trigger (Y - a sprinkle trap):
 
 To sprinkle (T - a sprinkle trap):
 	if diaper quest is 1:
-		repeat with C running through worn currently uncovered fluid vulnerable clothing:
+		repeat with C running through currently uncovered fluid vulnerable clothing:
 			WaterSoak 1 on C;
 		if the make-up of face > 0 and permanent makeup is 0:
 			say "[if the make-up of face > 1]Some of your[otherwise]Your[end if] make up is washed away.";

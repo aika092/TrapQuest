@@ -60,6 +60,23 @@ To decide which figure-name is the vaginal-sex-monster-image of (M - agent):
 
 Figure of bianca defeated is the file "NPCs/School/Teacher/teacher3b.png".
 
+Figure of breastfeeding predicament milk mead is the file "Special/Cutscene/cutscene-predicament-breastfeeding2.jpg".
+Figure of breastfeeding predicament milk lax is the file "Special/Cutscene/cutscene-predicament-breastfeeding3a.jpg".
+Figure of breastfeeding predicament milk piss is the file "Special/Cutscene/cutscene-predicament-breastfeeding4a.jpg".
+Figure of breastfeeding predicament cum mead is the file "Special/Cutscene/cutscene-predicament-breastfeeding5.jpg".
+Figure of breastfeeding predicament cum lax is the file "Special/Cutscene/cutscene-predicament-breastfeeding6.jpg".
+Figure of breastfeeding predicament cum piss is the file "Special/Cutscene/cutscene-predicament-breastfeeding7.jpg".
+
+To decide which figure-name is Figure of breastfeeding predicament mead:
+	if lactation fetish is 1, decide on Figure of breastfeeding predicament milk mead;
+	otherwise decide on Figure of breastfeeding predicament cum mead.
+To decide which figure-name is Figure of breastfeeding predicament lax:
+	if lactation fetish is 1, decide on Figure of breastfeeding predicament milk lax;
+	otherwise decide on Figure of breastfeeding predicament cum lax.
+To decide which figure-name is Figure of breastfeeding predicament piss:
+	if lactation fetish is 1, decide on Figure of breastfeeding predicament milk piss;
+	otherwise decide on Figure of breastfeeding predicament cum piss.
+
 Figure of cage ass expansion trap is the file "Env/Forest/cage4.jpg".
 
 Figure of cultist abduction cutscene is the file "Special/Cutscene/cutscene-cultist-abduct1.jpg".
@@ -110,11 +127,9 @@ To decide which figure-name is the anal-sex-monster-image of (M - dominatrix):
 
 Figure of Fairy Cutscene 1 is the file "NPCs/Forest/Fairy/cutscene-fairy-birth1.png".
 Figure of Fairy Cutscene 2 is the file "NPCs/Forest/Fairy/cutscene-fairy-birth2.png".
-Figure of Fairy Cutscene 3 is the file "NPCs/Forest/Fairy/cutscene-fairy-belly1.png".
 Figure of Fairy Cutscene 4 is the file "NPCs/Forest/Fairy/cutscene-fairy-hips1.png".
 Figure of Fairy Cutscene 5 is the file "NPCs/Forest/Fairy/cutscene-fairy-hips2.png".
 Figure of Fairy Cutscene 6 is the file "NPCs/Forest/Fairy/cutscene-fairy-hips3.png".
-Figure of Fairy Cutscene 7 is the file "NPCs/Forest/Fairy/cutscene-fairy-belly2.png".
 Figure of Fairy Cutscene 8 is the file "NPCs/Forest/Fairy/cutscene-fairy-milk1.png".
 Figure of Fairy Cutscene 9 is the file "NPCs/Forest/Fairy/cutscene-fairy-milk2.png".
 Figure of Fairy Cutscene 10 is the file "NPCs/Forest/Fairy/cutscene-fairy-breasts1.png".
@@ -318,7 +333,11 @@ To decide which figure-name is Figure of rank 5 laci:
 	if student-laci is clitLeaded, decide on figure of rank 5 laci pierced;
 	otherwise decide on figure of rank 5 laci normal.
 
+Figure of lake predicament 2 is the file "Special/Cutscene/cutscene-lake-predicament2.jpg".
+Figure of lake predicament 3 is the file "Special/Cutscene/cutscene-lake-predicament3.jpg".
+
 Figure of lecture 2 is the file "Special/Cutscene/cutscene-lecture2.jpg".
+Figure of lecture 3 is the file "Special/Cutscene/cutscene-lecture3.jpg".
 
 Figure of rank 2 misty normal is the file "NPCs/School/Student/student4b.png".
 To decide which figure-name is Figure of rank 2 misty:
@@ -358,6 +377,20 @@ Figure of Surgery Trapped Bored is the file "Special/Cutscene/cutscene-elevator-
 Figure of Surgery Trapped Revealed is the file "Special/Cutscene/cutscene-elevator-surgery3b.jpg".
 Figure of Surgery Trapped Sensed is the file "Special/Cutscene/cutscene-elevator-surgery3c.jpg".
 
+Figure of three legged race nobody horny is the file "Special/Cutscene/cutscene-predicament-three-legged-race1.jpg".
+Figure of three legged race player horny is the file "Special/Cutscene/cutscene-predicament-three-legged-race2.jpg".
+Figure of three legged race rival horny is the file "Special/Cutscene/cutscene-predicament-three-legged-race3.jpg".
+Figure of three legged race both horny is the file "Special/Cutscene/cutscene-predicament-three-legged-race4.jpg".
+
+To decide which figure-name is Figure of three legged race:
+	if partner-arousal of team-three-leg-predicament >= 25:
+		if there is worn wet trousers, decide on Figure of three legged race both horny;
+		otherwise decide on Figure of three legged race rival horny;
+	otherwise:
+		if there is worn wet trousers, decide on Figure of three legged race player horny;
+		otherwise decide on Figure of three legged race nobody horny.
+
+
 Figure of throne is the file "Env/Dungeon/throne1a.jpg".
 Figure of transformed throne is the file "Env/Dungeon/throne2a.jpg".
 
@@ -377,6 +410,41 @@ To decide which figure-name is clothing-image of (C - trashcan):
 	if the used condoms of trashcan is 3, decide on Figure of trashcan full 3 condoms;
 	if the used condoms of trashcan is 4, decide on Figure of trashcan full 4 condoms;
 	decide on Figure of trashcan full 5 condoms.
+
+Figure of walled creature is the file "NPCs/Mansion/WallCreature/slimy-portal-creature6b.png".
+Figure of walled creature bwc oral is the file "NPCs/Mansion/WallCreature/slimy-portal-creature7.png".
+Figure of walled creature bbc oral is the file "NPCs/Mansion/WallCreature/slimy-portal-creature8.png".
+Figure of walled creature demon oral is the file "NPCs/Mansion/WallCreature/slimy-portal-creature9.png".
+Figure of walled creature bwc fuck is the file "NPCs/Mansion/WallCreature/slimy-portal-creature10.png".
+Figure of walled creature bbc fuck is the file "NPCs/Mansion/WallCreature/slimy-portal-creature11.png".
+Figure of walled creature demon fuck is the file "NPCs/Mansion/WallCreature/slimy-portal-creature12.png".
+Figure of walled creature bwc vaginal is the file "NPCs/Mansion/WallCreature/slimy-portal-creature13.png".
+Figure of walled creature bbc vaginal is the file "NPCs/Mansion/WallCreature/slimy-portal-creature14.png".
+Figure of walled creature demon vaginal is the file "NPCs/Mansion/WallCreature/slimy-portal-creature15.png".
+Figure of walled creature bwc anal is the file "NPCs/Mansion/WallCreature/slimy-portal-creature16.png".
+Figure of walled creature bbc anal is the file "NPCs/Mansion/WallCreature/slimy-portal-creature17.png".
+Figure of walled creature demon anal is the file "NPCs/Mansion/WallCreature/slimy-portal-creature18.png".
+
+To decide which figure-name is the sex-profile of (M - slimy-portal-creature):
+	if there is a monster penetrating a fuckhole:
+		if M is penetrating vagina:
+			if M is penetrating asshole:
+				if M is demon-fuck, decide on figure of walled creature demon fuck;
+				if M is bbc-fuck, decide on figure of walled creature bbc fuck;
+				decide on figure of walled creature bwc fuck;
+			otherwise:
+				if M is demon-fuck, decide on figure of walled creature demon vaginal;
+				if M is bbc-fuck, decide on figure of walled creature bbc vaginal;
+				decide on figure of walled creature bwc vaginal;
+		otherwise:
+			if M is demon-fuck, decide on figure of walled creature demon anal;
+			if M is bbc-fuck, decide on figure of walled creature bbc anal;
+			decide on figure of walled creature bwc anal;
+	otherwise if there is a monster penetrating face:
+		if M is demon-oral, decide on figure of walled creature demon oral;
+		if M is bbc-oral, decide on figure of walled creature bbc oral;
+		decide on figure of walled creature bwc oral;
+	decide on figure of Missing NPC. [Defaults back to the non-sex stuff.]
 
 Figure of Witch Cutscene 1 is the file "NPCs/Forest/Witch/cutscene-witch-satisfied1.png".
 Figure of Witch Cutscene 2 is the file "NPCs/Forest/Witch/cutscene-witch-defeated1.png".
@@ -542,25 +610,6 @@ Figure of Modmachine Cutscene 1 is the file "Special/Cutscene/cutscene-modmachin
 
 Figure of nintendolls gameshow 4 is the file "Special/Epilogue/epilogue-nintendolls-gameshow4a.png".
 
-Figure of Oral Creampie Cutscene 1 is the file "Special/Cutscene/cutscene-oral-creampie1.jpg".
-Figure of Oral Creampie Cutscene 2 is the file "Special/Cutscene/cutscene-oral-creampie2.jpg".
-Figure of Oral Creampie Cutscene 3 is the file "Special/Cutscene/cutscene-oral-creampie3.jpg".
-Figure of Oral Creampie Cutscene 4 is the file "Special/Cutscene/cutscene-oral-creampie4.jpg".
-Figure of Oral Creampie Cutscene 6 is the file "Special/Cutscene/cutscene-oral-creampie6.jpg".
-[Figure of Oral Creampie Cutscene 5 is the file "Special/Cutscene/cutscene-oral-creampie5.jpg".
-
-To get oral creampie image for (M - a thing):
-	if M is not a female monster:
-		if the semen taste addiction of the player >= 15:
-			cutshow figure of Oral Creampie Cutscene 4;
-		otherwise if the semen taste addiction of the player >= 11:
-			cutshow figure of Oral Creampie Cutscene 3;
-		otherwise if the semen taste addiction of the player >= 5:
-			cutshow figure of Oral Creampie Cutscene 2;
-		otherwise:
-			if M is monster and M is presenting as female and M is pale skinned and (playerRegion is Dungeon or playerRegion is hotel), cutshow figure of Oral Creampie Cutscene 5; [These regions have the most NPCs without weird skin colours]
-			otherwise cutshow figure of Oral Creampie Cutscene 1.]
-
 Figure of female orc is the file "NPCs/Dungeon/Orc/orc2a.png".
 
 Figure of pink lollipop is the file "Items/Collectibles/lollipop2.png".
@@ -640,7 +689,6 @@ Figure of Vine Boss Cutscene 1 is the file "NPCs/Bosses/VineBoss/cutscene-vinebo
 Figure of Vine Boss Cutscene 2 is the file "NPCs/Bosses/VineBoss/cutscene-vineboss2.jpg".
 
 Figure of water bomb is the file "Items/Collectibles/bomb2.png".
-Figure of water bomb cutscene 1 is the file "Special/Cutscene/cutscene-water-bomb-explode1.png".
 Figure of water bomb cutscene 2 is the file "Special/Cutscene/cutscene-water-bomb-explode2.png".
 Figure of Wench Cutscene 5 is the file "NPCs/Dungeon/Wench/cutscene-wench-fuck1.png".
 
@@ -1032,10 +1080,6 @@ To decide which figure-name is the examine-image of (T - slut-tattoo):
 Figure of snowbunny womb tattoo is the file "Items/Tats/tattoo185.jpg".
 To decide which figure-name is the examine-image of (T - snowbunny womb tattoo):
 	decide on figure of snowbunny womb tattoo.
-
-Figure of spade leaves tattoo is the file "Items/Tats/tattoo196.jpg".
-To decide which figure-name is the examine-image of (T - spade leaves tattoo):
-	decide on figure of spade leaves tattoo.
 
 Figure of spade owned tattoo is the file "Items/Tats/tattoo160.jpg".
 To decide which figure-name is the examine-image of (T - spade owned tattoo):

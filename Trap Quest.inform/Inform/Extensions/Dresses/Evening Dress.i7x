@@ -1,6 +1,6 @@
 Evening Dress by Dresses begins here.
 
-An evening dress is a kind of overdress. An evening dress is usually satin. An evening dress is usually transformation-rare. An evening dress is usually hobble-skirted. An evening dress is usually crotch-skirted.
+An evening dress is a kind of overdress. An evening dress is usually satin. An evening dress is usually transformation-rare. The skirt-length of An evening dress is 9.
 
 The printed name of evening dress is usually "[clothing-title-before]evening dress[clothing-title-after]". The text-shortcut of evening dress is "ed".
 

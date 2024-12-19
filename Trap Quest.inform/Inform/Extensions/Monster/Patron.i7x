@@ -7,6 +7,7 @@ Definition: a patron is raunchy: decide yes.
 Definition: a patron is condom-preferring: decide yes. [Every John wants to be sensible if the whore has come prepared]
 Definition: a patron is wenchy:
 	decide yes.
+Definition: a patron is generic-patron: decide no.
 Definition: a patron is generic-appropriate: decide yes.
 Definition: a patron is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 Definition: a patron is permanently banishable: decide no. [Can come back once banished]
@@ -32,6 +33,7 @@ To say MonsterDesc of (M - a patron):
 	say PatronDesc of M;
 
 An inexperienced patron is a kind of patron.
+Definition: an inexperienced patron is generic-patron: decide yes.
 eager patron is an inexperienced patron. impatient patron is an inexperienced patron. The text-shortcut of eager patron is "epa". The text-shortcut of impatient patron is "ipa".
 To decide which figure-name is the monster-image of (M - an inexperienced patron):
 	if lady fetish is 1:
@@ -51,6 +53,7 @@ To say MediumDesc of (M - impatient patron):
 	say "impatient patron".
 
 An experienced patron is a kind of patron.
+Definition: an experienced patron is generic-patron: decide yes.
 Definition: an experienced patron is condom obsessed: decide yes. [Does he always have condoms on him?]
 well dressed patron is an experienced patron. A suited patron is an experienced patron. The text-shortcut of well dressed patron is "wdp". The text-shortcut of suited patron is "spa".
 To decide which figure-name is the monster-image of (M - an experienced patron):
@@ -70,6 +73,7 @@ To say MediumDesc of (M - suited patron):
 	say "suited patron".
 
 A gross patron is a kind of patron.
+Definition: a gross patron is generic-patron: decide yes.
 Definition: a gross patron is condom prepared: decide yes. [Does he have condoms on him?]
 chubby patron is a gross patron. hairy patron is a gross patron. The text-shortcut of chubby patron is "cpa". The text-shortcut of hairy patron is "hpa". Understand "chunky" as hairy patron when lady fetish is 1.
 To decide which number is the girth of (M - gross patron):
@@ -99,6 +103,7 @@ To say MediumDesc of (M - hairy patron):
 	otherwise say "hairy patron".
 
 A dickhead patron is a kind of patron.
+Definition: a dickhead patron is generic-patron: decide yes.
 menacing patron is a dickhead patron. sneering patron is a dickhead patron. The text-shortcut of menacing patron is "mpa". The text-shortcut of sneering patron is "snp".
 To decide which number is the girth of (M - dickhead patron):
 	decide on 4.
@@ -143,6 +148,9 @@ To say LongDickDesc of (M - a patron):
 
 To say HoleDesc of (M - a patron):
 	say asshole.
+
+To compute the default taunting of (M - a patron):
+	unless stripper cage is grabbing the player, say "[BigNameDesc of M] [one of]smiles[or]watches[or]grins[at random] [one of]patiently[or]happily[purely at random].".
 
 To decide which number is the base semen load of (M - a patron):
 	decide on 2.
@@ -263,7 +271,7 @@ A time based rule (this is the patron encountering rule):
 								increase the tissue-fill of trashcan by 1;
 							otherwise:
 								say "[BigNameDesc of P] enters the room! [big he of P] drops a used condom on top of [NameDesc of trashcan], without even bothering to look you in the eyes.";
-								increase the used condoms of trashcan by 1;
+								UsedCondomUp trashcan from P by 1;
 						otherwise:
 							compute patronEncounter of P;
 						say "[big he of P] leaves the way [he of P] came in.";
@@ -686,7 +694,7 @@ To compute appearance assessment of (M - a gross patron):
 	if the class of the player is princess:
 		say "[speech style of M]'[if the chosen-orifice of M is asshole]I can't believe I get to fuck a princess!'[otherwise if the chosen-orifice of M is vagina]Wow, the royal [pussy]. I'm so lucky I get to fuck you!'[otherwise]Your nobles promised me a blowjob tonight, and I'm pretty sure they meant you'd be giving one to me.'[end if][roman type][line break]";
 	otherwise:
-		say "[speech style of M]'[if the chosen-orifice of M is asshole]How much does anal cost?'[otherwise if the chosen-orifice of M is vagina]How much do you charge for bareback sex?'[otherwise]How much for a blowjob?'[end if][roman type][line break]";
+		say "[speech style of M]'[if the chosen-orifice of M is asshole]How much does anal cost?'[otherwise if the chosen-orifice of M is vagina]How much do you charge for bareback sex?'[otherwise if the chosen-orifice of M is thighs and M is willing to do anilingus]First, I want you to tongue my asshole[one of]. A whore like you wouldn't say no to that, right?'[or].'[stopping][otherwise if the chosen-orifice of M is thighs]First, I want you to kiss my feet.'[otherwise]How much for a blowjob?'[end if][roman type][line break]";
 
 To compute appearance assessment of (M - an experienced patron):
 	if the class of the player is princess:
@@ -715,7 +723,8 @@ To compute DQ perception of (M - a patron):
 		say "[speech style of M]'Oh gosh, that smell! You have gotten into character already, I see...'[roman type][line break]";
 		if there is worn perceived unmessed knickers, compute state check of a random worn messed knickers;
 	otherwise:
-		say "[speech style of M]'[one of]I assume that this is the right room, and you are the adult baby slave for hire, yes? Good.'[or][daddytitle of M]'s home, honey! Are you ready to play?'[stopping][roman type][line break]".
+		say "[speech style of M]'[one of]I assume that this is the right room, and you are the adult baby slave for hire, yes? Good.'[or][daddytitle of M]'s home, honey! Are you ready to play?'[stopping][roman type][line break]";
+	compute enticing of M.
 
 To compute internet assessment of (M - a patron):
 	let PD be the public disgrace of the player;
@@ -1808,6 +1817,7 @@ To satisfy (M - a patron) for (N - a number) seconds:
 	compute unique boredom of M;
 	now M is uninterested;
 	now the boredom of M is N;
+	compute unlock satisfaction of M;
 	unless M is dying:
 		if there is a hotel bed in the location of M and the player is not trap stuck:
 			compute payment of M;
@@ -2557,7 +2567,7 @@ To decide which figure-name is the monster-image of (M - crimson patron):
 Definition: crimson patron is dark skinned: decide no.[He's red skinned!]
 Definition: crimson patron is infernal: decide yes.
 Definition: crimson patron is generic-appropriate:
-	unless the player is the donator, decide no;
+	unless diaper quest is 0 and the player is the donator, decide no;
 	if the altar-intensity of hotel altar > 3 or demon lord is alive, decide yes;
 	decide no.
 

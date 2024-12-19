@@ -1,6 +1,6 @@
 Rope Harness by Dresses begins here.
 
-rope harness is an overdress. rope harness is hemp. rope harness is see-through. rope harness is fully exposing. rope harness is neck covering. rope harness is unskirted. There is rope harness. Figure of rope harness is the file "Items/Clothes/Upper/Exposing/ropeharness1.png". Figure of rope harness full is the file "Items/Clothes/Upper/Exposing/ropeharness2.png". rope harness has a number called charge.
+rope harness is an overdress. rope harness is hemp. rope harness is see-through. rope harness is fully exposing. rope harness is neck covering. The skirt-length of rope harness is 0. There is rope harness. Figure of rope harness is the file "Items/Clothes/Upper/Exposing/ropeharness1.png". Figure of rope harness full is the file "Items/Clothes/Upper/Exposing/ropeharness2.png". rope harness has a number called charge.
 
 To decide which number is the initial outrage of (C - rope harness):
 	decide on 12.

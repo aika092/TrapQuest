@@ -3,9 +3,8 @@ Agent by Monster begins here.
 agent is a monster. agent is male. agent is intelligent. The leftover-type of agent is 149.
 
 Definition: agent is hotel dwelling:
-	if diaper quest is 0 and the player is the donator, decide yes;
-	if diaper quest is 1 and diaper swapping > 1, decide yes;
-	decide no.
+	if diaper quest is 1 and diaper swapping < 2, decide no;
+	decide yes.
 
 Definition: agent is willing to do vaginal: decide yes.
 Definition: agent is willing to do anal: decide yes.
@@ -14,6 +13,9 @@ Definition: an agent is a generic-unlocker: decide yes.
 
 Definition: agent is dark skinned: decide yes.
 Definition: agent is condom prepared: decide yes. [Does she have condoms on her?]
+
+To say SummoningFlav of (M - agent):
+	say "You hear the click-clack sounds of strong, heavy high heels entering the hotel somewhere nearby!".
 
 [Definition: agent is raunchy: decide yes.]
 
@@ -332,7 +334,7 @@ To say ExamineDesc of (C - third-agent-poster):
 	say TitleDesc of C.
 
 Definition: agent is ready for next agent scene:
-	if diaper quest is 0 and the player is the donator and the times-met of agent > 0 and agent is not permanently banished:
+	if diaper quest is 0 and the times-met of agent > 0 and agent is not permanently banished:
 		if the number of worn unremovable nudism-disabling clothing is 0:
 			if the agent-scene of agent < 2 and the agent-scene of agent is the agent-scene-spotted of agent, decide yes;
 			if the agent-scene of agent is 2 and the woman-bimbo of woman-player <= 4 and woman-player is in the location of the player and the total volume of face is 0, decide yes;
@@ -395,10 +397,13 @@ To compute agent anal:
 		say "[one of][bold type]You feel like you suddenly notice that your [asshole] is more sore [if the openness of asshole < the girth of agent]and more gaped [end if]than it was before. And as your belly gurgles, you realise that your rectum feels like it's been filled with an anal creampie...[line break][variable custom style]What in the world?![roman type][line break][or][stopping]";
 		if the openness of asshole < the girth of agent, now the openness of asshole is the girth of agent;
 		say "[one of][or][bold type]It's with mild horror that you notice that your [asshole] is once again suddenly sore, gaped and filled with [semen]. [roman type][if agent is agent-identified][BigNameDesc of agent] must have mind controlled you, assfucked you, and wiped your memory again!!![line break][variable custom style]I've got to find that bitch, and slap [his of agent] sunglasses off![otherwise][variable custom style]Why?! How?![end if][roman type][line break][stopping]";
-	otherwise:
+	otherwise if enema fetish is 1:
 		let N be belly limit - the total squirtable fill of belly;
 		AssFill N water;
-		say "[bold type][one of]Your belly gurgles, and you realise that your belly is huge and round, inflated to the brim with an enema![line break][variable custom style]What in the world?![or]It's with mild horror that you notice that your belly has once again been inflated to maximum size by a giant enema. [roman type][if agent is agent-identified][BigNameDesc of agent] must have mind controlled you, assfucked you, and wiped your memory again!!![line break][variable custom style]I've got to find that bitch, and slap [his of agent] sunglasses off![otherwise][variable custom style]Why?! How?![end if][stopping][roman type][line break]";
+		say "[bold type][one of]Your belly gurgles, and you realise that your belly is huge and round, inflated to the brim with an enema![line break][variable custom style]What in the world?![or]It's with mild horror that you notice that your belly has once again been inflated to maximum size by a giant enema. [roman type][if agent is agent-identified][BigNameDesc of agent] must have mind controlled you, pumped you full of an enema, and wiped your memory again!!![line break][variable custom style]I've got to find that bitch, and slap [his of agent] sunglasses off![otherwise][variable custom style]Why?! How?![end if][stopping][roman type][line break]";
+	otherwise:
+		StomachUp 10;
+		say "[bold type][one of]Your stomach gurgles, and you realise that your belly is extremely bloated - you feel like you've been drinking water until you are literally about to burst![line break][variable custom style]What in the world?![or]It's with mild horror that you notice that your stomach has once again suddenly been filled to maximum capacity with water. [roman type][if agent is agent-identified][BigNameDesc of agent] must have mind controlled you, made you drink as much water as humanly possible, and wiped your memory again!!![line break][variable custom style]I've got to find that bitch, and slap [his of agent] sunglasses off![otherwise][variable custom style]Why?! How?![end if][stopping][roman type][line break]";
 	compute refractoryReset of agent.
 
 To compute agent threesome:

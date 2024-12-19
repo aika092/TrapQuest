@@ -498,7 +498,7 @@ To say FirstResponse of (M - bowsette):
 To say RepeatResponse of (M - bowsette):
 	say FirstResponse of M.
 
-To compute teaching of (M - bowsette):
+To compute teaching offer of (M - bowsette):
 	say "[speech style of M]'I [if the bowsette-origin of M is bowsette]know you're frightened, but if you knew just why you're here, your fear would just be heightened. So let's just say... Ignorance Is Bliss[otherwise]can't remember much of what I knew before I was turned into a Turtle Princess[end if].'[roman type][line break]".
 
 To say WhereAnswer of (M - bowsette):

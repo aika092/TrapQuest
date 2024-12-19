@@ -51,6 +51,7 @@ Definition: yourself is trap stuck: [A player who is trap stuck will not be fuck
 	repeat with T running through traps grabbing the player:
 		unless T is vine, decide yes;
 	if chess table is grabbing the player, decide yes;
+	if there is a stash grabbing the player, decide yes;
 	if gloryhole is penetrating a body part or gloryhole is grabbing the player, decide yes;
 	if robo vacuum cleaner is penetrating a fuckhole, decide yes;
 	decide no.
@@ -75,7 +76,7 @@ Definition: a thing is drill stuck:
 	decide no.
 
 Definition: yourself is dildo stuck:
-	if there is a dildo trap penetrating a fuckhole, decide yes;
+	if there is a dildo trap penetrating a fuckhole or there is a dildo trap grabbing the player, decide yes;
 	decide no.
 
 [doll-stuck is meant to be used in remarks that refer to you being stuck on a dildo trap that's trying to

@@ -8,6 +8,7 @@ To decide which number is the aggro limit of (M - a student): [The number at whi
 
 A student has a number called lessonInt1. [Can be used to track various things in a lesson]
 A student has a number called lessonInt2. [Can be used to track various things in a lesson]
+A student has a number called condom-count. [How many used condoms are pinned to her outfit?]
 A student can be kissPunished. [Used in kissing lesson to track punishments]
 A student can be clitLeaded. [Do they have a clit lead permanently attached to their clit piercing?]
 A student can be cumCovered. [Are they covered in cum from the swimming lesson?]
@@ -27,6 +28,9 @@ To LessonReset (M - a student):
 Definition: a student is messy-seeker: decide no. [Doesn't stalk the player when messy]
 Definition: a student is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 Definition: a student is controlling: decide no. [Will they grab onto subduing clothing e.g. a clitoris lead?]
+Definition: a student (called M) is willing to potion forcefeed:
+	if M is amicable student, decide no;
+	decide yes.
 
 To say ShortDesc of (M - a student):
 	say student-name of M.
@@ -41,7 +45,8 @@ Definition: a student is blocker: decide no.
 To say FullMonsterDesc of (M - a student):
 	say ImageDesc of M;
 	say MonsterDesc of M;
-	say StudentDesc of M.
+	say StudentDesc of M;
+	say CondomDesc of M.
 
 To say MonsterDesc of (M - a student):
 	say "This student seems to be missing [his of M] description!".
@@ -61,6 +66,32 @@ To say ClitLeadDesc of (M - a student):
 
 To say CumCoveredDesc of (M - a student):
 	say "[big he of M] is covered in [semen] from head to toe. ".
+
+To say CondomDesc of (M - a student):
+	if the condom-count of M > 0, say "[big he of M] has [if the condom-count of M is 1]one [semen]-filled condom[otherwise][condom-count of M] [semen]-filled condoms[end if] dangling from [his of M] outfit.".
+
+To construct unique icons for (M - a student):
+	if the condom-count of M >= 10:
+		now condomIconCount is the condom-count of M;
+		add figure of Condom10Icon to the list of icons;
+	otherwise if the condom-count of M is 9:
+		add figure of Condom9Icon to the list of icons;
+	otherwise if the condom-count of M is 8:
+		add figure of Condom8Icon to the list of icons;
+	otherwise if the condom-count of M is 7:
+		add figure of Condom7Icon to the list of icons;
+	otherwise if the condom-count of M is 6:
+		add figure of Condom6Icon to the list of icons;
+	otherwise if the condom-count of M is 5:
+		add figure of Condom5Icon to the list of icons;
+	otherwise if the condom-count of M is 4:
+		add figure of Condom4Icon to the list of icons;
+	otherwise if the condom-count of M is 3:
+		add figure of Condom3Icon to the list of icons;
+	otherwise if the condom-count of M is 2:
+		add figure of Condom2Icon to the list of icons;
+	otherwise if the condom-count of M is 1:
+		add figure of Condom1Icon to the list of icons.
 
 To set up (M - a student):
 	reset M;
@@ -386,7 +417,9 @@ To compute perception of (M - a student):
 		compute detention chair tease of M;
 	otherwise if armband is worn:
 		unless there is an active assembly:
-			if M is friendly:
+			if the bladder of M >= 1000 and M is able to use a free use urinal:
+				compute free use urinal perception of M;
+			otherwise if M is friendly:
 				compute student perception of M;
 			otherwise:
 				let SM be a random undefeated staff member in the location of the player;
@@ -639,6 +672,7 @@ Part - Protection
 
 To compute (M - a student) protecting against (X - a monster):
 	unless X is nurse:
+		say "[BigNameDesc of M] sees that you and [NameDesc of X] [if the health of X < the maxhealth of X]are in combat[otherwise]have adopted fighting stances[end if].";
 		say "[speech style of M]'[if X is staff member]Eek! [NameBimbo] is fighting the teachers!'[otherwise][one of]Eek! I'm telling a teacher[or]Stay there, I'm getting a teacher[at random]!'[end if][roman type][line break][BigNameDesc of M] turns to run away.";
 		now the scared of M is 100;
 		anger M.
@@ -685,6 +719,24 @@ To say AllyDamageFlav of (X - a student) on (M - a monster):
 	say "[BigNameDesc of X] slaps [NameDesc of M] as hard as [he of X] can!".
 
 Part - Bullying
+
+Report going when the player is in School10:
+	if watersports mechanics is 1:
+		let M be a random student in School10;
+		if M is student and the total puddle of School10 is 0 and the number of monsters in the location of the player is 1 and M is not normally buddy and M is not amicable student and M is not combative and black maid headdress is off-stage and pink-spraybottle is actually summonable and black maid headdress is actually summonable:
+			now pink-spraybottle is in School10;
+			now pink-spraybottle is spray;
+			if M is not interested, say "[BigNameDesc of M] notices you!";
+			say "You watch with [horror the urine taste addiction of the player] as [NameDesc of M] pisses on the floor in front of you. And then... Flashing you a cruel expression, [he of M] runs out into the hallway.";
+			now the bladder of M is 0;
+			UrinePuddleUp 10 in School10;
+			try M going north;
+			now M is moved;
+			bore M;
+			deinterest headmistress;
+			now headmistress is puddle-investigating;
+			say "[speech style of M]'Headmistress! Headmistress! [NameBimbo] is pissing on the floor in the toilets!'[line break][speech style of headmistress]'WHAT?! Let me see!'[roman type][line break]Oh SHIT - it sounds like you're being framed for floor pissing! But... There is a spray bottle and cloth on the floor next to you... Perhaps you can wipe it up in time?";
+
 
 [This is where we input flavour for all the other bullying students in the crowd.]
 To compute crowd jeering of (M - a student):
@@ -1365,26 +1417,27 @@ To resolve (SI - a student-interaction):
 	do nothing.
 
 To compute unique interaction of (M - a student):
-	let prank-happened be false;
-	if student-interaction-time > 0:
-		if a random number between 1 and student-interaction-time is 1:
-			let SI be a random selectable student-interaction;
-			if SI is student-interaction:
-				add SI to recent-student-interactions, if absent;
-				while the number of entries in recent-student-interactions > 2:
-					let C be entry 1 in recent-student-interactions;
-					remove C from recent-student-interactions;
-				resolve SI;
-				now student-interaction-time is a random number between 30 and 60;
-				now prank-happened is true;
-	if prank-happened is false:
-		if student-interaction-time > 1, decrease student-interaction-time by 1;
-		if M is a ditzy student:
-			let F be the aggro limit of M - the favour of M; [gets larger the more she is angry with the player]
-			let R be a random number between 1 and 20;
-			if debuginfo > 0, say "[input-style][MediumDesc of M] prank check: [student-name of M] anger ([F]) | ([R].5) d20[roman type][line break]";
-			if F > R:
-				compute default prank of M.
+	unless the player is in a predicament room:
+		let prank-happened be false;
+		if student-interaction-time > 0:
+			if a random number between 1 and student-interaction-time is 1:
+				let SI be a random selectable student-interaction;
+				if SI is student-interaction:
+					add SI to recent-student-interactions, if absent;
+					while the number of entries in recent-student-interactions > 2:
+						let C be entry 1 in recent-student-interactions;
+						remove C from recent-student-interactions;
+					resolve SI;
+					now student-interaction-time is a random number between 30 and 60;
+					now prank-happened is true;
+		if prank-happened is false:
+			if student-interaction-time > 1, decrease student-interaction-time by 1;
+			if M is a ditzy student:
+				let F be the aggro limit of M - the favour of M; [gets larger the more she is angry with the player]
+				let R be a random number between 1 and 20;
+				if debuginfo > 0, say "[input-style][MediumDesc of M] prank check: [student-name of M] anger ([F]) | ([R].5) d20[roman type][line break]";
+				if F > R:
+					compute default prank of M.
 
 
 student-interaction-genitals-inspection is a student-interaction. student-interaction-genitals-inspection is repeatable.
@@ -1643,6 +1696,31 @@ To resolve (SI - student-interaction-kraken-bell):
 		HappinessDown M by 1.
 
 
+student-interaction-belinda-scrunchie is a student-interaction. student-interaction-belinda-scrunchie is repeatable. student-interaction-belinda-scrunchie has a number called scrunchies-donated.
+
+Definition: student-interaction-belinda-scrunchie is student-eligible:
+	if current-monster is scrunchie-giving student and the scrunchies-donated of student-interaction-belinda-scrunchie < 2:
+		let C be a random off-stage pink scrunchie;
+		if C is a thing:
+			if the number of worn pink scrunchies is 1, decide yes;
+			if C is actually summonable, decide yes;
+	decide no.
+
+To resolve (SI - student-interaction-belinda-scrunchie):
+	let M be current-monster;
+	say "[BigNameDesc of M] takes a pink scrunchie off of [his of M] wrist.[line break][speech style of M]'You look so cringe! Here, please wear this. It'll make you so much less of a dork!'[roman type][line break]Do you wear the scrunchie?";
+	if the player is bimbo consenting:
+		say "You let [NameDesc of M] style your hair with the scrunchie.";
+		let C be a random off-stage pink scrunchie;
+		summon C cursed;
+		say "[speech style of M]'Hahaha! Yes! That is MUCH better! You're still a fucking weirdo on the inside, but at least you can look stylish and cool on the outside.'[roman type][line break]";
+		increase the scrunchies-donated of SI by 1;
+		satisfy M;
+	otherwise:
+		say "You shake your head and pull away. That is not your idea of an appealing addition to your outfit. [BigNameDesc of M] frowns.[line break][speech style of M]'Goddamn, and there I was trying to be nice for once. You really are a stone cold bitch.'[roman type][line break][BigNameDesc of M] sticks [his of M] middle finger up towards you, and stalks away.";
+		HappinessDown M by 1;
+		say BecomesBoredFlav of M;
+		bore M.
 
 [student-interaction-dominate-me is a student-interaction.
 

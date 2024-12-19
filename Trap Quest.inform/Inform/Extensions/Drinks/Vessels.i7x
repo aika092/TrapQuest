@@ -104,6 +104,8 @@ Definition: squirt dildo is oral sex themed: decide yes.
 Definition: squirt dildo is penis themed: decide yes.
 To decide which number is the initial outrage of (V - squirt dildo):
 	decide on 14.
+Carry out plugging something with squirt dildo:
+	focus-consider squirt dildo.
 
 baby's bottle is a vessel. baby's bottle is lid topped. The max-doses of baby's bottle is 3. The printed name of baby's bottle is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]baby's bottle[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of baby's bottle is "bab". Figure of baby's bottle is the file "Items/Accessories/Vessels/babybottle1.png".
 To decide which figure-name is the examine-image of (V - baby's bottle):
@@ -184,7 +186,7 @@ To increase alcohol level:
 		increase A by 1;
 	dignify 500;
 	if A > 3:
-		compute drunken adventure;
+		if the player is not in a predicament room, compute drunken adventure;
 	otherwise:
 		now alcohol is alcohol-level-tier (A + 1);
 		if A is 3, trigger drunk-wisp-trigger;
@@ -325,6 +327,7 @@ A time based rule:
 		otherwise now the fill-colour of gold chalice is golden;
 		DoseFill gold chalice;
 		say "[bold type]Suddenly, your [ShortVesselDesc of gold chalice] glows brightly and fills itself with a small mouthful of [if diaper quest is 1][milk][otherwise][urine][end if]![roman type][line break]";
+		focus-consider gold chalice;
 		repeat with W running through nonstalking wisps:
 			silently set up W;
 			if diaper quest is 1, now the wisp-quest of W is drink-milk-wisp-quest;

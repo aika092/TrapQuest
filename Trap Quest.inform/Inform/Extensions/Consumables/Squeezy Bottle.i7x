@@ -34,7 +34,7 @@ Check drinking squeezy-bottle:
 		do nothing instead;
 	if the latex-transformation of the player > 4, say "You can no longer drink, you're too far through your transformation into a doll and your body doesn't need hydration any more." instead;
 	if the noun is not held and the player is flying, say "You can't reach!" instead;
-	if the player is overly full, say "Your stomach feels too full to drink any more right now, you should wait a while." instead;
+	if the player is overly full and the player is not thirsty, say "Your stomach feels too full to drink any more right now, you should wait a while." instead;
 	if face is actually occupied:
 		let T be a random thing penetrating face;
 		if T is cock pacifier:

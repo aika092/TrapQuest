@@ -139,11 +139,10 @@ To compute (Y - a needle trap) injecting into (X - belly):
 
 To compute (Y - a needle trap) injecting into (X - hips):
 	let needle-blocker be nothing;
-	if the player is upright:
-		let R be a random number between 1 and 3;
-		repeat with C running through worn skirted clothing:
-			if R is 3, now needle-blocker is C;
-			if C is knee-length or longer and C is crotch-in-place, now needle-blocker is C;
+	let R be a random number between 1 and 20;
+	if the player is prone, increase R by 3;
+	repeat with C running through worn clothing:
+		if R <= the skirt-length of C, now needle-blocker is C;
 	if needle-blocker is nothing:
 		repeat with C running through worn crotch-in-place crotch covering clothing:
 			if a random number between 0 and the armour of C > 5, now needle-blocker is C;
@@ -185,21 +184,6 @@ To cutscene needle hips:
 	otherwise:
 		cutshow figure of needle cutscene 6 for hips.
 
-Definition: a clothing (called C) is short or longer:
-	if C is skirted and C is not super-short, decide yes;
-	decide no.
-
-Definition: a clothing (called C) is knee-length or longer:
-	if C is knee-length or C is hobble-skirted, decide yes;
-	decide no.
-
-Definition: a clothing (called C) is knee-length or shorter:
-	if C is skirted and C is not hobble-skirted, decide yes;
-	decide no.
-
-Definition: a clothing (called C) is short or shorter:
-	if C is knee-length or longer, decide no;
-	decide yes.
 
 To compute (Y - a needle trap) injecting into (X - face): [Lips, actually.]
 	if diaper quest is 1:
@@ -219,11 +203,10 @@ To compute (Y - a needle trap) injecting into (X - face): [Lips, actually.]
 [#LXorDD. Intended just for injecting into the groin: penis or labia]
 To compute (Y - a needle trap) injecting into (X - body part):
 	let needle-blocker be nothing;
-	if the player is upright:
-		let R be a random number between 1 and 3;
-		repeat with C running through worn skirted clothing:
-			if R is 3, now needle-blocker is C;
-			if C is knee-length or longer and C is crotch-in-place, now needle-blocker is C;
+	let R be a random number between 1 and 20;
+	if the player is prone, increase R by 3;
+	repeat with C running through worn clothing:
+		if R <= the skirt-length of C, now needle-blocker is C;
 	if needle-blocker is nothing:
 		repeat with C running through worn crotch-in-place crotch covering clothing:
 			if a random number between 0 and the armour of C > 5, now needle-blocker is C;

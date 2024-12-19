@@ -221,7 +221,7 @@ To say AdviceAnswer of (M - herald):
 	say "[speech style of M]'[one of]Giving useful advice sounds kinda like effort.'[or]I think this game is a lot easier if you just accept emptiness into your heart.'[or]You might want to try succumbing to the joys of this world, thinking is kinda overrated.'[in random order][roman type][line break]";
 	compute herald's gift.
 
-To compute teaching of (M - herald):
+To compute teaching offer of (M - herald):
 	say "[speech style of M]'Teach you something? What a strange request... Like, fine. Gaze into me, if you dare...'[roman type][line break]For a terrible moment [his of M] skin shifts into an infinite field of swirling patterns that assaults your mind and self! You feel [smarter], but also like your sanity has slipped away!";
 	IntUp 1;
 	obsceneHumiliate;

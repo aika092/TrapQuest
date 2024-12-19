@@ -87,7 +87,7 @@ An all later time based rule (this is the fullness causes intelligence loss rule
 			otherwise say "[bold type][if F is 0]The pressure on your bowels is [one of][or]once again [stopping]making it difficult to concentrate. [roman type]Your intelligence is slightly lowered until you go number two.[otherwise]The pressure on your bowels has grown even larger, further reducing your intelligence until you relieve yourself.[roman type][line break][end if]";
 	otherwise:
 		now fullness-time is 0;
-		if F > 0, say "Now that your bowels are empty, your ability to concentrate improves and your intelligence returns.".
+		if F > 0 and the player is diaper aware, say "Now that your bowels are empty, your ability to concentrate improves and your intelligence returns.".
 
 To decide which number is messyDiaperSmellGrossnessLevel: decide on 7. [The level of grossness addiction where messy diaper stuff becomes less bad. Can be tweaked]
 To decide which number is messyDiaperSmellEnjoymentLevel: decide on messyDiaperSmellGrossnessLevel + 7. [The level of grossness addiction where messy diaper stuff has no effect. Can be tweaked]
@@ -267,10 +267,13 @@ To SilentlyRectumIncontinenceDown (N - number):
 temporary-rectum-incontinence is a number that varies.
 
 To decide which number is the rectum-incontinence-influence of (C - a wearthing):
-	if C is diaper or C is rectum-incontinence-influencing clothing:
-		let N be -1 * the magic-modifier of C;
-		decide on N;
 	decide on 0.
+To decide which number is the rectum-incontinence-influence of (C - a clothing):
+	let N be 0;
+	if C is maturity, decrease N by 1;
+	if C is diaper or C is rectum-incontinence-influencing:
+		decrease N by the magic-modifier of C;
+	decide on N.
 
 To decide which number is the rectum-incontinence of the player:
 	if diaper messing < 3, decide on 0;
@@ -294,6 +297,7 @@ Definition: yourself is at least somewhat rectum continent: [we use this to chec
 	decide no.
 
 Definition: yourself is rectum diaper aware: [Do they always know the state of their diaper after messing?]
+	if chess table is grabbing the player, decide yes;
 	if the player is not potentially diaper aware or the rectum-incontinence of the player >= 10, decide no;
 	decide yes.
 
@@ -374,7 +378,7 @@ To check real messing with reason (T - a text):
 							compute partial messing;
 					otherwise if T is "":
 						say "You manage to hold it in for now.";
-						if the implant of pledge-lesson-mess is 1 and the player is not in a predicament room:
+						if pledge-lesson-mess is implanted and the player is not in a predicament room:
 							say "Magic ripples through your belly as the magic pledge you've just broken activates. Your belly bulges as the bulk inside grows to massive proportions!";
 							increase rectum by 20;
 							let K be a random worn uncursed knickers;
@@ -585,8 +589,8 @@ To compute partial messing of (D - a knickers):
 			if the player is not rectum incontinent:
 				say "You feel more poop descending towards the exit!";
 				reset multiple choice questions;
-				set numerical response 1 to "Don't hold back";
-				set numerical response 2 to "Try to stop messing";
+				set numerical response 1 to "Don't hold back (time will move forward)";
+				set numerical response 2 to "Try to stop messing (time won't move forward if you succeed)";
 				set numerical response 3 to "URGENTLY clench it all inside (this almost always succeeds, but your bowels permanently become a bit more irritable)";
 				compute multiple choice question;
 				if player-numerical-response > 1:

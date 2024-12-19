@@ -442,6 +442,25 @@ This is the swordskill learn rule:
 	now the swordskill of the player is 1.
 The swordskill learn rule is listed in the skill cheating rules.
 
+Part 22 - Stashfinding
+
+To teach stashfinding:
+	if there is an off-stage stash:
+		say "[bold type]**You have learned how to spot hidden buttons!**[roman type][line break]In each region, there is one boring hallway with a secret button that you can now spot. Press the button for a cool surprise!";
+		deploy stashes;
+		reset skill cooldown;
+	otherwise:
+		say "[bold type]You already know how to spot hidden buttons![roman type][line break]".
+
+This is the stashfinding list rule:
+	if there is an on-stage stash, say "You know how to spot hidden buttons.".
+The stashfinding list rule is listed in the skill listing rules.
+
+This is the stashfinding learn rule:
+	if there is an off-stage stash, say "You now know how to spot hidden buttons.";
+	deploy stashes.
+The stashfinding learn rule is listed in the skill cheating rules.
+
 Memorising is an action applying to one thing.
 Check memorising:
 	if the noun is furniture, try entering the noun instead; [For when people type "re stool"]

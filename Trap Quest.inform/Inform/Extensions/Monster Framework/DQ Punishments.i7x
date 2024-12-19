@@ -1,18 +1,23 @@
 DQ Punishments by Monster Framework begins here.
 
 This is the choosing a diaper punishment rule:
-	choose a diaper punishment;
-	if chosen diaper punishment is punishment-not-found:
-		if debugmode > 0, say "No acceptable diaper punishment found.";
-	otherwise:
-		if debugmode > 0, say "Selected [chosen diaper punishment].";
-		compute punishment of chosen diaper punishment;
+	if the chosen-diaper-punishment of current-monster is punishment-not-found or the chosen-diaper-punishment of current-monster is not appropriate:
+		choose a diaper punishment;
+		if the chosen-diaper-punishment of current-monster is punishment-not-found:
+			if debugmode > 0, say "No acceptable diaper punishment found.";
+	if the chosen-diaper-punishment of current-monster is not punishment-not-found:
+		let CDP be the chosen-diaper-punishment of current-monster;
+		now the chosen-diaper-punishment of current-monster is punishment-not-found; [we want to reset this before the punishment starts]
+		if debugmode > 0, say "Selected [CDP].";
+		compute punishment of CDP;
 		rule succeeds.
 The choosing a diaper punishment rule is listed first in the default diaper quest rules.
 
 A diaper punishment is a kind of object. A diaper punishment has a number called priority.
 
-chosen diaper punishment is a diaper punishment that varies. punishment-not-found is a diaper punishment.
+A monster has a diaper punishment called the chosen-diaper-punishment.
+
+punishment-not-found is a diaper punishment.
 
 To compute punishment of (P - a diaper punishment):
 	say "BUG - the diaper punishment '[P]' has no execution function!".
@@ -24,11 +29,11 @@ Definition: a diaper punishment is prioritised:
 	decide no.
 
 To choose a diaper punishment:
-	now chosen diaper punishment is punishment-not-found;
+	now the chosen-diaper-punishment of current-monster is punishment-not-found;
 	now current-priority is 6;
-	while chosen diaper punishment is punishment-not-found and current-priority >= 0:
-		now chosen diaper punishment is a random prioritised appropriate diaper punishment;
-		unless chosen diaper punishment is a diaper punishment, now chosen diaper punishment is punishment-not-found;
+	while the chosen-diaper-punishment of current-monster is punishment-not-found and current-priority >= 0:
+		now the chosen-diaper-punishment of current-monster is a random prioritised appropriate diaper punishment;
+		unless the chosen-diaper-punishment of current-monster is a diaper punishment, now the chosen-diaper-punishment of current-monster is punishment-not-found;
 		decrease current-priority by 1.
 
 To say EnticeFlav of (M - a monster) for (P - a diaper punishment):
@@ -55,6 +60,7 @@ To decide which number is the relevant addiction of (P - diaper-change):
 
 Definition: a monster (called M) is eager to change diapers:
 	if M is changing the player, decide yes;
+	if M is staff member and M is not nurse, decide no;
 	if there is a soiled-diaper carried by M or the health of M < the maxhealth of M, decide no;
 	if the class of the player is priestess, decide no;
 	if there is worn unmessed unremovable knickers, decide no;
@@ -247,11 +253,14 @@ Definition: a monster (called M) is eager to deliver enemas:
 	decide no.
 
 Definition: a monster (called M) is able to deliver enemas:
+	if enema fetish is 0, decide no;
 	repeat with N running through monsters grabbing the player:
 		if N is not M, decide no;
 	if there is a worn cursed clothing penetrating asshole and M is not able to remove cursed plugs, decide no;
-	if there is a worn messed knickers, decide no;
 	if the water volume of belly > 0, decide no;
+	let D be a random worn knickers;
+	if D is knickers:
+		if D is messed or D is not easy to remove, decide no;
 	decide yes.
 
 Definition: a monster is willing to deliver enemas: decide no.
@@ -266,18 +275,55 @@ To compute punishment of (P - deliver-enema):
 Section 5 Forcefeeding
 
 forcefeed is a diaper punishment. The priority of forcefeed is 2.
+pet-forcefeed is a diaper punishment. The priority of pet-forcefeed is 4.
+potion-forcefeed is a diaper punishment. The priority of potion-forcefeed is 2.
 
 To say EnticeFlav of (M - a monster) for (P - forcefeed):
 	if M is intelligent, say "[line break][speech style of M]'[one of]I just want to sate that rumbling in your tummy, little one! Come on, come sit on [daddytitle of M][']s lap.'[or]If you get on your knees RIGHT NOW, I'll just feed you your din-dins, and not punish you any more, okay?'[in random order][roman type][line break]";
 	otherwise say "[big he of M] gestures that [he of M] wants to feed you some food.".
 
+To say EnticeFlav of (M - a monster) for (P - pet-forcefeed):
+	if M is intelligent, say "[line break][speech style of M]'It's time for your din-dins, you silly pet!'[roman type][line break]";
+	otherwise say "[big he of M] gestures that [he of M] wants to feed you some food.".
+
+To say EnticeFlav of (M - a monster) for (P - potion-forcefeed):
+	if M is intelligent, say "[line break][speech style of M]'You've got a funny looking drink there. I wonder what will happen if you drink it...'[roman type][line break]";
+	otherwise say "[big he of M] gestures that [he of M] wants to make you drink something.".
+
 To decide which number is the relevant addiction of (P - forcefeed):
+	decide on the diaper addiction of the player.
+To decide which number is the relevant addiction of (P - pet-forcefeed):
+	decide on the diaper addiction of the player.
+To decide which number is the relevant addiction of (P - potion-forcefeed):
 	decide on the diaper addiction of the player.
 
 Definition: a monster (called M) is eager to forcefeed:
 	if M is feeding the player, decide yes;
 	if M is able to forcefeed, decide yes;
 	decide no.
+Definition: a monster (called M) is eager to pet-forcefeed:
+	if M is unintelligent, decide no;
+	if diaper messing < 3 and the player is not thirsty, decide no;
+	if the player is thirsty or the stomach-food of the player <= 1:
+		if there is a worn locked gag and M is able to pet-forcefeed, decide yes;
+	decide no.
+Definition: a monster (called M) is eager to potion-forcefeed:
+	if M is unintelligent, decide no;
+	if debugmode > 0 and M is willing to potion forcefeed, say "[input-style]Items held by the player that can be forcefed are: [list of carried forcefeedable things][roman type][line break]";
+	if there is a carried forcefeedable thing, decide yes;
+	decide no.
+Definition: a thing (called T) is forcefeedable:
+	if T is a cursed sure alchemy product:
+		if T is potion or T is elixir or T is tincture, decide yes;
+	decide no.
+Definition: a bottle (called T) is forcefeedable:
+	if T is cursed sure non-empty bottle or the fill-colour of T is creamy or the fill-colour of T is golden or the fill-colour of T is white or the fill-colour of T is murky, decide yes;
+	decide no.
+Definition: a bag lunch is forcefeedable: decide yes.
+Definition: a clothing (called T) is forcefeedable:
+	if the used condoms of T > 0, decide yes;
+	decide no.
+
 
 Definition: a monster (called M) is able to forcefeed:
 	repeat with N running through monsters grabbing the player:
@@ -293,24 +339,47 @@ Definition: a monster (called M) is able to forcefeed:
 				if C is cursed and C is not pacifier and M is not able to remove cursed plugs, decide no;
 	decide yes.
 
+Definition: a monster (called M) is able to pet-forcefeed:
+	repeat with N running through monsters grabbing the player:
+		if N is not M, decide no;
+	if the player is mouthblocked:
+		repeat with C running through things penetrating face:
+			if C is not clothing, decide no;
+			if C is not tearable, decide no;
+	decide yes.
+
+
 Definition: a monster (called M) is willing to forcefeed:
 	if M is male and M is prepared to DQ urinate, decide yes;
 	decide no.
+Definition: a monster is willing to potion forcefeed: decide no.
 
 Definition: a monster is willing to forcefeed pills: decide no.
 
 Definition: forcefeed (called P) is appropriate:
 	if current-monster is willing to forcefeed and current-monster is eager to forcefeed, decide yes;
 	decide no.
+Definition: pet-forcefeed (called P) is appropriate:
+	if current-monster is willing to forcefeed and current-monster is eager to pet-forcefeed, decide yes;
+	decide no.
+potion-forcefeed-cooldown is a number that varies.
+Definition: potion-forcefeed (called P) is appropriate:
+	if potion-forcefeed-cooldown <= 0 and current-monster is willing to potion forcefeed and current-monster is eager to potion-forcefeed, decide yes;
+	decide no.
+An all time based rule (this is the potion forcefeed cooldown rule):
+	decrease potion-forcefeed-cooldown by time-seconds.
 
 Definition: a monster (called M) is prepared to DQ urinate:
 	if watersports fetish is 1 and M is willing to urinate and the bladder of M >= 600, decide yes;
 	decide no.
 
-
 To compute punishment of (P - forcefeed):
 	if current-monster is prepared to DQ urinate, compute current-monster urinating;
 	otherwise compute forcefeed of current-monster.
+To compute punishment of (P - pet-forcefeed):
+	compute forcefeed of current-monster.
+To compute punishment of (P - potion-forcefeed):
+	compute potion forcefeed of current-monster.
 
 Section 6 Confiscation
 
@@ -333,7 +402,7 @@ Definition: a monster is able to confiscate:
 	decide no.
 
 Definition: a clothing (called C) is confiscatable:
-	if C is not worn or C is cursed or C is locked or C is unremovable or C is not stealable or C is not currently visible or the unworn cringe of C > 0, decide no;
+	if C is not worn or C is cursed or C is locked or C is unremovable or C is not stealable or C is not currently visible or (C is not bra and the unworn cringe of C > 0), decide no;
 	decide yes.
 
 Definition: a monster is willing to confiscate: decide no.
@@ -393,7 +462,7 @@ To say EnticeFlav of (M - a monster) for (P - untidy-session):
 		otherwise say "[big he of M] gestures that [he of M] wants to smush your face into the soiled diaper [he of M] found.";
 	otherwise:
 		if M is intelligent, say "[line break][speech style of M]'[one of]There's no use, I'm going to make punish you for littering, whether you like it or not! Get on your knees, now!'[or]Surrender now, and submit to the punishment for carelessly discarding your dirty nappies!'[in random order][roman type][line break]";
-		otherwise say "[big he of M] gestures that [he of M] wants to hold you responsible for the soiled diaper [he of M] found.";
+		otherwise say "[big he of M] gestures that [he of M] wants to hold you responsible for the soiled diaper [he of M] found.".
 
 To decide which number is the relevant addiction of (P - untidy-session):
 	if diaper messing >= 7, decide on the grossness addiction of the player - 6; [you have to be really addicted to want this]

@@ -14,7 +14,7 @@ This is the remove inappropriate fishnets rule:
 		now B is in Holding Pen.
 The remove inappropriate fishnets rule is listed in the diaper quest fix rules.
 
-crotchless-fishnet-dress is a fishnet dress. Understand "crotchless" as crotchless-fishnet-dress. crotchless-fishnet-dress is knee-length.
+crotchless-fishnet-dress is a fishnet dress. Understand "crotchless" as crotchless-fishnet-dress. The skirt-length of crotchless-fishnet-dress is 6.
 
 The printed name of crotchless-fishnet-dress is "[clothing-title-before]crotchless fishnet dress[clothing-title-after]". The text-shortcut of crotchless-fishnet-dress is "cfnd".
 
@@ -39,7 +39,7 @@ To decide which number is the leniency-addition of (C - crotchless-fishnet-dress
 To decide which object is the unique-upgrade-target of (C - crotchless-fishnet-dress):
 	decide on a random off-stage fishnet top.
 
-stripper-fishnet-dress is a fishnet dress. stripper-fishnet-dress is unique. stripper-fishnet-dress is unskirted. Understand "stripper" as stripper-fishnet-dress.
+stripper-fishnet-dress is a fishnet dress. stripper-fishnet-dress is unique. The skirt-length of stripper-fishnet-dress is 0. Understand "stripper" as stripper-fishnet-dress.
 
 The printed name of stripper-fishnet-dress is "[clothing-title-before]stripper fishnet dress[clothing-title-after]". The text-shortcut of stripper-fishnet-dress is "sfnd".
 

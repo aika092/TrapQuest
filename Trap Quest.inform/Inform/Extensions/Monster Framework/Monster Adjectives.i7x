@@ -75,6 +75,8 @@ Definition: a monster is willing to have time out: [Will it sometimes go off-sta
 	if it is intelligent and it is summoningRelevant, decide yes;
 	decide no.
 
+A monster has a number called locked-timestamp. [When did the monster most recently lock items of clothing on the player?]
+
 [These adjectives describe what regions a monster is allowed to spawn in, via the spawning trap and summoning portals.]
 Definition: a monster is dungeon dwelling: decide no.
 Definition: a monster is woods dwelling: decide no.

@@ -217,7 +217,7 @@ To set up (Q - nice-quest):
 	now the nice-count of Q is 0.
 
 To say QuestFlav of (Q - nice-quest):
-	say "You sense that it wants you to prove you are nice by [bold type]not attacking[if diaper quest is 0] or resisting[end if][roman type] until you have sexually satisfied a few people (does not progress while you're in the academy region).".
+	say "You sense that it wants you to prove you are nice by [bold type]not attacking[if diaper quest is 0] or resisting[end if][roman type] until you have [if diaper quest is 0]sexually satisfied[otherwise]satisfied the whims of[end if] a few people, or at least let them follow you around for a while (does not progress while you're in the academy region).".
 
 To say QuestTitle of (Q - nice-quest):
 	say " (naughty or nice quest)".

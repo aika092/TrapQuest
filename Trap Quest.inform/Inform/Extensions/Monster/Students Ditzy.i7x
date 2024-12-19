@@ -29,13 +29,14 @@ student-holly is a ditzy student. Understand "holly", "honey" as student-holly.
 
 The text-shortcut of student-holly is "stho".
 
-Figure of holly is the file "NPCs/School/Student/student18.png".
+Figure of holly is the file "NPCs/School/Student/student18.jpg".
+Figure of holly catbell cutscene is the file "NPCs/School/Student/student18-cutscene1.jpg".
 
 To decide which figure-name is the monster-image of (M - student-holly):
 	decide on figure of holly.
 
 To say MonsterDesc of (M - student-holly):
-	say "This slim brunette's hair goes all the way down to [his of M] belly button. [big he of M][']s wearing a white kitty-cat crop top and holding a matching kitty-cat handbag. A neon pink lace miniskirt covers [big his of M] crotch and sheer white thigh-high stockings sit under [his of M] glittery red heels. There are bows everywhere - bows on the kitty cats, bows on [his of M] stockings, a bow on [his of M] skirt, and a big pink bow in [his of M] hair. [big his of M] belly is pierced and [he of M] has the widest, happiest grin you've ever seen on a face.".
+	say "This slim brunette's hair goes all the way down to the bottom of [his of M] white kitty-cat crop top. [big he of M][']s holding a matching kitty-cat handbag and neon pink lace miniskirt. Sheer white thigh-high stockings sit under [his of M] glittery red heels. There are bows everywhere - bows on the kitty cats, bows on [his of M] stockings, a bow on [his of M] skirt, and a big pink bow in [his of M] hair. [big his of M] neck has a cat collar with a bell on it, [his of M] belly is pierced and [he of M] has the widest, happiest grin you've ever seen on a face.".
 
 The max-rank of student-holly is 2.
 
@@ -53,13 +54,35 @@ To say WhoAnswer of (M - student-holly):
 To say StoryAnswer of (M - student-holly):
 	say "[speech style of M]'OHMYGOD so like this guy I know well I don't KNOW know him but you know, I know him, told me this girl called Sarah, you know Sarah? You don't know Sarah. Sarah's like this girl I know. Sarah knows this place right, where I would totally fit in! That's what Dave told me. Dave is the guy who knows Sarah, you know. You know Dave? You don't know Dave. Dave is this guy I know. But not like KNOW know. So Dave says Sarah says that Linda once went to this place that I'd really fit in. You know Linda? Come on, you must know Linda. Anyway, Linda knows Sarah, you know? So, like I said, Sarah knew about this place. Well I guess she still knows. I doubt she's forgotten she knows. Ha ha! And now I know. So once I knew about it, I knew it was like, the place for me. And now I'm here I KNOW know it's the place for me. I just know I know, you know?'[roman type][line break]".
 
-To compute teaching of (M - student-holly):
+To compute teaching offer of (M - student-holly):
 	say "[speech style of M]'OHMYGOD that is SO. WEIRD. Just yesterday I was totally thinking to myself, like, why am I not a teacher? You know? Because I'm always talking about stuff and that's what teachers do, right? They talk and stuff, and people listen, you know. Of course you know. You're listening to me right now. So I thought maybe why not, like, do what I do anyway, but like, get paid for it, right? So anyway the reason I was thinking about this is because I'd just arrived at this school place, right. You know the school? Oh right, where we are right now, yeah! So you know the school. So I was thinking, I've got to become a teacher, right? So I start talking about stuff and things and whatever and this guy who was like TOTALLY rude just shoved [if diaper quest is 1]a pacifier[otherwise]his [manly-penis][end if] into my mouth and was all like [']That should shut you up['] and I was all like [']Oh hell no['] and so I like sucked on it but also like kept on talking, right? Because I can do both at the same time. I know, it sounds a bit weird but I can, trust me. So I'm like sucking on this stupid thing and trying to be a teacher at the same time and whatever and then I get told no I'm not a teacher I'm a student, right? Like, who does that, you know what I mean? But then they point to my armband, and roll their eyes. So rude, right? But anyway, I look at my armband and they're totally right; like, totally! So anyway yeah that's why I can't like [']teach['] you anything. Or whatever.'[roman type][line break]".
 
 To say EscapeAnswer of (M - student-holly):
 	say "[speech style of M]'OHMYGOD, so I was talking to a teacher yesterday and I asked that EXACT. SAME. QUESTION, and [he of a random teacher] was like [']No talking,['] but I really wanted to know, so I asked again and [he of a random teacher] was like [']This is the fourth time today, [student-name of M]. Next time it's detention,['] and I was like, [']Um, no. It's the third time,['] but actually I lost track, so [he of a random teacher] took me to detention and [he of a random teacher] made me wear this [if diaper quest is 1]pacifier[otherwise]huge gag[end if] and told me I couldn't take it out for the rest of the day, and then I didn't say anything, because I was kind of, like, stunned. I mean, I can't believe I lost track like that, I felt SO dumb. Anyway, I don't really know. '[roman type][line break]".
 
 [TODO: more verbal diarrhoea for Holly's other answers]
+
+student-interaction-catbell is a student-interaction.
+
+Definition: student-interaction-catbell is student-eligible:
+	if current-monster is student-holly, decide yes;
+	decide no.
+Definition: student-interaction-catbell is eligible:
+	if bondage protection < 2 and catbell is off-stage and catbell is actually summonable, decide yes;
+	decide no.
+
+To resolve (SI - student-interaction-catbell):
+	let M be current-monster;
+	say "[BigNameDesc of M] creeps up behind you, and... Click! [big he of M] has snapped something shut around your neck!";
+	summon catbell locked;
+	say "[speech style of M]'Meow! You're, like, the cat now!'[roman type][line break][big he of M] giggles as [he of M] watches you inspect your new [catbell].";
+	mapcutshow figure of holly catbell cutscene for M;
+	if the player is able to speak, say "[variable custom style]Hey! Not funny! Where's the key?![roman type][line break]";
+	let K be a random off-stage specific-key;
+	if K is a thing:
+		now K is covering catbell;
+		now K is carried by M;
+		say "[BigNameDesc of M] dangles the key to the collar's lock in front of you.[line break][speech style of M]'Be a good kitty, and maybe I'll give this to you one day!'[roman type][line break]".
 
 Part - Jill
 
@@ -108,7 +131,7 @@ To say EscapeAnswer of (M - a ditzy student):
 To say AdviceAnswer of (M - a ditzy student):
 	say "[speech style of M]'Just [if diaper quest is 1]chill out[otherwise]stay loose[end if] and let it happen, that's always worked for me!'[roman type][line break]".
 
-To compute teaching of (M - a ditzy student):
+To compute teaching offer of (M - a ditzy student):
 	say "[speech style of M]'Um no, do I look smart to you?!'[roman type][line break]".
 
 

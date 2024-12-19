@@ -1,6 +1,6 @@
 T-Shirts by Dresses begins here.
 
-A T-shirt is a kind of overdress. A T-shirt is usually unskirted. A T-shirt is usually fully covering. A T-shirt is usually manly. A T-shirt is usually not-top-displacable. A T-shirt is usually sheer-when-wet. A T-shirt is usually erect-nipple-exposing.
+A T-shirt is a kind of overdress. The skirt-length of A T-shirt is 0. A T-shirt is usually fully covering. A T-shirt is usually manly. A T-shirt is usually not-top-displacable. A T-shirt is usually sheer-when-wet. A T-shirt is usually erect-nipple-exposing.
 
 Understand "shirt", "T" as T-shirt.
 
@@ -51,9 +51,22 @@ To say MediumDesc of (C - a Boobies T-shirt):
 To decide which number is the initial outrage of (C - a Boobies T-shirt):
 	decide on 1.
 
+To decide which number is the transformability of (C - a Boobies T-shirt):
+	decide on 20.
+To decide which object is the unique-upgrade-target of (C - a Boobies T-shirt):
+	if the player is not top heavy, decide on C;
+	decide on nothing.
+
+To transform (C - a Boobies T-shirt):
+	if the player is top heavy:
+		transform C into the upgrade-target of C;
+	otherwise:
+		say "Having been hit with a transformation effect, [NameDesc of C] makes your breasts expand!";
+		BustUp 2.
+
 Part 3 - Gender Bender T-shirt
 
-A Gender Bender T-shirt is a kind of T-shirt. The printed name of Gender Bender T-shirt is usually "[clothing-title-before]Gender Bender T-shirt[clothing-title-after]". The text-shortcut of Gender Bender T-shirt is "gbt".
+A Gender Bender T-shirt is a kind of T-shirt. The printed name of Gender Bender T-shirt is usually "[clothing-title-before]Gender Bender T-shirt[clothing-title-after]". The text-shortcut of Gender Bender T-shirt is "gbts".
 
 Figure of Gender Bender T-shirt is the file "Items/Clothes/Upper/Shirts/tshirt2.png".
 

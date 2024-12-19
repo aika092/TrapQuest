@@ -50,7 +50,7 @@ To trigger (Y - a summoning trap):
 		say "ERROR: Couldn't find an appropriate monster to summon.".
 
 To say SummoningFlav of (M - a monster):
-	say "A monster has spawned somewhere nearby!".
+	say "You hear the telltale sounds of a [ShortDesc of M] spawning somewhere nearby!".
 
 To summon (M - a monster):
 	if M is dungeon dwelling and playerRegion is Dungeon:

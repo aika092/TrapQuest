@@ -492,6 +492,10 @@ To say HoleDesc of (M - a monster):
 	if M is presenting as male, say "asshole";
 	otherwise say "pussy".
 
+To say HolesDesc of (M - a monster):
+	if M is presenting as male, say "asshole";
+	otherwise say "pussy and asshole".
+
 To say ChestDesc of (M - a monster):
 	if M is presenting as male, say "chest";
 	otherwise say "breasts".

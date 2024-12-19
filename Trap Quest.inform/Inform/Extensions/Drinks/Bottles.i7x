@@ -246,8 +246,8 @@ To Set Up Drinks:
 			now the fill-colour of C is violet;
 			now the text-shortcut of C is "vlt";
 		if N is 14:
-			now the fill-colour of C is glittery;
-			now the text-shortcut of C is "glt";
+			now the fill-colour of C is smoky;
+			now the text-shortcut of C is "smk";
 		if N is 15:
 			now the fill-colour of C is turquoise;
 			now the text-shortcut of C is "trq";

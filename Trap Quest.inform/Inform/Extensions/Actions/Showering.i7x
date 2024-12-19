@@ -214,8 +214,9 @@ Gets rid of all salves
 +!]
 To wash salves:
 	repeat with C running through worn true salves:
-		let B be a random body part covered by C;
-		if B is body part, say "The water washes the [ShortDesc of C] from your [variable B].";
+		repeat with B running through body parts covered by C:
+			say "The water washes the [ShortDesc of C] from your [variable B].";
+			now C is not covering B;
 		destroy C.
 
 [How hard is it for the player to swim. High = bad, low = good]

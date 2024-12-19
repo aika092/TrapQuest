@@ -19,7 +19,7 @@ Figure of sheer chest garb is the file "Items/Clothes/Upper/Special/FertGod/fert
 
 Part 1 - Goddess Tunic
 
-goddess tunic is a fertility outfit. goddess tunic is silk. goddess tunic is short. goddess tunic is confidence. goddess tunic is high cut. goddess tunic is sheer-when-wet.
+goddess tunic is a fertility outfit. goddess tunic is silk. The skirt-length of goddess tunic is 4. goddess tunic is confidence. goddess tunic is high cut. goddess tunic is sheer-when-wet.
 
 The printed name of goddess tunic is "[clothing-title-before]goddess tunic[clothing-title-after]". The text-shortcut of goddess tunic is "gt".
 
@@ -53,7 +53,7 @@ To decide which object is the unique-upgrade-target of (C - goddess tunic):
 
 Part 2 - Ivy Leaves
 
-ivy leaves is a fertility outfit. ivy leaves is biological. ivy leaves is fully exposing. ivy leaves is belly exposing. ivy leaves is unskirted. ivy leaves is bottom-exclusive.
+ivy leaves is a fertility outfit. ivy leaves is biological. ivy leaves is fully exposing. ivy leaves is belly exposing. The skirt-length of ivy leaves is 0. ivy leaves is bottom-exclusive.
 
 The printed name of ivy leaves is "[clothing-title-before]ivy leaves[clothing-title-after]". The text-shortcut of ivy leaves is "il".
 
@@ -84,7 +84,7 @@ Definition: ivy leaves is green themed: decide yes.
 
 Part 3 - Living Tentacles
 
-living tentacles is a fertility outfit. living tentacles is biological. living tentacles is ridiculously low cut. living tentacles is not-top-displacable. living tentacles is unskirted. living tentacles is bottom-exclusive.
+living tentacles is a fertility outfit. living tentacles is biological. living tentacles is ridiculously low cut. living tentacles is not-top-displacable. The skirt-length of living tentacles is 0. living tentacles is bottom-exclusive.
 
 Living tentacles has a number called charge. The charge of living tentacles is 0. The text-shortcut of living tentacles is "lvtl".
 
@@ -128,7 +128,7 @@ Carry out drinking living tentacles:
 
 Part 4 - Sheer Chest Garb
 
-sheer-chest-garb is a fertility outfit. sheer-chest-garb is sheer. sheer-chest-garb is unskirted. sheer-chest-garb is belly exposing. sheer-chest-garb is low cut. sheer-chest-garb is silk.
+sheer-chest-garb is a fertility outfit. sheer-chest-garb is sheer. The skirt-length of sheer-chest-garb is 0. sheer-chest-garb is belly exposing. sheer-chest-garb is low cut. sheer-chest-garb is silk.
 
 The printed name of sheer-chest-garb is "[clothing-title-before]sheer chest garb[clothing-title-after]". The text-shortcut of sheer-chest-garb is "scg". Understand "sheer", "chest garb", "garb" as sheer-chest-garb.
 

@@ -234,7 +234,8 @@ Report taking clothing:
 
 
 To WardrobeVanish (C - a thing):
-	if C is held or C is in the location of the player, say "[if C is clothing]Your [C] [one of]vanishes. You can sense that it has been sent to the pink wardrobe[or]is sent from your [body area of C] to the pink wardrobe[stopping][otherwise]The [C] vanishes. You can sense that it has been sent to the pink wardrobe[end if]!";
+	if C is held, say "[if C is clothing]Your [C] [one of]vanishes. You can sense that it has been sent to the pink wardrobe[or]is sent from your [body area of C] to the pink wardrobe[stopping][otherwise]The [C] vanishes. You can sense that it has been sent to the pink wardrobe[end if]!";
+	otherwise say "The [C] vanishes. You can sense that it has been sent to the pink wardrobe!";
 	dislodge C;
 	now C is in pink wardrobe.
 
@@ -564,6 +565,7 @@ Definition: a clothing is currently-class-relevant: [we sometimes disable class 
 	if class-relevance-importance is false, decide no;
 	if it is class-relevant, decide yes;
 	decide no.
+Definition: an object is unclash summonable: decide no.
 Definition: a clothing (called C) is unclash summonable:
 	if C is worn, decide no;
 	now class-relevance-importance is false;

@@ -196,7 +196,7 @@ To compute pregnancy:
 					compute fatherhood to the father;
 					if the father is human and extreme images visible is 1:
 						if the father is dark skinned, cutshow figure of black birth;
-						cutshow figure of white birth;
+						otherwise cutshow figure of white birth;
 				if the class of the player is bride, compute housewife domestication;
 			otherwise: [The father is inanimate]
 				if inhuman pregnancy < 2 or (inhuman pregnancy >= 3 and the womb volume of vagina is 30): [If the stuff in brackets is true, we checked for an extreme pregnancy and purposefully chose not to give the player one this time.]

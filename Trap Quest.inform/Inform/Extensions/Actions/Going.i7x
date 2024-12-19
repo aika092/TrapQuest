@@ -162,6 +162,7 @@ To compute clothing cleanup:
 Part 1 - Movement Hindrance Definitions
 
 Definition: yourself is waddling:
+	if diaper quest is 1 and the class of the player is cheerleader, decide no;
 	if there is worn waddle-walking clothing, decide yes;
 	[if there is a worn diaper cover, decide no;] [diaper covers used to be a good thing]
 	let D be a random worn knickers;
@@ -169,6 +170,7 @@ Definition: yourself is waddling:
 	decide no.
 
 Definition: yourself is crawling:
+	if diaper quest is 1 and the class of the player is cheerleader, decide no;
 	if there is a worn diaper:
 		let D be a random worn diaper;
 		if the weight of D > 5, decide yes;
@@ -179,11 +181,18 @@ Definition: yourself is wobbling:
 		if H is not platform heels and H is not wedge heels and the heel-height of H > 3 and the heel skill of the player < 7, decide yes;
 		if heel-height of H > 5 and the heel skill of the player < 7, decide yes;
 
+Definition: a clothing (called C) is skirt-hobbling:
+	if C is worn and C is hobble-skirted and C is not crotch-unzipped and C is crotch-in-place, decide yes;
+	decide no.
+
 Definition: yourself is hobbling:
 	if there is worn crotch-displaced trousers, decide yes;
 	if the player is ankle bound, decide yes;
-	repeat with C running through worn crotch-in-place hobble-skirted clothing:
-		if C is not slitted, decide yes;
+	if there is skirt-hobbling clothing, decide yes;
+	decide no.
+
+Definition: yourself is mincing:
+	if there is super-hobble-skirted skirt-hobbling clothing, decide yes;
 	decide no.
 
 Definition: yourself is swaying:
@@ -324,6 +333,11 @@ To decide which number is the movement reduction of the player:
 		if movement-reduction-flav-said is false:
 			now movement-reduction-flav-said is true;
 			now T is the substituted form of "[if the largeness of belly > 7]The huge size of your [ShortDesc of belly] is making it extremely unwieldy, and[otherwise if the largeness of belly > 5]The large size of your [ShortDesc of belly][otherwise]Your [ShortDesc of belly][end if] is significantly affecting the way you walk, restricting your movement!";
+	if the player is mincing: [should be hobbling already]
+		increase X by 2;
+		if movement-reduction-flav-said is false:
+			now movement-reduction-flav-said is true;
+			now T is the substituted form of "Your super-tight, floor-length skirt is making it almost impossible to move your legs!";
 	now another-turn-flavour is "[T]";
 	decide on X.
 
@@ -524,7 +538,7 @@ Check going:
 		if the player is prone:
 			[We want to warn the player if they're going to crawl into a room they previously triggered a pink smoke trap in.]
 			if trap warning is 1 and the player is air breathing vulnerable and the player is able to breathe:
-				if the room noun from the location of the player is smoky:
+				if the room noun from the location of the player is pink-smoky:
 					say "There is [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in that room, and you are on your knees...";
 					reset multiple choice questions;
 					set numerical response 1 to "Continue crawling and breathing";
@@ -664,10 +678,11 @@ To compute slow movement:
 			if the player is wobbling or the player is hobbling or the player is swaying or the player is staggering:
 				now slow-move-this-turn is 1;
 				let R be a random number from 1 to 7;
-				if R is 1, say "You shuffle along as fast as your [if there is a worn ball-and-chain][ShortDesc of a random worn ball-and-chain][otherwise if the player is ankle bound][ShortDesc of random worn ankle-bound clothing][otherwise if there is worn crotch-displaced trousers][random worn crotch-displaced trousers][otherwise if there is a worn hobble-skirted clothing]hobble skirt[otherwise if there is an insertable object penetrating a fuckhole][ShortDesc of random insertable object penetrating a fuckhole][otherwise if the player is staggering][ShortDesc of belly][otherwise if the player is swaying][HipDesc][otherwise if the player is wobbling]inexperience at walking in high heels[otherwise]nervous legs[end if] [if there is a worn diaper]and [ShortDesc of random diaper worn by the player] [end if][if there are worn heels]and [ShortDesc of random heels worn by the player] [end if]will let you.";
-				if the strut of the player is 1:
-					now the strut of the player is 0;
-					say "[bold type]The awkwardness of it forces you to stop strutting.[roman type][line break]";
+				if R is 1:
+					say "You shuffle along as fast as your [if there is a worn ball-and-chain][ShortDesc of a random worn ball-and-chain][otherwise if the player is ankle bound][ShortDesc of random worn ankle-bound clothing][otherwise if there is worn crotch-displaced trousers][random worn crotch-displaced trousers][otherwise if there is a worn hobble-skirted clothing]hobble skirt[otherwise if there is an insertable object penetrating a fuckhole][ShortDesc of random insertable object penetrating a fuckhole][otherwise if the player is staggering][ShortDesc of belly][otherwise if the player is swaying][HipDesc][otherwise if the player is wobbling]inexperience at walking in high heels[otherwise]nervous legs[end if] [if there is a worn diaper]and [ShortDesc of random diaper worn by the player] [end if][if there are worn heels]and [ShortDesc of random heels worn by the player] [end if]will let you.";
+					if the strut of the player is 1 and (ballet corset is not worn or the number of worn thigh high ballet boots is 0): [if both those items are worn, the player is forced to permanently strut]
+						now the strut of the player is 0;
+						say "[bold type]The awkwardness of it forces you to stop strutting.[roman type][line break]";
 			otherwise if the player is waddling:
 				now slow-move-this-turn is 1;
 				if the strut of the player is 1:

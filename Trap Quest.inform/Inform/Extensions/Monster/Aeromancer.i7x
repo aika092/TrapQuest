@@ -1234,7 +1234,7 @@ To say TauntRejected of (M - an aeromancer):
 Section 2 - Questioning
 
 To compute teaching of (M - an aeromancer):
-	if playerRegion is Woods and inflation fetish is 1 and the player is the donator:
+	if playerRegion is Woods and inflation fetish is 1:
 		teach safefloating from M;
 	otherwise:
 		say "[speech style of M]'Are you a fan of alchemy? If I tell you a secret you have to promise not to tell anyone...'[roman type][line break]";
@@ -1356,7 +1356,7 @@ To compute aeromancer science of (M - confident aeromancer):
 		PainUp 10;
 		if unlucky is 1:
 			let N be the number of worn clothing;
-			repeat with C running through worn currently uncovered tearable clothing:
+			repeat with C running through currently uncovered tearable clothing:
 				say "A tentacle disappears into your [printed name of C], which explodes into a cloud of shredded [the clothing-material of C] confetti!";
 				destroy C;
 			if the number of worn clothing is N, DelicateUp 1;

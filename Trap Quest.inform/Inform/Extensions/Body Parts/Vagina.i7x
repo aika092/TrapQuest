@@ -110,7 +110,7 @@ Definition: vagina is at least partially exposed:
 To decide which number is current cameltoe: [0 means no cameltoe, 1 means slight cameltoe, 2 means full cameltoe]
 	if the player is not possessing a vagina, decide on 0;
 	if vagina is exposed or vagina is not at least partially exposed, decide on 0;
-	if there is worn actually dense potentially pussy covering at least slightly cameltoe creating clothing: [There's dense pussy covering clothing! So if it wasn't for the cameltoe effect, vagina wouldn't be visible at all. So we know we have a cameltoe.]
+	if there is worn actually dense at least slightly cameltoe creating clothing: [There's dense pussy covering clothing! So if it wasn't for the cameltoe effect, vagina wouldn't be visible at all. So we know we have a cameltoe.]
 		if there is at least slightly cameltoe blocking clothing, decide on 1; [something worn is blocking full cameltoes]
 		decide on 2;
 	decide on 0.
@@ -140,7 +140,7 @@ Definition: a clothing (called C) is potentially vagina covering:
 
 Definition: a clothing (called C) is potentially at least partially vagina covering:
 	if C is see-through, decide no; [if it protects your pussy, it must be covering it.]
-	if C is skirt-covering-crotch or C is potentially pussy covering, decide yes;
+	if C is skirt-partially-covering-crotch or C is potentially pussy covering, decide yes;
 	if (C is crotch-ripped or C is crotch-unzipped) and C is crotch-in-place, decide yes;
 	decide no.
 

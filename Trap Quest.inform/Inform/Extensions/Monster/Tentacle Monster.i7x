@@ -717,7 +717,7 @@ To say CondomPinFlav of (M - a tentacle monster) on (C - a clothing):
 	if M is penetrating a body part:
 		say "Completely of its own accord, the used condom suddenly zips from [NameDesc of M] and flies through the air until it hits your [ShortDesc of C].";
 	otherwise:
-		say "Another condom flies through the air and attaches to your [ShortDesc of C].".
+		say "Another condom flies through the air and [if C is trashcan]falls into[otherwise]attaches to[end if] your [ShortDesc of C].".
 
 To say CondomPinReactionFlav of (M - a tentacle monster) on (C - a clothing):
 	do nothing.

@@ -1,39 +1,50 @@
 Exposure Addiction by Player begins here.
 
-no-panties permanent fetish is a number that varies. no-panties permanent fetish is 0.
+skimpy underwear fetish is a number that varies. skimpy underwear fetish is -1.
+[
+0: Crotchless & diapers only
+1: G-strings & thongs
+3: Hotpants
+6: Briefs
+9: Panties
+]
 
-To decide which number is no-panties-fetish:
-	if no-panties permanent fetish is 1 or the diaper addiction of the player > 17 or no-panties tattoo is worn or daddy's little girl tattoo is worn, decide on 1;
-	otherwise decide on 0.
+To decide which number is underwear-cover-limit:
+	if skimpy underwear fetish is 0, decide on 0;
+	if daddy's little girl tattoo is worn, decide on 1;
+	if skimpy underwear fetish > 0, decide on skimpy underwear fetish;
+	decide on 999999.
 
-Definition: a knickers (called C) is no-panties-disallowed:
-	if no-panties-fetish is 1 or the implant of pledge-lesson-panties is 1 or the class of the player is faerie:
-		unless C is diaper or C is training pants or C is no protection, decide yes;
+Definition: yourself is no-panties-allowed rather than allowed-panties:
+	if underwear-cover-limit is 0 or no-panties tattoo is worn or the diaper addiction of the player > 17 or the class of the player is faerie, decide yes;
 	decide no.
 
-Definition: yourself is fighting against no-panties:
+Definition: a knickers (called C) is skimpy-underwear-disallowed rather than skimpy-underwear-allowed:
+	if C is diaper or C is training pants or C is no protection, decide no;
+	if the assModesty of C > underwear-cover-limit or the player is no-panties-allowed, decide yes;
+	decide no.
+
+Definition: yourself is fighting against skimpy underwear:
 	if the player is in a predicament room, decide no;
-	if no-panties-fetish is 1 or the implant of pledge-lesson-panties is 1 or the class of the player is faerie:
-		if there is a worn no-panties-disallowed knickers, decide yes;
+	if there is a worn skimpy-underwear-disallowed knickers, decide yes;
 	decide no.
 
-no panties reminder is a number that varies. no panties reminder is 0.
+skimpy underwear reminder is a number that varies. skimpy underwear reminder is 0.
 
-An all later time based rule (this is the fighting against no-panties fetish rule):
-	if the player is fighting against no-panties:
-		if no panties reminder <= 0:
-			let C be a random worn no-panties-disallowed knickers;
-			if C is knickers, say "[bold type]You [one of][or]still [stopping]feel extremely uncomfortable in your [ShortDesc of C]! [one of]You can feel your body desperately wishing to be free of it[if diaper lover > 0] because you only want to wear diapers[end if], and it's making it much harder to think properly.[or][stopping][roman type][line break]";
-			now no panties reminder is 30;
-		decrease no panties reminder by 1.
+An all later time based rule (this is the fighting against skimpy underwear fetish rule):
+	if the player is fighting against skimpy underwear:
+		if skimpy underwear reminder <= 0:
+			let C be a random worn skimpy-underwear-disallowed knickers;
+			if C is knickers, say "[bold type]You [one of][or]still [stopping]feel extremely uncomfortable in your [ShortDesc of C]! [one of]You can feel your body desperately wishing to be free of it because [if diaper lover > 0 and the player is no-panties-allowed]you only want to wear diapers[otherwise if the player is no-panties-allowed]you hate wearing underwear[otherwise]it's not skimpy enough for you[end if], and it's making it harder to think properly, and making all your muscles tense up, making you much more stiff.[or][stopping][roman type][line break]";
+			now skimpy underwear reminder is 30;
+		decrease skimpy underwear reminder by 1.
 
-Report wearing no-panties-disallowed knickers:
-	if the player is fighting against no-panties, say "[bold type]You immediately feel extremely uncomfortable in these,[roman type] thanks to your [if the class of the player is faerie]faerie instinct[otherwise if the implant of pledge-lesson-panties is 1]magic pledge you've just broken[otherwise if diaper lover >= 1]diaper fetish[otherwise]fetish for not wearing panties[end if]. Your focus, and therefore your intelligence, will be significantly reduced while you're wearing them.".
+Report wearing skimpy-underwear-disallowed knickers:
+	if the player is fighting against skimpy underwear, say "[bold type]You immediately feel extremely uncomfortable in these,[roman type] thanks to your [if the class of the player is faerie]faerie instinct[otherwise if diaper lover >= 1]diaper fetish[otherwise if the player is no-panties-allowed]fetish for not wearing panties[otherwise]fetish for only wearing skimpy underwear[end if]. Your focus and muscle tension, and therefore your dexterity and intelligence, will be significantly negatively affected while you're wearing them.".
 
-This is the knickers can't be summoned with no panties fetish rule:
-	if summoning is 1 and (no-panties permanent fetish is 1 or the class of the player is faerie):
-		unless wearing-target is diaper or (wearing-target is no protection and diaper lover <= 0), rule fails.
-The knickers can't be summoned with no panties fetish rule is listed in the knickers wearability rules.
+This is the knickers can't be summoned with skimpy underwear fetish rule:
+	if summoning is 1 and wearing-target is skimpy-underwear-disallowed, rule fails.
+The knickers can't be summoned with skimpy underwear fetish rule is listed in the knickers wearability rules.
 
 topless temporary fetish is a number that varies.
 

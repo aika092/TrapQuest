@@ -74,15 +74,30 @@ Check pulling pullstring collar:
 				SexAddictUp 1;
 			now R is 0;
 		otherwise if R is 4:
-			if no-panties permanent fetish is 0 and a random number between -1 and 1 >= diaper quest:
+			if skimpy underwear fetish is not 0 and a random number between -1 and 1 >= diaper quest:
 				now R is 0;
-				say "'[if diaper lover >= 1]Panties are only for big girls who can control their bladder. I'm only allowed to wear diapers!'[otherwise]Panties and tights are for prudes!'[end if][roman type][line break]";
-				let C be a random worn knickers;
-				if C is pussy covering knickers:
-					if C is diaper, say "You suddenly feel extremely at home in your [printed name of C]."; [If the player is wearing normal pants, they will be told in big letters by the fetish function itself. No need to duplicate that text here.]
+				if diaper quest is 1 or skimpy underwear fetish is 1:
+					say "'[if diaper lover >= 1]Panties are only for big girls who can control their bladder. I'm only allowed to wear diapers!'[otherwise]Panties and tights are for prudes!'[end if][roman type][line break]";
+					let C be a random worn knickers;
+					if C is pussy covering knickers:
+						if C is diaper, say "You suddenly feel extremely at home in your [printed name of C]."; [If the player is wearing normal pants, they will be told in big letters by the fetish function itself. No need to duplicate that text here.]
+					otherwise:
+						say "[if diaper lover >= 1]You suddenly feel an extreme aversion against wearing any underwear except big puffy diapers. [otherwise]You suddenly feel an extreme aversion against wearing any underwear at all. [end if][if the bimbo of the player < 9]It's a really weird sensation, you simultaneously are horrified by the idea, but know that trying to fight against your new fetish would feel awful.[otherwise][line break][end if]";
+					now skimpy underwear fetish is 0;
+				otherwise if skimpy underwear fetish < 0:
+					say "'Big panties are boring and lame!'[roman type][line break]";
+					now skimpy underwear fetish is 6;
+					if there is worn skimpy-underwear-disallowed knickers, say "You suddenly feel extremely uncomfortable in your [ShortDesc of random worn skimpy-underwear-disallowed knickers]! Your focus and muscle tension, and therefore your dexterity and intelligence, will be significantly negatively affected while you're wearing them.[line break][variable custom style]They're just not skimpy enough for me any more...[roman type][line break]";
+					otherwise say "You suddenly feel an extreme aversion against wearing big boring granny panties.";
 				otherwise:
-					say "[if diaper lover >= 1]You suddenly feel an extreme aversion against wearing any underwear except big puffy diapers. [otherwise]You suddenly feel an extreme aversion against wearing any underwear at all. [end if][if the bimbo of the player < 9]It's a really weird sensation, you simultaneously are horrified by the idea, but know that trying to fight against your new fetish would feel awful.[otherwise][line break][end if]";
-				now no-panties permanent fetish is 1;
+					say "'Skimpy panties are the best!'[roman type][line break]";
+					if there is worn skimpy-underwear-disallowed knickers:
+						decrease skimpy underwear fetish by 1;
+						say "You feel like your strong preference for skimpy underwear just got even skimpier.";
+					otherwise:
+						decrease skimpy underwear fetish by 1;
+						if there is worn skimpy-underwear-disallowed knickers, say "You suddenly feel extremely uncomfortable in your [ShortDesc of random worn skimpy-underwear-disallowed knickers]! Your focus and muscle tension, and therefore your dexterity and intelligence, will be significantly negatively affected while you're wearing them.[line break][variable custom style]They're just not skimpy enough for me any more...[roman type][line break]";
+						otherwise say "You feel like your strong preference for skimpy underwear just got even skimpier.";
 			otherwise if diaper lover >= 1 and the player is not bladder incontinent:
 				now R is 0;
 				say "'Dumb girls wear diapers because they can't control their pee pee!'[roman type][line break][if the player is bladder incontinent]You realise you are now [one of]fully[or]hopelessly[or]utterly[or]totally[or]completely[at random] incontinent.[otherwise if the diaper addiction of the player < 9]You desperately hope that this doesn't mean you're becoming incontinent.[otherwise if the diaper addiction of the player > 14]You are weirdly excited by the idea that this might mean you're becoming incontinent.[otherwise]You realise this probably means it's making you more incontinent.[end if]";
@@ -90,13 +105,21 @@ Check pulling pullstring collar:
 			otherwise:
 				increase R by 1;
 		if R is 5:
-			if short skirts permanent fetish < 2:
+			if short skirts permanent fetish > 1:
 				now R is 0;
 				say "'Skirts are like commitments, the shorter the better!'[roman type][line break]";
-				increase short skirts permanent fetish by 1;
-				let C be a random worn actually dense skirted clothing;
-				if C is clothing, say "[unless C is super-short or short skirts permanent fetish is 1 and C is short]You suddenly feel extremely uncomfortable in your [printed name of C].[end if]";
-				otherwise say "[if short skirts permanent fetish is 2]You now feel like you would only ever be comfortable in the most revealing of skirts.[otherwise if the bimbo of the player < 9]It's a really weird sensation, you simultaneously are horrified by the idea, but know that trying to fight against your new fetish would feel awful.[otherwise]You have a decent idea what permanent fetish that has given you, but you don't really mind.[end if]";
+				if short skirts permanent fetish > 6, now short skirts permanent fetish is 6;
+				otherwise decrease short skirts permanent fetish by 1;
+				let C be a random worn short-skirt-disallowed clothing;
+				if C is clothing, say "You feel extremely uncomfortable in your [ShortDesc of C] - your brain now only feels comfortable in skirts that are [SkirtLength short skirts permanent fetish] or shorter.";
+				otherwise say "You feel your brain rewire, and you will forevermore only feel happy in skirts that are [SkirtLength short skirts permanent fetish] or shorter. [if the bimbo of the player + short skirts permanent fetish <= 11]It's a really weird sensation, you simultaneously are horrified by the idea, but know that trying to fight against your new fetish would feel awful.[otherwise]You shrug, not too concerned about this new development.[end if]";
+			otherwise if short skirts permanent fetish is 0:
+				now R is 0;
+				say "'I only like skirts! They're comfy, and easy to wear!'[roman type][line break]";
+				now short skirts permanent fetish is 10;
+				let C be a random worn short-skirt-disallowed clothing;
+				if C is clothing, say "You suddenly feel extremely uncomfortable in your [ShortDesc of C].";
+				otherwise say "You can tell deep down that trying to fight against your new predilection for always wearing skirts would feel awful.";
 			otherwise:
 				increase R by 1;
 		if R is 6:

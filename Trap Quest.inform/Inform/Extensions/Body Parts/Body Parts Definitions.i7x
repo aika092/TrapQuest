@@ -355,6 +355,14 @@ To decide which number is the cringe of (B - a body part):
 	decide on C / 2. [if we haven't redefined it, then a bit less than the outrage should be a good estimate. Being naked is childish but it's not as childish as it is slutty.]
 
 Report examining a body part:
+	if the noun is orifice:
+		let LM be the list of things inseminating the noun;
+		if the number of entries in LM > 0:
+			say "It is currently holding [semen] from ";
+			let X be the number of entries in LM;
+			repeat with M running through LM:
+				say "[NameDesc of M][if X is 1].[otherwise if X is 2] and [otherwise], [end if]";
+				decrease X by 1;
 	if debuginfo > 0, say "[input-style]Current outrageousness ([if the noun is lewdly exposed and (the noun is breasts or the noun is fuckhole)]lewdly exposed[otherwise if the noun is lewdly exposed]visible[otherwise if the noun is at least partially lewdly exposed]partially exposed[otherwise if the noun is exposed]visible[otherwise if the noun is breasts and breasts is showing cleavage]showing cleavage[otherwise if the noun is at least partially exposed]partially visible[otherwise]covered up[end if]): [outrage of the noun]/20[if diaper quest is 1][line break]Current babyishness: [cringe of the noun]/20[end if][roman type][line break]";
 
 [!<BodyPartIsOccupied>+

@@ -57,6 +57,7 @@ Definition: breasts is exposed:
 	decide yes.
 
 Definition: breasts is at least partially exposed:
+	if fake-baby is held and there is a sat-on breastfeeding-bench, decide yes;
 	if the concealer of breasts is a thing, decide no;
 	decide yes.
 
@@ -149,7 +150,6 @@ To decide which number is cleavageCover:
 	if C is clothing or C is arms:
 		let CC be the cleavageCover of C;
 		if CC < 3, decide on 3;
-		if CC > 7, decide on 7;
 		decide on CC;
 	otherwise:
 		decide on 3.
@@ -189,7 +189,7 @@ To decide which number is the cringe of (B - breasts):
 	decide on O.
 
 Definition: breasts is showing cleavage:
-	if the largeness of breasts < 3 or cleavageCover is 7, decide no;
+	if the largeness of breasts < 3 or cleavageCover >= 7, decide no;
 	decide yes.
 
 Definition: a clothing (called C) is ridiculously low cut or higher:

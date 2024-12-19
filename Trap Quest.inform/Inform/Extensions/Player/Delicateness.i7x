@@ -6,11 +6,11 @@ To decide which number is the delicateness-influence of (C - a wearthing):
 	decide on 0.
 
 To decide which number is the delicateness-influence of (C - a clothing):
+	let S be 0;
+	if C is maturity, decrease S by 1;
 	if C is delicateness-influencing:
-		let S be 0;
 		decrease S by the magic-modifier of C; [Positive magic = subtracted delicateness]
-		decide on S;
-	decide on 0.
+	decide on S.
 
 To decide which number is the delicateness of the player:
 	if the class of the player is living sex doll, decide on 1;
@@ -207,8 +207,10 @@ Licking sweaty body part: 4
 Felching vaginal creampie: 4
 Spit in mouth: 4
 Feet in fluid-filled shoes: 4
+Hit in face with used condom / tissue: 4
 Masturbated in a wet diaper: 5
 Made to wear wet diaper / used as diaper urinal: 5
+Eating cum out of unknown used condom: 5
 Drinking mix of fluids: 5
 Intimacy with gross partner: 5
 Given a swirlie: 5
@@ -216,6 +218,7 @@ Wet diaper on face: 6
 Puking when gagging: 6
 Intimacy with partially humanoid (centaur): 6
 Licking theoretically dirty body part / bottom of feet: 6
+Anal creampie on face: 6
 Anilingus / A2M: 7
 Wearing messy diaper / messy diaper smell in the room: 7
 Intimacy with vaguely humanoid (deep one) or tentacles: 8
@@ -255,7 +258,7 @@ To GrossOut (X - a number) with reason (T - a text) and sensation (S - a text): 
 	compute potential addiction gain from grossness X.
 
 To NonAddictiveGrossOut (X - a number) with reason (T - a text) and sensation (S - a text): [This function is anticipated to output some kind of flavour text when called]
-	if the player is a december 2022 top donator or diaper quest is 1:
+	if grossness fetish > 0 or diaper quest is 1:
 		let G be X - the grossness addiction of the player;
 		if G >= 5: [hated]
 			if silent-gross-out is false, say "[variable custom style][one of]This is the most disgusting thing that's ever happened to me in my life[or]YEUUUURGH[or]I'm gonna puke[or]DISGUSTING[or]This is going to make me hurl[then at random]![roman type][line break]";
@@ -280,8 +283,8 @@ To NonAddictiveGrossOut (X - a number) with reason (T - a text) and sensation (S
 					say "[variable custom style][one of]I can't deny it any more... I fucking love this [S][or]This [S] is so gross, but it's also so fucking good[or]I'm getting addicted to this [S][in random order]![roman type][line break]";
 				otherwise:
 					say "[second custom style][one of]Yes... YES! SO DISGUSTING! SO GOOD[or]So gross! I need more[or]I can't get enough of this disgusting [S][or]I'm addicted to this [S][in random order]![roman type][line break]";
-				now G is G * -200;
-				arouse G;
+				let GA be G * -200;
+				arouse GA;
 		otherwise: [boring]
 			if silent-gross-out is false, say "[second custom style][one of]I can hardly even call this gross any more. It just doesn't excite me.[or]Gross? More like boring...[or]What a boring [S]. I need something more extreme![in random order][roman type][line break]";
 		if G > 0:
@@ -299,7 +302,7 @@ To gross cool down (N - a number):
 		cool down N.
 
 To compute potential addiction gain from grossness (X - a number):
-	if the player is a december 2022 top donator or diaper quest is 1:
+	if grossness fetish > 0 or diaper quest is 1:
 		let G be X - the grossness addiction of the player;
 		let R be a random number between -9 and 5;
 		if debuginfo > 0, say "[input-style]Grossness gain avoidance check: d15 - 10 ([R]) | [G].5 = ([X].5) grossness - ([grossness addiction of the player]) grossness addiction[roman type][line break]";
@@ -318,7 +321,7 @@ To SlowGrossOut (X - a number): [This function is anticipated to be called every
 	compute slow addiction gain from grossness X.
 
 To NonAddictiveSlowGrossOut (X - a number): [This function is anticipated to be called every turn for a potentially long number of turns, and so we want smaller text outputs and less addiction gain]
-	if the player is a december 2022 top donator or diaper quest is 1:
+	if grossness fetish > 0 or diaper quest is 1:
 		let G be X - the grossness addiction of the player;
 		if G >= 5: [hated]
 			if silent-gross-out is false, say "[variable custom style][one of]Gonna puke...[or]Gonna hurl...[or]DISGUSTING![or]YEUUUURGH![or]EEEUUURGH![or]I feel ill...[then at random][roman type][line break]";
@@ -349,7 +352,7 @@ To slow gross cool down (N - a number):
 		cool down N.
 
 To compute slow addiction gain from grossness (X - a number):
-	if the player is a december 2022 top donator or diaper quest is 1:
+	if grossness fetish > 0 or diaper quest is 1:
 		let G be X - the grossness addiction of the player;
 		let R be a random number between 0 and 9; [if the player is already tolerant, they won't gain more]
 		if debuginfo > 0, say "[input-style]Grossness gain avoidance check: d10 - 1 ([R]) | [G].5 = ([X].5) grossness - ([grossness addiction of the player]) grossness addiction[roman type][line break]";

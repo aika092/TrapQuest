@@ -62,19 +62,17 @@ To say ExamineDesc of (C - a choice trap):
 Figure of choice trap is the file "Env/MultiFloor/choicetrap1.png".
 
 This is the spawn initial woods choice traps rule:
-	if the player is a december 2022 top donator or (diaper quest is 1 and the player is a december 2022 diaper donator):
-		repeat with N running from 1 to 2:
-			let R be a random click untrapped trappable placed jungle room;
-			let T be a random off-stage choice trap;
-			unless T is nothing, deploy T in R.
+	repeat with N running from 1 to 2:
+		let R be a random click untrapped trappable placed jungle room;
+		let T be a random off-stage choice trap;
+		unless T is nothing, deploy T in R.
 The spawn initial woods choice traps rule is listed in the set up woods traps rules.
 
 This is the spawn initial hotel choice traps rule:
-	if the player is a december 2022 top donator or (diaper quest is 1 and the player is a december 2022 diaper donator):
-		repeat with N running from 1 to 2:
-			let R be a random click untrapped trappable placed modern room;
-			let T be a random off-stage choice trap;
-			unless T is nothing, deploy T in R.
+	repeat with N running from 1 to 2:
+		let R be a random click untrapped trappable placed modern room;
+		let T be a random off-stage choice trap;
+		unless T is nothing, deploy T in R.
 The spawn initial hotel choice traps rule is listed in the set up hotel traps rules.
 
 
@@ -114,9 +112,19 @@ To trigger (C - inflation-trap-choice):
 		let L be semen;
 		if diaper quest is 1, now L is water;
 		if watersports fetish is 1, now L is urine;
-		say "You feel your belly being magically filled to the brim with [variable L]!";
-		AssFill (belly limit - the total fill of belly) with L;
-		FearUp 2 with reason "The shock of suddenly being filled in this way makes you spasm,".
+		if enema fetish is 1:
+			say "You feel your belly being magically filled to the brim with [variable L]!";
+			AssFill (belly limit - the total fill of belly) with L;
+			FearUp 2 with reason "The shock of suddenly being filled in this way makes you spasm,";
+		otherwise:
+			say "You feel your stomach being magically filled to the brim with [if diaper messing >= 3]food and [end if]water!";
+			if diaper messing >= 3:
+				StomachUp 4;
+				StomachFoodUp 4;
+			otherwise:
+				StomachUp 8.
+
+
 
 To evade trigger (C - inflation-trap-choice):
 	if the player is getting lucky:
@@ -155,6 +163,7 @@ To trigger (SC - slime-trap-choice):
 				say "A hidden compartment inside the container opens, and a large blob of slime shoots out some sort of tiny cannon, landing right next to where you were a moment ago! And then... It wobbles, and begins to hop! It's alive!";
 				set up SB;
 				now SB is in the location of the player;
+				interest SB;
 				now SB is stalled;
 			otherwise:
 				say "The ['][ChoiceFlav of SC]['] punishment seems to miss, or fizzle, or something! [GotLuckyFlav]";
@@ -190,6 +199,7 @@ To evade trigger (C - slime-trap-choice):
 				say "A hidden compartment inside the container opens, and a large blob of slime shoots out some sort of tiny cannon, landing right next to where you were a moment ago! And then... It wobbles, and begins to hop! It's alive!";
 				set up SB;
 				now SB is in the location of the player;
+				interest SB;
 				now SB is stalled;
 			otherwise:
 				say "The ['][ChoiceFlav of C]['] punishment seems to miss, or fizzle, or something! [GotLuckyFlav]".
@@ -221,7 +231,7 @@ To trigger (C - aphrodesiac-trap-choice):
 	arouse 5000.
 To evade trigger (C - aphrodesiac-trap-choice):
 	say "Pink gas spills out of the device, filling the area. Soon the gas is up to waist height!";
-	now the location of the player is smoky;
+	now the location of the player is pink-smoky;
 	update backdrop positions.
 
 
@@ -374,7 +384,7 @@ To evade trigger (C - teleport-trap-choice):
 			if the player is air breathing vulnerable, SmellGrossOut messyDiaperSmellGrossnessLevel;
 		otherwise:
 			say "As the portal briefly opens, pink smoke from the intended destination leaks into the [location of the player]. Now this room is filled with pink smoke too! [GotUnluckyFlav]";
-			now the location of the player is smoky;
+			now the location of the player is pink-smoky;
 			update backdrop positions.
 
 To trigger (Y - a choice trap):

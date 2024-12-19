@@ -82,7 +82,10 @@ Part 2 - Perception
 
 To compute perception of (M - a robobellboy):
 	say "[BigNameDesc of M] notices you!";
-	if there is a worn messed knickers:
+	if there is soiled-diaper carried by M or there is a dirty diaper carried by M:
+		say "[first custom style]'DIRTY DIAPER LITTERING CULPRIT FOUND. PLEASE ADOPT THE DIRTY DIAPER LITTERING PUNISHMENT SUBMISSION POSITION.'[roman type][line break]";
+		anger M;
+	otherwise if there is a worn messed knickers:
 		say "[first custom style]'NEARBY MESSY [if there is a worn diaper]DIAPER[otherwise]UNDERWEAR[end if] DETECTED. [caps please] ASSUME THE NAPPY INSPECTION SUBMISSION POSITION.'[roman type][line break]";
 		anger M;
 		if there is worn perceived unmessed knickers, compute state check of a random worn messed knickers;
@@ -239,17 +242,24 @@ To compute maid forcing of (M - a robobellboy):
 
 To compute whore forcing of (M - a robobellboy):
 	now the target-room of M is the location of a random on-stage hotel bed;
-	if the location of the player is the target-room of M or there is a hotel bed in the location of the player:
-		say "[first custom style]'YOUR CLIENTS WILL BEGIN ARRIVING SHORTLY.'[roman type][line break]";
-		bore M for 400 seconds;
-		FavourUp M;
-		repeat with N running through monsters in the location of the player:
-			compute mandatory room leaving of N;
-		let H be a random hotel bed in the location of the player;
-		compute PatronSpawning of H;
-		if the sex addiction of the player < 9, say "[one of][line break][variable custom style]That fucking robot! What has [he of M] got me into?![roman type][line break][or][stopping]";
+	let failsafe be 50;
+	while failsafe > 0 and the target-room of M is not placed:
+		now the target-room of M is the location of a random on-stage hotel bed;
+		decrease failsafe by 1;
+	if failsafe > 0:
+		if the location of the player is the target-room of M or there is a hotel bed in the location of the player:
+			say "[first custom style]'YOUR CLIENTS WILL BEGIN ARRIVING SHORTLY.'[roman type][line break]";
+			bore M for 400 seconds;
+			FavourUp M;
+			repeat with N running through monsters in the location of the player:
+				compute mandatory room leaving of N;
+			let H be a random hotel bed in the location of the player;
+			compute PatronSpawning of H;
+			if the sex addiction of the player < 9, say "[one of][line break][variable custom style]That fucking robot! What has [he of M] got me into?![roman type][line break][or][stopping]";
+		otherwise:
+			drag to the target-room of M by M;
 	otherwise:
-		drag to the target-room of M by M.
+		satisfy M.
 
 To say DragArrival of (M - a robobellboy) to (R - a room):
 	say "[first custom style]'WE HAVE ARRIVED.'[roman type][line break]".
@@ -360,22 +370,13 @@ Definition: bellboy-forced-bed is appropriate:
 To compute punishment of (P - bellboy-forced-bed):
 	compute whore forcing of current-monster.
 
-bellboy-forced-clothing is a diaper punishment. The priority of bellboy-forced-clothing is 3.
 
-To say EnticeFlav of (M - a monster) for (P - bellboy-forced-clothing):
+To say EnticeFlav of (M - robobellboy) for (P - donate babywear):
 	say "[line break][speech style of M]'ASSUME THE CLOTHING RECEPTION SUBMISSION POSITION IMMEDIATELY.'[roman type][line break]".
 
-To decide which number is the relevant addiction of (P - bellboy-forced-clothing):
-	decide on the humiliation of the player / 2000.
+Definition: a robobellboy is willing to donate babywear: decide yes.
 
-Definition: bellboy-forced-clothing is appropriate:
-	if current-monster is not robobellboy, decide no;
-	if current-monster is babifying the player and the player is not immobile, decide no; [Will do whore forcing regime instead.]
-	if the class of the player is not catgirl and the class of the player is not puppygirl and (the number of worn crotch covering clothing is 0 or the number of worn breast covering clothing is 0), decide yes;
-	decide no.
 
-To compute punishment of (P - bellboy-forced-clothing):
-	compute clothes forcing of current-monster.
 
 
 bellboy-forced-machine is a diaper punishment. The priority of bellboy-forced-machine is 5.

@@ -381,7 +381,7 @@ To compute vine laxative torture of (V - a vine):
 	if butterfly wings is actually summonable:
 		say "Even more bizarrely, you feel a pair of wings sprout from your back! You feel lighter.";
 		summon butterfly wings cursed with quest;
-	appropriate-cutscene-display figure of vines cutscene 4;
+	mapcutshow figure of vines cutscene 4 for V;
 	say "After this the vines release you, retreating back into the trees and disappearing into the ground.";
 	now V is not wrangling thighs;
 	now V is not wrangling arms;

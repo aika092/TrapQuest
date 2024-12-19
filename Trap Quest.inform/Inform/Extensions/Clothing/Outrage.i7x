@@ -53,6 +53,7 @@ To decide which number is the fluid cringe of (C - a clothing):
 	if C is swimming themed and the urine-soak of C < the soak-limit of C / 2: [Unless it's drenched in piss, we only care about semen-soak for swimwear]
 		decide on (1 + the semen-soak of C) / 2;
 	otherwise if diaper quest is 0:
+		if current-predicament is team-three-leg-predicament and the player is in a predicament room and C is crotch covering, decide on the water-soak of C + ((1 + the semen-soak of C + the urine-soak of C + the milk-soak of C) / 2);
 		decide on (1 + the semen-soak of C + the urine-soak of C + the milk-soak of C) / 2;
 	otherwise:
 		if C is crotch covering and C is wet, decide on 5;

@@ -1,6 +1,6 @@
 Butterfly Wings by Dresses begins here.
 
-butterfly wings is an overdress. butterfly wings is unique. butterfly wings is biological. butterfly wings is fully exposing. butterfly wings is no-crotch. butterfly wings is unskirted. The printed name of butterfly wings is "[clothing-title-before]butterfly wings[clothing-title-after]". The text-shortcut of butterfly wings is "bw". Understand "butter", "fly" as butterfly wings.
+butterfly wings is an overdress. butterfly wings is unique. butterfly wings is biological. butterfly wings is fully exposing. butterfly wings is no-crotch. The skirt-length of butterfly wings is 0. The printed name of butterfly wings is "[clothing-title-before]butterfly wings[clothing-title-after]". The text-shortcut of butterfly wings is "bw". Understand "butter", "fly" as butterfly wings.
 
 Definition: butterfly wings is class-relevant:
 	if the class of the player is faerie, decide yes;

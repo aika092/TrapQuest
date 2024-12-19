@@ -8,9 +8,14 @@ Definition: a trousers is same-type:
 
 Definition: a trousers is displacable: decide yes.
 
+Definition: a trousers is overshoe: decide yes. [Does this trousers go over the shoes]
+Definition: a trousers is undershoe:
+	if it is overshoe, decide no;
+	decide yes.
+
 To decide which number is the trouserLength of (C - a trousers):
 	if C is ankle covering,	decide on 10;
-	if C is usually calf covering, decide on 9;
+	if C is usually calf covering, decide on 8;
 	if C is usually thigh covering, decide on 5;
 	if C is usually at least partially thigh covering, decide on 3;
 	decide on 2.
@@ -19,7 +24,7 @@ To decide which number is the default-soak-limit of (C - a trousers):
 
 To decide which object is the concealer of (C - a trousers):
 	repeat with S running through worn potentially-bottom-layer-concealing skirted actually dense clothing:
-		if the skirtLength of S >= the trouserLength of C, decide on S;
+		if the front-skirt-length of S >= the trouserLength of C and the back-skirt-length of S >= the trouserLength of C, decide on S;
 	decide on nothing.
 
 To decide which number is the initial outrage of (C - a trousers):

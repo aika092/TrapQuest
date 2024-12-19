@@ -40,6 +40,7 @@ To compute full engine loop:
 	if the player is virtual or (tutorial is 1 and the graphics-window is g-present):
 		if cancel-next-turn-graphic-display is false: [Sometimes we skip this, if we don't want to refresh the windows because we've done something special like expand a button frame]
 			if body-outdated is 1, now body-now-outdated is true;
+			reset cutscenes;
 			display stuff;
 			[if bubble-needs-overwriting is true:
 				now bubble-needs-overwriting is false;
@@ -326,7 +327,7 @@ To compute turn:
 
 To compute automatic actions:
 	if delayed stand is 1:
-		if there is a revealed hypno trap in the location of the player or there is a revealed haunted mirror trap in the location of the player or there is a revealed sprinkle trap in the location of the player or the location of the player is smoky: [The player might prefer to move first]
+		if there is a revealed hypno trap in the location of the player or there is a revealed haunted mirror trap in the location of the player or there is a revealed sprinkle trap in the location of the player or the location of the player is pink-smoky: [The player might prefer to move first]
 			now delayed stand is 0;
 		otherwise:
 			let SA be auto;
@@ -481,9 +482,16 @@ To compute upright fatigue gain:
 		if debuginfo > 1, say "[the fatigue of the player] | [the buckle threshold of the player][roman type][line break]".
 
 To compute dildo damage:
-	unless the latex-transformation of the player > 3:
+	if diaper quest is 1:
+		repeat with Y running through dildo traps grabbing the player:
+			say "[BigNameDesc of Y] buzzes away powerfully at your crotch!";
+			stimulate vagina from Y;
+			if Y is grabbing the player and the player is getting lucky: [if the player orgasms, it lets go. but if not, maybe they get lucky]
+				say "[BigNameDesc of Y] seems to run out of power, and the anklecuffs click open! [GotLuckyFlav]";
+				dislodge Y;
+	otherwise if the latex-transformation of the player <= 3:
 		repeat with D running through traps penetrating a fuckhole:
-			say "The dildo keeps pressing on your sensitive spots inside your [if D is penetrating asshole][asshole][otherwise][vagina][end if][one of], making you more and more sore![or].[stopping]";
+			say "[BigNameDesc of D] keeps pressing on your sensitive spots inside your [if D is penetrating asshole][asshole][otherwise][vagina][end if][one of], making you more and more sore![or].[stopping]";
 			let Q be a random number from 1 to 3;
 			if Q > 1:
 				if D is penetrating asshole, ruin asshole;
@@ -641,12 +649,12 @@ To compute extra suffocation of (M - a monster):
 			say "[bold type][if the reaction of the player is 0]All your struggling and the[otherwise]The[end if] intensity of [NameDesc of M][bold type][']s acts cause your body to use up even more oxygen![roman type][line break]".
 
 [A breathing blocking decision rule (this is the consider breathing pink smoke rule):
-	if the player is prone and the location of the player is smoky and the player is not flying and the number of aeromancer penetrating a body part is 0:
+	if the player is prone and the location of the player is pink-smoky and the player is not flying and the number of aeromancer penetrating a body part is 0:
 		say "You are kneeling in pink smoke. ";
 		now breathing-this-turn is false.]
 
 A breathing consequences rule (this is the consequences for breathing pink smoke rule):
-	if the player is prone and the location of the player is smoky and the player is not flying and the number of aeromancer penetrating a body part is 0:
+	if the player is prone and the location of the player is pink-smoky and the player is not flying and the number of aeromancer penetrating a body part is 0:
 		compute pink smoke.
 
 To compute pink smoke:
@@ -1007,9 +1015,7 @@ To Reset Flags:
 	now player-gagging is false;
 	now groping-person is yourself; [reset groping person flag so that if we come back to this NPC in 10 turns with different appearance, we know to recalculate gropability]
 	finally humiliate the delayed humiliation of the player;
-	decrease blush factor by 100;
-	if blush factor > 2000, now blush factor is 2000;
-	if blush factor < 0, now blush factor is 0;
+	blush-progress;
 	now movement-reduction-flav-said is false;
 	repeat with M running through monsters:
 		now M is not moved;

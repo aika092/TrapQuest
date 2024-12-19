@@ -55,7 +55,8 @@ To compute common boredom of (M - a monster) for (N - a number) seconds:
 	if N >= 50 and playerRegion is not School and the player is not in Dungeon12:[Dungeon12 is the Throne Room. We don't want to let the player farm by going in and out of the Royal Chambers.]
 		let R be a random number between 1 and 50;
 		decrease the charge of the dungeon altar by R;
-		decrease the charge of the elder altar by R.
+		decrease the charge of the elder altar by R;
+	check unlock timestamping of M.
 
 To compute common latest appearance reset of (M - a monster):
 	now the latest-appearance of M is 0;
@@ -73,7 +74,44 @@ To satisfy (M - a monster) for (N - a number) seconds:
 			progress quest of nice-quest;
 		if the health of M <= the maxhealth of M / 2, progress quest of chosen-one-quest;
 	otherwise:
-		bore M for N seconds. [We still want to dislodge etc. even if they weren't interested for some reason.]
+		bore M for N seconds; [We still want to dislodge etc. even if they weren't interested for some reason.]
+	compute unlock satisfaction of M;
+	compute unique satisfaction of M.
+
+To check unlock timestamping of (M - a monster):
+	if M is currently keyholding:
+		if the locked-timestamp of M is 0:
+			now the locked-timestamp of M is earnings;
+	otherwise:
+		now the locked-timestamp of M is 0.
+
+To compute unlock satisfaction of (M - a monster):
+	if M is in the location of the player and M is currently keyholding:
+		if the locked-timestamp of M is 0: [just in case]
+			now the locked-timestamp of M is earnings; [just in case]
+		otherwise if the locked-timestamp of M is not earnings:
+			let locked-duration be the locked-timestamp of M - earnings;
+			if locked-duration < 0, now locked-duration is 10000;
+			let FV be (the favour of M - the aggro limit of M) * 50;
+			let LD be locked-duration + FV;
+			let R be a random number between 1 and LD;
+			if debuginfo > 0, say "[input-style][MediumDesc of M] satisfied key use check: Seconds since lock ([locked-duration]) + favour rating ([FV]) = [LD]; d[LD] = [R] | [unlock threshold of M].5 unlock threshold of [MediumDesc of M][roman type][line break]";
+			if R > the unlock threshold of M:
+				say SatisfiedUnlockFlav of M;
+				repeat with K running through currently locking specific-keys held by M:
+					let C be a random worn locked clothing covered by K;
+					say "[BigNameDesc of M] uses [his of M] [NameDesc of K] to unlock your [C]!";
+					unlock C;
+			check unlock timestamping of M.
+
+To decide which number is the unlock threshold of (M - a monster):
+	decide on 300.
+
+To say SatisfiedUnlockFlav of (M - a monster):
+	if M is intelligent, say "[speech style of M]'[one of]Actually[or]On second thoughts[cycling], [one of]I guess you've been locked in that for long enough, now[or]I shouldn't keep you locked in that forever now, should I[or]it would be excessively cruel to keep you locked up like that any longer[in random order].'[roman type][line break]".
+
+To compute unique satisfaction of (M - a monster):
+	do nothing.
 
 To say SatisfiedFlav of (M - a monster):
 	if M is in the location of the player and M is not dying:
@@ -112,6 +150,7 @@ To finally destroy (M - a monster):
 	reset M.
 
 To reset (M - a monster): [We do this when the player faints to all monsters, even if they are remaining in play.]
+	if M is masturbating the player, now masturbation-swimming is false;
 	unique reset M;
 	deinterest M; [this includes dislodging]
 	now M is not dying;
@@ -119,6 +158,7 @@ To reset (M - a monster): [We do this when the player faints to all monsters, ev
 	now the scared of M is 0;
 	now the last-interaction of M is 0;
 	now the health of M is the maxhealth of M;
+	now the bladder of M is a random number between 0 and 900;
 	now the loot dropped of M is 0;
 	now the refractory-period of M is 0;
 	now the current-errand of M is no-errand;

@@ -218,7 +218,7 @@ To say EscapeAnswer of (M - a tryhard student):
 To say AdviceAnswer of (M - a tryhard student):
 	say "[speech style of M]'[if diaper quest is 0][one of]You'll make a lot of friends if you're willing to suck a lot of [manly-penis][or]If you want to get ahead in life, you just need to suck a [manly-penis] or five[at random][otherwise]Sometimes the mature thing to do is admit that Daddy knows best[end if].'[roman type][line break]".
 
-To compute teaching of (M - a tryhard student):
+To compute teaching offer of (M - a tryhard student):
 	say "[speech style of M]'I totally could, because I'm way better at this than you. But I'm technically not allowed, since I'm not a qualified teacher here.'[roman type][line break]".
 
 To say detention chair tease of (M - a tryhard student):

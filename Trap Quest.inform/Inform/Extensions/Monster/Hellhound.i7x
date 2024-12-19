@@ -710,7 +710,7 @@ To compute conventional response of (M - hellhound):
 To compute vanity response of (M - hellhound):
 	compute conventional response of M.
 
-To compute teaching of (M - hellhound):
+To compute teaching offer of (M - hellhound):
 	compute conventional response of M.
 
 To compute friendly drink of (M - hellhound):

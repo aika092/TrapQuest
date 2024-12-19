@@ -2,7 +2,8 @@ Diaper Events by Monster Framework begins here.
 
 To compute (M - a monster) removing all ass protection:
 	let more-to-go be 1;
-	while more-to-go is 1:
+	while more-to-go > 0:
+		now more-to-go is 1;
 		let C be a random ass covering clothing;
 		now C is a random top level ass protection clothing; [Top level takes priority]
 		if C is nothing, now C is a random worn sex toy penetrating asshole;
@@ -12,7 +13,11 @@ To compute (M - a monster) removing all ass protection:
 			if C is crotch-zipped and C is not diaper:
 				say UnzipFlav of M at C;
 				ZipDown C;
-			otherwise if C is displacable:
+			otherwise if C is locked:
+				now C is temporarily-unlocked;
+				compute M unlocking C;
+				now more-to-go is 2; [it's still worn, and this prevents the bug catch below]
+			otherwise if C is displacable and the number of worn crotch-pullup clothing <= 1:
 				compute M displacing C;
 			otherwise:
 				say DiaperQuestRemovalFlav of M on C;
@@ -202,7 +207,9 @@ To say DiaperCheckResultsMostlyDryReactionFlav of (M - a monster):
 	otherwise say "[variable custom style][muffled sounds][roman type][line break]".
 
 To say DiaperCheckResultsDryFlav of (M - a monster):
-	if the diaper-duration of M > 1:
+	if the diaper-duration of M >= 100: [permanent diaper committal]
+		say DiaperCheckResultsDryForeverFlav of M;
+	otherwise if the diaper-duration of M > 1:
 		say DiaperCheckResultsDryForNowFlav of M;
 		say DiaperCheckResultsDryForNowReactionFlav of M;
 	otherwise if the diaper-duration of M is 1:
@@ -214,6 +221,9 @@ To say DiaperCheckResultsDryFlav of (M - a monster):
 
 To say DiaperCheckResultsDryStackFlav of (M - a monster):
 	say "[speech style of M]'[one of]Well at least it seems you've managed to keep your outermost diaper dry, for now[or]It doesn't feel like you've had enough accidents to leak down to this diaper yet[or]Hmm, this one is bone dry[or]You haven't leaked down to this one yet, it would seem[in random order]. [one of]However I'm sure you've done at least some tinkles into the diaper on the inside, hmm? [or]I bet you've wet the innermost diaper though, haven't you? [or]I wonder what the other diaper[if the number of entries in the list of stacked diapers > 2]s look[otherwise] looks[end if] like though. [in random order][one of]So I'm not counting this as a time I found you dry. I'll only do that when I check you while you're in a single diaper[or]So this doesn't count as me finding you dry. If you want me to be confident you can hold your wee-wees, you need to let me find you dry when you're only wearing one diaper[or]I can't be sure you're completely dry, so this doesn't count[stopping].'[roman type][line break]".
+
+To say DiaperCheckResultsDryForeverFlav of (M - a monster):
+	say "[speech style of M]'[one of]Glad[or]I'm happy[or]I'm pleased[or]It's good[in random order] to [one of]see[or]find out[or]confirm[as decreasingly likely outcomes] you're still [one of]diapered[or]wearing diapers[or]wearing this[or]well-padded[in random order], as [one of]instructed[or]you were commanded[or]was decreed[as decreasingly likely outcomes].'[roman type][line break]".
 
 To say DiaperCheckResultsDryForNowFlav of (M - a monster):
 	say "[speech style of M]'[one of]Oh[or]Hmph[or]Unbelievable[or]How surprising[in random order]. [one of]You've actually managed to stay dry, for now[or]It doesn't feel like you've had an accident, yet[or]You're completely dry[or]It's bone dry[or]No leaks yet, it would seem[in random order]. [one of]I don't expect that will last for long though[or]Maybe one of these days you will actually be ready for big [boy of the player] pants again[or]Maybe there's a very slight chance I misjudged you? We'll see if you can keep this up for the next time we meet[or]I think you got lucky. I'll be checking again soon and I bet you'll have slipped up by then[in random order].'[roman type][line break]".
@@ -263,53 +273,56 @@ Definition: a monster (called M) is diaper change complete cummies rewarding:
 
 Definition: a monster is diaper disciplining: decide no. [Does this NPC like to demand that the player stays in diapers until they're satisfied they can stay dry?]
 Definition: a monster is diaper leaving: decide yes. [Does this NPC like to leave used diapers behind?]
+Definition: a monster (called M) is diaper cover locking: [Does this NPC lock your diaper covers?]
+	if M is diaper disciplining, decide yes;
+	decide no.
 Definition: a monster is double diaper locking: decide no. [Does this NPC put you in a locked double diaper rather than a cursed double diaper?]
 
 old-diaper is an object that varies.
-current-diaper is an object that varies.
+current-diaper-change-top-level is an object that varies.
 new-diaper is an object that varies.
 diaperChangeCount is a number that varies.
 
 To compute diaper change of (M - a monster):
-	now current-diaper is nothing;
+	now current-diaper-change-top-level is nothing;
 	now new-diaper is nothing;
 	[These are failsafes below to avoid bugs]
 	if M is friendly, anger M;
 	if M is uninterested, interest M;
 	if M is grabbing the player and M is changing the player:
-		now current-diaper is a random top level protection clothing; [Top level takes priority]
-		[if current-diaper is nothing, now current-diaper is a random worn crotch covering clothing;] [this doesn't work because displaced stuff gets stuck in a loop]
-		if current-diaper is worn no protection overdress, now current-diaper is nothing; [These are allowed to stay around!]
-		if (current-diaper is nothing or current-diaper is not urination blocking) and there are worn knickers, now current-diaper is a random worn knickers; [All knickers MUST be removed]
-		if (current-diaper is nothing or current-diaper is not urination blocking) and there is a worn tail plug, now current-diaper is a random worn tail plug;
-		if current-diaper is unmessed urination blocking unremovable clothing:
-			say "[speech style of M]'I can't remove that [ShortDesc of current-diaper]. Damn, I guess I'll have to leave you like this, for now.'[roman type][line break]";
+		now current-diaper-change-top-level is a random top level protection clothing; [Top level takes priority]
+		[if current-diaper-change-top-level is nothing, now current-diaper-change-top-level is a random worn crotch covering clothing;] [this doesn't work because displaced stuff gets stuck in a loop]
+		if current-diaper-change-top-level is worn no protection overdress, now current-diaper-change-top-level is nothing; [These are allowed to stay around!]
+		if (current-diaper-change-top-level is nothing or current-diaper-change-top-level is not urination blocking) and there are worn knickers, now current-diaper-change-top-level is a random worn knickers; [All knickers MUST be removed]
+		if (current-diaper-change-top-level is nothing or current-diaper-change-top-level is not urination blocking) and there is a worn tail plug, now current-diaper-change-top-level is a random worn tail plug;
+		if current-diaper-change-top-level is unmessed urination blocking unremovable clothing:
+			say "[speech style of M]'I can't remove that [ShortDesc of current-diaper-change-top-level]. Damn, I guess I'll have to leave you like this, for now.'[roman type][line break]";
 			satisfy M;
 			dislodge M;
 			repeat with C running through diapers carried by M:
 				only destroy C;
 			if diaper quest is 1, progress quest of naughty-quest;
 			rule succeeds;
-		if old-diaper is diaper and current-diaper is chastity bond and M is diaper change chastity cummies rewarding and the player is able to orgasm so soon:
+		if old-diaper is diaper and current-diaper-change-top-level is chastity bond and M is diaper change chastity cummies rewarding and the player is able to orgasm so soon:
 			compute diaper change chastity cummies reward of M;
 			rule succeeds;
-		otherwise if current-diaper is clothing and current-diaper is urination blocking:
-			now old-diaper is current-diaper;
-			if current-diaper is crotch-zipped clothing and current-diaper is not knickers and (there is a worn crotch-tie-up knickers or the number of worn knickers is 0):
-				say UnzipFlav of M at current-diaper;
-				ZipDown current-diaper;
+		otherwise if current-diaper-change-top-level is clothing and current-diaper-change-top-level is urination blocking:
+			now old-diaper is current-diaper-change-top-level;
+			if current-diaper-change-top-level is crotch-zipped clothing and current-diaper-change-top-level is not knickers and (there is a worn crotch-tie-up knickers or the number of worn knickers is 0):
+				say UnzipFlav of M at current-diaper-change-top-level;
+				ZipDown current-diaper-change-top-level;
 				rule succeeds;
-			otherwise if current-diaper is displacable and current-diaper is not knickers and current-diaper is not glued:
-				compute M displacing current-diaper;
+			otherwise if current-diaper-change-top-level is displacable and current-diaper-change-top-level is not knickers and current-diaper-change-top-level is not glued and the number of worn crotch-pullup clothing <= 1: [prevents NPC from displacing pulldown trousers and then magically removing pulldown diaper cover and then being unable to replace said diaper cover]
+				compute M displacing current-diaper-change-top-level;
 				rule succeeds;
-			otherwise if current-diaper is locked:
-				now current-diaper is temporarily-unlocked;
-				compute M unlocking current-diaper;
+			otherwise if current-diaper-change-top-level is locked:
+				now current-diaper-change-top-level is temporarily-unlocked;
+				compute M unlocking current-diaper-change-top-level;
 				rule succeeds;
-			otherwise if current-diaper is diaper and M is willing to double diapers and M is eager to double diapers and (current-diaper is unmessed or diaper messing >= 4):
+			otherwise if current-diaper-change-top-level is diaper and M is willing to double diapers and M is eager to double diapers and (current-diaper-change-top-level is unmessed or diaper messing >= 4):
 				if new-diaper is not a DQBulkier diaper, now new-diaper is a random eligible plentiful DQBulkier disposable diaper;
 				if new-diaper is not a diaper, now new-diaper is a random plentiful DQBulkier disposable diaper;
-				if new-diaper is diaper and new-diaper is not current-diaper:
+				if new-diaper is diaper and new-diaper is not current-diaper-change-top-level:
 					say DoubleDiaperFlav of M;
 					blandify and reveal new-diaper; [clean and reset it]
 					if M is not double diaper locking: [if they don't lock it, they glue it]
@@ -323,19 +336,19 @@ To compute diaper change of (M - a monster):
 					say DoubleDiaperAfterFlav of M;
 					[no 'rule succeeds' because we're done, so now we follow through to the end.]
 				otherwise: [couldn't find an eligible bulkier diaper]
-					if debugmode > 0, say "[input-style]Unable to find an eligible diaper that could fit on top of the [current-diaper].[roman type][line break]";
+					if debugmode > 0, say "[input-style]Unable to find an eligible diaper that could fit on top of the [current-diaper-change-top-level].[roman type][line break]";
 					say DiaperChangeRemovalFlav of M;
-					now M is carrying current-diaper;
-					dislodge current-diaper;
-					if current-diaper is diaper, DiaperAddictUp 1;
-					if current-diaper is not diaper-stack, rule succeeds; [we remove diaper stack and put on new diaper in same turn to avoid loads of glitches]
+					now M is carrying current-diaper-change-top-level;
+					dislodge current-diaper-change-top-level;
+					if current-diaper-change-top-level is diaper, DiaperAddictUp 1;
+					if current-diaper-change-top-level is not diaper-stack, rule succeeds; [we remove diaper stack and put on new diaper in same turn to avoid loads of glitches]
 			otherwise:
 				say DiaperChangeRemovalFlav of M;
-				if current-diaper is not diaper-stack, now M is carrying current-diaper;
-				dislodge current-diaper;
-				now current-diaper is temporarily-removed; [NPC will try to put this back on afterwards]
-				if current-diaper is diaper, DiaperAddictUp 1;
-				if current-diaper is not diaper-stack, rule succeeds; [we remove diaper stack and put on new diaper in same turn to avoid loads of glitches]
+				if current-diaper-change-top-level is not diaper-stack, now M is carrying current-diaper-change-top-level;
+				dislodge current-diaper-change-top-level;
+				now current-diaper-change-top-level is temporarily-removed; [NPC will try to put this back on afterwards]
+				if current-diaper-change-top-level is diaper, DiaperAddictUp 1;
+				if current-diaper-change-top-level is not diaper-stack, rule succeeds; [we remove diaper stack and put on new diaper in same turn to avoid loads of glitches]
 		otherwise if old-diaper is diaper and M is diaper change during cummies rewarding and the player is able to orgasm so soon and the number of worn chastity bond is 0: [player was wearing a diaper, what a good girl! she gets cummies]
 			compute diaper change during cummies reward of M;
 			rule succeeds;
@@ -385,7 +398,7 @@ To compute diaper change of (M - a monster):
 						if old-diaper is upgradable:
 							if the upgrade-target of old-diaper is disposable diaper, now new-diaper is the upgrade-target of old-diaper;
 						silently transform old-diaper into new-diaper;
-				otherwise:
+				otherwise: [player wasn't wearing a diaper before]
 					if M is diaper disciplining, summon new-diaper uncursed;
 					otherwise summon new-diaper cursed;
 					if old-diaper is messed knickers, only destroy old-diaper; [don't want the NPC to be carrying around messed knickers]
@@ -411,34 +424,95 @@ To compute diaper change of (M - a monster):
 			trigger change-wisp-trigger;
 		if old-diaper is diaper and M is diaper change complete cummies rewarding and the player is able to orgasm so soon and the number of worn chastity bond is 0:
 			compute diaper change complete cummies reward of M;
-		repeat with C running through temporarily-removed diaper covers carried by M: [diaper covers need to go on first]
-			if C is actually summonable:
-				say "[BigNameDesc of M] replaces your [C].";
-				now C is worn by the player;
-			now C is not temporarily-removed;
-		repeat with C running through worn temporarily-unlocked diaper covers:
-			say "[if M is intelligent][BigNameDesc of M] locks the padlock at the waistband of [NameDesc of C].[otherwise]The padlock at the waistband of [NameDesc of C] suddenly clicks shut![end if]";
-			now C is locked;
-			now C is not temporarily-unlocked;
-		repeat with C running through temporarily-removed clothing carried by M:
-			if C is actually summonable:
-				say "[BigNameDesc of M] replaces your [C].";
-				now C is worn by the player;
-			now C is not temporarily-removed;
-		repeat with C running through worn crotch-displaced clothing:
-			compute M replacing C;
-			now C is not temporarily-displaced;
-		repeat with C running through worn temporarily-unlocked clothing:
-			say "[if M is intelligent][BigNameDesc of M] locks [NameDesc of C].[otherwise]With a click, it would appear that [NameDesc of C] is suddenly locked again![end if]";
-			now C is locked;
-			now C is not temporarily-unlocked;
-		validate layers; [just in case anything fucky happened with clothing layers]
-		increase the times-changed of M by 1;
-		increase diaperChangeCount by 1;
-		repeat with C running through diapers carried by M:
-			only destroy C;
-		if M is diaper change after special ready: [the monster does something unique after a diaper change and replacing other clothes]
-			compute diaper change after special of M;
+		if M is human and M is intelligent and M is not matron and there is a worn tanto and the class of the player is vixen:
+			if the player is getting unlucky:
+				say "You were hoping to find an opening to surprise [NameDesc of M], but [he of M] never dropped [his of M] guard! [GotUnluckyFlav]";
+			otherwise:
+				let S be a random worn tanto;
+				say "[BigNameDesc of M] [bold type]has let down [his of M] guard! [roman type]Do you want to surprise [him of M] with a [ShortDesc of S] to [his of M] neck?";
+				if the player is consenting:
+					say "You swing the tanto up, and now [NameDesc of M] has a blade to [his of M] neck, and is completely at your mercy.";
+					if S is midnight tanto, transform S into loveheart tanto;
+					let D be a random worn illusory kimono;
+					if (diaper quest is 1 or there is a worn diaper) and D is not kimono-of-deception:
+						if D is clothing, transform D into kimono-of-deception;
+						class summon kimono-of-deception;
+					otherwise if diaper quest is 0 and D is not kimono-of-distraction:
+						if D is clothing, transform D into kimono-of-distraction;
+						class summon kimono-of-distraction;
+					if the player is able to speak, say "[variable custom style]'Surprise, sweetie.'[roman type][line break]";
+					say "[BigNameDesc of M] snarls, suddenly completely at your mercy. [big he of M] lets go of your body, and holds [his of M] hands up in surrender.";
+					now M is doing nothing special;
+					compute defeat of M;
+		if M is changing the player:
+			repeat with C running through temporarily-removed diaper covers carried by M: [diaper covers need to go on first]
+				if C is actually summonable:
+					say "[BigNameDesc of M] replaces your [C].";
+					layer C correctly;
+					now C is worn by the player;
+				otherwise:
+					now C is not temporarily-unlocked; [failed to make them wear it; we don't want this flag hanging around forever]
+					say "[BigNameDesc of M] drops your [C] on the ground.";
+					now C is in the location of the player;
+				now C is not temporarily-removed;
+			repeat with C running through worn temporarily-unlocked diaper covers:
+				let K be a random off-stage specific-key;
+				if K is nothing or there is a specific-key covering C:
+					say "[if M is intelligent][BigNameDesc of M] locks the padlock at the waistband of [NameDesc of C].[otherwise]The padlock at the waistband of [NameDesc of C] suddenly clicks shut![end if]";
+					now C is locked;
+					now C is not temporarily-unlocked;
+				otherwise:
+					compute M locking C with K;
+			if M is diaper cover locking:
+				let C be a random worn diaper cover;
+				if C is clothing:
+					if C is not locked:
+						let K be a random off-stage specific-key;
+						if K is a thing:
+							compute M locking C with K;
+				otherwise:
+					let K be a random off-stage specific-key;
+					if K is a thing:
+						now C is a random diaper cover carried by M;
+						if C is nothing:
+							repeat with TC running through the tradableItems of M:
+								if TC is diaper cover, now C is TC;
+						if C is actually summonable:
+							summon C uncursed;
+							say "[BigNameDesc of M] puts a [C] on you!";
+							compute M locking C with K;
+			repeat with C running through temporarily-removed clothing carried by M:
+				if C is actually summonable:
+					say "[BigNameDesc of M] replaces your [C].";
+					layer C correctly;
+					now C is worn by the player;
+				now C is not temporarily-removed;
+				if C is temporarily-unlocked:
+					let K be a random off-stage specific-key;
+					if K is nothing or there is a specific-key covering C:
+						say "[if M is intelligent][BigNameDesc of M] locks [NameDesc of C].[otherwise]With a click, it would appear that [NameDesc of C] is suddenly locked again![end if]";
+						now C is locked;
+						now C is not temporarily-unlocked;
+					otherwise:
+						compute M locking C with K;
+			repeat with C running through worn crotch-displaced clothing:
+				compute M replacing C;
+				now C is not temporarily-displaced;
+			repeat with C running through worn temporarily-unlocked clothing:
+				let K be a random off-stage specific-key;
+				if K is nothing or there is a specific-key covering C:
+					say "[if M is intelligent][BigNameDesc of M] locks [NameDesc of C].[otherwise]With a click, it would appear that [NameDesc of C] is suddenly locked again![end if]";
+					now C is locked;
+					now C is not temporarily-unlocked;
+				otherwise:
+					compute M locking C with K;
+			validate layers; [just in case anything fucky happened with clothing layers]
+			increase the times-changed of M by 1;
+			increase diaperChangeCount by 1;
+			repeat with C running through diapers carried by M:
+				only destroy C;
+			if M is diaper change after special ready: [the monster does something unique after a diaper change and replacing other clothes]
+				compute diaper change after special of M;
 		if M is changing the player: [the above function may have hijacked what's going on]
 			satisfy M;
 			let vm be a random video-monitor in the location of the player;
@@ -482,7 +556,7 @@ To compute diaper change complete cummies reward of (M - a monster):
 	FavourDown M by 2.
 
 To say DiaperChangeRemovalFlav of (M - a monster):
-	say "[BigNameDesc of M] [if current-diaper is diaper]slowly pulls your [ShortDesc of current-diaper] away[otherwise]eases off your [ShortDesc of current-diaper][end if][if current-diaper is messed knickers]. Taking out several baby wipes, [he of M] gently but efficiently wipes your bottom down until it is completely clean[end if].".
+	say "[BigNameDesc of M] [if current-diaper-change-top-level is diaper]slowly pulls your [ShortDesc of current-diaper-change-top-level] away[otherwise]eases off your [ShortDesc of current-diaper-change-top-level][end if][if current-diaper-change-top-level is messed knickers]. Taking out several baby wipes, [he of M] gently but efficiently wipes your bottom down until it is completely clean[end if].".
 
 To say DiaperPowderFlav of (M - a monster):
 	say "".
@@ -531,6 +605,12 @@ To say DiaperSpace of (M - a monster):
 
 To say DiaperChangeStart of (M - a monster):
 	say "[BigNameDesc of M] rolls you onto your back and pins you down with one strong arm.".
+
+To say LockDeclarationFlav of (M - a monster) for (C - a diaper):
+	if M is intelligent, say "[speech style of M]'[one of]Hold still now...'[or]One more little thing...'[in random order][roman type][line break]".
+To say LockCommentFlav of (M - a monster) for (C - a diaper):
+	if the diaper-duration of M > 0, say "[speech style of M]'[one of]Just to make sure you don't take this off before you're allowed.'[or]Just to make sure you don't cheat and get a change without me.'[or]If you ever want that removed, you'd better learn to hold in your tinkles!'[in random order][roman type][line break]";
+	otherwise say "[speech style of M]'[one of]I am in charge of when you get a change now!'[or]If you want a change, you'd better find me later and ask nicely, haha!'[in random order][roman type][line break]".
 
 To compute unique diaper change effect of (M - a monster):
 	do nothing.
@@ -657,6 +737,8 @@ Section - Masturbating
 	if debugmode > 0, say "O is [O]";
 	decide on O.]
 
+masturbation-swimming is initially false.
+
 To compute masturbation of (M - a monster):
 	if M is not masturbating the player:[fixes all the masturbation related stuff before masturbation]
 		initiate masturbation of M;
@@ -665,7 +747,13 @@ To compute masturbation of (M - a monster):
 	otherwise if the sex-length of M > 0:
 		progress masturbation of M;[handles a turn of masturbation]
 	decrease the sex-length of M by 1;
-	if the sex-length of M <= 0, compute masturbation aftermath of M.[if the player came or the monster lost interest, finish up]
+	if the sex-length of M <= 0:
+		if masturbation-swimming is true:
+			compute bathing;
+			now masturbation-swimming is false;
+		compute masturbation aftermath of M; [if the player came or the monster lost interest, finish up]
+	otherwise if masturbation-swimming is true:
+		compute bathing.
 
 To initiate masturbation of (M - a monster):
 	say MasturbationDeclarationFlav of M;
@@ -888,32 +976,71 @@ To decide which number is the max-forcefeed-length of (M - YOUR NPC HERE):
 
 ]
 
+pet-food-contents is a text that varies.
+pet-food-liquid is a liquid-object that varies.
+
 To compute forcefeed of (M - a monster):
-	if M is not feeding the player:
-		compute forcefeed start of M;
-	progress the forcefeeding of M;
-	let S be the chosen-forcefeed-round of M;
-	compute forcefeed round S of M;
-	if the sex-length of M <= 0:
-		dislodge M;
-		if M is in the location of the player:
-			say ForcefeedAftermath of M;
-			say ForcefeedAfterFlav of M;
+	if M is intelligent and M is not feeding the player and there is a worn locked tearable gag:
+		say PetForcefeedDeclarationFlav of M;
+		now M is grabbing the player;
+		now M is feeding the player;
+		follow the monster removing gag rule; [If there's a gag, let's take it off for now]
+		now pet-food-liquid is water;
+		if a random number between 1 and 2 is 1, now pet-food-liquid is milk;
+		if a random number between 1 and 2 is watersports fetish, now pet-food-liquid is urine;
+		if diaper messing < 3 or the stomach-food of the player > 1:
+			now pet-food-contents is the substituted form of "[variable pet-food-liquid]";
+		otherwise if the player is thirsty:
+			now pet-food-contents is the substituted form of "[one of]mushy banana[or]mushy peas[or]soggy bread[in random order] in [variable pet-food-liquid]";
+		otherwise:
+			now pet-food-contents is the substituted form of "[one of]plain rice[or]mushy peas[in random order]";
+		say PetForcefeedStartFlav of M;
+		say "Do you lap it up?";
+		if the player is bimbo consenting:
+			say "You clench your eyes shut and [if diaper messing < 3 or the stomach-food of the player > 1]drink[otherwise]eat[end if] from the pet bowl. [moderateHumiliateReflect]";
+			if diaper messing < 3 or the stomach-food of the player > 1 or the player is thirsty:
+				compute slightly addictive swallowing of pet-food-liquid by 2;
+			if diaper messing >= 3 and the stomach-food of the player <= 1:
+				StomachFoodUp 2;
 			replace any gags;
 			let vm be a random video-monitor in the location of the player;
 			if vm is video-monitor and the video-caller of vm is not the throne and vm is not recording-disgrace:
 				now vm is recording-disgrace; [since diaper event is over by now, we need to set up the recorded event right away.]
-				let T be the substituted form of "being fed like a baby."; [note that the video-event always needs to be a present participle]
+				let T be the substituted form of "being forced to eat out of a dog bowl."; [note that the video-event always needs to be a present participle]
 				now the video-event of vm is T;
-		if M is not grabbing the player, satisfy M. [this allows for us to have transitioned into another punishment during the aftermath]
+			satisfy M;
+		otherwise:
+			say "You refuse to consume this stuff out of a pet bowl!";
+			say "[speech style of M]'Bad [if the class of the player is puppygirl]doggy[otherwise if the class of the player is catgirl]kitty[otherwise]pet[end if]!'[roman type][line break]";
+			compute angry punishment of M;
+			say "[BigNameDesc of M] loses interest for now.";
+			bore M;
+	otherwise:
+		if M is not feeding the player:
+			compute forcefeed start of M;
+		progress the forcefeeding of M;
+		let S be the chosen-forcefeed-round of M;
+		compute forcefeed round S of M;
+		if the sex-length of M <= 0:
+			dislodge M;
+			if M is in the location of the player:
+				say ForcefeedAftermath of M;
+				say ForcefeedAfterFlav of M;
+				replace any gags;
+				let vm be a random video-monitor in the location of the player;
+				if vm is video-monitor and the video-caller of vm is not the throne and vm is not recording-disgrace:
+					now vm is recording-disgrace; [since diaper event is over by now, we need to set up the recorded event right away.]
+					let T be the substituted form of "being fed like a baby."; [note that the video-event always needs to be a present participle]
+					now the video-event of vm is T;
+			if M is not grabbing the player, satisfy M. [this allows for us to have transitioned into another punishment during the aftermath]
 
 To compute forcefeed start of (M - a monster):
 	now the sex-length of M is the forcefeed-length of M;
 	now the chosen-forcefeed-round of M is the max-forcefeed-length of M + 1; [because we always subtract at least 1 before the first forcefeed]
 	say ForcefeedDeclarationFlav of M;
-	follow the monster removing gag rule; [If there's a gag, let's take it off for now]
 	now M is grabbing the player;
 	now M is feeding the player;
+	follow the monster removing gag rule; [If there's a gag, let's take it off for now]
 	say ForcefeedStartFlav of M.
 
 To decide which number is the forcefeed-length of (M - a monster):
@@ -940,11 +1067,17 @@ To progress the forcefeeding of (M - a monster):
 To say ForcefeedPissDeclarationFlav of (M - a monster):
 	say "[speech style of M]'[one of]I've prepared a special drink for your din-dins!'[or]Here you go baby, today your juice drink is nice and warm and straight from the tap...'[in random order][roman type][line break]".
 
+To say PetForcefeedDeclarationFlav of (M - a monster):
+	say "[speech style of M]'Here, pet! It's time for your yum-yums.'[roman type][line break]".
+
 To say ForcefeedDeclarationFlav of (M - a monster):
 	say "[speech style of M]'[one of]It looks like it's time for your din-dins!'[or]Babies need to eat and drink to keep up their strength... and to keep their bowels moving.'[in random order][roman type][line break]".
 
 To say ForcefeedPillDeclarationFlav of (M - a monster):
 	say "[speech style of M]'[one of]This is good for your health, I promise...'[or]This will keep your bowels moving!'[then at random][roman type][line break]".
+
+To say PetForcefeedStartFlav of (M - a monster):
+	say "[BigNameDesc of M] slides a bowl of [pet-food-contents] underneath your chin.".
 
 To say ForcefeedStartFlav of (M - a monster):
 	say "[BigNameDesc of M] takes you onto [his of M] lap, your back pressing into [his of M] chest, and holds you very tightly. You won't be able to escape now.".
@@ -973,6 +1106,47 @@ To say ForcefeedAftermath of (M - a monster):
 
 To say ForcefeedAfterFlav of (M - a monster):
 	say "[speech style of M]'[one of]What a good [boy of the player]! Off you trot now!'[or]There you go, all nice and full now I'm sure?'[or]That was [tasty], wasn't it? Good [boy of the player].'[in random order][roman type][line break]".
+
+To compute potion forcefeed of (M - a monster):
+	let T be a random carried forcefeedable thing;
+	if T is a thing:
+		compute M forcefeeding T;
+	otherwise: [should never happen]
+		say "[speech style of M]'That's strange, I could have sworn that I saw something I could feed you... Oh well. Call this a freebie, I guess.'[roman type][line break]";
+		satisfy M.
+
+To compute (M - a monster) forcefeeding (T - a thing):
+	now potion-forcefeed-cooldown is a random number between 100 and 300;
+	say PotionForcefeedDeclarationFlav of M for T;
+	say PotionForcefeedFlav of M for T;
+	compute potion forcefeed of T;
+	if the player is able to speak, say PotionForcefeedReactionFlav of T.
+
+To say PotionForcefeedDeclarationFlav of (M - a monster) for (T - a thing):
+	if T is clothing, say "[speech style of M]'[one of]What's this? A snack you're saving for later? Why not now!'[or]It's about time you ate this, don't you think?'[in random order][roman type][line break]";
+	otherwise say "[speech style of M]'[one of]If you're carrying this around, you might as well [if T is alchemy product or T is bottle]drink[otherwise]eat[end if] it!'[or]Why are you carrying this [ShortDesc of T] around, huh? You must want to [if T is alchemy product or T is bottle]drink[otherwise]eat[end if] it!'[in random order][roman type][line break]".
+
+To say PotionForcefeedFlav of (M - a monster) for (T - a thing):
+	if T is clothing, say "[BigNameDesc of M] rips open [if the used condoms of T is 1]the used condom[otherwise]one of the used condoms[end if] pinned to your [NameDesc of T] and, gripping you by the throat, squeezes the [semen] into your mouth!";
+	otherwise say "[BigNameDesc of M] grips you by the neck, then takes [NameDesc of T] and forces the contents down your throat!".
+
+To compute potion forcefeed of (T - a thing):
+	do nothing.
+To compute potion forcefeed of (T - a clothing):
+	compute condom eating of T.
+To compute potion forcefeed of (T - an alchemy product):
+	StomachUp 1;
+	compute alchemy product effect of T;
+	destroy T.
+To compute potion forcefeed of (T - a bag lunch):
+	compute bagluncheat of T.
+To compute potion forcefeed of (T - a bottle):
+	if the fill-colour of T is not creamy and the fill-colour of T is not golden and the fill-colour of T is not white and the fill-colour of T is not murky, StomachUp 2;
+	compute drinking T;
+	DoseDown T.
+
+To say PotionForcefeedReactionFlav of (T - a thing):
+	say "[variable custom style]'Eurgh, FUCK!'[roman type][line break]".
 
 Section - Suppository
 
@@ -1012,6 +1186,7 @@ To say SuppositoryAftermath of (M - a monster):
 
 To say SuppositoryAfterFlav of (M - a monster):
 	if M is intelligent, say "[speech style of M]'Don't worry, I'm not planning to stick around to witness the [']fireworks[']...'[roman type][line break]".
+
 
 Section - Confiscation
 
@@ -1088,8 +1263,13 @@ To say BabywearDonationDeclarationFlav of (M - a monster) on (C - a clothing):
 
 To compute (M - a monster) babywear donating (C - a clothing):
 	say BabywearDonationFlav of M on C;
-	if C is bondage:
-		summon C locked;
+	let K be a random off-stage specific-key;
+	if M is not intelligent or K is nothing:
+		summon C cursed;
+		compute quest of C; [we do this silently since the quest will be displayed in the examine call below]
+	otherwise if C is bondage or C is diaper cover or C is dress or C is submissive collar:
+		summon C uncursed;
+		compute M locking C with K;
 	otherwise:
 		summon C cursed;
 		compute quest of C; [we do this silently since the quest will be displayed in the examine call below]
@@ -1108,14 +1288,14 @@ To say BabywearDonationAfterFlav of (M - a monster) on (C - a clothing):
 Section - Untidiness Punishment
 
 To compute untidiness punishment of (M - a monster):
-	if diaper messing >= 7:
+	if diaper messing >= 6:
 		if trashcan is worn:
 			compute trashcan punishment of M;
 			satisfy M;
 		otherwise if black hood is off-stage and black hood is actually summonable and trashcan is unclash summonable:
 			compute trashcan punishment of M;
 			satisfy M;
-		otherwise if there is a regional diaper pail:
+		otherwise if diaper messing >= 7 and there is a regional diaper pail:
 			compute diaper pail punishment of M;
 			let vm be a random video-monitor in the location of the player;
 			if vm is video-monitor and the video-caller of vm is not the throne and vm is not recording-disgrace:
@@ -1124,11 +1304,15 @@ To compute untidiness punishment of (M - a monster):
 				now the video-event of vm is T;
 			satisfy M;
 		otherwise:
+			compute soiled diaper dropping of M;
+			say DiaperUntidyPunishCommenceFlav of M;
+			if the health of M >= the maxhealth of M, now the health of M is the maxhealth of M - 1; [make them hurt so they won't do nice stuff like diaper change]
 			compute diaper pail substitute punishment of M;
 	otherwise:
 		compute soiled diaper dropping of M;
-		if M is intelligent, say "[speech style of M]'Let me show you what happens if you refuse to clean up after yourself...'[roman type][line break]";
+		say DiaperUntidyPunishCommenceFlav of M;
 		if the health of M >= the maxhealth of M, now the health of M is the maxhealth of M - 1; [make them hurt so they won't do nice stuff like diaper change]
+		compute diaper pail substitute punishment of M.
 
 To compute diaper pail substitute punishment of (M - a monster):
 	compute spanking of M.
@@ -1180,8 +1364,8 @@ To say FaceSmushDeclareFlav of (M - a monster) with (D - a thing):
 	if M is intelligent, say "[speech style of M]'[one of]There, smell that!'[or]Take a deep breath, you disgusting worm.'[or]Breathe your own shame in nice and deep now.'[or]Take a good look. This is all you're good for now.'[in random order][roman type][line break]".
 
 To compute trashcan punishment of (M - a monster):
-	if trashcan is worn:
-		say "[speech style of M]'Let me show you what happens if you refuse to clean up after yourself...'[roman type][line break]";
+	if trashcan is not worn:
+		say TrashcanSummonCommenceFlav of M;
 		say "[BigNameDesc of M] produces a black hood, and forces it down over your head!";
 		summon black hood cursed;
 		class summon trashcan;
@@ -1190,8 +1374,15 @@ To compute trashcan punishment of (M - a monster):
 		say "[BigNameDesc of M] drops [NameDesc of SD] into the trashcan!";
 		destroy SD;
 		increase the diaper-fill of trashcan by 1;
-	say "[speech style of M]'Now you ARE the diaper pail!'[roman type][line break]".
+	say TrashcanUseFlav of M.
 
+To say TrashcanSummonCommenceFlav of (M - a monster):
+	if M is intelligent, say "[speech style of M]'Let me show you what happens if you refuse to clean up after yourself...'[roman type][line break]".
+To say TrashcanUseFlav of (M - a monster):
+	if M is intelligent, say "[speech style of M]'Now you ARE the diaper pail!'[roman type][line break]".
+
+To say DiaperUntidyPunishCommenceFlav of (M - a monster):
+	if M is intelligent, say "[speech style of M]'Let me show you what happens if you refuse to clean up after yourself...'[roman type][line break]".
 
 Part - Diaper Facesitting
 
@@ -1650,7 +1841,6 @@ To compute diaper cumrag use of (M - a monster):
 	otherwise:
 		say DiaperCumragResistance of M;
 		say DiaperCumragResistanceFlav of M;
-	say DiaperCumragEjaculationFlav of M;
 	compute diaper cumrag ejaculating of M;
 	compute diaper cumrag image of M;
 	if (diaper cumrag >= 2 and player-numerical-response < 4) or player-numerical-response < 2:

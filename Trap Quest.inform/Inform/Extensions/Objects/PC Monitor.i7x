@@ -94,7 +94,8 @@ To CheckActivation of (C - a video-monitor):
 To beginCall of (C - a video-monitor):
 	let M be the video-caller of C;
 	now the currentlyOn of C is 1;
-	say "[bold type]Suddenly, you hear the sound of a common digital video call ringtone. [roman type]You look up with a start and see that the mirror attached to a TV wall mount is now sparkling with magic ripples. Inside the mirror, you can see the face of [if M is slutty sister]one of the Nintendolls who put you in this game, along with the faces of several unfamiliar people in suits.[otherwise][FriendStatus of M][end if][if currentlyPublicDisgracing is false][NewAppearanceReaction of M][NewCircumstanceReaction of M][FriendRespond to M][end if]".
+	say "[bold type]Suddenly, you hear the sound of a common digital video call ringtone. [roman type]You look up with a start and see that the mirror attached to a TV wall mount is now sparkling with magic ripples. Inside the mirror, you can see the face of [if M is slutty sister]one of the Nintendolls who put you in this game, along with the faces of several unfamiliar people in suits.[otherwise][FriendStatus of M][end if][if currentlyPublicDisgracing is false][NewAppearanceReaction of M][NewCircumstanceReaction of M][FriendRespond to M][end if]";
+	maybe-map-display C.
 
 To say FriendStatus of (M - a monster):[The status of your friend could potentially change]
 	say "the face of your [RelationDesc of M] [MediumDesc of M] is staring back at you.";
@@ -431,7 +432,7 @@ Check entering security interface:
 		say "[second custom style]'AUTHORISED DNA CONFIRMED IN DETECTED SPERMATOZOA CELLS. WELCOME BACK, SIR.'[roman type][line break]The screen turns green, and the metal door slides open!";
 		now security interface is authenticated;
 	otherwise:
-		say "[second custom style]'NO AUTHORISED DNA WAS FOUND IN ALL DETECTED SPERMATOZOA CELLS. ACCESS DENIED.'[roman type][line break]";
+		say "[second custom style]'NO AUTHORISED DNA WAS FOUND IN [if F is vagina and (the pregnancy of the player is 1 or the pregnancy of the player is 2)]SUBJECT'S UNBORN FETUS[otherwise]ALL DETECTED SPERMATOZOA CELLS[end if]. ACCESS DENIED.'[roman type][line break]";
 		now security interface is unauthenticated;
 	say "The pole suddenly retracts, pulling the sphere out of your [variable F] with brutal speed and strength.";
 	stimulate F from security interface;
@@ -498,6 +499,11 @@ To construct unique buttons for (T - security interface):
 			now the ButtonImage entry is examine-image of id-card;
 			now the ButtonCommand entry is "insert [text-shortcut of id-card] in [text-shortcut of T]";
 			now the ButtonColour entry is lightModeFullGreen;
+		if infernal gem is held and ButtonTableFull is 0:
+			choose a blank row in the Table of Buttons;
+			now the ButtonImage entry is examine-image of infernal gem;
+			now the ButtonCommand entry is "insert [text-shortcut of infernal gem] in [text-shortcut of T]";
+			now the ButtonColour entry is lightModeFullGreen;
 		repeat with S running through held soiled-diapers:
 			if ButtonTableFull is 0:
 				choose a blank row in the Table of Buttons;
@@ -505,7 +511,7 @@ To construct unique buttons for (T - security interface):
 				now the ButtonCommand entry is "insert [text-shortcut of S] in [text-shortcut of T]";
 				now the ButtonColour entry is lightModeFullGreen;
 		repeat with S running through held clothing:
-			if total condoms of S > 0 and ButtonTableFull is 0:
+			if (total condoms of S > 0 or pimp is inseminating S or demon lord is inseminating S or mechanic is inseminating S) and ButtonTableFull is 0:
 				choose a blank row in the Table of Buttons;
 				now the ButtonImage entry is examine-image of S;
 				now the ButtonCommand entry is "insert [text-shortcut of S] in [text-shortcut of T]";

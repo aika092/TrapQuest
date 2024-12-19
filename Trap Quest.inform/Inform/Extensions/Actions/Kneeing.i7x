@@ -25,6 +25,16 @@ To decide which number is the knee damage of (P - a person):
 	if the player is diaper kicking:
 		decrease A by 1;
 		if damage-explained > 1, say "-1 (diaper penalty) ";
+	repeat with C running through worn clothing:
+		if the front-skirt-length of C >= 6 and C is not slitted and C is crotch-in-place and C is not crotch-unzipped:
+			if the front-skirt-length of C >= 9:
+				if damage-explained > 1, say "(also, skirt too long - attack unavailable) ";
+				[now A is 0;]
+			otherwise:
+				let L be 10 - the front-skirt-length of C; [front-skirt-length should be 6, 7 or 8, which convert to 4, 3, 2 respectively]
+				let previousA be A;
+				now A is (A * L) / 5; [80%, 60% or 40% damage]
+				if damage-explained > 1, say "-[previousA - A] (skirt length penalty of [if L is 4]20[otherwise if L is 3]40[otherwise]60[end if]%) ";
 	if flight-attendant-skirt is not worn:
 		if the player is zeroG:
 			if damage-explained > 1, say "[if A * -1 >= 0]+[end if][A * -1] (weightless) ";
@@ -80,10 +90,14 @@ Carry out kneeing:
 			say "Your body is weightless, meaning you can hardly get any force into your knee without sending yourself backwards.";
 		otherwise if the player is on tiptoes and flight-attendant-skirt is not worn:
 			say "Your body is so light that you don't have the grounding to put your full strength into the attack.";
-		otherwise if the player is diaper kicking:
-			say "Your displeasure at wearing a soggy diaper slightly hampers the power of your knee.";
 		otherwise:
-			say "You knee [NameDesc of the noun] with all your might.";
+			if the player is diaper kicking:
+				say "Your displeasure at wearing a soggy diaper slightly hampers the power of your knee.";
+			otherwise:
+				say "You knee [NameDesc of the noun] with all your might.";
+		repeat with C running through worn clothing:
+			if the front-skirt-length of C >= 6 and C is not slitted and C is crotch-in-place and C is not crotch-unzipped:
+				say "The length of your [ShortDesc of C] [if the front-skirt-length of C is 8]severely [otherwise if the front-skirt-length of C is 7]greatly [end if][one of]restricts the movement of your knee[or]hampers your ability to put power behind the strike[or]weakens the blow[or]lowers the maximum damage of your attack[at random] ";
 		compute combat diaper squish;
 		damage A on the noun;
 		compute upright fatigue gain;

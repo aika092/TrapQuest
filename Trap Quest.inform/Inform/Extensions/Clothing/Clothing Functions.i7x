@@ -62,9 +62,10 @@ To damage (K - clothing):
 To repair (C - clothing):
 	replace C;
 	now C is top-intact;
-	if C is crotch-ripped:
-		if C is hobble-skirted, now C is crotch-skirted;
-		otherwise now C is crotch-intact;
+	if C is crotch-skirt-eligible:
+		now C is crotch-skirted;
+	otherwise if C is crotch-ripped:
+		now C is crotch-intact;
 	if C is zippable:
 		now C is crotch-zipped;
 		if C is worn, force clothing-focus redraw; [Forces redraw of clothing inventory window]

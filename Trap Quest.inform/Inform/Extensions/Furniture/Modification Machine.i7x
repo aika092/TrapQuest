@@ -142,7 +142,7 @@ To compute (M - a modification machine) removing all protection from (F - a fuck
 	otherwise:
 		while givenUp is 0 and the player is ass protected:
 			let C be a random top level ass protection clothing;
-			if C is removable:
+			if C is tearable:
 				say "An arm with a metal claw at the end moves towards your butt, powerfully pulls off your [ShortDesc of C], and discards it on the ground!";
 				now C is in the location of the player;
 				dislodge C;
@@ -190,7 +190,7 @@ To compute (M - a modification machine) babifying:
 			say "A robotic arm pushes a small rubber pellet into your [asshole].[line break][variable custom style]Was that a[one of][or]nother[stopping] suppository?![roman type][line break]";
 			increase suppository by 7;
 			if the player is feeling full, say "As if to answer your question, your stomach begins to grown and churn.";
-	otherwise if the total fill of belly is 0 and a random number between 1 and 2 is 1:
+	otherwise if enema fetish is 1 and the total fill of belly is 0 and a random number between 1 and 2 is 1:
 		compute M removing all protection from asshole;
 		if the player is not ass protected:
 			say "A robotic arm pushes a small tube into your [asshole]. A moment later, you can feel yourself being pumped full of an enema! Moments later, you are brought to bursting point, your belly bulging under the strain. The tube is removed, leaving you with a desperate urge to [bold type]expel[roman type] all the liquid.";

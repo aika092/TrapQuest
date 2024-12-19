@@ -276,7 +276,7 @@ To compute perception of (M - mechanic):
 		calm M.
 
 Definition: mechanic is distracted:
-	if mechanic is male and diaper quest is 1 and hotel changing station is in the location of mechanic and mechanic is not dangerous and mystical amulet is not held by mechanic:
+	if mechanic is male and diaper quest is 1 and mechanic is in the location of the player and hotel changing station is in the location of mechanic and mechanic is not dangerous and mystical amulet is not held by mechanic:
 		say "[BigNameDesc of mechanic] kneels down in front of [NameDesc of hotel changing station].[line break][speech style of mechanic]'Time for a quick maintenance checkup...'[roman type][line break][big he of mechanic] gets to work checking the gears and circuitboards and everything in between. Soon [he of mechanic] reaches the wristcuffs.[line break][speech style of mechanic]'Ah, I see the problem, the auto-latch trigger has got a little worn, if I just...'[roman type][line break]Suddenly, the wristcuffs spring to life, and latch themselves around [NameDEsc of mechanic][']s wrists![line break][speech style of mechanic]'..Shit.'[roman type][line break]That's all [he of mechanic] can say before the changing station yanks [him of mechanic] inside, and whips the door shut behind [him of mechanic].[line break][speech style of mechanic]'No, wait! Don't do that... Part of my curse means that if I ever get diapered, I'll be [if mechanic is presenting as male]transformed into[otherwise]made totally incontinent[end if]...'[roman type][line break]But it's too late. You see the robotic arms working on pulling something up [his of mechanic] legs, and then a moment later you are watching with [if mechanic is presenting as male][horror the sex addiction of the player] as [his of mechanic] face and chest twists and morphs, turning into a woman[otherwise][horror the diaper addiction of the player] as [his of mechanic] face twists in discomfort as [he of mechanic] loses control of [his of mechanic] bladder[end if]!";
 		now mechanic is female;
 		say "[speech style of mechanic]'Aww fuck... Now I REALLY need to get my hands on that amulet.'[roman type][line break][big he of mechanic] moans, and you can tell that [his of mechanic] new diaper is immediately being soaked with [urine].[paragraph break]When [NameDesc of mechanic] is finally released, and stumbles out of the machine, [he of mechanic] looks very visibly diapered, and very visibly pissed off. You realize that you have a slight grin on your face, and try to wipe it off, but it's too late.[line break][speech style of mechanic]'You! You think this is funny?!'[roman type][line break]It looks like [NameDesc of mechanic] plans to take out [his of mechanic] frustration on you...";
@@ -753,9 +753,7 @@ To say TaxDesc of (M - mechanic):
 	say "Demand [if there is a worn steel collar]you remove the steel collar[otherwise]an item[end if] in return for mercy.".
 
 To compute tax return of (M - mechanic):
-	if M is choice-taxable:
-		compute choice tax return of M;
-	otherwise:
+	if there is a worn steel collar:
 		let S be a random worn steel collar;
 		if S is steel collar:
 			say "With a snap of [his of M] fingers, the steel collar unlatches itself and drops from your neck.[line break][speech style of M]'You're going to pay for making me waste such an expensive gadget.'[roman type][line break]";
@@ -775,7 +773,9 @@ To compute tax return of (M - mechanic):
 				now X is in the location of the player;
 				compute autotaking X;
 			otherwise:
-				compute default tax return of M.
+				compute default tax return of M;
+	otherwise:
+		compute choice tax return of M.
 
 To standard loot (M - mechanic):
 	let X be a random off-stage plentiful bracelet;

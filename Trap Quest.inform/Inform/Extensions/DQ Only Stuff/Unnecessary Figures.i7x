@@ -64,15 +64,11 @@ To decide which figure-name is Figure of Fairy Cutscene 1:
 	decide on figure of small image.
 To decide which figure-name is Figure of Fairy Cutscene 2:
 	decide on figure of small image.
-To decide which figure-name is Figure of Fairy Cutscene 3:
-	decide on figure of small image.
 To decide which figure-name is Figure of Fairy Cutscene 4:
 	decide on figure of small image.
 To decide which figure-name is Figure of Fairy Cutscene 5:
 	decide on figure of small image.
 To decide which figure-name is Figure of Fairy Cutscene 6:
-	decide on figure of small image.
-To decide which figure-name is Figure of Fairy Cutscene 7:
 	decide on figure of small image.
 To decide which figure-name is Figure of Fairy Cutscene 8:
 	decide on figure of small image.
@@ -179,9 +175,12 @@ To decide which figure-name is Figure of Wild Gladiator Cutscene 4:
 	decide on figure of small image.
 To decide which figure-name is Figure of Wild Gladiator Cutscene 5:
 	decide on figure of small image.
-
-To decide which figure-name is Figure of lecture 2:
+To decide which figure-name is Figure of lecture 3:
 	decide on figure of small image.
+To decide which figure-name is Figure of lecture 3:
+	decide on figure of small image.
+
+
 
 To decide which figure-name is Figure of caged urinal princess:
 	decide on figure of small image.
@@ -207,6 +206,13 @@ To decide which figure-name is Figure of hellhound:
 	decide on figure of small image.
 
 To decide which figure-name is Figure of hotel bed cutscene 1:
+	decide on figure of small image.
+
+To decide which figure-name is figure of walled creature bwc oral:
+	decide on figure of small image.
+To decide which figure-name is figure of walled creature bbc oral:
+	decide on figure of small image.
+To decide which figure-name is figure of walled creature demon oral:
 	decide on figure of small image.
 
 To decide which figure-name is Figure of Wench Cutscene 9:
@@ -458,8 +464,6 @@ To decide which figure-name is Figure of Vine Boss Cutscene 2:
 	decide on figure of small image.
 
 To decide which figure-name is Figure of Water Bomb:
-	decide on figure of small image.
-To decide which figure-name is Figure of Water Bomb Cutscene 1:
 	decide on figure of small image.
 To decide which figure-name is Figure of Water Bomb Cutscene 2:
 	decide on figure of small image.

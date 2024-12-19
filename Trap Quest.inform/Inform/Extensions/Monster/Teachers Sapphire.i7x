@@ -11,6 +11,7 @@ The text-shortcut of teacher-serenity is "tese".
 
 Figure of serenity is the file "NPCs/School/Teacher/teacher1.png".
 Figure of enslaved diapered serenity is the file "NPCs/School/Teacher/teacher1c.png".
+Figure of serenity heel lesson is the file "NPCs/School/Teacher/teacher1d.jpg".
 
 To decide which figure-name is the monster-image of (M - teacher-serenity):
 	decide on figure of serenity.
@@ -49,6 +50,8 @@ heel-lesson is a lesson. The lesson-teacher of heel-lesson is teacher-serenity.
 
 To decide which number is the min-students of (L - heel-lesson):
 	decide on 2.
+To say LessonTitle of (L - heel-lesson):
+	say "High Heels".
 
 To compute teaching of (L - heel-lesson):
 	allocate 65 seconds;
@@ -74,6 +77,7 @@ To compute teaching of (L - heel-lesson):
 	let ST be a random student in the location of the player;
 	say "[BigNameDesc of ST] stands up quickly.[line break][speech style of ST]'I'll do it!'[roman type][line break]It looks like you could choose to be the second challenger, if you wish. Do you want to volunteer? ";
 	if the player is bimbo consenting:
+		maybe-map-display Figure of serenity heel lesson;
 		let R be (a random number between 1 and 5) - the heel-skill of ST;
 		say "You stand up and raise your hand [if the delicateness of the player > 11]nervously[otherwise if the delicateness of the player < 5]confidently[end if]. You feel several stares boring into the back of your head, but you keep your own gaze fixed firmly on the teacher. [big he of M] nods and smiles.[line break][speech style of M]'[one of]Fine, let's see what you've got[or]Let's hope you do better this time[stopping].'[roman type][line break]You are both taken to one end of the front of the room and then spun round several times until you are quite dizzy. You can hardly see straight, never mind walk! And yet you are quickly given a command to go! The girl who makes it the furthest across the room wins. You see that [NameDesc of ST] has already taken [his of ST] first awkward step and so you quickly try to do the same. You feel so off-balance! And yet you must win. You take another step. [if X > 1 and X > R]THUMP. That's it, you're already flat on your butt! It's over! You hear a few sniggers from other students.[line break][variable custom style]Why did I think this was a good idea?![otherwise if X > R]Step. Wobble. Step. Wobble. [BigNameDesc of ST] is increasing [his of ST] lead! You try to go faster and stagger even more, almost toppling over completely. In the end you are forced to watch as you are beaten by a good couple of feet to the other end of the room. [variable custom style]Darn![otherwise]Step. Wobble. Step. Wobble. [BigNameDesc of ST] is getting further ahead of you! You focus as hard as you can and speed up. You catch [him of ST] up! Stumbling the last few feet, you half lean and half collapse onto the end wall moments before [BigNameDesc of ST].[line break][variable custom style]I've won![end if][roman type][line break]";
 		if X > R:
@@ -91,6 +95,7 @@ To compute teaching of (L - heel-lesson):
 			HappinessDown ST by 3;
 			update students; [an important line which makes boring old students disappear and new cool ones appear]
 	otherwise if the number of students in the location of the player > 1:
+		maybe-map-display Figure of serenity heel lesson;
 		let ST2 be a random student in the location of the player;
 		while ST is ST2:
 			now ST2 is a random student in the location of the player;
@@ -107,9 +112,10 @@ roulette-lesson is a lesson. The lesson-teacher of roulette-lesson is teacher-se
 Definition: roulette-lesson is lesson-appropriate:
 	if (alcohol fetish is 1 or lactation fetish is 1 or diaper quest is 1) and the player is able to drink, decide yes;
 	decide no.
-
 To decide which number is the min-students of (L - roulette-lesson):
 	decide on 2.
+To say LessonTitle of (L - roulette-lesson):
+	say "Probability 101".
 
 Figure of roulette is the file "Special/Cutscene/cutscene-serenity-roulette1.jpg".
 
@@ -273,6 +279,7 @@ The text-shortcut of teacher-angela is "tean".
 
 Figure of angela is the file "NPCs/School/Teacher/teacher2.png".
 Figure of enslaved diapered angela is the file "NPCs/School/Teacher/teacher2c.png".
+Figure of kissing angela is the file "NPCs/School/Teacher/teacher2d.jpg".
 
 To decide which figure-name is the monster-image of (M - teacher-angela):
 	decide on figure of angela.
@@ -320,6 +327,8 @@ make-up-lesson is a lesson. The lesson-teacher of make-up-lesson is teacher-ange
 
 To decide which number is the min-students of (L - make-up-lesson):
 	decide on 0.
+To say LessonTitle of (L - make-up-lesson):
+	say "Make Up".
 
 To compute teaching of (L - make-up-lesson):
 	let M be the lesson-teacher of L;
@@ -449,6 +458,8 @@ patience-lesson is a lesson. The lesson-teacher of patience-lesson is teacher-an
 
 To decide which number is the min-students of (L - patience-lesson):
 	decide on 2.
+To say LessonTitle of (L - patience-lesson):
+	say "Patience and Desperation".
 
 Definition: patience-lesson is lesson-appropriate:
 	if diaper lover is 0, decide no;
@@ -541,8 +552,8 @@ To compute teaching of (L - patience-lesson):
 		update students;
 		if TM is -10:
 			say "As you study your new [']title['], [NameDesc of M] walks over to you, and flicks you on the head.";
-			now the implant of pledge-lesson-toilet is 1;
-			execute pledge-lesson-toilet;
+			now pledge-lesson-toilet is implanted;
+			pledge-execute pledge-lesson-toilet;
 			say "[variable custom style]I can't use the toilet any more?! But... But... Then... How will I... Oh god...[roman type][paragraph break]";
 		say "[BigNameDesc of M] claps [his of M] hands.[line break][speech style of M]'Clazz dizmizzed!'[roman type][line break]";
 		if nurse is alive and nurse is undefeated:

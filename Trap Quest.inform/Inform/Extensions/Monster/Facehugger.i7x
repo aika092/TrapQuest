@@ -93,7 +93,7 @@ To compute action (N - a number) of (M - a facehugger):
 		anger M;
 		interest M;
 		let O be a random orifice;
-		if O is undefended and M is not wrangling thighs:
+		if O is undefended and O is not actually occupied and M is not wrangling thighs:
 			say "[BigNameDesc of M] leaps at you, trying to latch onto your [variable O]!";
 			cutshow figure of facehugger cutscene 1 for M;
 			let D be a random number between 1 and the dexterity of the player;
@@ -269,8 +269,10 @@ To decide which number is the grossness of hugger-gag: decide on 9.
 [Definition: a hugger-gag (called S) is removable:
 	decide no.]
 
+Figure of hugger-gag is the file "Items/Accessories/Head/hugger1.png".
+
 To decide which figure-name is the clothing-image of (M - hugger-gag):
-	decide on figure of facehugger.
+	decide on figure of hugger-gag.
 
 To say ShortDesc of (C - hugger-gag):
 	say "facehugger".
@@ -308,6 +310,8 @@ Definition: hugger-gag is fetish appropriate: decide no. [Never appears randomly
 
 To decide which number is the girth of (A - hugger-gag):
 	decide on 1.
+
+Figure of hugger-panties is the file "Items/Clothes/Lower/Underwear/Special/hugger2.png".
 
 A hugger-panties is a kind of knickers. Understand "hugging" as hugger-panties. The plug size of a hugger-panties is 1. A hugger-panties is biological. A hugger-panties has a number called charge.
 

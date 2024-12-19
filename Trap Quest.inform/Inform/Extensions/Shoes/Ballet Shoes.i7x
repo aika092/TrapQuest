@@ -60,7 +60,7 @@ The ballet shoes fix rule is listed in the diaper quest fix rules.
 
 Part 2 - Sissy Ballet Boots
 
-A sissy ballet boots is a kind of ballet shoes. A sissy ballet boots is usually unique. A sissy ballet boots is usually pvc.
+A sissy ballet boots is a kind of ballet shoes. A sissy ballet boots is usually unique. A sissy ballet boots is usually pvc. The text-shortcut of a sissy ballet boots is usually "ssbs".
 
 Definition: a sissy ballet boots is class-relevant: [elsewise they get overwritten by the baby bonnet during the latex prisoner setup]
 	if the player is actually an adult baby, decide yes;
@@ -85,7 +85,7 @@ To decide which number is the unique cringe of (C - a sissy ballet boots):
 
 Part 3 - Thigh High Ballet Boots
 
-A thigh high ballet boots is a kind of ballet shoes. A thigh high ballet boots is usually unique. A thigh high ballet boots is usually latex.
+A thigh high ballet boots is a kind of ballet shoes. A thigh high ballet boots is usually unique. A thigh high ballet boots is usually latex. The text-shortcut of a thigh high ballet shoes is usually "thbs".
 
 To decide which figure-name is the clothing-image of (H - a thigh high ballet boots):
 	decide on the figure of thigh high ballet boots.

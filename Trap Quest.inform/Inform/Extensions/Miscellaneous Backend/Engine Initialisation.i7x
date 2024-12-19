@@ -154,6 +154,9 @@ To fill in fake table blanks:
 		unless there is a choice in row 63 of the Table of Settings, now choice in row 63 of Table of Settings is 0;
 		unless there is a choice in row 64 of the Table of Settings, now choice in row 64 of Table of Settings is 0;
 		unless there is a choice in row 65 of the Table of Settings, now choice in row 65 of Table of Settings is 0;
+		unless there is a choice in row 66 of the Table of Settings, now choice in row 66 of Table of Settings is 45;
+		unless there is a choice in row 67 of the Table of Settings, now choice in row 67 of Table of Settings is 0;
+		unless there is a choice in row 68 of the Table of Settings, now choice in row 68 of Table of Settings is 1.
 
 To fill in legacy table blanks:
 	unless there is a choice in row 32 of the Table of Player Options, now choice in row 32 of Table of Player Options is 0;
@@ -214,6 +217,9 @@ To fill in legacy table blanks:
 	unless there is a choice in row 87 of the Table of Player Options, now choice in row 87 of Table of Player Options is 1;
 	unless there is a choice in row 88 of the Table of Player Options, now choice in row 88 of Table of Player Options is 0;
 	unless there is a choice in row 89 of the Table of Player Options, now choice in row 89 of Table of Player Options is 0;
+	unless there is a choice in row 90 of the Table of Player Options, now choice in row 90 of Table of Player Options is 0;
+	unless there is a choice in row 91 of the Table of Player Options, now choice in row 91 of Table of Player Options is 0;
+	unless there is a choice in row 92 of the Table of Player Options, now choice in row 92 of Table of Player Options is 0;
 
 To fill in custom flavour blanks:
 	unless there is a name in row 10 of the Table of Info Options:
@@ -364,15 +370,15 @@ To retrieve diaper options:
 			now the current menu is the Table of Diaper Options;
 			carry out the displaying activity;
 			clear the screen;
-		if diaper quest is 1 and the player is a may 2023 diaper donator and diaper messing >= 3 and weight gain fetish is 0:
+		if diaper quest is 1 and diaper messing >= 3 and weight gain fetish is 0:
 			now the current menu is the Table of Hungry Messer Options;
 			carry out the displaying activity;
 			clear the screen;
-		if the player is a december 2022 diaper donator:
-			if diaper messing >= 4, now the current menu is the Table of Messy Diaper Swapping Options;
-			otherwise now the current menu is the Table of Wet Diaper Swapping Options;
-			carry out the displaying activity;
-			clear the screen;
+		if diaper messing >= 4, now the current menu is the Table of Messy Diaper Swapping Options;
+		otherwise now the current menu is the Table of Wet Diaper Swapping Options;
+		carry out the displaying activity;
+		clear the screen;
+		if the player is a top donator:
 			now the current menu is the Table of Diaper Cumrag Options;
 			carry out the displaying activity;
 			clear the screen.
@@ -384,7 +390,7 @@ To retrieve toilet allowance options:
 		clear the screen.
 
 To retrieve silicone milk options:
-	if lactation fetish > 0 and artificial enhancements fetish > 0 and the player is the donator:
+	if lactation fetish > 0 and artificial enhancements fetish > 0:
 		now the current menu is the Table of Silicone Milk Options;
 		carry out the displaying activity;
 		clear the screen.

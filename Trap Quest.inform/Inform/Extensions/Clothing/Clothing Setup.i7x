@@ -3,7 +3,11 @@ Clothing Setup by Clothing begins here.
 To Set Up Clothing:
 	if tutorial is 0:
 		repeat with C running through clothing:
-			if C is not immune to change, set up C.
+			if C is not immune to change:
+				set up C;
+			otherwise: [we still make sure that the crotch flags are set up correctly]
+				if C is crotch-skirt-eligible and C is not crotch-ripped, now C is crotch-skirted;
+				if C is zippable, now C is crotch-zipped.
 
 To decurse (C - a clothing):
 	if C is cursed, silently bless C;
@@ -20,7 +24,7 @@ the clothing "C."
 
 +!]
 To set up (C - a clothing):
-	repair C; [this also correctly sets up zippable crotches]
+	repair C; [this also correctly sets up zippable crotches and crotch-skirted long skirts]
 	set up armour of C;
 	set up influence of C;
 	set up magic state of C;
@@ -49,7 +53,11 @@ To uniquely set up (C - a clothing):
 
 Definition: a clothing (called C) is discovered varied:
 	if C is not cursable, decide no; [Items that can't be cursed also can't get these things]
-	if C is rare or C is unique, decide no; [rare items shouldn't be found with like a -3]
+	if C is unique, decide no;
+	decide yes.
+
+Definition: a clothing (called C) is discovered negative:
+	if C is rare or C is not discovered varied, decide no; [rare items shouldn't be found with like a -3]
 	decide yes.
 
 [!<SetUpMagicStateOfClothing>+
@@ -74,6 +82,7 @@ To set up default magic state of (C - a clothing):
 			increase the raw-magic-modifier of C by a random number between -1 and 1;
 			increase the raw-magic-modifier of C by a random number between -1 and 1;
 			increase the raw-magic-modifier of C by a random number between -1 and 1;
+			if the raw-magic-modifier of C < 0 and C is not discovered negative, now the raw-magic-modifier of C is 0;
 		set up BUC of C;
 		if diaper lover > 0 and the magic-modifier of C < 0 and a random number between 1 and 6 is 1: [more incontinence influencing clothing ahoy!]
 			now C is bladder-incontinence-influencing;
@@ -83,17 +92,17 @@ To set up default magic state of (C - a clothing):
 
 To set up BUC of (C - a clothing):
 	let R be a random number between (0 - unlucky) and 8;
-	if R <= 2, now C is cursed;
+	if R <= 2 and C is discovered negative, now C is cursed;
 	if R >= 7 and C is not cursed, now C is blessed.
 
 To set up magic attribute of (C - a clothing):
 	set up rare magic attribute of C.
 
 To set up rare magic attribute of (C - a clothing):
-	if C is blandness:
+	if C is blandness and C is discovered negative:
 		if a random number between 1 and 10 is unlucky:
 			now C is provocation;
-		otherwise if ((diaper quest is 0 and the player is a may 2023 top donator) or (diaper quest is 1 and the player is a may 2023 diaper donator)) and a random number between 0 and 24 <= unlucky:
+		otherwise if a random number between 0 and 24 <= unlucky:
 			now C is autobinding.
 
 Clothing Setup ends here.

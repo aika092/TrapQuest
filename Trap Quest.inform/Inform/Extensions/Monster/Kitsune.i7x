@@ -193,7 +193,7 @@ To execute (T - talk-greet) for (M - kitsune):
 	if breasts is exposed, progress quest of chest-exposing-quest from M;
 	if the target-disguise of M is M:
 		compute basic greeting to M;
-		increase the greeted-count of M by 1;
+		[increase the greeted-count of M by 1;]
 		now the greet-window of M is -1;
 	otherwise:
 		say "[BigNameDesc of M] suddenly performs a 360 degrees twirl!";
@@ -276,11 +276,11 @@ To compute offer reward of (M - kitsune) for (T - a thing):
 		compute autotaking wooden-sandals;
 	otherwise if the favour of M > 18 and the special-gifted of M is 2:
 		say "[speech style of M]'You could use some class. Have this!'[roman type][line break]";
-		blandify and reveal illusory kimono;
-		now illusory kimono is in the location of M;
+		blandify and reveal kimono-of-illusions;
+		now kimono-of-illusions is in the location of M;
 		say "A strange, shimmering kimono appears on the ground!";
 		now the special-gifted of M is 3;
-		compute autotaking illusory kimono;
+		compute autotaking kimono-of-illusions;
 	otherwise if the favour of M > 23 and the special-gifted of M is 3 and midnight tanto is off-stage:
 		say "[speech style of M]'Okay, now this is my best little present. Enjoy!'[roman type][line break]";
 		blandify and reveal midnight tanto;

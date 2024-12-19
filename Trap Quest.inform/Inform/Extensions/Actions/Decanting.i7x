@@ -64,6 +64,7 @@ Carry out decanting something with:
 To compute standard decanting of (D - a dispenser):
 	allocate 6 seconds;
 	say DecantingFlav of the noun;
+	focus-consider the noun;
 	now the fill-colour of the noun is fill-colour of the second noun;
 	now the noun is boring-origin;
 	if the doses of the second noun > the max-doses of the noun:

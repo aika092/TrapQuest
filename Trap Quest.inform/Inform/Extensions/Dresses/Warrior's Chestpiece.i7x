@@ -1,6 +1,6 @@
 Warrior's Chestpiece by Dresses begins here.
 
-A warrior chestpiece is a kind of overdress. A warrior chestpiece is usually metal. A warrior chestpiece is usually unique. A warrior chestpiece is usually totally-exclusive. A warrior chestpiece is usually unskirted. A warrior chestpiece is usually belly exposing. A warrior chestpiece is usually purity. A warrior chestpiece is usually not-top-displacable. Understand "warrior's" as warrior chestpiece.
+A warrior chestpiece is a kind of overdress. A warrior chestpiece is usually metal. A warrior chestpiece is usually unique. A warrior chestpiece is usually totally-exclusive. The skirt-length of A warrior chestpiece is 0. A warrior chestpiece is usually belly exposing. A warrior chestpiece is usually purity. A warrior chestpiece is usually not-top-displacable. Understand "warrior's" as warrior chestpiece.
 
 Definition: a warrior chestpiece is class-relevant:
 	if the class of the player is virgin warrior, decide yes;
@@ -182,7 +182,7 @@ To say TransformReaction of (C - hide warrior chestpiece):
 
 Part 6 - Golden Warrior Priestess Outfit
 
-golden warrior priestess outfit is an immodest warrior chestpiece. golden warrior priestess outfit is metal. golden warrior priestess outfit is unskirted. golden warrior priestess outfit is crotch-intact. golden warrior priestess outfit is ridiculously low cut. golden warrior priestess outfit is totally-exclusive.
+golden warrior priestess outfit is an immodest warrior chestpiece. golden warrior priestess outfit is metal. The skirt-length of golden warrior priestess outfit is 0. golden warrior priestess outfit is crotch-intact. golden warrior priestess outfit is ridiculously low cut. golden warrior priestess outfit is totally-exclusive.
 
 Definition: golden warrior priestess outfit is class-relevant:
 	if the class of the player is virgin warrior or the class of the player is priestess, decide yes;
@@ -235,7 +235,7 @@ To compute virginity-loss of (H - golden warrior priestess outfit):
 
 Part 7 - Virgin Magical Girl Outfit
 
-virgin magical girl outfit is an immodest warrior chestpiece. virgin magical girl outfit is knee-length. virgin magical girl outfit is belly exposing. virgin magical girl outfit is low cut. virgin magical girl outfit is totally-exclusive.
+virgin magical girl outfit is an immodest warrior chestpiece. The skirt-length of virgin magical girl outfit is 6. virgin magical girl outfit is belly exposing. virgin magical girl outfit is low cut. virgin magical girl outfit is totally-exclusive.
 
 Figure of virgin magical girl outfit is the file "Items/Clothes/Upper/Special/Warrior/magicaldress3.png".
 
@@ -279,7 +279,7 @@ To compute virginity-loss of (H - virgin magical girl outfit):
 
 Part 8 - Virgin Princess Outfit
 
-virgin princess outfit is an immodest warrior chestpiece. virgin princess outfit is silk. virgin princess outfit is belly exposing. virgin princess outfit is neck covering. virgin princess outfit is unskirted. virgin princess outfit is crotch-intact. virgin princess outfit is not-displacable-always-fuckable. virgin princess outfit is ridiculously low cut. virgin princess outfit is totally-exclusive. virgin princess outfit is normally-partially-nipple-covering.
+virgin princess outfit is an immodest warrior chestpiece. virgin princess outfit is silk. virgin princess outfit is belly exposing. virgin princess outfit is neck covering. The skirt-length of virgin princess outfit is 0. virgin princess outfit is crotch-intact. virgin princess outfit is not-displacable-always-fuckable. virgin princess outfit is ridiculously low cut. virgin princess outfit is totally-exclusive. virgin princess outfit is normally-partially-nipple-covering.
 
 Figure of virgin princess outfit is the file "Items/Clothes/Upper/Special/Warrior/princess1.png".
 

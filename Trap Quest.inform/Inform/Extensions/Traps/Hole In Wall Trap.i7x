@@ -93,7 +93,7 @@ To say StickyTriggerFlav of (T - hole-in-wall):
 	now T is revealed;
 	if playerRegion is Hotel: [could have just been portaled to the academy by the receptionist]
 		say "You find yourself sliding straight for the hole in the opposite wall at an alarming speed!";
-		if diaper quest is 1 and hole-in-wall-scene of woman-player is 0 and the woman-bimbo of woman-player is 5 and the player is a june 2022 diaper donator and woman-player is relaxed redeploy appropriate:
+		if diaper quest is 1 and hole-in-wall-scene of woman-player is 0 and the woman-bimbo of woman-player is 5 and woman-player is relaxed redeploy appropriate:
 			now woman-player is in HoleInWall;
 			now the woman-status of woman-player is 25;
 			now the hole-in-wall-scene of woman-player is 1;
@@ -102,7 +102,7 @@ To say StickyTriggerFlav of (T - hole-in-wall):
 To say StickyTriggerFail of (T - hole-in-wall):
 	say ". You manage to avoid falling over!";
 	now T is revealed;
-	if diaper quest is 1 and hole-in-wall-scene of woman-player is 0 and the woman-bimbo of woman-player is 5 and the player is a june 2022 diaper donator and woman-player is relaxed redeploy appropriate:
+	if diaper quest is 1 and hole-in-wall-scene of woman-player is 0 and the woman-bimbo of woman-player is 5 and woman-player is relaxed redeploy appropriate:
 		now woman-player is in HoleInWall;
 		now the woman-status of woman-player is 25;
 		now the hole-in-wall-scene of woman-player is 1;
@@ -284,7 +284,7 @@ To compute punishment of (P - hole-strip):
 
 hole-enema is hole-in-wall punishment.
 Definition: hole-enema (called P) is appropriate:
-	if asshole is actually occupied, decide no;
+	if enema fetish is 0 or asshole is actually occupied, decide no;
 	decide yes.
 
 To compute punishment of (P - hole-enema):

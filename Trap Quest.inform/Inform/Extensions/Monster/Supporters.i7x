@@ -1031,7 +1031,9 @@ To say CondomPieFlav of (M - supporter-jim) in (F - a fuckhole):
 	say "[BigNameDesc of M] ejaculates [his of M] entire load into the condom! You can feel the tip bulging and ballooning inside of you. [big he of M] narrates to an imaginary camera behind you.[line break][speech style of M]'But despite the efforts of Protestants to promote the idea of sex for pleasure, children continue to multiply everywhere.'[roman type][line break]".
 
 To say CondomPinFlav of (M - supporter-jim) on (C - a clothing):
-	say "[speech style of M]'When Martin Luther nailed his protest up to the church door in 1517, he may not have realised the full significance of what he was doing, but four hundred years later, thanks to him, my dear, I can wear whatever I want on my John Thomas. And Protestantism doesn't stop at the simple condom. Oh, no! I can force you to wear this magical one afterwards if I want. Sheaths that are designed not only to protect but also to enhance the glorification of sexual congress.'[roman type][line break]Before you can stop [him of M], [NameDesc of M] presses the [one of]newly created and now used [or]strongly-smelling [or]wobbling, semen-swollen [or][or][cycling]condom to your [C]. After giving you a final mischievous grin, [he of M] yawns, lies back, and falls asleep.".
+	say "[speech style of M]'When Martin Luther nailed his protest up to the church door in 1517, he may not have realised the full significance of what he was doing, but four hundred years later, thanks to him, my dear, I can wear whatever I want on my John Thomas. And Protestantism doesn't stop at the simple condom. Oh, no! I can force you to wear this magical one afterwards if I want. Sheaths that are designed not only to protect but also to enhance the glorification of sexual congress.'[roman type][line break]";
+	say GenericCondomPinFlav of M on C;
+	say "After giving you a final mischievous grin, [he of M] yawns, lies back, and falls asleep.".
 
 To say CreampieFlav of (M - supporter-jim) in (F - a fuckhole):
 	say "[BigNameDesc of M] moans with pleasure as [he of M] ejaculates [his of M] [if the girth of M < 5]smallish [otherwise if the girth of M > 8]gargantuan [otherwise if the girth of M > 6]huge [end if]load into your [variable F]! [big he of M] grips your hips tightly as [he of M] keeps his [DickDesc of M] firmly lodged as deep as it can go inside you and you can feel it constantly twitching as [he of M] cums.[line break][speech style of M]'[if F is vagina]Hindu, Taoist, Mormon spill theirs just anywhere, but God loves those who treat their semen with more care[otherwise]Did that hurt? Tough titty if it did, you nasty, spotted prancer[end if]!'[roman type][line break]Having thoroughly drained [his of M] [if M is a balls-haver]balls[otherwise][DickDesc of M][end if] inside of you, [his of M] [DickDesc of M] pops out as [he of M] lies backwards and quickly falls into a well-earned sleep.".
@@ -1109,6 +1111,7 @@ To say RockingReactionSpeech of (M - supporter-jim): [When your NPC sees them ro
 Part - Misako
 
 supporter-misako is a supporter. supporter-misako is female. The leftover-type of supporter-misako is 207.
+The blind-status of supporter-misako is -1. [immune]
 
 The supporter-name of supporter-misako is "Misako".
 
@@ -1507,9 +1510,6 @@ To say CondomRejectFlav of (M - supporter-serena): ['mating' is a flag that indi
 
 To say CondomPieFlav of (M - supporter-serena) in (F - a fuckhole):
 	say "[BigNameDesc of M] ejaculates [his of M] entire load into the condom! You can feel the tip bulging and ballooning inside of you. ".
-
-To say CondomPinFlav of (M - supporter-serena) on (C - a clothing):
-	say "Before you can stop [him of M], [NameDesc of M] presses the [one of]newly created and now used [or]strongly-smelling [or]wobbling, semen-swollen [or][or][cycling]condom to your [C]. After giving you a final mischievous grin, [he of M] yawns, lies back, and falls asleep.".
 
 To say CreampieFlav of (M - supporter-serena) in (F - a fuckhole):
 	say "[BigNameDesc of M] moans with pleasure as [he of M] ejaculates [his of M] [if the girth of M < 5]smallish [otherwise if the girth of M > 8]gargantuan [otherwise if the girth of M > 6]huge [end if]load into your [variable F]! [big he of M] grips your hips tightly as [he of M] keeps his [DickDesc of M] firmly lodged as deep as it can go inside you and you can feel it constantly twitching as [he of M] cums. Having thoroughly drained [his of M] [if M is a balls-haver]balls[otherwise]load[end if] inside of you, [his of M] [DickDesc of M] pops out as [he of M] lies backwards and quickly falls into a well-earned sleep.".

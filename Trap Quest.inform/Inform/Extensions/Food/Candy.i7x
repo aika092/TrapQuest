@@ -78,7 +78,7 @@ Carry out TQeating candy corn:
 
 To compute CandyCornEat:
 	let SP be a random off-stage spider pacifier;
-	if halloween content is 1 and SP is actually summonable pacifier:
+	if halloween content is 1 and SP is actually summonable fetish appropriate pacifier:
 		say "You feel the sweets fizzing in your stomach, and then, a split second later, you are stuck with a [MediumDesc of SP] in your mouth!";
 		summon SP cursed with quest;
 	otherwise if the number of stalking wisps is 0:

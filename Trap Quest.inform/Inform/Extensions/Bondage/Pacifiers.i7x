@@ -71,6 +71,9 @@ Definition: a spider pacifier is class-relevant:
 	if the class of the player is trick-or-treater, decide yes;
 	decide no.
 Definition: a spider pacifier is halloween themed: decide yes.
+A slime pacifier is a kind of baby pacifier. There is 1 slime pacifier. The printed name of slime pacifier is "[clothing-title-before]slime pacifier[clothing-title-after]". The text-shortcut of slime pacifier is "slpa".
+Definition: a slime pacifier is green themed: decide yes.
+Definition: a slime pacifier is fetish appropriate: decide no. [doesn't appear ranadomly]
 
 Definition: a baby pacifier is same-type:
 	if theme-share-target is baby pacifier, decide yes;
@@ -146,6 +149,7 @@ Figure of yellow pacifier is the file "Items/Accessories/Head/pacifier3.png".
 Figure of sparkly princess pacifier is the file "Items/Accessories/Head/pacifier4.png".
 Figure of ghost pacifier is the file "Items/Accessories/Head/pacifier5.png".
 Figure of spider pacifier is the file "Items/Accessories/Head/pacifier6.png".
+Figure of slime pacifier is the file "Items/Accessories/Head/pacifier7.png".
 
 To decide which figure-name is clothing-image of (C - cock pacifier):
 	decide on figure of cock pacifier.
@@ -161,6 +165,8 @@ To decide which figure-name is clothing-image of (C - a ghost pacifier):
 	decide on figure of ghost pacifier.
 To decide which figure-name is clothing-image of (C - a spider pacifier):
 	decide on figure of spider pacifier.
+To decide which figure-name is clothing-image of (C - a slime pacifier):
+	decide on figure of slime pacifier.
 
 To say ClothingDesc of (C - cock pacifier):
 	say "This pacifier has a penis shaped sucker, [if the oral sex addiction of the player < 7]to further humiliate the wearer[otherwise]to keep you happy by letting you practise sucking [manly-penis] all the time.[end if]".
@@ -182,6 +188,9 @@ To say ClothingDesc of (C - a ghost pacifier):
 
 To say ClothingDesc of (C - a spider pacifier):
 	say "This large black pacifier has a smiling green spider on the front!".
+
+To say ClothingDesc of (C - a slime pacifier):
+	say "This large green pacifier is made out of some sort of magical slime!".
 
 To decide which number is the strength-influence of (C - a tiger pacifier):
 	let S be 2;

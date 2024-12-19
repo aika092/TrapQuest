@@ -49,6 +49,7 @@ Figure of Berri Cutscene 14a is the file "NPCs/MultiFloor/berri/woman-cutscene14
 Figure of Berri Cutscene 14b is the file "NPCs/MultiFloor/berri/woman-cutscene14b.jpg".
 Figure of Berri Cutscene 15a is the file "NPCs/MultiFloor/berri/woman-cutscene15a.jpg".
 Figure of Berri Cutscene 15b is the file "NPCs/MultiFloor/berri/woman-cutscene15b.jpg".
+Figure of Berri Cutscene 16 is the file "NPCs/MultiFloor/berri/woman-cutscene16.jpg".
 
 To decide which figure-name is the monster-image of (M - woman-player):
 	if M is caged and M is in the location of dominatrix-cage, decide on the examine-image of dominatrix-cage;
@@ -66,6 +67,8 @@ To decide which figure-name is the monster-image of (M - woman-player):
 	if the woman-status of woman-player is 101:
 		if there is a wrestler in Holding Pen, decide on figure of berri cutscene 15a;
 		otherwise decide on figure of berri cutscene 15b;
+	if the woman-status of woman-player is 98:
+		decide on figure of berri cutscene 16;
 	if the woman-bimbo of M < 3:
 		if the woman-status of woman-player is 91 and the mechanic-scene of woman-player <= 3:
 			if woman-player is messy:
@@ -672,7 +675,7 @@ Chapter - Diaper Pail Scene
 
 woman-player has a number called pail-scene.
 
-Report going when there is a diaper pail in the location and the pail-scene of woman-player is 0 and the woman-bimbo of woman-player is 4:
+Report going when there is a diaper pail in the location and the pail-scene of woman-player is 0 and the woman-bimbo of woman-player is 5 and diaper messing >= 7:
 	if debugmode is 1, say "Checking if berri can appear.";
 	let M be a random regional monster carrying a soiled-diaper;
 	if woman-player is relaxed redeploy appropriate and M is monster:
@@ -680,7 +683,7 @@ Report going when there is a diaper pail in the location and the pail-scene of w
 		now the pail-scene of woman-player is 1;
 		now woman-player is in the location of the player;
 		interest woman-player;
-		say "As you arrive here you see [NameDesc of woman-player][']s legs flailing from the top of a diaper pail, its lid wide open. It looks like [he of woman-player][']s stuck! And judging by the horrid smell coming from within, you can imagine what [he of woman-player] is surrounded by. You could try to rescue [him of woman-player] by [bold type]pull[roman type]ing [him of woman-player].".
+		say "As you arrive here you see [NameDesc of woman-player][']s legs flailing from the top of a diaper pail, its lid wide open. It looks like [he of woman-player][']s stuck! [big he of woman-player] is surrounded by countless disgusting soiled diapers. You could try to rescue [him of woman-player] by [bold type]pull[roman type]ing [him of woman-player].".
 
 Check pulling woman-player when the woman-status of woman-player is 98:
 	if the player is immobile, say "You're a bit busy!" instead;
@@ -688,16 +691,19 @@ Check pulling woman-player when the woman-status of woman-player is 98:
 	if the player is not able to manually use manual dexterity, do nothing instead;
 	if the player is in danger, say "You can't do that in the middle of combat!" instead;
 	allocate 6 seconds;
-	if a random number between the strength of the player and 30 > 20:
+	if the number of soiled-diaper in the location of the player > a random number between 5 and 13 or the player is getting lucky:
 		let M be a random regional monster carrying a soiled-diaper;
-		say "You succeed in lifting [NameDesc of woman-player] out of [his of woman-player] stinky prison.[line break][speech style of woman-player]'Thank you so much for saving me, [NameBimbo][if M is monster]! The awful [MediumDesc of M] found a stinky diaper left lying around the [playerRegion] and thought it was mine! But it wasn't, I promise[end if]!'[roman type][line break]";
+		say "You succeed in pulling [NameDesc of woman-player] out of [his of woman-player] stinky prison.[line break][speech style of woman-player]'Thank you so much for saving me, [NameBimbo][if M is monster]! The awful [MediumDesc of M] found a stinky diaper left lying around the [playerRegion] and thought it was mine! But it wasn't, I promise[end if]!'[roman type][line break]";
 		if M is monster:
 			repeat with SD running through soiled-diaper carried by M:
 				destroy SD;
 		now the woman-status of M is 1;
 	otherwise:
-		say "You try to lift [NameDesc of woman-player] out of the diaper pail but [he of woman-player] is so heavy! You don't manage it this time. Meanwhile, the smell of the stinky used diapers inside fills your nostrils, overwhelming you.";
-		DiaperAddictUp 1.
+		say "You start trying to help [NameDesc of woman-player] out of the diaper pail by removing some of the soiled diapers, but [he of woman-player] is still stuck for now! Meanwhile, the smell of the stinky used diapers inside fills your nostrils, overwhelming you.";
+		repeat with N running from 1 to 3:
+			let SD be a random off-stage soiled-diaper;
+			if SD is a thing, now SD is in the location of the player;
+		SmellGrossOut MessyDiaperFacesitGrossnessLevel;
 
 Chapter - Christmas Box Scene
 
@@ -842,6 +848,7 @@ A time based rule (this is the berri ass hook rule):
 			otherwise if the player is prone:
 				say "You can't try to do anything to [NameDesc of woman-player] until you stand up.";
 			otherwise if the player is able to use manual dexterity:
+				now temporaryYesNoBackground is examine-image of woman-player;
 				reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 				say "You can do something to [NameDesc of woman-player], if you like.";
 				set numerical response 1 to "try to pull down the hook";
@@ -1239,7 +1246,7 @@ To compute berri hole in wall exit:
 To construct unique buttons for (D - hole-in-wall):
 	if the hole-in-wall-scene of woman-player > 0 and woman-player is in HoleInWall and ButtonTableFull is 0:
 		choose a blank row in the Table of Buttons;
-		now the ButtonImage entry is figure of TakeAllButton;
+		now the ButtonImage entry is figure of WrangledIcon;
 		now the ButtonCommand entry is "pull [text-shortcut of D]";
 		now the ButtonColour entry is lightModeFullGreen;
 		if the player is upright, now the ButtonColour entry is lightModeFullYellow; [turn yellow - need to be kneeling]

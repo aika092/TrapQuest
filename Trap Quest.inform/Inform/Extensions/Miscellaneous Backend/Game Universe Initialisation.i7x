@@ -27,13 +27,23 @@ To Start The Machine:
 			set up M;
 		wait until animations are over;
 		now the player is in Mansion01;
+	otherwise if nursery resident is 1:
+		now playerRegion is Hotel;
+		Set Up The Woods;
+		follow the setting up woods monsters rules;
+		Set Up The Hotel;
+		follow the setting up hotel monsters rules;
+		repeat with M running through alive nonexistent monsters:
+			set up M;
+		wait until animations are over;
+		now the player is in Hotel22;
 	otherwise:
 		wait until animations are over;
 		now the player is in Dungeon12;
 	resolve graphics windows mayhem;
 	fix window overhang;
 	if debugmode > 1, say "Now configuring pink smoke.";
-	move pink smoke backdrop to all smoky rooms;
+	move pink smoke backdrop to all pink-smoky rooms;
 	move water-body backdrop to all water-bodied rooms;
 	if debugmode > 1, say "Now configuring toilets.";
 	move toilet backdrop to all toilets rooms;
@@ -191,10 +201,38 @@ To Start The Machine:
 			[set up ghostly tentacle;
 			now ghostly tentacle is in a random placed mandatory haunted room;]
 		display inventory-focus stuff;
+	otherwise if nursery resident is 1:
+		let D be a random eligible small diaper;
+		if D is nothing, now D is a random eligible medium diaper;
+		if D is nothing, now D is a random eligible diaper;
+		if D is nothing, now D is a random diaper;
+		summon D uncursed;
+		summon teddy-bear-diaper-cover locked;
+		now teddy-bear-diaper-cover is bed wetting;
+		let K be a random off-stage specific-key;
+		if K is a thing:
+			now K is covering teddy-bear-diaper-cover;
+			now K is carried by matron;
+		let DR be blue-romper;
+		summon DR locked;
+		let K be a random off-stage specific-key;
+		if K is a thing:
+			now K is covering DR;
+			now K is carried by matron;
+		now the times-met of matron is 1;
+		now matron is motherly;
+		if the bladder of the player < 5, now the bladder of the player is 5;
+		UrineSoakUp D by the soak-limit of D;
+		if diaper messing >= 3 and rectum < 3, now rectum is 3;
+		now nursery crib is grabbing the player;
+		now the stance of the player is 1;
+		now the charge of nursery crib is 30;
+		regionally place matron;
+		say "You wake up inside [NameDesc of nursery crib], wearing a locked [MediumDesc of DR], and you can feel layers of padding underneath. And you can feel that the diaper you're wearing is far from dry![line break][variable custom style]Oh god, what have I gotten myself into already?![roman type][line break]The immediate question, then, is do you try to escape, or do you wait for someone to arrive and hopefully let you free?";
 	otherwise:
 		now the pink pill is carried by the player;
 		say "You notice you are holding a small pink pill in your hand.";
-	if latex prisoner is 1, initialise latex prisoner;
+	if latex prisoner is 1 and nursery resident is 0, initialise latex prisoner;
 	if bondage prisoner is 1, initialise bondage prisoner;
 	if bondage protection is 2, initialise bondage protection;
 	if debugmode > 1, say "Now initialising wardrobe.";
@@ -316,15 +354,18 @@ To initialise bondage protection:
 		now C is in holding pen.
 
 Definition: a clothing is pinkWardrobeAppropriate:
+	if it is worn, decide no;
 	if tough-shit is 0 and it is basic loot and the unworn outrage of it <= 3 + the notManlyFactor of it and (diaper quest is 0 or the unworn cringe of it <= 3 + the notManlyFactor of it), decide yes;
-	if tough-shit is 1 and it is not unique and (diaper quest is 1 or the unworn outrage of it > 4 + the notManlyFactor of it) and the unworn outrage of it <= 10 + the notManlyFactor of it and (diaper quest is 0 or the unworn cringe of it > 4 + the notManlyFactor of it) and (diaper quest is 0 or the unworn cringe of it <= 10 + the notManlyFactor of it), decide yes;
+	if tough-shit is 1 and it is not unique and it is fetish appropriate and (diaper quest is 1 or the unworn outrage of it > 4 + the notManlyFactor of it) and the unworn outrage of it <= 10 + the notManlyFactor of it and (diaper quest is 0 or the unworn cringe of it > 4 + the notManlyFactor of it) and (diaper quest is 0 or the unworn cringe of it <= 10 + the notManlyFactor of it), decide yes;
 	decide no.
 Definition: a bra is pinkWardrobeAppropriate:
+	if it is worn, decide no;
 	if it is fetish appropriate and it is not in pink wardrobe and it is not unique and (the player is male or the min size of it <= the largeness of breasts) and the max size of it >= the largeness of breasts + 2 and it is actually dense and it is not product and the support of it > 0 and the unworn outrage of it <= 3 + the notManlyFactor of it and (diaper quest is 1 or the unworn outrage of it > 4 + the notManlyFactor of it) and the unworn outrage of it <= 10 + the notManlyFactor of it and (diaper quest is 0 or the unworn cringe of it > 4 + the notManlyFactor of it) and (diaper quest is 0 or the unworn cringe of it <= 10 + the notManlyFactor of it), decide yes;
 	decide no. [We allow rare bras]
 Definition: a knickers is pinkWardrobeAppropriate:
+	if it is worn, decide no;
 	if tough-shit is 0 and it is basic loot and the unworn outrage of it <= 6 + the notManlyFactor of it and (diaper quest is 0 or the unworn cringe of it <= 3 + the notManlyFactor of it), decide yes;
-	if tough-shit is 1 and it is not unique and (diaper quest is 1 or the unworn outrage of it > 6 + the notManlyFactor of it) and the unworn outrage of it <= 12 + the notManlyFactor of it and (diaper quest is 0 or the unworn cringe of it > 4 + the notManlyFactor of it) and (diaper quest is 0 or the unworn cringe of it <= 12 + the notManlyFactor of it), decide yes;
+	if tough-shit is 1 and it is not unique and it is fetish appropriate and (diaper quest is 1 or the unworn outrage of it > 6 + the notManlyFactor of it) and the unworn outrage of it <= 12 + the notManlyFactor of it and (diaper quest is 0 or the unworn cringe of it > 4 + the notManlyFactor of it) and (diaper quest is 0 or the unworn cringe of it <= 12 + the notManlyFactor of it), decide yes;
 	decide no.
 
 [!<InitialiseWardrobe>+
@@ -357,8 +398,8 @@ To initialise wardrobe:
 	if a random number between 1 and 2 <= 1 + tough-shit, now C is a random unskirted pinkWardrobeAppropriate underdress;
 	if a random number between 1 and 2 <= 1 + tough-shit or C is nothing, now C is a random unskirted pinkWardrobeAppropriate overdress;
 	if C is clothing, add C to L;
-	now C is a random short or longer not-butt-windowed actually dense pinkWardrobeAppropriate skirt;
-	if tough-shit is 1, now C is a random short or longer pinkWardrobeAppropriate skirt;
+	now C is a random short-or-longer not-butt-windowed actually dense pinkWardrobeAppropriate skirt;
+	if tough-shit is 1, now C is a random very-short-or-longer pinkWardrobeAppropriate skirt;
 	if C is clothing, add C to L;
 	if diaper focus >= 1:
 		let C be a random eligible diaper;
@@ -415,7 +456,6 @@ To compute starting headgear:
 To Scramble Items:
 	Set Up Clothing;
 	Set Up Collectibles;
-	Set Up Bras;
 	set up store;
 	follow the setup starting items rules;
 	sort Standard Item Pen in random order.

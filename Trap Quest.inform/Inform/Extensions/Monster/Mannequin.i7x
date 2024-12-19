@@ -273,6 +273,17 @@ Definition: a mannequin (called M) is eager to slap:
 To compute flying player taunting of (M - a mannequin):
 	if a random number from 1 to 6 is 1, say "[BigNameDesc of M] is [one of][or]still [stopping]watching you, waiting.".
 
+This is the mannequin unique punishment rule:
+	if (short skirts permanent fetish is 0 or short skirts permanent fetish > 3) and current-monster is not topless mannequin and current-monster is not lycra-clad mannequin and current-monster is not swimmer mannequin and current-monster is not lingerie-clad mannequin and the player is getting unlucky:
+		say "[BigNameDesc of current-monster] strikes a confident pose, and [his of current-monster] eyes stare deep down into your soul. Instantly, you realise that [second custom style]short skirts like the one [he of current-monster] is wearing are the best![roman type][line break]You'll feel awful if you ever wear a skirt longer than that sort of nice and short upper-thigh-length style. [GotUnluckyFlav]";
+		now short skirts permanent fetish is 3;
+		rule succeeds;
+	otherwise if the player is allowed-panties and current-monster is lingerie-clad mannequin and (skimpy underwear fetish is -1 or skimpy underwear fetish > 3):
+		say "[BigNameDesc of current-monster] strikes a confident pose, and [his of current-monster] eyes stare deep down into your soul. Instantly, you realise that [second custom style]skimpy panties like the one [he of current-monster] is wearing are the best![roman type][line break]You'll feel awful if you ever wear panties or briefs. It's hotpants, thongs and g-strings for you from now on!";
+		now skimpy underwear fetish is 3;
+		rule succeeds.
+The unique punishment rule of a mannequin is usually the mannequin unique punishment rule.
+
 To decide which number is the rounds of sex left of (M - a mannequin):
 	if the latex-transformation of the player > 2, decide on 0;
 	decide on 10 - ((a random number between 1 and 3) + arousal of the player / 1000 + the sex-length of M).
@@ -431,14 +442,13 @@ To compute (M - a mannequin) entering anally:
 		now the sex-length of M is 0.
 
 This is the mannequin forces orgasm through diaper rule:
-	if there is a worn total protection diaper and the player is diaper focused and the player is a bit horny and the player is able to orgasm:
+	if there is a worn total protection diaper and the player is diaper focused and the player is able to orgasm:
 		let M be current-monster;
 		let D be a random worn diaper;
 		while the coverer of D is clothing:
 			now D is the coverer of D;
 		say "[BigNameDesc of M] seems to detect that you are very aroused. Staring directly into your eyes with [his of M] blank expression, [he of M] presses a hand to the front of your [D] and pushes firmly. [big his of M] hand begins to vibrate, and within seconds has reached an intensely strong force[if there is a worn chastity bond]! The pulses flow straight through your [random worn chastity bond] and into your [genitals][end if]![line break][variable custom style]Unfff... it's too strong! I'm gonna...[roman type][line break]Your eyes roll into the back of your head and you start shaking.";
 		orgasm;
-		SexAddictUp 1;
 		say "[BigNameDesc of M] cocks [his of M] creepy head to one side, silently pulls [his of M] hand away and then leaves you alone to recover[if the player is male and the bimbo of the player < 6]I can't believe I just came into my diaper...[end if].[roman type][line break]";
 		bore M;
 		FavourUp M;

@@ -483,9 +483,7 @@ To say CondomPieFlav of (M - a ghost) in (F - a fuckhole):
 	say "[one of]The room fills with a ghastly glow as [NameDesc of M] slams itself home, eagerly flooding the condom with its seed. After several [if the semen addiction of the player < 7]excruciating[otherwise if the semen addiction of the player < 15]intense[otherwise]wonderful[end if] moments of stillness, broken only by the subtle twitching between loads, [NameDesc of M] pulls out.[or][BigNameDesc of M] jizzes into the condom, continuing to thrust as it slowly fills with its unnervingly cold [semen]. You look over your shoulder, [if the semen addiction of the player < 7]shuddering[otherwise]quivering[end if][if the semen addiction of the player > 14] with excitement[end if] as it pulls out.[or][BigNameDesc of M] throbs as it pumps load after load of thick [semen] into the condom, allowing the ghastly cold to soak you through to the bone before pulling out.[or][BigNameDesc of M] continues to thrust as its ghastly cold [semen] slowly fills the condom ensuring the sensation will be thoroughly embedded into your memory for a long, long time.[at random][line break]".
 
 To say CondomPinFlav of (M - a ghost) on (C - a clothing):
-	say "A ghostly hand materialises to peel the [one of]wobbling[or]semen-swollen[or]newly used[or]slimy[at random] condom off [his of M] shaft and presses it to your [C].";
-	if M is awake and M is intelligent and M is interested, say "Before you can stop [him of M], [NameDesc of M] presses the [one of]newly created and now used [or]strongly-smelling [or]wobbling, semen-swollen [or][or][cycling]condom to your [C]. ";
-	otherwise say "Completely of its own accord, the used condom suddenly zips from [NameDesc of M] and flies through the air until it hits your [C]. ".
+	say "A ghostly hand materialises to peel the [one of]wobbling[or]semen-swollen[or]newly used[or]slimy[at random] condom off [his of M] shaft and [if C is trashcan]tosses it into[otherwise]presses it to[end if] your [C].".
 
 To say CreampieFlav of (M - a ghost) in (F - a fuckhole):
 	say "[one of]The room fills with a ghastly glow as [NameDesc of M] slams itself home, eagerly flooding your [variable F] with its seed. After several [if the semen addiction of the player < 7]excruciating[otherwise if the semen addiction of the player < 15]intense[otherwise]wonderful[end if] moments of stillness, broken only by the subtle twitching between loads, [NameDesc of M] pulls out and leaves you to [if the semen addiction of the player < 10]crawl away in shame[otherwise]take in what just happened[end if].[or][BigNameDesc of M] jizzes directly into your [variable F], continuing to thrust until your deepest, most intimate recesses have been acquainted with its ghastly [semen]. You look over your shoulder, [if the semen addiction of the player < 7]shuddering[otherwise]quivering[end if][if the semen addiction of the player > 14] with excitement[end if] as it pulls out and floats away.[or][BigNameDesc of M] throbs as it pumps load after load of thick [semen] directly into your [variable F], pushing it nice and deep with a few last thrusts before pulling out and leaving you alone.[or][BigNameDesc of M] continues to thrust as its [semen] flows inside of you, as if to ensure you won't forget the sensation until long after it pulls out and leaves you alone[if semen addiction of the player < 7], no matter how much you want to[otherwise if the semen addiction of the player < 11], although you aren't sure how you could[otherwise], which is exactly the way you like it[end if].[at random][line break]".
@@ -694,7 +692,7 @@ To compute damage reaction of (M - a ghost):
 		increase the bank of M by 10;
 		anger M;
 	otherwise if the wind-up of M > 0 and M is not jismbodied ghost:
-		if M is ghostly tentacle:
+		if M is ghostly tentacle and M is wrangling arms:
 			say "[bold type][BigNameDesc of M] releases you instantly, shifting back out of the physical world as it recoils from your attack![roman type]";
 			now the wind-up of M is 0;
 			now M is not wrangling arms;
@@ -792,7 +790,7 @@ Section 1 - Ectoplasm
 To compute ectoplasm to (M - ghostly tentacle):
 	if diaper quest is 1:
 		compute normal ectoplasm to M;
-	otherwise if the player is getting unlucky:
+	otherwise if the player is not in Mansion23 and the player is getting unlucky:
 		set up deep one;
 		now deep one is in mansion23;
 		drag to mansion23 by M;
@@ -801,7 +799,9 @@ To compute ectoplasm to (M - ghostly tentacle):
 		now the wind-up of M is 0;
 		now deep one is interested;
 		now deep one is unleashed;
-		now the stance of the player is 1.
+		now the stance of the player is 1;
+	otherwise if M is not wrangling arms:
+		compute normal ectoplasm to M.
 
 To say DragFlav of (M - a ghost) to (R - a room):
 	say "A swirling portal opens up as [NameDesc of M] drags you toward the ceiling, swallowing you whole!".
@@ -943,7 +943,7 @@ To compute unique final action of (M - ghostly tentacle):
 	if diaper quest is 1:
 		compute phaseout of M; [in TQ, the tentacle only phases in and out under specific circumstances]
 		if M is uninterested and M is not in the location of the player and red-orange briefs is worn and the location of M is not within vision:
-			if the player is in Mansion25 and asshole is not actually occupied and the total squirtable fill of belly is 0:
+			if enema fetish is 1 and the player is in Mansion25 and asshole is not actually occupied and the total squirtable fill of belly is 0:
 				say "[bold type]Suddenly, you feel something forced up inside your [asshole]! [roman type]You swivel your upper torso to discover that [BigNameDesc of M] has reeled some sort of ethereal fire hose out from the base of the pool, and has jammed the tip - which is shaped like an enema nozzle - up inside you! Before you can react, [big he of M] has pulled a trigger, and begun to fill you to the brim with ice cold water![line break][variable custom style]Eeeeek![roman type][line break]And then, just as quickly as it all began, the hose vanishes, leaving no evidence of it ever being here except for your now very full belly. You hear a high-pitched giggle coming from [NameDesc of M], ";
 				AssFill 15 water;
 				compute prank conclusion of M;

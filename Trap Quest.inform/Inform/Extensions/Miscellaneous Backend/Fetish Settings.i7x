@@ -100,6 +100,9 @@ choice
 1 [slower timers]
 0 [player futanari fetish]
 0 [fantastic elastic]
+-1 [nursery resident]
+0 [enema fetish]
+0 [easy teaching]
 
 [!<DecideWhichNumberIsOriginalPlayerGender>+
 
@@ -229,9 +232,9 @@ To decide which number is bondage protection:
 	decide on the choice in row 64 of the Table of Player Options.
 
 To decide which number is christmas content:
-	if the player is not a top donator, decide on 0;
-	if choice in row 65 of the Table of Player Options < 7, decide on 0;
-	decide on 1.
+	[if the player is not a top donator, decide on 0;]
+	if choice in row 65 of the Table of Player Options < 8, decide on 1;
+	decide on 0.
 
 To decide which number is easter content:
 	if the player is not a top donator or diaper quest is 0, decide on 0;
@@ -244,8 +247,8 @@ To decide which number is april fools content:
 
 To decide which number is halloween content:
 	if the player is not a top donator, decide on 0;
-	if choice in row 80 of the Table of Player Options < 6, decide on 1;
-	decide on 0.
+	if choice in row 80 of the Table of Player Options < 9, decide on 0;
+	decide on 1.
 
 [This determines whether NPCs can be futas. But if gender preference is set to all MALE, there is no futa possible]
 To decide which number is futanari fetish:
@@ -327,7 +330,6 @@ This is the grossness fetish random rule:
 The grossness fetish random rule is listed in the random mode rules.
 
 To decide which number is silicone milk clash:
-	if the player is not the donator, decide on 1;
 	decide on choice in row 84 of the Table of Player Options.
 
 Part - Options Menus
@@ -376,7 +378,9 @@ To decide which number is positive points count:
 	if inventory handicap is 1, increase X by 3;
 	if clumsy is 1, increase X by 5;
 	if strongCurses is 1, increase X by 5;
-	if save game limit > 0, increase X by 2 + (save game limit * 2);
+	if nursery resident is 1, increase X by 5;
+	if diaper quest is 1 and enema fetish is 1, increase X by 4;
+	if save game limit > 0 and max-undos < 999999, increase X by 2 + (save game limit * 2);
 	increase X by natural hair length;
 	increase X by natural redness;
 	increase X by natural blondeness;
@@ -414,6 +418,7 @@ To decide which number is points count:
 	decrease X by (bonus liquid * (1 + bonus liquid)) / 2;
 	decrease X by combatvisor;
 	decrease X by fantastic elastic;
+	decrease X by easy teaching * 2;
 	if slower timers is 2, decrease X by 2;
 	if diaper quest is 0:
 		if supportersEnabled is 0, decrease X by 1;

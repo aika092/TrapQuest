@@ -1,6 +1,6 @@
 Headmistress by Monster begins here.
 
-headmistress is a diamond-teacher. headmistress is guarding. headmistress is female. The leftover-type of headmistress is 130.
+headmistress is a diamond-teacher. headmistress is guarding. headmistress is female. headmistress can be puddle-investigating. The leftover-type of headmistress is 130.
 
 headmistress is in School08. The text-shortcut of headmistress is "hdm".
 
@@ -76,11 +76,23 @@ Definition: headmistress is dismissable: decide no.
 
 Part - Motion
 
-To compute monstermotion of (M - headmistress):
-	unless M is in School08 and M is friendly, compute room leaving of M.
+To compute unique boredom of (M - headmistress):
+	now M is not puddle-investigating.
+Definition: headmistress is closest-toilet-preferring: decide yes.
 
-To compute guarding action of (M - headmistress): [Sometimes the headmistress gets moved around and it would be good to send her slowly back to her office]
-	if M is in an academic room and M is not in School08 and M is not interested and M is friendly:
+To compute monstermotion of (M - headmistress):
+	if M is puddle-investigating or the bladder of M >= 1000:
+		compute toilet seeking of M;
+	otherwise if M is not in School08 or M is unfriendly:
+		compute room leaving of M.
+
+To compute guarding action of (M - headmistress):
+	if M is puddle-investigating:
+		check forced seeking 1 of M;
+		if M is not interested and M is in the location of the player, check perception of M;
+	otherwise if the bladder of M >= 1000:
+		compute toilet seeking of M;
+	otherwise if M is in an academic room and M is not in School08 and M is not interested and M is friendly: [Sometimes the headmistress gets moved around and it would be good to send her slowly back to her office]
 		if M is in School04, try M going south;
 		otherwise compute room leaving of M.
 
@@ -189,7 +201,30 @@ To compute student perception of (M - a headmistress):
 					now armband is ruby;
 					update students;
 					now the armband-print of armband is "natural born submissive";
-		say "[roman type][line break][big he of M] waves a hand in your direction and your armband slightly transforms! It now reads '[NameBimbo] the [armband-print of armband]' in letters that look like they're made out of [accessory-colour of armband].".
+		say "[roman type][line break][big he of M] waves a hand in your direction and your armband slightly transforms! It now reads '[NameBimbo] the [armband-print of armband]' in letters that look like they're made out of [accessory-colour of armband].";
+	otherwise if the diaper-duration of M > 0 and the number of worn diaper is 0:
+		say "[big he of M] swiftly walks up to you and holds [if diaper messing < 3]a hand to the front[otherwise]hands to the front and back[end if] of your crotch, pushing firmly to get a good feel.[line break][speech style of M]'HEY! Where is your diaper?! You're in big trouble, you naughty baby!'[roman type][line break]";
+		anger M;
+	otherwise if the bladder of M >= 1000 and M is able to use a free use urinal:
+		compute free use urinal perception of M;
+	otherwise if M is puddle-investigating and playerRegion is school and M is friendly:
+		say "[speech style of M]'[NameBimbo]! I've heard a report of URINATING on the FLOOR! ";
+		if the player is not in School10:
+			say "Come with me!'[roman type][line break]";
+			drag to School10 by M;
+			say "[speech style of M]'Well well well. ";
+		if the urine-puddle of School10 > 0:
+			say "Caught red-handed. I will not stand for this level of indignity! EVERYONE! TIME FOR ASSEMBLY!'[roman type][line break]";
+			let A be locked-toilets-assembly;
+			if the assemblyCount of A > 0 or the player is getting unlucky, now A is locked-toilets-shame-assembly;
+			drag to School16 by M;
+			set up A;
+			compute start of A;
+			follow the assembly computation rule;
+		otherwise:
+			say "Looks like the reports were false. That is VERY fortunate for you.'[roman type][line break]";
+	otherwise if the diaper-duration of M > 0:
+		compute diaper check of M.
 
 To say WhoQuestion of (M - a headmistress):
 	say "[variable custom style]'Who are you?'[roman type][line break]".
@@ -209,7 +244,7 @@ To say StoryAnswer of (M - a headmistress):
 To say AdviceAnswer of (M - a headmistress):
 	say "[speech style of M]'Skipping classes will earn you a detention... or worse.'[roman type][line break]".
 
-To compute teaching of (M - a headmistress):
+To compute teaching offer of (M - a headmistress):
 	say "[speech style of M]'I have my [ShortDesc of M] duties to take care of. Ask a teacher if you would like a lesson.'[roman type][line break]".
 
 talk-headmistress-toilet is a talk-object.

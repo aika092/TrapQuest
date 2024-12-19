@@ -163,7 +163,7 @@ Check entering the throne:
 			BladderIncontinenceDown 5;
 			RectumIncontinenceDown 5;
 			now the bladder of the player is 0 instead;
-		otherwise if R is 2:
+		otherwise if R is 2 and the number of indestructible ass covering clothing is 0:
 			now the throne is untriggered;
 			now the TrapNo of the throne is 0;
 			now the turns of the throne is 0;
@@ -242,7 +242,7 @@ Check entering the throne:
 				dignify 2500;
 				say "[if the humiliation of the player < 40000]This makes you feel more dignified[otherwise]Nothing happens[end if].";
 			do nothing instead;
-		otherwise if R is 8:
+		otherwise:
 			dignify 2500;
 			say "[if the humiliation of the player < 40000]This makes you feel more dignified[otherwise]Nothing happens[end if]." instead;
 	otherwise if silver-tiara is off-stage and silver-tiara is actually summonable:

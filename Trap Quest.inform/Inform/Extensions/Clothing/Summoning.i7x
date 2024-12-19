@@ -4,7 +4,8 @@ To summon (C - a wearthing):
 	destroy C;
 	now C is worn by the player;
 	force immediate clothing-focus redraw;
-	update appearance level.
+	update appearance level;
+	focus-consider C.
 
 To summon (C - a clothing):
 	only destroy C; [This cleans up all potentially incorrect flags except ripped and various effects]
@@ -39,6 +40,7 @@ To only summon (C - a clothing):
 	if C is ass plugging or (C is vagina plugging and the player is not possessing a vagina), now C is penetrating asshole;
 	if C is vagina plugging and the player is possessing a vagina, now C is penetrating vagina;
 	if C is ballgag, now C is penetrating face; [a ballgag is any gag that occupies the player's face. I.e. most gags]
+	focus-consider C.
 
 To compute unique summoning of (C - a thing):
 	do nothing.
@@ -49,7 +51,8 @@ To only summon (S - a sex toy): [We can only use summon for asshole at the momen
 	now S is penetrating asshole;
 	now S is identified;
 	now S is sure;
-	compute unique summoning of S.
+	compute unique summoning of S;
+	focus-consider S.
 
 To summon (P - a sex toy) vaginally:
 	only destroy P; [This cleans up all potentially incorrect flags]
@@ -65,6 +68,7 @@ To only summon (P - a sex toy) vaginally:
 		now P is identified;
 		now P is sure;
 		compute unique summoning of P;
+		focus-consider P;
 	otherwise: [redirect to asshole]
 		only summon P.
 

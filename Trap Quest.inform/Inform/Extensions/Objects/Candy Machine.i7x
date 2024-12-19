@@ -81,6 +81,8 @@ Carry out CandyObtaining:
 			if toffee is not held, now Z is toffee;
 			now Z is carried by the player;
 			say "The machine spits out a [Z]!";
+			focus-consider Z;
+			now focused-thing is Z;
 		say "You take all the candy as the light on the front of the candy machine turns off.";
 		increase the recent uses of the noun by 1;
 		increase the combo of the noun by 1;
@@ -98,6 +100,7 @@ Carry out CandyObtaining:
 		if C is nothing, say "Nothing seems to happen. You must be holding all the bad candy...";
 	if C is candy:
 		now C is held by the player;
+		now focused-thing is C;
 		say "The machine spits out a [C]! You pick it up. ";
 		let F be a random number between 0 and 4;
 		if weight gain fetish is 1, decrease F by the fat-weight of the player / 10;

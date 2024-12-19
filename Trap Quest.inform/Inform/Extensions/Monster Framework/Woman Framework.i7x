@@ -236,13 +236,13 @@ To construct unique buttons for (M - woman-player):
 			now the ButtonPriority entry is 1;
 			if ButtonTableFull is 0 and the dominatrix-contraption-scene of M <= 2 and diaper quest is 0:
 				choose a blank row in the Table of Buttons;
-				now the ButtonImage entry is Figure of TakeAllButton;
+				now the ButtonImage entry is Figure of WrangledIcon;
 				now the ButtonCommand entry is "pull [text-shortcut of M]";
 				now the ButtonColour entry is lightModeFullGreen;
 				now the ButtonPriority entry is 1;
 	otherwise if the woman-status of M is 80 and the stool-scene of M < 2 and ButtonTableFull is 0:
 		choose a blank row in the Table of Buttons;
-		now the ButtonImage entry is Figure of TakeAllButton;
+		now the ButtonImage entry is Figure of WrangledIcon;
 		now the ButtonCommand entry is "pull [text-shortcut of M]";
 		now the ButtonPriority entry is 1;
 		let CL be lightModeFullGreen;
@@ -251,13 +251,13 @@ To construct unique buttons for (M - woman-player):
 		now the ButtonColour entry is CL;
 		if ButtonTableFull is 0 and the player is possessing a penis or there is a worn strapon-panties:
 			choose a blank row in the Table of Buttons;
-			now the ButtonImage entry is Figure of TakeAllButton;
+			now the ButtonImage entry is Figure of AnalButton;
 			now the ButtonPriority entry is 1;
 			now the ButtonCommand entry is "fuck [text-shortcut of M]";
 			now the ButtonColour entry is CL;
 	otherwise if the changing-station-tank-scene of M > 0 and ButtonTableFull is 0:
 		choose a blank row in the Table of Buttons;
-		now the ButtonImage entry is Figure of TakeAllButton;
+		now the ButtonImage entry is Figure of HandsButton;
 		now the ButtonCommand entry is "pull rope";
 		now the ButtonColour entry is lightModeFullGreen;
 		now the ButtonPriority entry is 1;
@@ -265,7 +265,7 @@ To construct unique buttons for (M - woman-player):
 		if the player is immobile, now the ButtonColour entry is lightModeFullRed;
 	otherwise if the woman-status of M is 103 and ButtonTableFull is 0: [diapered christmas gift]
 		choose a blank row in the Table of Buttons;
-		now the ButtonImage entry is Figure of TakeAllButton;
+		now the ButtonImage entry is Figure of WrangledIcon;
 		now the ButtonCommand entry is "pull [text-shortcut of M]";
 		now the ButtonPriority entry is 1;
 		let CL be lightModeFullGreen;
@@ -310,6 +310,7 @@ To compute woman bimbo changes:
 This is the woman spawning pregnant rule:
 	if pregnancy fetish > 0 and the woman-pregnancy of woman-player > 1 and (barbsummoned is true or a random number between 1 and 60 is 1):
 		deploy woman-player with woman-status 82;
+		compute addiction reflection on "pregnancy";
 		rule succeeds.
 The woman spawning pregnant rule is listed first in the womanspawning rules.
 
@@ -340,7 +341,7 @@ The woman spawning to release the boss rule is listed last in the womanspawning 
 This is the woman spawning in the region of the player rule:
 	if barbsummoned is true or a random number between 1 and 80 is 1:
 		if playerRegion is Dungeon:
-			if diaper quest is 0 and the player is an october 2023 top donator and portal-bra is off-stage and woman-player is not partially-enslaved and the times-met of pimp > 0 and Hotel44 is discovered and the woman-bimbo of woman-player is 2, now woman-player is partially-enslaved;
+			if diaper quest is 0 and the player is the donator and portal-bra is off-stage and woman-player is not partially-enslaved and the times-met of pimp > 0 and Hotel44 is discovered and the woman-bimbo of woman-player is 2, now woman-player is partially-enslaved;
 			deploy woman-player with woman-status 1;
 			rule succeeds;
 		otherwise if playerRegion is Woods:
@@ -621,6 +622,7 @@ To compute loot dropping of (X - a thing) by (M - woman-player):
 Part - Conversation
 
 Definition: woman-player is fluff-question-appropriate: decide no.
+Definition: woman-player is uniquely unable to teach: decide yes.
 
 To say vanity greeting of (M - woman-player):
 	say conventional greeting of M.

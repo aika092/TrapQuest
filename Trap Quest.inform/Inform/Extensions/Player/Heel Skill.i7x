@@ -40,8 +40,8 @@ To HeelUp (X - a number):
 		2HeelUp.
 
 To 2HeelUp:
-	if the raw heel skill of the player is 1, say "[if the bimbo of the player < 4][line break][first custom style]Right so if I put this foot like this... wow, walking in heels is difficult.[otherwise][line break][second custom style]This is hard... I want to be better at walking in heels![end if][roman type][line break]";
-	if the raw heel skill of the player is 3, say "[if the bimbo of the player < 5][line break][first custom style]Ahh, if I put the heel down first...[otherwise][line break][second custom style]I'm getting better at walking in these... yay![end if][roman type][line break]";
+	if the raw heel skill of the player is 1 and background-waitress is 0, say "[if the bimbo of the player < 4][line break][first custom style]Right so if I put this foot like this... wow, walking in heels is difficult.[otherwise][line break][second custom style]This is hard... I want to be better at walking in heels![end if][roman type][line break]";
+	if the raw heel skill of the player is 3 and background-waitress is 0, say "[if the bimbo of the player < 5][line break][first custom style]Ahh, if I put the heel down first...[otherwise][line break][second custom style]I'm getting better at walking in these... yay![end if][roman type][line break]";
 	if the raw heel skill of the player is 5, say "[if the bimbo of the player < 6][line break][first custom style]I could totally get used to walking in heels![otherwise][line break][second custom style]Walking in heels is fun![end if][roman type][line break]";
 	if the raw heel skill of the player is 8, say "[if the bimbo of the player < 8][line break][first custom style]Okay now I can walk on my heels a bit too well for my liking...[otherwise][line break][second custom style]I can waltz around in heels almost perfectly![end if][roman type][line break]";
 	let HMod be 0;

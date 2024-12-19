@@ -1,6 +1,6 @@
 Nighties by Dresses begins here.
 
-A nightie is a kind of overdress. A nightie is usually sheer. A nightie is usually short. A nightie is usually silk. A nightie is usually transformation-rare. Understand "nightie" as nightie. A nightie is usually top-displacable. A nightie is usually delicateness-influencing. A nightie has a number called charge.
+A nightie is a kind of overdress. A nightie is usually sheer. The skirt-length of a nightie is 4. A nightie is usually silk. A nightie is usually transformation-rare. Understand "nightie" as nightie. A nightie is usually top-displacable. A nightie is usually delicateness-influencing. A nightie has a number called charge.
 
 Definition: a nightie is sissifying: decide yes.
 Definition: a nightie is pink themed: decide yes.
@@ -75,7 +75,7 @@ Definition: an organza nightie is white themed: decide yes.
 
 Part 2 - Nightgown
 
-A nightgown is a kind of nightie. A nightgown is usually rare. A nightgown is usually nylon. A nightgown is usually knee-length. A nightgown is usually not-top-displacable. There is 1 nightgown.
+A nightgown is a kind of nightie. A nightgown is usually rare. A nightgown is usually nylon. The skirt-length of a nightgown is 6. A nightgown is usually not-top-displacable. There is 1 nightgown.
 
 The printed name of nightgown is usually "[clothing-title-before]nightgown[clothing-title-after]". The text-shortcut of nightgown is "nig".
 
@@ -114,7 +114,7 @@ Definition: nightgown is slitted: decide yes.
 
 Part 3 - Pink Nightie
 
-A pink nightie is a kind of nightie. A pink nightie is usually dense. A pink nightie is usually super-short. A pink nightie is usually belly exposing. There is 1 pink nightie. The text-shortcut of pink nightie is "pni".
+A pink nightie is a kind of nightie. A pink nightie is usually dense. The skirt-length of a pink nightie is 1. A pink nightie is usually belly exposing. There is 1 pink nightie. The text-shortcut of pink nightie is "pni".
 
 Definition: a pink nightie is sissifying: decide no.
 
@@ -142,7 +142,7 @@ To decide which object is the potential-upgrade-target of (C - a pink nightie):
 
 Part 4 - Flimsy Pink Nightie
 
-A flimsy pink nightie is a kind of nightie. A flimsy pink nightie is usually super-short. There is 1 flimsy pink nightie. A flimsy pink nightie is usually optional-top-displacable.
+A flimsy pink nightie is a kind of nightie. The skirt-length of a flimsy pink nightie is 1. There is 1 flimsy pink nightie. A flimsy pink nightie is usually optional-top-displacable.
 
 The printed name of flimsy pink nightie is usually "[clothing-title-before]flimsy pink nightie[clothing-title-after]". The text-shortcut of flimsy pink nightie is "fpn".
 

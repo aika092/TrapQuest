@@ -49,6 +49,7 @@ To set up (M - matron):
 	add continence-potion to the tradableItems of M, if absent;
 	add continence-potion to the taxableItems of M, if absent;
 	add continence-potion to the banishItems of M, if absent;
+	compute diaper cover assignment of M;
 	calm M.
 
 This is the spawn initial matron rule:
@@ -145,7 +146,10 @@ Definition: matron (called M) is uniquely distracted:
 				now N is in Hotel22;
 				if N is interested, distract N;
 			now the messTimer of N is a random number between -25 and 25;
-			decide yes;
+			decide yes.
+
+To compute unique satisfaction of (M - matron):
+	progress quest of matron-obey-quest.
 
 Part 2 - Perception
 
@@ -156,12 +160,12 @@ To compute perception of (M - matron):
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
 	if nursery crib is grabbing the player:
 		if the charge of nursery crib >= 8 and player-currently-resting is 0:
-			say "[speech style of M]'Wakey wakey, sunshine! Naptime is over!'[roman type][line break][BigNameDesc of M] unlocks the crib and returns the steps to the front, to allow you to step down.";
+			say "[speech style of M]'Wakey wakey, sunshine! Naptime is over!'[roman type][line break][BigNameDesc of M] unlocks the crib and returns the steps to the front, to allow you to crawl down.";
 			dislodge nursery crib;
 			DiaperAddictUp 1;
-			now auto is 1;
+			[now auto is 1;
 			try standing;
-			now auto is 0;
+			now auto is 0;]
 			compute diaper check of M;
 			if M is not diaper-committed, satisfy M;
 		otherwise:
@@ -262,7 +266,11 @@ To compute diaper check of (M - matron):
 		now M is diaper-committed;
 	if the urination continues rule is listed in another-turn-rules and the player is upright:
 		say "[if the humiliation of the player < 18000]The sheer humiliation of the situation[otherwise if the delicateness of the player < 10]Something about the way [he of M] is gripping your private parts[otherwise]Something deep inside of you feels comforted and[end if] makes your knees buckle. You fall to the ground in front of [NameDesc of M].";
-		try kneeling.
+		try kneeling;
+	otherwise if M is diaper-committed and the player is upright:
+		say "Get on your knees and submit to [his of M] plans?";
+		if the player is bimbo consenting, try kneeling.
+
 
 Part 3 - Motion
 
@@ -273,7 +281,7 @@ To compute monstermotion of (M - matron):
 		if K is messed or the total-soak of K >= the soak-limit of K, now diapersense is true;
 	if diapersense is true and the boredom of M <= -100:
 		check seeking 2 of M;
-	otherwise if the boredom of M <= -500:
+	otherwise if the boredom of M <= -500 and (the player is not in Hotel22 or (nursery crib is grabbing the player and the charge of nursery crib < 20)):
 		compute room leaving of M;
 	otherwise if M is not in Hotel22 and M is not in the location of the player:
 		let D be the best route from the location of M to Hotel22 through modern rooms;
@@ -314,7 +322,7 @@ This is the matron waits for players to finish peeing rule:
 The matron waits for players to finish peeing rule is listed in the matron priority attack rules.
 
 This is the matron starts counting rule:
-	if the player is upright and the player is the donator:
+	if the player is upright:
 		let M be matron;
 		if M is unfriendly:
 			if the player is not immobile and the health of M < the maxhealth of M / 2 and the countdown of M is 0:
@@ -347,7 +355,7 @@ This is the matron acts like a nanny rule:
 	follow the matron nanny rules;
 	rule succeeds.
 
-The matron nanny rules is a rulebook.
+The matron nanny rules is a rulebook. [This controls how the matron acts in TQ.]
 
 This is the matron drags the player rule:
 	let M be current-monster;
@@ -385,6 +393,7 @@ This is the matron changes a diaper rule:
 			TimesSubmittedUp M by 1;
 			rule succeeds;
 		otherwise:
+			now M is change-anal-ready;
 			compute diaper change of M;
 			rule succeeds.
 The matron changes a diaper rule is listed last in the matron nanny rules.
@@ -428,7 +437,7 @@ To say DiaperPowderFlav of (M - matron):
 	say "[BigNameDesc of M] pulls out a bottle of baby power and squeezes it liberally over your crotch area, completely coating it and forming a huge white cloud of powder. ".
 
 To say DiaperChangeFlav of (M - matron):
-	say "From [DiaperSpace of M] [he of M] produces [if current-diaper is new-diaper]an identical (but clean) [new-diaper][otherwise]a [new-diaper][end if], which [he of M] slides underneath your bum[one of] and then fixes in place[or], folds it over and tapes it up[at random]. [if current-diaper is diaper][big he of M] chucks the old one into the diaper pail and you hear a little 'whoosh' as it is whisked away by some hidden mechanism.[end if]";
+	say "From [DiaperSpace of M] [he of M] produces [if current-diaper-change-top-level is new-diaper]an identical (but clean) [new-diaper][otherwise]a [new-diaper][end if], which [he of M] slides underneath your bum[one of] and then fixes in place[or], folds it over and tapes it up[at random]. [if current-diaper-change-top-level is diaper][big he of M] chucks the old one into the diaper pail and you hear a little 'whoosh' as it is whisked away by some hidden mechanism.[end if]";
 	cutshow figure of matron diaper change cutscene;
 	say "[line break][speech style of M]'There now, [one of]isn't that much better? [or]You DO belong in them, oh yesh we do, oh yesh we do! [in random order]Off you trot now[one of]. But you'd better make sure that I never see you without a nappy on - you're my baby now, and you'll be kept in diapies for as long as I'm around!'[or]!'[stopping][roman type][line break]".
 
@@ -436,6 +445,7 @@ To say DiaperSpace of (M - matron):
 	say "underneath the table".
 
 To say DiaperChangeStart of (M - matron):
+	if M is not in Hotel22, drag to Hotel22 by M;
 	let D be a random worn messed diaper;
 	say "[BigNameDesc of M], with seemingly little physical exertion, picks you up and plops you down on the giant changing table. [big he of M] smoothly and efficiently binds your wrists and ankles tightly with the inbuilt straps[if D is diaper]. [big he of M] runs [his of M] hand along [NameDesc of D] and clicks [his of M] tongue.[line break][speech style of M]'Uh-oh, we really had to go didn't we? Stinky little baby waby yesh we are!'[line break][roman type][otherwise].[end if]".
 
@@ -451,19 +461,22 @@ To say DQChangeResistFlav of (M - matron):
 To say DQChangeResistReactionFlav of (M - matron):
 	say "[BigNameDesc of M] tuts.[line break][speech style of M]'[one of]You can kick and fuss if you must but it won't do you a bit of good. You are getting a diaper change, like it or not!'[or]Now young [if the player is presenting as female]lady[otherwise]man[end if] I don't take kindly to little ones who throw fits! Hold still for [daddytitle of M] or I'll make you wish I stopped at one diaper!'[or]OH, we've got some energy now do we? Well I can correct that AFTER, okay sweetie?'[in random order][roman type][line break]".
 
+matron can be change-anal-ready.
+
 Definition: matron is diaper change during special ready:
-	if asshole is not actually occupied and the total squirtable fill of belly is 0 and the player is getting unlucky, decide yes;
+	if matron is change-anal-ready and asshole is not actually occupied, decide yes;
 	decide no.
 
 To compute diaper change during special of (M - matron):
-	if diaper messing >= 3 and (the player is feeling full or a random number between 1 and 2 is 1):
+	now M is not change-anal-ready;
+	if enema fetish is 1 and diaper messing >= 3 and (the player is feeling full or a random number between 1 and 2 is 1) and the total squirtable fill of belly is 0 and the player is getting unlucky:
 		say "[speech style of M]'While we're here, I think you need a special something to keep your bowels nice and healthy.'[roman type][line break][GotUnluckyFlav]It turns out that [NameDesc of M][']s idea of such a special something... Is a giant enema syringe.";
 		if the player is able to speak, say "[variable custom style]'[if the player is feeling dominant]Don't you fucking dare!'[otherwise if the player is feeling submissive]If... If you say so...'[otherwise]Is that really necessary?!'[end if][roman type][line break]";
 		otherwise say "[variable custom style][if the player is feeling dominant]You've got to be fucking kidding me! No way![otherwise if the player is feeling submissive]I'd better do as I'm told...[otherwise]Is this really necessary?![end if][roman type][line break]";
 		say "Locked in place, there's nothing you can do but lie there [if the player is feeling submissive]anyway [end if]as [NameDesc of matron] inserts the narrow end into your [asshole] and pushes the plunger, filling you up nearly to the brim with room temperature water. You can hear and feel it gurgling around inside your intestines.";
 		Assfill ((belly limit * 3) / 4) water;
 		say "With a [']pop['], the enema syringe leaves your [asshole], and you immediately feel the pressure building within.";
-	otherwise:
+	otherwise if the player is getting unlucky:
 		let P be a random off-stage metal basic plug;
 		if P is nothing, now P is small-jewelled-plug;
 		say "[speech style of M]'While we're here, I think you deserve something special. Something to remember me by.'[roman type][line break][GotUnluckyFlav]It turns out that [NameDesc of M][']s idea of such a special something... Is a metal butt plug with a glittering gem at the end. You watch [him of M] as [he of M] applies a special lubricant to the bulb, and then pops it inside of you. It's only when you try to push it out that you realise it wasn't lube that [he of M] put on it... It was glue!";
@@ -471,7 +484,34 @@ To compute diaper change during special of (M - matron):
 		otherwise say "[variable custom style][if the player is a nympho]That's so mean... I love it![otherwise if the player is a pervert]Is [he of M] mad?![otherwise]How fucking dare [he of M]![end if][roman type][line break]";
 		summon P uncursed;
 		gluify P;
-		say "[BigNameDesc of M] just smirks.[line break][speech style of M]'You look so beautiful with your new princess plug, dear. I hope it will remind you of me as you waddle around and have fun in your new diaper.'[roman type][line break]".
+		say "[BigNameDesc of M] just smirks.[line break][speech style of M]'You look so beautiful with your new princess plug, dear. I hope it will remind you of me as you waddle around and have fun in your new diaper.'[roman type][line break]";
+	otherwise if a random number between 1 and 2 is 1:
+		say "[speech style of M]'While we're here, I'd better check your temperature.'[roman type][line break][BigNameDesc of M] brandishes a large glass themometer.[line break][one of][variable custom style][if the player is able to speak]'Wait... An old glass thermometer like that... You don't mean to...!'[otherwise]Wait... An old glass thermometer like that... [big he of M] doesn't mean to...![end if][or][variable custom style][if the player is able to speak]'A-Again?!'[otherwise][big he of M][']s doing this AGAIN?![end if][stopping][roman type][line break]";
+		say "[one of]Indeed, [he of M] does. [or][stopping]With a dash of lube and a swish of [his of M] arm, [he of M] pushes the thermometer deep inside your [asshole].";
+		let RP be refractoryperiod;
+		stimulate asshole from M;
+		if RP is refractoryperiod: [no orgasm]
+			say "[speech style of M]'Such a sweet expression!'[roman type][line break][BigNameDesc of M] smiles widely as [he of M] sees you squirm.[line break][strongHumiliateReflect]";
+		otherwise:
+			say "[speech style of M]'Did that... Really now! What a naughty [boy of the player]!'[roman type][line break][BigNameDesc of M] looks genuinely shocked.[line break][severeHumiliateReflect][line break][variable custom style]I can't believe that just happened... And in front of [him of M]...[roman type][line break]";
+		say "After a few moments, [NameDesc of M] retrieves the thermometer and takes a look at the reading.";
+		if the player is getting unlucky:
+			say "[speech style of M]'Oh no, sweetie, it says you're not very well!'[roman type][line break][BigNameDesc of M] declares in a sympathetic tone, swishing the thermometer out of your vision before you can check to see what it says yourself.[line break][speech style of M]'Don't worry, I have a really yummy medicine that will help you feel all better!'[roman type][line break][BigNameDesc of M] gets out a mysterious dark brown bottle, and measures out a spoonful of thick pink liquid.[line break][speech style of M]'Here comes the airplane~'[roman type][line break]Do you open your mouth and accept the medicine?";
+			if the player is bimbo consenting:
+				say "You obediently gulp down your [']medicine['].[line break][speech style of M]'Good [boy of the player]. You'll feel better in no time!'[roman type][line break]Well... You don't know about [']better[']... But you certainly feel somewhat woozy...";
+				IntDown 1;
+				if alcohol fetish > 0, increase alcohol level;
+			otherwise:
+				say "You keep your mouth shut and shake your head.[line break][variable custom style]'Mm-mm!'[roman type][paragraph break][BigNameDesc of M] gives you a strict scowl.[line break][speech style of M]'Now now, little one, that's naughty! If you won't accept your medicine up here... I'll just have to give it to you a different way.'[roman type][line break]And then, before you know what's happening, [NameDesc of M] is shoving a suppository up your butthole! [strongHumiliateReflect][paragraph break][variable custom style]Oh my god![roman type][line break][speech style of M]'There we go. That will melt away, and send all its lovely chemicals into your bloodstream...'[roman type][line break]";
+				say "Almost immediately, you feel your cheeks flushing and your heart racing... It's making you horny!";
+				arouse 5000;
+				check for arousal change;
+				if diaper messing >= 3:
+					say "And then, to make matters even more distressing, you feel your colon rumbling again!";
+					increase suppository by 1;
+		otherwise:
+			say "[speech style of M]'It's good news, [honey of M] - your temperature is all normal!'[roman type][line break]";
+
 
 Definition: matron is diaper change after special ready:
 	if face is not actually occupied, decide yes;
@@ -497,13 +537,14 @@ To compute diaper change after special of (M - matron):
 			let C be a random carried bib;
 			if C is nothing, now C is a random off-stage fetish appropriate bib;
 			if C is bib:
-				say "[BigNameDesc of M] straps [if C is carried]your[otherwise]a[end if] [ShortDesc of C] around your neck.";
+				say "[BigNameDesc of M] applies some adhesive to the collar of [if C is carried]your[otherwise]a[end if] [MediumDesc of C], and then straps it around your neck!";
 				if C is carried:
 					now the player is wearing C;
 				otherwise:
 					summon C uncursed;
 					now C is respiration;
 					say "You can sense that this item [if the noun is worn]is speeding[otherwise]would speed[end if] up your metabolism.";
+				gluify C;
 		if the player is able to speak, say "[variable custom style]'[if the milk taste addiction of the player >= 11][one of]How can I say no when it tastes so good...'[or]I think I'm getting addicted...'[or]Ooh, yum!'[stopping][otherwise if the milk taste addiction of the player >= 7][one of]I won't... I shouldn't... But...'[or]Why does it have to taste so good...'[or]I know this is wrong... And yet...'[cycling][otherwise][one of]No way... You can't be thinking of... No WAY!'[or]No no no, not again! Keep those things away from me!'[stopping][end if][roman type][line break]";
 		say "[BigNameDesc of M] pulls down [his of M] dress, and presents a bare nipple, dripping with [milk], to your lips. [if the milk taste addiction of the player < 11]Do you accept the nipple into your mouth?[end if]";
 		if the milk taste addiction of the player >= 11 or the player is bimbo consenting:
@@ -511,6 +552,7 @@ To compute diaper change after special of (M - matron):
 			say "As soon as you part your lips, [NameDesc of M] shoves as much of [his of M] nipple and breast as [he of M] can into your mouth. Now that your mouth is full to the brim with [']mommy meat['], there's nothing you can do but suck.";
 			let milk-rounds be a random number between 2 and 5;
 			repeat with MR running from 1 to milk-rounds:
+				now temporaryYesNoBackground is Figure of matron breastfeed cutscene;
 				compute single choice question "Suck the nipple";
 				say "Milk sprays out of [NameDesc of M][']s nipple and into your mouth.";
 				FaceFill milk by (a random number between 2 and 3);
@@ -520,7 +562,9 @@ To compute diaper change after special of (M - matron):
 					if D is diaper: [there should be a diaper since we just got changed, but we can never be too careful]
 						let CC be a random worn chastity bond;
 						say "[speech style of M]'[one of]Good [boy of the player][or]Swallow it all down[or]What a good little [boy of the player][or]That's it, keep drinking[cycling]...'[roman type][line break][BigNameDesc of M] [one of]grips[or]gropes[or]squeezes[then at random] your [if CC is a thing][ShortDesc of CC][otherwise][genitals][end if] through your [ShortDesc of D].";
-						unless CC is a thing, stimulate vagina from M;
+						unless CC is a thing:
+							stimulate vagina from M;
+							if the player is not horny, passively stimulate vagina from M;
 			say "With a contented sigh, [NameDesc of M] pops [his of M] nipple out of your mouth.[speech style of M]'Well done, my little milk monster!'[roman type][line break][big he of M] releases you from the bondage and carries you back down onto the ground.";
 		otherwise:
 			say "[BigNameDesc of M][']s eyes narrow.[line break][speech style of M]'Bad baby! It looks like you still have a lot to learn about how to obey your caregivers.'[roman type][line break]";
@@ -865,9 +909,16 @@ To say EscapeAnswer of (M - matron):
 To say AdviceAnswer of (M - matron):
 	say "[speech style of M]'[one of]That butler is here to serve you, but [he of a random robobutler] can be a little forceful. If you don't think you can handle [him of a random robobutler], make sure your tummy stays full!'[or]If you're wearing a diaper, be careful about leaving it on when it gets dirty, sweetie. Take too long and you might forget how you got it on in the first place! I'm always happy to help if that happens, but in case you can't find me, you can only remove it with magic.'[at random][roman type][line break]".[figured the butler advice could be a little better, added some more]
 
+Definition: matron is uniquely unable to teach:
+	if diaper quest is 1 and the class of the player is cheerleader, decide yes;
+	decide no.
+
 To compute teaching of (M - matron):
-	say "[speech style of M]'If you ever do get assaulted, never underestimate the power of admitting you're just a widdle baby and pleading for mercy. You never know, it might just soften their heart.'[roman type][line break]";
-	teach begging for mercy.
+	if easy teaching is 1 and the class of the player is cheerleader:
+		say "[speech style of M]'I think you should go and learn something from someone else first, you cheeky little monkey!'[roman type][line break]";
+	otherwise:
+		say "[speech style of M]'If you ever do get assaulted, never underestimate the power of admitting you're just a widdle baby and pleading for mercy. You never know, it might just soften their heart.'[roman type][line break]";
+		teach begging for mercy.
 
 Section 3 Drink Requesting
 
@@ -960,5 +1011,8 @@ To compute unfriendly food of (M - matron):
 		now the feedingtone of M is 1;
 		compute forcefeed of M;
 		now the feedingtone of M is 0.
+
+To uniquely destroy (M - matron):
+	progress quest of matron-obey-quest.
 
 Matron ends here.

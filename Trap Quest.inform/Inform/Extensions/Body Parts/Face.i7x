@@ -346,6 +346,7 @@ To compute swallowing:
 		if the semen volume of face > 0 and face is not boring-origin, progress quest of creampie-drinking-quest;
 		StomachUrineUp the urine volume of face;
 		StomachMilkUp the milk volume of face;
+		if current-predicament is breastfeeding-predicament, compute special breastfeeding predicament drink;
 		MouthEmpty.
 This is the swallowing rule:
 	compute swallowing.
@@ -524,6 +525,8 @@ To check oral virginity loss with (T - a thing):
 		now oralvirginity-taker is T;
 		say "[bold type]You just lost your oral virginity![roman type][line break]".
 
+previous-throat is initially false.
+
 To check puking (N - a number):
 	if player-gagging is false and the latex-transformation of the player < 5 and super gag reflex is 0: [if player-gagging is true then we're already guaranteed to try and puke]
 		let X be the raw intelligence of the player / 2; [If we used other calculated intelligence ratings, arousal and soreness would have too much of an impact]
@@ -547,7 +550,17 @@ To check puking (N - a number):
 			if debuginfo > 0, say "+ lipstick collar lips bonus ([lips of face * 2]) + lipstick collar make up bonus ([make-up of face * 2]) ";
 		let R be a random number between 1 and X;
 		if debuginfo > 0, say "--> d[X] ([R]) | ([N].5) difficulty[roman type][line break]";
-		if N >= R, compute puking.
+		if N >= R:
+			now previous-throat is false;
+			compute puking;
+		otherwise if previous-throat is false:
+			now previous-throat is true;
+		otherwise if (piercing-fetish is 1 and the player is getting unlucky) or (piercing-fetish is 0 and the player is getting very unlucky):
+			if tongue-piercing is off-stage and tongue-piercing is actually summonable:
+				say "Suddenly, a stud piercing appears in your tongue!";
+				summon tongue-piercing cursed with quest;
+				say GotUnluckyFlav;
+				say "[variable custom style]What, because I'm good at deepthroating?! Oh god...[roman type][line break]";
 
 player-gagging is initially false.
 
@@ -640,9 +653,28 @@ An all time based rule (this is the player gets used to the taste rule):
 		if the remainder after dividing time-earnings by A < time-seconds:
 			compute slightly addictive tasting of milk.
 
-Section - Image for graphics window
+Section - Images for graphics window
 
 Understand "my face", "visage", "mouth", "lips" as face. Figure of cum eating is the file "Special/Buttons/mouth.jpg".
+
+Figure of Oral Creampie Cutscene 1 is the file "Special/Cutscene/cutscene-oral-creampie1.jpg".
+Figure of Oral Creampie Cutscene 2 is the file "Special/Cutscene/cutscene-oral-creampie2.jpg".
+Figure of Oral Creampie Cutscene 3 is the file "Special/Cutscene/cutscene-oral-creampie3.jpg".
+Figure of Oral Creampie Cutscene 4 is the file "Special/Cutscene/cutscene-oral-creampie4.jpg".
+Figure of Oral Creampie Cutscene 6 is the file "Special/Cutscene/cutscene-oral-creampie6.jpg".
+[Figure of Oral Creampie Cutscene 5 is the file "Special/Cutscene/cutscene-oral-creampie5.jpg".
+
+To get oral creampie image for (M - a thing):
+	if M is not a female monster:
+		if the semen taste addiction of the player >= 15:
+			cutshow figure of Oral Creampie Cutscene 4;
+		otherwise if the semen taste addiction of the player >= 11:
+			cutshow figure of Oral Creampie Cutscene 3;
+		otherwise if the semen taste addiction of the player >= 5:
+			cutshow figure of Oral Creampie Cutscene 2;
+		otherwise:
+			if M is monster and M is presenting as female and M is pale skinned and (playerRegion is Dungeon or playerRegion is hotel), cutshow figure of Oral Creampie Cutscene 5; [These regions have the most NPCs without weird skin colours]
+			otherwise cutshow figure of Oral Creampie Cutscene 1.]
 
 [examine-image is documented in Necessary Figures]
 

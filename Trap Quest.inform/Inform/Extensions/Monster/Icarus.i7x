@@ -70,7 +70,7 @@ Carry out taking white candle:
 		if Icarus is not interested and Icarus is not permanently banished:
 			if Icarus is off-stage, set up Icarus;
 			now Icarus is in the location of the player;
-			say "Suddenly, [if the times-met of Icarus is 0]a [man of Icarus] with great white wings[end if] soars into the cave. [big he of Icarus] shakes the water off [his of Icarus] wings, and shivers.".
+			say "Suddenly, [if the times-met of Icarus is 0]a [man of Icarus] with great white wings[otherwise][NameDesc of Icarus][end if] soars into the cave. [big he of Icarus] shakes the water off [his of Icarus] wings, and shivers.".
 
 To decide which number is the girth of (M - Icarus):
 	decide on 3.
@@ -286,7 +286,7 @@ To compute Icarus science of (M - Icarus):
 		say "[speech style of M]'Hmm, actually I've changed my mind. See you later.'[roman type][line break][BigNameDesc of M] loses interest.";
 		bore M.
 
-bondage-ribbons is an overdress. bondage-ribbons is unique. bondage-ribbons is pvc. bondage-ribbons is belly exposing. bondage-ribbons is ridiculously low cut. bondage-ribbons is short. The text-shortcut of bondage-ribbons is "bdgr". The printed name of bondage-ribbons is "[clothing-title-before]bondage ribbons[clothing-title-after]". Understand "bondage", "ribbons" as bondage-ribbons.
+bondage-ribbons is an overdress. bondage-ribbons is unique. bondage-ribbons is pvc. bondage-ribbons is belly exposing. bondage-ribbons is ridiculously low cut. The skirt-length of bondage-ribbons is 4. The text-shortcut of bondage-ribbons is "bdgr". The printed name of bondage-ribbons is "[clothing-title-before]bondage ribbons[clothing-title-after]". Understand "bondage", "ribbons" as bondage-ribbons.
 
 Definition: bondage-ribbons is red themed: decide yes.
 Definition: bondage-ribbons is christmas themed: decide yes.

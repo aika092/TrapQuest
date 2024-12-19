@@ -1,6 +1,6 @@
 Swimsuit Framework by Dresses begins here.
 
-A swimsuit is a kind of underdress. A swimsuit is usually unskirted. A swimsuit is usually nylon. A swimsuit is usually bottom-exclusive. A swimsuit is usually top-displacable. A swimsuit is usually erect-nipple-exposing. The text-shortcut of swimsuit is "ss". The printed name of a swimsuit is "[clothing-title-before][MediumDesc of item described][clothing-title-after]".
+A swimsuit is a kind of underdress. The skirt-length of A swimsuit is 0. A swimsuit is usually nylon. A swimsuit is usually bottom-exclusive. A swimsuit is usually top-displacable. A swimsuit is usually erect-nipple-exposing. The text-shortcut of swimsuit is "ss". The printed name of a swimsuit is "[clothing-title-before][MediumDesc of item described][clothing-title-after]".
 
 Definition: swimsuit is same-type:
 	if theme-share-target is swimsuit, decide yes;
