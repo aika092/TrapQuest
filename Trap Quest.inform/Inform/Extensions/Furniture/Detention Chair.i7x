@@ -9,7 +9,7 @@ To decide which figure-name is the examine-image of (C - detention chair):
 
 To say ExamineDesc of (C - detention chair):
 	if C is detention-wand:
-		say "In one corner sits a vibrant pink chair with waiting bondage straps on each leg and a vibrating wand fixed through a hole in the middle[if diaper quest is 1]. Lots of lewd phrases have been written on the chair in Sharpie, such as 'Be a GOOD Princess' and 'Submit'[end if]. Dev note: you only interact with this by having detention.";
+		say "In one corner sits a vibrant pink chair with waiting bondage straps on each leg and a vibrating wand fixed through a hole in the middle[if diaper quest is 1]. Lots of lewd phrases have been written on the chair in pen, such as 'Be a GOOD Princess' and 'Submit'[end if]. Dev note: you only interact with this by having detention.";
 	otherwise:
 		say "In one corner sits a chair with bondage straps on each leg.".
 

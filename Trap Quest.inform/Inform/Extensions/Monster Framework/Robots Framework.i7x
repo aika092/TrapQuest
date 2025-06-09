@@ -31,7 +31,7 @@ To compute kneeling reaction of (M - a robot):
 Definition: a robot is a wrangler: decide yes.
 
 To WrangleUp (M - a robot):
-	if the wrangle-bonus of M is 0, say "[speech style of M]'[one of]WRIST GRAPPLING ROUTINE INITIALISING[or]PRIORITY TARGET: ARMS[or]ARM RESTRAINT SUBROUTINE IS LOADING, PLEASE WAIT[then at random].'[roman type][line break]";
+	if the wrangle-bonus of M is 0, say "[speech style of M]'[one of]WRIST GRAPPLING ROUTINE INITIALISING[or]PRIORITY TARGET: ARMS[or]ARM RESTRAINT SUBROUTINE IS LOADING, [caps please] WAIT[then at random].'[roman type][line break]";
 	increase the wrangle-bonus of M by (4 - combatSpeed) * 2.
 
 To say ArmWrangleSuccess of (M - a robot):
@@ -216,6 +216,9 @@ To say LockCommentFlav of (M - a robot) for (C - a clothing):
 	if C is gag, say "[speech style of M]'ORIFICE ISSUE RESOLVED.'[roman type][line break]";
 	otherwise say "[speech style of M]'CRIME TERMINATED.'[roman type][line break]".
 
+To say ErrandThanksFlav of (T - a thing) from (P - a robot):
+	say "[speech style of P]'QUEST REWARD COMPLETE.'[roman type][line break]".
+
 Part - DQ
 
 Definition: a robot is willing to punish untidiness: decide yes.
@@ -240,15 +243,15 @@ To say DiaperPailCommenceFlav of (M - a robot):
 To say TrashcanSummonCommenceFlav of (M - a robot):
 	say "[speech style of M]'MORE TRASHCANS REQUIRED. REASSIGNING ROLE... TRASHCAN.'[roman type][line break]".
 To say TrashcanUseFlav of (M - a robot):
-	say "[speech style of M]'GOOD WORK, TRASHCAN. PLEASE CONTINUE TO PATROL.'[roman type][line break]".
+	say "[speech style of M]'GOOD WORK, TRASHCAN. [caps please] CONTINUE TO PATROL.'[roman type][line break]".
 To say DiaperUntidyPunishCommenceFlav of (M - a robot):
 	say "[speech style of M]'DIAPER LITTERING IS UNACCEPTABLE. SEARCHING FOR APPROPRIATE PUNISHMENT ROUTINE...'[roman type][line break]".
 
 To say EnticeFlav of (M - a robot) for (P - untidy-session):
 	if diaper messing >= 7:
-		say "[line break][speech style of M]'FORCED STENCH SMELLING ROUTINE REQUIRED. PLEASE SUBMIT.'[roman type][line break]";
+		say "[line break][speech style of M]'FORCED STENCH SMELLING ROUTINE REQUIRED. [caps please] SUBMIT.'[roman type][line break]";
 	otherwise:
-		say "[line break][speech style of M]'LITTERBUG PUNISHMENT ROUTINE REQUIRED. PLEASE SUBMIT.'[roman type][line break]".
+		say "[line break][speech style of M]'LITTERBUG PUNISHMENT ROUTINE REQUIRED. [caps please] SUBMIT.'[roman type][line break]".
 
 Part - Conversation
 

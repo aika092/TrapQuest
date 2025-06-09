@@ -144,6 +144,8 @@ Figure of Fairy Cutscene 18 is the file "NPCs/Forest/Fairy/cutscene-fairy-vines1
 Figure of Fairy Cutscene 19 is the file "NPCs/Forest/Fairy/cutscene-fairy-vines2.jpg".
 Figure of Fairy Cutscene 20 is the file "NPCs/Forest/Fairy/cutscene-fairy-vines3.png".
 
+Figure of Defeated Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator7.jpg".
+
 Figure of ghost 1a is the file "NPCs/Mansion/Ghost/ghost1a.jpg".
 Figure of ghost 1b is the file "NPCs/Mansion/Ghost/ghost1b.jpg".
 Figure of ghost 1c is the file "NPCs/Mansion/Ghost/ghost1c.jpg".
@@ -187,6 +189,11 @@ Figure of Guard Cutscene 4 is the file "NPCs/Dungeon/Guard/cutscene-guard-climax
 Figure of Guard Cutscene 5 is the file "NPCs/Dungeon/Guard/cutscene-guard-climax3.png".
 Figure of Guard Cutscene 6 is the file "NPCs/Dungeon/Guard/cutscene-guard-climax4.png".
 Figure of Guard Cutscene 7 is the file "NPCs/Dungeon/Guard/cutscene-guard-sex2.png".
+Figure of Fucked Royal Guard is the file "NPCs/Dungeon/Guard/royalguard3.jpg".
+
+To decide which figure-name is the pacified-image of (M - a royal guard):
+	if M is fucked-silly, decide on figure of Fucked Royal Guard;
+	decide on figure of Missing NPC.
 
 Figure of Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator1b.jpg".
 Figure of Futanari Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator2.jpg".
@@ -225,6 +232,8 @@ Figure of Wild Gladiator Cutscene 5 is the file "NPCs/MultiFloor/Gladiator/Cutsc
 Figure of horizontal pole predicament is the file "Special/Cutscene/cutscene-predicament-horizontal-pole1.jpg".
 
 Figure of milk fountain is the file "Env/Mansion/fountain1.jpg".
+
+Figure of defeated neuromancer is the file "NPCs/Mansion/Neuromancer/neuromancer2.jpg".
 
 [unnecessary in DQ]
 Figure of white inexperienced patron is the file "NPCs/Hotel/Patron/patron1.png".
@@ -411,6 +420,11 @@ To decide which figure-name is clothing-image of (C - trashcan):
 	if the used condoms of trashcan is 4, decide on Figure of trashcan full 4 condoms;
 	decide on Figure of trashcan full 5 condoms.
 
+Figure of Futa Vampiress is the file "NPCs/Mansion/vampiress2.jpg".
+To decide which figure-name is the unfriendly-monster-image of (M - vampiress):
+	if futanari fetish is 1, decide on figure of futa vampiress;
+	decide on the monster-image of M.
+
 Figure of walled creature is the file "NPCs/Mansion/WallCreature/slimy-portal-creature6b.png".
 Figure of walled creature bwc oral is the file "NPCs/Mansion/WallCreature/slimy-portal-creature7.png".
 Figure of walled creature bbc oral is the file "NPCs/Mansion/WallCreature/slimy-portal-creature8.png".
@@ -427,8 +441,8 @@ Figure of walled creature demon anal is the file "NPCs/Mansion/WallCreature/slim
 
 To decide which figure-name is the sex-profile of (M - slimy-portal-creature):
 	if there is a monster penetrating a fuckhole:
-		if M is penetrating vagina:
-			if M is penetrating asshole:
+		if there is a monster penetrating vagina:
+			if there is a monster penetrating asshole:
 				if M is demon-fuck, decide on figure of walled creature demon fuck;
 				if M is bbc-fuck, decide on figure of walled creature bbc fuck;
 				decide on figure of walled creature bwc fuck;
@@ -548,6 +562,8 @@ Figure of Full Term Contraction is the file "Special/Cutscene/cutscene-pregnancy
 Figure of Fat Growth 1 is the file "Special/Cutscene/cutscene-fat1.png".
 Figure of Fat Growth 2 is the file "Special/Cutscene/cutscene-fat2.png".
 Figure of Fat Growth 3 is the file "Special/Cutscene/cutscene-fat3.png".
+
+Figure of flying used condoms is the file "Special/Cutscene/cutscene-condoms1.jpg".
 
 Figure of Football Predicament is the file "Special/Cutscene/cutscene-predicament-football1.jpg".
 

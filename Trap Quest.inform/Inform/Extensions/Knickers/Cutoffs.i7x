@@ -79,6 +79,8 @@ Definition: heart window cutoffs is potentially vagina covering: decide no. [doe
 
 predicament-painted-cutoffs is a knickers. predicament-painted-cutoffs is unique. predicament-painted-cutoffs is crotch-exposing. The printed name of predicament-painted-cutoffs is "[clothing-title-before]painted cutoffs[clothing-title-after]". The text-shortcut of predicament-painted-cutoffs is "pcf". Understand "painted", "cutoffs" as predicament-painted-cutoffs.
 
+predicament-painted-cutoffs can be cutscene-shown.
+
 Definition: predicament-painted-cutoffs is fluid immune: decide yes.
 
 Definition: predicament-painted-cutoffs is hand-blocked:
@@ -90,6 +92,7 @@ Figure of full-painted-cutoffs is the file "Items/Clothes/Lower/Underwear/Skimpy
 
 To decide which figure-name is clothing-image of (H - predicament-painted-cutoffs):
 	if current-predicament is vibe-photo-predicament, decide on figure of full-painted-cutoffs;
+	if the player is in a park room, decide on Figure of painted cutoffs predicament;
 	decide on figure of predicament-painted-cutoffs.
 
 To say UniqueClothingDesc of (Y - predicament-painted-cutoffs):
@@ -141,7 +144,11 @@ To compute school periodic effect of (C - predicament-painted-cutoffs):
 		only destroy painted-vibrator-hands;
 		increase the predicament-completed of painted-cutoffs-predicament by 1;
 	otherwise:
-		if the player is in a park room, cutshow Figure of painted cutoffs predicament;
+		if the player is in a park room and C is not hand-blocked:
+			if C is not cutscene-shown:
+				now C is cutscene-shown;
+				maybe-map-display Figure of painted cutoffs predicament;
+			focus-consider C;
 		if C is hand-blocked:
 			let T be a random carried thing;
 			if T is a thing or the player is prone or refractoryperiod > 0:
@@ -149,18 +156,25 @@ To compute school periodic effect of (C - predicament-painted-cutoffs):
 				if refractoryperiod > 0, say "You can't bring yourself to cover the hand prints of your [C] while your oversensitive clit is still recovering from your recent orgasm!";
 				otherwise say "You can't cover the hand prints of your [C] while [if T is a thing]carrying [NameDesc of T][otherwise]on your knees[end if][bold type].";
 				say "[roman type][line break]";
-				now the defaultLeftTarget of arms is the player;
-				now the defaultRightTarget of arms is the player;
+				now the defaultLeftTarget of arms is arms;
+				now the defaultRightTarget of arms is arms;
 				update arms;
 			say "The egg vibrators are both pushed into your clit from either side. They buzz away powerfully!";
 			stimulate vagina from painted-vibrator-hands.
 
 Report going when predicament-painted-cutoffs is worn:
 	if the player is in Predicament19: [Reaching home safely]
-		now the defaultLeftTarget of arms is the player;
-		now the defaultRightTarget of arms is the player.
+		now the defaultLeftTarget of arms is arms;
+		now the defaultRightTarget of arms is arms.
 
 To decide which number is the initial outrage of (C - predicament-painted-cutoffs):
 	decide on 2.
+
+To construct normal buttons for (T - predicament-painted-cutoffs):
+	if ButtonTableFull is 0 and realisticArms is 1 and current-predicament is painted-cutoffs-predicament:
+		choose a blank row in the Table of Buttons;
+		now the ButtonCommand entry is "adjust arms";
+		now the ButtonImage entry is the examine-image of predicament-painted-cutoffs;
+		now the ButtonColour entry is lightModeFullGreen.
 
 Cutoffs ends here.

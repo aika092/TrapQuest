@@ -128,7 +128,7 @@ To compute perception of (M - pimp):
 		otherwise if the current-errand of M is completed:
 			compute errand completion of M;
 		otherwise:
-			say "[speech style of M]'Your debt isn't paid off yet. Come see me after a few more [brotha of male-m]s have had their fun with you.'[roman type][line break][BigNameDesc of M] purposefully stops paying attention to you.";
+			say "[speech style of M]'Your debt isn't paid off yet. Come see me after a few more [brothas of male-m] have had their fun with you.'[roman type][line break][BigNameDesc of M] purposefully stops paying attention to you.";
 		distract M;
 	otherwise if portal-diaper is worn:
 		say "[speech style of M]'Sales are going well, slut, which I guess is good news for both of us.'[roman type][line break]";
@@ -399,7 +399,8 @@ To standard loot (M - pimp):
 Section 4 - Dominant Sex
 
 To say DominanceFailure of (M - pimp):
-	say "You grab [NameDesc of M] by the front of [his of M] shirt and try to throw [him of M] to the ground. [big he of M] isn't all that interested in being thrown around, so instead of falling over, [he of M] responds by slapping you across the face. Your instincts cause you to immediately release [him of M] and drop to your knees before [he of M] has to hit you again.".
+	if the player is wrist bound, say "";
+	say "[if the player is wrist bound]You try to tackle [NameDesc of M] to the ground, but [he of M] catces you and immediately slaps[otherwise]You grab [NameDesc of M] by the front of [his of M] shirt and try to throw [him of M] to the ground. [big he of M] isn't all that interested in being thrown around, so instead of falling over, [he of M] responds by slapping[end if] you across the face. Your instincts cause you to immediately release [him of M] and drop to your knees before [he of M] has to hit you again.".
 
 To compute failed dominance punishment of (M - pimp):
 	if the player is getting unlucky:
@@ -413,7 +414,8 @@ To compute failed dominance punishment of (M - pimp):
 	now another-turn-flavour is the substituted form of "[BigFuckerDesc of M] holds you in place.".
 
 To ride dominate (M - pimp):
-	say "You grab [NameDesc of M] by the front of [his of M] shirt and throw [him of M] to the ground. [PowerBottomComment of M] [big his of M] lets out an exasperated sigh as you wrap your hands around [his of M] [LongDickDesc of M].[line break][speech style of M]'Listen up. If any Johns walk in on this, they'll think I'm- WE're merchandise. You won't get away with disrespecting me like this anyway, so why don't you let me go and I'll make it worth your while.'[roman type][line break]Do you let him go?";
+	if the player is wrist bound, say "You tackle [NameDesc of M] to the ground. [PowerBottomComment of M] [big his of M] lets out an exasperated sigh as you sit on [his of M] [LongDickDesc of M].[line break][speech style of M]'Bitch, are you stupid? If a Johns walks in and sees your arms like that, what the fuck do you think-? This won't go well for you, so why don't you let me go and I'll make it worth your while.'[roman type][line break]Do you let him go?";
+	otherwise say "You grab [NameDesc of M] by the front of [his of M] shirt and throw [him of M] to the ground. [PowerBottomComment of M] [big his of M] lets out an exasperated sigh as you wrap your hands around [his of M] [LongDickDesc of M].[line break][speech style of M]'Listen up. If any Johns walk in on this, they'll think I'm- WE're merchandise. You won't get away with disrespecting me like this anyway, so why don't you let me go and I'll make it worth your while.'[roman type][line break]Do you let him go?";
 	if the player is reverse bimbo consenting:
 		now player-fucking is DOMINANT-NEUTRAL;
 		let J be a random off-stage plentiful accessory;
@@ -432,7 +434,7 @@ To ride dominate (M - pimp):
 		now refractoryperiod is 1;[to prevent the player cumming instantly]
 		let F be player-fucker;
 		let O be the openness of F - the girth of M;
-		say "Things probably would get complicated if any patrons showed up, but if it's a problem for [him of M], then that's perfect. You [if oral sex addiction of the player > 3 and face is not actually occupied]use your mouth to give [his of M] shaft a quick polishing[otherwise]give [his of M] shaft a couple of strokes with both hands[end if], just enough to get it hard, and [if O < -2]carefully push it[otherwise if O < 0]ease[otherwise if O < 2]push[otherwise]eagerly slide[end if] it into your [variable F].";
+		say "Things probably would get complicated if any patrons showed up, but if it's a problem for [him of M], then that's perfect. You [if oral sex addiction of the player > 3 and face is not actually occupied]use your mouth to give [his of M] shaft a quick polishing, [otherwise if the player is not wrist bound]give [his of M] shaft a couple of strokes with both hands, [otherwise]grind on [his of M] shaft, [end if]just enough to get it hard, and [if O < -2]carefully push it[otherwise if O < 0]ease[otherwise if O < 2]push[otherwise]eagerly slide[end if] it into your [variable F].";
 		now M is penetrating F;
 		Ruin F times 1;
 		now refractoryperiod is 0;
@@ -443,8 +445,9 @@ To ride dominate (M - pimp):
 To compute ride dominate ending of (M - pimp) with (P - a patron):
 	let F be player-fucker;
 	let O be the openness of F - the girth of M;
-	let R be the semi-dominance roll for M;
-	if R >= 0 or the face is actually occupied:
+	let R be -1;
+	if face is not actually occupied, now R is the semi-dominance roll for M;
+	if R >= 0:
 		if debugmode > 0, say "[bold type][if face is actually occupied]GAGGED: AUTOMATICALLY [end if]PASSED[roman type][line break]";
 		say "You glance over your shoulder, suppressing the urge to stop moving or look down at the hardening [DickDesc of P] between the newly arrived [MediumDesc of P]'s legs. [BigFuckerDesc of M], on the other hand openly stares at it.[line break][speech style of M]'T-that's a nice piece you've got, [brotha of P]! Why don't you-'[roman type][line break][speech style of P]'Say no more, I know exactly what you want!'[roman type][line break][BigFuckerDesc of P] walks over and without waiting for any further invitation, stuffs [his of P] [DickDesc of P] into [FuckerDesc of M]'s mouth. [BigFuckerDesc of P][']s [DickDesc of M] throbs in a way that draws your eye, with every inch of it that [FuckerDesc of P] forces down [his of M] throat, and a satisfied smirk creeps onto your face as you realise how easy it would be to make [him of M] cum. [if M is wrapped]Do you want to make the effort?[otherwise]Do you want to make the effort? It would probably end in a creampie.[end if]";
 		if the player is bimbo consenting:
@@ -464,7 +467,7 @@ To compute ride dominate ending of (M - pimp) with (P - a patron):
 			say AfterDominationComment 4 of M;
 	otherwise:
 		now player-fucking is DOMINANT-SHAMEFUL;
-		say "You glance over your shoulder and immediately fail to suppress the urge to stop moving and look down at the hardening [DickDesc of P] between the newly arrived [MediumDesc of P]'s legs. [big he of P] seems to take that as an invitation, and without even waiting for a greeting [he of P] walks over and stuffs [his of M] [DickDesc of P] into your mouth. You try to push [him of P] away, but [he of P] already has a firm grip on the back of your head. To make things worse, [FuckerDesc of M] takes it upon [himself of M] to pick up where you left off, grabbing your waist as [he of M] begins to fuck you. [if O < -2][big he of M]'s still too big for you[otherwise if O < 0][big he of M]'s on the verge of being too big for you[otherwise][big he of M] feels way bigger now that [he of M]'s in control[end if], and between [him of M] and the [DickDesc of P] getting forced down your throat, you're left with the distinct feeling that you're not in the driver's seat anymore. The only silver lining is that neither of them have the stamina to keep their feet on the gas forever. [BigFuckerDesc of M]'s [DickDesc of M] soon begins to throb, and [he of M] growls as [he of M] [if M is wrapped]fills the condom with a blast [otherwise]floods your [variable F] with a wave[end if] of hot [semen]. [BigFuckerDesc of P] is close behind, forcing [him of P]self all the way down as [his of M] thick, salty load shoots right down your throat. [BigFuckerDesc of M] sits up as [FuckerDesc of P] pulls out and walks away.";
+		say "You glance over your shoulder and immediately fail to suppress the urge to stop moving and look down at the hardening [DickDesc of P] between the newly arrived [MediumDesc of P]'s legs. [big he of P] seems to take that as an invitation, and without even waiting for a greeting [he of P] walks over and stuffs [his of M] [DickDesc of P] into your mouth. [if the player is wrist bound]With your wrists bound, all it takes to shut down your struggling is [his of M] hand[otherwise]You try to push [him of P] away, but [he of P] already has a firm grip[end if] on the back of your head. To make things worse, [FuckerDesc of M] takes it upon [himself of M] to pick up where you left off, grabbing your waist as [he of M] begins to fuck you. [if O < -2][big he of M]'s still too big for you[otherwise if O < 0][big he of M]'s on the verge of being too big for you[otherwise][big he of M] feels way bigger now that [he of M]'s in control[end if], and between [him of M] and the [DickDesc of P] getting forced down your throat, you're left with the distinct feeling that you're not in the driver's seat anymore. The only silver lining is that neither of them have the stamina to keep their feet on the gas forever. [BigFuckerDesc of M]'s [DickDesc of M] soon begins to throb, and [he of M] growls as [he of M] [if M is wrapped]fills the condom with a blast [otherwise]floods your [variable F] with a wave[end if] of hot [semen]. [BigFuckerDesc of P] is close behind, forcing your head down as [his of M] thick, salty load shoots right down your throat. [BigFuckerDesc of M] sits up as [FuckerDesc of P] pulls out and walks away.";
 		now P is penetrating face;
 		StomachSemenUp the semen load of P;
 		instantThroat P;
@@ -482,11 +485,11 @@ To penetration dominate (M - pimp):
 	let L be sexual-penis-length;
 	let C be a random bottom level protection clothing;
 	if L >= 8:
-		say "You grab the pimp by the front of [his of M] shirt and throw [him of M] to the ground. [line break][speech style of M]'Ugh-! Stupid ho, you better be ready to pay for treating me like...'[roman type][line break][big his of M] eyes go wide open as you [if C is clothing]pull out your [SexDesc of penis] and [end if]tear off the seat of [his of M] pants.[line break][speech style of M]'Ya gotta be fucking kidding m-... You gotta pay me up front if you want me to deal with that, [brotha of the player]! T-there's no way I'm dealing with this bullshit for free.'[roman type][line break][big he of M] averts eye contact as [he of M] holds out [his of M] hand.";
+		say "[if the player is wrist bound]You tackle [NameDesc of M][otherwise]You grab [NameDesc of M] by the front of [his of M] shirt and try to throw [him of M][end if] to the ground.[line break][speech style of M]'Ugh-! Stupid ho, you better be ready to pay for treating me like...'[roman type][line break][big his of M] eyes go wide open as you [if C is clothing and C is not strapon-panties]pull your [SexDesc of penis] out of your [ShortDesc of C].[otherwise if the player is wrist bound]use your teeth to rip open [his of M] pants.[otherwise]rip off [his of M] pants.[end if][line break][speech style of M]'Ya gotta be fucking kidding m-... You gotta pay me up front if you want me to deal with that, [brotha of the player]! T-there's no way I'm dealing with this bullshit for free.'[roman type][line break][big he of M] averts eye contact as [he of M] holds out [his of M] hand.";
 	otherwise if L >= 4:
-		say "You grab the pimp by the front of [his of M] shirt and throw [him of M] to the ground. [line break][speech style of M]'Ugh-! Stupid ho, you better be ready to pay for treating me like merchandise!'[roman type][line break][big he of M] scowls as you [if C is clothing]pull out your [SexDesc of penis] and [end if] rip off [his of M] pants.[line break][speech style of M]'Hoh, you wanna fuck me? Well alright [brotha of the player], why don't you pay then? Up front.'[roman type][line break][big he of M] holds [his of M] hand out expectantly.";
+		say "[if the player is wrist bound]You tackle [NameDesc of M][otherwise]You grab [NameDesc of M] by the front of [his of M] shirt and try to throw [him of M][end if] to the ground.[line break][speech style of M]'Ugh-! Stupid ho, you better be ready to pay for treating me like merchandise!'[roman type][line break][big he of M] scowls as you [if C is clothing and C is not strapon-panties]pull your [SexDesc of penis] out of your [ShortDesc of C].[otherwise if the player is wrist bound]unzip [his of M] pants with your teeth.[otherwise]unzip [his of M] pants.[end if][speech style of M]'Hoh, you wanna fuck me? Well alright [brotha of the player], why don't you pay then? Up front.'[roman type][line break][big he of M] holds [his of M] hand out expectantly.";
 	otherwise:
-		say "You grab the pimp by the front of [his of M] shirt and throw [him of M] to the ground. [line break][speech style of M]'Ugh-! Stupid ho, you better be ready to pay for treating me like merchandise!'[roman type][line break][big he of M] scowls as you [if C is clothing]pull out your [SexDesc of penis] and [end if]carefully begin to remove [his of M] pants.[line break][speech style of M]'...Pay up front, and don't you dare think about fuckin['] me. You can put it in and then that's it.'[roman type][line break][big he of M] holds [his of M] hand out expectantly.";
+		say "[if the player is wrist bound]You tackle [NameDesc of M][otherwise]You grab [NameDesc of M] by the front of [his of M] shirt and try to throw [him of M][end if] to the ground.[line break][speech style of M]'Ugh-! Stupid ho, you better be ready to pay for treating me like merchandise!'[roman type][line break][big he of M] scowls as you [if C is clothing and C is not strapon-panties]pull your [SexDesc of penis] out of your [ShortDesc of C].[otherwise if the player is wrist bound]unzip [his of M] pants with your teeth.[otherwise]unzip [his of M] pants.[end if][line break][speech style of M]'...Pay up front, and don't you dare think about fuckin['] me. You can put it in and then that's it.'[roman type][line break][big he of M] holds [his of M] hand out expectantly.";
 	let LA be a list of things;
 	repeat with A running through worn plentiful accessories:
 		add A to LA;
@@ -510,12 +513,12 @@ To compute paid penetration dominate of (M - pimp) with (A - an accessory):
 	let L be sexual-penis-length;
 	now M is carrying A;
 	if L >= 8:
-		say "Taking the [ShortDesc of A], [FuckerDesc of M] spits in [his of M] hand and immediately begins to finger [his of M] asshole, eyes constantly darting towards your [if penis is penis-erect]rapidly hardening[otherwise]rock hard[end if] [sexual-player-penis] as [he of M] lubricates [himself of M] with a few more handfuls of saliva. You're feeling merciful, so you leave [him of M] be for a few seconds before brushing [his of M] hand away and lining up your tip with [his of M] slippery hole. [big he of M] hisses a little as your [SexShaft] slides in, but thanks to [his of M] little prep session, [he of M]'s able take your entire length in a single push. It turns out that [he of M]'s way more experienced than [he of M] originally let on, and you enjoy yourself far too briefly before losing control and filling [him of M] with your [load].";
+		say "Taking the [ShortDesc of A], [FuckerDesc of M] squirts some lube in [his of M] hand and immediately begins to finger [his of M] [HoleDesc of M], eyes constantly darting towards your [if penis is penis-erect]rapidly hardening [sexual-player-penis]. [otherwise][SexDesc of penis]. [end if]You're feeling merciful, so you leave [him of M] be for a few seconds before brushing [his of M] hand away and lining up your tip with [his of M] slippery hole. [big he of M] hisses a little as your [SexShaft] slides in, but thanks to [his of M] little prep session, [he of M]'s able take your entire length in a single push. It turns out that [he of M]'s way more experienced than [he of M] originally let on, and you enjoy yourself far too briefly before losing control and filling [him of M] with your [load].";
 		strongDignify;
 		orgasm;
 		say AfterDominationComment 6 of M;
 	otherwise if L >= 4:
-		say "Taking the [ShortDesc of A], [FuckerDesc of M] spits in [his of M] hand and immediately begins to finger [his of M] asshole. You eagerly try to line your tip with [his of M] hole, but [he of M] smacks your hand away without glancing your way, forcing you to watch [himself of M] with another handful of saliva before [he of M] reaches for your [SexShaft] and guides it into [his of M] asshole on [his of M] own. It turns out that [he of M]'s way more experienced than [he of M] originally let on, and before you can even think to conserve your stamina, you lose control and fill [him of M] with your [load].";
+		say "Taking the [ShortDesc of A], [FuckerDesc of M] squirts some lube in [his of M] hand and immediately begins to finger [his of M] [HoleDesc of M]. You eagerly try to line your tip with [his of M] hole, but [he of M] smacks your hand away without glancing your way, forcing you to watch [him of M] finger [himself of M] in an incredibly thorough manner before finally reaching for your [SexShaft] and guiding it into [his of M] slippery hole. It turns out that [he of M]'s way more experienced than [he of M] originally let on, and before you can even think to conserve your stamina, you lose control and fill [him of M] with your [load].";
 		moderateDignify;
 		orgasm;
 		say AfterDominationComment 6 of M;
@@ -692,7 +695,7 @@ To compute resolution of (M - pimp) taking (T - a thing):
 			say "[speech style of M]'Your debt is paid. I guess it's time to release you.'[roman type][line break]";
 			release pimp portals;
 		otherwise:
-			say "[speech style of M]'Your debt isn't paid off yet. Come see me after a few more [brotha of male-m]s have had their fun with you.'[roman type][line break]";
+			say "[speech style of M]'Your debt isn't paid off yet. Come see me after a few more [brothas of male-m] have had their fun with you.'[roman type][line break]";
 	otherwise:
 		if M is guardian:
 			say "[speech style of M]'You're way ahead in your payments to me. As a reward I'll make sure to only send the easiest customers your way for now.'[roman type][line break]";
@@ -773,10 +776,10 @@ This is the pedestal management rule:
 		repeat with P running through pimp-pedestals:
 			if the pedestal-user of P is a monster:
 				let PU be the pedestal-user of P;
-				if PU is ultimate-lesson-actor, now PU is suited patron;
+				if PU is unseen-stranger, now PU is suited patron;
 				now PU is in Hotel44;
 				now PU is guarding;
-				let M be a random ultimate-lesson-actor;
+				let M be a random unseen-stranger;
 				if nearbyPedestal is true or P is user-identified:
 					if P is not user-identified:
 						if P is pimp-pedestal-1, say "[bold type]You can see exactly who is fucking [if F is a fuckhole]your [variable F][otherwise]you[end if] [if the player is not in Hotel44]in the [Hotel44] - [end if]it's [NameDesc of PU]![roman type][line break]";
@@ -853,7 +856,7 @@ This is the pedestal management rule:
 				otherwise now the charge of P is 0;
 		otherwise:
 			increase the charge of P by 1;
-		if P is pimp-pedestal-2 and portal-bra is not worn and woman-player is partially-enslaved and the charge of P > a random number between 10 and 30, now the charge of P is 80; [if barbara has the portal bra on, it happens more regularly]
+		if P is pimp-pedestal-2 and portal-bra is not worn and woman-player is partially-enslaved and the charge of P > a random number between 10 and 30 and the charge of P < 100, now the charge of P is 80; [if barbara has the portal bra on, it happens more regularly]
 		if the charge of P < 100 and the charge of P > (a random number between 40 and 60):
 			now the charge of P is 100;
 			let M be a random male human unleashed uninterested not-pedestal-fucking monster in the hotel;
@@ -863,7 +866,7 @@ This is the pedestal management rule:
 				now M is in Hotel44;
 				now M is guarding;
 			otherwise:
-				now M is a random ultimate-lesson-actor;
+				now M is a random unseen-stranger;
 				now pedestal-user of P is M;
 				set up suited patron;
 				now suited patron is in Hotel44;

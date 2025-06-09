@@ -25,7 +25,7 @@ Chapter - The null figure
 
 [Inform users are not allowed to set a figure value of "nothing"--if we leave a figure unspecified, the cover art (or the built-in generic cover art) will print instead. Here, we set up a fake figure to stand in for "nothing".]
 
-Figure of Null is the file of cover art. [The file of cover art is used for the declaration because Inform will ensure that an image is provided. In practise, we simply don't print the image if its resource ID corresponds to Figure of Null]
+Figure of Null is the file of cover art. [The file of cover art is used for the declaration because Inform will ensure that an image is provided. In practice, we simply don't print the image if its resource ID corresponds to Figure of Null]
 
 Part - Primitives
 
@@ -1558,7 +1558,7 @@ Short forms:
 
 Speed notes:
 
-	A box is drawn using four rectangles, one for each side of the box. It will thus take slightly more time to draw than a rectangle. In practise, and particularly in the best multimedia interpreters, a few boxes on screen should still draw instantaneously.
+	A box is drawn using four rectangles, one for each side of the box. It will thus take slightly more time to draw than a rectangle. In practice, and particularly in the best multimedia interpreters, a few boxes on screen should still draw instantaneously.
 
 Section: Stroked rectangle
 
@@ -1577,7 +1577,7 @@ Short form:
 
 Speed notes:
 
-	The stroked rectangle is drawn by displaying two rectangles, one in the background colour superimposed on one in the outline colour. In theory, it should take slightly more time to draw than a standard rectangle, and slightly less time than a box. In practise there is likely to be little difference, except perhaps if many are being drawn to the screen at once.
+	The stroked rectangle is drawn by displaying two rectangles, one in the background colour superimposed on one in the outline colour. In theory, it should take slightly more time to draw than a standard rectangle, and slightly less time than a box. In practice there is likely to be little difference, except perhaps if many are being drawn to the screen at once.
 
 Section: Line
 
@@ -1758,7 +1758,7 @@ Image-maps can be specified in one of two ways:
 	direct image-map: Takes a list of lists of figure names
 	tileset image-map: Takes a list of lists of numbers keyed to a separate tileset listing
 
-The main advantage of the direct image-map is that it is at least notionally faster, since there is no need for an intervening lookup to a tileset. In practise, the lookup is very fast and (at least on most machines) there isn't much difference.
+The main advantage of the direct image-map is that it is at least notionally faster, since there is no need for an intervening lookup to a tileset. In practice, the lookup is very fast and (at least on most machines) there isn't much difference.
 
 One advantage of the tileset approach is human-readability. With short integers and some formatting, the list itself can be understand relatively easily as a kind of low-resolution "image." The following, for example, might represent a long hallway with a door on the left:
 
@@ -1820,7 +1820,7 @@ Short forms:
 
 Speed notes:
 
-	Image-maps must display a number of images every time they are redrawn. Their speed is likely faster than drawing the images individually using the "draw image" command. They are likely to perform well in any interpreter that draws images quickly. Direct image-maps should theoretically draw slightly faster than tileset maps, but in practise the extra table-lookup required for tileset maps seems to make little noticeable difference.
+	Image-maps must display a number of images every time they are redrawn. Their speed is likely faster than drawing the images individually using the "draw image" command. They are likely to perform well in any interpreter that draws images quickly. Direct image-maps should theoretically draw slightly faster than tileset maps, but in practice the extra table-lookup required for tileset maps seems to make little noticeable difference.
 
 	The same speed optimisation techniques described for images (see above) apply also to image-maps.
 
@@ -1868,7 +1868,7 @@ Short forms:
 
 Speed notes:
 
-	Image-maps must display a number of images every time they are redrawn. Their speed is likely faster than drawin the images individually using the "draw image" command. They are likely to perform well in any interpreter that draws images quickly. Direct image-maps should theoretically draw slightly faster than tileset maps, but in practise the extra table-lookup required for tileset maps seems to make little noticeable difference.
+	Image-maps must display a number of images every time they are redrawn. Their speed is likely faster than drawin the images individually using the "draw image" command. They are likely to perform well in any interpreter that draws images quickly. Direct image-maps should theoretically draw slightly faster than tileset maps, but in practice the extra table-lookup required for tileset maps seems to make little noticeable difference.
 
 	The same speed optimisation techniques described for images (see above) apply also to image-maps.
 

@@ -47,12 +47,13 @@ To compute common boredom of (M - a monster) for (N - a number) seconds:
 	if diaper quest is 1, now the latest-cringe of M is the cringe appearance of the player;]
 	now M is not diaper-committed;
 	now M is not double-diaper-committed;
+	now M is not tickle-testing;
 	now M is not diaperMessReacted;
 	now the dismissRefused of M is 0;
 	reset orifice selection of M; [Otherwise they would be biased towards doing the same thing again, which is lame.]
 	repeat with K running through things rejected by M:
 		now M is not rejecting K;
-	if N >= 50 and playerRegion is not School and the player is not in Dungeon12:[Dungeon12 is the Throne Room. We don't want to let the player farm by going in and out of the Royal Chambers.]
+	if N >= 50 and playerRegion is not School and the player is not in Dungeon12:[Dungeon12 is the Royal Chambers. We don't want to let the player farm by going in and out of the Royal Chambers.]
 		let R be a random number between 1 and 50;
 		decrease the charge of the dungeon altar by R;
 		decrease the charge of the elder altar by R;
@@ -264,9 +265,12 @@ To standard loot (M - a monster):
 		increase the loot dropped of M by 1;
 		compute autotaking X.
 
+To compute gift dropping of (X - a thing) by (M - a monster):
+	say "[BigNameDesc of M] [if the loot dropped of M > 0]also [end if][if M is dying or M is not in the location of the player]dropped[otherwise]drops[end if] a [printed name of X]!".
+
 To compute loot dropping of (X - a thing) by (M - a monster):
 	unless M is dying, now the owner of X is M;
-	say "[BigNameDesc of M] [if the loot dropped of M > 0]also [end if][if M is dying or M is not in the location of the player]dropped[otherwise]drops[end if] a [printed name of X]!".
+	compute gift dropping of X by M.
 
 To compute appraisal of (X - an accessory) from (M - a monster):
 	let R be a random number from the difficulty of M to (the difficulty of M * 4) / 3;

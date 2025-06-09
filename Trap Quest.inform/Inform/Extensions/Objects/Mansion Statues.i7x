@@ -36,7 +36,7 @@ Check touching MansionScenery01:
 		say "As your hand touches the statue's butt, her thong shines brightly, blinding you! In the next moment, when you can see again, ";
 		let K be a random worn knickers;
 		if the player is getting lucky:
-			let D be a random off-stage ring;
+			let D be a random off-stage plentiful ring;
 			if D is ring:
 				now D is pure diamond;
 				set shortcut of D;
@@ -100,7 +100,8 @@ To decide which figure-name is the examine-image of (C - MansionScenery02):
 	decide on figure of MansionScenery02.
 
 To say ExamineDesc of (C - MansionScenery02):
-	say "A stone statue of a woman is on a stone pedestal in this room. The woman is naked, on her hands and knees, and has beautiful golden ropes binding her neck, wrists and legs, as well as her hair to her asshole. A golden headband is fixed to the front of her hair. You can feel it faintly pulsing with magic energy. You could try to [bold type]touch the statue's ropes[roman type], [bold type]touch the statue's body[roman type], or [bold type]touch the statue's headband[roman type].";
+	let W be witch;
+	say "A statue of a [man of W] on [his of W] hands and knees rests upon a stone pedestal in this room. [big he of W] is naked, with beatiful golden ropes binding [his of W] neck to [his of W] wrists, [his of W] thighs to [his of W] calves, and [his of W] hair to [his of W] asshole. [if bondage-stone is in the location of C]A pink diamond ring is on one of [his of W] fingers, and a[otherwise]A golden headband is fixed to the front of her hair. The headband seems to be pulsing with magic energy. You could try to [bold type]touch the statue's ropes[roman type], [bold type]touch the statue's body[roman type], or [bold type]touch the statue's headband[roman type].";
 	if newbie tips is 1, say "[newbie style]This statue lets you remove annoying things - specifically, touching the body lets you remove a wisp, and touching the headband lets you remove your headgear, or perhaps gain a new one. Touch the golden ropes to upgrade your jewellery... Probably.[roman type][line break]";
 
 A time based rule (this is the mansion statue charge decay rule):

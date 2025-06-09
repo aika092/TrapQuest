@@ -59,6 +59,10 @@ Definition: centaur is father material: decide yes.
 Definition: centaur is throater: decide yes.
 Definition: centaur is wenchy: decide yes.
 
+Definition: centaur is certain to do anilingus:
+	if it is not a balls-haver, decide yes;
+	decide no.
+
 To say LongDickDesc of (M - centaur):
 	say "massive 2-foot equine [DickDesc of M]".
 
@@ -75,7 +79,7 @@ To set up (M - centaur):
 	now the monstersetup of M is 1;
 	now the raw difficulty of M is the starting difficulty of M;
 	if doomed is 5, SilentlyDifficultyUp M by 1;
-	let D be a random off-stage ring;
+	let D be a random off-stage plentiful ring;
 	if D is ring:
 		now D is pink diamond;
 		set shortcut of D;
@@ -584,6 +588,39 @@ To say PullOutFlav of (M - centaur) in (F - a fuckhole):
 To say MessyPullOutFlav of (M - centaur) in (F - a fuckhole):
 	say "[BigNameDesc of M] begins to groan, forcing [his of M] long [DickDesc of M] in deeper and deeper with every thrust. However, your [if the relevant sex addiction of M < 12]continued struggling seems to pay off, and you[otherwise]playful struggling is a little too effective, and you inadvertently[end if] cause [him of M] to pop out just as [he of M] begins to cum. You [if the relevant sex addiction of the player < 7]shudder[otherwise if the relevant sex addiction of the player < 12]wince[otherwise]squirm in delight[end if] as [his of M] huge load douses your crotch, [AssDesc], back, and thighs.";
 
+To say LickResisting of (M - centaur):
+	say BallResisting of M.
+
+To say LickResistingResponse of (M - centaur):
+	say BallResistingresponse of M.
+
+To say LickSubmissionResponse of (M - centaur):
+	say BallSubmissionResponse of M.
+
+To say LickInitiationFlav of (M - centaur):
+	let scent be the substituted form of "[one of]*unwashed*[or]sweaty[stopping]";
+	if the grossness addiction of the player < 4:
+		if M is friendly-fucking, say "[BigFuckerDesc of M] pins your head underneath [his of M] lower body, [his of M] huge, heavy balls completely covering your mouth.[one of]You gingerly start to lick them, forcing yourself to be gentle as the sour, salty, [scent] taste assaults your tongue.[or]You let the tip of your tongue touch them, forcing yourself not to gag as your senses grapple with the sour, [scent] taste.[or]You give them experimental lick, and are dismayed to find they taste even more [scent] than expected.[in random order]";
+		otherwise say "[BigFuckerDesc of M] pins your head underneath [his of M] lower body, his huge, heavy balls completely covering your mouth. [one of]You feel a wave of disgust as the [scent] smell of [his of M] sack blasts your nostrils.[or]They're too warm, sticky, and a sour, [scent] odor wafts into your nose as [he of M] rubs them on your lips.[or]Your senses are blasted with their [scent] aroma as you struggle to get free.[in random order]";
+	otherwise if the grossness addiction of the player < 11:
+		say "[BigFuckerDesc of M] pins your head underneath [his of M] lower body, [his of M] huge, heavy balls completely covering your mouth. [one of]You start to lick them, ignoring the sour, [scent] aroma.[or]You pucker your lips against them, allowing not sure how to feel about their [scent] odor.[or]You lick them, just to say hello, and their [scent] aroma assaults your nostrils.[in random order]";
+	otherwise:
+		say "[BigFuckerDesc of M] pins your head underneath [his of M] lower body, [his of M] huge, heavy balls completely covering your mouth. [one of]You hum happily as you begin to suck on them, relishing their sour, [scent] taste.[or]You give them a big, wet kiss hello, relishing the flavor of sour, [scent] sack.[or]You enthusiastically begin to lick them, making sure to taste every last bit of sticky, [scent] skin.[in random order]";
+
+To say LickEndFlav of (M - centaur):
+	say BallEndFlav of M.
+
+To say AnilingusInitiationFlav of (M - centaur):
+	say "[BigFuckerDesc of M] [BigFuckerDesc of M] pins your head underneath [his of M] lower body, [']kissing['] your lips with [his of M] [asshole]. [run paragraph on]";
+	if the grossness addiction of the player <= 2:
+		say "Despite your disgust and desperate attempts to make it stop, it's undeniable that at this moment, you are technically kissing a gross, sweaty butthole.";
+	otherwise if the grossness addiction of the player < 7:
+		say "It's just as sweaty and gross as you expect. You baulk at the thought of the task ahead of you.";
+	otherwise if the grossness addiction of the player < 14:
+		say "You know what [he of M] wants, and almost unthinkingly, your lips part...";
+	otherwise:
+		say "You excitedly part your lips and let your tongue flick out to enjoy that first delightfully disgusting taste of sweaty butthole.".
+
 Part 4 - Conversation
 
 To say RewardFlav of (M - centaur) for (T - a thing):
@@ -656,7 +693,7 @@ To say DominanceSuccess of (M - centaur):
 
 To handjob dominate (M - centaur):
 	let C be a random bottom level protection clothing;
-	say "You wrench the sword out of [NameDesc of M]'s hand and throw it into the bushes. [big he of M] moves as if to walk past you, but stops when you hold out your hand in front of [him of M] and [if C is not clothing or C is strapon-panties]point to the [SexDesc of penis] between your legs[otherwise]pull your [SexDesc of penis] out of your [printed name of C][end if].";
+	say "You [if the player is wrist bound]knock the sword out of [NameDesc of M]'s hand and[otherwise]wrench the sword out of [NameDesc of M]'s hand and throw it[end if] into the bushes. [big he of M] moves as if to walk past you, but stops when you hold out your hand in front of [him of M] and [if C is not clothing or C is strapon-panties]point to the [SexDesc of penis] between your legs[otherwise]pull your [SexDesc of penis] out of your [printed name of C][end if].";
 	if the sexual-penis-length > 8:
 		say "[line break][speech style of M]'Oh, that's... almost as big as mine? But, heh, it doesn't look the same! A-am I staring...?'[roman type][line break][big he of M] trails off, awkwardly. You helpfully grab [his of M] wrist and firmly guide [his of M] hand onto your [if penis is penis-erect]rock hard[otherwise]hardening[end if] junk, which [he of M] tentatively begins to stroke. A couple moments later [he of M] has dropped to [his of M] knees and [if lady fetish is 2]shrugged[otherwise]popped [his of M] breasts[end if] out of [his of M] armour, humming a little as [he of M] takes the head of your [sexual-player-penis] into [his of M] mouth. Working your [if the player is possessing a scrotum]balls[otherwise if the player is possessing a vagina][vagina][otherwise]taint[end if] with one hand and pumping your [SexShaft] with the other, [he of M] quickly and efficiently brings you to orgasm, a sigh of relief filtering out of [his of M] nose as you flood [his of M] mouth with your [load].";
 		orgasm;
@@ -704,7 +741,7 @@ To say AssRideDesc of (M - centaur):
 
 To tease dominate (M - centaur):
 	let F be player-fucker;
-	say "Ducking under [NameDesc of M]'s next strike, you dive under [his of M] body and grab [his of M] [LongDickDesc of M], which responds with a very appreciative throb.[line break][speech style of M]'Oh, so you just couldn't wait? Heheh, go right ahead, slut!'[roman type][line break]Slut, huh? You chuckle to yourself as you press [his of M] flat, precum-drooling tip [if F is vagina]to your entrance and begin to grind against[otherwise]between your cheeks and begin to push back against[end if] [him of M]. Slowly. Teasingly. Just hard enough for it to feel like you might let [him of M] enter you, but just soft enough that it's obvious you won't.[line break][speech style of M]'[one of]Put it in already!'[or]Hurry up!'[or]What are you waiting for? Put it in!'[in random order][roman type][line break][BigFuckerDesc of M]'s hooves impatiently paw at the ground as it slowly dawns on [him of M] that [if the times-submitted of M > 0]this is a punishment, not a reward[otherwise]this is a reward for you, not for [him of M][end if], [his of M] frustration mounting with every throb of [his of M] [DickDesc of M]. You [if F is vagina]grind [him of M][otherwise]push back[end if] even harder, relishing your total power over [him of M] as your [if F is vagina]labia lips part[otherwise]sphincter parts[end if] around [his of M] [cockhead of M]. [run paragraph on]";
+	say "Ducking under [NameDesc of M]'s next strike, you dive under [his of M] body and [if the player is wrist bound]rub your body against[otherwise]grab[end if] [his of M] [LongDickDesc of M], which responds with a very appreciative throb.[line break][speech style of M]'Oh, so you just couldn't wait? Heheh, go right ahead, slut!'[roman type][line break]Slut, huh? You chuckle to yourself as you press [his of M] flat, precum-drooling tip [if F is vagina]to your entrance and begin to grind against[otherwise]between your cheeks and begin to push back against[end if] [him of M]. Slowly. Teasingly. Just hard enough to feel like you might let [him of M] enter you, but just soft enough that it's obvious you won't.[line break][speech style of M]'[one of]Put it in already!'[or]Hurry up!'[or]What are you waiting for? Put it in!'[in random order][roman type][line break][BigFuckerDesc of M]'s hooves impatiently paw at the ground as it slowly dawns on [him of M] that [if the times-submitted of M > 0]this is a punishment, not a reward[otherwise]this is a reward for you, not for [him of M][end if], [his of M] frustration mounting with every throb of [his of M] [DickDesc of M]. You [if F is vagina]grind [him of M][otherwise]push back[end if] even harder, relishing your total power over [him of M] as your [if F is vagina]labia lips part[otherwise]sphincter parts[end if] around [his of M] [cockhead of M]. [run paragraph on]";
 	let R be the semi-dominance roll for M;
 	if R >= 0:
 		if debugmode > 0, say "[bold type]PASSED[roman type][line break]";
@@ -714,7 +751,7 @@ To tease dominate (M - centaur):
 		say AfterDominationComment 3 of M;
 	otherwise:
 		if debugmode > 0, say "[bold type]FAILED[roman type][line break]";
-		say "Unfortunately, your power isn't as 'total' as you thought, and [FuckerDesc of M] lurches forward at the perfect moment, forcing your [variable F] wide open as [his of M] [DickDesc of M] slides in. The first few inches are followed by several more, your efforts to hold [him of M] back only seeming to set [him of M] off. And off [he of M] goes, [his of M] whole shaft spasming as [he of M] blasts hot [semen] into your [variable F]. You have no choice but to simply lie there in defeat as [he of M] thoroughly empties the thick, creamy contents of [his of M] balls into your [if F is vagina]womb.[otherwise]belly.[end if]";
+		say "Unfortunately, your power isn't as 'total' as you thought, and [FuckerDesc of M] lurches forward at the perfect moment, forcing your [variable F] wide open as [his of M] [DickDesc of M] slides in. The first few inches are followed by several more, [if the player is wrist bound]and with your wrists bound, your awkward[otherwise]your[end if] efforts to hold [him of M] back only seeming to set [him of M] off. And off [he of M] goes, [his of M] whole shaft spasming as [he of M] blasts hot [semen] into your [variable F]. You have no choice but to simply lie there in defeat as [he of M] thoroughly empties the thick, creamy contents of [his of M] balls into your [if F is vagina]womb.[otherwise]belly.[end if]";
 		now M is penetrating F;
 		strongHumiliate;
 		ruin F;

@@ -55,7 +55,7 @@ To say QuestTitle of (Q - titfuck-desirability-quest):
 	say " (fuckable tits quest)".
 
 To compute generic first time class reward of (Q - titfuck-desirability-quest) on (C - a clothing):
-	let D be a random off-stage ring;
+	let D be a random off-stage plentiful ring;
 	if D is ring:
 		now D is ruby;
 		set shortcut of D;

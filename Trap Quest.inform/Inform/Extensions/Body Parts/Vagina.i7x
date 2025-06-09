@@ -10,6 +10,7 @@ REQUIRES COMMENTING
 
 @!]
 vagina is a fuckhole. vagina is everywhere. Understand "pussy", "fuckhole", "cunt", "fanny", "snatch", "muffin", "cum dump" as vagina. Understand "womb", "vulva", "cherry", "kitty", "slit", "clunge", "honey pot", "baby maker" , "crotch", "groin" as vagina when the player is possessing a vagina. The text-shortcut of vagina is "vagina".
+Understand "crotch", "groin" as vagina when the player is solely possessing a vagina.
 
 To say FullExamineDesc of (B - vagina):
 	say "[if the player is possessing a vagina][ImageDesc of vagina][TotalDesc of vagina][VaginaModesty][otherwise if the bimbo of the player > 6][description of asshole][otherwise]You don't have a vagina.[end if]".
@@ -211,6 +212,14 @@ Definition: yourself is possessing a vagina:
 
 Definition: yourself is solely possessing a vagina:
 	if the player is possessing a vagina and the player is not possessing a penis, decide yes;
+	decide no.
+
+Definition: yourself is really possessing a vagina:
+	if the real openness of vagina > -1, decide yes;
+	decide no.
+
+Definition: yourself is solely really possessing a vagina:
+	if the player is really possessing a vagina and the player is not really possessing a penis, decide yes;
 	decide no.
 
 [#LXorDD Only needed when reversing a M2F sex change.]
@@ -573,7 +582,7 @@ To compute father material of (T - a thing):
 
 To compute father material of (F - a body part):
 	repeat with M running through things penetrating F:
-		if F is fuckhole and portal-pants is worn and M is ultimate-lesson-actor, now the pedestal-user of pimp-pedestal-1 is inseminating F;
+		if F is fuckhole and portal-pants is worn and M is unseen-stranger, now the pedestal-user of pimp-pedestal-1 is inseminating F;
 		otherwise now M is inseminating F;
 	if the number of things inseminating F >= 2, compute cumdumpsterification.
 
@@ -589,11 +598,11 @@ To compute father material of (F - vagina):
 	if the pregnancy of the player is 0: [Once pregnant you don't get any more potential fathers!]
 		if pregnancy fetish is 1:
 			repeat with M running through father material things penetrating F:
-				if portal-pants is worn and M is ultimate-lesson-actor, now the pedestal-user of pimp-pedestal-1 is inseminating F;
+				if portal-pants is worn and M is unseen-stranger, now the pedestal-user of pimp-pedestal-1 is inseminating F;
 				otherwise now M is inseminating F;
 		otherwise:
 			repeat with M running through things penetrating F:
-				if portal-pants is worn and M is ultimate-lesson-actor, now the pedestal-user of pimp-pedestal-1 is inseminating F;
+				if portal-pants is worn and M is unseen-stranger, now the pedestal-user of pimp-pedestal-1 is inseminating F;
 				otherwise now M is inseminating F;
 	let N be the number of things inseminating F;
 	if N >= 2:

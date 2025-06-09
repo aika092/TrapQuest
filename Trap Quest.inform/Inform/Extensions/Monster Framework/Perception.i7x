@@ -195,13 +195,14 @@ To check sudden objectification of (M - a monster):
 	otherwise if M is objectifying the player:
 		increase X by 1;
 	if X > 0:
-		now M is recently-unfriendly;
-		if the babification of M is 1 and the previous-babification of M is 0:
-			compute sudden babification of M; [The NPC is now unfriendly, because the player's appearance has changed. We need to make this obvious to the player by making them say something.]
-			now the previous-babification of M is 1;
-		otherwise if the objectification of M is 1 and the previous-objectification of M is 0:
-			compute sudden objectification of M; [The NPC is now unfriendly, because the player's appearance has changed. We need to make this obvious to the player by making them say something.]
-			now the previous-objectification of M is 1.
+		if M is uniquely unfriendly, now M is recently-unfriendly; [only monsters that actually obejctify should be set to unfriendly]
+		if M is unfriendly:
+			if the babification of M is 1 and the previous-babification of M is 0:
+				compute sudden babification of M; [The NPC is now unfriendly, because the player's appearance has changed. We need to make this obvious to the player by making them say something.]
+				now the previous-babification of M is 1;
+			otherwise if the objectification of M is 1 and the previous-objectification of M is 0:
+				compute sudden objectification of M; [The NPC is now unfriendly, because the player's appearance has changed. We need to make this obvious to the player by making them say something.]
+				now the previous-objectification of M is 1.
 
 To compute curtsey reaction of (M - a monster):
 	if diaper quest is 1 and there is a worn currently visible diaper:
@@ -291,9 +292,11 @@ Definition: a monster (called M) is unfriendly rather than friendly:
 	if M is recently-unfriendly, decide yes;
 	if M is recently-friendly, decide no;
 	if M is calculated unfriendly:
+		if debugmode > 1 and M is not recently-unfriendly, say "Setting [M] from [if M is recently-friendly]friendly[otherwise]unknown[end if] to unfriendly.";
 		now M is recently-unfriendly;
 		decide yes; ["annoyed" is the final level of relationship before unfriendly]
 	otherwise:
+		if debugmode > 1 and M is not recently-friendly, say "Setting [M] from [if M is recently-unfriendly]unfriendly[otherwise]unknown[end if] to friendly.";
 		now M is recently-friendly;
 		decide no.
 
@@ -303,11 +306,11 @@ Definition: a monster (called M) is calculated unfriendly:
 
 [Selkie: it might be easier to remember, if this was termed temporarily unfriendly?]
 Definition: a monster (called M) is uniquely unfriendly: [We can use this to easily specify when a monster is pissed off regardless of usual stats.]
-	if M is friendly-fucking, decide no;
 	if M is default uniquely unfriendly, decide yes;
 	decide no.
 
 Definition: a monster (called M) is default uniquely unfriendly:
+	if M is friendly-fucking, decide no;
 	if M is in the location of the player:
 		if M is objectifying the player, decide yes;
 		if M is babifying the player, decide yes;
@@ -364,7 +367,7 @@ Determines the number of outrage at which a monster will be unimpressed and star
 
 +!]
 To decide which number is the outrage tolerance of (M - a monster):
-	decide on 20.
+	decide on 21.
 
 To compute sudden babification of (M - a monster):
 	if M is intelligent:
@@ -406,7 +409,7 @@ Determines the number of cringe at which a monster will be unimpressed and start
 
 +!]
 To decide which number is the cringe tolerance of (M - a monster):
-	decide on 20.
+	decide on 21.
 
 To say BecomesAggressive of (M - a monster):
 	say "[big he of M] takes an offensive stance![if M is intelligent][line break][speech style of M]'[one of]There's only one thing for it.'[or]There's only one thing to do, then...'[or]Okay then, let's do this.'[or]You do realise what I'm going to do now, right?'[in random order][roman type][line break][end if]".

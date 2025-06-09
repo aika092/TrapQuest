@@ -440,4 +440,16 @@ Report dropping clothing when the noun is in School15:
 		increase the donations of School15 by 1;
 		say "The magic runes around the ceiling and doorway pulse and vibrate brilliantly [if the donations of School15 is 1]once[otherwise][donations of School15] times[end if] before [if the donations of School15 < 5]returning to their previous slower rhythm[otherwise if the donations of School15 is 5]becoming grey and inactive[otherwise]returning to being grey and inactive[end if].".
 
+SchoolScenery01 is a thing. SchoolScenery01 is not portable. SchoolScenery01 is in School08. The printed name of SchoolScenery01 is "[TQlink of item described]marble bust[TQxlink of item described]". Understand "marble", "bust", "statue" as SchoolScenery01.
+
+Figure of SchoolScenery01 is the file "Env/School/marblebust1.png".
+
+To decide which figure-name is the examine-image of (C - SchoolScenery01):
+	decide on figure of SchoolScenery01.
+
+The text-shortcut of SchoolScenery01 is "mrb".
+
+To say ExamineDesc of (C - SchoolScenery01):
+	say "A marble bust is on the wall behind the headmistress['] desk. It depicts a woman with stern features and a single finger pointing straight ahead[if piercing-stone is in the location of C]. There is a pure diamond ring on it[end if].".
+
 School ends here.

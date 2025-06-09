@@ -198,7 +198,7 @@ To say AssholeModesty:
 			otherwise say "You have a feeling that monsters are paying extra attention to it.".
 
 To say RealGapeDesc:
-	say "Your asshole is [AssGape real openness of asshole][if the player is possessing a vagina] and your pussy is [PussyGape real openness of vagina]".
+	say "Your asshole is [AssGape real openness of asshole][if the player is possessing a vagina] and your pussy is [PussyGape real openness of vagina][end if]".
 
 Part 3 - Modify Asshole Stats
 
@@ -234,7 +234,7 @@ To gape (A - asshole) times (X - a number):
 	if transGender is 1, now virgincursed is 0;
 	if virgincursed > 1:
 		if virgincursed is 2:
-			say "[bold type]You realise that losing your anal virginity is made even more shameful by the fact that you have yet to lose your REAL virginity. You've been fucked before you fucked anyone else! [roman type]The realisation crushes your spirit and your body shivers involuntarily. The game seems to detect these feelings.";
+			say "[bold type]You realise that losing your anal virginity is made even more shameful by the fact that you have yet to lose your REAL virginity. You've been fucked before you fucked anyone else! [roman type]Your body shivers involuntarily as the realisation crushes your spirit, and the game seems to detect that.";
 			SpecialPenisDown 1; [#LXorDD]
 			now virgincursed is 1;
 			say "Something tells you that until you have real, dominant sex, you are going to keep being punished by the game, spiralling towards a fucktoy plaything for the monsters of this world...";
@@ -258,7 +258,7 @@ To AssClose (X - a number):
 							say ", phasing through your [printed name of a random worn possession total protection clothing]!";
 							repeat with C running through worn total protection clothing:
 								if C is fluid vulnerable and C is not possession:
-									if a random number between 1 and the number of worn possession clothing is 1, now the magic-type of C is possession;[Possessed items will protect your clothing, because it gets hairy to describe only one of 2-3 items not getting ripped. To compensate, the possession has a chance to "spread"]
+									if a random number between 1 and the number of worn possession clothing is 1, now the magic-type of C is possession;[Possessed items will protect your clothing, because it gets hairy to describe only one of 2-3 items not getting ripped. To compensate, the possession has a chance to "infect" other things]
 						otherwise:
 							say ", ripping through your [printed name of random worn total protection clothing]!";
 							repeat with C running through worn total protection clothing:

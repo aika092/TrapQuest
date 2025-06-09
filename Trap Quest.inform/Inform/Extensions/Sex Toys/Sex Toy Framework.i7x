@@ -646,7 +646,7 @@ To decide which object is the at least partial concealer of (S - a tail plug):
 
 To decide which object is the concealer of (C - a tail plug): [not concealed by butt cheeks or arms]
 	let S be a random worn unskirted actually dense potentially asshole covering not-butt-windowed clothing; [tail plug not concealed by skirts]
-	let S be a random worn hobble-skirted actually dense potentially asshole covering not-butt-windowed clothing; [except hobble skirts]
+	if S is hobble-skirted, decide on nothing;[except hobble skirts]
 	decide on S.
 
 To say CurrentlyVisibleFlav of (C - a tail plug):

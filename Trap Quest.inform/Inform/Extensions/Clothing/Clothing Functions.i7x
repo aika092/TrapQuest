@@ -32,6 +32,9 @@ To say clothing-title-before:
 To say clothing-title-after:
 	say "[if magic-ID of the item described is identified and magic-type of the item described is not blandness] of [magic-type of the item described][end if][roman type][quest-desc][shortcut-desc][displacement-desc of item described][if the stolen-strength of item described > 0] (STOLEN STRENGTH)[end if][TQxlink of item described][verb-desc of item described]".
 
+To say clothing-condensed-after:
+	say "[roman type][quest-desc][shortcut-desc][displacement-desc of item described][if the stolen-strength of item described > 0] (STOLEN STRENGTH)[end if][TQxlink of item described][verb-desc of item described]".
+
 To say shortcut-desc:
 	if shortcuts is 1 and inline hyperlinks is 0 and the text-shortcut of item described is not "", say "[bracket][text-shortcut of item described][close bracket]".
 
@@ -397,19 +400,25 @@ To WaterEmpty (C - a clothing):
 	if C is diaper, now the perceived-water-soak of C is 0;
 	if C is worn, update appearance level.
 To Drench (C - a clothing):
-	increase the water-soak of C by the soak-limit of C - the total-soak of C;
+	Drench C by 50.
+To Drench (C - a clothing) by (N - a number):
+	let X be the soak-limit of C - the total-soak of C;
+	if N > X, increase the water-soak of C by X;
+	otherwise increase the water-soak of C by N;
 	if C is diaper and the player is diaper aware, now the perceived-water-soak of C is the water-soak of C;
-	if tough-shit is 0 and C is glued and C is not hugger-panties and C is not hugger-gag:
-		decrease the glue timer of C by 50;
-		if the glue timer of C > 0:
-			if C is held, say "The glue on [NameDesc of C] is rapidly weakening!";
-		otherwise:
-			now the glue timer of C is 0;
-			if C is held, say "The glue on [NameDesc of C] has completely degraded[if C is worn]. It's no longer stuck to you![otherwise].[end if]";
+	if tough-shit is 0 and C is glued and C is not hugger-panties and C is not hugger-gag, GlueDown C by N;
 	if C is carried, force immediate inventory-focus redraw;
 	if C is worn:
 		force immediate clothing-focus redraw;
 		update appearance level.
+
+To GlueDown (C - a clothing) by (N - a number):
+	decrease the glue timer of C by N;
+	if the glue timer of C > 0:
+		if C is held, say "The glue on [NameDesc of C] is rapidly weakening!";
+	otherwise:
+		now the glue timer of C is 0;
+		if C is held, say "The glue on [NameDesc of C] has completely degraded[if C is worn]. It's no longer stuck to you![otherwise].[end if]".
 
 [!<OnlyDestroyClothing>+
 

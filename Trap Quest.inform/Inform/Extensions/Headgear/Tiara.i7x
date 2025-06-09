@@ -42,7 +42,7 @@ To compute class outfit of (H - a tiara):
 			class summon deepthroat princess crop top;
 		otherwise:
 			class summon lolita royal dress;
-	class summon royal scepter.
+	class summon royal sceptre.
 
 To compute virginity-loss of (C - a tiara):
 	if the quest of C is virginity-retention-quest:
@@ -66,7 +66,7 @@ To uniquely set up (C - a tiara):
 	otherwise now the quest of C is royal-quest.
 
 To compute generic first time class reward of (Q - unlock-quest) on (C - a clothing):
-	let D be a random off-stage ring;
+	let D be a random off-stage plentiful ring;
 	if D is ring:
 		now D is sapphire;
 		set shortcut of D;
@@ -88,7 +88,7 @@ A time based rule (this is the royal quest rule):
 		if the quest of H is unlock-quest and H is cursed and the number of worn locked clothing is 0, progress quest of unlock-quest.
 
 To say QuestFlav of (Q - royal-quest):
-	say "You sense it wants you to fulfill some royal duties. A royal scepter could probably help with this.".
+	say "You sense it wants you to fulfill some royal duties. A royal sceptre could probably help with this.".
 
 To say QuestTitle of (Q - royal-quest):
 	say " (royal duties quest)".
@@ -97,13 +97,13 @@ To progress quest of (Q - royal-quest):
 	repeat with C running through worn clothing:
 		if the quest of C is Q:
 			increase duties-performed of Q by 1;
-			increase the charge of royal scepter by 10;
+			increase the charge of royal sceptre by 10;
 			if duties-performed of Q > 3:
 				compute quest completion of Q on C;
 				now the duties-performed of Q is 0;
 			otherwise:
 				say "Your [ShortDesc of C] shudders with pride. But there's more work to do!";
-			class summon royal scepter.
+			class summon royal sceptre.
 
 To say QuestFlav of (Q - unlock-quest):
 	say "You sense it wants you to escape from your bondage.".
@@ -137,7 +137,7 @@ Chapter - Class Outfit
 
 To compute class outfit of (H - trashy-tiara):
 	class summon rubber-royal-dress;
-	class summon royal scepter.
+	class summon royal sceptre.
 
 
 
@@ -183,7 +183,7 @@ To compute unique periodic effect of (H - jewelled-tiara):
 
 Report wearing jewelled-tiara:
 	say "As the tiara hits your head, it morphs into a slightly less extravagant, but still jewelled, tiara. Still, you feel like the term [']KING['] fits you better than [']princess['].[line break][variable custom style]Fuck a princess, I'm a king[line break]Bow down and kiss on my ring[roman type][line break]";
-	let D be a random off-stage ring;
+	let D be a random off-stage plentiful ring;
 	if D is ring:
 		now D is pink diamond;
 		set shortcut of D;
@@ -197,7 +197,7 @@ Report wearing jewelled-tiara:
 To compute class outfit of (H - jewelled-tiara):
 	class summon ballgown royal dress;
 	class summon savior's heels;
-	class summon royal scepter.
+	class summon royal sceptre.
 
 
 tiara-veil is a tiara.
@@ -219,7 +219,7 @@ Definition: tiara-veil is gem themed: decide yes.
 Definition: tiara-veil is yellow themed: decide yes.
 
 To compute class outfit of (H - tiara-veil):
-	if the player is not possessing a vagina:
+	if the player is not possessing a vagina and TG fetish is 1:
 		say DefaultSexChangeFlav;
 		SexChange the player;
 	class summon princess bride dress;
@@ -236,9 +236,16 @@ To uniquely set up (C - tiara-veil):
 	now the quest of C is betrothal-quest.
 
 To decide which number is the vaginal-sex-addiction-influence of (C - tiara-veil):
+	if the player is not possessing a vagina, decide on 0;
 	if the consummation of betrothal-quest is true, decide on 0;
 	if the ceremony of betrothal-quest is false, decide on -1;
-	decide on 5.
+	decide on 10.
+
+To decide which number is the anal-sex-addiction-influence of (C - tiara-veil):
+	if the player is possessing a vagina, decide on 0;
+	if the consummation of betrothal-quest is true, decide on 0;
+	if the ceremony of betrothal-quest is false, decide on -1;
+	decide on 10.
 
 
 tiara-of-spades is a tiara.

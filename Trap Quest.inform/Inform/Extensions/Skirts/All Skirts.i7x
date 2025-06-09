@@ -419,7 +419,7 @@ To say ShortDesc of (Y - a pink rubber miniskirt):
 Definition: a pink rubber miniskirt is pink themed: decide yes.
 Definition: a pink rubber miniskirt is black themed: decide no.
 
-A microskirt is a kind of skirt. The skirt-length of a microskirt is 1.  A microskirt is usually transformation-rare.
+A microskirt is a kind of skirt. The skirt-length of a microskirt is 1. A microskirt is usually transformation-rare.
 
 Understand "micro" as a microskirt.
 

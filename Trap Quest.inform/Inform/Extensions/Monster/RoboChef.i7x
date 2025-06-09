@@ -117,7 +117,7 @@ To compute perception of (M - robochef):
 To compute DQ perception of (M - robochef):
 	say "[BigNameDesc of M] notices you!";
 	if there is soiled-diaper carried by M or there is a dirty diaper carried by M:
-		say "[first custom style]'DIRTY DIAPER LITTERING CULPRIT FOUND. PLEASE ADOPT THE DIRTY DIAPER LITTERING PUNISHMENT SUBMISSION POSITION.'[roman type][line break]";
+		say "[first custom style]'DIRTY DIAPER LITTERING CULPRIT FOUND. [caps please] ADOPT THE DIRTY DIAPER LITTERING PUNISHMENT SUBMISSION POSITION.'[roman type][line break]";
 		anger M;
 	otherwise if the number of worn diapers is 0 and (the player is full or bladder-bursting-level >= 0 or the water volume of belly > 0):
 		say "[big his of M] eyes turn red.[line break][first custom style]'IMMINENT TOILET ACCIDENT DETECTED. HYGIENE SAFETY ASSESSMENT: UNACCEPTABLE. TOILET ACCIDENT AVERSION PROGRAM INITIATED.'[roman type][line break]";

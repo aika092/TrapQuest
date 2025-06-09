@@ -21,14 +21,14 @@ To compute LaundryRobots:
 			say "You yelp [if the bimbo of the player < 10][one of]in surprise[or]in frustration[stopping][otherwise]quietly[end if] as your entire body is picked up, carried over and dunked into a large hot vat of soapy water. The arms unceremoniously strip you of your [C] as you are repeatedly thrust into and out of the bubbly pool. Finally, you are dropped back down onto the ground, now dripping with water and suds. ";
 			repeat with F running through worn somewhat fluid vulnerable clothing:
 				clean F;
-				Drench F;
+				Drench F by 500;
 				if F is knickers, WaterEmpty F;
 			say "[one of]You think it's over, but before[or]Before[stopping] letting you go, the robotic arms silently force a new dry [ShortDesc of C] onto your crotch.[line break][variable custom style][if the bimbo of the player < 6 and C is a diaper]Why did they have to put me into another one?! Ugh.[otherwise if the bimbo of the player < 12]Well I'm glad that's over and done with.[otherwise]Thank you for changing me, nice robots![end if][roman type][line break]";
 			now the charge of laundry robots is 200;
 		otherwise if C is clothing and the charge of laundry robots <= 0:
 			say "You watch [if the bimbo of the player < 10][one of]in surprise[or]in frustration[stopping][otherwise]in awe[end if] as your [C] is deftly pulled off you and speedily dunked into a large vat of hot soapy water. ";
 			clean C;
-			Drench C;
+			Drench C by 500;
 			now C is in the location of the player;
 			say "Before you can blink, your [MediumDesc of C] is placed on a small table next to you.[line break][variable custom style][one of]Wow, now that is fast service.[or][if the bimbo of the player < 13]Nice.[otherwise]Thank you nice robots![end if][stopping][roman type][line break]";
 			now the charge of laundry robots is 200;
@@ -48,6 +48,7 @@ Definition: a headgear is washable: decide no.
 
 robo vacuum cleaner is a thing. robo vacuum cleaner is not portable. The printed name of robo vacuum cleaner is "[TQlink of item described]robo vacuum cleaner[TQxlink of item described][verb-desc of item described]". The text-shortcut of robo vacuum cleaner is "rvc".
 robo vacuum cleaner has a number called patrol. the patrol of robo vacuum cleaner is 1.
+robo vacuum cleaner has a number called question-cooldown.
 robo vacuum cleaner has a number called puddle-sucks.
 robo vacuum cleaner is in Hotel20.
 A diaper quest fix rule:
@@ -91,7 +92,7 @@ A later time based rule (this is the robo vacuum cleaner rule):
 				if C is removable clothing, WardrobeVanish C;
 			repeat with C running through worn removable shoes:
 				if C is not heels, WardrobeVanish C;
-			if there is pussy covering clothing or F is actually occupied or (there is worn unremovable shoes and the number of worn heels is 0) or skirted-maid-corset is not unclash summonable:
+			if there is pussy covering clothing or F is actually occupied or face is actually occupied or (there is worn unremovable shoes and the number of worn heels is 0) or skirted-maid-corset is not unclash summonable:
 				say "But then it suddenly stops, seeming to realise it is unable to do what it was intending to. That's... probably a good thing.";
 			otherwise:
 				if the number of worn hoods is 0:
@@ -109,7 +110,8 @@ A later time based rule (this is the robo vacuum cleaner rule):
 		otherwise if fluidRemaining > 0:
 			let collecting be nothing;
 			say "[BigNameDesc of robo vacuum cleaner] hums loudly as it hovers over the puddle of [if the semen-puddle of (the location of robo vacuum cleaner) > 0][semen] [end if][if the semen-puddle of (the location of robo vacuum cleaner) > 0 and (the urine-puddle of (the location of robo vacuum cleaner) > 0 or the milk-puddle of (the location of robo vacuum cleaner) > 0)]and [end if][if the urine-puddle of (the location of robo vacuum cleaner) > 0][urine] [end if][if the urine-puddle of (the location of robo vacuum cleaner) > 0 and the milk-puddle of (the location of robo vacuum cleaner) > 0]and [end if][if the milk-puddle of (the location of robo vacuum cleaner) > 0][milk] [end if]in this room, sucking [if fluidRemaining > 6]some[otherwise]all[end if] of it up into the clear tube.";
-			if robo vacuum cleaner is not penetrating face or (trainee hood is not worn and the number of worn unblessed hoods is 0):
+			decrease the question-cooldown of robo vacuum cleaner by 1;
+			if (robo vacuum cleaner is not penetrating face or (trainee hood is not worn and the number of worn unblessed hoods is 0)) and question-cooldown of robo vacuum cleaner <= 0:
 				if robo vacuum cleaner is penetrating a fuckhole: [if there's something penetrating face that's not going to leave willingly, we are going to get into an infinite loop]
 					let C be a random clothing penetrating face;
 					if C is clothing and C is not autoremovable:
@@ -126,10 +128,12 @@ A later time based rule (this is the robo vacuum cleaner rule):
 				truncate LV to 8 entries;
 				repeat with V running through LV:
 					set next numerical response to "direct the tube into the [ShortDesc of V][if the doses of V > 0] (You'll lose its current contents of [PotionType of V])[end if]";
-				if robo vacuum cleaner is not penetrating face and the player is in danger, now player-numerical-response is 0;
-				otherwise compute multiple choice question;
+				[if robo vacuum cleaner is not penetrating face and the player is in danger, now player-numerical-response is 0;
+				otherwise compute multiple choice question;]
+				compute multiple choice question;
 				if player-numerical-response is 0:
 					now robo vacuum cleaner is not penetrating face;
+					now the question-cooldown of robo vacuum cleaner is 3;
 				otherwise if the chosen numerical response matches the text "other end of the tube in your mouth":
 					if robo vacuum cleaner is not penetrating face, say "You push the other end of the tube past your [LipDesc], ready to catch the liquid in your mouth[if black hood is worn and black hood is not blessed]. As soon as it's inside, you feel it sealing itself into place against the ring gag of your [black hood] - it won't let you remove it![otherwise].[end if]";
 					now robo vacuum cleaner is penetrating face;
@@ -210,7 +214,7 @@ A later time based rule (this is the robo vacuum cleaner rule):
 				if H is clothing:
 					say "[bold type]Your [H] [bold type]glows a bright blue as a blessing is laid upon it![roman type][line break]";
 					now H is blessed;
-					let D be a random off-stage ring;
+					let D be a random off-stage plentiful ring;
 					if D is ring:
 						now D is pure diamond;
 						set shortcut of D;

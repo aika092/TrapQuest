@@ -52,7 +52,7 @@ Carry out taking fertility idol:
 			say "[bold type]Suddenly, impossibly, your belly explodes in size, leaving you full-term pregnant![line break][variable custom style]What the fuck?! Oh... Oh my god...[roman type][line break]";
 			now the pregnancy of the player is 1;
 			now the womb volume of vagina is 30;
-			let M be a random ultimate-lesson-actor;
+			let M be a random unseen-stranger;
 			repeat with N running through alive monsters:
 				if the current-errand of N is fertility-idol-errand and N is father material, now M is N;
 			now the father is M;
@@ -95,6 +95,37 @@ To oil (C - a clothing) with (S - an ectoplasm):
 	say "It seems more resilient, but... in a bad way?";
 	destroy S;
 	now the magic-type of C is possession.
+
+Part - Charged slime
+
+[Charged slime can be applied to clothes]
+
+charged-slime is a collectible. The printed name of charged-slime is "[TQlink of item described]wad of magic slime[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of charged-slime is "wds". Understand "glow", "glowing", "slime", "magic", "wad" as charged-slime.
+
+To decide which figure-name is the examine-image of (E - charged-slime):
+	decide on figure of ectoplasm.
+
+To say ExamineDesc of (B - an charged-slime):
+	say "A brightly glowing wad of slime.".
+
+To decide which number is the bartering value of (T - an charged-slime) for (M - a witch):
+	decide on 6.
+
+To decide which number is the bartering value of (T - an charged-slime) for (M - an aeromancer):
+	decide on 8.
+
+To decide which number is the bartering value of (T - an charged-slime) for (M - a fairy):
+	decide on 4.
+
+To oil (C - a clothing) with (S - an charged-slime):
+	if C is cursable:
+		say "It seems more magical, but it seems cursed too!";
+		now C is sure;
+		fully curse C;
+	otherwise:
+		say "It seems more magical!";
+	destroy S;
+	now the magic-type of C is wizardry.
 
 Part - ID Card
 
@@ -295,13 +326,16 @@ Report taking pack of playing cards when the player is in Dungeon07:
 	compute poker table hypno.
 
 Check taking pack of playing cards:
-	reset multiple choice questions;
-	set numerical response 0 to "Cancel";
-	if pack of playing cards is not held, set next numerical response to "Take all the cards";
-	if 23 is not listed in stolenCards and the recipe of (alchemy key of queen-of-hearts heels) is memorised, set next numerical response to "Take the queen of hearts";
-	compute multiple choice question;
-	if player-numerical-response is 0, do nothing instead;
-	unless chosen numerical response matches the text "all":
+	if 23 is not listed in stolenCards and the recipe of (alchemy key of queen-of-hearts heels) is memorised:
+		reset multiple choice questions;
+		set numerical response 0 to "Cancel";
+		if pack of playing cards is not held, set next numerical response to "Take all of the cards";
+		set next numerical response to "Take the queen of hearts";
+		compute multiple choice question;
+		if player-numerical-response is 0, do nothing instead;
+	otherwise:
+		now player-numerical-response is 0;
+	unless player-numerical-response is 0 or chosen numerical response matches the text "all":
 		let T be queen-of-hearts;
 		[if chosen numerical response matches the text "queen of hearts":]
 		if pack of playing cards is not held and orc is in Dungeon07:
@@ -802,7 +836,7 @@ To say ShortDesc of (T - spare-battery):
 To decide which number is the bartering value of (T - spare-battery) for (M - a robot):
 	decide on 4.
 To say MonsterOfferAcceptFlav of (M - a monster) to (T - spare-battery):
-	say "[speech style of M]'ANALYZING... SPARE BATTERY DETECTED. SUBJECTIVE VALUE STATUS: 4. ACCEPTING TRANSACTION...'[roman type][line break]".
+	say "[speech style of M]'ANALYSING... SPARE BATTERY DETECTED. SUBJECTIVE VALUE STATUS: 4. ACCEPTING TRANSACTION...'[roman type][line break]".
 
 Section - VIP Card
 

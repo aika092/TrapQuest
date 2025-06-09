@@ -10,7 +10,7 @@ To decide which figure-name is the examine-image of (C - WoodsScenery02):
 
 To say ExamineDesc of (C - WoodsScenery02):
 	if diaper quest is 1, say "This statue of a squatting chick is actually a fountain. The water trickles from her pussy, making it look like she's peeing.";
-	otherwise say "A statue of an upright naked man with arms spread wide, having sex with a naked woman, who is supporting herself by holding onto a scarf around his shoulders, and her [vagina] impaled on his [manly-penis]. [if the bimbo of the player > 13][line break][second custom style]That looks fun[roman type][line break]. [end if]";
+	otherwise say "A statue of an upright naked man with arms spread wide, having sex with a naked woman, who is supporting herself by holding onto a scarf around his shoulders, and her [vagina] impaled on his [manly-penis]. [if brat-stone is in the location of C]There is a ruby ring on the woman's finger. [end if][if the bimbo of the player > 13][line break][second custom style]That looks fun[roman type][line break]. [end if]";
 	say "You could try to [bold type]touch the statue's hand[roman type], [bold type]touch the statue's foot[roman type], or [bold type]touch the statue's head[roman type].".
 
 A time based rule (this is the woods statue charge decay rule):

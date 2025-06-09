@@ -51,8 +51,10 @@ This is the spawn hole-in-wall rule:
 	if N < 50:
 		now hole-in-wall is in R;
 		now hole-in-wall is revealed;
-		if the number of rings in HoleInWall is 0:
-			let A be a random off-stage ring;
+		let N be the number of rings in HoleInWall;
+		let H be the number of humility-stone in HoleInWall;
+		if N - H <= 0:
+			let A be a random off-stage plentiful ring;
 			now A is solid gold;
 			now A is in HoleInWall;
 			set shortcut of A.
@@ -346,6 +348,8 @@ To compute punishment of (P - hole-piercing):
 
 hole-plug is hole-in-wall punishment.
 Definition: hole-plug (called P) is appropriate:
+	if there is locked ass covering clothing and bondage protection is 0, decide no;
+	if there is worn messed knickers, decide no;
 	if asshole is actually occupied, decide no;
 	decide yes.
 
@@ -379,7 +383,7 @@ To decide which number is the girth of (H - hole-in-wall):
 	decide on gatling-girth of H.
 
 To compute punishment of (P - hole-gatling-fuck):
-	let M be a random ultimate-lesson-actor;
+	let M be a random unseen-stranger;
 	now gatling-girth of hole-in-wall is 2;
 	let F be asshole;
 	if diaper quest is 1:
@@ -499,5 +503,12 @@ To compute punishment of (P - hole-gatling-fuck):
 		say "You can hear the [men of M] roaring with frustration at being unable to get at your [fuckholes]. Finally the loud sound of the crowd of [men of M] begins to die away as they bore of you and dissipate.";
 		increase hole-in-wall-turns by 20;
 	dislodge hole-in-wall.
+
+HotelScenery05 is a thing. HotelScenery05 is not portable. HotelScenery05 is in HoleInWall. The printed name of HotelScenery05 is "[TQlink of item described]statue[TQxlink of item described]". Understand "maid", "statue" as HotelScenery05.
+
+The text-shortcut of HotelScenery05 is "htk".
+
+To say ExamineDesc of (C - HotelScenery05):
+	say "A statue of a shocked looking maid. Her body is sticking halfway through the wall... just like you. [if comeuppance-stone is in the location of C]There is an emerald ring on [his of witch] finger.[end if]".
 
 Hole In Wall Trap ends here.

@@ -470,7 +470,7 @@ To say DickDesc of (M - a monster):
 		say "strap-on";
 	otherwise if M is fairy:
 		say "[one of]miniature[or]minuscule[or]mini[at random]";
-	otherwise if lady fetish is 2:
+	otherwise if M is not male:[this is an npc that can't fuck you with its penis, not necessarily one that doesn't have one.]
 		say plain-sissy-penis;
 	otherwise:
 		say manly-penis.
@@ -501,7 +501,16 @@ To say ChestDesc of (M - a monster):
 	otherwise say "breasts".
 
 To say cockhead of (M - a monster):
-	say "[one of]cockhead[or]tip[or]bellend[or]dicktip[in random order]".
+	if full-lady fetish is 1:
+		say "[one of]straphead[or]dildotip[or]strapend[or]straptip[in random order]";
+	otherwise:
+		say "[one of]cockhead[or]tip[or]bellend[or]dicktip[in random order]".
+
+To say cockshaft of (M - a monster):
+	if full-lady fetish is 1:
+		say "dildo";
+	otherwise:
+		say "shaft".
 
 To say daddy of (M - a monster):
 	if the class of the player is santa's little helper and M is male:
@@ -582,6 +591,22 @@ To say big brotha of (M - a person):
 	otherwise:
 		if M is presenting as male, say "Dude";
 		otherwise say "Bitch".
+
+To say brothas of (M - a person):
+	if interracial fetish is 1:
+		if M is presenting as male, say "brothas";
+		otherwise say "sistas";
+	otherwise:
+		if M is presenting as male, say "dudes";
+		otherwise say "bitches".
+
+To say big brothas of (M - a person):
+	if interracial fetish is 1:
+		if M is presenting as male, say "Brothas";
+		otherwise say "Sistas";
+	otherwise:
+		if M is presenting as male, say "Dudes";
+		otherwise say "Bitches".
 
 To say slut school:
 	say "[if diaper quest is 1]Attitude[otherwise]Slut[end if] Academy".

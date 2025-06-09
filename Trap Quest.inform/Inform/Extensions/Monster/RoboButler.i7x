@@ -54,7 +54,7 @@ To compute perception of (M - a robobutler):
 	say "[BigNameDesc of M] notices you!";
 	FavourDown M;
 	if there is soiled-diaper carried by M or there is a dirty diaper carried by M:
-		say "[speech style of M]'DIRTY DIAPER LITTERING CULPRIT FOUND. PLEASE ADOPT THE DIRTY DIAPER LITTERING PUNISHMENT SUBMISSION POSITION.'[roman type][line break]";
+		say "[speech style of M]'DIRTY DIAPER LITTERING CULPRIT FOUND. [caps please] ADOPT THE DIRTY DIAPER LITTERING PUNISHMENT SUBMISSION POSITION.'[roman type][line break]";
 		anger M;
 	otherwise if the current-errand of M is completed and M is not uniquely unfriendly:
 		compute errand completion of M;
@@ -87,7 +87,7 @@ To compute perception of (M - a robobutler):
 		anger M;
 		now the planned-punishment of M is 1;
 	otherwise if there is a nonstalking wisp:
-		say "[big his of M] eyes turn purple and [he of M] spins towards you.[line break][speech style of M]'LOW TIPPING CUSTOMER DETECTED. DID YOU KNOW YOU CAN EARN VALUABLES BY SERVING OTHER GUESTS? PLEASE REFRAIN FROM SPEAKING UNTIL YOU HAVE COMPLETED YOUR NEW QUEST OBJECTIVE.'[roman type][line break]";
+		say "[big his of M] eyes turn purple and [he of M] spins towards you.[line break][first custom style]'LOW TIPPING CUSTOMER DETECTED. DID YOU KNOW YOU CAN EARN VALUABLES BY SERVING OTHER GUESTS? [caps please] REFRAIN FROM SPEAKING UNTIL YOU HAVE COMPLETED YOUR NEW QUEST OBJECTIVE.'[roman type][line break]";
 		let W be a random nonstalking wisp;
 		silently set up W;
 		now the wisp-quest of W is brothel-wisp-quest;

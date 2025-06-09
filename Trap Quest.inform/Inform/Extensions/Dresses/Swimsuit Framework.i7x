@@ -54,7 +54,7 @@ To decide which number is the penis-capacity of (C - a string monokini):[what's 
 To decide which number is the initial armour of (C - a string monokini):
 	decide on 2.
 
-A minimalist monokini is a kind of monokini. A minimalist monokini is usually very low cut.  A minimalist monokini is usually optional-top-displacable.
+A minimalist monokini is a kind of monokini. A minimalist monokini is usually very low cut. A minimalist monokini is usually optional-top-displacable.
 To decide which number is the initial outrage of (C - a minimalist monokini):
 	decide on 6.
 To decide which number is the penis-capacity of (C - a minimalist monokini):[what's the largest size of penis it can cover?]

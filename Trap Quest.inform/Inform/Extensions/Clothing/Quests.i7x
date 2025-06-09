@@ -609,7 +609,37 @@ To say QuestTitle of (Q - vaginal-creampie-quest):
 
 To progress quest of (Q - vaginal-creampie-quest) from (T - a thing):
 	if ((pregnancy fetish is 1 and T is father material) or T is live) and the player is not in a predicament room:
-		repeat with C running through worn cursed clothing:
+		repeat with C running through worn clothing:
+			if the quest of C is Q:
+				compute quest completion of Q on C.
+
+Part - Anal Creampie Quest
+
+anal-creampie-quest is a clothing-quest. anal-creampie-quest has a number called creampie-count.
+
+Definition: anal-creampie-quest is appropriate:
+	if diaper quest is 0 and the analvirgin of the player is 0, decide yes;
+	decide no.
+
+To decide what number is the quest-weighting of (Q - anal-creampie-quest) for (C - a clothing):
+	if Q is not appropriate, decide on 0;
+	if the semen-addiction-influence of C < 0, decide on 0;
+	if C is crotch-assless, decide on 20;
+	if C is penetrating asshole, decide on 0;
+	if C is ass covering:
+		if C is not displacable and C is not crotch-zipped, decide on 0;
+	if C is anal sex themed, decide on 14;
+	decide on 1.
+
+To say QuestFlav of (Q - anal-creampie-quest):
+	say "You sense that it wants you to receive an anal creampie from a human penis.".
+
+To say QuestTitle of (Q - anal-creampie-quest):
+	say " (anal creampie quest)".
+
+To progress quest of (Q - anal-creampie-quest) from (T - a thing):
+	if the player is not in a predicament room and T is a human male monster:
+		repeat with C running through worn clothing:
 			if the quest of C is Q:
 				compute quest completion of Q on C.
 
@@ -1478,6 +1508,7 @@ To trigger (WQ - a wisp quest):
 
 gold-candy-wisp-quest is a wisp quest. The printed name of gold-candy-wisp-quest is "find a golden candy".
 Definition: gold-candy-wisp-quest is appropriate:
+	if there is a carried top tier candy, decide no;
 	if Hotel01 is placed and Mansion01 is placed, decide yes;
 	decide no.
 
@@ -1846,7 +1877,7 @@ The predicament quest list rule is listed in the quest listing rules.
 
 This is the mechanic quest list rule:
 	if there is a worn steel collar:
-		say "You have been asked to collect a magic amulet by a rude mechanic. It should be found alongside a minotaur in the Dungeon region. You need to bring it back to him.";
+		say "You have been asked to collect a magic amulet by a rude mechanic. It should be found alongside a minotaur in the Dungeon region. You need to bring it back to [him of mechanic].";
 		increase total-quests-listed by 1.
 The mechanic quest list rule is listed in the quest listing rules.
 
@@ -1877,10 +1908,10 @@ The witch quest list rule is listed in the quest listing rules.
 This is the sex doll quest list rule:
 	if the curse-quest of witch > 0 and the curse-quest of witch < 3 and witch is alive:
 		if the curse-quest of witch is 1:
-			say "The Latex Cure: A witch has asked you to bring her a fae mushroom to help cure your latex transformation curse!";
+			say "The Latex Cure: A witch has asked you to bring [him of witch] a fae mushroom to help cure your latex transformation curse!";
 			increase total-quests-listed by 1;
 		if the curse-quest of witch is 2:
-			say "The Latex Cure: You have given a fae mushroom to the witch, and now she wants you to bring her a recipe for the latex curse removal. It should be found in a library.";
+			say "The Latex Cure: You have given a fae mushroom to the witch, and now [he of witch] wants you to bring [him of witch] a recipe for the latex curse removal. It should be found in a library.";
 			increase total-quests-listed by 1.
 The sex doll quest list rule is listed in the quest listing rules.
 
@@ -1903,7 +1934,7 @@ The whisper quest list rule is listed in the quest listing rules.
 This is the princess quest list rule:
 	if ex-princess is caged and the question-sequence of ex-princess > 2:
 		unless there is a vibe-wand carried by ex-princess:
-			say " The princess of bimbacia has asked you to find her a suitable wand. Any wand will work, but the royal scepter would be best!";
+			say " The princess of Bimbacia has asked you to find [him of ex-princess] a suitable wand. Any wand will work, but the royal sceptre would be best!";
 			increase total-quests-listed by 1;
 		otherwise:
 			say "The princess of Bimbacia has asked you to get a skeleton key from the prison guard in the dungeon.";
@@ -1916,6 +1947,97 @@ This is the mindflayer quest of mind flayer list rule:
 		increase total-quests-listed by 1.
 The mindflayer quest of mind flayer list rule is listed in the quest listing rules.
 
+This is the fucktoy humility quest list rule:
+	if the player is an april 2025 top donator and fucktoy-stone is not worn and (fucktoy-stone is challenged or the fucktoy-stone-progress of the player > 0):
+		say "The Finest [if fucktoy-stone-progress of the player > 10]Fucktoy: [otherwise]???????: [end if][run paragraph on]";
+		if fucktoy-stone is challenged:
+			say "You found an snooty [ShortDesc of fucktoy-stone] on a statue in the dungeon. It claimed you're a loser who faints instead of finishing when you get gangbanged, but is that really true? Progress: ([fucktoy-stone-progress of the player]/10)[line break]";
+		otherwise:
+			if the location of the player is Dungeon10:
+				say "Was that ring always there?[line break]";
+			if the location of the player is not a labyrinth room:
+				say "You feel a mysterious pull towards the Dungeon.";
+			otherwise if the location of the player is Dungeon11 or the location of the player is Dungeon12:
+				say "You feel a mysterious pull towards the Statue Hall...";
+			otherwise:
+				say "You feel a mysterious pull towards the Royal Chambers...".
+The fucktoy humility quest list rule is listed in the quest listing rules.
 
+This is the bondage humility quest list rule:
+	if the player is an april 2025 top donator and bondage-stone is not worn and (bondage-stone is challenged or the bondage-stone-progress of the player > 0):
+		say "The [if bondage-stone-progress of the player > 10]Bondage [otherwise]??????? [end if]Master: [run paragraph on]";
+		if bondage-stone is challenged:
+			say "You found a sad [ShortDesc of bondage-stone] on a statue in the mansion. It claimed it was impossible for you to defeat a fairy while bound at the wrists, or anything for that matter. Is that really true? Progress: ([bondage-stone-progress of the player]/10)[line break]";
+		otherwise:
+			if the location of the player is Mansion38:
+				say "There's something off about that ring...";
+			if the location of the player is not a haunted room:
+				say "You feel a mysterious pull towards the Mansion...";
+			otherwise:
+				say "You feel a mysterious pull towards the Statue Room...";
+		increase total-quests-listed by 1.
+The bondage humility quest list rule is listed in the quest listing rules.
+
+This is the brat humility quest list rule:
+	if the player is an april 2025 top donator and brat-stone is not worn and (brat-stone is challenged or the brat-stone-progress of the player > 0):
+		say "The Boldest [if brat-stone-progress of the player > 10]Brat: [otherwise]???????: [end if][run paragraph on]";
+		if brat-stone is challenged:
+			say "You found an annoying [ShortDesc of brat-stone] on a statue in the woods. It claimed it would let you wear it if you repeatedly found [']lazy['] people, made them angry, and led them on chases before letting them see you cum. It didn't seem to think you were bold enough for something like that, especially not repeatedly, but are you? Progress: ([brat-stone-progress of the player]/10)[line break]";
+		otherwise:
+			if the location of the player is Woods10:
+				say "There's something off about that ring...";
+			if the location of the player is not a jungle room:
+				say "You feel a mysterious pull towards the Woods...";
+			otherwise:
+				say "You feel a mysterious pull towards the Statue Clearing...";
+		increase total-quests-listed by 1.
+The brat humility quest list rule is listed in the quest listing rules.
+
+This is the glory humility quest list rule:
+	if the player is an april 2025 top donator and glory-stone is not worn and (glory-stone is challenged or the glory-stone-progress of the player > 0):[TODO: donor lock]
+		say "The [if glory-stone-progress of the player > 10]Glory [otherwise]????? [end if] Master: [run paragraph on]";
+		if glory-stone is challenged:
+			say "You found a prideful [ShortDesc of glory-stone] on a statue at the bottom of a lake in the Extra Credit Zone. It wants a master that can defeat the greatest enemies while in the most memorable regalia (or at least in front of a gloryhole), but it claimed a mortal couldn't accomplish something like that. Is that really true? Progress: ([glory-stone-progress of the player]/10)[line break]";
+		otherwise:
+			if the location of the player is Park11:
+				say "There's something off about the water...";
+			if the location of the player is a predicament room:
+				say "You feel a mysterious pull towards the lake...";
+			otherwise:
+				say "You feel a mysterious pull towards the Extra Credit Zone...";
+		increase total-quests-listed by 1.
+The glory humility quest list rule is listed in the quest listing rules.
+
+This is the comeuppance humility quest list rule:
+	if the player is an april 2025 top donator and comeuppance-stone is not worn and (comeuppance-stone is challenged or the comeuppance-stone-progress of the player > 0):
+		say "The [if comeuppance-stone-progress of the player > 10]Comeuppance [otherwise]??????????? [end if]Connoisseur: [run paragraph on]";
+		if comeuppance-stone is challenged:
+			say "You found a singing [ShortDesc of comeuppance-stone] on a statue hidden in a hole in the Hotel. It seemed to think you're a delusional bottom who thinks they're a top, and demanded you learn how to climax when your topping attempts inevitably backfire. Is that even worth doing? Progress: ([comeuppance-stone-progress of the player]/10)[line break]";
+		otherwise:
+			if the location of the player is not a modern room:
+				say "You feel a mysterious pull towards the Hotel...";
+			otherwise if the location of the player is HoleInWall:
+				say "There's something off about that ring...";
+			otherwise if the location of the player is the location of hole-in-wall:
+				say "There's something off about that hole...";
+			otherwise:
+				say "You feel a mysterious pull towards the [the location of hole-in-wall]";
+		increase total-quests-listed by 1.
+The comeuppance humility quest list rule is listed in the quest listing rules.
+
+This is the piercing humility quest list rule:
+	if the player is an april 2025 top donator and piercing-stone is not worn and (piercing-stone is challenged or the piercing-stone-progress of the player > 0):[TODO: donor lock]
+		say "The [if piercing-stone-progress of the player > 10]Piercing [otherwise]???????? [end if] Master: [run paragraph on]";
+		if piercing-stone is challenged:
+			say "You found a bossy [ShortDesc of piercing-stone] in the Slut School, and it told you to defeat an npc at the most inconvenient time, like when a guard has his shield up, an aeromancer who has her boobs inflated, or a ghost that's still intangible. The ring seemed to think you weren't capable of following its instructions... is that really true? ([piercing-stone-progress of the player]/10)[line break]";
+		otherwise:
+			if the location of the player is Park11:
+				say "Was that ring always there?[line break]";
+			if the location of the player is an academic room:
+				say "You feel a mysterious pull towards the Head Office...";
+			otherwise:
+				say "You feel a mysterious pull towards the Slut School";
+		increase total-quests-listed by 1.
+The piercing humility quest list rule is listed in the quest listing rules.
 
 Quests ends here.

@@ -1,6 +1,6 @@
 Dungeon Statue by Objects begins here.
 
-DungeonScenery01 is a thing. DungeonScenery01 is in Dungeon10. DungeonScenery01 is not portable. The printed name of DungeonScenery01 is "[TQlink of item described]statue[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "statue", "man", "penis", "woman", "nipple" as DungeonScenery01. DungeonScenery01 has a number called doses. The doses of DungeonScenery01 is usually 1.  The text-shortcut of DungeonScenery01 is "sta".
+DungeonScenery01 is a thing. DungeonScenery01 is in Dungeon10. DungeonScenery01 is not portable. The printed name of DungeonScenery01 is "[TQlink of item described]statue[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "statue", "man", "penis", "woman", "nipple" as DungeonScenery01. DungeonScenery01 has a number called doses. The doses of DungeonScenery01 is usually 1. The text-shortcut of DungeonScenery01 is "sta".
 
 The dungeon statue effect list is a list of numbers that varies.
 The dungeon statue knowledge list is a list of numbers that varies.
@@ -16,7 +16,7 @@ To decide which figure-name is the examine-image of (C - DungeonScenery01):
 
 To say ExamineDesc of (C - DungeonScenery01):
 	if diaper quest is 0:
-		say "A row of six statues of naked [men of pimp] with a ridiculously sized [if the bimbo of the player > 13][line break][second custom style]but yummy looking[roman type][line break][end if][manly-penis]s. There seems to be a hollow tube inside each [manly-penis], with an exit at the tip.";
+		say "A row of six statues of naked [men of pimp] with ridiculously sized [if the player is a nympho]and yummy looking [end if][manly-penis]s. There seems to be a hollow tube inside each [manly-penis], with an exit at the tip. [if fucktoy-stone is in the location of C]Kneeling in the middles of the statues is a naked [man of witch] with a stone [manly-penis] in [his of witch] mouth and one in each hand. There is a sapphire ring on one of [his of witch] stone fingers. [otherwise if the fucktoy-stone-progress of the player > 0] Kneeling in the middles of the statues is a naked [man of witch] with a stone [manly-penis] in [his of witch] mouth and one in each hand. [end if][if the fucktoy-stone-progress of the player > 0][one of]Wait, was that one always there?[or]Where did that last one come from?[stopping][end if]";
 		if newbie tips is 1, say "[one of][newbie style]Newbie tip: These can be sucked, and eventually you can work out which ones heal the soreness of your orifices and replenishing some of your magic... but all will force you to drink some semen. Overall, they're very useful but if you use them too much, you might find yourself with a new oral fixation.[or][stopping]";
 	otherwise:
 		say "A line of bronze women with their big bare butts pointing towards you. They look weirdly... spankable.";

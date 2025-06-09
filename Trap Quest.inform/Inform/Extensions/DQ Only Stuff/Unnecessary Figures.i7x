@@ -319,6 +319,9 @@ To decide which figure-name is Figure of Fat Growth 2:
 To decide which figure-name is Figure of Fat Growth 3:
 	decide on figure of small image.
 
+To decide which figure-name is Figure of Flying used condoms:
+	decide on figure of small image.
+
 To decide which figure-name is Figure of Football Predicament:
 	decide on figure of small image.
 

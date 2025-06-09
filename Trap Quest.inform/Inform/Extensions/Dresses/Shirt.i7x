@@ -2,6 +2,10 @@ Shirt by Dresses begins here.
 
 A shirt is a kind of overdress. The skirt-length of A shirt is 0. A shirt is usually fully covering. A shirt is usually manly. A shirt is usually only arm covering. A shirt is usually not-top-displacable. Understand "shirt" as a shirt.
 
+Definition: a shirt is same-type:
+	if theme-share-target is shirt or theme-share-target is T-shirt or theme-share-target is vest top, decide yes;
+	decide no.
+
 To decide which number is the initial outrage of (C - a shirt):
 	decide on 0.
 
@@ -145,5 +149,30 @@ To decide which number is the adult-influence of (C - torn-shirt):
 	decide on 1.
 
 Definition: torn-shirt is black themed: decide yes.
+
+Part 5 - Smart Shirt
+
+smart-shirt is a shirt. smart-shirt is fully covering. The printed name of smart-shirt is "[clothing-title-before]smart shirt[clothing-title-after]". The text-shortcut of smart-shirt is "smsh". Understand "smart" as smart-shirt.
+
+Figure of smart shirt is the file "Items/Clothes/Upper/Shirts/shirt3.png".
+
+To decide which figure-name is clothing-image of (C - smart-shirt):
+	decide on figure of smart shirt.
+
+To say ClothingDesc of (C - smart-shirt):
+	say "This long-sleeved white button-up shirt could be worn with a suit or with jeans. Either way it would look very smart.".
+
+To say ShortDesc of (C - smart-shirt):
+	say "smart shirt".
+To say MediumDesc of (C - smart-shirt):
+	say "smart button-up shirt".
+
+To decide which number is the initial outrage of (C - smart-shirt):
+	decide on 0.
+
+To decide which number is the adult-influence of (C - smart-shirt):
+	decide on 1.
+
+Definition: smart-shirt is white themed: decide yes.
 
 Shirt ends here.

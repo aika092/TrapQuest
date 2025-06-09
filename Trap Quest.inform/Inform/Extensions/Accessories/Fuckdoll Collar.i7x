@@ -197,6 +197,9 @@ Definition: BBC collar is transformation-protected:
 
 
 Definition: BBC collar is interracial themed: decide yes.
+Definition: BBC collar is fetish appropriate:
+	if interracial fetish is 1, decide yes;
+	decide no.
 Definition: BBC collar is white themed: decide yes.
 
 

@@ -18,7 +18,7 @@ title	subtable	description	toggle
 "Mythical Creatures (this enables sex with fantasy creatures e.g. minotaurs, there are no real-life animals) - [mythical creature points] points ([if choice in row 48 of the Table of Player Options is -1]never[otherwise if choice in row 48 of the Table of Player Options is 0]not now[otherwise if choice in row 48 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	mythical creature fetish toggle rule
 "Tentacle Monsters Everywhere (this causes tentacle monsters to spawn in all regions until you purify the spawners) - 6 points ([if choice in row 61 of the Table of Player Options is -1]never[otherwise if choice in row 61 of the Table of Player Options is 0]not now[otherwise if choice in row 61 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	tentacle fetish toggle rule
 "[']Gross['] Licking - [if grossness fetish is 0]minimal (pretty much all foot and ass licking can only happen if you do it on purpose)[otherwise if grossness fetish is 1]foot licking only (ass-to-mouth can only happen if you do it on purpose)[otherwise if grossness fetish is 2][italic type]normal (foot licking & anilingus & oral after anal sex)[otherwise][bold type]full[roman type] (foot worship, and drinking & eating things that have been up a butt; don't worry no scat)[end if] [if the remainder after dividing choice in row 83 of the Table of Player Options by 2 is 0]always[otherwise]this time[end if] - [grossness fetish] points[roman type]"	--	--	grossness fetish toggle rule
-"Condoms - [if condom fetish is 0]minimal (NPCs won't wear them without prompting; you don't have to wear used condoms)[otherwise if condom fetish is 1]normal (NPCs might used condoms on their own; creampie addiction increases faster)[otherwise if condom fetish is 2][italic type]worn (NPCs rarely wear them without prompting; you will be made to wear used condoms)[otherwise][bold type]full [roman type](NPCs might use condoms on their own; creampie addiction increases faster; you will be made to wear used condoms)[end if] [if the remainder after dividing choice in row 53 of the Table of Player Options by 2 is 0]always[otherwise]this time[end if] - [condom fetish] points[roman type]"	--	--	condom fetish toggle rule
+"Condoms - [if condom fetish is 0]minimal (NPCs won't wear them without prompting; you don't have to wear used condoms)[otherwise if condom fetish is 1]normal (NPCs might use condoms on their own; creampie addiction increases faster)[otherwise if condom fetish is 2][italic type]worn (NPCs rarely wear them without prompting; you will be made to wear used condoms)[otherwise][bold type]full [roman type](NPCs might use condoms on their own; creampie addiction increases faster; you will be made to wear used condoms)[end if] [if the remainder after dividing choice in row 53 of the Table of Player Options by 2 is 0]always[otherwise]this time[end if] - [condom fetish] points[roman type]"	--	--	condom fetish toggle rule
 "NPC gender preference (changes the description of some NPCs - but most alternate images don't exist yet!): ([if lady fetish is 0]No preference[otherwise if lady fetish is 1]Feminine NPCs only[otherwise]Masculine NPCs only[end if] [if the remainder after dividing choice in row 70 of the Table of Player Options by 2 is 0]never randomise[otherwise]for now, but can be randomised[end if] - [if the player is the donator]free[otherwise]beta testers only for now[end if])"	--	--	lady fetish toggle rule
 "Alcohol - 2 points ([if the player is not the donator]beta testers only for now![otherwise if choice in row 69 of the Table of Player Options is -1]never[otherwise if choice in row 69 of the Table of Player Options is 0]not now[otherwise if choice in row 69 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	alcohol fetish toggle rule
 "Male-To-Female Sex Change - 2 points ([if choice in row 10 of the Table of Player Options is -1]never[otherwise if choice in row 10 of the Table of Player Options is 0]not now[otherwise if choice in row 10 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	TG fetish toggle rule
@@ -46,9 +46,10 @@ title	subtable	description	toggle
 "ENABLE SEASONAL CONTENT"	Table of Festive Options	--	--
 [DO NOT PUT ANY OPTIONS BELOW THE SEASONAL CONTENT ROW - they will not appear for non-alpha testers. Put them above the seasonal row instead.]
 
-The random mode rules is a rulebook.
+The random fetish rules is a rulebook.
+The random handicap rules is a rulebook.
 This is the randomise choices rule:
-	follow the random mode rules.
+	follow the random handicap rules.
 The nightmare mode rules is a rulebook.
 This is the nightmare mode rule:
 	follow the nightmare mode rules.
@@ -65,7 +66,7 @@ This is the bukkake nightmare rule:
 The bukkake nightmare rule is listed in the nightmare mode rules.
 This is the bukkake random rule:
 	if choice in row 4 of the Table of Player Options is 0 or choice in row 4 of the Table of Player Options is 1, now choice in row 4 of the Table of Player Options is a random number between 0 and 1.
-The bukkake random rule is listed in the random mode rules.
+The bukkake random rule is listed in the random fetish rules.
 
 To decide which number is pregnancy fetish:
 	if diaper quest is 1, decide on 0;
@@ -79,7 +80,7 @@ This is the pregnancy nightmare rule:
 The pregnancy nightmare rule is listed in the nightmare mode rules.
 This is the pregnancy random rule:
 	if choice in row 5 of the Table of Player Options is 0 or choice in row 5 of the Table of Player Options is 1, now choice in row 5 of the Table of Player Options is a random number between 0 and 1.
-The pregnancy random rule is listed in the random mode rules.
+The pregnancy random rule is listed in the random fetish rules.
 
 To decide which number is lactation fetish:
 	if diaper quest is 1, decide on 0;
@@ -93,7 +94,7 @@ This is the lactation nightmare rule:
 The lactation nightmare rule is listed in the nightmare mode rules.
 This is the lactation random rule:
 	if choice in row 6 of the Table of Player Options is 0 or choice in row 6 of the Table of Player Options is 1, now choice in row 6 of the Table of Player Options is a random number between 0 and 1.
-The lactation random rule is listed in the random mode rules.
+The lactation random rule is listed in the random fetish rules.
 
 To decide which number is watersports fetish:
 	if choice in row 7 of the Table of Player Options <= 0, decide on 0;
@@ -106,7 +107,7 @@ This is the watersports nightmare rule:
 The watersports nightmare rule is listed in the nightmare mode rules.
 This is the watersports random rule:
 	if choice in row 7 of the Table of Player Options is 0 or choice in row 7 of the Table of Player Options is 1, now choice in row 7 of the Table of Player Options is a random number between 0 and 1.
-The watersports random rule is listed in the random mode rules.
+The watersports random rule is listed in the random fetish rules.
 
 To decide which number is egg laying fetish:
 	if diaper quest is 1, decide on 0;
@@ -120,7 +121,7 @@ This is the egg laying nightmare rule:
 The egg laying nightmare rule is listed in the nightmare mode rules.
 This is the egg laying random rule:
 	if choice in row 8 of the Table of Player Options is 0 or choice in row 8 of the Table of Player Options is 1, now choice in row 8 of the Table of Player Options is a random number between 0 and 1.
-The egg laying random rule is listed in the random mode rules.
+The egg laying random rule is listed in the random fetish rules.
 
 To decide which number is extreme proportions fetish:
 	if diaper quest is 1, decide on 0;
@@ -134,7 +135,7 @@ This is the extreme proportions nightmare rule:
 The extreme proportions nightmare rule is listed in the nightmare mode rules.
 This is the extreme proportions random rule:
 	if choice in row 9 of the Table of Player Options is 0 or choice in row 9 of the Table of Player Options is 1, now choice in row 9 of the Table of Player Options is a random number between 0 and 1.
-The extreme proportions random rule is listed in the random mode rules.
+The extreme proportions random rule is listed in the random fetish rules.
 
 To decide which number is TG fetish:
 	if choice in row 1 of the Table of Player Options is 1, decide on 0; [player who started female can't have it enabled]
@@ -151,7 +152,7 @@ This is the TG nightmare rule:
 The TG nightmare rule is listed in the nightmare mode rules.
 This is the TG random rule:
 	if choice in row 10 of the Table of Player Options is 0 or choice in row 10 of the Table of Player Options is 1, now choice in row 10 of the Table of Player Options is a random number between 0 and 1.
-The TG random rule is listed in the random mode rules.
+The TG random rule is listed in the random fetish rules.
 
 To decide which number is inflation fetish:
 	if diaper quest is 1, decide on 0;
@@ -165,7 +166,7 @@ This is the inflation nightmare rule:
 The inflation nightmare rule is listed in the nightmare mode rules.
 This is the inflation random rule:
 	if choice in row 11 of the Table of Player Options is 0 or choice in row 11 of the Table of Player Options is 1, now choice in row 11 of the Table of Player Options is a random number between 0 and 1.
-The inflation random rule is listed in the random mode rules.
+The inflation random rule is listed in the random fetish rules.
 
 To decide which number is weight gain fetish:
 	if choice in row 12 of the Table of Player Options <= 0, decide on 0;
@@ -178,7 +179,7 @@ This is the weight gain nightmare rule:
 The weight gain nightmare rule is listed in the nightmare mode rules.
 This is the weight gain random rule:
 	if choice in row 12 of the Table of Player Options is 0 or choice in row 12 of the Table of Player Options is 1, now choice in row 12 of the Table of Player Options is a random number between 0 and 1.
-The weight gain random rule is listed in the random mode rules.
+The weight gain random rule is listed in the random fetish rules.
 
 To decide which number is artificial enhancements fetish:
 	if diaper quest is 1, decide on 0;
@@ -192,7 +193,7 @@ This is the artificial enhancements nightmare rule:
 The artificial enhancements nightmare rule is listed in the nightmare mode rules.
 This is the artificial enhancements random rule:
 	if choice in row 13 of the Table of Player Options is 0 or choice in row 13 of the Table of Player Options is 1, now choice in row 13 of the Table of Player Options is a random number between 0 and 1.
-The artificial enhancements random rule is listed in the random mode rules.
+The artificial enhancements random rule is listed in the random fetish rules.
 
 To decide which number is diaper lover:
 	if diaper quest is 1, decide on 1;
@@ -206,7 +207,7 @@ This is the diaper lover nightmare rule:
 The diaper lover nightmare rule is listed in the nightmare mode rules.
 This is the diaper lover random rule:
 	if choice in row 19 of the Table of Player Options is 0 or choice in row 19 of the Table of Player Options is 1, now choice in row 19 of the Table of Player Options is a random number between 0 and 1.
-The diaper lover random rule is listed in the random mode rules.]
+The diaper lover random rule is listed in the random fetish rules.]
 
 [!<DecideWhichNumberIsWatersportsMechanics>+
 
@@ -229,7 +230,7 @@ This is the interracial nightmare rule:
 The interracial nightmare rule is listed in the nightmare mode rules.
 This is the interracial random rule:
 	if choice in row 45 of the Table of Player Options is 0 or choice in row 45 of the Table of Player Options is 1, now choice in row 45 of the Table of Player Options is a random number between 0 and 1.
-The interracial random rule is listed in the random mode rules.
+The interracial random rule is listed in the random fetish rules.
 
 
 To decide which number is mythical creature/creatures fetish:
@@ -246,7 +247,7 @@ This is the mythical creature nightmare rule:
 The mythical creature nightmare rule is listed in the nightmare mode rules.
 This is the mythical creature random rule:
 	if choice in row 48 of the Table of Player Options is 0 or choice in row 48 of the Table of Player Options is 1, now choice in row 48 of the Table of Player Options is a random number between 0 and 1.
-The mythical creature random rule is listed in the random mode rules.
+The mythical creature random rule is listed in the random fetish rules.
 
 To decide which number is tentacle fetish:
 	if diaper quest is 1, decide on 0;
@@ -260,7 +261,7 @@ This is the tentacle nightmare rule:
 The tentacle nightmare rule is listed in the nightmare mode rules.
 This is the tentacle random rule:
 	if choice in row 61 of the Table of Player Options is 0 or choice in row 61 of the Table of Player Options is 1, now choice in row 61 of the Table of Player Options is a random number between 0 and 1.
-The tentacle random rule is listed in the random mode rules.
+The tentacle random rule is listed in the random fetish rules.
 
 To decide which number is alcohol fetish:
 	if the player is not the donator, decide on 0;
@@ -274,7 +275,7 @@ This is the alcohol nightmare rule:
 The alcohol nightmare rule is listed in the nightmare mode rules.
 This is the alcohol random rule:
 	if choice in row 69 of the Table of Player Options is 0 or choice in row 69 of the Table of Player Options is 1, now choice in row 69 of the Table of Player Options is a random number between 0 and 1.
-The alcohol random rule is listed in the random mode rules.
+The alcohol random rule is listed in the random fetish rules.
 
 To decide which number is lady fetish: [This is NPC gender preference. 0: No preference; 1: Female NPCs only 2: Male NPCs only]
 	if the player is not the donator, decide on 0;
@@ -291,7 +292,7 @@ This is the lady nightmare rule:
 The starting body shape nightmare rule is listed in the nightmare mode rules.
 This is the lady random rule:
 	if the remainder after dividing choice in row 70 of the Table of Player Options by 2 is 1, now choice in row 70 of the Table of Player Options is ((a random number between 0 and 2) * 2) + 1.
-The lady random rule is listed in the random mode rules.
+The lady random rule is listed in the random fetish rules.
 
 To decide which number is nursery resident:
 	if diaper quest is 0 or halloween content is 1 or the player is not a march 2024 diaper donator, decide on 0;
@@ -308,7 +309,7 @@ The nursery resident nightmare rule is listed in the nightmare mode rules.
 This is the nursery resident random rule:
 	if diaper quest is 1 and halloween content is 0 and the player is a march 2024 diaper donator:
 		if choice in row 90 of the Table of Player Options is 0 or choice in row 90 of the Table of Player Options is 1, now choice in row 90 of the Table of Player Options is a random number between 0 and 1.
-The nursery resident random rule is listed in the random mode rules.
+The nursery resident random rule is listed in the random handicap rules.
 
 To decide which number is enema fetish:
 	if diaper quest is 1 and choice in row 91 of the Table of Player Options <= 0, decide on 0;
@@ -321,7 +322,7 @@ This is the enema fetish nightmare rule:
 The enema fetish nightmare rule is listed in the nightmare mode rules.
 This is the enema fetish random rule:
 	if diaper quest is 1 and (choice in row 91 of the Table of Player Options is 0 or choice in row 91 of the Table of Player Options is 1), now choice in row 91 of the Table of Player Options is a random number between 0 and 1.
-The enema fetish random rule is listed in the random mode rules.
+The enema fetish random rule is listed in the random handicap rules.
 
 
 Fetish Options ends here.

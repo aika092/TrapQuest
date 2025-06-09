@@ -35,9 +35,9 @@ Report going:
 					now R2 is a random number between 3 and 25;
 				if R1 + R2 < the crawl count of the player:
 					if M is maid headdress:
-						say "[bold type][if diaper quest is 1]Suddenly your hair turns green and you[otherwise]You[end if] feel a maid's headdress materialise on your head.[roman type] [if the bimbo of the player < 7][line break][first custom style]I think the game is trying to tell me something about how much I'm crawling around this place...[otherwise][line break][second custom style]Teehee, I guess I have been on my knees for a while, like a hard-working maid...[end if][roman type][line break]";
+						say "[bold type][if diaper quest is 1]Suddenly your hair turns green and you[otherwise]You[end if] feel a maid's headdress materialise on your head.[roman type] [if the bimbo of the player < 7][line break][first custom style]I think the game is trying to tell me something about how much I'm crawling around this place...[otherwise][line break][second custom style]Tee-hee, I guess I have been on my knees for a while, like a hard-working maid...[end if][roman type][line break]";
 					otherwise if M is cat-ears:
-						say "[bold type]You feel a headband with cat ears materialise on your head.[roman type] [if the bimbo of the player < 13][line break][first custom style]I think the game is trying to tell me something about how much I'm crawling around this place...[otherwise][line break][second custom style]Teehee, I guess I have been on all fours for ages, like a naughty pussycat...[end if][roman type][line break]";
+						say "[bold type]You feel a headband with cat ears materialise on your head.[roman type] [if the bimbo of the player < 13][line break][first custom style]I think the game is trying to tell me something about how much I'm crawling around this place...[otherwise][line break][second custom style]Tee-hee, I guess I have been on all fours for ages, like a naughty pussycat...[end if][roman type][line break]";
 					summon M cursed;
 				otherwise if R1 < the crawl count of the player or R2 < the crawl count of the player:
 					say "With all the time you've been spending crawling along the ground, you're beginning to [if playerRegion is woods]feel like a stray animal who lives in the woods[otherwise]think this place really needs a good cleaning[end if]...[line break]";
@@ -106,7 +106,7 @@ To progress quest of (Q - puddle-cleaning-quest):
 				compute quest completion of Q on C.
 
 To compute generic first time class reward of (Q - puddle-cleaning-quest) on (C - a clothing):
-	let D be a random off-stage ring;
+	let D be a random off-stage plentiful ring;
 	if D is ring:
 		now D is ruby;
 		set shortcut of D;
@@ -245,10 +245,6 @@ To compute SelfExamineDesc of (H - stripper maid headdress):
 	say "You are wearing a [ShortDesc of H] on top of your [ShortDesc of hair]. ";
 
 sexy-puddle-cleaning-quest is a headgear-clothing-quest.
-
-To uniquely set up (C - stripper maid headdress):
-	now the quest of C is puddle-cleaning-quest;
-	now the puddles-cleaned of puddle-cleaning-quest is 0.
 
 To say QuestFlav of (Q - sexy-puddle-cleaning-quest):
 	say "You sense that it wants you to clean up messes you find on the floor, while in front of horny [men of male-m].".

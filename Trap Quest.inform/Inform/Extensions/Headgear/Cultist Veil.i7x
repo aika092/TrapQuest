@@ -97,7 +97,7 @@ To say QuestPersistFlav of (Q - insanity-quest) on (C - cultist veil):
 	say "[if the quest-completions of Q is 0]The magic sealing your [MediumDesc of C] is lifted! It rewards your efforts by[otherwise]Your [MediumDesc of C] rewards your continued efforts by[end if] ".
 
 To compute generic first time class reward of (Q - insanity-quest) on (C - a clothing):
-	let D be a random off-stage ring;
+	let D be a random off-stage plentiful ring;
 	if D is ring:
 		now D is pure diamond;
 		set shortcut of D;

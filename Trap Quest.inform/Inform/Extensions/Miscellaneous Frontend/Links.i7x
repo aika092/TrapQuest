@@ -37,7 +37,7 @@ Glulx input handling rule for a char-event:
 The default graphlink processing rule is not listed in the graphlink processing rulebook.
 
 A graphlink processing rule for a g-element (called the link) (this is the Aika graphlink processing rule):
-	if debugmode > 1, say "Processing graphlink for [candidate replacement command].";
+	if debugmode > 1, say "Processing graphlink for [candidate replacement command]. waitingForChar is [if waitingForChar is true]true[otherwise]false[end if].";
 	unless the candidate replacement command is "":
 		if PopupButtons > 0 and the candidate replacement command exactly matches the regular expression "x .*": [When we would normally examine something, we want to instead pull up the popup buttons. Unless they're already pulled up and the player has clicked on the examine button, in which case we want to actually do the action.]
 			[do nothing;]
@@ -55,10 +55,12 @@ A graphlink processing rule for a g-element (called the link) (this is the Aika 
 			now the glk event type is char-event;
 			now the glk event value 1 is 4;
 			let STI be the StrToInt of the candidate replacement command;
-			if STI >= 0:
+			if fetishMenuInProgress is true:
+				now the glk event value 1 is -6;
+				now waitingForChar is false;
+			otherwise if STI >= 0:
 				now the glk event value 1 is STI + 48;
 				say "[bold type][STI][roman type][line break]";
-				now waitingForChar is false;
 			otherwise if the candidate replacement command exactly matches the text "yes", case insensitively:
 				now the glk event value 1 is 121;
 				say "[bold type]Yes[roman type][line break]";
@@ -382,6 +384,7 @@ To compute multiple choice question:
 			if YesNoBackground is Figure of no-image-yet, display entire map; [We have flagged that we still want to show the player the map in the background]
 			render YesNoBackground;
 		now inputNumber is the chosen letter;
+		if debugmode > 1, say "Numerical responses ([number of entries in numerical-responses] entries): [numerical-responses].[line break]input number: [inputNumber].";
 		decrease inputNumber by 48; [convert key ID to integer]
 		let INM be inputNumber;
 		if INM is 0, now INM is 10;
@@ -402,8 +405,7 @@ To reset multiple choice questions:
 	[now numerical-responses is {"","","","","","","","","",""};] [this doesn't work because Inform is shit]
 	truncate numerical-responses to 0 entries;
 	repeat with N running from 1 to 10:
-		add "" to numerical-responses;
-	if debugmode > 1, say "Numerical responses: [numerical-responses].".
+		add "" to numerical-responses.
 
 leftNumber is initially -2.
 rightNumber is initially -3.

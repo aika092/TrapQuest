@@ -50,6 +50,10 @@ To say ShaftDesc of (K - a strapon-panties):[used any time you use "shaft"]
 	if K is dildo-usage, say "dildo";
 	otherwise say "shaft".
 
+To say TipFlavour of (K - a strapon-panties):[used any time you use "tip"]
+	if K is dildo-usage, say "[one of]straphead[or]dildotip[or]strapend[or]straptip[in random order]";
+	otherwise say "[one of]cockhead[or]tip[or]bellend[or]dicktip[in random order]".
+
 To say PenisSoften of (K - a strapon-panties):
 	do nothing.
 
@@ -102,7 +106,7 @@ To say UniqueClothingDesc of (K - strapon-dildo):
 
 Chapter 2 - Equine Strapon
 
-equine-strapon is a strapon-panties. equine-strapon is unique. The text-shortcut of equine-strapon is "eqsd". Understand "equine", "horse", "harness" as equine-strapon.
+equine-strapon is a strapon-panties. equine-strapon is unique. The text-shortcut of equine-strapon is "eqsd". Understand "equine", "horse", "industrial", "ind", "equ", "harness" as equine-strapon.
 Figure of equine-strapon is the file "Items/Accessories/Toys/strapon3.png".
 To decide which figure-name is the examine-image of (H - equine-strapon):
 	decide on figure of equine-strapon.
@@ -127,11 +131,15 @@ To say PenisFlavour of (K - equine-strapon):
 	if the size of penis >= N, say ShortDesc of penis;
 	otherwise say "[PenisSizeFlav N] [if mythical creature fetish is 1]equine[otherwise]industrial[end if] strapon [PenisShaftFlav N]".
 
+To say TipFlavour of (K - equine-strapon):[used any time you use "tip"]
+	if mythical creature fetish is 1, say "flare";
+	otherwise say "dildotip".
+
 To say ShortDesc of (H - equine-strapon):
 	say "[if mythical creature fetish is 1]equine[otherwise]industrial[end if] strap-on".
 
 To say UniqueClothingDesc of (K - equine-strapon):
-	say "A [PenisFlavour of K] mounted onto a sturdy leather harness. [if K is worn and the player is possessing a penis]Your [ShortDesc of penis] rests in a small hole in the base of the dildo, receiving every sensation the dildo feels, as if it were a part of your own body[otherwise if K is worn]A small nub at the base of the dildo rests against your crotch, transmitting every sensation the dildo feels, as if it were a part of your own body[otherwise if the player is possessing a penis]The base of the dildo is hollow, and covered in tiny metal sensors[otherwise]There is a small nub at the base of the dildo, covered in tiny metal sensors[end if]. [if K is worn and the player is prone]It drags heavily along the floor[otherwise]It hangs heavily toward the floor[end if].".
+	say "A [PenisFlavour of K] mounted onto a sturdy leather harness. [if K is worn and the player is possessing a penis]Your [ShortDesc of penis] rests in a small hole in the base of the dildo, receiving every sensation the dildo feels as if it were a part of your own body[otherwise if K is worn]A small nub at the base of the dildo rests against your crotch, transmitting every sensation the dildo feels as if it were a part of your own body[otherwise if the player is possessing a penis]The base of the dildo is hollow, and covered in tiny metal sensors[otherwise]There is a small nub at the base of the dildo, covered in tiny metal sensors[end if]. [if K is worn and the player is prone]It drags heavily along the floor[otherwise]It hangs heavily toward the floor[end if].".
 
 [
 Only needed if the player's penis can ever go beyond 10
@@ -208,7 +216,7 @@ To decide which number is the intelligence-influence of (C - gem-strapon):
 	decide on 0.
 
 To say UniqueClothingDesc of (K - gem-strapon):
-	say "A silk thong covered in multicoloured gems with a [PenisFlavour of K] dildo mounted to the front[if K is worn]. Arousal radiates through your body at every point of contact, and [i]every[/i] gemstone is somehow as sensitive as your bare flesh[end if].".
+	say "A silk thong covered in multicoloured gems with a [PenisFlavour of K] dildo mounted to the front[if K is worn]. Arousal radiates through your body at every point of contact, and *every* gemstone is somehow as sensitive as your bare flesh[end if].".
 
 Chapter 4 - Ghost Strapon
 
@@ -231,13 +239,14 @@ To uniquely set up (C - a ghost-strapon):
 	now the strap-length of C is 3.[should these be possessed? Not sure, but probably not]
 
 Definition: ghost-strapon is dildo-usage:
-	if the player is not possessing a penis and futanari fetish is 0, decide yes;
+	if the player is not possessing a penis:
+		if the player is possessing a vagina and futanari fetish is 0, decide yes;
 	decide no.
 
 To say ShortDesc of (H - ghost-strapon):
 	unless H is worn:
 		say "spectral satin panties";
-	otherwise if the player is not possessing a penis and futanari fetish is 0:
+	otherwise if H is dildo-usage:
 		say "spectral strap-on";
 	otherwise:
 		if the size of penis < the strap-length of H, say "spectral [player-penis]";
@@ -247,7 +256,7 @@ To say PenisFlavour of (K - ghost-strapon):
 	let N be the strap-length of K;
 	if the player is possessing a penis and the size of penis >= the strap-length of K:
 		say "glowing [ShortDesc of penis]";
-	otherwise if the player is not possessing a penis and futanari fetish is 0:
+	otherwise if K is dildo-usage:
 		say "[PenisSizeFlav N] spectral strap-on [PenisShaftFlav N]";
 	otherwise:
 		say "[PenisSizeFlav N] spectral [PenisShaftFlav N]".

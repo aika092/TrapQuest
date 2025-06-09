@@ -109,7 +109,7 @@ To decide which number is the default-soak-limit of (C - a socks): decide on 6.
 Definition: a socks is usually at least partially thigh covering: decide no.
 
 A diaper quest fix rule:
-	repeat with C running through socks:
+	repeat with C running through unique fetish appropriate socks:
 		now C is transformation-rare.
 
 To decide which number is the knee-modifier of (S - a socks):
@@ -303,6 +303,9 @@ condom socks is a socks. condom socks is unique. condom socks is latex. The text
 
 Definition: condom socks is usually at least partially thigh covering: decide no.
 Definition: condom socks is calf covering: decide no.
+Definition: condom socks is fetish appropriate:
+	if condom fetish > 0, decide yes;
+	decide no.
 
 Definition: condom socks is class-relevant:
 	if the class of the player is condom collector, decide yes;
@@ -417,6 +420,30 @@ Definition: halloween socks is orange themed: decide yes.
 Definition: halloween socks is purple themed: decide yes.
 Definition: halloween socks is black themed: decide yes.
 Definition: halloween socks is halloween themed: decide yes.
+
+business socks is a socks. business socks is rare. The text-shortcut of business socks is "bsns".
+
+Figure of business socks is the file "Items/Clothes/Lower/Legs/socks6.png".
+
+To decide which figure-name is clothing-image of (C - business socks):
+	decide on figure of business socks.
+
+To say ClothingDesc of (C - business socks):
+	say "These are boring black socks.".
+
+To say ShortDesc of (C - business socks):
+	say "pair of socks".
+To say MediumDesc of (C - business socks):
+	say "pair of smart black socks".
+
+To decide which number is the initial outrage of (C - business socks):
+	decide on 0.
+To decide which number is the adult-influence of (C - business socks):
+	decide on 1.
+To set up magic attribute of (C - business socks):
+	now C is confidence.
+
+Definition: business socks is black themed: decide yes.
 
 frilly stockings is a stockings. frilly stockings is cotton. frilly stockings is sheer-when-wet. The text-shortcut of frilly stockings is "fst".
 

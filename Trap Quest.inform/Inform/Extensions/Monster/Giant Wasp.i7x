@@ -88,7 +88,10 @@ To say MediumDesc of (M - woolly giant wasp):
 	say "woolly wasp".
 
 To say MonsterDesc of (M - a giant wasp):
-	say "This giant flying insect is larger than you, but is still capable of perfect flight from [his of M] rapidly oscillating wings. As with real wasps in the real world, this beast seems to be very aggressive for no clear reason. Aside from [his of M] terrifying giant stinger, you can also see an ovipositor extending from [his of M] underbelly.".
+	say "This giant flying insect is larger than you, but is still capable of perfect flight from [his of M] rapidly oscillating wings. As with wasps in the real world, this beast seems to be very aggressive for no clear reason. [if M is honey-wasp]This one in particular is covered in soft-looking fur, but the needle-like stinger and[otherwise if M is dangerous-wasp]This one in particular seems particularly dangerous, with an absolutely enourmous, blade-like stinger and a[otherwise]Aside from [his of M] huge, needle-like stinger, you can see a[end if] pulsating [italic type][if the times-submitted of M > 0]ovipositor[otherwise]appendage[roman type] dangling from [his of M] abdomen.";
+
+To say LongDickDesc of (M - a giant wasp):
+	say "[one of]pulsating[or]throbbing[or]ridged[in random order] [DickDesc of M]";
 
 To say DickDesc of (M - a giant wasp):
 	say "ovipositor".
@@ -213,13 +216,13 @@ To compute vaginal sex of (M - a giant wasp):
 
 To compute fuckhole sex of (M - a giant wasp):
 	let F be a random fuckhole penetrated by M;
-	say "[BigNameDesc of M] keeps fucking your [variable F] with [his of M] ovipositor, all the way in and all the way out[one of] like [he of M][']s purposefully trying to make it feel extra-intense[or][or][or][or][or][cycling]! ";
+	say "[one of][BigNameDesc of M] keeps fucking your [variable F] with [his of M] [DickDesc of M], all the way in and all the way out like [he of M][']s purposefully trying to make it feel extra intense![or][BigNameDesc of M]'s wings buzz maddeningly as [he of M] slides [his of M] [DickDesc of M] all the way in and all the way out of your [variable F].[or][BigNameDesc of M]'s [DickDesc of M] reaches all the way into your [variable F] with every thrust.[or]You can feel every inch of [BigNameDesc of M]'s [LongDickDesc of M] all the way inside your [variable F] as it fucks you.[in random order]";
 	if a random number between 1 and 2 is 1:
-		say "As [NameDesc of M][']s ovipositor reaches the innermost recesses of your [variable F], you feel [one of]a small round object[or]another egg[stopping] travel through the organ and exit into your [if F is asshole]belly[otherwise]womb[end if]!";
+		say "As [NameDesc of M][']s [DickDesc of M] reaches the innermost recesses of your [variable F], you feel [one of]a small round object[or]another egg[stopping] travel through the organ and exit into your [if F is asshole]belly[otherwise]womb[end if]!";
 		if F is asshole, assfill 1 small eggs;
 		otherwise wombfill 1 small eggs;
 		if the reaction of the player > 0:
-			say "Your submission to the in-and-out fucking allows another egg to travel more easily through the sex organ, bringing [NameDesc of M] closer to finishing.[if the bimbo of the player < 13]You feel very humiliated letting this happen to you almost willingly.[end if]";[NB: humiliation is carried out inside the "Carry Out Submitting" function.]
+			say "Your [one of]relaxed reaction to[or]submission to[or]acceptance of[in random order] the deep fucking allows another egg to travel more easily through the sex organ, bringing [NameDesc of M] closer to finishing.[if the bimbo of the player < 13]You feel very humiliated letting this happen to you almost willingly.[end if]";[NB: humiliation is carried out inside the "Carry Out Submitting" function.]
 			if the sex-length of M > 1:
 				decrease the sex-length of M by 1;
 				if F is asshole, assfill 1 small eggs;
@@ -231,7 +234,7 @@ To compute fuckhole sex of (M - buzzing giant wasp):
 	let F be a random fuckhole penetrated by M;
 	say "[BigNameDesc of M] keeps thrusting with [his of M] ovipositor! ";
 	if a random number between 1 and 2 is 1:
-		say "As [NameDesc of M] pushes [his of M] ovipositor into the deepest recesses of your [variable F], you feel [one of]a solid round object[or]another egg[stopping] travel through the organ and exit into your [if F is asshole]belly[otherwise]womb[end if]!";
+		say "As [NameDesc of M] pushes [his of M] [LongDickDesc of M] into the deepest recesses of your [variable F], you feel [one of]a solid round object[or]another egg[stopping] travel through the organ and exit into your [if F is asshole]belly[otherwise]womb[end if]!";
 		if F is asshole, assfill 1 medium eggs;
 		otherwise wombfill 1 medium eggs;
 	if the reaction of the player > 0:

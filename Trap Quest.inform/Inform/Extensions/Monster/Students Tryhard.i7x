@@ -72,7 +72,7 @@ To say StoryAnswer of (M - student-laci):
 	say "[speech style of M]'[if diaper quest is 1]I've been sent here to prove my [maturity]. And as you can see, I am wearing sexy ADULT panties! You can see them, right??? No nappies here!'[otherwise if the current-rank of M is 1]My boyfriend has a fetish for upskirts so I'm here to train to be less shy in short skirts and always bend over at the waist. Am I doing it right?'[otherwise]My boyfriend is going to to nuts when he sees me waltzing around in tiny skirts like this! I'm going to get the prize for best [boy of M]friend ever!'[end if][roman type][line break]".
 
 To say WhereAnswer of (M - student-laci):
-	say "[speech style of M]'[if the rank of the player <= 1]Um, dumb-head alert! Quit talking to me before the teachers think I'm an idiot too!'[otherwise]Practise makes perfect. Oops, I dropped my pen, teehee!'[end if][roman type][line break]".
+	say "[speech style of M]'[if the rank of the player <= 1]Um, dumb-head alert! Quit talking to me before the teachers think I'm an idiot too!'[otherwise]Practise makes perfect. Oops, I dropped my pen, tee-hee!'[end if][roman type][line break]".
 
 Book - Misty
 

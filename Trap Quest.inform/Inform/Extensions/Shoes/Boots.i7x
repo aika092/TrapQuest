@@ -42,6 +42,25 @@ To say ClothingDesc of (H - black-leather-boots):
 To say UniqueShortDesc of (H - black-leather-boots):
 	say "black leather high heeled boots".
 
+black-straps-boots is a boots. black-straps-boots is leather. The printed name of black-straps-boots is "[clothing-title-before]pair of black strappy leather [heel-height of the item described] inch knee-high boots[clothing-title-after]".The text-shortcut of black-straps-boots is "bslb". Understand "black", "knee-high", "strappy" as black-straps-boots.
+
+Figure of black straps boots is the file "Items/Clothes/Lower/Feet/Boots/leatherboots4.png".
+
+To decide which figure-name is the clothing-image of (H - black-straps-boots):
+	decide on figure of black straps boots.
+
+Definition: black-straps-boots is calf-covering: decide yes.
+Definition: black-straps-boots is black themed: decide yes.
+
+To decide which number is the unique outrage of (C - black-straps-boots):
+	decide on 2.
+
+To say ClothingDesc of (H - black-straps-boots):
+	say "This pair of knee-high black leather boots has 4 thick straps on each one, taking up pretty much the entire length of the boots! Each boot has a [heel-height of H] inch platform heel. [SteadinessDesc of H]".
+
+To say UniqueShortDesc of (H - black-straps-boots):
+	say "black leather strappy boots".
+
 combat-boots is a boots. combat-boots is leather. combat-boots is unique. The printed name of combat-boots is "[clothing-title-before]pair of black leather [heel-height of the item described] inch combat boots[clothing-title-after]". The text-shortcut of combat-boots is "cmbb". Understand "black", "combat" as combat-boots.
 
 Definition: combat-boots is class-relevant:

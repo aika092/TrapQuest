@@ -65,8 +65,12 @@ Definition: an underdress is same-type:
 	decide no.
 An overdress is a kind of dress.
 Definition: an overdress is same-type:
-	if theme-share-target is overdress and (it is unskirted or the number of worn skirts is 0), decide yes;
-	decide no. [Unskirted items will skip skirted dresses if there is a worn skirt]
+	if theme-share-target is overdress:
+		if theme-share-target is unskirted:
+			if theme-share-target is shirt or theme-share-target is bodice or theme-share-target is T-shirt or theme-share-target is vest top or theme-share-target is crop top or theme-share-target is tube top, decide no; [these all have custom same-type functions that transform into one another]
+			if it is skirted and there is worn skirted clothing, decide no; [items without a skirt don't generally turn into items with a skirt]
+		decide yes;
+	decide no.
 
 Definition: a dress is rippable:
 	if it is crotch covering and it is total protection and it is not ass plugging and it is not vagina plugging and it is destructible, decide yes;

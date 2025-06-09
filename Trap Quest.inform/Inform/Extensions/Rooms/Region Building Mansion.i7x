@@ -118,6 +118,7 @@ To Set Up The Mansion:
 		if MT is milk-tank and the number of milk-tanks in the location of mansion-milking-bench is 0, now MT is in the location of mansion-milking-bench;
 	if debugmode is 0 and loading scenes is 1, clear the screen;
 	deploy a slimeball;
+	if diaper quest is 0 and the player is an april 2025 top donator, now bondage-stone is in Mansion38;
 	progress quest of new-region-quest.
 
 To Scramble Mansion:

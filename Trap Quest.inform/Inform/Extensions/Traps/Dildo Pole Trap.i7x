@@ -325,7 +325,7 @@ To compute jump bounce of (Y - a trap):
 	let H be a random worn hindrance-enabling shoes;
 	let F be a random fuckhole penetrated by Y;
 	if F is vagina and asshole is not actually occupied and a random number between 1 and 2 is 1:
-		say "You [if H is shoes]manage to jump whilst in your [ShoeType of H][otherwise]jump a bit clumsily[end if] and the dildo successfully exits you! ...But then you fall back on it hard... and it slips into your [asshole]! [if Y is creampie pole trap]As you land back the dildo, it squirts warm [semen] into your [variable F]![otherwise]You basically just gave yourself a [']wrong hole surprise[']![end if]";
+		say "You [if H is shoes]manage to jump whilst in your [ShoeType of H][otherwise]jump a bit clumsily[end if] and the dildo successfully exits you! ...But then you fall back on it hard... and it slips into your [asshole]! [if Y is creampie pole trap]As you land back the dildo, it squirts warm [semen] into your [asshole]![otherwise]You basically just gave yourself a [']wrong hole surprise[']![end if]";
 		dislodge Y;
 		now F is asshole;
 		now Y is penetrating F;

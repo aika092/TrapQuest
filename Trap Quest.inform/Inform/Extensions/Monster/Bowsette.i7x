@@ -129,7 +129,9 @@ To say speech style of (M - bowsette):
 	say second custom style.
 
 Definition: bowsette is father material: decide yes.
-[Definition: bowsette is wenchy: decide yes.]
+Definition: bowsette is wenchy:
+	if the player is a july 2024 top donator, decide yes;
+	decide no.
 Definition: bowsette is human: decide yes.
 
 To say ShortDesc of (M - bowsette):
@@ -144,6 +146,11 @@ To say FuckerDesc of (M - bowsette):
 	say MediumDesc of M.
 To say BigFuckerDesc of (M - bowsette):
 	say FuckerDesc of M.
+To say LongDickDesc of (M - bowsette):
+	if lady fetish is 2 or futanari fetish > 0:
+		say "huge [if the girth of M is 3]8-inch[otherwise]9-inch[end if] [manly-penis]";
+	otherwise:
+		say "green strap-on dildo";
 
 To say MonsterDesc of (M - bowsette):
 	say "This half-turtle-half-princess [if the bowsette-origin of M is not M]used to be [NameDesc of bowsette-origin of M]. [big he of M] [end if]has [if the temperament of M is 0]red hair and brown skin[otherwise]blonde hair and pale skin[end if]. [big he of M] is wearing a black dress and a crown with a mushroom inside it on [his of M] head. A subtle cloud of smoke flows from [his of M] mouth as [he of M] breathes.".
@@ -508,10 +515,7 @@ To say WhoAnswer of (M - bowsette):
 	say "[speech style of M]'I'm a Turtle Princess, [if the bowsette-origin of M is bowsette]as you've seen, a little slow and a little green, but on the whole I'd say, super-duper[otherwise]but as you know, I wasn't always this way[end if].'[roman type][line break]";
 
 To say StoryAnswer of (M - bowsette):
-	say "[speech style of M]'[if the bowsette-origin of M is bowsette]With my magic book I will shower those clumsy lizards with my power
-Until Dinosaur Land is nothing but fossil fuel!
-My only problem with these spells is that I know not what they tell
-So every hex leaves me perplexed and all I want are those plumbing fools[otherwise]Don't pretend you don't remember how I ended up this way[end if]...'[roman type][line break]";
+	say "[speech style of M]'[if the bowsette-origin of M is bowsette]With my magic book I will shower those clumsy lizards with my power Until Dinosaur Land is nothing but fossil fuel! My only problem with these spells is that I know not what they tell, So every hex leaves me perplexed and all I want are those plumbing fools[otherwise]Don't pretend you don't remember how I ended up this way[end if]...'[roman type][line break]";
 
 To say EscapeAnswer of (M - bowsette):
 	say "[speech style of M]'You don't want to stay here with me?'[roman type][line break]".
@@ -523,5 +527,159 @@ To decide which number is the bartering value of (T - a fae mushroom) for (M - b
 	decide on 4.
 To decide which number is the bartering value of (T - nail file) for (M - bowsette):
 	decide on 3.
+
+Section 4 - Dominant Sex
+
+To decide which number is the dominationtype of (M - bowsette) using (F - penis):
+	decide on FUCK-PENETRATION.
+
+To penetration dominate (M - bowsette):
+	let C be a random worn bottom level protection clothing;
+	let L be sexual-penis-length;
+	let T be the temperament of M;
+	let G be a random worn gag;
+	let V be a random worn breast covering clothing;
+	if sexual-penis-length > 3:[TODO: maybe a set of big penis variations.]
+		if T is 0:
+			say "[NameDesc of M] resists as you try to pull off [his of M] dress, and the fabric rips in the struggle. [big his of M] brown cheeks flush with rage as [if lady fetish < 2][his of M] big tits flop free[otherwise]as [he of M] looks down at [his of M] exposed nipples[end if], and [he of M] leaps at you with [his of M] claws outstretched. You topple to the ground as you catch [his of M], [if C is clothing and C is not strapon-panties]using one hand to fish your [sexual-player-penis] out of your [ShortDesc of C][otherwise if the player is a bit horny]grinding your [SexDesc of penis] between [his of M] thighs[otherwise]grinding your hardening [sexual-player-penis] between [his of M] thighs[end if] as you fend off [his of M] attempts to bite and scratch every bit of exposed flesh [he of M] can find. [big he of M] makes a noise somewhere between a growl and a moan as you push your [SexShaft] into [his of M] [if lady fetish < 2]wet[otherwise]hot[end if] [HoleDesc of M], slapping you as [he of M] begins to bounce on your [sexual-player-penis]. At some point, [his of M] attempts to bite your face are replaced with attempts to bite into your lips and tongue, and [his of M] nails dig into your back as [he of M] picks up speed. [big his of M] moans lengthen, your breath quickens, your [SexShaft] throbs, and [his of M] nipples harden against your chest as you bring each other closer and closer to climax. Your breath hitches as you nearly cross the edge, but [his of M] nails-! [big his of M] nails are about to [if V is clothing]tear your [ShortDesc of V]! [otherwise]break the skin! [end if][line break]Do you stop? [if V is clothing]It might be the only way to protect your [ShortDesc of V].[otherwise]Its going to hurt a lot if you try to finish.[end if]";
+			if the player is reverse bimbo consenting:
+				say "You untangle yourself from [NameDesc of M], your unspent [sexual-player-penis] throbbing dejectedly as you get to your feet.";
+				now player-fucking is DOMINANT-DOMINANT;
+				passively stimulate penis from M times 2;
+				FavourDown M by 2;
+				strongDignify;
+				say AfterDominationComment 1 of M;
+			otherwise:
+				say "[big he of M] screams as [he of M] cums, thighs gripping your waist as [his of M] nails shred [if V is clothing]your [ShortDesc of V]. Its a real shame, but[otherwise]your poor back. It hurts like hell, but[end if] you soldier through, ramming your [SexDesc of penis] home as you unleash your [load] deep inside [his of M] clenching [HoleDesc of M].";
+				if V is clothing:
+					destroy V;
+					PainUp 1;
+				otherwise:
+					PainUp 2;
+				strongDignify;
+				now player-fucking is DOMINANT-DOMINANT;
+				orgasm;
+				orgasm M;
+				FavourUp M;[She's always mad, but why not.]
+				say AfterDominationComment 0 of M;
+		otherwise if T is 1:
+			say "You grab the front of [NameDesc of M]'s dress and pull, [if lady fetish < 2]causing [his of M] huge tits to flop free. [otherwise]exposing [his of M] bare chest. [end if][big he of M] licks [his of M] lips as you pull it the rest of the way off, throwing [if C is not strapon-panties and C is clothing]an arm over your shoulder as [he of M] frees your [SexDesc of penis] from your [ShortDesc of C]. [otherwise if the player is a bit horny][his of M] arms over your shoulder as [he of M] grinds [his of M] [HoleDesc of M] on your [SexDesc of penis]. [otherwise]one arm over your shoulder as the other strokes your hardening [sexual-player-penis]. [end if] You appreciate [his of M] enthusiasm, fondling [his of M] big ass as you guide your [SexShaft] into [his of M] tight [HoleDesc of M]. [big his of M] nipples prod your chest as [he of M] slips [his of M] legs around your waist, and [his of M] nails tickle your back as [his of M] lips claim your mouth. You try to start slow, but [he of M] has other plans, moans shrieking out of [his of M] throat as [he of M] throws [his of M] weight into your strokes. You fuck [him of M] harder and harder just to keep up, your breath only beginning to quicken as [his of M] moans are growing more and more urgent. [big he of M] peaks before your finish line is even in sight, shudering as [his of M] [HoleDesc of M] clamps down and [his of M] nails dig into your back. You'd think you'd have plenty of time to catch up, but [his of M] nails-! [big his of M] nails are about to [if V is clothing]tear your [ShortDesc of V]! [otherwise]break the skin! [end if][line break]Do you stop? [if V is clothing]It might be the only way to protect your [ShortDesc of V].[otherwise]Its going to hurt a lot if you try to finish.[end if]";
+			if the player is reverse bimbo consenting:
+				say "You untangle yourself from [NameDesc of M], your unspent [sexual-player-penis] hard and [if lady fetish < 2]dripping with [his of M] juices[otherwise]still tingling from [his of M] orgasm[end if] as you get to your feet.";
+				orgasm M;
+				passively stimulate penis from M;
+				moderateDignify;
+				now player-fucking is DOMINANT-NEUTRAL;
+				say AfterDominationComment 1 of M;
+			otherwise:
+				say "You keep going without missing a beat, forcing yourself to ignore the pain as [his of M] nails shred [if V is clothing]your [ShortDesc of V]. [otherwise]your poor back. [end if] [big he of M] doesn't stop either, and [his of M] voice is wet with need as your hips *CLAP* *CLAP* *CLAP* together. Together, your efforts finally bring you to the edge, and you moan at each other as your [SexDesc of penis] shoots its load into [his of M] clenching [HoleDesc of M]";
+				FavourUp M by 2;
+				orgasm;
+				orgasm M;
+				moderateDignify;
+				now player-fucking is DOMINANT-NEUTRAL;
+				say AfterDominationComment 0 of M;
+		otherwise:
+			say "You grab the front of [NameDesc of M]'s dress and pull, [if lady fetish < 2]causing [his of M] huge tits to flop free. [otherwise]exposing [his of M] bare chest. [end if][big he of M] blushes as you pull it the rest of the way off, tentatively throwing an arm over your shoulder as [he of M] [if C is not strapon-panties and C is clothing]frees your [SexDesc of penis] from your [ShortDesc of C]. [otherwise if the player is a bit horny][he of M] strokes your [SexDesc of penis]. [otherwise]strokes your [sexual-player-penis] to hardness. [end if]You [if G is clothing]give [him of M] what passes for a smirk[otherwise]smirk at [him of M][end if], fondling [his of M] big ass as you guide your [SexShaft] into [his of M] tight [HoleDesc of M]. [big he of M] leans against your body, moans escaping from [his of M] throat and [his of M] nails digging into your back as [if lady fetish is 2][he of M] begins to throw [his of M] weight into[otherwise][his of M] tits jiggle from[end if] your strokes. [big his of M] moans lengthen, your breath quickens, your [SexShaft] throbs, and [his of M] nipples harden against your chest as you bring each other closer and closer to climax. Your breath hitches as you nearly cross the edge, but [his of M] nails-! [big his of M] nails are about to [if V is clothing]tear your [ShortDesc of V]! [otherwise]break the skin! [end if][line break]Do you stop? [if V is clothing]It might be the only way to protect your [ShortDesc of V].[otherwise]Its going to hurt a lot if you try to finish.[end if]";
+			if the player is reverse bimbo consenting:
+				say "You untangle yourself from [NameDesc of M], your unspent [sexual-player-penis] throbbing dejectedly as you get to your feet.";
+				orgasm M;
+				passively stimulate penis from M;
+				FavourDown M by 2;
+				moderateDignify;
+				now player-fucking is DOMINANT-DOMINANT;
+				say AfterDominationComment 1 of M;
+			otherwise:
+				say "You keep going without missing a beat, forcing yourself to ignore the pain as [his of M] nails shred [if V is clothing]your [ShortDesc of V]. [otherwise]your poor back. [end if] [big he of M] doesn't stop either, and [his of M] voice is wet with need as your hips *CLAP* *CLAP* *CLAP* together. Together, your efforts finally bring you to the edge, and you moan at each other as your [SexDesc of penis] shoots its load into [his of M] clenching [HoleDesc of M]";
+				FavourUp M by 2;
+				orgasm;
+				orgasm M;
+				moderateDignify;
+				now player-fucking is DOMINANT-DOMINANT;
+				say AfterDominationComment 0 of M;
+		if lady fetish < 2, FuckGet;
+		otherwise AnalGet;
+	otherwise:
+		say "You reach for [NameDesc of M]'s dress, but [he of M] grabs you by the wrists before you manage to touch it.[line break][speech style of M]'[if T is 0]What the fuck gives YOU the right to see ME naked?[otherwise if T is 1]I love getting naked, but are you sure that won't be too much for you?[otherwise]'Sorry, do I look like the proud, beautiful princess of [men of M] who can't stop getting naked?'[end if][roman type][if G is clothing]Your [ShortDesc of G] prevents you from offering much of a response, so[otherwise]You try to squeak out a response, but[end if] [he of M] continues.[line break][speech style of M]'[if T is 0]If you want to see my tits, you're gonna watch ME satisfy myself first.[otherwise if T is 1]Why don't you let me [']take care of myself['], and then I'll take off my dress for you.[otherwise]Well, I guess I don't mind if it's you, but I-I need to get in the mood first.[end if]'[roman type][line break]Will you wait for [him of M] to masturbate?";
+		if the player is bimbo consenting:
+			if T is 0:
+				say "You wait patiently as [NameDesc of M] reaches under [his of M] dress, smirking as [he of M] begins to masturbate. Your cock twitches as [he of M] makes a show of fondling [his of M] chest, and it throbs as exaggerated moans erupt from [his of M] throat. Frustrated, you find yourself reaching for your [SexDesc of penis], but [he of M] wards your hands away with a fireball before you can get close. [big he of M] forces you to watch [him of M] dramatically pleasure [him of M]self from start to finish, until finally, [he of M] reaches a slick hand up to the hem of [his of M] dress and—[line break]";
+			otherwise if T is 1:
+				say "You wait patiently as [NameDesc of M] reaches under [his of M] dress, staring right at you as [he of M] begins to masturbate. Your cock twitches as [he of M] makes a show of fondling [his of M] chest, and it throbs as [italic type]wet[roman type] moans erupt from [his of M] throat. Despite yourself, you find yourself reaching for your [SexDesc of penis], but the thought of cumming before [he of M] just barely convinces you to stay your hand. Somehow, you manage to watch [him of M] loudly pleasure [himself of M] from start to finish, until finally, [he of M] reaches a slick hand up to the hem of [his of M] dress and—[line break]";
+			otherwise:
+				say "You wait patiently as [NameDesc of M] reaches under [his of M] dress, averting [his of M] as [he of M] begins to masturbate. Your cock twitches as [he of M] fondles [his of M] chest, and it throbs as moans force themselves from [his of M] throat. [big his of M] cheeks burn as [he of M] allows you to watch [him of M] pleasure [himself of M] from start to finish, briefly making eye contact as [he of M] reaches a slick hand up to the hem of [his of M] dress and—[line break]";
+			say "Your [SexShaft] spasms the very instant [he of M] reveals [his of M] [if lady fetish < 2]tits[otherwise]nipples[end if], coating them with your [load].";
+			orgasm;
+			orgasm M;
+			say AfterDominationComment 2 of M;
+		otherwise:
+			say "You decide a little nudity isn't worth passing up a chance for sex, [if T is 0]and [NameDesc of M] decides to make sure it really is a 'chance'. [Big he of M] maintains a painful grip on your wrists, not allowing you to lift [his of M] dress even just to see what you're doing. You are left with no choice but to[otherwise if T is 1]though [NameDesc of M] seems determined to make you regret that choice as much as possible. [big his of M] fingers dance along the upper edge of [his of M] dress, teasing you with the possibility of her tits popping out. You are left with no choice but to close your eyes and[otherwise]though [NameDesc of M] doesn't seem to agree. [big he of M] fixes you with a look somewhere between disbelief and relief, forgetting to let go of your wrists. You are left with no choice but to[end if] blindly press your hips against [his of M] body, your [SexDesc of penis] chafes as it as it rubs against fabric. The sensation definitely isn't pleasant, but the more your [SexShaft] drags and catches and grinds against it, the faster and more laboured your breathing becomes. The moment your tip actually touches something warm, you lose control, [if G is clothing]emitting a muffled moan[otherwise]moaning[end if] as you shoot your [load] all over what you hope is [his of M] [HoleDesc of M].";
+			now player-fucking is DOMINANT-NEUTRAL;
+			orgasm;
+			slightDignify;
+			if lady fetish < 2, FuckGet;
+			otherwise AnalGet;
+			say AfterDominationComment 3 of M.
+
+To ride dominate (M - bowsette):
+	let F be player-fucker;
+	say "You grab [NameDesc of M] by the front of [his of M] dress, spinning [him of M] around once... twice... three times before letting go. [Big he of M] slams into a [if playerRegion is Woods]tree[otherwise]wall[end if], [his of M] head bobbing dizzily as you straddle [him of M] and wrap your hand around [his of M] [DickDesc of M].[line break][speech style of M]'UH-!'[roman type][line break]It THROBS in your hand, instantly [if M is wrapped]filling the condom with[otherwise]coating your hand in[end if] [semen]. It occurs to you that what you're planning is way more intense than that ...Are you sure you want to go through with this?";
+	let T be the temperament of M;
+	if the player is bimbo consenting:
+		say "You don't let go, using [his of M] load to lubricate [cockshaft of M] as you bring the still sticky tip to your [if F is vagina]entrance[otherwise]sphincter[end if]. [big he of M] [if T is 2]tries to glare at you, but can't help rolling[otherwise if T is 1]moans and rolls[otherwise]rolls[end if] [his of M] eyes back as [his of M] [LongDickDesc of M] spasms again, [if M is wrapped]trapping a new[otherwise]sending a[end if] squadron of creamy turtle soldiers [if M is wrapped]inside the condom[otherwise if F is vagina and the player is able to get pregnant]straight for your womb[otherwise]into your [variable F][end if]. Bouncing your hips knowing [if M is wrapped]how close you are to getting creampied[otherwise if F is vagina and the player is able to get pregnant]how much you're risking getting pregnant[otherwise]you're just accepting the creampie[end if] makes it way more intense, and before long it overwhelms you, and you throw your head back as you climax as [he of M] blows [his of M] load one last time.";
+		moderateDignify;
+		orgasm;
+		compute M finishing in F;
+		orgasm M;
+		say AfterDominationComment 0 of M;
+	otherwise:
+		say "You abruptly let go of [his of M] shaft, [if M is wrapped]trying to purge the sensation of the bulging condom from your mind.[otherwise if bukkake fetish is 1]flinging [his of M] [semen] in [his of M] face.[otherwise]flinging [his of M] [semen] to the ground.[end if]";
+		slightDignify;
+		orgasm M;
+		say AfterDominationComment 1 of M.
+
+To say AfterDominationComment (N - a number) of (M - bowsette):
+	let T be the temperament of M;
+	if T is 2:
+		if N is 0:
+			say "[speech style of M]'[one of]Nice job. I'll remember that later when I'm kicking your ass.'[or]Yeah I came, so what. This doesn't change ANYTHING.'[in random order][roman type][line break]";
+		otherwise if N is 1:
+			say "[speech style of M]'[one of]HEY! I was close you fucking- RRGH!'[or]OH. I'm sorry. Was I cumming too hard for you? Bitch.'[in random order][roman type][line break]";
+		otherwise if N is 2:
+			say "[speech style of M]'[one of]You're welcome. Enjoy that memory while I'm burning you to a crisp.'[or]Good job waiting til the end, I guess. Hold onto that accomplishment, it'll get you through the hell I'm putting you through later.'[in random order][roman type][line break]";
+		otherwise if N is 3:
+			say "[speech style of M]'[one of]You're an idiot.'[or]You're a moron.'[in random order][roman type][line break]";
+	if T is 1:
+		if N is 0:
+			say "[speech style of M]'[one of]Mmm, I should do that to you next time!'[or]Getting fucked is so much fine! I bet you can't wait for your turn!'[in random order][roman type][line break]";
+		otherwise if N is 1:
+			say "[speech style of M]'Oh, sorry about that. I guess I'll have to make it up to you later~!'[roman type][line break]";
+		otherwise if N is 2:
+			say "[speech style of M]'[one of]Ooh, I guess I really was too much for you. We'll fix that.'[or]Heehee, I'm happy you like me! Give me awhile, and I'll show you how much I LIKE you too.'[in random order][roman type][line break]";
+		otherwise if N is 3:
+			say "[speech style of M]'[one of]It's alright. I'm a better top anyway.'[or]Its ok. We can have some REAL sex later.'[in random order][roman type][line break]";
+	if T is 0:
+		if N is 0:
+			say "[speech style of M]'Phew. That was kind of... nice.'[roman type][line break]";
+		otherwise if N is 1:
+			say "[speech style of M]'[one of]I was so close...'[or]Did you really have to stop?'[in random order][roman type][line break]";
+		otherwise if N is 2:
+			say "[speech style of M]'[one of]My body really is sexy, huh?'[or]I guess I did like that.'[in random order][roman type][line break]";
+		otherwise if N is 3:
+			say "[speech style of M]'[one of]You passed up my naked body for THAT?!'[or]Did you think I was lying or something? Idiot.'[in random order][roman type][line break]".
+
+To say DominanceFailure of (M - bowsette):
+	say "You try to grab [NameDesc of M] by the horns, but [he of M] shakes you off, knocking you to the ground and pinning you under [his of M] foot.".
+To compute failed dominance punishment of (M - bowsette):
+	if the player is getting lucky:
+		say "[speech style of M]'Gwahahaha! You really tried to dominate me? ME?! The king of the- well, queen of- ah, well...whatever. You get it.'[roman type][line break] [NameDesc of M] smirks down at you.";
+		compute sissy punishment of M;
+	otherwise:
+		say "[speech style of M]'Gwahahaha! You really tried to dominate me? ME?! The king of the- well, queen of- ah, well...whatever. I'm going to destroy your ass now.'[roman type][line break] [NameDesc of M] takes advantage of your compromising position to stuff [his of M] [LongDickDesc of M] up your [variable asshole]!";
+		now M is penetrating asshole;
+		ruin asshole;
+		set up sex length of M in asshole;
+		now another-turn-flavour is the substituted form of "[BigFuckerDesc of M] starts thrusting!";
+		now another-turn is 1.
 
 Bowsette ends here.

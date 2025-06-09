@@ -13,6 +13,11 @@ Definition: orc is dark skinned: decide yes.
 Definition: orc is condom obsessed: decide yes. [Does he always want to use a condom?]
 Definition: orc is able to see stolen goods: decide no. [He doesn't attack, so he can't get back stolen items]
 
+Definition: orc is willing to do licking: decide yes.
+Definition: orc is certain to do anilingus:
+	if it is not a balls-haver, decide yes;
+	decide no.
+
 
 [Definition: orc is raunchy: decide yes.]
 
@@ -33,7 +38,7 @@ To decide which figure-name is the monster-image of (M - orc):
 	decide on figure of Orc.
 
 To say MonsterDesc of (M - orc):
-	say "This chubby, hairy [man of M] is visibly half-pig, and half human. Presumably in pig-man-culture, it's normal to be completely stark naked, and expose your massive [manly-penis] to the world.".
+	say "This chubby, hairy [man of M] is visibly half-pig, and half human. Presumably in pig-man-culture, it's normal to be completely stark naked, exposing your massive [if lady fetish is 1]breasts and[end if][DickDesc of M] to the world.".
 
 [To say MonsterComment of (M - a orc):
 	if lady fetish is 0, say "[if interracial fetish is 1 and the bimbo of the player < 4][line break][first custom style]Ugh, that [manly-penis] is so big, there's nowhere else I can look![otherwise if interracial fetish is 1 and the bimbo of the player < 7][first custom style]Why can't I look away from [his of M] massive black [manly-penis]?[otherwise if interracial fetish is 1 and the bimbo of the player < 11][line break][variable custom style]Wow, it's just so big, and... majestic...[otherwise if interracial fetish is 1 and the bimbo of the player < 14][variable custom style]I'm getting weak at the knees just looking at that majestic monster...[otherwise if interracial fetish is 1][line break][second custom style]I hope [he of M]'ll let me worship [his of M] godly [manly-penis].[otherwise if the player is gendered female and the bimbo of the player < 6][first custom style][one of]Ugh. Put your [manly-penis] away, sicko.[or]Oh I get it, [he of M] doesn't trust women so [he of M] has to watch me all the time. Misogynist.[or]This pig isn't even wearing clothes. Who does [he of M] think [he of M] is?[or][big he of M] looks so sure of [himself of M]. Typical. Men are so obsessed with their penises.[or]A [man of M] in charge of the shop. How original.[in random order][otherwise if the bimbo of the player < 6][first custom style][one of]I probably shouldn't steal anything. [big he of M]'d definitely notice.[or]That dude is cut! Maybe I should get [him of M] to give me some workout tips.[or]This guy looks like [he of M] knows [his of M] stuff. Wish [he of M]'d put some pants on, but still.[in random order][otherwise if the bimbo of the player < 10][variable custom style][one of]I can't stop staring at [his of M] penis.[or][big he of M] looks strong. I wonder what it would feel like if [he of M] let me touch [his of M] muscles.[or]I shouldn't steal anything. Who knows how [he of M] might punish me.[or]I don't think I could outrun [him of M] if I stole something. [big his of M] body is just, wow.[in random order][otherwise][second custom style][one of][big he of M]'s really sexy![or]What a yummy looking penis![or]I want to touch [his of M] muscles.[or]What a HUNK![or]I can't stop staring at [his of M] penis! It looks so yummy![or][big he of M]'s YUMMY[in random order][end if][roman type][line break]";
@@ -287,6 +292,20 @@ This is the orc trolls then leaves rule:
 	rule succeeds.
 The orc trolls then leaves rule is listed in the orc priority attack rules.
 
+To say LickResisting of (M - orc):
+	say BallResisting of M.
+
+To say LickResistingResponse of (M - orc):
+	say BallResistingresponse of M.
+
+To say LickSubmissionResponse of (M - orc):
+	say BallSubmissionResponse of M.
+
+To say LickInitiationFlav of (M - orc):
+	say BallInitiationFlav of M.
+
+To say LickEndFlav of (M - orc):
+	say BallEndFlav of M.
 
 Section 3 - Damage
 
@@ -382,7 +401,7 @@ To execute (T - talk-orc-poker) for (M - a monster):
 	otherwise if the poker-timer of M > 0:
 		say "[speech style of M]'Ah, we still need to wait until the magic of the table recharges. No point playing if there's nothing at stake!'[roman type][line break]";
 	otherwise:
-		say "[speech style of M]'Certainly! But first, Aika wants me to tell you that there's currently some rare but devastating bug with the poker minigame which infrequently causes the game to completely lock up after the poker game ends, and prevents you from continuing[if save game limit > 0]. Even worse, with roguelike saving enabled, the game manages to save itself in this state, completely ending your run[end if].'[roman type][line break]";
+		[say "[speech style of M]'Certainly! But first, Aika wants me to tell you that there's currently some rare but devastating bug with the poker minigame which infrequently causes the game to completely lock up after the poker game ends, and prevents you from continuing[if save game limit > 0]. Even worse, with roguelike saving enabled, the game manages to save itself in this state, completely ending your run[end if].'[roman type][line break]";
 		reset multiple choice questions;
 		set numerical response 1 to "[if save game limit > 0]I'm willing to[otherwise]I've saved the game and so am ready to[end if] risk that.";
 		set numerical response 2 to "Oh dear - let me cancel that and [if save game limit > 0]avoid the poker game until this bug is fixed[otherwise]save the game before playing poker with you[end if].";
@@ -393,7 +412,10 @@ To execute (T - talk-orc-poker) for (M - a monster):
 			compute poker minigame;
 		otherwise if player-numerical-response is 3:
 			now choice in row 36 of Table of Settings is 0;
-			say "Roguelike saving disabled for the rest of this run. Please note that this has not changed your saved preferences; when you start your next fresh game it will still be enabled by default.[line break][bold type]Please now save your game.[roman type][line break]".
+			say "Roguelike saving disabled for the rest of this run. Please note that this has not changed your saved preferences; when you start your next fresh game it will still be enabled by default.[line break][bold type]Please now save your game.[roman type][line break]".]
+		say "[speech style of M]'Certainly, let's play a hand! I shall deal.'[roman type][line break]";
+		compute poker minigame;
+
 
 talk-orc-easy is a talk-object.
 
@@ -447,6 +469,7 @@ To compute SeductionGrind of (M - orc):
 			let H be a random worn headgear;
 			unless H is stripper maid headdress:
 				transform H into stripper maid headdress;
+				set up stripper maid headdress;
 				compute class outfit of stripper maid headdress;
 				say "[variable custom style]The game is telling me I'm a professional stripper now?![roman type][line break]";
 		otherwise if cumdump-headband is worn and stripper-ears is off-stage:
@@ -685,10 +708,11 @@ To compute poker minigame:
 		if playerFlushSuit > orcFlushSuit, increase playerStrength by 1;
 	truncate cardsToBurn to 0 entries;
 	display poker interface;
+	zero the link-table;
 	if playerStrength > orcStrength:
 		say "You win! Woohoo![line break]Press any key to continue.";
-		let CNL be the chosen letter;
-		increase CNL by 1;
+		wait for a key before continuing;
+		temporaryYesNoBackgroundReset; [multiple choice questions won't work properly until we do this]
 		let C be a random off-stage mass collectible;
 		if playerStrength >= 30000000: [straight flush - happens in addition to normal reward]
 			repeat with N running from 1 to 2:
@@ -750,6 +774,7 @@ To compute poker minigame:
 	otherwise:
 		say "[BigNameDesc of orc] wins! Uh-oh...[line break]Press any key to continue.";
 		wait for a key before continuing;
+		temporaryYesNoBackgroundReset; [multiple choice questions won't work properly until we do this]
 		say "[line break][speech style of orc]'[one of]My condolences[or]Commiserations[in random order], [if the player is presenting as female]my lady[otherwise]young sir[end if]. [if orc is playing-poker-badly]I hope you understand, this was a complete accident. I discarded my entire hand, as you saw! [end if]Unfortunately, there is no stopping what happens next.'[roman type][paragraph break]";
 		truncate numbersExplained to 0 entries;
 		repeat with PC running through orcHand:
@@ -767,8 +792,7 @@ To compute poker minigame:
 			now the owner of queen-of-hearts is orc;
 			progress quest of stealing-quest;
 			compute poker theft of queen-of-hearts;
-	now orc is not playing-poker-badly;
-	temporaryYesNoBackgroundReset.
+	now orc is not playing-poker-badly.
 
 To compute poker punishment of (PC - a number):
 	say "[line break][one of][BigNameDesc of orc] points at [poker card of PC], which is softly glowing. Its punishment effect is about to happen. [BigNameDesc of orc] explains what this particular card will do.[or][stopping]";
@@ -1078,7 +1102,7 @@ To compute poker punishment of (PC - a number):
 				IntDown 3;
 		otherwise if diaper quest is 0 and (bondage protection is 1 or piercing-fetish is 1):
 			unless PV is listed in numbersExplained, say "[speech style of orc]'Kings give you new piercings.'[roman type][paragraph break]";
-			let P be a random eligible piercing;
+			let P be a random eligible actually summonable piercing;
 			if P is piercing:
 				now P is cursed; [some piercings (i.e. earrings) have different appearances depending on BUC status, so we do this to ensure that that the line below says the right thing]
 				say "A [P] appears on you!";

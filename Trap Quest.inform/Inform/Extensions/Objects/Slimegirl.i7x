@@ -323,7 +323,7 @@ To compute slimegirl engulfing in (WB - WoodsScenery01):
 	repeat with C running through worn clothing:
 		if the semen-soak of C > 0, increase S by the semen-soak of C;
 		clean C;
-		Drench C;
+		Drench C by 500;
 	say "[line break][second custom style]'[one of]Dinner time!'[or]Breakfast time!'[or]Lunch lunch luuuuunch~'[or]Dinner~'[or]Supper time!'[in random order][roman type][line break][BigNameDesc of M] pounces on you and quickly begins lapping up all the [semen] on your body[if S > 0] and clothes[end if]. ";
 	cutshow figure of slimegirl cutscene 1 for M;
 	if the total felchable volume of vagina > 0 and vagina is not actually occupied and the player is not pussy protected:

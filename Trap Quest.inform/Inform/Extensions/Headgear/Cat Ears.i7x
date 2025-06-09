@@ -149,7 +149,7 @@ To progress quest of (Q - dance-quest):
 				say "[BigNameDesc of C] wiggle happily! [one of]If you keep this up, surely you'll be rewarded eventually.[or]Keep it up![stopping]".
 
 To compute generic first time class reward of (Q - dance-quest) on (C - a clothing):
-	let D be a random off-stage ring;
+	let D be a random off-stage plentiful ring;
 	if D is ring:
 		now D is ruby;
 		set shortcut of D;

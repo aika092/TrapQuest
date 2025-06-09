@@ -121,7 +121,7 @@ Definition: yourself is able to use a toilet:
 Definition: yourself is potentially able to use a toilet:
 	if diaper quest is 1 and watersports fetish is 0 and the player is in Hotel38 and the human-toilet-scene of woman-player is 2, decide no; [can't use Berri without watersports enabled!]
 	if locked-toilets is true and the player is in School10 and academy-toilet-key is not held, decide no; [toilet is locked]
-	if diaper lover > 0 and the times-terrorized of toilet-monster > 1 and the number of intelligent friendly monsters in the location of the player is 0, decide no; [scared of toilets]
+	if diaper lover > 0 and the times-terrorised of toilet-monster > 1 and the number of intelligent friendly monsters in the location of the player is 0, decide no; [scared of toilets]
 	if the player is upright and the location of the player is toilets, decide yes;
 	decide no.
 
@@ -170,17 +170,17 @@ Check toileting:
 			otherwise if watersports mechanics is 1 and P is not a thing and AC is not a clothing:
 				say "If you sit on the toilet and push, you might accidentally wet your [ShortDesc of PC] at the same time. Do you want to risk it?";
 				if the player is not consenting, say "Action cancelled." instead;
-		if the player is toilet traumatized:
-			if the number of intelligent awake friendly monsters in the location of the player is 0, say "After your traumatizing experience with [NameDesc of toilet-monster], you're too scared to use the toilet all by yourself!" instead;
+		if the player is toilet traumatised:
+			if the number of intelligent awake friendly monsters in the location of the player is 0, say "After your traumatising experience with [NameDesc of toilet-monster], you're too scared to use the toilet all by yourself!" instead;
 		otherwise if the player is proud:
 			let M be a random reactive monster;
 			if M is monster, say "I can't [if PC is clothing]pull my [ShortDesc of PC] down and [end if]sit on the toilet and use it with [NameDesc of M] right there!!!" instead.
 
-Definition: yourself is toilet traumatized:
-	if diaper lover > 0 and the times-terrorized of toilet-monster > 1, decide yes;
+Definition: yourself is toilet traumatised:
+	if diaper lover > 0 and the times-terrorised of toilet-monster > 1, decide yes;
 	decide no.
-Definition: yourself is toilet traumatized bursting:
-	if (the player is bursting or the player is feeling full or the total squirtable fill of belly > 0) and the player is toilet traumatized, decide yes;
+Definition: yourself is toilet traumatised bursting:
+	if (the player is bursting or the player is feeling full or the total squirtable fill of belly > 0) and the player is toilet traumatised, decide yes;
 	decide no.
 
 Carry out toileting:

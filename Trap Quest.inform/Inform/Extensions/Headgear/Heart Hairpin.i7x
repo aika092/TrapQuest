@@ -39,9 +39,17 @@ To compute class outfit of (H - heart hairpin):
 Chapter - Quest
 
 tentacle-research-quest is a headgear-clothing-quest. tentacle-research-quest has a number called large-met. tentacle-research-quest has a number called massive-met.
+bbc-magic-quest is a headgear-clothing-quest.
 
 To uniquely set up (C - heart hairpin):
+	if there is a worn dark magician girl dress, now the quest of C is bbc-magic-quest;
 	now the quest of C is tentacle-research-quest.
+
+To say QuestFlav of (Q - bbc-magic-quest):
+	say "You sense that it wants you to improve your magic power by orgasming on black [manly-penis].".
+
+To say QuestTitle of (Q - bbc-magic-quest):
+	say " (black cock magic quest)".
 
 To say QuestFlav of (Q - tentacle-research-quest):
 	say "You sense that it wants you to clear a region of all tentacled enemies... OR you could discover all the different possible sizes of tentacle monsters.".
@@ -93,7 +101,7 @@ To check tentacle clear:
 
 
 To compute generic first time class reward of (Q - tentacle-research-quest) on (C - a clothing):
-	let D be a random off-stage ring;
+	let D be a random off-stage plentiful ring;
 	if D is ring:
 		if there is a regional tentacle-breeder, now D is sapphire;
 		otherwise now D is pure diamond;

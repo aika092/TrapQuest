@@ -80,7 +80,7 @@ To say SexSubmissionFlav of (Y - a baby bouncer):
 	check bounce release of Y.
 
 To say SexResistFlav of (Y - a baby bouncer):
-	say "You struggle to get out without bouncing! Almost as if sounding an alarm in response to your resistance, the seat of the bouncer [one of]begins vibrating[or]once again vibrates[stopping]  loudly and violently! It's like you're sitting on a Sybian - the extremely high-powered vibrations [one of]send surges of pleasurable stimulation through to[or]puts stimulating pressure against[or]powerfully buzz away against[cycling] your [genitals]!";
+	say "You struggle to get out without bouncing! Almost as if sounding an alarm in response to your resistance, the seat of the bouncer [one of]begins vibrating[or]once again vibrates[stopping] loudly and violently! It's like you're sitting on a Sybian - the extremely high-powered vibrations [one of]send surges of pleasurable stimulation through to[or]puts stimulating pressure against[or]powerfully buzz away against[cycling] your [genitals]!";
 	increase the bounces of Y by 1;
 	ruin vagina times 2;
 	now the willingbounce of Y is 0;

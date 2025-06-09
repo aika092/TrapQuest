@@ -27,6 +27,12 @@ Breasts has a number called previous largeness.
 
 Breasts has a number called previous weight.
 
+Breasts has a number called previous floatiness.
+
+To decide which number is the floatiness of (B - breasts):
+	if the silicone volume of breasts > 0 or the air volume of breasts > 0, decide on 1;
+	decide on 0.
+
 Breasts has a number called real largeness.
 
 Breasts has a number called lactation rate.
@@ -824,7 +830,7 @@ To Bustup (X - a number):
 			otherwise say "[one of][line break][second custom style][line break]My boobs keep growing...[roman type][line break][or][stopping]";
 		if the largeness of breasts is 10:
 			if the bimbo of the player < 12, say "[one of][line break][first custom style][line break]Surely my boobs can't get any bigger?![roman type][line break][or][stopping]";
-			otherwise say "[one of][line break][second custom style][line break]Teehee, my tits are MASSIVE...[roman type][line break][or][stopping]";
+			otherwise say "[one of][line break][second custom style][line break]Tee-hee, my tits are MASSIVE...[roman type][line break][or][stopping]";
 		if the largeness of breasts is 15:
 			if the bimbo of the player < 15:
 				say "[one of][line break][first custom style][line break]My back is going to break if these ridiculous boobs get any bigger![roman type][line break][or][stopping]";

@@ -57,6 +57,17 @@ This is the gape gloves present rule:
 		rule fails.
 The gape gloves present rule is listed in the global presentable rules.
 
+To decide whether (N - a monster) is a presenting-target for (B - a body part):
+	if B is face:
+		if N is willing to do oral, decide yes;
+		if diaper quest is 0 and N is willing to do licking, decide yes;
+		if diaper quest is 1 and N is willing to urinate, decide yes;
+	if B is breasts and N is willing to do titfucks, decide yes;
+	if B is vagina and N is willing to do vaginal, decide yes;
+	if B is asshole and N is willing to do anal, decide yes;
+	if B is penis and N is willing to charm snakes, decide yes;
+	decide no.
+
 Check presenting:
 	if diaper quest is 1 and (watersports fetish is 0 or the noun is not face or the second noun is not friendly monster), say "I think you're playing the wrong game." instead;
 	if the noun is hips, try presenting asshole instead;
@@ -72,45 +83,30 @@ Check presenting:
 	if the noun is not body part, say "You can only present an orifice on your body that can be fucked[if the largeness of breasts >= 5 and the player is not possessing a penis] or your breasts[otherwise if the largeness of breasts >= 5 and the player is possessing a penis], your breasts, or your penis[otherwise if the player is possessing a penis] or your penis[end if]." instead;
 	unless the noun is actually presentable, do nothing instead;
 	let M be nothing;
-	[Highest priority is anything unfriendly that will use that body part]
-	if the noun is face:
-		now M is a random threatening interested unfriendly willing to do oral monster in the location of the player;
-		if M is nothing or diaper quest is 1, now M is a random threatening interested unfriendly willing to urinate monster in the location of the player;
-	if the noun is breasts, now M is a random threatening interested unfriendly willing to do titfucks monster in the location of the player;
-	if the noun is vagina, now M is a random threatening interested unfriendly willing to do vaginal monster in the location of the player;
-	if the noun is asshole, now M is a random threatening interested unfriendly willing to do anal monster in the location of the player;
-	if the noun is penis, now M is a random threatening interested unfriendly willing to charm snakes monster in the location of the player;
-	[High priority is anything unfriendly, especially if intelligent]
+	[First Highest priority is anything unfriendly that will use that body part]
+	repeat with N running through threatening interested unfriendly monsters in the location of the player:
+		if M is nothing and N is a presenting-target for the noun, now M is N;
+	[Second Highest priority is anything unfriendly, especially if intelligent]
 	if M is nothing, now M is a random threatening interested intelligent unfriendly monster in the location of the player;
 	if M is nothing, now M is a random threatening interested unfriendly monster in the location of the player;
-	[Medium priority is anything that will use that body part]
+	[Third Highest priority is anything that will use that body part]
 	if M is nothing:
-		if the noun is face:
-			now M is a random threatening interested willing to do oral monster in the location of the player;
-			if M is nothing, now M is a random threatening interested willing to urinate monster in the location of the player;
-		if the noun is breasts, now M is a random threatening interested willing to do titfucks monster in the location of the player;
-		if the noun is vagina, now M is a random threatening interested willing to do vaginal monster in the location of the player;
-		if the noun is asshole, now M is a random threatening interested willing to do anal monster in the location of the player;
-		if the noun is penis, now M is a random threatening interested willing to charm snakes monster in the location of the player;
-	[Low priority is anything intelligent or raunchy (will bang)]
+		repeat with N running through threatening interested monsters in the location of the player:
+			if M is nothing and N is a presenting-target for the noun, now M is N;
+	[Fourth Highest priority is anything intelligent or raunchy (will bang)]
 	if M is nothing, now M is a random threatening interested intelligent monster in the location of the player;
 	if M is nothing, now M is a random threatening interested raunchy monster in the location of the player;
-	[Lower priority is anything interested at all]
+	[Fifth Highest priority is anything interested at all]
 	if M is nothing, now M is a random threatening interested monster in the location of the player;
 	[###Now we do that all the friendly ones again but without the interested clause###]
-	[Medium priority is anything that will use that body part]
+	[Sixth highest priority is anything friendly that will use that body part]
 	if M is nothing:
-		if the noun is face:
-			now M is a random threatening willing to do oral monster in the location of the player;
-			if M is nothing, now M is a random threatening willing to urinate monster in the location of the player;
-		if the noun is breasts, now M is a random threatening willing to do titfucks monster in the location of the player;
-		if the noun is vagina, now M is a random threatening willing to do vaginal monster in the location of the player;
-		if the noun is asshole, now M is a random threatening willing to do anal monster in the location of the player;
-		if the noun is penis, now M is a random threatening willing to charm snakes monster in the location of the player;
-	[Low priority is anything intelligent or raunchy (will bang)]
+		repeat with N running through threatening monsters in the location of the player:
+			if M is nothing and N is a presenting-target for the noun, now M is N;
+	[Seventh highest priority is anything intelligent or raunchy (will bang)]
 	if M is nothing, now M is a random threatening intelligent monster in the location of the player;
 	if M is nothing, now M is a random threatening raunchy monster in the location of the player;
-	[Lower priority is anything at all]
+	[Eigth (and lowest) priority is anything at all]
 	if M is nothing, now M is a random monster in the location of the player;
 	if M is monster:
 		if M is caged, say "[BigNameDesc of M] wouldn't be able to do that from inside the cage!" instead;
@@ -124,6 +120,7 @@ Check direct-presenting something to:
 	if diaper quest is 1 and (watersports fetish is 0 or the noun is not face or the second noun is not friendly monster), say "I think you're playing the wrong game." instead;
 	if there is a fuckhole-mode glue penetrating face, say "You can't move a muscle or speak right now, so there's no way you can do that." instead;
 	if the noun is hips, try direct-presenting asshole to the second noun instead;
+	if the noun is thighs, try direct-presenting face to the second noun instead;
 	if the second noun is summoning portal:
 		try appeasing the noun with the second noun instead;
 	if the noun is not body part:
@@ -140,7 +137,7 @@ Check direct-presenting something to:
 	if the second noun is not monster, say "You're going to present your [noun] to that how exactly?" instead;
 	if the second noun is uninterested and (the boredom of the second noun is 0 or the second noun is unfriendly), say "You should probably get [his of the second noun] attention first. Maybe try [bold type]greet[roman type]ing [him of the second noun]." instead; [We are happy for the player to present to uninterested NPCs only if the NPC is friendly and not just about to notice the player]
 	now presenting-receiver is the second noun;
-	if royal scepter is worn and royal scepter is blacked and the second noun is a friendly royal guard, compute princess guard tease of the second noun instead;
+	if royal sceptre is worn and royal sceptre is blacked and the second noun is a friendly royal guard, compute princess guard tease of the second noun instead;
 	unless the noun is actually presentable, do nothing instead;
 	if the player is upright and the second noun is unfriendly, say "You should kneel first." instead.
 
@@ -185,6 +182,7 @@ Carry out direct-presenting something to:
 				say LickRequestFlav of the second noun;
 				if the humiliation of the player < HUMILIATION-MODEST - 3500, say "[one of][first custom style]I can hardly believe what I'm doing! How degrading...[roman type][line break][or][stopping]";
 				now presented-orifice is thighs;
+				now the second noun is getting-licked;
 			otherwise if chosen numerical response matches the text "asshole":
 				if the player is able to speak and auto is not 1 and (the player is not broken or the second noun is friendly):
 					if the second noun is a dangerous intelligent monster:
@@ -406,12 +404,12 @@ To say UnfriendlyOralRequest of (M - a monster):
 		if the player is a nympho:
 			say "[if the vaginalvirgin of the player is 1 and the player is possessing a vagina][line break][variable custom style]'Please use my face-hole as your own personal fucksleeve for as long as you want. Just leave my pussy alone so I can keep my purity!'[otherwise if the analvirgin of the player is 1 and the player is not possessing a vagina][variable custom style]'So I know you're tempted to be the one to take my anal cherry, but can you really say no to these lips? Come here big [boy of M], let [NameBimbo] show you a good time with [his of the player] tongue...'[otherwise if the player is feeling dominant and M is unintimidating][first custom style]'Come on then, why don't you [one of]fuck my face until I gag on your [manly-penis][or]force your [manly-penis] down my throat[in random order]? Surely you can make me your submissive bitch? Because if you don't, you can bet that I'll pay you back twice as bad later...'[otherwise if the anal sex addiction of the player < 4 and the vaginal sex addiction of the player < 4 and the oral sex addiction of the player < 4][variable custom style]'Please Sir, my whole body still needs to be trained, but I'd prefer if you start with my mouth.'[otherwise if semen is craved][line break][second custom style]'Mm, please let me drink your delicious cum, big [boy of M]! I'm totally addicted to [semen]~'[otherwise if the semen addiction of the player > 14 and the semen coating of face + the semen coating of breasts is 0][line break][second custom style]'Mm, please Sir, can you decorate my face and body with some fresh [semen]?'[otherwise if the oral sex addiction of the player < 6][line break][variable custom style]'If you want a suggestion, I think you should punish my slutty mouth with your enormous [manly-penis] until I'm addicted to it...'[otherwise][second custom style]'[one of]Looking for a throat to fuck[or]How would you like a blowjob[or]Care for me to swallow your load[or]Are you going to let me taste your [manly-penis][in random order], [stud of M]?'[end if][roman type][line break]";
 		otherwise:
-			say "[if the vaginalvirgin of the player is 1 and the player is possessing a vagina][variable custom style]'Please don't take my virginity... I can give you a blowjob if you want...'[otherwise if the analvirgin of the player is 1 and the player is not possessing a vagina][variable custom style]'Please don't take my anal virginity... I can give you a blowjob if you want...'[otherwise if the player is feeling dominant and M is unintimidating][first custom style]'I've decided your reward is going to be a blowjob. You don't want to make me even more mad by not allowing me this choice.'[otherwise if the anal sex addiction of the player < 4 and the vaginal sex addiction of the player < 4 and the oral sex addiction of the player < 4][first custom style]'Please don't do me down there... I'll pleasure you with my mouth if I must...'[otherwise if semen is craved][variable custom style]'Okay come on then, fuck my face already! Don't look at me like that, it's not like I'm addicted to cum or anything...'[otherwise if the semen addiction of the player > 14 and the semen coating of face is 0][variable custom style]'If you're looking for suggestions, maybe we should do oral? That way you can cum all over my face afterwards. Not that I'd enjoy that, or anything...'[otherwise if the oral sex addiction of the player < 6][variable custom style]'No, not down there, [one of]let me suck you off[or]use me up here[in random order] instead!'[otherwise][variable custom style]'Please, let me use my mouth. I've had lots of practise! N-not that I enjoy it, or anything...'[end if][roman type][line break]";
+			say "[if the vaginalvirgin of the player is 1 and the player is possessing a vagina][variable custom style]'Please don't take my virginity... I can give you a blowjob if you want...'[otherwise if the analvirgin of the player is 1 and the player is not possessing a vagina][variable custom style]'Please don't take my anal virginity... I can give you a blowjob if you want...'[otherwise if the player is feeling dominant and M is unintimidating][first custom style]'I've decided your reward is going to be a blowjob. You don't want to make me even more mad by not allowing me this choice.'[otherwise if the anal sex addiction of the player < 4 and the vaginal sex addiction of the player < 4 and the oral sex addiction of the player < 4][first custom style]'Please don't do me down there... I'll pleasure you with my mouth if I must...'[otherwise if semen is craved][variable custom style]'Okay come on then, fuck my face already! Don't look at me like that, it's not like I'm addicted to cum or anything...'[otherwise if the semen addiction of the player > 14 and the semen coating of face is 0][variable custom style]'If you're looking for suggestions, maybe we should do oral? That way you can cum all over my face afterwards. Not that I'd enjoy that, or anything...'[otherwise if the oral sex addiction of the player < 6][variable custom style]'No, not down there, [one of]let me suck you off[or]use me up here[in random order] instead!'[otherwise][variable custom style]'Please, let me use my mouth. I've had lots of practice! N-not that I enjoy it, or anything...'[end if][roman type][line break]";
 	otherwise if M is raunchy:
 		if the player is a nympho:
 			say "[if the player is feeling dominant and M is unintimidating][first custom style]'Come on then, why don't you try and dominate my face? And then next time when I'm on top, I'll show you how it's done properly...'[otherwise if the oral sex addiction of the player < 4][variable custom style]'My face needs way more abuse so it can grow to love being used. Maybe you could help train me?'[otherwise if the oral sex addiction of the player < 6][line break][variable custom style]'Okay, you win. Will you let me practise my oral skills on you?'[otherwise][second custom style]'[one of]Hey sugar, I've got a great idea of how to pass the time!'[or]Hey, I know what we should do, it'll be fun!'[or]Want to find out how skilled I am with my tongue?'[in random order][end if][roman type][line break]";
 		otherwise:
-			say "[if the player is feeling dominant and M is unintimidating][first custom style]'I'll allow you to experience my tongue, then, just this once. And then next time when I'm on top, I'll show you how it's done properly...'[otherwise if the oral sex addiction of the player < 4][first custom style]'I'm not going to enjoy it either way, but I'd rather pleasure you with my mouth, if I have to.'[otherwise if the oral sex addiction of the player < 6][variable custom style]'[one of]Okay, you win. How about I reward you with my mouth?'[or]I think it would be a good idea if I make you happy with my tongue, if you'd like that?'[stopping][otherwise][variable custom style]'[one of]I'm quite good with my mouth, if that's what you'd like.'[or]Please, let me use my mouth. I've had lots of practise! N-not that I enjoy it, or anything...'[in random order][end if][roman type][line break]";
+			say "[if the player is feeling dominant and M is unintimidating][first custom style]'I'll allow you to experience my tongue, then, just this once. And then next time when I'm on top, I'll show you how it's done properly...'[otherwise if the oral sex addiction of the player < 4][first custom style]'I'm not going to enjoy it either way, but I'd rather pleasure you with my mouth, if I have to.'[otherwise if the oral sex addiction of the player < 6][variable custom style]'[one of]Okay, you win. How about I reward you with my mouth?'[or]I think it would be a good idea if I make you happy with my tongue, if you'd like that?'[stopping][otherwise][variable custom style]'[one of]I'm quite good with my mouth, if that's what you'd like.'[or]Please, let me use my mouth. I've had lots of practice! N-not that I enjoy it, or anything...'[in random order][end if][roman type][line break]";
 	otherwise:
 		say "[variable custom style]'[if the delicateness of the player < 10]If I had to choose, I guess I'd rather you do whatever you're going to do to my upper half.'[otherwise]Please punish my slutty face!'[end if][roman type][line break]".
 
@@ -432,7 +430,7 @@ To say FriendlyOralRequest of (M - a monster):
 					say "[variable custom style]'[one of]My innocent mouth is in need of training, Sir. Would you be willing to teach it a thing or two?'[or]I haven't had nearly enough experience giving blowjobs. I need to learn to love it. Think your [manly-penis] is up to the job?'[or]Listen, just because I hate sucking [manly-penis]s doesn't mean I should get a free pass. I need someone to fuck my face and MAKE me like it...'[in random order]";
 			otherwise if the oral sex addiction of the player < 7:
 				if the player is feeling dominant:
-					say "[variable custom style]'[one of]You look like a good choice for my regularly scheduled blowjob practise.'[or]I'm going to suck that juicy [manly-penis] of yours, because I want to. And you'd better be very grateful afterwards.'[in random order]";
+					say "[variable custom style]'[one of]You look like a good choice for my regularly scheduled blowjob practice.'[or]I'm going to suck that juicy [manly-penis] of yours, because I want to. And you'd better be very grateful afterwards.'[in random order]";
 				otherwise:
 					say "[variable custom style]'[one of]I... I don't usually ask people this, but please can I give you a blowjob? If you don't mind...'[or]Hey, can I give you a blowjob? Normally wouldn't ask this, but hey, you don't have to say yes.'[or]I think it would be a good idea if I sucked your [manly-penis], if that's okay with you?'[or]Do you want me to suck you off? Totally shooting in the dark here, please say no if you're not interested.'[or]Hey, are you interested in a blowjob? I mean, I'm offering, but I'm fine if you're not on board.'[in random order]";
 			otherwise:
@@ -892,7 +890,7 @@ To say FriendlyAnalRequest of (M - a monster):
 				if the player is feeling dominant:
 					say "[first custom style]'[one of]I've been rather unimpressed with my anal experiences so far. I reckon if I'll enjoy it more if I'm on top, and I've decided to use your [manly-penis][or]Get down here, I'm going to sample what it's like to have your [manly-penis] in my [asshole]. It's important for a good dom to know what it feels like when they dish out their punishments, so I'm making no exception for myself[in random order][if the player is afraid of a creampie]. And don't you dare cum while you're there, because if I'm forced to squirt cum from my butt you can bet I'm going to make sure it's on your face[otherwise if the player is eager for a creampie]. And for some reason my belly is craving the feeling of fresh warm [semen] inside it, so make sure you're nice and deep when you cum[end if].'";
 				otherwise:
-					say "[variable custom style]'[one of]I'd like you to fuck me in the ass. Please don't make me repeat it, you heard me[or]Would you like to try anal? I-I'm getting used to it but could still use much more practise[or]How about this - I let you do me in the butt, and then you owe me one? I just think I could use all the allies I can get around here[in random order][if preg-nope is 1]. And of course if we do it up the butt then I won't get pregnant or anything serious like that[otherwise if the player is afraid of a creampie]. B-but please make sure to pull out before you, you know... I don't want to feel all gross and sticky on the inside[otherwise if the player is eager for a creampie], and if you want to, you can even, you know... let it out up there. I've grown to really like that[end if].'";
+					say "[variable custom style]'[one of]I'd like you to fuck me in the ass. Please don't make me repeat it, you heard me[or]Would you like to try anal? I-I'm getting used to it but could still use much more practice[or]How about this - I let you do me in the butt, and then you owe me one? I just think I could use all the allies I can get around here[in random order][if preg-nope is 1]. And of course if we do it up the butt then I won't get pregnant or anything serious like that[otherwise if the player is afraid of a creampie]. B-but please make sure to pull out before you, you know... I don't want to feel all gross and sticky on the inside[otherwise if the player is eager for a creampie], and if you want to, you can even, you know... let it out up there. I've grown to really like that[end if].'";
 			otherwise:
 				if the player is feeling dominant:
 					say "[variable custom style]'[one of]Okay let's bang. But I'm in charge, and we're doing it Greek style, because I say so[or]Ugh, I wish I had better self control, but the truth is my [asshole] is aching to be filled. So I'm going to use you[in random order][if the player is afraid of a creampie]. But you are NOT allowed to cum inside, got it?'[otherwise if the player is eager for a creampie]. I just feel desperate for a nice hot load shooting up my backdoor, and so you're going to give it to me.'[end if]";
@@ -968,7 +966,7 @@ To say UnfriendlyPenetrationRequest of (M - a monster):
 		say TakeMyPenisVirginity of M;
 	otherwise:
 		if the player is a nympho:
-			say "[if the player is feeling dominant and M is unintimidating][first custom style]'I'll allow you to play around with my [player-penis] a little, but only as practise. You'll need it if you're going to be able to handle me when I finally get you on your knees...'[otherwise if the penis-obedience of penis < 4][first custom style]'My [player-penis] would be fun to mess around with, right?'[otherwise if the penis-obedience of penis < 6][line break][variable custom style]'[one of]I'm sure you can come up with lots of inventive ways to punish this nasty [player-penis]...'[or]Wanna let my [player-penis] take it from here? I'm sure you'll like it...'[in random order][otherwise][second custom style]'[one of]I bet you want me nice and hard, huh? What are you going to do to this nasty pervert's vulnerable and exposed [player-penis]?'[or]I bet it's my [player-penis] that you want, isn't it? Are we going to have some fun?'[in random order][end if]";
+			say "[if the player is feeling dominant and M is unintimidating][first custom style]'I'll allow you to play around with my [player-penis] a little, but only as practice. You'll need it if you're going to be able to handle me when I finally get you on your knees...'[otherwise if the penis-obedience of penis < 4][first custom style]'My [player-penis] would be fun to mess around with, right?'[otherwise if the penis-obedience of penis < 6][line break][variable custom style]'[one of]I'm sure you can come up with lots of inventive ways to punish this nasty [player-penis]...'[or]Wanna let my [player-penis] take it from here? I'm sure you'll like it...'[in random order][otherwise][second custom style]'[one of]I bet you want me nice and hard, huh? What are you going to do to this nasty pervert's vulnerable and exposed [player-penis]?'[or]I bet it's my [player-penis] that you want, isn't it? Are we going to have some fun?'[in random order][end if]";
 		otherwise:
 			say "[if the player is feeling dominant and M is unintimidating][first custom style]'Why don't you try using my [player-penis] to dominate me? Or are you scared of how much you'll be squealing when I use it to pay you back twice as cruelly later?'[otherwise if the penis-obedience of penis < 4][first custom style]'[one of]If you really have to do something to me, I guess I'd rather you chose my [player-penis] right now.'[or]Go on then, punish my [player-penis] if you must do something!'[in random order][otherwise if the penis-obedience of penis < 6][variable custom style]'[one of]Okay, I guess it's only fair that you get to do whatever you want with my [player-penis].'[or]Okay, I guess it's [player-penis] punishment time, right?'[in random order][otherwise][variable custom style]'[one of]What's your plan? Are you going to do something to my [player-penis][or]Maybe you should punish my poor exposed [player-penis][in random order]? It's n-not like that's the only thing that gets me hard anymore...'[end if]";
 	say "[roman type][line break]".

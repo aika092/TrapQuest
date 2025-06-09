@@ -14,9 +14,9 @@ To compute persistent reward of (Q - stealth-diaper-quest) on (C - a clothing):
 	otherwise:
 		compute generic class reward of Q on C;
 	if the class of the player is princess and the player is not in a predicament room:
-		class summon royal scepter.
+		class summon royal sceptre.
 
-To compute periodic effect of (C - royal scepter):
+To compute periodic effect of (C - royal sceptre):
 	if the charge of C > 0:
 		decrease the charge of C by 1;
 	if the charge of C is 0 and player-urinating is 0 and mess-phase is 0:
@@ -62,7 +62,8 @@ A game universe initialisation rule (this is the temporaryYesNoBackground initia
 
 Chapter - Unused but referenced Figures
 
-Figure of Minotaur Cutscene 2 is the file "Special/smallimage.jpg".
+Figure of Minotaur Cutscene 2a is the file "Special/smallimage.jpg".
+Figure of Minotaur Cutscene 2c is the file "Special/smallimage.jpg".
 
 To decide which figure-name is YesNoBackground:
 	if temporaryYesNoBackground is not figure of small image, decide on temporaryYesNoBackground;

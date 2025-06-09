@@ -1,8 +1,8 @@
 Golem by Monster begins here.
 
-golem is a monster. golem is neuter. golem is guarding. The poison-status of golem is -1. The  blind-status of golem is -1.
+golem is a monster. golem is neuter. golem is guarding. The poison-status of golem is -1. The blind-status of golem is -1.
 
-The text-shortcut of golem is "gol". Understand "silicone", "slime" as golem.
+The text-shortcut of golem is "gol". Understand "silicone", "silicon", "slime" as golem.
 
 Figure of Golem is the file "NPCs/MultiFloor/Golem/golem1.jpg".
 Figure of Interested Golem is the file "NPCs/MultiFloor/Golem/golem2.jpg".
@@ -55,7 +55,9 @@ To compute (M - a monster) stomping (N - golem):
 	SilentlyDifficultyUp M by 6;
 	destroy N.
 
-Definition: golem is objectifying the player: decide yes.
+Definition: golem (called M) is objectifying the player:
+	now the objectification of M is 1;
+	decide yes.
 Definition: golem is scarable: decide no.
 Definition: golem is a urinater: decide no.
 
@@ -200,16 +202,13 @@ To say MuteGreetResponse of (M - golem):
 To say MuteQuestion of (M - golem):
 	say SexDollQuestion of M.
 
-
-
-
-
-A slimeball is a kind of monster. slimeball is neuter. The text-shortcut of slimeball is "slmb". The poison-status of a slimeball is -1. The  blind-status of a slimeball is -1.
+A slimeball is a kind of monster. slimeball is neuter. The text-shortcut of slimeball is "slmb". The poison-status of a slimeball is -1. The blind-status of a slimeball is -1. Understand "slime", "ball", "silicone", "silicon" as slimeball.
 
 There are 10 slimeballs.
 
 Definition: a slimeball is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 Definition: a slimeball is a urinater: decide no.
+Definition: a slimeball is blocker: decide no.
 
 slimeballShortcutCount is initially 1.
 To slimeballShortcutAssign (C - a slimeball):
@@ -221,6 +220,7 @@ Figure of slimeball is the file "NPCs/MultiFloor/Slimeball/slimeball1.png".
 Figure of slimeball cutscene 1 is the file "NPCs/MultiFloor/Slimeball/cutscene-slimeball-attack1.png".
 Figure of slimeball cutscene 2 is the file "NPCs/MultiFloor/Slimeball/cutscene-slimeball-attack2.jpg".
 Figure of slimeball cutscene 3 is the file "NPCs/MultiFloor/Slimeball/cutscene-slimeball-leap1.jpg".
+Figure of slimeball cutscene 4 is the file "NPCs/MultiFloor/Slimeball/cutscene-slimeball-attack3.jpg".
 
 To decide which figure-name is the monster-image of (M - slimeball):
 	[if M is wrangling breasts, decide on figure of slimeball cutscene 2;]
@@ -278,7 +278,7 @@ To compute action (N - a number) of (M - a slimeball):
 			cutshow Figure of slimeball cutscene 3 for M;
 		otherwise if diaper quest is 1:
 			say "[if the player is not immobile]You don't move out of the way in time! [end if]";
-			compute slimeball forcefeed;
+			compute slimeball forcefeed of M;
 			destroy M;
 		otherwise:
 			say "[if the player is not immobile]You don't move out of the way in time! [end if]It splashes against you, coating you in its slime!";
@@ -294,24 +294,27 @@ To compute action (N - a number) of (M - a slimeball):
 			if player-numerical-response is 1:
 				if the player is getting unlucky:
 					say "Your hands slip as you struggle to grasp at the slime. You can't get a good enough grip! ";
-					let C be a random worn arm covering clothing;
-					if C is clothing and C is not glued:
-						say "You feel it getting under your [ShortDesc of C], where it begins to solidify, gluing it to you!";
-						gluify C;
-					otherwise if artificial enhancements fetish is 1 and fake-nails is off-stage and fake-nails is actually summonable:
-						say "You watch as a set of delicate fake nails are rapidly formed on top of your fingernails!";
-						summon fake-nails cursed with quest;
-					if the player is top heavy:
-						say "The slime expands and hardens, creating an impression of larger breasts over your existing [BreastDesc]. Your breasts can't actually grow any more, but you can feel them becoming more sensitive and... sexual.";
+					if weight gain fetish is 1 and the player is not overly full and a random number between 1 and 5 > 2:
+						compute slimeball weight forcefeed of M;
 					otherwise:
-						say "The slime expands and hardens, creating an impression of larger breasts over your existing [BreastDesc]. And then, it somehow shivers and merges with the body underneath, drastically enhancing your bust size[if artificial enhancements fetish is 1] with silicone implants[end if].";
-						mapcutshow figure of slimeball cutscene 2 for M;
-						say GotUnluckyFlav;
-						BustImplantsUp 4;
-						focus-consider breasts;
-						say "You can also feel them becoming more sensitive and... sexual.";
-					TitfuckAddictUp 1;
-					if the raw sensitivity of breasts < 30, increase the raw sensitivity of breasts by 2;
+						let C be a random worn arm covering clothing;
+						if C is clothing and C is not glued:
+							say "You feel it getting under your [ShortDesc of C], where it begins to solidify, gluing it to you!";
+							gluify C;
+						otherwise if artificial enhancements fetish is 1 and fake-nails is off-stage and fake-nails is actually summonable:
+							say "You watch as a set of delicate fake nails are rapidly formed on top of your fingernails!";
+							summon fake-nails cursed with quest;
+						if the player is top heavy:
+							say "The slime expands and hardens, creating an impression of larger breasts over your existing [BreastDesc]. Your breasts can't actually grow any more, but you can feel them becoming more sensitive and... sexual. [GotUnluckyFlav]";
+						otherwise:
+							say "The slime expands and hardens, creating an impression of larger breasts over your existing [BreastDesc]. And then, it somehow shivers and merges with the body underneath, drastically enhancing your bust size[if artificial enhancements fetish is 1] with silicone implants[end if].";
+							mapcutshow figure of slimeball cutscene 2 for M;
+							say GotUnluckyFlav;
+							BustImplantsUp 4;
+							focus-consider breasts;
+							say "You can also feel them becoming more sensitive and... sexual.";
+						TitfuckAddictUp 1;
+						if the raw sensitivity of breasts < 30, increase the raw sensitivity of breasts by 2;
 					destroy M;
 				otherwise:
 					say "You manage to grip enough of the slime that you can wrestle it away from your body, and it all seeps back together into one big blob, which you throw at the ground. ";
@@ -349,13 +352,20 @@ To compute slime expansion:
 	otherwise:
 		AnalSexAddictUp 1.
 
-To compute slimeball forcefeed:
+To compute slimeball forcefeed of (M - a slimeball):
 	say "It surges towards your mouth, forcing its way past your lips! ...And a moment later, it has forced you to swallow it! With an embarrassingly loud burp, you feel it sinking into your stomach, where it is happily(?!) being digested.[line break][variable custom style]Oh god, I feel so full[one of]. Why do I get the feeling that slimeballs are [if diaper messing >= 3]incredibly rich in fibre[otherwise]the perfect mix of dieuretics, electrolytes, and water[end if]...[or]. Why can't this world have more sensible ways of encouraging me to [if diaper messing >= 3]eat[otherwise]drink[end if]?![or] again...[stopping][roman type][line break]";
 	if diaper messing >= 3:
 		StomachFoodUp 3;
 		StomachUp 2;
 	otherwise:
-		StomachUp 4.
+		StomachUp 4;
+	mapcutshow figure of slimeball cutscene 4 for M.
+
+To compute slimeball weight forcefeed of (M - a slimeball):
+	say "It surges towards your mouth, forcing its way past your lips! ...And a moment later, it has forced you to swallow it! With an embarrassingly loud burp, you feel it sinking into your stomach, where it is happily(?!) being digested.[line break][variable custom style]Oh god, I feel so impossibly full[one of]. Why do I get the feeling that slimeballs are incredibly high in calories...[or]. Why can't this world have more sensible ways of encouraging me to eat again...[stopping][roman type][line break][GotUnluckyFlav]";
+	StomachFoodUp 13;
+	StomachUp 2;
+	mapcutshow figure of slimeball cutscene 4 for M.
 
 To deploy a slimeball:
 	let SB be a random off-stage slimeball;

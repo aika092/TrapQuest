@@ -184,12 +184,19 @@ To compute fatherhood to (M - a ghost):
 Part 1 - Perception
 
 Definition: a ghost (called M) is objectifying the player:
-	if M is not in the location of the player, decide no;
+	if M is not in the location of the player:
+		now the objectification of M is 0;
+		decide no;
 	[if the player is immobile, decide yes;]
-	if the player is prone and the number of monsters in the location of the player is the number of ghosts in the location of the player, decide yes;
-	if [playerRegion is Mansion and ]the slime-puddle of the location of the player > 0, decide yes;
+	if the player is prone and the number of monsters in the location of the player is the number of ghosts in the location of the player:
+		now the objectification of M is 1;
+		decide yes;
+	if [playerRegion is Mansion and ]the slime-puddle of the location of the player > 0:
+		now the objectification of M is 1;
+		decide yes;
 	[if the class of the player is faerie, decide no;]
 	[if the appearance of the player > the bimbo tolerance of M, decide yes;]
+	now the objectification of M is 0;
 	decide no. [The ghost won't go for you unless you're vulnerable]
 
 To decide which number is the bimbo tolerance of (M - a ghost):
@@ -735,7 +742,7 @@ To compute unique automatic banishment of (M - a ghost):
 		deploy a wisp;
 		say GotUnluckyFlav;
 	if M is ghostly tentacle, progress quest of exorcism-quest;
-	now creepiness is 0. [Having defeated a ghost shouldn't cause a new one to appear immediately]
+	now creepiness is 0.[Having defeated a ghost shouldn't cause a new one to appear immediately]
 
 Part 4 - Ghostly Tentacle
 

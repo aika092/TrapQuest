@@ -72,7 +72,7 @@ To compute default cursed drinking (X - a bottle):
 overfull-quotient is a number that varies. overfull-quotient is 8.
 
 To compute drinking (X - a bottle):
-	if the X is cursed or (the fill-type of X >= lowest-cursed and the fill-type of X <= highest-cursed):
+	if X is cursed or (the fill-type of X >= lowest-cursed and the fill-type of X <= highest-cursed):
 		if X is blessed:
 			say "This tastes a bit bitter, but could be worse. Somehow the blessing of your vessel is counteracting the curse of the liquid!";
 			now the Known corresponding to an Magic of the fill-type of X in the Table of Drinks is 1;

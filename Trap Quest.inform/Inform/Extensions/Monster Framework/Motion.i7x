@@ -179,6 +179,7 @@ To set up toilet preference of (M - a monster):
 	now the target-toilet of M is TR.
 
 Definition: a monster (called M) is able to use the toilet:
+	if M is woman-player and the woman-status of M >= 30, decide no;
 	if M is able to use a free use urinal, decide yes;
 	if the location of M is use-the-floor or (locked-toilets is true and M is in School10 and academy-toilet-key is not held by M), decide no;
 	decide yes.
@@ -345,6 +346,9 @@ Check someone going:
 	if there is a barrier in the location of the player, stop the action.
 
 To compute fleeing of (M - a monster): [Default Compute Fleeing if not specified for the monster.]
+	compute default fleeing of M.
+
+To compute default fleeing of (M - a monster):
 	if M is scarable:
 		now neighbour finder is the location of M;
 		let A be a random N-viable direction;
@@ -409,7 +413,7 @@ To compute sleep reduction of (M - a monster):
 		decrease the sleep of M by seconds;
 		if the M is awake:
 			now the sleep of M is 0;
-			if M is in the location of the player, say "[BigNameDesc of M] wakes up! [if M is unfriendly]Uh-oh...[end if]".
+			if M is in the location of the player and M is undefeated, say "[BigNameDesc of M] wakes up! [if M is unfriendly]Uh-oh...[end if]".
 
 To compute periodic healing of (M - a monster):
 	if the blind-status of M > 0:

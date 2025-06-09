@@ -59,7 +59,8 @@ When play begins:
 			retrieve silicone milk options;
 			retrieve slow random options; [At this point, the player can choose to have the rest randomised, which sets quick start to 1]
 		if quick start is 1 or quick start is 2:
-			follow the random mode rules;
+			follow the random fetish rules;
+			follow the random handicap rules;
 			compute random bonuses;
 		if quick start is 0:
 			retrieve benefit options;
@@ -220,6 +221,7 @@ To fill in legacy table blanks:
 	unless there is a choice in row 90 of the Table of Player Options, now choice in row 90 of Table of Player Options is 0;
 	unless there is a choice in row 91 of the Table of Player Options, now choice in row 91 of Table of Player Options is 0;
 	unless there is a choice in row 92 of the Table of Player Options, now choice in row 92 of Table of Player Options is 0;
+	unless there is a choice in row 93 of the Table of Player Options, now choice in row 93 of Table of Player Options is 0;
 
 To fill in custom flavour blanks:
 	unless there is a name in row 10 of the Table of Info Options:
@@ -328,12 +330,13 @@ To configure gender:
 		blank out the whole row.]
 
 To retrieve fetish options:
+	if diaper quest is 0, compute new fetish selection window;
 	if diaper quest is 1:
 		now the current menu is the Table of Diaper Fetish Options;
 	otherwise:
 		now choice in row 49 of the Table of Player Options is 2; [set the slow pregnancy choice to the 0 point option]
 		now choice in row 75 of the Table of Player Options is 0; [set the slow pregnancy choice to the 0 point option]
-		now the current menu is the Table of Kink Options;
+		now the current menu is the Table of Handicap Options;
 	carry out the displaying activity;
 	clear the screen.
 

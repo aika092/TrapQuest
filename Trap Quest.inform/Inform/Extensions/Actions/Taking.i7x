@@ -63,13 +63,17 @@ Check stealing:
 	if the noun is not monster, say "This verb is used for stealing items from NPCs." instead;
 	if tutorial is 1, say "Please only follow the instructions given for the tutorial." instead;
 	if the noun is caged, say "You can't reach." instead;
-	if the noun is explorer, say "[big he of the noun][']s literally holding it in [his of the noun] hand." instead;
+	if the noun is explorer and the noun is undefeated, say "[big he of the noun][']s literally holding it in [his of the noun] hand." instead;
 	if the player is immobile or the player is in danger, say "Aren't you a bit busy?" instead;
+	if the noun is kitsune and the target-disguise of the noun is not the noun:
+		allocate 3 seconds;
+		say "As soon as your hand reaches out... ";
+		compute KitsuneReveal of the noun;
 	if the player is prone and the noun is awake and the noun is not easy-steal, say "You should probably be standing to try that." instead;
 	if the player is not able to manually use their hands, do nothing instead;
 	if the noun is not easy-steal and the noun is awake and the player is not able to manually use manual dexterity, do nothing instead;
 	[Note: The check if the player is not able to use their hands is silent and requires you to add your own flavour if you want.
-The check if the player is not  able to MANUALLY use their hands comes with its own flavour explaining exactly why you can't use your hands. The same applies for "able to use manual dexterity" versus "able to manually use manual dexterity"!]
+The check if the player is not able to MANUALLY use their hands comes with its own flavour explaining exactly why you can't use your hands. The same applies for "able to use manual dexterity" versus "able to manually use manual dexterity"!]
 	if the number of entries in the tradableItems of the noun is 0 and the number of things carried by the noun is 0, say "[BigNameDesc of the noun] has nothing for you to steal." instead;
 	if the noun is interested and the noun is not easy-steal and the noun is awake, say "[BigNameDesc of the noun] is looking right at you." instead.
 Carry out stealing:

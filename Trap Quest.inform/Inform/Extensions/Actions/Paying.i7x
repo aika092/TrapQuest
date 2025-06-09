@@ -27,12 +27,14 @@ Carry out paying:
 		say "Pay for [ShortDesc of C]? ";
 		if the player is bimbo consenting:
 			now Z is C;
+			if the discounts of shopkeeper > 0, decrease the discounts of shopkeeper by 1;
 			break;
 	if Z is off-stage:
 		repeat with C running through held stolen things:
 			say "Pay for [ShortDesc of C]? ";
 			if the player is bimbo consenting:
 				now Z is C;
+				if the discounts of shopkeeper > 0, decrease the discounts of shopkeeper by 1;
 				break;
 	if Z is off-stage:
 		say "Paying cancelled.";

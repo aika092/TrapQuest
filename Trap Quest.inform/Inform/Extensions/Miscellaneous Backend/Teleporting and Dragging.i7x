@@ -121,6 +121,7 @@ To compute bad teleport:
 		if M is monster, add the location of M to LR;
 	if Woods16 is placed, add Woods16 to LR;
 	if Hotel37 is placed, add Hotel37 to LR;
+	if Hotel45 is placed, add Hotel45 to LR;
 	if diaper quest is 1 and Hotel20 is placed and hotel changing station is in Hotel20 and the changing-station-tank-scene of woman-player <= 0, add Hotel20 to LR;
 	if Mansion23 is placed, add Mansion23 to LR;
 	if diaper messing >= 7:
@@ -134,11 +135,14 @@ To compute bad teleport:
 	let L be the location of hole-in-wall;
 	if L is a placed room and hole-in-wall is revealed:
 		add L to LR, if absent;
+	repeat with M running through interested monsters:
+		dislodge M;
+		deinterest M;
 	if the number of entries in LR > 0:
 		if debugmode > 0, say "List of potential bad teleports: [LR].";
 		sort LR in random order;
 		teleport to entry 1 in LR;
 	otherwise:
-		teleport to Dungeon31.
+		teleport to Dungeon31;
 
 Teleporting and Dragging ends here.

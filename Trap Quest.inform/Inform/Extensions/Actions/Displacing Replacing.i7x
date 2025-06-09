@@ -6,6 +6,7 @@ Displacing is an action applying to one thing.
 
 The displacing rules is a rulebook.
 
+
 This is the can't displace glued clothing rule:
 	if the noun is glued clothing:
 		if auto is 0, say "It's glued in place!";
@@ -17,12 +18,15 @@ This is the can't displace without hands rule:
 		if auto is 0, say "You don't have the manual dexterity to displace your clothing!";
 		rule fails.
 The can't displace without hands rule is listed in the displacing rules.
+The can't displace without hands rule is listed in the unzipping rules.
+
 
 This is the can't displace while stuck in a wall rule:
 	if the player is in HoleInWall or the player is in DiaperPail:
 		if auto is 0, say "You can't reach that at the moment!";
 		rule fails.
 The can't displace while stuck in a wall rule is listed in the displacing rules.
+The can't displace while stuck in a wall rule is listed in the unzipping rules.
 
 This is the can't displace what isn't displacable rule:
 	if the noun is clothing:
@@ -48,6 +52,7 @@ This is the can't displace what's covered up rule:
 				if auto is 0, say "You would need to displace or remove your [C] first.";
 				rule fails.
 The can't displace what's covered up rule is listed last in the displacing rules.
+The can't displace what's covered up rule is listed last in the unzipping rules.
 
 Definition: yourself is able to displace:
 	follow the displacing rules;

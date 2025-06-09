@@ -1,27 +1,27 @@
-Royal Scepter by Equippables begins here.
+Royal Sceptre by Equippables begins here.
 
-royal scepter is a vibe-wand. royal scepter is manly. royal scepter is plastic. royal scepter has a number called charge. The charge of royal scepter is 1. The text-shortcut of royal scepter is "rs".
+royal sceptre is a vibe-wand. royal sceptre is manly. royal sceptre is plastic. royal sceptre has a number called charge. The charge of royal sceptre is 1. The text-shortcut of royal sceptre is "rs".
 
-royal scepter can be blacked.
+royal sceptre can be blacked.
 
-The printed name of royal scepter is "[clothing-title-before][MediumDesc of royal scepter][if the charge of royal scepter >= 16] (very highly charged)[otherwise if the charge of royal scepter >= 4] (highly charged)[otherwise if the charge of royal scepter > 0] (slightly charged)[end if][clothing-title-after]".
+The printed name of royal sceptre is "[clothing-title-before][MediumDesc of royal sceptre][if the charge of royal sceptre >= 16] (very highly charged)[otherwise if the charge of royal sceptre >= 4] (highly charged)[otherwise if the charge of royal sceptre > 0] (slightly charged)[end if][clothing-title-after]".
 
-To compute class set up of (C - royal scepter):
+To compute class set up of (C - royal sceptre):
 	now the charge of C is 25;
 	say "[bold type]Suddenly a [MediumDesc of C] appears in your hand! The sphere at the top shines brightly! It feels like it has some magic power that will decay over time.[roman type][line break]".
 
-Definition: royal scepter is class-relevant:
+Definition: royal sceptre is class-relevant:
 	if the class of the player is princess, decide yes;
 	decide no.
 
-Figure of royal scepter is the file "Items/Accessories/Equippables/scepter1.png".
-Figure of royal scepter blacked is the file "Items/Accessories/Equippables/scepter2.png".
+Figure of royal sceptre is the file "Items/Accessories/Equippables/sceptre1.png".
+Figure of royal sceptre blacked is the file "Items/Accessories/Equippables/sceptre2.png".
 
-To decide which figure-name is the clothing-image of (R - royal scepter):
-	if R is blacked, decide on figure of royal scepter blacked;
-	decide on figure of royal scepter.
+To decide which figure-name is the clothing-image of (R - royal sceptre):
+	if R is blacked, decide on figure of royal sceptre blacked;
+	decide on figure of royal sceptre.
 
-To compute climax effect of (E - royal scepter): [copy of the effect from the golden phallus, but better since you don't have to put it in]
+To compute climax effect of (E - royal sceptre): [copy of the effect from the golden phallus, but better since you don't have to put it in]
 	MagicPowerRefresh 5;
 	let B be the body soreness of the player;
 	if E is not cursed, BodyHeal 1;
@@ -29,7 +29,7 @@ To compute climax effect of (E - royal scepter): [copy of the effect from the go
 	if the body soreness of the player < B, say "[bold type]Somehow your body feels a bit less bruised![roman type][line break]";
 	if E is blacked, check tiara-of-spades transformation.
 
-To say ClothingDesc of (W - royal scepter):
+To say ClothingDesc of (W - royal sceptre):
 	if W is blacked, say "A white and black wand vibrator with a gem-encrusted spade shape set into the top underneath a crown. [if tiara-of-spades is worn]Thanks to its synergy with your [tiara-of-spades], you can sense that whenever you satisfy a [BlackCock], it will gain significant magic power. [otherwise if there is a worn tiara][bold type]Perhaps if you had a more appropriate tiara, your wand would unlock some even more powerful abilities. [roman type]You have a picture in your head, of you pleasuring [NameDesc of shopkeeper] while a poor jealous guard watches. Or you could just use it to masturbate... [end if]";
 	otherwise say "A gold and pink wand vibrator, with opaque crystal ball set into the top underneath a golden crown. ";
 	let H be a random worn headgear;
@@ -76,17 +76,17 @@ To say ClothingDesc of (W - royal scepter):
 					if D is a direction and D is not up, say "The shortest path to [him of M] from here is [bold type][D][roman type].";
 					otherwise say line break;
 		otherwise:
-			say "Since your headgear's quest doesn't care about royal duties, the royal scepter isn't providing you with any useful information.";
+			say "Since your headgear's quest doesn't care about royal duties, the royal sceptre isn't providing you with any useful information.";
 	otherwise:
 		say "The ball seems to shine brightly when you're in a used diaper - it has the power to help you change yourself!";
 	say "You can sense that the strength of its magic attacks is tied to your self-esteem.[line break][BigNameDesc of W] currently has [if the charge of W >= 16]an incredible amount of[otherwise if the charge of W >= 4]a lot of[otherwise if the charge of W > 0]a small amount of[otherwise]no[end if] stored magical energy, and so your magical attacks with it will be [if the charge of W >= 16]extremely powerful[otherwise if the charge of W >= 4]very[otherwise if the charge of W > 0]slightly more[otherwise]no more[end if] powerful than normal.".
 
-To say ShortDesc of (W - royal scepter):
-	say "royal scepter".
-To say MediumDesc of (W - royal scepter):
-	say "royal [if W is blacked]spades [end if]scepter".
+To say ShortDesc of (W - royal sceptre):
+	say "royal sceptre".
+To say MediumDesc of (W - royal sceptre):
+	say "royal [if W is blacked]spades [end if]sceptre".
 
-To decide which number is the zap damage improvement of (W - royal scepter):
+To decide which number is the zap damage improvement of (W - royal sceptre):
 	let X be MagicPowerDamage + the magic-modifier of W - (the humiliation of the player / 10000);
 	if W is cursed, decrease X by 1;
 	if W is blessed, increase X by 1;
@@ -94,17 +94,19 @@ To decide which number is the zap damage improvement of (W - royal scepter):
 	if X < 1, decide on 1;
 	decide on X.
 
-To compute attack of (W - royal scepter) at (M - a monster):
+To compute attack of (W - royal sceptre) at (M - a monster):
 	say "You blast [NameDesc of M] with a[if the charge of W > 3] pulsing[end if] wave of magic.".
 
-Definition: royal scepter is unlimited horniness: decide yes.
-Definition: royal scepter is royalty themed: decide yes.
+Definition: royal sceptre is unlimited horniness: decide yes.
+Definition: royal sceptre is royalty themed: decide yes.
 
-To decide which number is the initial outrage of (E - royal scepter):
+To decide which number is the initial outrage of (E - royal sceptre):
 	decide on 2.
+To decide which number is the original price of (E - royal sceptre):
+	decide on 12.
 
-To compute periodic effect of (E - royal scepter):
-	if the charge of royal scepter > 0 and a random number between the charge of royal scepter and 20 >= 20, decrease the charge of royal scepter by 1.
+To compute periodic effect of (E - royal sceptre):
+	if the charge of royal sceptre > 0 and a random number between the charge of royal sceptre and 20 >= 20, decrease the charge of royal sceptre by 1.
 
 A bouquet is a kind of equippable. A bouquet is slap ready. A bouquet is biological.
 
@@ -277,11 +279,19 @@ To decide which figure-name is the clothing-image of (R - condoms bouquet):
 
 A time based rule:
 	now auto is 1;
-	if the class of the player is bride and bride-consort is an alive undefeated monster and there is a worn bouquet and the ceremony of betrothal-quest is true and the consummation of betrothal-quest is false and the player is in Hotel06 and the player is possessing a vagina and vagina is not actually occupied and the number of pussy covering actually unavoidable clothing is 0:
-		let Z be 0;
-		if bride-consort is in the location of the player, now Z is 1;
-		if the number of intelligent monsters in Hotel06 is Z and the player is not in danger, compute wedding night;
-		otherwise now auto is 0;
+	if the class of the player is bride and bride-consort is an alive undefeated monster and there is a worn bouquet and the ceremony of betrothal-quest is true and the consummation of betrothal-quest is false and the player is in Hotel06:
+		if the player is possessing a vagina and vagina is not actually occupied and the number of pussy covering actually unavoidable clothing is 0:
+			let Z be 0;
+			if bride-consort is in the location of the player, now Z is 1;
+			if the number of intelligent monsters in Hotel06 is Z and the player is not in danger, compute wedding night;
+			otherwise now auto is 0;
+		otherwise if the player is not possessing a vagina and (asshole is not actually occupied or demon tail plug is worn) and the number of ass covering actually unavoidable clothing is 0:
+			let Z be 0;
+			if bride-consort is in the location of the player, now Z is 1;
+			if the number of intelligent monsters in Hotel06 is Z and the player is not in danger, compute wedding night;
+			otherwise now auto is 0;
+		otherwise:
+			now auto is 0;
 	otherwise:
 		now auto is 0.
 
@@ -315,30 +325,57 @@ To compute wedding night:
 		DelicateDown 1;
 		Dignify 1000;
 	otherwise:
-		repeat with C running through pussy covering clothing:
-			if C is crotch-zipped:
-				say UnzipFlav of bride-consort at C;
-				ZipDown C;
-			otherwise if C is displacable:
-				compute bride-consort displacing C;
-			otherwise:
-				say "[BigNameDesc of bride-consort] removes your [ShortDesc of C]. ";
-				now C is in the location of the player;
-		say "A split second later, [NameDesc of bride-consort] is behind you, lining up [his of bride-consort] [manly-penis] with your [vagina].[line break][speech style of bride-consort]'With this, our bond is truly sealed.'[roman type][line break]In one strong motion, [he of bride-consort] pushes inside you.";
-		now bride-consort is penetrating vagina;
+		if the player is possessing a vagina:
+			repeat with C running through pussy covering clothing:
+				if C is crotch-zipped:
+					say UnzipFlav of bride-consort at C;
+					ZipDown C;
+				otherwise if C is displacable:
+					compute bride-consort displacing C;
+				otherwise:
+					say "[BigNameDesc of bride-consort] removes your [ShortDesc of C]. ";
+					now C is in the location of the player;
+		otherwise:
+			repeat with C running through ass covering clothing:
+				if C is crotch-zipped:
+					say UnzipFlav of bride-consort at C;
+					ZipDown C;
+				otherwise if C is displacable:
+					compute bride-consort displacing C;
+				otherwise:
+					say "[BigNameDesc of bride-consort] removes your [ShortDesc of C]. ";
+					now C is in the location of the player;
+		let F be asshole;
+		if the player is possessing a vagina:
+			now F is vagina;
+		otherwise if demon tail plug is worn:
+			say "[BigNameDesc of demon tail plug] melts away into nothingness!";
+			destroy demon tail plug;
+		say "A split second later, [NameDesc of bride-consort] is behind you, lining up [his of bride-consort] [manly-penis] with your [variable F].[line break][speech style of bride-consort]'With this, our bond is truly sealed.'[roman type][line break]In one strong motion, [he of bride-consort] pushes inside you.";
+		now bride-consort is penetrating F;
 		if bride-consort is mechanic and the class of the player is "princess bride":
 			say "[speech style of bride-consort]'Your royal energy... I feel it flowing through me... releasing ME!'[roman type][line break]";
 			unseal xavier from bride-consort; [don't worry this automatically changes who bride-consort is and who is penetrating]
 		now the consummation of betrothal-quest is true;
-		ruin vagina times 1;
+		ruin F times 1;
 		if bride-consort is demon lord: [xavier gives the player a good seeing to]
 			if demon lord is friendly, now demon lord is friendly-fucking;
 		otherwise:
 			say "[speech style of bride-consort]'C-cumming!'[roman type][line break][BigNameDesc of bride-consort] begins unleashing [himself of bride-consort] inside of you.[line break][variable custom style]Already?![roman type][line break]";
-			PussyFill the semen load of bride-consort;
+			if F is vagina, PussyFill the semen load of bride-consort;
+			otherwise AssFill the semen load of bride-consort;
 			focus-consider bride-consort;
 			orgasm bore bride-consort;
 			say "[speech style of bride-consort]'Being inside you... is the best feeling of my life! We must do this again soon. Until then, I trust you will be faithful to me.'[roman type][line break][if L is not Hotel06][BigNameDesc of bride-consort] leaves the way [he of bride-consort] came.[end if]";
-			now bride-consort is in L.
+			now bride-consort is in L;
+		if F is asshole and bondage protection < 2:
+			let CC be a random off-stage chastity cage;
+			if CC is actually summonable:
+				summon CC locked;
+				let K be a random off-stage specific-key;
+				if K is a thing:
+					now K is carried by bride-consort;
+					now K is covering CC;
+				say "Suddenly you find your [MediumDesc of penis] locked in a [CC]![line break][variable custom style]What the hell?! Oh god... I bet I know who has the key, too...[roman type][line break]".
 
-Royal Scepter ends here.
+Royal Sceptre ends here.

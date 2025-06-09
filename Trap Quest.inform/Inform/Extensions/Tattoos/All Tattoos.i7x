@@ -1620,7 +1620,7 @@ Definition: i-suck tattoo is oral sex themed: decide yes.
 
 incontinent-when-speaking tattoo is a thigh-tattoo. The tattoo-title of incontinent-when-speaking tattoo is "Incontinent when speaking".
 To say tattoo-desc of (T - incontinent-when-speaking tattoo):
-	say "The words 'Incontinent when speaking' are written on your inner thigh with black Sharpie. [if the player is totally incontinent]But the effect no longer does anything, since you're incontinent all the time anyway![otherwise]It makes you lose control of your bodily functions whenever you say anything out loud.[end if]".
+	say "The words 'Incontinent when speaking' are written on your inner thigh with black pen. [if the player is totally incontinent]But the effect no longer does anything, since you're incontinent all the time anyway![otherwise]It makes you lose control of your bodily functions whenever you say anything out loud.[end if]".
 To decide which number is the initial cringe of (T - incontinent-when-speaking tattoo):
 	decide on 4.
 This is the incontinent-when-speaking tattoo inconveniences speech rule:
@@ -3201,7 +3201,7 @@ Definition: true love tattoo is drawable:
 	if max breast size < 5, decide no;
 	decide yes.
 Definition: true love tattoo is eligible:
-	if the noun is heart themed or the noun is boob themed or the noun is royal scepter, decide yes;
+	if the noun is heart themed or the noun is boob themed or the noun is royal sceptre, decide yes;
 	if the noun is breast covering clothing:
 		if the noun is actually nipple exposing or the noun is actually sheer, decide yes;
 	decide no.
@@ -3229,7 +3229,7 @@ To decide which number is the initial outrage of (T - unfaithful tattoo):
 unicorn-horn-finger tattoo is a body tattoo. The tattoo-title of unicorn-horn-finger tattoo is "unicorn horn finger".
 Figure of unicorn-horn-finger tattoo is the file "Items/Tats/tattoo62.jpg".
 Definition: unicorn-horn-finger tattoo is eligible:
-	if the noun is gloves or the noun is magic themed or the noun is fairy-wand or the noun is royal scepter or the noun is purity clothing or the noun is horn or the noun is magic lamp or the noun is bow themed or the noun is horse themed, decide yes;
+	if the noun is gloves or the noun is magic themed or the noun is fairy-wand or the noun is royal sceptre or the noun is purity clothing or the noun is horn or the noun is magic lamp or the noun is bow themed or the noun is horse themed, decide yes;
 	decide no.
 To decide which figure-name is the examine-image of (T - unicorn-horn-finger tattoo):
 	decide on figure of unicorn-horn-finger tattoo.

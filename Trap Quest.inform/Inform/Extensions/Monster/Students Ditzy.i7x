@@ -90,13 +90,13 @@ student-jill is a ditzy student.
 
 The text-shortcut of student-jill is "stji".
 
-Figure of jill is the file "NPCs/School/Student/student19.png".
+Figure of jill is the file "NPCs/School/Student/student19.jpg".
 
 To decide which figure-name is the monster-image of (M - student-jill):
 	decide on figure of jill.
 
 To say MonsterDesc of (M - student-jill):
-	say "This skinny, bubbly [boy of M] has long black hair fixed in pigtails. [if the current-rank of M > 1 and diaper quest is 0 and lady fetish < 2][big his of M] huge D cup boobs spill out of [his of M] extremely low cut[otherwise][big he of M] is wearing a[end if] green crop top and [his of M] crotch is covered by tight denim microshorts. [big he of M][']s got a big smile but [if the current-rank of M is 1]it looks a little... fake[otherwise][his of M] vacant expression makes it appear there's not too much going on upstairs[end if].".
+	say "This skinny, bubbly [boy of M] has long black hair fixed in pigtails. [if the current-rank of M > 1 and diaper quest is 0 and lady fetish < 2][big his of M] huge D cup boobs spill out of [his of M] extremely low cut[otherwise][big he of M] is wearing a[end if] cyan crop top and [his of M] crotch is covered by the tiniest denim microshorts in the world. [big he of M][']s got a big smile but [if the current-rank of M is 1]it looks a little... fake[otherwise][his of M] vacant expression makes it appear there's not too much going on upstairs[end if].".
 
 The current-rank of student-jill is 2.
 The max-rank of student-jill is 3.

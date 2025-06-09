@@ -106,7 +106,7 @@ To say QuestPersistFlav of (Q - soul-harvest-quest) on (C - a clothing):
 	say "The voice of your master sounds off in your head[if C is cursed] as the magic sealing your [MediumDesc of C] is lifted[otherwise if C is bland and Q is soul-harvest-quest] as a blessing is laid upon your [MediumDesc of C][end if]! ".
 
 To compute generic first time class reward of (Q - soul-harvest-quest) on (C - a clothing):
-	let D be a random off-stage ring;
+	let D be a random off-stage plentiful ring;
 	if D is ring:
 		now D is pink diamond;
 		set shortcut of D;
@@ -123,7 +123,7 @@ To compute generic first time class reward of (Q - soul-harvest-quest) on (C - a
 
 To compute generic class reward of (Q - soul-harvest-quest) on (C - a clothing):
 	say "[line break][first custom style]'[one of]Ok, [NameBimbo]. I suppose you deserve something nice.'[or]Good girl, [NameBimbo]. Keep working hard, and you'll get more gifts like this.'[or]I suppose I'm satisfied. Now be a good girl and accept this reward, [NameBimbo].'[in random order][roman type][line break]";
-	let D be a random off-stage ring;
+	let D be a random off-stage plentiful ring;
 	if D is ring and the quest-completions of Q < 2:[it's a second time class reward, essentially]
 		now D is ruby;
 		set shortcut of D;

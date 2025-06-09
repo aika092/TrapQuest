@@ -183,6 +183,7 @@ Definition: yourself is penis-fuckable: [Can the player use their penis to domin
 	if there is a worn condom of kings, decide no;
 	if there is a worn chastity bond, decide no;[All chastity items prevent penis access, currently]
 	if there is a worn restricting research airhancer, decide no;
+	if the player is not able to speak and the player is wrist bound, decide no;
 	if sexual-penis-length > 0:
 		if there is a worn strapon-panties, decide yes;[most strapons ARE undisplacable pussy covering clothing.]
 		if there is a actually unavoidable pussy covering clothing, decide no;
@@ -204,6 +205,7 @@ Definition: yourself is vagina-rideable: [Can the player use their pussy to domi
 	if there is actually unavoidable pussy covering clothing, decide no;
 	if chastity-belt is worn, decide no;
 	if vagina is actually occupied, decide no;
+	if the player is not able to speak and the player is wrist bound, decide no;
 	decide yes.
 To say VaginaRideDesc of (M - a monster):
 	say "Attempt to dominate [him of M] with your [vagina].".
@@ -213,9 +215,9 @@ Definition: a monster is ass-rideable:
 	decide no. [Can this NPC have the player use their asshole to dominate them?]
 Definition: yourself is ass-rideable: [Can the player use their asshole to dominate them?]
 	if diaper quest is 1, decide no;
-	if the player is possessing a vagina, decide no;[right now, all the anal domination scenes assume the player definitely doesn't have a vagina, so this needs to be disabled for now]
 	if there is a worn actually unavoidable ass covering clothing, decide no;
 	if asshole is actually occupied, decide no;
+	if the player is not able to speak and the player is wrist bound, decide no;
 	decide yes.
 To say AssRideDesc of (M - a monster):
 	say "Attempt to dominate [him of M] with your [asshole].".
@@ -227,6 +229,7 @@ Definition: yourself is piss-fuckable: [Can the player currently piss on someone
 	if watersports fetish is 0, decide no;
 	if there is worn actually unavoidable pee covering clothing, decide no;
 	if the player is not bursting, decide no;
+	if the player is not able to speak and the player is wrist bound, decide no;
 	decide yes.
 To say PissFuckDesc of (M - a monster):
 	say "Attempt to dominate [him of M] by pissing on [him of M].".
@@ -237,6 +240,7 @@ Definition: a monster is diaper-rideable:
 Definition: yourself is diaper-rideable: [Can the player currently diaper-sit on someone?]
 	if the number of worn diapers is 0, decide no;
 	if there is a worn messed diaper and diaper lover < 7, decide no;
+	if the player is not able to speak and the player is wrist bound, decide no;
 	decide yes.
 To say DiaperRideDesc of (M - a monster):
 	say "Attempt to dominate [him of M] by sitting your diaper on [his of M] face.".
@@ -327,7 +331,20 @@ To compute defeat of (M - a monster):
 				otherwise if T matches the text "soul":
 					compute soulStealing from M;
 				otherwise:
-					say "BUG: Unable to understand defeat choice.".
+					say "BUG: Unable to understand defeat choice.";
+	compute HumilityProgressing of M.
+
+
+To compute HumilityProgressing of (M - a monster):
+	if (M is bossdefeated or M is golem) and the player is glory-stone-qualifying, increase the glory-stone-progress of the player by 4;
+	if the player is wrist bound:
+		if M is fairy, increase the bondage-stone-progress of the player by 3;
+		increase the bondage-stone-progress of the player by 1;
+	if the player is piercing-stone-qualifying:
+		if M is aeromancer and M is ballooned, increase the piercing-stone-progress of the player by 3;
+		if M is royal guard and M is shieldblocked, increase the piercing-stone-progress of the player by 3;
+		if M is centaur and M is shieldblocked, increase the piercing-stone-progress of the player by 3;
+		if M is ghost and M is phased, increase the piercing-stone-progress of the player by 3.
 
 To compute soulStealing from (M - a monster):
 	increase the total-souls of the player by 1;[Checks how many souls the player has pulled out, total.]
@@ -720,26 +737,51 @@ To decide which number is the submissiveness of (M - a monster):
 	if N > D, decide on DOMINANT-DOMINANT;
 	decide on DOMINANT-FAILURE.
 
+[!<DecideWhichNumberIsTheDominanceOfThePlayer>+
+
+Determines how difficult it is for the player to resist an npc's attempts to turn the tables on them.
+
+@return <Integer> The higher this number, the worse the player is at resisting the npc.
+
++!]
+To decide which number is the anti-dominance of the player:
+	if the player is wrist bound:
+		if debuginfo > 0, say "[input style]Skipped calculating anti dominance, since player is wrist bound (Anti dominance = 4)[roman type][line break]";
+		decide on 4;
+	let strebuff be 0;
+	if the strength of the player < 5, increase strebuff by 1;
+	if the strength of the player < 15, increase strebuff by 1;
+	let arebuff be 0;
+	if the player is horny, increase arebuff by 1;
+	if the player is extremely horny, increase arebuff by 1;
+	let delibuff be 0;
+	if the delicateness of the player > 10, increase delibuff by 1;
+	if the delicateness of the player > 14, increase delibuff by 1;
+	if the delicateness of the player > 18, increase delibuff by 1;
+	let manubuff be 0;
+	if the player is not able to use manual dexterity, increase manubuff by 1;
+	let resebuff be 0;
+	if the number of things wrangling a body part > 0 or vampiress is chain-tethering, increase resebuff by 1;
+	let AD be 0 + strebuff + arebuff + delibuff + manubuff + resebuff;
+	if AD > 4, now AD is 4;
+	if debuginfo > 0, say "[input style]Calculating anti dominance. Weakness: [strebuff]. Arousal: [arebuff]. Submissiveness [delibuff]. Hand Impairment: [manubuff]. Movement impairment: [resebuff]. Final anti dominance: [AD] (max is 4)[roman type][line break]";
+	decide on AD.
+
 [!<DecideWhichNumberIsTheSemiDominanceRollForMonster>+
 
-Sometimes player will need to flex their domination muscles after they successfully dominate a monster. This check is meant to standardise those checks.
+Determines whether the player resists an npc that is trying to turn the tables on them. For every point of "anti dominance" the player has, the player has a 30% chance not to resist the npc (in other words, 0 points means success every time, 4 points means failure every time)
 
 @param <Monster>:<M> The monster the player is trying to flex on
-@return <Integer> A negative value indicates that the player's flexing failed. Any other value means the player succeeded.
+@return <Integer> A negative value indicates the player doesn't avoid the tables being turned. Any other value means the player does avoid it.
 
 +!]
 To decide which number is the semi-dominance roll for (M - a monster):
-	let D be the dominance of the player;
-	let S be the submissiveness base of M * -1;
-	if debuginfo > 0, say "[input style]Calculating semi dominance. Value based on player dominance and [ShortDesc of M] submissiveness DC = RNG([D] ~ [S]) [roman type][line break]";
-	decide on a random number between D and S.
-
-To decide which number is the mental semi-dominance roll for (M - a monster):
-	let I be the intelligence of the player;
-	let D be a random number between the dominance of the player and I;
-	let S be a random number between (the submissiveness base of M * -1) and (I * -1);
-	if debuginfo > 0, say "[input style]Calculating semi dominance(intelligence based). Value based on player dominance and [ShortDesc of M] submissiveness DC = RNG([D] ~ [S]) [roman type][line break]";
-	decide on a random number between D and S.
+	let AD be the anti-dominance of the player;
+	let R be a random number between 1 and 100;
+	let total be R - (AD * 30);
+	if debuginfo > 0, say "[input style]Anti Dominance(AD) = [AD] [if AD > 4](Auto failure)[otherwise if AD is 0](Auto success)[otherwise]vs RNG [R]. [R] - ([AD] x 30) = [total] [end if][roman type]";
+	if total < 0, decide on -1;
+	decide on total.
 
 [!<DecideIfMonsterIsDominantSexReady>+
 
@@ -857,7 +899,7 @@ This function is called when the player is about to "dominantly ride" a male mon
 +!]
 To say PowerBottomComment of (M - a monster):
 	if the player is not able to speak:
-		say "You give [NameDesc of M] a smouldering look, hopefully conveying how [if the bimbo of the player < 6]dominant you are even though you're about to sit on [his of M] [DickDesc of M][otherwise if the bimbo of the player < 12]compromising this situation is for [him of M] and [his of M] [DickDesc of M][otherwise]much you want to sit on [his of M] [DickDesc of M][end if].";
+		say "You give [NameDesc of M] a smouldering look, hopefully conveying how [if the bimbo of the player < 6]dominant you are even though you're about to sit on [his of M] [DickDesc of M][otherwise if the bimbo of the player < 12]compromising this situation is for [him of M] and [his of M] [DickDesc of M][otherwise]much you want to sit on [his of M] [DickDesc of M][end if]. [run paragraph on]";
 	otherwise if the bimbo of the player < 6:
 		if the player is gendered male:
 			say "[first custom style]'[one of]I don't care how it looks, I've fucking earned this. Your dick is MINE.'[or][if the size of penis > the girth of M]Good thing I'm so much bigger than you, otherwise I might be worried this would hurt!'[otherwise if the player is possessing a penis]You think you're so fucking great because you're bigger than me? Better not be a quick-shot.'[otherwise]You've got a dick. Let's see if you actually know how to use it.'[end if][or]Now, *I* get to stick your dick in me.'[at random][roman type][line break]";
@@ -1094,9 +1136,9 @@ The text in this function should output whenever the player unsuccessfully domin
 
 +!]
 To say DominanceFailure of (M - a monster):
-	say "You try to force yourself on [NameDesc of M], but [he of M] turns the tables and forces you to your knees instead!".
+	say "You try to force [NameDesc of M] to [his of M] knees, but [he of M] turns the tables and forces you to your knees instead!".
 To say DQDominanceFailure of (M - a monster):
-	say "You try to force yourself on [NameDesc of M], but [he of M] turns the tables and forces you to your knees instead!".
+	say "You try to force [NameDesc of M] to [his of M] knees, but [he of M] turns the tables and forces you to your knees instead!".
 
 [!<ComputeFailedDominancePunishmentOfMonster>+
 

@@ -7,6 +7,7 @@ Definition: a wrestler is willing to do vaginal: decide yes.
 Definition: a wrestler is willing to do anal: decide yes.
 
 Definition: a wrestler is wenchy: decide yes.
+Definition: a wrestler is willing to charm snakes: decide yes;
 
 Definition: a wrestler is willing to urinate: decide yes.
 
@@ -198,6 +199,8 @@ To compute perception of (M - a wrestler):
 		otherwise if the player is a sissy:
 			say "[speech style of M]'Oooh! A real life sissy! My [literalMistress of dominatrix] has been looking for a good sissy slave for ages.'[roman type][line break]";
 			alwayscutshow figure of wrestler interact 5 for M;
+		otherwise if april fools content is 1:
+			say "[speech style of M]'Happy [april fools]!'[roman type][line break][BigNameDesc of M] cackles.";
 		otherwise:
 			say "[speech style of M]'Hey, wanna wrestle? Winner gets to be on top!'[roman type][line break]";
 			alwayscutshow figure of wrestler interact 11 for M;
@@ -219,6 +222,8 @@ To compute appearance assessment of (M - a wrestler):
 			alwayscutshow figure of wrestler interact 1 for M;
 	otherwise if the player is top-wardrobe-malfunctioning:
 		compute tq nip slip reaction of M;
+	otherwise if april fools content is 1:
+		say "[speech style of M]'Happy [april fools]!'[roman type][line break][BigNameDesc of M] smiles widely.";
 	otherwise:
 		say "[speech style of M]'[if the times-met of M > 0]Hi again [honey of M], I hope you're not lost?'[otherwise]Oh my, you look new. Be careful around here... people in this fetish hotel will tend to assume you're on the same page as them, and want to do lots of kinky stuff with anyone that moves. And that includes the robots...'[end if][roman type][line break]";
 		alwayscutshow figure of wrestler interact 1 for M.
@@ -640,7 +645,20 @@ To say FriendlyMouthPenetrationFlav of (M - a wrestler):
 	otherwise cutshow figure of wrestler cutscene 8 for M.
 
 To compute erection sex of (M - a wrestler):
-	do nothing.
+	if M is penetrating face, do nothing instead;
+	if penis is not penis-erect:[which implies that the player came]
+		say ErectionLostFlav of M;
+	otherwise if the sex-length of M is 1 and M is anticipating-climax:
+		say ErectionNearingClimaxFlav of M;
+	otherwise:
+		say ErectionUseFlav of M;
+	if M is not penetrating penis:
+		compute post climax effect of M in penis;
+	otherwise:
+		decrease the sex-length of M by 1;
+		stimulate penis from M;[special flavour for orgasms will trigger after normal flavour is shown.]
+		say "[one of][M sex reaction][or][cycling]";
+	compute slow grossness of M.
 
 To compute facial sex of (M - a wrestler):
 	let P be a random patron in the location of the player;
@@ -714,9 +732,12 @@ To say OralSubmissionResponse of (M - a wrestler):[This is only called if the pl
 	say "[line break]".
 
 To compute erection orgasm of (M - a wrestler):
-	if M is penetrating penis and the number of patrons penetrating asshole is 0:
+	let P be the number of patrons penetrating asshole;
+	if M is penetrating penis and P is 0 and M is penetrating face:
 		say "[line break][one of]It's just too much for you, and you cum[or]You try to hold back, but it's too good! Your eyes roll back as you cum[or]It feels way too good to hold back, and you cum[at random], [if the size of penis > 4]groaning[otherwise]moaning[end if] with pleasure as [if the size of penis < 4 or penis is not penis-erect]your [player-penis] dribbles a [load] into [NameDesc of M][']s mouth[otherwise if the size of penis < 7]you shoot your [load] straight into [NameDesc of M][']s mouth[otherwise]shoot a [load] straight down [NameDesc of M][']s throat[end if]. [big he of M] [if the size of penis > 6]releases your [manly-penis] from [his of M] mouth, swallowing[otherwise]swallows it [end if] with a self-satisfied giggle and crawls out from underneath you.";
 		cutshow figure of wrestler cutscene 12 for M;
+	otherwise if M is penetrating penis and P is 0:
+		say "[line break][one of]It's just too much for you, and you cum[or]You try to hold back, but it's too good! Your eyes roll back as you cum[or]It feels way too good to hold back, and you cum[at random], [if the size of penis > 4]groaning[otherwise]moaning[end if] with pleasure as [if the size of penis < 4 or penis is not penis-erect]your [player-penis] dribbles a [load][otherwise if the size of penis < 7]you shoot your [load][otherwise]shoot a [load][end if] on your tummy. [big he of M] watches with a self-satisfied grin.";
 	otherwise:
 		follow the default ejaculation rule;
 	now penis is not penis-erect.
@@ -770,7 +791,52 @@ To compute facial climax of (M - a wrestler):
 	bore M.
 
 To compute erection climax of (M - a wrestler):
-	do nothing.
+	unless M is penetrating face:
+		TimesSubmittedUp M by 1;
+		say ErectionClimaxFlav of M;
+		compute post climax effect of M in penis;
+		if the rounds of sex left of M <= 0:
+			if M is interested, orgasm satisfy M;
+			otherwise orgasm dislodge M;
+	otherwise:
+		if the player is bimbo consenting:
+			now chosen-orifice of M is face;
+			now the sex-length of M is 2;
+			now M is friendly-fucking;
+			compute M entering mouth;
+		otherwise:
+			say "[speech style of M]'Oh. Well, sorry about your boner, then!'[roman type][line break][big he of M] climbs off of you and zips [his of M] suit back up.";
+			Calm M;
+			FavourUp M by 1.
+
+To say ErectionDemand of (M - a wrestler):
+	let mr be the substituted form of "[if the player is presenting as male]Mr[otherwise]Miss[end if]";
+	say "[line break][speech style of M]'[one of]Wakey wakey, [mr] penis. Say hello!'[or]Hey, [if the player is presenting as male]mr[otherwise]miss[end if] penis! It's time to get up!'[or]Wake up, [mr] penis!'[at random][roman type][line break][BigFuckerDesc of M] prods your crotch expectantly...".
+
+To say ErectionPenetrationFlav of (M - a wrestler):
+	say "[BigFuckerDesc of M] unzips [his of M] catsuit and climbs ontop of you, winking at you as your [ShortDesc of penis] hardens between [his of M] [if lady fetish is 2]asscheeks. [big his of M] cage [otherwise]wet labia lips. [big his of M] clit [end if] bumps your [SexTip] as [he of M] begins to rock [his of M] hips back and forth.";
+
+To compute unerect taunting of (M - a wrestler):
+	say "[big he of M] watches for several seconds, but your [player-penis] doesn't show a single sign of getting hard. Your cheeks burn with shame as [he of M] straightens up.[line break][speech style of M]'[one of]It's ok. I heard this happens to a lot of guys.'[or]I guess it's pretty tired today, huh?'[or]I guess your penis doesn't like me!'[at random][roman type][line break]";
+	moderateHumiliate;
+	Bore M.
+
+To say ErectionUseFlav of (M - a wrestler):
+	let valley be the substituted form of "[if lady fetish is 2]cheeks![otherwise][vagina]![end if]";
+	say "[one of][BigFuckerDesc of M]'s [if lady fetish is 2]cage jiggles[otherwise]breasts jiggle[end if] as [he of M] aggressively humps your [player-penis].[or][BigFuckerDesc of M]'s suit squeaks as [he of M] rocks [his of M] hips back and forth.[or][BigFuckerDesc of M] uses [if the size of penis > 8]slow, exaggerated movements[otherwise if the size of penis > 3]fast movements[otherwise]minimal movements[end if] to stroke the entire surface of your [player-penis] with [his of M] [valley].[or]Your [player-penis] [if lady fetish is 2]spasms as [BigFuckerDesc of M][otherwise]is coated in [BigFuckerDesc of M]'s juices as [he of M][end if] rocks against you.[in random order]".
+
+To say ErectionLostFlav of (M - a wrestler):
+	say "[BigFuckerDesc of M] shakes [his of M] head as [he of M] climbs off your softening [ShortDesc of penis].[line break][speech style of M]'[one of]That was quicker than I thought!'[or]Cocks are pretty sensitive, huh?'[or]You made a really big mess!'[at random][roman type][line break][big he of M] climbs off you and immediately loses interest.";
+	FavourDown M by 1;
+	Bore M;
+	now the sex-length of M is 0.
+
+To say ErectionNearingClimaxFlav of (M - a wrestler):
+	say "[one of][BigFuckerDesc of M]'s humping is starting to slow down[or][BigFuckerDesc of M]'s smile seems to fade, and [he of M] humps your [player-penis] with less and less vigour[or][BigFuckerDesc of M] grins against you with a little less enthusiasm than before[in random order]. Maybe [he of M]'s had enough?".
+
+To say ErectionClimaxFlav of (M - a wrestler):
+	let valley be the substituted form of "[if lady fetish is 2]cheeks![otherwise]nether lips![end if]";
+	say "[BigNameDesc of M] slowly stops rocking [his of M] hips, sitting there with your [player-penis] still wedged between [his of M] [valley].[line break][speech style of M]'I'm getting kinda bored, so... wanna make this a little more interesting? We go down on each other, and whoever cums first wins! Up for it?'[roman type][line break]";
 
 This is the wrestler uses your diaper rule:
 	let M be current-monster;
@@ -1014,7 +1080,7 @@ To decide which number is the dominationtype of (M - a wrestler) using (F - peni
 
 To blowjob dominate (M - a wrestler):
 	let C be a random worn bottom level protection clothing;
-	say "You slam [NameDesc of M] against a wall, pushing [him of M] to [his of M] knees as you [if C is not strapon-panties and C is clothing]fish your [SexDesc of penis] out of your pants[otherwise if the player is a bit horny]slowly pump your [SexDesc of penis][otherwise]slowly pump your hardening [sexual-player-penis][end if].[line break]";
+	say "You slam [NameDesc of M] against a wall, pushing [him of M] to [his of M] knees as you [if C is not strapon-panties and C is clothing]fish your [SexDesc of penis] out of your [ShortDesc of C][otherwise if the player is a bit horny]slowly pump your [SexDesc of penis][otherwise]slowly pump your hardening [sexual-player-penis][end if].[line break]";
 	if sexual-penis-length > 8:
 		say "[speech style of M]'So... BIG...'[roman type][line break]A little bit of drool rolls out of [NameDesc of M][']s mouth as [he of M] stares at your [sexual-player-penis]. [if watersports fetish is 1 and the player is desperate to pee][line break][speech style of M]'[big please] make me your toilet. [big please] let me drink your [one of]urine[or]piss[or]pee[at random]...'[roman type][line break][otherwise][speech style of M]'[big please] fuck my mouth. [big please] give me all your [semen]...'[end if] [big he of M] pulls [his of M] mouth wide open, tongue lolling out as [he of M] gazes up at you, begging desperately for a taste of whatever you have to give [him of M]. You slam it in without a moment of hesitation, pinning [his of M] wrists against the wall as your [sexual-player-penis] hits the back of [his of M] throat. [big he of M] doesn't put up a shred of resistance, moaning reverently as [his of M] throat clenches around your monstrous tool. [big he of M] face-fucks [himself of M] with even more enthusiasm whenever there's any space between strokes. It's too intense, and before you've had a chance to really show [him of M] what you've got, your [SexDesc of penis] is pumping a [load] directly into [his of M] hungry belly.";
 		BlowGet;

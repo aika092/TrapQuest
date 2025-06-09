@@ -399,7 +399,7 @@ To decide which figure-name is the triggered-image of (T - genitals-rune-trap):
 	decide on Figure of shrink rune trap triggered.
 
 To compute unique trigger of (Y - genitals-rune-trap):
-	if the player is possessing a penis and bondage protection < 2 and (the size of penis <= min penis size or the player is getting unlucky):
+	if the player is possessing a penis and bondage protection < 2 and (the size of penis <= min penis size + 2 or the player is getting unlucky):
 		let CC be a random off-stage fetish appropriate chastity cage;
 		if CC is actually summonable:
 			summon CC locked;

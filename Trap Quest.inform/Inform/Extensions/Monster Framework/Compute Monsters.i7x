@@ -70,7 +70,7 @@ To compute turn (N - a number) of (M - a monster):
 			finally destroy M;
 		otherwise if M is awake:[Monsters can't do anything if they are sleeping]
 			now current-monster is M; [Some functions care about which monster is current-monster]
-			if (M is penetrating a body part or M is grabbing the player) and the player is not in a nonstandard room, now M is in the location of the player; [Just in case there's a glitch where the player remains stuck but can't interact with the monster because somehow it's in a different room]
+			if (M is penetrating a body part or M is grabbing the player or M is not doing nothing special) and the player is not in a nonstandard room, now M is in the location of the player; [Just in case there's a glitch where the player remains stuck but can't interact with the monster because somehow it's in a different room]
 			if M is in the location of the player or the player is in a nonstandard room, check immobility; [It's important that NPCs are aware whether the player is already immobile or not when deciding how to interact with the player]
 			if N is not 2:
 				let monster-engaged be 1;
@@ -78,8 +78,9 @@ To compute turn (N - a number) of (M - a monster):
 				check perception of M;
 				if debugmode > 1, say "Finished checking perception.";
 				if M is interested and monster-engaged is 0, now N is 3; [The monster doesn't get an action if it detected the player in the perception round this turn.]
-			if current-predicament is team-football-predicament and M is student and M is in a predicament room:
-				unless N is 2, compute football movement of M; [football moves don't happen at the same time as the player moving, they happen later]
+			if M is student and M is in a predicament room:
+				if current-predicament is team-football-predicament: [in all other scenarios, students are just passive]
+					unless N is 2, compute football movement of M; [football moves don't happen at the same time as the player moving, they happen later]
 			otherwise if N < 3:
 				compute action N of M.
 
@@ -121,8 +122,8 @@ To compute action (N - a number) of (M - a monster):
 			wait 200 ms before continuing;
 		if M is in the location of the player or M is grabbing the player or M is penetrating a body part:
 			if N is 1:
-				if M is penetrating a body part or M is grabbing the player or M is attack-threatening:
-					unless M is not penetrating a body part and M is not grabbing the player and M is very distracted:
+				if M is penetrating a body part or M is grabbing the player or M is not doing nothing special or M is attack-threatening:
+					unless M is not penetrating a body part and M is not grabbing the player and M is not doing nothing special and M is very distracted:
 						check aggression change of M; [Is this NPC aggressive this turn, when they weren't at the start of the turn?]
 						check attack of M;
 				otherwise if M is not distracted:

@@ -201,7 +201,7 @@ To decide which number is the initial outrage of (C - exposing-priestess-outfit)
 
 cleavage-window-priestess-outfit is a priestess outfit. cleavage-window-priestess-outfit is erect-nipple-exposing. cleavage-window-priestess-outfit is only arm covering. The printed name of cleavage-window-priestess-outfit is "[clothing-title-before]cleavage window priestess outfit[clothing-title-after]". The text-shortcut of cleavage-window-priestess-outfit is "cwpo". Understand "cleavage", "window", "priestess", "outfit" as cleavage-window-priestess-outfit.
 
-cleavage-window-priestess-outfit is bottom-exclusive. The skirt-length of cleavage-window-priestess-outfit is 0. cleavage-window-priestess-outfit is belly exposing.  cleavage-window-priestess-outfit is not purity. cleavage-window-priestess-outfit is very low cut. cleavage-window-priestess-outfit is not-displacable-always-fuckable. cleavage-window-priestess-outfit is only arm covering.
+cleavage-window-priestess-outfit is bottom-exclusive. The skirt-length of cleavage-window-priestess-outfit is 0. cleavage-window-priestess-outfit is belly exposing. cleavage-window-priestess-outfit is not purity. cleavage-window-priestess-outfit is very low cut. cleavage-window-priestess-outfit is not-displacable-always-fuckable. cleavage-window-priestess-outfit is only arm covering.
 
 Figure of cleavage-window-priestess-outfit is the file "Items/Clothes/Upper/Special/Priestess/priestess8.png".
 

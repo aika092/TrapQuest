@@ -40,6 +40,8 @@ Figure of Barbara Cutscene 17 is the file "NPCs/MultiFloor/barbara/cutscene-barb
 Figure of Barbara Cutscene 18 is the file "NPCs/MultiFloor/barbara/cutscene-barbara-shopkeeper1.jpg".
 Figure of Barbara Cutscene 19 is the file "NPCs/MultiFloor/barbara/cutscene-barbara-gangbang1.jpg".
 Figure of Barbara Cutscene 20 is the file "NPCs/MultiFloor/barbara/cutscene-barbara-cum-kiss1.jpg".
+Figure of Barbara Cutscene 21 is the file "NPCs/MultiFloor/barbara/cutscene-barbara-mechanic1.jpg".
+Figure of Barbara Cutscene 22 is the file "NPCs/MultiFloor/barbara/cutscene-barbara-blowjob1.jpg".
 
 To decide which figure-name is the monster-image of (M - woman-player):
 	if the woman-status of M is 97:
@@ -53,6 +55,7 @@ To decide which figure-name is the monster-image of (M - woman-player):
 	if the woman-pregnancy of M > 1, decide on figure of woman pregnant;
 	if M is partially-enslaved, decide on Figure of woman partial slavery;
 	if the woman-bimbo of M < 3:
+		if the woman-status of woman-player is 91 and the mechanic-scene of woman-player <= 3, decide on Figure of Barbara Cutscene 21;
 		if M is interested, decide on figure of woman 1 interested;
 		decide on figure of woman 1 uninterested;
 	if the woman-bimbo of M is 3, decide on figure of woman 2;
@@ -131,6 +134,7 @@ To compute friendly boredom of (M - woman-player):
 			if M is in the location of the player, say BecomesBoredFlav of M.
 
 To vanish (M - a monster):
+	if the woman-status of M is 98 and the location of woman-player is urinals, now the location of woman-player is use-the-floor;
 	if M is woman-player and M is introduced:
 		if M is partially-enslaved:
 			regionally place M;
@@ -833,7 +837,7 @@ To compute patron scene climax of (W - woman-player):
 				StomachUrineUp the doses of fishbowl;
 				StomachSemenUp the doses of fishbowl;
 			if the patron-scene-fighting of W <= 3:
-				let R be a random off-stage ring;
+				let R be a random off-stage plentiful ring;
 				if a random number between 2 and 4 > the patron-scene-fighting of W and R is ring:
 					now R is solid gold;
 					now R is in the location of the player;
@@ -1111,7 +1115,7 @@ Report going when the player is the donator and the woman-bimbo of woman-player 
 
 Report going up:
 	if the woman-status of woman-player is 98 and woman-player is alive:
-		if the location of the player is urinals, now the location of woman-player is use-the-floor;
+		if the location of woman-player is urinals, now the location of woman-player is use-the-floor;
 		vanish woman-player;
 	let R be a random urinals jungle room;
 	if R is room:
@@ -1187,6 +1191,7 @@ Report going when the player is in School20 and first-time-swimming-pool is true
 	if the woman-bimbo of woman-player is 2:
 		if debugmode is 1, say "Checking if barbara can appear.";
 		let MSM be a random off-stage turtle-swimsuit;
+		if MSM is clothing and MSM is not fetish appropriate, now MSM is a random off-stage navy-monokini;
 		if MSM is clothing and woman-player is relaxed redeploy appropriate:
 			deploy woman-player with woman-status 1; [we're going to send her dungeon crawling afterwards]
 			now woman-player is in School20;
@@ -1199,9 +1204,7 @@ Report going when the player is in School20 and first-time-swimming-pool is true
 			repeat with C running through worn usually autoremovable clothing:
 				add C to LC;
 				now C is in Holding Pen;
-			now autowear is true;
-			if MSM is actually wearable, now able-to-wear-swimsuit is true;
-			now autowear is false;
+			if MSM is actually autowearable, now able-to-wear-swimsuit is true;
 			repeat with C running through LC:
 				now C is worn by the player;
 			say "As you arrive here you see [NameDesc of woman-player] holding a stretchy blue swimsuit. [big he of woman-player] spots you immediately.[line break][speech style of woman-player]'Hey, [NameBimbo]! I didn't know you went to this academy. I'm just visiting on a provisional basis - I'm not sure I really want to join somewhere designed to make you sluttier, even if there are allegedly excellent rewards available once you get to the higher ranks. But still, while I'm here, I might as well take a dip in this pool, right? Come on, fancy joining me? There's loads of spare swimsuits over there. Although I'm afraid I've nabbed the only one that isn't weirdly slutty, haha.'[roman type][line break]";
@@ -1396,7 +1399,7 @@ To compute pregnancy swap of (M - woman-player):
 	now the pregnancy of the player is 1;
 	now the womb volume of vagina is 30;
 	if the woman-pregnancy of woman-player is 3, now the father is a random tentacle monster;
-	otherwise now the father is a random ultimate-lesson-actor;
+	otherwise now the father is a random unseen-stranger;
 	now the woman-pregnancy of woman-player is 0;
 	check for extreme pregnancies;
 	check goddess eligibility;
@@ -1503,9 +1506,15 @@ To compute unique dominance reward of (M - woman-player):
 To penetration dominate (M - woman-player):
 	let C be a random bottom level protection clothing;
 	let L be sexual-penis-length;
-	say "You force [NameDesc of M] onto [his of M] knees, [if C is not strapon-panties and C is clothing]pull out[otherwise]take[end if] your [SexDesc of penis].[line break][speech style of M]'[one of]Huh? If you wanted to have sex, you could have just said...'[or]Okay, okay!'[stopping][roman type][line break][big he of M] [if L > 8]looks at your [manly-penis] with awe.[line break][speech style of M]'Holy shit that's big... Maybe let's try doing it like this...'[otherwise if L > 4]turns around to embrace you.[line break][speech style of M]'How about for once in this god forsaken place, two people have sex while actually looking at each other?'[otherwise]Grins and tickles your [sissy-penis].[line break][speech style of M]'Might as well try and enjoy this little thing...'[end if][roman type][line break]";
+	say "You make [NameDesc of M] get on [his of M] knees and [if C is not strapon-panties and C is clothing]pull out[otherwise]take[end if] your [SexDesc of penis].";
+	if L > 8:
+		say "[line break][speech style of M]'[one of]If you wanted to sex, you could have just... Whoa'[or]Okay, okay. Keep your pants.... whoa.'[stopping][roman type][line break][big his of M] eyes widen as [he of M] [if C is not strapon-panties and C is clothing]pulls out[otherwise]takes[end if] your [SexDesc of penis] with both hands.[line break][speech style of M]'Holy shit! Will that even... Maybe... Maybe let's try it like this...'[roman type][line break]";
+	otherwise if L > 4:
+		say "[line break][speech style of M]'[one of]Huh? If you wanted to have sex, you could have just said...'[or]Alright, alright. Keep your pants... off?'[stopping][roman type][line break][big he of M] [if C is not strapon-panties and C is clothing]pulls out[otherwise]takes[end if] your [SexDesc of penis], and after a brief pause, grabs your [if the player is wrist bound]hip[otherwise]arm[end if] and pulls you into [his of M] embrace.[line break][speech style of M]'How about for once in this god forsaken place, two people have sex while actually looking at each other?'[roman type][line break]";
+	otherwise:
+		say "[line break][speech style of M]'[one of]You could have just asked in the first place!'[or]Okay, okay! Keep your pants off. Haha, get it?'[stopping][roman type][line break][big he of M] shakes [his of M] head as [he of M] [if C is not strapon-panties and C is clothing]pulls out[otherwise]takes[end if] your [SexDesc of penis], grinning and tickling the teeny tip.[line break][speech style of M]'Might as well try and enjoy this little thing...'[roman type][line break]";
 	cutshow Figure of Barbara Cutscene 15 for M;
-	say "You are locked into a bizarrely intimate episode of intercourse with [NameDesc of M]. As you lock arms around each other, there's nowhere to look except into your eyes.[line break][speech style of M]'In some ways, this feels more wrong than doggy-style, doesn't it? And yet, it feels so right, too...'[roman type][line break]All you can do is moan in response as you climax inside of [him of M].";
+	say "You are locked into a bizarrely intimate episode of intercourse with [NameDesc of M]. As you lock [if the player is wrist bound]limbs[otherwise]arms[end if] around each other, there's nowhere to look except into [his of M] eyes.[line break][speech style of M]'In some ways, this feels more wrong than doggy-style, doesn't it? And yet, it feels so right, too...'[roman type][line break]All you can do is moan in response as you shoot a [load] inside [him of M].";
 	now player-fucking is DOMINANT-NEUTRAL;
 	orgasm;
 	FuckGet.
@@ -1536,6 +1545,7 @@ To compute basic greeting to (M - woman-player):
 		if newbie tips is 1, say "[newbie style]Newbie tip: Barbara is a special type of NPC, that under normal circumstances remains friendly throughout the entire course of the game, and will even fight alongside you, or appear to help you out of sticky situations. However if bad things happen, including if you lose a fight alongside [him of M], [he of M]'ll start to lose the game [himself of M], and become more slutty. Also, sometimes when you bump into [him of M] [he of M]'ll be in the middle of a predicament, and you have to choose whether to help [him of M] or let it happen. Letting it happen usually either avoids the risk of bad stuff, or rewards you with powerful items. However, it'll continue Barbara's progress towards becoming a brainless bimbo. A super slutty Barbara is a sort-of useless sidekick who can even do really unhelpful things like release the [ShortDesc of minotaur].[roman type][line break]";
 		now M is introduced;
 		now the text-shortcut of M is "ba";
+		say "[speech style of M]'Oh, and happy [april fools]. What a day to be playing this game, huh?'[roman type][line break]";
 	otherwise if the woman-status of M is 91 and the mechanic-scene of M <= 5 and M is in the location of the player and mechanic is unfriendly:
 		say "[speech style of M]'HYUK HYUK HYUK'[roman type][line break]";
 	otherwise if the woman-status of M is 80:
@@ -1676,7 +1686,7 @@ To execute (T - talk-barbara-question) for (M - a monster):
 		say "[speech style of M]'Fuck no. [one of]Why am I not giving you the key? Payback, of course. What else?'[or]Payback for what? You bloody well know what.'[or]Plead all you want, I'm not changing my mind.'[stopping][roman type][line break]";
 	otherwise if the woman-status of M is 3:
 		if the woman-bimbo of M < 5:
-			say "[speech style of M]'Can you keep a secret? I may have pulled the lever for the [ShortDesc of minotaur]! Teehee!'[roman type][line break]";
+			say "[speech style of M]'Can you keep a secret? I may have pulled the lever for the [ShortDesc of minotaur]! Tee-hee!'[roman type][line break]";
 		otherwise:
 			say "[speech style of M]'To [']fight['] the [ShortDesc of minotaur], of course, silly!'[roman type][line break]";
 	otherwise if the woman-status of M is 98:
@@ -1741,6 +1751,63 @@ To compute disgusting spit reaction of (M - woman-player):
 
 To compute boring spit reaction of (M - woman-player):
 	say "[BigNameDesc of M] [one of]wrinkles [his of M] nose[or]frowns[or]pouts[in random order].[line break][speech style of M]'[one of]Really? Right in front of my salad[or]Do you mind[stopping]?'[roman type][line break][slightHumiliateReflect]".
+
+
+suck-my-dick is a requestable.
+To decide which number is the requestability of (C - suck-my-dick):
+	decide on 12 - (the woman-bimbo of woman-player * 2).
+Definition: suck-my-dick is appropriate:
+	if the player is not an april 2025 top donator, decide no;
+	if the player is not possessing a penis or the player is not a bit horny, decide no;
+	if there is pussy covering actually unavoidable clothing, decide no;
+	if the noun is woman-player and the woman-status of woman-player < 30, decide yes;
+	decide no.
+To say RequestFlav of (C - suck-my-dick):
+	say "'[if the player is feeling dominant]How much for a BJ[otherwise if the player is feeling submissive]If you wouldn't mind... Is there any chance you'd be willing to... Give me a blowjob[otherwise]Wanna suck my dick[end if]?'".
+To say RewardFlav of (C - suck-my-dick):
+	say "suck your [player-penis]".
+To compute errand rewarding of (T - suck-my-dick) from (P - a person):
+	say "[speech style of P]'So... Do you still want that BJ?'[roman type][line break]";
+	if the player is possessing a penis and the player is a bit horny:
+		let C be a random worn actually unavoidable pussy covering clothing;
+		if C is clothing:
+			say "You shake your head. You actually can't get [NameDesc of C] out of the way. All that for no reward!";
+		otherwise if the player is consenting:
+			say "You nod your head, and [NameDesc of P] gets on [his of P] knees and takes your [player-penis] [if there is worn pussy covering clothing]out[otherwise]into [his of P] hands[end if]. You relax backwards and let [him of P] get to work, submissively bobbing [his of P] head up and down on your [ShortDesc of penis]. It feels amazing!";
+			cutshow Figure of Barbara Cutscene 22 for P;
+			moderateDignify;
+			if sexual-penis-length >= 4, BlowGet;
+			say "Indeed, it isn't long before you're happily exploding inside [his of P] mouth, shooting your salty load onto [his of P] tongue.";
+			orgasm quietly;
+			reset multiple choice questions;
+			set numerical response 1 to "Thank [him of P] and move on";
+			set numerical response 2 to "Demand [he of P] swallows your cum";
+			compute multiple choice question;
+			if player-numerical-response is 1:
+				if a random number between 3 and 6 > the woman-bimbo of woman-player:
+					say "[speech style of P]'You're welcome.'[roman type][line break][BigNameDesc of P] replies, after subtly spitting your cum onto the floor.";
+					PuddleUp semen by (sexual-penis-length + 1) / 2;
+				otherwise:
+					say "[speech style of P]'Any time.'[roman type][line break][BigNameDesc of P] replies, and you realise [he of P][']s already swallowed it without being asked to.";
+			otherwise if player-numerical-response is 2:
+				if the player is not feeling dominant and a random number between 2 and 7 > the woman-bimbo of woman-player:
+					say "A flash of [if the woman-bimbo of woman-player < 5]outrage[otherwise]mischievousness[end if] appears in [NameDesc of P][']s eyes. [big he of P] shakes [his of P] head dominantly. Uh-oh. Maybe you tried to push [him of P] too far.[paragraph break]You find yourself frozen like a deer in headlights as [NameDesc of P] moves [his of P] mouth up to yours, and draws you in for a deep, [semen]-filled kiss. As soon as [NameDesc of woman-player][']s lips are locked with yours, [he of woman-player] begins to use [his of woman-player] tongue to shovel the [semen] from [his of woman-player] mouth into yours.";
+					TasteGrossOut 3;
+					FaceFill semen by (sexual-penis-length + 1) / 2;
+					now face is vaginal-origin;
+					say "[speech style of P]'It's your cum, you swallow it.'[roman type][line break][BigNameDesc of P] replies dominantly, rendering you speechless... And only partially because of your mouth full of your own [semen].";
+					DelicateUp 1;
+				otherwise:
+					say "[BigNameDesc of P] looks up at you submissively, and doesn't hesitate to gulp it all down.";
+					DelicateDown 1;
+					if the woman-bimbo of woman-player < a random number between 4 and 6:
+						say "Almost as if the game is rewarding you for acting dominant, you feel a surge of sexually dominant energy rush from [NameDesc of P] and into your [ShortDesc of penis]. [NameDesc of P] is left looking a little dazed.";
+						WomanSluttify;
+						PenisUp 1;
+		otherwise:
+			say "You shake your head, deciding against it for some reason.";
+	otherwise:
+		say "You shake your head. The need has gone. All that for nothing!".
 
 Part - Unused Functions
 

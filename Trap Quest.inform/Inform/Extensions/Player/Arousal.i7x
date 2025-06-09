@@ -280,7 +280,7 @@ Definition: yourself is able to get horny:
 	if the class of the player is princess and bride-consort is monster and the refractory-period of bride-consort > 0, decide no;
 	[#LXorDD: with the new age 'sensitive' sexdolls, let's see how it goes if we allow them to get horny.]
 	[if the latex-transformation of the player > 3, decide no;]
-	if refractoryperiod >= maxrefractoryperiod and (the player is not possessing a vagina or the number of live things penetrating a fuckhole is 0), decide no; [Player can't gain arousal on the turn that they cum. Except women, during sex, who can have continued orgasms.]
+	if refractoryperiod >= maxrefractoryperiod or multi turn orgasm turns > 0, decide no; [Player can't gain arousal on the turns that they are orgasming.]
 	[if the player is barbie, decide no;]
 	decide yes.
 

@@ -46,8 +46,12 @@ Definition: agent is presenting as male:
 	if lady fetish is 2, decide yes;
 	decide no.
 
+To say ChestDesc of (M - an agent):
+	if lady fetish is 2, say "square pecs";
+	otherwise say "giant breasts".
+
 To say MonsterDesc of (M - agent):
-	say "This tall, extremely curvy black [man of M] is wearing a tight grey suit that perfectly hugs [his of M] giant bust and thunderous thighs. ";
+	say "This [if lady fetish is 2]tall[otherwise]tall, extremely curvy[end if] black [man of M] is wearing a grey suit so tight as to look vacuum sealed around [his of M] [ChestDesc of M] and thunderous thighs. ";
 	if M is agent-deglassed, say "[big he of M] has lost [his of M] sunglasses, which has made [him of M] visibly furious with you[if diaper quest is 0]. [big he of M] has also raised [his of M] briefcase, revealing the bulge of [his of M] [LongDickDesc of M][end if].";
 	otherwise say "Reflective sunglasses hide [his of M] eyes[if diaper quest is 0], and a small briefcase hides [his of M] crotch[end if].".
 
@@ -301,8 +305,8 @@ To decide which figure-name is the examine-image of (C - second-agent-poster):
 	decide on Figure of agent camera cutscene 2.
 
 To compute title of (P - second-agent-poster):
-	if diaper quest is 0, now the title of P is "HYPNOTIZED COCKSLEEVE";
-	otherwise now the title of P is "HYPNOTIZED AND FILLED".
+	if diaper quest is 0, now the title of P is "HYPNOTISED COCKSLEEVE";
+	otherwise now the title of P is "HYPNOTISED AND FILLED".
 
 To say ShortDesc of (P - second-agent-poster):
 	say "A grainy photo of the [MediumDesc of agent] standing over you, and [if diaper quest is 0]plowing you[otherwise]filling you to the brim with giant enema syringes[end if] from behind. You're completely naked, your face blank and expressionless. ".
@@ -365,7 +369,7 @@ To compute next agent scene:
 		compute agent anal;
 		if the number of blank rows in the Table of Published Disgraces > 0:
 			choose a blank row in Table of Published Disgraces;
-			if diaper quest is 0, now the content entry is "a high quality video showing you, naked, on your hands and knees, as the [MediumDesc of agent] holds some kind of small silver device in front of your face. You have a blank expression and are staring at the device while [he of agent] gives you some instructions,  ";
+			if diaper quest is 0, now the content entry is "a high quality video showing you, naked, on your hands and knees, as the [MediumDesc of agent] holds some kind of small silver device in front of your face. You have a blank expression and are staring at the device while [he of agent] gives you some instructions, ";
 			otherwise now the content entry is "a high quality video showing you, naked, bent over, your belly full of a giant enema, as the [MediumDesc of agent] holds some kind of small silver device in front of your face. You have a blank expression and are staring at the device while [he of agent] gives you some instructions, ";
 			now the published entry is the substituted form of "is live on www.hypnoheaven.xxx";
 			now the severity entry is 2;
@@ -380,7 +384,7 @@ To compute next agent scene:
 		compute agent threesome;
 		if the number of blank rows in the Table of Published Disgraces > 0:
 			choose a blank row in Table of Published Disgraces;
-			now the content entry is "a high quality video showing you, naked, on your back, with [womanName] on [his of woman-player] hands and knees above you, as the [MediumDesc of agent] takes turns inserting [his of agent] huge [manly-penis] into [womanName][']s pussy, and then your mouth. [big he of agent] is holding some kind of small silver device in front of your and [womanName][']s faces. You have a blank expression, as if you have been hypnotized, ";
+			now the content entry is "a high quality video showing you, naked, on your back, with [womanName] on [his of woman-player] hands and knees above you, as the [MediumDesc of agent] takes turns inserting [his of agent] huge [manly-penis] into [womanName][']s pussy, and then your mouth. [big he of agent] is holding some kind of small silver device in front of your and [womanName][']s faces. You have a blank expression, as if you have been hypnotised, ";
 			now the published entry is the substituted form of "is live on www.hypnoheaven.xxx";
 			now the severity entry is 4;
 			now the popularity entry is 5;

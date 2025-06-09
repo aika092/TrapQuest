@@ -449,6 +449,8 @@ To Assfill (X - a number):
 		while X > 0:
 			increase the semen volume of belly by 1;
 			decrease X by 1;
+		now M is a random thing penetrating asshole;
+		if M is a thing, progress quest of anal-creampie-quest from M;
 		overflow.
 
 To Assfill (X - a number) with (L - semen):
@@ -651,7 +653,10 @@ To AssSquirt:
 			if BL is clothing, say ", shoots out of the leghole of your [BL]";
 		otherwise:
 			repeat with BL running through bottom level ass protection clothing:
-				if BL is possession:
+				if BL is portal-hotpants:
+					say ", presumably causing quite the surprising scene in the [location of pimp-pedestal-1],";
+					now ST is in the location of pimp-pedestal-1;
+				otherwise if BL is possession:
 					say ", passing seamlessly through your [BL]";
 				otherwise if BL is rippable and BL is crotch-intact:
 					say ", rips through your [BL]";
@@ -662,7 +667,7 @@ To AssSquirt:
 		say " and falls to the ground.";
 		resolve delayed imprints;
 		ruin asshole;
-		now ST is in the location of the player;
+		if ST is worn, now ST is in the location of the player;
 		dislodge ST;
 	[Now we set up an expulsion poster, if appropriate]
 	if (there is a camera trap in the location of the player or there is a camera-bystander in the location of the player) and there is an off-stage expulsion poster and the number of worn total protection diapers is 0:
@@ -1157,7 +1162,7 @@ To say apathetic enema declaration of (M - a monster) into (C - a clothing):
 	say "[one of]Oops, haha, that's pretty bad timing, but I can't stop it now.'[or]Awkward... No this isn't on purpose, I promise.'[or]I'm not enjoying the fact you're watching me, you know.'[in random order]".
 
 To say purposeful shameless enema declaration of (M - a monster) into (C - a clothing):
-	say "[one of]Please watch me soil my clothes!'[or]Don't look away! I want you to watch as I squirt it all into my clothes!'[or]Are you enjoying watching me defile my own clothes? Teehee...'[in random order]".
+	say "[one of]Please watch me soil my clothes!'[or]Don't look away! I want you to watch as I squirt it all into my clothes!'[or]Are you enjoying watching me defile my own clothes? Tee-hee...'[in random order]".
 
 To say shameless enema declaration of (M - a monster) into (C - a clothing):
 	say "[one of]It's all coming out! It's all coming out of my [asshole]!'[or]Omigod it's coming out! It's all coming out! Please watch my butt as I defile my clothes!'[in random order]".
@@ -1183,7 +1188,7 @@ To compute enema reactions:
 	repeat with M running through reactive people:
 		unless M is reacted-already:
 			if C is diaper:
-				if M is not diaperMessReacted:
+				if M is monster and M is not diaperMessReacted:
 					compute diaper mess reaction of M;
 					now M is diaperMessReacted;
 			otherwise if C is clothing:

@@ -272,7 +272,7 @@ would create an option entitled "Settings", which the player could select to vie
 
 If we do not want a given option to trigger a new submenu, we should leave it as "--".
 
-The "toggle" column contains the rule carried out when this option is chosen. In theory, this rule could be absolutely anything. In practise, the feature is mostly useful for giving the player a table of setting options which he can toggle on and off: for instance, we might provide the option "use verbose room descriptions", and then have the toggle rule change the game's internal settings about how room descriptions are displayed. (See the example attached for further guidance.)
+The "toggle" column contains the rule carried out when this option is chosen. In theory, this rule could be absolutely anything. In practice, the feature is mostly useful for giving the player a table of setting options which he can toggle on and off: for instance, we might provide the option "use verbose room descriptions", and then have the toggle rule change the game's internal settings about how room descriptions are displayed. (See the example attached for further guidance.)
 
 It is only useful for a given option to have one of these three features -- a description or a subtable or a toggle element. In the event that more than one column is filled out, the game will obey the toggle rule in preference to creating a submenu, and create a submenu in preference to displaying description text.
 

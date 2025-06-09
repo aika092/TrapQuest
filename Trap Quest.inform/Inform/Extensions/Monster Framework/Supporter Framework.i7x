@@ -392,7 +392,9 @@ Definition: a supporter is a groper: decide yes.
 The blind-status of a supporter is usually 0. [Can be changed to -1 to make them immune]
 
 To compute post climax effect of (M - a supporter) in (F - a fuckhole):
-	if M is male, compute M sleeping 200 after sex.
+	if M is male:
+		if F is asshole, check post climax anal urination of M;
+		compute M sleeping 200 after sex.
 
 [###SUPPORTERS WITH A PENIS ONLY###]
 

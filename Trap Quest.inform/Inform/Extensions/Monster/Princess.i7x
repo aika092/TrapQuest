@@ -363,7 +363,7 @@ To execute (T - talk-princess-question) for (M - a monster):
 	if there is a threatening monster in the location of the player: [She's not alone so she can't talk sincerely]
 		say "You see [him of M] notice you're not alone, and then [he of M] just squeaks and keeps [his of M] mouth shut.";
 	otherwise:
-		say "[speech style of M]'[if the question-sequence of M is 0]I'm Princess Annie! [big please] help me!'[otherwise if the question-sequence of M is 1]I conjured up this entire pocket dimension and the people inside it... but I was sloppy and got overpowered by my own creation! Now hurry up and get me out of here!'[otherwise if the question-sequence of M is 2]I'm going to get my revenge on that fucking [ShortDesc of headmistress] and [his of headmistress] pawns. [big he of headmistress][']ll wish [he of headmistress][']d never been created...'[otherwise if the question-sequence of M is 3]I'm going to need you to unlock this cell. For that, you'll need a magical skeleton key. My prison guard has one, but [he of prison guard] might need... [']persuading['] to part with it. I happen to know that [he of prison guard] loves digestive biscuits. I'm also going to need something to fight with. Any magical wand will do, but my royal scepter would be our best chance. For that you'll need to first find my tiara. It should present itself to anyone worthy who sits on my throne.'[otherwise][Azathot] above... is this really the best chance I have? I need you to help me escape!'[end if][roman type][line break]";
+		say "[speech style of M]'[if the question-sequence of M is 0]I'm Princess Annie! [big please] help me!'[otherwise if the question-sequence of M is 1]I conjured up this entire pocket dimension and the people inside it... but I was sloppy and got overpowered by my own creation! Now hurry up and get me out of here!'[otherwise if the question-sequence of M is 2]I'm going to get my revenge on that fucking [ShortDesc of headmistress] and [his of headmistress] pawns. [big he of headmistress][']ll wish [he of headmistress][']d never been created...'[otherwise if the question-sequence of M is 3]I'm going to need you to unlock this cell. For that, you'll need a magical skeleton key. My prison guard has one, but [he of prison guard] might need... [']persuading['] to part with it. I happen to know that [he of prison guard] loves digestive biscuits. I'm also going to need something to fight with. Any magical wand will do, but my royal sceptre would be our best chance. For that you'll need to first find my tiara. It should present itself to anyone worthy who sits on my throne.'[otherwise][Azathot] above... is this really the best chance I have? I need you to help me escape!'[end if][roman type][line break]";
 		increase the question-sequence of M by 1.
 
 To say WhereAnswer of (M - ex-princess):
@@ -546,7 +546,7 @@ To decide which number is the bartering value of (T - a thing) for (M - ex-princ
 	decide on 0.
 
 To say MonsterOfferAcceptFlav of (M - ex-princess) to (T - a vibe-wand):
-	say "[BigNameDesc of M][']s eyes go wide.[line break][speech style of M]'[if T is royal scepter]Yes... Yes! You found it! Huzzah! With this, the fight will be easy[otherwise if there is a vibe-wand carried by T]This is an unnecessary extra, but it might help. I'll take it[otherwise]Hmm, yes, I can use this, I think. With your help, this should serve[end if]. Now [if diaper quest is 1]go drop that in the diaper pail and then [end if]get me out of here. You did bring a key, didn't you?'[roman type][line break]".
+	say "[BigNameDesc of M][']s eyes go wide.[line break][speech style of M]'[if T is royal sceptre]Yes... Yes! You found it! Huzzah! With this, the fight will be easy[otherwise if there is a vibe-wand carried by T]This is an unnecessary extra, but it might help. I'll take it[otherwise]Hmm, yes, I can use this, I think. With your help, this should serve[end if]. Now [if diaper quest is 1]go drop that in the diaper pail and then [end if]get me out of here. You did bring a key, didn't you?'[roman type][line break]".
 
 To say MonsterOfferAcceptFlav of (M - ex-princess) to (T - skeleton key):
 	now the friendly boredom of M is 0;
@@ -571,7 +571,7 @@ To compute resolution of (M - ex-princess) taking (T - skeleton key):
 		destroy T;
 		now M is guarding;
 		now the princess-power of M is 14;
-		if M is carrying royal scepter, now the princess-power of M is 16;
+		if M is carrying royal sceptre, now the princess-power of M is 16;
 		now School35 is use-the-floor;
 		let LN be the list of alive undefeated staff members;
 		sort LN in random order;
@@ -600,7 +600,7 @@ To compute resolution of (M - ex-princess) taking (T - skeleton key):
 			now N is a random unleashed staff member in the location of M;
 			compute M enslaving N;
 			if STN > 1:
-				if royal scepter is carried by M:
+				if royal sceptre is carried by M:
 					repeat with STU running through staff members:
 						if STU is unleashed and (STU is sapphire-teacher or STU is not teacher), compute M enslaving STU;
 				otherwise:
@@ -657,7 +657,7 @@ An all later time based rule (this is the school rescue fight rule):
 							now the stance of the player is 0;
 							now the fatigue of the player is 0;
 							decrease the princess-power of M by 2;
-							if M is carrying royal scepter and the number of undefeated staff members in the location of M > 1 and the princess-power of M >= 10: [should be the first two times]
+							if M is carrying royal sceptre and the number of undefeated staff members in the location of M > 1 and the princess-power of M >= 10: [should be the first two times]
 								say "[speech style of M]'And fuck you.'[roman type][line break]";
 								compute M enslaving N;
 						otherwise:
@@ -737,7 +737,7 @@ To compute (M - ex-princess) enslaving (N - a monster):
 	if M is in the location of the player:
 		let W be a random vibe-wand carried by M;
 		if glittery-wand is carried by M, now W is glittery-wand;
-		if royal scepter is carried by M, now W is royal scepter;
+		if royal sceptre is carried by M, now W is royal sceptre;
 		say "[if W is not glittery-wand or W is not cursed][one of][BigNameDesc of M] spins [his of M] [ShortDesc of W] and then[or]Once again [NameDesc of M][stopping] blasts[otherwise][BigNameDesc of M] manages to pull the black vibrating wand away from [his of M] crotch for just long enough to hit[end if] [NameDesc of N] with a powerful wave of magical energy. [BigNameDesc of N] screeches in shock as [he of N] has [his of N] outfit transformed, [his of N] clothes becoming [if N is diaper-enslaved]babified[otherwise]ripped[end if] and items of bondage appearing on [his of N] person.";
 
 To compute (M - ex-princess) enslaving (N - headmistress):
@@ -745,7 +745,7 @@ To compute (M - ex-princess) enslaving (N - headmistress):
 	if M is in the location of the player:
 		let W be a random vibe-wand carried by M;
 		if glittery-wand is carried by M, now W is glittery-wand;
-		if royal scepter is carried by M, now W is royal scepter;
+		if royal sceptre is carried by M, now W is royal sceptre;
 		if M is in the location of the player:
 			if the health of N > 0 and N is unleashed:
 				say "[one of][BigNameDesc of N] notices you and [NameDesc of M] and a look of horror and disbelief crosses [his of N] face.[line break][speech style of N]'No, it can't be! I won't let you!'[roman type][line break][or][stopping]";
@@ -758,7 +758,7 @@ To compute (M - ex-princess) enslaving (N - headmistress):
 					say "[BigNameDesc of N] throws a magic cloud of shadow towards [NameDesc of M], but [he of M] sees it coming in time and moves to deflect it with [his of M] [ShortDesc of W].[line break][speech style of M]'Too easy!'[roman type][line break][BigNameDesc of M] smiles proudly as [he of M] strikes the shadow with the wand... Or does [he of M]? Just as [he of M] makes [his of M] move, the wand vanishes from [his of M] hand![line break][speech style of M]'Wait WHAT? You gave me a wand of IMPERMANENCE?! YOU IDIOT! NOOOO!'[roman type][line break]That's all [NameDesc of M] has time to say before the shadow wraps itself around the [ShortDesc of W], and a new cursed wand appears in [his of M] hand.[line break][speech style of N]'Here you go, a brand new wand, of my own creation, just for you!'[roman type][line break][BigNameDesc of M] shakes [his of M] hand, trying to drop the black wand, but is unable to. You watch with [horror the sex addiction of the player] as clearly against [his of M] will, [his of M] hand pushes the head of the vibrator towards [his of M] clitoris. There's nothing either of you can do to stop it as [he of M] begins to use the wand to masturbate rather than fight. It looks like you'll have to finish this fight all on your own...";
 				otherwise if W is not glittery-wand or (a random number between 1 and 2 is 1 and W is not cursed):
 					say "[BigNameDesc of N] tries to throw [one of]a[or]another[stopping] magic cloud of shadow towards [NameDesc of M], but [he of M] [one of]sees it coming in time and defects[or]manages to continue to find the strength to[stopping] it with [his of M] [ShortDesc of W], sending it hurtling ";
-					if W is royal scepter:
+					if W is royal sceptre:
 						say "back to its caster. [BigNameDesc of N] screams as [he of N] is engulfed in the darkness, and when it clears, [he of N] looks rather different.";
 					otherwise:
 						if the princess-power of M > 9:
@@ -934,7 +934,7 @@ An all time based rule (this is the caged princess tortured rule):
 Definition: ex-princess (called M) is uniquely distracted:
 	if M is unconcerned and headmistress is in the location of M and M is in the location of the player and the teaseTimer of headmistress <= 0:
 		let E be a random vibe-wand held by M;
-		if E is nothing, now E is royal scepter;
+		if E is nothing, now E is royal sceptre;
 		say "[speech style of M]'[one of]I'm going to pay you back for every single time you forced me to cum, bitch[or]Found you again[stopping]!'[roman type][line break]Suddenly, [NameDesc of M] steps behind [NameDesc of headmistress] and pushes the head of [his of M] [ShortDesc of E] up against [NameDesc of headmistress][']s snatch.[line break][speech style of headmistress]'Oh Lo!'[roman type][line break][BigNameDesc of headmistress] groans, trying to keep [his of headmistress] tongue out of [his of headmistress] mouth as the powerful magical artefact between [his of headmistress] legs begins to vibrate, sending incomparably powerful vibrations directly into [his of headmistress] delicate sex.[line break][speech style of M]'[one of]Cum for me, slave[or]Come on slut, I know you've got another one in you[stopping].'[roman type][line break][BigNameDesc of M] teases [him of headmistress].[paragraph break][speech style of headmistress]'GGGGAAAAH!'[roman type][line break][BigNameDesc of headmistress] yells as [he of headmistress] cums, [his of headmistress] knees buckling as the sensations overwhelm [him of headmistress]. [big he of headmistress] ends up face down on the floor, shuddering in pleasure, still holding [his of headmistress] tongue out of [his of headmistress] mouth to avoid being shocked, which means that [he of headmistress][']s effectively licking the dirty floor.[line break][speech style of M]'[one of]Pathetic[or]And remember, if you lose count of how many times I've done this, we start again from zero[in random order].'[roman type][line break]You can't help but find the sight of this very arousing.";
 		Arouse 2000;
 		now the teaseTimer of headmistress is 50;
@@ -947,7 +947,7 @@ Definition: ex-princess (called M) is uniquely distracted:
 				now golden-phallus is cursed;
 		otherwise: [it's worn]
 			if shopkeeper is undefeated and shopkeeper is awake and M is in the location of shopkeeper and M is in the location of the player:
-				say "[BigNameDesc of M] suddenly drops to [his of M] knees in front of [NameDesc of shopkeeper].[line break][speech style of M]'You bastard... You win. I've rescinded the new tax law. Now PLEASE let me remove this infernal thing!'[roman type][line break][BigNameDesc of shopkeeper] smirks.[line break][speech style of shopkeeper]'My my my, I'm sure I don't have any clue what you're talking about. I'm so glad to hear that you've seen reason though. And also, for completely no reason, I'm just going to say the words [']GOLDEN BITCH!['] out loud.'[roman type][line break][BigNameDesc of M] makes a panicked whining sound, and then squats and pulls [his of M] [if diaper lover > 0]diaper[otherwise]panties[end if] to one side. The [golden-phallus] you had brought to [him of M] comes sliding out of [his of M] asshole, except now it's three or four times as thick - you can't believe that thing was inside [him of M] - it's almost as thick as your leg!!![line break][speech style of shopkeeper]'Oh you put it in your asshole? You poor thing.'[roman type][line break][BigNameDesc of shopkeeper] remarks, but [he of shopkeeper] sounds more amused than remorseful. [big he of shopkeeper] bends down and picks [NameDesc of golden-phallus] up.[line break][speech style of shopkeeper]'I'm sorry, this must have been a faulty model. I'll be sure to return it to the sender, and inform them that your experience was less than satisfactory. And that they no longer have to concern themselves with import duty.'[roman type][line break][BigNameDesc of shopkeeper] says mockingly.[paragraph break]And then [NameDesc of shopkeeper] sighs, and offers the squatting, panting [NameDesc of M] [his of shopkeeper] hand.[line break][speech style of shopkeeper]'No hard feelings?'[roman type][line break][BigNameDesc of M] reluctantly accepts [his of shopkeeper] hand, and allows [him of shopkeeper] to pull [him of M] to [his of M] feet.[line break][speech style of M]'Ask me again when my asshole has closed back up properly.'[roman type][line break][BigNameDesc of M] grumbles.";
+				say "[BigNameDesc of M] suddenly drops to [his of M] knees in front of [NameDesc of shopkeeper].[line break][speech style of M]'You bastard... You win. I've rescinded the new tax law. Now [caps please] let me remove this infernal thing!'[roman type][line break][BigNameDesc of shopkeeper] smirks.[line break][speech style of shopkeeper]'My my my, I'm sure I don't have any clue what you're talking about. I'm so glad to hear that you've seen reason though. And also, for completely no reason, I'm just going to say the words [']GOLDEN BITCH!['] out loud.'[roman type][line break][BigNameDesc of M] makes a panicked whining sound, and then squats and pulls [his of M] [if diaper lover > 0]diaper[otherwise]panties[end if] to one side. The [golden-phallus] you had brought to [him of M] comes sliding out of [his of M] asshole, except now it's three or four times as thick - you can't believe that thing was inside [him of M] - it's almost as thick as your leg!!![line break][speech style of shopkeeper]'Oh you put it in your asshole? You poor thing.'[roman type][line break][BigNameDesc of shopkeeper] remarks, but [he of shopkeeper] sounds more amused than remorseful. [big he of shopkeeper] bends down and picks [NameDesc of golden-phallus] up.[line break][speech style of shopkeeper]'I'm sorry, this must have been a faulty model. I'll be sure to return it to the sender, and inform them that your experience was less than satisfactory. And that they no longer have to concern themselves with import duty.'[roman type][line break][BigNameDesc of shopkeeper] says mockingly.[paragraph break]And then [NameDesc of shopkeeper] sighs, and offers the squatting, panting [NameDesc of M] [his of shopkeeper] hand.[line break][speech style of shopkeeper]'No hard feelings?'[roman type][line break][BigNameDesc of M] reluctantly accepts [his of shopkeeper] hand, and allows [him of shopkeeper] to pull [him of M] to [his of M] feet.[line break][speech style of M]'Ask me again when my asshole has closed back up properly.'[roman type][line break][BigNameDesc of M] grumbles.";
 				cutshow Figure of princess cutscene 1 for M;
 				now golden-phallus is carried by shopkeeper;
 				now golden-phallus is bland;

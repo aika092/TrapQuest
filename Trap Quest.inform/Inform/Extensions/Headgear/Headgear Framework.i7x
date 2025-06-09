@@ -36,7 +36,7 @@ To compute persistent reward of (Q - a headgear-clothing-quest) on (C - a clothi
 		compute generic class reward of Q on C.
 
 To compute generic first time class reward of (Q - a clothing-quest) on (C - a clothing):
-	let D be a random off-stage ring;
+	let D be a random off-stage plentiful ring;
 	if D is ring:
 		now D is pink diamond;
 		set shortcut of D;
@@ -67,7 +67,7 @@ To compute generic class reward of (Q - a headgear-clothing-quest) on (C - a clo
 	otherwise:
 		say "shrinking the length of your hair!";
 		HairDown 1;
-	let D be a random off-stage ring;
+	let D be a random off-stage plentiful ring;
 	if D is ring:
 		now D is emerald;
 		set shortcut of D;

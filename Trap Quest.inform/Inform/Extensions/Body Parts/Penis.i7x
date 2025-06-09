@@ -7,8 +7,7 @@ To say FullExamineDesc of (B - penis):
 	say "[if the player is possessing a penis][ImageDesc of penis][TotalDesc of penis][PenisModesty][otherwise if the player is not possessing a vagina][TotalDesc of penis][otherwise]You don't have a penis.[end if]". [The use of TPD when they have no penis and no vagina catches the doll-like mound case handled by TPD at size 0]
 
 Understand "prick", "willy", "pecker", "clitty", "noodle", "dickie", "winky", "weeny", "cock", "dick", "bellend", "dong", "johnson", "wang", "weiner" as penis.
-Understand "crotch", "groin" as vagina when the player is possessing a vagina.
-Understand "crotch", "groin" as penis when the player is not possessing a vagina.
+Understand "crotch", "groin" as penis when the player is solely possessing a penis.
 
 penis has a number called size. penis has a number called previous visible size.
 
@@ -108,6 +107,10 @@ Definition: yourself is really possessing a penis:
 	if the real size of penis > 0, decide yes;
 	decide no.
 
+Definition: yourself is solely really possessing a penis:
+	if the player is really possessing a penis and the player is not really possessing a vagina, decide yes;
+	decide no.
+
 Section 1 - Exposure
 
 [!<PenisIsLewdlyExposed>+
@@ -191,7 +194,7 @@ Definition: a clothing (called C) is potentially at least partially penis concea
 		otherwise:
 			if the penis-capacity of C > 1, decide yes; [if the skirt is long enough, it protects you at least a bit]
 	otherwise if C is not-see-through potentially pussy covering clothing:
-		if the effective size of penis <= (the penis-capacity of C * 3) / 2, decide yes;
+		if the effective size of penis <= (the penis-capacity of C * 2) / 3, decide yes;
 	decide no.
 
 [!<DecideWhichObjectIsTheConcealerOfPenis>+
@@ -494,6 +497,13 @@ To say SexShaft:
 		say ShaftDesc of S;
 	otherwise:
 		say "shaft".
+
+To say SexTip:
+	let S be a random worn strapon-panties;
+	if S is clothing:
+		say TipFlavour of S;
+	otherwise:
+		say "[one of]cockhead[or]tip[or]bellend[or]dicktip[in random order]".
 
 To say TotalDesc of penis:
 	if the player is possessing a penis:

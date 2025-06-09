@@ -54,6 +54,7 @@ Definition: yourself is trap stuck: [A player who is trap stuck will not be fuck
 	if there is a stash grabbing the player, decide yes;
 	if gloryhole is penetrating a body part or gloryhole is grabbing the player, decide yes;
 	if robo vacuum cleaner is penetrating a fuckhole, decide yes;
+	if facial-room-machine is grabbing the player, decide yes;
 	decide no.
 
 [!<YourselfIsPoleStuck>+

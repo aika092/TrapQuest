@@ -53,7 +53,7 @@ A time based rule (this is the slimy portal rule):
 		if the charge of slimy-portal <= 0 and slimy-portal is in the location of the player, say "A new item appears in the middle of [NameDesc of slimy-portal]!".
 
 
-slimy-portal-creature is a monster. slimy-portal-creature is neuter. slimy-portal-creature is guarding. The poison-status of slimy-portal-creature is -1. The  blind-status of slimy-portal-creature is -1.
+slimy-portal-creature is a monster. slimy-portal-creature is neuter. slimy-portal-creature is guarding. The poison-status of slimy-portal-creature is -1. The blind-status of slimy-portal-creature is -1.
 slimy-portal-creature has a direction called latest-direction.
 slimy-portal-creature has a number called fucker-timer.
 slimy-portal-creature has a number called fucker-count.
@@ -102,7 +102,9 @@ To set up (M - slimy-portal-creature):
 To decide which number is the starting difficulty of (M - slimy-portal-creature):
 	decide on 14.
 
-Definition: slimy-portal-creature is objectifying the player: decide yes.
+Definition: slimy-portal-creature (called M) is objectifying the player:
+	now the objectification of M is 1;
+	decide yes.
 Definition: slimy-portal-creature is scarable: decide no.
 Definition: slimy-portal-creature is a urinater: decide no.
 
@@ -217,7 +219,7 @@ This is the slimy-portal-creature wallification rule:
 	now the fucker-timer of slimy-portal-creature is a random number between 7 and 30;
 	now the fucker-count of slimy-portal-creature is 0;
 	now slimy-portal-creature is grabbing the player;
-	maybe-map-display the monster-image of slimy-portal-creature;
+	maybe-map-display the unfriendly-monster-image of slimy-portal-creature;
 	now the stance of the player is 1.
 
 This is the slimy-portal-creature wallification prevents hand use rule:
@@ -237,7 +239,7 @@ To compute unique early action of (M - slimy-portal-creature):
 					summon P cursed with quest;
 				otherwise if the fucker-count of M is 0 and M is able to use a diaper urinal:
 					increase the fucker-count of M by 1;
-					let X be a random ultimate-lesson-actor;
+					let X be a random unseen-stranger;
 					say "You hear a dominant-sounding voice from the other side of [NameDesc of M]![line break][speech style of X]'[one of]Well well well, look what we have here. Some silly baby's gone and got [himself of the player] caught by the slime wall[or]Ooh, the slime wall has got a new catch[stopping]. Well, as I'm here, and there's this very convenient padding right here for me to use...'[roman type][line break]";
 					now diaper-invasion-waistband is false;
 					now diaper-invasion-hold is false;
@@ -287,12 +289,12 @@ To compute unique early action of (M - slimy-portal-creature):
 					now the fucker-timer of slimy-portal-creature is a random number between 7 and 36;
 					if a random number between 1 and 2 is 1 or there is a monster penetrating face:
 						increase the fucker-count of slimy-portal-creature by 1;
-						let X be a random off-stage ultimate-lesson-actor;
+						let X be a random off-stage unseen-stranger;
 						set up X;
 						now X is in the location of the player;
 						interest X;
 						anger X;
-						let Y be a random off-stage ultimate-lesson-actor;
+						let Y be a random off-stage unseen-stranger;
 						say "You hear [if Y is a monster]two dominant-sounding voices[otherwise]a dominant-sounding voice[end if] from the other side of [NameDesc of M]![line break][speech style of X]'[one of]Well well well, look what we have here. Some silly slut's gone and got [himself of the player] caught by the slime wall[or]Ooh, the slime wall has got a new catch[stopping].'[roman type][line break]";
 						if the player is possessing a vagina and chastity-belt is not worn:
 							set up Y;
@@ -372,7 +374,7 @@ To compute unique early action of (M - slimy-portal-creature):
 							ruin vagina;
 					otherwise if face is not actually occupied:
 						increase the fucker-count of slimy-portal-creature by 1;
-						let X be a random off-stage ultimate-lesson-actor;
+						let X be a random off-stage unseen-stranger;
 						set up X;
 						now X is in the location of the player;
 						interest X;

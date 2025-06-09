@@ -2,6 +2,10 @@ Tube Top by Dresses begins here.
 
 A tube top is a kind of overdress. The skirt-length of A tube top is 0. A tube top is usually belly exposing. A tube top is usually bottom-exclusive. A tube top is usually erect-nipple-exposing. A tube top is optional-top-displacable. A tube top is usually high cut. [Tube tops are always displacable, but vary in degree based on breast size. This is here as a safe measure.]
 
+Definition: a tube top is same-type:
+	if theme-share-target is tube top or theme-share-target is crop top, decide yes;
+	decide no.
+
 To compute SelfExamineDesc of (C - a tube top):
 	say "A [ShortDesc of C] tightly fits over your chest. ".
 
@@ -209,7 +213,7 @@ To say TransformReaction of (C - a yellow exposing tube top):
 	otherwise if C is almost too much:
 		say "[variable custom style]This is pretty extreme! But also kind of thrilling to be wearing such a naughty top...[roman type][line break]";
 	otherwise if the humiliation of the player < 40000:
-		say "[variable custom style]Teehee, this game knows exactly what sort of thing I'd love to wear! This way, everyone knows I don't mind them checking out my [if the largeness of breasts > 2]tits[otherwise]nipples[end if]![roman type][line break]".
+		say "[variable custom style]Tee-hee, this game knows exactly what sort of thing I'd love to wear! This way, everyone knows I don't mind them checking out my [if the largeness of breasts > 2]tits[otherwise]nipples[end if]![roman type][line break]".
 
 Part 8 - Jacket
 

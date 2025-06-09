@@ -545,7 +545,7 @@ An element display rule for a sprite (called the current-sprite) (this is the sp
 
 Section - Centring algorithm for sprites
 
-[When you create a new class of g-element, it is good practise to define a centring phrase that will be able to find the centre point, in canvas coordinates, of any object of that class. This should not use the win-x/win-y properties, or any other property that is set by the element scaling rules. For this reason, the algorithm should assume that the origin is the upper-left hand corner (centre and right alignment are calculated by the element scaling rules).]
+[When you create a new class of g-element, it is good practice to define a centring phrase that will be able to find the centre point, in canvas coordinates, of any object of that class. This should not use the win-x/win-y properties, or any other property that is set by the element scaling rules. For this reason, the algorithm should assume that the origin is the upper-left hand corner (centre and right alignment are calculated by the element scaling rules).]
 
 To decide what list of numbers is the centre-point of (current-sprite - a sprite):
 	let dx be a number;
@@ -1985,7 +1985,7 @@ First, we can specify our own scaling factor for the window, the "arbitrary scal
 
 A ratio of 1.0000 will present the canvas without scaling it, so that one pixel onscreen will be equivalent to one coordinate unit of the canvas. The canvas may or may not fit within the window as the player has sized it, but it will still be centred within the window.
 
-Second, a graphics window has an origin coordinate, similar to that of elements. Normally, the origin is {0, 0}, which means that the upper left corner of the canvas will be displayed in the upper left corner of the window. (In practise, this placement is usually modified by an offset that centres the canvas within the window, so that the canvas is actually displayed at the origin of the window plus the x and y, or top and left, offsets.) If we change the origin of the window, then the canvas will be framed differently. Setting the window's origin to {100, 100}, for example, will place the upper left corner of the window at canvas coordinates {100, 100}. Again, this does not account for the offsets, which we may prefer to suppress. Here is one way to suppress the calculation of offsets:
+Second, a graphics window has an origin coordinate, similar to that of elements. Normally, the origin is {0, 0}, which means that the upper left corner of the canvas will be displayed in the upper left corner of the window. (In practice, this placement is usually modified by an offset that centres the canvas within the window, so that the canvas is actually displayed at the origin of the window plus the x and y, or top and left, offsets.) If we change the origin of the window, then the canvas will be framed differently. Setting the window's origin to {100, 100}, for example, will place the upper left corner of the window at canvas coordinates {100, 100}. Again, this does not account for the offsets, which we may prefer to suppress. Here is one way to suppress the calculation of offsets:
 
 	For offset calculation of the graphics-window:
 		change x-offset of the graphics-window to 0;

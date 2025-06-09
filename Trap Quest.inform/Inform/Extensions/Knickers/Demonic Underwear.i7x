@@ -72,7 +72,8 @@ To say CodLoosenFlav of (K - demon codpiece):
 	say "The [printed name of demon codpiece] loosens, and the [PenisFlavour of demon codpiece] transforms back into a gemstone.[line break]";
 
 Definition: demon codpiece is dildo-usage:
-	if the player is not possessing a penis and futanari fetish is 0, decide yes;
+	if the player is not possessing a penis:
+		if the player is possessing a vagina and futanari fetish is 0, decide yes;
 	decide no.
 
 To say PenisFlavour of (K - demon codpiece):

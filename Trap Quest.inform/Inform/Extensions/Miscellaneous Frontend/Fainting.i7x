@@ -197,7 +197,8 @@ Maybe an NPC wants to take away the player's best jewel.
 +!]
 To decide which object is the biggest held jewel:
 	let N be 0;
-	let bigJ be nothing;
+	let bigJ be a random worn humility-stone;
+	unless bigJ is nothing, now N is the price of bigJ;
 	repeat with J running through held plentiful accessories:
 		if the price of J > N:
 			now N is the price of J;
@@ -633,6 +634,9 @@ To say FaintingFlav (N - 23):
 
 To say FaintingFlav (N - 24):
 	say "'Next time, you should leave the room as soon as [he of minotaur] starts swinging the cage around. Honestly, MOST players slutty enough to act like you are already too voluptuous to get dragged in.'".
+
+To say FaintingFlav (N - 25):
+	say "'Sorry we had to do that, but we can't let you top us unless you assemble the humility stones. [if the number of challenged humility-stones > 0]You only need half, but it's best to get them all, hint hint.'[otherwise]There's one in each region, so keep an eye out.'[end if]".
 
 To say FaintingFlav (N - 50):
 	say "'It was all getting a bit much for you, was it? No need to feel ashamed, it happens to the best of us. Have as much time as you need to rest up and recover.'".

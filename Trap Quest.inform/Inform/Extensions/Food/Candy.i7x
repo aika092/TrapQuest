@@ -312,6 +312,10 @@ Carry out TQeating chocolate bar:
 		otherwise:
 			StomachFoodUp 5;
 		say "you feel a rumbling in your stomach and whimper as you feel the recent food you ate expand and double in bulk. Your belly swells to contain the huge load!";
+	otherwise if chocolate vest top is off-stage and chocolate vest top is fetish appropriate and chocolate vest top is actually summonable:
+		say "you yelp in surprise as a red vest top that reads 'BBC only' above a chocolate bar appears on your torso!";
+		summon chocolate vest top cursed with quest;
+		now the raw-magic-modifier of chocolate vest top is a random number between -4 and -1;
 	otherwise:
 		let LB be a list of body parts;
 		if the semen volume of belly > 0:

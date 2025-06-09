@@ -399,6 +399,7 @@ A time based rule (this is the dressup rule):
 				if the player is possessing a vagina and vagina is not actually occupied, add vagina to LB;
 				if the player is possessing a penis, add penis to LB;
 			if H is breast covering and H is top-placed, add breasts to LB;
+			if H is thigh covering or H is ankle covering, add thighs to LB;
 			if the number of entries in LB > 0:
 				let R be a random number between 1 and the number of entries in LB;
 				let F be entry 1 in LB;
@@ -415,6 +416,9 @@ A time based rule (this is the dressup rule):
 				otherwise if F is breasts:
 					say "[bold type]You yelp [one of]in surprise[or][one of]in dismay[or]with indignation[cycling][stopping] as you feel two hands groping at your [BreastDesc]. Looking down, you see that your chest is being squeezed by your own [ShortDesc of H]! [roman type]Two subtle handprints can be seen within the [clothing-material of H] material itself, first kneading your flesh, and then focusing in to roll and pinch your nipples. There's nothing you can do but endure it as your possessed garment turns your body into its personal plaything.";
 					stimulate breasts from H;
+				otherwise if F is thighs:
+					say "[bold type]You yelp [one of]in surprise[or][one of]in dismay[or]with indignation[cycling][stopping] as you feel two hands groping at your feet. Looking down, you see that your chest is being squeezed by your own [ShortDesc of H]! [roman type]Two subtle handprints can be seen within the [clothing-material of H] material itself, first kneading your soles, and then focusing in to tickle and prod between your toes. There's nothing you can do but endure it as your possessed garment turns your body into its personal plaything.";
+					stimulate thighs from H;
 			otherwise if H is equippable:
 				let R be a random number between 1 and 2;
 				let P be vagina;

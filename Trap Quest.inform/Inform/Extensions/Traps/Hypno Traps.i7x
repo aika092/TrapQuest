@@ -2,8 +2,15 @@ Hypno Traps by Traps begins here.
 
 A hypno trap is a kind of trap. cocksucker hypno trap is a hypno trap. fucktoy hypno trap is a hypno trap. BBC hypno trap is a hypno trap. milk-hypno-trap is a hypno trap. piss-hypno-trap is a hypno trap. diaper-hypno-trap is a hypno trap. A hypno trap is potentially wire. A hypno trap is potentially sticky. A hypno trap is potentially click. Understand "screen" as hypno trap. The printed name of a hypno trap is "hypno screen".
 
+This is the spawn initial dungeon hypno trap rule:
+	if the player is an april 2025 top donator:
+		let T be a random off-stage fetish appropriate hypno trap;
+		let R be a random trappable placed labyrinth room;
+		deploy T in R.
+The spawn initial dungeon hypno trap rule is listed first in the set up dungeon traps rules.
+
 This is the spawn initial hotel hypno traps rule:
-	repeat with T running through fetish appropriate hypno traps:
+	repeat with T running through off-stage fetish appropriate hypno traps:
 		let R be a random trappable placed modern room;
 		let X be 0;
 		while there is a hypno trap in R and X < 50:
@@ -44,7 +51,7 @@ To say ShortDesc of (T - a hypno trap):
 To trigger (Y - a hypno trap):
 	now Y is revealed;
 	now Y is not untriggered;
-	say "A section of the wall in front of you slides away, and behind it is a large screen. On the screen is [hypno content of Y].";
+	say "A section of the wall in front of you slides away, and behind it is a magic crystal display. Suddenly, the crystal starts playing [hypno content of Y] as if it was a giant TV screen!";
 	now the reset-timer of Y is 250.
 
 To compute turn trap effect of (T - a hypno trap):

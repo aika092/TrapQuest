@@ -70,7 +70,7 @@ Talking is an action applying to one thing.
 
 Check talking:
 	if the noun is the player, say "Talking to oneself is the first sign of madness." instead;
-	if the player is in a predicament room, say "You should [if the noun is ultimate-lesson-actor]knock on the wall first.[otherwise]focus on the task at hand![end if]" instead;
+	if the player is in a predicament room, say "You should [if the noun is unseen-stranger]knock on the wall first.[otherwise]focus on the task at hand![end if]" instead;
 	if the noun is a monster:
 		if the player is flying and playerRegion is Woods, say "You are too high up, they can't hear you." instead;
 		if the noun is asleep, say SleepTalkFail of the noun instead;

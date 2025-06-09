@@ -69,6 +69,19 @@ To decide which figure-name is the examine-image of (C - dominatrix-cage):
 
 Figure of DungeonScenery01 is the file "Env/Dungeon/statue2.jpg".
 
+Figure of Elevator Face Machine Panties Vibe is the file "Special/Cutscene/cutscene-elevator-facial3b.jpg".
+Figure of Elevator Face Machine Panties Spank is the file "Special/Cutscene/cutscene-elevator-facial3e.jpg".
+Figure of Elevator Face Machine Panties Spank Vibe Messy is the file "Special/Cutscene/cutscene-elevator-facial3f.jpg".
+
+Figure of Elevator Face Machine Diaper Vibe is the file "Special/Cutscene/cutscene-elevator-facial4i.jpg".
+Figure of Elevator Face Machine Diaper Vibe Wet is the file "Special/Cutscene/cutscene-elevator-facial4j.jpg".
+[Figure of Elevator Face Machine Diaper Vibe Messy is the file "Special/Cutscene/cutscene-elevator-facial4k.jpg".]
+Figure of Elevator Face Machine Diaper Spank is the file "Special/Cutscene/cutscene-elevator-facial4g.jpg".
+Figure of Elevator Face Machine Diaper Spank Wet is the file "Special/Cutscene/cutscene-elevator-facial4h.jpg".
+Figure of Elevator Face Machine Diaper Spank Vibe is the file "Special/Cutscene/cutscene-elevator-facial4f.jpg".
+Figure of Elevator Face Machine Diaper Spank Vibe Wet is the file "Special/Cutscene/cutscene-elevator-facial4d.jpg".
+Figure of Elevator Face Machine Diaper Spank Vibe Messy is the file "Special/Cutscene/cutscene-elevator-facial4e.jpg".
+
 Figure of enema tag 1 is the file "Special/Cutscene/cutscene-enema-tag-1b.jpg".
 Figure of enema tag 1 finish line is the file "Special/Cutscene/cutscene-enema-tag-1d.jpg".
 Figure of enema tag 2 is the file "Special/Cutscene/cutscene-enema-tag-2b.jpg".
@@ -77,6 +90,7 @@ Figure of enema tag 3 is the file "Special/Cutscene/cutscene-enema-tag-3b.jpg".
 Figure of enema tag 3 finish line is the file "Special/Cutscene/cutscene-enema-tag-3d.jpg".
 
 Figure of Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator1a.jpg".
+Figure of Defeated Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator6.jpg".
 
 Figure of ghost 5 is the file "NPCs/Mansion/Ghost/ghost5.png".
 Figure of ghost 6 is the file "NPCs/Mansion/Ghost/ghost6.png".
@@ -122,6 +136,8 @@ Figure of Mimic Cutscene 4 is the file "Special/Cutscene/cutscene-mimic4.jpg".
 Figure of Mirror Cutscene 1 is the file "Special/Cutscene/cutscene-mirror1.jpg".
 Figure of Mirror Cutscene 2 is the file "Special/Cutscene/cutscene-mirror2.jpg".
 Figure of Mirror Cutscene 3 is the file "Special/Cutscene/cutscene-mirror3.jpg".
+
+Figure of defeated neuromancer is the file "NPCs/Mansion/Neuromancer/neuromancer3.jpg".
 
 Figure of nintendolls gameshow 4 is the file "Special/Epilogue/epilogue-nintendolls-gameshow4b.jpg".
 

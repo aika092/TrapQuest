@@ -348,7 +348,7 @@ To teleport via (W - a warp portal):
 	if playerRegion is not school, compute clothing cleanup. [otherwise extra credit zone causes jewellery to get cleaned up]
 
 To maybe execute (P - a predicament):
-	if cheatsdisabled:
+	if cheatsenabled:
 		say "Cheating mode enabled - you can skip your least favourite Extra Credit Zone predicaments if you want. The predicament chosen is known as [bold type]['][P]['].[roman type][line break]";
 		reset multiple choice questions;
 		set numerical response 1 to "Play this predicament as normal.";
@@ -358,6 +358,7 @@ To maybe execute (P - a predicament):
 			execute P;
 		otherwise:
 			now the player is in Predicament20;
+			compute predicament conclusion;
 	otherwise:
 		execute P.
 

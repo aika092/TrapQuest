@@ -65,7 +65,7 @@ To say QuestTitle of (Q - ritual-quest):
 
 To compute persistent reward of (Q - ritual-quest) on (C - a clothing):
 	if ritual-only-once of Q is 0:
-		let D be a random off-stage ring;
+		let D be a random off-stage plentiful ring;
 		if D is ring:
 			now D is solid gold;
 			set shortcut of D;

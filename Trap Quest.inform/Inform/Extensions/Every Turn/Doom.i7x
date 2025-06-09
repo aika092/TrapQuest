@@ -142,7 +142,7 @@ A later time based rule (this is the compute doom rule):
 		let CT be a random held candle themed thing;
 		if doomed < 5 and the location of the player is Mansion23 and the player is not in danger:
 			if doom notes is held and BLT is a thing and BT is a thing and CT is a thing:
-				if there is undefeated unfriendly monster in the location of the player or there is an undefeated acolyte in the location of the player:
+				if there is undefeated awake unfriendly monster in the location of the player or there is an undefeated awake acolyte in the location of the player:
 					let L be the list of undefeated monsters in the location of the player;
 					repeat with M running through undefeated friendly monsters in the location of the player:
 						if M is not acolyte and M is not deep one, remove M from L;
@@ -262,7 +262,7 @@ A later time based rule (this is the compute doom rule):
 				otherwise:
 					say "[bold type]The world begins to shake and pink lightning crackles over every surface! You desperately try to avoid them, but you feel the energy wash over you before the effect settles down. Even still, there is a strange pink energy hanging in the air. One thing is certain: You have failed.[roman type][line break]";
 			resolve doom;
-		otherwise if a random number between 1 and ((40 + (10 * MA)) * slower timers) is 1:
+		otherwise if the player is not in a nonstandard room and a random number between 1 and ((40 + (10 * MA)) * slower timers) is 1:
 			if debuginfo > 1:
 				update new acolytes;
 				say "[input-style]ATTEMPTING TO SPAWN A NEW RITUAL CULTIST (new acolytes list is: [new-acolytes]).[roman type][line break]";
@@ -319,6 +319,7 @@ To resolve doom:
 	if diaper quest is 0, compute chosen birth;
 	now herald is in Mansion23;
 	if diaper quest is 0, now neuromancer is sex-enslaved;
+	otherwise now neuromancer is diaper-enslaved;
 	deploy a wisp;
 	deploy a wisp;
 	deploy a wisp;

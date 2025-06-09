@@ -30,7 +30,7 @@ Check entering podium:
 		say "As you stand there, a vision of a crowd of strip club patrons clanking tankards and cheering at you fills your mind. Loud music starts playing, and you gyrate your hips to the beat in front of them. You step out of your [MediumDesc of stripper-fishnet-dress] and throw it into the crowd, which gets you whoops of joy from the [men of male-m] watching you from below.[paragraph break]And then the scene fades, and you are left without a crowd, and without your dress. But you do notice, scattered around you, a few cheap rings.";
 		only destroy stripper-fishnet-dress;
 		repeat with N running from 1 to 3:
-			let J be a random off-stage ring;
+			let J be a random off-stage plentiful ring;
 			if J is ring:
 				now J is in the location of the player;
 				now J is sapphire;
@@ -75,7 +75,7 @@ Check entering podium:
 			now the ceremony of betrothal-quest is true;
 		otherwise:
 			say "You want to have a wedding ceremony but you realise you can't do that without a wedding dress[if the number of carried bridal dress is 0]! Perhaps there is a [bold type]magic wardrobe[roman type] somewhere that would enable you to reclaim your wedding outfit[end if].";
-	otherwise if diaper quest is 0 and floral bridal veil is off-stage and floral bridal veil is actually summonable and (the player is possessing a vagina and the vaginalvirgin of the player is 1) or the player is ready for event tg:
+	otherwise if diaper quest is 0 and floral bridal veil is off-stage and floral bridal veil is actually summonable and ((the player is possessing a vagina and the vaginalvirgin of the player is 1) or (the player is an april 2025 top donator and the player is not possessing a vagina and the analvirgin of the player is 1) or the player is ready for common event tg):
 		say "You find yourself dreaming of a wedding ceremony. You are the bride, holding a bouquet of flowers, as some noble [man of male-m] dedicates [his of male-m] life to you in front of the world.[line break][variable custom style]That wouldn't be so bad.[roman type][line break]As if reacting to your thoughts, a [MediumDesc of floral bridal veil] appears on your head!";
 		summon floral bridal veil cursed;
 		progress quest of podium-quest;
@@ -130,7 +130,7 @@ Check entering podium:
 				decrease the health of M by 1; [This stops him changing the player, and will instead punish further.]
 			otherwise if bondage protection is 2:
 				now the fatigue of the player is the very tired threshold of the player + 5;
-				say "Opening your eyes you move forward to step off the stage only to find your whole body suddenly drained of all its energy. You collapse to the ground, and are now on your knees![line break][first custom style]'SOLD!'[roman type][line break]yells the Auctioneer as [he of male-m] slams [his of male-m] gavel down on the podium. Swallowing, you shiver as [he of male-m] yanks at your [ShortDesc of hair], hauling you forward to meet the winning bidder and your new Master... [NameDesc of M][line break][first custom style]'Look up at your new master, slave.'[roman type][line break][big he of male-m] grabs you by your hair as the Auctioneer lets go, the transfer of ownership complete. The magical scene behind you disappears, leaving you with an empty stage, [NameDesc of M], and [if the player is not a nympho]a decision to be made - fuck or flight?[otherwise][his of M] waiting [manly-penis].[end if]";
+				say "Opening your eyes you move forward to step off the stage only to find your whole body suddenly drained of all its energy. You collapse to the ground, and are now on your knees![line break][first custom style]'SOLD!'[roman type][line break]yells the Auctioneer as [he of male-m] slams [his of male-m] gavel down on the podium. Swallowing, you shiver as [he of male-m] yanks at your [ShortDesc of hair], hauling you forward to meet the winning bidder and your new [big literalMistress of M]... [NameDesc of M][line break][first custom style]'Look up at your new [literalMistress of M], slave.'[roman type][line break][big he of M] grabs you by your hair as the Auctioneer lets go, the transfer of ownership complete. The magical scene behind you disappears, leaving you with an empty stage, [NameDesc of M], and [if the player is not a nympho]a decision to be made - fuck or flight?[otherwise][his of M] waiting [manly-penis].[end if]";
 			otherwise:
 				let A be a random pair of anklecuffs;
 				if A is actually summonable:

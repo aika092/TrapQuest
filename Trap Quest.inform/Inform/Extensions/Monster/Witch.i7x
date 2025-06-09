@@ -35,7 +35,7 @@ To say MonsterDesc of (M - witch):
 		say "A tall black [man of M] dressed in a short sheer purple dress, black leather gloves, and black thigh high boots. A magic wand in [his of M] hand and a witch's hat on [his of M] head makes [his of M] speciality quite clear. [big his of M] [if diaper quest is 1]presumably milk filled[otherwise]proud F cup[end if] breasts are very visible through the extremely flimsy material of [his of M] dress. [if there is a diaper carried by M][big he of M] is wearing your [ShortDesc of random diaper carried by M] proudly and visibly. [end if]".
 
 To say MonsterComment of (M - a witch):
-	if lady fetish is not 2, say "[if the bimbo of the player <= 7 and the player is gendered female][line break][first custom style][one of]How typical for this game...[or]Seriously?[purely at random][otherwise if the bimbo of the player <= 7][one of]I bet [he of M] loves motor-boating![or]Nice![at random][otherwise if the bimbo of the player <= 12][line break][variable custom style][one of][big he of M] looks good in that outfit.[or]What a naughty look![purely at random][otherwise][line break][second custom style][one of]Wow! [big he of M]'s probably like, magic and stuff![or]I know [his of M] boobs are casting a spell on me! Teehee![purely at random][end if][roman type][line break]".
+	if lady fetish is not 2, say "[if the bimbo of the player <= 7 and the player is gendered female][line break][first custom style][one of]How typical for this game...[or]Seriously?[purely at random][otherwise if the bimbo of the player <= 7][one of]I bet [he of M] loves motor-boating![or]Nice![at random][otherwise if the bimbo of the player <= 12][line break][variable custom style][one of][big he of M] looks good in that outfit.[or]What a naughty look![purely at random][otherwise][line break][second custom style][one of]Wow! [big he of M]'s probably like, magic and stuff![or]I know [his of M] boobs are casting a spell on me! Tee-hee![purely at random][end if][roman type][line break]".
 
 To set up (M - witch):
 	reset M;
@@ -113,8 +113,12 @@ Definition: witch (called M) is normally acquaintance:
 	if the curse-quest of M >= 1 or M is unbitchy, decide yes;
 	decide no.
 
-Definition: witch is objectifying the player: decide no.
-Definition: witch is babifying the player: decide no.
+Definition: witch (called M) is objectifying the player:
+	now the objectification of M is 0;
+	decide no.
+Definition: witch (called M) is babifying the player:
+	now the babification of M is 0;
+	decide no.
 
 To compute perception of (M - witch):
 	let noticed be 0; [#LXorDD: I've restructured this a bit so if the player has multiple curses in operation, the witch will talk about and even help for several of them, starting with the most important.]
@@ -486,7 +490,7 @@ To penetration dominate (M - witch):
 	repeat with X running through held blessable things:
 		increase bless-count by 1;
 	if sexual-penis-length > 8:
-		say "pushing your [SexDesc of penis] in with no lubrication. [if T is worn]The tattoo emits a faint glow as [NameDesc of M][otherwise][BigNameDesc of M][end if] screeches in pain, and you enjoy the intense feelings around your shaft as [he of M] desperately pleads for you to stop.[line break][speech style of M]'Please, [caps please], it's too much! I'll do anything! I'll even bless your items!'[roman type][line break]Do you stop?";
+		say "pushing your [SexDesc of penis] in with no lubrication. [if T is worn]The tattoo emits a faint glow as [NameDesc of M][otherwise][BigNameDesc of M][end if] screeches in pain, and you enjoy the intense feelings around your shaft as [he of M] desperately pleads for you to stop.[line break][speech style of M]'Please, [caps please], it's too much! I'll do anything! I'll even bless your items!'[roman type][line break]Do you stop? It's not like she used her safeword...";
 		if bless-count > 0 and the player is consenting:
 			now player-fucking is DOMINANT-NEUTRAL;
 			compute domination blessing of M at bless-count;
@@ -499,7 +503,7 @@ To penetration dominate (M - witch):
 			orgasm;
 			AnalGet;
 	otherwise if sexual-penis-length > 6:
-		say "pushing your [SexDesc of penis] in with no lubrication. [if T is worn]The tattoo emits a faint glow as [NameDesc of M][otherwise][BigNameDesc of M][end if] groans in pain, and you enjoy the intense feelings around your shaft as [he of M] pleads for you to stop.[line break][speech style of M]'[big please], it's too much! I'm begging you! I'll even bless your items!'[roman type][line break]Do you stop?";
+		say "pushing your [SexDesc of penis] in with no lubrication. [if T is worn]The tattoo emits a faint glow as [NameDesc of M][otherwise][BigNameDesc of M][end if] groans in pain, and you enjoy the intense feelings around your shaft as [he of M] pleads for you to stop.[line break][speech style of M]'[big please], it's too much! I'm begging you! I'll even bless your items!'[roman type][line break]Do you stop? It's not like she used her safeword...";
 		if bless-count > 0 and the player is consenting:
 			now player-fucking is DOMINANT-NEUTRAL;
 			compute domination blessing of M at bless-count;
@@ -513,7 +517,7 @@ To penetration dominate (M - witch):
 			FavourDown M by 2;
 			AnalGet;
 	otherwise if sexual-penis-length > 3:
-		say "pushing your [SexDesc of penis] in with no lubrication. [if T is worn]The tattoo emits a faint glow as [NameDesc of M][otherwise][BigNameDesc of M][end if] gasps in pain, and you enjoy the intense feelings around your shaft as [he of M] pleads for you to stop.[line break][speech style of M]'[big please], it's too much! Come on, I'll even bless your items!'[roman type][line break]Do you stop?";
+		say "pushing your [SexDesc of penis] in with no lubrication. [if T is worn]The tattoo emits a faint glow as [NameDesc of M][otherwise][BigNameDesc of M][end if] gasps in pain, and you enjoy the intense feelings around your shaft as [he of M] pleads for you to stop.[line break][speech style of M]'[big please], it's too much! Come on, I'll even bless your items!'[roman type][line break]Do you stop? It's not like she used her safeword...";
 		if bless-count > 0 and the player is consenting:
 			now player-fucking is DOMINANT-NEUTRAL;
 			compute domination blessing of M at bless-count;
@@ -528,10 +532,10 @@ To penetration dominate (M - witch):
 			FavourDown M by 1;
 			AnalGet;
 	otherwise:
-		say "pushing your [SexDesc of penis] in with no lubrication. [if T is worn]The tattoo emits a faint glow as [NameDesc of M][otherwise][BigNameDesc of M][end if] winces in pain, and you enjoy intense feelings around your shaft for a couple seconds before [he of M] turns around and makes you pull out.[line break][speech style of M]'Look, I know how hard it can be when your [sexual-player-penis] is that small, but this is as far as you go. Still, I'm willing to help you if you apologise for earlier.'[roman type][line break]Do you apologise?";
+		say "pushing your [SexDesc of penis] in with no lubrication. [if T is worn]The tattoo emits a faint glow as [NameDesc of M][otherwise][BigNameDesc of M][end if] winces in pain, and you enjoy intense feelings around your shaft for a couple seconds before [he of M] turns around and makes you pull out.[line break][speech style of M]'I know its tough to have a tiny [sexual-player-penis], but this is as far as you go. I might be willing to help you if you apologise for earlier.'[roman type][line break]Do you apologise?";
 		if the player is bimbo consenting:
 			now player-fucking is DOMINANT-SHAMEFUL;
-			say "[line break][speech style of M]'Good [boy of the player].'[roman type][line break][big he of M] spits in [his of M] hand and begins to gently tease your [sexual-player-penis]. It isn't skilful by any means, but it's more than enough for a super sensitive clitty like yours. You come almost immediately, emitting a wavering moan as you fill [his of M] hand with your [load].[line break][speech style of M]'Don't do anything like that again, got it?'[roman type][line break]With that, [he of M] stands up, makes a few intricate hand gestures, and vanishes.";
+			say "[line break][speech style of M]'Good [boy of the player].'[roman type][line break][big he of M] spits in [his of M] hand and begins to gently tease your [sexual-player-penis]. It isn't skillful by any means, but it's more than enough for a super sensitive clitty like yours. You come almost immediately, emitting a wavering moan as you fill [his of M] hand with your [load].[line break][speech style of M]'Don't do anything like that again, got it?'[roman type][line break]With that, [he of M] stands up, makes a few intricate hand gestures, and vanishes.";
 			calm M;
 		otherwise:
 			now player-fucking is DOMINANT-NEUTRAL;
@@ -698,13 +702,13 @@ To compute teaching of (M - witch):
 		otherwise:
 			say "[speech style of M]'You're not the first to ever want my secrets, you know. Are you willing to entertain me a little first?'[roman type][line break]";
 			if the player is consenting:
-				now the witch-target of M is witch;
+				now the witch-target of M is M;
 				while the witch-target of M is M:
-					now the witch-target of M is a random on-stage monster;
+					now the witch-target of M is a random on-stage human monster;
 					let W be the witch-target of M;
-					if W is student or W is staff member or W is ex-princess, now the witch-target of M is M;
-				say "[BigNameDesc of M] chuckles, muttering a short incantation under [his of M] breath.[speech style of M]'Alright then. Find [NameDesc of witch-target][speech style of M] and banish [him of witch-target]. I'll know when you've succeeded.'[roman type][line break]";
-				SilentlyDifficultyUp witch-target by 5;
+					if W is student or W is staff member or W is ex-princess or W is djinn or W is kitsune, now the witch-target of M is M;
+				say "[BigNameDesc of M] chuckles, muttering a short incantation under [his of M] breath.[speech style of M]'Alright then. Find [NameDesc of witch-target of M][speech style of M] and banish [him of witch-target of M]. I'll know when you've succeeded.'[roman type][line break]";
+				SilentlyDifficultyUp witch-target of M by 5;
 			otherwise:
 				say "[speech style of M]'Then fuck off. [big please] and thank you!'[roman type][line break]".
 
@@ -733,6 +737,6 @@ To decide which number is the bartering value of (T - a thing) for (M - witch):
 
 To compute offer reward of (M - witch) for (T - a thing):
 	say "[speech style of M]'Go on, I'll give you an extra use of the altar for that.'[roman type][line break]";
-	increase the altar-uses of M by 1.
+	AltarUsesUp 1.
 
 Witch ends here.

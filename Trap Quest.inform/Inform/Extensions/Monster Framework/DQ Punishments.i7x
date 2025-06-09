@@ -317,6 +317,7 @@ Definition: a thing (called T) is forcefeedable:
 		if T is potion or T is elixir or T is tincture, decide yes;
 	decide no.
 Definition: a bottle (called T) is forcefeedable:
+	if T is empty, decide no;
 	if T is cursed sure non-empty bottle or the fill-colour of T is creamy or the fill-colour of T is golden or the fill-colour of T is white or the fill-colour of T is murky, decide yes;
 	decide no.
 Definition: a bag lunch is forcefeedable: decide yes.
@@ -587,5 +588,36 @@ Definition: diaper-facesit (called P) is appropriate:
 To compute punishment of (P - diaper-facesit):
 	compute diaper facesit of current-monster.
 
+Section 12 Tickling Session
+
+tickling-session is a diaper punishment. The priority of tickling-session is 5.
+
+To say EnticeFlav of (M - a monster) for (P - tickling-session):
+	if M is intelligent, say "[line break][speech style of M]'[one of]Get on your knees right now, and I'll let you off with some tickle torture.'[or]Get on your knees, baby, it's tickle time!'[in random order][roman type][line break]";
+	otherwise say "[big he of M] gestures that [he of M] just wants to tickle you for a bit.".
+
+To decide which number is the relevant addiction of (P - tickling-session):
+	decide on the delicateness of the player.
+
+Definition: a monster (called M) is eager to tickle:
+	if M is tickling the player, decide yes;
+	if M is able to carry out a tickling, decide yes;
+	decide no.
+
+Definition: a monster (called M) is able to carry out a tickling:
+	repeat with N running through monsters grabbing the player:
+		if N is not M, decide no;
+	decide yes.
+
+Definition: a monster is willing to tickle:
+	if it is human and it is intelligent and it is not male and the player is an april 2025 diaper donator, decide yes;
+	decide no.
+
+Definition: tickling-session is appropriate:
+	if current-monster is willing to tickle and current-monster is tickle-testing, decide yes;
+	decide no.
+
+To compute punishment of (P - tickling-session):
+	compute tickling of current-monster.
 
 DQ Punishments ends here.

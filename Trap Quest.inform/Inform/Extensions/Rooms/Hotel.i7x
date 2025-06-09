@@ -105,10 +105,12 @@ Hotel42 is a modern room. The printed name of Hotel42 is "Theatre". "A large roo
 Hotel43 is a modern room. The printed name of Hotel43 is "Donator Hall". "A large room lined with pictures of well-dressed men and women. A long table fills the centre of the room. [NoChairs]".
 Hotel44 is a mandatory modern room. The printed name of Hotel44 is "Pedestal Hall". "This room has a series of grey stone pedestals lining the north wall. Concrete busts from neck to thigh sit on each the pedestals, positioned in vaguely provocative manners.". The shape of Hotel44 is L3/0-0-0-1-1-1.
 
+Hotel45 is a modern room. The printed name of Hotel45 is "Basin Room". "A small tiled bathroom with nothing but a giant basin for bathing in. The basin has huge black cocks instead of normal water spouts. [NoChairs]". The shape of Hotel45 is L3/0-0-0-0-1-0.
+
 To say NoChairs:
 	say "[one of]There are no chairs.[or]There are no chairs.[or]There are no chairs in this room either.[or]The room continues the pattern of having no chairs where you might expect them.[or][line break][variable custom style]Again, no chairs. Huh.[roman type][line break][or]There are no chairs.[stopping]".
 
-The Hotel is a region. Hotel01, Hotel02, Hotel03, Hotel04, Hotel05, Hotel06, Hotel07, Hotel08, Hotel09, Hotel10, Hotel11, Hotel12, Hotel13, Hotel14, Hotel15, Hotel16, Hotel17, Hotel18, Hotel19, Hotel20, Hotel21, Hotel22, Hotel23, Hotel24, Hotel25, Hotel26, Hotel27, Hotel28, Hotel29, Hotel30, Hotel31, Hotel32, Hotel33, Hotel34, Hotel35, [Hotel36,] Hotel37, Hotel38, Hotel39, Hotel40, Hotel41, Hotel42, Hotel43, Hotel44 are in The Hotel.
+The Hotel is a region. Hotel01, Hotel02, Hotel03, Hotel04, Hotel05, Hotel06, Hotel07, Hotel08, Hotel09, Hotel10, Hotel11, Hotel12, Hotel13, Hotel14, Hotel15, Hotel16, Hotel17, Hotel18, Hotel19, Hotel20, Hotel21, Hotel22, Hotel23, Hotel24, Hotel25, Hotel26, Hotel27, Hotel28, Hotel29, Hotel30, Hotel31, Hotel32, Hotel33, Hotel34, Hotel35, [Hotel36,] Hotel37, Hotel38, Hotel39, Hotel40, Hotel41, Hotel42, Hotel43, Hotel44, Hotel45 are in The Hotel.
 
 HotelScenery01 is a thing. HotelScenery01 is not portable. HotelScenery01 is in Hotel16. The printed name of HotelScenery01 is "[TQlink of item described]chute[TQxlink of item described]". Understand "bed", "table", "visual", "display", "unit", "screen", "slot", "hole", "chute", "inspiration", "machine", "tattoo machine", "laundry" as HotelScenery01. The text-shortcut of HotelScenery01 is "chute". Figure of chute is the file "Env/Hotel/chute1.png".
 To say ExamineDesc of (C - HotelScenery01):
@@ -120,13 +122,96 @@ Check going when HotelScenery01 is in the location of the player:
 Report going when HotelScenery01 is in the location of the player:
 	force inventory-focus redraw. [This forces the inventory window to redraw]
 
+Check entering HotelScenery01:
+	say "You don't see any point unless you want to [bold type]insert[roman type] something into the hole." instead.
+
 HotelScenery04 is a thing. HotelScenery04 is scenery. HotelScenery04 is in Hotel19. The printed name of HotelScenery04 is "sink". Understand "water", "basin" as HotelScenery04. The text-shortcut of HotelScenery04 is "sink". Figure of kitchen sink is the file "Env/Hotel/sink1.png".
 To say ExamineDesc of (C - HotelScenery04):
 	say "A large sink[one of].[or] that you could use to wash clothing.[stopping]".
 To decide which figure-name is the examine-image of (C - HotelScenery04):
 	decide on figure of kitchen sink.
 
-Check entering HotelScenery01:
-	say "You don't see any point unless you want to [bold type]insert[roman type] something into the hole." instead.
+HotelScenery06 is a thing. HotelScenery06 is scenery. HotelScenery06 has a number called charge. HotelScenery06 is in Hotel45. The printed name of HotelScenery06 is "basin". Understand "water", "basin" as HotelScenery06. The text-shortcut of HotelScenery06 is "basin". Figure of hotel basin is the file "Env/Hotel/basin1.jpg".
+To say ExamineDesc of (C - HotelScenery06):
+	say "A large basin with giant black cocks instead of spouts.".
+To decide which figure-name is the examine-image of (C - HotelScenery06):
+	decide on figure of hotel basin.
+
+Definition: Hotel45 is puzzle piece:
+	if diaper quest is 1 or the player is not an april 2025 top donator or watersports fetish is 0, decide no;
+	if target-floor is in the Hotel, decide yes;
+	decide no.
+To SemenPuddleUp (X - a number) in (R - Hotel45):
+	do nothing.
+To MilkPuddleUp (X - a number) in (R - Hotel45):
+	do nothing.
+To UrinePuddleUp (X - a number) in (R - Hotel45):
+	do nothing.
+
+Check drinking HotelScenery06:
+	try entering the noun instead.
+Check entering HotelScenery06:
+	if the player is not an april 2025 top donator, say "How did you even find this?! Assuming you didn't use purloin, please report it as a bug." instead;
+	if the player is immobile or the player is in danger, say "You're a bit busy right now!" instead;
+	allocate 6 seconds;
+	say "You get in the basin.";
+	compute hotel bath instead.
+
+To compute hotel bath:
+	if the charge of HotelScenery06 <= 0:
+		say "As soon as you are fully inside the basin, the [']taps['] turn on!";
+		if the player is getting unlucky, compute bad bath;
+		otherwise compute good bath;
+	otherwise:
+		say "Nothing seems to happen. Perhaps it needs to recharge?".
+
+To compute bad bath:
+	say "You are blasted from all sides by powerful jets of [urine]![line break][variable custom style]HOLY SHIT! PHLBBBBT![roman type][line break]";
+	announcedSquirt urine on face by 100;
+	say GotUnluckyFlav;
+	UrineTasteAddictUp 1;
+	now the charge of HotelScenery06 is 300.
+
+To compute good bath:
+	say "The black cocks rapidly fill the bath with lovely warm water![line break][variable custom style]Oh, that feels relaxing, and invigorating![roman type][line break]";
+	compute bathing;
+	now the fatigue of the player is the fatigue of the player / 2;
+	BodyHeal 2;
+	let DarkMagicianGirl be false;
+	if dark-magician-girl-cameltoe-costume is worn or dark-magician-girl-costume is worn:
+		now DarkMagicianGirl is true; [transform into next one]
+	otherwise:
+		if (heart hairpin is off-stage and heart hairpin is actually summonable) or the class of the player exactly matches the text "magical girl" or the class of the player exactly matches the text "magical boy":
+			if the number of worn dress is 1: [one overdress or underdress, not both]
+				let D be a random worn dress;
+				if D is removable and D is not dark-magician-girl-swimsuit, now DarkMagicianGirl is true; [transform into dark magician girl costume]
+			otherwise:
+				if dark-magician-girl-swimsuit is class summonable, now DarkMagicianGirl is true; [summon dark magician girl costume]
+	if DarkMagicianGirl is true:
+		let D be a random worn dress;
+		if D is a dress:
+			transform D into dark-magician-girl-swimsuit;
+		otherwise:
+			unclash class summon dark-magician-girl-swimsuit;
+		if heart hairpin is actually summonable:
+			set up heart hairpin;
+			summon heart hairpin cursed;
+	say "And then, just as quickly as the water arrived, it is drained away!";
+	now the charge of HotelScenery06 is 300.
+
+A time based rule (this is the basin recharge rule):
+	decrease the charge of HotelScenery06 by time-seconds.
+
+To compute unique teleportation to (R - Hotel45):
+	say "You appear above [NameDesc of HotelScenery06]! You're falling down right into it...[line break][variable custom style]Uh-oh...[roman type][line break]";
+	compute bad bath.
+
+To construct normal buttons for (T - HotelScenery06):
+	if ButtonTableFull is 0:
+		choose a blank row in the Table of Buttons;
+		now the ButtonImage entry is the figure of ClimbButton;
+		now the ButtonCommand entry is "get in [text-shortcut of T]";
+		now the ButtonColour entry is lightModeFullGreen;
+		if the player is immobile or the player is in danger, now the ButtonColour entry is lightModeFullRed. [turn red - player immobile]
 
 Hotel ends here.

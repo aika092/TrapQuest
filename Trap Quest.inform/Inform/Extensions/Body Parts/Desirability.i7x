@@ -423,7 +423,7 @@ To say BellyGropeFlav of (M - a person):
 			say "[speech style of M]'[one of]Who the fuck have you got INSIDE your belly? No, I don't even want to know.'[or]I can feel something weird inside here. Wait, is it MOVING? What the FUCK is inside your belly?!'[or]Your belly is looking suspiciously full. What are you smuggling in there? Or should I say... WHO are you smuggling in there?!'[in random order][roman type][line break]";
 		otherwise if the total squirtable fill of belly > 0:
 			say "[speech style of M]'[one of]Looks like someone is keeping themselves nice and full of their recent conquests. What a [slut] you are.'[or]I can't believe this. Is your belly really full of... you know what?'[or]Oh my god, you really are carrying around a belly full of... of... yuck!!!'[in random order][roman type][line break]";
-		otherwise if M is willing to urinate monster:
+		otherwise if M is willing to urinate monster and watersports fetish is 1:
 			say "[speech style of M]'[one of]This belly would look even hotter if it was full of my piss, don't you think?'[or][if the largeness of belly > 3]Your belly looks nice and full[otherwise]Don't you think you should try and keep this belly nice and full of piss[end if], like a good little toilet...'[or]This tummy of yours, something tells me its destiny is to be a piss bucket. Hmm...'[or]Tell me, does your stomach crave to be filled to the brim with piss?'[in random order][roman type][line break]";
 		otherwise if M is male monster:
 			say "[speech style of M]'[one of]Something tells me you would be a lot happier if you were full of my cum.'[or][if pregnancy fetish > 0]Not pregnant yet? There's still time...'[otherwise]Are you thirsty, [honey of M]? If so, I could help...'[end if][or]I wonder, is this really a normal stomach, or is it just a cum receptacle in disguise?'[in random order][roman type][line break]";
@@ -520,7 +520,7 @@ Check seducing:
 	if the noun is seduction-refused, say "You already tried that!" instead;
 	if the noun is not seducable, say "This isn't the type of character you can seduce." instead;
 	if the noun is not actually seducable, say "It looks like [he of the noun] isn't in the right state to consider such an invitation." instead;
-	if royal scepter is worn and royal scepter is blacked and the noun is an interested friendly royal guard, compute princess guard tease of the noun instead.
+	if royal sceptre is worn and royal sceptre is blacked and the noun is an interested friendly royal guard, compute princess guard tease of the noun instead.
 Carry out seducing:
 	allocate 5 seconds;
 	now the noun is seduced;
@@ -854,7 +854,7 @@ To compute FirstTurnSeduceShowoffAnnounce of (M - a monster):
 	compute FirstTurnSeduceDanceAnnounce of M.
 
 To compute SeductionShowoff of (M - a monster):
-	if a random number between 1 and the size of penis > a random number between 1 and 10 and M is willing to charm snakes and penis is exposed:
+	if a random number between 1 and the effective size of penis > a random number between 1 and 10 and M is willing to charm snakes and penis is exposed:
 		increase the seductions-performed of penis by 1;
 		increase the seductions-performed of thighs by 1;
 		say "You lean back and shake your [if penis is penis-erect and the player is a bit horny]hard, pre-cum drooling[otherwise if penis is penis-erect]rock-hard[otherwise]soft[end if] [ShortDesc of penis] in [NameDesc of M]'s direction. [strongHumiliateReflect]";

@@ -166,7 +166,7 @@ To say BanishFleeFlav of (M - herald):
 		compute autotaking X;
 
 To loot (M - herald):
-	let X be a random off-stage ring;
+	let X be a random off-stage plentiful ring;
 	unless X is nothing:
 		now X is in the location of the player;
 		now X is solid gold;

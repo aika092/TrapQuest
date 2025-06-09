@@ -68,7 +68,9 @@ To set up (M - a goblin):
 To decide which number is the starting difficulty of (M - a goblin):
 	decide on 8.
 
-Definition: a goblin is objectifying the player: decide no.
+Definition: a goblin (called M) is objectifying the player:
+	now the objectification of M is 0;
+	decide no.
 
 To check motion of (M - a goblin):
 	do nothing.
@@ -161,7 +163,7 @@ To compute painting entrance of (P - goblin-painting):
 
 Check poking a goblin:
 	if the noun is female and the player is not in danger:
-		let J be a random off-stage ring;
+		let J be a random off-stage plentiful ring;
 		if J is ring:
 			now J is pure diamond;
 			set shortcut of J;

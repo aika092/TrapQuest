@@ -152,7 +152,7 @@ Chapter 2 - Blue Scrunchie
 
 A blue scrunchie is a kind of scrunchie. A blue scrunchie is usually cursed. blue-scrunchie-1 is a blue scrunchie. blue-scrunchie-2 is a blue scrunchie. blue-scrunchie-1 is in Dungeon27. blue-scrunchie-2 is in Hotel24. The text-shortcut of blue-scrunchie-1 is "bsc1". The text-shortcut of blue-scrunchie-2 is "bsc2".
 Definition: blue-scrunchie-2 is roleplay: decide yes. [This is the one that is unobtainable for longer]
-Understand "blue" as a pink scrunchie.
+Understand "blue" as a blue scrunchie.
 
 Figure of left blue scrunchie is the file "Items/Accessories/Head/scrunchie2a.png".
 Figure of right blue scrunchie is the file "Items/Accessories/Head/scrunchie2b.png".
@@ -199,6 +199,23 @@ To compute class outfit of (H - a blue scrunchie):
 			class summon frilly stockings;
 		if the number of worn knickers + the number of worn trousers is 0, class summon purple-pom-pom.
 
+Report taking a blue scrunchie:
+	if the noun is carried and the player is not in a predicament room:
+		if heart hairpin is worn and (player-class is "magical girl" or player-class is "magical boy"):
+			say "[bold type]The scrunchie suddenly vanishes in a puff of magical smoke![roman type][line break]";
+			only destroy the noun;
+			unless tartan miniskirt is worn or a tartan microskirt is worn:
+				PinkWardrobeUnclash tartan miniskirt;
+				class summon tartan miniskirt;
+			unless tartan tube top is worn:
+				PinkWardrobeUnclash tartan tube top;
+				class summon tartan tube top;
+				now tartan tube top is cursed;
+				compute summoned quest of tartan tube top;
+			class summon necktie;
+
+
+
 Chapter - Quest
 
 recipe-quest is a headgear-clothing-quest.
@@ -215,7 +232,7 @@ To say QuestTitle of (Q - recipe-quest):
 	say " (recipe crafting quest)".
 
 To compute generic first time class reward of (Q - recipe-quest) on (C - a clothing):
-	let D be a random off-stage ring;
+	let D be a random off-stage plentiful ring;
 	if D is ring:
 		now D is ruby;
 		set shortcut of D;
@@ -292,6 +309,10 @@ To compute class outfit of (C - a pigtail-scrunchie):
 	otherwise:
 		class summon blue-rubber-cheerleader-outfit;
 	class summon condom-pom-pom.
+
+To uniquely set up (C - a pigtail-scrunchie):
+	if diaper quest is 1, now the quest of C is recipe-quest;
+	otherwise now the quest of C is greet-quest.
 
 
 Chapter 5 - Helium Balloons

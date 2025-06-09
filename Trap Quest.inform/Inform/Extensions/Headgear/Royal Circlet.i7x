@@ -74,7 +74,7 @@ To say QuestTitle of (Q - milk-serve-quest):
 	say " (milk serving quest)".
 
 To compute generic first time class reward of (Q - milk-serve-quest) on (C - a clothing):
-	let D be a random off-stage ring;
+	let D be a random off-stage plentiful ring;
 	if D is ring:
 		if C is royal circlet, now D is pure diamond;
 		otherwise now D is emerald;

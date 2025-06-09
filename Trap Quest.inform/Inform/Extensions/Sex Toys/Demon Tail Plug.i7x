@@ -30,7 +30,7 @@ To decide which number is the initial outrage of (P - demon tail plug):
 	decide on 14.
 
 This is the demon tail pussy slut rule:
-	if there is demon tail plug penetrating asshole, rule succeeds.
+	if the player is possessing a vagina and there is demon tail plug penetrating asshole, rule succeeds.
 The demon tail pussy slut rule is listed in the pussy slut eligibility rules.
 
 To uniquely set up (C - demon tail plug):
@@ -42,8 +42,12 @@ To compute class set up of (C - demon tail plug):
 	if the class of the player is princess:
 		now C is expansion;
 		now C is cursed;
-		if vaginal-virginity-quest is appropriate, now the quest of C is vaginal-virginity-quest;
-		otherwise now the quest of C is vaginal-creampie-quest;
+		if the player is possessing a vagina:
+			if vaginal-virginity-quest is appropriate, now the quest of C is vaginal-virginity-quest;
+			otherwise now the quest of C is vaginal-creampie-quest;
+		otherwise:
+			if anal-virginity-quest is appropriate, now the quest of C is anal-virginity-quest;
+			otherwise now the quest of C is anal-creampie-quest;
 	otherwise:
 		now C is dominance;
 		now C is bland.

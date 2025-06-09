@@ -25,6 +25,7 @@ To decide which number is the delicateness of the player:
 		if there is a desperately craved liquid-object, decrease S by 3;
 		otherwise decrease S by 2;
 	if mindbreak protection is 1 and S > 16, decide on 16;
+	if the class of the player is "sacred vessel" and S < 16, decide on 16;
 	if virgincursed > 0 and S < 8, decide on 8;
 	if truffle-confidence-timer > 0, decrease S by 2;
 	if S > 20, decide on 20;
@@ -208,12 +209,14 @@ Felching vaginal creampie: 4
 Spit in mouth: 4
 Feet in fluid-filled shoes: 4
 Hit in face with used condom / tissue: 4
+Made to wear wet diaper / used as diaper urinal: 4
 Masturbated in a wet diaper: 5
-Made to wear wet diaper / used as diaper urinal: 5
 Eating cum out of unknown used condom: 5
 Drinking mix of fluids: 5
 Intimacy with gross partner: 5
 Given a swirlie: 5
+Urine in butthole: 5
+Used as a diaper cumrag: 5
 Wet diaper on face: 6
 Puking when gagging: 6
 Intimacy with partially humanoid (centaur): 6

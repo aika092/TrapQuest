@@ -30,8 +30,7 @@ To trigger (Y - a slingshot):
 		if C is DQLessBulky diaper, now C is a random off-stage DQBulkier plentiful disposable diaper;
 		if C is nothing, now C is a random eligible diaper;
 	let D be a random currently uncovered diaper;
-	now autowear is true;
-	if C is not actually wearable:
+	if C is not actually autowearable:
 		if diaper lover > 0 and face is not actually occupied, now C is a random off-stage fetish appropriate ballgag;
 		if C is not ballgag and heart-collar is off-stage, now C is heart-collar;
 	if (C is diaper and C is actually wearable) or (C is not diaper and C is actually summonable): [we use actually wearable for diapers because the slingshot trap will only succeed if there's nothing in the way, and diapers are never blocked by being too humiliating, so it's safe to use the wearable function for diapers, but not other clothing]
@@ -67,8 +66,7 @@ To trigger (Y - a slingshot):
 			now C is in the location of the player;
 			compute autotaking C;
 	otherwise:
-		say "Nothing else happens or appears. How weird!";
-	now autowear is false.
+		say "Nothing else happens or appears. How weird!".
 
 To say SlingshotTrapReactFlav of (M - a monster):
 	say SuddenTransformTrapReactFlav of M.

@@ -116,7 +116,7 @@ To say LessonTitle of (L - enema-tag-lesson):
 
 To compute teaching of (L - enema-tag-lesson):
 	let M be the lesson-teacher of L;
-	let ULA be a random ultimate-lesson-actor;
+	let ULA be a random unseen-stranger;
 	let LQ be semen;
 	set up gym lesson of M;
 	say "You all obediently follow [NameDesc of M] to the gym. A racetrack lines the outside and a large sign has been put up at the side that reads 'ENEMA RUN 2021'. [one of]Uh-oh[or]Here we go again[stopping].[line break][speech style of M]'Welcome to the latest version of the classic Enema Run.'[roman type][line break]";

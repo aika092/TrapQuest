@@ -203,6 +203,7 @@ To store previous sizes:
 	now body-now-outdated is false;
 	now the previous largeness of breasts is the largeness of breasts;
 	now the previous weight of breasts is the weight of breasts;
+	now the previous floatiness of breasts is the floatiness of breasts;
 	now the previous largeness of belly is the largeness of belly;
 	now the previous largeness of hair is the largeness of hair;
 	now the previous thickness of hips is the thickness of hips;
@@ -266,13 +267,15 @@ To compute turn:
 		decrease earnings by seconds;
 		if debugmode > 0, say "[earnings].[PredicamentPenCheck]";
 		if the player is a cheater and unlucky < 2 and earnings < starting-earnings - 500, compute trolling; [When the player is cheating and has played for a little while, we'll trigger this.]
-		if april fools done is 0: [This stops us checking immobility and danger every single turn forever]
-			if the player is not immobile and the player is not in danger and earnings < starting-earnings - 480, compute april fools;
 	otherwise: [failsafe]
 		now earnings is 999909;
 		now last-puddle-cleanup is 999999;
 	compute MonsterSetUpFix;
-	if the player is holding-breath-this-turn, say "You [if the suffocation of the player > 0]continue to [end if]hold your breath.";
+	if the player is holding-breath-this-turn:
+		if tickle-laughing is true:
+			say "You [if the suffocation of the player > 0]continue to laugh[otherwise]are laughing[end if] so hard you can't breathe!";
+		otherwise:
+			say "You [if the suffocation of the player > 0]continue to [end if]hold your breath.";
 	compute flight; [Flight stuff must go first and last - the concept is it's checking if anything that happened caused the player to start flying.]
 	if lagdebug is true:
 		say "Computing player [if the player is upright]standing[otherwise]kneeling[end if].";
@@ -638,7 +641,8 @@ An all later time based rule (this is the breathe or suffocate rule):
 			let M be a random monster penetrating face;
 			if M is nothing, now M is a random monster grabbing the player;
 			if M is nothing, now M is a random monster penetrating a body part;
-			if M is monster, compute extra suffocation of M.
+			if M is monster, compute extra suffocation of M;
+	now tickle-laughing is false.
 
 To compute extra suffocation of (M - a monster):
 	if the player is air breathing vulnerable:
@@ -943,14 +947,6 @@ A later time based rule (this is the science charge decay rule):
 
 A later time based rule (this is the laundry charge decay rule):
 	if the charge of laundry robots > 0, decrease the charge of laundry robots by time-seconds.
-
-A later time based rule (this is the discount decay rule):
-	if discount < -2:
-		increase discount by time-seconds;
-		if discount > -3, now discount is 0;
-	otherwise if discount > 0:
-		decrease discount by time-seconds;
-		if discount < 1, now discount is 0.
 
 previous-urine-upset is a number that varies.
 An all later time based rule (this is the urine gross out resolution rule):

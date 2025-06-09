@@ -46,7 +46,7 @@ Carry out kneeling:
 	if seconds > 0 and auto is 0:
 		let TP be the total puddle;
 		let TPR be a random number between 1 and 30;
-		if debuginfo > 0, say "[input-style]Land in puddle check: puddle size ([TP].5) | ([TPR]) d30[roman type][line break]";
+		if debuginfo > 0 and TP > 0, say "[input-style]Land in puddle check: puddle size ([TP].5) | ([TPR]) d30[roman type][line break]";
 		if TP >= TPR:
 			say "Your butt lands in the puddle of [if milk-puddle of the location of the player > 0][milk][end if][if milk-puddle of the location of the player > 0 and urine-puddle of the location of the player > 0 and semen-puddle of the location of the player > 0], [otherwise if milk-puddle of the location of the player > 0 and urine-puddle of the location of the player > 0] and [end if][if urine-puddle of the location of the player > 0][urine][end if][if the semen-puddle of the location of the player > 0 and the milk-puddle of the location of the player + the urine-puddle of the location of the player > 0] and [end if][if semen-puddle of the location of the player > 0][semen][end if].";
 			if there is worn fluid vulnerable crotch covering clothing:

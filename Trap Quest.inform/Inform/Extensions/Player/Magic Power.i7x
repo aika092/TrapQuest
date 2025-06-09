@@ -62,7 +62,10 @@ To MagicPowerRefresh (X - a number):
 	if the magic-fatigue of the player < F, say "[bold type]Your magic power feels [if the magic-fatigue of the player is 0]completely[otherwise if the magic-fatigue of the player < T / 2]mostly[otherwise]slightly[end if] refreshed![roman type][line break]".
 
 To compute magic regeneration:
-	MagicPowerRefresh 1.
+	let X be 1;
+	if the number of worn humility-stone > 2, increase X by 1;
+	if the number of worn humility-stone > 5, increase X by 1;
+	MagicPowerRefresh X;
 
 [Stuff to do with casting spells goes below.]
 the magic consequences rules is a rulebook.
@@ -229,10 +232,22 @@ A game universe initialisation rule (this is the incantation initialisation rule
 		choose a blank row in the Table of Possible Incantations;
 		now the phrase entry is "am a naughty [boy of the player] who needs a good spanking";
 		now the naughtiness entry is 8;
+		choose a blank row in the Table of Possible Incantations;
+		now the phrase entry is "am a nasty [boy of the player] with nasty [boy of the player] needs";
+		now the naughtiness entry is 8;
+		choose a blank row in the Table of Possible Incantations;
+		now the phrase entry is "hate having unspanked cheeks";
+		now the naughtiness entry is 9;
 		if diaper quest is 0:
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "love licking hot throbbing lollies";
+			now the naughtiness entry is 5;
 			choose a blank row in the Table of Possible Incantations;
 			now the phrase entry is "love cock";
 			now the naughtiness entry is 5;
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "want to cum cum with my bum bum";
+			now naughtiness entry is 7;
 			choose a blank row in the Table of Possible Incantations;
 			now the phrase entry is "love having anal orgasms";
 			now the naughtiness entry is 6;
@@ -240,7 +255,7 @@ A game universe initialisation rule (this is the incantation initialisation rule
 			now the phrase entry is "love the taste of cum";
 			now the naughtiness entry is 7;
 			choose a blank row in the Table of Possible Incantations;
-			now the phrase entry is "can't remember how many [manly-penis]s I've sucked today";
+			now the phrase entry is "cant remember how many [manly-penis]s I sucked today";
 			now the naughtiness entry is 8;
 			choose a blank row in the Table of Possible Incantations;
 			now the phrase entry is "will spread my legs for anyone";
@@ -254,6 +269,12 @@ A game universe initialisation rule (this is the incantation initialisation rule
 			choose a blank row in the Table of Possible Incantations;
 			now the phrase entry is "fuck [GrossMates]";
 			now the naughtiness entry is 12;
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "yield my asshole to [manly-penis] traffic";
+			now the naughtiness entry is 12;
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "slob fat knobs";
+			now the naughtiness entry is 10;
 		if pregnancy fetish > 0:
 			choose a blank row in the Table of Possible Incantations;
 			now the phrase entry is "can't wait to be knocked up";
@@ -268,6 +289,9 @@ A game universe initialisation rule (this is the incantation initialisation rule
 			now the naughtiness entry is 8;
 			choose a blank row in the Table of Possible Incantations;
 			now the phrase entry is "want to have even bigger cock pillow tits";
+			now the naughtiness entry is 9;
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "want a fake ass fake ass";
 			now the naughtiness entry is 9;
 		if interracial fetish is 1:
 			choose a blank row in the Table of Possible Incantations;
@@ -365,7 +389,7 @@ A game universe initialisation rule (this is the incantation initialisation rule
 				now the naughtiness entry is 14;
 			if diaper cumrag >= 1:
 				choose a blank row in the Table of Possible Incantations;
-				now the phrase entry is "want your to feel [men of male-m][']s spunk oozing down inside my Pampies";
+				now the phrase entry is "want your to feel your spunk oozing down inside my Pampies";
 				now the naughtiness entry is 15.
 
 

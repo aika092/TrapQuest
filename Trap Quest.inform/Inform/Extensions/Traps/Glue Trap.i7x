@@ -763,7 +763,7 @@ To compute the mutation effects of (G - a glue):
 
 To carry out PartialLatexing:
 	let O be a random worn stealable destructible transformable clothing;
-	let N be a random wrist bond;
+	let N be a random off-stage wrist bond;
 	if O is latex:
 		if N is wrist bond, say "The glue around your wrists turns into tough rubber, binding them together!";
 		now O is the player;

@@ -66,20 +66,6 @@ Report Showering:
 	force inventory-focus redraw; [This forces the inventory window to redraw]
 	force clothing-focus redraw. [This forces the clothing window to redraw]
 
-[Old showing function. compute bathing used to be called compute showering.]
-[if WoodsScenery01 is in the location of the player: [Unique stuff because of slimegirl]
-	compute showering WoodsScenery01;
-otherwise if swimming-pool is in the location of the player and diaper quest is 0: [Unique stuff because the pool is full of cum]
-	compute showering swimming-pool;
-otherwise:
-	if seconds is 0 and auto is 0, say "You [if the player is upright]enter[otherwise]crawl into[end if] the water and begin to wash yourself. ";
-	now tracked-semen is 0;
-	Wash Salves;
-	compute showering;
-	allocate 12 + tracked-semen seconds;
-	repeat with WB running through water-body-scenery in the location of the player:
-		compute showering WB.]
-
 To compute swimming in (WB - a water-body-scenery):
 	if seconds is 0, say "You [if the player is upright]enter[otherwise]crawl into[end if] the pool and wash yourself with the water. ";
 	compute bathing;
@@ -155,7 +141,7 @@ To soak clothing in water body:
 					if the soak-limit of C is the water-soak of C, say "It is now very heavy and won't be able to hold any more liquid.";
 				otherwise if the water-soak of C < the soak-limit of C:
 					say "Your [C] gets soaked with water.";
-			Drench C;
+			Drench C by 100;
 			if C is knickers, MessSet C to 0;
 	if quest-only-once is 1, progress quest of swimming-quest.
 

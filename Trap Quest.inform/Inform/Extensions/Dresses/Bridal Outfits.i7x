@@ -10,7 +10,7 @@ Definition: a bridal dress is white themed: decide yes.
 To compute post transformation effect of (C - a bridal dress):
 	if C is blandness:
 		now C is strength stealing;
-		say "[bold type][BigNameDesc of C] [bold type]has gained a new magical effect...  You can sense that it is now [']strength stealing['], and will take some of your strength away if you remove it normally.[roman type][line break]".
+		say "[bold type][BigNameDesc of C] [bold type]has gained a new magical effect... You can sense that it is now [']strength stealing['], and will take some of your strength away if you remove it normally.[roman type][line break]".
 
 long bridal dress is a bridal dress. Understand "short" as long bridal dress when the item described is short. The text-shortcut of long bridal dress is "lbrd".
 

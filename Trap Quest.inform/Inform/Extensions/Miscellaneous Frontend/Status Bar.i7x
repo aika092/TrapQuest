@@ -1,7 +1,11 @@
 Status Bar by Miscellaneous Frontend begins here.
 
 Rule for constructing the status line:
-	if the player is virtual or the player is in an introductory room:
+	if fetishMenuInProgress is true:
+		fill status bar with Table of Fetish Points Status;
+	otherwise if currently-displaying is true:
+		follow the constructing status line while displaying rule;
+	otherwise if the player is virtual or the player is in an introductory room:
 		if new status line is 4:
 			fill status bar with Table of Empty Status;
 		otherwise if new status line is 3:
@@ -145,7 +149,7 @@ To say VagueStrength:
 	otherwise if saved-flat-strength < 10:
 		say "Womanly   ";
 	otherwise if saved-flat-strength < 15:
-		say "Manly	 ";
+		say "[if the player is gendered female]Healthy[otherwise]Manly[end if]	 ";
 	otherwise if saved-flat-strength < 20:
 		say "Well Built";
 	otherwise if saved-flat-strength < 25:
@@ -632,9 +636,9 @@ To say VagueInternals:
 		now fine is 0;
 	if fine is 1, say "Fine".
 
-The constructing status line while displaying rule is not listed in any rulebook.
+[The constructing status line while displaying rule is not listed in any rulebook.]
 
-Rule for constructing the status line while displaying:
+Rule for constructing the status line while displaying (this is the constructing status line while displaying rule):
 	if the current menu is Table of Disclaimer:
 		fill status bar with Table of Disclaimer Body;
 	otherwise if the current menu is Table of Transformation Options:
@@ -687,7 +691,7 @@ left	central	right
 
 Table of Fetish Menu Status
 left	central	right
-"Choose your difficulty points."	""	""
+"Choose your [if diaper quest is 1]difficulty[otherwise]handicap[end if] points."	""	""
 "You will spend these points on benefits on the next page."	""	""
 "You will currently get [positive points count] points to spend on the next page."	""	""
 
@@ -697,6 +701,12 @@ left	central	right
 "CURRENT POINTS LEFT: [points count]"	""	""
 
 Part - Other Status Bars
+
+status_int is a number that varies.
+
+Table of Fetish Points Status
+left	central	right
+""	"TOTAL POINTS (including those earned from already enabled handicaps on next page): [positive points count]"	""
 
 Table of Empty Status
 left	central	right

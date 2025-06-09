@@ -24,7 +24,7 @@ To decide which figure-name is the monster-image of (M - robomilkmaid):
 	decide yes.]
 
 To say MonsterDesc of (M - a robomaid):
-	say "A tall robot with a voluptuous figure that makes [him of M] look more sex doll than machine. [big he of M] is wearing a frilly black dress with a plunging neckline and scandalously short skirt, which show off [his of M] surprisingly soft-looking assets as [big he of M] glides around silently on wheeled feet. [big his of M] eyes cast a slight glow over [his of M] hyper feminine features.".
+	say "A tall robot with a voluptuous figure that makes [him of M] look more sex doll than machine. [big he of M] is wearing a frilly black dress with a plunging neckline and scandalously short skirt, which show off surprisingly soft-looking assets as [big he of M] glides around silently on wheeled feet. [big his of M] eyes cast a slight glow over [his of M] hyper feminine features.".
 
 To say MonsterDesc of (M - robomilkmaid):
 	say "A tall robot with a voluptuous figure that makes [him of M] look more sex doll than machine. A white apron covers [his of M] front, but its skimpy design leaves almost the entirety of [his of M] soft, transparent robot breasts on display, revealing that they are filled with some white liquid - presumably [milk]. [big his of M] eyes glow brightly as [big he of M] glides around silently on wheeled feet.".
@@ -102,21 +102,21 @@ Part 1 - Misc Flavour
 To compute unique periodic effect of (M - a robomilkmaid):
 	if M is not combative:
 		if lactation fetish is 1 and M is in Hotel19 and the milk volume of M < 12:
-			if M is in the location of the player, say "[BigNameDesc of M] attaches [himself of M] to the kichten fridge by some kind of cable, and you hear a pumping sound. You watch [his of M] transparent [']jugs['] fill close to the brim with [milk].";
+			if M is in the location of the player, say "[BigNameDesc of M] attaches [himself of M] to the kitchen fridge by some kind of cable. You hear a pumping sound as [his of M] transparent [']jugs['] fill up with [milk].";
 			now the milk volume of M is 12;
 		otherwise:
 			increase the milk charge of M by a random number between 1 and 2;
 			if the milk charge of M > 45:
 				now the milk charge of M is 0;
 				if lactation fetish is 1 and a random number between 8 and 15 < the milk volume of M:
-					if M is in the location of the player, say "[BigNameDesc of M] reaches up and squeezes [his of M] rubber nipples, forcing several droplets of milk out onto the floor.";
+					if M is in the location of the player, say "[BigNameDesc of M] reaches up and squeezes [his of M] rubber [one of]nipples[or]teats[cycling], forcing several droplets of milk out onto the floor.";
 					let MV be a random number between 2 and 3;
 					PuddleUp milk by MV in (the location of M);
 					decrease the milk volume of M by MV;
 				otherwise if diaper quest is 1:
 					increase the milk volume of M by a random number between 4 and 6;
 				otherwise:
-					if M is in the location of the player, say "[BigNameDesc of M] pulls up [his of M] apron, revealing a large robotic [DickDesc of M]. [big he of M] starts jacking off, moaning in a grating monotone as [his of M] [LongDickDesc of M] blows [his of M] load on the floor.";
+					if M is in the location of the player, say "[BigNameDesc of M] pulls up [his of M] apron, revealing a large robotic [DickDesc of M]. [big he of M] starts jacking off, moaning in a grating monotone as [his of M] [LongDickDesc of M] blows its load on the floor.";
 					PuddleUp semen by (a random number between 2 and 3) in (the location of M).
 
 Part 2 - Perception
@@ -124,7 +124,7 @@ Part 2 - Perception
 To compute perception of (M - a robomaid):
 	say "[BigNameDesc of M] notices you!";
 	if there is soiled-diaper carried by M or there is a dirty diaper carried by M:
-		say "[first custom style]'DIRTY DIAPER LITTERING CULPRIT FOUND. PLEASE ADOPT THE DIRTY DIAPER LITTERING PUNISHMENT SUBMISSION POSITION.'[roman type][line break]";
+		say "[first custom style]'DIRTY DIAPER LITTERING CULPRIT FOUND. [caps please] ADOPT THE DIRTY DIAPER LITTERING PUNISHMENT SUBMISSION POSITION.'[roman type][line break]";
 		anger M;
 	otherwise if the current-errand of M is completed and M is friendly:
 		compute errand completion of M;
@@ -153,14 +153,14 @@ To compute perception of (M - a robomaid):
 				say "[big his of M] eyes turn green, and [he of M] points unsubtly toward a slot between [his of M] breasts, labelled [']PAYMENT['].";
 				FavourDown M;
 			otherwise:
-				say "[big his of M] eyes turn green.[line break][speech style of M]'THANKS. [caps boy of the player]FRIEND.'[roman type][line break]";
+				say "[big his of M] eyes turn green.[line break][speech style of M]'THANKS, [robogreeting of M].'[roman type][line break]";
 			now the refractory-period of M is the refractory-time of M;
 		otherwise:
 			if the player is not hotel employed:
-				say "[if the player is not able to speak or the refractory-period of M >= 0][big he of M] seems to [']think['] for a moment, and i[otherwise]I[end if]ts eyes turn yellow.[line break][speech style of M]'THANK YOU FOR YOUR FEEDBACK, VALUED [robogreeting of M]'[roman type][line break]";
+				say "[if the player is not able to speak or the refractory-period of M >= 0][big he of M] seems to [']think['] for a moment, and i[otherwise]I[end if]ts eyes turn yellow.[line break][speech style of M]'THANK YOU FOR YOUR FEEDBACK, VALUED [robogreeting of M].'[roman type][line break]";
 				increase the raw difficulty of M by 1;
 			otherwise:
-				say "[big his of M] eyes turn yellow.[line break][speech style of M]'THANKS. [caps boy of the player]FRIEND.'[roman type][line break]";
+				say "[big his of M] eyes turn yellow.[line break][speech style of M]'THANKS. [robogreeting of M].'[roman type][line break]";
 				FavourDown M;
 				decrease the employee-record of senior robobellboy by 1;[she spreads bad rumours about you!]
 	otherwise:
@@ -169,14 +169,14 @@ To compute perception of (M - a robomaid):
 To compute perception of (M - a robomilkmaid):
 	say "[BigNameDesc of M] notices you!";
 	if there is soiled-diaper carried by M or there is a dirty diaper carried by M:
-		say "[first custom style]'DIRTY DIAPER LITTERING CULPRIT FOUND. PLEASE ADOPT THE DIRTY DIAPER LITTERING PUNISHMENT SUBMISSION POSITION.'[roman type][line break]";
+		say "[first custom style]'DIRTY DIAPER LITTERING CULPRIT FOUND. [caps please] ADOPT THE DIRTY DIAPER LITTERING PUNISHMENT SUBMISSION POSITION.'[roman type][line break]";
 		anger M;
 	otherwise if the ready-for-milking of milking-quest is 1:
 		say "[big his of M] eyes turn red and [he of M] spins toward you.[line break][speech style of M]'HIGH VOLUME OF MILK DETECTED. DAIRY FARM SIMULATION PROGRAM INITIATED.'[roman type][line break]";
 		anger M;
 	otherwise if the player is hotel employed:
 		if breasts is lewdly exposed or there is a worn trainee bra:
-			say "[big he of M] glides towards you, addressing you in a monotone.[line break][speech style of M]HEY [caps boy of the player]FRIEND. YOU HAVE SOMETHING ON YOUR CHEST. TITS. TEEHEE. TEEHEE.[roman type][line break][big he of M] seems to abruptly lose interest.";
+			say "[big he of M] glides towards you, addressing you in a monotone.[line break][speech style of M]HEY [robogreeting of M]-! FRIEND. YOU HAVE SOMETHING ON YOUR CHEST. TITS-! TITS. TEEHEE-! TEEHEE.[roman type][line break][big he of M] seems to abruptly lose interest.";
 			calm M;
 		otherwise if the largeness of breasts < 2:[exposed but not lewdly exposed? You must have small breasts!]
 			say "[big his of M] eyes turn red and [he of M] spins toward you.[line break][speech style of M]DECENCY VIOLATION DETECTED. [if lactation fetish is 1]MAMMARY STIMULATION PROGRAM INITIATED[otherwise]EMERGENCY MAMMARY DEVELOPMENT PROGRAM INITIATED[end if].'[roman type][line break]";
@@ -188,10 +188,10 @@ To compute perception of (M - a robomilkmaid):
 		say "[big his of M] eyes turn red and [he of M] spins toward you.[line break][speech style of M]'BURGLAR DETECTED! PUBLICITY STUNT PROGRAM INITIATED!'[roman type][line break]";
 		anger M;
 	otherwise if [lactation fetish is 1 and] the milk volume of M >= 12:
-		say "[big his of M] eyes turn red and [he of M] spins toward you.[line break][speech style of M]'ELIGIBLE CUSTOMER DETECTED! MILK STOARAGE IS NEARING MAXIMUM CAPACITY. REQUESTING JOINT PERFORMANCE ROUTINE...'[roman type][line break]";
+		say "[big his of M] eyes turn red and [he of M] spins toward you.[line break][speech style of M]'ELIGIBLE CUS-! CUSTOMER DETECTED! MILK STORAGE IS NEARING MAXIMUM CAPACITY. REQUESTING JOINT PERFORMANCE ROUTINE...'[roman type][line break]";
 		anger M;
 	otherwise if (diaper quest is 1 and the milk volume of M < 5) or M is friendly:
-		say "[big he of M] glides toward you, pushing out [his of M] chest as [he of M] addresses you in a monotone.[line break][speech style of M]'FLIRTATION PROGRAM INITIATED...[one of]YOU ARE SEXY.[or]OBSERVE MY TITS, HOT STUFF.[or][if diaper quest is 1]HELLO SEXY BABY. WOULD YOU LIKE SOME MILK[otherwise]BEEP BOOP, I LIKE MAN SOUP[end if].[in random order] [caps please] TIP ME.[roman type][line break][big he of M] points to [one of]a[or]the[stopping] slot between [his of M] breasts, labelled [']PAYMENT['].";
+		say "[big he of M] glides toward you, pushing out [his of M] chest as [he of M] addresses you in a monotone.[line break][speech style of M]'FLIRTATION PROGRAM INITIATED...[one of]YOU ARE SEXY.[or]OBSERVE MY TITS, HOT STUFF.[or][if diaper quest is 1]HELLO SEXY BABY. WOULD YOU LIKE SOME MILK[otherwise]BEEP BOOP, I LIKE M-... MAN SOUP[end if].[in random order] [caps please] TIP ME.[roman type][line break][big he of M] points to [one of]a[or]the[stopping] slot between [his of M] breasts, labelled [']PAYMENT['].";
 		FavourDown M;
 	otherwise:
 		say "[big his of M] eyes turn red and [he of M] spins toward you.[line break][first custom style]'FREELANCE WHORE DETECTED. PUBLICITY STUNT PROGRAM INITIATED.'[roman type][line break]";
@@ -501,7 +501,7 @@ To compute enticing of (M - robomilkmaid):
 	let CM be current-monster;
 	now current-monster is M;
 	let S be the sensitivity of breasts;
-	say "[speech style of M]'PLEASE ADOPT THE DAIRY MILKING SUBMISSION POSITION. I PROMISE I WILL MAKE IT FEEL REAAAAAAAAALY GOOD.'[roman type][line break][BigNameDesc of M] makes squeezing motions towards you with [his of M] robotic hands.";
+	say "[speech style of M]'[caps please] ADOPT THE DAIRY MILKING SUBMISSION POSITION. I PROMISE I WILL MAKE IT FEEL REAAAAAAAAALY GOOD.'[roman type][line break][BigNameDesc of M] makes squeezing motions towards you with [his of M] robotic hands.";
 	check enticing of M for breasts with temptation level S;
 	now current-monster is CM.
 
@@ -511,13 +511,13 @@ Section 1 - Greeting
 
 To say FirstResponse of (M - a robomaid):
 	if the class of the player is maid:
-		say "[first custom style]'GREETINGS, [caps boy of the player]FRIEND. YOU SEEM BUSY. GOODBYE.'[roman type][line break]";
+		say "[first custom style]'GREETINGS, [robogreeting of M]. YOU SEEM BUSY. GOODBYE.'[roman type][line break]";
 	otherwise:
 		say "[first custom style]'GREETINGS [robogreeting of M].'[roman type][line break]";
 
 To say RepeatResponse of (M - a robomaid):
 	if the class of the player is maid:
-		say "[first custom style]'HEY [caps boy of the player]FRIEND. GOODBYE.'[roman type][line break]";
+		say "[first custom style]'HEY [robogreeting of M]. GOODBYE.'[roman type][line break]";
 	otherwise if M is unconcerned:
 		say "[first custom style]'GREETINGS [robogreeting of M].'[roman type][line break]";
 	otherwise:

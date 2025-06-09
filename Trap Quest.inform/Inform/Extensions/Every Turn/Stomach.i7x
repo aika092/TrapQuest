@@ -30,7 +30,9 @@ Time in between stomach digesting things and the checks for whether the player n
 
 +!]
 To decide which number is stomach-period:
-	if the player is in a predicament room, decide on 30; [Happens much more frequently in the predicament world]
+	if the player is in a predicament room: [Happens much more frequently in the predicament world]
+		if suppository > 0, decide on 10;
+		otherwise decide on 30;
 	if the player is in School34 and ex-princess is in the location of the player, decide on 20;
 	let T be 24;
 	if the player is not overly full, now T is T * 2; [48]

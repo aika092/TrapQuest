@@ -71,7 +71,7 @@ To pause/stop the/-- Glulx timer:
 	request repeating Glk timer event at 0 milliseconds.
 
 To request repeating Glk timer event at (T - a number) milliseconds:
-	if debugmode > 1, say "[input-style]Timer set to [T]ms intervals.[roman type][line break]";
+	if debugmode > 1, say "[input-style]Timer set to [T]ms intervals. Current focus window is [if current focus window is the main window]the main window[otherwise][current focus window][end if].[roman type][line break]";
 	actually request repeating Glk timer event at T milliseconds.
 
 To actually request repeating Glk timer event at (T - a number) milliseconds:
@@ -98,6 +98,7 @@ To wait before continuing:
 	wait for glk input;
 	if the current glk event is glk-initiated, now event-outcome is glk event handled in null-event context.
 
+[Looks like this may cause softlock if someone clicks a graphlink - there was an issue with the end of the poker game]
 To wait for a key before continuing:
 	let CNL be the chosen letter;
 	increase CNL by 1.
@@ -522,7 +523,7 @@ To cease animation of (T - an initial animation track):
 	now T is not g-animated;
 	close the graphics-window;
 	now the position of the graphics-window is g-placeleft;
-	now the measurement of the graphics-window is 64.
+	now the measurement of the graphics-window is default-graphics-window-measurement.
 
 An epilogue animation track is a kind of solo animation track. An epilogue animation track is g-looping.
 
@@ -595,7 +596,7 @@ To cease animation of (T - a loading animation track):
 	now T is not g-animated;
 	close the graphics-window;
 	now the position of the graphics-window is g-placeleft;
-	now the measurement of the graphics-window is 64.
+	now the measurement of the graphics-window is default-graphics-window-measurement.
 
 previous-body-flip is an animation track. previous-body-flip can be pause-button-rendered.
 body-animation-page is a number that varies. [0: current; 1: previous]

@@ -264,7 +264,7 @@ To compute BimboSeduced of (M - a monster):
 		anger M;
 		now the boredom of M is 0;
 	otherwise if M is actually seducable:
-		if royal scepter is worn and royal scepter is blacked and M is a friendly royal guard:
+		if royal sceptre is worn and royal sceptre is blacked and M is a friendly royal guard:
 			compute princess guard tease of M;
 		otherwise:
 			repeat with N running through monsters in the location of the player:
@@ -735,7 +735,7 @@ Displayed when the player greets a monster that is already paying attention to t
 To say VanityGreeting to (M - a monster):
 	if M is teacher and locked-toilets is true and academy-toilet-key is held:
 		say "'[if the player is proud]I can't believe I'm saying this, but would you please accompany me so that I can use the toilet?'[otherwise if the diaper addiction of the player < 5]Please could you supervise me while I use the toilet?'[otherwise]Please can you help me use the potty?'[end if]";
-	otherwise if the player is toilet traumatized bursting:
+	otherwise if the player is toilet traumatised bursting:
 		say "'I need the toilet, but [if academy-toilet-key is held and M is teacher]academy rules say I need supervision[otherwise]I'm too scared to go alone[end if]. Would you please come with me?'";
 	otherwise if the player is a masochist:
 		say "'[one of]Are you getting used to seeing the back of my head?'[or]Maybe you and I should head somewhere more private, hmm?'[or]Where am I taking you, I wonder?'[at random]";
@@ -768,7 +768,7 @@ To compute vanity response of (M - a monster):
 	otherwise:
 		if M is ally:
 			say VanityAccepted of M;
-		otherwise if the player is toilet traumatized bursting:
+		otherwise if the player is toilet traumatised bursting:
 			if there is a worn diaper:
 				say VanityPointless of M;
 			otherwise if M is diaper disciplining:
@@ -2027,7 +2027,7 @@ To compute unique completion of (E - get-pregnant-errand) for (P - an acolyte):
 	say "You show your round pregnant belly to [NameDesc of P]. [BigNameDesc of P] puts a hand to it, and purrs.[line break][speech style of P]'This pleases the Great Ones.'[roman type][line break]";
 	if the pregnancy of the player is 1 and the player is getting unlucky:
 		say "With one hand resting on your belly, [NameDesc of P] raises [his of P] other hand in the air and snaps [his of P] fingers. Suddenly, your pregnancy feels... Different.[line break][speech style of P]'Azathot has chosen you to be one of his disciples. Go and spread the good news. Carry your burden with pride. May you remain this way for the rest of your days.'[line break]Wait... What?! Has [he of P] just made me... PERMANENTLY PREGNANT?![roman type][line break][GotUnluckyFlav]";
-		now the pregnancy of the player is 2.
+		pause pregnancy.
 
 get-drunk-errand is an errand.
 Definition: get-drunk-errand is appropriate:
@@ -2419,7 +2419,7 @@ To set up (E - new-battery-errand):
 	while spare-battery is nearby:
 		now spare-battery is in a random placed modern room.
 To compute unique completion of (E - new-battery-errand) for (P - a person):
-	say "You give [NameDesc of spare-battery] to [NameDesc of P].[line break][speech style of P]'ANALYZING... SPARE BATTERY DETECTED. APPROPRIATE REWARD DISPENSION LOADING...'[roman type][line break]";
+	say "You give [NameDesc of spare-battery] to [NameDesc of P].[line break][speech style of P]'ANALYSING... SPARE BATTERY DETECTED. APPROPRIATE REWARD DISPENSION LOADING...'[roman type][line break]";
 	now spare-battery is carried by P.
 To say RequestAssign of (M - a robot):
 	let E be the current-errand of M;
@@ -3315,8 +3315,8 @@ To execute (T - talk-request) for (M - a monster):
 		say "[variable custom style][RequestFlav of R][roman type][line break]";
 		if R is teach-me-something and M is uniquely unable to teach:
 			say "[speech style of M]'I have nothing I can teach you right now.'[roman type][line break]";
-		otherwise if M is woman-player:
-			say "[speech style of M]'If I could afford to, I'd do that for free.'[roman type][line break]";
+		otherwise if M is woman-player and R is not a requestable:
+			say "[speech style of M]'If I could afford to, I'd give you that for free.'[roman type][line break]";
 		otherwise if the current-errand of M is no-errand:
 			now the current-reward of M is R;
 			let CH be the charisma of the player;

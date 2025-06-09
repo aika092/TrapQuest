@@ -66,7 +66,7 @@ To say ClothingDesc of (C - a grey string monokini):
 	if C is worn, say "It covers literally none of your nipples and [if the player is possessing a vagina]hardly manages to cover your [vagina][otherwise][genitals][end if].".
 
 To say ShortDesc of (C - a grey string monokini):
-	say "string swimsuit".
+	say "grey string swimsuit".
 To say MediumDesc of (C - a grey string monokini):
 	say "practically non-existent string swimsuit".
 

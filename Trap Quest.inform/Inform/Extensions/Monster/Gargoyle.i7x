@@ -113,7 +113,9 @@ Definition: gargoyle (called M) is vigilant:
 	decide no.
 
 Definition: gargoyle (called M) is objectifying the player:
-	if M is not in the location of the player, decide no;
+	if M is not in the location of the player:
+		now the objectification of M is 0;
+		decide no;
 	if the objectification of M is 1, decide yes;
 	if the class of the player is faerie or the class of the player is vixen, decide yes;
 	if the player is pheromonal, decide yes;

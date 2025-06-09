@@ -43,7 +43,7 @@ An all time based rule (this is the compute cum movements rule):
 					compute summoned quest of M;
 			compute enema holding;
 		if the pregnancy of the player > 0 and timeBombTime <= 0 and playerRegion is not school:
-			if the latex-transformation of the player > 3 and the pregnancy of the player is 1, now the pregnancy of the player is 2;
+			if the latex-transformation of the player > 3 and the pregnancy of the player is 1, pause pregnancy;
 			compute pregnancy;
 		if the womb volume of vagina > 0 and (diaper quest is 1 or the player is not possessing a vagina):
 			say "BUG - semen just got into your womb, but [if diaper quest is 1]this is diaper quest[otherwise]you don't even have one[end if]! Please report this as a bug.";
@@ -103,6 +103,13 @@ To check goddess eligibility:
 					otherwise if O is removable:
 						WardrobeVanish O;
 				class summon bunny tail plug.
+
+To pause pregnancy:
+	if the pregnancy of the player is 1:
+		now the pregnancy of the player is 2;
+		if the class of the player is fertility goddess and sacred dress is not worn:
+			PinkWardrobeUnclash sacred dress;
+			class summon sacred dress.
 
 To say ConceptionFlav:
 	say "[one of]You look down, and realise that your belly isn't slowly getting smaller as you'd expect. [if the bimbo of the player < 8][line break][first custom style]Am I pregnant?![otherwise][line break][second custom style]I think I'm pregnant![end if][roman type][line break][or]You feel the tiniest kick coming from inside your belly... [if the bimbo of the player < 8][line break][first custom style]Uh-oh.[otherwise][line break][second custom style]Oopsie, I think I got myself knocked up back there![end if][roman type][line break][purely at random]".

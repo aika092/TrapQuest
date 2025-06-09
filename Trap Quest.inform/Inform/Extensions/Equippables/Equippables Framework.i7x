@@ -144,7 +144,7 @@ The fingers gloves clash rule is listed in the gloves wearability rules.
 
 This is the equip after wearing gloves rule:
 	repeat with E running through worn hand ready clothing:
-		if E is clothing:
+		if E is clothing and E is not bag of holding:
 			if summoning is 0 and autoremove is false, say "You would need to stop wielding [NameDesc of E] first[if wearing-target is not hand ready] (but you should be able to wield it again afterwards)[end if].";
 			rule fails.
 The equip after wearing gloves rule is listed in the gloves wearability rules.
@@ -178,6 +178,12 @@ To construct normal buttons for (T - painted-vibrator-hands):
 		now the ButtonCommand entry is "adjust arms";
 		now the ButtonImage entry is the examine-image of predicament-painted-cutoffs;
 		now the ButtonColour entry is lightModeFullGreen.
+To decide which object is the concealer of (C - painted-vibrator-hands):
+	if entry 1 in the armUses of arms is arms and entry 2 in the armUses of arms is arms, decide on arms;
+	if predicament-painted-cutoffs is hand-blocked, decide on predicament-painted-cutoffs;
+	decide on nothing.
+To decide which number is the initial outrage of (C - painted-vibrator-hands):
+	decide on 13.
 
 candy-cane-gloves is a gloves. candy-cane-gloves is latex.
 The printed name of candy-cane-gloves is "[clothing-title-before]candy cane gloves[clothing-title-after]". The text-shortcut of candy-cane-gloves is "ccg". Figure of candy-cane-gloves is the file "Items/Accessories/Equippables/gloves2.png". Understand "candy", "cane", "gloves" as candy-cane-gloves.

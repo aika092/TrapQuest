@@ -123,7 +123,7 @@ To compute (S - pink-spraybottle) breaking:
 			say "But then you watch as the blessed energy imbued in the bottle sparks to life, pulling all the shards back together until the spraybottle is as good as new![line break][variable custom style]Wow![roman type][line break]The blessing has now expired, but at least your bottle isn't broken.";
 			now S is bland;
 		otherwise:
-			say "[if the bimbo of the player < 10][line break][variable custom style][one of]Shit, something tells me I'm going to be in trouble with someone for this...[or]No, no, not again![stopping][otherwise][line break][second custom style][one of]Oopsie! I'm such a klutz sometimes![or]Teehee, it happened again! I guess I should go back to the mechanic for my [']punishment[']![stopping][end if][roman type][line break]";
+			say "[if the bimbo of the player < 10][line break][variable custom style][one of]Shit, something tells me I'm going to be in trouble with someone for this...[or]No, no, not again![stopping][otherwise][line break][second custom style][one of]Oopsie! I'm such a klutz sometimes![or]Tee-hee, it happened again! I guess I should go back to the mechanic for my [']punishment[']![stopping][end if][roman type][line break]";
 			now S is cloth;
 			now the charge of S is 0;
 			unless there is a worn cursed maid headdress, now S is cursed;

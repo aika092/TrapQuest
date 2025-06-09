@@ -16,6 +16,7 @@ Figure of goddess tunic is the file "Items/Clothes/Upper/Special/FertGod/fertili
 Figure of ivy leaves is the file "Items/Clothes/Upper/Special/FertGod/fertilitygoddess2.png".
 Figure of living tentacles is the file "Items/Clothes/Upper/Special/FertGod/fertilitygoddess3.png".
 Figure of sheer chest garb is the file "Items/Clothes/Upper/Special/FertGod/fertilitygoddess4.png".
+Figure of sacred dress is the file "Items/Clothes/Upper/Special/FertGod/fertilitygoddess5.png".
 
 Part 1 - Goddess Tunic
 
@@ -35,7 +36,8 @@ To say ClassSummonFlav of (C - goddess tunic):
 	say "A white tunic materialises around you.[roman type][line break]You feel... divine!".
 
 To compute class set up of (C - goddess tunic):
-	now the raw-magic-modifier of C is childValue times 4.
+	now the raw-magic-modifier of C is childValue times 4;
+	if the player is getting lucky, now C is protection.
 
 To compute SelfExamineDesc of (O - goddess tunic):
 	say "You are wearing a [ShortDesc of O]. ".
@@ -156,5 +158,37 @@ To say MediumDesc of (C - sheer-chest-garb):
 
 To decide which number is the initial outrage of (C - sheer-chest-garb):
 	decide on 2.
+
+Part 5 - Sacred Dress
+
+sacred dress is a fertility outfit. sacred dress is totally-exclusive. sacred dress is silk. The skirt-length of sacred dress is 4. sacred dress is confidence. sacred dress is high cut. sacred dress is sheer-when-wet.
+
+The printed name of sacred dress is "[clothing-title-before]sacred dress[clothing-title-after]". The text-shortcut of sacred dress is "scrd".
+
+Definition: sacred dress is white themed: decide yes.
+
+To decide which figure-name is clothing-image of (C - sacred dress):
+	decide on figure of sacred dress.
+
+To say ClothingDesc of (C - sacred dress):
+	say "This regal tunic look like the sort of thing a Roman goddess would be portrayed in.".
+
+To say ClassSummonFlav of (C - sacred dress):
+	say "A white tunic materialises around you.[roman type][line break]You feel... divine!".
+
+To compute class set up of (C - sacred dress):
+	now the raw-magic-modifier of C is childValue times 4;
+	now C is protection.
+
+To compute SelfExamineDesc of (O - sacred dress):
+	say "You are wearing a [ShortDesc of O]. ".
+
+To say ShortDesc of (C - sacred dress):
+	say "sacred dress".
+To say MediumDesc of (C - sacred dress):
+	say "sacred dress".
+
+To decide which number is the initial outrage of (C - sacred dress):
+	decide on 1.
 
 Fertility Goddess Outfit ends here.

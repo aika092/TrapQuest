@@ -72,11 +72,8 @@ A time based rule (this is the iron-maiden-punishment rule):
 			let D be a random worn diaper;
 			if D is diaper, compute automatic state check of D;
 			say "The feathers [one of]begin to [or][stopping]twist back and forth, tickling your armpits, making you [one of]shudder[or]wiggle and squirm[or]writhe around[then at random][one of], making it difficult to hold onto your bladder[if diaper messing >= 3] and bowels[end if][or][stopping]!";
-			if diaper messing >= 3:
-				compute wallowing;
-				compute soiling;
-			let T be "The tickling makes your muscles involuntarily clench, and";
-			check sudden spit and expulsion with reason T;
+			if diaper messing >= 3, compute wallowing;
+			compute strength (3 + (iron-maiden-turns / 2)) tickling;
 		otherwise:
 			say "The feathers [one of]begin to [or][stopping]twist back and forth, tickling your armpits, making you [one of]shudder[or]wiggle and squirm[or]writhe around[then at random].";
 			let T be "The tickling makes your muscles involuntarily clench, and";
@@ -188,7 +185,7 @@ Check going when there is a triggered cage trap in the location of the player:
 		if the number of stuck body parts is 0 and inflation fetish is 1 and max ass size >= 10 and the player is getting unlucky:
 			now the stance of the player is 1;
 			now hips is stuck;
-			say "You begin to squeeze through the cage, but after the rest of your body except your [AssDesc] is out, you feel a magical curse  trigger! Your ass cheeks inflate with air until they're a comical size - much too big to fit between the bars! You're completely stuck! [GotUnluckyFlav][bold type]You'll have to wait for the cage to somehow release you.[roman type][line break]";
+			say "You begin to squeeze through the cage, but after the rest of your body except your [AssDesc] is out, you feel a magical curse trigger! Your ass cheeks inflate with air until they're a comical size - much too big to fit between the bars! You're completely stuck! [GotUnluckyFlav][bold type]You'll have to wait for the cage to somehow release you.[roman type][line break]";
 			AssInflate 10;
 		if there is a stuck body part:
 			say "[bold type]You are now stuck, halfway out of the cage, on your knees.[roman type][line break]";

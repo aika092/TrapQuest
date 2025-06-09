@@ -274,16 +274,6 @@ To compute vines fucking:
 	repeat with V running through vines penetrating a fuckhole:
 		let O be a random fuckhole penetrated by V;
 		increase the TrapNo of V by 1;
-		if the reaction of the player is 0 and bukkake fetish is 1 and the TrapNo of V < 4 and a random number between 1 and 4 is 1:
-			let R be a random number between 12 and 19;
-			say "As if to quell your resistance, a free vine lashes out with its oozing, bulbous tip and slaps you across the face several times, leaving drippy trails of [semen] in its wake. [if the semen taste addiction of the player > R and face is not occupied]Overwhelmed by submissive desires, [one of]your tongue lewdly reaches out and licks up as much of the sticky mess as it can.[or] you follow its movements with your open mouth in an attempt to steal a taste of the writhing intruder.[or]you stop struggling and part your lips in supplication. The vine momentarily rewards your response by wrapping itself around your neck, forcing its way into your mouth and down your gullet, and simultaneously squeezing and fucking your throat while you choke and sputter. It withdraws as you start to see stars, leaving you feeling dazed yet disturbingly satisfied.[then at random][end if][line break]";
-			if the semen taste addiction of the player > R:
-				CumFaceUp 1;
-				now V is penetrating face;
-				StomachSemenUp 1;
-				now V is not penetrating face;[To allow the player to gag]
-			otherwise:
-				CumFaceUp 2;
 		if the TrapNo of V is 1:
 			if the player is upright and there is a held condom-providing thing and the reaction of the player > 0, compute condomCatch of V in O;
 			otherwise say "Another vine joins the first in fucking your [if V is penetrating asshole][asshole][otherwise][vagina][end if]! Shit!";
@@ -297,9 +287,15 @@ To compute vines fucking:
 			otherwise say "A fourth vine somehow manages to squeeze into your [if V is penetrating asshole][asshole][otherwise][vagina][end if], and they all continue fucking you!";
 			Ruin O;
 		if the reaction of the player is 0 and bukkake fetish is 1 and the TrapNo of V < 4 and (a random number between 1 and 3 is 1 or the player is vine-cursed):
-			say "[line break]The increase in sensation sends shivers of pleasure through the nearby vines, and they squirt and ooze from their tips. Several hover near enough that your face and chest are splashed and splattered with [semen].";
-		UnannouncedSquirt semen on face by a random number between 1 and 2;
-		UnannouncedSquirt semen on breasts by a random number between 1 and 2;
+			let R be a random number between 12 and 19;
+			say "As if to quell your resistance, a free vine lashes out with its oozing, bulbous tip and slaps you across the face several times, leaving drippy trails of [semen] in its wake. [if the semen taste addiction of the player > R and face is not occupied]Overwhelmed by submissive desires, [one of]your tongue lewdly reaches out and licks up as much of the sticky mess as it can.[or] you follow its movements with your open mouth in an attempt to steal a taste of the writhing intruder.[or]you stop struggling and part your lips in supplication. The vine momentarily rewards your response by wrapping itself around your neck, forcing its way into your mouth and down your gullet, and simultaneously squeezing and fucking your throat while you choke and sputter. It withdraws as you start to see stars, leaving you feeling dazed yet disturbingly satisfied.[then at random][end if][line break]";
+			if the semen taste addiction of the player > R:
+				AnnouncedSquirt semen on face by 1;
+				now V is penetrating face;
+				StomachSemenUp 1;
+				now V is not penetrating face;[To allow the player to gag]
+			otherwise:
+				AnnouncedSquirt semen on face by a random number between 1 and 3;
 		if the reaction of the player > 0:
 			say "You relax your [if V is penetrating asshole][asshole][otherwise][vagina][end if], not resisting the invasion.";
 			repeat with M running through reactive monsters:

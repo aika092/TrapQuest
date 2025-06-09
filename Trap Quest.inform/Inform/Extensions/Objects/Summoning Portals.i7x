@@ -313,7 +313,7 @@ To decide which object is the summonChoice of (S - summoning-circle):
 To say ActiveWarning of (S - summoning-circle):
 	say "[bold type][if the location of the player is Dungeon33]The [printed name of summoning-circle] slowly lights up, and you can feel dark energy gathering around you...[otherwise]A pulse of energy passes through the dungeon, and something changes in the air. It's almost like there's a draft.[end if][roman type][line break]";
 	if the location of the player is Dungeon33, say "[variable custom style]Is something going to come through that?[roman type][line break]";
-	otherwise say "[variable custom style]Something's coming[if the player is a nympho]... Teehee, cumming.[otherwise]...[end if][roman type][line break]";
+	otherwise say "[variable custom style]Something's coming[if the player is a nympho]... Tee-hee, cumming.[otherwise]...[end if][roman type][line break]";
 	if newbie tips is 1, say "[one of][newbie style]Newbie Tip: Oh, looks like the dungeon's summoning portal just activated! That must mean the game has decided there aren't enough NPCs in the dungeon right now. It will slowly count down until it releases a brand new monster into the dungeon. Try increasing its timer by entering it or offering items to stall it, or perform some sexual acts nearby to make the monster arrive even faster![roman type][or][stopping]".
 
 Check entering summoning-circle:
@@ -347,10 +347,14 @@ Check entering summoning-circle:
 		say "A strange feeling ripples down your spine, and you look over your shoulder to catch your [AssDesc] having a sudden growth spurt!";
 		AssSwell a random number between 1 and 2;
 	if R is 5:[force the player to masturbate, which gets the portal closer to spawning]
-		say "The magic surrounding you seems to rapidly intensify rather than fade away, and your arousal flares as you realise it's impossible to resist...";
-		now auto is 1;
-		if the player is very horny, try masturbating;
-		now auto is 0;
+		if the player is very horny:
+			say "The magic surrounding you seems to rapidly intensify rather than fade away, and your arousal flares as you realise it's impossible to resist...";
+			now auto is 1;
+			try masturbating;
+			now auto is 0 instead;
+		otherwise:
+			say "The magic surrounding you seems to rapidly intensify rather than fade away, and your arousal flares way up!";
+			arouse 3000 instead;
 	if R < 5, ChargeUp summoning-circle by a random number between 200 and 300;
 	do nothing instead.
 
@@ -463,11 +467,13 @@ Check entering giant-statue:
 	if vine boss is alive or doomed is 5, now V is 1;
 	let R be a random number between 1 and 4;
 	if the player is very horny and the player is potentially able to masturbate, now R is 5;
-	if R is 1 and pregnancy fetish is 1:
-		if diaper quest is 0 and the player is possessing a vagina:
+	if R is 1:
+		let PD be 0;
+		if pregnancy fetish is 1 and diaper quest is 0, now PD is 1;
+		if PD is 1 and the player is possessing a vagina:
 			say "You feel a tingling sensation in your core as a wave of energy washes over you.";
 			increase the pregnancy rate of the player by 1 + V;
-		otherwise if diaper quest is 0 and the mystical size of penis > min penis size:
+		otherwise if PD is 1 and the mystical size of penis > min penis size:
 			SilentlySpecialPenisDown 1 + V; [#LXorDD]
 			say "A wave of energy washes over you as your penis shrinks into a [mystical ShortDesc of penis].";
 		otherwise:
@@ -493,10 +499,14 @@ Check entering giant-statue:
 			if diaper quest is 0, SlowSemenAddictUp 1;
 			otherwise DexDown 1;
 	if R is 5:
-		say "A wave of raw, carnal energy hits you like a tidal wave. Your whole body burns with arousal, and your hands start to move before you can stop them...";
-		now auto is 1;
-		if the player is very horny, try masturbating;
-		now auto is 0;
+		if the player is very horny:
+			say "A wave of raw, carnal energy hits you like a tidal wave. Your whole body burns with arousal, and your hands start to move before you can stop them...";
+			now auto is 1;
+			try masturbating;
+			now auto is 0 instead;
+		otherwise:
+			say "A wave of raw, carnal energy hits you like a tidal wave. Your whole body burns with arousal.";
+			arouse 5000 instead;
 	if R < 5, ChargeUp giant-statue by a random number between 200 and 300;
 	do nothing instead.
 
@@ -606,10 +616,14 @@ Check entering teleportation-pad:
 		teleport to the location of V;
 		now M is V;
 	if M is throne:
-		say "Your body seems to absorb the static electricity, which just seems to intensify even further as your body converts it to red hot arousal. You can't resist...";
-		now auto is 1;
-		try masturbating;
-		now auto is 0;
+		if the player is very horny:
+			say "Your body seems to absorb the static electricity, which just seems to intensify even further as your body converts it to red hot arousal. You can't resist...";
+			now auto is 1;
+			try masturbating;
+			now auto is 0;
+		otherwise:
+			say "Your body seems to absorb the static electricity, which just seems to intensify even further as your body converts it to red hot arousal.";
+			arouse 8000;
 	otherwise:
 		let RM be the location of M;
 		let X be a random number between 1 and 3;
@@ -839,10 +853,14 @@ Check entering mysterious-mummy:
 		IntDown 1;
 	if R is 4:
 		now the next-summon of mysterious-mummy is the summonChoice of mysterious-mummy;
-		say "Your vision is flooded with bright pink, and a wave of lust crashes over your body like a tidal wave. The candles flicker [MummyColour of the noun] as the linen unravels, but with your whole body thrumming with arousal, all that registers is that your hands have been freed up...";
-		now auto is 1;
-		if the player is very horny, try masturbating;
-		now auto is 0 instead;
+		if the player is very horny:
+			say "Your vision is flooded with bright pink, and a wave of lust crashes over your body like a tidal wave. The candles flicker [MummyColour of the noun] as the linen unravels, but with your whole body thrumming with arousal, all that registers is that your hands have been freed up...";
+			now auto is 1;
+			if the player is very horny, try masturbating;
+			now auto is 0 instead;
+		otherwise:
+			say "Your vision is flooded with bright pink, and a wave of lust crashes over your body like a tidal wave.";
+			arouse 8000 instead;
 	otherwise:
 		now the next-summon of mysterious-mummy is the summonChoice of mysterious-mummy;
 		say "The candles at the mummy's feet turn [MummyColour of the noun] as the linen unravels, leaving you standing exactly where you where before.";

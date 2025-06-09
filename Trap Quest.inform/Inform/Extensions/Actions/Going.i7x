@@ -41,13 +41,15 @@ Check going east:
 
 Check going north:
 	if the player is in Stairwell03, try going up instead;
+	if the location of the player is the room south of Dungeon41 and shopkeeper is in Dungeon41 and shopkeeper is alive:
+		if the scared of shopkeeper > 0, say "Metal bars are in the way. You'll have to wait until the shopkeeper opens them again." instead;
 	now the travel-direction of the player is north;
 	now the travel-opposite of the player is south.
 
 Check going west:
 	if the player is in Stairwell02, try going up instead;
-	if the location of the player is the room east of Hotel37 and there is an on-stage dominatrix:
-		if the scared of a random on-stage dominatrix > 0, say "A metal shutter is in the way. You'll have to wait until it comes back up." instead;
+	if the location of the player is the room east of Hotel37 and dominatrix is alive and dominatrix is in Hotel37:
+		if the scared of dominatrix > 0, say "A metal shutter is in the way. You'll have to wait until it comes back up." instead;
 	now the travel-direction of the player is west;
 	now the travel-opposite of the player is east.
 
@@ -464,7 +466,7 @@ Check going:
 		if areYouSure is 1:
 			if futanari-slutty-sister is in L:
 				unless futanari-slutty-sister is asleep or futanari-slutty-sister is off-stage or the wealth of the player < 20:
-					say "You can see [if the number of alive slutty sisters > 1]the two [boy of futanari-slutty-sister]s[otherwise]one of the [boy of futanari-slutty-sister]s[end if] who put you into the virtual reality capsule in that room. You'll probably have to fight them. [if the player is prone][bold type]You are currently on your knees, which usually seems to result in fights not going your way.[roman type] [end if]Are you sure you want to try and go that way? ";
+					say "You can see [if the number of alive slutty sisters > 1]the two [boy of futanari-slutty-sister]s[otherwise]one of the [boy of futanari-slutty-sister]s[end if] who put you into the virtual reality capsule in that room. You'll probably have to fight [if the number of alive slutty sisters > 1]them[otherwise][him of futanari-slutty-sister][end if]. [if the player is prone][bold type]You are currently on your knees, which usually seems to result in fights not going your way.[roman type] [end if]Are you sure you want to try and go that way? ";
 					unless the player is bimbo consenting, say "You change your mind." instead;
 		if areYouSure is 1 and robomatron is alive and robomatron is in L and robomatron is awake and the wealth of the player >= 20:
 			say "You can see a large scary robot dressed like a nanny. You'll probably have to fight it. [if the player is prone][bold type]You are currently on your knees, which usually seems to result in fights not going your way.[roman type] [end if]Are you sure you want to try and go that way? ";
@@ -719,7 +721,7 @@ Carry out going while the player is in Dungeon41:
 			if flav-said is 0, say "[BigNameDesc of shopkeeper] sees you trying to leave.[line break][first custom style]'[one of]Stop, thief!'[or]Guards! Guards! Arrest this thieving whore!'[or]Where do you think you're going with that, bitch?'[or]Oi, you haven't paid for that!'[purely at random][roman type][line break]An alarm bell rings throughout the whole dungeon. Looks like you're in trouble with the law!";
 			repeat with M running through alive royal guards:
 				deinterest M;
-				if M is asleep and M is in the location of the player, say "[BigNameDesc of M] hears the alarm and wakes up!";
+				if M is asleep and M is in the location of the player and M is undefeated, say "[BigNameDesc of M] hears the alarm and wakes up!";
 				now the sleep of M is 0;
 			interest shopkeeper;
 			anger shopkeeper;

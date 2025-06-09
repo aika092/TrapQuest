@@ -9,6 +9,28 @@ To decide which figure-name is Figure of demoness cutscene 15:
 To decide which figure-name is Figure of dildo pole dq:
 	decide on figure of small image.
 
+To decide which figure-name is Figure of Elevator Face Machine Panties Vibe:
+	decide on figure of small image.
+To decide which figure-name is Figure of Elevator Face Machine Panties Spank:
+	decide on figure of small image.
+To decide which figure-name is Figure of Elevator Face Machine Panties Spank Vibe Messy:
+	decide on figure of small image.
+
+To decide which figure-name is Figure of Elevator Face Machine Diaper Vibe:
+	decide on figure of small image.
+To decide which figure-name is Figure of Elevator Face Machine Diaper Vibe Wet:
+	decide on figure of small image.
+To decide which figure-name is Figure of Elevator Face Machine Diaper Spank:
+	decide on figure of small image.
+To decide which figure-name is Figure of Elevator Face Machine Diaper Spank Wet:
+	decide on figure of small image.
+To decide which figure-name is Figure of Elevator Face Machine Diaper Spank Vibe:
+	decide on figure of small image.
+To decide which figure-name is Figure of Elevator Face Machine Diaper Spank Vibe Wet:
+	decide on figure of small image.
+To decide which figure-name is Figure of Elevator Face Machine Diaper Spank Vibe Messy:
+	decide on figure of small image.
+
 To decide which figure-name is Figure of ghost 6:
 	decide on figure of small image.
 To decide which figure-name is Figure of ghost 7:

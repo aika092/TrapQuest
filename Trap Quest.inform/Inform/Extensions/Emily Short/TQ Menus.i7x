@@ -103,6 +103,8 @@ To reprint (selected menu - a table name):
 	say "[if finalEntry < __index]---MORE---[end if][line break]";
 	say variable letter spacing.
 
+latest-chosen-letter is a number that varies.
+
 To show menu contents:
 	increase the menu depth by 1;
 	let temporary depth be the menu depth;
@@ -122,6 +124,7 @@ To show menu contents:
 		now the current menu title is the temporary title;
 		reprint current menu;
 		let __x be the chosen letter;
+		now latest-chosen-letter is __x;
 		if __x is a number listed in the Table of Menu Commands
 		begin;
 			follow the effect entry;
@@ -132,15 +135,19 @@ To show menu contents:
 		end if;
 	end while.
 
-Rule for displaying (this is the basic menu contents rule):
-	now current menu selection is 1;
-	show menu contents.
+currently-displaying is initially false.
 
-Rule for constructing the status line while displaying (this is the constructing status line while displaying rule):
+Rule for displaying (this is the basic menu contents rule):
+	now currently-displaying is true;
+	now current menu selection is 1;
+	show menu contents;
+	now currently-displaying is false.
+
+[Rule for constructing the status line while displaying (this is the constructing status line while displaying rule):
 	if the endnode flag is 0,
 		fill status bar with Table of Deep Menu Status;
 	otherwise fill status bar with Table of Shallow Menu Status;
-	rule succeeds.
+	rule succeeds.]
 
 Table of Shallow Menu Status
 left	central	right
@@ -219,6 +226,8 @@ number	effect
 -6		select rule
 -5		move down rule
 -4		move up rule
+-2		move up rule
+-3		move down rule
 
 TQ Menus ends here.
 
@@ -261,7 +270,7 @@ would create an option entitled "Settings", which the player could select to vie
 
 If we do not want a given option to trigger a new submenu, we should leave it as "--".
 
-The "toggle" column contains the rule carried out when this option is chosen. In theory, this rule could be absolutely anything. In practise, the feature is mostly useful for giving the player a table of setting options which he can toggle on and off: for instance, we might provide the option "use verbose room descriptions", and then have the toggle rule change the game's internal settings about how room descriptions are displayed. (See the example attached for further guidance.)
+The "toggle" column contains the rule carried out when this option is chosen. In theory, this rule could be absolutely anything. In practice, the feature is mostly useful for giving the player a table of setting options which he can toggle on and off: for instance, we might provide the option "use verbose room descriptions", and then have the toggle rule change the game's internal settings about how room descriptions are displayed. (See the example attached for further guidance.)
 
 It is only useful for a given option to have one of these three features -- a description or a subtable or a toggle element. In the event that more than one column is filled out, the game will obey the toggle rule in preference to creating a submenu, and create a submenu in preference to displaying description text.
 

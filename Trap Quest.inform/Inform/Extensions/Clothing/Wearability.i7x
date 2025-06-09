@@ -2,7 +2,7 @@ Wearability by Clothing begins here.
 
 Chapter 7 - Global Wearability Rules
 
-Autowear is initially false.
+autowear is initially false.
 
 Definition: a clothing (called C) is actually wearable:
 	now wearing-target is C;
@@ -11,6 +11,15 @@ Definition: a clothing (called C) is actually wearable:
 	follow the wearability rules of C;
 	if the rule failed, decide no;
 	decide yes.
+
+Definition: a clothing (called C) is actually autowearable:
+	now autowear is true;
+	if C is actually wearable:
+		now autowear is false;
+		decide yes;
+	otherwise:
+		now autowear is false;
+		decide no.
 
 wearing-target is a clothing that varies.
 summoning is a number that varies. [If summoning is set to 1, then we do not output text whilst checking rules because we are summoning. If summoning is set to 0, then we are trying to wear an item of clothing, so we do output text explaining why.]
@@ -104,7 +113,7 @@ This is the sex doll can't wear new clothes rule:
 The sex doll can't wear new clothes rule is listed in the global wearability rules.
 
 This is the wrist collar bar prevents clothes manipulation rule:
-	if summoning is 0 and wrist collar bar is worn:
+	if summoning is 0 and wrist collar bar is worn and (wearing-target is not plentiful accessory or the player is not in Predicament20):
 		if autowear is false, say "Your hands are being held next to your neck by your [wrist collar bar], so how would you do that?";
 		rule fails.
 The wrist collar bar prevents clothes manipulation rule is listed in the global wearability rules.

@@ -32,8 +32,12 @@ To compute unique recycling of (C - laurel wreath):
 	now the conception-count of babymaking-quest is 0.
 
 To compute class outfit of (H - laurel wreath):
-	if the bimbo of the player < 10, class summon goddess tunic;
-	otherwise class summon ivy leaves.
+	if the pregnancy of the player is 2 and the largeness of belly >= 10:
+		class summon sacred dress;
+	otherwise if the bimbo of the player < 10 and the vaginal sex addiction of the player < 7:
+		class summon goddess tunic;
+	otherwise:
+		class summon ivy leaves.
 
 Chapter - Quest
 

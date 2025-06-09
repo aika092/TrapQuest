@@ -102,7 +102,9 @@ To decide which number is the difficulty of (M - an explorer):
 	decide on the raw difficulty of M.
 
 Definition: an explorer is too intimidating: decide no.
-Definition: an explorer is objectifying the player: decide no.
+Definition: an explorer (called M) is objectifying the player:
+	now the objectification of M is 0;
+	decide no.
 Definition: an explorer is babifying the player: decide no.
 
 To compute monstermotion of (M - an explorer):
@@ -217,7 +219,7 @@ To compute patronMeeting of (M - an explorer) with (P - a patron):
 	if debuginfo > 1, say "[input-style]Patron is meeting [NameDesc of M].[roman type][line break]";
 	if M is in the location of the player:
 		focus-consider P;
-		let R be a random off-stage ring;
+		let R be a random off-stage plentiful ring;
 		say "A [MediumDesc of P] walks into the room and makes a beeline for [NameDesc of M]. ";
 		if the explorer-bimbo of M >= 2 and there is a hotel bed in the location of M and (VIP-card is held by P or R is ring):
 			say "[big he of M] immediately sits up on the bed.[line break][speech style of M]'Hiya hun, what can I do for you today?'[line break]";

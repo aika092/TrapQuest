@@ -82,6 +82,6 @@ The reveal any newly visible interior rule is not listed in the report opening r
 The standard report opening rule is not listed in the report opening rulebook.
 
 Check closing a container:
-	if the noun is open, say "You don't see the point." instead.
+	if the noun is open and the noun is not pink wardrobe, say "You don't see the point." instead.
 
 Opening ends here.

@@ -70,11 +70,14 @@ To compute turn trap effect of (Y - stripper cage trap):
 		otherwise if player-numerical-response is 2:
 			let X be a random patron in the location of the player;
 			say "You cower inside the cage[one of]. [BigNameDesc of X] leaves for a moment, and then returns, dragging a trash can into the middle of the crowd[stopping].";
+			let condom-thrown be false;
 			repeat with M running through patrons in the location of the player:
 				say StripperDemandFlav of M;
 				let tissue-thrown be true;
 				if a random number between 1 and 2 is 1:
-					if a random number between 1 and 2 is 1, now tissue-thrown is false;
+					if condom fetish >= 2 and a random number between 1 and 2 is 1:
+						now tissue-thrown is false;
+						now condom-thrown is true;
 					say "[BigNameDesc of M] reaches into the trash can and pulls out a [if tissue-thrown is false]used condom[else]cum-soaked tissue[end if], and throws it at you!";
 					if the player is getting lucky:
 						say "It misses completely! [GotLuckyFlav]";
@@ -122,6 +125,7 @@ To compute turn trap effect of (Y - stripper cage trap):
 								if C is a thing:
 									now C is in the location of the player;
 									say "The condom falls to the ground.";
+			if condom-thrown is true, cutshow Figure of flying used condoms;
 		if the reset-timer of Y <= a random number between 649 and 660:
 			if Y is grabbing the player, say "The cage bars descend along with the podium, and you are released. The patrons all chuckle to themselves as they file out of the room.";
 			dislodge Y;

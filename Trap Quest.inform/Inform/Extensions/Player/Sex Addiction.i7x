@@ -190,6 +190,61 @@ To FuckholeAddictDown (X - a number):
 		otherwise AnalSexAddictDown 1;
 		decrease X by 1.
 
+To AnythingAddictDown (X - a number):
+	while X > 0:
+		let N be a random number between 1 and 13;
+		if N is 1:
+			if diaper quest is 0 and the player is possessing a vagina and the raw vaginal sex addiction of the player > 1:
+				VaginalSexAddictDown 1;
+				decrease X by 1;
+		otherwise if N is 2:
+			if diaper quest is 0 and the raw anal sex addiction of the player > 1:
+				AnalSexAddictDown 1;
+				decrease X by 1;
+		otherwise if N is 3:
+			if diaper quest is 0 and the raw oral sex addiction of the player > 1:
+				OralSexAddictDown 1;
+				decrease X by 1;
+		otherwise if N is 4:
+			if diaper quest is 0 and the raw titfuck addiction of the player > 1:
+				TitfuckAddictDown 1;
+				decrease X by 1;
+		otherwise if N is 5:
+			if interracial fetish is 1 and the raw bbc addiction of the player > 1:
+				BBCAddictDown 1;
+				decrease X by 1;
+		otherwise if N is 6:
+			if grossness fetish > 0 and the raw grossness addiction of the player > 1:
+				GrossnessAddictDown 1;
+				decrease X by 1;
+		otherwise if N is 7:
+			if watersports fetish > 0 and the raw urine taste addiction of the player > 1:
+				UrineTasteAddictDown 1;
+				decrease X by 1;
+		otherwise if N is 8:
+			if (lactation fetish > 0 or diaper quest is 1) and the raw milk taste addiction of the player > 1:
+				MilkTasteAddictDown 1;
+				decrease X by 1;
+		otherwise if N is 9:
+			if diaper quest is 0 and the raw semen taste addiction of the player > 1:
+				SemenTasteAddictDown 1;
+				decrease X by 1;
+		otherwise if N is 10:
+			if diaper quest is 0 and the raw semen addiction of the player > 1:
+				SemenAddictDown 1;
+				decrease X by 1;
+		otherwise if N is 11:
+			if the raw sex addiction of the player > 1:
+				SexAddictDown 1;
+				decrease X by 1;
+		otherwise if N is 12:
+			if diaper lover > 0 and the raw diaper addiction of the player > 1:
+				DiaperAddictDown 1;
+				decrease X by 1;
+		otherwise:
+			DelicateDown 1;
+			decrease X by 1.
+
 [!<Player>@<fuckedCount:Integer>*
 
 The number of times the player has had submissive sex with unfriendly monsters

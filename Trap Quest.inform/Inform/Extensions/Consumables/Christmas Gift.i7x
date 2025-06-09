@@ -141,7 +141,7 @@ To initialise christmas gifts:
 		let E be a random off-stage electric fan;
 		add E to christmas-gift-list;
 	repeat with N running from 1 to 5: [5 gold rings]
-		let J be a random off-stage ring;
+		let J be a random off-stage plentiful ring;
 		add J to christmas-gift-list;
 	[4 new undies]
 	if diaper quest is 0:
@@ -207,6 +207,7 @@ Carry out unwrapping:
 		if C is off-stage, now X is C;
 		truncate christmas-current-gift-list to (E - 1) entries;
 	if X is a monster:
+		set up X;
 		say "A tiny [X] flies out of the gift box, rapidly growing to full size!";
 		now X is in the location of the player;
 	otherwise if X is a christmas-gift-event:
@@ -215,7 +216,7 @@ Carry out unwrapping:
 		blandify X; [to reset it]
 		now X is carried by the player;
 		now the owner of X is nothing;
-		if X is clothing or X is alchemy product:
+		if X is cursable clothing or X is alchemy product:
 			if a random number between 1 and 3 is 1, now X is blessed;
 			if a random number between 1 and 6 is 1, now X is cursed;
 		if X is plentiful accessory:

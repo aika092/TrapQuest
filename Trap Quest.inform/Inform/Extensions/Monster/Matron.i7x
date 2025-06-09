@@ -19,6 +19,11 @@ Figure of matron diaper change cutscene is the file "NPCs/Hotel/Matron/cutscene-
 Figure of matron pacifier cutscene is the file "NPCs/Hotel/Matron/cutscene-matron-pacifier1.jpg".
 Figure of matron breastfeed cutscene is the file "NPCs/Hotel/Matron/cutscene-matron-breastfeed1.jpg".
 
+Figure of matron diaper change temperature cutscene male is the file "NPCs/Hotel/Matron/cutscene-matron-change2a.jpg".
+Figure of matron diaper change temperature cutscene female is the file "NPCs/Hotel/Matron/cutscene-matron-change2b.jpg".
+Figure of matron diaper change semen cutscene male is the file "NPCs/Hotel/Matron/cutscene-matron-change3a.jpg".
+Figure of matron diaper change semen cutscene female is the file "NPCs/Hotel/Matron/cutscene-matron-change3b.jpg".
+
 To decide which figure-name is the monster-image of (M - matron):
 	if M is changing the player and M is penetrating face, decide on figure of matron breastfeed cutscene;
 	decide on figure of matron.
@@ -468,6 +473,8 @@ Definition: matron is diaper change during special ready:
 	decide no.
 
 To compute diaper change during special of (M - matron):
+	let diaper-options be 2;
+	let R be a random number between 1 and diaper-options;
 	now M is not change-anal-ready;
 	if enema fetish is 1 and diaper messing >= 3 and (the player is feeling full or a random number between 1 and 2 is 1) and the total squirtable fill of belly is 0 and the player is getting unlucky:
 		say "[speech style of M]'While we're here, I think you need a special something to keep your bowels nice and healthy.'[roman type][line break][GotUnluckyFlav]It turns out that [NameDesc of M][']s idea of such a special something... Is a giant enema syringe.";
@@ -485,9 +492,11 @@ To compute diaper change during special of (M - matron):
 		summon P uncursed;
 		gluify P;
 		say "[BigNameDesc of M] just smirks.[line break][speech style of M]'You look so beautiful with your new princess plug, dear. I hope it will remind you of me as you waddle around and have fun in your new diaper.'[roman type][line break]";
-	otherwise if a random number between 1 and 2 is 1:
+	otherwise if R is 2:
 		say "[speech style of M]'While we're here, I'd better check your temperature.'[roman type][line break][BigNameDesc of M] brandishes a large glass themometer.[line break][one of][variable custom style][if the player is able to speak]'Wait... An old glass thermometer like that... You don't mean to...!'[otherwise]Wait... An old glass thermometer like that... [big he of M] doesn't mean to...![end if][or][variable custom style][if the player is able to speak]'A-Again?!'[otherwise][big he of M][']s doing this AGAIN?![end if][stopping][roman type][line break]";
 		say "[one of]Indeed, [he of M] does. [or][stopping]With a dash of lube and a swish of [his of M] arm, [he of M] pushes the thermometer deep inside your [asshole].";
+		if the player is possessing a vagina, cutshow Figure of matron diaper change temperature cutscene female for M;
+		otherwise cutshow Figure of matron diaper change temperature cutscene male for M;
 		let RP be refractoryperiod;
 		stimulate asshole from M;
 		if RP is refractoryperiod: [no orgasm]
@@ -512,6 +521,25 @@ To compute diaper change during special of (M - matron):
 		otherwise:
 			say "[speech style of M]'It's good news, [honey of M] - your temperature is all normal!'[roman type][line break]";
 
+Definition: matron is diaper change complete special ready:
+	if diaper cumrag > 0 and there is a worn disposable diaper and a random number between 1 and 2 is 1, decide yes;
+	decide no.
+
+To compute diaper change complete special of (M - matron):
+	let P be a random generic-appropriate patron;
+	if mechanic is alive and mechanic is threatening, now P is mechanic;
+	now P is in the location of the player;
+	say "Suddenly, [NameDesc of P] steps in through the doorway.[line break][speech style of P]'I thought I heard something interesting happening in here. How... Degrading.'[roman type][line break][big he of P] smirks at you, and you blush furiously.[line break][BigNameDesc of M] chuckles.[paragraph break][speech style of M]'Well well well, look who we have here. Why don't you come over here and make it even more degrading?'[roman type][line break][BigNameDesc of M] untapes your new diaper and peels it open to reveal your defenceless genitalia. You realise that [he of M] is talking to [NameDesc of P], as if the two growns up are talking, without caring about what you, the child, might want.[paragraph break][speech style of P]'Oh? Are you thinking what I'm thinking?'[roman type][line break][BigNameDesc of P] asks as [he of P] approaches the giant changing table.[paragraph break][speech style of M]'Get it out already. I want to see [his of the player] face when you cum all over [his of the player] [genitals] and fresh new padding.'[paragraph break]";
+	if the player is able to speak:
+		say "[variable custom style]'[if the grossness addiction of the player >= 12]Yes please Daddy, cum on my [genitals]!'[otherwise if the grossness addiction of the player >= 5]I know what you're thinking, and just so you know, I think that's really gross.'[otherwise]No way! You can't be serious...'[end if][roman type][line break]You squeal, but the grown ups both just ignore you. ";
+	otherwise:
+		say "[variable custom style]'Oh my gosh, [he of M][']s going to...[roman type][line break]You whine weakly as your suspicions are confirmed. ";
+	say "[BigNameDesc of M] takes hold of [NameDesc of P][']s [manly-penis], and begins enthusiastically pumping it. [BigNameDesc of P] groans with satisfaction, and it doesn't take long for [him of P] to be worked up to near orgasmic bliss. [BigNameDesc of M] guides [his of P] [manly-penis] over towards your freshly cleaned groin, and masturbates [him of P] even more fervently, until with a joyous roar, [NameDesc of P] spews several ropes of [semen] over your [genitals] and into your padding.";
+	compute diaper cumrag ejaculating of P;
+	say "[speech style of M]'Now THAT is a humiliating sight.'[roman type][line break][BigNameDesc of M] snickers happily as [he of M] tapes your diaper back up, now with a healthy dose of [NameDesc of P][']s gross, slimy [semen]. [BigNameDesc of P] hastily tucks [his of P] [manly-penis] away and takes [his of P] leave.";
+	bore P for 150 seconds;
+	compute mandatory room leaving of P;
+	if P is patron, destroy P.
 
 Definition: matron is diaper change after special ready:
 	if face is not actually occupied, decide yes;

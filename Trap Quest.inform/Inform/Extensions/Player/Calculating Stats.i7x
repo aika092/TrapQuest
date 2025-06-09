@@ -105,7 +105,10 @@ To decide which number is the flat strength of the player:
 	decrease S by the suffocation of the player;
 	if temp_str_dam > 0, decrease S by temp_str_dam;
 	if S < 1, decide on 1;
-	if S > 30, decide on 30;
+	let Smax be 30;
+	if glory-stone is worn, decrease Smax by 10;
+	if comeuppance-stone is worn, decrease Smax by 10;
+	if S > Smax, decide on Smax;
 	decide on S.
 
 To decide which number is the starting strength of the player:
@@ -211,7 +214,10 @@ To decide which number is the flat dexterity of the player:
 	if the latex-transformation of the player > 6: [#LXorDD]
 		decrease D by (the latex-transformation of the player - 6);
 	if D < 0, decide on 0;
-	if D > 30, decide on 30;
+	let Dmax be 30;
+	if bondage-stone is worn, decrease Dmax by 10;
+	if brat-stone is worn, decrease Dmax by 10;
+	if Dmax > 30, decide on Dmax;
 	decide on D.
 
 To decide which number is the starting dexterity of the player:
@@ -292,6 +298,10 @@ To decide which number is the flat intelligence of the player:
 		now I is 2;
 	now I is (I * (5 - alcohol-level)) / 5;
 	if I < 1, decide on 1;
+	let Imax be 30;
+	if fucktoy-stone is worn, decrease Imax by 10;
+	if piercing-stone is worn, decrease Imax by 10;
+	if Imax > 30, decide on Imax;
 	if I > 30, decide on 30;
 	decide on I.
 

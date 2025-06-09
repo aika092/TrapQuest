@@ -129,7 +129,10 @@ To compute reward (N - a number) set up of (M - an imp):
 	now M is in the location of the player.
 
 Definition: an imp (called M) is objectifying the player:
-	if the favour of M < the aggro limit of M, decide yes;
+	if the favour of M < the aggro limit of M:
+		now the objectification of M is 1;
+		decide yes;
+	now the objectification of M is 0;
 	decide no.
 
 Part 1 - Misc Flavour

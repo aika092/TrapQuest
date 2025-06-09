@@ -78,6 +78,11 @@ Definition: armband is yellow themed:
 	if armband is solid gold, decide yes;
 	decide no.
 
+Check taking off armband:
+	if areYouSure is 1:
+		say "You imagine that this might make you an [bold type]enemy of the academy[roman type]. Are you sure you want to do that? ";
+		unless the player is consenting, say "You change your mind." instead.
+
 Report taking off armband:
 	now armband is in Holding Pen;
 	say "As you remove the armband you watch it disintegrate into nothingness. Uh-oh, there's no going back now...";

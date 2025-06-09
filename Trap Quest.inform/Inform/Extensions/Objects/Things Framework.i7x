@@ -57,7 +57,7 @@ To decide what number is the unique price of (C - a thing):
 
 To decide what number is the price of (C - a thing):
 	let X be the original price of C;
-	if discount > 0, decrease X by 5;
+	if the discounts of shopkeeper > 0, decrease X by 5;
 	if the blue-balls of shopkeeper < 0, decrease X by 1;
 	if X < 1, now X is 1;
 	decide on X.
@@ -90,10 +90,13 @@ To decide what number is the original price of (C - a clothing):
 To decide what number is the price of (C - a clothing):
 	let X be the original price of C;
 	if C is accessory:
-		if C is not plentiful, decide on X;
+		if C is not plentiful and C is not humility-stone, decide on X;
 		if C is ring, now X is 1;
 		if C is bracelet, now X is 2;
 		if C is necklace, now X is 4;
+		if C is humility-stone:
+			now X is 0;
+			if the player is an april 2025 top donator, now X is 10;
 		if C is sapphire, now X is X * 1;
 		if C is emerald, now X is X * 2;
 		if C is ruby, now X is X * 3;
@@ -103,7 +106,7 @@ To decide what number is the price of (C - a clothing):
 	otherwise:
 		increase X by the magic-modifier of C;
 		if C is not blandness, increase X by 2;
-		if discount > 0, decrease X by 5;
+		if the discounts of shopkeeper > 0, decrease X by 5;
 		if the blue-balls of shopkeeper < 0, decrease X by 1;
 		if X < 1, now X is 1;
 	decide on X.
@@ -115,13 +118,6 @@ A game universe initialisation rule:
 		if the tradability of T is 0:
 			now the tradability of T is the price of T;
 			if T is an alchemy product, increase the tradability of T by a random number between 2 and 5.
-
-[!<discount:Integer>*
-
-The shopkeeper can give the player a discount. This number tracks how many seconds are left on the discount. If the number is -1, this means that the discount will not be offered again. This happens when the discount offer is refused.
-
-*!]
-discount is a number that varies. discount is 0.
 
 To decide which number is the total wealth of the player:
 	let X be 0;

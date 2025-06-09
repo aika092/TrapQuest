@@ -117,8 +117,8 @@ Check entering the throne:
 				say "[variable custom style]COME ON![roman type][line break]" instead;
 			otherwise if the class of the player is "silicone queen":
 				unclash class summon rubber-royal-dress;
-				class summon royal scepter;
-				if royal scepter is worn and rubber top hat is worn:
+				class summon royal sceptre;
+				if royal sceptre is worn and rubber top hat is worn:
 					compute unique recycling of silver-tiara;
 					now the quest of rubber top hat is royal-quest;
 					say "[bold type]You sense that the quest of your top hat has changed![roman type] [QuestFlav of royal-quest]";

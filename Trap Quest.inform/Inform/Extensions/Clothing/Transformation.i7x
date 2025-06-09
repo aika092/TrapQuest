@@ -49,7 +49,7 @@ To decide which object is the potential-upgrade-target of (C - a clothing):
 	[THIS IS THE TEMPLATE FOR FINDING THE BEST TRANSFORMATION TARGET.]
 	now theme-share-target is C;
 	let Z be nothing;
-	let L1 be the list of off-stage same-type transformation-eligible fetish appropriate more-outrageous clothing; [Find all items that could be reasonable transformation targets.]
+	let L1 be the list of off-stage same-type not-unskirted-clashing transformation-eligible fetish appropriate more-outrageous clothing; [Find all items that could be reasonable transformation targets.]
 	if debugmode > 1, say "[number of entries in L1] eligible transformation items found.";
 	if the number of entries in L1 > 0:
 		let L2 be a list of clothing;
@@ -72,6 +72,14 @@ To decide which object is the potential-upgrade-target of (C - a clothing):
 				now Z is D;
 				now O is IO;
 	decide on Z.
+
+Definition: a clothing (called C) is not-unskirted-clashing:
+	if theme-share-target is unskirted and C is skirted:
+		let UTL be 0;
+		if theme-share-target is unskirted themed, now UTL is 1;
+		if the number of worn unskirted themed clothing > UTL, decide no; [Don't choose a skirted item if there is other unskirted themed clothing]
+	if theme-share-target is not unskirted themed and theme-share-target is unskirted and C is unskirted themed and there is a worn skirted clothing, decide no; [Don't choose an unskirted themed item if there is other skirted clothing]
+	decide yes.
 
 [If this resolves to something other than nothing, it will override the above.]
 To decide which object is the unique-upgrade-target of (C - a clothing):
@@ -326,7 +334,7 @@ To silently transform (D - a clothing) into (C - a clothing):
 To compute post transformation effect of (C - a clothing):
 	if C is not cursed and C is blandness and the player is getting very unlucky:
 		now C is strength stealing;
-		say "[BigNameDesc of C] has gained a new magical effect...  You can sense that it is now [']strength stealing['], and will take some of your strength away if you remove it normally. [GotUnluckyFlav]".
+		say "[BigNameDesc of C] has gained a new magical effect... You can sense that it is now [']strength stealing['], and will take some of your strength away if you remove it normally. [GotUnluckyFlav]".
 
 To transform (C - a clothing):
 	transform C into the upgrade-target of C.
@@ -379,22 +387,22 @@ To compute failed transform of (C - a clothing):
 			otherwise:
 				if a random number between 0 and 4 < game difficulty:
 					now C is draining;
-					say "Instead, it has gained a new magical effect...  You can sense that it is now [']draining['], and slowly sapping your stats over time.[line break][variable custom style]Oh no![roman type][line break]";
+					say "Instead, it has gained a new magical effect... You can sense that it is now [']draining['], and slowly sapping your stats over time.[line break][variable custom style]Oh no![roman type][line break]";
 				otherwise if diaper quest is 0 and the largeness of breasts > 3:
 					now C is audible jiggles;
-					say "Instead, it has gained a new magical effect...  You can sense that it is now [']audible jiggles['], and is going to make your breasts make loud cartoonish jiggling sounds as you move![line break][variable custom style]Uh-oh![roman type][line break]";
+					say "Instead, it has gained a new magical effect... You can sense that it is now [']audible jiggles['], and is going to make your breasts make loud cartoonish jiggling sounds as you move![line break][variable custom style]Uh-oh![roman type][line break]";
 				otherwise if diaper quest is 1 and C is somewhat fluid vulnerable knickers:
 					now C is audible squelches;
-					say "Instead, it has gained a new magical effect...  You can sense that it is now [']audible squelches['], and is going amplify any wet squelching sounds it makes a hundredfold![line break][variable custom style]Oh dear...[roman type][line break]";
+					say "Instead, it has gained a new magical effect... You can sense that it is now [']audible squelches['], and is going amplify any wet squelching sounds it makes a hundredfold![line break][variable custom style]Oh dear...[roman type][line break]";
 				otherwise if diaper quest is 0:
 					now C is dressup;
-					say "Instead, it has gained a new magical effect...  You can sense that it is now [']dressup['], and is going to summon more outrageous and slutty clothing on you over time![line break][variable custom style]Oh no![roman type][line break]";
+					say "Instead, it has gained a new magical effect... You can sense that it is now [']dressup['], and is going to summon more outrageous and slutty clothing on you over time![line break][variable custom style]Oh no![roman type][line break]";
 				otherwise if a random number between 2 and 8 < diaper messing:
 					now C is desperation;
-					say "Instead, it has gained a new magical effect...  You can sense that it is now [']desperation['], and is going to make you need to go number two much more frequently than normal![line break][variable custom style]Uh-oh...[roman type][line break]";
+					say "Instead, it has gained a new magical effect... You can sense that it is now [']desperation['], and is going to make you need to go number two much more frequently than normal![line break][variable custom style]Uh-oh...[roman type][line break]";
 				otherwise:
 					now C is waddle-walking;
-					say "Instead, it has gained a new magical effect...  You can sense that it is now [']waddle walking['], and is going to make you walk with an exaggerated waddle at all times, no matter [if there is a worn diaper]how full or thick your diaper is[otherwise]whether you're even wearing a diaper[end if]![line break][variable custom style]Uh-oh...[roman type][line break]";
+					say "Instead, it has gained a new magical effect... You can sense that it is now [']waddle walking['], and is going to make you walk with an exaggerated waddle at all times, no matter [if there is a worn diaper]how full or thick your diaper is[otherwise]whether you're even wearing a diaper[end if]![line break][variable custom style]Uh-oh...[roman type][line break]";
 		otherwise if the transform-attempts of C is the disintegrate-resistance of C + ((the used condoms of C + the empty condoms of C) * 2) + the transform-resistance of C + 1:
 			say "[bold type]The [C] [bold type]seems to resist being transformed, and the transformation effect rebounds, searching for another target!";
 			let T be a random worn transformation chain transformable clothing;

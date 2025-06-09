@@ -61,7 +61,7 @@ To say QuestTitle of (Q - stealing-quest):
 	say " (stealing quest)".
 
 To compute generic first time class reward of (Q - stealing-quest) on (C - a clothing):
-	let D be a random off-stage ring;
+	let D be a random off-stage plentiful ring;
 	if D is ring:
 		now D is pure diamond;
 		set shortcut of D;

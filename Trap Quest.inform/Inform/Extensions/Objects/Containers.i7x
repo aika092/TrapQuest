@@ -326,24 +326,25 @@ To add treasure to (X - a treasure chest):
 		if C is clothing, add C to L;
 		let C be a random pinkWardrobeAppropriate corset;
 		if C is clothing, add C to L;
-		now C is a random basic loot fetish appropriate heels;
-		if C is clothing, add C to L;
-		if C is platform heels or C is wedge heels, now the heel-height of C is 3;
-		otherwise now the heel-height of C is 1;
-		if diaper quest is 0 or the player is gendered female or TG fetish is 1:
-			let LB be the list of pinkWardrobeAppropriate bras;
-			sort LB in random order;
-			repeat with B running through LB:
-				if B is not bikini top, now C is B;
-			if C is bra:
-				add C to L;
-				now the size of C is the largeness of breasts;
-				cupsizefix C;
+		if smart start is 0:
+			now C is a random basic loot fetish appropriate heels;
+			if C is clothing, add C to L;
+			if C is platform heels or C is wedge heels, now the heel-height of C is 3;
+			otherwise now the heel-height of C is 1;
+			if diaper quest is 0 or the player is gendered female or TG fetish is 1:
+				let LB be the list of pinkWardrobeAppropriate bras;
+				sort LB in random order;
+				repeat with B running through LB:
+					if B is not bikini top, now C is B;
+				if C is bra:
+					add C to L;
+					now the size of C is the largeness of breasts;
+					cupsizefix C;
+			now C is a random pinkWardrobeAppropriate skirted overdress;
+			if C is clothing, add C to L;
+			now C is a random pinkWardrobeAppropriate trousers;
+			if C is clothing, add C to L;
 		now C is a random pinkWardrobeAppropriate suspenders;
-		if C is clothing, add C to L;
-		now C is a random pinkWardrobeAppropriate skirted overdress;
-		if C is clothing, add C to L;
-		now C is a random pinkWardrobeAppropriate trousers;
 		if C is clothing, add C to L;
 		repeat with Z running through L:
 			now Z is in X;

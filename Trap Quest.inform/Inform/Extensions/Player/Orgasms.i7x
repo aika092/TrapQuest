@@ -248,7 +248,13 @@ To orgasm:
 	if wanktype is NO-WANK, progress quest of enemy-orgasm-quest;
 	progress quest of orgasm-quest;
 	increase totalOrgasmCount by 1;
-	now the delayed arousal of the player is 0.
+	now the delayed arousal of the player is 0;
+	if player-fucking is DOMINANT-FAILURE or player-fucking is DOMINANT-SHAMEFUL:
+		increase the comeuppance-stone-progress of the player by 1;
+	if the number of monsters penetrating a body part > 1:
+		increase the fucktoy-stone-progress of the player by (the number of monsters penetrating a body part) - 1;
+	repeat with M running through monsters in the location of the player:
+		if M is brat-stone-qualifying, increase the brat-stone-progress of the player by 4.
 
 This is the player becomes fatigued from orgasming rule:
 	if the fatigue of the player < the tired threshold of the player / 2:
@@ -498,6 +504,9 @@ This is the BBC orgasm resolution rule:
 	if interracial fetish is 1:
 		repeat with M running through monsters penetrating a body part:
 			if M is dark skinned:
+				if the class of the player is magical girl and there is a worn dark magician girl dress:
+					MagicPowerUp 1;
+					progress quest of bbc-magic-quest;
 				let DarkMagicianGirl be false;
 				if dark-magician-girl-cameltoe-costume is worn or dark-magician-girl-costume is worn:
 					now DarkMagicianGirl is true; [transform into next one]
@@ -537,7 +546,7 @@ This is the BBC orgasm resolution rule:
 						BBCAddictUp 1; [no tats left. Do it raw]
 				otherwise:
 					if a random number between 5 and 25 > the raw bbc addiction of the player, BBCAddictUp 1;
-			otherwise if M is human and M is not ultimate-lesson-actor:
+			otherwise if M is human and M is not unseen-stranger:
 				if a random number between -1 and 7 < the raw bbc addiction of the player, BBCAddictDown 1.
 The BBC orgasm resolution rule is listed last in the orgasm resolution rules.
 

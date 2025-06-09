@@ -102,7 +102,7 @@ To compute PatronSpawning of (F - a hotel bed) with (MN - a number) men:
 	let M be a random patron in the location of the player;
 	say "[one of]A[or]Once again the[stopping] hidden door opens from the opposite wall, and you [one of]are shocked as you watch[or]watch[stopping] ";
 	if R is 1:
-		say "a [if M is gross patron]short, tubby[otherwise if M is inexperienced patron]young, excited[otherwise if M is experienced patron]rich looking, older[otherwise]middle aged[end if] man walk through into the room.";
+		say "a [if M is gross patron]short, tubby[otherwise if M is inexperienced patron]young, excited[otherwise if M is experienced patron]rich looking, older[otherwise]middle aged[end if] [man of M] walk through into the room.";
 	otherwise:
 		say "[R] men walk through into the room.";
 	now neighbour finder is the location of the player;

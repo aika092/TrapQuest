@@ -119,7 +119,7 @@ Part 2 - Combat
 Section 1 - Attack
 
 To compute damaging attack of (M - deep one):
-	if a random number between 1 and 5 is 1 and the player is the donator:[Or whatever is the most recent]
+	if a random number between 1 and 5 is 1:[Or whatever is the most recent]
 		let R be a random number between 1 and 2;
 		if R is 1:
 			compute stunning attack of M;
@@ -164,9 +164,8 @@ To compute summoning attack of (M - deep one):
 		FatigueUp the difficulty of M + (doomed * 2);
 		stimulate vagina from herald;
 	otherwise:
-		if doomed >= 5 or the accuracy roll of M >= the dexterity of the player:
-			if doomed >= 5, say "You know something is about to happen, but before you can react, you are suddenly struck by a bolt of pink lightning! ";
-			otherwise say "You immediately realise that something is about to happen, but you're still unprepared to be struck by a bolt of pink lightning! You feel terribly tired and yet also horny at the same time!";
+		if doomed >= 5:
+			say "You know something is about to happen, but before you can react, you are suddenly struck by a bolt of pink lightning! ";
 			FatigueUp (doomed * 2);
 			stimulate vagina from herald;
 		otherwise:

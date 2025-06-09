@@ -317,7 +317,7 @@ This is the cheerleader class rule:
 		rule succeeds.
 The cheerleader class rule is listed in the player class rules.
 Definition: a text (called T) is cheerleader:
-	if T matches the text "cheer" or T matches the text "bully" or T matches the text "fraternity" or T matches the text "locker" or T is "deepthroat princess" or T matches the text "plastic cumdump" or T matches the text "teacher" or T matches the text "country", decide yes;
+	if T matches the text "cheer" or T matches the text "bully" or T matches the text "fraternity" or T matches the text "locker" or T is "deepthroat princess" or T matches the text "plastic cumdump" or T matches the text "mathlete" or T matches the text "teacher" or T matches the text "country", decide yes;
 	decide no.
 
 cheerleaderExplained is initially false.
@@ -357,6 +357,7 @@ a class explaining rule (this is the explaining cheerleader rule):
 This is the fertility goddess class rule:
 	if laurel wreath is worn:
 		now player-class is "fertility goddess";
+		if the pregnancy of the player is 2 and the largeness of belly >= 10, now player-class is "sacred vessel";
 		rule succeeds.
 The fertility goddess class rule is listed in the player class rules.
 
@@ -366,7 +367,7 @@ There are multiple different texts that need to be able to return true for the c
 
 +!]
 Definition: a text (called T) is fertility goddess:
-	if T matches the text "fertil" or T matches the text "god" or T matches the text "breeding" or T matches the text "housewife", decide yes;
+	if T matches the text "fertil" or T matches the text "god" or T matches the text "breeding" or T matches the text "housewife" or T matches the text "vessel", decide yes;
 	decide no.
 
 [!<TheFertilityGoddessPussySlutRule>+
@@ -386,6 +387,15 @@ a class explaining rule (this is the explaining fertility rule):
 	otherwise if fertilityExplained is true and the class of the player is not fertility goddess:
 		now fertilityExplained is false;
 		say "[bold type]Now that you are no longer the [']fertility goddess['] class, your body's ability to handle being pregnant has returned to normal.[roman type][line break]".
+
+vesselExplained is initially false.
+a class explaining rule (this is the explaining sacred vessel rule):
+	if vesselExplained is false and the class of the player is "sacred vessel":
+		now vesselExplained is true;
+		say "[bold type]Now that you have become the [']sacred vessel['] subclass, you sense that you are feeling extremely submissive. But also, [if sacred dress is worn]the sacred dress will protect you a lot during combat[otherwise]there is a sacred dress you can obtain which would prote4ct you a lot during combat. You should approach the mystical wardrobe in the haunted mansion[end if].[roman type][line break]";
+	otherwise if vesselExplained is true and the class of the player is not "sacred vessel":
+		now vesselExplained is false;
+		say "[bold type]Now that you are no longer the [']sacred vessel['] subclass, you sense that the class is no longer affecting your submissiveness.[roman type][line break]".
 
 This is the royal slave class rule:
 	if royal circlet is worn:

@@ -67,7 +67,7 @@ white-panties is a panties. white-panties is sheer-when-wet. The text-shortcut o
 To say selfexamineuniquetitle of (G - white-panties):
 	say "pair of white 'SPANK ME' panties".
 To say UniqueClothingDesc of (G - white-panties):
-	say "This white pair of panties says 'SPANK ME!' on the front and back, which tells people who can see it that [if G is worn]you enjoy having your[otherwise]the wearer enjoys having their[end if] ass [if diaper quest is 1]disciplined[otherwise]groped and abused[end if].".
+	say "This white pair of panties says 'SPANK ME!' on the front[if diaper quest is 0] and back[end if], which tells people who can see it that [if G is worn]you enjoy having your[otherwise]the wearer enjoys having their[end if] ass [if diaper quest is 1]disciplined[otherwise]groped and abused[end if].".
 Understand "spank", "spank me", "white" as white-panties.
 To decide which number is the delicateness-influence of (C - white-panties):
 	if C is blessed, decide on 1;
@@ -182,7 +182,7 @@ To compute early pregnancy eagerness:
 		if the pregnancy rate of the player is 1, now the pregnancy rate of the player is 2;
 		if the mystical size of penis > min penis size, SpecialPenisDown 1. [#LXorDD]
 
-blue-panties is a panties. The text-shortcut of blue-panties is "bpa".  The DQFigure of blue-panties is DQBluePants.
+blue-panties is a panties. The text-shortcut of blue-panties is "bpa". The DQFigure of blue-panties is DQBluePants.
 To say selfexamineuniquetitle of (G - blue-panties):
 	say "pair of blue panties".
 To say UniqueClothingDesc of (G - blue-panties):

@@ -9,6 +9,7 @@ Definition: a facehugger is summoningRelevant: decide no. [Doesn't count towards
 Definition: a facehugger is egg-fathering: decide yes.
 Definition: a facehugger is virginity taking: decide yes.
 Definition: a facehugger is a urinater: decide no.
+Definition: a facehugger is wrangling-while-kneeling: decide yes.
 
 To decide which number is the girth of (M - a facehugger):
 	decide on 1.

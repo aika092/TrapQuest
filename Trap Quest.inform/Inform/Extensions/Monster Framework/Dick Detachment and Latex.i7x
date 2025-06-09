@@ -18,7 +18,6 @@ A trap can be a-dick-detacher or a-non-detacher. A trap is usually a-non-detache
 dickswap-lock is a number that varies. dickswap-lock is 0;
 
 again-DD is a text that varies. again-DD is "".
-still-DD is a text that varies. still-DD is "".
 YetAgain-DD is a text that varies. YetAgain-DD is "".
 latex-love is a number that varies. latex-love is 0.
 
@@ -192,7 +191,6 @@ To compute raw dick detachment by (P - a thing) with (root - a number):
 	increase players-dick-detach-count by 1;
 	if players-dick-detach-count > 1:
 		now again-DD is " again";
-		now still-DD is " still";
 		now YetAgain-DD is " [one of]once again[or]yet again[or]once more[or]like last time[or]just like before[in random order]";
 	if root is not 0, now players-dick-is-detached is 2; [Double-ended: with an ordinary dildo 'root' to refill a pussy created by the player's dick extraction.]
 	now the players-detached-dick is in the location of P;
@@ -320,6 +318,34 @@ To compute insertion of (DD - players-detached-dick) in (O - a body part):
 		swap dick out;
 		moderateHumiliate.
 
+To say DickDetachLungeFlav of (M - a monster) with (TG - a number):
+	say "[NameDesc of M] lunges, [if size of penis > 7]opening wide[otherwise if size of penis < 5]easily[end if] swallowing your [player-penis][if the player is possessing a scrotum] and balls[end if]whole. [big his of M] lips seal around the base and after a moment, close up. Like, all the way together. Completely.[line break][variable custom style]How is that even possible?[roman type][line break][big he of M] stands up and steps back, but.... you can still feel [his of M] lips around your [player-penis]. ";
+	if TG is 1: [double-ended dildo, one end normal, other is your dick]
+		say "You feel a deeply weird, invasive shift, like your internal organs are being moved around as a glowing pink dildo slowly protrudes from [his of M] lips. [Big he of M] grabs it like it's a handle, and slo-o-owly extracts an exact replica of your [player-penis] from [his of M] mouth, which is fused to the dildo by a silver ring.";
+	otherwise:[not a double-ended dildo, and you're left with a doll-like mound]
+		say "You feel a weird, and slightly vague shift, like your dick is moving, and you watch as a [player-scrotum] emerges from [his of M] mouth. [big he of M] grabs it like a handle, somehow causing you to wince as [he of M] extracts a replica of your [player-penis] from between [his of M] lips.";
+
+To say DickDetachMagicFlav of (M - a monster) with (TG - a number):
+	let magic-bypass be 0;
+	say " [his of M] hand makes a casual gesture towards your [player-penis]. [big he of M] smirks at you for just a moment, then yanks, but with a such a weird twisting motion that it makes your brain hurt.";
+	if TG is 1: [double-ended dildo, one end normal, other is your dick]
+		say "You feel a deeply weird, invasive, and extremely painful change, like part of your insides have just been pulled out.[line break][BigNameDesc of M] is now holding a two-sided dildo, one side glowing and pink, and the other a disturbingly-exact replica of your own [player-penis], joined to the dildo by a silver [if size of scrotum > 0]ring. What looks like a copy of your balls dangling from just behind the junction.[otherwise]ring.[end if]";
+	otherwise: [not a double-ended dildo and you are left with a doll-like mound]
+		say "You feel a weird, and slightly vague shift, like your dick is moving?[line break][big he of M]'s holding what looks like an exact replica of your [ShortDesc of penis]. You freeze, not wanting to look down between your legs, terribly dreading what you'll see.".
+
+To say DickDetachHandFlav of (M - a monster) with (TG - a number):
+	let magic-bypass be 0;
+	say "[NameDesc of M] brings both pieces together [if the player is possessing a scrotum]just behind your balls, [otherwise if the size of penis > 0]around your base, [otherwise]where your penis used to be, [end if]smirking as they click together. [big he of M] pauses for just a moment, then [if size of penis is 0]begins to peel. [otherwise]grabs your shaft and yanks! [end if]";
+	if TG is 1: [double-ended dildo, one end normal, other is your dick]
+		say "You feel a deeply weird, invasive, and painful change, like part of your insides have just been pulled out.[line break][big he of M] is now holding a two-sided dildo, one side glowing and pink, and the other a disturbingly-exact replica of your own [player-penis], joined to the dildo by a silver [if size of scrotum > 0]ring. What looks like a copy of your balls dangling from just behind the junction.[otherwise]ring.[end if]";
+	otherwise: [not a double-ended dildo and you are left with a doll-like mound]
+		say "You feel a weird pinch, and a slightly vague shift, like your dick is moving.[line break][big he of M] is now holding what looks like an exact replica of your [if the size of scrotum > 0][ShortDesc of penis], complete with its [ShortDesc of scrotum][otherwise][ShortDesc of penis][end if]. You freeze, not wanting to look down between your legs, terribly dreading what you'll see.".
+
+To say DickDetachTaunt of (M - a monster):
+	say "[line break][speech style of M]'[if mystical size of penis > 8][one of]Wow, that was quite an impressive unit you had. I'll bet you're sorry now you annoyed me?'[roman type][or]It's probably just as well I took such a dangerous weapon from someone so obviously inexperienced.[or]Heh, this is huge! We'll have some real fun with this. Or at least, I will![in random order][otherwise if mystical size of penis < 4][one of]This is so cute! You probably weren't getting much use out of this little thing anyway, right?[or]This is so small it's more like a toy. I wonder if it'd be more fun if it was bigger, or smaller? Hmm.[or]Look at this little thing. It's like a male penis, only miniaturised![in random order][otherwise][one of]Rather ordinary, but I may still be able to do some interesting experiments with this.[or]I guess they called you [']Mr Average[']? Well, not anymore, honey-bun.[in random order][end if]'[roman type][line break]";
+
+To say DickDetachInspect of (M - a monster):
+	say "[big he of M] sniffs it, and [if the size of players-detached-dick < 4]sniggers, wiggling it between [his of M] fingers.[otherwise if the size of players-detached-dick > 8]hefts it with some admiration.[otherwise]wobbles it about measuringly.[end if][line break]";
 
 [ compute detach-players-dick by (M - a thing) using (method - a number)
 
@@ -366,58 +392,40 @@ To compute detach-players-dick by (M - a thing) using (method - a number):
 	[Some sentence definitions for those used in multiple places, farther below]
 	let feel-a-deeply-invasive-weird-change be "feel a deeply invasive weird shift, like your internal organs are changing.";
 	let you-feel-a-weird-shift-hard-to-pin be "You feel a weird shift, hard to pin down, like your dick is moving?";
-	if M is a person: [ ================================================== ]
-		[An active agent: let's assume it's intelligent.]
+	if M is a person: [ ================================================== An active agent: let's assume it's intelligent.]
 		if method is 1: [BJ magic sword swallowing trick]
-			say " [NameDesc of M] lunges forward, [his of M] mouth[if size of penis > 7] stretching wide and[otherwise if size of penis < 5] easily[end if] swallowing your [player-penis] whole, [his of M] lips sealing around the base of your shaft. You're still blinking in shock as you notice [his of M] lips slowly close up. Like, all the way together. Huh?[line break][variable custom style]How is that even possible?[roman type][line break]";
-			say "[big he of M] stands up and steps back... but you can still feel [his of M] lips around your [player-penis]. How...?";
-			if fem is 1: [double-ended dildo, one end normal, other is your dick]
-				say "You [feel-a-deeply-invasive-weird-change][line break]";
-				say "Protruding from [his of M] lips, you see what looks like your [ShortDesc of scrotum] and a normal dildo.";
-				say "[BigNameDesc of M] uses the dildo like it's a handle, and slo-o-owly extracts an exact replica of your [player-penis] from [his of M] mouth.";
-			otherwise: [not a double-ended dildo, and you're left with a doll-like mound]
-				say "[you-feel-a-weird-shift-hard-to-pin][line break]";
-				say "[big his of M] mouth is closed, [his of M] sealed lips smirking[if size of scrotum > 0], a [ShortDesc of scrotum] dangling from them.";
-				say "[BigNameDesc of M] opens [his of M] mouth and reaches in to extract a replica of your [player-penis].";
-		otherwise: [method is 2: tugging, or 3: magic; or an un-coded-for method]
-			let magic-bypass be 0;
-			if method is 3 and not penis-is-detachable by M using 2, now magic-bypass is 1;
-			say " [his of M] hand [if magic-bypass is 0]flashes out to grip your[otherwise]makes a casual gesture towards your[end if] [player-penis]. [big he of M] smirks at you for just a moment, then [if size of penis is 0]peels something small and flat away[otherwise]yanks[end if], but with a such a weird twisting motion that it makes your brain hurt.";
-			if fem is 1: [double-ended dildo, one end normal, other is your dick]
-				say "You feel a deeply invasive weird change, like part of your insides have just been pulled out. That really hurt!";
-				say "[BigNameDesc of M] is now holding a normal dildo[if size of scrotum > 0] with [ShortDesc of scrotum][end if]. [big his of M] fingers are wrapped around what looks like a disturbingly-exact replica of your own [player-penis], joined to the dildo[if size of scrotum > 0]. What looks like a copy of your balls, dangles from the junction[end if].";
-			otherwise: [not a double-ended dildo and you are left with a doll-like mound]
-				say "[You-feel-a-weird-shift-hard-to-pin] ";
-				say "[big he of M]'s holding what looks like an exact replica of your [ShortDesc of penis]. You freeze, feeling a terrible dread, not wanting to look down between your legs, afraid of what you'll see.";
+			say DickDetachLungeFlav of M with fem;
+		otherwise if method is 2:[method is 2: tugging]
+			say DickDetachHandFlav of M with fem;
+		otherwise:[method is 3: magic or an un-coded-for method]
+			say DickDetachMagicFlav of M with fem;
 		[Use mystical size of penis to be sure it's right, since she hasn't actually detached it just yet]
-		say "[if mystical size of penis > 8][one of][speech style of M]'Wow, that was quite an impressive unit you had. I'll bet you're sorry now you annoyed me?'[roman type][or][speech style of M]'It's probably just as well I took such a dangerous weapon from someone so obviously inexperienced.'[roman type][or][speech style of M]'Heh, this is huge! We'll have some real fun with this. Or at least, I will!'[roman type][in random order][otherwise if mystical size of penis < 4][one of][speech style of M]'This is so cute! You probably weren't getting much use out of this little thing anyway, right?'[roman type][or][speech style of M]'This is so small it's more like a toy. I wonder if it'd be more fun if it was bigger, or smaller? Hmm.'[roman type][or][speech style of M]'Look at this little thing. It's like a male penis, only miniaturised!'[roman type][in random order][otherwise][one of][speech style of M]'Rather ordinary, but I may still be able to do some interesting experiments with this.'[roman type][or][speech style of M]'I guess they called you [']Mr Average[']? Well, not anymore, honey-bun.'[roman type][in random order][end if][line break]";
-		let C be a random worn chastity bond;
-		let P be a random worn condom;
+		say DickDetachTaunt of M;
 		compute raw dick detachment by M with fem;
 		compute handing over detached dick to M;
 		[So dick has now been detached by a monster]
-		say "[big he of M] sniffs it, and [if the size of players-detached-dick < 4]sniggers, wiggling it between [his of M] fingers.[otherwise if the size of players-detached-dick > 8]hefts it with some admiration.[otherwise]wobbles it about measuringly.[end if][line break]";
-		say "Finally, unable to resist any longer, you look down, staring in cold shock at the junction of your thighs...";
+		say "[big he of M] sniffs it, and [if the size of players-detached-dick < 4]sniggers, wiggling it between [his of M] fingers.[otherwise if the size of players-detached-dick > 8]hefts it with some admiration.[otherwise]wobbles it about measuringly.[end if][line break]Finally, unable to resist any longer, you look down, staring in cold shock at the junction of your thighs...";
 		if players-dick-detach-count > 1, say "[one of][variable custom style]Oh, no, not again![roman type][or][variable custom style]I don't believe it - not again![roman type][or][variable custom style]How could I have fallen for this again?![roman type][or][variable custom style]No, no, no! Don't take my [penis] away again![roman type][in random order][line break]";
 		if fem is 1:
 			SexChange the player;
 			say "There, nestled between your thighs, at your crotch where your dick used to be, you see a doll-like vagina with puffy, hairless and slick, bright maroon-coloured lips.";
 		otherwise:
 			say "You see a smooth, empty, Barbie-doll like mound.";
-		if the player is able to speak, say "[variable custom style]'How DARE you?! Put that back at once!'[roman type][line break]You[still-DD] can't believe that what [he of M] just did is even possible! You squirm in dismay, from the look [he of M] gives you in return - well, that plus the weird feeling of your now detached dick waving around in the air[YetAgain-DD], separate from your body. You swallow.";
+		if the player is able to speak, say "[variable custom style]'How DARE you?! Put that back at once!'[roman type][line break]You [one of]can't[or]still can't[stopping] believe that what [he of M] just did is even possible! You squirm in dismay, from the look [he of M] gives you in return - well, that plus the weird feeling of your now detached dick waving around in the air[YetAgain-DD], separate from your body. You swallow.";
 		otherwise say "You object as strenuously as you can, but your incoherent objections fail to generate the reaction you wanted. You squirm in dismay at the way [NameDesc of M] simply lets you run down. [big he of M] waggles your now detached dick at you[YetAgain-DD], gloating.";
+		let C be a random worn chastity bond;
+		let P be condom of kings;
 		if C is not nothing:
 			compute M removing C; ["[BigNameDesc of M] casually slides your dick free of the #C";]
-		if P is not nothing, say "With a raised eyebrow, [NameDesc of M] [if C is not nothing]also [end if] peels the [variable P] from the [DetachedPenis] that used to be your dick.";
-			if P is a condom of kings, destroy P;
-			otherwise now P is in the location of the player;
+		if P is worn:
+			say "With a raised eyebrow, [NameDesc of M] [if C is not nothing]also [end if] peels the [variable P] from the [DetachedPenis] that used to be your dick.";
+			destroy P;
 		say "[BigNameDesc of M]'s lip curls up, studying your expression as [he of M] flicks the end of your now detached dick.";
 		if the latex-transformation of the player is 8:
 			say "[speech style of M]'I know you felt that, my silly little new sex doll, even if you can't change the delightfully [one of]ready-to-please[or]open-for-business[or]ready-and-waiting[in random order] expression on your slutty face.'[roman type][line break]";
 		otherwise:
 			say "And you feel the sensation anyway - at [italic type]least[roman type] as intensely as ever[YetAgain-DD]! You stare at [him of M] in shock, your mouth gaping in a big 'O'.";
-		say "[big his of M] subtly mocking expression changes to an open grin as [he of M] squeezes then releases your detached dick a few times. You make an incoherent sound in reaction to the strong sensations. Has your dick become even [italic type]more[roman type] sensitive?";
-		say "[big he of M] taps your now detached penis against [his of M] thigh in thought, making you shiver as the vibrations transmit themselves to you as tiny thrills.";
+		say "[big his of M] subtly mocking expression changes to an open grin as [he of M] squeezes then releases your detached dick a few times. You make an incoherent sound in reaction to the strong sensations. Has your dick become even [italic type]more[roman type] sensitive? [big he of M] taps your now detached penis against [his of M] thigh in thought, making you shiver as the vibrations transmit themselves to you as tiny thrills.";
 		if the latex-transformation of the player > 0 and the latex-transformation of the player < 8:
 			say "[speech style of M]'Ooh, nice! I think that made you a bit more... flexible, too.'[roman type][line break]";
 			compute latex transformation; [in case we allow detachment before full conversion]
@@ -457,10 +465,7 @@ To compute detach-players-dick by (M - a thing) using (method - a number):
 		say "[variable custom style]Why- *how* did the ring just drop off like that...?[roman type][line break]There's a moment of disorientation at a sensation of your [PenisShaftFlav the size of penis] moving, [italic type]independently[roman type] of you. You jolt backwards, a terrible certainty settling[YetAgain-DD] in the pit of your stomach and you freeze, not wanting to look down, between your legs.";
 		say "Finally, unable to resist any longer, you let your head drop, to stare in cold shock [YetAgain-DD]at the junction of your thighs. There, where your [player-penis] used to be, you [again-DD]see ";
 		if fem is 1:
-			say "a doll-like vagina with puffy, hairless and slick maroon lips.";
-			say "You instinctively clench your muscles, your eyes widening [again-DD]at the feeling that follows, of those new sensitive lips pressing together, and the feeling of something more, somewhere deeper inside, of some other new parts of you pressed together but waiting to be parted.[line break][variable custom style]That's... not possible! I can't- I don't- How can I...?[roman type][line break]";
-			say "A neat, plump pussy, a tiny bulge at its top, sits primly between your thighs. You swallow.";
-			say "[variable custom style]That little bump[if size of penis < 3] is even smaller than[otherwise if size of penis < 8] is all that's left of[otherwise]is a mockery of[end if] my [player-penis]![roman type][line break]";
+			say "a doll-like vagina with puffy, hairless and slick maroon lips. You instinctively clench your muscles, your eyes widening [again-DD]at the feeling that follows, of those new sensitive lips pressing together, and the feeling of something more, somewhere deeper inside, of some other new parts of you pressed together but waiting to be parted.[line break][variable custom style]That's... not possible! I can't- I don't- How can I...?[roman type][line break]A neat, plump pussy, a tiny bulge at its top, sits primly between your thighs. You swallow.[line break][variable custom style]That little bump[if size of penis < 3] is even smaller than[otherwise if size of penis < 8] is all that's left of[otherwise]is a mockery of[end if] my [player-penis]![roman type][line break]";
 			compute raw dick detachment by M with fem; [Do this before sexchange!]
 			compute handing over detached dick to M;
 			SexChange the player;
@@ -468,8 +473,7 @@ To compute detach-players-dick by (M - a thing) using (method - a number):
 			say "a smooth, empty, Barbie-doll like mound. You shake your head in denial, in disbelief, in dismay.[if the latex-transformation of the player > 4] You moan.[line break][variable custom style]Now I look even more like some stupid sex doll![roman type][end if][line break][variable custom style]Instead of my [player-penis], I'm now like some neutered doll. How am I supposed to have sex like this?![roman type][line break]";
 			compute raw dick detachment by M with fem;
 			compute handing over detached dick to M;
-		say "But as you stare at your new [genitals],[YetAgain-DD] you can still feel your erect penis! You peer inside the [ShortDesc of M], but it's empty [one of]and your [manly-penis] is nowhere in sight[or]and your [manly-penis][YetAgain-DD] vanished[cycling].";
-		say "Firming your resolve and getting a grip on your emotions, you shake yourself. [one of]You just need to find it. You wonder where it is, now - your detached dick?[or][line break][variable custom style]I won't let this get me down! I just need to find it, and get it back.[roman type][line break][in random order]";
+		say "But as you stare at your new [genitals], you can still feel your erect penis! You peer inside the [ShortDesc of M], but it's empty [one of]and your [manly-penis] is nowhere in sight[or]and your [manly-penis][YetAgain-DD] vanished[cycling]. Firming your resolve and getting a grip on your emotions, you shake yourself. [one of]You just need to find it. You wonder where it is, now - your detached dick?[or][line break][variable custom style]I won't let this get me down! I just need to find it, and get it back.[roman type][line break][in random order]";
 		[I wonder what especially fun locations it could sometimes be put?]
 		[E.g.: we could sometimes attach the pdd to a dildo trap.
 		By which I mean, flag it as such, and then have each dildo trap have a 1 in 3, say, chance of triggering with the player's own dick on the end, which they could then pluck off at the end. With humiliation if it was really small, or extra fun or gape and difficulty in jumping off if it's larger (i.e. make the escape chance 1 in size of pdd).]
@@ -617,12 +621,11 @@ To compute restoration of dick by (M - a monster):
 				say "As it touches you, there's a weird fizzing and sparking, and your [ShortDesc of scrotum] quiver and shrink, and shrink, and finally vanish altogether!";
 				now the size of scrotum is 0;
 	otherwise:
-		say "[speech style of M]'Here goes nothing - wish me luck[again-DD]!'[roman type][line break][big he of M] plants your dick down solidly on the Barbie doll-like mound you've been wandering around with. Wait, did [he of M] have that the right way up?";
+		say "[speech style of M]'Here goes nothing - wish me [one of]luck[or]luck again![stopping]!'[roman type][line break][big he of M] plants your dick down solidly on the Barbie doll-like mound you've been wandering around with. Wait, did [he of M] have that the right way up?";
 	say "You'd hoped it'd be pleasurable, but the sensation is closer to pain as your [DetachedPenis] fuses back to your groin.";
 	compute raw dick reattachment by M;
-	say "[if players-dick-detach-count is 1][speech style of M]'Whew! Been a while since I had to do that spell. I can't wait to see your next stunt!'[roman type][otherwise][speech style of M]'Whew! That spell doesn't get any easier. I may need to start charging you for that.'[roman type][end if][line break]";
+	say "[if players-dick-detach-count is 1][speech style of M]'Whew! Been a while since I had to do that spell. I can't wait to see your next stunt!'[roman type][otherwise][speech style of M]'Whew! That spell doesn't get any easier. I may need to start charging you for that.'[roman type][end if][line break][variable custom style]Oh my god - I did it! I got my [ShortDesc of penis] [one of]back![or]back again![stopping][roman type][line break]";
 	now penis is penis-erect;
-	say "[variable custom style]Oh my god - I did it! I got my [ShortDesc of penis] back[again-DD]![roman type][line break]";
 	strongDignify.
 
 [All this hooks in to the start of Monster Framework/Conversation.i7x, usually lines 29-33.]

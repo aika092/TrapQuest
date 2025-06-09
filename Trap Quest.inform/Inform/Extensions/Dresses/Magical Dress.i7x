@@ -165,13 +165,13 @@ Definition: a dark magician girl dress is blue themed: decide yes.
 Definition: a dark magician girl dress is interracial themed: decide yes.
 
 To say DarkMagicianGirlDesc:
-	say "You can sense that now you are a [']Dark Magician Girl['], and will be able to regain magical energy by pleasuring black [manly-penis]s, but also your spells may now be ineffective against black people.".
+	if the class of the player is magical girl, say "You can sense that now you are a [']Dark Magician Girl['], and will be able to regain magical energy by pleasuring black [manly-penis]s, and grow your magic strength by orgasming on black cock, but also your spells may now be ineffective against black people.".
 
 To compute post transformation effect of (C - a dark magician girl dress):
 	now C is bbc-addiction-influencing;
 	now C is cursed;
 	now the quest of C is interracial-sex-quest;
-	say "[BigNameDesc of C] is surrounded by a dark glow. [bold type][QuestFlav of C][roman type][line break]".
+	if C is worn, say "[BigNameDesc of C] is surrounded by a dark glow. [bold type][QuestFlav of C][roman type][line break]".
 
 To compute class set up of (C - a dark magician girl dress):
 	compute post transformation effect of C.
@@ -242,9 +242,18 @@ To say ClothingDesc of (C - dark-magician-girl-swimsuit):
 
 Definition: dark-magician-girl-swimsuit is swimming themed: decide yes.
 
+To compute post transformation effect of (C - dark-magician-girl-swimsuit):
+	now C is bbc-addiction-influencing;
+	now C is cursed;
+	now the quest of C is interracial-sex-quest;
+	if C is worn, say "[BigNameDesc of C] is surrounded by a dark glow. [bold type][QuestFlav of C][roman type][line break]";
+	if heart hairpin is worn and the quest of heart hairpin is not bbc-magic-quest:
+		now the quest of heart hairpin is bbc-magic-quest;
+		now heart hairpin is cursed;
+		say "[BigNameDesc of heart hairpin] is surrounded by a dark glow. [bold type][QuestFlav of heart hairpin][roman type][line break]".
 
 hex dress is a magical dress. The skirt-length of hex dress is 2. hex dress is top-displacable. hex dress is arm exposing. hex dress is latex.
-The printed name of hex dress is "[clothing-title-before]hex dress[clothing-title-after]".  The text-shortcut of hex dress is "hxd".
+The printed name of hex dress is "[clothing-title-before]hex dress[clothing-title-after]". The text-shortcut of hex dress is "hxd".
 
 Figure of hex dress is the file "Items/Clothes/Upper/Special/MahouShoujo/hexdress1.png".
 

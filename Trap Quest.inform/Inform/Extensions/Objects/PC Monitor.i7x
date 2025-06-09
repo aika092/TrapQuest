@@ -131,7 +131,7 @@ To say GenericSituationReaction of (M - a monster):
 	if P < 3:
 		say "By the way, your little [']I'm not a slut['] act is really popular with our investors, so make sure to play that up, alright? ";
 	otherwise if P < 6:
-		say "By the way, don't be afraid to really whore it up. Nobody here will judge you, teehee. ";
+		say "By the way, don't be afraid to really whore it up. Nobody here will judge you, tee-hee. ";
 	otherwise if P < 9:
 		say "By the way, we all LOVE your fashion sense. ";
 	otherwise if P < 12:
@@ -187,11 +187,11 @@ To say BaseObservationFlav of (M - a slutty sister):
 	say "The Nintendoll and the executives continue to watch [one of]you[or]the action[at random].".
 
 To say FightObserve of (M - a slutty sister) with (N - a monster):
-	if the player is prone, say "[speech style of M]'[one of]Once the player is on their knees, that's when the fun REALLY begins. Teehee.'[or]After the subject's fuck or flight response kicks in, all we need to do is restrict their options a little bit, and voila, it's a porno!'[or]See, gentlemen? I told you!'[or]Of course, the pain the subject feels is real, but as you're about to see, so is the pleasure.'[or]Remember, stakeholders: The subject has a safe-word [he of the player] can use to stop the stimulation at any time. Keep that in mind as you watch what happens next.'[at random][roman type][line break][moderateHumiliateReflect]";
+	if the player is prone, say "[speech style of M]'[one of]Once the player is on their knees, that's when the fun REALLY begins. Tee-hee.'[or]After the subject's fuck or flight response kicks in, all we need to do is restrict their options a little bit, and voila, it's a porno!'[or]See, gentlemen? I told you!'[or]Of course, the pain the subject feels is real, but as you're about to see, so is the pleasure.'[or]Remember, stakeholders: The subject has a safe-word [he of the player] can use to stop the stimulation at any time. Keep that in mind as you watch what happens next.'[at random][roman type][line break][moderateHumiliateReflect]";
 	otherwise say "[speech style of M]'[one of]Once combat begins, it generally doesn't take long for the subject's fuck or flight response to kick in.'[or]Although some subjects do choose to engage in combat, they usually lose, so we see it as more of a formality.'[or]Early on, we have to begin most encounters by making the subject docile, but later on, the subject will learn to be docile naturally.'[or][if N is patron]We care about our investors, so we dull any pain that you might experience within the situation.'[otherwise]We find that combat is a good way of increasing the subject's bloodflow before the main event.[end if][or]Repressed submissives like [NameBimbo] here will often take a while to break, but sometimes we get lucky.'[at random][roman type][line break][moderateHumiliateReflect]";
 
 To say SexObserve of (M - a slutty sister) with (N - a monster):
-	say "[first custom style]'[one of]As you can see, even if [he of the player] pretends not to enjoy it, [his of the player] vital signs definitely won't lie.'[or]As always, tap the button on the upper right of your screens to change your viewing angle.'[or]It's important to introduce the subject to sex early and often, so they get addicted. We're very confident it works, teehee!'[or][if the reaction of the player is 0]It's true [he of the player]'s resisting, but remember that safe-word we told you about?'[otherwise]See? Even if we give the subject a safe-word, they'd think twice about escaping something that feels so good.'[end if][or]Ooh, so your hands ARE as strong as they look...no no, that's included in the price... Teehee, I'll think about it, but I'm contractually obligated to remind you that [NameBimbo] is meant to be the centre of attention right now!'[or]If you look here, you'll see a diagram of [NameBimbo]'s most sensitive internal areas.'[or]Sir, if you keep doing that, I'm going to have to...really, double?...-ahem, we'll have to discuss how I can earn that after we finish the conference.'[then at random][if the player is not disgraced and the player is able to speak][line break][variable custom style]'[one of]Stop watching me!'[or]This isn't a show!'[or]This is so humiliating! It's like I'm a lab rat!'[in random order][end if][roman type][line break][strongHumiliateReflect]".
+	say "[first custom style]'[one of]As you can see, even if [he of the player] pretends not to enjoy it, [his of the player] vital signs definitely won't lie.'[or]As always, tap the button on the upper right of your screens to change your viewing angle.'[or]It's important to introduce the subject to sex early and often, so they get addicted. We're very confident it works, tee-hee!'[or][if the reaction of the player is 0]It's true [he of the player]'s resisting, but remember that safe-word we told you about?'[otherwise]See? Even if we give the subject a safe-word, they'd think twice about escaping something that feels so good.'[end if][or]Ooh, so your hands ARE as strong as they look...no no, that's included in the price... Tee-hee, I'll think about it, but I'm contractually obligated to remind you that [NameBimbo] is meant to be the centre of attention right now!'[or]If you look here, you'll see a diagram of [NameBimbo]'s most sensitive internal areas.'[or]Sir, if you keep doing that, I'm going to have to...really, double?...-ahem, we'll have to discuss how I can earn that after we finish the conference.'[then at random][if the player is not disgraced and the player is able to speak][line break][variable custom style]'[one of]Stop watching me!'[or]This isn't a show!'[or]This is so humiliating! It's like I'm a lab rat!'[in random order][end if][roman type][line break][strongHumiliateReflect]".
 
 [Determines the "video" content that is produced by the monitor when the player gets beaten in combat]
 To compute disgraceful event of (C - a video-monitor):
@@ -341,14 +341,18 @@ Definition: security interface is immune to change: decide yes.
 Figure of security interface is the file "Env/Hotel/securityroom1.jpg".
 Figure of security interface authenticating is the file "Env/Hotel/securityroom2.jpg".
 Figure of security interface authentication pole is the file "Env/Hotel/securityroom3.jpg".
-Figure of security interface authenticated is the file "Env/Hotel/securityroom4.jpg".
+Figure of security interface open is the file "Env/Hotel/securityroom4.jpg".
+Figure of security interface open authenticating is the file "Env/Hotel/securityroom5.jpg".
 To decide which figure-name is the examine-image of (C - security interface):
-	if C is authenticated and the charge of C <= 0, decide on figure of security interface authenticated;
-	if C is authenticating, decide on figure of security interface authenticating;
-	decide on figure of security interface.
+	if the charge of C <= 0:
+		if C is authenticating, decide on figure of security interface open authenticating;
+		decide on figure of security interface open;
+	otherwise:
+		if C is authenticating, decide on figure of security interface authenticating;
+		decide on figure of security interface.
 
 To say ExamineDesc of (C - security interface):
-	say "Four TV monitors are fixed to the wall of the security room. Your eyes are currently being drawn to [if the currentSlide of C <= 0]security footage of [one of]a woman stripping off her clothes in the middle of a street[or]an outdoor pool, where a woman is shamelessly sunbathing nude[or]some kind of confectionery store, where a woman is performing some rather erotic tongue manoeuvres on her favourite lollipop[or]two women performing stretches either side of a glass wall in a gym. For unclear reasons, one of the women is completely naked[then at random].[otherwise][SlideDesc (currentSlide of C)][end if][paragraph break]To the side of the monitors is a high-tech metal security door, and in between the door and the monitors are some panels for ID authentication, including a key card slot, and some kind of biometric authentication, activated by a big round power button[if C is authenticated and the charge of C <= 0]. The large panel has opened, revealing that it was an elevator door. You can probably travel somewhere from here[otherwise if C is authenticated]. It looks like you need to wait for the elevator door to open again[end if].".
+	say "Four TV monitors are fixed to the wall of the security room. Your eyes are currently being drawn to [if the currentSlide of C <= 0]security footage of [one of]a woman stripping off her clothes in the middle of a street[or]an outdoor pool, where a woman is shamelessly sunbathing nude[or]some kind of confectionery store, where a woman is performing some rather erotic tongue manoeuvres on her favourite lollipop[or]two women performing stretches on either side of a glass wall in a gym. For unclear reasons, one of the women is completely naked[then at random].[otherwise][SlideDesc (currentSlide of C)][end if][paragraph break]To the side of the monitors is [if the charge of C > 0]the high-tech metal security door of the elevator, currently [bold type]closed and recharging[roman type] (it looks like you need to wait for the elevator door to recharge and open before you can use it again)[otherwise]an open elevator door (you can probably travel somewhere from here)[end if], and in between the door and the monitors are some panels for ID authentication, including a key card slot, and some kind of biometric authentication, activated by a big round power button.".
 
 Check pushing security interface:
 	repeat with M running through combative monsters:
@@ -356,8 +360,11 @@ Check pushing security interface:
 	allocate 6 seconds;
 	if security interface is authenticated:
 		say "A feminine robotic voice speaks:[line break][second custom style]'ERROR: IDENTITY HAS ALREADY BEEN CONFIRMED.'[roman type][line break]";
+	otherwise if the charge of the noun > 0:
+		say "A feminine robotic voice speaks:[line break][second custom style]'ERROR: ELEVATOR IS RECHARGING. PLEASE WAIT...'[roman type][line break]";
 	otherwise if security interface is unauthenticated:
-		say "[if diaper quest is 0]Two things happen when you push the button - a small metal chute opens up, as if expecting you to deposit an item in it. Secondly, a long thin metal pole with a bulbous sphere at the top emerges from the ground in front of you[otherwise]A small metal chute opens up, as if expecting you to deposit an item in it[end if]. Next, a feminine robotic voice speaks:[line break][second custom style]'PLEASE PROCEED WITH [if diaper quest is 0]ORIFICE-BASED OR [end if]ITEM-BASED DNA VERIFICATION.'[roman type][line break]It seems like you [if diaper quest is 0]either need to [']mount['] the pole in front of you, or[otherwise]need to[end if] drop an item down the chute.";
+		say "[if diaper quest is 1]Two[otherwise]Three[end if] things happen when you push the button - the door opens, revealing an elevator inside, [if diaper quest is 0]a small metal chute opens up, as if expecting you to deposit an item in it, and lastly, a long thin metal pole with a bulbous sphere at the top emerges from the ground in front of you[otherwise]and secondly, a small metal chute opens up, as if expecting you to deposit an item in it[end if]. Next, a feminine robotic voice speaks:[line break][second custom style]'TO ENABLE ADMINSITRATOR PRIVILEGES, [caps please] PROCEED WITH [if diaper quest is 0]ORIFICE-BASED OR [end if]ITEM-BASED DNA VERIFICATION.'[roman type][line break]It seems like you [if diaper quest is 0]either need to [']mount['] the pole in front of you, or[otherwise]need to[end if] drop an item down the chute.";
+		if id-card is held, say "[variable custom style]I also have the mechanic's ID card, which looks like it would fit in that ID card slot...[roman type][line break]";
 		now security interface is authenticating;
 	otherwise:
 		say "You push the button, but nothing more happens.".
@@ -365,8 +372,11 @@ Check pushing security interface:
 
 [Happens after monsters, so if a monster drags you here it happens in the same turn.]
 A later time based rule:
-	if security interface is authenticated and the charge of security interface > 0:
+	if the charge of security interface > 0:
 		decrease the charge of security interface by time-seconds;
+		if the charge of security interface <= 0:
+			now security interface is unauthenticated;
+			if the player is in Hotel30, say "The door of the elevator re-opens with a pleasant 'DING!'[line break]";
 	if the player is in Hotel30:
 		let N be the number of filled rows in the Table of Published Disgraces;
 		if N > 0:
@@ -401,18 +411,24 @@ To decide which number is the girth of (C - security interface):
 	decide on 4.
 
 Check entering security interface:
-	if the noun is authenticated:
+	if the noun is not authenticating:
 		if the charge of security interface > 0, say "You'll need to wait until the elevator door opens up again." instead;
 		compute elevator use instead;
-	if the noun is unauthenticated or diaper quest is 1, say "How would you do that?" instead;
 	let F be asshole;
-	reset multiple choice questions;
-	set numerical response 1 to "Mount the authentication pole with your [asshole].";
-	if the player is possessing a vagina, set numerical response 2 to "Mount the authentication pole with your [vagina].";
-	set numerical response 0 to "Change your mind.";
-	compute multiple choice question;
+	if diaper quest is 0:
+		reset multiple choice questions;
+		set numerical response 1 to "Enter the elevator and press a button.";
+		set numerical response 2 to "Mount the authentication pole with your [asshole].";
+		if the player is possessing a vagina, set numerical response 3 to "Mount the authentication pole with your [vagina].";
+		set numerical response 0 to "Change your mind.";
+		compute multiple choice question;
+	otherwise:
+		now player-numerical-response is 1;
 	if player-numerical-response is 0, do nothing instead;
-	if player-numerical-response is 2, now F is vagina;
+	if player-numerical-response is 1:
+		if the charge of security interface > 0, say "You'll need to wait until the elevator door opens up again." instead;
+		compute elevator use instead;
+	if player-numerical-response is 3, now F is vagina;
 	if the insertableGirthAcceptance of F < the girth of the noun:
 		if debugmode is 1, say "If debugmode was disabled, the player would be unable to fit it inside.";
 		otherwise say "[variable custom style]There's no way I'm going to be able to fit that thing inside of me![roman type][line break]" instead;
@@ -476,17 +492,17 @@ Check inserting it into while the second noun is security interface:
 	say "The pole retracts back down into the ground." instead.
 
 To construct unique buttons for (T - security interface):
+	if the charge of T <= 0 and ButtonTableFull is 0:
+		choose a blank row in the Table of Buttons;
+		now the ButtonImage entry is Figure of map stairs down;
+		now the ButtonCommand entry is "enter [text-shortcut of T]";
+		now the ButtonColour entry is lightModeFullGreen;
 	if T is unauthenticated and ButtonTableFull is 0:
 		choose a blank row in the Table of Buttons;
 		now the ButtonImage entry is Figure of PokeButton;
 		now the ButtonCommand entry is "push [text-shortcut of T]";
 		now the ButtonColour entry is lightModeFullGreen;
 	otherwise if T is authenticating:
-		if ButtonTableFull is 0:
-			choose a blank row in the Table of Buttons;
-			now the ButtonImage entry is Figure of security interface authentication pole;
-			now the ButtonCommand entry is "enter [text-shortcut of T]";
-			now the ButtonColour entry is lightModeFullGreen;
 		repeat with V running through held non-empty vessels:
 			if ButtonTableFull is 0:
 				choose a blank row in the Table of Buttons;
@@ -516,12 +532,7 @@ To construct unique buttons for (T - security interface):
 				now the ButtonImage entry is examine-image of S;
 				now the ButtonCommand entry is "insert [text-shortcut of S] in [text-shortcut of T]";
 				now the ButtonColour entry is lightModeFullGreen;
-				if S is worn, now the ButtonColour entry is lightModeFullYellow;
-	otherwise if ButtonTableFull is 0:
-		choose a blank row in the Table of Buttons;
-		now the ButtonImage entry is Figure of map stairs down;
-		now the ButtonCommand entry is "enter [text-shortcut of T]";
-		now the ButtonColour entry is lightModeFullGreen.
+				if S is worn, now the ButtonColour entry is lightModeFullYellow.
 
 
 
@@ -657,7 +668,7 @@ To say DPTitle of (DP - public-disgrace-punishment-fetishes):
 	say "[he of the player] looks like [he of the player][']s into some fucked up fetishes".
 To compute disgrace punishment effect of (DP - public-disgrace-punishment-fetishes):
 	if egg laying fetish is 1:
-		say "Oh god... You feel your belly [if the player is possessing a vagina and the pregnancy of the player is 0]and womb [end if]suddenly filled a combination of different-sized eggs! ...And why do you get the suspicion that most if not all of these eggs have been [']fertilized[']...";
+		say "Oh god... You feel your belly [if the player is possessing a vagina and the pregnancy of the player is 0]and womb [end if]suddenly filled a combination of different-sized eggs! ...And why do you get the suspicion that most if not all of these eggs have been [']fertilised[']...";
 		let TM be a random tentacle monster;
 		while total fill of belly <= belly limit - 4:
 			increase the large egg count of belly by 1;

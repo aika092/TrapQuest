@@ -124,6 +124,18 @@ To say ShortDesc of (B - scrotum):
 	otherwise:
 		say "heavy, full balls".
 
+To say player-scrotum:
+	if the size of scrotum <= 0:
+		say "internal testicles";
+	otherwise if the size of scrotum < 3:
+		say "light, tiny sac";
+	otherwise if the size of scrotum < 5:
+		say "small, tight ball sac";
+	otherwise if the size of scrotum < 7:
+		say "average scrotum";
+	otherwise:
+		say "heavy, full sac".
+
 [!<PlayerIsPossessingScrotum>+
 
 REQUIRES COMMENTING
@@ -131,7 +143,8 @@ REQUIRES COMMENTING
 +!]
 Definition: yourself is possessing a scrotum:
 	if the player is possessing a penis:
-		if the player is possessing a vagina and futanari fetish is not 1, now the size of scrotum is 0;
+		if the player is possessing a vagina:
+			if the remainder after dividing player futanari fetish by 2 is 0, decide no;
 		if the size of scrotum > 0, decide yes;
 	decide no.
 

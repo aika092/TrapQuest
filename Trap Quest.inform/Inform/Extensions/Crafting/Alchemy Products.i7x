@@ -254,10 +254,10 @@ Check throwing energy-bomb at a monster:
 	otherwise:
 		say "You launch the [energy-bomb] at [NameDesc of the second noun], which hits [him of the second noun] right in [his of the second noun] [MonsterFaceDesc of the second noun]! Sparks of red electricity shoot all over [his of the second noun] body!";
 		now attack-type is 4;
-		let D be a random number between 25 and 35;
-		if the noun is blessed, increase D by 10;
-		increase D by fire theme bonus * 10;
-		damage (D * combatSpeed) on the second noun;
+		let D be a random number between 45 and 75;
+		if the noun is blessed, increase D by 30;
+		increase D by fire theme bonus * 20;
+		damage (D / (combatSpeed + 1)) on the second noun;
 		now latestCombatFocus is the second noun;
 	check stealing of the noun;
 	destroy the noun instead;
@@ -330,7 +330,7 @@ Check drinking time-bomb:
 		wait 1 ms before continuing;
 		repeat with N running from 1 to 200:
 			if N < 10 or (N < 20 and the remainder after dividing N by 3 is 0) or (N < 40 and the remainder after dividing N by 9 is 0) or (the remainder after dividing N by 27 is 0), wait before continuing;
-			say "[first custom style]'[one of]Hello there...' [or]One more for the road...' [or]Cumming!' [or]One more time!' [or]My turn!' [or]This is my favourite part of the day.' [or]Juicy...' [or]Fuck yeah!' [or]Lovely...' [or]Wonderful!' [or]Yum.' [or]Come to Daddy.' [or]Boo-ya.' [or]Anal?' [or]Again.' [or]More.' [or]Yes.' [or]Feels so good!' [or]Crikey!' [or]Ooh!' [or]Here we are again.' [or]My name is Buck. I like to fuck.' [or]Ew, slimy.' [or]Someone should probably clean up this mess.' [or]Cool!' [or]Gross!' [or]How deplorable.' [or]I'm glad I'm not you.' [or]Nice.' [or]Delightful.' [or]How interesting.' [or]This is unique.' [or]Open wide, honey.' [or]Rad!' [or]Wow...' [at random] [roman type][one of]Shlick[or]Slap[or]Fap[or]Shluck[or]Thud[or]Spurt[or]Squirt[purely at random] ";
+			say "[first custom style]'[one of]Hello there...' [or]One more for the road...' [or]Cumming!' [or]One more time!' [or]My turn!' [or]This is my favourite part of the day.' [or]Juicy...' [or]Fuck yeah!' [or]Lovely...' [or]Wonderful!' [or]Yum.' [or]Come to [daddytitle of male-m].' [or]Boo-ya.' [or]Anal?' [or]Again.' [or]More.' [or]Yes.' [or]Feels so good!' [or]Crikey!' [or]Ooh!' [or]Here we are again.' [or]My name is Buck. I like to fuck.' [or]Ew, slimy.' [or]Someone should probably clean up this mess.' [or]Cool!' [or]Gross!' [or]How deplorable.' [or]I'm glad I'm not you.' [or]Nice.' [or]Delightful.' [or]How interesting.' [or]This is unique.' [or]Open wide, honey.' [or]Rad!' [or]Wow...' [at random] [roman type][one of]Shlick[or]Slap[or]Fap[or]Shluck[or]Thud[or]Spurt[or]Squirt[purely at random] ";
 		say line break;
 		wait 800 ms before continuing;
 		reset the Glulx timer;
@@ -472,10 +472,10 @@ Check drinking nail-bomb:
 		now attack-type is 4;
 		repeat with M running through monsters in the location of the player:
 			if nail-bomb is bland or M is dangerous:
-				let D be a random number between 13 and 20;
-				if nail-bomb is blessed, increase D by 7;
-				increase D by fire theme bonus * 10;
-				damage (D * combatSpeed) on M;
+				let D be a random number between 33 and 55;
+				if nail-bomb is blessed, increase D by 20;
+				increase D by fire theme bonus * 20;
+				damage (D / (combatSpeed + 1)) on M;
 				now latestCombatFocus is M;
 	check stealing of the noun;
 	destroy the noun instead;
@@ -753,14 +753,15 @@ To compute alchemy product effect of (Q - womb-potion):
 				now the father is random creampie pole trap; [Tentacles for players who have them enabled]
 				if Q is cursed, compute sudden pregnancy;
 				say "Your [BellyDesc] seems suddenly... inactive. But you still feel movement coming from inside your womb.";
-				now the pregnancy of the player is 2;
+				now the pregnancy of the player is 1;
+				pause pregnancy;
 			if Q is not cursed, check sudden pregnancy;
 		otherwise if Q is cursed:
 			say "The potion seems to have no effect.";
 		otherwise if the pregnancy of the player is 1:
 			[Pause the pregnancy]
 			say "Your [BellyDesc] seems suddenly... inactive[if the largeness of belly > 6]. But you still feel kicking coming from inside your womb[end if].";
-			now the pregnancy of the player is 2;
+			pause pregnancy;
 		otherwise if the pregnancy of the player is 2:
 			[Unpause the pregnancy]
 			say "Your [BellyDesc] feels active again.";
@@ -1017,7 +1018,8 @@ To say ShortDesc of (P - a powder):
 PowderRubbing it on is an action applying to two things.
 Check PowderRubbing:
 	if the noun is not powder, say "This verb is for applying powder to things." instead;
-	if the second noun is not clothing, say "Powder should be applied to clothing." instead.
+	if the second noun is not clothing:
+		unless (the noun is identification-powder and the second noun provides the property curse-ID), say "You can't sprinkle powder on that." instead.
 
 Carry Out PowderRubbing:
 	allocate 6 seconds;
@@ -1052,7 +1054,8 @@ Carry Out PowderRubbing identification-powder on a thing:
 	say "You sprinkle the powder onto the [ShortDesc of the second noun]. It glitters brightly as its magic properties are revealed to you! ";
 	now the second noun is sure;
 	now the second noun is identified;
-	say "It is a [second noun][if the raw-magic-modifier of the second noun is 0 and the second noun is bland and the second noun is blandness].[line break][variable custom style]Hmm, how underwhelming[end if].[roman type][line break]";
+	if the second noun provides the property raw-magic-modifier, say "It is a [second noun][if the raw-magic-modifier of the second noun is 0 and the second noun is bland and the second noun is blandness].[line break][variable custom style]Hmm, how underwhelming[end if].[roman type][line break]";
+	otherwise say "It is a [second noun].";
 	if the noun is cursed and the second noun is not cursed:
 		say "Suddenly it is surrounded by a dark glow. ";
 		curse the second noun;
@@ -1434,7 +1437,7 @@ Check SalveRubbing:
 	if the noun is lubricant, try orilubing the noun with the second noun instead;
 	if the noun is glue, try GlueRubbing the second noun on the noun instead;
 	if the second noun is glue, try GlueRubbing the noun on the second noun instead;
-	if the noun is not salve and the noun is not ectoplasm, say "I understood the verb as you wanting to apply a salve, but then the noun was not a salve." instead;
+	if the noun is not salve and the noun is not ectoplasm and the noun is not charged-slime, say "I understood the verb as you wanting to apply a salve, but then the noun was not a salve." instead;
 	if the noun is erasure-salve and the second noun is not tattoo, say "That won't do anything - you should try rubbing it on a mark on your skin you want removed." instead;
 	if the noun is buoyancy-salve or the noun is restriction-salve or the noun is reduction-salve:
 		if the second noun is not breasts and the second noun is not hips and the second noun is not belly, say "You can only apply a salve to your [bold type]breasts[roman type], your [bold type]belly[roman type] or your [bold type]ass[roman type] at the moment." instead;
@@ -1475,11 +1478,12 @@ Check SalveRubbing:
 			say "You already have the [printed name of random worn true salve covering vagina] covering your [vagina]!" instead;
 		if there is a pussy covering clothing:
 			say "Your [printed name of random pussy covering clothing] is covering your [vagina]!" instead;
-	otherwise if the noun is ectoplasm:
-		if the second noun is not clothing or the second noun is accessory or the second noun is headgear or the second noun is stockings or the second noun is heels, say "You can't really rub it on properly. It's like the slime refuses to soak into it!" instead;
+	otherwise if the noun is ectoplasm or the noun is charged-slime:
+		if the second noun is not clothing or the second noun is accessory:
+			if the second noun is not headgear or the second noun is not magic-enhanceable, say "You can't really rub it on properly. It's like the slime refuses to soak into it!" instead;
 		[if the second noun is worn, say "You can't really rub it on properly when you're already wearing it." instead;]
-		if the second noun is not fluid vulnerable, say "That doesn't like it would absorb any of the slime." instead;
-		if the second noun is possession, say "You try, but it doesn't do anything." instead.
+		if (the noun is ectoplasm and the second noun is possession) or (the noun is charged-slime and the second noun is wizardry), say "You can't really rub it on properly. It's like the slime refuses to soak into it!" instead;
+		if the second noun is not fluid vulnerable, say "That doesn't seem like it would absorb any of the slime." instead.
 
 Carry out SalveRubbing:
 	allocate 6 seconds;
@@ -1546,16 +1550,23 @@ An all time based rule (this is the strength tincture decay rule):
 		decrease strength-timer of strength-tincture by time-seconds;
 		if strength-timer of strength-tincture <= 0:
 			now strength-timer of strength-tincture is 0;
-			if strength-bonus of strength-tincture > 0, say "[bold type]Your magical superhuman strength fades. As the energy disperses from your muscles, you feel your body expand rapidly![line break][variable custom style]Oh no...![roman type]";
-			while strength-bonus of strength-tincture > 0:
-				let R be a random number between 1 and 5;
-				if R is 1 and the player is not top heavy:
-					BustUp 1;
-				if R is 2 and the player is not bottom heavy:
-					HipUp 1;
-				if R is 3 and weight gain fetish is 1 and strength-bonus of strength-tincture > 2:
-					FatUp 4;
-				decrease strength-bonus of strength-tincture by 1.
+			if diaper quest is 0:
+				if strength-bonus of strength-tincture > 0, say "[bold type]Your magical superhuman strength fades. As the energy disperses from your muscles, you feel your body expand rapidly![line break][variable custom style]Oh no...![roman type]";
+				while strength-bonus of strength-tincture > 0:
+					let R be a random number between 1 and 5;
+					if R is 1 and the player is not top heavy:
+						BustUp 1;
+					if R is 2 and the player is not bottom heavy:
+						HipUp 1;
+					if R is 3 and weight gain fetish is 1 and strength-bonus of strength-tincture > 2:
+						FatUp 4;
+					decrease strength-bonus of strength-tincture by 1;
+			otherwise:
+				if strength-bonus of strength-tincture > 0, say "[bold type]Your magical superhuman strength fades. As the energy disperses from your muscles, you feel the contents of your [if rectum > 1]bowels[otherwise]bladder[end if] expand rapidly![line break][variable custom style]Oh no...![roman type]";
+				while strength-bonus of strength-tincture > 0:
+					if rectum > 1, increase rectum by 1;
+					otherwise increase the bladder of the player by 1;
+					decrease strength-bonus of strength-tincture by 1.
 
 Section 2 Tincture of Acceleration
 

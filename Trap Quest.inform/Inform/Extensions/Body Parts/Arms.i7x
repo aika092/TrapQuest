@@ -202,7 +202,7 @@ This is the update optional arm uses rule:
 					now C is in the location of the player;
 					truncate the armUses of arms to 2 entries;
 		if the player is not shameless: [Arms covering body parts]
-			if debugmode >  1, say "Preparing to automatically allocate arms. Current arm uses are: [armUses of arms].";
+			if debugmode > 1, say "Preparing to automatically allocate arms. Current arm uses are: [armUses of arms].";
 			repeat with XX running from 1 to 2:
 				if the number of entries in armUses of arms < 2:
 					if (XX is 1 and defaultLeftTarget of arms is yourself) or (XX is 2 and defaultRightTarget of arms is yourself):
@@ -261,7 +261,9 @@ To change default arm positions:
 		set numerical response 3 to "covering your chest";
 		set numerical response 4 to "covering your face";
 		if enema-backpack is worn, set numerical response 5 to "behind your head";
-		if painted-vibrator-hands is worn, set numerical response 5 to "over the missing hand print to the left of your clit";
+		if painted-vibrator-hands is worn:
+			set numerical response 1 to "under your right armpit, to hide the thumb vibe from being spotted";
+			set numerical response 5 to "over the missing hand print to the left of your clit";
 		if broomstick is worn, set numerical response 5 to "holding down one of the buttons on your broomstick";
 		if fake-baby is worn, set numerical response 5 to "holding down one of the buttons on your fake baby";
 		if current-predicament is vibe-photo-predicament and the player is in Predicament01, set numerical response 5 to "making a peace sign to the side, blocking any green from the camera";
@@ -271,7 +273,10 @@ To change default arm positions:
 		if player-numerical-response is 0:
 			now the defaultLeftTarget of arms is hips;
 		otherwise if player-numerical-response is 1:
-			now the defaultLeftTarget of arms is the player;
+			if painted-vibrator-hands is worn:
+				now the defaultLeftTarget of arms is arms;
+			otherwise:
+				now the defaultLeftTarget of arms is the player;
 		otherwise if player-numerical-response is 2:
 			now the defaultLeftTarget of arms is vagina;
 		otherwise if player-numerical-response is 3:
@@ -298,7 +303,9 @@ To change default arm positions:
 		if player-numerical-response is not 3, set numerical response 3 to "covering your chest";
 		if player-numerical-response is not 4, set numerical response 4 to "covering your face";
 		if enema-backpack is worn, set numerical response 5 to "behind your head";
-		if painted-vibrator-hands is worn, set numerical response 5 to "over the missing hand print to the right of your clit";
+		if painted-vibrator-hands is worn:
+			set numerical response 1 to "under your left armpit, to hide the thumb vibe from being spotted";
+			set numerical response 5 to "over the missing hand print to the right of your clit";
 		if broomstick is worn, set numerical response 5 to "holding down one of the buttons on your broomstick";
 		if fake-baby is worn, set numerical response 5 to "holding down one of the buttons on your fake baby";
 		if current-predicament is vibe-photo-predicament and the player is in Predicament01, set numerical response 5 to "making a peace sign to the side, blocking any green from the camera";
@@ -307,7 +314,10 @@ To change default arm positions:
 		if player-numerical-response is 0:
 			now the defaultRightTarget of arms is hips;
 		otherwise if player-numerical-response is 1:
-			now the defaultRightTarget of arms is the player;
+			if painted-vibrator-hands is worn:
+				now the defaultRightTarget of arms is arms;
+			otherwise:
+				now the defaultRightTarget of arms is the player;
 		otherwise if player-numerical-response is 2:
 			now the defaultRightTarget of arms is vagina;
 		otherwise if player-numerical-response is 3:

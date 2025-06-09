@@ -4,6 +4,10 @@ A crop top is a kind of overdress. The skirt-length of A crop top is 0. A crop t
 
 The printed name of crop top is usually "[clothing-title-before]crop top[clothing-title-after]".
 
+Definition: a crop top is same-type:
+	if theme-share-target is crop top or theme-share-target is tube top or theme-share-target is vest top, decide yes;
+	decide no.
+
 To compute SelfExamineDesc of (C - a crop top):
 	say "A [ShortDesc of C] tightly fits over your chest. ".
 

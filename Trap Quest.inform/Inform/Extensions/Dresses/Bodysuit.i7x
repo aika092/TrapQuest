@@ -936,6 +936,9 @@ To decide which number is the initial outrage of (C - ABC shortalls):
 To decide which number is the initial cringe of (C - ABC shortalls):
 	decide on 7.
 
+Definition: ABC shortalls is fetish appropriate:
+	if diaper lover > 0, decide yes;
+	decide no.
 Definition: ABC shortalls is blue themed: decide yes.
 Definition: ABC shortalls is yellow themed: decide yes.
 Definition: ABC shortalls is babywear: decide yes.

@@ -100,7 +100,7 @@ Definition: navy-monokini is blue themed: decide yes.
 
 Part 4 - Lolita Monokini
 
-lolita-monokini is a normal-monokini. lolita-monokini is not-top-displacable.  The text-shortcut of lolita-monokini is "fsm".
+lolita-monokini is a normal-monokini. lolita-monokini is not-top-displacable. The text-shortcut of lolita-monokini is "fsm".
 
 Understand "frilly", "lolita", "fashion", "lolita-fashion" as lolita-monokini.
 

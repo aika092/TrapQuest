@@ -29,6 +29,28 @@ To say ClothingDesc of (C - pom-pom-shoes):
 	say "These white girly shoes have big black bows tying them up, and big orange pom poms above the toes.".
 
 
+business-shoes is a shoes. business-shoes is unique. Understand "business", "shoes" as business-shoes. The text-shortcut of business-shoes is "bnsh".
+
+Figure of business shoes is the file "Items/Clothes/Lower/Feet/business1.png".
+
+To decide which figure-name is the clothing-image of (C - business-shoes):
+	decide on figure of business shoes.
+
+To say ShoeType of (S - business-shoes):
+	say "shoes".
+
+To say UniqueShortDesc of (C - business-shoes):
+	say "business shoes".
+
+Definition: business-shoes is brown themed: decide yes.
+
+To decide which number is the initial outrage of (C - business-shoes):
+	decide on 0.
+
+To say ClothingDesc of (C - business-shoes):
+	say "These smart brown shoes would traditionally be worn by a smart businessman.".
+
+
 sneakers is a kind of shoes. A sneakers is manly. A sneakers is rare. Understand "sneakers" as sneakers.
 
 Figure of sneakers is the file "Items/Clothes/Lower/Feet/sneakers2.png".

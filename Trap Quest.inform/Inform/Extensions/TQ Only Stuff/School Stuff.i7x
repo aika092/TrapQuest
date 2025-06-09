@@ -704,6 +704,7 @@ The text-shortcut of teacher-rochelle is "tero".
 
 Figure of rochelle is the file "NPCs/School/Teacher/teacher7a.png".
 Figure of slave rochelle is the file "NPCs/School/Teacher/teacher7b.png".
+Figure of rochelle condom lesson is the file "NPCs/School/Teacher/teacher7c.jpg".
 Figure of roger is the file "NPCs/School/Teacher/teacher8a.png".
 Figure of slave roger is the file "NPCs/School/Teacher/teacher8b.png".
 
@@ -794,6 +795,7 @@ To compute teaching of (L - condom-lesson):
 	allocate 6 seconds;
 	let M be the lesson-teacher of L;
 	if the condom-timer of L > 0:
+		if M is presenting as female, now temporaryYesNoBackground is Figure of rochelle condom lesson;
 		now the condom-timer of L is 0;
 		say "[speech style of M]'Condoms, condoms, condoms. Let's find out who's come to class wearing the most condoms!'[roman type][line break]You watch as [NameDesc of M] inspects you each one by one.[line break][speech style of M]'Okay... ";
 		let LST be the list of students in the location of the player;
@@ -810,6 +812,7 @@ To compute teaching of (L - condom-lesson):
 		let CC be 0;
 		repeat with C running through worn clothing:
 			increase CC by the used condoms of C;
+		increase TC by CC;
 		say "and last but hopefully not least... [NameBimbo] has [if CC is 1]just one condom[otherwise][CC] condoms[end if] pinned to [his of the player] clothing.'[roman type][line break]";
 		if CC < LC:
 			now LC is CC;
@@ -842,48 +845,48 @@ To compute teaching of (L - condom-lesson):
 					say "[if LW is a student][student-name of LW][otherwise][NameBimbo][end if][if E > 2], [otherwise if E is 2] and [end if]";
 					decrease E by 1;
 				say "... If you want a promotion, you're going to have to [if TC is 1]share the contents of that condom[otherwise]endure a BIG FORFEIT! There's a total of [TC] condoms here, and you're going to have to drink ALL of them[end if] between you if you want to get promoted today! Starting with... [if LL is a student][student-name of LL][otherwise][NameBimbo][end if].'[roman type][line break]";
-				let TTC be TC; [original total used condoms]
-				while TC > 0 and the number of entries in LLW > 0:
-					repeat with LW running through LLW:
-						if TC > 0:
-							if TC < TTC and the player is listed in LLW, say "[if TC is 1]There is one used condom[otherwise]There are [TC] used condoms[end if] left to eat. [if the number of entries in LLW > 1]There are [the number of entries in LLW] of you left trying to earn your promotions[otherwise]It's up to you to drink them all to earn your promotion[end if].";
-							if LW is the player:
-								say "[BigNameDesc of M] hands you a used condom of unknown origin...";
-								reset multiple choice questions;
-								set numerical response 1 to "drink the contents";
-								set numerical response 2 to "forfeit the promotion";
-								compute multiple choice question;
-								if player-numerical-response is 1:
-									if TTC is 1:
-										say "You bite it open with your teeth, before drinking your share of it down. The [if LLWE is 2][student-name of entry 2 in LLW] then drinks [his of entry 2 in LLW] half[otherwise]others then each drink their share[end if].";
-									otherwise:
-										say "You bite it open with your teeth, before drinking it all down.";
-									compute slightly addictive swallowing of semen;
-									SlowGrossOut 5;
-									decrease TC by 1;
+			let TTC be TC; [original total used condoms]
+			while TC > 0 and the number of entries in LLW > 0:
+				repeat with LW running through LLW:
+					if TC > 0:
+						if TC < TTC and the player is listed in LLW, say "[if TC is 1]There is one used condom[otherwise]There are [TC] used condoms[end if] left to eat. [if the number of entries in LLW > 1]There are [the number of entries in LLW] of you left trying to earn your promotions[otherwise]It's up to you to drink them all to earn your promotion[end if].";
+						if LW is the player:
+							say "[BigNameDesc of M] hands you a used condom of unknown origin...";
+							reset multiple choice questions;
+							set numerical response 1 to "drink the contents";
+							set numerical response 2 to "forfeit the promotion";
+							compute multiple choice question;
+							if player-numerical-response is 1:
+								if TTC is 1:
+									say "You bite it open with your teeth, before drinking your share of it down. The [if LLWE is 2][student-name of entry 2 in LLW] then drinks [his of entry 2 in LLW] half[otherwise]others then each drink their share[end if].";
 								otherwise:
-									remove yourself from LLW;
-									say "You baulk, and shake your head, stepping away. [BigNameDesc of M] shrugs with disappointment, and moves on.";
-							otherwise if the dedication of LW > a random number between -1 and 2:
-								say "[BigNameDesc of M] offers [NameDesc of LW] a used condom. [big he of LW] [one of]clenches [his of LW] eyes shut as [he of LW][or]grimaces, but then[or]breathes deeply and then[or]hesitates only for a moment before [he of LW][in random order] bites into it and swallows the load.";
+									say "You bite it open with your teeth, before drinking it all down.";
+								compute slightly addictive swallowing of semen;
+								SlowGrossOut 5;
 								decrease TC by 1;
 							otherwise:
-								say "[BigNameDesc of M] offers [NameDesc of LW] a used condom... But you can see that [NameDesc of LW] feels too nauseous to go near it. [big he of LW] steps back, forfeiting [his of LW] promotion.";
-								remove LW from LLW;
-				if TC > 0:
-					say "[BigNameDesc of M] shakes [his of M] head with disappointment.[line break][speech style of M]'[if TC is 1]There was only one condom left to eat, as well! How tragic![otherwise]There's still [TC] condoms left to go, but you've given up! What a shame.[end if] No more promotions today, then! Class dismissed!'[roman type][line break]";
-				otherwise:
-					say "[BigNameDesc of M] claps.[line break][speech style of M]'Great job, [if the number of entries in LLW is 1 and the player is listed in LLW][NameBimbo][otherwise if the number of entries in LLW is 1][student-name of entry 1 in LLW][otherwise if the number of entries in LLW is 2]you two[otherwise]everyone[end if]! You've definitely earned these promotions after all, haha!'[roman type][line break]";
-					repeat with LW running through LLW:
-						if LW is a student:
-							promote LW;
+								remove yourself from LLW;
+								say "You baulk, and shake your head, stepping away. [BigNameDesc of M] shrugs with disappointment, and moves on.";
+						otherwise if the dedication of LW > a random number between -1 and 2:
+							say "[BigNameDesc of M] offers [NameDesc of LW] a used condom. [big he of LW] [one of]clenches [his of LW] eyes shut as [he of LW][or]grimaces, but then[or]breathes deeply and then[or]hesitates only for a moment before [he of LW][in random order] bites into it and swallows the load.";
+							decrease TC by 1;
 						otherwise:
-							now armband is pink diamond;
-							say "You watch as the ID card inside your armband transforms!";
-							now the armband-title of armband is "Coco";
-							now the armband-print of armband is "used condom connoisseur";
-							say ClothingDesc of armband;
-					say "[speech style of M]'Class dismissed!'[roman type][line break]";
+							say "[BigNameDesc of M] offers [NameDesc of LW] a used condom... But you can see that [NameDesc of LW] feels too nauseous to go near it. [big he of LW] steps back, forfeiting [his of LW] promotion.";
+							remove LW from LLW;
+			if TC > 0:
+				say "[BigNameDesc of M] shakes [his of M] head with disappointment.[line break][speech style of M]'[if TC is 1]There was only one condom left to eat, as well! How tragic![otherwise]There's still [TC] condoms left to go, but you've given up! What a shame.[end if] No more promotions today, then! Class dismissed!'[roman type][line break]";
+			otherwise:
+				say "[BigNameDesc of M] claps.[line break][speech style of M]'Great job, [if the number of entries in LLW is 1 and the player is listed in LLW][NameBimbo][otherwise if the number of entries in LLW is 1][student-name of entry 1 in LLW][otherwise if the number of entries in LLW is 2]you two[otherwise]everyone[end if]! You've definitely earned these promotions after all, haha!'[roman type][line break]";
+				repeat with LW running through LLW:
+					if LW is a student:
+						promote LW;
+					otherwise:
+						now armband is pink diamond;
+						say "You watch as the ID card inside your armband transforms!";
+						now the armband-title of armband is "Coco";
+						now the armband-print of armband is "used condom connoisseur";
+						say ClothingDesc of armband;
+				say "[speech style of M]'Class dismissed!'[roman type][line break]";
 		repeat with ST running through students:
 			now the condom-count of ST is 0;
 		let TUC be total used condoms;
@@ -2484,7 +2487,7 @@ To compute teaching of (L - ultimate-lesson):
 	repeat with U running through ultimate-fetish-objects:
 		now the happened of U is 0;
 	now the source-room of DiamondLessonBlindfolded is School32;
-	repeat with U running through ultimate-lesson-actors:
+	repeat with U running through unseen-strangers:
 		set up U;
 		now U is in DiamondLessonBlindfolded;
 	now the player is in DiamondLessonBlindfolded;
@@ -2492,7 +2495,7 @@ To compute teaching of (L - ultimate-lesson):
 
 A game universe initialisation rule:
 	let N be 0;
-	repeat with U running through ultimate-lesson-actors:
+	repeat with U running through unseen-strangers:
 		increase N by 1;
 		now the text-shortcut of U is the substituted form of "man[N]".
 
@@ -2504,7 +2507,7 @@ The other ultimate students get focused rule is listed in the focus finding rule
 
 To compute lesson veto:
 	if the lesson-vetos of ultimate-lesson > 0:
-		let M be a random ultimate-lesson-actor;
+		let M be a random unseen-stranger;
 		let STN be the number of students in the location of the lesson-teacher of ultimate-lesson;
 		decrease the lesson-vetos of ultimate-lesson by 1;
 		if the lesson-vetos of ultimate-lesson > 0, say "[BigNameDesc of M] growls.[line break][speech style of M]'Fine. But you only have [if the lesson-vetos of ultimate-lesson > 1][lesson-vetos of ultimate-lesson] vetos[otherwise]one veto left[end if].'[roman type][line break]";
@@ -2512,12 +2515,12 @@ To compute lesson veto:
 	otherwise:
 		now the lesson-completed of ultimate-lesson is -1.
 
-To compute sex resist punishment of (M - an ultimate-lesson-actor):
+To compute sex resist punishment of (M - an unseen-stranger):
 	now the lesson-completed of ultimate-lesson is -1.
-To compute angry punishment of (M - an ultimate-lesson-actor):
+To compute angry punishment of (M - an unseen-stranger):
 	compute lesson veto.
 
-To compute tongue demand of (M - an ultimate-lesson-actor):
+To compute tongue demand of (M - an unseen-stranger):
 	say "[BigNameDesc of M] in front of you gives you an order.[line break][speech style of M]'Hold out your tongue.'[roman type][line break]Do you obey?";
 	if the player is bimbo consenting:
 		let P be a random off-stage tongue piercing;
@@ -2568,7 +2571,7 @@ To compute tongue demand of (M - an ultimate-lesson-actor):
 	otherwise:
 		compute lesson veto.
 
-To compute anal creampie expel demand of (M - an ultimate-lesson-actor):
+To compute anal creampie expel demand of (M - an unseen-stranger):
 	let ST be a random student in the location of the lesson-teacher of ultimate-lesson;
 	if ST is student and a2m fetish >= 2 and a random number between 1 and 2 is 1 and face is actually occupied:
 		say "You hear a squeak from [NameDesc of ST] and then you feel [his of ST] lips pressed against your [asshole]. [BigNameDesc of M] that recently pulled out of your [asshole] gives you an order.[line break][speech style of M]'Feed [him of ST] my creampie.'[roman type][line break]Do you obey?";
@@ -2597,7 +2600,7 @@ To compute anal creampie expel demand of (M - an ultimate-lesson-actor):
 		otherwise:
 			compute lesson veto.
 
-To compute anal torture of (M - an ultimate-lesson-actor):
+To compute anal torture of (M - an unseen-stranger):
 	let LST be the list of students in the location of the lesson-teacher of ultimate-lesson;
 	[if debugmode > 0, say "List of other students: [LST].[line break]List of things in mouth: [list of things penetrating face].";]
 	if watersports fetish is 1 and the total squirtable fill of belly <= 30 and a random number between 1 and 5 > 3:
@@ -2791,7 +2794,7 @@ An all time based rule (this is the ultimate diamond lesson rule):
 			let LST be the list of students in the location of the lesson-teacher of ultimate-lesson;
 			decrease the lesson-completed of ultimate-lesson by 1;
 			let E be a random eligible ultimate-fetish-object;
-			repeat with M running through ultimate-lesson-actors:
+			repeat with M running through unseen-strangers:
 				if delayed fainting is 0 and the lesson-completed of ultimate-lesson >= 0 and the player is in DiamondLessonBlindfolded: [i think some weird stuff with 'compute extra turn' could cause half of this to happen after the lesson is supposed to be concluded unless we check the location]
 					if M is penetrating a body part or a random number between 2 and 7 < the lesson-completed of ultimate-lesson: [Earlier turns are more likely to just be sex]
 						compute attack of M;
@@ -2814,7 +2817,7 @@ An all time based rule (this is the ultimate diamond lesson rule):
 			StrengthUp 1.
 
 To compute conclusion of (L - ultimate-lesson):
-	repeat with A running through ultimate-lesson-actors:
+	repeat with A running through unseen-strangers:
 		dislodge A;
 		remove A from play;
 	let M be the lesson-teacher of L;
@@ -3368,8 +3371,7 @@ The text-shortcut of student-katya is "stka".
 Figure of katherine is the file "NPCs/School/Student/student13a.jpg".
 Figure of kat is the file "NPCs/School/Student/student13b.jpg".
 Figure of katya is the file "NPCs/School/Student/student13c.jpg".
-[Figure of kitty is the file "NPCs/School/Student/student13d.jpg".]
-Figure of cuntwarmer is the file "NPCs/School/Student/student13e.png".
+Figure of cuntwarmer is the file "NPCs/School/Student/student13d.jpg".
 
 To decide which figure-name is the monster-image of (M - student-katya):
 	if the current-rank of M is 1:
@@ -3383,7 +3385,7 @@ To decide which figure-name is the monster-image of (M - student-katya):
 
 To say MonsterDesc of (M - student-katya):
 	if lady fetish is 2:
-		say "This platinum blonde [man of M] has the perfect sissy body shape[if the current-rank of M > 2 and artificial enhancements fetish is 1] including visibly silicone-enhanced asscheeks and a flawless nose job[end if], and [he of M] seems very comfortable in [his of M] own skin. [if the current-rank of M < 4][big his of M] face doesn't match [his of M] fuckdoll body though - [he of M] looks rather rebellious and level-headed, not the vacant sex-addled look you might expect[otherwise][big his of M] face now displays a much more vacant expression - one of submission and humility[end if]. [if the current-rank of M is 1]A white schoolgirl blouse clings to [his of M] svelte upper torso and [his of M] pink tartan miniskirt is so short you can see a peek of [his of M] skimpy panties when you're on your knees. [big he of M] stands impeccably balanced on [his of M] tall black stiletto heels as if [he of M] was born in them[otherwise if the current-rank of M is 2][big his of M] long-sleeved white leather jacket is fully unbuttoned, exposing [his of M] tartan patterned bra. [big his of M] tiny white microshorts hug [his of M] figure so tightly they almost look like they're painted on[otherwise if the current-rank of M is 3][big he of M]'s wearing nothing except a pair of purple low-rise silk briefs and matching half-cup bra which leaves most of [his of M] body on display[otherwise if the current-rank of M is 4][big he of M][']s [one of]now [or][stopping]wearing a sheer pink negligee over [his of M] svelte chest, so see-through it covers nothing. It matches [his of M] skimpy g-string which is so tiny that even [his of M] tiny [DickDesc of M] is in danger of popping out when [he of M] isn't using [his of M] hands to hold it in. Through the negligee you can see that [his of M] nipples have been covered by crosses of black type that read 'FUCK ME!' in big white letters[otherwise][big he of M] is completely naked, aside from a tiny purple chastity cage, and has a completely vacant expression - it looks like [he of M][']s struggling to think clearly[end if].";
+		say "This platinum blonde [man of M] has the perfect sissy body shape[if the current-rank of M > 2 and artificial enhancements fetish is 1] including visibly silicone-enhanced asscheeks and a flawless nose job[end if], and [he of M] seems very comfortable in [his of M] own skin. [if the current-rank of M < 4][big his of M] face doesn't match [his of M] fuckdoll body though - [he of M] looks rather rebellious and level-headed, not the vacant sex-addled look you might expect[otherwise][big his of M] face now displays a much more vacant expression - one of submission and humility[end if]. [if the current-rank of M is 1]A white schoolgirl blouse clings to [his of M] svelte upper torso and [his of M] pink tartan miniskirt is so short you can see a peek of [his of M] skimpy panties when you're on your knees. [big he of M] stands impeccably balanced on [his of M] tall black stiletto heels as if [he of M] was born in them[otherwise if the current-rank of M is 2][big his of M] long-sleeved white leather jacket is fully unbuttoned, exposing [his of M] tartan patterned bra. [big his of M] tiny white microshorts hug [his of M] figure so tightly they almost look like they're painted on[otherwise if the current-rank of M is 3][big he of M]'s wearing nothing except a pair of purple low-rise silk briefs and matching half-cup bra which leaves most of [his of M] body on display[otherwise][big he of M] is completely naked, aside from a tiny purple chastity cage, and has a completely vacant expression - it looks like [he of M][']s struggling to think clearly[end if].";
 	otherwise:
 		say "This platinum blonde [man of M] has the perfect bimbo body shape[if artificial enhancements fetish is 1] including visibly silicone-enhanced fuckballs and a flawless nose job[end if], and [he of M] seems very comfortable in [his of M] own skin. [if the current-rank of M < 4][big his of M] face doesn't match [his of M] fuckdoll body though - [he of M] looks rather rebellious and level-headed, not the vacant sex-addled look you might expect[otherwise][big his of M] face now displays a much more vacant expression - one of submission and humility[end if]. [if the current-rank of M is 1]A white schoolgirl blouse tightly stretches over [his of M] seemingly spherical E-cup tits, and [his of M] pink tartan miniskirt is so short you can see a peek of [his of M] skimpy panties when you're on your knees. [big he of M] stands impeccably balanced on [his of M] tall black stiletto heels as if [he of M] was born in them[otherwise if the current-rank of M is 2][big his of M] white schoolgirl blouse only has one button done up, exposing huge amounts of cleavage from [his of M] round F-cup fuckballs, and the complete lack of a bra. [big his of M] tiny pink microskirt hugs [his of M] figure so tightly it almost looks like it's painted on, and [he of M] prances perfectly elegantly on [his of M] tall pink platform heels[otherwise if the current-rank of M is 3][big his of M] white tube top only has one button done up, exposing huge amounts of cleavage and underboob from [his of M] giant plastic N-cup fuckballs. [big his of M] tiny pink microskirt is somehow even smaller than before perhaps because of how massive [his of M] beachball buttocks are now. [big he of M] prances perfectly elegantly on [his of M] extra-tall pink platform heels[otherwise][big he of M] is completely naked and has a completely vacant expression - it looks like [he of M][']s struggling to think clearly[end if].".
 

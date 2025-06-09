@@ -108,8 +108,12 @@ Definition: a monster is willing to do licking:
 Definition: a monster is willing to do anilingus:
 	if it is willing to do licking and a2m fetish > 0, decide yes;
 	decide no.
+Definition: a monster is certain to do anilingus:
+	decide no.
 Definition: a monster is eager to do anilingus:
-	if it is willing to do anilingus and the remainder after dividing earnings by 4 < (a2m fetish + 1), decide yes; [50% of turns for a2m = 1; 75% of turns for a2m = 2]
+	if it is willing to do anilingus:
+		if it is certain to do anilingus, decide yes;
+		if the remainder after dividing earnings by 4 < (a2m fetish + 1), decide yes; [50% of turns for a2m = 1; 75% of turns for a2m = 2]
 	decide no.
 Definition: a monster is willing to do titfucks:
 	if it is male, decide yes;
@@ -180,7 +184,8 @@ Definition: a monster is musky: decide no.
 Definition: a monster is a generic-unlocker: decide no. [Does it have access to keys to unlock clothing?]
 Definition: a monster is a clothes-destroyer: decide no. [Does it have enough strength to easily rip clothes apart, even ones with a metal chain and lock?]
 
-A monster can be doing nothing special, spanking the player, changing the player, feeding the player, whipping the player, masturbating the player, enema-filling the player, diaper-facesitting the player (this is the punishment-attack-state property).
+A monster can be doing nothing special, spanking the player, tickling the player, changing the player, feeding the player, whipping the player, masturbating the player, enema-filling the player, diaper-facesitting the player (this is the punishment-attack-state property).
+A monster can be tickle-testing.
 A monster has a number called paralyse-status. [paralyse status of -1 makes you immune]
 Definition: A monster is paralysed rather than not-paralysed:
 	if the paralyse-status of it > 0, decide yes;

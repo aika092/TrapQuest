@@ -77,11 +77,19 @@ To compute periodic effect of (P - ass-module):
 	increase the module-charge of P by 1;
 	if the module-charge of P > 48:
 		now the module-charge of P is 0;
-		if the raw dexterity of the player > 1 and the thickness of hips < max ass size:
-			say "[bold type]Your ass suddenly feels terribly warm, and some of the nanobots in it spring to life. It suddenly swells up in size! You feel some [one of][or]more [stopping]of your athletic power transferred into the nanobots for safekeeping.[roman type][line break]";
-			AssImplantsUp 1;
-			DexDown 1;
-			increase the dex-transfer of P by 1.
+		if the raw dexterity of the player > 1:
+			if the thickness of hips < max ass size:
+				say "[bold type]Your ass suddenly feels terribly warm, and some of the nanobots in it spring to life. It suddenly swells up in size! You feel some [one of][or]more [stopping]of your athletic power transferred into the nanobots for safekeeping.[roman type][line break]";
+				AssImplantsUp 1;
+				DexDown 1;
+				increase the dex-transfer of P by 1;
+			otherwise if the thickness of hips > 1 and the player is getting unlucky:
+				decrease the thickness of hips by 1;
+				say "[bold type]Your ass suddenly feels terribly warm, and some of the nanobots in it spring to life. You feel some of your flesh being converted into ass implants! More of your athletic power must have been transferred to the nanobots, too...[roman type][line break]";
+				AssImplantsUp 1;
+				DexDown 1;
+				increase the dex-transfer of P by 1;
+				say GotUnluckyFlav;
 
 [!<TheAssModuleButtSlutRule>+
 
@@ -125,11 +133,19 @@ To compute periodic effect of (P - breast-module):
 	increase the module-charge of P by 1;
 	if the module-charge of P > 48:
 		now the module-charge of P is 0;
-		if the player is not top heavy and the raw strength of the player > 1:
-			say "[bold type]Your breasts suddenly feel terribly warm, they suddenly swell up in size! You feel some [one of][or]more [stopping]of your muscular power transferred into the nanobots for safekeeping.[roman type][line break]";
-			BustImplantsUp 1;
-			StrengthDown 1;
-			increase the str-transfer of P by 1.
+		if the raw strength of the player > 1:
+			if the player is not top heavy:
+				say "[bold type]Your breasts suddenly feel terribly warm and they swell up in size! You feel some [one of][or]more [stopping]of your muscular power transferred into the nanobots for safekeeping.[roman type][line break]";
+				BustImplantsUp 1;
+				StrengthDown 1;
+				increase the str-transfer of P by 1;
+			otherwise if the flesh volume of breasts > 1 and the player is getting unlucky:
+				decrease the flesh volume of breasts by 1;
+				say "[bold type]Your breasts suddenly feel terribly warm, and some of the nanobots in it spring to life. Some of your flesh has been converted into breast implants! More of your muscle power must have been transferred to the nanobots, too...[roman type][line break]";
+				BustImplantsUp 1;
+				StrengthDown 1;
+				increase the str-transfer of P by 1;
+				say GotUnluckyFlav.
 
 
 
@@ -254,10 +270,12 @@ To say SubduedGrabFlav of (C - clitoris lead):
 Check taking off clitoris lead:
 	say "That's permanently welded onto your clitoris piercing!";
 	if the player is not able to use their hands:
-		say "Besides, it's hardly like you can even get at it now with your hands.";
-	otherwise if it is not blessed:
-		say "But [one of]the tugging on[or]your fumbling with[at random] the [one of]lead[or]piercing[or]fastening[or]clip[at random] as you tried to remove it from your sensitive [one of]clit[or]nub[or]bud[or]button[as decreasingly likely outcomes] [one of]has made it stiffen under your fingers,[or]has you biting your lip at the sensations of your slick, sensitive tip,[or]sends an illicit thrill through you, making you squirm,[or]feels [i]so good[/i],[or]makes you flush as you feel yourself moisten down there, and[at random] arousing you more.[one of] You shiver in reaction, your eyes rolling up for a moment, your tongue roving over your [LipDesc].[or]You find yourself shaking from the sensations, your nipples crinkled up in pleasure.[or]You wonder whether you're doing this just because it feels so good?[or][line break][variable custom style]Mmm, so good![roman type][line break][stopping]";
-		arouse 100;
+		say "...Besides, it's hardly like you can even get at it now with your hands.";
+	otherwise if the noun is not blessed and the player is able to automatically masturbate:
+		say "...But [one of]your tugging on[or]your fumbling with[or]your attempts to dislodge[at random] it makes your sensitive [one of]clit[or]nub[or]bud[or]button[as decreasingly likely outcomes] [one of]stiffen under your fingers[or]send sparks of pleasure up your belly[or]sends an illicit thrill through you[or]feel [italic type]so good[roman type][at random]. [one of]You shiver, eyes rolling up and tongue roving over your [LipDesc] as your hand creeps further down...[or]Your nipples harden, a sigh falls through your lips, and your hand creeps further down...[or]Your hand creeps further down, and your fingers find your moistening flower...[or][line break][variable custom style]I can't help it![roman type][line break][stopping]";
+		now auto is 1;
+		try masturbating;
+		now auto is 0;
 	do nothing instead.
 
 Section 1 Wearability
@@ -330,9 +348,11 @@ Check taking off clitoris piercing:
 	say "That's permanently welded into your [if the bimbo of the player < 10]poor sensitive [end if]clit!";
 	if the player is not able to use their hands:
 		say "Besides, it's not like you even [i]could[/i] do that right now, with your hands.";
-	otherwise if it is not blessed:
-		say "But [one of]your tugging on[or]your fumbling with[or]your attempts to dislodge[at random] the [one of][printed name of the noun][or]piercing[or]fiendish jewellery[or][']decoration['][at random] as you tried to remove it from your sensitive [one of]clit[or]nub[or]bud[or]button[as decreasingly likely outcomes] [one of]has made it stiffen under your fingers,[or]has you biting your lip at the sensations of your slick, sensitive tip,[or]sends an illicit thrill through you, making you squirm,[or]feels [i]so good[/i],[or]makes you flush as you feel yourself moisten down there, and[at random] arousing you more.[one of] You shiver in reaction, your eyes rolling up for a moment, your tongue roving over your [LipDesc].[or] You find yourself shaking from the sensations, your nipples crinkled up in pleasure.[or] You wonder whether you're doing this just because it feels so good?[or][line break][variable custom style]Mmm, so good![roman type][line break][or][line break][first custom style]Mmm, I think I'm enjoying this.[roman type][line break][stopping]";
-		arouse 100;
+	otherwise if the noun is not blessed and the player is able to automatically masturbate:
+		say "...But [one of]your tugging on[or]your fumbling with[or]your attempts to dislodge[at random] it makes your sensitive [one of]clit[or]nub[or]bud[or]button[as decreasingly likely outcomes] [one of]stiffen under your fingers[or]send sparks of pleasure up your belly[or]sends an illicit thrill through you[or]feel [italic type]so good[roman type][at random]. [one of]You shiver, eyes rolling up and tongue roving over your [LipDesc] as your hand creeps further down...[or]Your nipples harden, a sigh falls through your lips, and your hand creeps further down...[or]Your hand creeps further down, and your fingers find your moistening flower...[or][line break][variable custom style]I can't help it![roman type][line break][stopping]";
+		now auto is 1;
+		try masturbating;
+		now auto is 0;
 	do nothing instead.
 
 To decide which object is the potential-upgrade-target of (C - normal clit piercing):
@@ -371,6 +391,8 @@ This is the cursed clitoris piercing stops you wearing crotch covering dresses r
 				if autowear is false, say "The curse of your [C] somehow prevents you from putting this on!";
 				rule fails. [NB this purposefully doesn't prevent them from being summoned.]
 The cursed clitoris piercing stops you wearing crotch covering dresses rule is listed in the overdress wearability rules.
+The cursed clitoris piercing stops you wearing crotch covering dresses rule is listed in the underdress wearability rules.
+
 
 A nipple piercing is a kind of piercing.
 
@@ -506,7 +528,7 @@ This is the overdress cow rings clash rule:
 			if summoning is 0 and autowear is false, say "Your [ShortDesc of nipple-rings] is somehow preventing you from wearing the [ShortDesc of wearing-target]! Maybe if you uncursed it?";
 			rule fails;
 		if dick-nipple-piercings is worn:
-			if summoning is 0 and autowear is false, say "Your [ShortDesc of dick-nipple-piercings] are somehow preventing you from wearing the [ShortDesc of wearing-target]! Maybe if you uncursed them?";
+			if summoning is 0 and autowear is false, say "Your [ShortDesc of dick-nipple-piercings] are somehow preventing you from wearing the [ShortDesc of wearing-target]! It looks like you're going to be topless and appearing ultra slutty to onlookers for the rest of your run...";
 			rule fails.
 The overdress cow rings clash rule is listed in the overdress wearability rules.
 
@@ -691,7 +713,7 @@ To decide which number is the intelligence-influence of (C - a pair of earrings)
 	decide on 0.
 
 To say PiercingFlav of (P - a pair of earrings):
-	say "An arm comes down with a searing hot needle! You scream [if the player is gagged]through your gag [end if]as your earlobes are painfully pierced. The needle is quickly removed and two obscene earrings are pushed into place. The hook of the earrings are then somehow welded shut, meaning that the earrings are permanent![line break][variable custom style][if the humiliation of the player < 20000]Oh you have GOT to be kidding me! These look absolutely ridiculous! Surely I can't be stuck with them forever?![otherwise if the humiliation of the player < 30000]These look stupid, but then I guess it's a fair reflection of how undignified I've become.[otherwise]There's definitely no excuse for having such ridiculous earrings. Everyone will know I'm a shameless exhibitionist! Teehee.[end if][roman type][line break]".
+	say "An arm comes down with a searing hot needle! You scream [if the player is gagged]through your gag [end if]as your earlobes are painfully pierced. The needle is quickly removed and two obscene earrings are pushed into place. The hook of the earrings are then somehow welded shut, meaning that the earrings are permanent![line break][variable custom style][if the humiliation of the player < 20000]Oh you have GOT to be kidding me! These look absolutely ridiculous! Surely I can't be stuck with them forever?![otherwise if the humiliation of the player < 30000]These look stupid, but then I guess it's a fair reflection of how undignified I've become.[otherwise]There's definitely no excuse for having such ridiculous earrings. Everyone will know I'm a shameless exhibitionist! Tee-hee.[end if][roman type][line break]".
 
 Section - Wearability
 

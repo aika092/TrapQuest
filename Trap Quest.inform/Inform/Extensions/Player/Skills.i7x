@@ -364,7 +364,7 @@ To teach safefloating from (M - a monster):
 				if (the magic power of the player > a random number between 0 and 2) and the player is not getting unlucky:
 					say "As the magic flows from your fingertips into [his of M] breasts, you can feel [him of M] lose control of the spell.[line break][speech style of M]'What? NO!'[roman type][line break]But it's too late - [his of M] body is expanding rapidly to stupid sizes! It's only a moment before [he of M][']s soaring up and away into the air. In [his of M] panic, [he of M] drops [his of M] wand! Without that, [he of M] can't reverse the spell! [big he of M] floats further and further away into the sky, probably gone for good.";
 					destroy M;
-					if golden-phallus is  off-stage:
+					if golden-phallus is off-stage:
 						now golden-phallus is in the location of the player;
 						compute autotaking golden-phallus;
 				otherwise:

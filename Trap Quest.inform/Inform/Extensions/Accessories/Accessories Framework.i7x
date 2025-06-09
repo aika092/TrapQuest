@@ -44,13 +44,16 @@ To say ClothingDesc of (A - an accessory):
 				say "A silver coloured bracelet with several tiny [if A is ruby]rubies[otherwise][accessory-colour of A]s[end if] embedded on the outside.";
 	if A is ring:
 		if A is solid gold:
-			say "A solid gold ring.";
+			say "A solid gold [if A is humility-stone and A is worn]ring that you obtained by proving yourself [StoneDesc of A].[otherwise]ring.[end if]";
 		otherwise:
-			say "A [if A is emerald or A is ruby]gold[otherwise]silver[end if] coloured ring with [if A is pure diamond]three impressive diamonds[otherwise]a small [accessory-colour of A][end if] embedded in the top.";
+			say "A [if A is emerald or A is ruby]gold[otherwise]silver[end if] coloured ring with [if A is pure diamond]three impressive diamonds[otherwise]a small [accessory-colour of A][end if] embedded in the [if A is humility-stone and A is worn]top. You obtained it by proving yourself [StoneDesc of A].[otherwise]top.[end if]";
 	if saved-flat-intelligence < 6:
-		say "You have no idea how much it's worth.";
+		say "You have no idea how much it's [if A is humility-stone]worth, but you can tell it's much more than an ordinary ring.[otherwise]worth.[end if]";
 	otherwise if saved-flat-intelligence < 11:
-		say "[if the price of A < 4]It's probably only worth a little bit.[otherwise if the price of A < 8]It probably has notable worth.[otherwise if the price of A < 12]You reckon this is quite a valuable piece of jewellery.[otherwise]This is probably an extremely expensive piece of jewellery.[end if]";
+		if A is humility-stone:
+			say "[if the price of A < 25]It doesn't look that special but something tells you its worth more than it seems.[otherwise if the price of A < 50]You can tell its extremely valuable.[otherwise]You can tell it's priceless.[end if]";
+		otherwise:
+			say "[if the price of A < 4]It's probably only worth a little bit.[otherwise if the price of A < 8]It probably has notable worth.[otherwise if the price of A < 12]You reckon this is quite a valuable piece of jewellery.[otherwise]This is probably an extremely expensive piece of jewellery.[end if]";
 	otherwise:
 		say "You don't know where this is coming from, but something in your head suggests this is probably worth... [price of A]. Whatever that means.".
 
@@ -63,18 +66,21 @@ Definition: an accessory is transformation-protected: decide yes.
 To say ShortDesc of (C - an accessory):
 	say "accessory".
 
+Figure of humility stone BG is the file "Items/Accessories/Arm/humility1.jpg".
+
 To BackgroundRender (T - an accessory) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
 	update background colour of T;
 	if the backgroundColour of T >= 0:
 		draw a rectangle backgroundColour of T in the graphics-window at X1 by Y1 with size DX by DY;
-	otherwise if T is plentiful:
-		draw a rectangle 16357356 in the graphics-window at X1 by Y1 with size DX by DY.
+	otherwise:
+		if T is a humility-stone, display the image Figure of humility stone BG in the graphics-window at X1 by Y1 with dimensions DX by DY;
+		otherwise draw a rectangle 16357356 in the graphics-window at X1 by Y1 with size DX by DY.
 
 To set shortcut of (A - an accessory):
 	now the tradability of A is the price of A;
-	now the text-shortcut of A is "[metal-shortcut of A][jewellery-shortcut of A]".
+	if A is not humility-stone, now the text-shortcut of A is "[metal-shortcut of A][jewellery-shortcut of A]".
 
-To check shortcut of (A - an accessory):
+[To check shortcut of (A - an accessory):
 	let T be the substituted form of "[text-shortcut of A]";
 	set shortcut of A;
 	let CT be the substituted form of "[text-shortcut of A]";
@@ -83,7 +89,7 @@ To check shortcut of (A - an accessory):
 
 An all later time based rule:
 	repeat with A running through worn plentiful accessory:
-		check shortcut of A.
+		check shortcut of A.]
 
 To decide which text is metal-shortcut of (A - an accessory):
 	if A is emerald, decide on "e";

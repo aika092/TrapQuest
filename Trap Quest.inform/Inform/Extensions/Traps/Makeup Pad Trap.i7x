@@ -169,7 +169,8 @@ To trigger (SC - slime-trap-choice):
 				say "The ['][ChoiceFlav of SC]['] punishment seems to miss, or fizzle, or something! [GotLuckyFlav]";
 		otherwise:
 			say "A hidden compartment inside the container opens, and a large blob of slime shoots out some sort of tiny cannon, hitting you right in the face! ";
-			compute slimeball forcefeed;
+			let M be a random slimeball;
+			compute slimeball forcefeed of M;
 	otherwise:
 		say "A hidden compartment inside the container opens, and a large blob of slime shoots out some sort of tiny cannon, hitting you right in the chest!";
 		let C be a random worn breast covering clothing;
@@ -367,7 +368,7 @@ To trigger (C - teleport-trap-choice):
 		compute bad teleport;
 	otherwise:
 		let R be a random placed roomstandard room;
-		while R is an academic room or R is a predicament room or R is a painting-room or R is an introductory room:
+		while R is an academic room or R is a predicament room or R is a painting-room or R is an introductory room or R is an elevator-room:
 			now R is a random placed roomstandard room;
 		say "A beam of blue light appears around you, teleporting you to who-knows-where!";
 		teleport to R.

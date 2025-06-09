@@ -765,11 +765,13 @@ To execute (A - soiled-diaper-assembly):
 
 egg-assembly is an assembly.
 Definition: egg-assembly is eligible:
-	if there is an egg in the School and asshole is not actually occupied, decide yes;
+	if asshole is not actually occupied:
+		repeat with E running through on-stage eggs:
+			if E is not held and E is in the School, decide yes;
 	decide no.
 To say AssemblyStartFlav of (A - egg-assembly):
 	repeat with SD running through eggs:
-		if SD is in the school, now SD is in the location of the player;
+		if SD is in the school and SD is not held, now SD is in the location of the player;
 	let M be the assemblyAnnouncer of A;
 	now the stance of the player is 1;
 	say "As you stumble through the warp portal, you find yourself in the assembly hall. A lot of other students are also filing in, and [NameDesc of M] is at the front, ready to lead assembly.[line break][speech style of M]'It has come to my attention that one of you has been using my halls as a dumping ground for their perverse discarded objects.'[roman type][line break][big he of M] points to the table in front of [him of M], upon which [if the number of eggs in the location of the player > 1]are the eggs you left in the school[otherwise]is [NameDesc of a random egg in the location of the player][end if].[line break][speech style of M]'That's right, I know who's responsible. I want everyone here to know it too, and to take part in reminding [NameBimbo] where [his of the player] eggs belong: UP [caps his of the player] ASSHOLE.'[roman type][line break]With a snap of [his of M] fingers, you are on your knees and your [asshole] is exposed to all your peers.";
@@ -982,7 +984,7 @@ To check school toilet supervision:
 								otherwise:
 									say "[speech style of M]'You're so mean! I'm going to wet myself!!!'[roman type][line break]";
 	otherwise:
-		if headmistress is alive and headmistress is undefeated and the player is getting unlucky:
+		if the player is not in a predicament room and the player is not in a nonstandard room and headmistress is alive and headmistress is undefeated and the player is getting unlucky:
 			now headmistress is in the location of the player;
 			interest headmistress;
 			anger headmistress;
@@ -1152,7 +1154,7 @@ To execute (A - drink-assembly):
 		otherwise:
 			StomachMilkUp 2;
 			say moderateHumiliateReflect;
-		say "You hand the chalice back to [NameDesc of headmistress], who nods with approval. Today you have all formed a bond that shall never be broken. Dismissed!";
+		say "You hand the chalice back to [NameDesc of headmistress], who nods with approval.[line break][speech style of headmistress]'Today you have all formed a bond that shall never be broken. Dismissed![roman type][line break]";
 	otherwise:
 		say "You refuse to take hold of the disgusting chalice.[line break][speech style of headmistress]'Disappointing.'[roman type][line break][BigNameDesc of headmistress] says, and as [he of headmistress] does, your armband disappears.";
 		only destroy armband;
@@ -1188,7 +1190,7 @@ To execute (A - disgrace-assembly):
 			if the lastwitnessed entry is 0:
 				now disgrace-viewed is true;
 				say DisgracePost N;
-				say "Several of the other students cackle mercilessly. ";
+				say ".[line break]Several of the other students cackle mercilessly. ";
 				let S be HUMILIATION-BASE * DisgracePostImpact N;
 				say DisgracePostReaction strength S;
 				humiliate S / 5;
@@ -1520,28 +1522,27 @@ To say RemHypnoContent:
 
 Book - Ultimate Lesson Actor
 
-
-An ultimate-lesson-actor is a kind of monster. An ultimate-lesson-actor is male. There are 4 ultimate-lesson-actors. The text-shortcut of an ultimate-lesson-actor is "voi". Understand "manly", "womanly", "voice" as ultimate-lesson-actor.
-An ultimate-lesson-actor has a text called the specific-man-title.
-An ultimate-lesson-actor has a figure-name called the specific-man-image. The specific-man-image of ultimate-lesson-actor is figure of small image.
-Definition: an ultimate-lesson-actor is specific-man:
+An unseen-stranger is a kind of monster. An unseen-stranger is male. There are 4 unseen-strangers. The text-shortcut of an unseen-stranger is "voi". Understand "manly", "womanly", "voice" as unseen-stranger.
+An unseen-stranger has a text called the specific-man-title.
+An unseen-stranger has a figure-name called the specific-man-image. The specific-man-image of unseen-stranger is figure of small image.
+Definition: an unseen-stranger is specific-man:
 	if current-predicament is porno-predicament and the player is in Predicament01, decide yes;
 	decide no.
-To say ShortDesc of (M - an ultimate-lesson-actor):
+To say ShortDesc of (M - an unseen-stranger):
 	say "[if M is specific-man][man of M][otherwise]voice[end if]".
-To say MediumDesc of (M - an ultimate-lesson-actor):
+To say MediumDesc of (M - an unseen-stranger):
 	say "[if M is specific-man][specific-man-title of M] [man of M][otherwise][man of M]ly voice[end if]".
-To say FuckerDesc of (M - an ultimate-lesson-actor):
+To say FuckerDesc of (M - an unseen-stranger):
 	say "the [if M is specific-man][MediumDesc of M][otherwise][FuckingDesc of M][end if]".
-To say BigFuckerDesc of (M - an ultimate-lesson-actor):
+To say BigFuckerDesc of (M - an unseen-stranger):
 	say "The [if M is specific-man][MediumDesc of M][otherwise][FuckingDesc of M][end if]".
-To say FuckingDesc of (M - an ultimate-lesson-actor):
+To say FuckingDesc of (M - an unseen-stranger):
 	let B be a random body part penetrated by M;
 	say "[one of]stranger[or]anonymous [man of M][or][man of M][at random][if B is body part] [one of]in[or]fucking[or]sliding in and out of[or]plowing[or]thrusting in and out of[as decreasingly likely outcomes] your [variable B][end if]".
-To say MonsterDesc of (M - an ultimate-lesson-actor):
+To say MonsterDesc of (M - an unseen-stranger):
 	if M is specific-man, say "A [MediumDesc of M].";
 	otherwise say "Who knows what this [man of M] looks like. You know nothing about [him of M][if the player is not in a predicament room], other than [he of M] clearly is a high ranking member of this institution[end if]. You'll probably never find out who [he of M] is.".
-To compute action (N - a number) of (M - an ultimate-lesson-actor):
+To compute action (N - a number) of (M - an unseen-stranger):
 	if M is in a predicament room:
 		if current-predicament is business-briefcase-predicament and the sex-length of M is 0 and current-predicament is ass-to-mouth-agreed and M is penetrating asshole, now the sex-length of M is a random number between 1 and 2; [sometimes extends the length of the scene, and guarantees it always ends with oral creampie]
 		if (current-predicament is gloryhole-key-predicament or current-predicament is business-briefcase-predicament) and current-predicament is ass-to-mouth-agreed and the sex-length of M > 0:
@@ -1667,12 +1668,30 @@ To compute action (N - a number) of (M - an ultimate-lesson-actor):
 		if the sex-length of M <= 0:
 			say "With [one of]a satisfied[or]a giddy[purely at random] noise, [NameDesc of M] pulls [his of M] [manly-penis] out of you and quickly [one of]leaves[or]makes [himself of M] scarce[or]flees the scene[in random order].";
 			now M is not wrapped;
+			destroy M;
+	otherwise if the player is in an elevator-room:
+		decrease the sex-length of M by 1;
+		let F be a random fuckhole penetrated by M; [currently just the facial machine room, which is always a fuckhole]
+		if F is nothing:
+			follow the monster punishment rule;
+			now the sex-length of M is 3;
+		otherwise if the sex-length of M > 0:
+			say "[one of]The neck strap holds you tightly in place as [FuckerDesc of M][']s [manly-penis] thrusts in and out of your [variable F][or]You breathe heavily as [FuckerDesc of M] pleasures [his of M] [manly-penis] with your defenseless [variable F][or][BigFuckerDesc of M] thrusts back and forth, enjoying the [if the openness of F <= the girth of M]tight[otherwise]gentle[end if] grip of your [variable F][or][BigFuckerDesc of M] buries [himself of M] deep inside your [variable F] with a set of long, hard thrusts[or][BigFuckerDesc of M] sighs with delight at the feeling of your [variable F] around [his of M] [manly-penis][or][BigFuckerDesc of M] is not holding back [his of M] sexual groans and grunts as [he of M] enjoys the feeling of [his of M] [manly-penis] moving in and out of your [variable F][or][BigFuckerDesc of M] grabs your [AssDesc] as [he of M] slams in and out of your [variable F][or][BigFuckerDesc of M] treats your [variable F] as [his of M] own personal faceless onahole, pumping in and out of your [variable F] without regards for your feelings[cycling].";
+			ruin F;
+		otherwise:
+			if F is vagina, FuckCount;
+			otherwise AnalCount;
+			say CreampieFlav of M in F;
+			compute M finishing in F;
+		if the sex-length of M <= 0:
+			say "With [one of]a satisfied[or]a happy[in random order] [one of]noise[or]sigh[cycling], [NameDesc of M] pulls [his of M] [manly-penis] out of you and quickly [one of]leaves[or]returns to the elevator[in random order].";
+			now M is not wrapped;
 			destroy M.
 
-To say FriendlySexResistFlav of (M - an ultimate-lesson-actor):
+To say FriendlySexResistFlav of (M - an unseen-stranger):
 	say "[if M is not penetrating face][variable custom style]'[one of]I can't take any more[or]Screw this[stopping]!'[roman type][line break][otherwise if the player is able to make sounds][variable custom style][muffled sounds][roman type][line break][end if]";
 	say "Fed up, you pull away from [NameDesc of M][']s [manly-penis][if M is penetrating face], coughing and spluttering as you do[end if].".
-To compute FriendlySexRelease of (M - an ultimate-lesson-actor):
+To compute FriendlySexRelease of (M - an unseen-stranger):
 	if current-predicament is business-briefcase-predicament:
 		say "[speech style of M]'Fucking useless whore! That's it...'[roman type][line break]";
 		make video go gloryhole viral;
@@ -1680,44 +1699,46 @@ To compute FriendlySexRelease of (M - an ultimate-lesson-actor):
 		say "[BigNameDesc of M] makes [one of]a disappointed[or]a frustrated[or]an annoyed[in random order] sound[if current-predicament is gloryhole-predicament] and then leaves[end if].[line break][MissedGloryholeCock]";
 	dislodge M;
 	destroy M.
-To check perception of (M - an ultimate-lesson-actor):
+To check perception of (M - an unseen-stranger):
 	do nothing.
-To compute perception of (M - an ultimate-lesson-actor):
+To compute perception of (M - an unseen-stranger):
 	do nothing.
-Definition: an ultimate-lesson-actor is uniquely reactive:
+Definition: an unseen-stranger is uniquely reactive:
 	if current-predicament is free-use-fuckhole-predicament and it is in Toilet02 and the player is in Toilet02, decide yes;
 	decide no.
-Definition: an ultimate-lesson-actor is anticipating-climax: decide no.
+Definition: an unseen-stranger is anticipating-climax: decide no.
 Figure of unseen actor is the file "NPCs/School/unseen1.png".
-To decide which figure-name is the monster-image of (M - an ultimate-lesson-actor):
+Figure of unseen actor futa is the file "NPCs/School/unseen2.jpg".
+To decide which figure-name is the monster-image of (M - an unseen-stranger):
 	if M is specific-man and the specific-man-image of M is not figure of small image, decide on the specific-man-image of M;
+	if M is presenting as female, decide on figure of unseen actor futa;
 	decide on figure of unseen actor.
-Definition: an ultimate-lesson-actor is human: decide yes.
-Definition: an ultimate-lesson-actor (called M) is dark skinned:
+Definition: an unseen-stranger is human: decide yes.
+Definition: an unseen-stranger (called M) is dark skinned:
 	if M is penetrating a fuckhole and slimy-portal-creature is bbc-fuck and slimy-portal-creature is grabbing the player, decide yes;
 	if M is penetrating face and slimy-portal-creature is bbc-oral and slimy-portal-creature is grabbing the player, decide yes;
 	if M is specific-man:
 		if the specific-man-title of M matches the text "black" or the specific-man-title of M matches the text "dark" or the specific-man-title of M matches the text "ebony" or the specific-man-title of M matches the text "African", decide yes;
 	decide no.
-To decide which number is the girth of (M - an ultimate-lesson-actor):
+To decide which number is the girth of (M - an unseen-stranger):
 	if M is penetrating a fuckhole and slimy-portal-creature is demon-fuck and slimy-portal-creature is grabbing the player, decide on 6;
 	if M is penetrating face and slimy-portal-creature is demon-oral and slimy-portal-creature is grabbing the player, decide on 6;
 	if M is dark skinned, decide on 5;
 	decide on 2.
-Definition: an ultimate-lesson-actor is able to remove cursed plugs: decide yes. [Can the monster remove all plugs & gags?]
-To set up sex length of (M - an ultimate-lesson-actor) in (B - a body part):
+Definition: an unseen-stranger is able to remove cursed plugs: decide yes. [Can the monster remove all plugs & gags?]
+To set up sex length of (M - an unseen-stranger) in (B - a body part):
 	set up sex length (a random number between 1 and 2) of M in B.
-To compute sudden floor squirt disapproval of (M - an ultimate-lesson-actor):
+To compute sudden floor squirt disapproval of (M - an unseen-stranger):
 	if M is in Toilet02 and current-predicament is free-use-fuckhole-predicament, say "[speech style of M]'[one of]Holy shit, was that someone else's cum?!'[or]You're fucking gross.'[or]I guess I'm not the first guy to fuck this Free Use whore today, then...'[or]Woah!'[or]Holy shit, that nearly hit me!'[or]Fucking ASSCUM?!'[cycling][roman type][line break]".
-To compute SelectionFailure of (M - an ultimate-lesson-actor):
+To compute SelectionFailure of (M - an unseen-stranger):
 	say "You feel a [LongDickDesc of M] shoved [one of]up against your torso[or]into your hand's grip[or]against your cheek[in random order] and moved around as [NameDesc of M] waits for an available hole.".
-To say AnalDefloweringFlav of (M - an ultimate-lesson-actor):
+To say AnalDefloweringFlav of (M - an unseen-stranger):
 	say "Suddenly you feel a hard [manly-penis] pushing against, and into your virgin [asshole]. You reflect on how disgraceful it is that you're losing your anal virginity to a [man of M] who you don't even know what [he of M] looks like, never mind what [his of M] name is...".
-To say VaginalDefloweringFlav of (M - an ultimate-lesson-actor):
+To say VaginalDefloweringFlav of (M - an unseen-stranger):
 	say "A single tear is caught by your blindfold as [FuckerDesc of M][']s [DickDesc of M] pierces your hymen, removing your virginity forever. Shame bubbles up inside of you as [he of M] slides deeper and deeper into your [vagina], settling heavily in your core as [he of M] bottoms out. [BigFuckerDesc of M] slowly begins to thrust.[line break][variable custom style]I'll likely never find out the name of the [man of M] who took my virginity. The shame...[roman type][line break]".
-To say NormalMouthPenetrationFlav of (M - an ultimate-lesson-actor):
+To say NormalMouthPenetrationFlav of (M - an unseen-stranger):
 	say "[BigFuckerDesc of M] pinches your nose, shoving [his of M] [DickDesc of M] in your mouth as soon as you try to breathe.".
-To compute facial climax of (M - an ultimate-lesson-actor):
+To compute facial climax of (M - an unseen-stranger):
 	TimesSubmittedUp M by 1;
 	BlowCount;
 	if M is wrapped:
@@ -1725,7 +1746,7 @@ To compute facial climax of (M - an ultimate-lesson-actor):
 	otherwise: [Internal cumshot]
 		compute deepthroat creampie of M;
 	if M is penetrating face, orgasm satisfy M.[dislodges him automatically]
-To compute deepthroat creampie of (M - an ultimate-lesson-actor):
+To compute deepthroat creampie of (M - an unseen-stranger):
 	get deepthroat creampie image for M;
 	say DeepthroatCreampie of M;
 	now the throating of M is 1;
@@ -1733,12 +1754,12 @@ To compute deepthroat creampie of (M - an ultimate-lesson-actor):
 	if M is in Toilet02:
 		orgasm M;
 		dislodge M.
-To say DeepthroatCreampie of (M - an ultimate-lesson-actor):
+To say DeepthroatCreampie of (M - an unseen-stranger):
 	if M is in Toilet02:
 		say "Without warning, [one of][FuckerDesc of M] tightens [his of M] grip, hissing through [his of M] teeth as [he of M] cums straight down your throat.[or][FuckerDesc of M][']s [DickDesc of M] throbs powerfully, firing off load after load of warm [semen] down your throat.[in random order]";
 	otherwise:
 		say DefaultDeepthroatCreampie of M.
-To compute (M - an ultimate-lesson-actor) attacking (C - a clothing):
+To compute (M - an unseen-stranger) attacking (C - a clothing):
 	if C is crotch-zipped:
 		say UnzipFlav of M at C;
 		ZipDown C;
@@ -1752,18 +1773,18 @@ To compute (M - an ultimate-lesson-actor) attacking (C - a clothing):
 		compute M ripping C;
 	otherwise:
 		compute M destroying C.
-To compute sudden objectification of (M - an ultimate-lesson-actor):
+To compute sudden objectification of (M - an unseen-stranger):
 	do nothing.
-To compute condom request choice of (M - an ultimate-lesson-actor):
+To compute condom request choice of (M - an unseen-stranger):
 	if total used condoms > 0:
 		say AutomaticCondomFlav of M;
 		now M is wrapped.
-To say CondomPinFlav of (M - an ultimate-lesson-actor) on (C - a clothing):
+To say CondomPinFlav of (M - an unseen-stranger) on (C - a clothing):
 	if M is awake, say "[BigNameDesc of M] ties the used condom to your [ShortDesc of C].";
 	otherwise say "Completely of its own accord, the used condom suddenly zips from [NameDesc of M] and flies through the air until it hits your [ShortDesc of C].".
-To compute labour to (M - an ultimate-lesson-actor):
+To compute labour to (M - an unseen-stranger):
 	say DefaultBirthScene.
-To compute fatherhood to (M - an ultimate-lesson-actor):
+To compute fatherhood to (M - an unseen-stranger):
 	dislodge M.
 
 Staff Framework ends here.

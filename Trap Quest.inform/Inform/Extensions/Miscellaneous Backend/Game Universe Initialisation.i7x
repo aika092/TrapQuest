@@ -36,6 +36,7 @@ To Start The Machine:
 		repeat with M running through alive nonexistent monsters:
 			set up M;
 		wait until animations are over;
+		now the raw milk taste addiction of the player is 2; [elsewise they spit their first breast feeding]
 		now the player is in Hotel22;
 	otherwise:
 		wait until animations are over;
@@ -150,7 +151,7 @@ To Start The Machine:
 		otherwise:
 			if player-numerical-response is 1:
 				compute full outfit summon of doll hairbow;
-				say "[second custom style]Ding Dong![roman type][line break]The giant manor house's doorbell sounds surprisingly cheerful and welcoming considering how scary the place looks from the outside. And yet, when the door opens, it opens with an uncanny creak like you might expect from such an old and grand door. The [man of vampiress] who greets you has red eyes and very, very pale skin.[line break][variable custom style]'Trick or treat!'[roman type][line break]You say automatically, without thinking. The [man of vampiress] seems to ignore this, and quickly ushers you inside.[line break][speech style of vampiress]'You're the ghost exterminator I ordered, right? Look, there's no time. I need you to [bold type]attract the attention of the girl ghost[speech style of vampiress] who has been haunting me here, [bold type]bait her into one of the rooms with a pentagram[speech style of vampiress], and [bold type]get her to leave my fucking mansion[speech style of vampiress]! And try not to fuck up - I mistook the last mortal who came knocking as the exorcist but she was just some dumb trick-or-treater, and the next thing you know the ghost had turned her into some sort of traumatized diapered baby! But that shouldn't be a problem for you - you're the real deal!'[roman type][line break]Before you can reply, [NameDesc of vampiress] has burst into a small flock of bats, which have flown away back into the depths of the mansion!";
+				say "[second custom style]Ding Dong![roman type][line break]The giant manor house's doorbell sounds surprisingly cheerful and welcoming considering how scary the place looks from the outside. And yet, when the door opens, it opens with an uncanny creak like you might expect from such an old and grand door. The [man of vampiress] who greets you has red eyes and very, very pale skin.[line break][variable custom style]'Trick or treat!'[roman type][line break]You say automatically, without thinking. The [man of vampiress] seems to ignore this, and quickly ushers you inside.[line break][speech style of vampiress]'You're the ghost exterminator I ordered, right? Look, there's no time. I need you to [bold type]attract the attention of the girl ghost[speech style of vampiress] who has been haunting me here, [bold type]bait her into one of the rooms with a pentagram[speech style of vampiress], and [bold type]get her to leave my fucking mansion[speech style of vampiress]! And try not to fuck up - I mistook the last mortal who came knocking as the exorcist but she was just some dumb trick-or-treater, and the next thing you know the ghost had turned her into some sort of traumatised diapered baby! But that shouldn't be a problem for you - you're the real deal!'[roman type][line break]Before you can reply, [NameDesc of vampiress] has burst into a small flock of bats, which have flown away back into the depths of the mansion!";
 				repeat with M running through alive ghosts:
 					finally destroy M;
 				set up ghostly tentacle;
@@ -249,6 +250,9 @@ To Start The Machine:
 
 previousGUILayout is a number that varies. previousGUILayout is -1.
 
+To decide which number is default-graphics-window-measurement:
+	decide on 64.
+
 To resolve graphics windows mayhem:
 	repeat through the Table of User Styles:
 		[now background colour entry is lightModeWhiteHex;]
@@ -256,7 +260,7 @@ To resolve graphics windows mayhem:
 		if style name entry is special-style-1, now colour entry is lightModeSpecial1Hex;
 	follow the set generic text styles rule;
 	now the position of the graphics-window is g-placeleft;
-	now the measurement of the graphics-window is 64;
+	now the measurement of the graphics-window is default-graphics-window-measurement;
 	repeat with W running through g-window:
 		if W is graphics g-window, now the background colour of W is lightModeWhiteGraphicsHex;
 		otherwise now the background colour of W is lightModeWhiteTextHex.
@@ -391,16 +395,32 @@ To initialise wardrobe:
 		cupsizefix C;
 	now C is a random pinkWardrobeAppropriate nylon stockings;
 	if C is nothing, now C is a random pinkWardrobeAppropriate stockings;
+	if smart start is 1:
+		if the player is gendered female, now C is dark-leggings;
+		otherwise now C is business socks;
 	if C is clothing, add C to L;
 	let C be a random Boobies T-shirt;
 	if the player is male and a random number between trap fetish and 1 is 1, now C is a random Gender Bender T-shirt;
 	if diaper lover >= 1 and a random number between 1 and 2 is 1, now C is a random I love my wet nappies T-shirt;
 	if a random number between 1 and 2 <= 1 + tough-shit, now C is a random unskirted pinkWardrobeAppropriate underdress;
 	if a random number between 1 and 2 <= 1 + tough-shit or C is nothing, now C is a random unskirted pinkWardrobeAppropriate overdress;
+	if smart start is 1:
+		now C is smart-shirt;
+		if the player is gendered female, now C is polka dot business dress;
 	if C is clothing, add C to L;
 	now C is a random short-or-longer not-butt-windowed actually dense pinkWardrobeAppropriate skirt;
 	if tough-shit is 1, now C is a random very-short-or-longer pinkWardrobeAppropriate skirt;
+	if smart start is 1 and the player is not gendered female, now C is denim-jeans;
 	if C is clothing, add C to L;
+	if smart start is 1:
+		if the player is gendered female:
+			now C is a random plentiful satin court heels;
+			if C is clothing, add C to L;
+			if the largeness of breasts > 1, now C is a random wonder bra;
+			otherwise now C is a random training bra;
+			if C is clothing, add C to L;
+		otherwise if diaper quest is 0:
+			add business-shoes to L;
 	if diaper focus >= 1:
 		let C be a random eligible diaper;
 		if easter content is 1, now C is brown-button-diaper;
@@ -409,6 +429,13 @@ To initialise wardrobe:
 		if X is listed in Standard Item Pen:
 			restock X;
 		blandify and reveal X;
+		if X is heels:
+			if X is platform heels or X is wedge heels, now the heel-height of X is 3;
+			otherwise now the heel-height of X is 1;
+		if X is bra:
+			now the size of X is the largeness of breasts;
+			cupsizefix X;
+		if smart start is 1 and (X is leggings or X is socks), now X is confidence;
 		now X is in pink wardrobe;
 	let CG be champagne-glass;
 	if diaper quest is 1:

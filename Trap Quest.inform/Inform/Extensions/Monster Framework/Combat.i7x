@@ -112,6 +112,12 @@ This is the default check for spanking rule:
 		rule succeeds.
 The default check for spanking rule is listed last in the default continue sex rules.
 
+This is the default check for tickling rule:
+	if current-monster is tickling the player:
+		compute spanking of current-monster;
+		rule succeeds.
+The default check for tickling rule is listed last in the default continue sex rules.
+
 This is the default check for changing rule:
 	if current-monster is changing the player:
 		compute diaper change of current-monster;
@@ -171,14 +177,14 @@ To orgasm (M - a monster):
 		if M is penetrating a fuckhole:
 			if there is a worn dark magician girl dress, MagicPowerRefresh the girth of M;
 			BBCAddictUp 1;
-		if royal scepter is worn:
-			if royal scepter is not blacked:
-				say "Your [royal scepter] transforms ";
-				now royal scepter is blacked;
-				say "into a [royal scepter]![line break][ClothingDesc of royal scepter]";
+		if royal sceptre is worn:
+			if royal sceptre is not blacked:
+				say "Your [royal sceptre] transforms ";
+				now royal sceptre is blacked;
+				say "into a [royal sceptre]![line break][ClothingDesc of royal sceptre]";
 			if tiara-of-spades is worn:
-				say "[BigNameDesc of royal scepter] is filled with renewed magical power!";
-				if the charge of royal scepter < 30, now the charge of royal scepter is 30;
+				say "[BigNameDesc of royal sceptre] is filled with renewed magical power!";
+				if the charge of royal sceptre < 30, now the charge of royal sceptre is 30;
 	if ritual-beads is worn or runic headband is worn:
 		if runic headband is purity or M is penetrating vagina, compute priestessBlessing of M;
 	if the class of the player is worshipper and M is infernal, compute demonBoon of M;
@@ -469,7 +475,20 @@ Handles anything that needs to happen after a monster "M" climaxes in a bodypart
 
 +!]
 To compute post climax effect of (M - a monster) in (F - a body part):
-	do nothing.
+	if F is asshole, check post climax anal urination of M.
+
+To check post climax anal urination of (M - a monster):
+	if the player is an april 2025 top donator and watersports fetish is 1 and grossness fetish > 0 and M is willing to urinate and the bladder of M >= 600 and M is not wrapped, compute anal urination of M.
+
+To compute anal urination of (M - a monster):
+	if M is intelligent, say AnalUrinationAnnounceFlav of M;
+	say "[BigNameDesc of M] sighs with [one of]happiness[or]satisfaction[or]contentment[in random order]... And you feel warmth along with a buiding pressure inside your rectum![line break][variable custom style][one of]Wait... Is [he of M]... PISSING INSIDE OF ME?!?!?!?![or][one of]Oh my god[or]Fuck[purely at random], my [one of]butthole[or]belly[in random order] is being [one of]turned into[or]used as[purely at random] a urinal again[stopping][roman type][line break]";
+	Assfill (the bladder of M / 75) with urine;
+	now the bladder of M is 0;
+	GrossOut 4 with reason "The sensation of being used as an anal urinal makes you shudder," and sensation "feeling".
+
+To say AnalUrinationAnnounceFlav of (M - a monster):
+	say "[speech style of M]'[one of]Hold on a sec, I've got something else for you[or]Hold still now, my little cum toilet[or]I think you've got room in there for something more[in random order]...'[roman type][line break]".
 
 This is the default anal climax rule:
 	if current-monster is penetrating asshole:
@@ -612,7 +631,10 @@ To compute licking sex of (M - a monster):
 
 To compute default anilingus sex of (M - a monster):
 	decrease the sex-length of M by 1;
-	if the reaction of the player is 0:
+	if the sex-length of M is 0 and M is anticipating-climax:
+		say NearingClimaxAnilingus of M;
+		GrossOut 1;
+	otherwise if the reaction of the player is 0:
 		say AnilingusResisting of M;
 		say AnilingusResistingResponse of M;
 		GrossOut 4;
@@ -623,7 +645,10 @@ To compute default anilingus sex of (M - a monster):
 
 To compute default licking sex of (M - a monster):
 	decrease the sex-length of M by 1;
-	if the reaction of the player is 0:
+	if the sex-length of M is 0 and M is anticipating-climax:
+		say NearingClimaxLicking of M;
+		GrossOut 1;
+	otherwise if the reaction of the player is 0:
 		say LickResisting of M;
 		say LickResistingResponse of M;
 		GrossOut 1;
@@ -980,6 +1005,9 @@ This is the bride consort waits for his wedding night rule:
 			if the player is possessing a vagina and vagina is not actually occupied and the number of pussy covering actually unavoidable clothing is 0:
 				if the player is not in Hotel06, drag to Hotel06 by current-monster;
 				compute wedding night;
+			otherwise if the player is not possessing a vagina and (asshole is not actually occupied or demon tail plug is worn) and the number of ass covering actually unavoidable clothing is 0:
+				if the player is not in Hotel06, drag to Hotel06 by current-monster;
+				compute wedding night;
 		otherwise:
 			if current-monster is friendly-fucking, say "[speech style of current-monster]'No, on second thoughts, I can't do this. It's not right. We should wait until after the ceremony!'[roman type][line break]";
 			otherwise compute angry punishment of current-monster;
@@ -1060,6 +1088,7 @@ Definition: a body part (called B) is a reasonable target:
 				otherwise: [e.g. a monster / trap is penetrating]
 					decide no;
 			[So, if it's insertable and the monster can remove it, we will probably end up deciding yes!]
+	if B is not a fuckhole and facial-room-machine is grabbing the player, decide no;
 	decide yes.
 
 [ACTUAL TARGET means that the orifice can be accessed by the NPC, even after taking into account magical distractions, e.g. butt slut]
@@ -1196,7 +1225,21 @@ To compute enticing of (M - a monster):
 				now S is the urine taste addiction of the player;
 			otherwise:
 				if watersports fetish is 0 and the class of the player is human toilet, increase S by 10;
+			if interracial fetish is 1 and M is human:
+				if M is dark skinned:
+					if B is orifice, increase S by the bbc addiction of the player - 2;
+					otherwise increase S by the bbc addiction of the player - 5;
+				otherwise:
+					decrease S by the bbc addiction of the player - 1;
 			if S > 5: [at 5 or less addiction, this can't happen]
+				if the enticement-strength of M with S <= 14:
+					if B is thighs or B is face or B is belly:
+						say "Your [one of]tongue tingles[or]throat spasms[cycling] with temptation, ";
+					otherwise:
+						say "Your [variable B] [one of]tingles[or]spasms[or]quivers[or]shivers[in random order] with [one of]temptation[or]desire[purely at random], ";
+					say "[one of]you can feel your pupils dilating[or]and your heart beats faster at the thought[or]blood rushes to [if B is vagina or B is penis]it[otherwise]your [one of]loins[or]crotch[cycling][end if][in random order].";
+					arouse S * 100;
+					check for arousal change;
 				check enticing of M for B with temptation level S;
 				if the player is prone:
 					follow the insertion rules of M;
@@ -1205,19 +1248,23 @@ To compute enticing of (M - a monster):
 						summon wc hood cursed;
 	now current-monster is CM.
 
-
-To check enticing of (M - a monster) for (B - a thing) with temptation level (S - a number):
+To decide which number is the enticement-strength of (M - a monster) with (S - a number):
 	let A be the arousal of the player / 500;
-	let G be the grossness of M  - the grossness addiction of the player;
+	let G be the grossness of M - the grossness addiction of the player;
 	let N be A + S;
 	if G > 0, decrease N by G;
 	if the class of the player is chosen one:
-		let H be a random worn headgear;
-		say "[bold type][BigNameDesc of H] [bold type]pulses gently on your forehead.[roman type][line break]";
 		increase N by 10;
 		if N < 15, now N is 15;
 	if debuginfo > 0, say "[input-style]Enticement stats: Arousal value ([A]) + Addiction level ([S])[if G > 0] - Grossness level ([G])[end if] = Enticement level [N][roman type][line break]";
-	if N > 11, say EnticedFlav of M for B with enticement level N; [This way, there's some flavour if we got close but not quite close enough for the first level of enticement]
+	decide on N.
+
+To check enticing of (M - a monster) for (B - a thing) with temptation level (S - a number):
+	if the class of the player is chosen one:
+		let H be a random worn headgear;
+		say "[bold type][BigNameDesc of H] [bold type]pulses gently on your forehead.[roman type][line break]";
+	let N be the enticement-strength of M with S;
+	if N > 14, say EnticedFlav of M for B with enticement level N; [This way, there's some flavour if we got close but not quite close enough for the first level of enticement]
 	if the player is upright:
 		if N > 28:
 			if debuginfo > 0, say "[input-style]Above 28 = maximum enticement level![roman type][line break]";
@@ -1294,6 +1341,11 @@ To say EnticeFlav of (M - a monster) with (F - a fuckhole):
 		say "[line break][speech style of M]'[one of]Just think how good you'll feel if you let me inside your [T]...'[or]Get on your knees, and let me ruin your [T] already...'[or]Calm yourself, sweetheart. All I want to do is fuck your [T].'[or]When I get you on your knees, this is going inside your [T]...'[or]Surrender now, and perhaps I'll be merciful on your [T].'[or]I'm going to make your [T] feel so good...'[in random order][roman type][line break]";
 	otherwise:
 		say "It seems clear that [he of M] wants to fuck your [variable F].".
+
+To say EnticeFlav of (M - a monster) with (B - a body part):
+	if M is male, say "[BigNameDesc of M] brandishes [his of M] [LongDickDesc of M]. ";
+	otherwise say "[BigNameDesc of M] spreads [his of M] pussy lips. ";
+	say "It seems clear that [he of M] has plans for your [B].".
 
 To say EnticedFlav of (M - a monster) for (B - a thing) with enticement level (N - a number):
 	say "".
@@ -1783,7 +1835,8 @@ To compute (M - a monster) initiating licking:
 To compute (M - a monster) default initiating licking:
 	if face is not occupied: [The whole 'face is not occupied' stuff is so that we can try and call this from other areas of the code.]
 		set up sex length of M in face;
-		if M is eager to do anilingus or M is getting-asslicked:
+		[We can only force non-anilingus if the npc isn't explicitly about to be eaten out or not allowed to do things besides anilingus]
+		if M is getting-asslicked or M is certain to do anilingus or (M is not getting-licked and M is eager to do anilingus):
 			now M is getting-asslicked;
 			if M is friendly-fucking, say FriendlyAnilingusInitiationFlav of M;
 			otherwise say AnilingusInitiationFlav of M; [If you just want to change the text, replace the Flav function. Otherwise replace the entire compute function.]
@@ -2332,33 +2385,35 @@ Determines how effective a piece of clothing is at protecting a particular body 
 
 +!]
 To compute (P - a clothing) protecting (B - a body part) from (M - a monster):[default]
-	if P is protection and a random number between the magic-modifier of P and 8 > 4:
-		say "The [P] protects you from being properly injured by the attack!";
+	if P is sacred dress and the pregnancy of the player is 2:
+		say "[BigNameDesc of P] protects you from being properly injured by the attack!";
+	otherwise if P is protection and a random number between the magic-modifier of P and 8 > 4:
+		say "[BigNameDesc of P] protects you from being properly injured by the attack!";
 	otherwise if (B is breasts or B is hips or B is thighs) and P is possession:
 		if M is ghost and a random number between the magic-modifier of P and 8 < 4:[for ghosts, the possession enchantment is a negative]
 			compute M hurting B;
-			say "The [P] constricts in response to [NameDesc of M]'s attack, intensifying the pain!";
+			say "[BigNameDesc of P] constricts in response to [NameDesc of M]'s attack, intensifying the pain!";
 			PainUp 10;
 		otherwise if a random number between the magic-modifier of P and 10 > 6:[not as good as protection]
-			say "The [P] causes the attack to phase through you completely!";
+			say "[BigNameDesc of P] causes the attack to phase through you completely!";
 		otherwise:
 			compute M hurting B;
 	otherwise:
 		compute M hurting B.
 
 To compute (P - santa corset) protecting (B - breasts) from (M - a monster):
-	if a random number between 2 and 22 > the largeness of breasts, say "The brunt of the blow is absorbed by your [printed name of P]!";
+	if a random number between 2 and 22 > the largeness of breasts, say "The brunt of the blow is absorbed by [NameDesc of P]!";
 	otherwise BodyRuin 2.
 
 To compute (P - a chainmail top) protecting (B - breasts) from (M - a monster):
-	say "Your [printed name of P] blocks the brunt of the force!";
+	say "[BigNameDesc of P] blocks the brunt of the force!";
 
 To compute (P - a striped top) protecting (B - breasts) from (M - a monster):
 	if total-wasps > 50, say "The blow deflects off the shiny black carapace covering your breasts!";
 	otherwise compute M hurting B.
 
 To compute (P - a chainmail skirt) protecting (B - hips) from (M - a monster):[I.E. all of it.]
-	say "Your [random worn chainmail skirt] blocks the brunt of the force!".
+	say "[BigNameDesc of P] blocks the brunt of the force!".
 
 To compute (P - a black-and-yellow striped stockings) protecting (B - thighs) from (M - a monster):
 	if total-wasps > 50, say "The blow deflects off the shiny black carapace covering your legs!";
@@ -2366,13 +2421,13 @@ To compute (P - a black-and-yellow striped stockings) protecting (B - thighs) fr
 
 To compute (P - a clothing) protecting (B - belly) from (M - a monster):
 	if P is protection and a random number between the magic-modifier of P and 8 > 4:
-		say "The [P] protects you from being properly injured by the attack!";
+		say "[BigNameDesc of P] protects you from being properly injured by the attack!";
 	otherwise if P is possession and M is ghost and a random number between the magic-modifier of P and 8 < 4:
 		compute M hurting B;
-		say "The [P] constricts in response to [NameDesc of M]'s attack, intensifying the pain!";
+		say "[BigNameDesc of P] constricts in response to [NameDesc of M]'s attack, intensifying the pain!";
 		PainUp 10;
 	otherwise if P is possession and M is not ghost and a random number between the magic-modifier of P and 10 > 6:
-		say "The [P] causes the attack to phase through you completely!";
+		say "[BigNameDesc of P] causes the attack to phase through you completely!";
 	otherwise:
 		compute M hurting B;
 		if the player is able to eventually expel and a random number between -4 and the total squirtable fill of belly > 0 and the latex-transformation of the player < 5 and currently-squirting is 0:

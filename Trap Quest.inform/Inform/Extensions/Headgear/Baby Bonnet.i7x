@@ -47,7 +47,7 @@ To say QuestTitle of (Q - matron-obey-quest):
 
 To compute generic first time class reward of (Q - matron-obey-quest) on (C - a clothing):
 	if the player is getting lucky:
-		let D be a random off-stage ring;
+		let D be a random off-stage plentiful ring;
 		if D is ring:
 			now D is pink diamond;
 			set shortcut of D;

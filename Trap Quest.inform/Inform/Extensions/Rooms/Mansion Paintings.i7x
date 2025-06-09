@@ -120,7 +120,7 @@ To compute painting entrance of (P - dress-painting):
 			now pink-and-blue translucent fetish dress is cursed;
 			now pink-and-blue translucent fetish dress is strength-influencing;
 		otherwise:
-			let J be a random off-stage ring;
+			let J be a random off-stage plentiful ring;
 			if J is a ring:
 				now J is sapphire;
 				set shortcut of J;
@@ -202,7 +202,7 @@ ToiletPainting08 is east of ToiletPainting07. ToiletPainting08 is south of Toile
 ToiletPainting09 is a toilet-painting-room. The grid position of ToiletPainting09 is <12,10,6>. The shape of ToiletPainting09 is L12/0-0-1-0-0-1.
 ToiletPainting09 is east of ToiletPainting08. ToiletPainting09 is south of ToiletPainting06.
 
-toilet-monster is a person. toilet-monster is neuter. toilet-monster is not portable. The printed name of toilet-monster is "[TQlink of item described]toilet monster[TQxlink of item described][verb-desc of item described]". The text-shortcut of toilet-monster is "tltm". toilet-monster has a number called times-terrorized. Understand "toilet", "monster" as toilet-monster.
+toilet-monster is a person. toilet-monster is neuter. toilet-monster is not portable. The printed name of toilet-monster is "[TQlink of item described]toilet monster[TQxlink of item described][verb-desc of item described]". The text-shortcut of toilet-monster is "tltm". toilet-monster has a number called times-terrorised. Understand "toilet", "monster" as toilet-monster.
 
 To decide which figure-name is the NPC-icon of (P - toilet-monster):
 	decide on Figure of Red NPC.
@@ -225,13 +225,13 @@ An all time based rule (this is the toilet monster rule):
 		say "[first custom style]'[one of]BOO[or]I'M GONNA GOBBLE YOU UP IF YOU GET TOO CLOSE[or]COME CLOSER, LITTLE MORSEL[or]ME AGAIN[stopping]! HAHAHAHAHA.'[roman type][line break][one of][BigNameDesc of toilet-monster][']s scary, booming voice sends shivers down your spine.[or][stopping]";
 		FearUp 10;
 		DelicateUp 1;
-		increase the times-terrorized of toilet-monster by 1;
-		if the times-terrorized of toilet-monster is 2 and diaper lover > 0:
+		increase the times-terrorised of toilet-monster by 1;
+		if the times-terrorised of toilet-monster is 2 and diaper lover > 0:
 			say "This horrific encounter is leaving a lasting impression on your psyche. [bold type]From now on, you won't be able to bring yourself to use a toilet unless there's someone friendly there with you.[roman type][line break]";
 		otherwise:
 			say "This horrific encounter is leaving a lasting impression on your psyche. You can tell that [bold type]from now on, you'll be more susceptible to losing hold of liquid in your mouth or butt, when you are surprised, or in pain.[roman type][line break]";
 			increase the raw-expulsion-weakness of the player by 1;
-		if the times-terrorized of toilet-monster > 2:
+		if the times-terrorised of toilet-monster > 2:
 			let TPR be a random toilet-painting-room-exit toilet-painting-room;
 			if the player is not in TPR:
 				say "[bold type]You are teleported to the room where you can see the real exit to the south.[roman type][line break]";
@@ -536,7 +536,7 @@ To decide which number is the concealment of (R - HeistPainting03):
 	decide on 1.
 HeistPainting04 is a heist-painting-room. The grid position of HeistPainting04 is <14,8,7>. The shape of HeistPainting04 is L14/0-0-1-1-1-0.
 HeistPainting04 is south of HeistPainting01. HeistPainting04 has a number called scariness.
-[HeistPainting05 is a heist-painting-room. The grid position of HeistPainting05 is <14,9,7>.  The shape of HeistPainting05 is L14/0-0-1-1-1-1.
+[HeistPainting05 is a heist-painting-room. The grid position of HeistPainting05 is <14,9,7>. The shape of HeistPainting05 is L14/0-0-1-1-1-1.
 HeistPainting05 is east of HeistPainting04. HeistPainting05 is south of HeistPainting02.]
 HeistPainting06 is a heist-painting-room. The printed name of HeistPainting06 is "Cluttered Museum Room". The grid position of HeistPainting06 is <14,10,7>. The shape of HeistPainting06 is L14/0-0-1-0-0-1.
 [HeistPainting06 is east of HeistPainting05.] HeistPainting06 is south of HeistPainting03.

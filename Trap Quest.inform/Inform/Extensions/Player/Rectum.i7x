@@ -333,17 +333,23 @@ To check real messing with reason (T - a text):
 			now shouldMessNow is 1;
 			if canMessNow is 1, now willMessNow is 1; [no need for a die roll if the player is incontinent]
 		otherwise:
-			let hold-strength be (a random number between 9 and 11) + (a random number between 1 and 3);
+			let hold-strength be (a random number between 8 and 11) + (a random number between 1 and 4);
+			let hold-strength-min be 9;
 			let I1 be hold-strength - the rectum-incontinence of the player;
+			let I1M be hold-strength-min - the rectum-incontinence of the player;
+			if I1M < 4, now I1M is 4;
 			let I2 be I1;
 			if I2 < 4, now I2 is 4;
 			let SC be I2 - (suppository + desperationCount);
-			if T is not "", now SC is SC / (1 + the expulsion weakness of the player); [reduced hold strength while something crazy is happening]
+			let SCM be I1M - (suppository + desperationCount);
+			if T is not "":
+				now SC is SC / (1 + the expulsion weakness of the player); [reduced hold strength while something crazy is happening]
+				now SCM is SCM / (1 + the expulsion weakness of the player);
 			if debuginfo > 0 and canMessNow is 1 and rectum > 1:
-				if T is "", say "[input-style]Mess self-control check: 2d3+8 ([hold-strength]) - bowel incontinence ([rectum-incontinence of the player]) = [I1][if I1 < 4]; minimum 4[end if] - laxative effects ([suppository + desperationCount]) = [SC] | ([rectum].5) rectum volume[roman type][line break]";
+				if T is "", say "[input-style]Mess self-control check: 2d4+7 ([hold-strength]) - bowel incontinence ([rectum-incontinence of the player]) = [I1][if I1 < 4]; minimum 4[end if] - laxative effects ([suppository + desperationCount]) = [SC] | ([rectum].5) rectum volume[roman type][line break]";
 				otherwise say "[input-style]Sudden mess self-control check: 2d3+8 ([hold-strength]) - bowel incontinence ([rectum-incontinence of the player]) = [I1][if I1 < 4]; minimum 4[end if] - laxative effects ([suppository + desperationCount]) **ALL DIVIDED BY [1 + the expulsion weakness of the player] BECAUSE OF PAIN / FEAR / TICKLING / SQUATTING POSITION / ETC** = [SC] | ([rectum].5) rectum volume[roman type][line break]";
 			if rectum >= SC and canMessNow is 1, now willMessNow is 1;
-			if rectum >= SC - 6, now shouldMessNow is 1;
+			if rectum >= SCM, now shouldMessNow is 1; [with the minimum hold-strength roll, player will mess themselves]
 		if messAware > 0 and T is "":
 			say "[one of][bold type][or][stopping][one of]Your tummy rumbles ominously[or]Your stomach gurgles as it processes more food[or]Your belly churns loudly as it continues to digest its contents[or]Your bowels emit a low growl as the contents are moved towards the exit[then at random].[one of][line break][variable custom style]That can't be a good sign[if the player is not rectum incontinent]. I'm starting to feel like I need to go number two[end if]...[or][stopping][roman type][line break]";
 		if shouldMessNow is 1:
@@ -361,8 +367,8 @@ To check real messing with reason (T - a text):
 								if the player is reverse bimbo consenting:
 									now shouldMessNow is 0;
 									now willMessNow is 0;
-									say "You grit your teeth and clench your eyes and manage to hold on through the excruciating cramps.";
-									UnflinchingPainUp 10;
+									say "You grit your teeth and clench your eyes and manage to hold on through the [one of]painful[or]strong[cycling] cramps.";
+									UnflinchingPainUp 5 + (suppository * 2);
 									if the player is getting unlucky:
 										increase the raw-rectum-incontinence of the player by 1;
 										say "Your control over your anal sphincter feels permanently weakened. [GotUnluckyFlav]";
@@ -421,7 +427,7 @@ To check real messing with reason (T - a text):
 						if rectum + suppository + desperationCount >= a random number between 8 and 11:
 							if T is not "", UnflinchingPainUp 5;
 							say "It takes you several moments to recover.";
-							now another-turn is 1.
+							unless current-predicament is incontinence-awareness-predicament and the player is in Park02, now another-turn is 1.
 
 mess-phase is a number that varies.
 [
@@ -496,7 +502,7 @@ To compute messing:
 					let M2 be a random reactive monster;
 					say diaper mess declaration of M2;
 			repeat with N running through reactive monsters:
-				if N is not diaperMessReacted:
+				if N is not diaperMessReacted and the current-errand of N is not mess-yourself-errand:
 					compute diaper mess reaction of N;
 					now N is diaperMessReacted;
 		if mess-phase > 0:

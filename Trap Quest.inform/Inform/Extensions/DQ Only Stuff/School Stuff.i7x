@@ -476,7 +476,14 @@ To compute teaching of (L - chess-lesson):
 			if there is a worn diaper:
 				diaperAdd plain-massive-diaper;
 			otherwise:
+				let K be a random worn knickers;
+				if K is knickers:
+					say "[BigNameDesc of M] releases you from your [ShortDesc of K]!";
+					dislodge K;
+					now K is in School01;
+					unlock K;
 				summon plain-massive-diaper uncursed;
+				now the quest of plain-massive-diaper is no-clothing-quest;
 		otherwise:
 			clean a random worn diaper;
 		now bigGameLoop is 2; [tells the game not to refresh map window after multiple choice]
@@ -1025,7 +1032,7 @@ To compute chess win reward:
 	now the chess-victor of chess-lesson is 1;
 	now the stomach-water of the player is 5;
 	let ST be the chess-opponent of chess-lesson;
-	say "[speech style of M]'And now, it's punishment time! Hehehe... Go on darlings, take these Sharpies. It's time to get creative!'[roman type][line break]The rest of the student body advances on the stage, permanent markers in hand. Soon [NameDesc of ST] is surrounded by them, and two students hold [his of ST] hands as the rest cover [his of ST] mostly-naked body in humiliating phrases.";
+	say "[speech style of M]'And now, it's punishment time! Hehehe... Go on darlings, take these pens. It's time to get creative!'[roman type][line break]The rest of the student body advances on the stage, permanent markers in hand. Soon [NameDesc of ST] is surrounded by them, and two students hold [his of ST] hands as the rest cover [his of ST] mostly-naked body in humiliating phrases.";
 	now ST is in Holding Pen;
 	update students; [an important line which makes boring old students disappear and new cool ones appear]
 	appropriate-cutscene-display chess-table-image with priority 3;
@@ -1048,7 +1055,7 @@ To compute chess loss punishment:
 	if headmistress is alive, now M is headmistress;
 	say "[speech style of M]'Congratulations [student-name of ST], you've made us proud!'[roman type][line break]";
 	if ST is promotable, promote ST;
-	say "[speech style of M]'And now, it's punishment time! Hehehe... Go on darlings, take these Sharpies. It's time to get creative!'[roman type][line break]You wrestle in vain against your bonds as the student body advances on the stage, permanent markers in hand. Soon you are surrounded by them, and two hold your hands as the rest cover your mostly-naked body in humiliating phrases.";
+	say "[speech style of M]'And now, it's punishment time! Hehehe... Go on darlings, take these pens. It's time to get creative!'[roman type][line break]You wrestle in vain against your bonds as the student body advances on the stage, permanent markers in hand. Soon you are surrounded by them, and two hold your hands as the rest cover your mostly-naked body in humiliating phrases.";
 	summon loser tattoo;
 	try examining loser tattoo;
 	summon i-suck tattoo;
@@ -1290,7 +1297,7 @@ To compute teaching of (L - enema-race-lesson):
 		otherwise:
 			say "You're neck and neck... ";
 			if the player is getting unlucky:
-				say "But when the whistle goes your nose is just a tiny bit ahead! [GotUnluckyFlav]";
+				say "But when the whistle goes [his of S2] nose is just a tiny bit ahead! [GotUnluckyFlav]";
 				now D1 is -1;
 			otherwise:
 				say "But when the whistle goes your nose is just a tiny bit ahead! You've won!";
@@ -1319,9 +1326,9 @@ To compute teaching of (L - enema-race-lesson):
 		now the fatigue of the player is the buckle threshold of the player;
 		DexUp 2;
 	otherwise:
-		say "The two ladies burst across the track, both sprinting as fast as they can, which is definitely less than normal thanks to their enema-pregnant bellies, thick padding and poorly supported breasts. The waddling women seem evenly matched for pace at first but after one lap of the gym a gap does begin to appear with [NameDesc of S1] out in front. But then calamity strikes as [he of S1] loses control and [his of S1] diaper starts to fill. You watch with [horror the diaper addiction of the player] as [his of S1] belly slowly deflates and a symphony of squelching and spurting sounds fill the hall. [big he of S1] significantly slows down as the avalanche of [if diaper messing >= 3]liquid poop[otherwise]water[end if] exits [his of S1] butthole - clearly [he of S1] can't handle the weird sensation. [big his of S1] diaper bulges beneath [him of S1], the back side expanding to double its original size and becoming very unwieldy. By the time [he of S1]'s finished[if diaper messing >= 3] messing [himself of S1][end if], [he of S1]'s fallen behind [NameDesc of S2].";
+		say "The two ladies burst across the track, both sprinting as fast as they can, which is definitely less than normal thanks to their enema-pregnant bellies, thick padding and poorly supported breasts. The waddling [men of S1] seem evenly matched for pace at first but after one lap of the gym a gap does begin to appear with [NameDesc of S1] out in front. But then calamity strikes as [he of S1] loses control and [his of S1] diaper starts to fill. You watch with [horror the diaper addiction of the player] as [his of S1] belly slowly deflates and a symphony of squelching and spurting sounds fill the hall. [big he of S1] significantly slows down as the avalanche of [if diaper messing >= 3]liquid poop[otherwise]water[end if] exits [his of S1] butthole - clearly [he of S1] can't handle the weird sensation. [big his of S1] diaper bulges beneath [him of S1], the back side expanding to double its original size and becoming very unwieldy. By the time [he of S1]'s finished[if diaper messing >= 3] messing [himself of S1][end if], [he of S1]'s fallen behind [NameDesc of S2].";
 		if diaper messing >= 3, appropriate-cutscene-display figure of teacher brooke cutscene 1 with priority 3;
-		say "Meanwhile [NameDesc of S2] is having problems of [his of S2] own. [big he of S2] grips [his of S2] belly in panic as [he of S2] travels around the track. [big his of S2] lead on [NameDesc of S1] continues to grow but only up until the point that [he of S2] loses control [himself of S2]. If anything the trumpeting coming from [his of S2] butthole is even louder than [NameDesc of S1][']s had been! [big he of S2] groans with audible discomfort as [he of S2] fills the seat of [his of S2] nappy with [his of S2] shame. [big his of S2] sprint turns into a jog turns into an awkward walk as [he of S2] loudly [if diaper messing >= 3]poops [his of S2] pants[otherwise]expels [his of S2] enema[end if]. By the time [he of S2]'s finished and has regained [his of S2] wits [NameDesc of S1] is once again at [his of S2] heels, and this makes the final seconds of the race equal amounts of pathetic and intense - two tearful women with heavy, bloated diapers trying to waddle their way along the track faster than the other. In the end it seems that [NameDesc of S1] has had more of a chance to get used to the technique of running with a full nappy and this gives [him of S1] the advantage - when [NameDesc of M] blows the whistle [he of S1] has managed to grab the lead by less than a metre. They both collapse to the ground, completely exhausted.";
+		say "Meanwhile [NameDesc of S2] is having problems of [his of S2] own. [big he of S2] grips [his of S2] belly in panic as [he of S2] travels around the track. [big his of S2] lead on [NameDesc of S1] continues to grow but only up until the point that [he of S2] loses control [himself of S2]. If anything the trumpeting coming from [his of S2] butthole is even louder than [NameDesc of S1][']s had been! [big he of S2] groans with audible discomfort as [he of S2] fills the seat of [his of S2] nappy with [his of S2] shame. [big his of S2] sprint turns into a jog turns into an awkward walk as [he of S2] loudly [if diaper messing >= 3]poops [his of S2] pants[otherwise]expels [his of S2] enema[end if]. By the time [he of S2]'s finished and has regained [his of S2] wits [NameDesc of S1] is once again at [his of S2] heels, and this makes the final seconds of the race equal amounts of pathetic and intense - two tearful [men of S1] with heavy, bloated diapers trying to waddle their way along the track faster than the other. In the end it seems that [NameDesc of S1] has had more of a chance to get used to the technique of running with a full nappy and this gives [him of S1] the advantage - when [NameDesc of M] blows the whistle [he of S1] has managed to grab the lead by less than a metre. They both collapse to the ground, completely exhausted.";
 		say "[speech style of M]'What a great race! [student-name of S1], congratulations on your win. You deserve this.'[roman type][line break]";
 		promote S1;
 		say "[speech style of M]'As for you, [student-name of S2], your punishment is that you're not allowed to get a change until you've shown every single other student and teacher your yucky used diaper and explained that it proves you can't be trusted to make it to the grown-up toilet in time. Understood? Good. In that case, class is now dismissed!'[roman type][line break]";

@@ -51,7 +51,7 @@ To say QuestTitle of (Q - christmas-quest):
 	say " (gifting quest)".
 
 To compute persistent reward of (Q - christmas-quest) on (C - a clothing):
-	let R be a random off-stage ring;
+	let R be a random off-stage plentiful ring;
 	if C is cursed:
 		compute generic first time class reward of Q on C;
 	otherwise if there is a held christmas gift and the number of worn rings < 8 and R is a thing:
@@ -230,7 +230,7 @@ To progress quest of (Q - nice-quest):
 				compute quest completion of Q on C.
 
 To compute generic first time class reward of (Q - nice-quest) on (C - a clothing):
-	let D be a random off-stage ring;
+	let D be a random off-stage plentiful ring;
 	if D is ring:
 		now D is pure diamond;
 		set shortcut of D;

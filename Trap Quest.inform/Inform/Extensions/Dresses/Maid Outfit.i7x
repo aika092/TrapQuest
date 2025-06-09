@@ -186,7 +186,7 @@ Definition: pink-maid-outfit is pink themed: decide yes.
 
 Part 6 - Slutty Maid Outfit
 
-slutty-maid-outfit is a maid outfit. slutty-maid-outfit is nylon. The skirt-length of slutty-maid-outfit is 0. slutty-maid-outfit is crotch-intact. slutty-maid-outfit is crotch-intact. slutty-maid-outfit is sheer. The text-shortcut of slutty-maid-outfit is "mo6". The printed name of slutty-maid-outfit is "[clothing-title-before]slutty maid outfit[clothing-title-after]". Understand "slutty" as slutty-maid-outfit.
+slutty-maid-outfit is a maid outfit. slutty-maid-outfit is nylon. The skirt-length of slutty-maid-outfit is 0. slutty-maid-outfit is crotch-intact. slutty-maid-outfit is sheer. The text-shortcut of slutty-maid-outfit is "mo6". The printed name of slutty-maid-outfit is "[clothing-title-before]slutty maid outfit[clothing-title-after]". Understand "slutty" as slutty-maid-outfit.
 
 To decide which figure-name is clothing-image of (C - slutty-maid-outfit):
 	decide on figure of maid outfit 6.

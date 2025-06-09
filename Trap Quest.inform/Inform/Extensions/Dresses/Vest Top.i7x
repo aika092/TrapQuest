@@ -2,6 +2,10 @@ Vest Top by Dresses begins here.
 
 A vest top is a kind of overdress. The skirt-length of A vest top is 0. A vest top is usually fully covering. A vest top is usually transformation-rare. A vest top is usually manly. A vest top is top-displacable. A vest top is usually sheer-when-wet. A vest top is usually erect-nipple-exposing.
 
+Definition: a vest top is same-type:
+	if theme-share-target is shirt or theme-share-target is T-shirt or theme-share-target is vest top or theme-share-target is crop top, decide yes;
+	decide no.
+
 To decide which number is the initial outrage of (C - a vest top):
 	decide on 0.
 
@@ -201,5 +205,34 @@ To say MediumDesc of (C - rope bunny vest top):
 
 To decide which number is the initial outrage of (C - rope bunny vest top):
 	decide on 2.
+
+Part 8 - Chocolate Vest Top
+
+chocolate vest top is a vest top. The printed name of chocolate vest top is "[clothing-title-before]chocolate 'BBC ONLY' vest top[clothing-title-after]". The text-shortcut of chocolate vest top is "cvt". Understand "bbc only" as chocolate vest top.
+
+Definition: chocolate vest top is interracial themed: decide yes.
+Definition: chocolate vest top is food themed: decide yes.
+Definition: chocolate vest top is heart themed: decide yes.
+Definition: chocolate vest top is red themed: decide yes.
+Definition: chocolate vest top is fetish appropriate:
+	if interracial fetish is 1, decide yes;
+	decide no.
+
+Figure of chocolate vest top is the file "Items/Clothes/Upper/Vests/vest8.png".
+
+To decide which figure-name is clothing-image of (C - chocolate vest top):
+	decide on figure of chocolate vest top.
+
+To say ClothingDesc of (C - chocolate vest top):
+	say "This red vest top has the words 'BBC ONLY' in large black letters on the chest, above a chocolate bar with a heart sign.".
+
+To say MediumDesc of (C - chocolate vest top):
+	say "chocolat bar vest top".
+
+To decide which number is the initial outrage of (C - chocolate vest top):
+	decide on 4.
+
+To set up influence of (C - chocolate vest top):
+	now C is bbc-addiction-influencing.
 
 Vest Top ends here.

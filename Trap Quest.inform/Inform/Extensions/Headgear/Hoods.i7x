@@ -368,7 +368,7 @@ To progress quest of (Q - clown-quest):
 		now the humiliation-latest of clown-quest is the humiliation of the player / 8000.
 
 To compute persistent reward of (Q - clown-quest) on (C - a clothing):
-	let D be a random off-stage ring;
+	let D be a random off-stage plentiful ring;
 	if D is ring:
 		if the humiliation of the player >= 40000:
 			now D is solid gold;

@@ -352,7 +352,7 @@ An all time based rule (this is the compute gloryhole rule):
 			now busy is 0.
 
 To compute gloryhole BJ completion:
-	let M be a random ultimate-lesson-actor;
+	let M be a random unseen-stranger;
 	BlowCount;
 	if gloryhole is glorywrapped:
 		say "[one of]The [manly-penis] spasms as it fills the condom with a huge load[or]The [manly-penis] throbs powerfully as it fills the condom with a nice, big load[or]The [manly-penis] jizzes, filling the condom with a really big load[in random order]. ";
@@ -394,7 +394,7 @@ To construct normal buttons for (D - gloryhole):
 			choose a blank row in the Table of Buttons;
 			now the ButtonColour entry is lightModeFullGreen;
 			if D is normal glory hole:
-				now the ButtonImage entry is Figure of WaitButton;
+				now the ButtonImage entry is Figure of LongWaitButton;
 				now the ButtonCommand entry is "wait";
 			otherwise:
 				now the ButtonImage entry is Figure of SubmitButton;

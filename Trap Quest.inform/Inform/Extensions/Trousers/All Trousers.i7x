@@ -166,6 +166,9 @@ To say UniqueClothingDesc of (Y - sheer-exercise-shorts):
 	say "A pair of tight sheer exercise shorts. It [if Y is worn]rides[otherwise]will ride[end if] very low on your hips, exposing the top of your butt crack.".
 To say MediumDesc of (Y - sheer-exercise-shorts):
 	say "pair of tight sheer exercise shorts".
+Definition: sheer-exercise-shorts is fetish appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
 Definition: sheer-exercise-shorts is layer-concealing: decide no. [It doesn't prevent things layered underneath it from being seen]
 Definition: sheer-exercise-shorts is partially-layer-concealing: decide yes. [However it does partially cover things layered underneath it]
 To decide which number is the crotch-tightness of (C - sheer-exercise-shorts):
@@ -299,9 +302,9 @@ To say ShortDesc of (Y - dark-leggings):
 To say MediumDesc of (Y - dark-leggings):
 	say "pair of brown nylon leggings".
 To decide which number is the initial outrage of (B - dark-leggings):
-	decide on 2.
+	decide on 0.
 To decide which number is the initial cringe of (B - dark-leggings):
-	decide on 1.
+	decide on 0.
 To decide which number is the crotch-tightness of (C - dark-leggings):
 	decide on 2.
 Definition: dark-leggings is layer-concealing: decide no.

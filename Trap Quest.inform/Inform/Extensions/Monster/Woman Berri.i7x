@@ -50,6 +50,7 @@ Figure of Berri Cutscene 14b is the file "NPCs/MultiFloor/berri/woman-cutscene14
 Figure of Berri Cutscene 15a is the file "NPCs/MultiFloor/berri/woman-cutscene15a.jpg".
 Figure of Berri Cutscene 15b is the file "NPCs/MultiFloor/berri/woman-cutscene15b.jpg".
 Figure of Berri Cutscene 16 is the file "NPCs/MultiFloor/berri/woman-cutscene16.jpg".
+Figure of Berri Cutscene 17 is the file "NPCs/MultiFloor/berri/woman-cutscene17.jpg".
 
 To decide which figure-name is the monster-image of (M - woman-player):
 	if M is caged and M is in the location of dominatrix-cage, decide on the examine-image of dominatrix-cage;
@@ -1015,7 +1016,7 @@ A later time based rule (this is the berri matron rule):
 
 Chapter - Matron Play Scene
 
-Report going when the woman-old-bimbo of woman-player is 5 and the woman-bimbo of woman-player is 6 and the player is in Hotel22 and matron is in Hotel22 and matron is threatening:
+Report going when the woman-old-bimbo of woman-player <= 5 and the woman-bimbo of woman-player is 6 and the player is in Hotel22 and matron is in Hotel22 and matron is threatening:
 	if debugmode is 1, say "Checking if berri can appear.";
 	if woman-player is relaxed redeploy appropriate:
 		deploy woman-player with woman-status 26;
@@ -1391,7 +1392,8 @@ To compute striking success effect of (M - woman-player) on (B - face):
 To say StrikingSuccessFlav of (M - woman-player) on (B - a body part):
 	if B is face and the woman-bimbo of M < 3 and the delayed sluttification of M is 0:
 		say "[BigNameDesc of M] growls and takes a step back. Aiming with a steady hand, [he of M] points [his of M] gun at your head.[line break][speech style of M]'This wasn't meant for you.'[roman type][line break]";
-		say "A single moment of dread turns to surprise as a powerful burst of [milk] jets out of the nozzle and drenches your face, filling your mouth and blinding you!";
+		say "A single moment of dread turns to surprise as a powerful burst of [milk] jets out of the nozzle and drenches your face, filling your mouth and blinding you! In the same instant, [his of M] belly suddenly bulges out to a huge size!";
+		cutshow Figure of Berri Cutscene 17 for M;
 	otherwise if the woman-bimbo of M < 5:
 		say "[BigNameDesc of M] [one of]winds up a big punch and smacks you[or]lands a karate chop[or]kicks you[at random] [TargetName of B]! Ouch!!";
 	otherwise:
@@ -1426,6 +1428,7 @@ To compute basic greeting to (M - woman-player):
 		if newbie tips is 1, say "[newbie style]Newbie tip: Berri is a special type of NPC, that under normal circumstances remains friendly throughout the entire course of the game, and will even fight alongside you, or appear to help you out of sticky situations. However if bad things happen, including if you lose a fight alongside [him of M], [he of M][']ll start to lose the game [himself of M], and become more babified. Also, sometimes when you bump into [him of M] [he of M][']ll be in the middle of a predicament, and you have to choose whether to help [him of M] or let it happen. Letting it happen usually either avoids the risk of bad stuff, or rewards you with powerful items. However, it'll continue Berri's progress towards becoming a diaper-addicted adult baby fetishist. A super-diaper-addicted Berri is a sort-of useless sidekick who can even do really unhelpful things like release the [ShortDesc of boogeymonster].[roman type][line break]";
 		now M is introduced;
 		now the text-shortcut of M is "bri";
+		say "[speech style of M]'Oh, and happy [april fools]. What a day to be playing this game, huh?'[roman type][line break]";
 	otherwise if the woman-status of M is 98:
 		say "[speech style of M]'MMMMPH!'[roman type][line break]";
 	otherwise if the woman-status of woman-player is 91 and the mechanic-scene of woman-player <= 3:
@@ -1560,7 +1563,7 @@ To execute (T - talk-berri-question) for (M - a monster):
 		say "[speech style of M]'Fuck no. [one of]Why am I not giving you the key? Payback, of course. What else?'[or]Payback for what? You bloody well know what.'[or]Plead all you want, I'm not changing my mind.'[stopping][roman type][line break]";
 	otherwise if the woman-status of M is 3:
 		if the woman-bimbo of M < 5:
-			say "[speech style of M]'Can you keep a secret? I may have pulled the lever for the [ShortDesc of boogeymonster]! Teehee!'[roman type][line break]";
+			say "[speech style of M]'Can you keep a secret? I may have pulled the lever for the [ShortDesc of boogeymonster]! Tee-hee!'[roman type][line break]";
 		otherwise:
 			say "[speech style of M]'To [']fight['] the [ShortDesc of boogeymonster], of course, silly!'[roman type][line break]";
 	otherwise if playerRegion is Dungeon:

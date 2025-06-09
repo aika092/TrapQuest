@@ -157,7 +157,7 @@ To decide which number is the unique cringe of (C - orange rubber diaper cover):
 To decide which number is the initial outrage of (C - orange rubber diaper cover):
 	decide on 4.
 
-halloween rubber diaper cover is a diaper cover. halloween rubber diaper cover is pvc. Understand "themed" as halloween rubber diaper cover.  The text-shortcut of halloween rubber diaper cover is "htdc".
+halloween rubber diaper cover is a diaper cover. halloween rubber diaper cover is pvc. Understand "themed" as halloween rubber diaper cover. The text-shortcut of halloween rubber diaper cover is "htdc".
 
 Figure of halloween rubber diaper cover is the file "Items/Clothes/Lower/Underwear/Diapers/Covers/diapercover4.png".
 

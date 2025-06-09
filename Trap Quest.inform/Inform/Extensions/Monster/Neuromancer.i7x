@@ -3,7 +3,9 @@ Neuromancer by Monster begins here.
 neuromancer is a monster. neuromancer is intelligent. The leftover-type of neuromancer is 120.
 The text-shortcut of neuromancer is "neu". Understand "neuro" as djinn.
 
-[Definition: neuromancer is wenchy: decide yes.]
+Definition: neuromancer is wenchy:
+	if the player is not an april 2025 top donator, decide no;
+	decide yes.
 
 Definition: neuromancer is willing to urinate: decide yes.
 Definition: neuromancer is willing to do licking: decide yes.
@@ -22,18 +24,19 @@ To say MediumDesc of (M - neuromancer):
 	say "neuromancer".
 
 Figure of neuromancer is the file "NPCs/Mansion/Neuromancer/neuromancer1.png".
-Figure of bimbofied neuromancer is the file "NPCs/Mansion/Neuromancer/neuromancer2.jpg".
 
 To decide which figure-name is the monster-image of (M - neuromancer):
 	decide on figure of neuromancer.
 To decide which figure-name is the pacified-image of (M - neuromancer):
-	decide on figure of bimbofied neuromancer.
+	decide on figure of defeated neuromancer.
 
 To say MonsterDesc of (M - neuromancer):
 	if M is sex-enslaved:
-		say "This once-dangerous white-haired cat[boy of M] has been utterly bimbofied. [big his of M] giant breasts are poorly contained by a pink skin-tight bunny suit, with the crotch section pulled aside to reveal a hairless, soaking wet cunt. And [his of M] cunt isn't the only thing that's actively drooling - [his of M] thick, pillowy lips are fixed in a permanent pout, with saliva constantly oozing out of the gap in the middle - a sign that [he of M] may not be all there in the head any more. [big his of M] eyes are now a vibrant shade of pink, as are [his of M] long, delicate bimbo nails, and the tight slutty stockings clenching [his of M] thighs, with a roll of unused condoms tucked into one side, communicating just how ready this slut is to be laid down on [his of M] back and taken to pound-town. The bell around the cat collar on [his of M] neck no longer feels like the adornment of a playful cat, but rather the mark of a submissive pet pussy.[line break][variable custom style]I guess [he of M] found out that [he of M][']s not the Top Dog around here any more... And found out the hard way.[roman type][line break]";
+		say "This once-dangerous white-haired cat[boy of M] has been utterly bimbofied. [big his of M] [if lady fetish is 2]flat chest is[otherwise]giant breasts are[end if] poorly contained by a pink skin-tight bunny suit, with the crotch section pulled aside to reveal a hairless, [if lady fetish is 2]leaking [sissy-penis]. [otherwise]soaking wet cunt. [end if]And [his of M] cunt isn't the only thing that's actively drooling - [his of M] thick, pillowy lips are fixed in a permanent pout, with saliva constantly oozing out of the gap in the middle - a sign that [he of M] may not be all there in the head any more. [big his of M] eyes are now a vibrant shade of pink, as are [his of M] long, delicate bimbo nails, and the tight slutty stockings clenching [his of M] thighs, with a roll of unused condoms tucked into one side, communicating just how ready this slut is to be laid down on [his of M] back and taken to pound-town. The bell around the cat collar on [his of M] neck no longer feels like the adornment of a playful cat, but rather the mark of a submissive pet pussy.[line break][variable custom style]I guess [he of M] found out that [he of M][']s not the Top Dog around here any more... And found out the hard way.[roman type][line break]";
+	otherwise if M is diaper-enslaved:
+		say "This once-dangerous white-haired cat[boy of M] has been utterly babified. Not only is [he of M] stuck in a thick, soggy diaper, but [his of M] humiliating and constricting onesie still exposes [his of M] giant breasts, to maximise [his of M] exposure and humiliation. The onesie has a large inflatable tail at the back, which waggles obnoxiously as [he of M] waddles. The fist mittens and pacifier gag complete [his of M] diaper enslavement.";
 	otherwise:
-		say "A sharp-clawed, brown-skinned, white-haired cat[boy of M], complete with matching white cat ears and cat tail. Big bouncy round breasts and obscenely wide hips with strong thighs frame a seemingly impossibly tiny waist, giving [him of M] the most alluring hourglass figure you've ever seen. [big his of M] outfit is immensely provocative - an impossibly perfectly figure-hugging black bodice, reminiscent of a playdude bunny suit, exposes most of [his of M] cleavage and the entirety of [his of M] hips and ass cheeks. Matching thigh-highs grip [his of M] thick, alluring legs with style and ooze sex appeal. A short black hooded sorcerer's robe sits on top of [his of M] white hair (with holes for [his of M] ears), framing [his of M] shoulders and clasped together at the front by a softly tinkling catbell.".
+		say "A sharp-clawed, brown-skinned, white-haired cat[boy of M], complete with matching white cat ears and cat tail. [if lady fetish is 2]Obscenely wide hips and strong thighs contrast[otherwise]Big bouncy round breasts and obscenely wide hips with strong thighs frame[end if] a seemingly impossibly tiny waist, giving [him of M] the most alluring [if lady fetish is 2]pear-shaped[otherwise]hourglass[end if] figure you've ever seen. [big his of M] outfit is immensely provocative as well - an impossibly perfectly figure-hugging black bodice, reminiscent of a playdude bunny suit, exposes most of [his of M] [if lady fetish is 2]chest[otherwise]cleavage[end if] and the entirety of [his of M] hips and ass cheeks. Matching thigh-highs grip [his of M] thick, alluring legs with style and ooze sex appeal. A short black hooded sorcerer's robe sits on top of [his of M] white hair (with holes for [his of M] ears), framing [his of M] shoulders and clasped together at the front by a softly tinkling catbell.".
 
 [To say MonsterComment of (M - neuromancer):] [TODO]
 
@@ -147,10 +150,12 @@ To compute perception of (M - neuromancer):
 		otherwise:
 			say SexDollPerception of M;
 			anger M;
-	otherwise if diaper quest is 1:
-		compute dq appearance assessment of M;
 	otherwise:
-		compute appearance assessment of M.
+		if april fools content is 1, say "[speech style of M]'Happy [april fools]!'[roman type][line break][BigNameDesc of M] smirks.";
+		if diaper quest is 1:
+			compute dq appearance assessment of M;
+		otherwise:
+			compute appearance assessment of M.
 
 To compute appearance assessment of (M - neuromancer):
 	if the appearance of the player > the outrage tolerance of M:
@@ -410,6 +415,34 @@ To say PityOfferResponse of (M - neuromancer):
 
 To say TaxReturnDismay of (M - neuromancer):
 	say "[speech style of M]'Nobody robs Nakashi Darkatt and gets away with it! I'll be back!'[roman type][line break]".
+
+Section 3 - Dominant sex
+
+To say DominanceFailure of (M - neuromancer):
+	say "You [if the player is wrist bound]dive[otherwise]get[end if] behind [NameDesc of M] and try to grab [if the player is wrist bound][his of M] tail with your teeth. [otherwise]ahold of [his of M] tail. [end if]Unfortunately, [he of M]'s too quick for you, and you land on the ground instead.";
+
+To compute failed dominance punishment of (M - neuromancer):
+	if the player is getting unlucky:
+		say "[BigNameDesc of M] sits on your chest and begins blasting your junk with bolts of magic. PLeasure ripples through your whole body as your [if the player is possessing a penis]penis[otherwise]pussy[end if] is completely saturated with magic.";
+		Arouse 3000;
+		if the player is possessing a penis, PenisObedienceUp 1;
+		otherwise VaginalSexAddictUp 1;
+	otherwise:
+		compute sissy punishment of M.
+
+To penetration dominate (M - neuromancer):
+	let C be a random worn bottom level protection clothing;
+	say "You [if the player is wrist bound]dive[otherwise]get[end if] behind [NameDesc of M] and grab [if the player is wrist bound][his of M] tail with your teeth.[otherwise]ahold of [his of M] tail.[end if][line break][speech style of M]'NYA-AAHH?! L-LET GO! LET GO RRRIGHT NYEOW!'[roman type][line break][big he of M] claws at the ground, shaking [his of M] obscenely fat ass in your face as [he of M] clumsily tries to crawl away from your grip. Naturally, you tighten it, [if the player is wrist bound]pressing the head of your [SexDesc of penis][otherwise if C is clothing]freeing your [SexDesc of penis] from your [ShortDesc of C] and pressing it[otherwise if penis is penis-erect]pressing the head of your [SexDesc of penis][otherwise]pressing your hardening [sexual-player-penis][end if] against [his of M] ring.";
+	if sexual-penis-length > 8:
+		say "[line break][speech style of M]'Nya, you wanna put it in my nyasshole too? Nya, get away~'[roman type][line break][big he of M] yowls dramatically, slamming [his of M] hips back as if to shove you away. Naturally, that results in your [SexShaft] being forced into [his of M] [asshole], and your hips slamming into [hers of M]. Keeping [his of M] tail in your grasp, you don't allow [him of M] to leave you in the dust, fiercely pounding [his of M] hole until you blow your [load] inside [him of M].";
+	otherwise if sexual-penis-length > 3:
+		say "[line break][speech style of M]'Nya, you wanna put it in my nyasshole too? Nya, you're so meeean!'[roman type][line break][big he of M] yowls, slams [his of M] hips back as if to shove you away. Naturally, that results in your [SexShaft] being smashed between [his of M] buttcheeks, and [his of M] tail very nearly slipping your grasp as you struggle to penetrate [him of M]. You do manage to 'pierce' [him of M] despite [his of M] squirming, but the struggle leaves you blowing your [load] far sooner than you would have liked.";
+		now player-fucking is DOMINANT-NEUTRAL;
+	otherwise:
+		say "[line break][speech style of M]'Nya, you're putting it in my nyasshole too? It's too biiiig~'[roman type][line break][big he of M] squeals, gasping and moaning as if you've already begun to fuck [him of M]. You try to *actually* fuck [him of M], but [he of M] manages to slip [his of M] tail from your grasp at the perfect moment and make you grind your [SexShaft] against [his of M] buttcheeks. All bets are off from there, your continued efforts eventually resulting in your [load] being blown into [his of M] asscrack.";
+		now player-fucking is DOMINANT-SHAMEFUL;
+	orgasm;
+	AnalGet;
 
 Part 5 - DQ
 

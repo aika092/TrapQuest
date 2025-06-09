@@ -23,7 +23,7 @@ To decide which figure-name is clothing-image of (C - cultist robe):
 	decide on figure of cultist robe.
 
 To say ClothingDesc of (C - cultist robe):
-	say "In theory a black robe, but in practise this is just a piece of sheer fabric providing only barely more covering than nothing at all. It is a dark, plain colour, so it may perhaps help you to remain unnoticed in a dark corner.".
+	say "In theory a black robe, but in practice this is just a piece of sheer fabric providing only barely more covering than nothing at all. It is a dark, plain colour, so it may perhaps help you to remain unnoticed in a dark corner.".
 
 To say ShortDesc of (C - cultist robe):
 	say "sheer black robe".

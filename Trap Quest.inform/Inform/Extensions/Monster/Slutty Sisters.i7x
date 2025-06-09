@@ -2,6 +2,10 @@ Slutty Sisters by Monster begins here.
 
 A slutty sister is a kind of monster. A slutty sister is usually intelligent. Understand "Nintendoll" as a slutty sister.
 
+Definition: a slutty sister is wenchy:
+	if the player is not an april 2025 top donator, decide no;
+	decide yes.
+
 Definition: a slutty sister is raunchy: decide yes.
 Definition: a slutty sister is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 Definition: a slutty sister is presenting as male:
@@ -12,12 +16,12 @@ Definition: a slutty sister is ready to entice: decide no. [Never entices]
 Definition: a slutty sister is willing to do licking: decide no.
 
 bulging-slutty-sister is a slutty sister.
-The printed name of bulging-slutty-sister is "[if item described is in the location of the player][TQlink of item described][end if][input-style][ShortDesc of item described][if item described is asleep] (exhausted)[end if][shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". Understand "bloated", "cumfilled", "cum", "filled", "empty" as bulging-slutty-sister. The text-shortcut of bulging-slutty-sister is "bu".
+The printed name of bulging-slutty-sister is "[if item described is in the location of the player][TQlink of item described][end if][input-style][ShortDesc of item described][if item described is asleep] (exhausted)[end if][shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". Understand "bloated", "cumfilled", "cum", "filled", "empty", "bulging" as bulging-slutty-sister. The text-shortcut of bulging-slutty-sister is "bu".
 bulging-slutty-sister has a number called belly contents. bulging-slutty-sister has a number called cum overload.
 
 Definition: bulging-slutty-sister is willing to do oral: decide yes.
 
-futanari-slutty-sister is a slutty sister. futanari-slutty-sister is male. Understand "futa" as futanari-slutty-sister.
+futanari-slutty-sister is a slutty sister. futanari-slutty-sister is male. Understand "futa", "hung", "sword-wielding", "swordswoman", "sword" as futanari-slutty-sister.
 The printed name of futanari-slutty-sister is "[if item described is in the location of the player][TQlink of item described][end if][input-style][ShortDesc of item described][if item described is asleep] (exhausted)[end if][shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of futanari-slutty-sister is "fu".
 
 Definition: futanari-slutty-sister is willing to do oral: decide no.
@@ -31,19 +35,48 @@ To say DickDesc of (M - futanari-slutty-sister):
 To say LongDickDesc of (M - futanari-slutty-sister):
 	say "massive [DickDesc of M]".
 
+Definition: a slutty sister is a sword-wielding-doll:
+	if it is bulging-slutty-sister, decide no;
+	if it is presenting as male, decide no;[
+	if futanari fetish is 1, decide no;]
+	decide yes.
+Definition: a slutty sister is a penis-wielding-doll:
+	if it is bulging-slutty-sister, decide no;
+	if it is presenting as male, decide yes;[
+	if futanari fetish is 1, decide yes;]
+	decide no.
+
+To say LongHoleDesc of (M - futanari-slutty-sister):
+	if M is not a sword-wielding-doll, say "perfectly slick asshole";
+	otherwise say "perfectly slick pussy".
+
+To say HoleDesc of (M - futanari-slutty-sister):
+	if M is not a sword-wielding-doll, say "asshole";
+	otherwise say "pussy".
+
 To say ShortDesc of (M - bulging-slutty-sister):
 	say "[if the belly contents of M > 14]bulging[otherwise if the belly contents of M > 7]bloated[otherwise if the belly contents of M > 0]cumfilled[otherwise]empty[end if] Nintendoll".
 
+To say LongHoleDesc of (M - bulging-slutty-sister):
+	let adj be "perfectly wet";
+	if the belly contents of M > 0, now adj is "[semen]-glazed";
+	if the belly contents of M > 7, now adj is "[semen]-filled";
+	if the belly contents of M > 14, now adj is "[semen]-drooling";
+	if M is presenting as male, say "[adj] asshole";
+	otherwise say "[adj] pussy".
+
 To say ShortDesc of (M - futanari-slutty-sister):
-	[say "[if lady fetish is 2]hung[otherwise if futanari fetish is 0]sword-wielding[otherwise]futanari[end if] Nintendoll".]
-	say "[if lady fetish is 2]hung[otherwise if futanari fetish is 0]sword-wielding[end if] Nintendoll".
+	say "[if M is a sword-wielding-doll]sword-wielding[otherwise]hung[end if] Nintendoll".
 
 To say MediumDesc of (M - a slutty sister):
 	say ShortDesc of M.
 
 Figure of dildo sword slutty sister is the file "NPCs/Bosses/SluttySister/sluttysister1a.png".
-Figure of futanari slutty sister is the file "NPCs/Bosses/SluttySister/sluttysister1.jpg".
-Figure of bulging slutty sister is the file "NPCs/Bosses/SluttySister/sluttysister2.png".
+Figure of futanari slutty sister is the file "NPCs/Bosses/SluttySister/sluttysister1b.png".
+Figure of bulging slutty sister belly 0 is the file "NPCs/Bosses/SluttySister/sluttysister2a.png".
+Figure of bulging slutty sister belly 1 is the file "NPCs/Bosses/SluttySister/sluttysister2b.png".
+Figure of bulging slutty sister belly 2 is the file "NPCs/Bosses/SluttySister/sluttysister2c.png".
+Figure of bulging slutty sister belly 3 is the file "NPCs/Bosses/SluttySister/sluttysister2d.png".
 Figure of male slutty sister is the file "NPCs/Bosses/SluttySister/sluttysister3.png".
 Figure of male bulging slutty sister is the file "NPCs/Bosses/SluttySister/sluttysister4.png".
 Figure of Slutty Sisters Cutscene 1 is the file "NPCs/Bosses/SluttySister/sluttysister-start1.jpg".
@@ -56,7 +89,10 @@ To decide which figure-name is the monster-image of (M - futanari-slutty-sister)
 
 To decide which figure-name is the monster-image of (M - bulging-slutty-sister):
 	if lady fetish is 2, decide on figure of male bulging slutty sister;
-	decide on figure of bulging slutty sister.
+	if the belly contents of M > 14, decide on figure of bulging slutty sister belly 3;
+	if the belly contents of M > 7, decide on figure of bulging slutty sister belly 2;
+	if the belly contents of M > 0, decide on figure of bulging slutty sister belly 1;
+	decide on figure of bulging slutty sister belly 0.
 
 To say MonsterDesc of (M - a slutty sister):
 	say "This is one of the two [boy of M]s who [if the bimbo of the player < 8]tricked[otherwise if the bimbo of the player < 13][']helped['][otherwise]helped[end if] you into the game. [big he of M] is dressed exactly how you remember - a tiny white latex microskirt with a blue line at the waist, and a small white latex bra with blue straps. ";
@@ -136,8 +172,13 @@ To compute perception of (M - a slutty sister):
 			teleport to Hotel01;
 		bore M;
 	otherwise if M is objectifying the player:
-		if M is futanari-slutty-sister, say "[speech style of M]'[one of]About fucking time, I was getting tired of [if lady fetish is 2 or futanari fetish > 0]just fucking Little Miss Cum Balloon here over and over[otherwise]toying with this airheaded bimbo over and over[end if].'[or]Yum, let's go again.'[stopping][roman type][line break]";
-		otherwise say "[one of]Ooh, yay, you made it at last! Yep, we're the final boss! Surprise! Get past us and press that STOP button to end the game. But we won't make it easy!'[or]Do your best, sweetie!'[stopping][roman type][line break]";
+		let H be the number of worn humility-stone;
+		if H > 0:
+			if M is futanari-slutty-sister, say "[speech style of M]'Can you even handle that many humility stones? You won't be able to end the game unless you actually get past us and press the STOP button.'[roman type][line break]";
+			otherwise say "[speech style of M]'Ooh, yay, you made it at last! Yep, were the final boss and you... [if H is 6]collected all 6. Impressive.'[otherwise]collected [H]. Interesting.'[end if][roman type][line break]";
+		otherwise:
+			if M is futanari-slutty-sister, say "[speech style of M]'[one of]About fucking time, I was getting tired of [if lady fetish is 2 or futanari fetish > 0]just fucking Little Miss Cum Balloon here over and over[otherwise]toying with this airheaded bimbo over and over[end if].'[or]Yum, let's go again.'[stopping][roman type][line break]";
+			otherwise say "[one of]Ooh, yay, you made it at last! Yep, we're the final boss! Surprise! Get past us and press that STOP button to end the game. But we won't make it easy!'[or]Do your best, sweetie!'[stopping][roman type][line break]";
 		if the times-met of M is 0 and M is futanari-slutty-sister:
 			if lady fetish is 2:
 				alwayscutshow figure of slutty sisters cutscene 2 for M;
@@ -360,11 +401,11 @@ To say FacesitClimaxFlav of (M - bulging-slutty-sister):[actual orgasm flavour i
 
 To say AssholePenetrationFlav of (M - futanari-slutty-sister):
 	now the sex-length of M is 5 + (the health of M / 5);
-	say "[if the number of slutty sisters penetrating face > 0][BigNameDesc of M] pulls your legs off the ground, forcing your butt into the air[otherwise][BigNameDesc of M] lifts your knees off the ground and forces them up over your shoulders[end if] as [he of M] drives [his of M] [LongDickDesc of M] into your [asshole]![line break][speech style of M]'[one of]Hold on tight honey, I'm taking you for a ride!'[or]I hope you're comfortable, this might take a while.'[at random][roman type][line break][if the openness of asshole > 8]Your gaping hole still has to stretch a bit further to take the girth of [his of M] member.[otherwise if the openness of asshole > 5]Your loose hole still has to stretch painfully wide to accept [his of M] thick member.[otherwise]Your eyes almost fly out of their sockets as your poor tight hole is forced wide, wider and then wider still as [his of M] girthy member slowly forces its way inside. You can't believe it's even physically possible for it to fit inside![end if]".
+	say "[if the number of slutty sisters penetrating face > 0][BigNameDesc of M] pulls your legs off the ground, forcing your butt into the air[otherwise][BigNameDesc of M] lifts your knees off the ground and forces them up over your shoulders[end if] as [he of M] drives [his of M] [LongDickDesc of M] into your [asshole]![line break][speech style of M]'[one of]Hold on tight honey, I'm taking you for a ride!'[or]I hope you're comfortable, this might take a while.'[at random][roman type][line break][if the openness of asshole > 8]Your gaping hole still has to stretch a bit further to take the girth of [his of M] [DickDesc of M].[otherwise if the openness of asshole > 5]Your loose hole still has to stretch painfully wide to accept [his of M] thick [DickDesc of M].[otherwise]Your eyes almost fly out of their sockets as your poor tight hole is forced wide, wider and then wider still as [his of M] girthy [DickDesc of M] slowly forces its way inside. You can't believe it's even physically possible for it to fit inside![end if]".
 
 To say VaginaPenetrationFlav of (M - futanari-slutty-sister):
 	now the sex-length of M is 5 + (the health of M / 5);
-	say "[BigNameDesc of M] [if bulging-slutty-sister is penetrating face]spreads your legs[otherwise]spreads your legs, grabs your hips[end if] and drives [his of M] [LongDickDesc of M] into your [vagina]![line break][speech style of M]'[one of]Hold on tight honey, I'm taking you for a ride!'[or]I hope you're comfortable, this might take a while.'[at random][roman type][line break][if the openness of vagina > 8]Your gaping hole still has to stretch a bit further to take the girth of [his of M] member.[otherwise if the openness of vagina > 5]Your loose hole still has to stretch painfully wide to accept [his of M] thick member.[otherwise]Your eyes almost fly out of their sockets as your poor tight hole is forced wide, wider and then wider still as [his of M] girthy member slowly forces its way inside. You can't believe it's even physically possible for it to fit![end if]".
+	say "[BigNameDesc of M] [if bulging-slutty-sister is penetrating face]spreads your legs[otherwise]spreads your legs, grabs your hips[end if] and drives [his of M] [LongDickDesc of M] into your [vagina]![line break][speech style of M]'[one of]Hold on tight honey, I'm taking you for a ride!'[or]I hope you're comfortable, this might take a while.'[at random][roman type][line break][if the openness of vagina > 8]Your gaping hole still has to stretch a bit further to take the girth of [his of M] [DickDesc of M].[otherwise if the openness of vagina > 5]Your loose hole still has to stretch painfully wide to accept [his of M] thick [DickDesc of M].[otherwise]Your eyes almost fly out of their sockets as your poor tight hole is forced wide, wider and then wider still as [his of M] girthy [DickDesc of M] slowly forces its way inside. You can't believe it's even physically possible for it to fit![end if]".
 
 To compute fuckhole sex of (M - futanari-slutty-sister):[the sister is facing you so we can do some fun stuff we couldn't do normally]
 	let F be a random fuckhole penetrated by M;
@@ -434,13 +475,224 @@ To compute defeat of (M - bulging-slutty-sister):
 	now the sleep of M is 300;
 	now the health of M is 1;
 	if nintendolls-wand is not held:
-		now nintendolls-wand is in the location of the player.[you might still be in combat, so no autotaking.]
+		now nintendolls-wand is in the location of the player;[you might still be in combat, so no autotaking.]
+	if the sleep of futanari-slutty-sister > 0:
+		compute dom suggestion of M.
 
 To compute defeat of (M - futanari-slutty-sister):
 	say "[speech style of M]'Unf! [if bulging-slutty-sister is combative]Fuck [him of the player] up, partner...'[otherwise]Fine, you win. Well done...'[end if][roman type][line break][BigNameDesc of M] falls unconscious.";
 	dislodge M; [might be wrangling arms]
 	now the health of M is 1;
-	now the sleep of M is 300.
+	now the sleep of M is 300;
+	if the sleep of bulging-slutty-sister > 0:
+		compute dom suggestion of M.
+
+To compute dom suggestion of (M - a slutty sister):
+	let LT be a list of texts;
+	let PT be the substituted form of "[PityDesc of M]";
+	let PeT be the substituted form of "[PenisFuckDesc of M]";
+	let AT be the substituted form of "[AssRideDesc of M]";
+	let VT be the substituted form of "[VaginaRideDesc of M]";
+	add PT to LT;
+	if the latex-transformation of the player < 6 and (the player is not feeling submissive or the player is a nympho):
+		if M is penis-fuckable and the player is penis-fuckable, add PeT to LT;
+		if M is vagina-rideable and the player is vagina-rideable, add VT to LT;
+		if M is ass-rideable and the player is ass-rideable, add AT to LT;
+	if the number of entries in LT is 0:
+		do nothing;
+	otherwise:
+		let T be entry 1 in LT;
+		if the number of entries in LT > 1:
+			reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+			repeat with X running through LT:
+				set next numerical response to X;
+			compute multiple choice question;
+			now T is chosen numerical response;
+			if T is PT:
+				do nothing;
+			otherwise if T is PeT:
+				now player-fucker is penis;
+				compute dominating M;
+			otherwise if T is VT:
+				now player-fucker is vagina;
+				compute dominating M;
+			otherwise if T is AT:
+				now player-fucker is asshole;
+				compute dominating M;
+			otherwise:
+				say "BUG: Unable to understand defeat choice.".
+
+To say PityDesc of (M - a slutty sister):
+	say "Leave [NameDesc of M] alone..".
+
+To say PenisFuckDesc of (M - a slutty sister):
+	say "Attempt to dominate [NameDesc of M] with your [PenisFucker].".
+
+To say VaginaRideDesc of (M - a slutty sister):
+	say "Attempt to dominate [NameDesc of M] with your [vagina].".
+
+To say AssRideDesc of (M - a slutty sister):
+	say "Attempt to dominate [NameDesc of M] with your [asshole].".
+
+Section 3 -  Dominant sex
+
+To say WeaknessDesc of (M - a slutty sister):
+	if the noun is undefeated:
+		if the health of the noun < the maxhealth of the noun / 4:
+			if the noun is wenchy and saved-flat-intelligence > 6:
+				if the number of worn humility-stone < 3:
+					say "[BigNameDesc of M] looks near defeat, but [he of M] doesn't seem to think of you as a threat at all. Maybe if you had some higher tier of power...";
+				if saved-flat-intelligence > 11:
+					if the number of worn humility-stone < 6:
+						say "[BigNameDesc of M] looks ready to admit defeat, but there's will in those eyes even when [he of M] looks at your stones.";
+					otherwise:
+						say "[BigNameDesc of M] looks ready to admit defeat, especially when [he of M] looks at your stones.";
+			otherwise:
+				say "[BigNameDesc of noun] looks near defeat.";
+		otherwise if the health of the noun < the maxhealth of the noun / 2:
+			say "[BigNameDesc of noun] seems to be quite injured.".
+
+To decide which number is the mental dominance roll for (M - a slutty sister):
+	let X be the number of worn humility-stone;
+	if debugmode > 0, say "[input style]Nintendoll Humility Stone Check... AUTOMATIC [if X < 3]FAILURE[otherwise]SUCCESS[end if][line break]";
+	if X < 3:
+		decide on -99;
+	decide on 99.
+
+Definition: a slutty sister is ass-rideable:
+	if it is vagina-rideable, decide yes;
+	decide no.
+Definition: a slutty sister is vagina-rideable:
+	if it is wenchy and it is a penis-wielding-doll, decide yes;
+	decide no.
+
+To decide which number is the dominationtype of (M - a futanari-slutty-sister) using (F - a body part):
+	if F is a fuckhole, decide on FUCK-RIDE;
+	decide on FUCK-PENETRATION.
+
+To decide which number is the dominationtype of (M - a bulging-slutty-sister) using (F - a body part):
+	decide on FUCK-PENETRATION.
+
+To compute unique dominance reward of (M - a slutty sister):
+	compute default dominance reward of M;
+	increase the extra lives of the player by 1;
+	SilentlyDifficultyUp M by 4;
+	say "Some of your pubic hair has grown back!";
+	DelicateDown 1.
+
+To say DominanceFailure of (M - a slutty sister):
+	let G be a random worn ballgag;
+	say "You grab [NameDesc of M] by the wrists, smirking triumphantly [if G is clothing](around your gag) [end if]as you slowly force [him of M] [if M is bulging-slutty-sister]to [his of M] knees. [otherwise]onto [his of M] ass. [end if][big he of M] smirks back.[line break][speech style of M][']Well, I was GOING to let you win, but looks like you forgot one thing: In here, reality can be whatever we want.['][roman type][line break]A powerful FORCE crashes against your body, and you black out as you are blown across the room.".
+
+To compute failed dominance punishment of (M - a slutty sister):
+	teleport to Dungeon12;
+	increase the extra lives of the player by 1;[You faint, but you don't expend a life.]
+	now delayed fainting is 1;
+	now the fainting reason of the player is 25.
+
+To replace (M - a slutty sister) after domination:
+	say "Your vision blurs as your body is transported to the [Dungeon12]";
+	teleport to Dungeon12;
+	bore M.
+
+To say DominanceSuccess of (M - a slutty sister):
+	let G be a random worn ballgag;
+	say "You [if the player is wrist bound]throw your weight agsint [NameDesc of M][otherwise]grab [NameDesc of M] by the wrists[end if], smirking triumphantly [if G is clothing](around your gag) [end if]as you slowly push [him of M] to the ground. [big he of M] smirks back. A powerful FORCE threatens to take hold of your body and blast it across the room, but an equally powerful force split [the number of worn humility-stone] ways rises up to meet it! The stones spit out sparks as you slowly pin [NameDesc of M] down and [run paragraph on]";
+	if player-fuckchoice is FUCK-PENETRATION:
+		penetration dominate M;
+	otherwise:
+		ride dominate M;
+	Bore M.
+
+To ride dominate (M - a slutty sister):
+	let F be player-fucker;
+	let G be a random worn ballgag;
+	let H be the number of worn humility-stone;
+	let N be bulging-slutty-sister;
+	if M is bulging-slutty-sister, now N is futanari-slutty-sister;
+	let O be the openness of player-fucker;
+	say "[if O > 8]slide[otherwise if O > 3]push[otherwise ]ease[end if] [his of M] [LongDickDesc of M] into your [variable F]. [big he of M] [if O > 3]moans[otherwise]hisses[end if] as you begin to rock your hips, and [his of M] shaft twitches and throbs inside of you as you pick up speed. You throw all your weight against [him of M], allowing all your [if the player is a nympho]appreciation[otherwise]resentment[end if] for the game to fuel you! Sweat beads on your forehead, your breath quickens, and your pelvic floor muscles clench as you close in on-";
+	if H < 6:
+		say paywall demand of M with N;
+		if the player is bimbo consenting:
+			if G is clothing:
+				say "A cartoon meter with the word 'dominant' at the bottom and the word 'shameful' at the top appears in the corner of your vision. It begins to fill as [NameDesc of N] leans over your shoulder, fondling your [ShortDesc of breasts] as [he of N] locks lips with [NameDesc of M], who *moans* and begins to thrust [his of M] hips. You are forced to watch them from inches away, feeling the warmth of their bodies but none of the pleasure, the meter filling further and further with every exaggerated gasp, giggle, or hum that escapes their lips. Your [if F is asshole and the player is possessing a penis]prostate[otherwise][variable F][end if] clenches the very moment the meter reaches the top, waves of shame rolling through your body as [NameDesc of M] fills you with [his of M] load.";
+			otherwise:
+				say "A cartoon meter with the word 'dominant' at the bottom and the word 'shameful' at the top appears in the corner of your vision. It begins to fill as [NameDesc of N] parks [his of M] [LongHoleDesc of M] over your mouth, and [NameDesc of M] seizes your hips. It fills further and further as you [if O < 3]reluctantly lick[otherwise if O < 5]obediently eat [him of M] out[otherwise]eagerly kiss and lick [him of M] out[end if], the thrusting [DickDesc of M] in your [variable F] helping things right along. Your [if F is asshole and the player is possessing a penis]prostate clenches[otherwise]mucles clench[end if] the very moment the meter reaches the top, waves of shame rolling through your body as [NameDesc of M] fills you with [his of M] load.";
+			orgasm M;
+			orgasm N;
+			if F is vagina:
+				PussyFill the semen load of M;
+				vaginally orgasm shamefully;
+			otherwise:
+				AssFill the semen load of M;
+				anally orgasm shamefully;
+			now player-fucking is DOMINANT-SHAMEFUL;
+			say AfterDominationComment 1 of M;
+		otherwise:
+			say AfterDominationComment 2 of M;
+			obsceneDignify;
+	otherwise:
+		say "[line break][speech style of N]'We can[']t let you cum like that, [NameBimbo].'[roman type][line break][speech style of M]'The shareholders have ordered us to take you down!'[roman type][line break][BigNameDesc of N] grabs you from behind, snapping [his of M] fingers as your [if F is asshole and the player is possessing a penis]prostate[otherwise][variable F][end if] is literally 'paused' at the moment right before orgasm. Unwilling to let them [if the player is a nympho]win so easily, [otherwise]win, [end if]you focus and tap into the true power of the stones, moaning as you will yourself to cum anyway, clamping down around [NameDesc of M]'s [LongDickDesc of M]!";
+		say AfterDominationComment 3 of M;
+		ultraDignify;
+		orgasm.
+
+To penetration dominate (M - a slutty sister):
+	let H be the number of worn humility-stone;
+	let G be a random worn ballgag;
+	let L be sexual-penis-length;
+	let N be bulging-slutty-sister;
+	if M is bulging-slutty-sister, now N is futanari-slutty-sister;
+	if sexual-penis-length > 8:
+		say "push your [SexDesc of penis] into [his of M] [LongHoleDesc of M]! [big he of M] hisses as you begin to thrust, rocking [his of M] hips against you even as [he of M] keeps trying to free [his of M] wrists from your grip. You pick up speed, aiming your tip at [his of M] g-spot as you steadily build yourself towards orgasm. Sweat beads on your forehead as you close in, and you slam your [SexShaft] home as-";
+	otherwise if sexual-penis-length > 3:
+		say "slide your [SexDesc of penis] into [his of M] [LongHoleDesc of M]! [big he of M] coos as you begin to thrust, rocking [his of M] hips against you even as [he of M] keeps trying to free [his of M] wrists from your grip. You pick up speed, pounding every ounce [if the player is a nympho]gratitude[otherwise]resentment[end if] over this [if the player is a nympho]fun[otherwise]stupid[end if] game into [his of M] hole! Sweat beads on your forehead as you close in on a climax, and you clench your buttcheeks as-";
+	otherwise:
+		say "slip your [SexDesc of penis] into [his of M] [LongHoleDesc of M]! [big he of M] moans theatrically as you begin to thrust, rocking [his of M] hips against you even as [he of M] keeps trying to free [his of M] wrists from your grip. You pick up speed, desperately biting your lip to hold your orgasm as long as you can. In the end, you can't win against your sensitive little [sissy-penis], and you clench your buttcheeks as-";
+	if H < 6:
+		say paywall demand of M with N;
+		if the player is bimbo consenting:
+			let O be the oral sex addiction of the player;
+			if G is clothing:
+				say "A cartoon meter with the word 'dominant' at the bottom and the word 'shameful' at the top appears in the corner of your vision. It begins to fill as [NameDesc of N] leans over your shoulder, fondling your [ShortDesc of breasts] as [he of N] locks lips with [NameDesc of M], who *moans* and begins to gyrate [his of M] hips. You are forced to watch them from inches away, feeling the warmth of their bodies but none of the pleasure, the meter filling further and further with every exaggerated gasp, giggle, or hum that escapes their lips. Your [SexShaft] spasms the very moment the meter reaches the top, waves of shame rolling through your body as you fill [NameDesc of M] with your load.";
+				orgasm M;
+				orgasm N;
+				penis orgasm shamefully;
+			otherwise if N is a penis-wielding-doll:
+				say "A cartoon meter with the word 'dominant' at the bottom and the word 'shameful' at the top appears in the corner of your vision.  It begins to fill as [NameDesc of N] slaps [his of M] [LongDickDesc of N] on your cheek, and [NameDesc of M] begins to gyrate [his of M] hips. It fills further and further as you [if O < 3]reluctantly start[otherwise if O < 5]start[otherwise]eagerly start[end if] sucking [him of M] off, and the thighs grinding against your waist help things right along. Your [SexShaft] spasms the very moment the meter reaches the top, waves of shame rolling through your body as you fill [NameDesc of M] with your load and [NameDesc of N] ejaculates down your throat!";
+				StomachSemenUp the semen load of N;
+				orgasm M;
+				orgasm N;
+				penis orgasm shamefully;
+			otherwise:
+				say "A cartoon meter with the word 'dominant' at the bottom and the word 'shameful' at the top appears in the corner of your vision.  It begins to fill as [NameDesc of N] parks [his of M] [LongHoleDesc of M] over your mouth, and [NameDesc of M] begins to gyrate [his of M] hips. It fills further and further as you [if O < 3]reluctantly lick[otherwise if O < 5]obediently eat[otherwise]eagerly lick[end if] [him of M] out, and the thighs grinding against your waist help things right along. Your [SexShaft] spasms the very moment the meter reaches the top, waves of shame rolling through your body as you fill [NameDesc of M] with your load.";
+				orgasm M;
+				orgasm N;
+				penis orgasm shamefully;
+			say AfterDominationComment 1 of M;
+			now player-fucking is DOMINANT-SHAMEFUL;
+		otherwise:
+			say AfterDominationComment 2 of M;
+			obsceneDignify;
+	otherwise:
+		say "[line break][speech style of N]'We can[']t let you cum like that, [NameBimbo].'[roman type][line break][speech style of M]'The shareholders have ordered us to take you down!'[roman type][line break][BigNameDesc of N] grabs you from behind, snapping [his of M] fingers as your [SexShaft] is literally 'paused' at the moment right before orgasm. Unwilling to let them [if the player is a nympho]win so easily, [otherwise]win, [end if]you focus and tap into the true power of the stones, [if L > 3]groaning[otherwise]moaning[end if] as you will yourself to cum anyway, blasting your load straight into [NameDesc of M]'s [LongHoleDesc of M]!";
+		say AfterDominationComment 3 of M;
+		ultraDignify;
+		orgasm.
+
+To say paywall demand of (M - a slutty sister) with (N - a slutty sister):
+	let G be a random worn ballgag;
+	say "[line break][speech style of N]'Alright, [NameBimbo]. That[']s about as far as [the number of worn humility-stone] humility stones gets you.'[roman type][line break][BigNameDesc of N] grabs you from behind, snapping [his of M] fingers as your [SexShaft] is literally 'paused' at the moment right before orgasm. You try to tap into the stones, but they're spent, leaving you at [NameDesc of M]'s mercy as [he of M] sits up and [if player-fuckchoice is FUCK-PENETRATION]squeezes your hips with [his of M] thighs.[otherwise]places [his of M] hands on your waist.[end if][line break][speech style of M][if the dominated-count of the player > 0]You probably know the deal by now. [otherwise]This is your first time, so allow us to explain. [end if]You won't get to cum unless you let us embarass you.[roman type][line break][speech style of N]'In this case, we expect you to [if G is clothing]watch us make out[otherwise if N is futanari-slutty-sister]suck my [DickDesc of N][otherwise]eat me out[end if] like a good slut.'[roman type][line break]Do you allow them to embarass you in exchange for a chance to cum? ".
+
+To say AfterDominationComment (N - a number) of (M - a slutty sister):
+	if N is 1:[agreed to lick]
+		say "[speech style of M]'[one of]Mmm, just what I need to see, [NameBimbo].'[or]It feels good to cum like a proper bottom, doesn't it?'[or]Didn't it feel way better once we took over? Heehee, see you.'[at random][roman type][line break]";
+	otherwise if N is 2:[refused to lick]
+		if the number of worn ballgag > 0, say "[speech style of M]'I bet you were hoping we'd get rid of that pesky gag, huh?'[roman type][line break]";
+		otherwise say "[speech style of M]'[one of]Tsk, you should have agreed to the head.'[or]Perhaps we bullied you too harshly...'[at random][roman type][line break]";
+	otherwise if N is 3:[gathered all 6 stones]
+		say "[speech style of M]'[one of]What?!'[or]It was inevitable?!'[at random][roman type][line break]".
 
 Part 4 - Conversation
 

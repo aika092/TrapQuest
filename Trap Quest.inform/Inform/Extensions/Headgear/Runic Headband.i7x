@@ -92,7 +92,7 @@ To say QuestTitle of (Q - priestess-service-quest):
 	say " ([if diaper quest is 1]full diaper[otherwise]ritual beads 'service'[end if] quest)".
 
 To compute persistent reward of (Q - priestess-service-quest) on (C - a clothing):
-	let D be a random off-stage ring;
+	let D be a random off-stage plentiful ring;
 	if D is ring and (C is cursed or diaper quest is 0):
 		if diaper quest is 1:
 			now D is ruby;
@@ -145,7 +145,7 @@ To say QuestTitle of (Q - priestess-vaginal-service-quest):
 	say " (vaginal sex quest)".
 
 To compute persistent reward of (Q - priestess-vaginal-service-quest) on (C - a clothing):
-	let D be a random off-stage ring;
+	let D be a random off-stage plentiful ring;
 	if D is ring:
 		if the size of ritual-beads <= 4:
 			now D is emerald;

@@ -125,6 +125,8 @@ Check praying something with:
 	if the second noun is a container, try inserting the noun into the second noun instead;
 	if the second noun is HotelScenery01, try inking the noun instead;
 	if the second noun is not the dungeon altar and the second noun is not the woods altar and the second noun is not elder altar and the second noun is not hotel altar, say "What would that do?" instead;
+	if the noun is ectoplasm:
+		if diaper quest is 1 or playerRegion is school or the second noun is woods altar, say "Nothing seems to happen." instead;
 	if the second noun is woods altar:
 		if the noun is clothing:
 			if the noun is not accessory or the price of the noun < 1, say "That won't do anything." instead;
@@ -257,7 +259,7 @@ Determines how the dungeon altar will handle an item, "T", that has been placed 
 To AltarPray (T - a thing):
 	AltarUniqueReward of T;
 	if the charge of dungeon altar <= 0:[The reward already happened in the previous function if this is false]
-		if (T is blessable and T is not blessed) or T is ritual-beads or (T is runic headband and T is not purity):
+		if (T is blessable and T is not blessed) or T is ritual-beads or (T is runic headband and T is not purity) or T is ectoplasm:
 			AltarReward T;
 		otherwise:
 			say "Nothing seems to happen.".
@@ -454,6 +456,26 @@ To AltarPray (T - a tattoo):
 	destroy T;
 	now T is in Holding Pen;
 	AltarUniqueReward of T;
+	reset dungeon altar.
+
+To AltarReward (T - an ectoplasm):
+	let G be a random off-stage golem;
+	let S be a random off-stage slimeball;
+	unless the player is getting unlucky:
+		say "A voice appears in your head:[line break][second custom style]'[GoddessAddress], I will purify that filth for you!'[roman type][line break]The wad of slime glows as it asorbs the magic from the altar, transforming into a dense wad of magic slime!";
+		now charged-slime is in the location of the player;
+	otherwise if G is a monster:
+		say "A voice appears in your head:[line break][second custom style]'[GoddessAddress], I will purify that fi-... oops.'[roman type][line break]The wad of slime glows as it absorbs the magic of the altar, doubling, then tripling, then dectupling in size as it transforms into an amorphous creature vaguely shaped like a [man of dominatrix]! Uh-oh![GotUnluckyFlav]";
+		set up G;
+		now G is in the location of the player;
+	otherwise if S is a monster:
+		say "A voice appears in your head:[line break][second custom style]'[GoddessAddress], I will purify that fi-... oops.'[roman type][line break]The wad of slime glows as it absorbs the magic of the altar, doubling in size as it leaps off the altar by itself! Uh-oh![GotUnluckyFlav]";
+		set up S;
+		now S is in the location of the player;
+	otherwise:
+		say "A voice appears in your head:[line break][second custom style]'[GoddessAddress], I will purify that filth for you!'[roman type][line break]The wad of slime glows as it slowly distinegrates under the powr of the altar.";
+		MagicPowerRefresh 6;
+	destroy T;
 	reset dungeon altar.
 
 To AltarReward (T - a bottle):

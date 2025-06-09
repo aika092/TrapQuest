@@ -44,13 +44,21 @@ To compute virginity-loss of (C - a bridal veil): [no escaping it by losing virg
 
 To compute class outfit of (H - a bridal veil):
 	if the player is not possessing a vagina:
-		say DefaultSexChangeFlav;
-		SexChange the player;
-	if the vaginalvirgin of the player is 1:
-		class summon long bridal dress;
+		unless the player is an april 2025 top donator and the player is not ready for event tg:
+			say DefaultSexChangeFlav;
+			SexChange the player;
+	if the player is possessing a vagina:
+		if the vaginalvirgin of the player is 1:
+			class summon long bridal dress;
+		otherwise:
+			if the ceremony of betrothal-quest is false, class summon sexy bridal dress;
+			otherwise class summon slutty bridal dress;
 	otherwise:
-		if the ceremony of betrothal-quest is false, class summon sexy bridal dress;
-		otherwise class summon slutty bridal dress;
+		if the analvirgin of the player is 1:
+			class summon long bridal dress;
+		otherwise:
+			if the ceremony of betrothal-quest is false, class summon sexy bridal dress;
+			otherwise class summon slutty bridal dress;
 	if the ceremony of betrothal-quest is true, class summon floral bouquet.
 
 Definition: a bridal veil (called C) is removal-blocking:
@@ -76,7 +84,7 @@ To uniquely set up (C - a bridal veil):
 	now the quest of C is betrothal-quest.
 
 To compute unique recycling of (C - a bridal veil):
-	if the vaginalvirgin of the player is 1 and the consummation of betrothal-quest is false:
+	if the player is possessing a vagina and the vaginalvirgin of the player is 1 and the consummation of betrothal-quest is false:
 		now the ceremony of betrothal-quest is false;
 		now bride-consort is the throne;
 		now C is cursed;
@@ -92,7 +100,7 @@ To say QuestTitle of (Q - betrothal-quest):
 
 To compute quest completion of (Q - betrothal-quest) on (C - a clothing):
 	if the ceremony of Q is false:
-		say "Your [MediumDesc of C] brims with blessed energy... making you feel flushed with arousal, and making your [vagina] throb with a desperate desire to be bred![line break][variable custom style]Huh?![roman type][line break]It seems your quest isn't over yet. Next you need to [bold type]find the Kama Sutra Penthouse Suite[roman type], and [bold type]go there alone[roman type] while [bold type]holding [if there is a worn bouquet]your bouquet[otherwise]a bouquet[roman type] (since you didn't get the bouquet this time round because your hand was already full, you'll need to find the [bold type]mystical wardrobe in the mansion[roman type] to obtain your missing class gear)[end if].[line break][variable custom style]My [vagina]... It's pulsing with need! Oh, I need [manly-penis] in my [vagina]! Right now! [if the player is not a pervert]Oh my god... what am I thinking? What's happening to me?! But I can't deny this deep need I can feel down there...[end if][roman type][line break]";
+		say "Your [MediumDesc of C] brims with blessed energy... making you feel flushed with arousal, and making your [if the player is possessing a vagina][vagina][otherwise][asshole][end if] throb with a desperate desire to be bred![line break][variable custom style]Huh?![roman type][line break]It seems your quest isn't over yet. Next you need to [bold type]find the Kama Sutra Penthouse Suite[roman type], and [bold type]go there alone[roman type] while [bold type]holding [if there is a worn bouquet]your bouquet[otherwise]a bouquet[roman type] (since you didn't get the bouquet this time round because your hand was already full, you'll need to find the [bold type]mystical wardrobe in the mansion[roman type] to obtain your missing class gear)[end if].[line break][variable custom style]My [if the player is possessing a vagina][vagina][otherwise][asshole][end if]... It's pulsing with need! Oh, I need [manly-penis] in my [if the player is possessing a vagina][vagina][otherwise][asshole][end if]! Right now! [if the player is not a pervert]Oh my god... what am I thinking? What's happening to me?! But I can't deny this deep need I can feel down there...[end if][roman type][line break]";
 		arouse 3000;
 	otherwise:
 		say QuestPersistFlav of Q on C;
@@ -116,8 +124,15 @@ To compute quest completion of (Q - betrothal-quest) on (C - a clothing):
 		say "[roman type][line break]".
 
 To decide which number is the vaginal-sex-addiction-influence of (C - a bridal veil):
+	if the player is not possessing a vagina, decide on 0;
 	if the consummation of betrothal-quest is true, decide on 0;
 	if the ceremony of betrothal-quest is false, decide on -1;
-	decide on 5.
+	decide on 10.
+
+To decide which number is the anal-sex-addiction-influence of (C - a bridal veil):
+	if the player is possessing a vagina, decide on 0;
+	if the consummation of betrothal-quest is true, decide on 0;
+	if the ceremony of betrothal-quest is false, decide on -1;
+	decide on 10.
 
 Bridal Veils ends here.

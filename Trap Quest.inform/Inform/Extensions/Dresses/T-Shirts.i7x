@@ -4,6 +4,10 @@ A T-shirt is a kind of overdress. The skirt-length of A T-shirt is 0. A T-shirt 
 
 Understand "shirt", "T" as T-shirt.
 
+Definition: a T-shirt is same-type:
+	if theme-share-target is shirt or theme-share-target is T-shirt or theme-share-target is vest top, decide yes;
+	decide no.
+
 To decide which number is the initial outrage of (C - a T-shirt):
 	decide on 7.
 

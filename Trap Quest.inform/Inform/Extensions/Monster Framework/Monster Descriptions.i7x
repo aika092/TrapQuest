@@ -8,6 +8,9 @@ Understand "NPC", "enemy" as a monster.
 To decide which object is male-m: [this should always point towards an NPC who is always male normally, but female when all NPCs are set to female. It used to be the shopkeeper, but now the shopkeeper defaults to female in Diaper Quest.]
 	decide on pimp.
 
+To decide which object is female-f: [this should always point towards an NPC who is always female normally, but male when all NPCs are set to male.]
+	decide on dominatrix.
+
 Figure of Missing NPC is the file "NPCs/missing.jpg".
 
 To say ShortDesc of (M - a monster):
@@ -178,11 +181,8 @@ After examining a monster:
 	unless the noun is unintelligent or the noun is robot:
 		say "[FavourDesc of the noun]";
 	if the noun is undefeated:
-		if the health of the noun < the maxhealth of the noun / 4:
-			say "[BigNameDesc of noun] looks near defeat.";
-		otherwise if the health of the noun < the maxhealth of the noun / 2:
-			say "[BigNameDesc of noun] seems to be quite injured.";
-	if the noun is wrapped, say "[BigNameDesc of noun] is wearing a condom around [his of the noun] [manly-penis].";
+		say WeaknessDesc of the noun;
+	if the noun is wrapped, say "[BigNameDesc of noun] is wearing a condom around [his of the noun] [DickDesc of the noun].";
 	say HeldItems of the noun.
 
 To say HeldItems of (M - a monster):
@@ -192,6 +192,45 @@ To say HeldItems of (M - a monster):
 		say "You can see that [he of M] still has the [ShortDesc of T].";
 	if players-dick-is-detached > 0: [#LXorDD]
 		say its-got-my-dick for M.
+
+To say SubmissiveDesc of (M - a monster):
+	let AD be the anti-dominance of the player;
+	now player-fuckchoice is FUCK-NONE;
+	let S be the submissiveness base of M;
+	let D be the dominance of the player;
+	if D + 6 < S:
+		say "[BigNameDesc of noun] looks near defeat, but it hasn't reached [his of M] eyes.";
+	otherwise if D + 2 < S:
+		say "[BigNameDesc of noun] looks near defeat, but it's only beginning to show in [his of M] eyes.";
+	otherwise if D < S:
+		say "[BigNameDesc of M] looks like [he of M]'s on the cusp of admitting defeat, but there's still plenty of will in [his of M] eyes.";
+	otherwise if D - 2 < S:
+		say "[BigNameDesc of M] looks like [he of M]'s on the cusp of admitting defeat, but there's still a flicker of will in [his of M] eyes.";
+	otherwise:
+		say "[BigNameDesc of M] looks like [he of M]'s going to admit defeat at any moment.";
+	if saved-flat-intelligence > 11:
+		if D + 6 < S:
+			say "You think taking advantage of [him of M] would definitely be impossible.";
+		otherwise if AD > 3:
+			say "You have a feeling [he of M]'d turn the tables on you if you tried taking advantage of [him of M].";
+		otherwise if AD > 2:
+			say "You're pretty sure [he of M] might turn the tables on you if you tried taking advantage of [him of M].";
+		otherwise if AD > 1:
+			say "You think [he of M]'s capable of turning the tables on you if you tried taking advantage of [him of M].";
+		otherwise if AD > 0:
+			say "It wouldn't be easy, but you think you could avoid [him of M] turning the tables on you if you tried taking advantage of [him of M].";
+		otherwise:
+			say "You're certain you could avoid [him of M] turning the tables on you if you tried taking advantage of you, as long as you could defeat [him of M] first.".
+
+To say WeaknessDesc of (M - a monster):
+	if the noun is undefeated:
+		if the health of the noun < the maxhealth of the noun / 4:
+			if the noun is wenchy and (M is penis-fuckable or M is piss-fuckable or M is uniquely-fuckable or M is ass-rideable or M is vagina-rideable or M is diaper-rideable) and saved-flat-intelligence > 6:
+				say SubmissiveDesc of M;
+			otherwise:
+				say "[BigNameDesc of noun] looks near defeat.";
+		otherwise if the health of the noun < the maxhealth of the noun / 2:
+			say "[BigNameDesc of noun] seems to be quite injured.".
 
 To say FavourDesc of (M - a monster):
 	let O be a random body part penetrated by M;

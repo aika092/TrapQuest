@@ -100,7 +100,7 @@ To compute automatic state check of (C - a clothing):
 		process state perception of C.
 
 To compute combat diaper squish:
-	let D be a random messed diaper;
+	let D be a random worn messed diaper;
 	if D is diaper:
 		say "As you thrust your leg, your butt squelches against the mush in your [ShortDesc of D].";
 		SlowGrossOut 7;
@@ -726,16 +726,10 @@ To WaterEmpty (C - diaper-stack):
 	update diaper stack;
 	if C is worn, update appearance level.
 
-To Drench (C - diaper-stack):
+To Drench (C - diaper-stack) by (N - a number):
 	repeat with D running through the list of stacked diapers:
-		Drench D;
-	if tough-shit is 0 and C is glued:
-		decrease the glue timer of C by 50;
-		if the glue timer of C > 0:
-			if C is held, say "The glue on [NameDesc of C] is rapidly weakening!";
-		otherwise:
-			now the glue timer of C is 0;
-			if C is held, say "The glue on [NameDesc of C] has completely degraded[if C is worn]. It's no longer stuck to you![otherwise].[end if]";
+		Drench D by N;
+	if tough-shit is 0 and C is glued, GlueDown C by N;
 	update diaper stack;
 	if C is worn:
 		force immediate clothing-focus redraw;
@@ -821,7 +815,7 @@ Check wearing store diaper:
 	if diaper-stack is worn, say "You can't do that without the shopkeeper having ample time to stop you." instead.
 
 A DQClothing is a kind of object. NoDQImage is a DQClothing. A knickers has a DQClothing called the DQFigure.
-DQCloth is a DQClothing. DQGiant is a DQClothing. DQHuge is a DQClothing. DQLarge is a DQClothing. DQMedium is a DQClothing. DQMoosive is a DQClothing. DQSmall is a DQClothing. DQVelcro is a DQClothing. DQBunny is a DQClothing. DQWaddle is a DQClothing. DQWhitePants is a DQClothing. DQBlackPants is a DQClothing. DQPinkPants is a DQClothing.  DQBluePants is a DQClothing. DQPullups is a DQClothing. DQTrainingPants is a DQClothing. DQRubber is a DQClothing.
+DQCloth is a DQClothing. DQGiant is a DQClothing. DQHuge is a DQClothing. DQLarge is a DQClothing. DQMedium is a DQClothing. DQMoosive is a DQClothing. DQSmall is a DQClothing. DQVelcro is a DQClothing. DQBunny is a DQClothing. DQWaddle is a DQClothing. DQWhitePants is a DQClothing. DQBlackPants is a DQClothing. DQPinkPants is a DQClothing. DQBluePants is a DQClothing. DQPullups is a DQClothing. DQTrainingPants is a DQClothing. DQRubber is a DQClothing.
 
 The DQFigure of a knickers is usually DQBlackPants.
 The DQFigure of diaper is usually DQMedium.

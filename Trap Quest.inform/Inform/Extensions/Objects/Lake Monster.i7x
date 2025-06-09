@@ -409,7 +409,7 @@ To compute swimming in (WB - DungeonScenery03):
 					now swimming is 0;
 				otherwise:
 					say "You rest your body against the edge of the cave and catch your breath. It's a little difficult to rest here, but after a few minutes, you feel less fatigued.";
-					FatigueDown 5;
+					FatigueDown 10;
 			otherwise if CNR is "dive":
 				say "You dive below the surface.";
 				compute difficult swimming check in WB;
@@ -518,7 +518,7 @@ To compute treasure diving in (WB - DungeonScenery03) at (L - a number):
 			say "You find a single high-heel. You leave it behind as you swim back to the surface.";
 	otherwise if N is 17:[swimsuit]
 		let C be a random off-stage plentiful fetish appropriate swimming themed clothing;
-		if the player is the donator and gris monokini is not held:
+		if the player is the donator and gris monokini is off-stage:
 			now gris monokini is carried by the player;
 			if gris monokini is unclash summonable:
 				say "[bold type]You find a [gris monokini]![roman type] You take it with you as you swim back to the surface. As you surface... You realise that you're no longer holding it? But... Then... Where has it gone?";
@@ -528,7 +528,7 @@ To compute treasure diving in (WB - DungeonScenery03) at (L - a number):
 			now the water-soak of C is the soak-limit of C;
 			now C is carried by the player;
 		otherwise:
-			say "You find a swimsuit with a tear straight up the middle. You leave it behind as you swim back to the surface.";
+			say "You find a swimsuit with a [one of]tear straight up the middle[or]punctured crotch[in random order]. You leave it behind as you swim back to the surface.";
 	otherwise if N is 16:
 		say "You find a piece of shredded fabric. You leave it behind as you swim back to the surface.";
 	otherwise if N is 15:[magic token]

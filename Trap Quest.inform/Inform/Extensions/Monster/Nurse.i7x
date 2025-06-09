@@ -6,6 +6,7 @@ nurse is in School11. The text-shortcut of nurse is "nrs". nurse has a number ca
 
 Figure of nurse is the file "NPCs/School/nurse1.png".
 Figure of enslaved diapered nurse is the file "NPCs/School/nurse3.png".
+Figure of mad nurse is the file "NPCs/School/nurse4.jpg".
 
 To decide which figure-name is the monster-image of (M - nurse):
 	decide on figure of nurse.
@@ -15,11 +16,21 @@ To decide which figure-name is the pacified-image of (M - nurse):
 	if M is diaper-enslaved, decide on figure of enslaved diapered nurse;
 	decide on figure of Missing NPC.
 
+To decide which figure-name is the examine-image of (M - nurse):
+	unless the temporary-image of M is figure of no-image-yet, decide on the temporary-image of M;
+	if the player is in an elevator-room, decide on figure of mad nurse;
+	if M is defeated:
+		let F be the pacified-image of M;
+		unless F is figure of Missing NPC, decide on F;
+	let F be the sex-profile of M;
+	unless F is figure of Missing NPC, decide on F;
+	decide on the non-sex-profile of M.
+
 To say ShortDesc of (M - nurse):
 	say "nurse".
 
 To say MediumDesc of (M - nurse):
-	say "nurse".
+	say "[if the player is in an elevator-room]mad [end if]nurse".
 
 To say MonsterDesc of (M - nurse):
 	if M is sex-enslaved:

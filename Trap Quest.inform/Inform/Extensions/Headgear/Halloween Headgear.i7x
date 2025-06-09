@@ -24,7 +24,7 @@ To say QuestTitle of (Q - trick-or-treat-quest):
 
 To compute generic first time class reward of (Q - trick-or-treat-quest) on (C - a clothing):
 	repeat with N running from 1 to 3:
-		let D be a random off-stage ring;
+		let D be a random off-stage plentiful ring;
 		if D is ring:
 			if N is 1, now D is sapphire;
 			if N is 2, now D is emerald;
@@ -38,7 +38,7 @@ To compute generic first time class reward of (Q - trick-or-treat-quest) on (C -
 
 To compute generic second time class reward of (Q - trick-or-treat-quest) on (C - a clothing):
 	repeat with N running from 1 to 2:
-		let D be a random off-stage ring;
+		let D be a random off-stage plentiful ring;
 		if D is ring:
 			if N is 1, now D is pink diamond;
 			otherwise now D is pure diamond;
@@ -190,7 +190,7 @@ To say QuestTitle of (Q - mansion-purification-quest):
 
 To compute persistent reward of (Q - mansion-purification-quest) on (C - a clothing):
 	if vampiress is in the location of the player and the stake of vampiress is wood-dong and wood-dong is held by the player and player-fucking is DOMINANT-SUPER:
-		let D be a random off-stage ring;
+		let D be a random off-stage plentiful ring;
 		if D is ring:
 			now D is solid gold;
 			set shortcut of D;
@@ -252,7 +252,7 @@ To say QuestTitle of (Q - doom-ritual-quest):
 	say " (doom ritual quest)".
 
 To compute persistent reward of (Q - doom-ritual-quest) on (C - a clothing):
-	let D be a random off-stage ring;
+	let D be a random off-stage plentiful ring;
 	if D is ring:
 		now D is solid gold;
 		set shortcut of D;

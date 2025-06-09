@@ -83,7 +83,7 @@ Part 2 - Perception
 To compute perception of (M - a robobellboy):
 	say "[BigNameDesc of M] notices you!";
 	if there is soiled-diaper carried by M or there is a dirty diaper carried by M:
-		say "[first custom style]'DIRTY DIAPER LITTERING CULPRIT FOUND. PLEASE ADOPT THE DIRTY DIAPER LITTERING PUNISHMENT SUBMISSION POSITION.'[roman type][line break]";
+		say "[first custom style]'DIRTY DIAPER LITTERING CULPRIT FOUND. [caps please] ADOPT THE DIRTY DIAPER LITTERING PUNISHMENT SUBMISSION POSITION.'[roman type][line break]";
 		anger M;
 	otherwise if there is a worn messed knickers:
 		say "[first custom style]'NEARBY MESSY [if there is a worn diaper]DIAPER[otherwise]UNDERWEAR[end if] DETECTED. [caps please] ASSUME THE NAPPY INSPECTION SUBMISSION POSITION.'[roman type][line break]";
@@ -112,8 +112,11 @@ To compute perception of (M - a robobellboy):
 		bore M;
 	if M is interested, now target-room of M is the nearest patron.[for some reason this function has pretty insane hang time on it, so I moved it into a place will it will trigger less frequently]
 
-Definition: senior robobellboy is objectifying the player:
-	if the employee-record of it < 0, decide yes;
+Definition: senior robobellboy (called M) is objectifying the player:
+	if the employee-record of it < 0:
+		now the objectification of M is 1;
+		decide yes;
+	now the objectification of M is 0;
 	decide no.
 
 To compute perception of (M - senior robobellboy):
@@ -138,7 +141,7 @@ To compute perception of (M - senior robobellboy):
 	otherwise if M is objectifying the player:
 		say "[big his of M] eyes turn red.[line break][speech style of M]'HELLO NEW TRAINEE. SEVERAL COMPLAINTS HAVE BEEN MADE OF YOUR LACKLUSTRE DEDICATION. SUBMIT IMMEDIATELY FOR PERFORMANCE OPTIMISATION.'[roman type][line break]";
 	otherwise if the class of the player is not catgirl and the class of the player is not puppygirl and (the number of worn crotch covering clothing is 0 or the number of worn breast covering clothing is 0):
-		say "[big his of M] eyes turn red.[line break][speech style of M]'ERROR LINE 34, PATRON UNSUITABLE. INITIALISING EJECTION PROTOCOL... ERROR... ERROR... HELLO NEW TRAINEE. [caps please] SUBMIT IMMEDIATELY FOR PERFORMANCE OPTIMISATION.";
+		say "[big his of M] eyes turn red.[line break][speech style of M]'ERROR LINE 34, PATRON UNSUITABLE. INITIALISING EJECTION PROTOCOL... ERROR... ERROR... HELLO NEW TRAINEE. [caps please] SUBMIT IMMEDIATELY FOR PERFORMANCE OPTIMISATION.'[roman type][line break]";
 	otherwise if a random number between 1 and (3 - diaper quest) is 1 and (the charge of modification machine <= 0 or (artificial enhancements fetish is 1 and there is an off-stage fetish appropriate module)):
 		say "[big his of M] eyes turn red.[line break][speech style of M]'HELLO TREASURED CUSTOMER. YOU HAVE BEEN SELECTED FOR COMPLIMENTARY MODIFICATION. [caps please] ALLOW ME TO ESCORT YOU TO THE MODIFICATION MACHINE.'[roman type][line break]";
 		now M is modification-intending;
@@ -322,7 +325,7 @@ To compute knickers forcing of (M - a robobellboy):
 			if H is a chastity cage:
 				say "[BigNameDesc of M] digital interface flashes red as it notices your exposed [sissy-penis].[line break][first custom style]'EXPOSED CLITTY DETECTED. ENTERING CAGING SUBROUTINE.'[roman type][line break][big he of M] deploys a long black tube that vacuums down your exposed [penis] to the hilt. The sucking feels amazing, and you relish the approaching orgasm... until you feel something cold and hard suddenly force your erection down. [BigNameDesc of M] stops the suction and removes the tube to reveal your [sissy-penis] is now locked away in a [ShortDesc of H]![roman type][line break]";
 				summon H locked;
-				say "[first custom style]'PLEASE REMEMBER THAT CLIENT SATISFACTION SHOULD BE YOUR ONLY CONCERN. PLEASE STAND BY FOR APPROPRIATE CLOTHING.'[roman type][line break]";
+				say "[first custom style]'PLEASE REMEMBER THAT CLIENT SATISFACTION SHOULD BE YOUR ONLY CONCERN. [caps please] STAND BY FOR APPROPRIATE CLOTHING.'[roman type][line break]";
 				say FullExamineDesc of H;
 				bore M;
 				FavourUp M;

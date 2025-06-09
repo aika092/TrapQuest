@@ -42,6 +42,11 @@ To say MonsterDesc of (M - kitsune):
 	otherwise:
 		say "Kitsune failing to disguise properly, please report bug.".
 
+[The player's comment is meant to be a hint that the kitsune in disguise may not be as they seem]
+To say MonsterComment of (M - kitsune):
+	say "[line break][variable custom style][one of][big he of M] sure looks nimble.[or][Big his of M] face seems like a mask.[or]Something about [him of M] doesn't seem fully real.'[or]'[in random order][roman type][line break]".
+
+
 To set up (M - kitsune):
 	reset M;
 	add escape-powder to the tradableItems of M, if absent;
@@ -53,6 +58,149 @@ To set up (M - kitsune):
 
 To decide which number is the starting difficulty of (M - kitsune):
 	decide on 12.
+
+To compute unique periodic effect of (M - kitsune):
+	unless the player is an april 2025 top donator:[TODO: alpha toggle]
+		do nothing instead;
+	let R be the location of M;
+	if R is the location of the player and R is the room south from Dungeon41:
+		let S be shopkeeper;
+		let C be a random clothing in Dungeon41;
+		if C is clothing and the owner of C is S and the times-met of S > 0 and the location of S is Dungeon41:[`owner of C of S` is very important]
+			compute dungeon prank of M;
+	otherwise if R is the location of the player and R is a jungle room:
+		let A be the location of woods altar;
+		let D be the distance of R from location of A;
+		let W be witch;
+		let V be a random off-stage fetish appropriate vessel;
+		if D is 1 and W is witch and the location of W is A and V is not nothing:
+			compute woods prank of M.
+
+To compute dungeon prank of (M - kitsune):
+	if the target-disguise of M is not M:
+		say "[BigNameDesc of M] suddenly performs a 360 degrees twirl!";
+		reveal disguise of M;
+	let S be shopkeeper;
+	let N be a random dangerous monster in the location of the player;
+	let C be a random clothing in Dungeon41;
+	while S is not the owner of C:[We should not get to this function unless we know that the shopkeeper owns at least one thing in this shop.]
+		now C is a random clothing in the location of S;
+	let intent be 0;
+	say "[BigNameDesc of M] shimmers and disappears in a puff of pink smoke, leaving a duplicate of YOU standing in [his of M] place! [big he of M] smirks at you and dashes into the shop.[line break][speech style of S]'Welcome back to- Hey, you have to pay for that! GUARDS! GUARDS!'[roman type][line break][BigNameDesc of M] comes sprinting out of the shop with a [ShortDesc of C] tucked under [his of M]. If you don't stop [him of M] right now, the shopkeeper's gonna think YOU stole it![line break]";
+	if the soreness of asshole is 10 or the soreness of vagina is 10 or the player is very horny:
+		say "Unfortunately, you're too distracted by your throbbing [if the soreness of asshole > 9][asshole], [otherwise if the soreness of vagina > 9][vagina], [otherwise][genitals], [end if]and [he of M] escapes before you can react!";
+	otherwise if N is a monster:
+		say "Unfortunately, you're too distracted by [NameDesc of N], and [NameDesc of M] escapes before you can react!";
+	otherwise if the stance of the player is 1:
+		say "Unfortunately, you can't catch up to [him of M] from your position on your knees, and [he of M] escapes before you can react!";
+	otherwise:
+		say "[if the player is able to use manual dexterity]Should you try to grab the [ShortDesc of C]?[otherwise]Should you try to tackle [him of M]?[end if][line break]";
+		if the player is consenting:
+			if the player is able to use manual dexterity:
+				if the player is getting unlucky:
+					say "You reach out and grab not [NameDesc of M], but the [ShortDesc of C] in [his of M] hands! [big he of M] doesn't even bother to fight you for it, letting go and disappearing around a corner without looking back.[GotUnluckyFlav][line break][speech style of M]'Ugh, where do I go~'[roman type][line break]";
+					now C is in the location of the player;
+					compute autotaking C;
+				otherwise:
+					say "You reach out and grab not [NameDesc of M], but the [ShortDesc of C] in [his of M] hands! You're only able to hold it for a split second before [he of M] snatches it away, but that's just enough time for [NameDesc of S] to burst out of the shop.[line break][speech style of M]'Oops. Ah, I mean- I-impostor!'[roman type][line break]";
+					now S is unleashed;
+					now S is interested;
+					now shopkeeper is in the location of M;
+			otherwise:
+				if the player is getting unlucky:
+					say "You try to tackle [NameDesc of M], but [he of M] dodges it as easily as breathing, throwing the [ShortDesc of C] at you as [he of M] disappears around a corner.[GotUnluckyFlav][line break][speech style of M]'Oops! I tripped~!'[roman type][line break]";
+					now C is in the location of the player;
+				otherwise:
+					say "You dive towards [NameDesc of M], but [he of M] dodges it as easily as breathing. However, you manage to delay her just long enough for [NameDesc of S]  to burst out of the shop.[line break][speech style of M]'Oops. Ah, I mean- I-impostor!'[roman type][line break]";
+					now S is unleashed;
+					now S is interested;
+					now shopkeeper is in the location of M;
+			silently try kneeling;
+		otherwise:
+			say "You allow [NameDesc of M] to run right past you.";
+	if S is in the location of M:
+		say "[BigNameDesc of M] runs up to [NameDesc of S] and presses the [ShortDesc of C] into [his of M] hands.[line break]'That [boy of the player] s-stole my face, but I stole this b-b-back!'[roman type][line break][speech style of S]'It's alright. I'm not falling for this little thief's tricks.'[roman type][line break][big he of M] snaps a pair of handcuffs around [NameDesc of M]'s wrists.[line break][speech style of S]'Nice job catching [him of M]! I'll remember this!'[roman type][line break][speech style of S]'You think I won't recognize you after being robbed over and over again! I'm punishing you good this time!'[roman type][line break]";
+		Calm S;
+		FavourUp S;
+	otherwise:
+		say "[BigNameDesc of S] looks right at you. [if the player is able to speak][line break][variable custom style]'W-wait, that wasn't me, they just transformed-'[roman type][end if]";
+		if the number of held stolen clothing is 0 and C is not in the location of the player and the player is getting lucky:
+			say "[line break][speech style of S]'It's alright. I know you aren't the thief, but did you NEED to let [him of M] run right past you?'[roman type][line break][BigNameDesc of S] scowls and disappears around the same corner. [GotLuckyFlav]";
+			Bore S;
+			FavourDown S;
+			regionally place S;
+		otherwise:
+			say "[line break][speech style of M]'[if the number of held stolen clothing > 0]I can see that [ShortDesc of C], [otherwise]I'm wise to your tricks by now, [end if]you little thief! [if the stance of the player is 0]Get on your knees and[otherwise]Time to[end if] accept what's coming to you![roman type][line break]Uh oh.";
+			now S is unleashed;
+			now S is interested;
+			anger S;
+			now S is in the location of the player;
+		unless C is held, now C is carried by M;
+	regionally place M;
+	set up disguise of M;
+	now the vanish timer of M is -1.
+
+To compute woods prank of (M - kitsune):
+	if the target-disguise of M is not M:
+		say "[BigNameDesc of M] suddenly performs a 360 degrees twirl!";
+		reveal disguise of M;
+	let W be witch;
+	let N be a random dangerous monster in the location of the player;
+	let V be a random off-stage fetish appropriate vessel;
+	now the doses of V is 3;
+	say "[BigNameDesc of M] shimmers and disappears in a puff of pink smoke, leaving a duplicate of YOU standing in [his of M] place! [big he of M] smirks at you and dashes towards the witch's shack.[line break][speech style of W]'Hi bitch. Putting jewelery on- Hey, [if lactation fetish is 1]don't PINCH TH-! [otherwise]that's MY LUN-! [end if]OOH, YOU ARE GONNA GET IT!'[roman type][line break][BigNameDesc of M] comes sprinting out of the shop with an audibly sloshing [ShortDesc of V] clutched in [his of M] hands! If you don't stop [him of M] right now, [NameDesc of W]'s gonna think YOU took it![line break]";
+	if the soreness of asshole is 10 or the soreness of vagina is 10 or the player is very horny:
+		say "Unfortunately, you're too distracted by your throbbing [if the soreness of asshole > 9][asshole], [otherwise if the soreness of vagina > 9][vagina], [otherwise][genitals], [end if]and [he of M] escapes before you can react!";
+	otherwise if N is a monster:
+		say "Unfortunately, you're too distracted by [NameDesc of N], and [NameDesc of M] escapes before you can react!";
+	otherwise if the stance of the player is 1:
+		say "Unfortunately, you can't catch up to [him of M] from your position on your knees, and [he of M] escapes before you can react!";
+	otherwise:
+		say "[if the player is able to use manual dexterity]Should you try to grab the [ShortDesc of V]?[otherwise]Should you try to tackle [him of M]?[end if][line break]";
+		if the player is consenting:
+			if the player is able to use manual dexterity:
+				if the player is getting unlucky:
+					say "You reach out and grab not [NameDesc of M], but the [ShortDesc of V] in [his of M] hands! [big he of M] doesn't even bother to fight you for it, letting go and disappearing around a corner without looking back.[GotUnluckyFlav][line break][speech style of M]'Ugh, where do I go~'[roman type][line break]";
+					now V is in the location of the player;
+					now the fill-colour of V is white;
+					compute autotaking V;
+				otherwise:
+					say "You reach out and grab not [NameDesc of M], but the [ShortDesc of V] in [his of M] hands! You're only able to hold it for a split second before [he of M] snatches it away, but that's just enough time for [NameDesc of W] to burst into the clearing.[line break][speech style of M]'Oops. Ah, I mean- I-impostor!'[roman type][line break]";
+					now W is unleashed;
+					now W is interested;
+					now witch is in the location of M;
+			otherwise:
+				if the player is getting unlucky:
+					say "You try to tackle [NameDesc of M], but [he of M] dodges it as easily as breathing, throwing the [ShortDesc of V] (and its contents) at you as [he of M] disappears around a corner.[GotUnluckyFlav][line break][speech style of M]'Oops! I tripped~!'[roman type][line break]";
+					now V is in the location of the player;
+					AnnouncedSquirt milk on face by 5;
+				otherwise:
+					say "You dive towards [NameDesc of M], but [he of M] dodges it as easily as breathing. However, you manage to delay her just long enough for [NameDesc of W]  to burst into the clearing.[line break][speech style of M]'Oops. Ah, I mean- I-impostor!'[roman type][line break]";
+					now W is unleashed;
+					now W is interested;
+					now witch is in the location of M;
+			silently try kneeling;
+		otherwise:
+			say "You allow [NameDesc of M] to run right past you.";
+	if W is in the location of M:
+		say "[BigNameDesc of M] runs up to [NameDesc of W] and presses the [ShortDesc of V] into [his of M] hands.[line break]'That [boy of the player] s-stole my face, but I stole this b-b-back!'[roman type][line break][speech style of W]'Do you honestly think that bullshit is gonna work on me?'[roman type][line break]Vines leap up and grab [NameDesc of M]'s ankles, dragging [him of M] back to [NameDesc of W]'s shack.";
+		Calm W;
+		FavourUp W;
+	otherwise:
+		say "[BigNameDesc of W] looks right at you. [if the player is able to speak][line break][variable custom style]'W-wait, that wasn't me, they just transformed-'[roman type][end if]";
+		if V is not held and V is not in the location of the player and the player is getting lucky:
+			say "[line break][speech style of W]'[big he of M] stole your face and you didn't do shit when [he of M] came by, huh? Tch.'[roman type][line break][BigNameDesc of W] scowls and trudges back to her hut.[GotLuckyFlav]";
+			Bore W;
+			FavourDown W;
+		otherwise:
+			say "[line break][speech style of M]'You're gonna REGRET fucking with me!'[roman type][line break]Uh oh.";
+			now W is unleashed;
+			now W is interested;
+			now W is in the location of the player;
+			anger W;
+	regionally place M;
+	set up disguise of M;
+	now the vanish timer of M is -1.
 
 To set up disguise of (M - kitsune):
 	let R be a random number between 1 and 2;
@@ -144,7 +292,9 @@ To say HeldItems of (N - kitsune):
 
 Part 1 - Perception
 
-Definition: kitsune is objectifying the player: decide no.
+Definition: kitsune (called M) is objectifying the player:
+	now the objectification of M is 0;
+	decide no.
 Definition: kitsune is babifying the player: decide no.
 Definition: kitsune is normally annoyed: decide yes. [Kitsune never drops to unfriendly levels of favour]
 
