@@ -1,6 +1,7 @@
 Stop Button by Objects begins here.
 
-stop-button is a thing. stop-button is not portable. stop-button is in FinalBoss01. The printed name of stop-button is "[TQlink of item described]STOP button[TQxlink of item described][verb-desc of item described]". The text-shortcut of stop-button is "stp". Figure of stop button is the file "Env/Hotel/capsule1.jpg".
+stop-button is a thing. stop-button is not portable. stop-button is in FinalBoss01. The printed name of stop-button is "[TQlink of item described]STOP button[TQxlink of item described][verb-desc of item described]". The text-shortcut of stop-button is "stp".
+Figure of stop button is the file "Env/Hotel/capsule1.jpg".
 
 To decide which figure-name is the examine-image of (C - stop-button):
 	decide on figure of stop button.

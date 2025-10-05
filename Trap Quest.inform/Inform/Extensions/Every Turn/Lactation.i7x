@@ -124,6 +124,7 @@ To trigger lactation:
 			MilkDown M;
 			AnnouncedExpel milk on N by M;
 		otherwise if N is gloryhole:
+			unless the player is getting unlucky, now M is the milk volume of breasts;
 			if M is 1:
 				say "A few drops of [milk] squirt from your tender nipples and into whatever is causing the suction at the [printed name of N] that's currently gripping your [BreastDesc].[roman type][line break]";
 				MilkDown 1;

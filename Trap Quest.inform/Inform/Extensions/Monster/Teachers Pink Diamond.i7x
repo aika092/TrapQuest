@@ -348,7 +348,7 @@ To compute teaching of (L - enema-tag-lesson):
 						otherwise:
 							if ST is yourself:
 								reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
-								set numerical response 1 to "just stay still for now";
+								set numerical response 1 to "just stay still for now[if bellyFill is 0 and D2 is nextLapDistance] (you can refill your enema)[end if]";
 								set numerical response 2 to "abandon the race";
 								if the total squirtable fill of belly > 0, set numerical response 3 to "expel your enema";
 								compute multiple choice question;
@@ -543,8 +543,7 @@ To compute toilet predicament punishment:
 				now E is in the location of the player;
 			summon rubber mittens cursed with silent quest;
 		unless there is a worn gag or face is actually occupied:
-			let G be a random small ballgag;
-			summon G locked;
+			summon small-ballgag locked;
 		let friend be fancied-friend;
 		say "A monitor appears in front of you, showing a public bathroom stall. And then[one of], to your surprise,[or][stopping] your [RelationDesc of friend] [MediumDesc of friend] walks in, with a grimace on [his of friend] face and a bulging belly. [one of][line break][variable custom style]Wait, what? Is this real life? Are they stalking [him of friend] or something?[roman type][line break][or][stopping][big he of friend] groans as [he of friend] [if friend is presenting as female]drops [his of friend] panties from under [his of friend] skirt[otherwise]pulls down [his of friend] jeans[end if] and sits on the can.[line break][first custom style]'Nnghhh, why did I try the bean dip?!'[roman type][line break]You can hear [him of friend] mutter to [himself of friend] as [he of friend] quickly begins to let rip. It's disgustingly loud.[paragraph break]";
 		appropriate-cutscene-display Figure of pledge Lesson Toilet User Cutscene;

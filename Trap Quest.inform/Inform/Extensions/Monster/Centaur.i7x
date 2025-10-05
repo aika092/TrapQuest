@@ -37,15 +37,19 @@ To say MonsterComment of (M - centaur):
 			say "[second custom style][one of]I love how [he of M] just lets it all hang out.[or]That sword looks like it'd be fun to play with. [big his of M] blade seems kind of nice too.[or]Stop ogling me and fuck me already![in random order]";
 		say "[roman type][line break]".
 
-Definition: a centaur is raunchy: decide yes.
-Definition: a centaur is able to be waited upon: decide yes. [Despite not being human, she will drink your drinks]
-Definition: a centaur is a generic-unlocker: decide yes.
+Definition: centaur is raunchy: decide yes.
+Definition: centaur is able to be waited upon: decide yes. [Despite not being human, she will drink your drinks]
+Definition: centaur is a generic-unlocker: decide yes.
+Definition: centaur is a bondage applier: decide yes. [Do they sometimes apply bondage before and/or after punishing you?]
+Definition: centaur is eager to warn angrily:
+	if it is classicly eager to warn angrily, decide yes; [Warns and punishes resistance during non-oral sex]
+	decide no.
 
 Definition: centaur is presenting as male:
 	if lady fetish is 2, decide yes;
 	decide no.
 
-Definition: a centaur is woods dwelling:
+Definition: centaur is woods dwelling:
 	if diaper quest is 0 and mythical creature fetish is 1, decide yes;
 	decide no.
 
@@ -620,6 +624,26 @@ To say AnilingusInitiationFlav of (M - centaur):
 		say "You know what [he of M] wants, and almost unthinkingly, your lips part...";
 	otherwise:
 		say "You excitedly part your lips and let your tongue flick out to enjoy that first delightfully disgusting taste of sweaty butthole.".
+
+To say EnticeFlav of (M - centaur) with (B - face):
+	say "[BigNameDesc of M] smirks as [he of M] stares at your lips.[line break][speech style of M]'[one of]So, uh... Just how far can you open that mouth?'[or]Your mouth is pretty cute. I'd love to stuff it full of [DickDesc of M]!'[in random order][roman type][line break]".
+
+To say EnticeFlav of (M - centaur) with (B - breasts):
+	say "[BigNameDesc of M] smirks as [he of M] stares at your chest.[line break][speech style of M]'[one of]You look like you'd be real fun to tittyfuck.'[or]I'm loving the girls! Maybe you should pop 'em out and put 'em on my [DickDesc of M].'[in random order][roman type][line break]".
+
+To say EnticeFlav of (M - centaur) with (B - belly):
+	say "[BigNameDesc of M] stares at your face thoughtfully.[line break][speech style of M]'[one of]Hey, so... would you mind if I peed on you. I think it might be interesting.'[or]Ok, hear me out. What if... I peed on your face?'[in random order][roman type][line break]".
+
+To say EnticeFlav of (M - centaur) with (B - thighs):
+	if M is eager to do anilingus:
+		say "[BigNameDesc of M] pats [his of M] centaur lower body.[line break][speech style of M]'[one of]You look like you eat ass.'[or]Wanna kiss my asshole, hot stuff!'[in random order][roman type][line break]";
+	otherwise:
+		say "[BigNameDesc of M] shifts her weight.[line break][speech style of M]'[one of]So, wanna polish my nutsack or what?'[or]Mind kissing me on my sack?'[in random order][roman type][line break]";
+
+To say EnticeFlav of (M - centaur) with (F - a fuckhole):
+	let T be "[one of]asshole[or]butthole[or]backdoor[as decreasingly likely outcomes]";
+	if F is vagina, now T is "[one of][pussy][or][cunt][or]slit[as decreasingly likely outcomes]";
+	say "[BigNameDesc of M] smirks as [he of M] stares at your [if F is vagina]crotch[otherwise]butt[end if].[line break][speech style of M][one of]I'm too big for most [T]s, but I hope yours is different!'[or]I can't wait to stuff my [DickDesc of M] in your little [T], hot stuff!'[in random order][roman type][line break]".
 
 Part 4 - Conversation
 

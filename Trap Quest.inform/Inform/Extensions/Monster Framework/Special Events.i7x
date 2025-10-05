@@ -197,20 +197,21 @@ To DrinkPiss from (M - an object):
 	say "[one of]You have never experienced anything close to the humiliation of voluntarily drinking another person's [urine]. A small voice inside you is warning you that you can never go back to a time before you were literally used as a human toilet.[or]You once again [if there is a worn ringagged clothing]have no choice but to[otherwise]voluntarily[end if] gulp down the [urine], taking your place as a human toilet.[stopping][if the urine taste addiction of the player > 15][line break][second custom style][one of]Mmm, this tastes amazing![or]Delicious![or]Yummy![or]Scrumptious.[or]Tasty![then at random][roman type][line break][otherwise if the urine taste addiction of the player > 12][one of]You are really starting to enjoy the taste![or][stopping][otherwise if the urine taste addiction of the player > 6][one of]You are starting to get used to the taste, and don't find it as awful as you used to.[or][stopping][end if]";
 	StomachUrineUp 3;
 	compute unique piss drink effect of M;
-	if WC-plug-panties is worn:
-		say "[bold type]Your [if the player is possessing a vagina][fuckholes] feel[otherwise][asshole] feels[end if] amazing![roman type] Suddenly [if the player is possessing a vagina]you feel rushes of energy from your [WC-plug-panties], and now they are[otherwise]you feel a rush of energy from your [WC-plug-panties], and now it is[end if] completely healed! Wow!";
-		now the soreness of asshole is 0;
-		now the tolerated of asshole is 0;
-		now the soreness of vagina is 0;
-		now the tolerated of vagina is 0;
-	if WC hood is worn:
-		progress quest of human-toilet-quest;
-	otherwise if WC hood is off-stage and the raw urine taste addiction of the player > 2 and WC hood is actually summonable:
-		summon WC hood cursed;
-		say "[bold type]Suddenly your mouth is forced wide open as a [ShortDesc of WC hood] [bold type]appears around your head. You can't close it![line break][variable custom style][if the player is broken]I'm just a toilet. That's all I am now.[otherwise]I'm not a men's toilets! I'm a human being![end if][roman type][line break]";
-	otherwise if the raw urine taste addiction of the player > 2 and WC collar is actually summonable and (the class of the player is cumdumpster or the class of the player is condom collector or the player is getting unlucky):
-		say "[bold type]Suddenly, a [WC collar] [bold type]appears around your neck![line break][variable custom style][if the player is broken]I'm just a toilet. That's all I am now.[otherwise]I'm not a men's toilets! I'm a human being![end if][roman type][line break]";
-		summon WC collar cursed with quest.
+	if the player is not in a predicament room:
+		if WC-plug-panties is worn:
+			say "[bold type]Your [if the player is possessing a vagina][fuckholes] feel[otherwise][asshole] feels[end if] amazing![roman type] Suddenly [if the player is possessing a vagina]you feel rushes of energy from your [WC-plug-panties], and now they are[otherwise]you feel a rush of energy from your [WC-plug-panties], and now it is[end if] completely healed! Wow!";
+			now the soreness of asshole is 0;
+			now the tolerated of asshole is 0;
+			now the soreness of vagina is 0;
+			now the tolerated of vagina is 0;
+		if WC hood is worn:
+			progress quest of human-toilet-quest;
+		otherwise if WC hood is off-stage and the raw urine taste addiction of the player > 2 and WC hood is actually summonable:
+			summon WC hood cursed;
+			say "[bold type]Suddenly your mouth is forced wide open as a [ShortDesc of WC hood] [bold type]appears around your head. You can't close it![line break][variable custom style][if the player is broken]I'm just a toilet. That's all I am now.[otherwise]I'm not a public toilets! I'm a human being![end if][roman type][line break]";
+		otherwise if the raw urine taste addiction of the player > 2 and WC collar is actually summonable and (the class of the player is cumdumpster or the class of the player is condom collector or the player is getting unlucky):
+			say "[bold type]Suddenly, a [WC collar] [bold type]appears around your neck![line break][variable custom style][if the player is broken]I'm just a toilet. That's all I am now.[otherwise]I'm not a public toilets! I'm a human being![end if][roman type][line break]";
+			summon WC collar cursed with quest.
 
 [!<ComputeUniquePissDrinkEffectOfObject>+
 
@@ -1024,35 +1025,40 @@ To compute angry punishment of (M - a monster):
 		compute default angry punishment of M.
 
 To compute default angry punishment of (M - a monster):
-	let C be a random worn nudism-disabling currently at least partially visible stealable clothing; [ideally it wants to confiscate not destroy]
-	let stealableFound be 1;
-	if C is nothing:
-		now stealableFound is 0;
-		now C is a random worn nudism-disabling currently at least partially visible tearable clothing;
-	let D be a random top level protection nudism-disabling currently at least partially visible tearable clothing;
-	if stealableFound is 1:
-		let D be a random top level protection nudism-disabling currently at least partially visible stealable clothing;
-		if D is nothing and the largeness of breasts > 3, now D is a random top level breasts protection nudism-disabling currently at least partially visible stealable clothing;
-	otherwise:
-		if D is nothing and the largeness of breasts > 3, now D is a random top level breasts protection nudism-disabling currently at least partially visible tearable clothing;
-	if D is clothing, now C is D;
-	if stealableFound is 1:
-		compute M confiscating C;
-		if C is accessory and C is plentiful:
-			say angry punishment accessory confiscation of M;
+	now bondage-successfully-applied is false;
+	if M is a bondage applier, compute bondage application check of M;
+	if bondage-successfully-applied is false:
+		let C be a random worn nudism-disabling currently at least partially visible stealable clothing; [ideally it wants to confiscate not destroy]
+		let stealableFound be 1;
+		if C is nothing:
+			now stealableFound is 0;
+			now C is a random worn nudism-disabling currently at least partially visible tearable clothing;
+		let D be a random top level protection nudism-disabling currently at least partially visible tearable clothing;
+		if stealableFound is 1:
+			let D be a random top level protection nudism-disabling currently at least partially visible stealable clothing;
+			if D is nothing and the largeness of breasts > 3, now D is a random top level breasts protection nudism-disabling currently at least partially visible stealable clothing;
 		otherwise:
-			say angry punishment clothing confiscation of M on C;
-	otherwise if C is clothing:
-		say "[BigNameDesc of M] brutally rips your [C] from your [body area of C]. It is completely destroyed!";
-		say angry punishment clothing destruction of M on C;
-		destroy C;
-	otherwise:
-		SilentlyDifficultyUp M by 1;
-		say angry punishment difficulty gain of M.
+			if D is nothing and the largeness of breasts > 3, now D is a random top level breasts protection nudism-disabling currently at least partially visible tearable clothing;
+		if D is clothing, now C is D;
+		if stealableFound is 1:
+			compute M confiscating C;
+			if C is accessory and C is plentiful:
+				say angry punishment accessory confiscation of M;
+			otherwise:
+				say angry punishment clothing confiscation of M on C;
+		otherwise if C is clothing:
+			say "[BigNameDesc of M] brutally rips your [C] from your [body area of C]. It is completely destroyed!";
+			say angry punishment clothing destruction of M on C;
+			destroy C;
+		otherwise:
+			SilentlyDifficultyUp M by 1;
+			say angry punishment difficulty gain of M.
 
 To compute sissy punishment of (M - a monster):
+	let rule-failed be false;
+	if the rule failed, now rule-failed is true;
 	compute default angry punishment of M;
-	if the rule failed, compute sissification.
+	if rule-failed is true, compute sissification.
 
 [!<SayAngryFizzleOfMonster>+
 
@@ -1076,7 +1082,7 @@ To compute happy reward of (M - a monster):
 
 To compute default happy reward of (M - a monster):
 	FavourUp M by 1;
-	if M is friendly-fucking or diaper quest is 1:
+	if M is interested and (M is friendly-fucking or diaper quest is 1):
 		compute gifting reward of M;
 		if the loot dropped of M is 0 and M is gift giving:
 			say RewardEncouragementFlav of M;

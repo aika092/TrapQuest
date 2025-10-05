@@ -23,7 +23,7 @@ To decide which figure-name is the clothing-image of (C - silver-tiara):
 	decide on figure of silver tiara.
 
 To say ClothingDesc of (H - silver-tiara):
-	say "This silver [MediumDesc of H] looks like something a very important princess would wear. [one of]You can feel a small amount of magical energy coming from it[or]It glitters brilliantly even with no nearby bright light source[or]It feels completely weightless[sticky random].".
+	say "This [MediumDesc of H] looks like something a very important princess would wear. [one of]You can feel a small amount of magical energy coming from it[or]It glitters brilliantly even with no nearby bright light source[or]It feels completely weightless[sticky random].".
 
 To say MediumDesc of (H - silver-tiara):
 	say "silver royal tiara".
@@ -114,7 +114,7 @@ To say QuestTitle of (Q - unlock-quest):
 
 
 
-trashy-tiara is a tiara.
+trashy-tiara is a tiara. trashy-tiara is plastic.
 
 The printed name of trashy-tiara is "[clothing-title-before]trashy tiara[clothing-title-after]". The text-shortcut of trashy-tiara is "tti". Understand "trashy" as trashy-tiara.
 
@@ -124,7 +124,7 @@ To decide which figure-name is the clothing-image of (C - trashy-tiara):
 	decide on figure of trashy tiara.
 
 To say ClothingDesc of (H - trashy-tiara):
-	say "This silver [MediumDesc of H] is made of cheap plastic. It's a trashy fancy dress item, with very visibly fake diamonds and giant rubies shaped like hearts.".
+	say "This [MediumDesc of H] is made of cheap plastic. It's a trashy fancy dress item, with very visibly fake diamonds and giant rubies shaped like hearts.".
 
 To say MediumDesc of (H - trashy-tiara):
 	say "trashy plastic tiara".
@@ -153,7 +153,7 @@ To decide which figure-name is the clothing-image of (C - jewelled-tiara):
 	otherwise decide on figure of priceless jewelled tiara.
 
 To say ClothingDesc of (H - jewelled-tiara):
-	say "This silver [MediumDesc of H] is made of the most expensive, high-quality of metals. It has countless small diamonds and one giant ruby embedded in the frame.".
+	say "This [MediumDesc of H] is made of the most expensive, high-quality of metals. It has countless small diamonds and one giant ruby embedded in the frame.".
 
 To say MediumDesc of (H - jewelled-tiara):
 	say "priceless jewelled tiara".
@@ -170,7 +170,7 @@ jewelled-tiara is zap ready. jewelled-tiara is redness-positive. jewelled-tiara 
 To decide which number is the zap damage improvement of (W - jewelled-tiara):
 	let X be 4;
 	if savior's heels is worn, now X is 8;
-	decide on 5 + the charge of jewelled-tiara + the magic-modifier of jewelled-tiara.
+	decide on X + the charge of jewelled-tiara + the magic-modifier of jewelled-tiara.
 
 To compute attack of (W - jewelled-tiara) at (M - a monster):
 	say "[one of]You channel your thoughts into the gems in your headgear, and three beams of searing red energy burst out, hitting [NameDesc of M] and visibly burning [him of M]! Wow!!![or]You send three laser rays from your tiara to [NameDesc of M], burning [him of M][if the charge of W <= 2]. [bold type]But since you used your laser attack so recently, it's significantly weaker than usual.[roman type][line break][otherwise]![end if][stopping]".

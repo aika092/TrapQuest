@@ -5,6 +5,7 @@ A bodysuit is a kind of underdress. A bodysuit is fully covering. The skirt-leng
 This is the remove inappropriate bodysuits rule:
 	repeat with B running through catsuits:
 		now B is in Holding Pen;
+	now fishnet-patterned-romper is in Holding Pen;
 	now tight-green-romper is in Holding Pen;
 	now tight-grey-romper is in Holding Pen;
 	now plugsuit is in Holding Pen;
@@ -341,11 +342,41 @@ To decide which number is the crotch-tightness of (C - a busy patterned romper):
 	decide on 2.
 
 To decide which object is the unique-upgrade-target of (C - a busy patterned romper):
+	if diaper quest is 0 and fishnet-patterned-romper is off-stage, decide on fishnet-patterned-romper;
 	if diaper quest is 1 and a random number between 1 and 2 is 1, decide on a random off-stage pink baby romper;
 	decide on a random off-stage plaid skimpy romper.
 
 Definition: a busy patterned romper is black themed: decide yes.
 Definition: a busy patterned romper is white themed: decide yes.
+
+Part - Fishnet Pattern Romper
+
+fishnet-patterned-romper is a romper. fishnet-patterned-romper is sheer-when-wet. fishnet-patterned-romper is arm exposing. The text-shortcut of fishnet-patterned-romper is "fpr". The printed name of fishnet-patterned-romper is "[clothing-title-before]fishnet patterned romper[clothing-title-after]". Understand "fishnet", "patterned", "romper" as fishnet-patterned-romper.
+
+Figure of fishnet patterned romper is the file "Items/Clothes/Upper/Rompers/romper13.png".
+
+To decide which figure-name is clothing-image of (C - fishnet-patterned-romper):
+	decide on figure of fishnet patterned romper.
+
+To say ClothingDesc of (C - fishnet-patterned-romper):
+	say "This white outfit is an armless single-piece bodysuit that goes down to your ankles. It has quite a busy criss-cross pattern, reminiscent of fishnet. Fortunately, it is a solid piece of fabric, much more modest than real fishnet!".
+
+To say ShortDesc of (C - fishnet-patterned-romper):
+	say "romper".
+To say MediumDesc of (C - fishnet-patterned-romper):
+	say "fishnet romper".
+
+To decide which number is the initial outrage of (C - fishnet-patterned-romper):
+	decide on 4.
+To decide which number is the crotch-tightness of (C - fishnet-patterned-romper):
+	decide on 2.
+
+To decide which object is the unique-upgrade-target of (C - fishnet-patterned-romper):
+	if tough-shit is 1, decide on a random off-stage fishnet dress;
+	decide on nothing.
+
+Definition: fishnet-patterned-romper is pink themed: decide yes.
+Definition: fishnet-patterned-romper is white themed: decide yes.
 
 Part - Police Uniform
 

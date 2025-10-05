@@ -243,6 +243,7 @@ To say DungeonSmokeDeclarationFlav of (M - a monster):
 
 To compute dungeon wand donation of (M - a monster):
 	if glittery-wand is off-stage:
+		blandify and reveal glittery-wand;
 		now glittery-wand is in the location of the player;
 		say "[speech style of M]'Here, something to entertain yourself with if you get too horny.'[roman type][line break][BigNameDesc of M] throws a [glittery-wand] within your reach.[roman type][line break]".
 

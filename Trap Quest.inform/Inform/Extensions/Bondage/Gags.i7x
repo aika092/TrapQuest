@@ -4,10 +4,16 @@ A gag is a kind of bondage. A gag is usually unique. A gag is usually leather. T
 
 Definition: a gag is disembodied rather than embodied: decide yes. [When penetrating an orifice, can it fit underneath other clothing like a sex toy? Or will clothing get in the way, e.g. a dildo pole?]
 
-A ballgag is a kind of gag. A ballgag is transformation-rare.
+A ballgag is a kind of gag. A ballgag is transformation-rare. Understand "ballgag" as a ballgag.
 
 Definition: a ballgag is same-type:
 	if theme-share-target is ballgag, decide yes;
+	decide no.
+
+Definition: a ballgag (called C) is application appropriate:
+	if C is fetish appropriate:
+		if early-bondage-check is true and (face is an actual target or belly is an actual target), decide no;
+		decide yes;
 	decide no.
 
 This is the ball gag oral slut rule:
@@ -32,39 +38,41 @@ Definition: yourself is mouthblocked: [not just gags]
 			decide yes;
 	decide no.
 
-To decide which number is the initial outrage of (C - a small ballgag):
-	decide on 3.
+To decide which number is the initial outrage of (C - a ballgag):
+	decide on 4.
 
-To decide which number is the initial outrage of (C - a large ballgag):
+To decide which number is the initial outrage of (C - large-ballgag):
 	decide on 6.
 
-To decide which number is the initial outrage of (C - a huge ballgag):
-	decide on 10.
+To decide which number is the initial outrage of (C - huge-ballgag):
+	decide on 8.
 
 To decide which number is the intelligence-influence of (C - a ballgag):
 	let S be -1;
 	increase S by the magic-modifier of C;
 	decide on S.
 
-To decide which number is the intelligence-influence of (C - a large ballgag):
+To decide which number is the intelligence-influence of (C - large-ballgag):
 	let S be -2;
 	increase S by the magic-modifier of C;
 	decide on S.
 
-To decide which number is the intelligence-influence of (C - a huge ballgag):
+To decide which number is the intelligence-influence of (C - huge-ballgag):
 	let S be -4;
 	increase S by the magic-modifier of C;
 	decide on S.
 
-A small ballgag is a kind of ballgag. There is 1 small ballgag. The printed name of small ballgag is "[clothing-title-before]small ballgag[clothing-title-after]". The text-shortcut of small ballgag is "sga".
-Definition: a small ballgag is red themed: decide yes.
-Definition: a small ballgag is IcarusScienceAppropriate:
+small-ballgag is a ballgag. The printed name of small-ballgag is "[clothing-title-before]small ballgag[clothing-title-after]". The text-shortcut of small-ballgag is "sga". Understand "small" as small-ballgag.
+Definition: small-ballgag is red themed: decide yes.
+Definition: small-ballgag is IcarusScienceAppropriate:
 	if diaper quest is 0 and it is actually summonable, decide yes;
 	decide no.
-A large ballgag is a kind of ballgag. There is 1 large ballgag. The printed name of large ballgag is "[clothing-title-before]large ballgag[clothing-title-after]". The text-shortcut of large ballgag is "lga".
-Definition: a large ballgag is white themed: decide yes.
-A huge ballgag is a kind of ballgag. There is 1 huge ballgag. The printed name of huge ballgag is "[clothing-title-before]huge ballgag[clothing-title-after]". The text-shortcut of ballgag is "hga".
-Definition: a huge ballgag is red themed: decide yes.
+large-ballgag is a ballgag. The printed name of large-ballgag is "[clothing-title-before]large ballgag[clothing-title-after]". The text-shortcut of large-ballgag is "lga". Understand "large" as large-ballgag.
+Definition: large-ballgag is white themed: decide yes.
+Definition: large-ballgag is application appropriate: decide no.
+huge-ballgag is a ballgag. The printed name of huge-ballgag is "[clothing-title-before]huge ballgag[clothing-title-after]". The text-shortcut of huge-ballgag is "hga". Understand "huge" as huge-ballgag.
+Definition: huge-ballgag is red themed: decide yes.
+Definition: huge-ballgag is application appropriate: decide no.
 
 To compute SelfExamineDesc of (C - a ballgag):
 	say "You are not able to speak due to your mouth being filled by [ShortDesc of C]. ".
@@ -77,55 +85,61 @@ Figure of small ballgag full is the file "Items/Accessories/Head/ballgag1b.png".
 Figure of large ballgag is the file "Items/Accessories/Head/ballgag2.png".
 Figure of huge ballgag is the file "Items/Accessories/Head/ballgag3.png".
 
-To decide which figure-name is clothing-image of (C - a small ballgag):
+To decide which figure-name is clothing-image of (C - small-ballgag):
 	decide on figure of small ballgag.
-To decide which figure-name is icarus-clothing-image of (C - a small ballgag):
+To decide which figure-name is icarus-clothing-image of (C - small-ballgag):
 	decide on figure of small ballgag full.
 
-To decide which figure-name is clothing-image of (C - a large ballgag):
+To decide which figure-name is clothing-image of (C - large-ballgag):
 	decide on figure of large ballgag.
 
-To decide which figure-name is clothing-image of (C - a huge ballgag):
+To decide which figure-name is clothing-image of (C - huge-ballgag):
 	decide on figure of huge ballgag.
 
-To say ClothingDesc of (C - a small ballgag):
+To say ClothingDesc of (C - small-ballgag):
 	say "This small red ballgag stops you from speaking but without stretching your jaw too badly in the process.".
 
-To say ClothingDesc of (C - a large ballgag):
-	say "This large white ballgag stops you from speaking and keeps your jaw constantly stretched.[if item described is worn by the player]This constant aching makes it harder to concentrate.[end if]".
+To say ClothingDesc of (C - large-ballgag):
+	say "This large white ballgag stops you from speaking and keeps your jaw constantly stretched[if C is worn]. This constant aching makes it harder to concentrate.[end if].".
 
-To say ClothingDesc of (C - a huge ballgag):
-	say "This enormous red ballgag stops you from speaking and keeps your jaw locked as wide as it could ever possibly go.[if C is worn by the player]Your mind is so fixed on the uncomfortable and constant aching of your mouth that you struggle to think about anything else.[end if]".
+To say ClothingDesc of (C - huge-ballgag):
+	say "This enormous red ballgag stops you from speaking and keeps your jaw locked as wide as it could ever possibly go[if C is worn]. Your mind is so fixed on the uncomfortable and constant aching of your mouth that you struggle to think about anything else[end if].".
 
-To decide which object is the unique-upgrade-target of (C - a small ballgag):
+To decide which object is the unique-upgrade-target of (C - small-ballgag):
 	if there is worn swimming themed wearthing and there is an off-stage rubber duck gag, decide on a random off-stage rubber duck gag;
 	if diaper quest is 1, decide on a random off-stage fetish appropriate baby pacifier;
-	decide on nothing.
+	decide on nothing. [other sizes can apepar if fetish appropriate]
 
-To decide which object is the unique-upgrade-target of (C - a large ballgag):
+To decide which object is the unique-upgrade-target of (C - large-ballgag):
 	if diaper quest is 1, decide on a random off-stage fetish appropriate baby pacifier;
 	decide on nothing.
 
-Definition: A ballgag is fetish appropriate:
+Definition: a ballgag is fetish appropriate:
 	if diaper quest is 0, decide yes;
 	decide no.
 
-A bit gag is a kind of ballgag. There is 1 bit gag. The printed name of bit gag is "[clothing-title-before]bit gag[clothing-title-after]". The text-shortcut of bit gag is "btg".
+bit-gag is a ballgag. The printed name of bit-gag is "[clothing-title-before]bit gag[clothing-title-after]". The text-shortcut of bit-gag is "btg". Understand "bit" as bit-gag.
 
-To say ShortDesc of (C - a bit gag):
+To say ShortDesc of (C - a bit-gag):
 	say "bit gag".
 
 Figure of bit gag is the file "Items/Accessories/Head/bitgag1.jpg".
 
-To decide which figure-name is clothing-image of (C - a bit gag):
+To decide which figure-name is clothing-image of (C - bit-gag):
 	decide on figure of bit gag.
 
-To say ClothingDesc of (C - a bit gag):
+To say ClothingDesc of (C - bit-gag):
 	say "This red cylindrical gag stops you from speaking properly but without stretching your jaw too badly in the process.".
 
-Definition: a bit gag is dog themed: decide yes.
-Definition: a bit gag is orange themed: decide yes.
-Definition: a bit gag is fetish appropriate: decide no. [Never appears randomly]
+To decide which number is the initial outrage of (C - bit-gag):
+	decide on 6.
+To decide which number is the intelligence-influence of (C - bit-gag):
+	let S be 0;
+	increase S by the magic-modifier of C;
+	decide on S.
+
+Definition: bit-gag is orange themed: decide yes.
+Definition: bit-gag is fetish appropriate: decide yes. [Never appears randomly]
 
 mask-gag is a ballgag. The printed name of mask-gag is "[clothing-title-before]gag behind face mask[clothing-title-after]". The text-shortcut of mask-gag is "mskg".
 
@@ -152,9 +166,9 @@ Definition: outrageous-gag (called A) is applicable:
 	decide no.
 To reflect on (A - outrageous-gag):
 	let G be a random worn gag;
-	let Its-making-me-drool be "I can't even talk with this ballgag in my mouth[if the latex-transformation of the player < 8], and it's making me drool everywhere. Yuck![otherwise] - [one of]not that I even can make words anymore with this stupid doll mouth.[or]not that I can form words with this stupid stuck-in-an-[']O[']-shape mouth.[or]not that I can even talk while this stupid curse has turned me into a darn doll![or]not that I could talk even if it was removed. Wah![in random order][end if]"; [#LXorDD]
-	if G is small ballgag, say "[variable custom style][Its-making-me-drool]";
-	if G is large ballgag or G is huge ballgag, say "[variable custom style][if the intelligence of the player < 9]Ow ow ow, this ballgag is making my jaw ache! Get it off![otherwise][Its-making-me-drool][end if]";
+	let Its-making-me-drool be "I can't even talk with this gag in my mouth[if the latex-transformation of the player < 8], and it's making me drool everywhere. Yuck![otherwise] - [one of]not that I even can make words anymore with this stupid doll mouth.[or]not that I can form words with this stupid stuck-in-an-[']O[']-shape mouth.[or]not that I can even talk while this stupid curse has turned me into a darn doll![or]not that I could talk even if it was removed. Wah![in random order][end if]"; [#LXorDD]
+	if G is small-ballgag, say "[variable custom style][Its-making-me-drool]";
+	if G is large-ballgag or G is huge-ballgag, say "[variable custom style][if the intelligence of the player < 9]Ow ow ow, this ballgag is making my jaw ache! Get it off![otherwise][Its-making-me-drool][end if]";
 	if G is cock pacifier, say "[variable custom style][if the oral sex addiction of the player > 6]I guess it's pretty embarrassing to have this fake [manly-penis] in my mouth, but at least it keeps me hydrated! Yum![otherwise]This [manly-penis] pacifier is so humiliating. Not only can everyone see that I've got a pacifier in my mouth, but while it's in my mouth I'm basically permanently sucking [manly-penis]![end if]";
 	if G is opengag, say "[variable custom style]I can't even talk with this gag in my mouth, and it makes me look like I'm always ready to suck dick. Yuck!";
 	say "[roman type][line break]".

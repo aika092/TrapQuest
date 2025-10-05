@@ -19,6 +19,10 @@ Understand "purified" as gladiator when the item described is purified.
 Definition: a gladiator is wenchy: decide yes.
 
 Definition: a gladiator is a generic-unlocker: decide yes.
+Definition: a gladiator is a bondage applier: decide yes. [Do they sometimes apply bondage before and/or after punishing you?]
+Definition: a gladiator is eager to warn angrily:
+	if it is classicly eager to warn angrily, decide yes; [Warns and punishes resistance during non-oral sex]
+	decide no.
 
 Definition: a gladiator is raunchy:
 	if it is male, decide yes;
@@ -844,7 +848,7 @@ This is the gladiator demon conversion rule:
 	let M be current-monster;
 	if M is uninterested and M is not male, rule succeeds;[Handled first so we know the gladiator doesn't want to do anything to you this turn.]
 	if debugmode > 1, say "delayed stand is [delayed stand]";
-	if M is not male and the player is soulless and the class of the player is not succubus and the class of the player is not avatar and M is not wild gladiator and delayed stand is 0:[This prevents a glitch with autostanding and the gladiator dragging]
+	if M is not male and the player is soulless and the class of the player is not succubus and the class of the player is not avatar and M is not wild gladiator and delayed stand is 0 and the number of worn indestructible headgear is 0:[This prevents a glitch with autostanding and the gladiator dragging]
 		let player-moved be 0;
 		now the target-room of M is Dungeon33;
 		if the location of the player is Dungeon33:
@@ -1111,7 +1115,7 @@ To decide which number is (M - a gladiator) pierce success: [0 means failure, 2 
 To compute post climax effect of (M - a gladiator) in (F - a fuckhole):
 	if M is not wild gladiator and M is not enlightened gladiator:
 		if F is asshole, check post climax anal urination of M;
-		compute M sleeping 200 after sex.
+		if M is normally annoyed, compute M sleeping 200 after sex.
 
 To decide if (M - a gladiator) is willing to creampie (F - vagina):
 	if the player is a pussy slut, decide yes;

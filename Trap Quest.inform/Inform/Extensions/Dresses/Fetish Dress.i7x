@@ -179,7 +179,7 @@ Definition: windowed fetish dress is white themed: decide yes.
 
 Part 6 - Black Fetish Hobble Dress
 
-black fetish hobble dress is a fetish dress. The skirt-length of black fetish hobble dress is 9. black fetish hobble dress is crotch-skirted. black fetish hobble dress is very low cut. black fetish hobble dress is optional-top-displacable. The text-shortcut of black fetish hobble dress is "bld".
+black fetish hobble dress is a fetish dress. The skirt-length of black fetish hobble dress is 5. black fetish hobble dress is crotch-skirted. black fetish hobble dress is very low cut. black fetish hobble dress is optional-top-displacable. The text-shortcut of black fetish hobble dress is "bld".
 
 Definition: black fetish hobble dress is class-relevant:
 	if the class of the player is maid or the class of the player is latex fetish model, decide yes;
@@ -192,7 +192,7 @@ To decide which figure-name is clothing-image of (C - black fetish hobble dress)
 	decide on figure of latex dress 6.
 
 To say ClothingDesc of (O - black fetish hobble dress):
-	say "This tight black latex dress has a hobble style skirt which forces the wearer to walk with short steps. The deep neckline and bottom of the dress have a white pattern that vaguely resembles a maid's outfit.".
+	say "This tight black latex dress doesn't look like it, but it actually has an extremely rigid hem with absolutely no give or flexibilitiy. This means that despite its short length, it's actually secretly [bold type]a hobble style skirt which forces the wearer to walk with short steps, [roman type]and is so tight and rigid that [bold type]you can't even pull it up your legs any further! [roman type]The deep neckline and bottom of the dress have a white pattern that vaguely resembles a maid's outfit.".
 
 To decide which number is the initial outrage of (C - black fetish hobble dress):
 	decide on 8.
@@ -207,6 +207,8 @@ To decide which number is the strength-influence of (O - black fetish hobble dre
 Definition: black fetish hobble dress is transformation-protected:
 	if the class of the player is maid, decide yes;
 	decide no.
+Definition: black fetish hobble dress is displacable: decide no.
+Definition: black fetish hobble dress is hobble-skirted: decide yes.
 
 To say TransformReaction of (C - black fetish hobble dress):
 	if the outrage of C is too humiliating:

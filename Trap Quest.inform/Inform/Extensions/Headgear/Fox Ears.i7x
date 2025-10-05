@@ -1,12 +1,14 @@
 Fox Ears by Headgear begins here.
 
-fox ears is a headgear. fox ears is biological. fox ears is dexterity-influencing. fox ears is blondeness-positive. fox ears is brightness-negative. fox ears is redness-positive. fox ears has a number called charge.
+fox ears is a headgear. fox ears is velvet. fox ears is dexterity-influencing. fox ears is blondeness-positive. fox ears is brightness-negative. fox ears is redness-positive. fox ears has a number called charge.
 Definition: fox ears is brown themed: decide yes.
 
 The printed name of fox ears is "[clothing-title-before]fox ears[clothing-title-after]".
 The text-shortcut of fox ears is "fe".
 
 Figure of fox ears is the file "Items/Accessories/Head/foxears1.png".
+
+Definition: fox ears is roleplay: decide yes.
 
 To decide which figure-name is the clothing-image of (C - fox ears):
 	decide on figure of fox ears.

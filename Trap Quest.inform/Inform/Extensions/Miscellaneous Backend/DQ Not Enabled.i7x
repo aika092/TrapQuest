@@ -49,6 +49,7 @@ Include Dildo Rocking Stool by Furniture.
 
 Include Lake Monster by Objects.
 Include Slimegirl by Objects.
+Include Goddess by Objects.
 
 Include Patterned Sacks of Holding by Bags of Holding.
 Include Pink Sacks of Holding by Bags of Holding.

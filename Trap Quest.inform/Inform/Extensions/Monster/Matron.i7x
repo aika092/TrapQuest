@@ -64,6 +64,7 @@ This is the spawn initial matron rule:
 The spawn initial matron rule is listed in the setting up hotel monsters rules.
 
 Definition: matron is human: decide yes.
+Definition: matron is willing to have time out: decide no.
 
 Part 1 - Misc Flavour
 
@@ -414,11 +415,10 @@ To compute diaper change during cummies reward of (M - matron):
 	say "[speech style of M]'Oh deary me. Little [boy of the player]s aren't supposed to be able to have squirties like this. How indecent!'[roman type][line break][big he of M] chides you, as if [he of M] wasn't responsible for it happening in the first place.";
 	let C be nothing;
 	if bondage protection < 2, now C is a random off-stage fetish appropriate chastity cage;
-	let K be a random off-stage specific-key;
-	if C is clothing and K is specific-key:
-		summon C uncursed;
+	if C is clothing:
+		summon C locked;
 		say "[speech style of M]'Don't worry, I have just the thing to make sure this never happens again!'[roman type][line break][BigNameDesc of M] places a [C] over your [player-penis]!";
-		compute M locking C with K.
+		compute M keylocking C.
 
 
 Definition: matron (called M) is diaper change chastity cummies rewarding:
@@ -641,7 +641,7 @@ To compute confiscate of (M - matron):
 		satisfy M;
 	otherwise if victorian-baby-bonnet is off-stage and victorian-baby-bonnet is actually summonable:
 		summon victorian-baby-bonnet cursed;
-		say "[BigNameDesc of M] strokes your [ShortHairDesc].[line break][speech style of M]'I've decided to make you my personal baby! We're going to have such fun together!'[roman type][line break][big he of M] puts a [ShortDesc of victorian-baby-bonnet] on your head![line break][if the diaper addiction of the player < 10][variable custom style]Do I not get a say in this?[otherwise if the diaper addiction of the player < 15][variable custom style]Well this might take some getting used to![otherwise][second custom style]Yay! I want to stay with Nanny forever![end if][roman type][line break]";
+		say "[BigNameDesc of M] strokes your [MediumDesc of hair].[line break][speech style of M]'I've decided to make you my personal baby! We're going to have such fun together!'[roman type][line break][big he of M] puts a [ShortDesc of victorian-baby-bonnet] on your head![line break][if the diaper addiction of the player < 10][variable custom style]Do I not get a say in this?[otherwise if the diaper addiction of the player < 15][variable custom style]Well this might take some getting used to![otherwise][second custom style]Yay! I want to stay with Nanny forever![end if][roman type][line break]";
 		satisfy M;
 	otherwise:
 		compute enema of M.
@@ -735,10 +735,8 @@ To say BabywearDonationDeclarationFlav of (M - matron) on (C - a clothing):
 
 To compute (M - a monster) babywear donating (C - a clothing):
 	say BabywearDonationFlav of M on C;
-	summon C uncursed;
-	let K be a random off-stage specific-key;
-	if K is a specific-key, compute M locking C with K;
-	otherwise lock C;
+	summon C locked;
+	compute M keylocking C;
 	say FullExamineDesc of C.
 
 Check going when matron is in the location of the player:

@@ -449,7 +449,7 @@ To compute treasure diving in (WB - WoodsScenery01) at (L - a number):
 			otherwise:
 				say "You find a rusted coin. You leave it behind as you swim back to the surface.";
 		otherwise if N > 5:[wasp wing, if possible]
-			if wasp wing is off-stage and mythical creatures fetish is 1 and egg laying fetish is 1:
+			if wasp wing is off-stage and mythical creature fetish is 1 and egg laying fetish is 1:
 				say "[bold type]You find a wasp wing among the rocks.[roman type] You carry it with you on your journey back to the surface.";
 				now wasp wing is carried by the player;
 			otherwise:
@@ -507,5 +507,13 @@ Carry out talking slimegirl:
 					say "[second custom style]'I don't, but you could always find a naughty monster and eat his yummy cum!'[roman type][line break]";
 				otherwise:
 					say "[second custom style]'Hah, now you know how I feel!'[roman type][line break]".
+
+To construct normal buttons for (T - slimegirl):
+	if the player is silently able to manually speak and ButtonTableFull is 0:
+		choose a blank row in the Table of Buttons;
+		now the ButtonImage entry is Figure of GreetButton;
+		now the ButtonCommand entry is "talk to [text-shortcut of T]";
+		now the ButtonPriority entry is 1;
+		now the ButtonColour entry is lightModeFullGreen.
 
 Slimegirl ends here.

@@ -332,6 +332,7 @@ To AltarPray (P - a person):
 					summon T;
 					now T is blessed;
 					say "You feel your [asshole] being forced open as a [printed name of T] materialises in your ass.";
+					ruin asshole;
 					break;
 			if permanent makeup is 1:
 				say "The make up on your face feels less... permanent. Maybe it will start to fade soon!";
@@ -398,7 +399,11 @@ To AltarPray (P - a person):
 					summon angel tattoo;
 					say "A tattoo of an angel appears on your right arm. You feel less slutty!";
 					break;
-		if the pregnancy of the player is 0 and the womb volume of vagina is 0 and runic headband is actually summonable:
+		if the player is a september 2025 top donator and pregnancy fetish is 1 and the children of the player > 0 and the-goddess is off-stage and the player is possessing a vagina and fertility-idol-errand is appropriate and runic headband is not worn and the class of the player is not priestess:
+			say "A shimmering blue light surrounds the statue and pure visible energy rushes around the statue, transforming it into a real pregnant woman![line break][second custom style]'I'm... Corporeal? That's... Not what I meant to do. I was trying to bless you with... How strange... Oh well. This is new. Greetings mortal, it is I, your goddess, turned into flesh in your presence. Um, this is a rare honour. I don't usually do this. To be honest, it was kind of an accident. Perhaps it's because you are already a mother...'[roman type][line break]";
+			destroy dungeon altar;
+			now the-goddess is in the location of the player;
+		otherwise if the pregnancy of the player is 0 and the womb volume of vagina is 0 and runic headband is actually summonable:
 			say "A shimmering blue light surrounds you as your pure visible energy rushes around your body and then settles into the form of some kind of religious headband. A voice sounds in your head:[line break][second custom style]'Loyal Sister, you have been chosen to follow the holy path of righteousness! Go, with grace, but do not forget your duties.'[roman type][line break]";
 			summon runic headband cursed;
 			if the player is possessing a vagina and the vaginalvirgin of the player is 0:
@@ -575,7 +580,7 @@ To WitchCheck (M - witch):
 			anger witch;
 			interest witch;
 			now witch is unleashed;
-		if witch is alive, progress quest of stealing-quest;
+		progress quest of stealing-quest;
 	otherwise if witch is bitchy:
 		decrease the altar-uses of witch by 1.
 
@@ -589,7 +594,7 @@ To ElderEmpower (T - a headgear):[default]
 To ElderEmpower (W - laurel wreath):
 	say "You feel cold and wet on your arms as the manacles suddenly turn into tentacles! More tentacles appear on either side and begin to thrash out at everything you're wearing below your head!";
 	repeat with C running through worn clothing:
-		if C is not laurel wreath and (C is destructible or C is overdress) and C is not equippable and C is not bondage:
+		if C is not laurel wreath and C is not bag of holding and C is not equippable and C is not bondage:
 			say "Your [C] is torn apart!";
 			destroy C;
 	say "Your clothing removed, you begin to feel terrible foreboding. But as suddenly as they appeared, the tentacles simply vanish. As you consider how lucky you were, though, a sudden pain from your neck rips through your body! You get up with a start, and feel a warm, pulsing lump attached to you. One that should definitely be there. It's definitely okay that it is there. As you think this, purple tentacles come out of it and wrap around your body, accentuating your curves. How thoughtful.";
@@ -611,6 +616,7 @@ To ElderEmpower (T - runic headband):
 	if R is actually summonable and R is off-stage:
 		say "You feel your [asshole] being forced open as a [ShortDesc of R] materialises in your ass.";
 		summon R cursed;
+		ruin asshole;
 		reset elder altar.
 
 To ElderEmpower (T - a cultist veil):
@@ -619,6 +625,7 @@ To ElderEmpower (T - a cultist veil):
 		say "You feel your [asshole] being forced open as a [ShortDesc of R] materialises in your ass.";
 		summon R;
 		now R is cursed;
+		ruin asshole;
 		reset elder altar.
 
 To ElderOffer:
@@ -950,7 +957,7 @@ To DevilPray (P - a person):
 		say "The statue's eyes glow with multicoloured light as a [if lady fetish is 1]husky, feminine[otherwise]deep, masculine[end if] voice echoes in your ear.[line break][first custom style]'A virgin, with a void for a soul... It would be a waste to make you an altar girl! That tight little hole in your chest is begging to be filled!'[roman type][line break]The statue's arms suddenly spring to life, grabbing either side of your head and forcing you to look directly into the its eyes as you feel *something* pressing in on you from *somewhere*. The empty feeling in your chest turns into a slow, painful sensation of stretching, and you let out a groan of pain as something HUGE and warm forces its way into your very core. Brand new horns push their way out of your forehead. Finally, a golden tiara and hood materialises on your head.[line break][first custom style]'Hm, looks like you weren't able to take all of me, but no matter. I am your master now, [NameBimbo], so get to work collecting souls while I work on improving your vessel.'[roman type][line break]";
 		summon avatar-headpiece cursed;
 		now avatar-summoned is true;
-	otherwise if R is 0 and gold-tiara is off-stage and gold-tiara is actually summonable: [having sex with a demon at least once will give the player the worshipper headgear]
+	otherwise if R is 0 and gold-tiara is off-stage and gold-tiara is actually summonable:
 		say "The statue's face seems to grin as a golden tiara materialises on your head.";
 		summon gold-tiara cursed;
 	otherwise if diaper quest is 0 and mechanic is alive and bride-consort is throne and (the class of the player is bride or the class of the player is "princess" or the class of the player is "deepthroat princess" or the class of the player is "trained fuck princess" or the class of the player is "virgin warrior princess"):

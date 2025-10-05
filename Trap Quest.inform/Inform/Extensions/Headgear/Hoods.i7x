@@ -228,6 +228,7 @@ To set up influence of (C - WC hood):
 
 Definition: WC hood is roleplay:
 	if watersports fetish is 1, decide yes;
+	if watersports fetish + diaper quest is 0, decide yes;
 	decide no.
 Definition: WC hood is white themed: decide yes.
 
@@ -515,6 +516,7 @@ To say ShortDesc of (H - cat-hood):
 
 Definition: cat-hood is roleplay:	decide no.
 Definition: cat-hood is white themed: decide yes.
+Definition: cat-hood is cat themed: decide yes.
 
 To decide which number is the initial outrage of (C - cat-hood):
 	decide on 4.

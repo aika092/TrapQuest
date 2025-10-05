@@ -6,6 +6,12 @@ To decide which number is the penis-size-cap of (C - a chastity bond): [how long
 	decide on 0.
 
 Definition: a chastity bond is crotch-pullup: decide no.
+Definition: a chastity bond (called C) is application appropriate:
+	if early-bondage-check is true and (vagina is an actual target or penis is an actual target), decide no;
+	if C is chastity-belt and the pregnancy of the player > 0, decide no;
+	if C is fetish appropriate and the coverer of C is nothing:
+		unless C is chastity-belt and C is not actually autowearable, decide yes;
+	decide no.
 
 To decide which number is the delicateness-influence of (C - a chastity bond):
 	decide on 1.
@@ -169,7 +175,7 @@ To say ClothingDesc of (C - plastic-cage):
 	say "A tight plastic cage with a tiny slot-like opening at the end. It stops you from getting an erection or stimulating your penis in any way.";
 	say ChastityComment of C.
 
-Definition: a chastity cage is pink themed: decide yes.
+Definition: plastic-cage is pink themed: decide yes.
 
 To decide which figure-name is clothing-image of (C - a plastic-cage):
 	decide on figure of male chastity cage plastic.

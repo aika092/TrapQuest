@@ -77,7 +77,7 @@ Definition: a thing is drill stuck:
 	decide no.
 
 Definition: yourself is dildo stuck:
-	if there is a dildo trap penetrating a fuckhole or there is a dildo trap grabbing the player, decide yes;
+	if there is a dildo trap penetrating a fuckhole or there is a dildo trap grabbing the player or segway-predicament is penetrating a fuckhole, decide yes;
 	decide no.
 
 [doll-stuck is meant to be used in remarks that refer to you being stuck on a dildo trap that's trying to

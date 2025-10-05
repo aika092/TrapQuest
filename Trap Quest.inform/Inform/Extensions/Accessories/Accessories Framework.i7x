@@ -5,6 +5,7 @@ To decide which number is the default-soak-limit of (C - an accessory): decide o
 
 An accessory can be sapphire, emerald, ruby, pink diamond, pure diamond, solid gold (this is the accessory-colour property). Understand the accessory-colour property as describing an accessory when the item described is plentiful. Understand "solid", "gold" as the accessory when the item described is solid gold. Understand "pure", "diamond" as the accessory when the item described is pure diamond. Understand "pink", "diamond" as the accessory when the item described is pink diamond.
 
+Definition: an accessory is discovered varied: decide no.
 Definition: an accessory is too boring: decide no.
 Definition: an accessory is magic-enhanceable: decide no.
 Definition: an accessory is cursable:
@@ -23,8 +24,6 @@ To decide which number is the heaviness of (C - an accessory):
 	if C is necklace, decide on 3;
 	if C is bracelet, decide on 2;
 	decide on 1.
-
-Definition: an accessory is discovered varied: decide no.
 
 To say ClothingDesc of (A - an accessory):
 	if A is necklace:

@@ -35,7 +35,7 @@ To decide which text is jewellery-shortcut of (A - armband):
 	decide on "ab".
 
 To decide which number is the rank of (Y - yourself):
-	if armband is worn:
+	if armband is worn or the player is in a predicament room:
 		if the armband-print of armband is "new recruit", decide on 0;
 		if armband is sapphire, decide on 1;
 		if armband is emerald, decide on 2;

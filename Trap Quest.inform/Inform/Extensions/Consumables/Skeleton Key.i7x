@@ -10,6 +10,9 @@ To decide which figure-name is the examine-image of (K - an unlock-key):
 
 Definition: an unlock-key is immune to change: decide yes.
 
+To decide what number is the original price of (C - an unlock-key):
+	decide on 5.
+
 A specific-key is a kind of unlock-key. There are 8 specific-keys. The printed name of specific-key is "[TQlink of item described]key[lock-desc][shortcut-desc][TQxlink of item described][verb-desc of item described]".
 When play begins:
 	let V be 1;
@@ -68,6 +71,12 @@ To compute (M - a monster) locking (C - a clothing) with (K - an object):
 	otherwise:
 		say "Bug: [C] is not worn when we tried to get [M] to lock it on you.".
 
+recently-used-key is an object that varies.
+
+To compute (M - a monster) keylocking (C - a clothing):
+	now recently-used-key is random off-stage specific-key;
+	if recently-used-key is a thing, compute M locking C with recently-used-key.
+
 To say LockDeclarationFlav of (M - a monster) for (C - a clothing):
 	if M is intelligent, say "[speech style of M]'[one of]I reckon this will do wonders for your obedience.'[or]Hold still, this will only take a moment...'[or]If I have anything to say about it, you'll be wearing this for a long time...'[in random order][roman type][line break]".
 To say LockFlav of (M - a monster) for (C - a clothing):
@@ -94,6 +103,9 @@ Figure of skeleton key is the file "Items/Collectibles/key1.jpg".
 
 To decide which figure-name is the examine-image of (K - skeleton key):
 	decide on figure of skeleton key.
+
+To decide what number is the original price of (C - skeleton key):
+	decide on 7.
 
 To say ExamineDesc of (B - skeleton key):
 	say "This small key looks like it could fit into any pair of handcuffs, anklecuffs or similar.".

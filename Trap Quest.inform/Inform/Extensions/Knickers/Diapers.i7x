@@ -54,8 +54,6 @@ To compute periodic effect of (C - portal-diaper):
 			cutshow Figure of hotel urinal portal cum;
 		mapcutshow Figure of portal diaper cutscene for C;
 		if mechanic is alive and a random number between 1 and 5 is 1, now mechanic is inseminating C.
-Check wearing portal-diaper:
-	if the player is not a december 2023 diaper donator, say "Sorry, this is only for recent Shame Games subscribers." instead.
 
 blue-massive-diaper is a massive diaper. The text-shortcut of blue-massive-diaper is "bmd". Understand "blue" as blue-massive-diaper.
 Figure of blue massive diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper1b.png".

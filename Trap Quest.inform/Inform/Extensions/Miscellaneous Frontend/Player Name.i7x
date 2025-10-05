@@ -3,6 +3,35 @@ Player Name by Miscellaneous Frontend begins here.
 To decide which text is NameBimbo:
 	if schoolNames is 1 and armband is worn and the armband-print of armband is not "new recruit" and the armband-print of armband is not "slut in training" and the armband-print of armband is not "submissive in training" and the armband-title of armband is not "":
 		decide on "[armband-title of armband]";
+	otherwise if the player-name is 1000:
+		if the player is originally female or transGender is 1:
+			if the bimbo of the player < 4:
+				decide on Name in row 1 of Table of Custom Female Name;
+			otherwise if the bimbo of the player < 7:
+				decide on Name in row 2 of Table of Custom Female Name;
+			otherwise if the bimbo of the player < 10:
+				decide on Name in row 3 of Table of Custom Female Name;
+			otherwise if the bimbo of the player < 13:
+				decide on Name in row 4 of Table of Custom Female Name;
+			otherwise if the bimbo of the player < 16:
+				decide on Name in row 5 of Table of Custom Female Name;
+			otherwise:
+				decide on Name in row 6 of Table of Custom Female Name;
+		otherwise:
+			if the bimbo of the player < 4 and the player is gendered male:
+				decide on Name in row 1 of Table of Custom Male Name;
+			otherwise if the bimbo of the player < 7 and the player is gendered male:
+				decide on Name in row 2 of Table of Custom Male Name;
+			otherwise if the bimbo of the player < 10 and the player is gendered male:
+				decide on Name in row 3 of Table of Custom Male Name;
+			otherwise if the bimbo of the player < 13:
+				decide on Name in row 4 of Table of Custom Male Name;
+			otherwise if the bimbo of the player < 16:
+				decide on Name in row 5 of Table of Custom Male Name;
+			otherwise:
+				decide on Name in row 6 of Table of Custom Male Name;
+	otherwise if berri fetish is 1:
+		decide on "Berri";
 	otherwise if the player-name is 0:
 		if the bimbo of the player < 5 and the player is gendered male:
 			decide on "Raymond";
@@ -475,34 +504,7 @@ To decide which text is NameBimbo:
 		otherwise if the bimbo of the player < 20:
 			decide on "Fantasy";
 		otherwise:
-			decide on "Fetish";
-	otherwise if the player-name is 1000:
-		if the player is originally female or transGender is 1:
-			if the bimbo of the player < 4:
-				decide on Name in row 1 of Table of Custom Female Name;
-			otherwise if the bimbo of the player < 7:
-				decide on Name in row 2 of Table of Custom Female Name;
-			otherwise if the bimbo of the player < 10:
-				decide on Name in row 3 of Table of Custom Female Name;
-			otherwise if the bimbo of the player < 13:
-				decide on Name in row 4 of Table of Custom Female Name;
-			otherwise if the bimbo of the player < 16:
-				decide on Name in row 5 of Table of Custom Female Name;
-			otherwise:
-				decide on Name in row 6 of Table of Custom Female Name;
-		otherwise:
-			if the bimbo of the player < 4 and the player is gendered male:
-				decide on Name in row 1 of Table of Custom Male Name;
-			otherwise if the bimbo of the player < 7 and the player is gendered male:
-				decide on Name in row 2 of Table of Custom Male Name;
-			otherwise if the bimbo of the player < 10 and the player is gendered male:
-				decide on Name in row 3 of Table of Custom Male Name;
-			otherwise if the bimbo of the player < 13:
-				decide on Name in row 4 of Table of Custom Male Name;
-			otherwise if the bimbo of the player < 16:
-				decide on Name in row 5 of Table of Custom Male Name;
-			otherwise:
-				decide on Name in row 6 of Table of Custom Male Name.
+			decide on "Fetish".
 
 OriginalNameBimbo is a text that varies.
 A game universe initialisation rule:

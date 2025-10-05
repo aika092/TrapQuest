@@ -35,6 +35,7 @@ To compute painting entrance of (P - a painting):
 	say "BUG - nothing coded for this painting.".
 
 A painting-room is a kind of room. A painting-room has a labyrinth shape called shape. The grid position of a painting-room is usually <0,0,0>. A painting-room is usually discovered.
+Definition: a painting-room is partial squirt: decide yes. [involuntary enema expulsion is 6 units at a time, rather than all of it]
 
 Check going north:
 	let P be a random painting in the location of the player;

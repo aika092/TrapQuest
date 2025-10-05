@@ -1189,7 +1189,7 @@ To compute sissification:
 		unless pink sissy bow is worn, now S is pink sissy bow;
 		otherwise now S is a random off-stage sissifying actually summonable fetish appropriate clothing;
 	if the player is gendered male and S is pink bow and pink sissy bow is off-stage and pink sissy bow is actually summonable:
-		say "[bold type]A silky pink bow appears in your hair![line break][variable custom style][if the bimbo of the player < 5]Is this bullshit game trying to tell me I'd make more sense as a girl?[otherwise]I get it... only a girl would have trouble doing something like that...[end if][roman type][line break]";
+		say "[bold type]A silky pink bow appears in your hair![line break][variable custom style][if the bimbo of the player < 5]Is this bullshit game trying to tell me I'd make more sense as a girl?[otherwise]I get it... I'm more girl than boy...[end if][roman type][line break]";
 		summon pink sissy bow cursed;
 	otherwise if S is clothing and S is not pink bow:
 		say "[bold type]As if reacting to your lack of dominance, you suddenly feel a [ShortDesc of S] [bold type]appear on you![line break][variable custom style][one of]Uh-oh...[or]This is making me feel like a pathetic [sissy]...[or]Even more [sissy] clothing?![stopping][roman type][line break]";

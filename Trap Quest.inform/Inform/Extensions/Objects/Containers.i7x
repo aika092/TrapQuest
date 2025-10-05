@@ -314,7 +314,7 @@ To decide which figure-name is the examine-image of (C - a treasure chest):
 To say ExamineDesc of (C - a treasure chest):
 	say "An important looking chest that might contain key items.".
 
-40 trappable treasure chests are in Holding Pen.
+30 trappable treasure chests are in Holding Pen.
 
 To say ShortDesc of (C - a treasure chest):
 	say "chest".
@@ -426,7 +426,7 @@ A pedestal can be fertile, parched, chilled, or erect (this is the pedestal-lock
 
 A pedestal can be wood, clay, terracotta, granite, quartz, sandstone or marble(this is the pedestal-variant property). A pedestal is usually sandstone. Understand the pedestal-variant property as describing a pedestal. [Pedestals have names so you can refer to them individually.]
 
-There are 12 pedestals.
+There are 13 pedestals.
 
 Definition: a pedestal is immune to change: decide yes.
 
@@ -472,6 +472,10 @@ To lock pedestals:
 		otherwise if V is 12:
 			now P is in BellyRoom01;
 			now P is erect;
+			now P is marble;
+		otherwise if V is 13:
+			now P is in Holding Pen;
+			now P is fertile;
 			now P is marble;
 		otherwise:
 			if diaper quest is 1 and V > 3:

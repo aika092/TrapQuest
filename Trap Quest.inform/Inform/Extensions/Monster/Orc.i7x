@@ -91,7 +91,7 @@ To say PregGrowth of (M - orc):
 To compute labour to (M - orc):
 	if M is regional and M is alive:
 		compute pregnancy clothing displacement;
-		say "[PregFlav][if the father is in the location of the player]The [father][otherwise]The [father] appears almost as if on cue! [big he of M][end if] gets down on one knee and [if mythical creatures fetish is 1]you both watch as a disgusting pig's head begins to emerge from your vagina. This baby is just as much an orc as its father! You groan in despair as the half-pig baby slowly emerges from your womb[otherwise]delivers the beautiful mixed race human baby[end if]. [big he of M] takes it into [his of M] arms and begins to cradle it.[line break][first custom style]'A baby boy! [if the father is mating]A wonderful addition to our growing horde[otherwise]My first child. I will train him in the ways of orc culture, and when he comes of age, perhaps he will be a great enough leader to command an assault on a human settlement and kidnap all their women. We can dream[end if].'[roman type][line break]";
+		say "[PregFlav][if the father is in the location of the player]The [father][otherwise]The [father] appears almost as if on cue! [big he of M][end if] gets down on one knee and [if mythical creature fetish is 1]you both watch as a disgusting pig's head begins to emerge from your vagina. This baby is just as much an orc as its father! You groan in despair as the half-pig baby slowly emerges from your womb[otherwise]delivers the beautiful mixed race human baby[end if]. [big he of M] takes it into [his of M] arms and begins to cradle it.[line break][first custom style]'A baby boy! [if the father is mating]A wonderful addition to our growing horde[otherwise]My first child. I will train him in the ways of orc culture, and when he comes of age, perhaps he will be a great enough leader to command an assault on a human settlement and kidnap all their women. We can dream[end if].'[roman type][line break]";
 		say "Without giving you a chance to react, never mind reply, [he of M] leaves you to recover from your ordeal.";
 		if the father is in the location of the player:
 			say "For some reason, you are filled with a sense of deep fulfilment. You feel great!";
@@ -1148,7 +1148,7 @@ To compute poker punishment of (PC - a number):
 					summon portal-bra;
 					say "The hotpants are immediately followed by a matching chestplate!";
 				say "[variable custom style]No way... surely this doesn't mean that... my body parts are... mounted on the statuettes in [NameDesc of pimp][speech style of orc][']s room?![roman type][line break]";
-			otherwise if diaper quest is 1 and pimp is alive and the times-met of pimp > 0 and diaper swapping >= 2 and the player is a december 2023 diaper donator and portal-diaper is unclash summonable:
+			otherwise if diaper quest is 1 and pimp is alive and the times-met of pimp > 0 and diaper swapping >= 2 and portal-diaper is unclash summonable:
 				say "[speech style of orc]'The [poker card of PC] makes [NameDesc of pimp] [speech style of orc]think that you owe [him of pimp] lots of money. And... it gives [him of pimp] a unique way to sell your diaper for use, without even asking your permission.'[roman type][line break]";
 				unclash class summon portal-diaper;
 				say "[variable custom style]No way... surely this doesn't mean that... my diaper padding is... connected to some other place via a portal?![roman type][line break]";

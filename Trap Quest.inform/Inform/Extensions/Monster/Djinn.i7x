@@ -820,16 +820,39 @@ To say TaxReturnFail of (M - djinn):
 	otherwise:
 		say "[BigNameDesc of M] seems to be weakening rapidly, and [he of M] begins to take flight. [big he of M] shouts at you as [he of M] flees.[speech style of M]'[one of]I'll remember this, mortal! And I'll be even stronger next time! Hahaha!'[or]I'll be back, mortal! I can never be fully defeated!'[in random order][roman type][line break]".
 
+To say EnticeFlav of (M - djinn) with (B - face):
+	say "[BigNameDesc of M]'s clouds morph, forming a giant, fluffy head in front of [his of M] [LongDickDesc of M]. Fat wisps of cloud bounce off of it as it sucks [his of M] [DickDesc of M].[line break][speech style of M]'[one of]Isn't about time you wished for a suck of my cock?'[or]It tastes MUCH better than a mortal cock!'[or]Are you sure you're not about to wish for this?'[in random order][roman type][line break]".
+
+To say EnticeFlav of (M - djinn) with (B - breasts):
+	say "[BigNameDesc of M]'s clouds morph, forming a giant, fluffy set of breasts in front of [his of M] [LongDickDesc of M]. Fat wisps of cloud bounce off of them as they wrap around [his of M] [cockshaft of M] and move to and fro.[line break][speech style of M]'[one of]Only one of us has a set of knees to get onto, mortal.'[or]I wouldn't mind my cock being treated this way, mortal.'[or]The laws of the djinni do not allow for titfucks of my cock, but we can work something out under the table...'[in random order][roman type][line break]".
+
+To say EnticeFlav of (M - djinn) with (B - belly):
+	say "[BigNameDesc of M]'s clouds morph, forming a giant, fluffy head in front of [his of M] [LongDickDesc of M]. A cloudy tongue lolls out as its mouth hangs open, as if waiting for something.[line break][speech style of M]'[one of]Do you really want to fight me? Or do you just want to be a good little urinal?'[or]Do you want to drink some piss?'[or]Give up now, get on your knees, and drink my piss like a good little urinal.'[or]Kneel for my piss, my thirsty little urinal!'[in random order][roman type][line break]".
+
+To say EnticeFlav of (M - djinn) with (B - thighs):
+	if M is eager to do anilingus:
+		say "[BigNameDesc of M]'s clouds morph, forming a giant, fluffy head behind [him of M]. It grasps [his of M] shapely buttocks with both hands, wisps bouncing off its cheaks as it pantomimes eating [his of M] ass.[line break][speech style of M]'[one of]I'm going to make you lick this clean.'[or]The taste of my [if M is eager to do anilingus]asshole[otherwise]foot[end if] is going to be on your tongue for hours.'[or]Surrender, slut, and bury your tongue in my ass to beg for mercy.'[in random order][roman type][line break]";
+	otherwise:
+		say "[BigNameDesc of M]'s clouds morph, forming a giant, fluffy head under [his of M] [LongDickDesc of M]. Wisps of cloud bounce off its lips as it peppers [his of M] balls with kisses.[line break][speech style of M]'[one of]I'm going to make you lick this clean.'[or]The taste of my balls is going to be on your tongue for hours.'[or]Surrender, slut, and clean my balls.'[in random order][roman type][line break]".
+
+To say EnticeFlav of (M - djinn) with (F - a fuckhole):
+	let T be "[one of]ass[or]butt[or]rump[as decreasingly likely outcomes]";
+	if F is vagina, now T is "[one of]torso[or]crotch[or]lower torso[as decreasingly likely outcomes]";
+	say "[BigNameDesc of M]'s clouds morph, forming a giant, fluffy [T] in front of [his of M] [LongDickDesc of M]. Wisps of cloud bounce away as the 'model' fucks itself with [his of M] [cockshaft of M].[line break][speech style of M]'[one of]This is the technique I'll be expecting you to use.'[or]Can you imitate this, mortal?'[or]This is what I'm about to do to you, mortal!'[in random order][roman type][line break]".
+
+To say EnticeFlav of (M - djinn) with (B - a body part):
+	say "[BigNameDesc of M]'s clouds morph around [his of M] [LongDickDesc of M], forming a giant, cartoonish arrow.".
+
 [To say PenisFuckDesc of (M - djinn):
 	say "Make [him of M] satisfy your [PenisFucker] in exchange for mercy.".
 
-To say VaginaRideDesc of (M - a):
+To say VaginaRideDesc of (M - djinn):
 	say "Ride [him of M] with your [vagina] in exchange for freedom.".
 
-To say AssRideDesc of (M - a demoness):
+To say AssRideDesc of (M - djinn):
 	say "Ride [him of M] with your [asshole] in exchange for freedom.".
 
-To say PissFuckDesc of (M - a demoness):
+To say PissFuckDesc of (M - djinn):
 	say "Give [him of M] a faceful of [urine] in exchange for freedom".]
 
 [To compute automatic banishment of (M - djinn):

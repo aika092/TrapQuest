@@ -90,13 +90,15 @@ To decide which number is the insertableGirthAcceptance of (F - a body part):
 
 To decide which number is the insertableGirthAcceptance of (F - a fuckhole):
 	if diaper quest is 0 and F is actually occupied, decide on the openness of F; [When the item is already inside, we just want to check how much the orifice is being stretched. For example, in the sex toy insertedToleranceDesc function.]
-	if fantastic elastic is 1 or there is worn elasticity clothing, decide on 99;
+	if fantastic elastic is 1 or there is worn elasticity clothing, decide on 10;
 	let T be 2 + diaper quest + ungape;
 	if measurement tattoo is worn, increase T by 3;
 	if diaper quest is 1:
-		decide on (the sex addiction of the player / 3) + T;
+		increase T by the sex addiction of the player / 3;
 	otherwise:
-		decide on (the sex addiction of the player / 5) + the openness of F + T.
+		increase T by (the sex addiction of the player / 5) + the openness of F;
+	if T > 10, decide on 10;
+	decide on T.
 
 To CumFill (F - a fuckhole) times (X - a number):
 	if F is asshole, AssFill X;
@@ -128,8 +130,8 @@ Definition: a fuckhole (called F) is at least partially lewdly exposed:
 To decide which number is the at least partially lewdly exposed outrage of (F - a fuckhole):
 	if F is vagina:
 		let CC be current cameltoe; [only calculate it once]
-		if CC is 1, decide on 5;
-		if CC is 2, decide on 7;
+		if CC is 1, decide on 7;
+		if CC is 2, decide on 8;
 	let O be 9;
 	if F is asshole and the semen volume of belly > 0, increase O by 2;
 	if F is vagina and the semen volume of vagina > 0, increase O by 2;

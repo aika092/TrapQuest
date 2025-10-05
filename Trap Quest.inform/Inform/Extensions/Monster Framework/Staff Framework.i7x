@@ -3,8 +3,10 @@ Staff Framework by Monster Framework begins here.
 A staff member is a kind of monster. A staff member is intelligent. A staff member is usually female.
 
 Definition: a staff member is controlling: decide no. [Will they grab onto subduing clothing e.g. a clitoris lead?]
-
-Definition: a staff member is a generic-unlocker: decide yes.
+Definition: a staff member is a bondage applier: decide yes.
+Definition: a staff member is eager to warn angrily:
+	if it is classicly eager to warn angrily, decide yes; [Warns and punishes resistance during non-oral sex]
+	decide no.
 
 Definition: a staff member is motionless-when-defeated: decide yes.
 
@@ -156,6 +158,10 @@ To compute boring spit reaction of (M - a staff member):
 To compute disgusting spit reaction of (M - a staff member):
 	compute boring spit reaction of M.
 
+To compute angry punishment of (M - a staff member):
+	say angry punishment insult of M;
+	if M is not seduced or M is unfriendly, compute default angry punishment of M.
+
 Part - Protection
 
 To reset staff boredom: [when the player attacks a student, staff members shouldn't stay bored in the same room]
@@ -183,11 +189,16 @@ To compute (M - a staff member) protecting against (X - nurse): [The nurse assau
 	if armband is not worn, compute M protecting against headmistress. [There's a rebellion afoot!]
 
 To compute (M - a staff member) seeking (D - a direction): [Staff members don't stalk the player around the school in normal circumstances.]
-	if the friendly boredom of M >= 0 and M is interested and M is friendly and the player is not in danger:
+	if playerRegion is not school and M is undefeated and M is friendly:
+		unless M is nearby, deinterest M; [this should trigger unique boredom below which teleports them back to the school]
+	otherwise if the friendly boredom of M >= 0 and M is interested and M is friendly and the player is not in danger:
 		distract M;
 	otherwise:
 		blockable move M to D;
 		compute monstermotion reactions of M.
+
+To compute unique boredom of (M - a staff member):
+	if playerRegion is not school and M is unleashed, now M is in School01.
 
 Part - Combat
 
@@ -296,6 +307,7 @@ Part - Teachers
 
 A teacher is a kind of staff member. A teacher has a text called teacher-name. Understand the teacher-name property as describing a teacher.
 Definition: a teacher is motionless-when-defeated: decide no.
+Definition: a teacher is a generic-unlocker: decide yes.
 
 A sapphire-teacher is a kind of teacher. Understand "sapphire" as a sapphire-teacher.
 An emerald-teacher is a kind of teacher. Understand "emerald" as an emerald-teacher.
@@ -412,6 +424,7 @@ Selkie wonders about the possibility of a less extreme option, in which the extr
 ]
 
 An all later time based rule (this is the class-time cooldown rule):
+	if class-time <= 0 and armband is solid gold, now class-time is lessonFrequency;
 	if class-time < 1000 and armband is not solid gold and (playerRegion is not Hotel or Hotel40 is discovered) and (playerRegion is not Mansion or Mansion32 is discovered): [We use 1000 to represent that the player hasn't been to a class before.] [Players who are in the hotel looking for the warp portal shouldn't be penalised]
 		let CS be time-seconds;
 		if playerRegion is not School or class-time <= 0, decrease class-time by CS;
@@ -542,6 +555,7 @@ To compute early lesson progression stuff:
 
 To compute late lesson progression stuff:
 	increase totalLessonCount by 1;
+	enable academy events;
 	now class-time is lessonFrequency / slower timers;
 	if student-interaction-time > 10, now student-interaction-time is 10; [soon, a student might want something from you]
 	[let B be (the rank of the player * 3) - the bimbo of the player;
@@ -1020,8 +1034,7 @@ To execute (A - locked-toilets-shame-assembly):
 	if watersports fetish is 1 and WC collar is actually summonable:
 		summon WC collar locked;
 		say "And one more thing...'[roman type][line break][BigNameDesc of headmistress] places a [MediumDesc of WC collar] around your neck!";
-		let K be a random off-stage specific-key;
-		if K is a thing, compute headmistress locking WC collar with K;
+		compute headmistress keylocking WC collar;
 		say severeHumiliateReflect;
 	otherwise:
 		say "You are all dismissed.'[roman type][line break][severeHumiliateReflect]".
@@ -1207,6 +1220,14 @@ To execute (A - disgrace-assembly):
 
 Part - Detention
 
+detention-reason is a number that varies. [0: didn't get to class on time. 1: failed at generic academy event errand]
+
+To say detention-reason-flav:
+	if detention-reason is 1:
+		say "follow simple instructions";
+	otherwise:
+		say "get to class on time".
+
 [Now part of the compute swimming in swimming pool function.
 Report Showering:
 	if the player is in School20 and armband is worn:
@@ -1311,7 +1332,7 @@ To compute chair detention of (M - a staff member):
 	now detention chair is detention-wand;
 	now detention-turns is a random number between 15 and 25;
 	drag to School13 by M;
-	say "[speech style of M]'[if the health of M < the maxhealth of M]We will not allow aggressive behaviour in this school, as you are about to learn the hard way[otherwise if class-time < (lessonFrequency * -3)]If you can't get to class on time then you'll have to catch up the hard way[otherwise]There's only one way you'll learn your lesson, isn't there[end if]. [if diaper quest is 1 and the number of worn diapers is 0]Put on this diaper and sit[otherwise]Sit[end if].'[roman type][line break][big he of M] points to the chair with a vibrating wand fixed in the centre. ";
+	say "[speech style of M]'[if the health of M < the maxhealth of M]We will not allow aggressive behaviour in this school, as you are about to learn the hard way[otherwise if class-time < (lessonFrequency * -3)]If you can't [detention-reason-flav] then you'll have to catch up the hard way[otherwise]There's only one way you'll learn your lesson, isn't there[end if]. [if diaper quest is 1 and the number of worn diapers is 0]Put on this diaper and sit[otherwise]Sit[end if].'[roman type][line break][big he of M] points to the chair with a vibrating wand fixed in the centre. ";
 	if diaper quest is 0 or the number of worn diapers is 0, compute TQChairSetup of M;[in TQ underwear is always removed]
 	if (diaper quest is 1 or a random number between 0 and 3 < diaper lover) and the number of worn diapers is 0, compute DQChairSetup of M;
 	say "[if the delicateness of the player > 10]You crawl over to the [ShortDesc of detention chair] and pull yourself into it[otherwise if the delicateness of the player > 4][BigNameDesc of M] drags you over to the [ShortDesc of detention chair] and waits as you obediently pull yourself into it[otherwise][BigNameDesc of M] drags you over to the [ShortDesc of detention chair] and forces you into it[end if], [if the delicateness of the player > 10]submissively allowing [him of M] to bind[otherwise]quickly binding[end if] you in place with the straps. ";
@@ -1370,7 +1391,7 @@ To compute detention chair tease of (M - a monster):
 	now M is uninterested.
 
 To say detention chair tease of (M - a monster):
-	say "[speech style of M]'[one of]Hah! You enjoying yourself there, [honey of M]?'[or]Geez, it's like you get off on humiliation or something.'[or]You must be pretty dumb if you can't even get to class on time.'[in random order][roman type][line break]".
+	say "[speech style of M]'[one of]Hah! You enjoying yourself there, [honey of M]?'[or]Geez, it's like you get off on humiliation or something.'[or]You must be pretty dumb if you can't even [detention-reason-flav].'[in random order][roman type][line break]".
 
 To say detention chair tease of (M - a teacher):
 	say "[speech style of M]'[one of]Hmmph. I wouldn't be surprised if I saw you in here again.'[or]Pathetic.'[or]Hah. You're not even worthy of being teased.'[in random order][roman type][line break]".
@@ -1464,7 +1485,7 @@ To compute remedial detention of (M - a staff member):
 	now detention chair is detention-remedial;
 	now detention-turns is 8;
 	drag to School13 by M;
-	say "[speech style of M]'[if the health of M < the maxhealth of M]Clearly you need extra curriculum if you believe you have the time to be aggressive with teachers[otherwise]If you can't get to class on time then you'll have to catch up the hard way[end if]. Sit.'[roman type][line break][big he of M] points to the chair in the centre of the room.";
+	say "[speech style of M]'[if the health of M < the maxhealth of M]Clearly you need extra curriculum if you believe you have the time to be aggressive with teachers[otherwise]If you can't [detention-reason-flav] then you'll have to catch up the hard way[end if]. Sit.'[roman type][line break][big he of M] points to the chair in the centre of the room.";
 	say "[if the delicateness of the player > 10]You crawl over to the [detention chair] and pull yourself into it[otherwise if the delicateness of the player > 4][BigNameDesc of M] drags you over to the [detention chair] and waits as you obediently pull yourself into it[otherwise][BigNameDesc of M] drags you over to the [detention chair], cruelly pinching your ear until you pull yourself into it[end if]. [big he of M] quickly straps you in place as a giant screen slowly lowers from the ceiling.[line break][speech style of M]'[one of]This is an advanced class, for YOUR benefit. Pay attention.[or]Pay attention this time.'[stopping][roman type][line break][big he of M] slides a pair of headphones into place over your ears, quickly leaving the room as the screen flickers to life and a [one of]syncopated[or]familiar[stopping] rhythm begins playing.";
 	if diaper quest is 0, say "A large, well-lit room fades onto the screen, and the music's volume slowly rises as a gorgeous [if tg fetish > 0]transsexual [end if]pornstar struts in from out of frame, wearing a form-fitting latex dress.[line break][first custom style]'Welcome to my classroom, students. Shut off your minds and let your bodies pay attention.'[roman type][line break]The pulsing, rhythm of the music creates a hypnotic swirling effect that burns itself into your vision, and you suddenly realise how [if the player is solely possessing a penis]hard[otherwise if the player is solely possessing a vagina]wet[otherwise]horny[end if] you've gotten as the screen fades to black and 'Chapter 1' appears in the centre of the frame. You have no choice but to fight off the hypnosis until you're released!";
 	otherwise say "PLACEHOLDER";
@@ -1520,7 +1541,673 @@ To say RemHypnoContent:
 	otherwise say "PLACEHOLDER".
 
 
-Book - Ultimate Lesson Actor
+Book - Academy Events
+
+An academy-event is a kind of object. An academy-event can be event-unstarted, event-started, event-ended or event-failed (this is the academy-event-status property). An academy-event is usually event-unstarted.
+
+An academy-event can be event-potential.
+
+To decide which number is the event-rarity of (E - an academy-event):
+	decide on 2. [1 in X chance of event being enabled as a potential option each time]
+
+academy-event has an object called the event-failure-punisher. The event-failure-punisher of an academy-event is usually headmistress.
+
+academy-event-ready is initially false.
+
+To enable academy events:
+	now academy-event-ready is true;
+	repeat with E running through event-unstarted academy-events:
+		if a random number between 1 and the event-rarity of E is 1, now E is event-potential;
+		otherwise now E is not event-potential;
+	if debugmode > 0:
+		let NE be the number of event-unstarted academy-events;
+		let NP be the number of event-unstarted event-potential academy-events;
+		say "[NP] out of [NE] unstarted Academy Events have been marked as randomly available (NB that some or most may not actually be eligible right now due to player state / fetish selection, even if marked available). As debugmode is enabled, would you like to mark them all as available instead?";
+		if the player is consenting:
+			repeat with E running through event-unstarted academy-events:
+				now E is event-potential.
+
+Definition: an academy-event is eligible:	decide yes.
+
+An all time based rule (this is the academy event processing rule):
+	unless the player is in a predicament room:
+		if playerRegion is school and armband is worn:
+			repeat with E running through event-failed academy-events:
+				compute event failure punishment of E;
+				now E is event-ended;
+		repeat with E running through event-started academy-events:
+			if debugmode is 1 and debuginfo > 0, say "[input-style]Handling current academy event...[roman type][line break]";
+			compute event handling of E.
+
+Report going south when academy-event-ready is true:
+	unless the player is in a predicament room:
+		if playerRegion is school and armband is worn:
+			if debugmode is 1, say "[input-style]Trying to find academy event...[roman type][line break]";
+			if the number of alive dangerous regional monsters is 0:
+				let E be a random event-unstarted event-potential eligible academy-event;
+				if E is an academy-event:
+					now academy-event-ready is false;
+					now E is event-started;
+					compute event start of E;
+				otherwise:
+					if debugmode is 1, say "[input-style]No eligible event found.[roman type][line break]";
+			otherwise:
+				if debugmode is 1, say "[input-style]Dangerous NPC blocks event search.[roman type][line break]";
+		otherwise:
+			now academy-event-ready is false.
+
+To compute event start of (E - an academy-event):
+	say "Error - an academy event had no setup function.".
+
+To compute event handling of (E - an academy-event):
+	now E is event-ended;
+	say "Error - an academy event had no handling function.".
+
+To compute event failure punishment of (E - an academy-event):
+	let M be the event-failure-punisher of E;
+	if M is not regional, now M is a random regional staff member;
+	if M is a monster:
+		now M is in the location of the player;
+		interest M;
+		anger M;
+		say "[BigNameDesc of M] grabs you on the shoulder.[line break][speech style of M]'[EventFailureFlav of E]! You're going straight to detention!'";
+		now detention-reason is 1;
+		compute detention of M;
+		now detention-reason is 0.
+
+To say EventFailureFlav of (E - an academy-event):
+	say "You were given an important task, and you fucked it up".
+To say AcademyEventDesc of (E - an academy-event):
+	say "You were given an important task in the Academy region.".
+
+
+idol-delivery-event is an academy-event.
+
+To say AcademyEventDesc of (E - idol-delivery-event):
+	say "You have been tasked with carrying [NameDesc of fertility idol] to the hallway outside the staff room (below the ruby classroom).".
+To say EventFailureFlav of (E - idol-delivery-event):
+	say "[if the event-failure-punisher of E is in the location of the player]I've been waiting for you to move that idol forever[otherwise]Weren't you supposed to move my idol?! Where have you been[end if]".
+
+Definition: idol-delivery-event is eligible:
+	if diaper quest is 1 or the rank of the player < 3, decide no;
+	if fertility idol is off-stage and there is a worn bag of holding and the player is in School02, decide yes;
+	decide no.
+
+To compute event start of (E - idol-delivery-event):
+	let M be a random alive staff member in the location of the player;
+	if M is nothing, now M is a random alive staff member;
+	if debugmode is 1, say "[input-style]Idol delivery event. Found [M].[roman type][line break]";
+	if M is a monster:
+		if M is not in the location of the player:
+			now M is in School01;
+			try M going north;
+			now M is moved;
+		now fertility idol is carried by M;
+		say "[BigNameDesc of M] is dragging a large, heavy fertility idol up the hallway.";
+		if M is not interested:
+			interest M;
+			say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
+		if M is friendly:
+			now the event-failure-punisher of E is M;
+			say "[speech style of M]'[NameBimbo], you have a bag of holding! This would fit inside no problem, and then weigh nothing! Would you use it to carry this fertility idol to the hallway outside the staff room for me please?'[roman type][line break]Agree to the task?";
+			now temporaryYesNoBackground is the examine-image of fertility idol;
+			if the player is bimbo consenting:
+				say "[speech style of M]'Phew! Thank you.'[roman type][line break][BigNameDesc of M] releases [his of M] hold on the large idol, the task now successfully delegated.";
+				now fertility idol is in the location of the player;
+				if the player is getting unlucky, now fertility idol is fertility-cursed;
+				now academy-event-ready is true; [other events can combo]
+			otherwise:
+				say "[BigNameDesc of M] grunts with frustration.[line break][speech style of M]'Really! I have to do everything myself, I guess.'[roman type][line break]";
+				FavourDown M;
+				try M going north;
+				distract M;
+				now E is event-ended;
+		otherwise:
+			now E is event-ended.
+
+To compute event handling of (E - idol-delivery-event):
+	let M be the the event-failure-punisher of E;
+	if playerRegion is school and armband is worn:
+		if the player is not in danger and the player is not immobile:
+			if fertility idol is in School26:
+				if M is in School24:
+					try M going west;
+				otherwise if M is not in the location of the player:
+					now M is in School27;
+					try M going east;
+				if M is not in the location of the player, now M is in the location of the player; [failsafe]
+				if M is not interested:
+					interest M;
+					say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
+					calm M;
+				say "[speech style of M]'Ah, you are a life-saver! Thank you!'[roman type][line break][BigNameDesc of M] starts dragging [NameDesc of fertility idol] the rest of the way towards the Staff Room door.";
+				now fertility idol is in School27;
+				try M going west;
+				now M is moved;
+				now the fat-burning of the player is 9999999; [will trigger another fat burning milestone]
+				now the fat-burning of arms is 9999999; [will trigger another fat burning milestone]
+				compute arm fat burning;
+				follow the training rule;
+				now E is event-ended;
+	otherwise:
+		now E is event-failed.
+
+
+wand-delivery-event is an academy-event.
+
+To say AcademyEventDesc of (E - wand-delivery-event):
+	say "You have been tasked with delivering [NameDesc of glittery-wand] to [NameDesc of the event-failure-punisher of E].".
+To say EventFailureFlav of (E - wand-delivery-event):
+	say "[if the event-failure-punisher of E is in the location of the player]I've been waiting for my wand forever[otherwise]Weren't you supposed to deliver a wand by now?! Where have you been[end if]".
+
+Definition: wand-delivery-event is eligible:
+	if glittery-wand is off-stage and glittery-wand is actually summonable, decide yes;
+	decide no.
+
+Definition: glittery-wand is removal-blocking:
+	if wearing-target is glittery-wand and wand-delivery-event is event-started, decide yes;
+	decide no.
+
+To compute event start of (E - wand-delivery-event):
+	let M be a random alive staff member in the location of the player;
+	if M is nothing, now M is a random alive staff member;
+	if debugmode is 1, say "[input-style]Wand delivery event. Found [M].[roman type][line break]";
+	if M is a monster:
+		if M is not in the location of the player:
+			now M is in the room north from the location of the player;
+			try M going south;
+			now M is moved;
+		if M is not interested:
+			interest M;
+			say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
+		if M is friendly:
+			let X be a random regional staff member;
+			let failsafe be 50;
+			while failsafe > 0 and X is in the location of the player:
+				now X is a random regional staff member;
+				decrease failsafe by 1;
+			unless the player is in School23 or the rank of the player < 2, now X is in School23;
+			unless the player is in School04 or the player is in School08 or a random number between 1 and 2 is 1, now X is in School08;
+			if (the rank of the player < 2 and X is not in School08) or (the player is not in School12 and the player is not in School11 and a random number between 1 and 3 is 1), now X is in School12;
+			say "[speech style of M]'[NameBimbo], would you be a darling and take this wand to [NameDesc of X] [speech style of M]for me please?'[roman type][line break][BigNameDesc of M] holds out a sparking wand vibrator towards you.[paragraph break]Agree to the task?";
+			now temporaryYesNoBackground is the examine-image of glittery-wand;
+			if the player is bimbo consenting:
+				say "You take [NameDesc of glittery-wand]. You can feel it brimming with magic...";
+				summon glittery-wand uncursed;
+				now the event-failure-punisher of E is X;
+				now X is guarding;
+				now academy-event-ready is true; [other events can combo]
+			otherwise:
+				say "[BigNameDesc of M] narrows [his of M] eyes.[line break][speech style of M]'Useless.'[roman type][line break]";
+				FavourDown M;
+				now E is event-ended;
+		otherwise:
+			now E is event-ended.
+
+To compute event handling of (E - wand-delivery-event):
+	let M be the the event-failure-punisher of E;
+	if playerRegion is school and armband is worn and glittery-wand is held:
+		if the player is not in danger and the player is not immobile:
+			if the event-failure-punisher of E is in the location of the player and glittery-wand is not-in-bag:
+				if M is not interested:
+					interest M;
+					say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
+					calm M;
+				say "[speech style of M]'Ah, you have my wand! Thank you!'[roman type][line break][BigNameDesc of M] takes [NameDesc of glittery-wand] out of your hand. You feel a little bit of its magic power linger within you.";
+				MagicPowerUp 1;
+				now glittery-wand is carried by M;
+				now E is event-ended;
+				now M is unleashed;
+	otherwise:
+		now M is unleashed;
+		now E is event-failed.
+
+
+cookie-delivery-event is an academy-event.
+
+To say AcademyEventDesc of (E - cookie-delivery-event):
+	say "You have been tasked with delivering [NameDesc of cookie] to [NameDesc of the event-failure-punisher of E].".
+To say EventFailureFlav of (E - cookie-delivery-event):
+	say "[if the event-failure-punisher of E is in the location of the player]I've been waiting for my special birthday treat forever[otherwise]Weren't you supposed to deliver me a special birthday treat by now?! Where have you been[end if]".
+
+Definition: cookie-delivery-event is eligible:
+	if diaper quest is 1, decide no;
+	if cookie is off-stage and there is an unleashed male regional teacher, decide yes;
+	decide no.
+
+To compute event start of (E - cookie-delivery-event):
+	let M be a random alive female staff member in the location of the player;
+	if M is nothing, now M is a random alive female staff member;
+	if debugmode is 1, say "[input-style]Cookie delivery event. Found [M].[roman type][line break]";
+	if M is a monster:
+		if M is not in the location of the player:
+			now M is in the room north from the location of the player;
+			try M going south;
+			now M is moved;
+		if M is not interested:
+			interest M;
+			say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
+		if M is friendly:
+			let X be a random unleashed male regional teacher;
+			let failsafe be 50;
+			while failsafe > 0 and X is in the location of the player:
+				now X is a random unleashed male regional teacher;
+				decrease failsafe by 1;
+			unless the player is in School23 or the rank of the player < 2, now X is in School23;
+			unless the player is in School04 or the player is in School08 or a random number between 1 and 2 is 1, now X is in School08;
+			if (the rank of the player < 2 and X is not in School08) or (the player is not in School12 and the player is not in School11 and a random number between 1 and 3 is 1), now X is in School12;
+			now the quality of cookie is -3;
+			now the fat of cookie is 3;
+			say "[speech style of M]'[NameBimbo], would you be a darling and take this special birthday snack to [NameDesc of X] [speech style of M]for me please?'[roman type][line break][BigNameDesc of M] holds out a lewd towards you.[paragraph break]Agree to the task?";
+			now temporaryYesNoBackground is the examine-image of cookie;
+			if the player is bimbo consenting:
+				say "You take [NameDesc of cookie]. It's still warm... And gooey.";
+				now cookie is carried by the player;
+				now the event-failure-punisher of E is X;
+				now X is guarding;
+				now academy-event-ready is true; [other events can combo]
+			otherwise:
+				say "[BigNameDesc of M] clicks [his of M] tongue.[line break][speech style of M]'Disappointing. I'll find someone else, I guess.'[roman type][line break]";
+				FavourDown M;
+				now E is event-ended;
+		otherwise:
+			now E is event-ended.
+
+To compute event handling of (E - cookie-delivery-event):
+	let M be the the event-failure-punisher of E;
+	if playerRegion is school and armband is worn and cookie is held:
+		if the player is not in danger and the player is not immobile:
+			if the event-failure-punisher of E is in the location of the player:
+				if M is not interested:
+					interest M;
+					say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
+					calm M;
+				say "[speech style of M]'Ooh, what's this? For me?! Thank you!'[roman type][line break][BigNameDesc of M] takes [NameDesc of cookie] out of your hands, and takes a bite.";
+				now auto is 1;
+				if asshole is actually presentable and the player is getting unlucky:
+					say "As [he of M] swallows [his of M] first mouthful, you suddenly feel some sort of magical compulsion come over you! [GotUnluckyFlav]";
+					try direct-presenting asshole to M;
+					now auto is 0;
+				otherwise if the player is able to eat and the player is not getting lucky:
+					say "[speech style of M]'Ooh, it's so delicious! You must try a bite!'[roman type][line break]Take a bite?";
+					if the player is bimbo consenting:
+						say "[DevourFlav of cookie][line break]You start feeling a bit woozy as the food settles in your stomach, and you realise that there's some seriously unusual chemicals in this cookie. You feel your [asshole] tingling with enthusiastic sensitivity!";
+						StomachFoodUp 2;
+						AnalSexAddictUp 3;
+					otherwise:
+						say "[speech style of M]'Rude!'[roman type][line break]";
+						FavourDown M;
+					now auto is 0;
+				otherwise:
+					let T be a random truffle;
+					say "[speech style of M]'Oh my gosh, it's so delicious! This is even better than the truffle I got given earlier! Here, I won't be needing this any more!'[roman type][line break][BigNameDesc of M] tosses a [MediumDesc of T] towards you. [GotLuckyFlav]";
+					now the quality of T is 3;
+					now T is in the location of the player;
+					now auto is 0;
+					compute autotaking T;
+				now cookie is carried by M;
+				now E is event-ended;
+				now M is unleashed;
+	otherwise:
+		now M is unleashed;
+		now E is event-failed.
+
+
+
+egg-smuggling-event is an academy-event.
+
+To say AcademyEventDesc of (E - egg-smuggling-event):
+	say "You have been tasked with smuggling a special egg out of the Academy. You can find it in the gymnasium.".
+To say EventFailureFlav of (E - egg-smuggling-event):
+	say "I knew I shouldn't have trusted you. That was my one chance to steal that egg, RUINED! You best believe that you're going to suffer for this".
+
+Definition: egg-smuggling-event is eligible:
+	unless receptionist is alive and headmistress is alive and receptionist is in School01 and Dungeon10 is discovered and the rank of the player >= 2, decide no;
+	if egg laying fetish is 1 and there is an off-stage medium egg, decide yes;
+	decide no.
+
+To compute event start of (ESV - egg-smuggling-event):
+	let M be a random alive staff member in the location of the player;
+	let failsafe be 50;
+	while failsafe > 0 and (M is nothing or M is receptionist or M is headmistress):
+		decrease failsafe by 1;
+		now M is a random alive staff member;
+	if debugmode is 1, say "[input-style]Smuggling. Found [M].[roman type][line break]";
+	if M is a monster:
+		if M is not in the location of the player:
+			now M is in the room north from the location of the player;
+			try M going south;
+			now M is moved;
+		if M is not interested:
+			interest M;
+			say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
+		if M is friendly:
+			now event-failure-punisher of ESV is M;
+			let E be a random off-stage medium egg;
+			say "[speech style of M]'[NameBimbo], perfect timing. I need to get a rare egg out of the Academy and into the Dungeon. It's not strictly... Permitted. But the receptionist is watching the exit like a hawk, and us staff get checked VERY thoroughly when they leave. You can figure a way to smuggle it out, right?'[paragraph break][variable custom style]Oh fuck, I'd probably have to sneak it out INSIDE me, wouldn't I...[roman type][line break]Agree to the task?";
+			if the player is bimbo consenting:
+				now the egg-origin of E is carrot daggers;
+				now E is in School23;
+				say "[speech style of M]'Brilliant, I know I could count on you. I've left it discreetly in the corner of the gymnasium. You won't be able to miss it if you're looking for it. Make sure you don't leave the Academy without it, and make sure nobody sees you with it. Good [boy of the player].'[roman type][line break][BigNameDesc of M] begins to wander off.";
+				bore M;
+				now academy-event-ready is true; [other events can combo]
+			otherwise:
+				say "[BigNameDesc of M] rolls [his of M] eyes.[line break][speech style of M]'Goody two-shoes. You'd better not tell anyone we had this conversation.'[roman type][line break]";
+				FavourDown M;
+				now ESV is event-ended;
+		otherwise:
+			now ESV is event-ended.
+
+To compute event handling of (ESV - egg-smuggling-event):
+	if playerRegion is school:
+		let EG be nothing;
+		repeat with EX running through held medium eggs:
+			if the egg-origin of EX is carrot daggers, now EG is EX;
+		if EG is a thing and armband is worn:
+			repeat with M running through reactive staff members:
+				unless M is the event-failure-punisher of ESV:
+					interest M;
+					anger M;
+					say "[speech style of M]'HEY! WHERE ARE YOU TAKING THAT EGG?! THAT'S [if M is headmistress]MINE[otherwise]THE HEADMISTRESS'S[end if]!'[roman type][line break][big he of M] looks furious! ";
+					if armband is worn:
+						say "[BigNameDesc of armband] fizzles into dust.";
+						destroy armband;
+					otherwise:
+						say line break;
+					now ESV is event-ended;
+	otherwise:
+		unless carrot daggers is listed in the medium-egg-origins of vagina or carrot daggers is listed in the medium-egg-origins of belly:
+			let E be nothing;
+			repeat with X running through on-stage medium eggs:
+				if the egg-origin of X is carrot daggers:
+					if X is held or X is regional or E is nothing, now E is X;
+			if E is a thing:
+				if debugmode > 0 and debuginfo > 0, say "[E] being used for egg smuggling event...";
+				unless E is regional or E is held:
+					now ESV is event-failed;
+					destroy E;
+				if (E is carried or E is in the location of the player) and the player is not in danger:
+					let M be the event-failure-punisher of ESV;
+					now M is in the location of the player;
+					interest M;
+					say "[BigNameDesc of M] appears from nearby![line break][speech style of M]'Great work. Thanks so much.'[roman type][line break][BigNameDesc of M] takes [NameDesc of E] from you.[line break][speech style of M]'Take this for your troubles.'[roman type][line break]";
+					destroy E;
+					let J be a random off-stage plentiful accessory;
+					if J is a thing:
+						now J is emerald;
+						set shortcut of J;
+						now J is in the location of the player;
+						say "[BigNameDesc of M] chucks a [MediumDesc of J] towards you.";
+						compute autotaking J;
+					now ESV is event-ended.
+
+
+
+
+slimeball-spillage-event is an academy-event.
+
+To say AcademyEventDesc of (E - slimeball-spillage-event):
+	say "You have been tasked with dealing with the event in the lab.".
+To say EventFailureFlav of (E - slimeball-spillage-event):
+	say "I knew I shouldn't have relied you. Those slimeballs got everywhere".
+
+Definition: slimeball-spillage-event is eligible:
+	if the rank of the player >= 3 and the player is in School04, decide yes;
+	decide no.
+
+To compute event start of (ESV - slimeball-spillage-event):
+	let M be a random alive staff member in the location of the player;
+	let failsafe be 50;
+	while failsafe > 0 and (M is nothing or M is receptionist or M is headmistress):
+		decrease failsafe by 1;
+		now M is a random alive staff member;
+	if debugmode is 1, say "[input-style]Slimeballs. Found [M].[roman type][line break]";
+	if M is a monster:
+		if M is not in the location of the player:
+			now M is in School03;
+			try M going west;
+			now M is moved;
+		if M is not interested:
+			interest M;
+			say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
+		if M is friendly:
+			now event-failure-punisher of ESV is M;
+			say "[speech style of M]'[NameBimbo], quickly. Head over to the science lab. There's been a crafting [']incident['], and we need someone with your combat skills to resolve it. Go go go!'[roman type][line break]Agree to the task?";
+			if the player is bimbo consenting:
+				repeat with X running from 1 to 3:
+					let S be a random off-stage slimeball;
+					if S is a thing:
+						set up S;
+						now S is in School28;
+				repeat with X running from 1 to 6:
+					let C be a random off-stage mass collectible;
+					if C is a thing, now C is in School28;
+				now academy-event-ready is true; [other events can combo]
+			otherwise:
+				say "[speech style of M]'Seriously?! Ugh! Useless!'[roman type][line break]";
+				FavourDown M;
+				now ESV is event-ended;
+		otherwise:
+			now ESV is event-ended.
+
+To compute event handling of (ESV - slimeball-spillage-event):
+	if playerRegion is school:
+		if the number of regional slimeballs is 0, now ESV is event-ended;
+	otherwise:
+		repeat with M running through slimeballs:
+			if M is in an academic room, destroy M;
+		repeat with M running through mass collectibles:
+			if M is in School28, destroy M;
+		now ESV is event-failed.
+
+
+
+
+
+portal-down-event is an academy-event. portal-down-event has a number called backup-solution. portal-down-event has a number called help-offer-cooldown.
+
+To decide which number is the event-rarity of (E - portal-down-event):
+	decide on 3.
+
+To say AcademyEventDesc of (E - portal-down-event):
+	say "You have been tasked with sourcing some semen and some ectoplasm so that the receptionist can repair the portal.".
+[To say EventFailureFlav of (E - portal-down-event):
+	say "[if the event-failure-punisher of E is in the location of the player]I've been waiting for my wand forever[otherwise]Weren't you supposed to deliver a wand by now?! Where have you been[end if]".]
+
+Definition: portal-down-event is eligible:
+	if receptionist is alive and receptionist is in School01 and the player is in School01 and the rank of the player >= 3 and there is a carried vessel, decide yes;
+	decide no.
+
+To compute event start of (ESV - portal-down-event):
+	if debugmode is 1, say "[input-style]Portal down.[roman type][line break]";
+	if receptionist is not interested:
+		interest receptionist;
+		calm receptionist;
+		say "[BigNameDesc of receptionist] notices you[if the player is sluttily dressed].[otherwise]![end if]";
+	let ECT be a random off-stage ectoplasm;
+	if ECT is nothing, now ECT is a random ectoplasm;
+	if a random number between 1 and 2 is 1, now ECT is in School28;
+	otherwise now ECT is in School22;
+	now event-failure-punisher of ESV is receptionist;
+	say "[speech style of receptionist]'Oh [NameBimbo], I'm sorry, the portal has run out of juice! I need some help to get it back up and running. Could you get a couple of important ingredients for me? When I said [']juice['], I was being rather literal... What I need is some sticky, slimy ectoplasm... And some semen. Either in a cup, or a used condom would be fine. Nobody's going to be able to leave via the until I get these two things, sorry!'[roman type][line break]".
+
+To compute event handling of (ESV - portal-down-event):
+	if playerRegion is school:
+		increase the backup-solution of ESV by 1;
+		decrease the help-offer-cooldown of ESV by 1;
+		if receptionist is uninterested, interest receptionist;
+		if receptionist is in the location of the player:
+			let ECT be a random held ectoplasm;
+			if ECT is a thing:
+				let V be a list of things;
+				let BL be a random held bag lunch;
+				if BL is a thing:
+					add BL to V;
+				otherwise:
+					now BL is a random bag lunch in the location of the player;
+					if BL is a thing, add BL to V;
+				repeat with B running through carried bottles:
+					if the fill-colour of B is creamy and B is non-empty, add B to V;
+				repeat with C running through held clothing:
+					if the used condoms of C > 0, add C to V;
+				if the number of entries in V > 0:
+					reset multiple choice questions;
+					repeat with X running through V:
+						set next numerical response to "Give the receptionist the ectoplasm and the [MediumDesc of X]";
+					set numerical response 0 to "Don't give [him of receptionist] the items [he of receptionist] needs just yet";
+					compute multiple choice question;
+					if player-numerical-response > 0:
+						destroy ECT;
+						let C be entry player-numerical-response in V;
+						if C is clothing:
+							let M be the condomPop of C;
+							increase the empty condoms of C by 1;
+						otherwise if C is bottle:
+							decrease the doses of C by 1;
+						otherwise:
+							destroy C;
+						say "[speech style of receptionist]'Oh brilliant! You're a life saver.'[roman type][line break][BigNameDesc of receptionist] takes the ectoplasm and [if C is bottle]a few drops of [semen] from [NameDesc of C][otherwise]the [semen] from the condom[end if] and smears them against the inactive portal. It crackles with energy and roars back to life![line break][speech style of receptionist]'That should be good for a few hundred more years or so now.'[roman type][line break]";
+						FavourUp receptionist;
+						now ESV is event-ended;
+				otherwise if the help-offer-cooldown of ESV <= 0:
+					say "[speech style of receptionist]'I can see you've got the ectoplasm... Do you need some help getting the semen, sweetie?'[roman type][line break][BigNameDesc of receptionist] beams at you.[speech style of receptionist]'I'll tell you what... I know a spell that could get us some cum... But it might not be... Pretty. Would you like me to use it, rather than you having to go find cum somewhere else?'[roman type][line break]";
+					reset multiple choice questions;
+					set numerical response 1 to "Give the receptionist the ectoplasm and let [him of receptionist] use [his of receptionist] spell";
+					set numerical response 2 to "Decline the offer";
+					compute multiple choice question;
+					if player-numerical-response is 1:
+						say "You nod, and [NameDesc of receptionist] smiles.[line break][speech style of receptionist]'I milk dicks for a living!'[roman type][line break]";
+						if a random number between 2 and 4 <= condom fetish:
+							compute condom calamity;
+							say CondomNewbieTip;
+							say CondomPinReactionFlav of yourself on a random worn drinkable condom pinned clothing;
+						otherwise:
+							say "[bold type]Semen begins to fill you up from every orifice![roman type][line break]Your mouth bulges full with [semen].";
+							FaceFill semen by 4;
+							if the player is possessing a vagina:
+								say "You feel a warm, sticky feeling inside your [vagina].";
+								PussyFill 6;
+							say "You feel fresh [semen] surging inside your anal tunnel.";
+							AssFill 6;
+						say "[BigNameDesc of receptionist][']s cheeks have also bulged! You watch as [he of receptionist] spits a huge mouthful of [semen] into [his of receptionist] cupped hands, and then, taking your ectoplasm, [he of receptionist] waddles awkwardly over to the portal, in a way that you'd expect someone to, if, say, for example, their pussy and asshole were currently uncomfortably full of [semen]. [BigNameDesc of receptionist] smears the [semen] and ectoplasm against the inactive portal. It crackles with energy and roars back to life![line break][speech style of receptionist]'That should be good for a few hundred more years or so now. Now, um... I'm going to go to the toilet...'[roman type][line break][BigNameDesc of receptionist] awkwardly waddles towards the doorway to the north, cradling [his of receptionist] cramping belly as [he of receptionist] does.";
+						FavourUp receptionist;
+						destroy ECT;
+						now ESV is event-ended;
+						try receptionist going north;
+						now receptionist is in School10;
+						now receptionist is unleashed; [allows her to walk back to the reception]
+					otherwise:
+						say "[speech style of receptionist]'Okay honey, good luck getting that happy batter!'[roman type][line break][BigNameDesc of receptionist] smiles sweetly.";
+						now the help-offer-cooldown of ESV is 8;
+			otherwise if the number of regional ectoplasm is 0:
+				now ECT is a random off-stage ectoplasm;
+				if ECT is nothing, now ECT is a random ectoplasm;
+				if a random number between 1 and 2 is 1, now ECT is in School28;
+				otherwise now ECT is in School22;
+				say "[speech style of receptionist]'Come on sweetie, I'm sure there's some ectoplasm out there somewhere, I can sense it! Keep looking!'[roman type][line break][BigNameDesc of receptionist] beams at you.";
+			otherwise if the backup-solution of ESV > a random number between 30 and 300 and the number of regional bag lunch is 0:
+				say "[speech style of receptionist]'A little sweetie handed me this. So I just need an ectoplasm now.'[roman type][line break][BigNameDesc of receptionist] picks up a used, full condom from [his of receptionist] desk and flings it at you. It hits you in the face!";
+				let BG be a random off-stage bag lunch;
+				if BG is nothing, now BG is a random bag lunch;
+				now BG is in the location of the player;
+				GrossOut 6;
+	otherwise:
+		now ESV is event-ended.
+
+
+
+hallway-fight-event is an academy-event. hallway-fight-event has an object called fighter-1. hallway-fight-event has an object called fighter-2.
+
+To decide which number is the event-rarity of (E - hallway-fight-event):
+	decide on 4.
+
+To say AcademyEventDesc of (E - hallway-fight-event):
+	say "You could find a teacher to resolve a hallway fight.".
+[To say EventFailureFlav of (E - hallway-fight-event):
+	say "[if the event-failure-punisher of E is in the location of the player]I've been waiting for my wand forever[otherwise]Weren't you supposed to deliver a wand by now?! Where have you been[end if]".]
+
+Definition: hallway-fight-event is eligible:
+	if there is a staff member in the location of the player or there is a nearby staff member, decide no;
+	if the number of alive students >= 4 and south is listed in the NViables of the location of the player, decide yes;
+	decide no.
+
+To compute event start of (ESV - hallway-fight-event):
+	if debugmode is 1, say "[input-style]Hallway fight.[roman type][line break]";
+	let ST1 be a random alive student;
+	let ST2 be a random alive student;
+	let failsafe be 50;
+	while ST1 is ST2 and failsafe > 0:
+		decrease failsafe by 1;
+		now ST2 is a random alive student;
+	bore ST1;
+	bore ST2;
+	now ST1 is guarding;
+	now ST2 is guarding;
+	now ST1 is in the location of the player;
+	now ST2 is in the location of the player;
+	now fighter-1 of ESV is ST1;
+	now fighter-2 of ESV is ST2;
+	say "[BigNameDesc of ST1] and [NameDesc of ST2] are shoving each other by the south doorway.[line break][speech style of ST1]'Bitch!'[roman type][line break][BigNameDesc of ST1] snarls at [NameDesc of ST2].[paragraph break][speech style of ST1]'Insufferable [cunt]!'[roman type][line break][BigNameDesc of ST2] shrieks back, grabbing [NameDesc of ST1][']s hair.";
+	repeat with ST running through alive students:
+		unless ST is ST1 or ST is ST2:
+			bore ST;
+			now ST is in the location of the player;
+			now ST is guarding;
+	say "A crowd of students quickly gathers![line break][second custom style]'Fight! Fight! Fight!'[roman type][line break]It's going to be almost impossible to get past this fight until it's finished. Maybe you should try to find a teacher? Or just let it play out...".
+
+Check going south when hallway-fight-event is event-started:
+	if fighter-1 of hallway-fight-event is in the location of the player or fighter-2 of hallway-fight-event is in the location of the player, say "There's no way to get past the fight until it has ended." instead.
+
+To compute event handling of (ESV - hallway-fight-event):
+	if playerRegion is school and fighter-1 of ESV is regional and fighter-2 of ESV is regional:
+		now fighter-2 of ESV is in the location of fighter-1 of ESV;
+		let X be a random number between 2 and 5;
+		if the health of fighter-2 of ESV < X or the health of fighter-1 of ESV < X:
+			let ST1 be fighter-1 of ESV;
+			let ST2 be fighter-2 of ESV;
+			if the health of fighter-2 of ESV > the health of fighter-1 of ESV:
+				now ST1 is ST2; [fight victor]
+				now ST2 is fighter-1 of ESV;
+			if ST1 is in the location of the player, say "[BigNameDesc of ST1] manages to get two of [his of ST1] fingers inside [NameDesc of ST2][']s asshole, which [he of ST1] begins to finger-blast for all [his of ST1] might.[line break][speech style of ST2]'Ah fuck! Mercy! Mercy! I'm... Nooooo!'[roman type][line break][BigNameDesc of ST2] has a screaming, squirting orgasm all over the floor, before collapsing in a heap, exhausted and ashamed. [BigNameDesc of ST1] stands up, the proud victor. The fight is over. [BigNameDesc of ST2] looks weaker than before.";
+			DifficultyDown ST2 by 1;
+			now the health of ST2 is 1;
+			now ESV is event-ended;
+			releash students;
+		otherwise:
+			let ST1 be fighter-1 of ESV;
+			let ST2 be fighter-2 of ESV;
+			if the dedication of fighter-2 of ESV + the vindictiveness of fighter-2 of ESV > the dedication of fighter-1 of ESV + the vindictiveness of fighter-1 of ESV:
+				now ST1 is ST2; [attack victor]
+				now ST2 is fighter-1 of ESV;
+				decrease the health of ST2 by a random number between 1 and 3;
+				if the health of ST2 < 0, now the health of ST2 is 1;
+				if ST1 is in the location of the player, say "[BigNameDesc of ST1] [one of]wrestles [NameDesc of ST2] to the ground.[or]spits in [NameDesc of ST2][']s face.[or]slaps [NameDesc of ST2] in the face![or]punches [NameDesc of ST2] in the boob![or]easily dodges a fist that came flying from [NameDesc of ST2], before laughing derisively at [him of ST2].[in random order]";
+	otherwise:
+		now ESV is event-ended;
+		releash students.
+
+To releash students:
+	repeat with ST running through alive students:
+		now ST is unleashed;
+		unless ST is fighter-1 of hallway-fight-event or ST is fighter-2 of hallway-fight-event:
+			if a random number between 1 and 2 is 1, deinterest ST;
+			otherwise distract ST;
+
+Check slapping a student when hallway-fight-event is event-started:
+	unless the noun is dangerous, say "There's enough chaos right now." instead.
+Check kneeing a student when hallway-fight-event is event-started:
+	unless the noun is dangerous, say "There's enough chaos right now." instead.
+Check kicking a student when hallway-fight-event is event-started:
+	unless the noun is dangerous, say "There's enough chaos right now." instead.
+
+To MonsterHeal (M - a student) by (N - a number):
+	unless hallway-fight-event is event-started and (M is fighter-1 of hallway-fight-event or M is fighter-2 of hallway-fight-event):
+		if the health of M < the maxhealth of M:
+			increase the health of M by N;
+			if the health of M > the maxhealth of M, now the health of M is the maxhealth of M.[Overhealing is not allowed]
+
+
+Book - Ultimate Lesson Actor Renamed Unseen Stranger
 
 An unseen-stranger is a kind of monster. An unseen-stranger is male. There are 4 unseen-strangers. The text-shortcut of an unseen-stranger is "voi". Understand "manly", "womanly", "voice" as unseen-stranger.
 An unseen-stranger has a text called the specific-man-title.
@@ -1565,53 +2252,65 @@ To compute action (N - a number) of (M - an unseen-stranger):
 				BlowCount;
 				if M is wrapped:
 					say "[one of][BigFuckerDesc of M] pushes forward as far as [he of M] can go, hissing through [his of M] teeth as [his of M] condom fills with warmth.[or][BigFuckerDesc of M][']s [DickDesc of M] throbs powerfully, firing off load after load of warm [semen] into the condom.[in random order]";
-					if lycra-bodysuit is in Toilet01:
+					if tight-grey-romper is in Toilet01:
 						say "After [he of M] pulls away, you hear [him of M] fumbling with the condom for a few moments.";
-						UsedCondomUp lycra-bodysuit from M;
+						UsedCondomUp tight-grey-romper from M;
+					otherwise if debugmode > 0:
+						say "Tight Grey Romper is in [location of tight-grey-romper].";
 					orgasm M;
 					dislodge M;
 					now M is not wrapped;
+					make gloryhole statement demand of M;
 				otherwise if [current-predicament is nun-walk-predicament and ]player-gagging is false:
-					say "[BigFuckerDesc of M] grunts as [he of M] fills your mouth with [his of M] salty load.";
-					FaceFill semen by the semen load of M;
-					orgasm M;
-					if the player is in Toilet02 and current-predicament is gloryhole-predicament and the semen-spat of gloryhole-predicament is 0, say "[bold type]If you spit it out, you will be penalised.[roman type][line break]";
-					if current-predicament is gloryhole-predicament, suggest swallowing;
-					if current-predicament is gloryhole-key-predicament or current-predicament is business-briefcase-predicament:
-						if current-predicament is business-briefcase-predicament or (the keys-agreed of gloryhole-key-predicament > 0 and a random number between 1 and 2 is 1):
-							say "[speech style of M]'Swallow it. Or the deal's off.'[roman type][line break]";
-							reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
-							set numerical response 1 to "swallow";
-							set numerical response 2 to "pretend to swallow";
-							set numerical response 3 to "refuse to swallow";
-							compute multiple choice question;
-							if player-numerical-response is 1:
-								compute swallowing;
-							otherwise if player-numerical-response is 2:
-								say "You do your best to make an exaggerated gulping sound.";
-								if a random number between 1 and 3 is 1:
-									say "[speech style of M]'I can tell that was fake, you naughty slut. That's it, you get nothing.'[roman type][line break]";
-									if current-predicament is business-briefcase-predicament, make video go gloryhole viral;
-									otherwise now the keys-agreed of gloryhole-key-predicament is 0;
-								otherwise:
-									now player-numerical-response is 1;
-							otherwise if player-numerical-response is 3:
-								say "[variable custom style]'Uh-uh.'[roman type][line break]You make it clear that this would be a step too far for you.";
-								if current-predicament is business-briefcase-predicament:
-									if the player is getting unlucky:
-										say "[speech style of M]'Well then, you just sucked my cock for nothing.'[roman type][line break][GotUnluckyFlav]";
-										make video go gloryhole viral;
+					if current-predicament is gloryhole-predicament and bukkake fetish is 1 and tight-grey-romper is in Toilet01 and a random number between 1 and 3 > 1:
+						say "[speech style of M]'[one of]Cumming[or]Yes! I'm cumming, you nasty slut[in random order]!'[roman type][line break][BigFuckerDesc of M] suddenly pulls out of your mouth, and through the hole you can see [his of M] [manly-penis] ejaculating onto some kind of greyish cum rag.";
+						orgasm M;
+						SemenSoakUp tight-grey-romper by the semen load of M;
+						say "[variable custom style][one of]Oh! That was nice of [him of M]! I was expecting [him of M] to want to cum in my mouth[if the semen-spat of gloryhole-predicament is 0], and then I'd have had to swallow it or get a penalty point[end if].[or]Why do they keep pulling out and cumming on that rag?! That doesn't make any sense, surely a normal guy would rather cum in my mouth...[or]Something tells me that [he of M] has a good reason for using that cum rag... What could it be?![stopping][roman type][line break]";
+						make gloryhole statement demand of M;
+					otherwise:
+						say "[BigFuckerDesc of M] grunts as [he of M] fills your mouth with [his of M] salty load.";
+						FaceFill semen by the semen load of M;
+						orgasm M;
+						if the player is in Toilet02 and current-predicament is gloryhole-predicament and the semen-spat of gloryhole-predicament is 0, say "[bold type]If you spit it out, you will be penalised.[roman type][line break]";
+						if current-predicament is gloryhole-predicament, suggest swallowing;
+						if current-predicament is gloryhole-key-predicament or current-predicament is business-briefcase-predicament:
+							if current-predicament is business-briefcase-predicament or (the keys-agreed of gloryhole-key-predicament > 0 and a random number between 1 and 2 is 1):
+								say "[speech style of M]'Swallow it. Or the deal's off.'[roman type][line break]";
+								reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+								set numerical response 1 to "swallow";
+								set numerical response 2 to "pretend to swallow";
+								set numerical response 3 to "refuse to swallow";
+								compute multiple choice question;
+								if player-numerical-response is 1:
+									compute swallowing;
+								otherwise if player-numerical-response is 2:
+									say "You do your best to make an exaggerated gulping sound.";
+									if a random number between 1 and 3 is 1:
+										say "[speech style of M]'I can tell that was fake, you naughty slut. That's it, you get nothing.'[roman type][line break]";
+										if current-predicament is business-briefcase-predicament, make video go gloryhole viral;
+										otherwise now the keys-agreed of gloryhole-key-predicament is 0;
 									otherwise:
-										say "[speech style of M]'Ugh, whatever.'[roman type][line break]";
-								otherwise:
-									say "[speech style of M]'Fine. [if the keys-agreed of gloryhole-key-predicament is 1]But you just lost your rights to this key[otherwise]But for that, instead of [the keys-agreed of gloryhole-key-predicament] keys, I'm only going to give you [the keys-agreed of gloryhole-key-predicament - 1][end if].'[roman type][line break]";
-									decrease the keys-agreed of gloryhole-key-predicament by 1;
+										now player-numerical-response is 1;
+								otherwise if player-numerical-response is 3:
+									say "[variable custom style]'Uh-uh.'[roman type][line break]You make it clear that this would be a step too far for you.";
+									if current-predicament is business-briefcase-predicament:
+										if the player is getting unlucky:
+											say "[speech style of M]'Well then, you just sucked my cock for nothing.'[roman type][line break][GotUnluckyFlav]";
+											make video go gloryhole viral;
+										otherwise:
+											say "[speech style of M]'Ugh, whatever.'[roman type][line break]";
+									otherwise:
+										say "[speech style of M]'Fine. [if the keys-agreed of gloryhole-key-predicament is 1]But you just lost your rights to this key[otherwise]But for that, instead of [the keys-agreed of gloryhole-key-predicament] keys, I'm only going to give you [the keys-agreed of gloryhole-key-predicament - 1][end if].'[roman type][line break]";
+										decrease the keys-agreed of gloryhole-key-predicament by 1;
 				otherwise: [Deepthroat cumshot]
 					compute deepthroat creampie of M;
 				if current-predicament is gloryhole-predicament:
 					increase the cocks-sucked of gloryhole-predicament by 1;
 					if id-poster is in Toilet01 and the remainder after dividing the cocks-sucked of gloryhole-predicament by 2 is 0, say "[speech style of M]'[one of]Thanks a lot[or]Good job[in random order], [NameBimbo].'[line break][variable custom style][one of]'Wait what?! How do you know my name?!'[or]How does [he of M] know my name?! What can [he of M] see on [his of M] side of the wall?![stopping][roman type][line break]";
-					say "With [one of]an ashamed[or]a satisfied[or]a giddy[purely at random] noise, [NameDesc of M] pulls [his of M] [manly-penis] back through the hole and quickly [one of]leaves[or]makes [himself of M] scarce[or]flees the scene[in random order].[line break][variable custom style]That's [cocks-sucked of gloryhole-predicament] down[if the cocks-sucked of gloryhole-predicament is 1]. I could go retrieve my key now, but unless I suck four more [manly-penis]s, the CCTV footage of what I just did will be uploaded to the internet and sent to my friends...[otherwise if the cocks-sucked of gloryhole-predicament < 5]...[otherwise]. I'm done![end if][roman type][line break]";
+					if tight-grey-romper is in Toilet01, say "You hear [NameDesc of M] leaving the men's toilets, chuckling [one of]vindictively[or]derisively[or]cruelly[in random order].";
+					otherwise say "With [one of]an ashamed[or]a satisfied[or]a giddy[purely at random] noise, [NameDesc of M] pulls [his of M] [manly-penis] back through the hole and quickly [one of]leaves[or]makes [himself of M] scarce[or]flees the scene[in random order].";
+					say "[variable custom style]That's [cocks-sucked of gloryhole-predicament] down[if the cocks-sucked of gloryhole-predicament is 1]. I could go retrieve my key now, but unless I suck four more [manly-penis]s, the CCTV footage of what I just did will be uploaded to the internet and sent to my friends...[otherwise if the cocks-sucked of gloryhole-predicament < 5]...[otherwise]. I'm done![end if][roman type][line break]";
 				otherwise if current-predicament is gloryhole-key-predicament:
 					if gloryhole-key-predicament is ass-to-mouth-agreed:
 						AnalSexAddictUp 1;

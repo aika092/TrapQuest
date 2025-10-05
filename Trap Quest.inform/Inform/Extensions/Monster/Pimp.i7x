@@ -19,6 +19,10 @@ Definition: pimp is willing to do titfucks: decide no.
 Definition: pimp is human: decide yes.
 
 Definition: pimp is a generic-unlocker: decide yes.
+Definition: pimp is a bondage applier: decide yes. [Do they sometimes apply bondage before and/or after punishing you?]
+Definition: pimp is eager to warn angrily:
+	if it is classicly eager to warn angrily, decide yes; [Warns and punishes resistance during non-oral sex]
+	decide no.
 
 Definition: pimp is wenchy:
 	if the player is the donator:
@@ -270,7 +274,7 @@ This is the pimp uses portals rule:
 			summon spade owned breast tattoo;
 			try examining spade owned breast tattoo;
 			rule succeeds; [this ends his turn but doesn't satisfy him yet]
-		otherwise if diaper quest is 1 and diaper swapping >= 2 and the player is a december 2023 diaper donator and portal-diaper is unclash summonable:
+		otherwise if diaper quest is 1 and diaper swapping >= 2 and portal-diaper is unclash summonable:
 			say "[speech style of pimp]'I have ways of dealing with disobedient whores. I own your body, and sometimes this is the only way to make sure someone like you understands that.'[roman type][line break][BigNameDesc of pimp] produces a giant white diaper with a faintly glowing blue hue at the crotch.";
 			unclash class summon portal-diaper;
 			say "[if the player is in Hotel31]A matching portal appears at the entrance to the drainage of the urinal![line break][end if][speech style of pimp]'Now I can sell your diaper for use as a urinal at any time, and take ALL the profits for myself[if the player is not in Hotel31]. You'll see what I mean soon enough[end if].'[roman type][line break]";

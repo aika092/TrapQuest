@@ -223,10 +223,10 @@ To compute (M - a robobutler) cuffing:
 		say "[BigNameDesc of M] pulls out a [printed name of B] and forces it into your mouth.";
 		summon B locked;
 	repeat with C running through worn bondage:
-		let K be a random off-stage specific-key;
-		if K is a thing:
-			compute M locking C with K;
-			if the sentence of prison guard < 2, now the sentence of prison guard is 2.
+		let K be a random specific-key covering C;
+		if K is nothing:
+			compute M keylocking C;
+			if recently-used-key is a thing and the sentence of prison guard < 2, now the sentence of prison guard is 2.
 
 The unique punishment rule of a robobutler is usually the robobutler punishment rule.
 This is the robobutler punishment rule:
@@ -234,8 +234,7 @@ This is the robobutler punishment rule:
 	if the planned-punishment of M is 6 and lip gag is actually summonable:
 		say "[speech style of M]'SUBJECT NEEDS SUPPORT KEEPING DRINKING ORIFICE ACCESSIBLE.'[roman type][line break][BigNameDesc of M] produces a ring gag shaped like a pair of lips, and pulls it around your mouth!";
 		summon lip gag locked;
-		let K be a random off-stage specific-key;
-		if K is a thing, compute M locking lip gag with K;
+		compute M keylocking lip gag;
 	otherwise if the planned-punishment of M is 5:
 		let N be a random alive mechanic;
 		if N is nothing, now N is a random alive demon lord;

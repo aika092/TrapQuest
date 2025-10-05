@@ -55,9 +55,9 @@ To say ClothingDesc of (H - police-hat):
 	say "This [MediumDesc of H] looks pretty official... Until you take a closer look, and notice that instead of a normal symbol at the front, it has... an eggplant[if H is pinkified]. Oh yeah, and now it's pink[end if].".
 
 To say ShortDesc of (H - police-hat):
-	say "headband".
+	say "hat".
 To say MediumDesc of (H - police-hat):
-	say "rugged headband".
+	say "police hat".
 
 Definition: police-hat is black themed:
 	if it is pinkified, decide no;

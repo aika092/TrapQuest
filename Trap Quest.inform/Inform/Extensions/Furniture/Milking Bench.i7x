@@ -194,7 +194,7 @@ To compute furniture resting on (M - a milking bench):
 	let C be a random worn temporarily-displaced actually top-replacable clothing;
 	while C is temporarily-displaced clothing:
 		repeat with CC running through worn temporarily-displaced actually top-replacable clothing:
-			if the top-layer of CC > the top-layer of C, now C is CC;
+			if the top-layer of CC < the top-layer of C, now C is CC;
 		say "You replace your [ShortDesc of C].";
 		TopReplace C;
 		now C is not temporarily-displaced;

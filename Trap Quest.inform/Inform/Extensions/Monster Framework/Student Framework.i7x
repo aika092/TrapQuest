@@ -1142,10 +1142,9 @@ Definition: bully-lock-heels is eligible:
 	if there is an off-stage specific-key, decide yes;
 	decide no.
 To execute (A - bully-lock-heels):
-	summon ballet heels uncursed;
+	summon ballet heels locked;
 	say "[BigNameDesc of current-monster] makes you wear a [ballet heels]!";
-	let K be a random off-stage specific-key;
-	compute current-monster locking ballet heels with K.
+	compute current-monster keylocking ballet heels.
 
 bully-lock-gag is a bully-action.
 Definition: bully-lock-gag is eligible:
@@ -1159,10 +1158,9 @@ To execute (A - bully-lock-gag):
 		now G is yellow-pacifier;
 	otherwise:
 		say "[speech style of current-monster]'You should smile more!'[roman type][line break]";
-	summon G uncursed;
+	summon G locked;
 	say "[BigNameDesc of current-monster] makes you wear a [G][if G is pacifier] that has been threaded onto a bondage strap[end if]!";
-	let K be a random off-stage specific-key;
-	compute current-monster locking G with K.
+	compute current-monster keylocking G.
 
 bully-sharpie is a bully-action.
 Definition: bully-sharpie is eligible:
@@ -1612,20 +1610,20 @@ To resolve (SI - student-interaction-mass-collectible):
 	say "[variable custom style][one of]Score[or]Nice[at random]![roman type][line break]".
 
 
-student-interaction-id-card is a student-interaction.
+student-interaction-mechanic-id-card is a student-interaction.
 
-Definition: student-interaction-id-card is student-eligible:
+Definition: student-interaction-mechanic-id-card is student-eligible:
 	if the current-rank of current-monster >= 6 and the rank of the player >= 4, decide yes;
 	decide no.
-Definition: student-interaction-id-card is eligible:
-	if id-card is off-stage, decide yes;
+Definition: student-interaction-mechanic-id-card is eligible:
+	if mechanic-id-card is off-stage, decide yes;
 	decide no.
 
-To resolve (SI - student-interaction-id-card):
+To resolve (SI - student-interaction-mechanic-id-card):
 	let M be current-monster;
-	say "[BigNameDesc of M] offers you a [id-card].[line break][speech style of M]'I went snooping around the staff room earlier, and found this. Since you're always sneaking off to the hotel, I thought you might find a use for it...'[roman type][line break]";
-	now id-card is in the location of the player;
-	compute autotaking id-card;
+	say "[BigNameDesc of M] offers you a [mechanic-id-card].[line break][speech style of M]'I went snooping around the staff room earlier, and found this. Since you're always sneaking off to the hotel, I thought you might find a use for it...'[roman type][line break]";
+	now mechanic-id-card is in the location of the player;
+	compute autotaking mechanic-id-card;
 	say "[variable custom style]Holy crap... This might turn out to be REALLY useful![roman type][line break]".
 
 

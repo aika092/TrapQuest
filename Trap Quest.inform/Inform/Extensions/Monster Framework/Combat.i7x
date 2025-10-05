@@ -460,11 +460,25 @@ To compute climax of (M - a monster) in (F - a fuckhole):
 	otherwise FuckCount;
 	compute unique climax of M in F;
 	compute post climax effect of M in F;
+	compute post climax behaviour of M in F.
+
+To compute post climax behaviour of (M - a monster) in (F - a fuckhole):
 	if the rounds of sex left of M <= 0:
-		if F is vagina, compute happy vaginal sex reward of M;
-		otherwise compute happy anal sex reward of M;
-		if M is interested, orgasm satisfy M;
-		otherwise orgasm dislodge M.
+		if M is normally annoyed:
+			if F is vagina, compute happy vaginal sex reward of M;
+			otherwise compute happy anal sex reward of M;
+			if M is interested, orgasm satisfy M;
+			otherwise orgasm dislodge M;
+		otherwise:
+			orgasm dislodge M;
+			if M is interested:
+				if M is awake and M is in the location of the player and the times-warned of M >= 3:
+					compute post sex punishment of M;
+					bore M;
+				otherwise:
+					satisfy M;
+
+
 
 [!<ComputePostClimaxEffectOfMonsterInBodypart>+
 
@@ -557,9 +571,19 @@ To compute cleavage climax of (M - a monster):
 		get cleavage climax image of M;
 		AnnouncedSquirt semen on breasts by the semen load of M;
 	compute post climax effect of M in breasts;
-	compute happy titfuck reward of M;
-	if M is interested, orgasm satisfy M;
-	otherwise orgasm dislodge M.
+	if M is normally annoyed:
+		compute happy titfuck reward of M;
+		if M is interested, orgasm satisfy M;
+		otherwise orgasm dislodge M;
+	otherwise:
+		orgasm dislodge M;
+		if M is interested:
+			if M is awake and M is in the location of the player and the times-warned of M >= 3:
+				compute post sex punishment of M;
+				bore M;
+			otherwise if M is interested:
+				satisfy M.
+
 
 To compute post climax effect of (M - a monster) in (B - breasts):
 	BreastsSensitivityUp 1.
@@ -967,8 +991,16 @@ To say ReclaimDeclaractionFlav of (M - a monster) for (C - a thing):
 To say ReclaimFlav of (M - a monster) for (C - a thing):
 	say "[BigNameDesc of M] [if C is worn][one of]pulls[or]yanks[or]wriggles[at random] [NameDesc of C] off of you[otherwise]takes [NameDesc of C] back[one of] into [his of M] possession[or] from you[or][stopping][end if].".
 
+This is the early bondage punishment rule:
+	if current-monster is a bondage applier:
+		now early-bondage-check is true;
+		compute bondage application check of current-monster;
+		now early-bondage-check is false;
+		if bondage-successfully-applied is true, rule succeeds.
+The early bondage punishment rule is listed last in the monster punishment rules.
+
 This is the potion forcefeed punishment rule:
-	if diaper quest is 0 and potion-forcefeed is appropriate:
+	if potion-forcefeed is appropriate:
 		compute potion forcefeed of current-monster;
 		rule succeeds.
 The potion forcefeed punishment rule is listed last in the monster punishment rules.
@@ -1266,9 +1298,11 @@ To check enticing of (M - a monster) for (B - a thing) with temptation level (S 
 	let N be the enticement-strength of M with S;
 	if N > 14, say EnticedFlav of M for B with enticement level N; [This way, there's some flavour if we got close but not quite close enough for the first level of enticement]
 	if the player is upright:
-		if N > 28:
+		if N > 28 or the player is extremely horny:
 			if debuginfo > 0, say "[input-style]Above 28 = maximum enticement level![roman type][line break]";
-			say "The combination of your arousal and [if diaper quest is 1]predilections[otherwise]addiction[end if] makes it impossible for you to resist![line break][variable custom style][one of]I'm supposed to be fighting... But my body is acting of its own accord... I can't stop myself[or]I need it so badly[stopping]![roman type][line break]";
+			if S > 7, say "The combination of your arousal and [if diaper quest is 1]predilections[otherwise]addiction[end if] makes it impossible for you to resist!";
+			otherwise say "Your extreme arousal makes it impossible for you to resist!";
+			say "[variable custom style][one of]I'm supposed to be fighting... But my body is acting of its own accord... I can't stop myself[or]I need it so badly[stopping]![roman type][line break]";
 			now auto is 1;
 			try kneeling;
 			now auto is 0;

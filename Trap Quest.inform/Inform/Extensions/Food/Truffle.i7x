@@ -35,7 +35,7 @@ Carry out TQeating truffle:
 				severeHumiliate;
 			Arouse the semen taste addiction of the player * 20;
 			StomachSemenUp 1;
-	otherwise if a random number between 3 and the quality of the noun is 3:
+	otherwise if a random number between the quality of the noun and 3 >= 3:
 		say "The rich chocolate leaves you feeling really satisfied, and you feel like you could put up with a lot as long as you still feel that great taste in the back of your mouth";
 		increase truffle-confidence-timer by 200 + the quality of the noun * 10 + the fat of the noun * 30;
 	otherwise:

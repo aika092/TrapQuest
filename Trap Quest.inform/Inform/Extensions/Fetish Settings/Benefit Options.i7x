@@ -11,7 +11,7 @@ title	subtable	description	toggle
 "Extra Dexterity: [bonus dexterity] ([bonus dexterity points] points used. [bonus dexterity cost].)"	--	--	bonus dexterity rule
 "Extra Intelligence: [bonus intelligence] ([bonus intelligence points] points used. [bonus intelligence cost].)"	--	--	bonus intelligence rule
 "Mindbreak protection (player can't get broken: humiliation, bimbo and sex addiction cap slightly lowered) ([if mindbreak protection is 0]Not enabled - costs 4 points to enable[otherwise][bold type]Enabled[roman type] - 4 points used[end if])"	--	--	mindbreak protection toggle rule
-"Bondage protection ([if bondage protection is 0]Not enabled - costs 2 points to partially enable[otherwise if bondage protection is 1][bold type]Partially Enabled[roman type] (skeleton keys are less rare and even work on clothing NPCs lock on you with specific keys) - 2 points used[otherwise][bold type]Enabled[roman type] (bondage, including chastity, only happens from rare scenes when absolutely required) - 4 points used[end if])"	--	--	bondage protection toggle rule
+"Bondage protection ([if bondage protection is 0]Not enabled - costs 2 points to partially enable[otherwise if bondage protection is 1][bold type]Partially Enabled[roman type] (skeleton keys are less rare and even work on clothing NPCs lock on you with specific keys) - 2 points used[otherwise if bondage protection is 2][bold type]Mostly Enabled[roman type] (NPCs don't randomly put bondage items on you after defeating you) - 4 points used[otherwise][bold type]Fully Enabled[roman type] (bondage, including chastity, only happens from rare scenes when absolutely required) - 6 points used[end if])"	--	--	bondage protection toggle rule
 "Spontaneous tattoos (If this is enabled, tattoos can spontaneously appear on their own in response to what you do in the game. Otherwise this only starts happening after you get your first tattoo voluntarily) ([if spontaneous tattoos is 0]Not enabled - free to enable[otherwise][bold type]Enabled[roman type] - free to disable[end if])"	--	--	spontaneous tattoos toggle rule
 "Starting headgear rule (If this is enabled, a class headgear will appear in the pink wardrobe and you can choose to start that class journey straight away. You won't get that headgear the normal way until you've worn it.) - ([if roleplay fetish is 0]Not enabled - costs 1 point to enable[otherwise][bold type]Enabled[roman type] - 1 point used[end if])"	--	--	roleplay fetish toggle rule
 "Slower timers (Things like the academy class bell and doom quest ritual are more forgiving.) - ([if slower timers is 1]Not enabled - costs 2 points to enable[otherwise][bold type]Enabled[roman type] - 2 points used[end if])"	--	--	slower timers toggle rule
@@ -209,7 +209,7 @@ This is the roleplay fetish reset rule:
 The roleplay fetish reset rule is listed in the reset rules.
 
 This is the bondage protection toggle rule:
-	if bondage protection < 2 and points count >= 2, increase choice in row 64 of the Table of Player Options by 1;
+	if bondage protection < 3 and points count >= 2, increase choice in row 64 of the Table of Player Options by 1;
 	otherwise now choice in row 64 of the Table of Player Options is 0.
 
 This is the bondage protection reset rule:
@@ -256,7 +256,7 @@ This is the slower timers toggle rule:
 		now choice in row 87 of the Table of Player Options is 1.
 
 This is the slower timers reset rule:
-	now choice in row 87 of the Table of Player Options is 0.
+	now choice in row 87 of the Table of Player Options is 1.
 The slower timers reset rule is listed in the reset rules.
 
 This is the fantastic elastic toggle rule:

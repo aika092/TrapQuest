@@ -4,6 +4,7 @@ serving-bondage is a kind of bondage. The text-shortcut of serving-bondage is "s
 The inventoryFocusPriority of serving-bondage is -2.
 
 Definition: serving-bondage is waitress-enabling: decide yes.
+Definition: serving-bondage is application appropriate: decide no.
 
 Definition: a serving-bondage is actually summonable: decide no. [Shouldn't be selected randomly as a bondage to summon]
 

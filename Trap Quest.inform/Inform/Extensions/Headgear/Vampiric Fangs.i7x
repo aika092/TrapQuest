@@ -58,7 +58,7 @@ To uniquely set up (C - vampiric fangs):
 	now the quest of C is ritual-quest.
 
 To say QuestFlav of (Q - ritual-quest):
-	say "You sense it wants [if doomed is -1]you to kill the vampiress[otherwise]a new elder god to awaken[end if].".
+	say "You sense it wants [if doomed is -1]you to banish the vampiress[otherwise]a new elder god to awaken[end if].".
 
 To say QuestTitle of (Q - ritual-quest):
 	say " ([if doomed is -1]vampiress revenge[otherwise]elder god[end if] quest)".

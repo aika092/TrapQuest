@@ -58,6 +58,10 @@ Check an actor going (this is the can't go that way except for warp portals rule
 					if the actor is the player:
 						say "This portal seems to currently be on the fritz - it's glitching wildly! [We] [can't go] that way.";
 					stop the action;
+				otherwise if portal-down-event is event-started:
+					if the actor is the player:
+						say "This portal is currently out of power! [We] [can't go] that way.";
+					stop the action;
 				otherwise if the class of the player is trick-or-treater:
 					if the actor is the player:
 						say "Your [random worn headgear] is somehow preventing [us] from leaving while [we][']re a [']trick or treater[']!";
@@ -143,7 +147,7 @@ To set up predicament status:
 	now the air volume of breasts is 0;
 	now the air volume of hips is 0;
 	now the air volume of belly is 0;
-	empty belly;
+	egg-held empty belly;
 	MouthEmpty;
 	now the stance of the player is 0;
 	display inventory-focus stuff; [can't force immediate inventory-focus redraw because the empty list would actually be correct and then it wouldn't redraw]
@@ -151,7 +155,7 @@ To set up predicament status:
 
 To set up predicament clothing for (P - a predicament):
 	repeat with C running through on-stage wearthings:
-		if C is not in Predicament20 and (C is held or C is in a predicament room) and C is not predicament-fixed, now C is predicament-temporary;
+		if C is not in Predicament20 and (C is held or C is in a predicament room) and C is not predicament-fixed and C is not listed in predicamentWornList, now C is predicament-temporary;
 	now executing-predicament is false.
 
 forced-portal is an object that varies.
@@ -163,6 +167,7 @@ To teleport via (W - a warp portal):
 	let NPF be 0;
 	let NOptions be 0;
 	let predicamentsAvailable be 0;
+	let receptionistChasing be false;
 	if W is school portal:
 		if receptionist is in the location of the player:
 			let ST be a random student in the location of the player;
@@ -177,7 +182,7 @@ To teleport via (W - a warp portal):
 	if W is not in the Dungeon:
 		set next numerical response to "go to the Dungeon";
 		increase NOptions by 1;
-	if W is not in the School and (armband is worn or armband is solid gold or ex-princess is unconcerned):
+	if W is not in the School and the class of the player is not berri and (armband is worn or armband is solid gold or ex-princess is unconcerned):
 		set next numerical response to "go to the Academy";
 		increase NOptions by 1;
 	if W is not in the Hotel and location of hotel portal is discovered:
@@ -208,143 +213,164 @@ To teleport via (W - a warp portal):
 			now the destination of W is the Hotel;
 		otherwise if T matches the text "Mansion":
 			now the destination of W is the Mansion;
-	if W is in the school:
-		if the destination of W is not school:
-			if predicamentJustDone is false and receptionist is in the location of the player:
-				let M be receptionist;
-				repeat with ST running through alive unfriendly students: [find a really angry student]
-					if a random number between the favour of M and 10 < 9, now M is ST;
-				if M is student:
-					now team-predicament-partner is M;
-					if there is an eligible appropriate predicament and the player is predicament-ready:
-						now M is in the location of the player;
-						say "[bold type]Just as you begin to step into the warp portal, [NameDesc of M] [bold type]appears and yanks on a nearby lever! [roman type][big he of M] grins a mischievous, vindictive grin and waves goodbye as the destination changes to the 'extra credit zone'!";
-						satisfy M;
-						now the destination of W is school;
-		if the destination of W is dungeon and armband is not sapphire and armband is not emerald and armband is worn and Mansion32 is not discovered and the player is getting unlucky:
-			if Woods01 is unplaced:
-				Set Up The Woods;
-				follow the setting up woods monsters rules;
-				repeat with M running through alive nonexistent monsters:
-					set up M;
-			if Mansion01 is unplaced:
-				Set Up The Mansion;
-				follow the setting up mansion monsters rules;
-				repeat with M running through alive nonexistent monsters:
-					set up M;
-			now the destination of W is mansion;
-			say "[bold type]The warp portal appears to shudder and glitch as you step into it. It's sending you to somewhere you didn't ask to go! Uh-oh...[roman type][line break]";
-			now NPF is 1;
-		otherwise if (the destination of W is dungeon or the destination of W is hotel) and armband is worn and armband is not sapphire and armband is not emerald and armband is not ruby and Hotel40 is not discovered and the player is getting unlucky:
-			if Woods01 is unplaced:
-				Set Up The Woods;
-				follow the setting up woods monsters rules;
-				repeat with M running through alive nonexistent monsters:
-					set up M;
-			if Hotel01 is unplaced:
-				Set Up The Hotel;
-				follow the setting up hotel monsters rules;
-				repeat with M running through alive nonexistent monsters:
-					set up M;
-			now the destination of W is hotel;
-			say "[bold type]The warp portal appears to shudder and glitch as you step into it. It's sending you to somewhere you didn't ask to go! Uh-oh...[roman type][line break]";
-			now NPF is 1;
-	repeat with P running through warp portals:
-		now P is not next-portal-forbidden;
-		if P is regionally in the destination of W, now D is P;
-	if D is warp portal, now the destination of D is playerRegion; [The portal you just went through will send you right back to where you were unless you pull the lever]
-	if playerRegion is school:
-		if the body soreness of the player < 10 and the fatigue of the player > 0, say "[bold type]As you go through the portal, you find your fatigue leaving you.[roman type][line break]"; [no point telling the player that they have a fatigue refresh at 0% HP]
-		now the fatigue of the player is 0;
-	zero focus stuff;
-	if W is D: [School portal leads to extra credit zone. Anything added here might also need to be added to the detention code in Staff Framework.i7x]
-		now the destination of W is the Dungeon;
-		display entire map;
-		let L be the list of eligible appropriate predicaments;
-		say "As you go through the portal, you feel your clothing stolen away by some invisible forces![one of][line break][variable custom style]This isn't like before?![roman type][line break][or][stopping][if debugmode > 0][line break]List of appropriate predicaments: [L][line break][end if]";
-		let P be nothing;
-		if the number of entries in L > 0:
-			sort L in random order;
-			let P be entry 1 in L;
-			if debugmode > 0, say "selected [P].";
-		otherwise:
-			if debugmode > 0, say "The list of appropriate predicaments was empty, which must mean that we calculated that there was an available team predicament. Fingers crossed that was right...";
-		if (P is nothing or team-predicament-partner is not student) and receptionist is in the location of the player:
-			let ST be a random student in the location of the player;
-			if ST is student:
-				now team-predicament-partner is ST;
-				if there is an eligible appropriate team-predicament and (the number of entries in L is 0 or a random number between 1 and 4 > 1):
-					now P is a random eligible appropriate team-predicament;
-					if debugmode > 0, say "After reconsidering joint predicament options and seeing [ST] in the reception area, selected [P].";
-		if P is nothing:
-			say "BUG: tried to set up an extra credit lesson but suddenly none were available. Oopsie. Please report a bug with the following info:[line break]Receptionist: [unless receptionist is in the location of the player]not [end if]available.[line break]nearby students: [list of students in the location of the player].[line break]Chosen predicament partner: [team-predicament-partner].[line break]List of appropriate predicaments before receptionist check: [L].[line break]List of appropriate predicaments after receptionist check: [the list of eligible appropriate predicaments].";
-		otherwise:
-			set up predicament status;
-			if P is team-predicament:
-				say "[paragraph break]Behind [NameDesc of team-predicament-partner], [NameDesc of receptionist] casually struts up and then plants a foot on [NameDesc of team-predicament-partner][']s back![line break][speech style of team-predicament-partner]'What?! No wait-!'[roman type][line break][BigNameDesc of receptionist] kicks forward, and [NameDesc of team-predicament-partner] is pushed into the warp portal alongside you! You're both going in at the same time!";
-				now team-predicament-partner is interested;
-				update appearance level;
-				now the latest-appearance of team-predicament-partner is the appearance of the player;
-				if diaper quest is 1, now the latest-cringe of team-predicament-partner is the cringe appearance of the player;
-			let TP be a random off-stage fetish appropriate trophy;
-			if TP is trophy, now TP is in Predicament20;
-			now current-predicament is P;
-			now turnsWithSoiledDiaper is 0;
-			if the body soreness of the player > 4, now the body soreness of the player is 4;
-			now the printed name of Predicament01 is "Abandoned Warehouse";
-			repeat with R running through predicament rooms:
-				totally clean R;
-			now executing-predicament is true;
-			now temporaryYesNoResetNeeded is false;
-			maybe execute P;
-			set up predicament clothing for P;
-			increase the times-completed of P by 1;
-			temporaryYesNoBackgroundReset;
-			now predicamentJustDone is true;
-	otherwise if D is school portal:
-		if receptionist is alive and receptionist is not in School01, now receptionist is in School01;
-		if armband is worn and armband is not solid gold and there is an alive undefeated correctly-ranked teacher and the armband-print of armband is not "new recruit":
-			if class-time < 0, now lessonJustDone is false;
-			let A be a random appropriate assembly;
-			if A is assembly:
-				set up A;
-				say WarpPortalStartFlav of A;
-				compute start of A;
+	if forced-portal is not a warp portal and tough-shit is 1 and a random number between -100 and 0 > the luck of the player:
+		increase the raw luck of the player by 5;
+		say "[bold type]Instead of taking you where you meant to go, you feel the portal glitching, and taking you somewhere else entirely![roman type][line break]";
+		compute bad teleport;
+		say GotUnluckyFlav;
+	otherwise:
+		if W is in the school:
+			if the destination of W is not school:
+				if receptionist is in the location of the player:
+					let EG be nothing;
+					repeat with EX running through held medium eggs:
+						if the egg-origin of EX is carrot daggers, now EG is EX;
+					if EG is a thing and egg-smuggling-event is event-started and armband is worn:
+						let M be receptionist;
+						interest M;
+						anger M;
+						say "[speech style of M]'HEY! WHERE ARE YOU TAKING THAT EGG?! THAT'S THE HEADMISTRESS'S!'[roman type][line break][big he of M] looks furious! [BigNameDesc of armband] fizzles into dust.";
+						destroy armband;
+						now receptionistChasing is true;
+						now egg-smuggling-event is event-ended;
+					otherwise if predicamentJustDone is false:
+						let M be receptionist;
+						repeat with ST running through alive unfriendly students: [find a really angry student]
+							if a random number between the favour of M and 10 < 9, now M is ST;
+						if M is student:
+							now team-predicament-partner is M;
+							if there is an eligible appropriate predicament and the player is predicament-ready:
+								now M is in the location of the player;
+								say "[bold type]Just as you begin to step into the warp portal, [NameDesc of M] [bold type]appears and yanks on a nearby lever! [roman type][big he of M] grins a mischievous, vindictive grin and waves goodbye as the destination changes to the 'extra credit zone'!";
+								satisfy M;
+								now the destination of W is school;
+			if the destination of W is dungeon and armband is not sapphire and armband is not emerald and armband is worn and Mansion32 is not discovered and the player is getting unlucky:
+				if Woods01 is unplaced:
+					Set Up The Woods;
+					follow the setting up woods monsters rules;
+					repeat with M running through alive nonexistent monsters:
+						set up M;
+				if Mansion01 is unplaced:
+					Set Up The Mansion;
+					follow the setting up mansion monsters rules;
+					repeat with M running through alive nonexistent monsters:
+						set up M;
+				now the destination of W is mansion;
+				say "[bold type]The warp portal appears to shudder and glitch as you step into it. It's sending you to somewhere you didn't ask to go! Uh-oh...[roman type][line break]";
+				now NPF is 1;
+			otherwise if (the destination of W is dungeon or the destination of W is hotel) and armband is worn and armband is not sapphire and armband is not emerald and armband is not ruby and Hotel40 is not discovered and the player is getting unlucky:
+				if Woods01 is unplaced:
+					Set Up The Woods;
+					follow the setting up woods monsters rules;
+					repeat with M running through alive nonexistent monsters:
+						set up M;
+				if Hotel01 is unplaced:
+					Set Up The Hotel;
+					follow the setting up hotel monsters rules;
+					repeat with M running through alive nonexistent monsters:
+						set up M;
+				now the destination of W is hotel;
+				say "[bold type]The warp portal appears to shudder and glitch as you step into it. It's sending you to somewhere you didn't ask to go! Uh-oh...[roman type][line break]";
+				now NPF is 1;
+		repeat with P running through warp portals:
+			now P is not next-portal-forbidden;
+			if P is regionally in the destination of W, now D is P;
+		if D is warp portal, now the destination of D is playerRegion; [The portal you just went through will send you right back to where you were unless you pull the lever]
+		if playerRegion is school and receptionistChasing is false:
+			if the body soreness of the player < 10 and the fatigue of the player > 0, say "[bold type]As you go through the portal, you find your fatigue leaving you.[roman type][line break]"; [no point telling the player that they have a fatigue refresh at 0% HP]
+			now the fatigue of the player is 0;
+		zero focus stuff;
+		if W is D: [School portal leads to extra credit zone. Anything added here might also need to be added to the detention code in Staff Framework.i7x]
+			now the destination of W is the Dungeon;
+			display entire map;
+			let L be the list of eligible appropriate predicaments;
+			say "As you go through the portal, you feel your clothing stolen away by some invisible forces![one of][line break][variable custom style]This isn't like before?![roman type][line break][or][stopping][if debugmode > 0][line break]List of appropriate predicaments: [L][line break][end if]";
+			let P be nothing;
+			if the number of entries in L > 0:
+				sort L in random order;
+				let P be entry 1 in L;
+				if debugmode > 0, say "selected [P].";
 			otherwise:
-				say "As you go through the portal, you appear back in the academy again, just in front of the classroom. After you've gone through, the portal closes behind you. There's a classroom right in front of you. A bell rings - it's time for class right now!";
-				if armband is sapphire:
-					now the player is in School07;
-				otherwise if armband is emerald:
-					now the player is in School03;
-				otherwise if armband is ruby:
-					now the player is in School26;
-				otherwise if armband is pink diamond:
-					now the player is in School25;
+				if debugmode > 0, say "The list of appropriate predicaments was empty, which must mean that we calculated that there was an available team predicament. Fingers crossed that was right...";
+			if (P is nothing or team-predicament-partner is not student) and receptionist is in the location of the player:
+				let ST be a random student in the location of the player;
+				if ST is student:
+					now team-predicament-partner is ST;
+					if there is an eligible appropriate team-predicament and (the number of entries in L is 0 or a random number between 1 and 4 > 1):
+						now P is a random eligible appropriate team-predicament;
+						if debugmode > 0, say "After reconsidering joint predicament options and seeing [ST] in the reception area, selected [P].";
+			if P is nothing:
+				say "BUG: tried to set up an extra credit lesson but suddenly none were available. Oopsie. Please report a bug with the following info:[line break]Receptionist: [unless receptionist is in the location of the player]not [end if]available.[line break]nearby students: [list of students in the location of the player].[line break]Chosen predicament partner: [team-predicament-partner].[line break]List of appropriate predicaments before receptionist check: [L].[line break]List of appropriate predicaments after receptionist check: [the list of eligible appropriate predicaments].";
+			otherwise:
+				set up predicament status;
+				if P is team-predicament:
+					say "[paragraph break]Behind [NameDesc of team-predicament-partner], [NameDesc of receptionist] casually struts up and then plants a foot on [NameDesc of team-predicament-partner][']s back![line break][speech style of team-predicament-partner]'What?! No wait-!'[roman type][line break][BigNameDesc of receptionist] kicks forward, and [NameDesc of team-predicament-partner] is pushed into the warp portal alongside you! You're both going in at the same time!";
+					now team-predicament-partner is interested;
+					update appearance level;
+					now the latest-appearance of team-predicament-partner is the appearance of the player;
+					if diaper quest is 1, now the latest-cringe of team-predicament-partner is the cringe appearance of the player;
+				let TP be a random off-stage fetish appropriate trophy;
+				if TP is trophy, now TP is in Predicament20;
+				now current-predicament is P;
+				now turnsWithSoiledDiaper is 0;
+				if the body soreness of the player > 4, now the body soreness of the player is 4;
+				now the printed name of Predicament01 is "Abandoned Warehouse";
+				repeat with R running through predicament rooms:
+					totally clean R;
+				now executing-predicament is true;
+				now temporaryYesNoResetNeeded is false;
+				maybe execute P;
+				set up predicament clothing for P;
+				increase the times-completed of P by 1;
+				temporaryYesNoBackgroundReset;
+				now predicamentJustDone is true;
+		otherwise if D is school portal:
+			if receptionist is alive and receptionist is not in School01, now receptionist is in School01;
+			if armband is worn and armband is not solid gold and there is an alive undefeated correctly-ranked teacher and the armband-print of armband is not "new recruit":
+				if class-time < 0, now lessonJustDone is false;
+				let A be a random appropriate assembly;
+				if A is assembly:
+					set up A;
+					say WarpPortalStartFlav of A;
+					compute start of A;
 				otherwise:
-					now the player is in School24;
+					say "As you go through the portal, you appear back in the academy again, just in front of the classroom. After you've gone through, the portal closes behind you. There's a classroom right in front of you. A bell rings - it's time for class right now!";
+					if armband is sapphire:
+						now the player is in School07;
+					otherwise if armband is emerald:
+						now the player is in School03;
+					otherwise if armband is ruby:
+						now the player is in School26;
+					otherwise if armband is pink diamond:
+						now the player is in School25;
+					otherwise:
+						now the player is in School24;
+				update player region;
+				compute bladder cleanup;
+				display entire map;
+			otherwise:
+				now the player is in School01;
+				update player region;
+				compute bladder cleanup;
+				display entire map;
+				say "As you go through the portal, you find yourself [one of]in a large room with expensive marble walls and floor[or]back in the academy reception[stopping].";
+				if class-time is 0, now class-time is -1; [extra credit zone resets at -1 and lower]
+				if class-time > 0, now class-time is 0; [lesson required at 0 and lower. in this way, extra credit zone is still forbidden but player can't leave until they've had a lesson]
+		otherwise if D is warp portal:
+			if armband is worn and armband is solid gold, now predicamentJustDone is false;
+			otherwise now predicamentJustDone is true;
+			now the player is in the location of D;
+			if NPF is 1, now D is next-portal-forbidden;
 			update player region;
 			compute bladder cleanup;
+			now the location of the player is discovered;
+			repeat with MT running through milk-tanks:
+				DoseDown MT by 2;
 			display entire map;
-		otherwise:
-			now the player is in School01;
-			update player region;
-			compute bladder cleanup;
-			display entire map;
-			say "As you go through the portal, you find yourself [one of]in a large room with expensive marble walls and floor[or]back in the academy reception[stopping].";
-			if class-time is 0, now class-time is -1; [extra credit zone resets at -1 and lower]
-			if class-time > 0, now class-time is 0; [lesson required at 0 and lower. in this way, extra credit zone is still forbidden but player can't leave until they've had a lesson]
-	otherwise if D is warp portal:
-		if armband is worn and armband is solid gold, now predicamentJustDone is false;
-		otherwise now predicamentJustDone is true;
-		now the player is in the location of D;
-		if NPF is 1, now D is next-portal-forbidden;
-		update player region;
-		compute bladder cleanup;
-		now the location of the player is discovered;
-		repeat with MT running through milk-tanks:
-			DoseDown MT by 2;
-		display entire map;
-		say "As you go through the portal, you appear in the [location of the player][one of]! There is an identical green portal in this room too, to allow you to go back and forth[or][stopping]!";
+			say "As you go through the portal, you appear in the [location of the player][one of]! There is an identical green portal in this room too, to allow you to go back and forth[or][stopping]!";
+			if receptionistChasing is true:
+				now receptionist is in the location of the player;
+				say "[BigNameDesc of receptionist] follows you through the portal![line break][speech style of receptionist]'It's a one way ticket to the Academy Dungeon for you, [NameBimbo]!'[roman type][line break]";
 	if playerRegion is not school, compute clothing cleanup. [otherwise extra credit zone causes jewellery to get cleaned up]
 
 To maybe execute (P - a predicament):

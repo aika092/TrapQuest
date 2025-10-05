@@ -53,10 +53,10 @@ Breasts has a number called lactation count.
 
 
 To decide which number is the at least partially lewdly exposed outrage of (B - breasts):
-	decide on 8.
+	decide on 7.
 
 To decide which number is the lewdly exposed outrage of (B - breasts):
-	decide on 13.
+	decide on 12.
 
 Definition: breasts is exposed:
 	if the at least partial concealer of breasts is a thing, decide no;

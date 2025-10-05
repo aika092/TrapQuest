@@ -277,7 +277,7 @@ To compute angry punishment of (M - unicorn):
 		otherwise:
 			say "Your lips form a pronounced O-shape as a harsh waves of pain pass along the bottom of your mouth and down your throat. The sensation lingers in your head even after it has stopped, and you realise it has intensified your desire for oral sex.";
 			OralSexAddictUp 1;
-	otherwise if cow-ears is off-stage and cow-ears is actually summonable:
+	otherwise if lactation fetish is 1 and cow-ears is off-stage and cow-ears is actually summonable:
 		summon cow-ears cursed;
 		say "A [ShortDesc of cow-ears] materialises in your hair as a flash of red light fills your vision. You can't help but imagine the pain of being branded as property, and the sensation lingers in your thoughts long after the light fades.";
 	otherwise if the number of worn clothing > 0:
@@ -740,5 +740,25 @@ To say EscapeAnswer of (M - unicorn):
 
 To say AdviceAnswer of (M - unicorn):
 	say "[speech style of M]'[one of]Don't put so much stock in condoms. Sometimes they break, and some men simply prefer unprotected sex. If you ask me, they deserve it.'[or]The mechanic in the hotel is cunning in addition to being [if lady fetish is 1]very beautiful[otherwise]handsome[end if]. You would be a fool for trying to outsmart [him of mechanic].'[or]The patrons in the hotel are rather rude, but they will offer you money in exchange for your services. If you aren't saving yourself for anyone, you could take advantage...'[or]Some sex toys are enchanted. Be sure to wear them properly to make full use of their magic.'[at random][roman type][line break]".
+
+To say EnticeFlav of (M - unicorn) with (B - face):
+	say "[BigNameDesc of M] glares at your mouth.[line break][speech style of M]'[one of]H-how can you hold your face like that. I-I'll punish you for that! M-mark my words!'[or]Why are you p-pursing your lips like that? Do you think you'll intimidate me! You c-can't intimidate me! I swear I'll fuck your face!'[in random order][roman type][line break]".
+
+To say EnticeFlav of (M - unicorn) with (B - breasts):
+	say "[BigNameDesc of M] glares at your chest.[line break][speech style of M]'[one of]S-stupid sexy tits. FUCK! Ugh, I'll show you!'[or]Y-you think you can just show off your tits like that. J-jiggling around like s-some SLUT?! Rrr, I'll GET you!'[in random order][roman type][line break]".
+
+To say EnticeFlav of (M - unicorn) with (B - belly):
+	say "[BigNameDesc of M] scowls at you.[line break][speech style of M]'[one of]How dare you look at me like that! I'm gonna pee on your s-stupid sexy face!'[or]You... y-you think you're better than me, don't you! J-just try thinking that when I pee in your mouth!'[in random order][roman type][line break]".
+
+To say EnticeFlav of (M - unicorn) with (B - thighs):
+	if M is eager to do anilingus:
+		say "[BigNameDesc of M]'s face breaks into an insufferable smirk as [he of M] pats [his of M] butt.[line break][speech style of M]'[one of]I'm going to make you lick this clean.'[or]I know you've been looking at it. Just this once, I'll allow you to lick my hole.'[in random order][roman type][line break]";
+	otherwise:
+		say "[BigNameDesc of M]'s face breaks into an insufferable smirk as [he of M] pats [his of M] butt.[line break][speech style of M]'[one of]Hmph. You're SO attracted to me. I won't let you f-fuck me, but I think I'll have you lick my toes.'[or]I think I'll allow you to suck my toes.'[in random order][roman type][line break]";
+
+To say EnticeFlav of (M - unicorn) with (F - a fuckhole):
+	let T be "[one of]asshole[or]butthole[or]backdoor[as decreasingly likely outcomes]";
+	if F is vagina, now T is "[one of][pussy][or][cunt][or]slit[as decreasingly likely outcomes]";
+	say "[BigNameDesc of M] glares at your [if F is vagina]crotch[otherwise]butt[end if], as if it had killed [his of M] entire family.[line break][speech style of M][one of]Y-you think I'm not good enough for your stupid [T], don't you. Kh-! I'll show you!'[or] You... you think I won't fuck your [T], don't you. Ha, w-well, I WILL!'[in random order][roman type][line break]".
 
 Unicorn ends here.

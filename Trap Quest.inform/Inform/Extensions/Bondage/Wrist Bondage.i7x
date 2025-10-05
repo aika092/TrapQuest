@@ -5,6 +5,9 @@ A wrist bond is a kind of bondage. Understand "cuffs" as wrist bond. A wrist bon
 Definition: a wrist bond is same-type:
 	if theme-share-target is wrist bond, decide yes;
 	decide no.
+Definition: a wrist bond is application appropriate:
+	if playerRegion is hotel or playerRegion is school, decide yes;
+	decide no.
 
 To say ClothingDesc of (W - a wrist bond):
 	say "[WristBondDesc][if W is not wrist locked and W is worn]They are currently not binding your wrists together. [otherwise if W is wrist-bound-in-front and W is worn]They are binding your wrists in front of you. [otherwise if W is worn]They are binding your wrists behind you. [end if]".
@@ -26,6 +29,9 @@ pair of handcuffs is a wrist bond. The printed name of pair of handcuffs is "[cl
 Definition: a pair of handcuffs is grey themed: decide yes.
 Definition: pair of handcuffs is IcarusScienceAppropriate:
 	if bondage protection < 2 and it is actually summonable, decide yes;
+	decide no.
+Definition: a pair of handcuffs is application appropriate:
+	if playerRegion is dungeon or playerRegion is mansion, decide yes;
 	decide no.
 
 pair of pink handcuffs is a wrist bond. The printed name of pair of pink handcuffs is "[clothing-title-before]pair of pink handcuffs[clothing-title-after]". The text-shortcut of pair of pink handcuffs is "phc".
@@ -51,6 +57,9 @@ To decide which number is the initial outrage of (W - pair of trashy handcuffs):
 
 pair of wristcuffs is a wrist bond. The printed name of pair of wristcuffs is "[clothing-title-before]pair of wristcuffs[clothing-title-after]". The text-shortcut of pair of wristcuffs is "wc".
 Definition: pair of wristcuffs is black themed: decide yes.
+Definition: pair of wristcuffs is application appropriate:
+	if playerRegion is woods, decide yes;
+	decide no.
 
 To decide which number is the initial outrage of (W - pair of wristcuffs):
 	decide on 3.

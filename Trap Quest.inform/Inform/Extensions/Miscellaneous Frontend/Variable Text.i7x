@@ -1,7 +1,7 @@
 Variable Text by Miscellaneous Frontend begins here.
 
 To say variable custom style:
-	if a random number from 7 to 12 > the bimbo of the player, say first custom style;
+	if a random number from 7 to 12 > the bimbo of the player and the class of the player is not berri, say first custom style;
 	otherwise say second custom style.
 
 [!<hypnoTrigger:String>*

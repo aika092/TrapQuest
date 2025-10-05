@@ -5,6 +5,7 @@ An elevator-room is a kind of room. An elevator-room has a labyrinth shape calle
 elevator-buttons is a list of rooms that varies.
 
 Definition: an elevator-room is appropriate: decide yes.
+Definition: an elevator-room is partial squirt: decide yes. [involuntary enema expulsion is 6 units at a time, rather than all of it]
 
 To say FurutisticRoomSentence:
 	say "[one of]It kind of looks like a Sci-Fi TV show's idea of what a room might look like on a futuristic space station. Silver metal walls[or]It's another futuristic room[stopping] filled with panels and cabinets, bright lights in the white metal ceiling, and a grey metal floor. ".
@@ -434,7 +435,7 @@ A later time based rule (this is the facial room machine rule):
 						destroy N;
 						if M is a monster, destroy M;
 					otherwise:
-						say "[speech style of M]'And waste a chance to score some free fuckhole? No way!'[line break][variable custom style]...Fuck. There's no escaping this, is there...[roman type][line break]";
+						say "[speech style of N]'And waste a chance to score some free fuckhole? No way!'[line break][variable custom style]...Fuck. There's no escaping this, is there...[roman type][line break]";
 						interest N;
 						if M is a monster, interest M;
 				otherwise:
@@ -862,12 +863,13 @@ To compute elevator entrance of (ER - BellyRoom01):
 		now the player is in BellyRoom01;
 		if room-version is 1:
 			if the pregnancy of the player > 0:
-				say "[first custom style]'WELCOME TO THE PREGNANCY ACCELERATION ROOM. YOUR PREGNANCY IS NOW COMPLETE.'[roman type][paragraph break][variable custom style]What the hell does it mean by that?[roman type][line break]But all it takes is looking down to discover the answer. Your belly has exploded outwards, and you suddenly feel very, very, late term pregnant.";
+				say "[first custom style]'WELCOME TO THE PREGNANCY ACCELERATION ROOM. YOUR PREGNANCY IS NOW COMPLETE.'[roman type][paragraph break][variable custom style]What the hell does it mean by that?[roman type][line break][if the womb volume of vagina is 30 or the womb volume of vagina is 50]Not much seems to have happened. Perhaps because you are already at full term[otherwise]But all it takes is looking down to discover the answer. Your belly has exploded outwards, and you suddenly feel very, very, late term pregnant[end if].";
 				if the womb volume of vagina < 30:
 					now the womb volume of vagina is 30;
 					if inhuman pregnancy >= 3 and the father is not the throne: [Super-pregnancies are go]
 						if the father is a minotaur or the father is vines or the father is lake monster or the father is clothing or the father is hellhound or the father is demon lord or the father is facehugger or the father is elder altar or the father is djinn or the father is tentacle monster or the father is centaur, now the womb volume of vagina is 31;
 				if the womb volume of vagina > 30, now the womb volume of vagina is 50;
+				now slow-pregnancy-tracker is slow birth rate;
 			otherwise:
 				say "[first custom style]'WELCOME TO THE CHILDBIRTH EXPERIENCE ROOM. YOUR PREGNANCY IS NOW COMPLETE. [caps please] ENJOY YOUR BIRTHING EXPERIENCE.'[roman type][paragraph break][variable custom style]What the hell does it mean by that?[roman type][line break]But all it takes is looking down to discover the answer. Your belly has exploded outwards, and you suddenly feel very, very, late term pregnant.";
 				now the womb volume of vagina is 30;
@@ -884,7 +886,7 @@ To compute elevator entrance of (ER - BellyRoom01):
 					if a random number between 1 and 2 is 1, add the throne to the small-egg-origins of vagina; [slimeball]
 					otherwise add crotch-hugger to the small-egg-origins of vagina; [slimeball]
 					wombfill 1 medium eggs;
-					if mythical creatures fetish is 1 and a random number between 1 and 2 is 1:
+					if mythical creature fetish is 1 and a random number between 1 and 2 is 1:
 						add buzzing giant wasp to the medium-egg-origins of vagina; [wasp]
 					otherwise if a random number between 1 and 3 is 1:
 						add carrot daggers to the medium-egg-origins of vagina; [bunny]
@@ -895,7 +897,7 @@ To compute elevator entrance of (ER - BellyRoom01):
 					if a random number between 1 and 2 is 1, add the throne to the small-egg-origins of belly; [slimeball]
 					otherwise add crotch-hugger to the small-egg-origins of belly; [slimeball]
 					assfill 1 medium eggs;
-					if mythical creatures fetish is 1 and a random number between 1 and 2 is 1:
+					if mythical creature fetish is 1 and a random number between 1 and 2 is 1:
 						add buzzing giant wasp to the medium-egg-origins of belly; [wasp]
 					otherwise if a random number between 1 and 3 is 1:
 						add carrot daggers to the medium-egg-origins of belly; [bunny]

@@ -124,7 +124,7 @@ To compute perception of (M - witch):
 	let noticed be 0; [#LXorDD: I've restructured this a bit so if the player has multiple curses in operation, the witch will talk about and even help for several of them, starting with the most important.]
 	now the altar-questioned of M is 0;
 	if the witch-target of M is off-stage and the witch-target of M is not the throne and the witch-target-state of M > -1:
-		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'I saw everything through my crystal ball. Your form was a little off, but it was still pretty entertaining. I'm happy to give you anything you need![roman type][line break]";
+		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'I saw everything through my crystal ball. Your form was a little off, but it was still pretty entertaining. I'm happy to give you anything you need!'[roman type][line break]";
 		now noticed is 1;
 		calm M;
 		now the witch-target-state of M is -1;
@@ -175,6 +175,15 @@ To compute perception of (M - witch):
 	otherwise if noticed is 0:
 		say "[one of][WitchInitialGreeting of M][or][BigNameDesc of M] looks up[if the player is sluttily dressed]. [otherwise]! [end if][big he of M] doesn't say anything but it looks like [he of M]'s paying attention to you now.[stopping]";
 		calm M.
+
+To calm (M - witch): [This should bring the monster just into friendly territory.]
+	if M is recently-unfriendly, now M is recently-unknown; [reset what we know about the friendliness of the NPC]
+	if the favour of M <= the aggro limit of M:
+		now M is recently-unknown;
+		FavourSet M to the aggro limit of M + 1;
+	if M is alive:
+		now M is guarding;
+		now M is in Woods20.
 
 To say WitchInitialGreeting of (M - witch):
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
@@ -697,18 +706,29 @@ To compute teaching of (M - witch):
 		say "[speech style of M]'Hmm, well, I'm not really supposed to share this knowledge, but I do know this spell that can help you read the flow of magic[if the class of the player is priestess or the class of the player is cultist]. Although you should already know how to do it[end if].'[roman type][line break]";
 		teach divinationskill;
 	otherwise:
-		if the altar-uses of M <= 0:
+		if the witch-target of M is off-stage and the witch-target of M is not the throne and the witch-target-state of M > -1:
+			say "[speech style of M]'I saw everything through my crystal ball. Your form was a little off, but it was still pretty entertaining. I'm happy to give you anything you need!'[roman type][line break]";
+			calm M;
+			now the witch-target-state of M is -1;
+			now M is unbitchy; [must keep this line here or we'll accidentally create an infinite loop]
+			compute teaching of M;
+		otherwise if the altar-uses of M <= 0:
 			say "[speech style of M]'I'm not going to leave you with my secrets. Not for free, anyway.'[roman type][line break]";
 		otherwise:
 			say "[speech style of M]'You're not the first to ever want my secrets, you know. Are you willing to entertain me a little first?'[roman type][line break]";
 			if the player is consenting:
 				now the witch-target of M is M;
-				while the witch-target of M is M:
+				let failsafe be 40;
+				while the witch-target of M is M and failsafe > 0:
+					decrease failsafe by 1;
 					now the witch-target of M is a random on-stage human monster;
 					let W be the witch-target of M;
 					if W is student or W is staff member or W is ex-princess or W is djinn or W is kitsune, now the witch-target of M is M;
-				say "[BigNameDesc of M] chuckles, muttering a short incantation under [his of M] breath.[speech style of M]'Alright then. Find [NameDesc of witch-target of M][speech style of M] and banish [him of witch-target of M]. I'll know when you've succeeded.'[roman type][line break]";
-				SilentlyDifficultyUp witch-target of M by 5;
+				if the witch-target of M is M:
+					say "[speech style of M]'...Actually, never mind, I can't seem to think of anyone for you to banish.'[roman type][line break]";
+				otherwise:
+					say "[BigNameDesc of M] chuckles, muttering a short incantation under [his of M] breath.[speech style of M]'Alright then. Find [NameDesc of witch-target of M][speech style of M] and banish [him of witch-target of M]. I'll know when you've succeeded.'[roman type][line break]";
+					SilentlyDifficultyUp witch-target of M by 5;
 			otherwise:
 				say "[speech style of M]'Then fuck off. [big please] and thank you!'[roman type][line break]".
 

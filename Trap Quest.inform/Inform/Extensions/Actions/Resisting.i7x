@@ -353,9 +353,62 @@ To compute sex resist slap of (M - a monster):
 To say SexResistSlapFlav of (M - a monster):
 	say "[BigNameDesc of M] [if M is intelligent][one of]cackles[or]laughs deeply[or]chuckles[or]snorts[at random] at your [one of]fruitless display[or]vain efforts[or]pointless attempts[or]futile resistance[at random][otherwise]looks at you blankly[end if] before [if M is male and M is penetrating face]slapping you harshly on the cheek[otherwise if M is male and M is penetrating breasts]painfully slapping your [BreastDesc][otherwise]roughly spanking your [buttcheeks][end if] [one of]to get you to behave[or]in order to keep you under control[or]as punishment[or]to discourage further disobedience[at random].".
 
+warning-punishment is a sex resist punishment. The priority of warning-punishment is 2.
+
+To decide which number is the resist impatience of (M - a monster):
+	decide on 8. [At this number of favour, they are going to get mad at further resisting, and do an angry punishment afterwards]
+
+Definition: a monster is eager to warn angrily: decide no.
+[oral sex often has its own penalties for oral resisting so we don't need to double up on that here]
+Definition: a monster (called M) is classicly eager to warn angrily:
+	if M is not intelligent, decide no;
+	if M is penetrating a fuckhole or M is penetrating breasts, decide yes;
+	decide no.
+
+Definition: warning-punishment (called P) is appropriate:
+	if resist-target is eager to warn angrily and the resist impatience of resist-target >= the favour of resist-target [and a random number between 1 and 2 is 1], decide yes;
+	decide no.
+
+To compute punishment of (P - warning-punishment):
+	if the times-warned of resist-target <= 0:
+		compute sex resist initial warning of resist-target;
+	otherwise if the times-warned of resist-target is 1:
+		if the player is getting unlucky:
+			compute sex resist no more warnings of resist-target;
+			FavourDown resist-target;
+			say "[variable custom style]No final warning?! [roman type][GotUnluckyFlav]";
+			increase the times-warned of resist-target by 1;
+		otherwise:
+			compute sex resist final warning of resist-target;
+	otherwise:
+		compute sex resist no more warnings of resist-target;
+		FavourDown resist-target;
+	increase the times-warned of resist-target by 1.
+
+To compute sex resist initial warning of (M - a monster):
+	say "[speech style of M]'[one of]If you keep this up, I'll just have to punish you further.'[or]Stop resisting, or else!'[or]If you keep resisting, I'll make you regret it.'[or]Submit to me willingly, or else I'll MAKE you.'[in random order][roman type][line break][BigNameDesc of M] [one of]snarls[or]snaps[or]growls[at random] at you in warning.".
+
+To compute sex resist final warning of (M - a monster):
+	say "[speech style of M]'[one of]Do not test me, [if diaper quest is 0]bitch[otherwise]child[end if].'[or]My patience has reached its limit!'[or]Don't you dare defy me a moment longer...'[or]I'm fed up of giving you warnings. What happens next is your own fault.'[in random order][roman type][line break]That sounds like [NameDesc of M][']s final warning...".
+
+To compute sex resist no more warnings of (M - a monster):
+	say "[speech style of M]'[one of][if the times-warned of M <= 2]That's it! [end if]You're going to suffer for that.'[or]My patience has reached its limit!'[or]Don't you dare defy me a moment longer...'[or]I'm fed up of giving you warnings. What happens next is your own fault.'[in random order][roman type][line break]That sounds like [NameDesc of M][']s final warning...".
+
+To compute post sex punishment of (M - a monster):
+	say AngryPostSexPunishmentFlav of M;
+	compute angry post sex punishment of M.
+
+To say AngryPostSexPunishmentFlav of (M - a monster):
+	say "[speech style of M]'[one of]I warned you there would be further consequences for resisting...'[or]And now I shall discipline you for your insolence.'[or]This is for failing to submit when I demanded it.'[in random order][roman type][line break]".
+
+To compute angry post sex punishment of (M - a monster):
+	compute default angry punishment of M.
+
+
 anger-punishment is a sex resist punishment. The priority of anger-punishment is 1.
 
 Definition: a monster (called M) is eager to get angry:
+	if M is eager to warn angrily, decide yes;
 	if M is intelligent and a random number between 1 and 3 is 1, decide yes;
 	decide no.
 

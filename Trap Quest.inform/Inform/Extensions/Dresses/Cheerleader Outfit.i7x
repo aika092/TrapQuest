@@ -217,6 +217,9 @@ Definition: denim-overalls is top-replacable:
 	if it is usually top-displacable and it is top-displaced and it is worn, decide yes;
 	decide no.
 
+To compute periodic effect of (C - denim-overalls):
+	if C is crotch-displaced, now C is top-displaced.
+
 Check topReplacing denim-overalls:
 	if the noun is crotch-displaced, say "You would need to replace the bottom half first." instead.
 

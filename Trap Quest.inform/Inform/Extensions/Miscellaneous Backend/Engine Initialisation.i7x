@@ -222,6 +222,7 @@ To fill in legacy table blanks:
 	unless there is a choice in row 91 of the Table of Player Options, now choice in row 91 of Table of Player Options is 0;
 	unless there is a choice in row 92 of the Table of Player Options, now choice in row 92 of Table of Player Options is 0;
 	unless there is a choice in row 93 of the Table of Player Options, now choice in row 93 of Table of Player Options is 0;
+	unless there is a choice in row 94 of the Table of Player Options, now choice in row 94 of Table of Player Options is -1;
 
 To fill in custom flavour blanks:
 	unless there is a name in row 10 of the Table of Info Options:
@@ -278,11 +279,12 @@ To retrieve settings:
 	write File of Preferences from the Table of Settings.
 
 To retrieve gender:
-	now the current menu is the Table of Gender Options;
+	[now the current menu is the Table of Gender Options;]
 	if quick start < 3, now choice in row 1 of the Table of Player Options is -1; [We always ask the player what gender they want to be, even in quick random start (2)]
-	while choice in row 1 of the Table of Player Options is -1:
+	[while choice in row 1 of the Table of Player Options is -1:
 		carry out the displaying activity;
-		clear the screen;
+		clear the screen;]
+	if choice in row 1 of the Table of Player Options is -1, compute new gender selection window;
 	if choice in row 1 of the Table of Player Options is 1:
 		now the player is female;
 		now choice in row 34 of the Table of Player Options is 0; [Make sure trap fetish is disabled if the player is female]
@@ -330,21 +332,26 @@ To configure gender:
 		blank out the whole row.]
 
 To retrieve fetish options:
-	if diaper quest is 0, compute new fetish selection window;
-	if diaper quest is 1:
-		now the current menu is the Table of Diaper Fetish Options;
-	otherwise:
+	if diaper quest is 0:
 		now choice in row 49 of the Table of Player Options is 2; [set the slow pregnancy choice to the 0 point option]
 		now choice in row 75 of the Table of Player Options is 0; [set the slow pregnancy choice to the 0 point option]
-		now the current menu is the Table of Handicap Options;
-	carry out the displaying activity;
-	clear the screen.
+		compute new fetish selection window;
+		compute new handicap selection window;
+		if the player is a top donator:
+			now the current menu is the Table of Festive Options;
+			carry out the displaying activity;
+			clear the screen;
+	otherwise:
+		now the current menu is the Table of Diaper Fetish Options;
+		carry out the displaying activity;
+		clear the screen.
 
 To retrieve pregnancy options:
 	if pregnancy fetish is 1 and (the player is possessing a vagina or tg fetish >= 1):
-		now the current menu is the Table of Pregnancy Options;
+		compute new pregnancy type selection window;
+		[now the current menu is the Table of Pregnancy Options;
 		carry out the displaying activity;
-		clear the screen;
+		clear the screen;]
 	otherwise:
 		now the choice in row 20 of the Table of Player Options is 0.
 

@@ -29,7 +29,11 @@ Check plugging something with:
 		now stat-to-set is the substituted form of "small egg [noun]";
 		if the second noun is medium egg, now stat-to-set is the substituted form of "medium egg [noun]";
 		if the second noun is large egg, now stat-to-set is the substituted form of "large egg [noun]";
-		say "How many? ";
+		if the number of held eggs > 1:
+			say "How many? ";
+		otherwise:
+			change the text of the player's command to "1";
+			follow the egg stuffing rule;
 		do nothing instead;
 	if the girth of the second noun > the insertableGirthAcceptance of the noun:
 		if debugmode is 0 and (the second noun is not anal beads or the soreness of the noun is 10):
@@ -134,8 +138,14 @@ Check unplugging something:
 	if the noun is penetrating asshole and the player is ass protected, say "You need to get your [random bottom level ass protection clothing] out of the way first." instead;
 	if (the noun is penetrating vagina or the noun is penetrating penis) and the player is pussy protected, say "You need to get your [random bottom level protection clothing] out of the way first." instead;
 	if the noun is glued, try tearing off the noun instead;
-	if diaper quest is 0 and the noun is plug and the noun is penetrating a fuckhole and the girth of the noun > the insertableGirthAcceptance of a random fuckhole penetrated by the noun + 4:
-		say "You push with your [random fuckhole penetrated by the noun][']s muscles and [if the noun is anal beads]pull on the cord of [NameDesc of noun], but they're just so big that they[otherwise]pull on the base of [NameDesc of noun], but the plug's bulb is so big that it[end if] just won't come out!" instead.
+	if the noun is nintendolls flag plug and the size of nintendolls flag plug < 10:
+		now the size of nintendolls flag plug is 10;
+		say "[BigNameDesc of nintendolls flag plug] detects you trying to pull it out, and rapidly inflates to its maximum possible size!";
+		ruin asshole;
+		PainUp 30;
+	if diaper quest is 0 and the noun is plug and the noun is penetrating a fuckhole:
+		let F be a random fuckhole penetrated by the noun;
+		if the girth of the noun > the insertableGirthAcceptance of F + 4, say "You push with your [random fuckhole penetrated by the noun][']s muscles and [if the noun is anal beads]pull on the cord of [NameDesc of noun], but they're just so big that they[otherwise]pull on the base of [NameDesc of noun], but the plug's bulb is so big that it[end if] just won't come out!" instead.
 
 Carry out unplugging something:
 	allocate arm use;

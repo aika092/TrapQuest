@@ -153,6 +153,9 @@ To decide which figure-name is clothing-image of (C - bondage-corset):
 	decide on figure of bondage-corset.
 
 Definition: bondage-corset is black themed: decide yes.
+Definition: bondage-corset is application appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
 
 To say ClothingDesc of (C - bondage-corset):
 	say "A black leather overbust corset with a zip, tight buckle straps, and ringlets for bondage anchoring.".
@@ -176,6 +179,9 @@ To decide which figure-name is clothing-image of (C - skirted-bondage-corset):
 
 Definition: skirted-bondage-corset is black themed: decide yes.
 Definition: skirted-bondage-corset is red themed: decide yes.
+Definition: skirted-bondage-corset is application appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
 
 To say ClothingDesc of (C - skirted-bondage-corset):
 	say "A black underbust corset with several tight buckle straps, connected to a long tight red latex skirt. The outfit also wraps round the back to finish up at the neck, while leaving your [BreastDesc] entirely exposed. [bold type]You can sense that it has the power to prevent you from needing to expel enemas.[roman type][line break]".

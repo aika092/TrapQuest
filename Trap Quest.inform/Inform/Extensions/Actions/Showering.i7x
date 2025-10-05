@@ -123,7 +123,7 @@ To soak clothing in water body:
 			otherwise if C is somewhat fluid vulnerable:
 				if quest-only-once is 0, now quest-only-once is 1;
 				let R be a random number between 2 and 4;[because clothing has a higher capacity than the player's body, it takes longer to "soak" clean.]
-				if diaper quest is 1, now R is 999; [we don't do this slow cleaning nonsense in DQ]
+				if diaper quest is 1 or the player is in Hotel45, now R is 999; [we don't do this slow cleaning nonsense in DQ]
 				let S be the semen-soak of C + the urine-soak of C + the milk-soak of C;
 				while R > 0 and S > 0:[Clean off everything if S is already 0, then we go on to the next clothing.]
 					if the urine-soak of C > 0:

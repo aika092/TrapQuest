@@ -94,6 +94,7 @@ To set up (M - demon lord):
 	reset M;
 	now the monstersetup of M is 1;
 	add infernal gem to the banishItems of M, if absent;
+	add demonic-id-card to the banishItems of M, if absent;
 	now the raw difficulty of M is the starting difficulty of M + the charge of demon codpiece;
 	now the health of M is the maxhealth of M.
 
@@ -1099,7 +1100,7 @@ To execute (F - final-battle-scan):
 			now F is pose-swapped;
 		otherwise:
 			say "You hold the ridiculous peace-sign squat pose, turning more red with every passing second. [BigNameDesc of ex-princess] and [NameDesc of demon lord] are locked in an even battle of offensive and defensive spellcasts[one of], while you just squat and grin like some insipid anime influencer for the damned sphere robot[or], while you just squat while the big brave hero takes on the Boss-level threat[or], and all you can do, as far as anyone who'll see these damned photos it's taking is concerned, will be that you're just focused on getting social media [']Likes['] instead of actually helping[or], your thigh muscles burning, your fixed grin somehow making you even more focused on how ridiculous your stupid twin Peace signs must be making you look[in random order].";
-		let T be "In your deep squatting position, your body feels twice as desperate to go let loose, and";
+		let T be "In your deep squatting position, your body feels twice as desperate to let loose, and";
 		check sudden expulsion with reason T;
 		say "The hovering sphere plays a robotic laughing track while taking several flash photos of you. Little sound effects sound exactly like the sound your phone makes when you upload a file to the Internet.";
 		let RPT be "holding an extremely low squat while smiling and holding up peace signs";
@@ -1596,8 +1597,8 @@ To say AnnoyedResponse of (M - demon lord):
 	say "[first custom style]'YOU TRY MY PATIENCE!'[roman type][line break]".
 
 To compute annoyed punishment of (M - demon lord):
-	let B be a random off-stage huge ballgag;
-	if B is not actually summonable or B is not fetish appropriate, now B is a random off-stage fetish appropriate gag;
+	let B be huge-ballgag;
+	if B is on-stage or B is not actually summonable or B is not fetish appropriate, now B is a random off-stage fetish appropriate gag;
 	if B is actually summonable:
 		say "[speech style of M]'ENOUGH!'[roman type][line break]Lightning explodes from the tip of [NameDesc of M][']s finger, wracking your body with pain as a [printed name of B] forces your jaws apart.";
 		summon B locked;

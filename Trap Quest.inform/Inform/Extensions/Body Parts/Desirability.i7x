@@ -241,6 +241,7 @@ To decide which number is the ass grope preference of (M - a person):
 To decide which number is the groping threshold of (M - a person):
 	decide on a random number between 10 and 20.
 Definition: a person (called M) is groping:
+	if segway-predicament is penetrating a fuckhole, decide no;
 	if grope-me-skirt is worn, decide yes;
 	if diaper quest is 1, decide no;
 	if M is monster and the times-met of M is 0, decide no;
@@ -590,7 +591,7 @@ This is the core seduction rule:
 		now another-turn is 1;
 		add the core seduction rule to another-turn-rules;
 		repeat with M running through unseduced reactive monsters:
-			if the boredom of M < 470, compute seduction witness reaction of M. [NPCs that just climaxed aren't going to be unimpressed with the player. This 30s window gives them a chance to wander away]
+			if the boredom of M < 470 and M is not penetrating a body part, compute seduction witness reaction of M. [NPCs that just climaxed aren't going to be unimpressed with the player. This 30s window gives them a chance to wander away]
 
 To compute seduction choice of (M - a monster):
 	compute default seduction choice of M;

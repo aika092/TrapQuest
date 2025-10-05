@@ -66,11 +66,11 @@ To decide which thing is chosen-maid-outfit:
 	if B < 8000 and sexy-maid-outfit is off-stage, decide on sexy-maid-outfit;
 	if B < 12000 and drooping-maid-outfit is off-stage, decide on drooping-maid-outfit;
 	if B < 16000 and cheap-maid-outfit is off-stage, decide on cheap-maid-outfit;
-	if B >= 20000 and B < 24000 and pink-maid-outfit is off-stage, decide on pink-maid-outfit;
-	if the number of worn exclusive crotch covering clothing is 0:
+	if the number of worn exclusive crotch covering clothing is 0 and B >= 20000:
 		if B < 20000 and fetish-maid-outfit is off-stage, decide on fetish-maid-outfit;
 		if B < 28000 and slutty-maid-outfit is off-stage, decide on slutty-maid-outfit;
 		if B < 32000 and V-shape-maid-outfit is off-stage, decide on V-shape-maid-outfit;
+	if B < 24000 and pink-maid-outfit is off-stage, decide on pink-maid-outfit;
 	decide on black fetish hobble dress.
 
 To compute class outfit of (H - a maid headdress):
@@ -146,7 +146,7 @@ To compute generic class reward of (Q - puddle-cleaning-quest) on (C - a clothin
 
 Part 1 - Black Maid Headdress
 
-black maid headdress is a maid headdress. Figure of maid headdress is the file "Items/Accessories/Head/maidheaddress1.png".
+black maid headdress is a maid headdress. Figure of maid headdress is the file "Items/Accessories/Head/maidheaddress1.png". black maid headdress is satin.
 
 The printed name of maid headdress is "[clothing-title-before]maid headdress[clothing-title-after]".
 
@@ -164,6 +164,7 @@ To decide which object is the unique-upgrade-target of (M - black maid headdress
 	decide on nothing.
 
 Definition: black maid headdress is roleplay: decide yes.
+Definition: black maid headdress is black themed: decide yes.
 
 Part 2 - Cafe Maid Headdress
 
@@ -219,7 +220,7 @@ To uniquely set up (C - milkmaid headdress):
 
 To compute class outfit of (H - milkmaid headdress):
 	class summon milkmaid-outfit;
-	class summon milkmaid-apron-skirt;
+	[class summon milkmaid-apron-skirt;]
 	if milkmaid-apron-skirt is not worn and milkmaid-apron-skirt is actually summonable, summon milkmaid-apron-skirt uncursed; [if the player is already wearing the milkmaid bikini bottoms, this will fail to class summon because of an uncovered theme clash]
 	class summon milkmaid bikini bottoms;
 	class summon milkmaid stockings;

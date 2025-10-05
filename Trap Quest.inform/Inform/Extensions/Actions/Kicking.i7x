@@ -52,7 +52,9 @@ kick-fatigue is a number that varies.
 kick-fatigue-delay is a number that varies.
 
 An all time based rule (this is the kick fatigue recovery rule):
-	if kick-fatigue-delay > 0:
+	if kick-fatigue-delay < 2 and there is a worn pom-pom:
+		now kick-fatigue is 0;
+	otherwise if kick-fatigue-delay > 0:
 		decrease kick-fatigue-delay by 1;
 	otherwise if kick-fatigue > 0:
 		decrease kick-fatigue by 1.

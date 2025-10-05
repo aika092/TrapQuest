@@ -77,11 +77,11 @@ To decide which number is the max-bladder-incontinence of the player:
 The player has a number called raw-bladder-incontinence.
 
 To BladderIncontinenceUp (N - number):
-	if the raw-bladder-incontinence of the player < the max-bladder-incontinence of the player:
+	if diaper lover > 0 and the raw-bladder-incontinence of the player < the max-bladder-incontinence of the player:
 		say "You feel your ability to hold onto your bladder weakening.";
 		SilentlyBladderIncontinenceUp N.
 To SilentlyBladderIncontinenceUp (N - number):
-	if the raw-bladder-incontinence of the player < the max-bladder-incontinence of the player:
+	if diaper lover > 0 and the raw-bladder-incontinence of the player < the max-bladder-incontinence of the player:
 		increase the raw-bladder-incontinence of the player by N;
 		if the raw-bladder-incontinence of the player > the max-bladder-incontinence of the player, now the raw-bladder-incontinence of the player is the max-bladder-incontinence of the player.
 

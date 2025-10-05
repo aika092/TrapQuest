@@ -14,6 +14,9 @@ To say ShortDesc of (A - an ankle bond):
 A pair of anklecuffs is a kind of ankle bond. The printed name of pair of anklecuffs is "[clothing-title-before]pair of anklecuffs[clothing-title-after]". The text-shortcut of pair of anklecuffs is "ac". The printed plural name of pair of anklecuffs is "pairs of anklecuffs". There is 1 pair of anklecuffs.
 
 Definition: a pair of anklecuffs is grey themed: decide yes.
+Definition: a pair of anklecuffs is application appropriate:
+	if playerRegion is dungeon or playerRegion is mansion, decide yes;
+	decide no.
 
 Figure of anklecuffs is the file "Items/Accessories/Leg/anklecuffs1.png".
 
@@ -38,6 +41,10 @@ To say ClothingDesc of (C - ankle-ropes):
 
 To say ShortDesc of (A - ankle-ropes):
 	say "ankle ropes".
+
+Definition: ankle-ropes is application appropriate:
+	if playerRegion is woods or playerRegion is hotel or playerRegion is school, decide yes;
+	decide no.
 
 Chapter - Wearability
 

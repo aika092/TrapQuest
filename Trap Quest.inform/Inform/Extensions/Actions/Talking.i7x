@@ -76,7 +76,7 @@ Check talking:
 		if the noun is asleep, say SleepTalkFail of the noun instead;
 		if the noun is interested and the player is in danger, say "Perhaps leave the idle chatter until after you're out of this situation?" instead;
 	otherwise:
-		unless the noun is slimegirl, say "How would you talk to that?" instead.
+		unless the noun is slimegirl or the noun is the-goddess, say "How would you talk to that?" instead.
 
 Carry out talking a monster:
 	compute multiple choice conversation of the noun.

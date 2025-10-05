@@ -400,10 +400,9 @@ To compute (M - a mannequin) entering mouth:
 		summon fake-nails cursed;
 		satisfy M;
 	otherwise if the player is possessing a penis and CC is an actually summonable clothing and the number of pussy covering actually unavoidable clothing is 0:
-		let K be a random off-stage specific-key;
 		say "[BigNameDesc of M] parts your quivering thighs and squishes your [sissy-penis] into a bright pink chastity cage. [if the player is horny]You feel the cage keeping your [sissy-penis] soft, no matter how horny you are![end if][roman type][line break]";
 		summon CC uncursed;
-		compute M locking CC with K;
+		compute M keylocking CC;
 		say FullExamineDesc of CC;
 		satisfy M;
 	otherwise if asshole is an actual target:

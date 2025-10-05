@@ -68,7 +68,7 @@ frozen hair is a number that varies.
 
 Part 2 - Description
 
-To say ShortDesc of hair:
+To say MediumDesc of (H - hair):
 	let X be the largeness of hair;
 	if X is 1, say "incredibly short [HairSoak][HairColour] hair";
 	if X is 2, say "[if the player is gendered male]standard short [HairSoak][HairColour] hair[otherwise]tomboyish [HairSoak][HairColour] hair[end if]";
@@ -86,10 +86,10 @@ To say ShortDesc of hair:
 	if X is 14, say "[HairSoak][HairColour] ankle length hair";
 	if X > 14, say "ground reaching [HairSoak][HairColour] hair".
 
-To say ShortHairDesc:
-	say ShortDesc of hair.
+To say ShortDesc of (H - hair):
+	say "[HairColour] hair".
 
-To say TotalDesc of hair:
+To say TotalDesc of (H - hair):
 	say "You have [HairDesc raw largeness of hair].";
 
 To say HairStyle:
@@ -403,7 +403,7 @@ To compute hair drying: [Mostly built from the ripped out skeleton of the clothi
 			decrease the water-drench of hair by a random number between 1 and (1 + 3 * the water-drench of hair / the largeness of hair);
 			if the water-drench of hair is 0:
 				force inventory-focus redraw;
-				say "Your [ShortHairDesc] is now completely dry[if (the urine coating of hair + the semen coating of hair) > 0], if not exactly clean[end if].";
+				say "Your [MediumDesc of hair] is now completely dry[if (the urine coating of hair + the semen coating of hair) > 0], if not exactly clean[end if].";
 	if the urine coating of hair > 1: [The last unit of urine cannot be removed by drying, the 'smell' sticks around until washed/cleaned.]
 		if a random number between 1 and 14 is 1:
 			decrease the urine coating of hair by 1;

@@ -111,7 +111,7 @@ To compute dungeon prank of (M - kitsune):
 					say "You try to tackle [NameDesc of M], but [he of M] dodges it as easily as breathing, throwing the [ShortDesc of C] at you as [he of M] disappears around a corner.[GotUnluckyFlav][line break][speech style of M]'Oops! I tripped~!'[roman type][line break]";
 					now C is in the location of the player;
 				otherwise:
-					say "You dive towards [NameDesc of M], but [he of M] dodges it as easily as breathing. However, you manage to delay her just long enough for [NameDesc of S]  to burst out of the shop.[line break][speech style of M]'Oops. Ah, I mean- I-impostor!'[roman type][line break]";
+					say "You dive towards [NameDesc of M], but [he of M] dodges it as easily as breathing. However, you manage to delay her just long enough for [NameDesc of S] to burst out of the shop.[line break][speech style of M]'Oops. Ah, I mean- I-impostor!'[roman type][line break]";
 					now S is unleashed;
 					now S is interested;
 					now shopkeeper is in the location of M;
@@ -119,7 +119,7 @@ To compute dungeon prank of (M - kitsune):
 		otherwise:
 			say "You allow [NameDesc of M] to run right past you.";
 	if S is in the location of M:
-		say "[BigNameDesc of M] runs up to [NameDesc of S] and presses the [ShortDesc of C] into [his of M] hands.[line break]'That [boy of the player] s-stole my face, but I stole this b-b-back!'[roman type][line break][speech style of S]'It's alright. I'm not falling for this little thief's tricks.'[roman type][line break][big he of M] snaps a pair of handcuffs around [NameDesc of M]'s wrists.[line break][speech style of S]'Nice job catching [him of M]! I'll remember this!'[roman type][line break][speech style of S]'You think I won't recognize you after being robbed over and over again! I'm punishing you good this time!'[roman type][line break]";
+		say "[BigNameDesc of M] runs up to [NameDesc of S] and presses the [ShortDesc of C] into [his of M] hands.[line break][speech style of M]'That [boy of the player] s-stole my face, but I stole this b-b-back!'[roman type][line break][speech style of S]'It's alright. I'm not falling for this little thief's tricks.'[roman type][line break][big he of M] snaps a pair of handcuffs around [NameDesc of M]'s wrists.[line break][speech style of S]'Nice job catching [him of M]! I'll remember this!'[roman type][line break][speech style of M]'Crap...'[roman type][line break]";
 		Calm S;
 		FavourUp S;
 	otherwise:
@@ -148,7 +148,7 @@ To compute woods prank of (M - kitsune):
 	let N be a random dangerous monster in the location of the player;
 	let V be a random off-stage fetish appropriate vessel;
 	now the doses of V is 3;
-	say "[BigNameDesc of M] shimmers and disappears in a puff of pink smoke, leaving a duplicate of YOU standing in [his of M] place! [big he of M] smirks at you and dashes towards the witch's shack.[line break][speech style of W]'Hi bitch. Putting jewelery on- Hey, [if lactation fetish is 1]don't PINCH TH-! [otherwise]that's MY LUN-! [end if]OOH, YOU ARE GONNA GET IT!'[roman type][line break][BigNameDesc of M] comes sprinting out of the shop with an audibly sloshing [ShortDesc of V] clutched in [his of M] hands! If you don't stop [him of M] right now, [NameDesc of W]'s gonna think YOU took it![line break]";
+	say "[BigNameDesc of M] shimmers and disappears in a puff of pink smoke, leaving a duplicate of YOU standing in [his of M] place! [big he of M] smirks at you and dashes towards the witch's shack.[line break][speech style of W]'Hi bitch. Putting jewelery on- Hey, [if lactation fetish is 1]don't PINCH TH-! [otherwise]that's MY LUN-! [end if]OOH, YOU ARE GONNA GET IT!'[roman type][line break][BigNameDesc of M] is sprinting away from the altar with an audibly sloshing [ShortDesc of V] clutched in [his of M] hands! If you don't stop [him of M] right now, [NameDesc of W]'s gonna think YOU took it![line break]";
 	if the soreness of asshole is 10 or the soreness of vagina is 10 or the player is very horny:
 		say "Unfortunately, you're too distracted by your throbbing [if the soreness of asshole > 9][asshole], [otherwise if the soreness of vagina > 9][vagina], [otherwise][genitals], [end if]and [he of M] escapes before you can react!";
 	otherwise if N is a monster:
@@ -168,7 +168,7 @@ To compute woods prank of (M - kitsune):
 					say "You reach out and grab not [NameDesc of M], but the [ShortDesc of V] in [his of M] hands! You're only able to hold it for a split second before [he of M] snatches it away, but that's just enough time for [NameDesc of W] to burst into the clearing.[line break][speech style of M]'Oops. Ah, I mean- I-impostor!'[roman type][line break]";
 					now W is unleashed;
 					now W is interested;
-					now witch is in the location of M;
+					now W is in the location of M;
 			otherwise:
 				if the player is getting unlucky:
 					say "You try to tackle [NameDesc of M], but [he of M] dodges it as easily as breathing, throwing the [ShortDesc of V] (and its contents) at you as [he of M] disappears around a corner.[GotUnluckyFlav][line break][speech style of M]'Oops! I tripped~!'[roman type][line break]";
@@ -178,13 +178,13 @@ To compute woods prank of (M - kitsune):
 					say "You dive towards [NameDesc of M], but [he of M] dodges it as easily as breathing. However, you manage to delay her just long enough for [NameDesc of W]  to burst into the clearing.[line break][speech style of M]'Oops. Ah, I mean- I-impostor!'[roman type][line break]";
 					now W is unleashed;
 					now W is interested;
-					now witch is in the location of M;
+					now W is in the location of M;
 			silently try kneeling;
 		otherwise:
 			say "You allow [NameDesc of M] to run right past you.";
 	if W is in the location of M:
-		say "[BigNameDesc of M] runs up to [NameDesc of W] and presses the [ShortDesc of V] into [his of M] hands.[line break]'That [boy of the player] s-stole my face, but I stole this b-b-back!'[roman type][line break][speech style of W]'Do you honestly think that bullshit is gonna work on me?'[roman type][line break]Vines leap up and grab [NameDesc of M]'s ankles, dragging [him of M] back to [NameDesc of W]'s shack.";
-		Calm W;
+		say "[BigNameDesc of M] runs up to [NameDesc of W] and presses the [ShortDesc of V] into [his of M] hands.[line break][speech style of M]'That [boy of the player] s-stole my face, but I stole this b-b-back!'[roman type][line break][speech style of W]'Do you honestly think that bullshit is gonna work on me?'[roman type][line break]Vines leap up and grab [NameDesc of M]'s ankles, dragging [him of M] back to [NameDesc of W]'s shack.";
+		calm W;
 		FavourUp W;
 	otherwise:
 		say "[BigNameDesc of W] looks right at you. [if the player is able to speak][line break][variable custom style]'W-wait, that wasn't me, they just transformed-'[roman type][end if]";
@@ -410,7 +410,7 @@ To compute offer reward of (M - kitsune) for (T - a thing):
 	alwayscutshow figure of kitsune interact 3 for M;
 	let BV be the bartering value of T for M;
 	FavourUp M by ((1 + BV) / 2);
-	if the favour of M > 8 and the special-gifted of M is 0:
+	if the favour of M > 8 and the special-gifted of M is 0 and fox ears is actually summonable:
 		say "[speech style of M]'How about something special this time? I know, these are cute!'[roman type][line break]";
 		set up fox ears;
 		now fox ears is in the location of M;

@@ -16,7 +16,7 @@ long bridal dress is a bridal dress. Understand "short" as long bridal dress whe
 
 To compute class set up of (C - long bridal dress):
 	if the ceremony of betrothal-quest is false:
-		now the skirt-length of C is 6;
+		now the skirt-length of C is 7;
 	otherwise:
 		if vaginal-virginity-quest is appropriate:
 			now the quest of C is vaginal-virginity-quest;
@@ -41,11 +41,11 @@ To say ClothingDesc of (C - long bridal dress):
 	say "This silk white [MediumDesc of C] isn't too bad, as far as clothing items in this game go. The long flowing skirt [if C is knee-length]goes down past your knees[otherwise]has been removed, transforming it into party dress mode[end if]. The belly section is sheer to expose a bit of sexy skin, and it has no arms, but except for that it's just on the sexy side of normal[if C is knee-length]. You can sense it somewhat reducing the chances of aggressors deciding to take your virginity[end if].".
 
 To decide which number is the initial outrage of (C - long bridal dress):
-	if the skirt-length of C >= 6, decide on 1;
+	if the skirt-length of C >= 7, decide on 1;
 	decide on 3.
 
 Definition: long bridal dress is party themed:
-	if the skirt-length of it >= 6, decide no;
+	if the skirt-length of it >= 7, decide no;
 	decide yes.
 
 To compute virginity-loss of (C - long bridal dress):
@@ -62,7 +62,7 @@ This is the bridal dress pussy slut rule:
 The bridal dress pussy slut rule is listed in the pussy slut eligibility rules.
 
 To decide which object is the unique-upgrade-target of (C - long bridal dress):
-	if the skirt-length of C >= 6, decide on sexy bridal dress;
+	if the skirt-length of C >= 7, decide on sexy bridal dress;
 	otherwise decide on slutty bridal dress.
 
 sexy bridal dress is a bridal dress. sexy bridal dress is finger covering. The text-shortcut of sexy bridal dress is "sbrd".

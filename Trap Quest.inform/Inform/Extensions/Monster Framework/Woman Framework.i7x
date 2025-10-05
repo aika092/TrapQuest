@@ -93,7 +93,7 @@ To womanUnsluttify:
 		decrease the delayed sluttification of woman-player by 1.
 
 This is the spawn initial woman rule:
-	if woman-player is off-stage and woman-player is stranger, now woman-player is in Woods01.
+	if woman-player is off-stage and woman-player is stranger and berri fetish is 0, now woman-player is in Woods01.
 The spawn initial woman rule is listed in the setting up woods monsters rules.
 
 To uniquely destroy (M - woman-player): [Are there any special rules we need to follow?]
@@ -657,5 +657,13 @@ To say PartialSuccessStealProvokedReaction of (M - woman-player):
 	now M is angered;
 	now M is introduced;
 	say "[speech style of M]'Hey, give that back, bitch!'[roman type][line break]".
+
+
+Part - Play As Berri Scenes
+
+To say BerriCutsceneFlav:
+	say "[second custom style][one of]Oh god... I think I've stumbled into one of the [']cutscenes['] that [']Berri['] is scripted to experience![or]Don't tell me I've found another cutscene?![or][one of]Oh crap, it's another cutscene![or]How many of these ridiculous cutscene are there?![or]I've fallen right into another cutscene, haven't I?[or]Not good, not good... What do the showrunners have in store for me this time?![in random order][stopping][roman type][line break]".
+
+berriVineBossScene is a number that varies.
 
 Woman Framework ends here.

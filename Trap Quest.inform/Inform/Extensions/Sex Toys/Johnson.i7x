@@ -67,7 +67,7 @@ Definition: white-johnson is white themed: decide yes.
 To decide which figure-name is clothing-image of (C - white-johnson):
 	decide on figure of johnson 3.
 To set up toy enchantments of (C - white-johnson):
-	if a random number between 1 and 2 is 1, now C is suppression;
+	if watersports fetish is 0 or a random number between 1 and 2 is 1, now C is suppression;
 	otherwise now C is bed wetting.
 
 red-johnson is a johnson. Understand "red" as red-johnson.

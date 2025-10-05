@@ -2144,7 +2144,7 @@ To compute unique completion of (E - satisfy-pimp-errand) for (P - a person):
 portal-clothes-errand is an errand. portal-clothes-errand has an object called the satisfy-target.
 Definition: portal-clothes-errand is appropriate:
 	if diaper quest is 1:
-		if diaper swapping >= 2 and the player is a december 2023 diaper donator and portal-diaper is unclash summonable, decide yes;
+		if diaper swapping >= 2 and portal-diaper is unclash summonable, decide yes;
 		decide no;
 	if portal-hotpants is unclash summonable or (the largeness of breasts > 3 and portal-bra is unclash summonable), decide yes;
 	decide no.
@@ -2276,8 +2276,7 @@ To compute instant effect of (E - abc-shortalls-errand) for (P - a person):
 		let S be a random worn skirt;
 		say "You nod your consent[if D is a thing]. You remove your [ShortDesc of D][end if][if T is a thing]. You remove your [ShortDesc of T][end if][if S is a thing]. You remove your [ShortDesc of S][end if][if U is a thing]. You remove your [ShortDesc of U][end if]. [BigNameDesc of P] picks up the shortalls and flings them at you.";
 		unclash class summon ABC shortalls;
-		let K be a random off-stage specific-key;
-		compute P locking ABC shortalls with K;
+		compute P keylocking ABC shortalls;
 		compute errand reward of E for P;
 		now the current-errand of P is no-errand;
 	otherwise:

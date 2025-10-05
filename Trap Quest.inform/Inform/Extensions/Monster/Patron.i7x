@@ -2548,7 +2548,7 @@ To decide which figure-name is the monster-image of (M - furry patron):
 	decide on figure of furry patron.
 
 To say PatronDesc of (M - furry patron):
-	if mythical creatures fetish is 1:
+	if mythical creature fetish is 1:
 		say "The [man of M] in particular barely even looks human, with coarse black hair covering [his of M] entire frame from head to toe, even [his of M] face. What's more, [his of M] 'more than average' endowment is 14 inches long, hanging heavily between [his of M] legs like some perverted club.[line break]";
 	otherwise:
 		say "This [man of M] in particular is wearing a huge foam dog head. [big his of M] [LongDickDesc of M] is proportionally big, 14 inches long, and accompanied by a pair of big, fat[if full-lady fetish is 0], hairy[end if] nuts.[line break]".

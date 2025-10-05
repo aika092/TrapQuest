@@ -8,6 +8,7 @@ Definition: an acolyte is wenchy: decide yes.
 Definition: an acolyte is willing to potion forcefeed: decide yes.
 
 Definition: an acolyte is mansion dwelling: decide yes.
+Definition: an acolyte is a bondage applier: decide yes. [Do they sometimes apply bondage before and/or after punishing you?]
 
 An acolyte has a number called entranced. The entranced of an acolyte is usually 0.
 

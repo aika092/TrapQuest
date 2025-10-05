@@ -138,7 +138,7 @@ To decide which figure-name is the examine-image of (C - HotelScenery06):
 	decide on figure of hotel basin.
 
 Definition: Hotel45 is puzzle piece:
-	if diaper quest is 1 or the player is not an april 2025 top donator or watersports fetish is 0, decide no;
+	if diaper quest is 1 or the player is not an april 2025 top donator or watersports fetish is 0 or interracial fetish is 0, decide no;
 	if target-floor is in the Hotel, decide yes;
 	decide no.
 To SemenPuddleUp (X - a number) in (R - Hotel45):

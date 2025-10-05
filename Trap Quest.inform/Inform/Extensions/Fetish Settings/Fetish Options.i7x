@@ -31,7 +31,7 @@ title	subtable	description	toggle
 "Clumsy (Every now and then, usually while on your feet, you might do something you don't mean to) - 5 points ([if choice in row 74 of the Table of Player Options is -1]never[otherwise if choice in row 74 of the Table of Player Options is 0]not now[otherwise if choice in row 74 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	clumsy toggle rule
 "Fashion victim (more cursed/forced/transforming clothing) - 6 points ([if choice in row 17 of the Table of Player Options is -1]never[otherwise if choice in row 17 of the Table of Player Options is 0]not now[otherwise if choice in row 17 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	unlucky toggle rule
 "Encased in latex (not for beginners!) - 8 points ([if choice in row 15 of the Table of Player Options is -1]never[otherwise if choice in row 15 of the Table of Player Options is 0]not now[otherwise if choice in row 15 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	latex prisoner toggle rule
-"Nursery Resident (not for beginners!) - 5 points ([if the player is not a march 2024 diaper donator]bab testers only for now[otherwise if halloween content is 1]not compatible with Halloween mode[otherwise if choice in row 90 of the Table of Player Options is -1]never[otherwise if choice in row 90 of the Table of Player Options is 0]not now[otherwise if choice in row 90 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	nursery resident toggle rule
+"Nursery Resident (not for beginners!) - 5 points ([if the player is not a top donator]bab testers only for now[otherwise if halloween content is 1]not compatible with Halloween mode[otherwise if choice in row 90 of the Table of Player Options is -1]never[otherwise if choice in row 90 of the Table of Player Options is 0]not now[otherwise if choice in row 90 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	nursery resident toggle rule
 "Stronger Curses (The knives and altars can't remove cursed clothing, instead, altars can re-roll uncurse quests) - 5 points ([if the player is not the donator]Bab Testers only for now[otherwise if choice in row 78 of the Table of Player Options is -1]never[otherwise if choice in row 78 of the Table of Player Options is 0]not now[otherwise if choice in row 78 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	strongCurses toggle rule
 "Game Hates You (the most horribly unfair traps and outcomes) - 8 points ([if choice in row 51 of the Table of Player Options is -1]never[otherwise if choice in row 51 of the Table of Player Options is 0]not now[otherwise if choice in row 51 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	tough-shit toggle rule
 "Roguelike Mode (Saving & restoring is automatic and save file is deleted after restarting / losing) - [if max-undos is 999999]0[otherwise if save game limit is 0]4[otherwise][(save game limit * 2) + 2][end if] points ([if save game limit is 0]not [otherwise][bold type][end if]chosen[roman type][if the player is the donator and save game limit is not 0], max [max-undos] undos[end if])"	--	--	save game toggle rule
@@ -43,6 +43,7 @@ title	subtable	description	toggle
 "Can the player become a futanari? [if the player is not the donator]bab testers only for now[otherwise if player futanari fetish is 2][bold type]enabled[roman type] (without balls)[otherwise if player futanari fetish > 0][bold type]enabled[roman type] (with balls)[otherwise]disabled[end if]"	--	--	player futanari fetish rule
 "Male-to-female sex change - 2 points ([if choice in row 1 of the Table of Player Options is 1]Disabled since the player is female[otherwise if choice in row 10 of the Table of Player Options is -1]never[otherwise if choice in row 10 of the Table of Player Options is 0]not now[otherwise if choice in row 10 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	TG fetish toggle rule
 "Increase Minimum Penis Size ([if the player is female]Disabled since player is female[otherwise if min penis size is 0 and tg fetish >= 1]No penis. All increases are free. When this size is reached, TG can occur.[otherwise if min penis size is 1 and tg fetish >= 1]Less than 1 inch. All increases are free. When this size is reached, TG can occur.[otherwise if min penis size is 2 and tg fetish >= 1]1 inch. All increases are free. When this size is reached, TG can occur.[otherwise if tg fetish >= 1][min penis size] inch. All increases are free. When this size is reached, TG can occur.[otherwise if min penis size is 0]No penis - 0 points used. [bonus penis cost][otherwise if min penis size is 1]Less than 1 inch - 1 point used. [bonus penis cost][otherwise if min penis size is 2]1 inch - 1 point used. [bonus penis cost][otherwise][min penis size] inch - [min penis size points] points used. [bonus penis cost][end if])"	--	--	min penis size rule
+"Berri's hairclip (instead of meeting Berri in-game, become her by wearing her hairclip; you'll often spontaneously find yourself in her outfits and predicaments) - [if choice in row 1 of the Table of Player Options is 0 and tg fetish is 0]unavailable when sex change is disabled[otherwise if the player is not a june 2025 diaper donator]bab testers only - subscribe on subscribestar![otherwise if berri fetish is 1][bold type]enabled[roman type][otherwise]disabled[end if]"	--	--	berri fetish toggle rule
 "ENABLE SEASONAL CONTENT"	Table of Festive Options	--	--
 [DO NOT PUT ANY OPTIONS BELOW THE SEASONAL CONTENT ROW - they will not appear for non-alpha testers. Put them above the seasonal row instead.]
 
@@ -295,19 +296,19 @@ This is the lady random rule:
 The lady random rule is listed in the random fetish rules.
 
 To decide which number is nursery resident:
-	if diaper quest is 0 or halloween content is 1 or the player is not a march 2024 diaper donator, decide on 0;
+	if diaper quest is 0 or halloween content is 1 or the player is not a top donator, decide on 0;
 	if choice in row 90 of the Table of Player Options <= 0, decide on 0;
 	decide on 1.
 This is the nursery resident toggle rule:
-	if diaper quest is 1 and halloween content is 0 and the player is a march 2024 diaper donator:
+	if diaper quest is 1 and halloween content is 0 and the player is a top donator:
 		if choice in row 90 of the Table of Player Options < 2, increase choice in row 90 of the Table of Player Options by 1;
 		otherwise now choice in row 90 of the Table of Player Options is -1.
 This is the nursery resident nightmare rule:
-	if diaper quest is 1 and halloween content is 0 and the player is a march 2024 diaper donator:
+	if diaper quest is 1 and halloween content is 0 and the player is a top donator:
 		if choice in row 90 of the Table of Player Options is 0, now choice in row 90 of the Table of Player Options is 1.
 The nursery resident nightmare rule is listed in the nightmare mode rules.
 This is the nursery resident random rule:
-	if diaper quest is 1 and halloween content is 0 and the player is a march 2024 diaper donator:
+	if diaper quest is 1 and halloween content is 0 and the player is a top donator:
 		if choice in row 90 of the Table of Player Options is 0 or choice in row 90 of the Table of Player Options is 1, now choice in row 90 of the Table of Player Options is a random number between 0 and 1.
 The nursery resident random rule is listed in the random handicap rules.
 

@@ -1,8 +1,12 @@
 Status Bar by Miscellaneous Frontend begins here.
 
 Rule for constructing the status line:
-	if fetishMenuInProgress is true:
+	if fetishMenuInProgress is 1:
 		fill status bar with Table of Fetish Points Status;
+	otherwise if fetishMenuInProgress is 2:
+		fill status bar with Table of Handicap Points Status;
+	otherwise if fetishMenuInProgress is 3 and fetishSelection > 0:
+		fill status bar with Table of Handicap Points Status;
 	otherwise if currently-displaying is true:
 		follow the constructing status line while displaying rule;
 	otherwise if the player is virtual or the player is in an introductory room:
@@ -655,6 +659,8 @@ Rule for constructing the status line while displaying (this is the constructing
 		fill status bar with Table of Benefit Options Status;
 	otherwise if the current menu is the table of diaper options:
 		fill status bar with table of diaper choice status;
+	otherwise if the current menu is the table of festive options:
+		fill status bar with table of festive options status;
 	otherwise if the current menu is the table of toilet allowance options:
 		fill status bar with table of toilet allowance status;
 	otherwise if the current menu is the table of diaper focus options:
@@ -708,6 +714,10 @@ Table of Fetish Points Status
 left	central	right
 ""	"TOTAL POINTS (including those earned from already enabled handicaps on next page): [positive points count]"	""
 
+Table of Handicap Points Status
+left	central	right
+""	"TOTAL POINTS: [positive points count]"	""
+
 Table of Empty Status
 left	central	right
 ""	""	""
@@ -742,6 +752,12 @@ Table of Diaper Choice Status
 left	central	right
 ""	""	""
 "Enable or disable certain diaper content?"	""	""
+""	""	""
+
+Table of Festive Options Status
+left	central	right
+""	""	""
+"Make it a festive run?"	""	""
 ""	""	""
 
 Table of Diaper Focus Status

@@ -104,6 +104,7 @@ choice
 0 [enema fetish]
 0 [easy teaching]
 0 [smart start]
+-1 [berri fetish]
 
 [!<DecideWhichNumberIsOriginalPlayerGender>+
 
@@ -294,6 +295,22 @@ To decide which number is smart start:
 	if choice in row 93 of the Table of Player Options <= 0, decide on 0;
 	decide on choice in row 93 of the Table of Player Options.
 
+To decide which number is berri fetish:
+	if diaper quest is 0, decide on 0;
+	if the player is not a june 2025 diaper donator, decide on 0;
+	if choice in row 1 of the Table of Player Options is 0 and tg fetish is 0, decide on 0;
+	if choice in row 94 of the Table of Player Options <= 0, decide on 0;
+	decide on choice in row 94 of the Table of Player Options.
+This is the berri fetish toggle rule:
+	if choice in row 94 of the Table of Player Options < 2, increase choice in row 94 of the Table of Player Options by 1;
+	otherwise now choice in row 94 of the Table of Player Options is -1.
+This is the berri nightmare rule:
+	if choice in row 94 of the Table of Player Options is 0, now choice in row 94 of the Table of Player Options is 1.
+The berri nightmare rule is listed in the nightmare mode rules.
+This is the berri random rule:
+	if choice in row 94 of the Table of Player Options is 0 or choice in row 94 of the Table of Player Options is 1, now choice in row 94 of the Table of Player Options is a random number between 0 and 1.
+The berri random rule is listed in the random fetish rules.
+
 [
 0: Minimal grossness
 1: Foot licking only
@@ -412,7 +429,7 @@ To decide which number is points count:
 	decrease X by fantastic elastic;
 	decrease X by smart start;
 	decrease X by easy teaching * 2;
-	if slower timers is 1, decrease X by 2;
+	if slower timers is 2, decrease X by 2;
 	if diaper quest is 0:
 		if supportersEnabled is 0, decrease X by 1;
 		if super gag reflex is 1, decrease X by 3;
@@ -463,7 +480,8 @@ FETISH MENU ID CHEAT SHEET
 17) TG
 ]
 
-fetishMenuInProgress is initially false.
+fetishMenuInProgress is a number that varies.
+fetishSelection is a number that varies. [0: gender, 1: pregnancy type]
 previous menu selection is a number that varies. previous menu selection is 1.
 
 Figure of Fetish Selection Backdrop is the file "Special/Menus/FetishSelection/backdrop1.jpg".
@@ -500,9 +518,11 @@ Figure of condoms_1_never is the file "Special/Menus/FetishSelection/condoms_1_n
 Figure of condoms_1_not_now is the file "Special/Menus/FetishSelection/condoms_1_not_now.png".
 Figure of condoms_1_this_time is the file "Special/Menus/FetishSelection/condoms_1_this_time.png".
 Figure of condoms_2_always is the file "Special/Menus/FetishSelection/condoms_2_always.png".
-Figure of condoms_2_never is the file "Special/Menus/FetishSelection/condoms_2_never.png".
-Figure of condoms_2_not_now is the file "Special/Menus/FetishSelection/condoms_2_not_now.png".
+[Figure of condoms_2_never is the file "Special/Menus/FetishSelection/condoms_2_never.png".
+Figure of condoms_2_not_now is the file "Special/Menus/FetishSelection/condoms_2_not_now.png".]
 Figure of condoms_2_this_time is the file "Special/Menus/FetishSelection/condoms_2_this_time.png".
+Figure of condoms_3_always is the file "Special/Menus/FetishSelection/condoms_3_always.png".
+Figure of condoms_3_this_time is the file "Special/Menus/FetishSelection/condoms_3_this_time.png".
 Figure of Cum splatter is the file "Special/Menus/FetishSelection/Cum splatter.jpg".
 Figure of cum_splatter_always is the file "Special/Menus/FetishSelection/cum_splatter_always.png".
 Figure of cum_splatter_never is the file "Special/Menus/FetishSelection/cum_splatter_never.png".
@@ -526,9 +546,11 @@ Figure of gross_licking_1_never is the file "Special/Menus/FetishSelection/gross
 Figure of gross_licking_1_not_now is the file "Special/Menus/FetishSelection/gross_licking_1_not_now.png".
 Figure of gross_licking_1_this_time is the file "Special/Menus/FetishSelection/gross_licking_1_this_time.png".
 Figure of gross_licking_2_always is the file "Special/Menus/FetishSelection/gross_licking_2_always.png".
-Figure of gross_licking_2_never is the file "Special/Menus/FetishSelection/gross_licking_2_never.png".
-Figure of gross_licking_2_not_now is the file "Special/Menus/FetishSelection/gross_licking_2_not_now.png".
+[Figure of gross_licking_2_never is the file "Special/Menus/FetishSelection/gross_licking_2_never.png".
+Figure of gross_licking_2_not_now is the file "Special/Menus/FetishSelection/gross_licking_2_not_now.png".]
 Figure of gross_licking_2_this_time is the file "Special/Menus/FetishSelection/gross_licking_2_this_time.png".
+Figure of gross_licking_3_always is the file "Special/Menus/FetishSelection/gross_licking_3_always.png".
+Figure of gross_licking_3_this_time is the file "Special/Menus/FetishSelection/gross_licking_3_this_time.png".
 Figure of Lactation is the file "Special/Menus/FetishSelection/Lactation.jpg".
 Figure of lactation_always is the file "Special/Menus/FetishSelection/lactation_always.png".
 Figure of lactation_never is the file "Special/Menus/FetishSelection/lactation_never.png".
@@ -601,15 +623,15 @@ To compute new fetish selection window:
 	open the graphics-window;
 	[let H be the height of the graphics-window;
 	let W be the width of the graphics-window;]
-	now fetishMenuInProgress is true;
+	now fetishMenuInProgress is 1;
 	now current menu selection is 1;
 	[wait 50 ms before continuing;]
-	while fetishMenuInProgress is true:
+	while fetishMenuInProgress is 1:
 		update the status line;
 		refresh the graphics-window;
 		let __x be the chosen letter;
 		if __x is 81 or __x is 113:
-			now fetishMenuInProgress is false;
+			now fetishMenuInProgress is 0;
 			now waitingForChar is false;
 			now current menu selection is 1;
 		otherwise if __x is -2: [up]
@@ -691,7 +713,7 @@ To compute fetish toggle (D - a direction):
 			do nothing; [NPC gender and alcohol are donators only]
 		otherwise if current menu selection is 13 or current menu selection is 14 or current menu selection is 15:
 			if D is down:
-				if choice in row N of the Table of Player Options is 6 or (choice in row N of the Table of Player Options is 6 and current menu selection is 15):
+				if choice in row N of the Table of Player Options is 6:
 					now choice in row N of the Table of Player Options is 0;
 				otherwise if choice in row N of the Table of Player Options is 0:
 					increase choice in row N of the Table of Player Options by 1;
@@ -703,8 +725,7 @@ To compute fetish toggle (D - a direction):
 					increase choice in row N of the Table of Player Options by 3;
 			otherwise:
 				if choice in row N of the Table of Player Options is 0:
-					if current menu selection is 15, now choice in row N of the Table of Player Options is 4;
-					otherwise now choice in row N of the Table of Player Options is 4;
+					now choice in row N of the Table of Player Options is 4;
 				otherwise if choice in row N of the Table of Player Options is 1:
 					decrease choice in row N of the Table of Player Options by 1;
 				otherwise if choice in row N of the Table of Player Options is 3:
@@ -725,7 +746,7 @@ To compute fetish toggle (D - a direction):
 
 To compute fetish toggle select:
 	if current menu selection is fetishSelectionTotalOptions + 3:
-		now fetishMenuInProgress is false;
+		now fetishMenuInProgress is 0;
 		now current menu selection is 1;
 		now waitingForChar is false;
 	otherwise if current menu selection is fetishSelectionTotalOptions + 2:
@@ -792,6 +813,8 @@ To decide which figure-name is fetish menu banner:
 		decide on figure of NPC Gender 2.
 
 To render full new fetish selection menu:
+	let CMS be current menu selection;
+	if CMS > fetishSelectionTotalOptions, now CMS is previous menu selection;
 	let H be the height of the graphics-window;
 	let W be the width of the graphics-window;
 	let W2 be (W * 2) / 3;
@@ -949,7 +972,7 @@ To render full new fetish selection menu:
 				decrease C by 1; [this function expects -1 and 0 for never / not now]
 			otherwise if the remainder after dividing C by 2 is 1:
 				decrease C by 2; [this function expects yes this time to come before always]
-			if X is current menu selection, now BTNS is 8;
+			if X is CMS, now BTNS is 8;
 			if C is -1:
 				now F is figure of gross_licking_1_never;
 			otherwise if C is 0:
@@ -958,16 +981,20 @@ To render full new fetish selection menu:
 				now F is figure of gross_licking_1_this_time;
 			otherwise if C is 2:
 				now F is figure of gross_licking_1_always;
-			otherwise if C is 3 or C is 5:
+			otherwise if C is 3:
 				now F is figure of gross_licking_2_this_time;
-			otherwise:
+			otherwise if C is 4:
 				now F is figure of gross_licking_2_always;
+			otherwise if C is 5:
+				now F is figure of gross_licking_3_this_time;
+			otherwise:
+				now F is figure of gross_licking_3_always;
 		otherwise if X is 14:
 			if C <= 1:
 				decrease C by 1; [this function expects -1 and 0 for never / not now]
 			otherwise if the remainder after dividing C by 2 is 1:
 				decrease C by 2; [this function expects yes this time to come before always]
-			if X is current menu selection, now BTNS is 8;
+			if X is CMS, now BTNS is 8;
 			if C is -1:
 				now F is figure of condoms_1_never;
 			otherwise if C is 0:
@@ -976,16 +1003,20 @@ To render full new fetish selection menu:
 				now F is figure of condoms_1_this_time;
 			otherwise if C is 2:
 				now F is figure of condoms_1_always;
-			otherwise if C is 3 or C is 5:
+			otherwise if C is 3:
 				now F is figure of condoms_2_this_time;
-			otherwise:
+			otherwise if C is 4:
 				now F is figure of condoms_2_always;
+			otherwise if C is 5:
+				now F is figure of condoms_3_this_time;
+			otherwise:
+				now F is figure of condoms_3_always;
 		otherwise if X is 15:
 			if C <= 1:
 				decrease C by 1; [this function expects -1 and 0 for never / not now]
 			otherwise if the remainder after dividing C by 2 is 1:
 				decrease C by 2; [this function expects yes this time to come before always]
-			if X is current menu selection, now BTNS is 6;
+			if X is CMS, now BTNS is 6;
 			if C is -1 or the player is not the donator:
 				now F is figure of NPC_gender_1_never;
 			otherwise if C is 0:
@@ -1061,7 +1092,7 @@ To render full new fetish selection menu:
 	let buttonNR be 101.0 * W  / 1920.0;
 	let buttonN be buttonNR to the nearest whole number;
 	[render 4 buttons, and add links]
-	unless the player is not the donator and (current menu selection is 15 or current menu selection is 16):
+	unless the player is not the donator and (CMS is 15 or CMS is 16):
 		repeat with X running from FBTN to BTNS:
 			if X is 1:
 				if CC < 0, now F is figure of never_on_buttons;
@@ -1076,8 +1107,9 @@ To render full new fetish selection menu:
 				if CC is X - 2, now F is figure of always_on_buttons;
 				otherwise now F is figure of always_off_buttons;
 			display the image F in the graphics-window at buttonX by buttonY with dimensions buttonW by buttonH;
-			let TXT be the substituted form of "fet5[X]";
-			set a graphlink in the graphics-window identified as hyperinventoryobject for yourself from buttonX by buttonY to (buttonX + buttonW) by (buttonY + buttonH) as TXT, ignoring redundant links;
+			unless current menu selection > fetishSelectionTotalOptions:
+				let TXT be the substituted form of "fet5[X]";
+				set a graphlink in the graphics-window identified as hyperinventoryobject for yourself from buttonX by buttonY to (buttonX + buttonW) by (buttonY + buttonH) as TXT, ignoring redundant links;
 			increase buttonX by buttonN;
 
 

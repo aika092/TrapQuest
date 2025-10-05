@@ -18,6 +18,19 @@ Figure of pink diamond necklace is the file "Items/Accessories/Neck/necklace4.pn
 Figure of pure diamond necklace is the file "Items/Accessories/Neck/necklace5.png".
 Figure of solid gold necklace is the file "Items/Accessories/Neck/necklace6.png".
 
+To decide which text is the clarificationText of (F - Figure of sapphire necklace):
+	decide on the substituted form of "[JewelleryClarification]".
+To decide which text is the clarificationText of (F - Figure of emerald necklace):
+	decide on the substituted form of "[JewelleryClarification]".
+To decide which text is the clarificationText of (F - Figure of ruby necklace):
+	decide on the substituted form of "[JewelleryClarification]".
+To decide which text is the clarificationText of (F - Figure of pink diamond necklace):
+	decide on the substituted form of "[JewelleryClarification]".
+To decide which text is the clarificationText of (F - Figure of pure diamond necklace):
+	decide on the substituted form of "[JewelleryClarification]".
+To decide which text is the clarificationText of (F - Figure of solid gold necklace):
+	decide on the substituted form of "[JewelleryClarification]".
+
 To decide which figure-name is the examine-image of (R - a necklace):
 	if R is sapphire, decide on figure of sapphire necklace;
 	if R is emerald, decide on figure of emerald necklace;

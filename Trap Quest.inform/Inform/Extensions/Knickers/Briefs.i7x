@@ -23,6 +23,9 @@ To decide which figure-name is clothing-image of (C - briefs):
 To decide which figure-name is clothing-image of (C - white-briefs):
 	decide on figure of briefs 1.
 
+To decide which figure-name is clothing-image of (C - white-briefs):
+	decide on figure of briefs 1.
+
 To decide which figure-name is clothing-image of (C - white-girly briefs):
 	decide on figure of briefs special 1b.
 
@@ -89,6 +92,9 @@ To decide which figure-name is clothing-image of (C - pink briefs):
 To decide which figure-name is clothing-image of (C - black briefs):
 	decide on figure of briefs 21.
 
+To decide which figure-name is clothing-image of (C - plain-white-briefs):
+	decide on figure of briefs 22.
+
 To decide which figure-name is clothing-image of (C - pink-bbc briefs):
 	decide on figure of briefs special 2.
 
@@ -98,6 +104,14 @@ To say selfexamineuniquetitle of (G - white-briefs):
 To say UniqueClothingDesc of (G - white-briefs):
 	say "This small white pair of briefs is a bit too sheer to give much modesty.".
 Definition: white-briefs is white themed: decide yes.
+
+plain-white-briefs is a briefs. plain-white-briefs is sheer-when-wet. The text-shortcut of plain-white-briefs is "pwb". Understand "plain", "white" as plain-white-briefs.
+To say selfexamineuniquetitle of (G - plain-white-briefs):
+	say "pair of plain white briefs".
+To say UniqueClothingDesc of (G - plain-white-briefs):
+	say "This small white pair of briefs have a tiny pink bow at the front.".
+Definition: plain-white-briefs is white themed: decide yes.
+Definition: plain-white-briefs is bow themed: decide yes.
 
 white-girly briefs is a briefs. white-girly briefs is sheer-when-wet. The text-shortcut of white-girly briefs is "wgg". Understand "white", "good" as white-girly briefs.
 To say selfexamineuniquetitle of (G - white-girly briefs):
@@ -340,6 +354,7 @@ Figure of briefs 18 is the file "Items/Clothes/Lower/Underwear/Briefs/briefs18.p
 Figure of briefs 19 is the file "Items/Clothes/Lower/Underwear/Briefs/briefs19.png".
 Figure of briefs 20 is the file "Items/Clothes/Lower/Underwear/Briefs/briefs20.png".
 Figure of briefs 21 is the file "Items/Clothes/Lower/Underwear/Briefs/briefs21.png".
+Figure of briefs 22 is the file "Items/Clothes/Lower/Underwear/Briefs/briefs22.png".
 Figure of briefs special 2 is the file "Items/Clothes/Lower/Underwear/Briefs/briefsspecial2.png".
 
 [Below are from Lucas]

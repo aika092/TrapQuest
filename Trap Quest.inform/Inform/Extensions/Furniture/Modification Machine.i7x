@@ -52,8 +52,10 @@ To compute furniture resting on (F - modification machine):
 		now F is grabbing the player;
 		now the stance of the player is 1;
 		let R be a random number between 1 and 10;
-		if piercing-fetish is 1 and R < 6, now R is 1;
 		let P be a random eligible piercing;
+		if piercing-fetish is 1 and R < 6 and the player is not getting unlucky:
+			now P is a random eligible actually summonable piercing;
+			if P is a piercing, now R is 1;
 		let tubesuit-wearable be false;
 		if tubesuit is fetish appropriate and tubesuit is off-stage:
 			now tubesuit-wearable is true;

@@ -67,6 +67,68 @@ To say MonsterOfferAcceptFlav of (M - a dominatrix) to (T - a bondage):
 To say ShortDesc of (T - a bondage):
 	say "bondage".
 
+bondage-cooldown is a number that varies. [bondage-cooldown is 200.]
+An all time based rule (this is the bondage cooldown rule):
+	decrease bondage-cooldown by time-seconds.
+Definition: yourself is ready for more bondage:
+	if tutorial is 1 or bondage protection >= 2, decide no;
+	if bondage-cooldown <= 0:
+		if the player is getting unlucky, decide yes;
+	otherwise if bondage-cooldown <= 870 / (tough-shit + 1):
+		if the player is getting very unlucky, decide yes;
+	decide no.
+To reset bondage timer:
+	now bondage-cooldown is 900 / (tough-shit + 1).
+
+Definition: a clothing is application appropriate: decide no.
+Definition: a bondage (called C) is application appropriate: [stuff that's application appropriate and summonable can be applied by NPCs at any time]
+	if C is fetish appropriate, decide yes;
+	decide no.
+Definition: a submissive collar (called C) is application appropriate: [stuff that's application appropriate and summonable can be applied by NPCs at any time]
+	if C is fetish appropriate and C is not unique, decide yes;
+	decide no.
+
+bondage-successfully-applied is initially false.
+early-bondage-check is initially false. [NPC is doing this before sex. So maybe don't put a chastity device on, if vaginal sex is on the cards.]
+To compute bondage application check of (M - a monster):
+	now bondage-successfully-applied is false;
+	if the player is ready for more bondage:
+		let CM be current-monster;
+		now current-monster is M;
+		let C be a random application appropriate off-stage actually summonable clothing;
+		if C is a thing:
+			compute M bondage-forcing C;
+			reset bondage timer;
+			now bondage-successfully-applied is true;
+		now current-monster is CM.
+
+
+To compute (M - a monster) bondage-forcing (C - a clothing):
+	say BondageAnnounceFlav of M for C;
+	say BondageForceFlav of M for C;
+	summon C locked;
+	compute M keylocking C;
+	if M is intelligent, say BondageAfterFlav of M for C.
+
+To say BondageAnnounceFlav of (M - a monster) for (C - a clothing):
+	if M is intelligent, say "[speech style of M]'[if early-bondage-check is true]Before we begin, [end if][one of]I have something for you[or]I have been saving this for the right person[or]I think you need to better learn to respect your superiors. And I have just the thing[in random order]...'[roman type][line break]";
+	say "[BigNameDesc of M] pulls out a [MediumDesc of C]!".
+
+To say BondageForceFlav of (M - a monster) for (C - a clothing):
+	say "[BigNameDesc of M] forces [NameDesc of C] onto you!".
+To say BondageForceFlav of (M - a monster) for (C - a gag):
+	say "[BigNameDesc of M] pushes [NameDesc of C] into your mouth!".
+To say BondageForceFlav of (M - a monster) for (C - an ankle bond):
+	say "[BigNameDesc of M] forces your ankles into [NameDesc of C]!".
+To say BondageForceFlav of (M - a monster) for (C - a wrist bond):
+	say "[BigNameDesc of M] forces your wrists into [NameDesc of C]!".
+To say BondageForceFlav of (M - a monster) for (C - a chastity cage):
+	say "[BigNameDesc of M] forces your [ShortDesc of penis] into [NameDesc of C]!".
+
+To say BondageAfterFlav of (M - a monster) for (C - a clothing):
+	say "[speech style of M]'[one of]A perfect fit[or]It suits you well[or]Much better[in random order].'[roman type][line break]".
+
+
 Part - Trashcan
 
 trashcan is an overdress. trashcan is metal. trashcan is unique. The printed name of trashcan is "[clothing-title-before]trashcan[clothing-title-after]". The text-shortcut of trashcan is "tsh".

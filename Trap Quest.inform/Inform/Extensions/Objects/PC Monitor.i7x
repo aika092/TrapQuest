@@ -364,7 +364,7 @@ Check pushing security interface:
 		say "A feminine robotic voice speaks:[line break][second custom style]'ERROR: ELEVATOR IS RECHARGING. PLEASE WAIT...'[roman type][line break]";
 	otherwise if security interface is unauthenticated:
 		say "[if diaper quest is 1]Two[otherwise]Three[end if] things happen when you push the button - the door opens, revealing an elevator inside, [if diaper quest is 0]a small metal chute opens up, as if expecting you to deposit an item in it, and lastly, a long thin metal pole with a bulbous sphere at the top emerges from the ground in front of you[otherwise]and secondly, a small metal chute opens up, as if expecting you to deposit an item in it[end if]. Next, a feminine robotic voice speaks:[line break][second custom style]'TO ENABLE ADMINSITRATOR PRIVILEGES, [caps please] PROCEED WITH [if diaper quest is 0]ORIFICE-BASED OR [end if]ITEM-BASED DNA VERIFICATION.'[roman type][line break]It seems like you [if diaper quest is 0]either need to [']mount['] the pole in front of you, or[otherwise]need to[end if] drop an item down the chute.";
-		if id-card is held, say "[variable custom style]I also have the mechanic's ID card, which looks like it would fit in that ID card slot...[roman type][line break]";
+		if mechanic-id-card is held, say "[variable custom style]I also have the mechanic's ID card, which looks like it would fit in that ID card slot...[roman type][line break]";
 		now security interface is authenticating;
 	otherwise:
 		say "You push the button, but nothing more happens.".
@@ -462,10 +462,13 @@ Check inserting it into while the second noun is security interface:
 	if the noun is empty bottle, say "You don't want to put the whole thing in, but just pour it, surely? And that will require it to not be empty..." instead;
 	if the noun is worn and the noun is not autoremovable, say "You'd need to remove it first." instead;
 	if the player is immobile or the player is in danger, say "You're a bit busy right now!" instead;
-	if the noun is id-card:
+	if the noun is id-card or the noun is VIP-card:
 		allocate 3 seconds;
 		now security interface is authenticated;
-		say "You push the ID card into the slot, and with a happy beep, the interface turns green, and the metal door slides open!" instead;
+		say "You push the ID card into the slot, and with a happy beep, the interface turns green, and the metal door slides open![paragraph break][bold type]The card disintegrates into dust.[one of][line break][variable custom style]Oh what?! It was a one-time-use thing?![or][stopping][roman type][line break]";
+		destroy the noun;
+		now the noun is in Holding Pen; [so it doesn't appear again]
+		do nothing instead;
 	if security interface is not authenticating, say "How would you do that? Try pressing the button first." instead;
 	allocate 6 seconds;
 	let authentication-success be false;
@@ -480,7 +483,7 @@ Check inserting it into while the second noun is security interface:
 		if the noun is clothing:
 			repeat with M running through the condom history of the noun:
 				now M is inseminating the noun; [this will be reset in the only destroy function anyway]
-		if the noun is infernal gem and demon lord is permanently banished, now authentication-success is true;
+		[if the noun is infernal gem and demon lord is permanently banished, now authentication-success is true;]
 		if mechanic is inseminating the noun or pimp is inseminating the noun or demon lord is inseminating the noun, now authentication-success is true;
 		only destroy the noun;
 	if authentication-success is true:
@@ -510,16 +513,17 @@ To construct unique buttons for (T - security interface):
 				now the ButtonCommand entry is "insert [text-shortcut of V] in [text-shortcut of T]";
 				now the ButtonColour entry is lightModeFullGreen;
 				if V is worn, now the ButtonColour entry is lightModeFullYellow;
-		if id-card is held and ButtonTableFull is 0:
+		if VIP-card is held and ButtonTableFull is 0:
 			choose a blank row in the Table of Buttons;
-			now the ButtonImage entry is examine-image of id-card;
-			now the ButtonCommand entry is "insert [text-shortcut of id-card] in [text-shortcut of T]";
+			now the ButtonImage entry is examine-image of VIP-card;
+			now the ButtonCommand entry is "insert [text-shortcut of VIP-card] in [text-shortcut of T]";
 			now the ButtonColour entry is lightModeFullGreen;
-		if infernal gem is held and ButtonTableFull is 0:
-			choose a blank row in the Table of Buttons;
-			now the ButtonImage entry is examine-image of infernal gem;
-			now the ButtonCommand entry is "insert [text-shortcut of infernal gem] in [text-shortcut of T]";
-			now the ButtonColour entry is lightModeFullGreen;
+		repeat with S running through held id-cards:
+			if ButtonTableFull is 0:
+				choose a blank row in the Table of Buttons;
+				now the ButtonImage entry is examine-image of S;
+				now the ButtonCommand entry is "insert [text-shortcut of S] in [text-shortcut of T]";
+				now the ButtonColour entry is lightModeFullGreen;
 		repeat with S running through held soiled-diapers:
 			if ButtonTableFull is 0:
 				choose a blank row in the Table of Buttons;
@@ -675,11 +679,11 @@ To compute disgrace punishment effect of (DP - public-disgrace-punishment-fetish
 			add TM to the large-egg-origins of belly;
 			if total fill of belly <= belly limit - 2:
 				increase the medium egg count of belly by 1;
-				if a random number between 0 and mythical creatures fetish is 1, add buzzing giant wasp to the medium-egg-origins of belly;
+				if a random number between 0 and mythical creature fetish is 1, add buzzing giant wasp to the medium-egg-origins of belly;
 				otherwise add TM to the medium-egg-origins of belly;
 			if total fill of belly <= belly limit - 1:
 				increase the small egg count of belly by 1;
-				if a random number between 0 and mythical creatures fetish is 1, add buzzing giant wasp to the small-egg-origins of belly;
+				if a random number between 0 and mythical creature fetish is 1, add buzzing giant wasp to the small-egg-origins of belly;
 				otherwise add TM to the small-egg-origins of belly;
 	if diaper lover > 0:
 		say "Suddenly, you feel a horrible twinge behind your crotch! ";

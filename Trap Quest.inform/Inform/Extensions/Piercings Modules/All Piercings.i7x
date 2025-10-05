@@ -14,7 +14,7 @@ To decide which number is the heaviness of (C - a piercing):
 	decide on 0.
 
 Definition: a piercing is eligible:
-	if it is off-stage, decide yes;
+	if it is off-stage and it is fetish appropriate, decide yes;
 	decide no.
 
 To say PiercingFlav of (P - a piercing):
@@ -562,78 +562,7 @@ To decide which number is the initial outrage of (C - dick-nipple-piercings):
 The wearability rules of dick-nipple-piercings is the nipple-rings wearability rules.
 
 
-A pair of earrings is a kind of piercing. The printed name of pair of earrings is "[TQlink of item described][item style]pair of [if item described is cursed]ultra slutty[otherwise if item described is blessed]heart shaped[otherwise]penis shaped[end if] earrings[clothing-title-after]". The text-shortcut of pair of earrings is "ea". Understand "penis shaped" as pair of earrings when item described is bland. Understand "heart", "shaped" as pair of earrings when item described is blessed. Understand "ultra", "slutty" as pair of earrings when item described is cursed. There is 1 pair of earrings. A pair of earrings has a number called variation. A pair of earrings is womanly.
-The transform-resistance of a pair of earrings is usually 0.
-
-Definition: a pair of earrings is toilet themed:
-	if it is cursed and watersports fetish is 1, decide yes;
-	decide no.
-This is the earrings piss slut rule:
-	if there is a worn toilet themed pair of earrings, increase the desirability of belly by 8.
-The earrings piss slut rule is listed in the piss slut eligibility rules.
-Definition: a pair of earrings is interracial themed:
-	if it is cursed and watersports fetish is 0, decide yes;
-	decide no.
-To decide which number is the bbc-addiction-influence of (C - a pair of earrings):
-	if C is interracial themed, decide on 1;
-	decide on 0.
-Definition: a pair of earrings is oral sex themed:
-	if it is cursed and watersports fetish is 0 and interracial fetish is 0 and the variation of it < 3, decide yes;
-	decide no.
-To decide which number is the oral-sex-addiction-influence of (C - a pair of earrings):
-	if C is oral sex themed, decide on 1;
-	decide on 0.
-Definition: a pair of earrings is anal sex themed:
-	if it is cursed and watersports fetish is 0 and interracial fetish is 0 and the variation of it is not 2, decide yes;
-	decide no.
-To decide which number is the anal-sex-addiction-influence of (C - a pair of earrings):
-	if C is anal sex themed, decide on 1;
-	decide on 0.
-Definition: a pair of earrings is penis themed:
-	if it is bland or (it is cursed and watersports fetish is 0 and interracial fetish is 0 and the variation of it is not 1), decide yes;
-	decide no.
-To decide which number is the semen-addiction-influence of (C - a pair of earrings):
-	if C is penis themed, decide on 1;
-	decide on 0.
-Definition: a pair of earrings is vagina themed:
-	if it is cursed and watersports fetish is 0 and interracial fetish is 0 and the variation of it is 1, decide yes;
-	decide no.
-To decide which number is the vaginal-sex-addiction-influence of (C - a pair of earrings):
-	if C is vagina themed, decide on 1;
-	decide on 0.
-Definition: a pair of earrings is white themed:
-	if it is cursed, decide yes;
-	decide no.
-Definition: a pair of earrings is heart themed:
-	if it is blessed, decide yes;
-	decide no.
-Definition: a pair of earrings is gem themed:
-	if it is blessed, decide yes;
-	decide no.
-
-To uniquely set up (C - a pair of earrings):
-	now the variation of C is a random number between 1 and 3.
-
-To say CurseCurseFlav of (C - a pair of earrings):
-	say "Your [printed name of C] transform in shape, and are now the ultra slutty circular things again!";
-	update appearance level.
-
-To say CurseBlandFlav of (C - a pair of earrings):
-	say "Your [printed name of C] transform in shape, and are now penis shaped again!";
-	update appearance level.
-
-To say BlessBlessFlav of (C - a pair of earrings):
-	say "Your [printed name of C] transform in shape to large jewelled hearts, and now look much less trashy and more valuable!";
-	update appearance level.
-
-To say BlessBlandFlav of (C - a pair of earrings):
-	say "Your [printed name of C] transform in shape, and are now shaped like [manly-penis]s![line break][variable custom style][if the bimbo of the player < 12 or 7 is too humiliating]Hmm, well I guess that is a little bit better...?[otherwise if the bimbo of the player < 15]Ooh, these are cute![otherwise]Aww, I preferred having the super trashy ones! I guess these are pretty trashy too...[end if][roman type][line break]";
-	update appearance level.
-
-To decide which number is the initial outrage of (C - a pair of earrings):
-	if C is cursed, decide on 10;
-	if C is blessed, decide on 2;
-	decide on 6.
+A pair of earrings is a kind of piercing. The text-shortcut of pair of earrings is "ea". A pair of earrings is womanly. Understand "pair", "pair of" as a pair of earrings.
 
 To decide which object is the concealer of (C - a pair of earrings):
 	if there is a worn actually dense hood, decide on a random worn actually dense hood;
@@ -645,7 +574,118 @@ To decide which object is the at least partial concealer of (C - a pair of earri
 	if the largeness of hair > 12, decide on hair;
 	decide on nothing.
 
-To decide which figure-name is the clothing-image of (C - a pair of earrings):
+condom-earrings is a pair of earrings. condom-earrings is latex. The printed name of condom-earrings is "[TQlink of item described][item style]pair of used condom earrings[clothing-title-after]". condom-earrings has an object called cum1. condom-earrings has an object called cum2.
+Understand "used condom" as condom-earrings.
+Definition: condom-earrings is eligible:
+	if podium is in the location of the player, decide no; [only the modification machine does this]
+	if it is off-stage and condom fetish >= 2 and total used condoms > 1, decide yes;
+	decide no.
+To decide which number is the initial outrage of (C - condom-earrings):
+	decide on 12.
+Figure of earrings condoms is the file "Items/Accessories/Piercings/Earrings4.png".
+To decide which figure-name is the clothing-image of (C - condom-earrings):
+	decide on figure of earrings condoms.
+To say ClothingDesc of (C - condom-earrings):
+	say "A real genuine used condom is attached to each of your earlobes. The condoms appear to be somehow magically fastened, which means they are permanent. The [semen] permanently dangling from your left ear came from [if cum1 of C is a thing and cum1 of C is not the throne][NameDesc of cum1 of C][otherwise]an unknown source[end if]. The [semen] permanently oozing around your right ear came from [if cum2 of C is a thing and cum2 of C is not the throne][NameDesc of cum2 of C][otherwise]an unknown source[end if].";
+
+To say ShortDesc of (C - condom-earrings):
+	say "used condom earrings".
+To say MediumDesc of (C - condom-earrings):
+	say "pair of used condom earrings".
+
+To say PiercingFlav of (P - condom-earrings):
+	let C1 be nothing;
+	let C2 be nothing;
+	repeat with CC running through worn clothing:
+		if C1 is nothing and the used condoms of CC > 0:
+			now C1 is CC;
+			let M be the condomPop of CC;
+			now the cum1 of P is M;
+			increase the empty condoms of CC by 1;
+		if C2 is nothing and the used condoms of CC > 0:
+			now C2 is CC;
+			let M be the condomPop of CC;
+			now the cum2 of P is M;
+			increase the empty condoms of CC by 1;
+	say "Two robotic arms come down! [if C1 is C2]Each takes a used condom from [NameDesc of C1][otherwise]One takes a used condom from [NameDesc of C1], and the other takes another used condom from [NameDesc of C2][end if]. One used condom is pressed against your left earlobe, and the other against your right earlobe, where they magically fuse into place! Two nasty loads of [semen] are now permanently dangling and wobbling by the sides of your face!";
+	GrossOut 8.
+
+
+transforming-earrings is a pair of earrings. The printed name of transforming-earrings is "[TQlink of item described][item style]pair of [if item described is cursed]ultra slutty[otherwise if item described is blessed]heart shaped[otherwise]penis shaped[end if] earrings[clothing-title-after]".
+Understand "penis shaped" as transforming-earrings when item described is bland. Understand "heart", "shaped" as transforming-earrings when item described is blessed. Understand "ultra", "slutty" as transforming-earrings when item described is cursed. transforming-earrings has a number called variation. transforming-earrings is womanly.
+The transform-resistance of transforming-earrings is 0.
+
+Definition: transforming-earrings is toilet themed:
+	if it is cursed and watersports fetish is 1, decide yes;
+	decide no.
+This is the earrings piss slut rule:
+	if there is a worn toilet themed pair of earrings, increase the desirability of belly by 8.
+The earrings piss slut rule is listed in the piss slut eligibility rules.
+Definition: transforming-earrings is interracial themed:
+	if it is cursed and watersports fetish is 0, decide yes;
+	decide no.
+To decide which number is the bbc-addiction-influence of (C - transforming-earrings):
+	if C is interracial themed, decide on 1;
+	decide on 0.
+Definition: transforming-earrings is oral sex themed:
+	if it is cursed and watersports fetish is 0 and interracial fetish is 0 and the variation of it < 3, decide yes;
+	decide no.
+To decide which number is the oral-sex-addiction-influence of (C - transforming-earrings):
+	if C is oral sex themed, decide on 1;
+	decide on 0.
+Definition: transforming-earrings is anal sex themed:
+	if it is cursed and watersports fetish is 0 and interracial fetish is 0 and the variation of it is not 2, decide yes;
+	decide no.
+To decide which number is the anal-sex-addiction-influence of (C - transforming-earrings):
+	if C is anal sex themed, decide on 1;
+	decide on 0.
+Definition: transforming-earrings is penis themed:
+	if it is bland or (it is cursed and watersports fetish is 0 and interracial fetish is 0 and the variation of it is not 1), decide yes;
+	decide no.
+To decide which number is the semen-addiction-influence of (C - transforming-earrings):
+	if C is penis themed, decide on 1;
+	decide on 0.
+Definition: transforming-earrings is vagina themed:
+	if it is cursed and watersports fetish is 0 and interracial fetish is 0 and the variation of it is 1, decide yes;
+	decide no.
+To decide which number is the vaginal-sex-addiction-influence of (C - transforming-earrings):
+	if C is vagina themed, decide on 1;
+	decide on 0.
+Definition: transforming-earrings is white themed:
+	if it is cursed, decide yes;
+	decide no.
+Definition: transforming-earrings is heart themed:
+	if it is blessed, decide yes;
+	decide no.
+Definition: transforming-earrings is gem themed:
+	if it is blessed, decide yes;
+	decide no.
+
+To uniquely set up (C - transforming-earrings):
+	now the variation of C is a random number between 1 and 3.
+
+To say CurseCurseFlav of (C - transforming-earrings):
+	say "Your [printed name of C] transform in shape, and are now the ultra slutty circular things again!";
+	update appearance level.
+
+To say CurseBlandFlav of (C - transforming-earrings):
+	say "Your [printed name of C] transform in shape, and are now penis shaped again!";
+	update appearance level.
+
+To say BlessBlessFlav of (C - transforming-earrings):
+	say "Your [printed name of C] transform in shape to large jewelled hearts, and now look much less trashy and more valuable!";
+	update appearance level.
+
+To say BlessBlandFlav of (C - transforming-earrings):
+	say "Your [printed name of C] transform in shape, and are now shaped like [manly-penis]s![line break][variable custom style][if the bimbo of the player < 12 or 7 is too humiliating]Hmm, well I guess that is a little bit better...?[otherwise if the bimbo of the player < 15]Ooh, these are cute![otherwise]Aww, I preferred having the super trashy ones! I guess these are pretty trashy too...[end if][roman type][line break]";
+	update appearance level.
+
+To decide which number is the initial outrage of (C - transforming-earrings):
+	if C is cursed, decide on 10;
+	if C is blessed, decide on 2;
+	decide on 6.
+
+To decide which figure-name is the clothing-image of (C - transforming-earrings):
 	if C is cursed:
 		if watersports fetish is 1:
 			decide on figure of earrings toilet;
@@ -664,7 +704,7 @@ To decide which figure-name is the clothing-image of (C - a pair of earrings):
 	otherwise:
 		decide on figure of Earrings Cock.
 
-To say ClothingDesc of (C - a pair of earrings):
+To say ClothingDesc of (C - transforming-earrings):
 	if C is cursed:
 		if watersports fetish is 1:
 			say "A pair of earrings shaped like toilet rolls, marking you as a human toilet. ";
@@ -685,8 +725,10 @@ To say ClothingDesc of (C - a pair of earrings):
 		say "A pair of plastic flesh coloured earrings shaped as penises, pointing downwards, complete with large balls. They look very cheap and trashy.";
 	say "The earrings have no hook but a closed metal hole, which means they are permanent.".
 
-To say ShortDesc of (C - a pair of earrings):
-	say "pair of [if C is cursed]ultra slutty[otherwise if C is blessed]hooped[otherwise]cock-shaped[end if] earrings".
+To say ShortDesc of (C - transforming-earrings):
+	say "[if C is cursed]ultra slutty[otherwise if C is blessed]hooped[otherwise]cock-shaped[end if] earrings".
+To say MediumDesc of (C - transforming-earrings):
+	say "pair of [ShortDesc of C]".
 
 Figure of earrings bukkake cock is the file "Items/Accessories/Piercings/Earrings2a.png".
 Figure of earrings cock is the file "Items/Accessories/Piercings/Earrings2b.png".
@@ -697,23 +739,25 @@ Figure of earrings gangbang is the file "Items/Accessories/Piercings/Earrings1c.
 Figure of earrings sucking cock is the file "Items/Accessories/Piercings/Earrings1d.png".
 Figure of earrings toilet is the file "Items/Accessories/Piercings/Earrings1e.png".
 
-To decide which number is the bimbo-influence of (C - a pair of earrings):
+To decide which number is the bimbo-influence of (C - transforming-earrings):
 	decide on 1.
-To decide which number is the anal-sex-addiction-influence of (C - a pair of earrings):
+To decide which number is the anal-sex-addiction-influence of (C - transforming-earrings):
 	if C is cursed and the variation of C is not 2 and watersports fetish is 0, decide on 1;
 	decide on 0.
-To decide which number is the urine-taste-addiction-influence of (C - a pair of earrings):
+To decide which number is the urine-taste-addiction-influence of (C - transforming-earrings):
 	if C is cursed and watersports fetish is 1, decide on 1;
 	decide on 0.
-To decide which number is the oral-sex-addiction-influence of (C - a pair of earrings):
+To decide which number is the oral-sex-addiction-influence of (C - transforming-earrings):
 	if C is cursed and the variation of C is 2 and watersports fetish is 0, decide on 1;
 	decide on 0.
-To decide which number is the intelligence-influence of (C - a pair of earrings):
+To decide which number is the intelligence-influence of (C - transforming-earrings):
 	if C is blessed, decide on 1;
 	decide on 0.
 
-To say PiercingFlav of (P - a pair of earrings):
-	say "An arm comes down with a searing hot needle! You scream [if the player is gagged]through your gag [end if]as your earlobes are painfully pierced. The needle is quickly removed and two obscene earrings are pushed into place. The hook of the earrings are then somehow welded shut, meaning that the earrings are permanent![line break][variable custom style][if the humiliation of the player < 20000]Oh you have GOT to be kidding me! These look absolutely ridiculous! Surely I can't be stuck with them forever?![otherwise if the humiliation of the player < 30000]These look stupid, but then I guess it's a fair reflection of how undignified I've become.[otherwise]There's definitely no excuse for having such ridiculous earrings. Everyone will know I'm a shameless exhibitionist! Tee-hee.[end if][roman type][line break]".
+To say PiercingFlav of (P - transforming-earrings):
+	say "An arm comes down with a searing hot needle! You scream [if the player is gagged]through your gag [end if]as your earlobes are painfully pierced.";
+	PainUp 20;
+	say "The needle is quickly removed and two obscene earrings are pushed into place. The hook of the earrings are then somehow welded shut, meaning that the earrings are permanent![line break][variable custom style][if the humiliation of the player < 20000]Oh you have GOT to be kidding me! These look absolutely ridiculous! Surely I can't be stuck with them forever?![otherwise if the humiliation of the player < 30000]These look stupid, but then I guess it's a fair reflection of how undignified I've become.[otherwise]There's definitely no excuse for having such ridiculous earrings. Everyone will know I'm a shameless exhibitionist! Tee-hee.[end if][roman type][line break]".
 
 Section - Wearability
 

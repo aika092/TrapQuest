@@ -1,6 +1,6 @@
 Rubber Dress by Dresses begins here.
 
-A rubber dress is a kind of overdress. A rubber dress is usually latex. A rubber dress is usually erect-nipple-exposing. [Latex dresses that aren't otherwise particularly special]
+A rubber dress is a kind of overdress. The skirt-length of a rubber dress is usually 5. A rubber dress is usually latex. A rubber dress is usually erect-nipple-exposing. [Latex dresses that aren't otherwise particularly special]
 
 This is the remove inappropriate rubber dresses rule:
 	repeat with B running through rubber dress:
@@ -57,7 +57,7 @@ Definition: ornate-dress is potentially erection concealing: decide yes. [non-ti
 
 Part 3 - Superheroine Fetish Dress
 
-superheroine fetish dress is a rubber dress. superheroine fetish dress is rare. superheroine fetish dress is very low cut. The text-shortcut of superheroine fetish dress is "ggd".
+superheroine fetish dress is a rubber dress. superheroine fetish dress is rare. superheroine fetish dress is very low cut. superheroine fetish dress is optional-top-displacable. The text-shortcut of superheroine fetish dress is "ggd".
 
 The printed name of superheroine fetish dress is "[clothing-title-before]green and gold latex dress[clothing-title-after]". Understand "green", "and gold", "gold" as superheroine fetish dress.
 

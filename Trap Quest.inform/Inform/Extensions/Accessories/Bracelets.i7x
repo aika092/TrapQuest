@@ -11,6 +11,19 @@ Figure of pink diamond bracelet is the file "Items/Accessories/Arm/bracelet4.png
 Figure of pure diamond bracelet is the file "Items/Accessories/Arm/bracelet5.png".
 Figure of solid gold bracelet is the file "Items/Accessories/Arm/bracelet6.png".
 
+To decide which text is the clarificationText of (F - Figure of sapphire bracelet):
+	decide on the substituted form of "[JewelleryClarification]".
+To decide which text is the clarificationText of (F - Figure of emerald bracelet):
+	decide on the substituted form of "[JewelleryClarification]".
+To decide which text is the clarificationText of (F - Figure of ruby bracelet):
+	decide on the substituted form of "[JewelleryClarification]".
+To decide which text is the clarificationText of (F - Figure of pink diamond bracelet):
+	decide on the substituted form of "[JewelleryClarification]".
+To decide which text is the clarificationText of (F - Figure of pure diamond bracelet):
+	decide on the substituted form of "[JewelleryClarification]".
+To decide which text is the clarificationText of (F - Figure of solid gold bracelet):
+	decide on the substituted form of "[JewelleryClarification]".
+
 To decide which figure-name is the examine-image of (R - a bracelet):
 	if R is sapphire, decide on figure of sapphire bracelet;
 	if R is emerald, decide on figure of emerald bracelet;

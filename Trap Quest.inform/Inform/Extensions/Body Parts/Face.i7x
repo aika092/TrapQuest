@@ -227,6 +227,7 @@ To FaceUp (X - a number):
 		decrease X by 1;
 		if the make-up of face < 3, increase the make-up of face by 1;
 	if the make-up of face > the previous make-up of face, progress quest of make-up-quest;
+	if the make-up of face >= 3, trigger make-up-wisp-quest;
 	update appearance level.
 
 To FaceDown (X - a number):
@@ -517,7 +518,7 @@ An all later time based rule (this is the do we puke rule):
 			let G be the girth of T;
 			check puking G;
 			if T is monster, decrease the throating of T by 1;
-		check oral virginity loss with T.
+		unless T is getting-licked monster or T is getting-asslicked monster, check oral virginity loss with T. [licking doesn't lose oral virginity]
 
 To check oral virginity loss with (T - a thing):
 	if the oralvirgin of the player is 1 and T is a live virginity taking thing:

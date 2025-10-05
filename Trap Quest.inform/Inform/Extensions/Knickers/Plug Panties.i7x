@@ -25,6 +25,13 @@ To say Plug Size (N - a number) Desc:
 To say selfexamineuniquetitle of (K - a plug panties):
 	say "pair of plug panties".
 
+Definition: a plug panties (called C) is application appropriate:
+	if early-bondage-check is true:
+		if C is vagina plugging and vagina is an actual target, decide no;
+		if C is ass plugging and asshole is an actual target, decide no;
+	if C is fetish appropriate and C is actually autowearable, decide yes;
+	decide no.
+
 Chapter 1 Vibrating Plug Panties
 
 vibrating plug panties is a kind of plug panties.

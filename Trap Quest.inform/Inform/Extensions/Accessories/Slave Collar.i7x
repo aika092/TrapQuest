@@ -30,6 +30,7 @@ To decide which number is the bartering value of (T - slave collar) for (M - a d
 Definition: slave collar is transformation-protected: decide no.
 Definition: slave collar is gem themed: decide yes.
 Definition: slave collar is pink themed: decide yes.
+Definition: slave collar is application appropriate: decide no.
 
 To compute periodic effect of (C - slave collar):
 	compute slave collar wisp of C.
@@ -76,5 +77,6 @@ To say ShortDesc of (C - pet collar):
 Definition: pet collar is dog themed: decide yes.
 Definition: pet collar is black themed: decide yes.
 Definition: pet collar is subduing: decide yes.
+Definition: pet collar is application appropriate: decide no.
 
 Slave Collar ends here.

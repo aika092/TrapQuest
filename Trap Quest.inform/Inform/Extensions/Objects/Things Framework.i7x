@@ -52,11 +52,15 @@ To say ownership-desc of (T - a thing):
 
 To decide what number is the original price of (C - a thing):
 	decide on 0.
+To decide what number is the pre-discount-price of (C - a thing):
+	let X be the original price of C;
+	if X < 1, now X is 1;
+	decide on X.
 To decide what number is the unique price of (C - a thing):
 	decide on 0.
 
 To decide what number is the price of (C - a thing):
-	let X be the original price of C;
+	let X be the pre-discount-price of C;
 	if the discounts of shopkeeper > 0, decrease X by 5;
 	if the blue-balls of shopkeeper < 0, decrease X by 1;
 	if X < 1, now X is 1;
@@ -87,6 +91,28 @@ To decide what number is the original price of (C - a clothing):
 	if C is rare, increase X by 1;
 	decide on X.
 
+To decide what number is the pre-discount-price of (C - a clothing):
+	let X be the original price of C;
+	if C is accessory:
+		if C is not plentiful and C is not humility-stone, decide on X;
+		if C is ring, now X is 1;
+		if C is bracelet, now X is 2;
+		if C is necklace, now X is 4;
+		if C is humility-stone:
+			now X is 0;
+			if the player is an april 2025 top donator, now X is 10;
+		if C is sapphire, now X is X * 1;
+		if C is emerald, now X is X * 2;
+		if C is ruby, now X is X * 3;
+		if C is pink diamond, now X is X * 4;
+		if C is pure diamond, now X is X * 5;
+		if C is solid gold, now X is X * 6;
+	otherwise:
+		increase X by the magic-modifier of C;
+		if C is not blandness, increase X by 2;
+		if X < 1, now X is 1;
+	decide on X.
+
 To decide what number is the price of (C - a clothing):
 	let X be the original price of C;
 	if C is accessory:
@@ -110,6 +136,9 @@ To decide what number is the price of (C - a clothing):
 		if the blue-balls of shopkeeper < 0, decrease X by 1;
 		if X < 1, now X is 1;
 	decide on X.
+
+Report examining a thing:
+	if the owner of the noun is shopkeeper and the pre-discount-price of the noun > the price of the noun and the noun is in Dungeon41, say "[bold type][BigNameDesc of shopkeeper] [bold type]is currently giving you a [if the pre-discount-price of the noun > the price of the noun + 1]significant[otherwise]small[end if] discount on this item, on account of [if the discounts of shopkeeper > 1][him of shopkeeper] owing you [the discounts of shopkeeper] discounted purchases[otherwise if the discounts of shopkeeper is 1][him of shopkeeper] owing you one discounted purchase[end if][if the discounts of shopkeeper > 0 and the blue-balls of shopkeeper < 0] and [end if][if the blue-balls of shopkeeper < 0]you recently sexually satisfying [him of shopkeeper][end if].".
 
 A thing has a number called tradability.
 

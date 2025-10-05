@@ -41,9 +41,9 @@ To compute unique recycling of (C - wasp-antennae):
 	now wasp-summoned is 0.
 
 To compute class outfit of (H - wasp-antennae):
-	let B be a random off-stage striped top;
-	let S be a random off-stage black-and-yellow striped stockings;
-	if B is actually summonable or (B is striped top and wasp-summoned is 0):
+	class summon a random off-stage striped top;
+	class summon a random off-stage black-and-yellow striped stockings.
+	[if B is actually summonable or (B is striped top and wasp-summoned is 0):
 		PinkWardrobeUnclash B;
 		say "[bold type][if total-wasps < 50]A fuzzy black and yellow top suddenly appears on your chest![otherwise]You look down in shock as the skin around your breasts begins to turn black and shiny! Fine black and yellow fuzz grows out of them now![end if][roman type][line break]";
 		summon B;
@@ -52,7 +52,7 @@ To compute class outfit of (H - wasp-antennae):
 	otherwise if S is actually summonable:
 		say "[bold type][if total-wasps < 50]A pair of fuzzy black and yellow stockings suddenly appears on your legs![otherwise]You look down in shock as your legs turn black and shiny! Fine black and yellow fuzz grows out of them now![end if][roman type][line break]";
 		summon S;
-		now the raw-magic-modifier of S is total-wasps / 50.
+		now the raw-magic-modifier of S is total-wasps / 50.]
 
 Chapter - Quest
 

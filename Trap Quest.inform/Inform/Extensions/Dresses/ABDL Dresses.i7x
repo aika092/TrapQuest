@@ -400,4 +400,136 @@ To decide which object is the unique-upgrade-target of (C - bear-dress):
 		now C is worn by the player;
 	decide on nothing.
 
+Volume - Berri Dresses
+
+A berri-dress is a kind of overdress. A berri-dress is unique. A berri-dress is fully covering.
+
+To decide which number is the berri-rank of (C - an object):
+	if C is a berri-dress, decide on 1;
+	decide on 0.
+
+To decide which number is the berri-rank of yourself:
+	let C be a random worn overdress;
+	decide on the berri-rank of C.
+
+To uniquely set up (C - a berri-dress):
+	now the transform-resistance of C is 2.
+
+To compute post transformation effect of (C - a berri-dress):
+	compute periodic effect of C.
+
+To compute school periodic effect of (C - a berri-dress):
+	compute periodic effect of C.
+
+To compute periodic effect of (C - a berri-dress):
+	if C is not stripy-blue-dress:
+		if gold-hairclip is worn and C is crotch-in-place and the number of worn diaper is 0 and the player is not immobile:
+			let D be a random worn eligible diaper;
+			if D is diaper:
+				summon D uncursed;
+				say "[BigNameDesc of gold-hairclip] [bold type]won't allow the supporting character known as 'Berri' to be wandering around without a diaper! [roman type]It summons a [MediumDesc of D] underneath [NameDesc of C].";
+		if magic pistol is held:
+			say "[BigNameDesc of magic pistol] dissolves into dust. It looks like [']Berri['] is having combat advantages taken away, in preparation for her dramatic downfall...";
+			only destroy magic pistol.
+
+Check taking off a diaper:
+	if gold-hairclip is worn and the noun is unmessed and the total-soak of the noun <= (the soak-limit of the noun * 2) / 3:
+		say "[BigNameDesc of gold-hairclip] takes control of your arms, and stops you! It seems like it doesn't want you removing your own diapers until they are much closer to fully used. Waste not, want not!" instead.
+
+Report going:
+	if gold-hairclip is worn and (the noun is up or the noun is down) and playerRegion is not school and the number of worn berri-dress is 0:
+		say "[BigNameDesc of gold-hairclip] [bold type]seems to be getting you ready for your next cutscene! [roman type]";
+		compute class outfit of gold-hairclip.
+
+Part - Stripy Blue Dress
+
+stripy-blue-dress is a berri-dress.
+
+The printed name of stripy-blue-dress is "[clothing-title-before]stripy blue dress[clothing-title-after]". Understand "stripy", "blue", "dress" as stripy-blue-dress. The text-shortcut of stripy-blue-dress is "sbd".
+
+[Figure of stripy blue dress is the file "Items/Clothes/Upper/Dresses/Berri/berri1.png".
+
+To decide which figure-name is clothing-image of (C - stripy-blue-dress):
+	decide on figure of stripy blue dress.]
+
+To say ClothingDesc of (C - stripy-blue-dress):
+	say "A striply blue and white dress with a lovely blue ribbon around the waist.".
+
+To say ShortDesc of (C - stripy-blue-dress):
+	say "stripy dress".
+To say MediumDesc of (C - stripy-blue-dress):
+	say "stripy blue dress".
+
+Definition: stripy-blue-dress is blue themed: decide yes.
+
+To decide which number is the initial outrage of (C - stripy-blue-dress):
+	decide on 1.
+To decide which number is the initial cringe of (C - stripy-blue-dress):
+	decide on 1.
+
+To decide which object is the unique-upgrade-target of (C - stripy-blue-dress):
+	decide on blue-dungarees.
+
+
+Part - Blue Dungarees
+
+blue-dungarees is a berri-dress. blue-dungarees is denim. The skirt-length of blue-dungarees is 0. blue-dungarees is crotch-intact. blue-dungarees is not-top-displacable. blue-dungarees is leg covering.
+
+The printed name of blue-dungarees is "[clothing-title-before]blue dungarees[clothing-title-after]". Understand "blue", "dungarees" as blue-dungarees. The text-shortcut of blue-dungarees is "bdg".
+
+[Figure of blue dungarees is the file "Items/Clothes/Upper/Dresses/Berri/berri2.png".
+
+To decide which figure-name is clothing-image of (C - blue-dungarees):
+	decide on figure of blue dungarees.]
+
+To say ClothingDesc of (C - blue-dungarees):
+	say "A tight set of blue dungarees with a pink heart at the chest. Underneath, a pink crop top is actually attached with subtle threading, rending the outfit one complete item... One which there doesn't seem to be any easy way to take off!".
+
+To say ShortDesc of (C - blue-dungarees):
+	say "dungarees".
+To say MediumDesc of (C - blue-dungarees):
+	say "blue dungarees".
+
+Definition: blue-dungarees is blue themed: decide yes.
+Definition: blue-dungarees is pink themed: decide yes.
+Definition: blue-dungarees is removable: decide no.
+
+To decide which number is the initial outrage of (C - blue-dungarees):
+	decide on 1.
+To decide which number is the initial cringe of (C - blue-dungarees):
+	decide on 5.
+
+To decide which object is the unique-upgrade-target of (C - blue-dungarees):
+	decide on pink-latex-bodysuit.
+
+
+Part - Pink Latex Suit
+
+pink-latex-bodysuit is a berri-dress. pink-latex-bodysuit is latex. The skirt-length of pink-latex-bodysuit is 0. pink-latex-bodysuit is crotch-intact. pink-latex-bodysuit is not-top-displacable. pink-latex-bodysuit is leg covering. pink-latex-bodysuit is finger covering.
+
+The printed name of pink-latex-bodysuit is "[clothing-title-before]pink latex bodysuit[clothing-title-after]". Understand "pink", "bodysuit" as pink-latex-bodysuit. The text-shortcut of pink-latex-bodysuit is "plb".
+
+Figure of pink latex bodysuit is the file "Items/Clothes/Upper/Dresses/Berri/berri3.png".
+
+To decide which figure-name is clothing-image of (C - pink-latex-bodysuit):
+	decide on figure of pink latex bodysuit.
+
+To say ClothingDesc of (C - pink-latex-bodysuit):
+	say "A tight pink latex full body outfit. The front has several poppers that can be opened up to allow for genital access and diaper changes... But the outfit is so tight around your arms and legs that you find it's still totally impossible to take off!".
+
+To say ShortDesc of (C - pink-latex-bodysuit):
+	say "bodysuit".
+To say MediumDesc of (C - pink-latex-bodysuit):
+	say "pink latex bodysuit".
+
+Definition: pink-latex-bodysuit is pink themed: decide yes.
+Definition: pink-latex-bodysuit is removable: decide no.
+Definition: pink-latex-bodysuit is usually ankle covering: decide yes.
+
+To decide which number is the initial outrage of (C - pink-latex-bodysuit):
+	decide on 8.
+To decide which number is the initial cringe of (C - pink-latex-bodysuit):
+	decide on 10.
+
+
 ABDL Dresses ends here.

@@ -10,6 +10,10 @@ Definition: agent is willing to do vaginal: decide yes.
 Definition: agent is willing to do anal: decide yes.
 
 Definition: an agent is a generic-unlocker: decide yes.
+Definition: an agent is a bondage applier: decide yes. [Do they sometimes apply bondage before and/or after punishing you?]
+Definition: an agent is eager to warn angrily:
+	if it is classicly eager to warn angrily, decide yes; [Warns and punishes resistance during non-oral sex]
+	decide no.
 
 Definition: agent is dark skinned: decide yes.
 Definition: agent is condom prepared: decide yes. [Does she have condoms on her?]
@@ -85,7 +89,7 @@ To compute labour to (M - agent):
 	if M is regional and M is alive:
 		compute pregnancy clothing displacement;
 		let MD be a random maternity dress;
-		say "[PregFlav][if the father is in the location of the player]The [father][otherwise]The [father] appears almost as if on cue! [big he of M][end if] kneels down on one knee and [if mythical creatures fetish is 1]you both watch as a disgusting pig's head begins to emerge from your vagina. This baby is just as much an agent as its father! You groan in despair as the half-pig baby slowly emerges from your womb[otherwise]delivers the beautiful mixed race human baby[end if]. [big he of M] takes it into [his of M] arms and begins to cradle it.[line break][first custom style]'A baby boy! [if the father is mating]A wonderful addition to our growing horde[otherwise]My first child. I will train him in the ways of agent culture, and when he comes of age, perhaps he will be a great enough warrior to lead an assault on a human settlement and kidnap all their women. We can dream[end if][if MD is not held]. Here, take this[end if].'[roman type][line break]";
+		say "[PregFlav][if the father is in the location of the player]The [father][otherwise]The [father] appears almost as if on cue! [big he of M][end if] kneels down on one knee and [if mythical creature fetish is 1]you both watch as a disgusting pig's head begins to emerge from your vagina. This baby is just as much an agent as its father! You groan in despair as the half-pig baby slowly emerges from your womb[otherwise]delivers the beautiful mixed race human baby[end if]. [big he of M] takes it into [his of M] arms and begins to cradle it.[line break][first custom style]'A baby boy! [if the father is mating]A wonderful addition to our growing horde[otherwise]My first child. I will train him in the ways of agent culture, and when he comes of age, perhaps he will be a great enough warrior to lead an assault on a human settlement and kidnap all their women. We can dream[end if][if MD is not held]. Here, take this[end if].'[roman type][line break]";
 		if MD is not held:
 			blandify and reveal MD;
 			now MD is in the location of the player;

@@ -180,7 +180,7 @@ Carry out taking off a dark magician girl dress:
 	say "[BigNameDesc of the noun], seemingly offended by your decision, drains away all of your magic power as it leaves!";
 	increase the magic-fatigue of the player by the magic power of the player.
 
-dark-magician-girl-costume is a dark magician girl dress. dark-magician-girl-costume is high cut. The printed name of dark-magician-girl-costume is "[clothing-title-before]dark magician girl costume[clothing-title-after]". Understand "costume" as dark-magician-girl-costume.
+dark-magician-girl-costume is a dark magician girl dress. dark-magician-girl-costume is high cut. The printed name of dark-magician-girl-costume is "[clothing-title-before]dark magician girl costume[clothing-title-after]". Understand "costume" as dark-magician-girl-costume. The text-shortcut of dark-magician-girl-costume is "dmgc".
 
 Figure of dark-magician-girl-costume is the file "Items/Clothes/Upper/Special/MahouShoujo/magicaldress4.png".
 
@@ -198,7 +198,7 @@ To say MediumDesc of (C - dark-magician-girl-costume):
 To say ClothingDesc of (C - dark-magician-girl-costume):
 	say "This blue and pink and gold onepiece outfit is reminiscent of a popular card game character. [DarkMagicianGirlDesc]".
 
-dark-magician-girl-cameltoe-costume is a dark magician girl dress. dark-magician-girl-cameltoe-costume is very low cut. The printed name of dark-magician-girl-cameltoe-costume is "[clothing-title-before]dark magician girl cameltoe costume[clothing-title-after]". Understand "cameltoe", "costume" as dark-magician-girl-cameltoe-costume.
+dark-magician-girl-cameltoe-costume is a dark magician girl dress. dark-magician-girl-cameltoe-costume is very low cut. The printed name of dark-magician-girl-cameltoe-costume is "[clothing-title-before]dark magician girl cameltoe costume[clothing-title-after]". Understand "cameltoe", "costume" as dark-magician-girl-cameltoe-costume. The text-shortcut of dark-magician-girl-cameltoe-costume is "dmcc".
 
 Figure of dark-magician-girl-cameltoe-costume is the file "Items/Clothes/Upper/Special/MahouShoujo/magicaldress5.png".
 
@@ -219,7 +219,7 @@ To say MediumDesc of (C - dark-magician-girl-cameltoe-costume):
 To say ClothingDesc of (C - dark-magician-girl-cameltoe-costume):
 	say "This blue and pink onepiece outfit is reminiscent of a popular card game character. It exposes [if C is worn]your[otherwise]the wearer's[end if] belly button, cleavage, top of the areolae, and is extremely tight at the V-shaped crotch. It's closer to a slutty swimsuit than a costume. [DarkMagicianGirlDesc]".
 
-dark-magician-girl-swimsuit is a dark magician girl dress. dark-magician-girl-swimsuit is very low cut. The printed name of dark-magician-girl-swimsuit is "[clothing-title-before]dark magician girl swimsuit[clothing-title-after]". Understand "swimsuit" as dark-magician-girl-swimsuit.
+dark-magician-girl-swimsuit is a dark magician girl dress. dark-magician-girl-swimsuit is very low cut. The printed name of dark-magician-girl-swimsuit is "[clothing-title-before]dark magician girl swimsuit[clothing-title-after]". Understand "swimsuit" as dark-magician-girl-swimsuit. The text-shortcut of dark-magician-girl-swimsuit is "dmgs".
 
 Figure of dark-magician-girl-swimsuit is the file "Items/Clothes/Upper/Special/MahouShoujo/magicaldress6.png".
 

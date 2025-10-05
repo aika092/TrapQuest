@@ -55,7 +55,7 @@ A graphlink processing rule for a g-element (called the link) (this is the Aika 
 			now the glk event type is char-event;
 			now the glk event value 1 is 4;
 			let STI be the StrToInt of the candidate replacement command;
-			if fetishMenuInProgress is true:
+			if fetishMenuInProgress > 0:
 				now the glk event value 1 is -6;
 				now waitingForChar is false;
 			otherwise if STI >= 0:

@@ -25,6 +25,8 @@ To decide which figure-name is the clothing-image of (C - floral bridal veil):
 To say ClothingDesc of (H - floral bridal veil):
 	say "This floral headband connects to a sheer silky veil[if H is worn and the ceremony of betrothal-quest is false]. It is partially concealing your face[otherwise if H is worn]. It has been pulled back, revealing your face[end if].".
 
+Definition: floral bridal veil is flower themed: decide yes.
+
 
 Chapter - Class Outfit
 

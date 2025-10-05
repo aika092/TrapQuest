@@ -332,7 +332,7 @@ To compute CagedMinotaurMolesting of (M - minotaur):
 			now the blue-balls of M is -5;
 			now the swing-intensity of M is 0;
 			dislodge M;
-	otherwise:[TODO: migrate to seduction grope, probably.]
+	otherwise:
 		increase the blue-balls of M by 2;
 		compute seduction grope of M.
 

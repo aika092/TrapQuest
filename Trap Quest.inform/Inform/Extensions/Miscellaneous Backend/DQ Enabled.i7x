@@ -144,6 +144,7 @@ To LakeMonsterCheck (S - a number):
 slimegirl is a person. slimegirl has a number called hunger. slimegirl has a number called intensity. slimegirl has a number called timetaken.
 To SlimegirlCheck:
 	do nothing.
+the-goddess is a person.
 A monster can be player-brood.
 
 Include Satchels of Holding by Bags of Holding.

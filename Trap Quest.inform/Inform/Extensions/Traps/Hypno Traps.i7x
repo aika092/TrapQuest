@@ -101,7 +101,7 @@ To compute hypno effect of (Y - a hypno trap):
 			now auto is 0;
 		arouse 750;
 	otherwise:
-		if woman-player is in the location of the player and (the woman-status of woman-player is not 91 or the mechanic-scene of woman-player > 3) and woman-player is friendly and woman-player is awake:
+		if woman-player is in the location of the player and (diaper quest is 1 or the woman-status of woman-player is not 80) and (the woman-status of woman-player is not 91 or the mechanic-scene of woman-player > 3) and woman-player is friendly and woman-player is awake:
 			say "Do you block [NameDesc of woman-player][']s vision of the screen? ";
 			if the player is reverse bimbo consenting:
 				if the woman-bimbo of woman-player > 5:

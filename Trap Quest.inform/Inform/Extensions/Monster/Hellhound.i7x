@@ -35,7 +35,7 @@ To say MediumDesc of (M - hellhound):
 
 To say MonsterDesc of (M - hellhound):
 	if mythical creature fetish is 1:
-		say "This huge black canine is as tall as you even when [he of M]'s on all fours. [big his of M] spiked tail, sharp fangs and elongated claws are dead give-aways that [he of M] is from another plane. [if pet collar is off-stage][big he of M] holds a collar and leash in [his of M] mouth, as if [he of M]'s looking for someone to take [him of M] on a walk, or more likely, a pet of [his of M] own to lead around! [end if][big he of M] stares at you with glowing red eyes, letting you know that a keen intelligence lies hidden behind the bestial mask.";
+		say "This black, hulking creature is hunched over on all fours, yet still 'stands' just as tall as you. [big his of M] spiked tail, sharp fangs and bestial, clawed hands are dead give-aways that [he of M] is from another plane. [if pet collar is off-stage][big he of M] holds a collar and leash in [his of M] mouth, as if [he of M]'s looking for someone to take [him of M] on a walk, or more likely, a pet of [his of M] own to lead around! [end if][big he of M] stares at you with glowing red eyes, letting you know that a keen intelligence lies hidden behind the bestial mask.";
 	otherwise:
 		say "This [man of M] has black bondage items keeping [his of M] arms and legs fully bent, forcing [him of M] to crawl along on [his of M] elbows and knees. [big he of M] seems pretty happy though, and you can make out a joyous and playful expression behind [his of M] fetish hood. [if diaper quest is 1]A thick black diaper covers [his of M] rear[otherwise]Naked just like a real animal, [he of M][']s completely naked and [his of M] average sized [DickDesc of M] are completely visible. A black cock ring is situated near the base of [his of M] shaft.[end if].".
 
@@ -157,11 +157,11 @@ To decide which text is himself of (M - hellhound):
 	decide on "[if mythical creature fetish is 1]itself[otherwise if lady fetish is 1]herself[otherwise]himself[end if]".
 
 To say LongDickDesc of (M - hellhound):
-	if mythical creatures fetish is 1, say "[one of]slippery[or]slick[or]oily[in random order] canine [DickDesc of M]";
+	if mythical creature fetish is 1, say "[one of]slippery[or]slick[or]oily[in random order] canine [DickDesc of M]";
 	otherwise say "hard [DickDesc of M]".
 
 To say cockhead of (M - hellhound):
-	if mythical creatures fetish is 1, say "[one of]tapered[or]narrow[or]slender[in random order][if full-lady fetish is 1], plastic[otherwise] [one of]cockhead[or]tip[or]bellend[or]dicktip[in random order]";
+	if mythical creature fetish is 1, say "[one of]tapered[or]narrow[or]slender[in random order][if full-lady fetish is 1], plastic[otherwise] [one of]cockhead[or]tip[or]bellend[or]dicktip[in random order]";
 	otherwise say "[if full-lady fetish is 1]plastic [otherwise][one of]cockhead[or]tip[or]bellend[or]dicktip[in random order]".
 
 To say SummoningFlav of (M - hellhound):

@@ -337,16 +337,15 @@ To initialise bondage prisoner:
 		now A is a random off-stage pair of handcuffs;
 		now A is wrist-bound-in-front;
 	let C be a random off-stage actually summonable chastity bond;
-	let G be a random off-stage small ballgag;
 	let S be a random off-stage slave collar;
 	let D be a random off-stage eligible plentiful diaper;
 	if A is actually summonable clothing, summon A locked;
 	unless there is worn vibrating plug panties:
 		summon C cursed with silent quest;
 	if diaper lover >= 1 and D is actually summonable clothing, summon D cursed with silent quest;
-	if G is actually summonable clothing, summon G cursed with silent quest;
+	if small-ballgag is actually summonable clothing, summon small-ballgag cursed with silent quest;
 	if S is actually summonable clothing, summon S cursed with silent quest;
-	say "Suddenly, a collar is wrapped around your neck and a pair of metal cuffs latch around your [if R is 2]wrists[otherwise]ankles[end if]![line break][first custom style]Oh come on, that's not fair![roman type][line break][if there is worn vibrating plug panties]You are about to shout your objections to this dick move by Nintendolls when [otherwise]You are suddenly placed in chastity by a cage appearing at your loins! You don't even have time to consider the implications of this before [end if]your mouth is forced open by the appearance of a [ShortDesc of G]![line break][if D is worn]Just as you think it's over, your eyes widen in shock as a [ShortDesc of D] materialises over your chastity cage![line break][end if][line break][first custom style]'MMMMMMPH!'[roman type][line break]".
+	say "Suddenly, a collar is wrapped around your neck and a pair of metal cuffs latch around your [if R is 2]wrists[otherwise]ankles[end if]![line break][first custom style]Oh come on, that's not fair![roman type][line break][if there is worn vibrating plug panties]You are about to shout your objections to this dick move by Nintendolls when [otherwise]You are suddenly placed in chastity by a cage appearing at your loins! You don't even have time to consider the implications of this before [end if]your mouth is forced open by the appearance of a [ShortDesc of small-ballgag]![line break][if D is worn]Just as you think it's over, your eyes widen in shock as a [ShortDesc of D] materialises over your chastity cage![line break][end if][line break][first custom style]'MMMMMMPH!'[roman type][line break]".
 
 [!<InitialiseBondageProtection>+
 
@@ -473,6 +472,7 @@ To initialise wardrobe:
 	now D is in pink wardrobe;
 	if the player is the donator, now combat visor is in pink wardrobe;
 	if combatvisor is 1, now combat visor is worn by the player;
+	if berri fetish is 1, now gold-hairclip is in pink wardrobe;
 	if christmas content is 1, initialise christmas gifts.
 
 To compute starting headgear:

@@ -220,7 +220,7 @@ This is the bottom layer removal rule:
 				unless O is no protection and wearing-target is not crotch-pullup:
 					if summoning is 0 and autoremove is false, say "You can't remove that without first removing your [printed name of O]!";
 					if autolayerremove is false, rule fails;
-		repeat with C running through worn crotch-in-place crotch covering hobble-skirted clothing: [These will always be on top]
+		repeat with C running through worn crotch-in-place crotch covering crotch-skirted hobble-skirted clothing: [These will always be on top]
 			unless wearing-target is C:
 				if summoning is 0 and autoremove is false, say "You need to pull up your [printed name of C] first.";
 				if autolayerremove is false, rule fails;

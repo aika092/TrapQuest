@@ -22,6 +22,7 @@ To decide which figure-name is Figure of IronMaidenBackground:
 		otherwise decide on Figure of IronMaidenBackgroundA.
 Figure of PrisonBackground is the file "Map/prison1.jpg".
 Figure of demon lord is the file "NPCs/Bosses/Xavier/xavier2.png".
+Figure of lubricant is the file "Items/Collectibles/lube2.png".
 Figure of modification machine is the file "Env/Hotel/modmachine1.png".
 Figure of slavehound is the file "NPCs/Mansion/Hound/hound2.png".
 
@@ -651,6 +652,11 @@ To decide which figure-name is the examine-image of (T - pink smoke):
 Figure of photo display predicament is the file "Special/Cutscene/cutscene-photo-display-predicament1.jpg".
 
 Figure of Pole Cutscene 4 is the file "Special/Cutscene/cutscene-pole4.png".
+
+Figure of segway predicament is the file "Special/Cutscene/cutscene-predicament-segway1.jpg".
+
+To decide which figure-name is the examine-image of (V - segway-predicament):
+	decide on figure of segway predicament.
 
 Figure of swirlie knickers clean is the file "Special/Cutscene/cutscene-swirlie1.jpg".
 Figure of swirlie knickers wet is the file "Special/Cutscene/cutscene-swirlie2.jpg".

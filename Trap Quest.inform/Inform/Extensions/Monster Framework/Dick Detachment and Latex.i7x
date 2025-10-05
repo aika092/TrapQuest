@@ -828,7 +828,7 @@ Check touching a body part:[when the latex-transformation of the player > 4]
 	let feels be "feels"; [Set this to "feel" before using with plurals like breasts]
 	let latex-sensitive-weird be "[if the latex-transformation of the player > 6][feels] at least as sensitive as before. Which makes so little sense, it's a bit worrying.[otherwise if the latex-transformation of the player > 0][feels] normal. Which must be a good thing, right?[otherwise][feels] normal.[end if][line break]";
 	if B is hair:
-		say ", but your [ShortHairDesc] [if the latex-transformation of the player is 0]feels soft and silky, like something from a shampoo commercial[otherwise if latex-transformation of the player < 6]a little coarse[otherwise]coarse and fake, like a cheap wig[end if].";
+		say ", but your [MediumDesc of hair] [if the latex-transformation of the player is 0]feels soft and silky, like something from a shampoo commercial[otherwise if latex-transformation of the player < 6]a little coarse[otherwise]coarse and fake, like a cheap wig[end if].";
 	otherwise if B is penis: [They're feeling their dick - but is it attached or detached? It depends on whether it's to hand.]
 		if debugmode > 1:
 			say "Debug: players-dick-is-detached is [players-dick-is-detached].";

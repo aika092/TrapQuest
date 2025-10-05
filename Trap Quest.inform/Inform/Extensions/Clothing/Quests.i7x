@@ -337,7 +337,7 @@ Definition: piss-drinking-quest is appropriate:
 
 To decide what number is the quest-weighting of (Q - piss-drinking-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
-	if C is a pair of earrings, decide on 999;
+	if C is transforming-earrings, decide on 999;
 	if the urine-taste-addiction-influence of C < 0, decide on 0;
 	if the urine taste addiction of the player < 4, decide on 0;
 	if C is ballgag, decide on 0;
@@ -1532,6 +1532,11 @@ Definition: purchase-wisp-quest is appropriate:
 	if Dungeon41 is guarded, decide yes;
 	decide no.
 
+make-up-wisp-quest is a wisp quest. The printed name of make-up-wisp-quest is "paint your face with overdone make up[if diaper quest is 0] like a whore[end if]".
+Definition: make-up-wisp-quest is appropriate:
+	if the make-up of face < 3, decide yes;
+	decide no.
+
 altar-wisp-quest is a wisp quest. The printed name of altar-wisp-quest is "earn some uses of the Woods altar".
 Definition: altar-wisp-quest is appropriate:
 	if Woods01 is placed and witch is alive, decide yes;
@@ -1855,6 +1860,8 @@ Carry out QuestRecalling:
 	repeat with M running through alive undefeated intelligent monsters:
 		if the current-errand of M is not no-errand and the current-errand of M is not rejected-errand:
 			say "You were given a quest by [NameDesc of M]: [RequestAssign of M]";
+	repeat with E running through event-started academy-events:
+		say AcademyEventDesc of E;
 	repeat with C running through worn clothing:
 		let Q be the quest of C;
 		if Q is not no-clothing-quest and (Q is persistent or C is cursed):
@@ -1900,7 +1907,7 @@ This is the gladiator quest list rule:
 The gladiator quest list rule is listed in the quest listing rules.
 
 This is the witch quest list rule:
-	if the witch-target of witch is a monster and the witch-target-state of witch is -1 and witch is alive:
+	if the witch-target of witch is a monster and the witch-target-state of witch > -1 and witch is alive:
 		say "A witch has asked you to find and banish [NameDesc of witch-target of witch].";
 		increase total-quests-listed by 1.
 The witch quest list rule is listed in the quest listing rules.

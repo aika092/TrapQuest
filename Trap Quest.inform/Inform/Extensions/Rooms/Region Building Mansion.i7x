@@ -33,8 +33,9 @@ To Set Up The Mansion:
 				if R is 2, now Y is a random wooden crate in Holding Pen;
 				if R is 3 or Y is nothing:
 					let S be a random number between 1 and 3;
+					if S is 3, now Y is a random treasure chest in Holding Pen;
 					if S is 1 or the number of ornate trunks in Holding Pen > 2, now Y is a random ornate trunk in Holding Pen;
-					if Y is not ornate trunk, now Y is a random antique trunk in Holding Pen;
+					if Y is not ornate trunk and Y is not treasure chest, now Y is a random antique trunk in Holding Pen;
 			if Y is a thing, now Y is in G;
 	if debugmode > 1:
 		say "Setting up containers complete.";

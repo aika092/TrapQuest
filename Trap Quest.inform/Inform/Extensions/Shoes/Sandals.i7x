@@ -31,7 +31,7 @@ Definition: wooden-sandals is brown themed: decide yes.
 
 queen-of-spades-sandals is a sandals. queen-of-spades-sandals is leather. queen-of-spades-sandals is not manly. Understand "queen", "queen of", "spades" as queen-of-spades-sandals.
 
-The printed name of queen-of-spades-sandals is "[clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch queen of spades sandals[clothing-title-after]". The text-shortcut of queen-of-spades-sandals is "qsh".
+The printed name of queen-of-spades-sandals is "[clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch queen of spades sandals[clothing-title-after]". The text-shortcut of queen-of-spades-sandals is "qsn".
 
 To decide which figure-name is the clothing-image of (H - queen-of-spades-sandals):
 	decide on the figure of queen of spades sandals.

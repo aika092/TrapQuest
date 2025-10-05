@@ -3,7 +3,7 @@ Royal Circlet by Headgear begins here.
 royal circlet is a headgear. royal circlet is metal. Figure of royal circlet is the file "Items/Accessories/Head/circlet1.png". royal circlet is hair growing. royal circlet is delicateness-influencing. royal circlet is enema-helping.
 
 Definition: royal circlet is roleplay:
-	if lactation fetish is 1, decide yes;
+	if lactation fetish is 1 and a2m fetish >= 2, decide yes;
 	decide no.
 
 The printed name of royal circlet is "[clothing-title-before]royal circlet[clothing-title-after]". The text-shortcut of royal circlet is "ryc".

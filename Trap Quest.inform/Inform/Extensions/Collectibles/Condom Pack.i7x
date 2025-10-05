@@ -58,26 +58,37 @@ Report taking condom-pack when the player is in Dungeon07:
 
 Report going when condom-pack is carried:
 	if condom-pack is condom-trapped:
-		say "[bold type]Suddenly your new condom pack soars out of your [if there is a worn bag of holding]bag[otherwise]hand[end if] and into the air! It must have been trapped with a curse! [roman type]Condoms start flying out of it in all directions and magically filling themselves with [semen].";
-		let S be string-belt;
-		if S is worn:
-			say "Three used condoms appear on your [ShortDesc of S]!";
-		otherwise:
-			say "Suddenly, a [printed name of S] appears around your waist, with three used condoms already pinned to it!";
-			summon S cursed with quest;
-		UsedCondomUp S by 3;
-		update appearance level;
-		if thirsty work condom hat is off-stage and thirsty work condom hat is actually summonable:
-			summon thirsty work condom hat cursed;
-			now the raw-magic-modifier of thirsty work condom hat is -1;
-			say "With a final burst of cursed energy from the condom pack, a [ShortDesc of thirsty work condom hat] appears on your head!";
-		otherwise if there is a worn scrunchie and condom pigtails is off-stage:
-			let SC be a random worn scrunchie;
-			transform SC into condom pigtails;
+		say "[bold type]Suddenly your new condom pack soars out of your [if condom-pack is currently-in-bag]bag[otherwise]hand[end if] and into the air! It must have been trapped with a curse! [roman type]";
+		compute condom calamity;
 		say "The condom pack falls back down to you, the curse having run its course, leaving a normal condom pack for you to safely take with you.";
 		say CondomNewbieTip;
 		say CondomPinReactionFlav of yourself on a random worn drinkable condom pinned clothing;
 		now condom-pack is not condom-trapped.
+
+To compute condom calamity:
+	say "Condoms start flying out of it in all directions and magically filling themselves with [semen]!";
+	let S be a random worn cursed condom pinnable clothing;
+	if S is nothing or the player is getting lucky, now S is string-belt;
+	if S is worn:
+		say "Three used condoms appear on your [ShortDesc of S]!";
+	otherwise:
+		say "Suddenly, a [printed name of S] appears around your waist, with three used condoms already pinned to it!";
+		summon S cursed with quest;
+	UsedCondomUp S by 3;
+	update appearance level;
+	if thirsty work condom hat is off-stage and thirsty work condom hat is actually summonable:
+		summon thirsty work condom hat cursed;
+		now the raw-magic-modifier of thirsty work condom hat is -1;
+		say "With a final burst of cursed energy, a [ShortDesc of thirsty work condom hat] appears on your head!";
+	otherwise if there is a worn scrunchie and condom pigtails is off-stage:
+		let SC be a random worn scrunchie;
+		transform SC into condom pigtails;
+	otherwise if condom-earrings is actually summonable and (piercing-fetish is 1 or the player is getting unlucky):
+		now the cum1 of condom-earrings is the throne;
+		now the cum2 of condom-earrings is the throne;
+		say "With a final burst of cursed energy, two condoms shoot into the air, magically filling themselves up with [semen] as they do. You watch in [horror the semen taste addiction of the player] as the two used condoms fly at your head, zipping to your earlobes, where they magically fuse into place! Two nasty loads of [semen] are now permanently dangling and wobbling by the sides of your face!";
+		summon condom-earrings uncursed;
+		GrossOut 8;
 
 Definition: a clothing (called C) is condom pinnable:
 	[if C is totally-exclusive or C is top-exclusive:
@@ -418,17 +429,25 @@ To compute condom eating of (C - a clothing):
 		force inventory-focus redraw. [Forces redraw of inventory window]
 
 To compute spontaneous condom of (C - a clothing):
-	let P be a random worn condom pinnable clothing;
-	let S be nothing;
-	if P is nothing:
-		now S is string-belt;
-		summon S cursed with silent quest;
-		now P is S;
-	say "[if S is clothing]Suddenly, a [printed name of S] appears around your waist! [end if]You watch in [horror the semen taste addiction of the player] as the condom flies onto your [MediumDesc of P] and fuses itself to the [clothing-material of P]. [if the used condoms of P is 0]Your [ShortDesc of P] now has a used condom pinned to it![end if][line break][CondomPinReactionFlav of yourself on P]";
-	UsedCondomUp P by 1;
-	update appearance level;
-	say CondomNewbieTip;
-	force clothing-focus redraw. [Forces redraw of clothing window]
+	if condom-earrings is actually summonable:
+		now the cum1 of condom-earrings is the throne;
+		now the cum2 of condom-earrings is the throne;
+		say "But [bold type]two[roman type] condoms do fall off of the side of the [ShortDesc of C], and shoot into the air, magically filling themselves up with [semen] as they do. You watch in [horror the semen taste addiction of the player] as the two used condoms fly at your head, zipping to your earlobes, where they magically fuse into place! Two nasty loads of [semen] are now permanently dangling and wobbling by the sides of your face!";
+		summon condom-earrings uncursed;
+		GrossOut 8;
+	otherwise:
+		say "But one condom does fall off of the side of the [ShortDesc of C], and shoot into the air, magically filling itself up with [semen] as it does. ";
+		let P be a random worn condom pinnable clothing;
+		let S be nothing;
+		if P is nothing:
+			now S is string-belt;
+			summon S cursed with silent quest;
+			now P is S;
+		say "[if S is clothing]Suddenly, a [printed name of S] appears around your waist! [end if]You watch in [horror the semen taste addiction of the player] as the condom flies onto your [MediumDesc of P] and fuses itself to the [clothing-material of P]. [if the used condoms of P is 0]Your [ShortDesc of P] now has a used condom pinned to it![end if][line break][CondomPinReactionFlav of yourself on P]";
+		UsedCondomUp P by 1;
+		update appearance level;
+		say CondomNewbieTip;
+		force clothing-focus redraw. [Forces redraw of clothing window]
 
 To UsedCondomUp (C - a clothing):
 	UsedCondomUp C by 1.

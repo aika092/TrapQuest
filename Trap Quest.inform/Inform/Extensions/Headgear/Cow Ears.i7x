@@ -120,6 +120,9 @@ To decide which figure-name is the clothing-image of (C - cow-horns):
 	decide on figure of cow horns.
 
 Definition: cow-horns is destructible: decide no.
+Definition: cow-horns (called C) is removable:
+	if the pregnancy of the player is 1 and minotaur is the father, decide no;
+	decide yes.
 
 Definition: cow-horns is fluid immune: decide yes.
 

@@ -227,10 +227,12 @@ To compute autobind set up of (C - a clothing):
 	now C is cursed.
 
 Report taking clothing:
-	if the noun is autobinding and the player is not in a predicament room and the noun is unclash summonable:
-		say "[bold type]Suddenly, [NameDesc of the noun] disappears from your hands![roman type][line break]";
-		autobind the noun.
-
+	if the noun is unidentified autobinding clothing and the player is not in a predicament room and the noun is unclash summonable:
+		if the noun is identified:
+			say "BUG - game tried to autobind clothing that was already identified. Please report this.";
+		otherwise:
+			say "[bold type]Suddenly, [NameDesc of the noun] disappears from your hands![roman type][line break]";
+			autobind the noun.
 
 
 To WardrobeVanish (C - a thing):

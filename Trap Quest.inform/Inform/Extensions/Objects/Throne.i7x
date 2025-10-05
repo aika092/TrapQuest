@@ -79,6 +79,9 @@ Check entering the throne:
 		if debuginfo > 0:
 			if ex-princess is unconcerned, say "+ Princess bonus ([if the number of worn headgear is 0]2[otherwise]1[end if]) ";
 			otherwise say "+ Princess bonus ([if the class of the player is princess]1[otherwise]0[end if]) ";
+		if R is 1 and silver-tiara is not off-stage:
+			increase R by 1;
+			if debuginfo > 0, say "+ tiara recently worn bonus (1) ";
 		if R is 2 and asshole is actually occupied:
 			now R is 3;
 			if debuginfo > 0, say "+ plugged bonus (1) ";

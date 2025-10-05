@@ -408,7 +408,7 @@ To compute unique trigger of (Y - genitals-rune-trap):
 	otherwise if the size of penis > min penis size:
 		PenisDown 1;
 	otherwise if the player is possessing a vagina:
-		if the player is a december 2023 top donator and wired-vibe is off-stage:
+		if wired-vibe is off-stage:
 			summon wired-vibe uncursed;
 			dislodge wired-vibe;
 			now wired-vibe is clit-taped;
@@ -434,7 +434,21 @@ To decide which figure-name is the triggered-image of (T - polymorph-rune-trap):
 	decide on Figure of polymorph rune trap triggered.
 
 To compute unique trigger of (Y - polymorph-rune-trap):
-	if christmas content is 1 and bondage-ribbons is unclash summonable and the player is getting unlucky:
+	if there is a worn berri-dress:
+		let C be a random worn berri-dress;
+		let D be the unique-upgrade-target of C;
+		if D is a thing:
+			say BerriCutsceneFlav;
+			transform C into D;
+			if D is blue-dungarees:
+				mapcutshow Figure of Berri Cutscene 14a for D;
+				say "[second custom style]Diapered under dungarees?! [if the player is proud]This is an outrage, I haven't been dressed like this since I was a toddler![otherwise if the player is modest]I can't believe this, I look so ridiculous![otherwise if the player is not disgraced]I guess it's kind of cute... But still...[otherwise]I guess I really am just a big baby then...[end if][roman type][line break]";
+			otherwise if D is pink-latex-bodysuit:
+				mapcutshow Figure of Berri Cutscene 14b for D;
+				say "[second custom style]What is this, some kind of latex fetish outfit?! With space for a super-thick diaper underneath?! [if the player is proud]I can't take this level of insanity! Get me out!!![otherwise if the player is modest]I've never worn anything so ridiculous in my life!!![otherwise if the player is not disgraced]Maybe the diaper is a good idea, because I can't find any way to take this off...[otherwise]So I really am a nasty diaper fetish slut...[end if][roman type][line break]";
+		otherwise:
+			say "Nothing seems to happen. Odd...";
+	otherwise if christmas content is 1 and bondage-ribbons is unclash summonable and the player is getting unlucky:
 		unclash class summon bondage-ribbons;
 	otherwise if tough-shit is 1:
 		let C be a random worn cursable clothing;

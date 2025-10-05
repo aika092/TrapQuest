@@ -1,5 +1,15 @@
 Fainting by Miscellaneous Frontend begins here.
 
+AutoFainting is an action applying to nothing.
+Check AutoFainting:
+	if tutorial is 1, say "In the main game, this acts as your safe word to let you always have a way to revoke consent when NPCs are doing naughty things to you. It bails you out of the game no matter what your situation and lets you do a soft reset, in exchange for your most valuable jewellery. However in this tutorial it would break everything, so it is disabled. If you want to revoke consent during the tutorial, please instead type [bold type]'quit'[roman type]." instead.
+Carry Out AutoFainting:
+	say "[if the player is able to speak]Say[otherwise]Think[end if] the 'safe word' phrase? This will make you lose your most valuable jewellery. ";
+	if the player is consenting:
+		now the fainting reason of the player is 50;
+		execute fainting.
+Understand "faint", "i like pineapple on pizza", "i like pineapple pizza", "pineapple pizza", "pineapple" as AutoFainting.
+
 [!<sexChanged:Integer>*
 
 Set to 1 when the player is sex changed, telling us that the next time the player faints, we should mention it. Then it gets set to 2 so we don't do that again the following time the player faints.
@@ -31,6 +41,10 @@ To Execute Fainting:
 	let lossChosen be 0;
 	repeat with M running through monsters in the location of the player:
 		dislodge M;
+	repeat with M running through things grabbing the player:
+		dislodge M;
+	repeat with M running through things wrangling a body part:
+		dislodge M;
 	now another-turn is 0;
 	let OL be the location of the player;
 	if the player is in WoodsBoss01, now the player is in Woods16;
@@ -44,6 +58,7 @@ To Execute Fainting:
 				otherwise destroy T;
 			otherwise:
 				now T is in School01;
+	if the player is in an elevator-room, now the player is in Hotel30;
 	if class-time < lessonFrequency, now class-time is lessonFrequency;
 	if playerRegion is Mansion and there is an off-stage mindless acolyte:
 		let A be a random off-stage mindless acolyte;

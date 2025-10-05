@@ -97,8 +97,12 @@ To set up (M - a wrestler):
 	now the raw difficulty of M is the starting difficulty of M;
 	let T be a random rubber trousers;
 	add T to the tradableItems of M, if absent;
-	let P be a random vibrating plug panties;
-	add P to the tradableItems of M, if absent;
+	let PP-present be false;
+	repeat with PP running through the tradableItems of M:
+		if PP is vibrating plug panties, now PP-present is true;
+	if PP-present is false:
+		let P be a random vibrating plug panties;
+		add P to the tradableItems of M;
 	add plugsuit to the tradableItems of M, if absent;
 	add resistance-powder to the tradableItems of M, if absent;
 	add resistance-powder to the taxableItems of M, if absent;

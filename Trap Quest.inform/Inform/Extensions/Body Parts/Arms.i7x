@@ -201,11 +201,11 @@ This is the update optional arm uses rule:
 					say "You don't have enough arms to carry [NameDesc of C] and are forced to drop [him of C].";
 					now C is in the location of the player;
 					truncate the armUses of arms to 2 entries;
-		if the player is not shameless: [Arms covering body parts]
-			if debugmode > 1, say "Preparing to automatically allocate arms. Current arm uses are: [armUses of arms].";
-			repeat with XX running from 1 to 2:
-				if the number of entries in armUses of arms < 2:
-					if (XX is 1 and defaultLeftTarget of arms is yourself) or (XX is 2 and defaultRightTarget of arms is yourself):
+		if debugmode > 1, say "Preparing to automatically allocate arms. Current arm uses are: [armUses of arms].";
+		repeat with XX running from 1 to 2:
+			if the number of entries in armUses of arms < 2:
+				if (XX is 1 and defaultLeftTarget of arms is yourself) or (XX is 2 and defaultRightTarget of arms is yourself):
+					if the player is not shameless: [Arms covering body parts]
 						while the number of entries in the armUses of arms < 2:
 							add the throne to the armUses of arms; [There need to be two entries when we check appearance, or we get lots of errors]
 						let somethingAdded be 0;
@@ -229,16 +229,16 @@ This is the update optional arm uses rule:
 						if N > 0:
 							repeat with XXX running from 1 to N:
 								add vagina to the armUses of arms;
-					otherwise if XX is 1 and defaultLeftTarget of arms is not hips:
-						add the defaultLeftTarget of arms to the armUses of arms, if absent;
-						if the number of entries in the armUses of arms < 2 and the defaultLeftTarget of arms is girlfriend-partner, add girlfriend-partner to the armUses of arms; [we want to add this even if not absent because the player is choosing to have both hands on their partner]
-						if the number of entries in the armUses of arms < 2 and the defaultLeftTarget of arms is vibe-photo-predicament, add vibe-photo-predicament to the armUses of arms; [we want to add this even if not absent because the player is choosing to have both hands on their partner]
-					otherwise if XX is 2 and defaultRightTarget of arms is not hips:
-						add the defaultRightTarget of arms to the armUses of arms;
-					while the number of entries in the armUses of arms < 2:
-						add the throne to the armUses of arms; [There need to be two entries when we check appearance, or we get lots of errors]
-					update appearance level;
-					if the throne is listed in the armUses of arms, remove the throne from the armUses of arms. [Remove the thing(s) we entered temporarily]
+				otherwise if XX is 1 and defaultLeftTarget of arms is not hips:
+					add the defaultLeftTarget of arms to the armUses of arms, if absent;
+					if the number of entries in the armUses of arms < 2 and the defaultLeftTarget of arms is girlfriend-partner, add girlfriend-partner to the armUses of arms; [we want to add this even if not absent because the player is choosing to have both hands on their partner]
+					if the number of entries in the armUses of arms < 2 and the defaultLeftTarget of arms is vibe-photo-predicament, add vibe-photo-predicament to the armUses of arms; [we want to add this even if not absent because the player is choosing to have both hands on their partner]
+				otherwise if XX is 2 and defaultRightTarget of arms is not hips:
+					add the defaultRightTarget of arms to the armUses of arms;
+				while the number of entries in the armUses of arms < 2:
+					add the throne to the armUses of arms; [There need to be two entries when we check appearance, or we get lots of errors]
+				update appearance level;
+				if the throne is listed in the armUses of arms, remove the throne from the armUses of arms. [Remove the thing(s) we entered temporarily]
 
 To change default arm positions:
 	reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]

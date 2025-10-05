@@ -9,6 +9,11 @@ Definition: a demoness is infernal: decide yes.
 Definition: a demoness is wenchy: decide yes.
 Definition: a demoness is human: decide yes.
 Definition: a demoness is father material: decide yes.
+Definition: a demoness is a generic-unlocker: decide yes.
+Definition: a demoness is a bondage applier: decide yes. [Do they sometimes apply bondage before and/or after punishing you?]
+Definition: a demoness is eager to warn angrily:
+	if it is classicly eager to warn angrily, decide yes; [Warns and punishes resistance during non-oral sex]
+	decide no.
 
 A demoness has a number called excitement. The excitement of a demoness is usually 0.
 
@@ -139,6 +144,7 @@ To set up (M - a demoness):
 	now the monstersetup of M is 1;
 	add balance-potion to the tradableItems of M, if absent;
 	add balance-potion to the taxableItems of M, if absent;
+	add demonic-id-card to the banishItems of M, if absent;
 	add infernal gem to the banishItems of M, if absent;
 	add dildo-heels to the banishItems of M, if absent;
 	now the raw difficulty of M is the starting difficulty of M;

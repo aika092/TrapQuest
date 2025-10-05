@@ -133,7 +133,9 @@ To say InfluenceDesc of (C - a wearthing):
 	if the dexterity-influence of C < 0, say "You can sense that this [item of C] is making you [if the dexterity-influence of C < -2]much [end if]less agile.";
 	if the dexterity-influence of C > 0, say "You can sense that this [item of C] is making you [if the dexterity-influence of C > 2]much [end if]faster.";
 	if C is speed clothing, say "You can sense that this [item of C] is making you much quicker at moving between rooms.";
-	if the intelligence-influence of C < 0, say "You can sense that this [item of C] is making you [if the intelligence-influence of C < -2]much [end if]dumber.";
+	if the intelligence-influence of C < 0:
+		if C is gag, say "You can sense that the stretching of your jaw is making it [if the intelligence-influence of C < -2]much [end if]harder for you to think.";
+		otherwise say "You can sense that this [item of C] is making you [if the intelligence-influence of C < -2]much [end if]dumber.";
 	if the intelligence-influence of C > 0, say "You can sense that this [item of C] is making you [if the intelligence-influence of C > 2]much [end if][smarter].";
 	if the charisma-influence of C < 0, say "You can sense that this [item of C] is making you [if the charisma-influence of C < -1]much [end if]less charismatic.";
 	if the charisma-influence of C > 0, say "You can sense that this [item of C] is making you [if the charisma-influence of C > 1]much [end if]more charismatic.";
@@ -251,7 +253,7 @@ Report examining clothing:
 	if the noun is ultra-short:
 		say "The skirt is so super short that you[unless the noun is worn][']ll still be completely exposed even when wearing it.[otherwise][']re still completely exposed.[end if] [if the humiliation of the player > HUMILIATION-DISGRACED + 3500 and the outrage of the noun is not too humiliating and diaper quest is 0][line break][second custom style]Which is exactly what I want![roman type][line break]";
 	otherwise:
-		if the noun is skirted and the front-skirt-length of the noun is the back-skirt-length of the noun, say "The skirt is [SkirtLength the front-skirt-length of the noun][if the noun is hobble-skirted and the player is upright]. The lack of a slit makes it much more difficult to walk quickly[end if][if the noun is hobble-skirted]. The lack of a slit makes it much more difficult to move your legs[end if].";
+		if the noun is skirted and the front-skirt-length of the noun is the back-skirt-length of the noun, say "The skirt is [SkirtLength the front-skirt-length of the noun][if the noun is hobble-skirted and the player is upright]. The lack of a slit makes it much more difficult to walk quickly, or to move your legs in general[otherwise if the noun is hobble-skirted]. The lack of a slit makes it much more difficult to move your legs[end if].";
 		if the noun is not slitted:
 			if the front-skirt-length of the noun >= 9:
 				say "You won't be able to knee or kick while in such a tight skirt[run paragraph on]";
@@ -293,6 +295,8 @@ Report examining clothing:
 							say " when you're standing, but it will partially expose it when you're on your knees.";
 						otherwise if the back-skirt-length of the noun is 3:
 							say " when you're standing, but it will fully expose it when you're on your knees.";
+						otherwise:
+							say ".";
 				otherwise if the back-skirt-length of the noun is 4:
 					say "The back of the skirt is long enough to cover your [MediumDesc of hips] when you're standing, but will partially expose you (potentially including your [asshole]!) when you're on your knees.";
 				otherwise if the back-skirt-length of the noun is 3:

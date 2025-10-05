@@ -52,6 +52,8 @@ Definition: dominatrix is willing to do anilingus: decide no.
 
 Definition: dominatrix is a generic-unlocker: decide yes.
 
+Definition: dominatrix is a bondage applier: decide yes. [Do they sometimes apply bondage before and/or after punishing you?]
+
 Definition: dominatrix is a diaper wetter:
 	if diaper quest is 1, decide yes;
 	decide no.
@@ -733,10 +735,9 @@ To compute unique climax of (M - dominatrix) in (F - asshole):
 				otherwise:
 					let H be a random off-stage fetish appropriate chastity cage;
 					if H is a chastity cage:
-						let K be a random off-stage specific-key;
 						say "[BigNameDesc of M] grabs your now limp [sissy-penis] and coos.[line break][speech style of M]'I think I know the problem, a lack of discipline. All my disobedient [if the player is a sissy]sissies[otherwise]slaves[end if] are caged.'[roman type][line break][big he of M] holds you [if the player is possessing a scrotum]by the balls [end if]firmly as [he of M] squishes your soft [sissy-penis] into a chastity cage.[roman type][line break]";
 						summon H uncursed;
-						compute M locking H with K;
+						compute M keylocking H;
 						say "[speech style of M]'That's better. No more diddling your [sissy-penis]!'[roman type][line break]";
 						say FullExamineDesc of H;
 		otherwise if the disappointment of M is -1:

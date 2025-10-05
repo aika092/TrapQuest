@@ -659,7 +659,7 @@ To execute (E - bag-feeding-bunny-theme):
 
 bag-feeding-baby-theme is a bag-feeding-effect.
 Definition: bag-feeding-baby-theme is appropriate:
-	if the player is not at least somewhat continent, decide no;
+	if diaper lover is 0 or the player is not at least somewhat continent, decide no;
 	if the noun is baby themed, decide yes;
 	if the noun is clothing and the initial cringe of the noun >= 12, decide yes;
 	decide no.

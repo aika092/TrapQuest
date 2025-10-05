@@ -11,6 +11,10 @@ Figure of dental gag is the file "Items/Accessories/Head/dentalgag1.png".
 
 Definition: an opengag is ringagged: decide yes.
 
+Definition: an opengag (called C) is application appropriate:
+	if early-bondage-check is true and (face is an actual target or belly is an actual target), decide yes;
+	decide no.
+
 To decide which number is the initial outrage of (C - an opengag):
 	decide on 8.
 
@@ -117,5 +121,6 @@ To decide which number is the initial cringe of (C - smoothie gag):
 Carry out taking off smoothie gag:
 	repeat with M running through interested bystanders:
 		now M is not interested.
+Definition: smoothie gag is application appropriate: decide no.
 
 Ring Gag ends here.

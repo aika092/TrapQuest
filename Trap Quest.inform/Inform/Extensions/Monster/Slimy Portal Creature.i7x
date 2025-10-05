@@ -1,18 +1,18 @@
 Slimy Portal Creature by Monster begins here.
 
-slimy-portal is a thing. slimy-portal is not portable. slimy-portal is in Mansion45. The printed name of slimy-portal is "[TQlink of item described]slimy portal[TQxlink of item described][shortcut-desc][verb-desc of item described]". The text-shortcut of slimy-portal is "sp". Understand "slimy", "portal" as slimy-portal. slimy-portal has a number called charge.
+slimy-portal is a thing. slimy-portal is not portable. slimy-portal is in Mansion45. The printed name of slimy-portal is "[TQlink of item described]slimy portal[TQxlink of item described][shortcut-desc][verb-desc of item described]". The text-shortcut of slimy-portal is "sp". Understand "slimy", "portal" as slimy-portal. slimy-portal has a number called charge. slimy-portal has an object called the slimy-portal-item.
 
 To say ExamineDesc of (C - slimy-portal):
-	say "A weird swirling portal, contained within a frame of green slime. It's about as tall as you are. [if the charge of C <= 0]In the centre, it looks like some kind of object is poking through the portal. Perhaps you could take it.[otherwise]There was an item in the middle of it before. Maybe another one will appear later?[end if]".
+	say "A weird swirling portal, contained within a frame of green slime. It's about as tall as you are. [if slimy-portal-item of C is a thing]In the centre, it looks like [NameDesc of slimy-portal-item of C] is poking through the portal. Perhaps you could take it.[otherwise if the charge of C <= 0]In the centre, it looks like some kind of object is poking through the portal. Perhaps you could take it.[otherwise]There was an item in the middle of it before. Maybe another one will appear later?[end if]".
 
 To decide which figure-name is the examine-image of (C - slimy-portal):
-	if the charge of C <= 0, decide on figure of slimy-portal-creature item;
+	if slimy-portal-item of C is a thing or the charge of C <= 0, decide on figure of slimy-portal-creature item;
 	decide on figure of slimy-portal-creature.
 
 Definition: slimy-portal is immune to change: decide yes.
 
 Check taking slimy-portal:
-	if the charge of slimy-portal > 0, say "There's nothing to take." instead;
+	if the charge of slimy-portal > 0 and slimy-portal-item of slimy-portal is nothing, say "There's nothing to take." instead;
 	if the player is not able to manually use manual dexterity, do nothing instead;
 	if the player is prone, say "You would need to be standing up to do that." instead;
 	if the player is immobile or the player is in danger, say "Don't you think you're a bit busy?!" instead;
@@ -28,15 +28,19 @@ Check taking slimy-portal:
 		follow the slimy-portal-creature wallification rule;
 	otherwise:
 		let C be a random off-stage fetish appropriate alchemy product;
-		if C is nothing or a random number between 1 and 2 is 1:
-			now C is a random off-stage plentiful accessory;
-			now C is pink diamond;
-			if the player is getting lucky:
-				now C is pure diamond;
-				if the player is getting lucky, now C is solid gold;
-			set shortcut of C;
+		if slimy-portal-item of slimy-portal is a thing:
+			now C is slimy-portal-item of slimy-portal;
+		otherwise:
+			if C is nothing or a random number between 1 and 2 is 1:
+				now C is a random off-stage plentiful accessory;
+				now C is pink diamond;
+				if the player is getting lucky:
+					now C is pure diamond;
+					if the player is getting lucky, now C is solid gold;
+				set shortcut of C;
 		now C is carried by the player;
-		say "You pull it out to discover that it's a [C]![line break][variable custom style][one of]Nice[or]Oh, sweet[at random]![roman type][line break]";
+		now the owner of C is nothing;
+		say "You pull [if C is slimy-portal-item of slimy-portal][NameDesc of C] out[otherwise]it out to discover that it's a [C][end if]![line break][variable custom style][one of]Nice[or]Oh, sweet[at random]![roman type][line break]";
 		if C is plentiful accessory:
 			if C is actually summonable:
 				now C is worn by the player;
@@ -50,7 +54,14 @@ Check taking slimy-portal:
 A time based rule (this is the slimy portal rule):
 	if the charge of slimy-portal > 0:
 		decrease the charge of slimy-portal by time-seconds;
-		if the charge of slimy-portal <= 0 and slimy-portal is in the location of the player, say "A new item appears in the middle of [NameDesc of slimy-portal]!".
+		if slimy-portal is in the location of the player and the charge of slimy-portal < (a random number between 300 and 395):
+			repeat with C running through worn locked clothing:
+				if slimy-portal-item of slimy-portal is nothing:
+					let K be a random specific-key covering C;
+					if K is a thing and (the player is in Dungeon41 or a random number between 1 and 2 is 1):
+						now slimy-portal-item of slimy-portal is K;
+						say "[bold type]Suddenly, you see the [K] poking out of [NameDesc of slimy-portal]![line break][variable custom style]Oh my god, I need that!!![roman type][line break]";
+		if the charge of slimy-portal <= 0 and slimy-portal is in the location of the player and slimy-portal-item of slimy-portal is nothing, say "[bold type]Suddenly, a new item appears in the middle of [NameDesc of slimy-portal]![line break][variable custom style]That looks valuable!!![roman type][line break]".
 
 
 slimy-portal-creature is a monster. slimy-portal-creature is neuter. slimy-portal-creature is guarding. The poison-status of slimy-portal-creature is -1. The blind-status of slimy-portal-creature is -1.

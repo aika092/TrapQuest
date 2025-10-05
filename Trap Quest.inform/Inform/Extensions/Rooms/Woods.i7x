@@ -41,7 +41,16 @@ Woods15 is a dodgy jungle room. The printed name of Woods15 is "Deep Woods". "Th
 
 Woods16 is a mandatory jungle room. The printed name of Woods16 is "Hole in the Ground". "There appears to be a hole in the ground here. You could climb down it, but something tells you it is extremely dangerous.". The shape of Woods16 is L2/0-0-1-1-1-1.
 Report going when the player is in Woods16:
-	if clumsy is 1 and the player is upright and the noun is not up and (a random number between 1 and 5 is 1 or clumsy april fools is 1):
+	if berri fetish is 1 and berriVineBossScene is 0 and stripy-blue-dress is worn and magic pistol is worn and vine boss is alive:
+		say "[bold type]Suddenly, a green vine whips out of the hole in the ground and grabs your ankle![line break][BerriCutsceneFlav]It yanks you hard, pulling you down into the pit! In your panic, [NameDesc of magic pistol] slips out of your hand!";
+		now magic pistol is in the location of the player;
+		now the stance of the player is 1;
+		mapcutshow figure of berri cutscene 2 for magic pistol;
+		say "[second custom style]Oh crap, am I really gonna get pulled down into this pit with some kind of vine monster?![roman type][line break]";
+		reset multiple choice questions;
+		set numerical response 1 to "Call for help";
+		say "";
+	otherwise if clumsy is 1 and the player is upright and the noun is not up and (a random number between 1 and 5 is 1 or clumsy april fools is 1):
 		say "In a rare moment of clumsiness, your toe hits a snag and you accidentally tumble down into the giant hole in the centre of this area!";
 		say aprilFoolsClumsyFlav;
 		if seconds is 0, allocate 3 seconds; [Just in case]

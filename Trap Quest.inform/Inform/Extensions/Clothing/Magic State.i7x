@@ -166,6 +166,9 @@ Definition: a clothing is magic-enhanceable:
 	decide no.
 
 To decide which number is the magic-modifier of (C - a clothing):
+	decide on the calculated-magic-modifier of C.
+
+To decide which number is the calculated-magic-modifier of (C - a clothing):
 	let R be the raw-magic-modifier of C;
 	[if C is diaper or C is fluid immune, decide on R;
 	decrease R by ((the semen-soak of C + 2) divided by 3);

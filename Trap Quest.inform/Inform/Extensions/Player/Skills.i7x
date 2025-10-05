@@ -379,9 +379,7 @@ To teach safefloating from (M - a monster):
 						if W is wrist bond:
 							summon W locked;
 							now W is wrist-bound-behind;
-					let G be a random bit gag;
-					if G is actually summonable:
-						summon G locked;
+					if bit-gag is actually summonable, summon bit-gag locked;
 					BustInflate 100;
 			otherwise:
 				say "You decide against it.".

@@ -603,6 +603,9 @@ To FavourUp (M - a monster) by (N - a number):
 	if N > 0:
 		now M is recently-unknown; [reset what we know about the friendliness of the NPC]
 		increase the favour of M by N;
+		if M is witch and M is normally annoyed and M is alive:
+			now M is in Woods20;
+			now M is guarding;
 		if M is royal guard and the refractory-period of M < 0:
 			progress quest of royal-quest;
 			now the refractory-period of M is the refractory-time of M. [This stops the player being able to trigger the duty performed repeatedly within a short time]

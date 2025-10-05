@@ -21,6 +21,10 @@ Definition: mechanic is permanently banishable: decide no.
 Definition: mechanic is willing to have time out: decide no.
 
 Definition: mechanic is a generic-unlocker: decide yes.
+Definition: mechanic is a bondage applier: decide yes. [Do they sometimes apply bondage before and/or after punishing you?]
+Definition: mechanic is eager to warn angrily:
+	if it is classicly eager to warn angrily, decide yes; [Warns and punishes resistance during non-oral sex]
+	decide no.
 
 Definition: mechanic is blocker:
 	if the woman-status of woman-player is 91 and the mechanic-scene of woman-player <= 3 and woman-player is in the location of the player, decide no; [Barbara BJ scene]
@@ -102,8 +106,8 @@ To decide which number is the base semen load of (M - mechanic):
 To set up (M - mechanic):
 	reset M;
 	now the monstersetup of M is 1;
-	add id-card to the banishItems of M, if absent;
-	add id-card to the taxableItems of M, if absent;
+	add mechanic-id-card to the banishItems of M, if absent;
+	add mechanic-id-card to the taxableItems of M, if absent;
 	now the raw difficulty of M is the starting difficulty of M;
 	now M is soul-stolen; [he doesn't have a soul to steal]
 	now the health of M is the maxhealth of M.
@@ -453,6 +457,7 @@ This is the mechanic applies collar rule:
 		if there is a monster penetrating face, rule succeeds; [Mechanic waits silently for an opening]
 		say "[speech style of current-monster]'Haha[if diaper quest is 1], you're my baby slave now[end if]!'[roman type][line break]CLUNK! [BigNameDesc of current-monster] takes this opportunity to force [if C is in the location of the player or C is held]the[otherwise]a smooth, round[end if] steel collar around your neck and click it shut. The locking mechanism is completely internal, meaning it's impossible to remove.[line break][if the player is able to speak][variable custom style]'Hey, what the hell?'[line break][end if][speech style of current-monster]'This is my own special invention. It is completely impossible to take off without my knowledge, and when you get aroused, it will make sure you don't cool off until you orgasm.'[paragraph break]";
 		summon C;
+		reset bondage timer;
 		say "[variable custom style][if the bimbo of the player < 10]Fuck, how did I get myself into this mess?[otherwise if the bimbo of the player < 15]I guess I should do whatever [he of current-monster] says...[otherwise]Oooh, this could be a fun game![end if][roman type][line break]";
 		if diaper quest is 0, say "[BigNameDesc of current-monster] rubs [his of current-monster] chin.[line break][speech style of current-monster]'I have a... favour to ask. There's an amulet somewhere in this world, maybe you've encountered it already. Last I heard it was being guarded by a large monster. I want you to retrieve it for me. If you do that, I'll free you from the collar. I would get it myself, but why risk the journey when I could get adventurers like you to go on the quest for me?'[roman type][line break][variable custom style][if the bimbo of the player < 5]On the one hand, this is the first real quest I've been given all game. On the other hand, this guy is a bastard.[otherwise if the bimbo of the player < 10]Obviously this is just some ploy to get that monstrous beast in the dungeon to fuck me, but what other choice do I have?.[otherwise if the bimbo of the player < 15]If it's the only way to stop being [his of current-monster] slave...![otherwise]Playing with a monster, huh? Sounds kinky![end if][roman type][line break][big he of current-monster] pauses once more.[line break][speech style of current-monster]'And while you're here, I think you're going to do a little something extra for me.'[roman type][line break][big he of current-monster] unzips [his of current-monster] jeans.";
 		otherwise say "[BigNameDesc of current-monster] rubs [his of current-monster] chin.[line break][speech style of current-monster]'I have a... favour to ask. There's an amulet somewhere in this world, maybe you've encountered it already. Last I heard it was being guarded by a spooky monster. I want you to retrieve it for me. If you do that, I'll free you from the collar. I would get it myself, but why risk the journey when I could get adventurers like you to go on the quest for me?'[roman type][line break][variable custom style][if the bimbo of the player < 5]On the one hand, this is the first real quest I've been given all game. On the other hand, this guy is a bastard.[otherwise if the bimbo of the player < 10]Obviously this is just some ploy to get that monstrous beast in the dungeon to dominate me, but what other choice do I have?.[otherwise if the bimbo of the player < 15]If it's the only way to stop being [his of current-monster] slave...![otherwise]Playing with a monster, huh? Sounds scary but fun![end if][roman type][line break][big he of current-monster] pauses once more.[line break][speech style of current-monster]'And while you're down there, I think I'm going to start training my newest baby slave.'[line break]";
@@ -462,7 +467,7 @@ The mechanic applies collar rule is listed last in the mechanic unique punishmen
 The mechanic applies collar rule is listed last in the mechanic diaper quest rules.
 
 This is the mechanic dark ritual rule:
-	if the player is soulless and the class of the player is not succubus and the class of the player is not avatar:
+	if the player is soulless and the class of the player is not succubus and the class of the player is not avatar and the number of worn indestructible headgear is 0:
 		let M be current-monster;
 		say "[BigNameDesc of M] seems to consider you for a second, then pulls out a swirling black and red gem.[line break][speech style of M]'You cannot imagine how difficult it was to come by this, you should be honoured to play host to one of my servants...'[roman type][line break]";
 		say "You have no idea what the hell [he of M][']s talking about, but before you can react [he of M] plunges the stone into your chest. Agony overflows your body, and you briefly black out. When you come to, [he of M][']s still glancing down at you.[line break]";

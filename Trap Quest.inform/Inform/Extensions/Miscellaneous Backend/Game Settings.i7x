@@ -417,7 +417,7 @@ This is the body outdated preference toggle rule:
 	otherwise now choice in row 41 of the Table of Settings is 0.
 
 To decide which number is auto body animations:
-	if the player is not a march 2024 top donator, decide on 0;
+	if the player is not the donator, decide on 0;
 	decide on choice in row 42 of the Table of Settings.
 
 This is the auto body animations toggle rule:

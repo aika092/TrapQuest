@@ -7,6 +7,10 @@ Definition: a royal guard is father material: decide yes.
 Definition: a royal guard is raunchy: decide yes.
 Definition: a royal guard is condom prepared: decide yes. [Does he have condoms on him?]
 Definition: a royal guard is a generic-unlocker: decide yes.
+Definition: a royal guard is a bondage applier: decide yes. [Do they sometimes apply bondage before and/or after punishing you?]
+Definition: a royal guard is eager to warn angrily:
+	if it is classicly eager to warn angrily, decide yes; [Warns and punishes resistance during non-oral sex]
+	decide no.
 Definition: a royal guard (called M) is blocker:
 	if M is shieldblocked, decide no;
 	decide yes.
@@ -80,6 +84,7 @@ To say MediumDesc of (M - solemn royal guard):
 
 prison guard is a royal guard. The text-shortcut of prison guard is "prg". prison guard has a number called sentence.
 Definition: prison guard is willing to have time out: decide no.
+Definition: prison guard is a bondage applier: decide yes. [Do they sometimes apply bondage before and/or after punishing you?]
 To say MediumDesc of (M - prison guard):
 	say "prison guard".
 
@@ -309,7 +314,8 @@ Definition: a royal guard (called M) is uniquely distracted:
 			say "[BigNameDesc of M][']s eyes are drawn [if M is interested]away from you [end if]to [NameDesc of N]. [big he of M] points at [him of M] with an accusatory finger.[line break][speech style of M]'You! The last time we met, didn't I banish you from this place? And yet you dare to remain here, making a mockery of the law and the Crown! Get on your knees, you are under arrest.'[roman type][line break][BigNameDesc of N] hesitates - it looks like [he of N] isn't too keen on fighting, but also doesn't really want to submit to the [MediumDesc of M] right in front of you. In the end, [he of N] sighs and relents, dropping to [his of N] knees.[line break][speech style of N]'I surrender.'[roman type][line break]";
 			if diaper quest is 0:
 				say "Freeing [his of M] [LongDickDesc of M], [NameDesc of M] holds it in front of [NameDesc of N][']s face.[line break][speech style of M]'Serve your sentence well, and I shall allow you to leave with your clothing. But if I do not believe you have exhibited sufficient submission, you will be entering the woods naked.'[roman type][paragraph break][BigNameDesc of N] turns red in the face, but nods and accepts the [man of M][']s [LongDickDesc of M] into [his of N] mouth. [big he of N] works hard, managing to get the thick rod deeper and deeper down the back of [his of N] throat with each bob of [his of N] head. Soon, [he of N] is lost in [his of N] work, making lewd gagging sounds around the meatstick in [his of N] throat, without any regard for your presence. You watch with [horror the sex addiction of the player] as [NameDesc of M] stands completely still and allows [NameDesc of N] to do all the work of burying the entire thing down [his of N] gullet. And then, [NameDesc of N] tries to pull back to catch a breath, but the sadistic [ShortDesc of M] uses [his of M] hands to prevent [him of N] from getting away, holding [him of N] there, making [NameDesc of N] gag in panic as [he of N] begins scrabbling with [his of N] hands on [NameDesc of M][']s loins, trying to find a way to take [his of N] next breath. [BigNameDesc of M] pays [him of N] no mind as [he of M] grunts and groans and sighs with pleasure as [he of M] empties [his of M] [if M is a balls-haver]balls[otherwise]load[end if] down the poor adventurer's throat, with such force that several blasts of his jism spurt back out around the sides of his dick, splattering down onto [NameDesc of N][']s cleavage and the front of [his of N] bodysuit.[paragraph break]When [NameDesc of M] pulls away, [NameDesc of N][']s hands quickly hit the ground, supporting the rest of [his of N] body weight as [he of N] gasps for air, coughing up little globs of [semen] and spit as [he of N] does. ";
-				cutshow figure of gymnast explorer 1 cutscene 1 for M;
+				cutshow figure of gymnast explorer 1 cutscene 1 for N;
+				maybe-map-display figure of gymnast explorer 1 cutscene 1;
 				if watersports fetish is 1:
 					say "[BigNameDesc of M] takes this moment to release a blast of strong-smelling [urine] into [NameDesc of N][']s hair, soaking [his of N] hair, face, body and clothes with the hot golden liquid. By the time [he of M] has finished, [NameDesc of N] is a soaking wet, smelly mess. [big he of M] then shakes [his of M] member dry over [his of N] still-lowered head. ";
 				say "[BigNameDesc of M] stretches [his of M] spine.[if the class of the player is not princess][line break][speech style of M]'Let this be a lesson to BOTH of you, of why you should not make a mockery of the law.'[roman type][line break][big he of M] shoots you a measured glance, before returning to the poor exhausted [man of N] on [his of N] knees in front of [him of M].[end if][line break][speech style of M]'Now, let me be completely clear. If I ever see you in these halls again, I will keep you in that cell for so long that by the time you're released, you won't be able to remember what it's like to taste anything other than semen[if watersports fetish is 1] and piss[end if].'[roman type][line break][BigNameDesc of N] can't bring [himself of N] to say anything. [big he of N] just nods and begins slowly crawling towards the [if D is direction][D][otherwise]exit[end if], [semen] still swimming within [his of N] cleavage, spilling onto the ground a little at a time as [he of N] crawls, [his of N] tight bodysuit flossing [his of N] ass-crack with each little movement.";
@@ -949,27 +955,36 @@ To get creampie image of (M - a royal guard) in (F - a fuckhole):
 	otherwise cutshow figure of guard cutscene 6 for M;
 
 To compute post climax effect of (M - a royal guard) in (F - a fuckhole):
-	if M is prison guard and bondage protection < 2 and the pregnancy of the player is 0 and there is an off-stage fetish appropriate chastity bond and the player is getting unlucky:
-		compute chastity locking of M after F;
-	otherwise if M is not prison guard:
-		compute M sleeping 200 after sex;
-	FavourUp M;
 	reset submissive wenches.
+
+Definition: a royal guard (called M) is sleeping after sex:
+	if M is prison guard, decide no;
+	if M is normally annoyed, decide yes;
+	decide no.
+
+To compute post climax behaviour of (M - a royal guard) in (F - a fuckhole):
+	if the rounds of sex left of M <= 0:
+		if M is sleeping after sex:
+			compute M sleeping 200 after sex;
+			orgasm dislodge M;
+		otherwise:
+			orgasm dislodge M;
+			if M is awake and M is in the location of the player and the times-warned of M >= 3:
+				compute post sex punishment of M;
+				bore M;
+			otherwise if M is interested:
+				satisfy M.
 
 To compute chastity locking of (M - a royal guard) after (B - a body part):
 	let CB be a random off-stage fetish appropriate chastity bond;
 	if CB is chastity bond and CB is actually summonable:
-		let K be a random off-stage specific-key;
 		if B is thighs, say "[speech style of M]'Pathetic. You clearly need to spend some more effort learning to use your tongue, rather than your [if the player is possessing a vagina]hole[otherwise]prick down there[end if]!'[roman type][line break][BigNameDesc of M] produces a sturdy-looking [ShortDesc of CB]! [big he of M] holds you [if the player is possessing a scrotum]by the balls [end if]firmly as [he of M] [if CB is chastity cage]squishes your [sissy-penis][otherwise]guides your loins[end if] into its frame."; [failed tongue worship]
 		otherwise say "[speech style of M]'[one of]Now I will show you how we tame unruly sluts around these parts[or]Your right to a shame-free orgasm has been revoked[or]Access to your genitals is a privilege, not a right[then at random]!'[roman type][line break][BigNameDesc of M] produces a sturdy-looking [ShortDesc of CB]! [big he of M] holds you [if the player is possessing a scrotum]by the balls [end if]firmly as [he of M] [if CB is chastity cage]squishes your [sissy-penis][otherwise]guides your loins[end if] into its frame. [GotUnluckyFlav]";
 		if the player is able to speak, say "[variable custom style]'[if the player is feeling dominant][one of]HEY! That is NOT okay! Unlock me right now!'[or]How DARE you!'[stopping][otherwise if the player is not feeling submissive][one of]Please, don't do this!'[or]Nooo, not again! Please, I'll be good! Just don't lock me up again...'[stopping][otherwise][one of]I understand...'[or]Yes Sir...'[cycling][end if][roman type][line break]";
 		otherwise say "[variable custom style][if the player is feeling dominant]The fucking bastard! This is outrageous![otherwise if the player is not feeling submissive]There's no way for me to stop [him of M]![otherwise]This is my fault...[end if][roman type][line break]";
-		summon CB uncursed;
-		if K is specific-key:
-			compute M locking CB with K;
-		otherwise:
-			say "[BigNameDesc of M] clicks the lock shut.";
-			now CB is locked;
+		summon CB locked;
+		compute M keylocking CB;
+		if recently-used-key is nothing, say "[BigNameDesc of M] clicks the lock shut.";
 		say "[speech style of M]'Come find me another time, and I will decide whether your [if B is thighs][']training['][otherwise]sentence[end if] is over.'[roman type][line break]";
 		say FullExamineDesc of CB;
 		satisfy M.
@@ -994,11 +1009,20 @@ To decide if (M - a royal guard) is willing to creampie (F - a fuckhole):
 	decide no.
 
 To say MessyPullOutFlav of (M - a royal guard) in (F - a fuckhole):
-	if bukkake fetish is 1, say "[one of][BigNameDesc of M] roars with pleasure, barely pulling out as [he of M] explodes, blasting your [AssDesc] with thick, creamy [semen].[or][BigNameDesc of M] grunts, [DickDesc of M] throbbing powerfully as [he of M] pulls out and douses your [AssDesc] with fresh, warm [semen].[at random] [if the semen addiction of the player < 7]You breathe a small sigh of relief as [he of M] slumps over, asleep.[otherwise if the semen addiction of the player < 12]You blink a couple times, glancing over your shoulder as [he of M] slumps over, asleep.[otherwise]You grumble in disappointment as [he of M] slumps over and falls asleep.[end if]";
-	otherwise say "[one of][BigNameDesc of M] roars with pleasure, barely pulling out as [he of M] explodes, blasting your crotch with thick, creamy [semen].[or][BigNameDesc of M] grunts, [DickDesc of M] throbbing powerfully as [he of M] pulls out and douses your crotch with fresh, warm [semen].[at random] [if the semen addiction of the player < 7]You breathe a small sigh of relief as [he of M] slumps over, asleep.[otherwise if the semen addiction of the player < 12]You blink a couple times, glancing over your shoulder as [he of M] slumps over, asleep.[otherwise]You grumble in disappointment as [he of M] slumps over and falls asleep.[end if]".
+	if bukkake fetish is 1:
+		say "[one of][BigNameDesc of M] roars with pleasure, barely pulling out as [he of M] explodes, blasting your [AssDesc] with thick, creamy [semen][or][BigNameDesc of M] grunts, [DickDesc of M] throbbing powerfully as [he of M] pulls out and douses your [AssDesc] with fresh, warm [semen][at random]. ";
+		if M is sleeping after sex, say "[if the semen addiction of the player < 7]You breathe a small sigh of relief as [he of M] slumps over, asleep.[otherwise if the semen addiction of the player < 12]You blink a couple times, glancing over your shoulder as [he of M] slumps over, asleep.[otherwise]You grumble in disappointment as [he of M] slumps over and falls asleep.[end if]";
+		otherwise say line break;
+	otherwise:
+		say "[one of][BigNameDesc of M] roars with pleasure, barely pulling out as [he of M] explodes, blasting your crotch with thick, creamy [semen][or][BigNameDesc of M] grunts, [DickDesc of M] throbbing powerfully as [he of M] pulls out and douses your crotch with fresh, warm [semen][at random]. ";
+		if M is sleeping after sex, say "[if the semen addiction of the player < 7]You breathe a small sigh of relief as [he of M] slumps over, asleep.[otherwise if the semen addiction of the player < 12]You blink a couple times, glancing over your shoulder as [he of M] slumps over, asleep.[otherwise]You grumble in disappointment as [he of M] slumps over and falls asleep.[end if]";
+		otherwise say line break.
+
 
 To say PullOutFlav of (M - a royal guard) in (F - a fuckhole):
-	say "[one of][BigNameDesc of M] roars with pleasure, barely pulling out as [he of M] explodes, spraying [semen] all over the ground.[or][BigNameDesc of M] grunts, [DickDesc of M] throbbing powerfully as [he of M] pulls out and douses the ground with fresh, warm [semen].[at random] [if the semen addiction of the player < 7]You breathe a small sigh of relief as [he of M] slumps over, asleep.[otherwise if the semen addiction of the player < 12]You blink a couple times, glancing over your shoulder as [he of M] slumps over, asleep.[otherwise]You grumble in disappointment as [he of M] slumps over and falls asleep.[end if]".
+	say "[one of][BigNameDesc of M] roars with pleasure, barely pulling out as [he of M] explodes, spraying [semen] all over the ground[or][BigNameDesc of M] grunts, [DickDesc of M] throbbing powerfully as [he of M] pulls out and douses the ground with fresh, warm [semen][at random]. ";
+	if M is sleeping after sex, say "[if the semen addiction of the player < 7]You breathe a small sigh of relief as [he of M] slumps over, asleep.[otherwise if the semen addiction of the player < 12]You blink a couple times, glancing over your shoulder as [he of M] slumps over, asleep.[otherwise]You grumble in disappointment as [he of M] slumps over and falls asleep.[end if]";
+	otherwise say line break.
 
 To decide which number is the condom resistance of (M - a royal guard):
 	if M is mating, decide on 6;[You're married, of course he's going in raw!]
@@ -1017,7 +1041,7 @@ To say CondomRejectFlav of (M - a royal guard):
 	if R is 0, say "[BigNameDesc of M] [one of]scoffs[or]frowns[or]rolls [his of M] eyes[at random], and ignores your suggestion[if M is seduced].[otherwise]. Looks like [he of M][']s going in bare...[end if]".
 
 To say CondomPieFlav of (M - a royal guard) in (F - a fuckhole):
-	say "[BigNameDesc of M] grunts and tightens [his of M] grip, causing you to [if the semen addiction of the player < 5]whimper uncomfortably[otherwise if the semen addiction of the player < 11]gasp quietly[otherwise]coo happily[end if] as [he of M] fills [one of]the condom's reservoir tip[or]the end of the condom[or]the condom[in random order] with wave after wave of [semen]. You feel a pocket of [one of]warm liquid[or]warmth[in random order] slip out of you as [he of M] pulls out and immediately falls asleep.".
+	say "[BigNameDesc of M] grunts and tightens [his of M] grip, causing you to [if the semen addiction of the player < 5]whimper uncomfortably[otherwise if the semen addiction of the player < 11]gasp quietly[otherwise]coo happily[end if] as [he of M] fills [one of]the condom's reservoir tip[or]the end of the condom[or]the condom[in random order] with wave after wave of [semen]. You feel a pocket of [one of]warm liquid[or]warmth[in random order] slip out of you[if M is sleeping after sex] as [he of M] pulls out and immediately falls asleep[end if].".
 
 To decide if (M - a royal guard) is losing wrapper in (F - a fuckhole):
 	if the player is getting unlucky, decide yes;
@@ -1033,13 +1057,16 @@ To compute condom failure of (M - a royal guard) in (F - a fuckhole):
 	say CreampieReactionFlav to M in F.
 
 To say CondomFailFlav of (M - a royal guard) in (F - a fuckhole):
-	say "[BigNameDesc of M] grunts and tightens [his of M] grip, causing you to [if the semen addiction of the player < 4]whimper uncomfortably[otherwise if the semen addiction of the player < 11]gasp quietly[otherwise]coo happily[end if] as [he of M] fills the condom's reservoir tip with wave after wave of [semen]. The pocket of warm liquid shifts inside you as [he of M] begins to pull out, and you realise the condom is starting to come off.[line break][variable custom style]'[one of]Wait, wait-!'[or]Hey, the condom-!'[or]Wait, the condom is-!'[in random order][roman type][line break][big he of M] doesn't respond, and you feel a faint trickle of wetness spreading out inside your [variable F] as [he of M] slumps over and passes out. You look down to see the condom hanging half-on, half-off [his of M] softening [DickDesc of M].";
+	say "[BigNameDesc of M] grunts and tightens [his of M] grip, causing you to [if the semen addiction of the player < 4]whimper uncomfortably[otherwise if the semen addiction of the player < 11]gasp quietly[otherwise]coo happily[end if] as [he of M] fills the condom's reservoir tip with wave after wave of [semen]. The pocket of warm liquid shifts inside you as [he of M] begins to pull out, and you realise the condom is starting to come off.[line break][variable custom style]'[one of]Wait, wait-!'[or]Hey, the condom-!'[or]Wait, the condom is-!'[in random order][roman type][line break]";
+	if M is sleeping after sex, say "[big he of M] doesn't respond, and you feel a faint trickle of wetness spreading out inside your [variable F] as [he of M] slumps over and passes out. You look down to see the condom hanging half-on, half-off [his of M] softening [DickDesc of M].";
+	otherwise say "[big he of M] either ignores or doesn't hear you, and you feel a faint trickle of wetness spreading out inside your [variable F] as pulls out out. You look down to see the condom hanging half-on, half-off [his of M] softening [DickDesc of M].";
 
 To say CreampieFlav of (M - a royal guard) in (F - a fuckhole):
 	if tutorial is 1:
 		say "[BigNameDesc of M] roars with pleasure, tightening [his of M] grip as warm [semen] begins flowing inside of you. [big he of M] continues fucking you until [his of M] [if M is a balls-haver]balls have[otherwise]load has[end if] been thoroughly and completely emptied into your [variable F]. You feel [his of M] hands leave your hips as [he of M] pulls out and sighs contently.";
 	otherwise:
-		say "[one of][BigNameDesc of M] roars with pleasure, tightening [his of M] grip as warm [semen] begins flowing inside of you. [big he of M] continues fucking you until [his of M] [if M is a balls-haver]balls have[otherwise]load has[end if] been thoroughly and completely emptied into your [variable F]. You feel [his of M] hands leave your hips as [he of M] pulls out and falls over, asleep.[or][BigNameDesc of M] grunts, [his of M] [DickDesc of M] throbbing as [he of M] unloads [if M is a balls-haver][his of M] balls [end if]into your [variable F]. [big he of M] sighs in satisfaction, roughly shoving you off [his of M] [DickDesc of M] before slumping over, asleep.[or][if the semen addiction of the player < 7][BigNameDesc of M] tightens [his of M] grip and begins grunting in pleasure. You shudder and look over your shoulder as [semen] flows into your [variable F]. [big he of M] releases your hips, allowing you to crawl away in shame as [he of M] slumps over, asleep.[otherwise if the semen addiction of the player < 15][BigNameDesc of M] tightens [his of M] grip and begins grunting in pleasure. You gasp and look over your shoulder as [semen] flows into your [variable F]. [big he of M] releases your hips, thrusting a few more times before pulling out and falling asleep.[otherwise][BigNameDesc of M] tightens [his of M] grip and begins grunting in pleasure. You look over your shoulder and grin as [semen] flows into your [variable F]. [big he of M] releases your hips, allowing you to milk [his of M] [DickDesc of M] down to the last drop before pulling out and falling asleep.[end if][or][if the semen addiction of the player < 7][BigNameDesc of M] grunts and tightens [his of M] grip. You whimper as [his of M] [DickDesc of M] pumps wave after wave of [semen] directly into your [variable F]. [big his of M] hands leave your hips as [he of M] pulls out and immediately falls asleep.[otherwise if the semen addiction of the player < 11][BigNameDesc of M] grunts and tightens [his of M] grip. You sigh quietly as [his of M] [DickDesc of M] pumps wave after wave of [semen] directly into your [variable F]. [big his of M] hands leave your hips as [he of M] pulls out and immediately falls asleep.[otherwise][BigNameDesc of M] grunts and tightens [his of M] grip. You coo happily as [his of M] [DickDesc of M] pumps wave after wave of [semen] directly into your [variable F]. [big his of M] hands leave your hips as [he of M] pulls out and immediately falls asleep.[end if][at random]".
+		if M is sleeping after sex, say "[one of][BigNameDesc of M] roars with pleasure, tightening [his of M] grip as warm [semen] begins flowing inside of you. [big he of M] continues fucking you until [his of M] [if M is a balls-haver]balls have[otherwise]load has[end if] been thoroughly and completely emptied into your [variable F]. You feel [his of M] hands leave your hips as [he of M] pulls out and falls over, asleep.[or][BigNameDesc of M] grunts, [his of M] [DickDesc of M] throbbing as [he of M] unloads [if M is a balls-haver][his of M] balls [end if]into your [variable F]. [big he of M] sighs in satisfaction, roughly shoving you off [his of M] [DickDesc of M] before slumping over, asleep.[or][if the semen addiction of the player < 7][BigNameDesc of M] tightens [his of M] grip and begins grunting in pleasure. You shudder and look over your shoulder as [semen] flows into your [variable F]. [big he of M] releases your hips, allowing you to crawl away in shame as [he of M] slumps over, asleep.[otherwise if the semen addiction of the player < 15][BigNameDesc of M] tightens [his of M] grip and begins grunting in pleasure. You gasp and look over your shoulder as [semen] flows into your [variable F]. [big he of M] releases your hips, thrusting a few more times before pulling out and falling asleep.[otherwise][BigNameDesc of M] tightens [his of M] grip and begins grunting in pleasure. You look over your shoulder and grin as [semen] flows into your [variable F]. [big he of M] releases your hips, allowing you to milk [his of M] [DickDesc of M] down to the last drop before pulling out and falling asleep.[end if][or][if the semen addiction of the player < 7][BigNameDesc of M] grunts and tightens [his of M] grip. You whimper as [his of M] [DickDesc of M] pumps wave after wave of [semen] directly into your [variable F]. [big his of M] hands leave your hips as [he of M] pulls out and immediately falls asleep.[otherwise if the semen addiction of the player < 11][BigNameDesc of M] grunts and tightens [his of M] grip. You sigh quietly as [his of M] [DickDesc of M] pumps wave after wave of [semen] directly into your [variable F]. [big his of M] hands leave your hips as [he of M] pulls out and immediately falls asleep.[otherwise][BigNameDesc of M] grunts and tightens [his of M] grip. You coo happily as [his of M] [DickDesc of M] pumps wave after wave of [semen] directly into your [variable F]. [big his of M] hands leave your hips as [he of M] pulls out and immediately falls asleep.[end if][at random]";
+		otherwise say "[one of][BigNameDesc of M] roars with pleasure, tightening [his of M] grip as warm [semen] begins flowing inside of you. [big he of M] continues fucking you until [his of M] [if M is a balls-haver]balls have[otherwise]load has[end if] been thoroughly and completely emptied into your [variable F].[or][BigNameDesc of M] grunts, [his of M] [DickDesc of M] throbbing as [he of M] unloads [if M is a balls-haver][his of M] balls [end if]into your [variable F]. [big he of M] sighs in satisfaction, roughly shoving you off [his of M] [DickDesc of M].[or][if the semen addiction of the player < 7][BigNameDesc of M] tightens [his of M] grip and begins grunting in pleasure. You shudder and look over your shoulder as [semen] flows into your [variable F]. [big he of M] releases your hips.[otherwise if the semen addiction of the player < 15][BigNameDesc of M] tightens [his of M] grip and begins grunting in pleasure. You gasp and look over your shoulder as [semen] flows into your [variable F]. [big he of M] releases your hips, thrusting a few more times before pulling out.[otherwise][BigNameDesc of M] tightens [his of M] grip and begins grunting in pleasure. You look over your shoulder and grin as [semen] flows into your [variable F]. [big he of M] releases your hips, allowing you to milk [his of M] [DickDesc of M] down to the last drop before pulling out.[end if][or][if the semen addiction of the player < 7][BigNameDesc of M] grunts and tightens [his of M] grip. You whimper as [his of M] [DickDesc of M] pumps wave after wave of [semen] directly into your [variable F]. [big his of M] hands leave your hips as [he of M] pulls out.[otherwise if the semen addiction of the player < 11][BigNameDesc of M] grunts and tightens [his of M] grip. You sigh quietly as [his of M] [DickDesc of M] pumps wave after wave of [semen] directly into your [variable F]. [big his of M] hands leave your hips as [he of M] pulls out.[otherwise][BigNameDesc of M] grunts and tightens [his of M] grip. You coo happily as [his of M] [DickDesc of M] pumps wave after wave of [semen] directly into your [variable F]. [big his of M] hands leave your hips.[end if][at random]";
 
 The latex punishment rule of a royal guard is usually the no latex punishment rule.
 
@@ -1076,13 +1103,16 @@ To compute (M - a royal guard) punishing a criminal:
 	if A is actually summonable and a random number between 1 and 2 is 1:
 		say "The guard pulls out a pair of ankle cuffs, and binds your ankles together![line break][bold type]You are now ankle bound.[roman type][line break]";
 		summon A locked;
+		reset bondage timer;
 	otherwise if H is actually summonable:
 		say "The guard pulls out a pair of handcuffs and binds your wrists together![line break][bold type]Your wrists are now bound behind you.[roman type][line break]";
 		summon H locked;
 		now H is wrist-bound-behind;
+		reset bondage timer;
 	otherwise if A is actually summonable:
 		say "The guard pulls out a pair of ankle cuffs, binding your ankles together![line break][bold type]You are now ankle bound.[roman type][line break]";
 		summon A locked;
+		reset bondage timer;
 	otherwise:
 		say "The guard looks at the shopkeeper.[line break]".
 
@@ -1250,24 +1280,6 @@ To say ThreesomePrep of (M - a royal guard) with (N - a royal guard) in (F - vag
 
 [TODO: guard foursome, possibly]
 
-To compute angry punishment of (M - a royal guard): [Royal guards will always punish you if you struggle, unless you're a princess.]
-	if the class of the player is not princess:
-		say angry punishment insult of M;
-		if M is not friendly-fucking and (M is not seduced or M is unfriendly):
-			if M is prison guard and bondage protection < 2 and the pregnancy of the player is 0 and there is an off-stage fetish appropriate chastity bond and the player is getting unlucky:
-				compute chastity locking of M after arms;
-			otherwise if bondage protection < 2 and bondage-corset is off-stage and bondage-corset is actually summonable:
-				summon bondage-corset uncursed;
-				say "[BigNameDesc of M] makes you wear a [bondage-corset]!";
-				let K be a random off-stage specific-key;
-				if K is specific-key:
-					compute M locking bondage-corset with K;
-				otherwise:
-					say "[big he of M] clicks the lock shut.";
-					now bondage-corset is locked;
-			otherwise:
-				compute default angry punishment of M.
-
 To say angry punishment insult of (M - a royal guard):
 	say "[speech style of M][one of]'How dare you! This will not go unpunished!'[or]'Ungrateful wench! You will learn to value my mercy!'[or]'You ungrateful slut!'[or]'Do not believe for a moment that this will go unpunished!'[or]'Shameful whore! You will learn to respect my mercy!'[or]'Disrespectful harlot!'[in random order][roman type][line break]".
 
@@ -1345,14 +1357,10 @@ Definition: prison guard is eager to donate babywear:
 To compute babywear donation of (M - prison guard):
 	say "[speech style of M]'This will keep you under control until your sentence is over.'[roman type][line break]";
 	say "[BigNameDesc of M] straps a [MediumDesc of purple-baby-reins] over your body and diaper!";
-	summon purple-baby-reins uncursed;
+	summon purple-baby-reins locked;
 	say FullExamineDesc of purple-baby-reins;
 	say BabywearDonationReaction of M on purple-baby-reins;
-	let K be a random off-stage specific-key;
-	if K is a thing:
-		compute M locking purple-baby-reins with K;
-	otherwise:
-		now purple-baby-reins is locked;
+	compute M keylocking purple-baby-reins;
 	say "[speech style of M]'Be a well-behaved convict for us, and we'll let you out soon enough.'[roman type][line break]";
 	satisfy M.
 
@@ -1582,11 +1590,11 @@ To say FriendlySexReleaseRefusalSpeech of (M - a royal guard):
 	otherwise if the player is not able to speak:
 		say "[speech style of M]'[one of]Quiet down! I'm enjoying this![or]Stop squirming [if the class of the player is princess]princess[otherwise if the size of penis > 3]boy[otherwise]miss[end if], you will hurt yourself.'[or]I couldn't understand that, but we can talk about it when I am finished.'[at random][roman type][line break]";
 	otherwise if the class of the player is princess:
-		let B be a random off-stage small ballgag;
-		if B is nothing, now B is a random off-stage large ballgag;
-		if B is ballgag, summon B locked;
+		let B be small-ballgag;
+		if B is on-stage, now B is large-ballgag;
+		if B is off-stage, summon B locked;
 		say "[speech style of M]'[one of]My apologies, princess, but I have been waiting too long for this moment.'[or]I can't hold back now that I've had a taste of your body, my princess.'[or]Today, princess, you work for me.'[or]My apologies, princess, but I have watched you flaunt your whorish body for long enough.'[at random][roman type][line break]";
-		if B is ballgag, say "[BigNameDesc of M] fishes out a ballgag and fastens it to your mouth[if the relevant sex addiction of M < 8], silencing your indignant protests[end if]. ";
+		if B is worn, say "[BigNameDesc of M] fishes out a ballgag and fastens it to your mouth[if the relevant sex addiction of M < 8], silencing your indignant protests[end if]. ";
 		say "It doesn't seem like [he of M] intends to follow your orders anymore...";
 		anger M;
 		now M is not friendly-fucking;

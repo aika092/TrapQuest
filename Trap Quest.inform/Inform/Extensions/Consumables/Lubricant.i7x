@@ -1,6 +1,6 @@
 Lubricant by Consumables begins here.
 
-A lubricant is a kind of collectible. There are 4 lubricants. Understand "lube" or "baby oil" or "oil" as lubricant. The printed name of lubricant is "[TQlink of item described][item style][lubricant][TQxlink of item described][verb-desc of the item described][shortcut-desc][roman type]". The printed plural name of lubricant is "[TQlink of item described][item style][lubricant]s[TQxlink of item described][verb-desc of the item described][shortcut-desc][roman type]". The text-shortcut of lubricant is "lu".
+A lubricant is a kind of collectible. There are 4 lubricants. Understand "lube", "slut lube", "baby oil", "oil" as lubricant. The printed name of lubricant is "[TQlink of item described][item style][lubricant][TQxlink of item described][verb-desc of the item described][shortcut-desc][roman type]". The printed plural name of lubricant is "[TQlink of item described][item style][lubricant]s[TQxlink of item described][verb-desc of the item described][shortcut-desc][roman type]". The text-shortcut of lubricant is "lu".
 
 The inventoryFocusPriority of a lubricant is -20.
 
@@ -15,9 +15,7 @@ To say ExamineDesc of (B - a lubricant):
 	if diaper focus is 1:
 		say "A small bottle of baby oil, with a crude drawing of a cloth diaper on the front. Though it's usually used to make baby's skin softer, you can also apply this to an orifice to make it slippery and less likely to get sore.";
 	otherwise:
-		say "A small bottle of water-based lubricant, with a crude drawing of a strawberry on the front. You can apply this to an orifice to make it slippery and less likely to get sore.".
-
-Figure of lubricant is the file "Items/Collectibles/lube1.png".
+		say "A small douche of oil-based lubricant, which rather embarrassingly says 'SLUT LUBE' in big white letters on the side. Even worse, because it's a liquid, it can't be hidden inside your bag of holding. You can apply this to an orifice to make it slippery and less sore.".
 
 To decide which figure-name is the examine-image of (C - a lubricant):
 	decide on figure of lubricant.
@@ -25,7 +23,7 @@ To decide which figure-name is the examine-image of (C - a lubricant):
 To decide which number is the crafting key of (C - a lubricant):
 	decide on 35.
 
-Lubricant has a number called timer. The timer of lubricant is usually 0.
+lubricant has a number called timer. The timer of lubricant is usually 0.
 
 To say ShortDesc of (C - a lubricant):
 	say lubricant.
@@ -33,10 +31,10 @@ To say ShortDesc of (C - a lubricant):
 To say lubricant:
 	if diaper focus is 1:
 		say "baby oil";
-	otherwise if the bimbo of the player < 8:
+	otherwise if player is not a pervert:
 		say "lubricant";
 	otherwise:
-		say "lube".
+		say "slut lube".
 
 Lubing is an action applying to one thing.
 Check lubing:

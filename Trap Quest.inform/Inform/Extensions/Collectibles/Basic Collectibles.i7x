@@ -28,7 +28,7 @@ To decide which figure-name is the examine-image of (C - fertility idol):
 	decide on figure of fertility idol.
 
 To say ExamineDesc of (C - fertility idol):
-	say "A small stone carving of a woman with insanely large breasts and buttocks.".
+	say "A heavy stone carving of a woman with insanely large breasts and buttocks.".
 
 Definition: fertility idol is ingredient: decide no.
 Definition: fertility idol is immune to change: decide yes.
@@ -71,7 +71,7 @@ Part - Ectoplasm
 
 [Ectoplasm can be applied to clothing or (maybe) applied to implants with artificial enhancements enabled.]
 
-An ectoplasm is a kind of collectible. The printed name of ectoplasm is "[TQlink of item described]wad of slime[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of ectoplasm is "ect". There are 5 ectoplasms. Understand "ecto", "plasm", "slime", "ectoplasm", "wad" as ectoplasm.
+An ectoplasm is a kind of collectible. The printed name of ectoplasm is "[TQlink of item described]wad of slimy ectoplasm[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of ectoplasm is "ect". There are 5 ectoplasms. Understand "ecto", "plasm", "slime", "slimy", "ectoplasm", "wad", "wad of" as ectoplasm.
 
 Figure of ectoplasm is the file "Items/Collectibles/ectoplasm1.jpg".
 To decide which figure-name is the examine-image of (E - an ectoplasm):
@@ -127,20 +127,35 @@ To oil (C - a clothing) with (S - an charged-slime):
 	destroy S;
 	now the magic-type of C is wizardry.
 
-Part - ID Card
+Part - ID Cards
 
-id-card is a collectible. The printed name of id-card is "[TQlink of item described]ID card[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of id-card is "idc". Understand "id", "card" as id-card.
+An id-card is a kind of collectible.
 
-Figure of id-card is the file "Items/Collectibles/idcard1.png".
-Figure of female id-card is the file "Items/Collectibles/idcard2.png".
-To decide which figure-name is the examine-image of (E - id-card):
-	if lady fetish is 1, decide on figure of female id-card;
-	decide on figure of id-card.
+Definition: an id-card is ingredient: decide no.
 
-Definition: id-card is ingredient: decide no.
+mechanic-id-card is an id-card. The printed name of mechanic-id-card is "[TQlink of item described]Mechanic's ID card[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of mechanic-id-card is "midc". Understand "mechanic's", "id", "card" as mechanic-id-card.
 
-To say ExamineDesc of (B - id-card):
-	say "The mechanic's id-card.".
+Figure of mechanic-id-card is the file "Items/Collectibles/idcard1.png".
+Figure of female mechanic-id-card is the file "Items/Collectibles/idcard2.png".
+To decide which figure-name is the examine-image of (E - mechanic-id-card):
+	if lady fetish is 1, decide on figure of female mechanic-id-card;
+	decide on figure of mechanic-id-card.
+
+To say ExamineDesc of (B - mechanic-id-card):
+	say "The mechanic's ID card.".
+
+demonic-id-card is an id-card. The printed name of demonic-id-card is "[TQlink of item described]fire card[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of demonic-id-card is "fc". Understand "fire", "card" as demonic-id-card.
+
+Figure of demonic-id-card is the file "Items/Collectibles/idcard3.png".
+To decide which figure-name is the examine-image of (E - demonic-id-card):
+	decide on figure of demonic-id-card.
+
+To say ExamineDesc of (B - demonic-id-card):
+	say "Shaped like a playing card, the image on the front represents hellfire. Perhaps it can be used like an ID card somewhere?".
+
+Definition: demonic-id-card is demonic: decide yes.
+Definition: demonic-id-card is red themed: decide yes.
+Definition: demonic-id-card is fire themed: decide yes.
 
 
 Part - Infernal Gem
@@ -846,15 +861,15 @@ To decide which figure-name is the examine-image of (T - VIP-card):
 To say ShortDesc of (T - VIP-card):
 	say "VIP card".
 To decide which number is the bartering value of (T - VIP-card) for (M - shopkeeper):
-	decide on 4.
+	decide on 8.
 To say MonsterOfferAcceptFlav of (M - shopkeeper) to (T - VIP-card):
 	say "[speech style of M]'Oh my god! One of the only things I've ever wanted that money can't buy. Thank you so much!'[roman type][line break]".
 To decide which number is the bartering value of (T - VIP-card) for (M - pimp):
-	decide on 2.
+	decide on 8.
 To say MonsterOfferAcceptFlav of (M - pimp) to (T - VIP-card):
 	say "[speech style of M]'Oh, you found this? Thank you for giving it back to me. I wouldn't want it to fall into the hands of someone who I hadn't personally given it to.'[roman type][line break]".
 To decide which number is the bartering value of (T - VIP-card) for (M - a patron):
-	decide on 2.
+	decide on 8.
 To say MonsterOfferAcceptFlav of (M - a monster) to (T - VIP-card):
 	say "[speech style of M]'Oh YES! I've always wanted one of these!'[roman type][line break]".
 To compute final resolution of (M - a monster) taking (T - VIP-card):

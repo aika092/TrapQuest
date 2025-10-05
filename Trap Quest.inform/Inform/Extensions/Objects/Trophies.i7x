@@ -235,7 +235,7 @@ A magic consequences rule (this is the trophy magic consequence rule):
 			say "Less of your magic power is depleted than normal. But at the same time, you feel an egg manifest itself inside your womb!";
 			WombFill 1 medium eggs;
 			if the number of egg-fathering things penetrating vagina is 0:
-				if mythical creatures fetish is 1 and buzzing giant wasp is not listed in the medium-egg-origins of vagina, add buzzing giant wasp to the medium-egg-origins of vagina;
+				if mythical creature fetish is 1 and buzzing giant wasp is not listed in the medium-egg-origins of vagina, add buzzing giant wasp to the medium-egg-origins of vagina;
 				otherwise add the throne to the medium-egg-origins of vagina;
 		otherwise:
 			say "Less of your magic power is depleted than normal. But at the same time, you feel ";
@@ -243,7 +243,7 @@ A magic consequences rule (this is the trophy magic consequence rule):
 				say "an egg manifest itself inside your belly!";
 				AssFill 1 medium eggs;
 				if the number of egg-fathering things penetrating asshole is 0:
-					if mythical creatures fetish is 1 and buzzing giant wasp is not listed in the medium-egg-origins of vagina, add buzzing giant wasp to the medium-egg-origins of vagina;
+					if mythical creature fetish is 1 and buzzing giant wasp is not listed in the medium-egg-origins of vagina, add buzzing giant wasp to the medium-egg-origins of vagina;
 					otherwise add the throne to the medium-egg-origins of vagina;
 			otherwise if enema fetish is 0:
 				say "some water appear inside your stomach!";

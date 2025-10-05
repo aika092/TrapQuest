@@ -50,6 +50,7 @@ To compute common boredom of (M - a monster) for (N - a number) seconds:
 	now M is not tickle-testing;
 	now M is not diaperMessReacted;
 	now the dismissRefused of M is 0;
+	if the times-warned of M > 1, now the times-warned of M is 1;
 	reset orifice selection of M; [Otherwise they would be biased towards doing the same thing again, which is lame.]
 	repeat with K running through things rejected by M:
 		now M is not rejecting K;
@@ -301,10 +302,12 @@ To orgasm bore (M - a monster) for (N - a number) seconds:
 
 To orgasm satisfy (M - a monster):
 	orgasm M;
+	if M is bondage applier and the favour of M < the aggro limit of M, compute bondage application check of M;
 	satisfy M.
 
 To orgasm satisfy (M - a monster) for (N - a number) seconds:
 	orgasm M;
+	if M is bondage applier and the favour of M < the aggro limit of M, compute bondage application check of M;
 	satisfy M for N seconds.
 
 To orgasm dislodge (M - a monster):

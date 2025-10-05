@@ -126,6 +126,7 @@ Definition: a monster is condom prepared: [Does he have condoms on him?]
 Definition: a monster (called M) is enjoys sex:
 	if M is willing to do anal or M is willing to do vaginal or M is willing to do oral or M is willing to do titfucks, decide yes;
 	decide no.
+Definition: a monster is a bondage applier: decide no. [Do they sometimes apply bondage before and/or after punishing you?]
 Definition: a monster is wrangling-while-kneeling: decide no. [For use if there's NPCs that need to maintain their wrangles when the players gets on their knees.]
 A monster has an object called chosen-orifice. The chosen-orifice of a monster is usually nothing.
 [The following rules are what command the monster's behaviour in combat and sex.]
@@ -152,6 +153,7 @@ A monster has a rule called the monster friendly convinced rule. The monster fri
 The default monster insertion rules is a rulebook. A monster has a rulebook called insertion rules. The insertion rules of a monster is usually the default monster insertion rules.
 The default monster attack rules is a rulebook. A monster has a rulebook called attack rules. The attack rules of a monster is usually the default monster attack rules.
 A monster has a number called collar-pulled.
+A monster has a number called times-warned. [The NPC warns the player that they're going to get punished if they keep resisting]
 A monster has a rule called the pullstring rule. The pullstring rule of a monster is usually the default pullstring rule.
 A monster has a number called blue-balls. [A value increased by initiating friendly sex then stopping early, or by seducing. Resets to 0 on orgasm.]
 To decide which number is the blue-balls-limit of (M - a monster):

@@ -41,7 +41,7 @@ To deploy stashes:
 	let X be a random stash;
 	if a random number between 1 and 10 <= 8, now X is stash-tentacled.
 
-Figure of dungeon stash is the file "Env/Dungeon/stash1.jpg".
+[Figure of dungeon stash is the file "Env/Dungeon/stash1.jpg".]
 Figure of woods stash is the file "Env/Forest/stash1.jpg".
 Figure of mansion stash is the file "Env/Mansion/stash1.jpg".
 Figure of hotel stash is the file "Env/Hotel/stash1.jpg".
@@ -51,7 +51,7 @@ To decide which figure-name is the examine-image of (C - a stash):
 	if C is stash-tentacled and C is unstashed:
 		decide on figure of tentacle pit stash;
 	otherwise if C is dungeon-stash:
-		decide on figure of dungeon stash;
+		decide on figure of mansion stash;
 	otherwise if C is woods-stash:
 		decide on figure of woods stash;
 	otherwise if C is mansion-stash:

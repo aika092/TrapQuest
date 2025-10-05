@@ -153,10 +153,10 @@ This is the shoes stockings clash rule:
 The shoes stockings clash rule is listed in the stockings wearability rules.
 
 This is the leg covering stockings clash rule:
-	if wearing-target is stockings:
+	if wearing-target is stockings and wearing-target is not socks:
 		repeat with O running through worn usually ankle covering clothing:
 			if O is not skirted or (O is not slitted and summoning is 0 and O is not crotch-displaced):
-				if summoning is 0 and autowear is false, say "You can't wear that over the [O]!";
+				if summoning is 0 and autowear is false, say "You can't wear that [if O is skirted]without first displacing[otherwise]over[end if] the [O]!";
 				rule fails;
 		repeat with O running through worn exclusive usually thigh covering unskirted clothing:
 			if summoning is 0 and autowear is false, say "You can't wear that at the same time as the [O]!";
@@ -670,12 +670,12 @@ To compute virginity-loss of (S - sheer-stockings):
 	now the quest of S is birth-quest;
 	say "Your [ShortDesc of S] is surrounded by a dark glow! It's now a [S]! [QuestFlav of S]".
 
-A black-and-yellow striped stockings is a kind of stockings. There is 1 black-and-yellow striped stockings. A black-and-yellow striped stockings is unique. A black-and-yellow striped stockings is usually biological. A black-and-yellow striped stockings is usually dense. The printed name of black-and-yellow striped stockings is "[clothing-title-before]black and yellow striped stockings[clothing-title-after]". The text-shortcut of black-and-yellow striped stockings is "bys". Understand "black", "black and yellow", "yellow" as black-and-yellow striped stockings.
+A black-and-yellow striped stockings is a kind of stockings. There is 1 black-and-yellow striped stockings. A black-and-yellow striped stockings is unique. A black-and-yellow striped stockings is usually velvet. A black-and-yellow striped stockings is usually dense. The printed name of black-and-yellow striped stockings is "[clothing-title-before]black and yellow striped stockings[clothing-title-after]". The text-shortcut of black-and-yellow striped stockings is "bys". Understand "black", "black and yellow", "yellow" as black-and-yellow striped stockings.
 
 Definition: a black-and-yellow striped stockings is yellow themed: decide yes.
 Definition: a black-and-yellow striped stockings is black themed: decide yes.
 Definition: a black-and-yellow striped stockings is usually at least partially thigh covering: decide no.
-Definition: a black-and-yellow striped stockings is ankle covering: decide no.
+Definition: a black-and-yellow striped stockings is ankle covering: decide yes.
 
 To decide which figure-name is clothing-image of (C - a black-and-yellow striped stockings):
 	decide on figure of black-and-yellow striped stockings.
@@ -683,7 +683,7 @@ To decide which figure-name is clothing-image of (C - a black-and-yellow striped
 Figure of black-and-yellow striped stockings is the file "Items/Clothes/Lower/Legs/stripedstockings1.png".
 
 To say ClothingDesc of (C - a black-and-yellow striped stockings):
-	say "Fuzzy black and yellow knee-length stockings[if the class of the player is broodmother]. They feel like they've become somewhat hard, and their tops fade into your skin[end if].".
+	say "Fuzzy black and yellow knee-length stockings[if C is biological]. They feel like they've become somewhat hard, and their tops fade into your skin[end if].".
 
 To say ShortDesc of (C - a black-and-yellow striped stockings):
 	say "pair of striped stockings".
@@ -691,6 +691,24 @@ To say ShortDesc of (C - a black-and-yellow striped stockings):
 Definition: a black-and-yellow striped stockings is transformation-protected:
 	if the class of the player is broodmother, decide yes;
 	decide no.
+
+Definition: a black-and-yellow striped stockings (called C) is destructible:
+	if C is biological, decide no;
+	decide yes.
+
+Definition: a black-and-yellow striped stockings (called C) is removable:
+	if C is biological, decide no;
+	decide yes.
+
+To compute periodic effect of (C - a black-and-yellow striped stockings):
+	if the class of the player is broodmother:
+		now the raw-magic-modifier of C is total-wasps / 50;
+		if total-wasps < 50 and C is biological:
+			say "[bold type]You look down as [ShortDesc of C] your shiny carapace softens and finally detaches from your skin, reverting into clothing.[roman type][line break]";
+			now C is velvet;
+		otherwise if total-wasps >= 50 and C is velvet:
+			say "[bold type]You look down in shock as [ShortDesc of C] merges into your skin, turning it hard, black and shiny like a carapce. Fine black and yellow fuzz now grows directly out of your skin![roman type][line break]";
+			now C is biological.
 
 A red-and-white striped stockings is a kind of stockings. There is 1 red-and-white striped stockings. A red-and-white striped stockings is usually biological. A red-and-white striped stockings is usually dense. The printed name of red-and-white striped stockings is "[clothing-title-before]red and white striped stockings[clothing-title-after]". The text-shortcut of red-and-white striped stockings is "rws". Understand "red", "red and white", "white" as red-and-white striped stockings.
 

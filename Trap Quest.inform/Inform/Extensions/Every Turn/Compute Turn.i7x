@@ -698,7 +698,10 @@ To Compute Instinctive Actions:
 	if another-turn is 0 and the player is in Dungeon31, compute podium action;
 	if another-turn is 0, Compute Broken Actions.
 
+compulsion-tick is a number that varies.
+
 To Compute Compulsions:
+	decrease compulsion-tick by 1;
 	let CNDL be the list of carried candy;
 	if the number of entries in CNDL > 0 and the trophy-mode of candy-trophy is 1 and the number of worn gags is 0 and the player is able to eat and the player is able to use their hands:
 		let CND be entry 1 in CNDL;
@@ -754,7 +757,19 @@ To Compute Compulsions:
 					decrease the traitor-hypno of hypno-lesson by 1;
 					say "Something inside you urges you to [second custom style]help your friend[roman type].";
 					compute urinal use;
-					now another-turn is 1.
+					now another-turn is 1;
+		if another-turn is 0 and compulsion-tick <= 0 and refractoryperiod <= 0 and glittery-wand is worn and the player is not immobile and the player is able to use their hands and ((playerRegion is school and wand-delivery-event is event-started) or glittery-wand is cursed):
+			now compulsion-tick is a random number between 1 and 4;
+			if playerRegion is not school, now compulsion-tick is a random number between 10 and 25;
+			say "[bold type]Suddenly, the cursed glittery wand sends a magical compulsion down your arm! [roman type]";
+			now another-turn is 1;
+			let BP be vagina;
+			if the largeness of breasts > 1 and a random number between 1 and 3 is 1, now BP is breasts;
+			if BP is vagina and the player is not possessing a vagina:
+				if the player is possessing a penis, now BP is penis;
+				otherwise now BP is breasts;
+			say "You find yourself pressing the wand against your [variable BP][one of]! The magically empowered vibrations travel down into your skin, sending sparks of delight through your body[or][stopping]![line break][variable custom style][one of]What the fuck?! It's cursed?! Aaaah![or][one of]Oh fuck, it's so strong![or]Oh god...[or]Haaaaah![then at random][stopping][roman type][line break]";
+			stimulate BP from glittery-wand.
 
 Report TQEating candy:
 	now another-turn-stored-action is waiting. [This is a little hacky but allows the player to automatically eat the same candy twice in a row in super unusual circumstances, rather than falsely triggering the failsafe that stops the game getting into a loop with the player trying to eat the same candy every turn but being actually unable to.]

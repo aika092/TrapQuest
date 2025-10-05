@@ -246,6 +246,13 @@ This is the neuromancer unique punishment rule:
 	if the rule succeeded, rule succeeds.
 The unique punishment rule of neuromancer is the neuromancer unique punishment rule.
 
+This is the neuromancer sissification rule:
+	if the player is gendered male and a random number between 1 and 2 is 1:
+		let M be neuromancer;
+		say "[speech style of M]'Don't you know [if the health of M < the maxhealth of M]I beat you with techniques that only work on girls, [otherwise]you have a girl's brain, [end if]nya~!'[roman type][line break][BigNameDesc of M][']s words reverberate in your head.[line break][variable custom style]R.. right... I'm more like a girl...[roman type][line break]";
+		compute sissification.
+The neuromancer sissification rule is listed in the neuromancer unique punish rules.
+
 This is the neuromancer short skirt summon rule:
 	let S be a random worn skirted clothing;
 	if S is a destructible clothing or (S is nothing and the number of worn unskirted themed clothing is 0):
@@ -329,8 +336,6 @@ This is the neuromancer panties destruction rule:
 		satisfy neuromancer;
 		rule succeeds.
 The neuromancer panties destruction rule is listed in the neuromancer unique punish rules.
-
-
 
 
 To say MindingOwnBusinessCombatFlav of (M - neuromancer): [Your NPC was minding their own business and not even looking at the player when they attacked]
@@ -441,8 +446,35 @@ To penetration dominate (M - neuromancer):
 	otherwise:
 		say "[line break][speech style of M]'Nya, you're putting it in my nyasshole too? It's too biiiig~'[roman type][line break][big he of M] squeals, gasping and moaning as if you've already begun to fuck [him of M]. You try to *actually* fuck [him of M], but [he of M] manages to slip [his of M] tail from your grasp at the perfect moment and make you grind your [SexShaft] against [his of M] buttcheeks. All bets are off from there, your continued efforts eventually resulting in your [load] being blown into [his of M] asscrack.";
 		now player-fucking is DOMINANT-SHAMEFUL;
+	say AfterDominationComment 2 of M;
 	orgasm;
-	AnalGet;
+	AnalGet.
+
+To facesit dominate (M - neuromancer):
+	let F be asshole;
+	if the player is possessing a vagina, now F is vagina;
+	let C be a random worn bottom level protection clothing;
+	say "You [if the player is wrist bound]dive for[otherwise]grab for[end if] [NameDesc of M]'s tail, successfully snatching it [if the player is wrist bound]between your teeth. [otherwise]with your fist. [end if][big his of M] head bumps up against your [if F is vagina]crotch[otherwise]butt[end if] as [he of M] yowls and arches [his of M] back, and you trap [his of M] face with your thighs.[line break][speech style of M]'NYAAAOOW, m-my tail! Nya have to let go of my tail!'[roman type][line break]";
+	if the semi-dominance roll for M >= 0:
+		say "You release [him of M] right away, and [his of M] eyes flicker with mischief as [he of M] smoothes out [his of M] tail.[line break][speech style of M]'So nyice of you~! Nya, I guess I'll let you remember all the cool sex stuff we totally just did![roman type][line break][BigNameDesc of M] shoots a pink bolt into your chest, and suddenly you remember having sex with [him of M] in all sorts of positions (all with [him of M] on top), and at the end, you even remember climaxing! Wow, that sure was great... though it feels kind of like you lost somehow.";
+		now player-fucking is DOMINANT-SHAMEFUL;
+		slightDignify;
+		passively stimulate F times 2;
+		if F is vagina, VaginalSexAddictUp 1;
+		otherwise AnalSexAddictUp 1;
+		say AfterDominationComment 1 of M;
+	otherwise:
+		say "You think for a moment before releasing [his of M] tail, but NOT [his of M] face.[line break][speech style of M]'Nya, fine.'[roman type][line break][BigNameDesc of M] grumbles, [his of M] tail swishing in agitation as [his of M] tongue skillfully strokes your [if F is vagina]folds. [otherwise]ring. [end if][big he of M] REALLY knows what [he of M]'s doing, and within moments, you are moaning as you [if F is vagina]squirt all over[otherwise]climax against[end if] [his of M] face.";
+		moderateDignify;
+		orgasm;
+		say AfterDominationComment 2 of M;
+	LickGet.
+
+To say AfterDominationComment (N - a number) of (M - unicorn):
+	if N is 1:
+		say "[speech style of M]'[one of]Nya, see you later!'[or]That was fun, wasn't it, nya?'[or]Nyaahh, that felt sooo good!'[in random order][roman type][line break]";
+	otherwise if N is 2:
+		say "[speech style of M]'[one of]Nya, you're so mean!'[or]Nya, meanie!'[or]Nya, I'll remember this!'[in random order][roman type][line break]".
 
 Part 5 - DQ
 

@@ -104,4 +104,87 @@ To uniquely set up (C - rubber-baby-bonnet):
 	if matron is alive, now the quest of C is matron-obey-quest;
 	now the quest of C is adult-baby-quest.
 
+
+Part - Berri Clip
+
+gold-hairclip is a headgear. gold-hairclip is latex. The text-shortcut of gold-hairclip is "ghc".
+
+Figure of gold hairclip is the file "Items/Accessories/Head/goldclip1.jpg".
+
+To decide which figure-name is the clothing-image of (C - gold-hairclip):
+	decide on figure of gold hairclip.
+
+To say ClothingDesc of (H - gold-hairclip):
+	say "A tiny unassuming gold hairclip. You sense that it carries within it, a great [']destiny['].".
+
+To decide which number is the initial cringe of (H - gold-hairclip):
+	decide on 1.
+
+Report wearing gold-hairclip:
+	if the player is sexed male:
+		say "Your hair transforms into a short brown bob with a cute tuft of purple at the front! Your whole body suddenly goes numb, then is filled with an almost electric tingle. You feel terrible wrenching from your insides that you're sure should hurt, but you just don't seem to be able to feel much of anything right now. The tingling comes to a focus in your crotch, filling you with a sense of terrible foreboding. [if the player is possessing a penis]As feeling comes back to you, you reach down and can immediately tell you're missing something kind of notable: your [player-penis]![otherwise]As feeling comes back to you, you reach down with a sense of foreboding.[end if]";
+		SexChange the player;
+	say "[second custom style]My name is Berri![roman type][line break]A voice says from inside your head.[line break][second custom style]Gosh, I sure hope nothing dramatic, unfortunate and embarrassing happens to me here![roman type][line break]You sense that [bold type]it will be much harder, and sometimes impossible, to change your outfit, [roman type]and you feel drawn to wander this world, until you encounter whatever Berri's story has in store for her...";
+	mapcutshow Figure of woman 1 for stripy-blue-dress.
+
+To compute class outfit of (H - gold-hairclip):
+	unless there is a worn berri-dress:
+		pinkWardrobeUnclash stripy-blue-dress;
+		class summon stripy-blue-dress;
+	if stripy-blue-dress is worn:
+		if the number of worn diaper is 0:
+			pinkWardrobeUnclash plain-white-briefs;
+			class summon plain-white-briefs;
+		class summon magic pistol.
+
+Definition: gold-hairclip (called C) is removal-blocking:
+	if wearing-target is berri-dress, decide yes;
+	decide no.
+
+To say RemovalBlocked of (C - gold-hairclip):
+	say "Your [ShortDesc of C] is somehow preventing you from taking this off! It doesn't want you to look less like [']Berri[']!".
+
+Check wearing gold-hairclip:
+	if armband is worn, say "[BigNameDesc of gold-hairclip] doesn't seem to want you to wear it at the same time as [NameDesc of armband]! You've got to decide if you want to remain as the main character, or take on the role of a supporting character instead..." instead.
+
+berri-quest is a headgear-clothing-quest. berri-quest has a number called berri-completions.
+
+To uniquely set up (C - gold-hairclip):
+	now the quest of C is berri-quest.
+
+To say QuestFlav of (Q - berri-quest):
+	say "You sense that it wants you to seek out your prescribed story beats as the cute, haphazard and constantly unlucky girl known as [']Berri['].".
+
+To say QuestTitle of (Q - berri-quest):
+	say " (Berri scene quest)".
+
+To compute persistent reward of (Q - berri-quest) on (C - a clothing):
+	compute generic first time class reward of Q on C.
+
+To compute generic first time class reward of (Q - berri-quest) on (C - a clothing):
+	let D be a random off-stage plentiful ring;
+	if D is ring:
+		if the berri-completions of Q > 8:
+			now D is solid gold;
+		otherwise if the berri-completions of Q > 6:
+			now D is pure diamond;
+		otherwise if the berri-completions of Q > 4:
+			now D is pink diamond;
+		otherwise if the berri-completions of Q > 2:
+			now D is ruby;
+		otherwise if the berri-completions of Q > 0:
+			now D is emerald;
+		otherwise:
+			now D is sapphire;
+		set shortcut of D;
+		if D is actually summonable:
+			summon D;
+		otherwise:
+			now D is in the location of the player;
+		say "summoning a [MediumDesc of D] [if D is worn]straight onto your finger[otherwise]right in front of you[end if]! [GotLuckyFlav]";
+	otherwise:
+		compute generic second time class reward of Q on C;
+	increase the berri-completions of Q by 1.
+
+
 Baby Bonnet ends here.

@@ -328,8 +328,8 @@ Definition: yourself is gagging for cock:
 	if the rule succeeded, decide yes;
 	decide no.
 
-A gagging for cock rule (this is the extremely horny players need cock rule):
-	if the player is extremely horny, rule succeeds.
+[A gagging for cock rule (this is the extremely horny players need cock rule):
+	if the player is extremely horny, rule succeeds.]
 
 [!<TheNotHornyEnoughToWankRule>+
 

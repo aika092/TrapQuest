@@ -1,6 +1,6 @@
 Pom Poms by Equippables begins here.
 
-A pom-pom is a kind of big-gloves. A pom-pom is unique. A pom-pom is womanly. A pom-pom is usually pvc. Understand "pom", "poms" as pom-pom. A pom-pom has a number called charge.
+A pom-pom is a kind of big-gloves. A pom-pom is unique. A pom-pom is womanly. A pom-pom is usually pvc. Understand "pom", "poms", "pair of" as pom-pom. A pom-pom has a number called charge.
 
 Definition: a pom-pom is class-relevant:
 	if the class of the player is cheerleader, decide yes;
@@ -10,7 +10,7 @@ To say ClassSummonFlav of (P - a pom-pom):
 	say "A pair of [MediumDesc of P] appear to cover your hands![line break][variable custom style][if P is purple-pom-pom]I guess I shouldn't be surprised.[otherwise]ARE YOU SERIOUS?![end if][roman type][line break]".
 
 To say ShortDesc of (C - a pom-pom):
-	say "pom-poms".
+	say "pair of pom-poms".
 To say MediumDesc of (C - a pom-pom):
 	say "pair of pom-poms".
 
@@ -49,7 +49,7 @@ To compute attack effect of (E - a pom-pom):
 		if a random number between 1 and 4 is 1, FatigueDown 5;
 		FatigueDown 2.
 
-purple-pom-pom is a pom-pom. The printed name of purple-pom-pom is "[clothing-title-before]purple pom-poms[clothing-title-after]". Understand "purple" as purple-pom-pom. The text-shortcut of purple-pom-pom is "pom".
+purple-pom-pom is a pom-pom. The printed name of purple-pom-pom is "[clothing-title-before]pair of purple pom-poms[clothing-title-after]". Understand "purple" as purple-pom-pom. The text-shortcut of purple-pom-pom is "pom".
 
 Definition: purple-pom-pom is purple themed: decide yes.
 
@@ -80,7 +80,7 @@ To compute periodic effect of (C - purple-pom-pom):
 		now the empty condoms of C is 0;
 		transform C into condom-pom-pom.
 
-condom-pom-pom is a pom-pom. The printed name of condom-pom-pom is "[clothing-title-before]used condom pom-poms[clothing-title-after]". Understand "used", "condom" as condom-pom-pom. The text-shortcut of condom-pom-pom is "cpom".
+condom-pom-pom is a pom-pom. The printed name of condom-pom-pom is "[clothing-title-before]pair of used condom pom-poms[clothing-title-after]". Understand "used", "condom" as condom-pom-pom. The text-shortcut of condom-pom-pom is "cpom".
 
 To compute class set up of (C - condom-pom-pom):
 	now C is cursed.

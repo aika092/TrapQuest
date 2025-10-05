@@ -342,7 +342,7 @@ To check glue tripping:
 					increase the stickiness of the player by a random number between 1 and MoreStick;
 					[They were already glued: now they're glued more!]
 					if N > GS + BaseDiff + HeelsDiff:
-						say "[one of]Oh, dear! Your [ShortHairDesc] has dipped into the glue and you feel tears rise as you realise you're now even more stuck to the ground![or]Oh no: your [ShortHairDesc] has fallen forward into the glue, too. This is terrible - you're even more firmly stuck![or]Damn this long hair - it's got stuck in the glue [i]again![/i][at random]";
+						say "[one of]Oh, dear! Your [MediumDesc of hair] has dipped into the glue and you feel tears rise as you realise you're now even more stuck to the ground![or]Oh no: your [MediumDesc of hair] has fallen forward into the glue, too. This is terrible - you're even more firmly stuck![or]Damn this long hair - it's got stuck in the glue [i]again![/i][at random]";
 					otherwise if N > GS + BaseDiff:
 						say "[one of]Bugger! Your [printed name of H] twists underfoot as you tried to get back to your feet, and slipped deeper into the glue.[or]You can't get your [printed name of H] under you to stand.[or]I think I would've gotten out then, if I was better at wearing high heels![at random]";
 					otherwise if N > GS:
@@ -353,7 +353,7 @@ To check glue tripping:
 				otherwise:
 					[Don't make it even harder if they're already weaker than the glue!]
 					if N > GS + BaseDiff + HeelsDiff:
-						say "[one of]Your [ShortHairDesc] dips towards the glue, but knowing how awful that would be, you desperately whip it aside at the last moment![or]Oh no: your [ShortHairDesc] falls forward. You almost strain your neck, wrenching your head back. Whew - that was close![or]Damn this long hair - it almost got stuck in the glue again![at random]";
+						say "[one of]Your [MediumDesc of hair] dips towards the glue, but knowing how awful that would be, you desperately whip it aside at the last moment![or]Oh no: your [MediumDesc of hair] falls forward. You almost strain your neck, wrenching your head back. Whew - that was close![or]Damn this long hair - it almost got stuck in the glue again![at random]";
 					otherwise if N > GS + BaseDiff:
 						say "[one of]Bugger! Your [printed name of H] twists underfoot as you try to get to your feet.[line break][variable custom style]No! I can't let that happen! [roman type][line break]You almost dislocate your hip, wrenching your leg back.[or]Your [printed name of H] almost slips further into the glue.[or]Drat! I would've escaped then, if I was better at wearing high heels![at random]";
 					otherwise if N > GS:
@@ -364,7 +364,7 @@ To check glue tripping:
 		otherwise:
 			[Remember, X = random # - ((GS + BaseDiff + HairDiff + HeelsDiff) / (TS + 1))]
 			if X < HairDiff:
-				say "Oh my goodness - my lovely [ShortHairDesc] almost brushed into the glue!";
+				say "Oh my goodness - my lovely [MediumDesc of hair] almost brushed into the glue!";
 			otherwise if X < (HairDiff + HeelsDiff):
 				say "Ooh, your heels wobbled so much you almost fell[if the player is glue stuck] further into the glue[end if], then!";
 			otherwise if X < (BaseDiff + HairDiff + HeelsDiff):

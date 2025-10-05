@@ -29,6 +29,8 @@ To decide which figure-name is the examine-image of (C - an ass hook):
 		otherwise decide on figure of hook cutscene 2;
 	otherwise if diaper quest is 0 and C is grabbing the player and the wedgie-target of C is knickers:
 		decide on figure of ass hook dungeon wedgie;
+	otherwise if the class of the player is berri and C is grabbing the player and the wedgie-target of C is knickers:
+		decide on figure of berri cutscene 6a;
 	otherwise:
 		decide on figure of ass hook.
 
@@ -100,6 +102,9 @@ To trigger (Y - an ass hook):
 				now Y is grabbing the player;
 				now the wedgie-target of Y is K;
 				say "It looks like you'll need to [bold type]pull[roman type] the hook to try and save your underwear, or you could [bold type]jump[roman type] if you are happy for them to be destroyed.";
+				if the class of the player is berri and the bladder of the player < 10:
+					say "[bold type]You suddenly feel a desperate need to pee![line break][BerriCutsceneFlav]";
+					progress quest of berri-quest;
 				[say "The hook continues to pull up with tremendous pressure until your [ShortDesc of K] are ripped from your butt crack and destroyed.";
 				destroy K;
 				if asshole is lewdly exposed and K is total protection and 11 is too humiliating, say "[variable custom style]Nooo! Now I'm practically naked![roman type][line break]";]
@@ -123,6 +128,10 @@ To trigger (Y - an ass hook):
 		now Y is penetrating asshole;
 		repeat with M running through reactive monsters:
 			say AssHookTrapReactFlav of M;
+		repeat with C running through worn skirted clothing:
+			if C is displacable and the back-skirt-length of C >= 3:
+				say "[BigNameDesc of C] has been pulled up, exposing your crotch!";
+				update appearance level;
 	if Y is penetrating asshole or Y is grabbing the player, now Y is revealed. [because wtf glitches I don't understand]
 
 To compute bra attempt of (Y - an ass hook):
@@ -200,7 +209,8 @@ To HookPull:
 						repeat with M running through reactive monsters:
 							say AssHookFuckTrapReactFlav of M;
 					otherwise:
-						PainUp 10;
+						if the class of the player is berri, PainUp 20;
+						otherwise PainUp 10;
 			otherwise:
 				say "You can't get a grip on the hook to pull it down at all. Keep pulling!";
 		[otherwise if sex fainting is 1:

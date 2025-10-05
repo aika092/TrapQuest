@@ -638,6 +638,25 @@ To ride dominate (M - bowsette):
 		orgasm M;
 		say AfterDominationComment 1 of M.
 
+To watersports dominate (M - bowsette):
+	let F be penis;
+	if player is not possessing a penis, now F is vagina;
+	say "You grab [NameDesc of M] by the front of [his of M] dress, spinning [him of M] around once... twice... three times before letting go. [Big he of M] slams into a [if playerRegion is Woods]tree.[otherwise]wall.[end if][line break][speech style of M]'Graah... I give up! You've defeated me, the queen of the- HEY!'[roman type][line break]You, deciding that [his of M] flapping mouth looks like a good target, smirk as you release a golden stream of piss into [his of M] mouth. [run paragraph on]";
+	let T be the temperament of M;
+	if T is 2:
+		say "[big he of M] snaps [his of M] mouth shut, but doesn't move out of the way, choosing to simply glower at you as your hot urine rolls down [his of M] chest.";
+		FavourDown M;
+		say AfterDominationComment 3 of M;
+	otherwise if T is 1:
+		say "[big he of M] gives you an exasperated look as [he of M] fully opens [his of M] mouth, allowing the rest of your stream to casade down the back of [his of M] tongue and into [his of M] belly.";
+		say AfterDominationComment 1 of M;
+	otherwise:
+		say "[big he of M] splutters and closes his mouth, but doesn't get out of the way, blushing a bit as your hot urine rolls down [his of M] chest.";
+		say AfterDominationComment 2 of M;
+	moderateDignify;
+	now the bladder of the player is 0;
+	SportsGet.
+
 To say AfterDominationComment (N - a number) of (M - bowsette):
 	let T be the temperament of M;
 	if T is 2:

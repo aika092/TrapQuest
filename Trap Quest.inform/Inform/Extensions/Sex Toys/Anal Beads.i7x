@@ -1,9 +1,18 @@
 Anal Beads by Sex Toys begins here.
 
-An anal beads is a kind of plug. The printed name of anal beads is usually "[clothing-title-before][PlugSize size of item described] anal beads[clothing-title-after]". The printed plural name of anal beads is usually "[clothing-title-before][PlugSize size of item described] sets of anal beads[clothing-title-after]". The text-shortcut of anal beads is "anb". There is 1 anal beads. An anal beads has a number called notches. An anal beads has a number called notch-taken. Understand "bead", "anal", "beads" as anal beads.
+An anal beads is a kind of plug. The printed name of anal beads is usually "[clothing-title-before][PlugSize size of item described] anal beads[clothing-title-after]". The text-shortcut of anal beads is "anb".  An anal beads has a number called notches. An anal beads has a number called notch-taken. Understand "bead", "anal", "beads" as anal beads.
+
+pink-anal-beads is an anal beads.
+
+To decide which number is the magic-modifier of (C - an anal beads):
+	let N be the calculated-magic-modifier of C;
+	if N <= 0, decide on N;
+	decide on (N * the notch-taken of C) / the notches of C.
 
 To compute unique summoning of (S - an anal beads):
-	now the notch-taken of S is the notches of S + (a random number between -1 and 0).
+	let F be a random fuckhole penetrated by S;
+	if F is a thing, now the size of S is the insertableGirthAcceptance of F;
+	now the notch-taken of S is the notches of S - (a random number between 0 and (the notches of S / 2)).
 
 To compute unique dislodging of (P - an anal beads):
 	now the notch-taken of P is 0.
@@ -82,7 +91,8 @@ To decide which figure-name is clothing-image of (C - an anal beads):
 	decide on figure of anal beads 10.
 
 To say ClothingDesc of (P - an anal beads):
-	say "A set of [the notches of P] [PlugSize size of P] pink beads, connected by a thin cord with a small hook at the end. [if the notch-taken of P is the notches of P]Every single one is currently up your ass. [otherwise if the notch-taken of P is 1]It is currently hanging from your ass.[otherwise if the notches of P > the notch-taken of P and the notch-taken of P > 0][the notch-taken of P] are currently up your ass. [end if][if the notch-taken of P > 1]It won't be easy to remove them all at once.[end if]".
+	say "A set of [the notches of P] [PlugSize size of P] pink beads, connected by a thin cord with a small hook at the end. [if the notch-taken of P is the notches of P]Every single one is currently up your ass. [otherwise if the notch-taken of P is 1]It is currently hanging from your ass.[otherwise if the notches of P > the notch-taken of P and the notch-taken of P > 0][the notch-taken of P] are currently up your ass. [end if][if the notch-taken of P > 1]It won't be easy to remove them all at once.[end if]";
+	if the magic-modifier of P < the calculated-magic-modifier of P, say "[bold type]You sense that you are not getting the full magic benefit of this item, due to not having all the beads inside.[roman type][line break]".
 
 To say ShortDesc of (P - an anal beads):
 	say "anal beads".
@@ -103,6 +113,7 @@ To compute toyInsertion of (S - an anal beads) into (F - a fuckhole):
 	unless S is penetrating F, now S is penetrating F;
 	if the notch-taken of S < the notches of S:
 		say "You manage to force in [oldN] bead[if oldN > 1]s[end if], before your sphincter involuntarily tightens up from its ordeal. Looks like you'll have to keep going if you want all of them in...";
+		focus-consider S;
 	otherwise:
 		say "You force the last [if oldN is 1]bead[otherwise][oldN] beads[end if] in, finally allowing your sphincter to relax.";
 	force clothing-focus redraw. [This forces the clothing window to redraw]

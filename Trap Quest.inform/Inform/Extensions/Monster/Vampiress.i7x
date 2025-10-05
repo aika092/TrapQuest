@@ -26,6 +26,10 @@ Definition: vampiress is wenchy: decide yes.
 Definition: vampiress is mansion dwelling: decide yes.
 
 Definition: vampiress is a generic-unlocker: decide yes.
+Definition: vampiress is a bondage applier: decide yes. [Do they sometimes apply bondage before and/or after punishing you?]
+Definition: vampiress is eager to warn angrily:
+	if it is classicly eager to warn angrily, decide yes; [Warns and punishes resistance during non-oral sex]
+	decide no.
 
 The text-shortcut of vampiress is "va".
 Understand "vampire", "seductive", "vamp" as vampiress.
@@ -793,7 +797,7 @@ To compute SelectionFrustrated of (M - vampiress):
 To compute SelectionWaiting of (M - vampiress): [She keeps waiting forever]
 	do nothing.
 
-To say NearingAnilingusResponse of (M - vampiress):
+To say NearingLickingResponse of (M - vampiress):
 	if the reaction of the player is 0:
 		say "[speech style of M]'[one of]Darling, you're supposed to suck them!'[or]My feet should be clean, shouldn't they?'[or]Lick it as much you want, darling!'[or]This is surprisingly boring...'[in random order][roman type][line break]";
 	otherwise:
@@ -806,6 +810,21 @@ To say NearingAnilingusResponse of (M - vampiress):
 	otherwise:
 		if M is intelligent, say "[speech style of M]'[one of]Oooh, darling[or]Your tongue is so deeep[or]You're doing such a good job[or]Don't be afraid to really *get in there*[in random order]~'[roman type][line break]";
 		otherwise say "It feels like [NameDesc of M] is nearly satisfied!";
+
+To say EnticeFlav of (M - vampiress) with (B - face):
+	say "[BigNameDesc of M]'s eyes glint, and you gasp as you suddenly wake up from a dream about sucking [his of M] [LongDickDesc of M] in your mouth.[line break][speech style of M]'[one of]Oho, how was it?'[or]What's wrong? Did you see something strange?'[or]Mmm, did you see the future?'[in random order][roman type][line break]".
+
+To say EnticeFlav of (M - vampiress) with (B - breasts):
+	say "[BigNameDesc of M]'s eyes glint, and you gasp as you suddenly wake up from a dream about pumping [his of M] [LongDickDesc of M] between your [BreastDesc]![line break][speech style of M]'[one of]Oho, how was it?'[or]What's wrong? Did you see something strange?'[or]Mmm, did you see the future?'[in random order][roman type][line break]".
+
+To say EnticeFlav of (M - vampiress) with (B - thighs):
+	say "[BigNameDesc of M]'s eyes glint, and you gasp as you suddenly wake up from a dream about [if M is eager to do anilingus]sucking [his of M] toes![otherwise]eating out [his of M] [asshole]![end if][line break][speech style of M]'[one of]Oho, how was it?'[or]What's wrong? Did you see something strange?'[or]Mmm, did you see the future?'[in random order][roman type][line break]".
+
+To say EnticeFlav of (M - vampiress) with (F - a fuckhole):
+	say "[BigNameDesc of M]'s eyes glint, and you gasp as you suddenly wake up from a dream about [his of M] [LongDickDesc of M] sliding in and out of your [variable F]![line break][speech style of M]'[one of]Oho, how was it?'[or]What's wrong? Did you see something strange?'[or]Mmm, did you see the future?'[in random order][roman type][line break]".
+
+To say EnticeFlav of (M - vampiress) with (B - a body part):
+	say "[BigNameDesc of M]'s eyes glint, and you gasp as you suddenly wake up from a dream about [him of M] playing with your [B]![line break][speech style of M]'[one of]Oho, how was it?'[or]What's wrong? Did you see something strange?'[or]Mmm, did you see the future?'[in random order][roman type][line break]".
 
 Section 2 - DQ
 

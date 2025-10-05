@@ -265,8 +265,6 @@ Report taking off hugger-gag:
 	only destroy the noun.
 To decide which number is the grossness of hugger-gag: decide on 9.
 
-[Figure of bit gag is the file "Items/Accessories/Head/bitgag1.jpg".]
-
 [Definition: a hugger-gag (called S) is removable:
 	decide no.]
 

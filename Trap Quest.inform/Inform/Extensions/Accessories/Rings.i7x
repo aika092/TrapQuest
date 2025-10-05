@@ -11,6 +11,19 @@ Figure of pink diamond ring is the file "Items/Accessories/Arm/ring4.png".
 Figure of pure diamond ring is the file "Items/Accessories/Arm/ring5.png".
 Figure of solid gold ring is the file "Items/Accessories/Arm/ring6.png".
 
+To decide which text is the clarificationText of (F - Figure of sapphire ring):
+	decide on the substituted form of "[JewelleryClarification]".
+To decide which text is the clarificationText of (F - Figure of emerald ring):
+	decide on the substituted form of "[JewelleryClarification]".
+To decide which text is the clarificationText of (F - Figure of ruby ring):
+	decide on the substituted form of "[JewelleryClarification]".
+To decide which text is the clarificationText of (F - Figure of pink diamond ring):
+	decide on the substituted form of "[JewelleryClarification]".
+To decide which text is the clarificationText of (F - Figure of pure diamond ring):
+	decide on the substituted form of "[JewelleryClarification]".
+To decide which text is the clarificationText of (F - Figure of solid gold ring):
+	decide on the substituted form of "[JewelleryClarification]".
+
 To decide which figure-name is the examine-image of (R - a ring):
 	if R is sapphire, decide on figure of sapphire ring;
 	if R is emerald, decide on figure of emerald ring;
@@ -57,7 +70,7 @@ Definition: a monster (called M) is brat-stone-qualifying:
 	if M is not in the location of the player, decide no;
 	unless M is unfriendly, decide no;
 	if M is gargoyle:
-		if the distance of Mansion02 > 2 or the player is in the Woods, decide yes;
+		if the distance of Mansion25 > 2 or the player is in the Woods, decide yes;
 	if M is shopkeeper:
 		if the distance of Dungeon41 > 2, decide yes;
 	if M is witch:
@@ -153,7 +166,7 @@ Check taking bondage-stone:
 	if bondage-stone-progress of the player  < 10:
 		if bondage-stone is unchallenged:
 			now bondage-stone is challenged;
-			say "You try to wiggle the ring off the statue's finger, but it's held fast by a layer of barely visible cobwebs. [line break][first custom style][']It's useless... Freeing me is like fighting a fairy arms tied... No, you can't even do that normally, right? Oh no... no, no, it's impossible.... Just... Ugh, leave me be...['][roman type][line break]A sullen voice sounds off in your head as you pull your hand away, and you get a distinct feeling it belongs to the ring itself!" instead;
+			say "You try to wiggle the ring off the statue's finger, but it's held fast by a layer of barely visible cobwebs. [line break][first custom style][']It's useless... Freeing me is like fighting a fairy with your arms tied... No, you couldn't defeat anything like that, right? Oh no... no, no, it's impossible.... Just... Ugh, leave me be...['][roman type][line break]A sullen voice sounds off in your head as you pull your hand away, and you get a distinct feeling it belongs to the ring itself!" instead;
 		otherwise:
 			say "You try to wiggle the ring off the statue's finger, but it's held fast by a layer of barely visible cobwebs." instead.
 

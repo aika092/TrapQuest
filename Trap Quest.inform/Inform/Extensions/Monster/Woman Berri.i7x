@@ -238,7 +238,7 @@ magic pistol is plastic.
 Definition: magic pistol is blue themed: decide yes.
 
 To say ClothingDesc of (W - magic pistol):
-	say "A small blue water pistol. The water container appears to be disconnected from the nozzle, so how does it work?".
+	say "A small blue water pistol. [if the class of the player is berri and enema fetish is 1]You can sense that the way that it works is that if there's any liquid in your stomach (i.e. recently drunk), it shoots this water at an enemy for significant damage, and a decent chance to temporarily blind them. If your stomach is empty of water, then it instead fills your colon (different from your stomach!) with water, as if you've just recieved a big enema, and shoots a magic jet at your enemy which can temporarily blind them, but doesn't deal damage.[otherwise if the class of the player is berri]You can sense that the way that it works is that if there's any liquid in your stomach (i.e. recently drunk), it shoots this water at an enemy for significant damage, and a decent chance to temporarily blind them.[otherwise]The water container appears to be disconnected from the nozzle, so how does it work?[end if]".
 
 To say ShortDesc of (W - magic pistol):
 	say "pistol".
@@ -246,8 +246,8 @@ To say ShortDesc of (W - magic pistol):
 To decide which number is the zap damage improvement of (W - magic pistol):
 	if the stomach-liquid of the player > 0:
 		let S be the stomach-liquid of the player;
-		if S > stomach-max, decide on stomach-max;
-		decide on S;
+		if S > stomach-max / 2, decide on stomach-max / 2;
+		decide on S * 2;
 	decide on -99.
 
 To say PistolStomachLiquid:
@@ -257,10 +257,28 @@ To compute attack of (W - magic pistol) at (M - a monster):
 	say "You aim the [ShortDesc of W] at [NameDesc of M] and pull the trigger. ";
 	let SL be the stomach-liquid of the player;
 	if SL > 0:
-		say "[PistolStomachLiquid]Jets of water[if the stomach-milk of the player > 0] and [milk][end if][if the stomach-urine of the player > 0] and [urine][end if] fly out of the tip, hitting [NameDesc of M] with [if SL > 10]insane force[otherwise if SL > 5]massive force[otherwise if SL > 2]strong force[otherwise]a powerful splash[end if]!";
+		say "[PistolStomachLiquid]Jets of water[if the stomach-milk of the player > 0] and [milk][end if][if the stomach-urine of the player > 0] and [urine][end if] fly out of the tip, hitting [NameDesc of M] with [if SL >= stomach-max / 2]insane force[otherwise if SL >= stomach-max / 3]massive force[otherwise if SL >= stomach-max / 4]strong force[otherwise]a powerful splash[end if]!";
 		StomachDown SL;
+		compute gun blinding of M;
+	otherwise if enema fetish is 1:
+		say "A huge burst of water magically appears in two places - one appears inside your own colon, filling you up with enema water! The other appears out the tip of your gun, blasting a plentiful (but not particularly powerful) jet of water into [NameDesc of M]'s face!";
+		compute gun blinding of M;
+		Assfill 10 with water;
+		if the total squirtable fill of belly > 10:
+			let T be "As your rectum is magically filled with water, the pressure to release your sphincter suddenly dramatically increases, making it feels twice as desperate to let loose, and";
+			check sudden expulsion with reason T;
 	otherwise:
 		say "Nothing happens...".
+
+To compute gun blinding of (M - a monster):
+	if the blind-status of M is -1:
+		say "[BigNameDesc of M] appears to be immune to being blinded! Shit!";
+	otherwise if the player is getting unlucky:
+		say "[BigNameDesc of M] turns away just in time, and avoids being blinded! [GotUnluckyFlav]";
+	otherwise:
+		say "[BigNameDesc of M] coughs and splutters, and appears to be temporarily blinded!";
+		let BS be a random number between 2 and 3;
+		increase the blind-status of M by BS.
 
 Part 1 - Perception
 
@@ -550,6 +568,7 @@ This is the mechanic tortures berri rule:
 			say "[BigNameDesc of M] gives you a brief look.[line break][speech style of M]'Don't interrupt me and I'll make it worth your while.'[roman type][line break][big he of M] holds a golden ring in the air, and then turns [his of M] attention back to [NameDesc of W]. It looks like you could attack [NameDesc of M] to try and rescue [him of W], or just sit back, [bold type]wait[roman type] and watch.";
 			now M is guarding;
 			now woman-player is guarding;
+			maybe-map-display the examine-image of woman-player;
 		otherwise if the mechanic-scene of W is 2:
 			say "[BigNameDesc of M] chuckles.[line break][speech style of M]'Yes that's right, you dumb baby. Nobody's coming to save you. And all it took was a tiny bribe for your little [']friend['] over there to [pussy] out.'[roman type][line break][big he of M] starts spanking [NameDesc of W], causing [him of W] to squeal in a mixture of pain and pleasure... And to pee herself.[line break][speech style of M]'Looks like [if the woman-bimbo of W >= 3]it's a good thing you're in diapers[otherwise]you can't be trusted to wear big [boy of W] panties and more[end if], you pathetic little baby! Haha!'[roman type][line break][big he of M] cackles as you watch [if the woman-bimbo of W >= 5]that golden patch spread and spread throughout the fabric[otherwise][NameDesc of W] piss [himself of W][end if].";
 			now the woman-diaper-state of W is 1;
@@ -1428,7 +1447,7 @@ To compute basic greeting to (M - woman-player):
 		if newbie tips is 1, say "[newbie style]Newbie tip: Berri is a special type of NPC, that under normal circumstances remains friendly throughout the entire course of the game, and will even fight alongside you, or appear to help you out of sticky situations. However if bad things happen, including if you lose a fight alongside [him of M], [he of M][']ll start to lose the game [himself of M], and become more babified. Also, sometimes when you bump into [him of M] [he of M][']ll be in the middle of a predicament, and you have to choose whether to help [him of M] or let it happen. Letting it happen usually either avoids the risk of bad stuff, or rewards you with powerful items. However, it'll continue Berri's progress towards becoming a diaper-addicted adult baby fetishist. A super-diaper-addicted Berri is a sort-of useless sidekick who can even do really unhelpful things like release the [ShortDesc of boogeymonster].[roman type][line break]";
 		now M is introduced;
 		now the text-shortcut of M is "bri";
-		say "[speech style of M]'Oh, and happy [april fools]. What a day to be playing this game, huh?'[roman type][line break]";
+		if april fools content is 1, say "[speech style of M]'Oh, and happy [april fools]. What a day to be playing this game, huh?'[roman type][line break]";
 	otherwise if the woman-status of M is 98:
 		say "[speech style of M]'MMMMPH!'[roman type][line break]";
 	otherwise if the woman-status of woman-player is 91 and the mechanic-scene of woman-player <= 3:
@@ -1620,5 +1639,11 @@ To compute patron scene climax of (W - woman-player):
 	do nothing.
 
 fishbowl is a vessel. fishbowl is in Holding Pen.
+
+
+Part - Play As Berri Scenes
+
+
+berriSceneDone is initially false.
 
 Woman Berri ends here.

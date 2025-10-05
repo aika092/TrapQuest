@@ -326,6 +326,7 @@ To compute nurse diapering of (M - a monster):
 		compute nurse diapering of nurse.
 
 To compute unique boredom of (M - nurse):
+	if playerRegion is not school and M is undefeated, now M is in School11;
 	now M is not diaper-change-punishing.
 
 To compute diaper change after special of (M - nurse):

@@ -262,11 +262,11 @@ To compute instant lubing of (F - a fuckhole):
 	if the number of lubricants covering F is 0:
 		let L be a random off-stage lubricant;
 		if L is lubricant:
-			if L is blessed or (L is uncursed and the player is not possessing a vagina), now the timer of L is a random number between 100 and 150;
+			let C be a random sex toy penetrating F;
+			if C is blessed sex toy or (C is bland sex toy and the player is not possessing a vagina), now the timer of L is a random number between 100 and 150;
 			otherwise now the timer of L is a random number between 30 and 50;
 			now L is covering F;
 			say "As you move your hand away, a cool, slippery feeling in your [ShortDesc of F] makes you realise it was just covered in lubricant! ";
-			let C be a random sex toy penetrating F;
 			if C is a sex toy, say "This must be a [ShortDesc of C] of refreshment!".
 
 Report plugging something with rejuvenation clothing:

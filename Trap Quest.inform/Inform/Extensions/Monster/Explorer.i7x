@@ -204,7 +204,7 @@ To compute standard damage of (M - an explorer):
 		compute defeat of M.
 
 To compute banishment of (M - an explorer):
-	if M is in the location of the player, cutshow the examine-image of M;
+	if M is in the location of the player and temporary-map-figure is figure of no-image-yet, maybe-map-display the examine-image of M; [give the player one last look at the old explorer]
 	increase the explorer-bimbo of M by 1;
 	calm M;
 	repeated set up M.

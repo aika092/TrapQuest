@@ -296,7 +296,7 @@ Definition: blue-sissy-maid-outfit is transformation-protected:
 
 Part 10 - Cafe Maid Outfit
 
-cafe-maid-outfit is a maid outfit. cafe-maid-outfit is fully covering. cafe-maid-outfit is polyester. The text-shortcut of cafe-maid-outfit is "cmo". The skirt-length of cafe-maid-outfit is 4. The printed name of cafe-maid-outfit is "[clothing-title-before]cafe maid outfit[clothing-title-after]". Understand "cafe" as cafe-maid-outfit.
+cafe-maid-outfit is a maid outfit. cafe-maid-outfit is fully covering. cafe-maid-outfit is not-top-displacable. cafe-maid-outfit is polyester. The text-shortcut of cafe-maid-outfit is "cmo". The skirt-length of cafe-maid-outfit is 4. The printed name of cafe-maid-outfit is "[clothing-title-before]cafe maid outfit[clothing-title-after]". Understand "cafe" as cafe-maid-outfit.
 
 To decide which figure-name is clothing-image of (C - cafe-maid-outfit):
 	decide on figure of maid outfit 10.

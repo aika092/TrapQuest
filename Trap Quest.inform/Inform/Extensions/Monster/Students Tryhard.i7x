@@ -222,6 +222,6 @@ To compute teaching offer of (M - a tryhard student):
 	say "[speech style of M]'I totally could, because I'm way better at this than you. But I'm technically not allowed, since I'm not a qualified teacher here.'[roman type][line break]".
 
 To say detention chair tease of (M - a tryhard student):
-	say "[speech style of M]'[one of]You really should try to get to class on time, you know.'[or]Is there something wrong with your ears? Did you not hear your armband warn you when class was starting?'[in random order][roman type][line break]".
+	say "[speech style of M]'[one of]You really should try to be more diligent, you know.'[or]Is there something wrong with your ears? Did you not hear your armband warn you when class was starting?'[in random order][roman type][line break]".
 
 Students Tryhard ends here.

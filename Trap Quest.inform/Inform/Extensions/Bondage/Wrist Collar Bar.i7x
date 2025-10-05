@@ -22,6 +22,9 @@ To say ShortDesc of (W - wrist collar bar):
 Definition: wrist collar bar (called C) is removal-blocking:
 	if C is not wearing-target and wearing-target is not headgear, decide yes;
 	decide no.
+Definition: wrist collar bar is application appropriate:	decide no.
+
+
 
 
 wrist-waist-ropes is a wrist bond. wrist-waist-ropes is wrist-bound-in-front. wrist-waist-ropes is hemp. The printed name of wrist-waist-ropes is "[clothing-title-before]wrist waist ropes[clothing-title-after]". The text-shortcut of wrist-waist-ropes is "wrps". Understand "wrist", "waist", "ropes" as wrist-waist-ropes.
@@ -36,5 +39,7 @@ To say ClothingDesc of (C - wrist-waist-ropes):
 
 To say ShortDesc of (C - wrist-waist-ropes):
 	say "wrist waist ropes".
+
+Definition: wrist-waist-ropes is application appropriate:	decide no.
 
 Wrist Collar Bar ends here.

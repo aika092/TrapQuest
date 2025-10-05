@@ -501,7 +501,7 @@ This is the diaper orgasm resolution rule:
 The diaper orgasm resolution rule is listed last in the orgasm resolution rules.
 
 This is the BBC orgasm resolution rule:
-	if interracial fetish is 1:
+	if interracial fetish is 1 and the player is not in a predicament room:
 		repeat with M running through monsters penetrating a body part:
 			if M is dark skinned:
 				if the class of the player is magical girl and there is a worn dark magician girl dress:

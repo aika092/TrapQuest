@@ -289,10 +289,23 @@ To decide which number is belly liquid types:
 	decide on X.
 
 To empty belly:
+	egg-held empty belly;
+	truncate the small-egg-origins of belly to 0 entries;
+	truncate the medium-egg-origins of belly to 0 entries;
+	truncate the large-egg-origins of belly to 0 entries.
+
+To egg-held empty belly:
 	empty belly liquids;
 	now the small egg count of belly is 0;
 	now the medium egg count of belly is 0;
 	now the large egg count of belly is 0.
+
+To egg-fix belly:
+	now the small egg count of belly is the number of entries in the small-egg-origins of belly;
+	now the medium egg count of belly is the number of entries in the medium-egg-origins of belly;
+	now the large egg count of belly is the number of entries in the large-egg-origins of belly;
+	let E be the small egg count of belly + the medium egg count of belly + the large egg count of belly;
+	if E > 0, say "You feel the egg[if E > 1]s[end if] that were in your belly magically reappearing inside you![line break][variable custom style]Oof![roman type][line break]".
 
 To empty belly liquids:
 	now the water volume of belly is 0;
@@ -542,6 +555,10 @@ currently-squirting is a number that varies.
 
 same-turn-squirting is initially false. [sometimes we need to tell the below function not to trigger extra turns, because we're in a big loop]
 
+Definition: a room is partial squirt: [some rooms, e.g. predicament rooms, have the player squirt out 6 units of enema each time, rather than all of it at once]
+	if it is nonstandard, decide yes;
+	decide no.
+
 To AssSquirt:
 	[This makes sure that the game doesn't start counting down to another expulsion whilst one is still happening]
 	reset all monster reactions;
@@ -575,8 +592,8 @@ To AssSquirt:
 	[flav-said is used to stop the soak flavour text being repeated in the same turn.]
 	let flav-said be 0;
 	[Here we decide just how much stuff is coming out.]
-	[let R be 0;
-	if a random number between 1 and 8 is 8, now target-count is the total squirtable fill of belly;
+	let R be 0;
+	[if a random number between 1 and 8 is 8, now target-count is the total squirtable fill of belly;
 	otherwise now R is a random number between 2 and the total squirtable fill of belly;
 	if R is the total squirtable fill of belly:
 		now target-count is the total squirtable fill of belly;
@@ -585,10 +602,13 @@ To AssSquirt:
 	otherwise if R > the total squirtable fill of belly / 3:
 		now target-count is the total squirtable fill of belly / 3;
 	if target-count < 4:
-		now target-count is 3;
+		now target-count is 3;]
 	if the total squirtable fill of belly < 6 or voluntarySquatting is 1:
-		now target-count is the total squirtable fill of belly;] [If the player squats, everything comes out.]
-	now target-count is the total squirtable fill of belly; [Experimental balance change - everything always comes out]
+		now target-count is the total squirtable fill of belly;
+	otherwise if the player is in a partial squirt room:
+		now target-count is 6;
+	otherwise: [Usually, everything comes out. Except in a predicament world without squatting]
+		now target-count is the total squirtable fill of belly;
 	[The simple option: if everything is coming out!]
 	if the total squirtable fill of belly is target-count:
 		now small-egg-count is the small egg count of belly;
@@ -732,6 +752,15 @@ To AssSquirt:
 			increase element-count by 1;
 		otherwise if element-count is 3:
 			if liquid-total > 0:
+				[If the player is wearing underwear we'll need to keep track of that item of clothing to see how soaked it's getting.]
+				let C be a random worn bottom level ass protection clothing;
+				let squirt-target be nothing;
+				if C is clothing:
+					now squirt-target is C;
+				otherwise if current-predicament is joint-fuckhole-predicament and the player is in Predicament01:
+					now squirt-target is torn-shirt;
+				otherwise if voluntarySquatting is 0 and (a random number between 1 and the dexterity of the player) < (a random number between 1 and 6):
+					now squirt-target is thighs;
 				[On the first round, we check if the player wants to collect some in a vessel, and output some unique flavour text.]
 				if turn-count is 0 or collecting is a thing:
 					if debugmode is 1, say "there are [number of carried open topped vessels] open topped vessels and [number of carried lid topped vessels] lid topped vessels carried by the player.";
@@ -778,7 +807,7 @@ To AssSquirt:
 					say "a [if liquid-total > 6]huge [cascade][otherwise]few squirts[end if] of ";
 					if urine-count is 0 and semen-count is 0 and milk-count is 0, say "[if diaper messing >= 3 and rectum > 1 and there is worn total protection soilable clothing][one of]murky[or]lumpy[in random order] brown water[otherwise if diaper messing >= 3]enema water[otherwise]clear water[end if] ";
 					otherwise say "[if urine-count > 0 and semen-count > 0 and milk-count > 0]what must be a disgraceful mix of [urine], [milk] and [semen][otherwise if urine-count > 0 and semen-count > 0]what seems like a mix of [urine] and [semen][otherwise if urine-count > 0 and milk-count > 0]what seems like a mix of [urine] and [milk][otherwise if milk-count > 0 and semen-count > 0]what seems like a mix of [milk] and [semen][otherwise if urine-count > 0][urine][otherwise if semen-count > 0][semen][otherwise if milk-count > 0][milk][otherwise]BUG - can't find any liquid. Report this bug please[end if], directly from your [asshole] ";
-					say "[if the player is ass protected]into [NameDesc of random worn bottom level ass protection clothing][otherwise if collecting is a thing and collecting is not yourself]into [NameDesc of collecting][otherwise if voluntarySquatting is 1 or the player is prone]onto the ground[otherwise]onto your [ShortDesc of thighs][end if].";
+					say "[if the player is ass protected]into [NameDesc of random worn bottom level ass protection clothing][otherwise if collecting is a thing and collecting is not yourself]into [NameDesc of collecting][otherwise if squirt-target is thighs]onto your [ShortDesc of thighs][otherwise]onto the ground[end if].";
 					if diaper messing >= 3 and rectum > 1 and there is worn total protection soilable clothing:
 						say "It is accompanied by [if rectum < 8]a large amount of squishy brown mush[otherwise if rectum < 10]a huge log of mess[otherwise]an ungodly amount of squishy, smelly goop[end if] as your bowels are completely excavated.";
 				if collecting is pedestal:
@@ -856,8 +885,6 @@ To AssSquirt:
 					ExpelDisplay;
 				otherwise if the examine-image of asshole is Figure of AssholeObject0 or the examine-image of asshole is Figure of AssholeObject1:
 					cutshow Figure of AssholeObject2 for asshole; [show asshole as partially gaped for one turn]
-				[If the player is wearing underwear we'll need to keep track of that item of clothing to see how soaked it's getting.]
-				let C be a random worn bottom level ass protection clothing;
 				if turn-count is 0, compute squirt declarations into C;
 				let temp-milk-count be 0;
 				let temp-semen-count be 0;
@@ -888,13 +915,6 @@ To AssSquirt:
 							decrease water-count by W;
 							increase liquid-count by W;
 					if semen-count is 0 and urine-count is 0 and milk-count is 0 and water-count is 0, now liquid-count is 6; [In case of glitches and we somehow run out of liquid, we don't break the game.]
-				let squirt-target be nothing;
-				if C is worn clothing:
-					now squirt-target is C;
-				otherwise if current-predicament is joint-fuckhole-predicament and the player is in Predicament01:
-					now squirt-target is torn-shirt;
-				otherwise if voluntarySquatting is 0 and the player is upright:
-					now squirt-target is thighs;
 				if temp-milk-count > 0:
 					AnnouncedExpel milk on squirt-target by temp-milk-count;
 				if temp-urine-count > 0:
@@ -968,10 +988,6 @@ To lay (X - a number) small eggs:
 		ruin asshole times the square root of X;
 		now E is not penetrating asshole;
 	let M be nothing;
-	let EO be the number of entries in the small-egg-origins of belly;
-	if EO > 0:
-		now M is entry EO in the small-egg-origins of belly;
-		truncate the small-egg-origins of belly to EO - 1 entries;
 	let D be a random worn total protection diaper;
 	if D is diaper and the player is not in a predicament room:
 		say "The [ShortDesc of a random small egg][if X > 1]s crack[otherwise] cracks[end if] inside your diaper, leaving a nasty slimy, soggy feeling! The pieces of shell seem to somehow dissolve away.";
@@ -993,6 +1009,10 @@ To lay (X - a number) small eggs:
 			let S be a random available small egg;
 			now S is in L;
 			now S is laid;
+			let EO be the number of entries in the small-egg-origins of belly;
+			if EO > 0:
+				now M is entry EO in the small-egg-origins of belly;
+				truncate the small-egg-origins of belly to EO - 1 entries;
 			now the egg-origin of S is M;
 			if a random number between 1 and 4 is 1, now the hatching of S is 1;
 			if the egg-origin of S is ghost or the egg-origin of S is ghostly dildo pole trap or the egg-origin of S is the throne, now the hatching of S is 1;
@@ -1013,10 +1033,6 @@ To lay (X - a number) medium eggs:
 		ruin asshole times the square root of X;
 		now E is not penetrating asshole;
 	let M be nothing;
-	let EO be the number of entries in the medium-egg-origins of belly;
-	if EO > 0:
-		now M is entry EO in the medium-egg-origins of belly;
-		truncate the medium-egg-origins of belly to EO - 1 entries;
 	let D be a random worn total protection diaper;
 	if D is diaper:
 		say "The egg[if X > 1]s crack[otherwise] cracks[end if] inside your diaper, leaving a nasty slimy, soggy feeling! The pieces of shell seem to somehow dissolve away.";
@@ -1038,6 +1054,10 @@ To lay (X - a number) medium eggs:
 			let S be a random available medium egg;
 			now S is in L;
 			now S is laid;
+			let EO be the number of entries in the medium-egg-origins of belly;
+			if EO > 0:
+				now M is entry EO in the medium-egg-origins of belly;
+				truncate the medium-egg-origins of belly to EO - 1 entries;
 			now the egg-origin of S is M;
 			if a random number between 1 and 4 is 1, now the hatching of S is 1;
 		if the semen volume of belly > 6:
@@ -1063,10 +1083,6 @@ To lay (X - a number) large eggs:
 	ruin asshole times X;
 	now E is not penetrating asshole;
 	let M be nothing;
-	let EO be the number of entries in the large-egg-origins of belly;
-	if EO > 0:
-		now M is entry EO in the large-egg-origins of belly;
-		truncate the large-egg-origins of belly to EO - 1 entries;
 	let D be a random worn total protection diaper;
 	if D is diaper:
 		say "The egg[if X > 1]s crack[otherwise] cracks[end if] inside your diaper, leaving a nasty slimy, soggy feeling! The pieces of shell seem to somehow dissolve away.";
@@ -1088,6 +1104,10 @@ To lay (X - a number) large eggs:
 			let S be a random available large egg;
 			now S is in L;
 			now S is laid;
+			let EO be the number of entries in the large-egg-origins of belly;
+			if EO > 0:
+				now M is entry EO in the large-egg-origins of belly;
+				truncate the large-egg-origins of belly to EO - 1 entries;
 			now the egg-origin of S is M;
 			if a random number between 1 and 4 is 1, now the hatching of S is 1.
 

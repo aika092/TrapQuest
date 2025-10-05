@@ -23,7 +23,7 @@ Definition: shopkeeper is certain to do anilingus:
 	if it is not a balls-haver, decide yes;
 	decide no.
 
-shopkeeper has a number called discounts. the discounts of shopkeeper is 1.
+shopkeeper has a number called discounts. [the discounts of shopkeeper is 1.]
 
 shopkeeper is in Dungeon41. Understand "shop", "keeper" as shopkeeper. The printed name of shopkeeper is "[if item described is in the location of the player][TQlink of item described][end if][input-style]well built shopkeeper[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of shopkeeper is "sh". Understand "well", "built" as shopkeeper.
 
@@ -115,6 +115,14 @@ To compute labour to (M - shopkeeper):
 			IntUp 1;
 	otherwise if M is alive:
 		Delay Labour.
+
+To compute fatherhood to (M - shopkeeper): [no reason to check for successful pregnancy here, since we already know pregnancy was not delayed at this point.]
+	if M is not alive:
+		if debugmode > 0, say "The father was [M], but [he of M] was off-stage.";
+		say DefaultBirthScene;
+	otherwise:
+		now M is mating;
+		now M is in Dungeon41.
 
 Definition: shopkeeper is human: decide yes.
 
@@ -1054,6 +1062,7 @@ To compute pitying of (M - shopkeeper):
 			calm M;
 			FavourUp M;
 		if M is intelligent, say PityOfferResponse of M;
+	progress quest of chosen-one-quest;
 	bore M.
 
 To compute (M - shopkeeper) slinking away:
@@ -1260,8 +1269,7 @@ To compute friendly drink of (M - shopkeeper):
 			StomachUp 2;
 			ruin asshole;
 			if the player is possessing a vagina, ruin vagina;
-			let K be a random off-stage specific-key;
-			compute M locking L with K;
+			compute M keylocking L;
 		otherwise:
 			say "[speech style of M]'That's too bad. Well, good luck with finding a drink!'[roman type][line break]";
 	otherwise:
@@ -1671,6 +1679,13 @@ To set up store:
 		now catbell is in Dungeon41;
 		now the owner of catbell is shopkeeper;
 		if the player is in Dungeon41, say "[BigNameDesc of shopkeeper] adds a [catbell] to the display.";
+	repeat with C running through worn locked clothing:
+		if the number of unlock-keys in Dungeon41 is 0:
+			let K be a random specific-key covering C;
+			if K is a thing and (the player is in Dungeon41 or a random number between 1 and 2 is 1):
+				now K is in Dungeon41;
+				now the owner of K is shopkeeper;
+				if the player is in Dungeon41, say "[BigNameDesc of shopkeeper] adds the [K] to the display.";
 	repeat with C running through store things:
 		set up shop state of C.
 
@@ -1713,8 +1728,14 @@ To compute shopcycling:
 	repeat with N running from 1 to 4:
 		let C be a random store thing in Dungeon41;
 		if C is a thing:
-			if the player is in Dungeon41, say "[BigNameDesc of shopkeeper] removes [NameDesc of C] from the display stand.";
-			only destroy C;
+			let keep-in-stock be false;
+			if C is players-detached-dick, now keep-in-stock is true;
+			if C is specific-key:
+				let X be a random thing covered by C;
+				if X is worn locked clothing, now keep-in-stock is true;
+			if keep-in-stock is false:
+				if the player is in Dungeon41, say "[BigNameDesc of shopkeeper] removes [NameDesc of C] from the display stand.";
+				only destroy C;
 	set up store;
 	if lagdebug is true:
 		say "Finished recycling shop.";

@@ -345,6 +345,9 @@ To compute slime expansion:
 	otherwise if the player is possessing a vagina and the labia plumpness of vagina < max labia plumpness:
 		say "You feel its expansion power transferred to your [vagina].";
 		LabiaUp 1 with comment;
+	otherwise if the player is possessing a penis and the size of penis > min penis size:
+		say "You feel its transformation power transferred to your [ShortDesc of penis].";
+		PenisDown 1;
 	otherwise if the raw vaginal sex addiction of the player < 10 and (the player is possessing a vagina or TG fetish is 1):
 		VaginalSexAddictUp 1;
 	otherwise if the raw titfuck addiction of the player < 10 and max breast size > 6:

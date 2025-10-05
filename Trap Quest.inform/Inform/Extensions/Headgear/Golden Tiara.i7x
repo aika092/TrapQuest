@@ -10,7 +10,7 @@ To decide which figure-name is the clothing-image of (C - gold-tiara):
 	decide on figure of gold-tiara.
 
 To say ClothingDesc of (H - gold-tiara):
-	say "This solid gold [MediumDesc of H] is decorated with red, red, and redder jewels and gemstones, with a giant, blood-red stone set into the very centre.".
+	say "This solid gold tiara is decorated with red, red, and redder jewels and gemstones, with a giant, blood-red stone set into the very centre.".
 
 To say ShortDesc of (H - gold-tiara):
 	say "golden tiara".

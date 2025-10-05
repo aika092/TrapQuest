@@ -6,15 +6,19 @@ To decide which text is the next-text-shortcut of (M - memic):
 	unless the mimic-disguise of M is memic, decide on the text-shortcut of the mimic-disguise of M;
 	decide on "mim".
 
+Figure of mimic is the file "Env/Mansion/mimic1.jpg".
+
 To decide which figure-name is the examine-image of (M - memic):
 	unless the mimic-disguise of M is memic, decide on the examine-image of the mimic-disguise of M;
-	decide on figure of no-image-yet.
+	decide on figure of mimic.
 
 memic has a thing called mimic-disguise. The mimic-disguise of memic is usually memic.
 
 To say ExamineDesc of (M - a memic):
 	let D be the mimic-disguise of M;
-	if D is ornate trunk:
+	if D is M, say "A treasure chest covered in pink and purple glitter, with a pair of red lips in place of a latch.";
+	otherwise say ExamineDesc of D.
+	[if D is ornate trunk:
 		say "[one of]A rather impressive looking wooden trunk[or]A rather big looking wooden trunk[or]A nice big trunk full of junk[cycling].";
 	otherwise if D is antique trunk:
 		say "[one of]An unassuming wooden trunk[or]An unassuming old trunk full of junk[or]A big old trunk full of junk[cycling].";
@@ -32,14 +36,19 @@ To say ExamineDesc of (M - a memic):
 	otherwise if D is filing cabinet:
 		say "[one of]An ordinary looking filing cabinet, only the top drawer appears to be openable[or]An ordinary looking top cabinet, only the filing drawer appears to be openable[or]A extraordinary looking filing cabinet, only the top drawer opens[cycling].";
 	otherwise:
-		say "A treasure chest covered in pink and purple glitter, with a pair of red lips in place of a latch.";
+		say "A treasure chest covered in pink and purple glitter, with a pair of red lips in place of a latch.";]
 
 A time based rule (this is the mimic wandering rule):
-	if playerRegion is Mansion or (halloween content is 1 and playerRegion is not School and the player is not in a predicament room):
-		if the mimic-boredom of memic <= 0 and memic is not in the location of the player:
-			mimicReplace memic;
-		otherwise:
-			decrease the mimic-boredom of memic by 1.
+	if playerRegion is Mansion:
+		compute wandering mimic;
+	otherwise if playerRegion is not School and the player is not in a predicament room:
+		if halloween content is 1 or (the player is a september 2025 top donator and doomed is 5), compute wandering mimic.
+
+To compute wandering mimic:
+	if the mimic-boredom of memic <= 0 and memic is not in the location of the player:
+		mimicReplace memic;
+	otherwise:
+		decrease the mimic-boredom of memic by 1.
 
 To mimicReplace (M - a memic):
 	if the mimic-boredom of M <= 0:[sometimes there's a "move" to nothing here, but I don't understand why it happens unless G is holding the "location of M" pointer, not the "location of M" reference]
@@ -54,14 +63,16 @@ To mimicReplace (M - a memic):
 			now R is a random placed corporate modern room;
 		let G be the location of M;
 		let C be a random closed container in R;
+		if C is nothing, now C is a random container in R;
 		if R is placed and C is container:
 			now M is in R;
-			now the mimic-disguise of M is C;
+			let TC be a random treasure chest;
+			if playerRegion is Hotel, now TC is a random safe;
+			now the mimic-disguise of M is TC;
 			now M is closed;
-			if C is ornate trunk, now the mimic-boredom of M is 8;
-			otherwise now the mimic-boredom of M is 6;
-			unless G is nothing, now C is in G;[rather than sharing the room, it swaps]
-			now the text-shortcut of M is the next-text-shortcut of M;
+			now the mimic-boredom of M is 8;
+			unless G is nothing, now C is in G; [rather than sharing the room, it swaps]
+			now the text-shortcut of M is the substituted form of "[next-text-shortcut of M]".
 
 To compute mimic:[The mimic is special in that it has no treasure in it, and will always do something inconvenient for the player. However, all the things the mimic does should have some silver lining]
 	if diaper quest is 1:
@@ -73,7 +84,11 @@ To compute mimic:[The mimic is special in that it has no treasure in it, and wil
 	otherwise:
 		say "A pair of green hands shoot out and seize your wrists as soon as you crack the lid, which creaks ominously as it opens the rest of the way all on its own. [run paragraph on]";
 		let M be memic;
-		let D be the mimic-disguise of M;
+		let R be a random number between 1 and 4;
+		compute mimic teasing R;
+		maybe-map-display figure of mimic;
+		focus-consider memic;
+		[let D be the mimic-disguise of M;
 		if D is ornate trunk:
 			compute mimic teasing 2;
 		otherwise if D is antique trunk or D is tree stump crate:
@@ -83,10 +98,14 @@ To compute mimic:[The mimic is special in that it has no treasure in it, and wil
 		otherwise if D is wooden crate or D is metal crate:
 			compute mimic teasing 3;
 		otherwise:
-			compute mimic teasing 2;
-		say "The mimic disappears in a puff of pink smoke.";
+			compute mimic teasing 2;]
+		let LC be the list of containers in the location of the player;
+		say "The mimic disappears in a puff of pink smoke. You get the suspicion that it is now hiding somewhere else in the [playerRegion].";
 		now the mimic-boredom of M is 0;
-		mimicReplace M.
+		mimicReplace M;
+		repeat with C running through containers in the location of the player:
+			if C is not listed in LC, say "There is now a [C] in its place.";
+
 
 To compute mimic teasing (N - 1):[hissing mimic. Will "poison" the player or fully remove any semen covering the player's body]
 	if the semen coating of face + the semen coating of breasts > 0:
@@ -246,10 +265,13 @@ Report waiting when the player is in MimicCrib:
 			say "As more and more start to pile on top of each other on and around you, you close your eyes and your senses to the foul items around you. Since you don't need to breathe the air around you to stay conscious, you are unaffected by the attempted assault on your olfactory senses.[paragraph break]Perhaps sensing that its actions have been in vain, the mimic doesn't take long before deciding to spit you back out into the mansion.";
 	now the stance of the player is 1;
 	now the player is in the source-room of the location of the player;
-	say "[bold type]You are on your knees. [roman type]The mimic disappears in a puff of pink smoke.";
+	let LC be the list of containers in the location of the player;
+	say "[bold type]You are on your knees. [roman type]The mimic disappears in a puff of pink smoke. You get the suspicion that it is now hiding somewhere else in the [playerRegion].";
 	display entire map;
 	now the mimic-boredom of memic is 0;
-	mimicReplace memic.
+	mimicReplace memic;
+	repeat with C running through containers in the location of the player:
+		if C is not listed in LC, say "There is now a [C] in its place.".
 
 Check attacking memic:
 	if the noun is container, try mimicInvestigating the noun instead.

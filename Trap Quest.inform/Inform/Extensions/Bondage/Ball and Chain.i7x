@@ -21,5 +21,6 @@ To say ClothingDesc of (C - ball-and-chain):
 
 To decide which number is the heaviness of (H - ball-and-chain):
 	decide on 6.
+Definition: ball-and-chain is application appropriate: decide no.
 
 Ball and Chain ends here.

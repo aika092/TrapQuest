@@ -79,6 +79,22 @@ This is the sissy class rule:
 The sissy class rule is listed in the player class rules.
 sissyclass is a text that varies. sissyclass is "sissy".
 
+This is the berri class rule:
+	if gold-hairclip is worn:
+		now player-class is "ill-fated";
+		rule succeeds.
+The berri class rule is listed in the player class rules.
+berri is a text that varies. berri is "ill-fated".
+
+berriExplained is initially false.
+a class explaining rule (this is the explaining berri rule):
+	if berriExplained is false and the class of the player is berri:
+		now berriExplained is true;
+		say "[bold type]Now that you have become the [']ill-fated['] class, you feel like a side character! The great thing about not being the protagonist is that you can get involved in cutscenes and fun story beats without us needing to worry too much about coherent storytelling or narrative pathing. Also, if you meet a sudden and tragic ending, that can all just be part of the protagonist's journey. Now, go out and find some fun cutscenes! You'll even get rewarded with better and better jewellery. Oh, and expect Nintendolls to be in much greater control over what you wear.[roman type][line break]";
+	otherwise if berriExplained is true and the class of the player is not berri:
+		now berriExplained is false;
+		say "[bold type]Now that you are no longer the [']ill-fated['] class, you no longer feel like cruel cutscenes are waiting for you around every corner.[roman type][line break]".
+
 This is the princess class rule:
 	let H be a random worn tiara;
 	let T be "princess";

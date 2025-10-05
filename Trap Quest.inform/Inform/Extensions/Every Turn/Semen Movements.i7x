@@ -191,6 +191,9 @@ To check enema holding with reason (T - a text):
 			otherwise if gape-gloves is worn and gape-gloves is wrist-bound-behind and expelling-allowed is true:
 				say "With your [asshole] spread open by your [MediumDesc of gape-gloves], you are forced to immediately begin expelling the contents of your belly.";
 				compute enema holding failure;
+			otherwise if current-predicament is segway-predicament and T is not "" and the player is in an unbossed predicament room: [always just little squirts]
+				if expelling-allowed is true and the player is getting lucky, say "[T] it's only by sheer luck that you [one of]manage to keep your sphincter clamped tight[or]are able hold your butthole shut tight and prevent anything from escaping[or]can successfully hold onto your [if the milk volume of belly + the urine volume of belly + the water volume of belly > 0]enema[otherwise]anal creampie[end if][in random order].";
+				otherwise compute enema leaking with reason T;
 			otherwise if T is "" and strain factor < 4 and (strain factor < 2 or the player is not in an unbossed predicament room): [at less than 4 strain factor, we just give flavour. this is changed to 2 for predicament rooms]
 				if strain factor > 0 and the trophy-mode of expel-trophy is 0 and cumdump-headband is not worn and the number of worn enema-helping clothing is 0:
 					say "[one of]Your belly growls as the [enema] swirls around inside[or][if the player is upright]You stagger slightly[otherwise]Your arms and legs shake slightly[end if] as the [enema] sloshes around inside you[or]Your stomach makes a gurgling sound as your [enema] bubbles away inside[or]Your [enema] puts more and more pressure on your rectum[or]The [enema] eddies and whirls inside your belly[in random order], [one of]making you feel uneasy[or]and you feel quite uncomfortable[or]making you a bit queasy[or]causing your intestines to cramp a bit[in random order].";
@@ -256,7 +259,9 @@ To compute enema leaking with reason (T - a text):
 					if voluntarySquatting is 0, progress quest of egg-holding-quest;
 					let Y be a random camera trap in the location of the player;
 					if Y is not a thing, now Y is a random camera-bystander in the location of the player;
-					if target-poster is an expulsion poster and target-poster is off-stage and Y is a thing and (Y is not a camera trap or the reset-timer of Y < 99900):
+					if Y is a thing and (Y is not a camera trap or the reset-timer of Y < 99900) and there is an off-stage expulsion poster and the number of worn total protection diapers is 0:
+						now target-poster is a random off-stage expulsion poster;
+						compute uniquest variables of target-poster;
 						say "[FlashFlav of Y][if Y is camera trap][ExpulsionFlashFlav of Y][end if]";
 						set up target-poster;
 					if total-count > 1, say "The [if the player is in a predicament room]ball[otherwise]egg[end if] is followed by ";
@@ -277,6 +282,8 @@ To compute enema leaking with reason (T - a text):
 					if current-predicament is joint-fuckhole-predicament and the player is in Predicament01:
 						say "It drops down onto [NameDesc of torn-shirt].";
 						SemenSoakUp torn-shirt by total-count;
+					otherwise if C is thighs and the player is not getting unlucky:
+						SemenPuddleUp total-count;
 					otherwise if milk-count + urine-count + semen-count > 1:
 						AnnouncedExpel murkwater on C by total-count;
 					otherwise: [water gets converted into other liquids for simplicity]
@@ -296,7 +303,7 @@ To compute enema leaking with reason (T - a text):
 					if rectum < 2, say "Your belly is now empty.";
 					reset all enema effects;
 					now the holding strain of belly is 0;
-				if KSK is 0 and the total-soak of K > 0, say "There is now a visible [if K is diaper]yellow patch[otherwise]stain[end if] in the front of your [ShortDesc of K].";
+				if KSK is 0 and the total-soak of K > 0, say "There is now a visible [if K is diaper]yellow patch[otherwise]stain[end if] in the seat of your [ShortDesc of K].";
 				compute sudden squirt into K disapproval;
 				now currently-squirting is 0.
 

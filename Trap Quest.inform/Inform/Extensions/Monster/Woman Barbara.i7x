@@ -42,6 +42,7 @@ Figure of Barbara Cutscene 19 is the file "NPCs/MultiFloor/barbara/cutscene-barb
 Figure of Barbara Cutscene 20 is the file "NPCs/MultiFloor/barbara/cutscene-barbara-cum-kiss1.jpg".
 Figure of Barbara Cutscene 21 is the file "NPCs/MultiFloor/barbara/cutscene-barbara-mechanic1.jpg".
 Figure of Barbara Cutscene 22 is the file "NPCs/MultiFloor/barbara/cutscene-barbara-blowjob1.jpg".
+Figure of Barbara Cutscene 23 is the file "NPCs/MultiFloor/barbara/cutscene-barbara-hypnosis1.jpg".
 
 To decide which figure-name is the monster-image of (M - woman-player):
 	if the woman-status of M is 97:
@@ -54,6 +55,8 @@ To decide which figure-name is the monster-image of (M - woman-player):
 	if the vine-scene of M > 0 and the vine-scene of M < 5, decide on figure of barbara cutscene 8;
 	if the woman-pregnancy of M > 1, decide on figure of woman pregnant;
 	if M is partially-enslaved, decide on Figure of woman partial slavery;
+	let HT be a random revealed hypno trap in the location of M;
+	if HT is a thing and HT is not expired, decide on Figure of Barbara Cutscene 23;
 	if the woman-bimbo of M < 3:
 		if the woman-status of woman-player is 91 and the mechanic-scene of woman-player <= 3, decide on Figure of Barbara Cutscene 21;
 		if M is interested, decide on figure of woman 1 interested;
@@ -127,6 +130,11 @@ To compute friendly boredom of (M - woman-player):
 		distract M; [barbara is blindfolded and can't follow the player]
 	otherwise if the patron-scene-done of M is 0 and there is a hotel bed in the location of the player:
 		do nothing; [barbara waits patiently for the gangbang scene]
+	otherwise if the woman-status of M is 82 and pregnancy fetish > 0:
+		increase the friendly boredom of M by 1;
+		if the player is not in danger and a random number from 30 to 300 < the friendly boredom of M:
+			distract M;
+			if M is in the location of the player, say BecomesBoredFlav of M; [barbara waits more patiently to be able to catch the player out with a pregnancy swap]
 	otherwise:
 		increase the friendly boredom of M by 1;
 		if the player is not in danger and a random number from 10 to 30 < the friendly boredom of M:
@@ -493,6 +501,7 @@ This is the mechanic facefucks barbara rule:
 			say "[BigNameDesc of M] gives you a brief look.[line break][speech style of M]'Don't interrupt me and I'll make it worth your while.'[roman type][line break][big he of M] holds a golden ring in the air, and then turns [his of M] attention back to the face [he of M] has turned into a temporary cocksleeve. It looks like you could attack [NameDesc of M] to try and rescue [him of W], or just sit back, [bold type]wait[roman type] and watch.";
 			now M is guarding;
 			now woman-player is guarding;
+			maybe-map-display the examine-image of woman-player;
 		otherwise if the mechanic-scene of W is 2:
 			say "[BigNameDesc of M] chuckles.[line break][speech style of M]'Yes that's right, you dumb slut. Nobody's coming to save you. And all it took was a tiny bribe for your little [']friend['] over there to [pussy] out.'[roman type][line break][big he of M] picks up the speed, causing [NameDesc of W] to make gagging sounds as [he of M] thrusts.";
 		otherwise if the mechanic-scene of W is 3:
@@ -1201,7 +1210,7 @@ Report going when the player is in School20 and first-time-swimming-pool is true
 			if the player is not getting lucky, now MSM is cursed;
 			let able-to-wear-swimsuit be false;
 			let LC be a list of clothing;
-			repeat with C running through worn usually autoremovable clothing:
+			repeat with C running through worn nudism-disabling usually autoremovable clothing:
 				add C to LC;
 				now C is in Holding Pen;
 			if MSM is actually autowearable, now able-to-wear-swimsuit is true;
@@ -1236,10 +1245,9 @@ Report going when the player is in School20 and first-time-swimming-pool is true
 					now MSM is in School20;
 				if able-to-wear-swimsuit is true:
 					say "You strip down and don the swimsuit.";
-					repeat with C running through worn usually autoremovable clothing:
-						unless C is armband:
-							now C is in the location of the player;
-							dislodge C;
+					repeat with C running through LC:
+						now C is in the location of the player;
+						dislodge C;
 					if MSM is cursed, summon MSM cursed with quest;
 					otherwise summon MSM uncursed;
 				force immediate clothing-focus redraw;
@@ -1406,6 +1414,7 @@ To compute pregnancy swap of (M - woman-player):
 	trigger conception-wisp-trigger;
 	say "[BigNameDesc of woman-player] quickly takes [his of woman-player] leave.[line break][speech style of woman-player]'I hope, some day, you'll be able to forgive me!'[roman type][line break]";
 	compute mandatory room leaving of woman-player;
+	maybe-map-display figure of barbara cutscene 13;
 	vanish woman-player.
 
 To compute penis siphoning of (M - woman-player):
@@ -1545,7 +1554,7 @@ To compute basic greeting to (M - woman-player):
 		if newbie tips is 1, say "[newbie style]Newbie tip: Barbara is a special type of NPC, that under normal circumstances remains friendly throughout the entire course of the game, and will even fight alongside you, or appear to help you out of sticky situations. However if bad things happen, including if you lose a fight alongside [him of M], [he of M]'ll start to lose the game [himself of M], and become more slutty. Also, sometimes when you bump into [him of M] [he of M]'ll be in the middle of a predicament, and you have to choose whether to help [him of M] or let it happen. Letting it happen usually either avoids the risk of bad stuff, or rewards you with powerful items. However, it'll continue Barbara's progress towards becoming a brainless bimbo. A super slutty Barbara is a sort-of useless sidekick who can even do really unhelpful things like release the [ShortDesc of minotaur].[roman type][line break]";
 		now M is introduced;
 		now the text-shortcut of M is "ba";
-		say "[speech style of M]'Oh, and happy [april fools]. What a day to be playing this game, huh?'[roman type][line break]";
+		if april fools content is 1, say "[speech style of M]'Oh, and happy [april fools]. What a day to be playing this game, huh?'[roman type][line break]";
 	otherwise if the woman-status of M is 91 and the mechanic-scene of M <= 5 and M is in the location of the player and mechanic is unfriendly:
 		say "[speech style of M]'HYUK HYUK HYUK'[roman type][line break]";
 	otherwise if the woman-status of M is 80:

@@ -113,6 +113,8 @@ Figure of lake predicament 3 is the file "Special/Cutscene/cutscene-lake-predica
 
 Figure of lecture 2 is the file "Special/Cutscene/cutscene-lecture4.jpg".
 
+Figure of lubricant is the file "Items/Collectibles/lube1.png".
+
 Figure of Maths Predicament Xray 1 is the file "Special/Cutscene/cutscene-maths-dq-xray1.jpg".
 Figure of Maths Predicament 1 is the file "Special/Cutscene/cutscene-maths-dq1.jpg".
 Figure of Maths Predicament 2 is the file "Special/Cutscene/cutscene-maths-dq2.jpg".

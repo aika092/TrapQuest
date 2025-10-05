@@ -203,7 +203,7 @@ To compute unique periodic effect of (M - a wench):
 				say "Suddenly, [NameDesc of M] turns around and doubles over, [his of M] face close to the ground, and [his of M] ass high in the air. You think that [he of M] must have run out of energy to fight, but then suddenly...[paragraph break][italic type]SPLOOOORCH[paragraph break][roman type]A huge geyser of [semen] erupts from [his of M] asshole, hitting you right in the face!";
 				cutshow Figure of Wench Cutscene 10 for M;
 				GrossOut 6;
-				AnnouncedSquirt semen on face by 10;
+				AnnouncedSquirt semen on face by a random number between 12 and 20;
 				if the player is blinded, say "[variable custom style]Oh my god, I can't see anything! I've been blinded by cum![roman type][line break]";
 				now the creampieTimer of M is 0;
 				say "[speech style of M]'Haaah... Hahahaha... I never would have expected that cum in my belly to end up being so useful, hahaha![roman type][line break]";
@@ -1095,7 +1095,7 @@ To say ErectionForceFlav of (M - a wench):
 
 To say ErectionUseFlav of (M - a wench):
 	if the creampieTimer of M > 0, say "[one of]You feel more [semen] than [HoleDesc of M] as [FuckerDesc of M] bounces on top of you, frantically rubbing [his of M] [if lady fetish is 2]clitty[otherwise]clit[end if].[or]The [semen] inside [him of M] adds extra lube as your [player-penis] [if the size of penis < 4]slips[otherwise]slides[end if] in and out of [FuckerDesc of M]'s [HoleDesc of M].[or][BigNameDesc of M] [if the size of penis > 7]moans[otherwise]pants[end if] as [he of M] rocks [his of M] hips against you, driving your [player-penis] in and out of [his of M] creampied [HoleDesc of M].[or]You fuck [FuckerDesc of M]'s creampie more than [his of M] [HoleDesc of M] as [he of M] rides your [player-penis].[in random order]";
-	otherwise say "[one of][BigFuckerDesc of M] [if the size of penis > 7]moans[otherwise]pants[end if] as [he of M] bounces atop you, frantically rubbing [his of M] [if lady fetish is 2]clitty[otherwise]clit[end if].[or]You seem to feel it [if the size of penis > 7]far less than [he of M] does[otherwise if the size of penis < 4]way more than [he of M] does[otherwise]a little less than [he of M] does[end if] as your [player-penis] [if the size of penis < 4]daintily dips[otherwise]slides[end if] in and out of [FuckerDesc of M]'s [HoleDesc of M].[or][BigNameDesc of M] [if the size of penis > 7]moans[otherwise]pants[end if] as [he of M] rocks [his of M] hips against you, driving your [player-penis] in and out of [his of M] [HoleDesc of M].[or][if the penis-obedience of the player < 6]You try not to [otherwise]You can't help but[end if] think of yourself as a sex toy as [FuckerDesc of M] loudly rides your [player-penis].[in random order]".
+	otherwise say "[one of][BigFuckerDesc of M] [if the size of penis > 7]moans[otherwise]pants[end if] as [he of M] bounces atop you, frantically rubbing [his of M] [if lady fetish is 2]clitty[otherwise]clit[end if].[or]You seem to feel it [if the size of penis > 7]far less than [he of M] does[otherwise if the size of penis < 4]way more than [he of M] does[otherwise]a little less than [he of M] does[end if] as your [player-penis] [if the size of penis < 4]daintily dips[otherwise]slides[end if] in and out of [FuckerDesc of M]'s [HoleDesc of M].[or][BigNameDesc of M] [if the size of penis > 7]moans[otherwise]pants[end if] as [he of M] rocks [his of M] hips against you, driving your [player-penis] in and out of [his of M] [HoleDesc of M].[or][if the penis-obedience of penis < 6]You try not to [otherwise]You can't help but[end if] think of yourself as a sex toy as [FuckerDesc of M] loudly rides your [player-penis].[in random order]".
 
 To compute erection orgasm of (M - a wench):
 	if M is unfriendly:
@@ -1136,7 +1136,8 @@ To say ErectionClimaxFlav of (M - a wench):
 		say "[BigNameDesc of M] shudders, [one of]shrieking[or]practically crying[at random] with pleasure as climax takes [him of M]. [big he of M] doesn't stop as [his of M] [if lady fetish is 2]cock shoots strings of [semen] across your belly[otherwise]pussy squirts out femcum[end if]. [if refractoryperiod > 0]You would envy [him of M], if not for the fact that [he of M] made you blow your load only a few seconds ago. [BigFuckerDesc of M] heaves a satisfied sigh as the movements of [his of M] hips come to a stop, and your softening [player-penis] slips out of [his of M] creampied [HoleDesc of M].[otherwise if the reaction of the player is 0]You can't help but envy [him of M], which makes it that much harder to hold on! [otherwise]You can't help but envy [him of M], which makes your desire to cum before you lose your chance even stronger! [end if]";
 		if refractoryperiod <= 0:
 			stimulate penis from M times 1;[player can still cum]
-			say "Looking satisfied, [FuckerDesc of M] climbs off of you.";
+			if refractoryperiod <= 0, say "[FuckerDesc of M], however, doesn't seem to notice. [big he of M] climbs off of you, leaving your [player-penis] throbbing and unsatisfied.";
+			otherwise say "Looking satisfied, [FuckerDesc of M] climbs off of you.";
 		say "[line break][speech style of M]'[one of]Wow, I needed that.'[or]That felt SO good.'[or]THAT was fucking perfect, cutie.'[in random order][roman type][line break]";
 		Calm M;
 		let N be the size of penis / 3;
@@ -1290,10 +1291,9 @@ To compute angry punishment of (M - a wench):
 	say angry punishment insult of M;
 	if M is not friendly-fucking and (M is not seduced or M is unfriendly):
 		if bondage protection < 2 and heart-collar is off-stage and heart-collar is actually summonable:
-			summon heart-collar uncursed;
+			summon heart-collar locked;
 			say "[BigNameDesc of M] makes you wear a [heart-collar]!";
-			let K be a random off-stage specific-key;
-			compute M locking heart-collar with K;
+			compute M keylocking heart-collar;
 		otherwise:
 			compute default angry punishment of M.
 
@@ -2013,12 +2013,11 @@ To compute unique climax of (M - QoS wench) in (F - asshole):
 To compute (M - a QoS wench) demanding erection:
 	say "[BigFuckerDesc of M] holds you down firmly as [he of M] pulls out a small tape measure.[line break][speech style of M]'All right hun let's see how you measure up. Sure would be a shame if your [sissy-penis] is too small to be of any use to anyone.'[roman type][line break]";
 	let C be a random off-stage fetish appropriate chastity cage;
-	if the size of penis < 4 and bondage protection < 2 and C is a thing and there is an off-stage specific-key:
-		let K be a random off-stage specific-key;
+	if the size of penis < 4 and bondage protection < 2 and C is a thing:
 		say "[speech style of M]'Pfft. Well, I don't need a tape measure to see what needs to be done here. I'm doing you a favour hun, having a [BlackCock] dominate you is simply the best, you just need to taste it once. And you're not getting out of this cage for a long time because I'll be keeping the key nice and safe for you!'[roman type][line break]";
 		say "[BigFuckerDesc of M] grabs your [sissy-penis] and crams it into the [ShortDesc of C]!";
-		summon C uncursed;
-		compute M locking C with K;
+		summon C locked;
+		compute M keylocking C;
 		say "[BigFuckerDesc of M] gives the head of your now caged [sissy-penis] a kiss before sauntering off.";
 		bore M;
 	otherwise if the size of penis < 8 and face is not actually occupied:

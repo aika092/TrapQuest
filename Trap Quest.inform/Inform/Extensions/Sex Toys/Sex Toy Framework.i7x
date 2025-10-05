@@ -52,12 +52,19 @@ Definition: a sex toy (called S) is vaginally summonable:
 	if vagina is actually occupied, decide no;
 	decide yes.
 
+To compute unique summoning of (S - a sex toy):
+	unless S is basic plug:
+		let F be a random fuckhole penetrated by S;
+		if F is a thing, now the size of S is the insertableGirthAcceptance of F.
+
 To say DongSize of (C - a sex toy):
 	let N be the size of C;
 	say DongSize N.
 
+[To say DongSize (N - a number):
+	say "[if N < 3]small[otherwise if N < 5]medium sized[otherwise if N < 7]large[otherwise if N < 9]huge[otherwise]monstrous[end if]".]
 To say DongSize (N - a number):
-	say "[if N < 3]small[otherwise if N < 5]medium sized[otherwise if N < 7]large[otherwise if N < 9]huge[otherwise]monstrous[end if]".
+	say "[if N < 2]tiny[otherwise if N is 2]small[otherwise if N is 3]smallish[otherwise if N is 4]medium sized[otherwise if N is 5]girthy[otherwise if N is 6]large[otherwise if N is 7]very large[otherwise if N is 8]huge[otherwise if N is 9]giant[otherwise]monstrous[end if]".
 
 To say ShortDesc of (C - a sex toy):
 	say "sex toy".
@@ -225,7 +232,7 @@ To compute gripping of (I - a thing):
 	[#LXorDD: For the case of wearing the stick-on 0-sized penis decal, it's too fiddly to bother add a whole 'It peels off and flutters to the ground' or 'the stick on decal magically somehow fills your [orifice]' thing, so instead we'll kludge this special case and say the player is just pretending. I also suspect if it isn't counted as being held 'inside' long enough this might loop forever, too. So we pretend everything is proceeding normally.]
 	let pretence be "The";
 	if I is players-detached-dick and the size of I is 0, now pretence is "You pretend that your";
-	if the player is upright and I is not glued clothing and I is not cursed clothing and chastity-belt is not worn and (nun-dress is not worn or nun-dress is not wrist-bound-behind) and (current-predicament is not team-girlfriends-predicament or the player is not in a predicament room):
+	if the player is upright and I is not glued clothing and I is not cursed clothing and chastity-belt is not worn and I is not nintendolls flag plug and (nun-dress is not worn or nun-dress is not wrist-bound-behind) and (current-predicament is not team-girlfriends-predicament or the player is not in a predicament room):
 		if debuginfo > 1 and ((I is penetrating asshole and the player is not ass protected) or (I is penetrating vagina and the player is not pussy protected)), say "[input-style][ShortDesc of I] gripping check: Grip value ([G]) squared * 3 = [G * G * 3]; RNG (0~[G * G * 3]) = [R] | 9.5 Required grip strength[roman type][line break]";
 		if I is players-detached-dick and the size of I is 0:
 			do nothing; [so, avoid the falls 'out' check]
@@ -383,7 +390,7 @@ A plug is a kind of sex toy. A basic plug is a kind of plug. The size of plug is
 
 black-plug is a basic plug. The size of black-plug is 1. The text-shortcut of black-plug is "plu1". Understand "black" as black-plug.
 To say MediumDesc of (P - black-plug):
-	say "small black plug".
+	say "tiny black plug".
 Definition: black-plug is black themed: decide yes.
 pink-plug is a basic plug. The size of pink-plug is 2. The text-shortcut of pink-plug is "plu2". Understand "pink" as pink-plug.
 To say MediumDesc of (P - pink-plug):
@@ -391,7 +398,7 @@ To say MediumDesc of (P - pink-plug):
 Definition: pink-plug is pink themed: decide yes.
 small-jewelled-plug is a basic plug. The size of small-jewelled-plug is 3. The text-shortcut of small-jewelled-plug is "plu3". small-jewelled-plug is metal.
 To say MediumDesc of (P - small-jewelled-plug):
-	say "small metal plug".
+	say "smallish metal plug".
 Definition: small-jewelled-plug is grey themed: decide yes.
 Definition: small-jewelled-plug is purple themed: decide yes.
 Definition: small-jewelled-plug is gem themed: decide yes.
@@ -416,7 +423,7 @@ To decide which number is the outrage of (S - medium-jewelled-plug):
 	decide on the unworn outrage of S.
 round-plug is a basic plug. The size of round-plug is 5. The text-shortcut of round-plug is "plu5". Understand "round", "black" as round-plug.
 To say MediumDesc of (P - round-plug):
-	say "large round black plug".
+	say "girthy round black plug".
 Definition: round-plug is black themed: decide yes.
 flared-plug is a basic plug. The size of flared-plug is 6. The text-shortcut of flared-plug is "plu6". Understand "flared", "black" as flared-plug.
 To say MediumDesc of (P - flared-plug):
@@ -424,7 +431,7 @@ To say MediumDesc of (P - flared-plug):
 Definition: flared-plug is black themed: decide yes.
 beige-plug is a basic plug. The size of beige-plug is 7. The text-shortcut of beige-plug is "plu7". Understand "beige" as beige-plug.
 To say MediumDesc of (P - beige-plug):
-	say "huge beige plug".
+	say "very large beige plug".
 fish-plug is a basic plug. The size of fish-plug is 8. The text-shortcut of fish-plug is "plu8". Understand "fish" as fish-plug.
 To say MediumDesc of (P - fish-plug):
 	say "huge fish plug".
@@ -438,7 +445,7 @@ To decide which number is the unworn outrage of (S - fish-plug):
 	decide on O.
 brown-plug is a basic plug. The size of brown-plug is 9. The text-shortcut of brown-plug is "plu9". Understand "brown" as brown-plug.
 To say MediumDesc of (P - brown-plug):
-	say "monstrous brown plug".
+	say "giant brown plug".
 Definition: brown-plug is brown themed: decide yes.
 tiered-plug is a basic plug. The size of tiered-plug is 10. The text-shortcut of tiered-plug is "plu10". Understand "beige" as tiered-plug.
 To say MediumDesc of (P - tiered-plug):

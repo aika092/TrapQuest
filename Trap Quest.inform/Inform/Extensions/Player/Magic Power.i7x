@@ -313,7 +313,7 @@ A game universe initialisation rule (this is the incantation initialisation rule
 			choose a blank row in the Table of Possible Incantations;
 			now the phrase entry is "want to be covered in thick sticky man cream";
 			now the naughtiness entry is 11;
-		if mythical creatures fetish is 1:
+		if mythical creature fetish is 1:
 			choose a blank row in the Table of Possible Incantations;
 			now the phrase entry is "am so loose I can take a horsecock";
 			now the naughtiness entry is 11;
@@ -437,7 +437,7 @@ Report Spellcasting wand-summoning:
 			try examining lolita magical dress.
 
 An all later time based rule (this is the magical girl spell rule):
-	if the total magic power of the player > 0 and wand-summoning is uncastable:
+	if the player is not in a predicament room and the total magic power of the player > 0 and wand-summoning is uncastable:
 		now wand-summoning is everywhere;
 		now the outrageousness of wand-summoning is 6;
 		now the incantation of wand-summoning is "call upon the power of girlcum";
@@ -643,6 +643,28 @@ Report Spellcasting magic-luck when there is a reactive monster:
 	increase luck-timer of luck-tincture by 30;
 	say "A golden aura begins to shimmer around you.[line break][variable custom style][one of]I feel amazing! Maybe I should look for things that would usually require me to get lucky...[or]I feel lucky![stopping][roman type][line break]".
 Definition: magic-luck is staller: decide no. [Does it make all NPCs lose a turn?]
+
+magic-unlock is a magic-spell.
+To decide which number is the raw-magic-cost of (S - magic-unlock):
+	decide on 10.
+To say MagicSpellEffect of (S - magic-unlock):
+	say "unlock a piece of clothing you're wearing[if bondage protection is 0] (that isn't locked with a specific key)[end if]".
+Report Spellcasting magic-unlock when there is a reactive monster:
+	let LC be the list of worn locked clothing;
+	let C be nothing;
+	if bondage protection is 0:
+		repeat with CC running through LC:
+			let K be a random specific-key covering CC;
+			if K is a thing, remove CC from LC;
+	if the number of entries in LC > 0:
+		sort LC in random order;
+		now C is entry 1 in LC;
+	if C is a thing:
+		unlock C;
+		say "Your [C] clicks open![line break][variable custom style][one of]Huzzah, it worked[or]Freedom[stopping]![roman type][line break]";
+	otherwise:
+		say "Nothing happens! There must not be anything you're wearing that this spell can unlock...".
+Definition: magic-unlock is staller: decide no. [Does it make all NPCs lose a turn?]
 
 magic-bandage is a magic-spell.
 To decide which number is the raw-magic-cost of (S - magic-bandage):

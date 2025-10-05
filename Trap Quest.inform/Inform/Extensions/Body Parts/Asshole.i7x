@@ -228,7 +228,7 @@ To gape (A - asshole) times (X - a number):
 				say "[if the bimbo of the player < 10][line break][variable custom style][one of]How it is even possible? My asshole is permanently stretched wider than my fist![or]I can't believe it is even possible to be gaped so wide![stopping][otherwise][line break][second custom style][line break][one of]My [asshole] is gaping wide, I'm so proud![or]I just love the feeling of having a permanently gaping wide [asshole]![stopping][end if][roman type][line break]";
 			increase the openness of asshole by 1;
 			now ruined is 2;
-	if the player is possessing a vagina and the openness of asshole > the openness of vagina + 5 and there is a worn tattoo and a random number between 1 and 10 is 1 and asshole-cupid tattoo is drawable:
+	if the player is possessing a vagina and the openness of asshole > the openness of vagina + 5 and there is a worn tattoo and the player is not in a predicament room and a random number between 1 and 10 is 1 and asshole-cupid tattoo is drawable:
 		summon asshole-cupid tattoo;
 		say "Your skin stings with pain as a Cupid tattoo is suddenly burned onto your butt, pointing at your [asshole]![line break][variable custom style][if the player is not a pervert]No no, I'm not a butt slut![otherwise if the anal sex addiction of the player < 7]It's saying I prefer anal sex to normal sex?[otherwise]Ooh yes that's right, anal sex is the best sex![end if][roman type][line break]";
 	if transGender is 1, now virgincursed is 0;

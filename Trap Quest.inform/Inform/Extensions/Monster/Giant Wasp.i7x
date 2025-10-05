@@ -1,8 +1,10 @@
 Giant Wasp by Monster begins here.
 
-A giant wasp is a kind of monster. A giant wasp is usually airborne. A giant wasp is usually neuter. The poison-status of a giant wasp is -1. A giant wasp has a number called fertilisation-cooldown. A giant wasp is detached-dick-ignoring.
+A giant wasp is a kind of monster. A giant wasp is usually flightless. A giant wasp is usually neuter. The poison-status of a giant wasp is -1. A giant wasp has a number called fertilisation-cooldown. A giant wasp is detached-dick-ignoring.
 
-Definition: a giant wasp is virginity taking: decide yes. [an ovipositor is a kind of sex organ]
+Definition: a giant wasp is virginity taking:
+	if mythical creature fetish is 1, decide yes;
+	decide no.[an ovipositor is a kind of sex organ]
 Definition: a giant wasp is egg-fathering: decide yes.
 Definition: a giant wasp is willing to do anal: decide yes.
 Definition: a giant wasp is willing to do vaginal:
@@ -10,7 +12,7 @@ Definition: a giant wasp is willing to do vaginal:
 	decide no.
 
 To say ShortDesc of (M - a giant wasp):
-	say "wasp".
+	say "wasp[if mythical creature fetish is 0] cosplayer[end if]".
 
 Figure of Giant Wasp Daddy is the file "NPCs/Forest/Wasp/wasp1.png".
 Figure of Giant Wasp is the file "NPCs/Forest/Wasp/wasp2.jpg".
@@ -20,32 +22,38 @@ Figure of Wasp Cutscene 1 is the file "NPCs/Forest/Wasp/cutscene-wasp-sex1.png".
 Figure of Wasp Cutscene 2 is the file "NPCs/Forest/Wasp/cutscene-wasp-sex2.jpg".
 
 To decide which figure-name is the monster-image of (M - a giant wasp):
-	decide on figure of giant wasp.
+	if mythical creature fetish is 1, decide on figure of giant wasp;
+	decide on figure of Missing NPC.
 To decide which figure-name is the monster-image of (M - fuzzy giant wasp):
-	decide on figure of giant wasp daddy.
+	if mythical creature fetish is 1, decide on figure of giant wasp daddy;
+	decide on figure of Missing NPC.
 To decide which figure-name is the monster-image of (M - domesticated wasp):
-	decide on figure of giant wasp daddy.
+	if mythical creature fetish is 1, decide on figure of giant wasp daddy;
+	decide on figure of Missing NPC.
 To decide which figure-name is the monster-image of (M - a dangerous-wasp):
-	decide on figure of giant wasp dangerous.
+	if mythical creature fetish is 1, decide on figure of giant wasp dangerous;
+	decide on figure of Missing NPC.
 To decide which figure-name is the monster-image of (M - a honey-wasp):
-	decide on figure of giant wasp honey.
+	if mythical creature fetish is 1, decide on figure of giant wasp honey;
+	decide on figure of Missing NPC.
 
 To decide which figure-name is the anal-sex-monster-image of (M - fuzzy giant wasp):
-	decide on figure of Wasp Cutscene 1.
+	if mythical creature fetish is 1, decide on figure of Wasp Cutscene 1.
 To decide which figure-name is the anal-sex-monster-image of (M - domesticated wasp):
-	decide on figure of Wasp Cutscene 1.
+	if mythical creature fetish is 1, decide on figure of Wasp Cutscene 1.
 To decide which figure-name is the anal-sex-monster-image of (M - a giant wasp):
-	decide on figure of Wasp Cutscene 2.
+	if mythical creature fetish is 1, decide on figure of Wasp Cutscene 2.
 
 To decide which figure-name is the vaginal-sex-monster-image of (M - a giant wasp):
-	decide on the anal-sex-monster-image of M.
+	if mythical creature fetish is 1, decide on the anal-sex-monster-image of M;
+	decide on figure of Missing NPC.
 
 A mundane-wasp is a kind of giant wasp.
 
 [All wasps are "descended" from this wasp, so the player can only see the special variants when this wasp has babies.]
 buzzing giant wasp is a mundane-wasp. The text-shortcut of buzzing giant wasp is "bwsp".
 To say MediumDesc of (M - buzzing giant wasp):
-	say "buzzing wasp".
+	say "buzzing [ShortDesc of M]".
 Definition: buzzing giant wasp is woods dwelling:
 	if egg laying fetish is 1 and mythical creature fetish is 1, decide yes;
 	decide no.
@@ -55,54 +63,68 @@ To decide which number is the girth of (M - buzzing giant wasp):
 
 erratic giant wasp is a mundane-wasp. The text-shortcut of erratic giant wasp is "ewsp".
 To say MediumDesc of (M - erratic giant wasp):
-	say "erratic wasp".
+	say "erratic [ShortDesc of M]".
 fluttering giant wasp is a mundane-wasp. The text-shortcut of fluttering giant wasp is "fwsp".
 To say MediumDesc of (M - fluttering giant wasp):
-	say "fluttering wasp".
+	say "fluttering [ShortDesc of M]".
 hovering giant wasp is a mundane-wasp. The text-shortcut of hovering giant wasp is "hwsp".
 To say MediumDesc of (M - hovering giant wasp):
-	say "hovering wasp".
+	say "hovering [ShortDesc of M]".
 
 A dangerous-wasp is a kind of giant wasp.
 
 vicious giant wasp is a dangerous-wasp. The text-shortcut of vicious giant wasp is "vwsp".
 To say MediumDesc of (M - vicious giant wasp):
-	say "vicious wasp".
+	say "vicious [ShortDesc of M]".
 angry giant wasp is a dangerous-wasp. The text-shortcut of angry giant wasp is "awsp".
 To say MediumDesc of (M - angry giant wasp):
-	say "angry wasp".
+	say "angry [ShortDesc of M]".
 stinging giant wasp is a dangerous-wasp. The text-shortcut of stinging giant wasp is "swsp".
 To say MediumDesc of (M - stinging giant wasp):
-	say "stinging wasp".
+	say "stinging [ShortDesc of M]".
 nasty giant wasp is a dangerous-wasp. The text-shortcut of nasty giant wasp is "nwsp".
 To say MediumDesc of (M - nasty giant wasp):
-	say "nasty wasp".
+	say "nasty [ShortDesc of M]".
 
 A honey-wasp is a kind of giant wasp.
 
 fuzzy giant wasp is a honey-wasp. The text-shortcut of fuzzy giant wasp is "fzwp".
 To say MediumDesc of (M - fuzzy giant wasp):
-	say "fuzzy wasp".
+	say "fuzzy [ShortDesc of M]".
 woolly giant wasp is a honey-wasp. The text-shortcut of woolly giant wasp is "wzwp".
 To say MediumDesc of (M - woolly giant wasp):
-	say "woolly wasp".
+	say "woolly [ShortDesc of M]".
+
+To say flies of (M - a giant wasp):
+	if mythical creature fetish is 1, say "flies";
+	otherwise say "runs";
 
 To say MonsterDesc of (M - a giant wasp):
-	say "This giant flying insect is larger than you, but is still capable of perfect flight from [his of M] rapidly oscillating wings. As with wasps in the real world, this beast seems to be very aggressive for no clear reason. [if M is honey-wasp]This one in particular is covered in soft-looking fur, but the needle-like stinger and[otherwise if M is dangerous-wasp]This one in particular seems particularly dangerous, with an absolutely enourmous, blade-like stinger and a[otherwise]Aside from [his of M] huge, needle-like stinger, you can see a[end if] pulsating [italic type][if the times-submitted of M > 0]ovipositor[otherwise]appendage[roman type] dangling from [his of M] abdomen.";
+	if mythical creature fetish is 1, say "This flying creature may be smaller than you, but [he of M]'s still bigger than any insect you've ever seen, hovering above the ground on giant oscillating wings. [big he of M] has a vaguely human shaped body, with four arms, 'waspish' hips and [if M is honey-wasp and lady fetish is 2]a quartet of honey distended tits. [otherwise if M is not dangerous-wasp and lady fetish is 2]a quartet of perky, featureless breasts. [otherwise]a slender, neither masculine nor feminine chest. [end if]
+	[big his of M] [if M is honey-wasp]ruff of soft, fluffy fur around [his of M] neck, contrasts the needle-like stinger and[otherwise if M is dangerous-wasp]enourmous, blade-like stinger drips purple venom, neatly drawing attention away from the[otherwise]needle-like stinger looks almost as dangerous as the[end if] [LongDickDesc of M] dangling from [his of M] abdomen.
+	Just like an actual wasp, [he of M] seems to be very aggressive for no clear reason.
+	";
+	otherwise say "This [man of witch] is wearing an elaborate wasp costume, with huge novelty wings, compound eye goggles, body paint, some kind of specialized strap-on ovipositor harness, and a giant foam wasp abdomen with an inches long, need-like stinger. [if M is honey-wasp][big his of M] costume is mostly orange, and yellow, with cream-coloured fur mufflers [his of M] neck, wrists, and ankles. [otherwise if M is dangerous-wasp][big his of M] costume is an eyewateringly vibrant shade of orange, with hints of black and an absolutely venomous shade of purple. [otherwise][big his of M] costume is a mixture of black and yellow. [end if][big he of M] constantly mutters under [his of M] breath, seemingly aggressive for no reason (just like a real wasp!)";
 
 To say LongDickDesc of (M - a giant wasp):
-	say "[one of]pulsating[or]throbbing[or]ridged[in random order] [DickDesc of M]";
+	say "[one of]plastic[or]silicone[or]custom[in random order] [DickDesc of M]";
 
 To say DickDesc of (M - a giant wasp):
-	say "ovipositor".
+	say "[if mythical creature fetish is 0]ovipositor dildo[otherwise if the times-submitted of M is 0]appendage[otherwise]ovipositor[end if]".
 
 To set up (M - a giant wasp):
 	reset M;
 	now the monstersetup of M is 1;
 	add wasp wing to the banishItems of M, if absent;
-	if egg laying fetish is 1 and mythical creature fetish is 1:
+	if egg laying fetish is 1:
 		now the raw difficulty of M is the starting difficulty of M;
 		now the health of M is the maxhealth of M;
+		if mythical creature fetish is 1:
+			now M is airborne;[mythical wasps can fly]
+			now M is neuter;
+		otherwise:
+			now M is flightless;
+			now M is female;
 	otherwise:
 		remove M from play;
 
@@ -114,8 +136,11 @@ To decide which number is the grossness of (M - a giant wasp): [grossness addict
 Part 1 - Misc Flavour
 
 To say SummoningFlav of (M - a giant wasp):
-	if the location of the player is Woods30, say "You hear someone (or something) moaning intensely from inside the statue, loudly climaxing as a large object, about the size of a football rolls through the stony passage. The surface of the object cracks, and a full-grown [printed name of M] emerges from the egg and begins hovering in the air just below the statue's chest.";
-	otherwise say "You hear an egg cracking somewhere close by.".
+	if the location of the player is Woods30:
+		if mythical creature fetish is 1, say "You hear someone (or something) moaning intensely from inside the statue, loudly climaxing as a large object, about the size of a football rolls through the stony passage. The surface of the object cracks, and a full-grown [ShortDesc of M] emerges from within and begins hovering in the air just below the statue's chest.";
+		otherwise say "You hear someone (or something) moaning intensely from inside the statue, loudly climaxing as a large object, about the size of a football rolls through the stony passage. The surface of the object cracks, and the pieces fall away to reveal a curled up [ShortDesc of M], who mutters under [his of M] breath as [he of M] gets to [his of M] feet.";
+	otherwise:
+		say "You hear an egg cracking somewhere close by.".
 
 To compute (M - a monster) stomping (N - a giant wasp):
 	if M is in the location of the player, say "[BigNameDesc of M] smacks [NameDesc of N] with a clenched fist. [BigNameDesc of N] quickly turns tail and buzzes far, far away!";
@@ -152,7 +177,7 @@ To compute perception of (M - a giant wasp):
 		say "[BigNameDesc of M] seems to notice you, and starts following you around passively!";
 		calm M;
 	otherwise:
-		say "[BigNameDesc of M] seems to notice you, and flies towards you aggressively!";
+		say "[BigNameDesc of M] seems to notice you, and [flies of M] towards you aggressively!";
 		anger M.
 
 Part 3 - Motion and Seeking
@@ -189,7 +214,11 @@ To Fertilise (E - a medium egg) with (M - a giant wasp):
 		remove E from play.
 
 To compute (M - a giant wasp) fathering (W - a giant wasp):
-	say "[BigNameDesc of M] swoops down and lands next to the egg. [one of]A different phallic appendage protrudes itself from the wasp's underbelly and it drips a few drops of a mostly clear liquid onto the egg. You watch, paralysed with awe and fear, as the white egg changes colour to light brown, doubles in size, and then just as quickly, starts to crack. Within seconds, a familiarly looking larva has emerged from the egg. The wasp keeps dropping [his of M] seemingly magic reproductive juices onto the giant maggot, which, right in front of your eyes, goes through the entire metamorphosis which a normal wasp goes through in [his of M] youth, in a few seconds. Before you realise what has happened, there are two identical giant wasps hovering in front of you.[or]Once again you are forced to watch the wasp fertilise your egg, changes colour to light brown, doubles in size, and then just as quickly, starts to crack. Within seconds, a familiarly looking larva has emerged from the egg. The wasp keeps dropping [his of M] seemingly magic reproductive juices onto the giant maggot, which, right in front of your eyes, goes through the entire metamorphosis which a normal wasp goes through in [his of M] youth, in a few seconds.[stopping]";
+	if mythical creature fetish is 1:
+		say "[BigNameDesc of M] swoops down and lands next to the egg. [one of]A different phallic appendage protrudes itself from the wasp's underbelly and it drips a few drops of a mostly clear liquid onto the egg. You watch, paralysed with awe and fear, as the white egg changes colour to light brown, doubles in size, and then just as quickly, starts to crack. Within seconds, a familiarly looking larva has emerged from the egg. The wasp keeps dropping [his of M] seemingly magic reproductive juices onto the giant maggot, which, right in front of your eyes, goes through the entire metamorphosis which a normal wasp goes through in [his of M] youth, in a few seconds. Before you realise what has happened, there are two identical giant wasps hovering in front of you.[or]Once again you are forced to watch the wasp fertilise your egg, changes colour to light brown, doubles in size, and then just as quickly, starts to crack. Within seconds, a familiarly looking larva has emerged from the egg. The wasp keeps dropping [his of M] seemingly magic reproductive juices onto the giant maggot, which, right in front of your eyes, goes through the entire metamorphosis which a normal wasp goes through in [his of M] youth, in a few seconds.[stopping]";
+	otherwise:
+		let A be a random off-stage explorer;
+		say "[BigNameDesc of M] disappears between a few trees and comes back tugging along a [ShortDesc of A] by the wrist. [big him of M] sprinkles a glittering powder onto the egg, which causes it to crack once... twice...and then explode in a shower of fragments and confetti. Sitting in its place is a neatly folded wasp costume, which [ShortDesc of A] excitedly picks up and begins to put on it. You watch in utter confusion as [BigNameDesc of M] gives the [NameDesc of W] a whispered lecture on how to method act properly.";
 	now W is in the location of M;
 	newbornSetup W;
 	now the fertilisation-cooldown of M is 200.
@@ -207,7 +236,7 @@ To compute (M - a giant wasp) protecting against (X - a monster):
 		compute X receiving 1 damage from M.
 
 To say AllyDamageFlav of (M - a giant wasp) on (X - a monster):
-	say "[BigNameDesc of M] [one of]speedily flies in to protect you and your eggs. It [or][stopping]stings the [X]!".
+	say "[BigNameDesc of M] [one of]speedily [flies of M] in to protect you and your eggs. It [or][stopping]stings the [X]!".
 
 To compute anal sex of (M - a giant wasp):
 	compute fuckhole sex of M.
@@ -303,14 +332,14 @@ This is the wasp unconvinced rule:
 	if presented-orifice is not nothing, say "[BigNameDesc of current-monster] shows no indication of having noticed or understood your action.".
 
 To compute kneeling reaction of (M - a giant wasp):
-	say "[BigNameDesc of M] watches you[one of] as [his of M] ovipositor unfurls fully from [his of M] belly[or], flexing [his of M] ovipositor as the wasp hovers closer to you[or], allowing [his of M] ovipositor to bob underneath [his of M] belly as the wasp hovers closer[or], hovering closer as clear lubricant drips from [his of M] ovipositor[at random][if the player is not shameless]. You shiver with shame[end if].";
+	say "[BigNameDesc of M] watches you[one of] as [his of M] ovipositor unfurls fully from [his of M] belly[or], flexing [his of M] ovipositor as the [ShortDesc of M] hovers closer to you[or], allowing [his of M] ovipositor to bob underneath [his of M] belly as the [ShortDesc of M]  hovers closer[or], hovering closer as clear lubricant drips from [his of M] ovipositor[at random][if the player is not shameless]. You shiver with shame[end if].";
 	strongHumiliate.
 
 To say PullAttempt of (M - a giant wasp) at (C - a clothing):
 	say "[BigNameDesc of M] tries to push through your [printed name of C] to try and rip it off!".
 
 To compute (M - a giant wasp) ripping (C - a clothing):
-	say "The wasp forcefully penetrates it, creating a hole at the crotch!";
+	say "The [ShortDesc of M] forcefully penetrates it, creating a hole at the crotch!";
 	now C is crotch-ripped.
 
 To compute (M - a giant wasp) destroying (C - a clothing):
@@ -357,7 +386,7 @@ To set up sex length of (M - a giant wasp) in (B - asshole):
 
 To compute damaging attack of (M - a giant wasp):
 	if M is dangerous-wasp and a random number between 1 and 2 is 1:
-		say "The wasp stings you in the [one of]arm[or]butt[or]neck[or]back[purely at random], and you feel [if wasp-poison-timer < 1]some strength being sapped from your body! You've been poisoned![otherwise]more poison entering your body![end if]";
+		say "The [ShortDesc of M] tings you in the [one of]arm[or]butt[or]neck[or]back[purely at random], and you feel [if wasp-poison-timer < 1]some strength being sapped from your body! You've been poisoned![otherwise]more poison entering your body![end if]";
 		increase wasp-poison-timer by 3 * the difficulty of M;
 	otherwise if M is honey-wasp and a random number between 1 and 2 is 1:
 		say "An alien-looking appendage unfurls from [FuckerDesc of M][']s abdomen, pulsating wildly as it spews sweet-smelling honey across your [one of]arm[or]butt[or]neck[or]back[purely at random]. [one of]It's getting more difficult to move![or]You're having trouble moving![or]It's getting harder to move![or]You're having more trouble moving around![or]It doesn't hurt, but it's getting pretty difficult to move...[then at random]";
@@ -368,7 +397,7 @@ To compute damaging attack of (M - a giant wasp):
 			try kneeling;
 			now the stance of the player is 1; [failsafe]
 	otherwise:
-		say "The wasp stings you in the [one of]arm[or]butt[or]neck[or]back[purely at random]! [one of]It doesn't really hurt but you feel yourself getting tired very quickly...[or]You can feel yourself getting tired![or]It's getting harder to stay on your feet![or]You're having more trouble holding yourself up![or]It doesn't hurt, but you're struggling to stay on your feet...[then at random]";
+		say "The [ShortDesc of M] stings you in the [one of]arm[or]butt[or]neck[or]back[purely at random]! [one of]It doesn't really hurt but you feel yourself getting tired very quickly...[or]You can feel yourself getting tired![or]It's getting harder to stay on your feet![or]You're having more trouble holding yourself up![or]It doesn't hurt, but you're struggling to stay on your feet...[then at random]";
 		FatigueUp (a random number between the difficulty of M and the buckle threshold of the player / 4) / combatSpeed.
 
 Section 2 - Damage
@@ -379,7 +408,7 @@ A time based rule (this is the wasp poison decay rule):
 	if wasp-poison-timer > 0:
 		decrease wasp-poison-timer by time-seconds;
 		if wasp-poison-timer <= 0:
-			say "[bold type]The wasp's poison seems to have run its course and strength returns to your limbs.[roman type][line break]";
+			say "[bold type]The [if mythical creature fetish is 1]cosplayer's[otherwise]wasp's[end if] poison seems to have run its course and strength returns to your limbs.[roman type][line break]";
 			now wasp-poison-timer is 0.
 
 wasp-honey-timer is a number that varies.
@@ -388,12 +417,12 @@ An all time based rule (this is the wasp honey decay rule):
 	if wasp-honey-timer > 0:
 		decrease wasp-honey-timer by time-seconds;
 		if wasp-honey-timer <= 0:
-			say "[bold type]The wasp's honey seems to have completely dried and you can now move normally again.[roman type][line break]";
+			say "[bold type]The [if mythical creature fetish is 1]cosplayer's[otherwise]wasp's[end if]'s honey seems to have completely dried and you can now move normally again.[roman type][line break]";
 			now wasp-honey-timer is 0;
 		otherwise if wasp-honey-timer <= 80 and wasp-honey-timer + time-seconds > 80:
-			say "[bold type]The wasp's honey seems to have dried enough that you can now move at least a little bit.[roman type][line break]";
+			say "[bold type]The [if mythical creature fetish is 1]cosplayer's[otherwise]wasp's[end if]'s honey seems to have dried enough that you can now move at least a little bit.[roman type][line break]";
 		otherwise:
-			say "The wasp's honey slightly decays.[roman type][line break]";
+			say "The [if mythical creature fetish is 1]cosplayer's[otherwise]wasp's[end if] honey slightly decays.[roman type][line break]";
 
 This is the honey stuck immobility rule:
 	if wasp-honey-timer > 80, rule fails.
@@ -409,7 +438,7 @@ To say DamageReactTired of (M - a giant wasp):
 	say "[BigNameDesc of M][']s buzzing is getting weaker!".
 
 To say DamageReactWeak of (M - a giant wasp):
-	say "[BigNameDesc of M] seems to be struggling to stay in the air!".
+	say "[BigNameDesc of M] seems to be struggling to stay in the [if mythical creature fetish is 1]air![otherwise]fight![end if]".
 
 To say BanishFleeFlav of (M - a giant wasp):
 	say "[BigNameDesc of M] falls to the ground, exhausted. Then suddenly [he of M] attempts to take flight once more, keeping low to the ground as [he of M] buzzes away as quickly as [his of M] injured wings can carry [him of M]!".
@@ -431,7 +460,7 @@ To say BigFuckerDesc of (M - domesticated wasp):
 	say "The domesticated wasp".
 
 To say MonsterDesc of (M - domesticated wasp):
-	say "This giant flying insect has a tiny fairy perched on [his of M] back, controlling [him of M] with a pair of fibrous green reins. Despite [his of M] clearly domesticated nature, it has a huge, nasty-looking stinger, and an even more intimidating ovipositor extending from [his of M] underbelly.".
+	say "This giant flying insect-person has a tiny fairy perched on [his of M] back, controlling [him of M] with a pair of fibrous green reins. Despite [his of M] clearly domesticated nature, it has a huge, nasty-looking stinger, and an even more intimidating [DickDesc of M] extending from [his of M] abdomen.".
 
 To set up (M - domesticated wasp):
 	reset M;
@@ -440,6 +469,7 @@ To set up (M - domesticated wasp):
 		now the raw difficulty of M is the starting difficulty of M + 4;
 		now the fertilisation-cooldown of M is 200;
 		now the health of M is the maxhealth of M;
+		now M is airborne;
 	otherwise:
 		remove M from play.
 
@@ -480,7 +510,7 @@ To compute delay of (M - domesticated wasp):
 To say PrepTaunt of (M - domesticated wasp) in (F - asshole):
 	say "[line break][speech style of fairy-witch]'[one of]Here comes the fun part. Get it? [']Part?[']'[or]That's right. [big he of the player]'s all yours!'[or]Get ready loser, it's breeding time.'[or]I'd do it, but it just won't fit. Thanks a lot, loser!'[or]I like to watch.'[at random][roman type][line break]";
 
-To compute (M - a giant wasp) fathering (W - domesticated wasp):
+To compute (M - a giant wasp) fathering (W - domesticated wasp):[mythical creatures only]
 	say "[BigNameDesc of M] swoops down and lands next to the egg. A different phallic appendage protrudes itself from the wasp's underbelly and it drips a few drops of a mostly clear liquid onto the egg. You watch, paralysed with awe and fear, as the white egg changes colour to light brown, doubles in size, and then just as quickly, starts to crack. Within seconds, a familiar looking larva has emerged from the egg. The older wasp is suddenly hit in the side with a pink bolt of energy, and it flees as a tiny fairy with [his of fairy-witch] hair drawn back into a ponytail bursts from the bushes. [big he of fairy-witch] sprinkles the young wasp with a handful of glittering dust as [he of fairy-witch] wraps a pair of fibrous reins around [his of W] head, causing [him of W] to go through the entire metamorphosis a normal wasp goes through in [his of W] youth, but in the span of only a few seconds. The fairy seems too absorbed with [his of fairy-witch] new mount to care about you.";
 	now W is in the location of M;
 	newbornSetup W;
@@ -578,7 +608,7 @@ To compute perception of (M - domesticated wasp):
 		calm M;
 		now M is uninterested;
 	otherwise:
-		say "[BigNameDesc of M] seems to notice you, and [his of M] rider giggles as [he of M] flies toward you aggressively.";
+		say "[BigNameDesc of M] seems to notice you, and [his of M] rider giggles as [he of M] [flies of M] toward you aggressively.";
 		interest M;
 		anger M.
 
