@@ -1343,7 +1343,7 @@ Displays some text describing a monster instructing the player to get an erectio
 @param <Monster>:<M> The monster intending to use the player's penis
 +!]
 To say ErectionDemand of (M - a monster):
-	say "[line break][speech style of M]'Alright, slut. Get nice and hard for me.'[roman type][line break]".
+	say "[speech style of M]'Alright, slut. Get nice and hard for me.'[roman type][line break]".
 
 [!<SayFriendlyErectionPenetrationFlavOfMonster>+
 
@@ -1370,9 +1370,9 @@ Handles anything that needs to happen when a monster tells the player to get an 
 @param <Monster>:<M> The monster that told the player to get an erection
 +!]
 To compute unerect taunting of (M - a monster):
-	say "[BigNameDesc of M] glances down at your [ShortDesc of penis] expectantly. Your cheeks burn with shame as it remains completely soft. [BigNameDesc of M] [one of]flicks it, watching it flop limply, [or]nudges you so it shifts limply, [or]rolls it, eyeing it like it's some kind of especially unimpressive worm, [or][at random]rolls [his of M] eyes and loses interest.";
+	say "[BigNameDesc of M] glances down at your [ShortDesc of penis] expectantly. Your cheeks burn with shame as it remains completely soft. [BigNameDesc of M] [one of]flicks it, watching it flop limply, [or]nudges you so it shifts limply, [or]rolls it, eyeing it like it's some kind of especially unimpressive worm, [or][in random order]rolls [his of M] eyes and loses interest.";
 	strongHumiliate;
-	Bore M.
+	bore M.
 
 [!<SayErectionForceFlavOfMonster>+
 
@@ -1401,7 +1401,7 @@ Displays some text describing a monster reacting when the player loses their ere
 To say ErectionLostFlav of (M - a monster):
 	say "[BigNameDesc of M] gives you a nonplussed look as your [ShortDesc of penis] goes soft.";
 	FavourDown M by 1;
-	Bore M;
+	bore M;
 	now the sex-length of M is 1.[so it can be reduced by 1]
 
 [!<SayErectionNearingClimaxFlavOfMonster>+
@@ -1421,22 +1421,146 @@ Displays some text describing the player ejaculating whilst penetrating a monste
 +!]
 To compute erection orgasm of (M - a thing):
 	follow the default ejaculation rule;
-	now penis is not penis-erect.[Although the above line is a default, and should be changed, this line should almost always be included, since automatic erection loss is skipped if anything is penetrating penis]
+	now penis is not penis-erect. [Although the above line is a default, and should be changed, this line should almost always be included, since automatic erection loss is skipped if anything is penetrating penis]
 
-[!<SayErectionClimaxFlavOfMonster>+
+[!<SayPenileClimaxFlavOfMonster>+
 
 Displays some text describing a monster finishing up using the player's penis
 
 @param <Monster>:<M> The monster using the player's penis
 +!]
-To say ErectionClimaxFlav of (M - a monster):
+To say PenileClimaxFlav of (M - a monster):
 	say "[BigNameDesc of M] screams out in satisfaction as [he of M] climaxes.";
 	orgasm M.
+
+
+[!<ComputeHandjobOrgasmOfMonster>+
+
+Displays some text describing the player ejaculating whilst being given a handjob by a monster.
+
+@param <Monster>:<M> The monster holding the player's penis
++!]
+To compute handjob orgasm of (M - a monster):
+	if M is piledriver-masturbating:
+		let open-mouth be false;
+		say "Your [player-penis] unleashes a rope of [semen] towards your own face!";
+		if bukkake fetish is 0:
+			if M is intelligent, say "[speech style of M]'Open wide, my little cumslut.'[roman type][line break][BigNameDesc of M] demands, gripping you painfully tightly. You wince and obediently open your mouth.";
+			otherwise say "[BigNameDesc of M] grips you painfully tightly. You wince and obediently open your mouth.";
+			now open-mouth is true;
+		otherwise if face is not actually occupied:
+			if semen is craved:
+				now open-mouth is true;
+				say "Your desperate craving for [semen] makes you instinctively open your mouth.";
+			say "Open your mouth?";
+			if the player is consenting:
+				now open-mouth is true;
+				say "You open your mouth to catch the [semen] inside.";
+		if open-mouth is true:
+			let SV be (the semen load of the player + 1) / 2;
+			say "Your [if SV >= 4]huge serving of [otherwise if SV is 3]large helping of [otherwise if SV is 1]small squirt of [end if][semen] is delivered directly into your own mouth.";
+			FaceFill semen by SV;
+		otherwise:
+			let SV be the semen load of the player;
+			say "Your face gets [if SV >= 9]caked by your huge load of[otherwise if SV >= 7]hosed down by your large helping of[otherwise if SV >= 5]blasted by your medium-sized ropes of[otherwise if SV >= 3]splattered by your smallish-sized load of[otherwise]dribbled on by your own tiny squrits of[end if] [semen]!";
+			if SV >= 3, mapcutshow figure of piledriver handjob facial for face;
+			AnnouncedSquirt semen on face by SV;
+	otherwise:
+		say "Your [player-penis] unleashes several [if the semen load of the player <= 4]weak [otherwise if the semen load of the player > 7]super thick [end if]ropes of [semen] into [NameDesc of M][']s [one of]waiting hand[or]cupped palm[cycling].";
+	now the sex-length of M is the size of penis * -1; [this allows us to simultaneously track whether the player orgasmed and how large the penis was just before 'punish male shameful orgasm' is called, to decide whether to call the 'masturbation penis shrink punishment' function]
+	now penis is not penis-erect. [This line should almost always be included, since automatic erection loss is skipped if anything is penetrating penis]
+
+To compute masturbation penis shrink punishment of (M - a monster):
+	say "[speech style of M]'Oh my god, did it just get SMALLER? Hahaha!'[roman type][line break]";
+	if the size of penis <= min penis size or the size of penis <= 3:
+		let C be a random application appropriate off-stage actually summonable chastity cage;
+		if C is a thing and the player is ready for more bondage:
+			say "[speech style of M]'There's no way this thing is of any use to anyone now. Time to lock it away for good.'[roman type][line break]";
+			say BondageForceFlav of M for C;
+			summon C locked;
+			compute M keylocking C;
+			say BondageAfterFlav of M for C;
+			reset bondage timer.
+
+To compute masturbation cum in hand punishment of (M - a monster):
+	if a random number between 6 and 11 >= the favour of M:
+		say "[speech style of M]'[one of]You're so pathetic[or]Disgraceful[at random].'[roman type][line break][BigNameDesc of M] slaps you in the face with [his of M] hand covered in your [semen]!";
+		PainUp 15;
+		if bukkake fetish is 1, AnnouncedSquirt semen on face by (the semen volume of the player + 2) / 3;
+		say moderateHumiliateReflect;
+		say "[speech style of M]'Now get out of my sight, you [worm of M].'[roman type][line break]";
+	otherwise:
+		say "[speech style of M]'[one of]You're so cute[or]How adorable[or]How precious[in random order].'[roman type][line break][BigNameDesc of M] toys with your [semen]!";
+		if a random number between 1 and 20 < the difficulty of M:
+			say "[speech style of M]'[one of]Won't you lick it clean for me?'[or]Here, have a taste.'[or]Open wide now, there's a good [boy of the player]...'[then at random][roman type][line break]Do you obey?";
+			if the player is bimbo consenting:
+				say "You obediently lick [his of M] cum-covered fingers clean, and [NameDesc of M] [one of]smiles proudly[or]looks very pleased[in random order].[line break][speech style of M]'[one of]Good[or]What a good[or]Very good[cycling] [boy of the player].'[roman type][line break]";
+				say moderateHumiliateReflect;
+				FavourUp M;
+				FaceFill semen by (the semen volume of the player + 1) / 2;
+				suggest swallowing;
+			otherwise:
+				say "You pull away, and [NameDesc of M] [one of]frowns[or]looks disappointed[in random order], but shrugs, and decides to leave you alone for now.";
+				FavourDown M;
+				bore M.
+
 
 To say (M - a monster) sex reaction:
 	say "".
 
-To compute labour to (M - a monster):[Should never appear]
+To say MasturbationResistedFlav of (M - a monster):
+	say DefaultMasturbationResistedSpeech of M;
+	say DefaultMasturbationSubmittedFlav of M.
+
+To say DefaultMasturbationResistedSpeech of (M - a monster):
+	if M is intelligent, say "[speech style of M]'[one of]Aww, do you not like [if M is piledriver-masturbating]where your [sissy-penis] is pointing[otherwise]how it feels to have me in complete control of your [sissy-penis][end if], [honey of M]?'[or]How cute, [he of the player][']s trying to fight it.'[or]I don't think you'll last as long as you think you will.'[or]There's no need to hold back, you silly [slut]...'[or]Fighting against the feelings? Methinks the lady doth protest too much...'[or]Are you sure you don't want to have a nice big orgasm and empty your balls all [if M is piledriver-masturbating and bukkake fetish is 1]over your face[otherwise if M is piledriver-masturbating]over your tongue[otherwise]over my hand[end if]?'[in random order][roman type][line break]".
+
+To say MasturbationSubmittedFlav of (M - a monster):
+	say DefaultMasturbationSubmittedSpeech of M;
+	say DefaultMasturbationSubmittedFlav of M.
+
+To say DefaultMasturbationSubmittedSpeech of (M - a monster):
+	if M is intelligent:
+		if M is piledriver-masturbating, say "[speech style of M]'[one of]Uh oh, someone's about to go squirt-squirt [if bukkake fetish is 1]all over their own face[otherwise]into their own mouth[end if]!'[or]That's it, let it all out, you know you want to...'[or]Aren't you ashamed of how it's pointing towards your own face, hmm?'[or]That's it, give up, let yourself cum...'[or]Only a [loser of M] like you would just submit and let this happen, and in such a humiliation position, haha!'[cycling][roman type][line break]";
+		otherwise say "[speech style of M][one of]Aren't you going to even try to hold it in, hmm?'[or][one of]That's it, let it all out, you know you want to...'[or]Aren't you ashamed of how easily you're submitting to my touch?'[or]That's it, give up, let yourself cum...'[or]You look so cute, squirming like that!'[or]You're making the most adorable sounds...'[or]You look like a real [loser of M] right now, you know that?'[in random order][stopping][roman type][line break]".
+
+To say DefaultMasturbationSubmittedFlav of (M - a monster):
+	say "[BigNameDesc of M] [one of]holds you still[or]keeps [his of M] hold on your [masturbation-grab-point][or]grips tightly to your [masturbation-grab-point][in random order] as [he of M] [one of]pumps your [player-penis][or]jacks your [player-penis] off[or]steadily strokes your [player-penis][or]plays with the tip of your [player-penis] with the tips of [his of M] fingers[in random order][if M is piledriver-masturbating] [one of]towards[or]above[purely at random] your face[end if].".
+
+To say MasturbationStoppedFlav of (M - a monster):
+	say "Suddenly, [NameDesc of M] stops masturbating you!";
+	if M is intelligent, say MasturbationStoppedComment of M;
+	say "[BigNameDesc of M] releases [his of M] hold on your [masturbation-grab-point].".
+
+To say MasturbationStoppedComment of (M - a monster):
+	if M is piledriver-masturbating:
+		say "[speech style of M]'[one of]Impressive[or]Hmph[or]Hmm[at random]. [one of]I didn't expect you to be able to hold back this long[or]You've held out for longer than I expected[or]I really thought you'd have lost control and exploded over yourself by now[at random]. [one of]Fine[or]Very well[purely at random], [one of]I'll let you go for now[or]you've earned a LITTLE bit of respect, this time[or]I'll show you mercy for now[in random order].'[roman type][line break]";
+	otherwise:
+		say "[speech style of M]'[one of]Oh[or]Aww[or]Haha[at random], [one of]did you think[or]were you hoping[purely at random] [one of]I was going to let you cum[or]I'd let you cum[or]you were going to get cummies[in random order]? [one of]Too bad[or]Not this time, [NameBimbo][purely at random].'[roman type][line break]";
+		if a random number between 5 and 10 >= the favour of M, compute masturbation edge humiliation of M.
+
+[Said just after masturbating the player but finishing before they cum and then replacing their clothes, and just before becoming satisfied and losing interest]
+To say EdgeDomimanceFlav of (M - a monster):
+	if M is intelligent, say "[speech style of M]'[one of]I hope you're slowly learning your place[or]Only people who act right get to cum[or]If you want to cum next time, then get your act together[then at random], [YouDumbBitch of M].'[roman type][line break]".
+
+To compute masturbation edge humiliation of (M - a monster):
+	let C be a random application appropriate off-stage actually summonable chastity cage;
+	if C is a thing and the player is ready for more bondage:
+		say "[speech style of M]'[one of]In fact, I don't think you should be allowed to cum this way for a while[or]And in fact, I'm not going to let you finish yourself off, either[in random order].'[roman type][line break]";
+		say BondageForceFlav of M for C;
+		summon C locked;
+		compute M keylocking C;
+		say BondageAfterFlav of M for C;
+		reset bondage timer;
+	otherwise if a random number between 1 and 2 is 1:
+		say "As a final insult, [NameDesc of M] slaps you across the face!";
+		PainUp 15;
+	otherwise:
+		say "As a final insult, [NameDesc of M] spits in your face!";
+		say moderateHumiliateReflect;
+	say "[speech style of M]'Now get out of my sight, you [worm of M].'[roman type][line break]";
+
+To compute labour to (M - a monster): [Should never appear]
 	say "Tried to give birth but the parent of the baby ([MediumDesc of M]) has not been accounted for, please report this bug!";
 	now the pregnancy of the player is 0.
 
@@ -1553,15 +1677,25 @@ This should display some text if the player is currently being fucked by more th
 
 +!]
 To say GangAnnounce:
-	let V be a random live thing penetrating vagina;
-	let O be a random live thing penetrating face;
-	let A be a random live thing penetrating asshole;
-	if V is live thing and A is live thing:
-		if debugmode > 0, say "((Fucked by [V][if O is a live thing], [O][end if] and [A]))";
-		say "[line break][bold type]You're being [if O is live thing]triple[otherwise]double[end if] penetrated![roman type][line break]";
-	otherwise if O is monster and (A is live thing or V is live thing):
-		if debugmode > 0, say "((Fucked by [O] and [if A is live thing][A][otherwise][V][end if]))";
-		say "[line break][bold type]You're being spit roasted![roman type][line break]".
+	let N be 0;
+	repeat with B running through body parts:
+		if there is a live thing penetrating B, increase N by 1;
+	if N > 4:
+		say "[line break][bold type]You're being QUINTUPLE banged![roman type][line break]";
+	otherwise if N > 3:
+		say "[line break][bold type]You're being QUADRUPLE banged![roman type][line break]";
+	otherwise if N > 2:
+		let O be 0;
+		repeat with B running through orifices:
+			if there is a live thing penetrating B, increase O by 1;
+		say "[line break][bold type]You're being triple [if O is N]penetrated![otherwise]banged![end if][roman type][line break]";
+	otherwise if N > 1:
+		let F be 0;
+		repeat with B running through fuckholes:
+			if there is a live thing penetrating B, increase F by 1;
+		let O be the number of live things penetrating face;
+		say "[line break][bold type]You're being [if F is N]double penetrated![otherwise if O is 1]spitroasted![otherwise]double banged![end if][roman type][line break]";
+
 
 To compute strength (pain-factor - a number) spanking:
 	if the latex-transformation of the player > 5:

@@ -251,7 +251,7 @@ Definition: glazed-body (called A) is applicable:
 	decide no.
 To reflect on (A - glazed-body):
 	let F be a random glazed body part;
-	say "[variable custom style][one of]I can't believe I'm walking around with [semen] all over my [if the number of glazed body parts is 1][printed name of F][otherwise]body[end if]! I'm such a disgrace....[or]There's [semen] actually [if the number of glazed body parts is 1]on my [printed name of F][otherwise]all over my body[end if]...This is so disgusting![or]There's no way there's really [semen] all over my [if the number of glazed body parts is 1][printed name of F][otherwise]body[end if]There's no way. There's no fucking way...[in random order][roman type][line break]".
+	say "[variable custom style][one of]I can't believe I'm walking around with [semen] all over my [if the number of glazed body parts is 1][printed name of F][otherwise]body[end if]! I'm such a disgrace....[or]There's [semen] actually [if the number of glazed body parts is 1]on my [printed name of F][otherwise]all over my body[end if]...This is so disgusting![or]There's no way there's really [semen] all over my [if the number of glazed body parts is 1][printed name of F][otherwise]body[end if]. There's no way. There's no fucking way...[in random order][roman type][line break]".
 
 To say FriendReaction of (M - a real-life patron) to (A - glazed-body):
 	let F be a random glazed body part;

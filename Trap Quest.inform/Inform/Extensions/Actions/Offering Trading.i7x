@@ -89,7 +89,7 @@ To compute (M - a monster) considering (T - a thing):
 		say MonsterThiefOfferAcceptFlav of M to T;
 		say ReclaimFlav of M for T;
 		compute final resolution of M taking T; [NO favour gain]
-	otherwise if (M is shopkeeper or M is royal guard) and there is held stolen thing:
+	otherwise if (M is shopkeeper or M is royal guard) and M is unfriendly and there is held stolen thing:
 		say MonsterCriminalOfferRejectFlav of M to T;
 	otherwise if convincing power > 0 and (M is friendly or (convincing power + the convincability of M) >= the square root of (a random number between 1 and 15)):
 		say MonsterOfferAcceptFlav of M to T;

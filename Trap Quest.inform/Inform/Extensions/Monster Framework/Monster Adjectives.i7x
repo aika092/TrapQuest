@@ -24,6 +24,7 @@ To decide which number is the starting difficulty of (M - a monster):
 	decide on 5.
 A monster can be friendly-fucking. [Are they having non-aggressive sex with you?]
 A monster can be not-getting-licked, getting-licked, or getting-asslicked (this is the monster-licking property). [Is your tongue on a different part of their body than their genitals?]
+A monster can be normal-penis-fucking, penis-masturbating, or piledriver-masturbating (this is the monster-penile-sex property). [What type of penis sex is happening?]
 Definition: a monster is damageable: decide yes. [A monster who is not damageable takes no damage from attacks.]
 A monster has a number called health. The health of a monster is usually 10. [Current HP, if this hits 0 they die.]
 To decide which number is the maxhealth of (M - a monster):
@@ -32,7 +33,8 @@ To decide which number is the initial maxhealth of (M - a monster):
 	if tutorial is 1, decide on 99999;
 	let X be 10;
 	increase X by (the difficulty of M * 7) / 3;
-	if M is durable-tentacle-monster, increase X by the difficulty of M;
+	if M is tentacle monster:
+		if M is durable-tentacle-monster or M is doom-evolved, increase X by the difficulty of M;
 	decide on X.
 A monster has a number called boredom. [The number of seconds until they will begin actively perceiving. If the monster doesn't fall asleep, set this to something between 100 and 250 after sex to stop the monster just fucking the player repeatedly.]
 A monster has a number called friendly boredom. [The number of turns that the monster has been following the player around. The higher it gets, the more chance that the monster will get bored and leave the player alone.]
@@ -62,6 +64,7 @@ A monster can be trip-warned.[Did the player get a warning about their incoming 
 A monster can be notebook-studied.
 A monster can be bossdefeated.
 A monster can be diaper-committed.
+A monster can be bulkier-diaper-committed. [Going to upgrade your padding thickness]
 A monster can be double-diaper-committed. [Going to double diaper you now]
 A monster can be diaperMessReacted. [Have they already recently reacted to the player messing themselves?]
 A monster has a number called dismissRefused. [Have they refused to be dismissed?]
@@ -168,6 +171,9 @@ To decide which number is the refractory-time of (M - a monster):
 A monster has a number called bladder. The bladder of a monster is usually 400. [Increases by 4 each turn. Divide by 100 to get a number similar to player's bladder]
 Definition: a monster is a urinater: decide yes. [Does this NPC have a bladder, and urinate?]
 Definition: a monster is a diaper wetter: decide no. [Does this NPC use a diaper rather than a toilet to urinate?]
+Definition: a monster is a normal-urinater:
+	if it is not a urinater or it is a diaper wetter, decide no;
+	decide yes.
 A monster can be enticed. [Has it already tried to entice the player this combat?]
 A monster has a number called temporary-damage-reduction. [Does this NPC have extra damage reduction until the next time they get bored?]
 A monster can be dragging.
@@ -205,6 +211,7 @@ A monster has a number called diaper-duration-ended. [When this gets set to 1, w
 Definition: a monster is diaper-instructing:
 	if the diaper-duration of it > 0, decide yes;
 	decide no.
+A monster has a number called diaper-bulk-memory. [NPCs can remember how well-padded you've been before, and make sure you stay in this level of padding or higher]
 
 A monster can be wrapped or unwrapped. A monster is usually unwrapped. [Are they wearing a condom?]
 A monster has a number called selection-frustration. [Have they tried the same body part several times without success, or waited several turns to be able to fuck without success?]

@@ -1,12 +1,9 @@
 Announcements by Miscellaneous Frontend begins here.
 
 To compute announcements:
-	if choice in row 50 of the Table of Settings < 2:
-		say "This game's graphical window uses a 'dark mode' which is a lot nicer on the eyes. It's a bit buggy when you use the 'restart' command, so make sure to close the game and then open it again after using 'restart'. IF YOU ARE USING WINDOWS GIT, and want your text window background to match the graphics window's background, you need to do the following:[paragraph break]Go into Git > Options, and in the 'Colours' Box, click on the colour under 'Text' and change it to white (or whatever light text colour you prefer). Then click on the 'Background' colour box and in the bottom right of the window that opens, change the Red value to 33, the Green value to 31, and the Blue value to 35. This way your main window will have the same colour scheme as the graphical windows, which are handled by the game itself.[paragraph break]So if you are running this game in Windows Git, please do that now. Got it? ";
-		if the player is consenting:
-			now choice in row 50 of the Table of Settings is 2;
-		otherwise:
-			now choice in row 50 of the Table of Settings is 2;
+	if choice in row 47 of the Table of Settings < 10:
+		now choice in row 47 of the Table of Settings is 10;
+		compute new tutorial font window;
 	if tutorial is 0:
 		[if halloween content is 0:
 			clear the screen;

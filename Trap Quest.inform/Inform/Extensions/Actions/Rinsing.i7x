@@ -6,6 +6,7 @@ Check rinsing it in:
 	if the second noun is the swimming-pool and diaper quest is 0, say "That's not water..." instead;
 	if the second noun is water-body-scenery, try rinsing the noun in water-body instead;
 	if the second noun is not water-body and the second noun is not HotelScenery04, say "How would that work exactly?" instead;
+	if the second noun is HotelScenery04 and the player is prone, say "You can't reach the sink while on your knees." instead;
 	if the noun is body part:
 		if the noun is face:
 			if the semen coating of the noun is 0 and (the make-up of the noun is 0 or permanent makeup is 1), say "That wouldn't do anything[if permanent makeup is 1], since your make up is permanent[end if]." instead;

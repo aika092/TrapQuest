@@ -66,6 +66,7 @@ To compute diaper check of (M - a monster):
 		calm M;
 		say "[DiaperCheckFlav of M][DiaperCheckReactionFlav of M]";
 		strongHumiliate;
+		compute BulkAssessment of M;
 		if M is willing to change diapers and D is total protection and D is soilable unmessed knickers and rectum > 1 and asshole is not actually occupied and rectum + the rectum-incontinence of the player + suppository > the instant mess influence of M:
 			say InstantMessFlav of M;
 			compute messing;
@@ -120,6 +121,49 @@ To say DiaperCheckFlav of (M - a monster):
 To say DiaperCheckReactionFlav of (M - a monster):
 	let D be a random worn knickers;
 	say "[one of][if the diaper addiction of the player < 11]You lightly recoil against [his of M] touch, embarrassed that [NameDesc of M] is giving you a diaper check.[otherwise if the diaper addiction of the player > 13]Almost instinctively you push your hips forward so that [NameDesc of M] can get a good feel.[end if][or][if the diaper addiction of the player < 4]You yelp with indignation.[roman type][line break][otherwise if the diaper addiction of the player < 9 and (D is messed or D is wet)]You wince with guilt, fully aware of what [his of M] check will reveal.[otherwise if D is messed or D is wet]You giggle guiltily as you allow [him of M] to find out just how correct [he of M] was to check you.[otherwise]You push your crotch into [his of M] hand, proud to prove that you have stayed dry for now.[end if][in random order]".
+
+To compute BulkAssessment of (M - a monster):
+	if the diaper-bulk-memory of M < 8:
+		let DQB be the DQBulk of the player;
+		if DQB >= 1 and the diaper-bulk-memory of M is 0:
+			say FirstTimeBulkLearningFlav of M;
+		otherwise if the diaper-bulk-memory of M < DQB:
+			say NewBulkLearningFlav of M;
+		now the diaper-bulk-memory of M is DQB;
+		if the diaper-bulk-memory of M > 8, now the diaper-bulk-memory of M is 8.
+
+To say FirstTimeBulkLearningFlav of (M - a monster):
+	let DQB be the DQBulk of the player;
+	say "[speech style of M]'[if DQB <= 2]I see you currently use a relatively normal amount of padding. [otherwise if DQB <= 5][one of]This padding is rather thick, isn't it? [or]I see you use particularly thick diapers. [or]You wear thicker diapers than most. [cycling][otherwise][one of]Wow, it feels like you use huge amounts of padding! [or]I can't believe how thick this is! You must be extremely incontinent to wear diapers this bulky. [or]I see, you're a super-thick diaper user! [cycling][end if][one of]I'll remember that for the next time I'm changing you[or]I'll make a mental note for next time[or]I'll remember that for the future[or]Good to know for next time[cycling].'[roman type][line break]";
+	say says M thoughtfully.
+
+To say NewBulkLearningFlav of (M - a monster):
+	say "[speech style of M]'[DefaultNewBulkLearningFlav][one of]Well, I'll make sure to follow suit, then[or]I'll align myself with your other caregivers, then, and use this diapers at least this thick when changing you[or]Good to know for any future diaper changes I need to give you[or]I'll remember your new diaper thickness for the future[or]I'll be sure to match this if ever I need to change you, then[cycling].'[roman type][line break]";
+	say says M thoughtfully.
+
+To say DefaultNewBulkLearningFlav:
+	let DQB be the DQBulk of the player;
+	say "[if DQB <= 6][one of]This is significantly thicker than last time. You've been upgraded? [or]You've started to need even thicker diapers, it would seem. [or]Someone's had a padding upgrade since the last time I checked [him of the player]! [or]Hmm? This is thicker than what you were wearing last time, is it not? [cycling][otherwise][one of]Holy moly, I see you've been upgraded to super-thick diapers! [or]Wow, I see you wear the extra-bulky diapers nowadays! [or]Heavens above! When did you start needing this massive amount of padding?! [or]Oh my gosh, I can't believe how thick the padding you need nowadays is! [or]How many accidents did you have for someone to decide you need such ridiculously bulky diapers?! [cycling][end if]";
+
+To say FirstChangeBulkLearningFlav of (M - a monster):
+	let DQB be the DQBulk of the player;
+	say "[speech style of M]'[if DQB <= 2]I see you currently use a relatively normal amount of padding[otherwise if DQB <= 5][one of]You wear thicker diapers than most. [or]I see you use particularly thick diapers. [cycling][otherwise][one of]I see, you're a super-thick diaper user! [or]You truly are a big baby, if you need diapers this ridiculously bulky. [cycling][end if][if DQB > 2][DefaultNeverFearBulkAvailableFlav][end if].'[roman type][line break]";
+	say says M wryly.
+
+To say ChangeBulkLearningFlav of (M - a monster):
+	say "[speech style of M]'[DefaultNewBulkLearningFlav][DefaultNeverFearBulkAvailableFlav].'[roman type][line break]";
+	say says M wryly.
+
+To say DefaultNeverFearBulkAvailableFlav:
+	say "[one of]Never fear[or]Don't worry[purely at random], [one of]I've got[or]I have[purely at random] [one of]plenty new ones in your size, so I can keep to the thickness that your other caregivers have decided on[or][one of]a similar sized clean one right here[or]a load of similar sized ones I can use with you[or]plenty new ones in your size[cycling][stopping][run paragraph on]".
+
+To say BulkIncreaseFlav of (M - a monster):
+	say "[speech style of M]'[one of]Due to what just happened, I will be upgrading the thickness of your diapers. Permanently.'[or]I think you'll agree, you need even thicker diapers from here on out.'[or]Bsaed on what I've just seen, I've decided to put you in even thicker padding from now on.'[or]This level of bulk won't do for such a pathetic baby like you. I'm going to put you in one level thicker.'[in random order][roman type][line break]";
+	say says M sternly.
+
+To say BerriBulkIncreaseFlav of (M - a monster):
+	say "[speech style of M]'Your name's [NameBimbo], right? I think I'm going to put you in one level thicker. Just to be safe.'[roman type][line break]";
+	say says M thoughtfully.
 
 To decide which number is the instant mess influence of (M - a monster):
 	decide on a random number between 3 and 8.
@@ -305,6 +349,16 @@ current-diaper-change-top-level is an object that varies.
 new-diaper is an object that varies.
 diaperChangeCount is a number that varies.
 
+
+Definition: a clothing (called C) is diaper change blocking:
+	if C is unremovable:
+		if C is crotch-zipped and (there is a worn crotch-tie-up knickers or the number of worn knickers is 0), decide no; [can be unzipped]
+		if C is displacable and C is not glued and the number of worn crotch-pullup clothing <= 1, decide no; [can be displaced]
+		decide yes;
+	decide no.
+
+Definition: a knickers is diaper change blocking: decide no.
+
 To compute diaper change of (M - a monster):
 	now current-diaper-change-top-level is nothing;
 	now new-diaper is nothing;
@@ -316,8 +370,8 @@ To compute diaper change of (M - a monster):
 		[if current-diaper-change-top-level is nothing, now current-diaper-change-top-level is a random worn crotch covering clothing;] [this doesn't work because displaced stuff gets stuck in a loop]
 		if current-diaper-change-top-level is worn no protection overdress, now current-diaper-change-top-level is nothing; [These are allowed to stay around!]
 		if (current-diaper-change-top-level is nothing or current-diaper-change-top-level is not urination blocking) and there are worn knickers, now current-diaper-change-top-level is a random worn knickers; [All knickers MUST be removed]
-		if (current-diaper-change-top-level is nothing or current-diaper-change-top-level is not urination blocking) and there is a worn tail plug, now current-diaper-change-top-level is a random worn tail plug;
-		if current-diaper-change-top-level is unmessed urination blocking unremovable clothing:
+		if (current-diaper-change-top-level is nothing or current-diaper-change-top-level is not urination blocking) and there is a worn tailed clothing, now current-diaper-change-top-level is a random worn tail plug;
+		if current-diaper-change-top-level is unmessed urination blocking diaper change blocking clothing:
 			say "[speech style of M]'I can't remove that [ShortDesc of current-diaper-change-top-level]. Damn, I guess I'll have to leave you like this, for now.'[roman type][line break]";
 			satisfy M;
 			dislodge M;
@@ -334,16 +388,18 @@ To compute diaper change of (M - a monster):
 				say UnzipFlav of M at current-diaper-change-top-level;
 				ZipDown current-diaper-change-top-level;
 				rule succeeds;
-			otherwise if current-diaper-change-top-level is displacable and current-diaper-change-top-level is not knickers and current-diaper-change-top-level is not glued and the number of worn crotch-pullup clothing <= 1: [prevents NPC from displacing pulldown trousers and then magically removing pulldown diaper cover and then being unable to replace said diaper cover]
-				compute M displacing current-diaper-change-top-level;
-				rule succeeds;
 			otherwise if current-diaper-change-top-level is locked:
 				now current-diaper-change-top-level is temporarily-unlocked;
 				compute M unlocking current-diaper-change-top-level;
 				rule succeeds;
+			otherwise if current-diaper-change-top-level is displacable and current-diaper-change-top-level is not knickers and current-diaper-change-top-level is not glued and the number of worn crotch-pullup clothing <= 1: [prevents NPC from displacing pulldown trousers and then magically removing pulldown diaper cover and then being unable to replace said diaper cover]
+				compute M displacing current-diaper-change-top-level;
+				rule succeeds;
 			otherwise if current-diaper-change-top-level is diaper and M is willing to double diapers and M is eager to double diapers and (current-diaper-change-top-level is unmessed or diaper messing >= 4):
-				if new-diaper is not a DQBulkier diaper, now new-diaper is a random eligible plentiful DQBulkier disposable diaper;
-				if new-diaper is not a diaper, now new-diaper is a random plentiful DQBulkier disposable diaper;
+				if new-diaper is not a DQBulkier diaper:
+					now new-diaper is the chosen bulkier diaper;
+				if new-diaper is not a DQBulkier diaper:
+					now new-diaper is the chosen diaper;
 				if new-diaper is diaper and new-diaper is not current-diaper-change-top-level:
 					say DoubleDiaperFlav of M;
 					blandify and reveal new-diaper; [clean and reset it]
@@ -379,10 +435,40 @@ To compute diaper change of (M - a monster):
 			rule succeeds;
 		if new-diaper is nothing: [If we just did a double diaper then we skip all this]
 			say DiaperPowderFlav of M;
-			if there is a worn diaper bag of holding or there is a worn baby diaper bag of holding, now new-diaper is a random dry unmessed disposable diaper carried by the player;
-			if new-diaper is nothing, now new-diaper is a random eligible plentiful disposable diaper;
-			if new-diaper is nothing, now new-diaper is a random eligible diaper;
-			if new-diaper is nothing, now new-diaper is a random diaper; [failsafe]
+			[if there is a worn diaper bag of holding or there is a worn baby diaper bag of holding, now new-diaper is a random dry unmessed disposable diaper carried by the player;]
+			if M is not bulkier-diaper-committed and the diaper-bulk-memory of M < 8: [NPC learns the new diaper size and comments on this]
+				let DQB be the DQBulk of the player;
+				if DQB >= 1 and the diaper-bulk-memory of M is 0:
+					say FirstChangeBulkLearningFlav of M;
+				otherwise if the diaper-bulk-memory of M < DQB:
+					say ChangeBulkLearningFlav of M;
+				now the diaper-bulk-memory of M is DQB;
+				if the diaper-bulk-memory of M > 8, now the diaper-bulk-memory of M is 8;
+			if the diaper-bulk-memory of M < 1: [if the player is getting changed out of knickers, we start at 1]
+				now the diaper-bulk-memory of M is 1;
+			otherwise if M is bulkier-diaper-committed and the diaper-bulk-memory of M < 8: [NPC is outraged, and increases the bulk, and comments on this]
+				say BulkIncreaseFlav of M;
+				increase the diaper-bulk-memory of M by 1;
+			otherwise if the class of the player is berri and latest-berri-stage < 5 and the diaper-bulk-memory of M < 5: [upgrade berri further]
+				say BerriBulkIncreaseFlav of M;
+				increase the diaper-bulk-memory of M by 1;
+			if the diaper-bulk-memory of M > 8, now the diaper-bulk-memory of M is 8; [should never happen, but just in case]
+			now bulk-search-level is the diaper-bulk-memory of M;
+			if debugmode > 0, say "bulk search level is [bulk-search-level]...";
+			now new-diaper is the chosen diaper;
+			if the DQBulk of new-diaper is not bulk-search-level and old-diaper is diaper: [unable to find a good match. Let's cheat, and re-use the old one]
+				now new-diaper is old-diaper;
+				say DiaperChangeFlav of M;
+				say DiaperChangeComment of M;
+				if old-diaper is messed diaper and diaper messing >= 6:
+					let SD be a random off-stage soiled-diaper;
+					if trashcan is worn:
+						say "[BigNameDesc of M] drops [NameDesc of old-diaper] into [NameDesc of trashcan]!";
+						increase the diaper-fill of trashcan by 1;
+					otherwise if SD is soiled-diaper:
+						now SD is in the location of the player;
+						DiaperPrint SD from old-diaper;
+						say DiaperDropFlav of M;
 			if new-diaper is not worn:
 				let oldDiaperLeft be nothing;
 				if old-diaper is diaper:
@@ -439,6 +525,8 @@ To compute diaper change of (M - a monster):
 					say DiaperDonateFlav of M;
 					say DiaperDonateComment of M;
 				if new-diaper is cursed and (strongCurses is 1 or the quest of new-diaper is no-clothing-quest), compute new quest of new-diaper;
+			if the DQBulk of new-diaper > biggest-change, now biggest-change is the DQBulk of new-diaper;
+			if biggest-change > 7, now biggest-change is 7;
 			fully clean new-diaper;
 			now new-diaper is sure;
 			now new-diaper is identified;
@@ -828,7 +916,7 @@ To say VanillaMasturbationFlav of (M - a monster):
 
 To say DiaperMasturbationFlav of (M - a monster):
 	let D be a random worn diaper;
-	say "[BigNameDesc of M] rubs passionately at the front of your [MediumDesc of D].".
+	say "[one of][BigNameDesc of M] rubs passionately at the front of your [MediumDesc of D][or][BigNameDesc of M] [if the player is possessing a penis]grips your [player-penis] as well as [he of M] can through your padding and strokes it up and down[otherwise]presses the tips of [his of M] fingers against your clit as firmly as [he of M] can through your padding[end if][or][BigNameDesc of M] shudders [his of M] fingertips as rapidly as [he of M] can while pushing up towards your [genitals] through your [if DQBulk of D > 3]thick [end if]padding[at random].".
 
 [The purpose of this function is simply to allow us to override the default flavour for female orgasms, and of course to do the same for male orgasms.]
 To compute masturbation climax of (M - a monster):
@@ -837,7 +925,7 @@ To compute masturbation climax of (M - a monster):
 	otherwise compute vanilla masturbation climax of M;
 	say "Being made to orgasm in this way was a deeply submissive experience.";
 	DelicateUp 1;
-	if the size of penis < min penis size, PenisDown 1.
+	if the size of penis > min penis size, PenisDown 1.
 
 To compute diaper masturbation climax of (M - a monster):
 	let D be a random worn diaper;
@@ -1425,7 +1513,7 @@ To compute diaper facesit of (M - a monster):
 			say DiaperFacesitFinish of M;
 			say DiaperFacesitFinishFlav of M;
 			satisfy M;
-			suggest breathing;
+			if player-breathing is false, suggest breathing;
 	otherwise:
 		now M is diaper-facesitting the player;
 		now the sex-length of M is the diaper facesit length of M;
@@ -1433,8 +1521,12 @@ To compute diaper facesit of (M - a monster):
 
 
 To compute DiaperFacesitStart of (T - an object):
-	if diaper messing >= 7, compute MessyDiaperFacesitStart of T;
-	otherwise compute WetDiaperFacesitStart of T;
+	if diaper messing >= 7:
+		say MessyDiaperFacesitStartAnnounce of T;
+		compute MessyDiaperFacesitStart of T;
+	otherwise:
+		say WetDiaperFacesitStartAnnounce of T;
+		compute WetDiaperFacesitStart of T;
 
 To compute MessyDiaperFacesitStart of (T - an object):
 	say MessyDiaperFacesitStartFlav of T;
@@ -1447,6 +1539,16 @@ To compute MessyDiaperFacesitStart of (T - an object):
 
 To say MessyDiaperFacesitStartFlav of (T - an object):
 	say "[one of]A sudden rasping sound[or]An abrupt low, wet, rumbling fart sound[or]A quick set of gassy farts[in random order] [if the diaper addiction of the player < 9][one of]heralds the start of something truly awful[or]lets you know you're about to experience something unthinkable happening right against your face[in random order][otherwise if the player is not tolerating messy diapers][one of]is the calm but foreboding thunder heralding the incoming shitstorm[or]is a bleak signal of what is imminent[or]serves as a pointless warning for what is instantly to follow it[in random order][otherwise][one of]prepares you for what is coming next[or]rudely interrupts your final breath before it begins[in random order][end if].".
+
+To say MessyDiaperFacesitStartAnnounce of (T - an object):
+	say DiaperFacesitStartAnnounce of T.
+
+To say DiaperFacesitStartAnnounce of (T - an object):
+	say "[BigNameDesc of T] shoves the seat of [his of T] diaper against your face.";
+	if T is an intelligent monster, say FacesitStartAnnounceFlav of T.
+
+To say FacesitStartAnnounceFlav of (M - a monster):
+	say "[speech style of M]'[one of]Get a whiff of this[or]Breathe in nice and deep[or]Better get comfy down there[or]This is what happens when you piss me off[in random order], [one of]loser[or]bitch[or][cunt][cycling]!'[roman type][line break]".
 
 To compute MessyDiaperFacesitExpulsion of (T - an object):
 	say MessyDiaperFacesitExpulsionFlav of T;
@@ -1466,6 +1568,9 @@ To compute WetDiaperFacesitStart of (T - an object):
 
 To say WetDiaperFacesitStartFlav of (T - an object):
 	say "You [one of]hear the wet hissing noise[or]hear the telltale pitter-patter sound[cycling] [one of]a brief moment[or]a split second[or]half a heartbeat[at random] before you feel the [one of]building density in the padding[or]rising warmth in front of your face[or]heat of the [urine] on your nose[in random order].".
+
+To say WetDiaperFacesitStartAnnounce of (T - an object):
+	say DiaperFacesitStartAnnounce of T.
 
 To compute WetDiaperFacesitExpulsion of (T - an object):
 	say WetDiaperFacesitExpulsionFlav of T;

@@ -61,6 +61,7 @@ To teleport to (R - a room):
 			compute diaper pail entrance;
 		otherwise:
 			now the player is in R;
+		if camera-drone is stalking, compute ditching camera-drone;
 	otherwise:
 		now the player is in R;
 	zero focus stuff; [Location has changed so we need to empty the location window]

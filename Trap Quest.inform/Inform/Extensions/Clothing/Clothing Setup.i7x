@@ -103,6 +103,7 @@ To set up rare magic attribute of (C - a clothing):
 		if a random number between 1 and 10 is unlucky:
 			now C is provocation;
 		otherwise if a random number between 0 and 24 <= unlucky:
-			now C is autobinding.
+			if the player is a november 2025 special donator, now C is spookiness;
+			otherwise now C is autobinding.
 
 Clothing Setup ends here.

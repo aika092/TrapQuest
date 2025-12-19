@@ -28,7 +28,6 @@ A clothing has a number called label-width.
 The inventoryFocusPriority of a clothing is usually 10. [This is the order in which they should be displayed in inventory menu slots. I'm leaving gaps in the numbers for more items I haven't thought of yet.]
 
 Clothing can be cotton, latex, glass, leather, pvc, satin, mesh, wool, nylon, metal, biological, hemp, silk, velvet, denim, lycra, plastic, polyester (this is the clothing-material property). Clothing is usually cotton. Understand the clothing-material property as describing a clothing.
-
 Clothing can be dense, sheer-when-wet, sheer, see-through (this is the clothing-transparency property). Understand the clothing-transparency property as describing a clothing. Clothing is usually dense. [Sheer and see-through clothing does not prevent humiliation from being naked but soaks up liquid. Clothing that is see-through can never be less humiliating than being naked. Clothing that is sheer can.]
 Definition: a clothing is not-see-through:
 	if it is not see-through, decide yes;
@@ -301,7 +300,11 @@ Clothing can be unlocked or locked. Clothing is usually unlocked.
 
 Clothing has a number called effect. The effect of clothing is usually 1.
 To decide which number is the soak-limit of (C - a clothing):
-	if C is latex or C is metal or C is glass or C is pvc or C is biological or C is plastic or C is leather, decide on 0;
+	if C is waterproof:
+		if C is foot covering:
+			if C is shoes, decide on 8; [All waterproof shoes can have a decent amount of liquid collect on the inside]
+			otherwise decide on 99; [liquid collects inside]
+		decide on 0;
 	decide on the default-soak-limit of C.
 To decide which number is the default-soak-limit of (C - a clothing): decide on 10.
 Definition: a clothing is fluid immune: [Is fluid unable to soak into or pass through C?]
@@ -310,7 +313,12 @@ Definition: a clothing is fluid immune: [Is fluid unable to soak into or pass th
 Definition: a clothing is fluid vulnerable: [Can it absorb fluid all the way through?]
 	if it is not fluid immune and it is not external fluid immune, decide yes;
 	decide no.
-Definition: a clothing is external fluid immune: decide no. [Is the top of it waterproof but the underside soakable?]
+Definition: a clothing (called C) is waterproof: [Is the material waterproof?]
+	if C is latex or C is metal or C is glass or C is pvc or C is biological or C is plastic or C is leather, decide yes;
+	decide no.
+Definition: a clothing is external fluid immune: [Is it externally waterproof but the inside soakable?]
+	if it is foot covering and it is waterproof, decide yes;
+	decide no.
 Definition: a clothing is somewhat fluid vulnerable: [Can it absorb fluid at least partially?]
 	if it is fluid immune, decide no;
 	decide yes.
@@ -416,9 +424,26 @@ Clothing can be not-enema-helping or enema-helping. Clothing is usually not-enem
 Clothing can be crotch-normal or crotch-assless. Clothing is usually crotch-normal.
 Clothing can be not-butt-windowed or butt-windowed. Clothing is usually not-butt-windowed. [A butt window exposes underwear but not the asshole itself.]
 Clothing have a number called armour. Clothing have a number called damage.
+[!<Clothing>@<equippableType:equippableTypeEnum>*
+
+Explanation:
+slap ready items modify the player's slap attack
+knee ready items modify the player's knee attack (unused)
+kick ready items modify the player's kick attack (unused)
+zap ready items allow the player to access the zap attack type
+non combat items don't directly influence attacks
+*@!]
 Clothing can be non-combat, slap ready, knee ready, kick ready or zap ready (this is the equippable-type property). Clothing is usually non-combat.
 Clothing can be zippable or unzippable. Clothing is usually unzippable. [When repaired or reset, should this item be given a zip?]
-Clothing can be plentiful, rare, transformation-rare, unique (this is the clothing-rarity property). Clothing is usually plentiful. [Plentiful shows up in containers. Rare shows up much less often in special containers and in the junk room. Transformation rare are (mostly) slutty items that mainly appear from transformations. Unique are items with their own spawning mechanics that shouldn't be spawned in other ways.]
+[!<Clothing>@<clothingRarity:clothingRarityEnum>*
+
+Explanation:
+plentiful is the lowest item tier, and can appear in any container
+rare show up less often than plentiful items, and usually only in special containers
+transformation-rare items mainly appear via transformation, rather than in containers
+unique items only appear for specific reasons, and are never spawned in other ways.
+*@!]
+Clothing can be plentiful, rare, transformation-rare, unique (this is the clothing-rarity property). Clothing is usually plentiful.
 Definition: a clothing is transformation-eligible:
 	if (it is plentiful or it is transformation-rare) and it is fetish appropriate, decide yes;
 	decide no.
@@ -459,12 +484,26 @@ Definition: a clothing (called C) is usually ankle covering:
 Definition: a clothing (called C) is ankle covering:
 	if C is crotch-in-place and C is usually ankle covering, decide yes;
 	decide no.
+Definition: a clothing is foot covering: decide no.
+[!<Clothing>@<armSlot:armSlotEnum>*
 
+Explanation:
+arm exposing doesn't take up the arm slot
+arm covering takes up the arm slot, but exposes the fingers
+finger covering takes up the arm slot and covers the fingers
+*@!]
 Clothing can be arm exposing, only arm covering, or finger covering (this is the arm slot property). Clothing is usually arm exposing.
 Definition: a clothing (called C) is arm covering:
 	if C is arm exposing, decide no;
 	decide yes.
-Clothing can be chestless, fully exposing, ridiculously low cut, very low cut, low cut, average cut, high cut, fully covering (this is the clothing-cleavage property). Clothing is usually chestless. [Chestless means it doesn't take up the chest slot. Whereas fully exposing means that the breasts are fully exposed but the item still takes up the chest slot. e.g. cupless bra.]
+[!<Clothing>@<clothingCleavage:clothingCleavageEnum>*
+
+Explanation:
+chestless doesn't take up chest slot
+fully exposing takes up chest slot, but physically exposes breasts
+everything else takes up the chest slot and covers up the breasts at least a little bit, with varying degrees of bust exposure.
+*@!]
+Clothing can be chestless, fully exposing, ridiculously low cut, very low cut, low cut, average cut, high cut, fully covering (this is the clothing-cleavage property). Clothing is usually chestless.
 Clothing can be top-intact or top-ripped. Clothing is usually top-intact.
 Definition: a clothing is breast exposing rather than breast covering:
 	if it is chestless, decide yes;
@@ -474,7 +513,15 @@ Definition: a clothing is actually breast covering:
 	decide no. [Yes it's a chest slot item but does it actually cover any skin?]
 Definition: a clothing is breast hiding: decide no. [Does it somehow completely hide the fact that the player has breasts? Probably with a portal or something like that]
 Clothing can be top-placed or top-displaced. Clothing is usually top-placed.[Displaced but for the chest.]
-Clothing can be top-displacable, optional-top-displacable, not-displacable-always-fuckable or not-top-displacable (this is the top-displacability property). Clothing is usually not-top-displacable.[optional-top-displacable means it can be displaced, but it's not necessary.]
+[!<Clothing>@<topDisplacability:topDisplacabilityEnum>*
+
+Explanation:
+top-displacable has a top section that can be displaced, and prevents most interactions when in place.
+optional-top-displacable has a top section that can be displaced, but doesn't prevent all interactions while in place
+not-top-displacable-always-fuckable has a top section and it can't be displaced, but allows certain interactions anyway
+not-top-displacable either lacks a top section or has a top section that can't be displaced
+*@!]
+Clothing can be top-displacable, optional-top-displacable, not-displacable-always-fuckable or not-top-displacable (this is the top-displacability property). Clothing is usually not-top-displacable.
 Definition: a clothing (called C) is usually top-displacable rather than usually not-top-displacable:
 	if C is not-top-displacable or C is not-displacable-always-fuckable, decide no;
 	if C is fully exposing or C is chestless or C is rigid or C is corset, decide no;
@@ -500,7 +547,16 @@ Definition: a clothing (called C) is nipple exposing rather than at least partia
 Definition: a clothing (called C) is uniquely nipple exposing: [Allows us to create unique rules for when nipples are exposed]
 	decide no.
 Clothing can be milking flappable or milking unflappable. Clothing is usually milking unflappable. [Are there flaps that allow for breast feeding / milking?]
-Clothing can be totally-exclusive, top-exclusive, bottom-exclusive, not-exclusive (this is the clothing-exclusivity property). Clothing is usually not-exclusive. [Exclusive means nothing can go above or below it.]
+[!<Clothing>@<clothingExclusivity:clothingExclusivityEnum>*
+
+Explanation:
+top-exclusive prevents anything being worn ontop of it
+bottom-exclusive prevents anything being underneath it
+totally-exclusive prevents anything being worn ontop of OR underneath it
+not-exclusive doesn't prevent anything from being worn ontop of or underneath it
+
+*@!]
+Clothing can be totally-exclusive, top-exclusive, bottom-exclusive, not-exclusive (this is the clothing-exclusivity property). Clothing is usually not-exclusive.
 Definition: a clothing is exclusive:
 	if it is not not-exclusive, decide yes;
 	decide no.
@@ -509,7 +565,7 @@ Clothing can be vagina plugging. Clothing is usually not vagina plugging.
 Clothing has a number called plug size. The plug size of clothing is usually 0.
 Clothing can be purity. Clothing is usually not purity. [Means they care about your virginity.]
 
-A Magic-type is a kind of value. The magic-types are blandness, dressup, milk production, absorption, temptation, suppression, bed wetting, confidence, endurance, dominance, constriction, speed, kicking, protection, posture training, expansion, refreshment, rejuvenation, possession, maturity, respiration, durability, stumbling, provocation, exposure, audible jiggles, audible squelches, desperation, augmentation, elasticity, waddle-walking, draining, strength stealing, impermanence, autobinding, sneaking, wizardry and hostility. Clothing has a magic-type. The magic-type of clothing is usually blandness.
+A Magic-type is a kind of value. The magic-types are blandness, dressup, milk production, absorption, temptation, suppression, bed wetting, confidence, endurance, dominance, constriction, speed, kicking, protection, posture training, expansion, refreshment, rejuvenation, possession, maturity, respiration, durability, stumbling, provocation, exposure, audible jiggles, audible squelches, desperation, augmentation, elasticity, waddle-walking, draining, strength stealing, impermanence, autobinding, sneaking, wizardry, spookiness and hostility. Clothing has a magic-type. The magic-type of clothing is usually blandness.
 A clothing has a number called impermanence-counter.
 
 Magic-ID is a kind of value. The magic-IDs are unidentified and identified. Clothing has a Magic-ID. The Magic-ID of clothing is usually unidentified.

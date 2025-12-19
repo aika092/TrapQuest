@@ -17,7 +17,7 @@ To compute periodic effect of (O - a nightie):
 	increase the charge of O by 1;
 	if the charge of O > 500 / (unlucky + 1) and diaper lover >= 1:
 		now the charge of O is 0;
-		let D be a random eligible diaper;
+		let D be the chosen smallish diaper;
 		if D is actually summonable:
 			say "[bold type]Your [ShortDesc of O] shimmers and a diaper appears around your loins![roman type][line break]";
 			summon D cursed with quest.
@@ -103,7 +103,7 @@ To compute periodic effect of (O - a nightgown):
 	increase the charge of O by 1;
 	if the charge of O > 500 / (unlucky + 1) and diaper lover >= 1:
 		now the charge of O is 0;
-		let D be a random eligible diaper;
+		let D be the chosen smallish diaper;
 		if D is actually summonable:
 			say "[bold type]Your [ShortDesc of O] shimmers and a diaper appears around your loins![roman type][line break]";
 			summon D cursed with quest;

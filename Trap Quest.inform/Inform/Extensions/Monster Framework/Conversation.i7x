@@ -2836,7 +2836,7 @@ To compute instant effect of (E - chastity-errand) for (P - a person):
 
 skirt-hypnosis-errand is an errand.
 Definition: skirt-hypnosis-errand is appropriate:
-	if short skirts permanent fetish is 1 or short skirts permanent fetish is 2, decide no;
+	if short skirts permanent suggestion is 1 or short skirts permanent suggestion is 2, decide no;
 	if the current-reward of the noun is hex dress, decide yes;
 	decide no.
 To decide which number is the errand-weight of (E - skirt-hypnosis-errand) for (P - neuromancer):
@@ -2849,7 +2849,7 @@ To compute instant effect of (E - skirt-hypnosis-errand) for (P - a person):
 	say "Do you let [NameDesc of P] tweak your brain?";
 	if the player is bimbo consenting:
 		say "As soon as you have nodded your assent, [NameDesc of P] is excitedly fixing [his of P] eyes with yours, and using [his of P] mind-magic powers to delve deep into your subconscious, rewiring your brain to make you [second custom style]love only wearing skirts that are so short that you're at least partially exposed down there![roman type][line break]And then you're blinking with confusion and shock, as [NameDesc of P] looks at you, grinning.[paragraph break][variable custom style]'Oh god... What have you done?!'[line break]You ask, hoarse with concern.[line break][speech style of P]'You know exactly what I've done, sunshine. You'll only be wearing the tiniest of skirts from now on, nyahahaha!'[roman type][line break]";
-		now short skirts permanent fetish is 2;
+		now short skirts permanent suggestion is 2;
 		compute errand reward of E for P;
 		now the current-errand of P is no-errand;
 	otherwise:
@@ -2859,7 +2859,7 @@ To compute instant effect of (E - skirt-hypnosis-errand) for (P - a person):
 
 panties-hypnosis-errand is an errand.
 Definition: panties-hypnosis-errand is appropriate:
-	if skimpy underwear fetish is 0 or the player is no-panties-allowed, decide no;
+	if skimpy underwear suggestion is 0 or the player is no-panties-allowed, decide no;
 	if the current-reward of the noun is hex gloves or the current-reward of the noun is hex collar, decide yes;
 	decide no.
 To decide which number is the errand-weight of (E - panties-hypnosis-errand) for (P - neuromancer):
@@ -2867,14 +2867,14 @@ To decide which number is the errand-weight of (E - panties-hypnosis-errand) for
 To decide which number is the errand-desire of (E - panties-hypnosis-errand) for (P - neuromancer):
 	decide on 100.
 To say ErrandFlav of (E - panties-hypnosis-errand) for (P - a person):
-	say "You want one of my most powerful items, hmm? Tell you what... I want you to let me tweak your brain, to make sure that you only love wearing slutty underwear. ".
+	say "You want one of my most powerful items, hmm? Tell you what... I want you to let me tweak your brain, to make sure that you only love wearing [if diaper quest is 1]embarrassing[otherwise]slutty[end if] underwear. ".
 To compute instant effect of (E - panties-hypnosis-errand) for (P - a person):
 	say "Do you let [NameDesc of P] tweak your brain?";
 	if the player is bimbo consenting:
-		if skimpy underwear fetish < 0, now skimpy underwear fetish is 3;
-		otherwise decrease skimpy underwear fetish by 3;
-		if skimpy underwear fetish < 0, now skimpy underwear fetish is 0;
-		say "As soon as you have nodded your assent, [NameDesc of P] is excitedly fixing [his of P] eyes with yours, and using [his of P] mind-magic powers to delve deep into your subconscious, rewiring your brain to make you [second custom style]love only wearing [if skimpy underwear fetish >= 3]skimpy hotpants and thongs[otherwise if skimpy underwear fetish > 0]thongs[otherwise]crotchless underwear[end if][if diaper lover > 0] and diapers[end if]![roman type][line break]And then you're blinking with confusion and shock, as [NameDesc of P] looks at you, grinning.[paragraph break][variable custom style]'Oh god... What have you done?!'[line break]You ask, hoarse with concern.[line break][speech style of P]'You know exactly what I've done, sunshine. [if skimpy underwear fetish is 0]No more panties for you[otherwise]Only skimpy panties for you from now on[end if], nyahahaha!'[roman type][line break]";
+		if skimpy underwear suggestion < 0, now skimpy underwear suggestion is 3;
+		otherwise decrease skimpy underwear suggestion by 3;
+		if skimpy underwear suggestion < 0, now skimpy underwear suggestion is 0;
+		say "As soon as you have nodded your assent, [NameDesc of P] is excitedly fixing [his of P] eyes with yours, and using [his of P] mind-magic powers to delve deep into your subconscious, rewiring your brain to make you [second custom style]love only wearing [if skimpy underwear suggestion >= 3]skimpy hotpants and thongs[otherwise if skimpy underwear suggestion > 0]thongs[otherwise]crotchless underwear[end if][if diaper lover > 0] and diapers[end if]![roman type][line break]And then you're blinking with confusion and shock, as [NameDesc of P] looks at you, grinning.[paragraph break][variable custom style]'Oh god... What have you done?!'[line break]You ask, hoarse with concern.[line break][speech style of P]'You know exactly what I've done, sunshine. [if skimpy underwear suggestion is 0 and diaper quest is 1]No more big girl panties for you[otherwise if skimpy underwear suggestion is 0]No more panties for you[otherwise if diaper quest is 1]Your buttcheeks are gonna be sexily exposed or kept padded from now on[otherwise]Only skimpy panties for you from now on[end if], nyahahaha!'[roman type][line break]";
 		compute errand reward of E for P;
 		now the current-errand of P is no-errand;
 	otherwise:
@@ -2998,8 +2998,7 @@ To say ErrandFlav of (E - soiled-diaper-errand) for (P - a person):
 	say "Could you take this [if the errand-weight of E for P >= 4 and the errand-weight of E for P is not 10 and diaper messing >= 6]messy[otherwise]used[end if] diaper away for me, please? ".
 To compute instant effect of (E - soiled-diaper-errand) for (P - a person):
 	let SD be a random off-stage soiled-diaper;
-	let D be a random eligible diaper;
-	if D is nothing, let D be a random unworn diaper;
+	let D be the chosen diaper;
 	if SD is a thing and the errand-weight of E for P >= 4 and the errand-weight of E for P is not 10 and diaper messing >= 6:
 		now the diaper-origin of SD is the substituted form of "disposable diaper from [NameDesc of P]";
 		now SD is in the location of the player;

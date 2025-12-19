@@ -2,7 +2,7 @@ Teachers Ruby by Monster begins here.
 
 condom-lesson is a lesson. condom-lesson has a number called condom-timer.
 Definition: condom-lesson is lesson-appropriate:
-	if the player is a september 2024 top donator and condom fetish >= 2, decide yes;
+	if the player is the donator and condom fetish >= 2, decide yes;
 	decide no.
 To say LessonTitle of (L - condom-lesson):
 	say "Wearing Used Condoms".

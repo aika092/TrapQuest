@@ -449,7 +449,7 @@ To say DisgracePost (N - a number):
 	if DPV > 1:
 		say ". It [if secondslive is 0]has been viewed [DPV] times[otherwise]was viewed [DPV] times before it was deleted[end if]";
 	otherwise if secondslive > 0:
-		say "[if secondslive >= 60]. It was up for [secondslive / 60] minutes before you were able to delete it[otherwise]. It was only up for [secondslive] seconds before you were able to delete it[end if]";
+		say "[if secondslive >= 60]. It was up for [secondslive / 60] minutes[otherwise]. It was only up for [secondslive] seconds[end if] before it was deleted";
 	otherwise if deletedtime entry > 0:
 		say ". It has since been deleted, but the damage is already done - a large number of your family and friends will have seen the post";
 	otherwise if severity entry is 0:
@@ -532,11 +532,21 @@ To decide which text is ReputationAttire:
 		decide on "with [if B is arms]one arm [one of]trying to hide[or]covering[or]over[then at random] your [BreastDesc][otherwise]a [ShortDesc of B][end if][if C is nothing] and nothing covering your [genitals][otherwise if C is arms] and a hand trying to [one of]cover[or]conceal[cycling] your [genitals][otherwise if C is clothing and C is not B] and a [ShortDesc of C][end if][AF]";
 
 To say sexyWebsite:
+	if doomed > 0 and a random number between 1 and 3 is 1, say eldritchWebsite instead;
 	if diaper quest is 1, say "embarrassedbabes.net";
-	otherwise say "[one of]trashyboners.xxx[or]publicnudity.xxx[or]embarrassedbabes.net[or]caughtoncandid.com[or]whoisthathottie.com[or]neighborhoodwatchers.org[or]localbirds.net[or]redintheface.com[or]probablyillegal.net[at random]".
+	otherwise:
+		say "[one of]trashyboners.xxx[or]publicnudity.xxx[or]embarrassedbabes.net[or]caughtoncandid.com[or]whoisthathottie.com[or]neighborhoodwatchers.org[or]localbirds.net[or]redintheface.com[or]probablyillegal.net[at random]".
 
 To say sluttyWebsite:
+	if doomed > 0 and a random number between 1 and 3 is 1, say eldritchWebsite instead;
 	if diaper quest is 1, say "publicdisgraces.xxx";
 	otherwise say "[one of]publicdisgraces.xxx[or]caughtintheact.com[or]whoresexposed.net[or]sluthub.xxx[or]namedandshamed.com[or]yourlocalwhore.net[or]ninjaflashers.xxx[or]flasherdirectory.org[or]seehershame.com[or]doxxmonkey.net[at random]".
+
+To say eldritchWebsite:
+	if diaper quest is 1, say "funnymortals.xxx";
+	otherwise say "[one of]humanwhores.666[or]mortaltits.666[or]mortalportals.23[or]fuckysuckysapiens.23[or]mortalshames.42[or]whoresonearth.8008[or]shamegames.com[at random]";
+
+To say corporateWebsite:
+	say "the Nintendolls official company [one of]youpron[or]facepage[or]twatter[at random]";
 
 Humiliation ends here.

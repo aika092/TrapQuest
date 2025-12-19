@@ -120,7 +120,7 @@ Check unplugging something:
 	if the noun is not penetrating a body part, say "[if the noun is worn]That is not removed like this, try [bold type]removing[roman type] it instead[otherwise]That is not inside of you[end if]." instead;
 	if the noun is penetrating a fuckhole and portal-hotpants is worn:
 		unless the player is in Hotel44 and pimp is not in Hotel44, say "[if the player is in Hotel44][BigNameDesc of the pimp] won't let you do that[otherwise]You can't get to your [random fuckhole penetrated by the noun] right now, since it is in the [Hotel44][end if]!" instead;
-	if the noun is maybe-cursed and the class of the player is not cultist and the noun is not dildo sword: [dildo swords come straight back out]
+	if the noun is maybe-cursed and the noun is curse-sticky and the noun is not dildo sword: [dildo swords come straight back out]
 		if the noun is sure and the noun is worn, say "It refuses to budge, it's like it's glued inside! It must be the curse..." instead;
 		if the noun is worn:
 			now the noun is sure;
@@ -137,6 +137,7 @@ Check unplugging something:
 			allocate 2 seconds instead;
 	if the noun is penetrating asshole and the player is ass protected, say "You need to get your [random bottom level ass protection clothing] out of the way first." instead;
 	if (the noun is penetrating vagina or the noun is penetrating penis) and the player is pussy protected, say "You need to get your [random bottom level protection clothing] out of the way first." instead;
+	if the noun is unremovable, say "It won't budge! It seems to be completely magically preventing you from removing it. Perhaps there's something else it wants you to do before it begins to make its own way out..." instead;
 	if the noun is glued, try tearing off the noun instead;
 	if the noun is nintendolls flag plug and the size of nintendolls flag plug < 10:
 		now the size of nintendolls flag plug is 10;

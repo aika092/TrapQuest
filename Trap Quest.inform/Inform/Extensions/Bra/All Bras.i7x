@@ -213,7 +213,7 @@ To say ShortDesc of (B - maid-bra):
 	say "maid bra".
 
 To say selfexaminetitle of (B - maid-bra):
-	say "suepr skimpy maid bra".
+	say "super skimpy maid bra".
 
 To decide which figure-name is clothing-image of (C - maid-bra):
 	decide on figure of maid bra.
@@ -638,7 +638,7 @@ To decide which number is the initial outrage of (C - tongue-bra):
 	if C is tonguing, decide on 17;
 	decide on 7.
 
-A trainee bra is a kind of bra. There is 1 trainee bra. A trainee bra is usually unique. A trainee bra has a number called training-progress. The training-progress of a trainee bra is usually 0. A trainee bra can be magnetised. A trainee bra is usually magnetised. The text-shortcut of a trainee bra is usually "teb". The printed name of trainee bra is usually "[TQlink of item described][item style]trainee bra[clothing-title-after]". A trainee bra has a number called train-charge.
+Trainee bra is a bra. Trainee bra is unique. Trainee bra has a number called training-progress. The training-progress of trainee bra is 0. Trainee bra can be magnetised. Trainee bra is magnetised. The text-shortcut of trainee bra is usually "teb". The printed name of trainee bra is usually "[TQlink of item described][item style]trainee bra[clothing-title-after]". A trainee bra has a number called train-charge.
 
 Figure of trainee bra is the file "Items/Clothes/Upper/Bras/traineebra1.png".
 
@@ -648,19 +648,19 @@ To decide which figure-name is clothing-image of (C - a trainee bra):
 To say ClothingDesc of (C - a trainee bra):
 	say "This silicone bra is outfitted with a pair of squishy pads, which mould flawlessly to accommodate your [BreastDesc]. Anyone looking at you would have to pay close attention to notice that the pads are making your bust seem a lot more impressive than it really is. Metal accents give the bra a futuristic high-tech appearance, and keep the straps in place with surprising security.".
 
-Definition: a trainee bra is grey themed: decide yes.
-Definition: a trainee bra is transformation-protected: decide yes.
-Definition: a trainee bra is whore themed: decide yes.
-Definition: a trainee bra is removable:
+Definition: trainee bra is grey themed: decide yes.
+Definition: trainee bra is transformation-protected: decide yes.
+Definition: trainee bra is whore themed: decide yes.
+Definition: trainee bra is removable:
 	if it is not magnetised, decide yes;
 	decide no.
 
-A trainee bra is usually latex. The support of a trainee bra is usually -10. The min size of trainee bra is usually 20. The max size of trainee bra is usually 20. A trainee bra is usually top-exclusive.
+Trainee bra is latex. The support of trainee bra is -10. The min size of trainee bra is usually 20. The max size of trainee bra is usually 20. Trainee bra is bottom-exclusive.
 
 To say CupDesc of (C - a trainee bra):
 	say "".
 
-To decide which number is the perceived-bimbo-influence of (C - a trainee bra):
+To decide which number is the perceived-bimbo-influence of (C - trainee bra):
 	decide on 2.[no perceived breast size for now, so this will do.]
 
 trainee bra removability rules is a rulebook. The removability rules of trainee bra is usually trainee bra removability rules.
@@ -675,7 +675,7 @@ Report wearing trainee bra:
 	say "The magnetic latches snap closed as you finish putting it on.";
 	now the noun is magnetised.
 
-To compute periodic effect of (C - a trainee bra):[remember that training-progress will sometimes be negative]
+To compute periodic effect of (C - trainee bra):[remember that training-progress will sometimes be negative]
 	increase the train-charge of C by 1;
 	if train-charge of C > 40:
 		now the train-charge of C is 0;

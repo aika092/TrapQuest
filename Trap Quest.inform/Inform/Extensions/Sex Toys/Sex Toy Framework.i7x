@@ -489,7 +489,9 @@ To decide which number is the initial outrage of (S - a tail plug):
 To decide which number is the initial cringe of (S - a tail plug):
 	decide on the initial outrage of S.
 
-A balancing tail plug is a kind of tail plug.
+Definition: a clothing is tailed: decide no.
+Definition: a tail plug is tailed: decide yes.
+Definition: a clothing is balance-tail: decide no.
 
 To say PlugSize (N - a number):
 	say "[if N < 2]tiny[otherwise if N is 2]small[otherwise if N is 3]smallish[otherwise if N is 4]medium sized[otherwise if N is 5]large[otherwise if N is 6]very large[otherwise if N is 7]huge[otherwise if N is 8]giant[otherwise if N is 9]massive[otherwise]monstrous[end if]".
@@ -598,7 +600,7 @@ This is the remove inappropriate tail plugs rule:
 		now B is in Holding Pen.
 The remove inappropriate tail plugs rule is listed in the diaper quest fix rules.
 
-Report kneeling while there is a worn balancing tail plug:
+Report kneeling while there is a worn balance-tail clothing:
 	if seconds > 0 and the player is in danger and the standing capability of the player > 0 and auto is 1:
 		say "With catlike reflexes, you immediately try to spring back to your feet!";
 		now delayed stand is 0;
@@ -606,28 +608,28 @@ Report kneeling while there is a worn balancing tail plug:
 
 This is the knickers tail plug clash rule:
 	if wearing-target is total protection and wearing-target is not-butt-windowed and wearing-target is not displacable:
-		repeat with O running through worn tail plugs:
+		repeat with O running through worn tailed clothing:
 			if summoning is 0 and autowear is false, say "You can't wear that because your [printed name of O] is in the way!";
 			rule fails.
 The knickers tail plug clash rule is listed in the knickers wearability rules.
 
 This is the trousers tail plug clash rule:
 	if wearing-target is total protection and wearing-target is not-butt-windowed and wearing-target is not displacable:
-		repeat with O running through worn tail plugs:
+		repeat with O running through worn tailed clothing:
 			if summoning is 0 and autowear is false, say "You can't wear that because your [printed name of O] is in the way!";
 			rule fails.
 The trousers tail plug clash rule is listed in the trousers wearability rules.
 
 This is the overdress tail plug clash rule:
 	if wearing-target is total protection and wearing-target is not-butt-windowed and wearing-target is undisplacable:
-		repeat with O running through worn tail plugs:
+		repeat with O running through worn tailed clothing:
 			if summoning is 0 and autowear is false, say "You can't wear that because your [printed name of O] is in the way!";
 			rule fails.
 The overdress tail plug clash rule is listed in the overdress wearability rules.
 
 This is the skirt tail plug clash rule:
 	if wearing-target is total protection and wearing-target is not-butt-windowed and wearing-target is undisplacable:
-		repeat with O running through worn tail plugs:
+		repeat with O running through worn tailed clothing:
 			if summoning is 0 and autowear is false, say "You can't wear that because your [printed name of O] is in the way!";
 			rule fails.
 The skirt tail plug clash rule is listed in the skirt wearability rules.
@@ -670,7 +672,7 @@ Part - Wearability
 sex toy wearability rules is a rulebook. The wearability rules of sex toy is usually sex toy wearability rules.
 
 This is the tail plug clash rule:
-	if wearing-target is tail plug:
+	if wearing-target is tailed clothing:
 		repeat with O running through worn total protection not-butt-windowed crotch-in-place clothing:
 			if summoning is 0 and autowear is false, say "You can't wear that because your [printed name of O] is in the way!";
 			rule fails.

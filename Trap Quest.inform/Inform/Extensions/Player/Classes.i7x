@@ -45,7 +45,7 @@ A later time based rule (this is the desperation quest rule):
 		if ((the bladder of the player <= 1 and (diaper messing < 3 or rectum <= 1)) or there is worn dirty knickers) and the player is not in a nonstandard room:
 			progress quest of desperation-quest;
 			if playerRegion is mansion and vampiress is summon-available:
-				compute sudden interested appearance of vampiress;
+				spawn meet vampiress;
 				let K be a random worn dirty knickers;
 				if K is knickers:
 					say "[speech style of vampiress]'Oh sweetie... We are DEFINITELY going to need to keep you in diapers until you can learn not to do that...'[roman type][line break][BigNameDesc of vampiress] clearly wants to give you a diaper change. Submit to it? (Refusing will probably make [him of vampiress] angry.)";
@@ -61,7 +61,7 @@ A later time based rule (this is the desperation quest rule):
 			if playerRegion is mansion and vampiress is summon-available and the player is able to use a toilet:
 				say "You're so desperate for the toilet, that as soon as you see one here, you leap towards it!";
 				compute toilet use;
-				compute sudden interested appearance of vampiress;
+				spawn meet vampiress;
 				now rewardEarned is true;
 		if rewardEarned is true:
 			let TP be a random unworn training pants;
@@ -80,7 +80,7 @@ The sissy class rule is listed in the player class rules.
 sissyclass is a text that varies. sissyclass is "sissy".
 
 This is the berri class rule:
-	if gold-hairclip is worn:
+	if there is a worn berri-headgear:
 		now player-class is "ill-fated";
 		rule succeeds.
 The berri class rule is listed in the player class rules.
@@ -164,6 +164,15 @@ a class explaining rule (this is the explaining maid rule):
 	otherwise if maidExplained is true and the class of the player is not maid:
 		now maidExplained is false;
 		say "[bold type]Now that you are no longer the [']maid['] class, you no longer feel a drive to satisfy your employers.[roman type][line break]".
+
+nekoMaidExplained is initially false.
+a class explaining rule (this is the explaining neko maid rule):
+	if nekoMaidExplained is false and the class of the player is "neko maid":
+		now nekoMaidExplained is true;
+		say "[bold type]Now that you have become the [']neko maid['] subclass, you sense that you will now longer [if grossness fetish > 0]gain addiction to gross sensations or [end if]lose self-respect by licking up puddles.[roman type][line break]";
+	otherwise if nekoMaidExplained is true and the class of the player is not "neko maid":
+		now nekoMaidExplained is false;
+		say "[bold type]Now that you are no longer the [']neko maid['] subclass, you no longer feel immune to the [if grossness fetish > 0]grossness addiction or [end if]self-respect changes caused by licking up puddles.[roman type][line break]".
 
 This is the cowgirl class rule:
 	if (cow-ears is worn or cow-horns is worn):
@@ -383,6 +392,7 @@ There are multiple different texts that need to be able to return true for the c
 
 +!]
 Definition: a text (called T) is fertility goddess:
+	if pregnancy fetish is 0, decide no;
 	if T matches the text "fertil" or T matches the text "god" or T matches the text "breeding" or T matches the text "housewife" or T matches the text "vessel", decide yes;
 	decide no.
 
@@ -540,7 +550,11 @@ This is the catgirl class rule:
 			now player-class is "catgirl";
 		rule succeeds;
 	if cat-hood is worn:
-		now player-class is "cat burglar".
+		now player-class is "cat burglar";
+		rule succeeds;
+	if maid-cat-ears is worn:
+		now player-class is "neko maid";
+		rule succeeds.
 The catgirl class rule is listed in the player class rules.
 
 [!<TextIsCatgirl>+
@@ -564,10 +578,11 @@ a class explaining rule (this is the explaining catgirl rule):
 This is the puppygirl class rule:
 	if there is a worn puppy ears:
 		now player-class is the substituted form of "puppy[boy of the player]";
+		if puppy knot tail plug is worn, now player-class is "breeding bitch";
 		rule succeeds.
 The puppygirl class rule is listed in the player class rules.
 Definition: a text (called T) is puppy:
-	if T matches the text "puppy", decide yes;
+	if T matches the text "puppy" or T matches the text "bitch", decide yes;
 	decide no.
 Definition: a text (called T) is puppygirl:
 	if T is puppy, decide yes;
@@ -581,6 +596,15 @@ a class explaining rule (this is the explaining puppygirl rule):
 	otherwise if puppygirlExplained is true and the class of the player is not puppygirl:
 		now puppygirlExplained is false;
 		say "[bold type]Now that you are no longer the [']puppy[boy of the player]['] class, you can sense that your bonus strength from wearing minimal clothing has returned to normal.[roman type][line break]".
+
+bitchExplained is initially false.
+a class explaining rule (this is the explaining breeding bitch rule):
+	if bitchExplained is false and the class of the player is "breeding bitch":
+		now bitchExplained is true;
+		say "[bold type]Now that you have become the [']breeding bitch['] subclass, you can sense that you gain permanent stats from having sex with [NameDesc of hellhound].[roman type][line break]";
+	otherwise if bitchExplained is true and the class of the player is not "breeding bitch":
+		now bitchExplained is false;
+		say "[bold type]Now that you are no longer the [']breeding bitch['] subclass, you can sense that you no longer gain permanent stats from having sex with [NameDesc of hellhound].[roman type][line break]".
 
 This is the symbiote class rule:
 	if spiked-tiara is worn:
@@ -892,7 +916,9 @@ a class explaining rule (this is the explaining faerie rule):
 This is the bunny class rule:
 	if there is a worn bunny ears:
 		let T be "bunny";
-		if pregnancy fetish is 1 and bunny tail plug is worn, now T is "fertile bunny";
+		if pregnancy fetish is 1:
+			if bunny tail plug is worn, now T is "fertile bunny";
+			if bunny tail mamba is worn, now T is "fertile snowbunny";
 		now player-class is "[T]";
 		if playdude bunny waitress ears is worn:
 			now player-class is "[T] waitress";
@@ -1270,7 +1296,7 @@ This is the hooker in training class rule:
 The hooker in training class rule is listed first in the player class rules.
 
 Definition: yourself is a hooker in training:
-	if trainee hood is worn or there is a worn trainee bra or there is a worn trainee thigh highs, decide yes.
+	if trainee hood is worn or trainee bra is worn or there is a worn trainee thigh highs, decide yes.
 
 [!<TheTrainedHookerClassRule>+
 

@@ -373,9 +373,9 @@ To compute next agent scene:
 		compute agent anal;
 		if the number of blank rows in the Table of Published Disgraces > 0:
 			choose a blank row in Table of Published Disgraces;
-			if diaper quest is 0, now the content entry is "a high quality video showing you, naked, on your hands and knees, as the [MediumDesc of agent] holds some kind of small silver device in front of your face. You have a blank expression and are staring at the device while [he of agent] gives you some instructions, ";
-			otherwise now the content entry is "a high quality video showing you, naked, bent over, your belly full of a giant enema, as the [MediumDesc of agent] holds some kind of small silver device in front of your face. You have a blank expression and are staring at the device while [he of agent] gives you some instructions, ";
-			now the published entry is the substituted form of "is live on www.hypnoheaven.xxx";
+			if diaper quest is 0, now the content entry is "a high quality [video] showing you, naked, on your hands and knees, as the [MediumDesc of agent] holds some kind of small silver device in front of your face. You have a blank expression and are staring at the device while [he of agent] gives you some instructions, ";
+			otherwise now the content entry is "a high quality [video] showing you, naked, bent over, your belly full of a giant enema, as the [MediumDesc of agent] holds some kind of small silver device in front of your face. You have a blank expression and are staring at the device while [he of agent] gives you some instructions, ";
+			now the published entry is the substituted form of "is [if infamy fetish > 0]live on www.hypnoheaven.xxx[otherwise]waiting in the Outer Rim[end if]";
 			now the severity entry is 2;
 			now the popularity entry is 5;
 			now the timestamp entry is earnings;
@@ -388,8 +388,8 @@ To compute next agent scene:
 		compute agent threesome;
 		if the number of blank rows in the Table of Published Disgraces > 0:
 			choose a blank row in Table of Published Disgraces;
-			now the content entry is "a high quality video showing you, naked, on your back, with [womanName] on [his of woman-player] hands and knees above you, as the [MediumDesc of agent] takes turns inserting [his of agent] huge [manly-penis] into [womanName][']s pussy, and then your mouth. [big he of agent] is holding some kind of small silver device in front of your and [womanName][']s faces. You have a blank expression, as if you have been hypnotised, ";
-			now the published entry is the substituted form of "is live on www.hypnoheaven.xxx";
+			now the content entry is "a high quality [video] showing you, naked, on your back, with [womanName] on [his of woman-player] hands and knees above you, as the [MediumDesc of agent] takes turns inserting [his of agent] huge [manly-penis] into [womanName][']s pussy, and then your mouth. [big he of agent] is holding some kind of small silver device in front of your and [womanName][']s faces. You have a blank expression, as if you have been hypnotised, ";
+			now the published entry is the substituted form of "is [if infamy fetish > 0]live on www.hypnoheaven.xxx[otherwise]waiting in the Outer Rim[end if]";
 			now the severity entry is 4;
 			now the popularity entry is 5;
 			now the timestamp entry is earnings;

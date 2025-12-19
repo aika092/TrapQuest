@@ -8,7 +8,9 @@ To Set Up The Mansion:
 	if loading scenes is 1:
 		clear the screen;
 		if images visible is 1:
-			if diaper quest is 0:
+			if the class of the player is berri:
+				display Figure of berri loading low res;
+			otherwise if diaper quest is 0:
 				let R be a random number between 1 and 3;
 				if R is 1:
 					display figure of mansion loading 1;
@@ -120,7 +122,8 @@ To Set Up The Mansion:
 	if debugmode is 0 and loading scenes is 1, clear the screen;
 	deploy a slimeball;
 	if diaper quest is 0 and the player is an april 2025 top donator, now bondage-stone is in Mansion38;
-	progress quest of new-region-quest.
+	progress quest of new-region-quest;
+	fix doom.
 
 To Scramble Mansion:
 	[let E be the easting part of the grid position of Stairwell03;

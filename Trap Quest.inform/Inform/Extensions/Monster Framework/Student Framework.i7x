@@ -292,6 +292,18 @@ To decide which number is the vindictiveness of (M - a student): [Angry students
 
 Part - Motion
 
+To decide which object is the default-local-room of (M - a student):
+	if the current-rank of M is 1:
+		decide on School14;
+	otherwise if the current-rank of M is 2:
+		decide on School18;
+	otherwise if the current-rank of M is 3:
+		decide on School29;
+	otherwise if the current-rank of M is 4:
+		decide on School30;
+	otherwise:
+		decide on School32.
+
 To compute monstermotion of (M - a student):
 	if playerRegion is not school:
 		say "BUG: [BigNameDesc of M] has followed the player out of the school. Please report along with a detailed description of your what happened in most recent visit to the school. Region: [playerRegion]; Location: [location of M]; Player location: [location of the player].";
@@ -299,15 +311,7 @@ To compute monstermotion of (M - a student):
 	otherwise if M is in a predicament room:
 		do nothing;
 	otherwise if M is guarding: [send them to their classroom if they are in a boring state]
-		let R be School32;
-		if the current-rank of M is 1:
-			now R is School14;
-		otherwise if the current-rank of M is 2:
-			now R is School18;
-		otherwise if the current-rank of M is 3:
-			now R is School29;
-		otherwise if the current-rank of M is 4:
-			now R is School30;
+		let R be the default-local-room of M;
 		if the location of M is not R, now M is in R;
 	otherwise if academy-toilet-key is held by M: [got to take the key back]
 		let A be down;
@@ -550,7 +554,7 @@ To say SatisfiedFlav of (M - a student):
 	if M is in the location of the player and M is not dying, say "[BigNameDesc of M] seems satisfied, and loses interest.[if M is friendly][line break][speech style of M]'Okay, we're cool now. Just don't you dare piss me off again.'[roman type][line break]".
 
 To say SatisfiedFlav of (M - a nasty student):
-	if M is in the location of the player and M is not dying, say "[BigNameDesc of M] seems satisfied, and loses interest.[line break][speech style of M]'What a [one of]wimp[or]loser[or][if the player is gendered male]faggot[otherwise]pathetic little [boy of the player][end if][in random order].'[roman type][line break]".
+	if M is in the location of the player and M is not dying, say "[BigNameDesc of M] seems satisfied, and loses interest.[line break][speech style of M]'What a [one of]wimp[or]loser[or][if the player is gendered male]sissy[otherwise]pathetic little [boy of the player][end if][in random order].'[roman type][line break]".
 
 To FavourUp (M - a student) by (N - a number):
 	RespectUp M by N.
@@ -678,7 +682,7 @@ To compute (M - a student) protecting against (X - a monster):
 		now the scared of M is 100;
 		anger M.
 
-dq-student-flee is a diaper punishment. the priority of dq-student-flee is 5.
+dq-student-flee is a diaper punishment. the priority of dq-student-flee is 8.
 
 To compute punishment of (P - dq-student-flee):
 	now the scared of current-monster is 100;
@@ -1266,10 +1270,11 @@ Definition: prank-photo is eligible:
 	decide no.
 To execute (P - prank-photo):
 	let A be the appearance of the player;
-	say "Suddenly, [current-monster] puts [his of current-monster] arm over your shoulder.[line break][speech style of current-monster]'Say cheese!'[roman type][line break][BigNameDesc of current-monster] has taken a quick photograph of you both with [his of current-monster] smartphone.[line break][if the player is modest][variable custom style]What?! No, not while I look like this![line break][end if][speech style of current-monster]'I just couldn't resist taking a selfie with you when you look so [if diaper quest is 1]cute[otherwise if A < 10]cute and slutty[otherwise]utterly whorish[end if] like this!'[roman type][line break]Before you can object, [NameDesc of current-monster] has uploaded the photo of you both somewhere.[line break][variable custom style]Wait, was that to the REAL Internet? How many people will see it?![line break][speech style of current-monster]'I bet this one gets lots of upvotes!'[roman type][line break][BigNameDesc of current-monster] giggles happily.";
+	say "Suddenly, [current-monster] puts [his of current-monster] arm over your shoulder.[line break][speech style of current-monster]'Say cheese!'[roman type][line break][BigNameDesc of current-monster] has taken a quick photograph of you both with [his of current-monster] smartphone.[line break][if the player is modest][variable custom style]What?! No, not while I look like this![line break][end if][speech style of current-monster]'I just couldn't resist taking a selfie with you when you look so [if diaper quest is 1]cute[otherwise if A < 10]cute and slutty[otherwise]utterly whorish[end if] like this!'[roman type][line break]";
+	if infamy fetish > 0, say "Before you can object, [NameDesc of current-monster] has uploaded the photo of you both somewhere.[line break][variable custom style]Wait, was that to the REAL Internet? How many people will see it?![line break][speech style of current-monster]'I bet this one gets lots of upvotes!'[roman type][line break][BigNameDesc of current-monster] giggles happily.";
 	let T be "in a selfie with your fellow student [student-name of current-monster]";
 	if diaper quest is 1 and the appearance of the player < the cringe appearance of the player, now A is the cringe appearance of the player;
-	compute digital reputation damage T strength (A) quality (a random number between 1 and 2).
+	if infamy fetish > 0, compute digital reputation damage T strength (A) quality (a random number between 1 and 2).
 
 prank-condom is a prank-action.
 Definition: prank-condom is eligible:

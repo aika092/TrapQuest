@@ -66,6 +66,8 @@ To decide which number is the flat strength of the player:
 	if piercing-fetish is 1, increase S by the number of worn piercings;
 	repeat with C running through worn wearthings:
 		increase S by the strength-influence of C;
+	repeat with W running through stalking strength-buffing nice-wisps:
+		increase S by 2;
 	if the class of the player is priestess, decrease S by 2;
 	if the class of the player is puppy:
 		let N be the number of worn nudism-disabling clothing;
@@ -168,6 +170,8 @@ To decide which number is the flat dexterity of the player:
 	increase D by the theme bonus of the dexterity theme rules;
 	repeat with C running through worn wearthings:
 		increase D by the dexterity-influence of C;
+	repeat with W running through stalking dexterity-buffing nice-wisps:
+		increase D by 2;
 	if the class of the player is cheerleader, increase D by the blondeness of hair;
 	if the class of the player is superhero, increase D by 3;
 	if the class of the player is cowgirl and the class of the player is catgirl, increase D by the stomach-milk of the player;
@@ -274,6 +278,8 @@ To decide which number is the flat intelligence of the player:
 	if the class of the player is priestess, increase I by 2;
 	repeat with T running through worn wearthings:
 		increase I by the intelligence-influence of T;
+	repeat with W running through stalking intelligence-buffing nice-wisps:
+		increase I by 2;
 	unless there is a worn baby bonnet:
 		decrease I by the incidents of enema-int-loss;
 		decrease I by fullness-penalty;
@@ -371,6 +377,7 @@ To decide which number is the luck of the player:
 	repeat with C running through worn wearthings:
 		increase L by the luck-influence of C;
 	if luck-timer of luck-tincture > 0, increase L by 25;
+	if entry 2 in the list of special passwords is 1, increase L by 25;
 	if herald is alive and the class of the player is not cultist, decrease L by 25;
 	increase L by the number of in-play trophies;
 	increase L by playing card theme bonus;
@@ -408,6 +415,7 @@ Definition: yourself is getting unlucky:
 		decide no;
 	otherwise:
 		let GL be 75 + the luck of the player;
+		if entry 2 in the list of special passwords is 1, decrease GL by 50;
 		if the class of the player matches the text "race traitor", now GL is (GL * 2) / 3;
 		let R be a random number between 1 and 100;
 		if debuginfo > 0, say "[input-style]Bad Luck Roll: d100([R]) | ([GL].5) bad luck threshold[roman type][line break]";

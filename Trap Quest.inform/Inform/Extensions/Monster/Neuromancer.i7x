@@ -13,8 +13,7 @@ Definition: neuromancer is dark skinned: decide yes.
 Definition: neuromancer is willing to potion forcefeed: decide yes.
 
 Definition: neuromancer is mansion dwelling:
-	if diaper quest is 0, decide yes;
-	if the player is a july 2024 diaper donator, decide yes;
+	if diaper quest is 0 or the player is the donator, decide yes;
 	decide no.
 
 To say ShortDesc of (M - neuromancer):
@@ -246,6 +245,11 @@ This is the neuromancer unique punishment rule:
 	if the rule succeeded, rule succeeds.
 The unique punishment rule of neuromancer is the neuromancer unique punishment rule.
 
+To decide which number is neuro-fetish-count:
+	let N be 0;
+	if short skirts permanent suggestion > 0, increase N by 1;
+	if skimpy underwear suggestion > 0, increase N by 1;
+
 This is the neuromancer sissification rule:
 	if the player is gendered male and a random number between 1 and 2 is 1:
 		let M be neuromancer;
@@ -258,40 +262,40 @@ This is the neuromancer short skirt summon rule:
 	if S is a destructible clothing or (S is nothing and the number of worn unskirted themed clothing is 0):
 		let neuro-action-success be false;
 		if debuginfo > 0, say "[input-style][MediumDesc of neuromancer] has identified the [ShortDesc of S] as destructible.[roman type][line break]";
-		if (S is shin-length-or-longer clothing) or (short skirts permanent fetish > 0 and S is short-skirt-disallowed):
+		if (S is shin-length-or-longer clothing) or (short skirts permanent suggestion > 0 and S is short-skirt-disallowed):
 			now neuro-action-success is true;
 			say "[speech style of neuromancer]'Your skirt is much too long. NYA!'[roman type][line break][BigNameDesc of neuromancer] swipes at your [S] with [his of neuromancer] claws, and rapidly rips to shreds!";
 			destroy S;
 		if the number of worn skirted clothing is 0:
 			let C be a random off-stage fetish appropriate plentiful short-skirt-allowed actually summonable skirt;
 			if C is nothing or S is overdress:
-				if short skirts permanent fetish is 0, now C is a random off-stage fetish appropriate plentiful knee-length-or-shorter actually summonable overdress;
+				if short skirts permanent suggestion is 0, now C is a random off-stage fetish appropriate plentiful knee-length-or-shorter actually summonable overdress;
 				otherwise now C is a random off-stage fetish appropriate plentiful short-skirt-allowed actually summonable overdress;
-			if C is nothing or (S is not overdress and short skirts permanent fetish is 0):
+			if C is nothing or (S is not overdress and short skirts permanent suggestion is 0):
 				now C is a random off-stage fetish appropriate plentiful knee-length-or-shorter actually summonable skirt;
 			if C is actually summonable:
 				say "[speech style of neuromancer]'You should wear something [if C is super-short-or-shorter]SUPER [end if]slutty, like this!'[roman type][line break][BigNameDesc of neuromancer] hands you a [MediumDesc of C]! To your [horror the humiliation of the player / 2000], as soon as you touch it, your hands begin immediately putting it on, without you even telling them to![line break]...And of course, once it is on, you can immediately tell that it is cursed, and can't be removed until you fulfill the conditions of the curse.";
 				summon C cursed with quest;
 				now neuro-action-success is true;
 		if neuro-action-success is true:
-			if short skirts permanent fetish is 1 or (short skirts permanent fetish < 4 and there is worn crotch-in-place skirted clothing and the player is not fighting against short skirts) or the player is getting lucky:
+			if short skirts permanent suggestion is 1 or (short skirts permanent suggestion < 4 and there is worn crotch-in-place skirted clothing and the player is not fighting against short skirts) or the player is getting lucky:
 				satisfy neuromancer;
-				unless short skirts permanent fetish is 1 or (short skirts permanent fetish < 4 and there is worn crotch-in-place skirted clothing and the player is not fighting against short skirts), say GotLuckyFlav;
+				unless short skirts permanent suggestion is 1 or (short skirts permanent suggestion < 4 and there is worn crotch-in-place skirted clothing and the player is not fighting against short skirts), say GotLuckyFlav;
 			rule succeeds.
 The neuromancer short skirt summon rule is listed in the neuromancer unique punish rules.
 
 This is the neuromancer short skirt fetish rule:
-	if (short skirts permanent fetish is 0 or short skirts permanent fetish > 1) and the number of currently uncovered unglued skimpy-underwear-disallowed autoremovable knickers is 0:
-		unless short skirts permanent fetish > 0 and short skirts permanent fetish < 4 and there is worn crotch-in-place skirted clothing and the player is not fighting against short skirts:
+	if (short skirts permanent suggestion is 0 or short skirts permanent suggestion > 1) and the number of currently uncovered unglued skimpy-underwear-disallowed autoremovable knickers is 0:
+		unless short skirts permanent suggestion > 0 and short skirts permanent suggestion < 4 and there is worn crotch-in-place skirted clothing and the player is not fighting against short skirts:
 			say "[BigNameDesc of neuromancer] stares right into your pupils and deep down into your soul.[line break][speech style of neuromancer]'A little tweak in your mind here, a nudge there... And you'll soon be wearing [if diaper quest is 1]silly[otherwise]sexy[end if] clothing ALL the time!'[roman type][line break][BigNameDesc of neuromancer] snaps [his of neuromancer] fingers, and you blink rapidly in confusion, as a new mantra fills your mind.";
-			if short skirts permanent fetish is 0:
+			if short skirts permanent suggestion is 0:
 				say "[second custom style]Skirts are so lovely... Skirts are the best... I love wearing skirts... I only wear skirts...[roman type][line break]";
-			otherwise if short skirts permanent fetish > 3:
+			otherwise if short skirts permanent suggestion > 3:
 				say "[second custom style]Long skirts are for prudes... Long skirts are for prudes... Long skirts are for prudes...[roman type][line break]";
 			otherwise:
 				say "[second custom style]I keep my skirts super short... I keep my skirts super short... I keep my skirts super short...[roman type][line break]";
-			if short skirts permanent fetish is 0, now short skirts permanent fetish is 6;
-			otherwise decrease short skirts permanent fetish by 1;
+			if short skirts permanent suggestion is 0, now short skirts permanent suggestion is 6;
+			otherwise decrease short skirts permanent suggestion by 1;
 			follow the short skirt addiction description rule;
 			satisfy neuromancer;
 			rule succeeds.
@@ -306,15 +310,15 @@ This is the neuromancer panties destruction rule:
 		now autoremove is false;
 		say "Before you know what's happening, you find yourself placing your [S] into [NameDesc of neuromancer][']s outstreched hand!";
 		now S is carried by neuromancer;
-		if (skimpy underwear fetish < 0 or skimpy underwear fetish > 3 or skimpy underwear fetish >= the assModesty of S) and the player is not no-panties-allowed:
-			if skimpy underwear fetish < 0 or skimpy underwear fetish > 3:
-				now skimpy underwear fetish is 3;
+		if (skimpy underwear suggestion < 0 or skimpy underwear suggestion > 3 or skimpy underwear suggestion >= the assModesty of S) and the player is not no-panties-allowed:
+			if skimpy underwear suggestion < 0 or skimpy underwear suggestion > 3:
+				now skimpy underwear suggestion is 3;
 			otherwise:
-				decrease skimpy underwear fetish by 1;
-			if the assModesty of S >= skimpy underwear fetish, now skimpy underwear fetish is the assModesty of S - 1;
+				decrease skimpy underwear suggestion by 1;
+			if the assModesty of S >= skimpy underwear suggestion, now skimpy underwear suggestion is the assModesty of S - 1;
 			say "[speech style of neuromancer]'What a good [if diaper quest is 1]baby[otherwise]slut[end if]! I'm proud of you, nya! But I think I should make sure that you don't just put something else on after I let you go...'[roman type][line break][BigNameDesc of neuromancer][']s eyes become twice as bright, as [he of neuromancer] pushes a strong suggestion deep into your subconcious. You find yourself focused on a new [if diaper quest is 0]slutty [end if]mantra:[paragraph break]";
-			if diaper quest is 1, say "[second custom style][if skimpy underwear fetish >= 3]I love skimpy hotpants, and big poofy diapers...[otherwise if skimpy underwear fetish > 0]I love tiny thongs, and big poofy diapers...[otherwise]Underwear is for prudes... Unless it's a diaper[end if]...[roman type][paragraph break]";
-			otherwise say "[second custom style][if skimpy underwear fetish >= 3]I love skimpy hotpants and thongs... I love skimpy hotpants and thongs[otherwise if skimpy underwear fetish > 0]I love thongs... I love thongs[otherwise]Underwear is for prudes... Underwear is for prudes[end if]...[roman type][paragraph break]";
+			if diaper quest is 1, say "[second custom style][if skimpy underwear suggestion >= 3]I love skimpy hotpants, and big poofy diapers...[otherwise if skimpy underwear suggestion > 0]I love tiny thongs, and big poofy diapers...[otherwise]Underwear is for prudes... Unless it's a diaper[end if]...[roman type][paragraph break]";
+			otherwise say "[second custom style][if skimpy underwear suggestion >= 3]I love skimpy hotpants and thongs... I love skimpy hotpants and thongs[otherwise if skimpy underwear suggestion > 0]I love thongs... I love thongs[otherwise]Underwear is for prudes... Underwear is for prudes[end if]...[roman type][paragraph break]";
 			say "When you are able to focus your vision again, you see that [NameDesc of neuromancer] looks very pleased with [himself of neuromancer].";
 			if the bimbo of the player < 10 and the player is able to speak:
 				say "[variable custom style]'What have you done?!'[roman type][line break]You immediately demand, audibly very concerned.[line break][speech style of neuromancer]'You know exactly what I've done... Nyahahahaha!'[roman type][line break]";
@@ -322,14 +326,14 @@ This is the neuromancer panties destruction rule:
 			say "[speech style of neuromancer]'What a good [if diaper quest is 1]baby[otherwise]slut[end if]! I'm proud of you, nya!'[roman type][line break]";
 		satisfy neuromancer;
 		rule succeeds;
-	otherwise if (skimpy underwear fetish < 0 or skimpy underwear fetish > 3) and the player is not no-panties-allowed:
-		if skimpy underwear fetish < 0 or skimpy underwear fetish > 3:
-			now skimpy underwear fetish is 3;
+	otherwise if (skimpy underwear suggestion < 0 or skimpy underwear suggestion > 3) and the player is not no-panties-allowed:
+		if skimpy underwear suggestion < 0 or skimpy underwear suggestion > 3:
+			now skimpy underwear suggestion is 3;
 		otherwise:
-			decrease skimpy underwear fetish by 1;
+			decrease skimpy underwear suggestion by 1;
 		say "[speech style of neuromancer]'I'm gonna do something funny to your brain now, nyehehehe...'[roman type][line break][BigNameDesc of neuromancer][']s eyes become twice as bright, as [he of neuromancer] pushes a strong suggestion deep into your subconcious. You find yourself focused on a new slutty mantra:[paragraph break]";
-		if diaper quest is 1, say "[second custom style][if skimpy underwear fetish >= 3]I love skimpy hotpants, and big poofy diapers...[otherwise if skimpy underwear fetish > 0]I love tiny thongs, and big poofy diapers...[otherwise]Underwear is for prudes... Unless it's a diaper[end if]...[roman type][paragraph break]";
-		otherwise say "[second custom style][if skimpy underwear fetish >= 3]I love skimpy hotpants and thongs... I love skimpy hotpants and thongs[otherwise if skimpy underwear fetish > 0]I love thongs... I love thongs[otherwise]Underwear is for prudes... Underwear is for prudes[end if]...[roman type][paragraph break]";
+		if diaper quest is 1, say "[second custom style][if skimpy underwear suggestion >= 3]I love skimpy hotpants, and big poofy diapers...[otherwise if skimpy underwear suggestion > 0]I love tiny thongs, and big poofy diapers...[otherwise]Underwear is for prudes... Unless it's a diaper[end if]...[roman type][paragraph break]";
+		otherwise say "[second custom style][if skimpy underwear suggestion >= 3]I love skimpy hotpants and thongs... I love skimpy hotpants and thongs[otherwise if skimpy underwear suggestion > 0]I love thongs... I love thongs[otherwise]Underwear is for prudes... Underwear is for prudes[end if]...[roman type][paragraph break]";
 		say "When you are able to focus your vision again, you see that [NameDesc of neuromancer] looks very pleased with [himself of neuromancer].";
 		if the bimbo of the player < 10 and the player is able to speak:
 			say "[variable custom style]'What have you done?!'[roman type][line break]You immediately demand, audibly very concerned.[line break][speech style of neuromancer]'You'll find out the next time you put on underwear... Nyahahahaha!'[roman type][line break]";
@@ -386,7 +390,7 @@ Definition: neuromancer (called M) is uniquely ready to entice:
 	if the player is able to orgasm, decide yes;
 	decide no.
 
-To compute enticing of (M - neuromancer):
+To compute enticing of (M - neuromancer) with predetermined part (BP - a truth state):
 	say "[speech style of M]'Power word: CUM!'[roman type][line break][BigNameDesc of M] yells, staring directly into your eyes.[paragraph break]Before you can even fully comprehend what [he of M] said, you are thrown into an extremely pleasurable full body orgasm!";
 	now forced-multi-turn-orgasm is true;
 	now multi turn orgasm turns is a random number between 1 and 3;
@@ -547,11 +551,14 @@ To say AdviceAnswer of (M - neuromancer):
 	say "[speech style of M]'There's a couple of statues in this mansion with some incredible powers, if you know how to exploit them well. Touching the back of the dark one every now and then will help make your magic stronger and stronger. I should know, nya!'[roman type][line break]";
 
 To compute teaching of (M - neuromancer):
-	if diaper quest is 0:
-		say "[speech style of M]'When someone's shoving their massive cock up your you-know-where, it's important to be able to stay loose and let it happen, otherwise you won't enjoy it properly! Here, let me show you how...'[roman type][line break]";
+	if neuro-fetish-count > 0 and the player is a top donator:
+		say "[speech style of M]'Nyahaha, I suppose it IS too late for you to resist me... so I'll teach you this little technique for reading the flow of nyagic!'[roman type][line break]";
+		teach divinationskill;
+	otherwise if diaper quest is 0:
+		say "[speech style of M]'Hmm... Why don't I teach you how to relax your nyasshole? Trust me, it makes anal way better!'[roman type][line break]";
 		teach relaxing;
 	otherwise:
-		say "[speech style of M]'Hmm, maybe in a future version I'll have thought of something to teach you.'[roman type][line break]".
+		say "[speech style of M]'And give you something to use against me? Nyahahaha!'[roman type][line break]".
 
 Section 3 - Drink Requesting
 

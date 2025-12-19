@@ -627,10 +627,7 @@ Definition: adult-baby-diaper-swap is appropriate:
 
 To compute punishment of (P - adult-baby-diaper-swap):
 	now current-diaper-change-top-level is nothing;
-	now new-diaper is a random off-stage huge diaper;
-	if new-diaper is nothing, now new-diaper is a random off-stage large diaper;
-	if new-diaper is nothing, now new-diaper is a random eligible diaper;
-	if new-diaper is nothing, now new-diaper is a random unworn disposable diaper; [failsafe]
+	now new-diaper is the chosen bulkier diaper;
 	let M be current-monster;
 	now M is grabbing the player;
 	while M is grabbing the player:
@@ -638,7 +635,7 @@ To compute punishment of (P - adult-baby-diaper-swap):
 		if current-diaper-change-top-level is nothing, now current-diaper-change-top-level is a random worn crotch covering clothing;
 		if current-diaper-change-top-level is worn no protection overdress, now current-diaper-change-top-level is nothing; [These are allowed to stay around!]
 		if (current-diaper-change-top-level is nothing or current-diaper-change-top-level is chastity bond) and there are worn knickers, now current-diaper-change-top-level is a random worn knickers; [All knickers MUST be removed]
-		if (current-diaper-change-top-level is nothing or current-diaper-change-top-level is chastity bond) and there is a worn tail plug, now current-diaper-change-top-level is a random worn tail plug;
+		if (current-diaper-change-top-level is nothing or current-diaper-change-top-level is chastity bond) and there is a worn tailed clothing, now current-diaper-change-top-level is a random worn tailed clothing;
 		if current-diaper-change-top-level is unremovable clothing:
 			say "[speech style of M]'I can't remove that [ShortDesc of current-diaper-change-top-level]. Damn, I guess I'll have to leave you like this, for now.'[roman type][line break]";
 			dislodge M;
@@ -757,7 +754,7 @@ To compute tax return of (M - an adult baby slave):
 	if M is choice-taxable:
 		compute choice tax return of M;
 	otherwise:
-		let D be a random off-stage eligible diaper;
+		let D be the chosen bulkier diaper;
 		if D is a thing and the number of in-play identified confidence diapers is 0:
 			say "[speech style of M]'Okay... You can have my most favourite diaper.'[roman type][line break][BigNameDesc of M] drops a clean diaper in front of you.";
 			blandify and reveal D;

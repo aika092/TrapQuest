@@ -64,7 +64,15 @@ Report going when the player is in Dungeon11:
 
 To say pineapple scene:
 	if diaper quest is 1:
-		say "";
+		if the class of the player is berri:
+			if gymnast-explorer is off-stage, set up gymnast-explorer;
+			now gymnast-explorer is in Dungeon11;
+			say "As you enter the [location of the player], you find yourself face-to-face with a confident blonde [man of gymnast-explorer], wearing a shiny blue latex leotard which is stretched tightly over a thick, bulging, disposable diaper.[line break][speech style of gymnast-explorer]'Who are you? Another player?'[roman type][line break][BigNameDesc of gymnast-explorer] asks warily.[paragraph break][second custom style]'Yeah... Hi... I'm Berri!'[roman type][line break]You instinctively blurt out, surprising yourself with just how high-pitched and over-the-top-girly your voice sounds now in this new body.[paragraph break][speech style of gymnast-explorer]'Okay, well, see you around. Maybe we'll have some opportunities to help each other out. Don't go being too trusting of others, though. [bold type]Everyone thinks they're the main character in their own story, after all...'[roman type][line break]And with that insightful piece of wisdom, [NameDesc of gymnast-explorer] leaves you alone to get your bearings.";
+			maybe-map-display monster-image of gymnast-explorer;
+			try gymnast-explorer going east;
+			distract gymnast-explorer;
+			now the times-met of gymnast-explorer is 1;
+			say "Despite what [NameDesc of gymnast-explorer] said, that EVERYONE feels like the main character... You can tell that for as long as you wear this hairclip, you are going to feel like a disposable side character, whose only job is to appear in prescripted cutscenes...";
 	otherwise:
 		if pregnancy fetish > 0:
 			say "As you enter the [location of the player], you spot [if the player is presenting as female]another[otherwise]a[end if] woman who looks like an adventurer. But her outfit is rather slutty, with tight shorts and a skimpy right robe with a diamond cut-out exposing her round, pregnant belly. She clutches her head and frowns.[line break][second custom style]'Ugh, I should have never let him do that without a condom... I can't believe it's growing this fast!'[roman type][line break]Suddenly, she clutches her belly and doubles over.[line break][second custom style]'These fucking cramps! Nope nope nope, I am fucking OUT!'[roman type][line break]She takes a deep breath.[line break][second custom style]'I LIKE PINEAPPLE ON PIZZA!'[roman type][line break]Instantly, she disappears entirely, apparently having been immediately taken away from the kink experience she was no longer enjoying.";

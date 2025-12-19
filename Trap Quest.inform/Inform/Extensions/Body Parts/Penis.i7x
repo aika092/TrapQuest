@@ -123,7 +123,7 @@ Definition: penis is lewdly exposed:
 	decide no.
 
 To decide which number is the lewdly exposed outrage of (P - penis):
-	decide on 11 - (the effective size of penis / 2). [allows us to easily tweak this number]
+	decide on 17 - the effective size of penis. [allows us to easily tweak this number]
 
 [!<PenisIsAtLeastPartiallyLewdlyExposed>+
 
@@ -135,7 +135,7 @@ Definition: penis is at least partially lewdly exposed:
 	decide no.
 
 To decide which number is the at least partially lewdly exposed outrage of (P - penis):
-	decide on 8 - (the effective size of penis / 2). [allows us to easily tweak this number]
+	decide on 11 - (the effective size of penis / 2). [allows us to easily tweak this number]
 
 [!<PenisIsExposed>+
 
@@ -272,7 +272,7 @@ Definition: penis is able to get erect:
 	if there is a worn chastity bond, decide no;
 	if broken-clitty tattoo is worn, decide no;
 	if there is a worn restricting research airhancer, decide no;
-	if refractoryperiod > 0, decide no;[except in special circumstances, you can't get hard immediately after an orgasm]
+	if refractoryperiod > 0, decide no; [except in special circumstances, you can't get hard immediately after an orgasm]
 	decide yes.
 
 [There is a chance the player will want to get erect, but won't be able to manage. This is a little humiliating, but they should usually be able to try again.]
@@ -439,7 +439,7 @@ To say SexDesc of (P - penis):
 	if there is a worn strapon-panties:
 		say PenisFlavour of a random worn strapon-panties;
 	otherwise:
-		if the player is not possessing a penis, say "[vagina]";[shouldn't happen]
+		if the player is not possessing a penis, say "[vagina]"; [shouldn't happen]
 		otherwise say PenisFlavour (the size of penis).
 
 [!<SayMediumDescOfPenis>+
@@ -544,8 +544,8 @@ To say PenisModesty:
 			say "It is currently inside [FuckerDesc of P]'s [HoleDesc of P].";
 	if the player is a penis slut and the player is possessing a penis:
 		let P be a random thing penetrating penis;
-		if P is monster, say "Monsters are definitely paying extra attention to it.";
-		otherwise say "You have a feeling that monsters are paying extra attention to it.".
+		if P is monster, say "Enemies are definitely paying extra attention to it.";
+		otherwise say "You have a feeling that enemies are paying extra attention to it.".
 
 To say HoleDesc of (M - a thing):
 	say "hole".
@@ -660,7 +660,7 @@ To PenisDown (X - a number):
 [X is not how much the penis shrinks, but how many times it does so]
 To OnlyPenisDown (X - a number):
 	now previous penis length is the size of penis;
-	if X > 0:
+	if X > 0 and the size of penis >= min penis size:
 		if the player is sexed male and the size of penis <= min penis size:
 			if penis-flav is true, say "You feel a strange pang in your crotch... you feel that your penis[if players-dick-is-detached > 0 and players-detached-dick is not in the location of the player], wherever it may be,[end if] tried to shrink even further, but [if the player is not possessing a penis]since you have nothing left, it can't[otherwise if the size of penis < 4]it's so tiny that it can't get any smaller[otherwise]something prevents it[end if]!";
 			now X is 0;

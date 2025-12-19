@@ -123,6 +123,8 @@ This is the random birth lover rule:
 
 
 Figure of Pregnancy Type Selection Backdrop is the file "Special/Menus/pregnancybackdrop1.jpg".
+Figure of Pregnancy Growth Selection Backdrop is the file "Special/Menus/pregnancybackdrop2.jpg".
+Figure of Pregnancy Birth Selection Backdrop is the file "Special/Menus/pregnancybackdrop3.jpg".
 
 To compute new pregnancy type selection window:
 	now the position of the graphics-window is g-placeabove;
@@ -189,5 +191,128 @@ To render full new pregnancy type selection menu:
 			let lineH be (2 * H) / 1080;
 			if lineH < 1, now lineH is 1;
 			draw a rectangle 16029161 in the graphics-window at X1 by lineY with size (X2 - X1) by lineH;
+
+To compute new pregnancy growth selection window:
+	now the position of the graphics-window is g-placeabove;
+	now the measurement of the graphics-window is 99;
+	open the graphics-window;
+	[let H be the height of the graphics-window;
+	let W be the width of the graphics-window;]
+	now fetishMenuInProgress is 3;
+	now fetishSelection is 3;
+	now current menu selection is 1;
+	[wait 50 ms before continuing;]
+	close the status window;
+	while fetishMenuInProgress is 3:
+		update the status line;
+		refresh the graphics-window;
+		let __x be the chosen letter;
+		if __x is 81 or __x is 113 or __x is -6 or __x is 13 or __x is 32 or candidate replacement command is "quit":
+			now fetishMenuInProgress is 0;
+			now waitingForChar is false;
+		otherwise if __x is -2 or __x is -5: [up or right]
+			if current menu selection is 1, now previous menu selection is 1;
+			if current menu selection is greater than 1, decrease current menu selection by 1;
+			otherwise now current menu selection is 5;
+		otherwise if __x is -3 or __x is -4: [down or left]
+			if current menu selection is 5, now previous menu selection is 5;
+			if current menu selection is less than 5, increase current menu selection by 1;
+			otherwise now current menu selection is 1;
+	if current menu selection is 1:
+		now choice in row 49 of the Table of Player Options is 3;
+	otherwise if current menu selection is 2:
+		now choice in row 49 of the Table of Player Options is 2;
+	otherwise if current menu selection is 3:
+		now choice in row 49 of the Table of Player Options is 1;
+	otherwise if current menu selection is 4:
+		now choice in row 49 of the Table of Player Options is 0;
+	otherwise:
+		now choice in row 49 of the Table of Player Options is -1;
+	now current menu selection is 1;
+	close the graphics-window;
+	open the status window;
+	now the position of the graphics-window is g-placeleft;
+	now the measurement of the graphics-window is default-graphics-window-measurement.
+
+To render full new pregnancy growth selection menu:
+	let H be the height of the graphics-window;
+	let W be the width of the graphics-window;
+	let W2 be W / 5;
+	let Wx be W2 / 10;
+	display the image Figure of Pregnancy Growth Selection Backdrop in the graphics-window at 0 by 0 with dimensions W by H;
+	let X1 be 1;
+	let X2 be X1 + W2 + Wx;
+	repeat with X running from 1 to 5:
+		let TXT be the substituted form of "fet6[X]";
+		set a graphlink in the graphics-window identified as hyperinventoryobject for yourself from X1 by 1 to X2 by H as TXT, ignoring redundant links;
+		if X is current menu selection:
+			let lineY be (130 * H) / 1080;
+			let lineH be (2 * H) / 1080;
+			if lineH < 1, now lineH is 1;
+			draw a rectangle 16029161 in the graphics-window at X1 by lineY with size (X2 - X1) by lineH;
+		now X1 is X2 + 1;
+		increase X2 by W2;
+		if X is 1, decrease X2 by Wx; [first selection is a little longer, second is a little shorter]
+
+To compute new pregnancy birth selection window:
+	now the position of the graphics-window is g-placeabove;
+	now the measurement of the graphics-window is 99;
+	open the graphics-window;
+	[let H be the height of the graphics-window;
+	let W be the width of the graphics-window;]
+	now fetishMenuInProgress is 3;
+	now fetishSelection is 4;
+	now current menu selection is 1;
+	[wait 50 ms before continuing;]
+	close the status window;
+	while fetishMenuInProgress is 3:
+		update the status line;
+		refresh the graphics-window;
+		let __x be the chosen letter;
+		if __x is 81 or __x is 113 or __x is -6 or __x is 13 or __x is 32 or candidate replacement command is "quit":
+			now fetishMenuInProgress is 0;
+			now waitingForChar is false;
+		otherwise if __x is -2 or __x is -5: [up or right]
+			if current menu selection is 1, now previous menu selection is 1;
+			if current menu selection is greater than 1, decrease current menu selection by 1;
+			otherwise now current menu selection is 5;
+		otherwise if __x is -3 or __x is -4: [down or left]
+			if current menu selection is 5, now previous menu selection is 5;
+			if current menu selection is less than 5, increase current menu selection by 1;
+			otherwise now current menu selection is 1;
+	if current menu selection is 1:
+		now choice in row 75 of the Table of Player Options is -1;
+	otherwise if current menu selection is 2:
+		now choice in row 75 of the Table of Player Options is 0;
+	otherwise if current menu selection is 3:
+		now choice in row 75 of the Table of Player Options is 2;
+	otherwise if current menu selection is 4:
+		now choice in row 75 of the Table of Player Options is 3;
+	otherwise:
+		now choice in row 75 of the Table of Player Options is 1;
+	now current menu selection is 1;
+	close the graphics-window;
+	open the status window;
+	now the position of the graphics-window is g-placeleft;
+	now the measurement of the graphics-window is default-graphics-window-measurement.
+
+To render full new pregnancy birth selection menu:
+	let H be the height of the graphics-window;
+	let W be the width of the graphics-window;
+	let W1 be (W * 416) / 1920; [first and third columns are smaller than 25%]
+	let W2 be W / 5;
+	display the image Figure of Pregnancy Birth Selection Backdrop in the graphics-window at 0 by 0 with dimensions W by H;
+	let X1 be 1;
+	let X2 be W2 + X1;
+	repeat with X running from 1 to 5:
+		let TXT be the substituted form of "fet6[X]";
+		set a graphlink in the graphics-window identified as hyperinventoryobject for yourself from X1 by 1 to X2 by H as TXT, ignoring redundant links;
+		if X is current menu selection:
+			let lineY be (130 * H) / 1080;
+			let lineH be (2 * H) / 1080;
+			if lineH < 1, now lineH is 1;
+			draw a rectangle 16029161 in the graphics-window at X1 by lineY with size (X2 - X1) by lineH;
+		increase X1 by W2;
+		increase X2 by W2;
 
 Pregnancy Options ends here.

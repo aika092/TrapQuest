@@ -67,10 +67,12 @@ To say HighResBarSecondRow:
 	say "STATUS: [VagueInternalFeeling]   [TQDQ Appearance] [VagueDignity]   SLAP: [saved-printed-slap-damage] KNEE: [saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK: [saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks][if the total magic power of the player > 0] MAGIC: [magic power of the player] / [total magic power of the player][end if]".
 
 To say HighResBarSecondRowNoAppearance:
-	say "STATUS: [VagueInternalFeeling]   [VagueDignity]   SLAP: [saved-printed-slap-damage] KNEE: [saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK: [saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks][if the total magic power of the player > 0] MAGIC: [magic power of the player] / [total magic power of the player][end if]".
+	[say "STATUS: [VagueInternalFeeling]   [VagueDignity]   SLAP: [saved-printed-slap-damage] KNEE: [saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK: [saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks] MAGIC: [if the divinationskill of the player is 0][VagueMagic][otherwise][magic power of the player] / [total magic power of the player][end if]".]
+	say "STATUS: [VagueInternalFeeling]   [VagueDignity]   SLAP: [saved-printed-slap-damage] KNEE: [saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK: [saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks][if total magic power of the player > 0] MAGIC: [magic power of the player] / [total magic power of the player][end if]".
 
 To say MinimalBarSecondRow:
-	say "[MainStatsBar] SLAP: [saved-printed-slap-damage] KNEE: [saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK: [saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks][if the total magic power of the player > 0] MAGIC: [magic power of the player] / [total magic power of the player][end if]".
+	[say "[MainStatsBar] SLAP: [saved-printed-slap-damage] KNEE: [saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK: [saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks] MAGIC: [if the divinationskill of the player is 0][VagueMagic][otherwise][magic power of the player] / [total magic power of the player][end if]".]
+	say "[MainStatsBar] SLAP: [saved-printed-slap-damage] KNEE: [saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK: [saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks][if total magic power of the player > 0] MAGIC: [magic power of the player] / [total magic power of the player][end if]".
 
 To say HighResBarThirdRow:
 	say "[if diaper quest is 0]TITS: [VagueBreast] BELLY: [VagueBelly][otherwise]STOMACH: [VagueStomach][end if] [if diaper quest is 1 and there is a worn diaper]DIAPER: [VagueDiaper][otherwise if diaper quest is 1 and there is a worn knickers]UNDIES: [VagueDiaper][otherwise if diaper quest is 0]HIPS: [VagueHips][end if]".
@@ -94,7 +96,8 @@ To say LowResStatus:
 	say "STATUS: [VagueInternalFeeling]   HEALTH: [VagueExternalFeeling]".
 
 To say LowResCombat:
-	say "SLAP POWER: [saved-printed-slap-damage] KNEE POWER: [saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK POWER: [saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks][if the total magic power of the player > 0] MAGIC: [magic power of the player] / [total magic power of the player][end if]".
+	[say "SLAP POWER: [saved-printed-slap-damage] KNEE POWER: [saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK POWER: [saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks] MAGIC: [if the divinationskill of the player is 0][VagueMagic][otherwise][magic power of the player] / [total magic power of the player][end if]".]
+	say "SLAP POWER: [saved-printed-slap-damage] KNEE POWER: [saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK POWER: [saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks][if total magic power of the player > 0] MAGIC: [magic power of the player] / [total magic power of the player][end if]".
 
 Part - Debug Res Status Bars
 
@@ -119,7 +122,7 @@ To say ZapAttacks:
 	repeat with Z running through held zappable things:
 		let T be the substituted form of "[ShortDesc of Z]";
 		now currentZapper is Z;
-		say " [T in upper case]: [zap damage of the player]";
+		say " [T in upper case]: [nolinebreaks zap damage of the player]";
 
 Part - Rose
 
@@ -182,6 +185,28 @@ To say VagueDex:
 	otherwise:
 		say "Samus Aran".
 
+To say VagueMagic:
+	let M be the magic-power of the player;
+	let T be the total magic power of the player;
+	if M <= 0:
+		if T > M + 3, say "Empty	 ";
+		otherwise say "Mundane  ";
+	otherwise if M <= 3:
+		if T > M + 3, say "Drained  ";
+		otherwise say "Mysterious";
+	otherwise if M <= 6:
+		if T > M + 3, say "Recovering";
+		otherwise say "Gifted	";
+	otherwise if M <= 9:
+		if T > M + 3, say "Building ";
+		otherwise say "Initiate ";
+	otherwise if M <= 12:
+		say "Witch	 ";
+	otherwise if M <= 15:
+		say "Sorceress";
+	otherwise:
+		say "Omnipotent".
+
 To say VagueInt:
 	if the bimbo of the player is 20:
 		say "Braindead ";
@@ -199,9 +224,9 @@ To say VagueInt:
 		say "Geeky	 ";
 	otherwise if saved-flat-intelligence < 20:
 		say "Brainy	";
-	otherwise if saved-flat-intelligence < 24:
+	otherwise if saved-flat-intelligence < 25:
 		say "Genius	";
-	otherwise if saved-flat-intelligence < 29:
+	otherwise if saved-flat-intelligence < 30:
 		say "Sage	  ";
 	otherwise:
 		say "Deep Thought".
@@ -281,17 +306,17 @@ To say VagueAppearance:
 	otherwise if B < 12 and B > 4 and (there is glazed lewdly exposed body part or breasts is glazed showing cleavage body part):
 		say "Cumslut";
 	otherwise if the player is naked and B < 10:
-		say "Nudist";
+		say "Streaker";
 	otherwise if B < 6 and the player is presenting as male and (the number of worn nudism-disabling clothing - the number of worn nudism-disabling manly clothing > 0) and the bimbo of the player < 8:
 		say "Crossdresser";
 	otherwise if B is 4:
 		say "Cutie";
 	otherwise if B is 5:
-		say "Babe";
+		say "[if the player is presenting as male]Fuckboy[otherwise]Babe[end if]";
 	otherwise if B is 6:
-		say "Flirt";
+		say "[if the player is presenting as male]Horndog[otherwise]Flirt[end if]";
 	otherwise if B < 9:
-		say "Floozy";
+		say "[if the player is presenting as male]Pervert[otherwise]Floozy[end if]";
 	otherwise if B < 11:
 		say "Slut";
 	otherwise if B < 13:

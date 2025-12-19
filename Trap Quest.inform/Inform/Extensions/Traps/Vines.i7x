@@ -80,6 +80,9 @@ Definition: a vine (called V) is aggressive:
 		if the player is in WoodsBoss01:
 			if the player is prone and there is a worn diaper, decide yes;
 			otherwise decide no;
+		if the class of the player is berri:
+			if latest-berri-stage >= 1 and latest-berri-stage <= 5, decide yes;
+			decide no;
 		if there is a worn wet diaper or there is a worn messed diaper, decide yes;
 		if there is a worn diaper and (the player is prone or (diaper messing >= 3 and face is not actually occupied)), decide yes;
 		decide no;
@@ -107,6 +110,10 @@ To compute vines standing:
 				FearUp 9;
 				say "[one of]Maybe you'll be able to get away if you [bold type]pull[roman type] the vines.[or]There's no way you'll be able to get away if you don't [bold type]pull[roman type] them off.[then at random]";
 				now V is wrangling thighs;
+				if the class of the player is berri and latest-berri-stage >= 1 and latest-berri-stage <= 5:
+					fix berri outfit;
+					say BerriCutsceneFlav;
+					compute berri bladder and bowel facesit-only filling;
 			otherwise if the living belt of sturdiness is not worn and R is 6:
 				say "[one of]A living vine tries to grab your [if there are worn heels]heels[otherwise]feet[end if]. You manage to avoid it grabbing you but it makes you trip and fall![or]Living vines burst out of the soil, grasping at your legs. You manage to keep them from grabbing you, but you lose your balance and fall.[or]A living vine tries to grab your heels. You successfully kick it away, but you lose your balance and fall.[or]Vines shoot out of the soil beneath you. In your scramble to get out of the way, you trip and fall.[or]A single vine bursts out of the soil, headed straight for your ankle. Your reflexes kick in too late, sending you toppling to the ground.[in random order]";
 				try kneeling;
@@ -126,7 +133,9 @@ To compute vines kneeling:
 				say "Squirming living vines [one of]rise up from the ground and begin rubbing[or]squirm and rub[stopping] against the crotch of your diaper! Your [genitals] [one of]is stimulated through your padding[or]feels amazing[or]tingles with delight[or]pulses with pleasure[at random]...";
 				if the player is not a pervert, say "[variable custom style][one of]Not good, not good![or]I need to get out of here! Or at least stand up high enough that these guys can't reach me...[or][if the diaper addiction of the player < 8]No, I don't want to be turned on in my diaper[otherwise]Enough with making me turned on all the time, I just want to wear my diapers in peace[end if]![or]This game is totally trying to give me a diaper fetish, isn't it?[then at random][roman type][line break]";
 				ruin vagina;
-				ruin vagina;
+				if the player is not getting lucky:
+					ruin vagina;
+					ruin vagina;
 			otherwise if the player is not vine stuck:
 				now V is revealed;
 				let D be the dexterity of the player;
@@ -137,6 +146,10 @@ To compute vines kneeling:
 					now V is wrangling thighs;
 					now V is wrangling arms;
 					FearUp 12;
+					if the class of the player is berri and latest-berri-stage >= 1 and latest-berri-stage <= 5:
+						fix berri outfit;
+						say BerriCutsceneFlav;
+						compute berri bladder and bowel facesit-only filling;
 				otherwise:
 					say "[one of]Vines shoot out of the ground and attempt to wrap around your wrists and ankles. You manage to avoid being grappled for now![or]Several vines rise out of the soil, closing in on you slowly. You bat away each one. Looks like you've avoided a grapple for now.[or]Vines shoot out of the soil with whip-like quickness! But thanks to your good reflexes you jump out of the way just in time. You're safe for now.[or]Living vines burst out of the soil, fumbling to grab your wrists. You're much too fast for them to catch you. For now.[in random order]";
 					if the player is possessing a vagina, cutshow figure of vines cutscene 1 for V;
@@ -150,7 +163,7 @@ Report kneeling when there is a vine wrangling a body part:
 
 To compute (V - a vine) penetrating:
 	if diaper quest is 1:
-		if diaper messing >= 3 and the number of worn wet diapers is 0 and the number of worn messed diapers is 0 and the player is not in WoodsBoss01 and the TrapNo of V < 1, compute vine laxative torture of V;
+		if diaper messing >= 3 and the number of worn wet diapers is 0 and the number of worn messed diapers is 0 and the player is not in WoodsBoss01 and the TrapNo of V < 1 and the class of the player is not berri, compute vine laxative torture of V;
 		otherwise compute vine diaper torture of V;
 	otherwise:
 		let R be a random number between 1 and 2;
@@ -371,7 +384,7 @@ To say CondomPinReactionFlav of (M - vine boss) on (C - a clothing):
 	do nothing.
 
 To compute vine laxative torture of (V - a vine):
-	say "Holding your limbs carefully in place, one vine approaches your mouth holding a big purple baby bottle labelled 'LAX'. [one of]Somehow you suspect that isn't a reference to some unnamed Los Angeles-based ex-girlfriend. [or][stopping]After the nipple is pushed into your mouth, the vine squeezes the middle of the bottle and the bitter tasting liquid squirts into your mouth. There's nothing you can do but drink up.";
+	say "Holding your limbs carefully in place, one vine approaches your mouth holding a big purple baby bottle labelled 'LAX'. [one of]Somehow you suspect that isn't a reference to some unnamed Los Angeles-based ex-girlfriend, or airport. [or][stopping]After the nipple is pushed into your mouth, the vine squeezes the middle of the bottle and the bitter tasting liquid squirts into your mouth. There's nothing you can do but drink up.";
 	increase suppository by 2;
 	StomachUp 1;
 	if butterfly wings is actually summonable:
@@ -405,10 +418,20 @@ To compute vine diaper torture of (V - a vine):
 		say "[one of]Seemingly unamused by your disobedience, the vines begin to spank your thighs from behind![or]The vines punish the backs of your thighs with several stinging swats![stopping]";
 		PainUp 10;
 		BodyRuin 1;
+		repeat with M running through reactive monsters:
+			say HarshTrapReactFlav of M;
 	otherwise:
 		compute automatic state check of D;
 		say "You [if the diaper addiction of the player < 8][one of]reluctantly[or]sob quietly to yourself as you[or]try to think about more pleasant things while you[at random] [end if][one of]nuzzle your own [if D is perceived messed]dirty[otherwise]wet[end if] diaper with your face[or]push your nose deep into the padding of your [MediumDesc of D][or]grind your padded butt into your own scrunched up face[or]motorboat your own [if D is perceived messed]smelly, squishy[otherwise]soggy[end if] padding[in random order][if the diaper addiction of the player > 15][one of] with pride[or] without a second thought[or], cooing happily as you do[or], enjoying the pleasant sensations[at random][end if].";
 		ruin vagina;
+		if D is messed:
+			SmellGrossOut messyDiaperFacesitGrossnessLevel;
+		otherwise if D is wet:
+			SmellGrossOut wetDiaperFacesitGrossnessLevel;
+		otherwise:
+			GrossOut dryDiaperFacesitGrossnessLevel;
+		repeat with M running through reactive monsters:
+			say LewdTrapReactFlav of M;
 	if the TrapNo of V > a random number between 4 and 5:
 		say "After this the vines seem to grow bored, and after removing your upper half from the portal it disappears. The vines release you, retreating back into the trees and disappearing into the ground.";
 		now V is not wrangling thighs;
@@ -418,8 +441,12 @@ To compute vine diaper torture of (V - a vine):
 		now the TrapNo of V is -750;
 		if witch is unfriendly and witch is interested, satisfy witch;
 	otherwise:
-		if there is a worn messed diaper, cutshow figure of vines cutscene 3b for V;
-		otherwise cutshow figure of vines cutscene 3a for V.
+		if the class of the player is berri:
+			cutshow Figure of woman 2b for V;
+		otherwise if there is a worn messed diaper:
+			cutshow figure of vines cutscene 3b for V;
+		otherwise:
+			cutshow figure of vines cutscene 3a for V.
 
 This is the vine diaper orgasm resolution rule:
 	if diaper quest is 1:

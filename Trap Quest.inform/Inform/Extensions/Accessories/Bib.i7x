@@ -50,7 +50,7 @@ pumpkin bib is a bib. pumpkin bib is plastic. pumpkin bib is unique. The printed
 
 Figure of pumpkin bib is the file "Items/Accessories/Neck/bib2.png".
 
-To decide which figure-name is clothing-image of (C - a pumpkin bib):
+To decide which figure-name is clothing-image of (C - pumpkin bib):
 	decide on figure of pumpkin bib.
 
 Definition: pumpkin bib is orange themed: decide yes.
@@ -61,6 +61,38 @@ Definition: pumpkin bib is fetish appropriate:
 To say ClothingDesc of (C - pumpkin bib):
 	say "A semi-rigid orange bib with a slight scooped shape and a Halloween pumpkin face in the front. [if the stomach-food of the player is 0]You feel hungry[otherwise]The bib seems to draw power from the fullness of your stomach[end if].".
 To say MediumDesc of (C - pumpkin bib):
-	say "soft giraffe bib".
+	say "pumpkin scoop bib".
+
+scoop bib is a bib. scoop bib is plastic. The printed name of scoop bib is "[clothing-title-before]scoop bib[clothing-title-after]". The text-shortcut of scoop bib is "sbib".
+
+Figure of scoop bib is the file "Items/Accessories/Neck/bib3.png".
+
+To decide which figure-name is clothing-image of (C - a scoop bib):
+	decide on figure of scoop bib.
+
+Definition: scoop bib is pink themed: decide yes.
+
+To say ClothingDesc of (C - scoop bib):
+	say "A semi-rigid pink bib with a scooped shape and a baby bear on the front with the word 'Babyhood'. [if the stomach-food of the player is 0]You feel hungry[otherwise]The bib seems to draw power from the fullness of your stomach[end if].".
+To say MediumDesc of (C - scoop bib):
+	say "pink scoop bib".
+
+
+bear bib is a bib. bear bib is unique. bear bib is pvc. The printed name of bear bib is "[clothing-title-before]bear bib[clothing-title-after]". The text-shortcut of bear bib is "bbib".
+
+Figure of bear bib is the file "Items/Accessories/Neck/bib4.png".
+
+To decide which figure-name is clothing-image of (C - bear bib):
+	decide on figure of bear bib.
+
+Definition: bear bib is green themed: decide yes.
+Definition: bear bib is bear themed: decide yes.
+Definition: bear bib is flower themed: decide yes.
+Definition: bear bib is fetish appropriate: decide no.
+
+To say ClothingDesc of (C - bear bib):
+	say "A green waterproof bib with a smiling bear surrounded by flowers on the front.".
+To say MediumDesc of (C - bear bib):
+	say "bear bib".
 
 Bib ends here.

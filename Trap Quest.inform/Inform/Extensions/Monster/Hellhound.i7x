@@ -10,6 +10,8 @@ Understand "hell", "hound", "dog", "puppy", "slave" as hellhound. The text-short
 
 Definition: hellhound is mansion dwelling:
 	decide yes.
+To decide which object is the default-local-room of (M - hellhound):
+	decide on Mansion08.
 
 Definition: hellhound is musky:
 	if the refractory-period of it <= 0, decide yes;
@@ -38,6 +40,22 @@ To say MonsterDesc of (M - hellhound):
 		say "This black, hulking creature is hunched over on all fours, yet still 'stands' just as tall as you. [big his of M] spiked tail, sharp fangs and bestial, clawed hands are dead give-aways that [he of M] is from another plane. [if pet collar is off-stage][big he of M] holds a collar and leash in [his of M] mouth, as if [he of M]'s looking for someone to take [him of M] on a walk, or more likely, a pet of [his of M] own to lead around! [end if][big he of M] stares at you with glowing red eyes, letting you know that a keen intelligence lies hidden behind the bestial mask.";
 	otherwise:
 		say "This [man of M] has black bondage items keeping [his of M] arms and legs fully bent, forcing [him of M] to crawl along on [his of M] elbows and knees. [big he of M] seems pretty happy though, and you can make out a joyous and playful expression behind [his of M] fetish hood. [if diaper quest is 1]A thick black diaper covers [his of M] rear[otherwise]Naked just like a real animal, [he of M][']s completely naked and [his of M] average sized [DickDesc of M] are completely visible. A black cock ring is situated near the base of [his of M] shaft.[end if].".
+
+To say DickDesc of (M - hellhound):
+	if full-lady fetish is 1:
+		say "strap-on";
+	otherwise if mythical creature fetish is 1:
+		say "[one of]canine cock[or]doggy dick[at random]";
+	otherwise:
+		say manly-penis.
+
+To say LongDickDesc of (M - hellhound):
+	if full-lady fetish is 1:
+		say "strap-on dildo";
+	otherwise if mythical creature fetish is 1:
+		say "[one of]demonic[or]infernal[or]red[at random] [one of]canine cock[or]doggy dick[at random]";
+	otherwise:
+		say "[girth of M] inch [manly-penis]".
 
 To say MonsterComment of (M - hellhound):
 	if diaper quest is 1:
@@ -113,7 +131,7 @@ Definition: hellhound is controlling: decide yes. [Will it grab onto subduing cl
 
 Definition: hellhound is reactive: decide no. [Will it react to things it sees the player do?]
 
-Definition: hellhound is willing to do oral: decide no.
+[Definition: hellhound is willing to do oral: decide no.]
 
 Definition: hellhound is willing to do titfucks: decide no.
 
@@ -349,7 +367,73 @@ To compute the flying player taunting of (M - hellhound):
 
 To decide which number is the rounds of sex left of (M - hellhound):
 	if M is knotted, decide on 1;
-	decide on the sex-length of M.
+	decide on the default rounds of sex left of M.
+
+To compute facial sex of (M - hellhound):
+	if the oral sex addiction of the player > 6, passively stimulate face from M;
+	if the sex-length of M is 1 and M is anticipating-climax:
+		say NearingClimaxOral of M;
+		decrease the sex-length of M by 1;
+	otherwise:
+		if the reaction of the player is 0:
+			if the throating of M is 0:
+				say OralResisting of M;
+				if the player is getting unlucky:
+					now the throating of M is 100; [can't set it to 1 because this drops by 1 every turn as the player gags, and the knot stays until the hellhound cums]
+					say "[BigNameDesc of M] snarls, thrusts extra-hard, and plunges [his of M] [DickDesc of M] deep into your throat! As the knot gets lodged behind your teeth, it rapidly inflates, locking [his of M] cock inside! You can't breathe![line break][GotUnluckyFlav]";
+				otherwise:
+					say "You manage to keep the base out of your mouth[one of] for now[or] for another few seconds[or], despite [NameDesc of M][']s best efforts[in random order].";
+			otherwise:
+				say OralKnotResisting of M;
+			decrease the sex-length of M by 1;
+		otherwise:
+			if the throating of M is 0:
+				say OralSubmissionResponse of M; [The idea here is that the player and "M" are working together, so we don't unnecessarily restrict ourselves with two flavour functions]
+				if the player is not getting lucky:
+					now the throating of M is 100;
+					say "As you relax your throat muscles, [NameDesc of M] takes the opportunity to push as far inside as [he of M] can! As the knot gets lodged behind your teeth, it rapidly inflates, locking [his of M] cock inside! You can't breathe![line break]";
+				otherwise:
+					say "[bold type]In response to your submission, [NameDesc of M] [bold type]tries to push even deeper into your throat, but doesn't manage it this time![roman type][line break][GotLuckyFlav]";
+			otherwise:
+				say OralKnotSubmitting of M;
+			decrease the sex-length of M by 1;
+	compute slow grossness of M.
+
+To say OralResisting of (M - hellhound):
+	say "[one of]You try as hard as you can to keep [NameDesc of M] from pushing all the way to the back of your throat![or]You grunt and try to pull away, but [NameDesc of M] is thrusting too rapidly for you to get [his of M] [DickDesc of M] all the way out![or]You grip onto [NameDesc of M][']s legs and push away, to try and keep the knot outside of your lips.[in random order]".
+
+To say OralKnotResisting of (M - hellhound):
+	say "You [one of]thrash[or]struggle[or]scratch[or]wriggle[at random] [one of]frantically[or]desperately[or]violently[cycling] as you gag and choke on [NameDesc of M][']s knotted [LongDickDesc of M].".
+
+To say OralSubmissionResponse of (M - hellhound):
+	say "[BigNameDesc of M] [one of]thrusts[or]pumps[or]jabs[at random] [his of M] [LongDickDesc of M] back and forth [one of]several times per second[or]rapidly[purely at random]. You hold still and allow [NameDesc of M] to [one of]use your lips as [his of M] fuckhole[or]turn your face into [his of M] onahole[or]treat your mouth as [his of M] cocksleeve[in random order].".
+
+To say OralKnotSubmitting of (M - hellhound):
+	say "You [one of]go limp[or]hold still[or]relax your body as much as you can[cycling] to try and conserve oxygen, as you gag and choke on [NameDesc of M][']s knotted [LongDickDesc of M].".
+
+To compute default facial climax for (M - hellhound):
+	TimesSubmittedUp M by 1;
+	BlowCount;
+	if M is wrapped:
+		compute wrapped climax of M in face;
+	otherwise:[Internal cumshot]
+		if the throating of M > 0:
+			compute deepthroat creampie of M;
+		otherwise:
+			compute oral creampie of M;
+	if the throating of M > 0:
+		say "The knot begins to mercifully deflate, and a moment later, [NameDesc of M] pulls [his of M] [DickDesc of M] out of your mouth with a noisy wet slurping sound. You immediately begin to heave and gasp for air.";
+		now previous-throat is true;
+		check puking the girth of hellhound;
+	if M is interested, orgasm satisfy M;[dislodges him automatically]
+	otherwise orgasm dislodge M.
+
+To say DeepthroatCreampie of (M - hellhound):
+	say "[BigFuckerDesc of M] [one of]howls to the sky[or]growls with animalistic pleasure[in random order] as [he of M] [one of]begins to ejaculate[or]ejaculates[or]orgasms[in random order] inside your throat. You feel [his of M] powerful thick knot pulsing as rope after rope of hot [one of]demon[or]infernal[cycling] [semen] travels down [his of M] thick urethra and is injected directly into your [one of]oesophagus[or]stomach[as decreasingly likely outcomes].".
+
+To compute oral creampie of (M - a hellhound):
+	say "Suddenly, [NameDesc of M] is orgasming! [big he of M] pulls [his of M] [DickDesc of M] out of your mouth, but not before your tongue gets an extra-large helping of hot demon [semen] delivered directly onto it.";
+	FaceFill semen by (the semen load of M).
 
 To compute anal sex of (M - hellhound):
 	compute fuckhole sex of M.
@@ -503,10 +587,10 @@ To say DragArrival of (M - hellhound) to (R - a room):
 	say "[BigNameDesc of M] stops moving when [he of M] reaches the water bowl near [his of M] doghouse, where [he of M] begins lapping away, revitalising [himself of M] after [his of M] recent workout.".
 
 To compute the default taunting of (M - hellhound):
-	say "[HoundWait of M]".
+	say HoundWait of M.
 
 To compute the dildo stuck taunting of (M - hellhound):
-	say "[HoundWait of M]".
+	say HoundWait of M.
 
 To say HoundWait of (M - hellhound):
 	say "[one of][BigNameDesc of M] sniffs at your feet, waiting patiently.[or][or][cycling]".

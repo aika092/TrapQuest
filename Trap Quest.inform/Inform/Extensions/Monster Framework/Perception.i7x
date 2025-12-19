@@ -14,18 +14,19 @@ To FavourReset (M - a monster):
 To decide which number is the default favour of (M - a monster):
 	decide on 16 - game difficulty.
 
+To interest meet (M - a monster):
+	interest M;
+	compute just-became-interested of M.
+
 [Sometimes we want to skip perception entirely and get straight to the good stuff]
-To compute sudden interested appearance of (M - a monster):
+To spawn meet (M - a monster):
 	if M is not in the location of the player:
-		say "[BigNameDesc of M] appears in front of you!";
+		if the monstersetup of M is 0, set up M;
+		say "[bold type][BigNameDesc of M] [bold type][if playerRegion is woods or M is airborne]appears in front of you[otherwise]enters the room[end if]![roman type][line break]";
 		now M is in the location of the player;
-		if M is uninterested:
-			interest M;
-			compute just-became-interested of M;
-	if M is uninterested:
+	otherwise if M is uninterested:
 		say "[BigNameDesc of M][']s eyes perk up!";
-		interest M;
-		compute just-became-interested of M.
+	if M is uninterested, interest meet M.
 
 To compute just-became-interested of (M - a monster):
 	if latest-top-malfunction is not 0 and M is intelligent and M is friendly, now latest-top-malfunction is earnings; [If an intelligent NPC has noticed the player for whatever reason that probably means they would have seen a nip slip if one existed. So we'll say one didn't exist.]
@@ -446,8 +447,9 @@ Definition: a monster (called M) is cringe disapproving:
 		let C be the cringe appearance of the player;
 		let L be the latest-cringe of M;
 		now the latest-cringe of M is C;
+		if debuginfo > 1, say "[input-style]Checking [MediumDesc of M] immature appearance disapproval... (Current immature appearance: [C]. Most recent immature appearance witnessed by [ShortDesc of M]: [L]. Threshold for [ShortDesc of M] disapproving of immaturity: [cringe tolerance of M].)[roman type][line break]";
 		if C > L and C > the cringe tolerance of M:
-			if debuginfo > 1, say "[input-style][MediumDesc of M] disapproves of player's immature appearance! (Current bab appearance: [C]. Most recent bab appearance witnessed by [ShortDesc of M]: [L]. Threshold for [ShortDesc of M] disapproving of bab appearance: [cringe tolerance of M].)[roman type][line break]";
+			if debuginfo > 1, say "[input-style][MediumDesc of M] disapproves of player's immature appearance![roman type][line break]";
 			decide yes;
 	decide no.
 

@@ -30,7 +30,7 @@ To decide which text is NameBimbo:
 				decide on Name in row 5 of Table of Custom Male Name;
 			otherwise:
 				decide on Name in row 6 of Table of Custom Male Name;
-	otherwise if berri fetish is 1:
+	otherwise if berri fetish is 1 and there is a worn berri-headgear:
 		decide on "Berri";
 	otherwise if the player-name is 0:
 		if the bimbo of the player < 5 and the player is gendered male:

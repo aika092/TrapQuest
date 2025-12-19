@@ -46,6 +46,7 @@ To compute common boredom of (M - a monster) for (N - a number) seconds:
 	if debugmode > 1, say "Latest appearance seen is now [latest-appearance of M].";
 	if diaper quest is 1, now the latest-cringe of M is the cringe appearance of the player;]
 	now M is not diaper-committed;
+	now M is not bulkier-diaper-committed;
 	now M is not double-diaper-committed;
 	now M is not tickle-testing;
 	now M is not diaperMessReacted;
@@ -267,10 +268,11 @@ To standard loot (M - a monster):
 		compute autotaking X.
 
 To compute gift dropping of (X - a thing) by (M - a monster):
+	if M is shopkeeper, now the owner of X is nothing;
 	say "[BigNameDesc of M] [if the loot dropped of M > 0]also [end if][if M is dying or M is not in the location of the player]dropped[otherwise]drops[end if] a [printed name of X]!".
 
 To compute loot dropping of (X - a thing) by (M - a monster):
-	unless M is dying, now the owner of X is M;
+	if M is not dying, now the owner of X is M;
 	compute gift dropping of X by M.
 
 To compute appraisal of (X - an accessory) from (M - a monster):

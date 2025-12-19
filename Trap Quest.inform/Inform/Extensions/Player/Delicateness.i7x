@@ -198,16 +198,21 @@ To FearUp (X - a number) with reason (T - a text): [This function is anticipated
 
 gross-sensation is a text that varies.
 silent-gross-out is initially false.
+flinching-allowed is initially true.
 
 [X should be the number at which the player can tolerate the grossness. X + 7 should be the number where it turns them on. At 5 or less grossness, the player will never have the most extreme reaction (hated).
+Feet walking in fluid-filled shoes: 1
+Bounced / humped in wet diaper: 1
 Room stinks of sex and cum: 2
+Dry diaper on face: 2
 Room stinks of piss: 3
 Sloppy kiss / snowball kiss: 3
 Taste own pussy: 3
+Bounced / humped in wet diaper: 3
 Licking sweaty body part: 4
 Felching vaginal creampie: 4
 Spit in mouth: 4
-Feet in fluid-filled shoes: 4
+Feet put in fluid-filled shoes: 4
 Hit in face with used condom / tissue: 4
 Made to wear wet diaper / used as diaper urinal: 4
 Masturbated in a wet diaper: 5
@@ -225,6 +230,7 @@ Anal creampie on face: 6
 Anilingus / A2M: 7
 Wearing messy diaper / messy diaper smell in the room: 7
 Intimacy with vaguely humanoid (deep one) or tentacles: 8
+Bounced / humped in messy diaper: 8
 Masturbated in messy diaper: 9
 Licking from puddle on ground: 9
 Licking bottom of shoe: 9
@@ -234,21 +240,27 @@ Intimacy with 90% bestial partner (hellhound): 11
 Messy diapers on face: 11
 Drinking / eating other anal food or enemas: 12
 Made to wear someone else's messy diaper: 12
+Someone else directly essing in your diaper: 13
 ]
 To GrossOut (X - a number):
 	say GrossOut X.
 To say GrossOut (X - a number):
-	GrossOut X with reason "" and sensation "feeling".
+	if flinching-allowed is true, GrossOut X with reason "" and sensation "feeling";
+	otherwise UnflinchingGrossOut X with reason "" and sensation "feeling".
 
 To SmellGrossOut (X - a number):
 	say SmellGrossOut X.
 To say SmellGrossOut (X - a number):
-	GrossOut X with reason "" and sensation "[one of]smell[or]stench[or]stink[as decreasingly likely outcomes]".
+	let S be "[one of]smell[or]stench[or]stink[as decreasingly likely outcomes]";
+	if flinching-allowed is true, GrossOut X with reason "" and sensation S;
+	otherwise UnflinchingGrossOut X with reason "" and sensation S.
 
 To TasteGrossOut (X - a number):
 	say TasteGrossOut X.
 To say TasteGrossOut (X - a number):
-	GrossOut X with reason "" and sensation "[one of]taste[or]flavour[as decreasingly likely outcomes]".
+	let S be "[one of]taste[or]flavour[as decreasingly likely outcomes]";
+	if flinching-allowed is true, GrossOut X with reason "" and sensation S;
+	otherwise UnflinchingGrossOut X with reason "" and sensation S.
 
 To SilentlyGrossOut (X - a number):
 	now silent-gross-out is true;
@@ -256,11 +268,32 @@ To SilentlyGrossOut (X - a number):
 	now silent-gross-out is false;
 	compute potential addiction gain from grossness X.
 
+To SilentlyUnflinchingGrossOut (X - a number):
+	now silent-gross-out is true;
+	UnflinchingGrossOut X with reason "" and sensation "";
+	now silent-gross-out is false;
+	compute potential addiction gain from grossness X.
+
 To GrossOut (X - a number) with reason (T - a text) and sensation (S - a text): [This function is anticipated to output some kind of flavour text when called]
 	NonAddictiveGrossOut X with reason T and sensation S;
 	compute potential addiction gain from grossness X.
 
+To UnflinchingGrossOut (X - a number) with reason (T - a text) and sensation (S - a text): [This function is anticipated to output some kind of flavour text when called]
+	UnflinchingNonAddictiveGrossOut X with reason T and sensation S;
+	compute potential addiction gain from grossness X.
+
 To NonAddictiveGrossOut (X - a number) with reason (T - a text) and sensation (S - a text): [This function is anticipated to output some kind of flavour text when called]
+	if grossness fetish > 0 or diaper quest is 1:
+		UnflinchingNonAddictiveGrossOut X with reason T and sensation S;
+		let G be X - the grossness addiction of the player;
+		if G > 0:
+			let R be a random number between 1 and 10;
+			if debuginfo > 0, say "[input-style]Avoid flinch check: d10 ([R]) | [G].5 = ([X].5) grossness - ([grossness addiction of the player]) grossness addiction[roman type][line break]";
+			if G >= R:
+				if T is "", now T is the substituted form of "As you [one of]recoil[or]flinch[or]tense up[in random order] with disgust,";
+				check sudden spit and expulsion with reason T.
+
+To UnflinchingNonAddictiveGrossOut (X - a number) with reason (T - a text) and sensation (S - a text): [This function is anticipated to output some kind of flavour text when called]
 	if grossness fetish > 0 or diaper quest is 1:
 		let G be X - the grossness addiction of the player;
 		if G >= 5: [hated]
@@ -290,12 +323,7 @@ To NonAddictiveGrossOut (X - a number) with reason (T - a text) and sensation (S
 				arouse GA;
 		otherwise: [boring]
 			if silent-gross-out is false, say "[second custom style][one of]I can hardly even call this gross any more. It just doesn't excite me.[or]Gross? More like boring...[or]What a boring [S]. I need something more extreme![in random order][roman type][line break]";
-		if G > 0:
-			let R be a random number between 1 and 10;
-			if debuginfo > 0, say "[input-style]Avoid flinch check: d10 ([R]) | [G].5 = ([X].5) grossness - ([grossness addiction of the player]) grossness addiction[roman type][line break]";
-			if G >= R:
-				if T is "", now T is the substituted form of "As you [one of]recoil[or]flinch[or]tense up[in random order] with disgust,";
-				check sudden spit and expulsion with reason T.
+	now flinching-allowed is true.
 
 To gross cool down (N - a number):
 	if the class of the player is faerie:

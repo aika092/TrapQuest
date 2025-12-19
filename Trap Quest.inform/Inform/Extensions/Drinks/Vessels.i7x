@@ -116,7 +116,7 @@ Definition: baby's bottle is fetish appropriate:
 	decide no.
 To compute cursed drinking (X - baby's bottle):
 	say "It tastes like milk, but really sour. Something tells you it's not the same as what you put in, and before you can finish the thought, [run paragraph on]";
-	let D be a random eligible diaper;
+	let D be the chosen trap diaper;
 	if D is actually summonable and a random number between 1 and 3 - unlucky is 1:
 		say "your [ShortDesc of X] shimmers and a diaper appears around your loins!";
 		summon D cursed with quest;
@@ -211,9 +211,9 @@ A time based rule (this is the sobering up rule):
 		if hungover <= 0, say "[bold type]Your hangover headache has faded away and you can think more clearly again.[roman type][line break]";
 
 To compute drunken adventure:
-	say "You are now so drunk that you are going to not be able to hold back from doing some rather naughty things. Time slows down as you experience a brief moment of clarity; this must be Nintendolls['] doing. You have a chance to remove consent, otherwise you're saying that you're happy with whatever happens next.";
+	[say "You are now so drunk that you are going to not be able to hold back from doing some rather naughty things. Time slows down as you experience a brief moment of clarity; this must be Nintendolls['] doing. You have a chance to remove consent, otherwise you're saying that you're happy with whatever happens next.";]
 	now the fainting reason of the player is 1234;
-	try autofainting;
+	[try autofainting;]
 	if the fainting reason of the player is 1234: [player didn't faint]
 		repeat with T running through things penetrating a body part:
 			unless T is worn, dislodge T;
@@ -256,9 +256,6 @@ To compute drunken adventure:
 				progress quest of condom-creampie-quest;
 			otherwise:
 				SemenPuddleUp 10;
-				if the player is possessing a vagina:
-					now the semen volume of vagina is 5;
-					now the womb volume of vagina is 3;
 				if the raw semen taste addiction of the player < 20, increase the raw semen taste addiction of the player by 1;
 				say "As if to answer your question, you puke up a thick wad of sticky [semen], just as your [fuckholes] begins to leak [if the player is possessing a vagina]their[otherwise]its[end if] own helpings of [semen] onto the stone ground around you. You also realise that your body and clothes are covered in [semen].";
 				repeat with C running through worn fluid vulnerable clothing:
@@ -274,18 +271,35 @@ To compute drunken adventure:
 				now the water-drench of hair is 0;
 				now the semen coating of hair is the largeness of hair;
 				now the semen coating of thighs is 10;
+				if the player is possessing a vagina:
+					now the semen volume of vagina is 5;
+					now the womb volume of vagina is 3;
+				if the semen volume of belly < 8, now the semen volume of belly is 8;
 		otherwise:
 			let K be a random worn knickers;
 			if K is knickers:
 				say "Your [ShortDesc of K] is utterly soaked.";
 			otherwise:
-				now K is a random eligible diaper;
+				now K is the chosen trap diaper;
 				summon K;
 				say "You are wearing a [ShortDesc of K] which is already utterly soaked.";
 			UrineSoakUp K by the soak-limit of K - the total-soak of K;
-		if condoms-used is 0 and the player is able to get pregnant:
-			let M be a random alive father material monster;
-			if M is monster:
+			if K is diaper, process state perception of K;
+		let M be a random unseen-stranger;
+		if the vaginalvirgin of the player is 1 and the player is possessing a vagina:
+			now M is penetrating vagina;
+			compute virginity loss;
+			dislodge M;
+		if the analvirgin of the player is 1:
+			now the analvirgin of the player is 0;
+			now analvirginity-taker is M;
+			say "[bold type]You realise you've probably lost your anal virginity![roman type][line break]";
+			set up anal virginity loss consequences;
+			compute anal virginity loss consequences;
+		check oral virginity loss with M;
+		if condoms-used is 0:
+			now M is inseminating asshole;
+			if the player is able to get pregnant:
 				now M is inseminating vagina;
 				now the pregnancy of the player is 1;
 				say "A little kick from your belly lets you know that you're no longer eating for one.[line break][variable custom style][if the player is not a pervert]Oh no way you've got to be kidding me! Who in hell is the father?![otherwise]And I guess I shouldn't drink while knocked up...[end if][roman type][line break]";
@@ -308,7 +322,8 @@ To compute drunken adventure:
 		notice a wisp;
 		update player region;
 		compute bladder cleanup;
-		refresh map zone.
+		refresh map zone;
+	now the fainting reason of the player is 0.
 
 gold chalice is a vessel. the curse-ID of gold chalice is sure. gold chalice is open topped. The max-doses of a gold chalice is 3. The printed name of gold chalice is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]gold chalice[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of gold chalice is "gc". Figure of gold chalice is the file "Items/Accessories/Vessels/goldenchalice1.png".
 To decide which figure-name is the examine-image of (V - gold chalice):
@@ -328,15 +343,12 @@ A time based rule:
 		DoseFill gold chalice;
 		say "[bold type]Suddenly, your [ShortVesselDesc of gold chalice] glows brightly and fills itself with a small mouthful of [if diaper quest is 1][milk][otherwise][urine][end if]![roman type][line break]";
 		focus-consider gold chalice;
-		repeat with W running through nonstalking wisps:
-			silently set up W;
-			if diaper quest is 1, now the wisp-quest of W is drink-milk-wisp-quest;
-			otherwise now the wisp-quest of W is drink-urine-wisp-quest;
-			now the wisp-trigger of W is a random eligible appropriate wisp trigger;
-			now the wisp-punishment of W is bimbo-wisp-punishment;
-			if (a random number between 0 and 1) + (a random number between 0 and 1) < game difficulty, now the wisp-punishment of W is a random appropriate wisp punishment;
-			update background colour of W;
-			say "[bold type]A [ColourDesc of W] curse wisp appears, and begins hovering behind you! [roman type]You can sense that you must [bold type][wisp-quest of W][roman type] before you next [bold type][wisp-trigger of W][roman type], or else you will [bold type][wisp-punishment of W][roman type].";
+		repeat with W running through nonstalking evil-wisps:
+			if diaper quest is 1, silently set up wisp quest drink-milk-wisp-quest for W;
+			otherwise silently set up wisp quest drink-urine-wisp-quest for W;
+			silently set up wisp trigger for W;
+			silently set up wisp GUI for W;
+			say AnnounceNewWisp W;
 		say "[variable custom style]What a freaky room! Curse these spirits![roman type][line break]".
 
 

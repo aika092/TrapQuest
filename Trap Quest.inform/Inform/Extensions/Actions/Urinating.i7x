@@ -5,8 +5,6 @@ Urinating is an action applying to nothing.
 delayed urination is a number that varies.
 delayed urination flav is a text that varies.
 
-target-poster is an object that varies.
-
 [!<diaperReactionSaid:Boolean>*
 
 Has the player been noticed to be urinating into their diaper? Should be set to true at the end of each urination session, ready for the next one.
@@ -40,6 +38,8 @@ To say ExamineDesc of (T - toilet):
 To say ExamineDesc of (T - urinal):
 	if the hotel-urinal-scene of woman-player > 0 and the player is in Hotel31:
 		say "[if there is a wrestler in Holding Pen][BigNameDesc of random wrestler in Holding Pen] and [NameDesc of woman-player] are here, bound in latex bodysuits as diapered human urinals[otherwise][BigNameDesc of woman-player] is here, bound in a latex bodysuit as a diapered human urinal[end if].";
+	otherwise if T is grabbing the player or the urinal-rival of urinal-competition-punishment is guarding monster:
+		say "Vibrators fixed in position at the front of the urinals torture the latex-clad people installed in place as human urinals.";
 	otherwise if woman-status of woman-player is 98 and playerRegion is woods and woman-player is in the location of the player:
 		say "[BigNameDesc of woman-player] is buried up to [his of woman-player] neck here. You could probably use [him of woman-player] as a urinal.";
 	otherwise if diaper quest is 1 and the player is in Dungeon41:
@@ -362,7 +362,7 @@ To compute toilet use:
 	if the player is in Dungeon11:
 		let R be a random number from 1 to 5;
 		let D be a random off-stage eligible disposable diaper;
-		if D is nothing, now D is a random eligible diaper;
+		if D is nothing, now D is the chosen trap diaper;
 		if R is 1 and the player is not diapered:
 			repeat with K running through worn knickers:
 				only destroy K;
@@ -374,8 +374,8 @@ To compute toilet use:
 			if H is actually summonable:
 				say "Before you know it, your head and mouth are encased in rubber. You're now wearing a pink latex baby's bonnet!";
 				summon H cursed;
-			otherwise if skimpy underwear fetish is not 0:
-				now skimpy underwear fetish is 0;
+			otherwise if skimpy underwear suggestion is not 0:
+				now skimpy underwear suggestion is 0;
 				say "Your mind suddenly clouds for a second... As you shake it off, you suddenly feel a strange aversion to wearing underwear thinner than diapers!";
 			otherwise:
 				DiaperAddictUp 1;
@@ -507,7 +507,8 @@ To start urination:
 		now pee-bottling is 0;
 		if debugmode is 1, say "resetting accidental urination flag.";
 		now delayed urination is 0;
-	if (there is a camera trap in the location of the player and refractoryperiod < maxrefractoryperiod) or there is a camera-bystander in the location of the player:
+	let Y be the valid snapshotter;
+	if Y is a thing and (Y is not a camera trap or refractoryperiod < maxrefractoryperiod):
 		let D be a random worn diaper;
 		if D is diaper and D is not currently visible, now target-poster is nothing; [peeing into a diaper that can't be seen shouldn't cause a reaction from cameras]
 		otherwise now target-poster is a random off-stage wetting poster;
@@ -676,7 +677,8 @@ To compute pee protected urination:
 			if totalOverflow > 0, AnnouncedExpel urine on thighs by totalOverflow.
 
 To compute urination:
-	if (there is a camera trap in the location of the player and refractoryperiod < maxrefractoryperiod) or there is a camera-bystander in the location of the player, now target-poster is a random off-stage wetting poster;
+	let Y be the valid snapshotter;
+	if Y is a thing and (Y is not a camera trap or refractoryperiod < maxrefractoryperiod) or there is a camera-bystander in the location of the player, now target-poster is a random off-stage wetting poster;
 	otherwise now target-poster is nothing;
 	if seconds is 0, allocate 6 seconds;
 	if the player is not pee protected or the player is able to use a toilet:
@@ -735,15 +737,11 @@ To end urination:
 	update appearance level;
 	if target-poster is a wetting poster:
 		if the old-peereaction of target-poster > 0:
-			let Y be a random camera trap in the location of the player;
-			if Y is not a thing, now Y is a random camera-bystander in the location of the player;
-			say "[FlashFlav of Y]";
-			if Y is camera trap, say "It was in a perfect position to capture a full shot of you peeing.";
-			say "[one of][line break][variable custom style][if the humiliation of the player < HUMILIATION-SHAMELESS - 1000]Oh no! No no no! Not one of me peeing! Fuck.[otherwise]Now everyone will know what a pervert I am.[end if][or][if the bimbo of the player < 14][variable custom style]Again?![otherwise][line break][second custom style]I bet that pic looks FILTHY![end if][stopping][roman type][line break]";
-			set up target-poster;
+			let Y be the valid snapshotter;
+			compute snapshot of Y with target-poster;
 	let T be a random worn I love my wet nappies T-shirt;
-	if T is clothing and diaper lover >= 1 and the player is not in a predicament room:
-		let D be a random eligible diaper;
+	if T is clothing and diaper lover >= 1 and the player is not in a predicament room and the class of the player is not berri:
+		let D be the chosen trap diaper;
 		if there is a worn diaper:
 			if T is cursed and the urine-soak of a random worn diaper is 0 or the urine-soak of a random worn diaper is the soak-limit of a random worn diaper:
 				say "[bold type]Your [ShortDesc of T] [bold type]seems to uncurse itself.[line break][variable custom style]I guess I'm finally allowed to change my diaper?[roman type][line break]";
@@ -985,7 +983,7 @@ To say GroundPeeReaction of (M - a monster):
 		say "[speech style of M]'[one of]Gross[or]Disgusting[or]Ugh[in random order]. [if diaper quest is 1][one of]Are you sure you don't need diapers?!'[or]This wouldn't happen if you were kept in diapers, you know.'[or]Do your parents know that you still pee on the floor?!'[in random order][otherwise][one of]Can't you find a toilet to do that?!'[or]Next time use a toilet, you tramp!'[or]How shameless do you have to be to urinate on the floor in front of others?!'[in random order][end if][roman type][line break]";
 		FavourDown M;
 		if diaper quest is 1:
-			now M is diaper-committed;
+			now M is bulkier-diaper-committed;
 			interest M;
 			if M is friendly and M is not student and M is not staff member:
 				anger M;
@@ -1096,7 +1094,7 @@ To say ClothesPeeReaction of (M - a monster):
 			if M is unfriendly:
 				say "[speech style of M]'Yes in fact, I think you need training. [if the player is upright]Get on your knees[otherwise]Stay right where you are[end if], baby!'[roman type][line break]";
 				interest M;
-				now M is diaper-committed;
+				now M is bulkier-diaper-committed;
 		otherwise:
 			say "[BigNameDesc of M] frowns angrily.[line break][speech style of M]'This is why you need to be in diapers!'[roman type][line break][if M is uninterested]Uh-oh...[end if]";
 			interest M;
@@ -1170,5 +1168,22 @@ This is the compulsory urination rule:
 		now delayed urination flav is "";
 		now delayed urination is 0.
 The compulsory urination rule is listed in the compulsory action rules.
+
+punishment-potty is a thing. punishment-potty is not portable. The printed name of punishment-potty is "[TQlink of item described]punishment potty[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of punishment-potty is "potty". Understand "punishment" as punishment-potty.
+
+To decide which figure-name is the examine-image of (C - punishment-potty):
+	decide on Figure of human toilet.
+
+To say ExamineDesc of (C - punishment-potty):
+	say "A large hollow plastic potty frame that reads 'Punishment Potty' on the front. It is bolted to the floor, trapping your head inside.".
+
+fixed-vibrator is a thing. fixed-vibrator is not portable. The printed name of fixed-vibrator is "[TQlink of item described]fixed vibrator[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of fixed-vibrator is "fv". Understand "fixed", "vibrator" as fixed-vibrator.
+
+To decide which figure-name is the examine-image of (C - fixed-vibrator):
+	decide on Figure of fixed vibrator.
+
+To say ExamineDesc of (C - fixed-vibrator):
+	say "A wand vibrator that's been fixed to the ground.".
+
 
 Urinating ends here.

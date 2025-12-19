@@ -7,7 +7,7 @@ REQUIRES COMMENTING
 @inherits <Thing>
 
 @!]
-A trap is a kind of thing. A trap is not portable.
+A trap is a kind of thing. A trap is not portable. The focusPriority of a trap is usually 9.
 
 A trap can be expired. A trap is usually not expired.
 

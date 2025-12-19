@@ -233,6 +233,7 @@ Definition: a g-window is a next-step:
 To calibrate windows:
 	[ Close windows that shouldn't be open and then open windows that shouldn't be closed ]
 	while there is a not currently being processed g-unrequired g-present childless g-window (called win):
+		if debugmode > 1, say "deconstructing [win].";
 		[ Only run each window once, even if we end up back in this loop (by open/close being called in a before rule), to prevent infinite loops ]
 		now win is currently being processed;
 		safely carry out the deconstructing activity with win;
@@ -247,6 +248,7 @@ Section - Constructing a window
 Constructing something is an activity on g-windows.
 
 Before constructing a g-window (called win) (this is the fix method and measurement rule):
+	if debugmode > 1, say "constructing [win] with parent [parent of win].";
 	let the parent be the parent of win;
 	if parent is the invalid window:
 		continue the activity;

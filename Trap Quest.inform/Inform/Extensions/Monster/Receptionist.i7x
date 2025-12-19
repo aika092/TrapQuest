@@ -3,6 +3,8 @@ Receptionist by Monster begins here.
 receptionist is a staff member. receptionist is unconcerned. receptionist is female. The leftover-type of receptionist is 129.
 
 receptionist is in School01. The text-shortcut of receptionist is "rcp".
+To decide which object is the default-local-room of (M - receptionist):
+	decide on School01.
 
 Figure of receptionist is the file "NPCs/School/receptionist1.png".
 Figure of enslaved diapered receptionist is the file "NPCs/School/receptionist3.png".
@@ -53,7 +55,7 @@ To compute monstermotion of (M - receptionist):
 	otherwise compute room leaving of M.
 
 Definition: receptionist (called M) is dangerous:
-	if M is interested and M is unfriendly and M is awake and the boredom of M is 0 and the health of M > 0:
+	if M is interested and M is unfriendly and M is awake:
 		if the scared of M is 0 or M is penetrating a body part:
 			decide yes;
 	decide no.
@@ -74,6 +76,8 @@ To compute perception of (M - receptionist):
 	if (M is in Dungeon10 or M is in Hotel40) and armband is off-stage and M is friendly:
 		if the class of the player is berri:
 			say "[speech style of M]'Are you the one I'm looking for? Hmm, no, I don't think so. You're not giving off [']main character energy[']!'[roman type][line break][big he of M] immediately loses interest in you.";
+			let W be a random a warp portal in the location of M;
+			if W is a warp portal and the destination of W is school, now the destination of W is playerRegion; [prevents access to academy]
 			bore M for 999999 seconds;
 		otherwise:
 			say "[line break][speech style of M]'[one of]Well hello there, I've been looking for you everywhere! You must be the new recruit, right? I was told you'd be dressed rather... [']interestingly['][run paragraph on][if the appearance of the player > 3], but I see you've really taken that instruction to heart![otherwise].[end if] Excellent, I'll get you enrolled right away. You start at rank 1 but I'm sure a person like you will be climbing the ranks in no time!'[or]You there, you've got to be the new student I'm looking for, right?'[stopping][roman type][line break][big he of M] hands you a neon reflective pink armband and gestures for you to strap it on.[line break][speech style of M]'Quickly now, strap this on and jump through the portal. It'll take you straight to the Principal's office.'[roman type][line break]";

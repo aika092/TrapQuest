@@ -16,7 +16,7 @@ Check taking something:
 	if the noun is carried by the player or the noun is worn by the player, say "You already have that!" instead;
 	if the player is trap stuck, say "You can't reach whilst stuck on the [if there is a trap penetrating a fuckhole][random trap penetrating a fuckhole][otherwise]trap[end if]!" instead;
 	if the player is live fucked, say "You're a bit busy getting fucked!" instead;
-	if the player is flying, say "[one of]You try to roll around in the air and reach down to the ground, but your [BreastDesc] and [BellyDesc] simply float you back around until you're face up, your balloon-boobs bouncing gently against the ceiling. You feel your nipples perk up at the unexpected contact. [if the bimbo of the player < 8][line break][first custom style]Just when I thought I couldn't look any more ridiculous...[otherwise if the bimbo of the player < 13][line break][variable custom style]I'd better be careful, or I'm going to turn myself on![otherwise][second custom style]Hee hee, even the ceiling wants to touch my boobies![end if][or][roman type][line break]You manage to flip yourself around so your back and butt are pressing up against the ceiling. You stare down at the floor below you, at your equipment strewn all around, out of reach.[line break][variable custom style]How embarrassing![roman type][line break][cycling]" instead;
+	if the player is flying, say FlyingRoll instead;
 	if the noun is stuck, say "That's stuck in place!" instead;
 	if vampiress is chain-tethering:
 		check tethering;
@@ -29,6 +29,9 @@ Check taking something:
 			say "As you try to bend over, you slip and fall!";
 			allocate 1 seconds;
 			try kneeling instead.
+
+To say FlyingRoll:
+	say "[one of]You try to roll around in the air and reach down to the ground, but your [BreastDesc] and [BellyDesc] simply float you back around until you're face up, your balloon-boobs bouncing gently against the ceiling. You feel your nipples perk up at the unexpected contact. [if the bimbo of the player < 8][line break][first custom style]Just when I thought I couldn't look any more ridiculous...[otherwise if the bimbo of the player < 13][line break][variable custom style]I'd better be careful, or I'm going to turn myself on![otherwise][second custom style]Hee hee, even the ceiling wants to touch my boobies![end if][or][roman type][line break]You manage to flip yourself around so your back and butt are pressing up against the ceiling. You stare down at the floor below you, at your equipment strewn all around, out of reach.[line break][variable custom style]How embarrassing![roman type][line break][cycling]".
 
 Check taking store thing while the player is in Dungeon41 and Dungeon41 is guarded:
 	if there is held store thing, say "[one of][line break][first custom style]'[big please] only consider one item of clothing at a time, or we'll all get confused. And we don't offer change here.'[roman type][line break]What a cheeky way of running a business! [big he of shopkeeper] seems serious though, so you decide to leave it alone.[or]You remember the strict rules about only considering one item at a time and decide to leave it alone.[stopping]" instead.
@@ -63,7 +66,7 @@ Check stealing:
 	if the noun is not monster, say "This verb is used for stealing items from NPCs." instead;
 	if tutorial is 1, say "Please only follow the instructions given for the tutorial." instead;
 	if the noun is caged, say "You can't reach." instead;
-	if the noun is explorer and the noun is undefeated, say "[big he of the noun][']s literally holding it in [his of the noun] hand." instead;
+	if the noun is explorer and the noun is undefeated, say "[big he of the noun][']s literally holding [his of the noun] inventory in [his of the noun] hand." instead;
 	if the player is immobile or the player is in danger, say "Aren't you a bit busy?" instead;
 	if the noun is kitsune and the target-disguise of the noun is not the noun:
 		allocate 3 seconds;

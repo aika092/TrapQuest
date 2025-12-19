@@ -52,11 +52,15 @@ Check touching MansionScenery01:
 			say "your [ShortDesc of K] is completely clean and dry!";
 		otherwise if the number of nonstalking wisps is 0 or the player is getting unlucky:
 			let D be tongue-panties;
-			if diaper quest is 1, now D is a random eligible diaper;
+			if diaper quest is 1, now D is the chosen trap diaper;
 			if K is not knickers:
 				now K is D;
-				summon K;
+				summon K cursed;
 				say "you find that you are wearing a [K]... ";
+			otherwise if K is transformable diaper:
+				let K2 be the chosen bulkier diaper;
+				transform K into K2;
+				now K is K2;
 			if K is not diaper and K is not tongue-panties and K is transformable:
 				silently transform K into D;
 				say "you find that your [MediumDesc of K] has been transformed into a [D]... ";
@@ -64,9 +68,8 @@ Check touching MansionScenery01:
 			if K is not cursed:
 				say "your [K] is surrounded by a dark glow! ";
 				curse K;
-				compute summoned quest of K;
 			otherwise:
-				say "your [K] is surrounded by a dark glow and turn into ";
+				say "your [K] is surrounded by a dark glow and turns into a ";
 				decrease the raw-magic-modifier of K by 2;
 				say "[K]...";
 			if K is knickers, compute summoned quest of K;
@@ -150,7 +153,7 @@ Check touching MansionScenery02:
 		say "You touch the statue's body. ";
 		if there is a stalking wisp:
 			if the player is getting lucky:
-				repeat with W running through stalking wisps:
+				repeat with W running through stalking evil-wisps:
 					destroy W;
 				say GotLuckyFlav;
 			otherwise:

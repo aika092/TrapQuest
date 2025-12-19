@@ -17,9 +17,11 @@ To decide which number is total desirability:
 	decide on N.
 
 To choose a sex method:
+	if debugmode > 1, say "[current-monster] is choosing a sex method...";
 	now targeted-body-part is nothing;
 	if current-monster is butt slut immune:
 		now targeted-body-part is a random actual target body part;
+		if debugmode > 1, say "now targeted body part is [targeted-body-part].";
 	otherwise:
 		let targeting-RNG be a random number between 1 and total desirability;
 		repeat with B running through actual target body parts:
@@ -27,6 +29,7 @@ To choose a sex method:
 				decrease targeting-RNG by the desirability of B;
 				if targeting-RNG <= 0:
 					now targeted-body-part is B;
+					if debugmode > 1, say "now targeted body part is [targeted-body-part].";
 					break.
 
 Definition: a body part (called B) is most desirable:
@@ -50,7 +53,8 @@ An all time based rule (this is the determining desirability rule):
 			now the desirability of vagina is 5;
 			follow the pussy slut eligibility rules;
 		if the player is possessing a penis:
-			now the desirability of penis is 5;
+			now the desirability of penis is 3;
+			if the player is a bit horny, now the desirability of penis is 10;
 			follow the penis slut eligibility rules;
 		if watersports fetish is 1:
 			now the desirability of belly is 5;
@@ -366,9 +370,16 @@ To compute seduction grope of (M - a monster):
 		if refractoryperiod > RF, compute grope orgasm reaction of M.
 
 To say BreastsGropeFlav of (M - a person):
-	if M is not unintelligent monster, say "[speech style of M]'[one of]My my my, what a lovely pair!'[or]These funbags are just begging to be played with!'[or]Do you really expect people to just leave these alone when you walk around looking like this?'[or]Wow, today is my lucky day!'[or]Whoops, my hands must have slipped...'[or]Honk honk!'[in random order][roman type][line break]".
+	if M is not unintelligent monster, say "[speech style of M]'[one of]My my my, what a lovely pair!'[or]These [if the silicone volume of breasts > 0]bolt-ons[otherwise]funbags[end if] are just begging to be played with!'[or]Do you really expect people to just leave these alone when you walk around looking like this?'[or]Wow, today is my lucky day!'[or]Whoops, my hands must have slipped...'[or]Honk honk!'[in random order][roman type][line break]".
 To compute breasts grope of (M - a person):
-	say "[BigNameDesc of M] [one of]roughly[or]lewdly[or]eagerly[in random order] [one of]grabs[or]molests[or]gropes[or]squeezes[in random order] your [ShortDesc of breasts] with both hands[unless there is worn rigid actually nipple covering clothing], making sure to tweak your nipples hard[end if]!".
+	if the number of worn rigid actually nipple covering clothing is 0 and M is intelligent:
+		let V be the milk volume of breasts;
+		say "[BigNameDesc of M] [one of]roughly[or]lewdly[or]eagerly[in random order] [one of]grabs[or]molests[or]gropes[or]squeezes[in random order] your [ShortDesc of breasts] with both hands, making sure to tweak your nipples [if V > 0]hard enough to express your milk![otherwise]hard![end if]";
+		let R be a random number between 1 and 3;
+		if R > V, now R is V;
+		MilkDown R;
+	otherwise:
+		say "[BigNameDesc of M] [one of]roughly[or]lewdly[or]eagerly[in random order] [one of]grabs[or]molests[or]gropes[or]squeezes[in random order] your [ShortDesc of breasts]!".
 
 To say AssholeGropeFlav of (M - a person):
 	if M is not unintelligent monster:
@@ -385,13 +396,12 @@ To compute asshole grope of (M - a person):
 		let N be the notch-taken of A;
 		let R be a random number between 1 and N;
 		if R > 3, now R is 3;
-		say "[if R is 1]One [PlugSize the size of A] bead is[otherwise][R] [PlugSize the size of A] beads are[end if] roughly pulled out of your [asshole]!";
+		say "One [PlugSize the size of A] bead [if R is 1]is[otherwise]after another is[end if] roughly pulled out of your [if R is the notch-taken of A][asshole], the last coming out with a faint 'POP'. Finished, [NameDesc of M] tosses the [ShortDesc of A] to the ground.[otherwise][asshole]![end if]";
 		decrease the notch-taken of A by R;
 		ruin asshole times (R + 1) / 2;
 		if the notch-taken of A <= 0:
 			now A is in the location of the player;
 			dislodge A;
-			say "The [A] falls to the ground.";
 		force immediate inventory-focus redraw.
 
 To say VaginaGropeFlav of (M - a person):

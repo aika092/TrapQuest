@@ -111,6 +111,7 @@ Carry out kneeling:
 	let N be a random interested unfriendly controlling monster in the location of the player;
 	if N is monster and there is a worn subduing clothing:
 		compute lead holding of N; [Go to Immobility by Player to see more.]
+		if the class of the player is berri and there is a worn cursed berri-headgear, progress quest of berri-quest;
 	[If the player falls over we want to let the other monsters know.]
 	if seconds > 0:
 		repeat with M running through uninterested monsters in the location of the player:

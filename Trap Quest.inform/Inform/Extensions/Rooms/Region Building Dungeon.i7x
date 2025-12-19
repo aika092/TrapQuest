@@ -5,7 +5,9 @@ To Set Up The Dungeon:
 	if loading scenes is 1:
 		clear the screen;
 		if images visible is 1:
-			if diaper quest is 0:
+			if berri fetish is 1:
+				display Figure of berri loading;
+			otherwise if diaper quest is 0:
 				if a random number between 0 and 1 < pregnancy fetish:
 					display figure of dungeon pregnant loading;
 				otherwise if a random number between 0 and 1 < mythical creature fetish:

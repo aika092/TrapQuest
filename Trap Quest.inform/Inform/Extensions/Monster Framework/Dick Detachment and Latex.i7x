@@ -222,7 +222,7 @@ To compute handing over detached dick to (P - a person):
 	now players-detached-dick is carried by P;
 	if debugmode > 0:
 		say "Debug pdd handing over to [P].";
-	if P is not the player:
+	if P is a monster:
 		add players-detached-dick to tradableItems of P;
 		add players-detached-dick to the taxableItems of P.
 
@@ -467,12 +467,10 @@ To compute detach-players-dick by (M - a thing) using (method - a number):
 		if fem is 1:
 			say "a doll-like vagina with puffy, hairless and slick maroon lips. You instinctively clench your muscles, your eyes widening [again-DD]at the feeling that follows, of those new sensitive lips pressing together, and the feeling of something more, somewhere deeper inside, of some other new parts of you pressed together but waiting to be parted.[line break][variable custom style]That's... not possible! I can't- I don't- How can I...?[roman type][line break]A neat, plump pussy, a tiny bulge at its top, sits primly between your thighs. You swallow.[line break][variable custom style]That little bump[if size of penis < 3] is even smaller than[otherwise if size of penis < 8] is all that's left of[otherwise]is a mockery of[end if] my [player-penis]![roman type][line break]";
 			compute raw dick detachment by M with fem; [Do this before sexchange!]
-			compute handing over detached dick to M;
 			SexChange the player;
 		otherwise:
 			say "a smooth, empty, Barbie-doll like mound. You shake your head in denial, in disbelief, in dismay.[if the latex-transformation of the player > 4] You moan.[line break][variable custom style]Now I look even more like some stupid sex doll![roman type][end if][line break][variable custom style]Instead of my [player-penis], I'm now like some neutered doll. How am I supposed to have sex like this?![roman type][line break]";
 			compute raw dick detachment by M with fem;
-			compute handing over detached dick to M;
 		say "But as you stare at your new [genitals], you can still feel your erect penis! You peer inside the [ShortDesc of M], but it's empty [one of]and your [manly-penis] is nowhere in sight[or]and your [manly-penis][YetAgain-DD] vanished[cycling]. Firming your resolve and getting a grip on your emotions, you shake yourself. [one of]You just need to find it. You wonder where it is, now - your detached dick?[or][line break][variable custom style]I won't let this get me down! I just need to find it, and get it back.[roman type][line break][in random order]";
 		[I wonder what especially fun locations it could sometimes be put?]
 		[E.g.: we could sometimes attach the pdd to a dildo trap.
@@ -1128,8 +1126,12 @@ To decide if ensured (M - a monster) has players-detached-dick:
 
 [This tries hard to get a bra on the player, and curse it and set it to augmentation, but it won't override an existing curse.]
 To decide if successful experimental bra dressup by (P - a person):
+	let N be nothing;
 	let B be a random worn bra;
-	unless B is nothing or B is a training bra:
+	if (B is unique or B is rare) and B is not augmentation, decide no;
+	if B is not cursed and B is not cursable, decide no;
+	unless (B is nothing or B is a training bra):
+		now N is B;
 		say "[BigNameDesc of P] waves [his of P] wand at your existing [printed name of B]";
 		if B is augmentation:
 			say ". You feel it warm up to cup your [BreastDesc] even more snugly.";
@@ -1144,37 +1146,26 @@ To decide if successful experimental bra dressup by (P - a person):
 				now the Magic-type of B is augmentation;
 				say ", transforming it into a [printed name of B] which shimmers snugly over your [BreastDesc], cupping them with reassuring determination.";
 	otherwise:
+		if the class of the player is latex fetish model, now N is a random off-stage plentiful latex bra;
+		if B is training bra, now N is a random off-stage transformation-eligible bra;
+		if B is nothing, now N is a random off-stage plentiful bra;
+		if N is training bra, decide no;[If we randomly roll a training bra, just say the experiment failed.]
+		if N is not cursed and N is not cursable, decide no;
 		if B is a training bra:
-			say "[speech style of P]'A [printed name of B]? [one of]Ha ha, that won't do at all[or]Hah! You soon won't be needing that[or]No, no, you look like a fast learner[or]Heh. You'll soon be beyond that stage[in random order].'[roman type][line break]With a zap of [his of P] bra [he of P] [one of]disintegrates[or]destroys[or]evaporates[in random order] your bra!";
-			destroy B;
-			now B is nothing;
-		let N be 0;
-		while B is nothing or B is a training bra: [then we'll create one, and make sure it's not a training one]
-			if the class of the player is latex fetish model:
-				now B is a random off-stage plentiful latex bra; [Try for a latex one, if possible]
-			if B is nothing:
-				now B is a random off-stage plentiful bra;
-				if B is nothing, decide no; [Would only happen in a late-game edge case where all the bras were already on-stage.]
-			if B is a training bra:
-				increase N by 1;
-				if debugmode > 0:
-					say "Debug: Re-rolling, training bras that go to arbitrary sizes are silly.[line break]";
-				if N > 20:
-					decide no; [Only training bras remain? Should probably never happen, but still...]
-				now B is nothing;
-		[If we fall through the while, it means we have a bra that's not a training bra.]
-		summon B;
-		now the Magic-type of B is augmentation;
-		now the size of B is the largeness of breasts; [Instead of: compute found size of B;]
-		say "[BigNameDesc of P] summons up a [ShortDesc of B] which you feel appear over your [BreastDesc], fitting snugly.";
-	if B is not cursed:
-		say "The [ShortDesc of B] is surrounded by a dark pink glow, as it becomes cursed!";
+			say "[speech style of P]'A [printed name of B]? [one of]Ha ha, that won't do at all[or]Hah! You soon won't be needing that[or]No, no, you look like a fast learner[or]Heh. You'll soon be beyond that stage[in random order].'[roman type][line break]With a zap of [his of P] wand [he of P] transforms it into a [ShortDesc of N]!";
+			unless N is nothing, silently transform B into N;
+		otherwise:
+			say "[BigNameDesc of P] summons up a [ShortDesc of N] which you feel appear over your [BreastDesc], fitting snugly.";
+			summon N;
+		now the Magic-type of N is augmentation;
+	now the size of N is the largeness of breasts; [Instead of: compute found size of B;]
+	if N is not cursed:
+		say "The [ShortDesc of B] is surrounded by a dark pink glow and becomes cursed!";
 		curse B;
-	if the quest of B is no-clothing-quest, compute summoned quest of B;
-	now the Magic-type of B is augmentation;
-	say "You feel a strange sensation pass through the [ShortDesc of B].";
-	now augmentation-grow-charge of B is augmentation-charging-time of B; [So it's ready to make the player grow]
-	compute periodic augmentation effect of B;
+	if the quest of N is no-clothing-quest, compute summoned quest of N;
+	say "You feel a strange sensation pass through the [ShortDesc of N].";
+	now augmentation-grow-charge of N is augmentation-charging-time of N; [So it's ready to make the player grow]
+	compute periodic augmentation effect of N;
 	decide yes.
 
 [The more TF-ed the player is, the more likely an aeromancer is to be seduced by their latex-ness into experimenting.

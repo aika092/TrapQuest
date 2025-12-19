@@ -100,12 +100,10 @@ To anally orgasm shamefully:
 		if diaper quest is 1, progress quest of asshole-presenting-quest;
 		increase anal-orgasms by 1;
 	if refractoryperiod > 0:
-		if there is a camera trap in the location of the player and there is an off-stage shameful orgasm poster:
+		let Y be the valid snapshotter;
+		if Y is a thing and there is an off-stage shameful orgasm poster:
 			let P be a random off-stage shameful orgasm poster;
-			say "[FlashFlav of a random camera trap in the location of the player]";
-			say "It captured the moment as you began orgasming.";
-			say "[one of][line break][variable custom style][if the player is not disgraced]Oh shit. I bet I didn't look very dignified right then.[otherwise]Now everyone will know that I came from my [asshole].[end if][or][if the bimbo of the player < 14][variable custom style]Again?![otherwise][line break][second custom style]I bet that pic looks FILTHY![end if][stopping][roman type][line break]";
-			set up P;
+			compute snapshot of Y with P;
 		[severeHumiliate;]
 		progress quest of anal-orgasm-quest;
 		if diaper quest is 0 and (the raw anal sex addiction of the player < 4 or there is a live thing penetrating asshole), AnalSexAddictUp 1;
@@ -301,6 +299,13 @@ This is the condom of kings ejaculation rule:
 		rule succeeds.
 The condom of kings ejaculation rule is listed last in the ejaculation rules.
 
+This is the ejaculation during handjob rule:
+	let M be a random monster penetrating penis;
+	if M is a monster and M is not normal-penis-fucking:
+		compute handjob orgasm of M; [See the Special Events extension]
+		rule succeeds.
+The ejaculation into clothing rule is listed last in the ejaculation rules.
+
 This is the chastity cage ejaculation rule:
 	if there is a worn chastity cage:
 		let P be a random bottom level pee protection clothing worn by the player;
@@ -310,9 +315,9 @@ This is the chastity cage ejaculation rule:
 The chastity cage ejaculation rule is listed last in the ejaculation rules.
 
 This is the penetration ejaculation rule:
-	if there is a live thing penetrating penis:
-		let M be a random live thing penetrating penis;
-		compute erection orgasm of M;[See the Special Events extension]
+	let M be a random live thing penetrating penis;
+	if M is a thing:
+		compute erection orgasm of M; [See the Special Events extension]
 		rule succeeds.
 The penetration ejaculation rule is listed last in the ejaculation rules.
 
@@ -326,7 +331,7 @@ The football game ejaculation rule is listed last in the ejaculation rules.
 
 This is the ejaculation into clothing rule:
 	let A be the semen load of the player;
-	let P be a random bottom level pee protection clothing worn by the player;
+	let P be a random worn bottom level pee protection clothing;
 	if P is clothing:
 		if P is portal-pants:
 			say "Your [mystical ShortDesc of penis] [if A < 3]quivers excitedly[otherwise]flexes powerfully[end if] as [if A < 3]a small amount of [semen] slowly dribbles from the tip[otherwise if A < 6]splurts warm [semen][otherwise if A < 8]drools its thick, creamy load[otherwise if A < 11]shoots several thick, creamy ropes[otherwise]shoots its almost inhuman load[end if][run paragraph on]";
@@ -382,7 +387,7 @@ The default ejaculation rule is listed last in the ejaculation rules.
 
 [#LXorDD: Allow the detached dick to ejaculate.]
 To decide which number is the semen load of (Y - yourself):
-	let N be the mystical size of penis; [#LXorDD: Allow the detached dick to work, too.]
+	let N be the size of scrotum;
 	if the latex-transformation of the player >= 5, now N is 0; [But you're not supposed to ejaculate if latex TF level 5 or more.]
 	if the trophy-mode of ejaculate-trophy is 1, decide on (N * 2) + 7;
 	decide on N.
@@ -391,7 +396,7 @@ To compute ejaculation:
 	if players-dick-is-detached > 0:
 		compute maybe detached dick ejaculation; [#LXorDD]
 	otherwise:
-		let P be a random bottom level pee protection clothing worn by the player;
+		let P be a random worn bottom level pee protection clothing;
 		if P is clothing:
 			let A be the semen load of the player;
 			if penis is exposed and A > 1:
@@ -638,6 +643,9 @@ To decide which number is the vaginal sensitivity influence of (C - a wearthing)
 
 To decide which number is the sensitivity of (F - a body part):
 	decide on 0.
+
+To decide which number is the sensitivity of (F - penis):
+	decide on 3.
 
 To decide which number is the sensitivity of (F - vagina):
 	let S be the raw sensitivity of F;

@@ -103,7 +103,12 @@ To progress quest of (Q - puddle-cleaning-quest):
 				say "Your [ShortDesc of C] [if C is cursed]doesn't uncurse - it [end if]seems to think you [one of]need to do more cleaning with the cloth until you have redeemed yourself for breaking the bottle[or]still need to do more cleaning[stopping]!";
 			otherwise:
 				now the puddles-cleaned of Q is 0;
-				compute quest completion of Q on C.
+				compute quest completion of Q on C;
+		if C is black-cat-tail-anal-beads and the notch-taken of C > 1 and ((diaper quest is 0 and the player is a november 2025 top donator) or (diaper quest is 1 and the player is a september 2025 diaper donator)):
+			say "[bold type]Suddenly, a [PlugSize size of C] metal bead pops out of your [asshole]! [roman type][if C is durability]You sense that each bead contains some of the toy's defensive magic, so your magic durability is now slightly reduced unless you push the bead back inside.[end if][line break]";
+			decrease the notch-taken of C by 1;
+			ruin asshole;
+			if the class of the player is catgirl and the notch-taken of C is 1, say "[bold type]You sense that now there is only one bead remaining inside you, you should be able to remove the toy.[roman type][line break]";
 
 To compute generic first time class reward of (Q - puddle-cleaning-quest) on (C - a clothing):
 	let D be a random off-stage plentiful ring;

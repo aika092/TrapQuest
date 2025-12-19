@@ -30,7 +30,7 @@ Definition: a diaper punishment is prioritised:
 
 To choose a diaper punishment:
 	now the chosen-diaper-punishment of current-monster is punishment-not-found;
-	now current-priority is 6;
+	now current-priority is 10;
 	while the chosen-diaper-punishment of current-monster is punishment-not-found and current-priority >= 0:
 		now the chosen-diaper-punishment of current-monster is a random prioritised appropriate diaper punishment;
 		unless the chosen-diaper-punishment of current-monster is a diaper punishment, now the chosen-diaper-punishment of current-monster is punishment-not-found;
@@ -71,7 +71,7 @@ Definition: a monster (called M) is eager to change diapers:
 
 Definition: a clothing (called D) is easy to remove: [can an NPC easily remove this to change your diaper?]
 	if D is glued, decide no;
-	if D is unremovable, decide no;
+	if D is unremovable and D is not messed knickers, decide no;
 	if D is locked and current-monster is not a clothes-destroyer:
 		let K be a random unlock-key covering D;
 		if K is a thing and K is not held by current-monster and bondage protection is 0, decide no;
@@ -455,7 +455,7 @@ To compute punishment of (P - donate babywear):
 
 Section 8 Untidy Punishment Session
 
-untidy-session is a diaper punishment. The priority of untidy-session is 5.
+untidy-session is a diaper punishment. The priority of untidy-session is 6.
 
 To say EnticeFlav of (M - a monster) for (P - untidy-session):
 	if diaper messing >= 7:

@@ -477,7 +477,7 @@ To UniqueSquirt (L - a liquid-object) On (C - Thighs) by (N - a number):
 				say "You weren't expecting this, and as you try to complete your step forward, you completely lose your balance!";
 				try kneeling;
 			anger ghostly tentacle;
-			compute sudden interested appearance of ghostly tentacle;
+			spawn meet ghostly tentacle;
 	if N > 0:
 		if L is semen:
 			while the semen coating of C < 10 and N > 0:
@@ -518,39 +518,49 @@ To UniqueSquirt (L - a liquid-object) On (C - a shoes) by (N - a number):
 		say "[announced L] drips down your [ShortDesc of C] to the ground.";
 		PuddleUp L by N.
 
-Report going when there are worn shoes and the player is upright:
-	let C be a random worn shoes;
-	if the total-soak of C > the soak-limit of C:
-		if the urine-soak of C > 0 and the semen-soak of C > 0:
-			say "As you walk, a horrid mixture of [urine] and [semen] squelches out of your [ShortDesc of C] and dribbles to the ground.";
-			puddle water before urine from C;
-			while the total-soak of C > the soak-limit of C:
-				if the semen-soak of C > the urine-soak of C:
-					decrease the semen-soak of C by 1;
-					PuddleUp semen by 1;
+foot-squelch-cooldown is a number that varies.
+
+Report going when the player is upright:
+	repeat with C running through worn foot covering clothing:
+		if the total-soak of C >= a random number between 1 and the soak-limit of C:
+			if the urine-soak of C > 0 and the semen-soak of C > 0:
+				say "As you walk, a horrid mixture of [urine] and [semen] squelches out of your [ShortDesc of C] and dribbles to the ground.";
+				if the water-soak of C > 0:
+					decrease the water-soak of C by 1;
+				otherwise:
+					unless the semen-soak of C is 1 and the urine-soak of C > 1, decrease the semen-soak of C by 1;
+					unless the urine-soak of C is 1 and the semen-soak of C > 0, decrease the urine-soak of C by 1;
+				PuddleUp semen by 1;
+				PuddleUp urine by 1;
+				SlowGrossOut 4;
+			otherwise if the urine-soak of C > 0:
+				say "As you walk, [urine] squelches out of your [ShortDesc of C] and dribbles to the ground.";
+				if the water-soak of C > 0:
+					decrease the water-soak of C by 1;
 				otherwise:
 					decrease the urine-soak of C by 1;
-					PuddleUp urine by 1;
-		otherwise if the urine-soak of C > 0:
-			say "As you walk, excess [urine] squelches out of your [ShortDesc of C] and dribbles to the ground.";
-			puddle water before urine from C;
-			PuddleUp urine by the total-soak of C - the soak-limit of C;
-			decrease the urine-soak of C by the total-soak of C - the soak-limit of C;
-		otherwise if the semen-soak of C > 0:
-			say "As you walk, excess [semen] squelches out of your [ShortDesc of C] and bubbles to the ground.";
-			puddle water before semen from C;
-			PuddleUp semen by the total-soak of C - the soak-limit of C;
-			decrease the semen-soak of C by the total-soak of C - the soak-limit of C;
-		otherwise if the milk-soak of C > 0: [hopefully super rare or I'll have to recode this]
-			say "As you walk, excess [milk] squelches out of your [ShortDesc of C] and bubbles to the ground.";
-			puddle water before milk from C;
-			PuddleUp milk by the total-soak of C - the soak-limit of C;
-			decrease the milk-soak of C by the total-soak of C - the soak-limit of C.
+				PuddleUp urine by 1;
+				SlowGrossOut 2;
+			otherwise if the semen-soak of C > 0:
+				say "As you walk, excess [semen] squelches out of your [ShortDesc of C] and bubbles to the ground.";
+				if the water-soak of C > 0:
+					decrease the water-soak of C by 1;
+				otherwise:
+					decrease the semen-soak of C by 1;
+				PuddleUp semen by 1;
+				SlowGrossOut 2;
+			otherwise if the milk-soak of C > 0: [hopefully super rare or I'll have to recode this]
+				say "As you walk, excess [milk] squelches out of your [ShortDesc of C] and bubbles to the ground.";
+				if the water-soak of C > 0:
+					decrease the water-soak of C by 1;
+				otherwise:
+					decrease the milk-soak of C by 1;
+				PuddleUp milk by the total-soak of C - the soak-limit of C;
+				SlowGrossOut 2;
+		otherwise if the total-soak of C > the water-soak of C:
+			say "The [if the urine-soak of C > 0 and the semen-soak of C > 0]horrid mixture of [urine] and [semen][otherwise if the urine-soak of C > 0][urine][otherwise if the semen-soak of C > 0][semen][otherwise][milk][end if] in your [ShortDesc of C] squelches [one of]nastily[or]lewdly[or]noisily[at random] [one of][or][or]under your feet [at random]as you walk.";
+			SlowGrossOut 1.
 
-To puddle water before (L - a liquid-object) from (C - a clothing):
-	while the water-soak of C > 0 and the total-soak of C > the soak-limit of C:
-		PuddleUp L by 1;
-		decrease the water-soak of C by 1.
 
 To UniqueSquirt (L - a liquid-object) On (C - a clothing) by (N - a number):
 	if debugmode > 0, say "assigning [N] units of [L] onto [C].";
@@ -560,7 +570,7 @@ To UniqueSquirt (L - a liquid-object) On (C - a clothing) by (N - a number):
 			LiquidSoak L on C;
 			decrease N by 1;
 			increase TSK by 1;
-	if TSK > 0, say "[announced L] [if N > 0]drenches[otherwise if L is water and the total-soak of C is TSK]wets[otherwise if the total-soak of C is TSK]stains[otherwise][one of]spreads through[or]permeates[or]extends throughout[at random][end if] [NameDesc of C]."; [if N > 0 then the item is fully soaked; if the total-soak of C is TSK then the item was dry before this happened]
+	if TSK > 0, say "[announced L] [if N > 0 and inside-out is true and C is foot covering]completely fills up the inside of[otherwise if N > 0 and inside-out is true and C is foot covering]collects on the inside of[otherwise if N > 0]drenches[otherwise if L is water and the total-soak of C is TSK]wets[otherwise if the total-soak of C is TSK]stains[otherwise][one of]spreads through[or]permeates[or]extends throughout[at random][end if] [NameDesc of C]."; [if N > 0 then the item is fully soaked; if the total-soak of C is TSK then the item was dry before this happened]
 	if N > 0 and C is worn: [To avoid infinite recursion, we always make sure that clothing items drip liquid to the body part directly below them. So first we check if they're leg covering, and then crotch covering, and so on, so we're working in 'gravity priority order'. Otherwise for example a liquid soaking into trousers could go crotch clothing code > thighs code > crotch clothing code > thighs code > etc.]
 		if C is leg covering:
 			let SH be a random worn shoes;

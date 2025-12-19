@@ -7,12 +7,21 @@ To decide which figure-name is Figure of berri cutscene 2:
 	decide on figure of small image.
 To decide which figure-name is Figure of berri cutscene 6a:
 	decide on figure of small image.
+To decide which figure-name is Figure of Berri Cutscene 7:
+	decide on figure of small image.
 To decide which figure-name is Figure of berri cutscene 14a:
 	decide on figure of small image.
 To decide which figure-name is Figure of berri cutscene 14b:
 	decide on figure of small image.
+To decide which figure-name is Figure of berri cutscene 14c:
+	decide on figure of small image.
 
 To decide which figure-name is Figure of demoness cutscene 15:
+	decide on figure of small image.
+
+To decide which figure-name is Figure of DiaperPresentBoxBlindfoldedBackground:
+	decide on figure of small image.
+To decide which figure-name is Figure of DiaperPresentBoxBlindfoldedMessyBackground:
 	decide on figure of small image.
 
 To decide which figure-name is Figure of dildo pole dq:
@@ -38,6 +47,9 @@ To decide which figure-name is Figure of Elevator Face Machine Diaper Spank Vibe
 To decide which figure-name is Figure of Elevator Face Machine Diaper Spank Vibe Wet:
 	decide on figure of small image.
 To decide which figure-name is Figure of Elevator Face Machine Diaper Spank Vibe Messy:
+	decide on figure of small image.
+
+To decide which figure-name is Figure of fixed vibrator:
 	decide on figure of small image.
 
 To decide which figure-name is Figure of ghost 6:
@@ -105,6 +117,8 @@ To decide which figure-name is Figure of Vines Cutscene 3b:
 	decide on figure of small image.
 
 To decide which figure-name is Figure of Woman 1:
+	decide on figure of small image.
+To decide which figure-name is Figure of Woman 2b:
 	decide on figure of small image.
 
 To decide which figure-name is Figure of walled creature slime diaper:

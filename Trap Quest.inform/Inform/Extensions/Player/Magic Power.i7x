@@ -238,6 +238,9 @@ A game universe initialisation rule (this is the incantation initialisation rule
 		choose a blank row in the Table of Possible Incantations;
 		now the phrase entry is "hate having unspanked cheeks";
 		now the naughtiness entry is 9;
+		choose a blank row in the Table of Possible Incantations;
+		now the phrase entry is "get horny from being told what to do";
+		now the naughtiness entry is 9;
 		if diaper quest is 0:
 			choose a blank row in the Table of Possible Incantations;
 			now the phrase entry is "love licking hot throbbing lollies";
@@ -291,7 +294,7 @@ A game universe initialisation rule (this is the incantation initialisation rule
 			now the phrase entry is "want to have even bigger cock pillow tits";
 			now the naughtiness entry is 9;
 			choose a blank row in the Table of Possible Incantations;
-			now the phrase entry is "want a fake ass fake ass";
+			now the phrase entry is "want a fake-ass fake ass";
 			now the naughtiness entry is 9;
 		if interracial fetish is 1:
 			choose a blank row in the Table of Possible Incantations;
@@ -312,6 +315,9 @@ A game universe initialisation rule (this is the incantation initialisation rule
 		if bukkake fetish is 1:
 			choose a blank row in the Table of Possible Incantations;
 			now the phrase entry is "want to be covered in thick sticky man cream";
+			now the naughtiness entry is 11;
+			choose a blank row in the Table of Possible Incantations;
+			now the phrase entry is "use cocks to do my makeup";
 			now the naughtiness entry is 11;
 		if mythical creature fetish is 1:
 			choose a blank row in the Table of Possible Incantations;
@@ -436,13 +442,26 @@ Report Spellcasting wand-summoning:
 			now the raw-magic-modifier of lolita magical dress is 2;
 			try examining lolita magical dress.
 
-An all later time based rule (this is the magical girl spell rule):
+An all later time based rule (this is the magic power spell rule):
 	if the player is not in a predicament room and the total magic power of the player > 0 and wand-summoning is uncastable:
 		now wand-summoning is everywhere;
 		now the outrageousness of wand-summoning is 6;
 		now the incantation of wand-summoning is "call upon the power of girlcum";
 		now the text-shortcut of wand-summoning is "call upon the power of girlcum";
 		say "[bold type]You now instinctively know how to [MagicSpellEffect of wand-summoning]! The magic incantation is 'I [incantation of wand-summoning]'.[SpelloutrageousnessInfo of wand-summoning][roman type][line break]".
+
+An all later time based rule (this is the magical girl spell rule):
+	if the player is not in a predicament room and the class of the player is magical girl and magic-purify is uncastable:
+		now magic-purify is everywhere;
+		if inhuman pregnancy >= 2:
+			now the outrageousness of magic-purify is 6;
+			now the incantation of magic-purify is "dedicate my womb to eldritch spawn";
+			now the text-shortcut of magic-purify is "dedicate my womb to eldritch spawn";
+		otherwise:
+			now the outrageousness of magic-purify is 2;
+			now the incantation of magic-purify is "love being stalked";
+			now the text-shortcut of magic-purify is "love being stalked";
+		say "[bold type]You now instinctively know how to [MagicSpellEffect of magic-purify]! The magic incantation is 'I [incantation of magic-purify]'.[SpelloutrageousnessInfo of magic-purify][roman type][line break]".
 
 magic-mapping is a magic-spell.
 To decide which number is the raw-magic-cost of (S - magic-mapping):
@@ -736,5 +755,28 @@ Report Spellcasting magic-clothe when there is a reactive monster:
 	otherwise:
 		say "Nothing happens! The universe couldn't find an item of clothing to make you wear.".
 Definition: magic-clothe is staller: decide no. [Does it make all NPCs lose a turn?]
+
+magic-purify is a magic-spell.
+To decide which number is the raw-magic-cost of (S - magic-purify):
+	decide on 4.
+Definition: magic-purify is reactive-only:
+	if inhuman pregnancy >= 2, decide no;
+	decide yes.
+To say MagicSpellEffect of (S - magic-purify):
+	say "purify concentrated magical energy".
+Check Spellcasting magic-purify:
+	let T be a random tentacle-breeder in the location of the player;
+	unless T is tentacle-breeder, now T is a random stalking mini-portal;
+	if T is nothing, now T is a random stalking wisp;
+	unless T is nothing:
+		let C be the magic-cost of the noun + the magic-cost of T;
+		if the magic power of the player < C, say "You don't have enough magic power to cast that spell (you need [C])." instead.
+Report Spellcasting magic-purify:
+	let T be a random tentacle-breeder in the location of the player;
+	unless T is tentacle-breeder, now T is a random stalking mini-portal;
+	if T is nothing, now T is a random stalking wisp;
+	unless T is nothing:
+		compute MagicDrain of T;
+		MagicPurify T.
 
 Magic Power ends here.

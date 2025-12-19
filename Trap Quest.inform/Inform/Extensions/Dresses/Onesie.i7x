@@ -55,8 +55,8 @@ To compute periodic effect of (L - a onesie):
 		increase the charge of L by 1;
 		if the charge of L > 10:
 			now the charge of L is 0;
-			let D be a random eligible diaper;
-			if D is an actually summonable diaper:
+			let D be the chosen smallish diaper;
+			if D is actually summonable:
 				summon D;
 				say "[bold type]You feel a [D] [bold type]appear out of nowhere under your [L][bold type]![roman type][line break]".
 

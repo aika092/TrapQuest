@@ -25,7 +25,7 @@ Figure of chocolates cutscene 2 is the file "Special/Cutscene/DQChocolates2.jpg"
 
 A time based rule (this is the chocolates stalking rule):
 	if christmas content is 1:
-		while chocolates bag is not regional:
+		while chocolates bag is nonregional:
 			now chocolates bag is in a random placed room;
 			if debugmode is 1, say "now chocolates bag is in [location of chocolates bag].";
 			if chocolates bag is in the location of the player, remove chocolates bag from play; [It can't just appear on top of the player]

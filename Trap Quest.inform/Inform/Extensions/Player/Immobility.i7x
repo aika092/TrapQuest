@@ -3,6 +3,7 @@ Immobility by Player begins here.
 The immobility rules is a rulebook.
 
 player-immobile is initially false.
+player-partially-immobile is initially false.
 
 [!<ToCheckImmobility>+
 
@@ -12,8 +13,13 @@ We don't want to check this all the time.
 To check immobility:
 	follow the immobility rules;
 	unless debugmode > 1:
-		if the rule failed, now player-immobile is true;
-		otherwise now player-immobile is false.
+		if the rule failed:
+			now player-immobile is true;
+			now player-partially-immobile is true;
+		otherwise:
+			now player-immobile is false;
+			if there is a thing wrangling a body part, now player-partially-immobile is true;
+			otherwise now player-partially-immobile is false.
 
 [!<YourselfIsImmobile>+
 
@@ -24,7 +30,7 @@ Definition: yourself is immobile:
 	if player-immobile is true, decide yes;
 	decide no.
 Definition: yourself is at least partially immobile:
-	if there is a thing wrangling a body part or the player is immobile, decide yes;
+	if player-partially-immobile is true, decide yes;
 	decide no.
 
 This is the trap stuck immobility rule:
@@ -55,6 +61,9 @@ Definition: yourself is trap stuck: [A player who is trap stuck will not be fuck
 	if gloryhole is penetrating a body part or gloryhole is grabbing the player, decide yes;
 	if robo vacuum cleaner is penetrating a fuckhole, decide yes;
 	if facial-room-machine is grabbing the player, decide yes;
+	if punishment-potty is grabbing the player, decide yes;
+	if urinal is grabbing the player, decide yes;
+	if fixed-vibrator is grabbing the player, decide yes;
 	decide no.
 
 [!<YourselfIsPoleStuck>+
@@ -123,8 +132,8 @@ Part - Subduing
 To compute lead holding of (M - a monster):
 	let C be a random worn subduing clothing;
 	now M is covering C;
-	say "[SubduedGrabFlav of M on C]";
-	say "[SubduedGrabFlav of C]".
+	say SubduedGrabFlav of M on C;
+	say SubduedGrabFlav of C.
 
 To say SubduedGrabFlav of (M - a monster) on (C - a clothing):
 	say "[BigNameDesc of M] grabs hold of your [ShortDesc of C]! There's no getting away now...".

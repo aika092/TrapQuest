@@ -41,15 +41,48 @@ Woods15 is a dodgy jungle room. The printed name of Woods15 is "Deep Woods". "Th
 
 Woods16 is a mandatory jungle room. The printed name of Woods16 is "Hole in the Ground". "There appears to be a hole in the ground here. You could climb down it, but something tells you it is extremely dangerous.". The shape of Woods16 is L2/0-0-1-1-1-1.
 Report going when the player is in Woods16:
-	if berri fetish is 1 and berriVineBossScene is 0 and stripy-blue-dress is worn and magic pistol is worn and vine boss is alive:
+	if berri fetish is 1 and berriVineBossScene is 0 and latest-berri-stage is 0:
+		if stripy-blue-dress is not worn or magic pistol is not worn, fix berri outfit;
+		now berriVineBossScene is 1;
 		say "[bold type]Suddenly, a green vine whips out of the hole in the ground and grabs your ankle![line break][BerriCutsceneFlav]It yanks you hard, pulling you down into the pit! In your panic, [NameDesc of magic pistol] slips out of your hand!";
 		now magic pistol is in the location of the player;
 		now the stance of the player is 1;
-		mapcutshow figure of berri cutscene 2 for magic pistol;
+		now temporaryYesNoBackground is figure of berri cutscene 2;
 		say "[second custom style]Oh crap, am I really gonna get pulled down into this pit with some kind of vine monster?![roman type][line break]";
-		reset multiple choice questions;
-		set numerical response 1 to "Call for help";
-		say "";
+		compute single choice question "Call for help";
+		let vine-pulling be true;
+		if face is actually occupied or the player is not able to speak:
+			say "[variable custom style][gag sounds][roman type][line break]...That was a dumb idea.";
+		otherwise:
+			let M be a random explorer in the location of the player;
+			if M is nothing, now M is a random regional explorer;
+			if M is explorer:
+				let N be 0;
+				if M is interested, increase N by 1;
+				if the boredom of M <= 0, increase N by 1;
+				if M is in the location of the player:
+					increase N by 1;
+				otherwise:
+					now M is in the location of the player;
+					say "[BigNameDesc of M] rushes over from nearby!";
+				if M is not interested:
+					interest M;
+					increase the times-met of M by 1;
+					say "[speech style of M]'Oh my gosh, Berri!'[roman type][line break][BigNameDesc of M] spots your [magic pistol] on the ground, out of your reach.";
+				let R be a random number between 0 and N;
+				if R is 0:
+					say "[speech style of M]'Oh sweet, free magic weapon!'[roman type][line break]Completely ignoring you, [NameDesc of M] embodies Main Character Energy and picks up [NameDesc of magic pistol].[paragraph break][variable custom style]Being a side character sucks.[roman type][line break]";
+					now M is carrying magic pistol;
+				otherwise:
+					say "[speech style of M]'Quick, use this!'[roman type][line break][BigNameDesc of M] quickly hands you your weapon, allowing you to twist and shoot the magic liquid down into the depths of the pit.[paragraph break][first custom style]'RAAWR!'[roman type][line break]The booming voice of a giant monster in pain rings out as you feel the vines grip loosen! You quickly scramble up out of their reach.[paragraph break][second custom style]'Thank you for saving me...'[roman type][line break]You squeak in your stereotypically girly voice.";
+					now vine-pulling is false;
+					now magic pistol is worn by the player;
+		if vine-pulling is true:
+			say "The vines tug once more, even stronger than last time, and you lose your grip, and go tumbling down into the pit.[paragraph break][first custom style]'RAAWR!'[roman type][line break]A giant monster made of living vines opens its fearsome maw and swallows you whole. You descend into darkness, and then... You're back outside above the pit? You've been sent through a portal![paragraph break][variable custom style]But wait, this isn't what I was wearing before![roman type][line break]";
+			if latest-berri-stage < 1, now latest-berri-stage is 1;
+			fix berri outfit;
+			compute berri vine portals;
+		progress quest of berri-quest;
 	otherwise if clumsy is 1 and the player is upright and the noun is not up and (a random number between 1 and 5 is 1 or clumsy april fools is 1):
 		say "In a rare moment of clumsiness, your toe hits a snag and you accidentally tumble down into the giant hole in the centre of this area!";
 		say aprilFoolsClumsyFlav;

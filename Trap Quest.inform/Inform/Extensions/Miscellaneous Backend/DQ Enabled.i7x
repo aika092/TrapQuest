@@ -48,10 +48,22 @@ Figure of YesNoBackground3A is the file "Special/Buttons/YesNo/DQ3A.png".
 Figure of YesNoBackground3B is the file "Special/Buttons/YesNo/DQ3B.png".
 Figure of YesNoBackground4A is the file "Special/Buttons/YesNo/DQ4A.png".
 Figure of YesNoBackground4B is the file "Special/Buttons/YesNo/DQ4B.png".
-Figure of HoleInWallBackground is the file "Map/hole2.png".
 Figure of demon lord is the file "NPCs/Bosses/Xavier/xavier1.png".
 Figure of modification machine is the file "Env/Hotel/modmachine2.png".
 Figure of slavehound is the file "NPCs/Mansion/Hound/hound3.png".
+
+Figure of HoleInWallBackground 1 is the file "Map/hole2.png".
+To decide which figure-name is Figure of HoleInWallBackground:
+	if the class of the player is berri:
+		let D be a random worn diaper;
+		if D is dirty diaper:
+			if D is messed:
+				if the known-mess of D > 24, decide on Figure of Berri Cutscene 11d;
+				otherwise decide on Figure of Berri Cutscene 11c;
+			otherwise:
+				decide on Figure of Berri Cutscene 11b;
+		decide on Figure of Berri Cutscene 11a;
+	decide on Figure of HoleInWallBackground 1.
 
 Include Unnecessary Figures by DQ Only Stuff.
 Include Necessary Figures by DQ Only Stuff.
@@ -67,7 +79,50 @@ Figure of Minotaur Cutscene 2c is the file "Special/smallimage.jpg".
 
 To decide which figure-name is YesNoBackground:
 	if temporaryYesNoBackground is not figure of small image, decide on temporaryYesNoBackground;
-	if the bimbo of the player < 10:
+	if the class of the player is berri:
+		if pink-babydoll-dress is worn:
+			let D be a random worn diaper;
+			if D is diaper:
+				if the known-mess of D > 24:
+					decide on Figure of woman 4d;
+				otherwise if the known-mess of D > 0:
+					decide on Figure of woman 4c;
+				otherwise if the perceived-urine-soak of D > 0:
+					decide on Figure of woman 4b;
+			decide on Figure of woman 4a;
+		otherwise if pink-latex-bodysuit is worn:
+			decide on Figure of woman 3;
+		otherwise if blue-dungarees is worn:
+			decide on Figure of woman 2;
+		otherwise if stripy-blue-dress is worn:
+			decide on Figure of woman 1;
+		otherwise if latest-berri-stage is 7:
+			let D be a random worn diaper;
+			if D is diaper:
+				if the known-mess of D > 24:
+					decide on Figure of woman 4d;
+				otherwise if the known-mess of D > 0:
+					decide on Figure of woman 4c;
+				otherwise if the perceived-urine-soak of D > 0:
+					decide on Figure of woman 4b;
+			decide on Figure of woman 4a;
+		otherwise if latest-berri-stage is 6:
+			decide on Figure of woman 3;
+		otherwise if latest-berri-stage <= 5 and latest-berri-stage >= 1:
+			decide on Figure of woman 2;
+		otherwise if latest-berri-stage is 0:
+			decide on Figure of woman 1;
+		otherwise:
+			let D be a random worn diaper;
+			if D is diaper:
+				if the known-mess of D > 24:
+					decide on Figure of woman 5d;
+				otherwise if the known-mess of D > 0:
+					decide on Figure of woman 5c;
+				otherwise if the perceived-urine-soak of D > 0:
+					decide on Figure of woman 5b;
+			decide on Figure of woman 5a;
+	otherwise if the bimbo of the player < 10:
 		if the player is gendered female:
 			if the player is diapered, decide on figure of YesNoBackground1B;
 			otherwise decide on figure of YesNoBackground1A;
@@ -100,12 +155,12 @@ To compute (M - a monster) stomping (N - a monster):
 	do nothing.
 
 giant wasp is a kind of monster. buzzing giant wasp is a giant wasp.
-newborn-wasp is an object that varies.
+lesser-wasp is an object that varies.
 wasp-honey-timer is a number that varies. wasp-poison-timer is a number that varies.
 aeromancer is a kind of monster. an aeromancer has a number called balloon. an aeromancer has a number called current-balloon. an aeromancer has a number called previously-ballooned. an aeromancer can be wand-empowered. an aeromancer can be ballooned.
 To compute aeromancer science of (M - a monster):
 	do nothing.
-tentacle monster is a kind of monster. durable-tentacle-monster is a tentacle monster. A tentacle monster can be newborn, large, massive (this is the tentacle-size property). A tentacle monster has a number called evolved.
+tentacle monster is a kind of monster. durable-tentacle-monster is a tentacle monster. A tentacle monster can be lesser, large, massive (this is the tentacle-size property). A tentacle monster can be doom-evolved.
 To compute tentacle birth:
 	do nothing.
 
@@ -146,6 +201,8 @@ To SlimegirlCheck:
 	do nothing.
 the-goddess is a person.
 A monster can be player-brood.
+To decide which number is the size-rank of (M - a monster):
+	decide on 0.
 
 Include Satchels of Holding by Bags of Holding.
 Include Backpacks of Holding by Bags of Holding.

@@ -46,18 +46,32 @@ To trigger (Y - a camera trap):
 	otherwise:
 		say "You hear a weird whirring, a bit like an old camera film being wound forwards, but nothing else happens.".
 
+To decide which object is the valid snapshotter:
+	let Y be a random camera trap in the location of the player;
+	if Y is not a thing or the reset-timer of Y < 99900, now Y is a random camera-bystander in the location of the player;
+	if Y is not a thing and camera-drone is stalking, now Y is camera-drone;
+	if Y is a thing, decide on Y;
+	decide on nothing.
+
+To compute snapshot of (Y - an object) with (P - a poster):
+	say FlashFlav of Y;
+	set up P.
+
 To say FlashFlav of (Y - a camera trap):
 	say "[bold type]FLASH![roman type][line break]A bright flash like lightning envelops the room for a brief moment. [if Y is revealed and the reset-timer of Y < 99000]You had forgotten about that stupid camera! [otherwise if Y is revealed][line break][variable custom style][one of]How many photos is that thing going to take? [or][stopping][roman type][line break][otherwise]You were not expecting that! Looking towards the light source, you notice a[one of][or]nother[stopping] camera. [end if]";
 	now Y is revealed;
 	now the reset-timer of Y is 99999.
 
-To say ExpulsionFlashFlav of (Y - a camera trap):
-	say "It was in a perfect position to capture a full shot of what just happened.[one of][line break][variable custom style][if the humiliation of the player < HUMILIATION-SHAMELESS - 1000]Oh god, how embarrassing![otherwise]Now everyone will know what I've had happen to me recently.[end if][or][if the bimbo of the player < 14][variable custom style]Again?![otherwise][line break][second custom style]Ooh, I can't wait to see that one![end if][stopping][roman type][line break]".
+To compute snapshot of (Y - a camera trap) with (P - a poster):
+	say CameraFlashFlav of P by Y;
+	set up P.
 
 A poster is a kind of thing. A poster is not portable. The printed name of a poster is "[TQlink of item described][if item described is in the hotel]banner[otherwise]poster[end if][TQxlink of item described]". The text-shortcut of a poster is "po".
 A poster can be unspotted or spotted. A poster is usually unspotted. [Has the player seen it before?]
 A poster can be identifiable or unidentifiable. A poster is usually identifiable. [Can the player be identified from the poster?]
 Understand "banner" as poster. Understand "new" as a poster when the item described is unspotted and the item described is on-stage. [For debugging purposes]
+
+target-poster is an object that varies.
 
 Figure of poster is the file "Env/MultiFloor/poster1.png".
 Figure of banner is the file "Env/Hotel/banner1.png".
@@ -102,18 +116,21 @@ A poster has an object called old-special. [We can remember one unique special i
 To set up (P - a poster):
 	develop P;
 	distribute P;
-	if P is identifiable and (the player is not the donator or tough-shit is 1) and the number of blank rows in the Table of Published Disgraces > 0:
-		choose a blank row in Table of Published Disgraces;
-		let T be the substituted form of "a high resolution photo - [ShortDesc of P] It ";
-		let TP be the substituted form of "has been posted on [sluttyWebsite]";
-		now the content entry is T;
-		now the published entry is TP;
-		now the severity entry is the lewdness of P / 50;
-		now the popularity entry is 5;
-		now the timestamp entry is earnings;
-		now the lastwitnessed entry is 0;
-		now the deletedtime entry is 0;
-		now the viewsfuzz entry is a random number between -100 and 100.
+	if P is identifiable and (doomed + infamy fetish + tough-shit > 1) and the number of blank rows in the Table of Published Disgraces > 0:
+		publish P;
+
+To publish (P - a poster):
+	choose a blank row in Table of Published Disgraces;
+	let T be the substituted form of "a high resolution [if infamy fetish > 0]photo[otherwise]memory[end if] - [ShortDesc of P] It ";
+	let TP be the substituted form of "[if infamy fetish > 0]has been posted on [sluttyWebsite][otherwise]is waiting in the Outer Rim[end if]";
+	now the content entry is T;
+	now the published entry is TP;
+	now the severity entry is the lewdness of P / 50;
+	now the popularity entry is 5;
+	now the timestamp entry is earnings;
+	now the lastwitnessed entry is 0;
+	now the deletedtime entry is 0;
+	now the viewsfuzz entry is a random number between -100 and 100.
 
 To develop (P - a poster):
 	if the player is presenting as male, now the old-gender of P is 0;
@@ -151,6 +168,9 @@ To develop (P - a poster):
 	if vagina is lewdly exposed or penis is lewdly exposed, now the genitals visible of P is 1;
 	compute special of P;
 	compute unique variables of P.
+
+To say CameraFlashFlav of (P - a poster) by (Y - a camera trap):
+	say "[one of][line break][variable custom style][if the humiliation of the player < HUMILIATION-SHAMELESS - 1000]Oh god, how embarrassing![otherwise]Now everyone will know what I've had happen to me recently.[end if][or][if the bimbo of the player < 14][variable custom style]Again?![otherwise][line break][second custom style]Ooh, I can't wait to see that one![end if][stopping][roman type][line break]".
 
 To decide which text is he of (P - a poster):
 	decide on "[if the old-gender of P is 1]she[otherwise]he[end if]".
@@ -278,6 +298,8 @@ To say PosterCum of (P - a poster):
 	if old-cumbelly of P > 0, say "Your belly is [if old-cumbelly of P > 7]caked[otherwise if old-cumbelly of P > 3]covered[otherwise]splattered[end if] with [semen].";
 	if old-cumthighs of P > 0, say "Your thighs are [if old-cumthighs of P > 7]caked[otherwise if old-cumthighs of P > 3]covered[otherwise]splattered[end if] with [semen].".
 
+Blank-poster is a poster.
+
 Chapter 1 Upskirt Poster
 
 An upskirt poster is a kind of poster. An upskirt poster has a number called upskirt successful.
@@ -362,6 +384,9 @@ To decide which number is the lewdness of (P - an upskirt poster):
 Chapter 2 Shameful Orgasm Poster
 
 A shameful orgasm poster is a kind of poster. A shameful orgasm poster has an object called old-stimulant. A shameful orgasm poster has a number called old-latex-transformation. There are 10 shameful orgasm posters.
+
+To say CameraFlashFlav of (P - a shameful orgasm poster) by (Y - a camera trap):
+	say "It captured the moment as you began orgasming.[one of][line break][variable custom style][if the player is not disgraced]Oh shit. I bet I didn't look very dignified right then.[otherwise]Now everyone will know that I came from my [asshole].[end if][or][if the bimbo of the player < 14][variable custom style]Again?![otherwise][line break][second custom style]I bet that pic looks FILTHY![end if][stopping][roman type][line break]".
 
 To compute unique variables of (P - a shameful orgasm poster):
 	now the old-latex-transformation of P is the latex-transformation of the player;
@@ -530,6 +555,9 @@ To compute title of (P - a masturbation poster):
 			if P is in the hotel, now the title of P is "ORGASM ADDICT";
 			otherwise now the title of P is "There are worse things to be addicted to.".
 
+To say CameraFlashFlav of (P - a masturbation poster) by (Y - a camera trap):
+	say "It was in a perfect position to capture a full shot of your [if the sex addiction of the player < 7]crime[otherwise]orgasm[end if].[one of][line break][variable custom style][if the humiliation of the player < HUMILIATION-SHAMELESS - 3000]Oh shit! This was a bad place to decide to do that...[otherwise]Looks like someone is helping me expose myself.[end if][or][if the bimbo of the player < 14][variable custom style]Again?![otherwise][line break][second custom style]If someone sells that photo, I hope I get royalties![end if][stopping][roman type][line break]";
+
 To compute unique variables of (P - a masturbation poster):
 	now the old-monster of P is a random intelligent monster in the location of the player.
 
@@ -562,6 +590,9 @@ Chapter 4 Wetting Poster
 
 A wetting poster is a kind of poster. A wetting poster has an object called urination-target. A wetting poster has a number called old-humiliation. A wetting poster has a number called old-peereaction. A wetting poster has an object called old-monster.
 There are 10 wetting posters.
+
+To say CameraFlashFlav of (P - a wetting poster) by (Y - a camera trap):
+	say "It was in a perfect position to capture a full shot of you peeing.[one of][line break][variable custom style][if the humiliation of the player < HUMILIATION-SHAMELESS - 1000]Oh no! No no no! Not one of me peeing! Fuck.[otherwise]Now everyone will know what a pervert I am.[end if][or][if the bimbo of the player < 14][variable custom style]Again?![otherwise][line break][second custom style]I bet that pic looks FILTHY![end if][stopping][roman type][line break]";
 
 To compute unique variables of (P - a wetting poster):
 	now the old-humiliation of P is the humiliation of the player;
@@ -686,6 +717,9 @@ An expulsion poster is a kind of poster.
 There are 10 expulsion posters.
 
 An expulsion poster has a number called old-small-eggs. An expulsion poster has a number called old-medium-eggs. An expulsion poster has a number called old-large-eggs. An expulsion poster has a number called old-milk-count. An expulsion poster has a number called old-urine-count. An expulsion poster has a number called old-semen-count. An expulsion poster has a number called old-water-count. An expulsion poster has an object called old-headgear.
+
+To say CameraFlashFlav of (P - an expulsion poster) by (Y - a camera trap):
+	say "It was in a perfect position to capture a full shot of what just happened.[one of][line break][variable custom style][if the humiliation of the player < HUMILIATION-SHAMELESS - 1000]Oh god, how embarrassing![otherwise]Now everyone will know what I've had happen to me recently.[end if][or][if the bimbo of the player < 14][variable custom style]Again?![otherwise][line break][second custom style]Ooh, I can't wait to see that one![end if][stopping][roman type][line break]".
 
 To compute uniquest variables of (P - an expulsion poster): [This has a different name because it is called differently.]
 	now the old-small-eggs of P is small-egg-count;

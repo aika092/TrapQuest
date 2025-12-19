@@ -599,7 +599,7 @@ To say ErectionLostFlav of (M - a demoness):[shouldn't really happen, but maybe 
 To say ErectionNearingClimaxFlav of (M - a demoness):
 	say "[one of][BigFuckerDesc of M]'s eyes glow ominously, [his of M] nails digging into your skin as [he of M] speeds up.[or][BigFuckerDesc of M] growls hungrily as [he of M] rides you harder and harder![or][BigFuckerDesc of M] seems to be speeding up![at random] [one of][big he of M] must be close[or][big he of M] must be close to climax[or][big he of M] must be ready to cum[at random]!";
 
-To say ErectionClimaxFlav of (M - a demoness):
+To say PenileClimaxFlav of (M - a demoness):
 	if M is soul-seeking:
 		say "[BigNameDesc of M] speeds up, [his of M] [if M is presenting as male]hips[otherwise]butt[end if] clapping against your thighs as [his of M] [HoleDesc of M] begins to glow with ominous blue light. Impossibly strong waves of pleasure overwhelm your senses, and you cry out as [if refractoryperiod > 0]your body instantly forgets its refractory period and an[otherwise]a powerful[end if] orgasm boils up from your loins. [big he of M] slams [his of M] hips down in the moment that you cum, cackling madly as you flood [him of M] with every last drop of your [load].[line break][speech style of M]'Wow, did that feel good? I had no clue you would come so hard your soul would come out all by itself. I WAS SURE I'D HAVE TO RIP IT OUT MYSELF! HAHAHA!'[roman type][line break][big he of M] holds up a bright blue gemstone as your softening [player-penis] slips out of [him of M], and as the waves of pleasure slowly begin to fade, a strange feeling of emptiness settles heavily in your chest.";
 		orgasm quietly;
@@ -698,7 +698,7 @@ To compute anal sex of (M - a demoness):
 		decrease the raw difficulty of M by 1.
 
 To decide which number is the rounds of sex left of (M - a demoness):
-	unless M is penetrating asshole, decide on the sex-length of M;
+	unless M is penetrating asshole, decide on the default rounds of sex left of M;
 	if the soreness of asshole < 10:
 		if the excitement of M > 1 and the difficulty of M > 1, decide on 1;[She'll keep going as long as you're interesting enough to torture, and she has enough power]
 	decide on 0.
@@ -795,7 +795,7 @@ The demoness steals soul rule is listed last in the demoness unique punishment r
 
 This is the demoness doesn't care for skinny bitches rule:
 	let M be current-monster;
-	if the thickness of hips < 5 and the bimbo of the player < 9 and a random number between 1 and 3 is 1 and presented-orifice is nothing:
+	if the thickness of hips < 5 and the bimbo of the player < 9 and penis is not an actual target and a random number between 1 and 3 is 1 and presented-orifice is nothing:
 		say "[speech style of M]'You're not even worth my trouble.'[roman type][line break][BigNameDesc of M] loses interest.";
 		alwayscutshow figure of demoness interact 5 for M;
 		bore M;
@@ -833,6 +833,9 @@ This is the demoness monster convinced rule:
 			otherwise:
 				say "[BigNameDesc of M] rolls [his of M] eyes. [line break][speech style of M]'Fine.'[roman type][line break]";
 				now the chosen-orifice of M is presented-orifice;
+		otherwise if presented-orifice is penis and the effective size of penis >= 8 and presented-orifice is a reasonable target:
+			say "[BigNameDesc of M] gazes at your crotch with lust.[line break][speech style of M]'I do enjoy a big one.'[roman type][line break]";
+			now the chosen-orifice of M is presented-orifice;
 		otherwise:
 			say "[BigNameDesc of M] scowls.[line break][speech style of M]'Insolent human, don't you dare try and tell me where I can and can't use you! Your ass is mine!'[roman type][line break]";
 			now the chosen-orifice of M is asshole;
@@ -900,11 +903,11 @@ The demoness too tired to attack rule is listed last in the demoness asshole ins
 This is the demoness attacking ass covering clothing rule:
 	let C be a random worn top level ass protection clothing;
 	if C is clothing:
-		compute current-monster attacking C;
+		compute current-monster bottom attacking C;
 		rule succeeds.
 The demoness attacking ass covering clothing rule is listed last in the demoness asshole insertion rules.
 
-To compute (M - a demoness) attacking (C - a clothing):
+To compute (M - a demoness) bottom attacking (C - a clothing):
 	if C is indestructible:
 		compute SelectionFrustrated of M;
 	otherwise:
@@ -1090,6 +1093,8 @@ To compute (M - a demoness) entering mouth:
 		now the sex-length of M is 3;
 		if M is power-peaked, increase the sex-length of M by 1;
 		now M is penetrating face;
+		now M is penis-mode;
+		check oral virginity loss with M;
 	otherwise:
 		say "[BigNameDesc of M] sees that you are already occupied and loses interest.";
 		distract M.
@@ -2162,19 +2167,6 @@ To compute the busy waiting of (M - abyssal demoness):
 	say "[BigNameDesc of M] seems to be channelling energy into the gem hanging from [his of M] neck. The heavy feeling in the air is getting more[one of][or] and more[stopping] intense.";
 	SilentlyDifficultyUp M by 1;
 	increase creepiness by 3.
-
-[Redundant. Will be deleted soon.
-To compute (M - abyssal demoness) entering anally:
-	now M is heel-mode;
-	if the player is possessing a penis:
-		if there is a worn chastity cage:
-			say "[big he of M] taps your chastity cage with [his of M] foot, laughing as your [sissy-penis] strains in its tight prison. [big he of M] then traces a finger around your [asshole][if the player is possessing a scrotum] and squeezes your balls[end if] as you squirm beneath [him of M].[line break][speech style of M]'[one of]Your [if the player is possessing a scrotum]sissy balls are[otherwise][sissy-penis] is[end if] so fun to crush...'[or]Awww is your [sissy-penis] all locked away? I hope you like anal, because that's all the sex you're getting from now on...'[or]I'm going to spread you out slut, try not to lose your mind.'[stopping][roman type][line break]";
-		otherwise:
-			if the player is possessing a scrotum, say "[big he of M][if the size of penis >= 8] gives your [ShortDesc of penis] a few generous pumps and runs [his of M] fingernails down your lower back.[otherwise] slaps your [AssDesc] and presses one of [his of M] heels into your dangling [sissy-penis] and balls, the long 8 inch heel reminding you of your sexual inadequacy.[end if][roman type][line break][speech style of M]'Get ready to be stretched out by your [literalMistress of M].'[roman type][line break]";
-			otherwise say "[big he of M][if the size of penis >= 8] gives your [ShortDesc of penis] a few generous pumps and runs [his of M] fingernails down your lower back.[otherwise] slaps your [AssDesc] and presses one of [his of M] heels into your dangling [sissy-penis], the long 8 inch heel reminding you of your sexual inadequacy.[end if][roman type][line break][speech style of M]'Get ready to be stretched out by your [literalMistress of M].'[roman type][line break]";
-	say "[BigNameDesc of M] lifts up one of [his of M] feet, on which are [his of M] unique black shoes with [one of]dulled[or]shiny[sticky random] glass dildos for heels. [big he of M] continues cackling and pushes the heel into your [asshole]! As the demoness sinks in, [he of M] curls [his of M] lips into a wicked grin, gritting [his of M] teeth and going wide-eyed. Clearly [he of M] enjoys [himself of M] behind you as a cackle rings out to echo off the walls. Either [he of M] is really pent up or just enjoys ruining the players. Some kind of magic grasp is preventing you from moving.";
-	now M is penetrating asshole;
-	if the soreness of asshole < 10, ruin asshole.]
 
 To say SummoningFlav of (M - abyssal demoness):
 	if M is in the location of the player, say "The air around you grows unbearably cold and hot at the same time, as the mummy's wrappings darken, as if rapidly soaking up water. An [M] comes into view as the old fabric slowly unravels, laughing cruelly as the soggy cloth struggles to reform behind [him of M].";

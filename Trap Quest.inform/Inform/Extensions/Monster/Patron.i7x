@@ -723,11 +723,11 @@ To compute DQ perception of (M - a patron):
 		if there is worn perceived unmessed knickers, compute state check of a random worn messed knickers;
 	otherwise:
 		say "[speech style of M]'[one of]I assume that this is the right room, and you are the adult baby slave for hire, yes? Good.'[or][daddytitle of M]'s home, honey! Are you ready to play?'[stopping][roman type][line break]";
-	compute enticing of M.
+	compute enticing of M with predetermined part false.
 
 To compute internet assessment of (M - a patron):
 	let PD be the public disgrace of the player;
-	if PD > a random number between 0 and (350 * the favour of M):
+	if infamy fetish > 0  and PD > a random number between 0 and (350 * the favour of M):
 		choose a random row in the Table of Published Disgraces;
 		let T be the published entry;
 		let W be "";
@@ -2175,7 +2175,7 @@ To watersports dominate (M - a patron):[no chance of backfiring]
 To ride dominate (M - an inexperienced patron):
 	let F be player-fucker;
 	let Ofit be the openness of F - the girth of M;
-	say "You shove [NameDesc of M] onto the bed, looking [NameDesc of M] dead in the eye as you sit down in [his of M] lap.[line break][speech style of M]'Y-you're a dominatrix?! B-but I didn't pay for this!'[roman type][line break][big he of M] looks so intimidated that you can't help but torture [him of M] a little. You [if the player is wrist bound]lean against [him of M], [otherwise]throw your arms around [his of M] shoulders, [end if]intentionally teasing [him of M] with the prospect of penetration as you grind your [if F is vagina]naked [vagina] on[otherwise]bare asscheeks against[end if] [his of M] throbbing [DickDesc of M]. [big he of M] seems to overcome [his of M] shock enough to get frustrated, and [he of M] growls angrily as [he of M] grabs your waist.[run paragraph on]";
+	say "You shove [NameDesc of M] onto the bed, looking [NameDesc of M] dead in the eye as you sit down in [his of M] lap.[line break][speech style of M]'Y-you're a dominatrix?! B-but I didn't pay for this!'[roman type][line break][big he of M] looks so intimidated that you can't help but torture [him of M] a little. You [if the player is wrist bound]lean against [him of M], [otherwise]throw your arms around [his of M] shoulders, [end if]intentionally teasing [him of M] with the prospect of penetration as you grind your [if F is vagina]naked [vagina] on[otherwise]bare asscheeks against[end if] [his of M] throbbing [DickDesc of M]. [big he of M] seems to overcome [his of M] shock enough to get frustrated, and [he of M] growls angrily as [he of M] grabs your waist. [run paragraph on]";
 	let R be the semi-dominance roll for M;
 	now M is penetrating F;
 	if R >= 0:[player wins]
@@ -2230,7 +2230,7 @@ To ride dominate (M - an experienced patron):
 To ride dominate (M - a gross patron):
 	let F be player-fucker;
 	let Ofit be the openness of F - the girth of M;
-	say "You push [NameDesc of M] down onto the bed, resting [if the player is wrist bound]against[otherwise]a hand on[end if] [his of M] belly for support as you [if Ofit > 1]slip[otherwise if Ofit > -2]push[otherwise]ease[end if] [his of M] [DickDesc of M] into your [variable F]. [big he of M]'s submits eagerly, leaving you all the time in the world to focus on bringing yourself to a really satisfying orgasm. Unfortunately, nice and slow is too fast for [him of M], and you have to keep stopping and starting to make sure [he of M] doesn't cum too early. [BigNameDesc of M] starts getting pissed off after the fifth time, and just when you think you'll be able to ride [him of M] to the finish line, [he of M] violently shifts [his of M] weight![run paragraph on]";
+	say "You push [NameDesc of M] down onto the bed, resting [if the player is wrist bound]against[otherwise]a hand on[end if] [his of M] belly for support as you [if Ofit > 1]slip[otherwise if Ofit > -2]push[otherwise]ease[end if] [his of M] [DickDesc of M] into your [variable F]. [big he of M]'s submits eagerly, leaving you all the time in the world to focus on bringing yourself to a really satisfying orgasm. Unfortunately, nice and slow is too fast for [him of M], and you have to keep stopping and starting to make sure [he of M] doesn't cum too early. [BigNameDesc of M] starts getting pissed off after the fifth time, and just when you think you'll be able to ride [him of M] to the finish line, [he of M] violently shifts [his of M] weight! [run paragraph on]";
 	let R be the semi-dominance roll for M;
 	now M is penetrating F;
 	if R >= 0:

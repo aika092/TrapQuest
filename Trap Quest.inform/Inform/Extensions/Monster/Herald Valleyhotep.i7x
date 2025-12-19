@@ -7,7 +7,7 @@ Definition: herald is summoningRelevant: decide no. [Doesn't count towards the n
 Understand "Valleyhotep", "herald" as herald. The text-shortcut of herald is "vht".
 
 To say Azathot:
-	say "[if diaper quest is 0]Azathot[otherwise]Nannythoth[end if]".
+	say GodName of elder altar.
 
 Figure of herald is the file "NPCs/Mansion/herald1.jpg".
 
@@ -80,6 +80,15 @@ This is the herald's power attack rule:
 		FatigueUp a random number between the difficulty of M and the buckle threshold of the player / 5;
 		stimulate vagina from M.
 The herald's power attack rule is listed in the herald attack rules.
+
+This is the herald's portal attack rule:
+	let M be current-monster;
+	if the number of nonstalking mini-portal > 0:
+		say "[speech style of M]'This will let us keep an eye on you...'[roman type][line break]";
+		deploy eldritch portal;
+		satisfy M;
+	rule succeeds.
+The herald's portal attack rule is listed in the herald attack rules.
 
 This is the herald's blessing attack rule:
 	let M be current-monster;

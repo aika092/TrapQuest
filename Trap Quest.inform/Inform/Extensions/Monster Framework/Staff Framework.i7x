@@ -16,7 +16,7 @@ To compute monstermotion of (M - a staff member):
 	if playerRegion is not school and M is undefeated:
 		say "BUG: [BigNameDesc of M] has followed the player out of the school. Please report along with a description of what recently happened. Region: [playerRegion]; Location: [location of M]; Player location: [location of the player].";
 		now M is in School01;
-	otherwise if a random number between 1 and 4 < the number of staff member in the location of the player or (the player is at least partially immobile and (a random number between 1 and 2 is 1 or there is a teacher in the location of the player)):
+	otherwise if a random number between 0 and 4 < the number of staff member in the location of the player or (the player is at least partially immobile and (a random number between 1 and 2 is 1 or there is a teacher in the location of the player)):
 		compute room leaving of M.
 
 [Definition: a staff member is messy:
@@ -170,7 +170,9 @@ To reset staff boredom: [when the player attacks a student, staff members should
 		check perception of M.
 
 To compute (M - a staff member) protecting against (X - a monster):
-	if the health of X < the maxhealth of X or X is wrangling a body part:
+	if X is not intelligent:
+		say "[BigNameDesc of M] watches[one of], arms folded[or] neutrally[or] and nods[or] casually[at random].";
+	otherwise if the health of X < the maxhealth of X or X is wrangling a body part:
 		say "[speech style of M]'[if X is staff member]Another rebellion?!'[otherwise]NO FIGHTING! BOTH OF YOU ON THE GROUND!'[end if][roman type][line break][BigNameDesc of M] turns aggressive.";
 		anger M;
 	otherwise:
@@ -310,10 +312,23 @@ Definition: a teacher is motionless-when-defeated: decide no.
 Definition: a teacher is a generic-unlocker: decide yes.
 
 A sapphire-teacher is a kind of teacher. Understand "sapphire" as a sapphire-teacher.
+To decide which object is the default-local-room of (M - a sapphire-teacher):
+	decide on School14.
 An emerald-teacher is a kind of teacher. Understand "emerald" as an emerald-teacher.
+To decide which object is the default-local-room of (M - an emerald-teacher):
+	decide on School18.
 A ruby-teacher is a kind of teacher. Understand "ruby" as a ruby-teacher.
+To decide which object is the default-local-room of (M - a ruby-teacher):
+	if the rank of the player >= 3, decide on School29;
+	otherwise decide on School05.
 A pink-diamond-teacher is a kind of teacher. Understand "pink", "diamond" as a pink-diamond-teacher.
+To decide which object is the default-local-room of (M - a pink-diamond-teacher):
+	if the rank of the player >= 3, decide on School30;
+	otherwise decide on School03.
 A diamond-teacher is a kind of teacher. [Understand "diamond" as a diamond-teacher.]
+To decide which object is the default-local-room of (M - a diamond-teacher):
+	if the rank of the player >= 5, decide on School27;
+	otherwise decide on School02.
 
 To say NameDesc of (M - a teacher):
 	say "[input-style][teacher-name of M][roman type]".
@@ -516,6 +531,9 @@ To compute potential lesson:
 					set numerical response 0 to "randomise normally";
 					compute multiple choice question;
 					if player-numerical-response is not 0, now chosen-lesson is entry player-numerical-response in LL;
+		if hallway-fight-event is event-started:
+			now hallway-fight-event is event-ended;
+			releash students;
 		if class-time < (lessonFrequency * -4): [arrived too late for class]
 			compute detention of lesson-teacher of chosen-lesson;
 			now class-time is -1;
@@ -1187,6 +1205,7 @@ To execute (A - drink-assembly):
 
 disgrace-assembly is a generic-assembly.
 Definition: disgrace-assembly is eligible:
+	if infamy fetish is 0, decide no;
 	repeat with N running from 1 to the number of filled rows in the Table of Published Disgraces:
 		choose row N in the Table of Published Disgraces;
 		if the lastwitnessed entry is 0, decide yes;
@@ -1446,8 +1465,8 @@ The detention orgasm announcement rule is listed last in the orgasm resolution r
 To compute detention internet publish:
 	if the number of blank rows in the Table of Published Disgraces > 0:
 		choose a blank row in Table of Published Disgraces;
-		now the content entry is the substituted form of "a high quality video of you sat on a chair with a wand vibrator, announcing that you are orgasming during detention,";
-		now the published entry is the substituted form of "has been posted on the website disciplinedundergrads.xxx";
+		now the content entry is the substituted form of "a high quality [video] of you sat on a chair with a wand vibrator, announcing that you are orgasming during detention,";
+		now the published entry is the substituted form of "has been [if infamy fetish > 0]posted on the website disciplinedundergrads.xxx[otherwise]sent to the Outer Rim[end if]";
 		now the severity entry is 3;
 		now the popularity entry is 4;
 		now the timestamp entry is earnings;
@@ -1605,7 +1624,7 @@ To compute event handling of (E - an academy-event):
 
 To compute event failure punishment of (E - an academy-event):
 	let M be the event-failure-punisher of E;
-	if M is not regional, now M is a random regional staff member;
+	if M is nonregional, now M is a random regional staff member;
 	if M is a monster:
 		now M is in the location of the player;
 		interest M;
@@ -1620,6 +1639,18 @@ To say EventFailureFlav of (E - an academy-event):
 To say AcademyEventDesc of (E - an academy-event):
 	say "You were given an important task in the Academy region.".
 
+To school event wait place (X - a monster):
+	let LR be a list of rooms;
+	unless the player is in School23 or the rank of the player < the entry-rank of School23, add School23 to LR;
+	unless the player is in School04 or the player is in School08 or the rank of the player < the entry-rank of School08, add School08 to LR;
+	unless the player is in School03 or the player is in School09 or the rank of the player < the entry-rank of School09, add School09 to LR;
+	unless the player is in School11 or the player is in School12 or the rank of the player < the entry-rank of School12, add School12 to LR;
+	unless the player is in School24 or the player is in School26 or the rank of the player < the entry-rank of School26, add School26 to LR;
+	unless the player is in School15 or the player is in School25 or the player is in School28 or the rank of the player < the entry-rank of School28, add School28 to LR;
+	unless the player is in School01 or the player is in School02 or the player is in School17 or the rank of the player < the entry-rank of School17, add School17 to LR;
+	sort LR in random order;
+	let LRR be entry 1 in LR;
+	now X is in LRR.
 
 idol-delivery-event is an academy-event.
 
@@ -1726,9 +1757,7 @@ To compute event start of (E - wand-delivery-event):
 			while failsafe > 0 and X is in the location of the player:
 				now X is a random regional staff member;
 				decrease failsafe by 1;
-			unless the player is in School23 or the rank of the player < 2, now X is in School23;
-			unless the player is in School04 or the player is in School08 or a random number between 1 and 2 is 1, now X is in School08;
-			if (the rank of the player < 2 and X is not in School08) or (the player is not in School12 and the player is not in School11 and a random number between 1 and 3 is 1), now X is in School12;
+			school event wait place X;
 			say "[speech style of M]'[NameBimbo], would you be a darling and take this wand to [NameDesc of X] [speech style of M]for me please?'[roman type][line break][BigNameDesc of M] holds out a sparking wand vibrator towards you.[paragraph break]Agree to the task?";
 			now temporaryYesNoBackground is the examine-image of glittery-wand;
 			if the player is bimbo consenting:
@@ -1793,9 +1822,7 @@ To compute event start of (E - cookie-delivery-event):
 			while failsafe > 0 and X is in the location of the player:
 				now X is a random unleashed male regional teacher;
 				decrease failsafe by 1;
-			unless the player is in School23 or the rank of the player < 2, now X is in School23;
-			unless the player is in School04 or the player is in School08 or a random number between 1 and 2 is 1, now X is in School08;
-			if (the rank of the player < 2 and X is not in School08) or (the player is not in School12 and the player is not in School11 and a random number between 1 and 3 is 1), now X is in School12;
+			school event wait place X;
 			now the quality of cookie is -3;
 			now the fat of cookie is 3;
 			say "[speech style of M]'[NameBimbo], would you be a darling and take this special birthday snack to [NameDesc of X] [speech style of M]for me please?'[roman type][line break][BigNameDesc of M] holds out a lewd towards you.[paragraph break]Agree to the task?";
@@ -1812,6 +1839,7 @@ To compute event start of (E - cookie-delivery-event):
 				now E is event-ended;
 		otherwise:
 			now E is event-ended.
+
 
 To compute event handling of (E - cookie-delivery-event):
 	let M be the the event-failure-punisher of E;
@@ -2015,7 +2043,7 @@ To say AcademyEventDesc of (E - portal-down-event):
 	say "[if the event-failure-punisher of E is in the location of the player]I've been waiting for my wand forever[otherwise]Weren't you supposed to deliver a wand by now?! Where have you been[end if]".]
 
 Definition: portal-down-event is eligible:
-	if receptionist is alive and receptionist is in School01 and the player is in School01 and the rank of the player >= 3 and there is a carried vessel, decide yes;
+	if diaper quest is 0 and receptionist is alive and receptionist is in School01 and the player is in School01 and the rank of the player >= 3 and there is a carried vessel, decide yes;
 	decide no.
 
 To compute event start of (ESV - portal-down-event):
@@ -2209,16 +2237,16 @@ To MonsterHeal (M - a student) by (N - a number):
 
 Book - Ultimate Lesson Actor Renamed Unseen Stranger
 
-An unseen-stranger is a kind of monster. An unseen-stranger is male. There are 4 unseen-strangers. The text-shortcut of an unseen-stranger is "voi". Understand "manly", "womanly", "voice" as unseen-stranger.
+An unseen-stranger is a kind of monster. An unseen-stranger is male. There are 4 unseen-strangers. The text-shortcut of an unseen-stranger is "voi". Understand ["manly", "womanly", "voice",] "unseen", "stranger" as unseen-stranger.
 An unseen-stranger has a text called the specific-man-title.
 An unseen-stranger has a figure-name called the specific-man-image. The specific-man-image of unseen-stranger is figure of small image.
 Definition: an unseen-stranger is specific-man:
 	if current-predicament is porno-predicament and the player is in Predicament01, decide yes;
 	decide no.
 To say ShortDesc of (M - an unseen-stranger):
-	say "[if M is specific-man][man of M][otherwise]voice[end if]".
+	say "[if M is specific-man][man of M][otherwise]unseen stranger[end if]".
 To say MediumDesc of (M - an unseen-stranger):
-	say "[if M is specific-man][specific-man-title of M] [man of M][otherwise][man of M]ly voice[end if]".
+	say "[if M is specific-man][specific-man-title of M] [man of M][otherwise]unseen stranger[end if]".
 To say FuckerDesc of (M - an unseen-stranger):
 	say "the [if M is specific-man][MediumDesc of M][otherwise][FuckingDesc of M][end if]".
 To say BigFuckerDesc of (M - an unseen-stranger):

@@ -109,7 +109,7 @@ Check entering podium:
 			if diaper quest is 1:
 				let P be a random pink pacifier;
 				let N be a random off-stage rubber mittens;
-				let D be a random eligible diaper;
+				let D be the chosen trap diaper;
 				if P is actually summonable, summon P cursed with quest;
 				if N is actually summonable, summon N cursed with quest;
 				if there is a worn diaper:

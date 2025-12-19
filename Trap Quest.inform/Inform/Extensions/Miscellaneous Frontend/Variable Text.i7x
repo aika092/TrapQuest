@@ -116,6 +116,14 @@ To say bitch:
 	if diaper quest is 1, say "[if the diaper addiction of the player < 8]meanie[otherwise if the diaper addiction of the player < 14]dumbo[otherwise]stupid-head[end if]";
 	otherwise say "[one of]bitch[or][cunt][as decreasingly likely outcomes]".
 
+To say video:
+	if infamy fetish is 1, say "video";
+	otherwise say "memory";
+
+To say randomGod:
+	let A be a random altar;
+	say "[GodName of A] the [GodTitle of A]";
+
 [!<SayFucker>+
 
 Something the player says to NPCs they're unhappy with
@@ -127,6 +135,15 @@ To say fucker of (M - a monster):
 
 To say beautiful:
 	say "[one of]rockin['][or]stylingbitchin['][or]beautiful[or]amazing[or]fucking hot[or]fucking sexy[at random]".
+
+To say says (M - a person) wryly:
+	say "[one of][BigNameDesc of M] says[or]says [NameDesc of M][as decreasingly likely outcomes][one of] [one of]with a wry grin[or]wryly[as decreasingly likely outcomes][or] [one of]with a smug smile[or]smugly[as decreasingly likely outcomes][or], grinning[at random].".
+
+To say says (M - a person) thoughtfully:
+	say "[one of][BigNameDesc of M] says[or]says [NameDesc of M][as decreasingly likely outcomes] [one of]thoughtfully[or]wistfully[or]to [himself of M][at random].".
+
+To say says (M - a person) sternly:
+	say "[one of][BigNameDesc of M] says[or]says [NameDesc of M][as decreasingly likely outcomes] [one of]sternly[or]severely[or]gravely[at random].".
 
 [!<SayGenitals>+
 
@@ -482,11 +499,11 @@ Specific method of referring to a monster "M"'s penis. Should only be used every
 +!]
 To say LongDickDesc of (M - a monster):
 	if full-lady fetish is 1:
-		say "strap-on dildo";
+		say "[girth of M] inch strap-on dildo";
 	otherwise if M is fairy:
 		say "tiny, locked-away penis";
 	otherwise: [There's no 'if lady fetish is 2' case here since full-lady fetish is 1 means that lady fetish is 1 and futanari fetish is 0.]
-		say "hard [manly-penis]".
+		say "[girth of M] inch [manly-penis]".
 
 To say HoleDesc of (M - a monster):
 	if M is presenting as male, say "asshole";
@@ -561,6 +578,12 @@ To say honey of (M - a person):
 		say "snowflake";
 	otherwise:
 		say "[one of]honey[or]dear[or]sunshine[or]darling[or]cutie[or]cupcake[or]sweetums[or]sweetheart[or]snowflake[or]squirt[at random]".
+
+To say loser of (M - a person):
+	say "[one of]loser[or]wimp[or][if the player is not possessing a vagina and transGender is 0]sissy[otherwise][slut][end if][or][YouDumbBitch of M][at random]".
+
+To say YouDumbBitch of (M - a person):
+	say "[one of]you[or]my[purely at random] [one of]pathetic[or]dumb[or]stupid[at random] little [if the player is not possessing a vagina and transGender is 0]sissy [end if][one of][boy of the player][or]slut[or][if diaper lover > 0]baby[otherwise]bitch[end if][at random]".
 
 To say child of (M - a monster):
 	if the class of the player is santa's little helper:

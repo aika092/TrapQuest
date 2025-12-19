@@ -66,7 +66,7 @@ To compute unique periodic effect of (M - kitsune):
 	if R is the location of the player and R is the room south from Dungeon41:
 		let S be shopkeeper;
 		let C be a random clothing in Dungeon41;
-		if C is clothing and the owner of C is S and the times-met of S > 0 and the location of S is Dungeon41:[`owner of C of S` is very important]
+		if C is clothing and the owner of C is S and the times-met of S > 0 and the location of S is Dungeon41 and S is not dangerous:[`owner of C of S` is very important]
 			compute dungeon prank of M;
 	otherwise if R is the location of the player and R is a jungle room:
 		let A be the location of woods altar;
@@ -119,7 +119,7 @@ To compute dungeon prank of (M - kitsune):
 		otherwise:
 			say "You allow [NameDesc of M] to run right past you.";
 	if S is in the location of M:
-		say "[BigNameDesc of M] runs up to [NameDesc of S] and presses the [ShortDesc of C] into [his of M] hands.[line break][speech style of M]'That [boy of the player] s-stole my face, but I stole this b-b-back!'[roman type][line break][speech style of S]'It's alright. I'm not falling for this little thief's tricks.'[roman type][line break][big he of M] snaps a pair of handcuffs around [NameDesc of M]'s wrists.[line break][speech style of S]'Nice job catching [him of M]! I'll remember this!'[roman type][line break][speech style of M]'Crap...'[roman type][line break]";
+		say "[BigNameDesc of M] runs up to [NameDesc of S] and presses the [ShortDesc of C] into [his of M] hands.[line break][speech style of M]'That [boy of the player] s-stole my face, but I stole this b-b-back!'[roman type][line break][speech style of S]'It's alright. I'm not falling for this little thief's tricks.'[roman type][line break][big he of S] snaps a pair of handcuffs around [NameDesc of M]'s wrists.[line break][speech style of S]'Nice job catching [him of M]! I'll remember this!'[roman type][line break][speech style of M]'Crap...'[roman type][line break]";
 		Calm S;
 		FavourUp S;
 	otherwise:
@@ -383,10 +383,10 @@ To say AdviceAnswer of (M - kitsune):
 Part 4 - Trading
 
 To decide which number is the bartering value of (T - a thing) for (M - kitsune):
-	if T is plentiful accessory and M is intelligent, decide on the price of T / 2;
+	if T is plentiful accessory, decide on the price of T;
 	if T is a mystical amulet, decide on 20;
 	if T is gem-strapon, decide on 15;
-	if T is gem themed, decide on 2;
+	if T is gem themed, decide on 3;
 	decide on 0.
 
 To say MonsterOfferRejectFlav of (M - kitsune) to (T - a thing):

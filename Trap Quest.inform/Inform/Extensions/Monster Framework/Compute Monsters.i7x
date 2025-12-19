@@ -2,7 +2,7 @@ Compute Monsters by Monster Framework begins here.
 
 [We only compute monsters in the region of the player, to reduce the lag in between turns.]
 Definition: a monster is simulated:
-	if the player is in a predicament room and the player is not in Predicament20:
+	if the player is in a predicament room and the player is not in Predicament19: [when the player is in the room before the final room, we simulate NPCs to move them around a tiny bit; this will likely only be for 1 turn. Whereas if we did it in the final room, Predicament20, it would probably be several turns of lag]
 		if it is in a predicament room, decide yes;
 		decide no;
 	otherwise:
@@ -35,8 +35,11 @@ To compute monsters:
 			otherwise compute turn 1 of M; [This is a full monster turn.]
 	now shocked-monsters is 0;
 	now aroused-monsters is 0;
-	repeat with M running through alive dying monsters:
-		finally destroy M.
+	repeat with M running through monsters:
+		if M is dying alive monster, finally destroy M;
+		if M is not alive and academy-toilet-key is held by M:
+			if headmistress is alive, now academy-toilet-key is held by headmistress;
+			otherwise now academy-toilet-key is in School08.
 
 To compute turn (N - a number) of (M - a monster):
 	unless M is student and current-predicament is joint-fuckhole-predicament and M is in Predicament01:

@@ -256,17 +256,50 @@ To compute (C - a clothing) inheriting from (D - a clothing):
 To compute (C - a clothing) unique inheriting from (D - a clothing):
 	do nothing.
 
+
+transformation-cutscene is initially true.
+
+To quietly transform (D - a clothing) into (C - a clothing): [no full examine which pushes an image to the map window]
+	now transformation-cutscene is false;
+	transform D into C;
+	now transformation-cutscene is true.
+
 To transform (D - a clothing) into (C - a clothing):
 	say "[bold type]Your [ShortDesc of D] transforms into ";
 	silently transform D into C;
 	say "a [C][bold type][unless D is headgear or the player is in a blindroom] in front of your eyes[end if]![roman type][line break]";
-	if transformation cutscenes is 1:
+	if transformation cutscenes is 1 and transformation-cutscene is true:
 		say FullExamineDesc of C;
+		focus-consider C;
 	otherwise:
 		say ThemeDesc of C;
 		say InfluenceDesc of C;
 	say TransformReaction of C;
 	compute post transformation effect of C.
+
+To say TransformExamineDesc of (C - a thing):
+	say BoldFullTitle of C;
+	say TransformImageDesc of C;
+	say ExamineDesc of C;
+	say ThemeDesc of C;
+	if C is currently-not-in-bag and (the outrage of C > 0 or (diaper quest is 1 and the cringe of C > 0)), say HeldOutrageDesc of C;
+	if C is worn wearthing, say InfluenceDesc of C;
+	say ExtraDesc of C.
+
+To say TransformImageDesc of (C - a thing):
+	if image cutscenes > 0:
+		if the graphics-window is g-present: [We're not going to display in the main window. So instead let's display a zoomed in version in the map window.]
+			update background colour of C;
+			MapShow C;
+			if seconds is 0, display entire map; [This isn't going to happen automatically because time hasn't moved forward. So we prompt it ourselves.]
+			otherwise now map-turn-stall is 1; [If we didn't do this, the temporary-map-figure would be reset before it has a chance to be shown properly, when the time progression is calculated (towards the bottom of "to run the engine once" in Compute Turn.i7x.]
+		otherwise:
+			let F be the transform-image of C;
+			if previous-temporary-image of C is not figure of no-image-yet, now F is previous-temporary-image of C;
+			if images visible is 1, display F.
+
+To decide which figure-name is the transform-image of (C - a thing):
+	decide on the examine-image of C.
 
 To say TransformReaction of (C - a clothing): [We make the assumption it's worse. We just need to assess how bad the damage is.]
 	if diaper quest is 1 and C is too cringeworthy and the cringe of C >= the outrage of C: [TODO new text that's different from skimpy humiliation]
@@ -332,7 +365,7 @@ To silently transform (D - a clothing) into (C - a clothing):
 	if the quest of C is not appropriate, compute quest of C.
 
 To compute post transformation effect of (C - a clothing):
-	if C is not cursed and C is blandness and the player is getting very unlucky:
+	if C is not cursed and C is blandness and C is cursable and the player is getting very unlucky:
 		now C is strength stealing;
 		say "[BigNameDesc of C] has gained a new magical effect... You can sense that it is now [']strength stealing['], and will take some of your strength away if you remove it normally. [GotUnluckyFlav]".
 
@@ -380,7 +413,10 @@ To decide which number is the disintegrate-resistance of (C - a heels):
 To compute failed transform of (C - a clothing):
 	increase the transform-attempts of C by 1;
 	if the transform-attempts of C > the disintegrate-resistance of C + ((the used condoms of C + the empty condoms of C) * 2) + the transform-resistance of C:
-		if C is cursed and C is removable:
+		if C is pink-latex-bodysuit and C is blandness and latest-berri-stage is 6 and there is a worn diaper:
+			now C is audible squelches;
+			say "Instead, it has gained a new magical effect... You can sense that it is now [']audible squelches['], and is going amplify any wet squelching sounds your diapers make a hundredfold![line break][variable custom style]Oh dear...[roman type][line break]";
+		otherwise if C is cursed and C is removable:
 			say "[bold type]The [C] [bold type]seems to resist being transformed once again, but its curse prevents it from being destroyed. [roman type]";
 			if C is dressup or C is audible jiggles or C is audible squelches or C is desperation or C is waddle-walking or C is draining:
 				say line break;

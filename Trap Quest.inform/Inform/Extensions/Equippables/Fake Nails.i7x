@@ -64,7 +64,7 @@ This is the fake nails prevent hand use rule:
 The fake nails prevent hand use rule is listed in the manual dexterity restriction rules.
 
 This is the player can't slap with delicate nails rule:
-	if fake-nails is worn and fake-nails is not blessed and the number of worn slap ready clothing is 0:
+	if fake-nails is worn and fake-nails is not blessed and attack-type is not 5 and the number of worn slap ready clothing is 0:
 		if autoattack is 0, say "[variable custom style]I can't do that without risking breaking a nail![roman type][line break]";
 		rule fails.
 The player can't slap with delicate nails rule is listed in the ability to slap rules.

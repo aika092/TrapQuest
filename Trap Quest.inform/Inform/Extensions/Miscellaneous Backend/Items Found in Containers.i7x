@@ -150,37 +150,44 @@ To compute generic treasure to (X - a thing):
 			compute autotaking T;
 			now last-turn-nothing is 0;
 		otherwise:
-			increase last-turn-nothing by 1;
-			say "[if the bimbo of the player < 5][one of]Hmm, this one's empty.[or]Unfortunately it's empty.[or]Ugh, another empty one.[then at random][otherwise][one of]Oh no, it's empty. Boo![or]Lame, there's nothing inside![or]Aww, it's completely empty.[or]How boring, there's nothing here![in random order][end if]";
+			compute empty chest;
 	otherwise:
 		if debugmode > 1, say "Item list: [Standard Item Pen].";
 		let I be entry 1 in Standard Item Pen;
-		let itemAcceptable be 0;
-		let itemsConsidered be 0;
-		while itemAcceptable is 0 and itemsConsidered < 25:
-			if debugmode > 0, say "Chose [printed name of I].";
-			if I is not containerAvailable or (itemsConsidered is 0 and I is not containerOptimal):
-				if debugmode > 0, say "It was not [if I is containerAvailable]considered a great choice[otherwise]available for spawning[end if], so we will remove it from the list and try again.";
-				restock I;
-				sort Standard Item Pen in random order;
-				now I is entry 1 in Standard Item Pen;
-				increase itemsConsidered by 1;
-			otherwise:
-				now itemAcceptable is 1;
-		if itemsConsidered >= 25:
-			say "Bug: we've been unable to find an item to spawn. Please report the bug with this information:[line break]";
-			repeat with SIP running through Standard Item Pen:
-				say "[SIP] ([location of SIP]); ";
-		if I is a bra, compute found size of I;
-		now I is in X;
-		if X is ornate trunk and I is clothing:
-			if I is not accessory and (I is not chestless or I is belly covering or I is not no-crotch or I is not unskirted) and a random number between 1 and 3 is 1, now the magic-type of I is possession;
-		restock I;
-		if I is food and (a random number between 1 and the fat-weight of the player > 15 or the player is hungry) and the player is not overly full and the player is able to eat:
-			compute automatic eating of I;
+		if the class of the player is berri and (I is dress or I is skirt or I is trousers or I is knickers or I is corset or I is bra):
+			compute empty chest;
+			sort Standard Item Pen in random order; [so it might not be the same next time]
 		otherwise:
-			say Discovery of I;
-		compute autotaking I.
+			let itemAcceptable be 0;
+			let itemsConsidered be 0;
+			while itemAcceptable is 0 and itemsConsidered < 50:
+				if debugmode > 0, say "Chose [printed name of I].";
+				if I is not containerAvailable or (itemsConsidered is 0 and I is not containerOptimal):
+					if debugmode > 0, say "It was not [if I is containerAvailable]considered a great choice[otherwise]available for spawning[end if], so we will remove it from the list and try again.";
+					restock I;
+					sort Standard Item Pen in random order;
+					now I is entry 1 in Standard Item Pen;
+					increase itemsConsidered by 1;
+				otherwise:
+					now itemAcceptable is 1;
+			if itemsConsidered >= 50:
+				say "Bug: we've been unable to find an item to spawn. Please report the bug with this information:[line break]";
+				repeat with SIP running through Standard Item Pen:
+					say "[SIP] ([location of SIP]); ";
+			if I is a bra, compute found size of I;
+			now I is in X;
+			if X is ornate trunk and I is clothing:
+				if I is not accessory and (I is not chestless or I is belly covering or I is not no-crotch or I is not unskirted) and a random number between 1 and 3 is 1, now the magic-type of I is possession;
+			restock I;
+			if I is food and (a random number between 1 and the fat-weight of the player > 15 or the player is hungry) and the player is not overly full and the player is able to eat:
+				compute automatic eating of I;
+			otherwise:
+				say Discovery of I;
+			compute autotaking I.
+
+To compute empty chest:
+	increase last-turn-nothing by 1;
+	say "[if the bimbo of the player < 5][one of]Hmm, this one's empty.[or]Unfortunately it's empty.[or]Ugh, another empty one.[then at random][otherwise][one of]Oh no, it's empty. Boo![or]Lame, there's nothing inside![or]Aww, it's completely empty.[or]How boring, there's nothing here![in random order][end if]".
 
 autotake-target is a thing that varies.
 
@@ -214,9 +221,10 @@ This is the autotaking continues rule:
 					try wearing I;
 				if I is worn:
 					do nothing;
-				otherwise if I is autobinding clothing and the player is not in a predicament room and I is unclash summonable:
+				otherwise if (I is autobinding clothing or I is spookiness clothing) and the player is not in a predicament room and I is unclash summonable:
 					say "[bold type]Suddenly, [NameDesc of I] disappears from your hands![roman type][line break]";
-					autobind I;
+					if I is spookiness, spookify I;
+					otherwise autobind I;
 				otherwise:
 					if I is not never-in-bag, say "You add the [FullTitle of I] to your bag.";
 					otherwise say "You are now carrying the [FullTitle of I].";

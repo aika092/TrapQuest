@@ -1,6 +1,6 @@
 Summoning Portals by Objects begins here.
 
-A summoning portal is a kind of thing. A summoning portal is not portable. The text-shortcut of summoning portal is "spo". A summoning portal can be active. A summoning portal has a number called charge. The charge of a summoning portal is usually 450. [represents the time until it spawns the next monster]
+A summoning portal is a kind of thing. A summoning portal is not portable. The text-shortcut of summoning portal is "spo". A summoning portal can be active. A summoning portal is usually not active. A summoning portal has a number called charge. The charge of a summoning portal is usually 450. [represents the time until it spawns the next monster]
 
 Definition: a summoning portal is immune to change: decide yes.
 

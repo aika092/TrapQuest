@@ -86,16 +86,13 @@ To compute perception of (M - a robobutler):
 		say "[big his of M] eyes turn red and [he of M] spins towards you.[line break][speech style of M]'EMPTY STOMACH DETECTED. COMPULSORY FEEDING PROGRAM INITIATED.'[roman type][line break]";
 		anger M;
 		now the planned-punishment of M is 1;
-	otherwise if there is a nonstalking wisp:
+	otherwise if there is a nonstalking evil-wisp:
 		say "[big his of M] eyes turn purple and [he of M] spins towards you.[line break][first custom style]'LOW TIPPING CUSTOMER DETECTED. DID YOU KNOW YOU CAN EARN VALUABLES BY SERVING OTHER GUESTS? [caps please] REFRAIN FROM SPEAKING UNTIL YOU HAVE COMPLETED YOUR NEW QUEST OBJECTIVE.'[roman type][line break]";
-		let W be a random nonstalking wisp;
-		silently set up W;
-		now the wisp-quest of W is brothel-wisp-quest;
-		now the wisp-trigger of W is speak-wisp-trigger;
-		now the wisp-punishment of W is bimbo-wisp-punishment;
-		if (a random number between 0 and 1) + (a random number between 0 and 1) < game difficulty, now the wisp-punishment of W is a random appropriate wisp punishment;
-		update background colour of W;
-		say "[bold type]A [ColourDesc of W] curse wisp appears, and begins hovering behind you! [roman type]You can sense that you must [bold type][wisp-quest of W][roman type] before you next [bold type][wisp-trigger of W][roman type], or else you will [bold type][wisp-punishment of W][roman type].";
+		let W be a random nonstalking evil-wisp;
+		silently set up wisp quest brothel-wisp-quest for W;
+		silently set up wisp trigger speak-wisp-trigger for W;
+		silently set up wisp GUI for W;
+		say AnnounceNewWisp W;
 		bore M;
 	otherwise:
 		say "[big he of M] glides towards you, bowing deeply as [he of M] addresses you in a monotone.[line break][speech style of M]'IT IS CUSTOMARY TO TIP THE SERVICE STAFF, MA[']AM.'[roman type][line break]";
@@ -289,7 +286,7 @@ To compute forced screen viewing of (M - a robobutler):
 butler-screen is a kind of diaper punishment. The priority of butler-screen is 2.
 
 Definition: butler-screen (called P) is appropriate:
-	if current-monster is not robobutler or the number of filled rows in the Table of Published Disgraces is 0, decide no;
+	if current-monster is not robobutler or the number of filled rows in the Table of Published Disgraces is 0 or infamy fetish is 0, decide no;
 	decide yes.
 
 To say DragFlav of (M - a robobutler) to (R - a room):

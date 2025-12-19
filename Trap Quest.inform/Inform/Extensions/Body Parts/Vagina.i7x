@@ -346,8 +346,8 @@ To say VaginaModesty:
 		if P is a monster and P is male:
 			say "You have a feeling that no matter what you do, you're going to be creampied.";
 		otherwise:
-			if P is monster, say "Monsters are definitely paying extra attention to it.";
-			otherwise say "You have a feeling that monsters are paying extra attention to it.".
+			if P is monster, say "Enemies are definitely paying extra attention to it.";
+			otherwise say "You have a feeling that enemies are paying extra attention to it.".
 
 Part 3 - Modify Vagina Stats
 
@@ -530,6 +530,8 @@ To compute sudden pregnancy:
 			if forcedFertility is true:
 				now R is 0;
 				now forcedFertility is false;
+			otherwise if M is a dark skinned monster and bunny tail mamba is worn:
+				now R is 0;
 			otherwise if debuginfo > 0 and M is a thing:
 				say "[input-style]Instant pregnancy avoidance check for [ShortDesc of M]: [if womb volume of vagina >= 5]max womb volume of 5 = automatic failure[otherwise]10 - pregnancy rate ([pregnancy rate of the player]) ==> d[10 - pregnancy rate of the player] ([R]) | (1.5) conception avoidance difficulty level[end if][roman type][line break]";
 			if (R < 2 or the womb volume of vagina >= 5) and M is a thing: [Max womb volume = instant guaranteed preggers]

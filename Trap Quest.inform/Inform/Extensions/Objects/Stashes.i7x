@@ -18,8 +18,8 @@ The printed name of a stash is usually "[if item described is grabbing the playe
 The text-shortcut of a stash is usually "sctb".
 
 To say ExamineDesc of (C - a stash):
-	say "A secret button in [if playerRegion is the woods]a tree trunk[otherwise]the wall[end if]. [if C is unstashed]You already pushed it[otherwise]Pushing it might open some sort of secret panel?[end if]";
-	if C is unstashed and C is stash-tentacled, say "...Also, there's a pit of tentacles there now. You have no intention to go close to it again.".
+	say "A secret button in [if playerRegion is the woods]a tree trunk[otherwise]the wall[end if]. [if C is unstashed]You already pushed it.[otherwise]Pushing it might open some sort of secret panel?[end if]";
+	if C is unstashed and C is stash-tentacled, say "...Also, there's a pit [if diaper quest is 1]with a portal at the bottom[otherwise]of tentacles[end if] there now. You have no intention to go close to it again.".
 
 To say ShortDesc of (C - a stash):
 	if C is unstashed and C is stash-tentacled, say "tentacle";
@@ -48,7 +48,7 @@ Figure of hotel stash is the file "Env/Hotel/stash1.jpg".
 Figure of tentacle pit stash is the file "Env/MultiFloor/stash1.png".
 
 To decide which figure-name is the examine-image of (C - a stash):
-	if C is stash-tentacled and C is unstashed:
+	if diaper quest is 0 and C is stash-tentacled and C is unstashed:
 		decide on figure of tentacle pit stash;
 	otherwise if C is dungeon-stash:
 		decide on figure of mansion stash;
@@ -68,7 +68,8 @@ Check pushing a stash:
 	now the noun is unstashed;
 	say StashPushFlav of the noun;
 	if the noun is stash-tentacled:
-		compute stash tentacle of the noun;
+		if diaper quest is 1, compute stash prank of the noun;
+		otherwise compute stash tentacle of the noun;
 	otherwise:
 		compute stash reward of the noun;
 	do nothing instead.
@@ -193,7 +194,9 @@ A later time based rule (this is the tentacle pit rule):
 			dislodge S.
 
 
-
+To compute stash prank of (S - a stash):
+	say "The floor suddenly disappears from beneath you![line break][variable custom style]A trap door?![roman type][line break]Yep, an impressively concealed trap door, which has now opened, allowing you to fall directly down... Into some sort of teleportation trap!";
+	compute bad teleport.
 
 
 

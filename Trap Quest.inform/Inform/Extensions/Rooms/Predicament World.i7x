@@ -41,7 +41,7 @@ Predicament18 is a road room. The shape of Predicament18 is L8/0-0-1-1-0-1. The 
 
 [Home]
 
-Predicament19 is a predicament room. The printed name of Predicament19 is "Driveway". "The entrance to your house is right in front of you. Thank goodness!". The shape of Predicament19 is L8/0-0-1-1-1-1. The grid position of Predicament19 is <8,21,5>. Predicament19 is east of Predicament17.
+Predicament19 is an outside predicament room. The printed name of Predicament19 is "Driveway". "The entrance to your house is right in front of you. Thank goodness!". The shape of Predicament19 is L8/0-0-1-1-1-1. The grid position of Predicament19 is <8,21,5>. Predicament19 is east of Predicament17.
 Predicament20 is a predicament room. The printed name of Predicament20 is "Portal Room". "Instead of your house, there's just a room with a portal...". The shape of Predicament20 is L8/0-0-0-0-0-1. The grid position of Predicament20 is <8,22,5>. Predicament20 is east of Predicament19. Predicament20 is bossed.
 Definition: Predicament20 is unwalled: decide no.
 Check going north when the player is in Predicament20:
@@ -110,9 +110,9 @@ Predicament32 is a road room. The shape of Predicament32 is L8/0-0-1-1-1-0. The 
 
 [Driveways]
 
-Predicament33 is a predicament room. The printed name of Predicament33 is "Path". The shape of Predicament33 is L8/0-0-0-0-1-1. The grid position of Predicament33 is <8,21,7>. Predicament33 is east of Predicament15.
-Predicament34 is a predicament room. The printed name of Predicament34 is "Path". The shape of Predicament34 is L8/0-0-1-0-1-1. The grid position of Predicament34 is <8,21,6>. Predicament34 is east of Predicament16. Predicament34 is south of Predicament33. Predicament34 is north of Predicament19.
-Predicament35 is a predicament room. The printed name of Predicament35 is "Path". The shape of Predicament35 is L8/0-0-1-0-0-1. The grid position of Predicament35 is <8,21,4>. Predicament35 is east of Predicament18. Predicament35 is south of Predicament19.
+Predicament33 is an outside predicament room. The printed name of Predicament33 is "Path". The shape of Predicament33 is L8/0-0-0-0-1-1. The grid position of Predicament33 is <8,21,7>. Predicament33 is east of Predicament15.
+Predicament34 is an outside predicament room. The printed name of Predicament34 is "Path". The shape of Predicament34 is L8/0-0-1-0-1-1. The grid position of Predicament34 is <8,21,6>. Predicament34 is east of Predicament16. Predicament34 is south of Predicament33. Predicament34 is north of Predicament19.
+Predicament35 is an outside predicament room. The printed name of Predicament35 is "Path". The shape of Predicament35 is L8/0-0-1-0-0-1. The grid position of Predicament35 is <8,21,4>. Predicament35 is east of Predicament18. Predicament35 is south of Predicament19.
 
 [Central Park]
 
@@ -413,8 +413,8 @@ Check attacking female-gloryhole:
 					if recorded-bj is true:
 						if the number of blank rows in the Table of Published Disgraces > 0:
 							choose a blank row in Table of Published Disgraces;
-							now the content entry is the substituted form of "video footage of your voice [bj-request-flav], and then the camera [man of male-m][']s [manly-penis] being sucked through a gloryhole, with a poster above the hole showing your face and all your personal details,";
-							now the published entry is the substituted form of "has been uploaded to www.youpron.com";
+							now the content entry is the substituted form of "[video] of your voice [bj-request-flav], and then the [if infamy fetish > 0]POV's[otherwise]camera [man of male-m][']s[end if] [manly-penis] being sucked through a gloryhole, with a poster above the hole showing your face and all your personal details,";
+							now the published entry is the substituted form of "has been [if infamy fetish > 0]uploaded to www.youpron.com[otherwise]sent to the Outer Rim[end if]";
 							now the severity entry is 5 + player-numerical-response;
 							now the popularity entry is 6 + player-numerical-response;
 							now the timestamp entry is time-earnings;
@@ -571,7 +571,7 @@ To compute predicament conclusion:
 	let abnormalClothingSituation be 0;
 	repeat with C running through predicament-temporary wearthings:
 		now C is predicament-normal;
-		if C is clothing and (the raw-magic-modifier of C > 0 or C is not blandness):
+		if C is clothing and (the raw-magic-modifier of C > 0 or C is not blandness or C is scarf):
 			if C is held or C is in the location of the player:
 				say "[BigNameDesc of C] fades away! [bold type]You can tell that it has been sent to the 'Junk Room'.[roman type][line break]";
 			dislodge C;
@@ -688,7 +688,7 @@ To compute predicament conclusion:
 To say EndGameFlav of (P - a predicament):
 	say "".
 
-A bystander is a kind of person. A bystander can be uninterested or interested. A bystander can be moved. The printed name of a bystander is "[TQlink of item described]bystander[TQxlink of item described][shortcut-desc][verb-desc of item described]".
+A bystander is a kind of person. A bystander can be uninterested or interested. A bystander is not portable. A bystander can be moved. The printed name of a bystander is "[TQlink of item described]bystander[TQxlink of item described][shortcut-desc][verb-desc of item described]".
 [What's the most lewd they've seen the player this time?]
 A bystander has a number called worst-appearance.
 [Can be used for different things by different predicaments:
@@ -722,7 +722,8 @@ To decide which room is the predicament-pull-room of (M - a bystander):
 	if current-predicament is smoothie-predicament and the player is in Predicament03 and the bystanderInt1 of M >= 0, decide on Predicament03;
 	if current-predicament is team-lake-predicament and the player is in Park11, decide on Park11;
 	if current-predicament is incontinence-awareness-predicament and the player is in Park02, decide on Park02;
-	if skirt-tray-vibrator is worn and M is not interested, decide on the location of the player;
+	if current-predicament is vibe-photo-predicament and the predicament-progression of vibe-photo-predicament > 0 and the player is in Predicament01, decide on Predicament32;
+	if skirt-tray-vibrator is worn and M is not interested and the location of the player is not toilets, decide on the location of the player;
 	if current-predicament is breastfeeding-predicament and fake-baby is not settled and (fake-baby is not held or the number of sat-on breastfeeding-bench is 0):
 		if fake-baby is held, decide on the location of the player;
 		otherwise decide on the location of fake-baby;
@@ -781,9 +782,10 @@ To compute movement of (M - a bystander):
 					if M is camera-bystander and current-predicament is bottle-jog-predicament and A is down and M is in Toilet01 and id-poster is in Toilet01:
 						let PS be the target-camera-poster of id-poster;
 						let T be the substituted form of "a poster on the men's toilets wall with all of your personal information, and... [ShortDesc of PS]";
-						let PSA be the lewdness of PS / 30;
-						compute digital reputation damage T strength (PSA) quality 2;
-						say "In your mind's eye, you can picture [NameDesc of M] entering the men's toilets and taking a photo of the poster, and publishing it online.[line break][variable custom style]What an invasive image. It feels so real... Is it really just my imagination?[roman type][line break]";
+						if infamy fetish > 0:
+							let PSA be the lewdness of PS / 30;
+							compute digital reputation damage T strength (PSA) quality 2;
+							say "In your mind's eye, you can picture [NameDesc of M] entering the men's toilets and taking a photo of the poster, and publishing it online.[line break][variable custom style]What an invasive image. It feels so real... Is it really just my imagination?[roman type][line break]";
 
 
 Definition: a bystander (called M) is target-room-happy:
@@ -943,11 +945,12 @@ To compute lewd perception reaction of (M - a camera-bystander):
 		compute careful picture taking of M.
 
 To compute careful picture taking of (M - a bystander):
-	say "snaps a photo of you![line break][italic type]CLICK![roman type][line break][one of]You then see [him of M] tapping away, and a 'whoosh' sound as [he of M] sends the photo to who knows how many people![or]Another 'whoosh' sound lets you know that it's been shared with the world.[stopping][one of][line break][variable custom style]Noooo! How many people are going to have seen me like this?![roman type][line break][or][stopping]";
+	say "snaps a photo of you![line break][italic type]CLICK![roman type][line break][if infamy fetish > 0][one of]You then see [him of M] tapping away, and a 'whoosh' sound as [he of M] sends the photo to who knows how many people![or]Another 'whoosh' sound lets you know that it's been shared with the world.[stopping][one of][line break][variable custom style]Noooo! How many people are going to have seen me like this?![roman type][line break][or][stopping][end if]";
 	let A be the appearance of the player;
 	if diaper quest is 1 and the appearance of the player < the cringe appearance of the player, now A is the cringe appearance of the player;
-	if A < 8 and leaving-wrong-toilets is true, compute digital reputation damage "exiting the wrong toilets, looking like a pervert" strength 8 quality (a random number between 3 and 6);
-	otherwise compute digital reputation damage (PredicamentActivity of current-predicament) strength (A) quality (a random number between 3 and 6);
+	if infamy fetish > 0:
+		if A < 8 and leaving-wrong-toilets is true, compute digital reputation damage "exiting the wrong toilets, looking like a pervert" strength 8 quality (a random number between 3 and 6);
+		otherwise compute digital reputation damage (PredicamentActivity of current-predicament) strength (A) quality (a random number between 3 and 6);
 	if current-predicament is team-three-leg-predicament and diaper quest is 1 and purple-vibrator is worn:
 		say "BZZZT! Both you and [NameDesc of team-predicament-partner] suffer sudden electric shocks deep inside your pussies!";
 		PainUp a random number between 15 and 30;
@@ -962,7 +965,7 @@ To say FlashFlav of (M - a camera-bystander):
 	compute rapid picture taking of M witnessing "".
 
 To compute rapid picture taking of (M - a bystander) witnessing (T - a text):
-	say "snaps several photos of you with [his of M] phone![line break][italic type]CLICK! CLICK! CLICK! CLICK![roman type][line break]And then... a 'whoosh' sound as [he of M] sends the photo to who knows how many people![one of][line break][variable custom style]Now the whole world will know my shame...[roman type][line break][or][stopping]";
+	say "snaps several photos of you with [his of M] phone![line break][italic type]CLICK! CLICK! CLICK! CLICK![roman type][line break][if infamy fetish > 0]And then... a 'whoosh' sound as [he of M] sends the photo to who knows how many people![one of][line break][variable custom style]Now the whole world will know my shame...[roman type][line break][or][stopping][end if]";
 	if T is "":
 		now T is PredicamentActivity of current-predicament;
 		if target-poster is expulsion poster, now T is "you expelling stuff from your [asshole]";
@@ -970,17 +973,17 @@ To compute rapid picture taking of (M - a bystander) witnessing (T - a text):
 		if target-poster is wetting poster, now T is "you [if the player is pee protected]wetting yourself[otherwise]urinating[end if]";
 	let A be the appearance of the player;
 	if diaper quest is 1 and the appearance of the player < the cringe appearance of the player, now A is the cringe appearance of the player;
-	compute digital reputation damage T strength (A) quality (a random number between 1 and 4);
+	if infamy fetish > 0, compute digital reputation damage T strength (A) quality (a random number between 1 and 4);
 	now M is interested;
 	if the worst-appearance of M < the appearance of the player, now the worst-appearance of M is the appearance of the player;
 	if diaper quest is 1 and the worst-appearance of M < the cringe appearance of the player, now the worst-appearance of M is the cringe appearance of the player;
 	say HumiliateReflect (the appearance of the player * 30).
 
 To compute toy expulsion reaction of (M - a camera-bystander):
-	say "[BigNameDesc of M] leaps in surprise, but [his of M] camera is at the ready![line break][italic type]CLICK! CLICK! CLICK! CLICK![roman type][line break]And then... a 'whoosh' sound as [he of M] sends the photo to who knows how many people![line break][strongHumiliateReflect]";
+	say "[BigNameDesc of M] leaps in surprise, but [his of M] camera is at the ready![line break][italic type]CLICK! CLICK! CLICK! CLICK![roman type][line break][if infamy fetish > 0]And then... a 'whoosh' sound as [he of M] sends the photo to who knows how many people![line break][strongHumiliateReflect][end if]";
 	now M is interested;
 	let T be "you in public, as a sex toy falls from your orifice to the ground below";
-	compute digital reputation damage T strength 16 quality (a random number between 1 and 3);
+	if infamy fetish > 0, compute digital reputation damage T strength 16 quality (a random number between 1 and 3);
 	if the worst-appearance of M < the appearance of the player, now the worst-appearance of M is the appearance of the player;
 	if diaper quest is 1 and the worst-appearance of M < the cringe appearance of the player, now the worst-appearance of M is the cringe appearance of the player.
 
@@ -1345,7 +1348,7 @@ To say ExamineDesc of (M - construction-worker-bystander):
 To compute lewd perception reaction of (M - construction-worker-bystander):
 	say "[line break][first custom style]'You're the worst kind of [man of the player]. SLUT!'[roman type][line break]".
 To compute cringe perception reaction of (M - construction-worker-bystander):
-	say "[line break][first custom style]'[if there is a currently at least partially visible diaper]Is that a DIAPER?! [end if]Are you serious?!'[roman type][line break]".
+	say "[line break][first custom style]'[if there is a currently visible messed knickers]Is that SHIT?! [otherwise if there is a currently at least partially visible diaper]Is that a DIAPER?! [end if]Are you serious?!'[roman type][line break]".
 To compute non-lewd perception reaction of (M - construction-worker-bystander):
 	if M is groping:
 		compute grope of M;
@@ -1523,8 +1526,8 @@ To compute car coming past:
 		if R is 1 and face is not listed in the armUses of arms:
 			if the number of blank rows in the Table of Published Disgraces > 0:
 				choose a blank row in Table of Published Disgraces;
-				now the content entry is the substituted form of "low resolution dashcam footage of [PredicamentActivity of current-predicament] [ReputationAttire]";
-				now the published entry is the substituted form of "has been uploaded to caughtondashcam.net";
+				now the content entry is the substituted form of "low resolution [if infamy fetish > 0]dashcam footage[otherwise]memory[end if] of [PredicamentActivity of current-predicament] [ReputationAttire]";
+				now the published entry is the substituted form of "has been [if infamy fetish > 0]uploaded to caughtondashcam.net[otherwise]sent to the Outer Rim[end if]";
 				now the severity entry is the appearance of the player;
 				now the popularity entry is 2;
 				now the timestamp entry is time-earnings;
@@ -1582,9 +1585,9 @@ To say PredicamentDescription of (P - a predicament):
 current-predicament is an object that varies.
 
 To say PredicamentRewardExplanation:
-	say "[one of]HERE YOU CAN EARN TROPHIES WHICH MAY BE USEFUL ASSETS THROUGHOUT THE REST OF YOUR TRAINING. PLEASE NOTE, IT IS RECOMMENDED TO MOVE THROUGH THIS AREA WITH AS MODEST AN APPEARANCE AS POSSIBLE TO AVOID EMBARRASSING ENCOUNTERS WITH YOUR NEIGHBOURS. ALL YOUR ITEMS AND YOUR NEW TROPHY ARE WAITING FOR YOU IN THE DESTINATION LOCATION. [caps please] NOTE[or]ANOTHER TROPHY IS WAITING FOR YOU AT THE DESTINATION LOCATION. [caps please] REMEMBER[stopping]: ALL PHOTOS AND VIDEOS TAKEN ARE UPLOADED TO THE [if simulatedInternet is 0]*REAL* [end if]INTERNET. YOUR REAL PUBLIC REPUTATION IS AT STAKE. ".
+	say "[one of]HERE YOU CAN EARN TROPHIES WHICH MAY BE USEFUL ASSETS THROUGHOUT THE REST OF YOUR TRAINING. PLEASE NOTE, IT IS RECOMMENDED TO MOVE THROUGH THIS AREA WITH AS MODEST AN APPEARANCE AS POSSIBLE TO AVOID EMBARRASSING ENCOUNTERS WITH YOUR NEIGHBOURS. ALL YOUR ITEMS AND YOUR NEW TROPHY ARE WAITING FOR YOU IN THE DESTINATION LOCATION. [caps please] NOTE[or]ANOTHER TROPHY IS WAITING FOR YOU AT THE DESTINATION LOCATION. [caps please] REMEMBER[stopping]: ALL PHOTOS AND VIDEOS TAKEN ARE UPLOADED TO THE [if infamy fetish is 1]*REAL* [end if]INTERNET. YOUR REAL PUBLIC REPUTATION IS AT STAKE. ".
 To say PredicamentRewardExplanationReaction:
-	say "[one of][line break][variable custom style]How cryptic. [if the player is shameless and simulatedInternet is 0]So photos of me can get uploaded to the real life Internet? How outrageous... and exciting![otherwise if simulatedInternet is 0]But one thing is clear: if there's chances of photos of me being uploaded to the real life Internet, then I really must be careful here...[end if][or][stopping]".
+	say "[one of][line break][variable custom style]How cryptic. [if the player is shameless and infamy fetish is 1]So photos of me can get uploaded to the real life Internet? How outrageous... and exciting![otherwise if simulatedInternet is 0]But one thing is clear: if there's chances of photos of me being uploaded to the real life Internet, then I really must be careful here...[end if][or][stopping]".
 
 simple-sneak-predicament is a predicament.
 Figure of simple sneak predicament is the file "Special/Cutscene/cutscene-predicament-diaper-sneak1.jpg".
@@ -1667,6 +1670,7 @@ To decide which figure-name is the examine-image of (V - vibe-photo-predicament)
 	if V is position-adopted or blue-exercise-shorts is held or blue-exercise-shorts is in Predicament01, decide on figure of vibe pose predicament 2;
 	decide on figure of vibe pose predicament 1.
 Definition: vibe-photo-predicament is appropriate:
+	if infamy fetish is 0, decide no;
 	if armband is sapphire, decide yes;
 	decide no.
 To execute (VPP - vibe-photo-predicament):
@@ -1717,13 +1721,15 @@ An all time based rule:
 						choose a blank row in Table of Published Disgraces;
 						now the content entry is the substituted form of "a high resolution photo of you posing with peace signs, tongue lolled out and [genitals] pushed into a vibrating wand, [if the predicament-progression of vibe-photo-predicament > 1]with your date of birth and hometown printed on the wall behind you, [end if][if the predicament-progression of vibe-photo-predicament > 2]alongside your full name, [end if][if the predicament-progression of vibe-photo-predicament > 4]and contact information, [end if][ReputationAttire]";
 						if the predicament-progression of vibe-photo-predicament < 3:
-							now the published entry is the substituted form of "has been [one of]uploaded to[or]posted on[purely at random] [if diaper quest is 0]www.amateursluts.com[otherwise]www.weirdestamateurperverts.com[end if]";
+							if infamy fetish is 0, now the published entry is the substituted form of "has been sent to the Outer Rim";
+							otherwise now the published entry is the substituted form of "has been [one of]uploaded to[or]posted on[purely at random] [if diaper quest is 0]www.amateursluts.com[otherwise]www.weirdestamateurperverts.com[end if]";
 							now the severity entry is 2 + the predicament-progression of vibe-photo-predicament;
 							now the popularity entry is 1;
 							now the viewsfuzz entry is a random number between -200 and 200;
 							now the timestamp entry is 0;
 						otherwise:
-							now the published entry is the substituted form of "has been posted publicly from your social media account";
+							if infamy fetish is 0, now the published entry is the substituted form of "is waiting in the Outer Rim";
+							otherwise now the published entry is the substituted form of "has been posted publicly from your social media account";
 							now the severity entry is the predicament-progression of vibe-photo-predicament * 150;
 							now the popularity entry is 0;
 							now the viewsfuzz entry is 0;
@@ -1764,6 +1770,7 @@ Carry out going when current-predicament is vibe-photo-predicament:
 triple-dildo-predicament is a predicament. The printed name of triple-dildo-predicament is "dildo".
 triple-dildo-predicament has a number called pill-timer.
 Definition: triple-dildo-predicament is appropriate:
+	if infamy fetish is 0, decide no;
 	if diaper quest is 0 and the player is possessing a vagina and super gag reflex < 2 and (pregnancy fetish is 0 or the player is able to get pregnant) and the rank of the player >= 3, decide yes;
 	decide no.
 To decide which number is the girth of (P - triple-dildo-predicament):
@@ -1906,7 +1913,8 @@ An all time based rule (this is the triple dildo punishment pill rule):
 				otherwise if the number of blank rows in the Table of Published Disgraces > 0:
 					choose a blank row in Table of Published Disgraces;
 					now the content entry is the substituted form of "a high quality video showing you being pumped full of [semen] by three dildos lodged deep inside each of your holes";
-					now the published entry is the substituted form of "has been uploaded to www.pronhub.com";
+					if infamy fetish > 0, now the published entry is the substituted form of "has been uploaded to www.pronhub.com";
+					otherwise now the published entry is "has been sent to the Outer Rim";
 					now the severity entry is 14;
 					now the popularity entry is 8;
 					now the timestamp entry is earnings;
@@ -2170,6 +2178,9 @@ To maths-execute (M - make-me-cum):
 	if diaper quest is 0, say "The [man of male-m] leaves the way [he of male-m] came.".
 
 take-a-photo is a maths-sex-predicament-punishment.
+Definition: take-a-photo is appropriate:
+	if infamy fetish is 1, decide yes;
+	decide no.
 take-a-photo has a number called personal-info-status. [0: undecided; 1: info is there; -1: info is not there]
 To decide which text is the maths-punishment-description of (M - take-a-photo):
 	decide on "Take a photo and post it online".
@@ -2181,7 +2192,8 @@ To maths-execute (M - take-a-photo):
 	if the personal-info-status of take-a-photo is 0 and the number of blank rows in the Table of Published Disgraces > 0:
 		choose a blank row in Table of Published Disgraces;
 		now the content entry is the substituted form of "a high quality photo showing your profile and personal details next to your butt, stuck in a hole in a wall, fully exposed[if the used condoms of string-belt is 1], with a used condom pinned to the string tied around your waist[otherwise if the used condoms of string-belt > 1], with [used condoms of string-belt] used condoms pinned to the string tied around your waist[end if]";
-		now the published entry is the substituted form of "has been posted on the website amateurmeatholes.com";
+		if infamy fetish > 0, now the published entry is the substituted form of "has been posted on the website amateurmeatholes.com";
+		otherwise now the published entry is "has been sent to the Outer Rim";
 		now the severity entry is 3 + the used condoms of string-belt;
 		now the popularity entry is 3;
 		now the timestamp entry is earnings;
@@ -3066,6 +3078,7 @@ To say SmoothieHappy of (M - a bystander):
 
 photo-display-predicament is a predicament.
 Definition: photo-display-predicament is appropriate:
+	if infamy fetish is 0, decide no;
 	if diaper quest is 0 and the rank of the player > 2 and the player is not shameless, decide yes;
 	decide no.
 
@@ -3208,7 +3221,8 @@ To execute (L - photo-display-predicament):
 		if the number of blank rows in the Table of Published Disgraces > 0:
 			choose a blank row in Table of Published Disgraces;
 			now the content entry is the substituted form of "[if N < 1]a low resolution photo[otherwise if N < 3]a high resolution photo[otherwise if N < 5]an animated gif[otherwise]a high quality video[end if] showing you [T]";
-			now the published entry is the substituted form of "has been [one of]uploaded to[or]posted on[purely at random] [W]";
+			if infamy fetish > 0, now the published entry is the substituted form of "has been [one of]uploaded to[or]posted on[purely at random] [W]";
+			otherwise now the published entry is "has been sent to the Outer Rim";
 			now the severity entry is SW;
 			now the popularity entry is N;
 			now the timestamp entry is earnings;
@@ -3802,7 +3816,7 @@ To execute (L - water-fountain-predicament):
 	now water-fountain is penetrating asshole;
 	now the stance of the player is 1;
 	now the player is in Park13;
-	say "You find yourself sitting on a park bench wearing a slutty tank top, tiny microskirt and embarrassing white underwear, and you can feel some sort of intrusion in your [asshole]. Looking behind you, your predicament becomes clear. There's a nearby stand-alone water fountain, fed by a mains tap in the ground. [ExamineDesc of water-fountain][paragraph break]At some point you're going to have to stand up and try to leave. But standing up before the large queue of bystanders clears will surely let them all see exactly where you've been sitting! But... as you remain seated, everything the drinkers fail to drink gets delivered straight into your belly...";
+	say "You find yourself sitting on a park bench wearing a slutty tank top, tiny microskirt and embarrassing white underwear, and you can feel some sort of intrusion in your [asshole].[paragraph break]A voice speaks to you from a small wireless earbud in one of your ears.[paragraph break][first custom style]'WELCOME TO EXTRA CREDIT CLASS. [PredicamentRewardExplanation] PLEASE BE AWARE THAT STUDIES SHOW THAT IT IS ALMOST IMPOSSIBLE TO REMOVE AN ACTIVE ENEMA NOZZLE WITHOUT EXPELLING A BIT OF FLUID IN THE PROCESS. LIKELY, ENOUGH FLUID TO MAKE WHITE UNDERWEAR TURN SHEER...'[roman type][paragraph break]Looking behind you, your predicament becomes clear. There's a nearby stand-alone water fountain, fed by a mains tap in the ground. [ExamineDesc of water-fountain][paragraph break]At some point you're going to have to stand up and try to leave. But standing up before the large queue of bystanders clears will surely let them all see exactly where you've been sitting! But... as you remain seated, everything the drinkers fail to drink gets delivered straight into your belly...";
 	compute predicament map reveal.
 
 A bystander can be fountain-unquenched. A bystander is usually fountain-unquenched.
@@ -3840,6 +3854,7 @@ An all time based rule:
 gloryhole-predicament is a predicament. gloryhole-predicament has a number called internet-outrage. gloryhole-predicament has a number called cocks-sucked. gloryhole-predicament has a number called cocks-missed. gloryhole-predicament has a number called mens-room-entered. gloryhole-predicament has a number called womens-room-entered. gloryhole-predicament has a number called semen-spat. gloryhole-predicament has a direction called wind-direction. gloryhole-predicament can be poster-recorded. gloryhole-predicament has a number called clothing-not-worn. Understand "gholepd" as gloryhole-predicament.
 
 Definition: gloryhole-predicament is appropriate:
+	if infamy fetish is 0, decide no;
 	if diaper quest is 0 and the rank of the player > 3 and (condom fetish >= 2 or bukkake fetish is 1), decide yes;
 	decide no.
 
@@ -4048,7 +4063,8 @@ To make gloryhole statement demand of (M - a monster):
 				if the number of blank rows in the Table of Published Disgraces > 0:
 					choose a blank row in Table of Published Disgraces;
 					now the content entry is the substituted form of T;
-					now the published entry is the substituted form of "has been uploaded to an obscure website www.fatherless.com";
+					if infamy fetish > 0, now the published entry is the substituted form of "has been uploaded to an obscure website www.fatherless.com";
+					otherwise now the published entry is the substituted form of "is in the dark embrace of the Outer Rim";
 					now the severity entry is 15;
 					now the popularity entry is 1;
 					now the timestamp entry is time-earnings;
@@ -4224,12 +4240,13 @@ To compute nun perception of (M - a bystander):
 					now the worst-appearance of M is 5;
 				otherwise:
 					say "[speech style of M]'[one of]Ah, I see[or]Fair enough[or]Ah, I guess you're right[at random].'[roman type][line break]Satisfied, [NameDesc of M] turns to leave you alone.";
-		if the worst-appearance of M >= 5 and M is camera-bystander:
+		if the worst-appearance of M >= 5 and M is camera-bystander and infamy fetish > 0:
 			say "[big he of M] whips up [his of M] camera and takes a photo of you.[line break][speech style of M]'This is going straight on Twatter, you crazy bitch!'[roman type][line break]";
 			if the number of blank rows in the Table of Published Disgraces > 0:
 				choose a blank row in Table of Published Disgraces;
 				now the content entry is the substituted form of "a high resolution photo of you dressed as a nun, [if the worst-appearance of M is 10]semen spurting out of your mouth and dribbling down your chin[otherwise]holding and reading a fake religious book that clearly actually contains diagrams and instructions on how to perform niche sex acts[end if]";
-				now the published entry is the substituted form of "has been shared on www.twatter.com";
+				if infamy fetish > 0, now the published entry is the substituted form of "has been shared on www.twatter.com";
+				otherwise now the published entry is the substituted form of "is waiting in the Outer Rim";
 				now the severity entry is the worst-appearance of M;
 				now the popularity entry is 5;
 				now the timestamp entry is time-earnings;
@@ -5850,7 +5867,7 @@ Definition: train-predicament is fixed-clothing-eligible:
 	decide yes.
 
 Definition: train-predicament is appropriate:
-	if the rank of the player >= 3, decide yes;
+	if the rank of the player >= 3 and infamy fetish > 0, decide yes;
 	decide no.
 To execute (TRNP - train-predicament):
 	summon lycra-bodysuit uncursed;
@@ -6275,12 +6292,13 @@ Check taking off sports-bottle:
 
 Report going east when the player is in Predicament20:
 	if current-predicament is bottle-jog-predicament and id-poster is in Toilet01:
-		say "You cringe at the thought of how many people are going to see this explicit photo of you, posted on the wall in the men's toilets.[if the player is not shameless][line break][variable custom style]Oh god, people might even take photos and post them online...[roman type][line break][end if]";
-		let P be the target-camera-poster of id-poster;
-		let T be the substituted form of "a poster on the men's toilets wall with all of your personal information, and... [ShortDesc of P]";
-		let A be the lewdness of P / 30;
-		repeat with N running from 1 to 5:
-			compute digital reputation damage T strength (A) quality 1.
+		say "You cringe at the thought of how many people are going to see this explicit photo of you, posted on the wall in the men's toilets.[if the player is not shameless and infamy fetish > 0][line break][variable custom style]Oh god, people might even take photos and post them online...[roman type][line break][end if]";
+		if infamy fetish > 0:
+			let P be the target-camera-poster of id-poster;
+			let T be the substituted form of "a poster on the men's toilets wall with all of your personal information, and... [ShortDesc of P]";
+			let A be the lewdness of P / 30;
+			repeat with N running from 1 to 5:
+				compute digital reputation damage T strength (A) quality 1.
 
 Report going when current-predicament is bottle-jog-predicament:
 	if the player is a park room and the player is upright and remote-controlled-vibrator is worn and sports-bottle is worn and black-exercise-shorts is worn and the doses of sports-bottle > 0:
@@ -6357,7 +6375,6 @@ To execute (PP - pong-predicament):
 		summon remote-controlled-vibrator vaginally; [automatically redirects to asshole if the player doesn't have a vagina]
 	blandify and reveal tartan miniskirt;
 	now tartan miniskirt is in Predicament01;
-	force immediate clothing-focus redraw;
 	refresh the graphics-window;
 	let diaper-dry be true;
 	let opponent-diaper-pressure be 0;
@@ -6536,7 +6553,6 @@ To execute (PP - pong-predicament):
 							if plain-largish-diaper is messed, now temporary-map-figure is figure of pong predicament diaper double mess;
 							otherwise now temporary-map-figure is figure of pong predicament diaper double soil;
 					now diaper-dry is false;
-					force immediate clothing-focus redraw;
 					refresh the graphics-window;
 				if DPR <= opponent-diaper-pressure:
 					say "[speech style of M]'Oh... Oh... [one of]Ah dun wun to...'[roman type][line break]Suddenly, [or]Noh ahain...'[roman type][line break]Once again, you watch as [stopping][NameDesc of M] clutches [his of M] stomach, groans, and unleashes a torrent of [if diaper messing >= 4]sludge[otherwise][urine][end if] into [his of M] thick padding, causing it to visibly sag and expand.[line break][speech style of M]'Ho gwosh...'[roman type][line break][big he of M] mumbles to [himself of M].";
@@ -6802,8 +6818,9 @@ An all later time based rule:
 				say HumiliateReflect (A * 30);
 				if M is camera-bystander:
 					say "[BigNameDesc of M] snaps a photo of you![line break][italic type]CLICK![roman type][line break][variable custom style]Noooo! [one of]No photos please[or]No more photos[stopping]![roman type][line break]";
-					if diaper quest is 1 and the appearance of the player < the cringe appearance of the player, now A is the cringe appearance of the player;
-					compute digital reputation damage (PredicamentActivity of current-predicament) strength (A) quality (a random number between 1 and 6).
+					if infamy fetish > 0:
+						if diaper quest is 1 and the appearance of the player < the cringe appearance of the player, now A is the cringe appearance of the player;
+						compute digital reputation damage (PredicamentActivity of current-predicament) strength (A) quality (a random number between 1 and 6).
 
 
 To compute coloured dildo sucking:
@@ -6865,10 +6882,11 @@ To compute coloured dildo sucking:
 			say strongHumiliateReflect;
 			if M is camera-bystander:
 				let TPT be the substituted form of "you on your knees, sucking on a large wall-mounted coloured dildo in a public toilets with transparent walls";
-				let DRS be the worst-appearance of M + 5;
-				if DRS > 20, now DRS is 20;
-				if DRS < 10, now DRS is 10;
-				compute digital reputation damage TPT strength DRS quality 2;
+				if infamy fetish > 0:
+					let DRS be the worst-appearance of M + 5;
+					if DRS > 20, now DRS is 20;
+					if DRS < 10, now DRS is 10;
+					compute digital reputation damage TPT strength DRS quality 2;
 				say "FLASH! [big he of M] has snapped a photo of you sucking on the dildo.[line break][variable custom style][one of]Shit[or]Fuck[or]Eek[at random]![roman type][line break]".
 
 Check drinking toilets-dildos-predicament:
@@ -6954,6 +6972,7 @@ To execute (P - snitch-predicament):
 	summon small-ballgag locked;
 	now small-ballgag is predicament-fixed;
 	summon scarf uncursed;
+	now scarf is mouth-mode;
 	summon frilly stockings uncursed;
 	let MJ be a random mary janes;
 	summon MJ uncursed;
@@ -7208,7 +7227,7 @@ To execute (P - joint-fuckhole-predicament):
 		if lactation fetish is 1, increase total-options by 1;
 		if small-jewelled-plug is not worn and small-jewelled-plug is not worn by team-predicament-partner, increase total-options by 1;
 		if slave collar is not worn and slave collar is not worn by team-predicament-partner, increase total-options by 1;
-		if fancied-friend is not friend-shocked, increase total-options by 1;
+		if fancied-friend is not friend-shocked and infamy fetish > 0, increase total-options by 1;
 		let R be a random number between 1 and total-options;
 		if debugmode > 0, say "[input-style]Option [R] out of [total-options] chosen.[roman type][line break]";
 		if watersports fetish is 1:
@@ -7249,9 +7268,9 @@ To execute (P - joint-fuckhole-predicament):
 				now R is 99999;
 		if R is 1:
 			set numerical response 2 to "CRUEL - RIVAL GIVEN ELECTRIC SHOCKS";
-		if R is 2:
+		if R is 2 or (R is 3 and infamy fetish is 0):
 			set numerical response 2 to "CRUEL - RIVAL SEX DRIVE ENHANCED WITH HYPNOSIS";
-		if R is 3:
+		if R is 3 and infamy fetish is 1:
 			set numerical response 2 to "CRUEL - RIVAL FILMED AND DOXXED";
 		let T be the chosen numerical response of 2;
 		zero focus stuff;
@@ -7345,7 +7364,8 @@ To execute (P - joint-fuckhole-predicament):
 				if the number of blank rows in the Table of Published Disgraces > 0:
 					choose a blank row in Table of Published Disgraces;
 					now the content entry is "a high quality video showing your profile and personal details as your butt, stuck in a hole in a wall, gets fucked from behind";
-					now the published entry is the substituted form of "has been archived after its livestream on hourlysluts.com";
+					if infamy fetish > 0, now the published entry is the substituted form of "has been archived after its livestream on hourlysluts.com";
+					otherwise now the published entry is the substituted form of "is safely hidden in the Outer Rim";
 					now the severity entry is 1; [there's no guarantee that it's really you]
 					now the popularity entry is 5;
 					now the timestamp entry is earnings;
@@ -7476,7 +7496,8 @@ To execute (P - joint-fuckhole-predicament):
 								if the number of blank rows in the Table of Published Disgraces > 0:
 									choose a blank row in Table of Published Disgraces;
 									now the content entry is the substituted form of "a screenshot of you making an orgasm face in a video call,";
-									now the published entry is the substituted form of "posted to your wall on facepage.com by [MediumDesc of fancied-friend], accompanied by the comment '[OriginalNameBimbo] is a CREEP! [big he of the player] called me while getting FUCKED and thought I wouldn't notice!'";
+									if infamy fetish is 1, now the published entry is the substituted form of "posted to your wall on facepage.com by [MediumDesc of fancied-friend], accompanied by the comment '[OriginalNameBimbo] is a CREEP! [big he of the player] called me while getting FUCKED and thought I wouldn't notice!'";
+									otherwise now the published entry is the substituted form of "is hidden in the Outer Rim";
 									now the severity entry is 500;
 									now the popularity entry is 0;
 									now the viewsfuzz entry is 0;
@@ -7705,7 +7726,7 @@ To execute (P - diaper-maze-predicament):
 					if the cringe appearance of the player > A, now A is the cringe appearance of the player;
 					let T be "you waddling diapered through a maze with countless used diapers suspended above your head";
 					if diaper-box is diaper-dumped, now T is "you waddling diapered through a maze with countless used diapers engulfing your head";
-					compute digital reputation damage T strength (A) quality 5;
+					if infamy fetish > 0, compute digital reputation damage T strength (A) quality 5;
 			otherwise if R is 7: [tattoo]
 				say "a robotic hand holding a red permanent marker.";
 				set numerical response 1 to "take the shortcut, and probably have something humiliating written on your skin";
@@ -7828,6 +7849,7 @@ An all time based rule (this is the diaper maze cutscene rule):
 
 business-briefcase-predicament is a predicament. The printed name of business-briefcase-predicament is "sybian". business-briefcase-predicament can be orgasm-announced. business-briefcase-predicament can be orgasm-caught. business-briefcase-predicament can be squeezy-bottle-drunk. business-briefcase-predicament can be predicament-failed. business-briefcase-predicament can be ass-to-mouth-agreed.
 Definition: business-briefcase-predicament is appropriate:
+	if infamy fetish is 0, decide no;
 	if the player is not possessing a vagina and the player is not possessing a penis, decide no;
 	if the rank of the player > 1 and the rank of the player < 4, decide yes;
 	decide no.
@@ -7951,7 +7973,8 @@ To execute (P - business-briefcase-predicament):
 	if the number of blank rows in the Table of Published Disgraces > 0:
 		choose a blank row in Table of Published Disgraces;
 		now the content entry is the substituted form of "a high quality video showing you riding a Sybian, degrading yourself and claiming that you want this video to go viral and ruin your life, [if P is orgasm-announced]and loudly announcing when you orgasm, [end if]is live on";
-		now the published entry is the substituted form of "www.expose.me";
+		if infamy fetish is 1, now the published entry is the substituted form of "www.expose.me";
+		otherwise now the published entry is the substituted form of "some far flung reach of the Outer Rim";
 		now the severity entry is 0;
 		now the popularity entry is 0;
 		now the timestamp entry is 0;
@@ -8743,6 +8766,7 @@ To execute (FFP - free-use-fuckhole-predicament):
 				if the player is possessing a vagina and the soreness of vagina > the soreness of asshole, now F is vagina;
 				heal F times 1;
 				now soreness-tick is 0;
+		check for arousal change;
 	say "You pull forward, and the rope slips away. You're free! You quickly clamber forwards out of the hole.[line break][first custom style]That was insane! And now I still need to decide whether to [bold type]go to the abandoned warehouse to get the key, [first custom style]or just accept that I'm going to be locked in this wrist collar bar for some time...[roman type][line break]";
 	if a random number between 1 and 2 is bukkake fetish, now FFP is key-trapped;
 	set up 13 bystanders.
@@ -8765,7 +8789,7 @@ Report taking specific-key when current-predicament is free-use-fuckhole-predica
 porno-predicament is a team-predicament. porno-predicament has a number called player-points. porno-predicament has a number called rival-points.
 
 Definition: porno-predicament is appropriate:
-	if enema fetish is 0, decide no;
+	if enema fetish is 0 or infamy fetish is 0, decide no;
 	if the rank of the player > 2, decide yes;
 	decide no.
 
@@ -9792,7 +9816,8 @@ To execute (P - porno-predicament):
 			if the number of blank rows in the Table of Published Disgraces > 0:
 				choose a blank row in Table of Published Disgraces;
 				now the content entry is entry PV in LPVT;
-				now the published entry is entry PV in LPVW;
+				if infamy fetish > 0, now the published entry is entry PV in LPVW;
+				otherwise now the published entry is "sequestered in the Outer Rim";
 				now the severity entry is entry PV in LPVS;
 				now the popularity entry is entry PV in LPVP;
 				now the timestamp entry is time-earnings;
@@ -10116,8 +10141,6 @@ breastfeeding-predicament has a number called shock-strength. the shock-strength
 breastfeeding-predicament has a number called settled-phases.
 
 Definition: breastfeeding-predicament is appropriate:
-	if diaper quest is 0 and the player is not a july 2024 top donator, decide no;
-	if diaper quest is 1 and the player is not a july 2024 diaper donator, decide no;
 	if the rank of the player >= 2 and the largeness of breasts > 2, decide yes;
 	decide no.
 
@@ -10421,10 +10444,7 @@ To compute continued breastfeeding perception of (M - bro-bystander):
 team-three-leg-predicament is a team-predicament. team-three-leg-predicament has a number called partner-arousal. team-three-leg-predicament has a number called dampness. team-three-leg-predicament has a number called rival-plug-size. team-three-leg-predicament has a number called rival-pressure.
 
 Definition: team-three-leg-predicament is appropriate:
-	if diaper quest is 0 and the player is not a september 2024 top donator, decide no;
-	if diaper quest is 1:
-		if the player is not a september 2024 diaper donator, decide no;
-		if diaper messing < 4, decide no;
+	if diaper quest is 1 and diaper messing < 4, decide no;
 	if the player is possessing a vagina and the player is not possessing a penis, decide yes;
 	decide no.
 
@@ -10553,8 +10573,6 @@ Check displacing trousers when girlfriend-partner is in the location of the play
 team-lake-predicament is a team-predicament. team-lake-predicament has a number called beachball-game.
 
 Definition: team-lake-predicament is appropriate:
-	if diaper quest is 0 and the player is not a september 2024 top donator, decide no;
-	if diaper quest is 1 and the player is not a september 2024 diaper donator, decide no;
 	if the player is possessing a vagina and the player is not possessing a penis, decide yes;
 	decide no.
 
@@ -10842,7 +10860,7 @@ Check drinking incontinence-awareness-predicament:
 	if there is a worn messed diaper, say "You're too overwhelmed with embarrassment to do that." instead;
 	say "How do you want to act?";
 	reset multiple choice questions;
-	set numerical response 1 to "Sternly (much less humiliating; less likely to encourage donations; significantly reduces chance that people will photograph or record you)";
+	set numerical response 1 to "Sternly (much less humiliating; less likely to encourage donations; significantly reduces chance that the people who have heard you speak like this at least once will photograph or record you)";
 	set numerical response 2 to "Professionally (less humiliating; slightly less likely to encourage donations)";
 	set numerical response 3 to "Empathetically";
 	set numerical response 4 to "Dynamically (attract nearby people)";
@@ -10946,7 +10964,7 @@ To set up awareness stats of (M - a bystander):
 An all time based rule (this is the awareness campaign donation rule):
 	if current-predicament is incontinence-awareness-predicament:
 		if the location of the player is Park02 and there is a worn diaper:
-			if there is a worn messed diaper, cutshow examine-image of incontinence-awareness-predicament;
+			if there is a worn messed diaper, maybe-map-display examine-image of incontinence-awareness-predicament;
 			otherwise now temporaryYesNoBackground is the examine-image of incontinence-awareness-predicament;
 			repeat with M running through interested bystanders in the location of the player:
 				if there is a worn messed diaper, now the speaker-strength of incontinence-awareness-predicament is a random number between 0 and 1;
@@ -10973,8 +10991,9 @@ To execute (L - incontinence-awareness-predicament):
 	summon plain-largish-diaper uncursed;
 	summon business socks uncursed;
 	summon grey-sneakers uncursed;
-	let TS be a random I love my wet nappies T-shirt;
-	summon TS uncursed;
+	summon incontinence-awareness T-Shirt uncursed;
+	now incontinence-awareness T-Shirt is suppression;
+	now incontinence-awareness T-Shirt is predicament-fixed;
 	now rectum is 10;
 	now suppository is 1;
 	now L is in Park02;
@@ -11083,7 +11102,7 @@ An all time based rule (this is the flagpole inflation rule):
 				now flag-wave-predicament is cutshown;
 				cutshow Figure of nintendolls flag plug cutscene; [The first time it's shown, it's full screen]
 			repeat with M running through uninterested bystanders:
-				if the player is getting unlucky:
+				if a random number between 1 and 4 is 1:
 					if M is not in the location of the player:
 						now neighbour finder is the location of M;
 						let A be the best route from the location of M to the location of the player;

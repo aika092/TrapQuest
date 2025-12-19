@@ -1232,7 +1232,7 @@ Definition: elephant tattoo is drawable:
 	if it is not worn and (diaper quest is 0 or it is eligible), decide yes;
 	decide no.
 Definition: elephant tattoo is eligible:
-	if the noun is heart themed or the noun is tail plug or the noun is grey themed or the noun is elephant themed, decide yes;
+	if the noun is heart themed or the noun is tailed clothing or the noun is grey themed or the noun is elephant themed, decide yes;
 	decide no.
 To say tattoo-desc of (T - elephant tattoo):
 	say "A tattoo of [if diaper quest is 0]an[otherwise]a baby[end if] elephant blowing love hearts from its trunk is tattooed on the front of your left thigh.".
@@ -2459,35 +2459,35 @@ To decide which number is the initial outrage of (T - queen-of-spades slut tatto
 Definition: queen-of-spades slut tattoo is interracial themed: decide yes.
 Definition: queen-of-spades slut tattoo is playing card themed: decide yes.
 
-queen-of-spades snowbunny crotch tattoo is a crotch tattoo. The tattoo-title of queen-of-spades snowbunny crotch tattoo is "queen of spades snowbunny crotch".
-Definition: queen-of-spades snowbunny crotch tattoo is drawable:
+queen-of-spades snow-bunny crotch tattoo is a crotch tattoo. The tattoo-title of queen-of-spades snow-bunny crotch tattoo is "queen of spades snowbunny crotch". Understand "snowbunny" as queen-of-spades snow-bunny crotch tattoo.
+Definition: queen-of-spades snow-bunny crotch tattoo is drawable:
 	if there is a worn crotch tattoo or interracial fetish is 0, decide no;
 	decide yes.
-Definition: queen-of-spades snowbunny crotch tattoo is eligible:
+Definition: queen-of-spades snow-bunny crotch tattoo is eligible:
 	if the noun is interracial themed or the noun is playing card themed or the noun is bunny themed, decide yes;
 	decide no.
-To say tattoo-desc of (T - queen-of-spades snowbunny crotch tattoo):
-	say "A black spade symbol with swirling lines is inked above your [genitals] along with the word 'Snowbunny'.".
-To decide which number is the initial outrage of (T - queen-of-spades snowbunny crotch tattoo):
+To say tattoo-desc of (T - queen-of-spades snow-bunny crotch tattoo):
+	say "A black spade symbol with swirling lines is inked above your [genitals] along with the word 'snowbunny'.".
+To decide which number is the initial outrage of (T - queen-of-spades snow-bunny crotch tattoo):
 	decide on 4.
-Definition: queen-of-spades snowbunny crotch tattoo is interracial themed: decide yes.
-Definition: queen-of-spades snowbunny crotch tattoo is playing card themed: decide yes.
-Definition: queen-of-spades snowbunny crotch tattoo is bunny themed: decide yes.
+Definition: queen-of-spades snow-bunny crotch tattoo is interracial themed: decide yes.
+Definition: queen-of-spades snow-bunny crotch tattoo is playing card themed: decide yes.
+Definition: queen-of-spades snow-bunny crotch tattoo is bunny themed: decide yes.
 
-queen of spades snowbunny facial tattoo is a face-tattoo. The tattoo-title of queen of spades snowbunny facial tattoo is "queen of spades snowbunny facial".
-Definition: queen of spades snowbunny facial tattoo is drawable:
+queen of spades snow-bunny facial tattoo is a face-tattoo. The tattoo-title of queen of spades snow-bunny facial tattoo is "queen of spades snowbunny facial". Understand "snowbunny" as queen of spades snow-bunny facial tattoo.
+Definition: queen of spades snow-bunny facial tattoo is drawable:
 	if there is a worn face-tattoo or interracial fetish is 0, decide no;
 	decide yes.
-Definition: queen of spades snowbunny facial tattoo is eligible:
+Definition: queen of spades snow-bunny facial tattoo is eligible:
 	if the noun is interracial themed or the noun is playing card themed or the noun is bunny themed, decide yes;
 	decide no.
-To say tattoo-desc of (T - queen of spades snowbunny facial tattoo):
+To say tattoo-desc of (T - queen of spades snow-bunny facial tattoo):
 	say "A black spade symbol with a white bunny in the middle is inked right on your cheek!".
-To decide which number is the initial outrage of (T - queen of spades snowbunny facial tattoo):
+To decide which number is the initial outrage of (T - queen of spades snow-bunny facial tattoo):
 	decide on 5.
-Definition: queen of spades snowbunny facial tattoo is interracial themed: decide yes.
-Definition: queen of spades snowbunny facial tattoo is playing card themed: decide yes.
-Definition: queen of spades snowbunny facial tattoo is bunny themed: decide yes.
+Definition: queen of spades snow-bunny facial tattoo is interracial themed: decide yes.
+Definition: queen of spades snow-bunny facial tattoo is playing card themed: decide yes.
+Definition: queen of spades snow-bunny facial tattoo is bunny themed: decide yes.
 
 queen-of-spades tribal tattoo is a crotch tattoo. The tattoo-title of queen-of-spades tribal tattoo is "queen of spades tribal".
 Definition: queen-of-spades tribal tattoo is drawable:
@@ -2661,10 +2661,10 @@ To say tattoo-desc of (T - short skirt slut tattoo):
 To decide which number is the initial outrage of (T - short skirt slut tattoo):
 	decide on 8.
 To compute inking effect of (T - short skirt slut tattoo):
-	if short skirts permanent fetish is 0 or short skirts permanent fetish > 5:
-		now short skirts permanent fetish is 5;
-	otherwise if short skirts permanent fetish > 1:
-		decrease short skirts permanent fetish by 1.
+	if short skirts permanent suggestion is 0 or short skirts permanent suggestion > 5:
+		now short skirts permanent suggestion is 5;
+	otherwise if short skirts permanent suggestion > 1:
+		decrease short skirts permanent suggestion by 1.
 
 showtime tattoo is a leg tattoo. The tattoo-title of showtime tattoo is "show time". Understand "show", "time" as showtime tattoo.
 Figure of showtime tattoo is the file "Items/Tats/tattoo25.jpg".
@@ -2759,21 +2759,21 @@ To decide which number is the bimbo-influence of (T - slut-tattoo):
 	decide on 1.
 Understand "slut tattoo" as slut-tattoo.
 
-snowbunny womb tattoo is a chest tattoo. The tattoo-title of snowbunny womb tattoo is "snowbunny womb".
-Definition: snowbunny womb tattoo is drawable:
+snow-bunny womb tattoo is a chest tattoo. The tattoo-title of snow-bunny womb tattoo is "snowbunny womb". Understand "snowbunny" as snow-bunny womb tattoo.
+Definition: snow-bunny womb tattoo is drawable:
 	if interracial fetish is 0 or pregnancy fetish is 0 or there is a worn chest tattoo, decide no;
 	decide yes.
-Definition: snowbunny womb tattoo is eligible:
+Definition: snow-bunny womb tattoo is eligible:
 	if the noun is interracial themed or the noun is bunny themed or the noun is pregnancy themed or the noun is vagina themed, decide yes;
 	decide no.
-To say tattoo-desc of (T - snowbunny womb tattoo):
+To say tattoo-desc of (T - snow-bunny womb tattoo):
 	say "The word 'snowbunny' and a pattern that vaguely resembles the female reproductive system is tattooed above your chest.".
-To decide which number is the initial outrage of (T - snowbunny womb tattoo):
+To decide which number is the initial outrage of (T - snow-bunny womb tattoo):
 	decide on 6.
-Definition: snowbunny womb tattoo is interracial themed: decide yes.
-Definition: snowbunny womb tattoo is pregnancy themed: decide yes.
-Definition: snowbunny womb tattoo is vagina themed: decide yes.
-Definition: snowbunny womb tattoo is bunny themed: decide yes.
+Definition: snow-bunny womb tattoo is interracial themed: decide yes.
+Definition: snow-bunny womb tattoo is pregnancy themed: decide yes.
+Definition: snow-bunny womb tattoo is vagina themed: decide yes.
+Definition: snow-bunny womb tattoo is bunny themed: decide yes.
 
 spade leaves tattoo is a thigh-tattoo. The tattoo-title of spade leaves tattoo is "spade leaves".
 Definition: spade leaves tattoo is interracial themed: decide yes.

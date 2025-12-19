@@ -203,7 +203,7 @@ To compute facial sex of (M - a supporter):
 	otherwise: [Facesitting]
 		compute facesit sex of M.
 
-To compute strapon facial sex of (M - a supporter):
+To compute strapon facial sex of (M - a monster):
 	if the oral sex addiction of the player > 6, passively stimulate face from M;
 	if the reaction of the player is 0:
 		say StraponOralResisting of M;
@@ -212,7 +212,7 @@ To compute strapon facial sex of (M - a supporter):
 		say StraponOralSubmissionResponse of M;
 	decrease the sex-length of M by 1.
 
-To say StraponOralResisting of (M - a supporter):
+To say StraponOralResisting of (M - a monster):
 	say "[one of]You try as hard as you can to pull away, but [his of M] grip is simply too strong![or]You pull up, but [he of M] makes sure to shove you right back down![or]You grunt and try to pull away, but [he of M] simply holds you in place.[or]You try to pull [his of M] hands away, but [he of M][']s much too strong for you.[or][if the relevant sex addiction of M < 6]You stay completely still, blatantly refusing to do anything at all to the dildo.[otherwise if the relevant sex addiction of M < 14]You stay completely still, knowing that if you willingly suck on the dildo you might like it and not stop.[otherwise]You playfully pull away, forcing [NameDesc of M] to push your head up and down [himself of M].[end if][in random order]".
 
 To compute facial climax of (M - a supporter):
@@ -609,10 +609,10 @@ To say CreampieFlav of (M - a supporter) in (F - a fuckhole):
 
 [Oral]
 
-To say StraponOralResistingResponse of (M - a supporter): [The player is refusing to play ball and suck obediently on the dildo. How does the NPC act?]
+To say StraponOralResistingResponse of (M - a monster): [The player is refusing to play ball and suck obediently on the dildo. How does the NPC act?]
 	say "[one of]Your resistance just seems to make [NameDesc of M] more excited! [big he of M] fucks your mouth harder and faster.[or][BigNameDesc of M] maintains a firm grip on the back of your head, determined to get as much of the dildo in your mouth as [he of M] can.[or][BigNameDesc of M] continues thrusting with no acknowledgement of your protests.[or][BigNameDesc of M] continues thrusting despite your protests![in random order]".
 
-To say StraponOralSubmissionResponse of (M - a supporter): [The player is sucking obediently on the dildo. What does that look like?]
+To say StraponOralSubmissionResponse of (M - a monster): [The player is sucking obediently on the dildo. What does that look like?]
 	say "[one of][BigNameDesc of M] thrusts at a good pace, holding on as if to make sure you won't stop.[or][BigNameDesc of M] holds you with an almost uncomfortably tight grip, guiding your movement.[or][BigNameDesc of M] holds the dildo still and lets you do all the work, making it that much more humiliating.[in random order]".
 
 To say FacialStraponClimaxFlav of (M - a supporter): [The final round of strapon facefucking]

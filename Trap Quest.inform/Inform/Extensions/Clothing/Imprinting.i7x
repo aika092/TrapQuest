@@ -172,9 +172,9 @@ This is the heel skill imprinting rule:
 The heel skill imprinting rule is listed in the imprinting rules.
 
 This is the kneeing imprinting rule:
-	if (imprint-target is stockings or (imprint-target is suspenders and there are worn stockings)) and the magic-modifier of imprint-target is not 0:
-		say "[ImprintStartFlav]knee [if the magic-modifier of imprint-target < 0]weakening[otherwise]empowering[end if] effect [run paragraph on]";
-		if the magic-modifier of imprint-target > 0, increase permanent-knee-bonus by 1;
+	if (imprint-target is stockings or (imprint-target is suspenders and there are worn stockings)) and the knee-modifier of imprint-target is not 0:
+		say "[ImprintStartFlav]knee [if the knee-modifier of imprint-target < 0 and imprint-target is not suspenders]weakening[otherwise]empowering[end if] effect [run paragraph on]";
+		if the knee-modifier of imprint-target > 0, increase permanent-knee-bonus by 1;
 		otherwise decrease permanent-knee-bonus by 1.
 The kneeing imprinting rule is listed in the imprinting rules.
 

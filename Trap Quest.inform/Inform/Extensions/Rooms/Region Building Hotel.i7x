@@ -4,7 +4,9 @@ To Set Up The Hotel:
 	if loading scenes is 1:
 		clear the screen;
 		if images visible is 1:
-			if diaper quest is 0:
+			if the class of the player is berri:
+				display Figure of berri loading low res;
+			otherwise if diaper quest is 0:
 				let R be a random number between 1 and 3;
 				if R is 1:
 					if a random number between 0 and (pregnancy fetish * 2) > 0, display figure of hotel pregnant loading 1;
@@ -94,6 +96,7 @@ To Set Up The Hotel:
 		set up receptionist;
 		now receptionist is in Hotel40;
 		now the destination of hotel portal is the school;
+	if the class of the player is berri, now the destination of hotel portal is the dungeon;
 	deploy a slimeball;
 	if debugmode is 0 and loading scenes is 1, clear the screen;
 	progress quest of new-region-quest.

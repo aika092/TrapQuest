@@ -42,9 +42,9 @@ To decide which figure-name is clothing-image of (H - bitch bottoms):
 To say UniqueClothingDesc of (Y - bitch bottoms):
 	say "A pair of tight pink shorts with a zip. The pattern has the word 'Bitch' repeating along with pink love hearts.".
 To say ShortDesc of (Y - bitch bottoms):
-	say "bitch bottoms".
+	say "pair of bitch bottoms".
 To say MediumDesc of (Y - bitch bottoms):
-	say "bitch bottoms".
+	say "pair of bitch bottoms".
 Definition: bitch bottoms is pink themed: decide yes.
 Definition: bitch bottoms is heart themed: decide yes.
 Definition: bitch bottoms is dog themed: decide yes.
@@ -52,6 +52,15 @@ To decide which number is the initial outrage of (C - bitch bottoms):
 	decide on 4.
 To decide which number is the crotch-tightness of (C - bitch bottoms):
 	decide on 2.
+To compute periodic effect of (C - bitch bottoms):
+	if the DQBulk of the player > 1:
+		say "Your tight [bitch bottoms] can't take the strain, and rip open! They're completely ruined.";
+		destroy C.
+This is the bitch bottoms too tight rule:
+	if wearing-target is bitch bottoms and the DQBulk of the player > 1:
+		if summoning is 0 and autowear is false, say "The bitch bottoms are too tight, they won't be able to stretch over your thick padding!";
+		rule fails.
+The trousers already worn rule is listed in the trousers wearability rules.
 
 
 buttockless pants is a kind of trousers. A buttockless pants is usually butt-windowed. A buttockless pants is manly. The printed name of buttockless pants is usually "[clothing-title-before][clothing-material of item described] buttockless pants[clothing-title-after]". The text-shortcut of buttockless pants is "bp".

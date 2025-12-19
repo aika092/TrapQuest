@@ -22,7 +22,7 @@ To only summon (C - a clothing):
 	now C is identified;
 	now C is sure;
 	compute unique summoning of C;
-	if C is total protection and C is not-butt-windowed and there is a worn tail plug:
+	if C is total protection and C is not-butt-windowed and there is a worn tailed clothing:
 		if C is displacable:
 			now C is crotch-displaced;
 		otherwise:

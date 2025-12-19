@@ -45,7 +45,7 @@ To decide which number is the stimulation of (O - an object) on (F - a body part
 	decide on 0.
 
 To decide which number is the stimulation of (M - a monster) on (F - a body part):
-	if diaper quest is 1, decide on 4 + (the difficulty of M / 8);
+	if diaper quest is 1 or F is penis, decide on 4 + (the difficulty of M / 8);
 	if F is fuckhole:
 		let S be 2;
 		if M is penetrating F:
@@ -106,7 +106,7 @@ To stimulate (F - a body part) from (T - an object) times (N - a number):
 	if F is penis and the player is female, now F is vagina;
 	while N > 0:
 		decrease N by 1;
-		if F is penis, RawUp penis;
+		if F is penis and a random number between 0 and 1 < the reaction of the player, RawUp penis;
 		if the player is able to get horny:
 			passively stimulate F from T;
 		otherwise if (F is penis or F is a fuckhole) and the player is able to cum hornilessly and the stimulation of T on F >= 2:
@@ -122,7 +122,7 @@ To passively stimulate (F - a body part) from (T - an object) times (N - a numbe
 [This one can't cause an automatic orgasm]
 To passively stimulate (F - a body part) from (T - an object):
 	if F is vagina and the player is not possessing a vagina, now F is penis;
-	if F is penis and the player is female, now F is vagina;
+	if F is penis and the player is not possessing a penis, now F is vagina;
 	if the player is able to get horny:
 		let A be the sensitivity of F + 5;
 		if F is asshole, increase A by the square root of the anal sex addiction of the player;
@@ -142,6 +142,9 @@ To passively stimulate (F - a body part) from (T - an object):
 		otherwise:
 			increase AR by 50;
 		if debuginfo > 1, say "[input-style]Stimulation of [F][if T is a thing] by [T][end if][input-style]: Body part base ([if F is fuckhole or F is penis]350) + addiction & sensitivity bonus ([A * 20])[otherwise if F is breasts]200) + sensitivity bonus ([A * 20])[otherwise if F is hips or F is thighs]100)[otherwise]50)[end if] + stimulation ([ST * 20]) = [AR][roman type][line break]";
+		if (F is penis or F is vagina) and AR < 1000 and the player is not horny and T is monster and T is penetrating F:
+			now AR is 1000;
+			if debuginfo > 1, say "[input-style]NPC is stimulating penis or vagina and the player isn't particularly horny yet, so this is automatically raised to a minimum of 1000![roman type][line break]";
 		arouse AR.
 
 [!<latestAssholeInvader:Object>*

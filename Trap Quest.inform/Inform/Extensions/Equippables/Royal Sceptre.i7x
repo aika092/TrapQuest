@@ -183,9 +183,10 @@ To compute betrothal of (M - a monster):[This only triggers when the player is f
 	if the class of the player is bride:
 		if debugmode > 0, say "Bride made [NameDesc of M] orgasm. The bride's partner is [NameDesc of bride-consort].";
 		let C be a random worn bouquet;
+		if C is nothing, now C is a random worn headgear;
 		if bride-consort is not the throne:
 			let F be 0;
-			unless the class of the player matches the text "traitor":
+			unless the class of the player matches the text "traitor" or key garter is worn:
 				if bride-consort is in the location of the player, now F is 1;
 				otherwise now F is -1;
 			if bride-consort is M, now F is 2;

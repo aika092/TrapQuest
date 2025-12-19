@@ -153,12 +153,10 @@ To say TotalDesc of face:
 	if the total volume of face > 0, say "You currently have a [MouthfulDesc].";
 	if the number of things penetrating face > 0 or the latex-transformation of the player > 6:
 		let B be a random thing penetrating face;
-		if B is a monster:
-			say "Your mouth is currently being occupied by [FuckerDesc of B].";
 		if the latex-transformation of the player > 6:
-			say "Your rubber mouth[if B is gag], currently occupied by a [ShortDesc of B],[end if] has no tongue or inner moisture, permanently open and fixed in a submissive O-shape.";
-		otherwise:
-			say "Your mouth is currently occupied by a [ShortDesc of B].";
+			say "Your rubber mouth[if B is a thing], currently occupied by a [FuckerDesc of B],[end if] has no tongue or inner moisture, permanently open and fixed in a submissive O-shape.";
+		otherwise if B is a thing:
+			say "Your mouth is currently occupied by a [FuckerDesc of B].";
 	if the player is a blowjob slut:
 		let P be a random thing penetrating face;
 		if P is a monster and P is male:
@@ -343,7 +341,8 @@ To compute swallowing:
 		if auto is 0, say "You try to swallow, but your mouth is empty.";
 	otherwise:
 		if auto < 2, say "You [if the player is always automatically swallowing]automatically [otherwise if auto is 1]accidentally [end if]gulp the [MouthfulDesc] down[if auto is 1] your throat[end if].";
-		StomachSemenUp the semen volume of face;
+		[StomachSemenUp the semen volume of face;]
+		compute slightly addictive swallowing of semen by the semen volume of face; [can't do StomachSemenUp because if there's an NPC with a condom fucking your face, it creates a condom instead]
 		if the semen volume of face > 0 and face is not boring-origin, progress quest of creampie-drinking-quest;
 		StomachUrineUp the urine volume of face;
 		StomachMilkUp the milk volume of face;

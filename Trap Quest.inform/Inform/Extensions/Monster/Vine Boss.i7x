@@ -176,7 +176,7 @@ This is the vine boss ultimate victory attack rule:
 				appropriate-cutscene-display figure of vine boss cutscene 1;
 				say "Your body falls into its belly of vines and soon you are being completely filled in your [fuckholes] and mouth. The vines pump and pump [semen] into your body, and you can feel your body straining with the pressure of being filled so much. You feel like you are about to explode!";
 				now delayed fainting is 1;
-			otherwise if the player is male and the total fill of belly >= 13 or slimegirl is worn:
+			otherwise if the player is male and (the total fill of belly >= 13 or slimegirl is worn):
 				say "As the vines near their climax, the monster grabs you with its 'hands' and pulls you up to its flowery mouth. Using the vines in your [asshole] it pushes you into its huge chasm of a mouth and swallows you whole. ";
 				appropriate-cutscene-display figure of vine boss cutscene 1;
 				say "Your body falls into its belly of vines and soon you are being completely filled in both your [asshole] and your mouth. The vines pump and pump [semen] into your body, and you can feel your body straining with the pressure of being filled so much. You feel like you are about to explode!";
@@ -240,7 +240,7 @@ This is the vine boss makes the player diapered rule:
 		if C is clothing:
 			compute current-monster attacking C;
 			if C is worn, destroy C;
-		let D be a random eligible diaper;
+		let D be the chosen trap diaper;
 		say "You watch as a couple of vines descend from above, holding a [MediumDesc of D] between them! Within moments they have fastened it onto you.";
 		summon D cursed with quest;
 		rule succeeds.

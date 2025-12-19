@@ -130,7 +130,7 @@ To say speech style of (M - bowsette):
 
 Definition: bowsette is father material: decide yes.
 Definition: bowsette is wenchy:
-	if the player is a july 2024 top donator, decide yes;
+	if the player is the donator, decide yes;
 	decide no.
 Definition: bowsette is human: decide yes.
 

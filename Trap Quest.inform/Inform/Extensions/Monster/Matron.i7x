@@ -5,6 +5,8 @@ matron is a monster. matron is intelligent. The leftover-type of matron is 116. 
 Definition: matron is hotel dwelling:
 	if diaper lover > 0, decide yes;
 	decide no.
+To decide which object is the default-local-room of (M - matron):
+	decide on Hotel22.
 
 matron has a number called countdown.
 Definition: matron is a tripper:
@@ -82,14 +84,14 @@ To say GroundPeeReaction of (M - matron):
 		say "[speech style of M]'Now that just won't do! You're wetting [if the location of M is Hotel22]my nursery's[otherwise]the[end if] floor, you disgusting [if M is presenting as female]girl[otherwise]sissy[end if]! You've lost your adult underwear privileges, child - I'm going to put you in diapers and if I have anything to say about it, you'll be wearing them until the day you die!'[roman type][line break]";
 		anger M;
 		interest M;
-		now M is diaper-committed.
+		now M is bulkier-diaper-committed.
 
 To say ClothesPeeReaction of (M - matron):
 	if M is friendly or M is uninterested:
 		say "[speech style of M]'Now that just won't do, how disgusting! You've lost your adult underwear privileges, child - I'm going to put you in diapers and if I have anything to say about it, you'll be wearing them until the day you die!'[roman type][line break]";
 		anger M;
 		interest M;
-		now M is diaper-committed.
+		now M is bulkier-diaper-committed.
 
 To compute MasturbationReaction of (M - matron):
 	if M is in Hotel22 and (M is friendly or M is uninterested):
@@ -173,7 +175,7 @@ To compute perception of (M - matron):
 			try standing;
 			now auto is 0;]
 			compute diaper check of M;
-			if M is not diaper-committed, satisfy M;
+			if M is not diaper-committed and M is not bulkier-diaper-committed, satisfy M;
 		otherwise:
 			say "[speech style of M]'[if player-currently-resting is 0]Naptime's not over yet, sweetie! Be a good little [boy of the player] and try to[otherwise]Looks like you're still tired, aren't you sweetie. I'll let you[end if] rest a bit longer.'[roman type][line break]";
 			deinterest M;
@@ -187,6 +189,10 @@ To compute perception of (M - matron):
 		calm M;
 	otherwise if the current-errand of M is completed and M is not uniquely unfriendly:
 		compute errand completion of M;
+	otherwise if the class of the player is berri and latest-berri-stage is 0 and the number of worn diaper is 0 and berriMatronTripScene is 0:
+		say "[speech style of M]'Hello little [boy of the player], shouldn't you be diapered? Only main characters are supposed to be given the option to stay in big [boy of the player] pants...'[roman type][line break][BigNameDesc of M] prepares to [if the player is upright]attack[otherwise]grab[end if] you!";
+		anger M;
+		say BerriCutsceneFlav;
 	otherwise if M is unfriendly:
 		say "[one of][big he of M] seems compelled by [his of M] maternal instincts to care for [his of M] newest charge[or][big he of M] smiles warmly[if the delicateness of the player < 15], but with a small hint of malice[end if][stopping].[line break][speech style of M]'Hi, you naughty baby! You look like you need nanny's help.'[roman type][line break][if the diaper addiction of the player < 8]There's worry in your eyes as [he of M] approaches. [big he of M] won't accept that you're really an adult and can care for your own self. [otherwise if the diaper addiction of the player > 15]You giggle and react with a whimsical[line break][second custom style]'Ack!'[roman type][line break]as you ready to play with your Nanny. [end if][if the delicateness of the player < 7]You hope you have the strength to fight [him of M] off. [otherwise if the delicateness of the player < 12]Your mind begins to wander thinking of what sort of humiliation [he of M]'ll put you through, now.[otherwise if the delicateness of the player < 16]You yearn for [his of M] care.[otherwise]You ache to fall to your knees and let [him of M] do whatever [he of M] wants with your body.[end if]";
 		compute diaper check of M;
@@ -203,7 +209,7 @@ To compute perception of (M - matron):
 	otherwise if the class of the player is schoolgirl and the number of worn diaper is 0:
 		say "[speech style of M]'Oh my, you look so adorable in that uniform. But there's something we need to take care of before you can go off to school, now isn't there! Don't fight me sweety, I need to make sure you don't have any accidents in class.'[roman type][line break]";
 		now M is diaper-committed;
-	otherwise if diaper focus is 1 or M is diaper-committed:
+	otherwise if diaper focus is 1 or M is diaper-committed or M is bulkier-diaper-committed:
 		say "[speech style of M]'Ooh, you're new! And not diapered... Well we can fix that right away! [if the player is upright]Get on your knees, little one!'[otherwise]Stay right there...'[end if][roman type][line break]";
 		now M is diaper-committed;
 	otherwise:
@@ -228,7 +234,7 @@ To say BecomesBoredFlav of (M - matron):
 	say "[BigNameDesc of M] seems to lose interest in you for now.".
 
 Definition: matron (called M) is uniquely unfriendly:
-	if M is diaper-committed, decide yes;
+	if M is diaper-committed or M is bulkier-diaper-committed, decide yes;
 	if halloween rubber diaper cover is worn, decide yes;
 	if diaper quest is 1 and M is motherly and the boredom of M <= -500, decide yes;
 	decide no.
@@ -262,7 +268,7 @@ To compute diaper check of (M - matron):
 				if diaper quest is 0, say "[variable custom style][one of][if the diaper addiction of the player < 6]Oh my god! This [man of M] is trying to force me to use my diaper![otherwise][line break][second custom style]*giggle* If [he of M] feeds me I'll get to use my diaper! Yay![end if][or][if the humiliation of the player < 25000]I can't let [him of M] do this to me! I can feed myself.[otherwise if the semen taste addiction of the player > 15]I hope [he of M] feeds me with a delicious cream pie from [his of M] [HoleDesc of M].[otherwise if the delicateness of the player > 10]At least if [he of M] feeds me I won't be hungry. [otherwise if the sex addiction of the player < 4 and the player is gendered male]Maybe [he of M]'ll have me eat some food off [his of M] hot body. [otherwise if lactation fetish is 1 and the milk taste addiction of the player > 6]I hope [he of M] feeds me by letting me suckle [his of M] nipples.[otherwise if the sex addiction of the player < 11]This is just outrageous, I'm being treated like some kind of powerless baby![otherwise]I'm letting [him of M] treat me like a baby, how deliciously degrading![end if][in random order][roman type][line break]";
 	otherwise if M is unfriendly or M is motherly:
 		say "[speech style of M]'[one of][if M is motherly]Didn't I tell you it's important for you to stay in diapers? [otherwise]It's important for babies like you to stay in diapers. [end if][if the player is prone]Stay on your knees[otherwise]Get on your knees[end if] and I'll fix that for you...'[or]How many times am I going to catch you out of nappies? You're getting put in my naughty book for sure this time.'[or]Come on you naughty girl! Time for your diaper.'[stopping][roman type][line break]";
-		now M is diaper-committed;
+		now M is bulkier-diaper-committed;
 		FavourDown M by 4;
 	otherwise if the player is bladder incontinent:
 		say "[speech style of M]'Oh dear, are you wetting yourself lots without wearing a diaper? That's no good! Here, let me help you out...'[roman type][line break]";
@@ -273,7 +279,7 @@ To compute diaper check of (M - matron):
 	if the urination continues rule is listed in another-turn-rules and the player is upright:
 		say "[if the humiliation of the player < 18000]The sheer humiliation of the situation[otherwise if the delicateness of the player < 10]Something about the way [he of M] is gripping your private parts[otherwise]Something deep inside of you feels comforted and[end if] makes your knees buckle. You fall to the ground in front of [NameDesc of M].";
 		try kneeling;
-	otherwise if M is diaper-committed and the player is upright:
+	otherwise if (M is diaper-committed or M is bulkier-diaper-committed) and the player is upright:
 		say "Get on your knees and submit to [his of M] plans?";
 		if the player is bimbo consenting, try kneeling.
 
@@ -300,6 +306,12 @@ To compute (M - matron) seeking (D - a direction): [The matron only follows the 
 		compute monstermotion reactions of M.
 
 Part 4 - Combat
+
+To compute tripping attack of (M - matron):
+	if the class of the player is berri and latest-berri-stage is 0 and stripy-blue-dress is worn and plain-white-briefs is worn and berriMatronTripScene is 0:
+		compute berri trip attempt of M;
+	otherwise:
+		compute default tripping attack of M.
 
 The matron priority attack rules is a rulebook.
 
@@ -363,21 +375,116 @@ This is the matron acts like a nanny rule:
 
 The matron nanny rules is a rulebook. [This controls how the matron acts in TQ.]
 
+The matron diaper quest rules is a rulebook. The diaper quest rules of matron is the matron diaper quest rules.
+
 This is the matron drags the player rule:
 	let M be current-monster;
 	if M is not in Hotel22 and the player is prone:
 		drag to Hotel22 by M;
 		rule succeeds.
 The matron drags the player rule is listed first in the matron nanny rules.
+The matron drags the player rule is listed first in the matron diaper quest rules.
 
 To say DragArrival of (M - matron) to (R - Hotel22):
 	if M is normally acquaintance, say "[speech style of M]'[one of]Here we go into the nursery, back where you belong. And don't you dare try to run off again!'[or]You're not big enough to run off on your own, baby. Let's stay in the nursery.'[cycling][roman type][line break]";
 	otherwise say "[one of][or][or][line break][speech style of M]'[if there is a worn diaper]I should put you in a double diaper, that would keep you out of trouble.'[otherwise]You deserve a royal spanking, young miss!'[end if][roman type][line break][or][line break][speech style of M]'Crawl faster!'[roman type][line break][in random order]".
 
+This is the matron defeats early berri rule:
+	if the player is prone and the class of the player is berri and latest-berri-stage is 0 and the number of worn diaper is 0 and berriMatronTripScene is 0:
+		let E be a random regional explorer;
+		if E is a monster:
+			now berriMatronTripScene is 1;
+			let M be current-monster;
+			say "[speech style of M]'Now then, what to do with you?'[roman type][line break][BigNameDesc of M] is standing over you with [his of M] hands on [his of M] hips. You are on your knees in front of [him of M]. You feel all your remaining energy drain away...[paragraph break][BerriCutsceneFlav][line break]";
+			now the fatigue of the player is the buckle threshold of the player;
+			spawn meet E;
+			say "[BigNameDesc of E][']s eyes go wide![line break][speech style of E]'Are you okay, [NameBimbo]?'[roman type][line break][BigNameDesc of E] asks, with a concerned, protective tone..[paragraph break][speech style of M]'Careful, twerp. I'm about to put someone in the thickest diaper they've ever been in in their life, and if you interrupt me, it'll be you instead of [him of the player].'[roman type][line break][BigNameDesc of M] snaps at [him of E], with an uncharacteristically vicious tone.[paragraph break][BigNameDesc of E][']s eyes go wide with panic.[line break][speech style of E]'No, err, I'm, err, just here to observe.'[roman type][line break][big he of E] replies weakly.[line break]";
+			if the player is able to speak:
+				now temporaryYesNoBackground is the examine-image of M;
+				compute single choice question "Beg for [him of E] to fight [NameDesc of M] and save you";
+				say "[variable custom style]'Come on, you can't just let [him of M] do this, help me!'[roman type][line break]You squeak in your timid girly voice.[paragraph break][speech style of E]'...I'm sorry.'[roman type][line break][BigNameDesc of E] mouths, but doesn't actually say the words out loud. [big he of E] just stands there and awkwardly watches.[paragraph break]".
+The matron defeats early berri rule is listed last in the matron diaper quest rules.
+
+This is the matron vibe tortures berri rule:
+	if the player is prone and the class of the player is berri:
+		now berriMatronTripScene is 2;
+		now refractoryperiod is 0;
+		let M be current-monster;
+		let E be a random interested explorer in the location of the player;
+		now M is grabbing the player;
+		say "[BigNameDesc of M] expertly strips you and places you in a mixture of metal and leather restraints. It feels like only a few seconds have passed, and [he of M] already has you in metal thigh spreaders, baby booties, baby mittens, a baby bib, a pacifier gag, and an oversized white diaper.";
+		repeat with C running through worn nudism-disabling clothing:
+			now C is in the location of the player;
+			unlock C;
+		let D be plain-medium-diaper;
+		if latest-berri-stage >= the DQBulk of D, now D is plain-largish-diaper;
+		if latest-berri-stage > the DQBulk of D, now D is plain-massive-diaper;
+		summon D uncursed;
+		summon pink-baby-booties uncursed;
+		summon teddy bear mittens uncursed;
+		let P be a random pink pacifier;
+		summon P locked;
+		summon scoop bib uncursed;
+		compute berri bladder filling;
+		say "And then... The loud buzz of a vibrating wand turns on.[line break][speech style of M]'Okay baby. Here's the game. After I've had my fun with you, I'm going to unlock your bondage, but not your pacifier gag. But, if you cum OR piss yourself before I turn the vibrator off, I'll unlock your pacifier gag too. BUT, if you cum AND piss yourself, I'll not only keep the pacifier gag locked, but I'll be allocating you a full new baby outfit.'[roman type][paragraph break][if E is monster][BigNameDesc of E] audibly gulps from the doorway.[line break][speech style of E]'Oh my word...'[roman type][paragraph break][end if][BigNameDesc of M] pushes the vibrator against your [genitals] through your [D]. Despite yourself, you have to admit, it feels amazing!";
+		let N be a random number between 1 and 10;
+		while N > 0:
+			decrease N by 1;
+			reset multiple choice questions;
+			now temporaryYesNoBackground is examine-image of M;
+			[Check if we need to continue urination]
+			if the urination continues rule is listed in another-turn-rules:
+				compute single choice question "try to stop wetting yourself";
+				now another-turn is 0;
+				remove the urination continues rule from another-turn-rules;
+				follow the urination continues rule;
+			otherwise:
+				set numerical response 1 to "hold onto your bladder";
+				set numerical response 2 to "piss yourself";
+				if the bladder of the player >= 10, compute multiple choice question;
+				otherwise compute single choice question "[if refractoryperiod <= 0]fight against your impending orgasm[otherwise]whimper in shame[end if]";
+				if the bladder of the player >= 10 and player-numerical-response is 2:
+					now delayed urination is 0;
+					start urination;
+			say "The vibrator keeps buzzing away against your [genitals]!";
+			ruin vagina;
+			if the player is getting unlucky, ruin vagina;
+			check for arousal change;
+			if refractoryperiod > 0:
+				if the player is getting lucky:
+					decrease N by 1;
+				otherwise if the bladder of the player >= 6:
+					let T be the substituted form of "As the vibrations continue to torture your overstimulated [genitals],";
+					check pee pressure with reason T; [handles both full peeing and little leaks]
+		say "Suddenly, [NameDesc of M] clicks the vibrator off. ";
+		if D is wet and refractoryperiod > 0:
+			say "[big he of M] checks the front of your diaper with a firm hand, and tuts.[line break][speech style of M]'You're soaked! How pathetic, cumming and pissing yourself at the same time! I've got just the outfit for a pathetic little baby like you...'[roman type][line break]";
+			if latest-berri-stage >= 1 and latest-berri-stage <= 5, now latest-berri-stage is 6;
+			otherwise increase latest-berri-stage by 1;
+			let C be correct-berri-attire;
+			summon C uncursed;
+			say "[BigNameDesc of M] forces you into a [C]!";
+			if C is pet collar and bondage protection < 3, compute M keylocking C;
+		otherwise if D is wet or refractoryperiod > 0:
+			say "[big he of M] checks the front of your diaper with a firm hand, and chuckles.[line break][speech style of M]'You're [if D is wet]soaked[otherwise]still dry[end if]! Well done, you naughty baby!'[roman type][line break][BigNameDesc of M] unlocks the pacifier gag!";
+			unlock P;
+		otherwise:
+			say "[big he of M] checks the front of your diaper with a firm hand, and chuckles.[line break][speech style of M]'You should have wet yourself, baby! Big mistake! That pacifier is staying on until you can find someone willing to unlock it for you.'[roman type][line break]";
+		say "[BigNameDesc of M] unlocks the rest of your bondage[if E is a monster], while [NameDesc of E] watches on with an open mouth, shocked and disturbed by what [he of E] just witnessed you go through.";
+		satisfy M;
+		now berriMatronTripScene is 4;
+		progress quest of berri-quest;
+		rule succeeds.
+
+The matron vibe tortures berri rule is listed last in the matron diaper quest rules.
+
+The choosing a diaper punishment rule is listed last in the matron diaper quest rules.
+
+
 Definition: matron (called M) is eager to change diapers:
 	if M is feeding the player or M is spanking the player, decide no;
 	if M is changing the player, decide yes;
-	if M is diaper-committed, decide yes; [this means the matron has decided the player needs a diaper right now.]
+	if M is diaper-committed or M is bulkier-diaper-committed, decide yes; [this means the matron has decided the player needs a diaper right now.]
 	if there is worn messed knickers and diaper messing is 3 and diaperSceneHandled is 0, decide yes;
 	if the health of M < the maxhealth of M, decide no;
 	if there is a worn diaper:
@@ -604,7 +711,8 @@ To compute diaper change after special of (M - matron):
 To compute unique diaper change effect of (M - matron):
 	now M is motherly;
 	consider farewell routine for M;
-	now M is not diaper-committed.
+	now M is not diaper-committed;
+	now M is not bulkier-diaper-committed.
 
 This is the matron confiscates grown up items rule:
 	compute confiscate of current-monster;
@@ -777,7 +885,9 @@ To say SatisfiedFlav of (M - matron):
 Section 1 - Damage
 
 To compute damaging attack of (M - a matron):
-	if the countdown of M is 1:
+	if the class of the player is berri and latest-berri-stage is 0 and stripy-blue-dress is worn and plain-white-briefs is worn and berriMatronTripScene is 0:
+		compute tripping attack of M;
+	otherwise if the countdown of M is 1:
 		compute grabbing attack of M;
 		now the countdown of M is -5;
 	otherwise:
@@ -786,7 +896,8 @@ To compute damaging attack of (M - a matron):
 To compute grabbing attack of (M - matron):
 	say "[BigNameDesc of M] lunges, [one of]knocking[or]once again knocking[stopping] you down with far more speed than you could have expected from [his of M] body!";
 	now the stance of the player is 1;
-	follow the unique punishment rule of M.
+	if diaper quest is 0, follow the unique punishment rule of M;
+	otherwise follow the matron diaper quest rules.
 
 To compute damage reaction of (M - matron):
 	if the countdown of M > 0 and attack-type is 3:
@@ -987,7 +1098,7 @@ To compute friendly drink of (M - matron):
 			say "However, you are not nearly thirsty enough to drink out of something like this. Instead, you throw the cup on the ground, where it tumbles harmlessly.";
 			say "[speech style of M]'What do you think you're doing?! Naughty babies like you need to be punished...'[roman type][line break][BigNameDesc of M] becomes angry!";
 			FavourDown M by 5;
-			now M is diaper-committed;
+			now M is bulkier-diaper-committed;
 			anger M;
 		otherwise:
 			if the delicateness of the player < 10:

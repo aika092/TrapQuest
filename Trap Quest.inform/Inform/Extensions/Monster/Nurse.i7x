@@ -3,6 +3,8 @@ Nurse by Monster begins here.
 nurse is a staff member.
 
 nurse is in School11. The text-shortcut of nurse is "nrs". nurse has a number called boost-cooldown. nurse has a number called wont-change. nurse has a number called boost-int-drain. nurse has a number called breast-enhancement. nurse can be diaper-change-punishing.
+To decide which object is the default-local-room of (M - nurse):
+	decide on School11.
 
 Figure of nurse is the file "NPCs/School/nurse1.png".
 Figure of enslaved diapered nurse is the file "NPCs/School/nurse3.png".

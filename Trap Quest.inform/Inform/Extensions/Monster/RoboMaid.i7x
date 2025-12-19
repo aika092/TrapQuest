@@ -175,7 +175,7 @@ To compute perception of (M - a robomilkmaid):
 		say "[big his of M] eyes turn red and [he of M] spins toward you.[line break][speech style of M]'HIGH VOLUME OF MILK DETECTED. DAIRY FARM SIMULATION PROGRAM INITIATED.'[roman type][line break]";
 		anger M;
 	otherwise if the player is hotel employed:
-		if breasts is lewdly exposed or there is a worn trainee bra:
+		if breasts is lewdly exposed or trainee bra is worn:
 			say "[big he of M] glides towards you, addressing you in a monotone.[line break][speech style of M]HEY [robogreeting of M]-! FRIEND. YOU HAVE SOMETHING ON YOUR CHEST. TITS-! TITS. TEEHEE-! TEEHEE.[roman type][line break][big he of M] seems to abruptly lose interest.";
 			calm M;
 		otherwise if the largeness of breasts < 2:[exposed but not lewdly exposed? You must have small breasts!]
@@ -497,7 +497,7 @@ Definition: robomilkmaid is uniquely ready to entice:
 	if the ready-for-milking of milking-quest is 1, decide yes;
 	decide no.
 
-To compute enticing of (M - robomilkmaid):
+To compute enticing of (M - robomilkmaid) with predetermined part (BP - a truth state):
 	let CM be current-monster;
 	now current-monster is M;
 	let S be the sensitivity of breasts;

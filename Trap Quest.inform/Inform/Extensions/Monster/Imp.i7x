@@ -73,7 +73,7 @@ Definition: an imp is infernal: decide yes.
 
 To say MonsterDesc of (M - an imp):
 	if diaper quest is 0:
-		say "A tiny, naked [man of M] with red skin. [if full-lady fetish is 1][big his of M] breasts aren't particularly large for [his of M] size, but the strap-on dildo sticking out of the harness around [his of M] waist sure is[otherwise if lady fetish is 1][big his of M] breasts aren't particularly large for [his of M] size, but the [manly-penis] hanging between [his of M] legs sure is[otherwise]The [manly-penis] hanging between [his of M] legs is huge for [his of M] size[end if], and [if the intelligence of the player > 5]from the way [he of M]'s looking at you, it isn't hard to tell where [he of M][']d like to put it[otherwise]you have a lot of trouble focusing long enough to keep yourself from staring[end if]. For some reason you don't feel too self-conscious about [him of M] seeing you in humiliating situations - it's probably because [he of M] doesn't feel very human, and doesn't seem to be at all interested in what you're up to at any given moment. [if the imp-rudeness of M > 3][big he of M] has become more and more irritable[otherwise if the imp-rudeness of M > 1][big he of M] feels like [he of M] is growing impatient faster than before[otherwise if the imp-rudeness of M > 0][big he of M] seems to be getting more and more bored following you around everywhere[otherwise if M is friendly]You get the feeling that [he of M] could turn on you at any time[otherwise][big he of M] hasn't been very loyal to you[end if]...";
+		say "A tiny, naked [man of M] with [if doomed > 0]purple[otherwise]red[end if] skin. [if full-lady fetish is 1][big his of M] breasts aren't particularly large for [his of M] size, but the strap-on dildo sticking out of the harness around [his of M] waist sure is[otherwise if lady fetish is 1][big his of M] breasts aren't particularly large for [his of M] size, but the [manly-penis] hanging between [his of M] legs sure is[otherwise]The [manly-penis] hanging between [his of M] legs is huge for [his of M] size[end if], and [if the intelligence of the player > 5]from the way [he of M]'s looking at you, it isn't hard to tell where [he of M][']d like to put it[otherwise]you have a lot of trouble focusing long enough to keep yourself from staring[end if]. For some reason you don't feel too self-conscious about [him of M] seeing you in humiliating situations - it's probably because [he of M] doesn't feel very human, and doesn't seem to be at all interested in what you're up to at any given moment. [if the imp-rudeness of M > 3][big he of M] has become more and more irritable[otherwise if the imp-rudeness of M > 1][big he of M] feels like [he of M] is growing impatient faster than before[otherwise if the imp-rudeness of M > 0][big he of M] seems to be getting more and more bored following you around everywhere[otherwise if M is friendly]You get the feeling that [he of M] could turn on you at any time[otherwise][big he of M] hasn't been very loyal to you[end if]...";
 	otherwise:
 		say "A tiny, red-skinned [man of M] dressed in rags. [unless M is unfriendly]You get the feeling that [he of M] could turn on you at any time[otherwise][big he of M] hasn't been very loyal to you[end if]...".
 
@@ -165,13 +165,6 @@ To compute fatherhood to (M - an imp):
 To decide which number is the seek roll of (M - an imp):
 	if M is friendly, decide on 1; [imps always follow you around perfectly when not bored]
 	decide on a random number between 0 and 3. [Most monsters have a 75% chance of successfully moving.]
-
-A later time based rule (this is the imps follow the player rule): [after compute monsters]
-	repeat with M running through on-stage imps:
-		if M is not in the location of the player and the location of the player is not bossed: [The imps always follow you, no matter where you go. Unless it's a boss room.]
-			now M is in the location of the player;
-			say "A portal appears, and [NameDesc of M] hops out!";
-			if M is not interested, check guaranteed perception of M.
 
 [rather than becoming bored, they turn on you]
 To compute friendly boredom of (M - an imp):
@@ -279,6 +272,22 @@ To compute perception of (M - an imp):
 Part 3 - Combat
 
 Section 1 - Attack
+
+[Imps do 3 things:
+1. Charge "rudeness", which they expend to dodge attacks.
+2. Spawn portals, which they can use later to catch up to you, should you fail to defeat them
+3. Attack
+]
+To compute damaging attack of (M - an imp):
+	let C be nothing;
+	if the imp-rudeness of M <= the difficulty of M and a random number between 1 and 5 is 1:
+		say "[BigNameDesc of M] takes several steps back and gives you a sick grin.";
+		increase the imp-rudeness of M by 1;
+	otherwise if the number of nonstalking mini-portal < the number of alive imps and there is a nonstalking mini-portal and a random number between 1 and 5 is 1:
+		say "[BigNameDesc of M] snaps [his of M] fingers, then looks around as if waiting for something.";
+		deploy hell portal;
+	otherwise:
+		compute striking attack of M.
 
 To compute (M - an imp) protecting against (X - a monster):
 	if the player is prone and the player is immobile and the player is in danger:

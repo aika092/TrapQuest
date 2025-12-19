@@ -25,7 +25,7 @@ Increases once per turn. At 300 (might change), resets and a new mindless cultis
 new-acolytes is a list of people that varies.
 To update new acolytes:
 	repeat with M running through explorers:
-		if M is not previously-cultist and M is regional:
+		if berri fetish is 0 and M is not previously-cultist and M is regional:
 			add M to new-acolytes, if absent;
 		otherwise:
 			if M is listed in new-acolytes, remove M from new-acolytes.
@@ -46,7 +46,7 @@ To commence doom:
 
 To force commence doom:
 	if doom counter is 0:
-		if Woods01 is unplaced:
+		[if Woods01 is unplaced:
 			Set Up The Woods;
 			follow the setting up woods monsters rules;
 			repeat with M running through alive nonexistent monsters:
@@ -55,7 +55,7 @@ To force commence doom:
 			Set Up The Mansion;
 			follow the setting up mansion monsters rules;
 			repeat with M running through alive nonexistent monsters:
-				set up M;
+				set up M;]
 		say "[bold type]You feel a sudden sense of impending doom...[roman type][line break]";
 		if newbie tips is 1, say "[one of][newbie style]Newbie tip: You've triggered a side quest! Unless you stop the ritual, spooky things will start happening and some enemies will get more powerful and aggressive. To slow the cultists down, kill the mindless ones near the hidden altar, and also don't dirty up the sacred pool. To find out how to re-close the weakening seal on the Elder One, talk to the witch in the woods.[roman type][line break][or][stopping]";
 		repeat with M running through robobellboys:
@@ -71,13 +71,14 @@ To force commence doom:
 			add black candle to the taxableItems of M;
 			add black candle to the tradableItems of M;
 		if the number of alive undefeated dungeon dwelling gladiators is 0, now the next-summon of summoning-circle is a random off-stage dungeon dwelling gladiator;
-		now doom counter is 1.
+		now doom counter is 1 + (strongDoom * 100 * slower timers).
 
 To compute cultist conversion cutscene of (M - a monster):
 	let N be a random alive intelligent acolyte;
 	if N is nothing, now N is a random intelligent acolyte;
-	let R be the room south from Stairwell03;
-	say "You spot [NameDesc of M] nearby! [big he of M] turns around and notices you too. Before [he of M] can react to your presence, suddenly, [NameDesc of N] appears behind [him of M]! [BigNameDesc of N] pulls a black sack down over [NameDesc of M][']s head.[line break][speech style of M]'Hey, what's the big ide-MMMPH!'[roman type][line break][BigNameDesc of N] announces in a loud, proud voice.[line break][speech style of N]'Come, young one, and join our [brother of N]hood. We shall bless you in the name of [Azathot].'[roman type][line break]You don't have a chance to try and do anything before [NameDesc of N] has [if playerRegion is mansion or the player is in Stairwell03 or the player is in R]dragged [NameDesc of M] away into the depths of the mansion[otherwise]somehow teleported away, taking [NameDesc of M] along with [him of N][end if].";
+	let R be the location of the player;
+	if Stairwell03 is placed, now R is the room south from Stairwell03;
+	say "You spot [NameDesc of M] nearby! [big he of M] turns around and notices you too, but before [he of M] can say anything, [NameDesc of N] appears behind [him of M]! [BigNameDesc of N] pulls a black sack down over [NameDesc of M][']s head.[line break][speech style of M]'Hey, what's the big ide-MMMPH!'[roman type][line break][line break][speech style of N]'Come, young one, and join our [brother of N]hood. We shall bless you in the name of [Azathot].'[roman type][line break][BigNameDesc of N] announces in a loud, proud voice. You don't even have a chance to react before [NameDesc of N] has [if playerRegion is mansion or the player is in Stairwell03 or (Stairwell03 is placed and the player is in the room south from Stairwell03)]dragged [NameDesc of M] away into the depths of the mansion[otherwise]somehow teleported away, taking [NameDesc of M] along with [him of N][end if].";
 	if M is listed in new-acolytes, remove M from new-acolytes;
 	let X be a random off-stage mindless acolyte;
 	if X is acolyte:
@@ -100,19 +101,22 @@ Report going when the player is in School01:
 			focus-consider most-recent-leaver;
 			if most-recent-leaver is listed in recent-leavers, remove most-recent-leaver from recent-leavers;
 			now most-recent-leaver is nothing;
-	otherwise if Mansion01 is placed and most-recent-leaver is student and doomed < 5 and doomed >= 0 and a random number between 1 and 3 is 1:
+	otherwise if doom counter > 0 and most-recent-leaver is student and doomed < 5 and doomed >= 0 and a random number between 1 and 3 is 1:
 		let M be most-recent-leaver;
 		let N be a random alive intelligent acolyte;
 		if N is nothing, now N is a random intelligent acolyte;
-		say "[bold type]As you enter the reception, you notice [M] [bold type]just leaving via the portal.[roman type][line break]But as [he of M] goes through it, the image on the other side glitches, and changes from a very normal looking house to the haunted mansion![line break][speech style of M]'Wait, this isn't where I wanted to go!'[roman type][line break]Suddenly, [NameDesc of N] appears behind [him of M]! [BigNameDesc of N] pulls a black sack down over [NameDesc of M][']s head.[line break][speech style of M]'Hey, what's the big ide-MMMPH!'[roman type][line break][BigNameDesc of N] announces in a loud, proud voice.[line break][speech style of N]'Come, young one, and join our [brother of N]hood. We shall bless you in the name of [Azathot].'[roman type][line break]You watch with [horror the bimbo of the player] as [NameDesc of M] is dragged away.";
+		say "[bold type]As you enter the reception, you notice [M] [bold type]just leaving via the portal.[roman type][line break]But as [he of M] goes through it, the image on the other side glitches, and changes from a very normal looking house to [if Mansion01 is placed]the haunted[otherwise]a spooky[end if] mansion![line break][speech style of M]'Wait, this isn't where I wanted to go!'[roman type][line break]Suddenly, [NameDesc of N] appears behind [him of M]! [BigNameDesc of N] pulls a black sack down over [NameDesc of M][']s head.[line break][speech style of M]'Hey, what's the big ide-MMMPH!'[roman type][line break][BigNameDesc of N] announces in a loud, proud voice.[line break][speech style of N]'Come, young one, and join our [brother of N]hood. We shall bless you in the name of [Azathot].'[roman type][line break]You watch with [horror the bimbo of the player] as [NameDesc of M] is dragged away.";
 		if most-recent-leaver is listed in recent-leavers, remove most-recent-leaver from recent-leavers;
 		now most-recent-leaver is nothing;
-		let X be a random off-stage mindless acolyte;
-		if X is acolyte:
-			set up X;
-			summon X in the mansion;
-			now X is in Mansion23;
-			now the target-abductee of X is M;
+		if Mansion01 is placed:
+			let X be a random off-stage mindless acolyte;
+			if X is acolyte:
+				set up X;
+				summon X in the mansion;
+				now X is in Mansion23;
+				now the target-abductee of X is M;
+		otherwise:
+			add M to new-acolytes, if absent;
 		focus-consider N;
 		focus-consider M;
 		force commence doom;
@@ -122,9 +126,30 @@ Report going when the player is in School01:
 		if most-recent-leaver is listed in recent-leavers, remove most-recent-leaver from recent-leavers;
 		now most-recent-leaver is nothing.
 
+To fix doom:
+	if doom counter > 0:
+		while the number of entries in new-acolytes > 0:
+			let X be a random off-stage mindless acolyte;
+			let M be entry 1 in new-acolytes;
+			remove M from new-acolytes;
+			if X is monster:
+				set up X;
+				summon X in the mansion;
+				now X is in Mansion23;
+				now the target-abductee of X is M;
+		let D be doomed;
+		if D > 3, now D is 3;
+		repeat with A running through alive unleashed acolytes:
+			DifficultyUp A by D;
+		if doomed >= 4, now the Pink Sphere is in Mansion23;
+		if doomed >= 5:
+			compute chosen birth;
+			now herald is in Mansion01;
+			if diaper quest is 0, now neuromancer is sex-enslaved;
+			otherwise now neuromancer is diaper-enslaved;
 
 A later time based rule (this is the compute doom rule):
-	if doom counter is 0:
+	if doom counter is 0 and Woods01 is placed:
 		let R be the room south from Stairwell03;
 		if the player is in Stairwell03 or the player is in R:
 			let W be a random alive wench;
@@ -172,6 +197,9 @@ A later time based rule (this is the compute doom rule):
 		let oldDC be doom counter;
 		increase doom counter by MA;
 		if debuginfo > 1, say "+ cultists currently performing ritual ([MA]) ";
+		if strongDoom > 0:
+			increase doom counter by 2;
+			if debuginfo > 1, say "+ faster doom bonus (2) ";
 		if doom counter < 150 * slower timers and doomed > 0:
 			increase doom counter by 1;
 			if debuginfo > 1, say "+ level 1 doom bonus catch-up rate (1) ";
@@ -193,7 +221,7 @@ A later time based rule (this is the compute doom rule):
 		if the corruption of the sacred-pool <= 90 and doomed > 3:
 			decrease doom counter by 1;
 			if debuginfo > 1, say "- pure sacred pool (1) ";
-		if the corruption of the sacred-pool <= 140:
+		if the corruption of the sacred-pool <= 140 and doomed > 0:
 			decrease doom counter by 1;[keeping the pool "healthy" extends the timer, polluting it speeds it up.]
 			if debuginfo > 1, say "- non-corrupted sacred pool (1) ";
 		if doom counter <= 0, now doom counter is 1; [Otherwise the quest can accidentally end itself]
@@ -214,6 +242,8 @@ A later time based rule (this is the compute doom rule):
 			if a random number between 1 and 2 is 1 and wild gladiator is summon-available and wild gladiator is off-stage and wild gladiator is woods dwelling, now the next-summon of giant-statue is wild gladiator;
 			repeat with A running through alive unleashed acolytes:
 				DifficultyUp A by 1;
+			if camera-drone is stalking:
+				say "The [ShortDesc of camera-drone] shudders as its metal chassis falls away, revealing a single, fist-sized eye with dangling tendrils of flesh.";[TODO: compute grossness]
 			progress quest of doom-quest;
 			deploy a wisp;
 			deploy a slimeball;
@@ -224,8 +254,9 @@ A later time based rule (this is the compute doom rule):
 				set up ghostly tentacle;
 				summon ghostly tentacle in the mansion;
 			if a random number between 1 and 3 is 1 and enlightened gladiator is summon-available and enlightened gladiator is off-stage and enlightened gladiator is mansion dwelling, now the next-summon of mysterious-mummy is enlightened gladiator;
-			repeat with A running through alive unleashed acolytes:
-				DifficultyUp A by 1;
+			if Mansion01 is placed:
+				repeat with A running through alive unleashed acolytes:
+					DifficultyUp A by 1;
 			progress quest of doom-quest;
 			deploy a wisp;
 			deploy a slimeball;
@@ -233,23 +264,27 @@ A later time based rule (this is the compute doom rule):
 			say "[bold type]The air feels positively moist and somehow everything seems more unwholesome, an impressive feat given the content of the game normally.[roman type][line break]";
 			now doomed is 3;
 			if flower hairclip is worn, transform flower hairclip into spiked-tiara;
-			repeat with A running through alive unleashed acolytes:
-				DifficultyUp A by 1;
+			if Mansion01 is placed:
+				repeat with A running through alive unleashed acolytes:
+					DifficultyUp A by 1;
 			progress quest of doom-quest;
 			deploy a wisp;
 			deploy a slimeball;
+			deploy eldritch portal;
 		otherwise if doom counter > 600 * slower timers and doomed is 3:
 			if the location of the player is not Mansion23:
 				say "[bold type]A horrible noise like a thousand screams of pure bliss echoes through the world itself, and the world itself takes on a soft pink cast for a moment. Something is drawing close to this world![roman type][line break]";
 			otherwise:
 				say "[bold type]A horrible noise like a thousand screams of bliss echoes through the world and a soft pink light fills the area. Above the altar a translucent pink bubble swirls and throbs, the ritual is clearly almost complete![roman type][line break]";
 			now doomed is 4;
-			now the Pink Sphere is in Mansion23; [spawn the pink bubble scenery in mansion23]
-			repeat with A running through alive unleashed acolytes:
-				DifficultyUp A by 1;
+			if Mansion01 is placed:
+				now the Pink Sphere is in Mansion23; [spawn the pink bubble scenery in mansion23]
+				repeat with A running through alive unleashed acolytes:
+					DifficultyUp A by 1;
 			progress quest of doom-quest;
 			deploy a wisp;
 			deploy a slimeball;
+			deploy eldritch portal;
 		otherwise if doom counter > 800 * slower timers and doomed is 4:
 			if the location of the player is Mansion23:
 				if the class of the player is cultist:
@@ -304,6 +339,7 @@ A time based rule (this is the doom weather rule):
 			now latestAnnouncedRaining is true;
 		repeat with C running through currently uncovered fluid vulnerable clothing:
 			if the total-soak of C < the soak-limit of C, WaterSoak C;
+		if camera-drone is stalking, compute dunking camera-drone;
 		if doomed is 3 and playerRegion is Mansion:
 			HairUp 1;
 	otherwise if latestAnnouncedRaining is true:
@@ -316,10 +352,11 @@ To resolve doom:
 	set up herald;
 	if enlightened gladiator is summon-available and enlightened gladiator is dungeon dwelling and enlightened gladiator is not in the location of the player, summon enlightened gladiator in the dungeon;
 	if goth mannequin is woods dwelling and goth mannequin is off-stage, summon goth mannequin in the woods;
-	if diaper quest is 0, compute chosen birth;
-	now herald is in Mansion23;
-	if diaper quest is 0, now neuromancer is sex-enslaved;
-	otherwise now neuromancer is diaper-enslaved;
+	if Mansion01 is placed:
+		if diaper quest is 0, compute chosen birth;
+		now herald is in Mansion23;
+		if diaper quest is 0, now neuromancer is sex-enslaved;
+		otherwise now neuromancer is diaper-enslaved;
 	deploy a wisp;
 	deploy a wisp;
 	deploy a wisp;
@@ -344,7 +381,7 @@ To compute chosen birth:[now that the mindless acolytes are no longer needed to 
 					decrease the raw difficulty of T by 2;
 					now T is in the location of A;
 	repeat with M running through tentacle monsters:
-		now the evolved of M is 3;
+		now M is doom-evolved;
 	let N be a random alive mindless acolyte in the location of the player;
 	let E be a random tentacle monster in the location of N;
 	if the number of mindless acolytes in the location of the player > 1:

@@ -25,6 +25,40 @@ The release number is 15.
 Definition: a thing is thigh-spreading: decide no.
 Definition: a clothing is thigh-spread-blocking: decide no.
 
+berriVineBossScene is a number that varies.
+berriMatronTripScene is a number that varies.
+berriMechanicScene is a number that varies.
+latest-berri-stage is a number that varies.
+To compute berri vine portals:
+	do nothing.
+To compute berri bladder filling:
+	do nothing.
+To compute berri trip attempt of (M - a monster):
+	do nothing.
+To fix berri outfit:
+	do nothing.
+To compute berri bladder or bowel panty filling:
+	do nothing.
+To compute berri bladder or bowel filling:
+	do nothing.
+To compute berri bladder and bowel filling:
+	do nothing.
+To compute berri bowel filling:
+	do nothing.
+To compute berri bladder and facesit-only filling:
+	do nothing.
+To compute berri bladder and bowel facesit-only filling:
+	do nothing.
+To say BerriCutsceneFlav:
+	say "".
+To decide which object is correct-berri-attire:
+	decide on nothing.
+To decide which object is correct-berri-diaper:
+	decide on nothing.
+
+urinal-competition-punishment is a diaper punishment. urinal-competition-punishment has an object called urinal-rival.
+berri-collaring is a diaper punishment.
+
 robomatron is a monster.
 boogeymonster is a monster.
 student-rachel is a monster.
@@ -43,6 +77,14 @@ Include Centaur by Monster.
 Include Goblin by Monster.
 Include Woman Barbara by Monster.
 Include TQ Monster Variants by TQ Only Stuff.
+
+Figure of Berri Cutscene 14c is the file "Special/Animations/GargoyleTitwank/loading banner.png".
+Figure of Berri Cutscene 14d is the file "Special/Animations/GargoyleTitwank/loading banner.png".
+
+berriVineBossScene is a number that varies.
+berriMechanicScene is a number that varies.
+berriMatronTripScene is a number that varies.
+berriSceneDone is initially false.
 
 Include Milking Bench by Furniture.
 Include Dildo Rocking Stool by Furniture.

@@ -1,9 +1,20 @@
 Cat Ears by Headgear begins here.
 
-cat-ears is a headgear. cat-ears is manly. Figure of cat ears is the file "Items/Accessories/Head/catears1.png". Understand "pair", "of" as cat-ears. cat-ears is blondeness-negative. cat-ears is brightness-positive. cat-ears is redness-negative. cat-ears is hair growing. cat-ears is dexterity-influencing. Understand "cat", "ears" as cat-ears.
+A cat-headband is a kind of headgear.
+
+Understand "pair", "of" as cat-headband. a cat-headband is blondeness-negative. a cat-headband is brightness-positive. a cat-headband is redness-negative. a cat-headband is hair growing. a cat-headband is dexterity-influencing. Understand "cat", "ears" as a cat-headband.
+
+Definition: a cat-headband is cat themed: decide yes.
+Definition: a cat-headband is fluid immune: decide yes.
+
+To say ShortDesc of (H - a cat-headband):
+	say "fake cat ears".
+
+Book - Cat Ears
+
+cat-ears is a cat-headband. cat-ears is manly. Figure of cat ears is the file "Items/Accessories/Head/catears1.png".
 
 Definition: cat-ears is roleplay: decide yes.
-Definition: cat-ears is fluid immune: decide yes.
 
 The printed name of cat-ears is "[clothing-title-before]pair of cat ears[clothing-title-after]". The text-shortcut of cat-ears is "cte".
 
@@ -13,14 +24,10 @@ To decide which figure-name is the clothing-image of (C - cat-ears):
 To say ClothingDesc of (H - cat-ears):
 	say "A pair of fake cat ears on a headband, with a frilly piece of fabric between the ears.".
 
-To say ShortDesc of (H - cat-ears):
-	say "fake cat ears".
-
 To compute SelfExamineDesc of (H - cat-ears):
 	let X be the largeness of hair;
 	say "You are wearing a pair of fake cat ears on top of your [ShortDesc of hair]. ".
 
-Definition: cat-ears is cat themed: decide yes.
 Definition: cat-ears is black themed: decide yes.
 
 Chapter - Class Outfit
@@ -81,6 +88,45 @@ Report going:
 		if N >= 4:
 			if H is cursed or (H is uncursed and N >= 5), progress quest of follow-me-quest.
 
+
+Book - Maid Cat Ears
+
+maid-cat-ears is a cat-headband. Figure of maid cat ears is the file "Items/Accessories/Head/catears3.png".
+
+The printed name of maid-cat-ears is "[clothing-title-before]pair of cute cat ears[clothing-title-after]". The text-shortcut of maid-cat-ears is "cce". Understand "cute" as maid-cat-ears.
+
+To decide which figure-name is the clothing-image of (C - maid-cat-ears):
+	decide on figure of maid cat ears.
+
+To say ClothingDesc of (H - maid-cat-ears):
+	say "A pair of fake cat ears on a headband, with a pink bows and jingly cat bells.".
+
+To compute SelfExamineDesc of (H - maid-cat-ears):
+	let X be the largeness of hair;
+	say "You are wearing a pair of fake cat ears on top of your [ShortDesc of hair]. ".
+
+Definition: maid-cat-ears is black themed: decide yes.
+Definition: maid-cat-ears is white themed: decide yes.
+Definition: maid-cat-ears is bell themed: decide yes.
+Definition: maid-cat-ears is bow themed: decide yes.
+
+Chapter - Class Outfit
+
+To compute class outfit of (H - maid-cat-ears):
+	[if pink-spraybottle is not held, class summon pink-spraybottle;]
+	class summon neko-maid-outfit;
+	class summon catbell;
+	if diaper quest is 0:
+		class summon black-cat-tail-anal-beads;
+		if black-cat-tail-anal-beads is worn, maybe-map-display the transform-image of black-cat-tail-anal-beads.
+
+To uniquely set up (C - maid-cat-ears):
+	now the quest of C is puddle-cleaning-quest;
+	now the puddles-cleaned of puddle-cleaning-quest is 0.
+
+
+Volume - Stripper Headgear
+
 stripper-headgear is a kind of headgear.
 
 Definition: a stripper-headgear is roleplay: decide no.
@@ -96,6 +142,8 @@ To compute hair growth of (H - a stripper-headgear):
 		if the largeness of hair < max hair length and a random number between 1 and (100 + X + (the fake largeness of hair * 7) - (the outrage of H * 3)) is 1 and the fake largeness of hair > 0 and the fake largeness of hair < 10:
 			say "Your [printed name of H] feels warm. You feel a slithering growth of your fake hair extensions!";
 			FakeHairUp 1.
+
+Book - Stripper Ears
 
 stripper-ears is a stripper-headgear. stripper-ears is pvc. stripper-ears is womanly. Figure of stripper-ears is the file "Items/Accessories/Head/catears2.png". stripper-ears is blondeness-positive. stripper-ears is brightness-positive. stripper-ears is redness-negative. stripper-ears is hair growing. The text-shortcut of stripper-ears is "stes".
 

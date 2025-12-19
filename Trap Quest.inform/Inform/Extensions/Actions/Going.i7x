@@ -62,10 +62,22 @@ To update travel opposite of (P - a person):
 	now the travel-opposite of P is the opposite-direction of the travel-direction of P.
 
 Check going up:
-	if there is a golem in the location of the player, say "[bold type][BigNameDesc of golem] [bold type]stands in front of the stairwell, blocking the way. [roman type]You're going to need to deal with [him of golem] first!" instead.
+	if there is a golem in the location of the player, say "[bold type][BigNameDesc of golem] [bold type]stands in front of the stairwell, blocking the way. [roman type]You're going to need to deal with [him of golem] first!" instead;
+	let C be camera-drone;
+	if C is stalking:
+		if C is uploading:
+			say "Are you sure you want to go up there? It would give the [ShortDesc of C] all the time it needs to finish uploading.";
+			unless the player is consenting, do nothing instead;
+		compute ditching camera-drone.
 
 Check going down:
-	if there is a golem in the location of the player, say "[bold type][BigNameDesc of golem] [bold type]stands in front of the stairwell, blocking the way. [roman type]You're going to need to deal with [him of golem] first!" instead.
+	if there is a golem in the location of the player, say "[bold type][BigNameDesc of golem] [bold type]stands in front of the stairwell, blocking the way. [roman type]You're going to need to deal with [him of golem] first!" instead;
+	let C be camera-drone;
+	if C is stalking:
+		if C is uploading:
+			say "Are you sure you want to go down there? It would give the [ShortDesc of C] all the time it needs to finish uploading.";
+			unless the player is consenting, do nothing instead;
+		compute ditching camera-drone.
 
 Carry out going up (this is the hotel-setup rule):
 	if the player is in Stairwell02:
@@ -153,7 +165,7 @@ To compute puddle cleanup:
 To compute clothing cleanup:
 	if the player is able to use their hands:
 		repeat with C running through in-play clothing:
-			if C is not immune to change and C is not held by an alive person and C is not regional:
+			if C is not immune to change and C is not held by an alive person and C is nonregional:
 				unless C is plentiful accessory, destroy C;
 			if C is plentiful regional accessory and C is not held by an alive person:
 				if a random number between 1 and 5 > 3: [40% of jewellery is picked up by the region's NPCs]
@@ -179,9 +191,9 @@ Definition: yourself is crawling:
 	decide no.
 
 Definition: yourself is wobbling:
-	repeat with H running through heels worn by the player:
-		if H is not platform heels and H is not wedge heels and the heel-height of H > 3 and the heel skill of the player < 7, decide yes;
-		if heel-height of H > 5 and the heel skill of the player < 7, decide yes;
+	repeat with H running through worn heels:
+		if the hindrance of H > 0, decide yes;
+		decide no.
 
 Definition: a clothing (called C) is skirt-hobbling:
 	if C is worn and C is hobble-skirted and C is not crotch-unzipped and C is crotch-in-place, decide yes;
@@ -806,7 +818,7 @@ To Test a Sticky Trap:
 		if there is a worn sandals, increase D by 4;
 		let T be a random untriggered sticky trap in the location of the player;
 		say "The [if playerRegion is Woods]floor in this room is particularly soft and your [feet] get momentarily stuck[otherwise if playerRegion is Mansion]floor in this part of the mansion is very uneven[otherwise]wooden floor in this room has been recently polished[end if][run paragraph on]";
-		if D < R:
+		if D < R or (the class of the player is berri and (latest-berri-stage is 6 or latest-berri-stage is 7)):
 			say "[if playerRegion is Woods], which knocks you off balance![otherwise] which causes you to slip and fall![end if]";
 			try kneeling;
 			if T is trap:

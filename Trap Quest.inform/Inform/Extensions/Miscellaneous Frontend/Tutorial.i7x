@@ -114,14 +114,15 @@ To compute tutorial treasure to (X - a container):
 
 Report opening a container:
 	if the player is in Tutorial02:
-		say "[newbie style]Wow, so a lot just happened! Firstly you got hit by a trap. That happens a lot I'm afraid, and there's not too much you can do about it. The higher intelligence you have, the more chance you have to avoid triggering traps, either by noticing tripwires or detecting trapped containers, and the higher your dexterity, the higher your chance of dodging triggered traps, and sometimes escape traps that have caught you. Except for that, traps are just one of those parts of the game that are kind of inevitable. In general, being on your knees can help you avoid traps and make them less likely to affect you, but this is not always the case. Anyway, this particular trap increased [if diaper quest is 1]your arousal, as I'm sure you noticed[otherwise]the size of your hips. Did you notice the character window change? In the game your hips won't grow as quickly as that, but they can grow slowly but surely thanks to effects like the needle trap[end if].[paragraph break]Next, you have found some heels. Heels are interesting... they make your appearance a bit more slutty and at the beginning of the game they make you grow tired more quickly because you are not skilled at walking in them. But they increase the power of your kick attacks, which is very useful. For this tutorial, we will wear them. In the real game, it is up to you.[roman type][line break]".
+		check for arousal change;
+		say "[newbie style]Wow, so a lot just happened! Firstly you got hit by a trap. That happens a lot I'm afraid, and there's not too much you can do about it. The higher intelligence you have, the more chance you have to avoid triggering traps, either by noticing tripwires or detecting trapped containers, and the higher your dexterity, the higher your chance of dodging triggered traps, and sometimes escape traps that have caught you. Except for that, traps are just one of those parts of the game that are kind of inevitable. In general, being on your knees can help you avoid traps and make them less likely to affect you, but this is not always the case. Anyway, this particular trap increased your arousal, as I'm sure you noticed.[paragraph break]Next, you have found some heels. Heels are interesting... they make your appearance a bit more slutty and at the beginning of the game they make you grow tired more quickly because you are not skilled at walking in them. But they increase the power of your kick attacks, which is very useful. For this tutorial, we will wear them. In the real game, it is up to you.[roman type][line break]".
 
 To say TutorialGreet of (M - a royal guard):
 	say "[speech style of M]'Oh, I didn't notice you there! Erm... that's an interesting choice of attire you have on there. But it's not inappropriate enough for me to be forced to arrest you. You may proceed unhindered for now.'[paragraph break][newbie style]Looks like [he of M]'s friendly! But now that [he of M]'s interested, [he of M] will follow you from room to room until [he of M] gets bored, so you'd better hope that nothing happens that makes [him of M] change [his of M] mind! Also, since [he of M]'s interested and friendly you can ask [him of M] questions. To do this simply use the 'talk' verb again. Each different type of NPC can teach you a skill if you ask the right question (random chance based on your intelligence), but you can only ask a certain number of questions before the NPC gets annoyed and stops answering. When you are bored with asking questions, feel free to move on.[roman type][line break]".
 
 Report opening a container:
 	if the player is in Tutorial04:
-		say "[newbie style]Your swimsuit was transformed! This happens a lot in this game, and almost always makes the clothing more [if diaper quest is 1]slutty or childish, neither of which will impress NPCs[otherwise]slutty, which makes NPCs more likely to become upset with you[end if]. You'll need to keep lots of backup clothing items so you can try to keep your appearance looking reasonable. Clothing also has other natural uses.[roman type][paragraph break]";
+		say "[newbie style]Your swimsuit was transformed! This happens a lot in this game, and almost always makes the clothing more [if diaper quest is 1]slutty or childish, neither of which will impress NPCs[otherwise]slutty, which makes NPCs more likely to become lustful after you, and aggressive towards you[end if]. You'll need to keep lots of backup clothing items so you can try to keep your appearance looking reasonable. Clothing also has other natural uses - you can use clothing as rags to wipe away bodily fluids or sticky glue traps.[roman type][paragraph break]";
 		let M be a random royal guard in the location of the player;
 		anger M;
 		say "[BigNameDesc of M] seems to be looking at you differently![line break][first custom style]'That is not appropriate attire for these halls! I have no choice but to punish you in a suitable manner...'[roman type][line break]";
@@ -170,7 +171,7 @@ Report resisting when tutorial is 1:
 		now the sleep of M is 0;
 		now M is uninterested;
 		calm M;
-		say "[line break][newbie style]You're now holding an [if diaper quest is 1]enema[otherwise]anal creampie[end if]! This is one example of [if watersports fetish is 1 or diaper lover > 0]several states, including things like a full bladder, [otherwise]a state [end if]where your stats and adventuring capabilities are hampered until you can relieve yourself. The verb for expelling an [if diaper quest is 1]enema[otherwise]anal creampie[end if] is [bold type]expel[newbie style], or you can click on the new button underneath the map (to the left of the pineapple - that's your safe word button, by the way). But if you try and use it in this room, your character will refuse because your dignity is too high to do this in front of someone. This can be a real pain when there is an NPC following you around from room to room! Luckily, as long as we don't annoy the guard further, [he of M] will be happy to leave us alone and we can move south without [him of M] coming along for the ride. In the main game, you can try to [bold type]dismiss[newbie style] NPCs to get them to leave you alone, but if you don't have a good reason, they might just decide to follow you around for even longer![roman type][line break]".
+		say "[line break][newbie style]You're now holding an [if diaper quest is 1]enema[otherwise]anal creampie[end if]! This is one example of [if watersports fetish is 1 or diaper lover > 0]several states, including things like a full bladder, [otherwise]a state [end if]where your stats and adventuring capabilities are hampered until you can relieve yourself. The verb for expelling an [if diaper quest is 1]enema[otherwise]anal creampie[end if] is [bold type]expel[newbie style], or you can click on the new button underneath the map (the one with a red hue). But if you try and use it in this room, your character will refuse because your dignity is too high to do this in front of someone. This can be a real pain when there is an NPC following you around from room to room! Luckily, as long as we don't annoy the guard further, [he of M] will be happy to leave us alone and we can move south without [him of M] coming along for the ride. In the main game, you can try to [bold type]dismiss[newbie style] NPCs to get them to leave you alone, but if you don't have a good reason, they might just decide to follow you around for even longer![roman type][line break]".
 
 Report squatting when the player is in Tutorial05:
 	say "[newbie style]Nice one! [if bukkake fetish is 1]Of course there is a slight problem with expelling when you are on your knees, which is that your thighs get covered in cum, lowering your dexterity. Cum can be wiped off in bodies of water or by using unworn clothing as rags. [end if]When you finish expelling, you should[if diaper quest is 0] do two things: fix the crotch of your swimsuit ('replace') and[end if] use the altar to help you escape these heels. Just click on your worn items tab, click on the heels, and then click on the button that looks like the altar. Or you could type phrases along the lines of 'place heels on altar'.[roman type][line break]".
@@ -223,5 +224,91 @@ To start the tutorial:
 	set up debug stuff;
 	display stuff;
 	if the player is able to automatically slap or the player is able to automatically knee or the player is able to automatically kick, do nothing.
+
+
+Figure of Tutorial Selection Backdrop is the file "Special/Menus/tutorialbackdrop1.jpg".
+Figure of Tutorial Font Backdrop is the file "Special/Menus/tutorialbackdrop2.jpg".
+
+To compute new tutorial selection window:
+	now the position of the graphics-window is g-placeabove;
+	now the measurement of the graphics-window is 99;
+	open the graphics-window;
+	[let H be the height of the graphics-window;
+	let W be the width of the graphics-window;]
+	now fetishMenuInProgress is 3;
+	now fetishSelection is 2;
+	now current menu selection is 1;
+	[wait 50 ms before continuing;]
+	close the status window;
+	while fetishMenuInProgress is 3:
+		update the status line;
+		refresh the graphics-window;
+		let __x be the chosen letter;
+		if __x is 81 or __x is 113 or __x is -6 or __x is 13 or __x is 32 or candidate replacement command is "quit":
+			now fetishMenuInProgress is 0;
+			now waitingForChar is false;
+		otherwise if __x is -2 or __x is -5: [up or right]
+			if current menu selection is 1, now previous menu selection is 1;
+			if current menu selection is greater than 1, decrease current menu selection by 1;
+			otherwise now current menu selection is 2;
+		otherwise if __x is -3 or __x is -4: [down or left]
+			if current menu selection is 2, now previous menu selection is 2;
+			if current menu selection is less than 2, increase current menu selection by 1;
+			otherwise now current menu selection is 1;
+	if current menu selection is 1:
+		if earnings is starting-earnings, now tutorial is 1;
+	otherwise:
+		now tutorial is 0;
+	now current menu selection is 1;
+	close the graphics-window;
+	open the status window;
+	now the position of the graphics-window is g-placeleft;
+	now the measurement of the graphics-window is default-graphics-window-measurement.
+
+To render full new tutorial selection menu:
+	let H be the height of the graphics-window;
+	let W be the width of the graphics-window;
+	let W2 be W / 2;
+	display the image Figure of Tutorial Selection Backdrop in the graphics-window at 0 by 0 with dimensions W by H;
+	repeat with X running from 1 to 2:
+		let X2 be 1 + (W2 * X);
+		let X1 be X2 - W2;
+		let TXT be the substituted form of "fet6[X]";
+		set a graphlink in the graphics-window identified as hyperinventoryobject for yourself from X1 by 1 to X2 by H as TXT, ignoring redundant links;
+		if X is current menu selection:
+			let lineY be (130 * H) / 1080;
+			let lineH be (2 * H) / 1080;
+			if lineH < 1, now lineH is 1;
+			draw a rectangle 16029161 in the graphics-window at X1 by lineY with size W2 by lineH;
+
+
+To compute new tutorial font window:
+	now the position of the graphics-window is g-placeabove;
+	now the measurement of the graphics-window is 99;
+	open the graphics-window;
+	[let H be the height of the graphics-window;
+	let W be the width of the graphics-window;]
+	now fetishMenuInProgress is 3;
+	now fetishSelection is 5;
+	now current menu selection is 1;
+	[wait 50 ms before continuing;]
+	close the status window;
+	while fetishMenuInProgress is 3:
+		update the status line;
+		refresh the graphics-window;
+		let __x be the chosen letter;
+		if __x is 81 or __x is 113 or __x is -6 or __x is 13 or __x is 32 or candidate replacement command is "quit":
+			now fetishMenuInProgress is 0;
+			now waitingForChar is false;
+	close the graphics-window;
+	open the status window;
+	now the position of the graphics-window is g-placeleft;
+	now the measurement of the graphics-window is default-graphics-window-measurement.
+
+To render full new tutorial font menu:
+	let H be the height of the graphics-window;
+	let W be the width of the graphics-window;
+	display the image Figure of Tutorial Font Backdrop in the graphics-window at 0 by 0 with dimensions W by H;
+	set a graphlink in the graphics-window identified as hyperinventoryobject for yourself from 0 by 0 to (W - 1) by (H - 1) as "fet61", ignoring redundant links;
 
 Tutorial ends here.

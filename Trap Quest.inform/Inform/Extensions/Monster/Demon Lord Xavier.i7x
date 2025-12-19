@@ -714,7 +714,7 @@ To compute punishment of (P - xavier-nightmare-belt):
 	let K be a random worn knickers;
 	let R be a random worn diaper;
 	if K is diaper, now K is the player;
-	let D be a random eligible diaper;
+	let D be the chosen trap diaper;
 	let BL be a random worn belt;
 	say "[DemonNightmareStartFlav]";
 	say "[first custom style]'Yes, this one will do.'[roman type][line break]The guards are holding you down on your knees in front of a male demon. Even though he is six feet tall you can tell he is rather young for a demon. Rather than the shining metal you've seen all the other males wearing, this demon has a modest (but still high quality) brown leather robe and sandals. He's also wearing glasses. You didn't even know demons could have problems with their eyesight - but then you don't know much about demons at all.[line break][first custom style]'It will be the perfect guinea pig for my latest invention. Send my thanks to my [fathertext of M].'[line break][variable custom style]Ah. So he's Xavier's son.[line break][first custom style]'[big please], sit at the table[if K is clothing]. But first, you won't be needing that[end if].'[roman type][line break]";
@@ -1076,7 +1076,7 @@ To execute (F - final-battle-harness):
 
 final-battle-scan is a final-battle-object. final-battle-scan can be pose-swapped.
 Definition: final-battle-scan is appropriate:
-	if diaper lover is 1, decide yes;
+	if diaper lover is 1 and infamy fetish > 0, decide yes;
 	decide no.
 To commence (F - final-battle-scan):
 	say "[BigNameDesc of demon lord] makes for one wall and slams a hidden button. There's a loud whirring, and then a football-sized metal sphere flies into the room, before speaking in a robotic voice.[line break][first custom style]'SPREAD LEGS SQUATTING PEACE SIGN SMILE POSE ENFORCEMENT ROUTINE INITIATED. PARTY BALL WILL RELEASE PUNISHMENT HIGH-POWERED CONCUSSIVE ENERGY BLAST UNLESS POSE IS DETECTED IN FIVE... FOUR... THREE...[line break][speech style of ex-princess]'No!'[roman type][line break][BigNameDesc of ex-princess] interrupts the bizarre machine by adopting the pose it seems to be demanding - [he of ex-princess] spreads [his of ex-princess] legs, squats down low, raises [his of ex-princess] hands in two peace signs, and puts on a forced smile. [big he of ex-princess] looks absolutely ridiculous - which is likely the point, you suppose - and is also rendered unable to speak or move while [he of ex-princess] holds the pose... leaving [him of ex-princess] completely vulnerable to [NameDesc of demon lord][']s next attacks. Meanwhile, the robot-drone-thing begins making robotic laughter sounds and taking flash photos of [NameDesc of ex-princess], presumably immediately uploading these to several sites on the Internet.[paragraph break]...It seems likely that the robot will only do its nasty energy blast thing if it can't find anyone in the room in that humiliating pose. You could probably assume the pose yourself, and by doing so free up [NameDesc of ex-princess] to keep fighting. But it would be so humiliating... and what if the images really did end up on the Internet?!";

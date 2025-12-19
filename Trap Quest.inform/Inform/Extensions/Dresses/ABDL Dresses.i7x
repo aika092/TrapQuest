@@ -413,7 +413,22 @@ To decide which number is the berri-rank of yourself:
 	decide on the berri-rank of C.
 
 To uniquely set up (C - a berri-dress):
-	now the transform-resistance of C is 2.
+	now the transform-resistance of C is 1.
+
+Definition: a berri-dress is transformation-theme-blockable: decide no. [It doesn't care about the theme it shares with other items.]
+
+To compute class set up of (C - a berri-dress):
+	compute periodic effect of C;
+	if C is stripy-blue-dress and magic pistol is not worn, unclash class summon magic pistol;
+	if C is pink-babydoll-dress:
+		if bear bib is not worn, unclash class summon bear bib;
+		if heart-pacifier is not worn and the number of feeding the player monsters is 0:
+			let face-occupied be false;
+			repeat with T running through things penetrating face:
+				if T is not clothing, now face-occupied is true;
+			if face-occupied is false:
+				unclash class summon heart-pacifier;
+				unlock heart-pacifier.
 
 To compute post transformation effect of (C - a berri-dress):
 	compute periodic effect of C.
@@ -422,24 +437,49 @@ To compute school periodic effect of (C - a berri-dress):
 	compute periodic effect of C.
 
 To compute periodic effect of (C - a berri-dress):
-	if C is not stripy-blue-dress:
-		if gold-hairclip is worn and C is crotch-in-place and the number of worn diaper is 0 and the player is not immobile:
-			let D be a random worn eligible diaper;
-			if D is diaper:
-				summon D uncursed;
-				say "[BigNameDesc of gold-hairclip] [bold type]won't allow the supporting character known as 'Berri' to be wandering around without a diaper! [roman type]It summons a [MediumDesc of D] underneath [NameDesc of C].";
-		if magic pistol is held:
-			say "[BigNameDesc of magic pistol] dissolves into dust. It looks like [']Berri['] is having combat advantages taken away, in preparation for her dramatic downfall...";
-			only destroy magic pistol.
+	if the class of the player is berri:
+		if C is blue-dungarees:
+			if latest-berri-stage < 1, now latest-berri-stage is 1;
+			let DQB be the DQBulk of the player;
+			if debugmode > 0 and debuginfo > 0, say "LBS is [latest-berri-stage], DQB is [DQB].";
+			if DQB > 5, now DQB is 5;
+			if latest-berri-stage < DQB, now latest-berri-stage is DQB;
+		otherwise if C is pink-latex-bodysuit:
+			if latest-berri-stage < 6, now latest-berri-stage is 6;
+			let D be a random worn diaper;
+			if D is diaper and D is crotch-pullup and D is not waddle diaper:
+				now bulk-search-level is the DQBulk of D;
+				let DD be the chosen disposable diaper;
+				if DD is disposable diaper:
+					say "[BigNameDesc of C] seems to identify that nobody would ever be able to remove a [MediumDesc of D] without first removing the suit!";
+					transform D into DD;
+		otherwise if C is pink-babydoll-dress:
+			if latest-berri-stage < 7, now latest-berri-stage is 7;
+		if C is not stripy-blue-dress:
+			if C is crotch-in-place and the number of worn diaper is 0 and the player is not immobile, compute berri diaper fixing of C;
+			if magic pistol is held:
+				say "[BigNameDesc of magic pistol] dissolves into dust. It looks like [']Berri['] is having combat advantages taken away, in preparation for her dramatic downfall...";
+				only destroy magic pistol;
+			if C is crotch-displaced and (C is blue-dungarees or C is pink-latex-bodysuit), now C is top-displaced.
+
+To compute berri diaper fixing of (C - a clothing):
+	if the number of worn diapers is 0:
+		let D be correct-berri-diaper;
+		pinkWardrobeUnclash D;
+		summon D uncursed;
+		say "[BigNameDesc of gold-hairclip] [bold type][one of]seems to have now decided that for the rest of her adventure, Berri should be diapered[or]won't allow the supporting character known as 'Berri' to be wandering around without a diaper[stopping]! [roman type]It summons a [MediumDesc of D] [if C is worn dress]underneath [NameDesc of C][otherwise]over your crotch[end if].".
 
 Check taking off a diaper:
 	if gold-hairclip is worn and the noun is unmessed and the total-soak of the noun <= (the soak-limit of the noun * 2) / 3:
 		say "[BigNameDesc of gold-hairclip] takes control of your arms, and stops you! It seems like it doesn't want you removing your own diapers until they are much closer to fully used. Waste not, want not!" instead.
 
-Report going:
+Report examining a berri-dress:
+	if debugmode > 0, say "Berri progression is at [latest-berri-stage].";
+
+[Report going:
 	if gold-hairclip is worn and (the noun is up or the noun is down) and playerRegion is not school and the number of worn berri-dress is 0:
 		say "[BigNameDesc of gold-hairclip] [bold type]seems to be getting you ready for your next cutscene! [roman type]";
-		compute class outfit of gold-hairclip.
+		compute class outfit of gold-hairclip.]
 
 Part - Stripy Blue Dress
 
@@ -447,10 +487,10 @@ stripy-blue-dress is a berri-dress.
 
 The printed name of stripy-blue-dress is "[clothing-title-before]stripy blue dress[clothing-title-after]". Understand "stripy", "blue", "dress" as stripy-blue-dress. The text-shortcut of stripy-blue-dress is "sbd".
 
-[Figure of stripy blue dress is the file "Items/Clothes/Upper/Dresses/Berri/berri1.png".
+Figure of stripy blue dress is the file "Items/Clothes/Upper/Dresses/Berri/berri1.png".
 
 To decide which figure-name is clothing-image of (C - stripy-blue-dress):
-	decide on figure of stripy blue dress.]
+	decide on figure of stripy blue dress.
 
 To say ClothingDesc of (C - stripy-blue-dress):
 	say "A striply blue and white dress with a lovely blue ribbon around the waist.".
@@ -473,14 +513,14 @@ To decide which object is the unique-upgrade-target of (C - stripy-blue-dress):
 
 Part - Blue Dungarees
 
-blue-dungarees is a berri-dress. blue-dungarees is denim. The skirt-length of blue-dungarees is 0. blue-dungarees is crotch-intact. blue-dungarees is not-top-displacable. blue-dungarees is leg covering.
+blue-dungarees is a berri-dress. blue-dungarees is denim. The skirt-length of blue-dungarees is 0. blue-dungarees is crotch-intact. blue-dungarees is top-displacable. blue-dungarees is leg covering.
 
-The printed name of blue-dungarees is "[clothing-title-before]blue dungarees[clothing-title-after]". Understand "blue", "dungarees" as blue-dungarees. The text-shortcut of blue-dungarees is "bdg".
+The printed name of blue-dungarees is "[clothing-title-before]blue dungarees[clothing-title-after]". Understand "blue", "dungarees" as blue-dungarees. The text-shortcut of blue-dungarees is "bdgs".
 
-[Figure of blue dungarees is the file "Items/Clothes/Upper/Dresses/Berri/berri2.png".
+Figure of blue dungarees is the file "Items/Clothes/Upper/Dresses/Berri/berri2.png".
 
 To decide which figure-name is clothing-image of (C - blue-dungarees):
-	decide on figure of blue dungarees.]
+	decide on figure of blue dungarees.
 
 To say ClothingDesc of (C - blue-dungarees):
 	say "A tight set of blue dungarees with a pink heart at the chest. Underneath, a pink crop top is actually attached with subtle threading, rending the outfit one complete item... One which there doesn't seem to be any easy way to take off!".
@@ -492,7 +532,6 @@ To say MediumDesc of (C - blue-dungarees):
 
 Definition: blue-dungarees is blue themed: decide yes.
 Definition: blue-dungarees is pink themed: decide yes.
-Definition: blue-dungarees is removable: decide no.
 
 To decide which number is the initial outrage of (C - blue-dungarees):
 	decide on 1.
@@ -500,12 +539,47 @@ To decide which number is the initial cringe of (C - blue-dungarees):
 	decide on 5.
 
 To decide which object is the unique-upgrade-target of (C - blue-dungarees):
-	decide on pink-latex-bodysuit.
+	if the DQBulk of the player >= 5, decide on pink-latex-bodysuit;
+	decide on C.
+Definition: blue-dungarees is loop-safe-upgradable: decide yes.
+To decide which number is the transformability of (C - blue-dungarees):
+	decide on 12.
 
+To transform (C - blue-dungarees):
+	if the unique-upgrade-target of C is C:
+		let DB be the DQBulk of the player;
+		now bulk-search-level is DB + 1;
+		if latest-berri-stage < bulk-search-level, now latest-berri-stage is bulk-search-level;
+		let D be the chosen diaper;
+		if the DQBulk of D > DB:
+			let K be a random worn knickers;
+			if K is a thing:
+				say "You feel the transformation magic being redirected to your [K]!";
+				transform K into D;
+			otherwise:
+				say "You feel the transformation magic being redirected to your crotch!";
+				class summon D;
+	otherwise:
+		transform C into the upgrade-target of C.
+
+This is the can't displace bottom half of dungarees first rule:
+	if the noun is blue-dungarees:
+		if the noun is top-placed:
+			if auto is 0, say "You would need to displace the top half first.";
+			rule fails.
+The can't displace bottom half of dungarees first rule is listed first in the displacing rules.
+
+Definition: blue-dungarees is top-replacable:
+	if it is crotch-displaced, decide no;
+	if it is usually top-displacable and it is top-displaced and it is worn, decide yes;
+	decide no.
+
+Check topReplacing blue-dungarees:
+	if the noun is crotch-displaced, say "You would need to replace the bottom half first." instead.
 
 Part - Pink Latex Suit
 
-pink-latex-bodysuit is a berri-dress. pink-latex-bodysuit is latex. The skirt-length of pink-latex-bodysuit is 0. pink-latex-bodysuit is crotch-intact. pink-latex-bodysuit is not-top-displacable. pink-latex-bodysuit is leg covering. pink-latex-bodysuit is finger covering.
+pink-latex-bodysuit is a berri-dress. pink-latex-bodysuit is latex. The skirt-length of pink-latex-bodysuit is 0. pink-latex-bodysuit is crotch-intact. pink-latex-bodysuit is top-displacable. pink-latex-bodysuit is leg covering. pink-latex-bodysuit is finger covering.
 
 The printed name of pink-latex-bodysuit is "[clothing-title-before]pink latex bodysuit[clothing-title-after]". Understand "pink", "bodysuit" as pink-latex-bodysuit. The text-shortcut of pink-latex-bodysuit is "plb".
 
@@ -522,14 +596,78 @@ To say ShortDesc of (C - pink-latex-bodysuit):
 To say MediumDesc of (C - pink-latex-bodysuit):
 	say "pink latex bodysuit".
 
+To say TopDisplaceFlav of (C - pink-latex-bodysuit):
+	say "You undo the upper poppers of your [MediumDesc of C], freeing up access to your [BreastDesc].".
+To say TopReplaceFlav of (C - pink-latex-bodysuit):
+	say "You refasten the upper poppers of your [MediumDesc of C], and now your [BreastDesc] are covered once more.".
+To say DisplaceFlav of (C - pink-latex-bodysuit):
+	say "You undo the rest of the poppers of your [MediumDesc of C], causing the entire central section to open up and fall fowards.".
+To say ReplaceFlav of (C - pink-latex-bodysuit):
+	say "You refasten the lower poppers of your [MediumDesc of C] until the central panel is once again covering your crotch.".
+
 Definition: pink-latex-bodysuit is pink themed: decide yes.
-Definition: pink-latex-bodysuit is removable: decide no.
 Definition: pink-latex-bodysuit is usually ankle covering: decide yes.
 
 To decide which number is the initial outrage of (C - pink-latex-bodysuit):
 	decide on 8.
 To decide which number is the initial cringe of (C - pink-latex-bodysuit):
 	decide on 10.
+
+To decide which object is the unique-upgrade-target of (C - pink-latex-bodysuit):
+	decide on pink-babydoll-dress.
+
+This is the can't displace bottom half of bodysuit first rule:
+	if the noun is pink-latex-bodysuit:
+		if the noun is top-placed:
+			if auto is 0, say "You would need to displace the top half first.";
+			rule fails.
+The can't displace bottom half of bodysuit first rule is listed first in the displacing rules.
+
+Definition: pink-latex-bodysuit is top-replacable:
+	if it is crotch-displaced, decide no;
+	if it is usually top-displacable and it is top-displaced and it is worn, decide yes;
+	decide no.
+
+Definition: pink-latex-bodysuit is foot covering: decide yes.
+To decide which number is the soak-limit of (C - pink-latex-bodysuit):
+	decide on 99.
+
+Check topReplacing pink-latex-bodysuit:
+	if the noun is crotch-displaced, say "You would need to replace the bottom half first." instead.
+
+Definition: pink-latex-bodysuit (called C) is audibly squelching:
+	if C is audible squelches and C is worn:
+		let D be a random worn diaper;
+		if D is diaper and (D is wet or D is messed), decide yes;
+	decide no.
+
+Part - Pink Babydoll Dress
+
+pink-babydoll-dress is a berri-dress. The printed name of pink-babydoll-dress is "[clothing-title-before]super short pink babydoll dress[clothing-title-after]".The text-shortcut of pink-babydoll-dress is "pbdd". Understand "super", "super short", "pink", "babydoll", "dress" as pink-babydoll-dress.
+
+The skirt-length of pink-babydoll-dress is 1.
+
+Figure of pink babydoll dress is the file "Items/Clothes/Upper/Dresses/Berri/berri4.png".
+
+To decide which figure-name is clothing-image of (C - pink-babydoll-dress):
+	decide on figure of pink babydoll dress.
+
+To say ClothingDesc of (C - pink-babydoll-dress):
+	say "A stupidly short pink dress with white frills, puffy sleeves and a peter pan collar.".
+
+To say ShortDesc of (C - pink-babydoll-dress):
+	say "babydoll dress".
+To say MediumDesc of (C - pink-babydoll-dress):
+	say "pink babydoll dress".
+
+Definition: pink-babydoll-dress is pink themed: decide yes.
+Definition: pink-babydoll-dress is transformable: decide no.
+
+To decide which number is the initial outrage of (C - pink-babydoll-dress):
+	decide on 6.
+To decide which number is the initial cringe of (C - pink-babydoll-dress):
+	decide on 11.
+
 
 
 ABDL Dresses ends here.

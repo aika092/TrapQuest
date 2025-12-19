@@ -1055,13 +1055,13 @@ Figure of queen-of-spades slut tattoo is the file "Items/Tats/tattoo186.jpg".
 To decide which figure-name is the examine-image of (T - queen-of-spades slut tattoo):
 	decide on figure of queen-of-spades slut tattoo.
 
-Figure of queen-of-spades snowbunny crotch tattoo is the file "Items/Tats/tattoo183.jpg".
-To decide which figure-name is the examine-image of (T - queen-of-spades snowbunny crotch tattoo):
-	decide on figure of queen-of-spades snowbunny crotch tattoo.
+Figure of queen-of-spades snow-bunny crotch tattoo is the file "Items/Tats/tattoo183.jpg".
+To decide which figure-name is the examine-image of (T - queen-of-spades snow-bunny crotch tattoo):
+	decide on figure of queen-of-spades snow-bunny crotch tattoo.
 
-Figure of queen of spades snowbunny facial tattoo is the file "Items/Tats/tattoo192.jpg".
-To decide which figure-name is the examine-image of (T - queen of spades snowbunny facial tattoo):
-	decide on figure of queen of spades snowbunny facial tattoo.
+Figure of queen of spades snow-bunny facial tattoo is the file "Items/Tats/tattoo192.jpg".
+To decide which figure-name is the examine-image of (T - queen of spades snow-bunny facial tattoo):
+	decide on figure of queen of spades snow-bunny facial tattoo.
 
 Figure of queen-of-spades tribal tattoo is the file "Items/Tats/tattoo182.jpg".
 To decide which figure-name is the examine-image of (T - queen-of-spades tribal tattoo):
@@ -1099,9 +1099,9 @@ Figure of slut-tattoo is the file "Items/Tats/tattoo17.jpg".
 To decide which figure-name is the examine-image of (T - slut-tattoo):
 	decide on figure of slut-tattoo.
 
-Figure of snowbunny womb tattoo is the file "Items/Tats/tattoo185.jpg".
-To decide which figure-name is the examine-image of (T - snowbunny womb tattoo):
-	decide on figure of snowbunny womb tattoo.
+Figure of snow-bunny womb tattoo is the file "Items/Tats/tattoo185.jpg".
+To decide which figure-name is the examine-image of (T - snow-bunny womb tattoo):
+	decide on figure of snow-bunny womb tattoo.
 
 Figure of spade owned tattoo is the file "Items/Tats/tattoo160.jpg".
 To decide which figure-name is the examine-image of (T - spade owned tattoo):

@@ -89,6 +89,8 @@ An all later time based rule (this is the fullness causes intelligence loss rule
 		now fullness-time is 0;
 		if F > 0 and the player is diaper aware, say "Now that your bowels are empty, your ability to concentrate improves and your intelligence returns.".
 
+To decide which number is dryDiaperFacesitGrossnessLevel: decide on 2. [The level of grossness addiction where dry diaper facesitting becomes less bad. Can be tweaked]
+
 To decide which number is messyDiaperSmellGrossnessLevel: decide on 7. [The level of grossness addiction where messy diaper stuff becomes less bad. Can be tweaked]
 To decide which number is messyDiaperSmellEnjoymentLevel: decide on messyDiaperSmellGrossnessLevel + 7. [The level of grossness addiction where messy diaper stuff has no effect. Can be tweaked]
 
@@ -147,6 +149,12 @@ Definition: yourself is upset about mess:
 
 Definition: yourself is upset about sitting in mess:
 	if there is a worn perceived messed knickers and the player is upset about mess, decide yes;
+	decide no.
+
+[The player has their own butt in their face somehow]
+Definition: yourself is upset about autofacesitting:
+	if the player is in DiaperPresentBoxBlindfolded, decide yes;
+	if diaper quest is 1 and the player is vine stuck and the player is not vine fucked, decide yes;
 	decide no.
 
 Part - Messing Checks
@@ -224,7 +232,7 @@ An all time based rule (this is the irritable rectum rule):
 			let R be a random number between 1 and 1000;
 			if R <= the irritable-rectum of the player:
 				now irritated-rectum is true;
-				say "[bold type]Your irritable bowels are starting to send urgent messages of extreme discomfort to your brain. Until you no longer feel like you need to pee, your strength, dexterity and intelligence will all be significantly reduced.[roman type][line break]";
+				say "[bold type]Your irritable bowels are starting to send urgent messages of extreme discomfort to your brain. Until you no longer feel like you need to poop, your strength, dexterity and intelligence will all be significantly reduced.[roman type][line break]";
 	otherwise if irritated-rectum is true:
 		now irritated-rectum is false;
 		say "The pressure in your bowels has gone, and your strength, dexterity and intelligence are no longer being dampened.".
@@ -362,16 +370,15 @@ To check real messing with reason (T - a text):
 							if the rectum-incontinence of the player + suppository + desperationCount < 5, say "You try to hold it in but you start to cramp, and the pain is too much! ";
 							otherwise say "You try to hold it in but the pressure is too much and your control over your rectal muscles is too weak! ";
 							if the raw delicateness of the player < 20 and rectum-incontinence of the player < the max-rectum-incontinence of the player:
-								say "You could push forward with sheer force of will, but it will hurt and, if you're unlucky, might even affect your long term continence. Would you like to dig deep and really hold on? ";
+								say "[one of]You could hold on with sheer force of will, but it will increase your rectum's 'irritability' (a.k.a. the chance that needing to poop suddenly lowers your stats until you poop), might hurt (slightly increasing submissiveness), and, has a [if the rectum-incontinence of the player <= 2]small[otherwise]moderate[end if] chance, based on rectal incontinence, of not even working[if suppository > 0] [bold type](increased to a significant chance because you currently are under the effect of some sort of laxative)[roman type][end if]. [or][stopping]Would you like to dig deep and really hold on? ";
 								let F be temporaryYesNoBackground;
 								if the player is reverse bimbo consenting:
-									now shouldMessNow is 0;
-									now willMessNow is 0;
-									say "You grit your teeth and clench your eyes and manage to hold on through the [one of]painful[or]strong[cycling] cramps.";
-									UnflinchingPainUp 5 + (suppository * 2);
-									if the player is getting unlucky:
-										increase the raw-rectum-incontinence of the player by 1;
-										say "Your control over your anal sphincter feels permanently weakened. [GotUnluckyFlav]";
+									say "You dig deep and clench hard, trying to fight against the painful cramps.";
+									if a random number between 1 and 2 is 1, UnflinchingPainUp 5;
+									IrritableRectumUp a random number between 1 and 5;
+									if a random number between (suppository - 10) and ((suppository * 4) + the rectum-incontinence of the player) < 0:
+										now shouldMessNow is 0;
+										now willMessNow is 0;
 								now temporaryYesNoBackground is F;
 						if shouldMessNow is 1:
 							if T is not "":
@@ -405,7 +412,7 @@ To check real messing with reason (T - a text):
 						reset rectum;
 						if the perceived-mess of D is the mess of D, progress quest of mess-quest; [no quest completion if the player isn't aware of the mess]
 				otherwise if messAware > 0 and shouldMessNow is 1:
-					let D be a random eligible diaper;
+					let D be the chosen trap diaper;
 					if T is "" and the number of worn soilable knickers is 0 and diaper focus is 1 and D is diaper and asshole is not actually occupied and the location of the player is not toilets and the location of the player is not urinals and the player is not in a predicament room:
 						say "As if reacting to your tummy, ";
 						let K be a random worn knickers;
@@ -474,7 +481,7 @@ To compute messing:
 			now reactions-suppressed is 1;
 			AssSquirt;
 		otherwise if D is nothing:
-			say "BUG - there was nothing to have a bowel movement into!";
+			say "Your sphincter realises that there's no longer anything underneath your butthole for you to soil, and instinctively closes up.";
 		otherwise if mess-phase is 0:
 			compute messing of D;
 		otherwise:
@@ -488,14 +495,19 @@ To compute messing:
 			otherwise:
 				unless the player is upset about mess, arouse (mess-amount * 75 * the square root of the sex addiction of the player);
 				if the player is ready to cum from messing, anally orgasm shamefully;
-				if the player is upset about sitting in mess:
+				if the player is upset about autofacesitting:
+					say UpsetAboutAutoFacesittingFlav for D;
+				otherwise if the player is upset about sitting in mess:
 					if upset-about-mess is false, say UpsetAboutMessingFlav for D;
 				otherwise:
 					say "[variable custom style][if the diaper addiction of the player < 10][one of]I feel weirdly... comfortable. It must be this baby outfit I'm wearing affecting my mind![or]I can't believe how comfortable I feel in a messy diaper.[stopping][otherwise if the diaper addiction of the player < 15][one of]I wanna make it go ever bigger![or]I bet I can fit even more in here![at random][otherwise]Feels... soo... good![end if][roman type][line break]";
 		otherwise:
 			unless the player is upset about mess, arouse (mess-amount * 100 * the square root of the sex addiction of the player);
 			if the player is ready to cum from messing, anally orgasm shamefully;
-			if the player is upset about sitting in mess and upset-about-mess is false, say UpsetAboutMessingFlav for D;
+			if the player is upset about autofacesitting:
+				say UpsetAboutAutoFacesittingFlav for D;
+			otherwise if the player is upset about sitting in mess and upset-about-mess is false:
+				say UpsetAboutMessingFlav for D;
 		if reactions-suppressed is 0: [If it's set to 1 then we already computed enema reactions and we don't want the NPCs to have two separate reactions to the same event.]
 			if mess-phase < 2:
 				if there is a reactive monster and the player is able to speak:
@@ -528,6 +540,14 @@ To compute messing:
 
 To say UpsetAboutMessingFlav for (D - a clothing):
 	say "[variable custom style][if the diaper addiction of the player < 7 and voluntarySquatting is 1]I'd better be able to find a way to clean up fucking quickly. This is nasty.[otherwise if (the diaper addiction of the player < 12 and voluntarySquatting is 1) or D is not diaper]I guess I should try and find a way to change now, before I make myself cry...[otherwise if the diaper addiction of the player < 7]How did I let this happen[one of][or] again[stopping]?![otherwise if the diaper addiction of the player < 12][one of]Am I really just as pathetic as an incontinent child now?[or]I guess it's time to accept that this is who I am now. A useless baby who can't even control when [he of the player] goes number two.[stopping][otherwise if the diaper addiction of the player < 15][one of]I can't believe how good that felt...[or]Mmmmph, that feels way too good...[stopping][otherwise]Uh-oh, I did a naughty thing[one of]! But it was so fun[or] again, now I have to find a Mummy or Daddy to change me again[or] again, but it feels so good when I can't help myself[or] again[stopping]![end if][roman type][line break]".
+
+To say UpsetAboutAutoFacesittingFlav for (D - a clothing):
+	if the player is not tolerating messy facesits:
+		say "[variable custom style][one of]No no no... Not while my face is being smushed against my own butt[or]I'VE GOT TO GET MY FACE AWAY FROM HERE[or]I'm pooping against my own face! This is the grossest thing to happen anyone in the history of the world[or]Ah fuck, I can literally feel myself pooping, with my nose! This is so so so so wrong[cycling]![roman type][line break]";
+	otherwise if the player is not enjoying messy facesits:
+		say "[variable custom style][one of]Woah, I can feel the lumps coming out of my butt with my nose...[or]This feels so fucking weird![or]I'm pooping against my own face again![cycling][roman type][line break]";
+	now flinching-allowed is false; [otherwise we can get into infinite messing loops, as we haven't reduced rectum level yet]
+	GrossOut messyDiaperFacesitGrossnessLevel.
 
 To compute messing of (D - a knickers):
 	now mess-amount is rectum - 1;

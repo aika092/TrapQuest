@@ -423,7 +423,7 @@ To say ErectionLostFlav of (M - gargoyle):
 	Bore M;
 	compute post climax effect of M in penis;
 
-To say ErectionClimaxFlav of (M - gargoyle):
+To say PenileClimaxFlav of (M - gargoyle):
 	if refractoryperiod > 0:
 		say ErectionLostFlav of M;
 	otherwise:

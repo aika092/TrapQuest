@@ -341,18 +341,151 @@ To decide which number is the waddle-weight of (D - a knickers):
 		increase X by the mess of D / 2;
 	decide on X.
 
+biggest-change is a number that varies. [biggest DQBulk you've ever been changed into. Traps often use this when targeting you]
+bulk-search-level is a number that varies. [what level of DQBulk is eligible right now?]
+disposables-only is initially false. [sometimes we only accept disposable diapers]
+
+Definition: a diaper (called D) is bulk-eligible:
+	if disposables-only is true and D is not disposable diaper, decide no;
+	if bulk-search-level is 0, decide yes;
+	if the DQBulk of D is bulk-search-level, decide yes;
+	decide no.
+
+Definition: a diaper (called D) is nearly-bulk-eligible:
+	if disposables-only is true and D is not disposable diaper, decide no;
+	if bulk-search-level is 0, decide yes;
+	if the DQBulk of D <= bulk-search-level + 1 and the DQBulk of D >= bulk-search-level - 1, decide yes;
+	decide no.
+
 Definition: a diaper (called D) is eligible: [This allows us to pull diapers that have been left around the game universe and re-use them]
 	if D is store, decide no;
 	if D is not plentiful, decide no;
-	if D is off-stage, decide yes;
-	if there is off-stage plentiful unowned diaper, decide no; [There are some off-stage so we want one of them, not this one]
+	if D is bulk-eligible and D is off-stage, decide yes;
+	if there is off-stage plentiful unowned bulk-eligible diaper, decide no; [There are some off-stage so we want one of them, not this one]
 	if D is in holding pen, decide no;
 	if D is held, decide no;
 	if D is in the location of the player, decide no;
 	if D is in pink wardrobe, decide no;
 	repeat with C running through containers in the location of the player:
-		if D is in C, decide no; [This is here to stop us spawning a diaper in a container then immediately moving it back to standard item pen]
+		if D is in C, decide no; [This is here to stop us spawning a diaper in a container then immediately listing it in standard item pen]
+	if D is bulk-eligible, decide yes;
+	decide no.
+
+Definition: a diaper (called D) is lax-eligible: [Less strict than the search above, for when the search above turns up nothing. Can take from the player's inventory]
+	if D is store, decide no;
+	if D is not plentiful, decide no;
+	if D is bulk-eligible and D is off-stage, decide yes;
+	if there is off-stage plentiful unowned bulk-eligible diaper, decide no; [There are some off-stage so we want one of them, not this one]
+	if D is in holding pen, decide no;
+	if D is worn, decide no;
+	if D is bulk-eligible, decide yes;
+	decide no.
+
+Definition: a diaper (called D) is super-lax-eligible: [Even less strict than the search above, for when the search above turns up nothing. Slightly bigger bulk is acceptable]
+	if D is store, decide no;
+	if D is not plentiful, decide no;
+	if D is bulk-eligible and D is off-stage, decide yes;
+	if there is off-stage plentiful unowned bulk-eligible diaper, decide no; [There are some off-stage so we want one of them, not this one]
+	if D is in holding pen, decide no;
+	if D is worn, decide no;
+	if disposables-only is true and D is not disposable diaper, decide no;
+	if the DQBulk of D >= bulk-search-level and the DQBulk of D <= bulk-search-level + 2, decide yes;
+	decide no.
+
+Definition: a diaper (called D) is ultra-lax-eligible: [Even less strict than the search above, for when the search above turns up nothing. Any bigger bulk is acceptable, but first we'll look for any 'nearly bulk eligible' which means +1 or -1]
+	if D is store, decide no;
+	if D is not plentiful, decide no;
+	if D is nearly-bulk-eligible and D is off-stage, decide yes;
+	if there is off-stage plentiful unowned nearly-bulk-eligible diaper, decide no; [There are some off-stage so we want one of them, not this one]
+	if D is in holding pen, decide no;
+	if D is worn, decide no;
+	if disposables-only is true and D is not disposable diaper, decide no;
+	if the DQBulk of D >= bulk-search-level, decide yes;
 	decide yes.
+
+Definition: a diaper (called D) is max-lax-eligible: [Even less strict than the search above, for when the search above turns up nothing. Any bulk is acceptable, even pulls from holding pen]
+	if D is not plentiful, decide no;
+	if D is nearly-bulk-eligible and D is off-stage, decide yes;
+	if there is off-stage plentiful nearly-bulk-eligible diaper, decide no; [There are some off-stage so we want one of them, not this one]
+	if D is worn, decide no;
+	if disposables-only is true and D is not disposable diaper, decide no;
+	decide yes.
+
+To decide which object is the chosen diaper:
+	let D be a random eligible diaper;
+	if debugmode > 1, say "D is [D].";
+	if D is nothing, now D is a random lax-eligible diaper;
+	if debugmode > 1, say "D is [D].";
+	if D is nothing, now D is a random super-lax-eligible diaper;
+	if debugmode > 1, say "D is [D].";
+	if D is nothing, now D is a random ultra-lax-eligible diaper;
+	if debugmode > 1, say "D is [D].";
+	if D is nothing, now D is a random max-lax-eligible diaper;
+	if debugmode > 1, say "D is [D].";
+	if D is nothing, now D is a random unworn plentiful diaper;
+	decide on D.
+
+To decide which object is the chosen smallish diaper:
+	now bulk-search-level is biggest-change / 2;
+	if bulk-search-level < 1, now bulk-search-level is 1;
+	let D be a random eligible diaper;
+	if D is nothing, now D is a random lax-eligible diaper;
+	if D is nothing, now D is a random super-lax-eligible diaper;
+	if D is nothing, now D is a random ultra-lax-eligible diaper;
+	if D is nothing, now D is a random max-lax-eligible diaper;
+	if D is nothing, now D is a random unworn plentiful diaper;
+	decide on D.
+
+To decide which object is the chosen disposable diaper:
+	now disposables-only is true;
+	let D be the chosen diaper;
+	now disposables-only is false;
+	decide on D.
+
+To decide which object is the chosen trap diaper:
+	now bulk-search-level is biggest-change + a random number between 0 and 1;
+	if bulk-search-level < 1, now bulk-search-level is 1;
+	if bulk-search-level > 8, now bulk-search-level is 8;
+	let D be a random eligible diaper;
+	if D is nothing, now D is a random lax-eligible diaper;
+	if D is nothing, now D is a random super-lax-eligible diaper;
+	if D is nothing, now D is a random ultra-lax-eligible diaper;
+	if D is nothing, now D is a random max-lax-eligible diaper;
+	if D is nothing, now D is a random unworn plentiful diaper;
+	decide on D.
+
+To decide which object is the chosen trap disposable diaper:
+	now disposables-only is true;
+	let D be the chosen trap diaper;
+	now disposables-only is false;
+	decide on D.
+
+To decide which object is the chosen bulkier diaper:
+	now bulk-search-level is biggest-change + 1;
+	if bulk-search-level < 1, now bulk-search-level is 1;
+	if bulk-search-level > 8, now bulk-search-level is 8;
+	let D be a random eligible diaper;
+	if D is nothing, now D is a random lax-eligible diaper;
+	if D is nothing, now D is a random super-lax-eligible diaper;
+	if D is nothing, now D is a random ultra-lax-eligible diaper;
+	if D is nothing, now D is a random max-lax-eligible diaper;
+	if D is nothing, now D is a random unworn plentiful diaper;
+	decide on D.
+
+[To decide which object is the chosen bulkier disposable diaper:
+	now disposables-only is true;
+	let D be the chosen bulkier diaper;
+	now disposables-only is false;
+	decide on D.]
+
+To decide which object is the strict chosen diaper:
+	let D be a random eligible diaper;
+	if D is nothing, now D is a random lax-eligible diaper;
+	decide on D.
+
+To decide which object is the super-strict chosen diaper:
+	let D be a random eligible diaper;
+	decide on D.
 
 To restock (C - a diaper):
 	let B be a random eligible diaper;
@@ -410,22 +543,15 @@ Definition: a diaper (called C) is more-padded: [Before calling this definition,
 	decide no.
 
 To decide which object is the potential-upgrade-target of (C - a diaper):
-	[Instead of themes and outrage, diapers care about padding and outrage.]
 	now theme-share-target is C;
+	now bulk-search-level is the DQBulk of C;
 	let Z be nothing;
-	let L1 be the list of fetish appropriate more-padded more-outrageous eligible diapers; [Find all items that could be reasonable transformation targets.]
-	add a random waddle diaper to L1;
-	if the number of entries in L1 > 0:
-		sort L1 in random order;
-		let O be 100;
-		let P be 100;
-		repeat with D running through L1: [Find the least outrageous, least extra padding of the eligible transformation items. Hopefully makes them go in a nice sequence.]
-			let IO be the initial outrage of D;
-			if IO <= O and the soak-limit of D <= P:
-				now Z is D;
-				now O is IO;
-				now P is the soak-limit of D;
-	decide on Z.
+	let D1 be the super-strict chosen diaper;
+	if D1 is more-outrageous and the DQBulk of D1 is the DQBulk of C, decide on D1; [there's a chance we just find a diaper that's the same bulk but more childish]
+	let D2 be the chosen bulkier diaper;
+	if the DQBulk of D2 >= the DQBulk of C and ((the DQBulk of C < 8 and the initial cringe of D2 >= the initial cringe of C) or the initial cringe of D2 > the initial cringe of C), decide on D2; [otherwise we find a diaper that's hopefully one stage bulkier, and accept it as long as it isn't LESS outrageous or LESS padded. At giant level, it must be MORE outrageous or we always go waddle]
+	let D4 be a random waddle diaper;
+	decide on D4. [couldn't find a good option, so fuck you, you get a waddle diaper. Hopefully this is rare unless the player is in a giant diaper]
 
 Check taking off worn diaper:
 	if there is a worn I love my wet nappies T-shirt and the urine-soak of the noun is not 0 and the total-soak of the noun < (the soak-limit of the noun / 2) and the noun is total protection, say "Your [printed name of random worn I love my wet nappies T-shirt] is somehow magically preventing you from removing the [noun]!" instead.
@@ -827,7 +953,9 @@ To decide which number is the DQBulk of (Y - yourself):
 	if diaper-stack is worn:
 		let E be the number of entries in the list of stacked diapers;
 		decide on the DQBulk of entry E in the list of stacked diapers;
-	if there is worn knickers, decide on the DQBulk of a random worn knickers;
+	if there is worn knickers:
+		let K be a random worn knickers;
+		decide on the DQBulk of K;
 	decide on 0.
 
 To decide which number is the DQBulk of (D - a DQClothing):

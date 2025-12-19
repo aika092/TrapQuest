@@ -444,7 +444,7 @@ To compute french kissing lesson of (M - a staff member):
 						now N is -1;
 				if (N is 1 or N > 2) and N < 9 and tonguedPerson is the player: [round 2 has no progression. balance attempt to make being entirely submissive less of a shit option]
 					increase player-groped-level by 1;
-					say "[teacher-name of M] [if player-groped-level is 0]grabs your [AssDesc] with both hands, with some force. You think you can hear some snickering from behind you[otherwise if player-groped-level is 1]moves one hand to your [BreastDesc] and begins to grope you[otherwise if player-groped-level is 2]moves the hand that was kneading your [AssDesc] to your [genitals], and begins playing with you down there[otherwise]keeps stroking you down below[end if]. ";
+					say "[teacher-name of M] [if player-groped-level is 0][bold type]grabs your [AssDesc] with both hands[roman type], with some force. You think you can hear some snickering from behind you[otherwise if player-groped-level is 1][bold type]moves one hand to your [BreastDesc][roman type] and begins to grope you[otherwise if player-groped-level is 2][bold type]moves the hand that was kneading your [AssDesc] to your [genitals][roman type], and begins playing with you down there[otherwise]keeps stroking you down below[end if]. ";
 				check for arousal change;
 		if N < 10: [Teacher pulls away]
 			say "Finally, [NameDesc of M] pulls away and lets go of you.";
@@ -750,7 +750,11 @@ To say AdviceAnswer of (M - teacher-rochelle):
 	say "[speech style of M]'Get used to the taste of cum.'[roman type][line break]".
 
 To compute teaching of (M - teacher-rochelle):
-	say "[speech style of M]'Of course... Meet me in the hot tub after hours and I'll give you a good seeing to.'[roman type][line break]".
+	if the remainder after dividing condom fetish by 2 is 1:
+		say "[speech style of M]'Sometimes people can be reluctant to wear a condom... But if you hold a condom in their line-of-sight in just the right way, their subconcious mind will make them WANT to wear one. Here, let me show you...'[roman type][line break]";
+		teach condomcompelling;
+	otherwise:
+		say "[speech style of M]'Of course... Meet me in the hot tub after hours and I'll give you a good seeing to.'[roman type][line break]".
 
 To say angry punishment insult of (M - teacher-rochelle):
 	say "[speech style of M]'Fucking [bitch]! How dare a slut like you reject your own devoted teacher. I'll show you how to be a proper whore.'[roman type][line break]".
@@ -2937,13 +2941,13 @@ student-minnie is an amicable student.
 
 The text-shortcut of student-minnie is "stmn".
 
-Figure of minnie is the file "NPCs/School/Student/student23.png".
+Figure of minnie is the file "NPCs/School/Student/student23.jpg".
 
 To decide which figure-name is the monster-image of (M - student-minnie):
 	decide on figure of minnie.
 
 To say MonsterDesc of (M - student-minnie):
-	say "This tall leggy blonde is wearing, well, [he of M] might as well be wearing nothing at all! [big his of M] nipples are covered by tiny purple sequins pasties shaped like hearts and similar red hearts [if the current-rank of M is 3 and lady fetish is 2]barely cover [his of M] tiny [DickDesc of M] and balls[otherwise if lady fetish is 2]don't even cover [his of M] crotch properly, leaving [his of M] tiny balls completely visible[otherwise if the current-rank of M is 3]barely cover [his of M] pussy[otherwise]don't even cover [his of M] pussy properly, obscuring [his of M] clit but leaving [his of M] labia fully visible[end if]. [big he of M] has sexy 3 inch red stiletto heels, a pierced belly, and a big friendly smile on [his of M] face. [big he of M] looks extremely comfortable with [his of M] striking appearance - from [his of M] posture and gait [if the current-rank of M is 3]you're almost concerned [he of M] has completely forgotten what [he of M][']s wearing[otherwise]it's very clear that [he of M] absolutely loves looking like this[end if]!".
+	say "This tall leggy brunette is wearing, well, [he of M] might as well be wearing nothing at all! [big his of M] nipples are covered by tiny brown plasters, and the identical tiny bandage [if the current-rank of M is 3 and lady fetish is 2]barely covers [his of M] tiny [DickDesc of M] and balls[otherwise if lady fetish is 2]doesn't even cover [his of M] crotch properly, leaving [his of M] tiny balls completely visible[otherwise if the current-rank of M is 3]barely covers [his of M] pussy[otherwise]doesn't even cover [his of M] pussy properly, obscuring [his of M] clit but leaving [his of M] labia fully visible[end if]. [big he of M] has sexy 3 inch red stiletto heels, B cup tits, and a big friendly smile on [his of M] face. [big he of M] looks extremely comfortable with [his of M] striking appearance - from [his of M] posture and gait [if the current-rank of M is 3]you're almost concerned [he of M] has completely forgotten what [he of M][']s wearing[otherwise]it's very clear that [he of M] absolutely loves looking like this[end if]!".
 
 The min-rank of student-minnie is 3.
 The current-rank of student-minnie is 3.

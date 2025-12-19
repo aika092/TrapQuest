@@ -11,6 +11,8 @@ Check LongWaiting:
 		urinalwait instead;
 	otherwise if the player is in HoleInWall:
 		holewait instead;
+	otherwise if the player is in DiaperPresentBoxBlindfolded:
+		try waiting instead;
 	otherwise if detention chair is grabbing the player:
 		detentionchairwait instead;
 	if the player is immobile, say "You're a bit busy to use this verb!" instead;

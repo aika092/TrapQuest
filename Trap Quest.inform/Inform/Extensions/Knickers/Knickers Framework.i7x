@@ -108,7 +108,8 @@ This is the setup starting knickers rule:
 The setup starting knickers rule is listed in the setup starting items rules.
 
 To decide which object is the unique-upgrade-target of (C - a knickers):
-	if a random number between 0 and diaper focus is 1, decide on a random eligible diaper.
+	if a random number between 0 and diaper focus is 1, decide on the chosen smallish diaper;
+	decide on nothing.
 
 This is the remove inappropriate knickers rule:
 	repeat with B running through plug panties:

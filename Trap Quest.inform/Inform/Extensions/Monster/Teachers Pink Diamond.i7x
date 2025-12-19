@@ -226,7 +226,7 @@ To compute teaching of (L - enema-tag-lesson):
 								dislodge ULA;
 							otherwise:
 								ruin vagina;
-							update arousal;
+							check for arousal change;
 							if refractoryperiod > 0 or zentaiDistance < ( -3 - diaper quest):
 								if refractoryperiod > 0, say severeHumiliateReflect;
 								if diaper quest is 0 and zentaiDistance < -3:
@@ -587,43 +587,43 @@ To pledge-execute (E - pledge-lesson-resist):
 
 pledge-lesson-short-skirts is a pledge-lesson-object.
 Definition: pledge-lesson-short-skirts is eligible:
-	if short skirts permanent fetish is 0, decide yes;
+	if short skirts permanent suggestion is 0, decide yes;
 	decide no.
 To pledge-execute (E - pledge-lesson-short-skirts):
 	say "[second custom style]Sexy [if diaper quest is 1]cuties[otherwise]sluts[end if] don't wear long skirts. From now on, wearing any skirt longer than [SkirtLength 4] will give me a massive headache.[roman type][line break]A large X-shaped white rune approaches your [HipDesc] and begins to phase inside you...".
 To pledge-implant (E - pledge-lesson-short-skirts):
 	now E is implanted;
-	now short skirts permanent fetish is 4.
+	now short skirts permanent suggestion is 4.
 
 pledge-lesson-shorter-skirts is a pledge-lesson-object.
 Definition: pledge-lesson-shorter-skirts is eligible:
-	if short skirts permanent fetish > 2, decide yes;
+	if short skirts permanent suggestion > 2, decide yes;
 	decide no.
 To pledge-execute (E - pledge-lesson-shorter-skirts):
 	say "[second custom style]The [if diaper quest is 1]cutest[otherwise]sexiest[end if] [boy of the player]s wear the shortest of skirts. From now on, wearing any skirt longer than [SkirtLength 2] will give me a massive headache.[roman type][line break]A large X-shaped white rune approaches your [HipDesc] and begins to phase inside you...".
 To pledge-implant (E - pledge-lesson-shorter-skirts):
 	now E is implanted;
-	now short skirts permanent fetish is 2.
+	now short skirts permanent suggestion is 2.
 
 pledge-lesson-panties is a pledge-lesson-object.
 Definition: pledge-lesson-panties is eligible:
-	if skimpy underwear fetish is -1, decide yes;
+	if skimpy underwear suggestion is -1, decide yes;
 	decide no.
 To pledge-execute (E - pledge-lesson-panties):
 	say "[second custom style]Naughty little minxes like me don't wear normal underwear. From now on, wearing anything except [if diaper lover > 0]diapers [end if][if diaper lover > 0 and diaper quest is 0]or [end if][if diaper quest is 0]thongs or g-strings [end if]will give me a massive headache.[roman type][line break]A large X-shaped white rune approaches your [AssDesc] and begins to phase inside you...".
 To pledge-implant (E - pledge-lesson-panties):
 	now E is implanted;
-	now skimpy underwear fetish is 1.
+	now skimpy underwear suggestion is 1.
 
 pledge-lesson-no-panties is a pledge-lesson-object.
 Definition: pledge-lesson-no-panties is eligible:
-	if skimpy underwear fetish > 0, decide yes;
+	if skimpy underwear suggestion > 0, decide yes;
 	decide no.
 To pledge-execute (E - pledge-lesson-no-panties):
 	say "[second custom style]Naughty little minxes like me don't even wear thongs or g-strings. From now on, wearing anything except [if diaper lover > 0]diapers [end if][if diaper lover > 0 and diaper quest is 0]and [end if][if diaper quest is 0]crotchless panties [end if]will give me a massive headache.[roman type][line break]A large X-shaped white rune approaches your [AssDesc] and begins to phase inside you...".
 To pledge-implant (E - pledge-lesson-no-panties):
 	now E is implanted;
-	now skimpy underwear fetish is 0.
+	now skimpy underwear suggestion is 0.
 
 pledge-lesson-spit is a pledge-lesson-object.
 Definition: pledge-lesson-spit is eligible:

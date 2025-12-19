@@ -45,7 +45,8 @@ To sprinkle (T - a sprinkle trap):
 			HairUp 1;
 		if the TrapNo of T is 2 and watersports fetish is 1:
 			repeat with C running through worn able to take more liquid clothing:
-				PissSoak a random number between 0 and 1 on C.
+				PissSoak a random number between 0 and 1 on C;
+	if camera-drone is stalking, compute dunking camera-drone.
 
 To say SprinkleLiquid of (S - a sprinkle trap):
 	if diaper quest is 1:

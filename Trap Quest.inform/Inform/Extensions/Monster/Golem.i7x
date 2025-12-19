@@ -375,7 +375,7 @@ To deploy a slimeball:
 	if SB is a thing:
 		set up SB;
 		let R be a random placed unbossed jungle room;
-		if playerRegion is woods, now R is a random placed unbossed labyrinth room;
+		if playerRegion is woods or R is nothing, now R is a random placed unbossed labyrinth room;
 		now SB is in R.
 
 To compute (M - a monster) stomping (N - a slimeball):

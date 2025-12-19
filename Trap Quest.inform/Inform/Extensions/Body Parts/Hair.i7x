@@ -293,13 +293,20 @@ To HairCut (X - a number):
 		say "Your hair would change size but the divine power of Aika prevents it.";
 	otherwise:
 		now the previous hair length of face is the largeness of hair;
+		let HL be 0;
 		while X > 0:
 			decrease X by 1;
 			if the fake largeness of hair > 0:
 				decrease the fake largeness of hair by 1;
+				increase HL by 1;
 			otherwise if the raw largeness of hair > 1:
 				decrease the raw largeness of hair by 1;
+				increase HL by 1;
 		compute hair liquids overflow;
+		if HL > 0 and pink-hair is off-stage and HairColourVagueText is "pink":
+			now pink-hair is in the location of the player;
+			say "Some of your cut pink hair remains on the ground.";
+			compute autotaking pink-hair;
 		if head-module is worn:
 			if the int-transfer of head-module > the lips of face + the fake largeness of hair: [This is to check if migrated INT can 'fit' inside the players lips and leftover hair extensions.]
 				say "You feel your ability to think straight [if the int-transfer of head-module > the lips of face + the fake largeness of hair + 1]rapidly [end if]decreasing, as your [head-module] finds itself with reduced capacity to store all that extra brain processing power.";

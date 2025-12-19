@@ -4,7 +4,9 @@ To Set Up The Woods:
 	if loading scenes is 1:
 		clear the screen;
 		if images visible is 1:
-			if diaper quest is 0:
+			if the class of the player is berri:
+				display Figure of berri loading low res;
+			otherwise if diaper quest is 0:
 				if a random number between 0 and tentacle fetish > 0:
 					display figure of woods vines loading;
 				otherwise if a random number between 0 and lactation fetish > 0:

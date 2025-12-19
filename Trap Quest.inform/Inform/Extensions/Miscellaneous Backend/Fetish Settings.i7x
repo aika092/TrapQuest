@@ -105,6 +105,8 @@ choice
 0 [easy teaching]
 0 [smart start]
 -1 [berri fetish]
+0 [strongDoom]
+0 [infamy fetish]
 
 [!<DecideWhichNumberIsOriginalPlayerGender>+
 
@@ -251,7 +253,7 @@ This is the futanari fetish rule:
 
 [This determines whether the PLAYER can become a futa. 1: with balls, 2: without balls.]
 To decide which number is player futanari fetish:
-	if the player is not the donator, decide on 0;
+	if the player is not the donator or berri fetish is 1, decide on 0;
 	if choice in row 88 of the Table of Player Options <= 0, decide on 0;
 	decide on choice in row 88 of the Table of Player Options.
 
@@ -297,19 +299,19 @@ To decide which number is smart start:
 
 To decide which number is berri fetish:
 	if diaper quest is 0, decide on 0;
-	if the player is not a june 2025 diaper donator, decide on 0;
+	if the player is not an september 2025 diaper donator, decide on 0;
 	if choice in row 1 of the Table of Player Options is 0 and tg fetish is 0, decide on 0;
 	if choice in row 94 of the Table of Player Options <= 0, decide on 0;
-	decide on choice in row 94 of the Table of Player Options.
+	decide on 1.
 This is the berri fetish toggle rule:
-	if choice in row 94 of the Table of Player Options < 2, increase choice in row 94 of the Table of Player Options by 1;
-	otherwise now choice in row 94 of the Table of Player Options is -1.
-This is the berri nightmare rule:
+	if choice in row 94 of the Table of Player Options is not 1, now choice in row 94 of the Table of Player Options is 1;
+	otherwise now choice in row 94 of the Table of Player Options is 0.
+[This is the berri nightmare rule:
 	if choice in row 94 of the Table of Player Options is 0, now choice in row 94 of the Table of Player Options is 1.
 The berri nightmare rule is listed in the nightmare mode rules.
 This is the berri random rule:
 	if choice in row 94 of the Table of Player Options is 0 or choice in row 94 of the Table of Player Options is 1, now choice in row 94 of the Table of Player Options is a random number between 0 and 1.
-The berri random rule is listed in the random fetish rules.
+The berri random rule is listed in the random fetish rules.]
 
 [
 0: Minimal grossness
@@ -374,6 +376,7 @@ To decide which number is positive points count:
 	if diaper lover >= 1 and toilet allowance is 1, increase X by 3;
 	if diaper messing >= 5, increase X by 1;
 	if fast breast expansion is 1, increase X by 4;
+	if infamy fetish is 1, increase X by 4;
 	if forgetful airhead is 1, increase X by 5;
 	if map reset is 1, increase X by map reset points;
 	if unlucky is 1, increase X by 6;
@@ -387,6 +390,7 @@ To decide which number is positive points count:
 	if inventory handicap is 1, increase X by 3;
 	if clumsy is 1, increase X by 5;
 	if strongCurses is 1, increase X by 5;
+	if strongDoom is 1, increase X by 2;
 	if nursery resident is 1, increase X by 5;
 	if diaper quest is 1 and enema fetish is 1, increase X by 4;
 	if save game limit > 0 and max-undos < 999999, increase X by 2 + (save game limit * 2);
@@ -478,6 +482,7 @@ FETISH MENU ID CHEAT SHEET
 15) NPC Gender Preference
 16) Alcohol
 17) TG
+18) Infamy
 ]
 
 fetishMenuInProgress is a number that varies.
@@ -606,13 +611,18 @@ Figure of weight_gain_always is the file "Special/Menus/FetishSelection/weight_g
 Figure of weight_gain_never is the file "Special/Menus/FetishSelection/weight_gain_never.png".
 Figure of weight_gain_not_now is the file "Special/Menus/FetishSelection/weight_gain_not_now.png".
 Figure of weight_gain_this_time is the file "Special/Menus/FetishSelection/weight_gain_this_time.png".
+Figure of Infamy is the file "Special/Menus/FetishSelection/Infamy.jpg".
+Figure of infamy_always is the file "Special/Menus/FetishSelection/infamy_always.png".
+Figure of infamy_never is the file "Special/Menus/FetishSelection/infamy_never.png".
+Figure of infamy_not_now is the file "Special/Menus/FetishSelection/infamy_not_now.png".
+Figure of infamy_this_time is the file "Special/Menus/FetishSelection/infamy_this_time.png".
 Figure of yes_this_time_icon is the file "Special/Menus/FetishSelection/yes_this_time_icon.png".
 Figure of yes_this_time_off_buttons is the file "Special/Menus/FetishSelection/yes_this_time_off_buttons.png".
 Figure of yes_this_time_on_buttons is the file "Special/Menus/FetishSelection/yes_this_time_on_buttons.png".
 
 To decide which number is fetishSelectionTotalOptions:
-	if the player is sexed male, decide on 17;
-	decide on 16.
+	if the player is sexed male, decide on 18; [THE LAST OPTION MUST BE TG, so it's the one that gets cut off if the player chooses to start female]
+	decide on 17.
 
 To decide which number is fetishSelectionTotalButtons:
 	decide on fetishSelectionTotalOptions + 3.
@@ -687,6 +697,8 @@ To decide which number is fetishMenuRow of (X - a number):
 	otherwise if X is 16:
 		now N is 69;
 	otherwise if X is 17:
+		now N is 96;
+	otherwise if X is 18:
 		now N is 10;
 	decide on N.
 
@@ -808,9 +820,9 @@ To decide which figure-name is fetish menu banner:
 		if the player is not the donator, decide on figure of Alcohol Patreon;
 		decide on figure of Alcohol;
 	otherwise if CMS is 17:
-		decide on figure of TG;
+		decide on figure of Infamy;
 	otherwise:
-		decide on figure of NPC Gender 2.
+		decide on figure of TG.
 
 To render full new fetish selection menu:
 	let CMS be current menu selection;
@@ -1039,6 +1051,15 @@ To render full new fetish selection menu:
 			otherwise:
 				now F is figure of alcohol_always;
 		otherwise if X is 17:
+			if C is -1:
+				now F is figure of infamy_never;
+			otherwise if C is 0:
+				now F is figure of infamy_not_now;
+			otherwise if C is 1:
+				now F is figure of infamy_this_time;
+			otherwise:
+				now F is figure of infamy_always;
+		otherwise if X is 18:
 			if C is -1:
 				now F is figure of TG_never;
 			otherwise if C is 0:

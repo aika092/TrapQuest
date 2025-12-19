@@ -84,6 +84,18 @@ Definition: teddy-massive-diaper is green themed: decide yes.
 To decide which number is the unique outrage of (C - teddy-massive-diaper):
 	decide on 2.
 
+animal-massive-diaper is a massive diaper. The text-shortcut of animal-massive-diaper is "apmd". Understand "animaly", "pattern" as animal-massive-diaper.
+Figure of animal massive diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper1d.png".
+To decide which figure-name is clothing-image of (C - animal-massive-diaper):
+	decide on figure of animal massive diaper.
+To say selfexamineuniquetitle of (K - animal-massive-diaper):
+	say "massive animal pattern diaper".
+To say ClothingDesc of (C - animal-massive-diaper):
+	say "An extremely large cartoon animal patterned adult diaper, with huge amounts of extra puffy padding. There's tigers, monkeys, elephants, giraffes, crocodiles and tortoises.".
+Definition: animal-massive-diaper is elephant themed: decide yes.
+To decide which number is the unique outrage of (C - animal-massive-diaper):
+	decide on 2.
+
 Chapter 2 Giant Diaper
 
 giant diaper is a kind of pullup diaper. A giant diaper is womanly. [because of the frills] Understand "giant" as giant diaper.
@@ -122,6 +134,16 @@ To say selfexamineuniquetitle of (K - purple-giant-diaper):
 To say ClothingDesc of (C - purple-giant-diaper):
 	say "An excessively large purple adult diaper, with huge amounts of extra puffy padding and a polka dot pattern. It has three rows of girly frills at the back.".
 Definition: purple-giant-diaper is purple themed: decide yes.
+
+balloon-giant-diaper is a giant diaper. The text-shortcut of balloon-giant-diaper is "gbld". Understand "balloon" as balloon-giant-diaper.
+Figure of balloon giant diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper2e.png".
+To decide which figure-name is clothing-image of (C - balloon-giant-diaper):
+	decide on figure of balloon giant diaper.
+To say selfexamineuniquetitle of (K - balloon-giant-diaper):
+	say "giant balloon diaper".
+To say ClothingDesc of (C - balloon-giant-diaper):
+	say "An excessively large adult diaper, with huge amounts of extra puffy padding and a party balloons pattern.".
+Definition: balloon-giant-diaper is party themed: decide yes.
 
 demon-diaper is a giant diaper. The text-shortcut of demon-diaper is "dmd". demon-diaper is unique. A demon-diaper has a number called dry-timer. Understand "pink", "demon" as demon-diaper.
 

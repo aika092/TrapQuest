@@ -110,9 +110,15 @@ REMEMBER YOU FUCKWAD, WHEN STORING A REGION IN A VARIABLE AS OPPOSED TO EXPLICIT
 Definition: a thing is regional:
 	if it is regionally in playerRegion, decide yes;
 	decide no.
+Definition: a thing is nonregional:
+	if it is regional, decide no;
+	decide yes.
 Definition: a room is regional:
 	if it is regionally in playerRegion, decide yes;
 	decide no.
+Definition: a room is nonregional:
+	if it is regional, decide no;
+	decide yes.
 
 playerRegion is a region that varies. playerRegion is Dungeon.
 noRegion is a region.

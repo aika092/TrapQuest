@@ -49,6 +49,7 @@ Time in between bladder increases
 +!]
 To decide which number is bladder-period:
 	if the player is in a predicament room, decide on 23; [Happens much more frequently in the predicament world]
+	if fixed-vibrator is grabbing the player or urinal is grabbing the player, decide on 4;
 	if the player is in School34 and ex-princess is in the location of the player, decide on 23;
 	let T be 16;
 	if the delayed bladder of the player < 5, now T is T * 2; [32]
@@ -57,6 +58,23 @@ To decide which number is bladder-period:
 	if R < 2, now T is T * 2; [128]
 	if digestion-timer <= 0, now T is T * 2; [256]
 	decide on T.
+
+[Time in between wallowing in messy diaper increases]
+To decide which number is wallow-period:
+	decide on 60.
+
+[Wallowing happens every turn]
+Definition: yourself is mega-wallowing:
+	if diaper quest is 0, decide no;
+	if the player is mega-soiling, decide yes;
+	if the player is in Iron Maiden, decide yes;
+	decide no.
+
+[Hunger and thirst and wallowing happens every turn]
+Definition: yourself is mega-soiling:
+	if diaper quest is 0, decide no;
+	if the player is in DiaperPresentBoxBlindfolded, decide yes;
+	decide no.
 
 Definition: a wearthing is respiration-enhancing:
 	if it is respiration clothing, decide yes;
@@ -90,9 +108,9 @@ An all time based rule (this is the compute stomach rule):
 						now cold turkey of L is cold turkey limit of L;
 			if the class of the player is succubus, compute succubus hunger; [see Demon Horns extension.]
 		[say "Stomach time check: remainder after dividing [time-earnings] by [period] is [remainder after dividing time-earnings by Period]. Comparing it to round time of [time-seconds].";]
-		if the latex-transformation of the player < 5 and the player is not in Iron Maiden: [Iron Maiden triggers compute soiling and wallowing every turn]
-			if the remainder after dividing time-earnings by 60 < time-seconds, compute wallowing;
-			if the remainder after dividing time-earnings by stomach-period < time-seconds, compute hunger and thirst;
+		if the latex-transformation of the player < 5:
+			if the player is mega-wallowing or the remainder after dividing time-earnings by wallow-period < time-seconds, compute wallowing;
+			if the player is mega-soiling or the remainder after dividing time-earnings by stomach-period < time-seconds, compute hunger and thirst;
 		unless current-predicament is team-quiz-predicament and the questionFails of team-quiz-predicament < 2, compute bladder growth.
 
 To compute hunger and thirst:
@@ -162,7 +180,7 @@ player-hunger is a number that varies.
 hunger-flav-said is a number that varies.
 
 To compute food:
-	if the player is hungry:
+	if the player is hungry and the player is not in DiaperPresentBoxBlindfolded:
 		if (player-hunger > a random number between 0 and 3 and the raw strength of the player > the starting strength of the player) or player-hunger > 3:
 			if hunger-flav-said is 0, say "[bold type]You feel your muscles weaken as your body struggles to deal with your hunger.[roman type][line break]";
 			StrengthDown 1;

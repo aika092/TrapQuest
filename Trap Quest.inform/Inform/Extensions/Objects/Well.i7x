@@ -83,6 +83,10 @@ Carry out WellWishing:
 	[Ok, now we know how much the offering is worth. Does the altar need to treat the player any differently than normal?]
 	if the wishskill of the player > 0, increase offer-value by (offer-value / 3);
 	say "[line break][first custom style]";
+	let D be the public disgrace of the player;
+	if D > 2000, now D is 2000;
+	if D < 500 or (infamy fetish is 0 and doomed < 1), now D is 0;[with doom inactive and infamy disabled, disgrace won't affect altars]
+	increase offer-value by D / 500;
 	if the class of the player is virgin warrior:
 		say "A champion's [if wish-type is 0]kindness[otherwise]plea[end if]...";
 		increase offer-value by 3;
@@ -137,6 +141,9 @@ To compute WellDonating for offer (N - a number) with wishtype (T - a number):
 		if class of the player is avatar, say "Refusal... impossible. Vile presence....[roman type][line break]The voice echoes in your head as light gathers around the well and slowly dissipates.";
 		otherwise say "Accepted... Charitable... Donation[roman type][line break]The voice echoes in your head as light gathers around the well and slowly dissipates.";
 		increase the stored-offerings of wishing well by N;
+	if infamy fetish > 0 and doomed > 0 and camera-drone is nonstalking:
+		say "You hear an... enthusiastic slurping sound as a fist-sized, floating eye with tiny dangling tentacles emerges from the smoke and begins to hover in front of you.";
+		deploy a drone camera;
 
 To compute WellPurifying for offer (N - a number) with roll (R - a number):
 	let wish-done be 0;

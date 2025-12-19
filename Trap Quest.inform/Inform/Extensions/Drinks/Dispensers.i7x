@@ -149,49 +149,49 @@ To say ShortDesc of (C - a bucket):
 To refill (C - a dispenser) with (N - a number):
 	if N is 1:
 		now the fill-colour of C is silver;
-		unless C is alchemical vat, now the text-shortcut of C is "svc";
+		unless C is alchemical vat or C is bucket, now the text-shortcut of C is "svc";
 	if N is 2:
 		now the fill-colour of C is scarlet;
-		unless C is alchemical vat, now the text-shortcut of C is "scc";
+		unless C is alchemical vat or C is bucket, now the text-shortcut of C is "scc";
 	if N is 3:
 		now the fill-colour of C is blue;
-		unless C is alchemical vat, now the text-shortcut of C is "blc";
+		unless C is alchemical vat or C is bucket, now the text-shortcut of C is "blc";
 	if N is 4:
 		now the fill-colour of C is bronze;
-		unless C is alchemical vat, now the text-shortcut of C is "brc";
+		unless C is alchemical vat or C is bucket, now the text-shortcut of C is "brc";
 	if N is 5:
 		now the fill-colour of C is green;
-		unless C is alchemical vat, now the text-shortcut of C is "grc";
+		unless C is alchemical vat or C is bucket, now the text-shortcut of C is "grc";
 	if N is 6:
 		now the fill-colour of C is grey;
-		unless C is alchemical vat, now the text-shortcut of C is "gyc";
+		unless C is alchemical vat or C is bucket, now the text-shortcut of C is "gyc";
 	if N is 7:
 		now the fill-colour of C is clear;
-		unless C is alchemical vat, now the text-shortcut of C is "cyc";
+		unless C is alchemical vat or C is bucket, now the text-shortcut of C is "cyc";
 	if N is 8:
 		now the fill-colour of C is magenta;
-		unless C is alchemical vat, now the text-shortcut of C is "mgc";
+		unless C is alchemical vat or C is bucket, now the text-shortcut of C is "mgc";
 	if N is 9:
 		now the fill-colour of C is indigo;
-		unless C is alchemical vat, now the text-shortcut of C is "ind";
+		unless C is alchemical vat or C is bucket, now the text-shortcut of C is "ind";
 	if N is 10:
 		now the fill-colour of C is orange;
-		unless C is alchemical vat, now the text-shortcut of C is "ong";
+		unless C is alchemical vat or C is bucket, now the text-shortcut of C is "ong";
 	if N is 11:
 		now the fill-colour of C is lime;
-		unless C is alchemical vat, now the text-shortcut of C is "lim";
+		unless C is alchemical vat or C is bucket, now the text-shortcut of C is "lim";
 	if N is 12:
 		now the fill-colour of C is brownish;
-		unless C is alchemical vat, now the text-shortcut of C is "bwn";
+		unless C is alchemical vat or C is bucket, now the text-shortcut of C is "bwn";
 	if N is 13:
 		now the fill-colour of C is violet;
-		unless C is alchemical vat, now the text-shortcut of C is "vlt";
+		unless C is alchemical vat or C is bucket, now the text-shortcut of C is "vlt";
 	if N is 14:
 		now the fill-colour of C is smoky;
-		unless C is alchemical vat, now the text-shortcut of C is "smk";
+		unless C is alchemical vat or C is bucket, now the text-shortcut of C is "smk";
 	if N is 15:
 		now the fill-colour of C is turquoise;
-		unless C is alchemical vat, now the text-shortcut of C is "trq".
+		unless C is alchemical vat or C is bucket, now the text-shortcut of C is "trq".
 
 [!<SetUpDispenser>+
 

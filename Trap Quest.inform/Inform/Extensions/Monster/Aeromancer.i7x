@@ -732,7 +732,11 @@ To compute (M - an aeromancer) displacing (C - a clothing):
 	displace C.
 
 To compute (M - an aeromancer) ripping (K - a clothing):
-	say "Using [his of M] magic manipulation of air, [NameDesc of M] pulls at both sides of the crotch of your [printed name of K], trying to create a tear in the fabric! It rips easily!";
+	say "Using [his of M] magic manipulation of air, [NameDesc of M] pulls at both sides of the top of your [printed name of K], trying to create a tear in the [clothing-material of K]! It rips easily!";
+	now K is crotch-ripped.
+
+To compute (M - an aeromancer) ripping (K - a clothing):
+	say "Using [his of M] magic manipulation of air, [NameDesc of M] pulls at both sides of the crotch of your [printed name of K], trying to create a tear in the [clothing-material of K]! It rips easily!";
 	now K is crotch-ripped.
 
 To say WeakenFlav of (M - an aeromancer) on (K - a clothing):
@@ -962,8 +966,7 @@ To say UniqueFuckDesc of (M - an aeromancer):
 	say "Use [his of M] wand against [him of M] (this will permanently defeat [him of M]).".
 
 To unique dominate (M - an aeromancer):
-	say "[BigNameDesc of M] raises [his of M] wand as you force [him of M] onto [his of M] back, but it flies out of [his of M] hand and into yours as if attracted there by, well, magic. It howls with energy as sheets of air shoot from the tip and spin around [his of M] limbs, binding [him of M] up like a Thanksgiving turkey.";
-	say "You force [NameDesc of M] onto [his of M] back, greedily yanking the wand out of [his of M] hands. It seems to react to your touch, crackling with energy as the aeromancer's clothes transform into a set of solid gold chains. You grin.[line break][if the player is able to speak][variable custom style]'How about a taste of your own medicine?'[roman type][line break][end if][big he of M] frantically shakes [his of M] head, but since you don't care about [his of M] opinion anyway, you immediately jam the fat end of the wand up [his of M] ass. You fuck [him of M] mercilessly, revelling in [his of M] groans of discomfort as air rushes inside of [him of M], visibly distending [his of M] belly. [big he of M] glares at you as you get back to your feet, leaving the wand sticking out of [his of M] butt.";
+	say "[BigNameDesc of M] raises [his of M] wand as you force [him of M] onto [his of M] back, but it flies out of [his of M] hand and into yours as if attracted there by, well, magic. It howls with energy as sheets of air shoot from the tip and spin around [his of M] limbs, binding [him of M] up like a Thanksgiving turkey. You grin.[line break][if the player is able to speak][variable custom style]'How about a taste of your own medicine?'[roman type][line break][end if][big he of M] frantically shakes [his of M] head, but since you don't care about [his of M] opinion anyway, you immediately jam the fat end of the wand up [his of M] ass. You punish [him of M] mercilessly, revelling in [his of M] groans of discomfort as air rushes inside of [him of M], visibly distending [his of M] belly. [big he of M] glares at you as you get back to your feet, leaving the wand sticking out of [his of M] butt.";
 	now M is sex-enslaved;
 	strongDignify;
 	now player-fucking is DOMINANT-SUPER;

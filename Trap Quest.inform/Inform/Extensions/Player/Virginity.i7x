@@ -57,23 +57,28 @@ Part 1 - Virginity Loss
 
 Triggered when the player loses vaginal virginity.
 
+If the fainting reason of the player is 1234, the player lost their virginity during a drunken adventure.
+
 +!]
 To compute virginity loss:
 	now vaginalvirginity-taker is a random live virginity taking thing penetrating vagina;
 	now the vaginalvirgin of the player is 0;
-	say "[variable custom style][if the class of the player is virgin warrior and the class of the player is priestess]Aaah! Sorry sisters, I have failed you...[otherwise if the player is not a pervert]Oh god... so this is how I will forever remember losing my virginity...[otherwise if the player is not a nympho]I guess it was about time someone broke me in...[otherwise]I've given my virginity to a stranger. There's no going back from that! *giggle*[end if][roman type][line break]";
+	if the fainting reason of the player is 1234, say "[variable custom style]Oh god, I've given my virginity to a stranger. And I don't even remember it[if the class of the player is virgin warrior and the class of the player is priestess]! Sorry sisters, I have failed you[end if]...[roman type][line break]";
+	otherwise say "[variable custom style][if the class of the player is virgin warrior and the class of the player is priestess]Aaah! Sorry sisters, I have failed you...[otherwise if the player is not a pervert]Oh god... so this is how I will forever remember losing my virginity...[otherwise if the player is not a nympho]I guess it was about time someone broke me in...[otherwise]I've given my virginity to a stranger. There's no going back from that! *giggle*[end if][roman type][line break]";
 	let flav-said be 0;
 	now the tattoo-title of virgin void tattoo is "virgin void";
 	if virgin void tattoo is worn:
-		say "A big red 'VOID' is suddenly magically stamped over the tattoo of the word 'virgin' on your belly!";
+		say "[if the fainting reason of the player is 1234]You notice that a big red 'VOID' tattoo has been added[otherwise]A big red 'VOID' is suddenly magically stamped[end if] over the tattoo of the word 'virgin' on your belly!";
 		focus-consider virgin void tattoo;
 	if the virgin bonus of the player > 0:
-		say "[if the player is not a pervert]You feel pure despair and[otherwise if the player is not a nympho]You shudder involuntarily as[otherwise]Perverse arousal mixed with a vague sense of self-disgust consumes you as[end if] you feel some of your strength and speed leave you. As that feeling of purity and promise fully leaves your soul, it feels as if it has left you in an even worse state than when you first began to feel it.";
+		if the fainting reason of the player is 1234, say "You feel that some of your strength and speed and purity and promise in your soul has left you, leaving in an even worse state than when you first began to feel it.";
+		otherwise say "[if the player is not a pervert]You feel pure despair and[otherwise if the player is not a nympho]You shudder involuntarily as[otherwise]Perverse arousal mixed with a vague sense of self-disgust consumes you as[end if] you feel some of your strength and speed leave you. As that feeling of purity and promise fully leaves your soul, it feels as if it has left you in an even worse state than when you first began to feel it.";
 		now flav-said is 1;
 		now the virgin bonus of the player is -1;
 		if virgin void tattoo is drawable and there is a worn tattoo:
 			summon virgin void tattoo;
-			say "Your skin stings as a tattoo is suddenly seared into your skin on the right hand side of your torso! You take a look: ";
+			if the fainting reason of the player is 1234, say "You feel a patch of sensitive skin on the right hand side of your torso! You take a look: ";
+			otherwise say "Your skin stings as a tattoo is suddenly seared into your skin on the right hand side of your torso! You take a look: ";
 			try examining virgin void tattoo;
 	if the number of worn purity clothing > 0, say "Your aura of purity gone, your pure items lose their desire to travel with you.";
 	repeat with H running through worn clothing:

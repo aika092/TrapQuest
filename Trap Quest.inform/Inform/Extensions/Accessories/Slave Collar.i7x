@@ -39,7 +39,7 @@ slave-collar-wisp-charge is a number that varies.
 
 To compute slave collar wisp of (C - a clothing):
 	if C is not blessed and playerRegion is not hotel and Hotel01 is placed:
-		let W be a random nonstalking wisp;
+		let W be a random nonstalking evil-wisp;
 		if W is wisp:
 			let brothel-quest-exists be false;
 			repeat with WS running through stalking wisps:
@@ -47,10 +47,10 @@ To compute slave collar wisp of (C - a clothing):
 			if brothel-quest-exists is false:
 				if slave-collar-wisp-charge > a random number between 30 and 60:
 					now slave-collar-wisp-charge is 0;
-					silently set up W;
-					now the wisp-quest of W is brothel-wisp-quest;
-					now the wisp-trigger of W is speak-wisp-trigger;
-					say "[bold type][BigNameDesc of C] [bold type]shudders, and a [ColourDesc of W] curse wisp appears, and begins hovering behind you! [roman type]You can sense that you must [bold type][wisp-quest of W][roman type] before you next [bold type][wisp-trigger of W][roman type], or else you will [bold type][wisp-punishment of W][roman type].";
+					silently set up wisp quest brothel-wisp-quest for W;
+					silently set up wisp trigger speak-wisp-trigger for W;
+					silently set up wisp GUI for W;
+					say AnnounceNewWisp W;
 				otherwise:
 					increase slave-collar-wisp-charge by 1.
 

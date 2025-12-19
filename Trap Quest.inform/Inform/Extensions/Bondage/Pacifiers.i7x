@@ -23,6 +23,13 @@ To set up unique shop state of (C - a pacifier):
 		increase the raw-magic-modifier of C by a random number between 0 and 1;
 		increase the raw-magic-modifier of C by a random number between 0 and 1.
 
+To compute pacifier stolen intelligence of (C - a pacifier):
+	if the raw intelligence of the player > 1:
+		let I be the raw intelligence of the player / 2;
+		increase the stolen-intelligence of C by I;
+		say "[bold type]You feel [NameDesc of C] [bold type]steal [if I < 3]some[otherwise]a huge amount[end if] of your intelligence as you remove it! [roman type]It's probably trying to ensure that it gets replaced after this is over...";
+		decrease the raw intelligence of the player by I.
+
 Definition: a baby pacifier is baby themed: [Is it something that only an adult baby fetishist would have?]
 	decide yes.
 
@@ -74,6 +81,11 @@ Definition: a spider pacifier is halloween themed: decide yes.
 A slime pacifier is a kind of baby pacifier. There is 1 slime pacifier. The printed name of slime pacifier is "[clothing-title-before]slime pacifier[clothing-title-after]". The text-shortcut of slime pacifier is "slpa".
 Definition: a slime pacifier is green themed: decide yes.
 Definition: a slime pacifier is fetish appropriate: decide no. [doesn't appear ranadomly]
+heart-pacifier is a baby pacifier. The printed name of heart-pacifier is "[clothing-title-before]heart pacifier[clothing-title-after]". The text-shortcut of heart-pacifier is "htpa".
+Definition: heart-pacifier is purple themed: decide yes.
+Definition: heart-pacifier is heart themed: decide yes.
+Definition: heart-pacifier is fetish appropriate: decide no. [doesn't appear ranadomly]
+Definition: heart-pacifier is transformable: decide no.
 
 Definition: a baby pacifier is same-type:
 	if theme-share-target is baby pacifier, decide yes;
@@ -86,12 +98,13 @@ To say ShortDesc of (P - cock pacifier):
 To say ShortDesc of (P - a sparkly princess pacifier):
 	say "sparkly princess pacifier".
 
-Carry out taking off a cursed pacifier:
-	if the raw intelligence of the player > 1:
-		let I be the raw intelligence of the player / 2;
-		increase the stolen-intelligence of the noun by I;
-		say "[bold type]You feel the [noun] [bold type]steal [if I < 3]some[otherwise]a huge amount[end if] of your intelligence as you remove it! [roman type]It's probably trying to ensure that you replace it after you have a drink...";
-		decrease the raw intelligence of the player by I.
+Carry out taking off a pacifier:
+	if the noun is cursed or (the noun is heart-pacifier and the class of the player is berri and latest-berri-stage >= 7):
+		if the raw intelligence of the player > 1:
+			let I be the raw intelligence of the player / 2;
+			increase the stolen-intelligence of the noun by I;
+			say "[bold type]You feel the [noun] [bold type]steal [if I < 3]some[otherwise]a huge amount[end if] of your intelligence as you remove it! [roman type]It's probably trying to ensure that you replace it after you have a drink...";
+			decrease the raw intelligence of the player by I.
 
 Carry out wearing a pacifier:
 	if the stolen-intelligence of the noun > 0:
@@ -116,6 +129,8 @@ To set up unique shop state of (C - a pink pacifier):
 	now C is suppression.
 
 To decide which number is the initial cringe of (C - a ghost pacifier):
+	decide on 10.
+To decide which number is the initial cringe of (C - heart-pacifier):
 	decide on 10.
 
 To decide which number is the initial cringe of (C - a spider pacifier):
@@ -150,6 +165,7 @@ Figure of sparkly princess pacifier is the file "Items/Accessories/Head/pacifier
 Figure of ghost pacifier is the file "Items/Accessories/Head/pacifier5.png".
 Figure of spider pacifier is the file "Items/Accessories/Head/pacifier6.png".
 Figure of slime pacifier is the file "Items/Accessories/Head/pacifier7.png".
+Figure of heart pacifier is the file "Items/Accessories/Head/pacifier8.png".
 
 To decide which figure-name is clothing-image of (C - cock pacifier):
 	decide on figure of cock pacifier.
@@ -167,6 +183,8 @@ To decide which figure-name is clothing-image of (C - a spider pacifier):
 	decide on figure of spider pacifier.
 To decide which figure-name is clothing-image of (C - a slime pacifier):
 	decide on figure of slime pacifier.
+To decide which figure-name is clothing-image of (C - heart-pacifier):
+	decide on figure of heart pacifier.
 
 To say ClothingDesc of (C - cock pacifier):
 	say "This pacifier has a penis shaped sucker, [if the oral sex addiction of the player < 7]to further humiliate the wearer[otherwise]to keep you happy by letting you practise sucking [manly-penis] all the time.[end if]".
@@ -191,6 +209,9 @@ To say ClothingDesc of (C - a spider pacifier):
 
 To say ClothingDesc of (C - a slime pacifier):
 	say "This large green pacifier is made out of some sort of magical slime!".
+
+To say ClothingDesc of (C - heart-pacifier):
+	say "This large purple pacifier has a cute pink heart in the middle.".
 
 To decide which number is the strength-influence of (C - a tiger pacifier):
 	let S be 2;

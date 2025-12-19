@@ -133,15 +133,16 @@ To compute dungeon statue interaction:
 			if W is wisp:
 				now wisp-success is true;
 				silently set up W;
-				now the wisp-quest of W is swim-wisp-quest;
-				if diaper quest is 0, now the wisp-trigger of W is lose-mouthful-wisp-trigger;
-				otherwise now the wisp-trigger of W is lose-panties-wisp-trigger;
-				now the wisp-punishment of W is bimbo-wisp-punishment;
-				if (a random number between 0 and 1) + (a random number between 0 and 1) < game difficulty, now the wisp-punishment of W is a random appropriate wisp punishment;
-				update background colour of W;
-				say "[bold type]A [ColourDesc of W] curse wisp appears, and begins hovering behind you! [roman type]You can sense that you must [bold type][wisp-quest of W][roman type] before you next [bold type][wisp-trigger of W][roman type], or else you will [bold type][wisp-punishment of W][roman type].";
+				if W is evil-wisp:
+					silently set up wisp quest swim-wisp-quest for W;
+				otherwise:
+					silently set up wisp buff for W;
+				if diaper quest is 0, silently set up wisp trigger lose-mouthful-wisp-trigger for W;
+				otherwise silently set up wisp trigger lose-panties-wisp-trigger for W;
+				silently set up wisp GUI for W;
+				say AnnounceNewWisp W;
 			otherwise:
-				say "You sense that a wisp tries to start following you, but can't because you already have too many wisps...";
+				say "You sense that a spirit tries to start following you, but can't because you already have too many wisps...";
 		if debugmode > 1, say "Knowledge list: [dungeon statue knowledge list].";
 		now entry PNR in the dungeon statue knowledge list is 1; [if this doesn't work, more complicated way of doing it below]
 		[if entry PNR in the dungeon statue knowledge list is 0:

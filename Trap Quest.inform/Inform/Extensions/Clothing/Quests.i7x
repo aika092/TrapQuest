@@ -1516,11 +1516,17 @@ drink-milk-wisp-quest is a wisp quest. The printed name of drink-milk-wisp-quest
 Definition: drink-milk-wisp-quest is appropriate:
 	if diaper quest is 1 or lactation fetish is 1, decide yes;
 	decide no.
+Definition: drink-milk-wisp-quest is eligible:
+	if the total volume of face > 0, decide no;
+	decide yes.
 
 drink-urine-wisp-quest is a wisp quest. The printed name of drink-urine-wisp-quest is "swallow [urine]".
 Definition: drink-urine-wisp-quest is appropriate:
 	if watersports fetish is 1, decide yes;
 	decide no.
+Definition: drink-urine-wisp-quest is eligible:
+	if the total volume of face > 0, decide no;
+	decide yes.
 
 brothel-wisp-quest is a wisp quest. The printed name of brothel-wisp-quest is "work as a [if diaper quest is 1]submissive fetish sex worker[otherwise]prostitute[end if] in the Hotel region".
 Definition: brothel-wisp-quest is appropriate:
@@ -1778,77 +1784,6 @@ To compute punishment of (W - intelligence-wisp-punishment):
 	say "You feel knowledge slip from your mind.";
 	IntDown 1.
 
-
-
-A wisp is a kind of backdrop. A wisp has an object called the wisp-quest. A wisp has an object called the wisp-trigger. A wisp has an object called a wisp-punishment. The printed name of a wisp is "[ColourDesc of item described] wisp". Understand "wisp" as wisp.
-
-wisp-1 is a wisp. wisp-2 is a wisp. wisp-3 is a wisp. wisp-4 is a wisp.
-
-Definition: a wisp is immune to change: decide yes.
-
-Definition: a wisp is stalking rather than nonstalking:
-	if the wisp-quest of it is nothing, decide no;
-	decide yes.
-
-Figure of Wisp is the file "Env/MultiFloor/wisp1.png".
-To decide which figure-name is the examine-image of (W - a wisp):
-	decide on Figure of Wisp.
-To update background colour of (W - a wisp):
-	let WP be the wisp-punishment of W;
-	if debugmode > 1, say "WP of [W] is [WP].";
-	if WP is a wisp stat punishment, now the backgroundColour of W is the wisp-colour of WP;
-	otherwise now the backgroundColour of W is TQMagenta;
-	now the text-shortcut of W is the substituted form of "[ColourDesc of W]".
-
-To say ColourDesc of (W - a wisp):
-	if the backgroundColour of W is 255:
-		say "blue";
-	otherwise if the backgroundColour of W is TQDarkishGreen:
-		say "green";
-	otherwise if the backgroundColour of W is TQDarkishRed:
-		say "red";
-	otherwise:
-		say "pink".
-
-To say ExamineDesc of (W - a wisp):
-	say "A [ColourDesc of W] curse wisp is following you. You must [wisp-quest of W] before you next [wisp-trigger of W], or else you will [wisp-punishment of W].".
-
-To silently set up (W - a wisp):
-	now the wisp-quest of W is a random appropriate eligible wisp quest;
-	now the wisp-trigger of W is a random appropriate eligible wisp trigger;
-	now the wisp-punishment of W is bimbo-wisp-punishment;
-	if (a random number between 0 and 2) + (a random number between 0 and 2) < game difficulty, now the wisp-punishment of W is a random appropriate wisp punishment;
-	now W is everywhere;
-	update backdrop positions;
-	update background colour of W.
-
-To set up (W - a wisp):
-	silently set up W;
-	say "[bold type]A [ColourDesc of W] curse wisp appears, and begins following you! [roman type]You can sense that you must [bold type][wisp-quest of W][roman type] before you next [bold type][wisp-trigger of W][roman type], or else you will [bold type][wisp-punishment of W][roman type].".
-
-To compute punishment of (W - a wisp):
-	say "[bold type][BigNameDesc of W][bold type] shudders as its curse activates! [roman type]";
-	compute punishment of the wisp-punishment of W;
-	destroy W.
-
-To destroy (W - a wisp):
-	say "The [W] [one of]fades from existence[or]fades away[or]slowly disappears[at random].";
-	now W is nowhere;
-	update backdrop positions;
-	now the wisp-quest of W is nothing.
-
-To deploy a wisp:
-	let W be a random nonstalking wisp;
-	if W is a wisp:
-		set up W.
-
-To notice a wisp:
-	let W be a random nonstalking wisp;
-	if W is a wisp:
-		silently set up W;
-		say "[bold type]You notice that you now have a [ColourDesc of W] curse wisp following you! [roman type]You can sense that you must [bold type][wisp-quest of W][roman type] before you next [bold type][wisp-trigger of W][roman type], or else you will [bold type][wisp-punishment of W][roman type].".
-
-
 QuestRecalling is an action applying to nothing.
 
 total-quests-listed is a number that varies.
@@ -1868,7 +1803,7 @@ Carry out QuestRecalling:
 			say "You are [if C is equippable]holding[otherwise]wearing[end if] a[if C is bland]n[end if] [if C is cursed]cursed[otherwise if C is blessed]blessed[otherwise]uncursed[end if] [MediumDesc of C]. [QuestFlav of Q]";
 			increase total-quests-listed by 1;
 	if there is a stalking wisp, say line break;
-	repeat with W running through wisps:
+	repeat with W running through followers:
 		if debugmode > 1, say "Colour ID: [backgroundColour of W].";
 		if W is stalking:
 			increase total-quests-listed by 1;
@@ -2046,5 +1981,382 @@ This is the piercing humility quest list rule:
 				say "You feel a mysterious pull towards the Slut School";
 		increase total-quests-listed by 1.
 The piercing humility quest list rule is listed in the quest listing rules.
+
+A follower is a kind of backdrop. A follower can be stalker or not stalker. A follower is usually not stalker.
+
+Definition: A follower (called F) is stalking rather than nonstalking:
+	if F is stalker, decide yes;
+	decide no.
+
+
+To say ExamineDesc of (F - a follower):
+	say "A [ShortDesc of F] is following you. [FollowerDesc of F]".
+
+To say ShortDesc of (F - a follower):
+	say "follower";
+
+To say FollowerDesc of (F - a follower):
+	say "What could it mean?";
+
+To followerset (F - a follower):
+	now F is everywhere;
+	now F is stalker;
+	update backdrop positions;
+
+To say FollowerFade of (F - a follower):
+	say "The [ShortDesc of F] [one of]fades from existence[or]fades away[or]slowly disappears[then at random].".
+
+To destroy (F - a follower):
+	say FollowerFade of F;
+	now F is nowhere;
+	now F is not stalker;
+	update backdrop positions.
+
+
+To construct normal buttons for (T - a follower):
+	if ButtonTableFull is 0 and T is not camera-drone:
+		choose a blank row in the Table of Buttons;
+		now the ButtonImage entry is Figure of BlessingIcon;
+		now the ButtonCommand entry is "purify [text-shortcut of T]";
+		now the ButtonColour entry is lightModeFullGreen;
+		if the magic power of the player < the magic-cost of T or the divinationskill of the player is 0, now the ButtonColour entry is lightModeFullRed. [turn red - player doesn't have enough power]
+
+Definition: a follower is immune to change: decide yes.
+
+A wisp is a kind of follower. A wisp has an object called the wisp-trigger. The printed name of a wisp is "[ColourDesc of item described] wisp". Understand "wisp" as wisp.
+
+To say ShortDesc of (F - a wisp):
+	say "wisp";
+
+To decide which number is the magic-cost of (T - a wisp):
+	decide on 0.
+
+To say ColourDesc of (W - a wisp):
+	if the backgroundColour of W is 255:
+		say "blue";
+	otherwise if the backgroundColour of W is TQDarkishGreen:
+		say "green";
+	otherwise if the backgroundColour of W is TQDarkishRed:
+		say "red";
+	otherwise:
+		say "pink".
+
+Figure of Wisp is the file "Env/MultiFloor/wisp1.png".
+Figure of Nice Wisp is the file "Env/MultiFloor/wisp1.png".
+To decide which figure-name is the examine-image of (W - a wisp):
+	decide on Figure of Wisp.
+
+To silently set up (W - a wisp):
+	if W is evil-wisp, silently set up wisp quest for W;
+	if W is nice-wisp, silently set up wisp buff for W;
+	silently set up wisp trigger for W;
+	silently set up wisp GUI for W.
+
+To silently set up wisp trigger for (W - a wisp):
+	let T be a random appropriate eligible wisp trigger;
+	silently set up wisp trigger T for W.
+
+To silently set up wisp trigger (T - a wisp trigger) for (W - a wisp):
+	now the wisp-trigger of W is T.
+
+To silently set up wisp GUI for (W - a wisp):
+	now W is everywhere;
+	now W is stalker;
+	update backdrop positions;
+	update background colour of W.
+
+To set up (W - a wisp):
+	silently set up W;
+	say AnnounceNewWisp W.
+
+To say AnnounceNewWisp (W - a wisp):
+	if W is evil-wisp, say "[bold type]A [ColourDesc of W] curse wisp apears and begins to follow you! [roman type]You can sense that you must [bold type][wisp-quest of W][roman type] before you next [bold type][wisp-trigger of W][roman type], or else you will [bold type][wisp-punishment of W][roman type].";
+	otherwise say "[bold type]A [ColourDesc of W] blessing wisp appears and begins to follow you! [roman type]You can sense that until you next [bold type][wisp-trigger of W][roman type], your [bold type][if W is strength-buffing]strength[otherwise if W is dexterity-buffing]dexterity[otherwise]intelligence[end if] is increased![roman type].".
+
+To destroy (W - a wisp):
+	say "The [W] [one of]fades from existence[or]fades away[or]slowly disappears[at random].";
+	now W is nowhere;
+	now W is not stalker;
+	update backdrop positions;
+	if W is evil-wisp:
+		now the wisp-quest of W is nothing;
+		now the wisp-punishment of W is nothing;
+	otherwise:
+		now W is not-buffing;
+
+To deploy a wisp:
+	let W be a random nonstalking evil-wisp;
+	if W is not a wisp or (there is a nonstalking nice-wisp and the player is getting very lucky), now W is a random nonstalking nice-wisp;
+	if W is a wisp:
+		set up W.
+
+To notice a wisp:
+	let W be a random nonstalking wisp;
+	if W is a wisp:
+		silently set up W;
+		if W is evil-wisp, say "[bold type]You notice that you now have a [ColourDesc of W] curse wisp following you! [roman type]You can sense that you must [bold type][wisp-quest of W][roman type] before you next [bold type][wisp-trigger of W][roman type], or else you will [bold type][wisp-punishment of W][roman type].";
+		otherwise say "[bold type]You notice that you now have a [ColourDesc of W] blessing wisp following you! [roman type]You can sense that until you next [bold type][wisp-trigger of W][roman type], your [bold type][if W is strength-buffing]strength[otherwise if W is dexterity-buffing]dexterity[otherwise]intelligence[end if] is increased![roman type].".
+
+[A curse wisp is  type of wisp that will punish you if you complete its "trigger" before completing its "quest". ]
+A evil-wisp is a kind of wisp. A wisp has an object called the wisp-quest. A wisp has an object called a wisp-punishment.
+
+evil-wisp-1 is a evil-wisp. Understand "leftmost" as evil-wisp-1. evil-wisp-2 is a evil-wisp. Understand "left" as evil-wisp-2. evil-wisp-3 is a evil-wisp. Understand "rightmost" as evil-wisp-3. evil-wisp-4 is a evil-wisp. Understand "rightmost" as evil-wisp-4.
+
+To say ExamineDesc of (W - an evil-wisp):
+	say "A [ColourDesc of W] cursed wisp is following you. You must [wisp-quest of W] before you next [wisp-trigger of W], or else you will [wisp-punishment of W].".
+
+To update background colour of (W - an evil-wisp):
+	let WP be the wisp-punishment of W;
+	if debugmode > 1, say "WP of [W] is [WP].";
+	if WP is a wisp stat punishment, now the backgroundColour of W is the wisp-colour of WP;
+	otherwise now the backgroundColour of W is TQMagenta;
+	now the text-shortcut of W is the substituted form of "[ColourDesc of W] wisp".
+
+To compute punishment of (W - an evil-wisp):
+	say "[bold type][BigNameDesc of W][bold type] shudders as its curse activates! [roman type]";
+	compute punishment of the wisp-punishment of W;
+	destroy W.
+
+To MagicPurify (W - an evil-wisp):
+	compute punishment of W.
+
+To silently set up wisp quest (Q - wisp quest) with (P - wisp punishment) for (W - an evil-wisp):
+	now the wisp-quest of W is Q;
+	now the wisp-punishment of W is P.
+
+To silently set up wisp quest with (P - wisp punishment) for (W - an evil-wisp):
+	let Q be a random appropriate eligible wisp quest;
+	silently set up wisp quest Q with P for W.
+
+To silently set up wisp quest (Q - wisp quest) for (W - an evil-wisp):
+	let P be bimbo-wisp-punishment;
+	if (a random number between 0 and 2) + (a random number between 0 and 2) < game difficulty, now P is a random appropriate wisp punishment;
+	silently set up wisp quest Q with P for W.
+
+To silently set up wisp quest for (W - an evil-wisp):
+	let Q be a random appropriate eligible wisp quest;
+	let P be bimbo-wisp-punishment;
+	if (a random number between 0 and 2) + (a random number between 0 and 2) < game difficulty, now P is a random appropriate wisp punishment;
+	silently set up wisp quest Q with P for W.
+
+To deploy an evil wisp:
+	let W be a random nonstalking evil-wisp;
+	if W is a wisp:
+		set up W.
+
+[A blessing wisp is a type of wisp that will grant you a stat boost until you complete its "trigger"]
+A nice-wisp is a kind of wisp. A nice-wisp can be strength-buffing, dexterity-buffing, intelligence-buffing or not-buffing (this is the wisp-buff property). A nice-wisp is usually not-buffing.
+
+nice-wisp-1 is a nice-wisp. Understand "lower left" as nice-wisp-1. nice-wisp-2 is a nice-wisp. Understand "upper left" as nice-wisp-2. nice-wisp-3 is a nice-wisp. Understand "lower right" as nice-wisp-3. nice-wisp-4 is a nice-wisp. Understand "upper right" as nice-wisp-4.
+
+To decide which figure-name is the examine-image of (W - a nice-wisp):
+	decide on Figure of Nice Wisp.
+
+To say ExamineDesc of (W - a nice-wisp):
+	say "A fiery [']blessing wisp['] is following you. It is increasing your [if W is strength-buffing]strength[otherwise if W is dexterity-buffing]dexterity[otherwise]intelligence[end if], but only until you next [wisp-trigger of W].".
+
+To silently set up wisp buff for (W - a nice-wisp):
+	let R be a random number from 1 to 3;
+	if R is 1, now W is strength-buffing;
+	if R is 2, now W is dexterity-buffing;
+	if R is 3, now W is intelligence-buffing;
+
+To deploy a nice wisp:
+	let W be a random nonstalking nice-wisp;
+	if W is a wisp:
+		set up W.
+
+To compute punishment of (W - a nice-wisp):
+	say "[bold type][BigNameDesc of W][bold type] shudders and vanishes, and you lose the [if W is strength-buffing]strength[otherwise if W is dexterity-buffing]dexterity[otherwise]intelligence[end if] buff![roman type][line break]";
+	destroy W.
+
+To MagicPurify (W - a nice-wisp):
+	destroy W.
+
+[camera-drones are essentially camera traps that follow the player everywhere instead of being limited to a single area. After a snapshot, they will upload for a few turns depending on combat speed, then disappear. They can be stopped from uploading if they are brought under rain/a sprinkler/taken swimming OR if an npc is defeated (with doom active, rain won't work)]
+camera-drone is a follower. The printed name of camera-drone is "[if doomed > 0]eye stalker[otherwise]camera drone[end if] ([if the item described is uploading]uploading[otherwise]recording[end if])". camera-drone can be uploading. camera-drone is not uploading. camera-drone has a poster called drone-poster. The drone-poster of camera-drone is blank-poster. camera-drone has a number called upload-progress. The upload-progress of camera-drone is 0. Understand "camera", "drone", "eye", "stalker" as camera-drone. camera-drone has a number called waterlogged. The waterlogged of camera-drone is 0. The text-shortcut of camera-drone is "camera drone".
+
+Figure of Happy Eye Stalk is the file "Env/MultiFloor/eyestalk2.png".
+Figure of Eye Stalk is the file "Env/MultiFloor/eyestalk1.png".
+Figure of Drone is the file "Env/MultiFloor/drone1.png".
+Figure of Happy Drone is the file "Env/MultiFloor/drone2.png".
+To decide which figure-name is the examine-image of (W - camera-drone):
+	if doomed > 0:
+		if W is uploading, decide on Figure of Happy Eye Stalk;
+		decide on Figure of Eye Stalk;
+	if W is uploading, decide on Figure of Happy Drone;
+	decide on Figure of Drone.
+
+To say ShortDesc of (F - camera-drone):
+	say "[if doomed > 0]eye stalker[otherwise]camera drone[end if]";
+
+To say FollowerDesc of (F - camera-drone):
+	if F is uploading, say "It seems like it's trying to upload the humiliating footage it took of you. [if doomed > 0]There's probably no way to stop it now[otherwise]If only you could [bold type]get it wet[roman type] and cause it to short-circuit[end if]...";
+	otherwise say "It seems like it's trying to catch you in a compromising position. Perhaps you can find somewhere to go that it won't follow you...";
+
+To reset (D - camera-drone) with flavour (flav - a truth state):
+	if flav is true, say "The [ShortDesc of D] [if doomed <= 0]shoots out several sparks before exploding like a popped balloon, leaving nothing but a cloud of[otherwise]blinks several times before disappearing in a puff of purple[end if] smoke. Looks like you prevented that upload!";
+	destroy D;
+	now the drone-poster of D is blank-poster;
+	now D is not uploading;
+	now the upload-progress of D is 0.
+
+To deploy a drone camera:
+	let D be camera-drone;
+	if doomed > 0, now the text-shortcut of D is "eye stalker";
+	unless D is stalking:
+		followerset D;
+		now D is not uploading;
+		now the upload-progress of D is 0;
+		now the drone-poster of D is blank-poster;
+
+To complete upload of (D - camera-drone):
+	distribute drone-poster of D;
+	if the number of blank rows in the Table of Published Disgraces > 0, publish drone-poster of D.
+
+To compute ditching (D - camera-drone):
+	say "The [ShortDesc of D] doesn't follow you. [if D is uploading]There's no way you're stopping that upload now...[otherwise]Looks like it won't bother you anymore![end if][line break]";
+	if D is uploading, complete upload of D;
+	reset D with flavour false.
+
+To say FlashFlav of (M - camera-drone):
+	say "[bold type]FLASH![roman type][line break]A bright flash like lightning envelops the room for a brief moment. You had forgotten about that stupid [ShortDesc of M]!";
+
+To compute snapshot of (Y - camera-drone) with (P - a poster):
+	unless the drone-poster of Y is blank-poster:
+		say "[bold type]FLASH![roman type][line break]A bright flash like lightning envelops the room for a brief moment. The [ShortDesc of Y] then [if doomed < 1]shoots out several sparks[otherwise]blinks several times in rapid succession[end if] before exploding like a popped balloon. Looks like you confused it![line break]";
+		reset Y with flavour false;
+	otherwise:
+		say FlashFlav of Y;
+		now Y is uploading;
+		develop P;
+		now the drone-poster of Y is P.
+
+To compute dunking (D - camera-drone):
+	now the waterlogged of D is 3;
+	if doomed <= 0:
+		if D is not uploading, say "The [ShortDesc of D] emits a small spark as it quickly withdraws its antenna.[one of] Could liquids be bad for it?[or][stopping]";
+		otherwise reset D with flavour true;
+	otherwise:
+		if D is not uploading, say "The liquid wicks off the [ShortDesc of D]'s surface as its pupil dilates[one of]. Could it be stronger underwater?[or].[stopping]";
+		otherwise complete upload of D.
+
+An all later time based rule (this is the drone upload rule):
+	if camera-drone is stalking:
+		let D be camera-drone;
+		if the drone-poster of D is not blank-poster:
+			increase the upload-progress of D by 1;
+			if the waterlogged of D > 0:
+				if doomed < 1:
+					say "The [ShortDesc of D] shoots out an antenna, only for it to immediately spit out sparks and explode like a popped balloon, leaving nothing but a cloud of smoke. Looks like it couldn't handle getting wet!";
+				otherwise:
+					say "The [ShortDesc of D] 's dilated pupil freezes in place, glowing bright pink for a second before disappearing in a puff of purple smoke. Looks like it got what it needed...";
+					complete upload of D;
+				reset D with flavour false;
+			otherwise if D is not uploading:
+				let P be the drone-poster of D;
+				now P is off-stage;
+				now D is uploading;
+				if doomed < 1, say "The antenna the [ShortDesc of D]'s back begins to blink in rapid succession. You have a feeling that if you don't find a way to overwrite it or disable the drone, that compromising picture it just took is going to get uploaded somewhere!";
+				otherwise say "The [ShortDesc of D]'s  pupil begins to move rapidly in all directions. You have a feeling that if you don't find a way to distract it, that compromising picture it just took is going to get uploaded somewhere!";
+			otherwise:
+				if the upload-progress of D > 7 * combatSpeed:
+					if doomed < 1, say "The [ShortDesc of D]'s antenna gives off one final, sustained blink before the entire thing explodes like a popped balloon, leaving behind nothing but a cloud of smoke. Looks like you lost your chance to stop the upload...";
+					otherwise say "The [ShortDesc of D]'s pupil freezes in place, glowing bright pink for several seconds before the whole thing disappears in a puff of smoke. Whatever it was up to, looks like you just lost your chance to stop it...";
+					complete upload of D;
+					reset D with flavour false;
+				otherwise if the remainder after dividing the upload-progress of D by (3 * combatSpeed) is 3:
+					if doomed <= 0, say "The [ShortDesc of D]'s antenna starts blinking even faster!";
+					otherwise say "The [ShortDesc of D]'s pupil bounces around even faster!";
+		otherwise if the waterlogged of D > 0:
+			decrease the waterlogged of D by 1;
+			if the waterlogged of D is 0:
+				if doomed < 1, say "The [ShortDesc of D] sticks out its antenna again.";
+				otherwise say "The [ShortDesc of D]'s pupil returns to its normal size.";
+
+[A trophy wisp is a kind of follower.]
+
+[
+During combat, sometimes portals can shoot attacks at enemies, but depending on the enemy, they can also attack you, which must be dodged.
+
+Portal wisps can also drag you into the portal temporarily and fuck you. (TODO)
+
+Portal wisps can spawn imps/slimeballs (TODO)
+]
+
+[A portal is a temporary follower that runs out of life as it does things. Sometimes these things are beneficial, sometimes, they're bad.]
+A mini-portal is a kind of follower. A mini-portal has a number called charge. The charge of a mini-portal is usually 0. The printed name of a portal wisp is "[if the item described is infernal-portal]infernal[otherwise]eldritch[end if] seeker portal". Understand "portal", "seeker" as mini-portal.
+
+To say ExamineDesc of (W - a mini-portal):
+	say "A [if W is infernal-portal]fiery red[otherwise]pitch black[end if] portal is following you.".
+
+infernal-portal is a mini-portal. The printed name of infernal-portal is "infernal portal". The text-shortcut of infernal-portal is "infernal portal".
+
+eldritch-portal is a mini-portal. The printed name of eldritch-portal is "eldritch portal". The text-shortcut of eldritch-portal is "eldritch portal".
+
+Figure of Infernal Miniportal is the file "Env/MultiFloor/miniportal1.png".
+Figure of Eldritch Miniportal is the file "Env/MultiFloor/miniportal2.png".
+To decide which figure-name is the examine-image of (W - a mini-portal):
+	if W is eldritch-portal, decide on Figure of Eldritch Miniportal;
+	decide on Figure of Infernal Miniportal.
+
+To decide which number is the magic-cost of (T - a mini-portal):
+	decide on 2.
+
+To deploy hell portal:
+	let W be infernal-portal;
+	if W is nonstalking:
+		followerset W;
+		say "You feel a flash of heat as a fist-sized, glowing window to a fiery realm tears itself open above your head.".
+
+To deploy eldritch portal:
+	let W be eldritch-portal;
+	if W is nonstalking:
+		followerset W;
+		say "A ripple passes through your surroundings, and you hear a shattering noise as fragments of thin air fall away from a point above your head, revealing a fist-sized window to a pitch-black abyss.".
+
+
+Carry out purifying mini-portal:
+	allocate 2 seconds;
+	compute MagicDrain of the noun;
+	say "You feel the magical power that has built up in your body flow into the portal, breaking down the forces that hold it inside this plane of existence.";
+	destroy the noun.
+
+To ChargeUp (W - a mini-portal) by (N - a number):
+	increase the charge of W by N;
+	if the charge of W < 0, now the charge of W is 0;
+	if the charge of W > 100, now the charge of W is 100.
+
+monster-chase-counter is a number that varies. monster-chase-counter is 0.
+An all later time based rule (this is the portal spawn rule):
+	let W be a random warp portal in the location of the player;
+	unless W is warp portal, now W is a random stalking mini-portal;
+	if W is a thing:
+		if monster-chase-counter < 30 / combatSpeed:
+			increase monster-chase-counter by 1;
+		otherwise if playerRegion is not School:
+			let M be a random alive nonregional imp;
+			if W is mini-portal and W is infernal-portal and M is not a monster, now M is a random off-stage imp;
+			unless M is monster:
+				let T be a random alive nonregional tentacle monster;
+				if 2 + the size-rank of T >= doomed or W is eldritch-portal, now M is T;
+			unless M is monster and egg laying fetish is 1, now M is a random alive nonregional facehugger;
+			unless M is monster, now M is a random nonregional slimeball;
+			if M is monster:
+				now M is in the location of the player;
+				if the monstersetup of M is 0, set up M;
+				if W is warp portal:
+					say "A [NameDesc of M] emerges from the giant, swirling portal.";
+				otherwise:
+					if M is imp, ChargeUp W by 10;
+					otherwise ChargeUp W by 30;
+					say "A ripple passes through your surroundings, and you look back to see [if the number of stalking mini-portal > 1]one of the portals[otherwise]the portal[end if] dropping to the ground, yawning open as a [NameDesc of M] crawls through.";
+				if M is not slimeball and M is not imp, say "[line break][variable custom style][one of]Is that the one from before?![or]Did [he of M] follow me here?![or]I think I recognize [him of M] from before![in random order][roman type][line break][GotUnluckyFlav]";
+				now monster-chase-counter is 0;
+	repeat with P running through stalking mini-portal:
+		if the charge of P > 90 + ((doomed + tough-shit) * 30):
+			say "The [P] winks out of existence.";
+			now the charge of P is 0;
+			destroy P.
 
 Quests ends here.

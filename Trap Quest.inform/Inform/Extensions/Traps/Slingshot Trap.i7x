@@ -25,10 +25,7 @@ To trigger (Y - a slingshot):
 	say "As your feet leave the ground, you hear the 'twang' of a strong elastic band. ";
 	let C be a random off-stage crotch rope;
 	if the player is not possessing a vagina, now C is a random off-stage pouch-panties;
-	if diaper focus is 1 and diaper lover > 0:
-		now C is a random eligible disposable diaper;
-		if C is DQLessBulky diaper, now C is a random off-stage DQBulkier plentiful disposable diaper;
-		if C is nothing, now C is a random eligible diaper;
+	if diaper focus is 1 and diaper lover > 0, now C is the chosen trap disposable diaper;
 	let D be a random currently uncovered diaper;
 	if C is not actually autowearable:
 		if diaper lover > 0 and face is not actually occupied, now C is a random off-stage fetish appropriate ballgag;

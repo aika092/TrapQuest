@@ -9,7 +9,7 @@ title	subtable	description	toggle
 "Futanari NPCs (Can biologically female NPCs have penises? If disabled, they'll have strapons instead) - [if futanari fetish is 2][bold type]enabled[roman type] (WITHOUT balls)[otherwise if futanari fetish is 1][bold type]enabled[roman type] (WITH balls)[otherwise if lady fetish is 2]disabled - all NPCs are set to masculine[otherwise]disabled[end if]"	--	--	futanari fetish rule
 "Futanari content (Can you, as a biologically female player, grow a penis?) - [if player futanari fetish is 2][bold type]enabled[roman type] (WITHOUT balls)[otherwise if player futanari fetish is 1][bold type]enabled[roman type] (WITH balls)[otherwise if the player is not the donator]disabled - beta testers only for now[otherwise]disabled[end if]"	--	--	player futanari fetish rule
 "Increase Minimum Penis Size ([if the player is female]Disabled since player is female[otherwise if min penis size is 0]No penis - 0 points used. [bonus penis cost][otherwise if min penis size is 1]Less than 1 inch - 1 point used. [bonus penis cost][otherwise if min penis size is 2]1 inch - 1 point used. [bonus penis cost][otherwise][min penis size] inch - [min penis size points] points used. [bonus penis cost][end if][if the player is male and tg fetish >= 1]When this size is reached, TG can occur.[end if])"	--	--	min penis size rule
-"Flatchested until sex change ([if trap fetish is 0]Not enabled - costs 3 points to enable[otherwise]Enabled - 3 points used[end if])"	--	--	trap fetish toggle rule
+"Flatchested until sex change ([if trap fetish is 0]Not enabled - costs 3 points to enable[otherwise][bold type]Enabled[roman type] - 3 points used[end if])"	--	--	trap fetish toggle rule
 
 [DO NOT PUT ANYTHING BELOW THE FLATCHESTED UNTIL SEX CHANGE OPTION]
 

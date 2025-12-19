@@ -31,7 +31,6 @@ Report taking a sword:
 			now the noun is in the location of the player;
 			say "Unable to properly wield it, you are forced to let [NameDesc of the noun] drop back to the ground.".
 
-
 Report taking off a sword:
 	say "As you have no way to safely hold [NameDesc of the noun], you are forced to drop it to the ground.";
 	try dropping the noun.

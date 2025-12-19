@@ -110,8 +110,8 @@ To say newbie style:
 Table of User Styles (continued)
 style name	background colour	justification	italic	indentation	first line indentation	fixed width	colour
 special-style-2	--	left-right-justified	true	15	-4	false	"#ff00ff" [magenta]
-special-style-1	--	left-right-justified	true	15	-4	false	"#aa0000" [dark red]
-blockquote-style	--	left-right-justified	false	0	0	false	"#006400" [dark green]
+special-style-1	--	left-right-justified	true	15	-4	false	"#d63600" [orangered rather than the old dark red]
+blockquote-style	--	left-right-justified	false	0	0	false	"#00d100" [light green, formerly dark green]
 input-style	--	left-right-justified	false	0	0	false	"#ff0000" [pure red]
 italic-style	--	centre-justified	false	0	0	false	--
 

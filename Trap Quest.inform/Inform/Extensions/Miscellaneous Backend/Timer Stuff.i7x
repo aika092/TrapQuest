@@ -30,10 +30,7 @@ Section - Restart the timer after undoing
 
 [The state of the timer is not automatically saved with the game state, so we must start a timer after undoing at the same speed it was running when the game state was saved.]
 
-The immediately undo rule response (E) is "[@ reset the Glulx timer][bracket]Previous turn undone.[close bracket][if the player is the donator][@ reset window setting][@ resolve graphics windows mayhem][@ fix window overhang][end if]".
-
-To reset window setting:
-	now previousGUILayout is -1.
+The immediately undo rule response (E) is "[@ reset the Glulx timer][bracket]Previous turn undone.[close bracket][if the player is the donator][@ resolve graphics windows mayhem][@ fix window overhang][end if]".
 
 To decide what number is glk event handled in (ev - a g-event) context:
 	(- HandleGlkEvent(gg_event, {ev}, gg_arguments) -)

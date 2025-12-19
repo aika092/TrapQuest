@@ -61,7 +61,7 @@ To say ShortDesc of (C - a suspenders):
 	say "pair of suspenders".
 
 To say ShortestDesc of (C - a suspenders):
-	say ShortDesc of C.
+	say "suspenders".
 
 [Report wearing stockings when there are worn suspenders:
 	let S be a random worn suspenders;
@@ -536,7 +536,8 @@ To compute periodic effect of (C - key garter):
 	otherwise if the class of the player is not bride and C is dominance:
 		say "[bold type]You suddenly feel your [MediumDesc of C] filling you with a deep sense of shame from no longer owning a cuck! [roman type]";
 		now C is locked;
-		now C is dominance;
+		now C is stumbling;
+		severeHumiliate.
 
 To decide which object is the concealer of (C - key garter):
 	repeat with D running through thigh covering actually dense clothing:

@@ -85,6 +85,7 @@ Definition: a bag of holding is destructible: decide no.
 Definition: a bag of holding is stealable: decide no.
 
 Check taking off bag of holding:
+	if tutorial is 1, say "[bold type]Stop! [roman type]This is your Bag Of Holding item. Interacting with this object is not how you inspect what's inside it. To check what's in your bag, and interact with those items, click on the inventory tab to the far left of the inventory tab you currently have open!" instead;
 	if the noun is glued, try tearing off the noun instead;
 	now summoning is 0;
 	unless the noun is actually removable, do nothing instead;
@@ -263,15 +264,12 @@ To execute (E - bag-feeding-semen):
 	otherwise:
 		say "What's more, a [printed name of squirt dildo] appears in your hand! Something tells you that you can guess what's inside...";
 		now squirt dildo is carried by the player;
-	let W be a random nonstalking wisp;
+	let W be a random nonstalking evil-wisp;
 	if W is wisp:
-		silently set up W;
-		now the wisp-quest of W is drink-wisp-quest;
-		now the wisp-trigger of W is spill-wisp-trigger;
-		now the wisp-punishment of W is bimbo-wisp-punishment;
-		if (a random number between 0 and 1) + (a random number between 0 and 1) < game difficulty, now the wisp-punishment of W is a random appropriate wisp punishment;
-		update background colour of W;
-		say "[bold type]A [ColourDesc of W] curse wisp appears, and begins hovering behind you! [roman type]You can sense that you must [bold type][wisp-quest of W][roman type] before you next [bold type][wisp-trigger of W][roman type], or else you will [bold type][wisp-punishment of W][roman type].".
+		silently set up wisp quest drink-wisp-quest for W;
+		silently set up wisp trigger spill-wisp-trigger for W;
+		silently set up wisp GUI for W;
+		say AnnounceNewWisp W.
 
 bag-feeding-urine is a bag-feeding-effect.
 Definition: bag-feeding-urine is appropriate:
@@ -290,15 +288,12 @@ To execute (E - bag-feeding-urine):
 	otherwise:
 		say "What's more, a [champagne-glass] appears on the ground in front of you! Something tells you that you can guess what's inside...";
 		now champagne-glass is in the location of the player;
-	let W be a random nonstalking wisp;
+	let W be a random nonstalking evil-wisp;
 	if W is wisp:
-		silently set up W;
-		now the wisp-quest of W is drink-wisp-quest;
-		now the wisp-trigger of W is spill-wisp-trigger;
-		now the wisp-punishment of W is bimbo-wisp-punishment;
-		if (a random number between 0 and 1) + (a random number between 0 and 1) < game difficulty, now the wisp-punishment of W is a random appropriate wisp punishment;
-		update background colour of W;
-		say "[bold type]A [ColourDesc of W] curse wisp appears, and begins hovering behind you! [roman type]You can sense that you must [bold type][wisp-quest of W][roman type] before you next [bold type][wisp-trigger of W][roman type], or else you will [bold type][wisp-punishment of W][roman type].".
+		silently set up wisp quest drink-wisp-quest for W;
+		silently set up wisp trigger spill-wisp-trigger for W;
+		silently set up wisp GUI for W;
+		say AnnounceNewWisp W.
 
 bag-feeding-swimming is a bag-feeding-effect.
 Definition: bag-feeding-swimming is appropriate:
@@ -350,18 +345,15 @@ To execute (E - bag-feeding-magic):
 
 bag-feeding-whore is a bag-feeding-effect.
 Definition: bag-feeding-whore is appropriate:
-	if the noun is whore themed and there is a nonstalking wisp, decide yes;
+	if the noun is whore themed and there is a nonstalking evil-wisp, decide yes;
 	decide no.
 To execute (E - bag-feeding-whore):
 	say "Your bag reacts to prostitution theme of your [ShortDesc of noun]!";
-	let W be a random nonstalking wisp;
-	silently set up W;
-	now the wisp-quest of W is brothel-wisp-quest;
-	now the wisp-trigger of W is a random eligible appropriate wisp trigger;
-	now the wisp-punishment of W is bimbo-wisp-punishment;
-	if (a random number between 0 and 1) + (a random number between 0 and 1) < game difficulty, now the wisp-punishment of W is a random appropriate wisp punishment;
-	update background colour of W;
-	say "[bold type]A [ColourDesc of W] curse wisp appears, and begins hovering behind you! [roman type]You can sense that you must [bold type][wisp-quest of W][roman type] before you next [bold type][wisp-trigger of W][roman type], or else you will [bold type][wisp-punishment of W][roman type].".
+	let W be a random nonstalking evil-wisp;
+	silently set up wisp quest brothel-wisp-quest for W;
+	silently set up wisp trigger for W;
+	silently set up wisp GUI for W;
+	say AnnounceNewWisp W.
 
 bag-feeding-food is a bag-feeding-effect.
 Definition: bag-feeding-food is appropriate:

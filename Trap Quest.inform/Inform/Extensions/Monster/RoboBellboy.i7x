@@ -205,12 +205,12 @@ This is the robobellboy punishment rule:
 To compute trainee forcing of (M - a robobellboy):
 	if the training-progress of senior robobellboy is -1:
 		compute whore forcing of M;
-	let C be a random off-stage trainee bra;
+	let C be trainee bra;
 	let D be C;
 	let T be a random off-stage trainee thigh highs;
-	if C is clothing and C is actually summonable:
+	if C is off-stage and C is actually summonable:
 		summon C;
-		say "[BigNameDesc of M] opens [his of M] chest compartment and pulls out a [C]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as [he of M] forces the item onto your body, where the straps snap together and emit a small tone that worries you.";
+		say "[BigNameDesc of M] opens [his of M] chest compartment and pulls out a [ShortDesc of C]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as [he of M] forces the item onto your body, where the straps snap together and emit a small tone that worries you.";
 		bore M;
 		FavourUp M;
 	otherwise if trainee hood is off-stage and trainee hood is actually summonable:
@@ -487,8 +487,8 @@ To compute headgear forcing of (M - senior robobellboy):
 	bore M.
 
 To compute bra forcing of (M - senior robobellboy):
-	let C be a random off-stage trainee bra;
-	if C is clothing and C is actually summonable:
+	let C be trainee bra;
+	if C is off-stage and C is actually summonable:
 		summon C;
 		now C is magnetised;
 		say "[BigNameDesc of M] opens up [his of M] chest compartment and pulls out a [ShortDesc of C]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as [he of M] forces the item onto your body, where the straps snap together and emit a small tone that worries you.[line break][first custom style]MAMMARY IMPROVEMENT REGIMEN INITIATED. [caps please] WAIT PATIENTLY FOR FURTHER OPTIMISATION.[roman type][line break]";

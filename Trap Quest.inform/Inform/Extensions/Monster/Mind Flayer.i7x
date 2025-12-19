@@ -1,6 +1,6 @@
 Mind Flayer by Monster begins here.
 
-mind flayer is a monster. mind flayer is neuter. Understand "mindflayer" as mind flayer.
+mind flayer is a monster. mind flayer is neuter. Understand "mindflayer", "flayer", "mind layer", "layer" as mind flayer.
 
 mind flayer has a number called feeding. mind flayer has a number called alreadyspawned. mind flayer has a number called domination.
 
@@ -23,10 +23,10 @@ To decide which figure-name is the oral-sex-monster-image of (M - mind flayer):
 	decide on figure of mindflayer cutscene 2.
 
 To say ShortDesc of (M - mind flayer):
-	say "mindflayer".
+	say "mind layer".
 
 To say MediumDesc of (M - mind flayer):
-	say "mindflayer".
+	say "mind layer".
 
 To say MonsterDesc of (M - mind flayer):
 	say "A lean humanoid with slimy looking purple skin. [big he of M] wears a loose robe. Slowly waving tentacles surround [his of M] mouth. Though [his of M] eyes are pure white, [he of M] exudes an aura of intelligence and menace.".
@@ -71,7 +71,7 @@ Understand "hastur" as hastur.
 
 A later time based rule (this is the mindflayer quest of mind flayer rule):
 	if alreadyspawned of mind flayer is 0 and mind flayer is alive:
-		say "You hear a very quiet muttering from just behind your ear, even though nobody is there.[line break][second custom style]'Did [he of the player] just... [big he of the player][']s not supposed to be able to do that! Quick, do something! I don't know, send in the flayer! Screw protocol, just do it!'[roman type][line break]You then hear a strange tapping sound, and suddenly a much louder voice rings out as though from a PA system![line break][second custom style]'Testing, testing. Is this thing on? Hello, testers! It appears a monster from a not-yet-implemented area has inadvertently been introduced into the live test area. We're not really sure how this happened, but this does highlight the importance of your job as testers. We don't seem to be able to despawn it ourselves, if one of you could be a dear and destroy it so we can analyse its data we would really appreciate it.[roman type][line break]";
+		say "You hear a very quiet muttering from just behind your ear, even though nobody is there.[line break][second custom style]'Did [he of the player] just... [big he of the player][']s not supposed to be able to do that! Quick, do something! I don't know, send in the layer! Screw protocol, just do it!'[roman type][line break]You then hear a strange tapping sound, and suddenly a much louder voice rings out as though from a PA system![line break][second custom style]'Testing, testing. Is this thing on? Hello, testers! It appears a monster from a not-yet-implemented area has inadvertently been introduced into the live test area. We're not really sure how this happened, but this does highlight the importance of your job as testers. We don't seem to be able to despawn it ourselves, if one of you could be a dear and destroy it so we can analyse its data we would really appreciate it.[roman type][line break]";
 		now alreadyspawned of mind flayer is 1;
 	if alreadyspawned of mind flayer is 1 and mind flayer is permanently banished:
 		say "The PA system comes alive again.[line break][second custom style]'Oh wonderful. Nintendolls thanks you for your contribution to the completion of this testing phase! The standard bug bounty has been credited to your winnings, how lucky for you! Oh, and if it dropped anything feel free to keep it, it's an item from later in the game so it's probably pretty powerful.'[roman type][line break]";

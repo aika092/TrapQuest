@@ -19,7 +19,7 @@ Check resting:
 Carry out resting:
 	if the player is upright, try kneeling;
 	now the alert of the player is 0;
-	while the fatigue of the player > 0 and the alert of the player is 0:
+	while the fatigue of the player > 0 and the alert of the player is 0 and the player is prone:
 		say "You [one of][or]continue to [stopping][if the largeness of breasts > 13]use your [BreastDesc] as pillows to [end if]rest.";
 		allocate 6 seconds;
 		if there is a worn nightie, increase fatimod by 2;

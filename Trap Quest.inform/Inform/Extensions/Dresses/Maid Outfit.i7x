@@ -29,6 +29,8 @@ Figure of Maid Outfit 11 is the file "Items/Clothes/Upper/Special/Maid/maid11.pn
 Figure of Maid Outfit 12 is the file "Items/Clothes/Upper/Special/Maid/maid12.png".
 Figure of Maid Outfit 13 is the file "Items/Clothes/Upper/Special/Maid/maid13.png".
 Figure of Maid Outfit 14 is the file "Items/Clothes/Upper/Special/Maid/maid14.png".
+Figure of Maid Outfit 15a is the file "Items/Clothes/Upper/Special/Maid/maid15a.png".
+Figure of Maid Outfit 15b is the file "Items/Clothes/Upper/Special/Maid/maid15b.png".
 
 To decide which number is the strength-influence of (C - a maid outfit):
 	let S be 1;
@@ -390,5 +392,35 @@ To decide which number is the crotch-tightness of (C - bunny-maid-outfit):
 	decide on 3.
 To decide which number is the penis-capacity of (C - bunny-maid-outfit):
 	decide on 1.
+
+Part 15 - Neko Maid Outfit
+
+neko-maid-outfit is a maid outfit. neko-maid-outfit is belly exposing. The skirt-length of neko-maid-outfit is 5. neko-maid-outfit is fully covering. neko-maid-outfit is top-displacable. The text-shortcut of neko-maid-outfit is "nmo". The printed name of neko-maid-outfit is "[clothing-title-before]neko maid outfit[clothing-title-after]". Understand "neko" as neko-maid-outfit.
+
+To decide which figure-name is clothing-image of (C - neko-maid-outfit):
+	decide on figure of maid outfit 15a.
+
+To say ClothingDesc of (M - neko-maid-outfit):
+	say "A frilly black top, with an open belly and feminine pink bows.";
+	if images visible is 1, appropriate-display figure of maid outfit 15b;
+	say "A black skirt with a built in apron and frilly pink hem. The design is reminiscent of an anime-themed maid cafe.".
+
+To decide which number is the initial outrage of (C - neko-maid-outfit):
+	decide on 4.
+
+To decide which object is the potential-upgrade-target of (M - neko-maid-outfit):
+	if slutty-maid-outfit is off-stage, decide on slutty-maid-outfit;
+	otherwise decide on the potential-upgrade-target of slutty-maid-outfit. [If the next target is not off-stage, we skip it.]
+
+Definition: neko-maid-outfit is class-relevant:
+	if the class of the player is maid or the class of the player is catgirl, decide yes;
+	decide no.
+
+Definition: neko-maid-outfit is transformation-protected:
+	if the class of the player is catgirl, decide yes;
+	decide no.
+Definition: neko-maid-outfit is black themed: decide yes.
+Definition: neko-maid-outfit is bow themed: decide yes.
+Definition: neko-maid-outfit is sissifying: decide yes.
 
 Maid Outfit ends here.

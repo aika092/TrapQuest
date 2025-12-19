@@ -1,6 +1,6 @@
 Ghost by Monster begins here.
 
-A ghost is a kind of monster. A ghost has a number called bank. A ghost has a number called wind-up. The wind-up of a ghost is usually 0. The poison-status of a ghost is -1. A ghost can be phased or unphased. A ghost is male. A ghost is neuter. The blind-status of a ghost is -1. A ghost is detached-dick-ignoring.
+A ghost is a kind of monster. A ghost has a number called bank. A ghost has a number called wind-up. The wind-up of a ghost is usually 0. The poison-status of a ghost is -1. A ghost can be phased or unphased. A ghost is male. A ghost is neuter. A ghost is airborne. The blind-status of a ghost is -1. A ghost is detached-dick-ignoring.
 
 Definition: a ghost is willing to do titfucks: decide no.
 
@@ -518,8 +518,9 @@ To compute normal ectoplasm to (M - a ghost):
 				say "[if bukkake fetish is 1][BigNameDesc of M] ejaculates violently, dousing you in a thick layer of bright grey, glowing slime.[otherwise][BigNameDesc of M] releases a violent pulse of energy, causing everything in the vicinity to vibrate with powerful magic.[end if]";
 				say "[if bukkake fetish is 1]The thick slime on the floor instantly adheres[otherwise]The glowing surface of the floor seems to glue itself[end if] to your skin!";
 				increase the stickiness of the player by a random number between 2 and 4; [How many turns the player is trapped before they can move]
-			if M is jismbodied ghost or bukkake fetish is 0, cutshow Figure of ghost 2 ectoplasm cutscene for M;
-			otherwise cutshow Figure of ghost 1 ectoplasm cutscene for M;
+			if diaper quest is 0:
+				if M is jismbodied ghost or bukkake fetish is 0, cutshow Figure of ghost 2 ectoplasm cutscene for M;
+				otherwise cutshow Figure of ghost 1 ectoplasm cutscene for M;
 		otherwise:
 			if M is nearby, say "[if bukkake fetish is 1]You see the [location of M] being doused in glowing [semen] by [NameDesc of M][otherwise]The [location of M] shakes with a violent pulse of energy from [NameDesc of M][end if]. A narrow escape!";
 			otherwise say "[if bukkake fetish is 1]You hear a sound similar to a fire hydrant being smashed open somewhere else in the mansion[otherwise]You hear a loud crash somewhere else in the mansion[end if].";
@@ -739,7 +740,7 @@ To loot (M - jismbodied ghost):
 
 To compute unique automatic banishment of (M - a ghost):
 	if there is a nonstalking wisp and the player is getting unlucky:
-		deploy a wisp;
+		deploy an evil wisp;
 		say GotUnluckyFlav;
 	if M is ghostly tentacle, progress quest of exorcism-quest;
 	now creepiness is 0.[Having defeated a ghost shouldn't cause a new one to appear immediately]
@@ -920,9 +921,9 @@ Definition: ghostly tentacle is willing to donate diapers:
 
 To compute diaper change of (M - ghostly tentacle):
 	let K be a random worn knickers;
+	let D be the chosen trap diaper;
 	if K is knickers:
 		say "[BigNameDesc of M] giggles in an extremely high-pitched voice and phases through you. But [he of M] doesn't come out the other side?! You feel a weird chill but nothing more as [NameDesc of M] inhabits the same space as you. And then... you feel your [ShortDesc of K] begin to rumble and swell...";
-		let D be a random eligible diaper;
 		now K is cursed;
 		now K is audible squelches;
 		transform K into D;
@@ -930,7 +931,6 @@ To compute diaper change of (M - ghostly tentacle):
 		say "[BigNameDesc of M] sails away, clearly satisfied with [his of M] work!";
 	otherwise:
 		say "[BigNameDesc of M] giggles in an extremely high-pitched voice and phases through you. But [he of M] doesn't come out the other side?! You feel a weird chill but nothing more as [NameDesc of M] inhabits the same space as you. And then... you feel part of [him of M] become corporeal around your waist. [big he of M] sails away, but now you have a diaper where before you had nothing!";
-		let D be a random eligible diaper;
 		summon D cursed with quest;
 		now D is audible squelches;
 	repeat with C running through worn clothing:

@@ -46,6 +46,8 @@ Report submitting:
 				otherwise:
 					if there is a fuckhole-mode glue penetrating face:
 						say "You [one of]remain held completely still[or]mewl quietly into the glue[or]contintue lying there[or]let a moan out through your nose[or]stay rigid and unmoving[or]close your eyes, defeated[or]curl your toes tightly[or]surrender to your helplessness[cycling][if there is a monster penetrating a body part], [one of]completely unable to resist[or]powerless to prevent yourself from being used as a living fleshlight[or]defenceless and degraded[or]unable to even beg for mercy thanks to the glue gripping your mouth[or]as your lower half is treated like a faceless fuckhole[or]feeling more and more like you're nothing but a sex object[or]with absolutely zero agency[or]with no way to stop what's happening[or]the incredibly strong glue preventing you from budging even an inch[in random order][end if].";
+					otherwise if M is penetrating penis:
+						say TQMasturbationSubmissionFlav of M;
 					otherwise if M is penetrating a body part or M is grabbing the player:
 						say SexSubmissionFlav of M;
 					otherwise:
@@ -58,6 +60,9 @@ To compute wrangled submitting of (T - a thing):
 To say SexSubmissionFlav of (T - a thing):
 	if T is penetrating a body part, say "[one of]You lie still and accept the invasion.[or]You submit to being used as a plaything.[or]You don't resist being used.[purely at random]";
 	otherwise say "[if T is live]You don't resist against the [T]'s acts[otherwise]You keep still and wait[end if].".
+
+To say TQMasturbationSubmissionFlav of (T - a thing):
+	say "[one of]You allow yourself to enjoy the sensation of being masturbated.[or]You submit to being played with.[or]You focus your thoughts on how amazing your [ShortDesc of penis] feels.[or]You moan gently as [NameDesc of T] brings you closer to orgasm.[in random order]".
 
 Understand "submit", "surrender", "resign", "give up", "give in", "forfeit", "yy", "yesway", "fuck" as submitting.
 

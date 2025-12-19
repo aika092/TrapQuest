@@ -111,7 +111,7 @@ To compute baby hotel chair sitting:
 				CumSoak S on K;
 				say "The pumping keeps going for what feels like a full 10 seconds before it stops[if the semen-soak of K > 0], leaving your the inside of your [K] feeling very slimy[end if].";
 		otherwise:
-			let D be a random eligible diaper;
+			let D be the chosen trap diaper;
 			say "You are not very surprised at all when you feel a [ShortDesc of D] slowly materialise around your loins![line break][variable custom style][if the bimbo of the player < 13]Here we go again.[otherwise]Yay! How comfy[end if][roman type][line break]";
 			summon D cursed with quest;
 	otherwise if R is 2:

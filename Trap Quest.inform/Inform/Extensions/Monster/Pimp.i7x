@@ -2,6 +2,9 @@ Pimp by Monster begins here.
 
 pimp is a monster. pimp is intelligent. pimp is male.
 
+To decide which object is the default-local-room of (M - pimp):
+	decide on Hotel44.
+
 Definition: pimp is father material: decide yes.
 
 Definition: pimp is condom obsessed: decide yes. [Does he ALWAYS have condoms on him?]

@@ -46,7 +46,7 @@ To compute default motion actions of (M - a monster):
 			now the boredom of M is 0;
 	if M is intelligent and M is uninterested:
 		repeat with D running through unlock-key in the location of M:
-			unless M is royal guard and D is skeleton key:
+			unless (M is royal guard and D is skeleton key) or the owner of D is shopkeeper:
 				if M is in the location of the player, say "[BigNameDesc of M] picks up [NameDesc of D] with an intrigued look on [his of M] face.";
 				now D is carried by M;
 				now the boredom of M is 0;
@@ -192,10 +192,11 @@ To compute default toilet seeking of (M - a monster):
 	let L be the location of M;
 	if M is able to use the toilet:
 		compute toilet use of M;
+		if M is not in the location of the player and M is not nearby, compute toilet return of M;
 	otherwise:
 		let TR be the target-toilet of M;
 		let ATKM be M;
-		if TR is not regional and M is regional, set up toilet preference of M;
+		if TR is nonregional and M is regional, set up toilet preference of M;
 		if TR is regional:
 			let A be down;
 			let X be the location of academy-toilet-key;
@@ -204,15 +205,24 @@ To compute default toilet seeking of (M - a monster):
 				if KM is a monster:
 					now X is the location of KM;
 					now ATKM is KM;
-				let XD be the best route from L to X through unbossed rooms;
-				if XD is a direction, now A is XD;
+				if X is not a placed room:
+					now X is School10;
+					now academy-toilet-key is carried by M;
+				if M is in the location of the player or M is nearby:
+					let XD be the best route from L to X through unbossed rooms;
+					if XD is a direction, now A is XD;
+				otherwise:
+					now M is in X;
 			otherwise:
-				let AD be the best route from L to TR through unbossed rooms;
-				if AD is a direction, now A is AD;
+				if M is in the location of the player or M is nearby:
+					let AD be the best route from L to TR through unbossed rooms;
+					if AD is a direction, now A is AD;
+				otherwise:
+					now M is in TR;
 			if M is student: [students can't go where they can't go]
 				let P be the room A from L;
 				if the entry-rank of P > the entry-rank of L and the entry-rank of P > the current-rank of M, now A is down;
-			if A is not down:
+			if A is not down and A is not up:
 				let P be the room A from L;
 				if the number of barriers in P is 0 and the number of barriers in the location of M is 0:
 					if debugmode > 1, say "[BigNameDesc of M] is going [A] to try to use the toilet at [TR][if locked-toilets is true and TR is School10 and academy-toilet-key is not held by M] (needs to get key at [X])[end if][if locked-toilets is true and TR is School10 and academy-toilet-key is not held by M and there is a monster carrying academy-toilet-key] (key held by [random monster carrying academy-toilet-key])[end if][line break]";
@@ -240,9 +250,9 @@ To compute bladder cleanup:
 				otherwise:
 					let X be a random person carrying academy-toilet-key;
 					if X is a person:
-						if X is not regional, now unable-to-pee is true;
+						if X is nonregional, now unable-to-pee is true;
 					otherwise:
-						if academy-toilet-key is not regional, now unable-to-pee is true;
+						if academy-toilet-key is nonregional, now unable-to-pee is true;
 			if unable-to-pee is true:
 				if a random number between 1 and 3 > 1, now M is in School10;
 			otherwise:
@@ -264,6 +274,9 @@ To compute toilet use of (M - a monster): [If called during standard wandering m
 				say "[BigNameDesc of M] urinates into [NameDesc of water-body].";
 			if M is not in the location of the player, say roman type;
 		now the bladder of M is 0.
+
+To compute toilet return of (M - a monster):
+	unless M is in the location of the player or M is nearby, locally place M.
 
 To compute diaper wetting of (M - a monster): [This MUST cause bladder to empty or NPCs might get stuck]
 	if M is in the location of the player, say "[BigNameDesc of M] sighs pleasantly, and you're pretty sure [he of M] is wetting [his of M] diaper.";
@@ -291,7 +304,7 @@ To check seeking (N - a number) of (M - a monster):
 	check default seeking N of M.
 
 To check default seeking (N - a number) of (M - a monster):
-	if M is unleashed or M is unconcerned, check forced seeking N of M.
+	if M is unleashed or M is unconcerned or (M is bride-consort and key garter is worn), check forced seeking N of M.
 
 To check forced seeking (N - a number) of (M - a monster):
 	[If N is 2, we need to flag that the monster has had its movement for the round and does not get to act again.]

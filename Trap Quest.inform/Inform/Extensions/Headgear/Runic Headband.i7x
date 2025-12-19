@@ -56,7 +56,7 @@ To compute class outfit of (H - runic headband):
 	if the player is ready for common event TG:
 		say DefaultSexChangeFlav;
 		SexChange the player;
-	if player is not possessing a penis or the vaginalvirgin of the player is 0, now H is not purity;
+	if player is possessing a vagina and the vaginalvirgin of the player is 0, now H is not purity;
 	otherwise now H is purity;
 	if the number of alive undefeated royal guards is 0: [We need someone to service]
 		let M be a random off-stage summon-available royal guard;

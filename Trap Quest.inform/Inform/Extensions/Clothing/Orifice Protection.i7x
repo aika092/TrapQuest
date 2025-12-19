@@ -219,7 +219,7 @@ Definition: a clothing (called C) is top level breasts protection:
 	decide yes.
 
 Definition: a clothing (called C) is titfuck protection: [This cares about whether it prevents titfucks.]
-	if C is breast covering and C is top-placed and C is not optional-top-displacable and C is not not-displacable-always-fuckable and C is not fully exposing, decide yes;
+	if C is breast covering and C is top-placed and C is not optional-top-displacable and C is not not-displacable-always-fuckable and C is not fully exposing and C is not top-ripped, decide yes;
 	decide no.
 
 Definition: a clothing (called C) is top level titfuck protection:

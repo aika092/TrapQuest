@@ -107,9 +107,11 @@ To uniquely set up (C - rubber-baby-bonnet):
 
 Part - Berri Clip
 
-gold-hairclip is a headgear. gold-hairclip is latex. The text-shortcut of gold-hairclip is "ghc".
+A berri-headgear is a kind of headgear.
 
-Figure of gold hairclip is the file "Items/Accessories/Head/goldclip1.jpg".
+gold-hairclip is a berri-headgear. gold-hairclip is metal. The printed name of gold-hairclip is "[clothing-title-before]gold hairclip[clothing-title-after]". The text-shortcut of gold-hairclip is "ghc". Understand "gold", "hairclip" as gold-hairclip.
+
+Figure of gold hairclip is the file "Items/Accessories/Head/goldclip1.png".
 
 To decide which figure-name is the clothing-image of (C - gold-hairclip):
 	decide on figure of gold hairclip.
@@ -120,36 +122,49 @@ To say ClothingDesc of (H - gold-hairclip):
 To decide which number is the initial cringe of (H - gold-hairclip):
 	decide on 1.
 
-Report wearing gold-hairclip:
+Report wearing a berri-headgear:
 	if the player is sexed male:
 		say "Your hair transforms into a short brown bob with a cute tuft of purple at the front! Your whole body suddenly goes numb, then is filled with an almost electric tingle. You feel terrible wrenching from your insides that you're sure should hurt, but you just don't seem to be able to feel much of anything right now. The tingling comes to a focus in your crotch, filling you with a sense of terrible foreboding. [if the player is possessing a penis]As feeling comes back to you, you reach down and can immediately tell you're missing something kind of notable: your [player-penis]![otherwise]As feeling comes back to you, you reach down with a sense of foreboding.[end if]";
 		SexChange the player;
 	say "[second custom style]My name is Berri![roman type][line break]A voice says from inside your head.[line break][second custom style]Gosh, I sure hope nothing dramatic, unfortunate and embarrassing happens to me here![roman type][line break]You sense that [bold type]it will be much harder, and sometimes impossible, to change your outfit, [roman type]and you feel drawn to wander this world, until you encounter whatever Berri's story has in store for her...";
 	mapcutshow Figure of woman 1 for stripy-blue-dress.
 
-To compute class outfit of (H - gold-hairclip):
-	unless there is a worn berri-dress:
-		pinkWardrobeUnclash stripy-blue-dress;
-		class summon stripy-blue-dress;
-	if stripy-blue-dress is worn:
-		if the number of worn diaper is 0:
-			pinkWardrobeUnclash plain-white-briefs;
-			class summon plain-white-briefs;
-		class summon magic pistol.
+To compute unique periodic effect of (H - a berri-headgear):
+	if the player is in an unbossed room:
+		if blonde-explorer is off-stage and Mansion01 is placed:
+			set up blonde-explorer;
+			now blonde-explorer is in Mansion01;
+		if gymnast-explorer is off-stage and Dungeon11 is placed:
+			set up gymnast-explorer;
+			now gymnast-explorer is in Dungeon11;
+		if exposed-explorer is off-stage and Woods01 is placed:
+			set up exposed-explorer;
+			now exposed-explorer is in Woods01;
+		if composed-explorer is off-stage and Hotel01 is placed:
+			set up composed-explorer;
+			now composed-explorer is in Hotel01.
 
-Definition: gold-hairclip (called C) is removal-blocking:
-	if wearing-target is berri-dress, decide yes;
+
+To compute class outfit of (H - gold-hairclip):
+	fix berri outfit.
+
+Definition: a berri-headgear (called C) is removal-blocking:
+	if wearing-target is correct-berri-attire, decide yes;
+	if stripy-blue-dress is worn and wearing-target is plain-white-briefs, decide yes;
+	if pink-babydoll-dress is worn and wearing-target is bear bib, decide yes;
+	if latest-berri-stage >= 8 and wearing-target is pet collar, decide yes;
 	decide no.
 
-To say RemovalBlocked of (C - gold-hairclip):
+To say RemovalBlocked of (C - a berri-headgear):
 	say "Your [ShortDesc of C] is somehow preventing you from taking this off! It doesn't want you to look less like [']Berri[']!".
 
-Check wearing gold-hairclip:
+Check wearing a berri-headgear:
 	if armband is worn, say "[BigNameDesc of gold-hairclip] doesn't seem to want you to wear it at the same time as [NameDesc of armband]! You've got to decide if you want to remain as the main character, or take on the role of a supporting character instead..." instead.
 
 berri-quest is a headgear-clothing-quest. berri-quest has a number called berri-completions.
 
-To uniquely set up (C - gold-hairclip):
+To uniquely set up (C - a berri-headgear):
+	now the berri-completions of berri-quest is 0;
 	now the quest of C is berri-quest.
 
 To say QuestFlav of (Q - berri-quest):
@@ -158,10 +173,19 @@ To say QuestFlav of (Q - berri-quest):
 To say QuestTitle of (Q - berri-quest):
 	say " (Berri scene quest)".
 
-To compute persistent reward of (Q - berri-quest) on (C - a clothing):
-	compute generic first time class reward of Q on C.
+To compute quest completion of (Q - berri-quest) on (C - a clothing):
+	let curse-lifting be false;
+	let R be a random number between 4 and 8;
+	if the berri-completions of Q > R, now curse-lifting is true;
+	say "[bold type][if C is cursed and curse-lifting is true]The magic sealing your [MediumDesc of C] is lifted! It rewards your efforts by[otherwise if C is bland and curse-lifting is true]You sense a blessing being laid upon your [MediumDesc of C]! It rewards your continued efforts by[otherwise]Your [MediumDesc of C] rewards your continued efforts by[end if] ";
+	compute persistent reward of Q on C;
+	increase the quest-completions of Q by 1;
+	if curse-lifting is true:
+		if C is bland, now C is blessed;
+		if C is cursed, silently bless C;
+	say "[roman type][line break]".
 
-To compute generic first time class reward of (Q - berri-quest) on (C - a clothing):
+To compute persistent reward of (Q - berri-quest) on (C - a clothing):
 	let D be a random off-stage plentiful ring;
 	if D is ring:
 		if the berri-completions of Q > 8:
@@ -181,7 +205,7 @@ To compute generic first time class reward of (Q - berri-quest) on (C - a clothi
 			summon D;
 		otherwise:
 			now D is in the location of the player;
-		say "summoning a [MediumDesc of D] [if D is worn]straight onto your finger[otherwise]right in front of you[end if]! [GotLuckyFlav]";
+		say "summoning a [MediumDesc of D] [if D is worn]straight onto your finger[otherwise]right in front of you[end if]!";
 	otherwise:
 		compute generic second time class reward of Q on C;
 	increase the berri-completions of Q by 1.

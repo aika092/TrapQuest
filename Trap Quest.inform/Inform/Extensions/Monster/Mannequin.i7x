@@ -274,13 +274,13 @@ To compute flying player taunting of (M - a mannequin):
 	if a random number from 1 to 6 is 1, say "[BigNameDesc of M] is [one of][or]still [stopping]watching you, waiting.".
 
 This is the mannequin unique punishment rule:
-	if (short skirts permanent fetish is 0 or short skirts permanent fetish > 3) and current-monster is not topless mannequin and current-monster is not lycra-clad mannequin and current-monster is not swimmer mannequin and current-monster is not lingerie-clad mannequin and the player is getting unlucky:
+	if (short skirts permanent suggestion is 0 or short skirts permanent suggestion > 3) and current-monster is not topless mannequin and current-monster is not lycra-clad mannequin and current-monster is not swimmer mannequin and current-monster is not lingerie-clad mannequin and the player is getting unlucky:
 		say "[BigNameDesc of current-monster] strikes a confident pose, and [his of current-monster] eyes stare deep down into your soul. Instantly, you realise that [second custom style]short skirts like the one [he of current-monster] is wearing are the best![roman type][line break]You'll feel awful if you ever wear a skirt longer than that sort of nice and short upper-thigh-length style. [GotUnluckyFlav]";
-		now short skirts permanent fetish is 3;
+		now short skirts permanent suggestion is 3;
 		rule succeeds;
-	otherwise if the player is allowed-panties and current-monster is lingerie-clad mannequin and (skimpy underwear fetish is -1 or skimpy underwear fetish > 3):
+	otherwise if the player is allowed-panties and current-monster is lingerie-clad mannequin and (skimpy underwear suggestion is -1 or skimpy underwear suggestion > 3):
 		say "[BigNameDesc of current-monster] strikes a confident pose, and [his of current-monster] eyes stare deep down into your soul. Instantly, you realise that [second custom style]skimpy panties like the one [he of current-monster] is wearing are the best![roman type][line break]You'll feel awful if you ever wear panties or briefs. It's hotpants, thongs and g-strings for you from now on!";
-		now skimpy underwear fetish is 3;
+		now skimpy underwear suggestion is 3;
 		rule succeeds.
 The unique punishment rule of a mannequin is usually the mannequin unique punishment rule.
 

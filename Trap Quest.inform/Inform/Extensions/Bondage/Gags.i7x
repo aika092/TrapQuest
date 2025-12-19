@@ -196,23 +196,5 @@ This is the mouth already full rule:
 		rule fails.
 The mouth already full rule is listed in the gag wearability rules.
 
-Part - Scarf
-
-scarf is a clothing. scarf is wool. scarf is unique. The printed name of scarf is "[clothing-title-before]scarf[clothing-title-after]". The text-shortcut of scarf is "scf".
-
-To decide which figure-name is clothing-image of (C - scarf):
-	decide on figure of scarf.
-
-Figure of scarf is the file "Items/Accessories/Other/scarf1.jpg".
-
-To say ShortDesc of (C - scarf):
-	say "scarf".
-
-To say ClothingDesc of (C - scarf):
-	say "This scarf [if C is worn]conceals[otherwise]could be used to conceal[end if] the bottom half of your face.".
-
-To decide which object is the concealer of (C - a gag):
-	if scarf is worn, decide on scarf;
-	decide on nothing.
 
 Gags ends here.

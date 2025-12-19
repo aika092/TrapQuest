@@ -580,10 +580,10 @@ To compute the mutation effects of (G - a glue):
 			if the silicone volume of breasts + the silicone volume of hips > 0:
 				now X is the flesh volume of breasts + the flesh volume of hips;
 				say "The tingling burn from the pink glue drenching you burns through your nerves all the way to your silicone implants. You feel a weird burn, as if the implants are swelling... yet at the same time, you feel a painful leaching. This weird glue... it's not converting my own flesh into silicone somehow, is it?";
-				if the silicone volume of breasts > 0 and the flesh volume of breasts > 0:
+				if the silicone volume of breasts > 0 and the flesh volume of breasts > 1:
 					decrease the flesh volume of breasts by 1;
 					BustImplantsUp 1;
-				if the silicone volume of hips > 0 and the flesh volume of hips > 0:
+				if the silicone volume of hips > 0 and the flesh volume of hips > 1:
 					decrease the flesh volume of hips by 1;
 					AssImplantsUp 1;
 				if X is (the flesh volume of breasts + the flesh volume of hips):

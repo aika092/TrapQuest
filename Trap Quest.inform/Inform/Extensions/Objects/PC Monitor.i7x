@@ -33,12 +33,12 @@ To decide which figure-name is the examine-image of (C - a video-monitor):
 
 A later time based rule:
 	let V be a random video-monitor regionally in playerRegion;
-	if V is video-monitor:
+	if V is video-monitor and (infamy fetish is 1 or doomed > 0):
 		if the video-caller of V is the throne:[if video-caller is not the throne, it means a call is already happening.]
 			if V is video-callable and V is in the location of the player and the player is in danger:
 				let P be a random slutty sister;
-				if diaper quest is 1 or a random number between 1 and 5 > 1:
-					now P is a random real-life patron;[Friend from outside the game]
+				if infamy fetish is 1 and a random number between 1 and 5 > 1:
+					now P is a random real-life patron;[Friend from "outside" the game]
 					if domino-mask is off-stage and domino-mask is actually summonable and there is a male human intelligent combative monster:
 						say "A [domino-mask] appears on your face!";
 						summon domino-mask cursed;
@@ -47,6 +47,7 @@ A later time based rule:
 							say "You suddenly notice that [NameDesc of M] is also wearing an eye mask[one of]! But the sinister sneer on [his of M] face suggests that [he of M] is no hero[or]! You're outnumbered by villains[or][stopping]...";
 					let B be the friend-old-name of P;
 					if B is "none" or B is not a text, now the friend-old-name of P is the substituted form of "[OriginalNameBimbo]";
+				if (infamy fetish is 0 or doomed > 0) and a random number between 6 and doomed is 6, now P is a random altar;
 				now the video-caller of V is P;
 				if P is a real-life patron, increase the times-called of P by 1;
 				beginCall of V;
@@ -64,8 +65,8 @@ A later time based rule:
 						say "[bold type]A wall of fire appears at each exit, trapping you in!";
 						now flaming-wall is in the location of the player;
 					say "[roman type][line break]";
-			otherwise if the call-cooldown of V <= 0 and V is in the location of the player:
-				CheckDisgracePunishemnt of V;
+			otherwise if the call-cooldown of V <= 0 and V is in the location of the player and infamy fetish > 0:
+				CheckDisgracePunishment of V;
 			otherwise:
 				if the call-cooldown of V > 0, decrease the call-cooldown of V by seconds;
 				CheckActivation of V;
@@ -82,11 +83,6 @@ To CheckActivation of (C - a video-monitor):
 	if the currentlyOn of C < 1:
 		if debugmode > 0 and debuginfo > 1, say "[input style]Checking activation of [C].[roman type][line break]";
 		if the call-cooldown of C <= 0:
-			[if C is a stone-shrine:
-				if doomed is 5 or there is an active summoning portal regionally in playerRegion:
-					if C is in the location of the player, say "The [printed name of C] flickers and spits out several tiny pink sparks as a blurry image appears on the surface.";
-					now the currentlyOn of C is 1;
-			otherwise:]
 			if C is in the location of the player, say "[BigNameDesc of C] [if C is pc-monitor]seems to be booting up from standby mode[otherwise]seems to hum with magical energy[end if]... But nothing else happens... Yet.";
 			now the currentlyOn of C is 1.
 
@@ -94,7 +90,8 @@ To CheckActivation of (C - a video-monitor):
 To beginCall of (C - a video-monitor):
 	let M be the video-caller of C;
 	now the currentlyOn of C is 1;
-	say "[bold type]Suddenly, you hear the sound of a common digital video call ringtone. [roman type]You look up with a start and see that the mirror attached to a TV wall mount is now sparkling with magic ripples. Inside the mirror, you can see the face of [if M is slutty sister]one of the Nintendolls who put you in this game, along with the faces of several unfamiliar people in suits.[otherwise][FriendStatus of M][end if][if currentlyPublicDisgracing is false][NewAppearanceReaction of M][NewCircumstanceReaction of M][FriendRespond to M][end if]";
+	if infamy fetish > 0, say "[bold type]Suddenly, you hear the sound of a common digital video call ringtone. [roman type]You look up with a start and see that the mirror attached to a TV wall mount is now sparkling with magic ripples. Inside the mirror, you can see [if M is slutty sister]one of the Nintendolls who put you in this game, along with the faces of several unfamiliar people in suits.[otherwise if M is an altar][GodDesc of M][otherwise][FriendStatus of M][end if][if currentlyPublicDisgracing is false and M is a monster][NewAppearanceReaction of M][NewCircumstanceReaction of M][FriendRespond to M][end if]";
+	otherwise say "[bold type]Suddenly, you hear a reverberating hum, and then a PING, like a plucked thread. [roman type]You look up with a start and see that the mirror attached to a TV wall mount is now sparkling with magic ripples. Inside the mirror, you can see [if M is slutty sister]one of the Nintendolls who put you in this game, along with the faces of several unfamiliar people in suits.[otherwise][GodDesc of M][end if]";
 	maybe-map-display C.
 
 To say FriendStatus of (M - a monster):[The status of your friend could potentially change]
@@ -173,6 +170,11 @@ To compute ongoingCall of (C - a video-monitor):
 			compute disgraceful event of C;
 		compute endCall of C;
 
+To compute (A - an altar) protecting against (X - a monster):
+	say BaseObservationFlav of A;
+	if there is a monster penetrating a body part, say SexObserve of A with (a random monster penetrating a body part);
+	otherwise say FightObserve of A with X.
+
 To compute (M - a slutty sister) protecting against (X - a monster):
 	if M is not in the location of the player, say BaseObservationFlav of M;
 	if M is in the location of the player:
@@ -187,7 +189,7 @@ To say BaseObservationFlav of (M - a slutty sister):
 	say "The Nintendoll and the executives continue to watch [one of]you[or]the action[at random].".
 
 To say FightObserve of (M - a slutty sister) with (N - a monster):
-	if the player is prone, say "[speech style of M]'[one of]Once the player is on their knees, that's when the fun REALLY begins. Tee-hee.'[or]After the subject's fuck or flight response kicks in, all we need to do is restrict their options a little bit, and voila, it's a porno!'[or]See, gentlemen? I told you!'[or]Of course, the pain the subject feels is real, but as you're about to see, so is the pleasure.'[or]Remember, stakeholders: The subject has a safe-word [he of the player] can use to stop the stimulation at any time. Keep that in mind as you watch what happens next.'[at random][roman type][line break][moderateHumiliateReflect]";
+	if the player is prone, say "[speech style of M]'[one of]Once the player is on their knees, that's when the fun REALLY begins. Tee-hee.'[or]After the subject's fuck or flight response kicks in, all we need to do is restrict their options a little bit, and voila, it's a porno!'[or]See, gentlemen? I told you!'[or]Of course, the pain the subject feels is real, but as you're about to see, so is the pleasure.'[or]Remember, stakeholders: The subject has a safe-word [he of the player] can use to stop the stimulation at ANY time. Keep that in mind as you watch what happens next.'[at random][roman type][line break][moderateHumiliateReflect]";
 	otherwise say "[speech style of M]'[one of]Once combat begins, it generally doesn't take long for the subject's fuck or flight response to kick in.'[or]Although some subjects do choose to engage in combat, they usually lose, so we see it as more of a formality.'[or]Early on, we have to begin most encounters by making the subject docile, but later on, the subject will learn to be docile naturally.'[or][if N is patron]We care about our investors, so we dull any pain that you might experience within the situation.'[otherwise]We find that combat is a good way of increasing the subject's bloodflow before the main event.[end if][or]Repressed submissives like [NameBimbo] here will often take a while to break, but sometimes we get lucky.'[at random][roman type][line break][moderateHumiliateReflect]";
 
 To say SexObserve of (M - a slutty sister) with (N - a monster):
@@ -228,10 +230,10 @@ To compute endCall of (C - a video-monitor):
 			let X be a random number between 0 and the favour of M;
 			if X < the favour of M - 3, now M is friend-shocked;
 		compute HangUpDisgraced of C with M;
-		FavourDown M by 3;
+		if M is real-life patron, FavourDown M by 3;
 	otherwise:
 		compute HangUpUndisgraced of C with M;
-		FavourUp M by 1;
+		if M is real-life patron, FavourUp M by 1;
 	compute reset of C.
 
 To compute reset of (C - a video-monitor):
@@ -239,12 +241,31 @@ To compute reset of (C - a video-monitor):
 	now the currentlyOn of C is 0;
 	now the call-cooldown of C is 300.
 
-To compute HangUpDisgraced of (C - a video-monitor) with (M - a slutty sister):
-	say "[second custom style]'*Great* job, [NameBimbo]! Our investors here think that footage was good enough for a commercial release, so look forward to seeing it once we've got it uploaded. That will be all for now!'[roman type][line break][strongHumiliateReflect]The Nintendoll hangs up the call, and the [MediumDesc of C] turns off.";
+To compute HangUpDisgraced of (C - a video-monitor) with (M - an altar):
+	say "The figure disappears as the [MediumDesc of C] turns off, but for just a moment, you could swear it was burning every last detail of your situation into its memory.";
 	if the number of blank rows in the Table of Published Disgraces > 0:
 		choose a blank row in Table of Published Disgraces;
-		now the content entry is the substituted form of "an HD video of you [the video-event of C]";
-		now the published entry is the substituted form of "has been uploaded to the Nintendolls company website";
+		now the content entry is the substituted form of "an 360 degree [video] of you [the video-event of C]";
+		now the published entry is the substituted form of "has been [if infamy fetish is 1]uploaded to [eldritchWebsite][otherwise]sent to the Outer Rim[end if]";
+		now the severity entry is 10;
+		now the popularity entry is 1;
+		now the viewsfuzz entry is a random number between -100 and 100;
+		now the lastwitnessed entry is 0;
+		now the deletedtime entry is -1;
+		now the timestamp entry is earnings.
+
+To compute HangUpUndisgraced of (C - a video-monitor) with (M - an altar):
+	say "The figure disappears as the [MediumDesc of C] turns off.".
+To compute HangUpMasked of (C - a video-monitor) with (M - an altar):
+	say "The figure disappears as the [MediumDesc of C] turns off.".
+
+To compute HangUpDisgraced of (C - a video-monitor) with (M - a slutty sister):
+	if infamy fetish is 1, say "[second custom style]'*Great* job, [NameBimbo]! Our investors here think that footage was good enough for a commercial release, so look forward to seeing it once we've got it uploaded. That will be all for now!'[roman type][line break][strongHumiliateReflect]The Nintendoll hangs up the call, and the [MediumDesc of C] turns off.";
+	otherwise say "[second custom style]'*Great* job, [NameBimbo]! That footage is absolutely confidential between us and our investors here, so as far as you're concerned, what happeened here is just between you and the gods.'[roman type][line break][strongHumiliateReflect]The Nintendoll hangs up the call, and the [MediumDesc of C] turns off.";
+	if the number of blank rows in the Table of Published Disgraces > 0:
+		choose a blank row in Table of Published Disgraces;
+		now the content entry is the substituted form of "an HD [video] of you [the video-event of C]";
+		now the published entry is the substituted form of "has been [if infamy fetish is 1]uploaded to [corporateWebsite][otherwise]sent to the Outer Rim[end if]";
 		now the severity entry is 10;
 		now the popularity entry is 1;
 		now the viewsfuzz entry is a random number between -100 and 100;
@@ -302,7 +323,9 @@ To say HumiliatingSlideDesc (N - a number):
 To beginCall of (C - pc-monitor):
 	let M be the video-caller of C;
 	now the currentlyOn of C is 1;
-	say "[bold type]Suddenly, you hear the sound of your computer making a video call. [roman type]You look up with a start and see that yes indeed, your PC monitor is now wide awake, and with that green calling symbol over a blue background. Moments later, the video call is answered, and [if M is slutty sister]the face of one of the Nintendolls who put you in this game, along with several unfamiliar people in suits appear.[otherwise][FriendStatus of M][end if][if currentlyPublicDisgracing is false][NewAppearanceReaction of M][NewCircumstanceReaction of M][FriendRespond to M][end if]".
+	if infamy fetish > 0, say "[bold type]Suddenly, you hear the sound of your computer making a video call. [roman type]You look up with a start and see that yes indeed, your PC monitor is now wide awake, and with that green calling symbol over a blue background. Moments later, the video call is answered, and you see [if M is slutty sister]one of the Nintendolls who put you in this game, along with the faces of several unfamiliar people in suits.[otherwise if M is an altar][GodDesc of M][otherwise][FriendStatus of M][end if][if currentlyPublicDisgracing is false and M is a monster][NewAppearanceReaction of M][NewCircumstanceReaction of M][FriendRespond to M][end if]";
+	otherwise say "[bold type]Suddenly, you hear the sound of your computer making a video call. [roman type]You look up with a start and see that yes indeed, your PC monitor is now wide awake, and with that green calling symbol over a blue background. Moments later, the video call is answered, and you see [if M is slutty sister]one of the Nintendolls who put you in this game, along with the faces of several unfamiliar people in suits.[otherwise][GodDesc of M][end if]";
+	maybe-map-display C.
 
 
 Section - Ancient Monitor
@@ -325,7 +348,8 @@ To say ExamineDesc of (C - stone-shrine):
 
 To beginCall of (C - stone-shrine):
 	let M be the video-caller of C;
-	say "[bold type]Suddenly, you hear a roar of flame as the blue fire above the shrine gets brighter and stronger. [roman type]You look over at the fire, expectantly. Moments later, [if M is slutty sister]the face of one of the Nintendolls who put you in this game, along with several unfamiliar people in suits appear inside the flame. [otherwise][FriendStatus of M][end if][if currentlyPublicDisgracing is false][NewAppearanceReaction of M][NewCircumstanceReaction of M][FriendRespond to M][end if]".
+	if infamy fetish is 1, say "[bold type]Suddenly, you hear a roar of flame as the blue fire above the shrine gets brighter and stronger. [roman type]You look over at the fire, expectantly. Moments later, [if M is slutty sister]the face of one of the Nintendolls who put you in this game, along with several unfamiliar people in suits appear inside the flame. [otherwise if M is an altar]the face of... something appears inside the flame. You can see details there, but for some reason, your brain just can't make sense of them. [otherwise][FriendStatus of M][end if][if currentlyPublicDisgracing is false and M is a monster][NewAppearanceReaction of M][NewCircumstanceReaction of M][FriendRespond to M][end if]";
+	otherwise say "[bold type]Suddenly, you hear a roar of flame as the blue fire above the shrine gets brighter and stronger. [roman type]You look over at the fire, expectantly. Moments later, [if M is slutty sister]the face of one of the Nintendolls who put you in this game, along with several unfamiliar people in suits appear inside the flame. [otherwise]the face of... something appears inside the flame. You can see details there, but for some reason, your brain just can't make sense of them.[end if]";
 
 Section - Security Interface
 
@@ -377,7 +401,7 @@ A later time based rule:
 		if the charge of security interface <= 0:
 			now security interface is unauthenticated;
 			if the player is in Hotel30, say "The door of the elevator re-opens with a pleasant 'DING!'[line break]";
-	if the player is in Hotel30:
+	if the player is in Hotel30 and infamy fetish > 0:
 		let N be the number of filled rows in the Table of Published Disgraces;
 		if N > 0:
 			let notThisOne be 100;
@@ -608,10 +632,9 @@ To compute disgrace punishment effect of (DP - public-disgrace-punishment-clothe
 	say "All of a sudden, a [MediumDesc of pink fetish dress] appears on you!";
 	summon FD cursed with quest;
 	if diaper quest is 1 and the number of worn knickers is 0:
-		let D be random eligible diaper;
-		if D is diaper:
-			say "And then a [MediumDesc of D] appears underneath!";
-			summon D cursed with quest.
+		let D be the chosen trap diaper;
+		say "And then a [MediumDesc of D] appears underneath!";
+		summon D cursed with quest.
 
 public-disgrace-punishment-incontinence is a disgrace-punishment.
 Definition: public-disgrace-punishment-incontinence is appropriate:
@@ -689,7 +712,7 @@ To compute disgrace punishment effect of (DP - public-disgrace-punishment-fetish
 		say "Suddenly, you feel a horrible twinge behind your crotch! ";
 		BladderIncontinenceUp 1;
 		RectumIncontinenceUp 1;
-		let D be a random eligible diaper;
+		let D be the chosen trap diaper;
 		if D is actually summonable:
 			say "A [MediumDesc of D] appears on you!";
 			summon D cursed with quest;
@@ -803,9 +826,7 @@ To compute disgrace punishment effect of (DP - public-disgrace-punishment-sissy)
 		say "Even worse, you feel lots of your strength temporarily taken away...";
 		increase temp_str_dam by 3.
 
-
-
-To CheckDisgracePunishemnt of (V - a video-monitor):
+To CheckDisgracePunishment of (V - a video-monitor):
 	let NPDT be next-public-disgrace-threshold;
 	if the public disgrace of the player > NPDT:
 		now currentlyPublicDisgracing is true;

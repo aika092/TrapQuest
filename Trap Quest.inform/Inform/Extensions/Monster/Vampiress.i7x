@@ -147,7 +147,7 @@ To say DiaperReaction of (M - vampiress):
 To say GroundPeeReaction of (M - vampiress):
 	if diaper quest is 1:
 		say "[BigNameDesc of M] looks enraged.[line break][speech style of M]'You dare soil MY HOUSE with your FOULNESS?!'[roman type][line break][if M is interested and M is unfriendly]Your fate has just been sealed[otherwise if the player is upright]Get on your knees[otherwise]Stay right where you are[end if], cretin!'[roman type][line break]";
-		now M is diaper-committed;
+		now M is bulkier-diaper-committed;
 	otherwise:
 		say "[BigNameDesc of M] frowns angrily.[line break][speech style of M]'You are an utter disgrace!'[roman type][line break][if M is uninterested]Uh-oh...[end if]";
 	anger M;

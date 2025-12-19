@@ -690,7 +690,8 @@ To AssSquirt:
 		if ST is worn, now ST is in the location of the player;
 		dislodge ST;
 	[Now we set up an expulsion poster, if appropriate]
-	if (there is a camera trap in the location of the player or there is a camera-bystander in the location of the player) and there is an off-stage expulsion poster and the number of worn total protection diapers is 0:
+	let Y be the valid snapshotter;
+	if Y is a thing and there is an off-stage expulsion poster and the number of worn total protection diapers is 0:
 		now target-poster is a random off-stage expulsion poster;
 		compute uniquest variables of target-poster;
 	[Now we have our big while loop that can get exited early by the player's ass getting plugged.]
@@ -701,11 +702,8 @@ To AssSquirt:
 				lay small-egg-count small eggs;
 				progress quest of egg-laying-quest;
 				if voluntarySquatting is 0, progress quest of egg-holding-quest;
-				let Y be a random camera trap in the location of the player;
-				if Y is not a thing, now Y is a random camera-bystander in the location of the player;
 				if target-poster is an expulsion poster and target-poster is off-stage and Y is a thing and (Y is not a camera trap or the reset-timer of Y < 99900):
-					say "[FlashFlav of Y][if Y is camera trap][ExpulsionFlashFlav of Y][end if]";
-					set up target-poster;
+					compute snapshot of Y with target-poster;
 				if same-turn-squirting is false:
 					allocate 6 seconds;
 					compute extra turn; [After each type of egg comes out, the game world gets a turn to act.]
@@ -720,11 +718,8 @@ To AssSquirt:
 				lay medium-egg-count medium eggs;
 				progress quest of egg-laying-quest;
 				if voluntarySquatting is 0, progress quest of egg-holding-quest;
-				let Y be a random camera trap in the location of the player;
-				if Y is not a thing, now Y is a random camera-bystander in the location of the player;
-				if target-poster is an expulsion poster and target-poster is off-stage and Y is a thing and (Y is not a camera trap or the reset-timer of Y < 99900):
-					say "[FlashFlav of Y][if Y is camera trap][ExpulsionFlashFlav of Y][end if]";
-					set up target-poster;
+				if target-poster is an expulsion poster and target-poster is off-stage and Y is a thing:
+					compute snapshot of Y with target-poster;
 				if same-turn-squirting is false:
 					allocate 6 seconds;
 					compute extra turn;
@@ -744,8 +739,7 @@ To AssSquirt:
 				let Y be a random camera trap in the location of the player;
 				if Y is not a thing, now Y is a random camera-bystander in the location of the player;
 				if target-poster is an expulsion poster and target-poster is off-stage and Y is a thing and (Y is not a camera trap or the reset-timer of Y < 99900):
-					say "[FlashFlav of Y][if Y is camera trap][ExpulsionFlashFlav of Y][end if]";
-					set up target-poster;
+					compute snapshot of Y with target-poster;
 				if same-turn-squirting is false:
 					allocate 6 seconds;
 					compute extra turn;
@@ -939,8 +933,7 @@ To AssSquirt:
 				let Y be a random camera trap in the location of the player;
 				if Y is not a thing, now Y is a random camera-bystander in the location of the player;
 				if target-poster is an expulsion poster and target-poster is off-stage and Y is a thing and (Y is not a camera trap or the reset-timer of Y < 99900):
-					say "[FlashFlav of Y][if Y is camera trap][ExpulsionFlashFlav of Y][end if]";
-					set up target-poster;
+					compute snapshot of Y with target-poster;
 				if same-turn-squirting is false:
 					allocate 6 seconds;
 					compute extra turn;

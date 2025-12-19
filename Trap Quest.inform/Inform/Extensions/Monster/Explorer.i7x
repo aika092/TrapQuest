@@ -51,6 +51,8 @@ composed-explorer is an explorer. The explorer-type of composed-explorer is "com
 
 To set up (M - an explorer):
 	reset M;
+	now M is summon-available;
+	if the explorer-bimbo of M > 1, now the explorer-bimbo of M is 1;
 	now the monstersetup of M is 1;
 	if a random number between 1 and 2 is 1:
 		add blessing-potion to the taxableItems of M, if absent;
@@ -125,6 +127,8 @@ To compute perception of (M - an explorer):
 		compute eek reaction of M;
 	otherwise if the explorer-bimbo of M >= 2:
 		say WhorePerceptionFlav of M;
+	otherwise if the class of the player is berri and the times-met of M is 0 and the player is able to speak:
+		say "[second custom style]'Hi, I'm [NameBimbo]. You're another player too, right? Maybe we'll have opportunities to help each other out. I'm not feeling very confident of my chances, though...'[roman type][line break]You instinctively blurt out, without even thinking. [variable custom style][one of]Oh god, it's like I've got scripted lines and everything! [or]Why can't I stop myself from saying that?! [stopping][roman type][line break][slightHumiliateReflect]";
 	otherwise:
 		if the explorer-bimbo of M is 1, say "[big he of M] [one of]bites [him of M] lip and blushes, looking away from[or]smiles awkwardly at[in random order] you.";
 		otherwise say "[big he of M] [one of]nods towards[or]smiles warmly at[or]raises [his of M] eyebrows politely towards[in random order] you.".
@@ -158,22 +162,23 @@ Definition: an explorer (called M) is uniquely distracted:
 			say "[BigNameDesc of M] shrieks as a vine wraps itself around [his of M] ankle! [big he of M] quickly tries to wrestle it off, but before [he of M] gets a chance, several more living vines have joined in, holding [him of M] tight. You watch with [if diaper quest is 1][horror the diaper addiction of the player] as [he of M] is lifted into the air, passed through a portal, and then made to face-plant [his of M] own diapered rear, as the vines begin stroking [his of M] pussy and bringing [him of M] to a shameful climax.[line break][speech style of M]'Please no, no more! Please, I just want to get out of here!'[roman type][line break]Almost as if they heard [NameDesc of M][']s pleas, another portal opens up underneath the poor diapered adventurer, this one leading to a hotel room. [big he of M] is unceremoniously dropped through the portal, onto the waiting hotel bed below. The portal then closes behind [him of M][otherwise][horror the sex addiction of the player] as not just one, but several wriggling vines find their way into both [his of M] poor pussy and [his of M] tight little asshole. Several awkward wailing and gargling sounds later, you watch as [NameDesc of M]'s belly bloats larger and larger under the pressure from the huge amounts of tentacle semen being poured inside [him of M].[line break][speech style of M]'F-fuck this! I'd r-rather be that rude pimp's whore, than stay out here where it's so dangerous...'[roman type][line break]Finally released from the clutches of the vines, [NameDesc of M] begins to drag [his of M] cum-leaking body towards the west[end if].";
 			compute banishment of M;
 			decide yes;
-		otherwise if M is in Hotel01 and the explorer-bimbo of M is 0:
-			say "You see [NameDesc of M] exiting the Hotel, going out into the Woods.";
-			compute banishment of M;
-			decide yes;
-		otherwise if M is in Mansion01:
-			say "You see [NameDesc of M] exiting the Mansion, going out into the Woods.";
-			compute banishment of M;
-			decide yes;
-		otherwise if M is in Stairwell01:
-			say "You see [NameDesc of M] climbing the staircase, going out into the open air.";
-			compute banishment of M;
-			decide yes;
-		otherwise if M is in Stairwell02:
-			say "You see [NameDesc of M] climbing the stairs and entering the rear entrance of the Hotel.";
-			compute banishment of M;
-			decide yes;
+		otherwise if the class of the player is not berri:
+			if M is in Hotel01 and the explorer-bimbo of M is 0:
+				say "You see [NameDesc of M] exiting the Hotel, going out into the Woods.";
+				compute banishment of M;
+				decide yes;
+			otherwise if M is in Mansion01:
+				say "You see [NameDesc of M] exiting the Mansion, going out into the Woods.";
+				compute banishment of M;
+				decide yes;
+			otherwise if M is in Stairwell01:
+				say "You see [NameDesc of M] climbing the staircase, going out into the open air.";
+				compute banishment of M;
+				decide yes;
+			otherwise if M is in Stairwell02:
+				say "You see [NameDesc of M] climbing the stairs and entering the rear entrance of the Hotel.";
+				compute banishment of M;
+				decide yes;
 	decide no.
 
 To check seeking (N - a number) of (M - an explorer): [They don't follow you]
@@ -277,5 +282,22 @@ To compute teaching of (M - an explorer):
 	otherwise:
 		say "[speech style of M]'There's some interesting little buttons I've noticed hidden in certain hallways. I was too scared to press them, but who knows, maybe they open the way to something hidden and awesome! Let me describe them for you...'[roman type][line break]";
 		teach stashfinding.
+
+To say ClothesPeeReaction of (M - an explorer):
+	say "[BigNameDesc of M]'s eyes go wide as [he of M] watches you. [moderateHumiliateReflect]".
+
+To say GroundPeeReaction of (M - an explorer):
+	say "[BigNameDesc of M] grimaces and looks away.[line break][speech style of M]'Really? You had to do that right in fromt of me?'[roman type][line break][moderateHumiliateReflect]".
+
+To say WaterBodyPeeReaction of (M - an explorer):
+	say "[BigNameDesc of M] politely looks away. [trivialHumiliateReflect]".
+
+To compute diaper mess reaction of (M - an explorer):
+	if the explorer-bimbo of M >= 2:
+		say "[BigNameDesc of M] watches you mess yourself with a weak smile.";
+	otherwise:
+		say "[BigNameDesc of M] shudders with disgust as you mess yourself.";
+	if voluntarySquatting is 1, say severeHumiliateReflect;
+	otherwise say strongHumiliateReflect.
 
 Explorer ends here.

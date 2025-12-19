@@ -10,6 +10,9 @@ Definition: a wrestler is wenchy: decide yes.
 Definition: a wrestler is willing to charm snakes: decide yes;
 
 Definition: a wrestler is willing to urinate: decide yes.
+Definition: a wrestler is a diaper wetter:
+	if diaper quest is 1, decide yes;
+	decide no.
 
 Definition: a wrestler is raunchy: decide yes.
 
@@ -246,6 +249,10 @@ To compute DQ perception of (M - a wrestler):
 	otherwise if M is unfriendly and the times-met of M > 0:
 		say "[speech style of M]'Hey hot stuff, ready for another round?'[roman type][line break]";
 		alwayscutshow figure of wrestler interact 11 for M;
+	otherwise if the class of the player is berri and latest-berri-stage is 6:
+		say "[speech style of M]'Hey, you're a side character too, aren't you? That means we can probably get into some fun cutscenes together, right? Get on your knees, I want to take you to my Mistress, to see what [he of M] has in store for us today...'[roman type][line break]";
+		alwayscutshow figure of wrestler interact 5 for M;
+		anger M;
 	otherwise if the class of the player is maid:
 		say "[speech style of M]'Hey, you're staff, aren't you? That means you have to let me do whatever I want to you, right?'[roman type][line break]";
 		alwayscutshow figure of wrestler interact 5 for M;
@@ -300,7 +307,7 @@ This is the wrestler unique punishment rule:
 The unique punishment rule of a wrestler is usually the wrestler unique punishment rule.
 
 This is the wrestler lets the matron take over rule:
-	if there is a dangerous matron in the location of the player:
+	if matron is combative:
 		bore current-monster;
 		rule succeeds.
 The wrestler lets the matron take over rule is listed first in the wrestler unique punish rules.
@@ -436,7 +443,13 @@ This is the wrestler pisses on the player rule:
 The wrestler pisses on the player rule is listed last in the wrestler unique punish rules.
 
 To compute the default taunting of (M - a wrestler):
-	say "[one of][BigNameDesc of M] watches happily with a mixture of excitement and envy.[or][or][cycling]".
+	if urinal is grabbing the player and the urinal-rival of urinal-competition-punishment is M and M is guarding, say "[one of][BigNameDesc of M] [one of]coos[or]giggles[or]laughs[as decreasingly likely outcomes] [one of]merrily[or]happily[or]gaily[or]light-heartedly[or]with a hint of insanity[at random].[or][or][or][or][cycling]";
+	otherwise say "[one of][BigNameDesc of M] watches happily with a mixture of excitement and envy.[or][or][cycling]".
+
+Definition: a wrestler (called M) is combative-or-blocking:
+	if the urinal-rival of urinal-competition-punishment is M and M is guarding, decide no; [can't block movement while strapped inside a urinal]
+	if it is combative, decide yes;
+	decide no.
 
 To compute the dildo stuck taunting of (M - a wrestler):
 	compute the default taunting of M.
@@ -648,7 +661,7 @@ To say FriendlyMouthPenetrationFlav of (M - a wrestler):
 	if the player is possessing a scrotum, cutshow figure of wrestler cutscene 9 for M;
 	otherwise cutshow figure of wrestler cutscene 8 for M.
 
-To compute erection sex of (M - a wrestler):
+To compute penile sex of (M - a wrestler):
 	if M is penetrating face, do nothing instead;
 	if penis is not penis-erect:[which implies that the player came]
 		say ErectionLostFlav of M;
@@ -794,10 +807,10 @@ To compute facial climax of (M - a wrestler):
 	calm M;
 	bore M.
 
-To compute erection climax of (M - a wrestler):
+To compute penile climax of (M - a wrestler):
 	unless M is penetrating face:
 		TimesSubmittedUp M by 1;
-		say ErectionClimaxFlav of M;
+		say PenileClimaxFlav of M;
 		compute post climax effect of M in penis;
 		if the rounds of sex left of M <= 0:
 			if M is interested, orgasm satisfy M;
@@ -838,7 +851,7 @@ To say ErectionLostFlav of (M - a wrestler):
 To say ErectionNearingClimaxFlav of (M - a wrestler):
 	say "[one of][BigFuckerDesc of M]'s humping is starting to slow down[or][BigFuckerDesc of M]'s smile seems to fade, and [he of M] humps your [player-penis] with less and less vigour[or][BigFuckerDesc of M] grins against you with a little less enthusiasm than before[in random order]. Maybe [he of M]'s had enough?".
 
-To say ErectionClimaxFlav of (M - a wrestler):
+To say PenileClimaxFlav of (M - a wrestler):
 	let valley be the substituted form of "[if lady fetish is 2]cheeks![otherwise]nether lips![end if]";
 	say "[BigNameDesc of M] slowly stops rocking [his of M] hips, sitting there with your [player-penis] still wedged between [his of M] [valley].[line break][speech style of M]'I'm getting kinda bored, so... wanna make this a little more interesting? We go down on each other, and whoever cums first wins! Up for it?'[roman type][line break]";
 

@@ -108,6 +108,10 @@ To decide which figure-name is the monster-image of (M - a monster):
 
 To decide which figure-name is the sex-profile of (M - a monster):
 	if diaper quest is 0 and M is penetrating a body part:
+		if M is penetrating penis:
+			if M is piledriver-masturbating, decide on the piledriver-masturbating-monster-image of M;
+			if M is penis-masturbating, decide on the penis-masturbating-monster-image of M;
+			decide on the penis-fucking-monster-image of M;
 		if M is penetrating asshole, decide on the anal-sex-monster-image of M;
 		if M is penetrating vagina, decide on the vaginal-sex-monster-image of M;
 		if M is penetrating breasts, decide on the titfuck-monster-image of M;
@@ -119,11 +123,21 @@ To decide which figure-name is the sex-profile of (M - a monster):
 
 Figure of anilingus 1 is the file "Special/Cutscene/cutscene-anilingus1.jpg".
 Figure of anilingus 2 is the file "Special/Cutscene/cutscene-anilingus2.jpg".
+Figure of normal handjob is the file "Special/Cutscene/cutscene-handjob-normal1.jpg".
+Figure of piledriver handjob is the file "Special/Cutscene/cutscene-handjob-piledriver1.jpg".
+Figure of piledriver handjob facial is the file "Special/Cutscene/cutscene-handjob-piledriver2.jpg".
 
 To decide which figure-name is the anal-sex-monster-image of (M - a monster):
 	decide on figure of Missing NPC.
 To decide which figure-name is the vaginal-sex-monster-image of (M - a monster):
 	if the latex-transformation of the player > 6 and M is male and M is pale skinned, decide on figure of latex curse 6;
+	decide on figure of Missing NPC.
+To decide which figure-name is the penis-fucking-monster-image of (M - a monster):
+	decide on figure of Missing NPC.
+To decide which figure-name is the penis-masturbating-monster-image of (M - a monster):
+	decide on Figure of normal handjob.
+To decide which figure-name is the piledriver-masturbating-monster-image of (M - a monster):
+	if M is human, decide on figure of piledriver handjob;
 	decide on figure of Missing NPC.
 To decide which figure-name is the oral-sex-monster-image of (M - a monster):
 	decide on figure of Missing NPC.

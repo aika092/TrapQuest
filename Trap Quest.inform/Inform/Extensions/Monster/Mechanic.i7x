@@ -204,6 +204,7 @@ To say BecomesAggressive of (M - mechanic):
 	say "[big he of M] [if diaper quest is 0]unzips [his of M] jeans[otherwise if the wrench-timer of M <= 0]grips [his of M] wrench menacingly[otherwise]cracks [his of M] fingers[end if][line break][speech style of M]'[one of]I guess I've reached my limit.'[or]I think it's time we take our relationship to the next level.'[or]It'd be a crime NOT to do this, really...'[in random order][roman type][line break]".
 
 To compute perception of (M - mechanic):
+	if the class of the player is berri and latest-berri-stage is 0 and the number of worn diaper is 0 and (stripy-blue-dress is not worn or plain-white-briefs is not worn), fix berri outfit;
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]"; [The output for clothing humiliation takes place within the 'sluttily dressed' check.]
 	if the player is soulless and the class of the player is not succubus and the class of the player is not avatar and the current-errand of M is not mystical-amulet-errand:
 		say "[speech style of M]'Well look at you. Is there even anything in there anymore? Well don't worry, that makes you a perfect candidate for a new [']quest['].'[roman type][line break]";
@@ -216,6 +217,10 @@ To compute perception of (M - mechanic):
 	otherwise if mystical amulet is worn:
 		say "[speech style of M]'That amulet! How did you get it? I have been searching for it for years! Give it to me!'[roman type][line break]";
 		anger M;
+	otherwise if the class of the player is berri and latest-berri-stage is 0 and the number of worn diaper is 0 and berriMechanicScene is 0:
+		say "[speech style of M]'Hello little [boy of the player], I sense you lack Main Character Energy. In that case, nobody should mind if I have some fun with you...'[roman type][line break][BigNameDesc of M] prepares to [if the player is upright]attack[otherwise]grab[end if] you!";
+		anger M;
+		say BerriCutsceneFlav;
 	otherwise if there is a worn messed knickers and diaper quest is 0:
 		say "[speech style of M]'Nope, nope nope, I'm going to pretend I can't smell that.'[roman type][line break]";
 		bore M;
@@ -335,6 +340,12 @@ Report kicking a robot:
 Part 3 - Combat
 
 Section 1 - Protect and Attack
+
+To compute tripping attack of (M - mechanic):
+	if the class of the player is berri and latest-berri-stage is 0 and stripy-blue-dress is worn and plain-white-briefs is worn and berriMechanicScene is 0:
+		compute berri trip attempt of M;
+	otherwise:
+		compute default tripping attack of M.
 
 To compute (M - mechanic) protecting against (X - a monster):
 	if the player is monster stuck:
@@ -476,6 +487,104 @@ This is the mechanic dark ritual rule:
 		bore M;
 		rule succeeds.
 The mechanic dark ritual rule is listed last in the mechanic unique punishment rules.
+
+This is the mechanic spanks berri rule:
+	if the class of the player is berri and latest-berri-stage is 0 and stripy-blue-dress is worn and plain-white-briefs is worn and berriMechanicScene is 0:
+		now berriMechanicScene is 1;
+		now refractoryperiod is 0;
+		now mechanic is grabbing the player;
+		displace stripy-blue-dress;
+		say "You scream with shock as [NameDesc of mechanic] picks you up and swings you over one shoulder.[line break][speech style of mechanic]'Oh look, just what I need!'[roman type][line break][big he of mechanic] picks up a wand vibrator that was lying on the ground near [his of mechanic] feet, and, flipping your dress up, presses the vibrating wand against your [genitals] through [NameDesc of plain-white-briefs]. The vibrations send surges of electrical delight through your [genitals]!";
+		ruin vagina;
+		now refractoryperiod is 0;
+		check for arousal change;
+		say "You instinctively try to wiggle away, but [NameDesc of mechanic] holds you tight, and begins to aggressively spank your poor partially exposed buttcheeks!";
+		say SpankingFlav of mechanic;
+		compute strength (the spank strength of mechanic) spanking;
+		let E be a random explorer in the location of the player;
+		if E is nothing, now E is a random regional explorer;
+		if E is nothing, now E is a random alive explorer;
+		if E is nothing, now E is a random explorer;
+		let L be the location of E;
+		spawn meet E;
+		say "[BigNameDesc of E][']s eyes go wide![line break][speech style of E]'Hey, what the fuck are you doing to [him of the player]?! Put [him of the player] down right now!'[roman type][line break][BigNameDesc of E] demands of [NameDesc of mechanic].[paragraph break]";
+		if plain-white-briefs is clean, compute berri bladder or bowel panty filling;
+		say "[BigNameDesc of mechanic] gives [NameDesc of E] a brief look.[line break][speech style of mechanic]'Don't interrupt me and I'll make it worth your while.'[roman type][line break][big he of mechanic] holds a golden ring in the air, and then turns [his of mechanic] attention back to holding the vibrator against your [genitals].";
+		ruin vagina;
+		check for arousal change;
+		let gold-ring-taken be true;
+		if plain-white-briefs is clean and the player is able to speak:
+			reset multiple choice questions;
+			set numerical response 1 to "Don't say anything";
+			set numerical response 2 to "Beg for [NameDesc of E] to stop [him of mechanic]";
+			now temporaryYesNoBackground is the examine-image of mechanic;
+			compute multiple choice question;
+			if player-numerical-response is 2:
+				now temporaryYesNoBackground is the examine-image of mechanic;
+				say "[variable custom style]'Please, help me!'[roman type][line break]You squeak in your characteristically girly voice.[paragraph break][speech style of mechanic]'Shut up, you pathetic little [boy of the player]!'[roman type][line break][big he of mechanic] begins spanking you again, even harder than normal!";
+				say SpankingFlav of mechanic;
+				compute strength (the spank strength of mechanic * 2) spanking;
+				if plain-white-briefs is clean, now berriMechanicScene is 2;
+				otherwise say "[BigNameDesc of E] visibly cringes.[line break][speech style of E]'So gross...'[roman type][line break]";
+			otherwise:
+				say "[BigNameDesc of E][']s eyes dart between the gold ring and your red raw buttcheeks.";
+				if the player is getting lucky, now berriMechanicScene is 2;
+		if berriMechanicScene is 1:
+			say "[BigNameDesc of E] lowers [his of E] gaze, and shaking [his of E] head, takes the gold ring, and begins to wander away.";
+			if L is a room:
+				let R be a random off-stage ring;
+				if R is a thing:
+					now R is solid gold;
+					set shortcut of R;
+					now R is carried by E;
+				now E is in L;
+			otherwise:
+				remove E from play;
+			now refractoryperiod is 0;
+			say "[BigNameDesc of mechanic] cackles cruelly.[line break][speech style of mechanic]'Yes that's right, you dumb baby. Nobody's coming to save you. And all it took was a tiny bribe for your little [']friend['] over there to [pussy] out.'[roman type][line break][big he of mechanic] spanks you some more, still holding the vibrator against your [genitals] as [he of mechanic] does![line break][speech style of mechanic]'Is my little perverted baby gonna cum during [his of the player] spankings?'[paragraph break][roman type]";
+			now temporaryYesNoBackground is the examine-image of mechanic;
+			ruin vagina;
+			say SpankingFlav of mechanic;
+			compute strength (the spank strength of mechanic) spanking;
+			check for arousal change;
+			now temporaryYesNoBackground is the examine-image of mechanic;
+			ruin vagina;
+			say SpankingFlav of mechanic;
+			compute strength (the spank strength of mechanic) spanking;
+			check for arousal change;
+			ruin vagina;
+			maybe-map-display examine-image of mechanic;
+			now berriMechanicScene is 3;
+			if plain-white-briefs is worn and plain-white-briefs is dirty:
+				say "[speech style of mechanic]'Look at these disgusting soiled undies! You really are a pathetic baby, aren't you.'[roman type][line break]";
+				if diaper-donate is appropriate:
+					dislodge mechanic;
+					compute punishment of diaper-donate;
+				otherwise:
+					satisfy mechanic;
+			otherwise:
+				satisfy mechanic;
+		otherwise:
+			say "[speech style of E]'No, fuck this! You're going down!'[roman type][line break][BigNameDesc of E] charges at [NameDesc of mechanic], who is forced to drop you as [he of mechanic] raises [his of mechanic] arms to defend [himself of mechanic].";
+			dislodge mechanic;
+			if player-numerical-response is 1, say GotLuckyFlav;
+			deinterest mechanic;
+			let LD be the NViables of the location of the player;
+			sort LD in random order;
+			let D be entry 1 in LD;
+			say "You blindly try to crawl away to the [D], without even looking where you are going.";
+			try going D;
+			say "Behind you, you hear the sounds of [NameDesc of E] squealing with panic and pain as [he of E] is overwhelmed and subdued by [NameDesc of mechanic].[line break][variable custom style]Rather [him of E] than me...[roman type][line break]";
+			compute banishment of E;
+			if L is not a room, remove E from play;
+			now berriMechanicScene is 3;
+		temporaryYesNoBackgroundReset;
+		progress quest of berri-quest;
+		rule succeeds.
+
+
+
+The mechanic spanks berri rule is listed last in the mechanic diaper quest rules.
 
 The choosing a diaper punishment rule is listed last in the mechanic diaper quest rules.
 
@@ -966,7 +1075,7 @@ To say PowerBottomComment of (M - mechanic):
 To compute failed dominance punishment of (M - mechanic):
 	let H be trainee hood;
 	if H is alive or H is not actually summonable or the player is a trained hooker, now H is black maid headdress;
-	let B be a random off-stage trainee bra;
+	let B be trainee bra;
 	if B is not clothing or the player is a trained hooker, now B is a random off-stage pasties;
 	let E be a random off-stage trainee thigh highs;
 	if E is not clothing or the player is a trained hooker, now E is a random off-stage rollerskates;
@@ -974,7 +1083,7 @@ To compute failed dominance punishment of (M - mechanic):
 		say "[big he of M] forces a [ShortDesc of H] onto your head! ";
 		summon H cursed;
 		Satisfy M;
-	otherwise if B is clothing and B is actually summonable:
+	otherwise if B is off-stage and B is actually summonable:
 		say "[big he of M] forces a [ShortDesc of B] onto your chest! ";
 		summon B cursed;
 		Satisfy M;

@@ -83,6 +83,7 @@ Check slapping:
 	if the noun is lake monster, say "You can't reach it from here." instead;
 	if the noun is not monster, say "Err, why would you do that?" instead;
 	if the player is in a predicament room, say "This is neither the time nor the place for violence." instead;
+	if the noun is explorer and the class of the player is berri, say "Your headgear seems to be magically preventing a side character from choosing to attack a main character!" instead;
 	if the noun is woman-player and woman-player is not angered:
 		if the woman-status of woman-player >= 90, say "That's not very practical right now." instead;
 		say "Are you sure? You probably won't be able to make [him of the noun] friendly ever again, if you were to do that. ";
@@ -165,6 +166,7 @@ Check zapping it with:
 	if the noun is zap ready clothing and the noun is not worn, say "Unfortunately, you can't use that if you're not wielding it!" instead;
 	if the noun is not zappable, say "That can't be used to cast spells." instead;
 	if the player is in a predicament room, say "This is neither the time nor the place for violence." instead;
+	if the second noun is explorer and the class of the player is berri, say "Your headgear seems to be magically preventing a side character from choosing to attack a main character!" instead;
 	if the second noun is woman-player and woman-player is not angered:
 		if the woman-status of woman-player >= 90, say "That's not very practical right now." instead;
 		say "Are you sure? You probably won't be able to make [him of the second noun] friendly ever again, if you were to do that. ";

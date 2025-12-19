@@ -258,6 +258,10 @@ To compute defeat of (M - a monster):
 	if M is automatically banishable:
 		compute automatic banishment of M;
 	otherwise:
+		if camera-drone is stalking:
+			let D be camera-drone;
+			say "The [ShortDesc of D] [if doomed <= 0]shoots out a tiny spark before exploding like a popped balloon[otherwise]blinks once before disappearing[end if], leaving nothing behind but a cloud of smoke. Looks like [if D is uploading]it didn't like what it saw.[otherwise]you managed to mess up the footage![end if][line break]";
+			reset D with flavour false;
 		let DM be the list of combative monsters;
 		if M is listed in DM, remove M from DM;
 		if the number of entries in DM > 0: [player is still in combat]

@@ -136,7 +136,8 @@ To trigger pole trap (Y - a dildo trap):
 		otherwise: [diaper quest]
 			say "At the same time, metal anklecuffs emerge from either side, and grab at your ankles!";
 			say "[variable custom style][if the player is a nympho][one of]Ooh[or]Hee-hee[cycling][otherwise if the player is a pervert]Whoops[otherwise]Fuck[end if], I'm stuck[one of][or] again[stopping]![roman type][line break]";
-			now Y is grabbing the player.
+			now Y is grabbing the player;
+			maybe-map-display examine-image of Y.
 
 To compute (Y - a dildo trap) penetration of (C - an object) into (G - a fuckhole):
 	now Y is penetrating G;

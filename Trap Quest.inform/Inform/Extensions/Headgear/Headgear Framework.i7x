@@ -213,6 +213,11 @@ To say AutobindSummonFlav of (C - a clothing):
 	say "You are now wearing the [C].";
 	FearUp 3.
 
+To say SpookySummonFlav of (C - a clothing):
+	say "[bold type]A ghastly white smoke surrounds you, and evil cackling fills the air![roman type][line break]You shudder as a chill falls upon you... And then all of a sudden, all of those spooky sensations disappear, and you are left wearing the [C].";
+	FearUp 15;
+	say GotUnluckyFlav.
+
 To autobind (C - a clothing):
 	if debugmode > 0, say "[input-style]Autobinding [C].[roman type][line break]";
 	if C is hand ready, check clutch replacement;
@@ -223,6 +228,32 @@ To autobind (C - a clothing):
 	say AutobindSummonFlav of C;
 	compute summoned quest of C.
 
+The spooky list is a list of objects that varies.
+
+To spookify (C - a clothing):
+	now C is spookiness;
+	add C to the spooky list, if absent;
+	now C is in Holding Pen;
+	say "[bold type]You hear ghostly cackling. That's... Ominous.[roman type][line break]".
+
+Report going:
+	if (the noun is up or the noun is down) and the player is not in a predicament room, compute spookification.
+
+To compute spookification:
+	if the number of entries in the spooky list > 0:
+		sort the spooky list in random order;
+		let C be entry 1 in the spooky list;
+		if C is in Holding Pen and C is unclash summonable and the player is getting unlucky:
+			if debugmode > 0, say "[input-style]Spookifyng [C].[roman type][line break]";
+			if C is hand ready, check clutch replacement;
+			PinkWardrobeUnclash C;
+			soft summon C;
+			now C is spookiness;
+			compute autobind set up of C;
+			say SpookySummonFlav of C;
+			compute summoned quest of C;
+		if C is not in Holding Pen, remove C from the spooky list.
+
 To compute autobind set up of (C - a clothing):
 	now C is cursed.
 
@@ -232,8 +263,10 @@ Report taking clothing:
 			say "BUG - game tried to autobind clothing that was already identified. Please report this.";
 		otherwise:
 			say "[bold type]Suddenly, [NameDesc of the noun] disappears from your hands![roman type][line break]";
-			autobind the noun.
-
+			autobind the noun;
+	if the noun is spookiness clothing and the player is not in a predicament room:
+		say "[bold type]Suddenly, [NameDesc of the noun] disappears from your hands![roman type][line break]";
+		spookify the noun.
 
 To WardrobeVanish (C - a thing):
 	if C is held, say "[if C is clothing]Your [C] [one of]vanishes. You can sense that it has been sent to the pink wardrobe[or]is sent from your [body area of C] to the pink wardrobe[stopping][otherwise]The [C] vanishes. You can sense that it has been sent to the pink wardrobe[end if]!";
@@ -310,9 +343,9 @@ To PinkWardrobeUnclash (C - a clothing):
 		repeat with O running through worn vagina plugging clothing:
 			WardrobeVanish O;
 	if C is total protection:
-		repeat with O running through worn tail plugs:
+		repeat with O running through worn tailed clothing:
 			WardrobeVanish O;
-	if C is tail plug:
+	if C is tailed clothing:
 		repeat with O running through worn total protection clothing:
 			WardrobeVanish O;
 	if C is trousers:
@@ -340,7 +373,7 @@ To PinkWardrobeUnclash (C - a clothing):
 		otherwise:
 			repeat with O running through clothing penetrating vagina:
 				WardrobeVanish O;
-		if C is tail plug:
+		if C is tailed clothing:
 			repeat with O running through ass covering clothing:
 				WardrobeVanish O;
 	if C is uncovered themed or C is top-exclusive or C is totally-exclusive:
@@ -481,9 +514,9 @@ Definition: a clothing (called C) is class summonable:
 			otherwise if the player is possessing a vagina:
 				decide no;
 	if C is total protection:
-		repeat with O running through worn tail plugs:
+		repeat with O running through worn tailed clothing:
 			if O is unremovable or O is locked or O is currently-class-relevant, decide no;
-	if C is tail plug:
+	if C is tailed clothing:
 		repeat with O running through worn total protection clothing:
 			if O is unremovable or O is locked or O is currently-class-relevant, decide no;
 	if C is trousers:
@@ -511,7 +544,7 @@ Definition: a clothing (called C) is class summonable:
 		otherwise:
 			repeat with O running through clothing penetrating vagina:
 				if O is unremovable or O is locked or O is currently-class-relevant, decide no;
-		if C is tail plug:
+		if C is tailed clothing:
 			repeat with O running through ass covering clothing:
 				if O is unremovable or O is locked or O is currently-class-relevant, decide no;
 	if C is uncovered themed or C is top-exclusive or C is totally-exclusive:

@@ -6,6 +6,8 @@ orc can be shooed. [has he been made to leave at least once?]
 Definition: orc is dungeon dwelling:
 	if pack of playing cards is in Dungeon07, decide yes;
 	decide no.
+To decide which object is the default-local-room of (M - orc):
+	decide on Dungeon07.
 
 [Definition: orc is willing to urinate: decide yes.]
 
@@ -805,7 +807,7 @@ To compute poker punishment of (PC - a number):
 			decrease the raw luck of the player by 20;
 		otherwise if PS is 1 and there is a nonstalking wisp:
 			say "[speech style of orc]'The [poker card of PC] summons a spirit to curse you... Unless you meet its demands.'[roman type][line break]";
-			deploy a wisp;
+			deploy an evil wisp;
 		otherwise if PS is 3 and there is a worn tattoo and spade leaves tattoo is not worn:
 			say "[speech style of orc]'The [poker card of PC] gives you a special tattoo.'[roman type][line break]";
 			summon spade leaves tattoo;
@@ -874,29 +876,25 @@ To compute poker punishment of (PC - a number):
 				if PS is not 3 or the number of worn knickers is 0:
 					let K be a random worn knickers;
 					if K is diaper:
-						let D be K;
-						repeat with E running through eligible diapers:
-							if D is K and the DQBulk of E >= the DQBulk of K, now D is E;
-						if D is K:
-							say "[speech style of orc]'Hmm, that's very unusual, it can't find a single eligible diaper to add to what you're wearing.'[roman type][line break]";
-						otherwise:
+						now bulk-search-level is the DQBulk of K;
+						let D be the chosen trap diaper;
+						if D is DQBulkier:
 							say "A split second later, a [MediumDesc of D] appears over the top of your [MediumDesc of K]!";
 							blandify and reveal D;
 							now D is cursed;
 							compute summoned quest of D;
 							diaperAdd D;
-					otherwise:
-						let D be a random eligible diaper;
-						if D is diaper:
-							if K is knickers:
-								transform K into D;
-								if D is not cursed, now D is cursed;
-								if the quest of D is no-clothing-quest, compute summoned quest of D;
-							otherwise:
-								say "A split second later, a [MediumDesc of D] appears on you!";
-								summon D cursed with quest;
 						otherwise:
-							say "[speech style of orc]'Hmm, that's very unusual, it can't find a single eligible diaper to make you wear.'[roman type][line break]";
+							say "[speech style of orc]'Hmm, that's very unusual, it can't find a single eligible diaper to add to what you're wearing.'[roman type][line break]";
+					otherwise:
+						let D be the chosen trap diaper;
+						if K is knickers:
+							transform K into D;
+							if D is not cursed, now D is cursed;
+							if the quest of D is no-clothing-quest, compute summoned quest of D;
+						otherwise:
+							say "A split second later, a [MediumDesc of D] appears on you!";
+							summon D cursed with quest;
 				if PS is 3:
 					let K be a random worn knickers;
 					if K is knickers:

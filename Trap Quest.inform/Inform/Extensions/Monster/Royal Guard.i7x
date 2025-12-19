@@ -183,7 +183,7 @@ To say ClothesPeeReaction of (M - a royal guard):
 			FavourDown M by 2;
 			if M is unfriendly:
 				say "[speech style of M]'Yes in fact, I think you need training. [if the player is upright]Get on your knees[otherwise]Stay right where you are[end if], baby!'[roman type][line break]";
-				now M is diaper-committed;
+				now M is bulkier-diaper-committed;
 		otherwise:
 			say "[BigNameDesc of M] frowns angrily.[line break][speech style of M]'This is why you need to be in diapers!'[roman type][line break][if M is uninterested]Uh-oh...[end if]";
 	otherwise:
@@ -262,6 +262,17 @@ To say CurtseyReactionFlav of (M - a royal guard):
 		say "[BigNameDesc of M] frowns but doesn't say anything.".
 
 Definition: a royal guard (called M) is uniquely distracted:
+	if the poster-type of wanted-poster is 2 and there is an unleashed wench in the location of the player and the player is not a wanted-harlot:
+		let N be a random unleashed wench in the location of the player;
+		say "[BigNameDesc of M][']s eyes are drawn [if M is interested]away from you [end if]to [NameDesc of N].[line break][speech style of M]'YOU WITH THE BRIGHT HAIR! YOU'RE UNDER ARREST, YOU FUGITIVE!'[paragraph break][speech style of N]'Me?!'[roman type][line break][BigNameDesc of N] [if N is not awake]starts awake and [end if]squeaks with fright.[line break][speech style of M]'YES YOU! YOU ARE WANTED BRED OR CREAMPIED!'[line break][roman type][BigNameDesc of M] grabs [NameDesc of N], lifts [his of N] wriggling, panicking body over [his of M] shoulder, and carries [him of N] away.[line break][speech style of N]'AIEEEEE!'[roman type][line break]";
+		now the poster-cooldown of wanted-poster is 0;
+		regionally place M;
+		now N is in the location of M;
+		distract M;
+		compute refractoryReset of M;
+		bore N for 150 seconds;
+		compute refractoryReset of N;
+		now the creampieTimer of N is 300;
 	if the refractory-period of M < 0 and the class of the player is not princess and M is reactive:
 		let N be a random undefeated awake explorer in the location of M;
 		if N is nothing, let N be a random undefeated awake wench in the location of M;
@@ -479,6 +490,8 @@ To compute appearance assessment of (M - a royal guard):
 				say "[speech style of M]'[one of]You there, you look like a common harlot! You are lucky I am not arresting you on the spot.'[or]Wench! I am a steward of the crown, it is improper for you to present yourself in front of me in such attire.'[in random order]";
 	otherwise if the player is top-wardrobe-malfunctioning:
 		compute tq nip slip reaction of M;
+	otherwise if wanted-poster is in the location of M:
+		say "[speech style of M]'Greetings, traveller. If you spot someone matching the description of the fugitive, please come find me or one of my fellow guards immediately.'[roman type][line break]";
 	otherwise:
 		say "[speech style of M]'Greetings, traveller. I hope your visit to these regions has been engaging? ";
 		if there is a worn currently at least partially visible diaper, say "[if M is unfriendly and a random worn diaper is currently visible]Ugh, are you aware that your childish undergarments are showing?! What a disgrace. [otherwise if M is unfriendly]I can see the shape of your undergarments through your clothing, you know. [otherwise]Err, interesting undergarment choice. Do you have some kind of condition? [end if]".
@@ -526,6 +539,9 @@ To compute perception of (M - a royal guard):
 	otherwise if the number of combative royal guards > 1 or (M is friendly and there is a combative royal guard):
 		say "[speech style of M]'A criminal?! Allow me to assist in [his of the player] arrest!'[roman type][line break]";
 		anger M;
+	otherwise if the player is a wanted-harlot:
+		say "[speech style of M]'You! You have [DescriptionFlav of wanted-poster], just like the [man of the player] in [if wanted-poster is in the location of the player]this[otherwise]the[end if] wanted poster! YOU'RE UNDER ARREST[if the player is upright]! Get down on the ground[end if]!'[roman type][line break]";
+		anger M;
 	otherwise if PSRB is bottle and the waitress-boredom of M <= 0 and the waitress bartering value of PSRB for M > 0 and M is not uniquely unfriendly:
 		say "[if the outrage tolerance of M <= the saved appearance of the player][big he of M] frowns at your appearance but doesn't act aggressively. [end if][big he of M] seems to be eyeing your [PSRB].";
 		calm M;
@@ -557,7 +573,7 @@ To compute perception of (M - a royal guard):
 		anger M;
 		SilentlyDifficultyUp M by 3;
 		now the sex-length of the M is a random number between 3 and 4;
-	otherwise if the class of the player is royal slave or the class of the player is bunny: [not his to use!]
+	otherwise if the player is not a wanted-harlot and (the class of the player is royal slave or the class of the player is bunny): [not his to use!]
 		say "[big he of M] smiles politely.";
 		calm M;
 	otherwise if M is unfriendly:
@@ -705,6 +721,137 @@ To compute DQ perception of (M - a royal guard):
 			otherwise: [Default catch-all]
 				say "[speech style of M][one of]Anyway, if you see the Princess during your travels, tell [him of ex-princess] [he of ex-princess] is dearly missed.'[or]Anyway, I would advise against trying to steal anything from this place, many containers are even booby trapped.'[or]Anyway, it is always nice to see a fresh face in this lonely place, so stay for as long as you feel comfortable.'[in random order][roman type][line break]";
 	if lady fetish is 0 and M is interested, display interaction of M.
+
+
+wanted-poster is a backdrop. Understand "wanted", "poster" as wanted-poster. The text-shortcut of wanted-poster is "wp".
+The printed name of wanted-poster is "[TQlink of item described]wanted poster[shortcut-desc][TQxlink of item described][verb-desc of item described]".
+wanted-poster has a number called poster-type.
+Figure of wanted poster 1 is the file "Env/Dungeon/poster1.jpg".
+Figure of wanted poster 2 is the file "Env/Dungeon/poster2.jpg".
+Figure of wanted poster 3 is the file "Env/Dungeon/poster3.jpg".
+Figure of wanted poster 4 is the file "Env/Dungeon/poster4.jpg".
+Figure of wanted poster 5 is the file "Env/Dungeon/poster5.jpg".
+
+To decide which figure-name is the examine-image of (T - wanted-poster):
+	if the poster-type of T is 1:
+		decide on Figure of wanted poster 1;
+	otherwise if the poster-type of T is 2:
+		decide on Figure of wanted poster 2;
+	otherwise if the poster-type of T is 3:
+		decide on Figure of wanted poster 3;
+	otherwise if the poster-type of T is 4:
+		decide on Figure of wanted poster 4;
+	otherwise:
+		decide on Figure of wanted poster 5.
+
+
+To say ExamineDesc of (T - wanted-poster):
+	say "The poster specifies that there is a criminal harlot who is wanted 'bred or creampied', who is identifiable by their [IdentificationFlav of T].[line break][variable custom style][if the player is a wanted-harlot]Oh shit, I'm pretty sure that describes me right now![otherwise if the class of the player is princess]I feel like I'm probably immune to ever being identified as a wanted criminal while I have the Princess class.[otherwise]That doesn't describe me right now, thank goodness.[end if][roman type][line break]".
+
+To say IdentificationFlav of (T - wanted-poster):
+	if the poster-type of T is 1:
+		say "blonde or bold-coloured hair";
+	otherwise if the poster-type of T is 2:
+		say "very bright hair";
+	otherwise if the poster-type of T is 3:
+		say "reddish hair";
+	otherwise if the poster-type of T is 4:
+		say "heavy make up";
+	otherwise:
+		say "thick lips".
+
+To say DescriptionFlav of (T - wanted-poster):
+	if the poster-type of T is 1:
+		if HairColourText matches the text "blond", say "blonde hair";
+		otherwise say "bold-coloured hair";
+	otherwise if the poster-type of T is 2:
+		say "bright hair";
+	otherwise if the poster-type of T is 3:
+		if HairColourText matches the text "red", say "red hair";
+		otherwise say "a red-like hue to your hair";
+	otherwise if the poster-type of T is 4:
+		say "your face made up like a harlot";
+	otherwise:
+		say "pillowy lips".
+
+Definition: yourself is a wanted-harlot:
+	if diaper quest is 1 or the class of the player is princess, decide no;
+	let HT be the substituted form of "HairColourVagueText";
+	if the poster-type of wanted-poster is 1:
+		if (the blondeness of hair >= 3 or HT matches the text "blonde") and hair is exposed, decide yes;
+	otherwise if the poster-type of wanted-poster is 2:
+		if (the brightness of hair >= 3 or HT matches the text "silver") and hair is exposed, decide yes;
+	otherwise if the poster-type of wanted-poster is 3:
+		if (the redness of hair >= 3 or HT matches the text "red" or HT matches the text "orange") and hair is exposed, decide yes;
+	otherwise if the poster-type of wanted-poster is 4:
+		if the make-up of face >= 3, decide yes;
+	otherwise if the poster-type of wanted-poster is 5:
+		if the lips of face >= 2, decide yes;
+		if lip gag is worn, decide yes;
+	decide no.
+
+This is the wanted poster pussy slut rule:
+	if current-monster is royal guard and the player is a wanted-harlot, decrease the desirability of vagina by 999999.
+The wanted poster pussy slut rule is listed in the pussy slut eligibility rules.
+This is the wanted poster butt slut rule:
+	if current-monster is royal guard and the player is not possessing a vagina and the player is a wanted-harlot, decrease the desirability of asshole by 999999.
+The wanted poster butt slut rule is listed in the butt slut eligibility rules.
+Definition: a royal guard (called M) is uniquely orifice convinced:
+	if the player is a wanted-harlot:
+		if presented-orifice is vagina and the player is possessing a vagina, decide yes;
+		if presented-orifice is asshole and the player is not possessing a vagina, decide yes;
+	decide no.
+Definition: a royal guard (called M) is uniquely orifice unconvinced:
+	if the player is a wanted-harlot:
+		if presented-orifice is not vagina and the player is possessing a vagina, decide yes;
+		if presented-orifice is not asshole and the player is not possessing a vagina, decide yes;
+	decide no.
+To say UniquePresentRejectionFlav of (M - a royal guard):
+	say "[speech style of M]'The poster was very clear, it said WANTED BRED OR CREAMPIED!'[roman type][line break]".
+
+wanted-poster has a number called poster-cooldown.
+
+A later time based rule (this is the wanted poster cooldown rule):
+	if diaper quest is 0, decrease the poster-cooldown of wanted-poster by time-seconds.
+
+Report going:
+	if the location of the player is poster-pinned, cycle wanted poster.
+
+To cycle wanted poster:
+	if diaper quest is 0 and prison guard is alive unleashed awake monster:
+		let PT be the poster-type of wanted-poster;
+		let PC be the poster-cooldown of wanted-poster;
+		if PC <= 0 or (PC <= 300 and a random number between 1 and 4 is 1):
+			now PC is 0;
+			while the poster-type of wanted-poster is PT:
+				now the poster-type of wanted-poster is a random number between 1 and 5;
+			if PT is 0:
+				move wanted-poster backdrop to all poster-pinned rooms;
+				update backdrop positions;
+				say "[bold type]You notice a [wanted-poster] [bold type]in this room! [roman type][line break]";
+				try examining wanted-poster;
+			otherwise:
+				say "[bold type]You notice that [NameDesc of wanted-poster] [bold type]has changed! [roman type][ExamineDesc of wanted-poster]";
+			now the poster-cooldown of wanted-poster is a random number between 400 and 500;
+		if prison guard is not in the location of the player and (PC is 0 or the player is a wanted-harlot) and (the player is not a wanted-harlot or the player is getting unlucky): [prison guard turns up if there's a new poster and the player is NOT wanted, or if the player IS wanted and got unlucky, even if there's no new poster]
+			say "[bold type][BigNameDesc of prison guard] [bold type]enters the room![roman type][line break][if the player is a wanted-harlot][GotUnluckyFlav][end if]";
+			now prison guard is in the location of the player;
+		otherwise if PC is 0 and prison guard is uninterested and prison guard is in the location of the player:
+			say "[BigNameDesc of prison guard][']s eyes perk up!";
+		if prison guard is in the location of the player:
+			if PC is 0, say "[BigNameDesc of prison guard] examines the new wanted poster closely.";
+			if prison guard is not combative and ((prison guard is not interested and PC is 0) or the player is a wanted-harlot): [prison guard wants to inspect the player against the new poster, and also always automatically reinspects a wanted player]
+				deinterest prison guard;
+				check guaranteed perception of prison guard;
+	otherwise:
+		destroy wanted-poster;
+		now wanted-poster is nowhere;
+		now the poster-type of wanted-poster is 0;
+		update backdrop positions.
+
+This is the wanted poster gets focused rule:
+	if diaper quest is 0 and the location of the player is poster-pinned and the poster-type of wanted-poster > 0 and prison guard is alive unleashed awake monster, focus-consider wanted-poster.
+The wanted poster gets focused rule is listed in the focus finding rules.
 
 Part 3 - Motion
 
@@ -1025,6 +1172,7 @@ To say PullOutFlav of (M - a royal guard) in (F - a fuckhole):
 	otherwise say line break.
 
 To decide which number is the condom resistance of (M - a royal guard):
+	if the player is a wanted-harlot, decide on 999999; [WANTED BRED OR CREAMPIED]
 	if M is mating, decide on 6;[You're married, of course he's going in raw!]
 	if the class of the player is cheerleader, decide on -2;
 	let R be 0;
@@ -1033,12 +1181,15 @@ To decide which number is the condom resistance of (M - a royal guard):
 	decide on R.
 
 To say CondomRejectFlav of (M - a royal guard):
-	let R be 0;
-	repeat with W running through wenches in the location of the player:
-		if the guard-obedience of W is 1 and R is 0:
-			say "The [W] rips the condom out of your hand and tears it in half! [BigNameDesc of M] grins[if M is seduced].[otherwise]. Looks like [he of M][']s going in bare...[end if]";
-			now R is 1;
-	if R is 0, say "[BigNameDesc of M] [one of]scoffs[or]frowns[or]rolls [his of M] eyes[at random], and ignores your suggestion[if M is seduced].[otherwise]. Looks like [he of M][']s going in bare...[end if]".
+	if the player is a wanted-harlot:
+		say "[BigNameDesc of M] passionately shakes [his of M] head.[line break][speech style of M]'The poster was very clear, it said WANTED BRED OR CREAMPIED!'[roman type][line break]";
+	otherwise:
+		let R be 0;
+		repeat with W running through wenches in the location of the player:
+			if the guard-obedience of W is 1 and R is 0:
+				say "The [W] rips the condom out of your hand and tears it in half! [BigNameDesc of M] grins[if M is seduced].[otherwise]. Looks like [he of M][']s going in bare...[end if]";
+				now R is 1;
+		if R is 0, say "[BigNameDesc of M] [one of]scoffs[or]frowns[or]rolls [his of M] eyes[at random], and ignores your suggestion[if M is seduced].[otherwise]. Looks like [he of M][']s going in bare...[end if]".
 
 To say CondomPieFlav of (M - a royal guard) in (F - a fuckhole):
 	say "[BigNameDesc of M] grunts and tightens [his of M] grip, causing you to [if the semen addiction of the player < 5]whimper uncomfortably[otherwise if the semen addiction of the player < 11]gasp quietly[otherwise]coo happily[end if] as [he of M] fills [one of]the condom's reservoir tip[or]the end of the condom[or]the condom[in random order] with wave after wave of [semen]. You feel a pocket of [one of]warm liquid[or]warmth[in random order] slip out of you[if M is sleeping after sex] as [he of M] pulls out and immediately falls asleep[end if].".
@@ -1059,7 +1210,7 @@ To compute condom failure of (M - a royal guard) in (F - a fuckhole):
 To say CondomFailFlav of (M - a royal guard) in (F - a fuckhole):
 	say "[BigNameDesc of M] grunts and tightens [his of M] grip, causing you to [if the semen addiction of the player < 4]whimper uncomfortably[otherwise if the semen addiction of the player < 11]gasp quietly[otherwise]coo happily[end if] as [he of M] fills the condom's reservoir tip with wave after wave of [semen]. The pocket of warm liquid shifts inside you as [he of M] begins to pull out, and you realise the condom is starting to come off.[line break][variable custom style]'[one of]Wait, wait-!'[or]Hey, the condom-!'[or]Wait, the condom is-!'[in random order][roman type][line break]";
 	if M is sleeping after sex, say "[big he of M] doesn't respond, and you feel a faint trickle of wetness spreading out inside your [variable F] as [he of M] slumps over and passes out. You look down to see the condom hanging half-on, half-off [his of M] softening [DickDesc of M].";
-	otherwise say "[big he of M] either ignores or doesn't hear you, and you feel a faint trickle of wetness spreading out inside your [variable F] as pulls out out. You look down to see the condom hanging half-on, half-off [his of M] softening [DickDesc of M].";
+	otherwise say "[big he of M] either ignores or doesn't hear you, and you feel a faint trickle of wetness spreading out inside your [variable F] as [he of M] pulls out. You look down to see the condom hanging half-on, half-off [his of M] softening [DickDesc of M].";
 
 To say CreampieFlav of (M - a royal guard) in (F - a fuckhole):
 	if tutorial is 1:
@@ -1176,7 +1327,7 @@ This is the royal guard incarcerating a criminal rule:
 							compute mandatory room leaving of X;
 							now X is moved;
 				otherwise:
-					say "[speech style of M]'Your crime spree ends here, villain. You have been sentenced to [if diaper quest is 1]forced babification[otherwise]ten minutes of community service[end if].'[roman type][line break][BigNameDesc of M] [if N is 1]throws you into the cell, following you in and locking the door behind [him of M][otherwise if N > 2]drags you into the cell as the rest of the guards follow you in and lock the door behind them[otherwise]the other guard follows you in and locks the door behind [him of M][end if].";
+					say "[speech style of M]'Your crime spree ends here, villain. You have been sentenced to [if diaper quest is 1]forced babification[otherwise if the player is a wanted-harlot]being BRED AND CREAMPIED[otherwise]ten minutes of community service[end if].'[roman type][line break][BigNameDesc of M] [if N is 1]throws you into the cell, following you in and locking the door behind [him of M][otherwise if N > 2]drags you into the cell as the rest of the guards follow you in and lock the door behind them[otherwise]the other guard follows you in and locks the door behind [him of M][end if].";
 				anger M; [just to make sure nothing weird is going on]
 				now prison-bars is in the location of the player;
 			rule succeeds.

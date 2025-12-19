@@ -823,6 +823,9 @@ To Compute Broken Actions:
 			if the player is in Dungeon10 and the semen taste addiction of the player > 7:
 				now another-turn is 1;
 				now another-turn-action is the broken statue suck rule;
+		otherwise if the thirst of the player is 5 and the player is in DiaperPresentBoxBlindfolded and straw-bottle is in DiaperPresentBoxBlindfolded:
+			now another-turn is 1;
+			now another-turn-action is the thirsty straw-bottle suck rule;
 		otherwise if the arousal of the player >= maximum arousal and the player is not in a predicament room and the player is able to automatically masturbate and the wanktime of the player <= 0:
 			now another-turn is 1;
 			now another-turn-action is the too horny masturbation rule.
@@ -1015,6 +1018,7 @@ To Reset Flags:
 		now aroused-turns is 0; [The player can keep gaining arousal after orgasms. But then some of it will rather quickly drop off after sex ends, if she successfully orgasmed.]
 		if refractoryperiod is 0 and painted-vibrator-hands is worn, say "[bold type]Your clit feels less sensitive now, and you are willing to push the thumb vibes into it again.[roman type][line break]";
 	now auto is 0;
+	now bulk-search-level is 0;
 	now boobshrinkflav is 0;
 	now semen-encountered is 0;
 	now attack-type is 0;

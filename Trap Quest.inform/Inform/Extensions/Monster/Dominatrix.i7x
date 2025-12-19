@@ -130,7 +130,7 @@ To say MonsterComment of (M - dominatrix):
 		otherwise if the bimbo of the player < 7:
 			say "[first custom style][one of]Did [he of M] actually change that dildo as a fucking reward for me? What if word gets around that I let people fuck me?[or]OK, so my choices are, let [him of M] fuck me with that thing, or let a bunch of dudes jizz on my face? Why is this game so gay![or][if the player is not possessing a penis][big he of M] must be rubbing it in that I don't have a dick anymore. This is so uncool...[otherwise if the size of penis < 5]It was bad enough letting [him of M] fuck me with the first dildo. I look like a baby compared to [him of M] now...[otherwise if the size of penis < 9]Wait, what happened to the other dildo? This one is bigger than I am. This is fucking bullshit...[otherwise]OK, so what if [he of M] decides I'm a chick or something. My dick is still massive, and I'll always have that on [him of M]. Next time we meet, things will change, and I'll be the one fucking [him of M].[end if][in random order]";
 		otherwise if the bimbo of the player < 14:
-			say "[variable custom style][one of]I can't believe I actually let [him of M] fuck me. I'm supposed to be a man, men shouldn't get fucked...[or]I know I don't want [him of M] to fuck me with that again, but, I don't want to punish me either. How did I get into this mess?[or]I'm actually looking forward to letting [him of M] fuck me again. I guess I'm a total [if the player is sexed male]fag[otherwise]slut[end if] now.[or]I'm [his of M] slave now, so I can't exactly say no if [he of M] wants to but that in me, but it's not like I wanted to be [his of M] slave in the first place. I think.[or][if the player is not possessing a penis]I'm stuck with no penis, and [hers of M] is even bigger. If I let people fuck me, and I don't have a penis, how can I call myself a man?[otherwise if the size of penis < 5]The first dildo made me feel inadequate. This is just cruel. It's not my fault if my penis keeps shrinking! Everybody wants to fuck me![otherwise if the size of penis < 9][big his of M] dildo is actually bigger than my penis. I deserve to be smaller, though. After letting [him of M] fuck me, there's no way for me to pretend I make a better man than [he of M] does.[otherwise]My dick is still bigger than [hers of M], but only by a few inches. And if I keep letting [him of M] fuck me, it's only a matter of time until that's not true.[end if][or]I know by now it's not a good idea to play by [his of M] rules, but how am I supposed to hold my orgasm when that thing is going to be ramming [if the player is sexed male]my prostate[otherwise]me[end if]?[in random order]";
+			say "[variable custom style][one of]I can't believe I actually let [him of M] fuck me. I'm supposed to be a man, men shouldn't get fucked...[or]I know I don't want [him of M] to fuck me with that again, but, I don't want to punish me either. How did I get into this mess?[or]I'm actually looking forward to letting [him of M] fuck me again. I guess I'm a total [if the player is gendered male]sissy[otherwise]slut[end if] now.[or]I'm [his of M] slave now, so I can't exactly say no if [he of M] wants to but that in me, but it's not like I wanted to be [his of M] slave in the first place. I think.[or][if the player is not possessing a penis]I'm stuck with no penis, and [hers of M] is even bigger. If I let people fuck me, and I don't have a penis, how can I call myself a man?[otherwise if the size of penis < 5]The first dildo made me feel inadequate. This is just cruel. It's not my fault if my penis keeps shrinking! Everybody wants to fuck me![otherwise if the size of penis < 9][big his of M] dildo is actually bigger than my penis. I deserve to be smaller, though. After letting [him of M] fuck me, there's no way for me to pretend I make a better man than [he of M] does.[otherwise]My dick is still bigger than [hers of M], but only by a few inches. And if I keep letting [him of M] fuck me, it's only a matter of time until that's not true.[end if][or]I know by now it's not a good idea to play by [his of M] rules, but how am I supposed to hold my orgasm when that thing is going to be ramming [if the player is sexed male]my prostate[otherwise]me[end if]?[in random order]";
 		otherwise:
 			say "[second custom style][one of]That is going to feel so good inside me! I'm glad one of us knows how to use a dick![or]I love big cocks, even if they're plastic and attached to a [man of M] instead of a sexy man.[or]Before I started this game, I wanted to fuck girls, now I want to give blowjobs and get fucked. With [him of M] around, I can do both! Tee-hee![or][big literalMistress of M] knows I've been good, so I deserve to get fucked HARD![or][if the size of penis < 1][big literalMistress of M] is my lesbian lover![otherwise if the size of penis < 5]My penis is useless, but [literalMistress of M] has more than enough for the both of us![otherwise if the size of penis < 9][big his of M] dildo is bigger than my penis! Just the way things should be.[otherwise if the player is sexed male][big his of M] strapon is still smaller than my cock. Oh well, that just means I'll cum more when [he of M][']s done pounding my prostate![end if][or]If [literalMistress of M] says not to cum, I shouldn't. But [he of M] must have no idea what it's like to have a big hard cock ram your [if the player is sexed male]prostate[otherwise]hole[end if]![or]If I want a bigger toy to play with, I need to control my orgasms. But since I'm such a dirty slut, it will not be easy![in random order]";
 	otherwise:
@@ -404,7 +404,7 @@ This is the dominatrix tops the player rule:
 			if current-monster is spanking the player, compute stocks paddling of current-monster;
 			otherwise compute whipping of current-monster;
 			rule succeeds;
-		if the health of current-monster < the maxhealth of current-monster: [If the player fought back, they get torture rather than just sex.]
+		if the health of current-monster < the maxhealth of current-monster and berri-collaring is not appropriate and untidy-session is not appropriate: [If the player fought back, they get torture rather than just sex.]
 			compute torturing of current-monster;
 			rule succeeds.
 The dominatrix tops the player rule is listed last in the dominatrix diaper quest rules.
@@ -566,11 +566,14 @@ To say NearingClimaxLicking of (M - dominatrix):
 To compute unique penetration effect of (M - dominatrix) in (T - thighs):
 	now the sex-length of M is 2.
 
-To compute facial sex of (M - dominatrix):
+To say StraponOralResistingResponse of (M - dominatrix):
 	say "[one of][BigNameDesc of M] aggressively fucks your throat with [his of M] [LongDickDesc of M].[or][BigNameDesc of M][']s hips slam into your face, [his of M] [LongDickDesc of M] repeatedly striking the back of your throat.[or][BigNameDesc of M] slams [his of M] [LongDickDesc of M] in and out of your mouth, forcing you to make a lewd gagging noise with every thrust.[or][BigNameDesc of M] wears a wide grin, mercilessly ramming [his of M] [LongDickDesc of M] down your throat.[or]You can't help making a lot of noise as [NameDesc of M] slams [his of M] [LongDickDesc of M] into the back of your throat.[in random order]";
-	let I be 0;
-	decrease I by the strap-on girth of M;
-	decrease the sex-length of M by 1.
+
+To say StraponOralSubmissionResponse of (M - dominatrix): [The player is sucking obediently on the dildo. What does that look like?]
+	say StraponOralResistingResponse of M.
+
+To compute facial sex of (M - dominatrix):
+	compute strapon facial sex of M.
 
 To compute facial climax of (M - dominatrix):
 	if the sex-length of M is 0 and the times-submitted of M > 0:
@@ -629,7 +632,7 @@ To say LickResistingResponse of (M - dominatrix):
 	say "[BigNameDesc of M] takes [his of M] boot away.";
 	compute licking completion of M.
 
-To say OralSubmissionResponse of (M - a dominatrix):
+To say StraponOralSubmissionResponse of (M - a dominatrix):
 	say "[one of]You bob your head up and down, [if the grossness addiction of the player < 6]unable to keep your lip from curling in disgust[otherwise if the grossness addiction of the player < 13]slurping loudly[otherwise]moaning enthusiastically[end if] as the bitter taste of latex assaults your tastebuds.[or]You make [if the oral sex addiction of the player < 4]quiet[otherwise if the oral sex addiction of the player < 6]distinct[otherwise]exaggerated[end if] slurping noises as you polish [NameDesc of M]'s rubber [manly-penis].[or]You obedeintly polish [NameDesc of M]'s [LongDickDesc of M], [if the grossness addiction of the player < 7]cringing at[otherwise if the grossness addiction of the player < 14]more or less ignoring[otherwise]relishing[end if] the taste.[in random order]";
 	TasteGrossOut 6.
 
@@ -708,7 +711,7 @@ To compute MasturbationReaction of (M - dominatrix):
 
 To decide which number is the rounds of sex left of (M - dominatrix):
 	if woman-player is in the location of the player and the woman-status of woman-player is 93 and woman-player is awake, decide on 2;
-	decide on the sex-length of M. [Default function allows us to rewrite where this isn't true, e.g. witch and demoness]
+	decide on the default rounds of sex left of M. [Default function allows us to rewrite where this isn't true, e.g. witch and demoness]
 
 To compute unique climax of (M - dominatrix) in (F - asshole):
 	say "[BigNameDesc of M][if M is not friendly-fucking], satisfied,[end if] slowly removes [his of M] [DickDesc of M] from your [ShortDesc of asshole].";
@@ -899,7 +902,7 @@ To say ErectionNearingClimaxFlav of (M - dominatrix):
 	otherwise:
 		say "[line break][speech style of M]'[one of]You held on all the way to the end, slave! Now, you have 10 seconds to cum.'[or]You made it, slave! For the next 10 seconds, you can cum all you want!'[or]You held on, so how about a reward? For the next 10 seconds, you have my permission to cum.'[in random order][roman type][line break]".
 
-To say ErectionClimaxFlav of (M - dominatrix):
+To say PenileClimaxFlav of (M - dominatrix):
 	let N be the reaction of the player;
 	if the disappointment of M > 0, decrease N by 1;
 	increase N by the charisma of the player;

@@ -86,8 +86,8 @@ Report taking cock candle:
 			say "You feel a cursed spirit attempt to escape, but remain trapped within the candle. For now.";
 		otherwise:
 			now cock candle is not wisped;
-			say "As you disturb the candle, you feel a cursed spirit escape through the flame!";
-			deploy a wisp.
+			say "As you disturb the candle, a cursed spirit escapes through the flame!";
+			deploy an evil wisp.
 
 To say ShortDesc of (C - cock candle):
 	say "cock candle".

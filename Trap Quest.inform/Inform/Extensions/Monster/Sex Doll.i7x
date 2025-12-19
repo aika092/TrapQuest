@@ -3,7 +3,7 @@ Sex Doll by Monster begins here.
 A sex doll is a kind of monster. A sex doll is male. A sex doll is neuter. The leftover-type of a sex doll is usually 103. The poison-status of a sex doll is -1.
 
 Definition: a sex doll is willing to do titfucks: decide no.
-Definition: a sex doll is forced to wear a condom: decide no.
+[Definition: a sex doll is forced to wear a condom: decide no.]
 
 Definition: a sex doll is dungeon dwelling: decide yes.
 Definition: a sex doll is a urinater: decide no.

@@ -452,6 +452,9 @@ To decide which number is the zap damage improvement of (W - notebook):
 	if X < 0, decide on 0;
 	decide on X.
 
+To compute spell consequences of (Z - notebook):
+	do nothing.
+
 [You can only study monsters you finish off with the book, or monsters you have sex with more than once.]
 To compute studying (N - a number) of (M - a monster):
 	let C be 3;

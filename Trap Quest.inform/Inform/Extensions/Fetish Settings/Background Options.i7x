@@ -99,7 +99,7 @@ This is the background initialisation rule:
 		MagicPowerUp 3;
 		let LS be a list of magic-spells;
 		repeat with S running through uncastable fetish appropriate magic-spells:
-			if the raw-magic-cost of S <= the total magic power of the player:
+			if S is not wand-summoning and S is not magic-purify and the raw-magic-cost of S <= the total magic power of the player:
 				add S to LS;
 		if the number of entries in LS > 0:
 			sort LS in random order;

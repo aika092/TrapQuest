@@ -122,6 +122,7 @@ To compute monstermotion of (M - woman-player):
 		if A is a direction and a random number between 1 and 100 > 75:
 			let P be the room A from the location of M;
 			if P is not Dungeon12:
+				if woman-player is in the woods and the location of woman-player is urinals, now the location of woman-player is use-the-floor;
 				blockable move M to A;
 				compute monstermotion reactions of M.
 
@@ -129,6 +130,12 @@ To compute (M - woman-player) seeking (D - a direction):
 	if the woman-status of M < 90: [90 or above means she's spawned to get fucked and should stay still]
 		try M going D;
 		compute monstermotion reactions of M.
+
+To compute toilet seeking of (M - woman-player):
+	if M is a diaper wetter:
+		compute diaper wetting of M;
+	otherwise if the woman-status of M < 90: [90 or above means she's spawned to get fucked, so she should stay still]
+		compute default toilet seeking of M.
 
 Part - Summoning
 
@@ -290,7 +297,7 @@ A time based rule (this is the woman spawning rule):
 	if woman-player is off-stage and woman-player is not partially-enslaved and woman-player is not permanently banished:
 		compute woman bimbo changes;
 	otherwise if woman-player is not caged and woman-player is not in HoleInWall:
-		if woman-player is not regional and (woman-player is not in WoodsBoss01 or playerRegion is not woods):
+		if woman-player is nonregional and (woman-player is not in WoodsBoss01 or playerRegion is not woods):
 			vanish woman-player;
 		otherwise if a random number between 1 and 40 is 1 or woman-player is asleep:
 			unless woman-player is in the location of the player or woman-player is nearby or woman-player is stranger or (the woman-status of woman-player >= 80 and the woman-status of woman-player is not 98), vanish woman-player.
@@ -659,11 +666,5 @@ To say PartialSuccessStealProvokedReaction of (M - woman-player):
 	say "[speech style of M]'Hey, give that back, bitch!'[roman type][line break]".
 
 
-Part - Play As Berri Scenes
-
-To say BerriCutsceneFlav:
-	say "[second custom style][one of]Oh god... I think I've stumbled into one of the [']cutscenes['] that [']Berri['] is scripted to experience![or]Don't tell me I've found another cutscene?![or][one of]Oh crap, it's another cutscene![or]How many of these ridiculous cutscene are there?![or]I've fallen right into another cutscene, haven't I?[or]Not good, not good... What do the showrunners have in store for me this time?![in random order][stopping][roman type][line break]".
-
-berriVineBossScene is a number that varies.
 
 Woman Framework ends here.

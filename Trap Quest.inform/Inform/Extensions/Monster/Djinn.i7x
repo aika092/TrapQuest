@@ -185,7 +185,7 @@ To compute djinn wishing of (M - a monster):
 		if diaper quest is 0, set next numerical response to "wish for a suck of [his of M] cock";
 		otherwise set next numerical response to "wish for a spanking";
 	if diaper lover >= 1, set next numerical response to "wish for a diaper change";
-	if short skirts permanent fetish > 0 or skimpy underwear fetish > -1, set next numerical response to "wish for a normal preference to [if short skirts permanent fetish > 0]skirt length[end if][if short skirts permanent fetish > 0 and skimpy underwear fetish > -1] and [end if][if skimpy underwear fetish > -1 and diaper quest is 1]underwear type[otherwise if skimpy underwear fetish > -1]underwear skimpiness[end if]";
+	if short skirts permanent suggestion > 0 or skimpy underwear suggestion > -1, set next numerical response to "wish for a normal preference to [if short skirts permanent suggestion > 0]skirt length[end if][if short skirts permanent suggestion > 0 and skimpy underwear suggestion > -1] and [end if][if skimpy underwear suggestion > -1 and diaper quest is 1]underwear type[otherwise if skimpy underwear suggestion > -1]underwear skimpiness[end if]";
 	set next numerical response to "wish for nothing";
 	compute multiple choice question;
 	let CNR be the chosen numerical response;
@@ -227,9 +227,9 @@ To compute djinn wishing of (M - a monster):
 			if C is transformable, potentially transform C;
 		if the number of entries in LC is 0, say "[speech style of M]'Hmm, looks like you didn't have anything I could actually bless. Not my problem though.'[roman type][line break]";
 	otherwise if CNR matches the text "preference":
-		say "[line break][speech style of M]'I shall make your preferences normal... But also give you what you now once again despise!'[roman type][line break][BigNameDesc of M] unfolds [his of M] folded arms and waves them at your head. You feel like your weird fetishy preference for [if short skirts permanent fetish > 0]short skirts[end if][if short skirts permanent fetish > 0 and skimpy underwear fetish > -1] and [end if][if skimpy underwear fetish > -1]slutty underwear[end if] has gone... ";
+		say "[line break][speech style of M]'I shall make your preferences normal... But also give you what you now once again despise!'[roman type][line break][BigNameDesc of M] unfolds [his of M] folded arms and waves them at your head. You feel like your weird fetishy preference for [if short skirts permanent suggestion > 0]short skirts[end if][if short skirts permanent suggestion > 0 and skimpy underwear suggestion > -1] and [end if][if skimpy underwear suggestion > -1]slutty underwear[end if] has gone... ";
 		let something-summoned be false;
-		if short skirts permanent fetish > 0:
+		if short skirts permanent suggestion > 0:
 			let C be a random off-stage transformation-rare fetish appropriate unclash summonable short-skirt-allowed skirt;
 			if C is nothing, let C be a random off-stage transformation-rare fetish appropriate unclash summonable short-skirt-allowed overdress;
 			if C is nothing, let C be a random off-stage plentiful fetish appropriate unclash summonable short-skirt-allowed skirt;
@@ -238,15 +238,15 @@ To compute djinn wishing of (M - a monster):
 				now something-summoned is true;
 				PinkWardrobeUnclash C;
 				summon C cursed with quest;
-		if skimpy underwear fetish > -1:
+		if skimpy underwear suggestion > -1:
 			let C be a random off-stage transformation-rare fetish appropriate unclash summonable skimpy-underwear-allowed knickers;
 			if C is nothing, let C be a random off-stage plentiful fetish appropriate unclash summonable skimpy-underwear-allowed knickers;
 			if C is a thing:
 				now something-summoned is true;
 				PinkWardrobeUnclash C;
 				summon C cursed with quest;
-		now short skirts permanent fetish is 0;
-		now skimpy underwear fetish is -1;
+		now short skirts permanent suggestion is 0;
+		now skimpy underwear suggestion is -1;
 		if something-summoned is false:
 			say "And nothing else happens?[line break][speech style of M]'Hmm, I could not find any appropriate items to summon upon you. How upsetting... and lucky, for you.'[roman type][line break][BigNameDesc of M] seems annoyed.";
 			FavourDown M;
@@ -348,7 +348,7 @@ To compute djinn wishing of (M - a monster):
 				let K be a random worn knickers;
 				say "You suddenly feel your [ShortDesc of K] vanish with a gust of air around your crotch!";
 				destroy K;
-			let E be a random eligible diaper;
+			let E be the chosen trap diaper;
 			say "With a flash of light, you feel a [ShortDesc of E] appear around your crotch, forcing your legs apart!";
 			summon E cursed with quest;
 	otherwise:
@@ -377,7 +377,7 @@ Definition: djinn is uniquely distracted:
 			otherwise say "I wish for better self-control!'[roman type][line break][BigNameDesc of djinn] nods.[line break][speech style of djinn]'You are finding it difficult to resist touching yourself. Don't worry, you won't have that trouble any more.'[roman type][line break][BigNameDesc of djinn] snaps [his of djinn] fingers and suddenly ropes shoot out of nowhere and begin wrapping around [NameDesc of M]. Moments later, [he of M] is wearing a tight set of bondage ropes that keep [his of M] hands bound behind [his of M] back.[line break][speech style of M]'Hey, what the hell is this?!'[roman type][line break][BigNameDesc of M] squeaks.[line break][speech style of djinn]'That's your final wish. No take-backs.'[line break][speech style of M]'This is bullshit! [big please] help me! How am I going to get free?'[roman type][line break][BigNameDesc of djinn] raises an eyebrow.[line break][speech style of djinn]'If you really want to ruin your wish and free your hands, I guess you will need to find a knife.'[roman type][line break][BigNameDesc of M] looks frustrated but also determined.[line break][speech style of M]'I know where I can find a knife. I just hope none of the robots find me first...'[roman type][line break][big he of M] starts walking away from you, clearly with a fixed destination in mind.";
 			if D is a direction, try M going D;
 			compute banishment of M;
-			if the explorer-bimbo of M <= 1, cutshow Figure of exposed explorer 1 cutscene 1 for M;
+			if the explorer-bimbo of M <= 1 and diaper quest is 0, cutshow Figure of exposed explorer 1 cutscene 1 for M;
 			otherwise cutshow the examine-image of M for M;
 			decide yes;
 	decide no.

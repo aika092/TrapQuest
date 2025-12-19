@@ -79,10 +79,10 @@ choice
 0 [Undo Counter]
 1 [School Names]
 0 [Excessive Hyperlinks]
-1 [Flexible Focus Windows]
+1 [used for dark mode announcement]
 24 [inventoryFocusLimit]
 1 [animationsEnabled]
-2 [darkMode]
+1 [darkMode]
 0 [popup buttons]
 30 [focus window height]
 0 [announcements seen]
@@ -91,7 +91,7 @@ choice
 15 [maximumMenuSize]
 1 [areYouSure]
 2 [combatSpeed]
-0 [simulatedInternet]
+-1 [simulatedInternet; deprecated]
 0 [extreme images visible]
 1 [visibilityVisible]
 1 [cursesVisible]
@@ -457,14 +457,6 @@ Does the player get hyperlinks in the text even when all the windows are open?
 To decide which number is excessiveHyperlinks:
 	decide on choice in row 46 of the Table of Settings.
 
-[!<DecideWhichNumberIsFlexibleFocusWindows>+
-
-How many of those clickable arrows to open windows does the player want?
-
-+!]
-To decide which number is flexible focus windows:
-	decide on choice in row 47 of the Table of Settings.
-
 Table of Random Settings
 title	subtable	description	toggle
 "Play with the exact settings I just chose for this run-through, and let me choose how I spend my benefits points."	--	--	quit rule
@@ -602,8 +594,8 @@ title	subtable	description	toggle
 "Non-inventory Hyperlinks disabled when all graphical windows are open: [if excessiveHyperlinks is 0]YES[otherwise]NO[end if]"	--	--	excessive hyperlinks toggle rule
 "When you are asked to respond yes / no: [if actual inline hyperlinks < 1]Respond by keyboard only (since you've disabled hyperlinks)[otherwise if YesNoPreference is 0]Respond by keyboard only[otherwise if YesNoPreference is 1]Respond by keyboard or text hyperlinks or map window buttons (all options will be provided to you)[otherwise]Respond by keyboard or text hyperlinks (obnoxious map window buttons don't appear)[end if]"	--	--	YesNoPreference toggle rule
 "Examine Items After Transform: On / Off: [if transformation cutscenes is 1]ON[otherwise]OFF[end if]"	--	--	transformation cutscenes toggle rule
-"Schoolteachers can give you new names: [if schoolNames is 0]OFF[otherwise]ON[end if]"	--	--	school names toggle rule
-"Simulated internet (at the end of the game it's revealed that nothing compromising was actually published to the real internet): [if simulatedInternet is 0]OFF[otherwise]ON[end if]"	--	--	simulated internet toggle rule
+"Academy teachers can give you new names: [if schoolNames is 0]OFF[otherwise]ON[end if]"	--	--	school names toggle rule
+["Simulated internet (at the end of the game it's revealed that nothing compromising was actually published to the real internet): [if simulatedInternet is 0]OFF[otherwise]ON[end if]"	--	--	simulated internet toggle rule]
 [ALL EXTRA OPTIONS SHOULD GO ABOVE SIMULATED INTERNET ROW, OR NON-DONATORS WON'T SEE THEM.]
 
 This is the new status toggle rule:
@@ -816,12 +808,6 @@ This is the excessive hyperlinks toggle rule:
 		now choice in row 46 of Table of Settings is 0;
 		now choice in row 25 of Table of Settings is 0. [shortcuts look crap in this mode]
 
-This is the flexible focus windows toggle rule:
-	if choice in row 47 of Table of Settings < 2:
-		increase choice in row 47 of Table of Settings by 1;
-	otherwise:
-		now choice in row 47 of Table of Settings is 0.
-
 This is the inventoryFocusLimit toggle rule:
 	if choice in row 48 of Table of Settings < 36:
 		increase choice in row 48 of Table of Settings by 1;
@@ -840,12 +826,6 @@ This is the animationsEnabled toggle rule:
 To decide which number is animationsEnabled:
 	if choice in row 49 of Table of Settings is -1, decide on 0; [required due to a legacy setting]
 	decide on choice in row 49 of Table of Settings.
-
-This is the darkMode toggle rule:
-	if darkMode < 2:
-		increase choice in row 50 of Table of Settings by 1;
-	otherwise:
-		now choice in row 50 of Table of Settings is 0.
 
 To decide which number is darkMode:
 	decide on 1;
@@ -992,7 +972,6 @@ Carry Out SettingsSetting:
 	clear the screen;
 	retrieve settings.
 Report SettingsSetting:
-	now previousGUILayout is -1;
 	resolve graphics windows mayhem;
 	fix window overhang;
 	refresh windows.

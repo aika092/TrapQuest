@@ -238,7 +238,11 @@ Definition: a slutty sister is seducable: decide no.
 
 Section 1 - Attack
 
-The latex punishment rule of a slutty sister is usually the no latex punishment rule.
+This is the nintendoll pop latex punishment rule:
+	if the latex-transformation of the player >= 5:
+		say "[speech style of current-monster]'Pop goes the weasel!'[roman type][line break][BigNameDesc of current-monster] grips your stomach with [his of current-monster] sharp fake nails, and you hear a loud 'POP'. Everything goes black.";
+		Execute Fainting.
+The latex punishment rule of a slutty sister is usually the nintendoll pop latex punishment rule.
 
 To compute kneeling reaction of (M - futanari-slutty-sister):
 	say "[BigNameDesc of M] stands over you, [his of M] [DickDesc of M] swaying gently like a pendulum.[line break][speech style of M]'It's business time.'[roman type][line break][if the player is not shameless]You shiver with shame.[end if]";
@@ -384,7 +388,7 @@ To say NearingClimaxFacesit of (M - bulging-slutty-sister):
 	say "[big his of M] [HoleDesc of M] spasms rapidly. [big he of M]'s getting close!".
 
 To decide which number is the rounds of sex left of (M - bulging-slutty-sister):
-	if the belly contents of M <= 0, decide on the sex-length of M;
+	if the belly contents of M <= 0, decide on the default rounds of sex left of M;
 	decide on 10.
 
 To compute facial climax of (M - bulging-slutty-sister):
@@ -477,7 +481,7 @@ To compute defeat of (M - bulging-slutty-sister):
 	if nintendolls-wand is not held:
 		now nintendolls-wand is in the location of the player;[you might still be in combat, so no autotaking.]
 	if the sleep of futanari-slutty-sister > 0:
-		compute dom suggestion of M.
+		compute dom offer of M.
 
 To compute defeat of (M - futanari-slutty-sister):
 	say "[speech style of M]'Unf! [if bulging-slutty-sister is combative]Fuck [him of the player] up, partner...'[otherwise]Fine, you win. Well done...'[end if][roman type][line break][BigNameDesc of M] falls unconscious.";
@@ -485,9 +489,9 @@ To compute defeat of (M - futanari-slutty-sister):
 	now the health of M is 1;
 	now the sleep of M is 300;
 	if the sleep of bulging-slutty-sister > 0:
-		compute dom suggestion of M.
+		compute dom offer of M.
 
-To compute dom suggestion of (M - a slutty sister):
+To compute dom offer of (M - a slutty sister):
 	let LT be a list of texts;
 	let PT be the substituted form of "[PityDesc of M]";
 	let PeT be the substituted form of "[PenisFuckDesc of M]";

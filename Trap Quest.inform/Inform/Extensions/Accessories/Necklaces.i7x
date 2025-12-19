@@ -485,5 +485,42 @@ To decide which number is the dexterity-influence of (C - vampiric cape):
 Definition: vampiric cape is black themed: decide yes.
 Definition: vampiric cape is red themed: decide yes.
 
+Part - Scarf
+
+scarf is a clothing. scarf is wool. scarf is unique. The printed name of scarf is "[clothing-title-before]scarf[clothing-title-after]". The text-shortcut of scarf is "scf".
+
+scarf can be mouth-mode.
+
+To decide which figure-name is clothing-image of (C - scarf):
+	decide on figure of scarf.
+
+Figure of scarf is the file "Items/Accessories/Neck/scarf1.png".
+
+To say ShortDesc of (C - scarf):
+	say "scarf".
+
+To say ClothingDesc of (C - scarf):
+	say "This scarf conceals collars and necklaces, and [if C is worn and C is mouth-mode]conceals[otherwise]could be used to conceal[end if] the bottom half of your face.".
+
+To decide which object is the concealer of (C - a gag):
+	if scarf is worn and scarf is mouth-mode, decide on scarf;
+	decide on nothing.
+
+To decide which object is the concealer of (C - a neckwear):
+	if scarf is worn, decide on scarf;
+	decide on nothing.
+
+Carry out wearing scarf:
+	reset multiple choice questions;
+	set numerical response 1 to "Wear the scarf around your neck as normal.";
+	set numerical response 2 to "Wear the scarf so that it's covering the bottom half of your face.";
+	compute multiple choice question;
+	if player-numerical-response is 1, now scarf is not mouth-mode;
+	otherwise now scarf is mouth-mode.
+
+To compute periodic effect of (C - scarf):
+	if there is an embodied thing penetrating face, now C is not mouth-mode.
+To compute school periodic effect of (C - scarf):
+	compute periodic effect of C.
 
 Necklaces ends here.

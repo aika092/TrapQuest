@@ -76,6 +76,11 @@ To say DiaperReaction of (M - witch):
 	say "[BigNameDesc of M] smirks and looks directly at your dampening crotch.[line break][speech style of M]'[one of]Ooh, I hope that you're going to give that to me later.'[or]You're such an exhibitionist! You love doing this in front of me, don't you?'[stopping][roman type][line break]";
 	if the player is modest, say "[one of]You are so ashamed you wish the ground would just open up and swallow you. [or][stopping]You turn bright red and refuse to look at [NameDesc of M] in the eye.".
 
+To compute diaper mess reaction of (M - witch):
+	say "[BigNameDesc of M] looks at you with unhidden lust, and begins to touch [himself of M].[line break][speech style of M]'[one of]Fuck, watching someone disgustingly degrading themselves in front of me... Really turns me on...'[or]My my my. Thank you for letting me watch again...'[stopping][roman type][line break]";
+	if voluntarySquatting is 1, say obsceneHumiliateReflect;
+	otherwise say severeHumiliateReflect.
+
 To compute disgusting spit reaction of (M - witch):
 	say "[BigNameDesc of M] subtly licks [his of M] lips as [he of M] watches you. [if the urine volume of face > 0][strongHumiliateReflect][otherwise][moderateHumiliateReflect][end if]".
 
@@ -140,6 +145,12 @@ To compute perception of (M - witch):
 		now doom notes is in the location of the player;
 		compute autotaking doom notes;
 		calm M;
+	otherwise if doomed < 0:
+		say "[BigNameDesc of M] notices you and seems jubilant.[line break][speech style of M]'I can't believe you actually stopped the ancient ones! This realm is once again safe for several millenia, thanks to you! Great job!'[roman type][line break]";
+		now noticed is 2;
+		now M is unbitchy;
+		calm M;
+		FavourUp M by 4;
 	if the latex-transformation of the player > 0:
 		if the curse-quest of M is 0 or the curse-quest of M >= 3:
 			if noticed is 0:
@@ -309,7 +320,7 @@ This is the witch summons cursed clothing rule:
 		let H be a random off-stage basic loot heels;
 		let C be a random off-stage corset;
 		let G be a random off-stage fetish appropriate gag;
-		let D be a random eligible diaper;
+		let D be the chosen trap diaper;
 		let A be a random off-stage pair of anklecuffs;
 		if H is actually summonable:
 			say "[one of][BigNameDesc of M] points at your feet and flicks [his of M] finger upward. You are forced onto your tiptoes as high heels appear on your feet![or][BigNameDesc of M] points at your feet and waves [his of M] hand upward. You are forced forward onto your toes as high heels appear on your feet![or][BigNameDesc of M] points at your feet and waves [his of M] hand upward. You very nearly lose your balance as you as high heels appear on your feet![or][BigNameDesc of M] points at your feet and flicks [his of M] finger upward. High heels appear on your feet, forcing you onto your tiptoes.[or][BigNameDesc of M] points at your feet and waves [his of M] hand upward. High heels appear on your feet, forcing you onto your tiptoes.[in random order]";
@@ -711,6 +722,12 @@ To compute teaching of (M - witch):
 			calm M;
 			now the witch-target-state of M is -1;
 			now M is unbitchy; [must keep this line here or we'll accidentally create an infinite loop]
+			compute teaching of M;
+		otherwise if doomed < 0:
+			say "[BigNameDesc of M] notices you and seems jubilant.[line break][speech style of M]'I can't believe you actually stopped the ancient ones! This realm is once again safe for several millenia, thanks to you! So yes, I'm happy to give you anything you need!'[roman type][line break]";
+			now M is unbitchy; [must keep this line here or we'll accidentally create an infinite loop]
+			calm M;
+			FavourUp M by 4;
 			compute teaching of M;
 		otherwise if the altar-uses of M <= 0:
 			say "[speech style of M]'I'm not going to leave you with my secrets. Not for free, anyway.'[roman type][line break]";

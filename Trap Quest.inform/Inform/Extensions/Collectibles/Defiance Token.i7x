@@ -27,7 +27,7 @@ To compute mass collectible reward of (T - a defiance token):
 	if NM > 0:
 		if the player is possessing a penis:
 			SpecialPenisUp NM;
-		otherwise if player futanari fetish > 0 and NM > 1:
+		otherwise if the player is possessing a vagina and player futanari fetish > 0 and NM > 1:
 			SpecialPenisUp NM * 3; [#LXorDD]
 		otherwise if strapon-dildo is held:
 			if the strap-length of strapon-dildo < 12:
@@ -40,7 +40,7 @@ To compute mass collectible reward of (T - a defiance token):
 				if strapon-dildo is not blessed:
 					say "You sense a blessing being laid upon it!";
 					bless strapon-dildo;
-		otherwise:
+		otherwise if diaper quest is 0:
 			blandify and reveal strapon-dildo;
 			now strapon-dildo is in the location of the player;
 			now the strap-length of strapon-dildo is NM * 3;

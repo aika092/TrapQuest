@@ -426,10 +426,10 @@ If the player has a short skirt addiction, we'll explain it to them here.
 
 +!]
 This is the short skirt addiction description rule:
-	if short skirts permanent fetish is 1:
+	if short skirts permanent suggestion is 1:
 		say "Your addiction to extreme short skirts makes you feel uncomfortable in anything but the tiniest dresses and skirts, and has given you a complete aversion to wearing trousers.";
-	otherwise if short skirts permanent fetish > 0:
-		say "Your body now only feels comfortable in skirts that are [SkirtLength short skirts permanent fetish] or shorter. It also feels wrong to wear trousers.".
+	otherwise if short skirts permanent suggestion > 0:
+		say "Your body now only feels comfortable in skirts that are [SkirtLength short skirts permanent suggestion] or shorter. It also feels wrong to wear trousers.".
 The short skirt addiction description rule is listed in the addiction listing rules.
 
 [!<TheToplessExposureAddictionDescriptionRule>+

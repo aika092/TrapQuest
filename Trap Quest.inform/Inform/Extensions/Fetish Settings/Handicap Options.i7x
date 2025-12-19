@@ -24,6 +24,7 @@ title	subtable	description	toggle
 "Sex can result in fainting - 0 points ([if choice in row 44 of the Table of Player Options is -1]never[otherwise if choice in row 44 of the Table of Player Options is 0]not now[otherwise if choice in row 44 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	sex fainting toggle rule
 "Realistic orifice re-tightening (you don't stay gaped which means you'll get sore faster) - 2 points ([if choice in row 60 of the Table of Player Options is -1]never[otherwise if choice in row 60 of the Table of Player Options is 0]not now[otherwise if choice in row 60 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	ungape toggle rule
 "Stronger Curses (The knives and altars can't remove cursed clothing, instead, altars can re-roll uncurse quests) - 5 points ([if the player is not the donator]Beta Testers only for now[otherwise if choice in row 78 of the Table of Player Options is -1]never[otherwise if choice in row 78 of the Table of Player Options is 0]not now[otherwise if choice in row 78 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	strongCurses toggle rule
+"Impending Doom (Start with the doom quest. You must act quickly before its too late!) - 2 points ([if the player is not a top donator]Alpha Testers only for now[otherwise if choice in row 95 of the Table of Player Options is -1]never[otherwise if choice in row 95 of the Table of Player Options is 0]not now[otherwise if choice in row 95 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	strongDoom toggle rule
 "Game Hates You (the most horribly unfair traps and outcomes) - 8 points ([if choice in row 51 of the Table of Player Options is -1]never[otherwise if choice in row 51 of the Table of Player Options is 0]not now[otherwise if choice in row 51 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	tough-shit toggle rule
 "Roguelike Mode (Saving is automatic every turn, your save file automatically loads when you open the game, and save file is deleted after typing 'restart' & after losing; causes a bit more lag but protects against crashes) - [if max-undos is 999999]0[otherwise if save game limit is 0]4[otherwise][(save game limit * 2) + 2][end if] points ([if save game limit is 0]not [otherwise][bold type][end if]chosen[roman type][if the player is the donator and save game limit is not 0], max [max-undos] undos[end if])"	--	--	save game toggle rule
 
@@ -330,6 +331,22 @@ This is the strongCurses random rule:
 	if choice in row 78 of the Table of Player Options is 0 or choice in row 78 of the Table of Player Options is 1, now choice in row 78 of the Table of Player Options is a random number between 0 and 1.
 The strongCurses random rule is listed in the random handicap rules.
 
+
+To decide which number is strongDoom:
+	if tutorial is 1 or the player is not a september 2025 top donator, decide on 0;
+	if choice in row 95 of the Table of Player Options <= 0, decide on 0;
+	decide on 1.
+This is the strongDoom toggle rule:
+	if choice in row 95 of the Table of Player Options < 2 and the player is a september 2025 top donator, increase choice in row 95 of the Table of Player Options by 1;
+	otherwise now choice in row 95 of the Table of Player Options is -1.
+This is the strongDoom nightmare rule:
+	if choice in row 95 of the Table of Player Options is 0, now choice in row 95 of the Table of Player Options is 1.
+The strongDoom nightmare rule is listed in the nightmare mode rules.
+This is the strongDoom random rule:
+	if choice in row 95 of the Table of Player Options is 0 or choice in row 95 of the Table of Player Options is 1, now choice in row 95 of the Table of Player Options is a random number between 0 and 1.
+The strongDoom random rule is listed in the random handicap rules.
+
+
 To decide which number is realisticArms:
 	if the player is in a predicament room and (the player is not in Predicament01 or current-predicament is vibe-photo-predicament or current-predicament is snitch-predicament) and the player is not in Predicament20, decide on 1;
 	decide on 0.
@@ -360,9 +377,10 @@ HANDICAP MENU ID CHEAT SHEET
 15) Game Hates You
 16) Forgetful Airhead
 17) Gape Goes Away
-18) Wake Up Lost Again
+18) Wake Up Lost Again/Map Resets on Fainting
 19) Sex Fainting
 20) Roguelike Mode
+21) Faster Doom
 ]
 
 Figure of bag_hunger_always is the file "Special/Menus/HandicapSelection/bag_hunger_always.png".
@@ -478,12 +496,18 @@ Figure of stronger_curses_always is the file "Special/Menus/HandicapSelection/st
 Figure of stronger_curses_never is the file "Special/Menus/HandicapSelection/stronger_curses_never.png".
 Figure of stronger_curses_not_this_time is the file "Special/Menus/HandicapSelection/stronger_curses_not_this_time.png".
 Figure of stronger_curses_this_time is the file "Special/Menus/HandicapSelection/stronger_curses_this_time.png".
+Figure of Faster Doom is the file "Special/Menus/HandicapSelection/Stronger Doom.jpg".
+Figure of faster_doom_always is the file "Special/Menus/HandicapSelection/stronger_doom_always.png".
+Figure of faster_doom_never is the file "Special/Menus/HandicapSelection/stronger_doom_never.png".
+Figure of faster_doom_not_this_time is the file "Special/Menus/HandicapSelection/stronger_doom_not_this_time.png".
+Figure of faster_doom_this_time is the file "Special/Menus/HandicapSelection/stronger_doom_this_time.png".
 Figure of Trapped In Bondage is the file "Special/Menus/HandicapSelection/Trapped In Bondage.jpg".
 Figure of Trapped_in_Bondage_always is the file "Special/Menus/HandicapSelection/Trapped_in_Bondage_always.png".
 Figure of Trapped_in_Bondage_never is the file "Special/Menus/HandicapSelection/Trapped_in_Bondage_never.png".
 Figure of Trapped_in_Bondage_not_this_time is the file "Special/Menus/HandicapSelection/Trapped_in_Bondage_not_this_time.png".
 Figure of Trapped_in_Bondage_this_time is the file "Special/Menus/HandicapSelection/Trapped_in_Bondage_this_time.png".
 Figure of Wake Up Lost Again is the file "Special/Menus/HandicapSelection/Wake Up Lost Again.jpg".
+Figure of Wake Up Lost Again 4p is the file "Special/Menus/HandicapSelection/Wake Up Lost Again 4p.jpg".
 Figure of Wake_Up_Lost_Again_always is the file "Special/Menus/HandicapSelection/Wake_Up_Lost_Again_always.png".
 Figure of Wake_Up_Lost_Again_never is the file "Special/Menus/HandicapSelection/Wake_Up_Lost_Again_never.png".
 Figure of Wake_Up_Lost_Again_not_this_time is the file "Special/Menus/HandicapSelection/Wake_Up_Lost_Again_not_this_time.png".
@@ -492,7 +516,7 @@ Figure of Wake_Up_Lost_Again_this_time is the file "Special/Menus/HandicapSelect
 Figure of Handicap Selection Backdrop is the file "Special/Menus/HandicapSelection/backdrop1.jpg".
 
 To decide which number is handicapSelectionTotalOptions:
-	decide on 20.
+	decide on 21.
 
 To decide which number is handicapSelectionTotalButtons:
 	decide on handicapSelectionTotalOptions + 3.
@@ -572,15 +596,17 @@ To decide which number is handicapMenuRow of (X - a number):
 		now N is 38;
 	otherwise if X is 19:
 		now N is 44;
-	otherwise if X is handicapSelectionTotalOptions:
+	otherwise if X is 20:
 		now N is 36;
+	otherwise if X is handicapSelectionTotalOptions:
+		now N is 95;
 	decide on N.
 
 To compute handicap toggle (D - a direction):
 	let N be handicapMenuRow of current menu selection;
 	if N > 0:
 		let T be the Table of Player Options;
-		if current menu selection is handicapSelectionTotalOptions, now T is the Table of Settings;
+		if current menu selection is 20, now T is the Table of Settings;
 		if current menu selection is 1:
 			if D is down:
 				if choice in row N of T is 4:
@@ -681,11 +707,14 @@ To decide which figure-name is handicap menu banner:
 	otherwise if CMS is 17:
 		decide on figure of Gape Goes Away;
 	otherwise if CMS is 18:
-		decide on figure of Wake Up Lost Again;
+		if map reset points is 0, decide on figure of Wake Up Lost Again;
+		otherwise decide on figure of Wake Up Lost Again 4p;
 	otherwise if CMS is 19:
 		decide on figure of Fainting From Sex;
+	otherwise if CMS is 20:
+		decide on figure of Roguelike Mode;
 	otherwise:
-		decide on figure of Roguelike Mode.
+		decide on figure of Faster Doom;
 
 To render full new handicap selection menu:
 	let CMS be current menu selection;
@@ -734,7 +763,7 @@ To render full new handicap selection menu:
 	let BTNS be 4;
 	repeat with X running from 1 to handicapSelectionTotalOptions:
 		let C be choice in row (handicapMenuRow of X) of the Table of Player Options;
-		if X is handicapSelectionTotalOptions, now C is choice in row (handicapMenuRow of X) of the Table of Settings; [roguelike saving is in the other table]
+		if X is 20, now C is choice in row (handicapMenuRow of X) of the Table of Settings; [roguelike saving is in the other table]
 		if X is 1:
 			if X is CMS, now BTNS is 6;
 			if C <= 1:
@@ -948,6 +977,15 @@ To render full new handicap selection menu:
 				now F is figure of Roguelike_mode_this_time;
 			otherwise:
 				now F is figure of Roguelike_mode_always;
+		otherwise if X is 21:
+			if C is -1:
+				now F is figure of faster_doom_never;
+			otherwise if C is 0:
+				now F is figure of faster_doom_not_this_time;
+			otherwise if C is 1:
+				now F is figure of faster_doom_this_time;
+			otherwise:
+				now F is figure of faster_doom_always;
 		display the image F in the graphics-window at optionX by optionY with dimensions optionW by optionH;
 		let TXT be the substituted form of "fet[if X < 10]0[end if][X]";
 		set a graphlink in the graphics-window identified as hyperinventoryobject for yourself from optionX by optionY to (optionX + optionW) by (optionY + optionH) as TXT, ignoring redundant links;

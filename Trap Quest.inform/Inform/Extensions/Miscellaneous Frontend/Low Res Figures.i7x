@@ -19,4 +19,6 @@ Figure of dq hotel loading is the file "Special/Loading/loading2b.png".
 Figure of dq mansion loading is the file "Special/Loading/loading8b.png".
 Figure of dq mansion messy loading is the file "Special/Loading/loading9b.png".
 
+Figure of berri loading is the file "Special/Loading/berri1.jpg".
+
 Low Res Figures ends here.

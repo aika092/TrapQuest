@@ -24,6 +24,8 @@ This is the second procedure the game runs when the game is opened, the first on
 +!]
 When play begins:
 	clear the screen;
+	repeat with N running from 1 to 20:
+		add 0 to the list of special passwords;
 	[the armUses of arms needs to have 2 entries right away to avoid errors when outrage or appearance is checked]
 	now the defaultLeftTarget of arms is yourself;
 	now the defaultRightTarget of arms is yourself;
@@ -223,6 +225,8 @@ To fill in legacy table blanks:
 	unless there is a choice in row 92 of the Table of Player Options, now choice in row 92 of Table of Player Options is 0;
 	unless there is a choice in row 93 of the Table of Player Options, now choice in row 93 of Table of Player Options is 0;
 	unless there is a choice in row 94 of the Table of Player Options, now choice in row 94 of Table of Player Options is -1;
+	unless there is a choice in row 95 of the Table of Player Options, now choice in row 95 of Table of Player Options is 0;
+	unless there is a choice in row 96 of the Table of Player Options, now choice in row 96 of Table of Player Options is 1;
 
 To fill in custom flavour blanks:
 	unless there is a name in row 10 of the Table of Info Options:
@@ -268,10 +272,7 @@ To correct table entries:
 		blank out the whole row.
 
 To retrieve settings:
-	if tutorial is 1:
-		now the current menu is the Table of Tutorial;
-		carry out the displaying activity;
-		clear the screen;
+	if tutorial is 1, compute new tutorial selection window; [sets tutorial to 0 if the 'I'm not new' option is picked]
 	if tutorial is 0:
 		now the current menu is the Table of Game Settings;
 		carry out the displaying activity;
@@ -336,8 +337,14 @@ To retrieve fetish options:
 		now choice in row 49 of the Table of Player Options is 2; [set the slow pregnancy choice to the 0 point option]
 		now choice in row 75 of the Table of Player Options is 0; [set the slow pregnancy choice to the 0 point option]
 		compute new fetish selection window;
-		compute new handicap selection window;
-		if the player is a top donator:
+		compute new handicap selection window;[To test text only, comment this line and the one above]
+		[now the current menu is the Table of Fetish Options;
+		carry out the displaying activity;
+		clear the screen;
+		now the current menu is the Table of Handicap Options;
+		carry out the displaying activity;
+		clear the screen;][To text images only, comment this line and the six above]
+		if 1 is 1 or the player is a top donator:
 			now the current menu is the Table of Festive Options;
 			carry out the displaying activity;
 			clear the screen;
@@ -357,12 +364,14 @@ To retrieve pregnancy options:
 
 To retrieve slow pregnancy options:
 	if pregnancy fetish is 1 and (the player is possessing a vagina or tg fetish >= 1):
-		now the current menu is the Table of Slow Pregnancy Options;
+		compute new pregnancy growth selection window;
+		compute new pregnancy birth selection window;
+		[now the current menu is the Table of Slow Pregnancy Options;
 		carry out the displaying activity;
 		clear the screen;
 		now the current menu is the Table of Slow Birth Options;
 		carry out the displaying activity;
-		clear the screen.
+		clear the screen.]
 
 To retrieve diaper focus options:
 	if diaper lover >= 1 and diaper quest is 0:

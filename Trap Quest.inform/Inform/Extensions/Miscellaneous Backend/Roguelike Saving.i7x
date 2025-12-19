@@ -17,8 +17,12 @@ When play begins (this is the restore if we have a savefile rule):
 				let A be a random initial animation track;
 				commence animation of A;
 			otherwise:
-				if diaper quest is 0, display figure of dungeon loading;
-				otherwise display figure of dq dungeon loading;
+				if berri fetish is 1:
+					display Figure of berri loading;
+				otherwise if diaper quest is 0:
+					display figure of dungeon loading;
+				otherwise:
+					display figure of dq dungeon loading;
 				say "Now loading...";
 	wait until animations are over;
 	if the file of save data exists:

@@ -85,7 +85,7 @@ To say IncontinenceDescription:
 
 To say PublicDisgraceDescription:
 	let PD be the public disgrace of the player;
-	if PD > 0:
+	if PD > 0 and infamy fetish > 0:
 		if PD < 20:
 			say "There's likely a small amount of embarrassing footage of you on the Internet, but nothing too bad or too widespread.";
 		otherwise if PD < 500:
@@ -140,7 +140,7 @@ To say OptionalDescription:
 		let S be the stealth of the player;
 		say "[bold type]You are currently able to act stealthy[roman type] [if S < 2]but you are currently wearing things that make you very visible, so everyone will probably notice you anyway[otherwise if S < 4]so there is a reasonable chance that you can slip past unnoticed[otherwise]and you are very well concealed, so there is a high chance that you can slip past wherever you like unnoticed[end if].";
 	if diaper lover >= 1, say IncontinenceDescription;
-	say PublicDisgraceDescription.
+	if infamy fetish > 0, say PublicDisgraceDescription.
 
 To say GrabStatus of (M - a monster):
 	say "is restraining you".

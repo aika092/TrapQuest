@@ -233,6 +233,8 @@ To Recover Clothing:
 			otherwise:
 				now I is cursed.
 
+Definition: a g-window is immune to change: decide yes.
+
 To Recover Containers:
 	repeat with I running through containers:
 		unless I is immune to change:
@@ -440,7 +442,8 @@ To Recover the Player:
 	[now the fake largeness of hair is 0;]
 	now the size of penis is the real size of penis;
 	if the size of penis < min penis size and the player is sexed male, now the size of penis is min penis size;
-	now the size of scrotum is the real size of scrotum;
+	now the size of scrotum is the size of penis;
+	if the size of scrotum < min scrotum size and the player is sexed male, now the size of scrotum is min scrotum size;
 	now the arousal of the player is 0;
 	if the latex-transformation of the player > 0:
 		if witch is alive and witch is friendly:

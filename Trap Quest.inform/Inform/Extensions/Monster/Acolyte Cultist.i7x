@@ -517,7 +517,7 @@ This is the cult conversion rule:
 					satisfy M;
 				rule succeeds;
 			otherwise:
-				if the charge of elder altar <= 0 and the player is possessing a penis and M is willing to charm snakes and (penis is penis-erect or doomed < a random number between 1 and 4 or presented-orifice is penis or chosen-orifice of M is penis):
+				if the player is possessing a penis and M is willing to charm snakes and (penis is penis-erect or doomed < a random number between 1 and 4 or presented-orifice is penis or chosen-orifice of M is penis):
 					do nothing;[She'll see if she's able to fuck you]
 				otherwise if the player is able to get pregnant or the player is not possessing a vagina or pregnancy fetish is 0:
 					say "[line break][speech style of M]'[one of]Rejoice, non-believer! You, too shall serve as a vessel for the power of the [great ones]!'[or]Your duty as a vessel is not yet over, non-believer!'[stopping][roman type][line break]";
@@ -591,7 +591,7 @@ To say ErectionLostFlav of (M - an acolyte):
 To say ErectionNearingClimaxFlav of (M - an acolyte):
 	say "[BigFuckerDesc of M] begins to chant louder and louder as [he of M] bounces on your [player-penis]! [big his of M] ritual must be close to finishing!";
 
-To say ErectionClimaxFlav of (M - an acolyte):
+To say PenileClimaxFlav of (M - an acolyte):
 	if penis is not penis-erect:
 		say ErectionLostFlav of M;
 	otherwise:

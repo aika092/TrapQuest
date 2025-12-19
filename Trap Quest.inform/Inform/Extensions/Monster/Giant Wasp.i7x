@@ -220,10 +220,10 @@ To compute (M - a giant wasp) fathering (W - a giant wasp):
 		let A be a random off-stage explorer;
 		say "[BigNameDesc of M] disappears between a few trees and comes back tugging along a [ShortDesc of A] by the wrist. [big him of M] sprinkles a glittering powder onto the egg, which causes it to crack once... twice...and then explode in a shower of fragments and confetti. Sitting in its place is a neatly folded wasp costume, which [ShortDesc of A] excitedly picks up and begins to put on it. You watch in utter confusion as [BigNameDesc of M] gives the [NameDesc of W] a whispered lecture on how to method act properly.";
 	now W is in the location of M;
-	newbornSetup W;
+	lesserSetup W;
 	now the fertilisation-cooldown of M is 200.
 
-To newbornSetUp (W - a giant wasp):
+To lesserSetUp (W - a giant wasp):
 	set up W;
 	bore W.
 
@@ -513,7 +513,7 @@ To say PrepTaunt of (M - domesticated wasp) in (F - asshole):
 To compute (M - a giant wasp) fathering (W - domesticated wasp):[mythical creatures only]
 	say "[BigNameDesc of M] swoops down and lands next to the egg. A different phallic appendage protrudes itself from the wasp's underbelly and it drips a few drops of a mostly clear liquid onto the egg. You watch, paralysed with awe and fear, as the white egg changes colour to light brown, doubles in size, and then just as quickly, starts to crack. Within seconds, a familiar looking larva has emerged from the egg. The older wasp is suddenly hit in the side with a pink bolt of energy, and it flees as a tiny fairy with [his of fairy-witch] hair drawn back into a ponytail bursts from the bushes. [big he of fairy-witch] sprinkles the young wasp with a handful of glittering dust as [he of fairy-witch] wraps a pair of fibrous reins around [his of W] head, causing [him of W] to go through the entire metamorphosis a normal wasp goes through in [his of W] youth, but in the span of only a few seconds. The fairy seems too absorbed with [his of fairy-witch] new mount to care about you.";
 	now W is in the location of M;
-	newbornSetup W;
+	lesserSetup W;
 	now the fertilisation-cooldown of M is 200.
 
 [This is a response to a first time greeting.]

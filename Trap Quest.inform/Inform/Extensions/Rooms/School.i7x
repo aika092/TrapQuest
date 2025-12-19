@@ -222,7 +222,7 @@ To compute dungeon long term challenge of (M - a monster):
 To compute dungeon tentacle challenge of (M - a monster):[maybe once the tentacle monster is large enough it breaks you out of prison]
 	let T be a random off-stage tentacle monster;
 	if T is monster:
-		now T is newborn;
+		now T is lesser;
 		set up T;
 		now T is in the location of the player;
 		now the sleep of T is 7;
@@ -252,7 +252,7 @@ To compute dungeon diaper setup of (M - a monster):
 	if D is not a clean diaper:
 		say "With a few swift motions, [NameDesc of M] has [if D is a thing]removed your [D] and [end if]put you in a new fresh diaper.";
 		if D is a thing, destroy D;
-		let D be a random eligible diaper;
+		let D be the chosen trap diaper;
 		summon D cursed with quest;
 	otherwise if D is not cursed:
 		say "With an arcane gesture, [NameDesc of M] lays a curse on your [D]!";

@@ -219,17 +219,17 @@ To compute periodic effect of (C - meat-toilet-panties):
 		if C is crotch-intact and the stomach-urine of the player is 0:
 			say "[bold type]Now that your stomach is empty of [urine], the lid of your meat toilet panties opens itself up, and is no longer protecting your [player-crotch]![roman type][line break]";
 			now C is crotch-exposing;
-		otherwise if C is crotch-exposing and the stomach-urine of the player > 0 and the number of embodied things penetrating a fuckhole is 0 and the number of worn tail plugs is 0:
+		otherwise if C is crotch-exposing and the stomach-urine of the player > 0 and the number of embodied things penetrating a fuckhole is 0 and the number of worn tailed clothing is 0:
 			say "[bold type]Your meat toilet panties react to the [urine] in your stomach, and the lid of the toilet seat closes, protecting your [player-crotch]! For now...[roman type][line break]";
 			now C is crotch-intact;
-		otherwise if C is crotch-ripped and the class of the player is human toilet and the stomach-urine of the player > 0 and the number of embodied things penetrating a fuckhole is 0 and the number of worn tail plugs is 0:
+		otherwise if C is crotch-ripped and the class of the player is human toilet and the stomach-urine of the player > 0 and the number of embodied things penetrating a fuckhole is 0 and the number of worn tailed clothing is 0:
 			say "[bold type]Your meat toilet panties react to the [urine] in your stomach, and a new lid of the toilet seat appears, protecting your [player-crotch]! For now...[roman type][line break]";
 			now C is crotch-intact;
 	otherwise:
 		if C is crotch-intact and the stomach-semen of the player is 0:
 			say "[bold type]Now that your stomach is empty of [semen], the lid of your meat toilet panties opens itself up, and is no longer protecting your [player-crotch]![roman type][line break]";
 			now C is crotch-exposing;
-		otherwise if C is crotch-exposing and the stomach-semen of the player > 0 and the number of embodied things penetrating a fuckhole is 0 and the number of worn tail plugs is 0:
+		otherwise if C is crotch-exposing and the stomach-semen of the player > 0 and the number of embodied things penetrating a fuckhole is 0 and the number of worn tailed clothing is 0:
 			say "[bold type]Your meat toilet panties react to the [semen] in your stomach, and the lid of the toilet seat closes, protecting your [player-crotch]! For now...[roman type][line break]";
 			now C is crotch-intact.
 

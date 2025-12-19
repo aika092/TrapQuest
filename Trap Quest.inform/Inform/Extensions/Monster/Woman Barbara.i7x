@@ -142,7 +142,7 @@ To compute friendly boredom of (M - woman-player):
 			if M is in the location of the player, say BecomesBoredFlav of M.
 
 To vanish (M - a monster):
-	if the woman-status of M is 98 and the location of woman-player is urinals, now the location of woman-player is use-the-floor;
+	if woman-player is in the woods and the location of woman-player is urinals, now the location of woman-player is use-the-floor;
 	if M is woman-player and M is introduced:
 		if M is partially-enslaved:
 			regionally place M;
@@ -199,7 +199,6 @@ To compute unique unsimulated periodic effect of (M - woman-player):
 				otherwise:
 					say "The [semen] flows to the ground.";
 			if collecting is nothing, SemenPuddleUp 2 in L.
-
 
 Part - Magic Pistol
 
@@ -905,7 +904,7 @@ A later time based rule (this is the barbara stool gets noticed rule):
 			now the stool-scene of W is 1;
 		let M be W;
 		repeat with N running through reactive male monsters:
-			if the refractory-period of N <= 0 and (N is uninterested or N is friendly), now M is N;
+			if the refractory-period of N <= 0 and (N is uninterested or N is friendly) and N is not seduced, now M is N;
 		if M is not W:
 			compute barbara stool fuck of M;
 			if the refractory-period of M <= 0, now the refractory-period of M is 150. [Even if the NPC doesn't usually have a refractory period, we need to give them one here or they will fuck Barbara every single turn]
@@ -980,6 +979,10 @@ To compute PlayerWomanStoolFuck:
 		say "You feel more dominant!";
 		DominateUp W;
 		DelicateDown 2;
+		if the penetrativevirgin of the player is 1:
+			virginremovecurse;
+			now the penetrativevirgin of the player is 0;
+			now penisvirginity-taker is W;
 		say "With a proud smirk, you loosen [his of W] binds a bit, and then turn [him of W] towards the [random N-viable direction] and give [him of W] a hard thwack on the rear, which makes [him of W] squeal in pain and begin waddling [his of W] way out of the room. With those weakened knots, [he of W][']ll manage to free [himself of W] after not too long, but [he of W] won't know that it was you who tormented [him of W] first.";
 		now the stool-scene of W is 2;
 		vanish W.
@@ -1080,17 +1083,12 @@ Report going when the player is the donator and the woman-bimbo of woman-player 
 			now face is vaginal-origin;
 			say "As [he of woman-player] finishes filling your cheeks with this [semen] from god-knows-who[']s-balls, you watch [him of woman-player] breathe a sigh of relief as the pink wisp behind [his of woman-player] head fades away into nothingness.[line break][speech style of woman-player]'Thanks so much, [NameBimbo]. If it wasn't for me stumbling into you, and you letting me do that, the wisp would have transformed me into a slut!'[roman type][line break]You are tempted to point out that with those massive tits pretty much fully on show, [he of woman-player] looks pretty damn slutty already, but mercifully, your mouth full of [semen] prevents that from being an option in the first place.";
 			FavourUp woman-player;
-			if there is a nonstalking wisp and the player is getting unlucky:
-				let W be a random nonstalking wisp;
-				silently set up W;
-				now the wisp-quest of W is brothel-wisp-quest;
-				now the wisp-trigger of W is lose-mouthful-wisp-trigger;
-				now the wisp-punishment of W is bimbo-wisp-punishment;
-				if (a random number between 0 and 1) + (a random number between 0 and 1) < game difficulty, now the wisp-punishment of W is a random appropriate wisp punishment;
-				now W is everywhere;
-				update backdrop positions;
-				now the text-shortcut of W is the substituted form of "[ColourDesc of W]";
-				say "And then suddenly, [bold type]a [ColourDesc of W] curse wisp appears, and begins hovering behind you! [roman type]You can sense that you must [bold type][wisp-quest of W][roman type] before you next [bold type][wisp-trigger of W][roman type], or else you will [bold type][wisp-punishment of W][roman type]. [GotUnluckyFlav][line break][speech style of woman-player]'Oh no... I didn't know that the wisp would just transfer over to you! I'm so sorry, [NameBimbo]! And so ashamed!'[roman type][line break]Before you can stop [him of woman-player], [NameDesc of woman-player] has run away, holding [his of woman-player] hands over [his of woman-player] face in shame.";
+			if there is a nonstalking evil-wisp and the player is getting unlucky:
+				let W be a random nonstalking evil-wisp;
+				silently set up wisp quest brothel-wisp-quest for W;
+				silently set up wisp trigger lose-mouthful-wisp-trigger for W;
+				silently set up wisp GUI for W;
+				say "And then suddenly, [AnnounceNewWisp W]. [GotUnluckyFlav][line break][speech style of woman-player]'Oh no... I didn't know that the wisp would just transfer over to you! I'm so sorry, [NameBimbo]! And so ashamed!'[roman type][line break]Before you can stop [him of woman-player], [NameDesc of woman-player] has run away, holding [his of woman-player] hands over [his of woman-player] face in shame.";
 				vanish woman-player;
 		otherwise:
 			say "You shake your head and back away. [BigNameDesc of woman-player] whines in panic... And then you hear [his of woman-player] belly rumble. [big he of woman-player] groans in dismay as the pink wisp pulses with energy, and then a shower of pink magic sparkles surrounds [NameDesc of woman-player]. A moment later, the pink wisp is gone, but [NameDesc of woman-player] looks a bit different.";
@@ -1114,11 +1112,12 @@ Report going when the player is the donator and the woman-bimbo of woman-player 
 		interest woman-player;
 		now the location of the player is urinals;
 		say "As you arrive you see [NameDesc of woman-player] is here - well, down there. [big he of woman-player] has been buried up to [his of woman-player] neck![line break][speech style of woman-player]'Hey [NameBimbo]... I'm afraid I can't help you out right now, for obvious reasons! Don't worry, I think the vines will let me go eventually, and unless you have a shovel, I don't think there's anything you can do to help me right now! So maybe just, you know, see you around?'[roman type][line break]";
-		while there is a nonstalking wisp:
-			let W be a random nonstalking wisp;
-			silently set up W;
-			now the wisp-quest of W is use-urinal-wisp-quest;
-			say "Suddenly, [bold type]a [ColourDesc of W] curse wisp appears, and begins hovering behind you! [roman type]You can sense that you must [bold type][wisp-quest of W][roman type] before you next [bold type][wisp-trigger of W][roman type], or else you will [bold type][wisp-punishment of W][roman type]. ";
+		if there is a nonstalking evil-wisp:
+			let W be a random nonstalking evil-wisp;
+			silently set up wisp quest use-urinal-wisp-quest for W;
+			silently set up wisp trigger for W;
+			silently set up wisp GUI for W;
+			say AnnounceNewWisp W;
 		say "[paragraph break]You understand all too clearly that [bold type][WomanName][']s face currently counts as a urinal.[roman type][line break]";
 		say "[speech style of woman-player]'...Why are you looking at me like that...?!'[roman type][line break]".
 
@@ -1266,7 +1265,7 @@ This is the woman gives birth to a tentacle monster rule:
 	if the woman-status of woman-player < 80 and the woman-pregnancy of woman-player is 3 and woman-player is in the location of the player and the number of monsters in the location of the player is 1:
 		let M be a random off-stage tentacle monster;
 		if M is monster:
-			now M is newborn;
+			now M is lesser;
 			set up M;
 			now M is in the location of the player;
 			say "[BigNameDesc of woman-player] collapses to the ground.[line break][speech style of woman-player]'Oh fuck, it's coming!'[roman type][line break][big he of woman-player] spreads [his of woman-player] legs, exposing [his of woman-player] dilated pussy and womb. You watch with [horror the bimbo of the player] as one, two, then three tentacles pry [his of woman-player] cunt open even further and then the thing inside begins to pull itself out.[line break][speech style of woman-player]'[if the woman-bimbo of woman-player < 4]It hurts! Get it out! It hurts so much[otherwise]I'm going to be a mama[end if]!'[roman type][line break][BigNameDesc of woman-player] flails helplessly as a basketball-sized lump of grey flesh forces its way out of [his of woman-player] and into the world. [big he of woman-player] lies exhausted on the ground as [his of woman-player] spawn's single giant eye focuses on you.";

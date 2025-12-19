@@ -152,7 +152,9 @@ Report resisting:
 			say FriendlySexResistFlav of M;
 			if M is monster, compute FriendlySexRelease of M;
 		otherwise:
-			if M is penetrating a body part or M is grabbing the player:
+			if M is penetrating penis and M is not normal-penis-fucking:
+				say TQMasturbationResistFlav of M;
+			otherwise if M is penetrating a body part or M is grabbing the player:
 				say SexResistFlav of M;
 				if M is monster, compute sex resist punishment of M;
 			otherwise if M is wrangling a body part:
@@ -189,6 +191,9 @@ To say WrangleResistSuccessFlav of (T - a thing):
 To say SexResistFlav of (T - a thing):
 	if diaper quest is 1, say DQResistFlav of T;
 	otherwise say "[if T is penetrating a body part][one of]You struggle in vain to free yourself![or]You try to crawl away but are being held in place![or]You resist being used as much as you can![purely at random][otherwise][DefaultResistFlav of T][end if]".
+
+To say TQMasturbationResistFlav of (T - a thing):
+	say "[one of]You fight against your impending orgasm![or]You try your best to ignore the pleasurable sensations![or]You do your best to hold back from letting yourself cum![or][variable custom style][if the player is horny]Fuck, if I'm not careful, I'm gonna cum[otherwise]Think unsexy thoughts[end if]![roman type][line break][at random]".
 
 To say DQResistFlav of (T - a thing):
 	say "You struggle in vain to free yourself!".
@@ -362,6 +367,7 @@ Definition: a monster is eager to warn angrily: decide no.
 [oral sex often has its own penalties for oral resisting so we don't need to double up on that here]
 Definition: a monster (called M) is classicly eager to warn angrily:
 	if M is not intelligent, decide no;
+	if diaper quest is 1 and M is not changing the player, decide yes;
 	if M is penetrating a fuckhole or M is penetrating breasts, decide yes;
 	decide no.
 
@@ -392,7 +398,7 @@ To compute sex resist final warning of (M - a monster):
 	say "[speech style of M]'[one of]Do not test me, [if diaper quest is 0]bitch[otherwise]child[end if].'[or]My patience has reached its limit!'[or]Don't you dare defy me a moment longer...'[or]I'm fed up of giving you warnings. What happens next is your own fault.'[in random order][roman type][line break]That sounds like [NameDesc of M][']s final warning...".
 
 To compute sex resist no more warnings of (M - a monster):
-	say "[speech style of M]'[one of][if the times-warned of M <= 2]That's it! [end if]You're going to suffer for that.'[or]My patience has reached its limit!'[or]Don't you dare defy me a moment longer...'[or]I'm fed up of giving you warnings. What happens next is your own fault.'[in random order][roman type][line break]That sounds like [NameDesc of M][']s final warning...".
+	say "[speech style of M]'[one of][if the times-warned of M <= 2]That's it! [end if]You're going to suffer for that.'[or]My patience has reached its limit!'[or]Don't you dare defy me a moment longer...'[or]I'm fed up of giving you warnings. What happens next is your own fault.'[in random order][roman type][line break]".
 
 To compute post sex punishment of (M - a monster):
 	say AngryPostSexPunishmentFlav of M;
@@ -404,6 +410,19 @@ To say AngryPostSexPunishmentFlav of (M - a monster):
 To compute angry post sex punishment of (M - a monster):
 	compute default angry punishment of M.
 
+
+thicker-diaper-punishment is a sex resist punishment. The priority of thicker-diaper-punishment is 2.
+
+Definition: thicker-diaper-punishment (called P) is appropriate:
+	if resist-target is changing the player and resist-target is not bulkier-diaper-committed, decide yes;
+	decide no.
+
+To compute punishment of (P - thicker-diaper-punishment):
+	say AngryBulkierDiaperPunishmentFlav of resist-target;
+	now resist-target is bulkier-diaper-committed.
+
+To say AngryBulkierDiaperPunishmentFlav of (M - a monster):
+	say "[speech style of M]'[one of]You know what? For being such a pain in the butt, I'm going to upgrade you to even thicker diapers! See how you like this...'[or]Oh, you're going to be like that, are you? Well then, say hello to EVEN THICKER DIAPERS! Permanently!'[or]If you're resisting, you're just telling me that you need even bulkier diapers to learn true submission. So, let me find just the thing...'[in random order][roman type][line break]".
 
 anger-punishment is a sex resist punishment. The priority of anger-punishment is 1.
 

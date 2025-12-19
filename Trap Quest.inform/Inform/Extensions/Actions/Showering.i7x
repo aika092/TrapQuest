@@ -50,6 +50,7 @@ Check entering hot-tub:
 
 Carry out showering:
 	now tracked-semen is 0;
+	if camera-drone is stalking, compute dunking camera-drone;
 	if the noun is water-body:
 		let W be a random water-body-scenery in the location of the player;
 		if W is water-body-scenery:

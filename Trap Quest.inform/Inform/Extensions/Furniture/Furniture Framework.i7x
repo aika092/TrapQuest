@@ -312,8 +312,11 @@ To compute furniture resting on (G - an automated changing station):
 	if G is hotel changing station, cutshow figure of automated changing station for G;
 	if auto is 0, say "You enter the automated changing station and close the door. You push your wrists into the cuffs above your head. ";
 	let diaperChangeAllowed be 1;
+	if the class of the player is berri:
+		if latest-berri-stage >= 1 and latest-berri-stage <= 5, now diaperChangeAllowed is 2;
+		otherwise now diaperChangeAllowed is 3;
 	let K be a random worn knickers;
-	if K is knickers:
+	if K is knickers and diaperChangeAllowed is 1:
 		repeat with C running through worn clothing:
 			if the bottom-layer of C > the bottom-layer of K:
 				now diaperChangeAllowed is 0;
@@ -326,8 +329,8 @@ To compute furniture resting on (G - an automated changing station):
 			if K is glue:
 				now diaperChangeAllowed is 0;
 				say "Nothing happens. Perhaps the robots don't have a way to deal with the glue.";
-	if diaperChangeAllowed is 1:
-		if there is a currently uncovered diaper and plain-largish-diaper is off-stage and plain-largish-diaper is DQBulkier and the player is getting unlucky:
+	if diaperChangeAllowed > 0:
+		if diaperChangeAllowed is not 2 and there is a currently uncovered diaper and plain-largish-diaper is off-stage and plain-largish-diaper is DQBulkier and the player is getting unlucky:
 			say "Instead of first removing your old diaper, the robotic arms just immediately begin to add the new diaper on top.[line break][second custom style]'ERROR, ERROR, ERROR. DIAPER MISALIGNED. APPLYING SEALANT.'[roman type][line break]A polite female robotic voice speaks loudly and calmly from a speaker above you. Then robotic arms ending in nozzles descend, forcing their way underneath your layers of padding, to apply glue to each layer.";
 			DiaperAdd plain-largish-diaper;
 			gluify diaper-stack;
@@ -336,6 +339,12 @@ To compute furniture resting on (G - an automated changing station):
 			say "When the wristcuffs release you and the door opens, you are now wearing a [diaper-stack].";
 		otherwise:
 			let D be plain-largish-diaper;
+			if diaperChangeAllowed is 2:
+				increase latest-berri-stage by 1;
+				if latest-berri-stage > 5, now latest-berri-stage is 5;
+				now bulk-search-level is latest-berri-stage;
+				now D is the chosen diaper;
+				cutshow Figure of Berri Cutscene 7 for G;
 			say "The wristcuffs constrict themselves until you are locked in place. Robotic arms immediately get to work [if K is knickers]removing your [ShortDesc of K] [end if][if K is dirty knickers]and wiping you down [end if]";
 			if K is knickers:
 				fully clean K;
@@ -343,23 +352,49 @@ To compute furniture resting on (G - an automated changing station):
 			otherwise:
 				summon D uncursed;
 			if the player is in a predicament room, now D is predicament-temporary;
-			if the player is not in a predicament room and the player is getting unlucky:
+			if the player is not in a predicament room and ((diaperChangeAllowed is 2 and the player is not getting lucky) or (diaperChangeAllowed is 1 and the player is getting unlucky)):
 				say "and... huh?! It seems the robotic arms have decided to do something else before putting a new diaper on you!";
 				let R be a random number between 1 and 3;
+				let E be a random regional explorer;
+				if diaperChangeAllowed is 2 and E is explorer and the player is able to orgasm, now R is 2;
 				if R is 1 and enema fetish is 1 and asshole is not actually occupied:
 					say "You feel your [asshole] being invaded by an enema nozzle![line break][variable custom style]Uh-oh.[roman type][line break]There's absolutely nothing you can do as your belly is turned into a container for a pint of ice-cold water!";
 					AssFill 10 water;
 				otherwise if R is 2 and the player is able to orgasm:
-					say "A vibrating wand is pressed against your [genitals]! Your arousal quickly goes through the roof as the powerful toy works its magic. You [if the player is not a pervert]hold off for as long as you can but [end if]soon find yourself reaching a shuddering climax!";
+					say "A vibrating wand is pressed against your [genitals]! Your arousal quickly goes through the roof as the powerful toy works its magic. ";
+					now player-numerical-response is 0;
+					if diaperChangeAllowed is 2 and E is explorer:
+						now E is in the location of the player;
+						say "[line break][variable custom style]Oh fuck, I'm gonna cum![roman type][line break]Suddenly, [NameDesc of E] appears on the other side of the door's window! [big he of E] can see you from the belly upwards![line break][variable custom style][big he of E] doesn't know I'm getting masturbated and about to cum right now! [big he of E] thinks I'm just getting a diaper change![roman type][paragraph break][speech style of E]'Hey [NameBimbo]... Good to see you here...'[roman type][line break][BigNameDesc of E] tries to start a conversation from the other side of the glass.";
+						interest meet E;
+						reset multiple choice questions;
+						now temporaryYesNoBackground is Figure of Berri Cutscene 7;
+						set numerical response 1 to "Pretend you can't hear [him of E] and don't reply (only slightly humiliating, but your headgear won't count this as you partaking in a Berri scene)";
+						set numerical response 2 to "Try to talk back (not humiliating unless [he of E] can tell you're orgasming, in which case, very humiliating)";
+						compute multiple choice question;
+						if player-numerical-response is 1:
+							say "You shrug and shake your head as if you can't hear [him of E], and then clench your lips together as you endure a shuddering climax, and pray that [NameDesc of E] can't tell.";
+						otherwise:
+							say "[variable custom style]'Hey again, I'm err... I'm just... G...'[roman type][line break]";
+					otherwise:
+						say "You [if the player is not a pervert]hold off for as long as you can but [end if]soon find yourself reaching a shuddering climax!";
 					now player-fucking is DOMINANT-DOMINANT; [prevents ejaculation from being handled]
 					vaginally orgasm shamefully;
 					now player-fucking is DOMINANT-NONE;
+					if player-numerical-response is 1:
+						say moderateHumiliateReflect;
+					otherwise if player-numerical-response is 2:
+						let R be a random number between 1 and 20;
+						if R <= the intelligence of the player:
+							say "[variable custom style]'...Getting a quick change. I'll be out in a moment.'[roman type][line break]You just about manage to complete your sentence despite the mind-shattering orgasm.[line break][variable custom style]Phew.[roman type][line break]";
+						otherwise:
+							say "[variable custom style]'...Gaaaaaaah...!'[roman type][line break]You completely fail to complete your sentence as you experience a mind-shattering orgasm.[paragraph break][speech style of E]'[NameBimbo]... Wait... Are you... Are you ORGASMING right now?! What the fuck are you getting up to in there?!'[roman type][line break][BigNameDesc of E] looks shocked and appalled.[paragraph break][variable custom style]No... I've been caught![roman type][line break][severeHumiliateReflect]";
+						progress quest of berri-quest;
 				otherwise:
 					say "You feel a prick in your side as one of the arms injects you with a needle. What was that?! You feel all... numb... inside. Like you can't feel your bladder?! It seems like [bold type]the changing station has just rendered you temporarily incontinent.[roman type][line break]";
 					increase temporary-bladder-incontinence by 2;
-				say "[GotUnluckyFlav][line break]At least the arms seem to be finished with their fun for now. The claws reach down for a clean diaper ";
+				say "[if diaperChangeAllowed is not 2][GotUnluckyFlav][line break][end if]At least the arms seem to be finished with their fun for now. The claws reach down for a clean diaper ";
 			say "and before you know it you are wearing a dry [MediumDesc of D]! The wristcuffs release you and the door opens.";
-			force clothing-focus redraw;
 			if K is diaper, DiaperAddictUp 1;
 			trigger change-wisp-trigger.
 
@@ -455,7 +490,7 @@ A time based rule (this is the stuck in diaper tank rule):
 					let D be plain-massive-diaper;
 					if D is on-stage:
 						now D is a random off-stage massive diaper;
-						if D is nothing, now D is a random eligible diaper;
+						if D is nothing, now D is the chosen trap diaper;
 					blandify and reveal D;
 					now the urine-soak of D is the soak-limit of D;
 					now the perceived-urine-soak of D is the soak-limit of D;

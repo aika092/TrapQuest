@@ -363,11 +363,6 @@ To set numerical response (N - a number) to (T - a text):
 		unless T is "", increase N by 1;
 	decide on N.]
 
-To compute single choice question (T - a text):
-	reset multiple choice questions;
-	set numerical response 1 to T;
-	compute multiple choice question.
-
 To compute multiple choice question:
 	let inputNumber be 0;
 	let validAnswer be 0;
@@ -618,6 +613,9 @@ To say unique-verb-desc of (T - an electric fan):
 
 To say unique-verb-desc of (T - squeezy-bottle):
 	if inline hyperlinks >= 2, say "[if T is held] [link][bracket]dr[close bracket][as]drop [text-shortcut of T][end link][otherwise] [link][bracket]ta[close bracket][as]ta [text-shortcut of T][end link][end if] [link][bracket]dri[close bracket][as]drink squeezy[end link]".
+
+To say unique-verb-desc of (T - straw-bottle):
+	if inline hyperlinks >= 2, say " [link][bracket]dri[close bracket][as]drink straw[end link]".
 
 To say unique-verb-desc of (T - a food):
 	if inline hyperlinks >= 2, say "[if T is held and T is not candy] [link][bracket]dr[close bracket][as]drop [text-shortcut of T][end link][otherwise if T is not held] [link][bracket]ta[close bracket][as]ta [text-shortcut of T][end link][end if] [link][bracket]eat[close bracket][as]eat [text-shortcut of T][end link]".

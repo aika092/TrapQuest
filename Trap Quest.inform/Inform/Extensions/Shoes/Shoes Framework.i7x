@@ -1,11 +1,9 @@
 Shoes Framework by Shoes begins here.
 
-shoes is a kind of clothing.
+shoes is a kind of clothing. The printed name of a shoes is usually "[clothing-title-before]pair of [UniqueShortDesc of item described][clothing-title-after]". Understand "pair", "pair of" as shoes.
 
-Definition: a shoes (called C) is external fluid immune:
-	if C is latex or C is metal or C is glass or C is pvc or C is biological or C is plastic or C is leather, decide yes;
-	decide no.
-To decide which number is the soak-limit of (C - a shoes): decide on 7. [All shoes can have liquid soak into the inside]
+Definition: a shoes is foot covering: decide yes.
+To decide which number is the default-soak-limit of (C - a shoes): decide on 7.
 
 Definition: a shoes is hindrance-enabling: decide no. [Is it more likely to fall over when wearing these shoes compared to barefoot?]
 Definition: a shoes is ankle covering: decide yes.

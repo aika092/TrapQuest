@@ -423,7 +423,7 @@ Check dominating chess table:
 		allocate 6 seconds;
 		let ST be chess-opponent of chess-lesson;
 		let M be headmistress;
-		if M is not regional, now M is a random regional staff member;
+		if M is nonregional, now M is a random regional staff member;
 		say "You take the nearby permanent marker pen and add the words[paragraph break]HEAD EMPTY[line break]DIAPER FULL[paragraph break]to [NameDesc of ST][']s forehead. ";
 		if the humiliation of the player < the EnslavedDominationThreshold of ST:
 			say "You feel vaguely better about yourself, but mostly just a bit ambivalent.";

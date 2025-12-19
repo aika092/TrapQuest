@@ -12,8 +12,74 @@ To regionally place (M - a monster):
 	deinterest M; [generally when we regionally place some we want them to be able to notice the player immediately the next time they walk past each other]
 	[now M is unleashed;]
 	now the health of M is the maxhealth of M;
-	while M is not regional or M is in the location of the player or M is nearby:
+	while M is nonregional or M is within vision:
 		now M is in a random placed room.
+
+To decide which object is the default-local-room of (M - a monster):
+	decide on nothing.
+
+To locally place (M - a monster):
+	let DR be the default-local-room of M;
+	if debugmode > 0, say "Locally placing [M] (default local room is [DR]).";
+	let failsafe be 0;
+	if M is in a labyrinth room:
+		if there is a placed labyrinth room:
+			remove M from play;
+			deinterest M; [generally when we regionally place some we want them to be able to notice the player immediately the next time they walk past each other]
+			now the health of M is the maxhealth of M;
+			if DR is a placed labyrinth room and DR is not within vision:
+				now M is in DR;
+			otherwise:
+				while failsafe < 40 and (M is off-stage or M is within vision):
+					increase failsafe by 1;
+					now M is in a random placed labyrinth room;
+	otherwise if M is in a jungle room:
+		if there is a placed jungle room:
+			remove M from play;
+			deinterest M; [generally when we regionally place some we want them to be able to notice the player immediately the next time they walk past each other]
+			now the health of M is the maxhealth of M;
+			if DR is a placed jungle room and DR is not within vision:
+				now M is in DR;
+			otherwise:
+				while failsafe < 40 and (M is off-stage or M is within vision):
+					increase failsafe by 1;
+					now M is in a random placed jungle room;
+	otherwise if M is in a haunted room:
+		if there is a placed haunted room:
+			remove M from play;
+			deinterest M; [generally when we regionally place some we want them to be able to notice the player immediately the next time they walk past each other]
+			now the health of M is the maxhealth of M;
+			if DR is a placed haunted room and DR is not within vision:
+				now M is in DR;
+			otherwise:
+				while failsafe < 40 and (M is off-stage or M is within vision):
+					increase failsafe by 1;
+					now M is in a random placed haunted room;
+	otherwise if M is in a modern room:
+		if there is a placed modern room:
+			remove M from play;
+			deinterest M; [generally when we regionally place some we want them to be able to notice the player immediately the next time they walk past each other]
+			now the health of M is the maxhealth of M;
+			if DR is a placed modern room and DR is not within vision:
+				now M is in DR;
+			otherwise:
+				while failsafe < 40 and (M is off-stage or M is within vision):
+					increase failsafe by 1;
+					now M is in a random placed modern room;
+	otherwise if M is in an academic room:
+		if there is a placed academic room:
+			remove M from play;
+			deinterest M; [generally when we regionally place some we want them to be able to notice the player immediately the next time they walk past each other]
+			now the health of M is the maxhealth of M;
+			if DR is a placed academic room and DR is not within vision:
+				now M is in DR;
+			otherwise:
+				while failsafe < 40 and (M is off-stage or M is within vision):
+					increase failsafe by 1;
+					now M is in a random placed academic room;
+	otherwise:
+		say "BUG - unable to locally place [MediumDesc of M] because [he of M] is not in a normal location. Please report!";
+	if failsafe is 40, say "BUG - unable to locally place [MediumDesc of M]. Please report!";
 
 To Set Up Monsters:
 	if debugmode > 1, say "Now setting up dungeon monsters...";

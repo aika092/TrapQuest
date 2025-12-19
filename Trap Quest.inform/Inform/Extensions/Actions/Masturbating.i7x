@@ -631,14 +631,11 @@ This is the masturbation climax rule:
 	otherwise say ClimaxMasturbationFlav of (masturbation-object) with (MW) in (C);
 	say line break;
 	[prepare to take a picture of the player's orgasm and put a poster somewhere]
-	let CT be a random camera trap in the location of the player;
-	if CT is camera trap and there is an off-stage masturbation poster:
+	let CT be the valid snapshotter;
+	if CT is a thing and there is an off-stage masturbation poster:
 		let TP be a random off-stage masturbation poster;
 		now the old-stimulant of TP is masturbation-object;
-		say FlashFlav of CT;
-		say "It was in a perfect position to capture a full shot of your [if the sex addiction of the player < 7]crime[otherwise]orgasm[end if].";
-		say "[one of][line break][variable custom style][if the humiliation of the player < HUMILIATION-SHAMELESS - 3000]Oh shit! This was a bad place to decide to do that...[otherwise]Looks like someone is helping me expose myself.[end if][or][if the bimbo of the player < 14][variable custom style]Again?![otherwise][line break][second custom style]If someone sells that photo, I hope I get royalties![end if][stopping][roman type][line break]";
-		set up TP;
+		compute snapshot of CT with TP;
 	[progress quests and counters related to masturbation]
 	if wanktype is ASS-WANK:
 		if masturbation-object is nothing, heal asshole times 1;
@@ -985,7 +982,7 @@ To compute MasturbationReaction of (M - a monster):
 		if M is penetrating a body part:
 			say "[BigNameDesc of M] chuckles as [he of M] watches you.";
 		otherwise if M is interested and M is friendly:
-			say "[BigNameDesc of M] looks away politely and begins to wander off.";
+			say "[BigNameDesc of M] looks away politely and [if M is guarding]loses interest[otherwise]begins to wander off[end if].";
 			bore M;
 		otherwise if M is uninterested:
 			say "[BigNameDesc of M] is looking the other way, probably on purpose.".

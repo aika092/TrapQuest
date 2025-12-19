@@ -13,7 +13,7 @@ Check taking off worn arm covering clothing:
 Check taking off worn leg covering clothing:
 	if the player is ankle bound, say "You won't be able to successfully get this off whilst your ankles are bound..." instead.
 
-Definition: a clothing is curse-sticky: [If it's cursed, it can't be taken off]
+Definition: a thing is curse-sticky: [If it's cursed, it can't be taken off. Squirt dildo is probably the only item that's wearable and cursable but not clothing]
 	if the class of the player is cultist, decide no;
 	if the player is in Predicament20, decide no;
 	decide yes.
@@ -24,7 +24,15 @@ Check taking off clothing:
 	unless the noun is bag of holding: [these checks are already performed once in the bag of holding's own 'check taking off' block]
 		if the noun is glued, try tearing off the noun instead;
 		now summoning is 0;
-		unless the noun is actually removable, do nothing instead.
+		unless the noun is actually removable, do nothing instead;
+		if the noun is black-cat-tail-plug and the class of the player is catgirl and ((diaper quest is 0 and the player is a november 2025 top donator) or (diaper quest is 1 and the player is a september 2025 diaper donator)):
+			allocate 4 seconds;
+			say "[bold type]As you try to remove [NameDesc of black-cat-tail-plug], you feel it twisting and morphing inside you![roman type][line break]";
+			transform black-cat-tail-plug into black-cat-tail-anal-beads;
+			now the notches of black-cat-tail-anal-beads is 10;
+			now the notch-taken of black-cat-tail-anal-beads is 9;
+			say "Now that the first giant metal bead has popped out, some sort of magic takes hold, preventing you from pulling it out any further! You sense that it wants you to [bold type]stop being a catgirl[roman type] before you can remove it normally, or [bold type]clean up puddles[roman type] to encourage it to remove itself over time." instead.
+
 
 Carry out taking off something:
 	dislodge the noun.

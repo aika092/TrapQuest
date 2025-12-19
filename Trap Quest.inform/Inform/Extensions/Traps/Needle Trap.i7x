@@ -148,7 +148,7 @@ To compute (Y - a needle trap) injecting into (X - hips):
 			if a random number between 0 and the armour of C > 5, now needle-blocker is C;
 	if needle-blocker is clothing and tutorial is 0:
 		say "The dart is blocked by your [ShortDesc of needle-blocker]! Phew!";
-	otherwise if diaper quest is 1:
+	otherwise if diaper quest is 1 or tutorial is 1:
 		if a random number between 1 and 2 is 1 and tutorial is 0:
 			say "Owww, that really hurt! You watch the large balloon at the back end of the dart empty a lot of liquid into your body[one of]. That can't be good...[or].[stopping]";
 			BladderUp 5;
@@ -157,7 +157,8 @@ To compute (Y - a needle trap) injecting into (X - hips):
 			NeedleDelicateUp;
 		otherwise:
 			say "Owww, that really hurt! And yet you can [one of]feel whatever it injected into you making you feel hotter and more flustered...[or]still feel the injected aphrodisiac making you hornier![stopping]";
-			Arouse 2500;
+			if tutorial is 1, arouse 5000;
+			otherwise arouse 2500;
 			cutscene needle hips;
 			NeedleDelicateUp;
 	otherwise if inflation fetish is 1 and a random number between 1 and 2 is 1 and tutorial is 0:
@@ -434,18 +435,23 @@ To decide which figure-name is the triggered-image of (T - polymorph-rune-trap):
 	decide on Figure of polymorph rune trap triggered.
 
 To compute unique trigger of (Y - polymorph-rune-trap):
-	if there is a worn berri-dress:
-		let C be a random worn berri-dress;
-		let D be the unique-upgrade-target of C;
+	let BD be a random worn berri-dress;
+	if BD is berri-dress:
+		let D be the unique-upgrade-target of BD;
+		if BD is blue-dungarees, now D is pink-latex-bodysuit; [yep, a straight upgrade even at low diaper levels]
 		if D is a thing:
 			say BerriCutsceneFlav;
-			transform C into D;
+			quietly transform BD into D;
 			if D is blue-dungarees:
-				mapcutshow Figure of Berri Cutscene 14a for D;
-				say "[second custom style]Diapered under dungarees?! [if the player is proud]This is an outrage, I haven't been dressed like this since I was a toddler![otherwise if the player is modest]I can't believe this, I look so ridiculous![otherwise if the player is not disgraced]I guess it's kind of cute... But still...[otherwise]I guess I really am just a big baby then...[end if][roman type][line break]";
+				cutshow Figure of Berri Cutscene 14a for D;
+				say "[variable custom style]Diapered under dungarees?! [if the player is proud]This is an outrage, I haven't been dressed like this since I was a toddler![otherwise if the player is modest]I can't believe this, I look so ridiculous![otherwise if the player is not disgraced]I guess it's kind of cute... But still...[otherwise]I guess I really am just a big baby then...[end if][roman type][line break]";
 			otherwise if D is pink-latex-bodysuit:
-				mapcutshow Figure of Berri Cutscene 14b for D;
-				say "[second custom style]What is this, some kind of latex fetish outfit?! With space for a super-thick diaper underneath?! [if the player is proud]I can't take this level of insanity! Get me out!!![otherwise if the player is modest]I've never worn anything so ridiculous in my life!!![otherwise if the player is not disgraced]Maybe the diaper is a good idea, because I can't find any way to take this off...[otherwise]So I really am a nasty diaper fetish slut...[end if][roman type][line break]";
+				cutshow Figure of Berri Cutscene 14b for D;
+				say "[variable custom style]What is this, some kind of latex fetish outfit?! With space for a super-thick diaper underneath?! [if the player is proud]I can't take this level of insanity! Get me out!!![otherwise if the player is modest]I've never worn anything so ridiculous in my life!!![otherwise if the player is not disgraced]Maybe the diaper is a good idea, because I can't find any way to take this off...[otherwise]So I really am a nasty diaper fetish slut...[end if][roman type][line break]";
+			otherwise if D is pink-babydoll-dress:
+				cutshow Figure of Berri Cutscene 14c for D;
+				say "[variable custom style]No way, how is this diaper even bigger?! With the shortest babydoll dress known to mankind, and an oversized baby bib and pacifier?! I can't even walk without waddling ridiculously now. [if the player is proud]I'm going to die of humiliation!!![otherwise if the player is modest]I take it back! The latex outfit wasn't too bad![otherwise if the player is not disgraced]Nobody needs a diaper THIS thick...![otherwise]Now everyone will be able to see my accidents as soon as I make them...[end if][roman type][line break]";
+			progress quest of berri-quest;
 		otherwise:
 			say "Nothing seems to happen. Odd...";
 	otherwise if christmas content is 1 and bondage-ribbons is unclash summonable and the player is getting unlucky:
@@ -496,7 +502,6 @@ To compute unique trigger of (Y - wisp-rune-trap):
 	if there is a nonstalking wisp:
 		deploy a wisp;
 	otherwise:
-		say "Nothing seems to happen. You must have too many curse wisps stalking you already...".
-
+		say "Nothing seems to happen. You must have too many wisps stalking you already...".
 
 Needle Trap ends here.

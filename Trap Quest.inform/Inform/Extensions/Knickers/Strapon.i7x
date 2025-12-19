@@ -106,7 +106,7 @@ To say UniqueClothingDesc of (K - strapon-dildo):
 
 Chapter 2 - Equine Strapon
 
-equine-strapon is a strapon-panties. equine-strapon is unique. The text-shortcut of equine-strapon is "eqsd". Understand "equine", "horse", "industrial", "ind", "equ", "harness" as equine-strapon.
+equine-strapon is a strapon-panties. equine-strapon is unique. The text-shortcut of equine-strapon is "eqsd". Understand "equine", "horse", "industrial", "harness" as equine-strapon.
 Figure of equine-strapon is the file "Items/Accessories/Toys/strapon3.png".
 To decide which figure-name is the examine-image of (H - equine-strapon):
 	decide on figure of equine-strapon.

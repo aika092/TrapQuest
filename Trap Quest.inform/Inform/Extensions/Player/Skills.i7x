@@ -24,6 +24,7 @@ The player has a number called divinationskill.
 The player has a number called zapskill.
 The player has a number called makeupskill.
 The player has a number called swordskill.
+The player has a number called condomskill.
 
 Part 1 - Mercy
 
@@ -458,6 +459,26 @@ This is the stashfinding learn rule:
 	if there is an off-stage stash, say "You now know how to spot hidden buttons.";
 	deploy stashes.
 The stashfinding learn rule is listed in the skill cheating rules.
+
+Part 23 - CondomCompelling
+
+To teach condomcompelling:
+	if the condomskill of the player is 0:
+		say "[bold type]**You have learned how to compel people to wear condoms!**[roman type][line break]As long as you are holding an item that can provide condoms, NPCs have a significantly higher chance of wearing one, both automatically, and if you're trying to put one on yourself as part of a seduction routine.";
+		now the condomskill of the player is 1;
+		reset skill cooldown;
+	otherwise:
+		say "[bold type]You already know how to compel people to wear condoms![roman type][line break]".
+
+This is the condomcompelling list rule:
+	if the condomskill of the player is 1, say "You know how to convincingly compel people to wear condoms.".
+The condomcompelling list rule is listed in the skill listing rules.
+
+This is the condomcompelling learn rule:
+	if the remainder after dividing condom fetish by 2 is 1:
+		if the condomskill of the player is 0, say "You now know how to convincingly compel people to wear condoms.";
+		now the condomskill of the player is 1.
+The condomcompelling learn rule is listed in the skill cheating rules.
 
 Memorising is an action applying to one thing.
 Check memorising:

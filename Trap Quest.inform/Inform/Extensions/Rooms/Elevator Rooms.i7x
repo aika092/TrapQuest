@@ -439,8 +439,7 @@ A later time based rule (this is the facial room machine rule):
 						interest N;
 						if M is a monster, interest M;
 				otherwise:
-					let DD be a random eligible disposable diaper;
-					if DD is nothing, now DD is a random eligible diaper;
+					let DD be the chosen trap disposable diaper;
 					let thing-to-lock be a random off-stage unique clothing;
 					let K be a random worn knickers;
 					if enema fetish is 1 and K is not diaper and (K is nothing or K is displacable knickers or K is tearable knickers) and asshole is not actually occupied and the water volume of belly is 0:
@@ -459,7 +458,7 @@ A later time based rule (this is the facial room machine rule):
 						if K is nothing:
 							say "[speech style of M]'I think you're gonna need this, cupcake.'[roman type][line break]";
 							let D be a random off-stage plentiful giant diaper;
-							if D is nothing or there is worn crotch-pullup clothing, now D is a random eligible diaper;
+							if D is nothing or there is worn crotch-pullup clothing, now D is the chosen trap disposable diaper;
 							summon D uncursed;
 							say "You feel the other [MediumDesc of M] pulling a superthick diaper up your legs!";
 							now thing-to-lock is D;
@@ -915,6 +914,7 @@ To compute elevator entrance of (ER - BellyRoom01):
 		if P is a pedestal:
 			blandify and reveal skirted-bondage-corset;
 			now skirted-bondage-corset is autobinding;
+			if the player is a november 2025 special donator, now skirted-bondage-corset is spookiness;
 			now skirted-bondage-corset is in P;
 		let LS be a random large sack in Holding Pen;
 		if LS is a thing, add LS to LC;

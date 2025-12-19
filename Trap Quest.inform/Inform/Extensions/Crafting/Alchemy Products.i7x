@@ -27,6 +27,9 @@ To say alchemy-title-after:
 
 The printed name of an alchemy product is "[alchemy-title-before][MediumDesc of item described][alchemy-title-after]".
 
+To say inventory-icon-desc of (T - an alchemy product):
+	say "[ShortDesc of T]. But you can't tell what type it is without being given the opportunity to inspect it more closely.".
+
 To decide which number is the bartering value of (T - an alchemy product) for (M - witch):
 	if T is unsure, decide on 2;
 	if T is cursed, decide on 1;
@@ -454,18 +457,35 @@ Check drinking nail-bomb:
 	allocate 6 seconds;
 	say "You launch the orb up into the air, where it explodes in a shower of pink!";
 	if nail-bomb is cursed:
-		say "But instead of the shards flying towards everyone else, they fly back towards your hands! ";
-		if fake-nails is not worn:
-			repeat with E running through worn hand ready equippables:
-				say "You are forced to drop your [E].";
-				now E is in the location of the player;
-			say "Moments later you are wearing a set of long and slutty pink fake nails. Wow that was fast! You are immediately filled with a horrible sense of dread; almost all you can think about is [if the player is horny]how horny you are and [end if]how awful, and painful, it would be if any of your nails were to break. The invasive thought is so powerful that you also feel significantly weaker and slower as your mind makes you think twice about every action you take.";
-			summon fake-nails cursed with persistent quest;
-		otherwise if fake-nails is not cursed:
-			say "They apply themselves on top of your [fake-nails], returning them to a cursed delicate state.";
-			now fake-nails is cursed;
+		if artificial enhancements fetish is 1:
+			say "But instead of the shards flying towards everyone else, they fly back towards your hands! ";
+			if fake-nails is not worn:
+				repeat with E running through worn hand ready equippables:
+					say "You are forced to drop your [E].";
+					now E is in the location of the player;
+				say "Moments later you are wearing a set of long and slutty pink fake nails. Wow that was fast! You are immediately filled with a horrible sense of dread; almost all you can think about is [if the player is horny]how horny you are and [end if]how awful, and painful, it would be if any of your nails were to break. The invasive thought is so powerful that you also feel significantly weaker and slower as your mind makes you think twice about every action you take.";
+				summon fake-nails cursed with persistent quest;
+			otherwise if fake-nails is not cursed:
+				say "They apply themselves on top of your [fake-nails], returning them to a cursed delicate state.";
+				now fake-nails is cursed;
+			otherwise:
+				say "They try to apply themselves on top of your [fake-nails], but since they are already as delicate and bimbo-like as could be, nothing happens.";
 		otherwise:
-			say "They try to apply themselves on top of your [fake-nails], but since they are already as delicate and bimbo-like as could be, nothing happens.";
+			say "But instead of the shards flying towards everyone else, they fly back towards you!";
+			repeat with Z running from 1 to 10:
+				let C be a random worn clothing;
+				if C is clothing and (C is destructible or C is possession):
+					say "A pink shard slices at [NameDesc of C], damaging it!";
+					damage C;
+					if a random number between 0 and 1 is 1, damage C;
+					if a random number between 0 and 2 is 1, damage C;
+					if C is destructible and the damage of C >= the armour of C:
+						say "It falls to pieces, ruined!";
+						destroy C;
+				otherwise:
+					say "A pink shard slices at your skin! ";
+					BodyRuin 1;
+					PainUp 10;
 	otherwise:
 		if nail-bomb is blessed and there is a friendly monster in the location of the player, say "The shards fly out and hit [if the number of dangerous monsters in the location of the player > 1]all enemies[otherwise][NameDesc of a random dangerous monster in the location of the player][end if], the luck of the nail bomb guiding them true so that they only hit those that are currently fighting you.";
 		otherwise say "The shards fly out and hit [if the number of monsters in the location of the player > 1]everyone else in the room[otherwise][NameDesc of a random monster in the location of the player][end if]!";
@@ -974,7 +994,7 @@ To compute alchemy product effect of (Q - magic-potion):
 				say "[bold type]New arcane knowledge appears in your mind! You've learned a new spell![NewbieSpellFlav]";
 				compute learning of S.
 
-Section 8 Potion of Magic
+Section 8 Potion of Continence
 
 continence-potion is a potion. The text-shortcut of continence-potion is "pcnt". Understand "continence" as continence-potion.
 The backgroundColour of continence-potion is 6111039.
@@ -1008,6 +1028,82 @@ To compute alchemy product effect of (Q - continence-potion):
 		if Q is blessed:
 			BladderIncontinenceDown 8;
 			RectumIncontinenceDown 8.
+
+Section 9 Potion of Modesty
+
+modesty-potion is a potion. The text-shortcut of modesty-potion is "pmst". Understand "modesty" as modesty-potion.
+The backgroundColour of modesty-potion is 16732917.
+
+To decide which number is the alchemy key of (A - modesty-potion):
+	decide on 40.
+
+To say MediumDesc of (B - modesty-potion):
+	say "potion of modesty".
+
+To say ExamineDesc of (B - modesty-potion):
+	say "A round clear hip flask filled with a dose of bright glowing neon pink liquid. The label claims that drinking it will improve your appearance. ";
+	if B is sure and B is cursed, say "Since it is cursed, drinking it would probably make you look more [if diaper quest is 0]slutty[otherwise]childish[end if] instead. Perhaps you could find some other use for it, for example gifting.";
+	otherwise say "[if B is sure and B is blessed]The blessing will somehow enhance the effect of the potion.[otherwise][line break][end if]".
+
+To say QuaffFlav of (A - modesty-potion):
+	say "You pull out the stopper and down the neon pink liquid. ".
+
+To compute alchemy product effect of (Q - modesty-potion):
+	if the class of the player is berri:
+		if Q is cursed:
+			say "[bold type]You feel a curse explode out from within you![roman type][line break]";
+			if latest-berri-stage >= 8:
+				let C be a random waddle diaper;
+				unclash class summon C;
+			otherwise if latest-berri-stage >= 5:
+				increase latest-berri-stage by 1;
+			otherwise if latest-berri-stage >= 2:
+				now latest-berri-stage is 6;
+			otherwise:
+				now latest-berri-stage is 1;
+			fix berri outfit;
+			say "[variable custom style]Oh FUCK...[roman type][line break]";
+		otherwise:
+			if latest-berri-stage >= 8:
+				now latest-berri-stage is 7;
+			otherwise if latest-berri-stage >= 6:
+				decrease latest-berri-stage by 1;
+			otherwise:
+				now latest-berri-stage is 0;
+			repeat with K running through worn knickers:
+				only destroy K;
+			fix berri outfit;
+			say "[variable custom style]Oh phew... Back to this![roman type][line break]";
+	otherwise if Q is cursed:
+		say "[bold type]You feel a curse explode out from within you![roman type][line break]";
+		repeat with C running through worn upgradable clothing:
+			potentially transform C; [allows for theme protection]
+		if the make-up of face < 3:
+			say "Overdone make up appears over your face!";
+			FaceUp 3;
+	otherwise:
+		say "You can feel it working to improve your appearence!";
+		repeat with C running through worn clothing:
+			if C is dirty or C is wet:
+				say "[BigNameDesc of C] is fully cleaned and dried!";
+				fully clean C;
+			if C is crotch-ripped or C is top-ripped:
+				if C is top-ripped, say "[BigNameDesc of C][']s rip at the chest is repaired!";
+				if C is crotch-ripped, say "[BigNameDesc of C][']s rip at the crotch is repaired!";
+				repair C;
+			if Permanent MakeUp is 1:
+				say "You feel the make up on your face become less permanent!";
+				now Permanent MakeUp is 0;
+			if face is temporarily made up:
+				say "Your make up all fades away.";
+				FaceDown 3;
+		if Q is blessed:
+			let C be a random worn blandness magic-enhanceable clothing;
+			if C is a thing:
+				say "Thanks to the [bold type]blessed[roman type] magic of the potion, your [C] becomes a ";
+				if diaper quest is 1, now C is maturity;
+				otherwise now C is confidence;
+				say "[C]!";
 
 
 A powder is a kind of alchemy product. Understand "powder", "powder of" as a powder.

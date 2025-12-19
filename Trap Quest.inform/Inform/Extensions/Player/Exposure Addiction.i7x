@@ -1,6 +1,6 @@
 Exposure Addiction by Player begins here.
 
-skimpy underwear fetish is a number that varies. skimpy underwear fetish is -1.
+skimpy underwear suggestion is a number that varies. skimpy underwear suggestion is -1.
 [
 0: Crotchless & diapers only
 1: G-strings & thongs
@@ -10,9 +10,9 @@ skimpy underwear fetish is a number that varies. skimpy underwear fetish is -1.
 ]
 
 To decide which number is underwear-cover-limit:
-	if skimpy underwear fetish is 0, decide on 0;
+	if skimpy underwear suggestion is 0, decide on 0;
 	if daddy's little girl tattoo is worn, decide on 1;
-	if skimpy underwear fetish > 0, decide on skimpy underwear fetish;
+	if skimpy underwear suggestion > 0, decide on skimpy underwear suggestion;
 	decide on 999999.
 
 Definition: yourself is no-panties-allowed rather than allowed-panties:
@@ -31,7 +31,7 @@ Definition: yourself is fighting against skimpy underwear:
 
 skimpy underwear reminder is a number that varies. skimpy underwear reminder is 0.
 
-An all later time based rule (this is the fighting against skimpy underwear fetish rule):
+An all later time based rule (this is the fighting against skimpy underwear suggestion rule):
 	if the player is fighting against skimpy underwear:
 		if skimpy underwear reminder <= 0:
 			let C be a random worn skimpy-underwear-disallowed knickers;
@@ -42,9 +42,9 @@ An all later time based rule (this is the fighting against skimpy underwear feti
 Report wearing skimpy-underwear-disallowed knickers:
 	if the player is fighting against skimpy underwear, say "[bold type]You immediately feel extremely uncomfortable in these,[roman type] thanks to your [if the class of the player is faerie]faerie instinct[otherwise if diaper lover >= 1]diaper fetish[otherwise if the player is no-panties-allowed]fetish for not wearing panties[otherwise]fetish for only wearing skimpy underwear[end if]. Your focus and muscle tension, and therefore your dexterity and intelligence, will be significantly negatively affected while you're wearing them.".
 
-This is the knickers can't be summoned with skimpy underwear fetish rule:
+This is the knickers can't be summoned with skimpy underwear suggestion rule:
 	if summoning is 1 and wearing-target is skimpy-underwear-disallowed, rule fails.
-The knickers can't be summoned with skimpy underwear fetish rule is listed in the knickers wearability rules.
+The knickers can't be summoned with skimpy underwear suggestion rule is listed in the knickers wearability rules.
 
 topless temporary fetish is a number that varies.
 

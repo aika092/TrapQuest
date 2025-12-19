@@ -639,8 +639,17 @@ To compute (M - minotaur) attacking (C - a clothing):
 To compute (M - minotaur) removing (X - a thing):
 	say "[BigNameDesc of M] forcefully and roughly pulls [NameDesc of X] out of your [asshole] and drops it on the ground!";
 	now X is in the location of the player;
-	if X is anal beads, ruin asshole times the notch-taken of X / 2;
 	dislodge X.
+
+To compute (M - minotaur) removing (C - an anal beads):
+	let F be a random fuckhole penetrated by C;
+	if M is minotaur:
+		let R be the notch-taken of C;
+		say "[BigNameDesc of M] pulls hard on the cord connected to your [printed name of C], [if R > 1]forcing [R] beads out of your [variable F] in rapid succession[otherwise]yanking the remaining bead from your [variable F] with little effort[end if] and tossing it away.";
+		now C is in the location of the player;
+		if the remainder after dividing R by 2 is 1, increase R by 1;
+		if C is anal beads, ruin asshole times (R / 2);
+		dislodge C.
 
 To decide if (M - minotaur) is willing to creampie (F - a vagina):
 	if the player is not possessing a vagina, decide no;

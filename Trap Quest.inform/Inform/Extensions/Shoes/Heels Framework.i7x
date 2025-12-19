@@ -10,7 +10,8 @@ To say ShoeType of (S - a boots):
 
 Definition: a heels is fluid immune: decide yes.
 
-Understand the heel-height property as describing a heels. Understand "heel", "inch" as heels. The printed plural name of heels is usually "[TQlink of item described][item style]pairs of heels[roman type]". The text-shortcut of heels is "he".
+The printed name of a heels is usually "[clothing-title-before]pair of [heel-height of item described] inch [UniqueShortDesc of item described][clothing-title-after]".
+Understand the heel-height property as describing a heels. Understand "heel", "inch" as heels. The text-shortcut of heels is "he".
 
 stiletto heels is a kind of heels. boots is a kind of heels.
 Understand "boot", "boots" as boots.
@@ -67,7 +68,7 @@ To decide which number is the damage modifier of (H - a heels):
 		if the player is getting lucky:
 			now critical is 1;
 			decide on combat bonus;
-		if H is queen-of-hearts heels and the player is getting lucky: [Queen of Hearts heels get two attempts.]
+		if critical is not 1 and H is queen-of-hearts heels and the player is getting lucky: [Queen of Hearts heels get two attempts.]
 			now critical is 1;
 			decide on combat bonus;
 		decide on 0.
@@ -89,7 +90,7 @@ To decide which number is the hindrance of (C - a heels):
 		increase X by 1;
 		if the heel skill of the player < 10, increase X by 1;
 	[Some heels are always more/less (usually less) difficult to walk in, and some other clothing affects the hindrance of heels.]
-	repeat with H running through clothing worn by the player:
+	repeat with H running through worn clothing:
 		increase X by the hindrance-modifier of H;
 	[Magic effects often impact on hindrance]
 	decrease X by the magic-modifier of C;

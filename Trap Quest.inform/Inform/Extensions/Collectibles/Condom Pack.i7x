@@ -167,11 +167,12 @@ Definition: a monster is condom-preferring:
 	if the class of the player is condom collector, decide yes;
 	if it is bride-consort, decide no;
 	if it is condom obsessed, decide yes;
+	if the condomskill of the player is 1 and there is a worn held condom-providing thing and a random number between 1 and 2 is 1, decide yes;
 	if a random number between -3 and (the trophy-mode of condom-trophy * 10) >= 0, decide yes;
 	decide no.
 
 To compute condom request choice of (M - a monster):
-	if M is unwrapped and the remainder after dividing condom fetish by 2 is 1: [condom fetish is 1 or 3, so NPCs sometimes automatically take condoms]
+	if M is unwrapped and condom fetish > 0: [NPCs sometimes automatically take condoms]
 		if M is intelligent:
 			if M is condom-preferring and M is convinced to wear a condom:
 				say AutomaticCondomFlav of M;
@@ -199,6 +200,7 @@ Definition: a monster (called M) is convinced to wear a condom:
 	let CR be the condom resistance of M;
 	if the class of the player is fertility goddess, increase CR by 1;
 	if the class of the player is condom collector, decrease CR by 7;
+	if the condomskill of the player is 1 and there is a worn held condom-providing thing, decrease CR by 5;
 	let BB be the blue-balls-limit of M - the blue-balls of M;
 	let ORG be the virility of M - the sex-length of M;
 	if M is seduced:
@@ -210,12 +212,12 @@ Definition: a monster (called M) is convinced to wear a condom:
 	if R < CR, decide no;
 	decide yes.
 
-Definition: a monster (called M) is forced to wear a condom:
+[Definition: a monster (called M) is forced to wear a condom:
 	let D be (the dexterity of the player) / (3 - (the trophy-mode of condom-trophy * 2));
 	if the class of the player is fertility goddess, decrease D by 3;
 	let R be a random number between -1 and D;
 	if R < the condom resistance of M, decide no;
-	decide yes.
+	decide yes.]
 
 To decide which number is the condom resistance of (M - a monster):
 	decide on 0. [Default 100% success]
@@ -243,7 +245,10 @@ To compute default condom filling of (M - a monster):
 			summon S cursed with silent quest;
 			now C is S;
 		if S is clothing, say "Suddenly, a [printed name of S] appears on you[if the quest of S is no-clothing-quest]![otherwise]! [QuestFlav of S][end if]";
-		compute M condom pinning on C.
+		compute M condom pinning on C;
+	if the remainder after dividing condom fetish by 2 is 1 and a random number between 1 and 9 < the semen addiction of the player:
+		[say "You feel [one of]a little[or]a bit[or]slightly[at random] [if the semen addiction of the player >= 14]less addicted to[otherwise if the semen addiction of the player > 7]less interested in[otherwise]more resilient against the idea of[end if] creampies[if bukkake fetish is 1] and facials[end if].";]
+		SemenAddictDown 1.
 
 To compute (M - a monster) condom pinning on (C - a clothing):
 	say "[CondomPinFlav of M on C][CondomPinReactionFlav of M on C]";
@@ -251,9 +256,6 @@ To compute (M - a monster) condom pinning on (C - a clothing):
 	UsedCondomUp C from M;
 	say CondomPinnedFlav of C;
 	progress quest of condom-creampie-quest;
-	if a random number between 1 and 12 < the semen addiction of the player:
-		say "You feel [one of]a little[or]a bit[or]slightly[at random] [if the semen addiction of the player >= 14]less addicted to[otherwise if the semen addiction of the player > 7]less interested in[otherwise]more resilient against the idea of[end if] creampies[if bukkake fetish is 1] and facials[end if].";
-		SemenAddictDown 1;
 	if C is cheerleader outfit and there is a worn pigtail-scrunchie and artificial enhancements fetish is 1:
 		if the class of the player is schoolgirl, transform C into daddy issues dress;
 		otherwise transform C into plastic-is-fantastic dress;

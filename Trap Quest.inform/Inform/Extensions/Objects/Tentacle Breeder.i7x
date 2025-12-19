@@ -53,17 +53,20 @@ To decide which figure-name is the examine-image of (C - player-breeder):
 	decide on figure of player tentacle breeder.
 
 To say ExamineDesc of (C - a tentacle-breeder):
+	let R be 0;
+	if the magic power of the player >= the magic-cost of C or there is a held pure totem or (ritual-beads is held and the size of ritual-beads >= 7), now R is 1;
 	if inhuman pregnancy >= 2:
-		say "A massively pregnant [if C is player-breeder]previous version of yourself[otherwise]woman[end if] is stuck to the wall with thick, pink slime[if C is maid-history], [bold type]your old maid headdress and magical maid outfit still worn, but completely coated in cum. [roman type][otherwise]. [end if]A sea of tentacles pushes itself into all of [if C is player-breeder]your previous self's[otherwise]her[end if] holes, throbbing rhythmically. Semen drools from her lips around the tentacles and from her [vagina]. Her eyes are rolled back up into her head, and it seems she doesn't have even the slightest sense of self or awareness. There is a translucent barrier covering her whole body, which seems to pulse in time with [magic-cost of C] eldritch seals etched into the ground below her. [if the magic power of the player >= the magic-cost of C]For some reason, you feel like you might be able to [bold type]purify[roman type] her corruption and rescue her from her predicament[otherwise if C is player-breeder]Realising that you are in some manner of speaking a... clone... of this woman raises some questions about the nature of consciousness which you don't have the time or desire to think about right now[otherwise]You feel like you should probably stay away from her, until you have enough power to overcome all the seals[end if].";
+		if C is active, say "A massively pregnant [if C is player-breeder]previous version of yourself[otherwise]woman[end if] is held to the wall by a sea of grey tentacles[if C is maid-history], [bold type]your old maid headdress and magical maid outfit still worn, but completely coated in cum. [roman type][otherwise]. [end if]Every one of [if C is player-breeder]your previous self's[otherwise]her[end if] holes, including her mouth, is plugged up by a thick, rythmically thrusting tentacle. Her eyes follow you as you move through the room, as if waiting for you to do something to free her from her predicament. There is a translucent barrier covering her whole body, which seems to pulse in time with [magic-cost of C] eldritch seals etched into the ground below her. [if the divinationskill of the player > 0 and R is 1]You can sense that your current magic power is enough to [otherwise if the divinationskill of the player > 0]You can sense that your current magic power is currently not enough to[otherwise if C is player-breeder]If that woman is really your past self, you'd like to know why she's isn't using her safeword... but you don't have a clue[otherwise]You feel bad leaving her, but its not like she doesn't have a safeword... and you don't know how to[end if] [bold type]purify[roman type] the corrupted seals and free her.";
+		otherwise say "A massively pregnant [if C is player-breeder]previous version of yourself[otherwise]woman[end if] is held to the wall by a sea of grey tentacles[if C is maid-history], [bold type]your old maid headdress and magical maid outfit still worn, but completely coated in cum. [roman type][otherwise]. [end if]None of the tentacles are penetrating her right now, since [if C is player-breeder]your previous self[otherwise]she[end if] is unconscious, but [semen] is still drooling from every one of her holes. There is a translucent barrier covering her whole body, which seems to pulse in time with [magic-cost of C] eldritch seals etched into the ground below her. [if the divinationskill of the player > 0 and R is 1]You can sense that you can[otherwise if the divinationskill of the player > 0]You can sense that you'll need some magic power before[otherwise if C is player-breeder]You'd like to talk to her and find out if she's really your past self, but you don't know how to[otherwise]You feel bad leaving her, but you don't know how to[end if] [bold type]purify[roman type] the corrupted seals and free her.";
 	otherwise:
-		say "A messy dome of grey flesh is stuck to one wall, with rapidly pulsating holes, kind of like spasming assholes. There is a translucent barrier covering it, which seems to vibrate in time with [magic-cost of C] eldritch seals etched into the ground below it. [if the magic power of the player >= magic-cost of C]For some reason, you feel like you might be able to [bold type]purify[roman type] the corrupt substance and halt the spawning of tentacle monsters into this region[otherwise if there is a held pure totem or ritual-beads is held and the size of ritual-beads >= 7]For some reason, you feel like you have a magical item you can use to [bold type]purify[roman type] the corrupt substance and halt the spawning of tentacle monsters into this region[otherwise]You feel like you won't be able to halt the spawning of tentacle monsters here until you have enough power to overcome all the seals[end if].".
+		say "A messy dome of grey flesh is stuck to one wall, with rapidly pulsating holes, kind of like spasming assholes. There is a translucent barrier covering it, which seems to vibrate in time with [magic-cost of C] eldritch seals etched into the ground below it. [if the divinationskill of the player > 0 and R is 1]You can sense that your current magic power is enough to [otherwise if the divinationskill of the player > 0]You can sense that your current magic power is currently not enough to[otherwise]You don't have a clue how to[end if] [bold type]purify[roman type] the corrupted seals and destroy it.";
 
 Report going when there is a tentacle-breeder in the location:
 	if inhuman pregnancy >= 2, compute addiction reflection on "pregnancy".
 
 A later time based rule (this is the tentacle breeder makes you horny rule):
 	if inhuman pregnancy >= 2:
-		let TB be a random tentacle-breeder in the location of the player;
+		let TB be a random active tentacle-breeder in the location of the player;
 		if TB is a thing and the player is not a bit horny and the player is able to get horny:
 			say "As you watch the tentacles rhythmically plunging into [NameDesc of TB][']s holes, you feel your own [fuckholes] tingling, and [if the player is not a pervert]despite yourself, [end if]you can feel your body becoming more aroused.";
 			now the arousal of the player is 3100;
@@ -77,7 +80,10 @@ A later time based rule (this is the tentacle breeder makes you horny rule):
 Purifying is an action applying to one thing.
 
 Check purifying:
-	if the noun is not tentacle-breeder, say "This verb is for destroying tentacle spawners." instead;
+	if the noun is not tentacle-breeder and the noun is not mini-portal and the noun is not wisp, say "How would you purify something like that?" instead;
+	if the divinationskill of the player is 0:
+		if magic-purify is castable, say "You don't know enough about magical energy for such a task... Either you need to find an expert, or you could perhaps use your [bold type]purification spell[roman type], if you have enough magic power to both cast the spell and meet the requiements of the [noun] (so you need [magic-cost of magic-purify] + [magic-cost of the noun])..." instead;
+		otherwise say "You don't know enough about magical energy for such a task... Maybe you should find an expert?" instead;
 	if the magic power of the player < the magic-cost of the noun:[check if the player can cheat]
 		let canCheat be 0;
 		if ritual-beads is held:
@@ -103,23 +109,30 @@ Understand "purify [something]" as purifying.
 
 Carry out purifying tentacle-breeder:
 	allocate 2 seconds;
-	compute MagicDrain of the noun;
+	MagicPurify the noun.
+
+To MagicPurify (B - a tentacle-breeder):
 	say "You feel the magical power that has built up in your body flow into the mess of [if inhuman pregnancy >= 2]tentacles and gravid flesh, and suddenly the tentacles and slime begin to thrash around and turn brown. The tentacles restraining the woman quickly rot away, and as she falls to the floor she manages a look of gratitude[otherwise]grey flesh, which shrinks away inside of itself until it has all completely gone[end if].";
 	check tentacle clear;
-	destroy the noun;
+	destroy B;
 	if inhuman pregnancy >= 2:
-		if the noun is player-breeder:
-			say "She vanishes into motes of light.";
-		otherwise:
-			let M be a random off-stage summon-available explorer;
-			if composed-explorer is off-stage and composed-explorer is summon-available, now M is composed-explorer;
-			if M is monster:
+		let M be a random off-stage summon-available explorer;
+		if B is player-breeder:
+			now M is kitsune;
+			unless M is alive:
 				set up M;
-				now M is in the location of the player;
-				now the boredom of M is 150;
-				now the health of M is the maxhealth of M / 2;
-				say "[BigNameDesc of M] pulls [himself of M] up onto two feet.[line break][speech style of M]'Thank you so much for saving me. At last I shall be able to continue my adventure.'[one of][line break][variable custom style][big he of M] plans to keep exploring this place after what [he of M][']s been through[if M is composed-explorer]?! And even though [he of M][']s HEAVILY PREGNANT[end if]?![or][stopping][roman type][line break]";
-				now M is moved;
+			reveal disguise of M;
+		otherwise:
+			if composed-explorer is off-stage and composed-explorer is summon-available, now M is composed-explorer;
+			set up M;
+		now M is in the location of the player;
+		now the boredom of M is 150;
+		now the health of M is the maxhealth of M / 2;
+		now M is moved;
+		if B is player-breeder:
+			say "Your clone pulls herself to her feet, grinning [he of M] shimmers and disappears in a puff of smoke. In her place stands a fully clothed and quite relieved looking [ShortDesc of M] [line break][variable custom style]'Phew. Lucky I didn't use your safeword, right? Hohoho!'[roman type][line break]";
+		otherwise if M is monster:
+			say "[BigNameDesc of M] pulls [himself of M] up onto two feet.[line break][speech style of M]'Thank you so much for saving me. At last I shall be able to continue my adventure.'[one of][line break][variable custom style][big he of M] plans to keep exploring this place after what [he of M][']s been through[if M is composed-explorer]?! And even though [he of M][']s HEAVILY PREGNANT[end if]?![or][stopping][roman type][line break]";
 	if the class of the player is "virgin warrior" and virgin magical girl outfit is off-stage:
 		class summon virgin magical girl outfit;
 	otherwise if heart hairpin is off-stage:
@@ -142,20 +155,37 @@ To compute summoning check of (T - a tentacle-breeder):
 	if the total magic power of the player > 0 and T is regional:
 		let TS be time-seconds - the number of alive regional tentacle monsters;
 		if TS > 0, decrease the charge of T by TS;
-		if the charge of T < 1:
+		unless T is active:
+			if T is in the location of the player:
+				let A be a random explorer;
+				say "[bold type]You feel [if the divinationskill of the player > 0]a strong tug on your magical energy[otherwise]a tingle run down your spine[end if] as [if inhuman pregnancy >= 2]the mass of tentacles surrounding [end if][NameDesc of T] emits a piercing screech that reverberates through the dungeon... and beyond.[roman type][paragraph break]";
+				if inhuman pregnancy >= 2, say "The [man of A] being used as a living tentacle breeder stirs awake, all semblance of sleep vanishing from [his of A] face as [he of A] lays [his of A] eyes on you.[line break][speech style of A]'H-hey. You... y-you can use magic, right? Listen, you've got to get me out of this! I can't give up now, but the tentacles, they keep-! GLMPH! MMPH! MMMMPH!'[roman type][line break]The [man of A][']s voice grows faster and more desperate with every word, until finally being cut off by a fat tentacle shoving its way into [his of A] mouth midsentence.";
+				otherwise say "[BigNameDesc of T] shudders, its bizarre selection of orifices beginning to pulsate faster and faster.";
+				let M be the summonChoice of T;
+				if M is monster:
+					compute T summoning M;
+					set up M;
+					compute portal reset of T;
+				repeat with B running through tentacle-breeders:
+					now B is active;
+				if newbie tips is 1, say "[one of][newbie style]Newbie Tip: Tentacle breeders are special summoning portals that only spawn tentacle monsters. You can shut them off permanently if you can convince the witch[if the player is not an april 2025 top donator] or the neuromancer[end if] to teach you how to sense magical energy... or you can leave them alone, if you're fine dealing with the monsters.[roman type][or][stopping]";
+		otherwise if the charge of T < 1:
 			let M be the summonChoice of T;
 			if M is monster:
 				compute T summoning M;
 				set up M;
 				compute portal reset of T;
 			otherwise:
-				increase the charge of T by 30.
+				increase the charge of T by 30;
+		otherwise if the magic power of the player >= the magic-cost of magic-purify + the magic-cost of T and heart hairpin is off-stage and heart hairpin is actually summonable:
+			say "A heart hairpin appears in your hair!";
+			summon heart hairpin cursed.
 
 To decide which object is the summonChoice of (T - a tentacle-breeder):
 	let M be a random off-stage tentacle monster;
 	if M is monster:
 		if the total magic power of the player < 6:
-			now M is newborn;
+			now M is lesser;
 		otherwise if the total magic power of the player < 12:
 			now M is large;
 		otherwise:

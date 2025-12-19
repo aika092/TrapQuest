@@ -158,7 +158,7 @@ To compute pregnancy:
 			if the father is the throne:
 				now the father is the new father;
 				if the father is the throne: [This should never happen. But just in case...]
-					say "[PregnancyBugFlav]";
+					say PregnancyBugFlav;
 					now the pregnancy of the player is 0;
 					WombEmpty the womb volume of vagina;
 			check for extreme pregnancies;
@@ -259,7 +259,7 @@ To compute infernal birth:
 	if I is 0:
 		say "[PregFlav]You are overcome by a terrible feeling of dread as you begin to give birth to the evil creatures growing inside of you. The process is incredibly long and painful, and you almost pass out a few times from the pain. A portal opens up between your legs as the first of your red-skinned devil offspring is born, swallowing [him of M] up before you even have the chance to see what [he of M] looks like. The second, and finally the third birth pass in exactly the same way, and although you know it's probably for the best, you can't help feeling a pang of regret as the portal closes, severing your connection with your children forever.";
 		DelicateUp 1;
-	otherwise:
+	otherwise:[TODO: rework]
 		let X be a random number between 1 and I;
 		if X > 3, now X is 3;
 		compute pregnancy clothing displacement;
@@ -300,9 +300,9 @@ To compute housewife domestication:
 contractionTracker is a number that varies.
 To Delay Labour:
 	if the class of the player is fertility goddess:
-		say "A sudden contraction sends a small, manageable amount of pain shooting from your womb to the rest of your body.[line break][if the semen addiction of the player < 7 and the father is alive monster and the father is not regional alive monster][one of][line break][first custom style]Okay, by staying away from [the father] I can prevent myself from having to give birth again...[or][stopping][otherwise if the semen addiction of the player < 7][one of][first custom style]Okay, by keeping my [vagina] covered I think can prevent myself from having to give birth again...[or][stopping][otherwise][one of][line break][second custom style]I just love being massive and pregnant, why would I want to give birth and have to start the process all over again?[or][stopping][end if][roman type][line break]";
+		say "A sudden contraction sends a small, manageable amount of pain shooting from your womb to the rest of your body.[line break][if the semen addiction of the player < 7 and the father is alive monster and the father is nonregional alive monster][one of][line break][first custom style]Okay, by staying away from [the father] I can prevent myself from having to give birth again...[or][stopping][otherwise if the semen addiction of the player < 7][one of][first custom style]Okay, by keeping my [vagina] covered I think can prevent myself from having to give birth again...[or][stopping][otherwise][one of][line break][second custom style]I just love being massive and pregnant, why would I want to give birth and have to start the process all over again?[or][stopping][end if][roman type][line break]";
 	otherwise:
-		say "A sudden contraction sends pain shooting from your womb to the rest of your body. [if the player is upright and contractionTracker > (slow pregnancy * 2)]The contraction is so intense that you are forced to your knees. [end if][if the father is alive monster and the father is not regional alive monster]You are filled with a desire to find [NameDesc of the father].[otherwise][NonAliveFatherBirthFlav of the father][end if]";
+		say "A sudden contraction sends pain shooting from your womb to the rest of your body. [if the player is upright and contractionTracker > (slow pregnancy * 2)]The contraction is so intense that you are forced to your knees. [end if][if the father is alive monster and the father is nonregional alive monster]You are filled with a desire to find [NameDesc of the father].[otherwise][NonAliveFatherBirthFlav of the father][end if]";
 		if contractionTracker > slow pregnancy * 2:
 			if the player is upright:
 				try kneeling;

@@ -57,6 +57,10 @@ An all time based rule (this is the compute cum movements rule):
 					if forcedFertility is true:
 						now R is 0;
 						now forcedFertility is false;
+					otherwise if there is a dark skinned family monster and bunny tail mamba is worn:
+						now R is 0;
+						if there is an on-stage dark skinned family monster, now the father is a random on-stage dark skinned family monster;
+						otherwise now the father is a random dark skinned family monster;
 					otherwise if debuginfo > 0:
 						say "[input-style]Conception avoidance check: pregnancy resistance ([PR]) ==> RNG([PR]~5) = [R] | ([womb volume of vagina].5) womb volume[roman type][line break]";
 					if R <= the womb volume of vagina:
@@ -257,13 +261,9 @@ To compute enema leaking with reason (T - a text):
 					lay 1 small eggs;
 					progress quest of egg-laying-quest;
 					if voluntarySquatting is 0, progress quest of egg-holding-quest;
-					let Y be a random camera trap in the location of the player;
-					if Y is not a thing, now Y is a random camera-bystander in the location of the player;
-					if Y is a thing and (Y is not a camera trap or the reset-timer of Y < 99900) and there is an off-stage expulsion poster and the number of worn total protection diapers is 0:
-						now target-poster is a random off-stage expulsion poster;
-						compute uniquest variables of target-poster;
-						say "[FlashFlav of Y][if Y is camera trap][ExpulsionFlashFlav of Y][end if]";
-						set up target-poster;
+					let Y be the valid snapshotter;
+					if target-poster is an expulsion poster and target-poster is off-stage and Y is a thing and the number of worn total protection diapers is 0:
+						compute snapshot of Y with target-poster;
 					if total-count > 1, say "The [if the player is in a predicament room]ball[otherwise]egg[end if] is followed by ";
 				if milk-count + urine-count + semen-count + water-count > 0:
 					say "[one of]a little bit of[or]a small squirt of[in random order] ";

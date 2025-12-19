@@ -775,7 +775,7 @@ To say sexSubmitSplitFlav of (M - a monster) in (O - an orifice):
 		otherwise if the bimbo of the player < 9:
 			say "Shocks of pleasure ripple through your [ShortDesc of penis] as [he of M] pounds your [asshole]. It's difficult to resist when it feels this good.";
 		otherwise if the bimbo of the player < 10 and the player is gendered male:
-			say "[BigFuckerDesc of M]'s [DickDesc of M] relentlessly pounds your sensitive prostate, reminding you how much of a [one of]dirty faggot[or]nasty little fag[in random order] you are for enjoying this.";
+			say "[BigFuckerDesc of M]'s [DickDesc of M] relentlessly pounds your sensitive prostate, reminding you how [one of]dirty[or]nasty[in random order] you are for enjoying this.";
 		otherwise if the bimbo of the player < 12:
 			say "[BigFuckerDesc of M]'s [if M is a balls-haver]balls repeatedly slap your taint[otherwise]hips repeatedly clap your [AssDesc][end if] as [he of M] pistons in and out of your [asshole], as if to remind you how much you secretly like [if M is presenting as male][men of M] like [him of M][otherwise]getting bent over by people like [him of M][end if].";
 		otherwise if the bimbo of the player < 14:

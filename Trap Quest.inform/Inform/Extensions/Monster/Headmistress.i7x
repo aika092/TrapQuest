@@ -4,6 +4,9 @@ headmistress is a diamond-teacher. headmistress is guarding. headmistress is fem
 
 headmistress is in School08. The text-shortcut of headmistress is "hdm".
 
+To decide which object is the default-local-room of (M - headmistress):
+	decide on School08.
+
 Definition: headmistress is a generic-unlocker: decide yes.
 
 Figure of headmistress is the file "NPCs/School/headmistress1.png".
@@ -102,8 +105,8 @@ To compute guarding action of (M - headmistress):
 An all later time based rule (this is the school recruiters rule):
 	if armband is worn:
 		if class-time < (lessonFrequency * -5) and the rank of the player < 6: [staff members stalk the player to get them to come back to class]
-			if headmistress is alive and headmistress is undefeated and headmistress is not regional, regionally place headmistress;
-			if receptionist is alive and receptionist is undefeated and receptionist is not regional:
+			if headmistress is alive and headmistress is undefeated and headmistress is nonregional, regionally place headmistress;
+			if receptionist is alive and receptionist is undefeated and receptionist is nonregional:
 				now receptionist is guarding;
 				deinterest receptionist;
 				if playerRegion is Dungeon:
@@ -130,7 +133,7 @@ To regionally place (M - headmistress):
 	otherwise:
 		now M is unleashed;
 		now the health of M is the maxhealth of M;
-		while M is not regional or M is in the location of the player or M is nearby:
+		while M is nonregional or M is in the location of the player or M is nearby:
 			now M is in a random placed room.
 
 To say EnslavedDominationFlav of (M - headmistress):

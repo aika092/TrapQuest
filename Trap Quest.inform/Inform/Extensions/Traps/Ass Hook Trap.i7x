@@ -81,7 +81,7 @@ To trigger (Y - an ass hook):
 		if O is short skirt:
 			say "hooks into your [ShortDesc of O], pulling it up and ripping it from you! Your [O] is destroyed.";
 			destroy O;
-		otherwise if O is knee-length clothing and O is displacable clothing:
+		otherwise if O is knee-length clothing and O is displacable clothing and (the class of the player is not berri or K is not unskirted displacable currently uncovered undies):
 			say "hooks into your [ShortDesc of O], ";
 			if O is glued:
 				say "trying to pull it up! But it's glued to you, and so ends up ripping off, extremely painfully!";
@@ -103,7 +103,8 @@ To trigger (Y - an ass hook):
 				now the wedgie-target of Y is K;
 				say "It looks like you'll need to [bold type]pull[roman type] the hook to try and save your underwear, or you could [bold type]jump[roman type] if you are happy for them to be destroyed.";
 				if the class of the player is berri and the bladder of the player < 10:
-					say "[bold type]You suddenly feel a desperate need to pee![line break][BerriCutsceneFlav]";
+					say BerriCutsceneFlav;
+					compute berri bladder filling;
 					progress quest of berri-quest;
 				[say "The hook continues to pull up with tremendous pressure until your [ShortDesc of K] are ripped from your butt crack and destroyed.";
 				destroy K;

@@ -32,6 +32,12 @@ To say ExamineDesc of (C - a warp portal):
 Definition: a warp portal is immune to change: decide yes.
 
 Check entering a warp portal:
+	let C be camera-drone;
+	if C is stalking:
+		if C is uploading:
+			say "Are you sure you want to go through there? It would give the [ShortDesc of C] all the time it needs to finish uploading.";
+			unless the player is consenting, do nothing instead;
+		compute ditching camera-drone;
 	try going the covered-direction of the noun instead.
 
 Check pulling a warp portal:
@@ -182,7 +188,7 @@ To teleport via (W - a warp portal):
 	if W is not in the Dungeon:
 		set next numerical response to "go to the Dungeon";
 		increase NOptions by 1;
-	if W is not in the School and the class of the player is not berri and (armband is worn or armband is solid gold or ex-princess is unconcerned):
+	if W is not in the School and the class of the player is not berri and (armband is worn or armband is solid gold or ex-princess is unconcerned or receptionist is in the location of the player):
 		set next numerical response to "go to the Academy";
 		increase NOptions by 1;
 	if W is not in the Hotel and location of hotel portal is discovered:
@@ -192,7 +198,7 @@ To teleport via (W - a warp portal):
 		set next numerical response to "go to the Mansion";
 		increase NOptions by 1;
 	if W is school portal and the player is the donator and predicamentJustDone is false and ex-princess is not unconcerned and predicamentsAvailable > 0 and the player is predicament-ready:
-		set next numerical response to "go to the Extra Credit Zone";
+		set next numerical response to "go to the Extra Credit Zone[if the number of off-stage fetish appropriate trophy is 0] (NB there are no more trophies left to give you, so you won't earn any more[end if]";
 		increase NOptions by 1;
 		if newbie tips is 1, say "[one of][newbie style]Newbie tip: The Extra Credit zone puts you in a predicament where you could lose a lot of dignity and 'real world reputation' (the latter of which is only relevant for epilogues). Cursed clothing (except headgear) will be removed but will cost you 1 strength if you don't put it back on after you complete the task. [if tough-shit is 0]Other things like tattoos and make up will disappear for the duration of the predicament and reappear at the end. [end if]You will earn one 'trophy' which gives you the option to tweak a rule of the game universe and also gives you a permanent +1 to luck rolls. Finally, each time you go into the predicament zone, one of each type of crafting token will be lying on the floor somewhere in the region. So if you happen to stumble across any, you can often nab yourself that extra bonus. Or if you're brave, you could even go searching for them...[roman type][line break][or][stopping]";
 	if NOptions is 0, say "BUG! Player was able to enter a warp portal with zero viable exits...";
@@ -216,6 +222,12 @@ To teleport via (W - a warp portal):
 	if forced-portal is not a warp portal and tough-shit is 1 and a random number between -100 and 0 > the luck of the player:
 		increase the raw luck of the player by 5;
 		say "[bold type]Instead of taking you where you meant to go, you feel the portal glitching, and taking you somewhere else entirely![roman type][line break]";
+		compute bad teleport;
+		say GotUnluckyFlav;
+	otherwise if forced-portal is not a warp portal and there is worn spookiness clothing and the player is not getting lucky:
+		let C be a random worn spookiness clothing;
+		say "You feel the [C] interacting horribly with the warp portal! [bold type]Instead of taking you where you meant to go, you feel the portal glitching, and taking you somewhere else entirely![roman type][line break]";
+		destroy C;
 		compute bad teleport;
 		say GotUnluckyFlav;
 	otherwise:

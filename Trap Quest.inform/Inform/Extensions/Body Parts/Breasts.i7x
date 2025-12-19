@@ -113,6 +113,12 @@ To decide which object is the concealer of (B - breasts):
 	if chosenThing is not the throne, decide on chosenThing;
 	decide on nothing.
 
+To decide what number is the top-defence of (B - a clothing):
+	if B is fully exposing, decide on the magic-modifier of B + 3 - the damage of B;
+	if B is fully covering, decide on the magic-modifier of B + 20 - the damage of B;
+	let E be the cleavageCover of B;
+	decide on the magic-modifier of B + (E * 2) - the damage of B;
+
 [!<DecideWhichNumberIsTheCleavageCoverOfClothing>+
 
 Outputs a number describing the amount of breast coverage the player gets from a piece of clothing

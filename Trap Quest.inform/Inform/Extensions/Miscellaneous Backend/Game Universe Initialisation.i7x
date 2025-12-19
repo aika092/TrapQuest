@@ -203,10 +203,7 @@ To Start The Machine:
 			now ghostly tentacle is in a random placed mandatory haunted room;]
 		display inventory-focus stuff;
 	otherwise if nursery resident is 1:
-		let D be a random eligible small diaper;
-		if D is nothing, now D is a random eligible medium diaper;
-		if D is nothing, now D is a random eligible diaper;
-		if D is nothing, now D is a random diaper;
+		let D be the chosen trap diaper;
 		summon D uncursed;
 		summon teddy-bear-diaper-cover locked;
 		now teddy-bear-diaper-cover is bed wetting;
@@ -236,6 +233,7 @@ To Start The Machine:
 	if latex prisoner is 1 and nursery resident is 0, initialise latex prisoner;
 	if bondage prisoner is 1, initialise bondage prisoner;
 	if bondage protection is 2, initialise bondage protection;
+	if strongDoom is 1, force commence doom;
 	if debugmode > 1, say "Now initialising wardrobe.";
 	initialise wardrobe;
 	set up debug stuff;
@@ -247,8 +245,6 @@ To Start The Machine:
 	update status line;
 	allocate 1 seconds;
 	compute full engine loop.
-
-previousGUILayout is a number that varies. previousGUILayout is -1.
 
 To decide which number is default-graphics-window-measurement:
 	decide on 64.
@@ -421,7 +417,7 @@ To initialise wardrobe:
 		otherwise if diaper quest is 0:
 			add business-shoes to L;
 	if diaper focus >= 1:
-		let C be a random eligible diaper;
+		let C be the chosen trap diaper;
 		if easter content is 1, now C is brown-button-diaper;
 		if C is clothing, add C to L;
 	repeat with X running through L:

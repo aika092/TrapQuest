@@ -579,10 +579,10 @@ To compute teaching of (L - dress-lesson):
 			if there is worn messed knickers, increase bendOverDifficulty by 8000;
 			if there is worn wet knickers, increase bendOverDifficulty by 4000;
 			if the number of worn dense total protection knickers is 0, increase bendOverDifficulty by 8000;
-			if (short skirts permanent fetish is 0 or short skirts permanent fetish > 4) and the humiliation of the player < bendOverDifficulty:
+			if (short skirts permanent suggestion is 0 or short skirts permanent suggestion > 4) and the humiliation of the player < bendOverDifficulty:
 				say "You try your best, but as your back goes down and your butt becomes exposed to the class, you lose your nerve. This is too weird and embarrassing, to have all this attention on you as your [if the number of worn dense total protection knickers is 0]private parts become[otherwise]underwear becomes[end if] exposed! You can't bring yourself to go through with it, and end up bending your knees and quickly picking up the chalk the 'normal' way. Your cheeks flush red in shame, but you're not even sure if you feel most ashamed about the fact that you didn't manage to complete the task, or the fact that you almost did.[line break][speech style of M]'Very disappointing. Why volunteer when you're CLEARLY not ready to go through with this yet?! Well, [boy of the player], if you're so desperate to be done with this class, then I can make that happen. You should just be careful what you've wished for...'[roman type][line break][big he of M] shoves a hand up your skirt and grips a butt cheek, beginning to knead it like dough. You yelp in surprise [if the player is feeling dominant]and then grind your teeth with anger[otherwise]but don't dare move away from [him of M][end if]. You feel a bizarre, almost magical warmth emitting from [his of M] hands, and then a weird shiver overcomes your entire body.";
 				MagicPowerUp 2;
-				now short skirts permanent fetish is 4;
+				now short skirts permanent suggestion is 4;
 				say "After it's finished, you blink a couple of times and look down at your skirt, realising that you do indeed now feel [if the player is fighting against short skirts]desperate to pull up or remove[otherwise]strangely at home in[end if] your [ShortDesc of C]. The idea of wearing a normal skirt suddenly feels just... wrong. You look at [NameDesc of M] quizzically, and [he of M] just smirks back.[line break][speech style of M]'Yes, I see your new [']preference['] has taken its proper hold. In that case, there is nothing more I need to teach you.'[roman type][line break]";
 				now armband is ruby;
 				say "You watch as the ID card inside your armband transforms!";
@@ -628,7 +628,7 @@ To decide which number is the min-students of (L - drink-lesson):
 
 Definition: drink-lesson (called L) is lesson-appropriate:
 	if face is actually occupied or the total volume of face > 0, decide no;
-	if there is a nonstalking wisp, decide yes;
+	if there is a nonstalking evil-wisp, decide yes;
 	decide no.
 
 To compute teaching of (L - drink-lesson):
@@ -677,16 +677,11 @@ To compute teaching of (L - drink-lesson):
 	if the number of entries in LSL > 0 or the total volume of face > 0:
 		say "The runes on the goblet suddenly light up!";
 		if the total volume of face > 0:
-			let W be a random nonstalking wisp;
-			silently set up W;
-			now the wisp-quest of W is a random appropriate eligible wisp quest;
-			while the wisp-quest of W is drink-milk-wisp-quest or the wisp-quest of W is drink-urine-wisp-quest:
-				now the wisp-quest of W is a random appropriate eligible wisp quest;
-			now the wisp-trigger of W is lose-mouthful-wisp-trigger;
-			now the wisp-punishment of W is bimbo-wisp-punishment;
-			if (a random number between 0 and 1) + (a random number between 0 and 1) < game difficulty, now the wisp-punishment of W is a random appropriate wisp punishment;
-			update background colour of W;
-			say "[bold type]A [ColourDesc of W] curse wisp appears, and begins hovering behind you! [roman type]You can sense that you must [bold type][wisp-quest of W][roman type] before you next [bold type][wisp-trigger of W][roman type], or else you will [bold type][wisp-punishment of W][roman type].";
+			let W be a random nonstalking evil-wisp;
+			silently set up wisp quest for W;
+			silently set up wisp trigger lose-mouthful-wisp-trigger for W;
+			silently set up wisp GUI for W;
+			say AnnounceNewWisp W;
 		repeat with ST running through LSL:
 			if ST is student:
 				say "A curse wisp suddenly appears behind [NameDesc of ST][if the lessonInt1 of ST is 1]! And then it suddenly disappears again. Presumably because [he of ST] has got an empty mouth.[otherwise]![end if]";

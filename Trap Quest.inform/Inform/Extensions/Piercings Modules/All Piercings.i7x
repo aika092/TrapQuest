@@ -396,6 +396,20 @@ The cursed clitoris piercing stops you wearing crotch covering dresses rule is l
 
 A nipple piercing is a kind of piercing.
 
+To decide which object is the coverer of (C - a nipple piercing):
+	repeat with O running through top-layer-concealing ridiculously low cut or higher clothing:
+		if O is not mesh, decide on O;
+	decide on nothing.
+
+To decide which object is the concealer of (C - a nipple piercing):
+	repeat with O running through actually dense normally-nipple-covering top-layer-concealing very low cut or higher clothing:
+		decide on O; [erect nipple exposing clothing never fully conceals nipple piercings]
+	decide on nothing.
+To decide which object is the at least partial concealer of (C - a nipple piercing):
+	repeat with O running through partially-top-layer-concealing ridiculously low cut or higher clothing:
+		if O is not see-through, decide on O;
+	decide on nothing.
+
 A nipple chain is a kind of nipple piercing. The printed name of nipple chain is "[clothing-title-before]nipple chain[clothing-title-after]". The printed plural name of nipple chain is "[TQlink of item described][item style]nipple chains[clothing-title-after]". The text-shortcut of nipple chain is "nc". There is 1 nipple chain. Figure of nipple chain is the file "Items/Accessories/Piercings/nipplechain1.png". A nipple chain is usually titfuck-addiction-influencing. A nipple chain has a number called arousal-charge.
 
 To decide which object is the coverer of (C - a nipple chain):
@@ -527,8 +541,8 @@ This is the overdress cow rings clash rule:
 		if nipple-rings is worn and nipple-rings is cursed:
 			if summoning is 0 and autowear is false, say "Your [ShortDesc of nipple-rings] is somehow preventing you from wearing the [ShortDesc of wearing-target]! Maybe if you uncursed it?";
 			rule fails;
-		if dick-nipple-piercings is worn:
-			if summoning is 0 and autowear is false, say "Your [ShortDesc of dick-nipple-piercings] are somehow preventing you from wearing the [ShortDesc of wearing-target]! It looks like you're going to be topless and appearing ultra slutty to onlookers for the rest of your run...";
+		if dick-nipple-piercings is worn and wearing-target is not class-relevant:
+			if summoning is 0 and autowear is false, say "Your [ShortDesc of dick-nipple-piercings] are somehow preventing you from wearing the [ShortDesc of wearing-target]! It looks like you're going to be limited to bras and bikini tops for the rest of your run, unless you can find an outfit that it allows you to wear![line break][variable custom style]Perhaps the piercings will still allow me to wear outfits related to my class...[roman type][line break]";
 			rule fails.
 The overdress cow rings clash rule is listed in the overdress wearability rules.
 

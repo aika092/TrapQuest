@@ -1,8 +1,11 @@
 Anal Beads by Sex Toys begins here.
 
-An anal beads is a kind of plug. The printed name of anal beads is usually "[clothing-title-before][PlugSize size of item described] anal beads[clothing-title-after]". The text-shortcut of anal beads is "anb".  An anal beads has a number called notches. An anal beads has a number called notch-taken. Understand "bead", "anal", "beads" as anal beads.
+An anal beads is a kind of plug. The printed name of anal beads is usually "[clothing-title-before][PlugSize size of item described] anal beads[beads-inside-desc of item described][clothing-title-after]". The text-shortcut of anal beads is "anb".  An anal beads has a number called notches. An anal beads has a number called notch-taken. Understand "bead", "anal", "beads" as anal beads.
 
-pink-anal-beads is an anal beads.
+pink-anal-beads is an anal beads. pink-anal-beads is plastic.
+
+To say ShortDesc of (P - pink-anal-beads):
+	say "plastic anal beads".
 
 To decide which number is the magic-modifier of (C - an anal beads):
 	let N be the calculated-magic-modifier of C;
@@ -90,9 +93,19 @@ To decide which figure-name is clothing-image of (C - an anal beads):
 	if N is 9, decide on figure of anal beads 9;
 	decide on figure of anal beads 10.
 
+To decide which figure-name is the transform-image of (C - an anal beads):
+	if the examine-image of C is figure of anal beads 0 and the notches of C >= 3, decide on figure of anal beads 3;
+	decide on the examine-image of C.
+
 To say ClothingDesc of (P - an anal beads):
-	say "A set of [the notches of P] [PlugSize size of P] pink beads, connected by a thin cord with a small hook at the end. [if the notch-taken of P is the notches of P]Every single one is currently up your ass. [otherwise if the notch-taken of P is 1]It is currently hanging from your ass.[otherwise if the notches of P > the notch-taken of P and the notch-taken of P > 0][the notch-taken of P] are currently up your ass. [end if][if the notch-taken of P > 1]It won't be easy to remove them all at once.[end if]";
+	say "A set of [the notches of P] [PlugSize size of P] [BeadsDesc of P]. [if the notch-taken of P is the notches of P]Every single one is currently up your ass. [otherwise if the notch-taken of P is 1]It is currently hanging from your ass.[otherwise if the notches of P > the notch-taken of P and the notch-taken of P > 0][the notch-taken of P] are currently up your ass. [end if][if the notch-taken of P > 1]It won't be easy to remove them all at once.[end if]";
 	if the magic-modifier of P < the calculated-magic-modifier of P, say "[bold type]You sense that you are not getting the full magic benefit of this item, due to not having all the beads inside.[roman type][line break]".
+
+To say BeadsDesc of (P - an anal beads):
+	say "[ShortDesc of P], connected by a thin cord with a small hook at the end".
+
+To say beads-inside-desc of (P - an anal beads):
+	if P is penetrating a fuckhole and the notch-taken of P > 0, say " ([if the notches of P is 1]1 bead inside[otherwise if the notch-taken of P is the notches of P]all [notch-taken of P] beads inside[otherwise][notch-taken of P] out of [notches of P] beads inside[end if])".
 
 To say ShortDesc of (P - an anal beads):
 	say "anal beads".
@@ -179,9 +192,9 @@ Carry out unplugging anal beads:
 
 To compute (M - a monster) removing (C - an anal beads):
 	let F be a random fuckhole penetrated by C;
-	if M is intelligent or M is minotaur:
+	if M is intelligent:
 		let R be a random number between 3 and the notch-taken of C;
-		if the notch-taken of C < R or M is minotaur, now R is the notch-taken of C;
+		if the notch-taken of C < R, now R is the notch-taken of C;
 		say "[BigNameDesc of M] pulls hard on the cord connected to your [printed name of C], [if R > 1]forcing [R] beads out of your [variable F] in rapid succession.[otherwise]yanking the remaining bead from your [variable F] with little effort.[end if]";
 		decrease the notch-taken of C by R;
 		if the notch-taken of C <= 0:

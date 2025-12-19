@@ -194,8 +194,8 @@ To say AssholeModesty:
 		if P is a monster and P is male:
 			say "You have a feeling that no matter what you do, you're going to be creampied.";
 		otherwise:
-			if P is monster, say "Monsters are definitely paying extra attention to it.";
-			otherwise say "You have a feeling that monsters are paying extra attention to it.".
+			if P is monster, say "Enemies are definitely paying extra attention to it.";
+			otherwise say "You have a feeling that enemies are paying extra attention to it.".
 
 To say RealGapeDesc:
 	say "Your asshole is [AssGape real openness of asshole][if the player is possessing a vagina] and your pussy is [PussyGape real openness of vagina][end if]".
@@ -211,10 +211,7 @@ To gape (A - asshole) times (X - a number):
 			now the analvirgin of the player is 0;
 			now analvirginity-taker is a random live virginity taking thing penetrating asshole;
 			say "[bold type]You just lost your anal virginity![roman type][line break]";
-			if the player is male and the penetrativevirgin of the player is 1:
-				if the sex addiction of the player < 10 and the bimbo of the player < 10 and the humiliation of the player < HUMILIATION-SHAMELESS, now virgincursed is 2;
-				otherwise now virgincursed is 3;
-			progress quest of anal-virginity-quest;
+			set up anal virginity loss consequences;
 		if the openness of asshole < 10:
 			if the openness of asshole is 0:
 				say "[first custom style][line break][one of]Eek... my asshole is being forced open![or]Ack. My ass is being forced open again![stopping][roman type][line break]";
@@ -231,6 +228,15 @@ To gape (A - asshole) times (X - a number):
 	if the player is possessing a vagina and the openness of asshole > the openness of vagina + 5 and there is a worn tattoo and the player is not in a predicament room and a random number between 1 and 10 is 1 and asshole-cupid tattoo is drawable:
 		summon asshole-cupid tattoo;
 		say "Your skin stings with pain as a Cupid tattoo is suddenly burned onto your butt, pointing at your [asshole]![line break][variable custom style][if the player is not a pervert]No no, I'm not a butt slut![otherwise if the anal sex addiction of the player < 7]It's saying I prefer anal sex to normal sex?[otherwise]Ooh yes that's right, anal sex is the best sex![end if][roman type][line break]";
+	compute anal virginity loss consequences.
+
+To set up anal virginity loss consequences:
+	if the player is male and the penetrativevirgin of the player is 1:
+		if the sex addiction of the player < 10 and the bimbo of the player < 10 and the humiliation of the player < HUMILIATION-SHAMELESS, now virgincursed is 2;
+		otherwise now virgincursed is 3;
+	progress quest of anal-virginity-quest.
+
+To compute anal virginity loss consequences:
 	if transGender is 1, now virgincursed is 0;
 	if virgincursed > 1:
 		if virgincursed is 2:
@@ -241,7 +247,7 @@ To gape (A - asshole) times (X - a number):
 		otherwise if virgincursed is 3:[Idea being that the PC is already open to submissive anal sex etc so the explicit frilly emasculating sissy theme doesn't really make sense.]
 			say "[bold type]You realise you've been fucked before you fucked anyone else, and [if the bimbo of the player < 10]surprisingly[otherwise]unsurprisingly[end if], you already feel yourself accepting it.[line break][variable custom style]Anal is probably way better anyway. Who cares?[roman type][line break]";
 			now virgincursed is 4;
-			SpecialPenisDown 1; [#LXorDD]
+			SpecialPenisDown 1. [#LXorDD]
 
 To AssClose (X - a number):
 	now the previous openness of asshole is the openness of asshole;

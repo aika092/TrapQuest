@@ -1,8 +1,26 @@
 Removability by Clothing begins here.
 
+[!<ThingIsRemovable>+
+
+This determines whether it is physically possible to remove a thing. For example, a pair of horns fused with the player's head would not be removable, but a headband is removable. This only expresses whether something is physically possible to remove, not whether it is ACTUALLY impossible.
+
+@param <Object>:<C> The item that can potentially be removed
+
+@return <Boolean> returns true if C can be removed, false if it can't be removed.
+
++!]
 Definition: a thing is removable: decide yes.
 Definition: a tattoo is removable: decide no.
 
+[!<ThingIsUnremovable>+
+
+This determines whether it is not physically possible to remove a thing. For example, a pair of horns fused with the player's head would be unremovable, but a headband is not unremovable. This only expresses whether something is not physically possible to remove, not whether it is ACTUALLY possible
+
+@param <Object>:<C> The item that can potentially be removed
+
+@return <Boolean> returns true if C can't be removed, false if it can be removed.
+
++!]
 Definition: a thing is unremovable:
 	if it is not removable, decide yes;
 	decide no.
@@ -56,16 +74,22 @@ This definition determines whether or not a given item can be destroyed by being
 
 +!]
 Definition: a thing (called C) is tearable:
-	if C is indestructible, decide no;
 	if C is worn and C is unremovable, decide no;
-	if C is locked gag and diaper quest is 1 and C is not glued and (C is not cursed or C is not curse-sticky), decide yes;
-	if C is locked and current-monster is not a clothes-destroyer:
-		let K be a random unlock-key covering C;
-		if K is a thing and K is not held by current-monster and bondage protection is 0, decide no;
-		if current-monster is not a generic-unlocker, decide no;
+	if C is locked:
+		if C is gag and diaper quest is 1 and C is not glued and (C is not cursed or C is not curse-sticky) and C is not indestructible, decide yes;
+		if C is unlockable by current-monster, decide yes;
+	if C is indestructible, decide no;
+	if current-monster is not a clothes-destroyer, decide no;
 	decide yes.
 Definition: a thing is untearable:
 	if it is tearable, decide no;
+	decide yes.
+
+To decide whether (C - a clothing) is unlockable by (M - a monster):
+	let K be a random unlock-key covering C;
+	unless M is intelligent, decide no;
+	if K is a thing and K is not held by current-monster and bondage protection is 0, decide no;[with bondage protection disabled, only the correct key will work]
+	if (K is a thing and K is not held by current-monster) or M is a generic-unlocker, decide yes;[any monster carrying the key can open it, and any monster that carries skeleton keys can open it.]
 	decide yes.
 
 the global removability rules is a rulebook.
@@ -172,7 +196,7 @@ This is the locked unremovable rule:
 The locked unremovable rule is listed in the global removability rules.
 
 This is the immobile unremovable rule:
-	if summoning is 0 and the player is immobile and wearing-target is not plentiful accessory and (wearing-target is not shoes or the player is not dildo stuck):
+	if summoning is 0 and the player is immobile and wearing-target is not plentiful accessory and (wearing-target is not shoes or the player is not dildo stuck) and stripper cage trap is not grabbing the player:
 		if autoremove is false, say "You're a bit tied up at the moment!";
 		rule fails.
 The immobile unremovable rule is listed in the global removability rules.

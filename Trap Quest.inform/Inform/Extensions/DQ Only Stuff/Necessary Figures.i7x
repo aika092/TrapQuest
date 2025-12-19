@@ -17,6 +17,9 @@ Figure of breastfeeding predicament piss is the file "Special/Cutscene/cutscene-
 Figure of demoness cutscene 15 is the file "NPCs/Forest/Demoness/cutscene-demoness-dq-facesit1.jpg".
 Figure of detention chair is the file "Env/School/detentionchair2.jpg".
 
+Figure of DiaperPresentBoxBlindfoldedBackground is the file "Map/blindfolded3.jpg".
+Figure of DiaperPresentBoxBlindfoldedMessyBackground is the file "Map/blindfolded3b.jpg".
+
 Figure of dildo pole DQ ungrabbed is the file "Env/MultiFloor/dildopole2.jpg".
 Figure of dildo pole DQ nude is the file "Env/MultiFloor/dildopole2a.jpg".
 Figure of dildo pole DQ panties is the file "Env/MultiFloor/dildopole2b.jpg".
@@ -304,7 +307,10 @@ Figure of hotel urinal is the file "Env/MultiFloor/urinal3a.jpg".
 Figure of hotel urinal portal is the file "Env/MultiFloor/urinal3b.jpg".
 Figure of hotel urinal portal piss is the file "Env/MultiFloor/urinal3c.jpg".
 Figure of hotel urinal portal cum is the file "Env/MultiFloor/urinal3d.jpg".
+Figure of vibrator urinal is the file "Map/urinals1.jpg".
+
 To decide which figure-name is the examine-image of (T - urinal):
+	if T is grabbing the player or the urinal-rival of urinal-competition-punishment is guarding monster, decide on Figure of vibrator urinal;
 	if the player is in Dungeon41, decide on figure of babified shopkeeper urinal;
 	if the player is in School27, decide on figure of staff room urinal;
 	if the player is in Hotel31:

@@ -320,7 +320,7 @@ Definition: pink sequins dress is gem themed: decide yes.
 Definition: pink sequins dress is potentially-mid-layer-concealing: decide no. [only partially conceals midsection]
 
 To decide which object is the unique-upgrade-target of (C - pink sequins dress):
-	if sequins bodysuit is off-stage and the number of worn knickers is 0 and the number of worn bras is 0 and the number of worn corsets is 0 and the number of worn underdress is 0 and the number of worn tail plugs is 0, decide on sequins bodysuit;
+	if sequins bodysuit is off-stage and the number of worn knickers is 0 and the number of worn bras is 0 and the number of worn corsets is 0 and the number of worn underdress is 0 and the number of worn tailed clothing is 0, decide on sequins bodysuit;
 	decide on nothing.
 
 Part 13 - Exposing Blue Clubbing Dress

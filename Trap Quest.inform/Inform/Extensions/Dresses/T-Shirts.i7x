@@ -449,4 +449,26 @@ To compute (C - not-cheating T-Shirt) unique inheriting from (D - hotwife dress)
 	if the raw-magic-modifier of C < 0, now the raw-magic-modifier of C is 0;
 	now C is dominance.
 
+Part 16 - Incontinence Awareness T-shirt
+
+incontinence-awareness T-Shirt is a T-shirt. incontinence-awareness T-Shirt is unique. The printed name of incontinence-awareness T-Shirt is "[clothing-title-before]Incontinence Awareness Week T-Shirt[clothing-title-after]". The text-shortcut of incontinence-awareness T-Shirt is "iawt". Understand "incontinence", "awareness", "week" as incontinence-awareness T-Shirt.
+
+Figure of incontinence-awareness T-Shirt is the file "Items/Clothes/Upper/Shirts/tshirt15.png".
+
+To decide which figure-name is clothing-image of (C - incontinence-awareness T-Shirt):
+	decide on figure of incontinence-awareness T-Shirt.
+
+To say ClothingDesc of (C - incontinence-awareness T-Shirt):
+	say "This green unisex T-shirt has the words 'INCONTINENCE AWARENESS WEEK' in large white letters on the front.".
+
+To say ShortDesc of (C - incontinence-awareness T-Shirt):
+	say "Incontinence Awareness T-Shirt".
+
+Definition: incontinence-awareness T-Shirt is green themed: decide yes.
+
+To decide which number is the initial outrage of (C - incontinence-awareness T-Shirt):
+	decide on 2.
+To decide which number is the initial cringe of (C - incontinence-awareness T-Shirt):
+	decide on 5.
+
 T-Shirts ends here.

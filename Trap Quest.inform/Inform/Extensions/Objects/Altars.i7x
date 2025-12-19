@@ -1,14 +1,41 @@
 Altars by Objects begins here.
 
+An altar is a kind of thing.
+
+To say GodName of (A - an altar):
+	say "[if diaper quest is 0]Azathot[otherwise]Nannythoth[end if]";
+To say GodTitle of (A - an altar):
+	say "Formless";
+To say GodDesc of (A - an altar):
+	say "a shifting silhouette with tendrils twisting out in all directions. It seems... [if elder altar is mating]proud.[otherwise if the class of the player is cultist]expectant[otherwise]intrigued.[end if]";
+To say BaseObservationFlav of (M - an altar):
+	say "The silhouette continues to watch [one of]you[or]the action[at random].".
+
+
+
 [!<DungeonAltar>@
 
 The dungeon altar allows the player to remove curses from their clothes and obtain the priestess class. It becomes inactive after being used, and it recharges when the player kills monsters, when monsters grow bored, and when the player has sex with an enemy as the priestess. trying to use the altar while it is inactive will result in some sort of punishment.
 
 @!]
-The dungeon altar is a thing. The dungeon altar is in Dungeon28. The dungeon altar is not portable. The dungeon altar has a number called charge. The charge of the dungeon altar is usually -200. The printed name of dungeon altar is "[TQlink of item described]altar[shortcut-desc] [GlowDesc of the item described][TQxlink of item described][verb-desc of item described]". The indefinite article of the dungeon altar is "an". The text-shortcut of dungeon altar is "al". Figure of dungeon altar is the file "Env/Dungeon/altar1.jpg". Figure of dungeon altar cutscene is the file "Special/Cutscene/cutscene-altar-pray1.jpg".
+The dungeon altar is an altar. The dungeon altar is in Dungeon28. The dungeon altar is not portable. The dungeon altar has a number called charge. The charge of the dungeon altar is usually -200. The printed name of dungeon altar is "[TQlink of item described]altar[shortcut-desc] [GlowDesc of the item described][TQxlink of item described][verb-desc of item described]". The indefinite article of the dungeon altar is "an". The text-shortcut of dungeon altar is "al". Figure of dungeon altar is the file "Env/Dungeon/altar1.jpg". Figure of dungeon altar cutscene is the file "Special/Cutscene/cutscene-altar-pray1.jpg".
+
+To say GodName of (A - dungeon altar):
+	say "[if diaper quest is 0]Cuntulhu[otherwise]Cuddlhu[end if]";
+To say GodTitle of (A - dungeon altar):
+	say "Faultless";
+To say GodDesc of (A - dungeon altar):
+	say "a blistering white silhouette that seems to pierce your eyes whenever you look directly at it. It feels [if the class of the player is worshipper]digusted, [otherwise if the class of the player is virgin warrior or the class of the player is magical girl]star-struck, [otherwise if the class of the player is priestess]calculating, [otherwise]keen, [end if]somehow.";
 
 To say GlowDesc of (A - dungeon altar):
 	say "([if the class of the player is priestess and the charge of A > 0]unsafe[otherwise if the class of the player is priestess]safe[otherwise if the charge of A < -150]glowing strongly[otherwise if the charge of A < 100]glowing softly[otherwise]not glowing[end if])";
+
+To say FightObserve of (M - dungeon altar) with (N - a monster):
+	if the player is prone, say "[first custom style]'[one of][GoddessAddress] don't lose heart!'[or][GoddessAddress] get up!'[or][GoddessAddress] your journey is not yet over,!'[or][GoddessAddress] you must fight on!'[or][GoddessAddress] you're kind of bad at this...'[then at random][roman type][line break][moderateHumiliateReflect]";
+	otherwise say "[first custom style]'[one of][GoddessAddress] unleash your power!'[or][GoddessAddress] now is the time to display your might!'[or][GoddessAddress] [he of N] is but an obstacle on your quest!'[then at random][roman type][line break][moderateHumiliateReflect]";
+
+To say SexObserve of (M - dungeon altar) with (N - a monster):
+	say "[first custom style]'[one of][GoddessAddress] this is a trial for both of us![or][GoddessAddress] even now, you must be fierce!'[or][GoddessAddress] this is your true test!'[or][if the reaction of the player is 0][GoddessAddress] you fool! You are wasting your energy!'[otherwise]Fear not [GoddessAddress] your choice to conserve stamina is the correct one.'[end if][or]So this is what mortal sex looks like. Impressive!'[then at random][if the player is not disgraced and the player is able to speak][line break][variable custom style]'[one of]Stop watching me!'[or]This isn't a show!'[or]This is so humiliating!'[in random order][end if][roman type][line break][strongHumiliateReflect]".
 
 To decide which figure-name is the examine-image of (C - dungeon altar):
 	decide on figure of dungeon altar.
@@ -29,7 +56,7 @@ Report going when the player is in Dungeon28:
 The woods altar allows the player to randomly bless or uncurse items in exchange for a piece of jewellery. This altar is unique because it does not have a charge, and only jewellery can be placed on it.
 
 @!]
-The woods altar is a thing. The woods altar is in Woods20. The woods altar is not portable. The printed name of woods altar is "[TQlink of item described]small altar[if witch is bitchy and witch is in Woods20 and the altar-uses of witch is 1] (1 use remaining)[otherwise if witch is bitchy and witch is in Woods20] ([altar-uses of witch] uses remaining)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". Understand "small" as the woods altar. The text-shortcut of woods altar is "al".
+The woods altar is an altar. The woods altar is in Woods20. The woods altar is not portable. The printed name of woods altar is "[TQlink of item described]small altar[if witch is bitchy and witch is in Woods20 and the altar-uses of witch is 1] (1 use remaining)[otherwise if witch is bitchy and witch is in Woods20] ([altar-uses of witch] uses remaining)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". Understand "small" as the woods altar. The text-shortcut of woods altar is "al".
 
 Figure of woods altar 0 is the file "Env/Forest/altar1.jpg".
 Figure of woods altar 1 is the file "Env/Forest/altar2.jpg".
@@ -47,15 +74,31 @@ To decide which figure-name is the examine-image of (C - woods altar):
 		decide on figure of woods altar 5;
 	decide on figure of woods altar 0.
 
+
+To say GodName of (A - woods altar):
+	say "[if diaper quest is 0][one of]Gag-hoor[or]Nyaghocktua[sticky random][otherwise]Lipprha[end if]";
+To say GodTitle of (A - woods altar):
+	say "Fathomless";
+To say GodDesc of (A - woods altar):
+	say "a thorny silhouette that nonetheless seems to caress your eyes whenever you look at it. It seems kind of [if the class of the player is avatar]hostile?[otherwise if the class of the player is faerie or the class of the player is fertility goddess]pleased?[otherwise]horny?[end if]";
+
 To say ExamineDesc of (C - woods altar):
 	say "On top of a stone pillar rests a metal bowl shaped into several penises in a circle[one of]. It looks like you could try to [bold type]place[roman type] small objects, like jewellery, on it[or][stopping][if witch is bitchy and witch is in Woods20 and the altar-uses of witch is 1]. The altar has a single realistic penis amongst the metal ones, indicating that you are currently only allowed to use it one more time[otherwise if witch is bitchy and witch is in Woods20]. The altar has [altar-uses of witch] realistic penises amongst the metal ones, indicating how many times you are currently allowed to use it[end if].";
 	if newbie tips is 1, say "[one of][newbie style]Placing jewellery on here will uncurse worn clothing. If you have no cursed clothing, it'll instead raise your lowest stat. Just make sure you've paid the witch's toll first.[roman type][line break][or][stopping]".
+
+To say FightObserve of (M - woods altar) with (N - a monster):
+	if the player is prone, say "[second custom style]'[one of]Odds.... Poor...'[or]Mortals... Limited...'[or]Arms... Weak... Knees... Sturdy...'[or]Victory... Slipping...'[or]Suggestion... Get... Up...'[then at random][roman type][line break][moderateHumiliateReflect]";
+	otherwise say "[second custom style]'[one of]Show... Daring...'[or]Power... Intriguing...'[or]Violence... Aborrhent...'[then at random][roman type][line break][moderateHumiliateReflect]";
+
+To say SexObserve of (M - woods altar) with (N - a monster):
+	say "[second custom style]'[one of]How... Fun...[or][if N is penetrating face]Jaw[otherwise if N is penetrating a fuckhole]Hole[otherwise]Body[end if]... Stretched...'[or]Nature... Unfolds...[or]Life is... Sticky...'[then at random][if the player is not disgraced and the player is able to speak][line break][variable custom style]'[one of]Stop watching me!'[or]This isn't a show!'[or]This is so humiliating!'[in random order][end if][roman type][line break][strongHumiliateReflect]".
+
 
 [!<ElderAltar>@
 The elder altar gains charge when items are placed on the altar, and loses charge when the player uses the special invoking verb learned from the necronomicon.
 
 @!]
-The elder altar is a thing. The elder altar is in Mansion23. The elder altar is not portable. The printed name of elder altar is "[TQlink of item described]dark altar[shortcut-desc][if the charge of item described <= 0 and doomed >= 0] (glowing)[otherwise] (not glowing)[end if][TQxlink of item described][verb-desc of item described]". Understand "dark" as the elder altar. The indefinite article of the elder altar is "an". The elder altar has a number called charge. The text-shortcut of elder altar is "al".
+The elder altar is an altar. The elder altar is in Mansion23. The elder altar is not portable. The printed name of elder altar is "[TQlink of item described]dark altar[shortcut-desc][if the charge of item described <= 0 and doomed > 0] (glowing)[otherwise] (not glowing)[end if][TQxlink of item described][verb-desc of item described]". Understand "dark" as the elder altar. The indefinite article of the elder altar is "an". The elder altar has a number called charge. The text-shortcut of elder altar is "al".
 
 Figure of elder altar cock is the file "Env/Mansion/cumcock1.jpg".
 Figure of elder altar is the file "Env/Mansion/altar1.jpg".
@@ -72,12 +115,34 @@ To say ExamineDesc of (C - elder altar):
 	otherwise say "A rough stone table. Grotesque symbols are carved into it, which glow from within with [if the charge of the elder altar < 100]faint[otherwise]bright[end if] unnatural violet light. You hear faint whispers in the air which get louder with proximity. ";
 	say "You also notice a set of chains attached with manacles, clearly for securing people to the altar. You suppose you could try putting an item on it, or praying at it. You really don't want to think about what might happen if you got on it yourself.".
 
+To say FightObserve of (M - elder altar) with (N - a monster):
+	if the player is prone, say "[second custom style]'[one of]Isn't this, like, embarassing and stuff?'[or]Um, is THIS the mortal combat I've been hearing about?'[or]It seems your pointless resistance is, like, so over.'[or]How pitiable and stuff.'[or]Suggestion... Get... Up...'[then at random][roman type][line break][moderateHumiliateReflect]";
+	otherwise say "[second custom style]'[one of]Fight on! Fight on, and stuff!'[or]Oooh, so this is mortal combat?'[or]This is, like, kind of messy...'[at random][roman type][line break][moderateHumiliateReflect]";
+
+To say SexObserve of (M - elder altar) with (N - a monster):
+	say "[second custom style]'[one of]Mortal mating is SO fun to watch...'[or][Azathot] will love this...'[or]Your mortal technology is so, like, totally lesser... All I wanna do is zoom in...'[or]Its so fun when they fuck and stuff...'[then at random][if the player is not disgraced and the player is able to speak][line break][variable custom style]'[one of]Stop watching me!'[or]This isn't a show!'[or]This is so humiliating!'[in random order][end if][roman type][line break][strongHumiliateReflect]".
+
 [!<HotelAltar>@
 The hotel altar allows the player to gain unique demon-themed benefits in exchange for punishments. The more the altar is used, the better the benefit and the worse the punishment. The hotel altar gains charge when used and loses charge when the player kills a monster or when a monster grows bored. It also loses charge when the player has sex with an infernal monster as a worshipper.
 
 @!]
-The hotel altar is a thing. The hotel altar is in Hotel35. The hotel altar is not portable. The printed name of hotel altar is "[TQlink of item described]golden altar[shortcut-desc] [GlowDesc of the item described][TQxlink of item described][verb-desc of item described]". Understand "golden", "gold" as the hotel altar. The hotel altar has a number called charge. The charge of hotel altar is 45. The text-shortcut of hotel altar is "al".
+The hotel altar is an altar. The hotel altar is in Hotel35. The hotel altar is not portable. The printed name of hotel altar is "[TQlink of item described]golden altar[shortcut-desc] [GlowDesc of the item described][TQxlink of item described][verb-desc of item described]". Understand "golden", "gold" as the hotel altar. The hotel altar has a number called charge. The charge of hotel altar is 45. The text-shortcut of hotel altar is "al".
 The hotel altar has a number called altar-intensity. The altar-intensity of hotel altar is 3.
+
+To say GodName of (A - hotel altar):
+	say "Slygoona";
+To say GodTitle of (A - hotel altar):
+	say "Faceless";
+To say GodDesc of (A - hotel altar):
+	say "a featureless silhouette with horns curling around its head. You can sense [if the class of the player is avatar]the presence of your master.[otherwise]its malice.[end if]";
+
+To say FightObserve of (M - hotel altar) with (N - a monster):
+	if the player is prone, say "[first custom style]'[one of]Well now... things ARE developing in an interesting direction, aren't they...'[or]Good, now tittilate with your eyes, [NameBimbo].'[or]Yes, that's right [NameBimbo]. Keep that back arched.'[or][NameBimbo]. How can you hope to seduce anyone with that AWFUL posture?'[or]NOW you have my attention.'[at random][roman type][line break][moderateHumiliateReflect]";
+	otherwise say "[first custom style]'[one of]How boring.'[or]If there's anything I hate, it's mortals who wear themselves out with combat of all things...'[or]Yawn. Did you hear that, [NameBimbo]? Yawn. You are making me yawn.'[or][NameBimbo], sweetheart, darling. Don't you know kneeling is better for your calves?'[or]Ugh. Get on with it.'[or]Is this what passes for entertainment these days?'[at random][roman type][line break][moderateHumiliateReflect]";
+
+To say SexObserve of (M - hotel altar) with (N - a monster):
+	if the vaginalvirgin of the player is 1 or (the player is male and the analvirgin of the player is 1), say "[first custom style]'[one of]Keeping yourself pure is difficult work, [NameBimbo]![or]Isn't this a small price to pay to stay unspoiled, [NameBimbo]?'[or]Apply yourself, [NameBimbo]. You don't want [FuckerDesc of N] to change [his of N] mind, do you?'[or]What clever use of your body, [NameBimbo]![or]Just think of what you'll gain from this, [NameBimbo]... you WILL gain something, right?'[then at random][if the player is not disgraced and the player is able to speak][line break][variable custom style]'[one of]Stop watching me!'[or]This isn't a show!'[or]This is so humiliating!'[in random order][end if][roman type][line break][strongHumiliateReflect]";
+	otherwise say "[first custom style]'[one of]How filthy, [NameBimbo]![or]This position suits used up whores like you, [NameBimbo]!'[or]Ha. You're just meat, aren't you, [NameBimbo]!'[or]Know your place, [NameBimbo]![or]I love it, I love it! How does this make you feel, [NameBimbo]!'[then at random][if the player is not disgraced and the player is able to speak][line break][variable custom style]'[one of]Stop watching me!'[or]This isn't a show!'[or]This is so humiliating!'[in random order][end if][roman type][line break][strongHumiliateReflect]".
 
 To say GlowDesc of (A - hotel altar):
 	let N be the altar-intensity of A;
@@ -91,7 +156,12 @@ To decide which figure-name is the examine-image of (C - hotel altar):
 A time based rule (this is the hotel altar charge rule):
 	if Hotel35 is discovered:
 		increase the charge of hotel altar by 1;
-		if the charge of hotel altar > a random number between 50 and 1000:
+		let C be 1000;
+		let D be the public disgrace of the player;
+		if D > 2000, now D is 2000;
+		if D < 500 or (infamy fetish is 0 and doomed < 1), now D is 0;[with doom inactive and infamy disabled, disgrace won't affect altars]
+		decrease C by D / 5;
+		if the charge of hotel altar > a random number between 50 and C:
 			now the charge of hotel altar is 0;
 			increase the altar-intensity of hotel altar by 1.
 
@@ -183,14 +253,20 @@ Check praying something with:
 		now the charge of the elder altar is 0;
 		say "The horn trembles as it is enveloped by black flames, shooting several long ropes of creamy white fluid across the surface of the altar before being consumed completely. Purple light suffuses the altar as the horn disappears in a puff of white smoke.";
 		destroy the noun instead;
-	otherwise if the second noun is hotel altar and the number of nonstalking wisps is 0:
-		say "Nothing happens. Perhaps you have too many curse wisps already." instead.
+	otherwise if the second noun is hotel altar and the number of nonstalking evil-wisps is 0:
+		say "Nothing happens. Perhaps you have too many cursed wisps already." instead.
 
 To AltarPunish (T - a thing):
-	if a random number between 0 and 5 < game difficulty:
+	let D be the public disgrace of the player;
+	if D < 500, now D is 0;
+	if D > 2000, now D is 2000;
+	if doomed > 0 and infamy fetish > 0 and camera-drone is nonstalking and a random number from 2000 to D is 2000:
+		say "You hear a downright pretentious slurping sound as a fist-sized, floating eye with tiny dangling tentacles emerges from behind the altar and begins to hover in front of you.";
+		deploy a drone camera;
+	otherwise if a random number between 0 and 5 < game difficulty:
 		RandomStatDown 1;
-	otherwise if there is a nonstalking wisp:
-		deploy a wisp;
+	otherwise if there is a nonstalking evil-wisp:
+		deploy an evil wisp;
 	otherwise:
 		say "Nothing seems to happen.".
 
@@ -426,7 +502,10 @@ To AltarPray (P - a person):
 To AltarReward (T - wrist bond):
 	if T is cursed:
 		if strongCurses is 1:
+			let OQ be the quest of T;
 			compute new quest of T;
+			if the quest of T is OQ, say "The altar is still glowing.";
+			otherwise reset dungeon altar;
 		otherwise:
 			say "*Click!* It would appear that the [ShortDesc of T] has lost its curse!";
 			bless T;
@@ -437,7 +516,10 @@ To AltarReward (T - wrist bond):
 To AltarReward (T - chastity bond):
 	if T is cursed:
 		if strongCurses is 1:
+			let OQ be the quest of T;
 			compute new quest of T;
+			if the quest of T is OQ, say "The altar is still glowing.";
+			otherwise reset dungeon altar;
 		otherwise:
 			say "*Click!* It would appear that the [ShortDesc of T] has lost its curse!";
 			bless T;
@@ -448,7 +530,10 @@ To AltarReward (T - chastity bond):
 To AltarReward (T - ankle bond):
 	if T is cursed:
 		if strongCurses is 1:
+			let OQ be the quest of T;
 			compute new quest of T;
+			if the quest of T is OQ, say "The altar is still glowing.";
+			otherwise reset dungeon altar;
 		otherwise:
 			say "*Click!* It would appear that the [ShortDesc of T] has lost its curse!";
 			bless T;
@@ -467,18 +552,18 @@ To AltarReward (T - an ectoplasm):
 	let G be a random off-stage golem;
 	let S be a random off-stage slimeball;
 	unless the player is getting unlucky:
-		say "A voice appears in your head:[line break][second custom style]'[GoddessAddress], I will purify that filth for you!'[roman type][line break]The wad of slime glows as it asorbs the magic from the altar, transforming into a dense wad of magic slime!";
+		say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] I will purify that filth for you!'[roman type][line break]The wad of slime glows as it asorbs the magic from the altar, transforming into a dense wad of magic slime!";
 		now charged-slime is in the location of the player;
 	otherwise if G is a monster:
-		say "A voice appears in your head:[line break][second custom style]'[GoddessAddress], I will purify that fi-... oops.'[roman type][line break]The wad of slime glows as it absorbs the magic of the altar, doubling, then tripling, then dectupling in size as it transforms into an amorphous creature vaguely shaped like a [man of dominatrix]! Uh-oh![GotUnluckyFlav]";
+		say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] I will purify that fi-... oops.'[roman type][line break]The wad of slime glows as it absorbs the magic of the altar, doubling, then tripling, then dectupling in size as it transforms into an amorphous creature vaguely shaped like a [man of dominatrix]! Uh-oh![GotUnluckyFlav]";
 		set up G;
 		now G is in the location of the player;
 	otherwise if S is a monster:
-		say "A voice appears in your head:[line break][second custom style]'[GoddessAddress], I will purify that fi-... oops.'[roman type][line break]The wad of slime glows as it absorbs the magic of the altar, doubling in size as it leaps off the altar by itself! Uh-oh![GotUnluckyFlav]";
+		say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] I will purify that fi-... oops.'[roman type][line break]The wad of slime glows as it absorbs the magic of the altar, doubling in size as it leaps off the altar by itself! Uh-oh![GotUnluckyFlav]";
 		set up S;
 		now S is in the location of the player;
 	otherwise:
-		say "A voice appears in your head:[line break][second custom style]'[GoddessAddress], I will purify that filth for you!'[roman type][line break]The wad of slime glows as it slowly distinegrates under the powr of the altar.";
+		say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] I will purify that filth for you!'[roman type][line break]The wad of slime glows as it slowly distinegrates under the powr of the altar.";
 		MagicPowerRefresh 6;
 	destroy T;
 	reset dungeon altar.
@@ -585,8 +670,13 @@ To WitchCheck (M - witch):
 		decrease the altar-uses of witch by 1.
 
 To reset elder altar:
+	let C be 300;
+	let D be the public disgrace of the player;
+	if D > 2000, now D is 2000;
+	if D < 500 or (infamy fetish is 0 and doomed < 1), now D is 0;[with doom inactive and infamy disabled, disgrace won't affect altars]
+	increase C by D / 5;
 	if the charge of elder altar < 0, now the charge of elder altar is 0;
-	increase the charge of the elder altar by 300.
+	increase the charge of the elder altar by C.
 
 To ElderEmpower (T - a headgear):[default]
 	do nothing.
@@ -748,6 +838,9 @@ To ElderSacrifice (T - a thing):
 				now whisper-tracking is 1;
 			if doom counter > 0, increase doom counter by 100;
 			say "The heaviness in the air intensifies. You sense that you have somehow given the altar more power.";
+		otherwise if infamy fetish > 0 and doomed > 0 and camera-drone is nonstalking :
+			say "You hear an oddly malicious slurping sound as a fist-sized, floating eye with tiny dangling tentacles emerges from the smoke and begins to hover in front of you.";
+			deploy a drone camera;
 		destroy T;
 	reset elder altar.
 
@@ -952,6 +1045,7 @@ To DevilPray (P - a person):
 	if diaper quest is 0:
 		repeat with M running through infernal monsters:
 			if the times-submitted of M > 0, now R is 0;
+	let W be infernal-portal;
 	if diaper quest is 0 and avatar-summoned is false and the player is possessing a vagina and the vaginalvirgin of the player is 1 and the player is soulless and avatar-headpiece is actually summonable:
 		now R is 0; [free]
 		say "The statue's eyes glow with multicoloured light as a [if lady fetish is 1]husky, feminine[otherwise]deep, masculine[end if] voice echoes in your ear.[line break][first custom style]'A virgin, with a void for a soul... It would be a waste to make you an altar girl! That tight little hole in your chest is begging to be filled!'[roman type][line break]The statue's arms suddenly spring to life, grabbing either side of your head and forcing you to look directly into the its eyes as you feel *something* pressing in on you from *somewhere*. The empty feeling in your chest turns into a slow, painful sensation of stretching, and you let out a groan of pain as something HUGE and warm forces its way into your very core. Brand new horns push their way out of your forehead. Finally, a golden tiara and hood materialises on your head.[line break][first custom style]'Hm, looks like you weren't able to take all of me, but no matter. I am your master now, [NameBimbo], so get to work collecting souls while I work on improving your vessel.'[roman type][line break]";
@@ -1017,23 +1111,33 @@ To DevilPray (P - a person):
 	otherwise if R is 2 and the number of off-stage imps > 0 and the class of the player is not avatar: [summon imps; 1 -> 2 -> 3 -> 4]
 		let X be ((N * 2) / 3) + 1;
 		if X > the number of off-stage imps, now X is the number of off-stage imps;
-		say "The statue's eyes glint as a portal opens up in front of you, accompanied by mischievous chuckling as [if X is 1]an imp steps[otherwise][X] imps step[end if] out.";
+		say "The statue's eyes glint as [if W is stalking]the fiery portal widens[otherwise]a fiery portal opens up in front of you[end if], accompanied by mischievous chuckling as [if X is 1]an imp steps[otherwise][X] imps step[end if] out.";
 		while X > 0:
 			let I be a random off-stage imp;
 			compute reward N set up of I;
 			decrease X by 1;
 			interest I;
+		if W is nonstalking and (tough-shit is 1 or the player is getting unlucky):
+			followerset W;
+			say "[line break][bold type]The portal shrinks down to about the size of a fist and begins following you.[roman type][line break]";
+		otherwise:
+			say "After a moment, the portal sputters and winks out of existence.";
 	otherwise:
-		say "A fiery circle appears. ";
+		say "[if W is stalking]The fiery portal widens[otherwise]A fiery portal opens up above the ground[end if] and [run paragraph on]";
 		let C be a random off-stage rare fetish appropriate clothing;
 		if C is clothing:
 			blandify and reveal C;
 			now the raw-magic-modifier of C is (N + 1) / 2;
 			now C is in the location of the player;
-			say "In the middle of the circle, a [C] appears.";
+			say "spits out a [ShortDesc of C].";
 			compute autotaking C;
 		otherwise:
-			say "And then... it fizzles out. It appears that the statue has nothing to offer you right now.";
+			say "spits out some hot embers. It appears that the statue has nothing to offer you right now.";
+		if W is nonstalking and the class of the player is not avatar and (tough-shit is 1 or the player is getting unlucky):
+			followerset W;
+			say "[line break][bold type]The portal shrinks down to about the size of a fist and begins following you.[roman type][line break]";
+		otherwise:
+			say "After a moment, the portal sputters and winks out of existence.";
 	compute DevilPayment N;
 	progress quest of hotel-altar-quest.
 
@@ -1066,7 +1170,14 @@ To DevilPray (T - a clothing):
 		say "Nothing seems to happen.".
 
 To compute DevilPayment (N - a number):
-	if there is a nonstalking wisp, deploy a wisp; [there should always be one]
+	let D be the public disgrace of the player;
+	if D < 500, now D is 0;
+	if D > 2000, now D is 2000;
+	if doomed > 0 and infamy fetish > 0 and camera-drone is nonstalking and a random number from 2000 to D is 2000:
+		say "You hear a horrible slurping sound as a fist-sized, floating eye with tiny dangling tentacles emerges from behind the altar and begins to hover in front of you.";
+		deploy a drone camera;
+	otherwise if there is a nonstalking evil-wisp:
+		deploy an evil wisp;[there should always be one]
 	now the altar-intensity of hotel altar is 0.
 
 To DevilPray (T - ritual-beads):
@@ -1126,11 +1237,14 @@ Resets the charge of the dungeon altar and triggers any code that needs to run w
 
 +!]
 To reset dungeon altar:
-	if the class of the player is priestess and the player is possessing a vagina and the vaginalvirgin of the player is 1, now the charge of the dungeon altar is 220;
-	otherwise now the charge of the dungeon altar is 400;
-	if demon tail plug is worn, increase the charge of the dungeon altar by 150;
-	force inventory-focus redraw; [This forces the inventory window to redraw]
-	force clothing-focus redraw. [This forces the clothing window to redraw]
+	let C be 400;
+	let D be the public disgrace of the player;
+	if D > 2000, now D is 2000;
+	if D < 500 or (infamy fetish is 0 and doomed < 1), now D is 0;[with doom inactive and infamy disabled, disgrace won't affect altars]
+	increase C by D / 5;
+	if the class of the player is priestess and the player is possessing a vagina and the vaginalvirgin of the player is 1, decrease D by 200;
+	if demon tail plug is worn, increase D by 100;
+	now the charge of the dungeon altar is C.
 
 Rule for supplying a missing second noun while praying something with:
 	if the player is in Dungeon28, now the second noun is dungeon altar;

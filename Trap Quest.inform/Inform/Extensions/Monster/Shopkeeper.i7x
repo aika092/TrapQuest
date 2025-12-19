@@ -3,6 +3,8 @@ Shopkeeper by Monster begins here.
 [Note that payments to the shopkeeper are handled by Actions/Paying.i7x]
 
 shopkeeper is a monster. shopkeeper is male. shopkeeper is intelligent. The leftover-type of shopkeeper is 108. shopkeeper has a number called stolen-aware.
+To decide which object is the default-local-room of (M - shopkeeper):
+	decide on Dungeon41.
 
 shopkeeper has a number called BBCTrainingQuest. [0: Quest not started. 1: Quest in progress. 2: Quest completed. 3: Reward given.]
 
@@ -647,9 +649,6 @@ To compute the flying player taunting of (M - shopkeeper):
 To say LandingTaunt of (M - shopkeeper):
 	say "[BigNameDesc of M] laughs at the sight of you.[line break][speech style of M]'[one of]About time! Prepare yourself, criminal scum.[or]Life is full of ups and downs I guess. Mainly downs for you from here on out, though.[in random order]'[roman type][line break]";
 	moderateHumiliate.
-
-To decide which number is the rounds of sex left of (M - shopkeeper):
-	decide on the sex-length of M.
 
 To say sexSubmitNearingClimax of (M - shopkeeper) in (F - a fuckhole):[shopkeeper climax is special]
 	say M submission sex 0.
@@ -1633,7 +1632,10 @@ To set up store:
 		if C is diaper, increase diaper-stored by 1;
 		otherwise increase shop-things by 1;
 	while diaper lover >= 1 and diaper-stored < 3:
-		let D be a random eligible diaper;
+		let BC be biggest-change;
+		if BC < 2, now BC is 2;
+		now bulk-search-level is a random number between 1 and BC;
+		let D be the super-strict chosen diaper;
 		if D is diaper:
 			clean D;
 			repair D;
