@@ -7,7 +7,7 @@ supporter-ai is a supporter. supporter-ai is female. The leftover-type of suppor
 The supporter-name of supporter-ai is "Ai".
 
 To say MonsterDesc of (M - supporter-ai):
-	say "This [man of M] looks like the epitome of a blonde bimbo. [big he of M]'s completely naked, [if lady fetish is 2]aside from a neon-pink chastity cage around [his of M] [DickDesc of M][otherwise][his of M] giant M-cup tits somehow not sagging as much as they should, either thanks to implants or magic[end if]. [big his of M] huge, visibly enhanced cock-suckling lips are coloured a deep shade of pink and two hoops with hears in the centre hang from [his of M] earlobes. [big his of M] medium length blonde hair is kept in a ponytail by a tight pink scrunchie.".
+	say "This [man of M] looks like the epitome of a blonde bimbo. [big he of M]'s completely naked, [if lady fetish is 2]aside from a neon-pink chastity cage around [his of M] [DickDesc of M][otherwise][his of M] giant M-cup tits somehow not sagging as much as they should, either thanks to implants or magic[end if]. [big his of M] huge, visibly enhanced cock-sucking lips are coloured a deep shade of pink, and two hoops with hearts in the centre hang from [his of M] earlobes. [big his of M] medium length blonde hair is kept in a ponytail by a tight pink scrunchie.".
 
 Figure of Ai is the file "NPCs/MultiFloor/Supporter/aika1.png".
 
