@@ -285,7 +285,7 @@ To decide which figure-name is the examine-image of (C - summoning-circle):
 
 To say ExamineDesc of (C - summoning-circle):
 	say "A softly glowing pentagram, with candles placed at all five points of the star. You can see that a mirror has been inlaid into the centre of the circle, although if you look closely, you see that it doesn't show your reflection. [if C is active][PortalHint of C]The energy around the circle is slowly building, as if it were hungry for something. Maybe you can find some way to [bold type]appease[roman type] it.[end if][if C is active and the divinationskill of the player is 1][DivinationHint of C][end if]";
-	if newbie tips is 1, say "[one of][newbie style]Newbie Tip: This is the mechanism that the Dungeon uses to summon new NPCs into the region over time. It will slowly count down until it releases a brand new monster into the dungeon. When it gets close, it'll start glowing, at which point you can increase its timer by entering it or offering valuable items to it.[roman type][or][stopping]".
+	if newbie tips is 1, say "[one of][newbie style]Newbie tip: This is the mechanism that the Dungeon uses to summon new NPCs into the region over time. It will slowly count down until it releases a brand new monster into the dungeon. When it gets close, it'll start glowing, at which point you can increase its timer by entering it or offering valuable items to it.[roman type][or][stopping]".
 
 To say PortalHint of (S - summoning-circle):
 	let M be the next-summon of S;
@@ -314,7 +314,7 @@ To say ActiveWarning of (S - summoning-circle):
 	say "[bold type][if the location of the player is Dungeon33]The [printed name of summoning-circle] slowly lights up, and you can feel dark energy gathering around you...[otherwise]A pulse of energy passes through the dungeon, and something changes in the air. It's almost like there's a draft.[end if][roman type][line break]";
 	if the location of the player is Dungeon33, say "[variable custom style]Is something going to come through that?[roman type][line break]";
 	otherwise say "[variable custom style]Something's coming[if the player is a nympho]... Tee-hee, cumming.[otherwise]...[end if][roman type][line break]";
-	if newbie tips is 1, say "[one of][newbie style]Newbie Tip: Oh, looks like the dungeon's summoning portal just activated! That must mean the game has decided there aren't enough NPCs in the dungeon right now. It will slowly count down until it releases a brand new monster into the dungeon. Try increasing its timer by entering it or offering items to stall it, or perform some sexual acts nearby to make the monster arrive even faster![roman type][or][stopping]".
+	if newbie tips is 1, say "[one of][newbie style]Newbie tip: Oh, looks like the dungeon's summoning portal just activated! That must mean the game has decided there aren't enough NPCs in the dungeon right now. It will slowly count down until it releases a brand new monster into the dungeon. Try increasing its timer by entering it or offering items to stall it, or perform some sexual acts nearby to make the monster arrive even faster![roman type][or][stopping]".
 
 Check entering summoning-circle:
 	if the player is immobile, say "Aren't you a bit tied up at the moment?" instead;
@@ -423,7 +423,7 @@ To say ExamineDesc of (C - giant-statue):
 		say "[PortalHint of C]Although made of stone, the lust that hangs in the air around her is all too real. Maybe you can find some way to [bold type]appease[roman type] her with an offering. [if the divinationskill of the player is 1][DivinationHint of C][end if]";
 	otherwise:
 		say "Right now it seems like there's nothing you can do. Maybe at certain times she can be appeased with some kind of offering.";
-		if newbie tips is 1, say "[one of][newbie style]Newbie Tip: This is the mechanism that the Woods uses to summon new NPCs into the region over time. It will slowly count down until it releases a brand new monster into the region. When it gets close, it'll become possible to increase its timer by offering valuable items to it.[roman type][or][stopping]".
+		if newbie tips is 1, say "[one of][newbie style]Newbie tip: This is the mechanism that the Woods uses to summon new NPCs into the region over time. It will slowly count down until it releases a brand new monster into the region. When it gets close, it'll become possible to increase its timer by offering valuable items to it.[roman type][or][stopping]".
 
 [Forest hints are sound based.]
 To say PortalHint of (S - giant-statue):
@@ -691,7 +691,7 @@ To decide which figure-name is the examine-image of (C - mysterious-mummy):
 
 To say ExamineDesc of (C - mysterious-mummy):
 	say "[PortalHint of C] A mirror has been inlaid into the wood at her feet, lined with [MummyColour of C] incense candles.[if C is active]Distinctly [i]unclean[/i] energy is slowly building up around her, although you feel like you might be able to offer something to [bold type]appease[roman type] it.[otherwise]You feel like you might be able to influence her, if you have something to [bold type]appease[roman type] her with.[end if][if C is active and the divinationskill of the player is 1][DivinationHint of C][end if]";
-	if newbie tips is 1, say "[one of][newbie style]Newbie Tip: This is the mechanism that the Mansion uses to summon new NPCs into the region over time. It will slowly count down until it releases a brand new monster into the house. When it gets close, it'll start glowing, at which point you can increase its timer by offering valuable items to it.[roman type][line break][or][stopping]".
+	if newbie tips is 1, say "[one of][newbie style]Newbie tip: This is the mechanism that the Mansion uses to summon new NPCs into the region over time. It will slowly count down until it releases a brand new monster into the house. When it gets close, it'll start glowing, at which point you can increase its timer by offering valuable items to it.[roman type][line break][or][stopping]".
 
 To say MummyType of (S - mysterious-mummy):
 	if S is active:
