@@ -94,7 +94,7 @@ To compute maidification of (C - a clothing):
 Report taking pink-spraybottle:
 	if the noun is not worn and the player is not in a predicament room:
 		now the noun is worn by the player;
-	if newbie tips is 1 and the noun is worn, say "[newbie style][one of]Newbie Tip: You just picked up a spraybottle. It's out of cleaning fluid right now, but you earn some by cleaning up puddles of [if diaper quest is 1]urine[otherwise]semen[end if][if diaper quest is 0 and (watersports fetish is 1 or lactation fetish is 1)] and other fluids[end if] you've left throughout the dungeon. Once you have enough, you can spray it on some dirty clothes to quickly clean them off, or spray it on enemies for a (usually) quite damaging attack.[or][stopping][roman type][line break]".
+	if newbie tips is 1 and the noun is worn, say "[newbie style][one of]Newbie tip: You just picked up a spraybottle. It's out of cleaning fluid right now, but you earn some by cleaning up puddles of [if diaper quest is 1]urine[otherwise]semen[end if][if diaper quest is 0 and (watersports fetish is 1 or lactation fetish is 1)] and other fluids[end if] you've left throughout the dungeon. Once you have enough, you can spray it on some dirty clothes to quickly clean them off, or spray it on enemies for a (usually) quite damaging attack.[or][stopping][roman type][line break]".
 
 Report taking off pink-spraybottle:
 	if the charge of the noun > 0:
