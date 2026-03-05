@@ -327,7 +327,7 @@ Definition: a monster (called M) is default-actually-lick-unsatisfied:
 			choose a sex method;
 		now the chosen-orifice of M is targeted-body-part;
 		say "[if M is intelligent][speech style of M]'I'm not satisfied yet!'[roman type][line break][end if]It looks like [NameDesc of M] intends to keep using you...";
-		if newbie tips is 1, say "[one of][newbie style]Newbie Tip: It's not straightforward to satisfy an NPC with just licking. And the more you resist, you'll avoid some gross tastes, but the more likely it is that they won't be satisfied.[roman type][line break][or][stopping]";
+		if newbie tips is 1, say "[one of][newbie style]Newbie tip: It's not straightforward to satisfy an NPC with just licking. And the more you resist, you'll avoid some gross tastes, but the more likely it is that they won't be satisfied.[roman type][line break][or][stopping]";
 		set up sex length of M in targeted-body-part;
 		decide yes;
 	decide no.
