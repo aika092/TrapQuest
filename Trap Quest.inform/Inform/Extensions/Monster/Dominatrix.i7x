@@ -657,7 +657,7 @@ To compute unique penetration effect of (M - dominatrix) in (B - a body part):
 		now the disappointment of M is 0.
 
 To say PenPrep of (M - dominatrix) in (F - asshole):
-	say "[BigNameDesc of M] wraps a hand around [his of M] [LongDickDesc of M] and guides it towards the entrance to your [asshole].[line break][speech style of M]'[one of]You[or]Remember, you[stopping] do not have permission to cum unless I say so.'[if newbie tips is 1][newbie style][line break]Newbie Tip: Choosing 'resist' during sex reduces the chance of orgasm.[end if][roman type][line break]".
+	say "[BigNameDesc of M] wraps a hand around [his of M] [LongDickDesc of M] and guides it towards the entrance to your [asshole].[line break][speech style of M]'[one of]You[or]Remember, you[stopping] do not have permission to cum unless I say so.'[if newbie tips is 1][newbie style][line break]Newbie tip: Choosing 'resist' during sex reduces the chance of orgasm.[end if][roman type][line break]".
 
 To say PenetrationFlav of (M - dominatrix) in (F - asshole):
 	say "[big he of M] pushes in with measured strength and your [ShortDesc of asshole] [if the openness of asshole < the strap-on girth of M]is forced apart[otherwise]parts to accept the fake [manly-penis] inside[end if].";
