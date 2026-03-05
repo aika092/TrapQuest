@@ -1148,7 +1148,7 @@ To say PenileClimaxFlav of (M - a wench):
 		say "[BigNameDesc of M] shudders, [one of]shrieking[or]practically crying[at random] with pleasure as climax takes [him of M]. [big he of M] doesn't stop as [his of M] [if lady fetish is 2]cock shoots strings of [semen] across your belly[otherwise]pussy squirts out femcum[end if]. [if refractoryperiod > 0]You would envy [him of M], if not for the fact that [he of M] made you blow your load only a few seconds ago. [BigFuckerDesc of M] heaves a satisfied sigh as the movements of [his of M] hips come to a stop, and your softening [player-penis] slips out of [his of M] creampied [HoleDesc of M].[otherwise if the reaction of the player is 0]You can't help but envy [him of M], which makes it that much harder to hold on! [otherwise]You can't help but envy [him of M], which makes your desire to cum before you lose your chance even stronger! [end if]";
 		if refractoryperiod <= 0:
 			stimulate penis from M times 1;[player can still cum]
-			if refractoryperiod <= 0, say "[FuckerDesc of M], however, doesn't seem to notice. [big he of M] climbs off of you, leaving your [player-penis] throbbing and unsatisfied.";
+			if refractoryperiod <= 0, say "[BigFuckerDesc of M], however, doesn't seem to notice. [big he of M] climbs off of you, leaving your [player-penis] throbbing and unsatisfied.";
 			otherwise say "Looking satisfied, [FuckerDesc of M] climbs off of you.";
 		say "[line break][speech style of M]'[one of]Wow, I needed that.'[or]That felt SO good.'[or]THAT was fucking perfect, cutie.'[in random order][roman type][line break]";
 		Calm M;
