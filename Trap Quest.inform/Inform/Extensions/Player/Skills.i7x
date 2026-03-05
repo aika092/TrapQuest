@@ -405,7 +405,7 @@ To teach makeupskill:
 	if the makeupskill of the player is 0:
 		say "Do you pay close attention to the instructions?";
 		if the player is consenting:
-			say "[bold type]**You have learned how to apply impressive make up!**[line break]From now on, you'll have extra increased charisma for a while after using a make up kit to give yourself a moderate but not over-the-top amount of make up.[if newbie tips is 1][one of][line break][newbie style]Newbie Tip: Charisma helps you convince NPCs to do things. This could be getting them to give you something nice in return when you gift them an item, or it could be convincing them to be more gentle with you. Make up increases charisma, and this new ability increases it even more![or][stopping][end if][roman type][line break]";
+			say "[bold type]**You have learned how to apply impressive make up!**[line break]From now on, you'll have extra increased charisma for a while after using a make up kit to give yourself a moderate but not over-the-top amount of make up.[if newbie tips is 1][one of][line break][newbie style]Newbie tip: Charisma helps you convince NPCs to do things. This could be getting them to give you something nice in return when you gift them an item, or it could be convincing them to be more gentle with you. Make up increases charisma, and this new ability increases it even more![or][stopping][end if][roman type][line break]";
 			now the makeupskill of the player is 1;
 			reset skill cooldown;
 		otherwise:
