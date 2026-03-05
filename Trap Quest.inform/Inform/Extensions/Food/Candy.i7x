@@ -197,7 +197,7 @@ To compute (M - a robochef) cooking (I - digestive biscuit):
 A liquorice is a candy. The text-shortcut of liquorice is "lq".
 
 To say ExamineDesc of (C - liquorice):
-	say "A strand of black liquorice. You hate the taste of liquorice almost as much as the taste of pineapple pizza!'".
+	say "A strand of black liquorice. You hate the taste of liquorice almost as much as the taste of pineapple pizza!".
 
 Figure of liquorice is the file "Items/Collectibles/liquorice1.jpg".
 
