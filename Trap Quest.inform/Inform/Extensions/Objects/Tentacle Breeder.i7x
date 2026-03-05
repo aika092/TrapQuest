@@ -168,7 +168,7 @@ To compute summoning check of (T - a tentacle-breeder):
 					compute portal reset of T;
 				repeat with B running through tentacle-breeders:
 					now B is active;
-				if newbie tips is 1, say "[one of][newbie style]Newbie Tip: Tentacle breeders are special summoning portals that only spawn tentacle monsters. You can shut them off permanently if you can convince the witch[if the player is not an april 2025 top donator] or the neuromancer[end if] to teach you how to sense magical energy... or you can leave them alone, if you're fine dealing with the monsters.[roman type][or][stopping]";
+				if newbie tips is 1, say "[one of][newbie style]Newbie tip: Tentacle breeders are special summoning portals that only spawn tentacle monsters. You can shut them off permanently if you can convince the witch[if the player is not an april 2025 top donator] or the neuromancer[end if] to teach you how to sense magical energy... or you can leave them alone, if you're fine dealing with the monsters.[roman type][or][stopping]";
 		otherwise if the charge of T < 1:
 			let M be the summonChoice of T;
 			if M is monster:
