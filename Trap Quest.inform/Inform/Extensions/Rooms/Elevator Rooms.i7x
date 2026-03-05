@@ -610,7 +610,7 @@ To say BasicLewdKnowledge:
 		say "[one of]Modern diapers can absorb 15 times their weight in water[or]A super absorbent polymer (SAP) and fibrous wood pulp material together form the soft, water-retaining core of a modern disposable diaper[or]Multiple countries, including Japan, now sell more adult diapers than infant diapers[in random order].[roman type][line break]";
 		DiaperAddictUp 1;
 	otherwise:
-		say "[one of]The first clear real traces of fellatio are from ancient Egypt, and the myth of Iris and Osiris[or]The English noun fellatio comes from the Latin fellātus, the past participle of the verb fellāre, meaning [']to suck['][or]the Kama Sutra has a chapter on auparishtaka, or [']mouth congress['][in random order].[roman type][line break]";
+		say "[one of]The first clear real traces of fellatio are from ancient Egypt, and the myth of Iris and Osiris[or]The English noun fellatio comes from the Latin fellātus, the past participle of the verb fellāre, meaning [']to suck['][or]The Kama Sutra has a chapter on auparishtaka, or [']mouth congress['][in random order].[roman type][line break]";
 		OralSexAddictUp 1.
 
 
