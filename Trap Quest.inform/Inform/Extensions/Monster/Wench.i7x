@@ -1141,7 +1141,7 @@ To say ErectionLostFlav of (M - a wench):
 
 
 To say ErectionNearingClimaxFlav of (M - a wench):
-	say "[one of][BigFuckerDesc of M]'s [if the size of penis > 7]moans climb higher and higher in pitch[otherwise]pants turn to moans, climbing higher and higher in pitch[end if] as [he of M] slowly starts speeding up.[or][BigNameDesc of M] rides you with more and more urgency, moaning breathlessly as [his of M] fingers attack [his of M] [if M is presenting as male]dick[otherwise]clit[end if][at random]. [big he of M] must be close!".
+	say "[one of][BigFuckerDesc of M]'s [if the size of penis > 7]moans climb higher and higher in pitch[otherwise]pants turn to moans, climbing higher and higher in pitch[end if] as [he of M] slowly starts speeding up.[or][BigNameDesc of M] rides you with more and more urgency, moaning breathlessly as [his of M] fingers attack [his of M] [if M is presenting as male]dick[otherwise]clit[end if].[at random] [big he of M] must be close!".
 
 To say PenileClimaxFlav of (M - a wench):
 	if M is unfriendly or refractoryperiod <= 0:
