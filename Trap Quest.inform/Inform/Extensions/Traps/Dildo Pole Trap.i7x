@@ -141,7 +141,7 @@ To trigger pole trap (Y - a dildo trap):
 
 To compute (Y - a dildo trap) penetration of (C - an object) into (G - a fuckhole):
 	now Y is penetrating G;
-	say "You gasp as the dildo goes straight [if C is not nothing]through your [printed name of C] and[end if]into your [variable G]!";
+	say "You gasp as the dildo goes straight [if C is not nothing]through your [printed name of C] and [end if]into your [variable G]!";
 	ruin G;
 	if C is not nothing:
 		if C is not clothing:
