@@ -660,7 +660,7 @@ Carry Out Going (this is the monsters-go-next rule):
 				if speed-demon-clothing is clothing:
 					now seconds is 1;
 					say "You feel extra-speedy thanks to your [speed-demon-clothing]!";
-					if newbie tips is 1, say "[one of][newbie style]On extra-speedy turns, NPCs don't get to move.[roman type][line break][or][stopping]";
+					if newbie tips is 1, say "[one of][newbie style]Newbie tip: On extra-speedy turns, NPCs don't get to move.[roman type][line break][or][stopping]";
 					repeat with M running through alive simulated monsters:
 						now M is moved;
 	if seconds is 3 or seconds is 6:
