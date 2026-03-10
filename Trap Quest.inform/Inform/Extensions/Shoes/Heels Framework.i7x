@@ -126,7 +126,7 @@ To compute SelfExamineDesc of (H - a heels):
 		say "A [ShortDesc of H] are currently latched to your feet[if the player is ankle bound], and your ankles are bound close together making it difficult to crawl[end if]. ".
 
 Report examining heels:
-	if newbie tips is 1, say "[one of][newbie style]Heels [if the number of worn heels is 0]would [end if]allow you to deal higher amounts of damage with your kicks, but [bold type]you'll tire much faster from walking around, [newbie style]especially at first, when your experience at walking in heels is at its lowest.[roman type][line break][or][stopping]".
+	if newbie tips is 1, say "[one of][newbie style]Newbie tip: Heels [if the number of worn heels is 0]would [end if]allow you to deal higher amounts of damage with your kicks, but [bold type]you'll tire much faster from walking around, [newbie style]especially at first, when your experience at walking in heels is at its lowest.[roman type][line break][or][stopping]".
 
 To set up heel length of (C - a heels):
 	let P be 1;
