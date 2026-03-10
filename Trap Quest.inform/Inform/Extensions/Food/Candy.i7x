@@ -537,7 +537,7 @@ To say ShortDesc of (C - pink nougat):
 	say "pink nougat".
 
 To say DevourFlav of (C - pink nougat):
-	say "You chew on the nutty sweet for a few moments before swallowing the delicious treat. ".
+	say "You chew on the nutty sweet for a few moments before swallowing the delicious treat.".
 
 Carry out TQeating pink nougat:
 	say "[DevourFlav of the noun] As the candy reaches your stomach you suddenly feel ";
@@ -588,7 +588,7 @@ To say ShortDesc of (C - strawberry lace):
 	say "strawberry lace".
 
 To say DevourFlav of (C - strawberry lace):
-	say "You chew the [C] from one end to the other, swallowing as you go. ".
+	say "You chew the [C] from one end to the other, swallowing as you go.".
 
 Carry out TQeating strawberry lace:
 	say "[DevourFlav of the noun] As you finish eating it, you shiver and ";
