@@ -319,7 +319,7 @@ To compute unique trigger of (Y - expansion-rune-trap):
 				say "Your [BreastDesc] suddenly feel very heavy. You can tell they're absolutely full to the brim with milk!";
 				MilkUp the milk capacity of breasts - the milk volume of breasts;
 			otherwise:
-				say "They feel more active: you can tell that your [if the lactation rate of breasts > 0][BreastDesc] will produce milk faster now[otherwise]have started to produce milk over time[end if]!";
+				say "They feel more active: you can tell that your [BreastDesc][if the lactation rate of breasts > 0] will produce milk faster now[otherwise] have started to produce milk over time[end if]!";
 				increase the lactation rate of breasts by 1;
 		if the player is not bottom heavy:
 			say "The magic rushes through your hips, making them widen!";
