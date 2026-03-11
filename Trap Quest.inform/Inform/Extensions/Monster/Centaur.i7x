@@ -32,7 +32,7 @@ To say MonsterComment of (M - centaur):
 			if the player is gendered male, say "[first custom style][one of]What a freakshow.[or]I wonder if I could swipe that sword.[or][big his of M] rack is really nice, at least.[in random order]";
 			otherwise say "[first custom style][one of]I can't believe [his of M] genitals are just OUT like that. So gross.[or]I'll have to be careful of that sword if [he of M] and I ever come to blows.[or]I wish [he of M] would stop ogling me so much.[in random order]";
 		otherwise if the bimbo of the player < 12:
-			say "[variable custom style][one of][big he of M] might be pretty hung centaur standards.[or]That sword seems like it's really valuable. I wonder if I could try it. The metal one. Yup, that's the one I want to try.[or][big he of M] keeps staring at my butt. I mean, I'm flattered, but...[in random order]";
+			say "[variable custom style][one of][big he of M] might be pretty hung by centaur standards.[or]That sword seems like it's really valuable. I wonder if I could try it. The metal one. Yup, that's the one I want to try.[or][big he of M] keeps staring at my butt. I mean, I'm flattered, but...[in random order]";
 		otherwise:
 			say "[second custom style][one of]I love how [he of M] just lets it all hang out.[or]That sword looks like it'd be fun to play with. [big his of M] blade seems kind of nice too.[or]Stop ogling me and fuck me already![in random order]";
 		say "[roman type][line break]".
