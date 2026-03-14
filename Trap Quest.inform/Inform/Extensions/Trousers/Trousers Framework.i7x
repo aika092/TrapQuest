@@ -59,7 +59,7 @@ To say ShortDesc of (C - a trousers):
 	say "pair of trousers".
 
 Report examining trousers:
-	if newbie tips is 1, say "[one of][newbie style]Pants [if the number of worn trousers is 0]would [end if]provide a line of defence against things accessing your [fuckholes].[roman type][line break][or][stopping]".
+	if newbie tips is 1, say "[one of][newbie style]Newbie tip: Pants [if the number of worn trousers is 0]would [end if]provide a line of defence against things accessing your [fuckholes].[roman type][line break][or][stopping]".
 
 Part - Wearability
 

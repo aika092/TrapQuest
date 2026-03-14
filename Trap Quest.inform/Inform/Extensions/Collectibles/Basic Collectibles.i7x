@@ -296,7 +296,7 @@ To decide which figure-name is the examine-image of (C - pink-hair):
 	decide on figure of pink-hair.
 
 To say ExamineDesc of (B - pink-hair):
-	say "A strand of hair from a fairy. It is surprisingly thick and very pink. It probably contains some magic power.".
+	say "A strand of hair. It is surprisingly thick and very pink. It probably contains some magic power.".
 
 To decide which number is the crafting key of (C - pink-hair):
 	decide on 17.

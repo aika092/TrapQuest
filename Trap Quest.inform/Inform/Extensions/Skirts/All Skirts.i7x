@@ -43,7 +43,7 @@ To set up influence of (C - a skirt):
 	set up random-based influence of C.
 
 Report examining skirts:
-	if newbie tips is 1, say "[one of][newbie style]Skirts [if the noun is super-short or the noun is unskirted](but not this one!) [end if]can sometimes help with your modesty.[roman type][line break][or][stopping]".
+	if newbie tips is 1, say "[one of][newbie style]Newbie tip: Skirts [if the noun is super-short or the noun is unskirted](but not this one!) [end if]can sometimes help with your modesty.[roman type][line break][or][stopping]".
 
 Definition: a skirt is displacable:
 	if the front-skirt-length of it >= 2 or the back-skirt-length of it >= 2, decide yes;

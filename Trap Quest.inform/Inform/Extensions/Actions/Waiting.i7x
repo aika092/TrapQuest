@@ -40,7 +40,7 @@ Check waiting:
 
 Carry out waiting:
 	allocate 6 seconds;
-	if newbie tips is 1 and the player is prone and the player is not in danger, say "[one of][newbie style]Newbie tip: you can use 'rest' to wait until your fatigue has returned to 0. It will automatically stop if a dangerous enemy comes by. You can also use 'long wait' to wait until something changes.[roman type][line break][or][stopping]".
+	if newbie tips is 1 and the player is prone and the player is not in danger, say "[one of][newbie style]Newbie tip: You can use 'rest' to wait until your fatigue has returned to 0. It will automatically stop if a dangerous enemy comes by. You can also use 'long wait' to wait until something changes.[roman type][line break][or][stopping]".
 
 The standard report waiting rule is not listed in the report waiting rulebook.
 

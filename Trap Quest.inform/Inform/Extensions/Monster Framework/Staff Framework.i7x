@@ -1825,7 +1825,7 @@ To compute event start of (E - cookie-delivery-event):
 			school event wait place X;
 			now the quality of cookie is -3;
 			now the fat of cookie is 3;
-			say "[speech style of M]'[NameBimbo], would you be a darling and take this special birthday snack to [NameDesc of X] [speech style of M]for me please?'[roman type][line break][BigNameDesc of M] holds out a lewd towards you.[paragraph break]Agree to the task?";
+			say "[speech style of M]'[NameBimbo], would you be a darling and take this special birthday snack to [NameDesc of X] [speech style of M]for me please?'[roman type][line break][BigNameDesc of M] holds out a lewd treat towards you.[paragraph break]Agree to the task?";
 			now temporaryYesNoBackground is the examine-image of cookie;
 			if the player is bimbo consenting:
 				say "You take [NameDesc of cookie]. It's still warm... And gooey.";

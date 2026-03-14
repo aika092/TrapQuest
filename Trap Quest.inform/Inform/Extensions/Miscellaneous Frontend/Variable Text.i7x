@@ -134,7 +134,7 @@ To say fucker of (M - a monster):
 	otherwise say "[one of]asshole[or]motherfucker[or]jackass[or]bastard[or]fucker[as decreasingly likely outcomes]".
 
 To say beautiful:
-	say "[one of]rockin['][or]stylingbitchin['][or]beautiful[or]amazing[or]fucking hot[or]fucking sexy[at random]".
+	say "[one of]rockin['][or]styling[or]bitchin['][or]beautiful[or]amazing[or]fucking hot[or]fucking sexy[at random]".
 
 To say says (M - a person) wryly:
 	say "[one of][BigNameDesc of M] says[or]says [NameDesc of M][as decreasingly likely outcomes][one of] [one of]with a wry grin[or]wryly[as decreasingly likely outcomes][or] [one of]with a smug smile[or]smugly[as decreasingly likely outcomes][or], grinning[at random].".

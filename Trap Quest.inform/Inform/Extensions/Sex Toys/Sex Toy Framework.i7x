@@ -261,7 +261,7 @@ To compute gripping of (I - a thing):
 				anally orgasm shamefully;
 			dislodge I;
 			now I is in the location of the player;
-			if newbie tips is 1, say "[one of][newbie style]Toys won't fall out while you are on your knees.[roman type][line break][or][stopping]";
+			if newbie tips is 1, say "[one of][newbie style]Newbie tip: Toys won't fall out while you are on your knees.[roman type][line break][or][stopping]";
 			repeat with M running through reactive people:
 				compute toy expulsion reaction of M;
 		otherwise if I is penetrating vagina and the player is not pussy protected and G < 10 and R <= 0:

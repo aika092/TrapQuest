@@ -141,7 +141,7 @@ To compute CandyCornEat:
 					BustUp 1;
 					FatigueDown 13;
 			otherwise if the make-up of face < 3:
-				say "a tingle passes over your cheeks, leaving them covered in a new layer of makeup. [one of][line break][variable custom style]Why do I feel like a jack-o'-lantern?[roman type][line break][or][stopping]";
+				say "a tingle passes over your cheeks, leaving them covered in a new layer of makeup. [one of][line break][variable custom style]Why do I feel like a jack-o[']-lantern?[roman type][line break][or][stopping]";
 				FaceUp 1;
 			otherwise if the lips of face < max lip size:
 				say "your lips swell significantly.";
@@ -197,7 +197,7 @@ To compute (M - a robochef) cooking (I - digestive biscuit):
 A liquorice is a candy. The text-shortcut of liquorice is "lq".
 
 To say ExamineDesc of (C - liquorice):
-	say "A strand of black liquorice. You hate the taste of liquorice almost as much as the taste of pineapple pizza!'".
+	say "A strand of black liquorice. You hate the taste of liquorice almost as much as the taste of pineapple pizza!".
 
 Figure of liquorice is the file "Items/Collectibles/liquorice1.jpg".
 
@@ -537,7 +537,7 @@ To say ShortDesc of (C - pink nougat):
 	say "pink nougat".
 
 To say DevourFlav of (C - pink nougat):
-	say "You chew on the nutty sweet for a few moments before swallowing the delicious treat. ".
+	say "You chew on the nutty sweet for a few moments before swallowing the delicious treat.".
 
 Carry out TQeating pink nougat:
 	say "[DevourFlav of the noun] As the candy reaches your stomach you suddenly feel ";
@@ -588,7 +588,7 @@ To say ShortDesc of (C - strawberry lace):
 	say "strawberry lace".
 
 To say DevourFlav of (C - strawberry lace):
-	say "You chew the [C] from one end to the other, swallowing as you go. ".
+	say "You chew the [C] from one end to the other, swallowing as you go.".
 
 Carry out TQeating strawberry lace:
 	say "[DevourFlav of the noun] As you finish eating it, you shiver and ";
