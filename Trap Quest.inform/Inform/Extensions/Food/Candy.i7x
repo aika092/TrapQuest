@@ -141,7 +141,7 @@ To compute CandyCornEat:
 					BustUp 1;
 					FatigueDown 13;
 			otherwise if the make-up of face < 3:
-				say "a tingle passes over your cheeks, leaving them covered in a new layer of makeup. [one of][line break][variable custom style]Why do I feel like a jack-o'-lantern?[roman type][line break][or][stopping]";
+				say "a tingle passes over your cheeks, leaving them covered in a new layer of makeup. [one of][line break][variable custom style]Why do I feel like a jack-o[']-lantern?[roman type][line break][or][stopping]";
 				FaceUp 1;
 			otherwise if the lips of face < max lip size:
 				say "your lips swell significantly.";
