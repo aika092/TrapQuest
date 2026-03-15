@@ -686,7 +686,7 @@ To compute anal sex of (M - a demoness):
 		say "[BigNameDesc of M] keeps fucking you with [his of M] dildo heel, [if the anal sex addiction of the player <= 3]every little shove of [his of M] foot driving the fat girth of phallic glass into you, forcing your ass to stretch uncomfortably.[otherwise if the anal sex addiction of the player <= 5]every little push of [his of M] heel into you making your body loosen up, and your skin crawl.[otherwise]each shove of [his of M] heel into your body causing you to stifle a moan.[end if][line break][if the delicateness of the player - the soreness of asshole < 6][line break][first custom style]Ouch ouch ouch...[otherwise][line break][second custom style]Oof![end if][roman type][line break]";
 	if the reaction of the player > 0:
 		let R be a random number between 1 and 11;
-		say "You relax your [asshole] and let [him of M] fuck you. [if R > 6]You manage to prevent yourself becoming any more sore.[otherwise]However [his of M] thrusting is so deep and strong that it's still constantly stimulating the inside of your poor [asshole].[end if]";
+		say "You relax your [asshole] and let [him of M] fuck you. [if R > 6]You manage to prevent yourself becoming any more sore.[otherwise]However, [his of M] thrusting is so deep and strong that it's still constantly stimulating the inside of your poor [asshole].[end if]";
 		if R < 7, ruin asshole;
 		if the reaction of the player is 2:
 			decrease the raw difficulty of M by 2;
