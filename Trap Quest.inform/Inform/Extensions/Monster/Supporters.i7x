@@ -101,7 +101,7 @@ To decide which figure-name is the monster-image of (M - supporter-aika):
 	decide on figure of Aika.
 
 To say LeftoverDesc (N - 203):
-	say "The bloated, cumfilled, and unconscious body of Aika is on the ground here, cum still leaking out of [his of supporter-aika] mouth, asshole, and [LongDickDesc of supporter-aika].[line break]".
+	say "The bloated, cum-filled, and unconscious body of Aika is on the ground here, cum still leaking out of [his of supporter-aika] mouth, asshole, and [LongDickDesc of supporter-aika].[line break]".
 
 To set up (M - supporter-aika):
 	reset M;
@@ -156,7 +156,7 @@ To say UnidentifiablePosterReactionFlav of (M - supporter-aika) with (P - a post
 	say "[speech style of M]'Oh ho ho, I wonder if this might be you? Don't worry, I can keep a secret!'[roman type][line break]".
 
 To say PresentFriendlyAcceptanceFlav of (M - supporter-aika):
-	say "[speech style of M]'I really shouldn't... but now can I say no when you put it like that?'[roman type][line break]".
+	say "[speech style of M]'I really shouldn't... but how can I say no when you put it like that?'[roman type][line break]".
 
 To compute delay of (M - supporter-aika):
 	say "[BigNameDesc of M] folds [his of M] arms.[line break][speech style of M]'Any requests, or are you going to leave it completely up to me where I put this thing?'[roman type][line break]".
