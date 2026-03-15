@@ -304,7 +304,7 @@ To say WhoAnswer of (M - teacher-angela):
 	say "[speech style of M]'I should clearly be teaching you not to azk ztupid queztionz!'[roman type][line break]".
 
 To say WhereAnswer of (M - teacher-angela):
-	say "[speech style of M]'[if the rank of the player <= 1]Geez, you're pretty far gone, aren't you.'[otherwise]Rankz are earned, and not without effort. It iz important you realize zat.'[end if][roman type][line break]".
+	say "[speech style of M]'[if the rank of the player <= 1]Jeez, you're pretty far gone, aren't you.'[otherwise]Rankz are earned, and not without effort. It iz important you realize zat.'[end if][roman type][line break]".
 
 To say EscapeAnswer of (M - teacher-angela):
 	say "[speech style of M]'Vouldn't you like to know?'[roman type][line break]".
