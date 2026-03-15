@@ -284,7 +284,7 @@ To say WhoAnswer of (M - a staff member):
 	say "[speech style of M]'I should clearly be teaching you not to ask stupid questions!'[roman type][line break]".
 
 To say WhereAnswer of (M - a staff member):
-	say "[speech style of M]'[if the rank of the player <= 1]Geez, you're pretty far gone, aren't you?'[otherwise]Ranks are earned, and not without effort. It's important you realise that.'[end if][roman type][line break]".
+	say "[speech style of M]'[if the rank of the player <= 1]Jeez, you're pretty far gone, aren't you?'[otherwise]Ranks are earned, and not without effort. It's important you realise that.'[end if][roman type][line break]".
 
 To say EscapeAnswer of (M - a staff member):
 	say "[speech style of M]'Wouldn't you like to know.'[roman type][line break]".
@@ -1410,7 +1410,7 @@ To compute detention chair tease of (M - a monster):
 	now M is uninterested.
 
 To say detention chair tease of (M - a monster):
-	say "[speech style of M]'[one of]Hah! You enjoying yourself there, [honey of M]?'[or]Geez, it's like you get off on humiliation or something.'[or]You must be pretty dumb if you can't even [detention-reason-flav].'[in random order][roman type][line break]".
+	say "[speech style of M]'[one of]Hah! You enjoying yourself there, [honey of M]?'[or]Jeez, it's like you get off on humiliation or something.'[or]You must be pretty dumb if you can't even [detention-reason-flav].'[in random order][roman type][line break]".
 
 To say detention chair tease of (M - a teacher):
 	say "[speech style of M]'[one of]Hmmph. I wouldn't be surprised if I saw you in here again.'[or]Pathetic.'[or]Hah. You're not even worthy of being teased.'[in random order][roman type][line break]".
