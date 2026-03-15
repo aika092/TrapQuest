@@ -13,7 +13,7 @@ Definition: a patron is summoningRelevant: decide no. [Doesn't count towards the
 Definition: a patron is permanently banishable: decide no. [Can come back once banished]
 Definition: a patron is seducable: decide no. [Way too complicated]
 
-To decide which number is the default favour of (M - a patron): [for a patron, favour determines how much they value having sex with you. It goes up from positive encounters and seeing stuff of you posted online.]
+To decide which number is the default favour of (M - a patron): [for a patron, favour determines hoy;'w much they value having sex with you. It goes up from positive encounters and seeing stuff of you posted online.]
 	decide on 15.
 To FavourDown (M - a patron) by (N - a number):
 	if N > 0:
@@ -1663,7 +1663,7 @@ To say TitfuckReceiveFlav of (M - a dickhead patron):
 
 To say (M - a patron) submission sex (N - a number):
 	let F be a random fuckhole penetrated by M;
-	say "[speech style of M][one of]'Damn, this bitch's [if F is vagina][pussy][otherwise]ass[end if] is [if the openness of F < the girth of M]TIGHT[otherwise if interracial fetish is 1]BOMB[otherwise]awesome[end if]!'[or][or]'Yeah, take that [DickDesc of M], [if interracial fetish is 1]ho[otherwise]slut[end if]!'[or][if the number of patrons penetrating a body part > 2 and interracial fetish is 1]Y'all gotta try this [otherwise if the number of patrons penetrating a body part > 2]You guys have got to try this whore's[otherwise if interracial fetish is 1]Damn baby, I'm lovin' this[otherwise]I love this fucking[end if] [if F is vagina][pussy][otherwise]ass[end if]!'[or][or]'Feels like this [cunt] was fucking made for my [DickDesc of M]!'[then at random][roman type][line break]".
+	say "[speech style of M][one of]'Damn, this bitch's [if F is vagina][pussy][otherwise]ass[end if] is [if the openness of F < the girth of M]TIGHT[otherwise if interracial fetish is 1]BOMB[otherwise]awesome[end if]!'[or][or]'Yeah, take that [DickDesc of M], [if interracial fetish is 1]ho[otherwise]slut[end if]!'[or][if the number of patrons penetrating a body part > 2 and interracial fetish is 1]'Y'all gotta try this[otherwise if the number of patrons penetrating a body part > 2]'You guys have got to try this whore's[otherwise if interracial fetish is 1]Damn baby, I'm lovin' this[otherwise]I love this fucking[end if] [if F is vagina][pussy][otherwise]ass[end if]!'[or][or]'Feels like this [cunt] was fucking made for my [DickDesc of M]!'[then at random][roman type][line break]".
 
 To say (M - a patron) rough sex (N - a number):
 	say "[speech style of M][one of]'Maybe that'll teach [if interracial fetish is 1]ya[otherwise]you[end if]!'[or][or]'If you keep acting like that, I'm not paying you.'[or][or]'It's more fun when you play along, you know!'[or][or]'Stop squirming, or I won't pay!'[then at random][roman type][line break]";
