@@ -124,7 +124,7 @@ To uniquely set up (C - a condom collector hat):
 	now the quest of C is condom-collecting-quest.
 
 To say QuestFlav of (Q - condom-collecting-quest):
-	say "You sense that it wants you to wearing used condoms from four different KNOWN people at the same time.";
+	say "You sense that it wants you to wear used condoms from four different KNOWN people at the same time.";
 	if newbie tips is 1, say "[newbie style]Newbie tip: You can examine items of clothing to see what you know about the sources of the cum in the pinned used condoms.[roman type][line break]".
 
 To say QuestTitle of (Q - condom-collecting-quest):
