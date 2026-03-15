@@ -1378,7 +1378,7 @@ To say FriendlySluttyPerception of (M - supporter-serena): [The NPC has just spo
 	say "[speech style of M]'[one of]Hey chica, looking good! Keep it up and I might even decide to fuck you.'[or]You know if you're trying to scream [']fuck me['] with that appearance, you're doing a good job.'[or]Wow, there are some real sluts down here! I'll probably come back for you later.'[in random order][roman type][line break]".
 
 To say UnfriendlySluttyPerception of (M - supporter-serena): [The NPC has just spotted the player while the player looks slutty, but hasn't had much of a chance to start disapproving of them yet.]
-	say "[speech style of M]'[one of]Okay, that's it, you clearly need a good hard seeing to. Let's do this.'[or]I think it's time for me to help in your [']training['].'[or]Well geez, when you look like that, how can I say no?'[in random order][roman type][line break]".
+	say "[speech style of M]'[one of]Okay, that's it, you clearly need a good hard seeing to. Let's do this.'[or]I think it's time for me to help in your [']training['].'[or]Well jeez, when you look like that, how can I say no?'[in random order][roman type][line break]".
 
 To say BoringPerception of (M - supporter-serena): [The NPC has spotted the player who doesn't look slutty enough to decrease their friendliness]
 	say "[speech style of M]'[one of]Another player, huh? Stay out of my way, I'm just here to fuck sluts[or]You again. Sorry, you're still not slutty enough for me to be bothered to try and fuck you[stopping].'[roman type][line break]".
@@ -1393,7 +1393,7 @@ To say PresentFriendlyAcceptanceFlav of (M - supporter-serena): [This is when th
 	say "[speech style of M]'Sure, why not? There's nobody hotter around right now so I'll give you a run-over.'[roman type][line break]".
 
 To say PresentFriendlyRejectionFlav of (M - supporter-serena): [This is when the player offers a body part up to them and the NPC is still friendly, and refuses because a) they orgasmed recently or b) Can't fuck that particular body part]
-	say "[speech style of M]'[if presented-orifice is a potential target]Geez, give me some time to recover before asking that!'[otherwise]Not interested.'[end if][roman type][line break]".
+	say "[speech style of M]'[if presented-orifice is a potential target]Jeez, give me some time to recover before asking that!'[otherwise]Not interested.'[end if][roman type][line break]".
 
 To say FriendlySexReleaseRefusalSpeech of (M - supporter-serena): [The player has changed their mind and wants to end the friendly sex early. The NPC has decided to dominate the player and not let go so easily.]
 	if the player is not able to speak, say "[speech style of M]'[one of]Quiet down! I'm enjoying this![or]Stop squirming, you'll hurt yourself.'[or]I couldn't understand that, but we can talk about it when I'm finished.'[in random order][roman type][line break]";
@@ -1641,7 +1641,7 @@ To say PresentFriendlyAcceptanceFlav of (M - supporter-elluria): [This is when t
 	say "[speech style of M]'Hmm... Luckily for you, I'm especially bored right now. Go ahead.'[roman type][line break]".
 
 To say PresentFriendlyRejectionFlav of (M - supporter-elluria): [This is when the player offers a body part up to them and the NPC is still friendly, and refuses because a) they orgasmed recently or b) Can't fuck that particular body part]
-	say "[speech style of M]'[if presented-orifice is a potential target]Geez, give me some time to recover before asking that!'[otherwise]Aww sweetie, it's so cute that you think you deserve any of my time.'[end if][roman type][line break]".
+	say "[speech style of M]'[if presented-orifice is a potential target]Jeez, give me some time to recover before asking that!'[otherwise]Aww sweetie, it's so cute that you think you deserve any of my time.'[end if][roman type][line break]".
 
 To say FriendlySexReleaseRefusalSpeech of (M - supporter-elluria): [The player has changed their mind and wants to end the friendly sex early. The NPC has decided to dominate the player and not let go so easily.]
 	say "[speech style of M]'[one of]Excuse me but you do not just start having sex with [supporter-name of M] and then change your mind.'[or]Now now sweetie, don't be so rude!'[stopping][roman type][line break]".
