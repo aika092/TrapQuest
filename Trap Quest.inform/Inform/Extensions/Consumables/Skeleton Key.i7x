@@ -153,7 +153,7 @@ Understand "unlock [something]", "unlock [something] with key" as unlocking.
 
 To lock (C - a clothing):
 	now C is locked;
-	if newbie tips is 1, say "[one of][newbie style]Newbie tip: Oh dear, this item is locked! You'll need a key rather than a blessing to make it removable. Unfortunately the prison guard [unless there is an alive prison guard]who is about to spawn [end if]in the Dungeon isn't going to give you the key immediately. Instead, [he of prison guard] is going to wait until your 'sentence' is over, which will take a decent amount of time. Of course, if you could defeat [him of prison guard] in combat I'm sure you'd be able to salvage a key from [his of prison guard] corpse.[roman type][line break][or][stopping]".
+	if newbie tips is 1, say "[one of][newbie style]Newbie tip: Oh dear, this item is locked! You'll need a key rather than a blessing to make it removable. Unfortunately the prison guard [unless there is an alive prison guard]who is about to spawn [end if]in the Dungeon isn't going to give you the key immediately. Instead, [he of prison guard] is going to wait until your 'sentence' is over, which will take a decent amount of time. Of course, if you could defeat [him of prison guard] in combat I'm sure you'd be able to salvage a key from [his of prison guard] body.[roman type][line break][or][stopping]".
 To lock (C - diaper-stack):
 	let D be entry (the number of entries in the list of stacked diapers) in the list of stacked diapers;
 	if D is clothing, now D is locked;
