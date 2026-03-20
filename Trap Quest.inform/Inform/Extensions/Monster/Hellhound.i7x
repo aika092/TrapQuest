@@ -175,7 +175,7 @@ To decide which text is himself of (M - hellhound):
 	decide on "[if mythical creature fetish is 1]itself[otherwise if lady fetish is 1]herself[otherwise]himself[end if]".
 
 To say LongDickDesc of (M - hellhound):
-	if mythical creature fetish is 1, say "[one of]slippery[or]slick[or]oily[in random order] canine [DickDesc of M]";
+	if mythical creature fetish is 1, say "[one of]slippery[or]slick[or]oily[in random order] [DickDesc of M]";
 	otherwise say "hard [DickDesc of M]".
 
 To say cockhead of (M - hellhound):
