@@ -186,7 +186,7 @@ Definition: Atlas tattoo is eligible:
 	if the noun is bra or the noun is exercise themed or the noun is boob themed, decide yes;
 	decide no.
 To say tattoo-desc of (T - Atlas tattoo):
-	say "You have a tattoo of Atlas the Greek titan legend, below your left [BreastDesc]. It is drawn so that it looks like he is holding your chest up. It seems to be helping with the weight.".
+	say "You have a tattoo of Atlas, the mythological Greek titan, below your left [BreastDesc]. It is drawn so that it looks like he is holding your chest up. It seems to be helping with the weight.".
 To decide which number is the initial outrage of (T - Atlas tattoo):
 	decide on 4.
 Definition: Atlas tattoo is boob themed: decide yes.
@@ -446,7 +446,7 @@ Definition: black cock only tattoo is eligible:
 	if the noun is interracial themed, decide yes;
 	decide no.
 To say tattoo-desc of (T - black cock only tattoo):
-	say "You have a tramp stamp tattoo on your lower back with the words 'black cock only'. It is making you enjoy sex with dark skinned people more.".
+	say "You have a tramp stamp tattoo on your lower back of the words 'black cock only'. It is making you enjoy sex with dark skinned people more.".
 Definition: black cock only tattoo is penis themed: decide yes.
 Definition: black cock only tattoo is interracial themed: decide yes.
 
@@ -2101,7 +2101,7 @@ Definition: overcome tattoo is eligible:
 		if the strength-influence of the noun > 0, decide yes;
 	decide no.
 To say tattoo-desc of (T - overcome tattoo):
-	say "The word 'Overcome' is tattooed in large letters above your [BreastDesc]. Below this you have a large tattoo of a scary stag's head with an upside-down cross.".
+	say "The word 'Overcome' is tattooed in large letters above your [BreastDesc]. Below this, you have a large tattoo of a scary stag's head with an upside-down cross.".
 To decide which number is the strength-influence of (T - overcome tattoo):
 	decide on 1.
 To decide which number is the initial outrage of (T - overcome tattoo):
