@@ -385,7 +385,7 @@ To compute teaching of (L - make-up-lesson):
 			otherwise:
 				say "[BigNameDesc of M] writes 'I suck' on your arm with red lipstick!";
 			try examining T;
-			say "[speech style of M]'You must chooze. I can make the lipztick permanent, or...'[roman type][line break][big he of M] lets an unspoken threat dangle in the air.[paragraph break]Ask [him of M] to make the make up permanent?";
+			say "[speech style of M]'You must chooze. I can make the lipztick permanent, or...'[roman type][line break][big he of M] lets an unspoken threat dangle in the air.[paragraph break]Ask [him of M] to make the lipstick permanent?";
 			if the player is consenting:
 				if T is not worn:
 					say "[BigNameDesc of M] smiles a wide, severe smile, and waves [his of M] hands. You feel some magic passing from [his of M] fingertips into your skin. You immediately know that the lipstick is now permanent. But also, you do feel somewhat magical yourself.[line break][speech style of M]'Zis vas ze right choice. Now remember to use zis before our next lesson.'[roman type][line break][BigNameDesc of M] returns your make up kit.";
