@@ -517,7 +517,7 @@ To compute patronEncounter of (M - a dickhead patron):
 				FacePiss from M;
 				destroy M;
 			otherwise if R is 2 and bukkake fetish is 1:
-				say "A [MediumDesc of M] walks into the room and makes a beeline for you as soon as [he of M] notices you.[line break][speech style of M]'I'm gonna cum on your face, whore.'[roman type][line break]As if on cue, [BigNameDesc of M] ejaculates, flinging several ropes of [semen] across your face.";
+				say "A [MediumDesc of M] walks into the room and makes a beeline for you as soon as [he of M] notices you.[line break][speech style of M]'I'm gonna cum on your face, whore.'[roman type][line break]As if on cue, [he of M] ejaculates, flinging several ropes of [semen] across your face.";
 				CumFaceUp 1;
 				destroy M;
 			otherwise if face is not actually occupied:
