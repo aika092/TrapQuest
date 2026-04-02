@@ -127,7 +127,7 @@ To compute teaching of (L - roulette-lesson):
 	if lactation fetish is 1 or diaper quest is 1, add "milk" to LD;
 	if alcohol fetish is 1, add "alcohol" to LD;
 	let LS be {0}; [list of shots]
-	say "[speech style of M]'Today's lesson will be on courage, dedication and constitution.'[roman type][line break][BigNameDesc of M] gestures towards your desks. Each of you have an opaque canister about the size of a shot glass in front of you. ";
+	say "[speech style of M]'Today's lesson will be on courage, dedication, and constitution.'[roman type][line break][BigNameDesc of M] gestures towards your desks. Each of you have an opaque canister about the size of a shot glass in front of you. ";
 	say "At the desk at the front, there are [number of entries in LD] clear jugs of liquid, labelled 'water'[if the number of entries in LD is 3], 'breast milk' and 'vodka'[otherwise if lactation fetish is 1 or diaper quest is 1]and 'breast milk'[otherwise]and 'vodka'[end if] respectively.[line break][speech style of M]'One at a time, I want you to come up to the front and add a liquid of your choice to the canister.'[roman type][line break]";
 	let LST be the list of students in the location of the player;
 	sort LST in random order;
